@@ -28,6 +28,8 @@ export const NormalButton: React.FC<NormalButtonProps> = ({
   onDrag: _onDrag,
   onDragEnd: _onDragEnd,
   onDragStart: _onDragStart,
+  onAnimationStart: _onAnimationStart,
+  onAnimationEnd: _onAnimationEnd,
   ...props
 }) => {
   const baseStyles =

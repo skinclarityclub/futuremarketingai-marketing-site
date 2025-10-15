@@ -4,7 +4,7 @@
  * Source: improved-marketing-header.tsx
  */
 
-import React, { useState, useEffect, useReducer } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
