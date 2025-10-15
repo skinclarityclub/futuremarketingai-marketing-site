@@ -35,6 +35,7 @@ const TIMELINE = [
     description:
       'ChatGPT and similar tools help marketers work faster, but still require significant manual oversight and coordination.',
     status: 'past',
+    highlight: false,
   },
   {
     year: '2025',
@@ -50,6 +51,7 @@ const TIMELINE = [
     description:
       'Autonomous marketing becomes the norm. By then, early movers have built an insurmountable lead through compounding AI learning effects.',
     status: 'future',
+    highlight: false,
   },
 ] as const
 

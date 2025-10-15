@@ -9,7 +9,7 @@ import './i18n/config' // Initialize i18n
 import { initializeSentry } from './config/sentry'
 initializeSentry()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />

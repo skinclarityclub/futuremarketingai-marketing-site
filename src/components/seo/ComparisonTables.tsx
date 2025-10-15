@@ -327,12 +327,12 @@ export const PricingTable: React.FC<PricingTableProps> = ({
  */
 export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ className = '' }) => {
   const totalSavings = PLATFORM_FEATURES.reduce((acc, feature) => {
-    const savings = feature.savings ? parseInt(feature.savings.replace(/[^0-9]/g, '')) : 0
+    const savings = 'savings' in feature && feature.savings ? parseInt(feature.savings.replace(/[^0-9]/g, '')) : 0
     return acc + savings
   }, 0)
 
   const totalRevenue = PLATFORM_FEATURES.reduce((acc, feature) => {
-    const revenue = feature.additionalRevenue
+    const revenue = 'additionalRevenue' in feature && feature.additionalRevenue
       ? parseInt(feature.additionalRevenue.replace(/[^0-9]/g, ''))
       : 0
     return acc + revenue
@@ -378,15 +378,15 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
                   <td className="px-6 py-4 font-semibold text-white">{feature.category}</td>
                   <td className="px-6 py-4 text-blue-100">{feature.description}</td>
                   <td className="px-6 py-4">
-                    {feature.savings && (
+                    {'savings' in feature && feature.savings && (
                       <span className="text-green-400 font-medium">{feature.savings} saved</span>
                     )}
-                    {feature.additionalRevenue && (
+                    {'additionalRevenue' in feature && feature.additionalRevenue && (
                       <span className="text-purple-400 font-medium">
                         +{feature.additionalRevenue} revenue
                       </span>
                     )}
-                    {!feature.savings && !feature.additionalRevenue && (
+                    {!('savings' in feature && feature.savings) && !('additionalRevenue' in feature && feature.additionalRevenue) && (
                       <span className="text-blue-100">Included</span>
                     )}
                   </td>

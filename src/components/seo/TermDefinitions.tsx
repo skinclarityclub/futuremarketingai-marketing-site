@@ -159,7 +159,7 @@ export const TermDefinitions: React.FC<TermDefinitionsProps> = ({
       acc[term.category].push(term)
       return acc
     },
-    {} as Record<string, typeof filteredTerms>
+    {} as Record<string, Array<typeof filteredTerms[number]>>
   )
 
   if (compact) {

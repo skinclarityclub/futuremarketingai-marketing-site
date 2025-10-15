@@ -25,6 +25,9 @@ export const NormalButton: React.FC<NormalButtonProps> = ({
   children,
   className = '',
   disabled,
+  onDrag: _onDrag,
+  onDragEnd: _onDragEnd,
+  onDragStart: _onDragStart,
   ...props
 }) => {
   const baseStyles =

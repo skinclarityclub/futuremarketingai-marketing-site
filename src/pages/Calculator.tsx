@@ -966,7 +966,7 @@ export const Calculator: React.FC = () => {
               secondaryText="Download PDF"
               onSecondaryClick={() => {
                 // Trigger PDF export from ShareExportButtons
-                const exportBtn = document.querySelector('[data-export-pdf]')
+                const exportBtn = document.querySelector('[data-export-pdf]') as HTMLElement | null
                 exportBtn?.click()
               }}
               showUrgency={userIntent === 'low'} // Only show urgency for low-intent users
