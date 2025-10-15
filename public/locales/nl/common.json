@@ -1,0 +1,482 @@
+{
+  "loading": {
+    "default": "Laden...",
+    "page": "Pagina laden...",
+    "content": "Inhoud laden...",
+    "scheduling": "Planning laden...",
+    "calendly": "Agenda laden...",
+    "component": "Component kon niet worden geladen"
+  },
+  "actions": {
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "close_modal": "Modal sluiten",
+    "close_chat": "Sluit chat",
+    "close_panel": "Sluit paneel",
+    "close_notification": "Sluit melding",
+    "close_floating_cta": "Sluit zwevende CTA",
+    "dismiss": "Sluiten",
+    "dismiss_celebration": "Sluit viering",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "confirm": "Bevestigen",
+    "send": "Versturen",
+    "send_message": "Verstuur bericht",
+    "submit": "Verzenden",
+    "export_csv": "Exporteer naar CSV",
+    "clear_selection": "Wis selectie",
+    "collapse_banner": "Klap banner in",
+    "reload_page": "Pagina herladen",
+    "breadcrumb_nav": "Broodkruimelpad"
+  },
+  "personalization": {
+    "change_industry_tooltip": "Klik om industrie te wijzigen",
+    "more_preferences": "Meer voorkeuren",
+    "open_preferences": "Open gebruikersvoorkeuren"
+  },
+  "language_switcher": {
+    "change_language": "Taal wijzigen"
+  },
+  "chat": {
+    "tooltip": "Heb je vragen? Ik help je graag!",
+    "preview": {
+      "default": "Heb je hulp nodig bij deze demo?",
+      "home": "Wil je een rondleiding door het platform?",
+      "explorer": "Kan ik helpen met de Scenario Explorer?",
+      "calculator": "Hulp nodig bij de ROI Calculator?",
+      "dashboard": "Vragen over het dashboard?"
+    }
+  },
+  "pricing": {
+    "payback_period": "Terugverdienperiode",
+    "compare_all_tiers": "Vergelijk Alle Niveaus",
+    "custom_roi_analysis": "Aangepaste ROI analyse",
+    "sold_out": "Uitverkocht",
+    "available": "Beschikbaar",
+    "free_consultation": "Gratis 30-min consult",
+    "no_credit_card": "Geen creditcard nodig",
+    "lock_in_spot": "Reserveer Plek #{{spot}}",
+    "see_full_roadmap": "Bekijk Volledige Roadmap",
+    "join_before_price_rise": "Doe nu mee voordat prijzen stijgen • Tarief vergrendeld voor {{months}} maanden",
+    "transparent_roadmap": "Transparante Pricing Roadmap",
+    "pricing_roadmap": "Pricing Roadmap",
+    "roadmap_subtitle": "Transparante prijsprogress ie"
+  },
+  "industry_selector": {
+    "modal_title": "Personaliseer Je Demo Ervaring",
+    "select_prompt": "Selecteer je industrie voor een gepersonaliseerde demo",
+    "tailoring_info": "We passen voorbeelden, benchmarks en case studies aan op jouw sector",
+    "skip": "Overslaan, ik bekijk de algemene demo"
+  },
+  "trust_badges": {
+    "title": "Vertrouwd door Bedrijven Wereldwijd",
+    "subtitle": "Enterprise-grade beveiliging en compliance"
+  },
+  "case_studies": {
+    "title": "Succesverhalen",
+    "subtitle": "Ontdek hoe bedrijven concrete resultaten behalen"
+  },
+  "preferences": {
+    "modal_title": "Voorkeuren Bewerken",
+    "company_size_label": "Bedrijfsgrootte",
+    "role_label": "Jouw Rol",
+    "budget_label": "Maandelijks Marketing Budget",
+    "pain_points_label": "Grootste Uitdagingen (selecteer meerdere)",
+    "select_size": "Selecteer grootte...",
+    "select_role": "Selecteer rol...",
+    "select_budget": "Selecteer budget...",
+    "pain_points": [
+      "Niet genoeg tijd voor content",
+      "Gebrek aan creativiteit",
+      "Inconsistente kwaliteit",
+      "Slechte ROI op advertenties",
+      "Moeilijk op te schalen",
+      "Te veel platforms",
+      "Gebrek aan data/inzichten",
+      "Geen automatisering"
+    ],
+    "success_message": "Voorkeuren opgeslagen!",
+    "save_button": "Voorkeuren Opslaan",
+    "saved_button": "Opgeslagen ✓",
+    "cancel_button": "Annuleren",
+    "help_text": "Deze voorkeuren helpen ons de demo af te stemmen op jouw specifieke situatie"
+  },
+  "aggregate_metrics": {
+    "title": "Bewezen Impact Over Bedrijven",
+    "subtitle": "Praktijkresultaten van bedrijven die contentchaos oplosten"
+  },
+  "progress": {
+    "label": "Voortgang"
+  },
+  "accessibility": {
+    "skip_to_content": "Ga naar hoofdinhoud",
+    "close_menu": "Menu sluiten",
+    "open_menu": "Menu openen",
+    "main_navigation": "Hoofdnavigatie",
+    "personalization_settings": "Personalisatie instellingen",
+    "close_settings": "Sluit instellingen",
+    "view_achievements": "Bekijk je achievements",
+    "new_messages": "Nieuwe berichten",
+    "messages_list": "Chat berichten",
+    "navigation_suggestion": "Navigatie suggestie",
+    "demo_booking": "Demo boekingsuitnodiging",
+    "booking_actions": "Boekingsacties",
+    "trust_indicators": "Vertrouwensindicatoren",
+    "schedule_appointment": "Afspraak inplannen",
+    "what_to_expect": "Wat te verwachten",
+    "booking_calendar": "Boekingskalender",
+    "open_calendly": "Open Calendly in nieuw tabblad",
+    "helpful": "Markeer als nuttig",
+    "not_helpful": "Markeer als niet nuttig",
+    "previous_card": "Vorige kaart",
+    "next_card": "Volgende kaart",
+    "previous_module": "Vorige module",
+    "next_module": "Volgende module",
+    "open_preferences": "Open gebruikersvoorkeuren",
+    "breadcrumb": "Broodkruimel",
+    "ai_chat": "AI Journey Assistant Chat",
+    "active_status": "Actieve status",
+    "launching_soon": "Binnenkort live indicator",
+    "current_stage": "Huidige fase in marketingevolutie",
+    "ai_core_system": "AI Core Systeem",
+    "early_adopter_window": "Momenteel in early adopter window",
+    "insight_about_adoption": "Belangrijke inzicht over early adoption voordeel",
+    "insight_icon": "Inzicht icoon",
+    "timeline_evolution": "Tijdlijn van de evolutie van marketingautomatisering",
+    "interactive_diagram": "Interactief AI Marketing Systeem Diagram - Gebruik pijltjestoetsen om modules te navigeren, Enter om te selecteren, Escape om panelen te sluiten"
+  },
+  "navigation": {
+    "settings": "Instellingen",
+    "previous": "Vorige",
+    "next": "Volgende"
+  },
+  "placeholders": {
+    "search_accounts": "Zoek accounts...",
+    "campaign_name": "bijv., Zomer Productlancering",
+    "enter_message": "Voer chatbericht in"
+  },
+  "images": {
+    "original": "Origineel",
+    "enhanced": "Verbeterd",
+    "post_thumbnail": "Post miniatuur",
+    "ad_background": "Advertentie achtergrond"
+  },
+  "testing": {
+    "test_error_tracking": "Test error tracking",
+    "test_message_tracking": "Test message tracking",
+    "test_warning_tracking": "Test warning tracking",
+    "clear_storage": "Wis localStorage en herlaad",
+    "example_modal": "Voorbeeld Modal"
+  },
+  "calendly": {
+    "book_demo": "Plan demo",
+    "maybe_later": "Nog even kijken",
+    "open_direct": "Open Calendly Direct →",
+    "helpful": "Nuttig",
+    "not_helpful": "Niet nuttig"
+  },
+  "cta": {
+    "book_appointment": "Afspraak Boeken",
+    "schedule_demo": "Demo Inplannen",
+    "book": "Boek",
+    "default_urgency": "⏰ Gratis roadmap sessie (€1.500 waarde)",
+    "default_trust": {
+      "strategy_call": "✓ 30-min strategiegesprek",
+      "no_cc": "✓ Geen creditcard nodig",
+      "team_size": "✓ Gebouwd voor teams van 10-50"
+    }
+  },
+  "pricing_banner": {
+    "exclusive_early_access": "Exclusieve Early Access",
+    "availability": "Beschikbaarheid",
+    "remaining": "over",
+    "investment": "Investering",
+    "rate_locked": "Tarief vastgelegd voor {{months}} maanden",
+    "free_months": "+ {{count}} maand GRATIS",
+    "free_months_plural": "+ {{count}} maanden GRATIS",
+    "next_tier": "Volgende tier pricing:",
+    "collapse_banner": "Banner inklappen",
+    "slots_remaining": "{{remaining}}/{{total}} over",
+    "slots_claimed": "{{percent}}% van slots geclaimd",
+    "slots_remaining_label": "{{remaining}} slots over van {{total}} totaal"
+  },
+  "slot_progress": {
+    "slots_remaining_label": "{{remaining}} van {{total}} {{tier}} slots over",
+    "count_remaining": "{{remaining}}/{{total}} over",
+    "count_left": "{{remaining}}/{{total}} over",
+    "only_left": "• Nog maar {{count}} over!",
+    "only_slots_left": "Nog maar {{count}} slot over",
+    "only_slots_left_plural": "Nog maar {{count}} slots over",
+    "slots_left_at_price": "Nog {{count}} slot over voor {{currency}}",
+    "slots_left_at_price_plural": "Nog {{count}} slots over voor {{currency}}",
+    "slots_remaining_aria": "{{remaining}} slots over van {{total}} totaal",
+    "spots_remaining_cohort": "Nog maar <strong class=\"text-accent-primary text-lg\">{{count}} plekken over</strong> voor Q1 lanceringsgroep"
+  },
+  "value_stacking": {
+    "title": "Complete Platformwaarde",
+    "subtitle": "{{count}} krachtige modules • {{value}}/maand totale waarde",
+    "title_full": "Alles Wat Je Krijgt",
+    "subtitle_full": "Compleet marketingautomatiseringsplatform • {{count}} geïntegreerde modules",
+    "total_value": "totale maandelijkse waarde",
+    "your_price": "Jouw {{tier}} Prijs:",
+    "you_save": "Jij Bespaart:",
+    "savings_vs_individual": "{{percent}}% besparing vs afzonderlijk kopen",
+    "annual_savings": "Jaarlijkse Besparing",
+    "modules": {
+      "campaign_orchestra": {
+        "name": "Campaign Orchestra",
+        "description": "Multi-platform campagne automatisering en planning",
+        "highlights": ["10+ platform integraties", "Slimme planning", "A/B testing"]
+      },
+      "ai_content_studio": {
+        "name": "AI Content Studio",
+        "description": "AI-aangedreven content generatie en copywriting",
+        "highlights": ["GPT-4 integratie", "Brand voice training", "Onbeperkte generatie"]
+      },
+      "ad_builder_pro": {
+        "name": "Ad Builder Pro",
+        "description": "AI video-advertenties met virtuele presentatoren",
+        "highlights": ["AI presentatoren", "Video templates", "Achtergrond verwijdering"]
+      },
+      "analytics_center": {
+        "name": "Analytics Center",
+        "description": "Geavanceerde analytics en ROI tracking dashboard",
+        "highlights": ["Real-time rapportage", "ROI calculator", "Custom metrics"]
+      },
+      "strategy_matrix": {
+        "name": "Strategy Matrix",
+        "description": "AI-aangedreven campagnestrategie en planning",
+        "highlights": ["Perplexity AI onderzoek", "Trend voorspelling", "Concurrent analyse"]
+      },
+      "content_calendar": {
+        "name": "Content Calendar",
+        "description": "Slimme content planning en teamsamenwerking",
+        "highlights": ["Drag-and-drop planning", "Team samenwerking", "Goedkeuringsworkflows"]
+      },
+      "brand_management": {
+        "name": "Brand Management Suite",
+        "description": "Multi-brand asset management en richtlijnen",
+        "highlights": ["Onbeperkte merken", "Asset bibliotheek", "Brand richtlijnen"]
+      },
+      "ai_assistant": {
+        "name": "24/7 AI Marketing Expert",
+        "description": "Persoonlijke AI assistent voor strategie en ondersteuning",
+        "highlights": ["24/7 beschikbaarheid", "Strategieconsultaties", "Best practices"]
+      }
+    }
+  },
+  "errors": {
+    "something_went_wrong": "Er is iets misgegaan",
+    "unexpected_error": "Er is een onverwachte fout opgetreden. We hebben dit probleem geregistreerd en werken aan een oplossing.",
+    "technical_details": "Technische details (alleen development)",
+    "try_again": "Probeer opnieuw",
+    "go_home": "Ga naar home"
+  },
+  "ui": {
+    "total": "Totaal",
+    "average": "Gemiddeld",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "click_to_expand": "Klik om dag uit te vouwen",
+    "click_for_details": "Klik op post voor details",
+    "select_region": "Selecteer een Regio",
+    "select_platforms": "Selecteer platforms om accounts te zien",
+    "create_first_campaign": "Maak je eerste campagne om te beginnen",
+    "no_data_yet": "Nog geen data. Deel de demo om data te verzamelen!",
+    "total_uploaded": "Totaal Geüpload",
+    "total_accounts": "Totaal Accounts",
+    "total_reach": "Totaal Bereik",
+    "average_roi": "Gemiddelde ROI",
+    "total_campaigns": "Totaal Campagnes",
+    "total_in_pipeline": "Totaal in Pipeline",
+    "total_requests": "Totaal Verzoeken",
+    "average_time": "Gemiddelde Tijd",
+    "total_entered": "Totaal Ingevoerd",
+    "total_investment": "Totale Investering",
+    "total_conversions": "Totaal Conversies",
+    "average_campaign_roi": "Gemiddelde Campagne ROI",
+    "total_assignments": "Totaal Toewijzingen",
+    "total_cta_clicks": "Totaal CTA Clicks",
+    "total_impressions": "Totale Impressies"
+  },
+  "custom_build": {
+    "badge": "Custom-Built Process",
+    "title": "Gebouwd VOOR Jou, Niet DOOR Jou",
+    "subtitle": "Elk systeem is op maat gemaakt voor JOUW specifieke bedrijf, branche en workflows",
+    "steps": {
+      "discovery": {
+        "title": "Ontdekking",
+        "description": "We analyseren JOUW specifieke bedrijfsbehoeften"
+      },
+      "custom_build": {
+        "title": "Op Maat Bouwen",
+        "description": "Gebouwd VOOR jouw bedrijf, niet DOOR jou"
+      },
+      "zero_compromises": {
+        "title": "Geen Compromissen",
+        "description": "Geen templates, geen beperkingen"
+      }
+    },
+    "footer_message": "<strong class=\"text-accent-gold\">Geen template.</strong> Elk bedrijf is uniek, en jouw marketingautomatisering zou dat ook moeten zijn. We vragen je niet om aan te passen aan ons systeem - we bouwen het systeem dat zich aanpast aan <strong class=\"text-white\">JOUW</strong> workflow."
+  },
+  "vision": {
+    "badge": "🔮 Vanuit de Toekomst",
+    "title": "Hoe Marketing Gedaan Zal Worden in 2027",
+    "subtitle_line1": "We halen concurrenten niet in.",
+    "subtitle_line2": "<strong class=\"text-white\">We bouwen wat hierna komt.</strong>",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "AI-Ondersteunde Marketing",
+        "description": "ChatGPT helpt met teksten schrijven"
+      },
+      "autonomous": {
+        "year": "2026",
+        "label": "Autonome Marketing",
+        "description": "AI voert volledige campagnes zelfstandig uit"
+      },
+      "standard": {
+        "year": "2027+",
+        "label": "Standaard Praktijk",
+        "description": "Elk bedrijf gebruikt autonome AI"
+      }
+    },
+    "early_adopter_tag": "Early Adopter Kans",
+    "insight_title": "Early Adopters Krijgen 3-5 Jaar Concurrentievoordeel",
+    "insight_salesforce": "<strong class=\"text-white\">Salesforce early adopters (2000s)</strong> → Verhoogden hun verkoopproductiviteit met 10x terwijl concurrenten 5 jaar later volgden.",
+    "insight_ai_tools": "<strong class=\"text-white\">AI tools early adopters (2020-2022)</strong> → Kregen 3-5 jaar voorsprong in contentproductie en automatisering.",
+    "insight_moment": "Dit is dat moment voor autonome marketing.",
+    "cta_message": "Sluit je aan bij de founding teams die de toekomst van marketing <strong class=\"text-white\">vandaag</strong> bouwen, in plaats van te wachten tot het standaardpraktijk wordt in 2027."
+  },
+  "risk_reduction": {
+    "badge": "🤝 Partnership-Gebaseerd",
+    "title": "Waarom Founding Teams Voor Ons Kiezen",
+    "subtitle": "Transparante toezeggingen voor een op maat gebouwd platform",
+    "guarantees": {
+      "success": {
+        "title": "Succes Garantie",
+        "description": "We stoppen niet totdat het werkt. Als het systeem na 3 maanden geen waarde levert, blijven we doorwerken totdat het wel lukt - zonder extra kosten.",
+        "highlight": "We blijven tot je succesvol bent"
+      },
+      "partnership": {
+        "title": "Founder Partnership",
+        "description": "Directe Slack toegang tot founder. Wekelijkse strategie gesprekken. Echte partnership, niet alleen een leverancier.",
+        "highlight": "Jouw succes = Ons succes"
+      },
+      "custom": {
+        "title": "Volledig Op Maat Gebouwd",
+        "description": "Dit is GEEN standaard software. Elk systeem is specifiek op maat gemaakt voor jouw bedrijf, branche en workflows.",
+        "highlight": "Gebouwd voor JOU, niet \"geconfigureerd\""
+      },
+      "trial": {
+        "title": "Trial + Commitment",
+        "description": "3 maanden risicovrije trial. Als het werkt (dat doet het), committeren we samen voor 1 jaar om resultaten te maximaliseren.",
+        "highlight": "Samen groeien, niet maand-tot-maand"
+      }
+    },
+    "footer_message": "<strong class=\"text-white\">Echte partnership, echte commitment.</strong> We bouwen dit samen met 3 founding teams."
+  },
+  "founder_expertise": {
+    "badge": "Gebouwd door Veteranen",
+    "title": "Marketing Automatisering Operators",
+    "subtitle": "Niet de typische SaaS founders - wij zijn <strong class=\"text-white\">operators</strong> die dit autonome marketingsysteem <strong class=\"text-white\">eerst voor onszelf</strong> bouwden.",
+    "credentials": {
+      "experience": {
+        "label": "15+ jaar",
+        "description": "Marketing automatisering ervaring"
+      },
+      "founding_teams": {
+        "label": "3 founding teams",
+        "description": "Samen bouwen (Q1 2026)"
+      },
+      "early_adopters": {
+        "label": "Sinds 2020",
+        "description": "Vroege AI adopters"
+      },
+      "operators": {
+        "label": "Operators",
+        "description": "Eerst voor onszelf gebouwd"
+      }
+    },
+    "expertise_p1": "We hebben <strong class=\"text-white\">15+ jaar</strong> ervaring in marketing automatisering en kennen de pijn: meerdere kanalen beheren, eindeloze content creëren, en worstelen om te schalen zonder enorme teams.",
+    "expertise_p2": "Daarom bouwden we FutureMarketingAI - <strong class=\"text-white\">het systeem dat we altijd al wilden hebben</strong>. Nu lanceren we met 3 founding teams in Q1 2026.",
+    "trust_badge": "Vroege AI adopters • Marketing automatisering experts • Gebouwd door operators, voor operators"
+  },
+  "technical_showcase": {
+    "badge": "Bekijk de Technologie",
+    "title": "Niet Zomaar Een Chatbot",
+    "subtitle": "Echte autonome AI met <strong>multi-agent architectuur</strong>",
+    "tech_stats": {
+      "agents": {
+        "value": "9",
+        "label": "Autonome AI Agents"
+      },
+      "models": {
+        "value": "4",
+        "label": "Foundation Modellen"
+      },
+      "operation": {
+        "value": "24/7",
+        "label": "Continue Werking"
+      }
+    },
+    "agents": {
+      "research": {
+        "name": "Research Agent",
+        "status": "actief"
+      },
+      "content": {
+        "name": "Content Agent",
+        "status": "actief"
+      },
+      "analytics": {
+        "name": "Analytics Agent",
+        "status": "monitoren"
+      },
+      "publishing": {
+        "name": "Publishing Agent",
+        "status": "actief"
+      },
+      "orchestrator": {
+        "name": "Orchestrator",
+        "status": "coördineren"
+      }
+    }
+  },
+  "early_adopter_benefits": {
+    "founder_pricing": "Lock <strong class=\"text-white\">founder pricing</strong> voor altijd",
+    "team_size": "Perfect voor teams van <strong class=\"text-white\">10-50 mensen</strong>",
+    "founder_access": "Directe <strong class=\"text-white\">founder toegang</strong> via Slack",
+    "shape_product": "Vorm het product <strong class=\"text-white\">met ons</strong> mee"
+  },
+  "notification_center": {
+    "title": "Notificaties",
+    "unread_count": "{{count}} ongelezen bericht",
+    "unread_count_plural": "{{count}} ongelezen berichten",
+    "mark_all_read": "Alles als gelezen markeren",
+    "clear_all": "Alles wissen",
+    "empty": {
+      "title": "Nog geen notificaties",
+      "subtitle": "Je bent helemaal bij!"
+    }
+  },
+  "cookie_consent": {
+    "title": "We respecteren je privacy",
+    "description": "We gebruiken cookies om je ervaring te verbeteren en om te begrijpen hoe je onze demo gebruikt. Je kunt accepteren of weigeren.",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "privacy_policy": "Privacybeleid"
+  },
+  "footer": {
+    "privacy_policy": "Privacybeleid",
+    "cookie_policy": "Cookiebeleid",
+    "terms": "Voorwaarden",
+    "delete_my_data": "Verwijder Mijn Data",
+    "delete_confirm": "Weet je het zeker?",
+    "data_deleted_success": "Je data is succesvol verwijderd. De pagina wordt opnieuw geladen.",
+    "data_deleted_error": "Er is iets misgegaan bij het verwijderen van je data. Probeer het opnieuw.",
+    "all_rights_reserved": "Alle rechten voorbehouden.",
+    "demo_notice": "Dit is een interactieve demo. Je data wordt lokaal opgeslagen en niet gedeeld met derden."
+  }
+}

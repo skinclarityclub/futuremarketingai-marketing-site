@@ -1,0 +1,1043 @@
+# Product Requirements Document: SystemDiagram 3.0 - Hybrid Supreme Edition
+
+## Executive Summary
+Transform the current SystemDiagram component from a basic 2D visualization into a premium, jaw-dropping "wow moment" that showcases FutureMarketingAI as a cutting-edge, futuristic platform. This upgrade implements a hybrid 3D/2.5D architecture combining Three.js for the central AI Core with enhanced Canvas API and shader-based effects for satellite nodes.
+
+## Project Overview
+
+### Current State (v1.0)
+- Basic SVG circles with simple glow effects
+- ~12 canvas particles moving along straight lines
+- Straight dashed connection lines
+- Simple hover states (scale + opacity)
+- Minimal visual depth or dimension
+- **Problem**: Too 2D, too static, insufficient wow-factor for a "Future" marketing platform
+
+### Target State (v3.0 - Hybrid Supreme)
+- **3D rotating AI Core** sphere at center (Three.js)
+- **2.5D satellite nodes** with glassmorphic depth layers
+- **500+ particle system** with multiple types and behaviors
+- **Bezier curve connections** with animated energy beams
+- **Advanced shader effects** for glow and lighting
+- **Rich micro-interactions** with spring animations
+- **Holographic UI overlays** with scan line effects
+- **Mouse parallax** and responsive camera
+- **Performance optimized** for 60fps on modern devices
+
+### Success Metrics
+- Visual wow-factor: 9/10 (subjective assessment from stakeholders)
+- Performance: Maintains 60fps on devices from 2020+
+- Accessibility: Full keyboard navigation and screen reader support maintained
+- Mobile responsiveness: Graceful degradation on smaller screens
+- Load time: <500ms for initial render
+- Bundle size increase: <150KB gzipped
+
+## Technical Architecture
+
+### Technology Stack
+
+#### New Dependencies
+```json
+{
+  "three": "^0.160.0",
+  "@react-three/fiber": "^8.15.0",
+  "@react-three/drei": "^9.92.0",
+  "gsap": "^3.12.0"
+}
+```
+
+#### Component Structure
+```
+SystemDiagram3.tsx (main component)
+├── CoreSphere3D.tsx (Three.js rotating sphere)
+├── SatelliteNode.tsx (Enhanced 2D nodes with layers)
+├── ParticleSystem.tsx (Canvas-based particle engine)
+├── ConnectionBeam.tsx (Bezier curves with flow)
+├── HolographicOverlay.tsx (UI panels and effects)
+└── shaders/
+    ├── glowShader.ts
+    ├── energyBeamShader.ts
+    └── hologramShader.ts
+```
+
+### Visual Layers (Bottom to Top)
+
+#### Layer 1: Animated Background
+- **Component**: BackgroundGrid
+- **Features**:
+  - Tron-style animated grid lines
+  - Radial gradient from center (dark blue → deep purple)
+  - Subtle noise/grain overlay
+  - Neural network pattern fading in/out
+  - Mouse position responsive (parallax offset)
+- **Tech**: CSS + Canvas
+- **Performance**: <5% CPU
+
+#### Layer 2: Ambient Particles
+- **Component**: AmbientParticleField
+- **Features**:
+  - 100+ slow-moving background particles
+  - Various sizes (1-4px)
+  - Opacity variation (0.1-0.4)
+  - Gentle drift motion
+  - Depth simulation via size/opacity
+- **Tech**: Canvas API with requestAnimationFrame
+- **Performance**: <10% CPU
+
+#### Layer 3: Connection Beams
+- **Component**: ConnectionBeam
+- **Features**:
+  - Bezier curves (not straight lines)
+  - Glowing energy beam effect (3px → 1px gradient)
+  - Animated flow direction
+  - Multi-color gradient along path
+  - Occasional "spark" particles on sides
+  - Pulsing intensity
+- **Tech**: SVG paths + Canvas particles
+- **Performance**: <15% CPU
+- **Count**: 4 beams (core to each satellite)
+
+#### Layer 4: Data Stream Particles
+- **Component**: DataStreamParticles
+- **Features**:
+  - 50+ particles per connection (200 total)
+  - Various speeds (simulate data packets)
+  - Motion blur trails
+  - Size variation
+  - Color matches destination node
+  - Accelerate/decelerate along curve
+- **Tech**: Canvas API with velocity-based physics
+- **Performance**: <20% CPU
+
+#### Layer 5: 3D AI Core
+- **Component**: CoreSphere3D
+- **Features**:
+  - Rotating 3D sphere (continuous slow rotation)
+  - Inner glow effect (shader-based)
+  - Wireframe overlay (rotating counter to sphere)
+  - Pulsing outer ring
+  - Particle orbit system (20 particles)
+  - Mouse parallax rotation
+  - Volumetric lighting
+- **Tech**: Three.js + React Three Fiber
+- **Performance**: <25% CPU
+- **Size**: Diameter 120px (viewport relative)
+
+#### Layer 6: Satellite Nodes
+- **Component**: SatelliteNode
+- **Features**:
+  - **Structure** (3 concentric layers):
+    1. Outer ring: Slow rotation, dotted border
+    2. Middle ring: Counter-rotation, color gradient
+    3. Center: Pulsing icon/symbol
+  - Glassmorphic background (backdrop-filter: blur)
+  - Drop shadow for depth
+  - Orbital particle system (20 particles per node)
+  - Breathing animation (subtle scale pulse)
+- **Tech**: SVG + CSS 3D transforms + Canvas
+- **Performance**: <15% CPU
+- **Count**: 4 nodes (Content Gen, Analytics, Automation, Insights)
+
+#### Layer 7: Holographic Overlays
+- **Component**: HolographicInfoPanel
+- **Features**:
+  - Slide-in info panels on hover
+  - Scan line animation effect
+  - Glassmorphic card design
+  - Color-coded borders (matching node)
+  - Data/stats visualization
+  - Smooth GSAP animations
+- **Tech**: React + GSAP + CSS
+- **Performance**: <5% CPU
+
+## Detailed Feature Specifications
+
+### Feature 1: 3D AI Core Sphere
+
+#### Visual Requirements
+- **Geometry**: Icosphere (detail level 4)
+- **Material**: 
+  - Base: Semi-transparent cyan (#00D4FF, opacity 0.3)
+  - Emission: Glowing cyan center
+  - Wireframe overlay: White lines, 0.5 opacity
+- **Rotation**: 
+  - Continuous Y-axis rotation (0.2 deg/frame)
+  - X-axis tilt based on mouse Y position (-15° to +15°)
+  - Z-axis rotation based on mouse X position (-15° to +15°)
+- **Inner Glow**:
+  - Custom fragment shader
+  - Fresnel effect (brighter on edges)
+  - Pulsing intensity (2s cycle)
+- **Outer Rings** (2 rings):
+  - Ring 1: Radius 1.5x, horizontal, slow rotation
+  - Ring 2: Radius 1.8x, vertical, counter-rotation
+  - Dotted line pattern
+  - Pulsing glow
+
+#### Interaction Behaviors
+- **Mouse Hover**: 
+  - Rotation speed increases 50%
+  - Glow intensity +20%
+  - Particle orbit accelerates
+- **Mouse Move**: 
+  - Parallax rotation (smooth lerp, 0.1 damping)
+  - Camera slight zoom (5% scale)
+- **Click**: 
+  - Particle burst effect (50 particles explode outward)
+  - Info panel appears
+  - Pulse wave emanates to all connections
+- **Idle State**:
+  - Gentle breathing scale (0.98 → 1.02, 3s cycle)
+  - Periodic energy pulse (every 5s)
+
+#### Technical Implementation
+```typescript
+// Shader pseudo-code
+const coreVertexShader = `
+  varying vec3 vNormal;
+  varying vec3 vPosition;
+  void main() {
+    vNormal = normalize(normalMatrix * normal);
+    vPosition = position;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
+
+const coreFragmentShader = `
+  uniform float time;
+  uniform vec3 color;
+  varying vec3 vNormal;
+  varying vec3 vPosition;
+  
+  void main() {
+    // Fresnel effect
+    float fresnel = pow(1.0 - dot(vNormal, vec3(0, 0, 1)), 2.0);
+    
+    // Pulsing
+    float pulse = sin(time * 2.0) * 0.3 + 0.7;
+    
+    // Inner glow
+    float glow = length(vPosition) * 0.5;
+    
+    vec3 finalColor = color * (fresnel + glow) * pulse;
+    gl_FragColor = vec4(finalColor, 0.8);
+  }
+`;
+```
+
+### Feature 2: Enhanced Satellite Nodes
+
+#### Visual Structure (Per Node)
+Each node consists of 5 sub-components:
+
+##### 1. Backdrop Shadow
+- Size: 110% of node
+- Blur: 20px
+- Color: Node color at 20% opacity
+- Offset: 2px down (depth effect)
+
+##### 2. Outer Ring
+- Radius: 48px
+- Stroke: 2px dotted
+- Color: Node color at 40% opacity
+- Animation: Rotate 360° in 20s (clockwise)
+- Pattern: 20 dots evenly spaced
+
+##### 3. Middle Ring
+- Radius: 40px
+- Stroke: 3px solid gradient
+- Gradient: Node color 100% → 30% (radial)
+- Animation: Rotate 360° in 15s (counter-clockwise)
+- Effect: Glassmorphic blur
+
+##### 4. Center Circle
+- Radius: 32px
+- Fill: Glassmorphic background
+  - backdrop-filter: blur(10px)
+  - background: node color at 10% opacity
+  - border: 1px solid node color at 50%
+- Breathing animation: Scale 0.95 → 1.05 (3s cycle)
+
+##### 5. Icon/Symbol
+- SVG icon representing module function
+- Size: 20x20px
+- Color: White
+- Animation: Gentle float (2px up/down, 2.5s cycle)
+
+##### 6. Orbital Particles (20 per node)
+- Orbit radius: 50-60px (varying)
+- Size: 2-4px
+- Speed: Various (0.5-2 deg/frame)
+- Opacity: 0.4-0.8 (pulsing)
+- Trail effect: Motion blur
+
+#### Hover State Transformation
+**Duration**: 300ms
+**Easing**: Spring (stiffness: 200, damping: 20)
+
+**Changes**:
+- Scale: 1.0 → 1.15
+- Outer ring: Rotation speed +50%, opacity 40% → 70%
+- Middle ring: Rotation speed +50%, opacity 100%
+- Center circle: Background opacity 10% → 25%, border 50% → 100%
+- Icon: Scale 1.0 → 1.1, color white → node color
+- Orbital particles: Speed +100%, count +10, size +1px
+- Shadow: Blur 20px → 30px, opacity +10%
+- Connected beams: Intensity +50%
+- Info panel: Slide in from right (200ms delay)
+
+#### Click State
+- Lock hover state
+- Other nodes: Fade to 30% opacity
+- Camera: Subtle zoom toward node (5%)
+- Particle burst: 30 particles explode from center
+- Info panel: Expand with data visualization
+- Connected beams: Full intensity pulsing animation
+
+### Feature 3: Connection Energy Beams
+
+#### Geometry
+- **Path Type**: Cubic Bezier curve
+- **Control Points** (per connection):
+  - Start: AI Core center
+  - CP1: 25% toward destination, offset perpendicular 15px
+  - CP2: 75% toward destination, offset perpendicular -15px
+  - End: Satellite node center
+- **Result**: Smooth S-curve with natural flow feel
+
+#### Visual Rendering
+
+##### Base Beam (SVG)
+- Path: Bezier curve
+- Stroke width: 3px at core → 1px at node (gradient)
+- Color: Multi-stop gradient
+  - 0%: AI Core color (cyan) at 80%
+  - 50%: Blend (transition color)
+  - 100%: Node color at 100%
+- Glow: filter: drop-shadow(0 0 4px color)
+
+##### Flow Animation
+- Stroke-dasharray: 10px 5px
+- Stroke-dashoffset: Animated 0 → -15px (1.5s loop)
+- Creates flowing "energy" effect
+
+##### Side Sparks (Canvas)
+- **Count**: 10-15 per beam
+- **Behavior**: 
+  - Spawn randomly along beam path
+  - Move perpendicular to path (5-10px)
+  - Fade out over 0.5s
+  - Respawn at random intervals (0.3-1s)
+- **Visual**: Small bright dot (1-2px)
+- **Color**: Node color at 100% opacity
+
+##### Pulsing Intensity
+- Base opacity: 60%
+- Pulse: 60% → 100% → 60% (2s cycle)
+- Triggers: Automatic, accelerates on core hover
+
+#### Interaction States
+
+**Idle**: 
+- Flow speed: 1.5s per cycle
+- Opacity: 60%
+- Sparks: 10 per beam
+
+**Node Hovered**:
+- Connected beams only:
+  - Flow speed: 1.0s per cycle (50% faster)
+  - Opacity: 90%
+  - Stroke width: +0.5px
+  - Sparks: 20 per beam
+  - Glow: Intensified (+2px blur)
+
+**Node Clicked**:
+- Connected beams only:
+  - Flow speed: 0.5s per cycle
+  - Opacity: 100%
+  - Pulsing disabled (stays full brightness)
+  - Sparks: 30 per beam
+  - Glow: Maximum (+4px blur)
+  - Other beams: Fade to 20% opacity
+
+### Feature 4: Advanced Particle System
+
+#### Particle Types & Counts
+
+##### Type 1: Ambient Background (100 particles)
+**Purpose**: Create depth and atmosphere
+**Properties**:
+- Size: 1-4px (random distribution)
+- Opacity: 0.1-0.4 (random)
+- Color: White with slight blue tint
+- Speed: 0.1-0.3 px/frame (very slow)
+- Direction: Random, gentle drift
+- Behavior: Brownian motion (random walk)
+- Lifetime: Infinite (respawn at edges)
+
+##### Type 2: Data Stream (50 per connection = 200 total)
+**Purpose**: Visualize data flowing through system
+**Properties**:
+- Size: 2-3px
+- Opacity: 0.6-1.0
+- Color: Matches destination node color
+- Speed: Variable (simulates packet sizes)
+  - Small packets: 2-3 px/frame
+  - Large packets: 1-2 px/frame
+- Path: Follows Bezier curve exactly
+- Behavior: 
+  - Accelerate at start (ease-in)
+  - Constant speed in middle
+  - Decelerate at end (ease-out)
+- Lifetime: One journey (core → node)
+- Respawn: Random interval (0.5-2s)
+- Trail: Motion blur (3-5 frames)
+
+##### Type 3: Orbital (20 per node + 20 for core = 100 total)
+**Purpose**: Dynamic energy field around modules
+**Properties**:
+- Size: 2-4px
+- Opacity: 0.4-0.8 (pulsing)
+- Color: Matches parent node color
+- Speed: 0.5-2 deg/frame (various)
+- Orbit radius: Node radius + 10-20px (varying)
+- Behavior:
+  - Circular orbit around parent
+  - Each particle at different angle
+  - Some clockwise, some counter-clockwise
+  - Occasional orbit radius variation (wobble)
+- Lifetime: Infinite
+
+##### Type 4: Burst (on interaction)
+**Purpose**: Explosive visual feedback
+**Properties**:
+- Trigger: Node click or special events
+- Count: 30-50 per burst
+- Size: 2-6px (varies)
+- Opacity: 1.0 → 0.0 (fade)
+- Color: Source node color
+- Speed: 5-15 px/frame (radial outward)
+- Direction: Random 360° spread
+- Behavior:
+  - Explosive spawn
+  - Radial outward motion
+  - Decelerate over time (friction)
+  - Fade out simultaneously
+- Lifetime: 1.5s
+
+#### Particle Rendering Optimization
+
+##### Performance Techniques
+1. **Object Pooling**: Reuse particle objects instead of creating/destroying
+2. **Offscreen Culling**: Don't render particles outside viewport
+3. **Level of Detail**: Reduce particle count on lower-end devices
+4. **RequestAnimationFrame**: Synchronized with display refresh
+5. **WebWorker** (optional): Calculate particle physics in separate thread
+
+##### Render Pipeline
+```typescript
+// Pseudo-code
+function renderParticles(ctx: CanvasRenderingContext2D, particles: Particle[]) {
+  particles.forEach(particle => {
+    if (!isInViewport(particle)) return; // Culling
+    
+    // Motion blur trail
+    if (particle.type === 'data-stream') {
+      drawTrail(ctx, particle);
+    }
+    
+    // Glow effect
+    const gradient = ctx.createRadialGradient(
+      particle.x, particle.y, 0,
+      particle.x, particle.y, particle.size * 2
+    );
+    gradient.addColorStop(0, particle.color + 'FF');
+    gradient.addColorStop(0.5, particle.color + '80');
+    gradient.addColorStop(1, particle.color + '00');
+    
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Core particle
+    ctx.fillStyle = particle.color;
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+```
+
+### Feature 5: Holographic Info Panels
+
+#### Design Specifications
+
+##### Panel Structure
+**Dimensions**: 300px wide × 200px tall
+**Position**: Slides in from right side of hovered node
+
+**Visual Layers**:
+1. **Background**:
+   - Glassmorphic card (backdrop-filter: blur(12px))
+   - Background: rgba(0, 0, 0, 0.6)
+   - Border: 1px solid node color at 50%
+   - Border radius: 12px
+   - Box shadow: 0 8px 32px rgba(0, 0, 0, 0.4)
+
+2. **Scan Lines Effect**:
+   - Repeating horizontal lines (2px spacing)
+   - Opacity: 0.05
+   - Animation: Vertical scroll (slow, 3s infinite)
+   - Creates holographic feel
+
+3. **Color Accent Bar**:
+   - Top border: 3px solid node color
+   - Animated gradient: Node color → transparent (left to right)
+   - Pulsing opacity: 0.7 → 1.0 (1.5s cycle)
+
+4. **Content Area**:
+   - Padding: 20px
+   - Title: Node name, 18px, bold, node color
+   - Description: 14px, white, 0.8 opacity
+   - Stats/Data: Varies per node
+
+##### Animation Sequence
+**Trigger**: Node hover
+**Delay**: 150ms
+**Duration**: 350ms
+**Easing**: Cubic-bezier(0.34, 1.56, 0.64, 1) (overshoot)
+
+**Keyframes**:
+```
+0%: 
+  - translate-x: 100% (off-screen right)
+  - opacity: 0
+  - scale: 0.9
+
+100%:
+  - translate-x: 0
+  - opacity: 1
+  - scale: 1
+```
+
+**Exit**:
+- Duration: 200ms
+- Easing: ease-in
+- Reverse of entry
+
+##### Per-Node Content
+
+**AI Core**:
+- Title: "Central Intelligence Hub"
+- Stats:
+  - Active Processes: 247 (animated counter)
+  - System Status: "Optimal" (green indicator)
+  - Uptime: "99.9%" (progress ring)
+- Mini neural network visualization
+
+**Content Gen**:
+- Title: "AI Content Engine"
+- Stats:
+  - Content Generated: 1,234 (counter)
+  - Quality Score: 94% (progress bar)
+  - Languages: 12 (badge)
+- Sample content preview animation
+
+**Analytics**:
+- Title: "Real-Time Analytics"
+- Stats:
+  - Data Points: 15.7K (counter)
+  - Accuracy: 98% (gauge chart)
+  - Refresh Rate: 2.3s (pulse indicator)
+- Mini line chart (last 10 data points)
+
+**Automation**:
+- Title: "Workflow Automation"
+- Stats:
+  - Active Workflows: 34 (counter)
+  - Success Rate: 96% (progress circle)
+  - Time Saved: 127h (badge)
+- Flow diagram animation
+
+**Insights**:
+- Title: "Predictive Insights"
+- Stats:
+  - Predictions: 89 (counter)
+  - Confidence: 92% (gauge)
+  - ROI Impact: +34% (trend arrow)
+- Mini bar chart (predictions accuracy)
+
+### Feature 6: Mouse Interactions & Micro-animations
+
+#### Global Mouse Tracking
+**System**: Centralized mouse position tracker
+**Update Rate**: 60fps (requestAnimationFrame)
+**Smoothing**: Lerp with 0.1 damping for smooth following
+
+#### Parallax Effects
+
+##### Background Grid
+- Mouse move → offset: ±20px (X and Y)
+- Damping: 0.15
+- Creates depth separation
+
+##### Ambient Particles
+- Mouse move → offset: ±10px
+- Damping: 0.2
+- Slower than grid (more depth)
+
+##### 3D Core
+- Mouse X → rotation Y: ±15°
+- Mouse Y → rotation X: ±15°
+- Damping: 0.1
+- Creates "following" effect
+
+##### Satellite Nodes
+- Mouse move → offset: ±5px
+- Damping: 0.25
+- Subtle "floating" feeling
+
+#### Idle State Animations
+
+##### When No Interaction (>3s)
+1. **Breathing Animation**:
+   - All nodes: Scale 0.98 → 1.02 (3s cycle, stagger by 0.5s)
+   - Core sphere: Scale 0.95 → 1.05 (3.5s cycle)
+
+2. **Energy Pulse**:
+   - Every 5 seconds
+   - Emanates from core
+   - Visible wave travels along all beams
+   - Particles intensity spike briefly
+
+3. **Orbital Speed Variation**:
+   - Orbital particles randomly speed up/slow down
+   - Creates organic, living system feel
+
+4. **Ambient Particle Clustering**:
+   - Occasionally particles drift toward nearest node
+   - Then scatter again
+   - Simulates magnetic field
+
+#### Scroll Interactions
+**Trigger**: Window scroll event
+**Throttle**: 16ms (60fps max)
+
+**Effects**:
+- **3D Core Rotation**:
+  - Scroll down → rotate clockwise (Y-axis)
+  - Scroll up → rotate counter-clockwise
+  - Amount: 1° per 10px scroll
+  - Max: ±45° from center
+  - Smooth lerp back to center when scroll stops
+
+- **Perspective Shift**:
+  - Entire diagram tilts slightly with scroll
+  - Creates 3D depth effect
+
+### Feature 7: Responsive Design & Performance
+
+#### Breakpoints & Adaptations
+
+##### Desktop (>1200px)
+- Full feature set
+- All 500+ particles active
+- 60fps target
+- Full interaction support
+
+##### Tablet (768px - 1200px)
+- Reduce particles to 300
+- Smaller panel sizes (250px)
+- Maintain core 3D features
+- 60fps target
+
+##### Mobile (< 768px)
+- Reduce particles to 150
+- No holographic panels (tap shows modal instead)
+- Simplified 3D core (lower poly count)
+- Touch-optimized interactions
+- 30fps acceptable
+
+#### Performance Optimizations
+
+##### Techniques Applied
+1. **Debouncing**: Mouse move events debounced to 16ms
+2. **Throttling**: Scroll events throttled
+3. **Will-change CSS**: Applied to animated elements
+4. **Transform3d**: Force GPU acceleration
+5. **Particle Pooling**: Reuse objects
+6. **RAF Optimization**: Single requestAnimationFrame loop
+7. **Visibility Detection**: Pause when off-screen (Intersection Observer)
+8. **Reduced Motion**: Respect prefers-reduced-motion
+
+##### Performance Budget
+- **Initial Load**: < 500ms
+- **FPS**: 60fps sustained (desktop), 30fps minimum (mobile)
+- **CPU Usage**: < 30% average on 2020 mid-range CPU
+- **GPU Usage**: < 40% on integrated graphics
+- **Memory**: < 100MB additional
+- **Bundle Size**: < 150KB gzipped for new dependencies
+
+#### Accessibility Maintained
+
+##### Requirements
+- **Keyboard Navigation**: All nodes focusable and interactive
+- **Screen Readers**: Proper ARIA labels and descriptions
+- **Focus Indicators**: Visible focus states
+- **Reduced Motion**: Full fallback for prefers-reduced-motion
+- **Color Contrast**: Minimum 4.5:1 for all text
+- **Touch Targets**: Minimum 44×44px for mobile
+
+##### Reduced Motion Mode
+When `prefers-reduced-motion: reduce`:
+- Disable all continuous animations
+- Keep particle count to 50
+- No rotation animations
+- Simple fade transitions instead of slides
+- Static 3D core (no rotation)
+- Instant hover states (no spring animations)
+
+## Implementation Phases
+
+### Phase 1: Foundation & 3D Core (Priority: High)
+**Estimated Time**: 3 hours
+
+**Tasks**:
+1. Install Three.js dependencies
+2. Create CoreSphere3D component
+3. Implement basic 3D rotating sphere
+4. Add custom shaders for glow effect
+5. Implement mouse parallax rotation
+6. Add outer rotating rings
+7. Basic particle orbit system
+
+**Deliverables**:
+- Functional 3D core sphere
+- Mouse interaction working
+- Basic visual appeal established
+
+### Phase 2: Enhanced Particle System (Priority: High)
+**Estimated Time**: 2.5 hours
+
+**Tasks**:
+1. Create ParticleSystem component architecture
+2. Implement particle object pooling
+3. Add ambient background particles (Type 1)
+4. Add data stream particles (Type 2)
+5. Implement orbital particles (Type 3)
+6. Add burst particles (Type 4)
+7. Optimize rendering pipeline
+
+**Deliverables**:
+- 500+ particle system active
+- All 4 particle types functional
+- Performance optimized (60fps)
+
+### Phase 3: Bezier Connections & Energy Beams (Priority: High)
+**Estimated Time**: 2 hours
+
+**Tasks**:
+1. Create ConnectionBeam component
+2. Calculate Bezier curve paths
+3. Implement SVG gradient rendering
+4. Add animated flow effect (dashoffset)
+5. Create side spark particles
+6. Add pulsing intensity animation
+7. Implement interaction states (hover/click)
+
+**Deliverables**:
+- Smooth curved connections
+- Flowing energy beam effect
+- Interactive beam states
+
+### Phase 4: Glassmorphic Satellite Nodes (Priority: Medium)
+**Estimated Time**: 2 hours
+
+**Tasks**:
+1. Refactor SatelliteNode component
+2. Create 3-layer ring structure
+3. Implement glassmorphic styling
+4. Add counter-rotating animations
+5. Create drop shadow depth effect
+6. Implement breathing animation
+7. Add icon/symbol layer
+
+**Deliverables**:
+- Premium looking satellite nodes
+- Layered depth effect
+- Smooth animations
+
+### Phase 5: Holographic Info Panels (Priority: Medium)
+**Estimated Time**: 2.5 hours
+
+**Tasks**:
+1. Create HolographicInfoPanel component
+2. Design glassmorphic card layout
+3. Implement scan line effect
+4. Add slide-in animation (GSAP)
+5. Create per-node content layouts
+6. Add mini data visualizations
+7. Implement show/hide logic
+
+**Deliverables**:
+- Functional info panels
+- Unique content per node
+- Smooth animations
+
+### Phase 6: Mouse Interactions & Micro-animations (Priority: Low)
+**Estimated Time**: 1.5 hours
+
+**Tasks**:
+1. Create centralized mouse tracker
+2. Implement parallax on all layers
+3. Add scroll-based 3D rotation
+4. Create idle state animations
+5. Implement energy pulse effect
+6. Add particle clustering behavior
+7. Fine-tune all timing/easing
+
+**Deliverables**:
+- Rich interactive experience
+- Polished micro-interactions
+- Living, breathing system feel
+
+### Phase 7: Optimization & Polish (Priority: Medium)
+**Estimated Time**: 2 hours
+
+**Tasks**:
+1. Implement responsive breakpoints
+2. Add mobile touch optimizations
+3. Create reduced motion fallback
+4. Performance profiling & optimization
+5. Accessibility testing & fixes
+6. Cross-browser testing
+7. Final visual polish
+
+**Deliverables**:
+- 60fps performance
+- Mobile responsive
+- Fully accessible
+- Production ready
+
+## Testing Strategy
+
+### Visual QA
+- Screenshot comparison (before/after)
+- Stakeholder review for wow-factor
+- Color accuracy verification
+- Animation smoothness check
+
+### Performance Testing
+- Lighthouse performance score >90
+- FPS monitoring (Chrome DevTools)
+- Memory leak detection
+- CPU/GPU usage profiling
+- Bundle size verification
+
+### Functional Testing
+- All interactions work (hover, click, scroll)
+- Particle systems stable (no crashes)
+- 3D rendering correct across browsers
+- Responsive layouts functional
+
+### Accessibility Testing
+- Keyboard navigation complete
+- Screen reader compatibility (NVDA, JAWS)
+- Focus indicators visible
+- Reduced motion mode functional
+- Color contrast verified (WCAG AA)
+
+### Browser Compatibility
+- Chrome 90+ (primary)
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- Mobile Safari (iOS 14+)
+- Chrome Mobile (Android 10+)
+
+## Risks & Mitigations
+
+### Risk 1: Performance on Lower-End Devices
+**Mitigation**: 
+- Progressive enhancement approach
+- Detect GPU capabilities and scale features
+- Provide simplified fallback mode
+- Extensive testing on mid-range devices
+
+### Risk 2: Three.js Bundle Size
+**Mitigation**:
+- Tree-shake unused Three.js modules
+- Only import required components
+- Code-split 3D core into separate chunk
+- Lazy load on viewport entry
+
+### Risk 3: Browser Compatibility Issues
+**Mitigation**:
+- Use well-supported WebGL features only
+- Provide Canvas 2D fallback for 3D core
+- Extensive cross-browser testing
+- Polyfills for older browsers
+
+### Risk 4: Accessibility Degradation
+**Mitigation**:
+- Maintain semantic HTML structure
+- Keep ARIA labels comprehensive
+- Test with actual screen readers
+- Full keyboard navigation preserved
+
+### Risk 5: Development Time Overrun
+**Mitigation**:
+- Phased approach allows incremental delivery
+- Each phase delivers value independently
+- Can ship early phases if time constrained
+- Clear priority levels (High/Medium/Low)
+
+## Success Criteria
+
+### Must Have (Launch Blockers)
+- ✅ 3D rotating AI Core functional
+- ✅ 500+ particle system active
+- ✅ Bezier curve connections with flow
+- ✅ Enhanced satellite nodes with layers
+- ✅ 60fps on modern desktop (2020+)
+- ✅ Mobile responsive (graceful degradation)
+- ✅ Accessibility maintained
+- ✅ No critical bugs
+
+### Should Have (High Priority)
+- ✅ Holographic info panels
+- ✅ Mouse parallax effects
+- ✅ Scroll interactions
+- ✅ Idle state animations
+- ✅ Reduced motion support
+- ✅ Cross-browser compatibility
+
+### Nice to Have (Enhancement)
+- ✅ Sound design (subtle sci-fi sounds)
+- ✅ Custom cursor effects
+- ✅ WebGL post-processing effects
+- ✅ Additional particle behaviors
+- ✅ Theme variations (color schemes)
+
+## Deployment Plan
+
+### Pre-deployment Checklist
+- [ ] All phases completed and tested
+- [ ] Performance benchmarks met
+- [ ] Accessibility audit passed
+- [ ] Cross-browser testing complete
+- [ ] Stakeholder approval received
+- [ ] Bundle size verified
+- [ ] Documentation updated
+
+### Rollout Strategy
+1. **Dev Environment**: Deploy to dev for internal testing
+2. **Staging**: Full QA testing environment
+3. **A/B Test** (optional): 50% traffic to new version
+4. **Production**: Full rollout after validation
+
+### Monitoring Post-Deploy
+- Performance metrics (FPS, load time)
+- User engagement (hover/click rates)
+- Error tracking (Sentry/similar)
+- Browser/device analytics
+- User feedback collection
+
+## Appendix
+
+### Color Palette Reference
+```typescript
+const COLORS = {
+  core: {
+    primary: '#00D4FF',    // Cyan
+    glow: 'rgba(0, 212, 255, 0.6)',
+  },
+  contentGen: {
+    primary: '#A855F7',    // Purple
+    glow: 'rgba(168, 85, 247, 0.4)',
+  },
+  analytics: {
+    primary: '#00FF88',    // Green
+    glow: 'rgba(0, 255, 136, 0.4)',
+  },
+  automation: {
+    primary: '#FF6B9D',    // Pink
+    glow: 'rgba(255, 107, 157, 0.4)',
+  },
+  insights: {
+    primary: '#FFA500',    // Orange
+    glow: 'rgba(255, 165, 0, 0.4)',
+  },
+  background: {
+    dark: '#0A0E27',       // Deep blue-black
+    grid: 'rgba(0, 212, 255, 0.1)',
+  },
+};
+```
+
+### Animation Timing Reference
+```typescript
+const TIMINGS = {
+  particleSpeed: {
+    ambient: 0.1,         // px/frame
+    dataStream: 2.0,      // px/frame
+    orbital: 1.0,         // degrees/frame
+    burst: 10.0,          // px/frame initial
+  },
+  rotations: {
+    core: 0.2,            // deg/frame
+    outerRing: 0.3,       // deg/frame
+    middleRing: -0.5,     // deg/frame (counter)
+  },
+  transitions: {
+    hover: 300,           // ms
+    panel: 350,           // ms
+    click: 200,           // ms
+  },
+  cycles: {
+    breathing: 3000,      // ms
+    pulse: 2000,          // ms
+    energyPulse: 5000,    // ms (interval)
+  },
+};
+```
+
+### Component File Structure
+```
+src/
+├── components/
+│   ├── SystemDiagram3/
+│   │   ├── index.tsx                 (main component)
+│   │   ├── CoreSphere3D.tsx          (Three.js core)
+│   │   ├── SatelliteNode.tsx         (enhanced nodes)
+│   │   ├── ParticleSystem.tsx        (particle engine)
+│   │   ├── ConnectionBeam.tsx        (energy beams)
+│   │   ├── HolographicPanel.tsx      (info overlays)
+│   │   ├── BackgroundGrid.tsx        (animated bg)
+│   │   ├── hooks/
+│   │   │   ├── useMousePosition.ts
+│   │   │   ├── useParticlePool.ts
+│   │   │   └── usePerformance.ts
+│   │   ├── shaders/
+│   │   │   ├── coreGlow.ts
+│   │   │   ├── energyBeam.ts
+│   │   │   └── hologram.ts
+│   │   ├── utils/
+│   │   │   ├── bezier.ts
+│   │   │   ├── particles.ts
+│   │   │   └── performance.ts
+│   │   ├── types.ts
+│   │   └── constants.ts
+│   └── SystemDiagram.tsx             (legacy v1.0 - kept for reference)
+```
+
+## Conclusion
+
+This PRD defines a comprehensive upgrade path from the current basic SystemDiagram to a premium, futuristic visualization that will serve as the crown jewel "wow moment" for FutureMarketingAI. 
+
+The hybrid approach balances cutting-edge visual appeal with practical performance considerations, ensuring the component remains accessible, responsive, and maintainable while delivering an unforgettable first impression.
+
+**Total Estimated Development Time**: 15.5 hours (can be completed in 2-3 focused development days)
+
+**Expected Outcome**: A best-in-class, jaw-dropping system visualization that positions FutureMarketingAI as a truly futuristic platform.

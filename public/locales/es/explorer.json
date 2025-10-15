@@ -1,0 +1,636 @@
+{
+  "page": {
+    "title": "Explora la Máquina de Marketing",
+    "subtitle": "Desde Investigación hasta Resultados - Descubre cómo las 9 capas de la máquina de marketing autónoma trabajan perfectamente juntas, exactamente como se visualiza en la Esfera Core IA. Cada componente se construye sobre el anterior para máxima eficiencia.",
+    "loading": "Cargando módulo...",
+    "showing_for": "Mostrando {{count}} módulos destacados para",
+    "cta": {
+      "title": "¿Listo para Automatizar tu Marketing?",
+      "primary": "Programar Llamada Estratégica Gratuita"
+    }
+  },
+  "features": {
+    "research_planning": {
+      "title": "Investigación y Planificación",
+      "subtitle": "El Cerebro de la Máquina",
+      "description": "Investigación online profunda con Perplexity IA para tendencias, pronósticos y estrategia de hashtags. Perfecto para equipos de 10-50 que necesitan insights estratégicos sin contratar investigadores.",
+      "icon": "🧠",
+      "roi_metric": "95%",
+      "roi_label": "Precisión de Tendencias",
+      "pain_point": "No hay tiempo para investigación estratégica",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**No tienes tiempo para investigación estratégica.** Cada día, se pierden horas buscando tendencias manualmente, comparando hashtags y analizando contenido de competidores. Para cuando encuentras algo útil, la tendencia ya ha pasado.",
+          "solution": "El Centro de Investigación funciona 24/7 con 4 agentes IA paralelos usando Perplexity para pronóstico de tendencias en tiempo real. Descubrimiento automático de hashtags, seguimiento de competidores y planificación de temas semanales integrados con tus propias marcas y productos.",
+          "result": "**3.2K tendencias rastreadas, 95% de precisión en predicciones, y 147 horas ahorradas por mes.** Obtienes una estrategia de contenido lista cada semana que es actual y relevante, sin tener que buscarla tú mismo."
+        },
+        "overview": "El cerebro inteligente de la máquina de marketing. Usa Perplexity IA para investigación profunda sobre tendencias actuales, pronóstico de tendencias y estrategias de hashtags. Crea temas de contenido semanales basados en datos en tiempo real, tus propias marcas, socios, servicios y productos de tienda online.",
+        "capabilities": [
+          "Investigación de tendencias potenciada por Perplexity IA",
+          "Estrategia de hashtags y análisis de temas trending",
+          "Planificación de temas semanales por plataforma",
+          "Estrategia multi-cuenta (diferentes idiomas y audiencias)",
+          "Integración de marcas propias, socios y productos",
+          "Calendario de contenido completamente preparado y listo para flujo de trabajo",
+          "Análisis de contenido de competidores y diferenciación",
+          "Pronóstico de tendencias estacionales (3-6 meses adelante)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Investigación Perplexity",
+            "description": "Investigación IA profunda sobre tendencias, hashtags, actividad de competidores e insights de la industria"
+          },
+          {
+            "step": 2,
+            "title": "Selección de Tema",
+            "description": "Seleccionar tema general semanal alineado con identidad de marca y tendencias"
+          },
+          {
+            "step": 3,
+            "title": "Mapeo de Contenido",
+            "description": "Vincular productos propios, servicios y socios al tema semanal por plataforma"
+          },
+          {
+            "step": 4,
+            "title": "Creación de Calendario",
+            "description": "Calendario de contenido completo listo para que el Flujo de Trabajo del Gerente lo ejecute"
+          }
+        ],
+        "metrics": [
+          {
+            "value": 95,
+            "label": "Precisión de Predicción de Tendencias",
+            "suffix": "%",
+            "decimals": 0
+          },
+          {
+            "value": 147,
+            "label": "Horas de Investigación Ahorradas",
+            "suffix": "h/mes",
+            "decimals": 0
+          },
+          { "value": 12, "label": "Temas de Contenido por Mes", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "manager_workflow": {
+      "title": "Flujo de Trabajo del Gerente",
+      "subtitle": "El Corazón de la Máquina",
+      "description": "Gestor de flujo de trabajo central que obtiene la agenda semanalmente, ejecuta pruebas A/B y reenvía todo al Pipeline de Contenido. Construido para equipos ágiles que gestionan múltiples canales.",
+      "icon": "❤️",
+      "roi_metric": "275%",
+      "roi_label": "ROI vía Pruebas",
+      "pain_point": "Caos en flujo de trabajo y coordinación manual",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Te estás ahogando en flujos de trabajo y coordinación manual.** Cada semana el mismo caos: ensamblar calendarios, distribuir contenido entre plataformas, pruebas A/B manuales y cambio constante entre herramientas. Nada está automatizado.",
+          "solution": "El Flujo de Trabajo del Gerente orquesta todo centralmente. Obtención automática de calendario, pruebas A/B inteligentes, integración de Telegram para control directo y reenvío sin problemas al Pipeline de Contenido. Todo a través de un sistema.",
+          "result": "**275% mejora de ROI a través de pruebas A/B, 98% de automatización de flujo de trabajo, y 160 elementos de contenido por mes.** Tu equipo ya no necesita coordinarse - el sistema lo maneja."
+        },
+        "overview": "El corazón palpitante que orquesta todo. Obtiene el calendario de contenido semanalmente (o individualmente vía Telegram) de Investigación y Planificación, ejecuta pruebas A/B estratégicas y reenvía contenido óptimo al Pipeline de Contenido para creación.",
+        "capabilities": [
+          "Automatización de obtención de calendario semanal",
+          "Integración de Telegram para comandos individuales",
+          "Pruebas A/B avanzadas por tipo de contenido",
+          "Gestión de estrategia multi-cuenta",
+          "Orquestación de flujo de trabajo en tiempo real",
+          "Priorización de contenido basada en datos de rendimiento",
+          "Bucle de retroalimentación a Investigación y Planificación",
+          "Programación inteligente para rendimiento óptimo"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Obtención de Calendario",
+            "description": "Automáticamente semanal o manualmente vía comandos de Telegram"
+          },
+          {
+            "step": 2,
+            "title": "Configuración de Prueba A/B",
+            "description": "Determinar variantes de prueba por elemento de contenido para resultados óptimos"
+          },
+          {
+            "step": 3,
+            "title": "Distribución de Flujo de Trabajo",
+            "description": "Distribuir tareas al Pipeline de Contenido con prioridad"
+          },
+          {
+            "step": 4,
+            "title": "Monitoreo de Rendimiento",
+            "description": "Seguimiento en tiempo real y ajuste de creación de contenido activo"
+          }
+        ],
+        "metrics": [
+          { "value": 340, "label": "Mejora de ROI en Pruebas A/B", "suffix": "%", "decimals": 0 },
+          {
+            "value": 98,
+            "label": "Tasa de Automatización de Flujo de Trabajo",
+            "suffix": "%",
+            "decimals": 0
+          },
+          { "value": 450, "label": "Elementos de Contenido/Mes", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "content_pipeline": {
+      "title": "Pipeline de Contenido",
+      "subtitle": "La Fábrica de Producción",
+      "description": "Genera contenido para Instagram, Facebook, TikTok, YouTube, LinkedIn y blogs. Tu equipo de 3 haciendo el trabajo de 30 - sin contratar gente extra.",
+      "icon": "🏭",
+      "roi_metric": "4x",
+      "roi_label": "Producción de Contenido",
+      "pain_point": "No es escalable sin quemar presupuesto",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**No puedes escalar sin quemar tu presupuesto.** 1 creador de contenido puede hacer máximo 10 publicaciones por semana. ¿Para 7 plataformas, varios formatos y multi-cuenta? Necesitarías un equipo completo. Inasequible.",
+          "solution": "El Pipeline de Contenido produce contenido para Instagram (publicaciones, carruseles, reels, historias), Facebook, TikTok, YouTube, LinkedIn y blogs. Con sistema de aprobación de Telegram para control de calidad e IA que aprende continuamente.",
+          "result": "**4x producción de contenido (160 publicaciones/mes), 94% tasa de aprobación, y €4,500/mes ahorrados en freelancers.** De 40 a 160 publicaciones por mes, sin contratar gente extra."
+        },
+        "overview": "La fábrica de producción de contenido que crea publicaciones de alta calidad para todas las plataformas principales. La adaptación inteligente de plataforma asegura formato y tono óptimos por canal. La IA que aprende continuamente mejora a través del bucle de retroalimentación de aprobación de Telegram.",
+        "capabilities": [
+          "Generación de contenido multi-plataforma (7 plataformas)",
+          "Instagram: publicaciones, carruseles, reels, historias",
+          "Facebook, TikTok, YouTube Shorts, LinkedIn",
+          "Artículos de blog con optimización SEO",
+          "Sistema de aprobación de Telegram con bucle de retroalimentación",
+          "IA que aprende a través de patrones de aprobación",
+          "Adaptación de tono y formato específico de plataforma",
+          "Creación y edición automática de contenido visual"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Briefing de Contenido",
+            "description": "Recibir briefing del Flujo de Trabajo del Gerente con tema y objetivo"
+          },
+          {
+            "step": 2,
+            "title": "Generación IA",
+            "description": "Generar contenido optimizado para plataforma con visuales y leyendas"
+          },
+          {
+            "step": 3,
+            "title": "Revisión en Telegram",
+            "description": "Presentar contenido en Telegram para aprobación o retroalimentación"
+          },
+          {
+            "step": 4,
+            "title": "Publicar o Iterar",
+            "description": "Enviar contenido aprobado a Publisher o refinar según retroalimentación"
+          }
+        ],
+        "metrics": [
+          { "value": 160, "label": "Publicaciones Creadas por Mes", "suffix": "", "decimals": 0 },
+          { "value": 94, "label": "Tasa de Aprobación", "suffix": "%", "decimals": 0 },
+          {
+            "value": 4500,
+            "label": "Costo Mensual de Freelancer Ahorrado",
+            "suffix": "€",
+            "decimals": 0
+          }
+        ]
+      }
+    },
+    "analytics_lab": {
+      "title": "Laboratorio de Análisis",
+      "subtitle": "El Centro de Inteligencia",
+      "description": "Análisis en tiempo real con insights potenciados por IA. Perfecto para equipos que gestionan 3-10 canales y necesitan decisiones basadas en datos sin contratar analistas.",
+      "icon": "📊",
+      "roi_metric": "327%",
+      "roi_label": "ROI de Rendimiento",
+      "pain_point": "Sin insight sobre lo que realmente funciona",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**No tienes idea de lo que realmente funciona.** Publicas contenido, pero no sabes qué formatos, temas o tiempos entregan los mejores resultados. Estás volando a ciegas sin decisiones basadas en datos.",
+          "solution": "El Laboratorio de Análisis rastrea todo en tiempo real. El análisis potenciado por IA identifica patrones, tiempos óptimos de publicación y formatos de contenido ganadores. Retroalimentación automática a todos los módulos para optimización continua.",
+          "result": "**327% mejora de ROI de rendimiento, 2.8K insights generados, y 97% precisión de predicción.** Sabes exactamente qué funciona y el sistema optimiza automáticamente basándose en esos datos."
+        },
+        "overview": "El centro de inteligencia que mide, analiza y optimiza todo. Recopila datos de rendimiento en tiempo real de todas las plataformas, aplica análisis IA para identificar patrones y oportunidades, y retroalimenta insights a todos los módulos para mejora continua.",
+        "capabilities": [
+          "Seguimiento de rendimiento en tiempo real en todas las plataformas",
+          "Reconocimiento de patrones potenciado por IA e insights",
+          "Identificación de tiempo óptimo de publicación por plataforma",
+          "Análisis de rendimiento de formato de contenido",
+          "Predicción de engagement de audiencia",
+          "Bucles de retroalimentación automática a todos los módulos",
+          "Análisis de correlación de tendencia vs. rendimiento",
+          "Seguimiento de ROI por tipo de contenido y campaña"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Recopilación de Datos",
+            "description": "Reunir métricas de rendimiento de todas las plataformas en tiempo real"
+          },
+          {
+            "step": 2,
+            "title": "Análisis IA",
+            "description": "Aplicar aprendizaje automático para identificar patrones y oportunidades"
+          },
+          {
+            "step": 3,
+            "title": "Generación de Insights",
+            "description": "Crear recomendaciones accionables basadas en análisis"
+          },
+          {
+            "step": 4,
+            "title": "Optimización del Sistema",
+            "description": "Retroalimentar insights a módulos para mejora automática"
+          }
+        ],
+        "metrics": [
+          { "value": 327, "label": "Mejora de ROI de Rendimiento", "suffix": "%", "decimals": 0 },
+          { "value": 2800, "label": "Insights Generados", "suffix": "", "decimals": 0 },
+          { "value": 97, "label": "Precisión de Predicción", "suffix": "%", "decimals": 0 }
+        ]
+      }
+    },
+    "telegram_control": {
+      "title": "Centro de Control Telegram",
+      "subtitle": "Tu Centro de Comando Móvil",
+      "description": "Control completo del sistema vía Telegram. Aprobar contenido, dar retroalimentación, solicitar publicaciones ad-hoc desde cualquier lugar. Construido para equipos ocupados que necesitan flexibilidad móvil.",
+      "icon": "📱",
+      "roi_metric": "85%",
+      "roi_label": "Tiempo Ahorrado",
+      "pain_point": "Sin control sin estar en la computadora",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**No tienes control sin estar en tu computadora.** Siempre estás en movimiento, pero decisiones importantes requieren estar detrás de una laptop. Para cuando regresas, las oportunidades han pasado.",
+          "solution": "El Centro de Control Telegram te da control completo del sistema desde tu teléfono. Aprobar contenido, dar retroalimentación, solicitar publicaciones ad-hoc, activar flujos de trabajo y monitorear todo en tiempo real. Todo a través de simples comandos de chat.",
+          "result": "**85% tiempo ahorrado en coordinación, 100% control móvil, y accesibilidad del sistema 24/7.** Gestionas el sistema completo desde cualquier lugar, en cualquier momento, solo con tu teléfono."
+        },
+        "overview": "Tu centro de comando móvil para control completo del sistema. Aprobar contenido para publicación, proporcionar retroalimentación para aprendizaje IA, solicitar creación de contenido ad-hoc y monitorear todos los flujos de trabajo activos. Interfaz de chat simple con vistas previas ricas y acciones rápidas.",
+        "capabilities": [
+          "Aprobación de contenido con vistas previas visuales",
+          "Sistema de retroalimentación para aprendizaje IA",
+          "Solicitudes de contenido ad-hoc vía chat",
+          "Monitoreo de estado de flujo de trabajo",
+          "Panel de rendimiento en móvil",
+          "Controles y anulaciones de emergencia",
+          "Colaboración en equipo y asignaciones",
+          "Notificaciones push para elementos urgentes"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Notificación de Contenido",
+            "description": "Recibir mensaje de Telegram con vista previa de contenido"
+          },
+          {
+            "step": 2,
+            "title": "Revisión Rápida",
+            "description": "Aprobar, rechazar o proporcionar retroalimentación específica vía botones"
+          },
+          {
+            "step": 3,
+            "title": "Aprendizaje IA",
+            "description": "El sistema aprende de tus patrones de retroalimentación"
+          },
+          {
+            "step": 4,
+            "title": "Mejora Automática",
+            "description": "Contenido futuro mejor alineado con tus preferencias"
+          }
+        ],
+        "metrics": [
+          { "value": 85, "label": "Tiempo de Coordinación Ahorrado", "suffix": "%", "decimals": 0 },
+          { "value": 100, "label": "Cobertura de Control Móvil", "suffix": "%", "decimals": 0 },
+          { "value": 47, "label": "Tiempo de Respuesta Promedio", "suffix": "s", "decimals": 0 }
+        ]
+      }
+    },
+    "publishing_layer": {
+      "title": "Capa de Publicación",
+      "subtitle": "Distribución Automática",
+      "description": "Programa automáticamente contenido en tiempos ideales por plataforma. Equipos pequeños publicando como empresas - consistencia 24/7 sin trabajo manual.",
+      "icon": "📤",
+      "roi_metric": "360h",
+      "roi_label": "Tiempo Ahorrado/Mes",
+      "pain_point": "Publicación manual inconsistente y que consume tiempo",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Tu publicación es inconsistente y mal programada.** A veces publicas 3x por día, luego 0. Tiempos incorrectos, oportunidades perdidas, y la programación manual cuesta horas. Tu clasificación de algoritmo sufre.",
+          "solution": "La Capa de Publicación analiza tiempos óptimos por plataforma para tu audiencia. Programación inteligente automática con optimización de zona horaria, gestión de cola y 99.8% publicación puntual. Cero trabajo manual.",
+          "result": "**360 horas ahorradas por mes, 99.8% entrega puntual, y €1,800/mes menos sobrecarga de gestión.** Consistencia perfecta en 7 plataformas, 24/7, sin tener que mirarlo."
+        },
+        "overview": "El motor de distribución que programa automáticamente todo el contenido en tiempos ideales. Analiza por plataforma cuándo tu audiencia está más activa y programa automáticamente para máximo alcance y engagement.",
+        "capabilities": [
+          "Programación automática en tiempos óptimos",
+          "Optimización de tiempo específica de plataforma",
+          "Publicación simultánea multi-cuenta",
+          "Planificación inteligente de zona horaria",
+          "Gestión de cola y resolución de conflictos",
+          "Lógica de reintento para errores de plataforma",
+          "Confirmación y seguimiento de publicación",
+          "Capacidad de anulación de contenido de emergencia",
+          "Gestión de estado Borrador vs Publicado",
+          "Orquestación de tiempo entre plataformas"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Análisis de Tiempo Óptimo",
+            "description": "IA determina mejores tiempos de publicación por plataforma y audiencia"
+          },
+          {
+            "step": 2,
+            "title": "Planificación de Programa",
+            "description": "El contenido se programa con espaciado inteligente y límites de frecuencia"
+          },
+          {
+            "step": 3,
+            "title": "Publicación Automatizada",
+            "description": "Publicación automática en tiempos programados vía APIs de plataforma"
+          },
+          {
+            "step": 4,
+            "title": "Confirmación y Seguimiento",
+            "description": "Confirmación en tiempo real y reenvío a Análisis"
+          }
+        ],
+        "metrics": [
+          { "value": 312, "label": "Tiempo Ahorrado Mensualmente", "suffix": "h", "decimals": 0 },
+          { "value": 99.2, "label": "Tasa de Éxito de Publicación", "suffix": "%", "decimals": 1 },
+          { "value": 47, "label": "Publicaciones Promedio por Semana", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ad_builder": {
+      "title": "Creador de Anuncios",
+      "subtitle": "Motor de Creación de Anuncios",
+      "description": "Sube una foto de producto y genera automáticamente anuncios específicos de plataforma. Equipos que gastan €10K+/mes en anuncios pueden pre-probar antes de asignar presupuesto.",
+      "icon": "🎬",
+      "roi_metric": "+320%",
+      "roi_label": "Mejora de ROI de Anuncios",
+      "pain_point": "Anuncios caros sin resultados",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Tu presupuesto de anuncios se evapora sin resultados.** €1,000 en un anuncio que fracasa, sin idea de por qué. Prueba y error es muy caro. ¿Qué creativo funciona? ¿Qué copy convierte? Pura suposición con tu presupuesto de marketing.",
+          "solution": "El Creador de Anuncios prueba tus anuncios orgánicamente antes de asignar presupuesto. Sube una foto de producto, obtén 5 variantes de plataforma, pruébalas gratis en subcuentas e invierte solo en ganadores probados con ROI predecible.",
+          "result": "**+320% ROI a través de pre-pruebas, €2,400/mes ahorrados en presupuesto desperdiciado, y 87% precisión en predecir qué anuncio rinde mejor.** Cero suposiciones - solo gasto publicitario basado en datos."
+        },
+        "overview": "El motor de creación de anuncios que transforma fotos de productos en anuncios optimizados para plataforma. Genera automáticamente variantes de prueba A/B, las prueba orgánicamente para asignación de presupuesto y predice rendimiento con 87% precisión. Prevén gasto publicitario desperdiciado invirtiendo solo en ganadores.",
+        "capabilities": [
+          "Foto de producto → generación de anuncio IA (transformación automática)",
+          "Formato específico de plataforma (Instagram, Facebook, TikTok, LinkedIn, Pinterest)",
+          "Generador de variante de prueba A/B (3-5 variantes por carga)",
+          "Optimización de copy de anuncio (titulares, CTAs, descripciones)",
+          "Pre-prueba en cuentas de prueba orgánicas (sin desperdicio de presupuesto)",
+          "Predictor de ROI basado en datos históricos",
+          "Auto-escalado para diferentes tamaños de anuncio (formatos Story, Feed, Reel)",
+          "Aplicación de directrices de marca (colores, fuentes, tono de voz)",
+          "Análisis de anuncios de competidores (qué funciona en tu nicho)",
+          "Integración de catálogo de productos dinámico (sincronización de tienda online)",
+          "Generación de anuncio de video (gráficos estáticos → en movimiento)",
+          "Seguimiento de rendimiento por variante (monitoreo de ROI en tiempo real)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Carga de Foto",
+            "description": "Sube foto de producto o activo creativo con directrices de marca opcionales"
+          },
+          {
+            "step": 2,
+            "title": "Análisis IA",
+            "description": "Visión por computadora analiza producto, contexto y estrategia de mensajería óptima"
+          },
+          {
+            "step": 3,
+            "title": "Generación de Variantes",
+            "description": "IA crea 3-5 variantes de anuncio específicas de plataforma con ganchos y CTAs diversos"
+          },
+          {
+            "step": 4,
+            "title": "Pre-Prueba Orgánica",
+            "description": "Las mejores variantes se prueban orgánicamente en subcuentas para datos de rendimiento"
+          },
+          {
+            "step": 5,
+            "title": "Asignación de Presupuesto",
+            "description": "El anuncio ganador con ROI predecido más alto obtiene presupuesto pagado"
+          },
+          {
+            "step": 6,
+            "title": "Seguimiento de Rendimiento",
+            "description": "Monitoreo de ROI en tiempo real y auto-optimización durante campaña"
+          }
+        ],
+        "metrics": [
+          {
+            "value": 320,
+            "label": "Mejora Promedio de ROI de Anuncios",
+            "suffix": "%",
+            "decimals": 0
+          },
+          { "value": 2400, "label": "Presupuesto Mensual Ahorrado", "suffix": " €", "decimals": 0 },
+          {
+            "value": 87,
+            "label": "Precisión de Predicción de Pre-Prueba",
+            "suffix": "%",
+            "decimals": 0
+          }
+        ]
+      }
+    },
+    "command_center": {
+      "title": "Centro de Comando",
+      "subtitle": "Panel de Cliente y Control",
+      "description": "Panel central para lanzar campañas, crear anuncios y obtener insights de datos completos. Una persona controlando lo que normalmente requiere un equipo de 10.",
+      "icon": "🎮",
+      "roi_metric": "100%",
+      "roi_label": "Control y Transparencia",
+      "pain_point": "Caos multi-plataforma",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**No tienes un resumen central.** Datos dispersos en 7 plataformas, calendario de contenido en hojas de cálculo, investigación en notas, campañas en otro sistema. Pierdes horas cambiando entre herramientas.",
+          "solution": "El Centro de Comando agrupa todo en un panel. Lanza campañas con 1 clic, crea anuncios desde una foto de producto, ve datos en tiempo real por plataforma, visualiza tu calendario de contenido y accede a investigación semanal - todo en un lugar.",
+          "result": "**100% transparencia, €1,600/mes ahorrados en suscripciones de herramientas, y 2.3x más decisiones basadas en datos por día.** Todo lo que necesitas, un panel, cero caos."
+        },
+        "overview": "El centro de comando central donde el cliente tiene control completo y transparencia. Lanzar campañas, crear anuncios desde una foto de producto, ver todos los datos perspicazmente por plataforma (engagement, crecimiento, etc.), ver el calendario de contenido y acceder a investigación semanal.",
+        "capabilities": [
+          "Lanzador de campañas con inicio de un clic",
+          "Foto de producto → generador IA de anuncios",
+          "Panel en tiempo real por plataforma (engagement, alcance, crecimiento)",
+          "Vista general de calendario de contenido (vista semana/mes)",
+          "Informes de investigación semanales accesibles",
+          "Seguimiento de presupuesto y análisis de gasto",
+          "Comparación de rendimiento de cuenta",
+          "Aprobación/rechazo rápido de contenido vía interfaz",
+          "Configuración de parámetros de campaña personalizados",
+          "Funcionalidad de exportación para informes",
+          "Herramientas de colaboración en equipo",
+          "App móvil para gestión en movimiento"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Inicio de Sesión en Panel",
+            "description": "Acceso a Centro de Comando personal con todas las cuentas"
+          },
+          {
+            "step": 2,
+            "title": "Visualización de Datos",
+            "description": "Insight en tiempo real de todos los KPIs por plataforma y cuenta"
+          },
+          {
+            "step": 3,
+            "title": "Tomar Acción",
+            "description": "Lanzar campañas, crear anuncios, ajustar estrategia basada en datos"
+          },
+          {
+            "step": 4,
+            "title": "Monitorear y Optimizar",
+            "description": "Monitoreo continuo y toma de decisiones basada en datos"
+          }
+        ],
+        "metrics": [
+          { "value": 100, "label": "Puntuación de Transparencia", "suffix": "%", "decimals": 0 },
+          {
+            "value": 2.3,
+            "label": "Inicios de Sesión Diarios Promedio",
+            "suffix": "",
+            "decimals": 1
+          },
+          { "value": 6, "label": "Plataformas Monitoreadas", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ai_advisory": {
+      "title": "Asociación de Asesor IA",
+      "subtitle": "Tu Guía Estratégico",
+      "description": "¿Sin conocimiento técnico? No hay problema. Orientación personal en cada paso - perfecto para equipos ágiles (1-5 personas) que necesitan apoyo experto.",
+      "icon": "🤝",
+      "roi_metric": "€0",
+      "roi_label": "Experiencia Necesaria",
+      "pain_point": "No se necesita experiencia en automatización",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Quieres automatizar, pero no tienes conocimiento técnico.** La automatización de marketing suena genial, pero no tienes idea de por dónde empezar. Configuración, integraciones, optimización - se siente abrumador sin un experto en segundo plano.",
+          "solution": "Como tu experto en IA, soy tu socio estratégico personal. Ayudo con incorporación, configuración, ajustes de estrategia y optimización continua. Piensa en ello como un consultor de automatización de marketing disponible 24/7 - sin el honorario de consultor.",
+          "result": "**Cero conocimiento técnico requerido, 90% incorporación más rápida, y orientación estratégica continua.** Obtienes todos los beneficios de la automatización sin la curva de aprendizaje. Resuelvo problemas antes de que los notes."
+        },
+        "overview": "Tu socio estratégico IA personal que te ayuda con cada fase: desde configuración inicial e integraciones de plataforma, hasta optimización de estrategia de contenido y análisis de rendimiento. No se requiere conocimiento técnico - te guío en cada paso.",
+        "capabilities": [
+          "Orientación personal de incorporación y configuración de sistema",
+          "Solución de problemas de integración de plataforma",
+          "Desarrollo y optimización de estrategia de contenido",
+          "Análisis de rendimiento y recomendaciones",
+          "Mejores prácticas para tu industria específica",
+          "Detección y resolución proactiva de problemas",
+          "Disponible 24/7 vía interfaz de chat",
+          "Revisión y ajustes de estrategia semanales",
+          "Oportunidades de tendencias e insights competitivos",
+          "Recomendaciones de maximización de ROI",
+          "Flujos de trabajo de automatización personalizados para tus necesidades",
+          "Aprendizaje continuo de tu marca y audiencia"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Incorporación y Descubrimiento",
+            "description": "Aprendo tu negocio, objetivos, tono de voz y audiencia objetivo"
+          },
+          {
+            "step": 2,
+            "title": "Planificación Estratégica",
+            "description": "Juntos desarrollamos una estrategia de automatización personalizada para tu situación"
+          },
+          {
+            "step": 3,
+            "title": "Apoyo de Implementación",
+            "description": "Guío cada integración, configuración de plataforma y configuración inicial"
+          },
+          {
+            "step": 4,
+            "title": "Optimización Continua",
+            "description": "Monitoreo continuo, recomendaciones y ajustes de estrategia para máximo ROI"
+          }
+        ],
+        "metrics": [
+          { "value": 90, "label": "Incorporación Más Rápida", "suffix": "%", "decimals": 0 },
+          { "value": 24, "label": "Disponibilidad de Soporte", "suffix": "/7", "decimals": 0 },
+          { "value": 0, "label": "Conocimiento Técnico Requerido", "suffix": "", "decimals": 0 }
+        ]
+      }
+    }
+  },
+  "modal": {
+    "close": "Cerrar",
+    "sections": {
+      "problem": "El Problema",
+      "solution": "La Solución",
+      "result": "El Resultado",
+      "overview": "Resumen",
+      "capabilities": "Capacidades",
+      "how_it_works": "Cómo Funciona",
+      "metrics": "Métricas Clave",
+      "technical_overview": "Resumen Técnico"
+    },
+    "technical": {
+      "title": "Resumen Técnico",
+      "stack": "Pila Tecnológica",
+      "apis": "Integraciones API",
+      "architecture": "Arquitectura"
+    }
+  },
+  "profiling_prompt": {
+    "trigger": "module_view"
+  },
+  "loading": {
+    "modal": "Cargando detalles...",
+    "telegram_mockup": "Cargando mockup de Telegram...",
+    "heatmap": "Cargando mapa de calor...",
+    "ad_builder": "Cargando creador de anuncios...",
+    "scheduling": "Cargando programación..."
+  },
+  "demo": {
+    "sample_caption": "¡Descubre nuestra nueva colección! 🌟 Calidad premium al mejor precio. Enlace en bio para más info.",
+    "ad_builder_intro": "Ve cómo una foto de producto se transforma en variantes de anuncios optimizados por plataforma"
+  },
+  "custom_built": {
+    "card_workflow": {
+      "title": "TU Flujo de Trabajo",
+      "description": "Se adapta a cómo trabajas, no a cómo pensamos que deberías"
+    },
+    "card_industry": {
+      "title": "TU Industria",
+      "description": "Ejemplos, plantillas y estrategias personalizadas para tu sector"
+    },
+    "card_limits": {
+      "title": "Sin Límites",
+      "description": "Sin restricciones de plantilla, solo capacidad pura"
+    }
+  },
+  "navigation": {
+    "back_home": "← Inicio",
+    "calculate_roi": "Calcular ROI →"
+  },
+  "cta": {
+    "calculate_roi_button": "Calcular ROI",
+    "urgency_text": "⏰ Escaneo de implementación gratis",
+    "trust_indicators": {
+      "call": "✓ Llamada de 30 min",
+      "roi_analysis": "✓ Análisis de ROI",
+      "roadmap": "✓ Hoja de ruta de implementación"
+    }
+  },
+  "modal_sections": {
+    "solves_label": "Resuelve:",
+    "live_approval_interface": "Interfaz de Aprobación en Vivo",
+    "approval_experience": "Experimenta cómo funciona la aprobación de contenido a través de Telegram en tiempo real",
+    "forecast_accuracy": "Mapa de Calor de Precisión de Pronóstico",
+    "forecast_description": "Precisión de predicción en tiempo real en métricas clave por trimestre",
+    "product_photo_ads": "Foto de Producto → Anuncios de Plataforma",
+    "implementation_process": "Proceso de Implementación",
+    "performance_metrics": "Métricas de Rendimiento",
+    "key_capabilities": "Capacidades Clave",
+    "need_help": {
+      "title": "¿Necesitas Ayuda Para Empezar?",
+      "description": "Chatea con tu experto personal de IA para orientación →"
+    },
+    "demo_title": "Demo de {{feature}}",
+    "close_button": "Cerrar"
+  }
+}

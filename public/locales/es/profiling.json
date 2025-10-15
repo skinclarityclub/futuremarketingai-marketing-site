@@ -1,0 +1,63 @@
+{
+  "questions": {
+    "companySize": {
+      "title": "¿Qué tan grande es tu equipo?",
+      "subtitle": "Ayúdanos a hacer el demo más relevante",
+      "options": {
+        "small": "1-10 empleados",
+        "medium": "11-50 empleados",
+        "large": "51-200 empleados",
+        "enterprise": "200+ empleados"
+      }
+    },
+    "role": {
+      "title": "¿Cuál es tu rol?",
+      "subtitle": "Adaptamos el contenido a tu perspectiva",
+      "options": {
+        "owner": "Propietario/Fundador",
+        "cmo": "CMO/Director de Marketing",
+        "manager": "Gerente de Marketing",
+        "specialist": "Especialista en Marketing",
+        "other": "Otro rol"
+      }
+    },
+    "budget": {
+      "title": "¿Cuál es tu presupuesto de marketing?",
+      "subtitle": "Opcional - nos ayuda a mostrar ROI realista",
+      "options": {
+        "low": "< €5,000/mes",
+        "medium": "€5,000 - €20,000/mes",
+        "high": "€20,000+/mes"
+      }
+    },
+    "painPoints": {
+      "title": "¿Cuáles son tus mayores desafíos?",
+      "subtitle": "Selecciona todos los que apliquen",
+      "options": {
+        "time": "No hay suficiente tiempo",
+        "headcount": "Equipo pequeño, grandes ambiciones",
+        "consistency": "Resultado inconsistente",
+        "scaling": "No se puede escalar",
+        "cost": "Costos muy altos",
+        "complexity": "Muy complejo/muchas herramientas"
+      }
+    },
+    "useCases": {
+      "title": "¿Dónde quieres usar IA?",
+      "subtitle": "Selecciona tus casos de uso principales",
+      "options": {
+        "content": "Creación de contenido",
+        "ads": "Campañas publicitarias",
+        "social": "Redes sociales",
+        "email": "Email marketing",
+        "seo": "SEO y blogs",
+        "analytics": "Análisis e informes"
+      }
+    }
+  },
+  "actions": {
+    "skip": "Omitir",
+    "confirm": "Confirmar",
+    "dismiss": "Descartar"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear State</title>
+  <style>
+    body {
+      font-family: system-ui;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to br, #1e3a8a, #3b82f6);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 1rem;
+    }
+    button {
+      background: white;
+      color: #1e3a8a;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin: 1rem;
+    }
+    button:hover {
+      background: #e0e0e0;
+    }
+    .success {
+      color: #4ade80;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Clear App State</h1>
+    <p>This will clear all localStorage and fix state migration issues</p>
+    <button onclick="clearState()">Clear State & Reload</button>
+    <div id="message"></div>
+  </div>
+  
+  <script>
+    function clearState() {
+      localStorage.clear()
+      document.getElementById('message').innerHTML = '<div class="success">✅ State cleared! Redirecting...</div>'
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 1000)
+    }
+  </script>
+</body>
+</html>
+

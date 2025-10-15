@@ -1,0 +1,162 @@
+src/components/ai-assistant/AIJourneyAssistant.tsx(29,19): error TS6133: 'addSystemMessage' is declared but its value is never read.
+src/components/ai-assistant/AIJourneyAssistant.tsx(31,71): error TS6133: 'visitedPages' is declared but its value is never read.
+src/components/ai-assistant/AIJourneyAssistant.tsx(143,23): error TS2345: Argument of type 'Omit<JourneyStep, "completed" | "unlocked">[]' is not assignable to parameter of type 'JourneyStep[]'.
+  Type 'Omit<JourneyStep, "completed" | "unlocked">' is missing the following properties from type 'JourneyStep': completed, unlocked
+src/components/ai-assistant/CelebrationToast.tsx(90,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/ChatDebugPanel.tsx(12,38): error TS6133: 'getVisitedPagesArray' is declared but its value is never read.
+src/components/ai-assistant/ChatDebugPanel.tsx(21,39): error TS2345: Argument of type 'unknown[]' is not assignable to parameter of type 'string[]'.
+  Type 'unknown' is not assignable to type 'string'.
+src/components/ai-assistant/ChatHeader.tsx(7,13): error TS6133: 'Minimize2' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(7,24): error TS6133: 'Award' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(16,1): error TS6133: 'getProgressMessage' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(35,5): error TS6133: 'completionPercentage' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(87,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/ChatHeader.tsx(102,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/ChatInput.tsx(29,11): error TS2339: Property 'completedSteps' does not exist on type 'JourneyState'.
+src/components/ai-assistant/ChatInput.tsx(29,27): error TS2339: Property 'timeOnSite' does not exist on type 'JourneyState'.
+src/components/ai-assistant/ChatPanel.tsx(50,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/ChatPanel.tsx(153,21): error TS2339: Property 'completedSteps' does not exist on type 'JourneyState'.
+src/components/ai-assistant/ChatPanel.tsx(153,37): error TS2339: Property 'timeOnSite' does not exist on type 'JourneyState'.
+src/components/ai-assistant/ChatPanel.tsx(221,13): error TS2322: Type '{ key: string; achievement: Achievement; onClose: () => void; }' is not assignable to type 'IntrinsicAttributes & CelebrationToastProps'.
+  Property 'achievement' does not exist on type 'IntrinsicAttributes & CelebrationToastProps'.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(42,5): error TS6133: 'getJourneyProgress' is declared but its value is never read.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(44,5): error TS6133: 'getProgressMessage' is declared but its value is never read.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(112,9): error TS6133: 'timeRemaining' is declared but its value is never read.
+src/components/ai-assistant/FloatingActionButton.tsx(16,30): error TS6133: 'fabHover' is declared but its value is never read.
+src/components/ai-assistant/FloatingActionButton.tsx(26,75): error TS6133: 'activeElement' is declared but its value is never read.
+src/components/ai-assistant/InfoPanel.tsx(225,37): error TS2339: Property 'url' does not exist on type '{ isOpen: boolean; prefillData: CalendlyPrefillData; utmParams: CalendlyUTMParams; calendlyUrl: string; eventType: CalendlyEventType; eventTypeDisplayName: string; open: (location: string, prefill?: CalendlyPrefillData | undefined, eventTypeId?: string | undefined) => void; close: () => void; }'.
+src/components/ai-assistant/MessageList.tsx(7,29): error TS6133: 'useState' is declared but its value is never read.
+src/components/ai-assistant/MessageList.tsx(21,1): error TS6133: 'InfoPanel' is declared but its value is never read.
+src/components/ai-assistant/MessageList.tsx(51,11): error TS2339: Property 'completedSteps' does not exist on type 'JourneyState'.
+src/components/ai-assistant/MessageList.tsx(51,27): error TS2339: Property 'timeOnSite' does not exist on type 'JourneyState'.
+src/components/ai-assistant/MessageList.tsx(272,33): error TS2339: Property 'reaction' does not exist on type 'NavigationMessage'.
+src/components/ai-assistant/messages/CalendlyBooking.tsx(65,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/messages/QuickReplies.tsx(57,9): error TS6133: 'hasTourButton' is declared but its value is never read.
+src/components/ai-assistant/NudgeToast.tsx(34,13): error TS7030: Not all code paths return a value.
+src/components/ai-assistant/ProactiveSuggestions.tsx(22,31): error TS6133: 'completionPercentage' is declared but its value is never read.
+src/components/calculator/AchievementBadge.tsx(155,3): error TS6133: 'currentROAS' is declared but its value is never read.
+src/components/calculator/AchievementBadge.tsx(159,9): error TS6133: 't' is declared but its value is never read.
+src/components/calculator/CalculatorWizard.tsx(102,9): error TS6133: 't' is declared but its value is never read.
+src/components/calculator/CalculatorWizard.tsx(237,36): error TS6133: 'index' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(2,18): error TS6133: 'useMotionValue' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(2,34): error TS6133: 'useTransform' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(21,21): error TS6133: 'ChartTooltip' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(22,15): error TS6196: 'TooltipEntry' is declared but never used.
+src/components/calculator/ComparisonCharts.tsx(23,1): error TS6192: All imports in import declaration are unused.
+src/components/calculator/ComparisonCharts.tsx(242,38): error TS6133: 'event' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(424,7): error TS2322: Type '{ children: Element[]; className: string; role: string; "aria-labelledby": string; ref: RefObject<HTMLDivElement>; }' is not assignable to type 'IntrinsicAttributes & GlassCardProps'.
+  Property 'role' does not exist on type 'IntrinsicAttributes & GlassCardProps'.
+src/components/calculator/CompetitivePositionCard.tsx(196,17): error TS2322: Type '{ label: string; userValue: number; industryAverage: number; topPerformer: number; format: "number"; suffix: string; }' is not assignable to type 'IntrinsicAttributes & BenchmarkBarProps'.
+  Property 'suffix' does not exist on type 'IntrinsicAttributes & BenchmarkBarProps'.
+src/components/calculator/ScenarioExplorer.tsx(118,23): error TS2345: Argument of type '{ teamSize: number; campaignsPerMonth: number; avgSalary: number; }' is not assignable to parameter of type 'SetStateAction<{ teamSize: number; campaignsPerMonth: number; avgSalary: number; monthlyAdBudget: number; testingLevel: number; }>'.
+  Type '{ teamSize: number; campaignsPerMonth: number; avgSalary: number; }' is missing the following properties from type '{ teamSize: number; campaignsPerMonth: number; avgSalary: number; monthlyAdBudget: number; testingLevel: number; }': monthlyAdBudget, testingLevel
+src/components/calculator/WastedAdSpendCard.tsx(198,17): error TS2322: Type '"xl"' is not assignable to type '"sm" | "md" | "lg" | undefined'.
+src/components/calculator/WizardStep.tsx(69,13): error TS7030: Not all code paths return a value.
+src/components/calculator/WizardStep.tsx(101,13): error TS7030: Not all code paths return a value.
+src/components/common/ABTestDashboard.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/common/ABTestDashboard.tsx(202,64): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+  Property 'future_focused' does not exist on type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+src/components/common/ABTestDashboard.tsx(204,20): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type 'VariantAnalyticsSummary'.
+  Property 'future_focused' does not exist on type 'VariantAnalyticsSummary'.
+src/components/common/ABTestDashboard.tsx(214,83): error TS2339: Property 'future_focused' does not exist on type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+src/components/common/ABTestDashboard.tsx(214,83): error TS2339: Property 'innovation_focused' does not exist on type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+src/components/common/ABTestDashboard.tsx(214,83): error TS2339: Property 'risk_reward' does not exist on type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+src/components/common/ABTestDashboard.tsx(216,29): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type 'VariantAnalyticsSummary'.
+  Property 'future_focused' does not exist on type 'VariantAnalyticsSummary'.
+src/components/common/CalendlyModal.tsx(76,13): error TS7030: Not all code paths return a value.
+src/components/common/FloatingNav.tsx(132,19): error TS7030: Not all code paths return a value.
+src/components/common/Footer.tsx(39,18): error TS2339: Property 'hj' does not exist on type 'Window & typeof globalThis'.
+src/components/common/Footer.tsx(40,16): error TS2339: Property 'hj' does not exist on type 'Window & typeof globalThis'.
+src/components/layer1-hero/CoreSphere3D.tsx(816,44): error TS2607: JSX element class does not support attributes because it does not have a 'props' property.
+src/components/layer1-hero/CoreSphere3D.tsx(816,45): error TS2786: 'Stats' cannot be used as a JSX component.
+  Its type 'typeof Stats' is not a valid JSX element type.
+    Types of construct signatures are incompatible.
+      Type 'new () => Stats' is not assignable to type 'new (props: any, deprecatedLegacyContext?: any) => Component<any, any, any>'.
+        Type 'Stats' is missing the following properties from type 'Component<any, any, any>': context, setState, forceUpdate, render, and 3 more.
+src/config/conversationPersonality.ts(7,1): error TS6133: 'Industry' is declared but its value is never read.
+src/config/industryPersonalization.ts(324,33): error TS6133: 'industryId' is declared but its value is never read.
+src/hooks/useCalendlyBooking.ts(66,11): error TS2339: Property 'completedSteps' does not exist on type 'JourneyState'.
+src/hooks/useCalendlyBooking.ts(66,27): error TS2339: Property 'timeOnSite' does not exist on type 'JourneyState'.
+src/hooks/useCalendlyBooking.ts(175,78): error TS6133: 'eventTypeId' is declared but its value is never read.
+src/hooks/useChartInteractivity.ts(17,33): error TS6133: 'useMemo' is declared but its value is never read.
+src/hooks/useDemoSEO.ts(41,11): error TS6133: 't' is declared but its value is never read.
+src/hooks/useFocusManagement.ts(42,13): error TS7030: Not all code paths return a value.
+src/hooks/useJourneyNudges.ts(23,27): error TS6133: 'timeOnSiteSeconds' is declared but its value is never read.
+src/hooks/useModuleFollowUp.ts(126,9): error TS6133: 'completedSteps' is declared but its value is never read.
+src/hooks/useModuleFollowUp.ts(126,11): error TS2339: Property 'completedSteps' does not exist on type 'JourneyState'.
+src/i18n/types.ts(33,5): error TS2687: All declarations of 'gtag' must have identical modifiers.
+src/pages/Calculator.tsx(32,29): error TS6133: 'getPersonalizationConfig' is declared but its value is never read.
+src/pages/Calculator.tsx(227,19): error TS7030: Not all code paths return a value.
+src/pages/Dashboard.tsx(90,19): error TS7030: Not all code paths return a value.
+src/pages/Explorer.tsx(97,19): error TS7030: Not all code paths return a value.
+src/pages/Hero.tsx(80,11): error TS6133: 'messaging' is declared but its value is never read.
+src/pages/Hero.tsx(80,22): error TS6133: 'industryName' is declared but its value is never read.
+src/pages/Hero.tsx(198,19): error TS7030: Not all code paths return a value.
+src/stores/journeyStore.ts(15,3): error TS6133: 'getProactiveChatMessage' is declared but its value is never read.
+src/stores/journeyStore.ts(34,8): error TS6133: 'UserAchievements' is declared but its value is never read.
+src/stores/journeyStore.ts(194,22): error TS6133: 'industry' is declared but its value is never read.
+src/stores/journeyStore.ts(194,32): error TS6133: 'role' is declared but its value is never read.
+src/stores/journeyStore.ts(225,28): error TS2322: Type 'unknown' is not assignable to type 'string'.
+src/stores/journeyStore.ts(225,43): error TS2322: Type 'unknown' is not assignable to type 'string'.
+src/stores/personalizationStore.ts(5,34): error TS2459: Module '"../utils/icpScoring"' declares 'ICPScoreBreakdown' locally, but it is not exported.
+src/stores/personalizationStore.ts(209,21): error TS2352: Conversion of type 'number' to type 'TeamSize' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+src/stores/personalizationStore.ts(216,41): error TS2345: Argument of type '{ teamSize: TeamSize; channels: ChannelsCount; painPoints: string[]; industry: "ecommerce" | "saas" | "agency" | "other"; currentSpend: number; }' is not assignable to parameter of type 'UserInput'.
+  Types of property 'painPoints' are incompatible.
+    Type 'string[]' is not assignable to type 'PainPoint[]'.
+      Type 'string' is not assignable to type 'PainPoint'.
+src/stores/userPreferencesStore.ts(101,11): error TS6133: 'get' is declared but its value is never read.
+src/utils/calendlyFunnelTracking.ts(145,11): error TS6133: 'sessionId' is declared but its value is never read.
+src/utils/conversationEngine.ts(8,27): error TS6133: 'extractEntities' is declared but its value is never read.
+src/utils/conversationEngine.ts(24,8): error TS6133: 'FallbackCategory' is declared but its value is never read.
+src/utils/conversationEngine.ts(29,8): error TS6133: 'NavigationIntent' is declared but its value is never read.
+src/utils/conversationEngine.ts(36,3): error TS6133: 'getProactiveSuggestions' is declared but its value is never read.
+src/utils/conversationEngine.ts(37,8): error TS6133: 'QuestionMatch' is declared but its value is never read.
+src/utils/conversationEngine.ts(41,1): error TS6192: All imports in import declaration are unused.
+src/utils/conversationEngine.ts(47,1): error TS6133: 'usePersonalizationStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(48,1): error TS6133: 'useJourneyStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(49,1): error TS6133: 'useUserPreferencesStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(221,23): error TS2554: Expected 1 arguments, but got 0.
+src/utils/conversationEngine.ts(363,30): error TS2339: Property 'content' does not exist on type 'ChatMessage'.
+  Property 'content' does not exist on type 'AchievementMessage'.
+src/utils/conversationEngine.ts(363,57): error TS2339: Property 'content' does not exist on type 'ChatMessage'.
+  Property 'content' does not exist on type 'AchievementMessage'.
+src/utils/conversationEngine.ts(451,9): error TS2322: Type 'NavigationActionData' is not assignable to type '{ label: string; route: string; icon?: "explorer" | "calculator" | "dashboard" | "sparkles" | undefined; helpText?: string | undefined; features?: string[] | undefined; ctaText?: string | undefined; }'.
+  Types of property 'icon' are incompatible.
+    Type '"explorer" | "calculator" | "demo" | "dashboard" | "sparkles" | undefined' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+      Type '"demo"' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+src/utils/conversationEngine.ts(538,13): error TS6133: 'fallbackCategory' is declared but its value is never read.
+src/utils/conversationEngine.ts(591,3): error TS6133: 'conversationHistory' is declared but its value is never read.
+src/utils/conversationEngine.ts(613,9): error TS6133: 'personality' is declared but its value is never read.
+src/utils/conversationEngine.ts(682,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(694,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(727,7): error TS2322: Type '"demo"' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+src/utils/conversationEngine.ts(736,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(737,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(749,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(750,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(767,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(768,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationPersonalization.ts(23,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/fallbackResponses.ts(37,3): error TS6133: 'userMessage' is declared but its value is never read.
+src/utils/fallbackResponses.ts(124,23): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/fallbackResponses.ts(143,23): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/fallbackResponses.ts(190,31): error TS6133: 'context' is declared but its value is never read.
+src/utils/fallbackResponses.ts(209,7): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/journeyAnalytics.ts(455,5): error TS2687: All declarations of 'gtag' must have identical modifiers.
+src/utils/journeyAnalytics.ts(455,5): error TS2717: Subsequent property declarations must have the same type.  Property 'gtag' must be of type '((command: string, eventName: string, params?: Record<string, unknown> | undefined) => void) | undefined', but here has type '(command: "event", eventName: string, eventParams?: any) => void'.
+src/utils/journeyNudges.ts(380,52): error TS6133: 'context' is declared but its value is never read.
+src/utils/journeyPredictions.ts(15,1): error TS6192: All imports in import declaration are unused.
+src/utils/journeyPredictions.ts(16,1): error TS6133: 'JourneyStep' is declared but its value is never read.
+src/utils/journeyPredictions.ts(289,43): error TS6133: 'industry' is declared but its value is never read.
+src/utils/pageContext.ts(11,15): error TS2614: Module '"../stores/chatStore"' has no exported member 'QuickReply'. Did you mean to use 'import QuickReply from "../stores/chatStore"' instead?
+src/utils/pageContextI18n.ts(7,15): error TS2305: Module '"./pageContext"' has no exported member 'PageType'.
+src/utils/personalizationEngine.ts(20,1): error TS6133: 'Industry' is declared but its value is never read.
+src/utils/personalizationEngine.ts(21,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/personalizationEngine.ts(439,25): error TS2339: Property 'overall' does not exist on type 'ICPScoreBreakdown'.
+src/utils/personalizationEngine.ts(440,35): error TS2339: Property 'overall' does not exist on type 'ICPScoreBreakdown'.
+src/utils/questionMatcher.ts(172,54): error TS6133: 'catKey' is declared but its value is never read.
+src/utils/relatedQuestions.ts(13,1): error TS6133: 'PLATFORM_KNOWLEDGE' is declared but its value is never read.
+tests/e2e/accessibility.spec.ts(109,11): error TS6133: 'loadingIndicator' is declared but its value is never read.
+tests/e2e/navigation.spec.ts(77,11): error TS6133: 'response' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(144,13): error TS6133: 'initialContent' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(157,13): error TS6133: 'updatedContent' is declared but its value is never read.

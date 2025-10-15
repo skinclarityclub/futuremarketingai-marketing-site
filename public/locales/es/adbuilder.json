@@ -1,0 +1,201 @@
+{
+  "wizard": {
+    "steps": {
+      "upload": {
+        "title": "Subir",
+        "description": "Elige tu imagen"
+      },
+      "enhance": {
+        "title": "Mejorar",
+        "description": "Mejoras con IA"
+      },
+      "template": {
+        "title": "Plantilla",
+        "description": "Selecciona estilo de video"
+      },
+      "presenter": {
+        "title": "Presentador",
+        "description": "Añadir portavoz"
+      },
+      "finalize": {
+        "title": "Finalizar",
+        "description": "Exportar y compartir"
+      }
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "finish": "Finalizar",
+      "restart": "Comenzar de Nuevo"
+    },
+    "demo": {
+      "button": "Ejecutar Demo Guiado",
+      "running": "Ejecutando Demo..."
+    }
+  },
+  "upload": {
+    "header": {
+      "title": "Sube Tu Imagen",
+      "subtitle": "Comienza subiendo una foto de producto o seleccionando una imagen de muestra"
+    },
+    "dropzone": {
+      "dragging": "¡Suéltala aquí!",
+      "idle": "Arrastra y suelta tu imagen",
+      "or": "o",
+      "browse": "examinar archivos",
+      "formats": "Soporta JPG, PNG, WebP • Máx 10MB"
+    },
+    "errors": {
+      "invalid_type": "Por favor sube un archivo de imagen válido (JPG, PNG o WebP)",
+      "file_too_large": "El tamaño de la imagen debe ser menor a 10MB"
+    },
+    "preview": {
+      "uploaded_badge": "Subido"
+    },
+    "samples": {
+      "divider": "O ELIGE UNA MUESTRA"
+    }
+  },
+  "enhance": {
+    "header": {
+      "title": "Estudio de Mejora con IA",
+      "subtitle": "Aplica mejoras impulsadas por IA para perfeccionar tu imagen",
+      "enhancements_applied": "{{count}} Mejora Aplicada",
+      "enhancements_applied_plural": "{{count}} Mejoras Aplicadas"
+    },
+    "comparison": {
+      "before": "Antes",
+      "after": "Después"
+    },
+    "processing": {
+      "title": "Procesando Mejora...",
+      "time_tooltip": "Tiempo de procesamiento: ~{{seconds}}s"
+    },
+    "enhancements": {
+      "bg_remove": {
+        "name": "Eliminar Fondo",
+        "description": "Eliminación de fondo con IA para fotos de producto limpias"
+      },
+      "upscale": {
+        "name": "Ampliación con IA",
+        "description": "Mejora la resolución hasta 4K con redes neuronales"
+      },
+      "color_correct": {
+        "name": "Corrección de Color",
+        "description": "Ajusta automáticamente colores, brillo y contraste"
+      },
+      "smart_crop": {
+        "name": "Recorte Inteligente",
+        "description": "Recorta inteligentemente para enfocarse en el sujeto principal"
+      }
+    },
+    "status": {
+      "applied": "Aplicado"
+    },
+    "tip": {
+      "prefix": "Consejo Pro:",
+      "text": "Aplica múltiples mejoras para obtener los mejores resultados. Haz clic en una mejora aplicada para eliminarla."
+    }
+  },
+  "template": {
+    "header": {
+      "title": "Elige Plantilla de Video",
+      "subtitle": "Selecciona un estilo que coincida con tu marca y mensaje",
+      "selected": "{{name}} Seleccionado"
+    },
+    "filters": {
+      "label": "Filtros:",
+      "style_label": "Estilo",
+      "usecase_label": "Caso de Uso",
+      "results": "{{count}} Plantilla",
+      "results_plural": "{{count}} Plantillas"
+    },
+    "styles": {
+      "all": "Todas",
+      "dynamic": "Dinámico",
+      "minimal": "Minimalista",
+      "elegant": "Elegante",
+      "bold": "Audaz",
+      "playful": "Juguetón"
+    },
+    "usecases": {
+      "all": "Todos",
+      "product": "Producto",
+      "announcement": "Anuncio",
+      "testimonial": "Testimonio",
+      "tutorial": "Tutorial"
+    },
+    "no_results": "Ninguna plantilla coincide con tus filtros. Intenta ajustar tu selección.",
+    "preview": {
+      "perfect_for": "Perfecto para contenido de {{useCase}} con un estilo {{style}}"
+    }
+  },
+  "presenter": {
+    "header": {
+      "title": "Añadir Presentador Virtual",
+      "subtitle": "Elige un portavoz con IA para presentar tu anuncio",
+      "selected": "{{presenter}} con voz {{voice}}"
+    },
+    "sections": {
+      "select_presenter": "Seleccionar Presentador",
+      "choose_voice": "Elegir Voz",
+      "write_script": "Escribir Guion",
+      "preview": "Vista Previa"
+    },
+    "script": {
+      "placeholder": "Ingresa tu guion de anuncio aquí... ¡Manténlo conciso y atractivo!",
+      "estimated_duration": "~{{seconds}}s",
+      "tip_prefix": "Consejo Pro:",
+      "tip_text": "Mantén tu guion bajo 30 segundos para máximo engagement. ¡Comienza con un gancho!"
+    },
+    "preview_frame": {
+      "content_placeholder": "Tu contenido de anuncio aparecerá aquí",
+      "drag_indicator": "Arrastra para reposicionar",
+      "position_label": "{{presenter}} en posición",
+      "no_presenter": "Selecciona un presentador para ver vista previa"
+    },
+    "positions": {
+      "title": "Posiciones Rápidas",
+      "bottom_left": "Inferior Izquierda",
+      "bottom_center": "Inferior Centro",
+      "bottom_right": "Inferior Derecha"
+    }
+  },
+  "finalize": {
+    "header": {
+      "title": "¡Tu Anuncio Está Listo! 🎉",
+      "subtitle": "Previsualiza y exporta tu anuncio generado con IA"
+    },
+    "generation": {
+      "title": "Generando Tu Anuncio...",
+      "subtitle": "Nuestra IA está creando magia ✨",
+      "progress_label": "{{percent}}%"
+    },
+    "preview": {
+      "title": "Vista Previa Final del Anuncio",
+      "replay": "Reproducir",
+      "live_indicator": "EN VIVO"
+    },
+    "summary": {
+      "title": "Resumen del Anuncio",
+      "template": "Plantilla:",
+      "presenter": "Presentador:",
+      "script_length": "Longitud del Guion:",
+      "duration": "Duración:",
+      "chars_suffix": "caracteres",
+      "seconds_suffix": "~{{seconds}}s"
+    },
+    "export": {
+      "title": "Opciones de Exportación",
+      "success_badge": "¡Exportado!",
+      "share_button": "Compartir Anuncio",
+      "share_copy_link": "Copiar Enlace",
+      "share_email": "Email",
+      "create_new": "Crear Nuevo Anuncio"
+    },
+    "success": {
+      "title": "¡Exportación Exitosa! 🎉",
+      "subtitle": "¡Tu anuncio está listo para lanzarse!"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "questions": {
+    "companySize": {
+      "title": "How big is your team?",
+      "subtitle": "Help us make the demo more relevant",
+      "options": {
+        "small": "1-10 employees",
+        "medium": "11-50 employees",
+        "large": "51-200 employees",
+        "enterprise": "200+ employees"
+      }
+    },
+    "role": {
+      "title": "What's your role?",
+      "subtitle": "We adapt the content to your perspective",
+      "options": {
+        "owner": "Owner/Founder",
+        "cmo": "CMO/Marketing Director",
+        "manager": "Marketing Manager",
+        "specialist": "Marketing Specialist",
+        "other": "Other role"
+      }
+    },
+    "budget": {
+      "title": "What's your marketing budget?",
+      "subtitle": "Optional - helps us show realistic ROI",
+      "options": {
+        "low": "< €5,000/month",
+        "medium": "€5,000 - €20,000/month",
+        "high": "€20,000+/month"
+      }
+    },
+    "painPoints": {
+      "title": "What are your biggest challenges?",
+      "subtitle": "Select all that apply",
+      "options": {
+        "time": "Not enough time",
+        "headcount": "Small team, big ambitions",
+        "consistency": "Inconsistent output",
+        "scaling": "Cannot scale",
+        "cost": "Too high costs",
+        "complexity": "Too complex/many tools"
+      }
+    },
+    "useCases": {
+      "title": "Where do you want to use AI?",
+      "subtitle": "Select your main use cases",
+      "options": {
+        "content": "Content creation",
+        "ads": "Ad campaigns",
+        "social": "Social media",
+        "email": "Email marketing",
+        "seo": "SEO & blogs",
+        "analytics": "Analytics & reporting"
+      }
+    }
+  },
+  "actions": {
+    "skip": "Skip",
+    "confirm": "Confirm",
+    "dismiss": "Dismiss"
+  }
+}

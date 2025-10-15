@@ -1,0 +1,100 @@
+# Task ID: 12
+# Title: Systematic Remediation of TypeScript Compilation Errors Across Production Codebase
+# Status: pending
+# Dependencies: 1, 2, 4, 8, 9, 10
+# Priority: medium
+# Description: Systematically identify, categorize, and resolve 141 TypeScript compilation errors in the production codebase, following 2025 best practices for large-scale error remediation, with phased subtasks, automated tooling, and robust testing.
+# Details:
+1. **Error Inventory & Categorization:**
+   - Use `tsc --noEmit` to generate a comprehensive error report. Export errors to a spreadsheet or tracking tool.
+   - Categorize errors by type (e.g., unused variables, type mismatches, missing returns, nullability issues) and by affected area (AI chatbot, personalization/journey stores, ABTestDashboard, utilities/helpers).
+   - Tag each error by criticality: runtime-breaking, user-facing, or cosmetic, referencing error codes and stack traces.
+
+2. **Prioritization & Planning:**
+   - Prioritize errors: fix runtime-breaking issues first, followed by user-facing, then cosmetic.
+   - Assign error clusters to the following phases/subtasks:
+     - **Phase 1:** Critical runtime errors (type mismatches in core logic; e.g., journey stores, utilities)
+     - **Phase 2:** High-priority user-facing errors (Calculator, Explorer, Dashboard components)
+     - **Phase 3:** AI Chatbot system errors (~100 errors; can be addressed in parallel)
+     - **Phase 4:** Medium-priority/cosmetic (unused variables, minor type issues)
+     - **Phase 5:** Automated cleanup (run `eslint --fix`, `ts-prune` for dead code elimination)
+     - **Phase 6:** Testing & validation (unit, integration, and regression tests)
+     - **Phase 7:** CI/CD integration (add strict TypeScript checks to prevent regressions)
+
+3. **Automated Tooling:**
+   - Integrate ESLint with TypeScript rules and Prettier for code formatting. Use `eslint --fix` for auto-fixable issues.
+   - Use `ts-prune` to identify and remove unused exports and dead code.
+   - Enable `strictNullChecks` and `noImplicitAny` in `tsconfig.json` for stricter type safety[1][2].
+
+4. **Safe Refactoring:**
+   - For each error, prefer explicit type annotations and interfaces over `any` or implicit types[1][2].
+   - Refactor incrementally, committing after each logical group of fixes.
+   - For AI chatbot errors, isolate changes to beta feature branches to avoid destabilizing production.
+   - Use feature flags or toggles for risky changes in user-facing components.
+
+5. **Progress Tracking:**
+   - Maintain a Kanban board or spreadsheet with error counts per file/module, status, and assignee.
+   - Update progress after each phase, ensuring visibility for all stakeholders.
+
+6. **Documentation:**
+   - Document all non-trivial type changes and rationale in code comments or a migration log.
+   - Update onboarding docs to reflect new type safety standards and linting rules.
+
+**Subtasks:**
+- Phase 1: Fix all critical runtime errors (expected: ~20, files: journey stores, core utilities)
+- Phase 2: Fix high-priority user-facing errors (expected: ~10, files: Calculator.tsx, Explorer.tsx, Dashboard.tsx)
+- Phase 3: Fix all AI chatbot system errors (expected: ~100, files: ai-chatbot/*)
+- Phase 4: Fix medium-priority/cosmetic errors (expected: ~8, files: helpers, minor UI components)
+- Phase 5: Run automated cleanup (`eslint --fix`, `ts-prune`)
+- Phase 6: Comprehensive testing (unit, integration, regression)
+- Phase 7: Update CI/CD to enforce strict TypeScript checks
+
+**Key Best Practices:**
+- Never use `any`; prefer `unknown` with type guards when necessary[2][5].
+- Always annotate function parameters and return types explicitly[1][2].
+- Use interfaces for object shapes, type aliases for unions/intersections[1].
+- Enable strict compiler options (`strictNullChecks`, `noImplicitAny`)[2].
+- Refactor with automated tests to prevent regressions.
+- Document all significant type changes.
+
+# Test Strategy:
+1. For each phase, write or update unit tests to cover fixed code paths, especially for runtime and user-facing errors.
+2. Run the full TypeScript compiler (`tsc --noEmit`) after each phase to ensure error count reduction and eventual elimination.
+3. Use ESLint and Prettier to verify code style and auto-fix compliance.
+4. For AI chatbot and user-facing components, perform integration and end-to-end tests to validate behavior and UI correctness.
+5. After all fixes, run the complete regression test suite (Jest, React Testing Library, Cypress as appropriate).
+6. Validate that CI/CD pipelines fail on new TypeScript errors by adding `tsc` and `eslint` checks as required steps.
+7. Review code coverage reports to ensure all refactored areas are adequately tested.
+8. Document all fixes and testing outcomes in the migration log for auditability.
+
+# Subtasks:
+## 1. Inventory and Categorize TypeScript Errors by Module and Severity [pending]
+### Dependencies: None
+### Description: Generate a comprehensive error report using `tsc --noEmit`, export errors to a tracking tool, and categorize each error by type, severity, and affected module.
+### Details:
+Run `tsc --noEmit` to collect all current TypeScript errors. Export the results to a spreadsheet or issue tracker. For each error, record the file path, error code, error message, and stack trace. Categorize errors by type (e.g., type mismatch, unused variable, missing return), severity (runtime-breaking, user-facing, cosmetic), and affected module (e.g., ai-assistant, calculator, stores, utils, hooks, pages, tests). Tag each error for prioritization in subsequent phases.
+
+## 2. Resolve Critical Runtime and High-Priority User-Facing Errors (Manual Fixes) [pending]
+### Dependencies: 12.1
+### Description: Manually fix all runtime-breaking and high-priority user-facing TypeScript errors in core modules and components, following 2025 best practices.
+### Details:
+Focus on errors in journey stores, core utilities, calculator, explorer, and dashboard components. For each error, apply explicit type annotations, use interfaces for object shapes, and avoid `any` in favor of `unknown` with type guards. Refactor incrementally, committing after each logical group of fixes. For risky changes, use feature flags or isolate in feature branches. Document all non-trivial type changes in code comments.
+
+## 3. Remediate AI Chatbot and Utility Module Errors (Parallelized Manual Fixes) [pending]
+### Dependencies: 12.1
+### Description: Address all TypeScript errors in the AI chatbot system and utility modules, prioritizing type safety and maintainability.
+### Details:
+Target errors in `src/components/ai-assistant/*` (~30 errors) and `src/utils/*` (~40 errors). Apply explicit type annotations, refactor to use interfaces and type aliases, and remove dead code where possible. For AI chatbot changes, use beta branches to avoid destabilizing production. Ensure all fixes adhere to strict compiler options (`strictNullChecks`, `noImplicitAny`).
+
+## 4. Automated Cleanup: Linting, Dead Code Elimination, and Minor Error Fixes [pending]
+### Dependencies: 12.2, 12.3
+### Description: Run automated tools to fix cosmetic and low-priority errors, enforce code style, and remove unused code.
+### Details:
+Execute `eslint --fix` to auto-correct lintable issues and enforce formatting with Prettier. Use `ts-prune` to identify and remove unused exports and dead code. Address remaining minor errors (e.g., unused variables, minor type issues) in helpers, minor UI components, and test files. Ensure all changes are committed in small, reviewable batches.
+
+## 5. Comprehensive Testing and CI/CD Enforcement of Strict TypeScript Checks [pending]
+### Dependencies: 12.4
+### Description: Perform full regression testing and update CI/CD pipelines to enforce strict TypeScript and linting rules.
+### Details:
+Run all unit, integration, and regression tests to validate that error remediation did not introduce regressions. Update CI/CD configuration to include strict TypeScript checks (`tsc --noEmit`), ESLint, and Prettier in the build process. Ensure that any future TypeScript errors block merges to main. Document new standards in onboarding and migration docs.
+

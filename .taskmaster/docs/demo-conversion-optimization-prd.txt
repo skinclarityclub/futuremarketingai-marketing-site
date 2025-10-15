@@ -1,0 +1,598 @@
+# Future Marketing AI Demo - Conversion Optimization PRD
+
+## Executive Summary
+
+Transform the Future Marketing AI demo into a highly converting, interactive experience that showcases custom-made solutions, ongoing AI advisory services, and measurable ROI. The demo must guide prospects from awareness to booking a strategic consultation through personalized interactions and clear value propositions.
+
+## Business Objectives
+
+1. **Increase Demo-to-Lead Conversion** from visitors to consultation bookings
+2. **Communicate Custom Solutions** - Make "maatwerk" (custom-made) messaging central
+3. **Highlight AI Advisory Service** - Position ongoing partnership as key differentiator
+4. **Demonstrate Clear ROI** - Use interactive calculator with visitor's own data
+5. **Reduce Friction** - Make next steps obvious and easy at every stage
+
+## Target Audience
+
+- **Primary**: Business Owners (SME, 10-100 employees) in e-commerce, services, B2B
+- **Secondary**: Marketing Managers seeking automation and efficiency gains
+- **Pain Points**: Time-consuming content creation, multi-platform management, measuring ROI, staying current with trends
+
+## Current State Analysis
+
+### What We Have (✅):
+- 3D interactive sphere visualization
+- Explorer page with 6 modules
+- ROI Calculator with inputs: team size, salary, campaigns
+- Animated metrics and counters
+- Module details with stats and features
+- Navigation between Hero → Explorer
+
+### What's Missing (❌):
+1. No "custom-made" messaging anywhere
+2. AI advisory service not mentioned
+3. ROI calculator is generic (not personalized to marketing automation)
+4. No clear CTAs in key moments
+5. No social proof or trust indicators
+6. No exit-intent or urgency triggers
+7. No personalized demo paths
+8. Missing: Executive summary/reporting showcase
+9. Missing: Scenario comparison ("with vs without automation")
+10. No persistent "Book Consultation" CTA
+
+## Core Features & Requirements
+
+### 1. Premium Service Badge System
+**Priority**: HIGH | **Effort**: 2 hours
+
+**Description**:
+Persistent badge/banner across all pages communicating unique value propositions.
+
+**Requirements**:
+- Display at top of Hero, Explorer, Calculator pages
+- Three pillars: 🎨 Custom-Made Solutions | 👤 Dedicated AI-Advisor | 🎯 Ongoing Optimization
+- Glassmorphic design matching brand aesthetic
+- Subtle animation on page load
+- Mobile responsive (stack vertically on mobile)
+
+**Success Metrics**:
+- Visible on all pages
+- Does not obstruct primary content
+- Increases time-on-page by communicating value immediately
+
+---
+
+### 2. Enhanced ROI Calculator
+**Priority**: CRITICAL | **Effort**: 4 hours
+
+**Description**:
+Transform generic calculator into marketing automation-specific tool with personalization and comparison features.
+
+**Current State**:
+- Inputs: Team size, avg salary, campaigns/month
+- Outputs: Generic ROI, time saved, labor cost
+
+**New Requirements**:
+
+**2.1 New Input Fields**:
+- Industry dropdown (E-commerce, Services, B2B, Agency, Other)
+- Current platforms used (checkboxes: Instagram, Facebook, TikTok, YouTube, LinkedIn, Blog)
+- Current posting frequency per platform (slider: 0-30 posts/month per platform)
+- Current monthly content creation cost (€)
+- Current tools used (text area for user to list)
+
+**2.2 Personalized Calculations**:
+- Calculate total hours spent on content creation per month (based on industry benchmarks)
+- Show platform-specific time savings
+- Calculate cost of current tools vs. all-in-one solution
+- Show engagement improvement estimates (industry-specific)
+- Project revenue increase based on consistent posting + A/B testing
+
+**2.3 "With vs Without" Comparison**:
+- Side-by-side visual comparison
+- "Your Current Situation" vs "With Future Marketing AI"
+- Show current monthly costs, time investment, output
+- Show projected costs, time savings, output increase
+
+**2.4 Results Page Enhancement**:
+- Hero metric: Total potential savings (€/month)
+- Secondary metrics: Time saved (hours), Content output increase (%), ROI (%)
+- Break-even timeline visualization (already exists, enhance)
+- Add "Share Results" button (copy link with parameters)
+- Add "Download PDF Report" button (generate summary)
+
+**2.5 Persistent Inputs**:
+- Save to localStorage (already done)
+- Also capture in URL parameters for sharing
+- Pre-fill from URL params if present
+
+**Success Metrics**:
+- Calculator completion rate > 70%
+- Average time on calculator page > 3 minutes
+- CTA click rate after calculation > 30%
+
+---
+
+### 3. AI Advisory Service Module
+**Priority**: HIGH | **Effort**: 3 hours
+
+**Description**:
+Dedicated section explaining ongoing AI advisory services and partnership model.
+
+**Location Options**:
+- Option A: New module in Explorer (7th module)
+- Option B: Expandable section in each Explorer module
+- **Recommended**: Option A
+
+**Requirements**:
+
+**3.1 Module Content**:
+- Title: "AI-Adviseur Partnership"
+- Subtitle: "Jouw Strategische Sparringpartner"
+- Icon: 👤 or 🤝
+- ROI Metric: "Ongoing Optimization"
+
+**3.2 Modal Details**:
+- **Overview**: "Elk Future Marketing AI pakket wordt geleverd met een dedicated AI-adviseur. Ik werk continu met jou samen om jouw marketingdoelen te bereiken en de automatisering te optimaliseren."
+- **What's Included**:
+  - Wekelijkse check-ins en strategie-besprekingen
+  - Real-time aanpassingen aan content-strategie
+  - Platform-specifieke optimalisatie adviezen
+  - Trend analysis en forecasting guidance
+  - Custom workflow ontwerp en iteratie
+  - Toegang via Telegram voor directe vragen
+- **Process Steps**:
+  1. Intake gesprek - Doelen en KPIs definiëren
+  2. Custom strategie ontwikkelen - Op maat voor jouw business
+  3. Implementatie begeleiding - Stap voor stap setup
+  4. Wekelijkse optimalisatie - Analyse en aanpassingen
+  5. Maandelijkse rapportage - Resultaten en next steps
+- **Metrics**:
+  - Response Time: < 4 uur
+  - Check-in Frequency: Wekelijks
+  - Strategy Updates: Maandelijks
+
+**3.3 Integration**:
+- Mention advisory service in every other module's modal (small badge)
+- Link to Advisory module from Calculator results
+- Add to Premium Service Badge
+
+**Success Metrics**:
+- Advisory module viewed by > 40% of Explorer visitors
+- Increases perceived value and justifies premium pricing
+
+---
+
+### 4. Strategic CTA Placement
+**Priority**: CRITICAL | **Effort**: 2 hours
+
+**Description**:
+Deploy prominent, contextual CTAs at key decision points throughout demo.
+
+**4.1 Primary CTA**: "Boek Strategisch Gesprek"
+- Calendly integration (or custom booking modal)
+- Opens in modal (not new tab) for lower friction
+- Pre-fills user's calculated ROI and inputs if coming from calculator
+
+**4.2 CTA Placements**:
+1. **Hero Page** (persistent floating button, bottom-right):
+   - "Boek Gesprek" button
+   - Badge showing "Free 30-min consultation"
+   - Always visible, follows scroll
+   
+2. **Explorer Page** (each module modal):
+   - At bottom of modal: "Wil je [Module Name] voor jouw bedrijf? Boek gesprek →"
+   - Contextual to module (e.g., "Wil je deze content automation voor jouw bedrijf?")
+
+3. **Calculator Results**:
+   - Large primary CTA: "Boek Gratis ROI-Analyse Gesprek"
+   - Context: "Laten we jouw specifieke situatie bespreken en een custom plan maken"
+   - Secondary CTA: "Verken Modules" (links to Explorer)
+
+4. **Exit Intent** (when user moves mouse to close tab):
+   - Modal: "Wacht! Krijg jouw persoonlijke marketing automation plan"
+   - Offer: "Boek een gratis 30-min gesprek en ontvang een custom strategie"
+   - Quick form: Name, Email, Phone, Preferred Date
+
+**4.3 CTA Design**:
+- Primary: Gradient button with glow effect
+- Text: Clear, action-oriented, benefit-focused
+- Icons: 📅 for booking, 🎯 for strategy
+- Trust indicators below: "✓ Gratis ✓ Geen verplichtingen ✓ 30 minuten"
+
+**Success Metrics**:
+- Overall CTA click rate > 15%
+- Exit-intent conversion rate > 5%
+- Calendly booking rate from demo > 10%
+
+---
+
+### 5. Social Proof & Trust Indicators
+**Priority**: HIGH | **Effort**: 2 hours
+
+**Description**:
+Build credibility through testimonials, results, and authority signals.
+
+**5.1 Testimonials Section** (new section on Hero or Calculator):
+- 2-3 customer quotes with results
+- Format: Photo, Name, Company, Quote, Result metric
+- Rotating carousel or grid display
+
+**5.2 Results Showcase** (aggregate metrics):
+- Display on Hero page below sphere:
+  - "€2.5M+ Saved for Clients"
+  - "50K+ Content Pieces Generated"
+  - "20+ Businesses Automated"
+  - "95% Client Satisfaction"
+- Animated counters (already have AnimatedMetric component)
+
+**5.3 Trust Badges**:
+- On Calculator CTA section:
+  - "✓ GDPR Compliant"
+  - "✓ SOC 2 Certified" (if applicable)
+  - "✓ 30-Day Money-Back Guarantee"
+  - "✓ Enterprise Security"
+
+**5.4 Case Study Links**:
+- Brief case study cards on Explorer page
+- Format: Industry, Challenge, Solution, Results
+- Link to full case study (can be mock for demo)
+
+**Success Metrics**:
+- Testimonials increase time-on-page by 20%
+- Trust indicators reduce bounce rate by 10%
+
+---
+
+### 6. Executive Summary & Reporting Preview
+**Priority**: MEDIUM | **Effort**: 3 hours
+
+**Description**:
+Show prospects what they'll receive: beautiful, actionable reports.
+
+**6.1 Location**:
+- New section at end of Calculator results
+- OR: New "Reporting" module in Explorer
+
+**6.2 Content**:
+- Title: "Executive Reporting Preview"
+- Show mock executive summary report:
+  - Monthly performance overview
+  - Platform-by-platform breakdown
+  - Content engagement metrics
+  - ROI tracking
+  - Recommended optimizations
+  - Next month strategy
+
+**6.3 Design**:
+- PDF-style preview (can be image or styled HTML)
+- "Download Sample Report" button
+- Professional, data-driven layout
+- Charts and visualizations (use existing HeatMap, BreakEvenTimeline)
+
+**Success Metrics**:
+- Report preview viewed by > 30% of calculator users
+- Download rate > 15%
+
+---
+
+### 7. Personalized Demo Paths
+**Priority**: MEDIUM | **Effort**: 4 hours
+
+**Description**:
+Adapt demo content based on user inputs and behavior.
+
+**7.1 Industry Selection** (on Hero page or before Calculator):
+- Modal or dropdown: "Welke industrie beschrijft jouw bedrijf?"
+- Options: E-commerce, Services, B2B SaaS, Agency, Consultancy, Other
+- Store in localStorage and URL param
+
+**7.2 Content Personalization**:
+- Calculator: Use industry-specific benchmarks and examples
+- Explorer: Highlight most relevant modules first (e.g., B2B → LinkedIn focus)
+- Testimonials: Show industry-matched testimonial
+- Use cases: Display industry-specific scenarios
+
+**7.3 Progressive Profiling**:
+- Don't ask all questions upfront
+- Gather data progressively: Industry → Platforms → Challenges → Goals
+- Each interaction teaches demo more about prospect
+
+**Success Metrics**:
+- Personalized demos have 30% higher engagement
+- Industry-specific paths reduce bounce rate
+
+---
+
+### 8. Performance & Analytics
+**Priority**: HIGH | **Effort**: 2 hours
+
+**Description**:
+Track everything for data-driven optimization.
+
+**8.1 Events to Track**:
+- Page views (Hero, Explorer, Calculator)
+- Module opens in Explorer
+- Calculator: Input changes, calculation complete
+- CTA clicks (all CTAs)
+- Exit intent trigger
+- Scroll depth
+- Time on each section
+- Calendly modal open/booking complete
+
+**8.2 Funnels to Define**:
+1. Hero → Explorer → Calculator → CTA
+2. Hero → Calculator → CTA
+3. Hero → Explorer → Module View → CTA
+
+**8.3 A/B Testing Setup** (future):
+- Prepare framework for A/B testing:
+  - CTA copy variations
+  - Calculator input order
+  - Module order in Explorer
+  - Exit intent offers
+
+**8.4 Analytics Integration**:
+- Google Analytics 4 (already integrated)
+- Hotjar (already integrated)
+- Custom dashboard for demo performance
+
+**Success Metrics**:
+- All critical events tracked
+- Funnel completion rates measurable
+- Drop-off points identified
+
+---
+
+### 9. Mobile Optimization
+**Priority**: HIGH | **Effort**: 3 hours
+
+**Description**:
+Ensure flawless experience on all devices (40%+ traffic is mobile).
+
+**9.1 Responsive Design**:
+- Hero: 3D sphere scales appropriately, touch interactions work
+- Explorer: Grid becomes single-column, modals are full-screen
+- Calculator: Inputs are thumb-friendly, keyboard doesn't obscure content
+- CTAs: Large enough for touch (min 44x44px)
+
+**9.2 Performance**:
+- Lazy load heavy components (already done)
+- Reduce bundle size for mobile
+- Optimize images and 3D assets
+
+**9.3 Mobile-Specific Features**:
+- Swipe gestures for module navigation
+- Bottom-sheet modals instead of centered
+- Sticky CTA bar at bottom
+
+**Success Metrics**:
+- Mobile conversion rate within 80% of desktop
+- Mobile page load time < 3s
+- No UI breakage on devices from 320px to 768px
+
+---
+
+### 10. Content & Copy Improvements
+**Priority**: MEDIUM | **Effort**: 2 hours
+
+**Description**:
+Refine all copy for clarity, persuasion, and conversion.
+
+**10.1 Value Proposition** (Hero page):
+- Current: Generic or missing
+- New: "Automatiseer Jouw Hele Content Marketing. Maatwerk + AI-Adviseur Included."
+- Subheadline: "Van research tot publicatie - één intelligent systeem dat 24/7 voor je werkt."
+
+**10.2 Module Descriptions**:
+- Make benefit-focused, not feature-focused
+- Format: What it does + Why it matters + Result you get
+- Example: "Research & Planning" → "Ontdek Trends Voordat Je Concurrentie Het Doet - Blijf altijd relevant met AI-powered trend forecasting"
+
+**10.3 CTA Copy**:
+- Avoid generic "Learn More" or "Get Started"
+- Use specific, benefit-driven copy:
+  - "Bereken Mijn ROI"
+  - "Boek Gratis Strategiegesprek"
+  - "Zie Mijn Besparingen"
+  - "Start Mijn Custom Plan"
+
+**10.4 Microcopy**:
+- Add reassuring microcopy near CTAs:
+  - "Gratis en vrijblijvend"
+  - "Setup in 48 uur"
+  - "Cancel anytime"
+
+**Success Metrics**:
+- Copy changes increase CTA click rate by 20%
+- Reduced confusion (fewer support questions)
+
+---
+
+## Technical Architecture
+
+### Components to Build/Enhance:
+1. `PremiumServiceBadge` - New component for top banner
+2. `CalculatorV2` - Enhanced calculator with new inputs
+3. `ComparisonTable` - "With vs Without" visualization
+4. `AIAdvisoryModule` - New Explorer module
+5. `StrategicCTA` - Reusable CTA component with Calendly
+6. `ExitIntentModal` - Exit intent trigger and capture form
+7. `SocialProofSection` - Testimonials and trust indicators
+8. `ExecutiveSummary` - Report preview component
+9. `IndustrySelector` - Modal for choosing industry
+
+### State Management:
+- Use Context or Zustand for:
+  - User profile (industry, platforms, etc.)
+  - Calculator inputs and results
+  - Demo progress tracking
+- Persist to localStorage
+- Sync with URL params for sharing
+
+### Analytics Integration:
+- Extend existing `usePageAnalytics` hook
+- Add custom event tracking for all interactions
+- Hotjar heatmaps and recordings
+- Funnel analysis in GA4
+
+---
+
+## Implementation Phases
+
+### Phase 1: Quick Wins (Week 1)
+**Goal**: Immediate conversion improvements
+1. Premium Service Badge
+2. Strategic CTA placement (floating button + exit intent)
+3. Calculator: Add industry input and personalized messaging
+4. Social proof section on Hero
+
+**Estimated Effort**: 12 hours
+**Expected Impact**: 20-30% increase in CTA clicks
+
+### Phase 2: Calculator Enhancement (Week 2)
+**Goal**: Transform calculator into main conversion tool
+1. New calculator inputs (platforms, frequency, costs)
+2. "With vs Without" comparison visualization
+3. Personalized results and recommendations
+4. Share results functionality
+
+**Estimated Effort**: 16 hours
+**Expected Impact**: 40-50% increase in calculator completion → booking rate
+
+### Phase 3: Content & Trust (Week 2-3)
+**Goal**: Build credibility and reduce friction
+1. AI Advisory Service module in Explorer
+2. Testimonials and case studies
+3. Executive summary preview
+4. Copy improvements across all pages
+
+**Estimated Effort**: 14 hours
+**Expected Impact**: 15-20% reduction in bounce rate
+
+### Phase 4: Personalization (Week 3-4)
+**Goal**: Adapt demo to each visitor
+1. Industry selector
+2. Personalized demo paths
+3. Progressive profiling
+4. Dynamic content based on user data
+
+**Estimated Effort**: 18 hours
+**Expected Impact**: 30% increase in engagement time
+
+### Phase 5: Optimization (Week 4+)
+**Goal**: Refine based on data
+1. A/B testing framework
+2. Analytics deep dive
+3. Mobile-specific optimizations
+4. Performance tuning
+
+**Estimated Effort**: 12 hours
+**Expected Impact**: 10-15% continuous improvement
+
+---
+
+## Success Metrics & KPIs
+
+### Primary Metrics:
+- **Conversion Rate**: Demo visits → Consultation bookings (Target: 10-15%)
+- **CTA Click Rate**: Overall CTA clicks / total visitors (Target: 15-20%)
+- **Calculator Completion Rate**: Started → Completed (Target: 70%+)
+
+### Secondary Metrics:
+- **Engagement Time**: Average time on demo (Target: 5+ minutes)
+- **Module Exploration**: % of visitors viewing 3+ modules (Target: 50%+)
+- **Exit Intent Conversion**: Exit modal conversions / triggers (Target: 5-10%)
+- **Mobile Conversion**: Mobile conversion rate / Desktop rate (Target: 80%+)
+
+### Tracking:
+- Weekly dashboard review
+- Hotjar session recordings analysis
+- GA4 funnel reports
+- User feedback collection (post-booking survey)
+
+---
+
+## Technical Constraints & Considerations
+
+- **Performance Budget**: Total bundle size < 500KB (gzipped)
+- **Accessibility**: WCAG 2.1 AA compliant
+- **Browser Support**: Chrome/Edge/Safari/Firefox (last 2 versions)
+- **Mobile**: iOS Safari, Android Chrome
+- **Load Time**: FCP < 1.5s, LCP < 2.5s
+- **Animations**: Respect prefers-reduced-motion
+
+---
+
+## Risks & Mitigations
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| Calculator too complex | High | A/B test simplified version, progressive disclosure |
+| Exit intent annoying | Medium | Limit to 1x per session, easy dismiss |
+| Calendly integration fails | High | Fallback contact form, test thoroughly |
+| Mobile performance poor | High | Aggressive lazy loading, reduce 3D complexity on mobile |
+| Users don't understand "maatwerk" | Medium | Add tooltip, use "custom-made" in English too |
+
+---
+
+## Future Enhancements (Post-Launch)
+
+1. **Live Chat Integration**: Real-time questions during demo
+2. **Video Walkthrough**: Guided tour option
+3. **Interactive Sandbox**: Let users "build" their automation
+4. **Compare Plans**: Side-by-side pricing comparison
+5. **Referral Program**: Share demo, get rewards
+6. **Multi-language Support**: English version
+7. **AI Chat Assistant**: Answer questions in context
+
+---
+
+## Appendix
+
+### Competitor Analysis:
+- HubSpot: Strong social proof, clear CTAs, free tools
+- Hootsuite: Interactive demos, ROI calculator, case studies
+- Buffer: Simple onboarding, trial focus, beautiful design
+- Later: Visual focus, Instagram-first, influencer testimonials
+
+**Our Differentiators**:
+- 3D interactive visualization (unique!)
+- End-to-end automation (not just scheduling)
+- AI-powered research and trend forecasting
+- Custom-made solutions (not cookie-cutter)
+- Dedicated AI advisor (ongoing partnership)
+
+### User Personas:
+
+**Persona 1: "Busy Owner Olaf"**
+- Age: 35-50
+- Role: E-commerce business owner
+- Pain: No time for marketing, hiring is expensive
+- Goal: Autopilot content, more sales, less effort
+- Demo needs: Quick ROI proof, trust signals, easy booking
+
+**Persona 2: "Strategic Sarah"**
+- Age: 28-40
+- Role: Marketing Manager
+- Pain: Manual content creation, multi-platform chaos, hard to measure ROI
+- Goal: Efficiency, better results, data-driven decisions
+- Demo needs: Feature depth, analytics preview, best practices
+
+### Key Messages:
+1. **Maatwerk**: "Geen standaard pakket - elk systeem is op maat ontworpen voor jouw unieke situatie"
+2. **AI-Adviseur**: "Je bent nooit alleen - continue strategische begeleiding inbegrepen"
+3. **Complete Oplossing**: "Van research tot rapportage - alles in één intelligent systeem"
+4. **Proven Results**: "Gemiddeld 60% tijdsbesparing en 200%+ ROI in eerste 6 maanden"
+
+---
+
+## Conclusion
+
+This PRD outlines a comprehensive transformation of the Future Marketing AI demo from a feature showcase into a high-converting, personalized lead generation machine. By emphasizing custom solutions, ongoing advisory services, and measurable ROI, we position the offering as a premium, partnership-based service rather than a commodity SaaS tool.
+
+**Recommended Start**: Phase 1 (Quick Wins) to get immediate improvements, then iterate based on data.
+
+**Estimated Total Effort**: 70-80 hours over 4 weeks
+**Expected ROI**: 50-100% increase in demo-to-booking conversion rate
+

@@ -1,0 +1,43 @@
+# Task ID: 3
+# Title: Develop Advanced Particle System (ParticleSystem)
+# Status: pending
+# Dependencies: 1, 2
+# Priority: high
+# Description: Build a performant, multi-type particle engine supporting ambient, data stream, orbital, and burst particles with pooling and optimization.
+# Details:
+Implement ParticleSystem.tsx using Canvas API for rendering. Architect a particle object pool (see PRD for pooling and culling strategies). Create four particle types: ambient, data stream, orbital, and burst, each with unique behaviors and rendering logic. Use requestAnimationFrame for the main loop, and offscreen culling for performance. Integrate velocity-based physics for data stream particles and motion blur trails. Use Web Workers for physics calculations if CPU usage exceeds 20%. Expose hooks (useParticlePool) for other components to trigger bursts or update particle states. Ensure particle count dynamically adapts to device capability and reduced motion settings.
+
+# Test Strategy:
+Unit test each particle type's behavior and rendering. Profile FPS and CPU usage with 500+ particles. Validate pooling and culling by monitoring memory usage. Test burst triggers from CoreSphere3D and SatelliteNode. Confirm reduced motion mode limits particle count and disables continuous animation.
+
+# Subtasks:
+## 1. Architect Particle Object Pool and Culling System [pending]
+### Dependencies: None
+### Description: Design and implement a particle object pool to efficiently manage particle creation, reuse, and destruction. Integrate offscreen culling strategies to optimize rendering and memory usage.
+### Details:
+Follow PRD guidelines for pooling and culling. Ensure the pool supports dynamic resizing based on device capability and reduced motion settings. Validate that particles outside the visible canvas are culled to minimize CPU/GPU load.
+
+## 2. Implement Four Particle Types with Unique Behaviors [pending]
+### Dependencies: 3.1
+### Description: Develop ambient, data stream, orbital, and burst particle classes, each with distinct behaviors and rendering logic using the Canvas API.
+### Details:
+Define particle properties and update/render methods for each type. Ambient particles should float passively, data stream particles require velocity-based physics and motion blur, orbital particles follow elliptical paths, and burst particles trigger rapid dispersal events.
+
+## 3. Integrate Main Animation Loop and Performance Adaptation [pending]
+### Dependencies: 3.1, 3.2
+### Description: Set up the main animation loop using requestAnimationFrame, ensuring smooth updates and adaptive particle counts based on device capability and reduced motion settings.
+### Details:
+Implement logic to dynamically adjust particle count for performance. Ensure the loop coordinates updates, rendering, and culling for all active particles.
+
+## 4. Offload Physics Calculations to Web Workers When Needed [pending]
+### Dependencies: 3.2, 3.3
+### Description: Monitor CPU usage and offload physics calculations for data stream particles to Web Workers if usage exceeds 20%.
+### Details:
+Implement a monitoring system for CPU usage. When threshold is exceeded, transfer physics calculations for relevant particles to Web Workers and synchronize results with the main thread.
+
+## 5. Expose Particle System Hooks for External Component Integration [pending]
+### Dependencies: 3.1, 3.2, 3.3, 3.4
+### Description: Create and document hooks (e.g., useParticlePool) to allow other components to trigger bursts or update particle states.
+### Details:
+Design React hooks or context APIs for external access. Ensure hooks support burst triggers, state updates, and querying pool status. Document usage for integration with CoreSphere3D and SatelliteNode.
+

@@ -1,0 +1,193 @@
+{
+  "pain_section": {
+    "title": "What's Your Current Approach Costing?",
+    "points": {
+      "hours": "<strong>60+ hours/week</strong> wasted on manual content creation, posting, and analysis",
+      "costs": "<strong>€10K-€15K/month</strong> in team costs for marketing that doesn't scale",
+      "posts": "<strong>Only 40 posts/month</strong> across 7 platforms = inconsistent",
+      "strategy": "<strong>No time for strategy</strong> constantly firefighting with content",
+      "advertising": "<strong>Blind advertising</strong> without data = wasted budget",
+      "offshelf": "<strong>Off-the-shelf solutions</strong> require compromises on YOUR specific workflow"
+    },
+    "cta": "👇 <strong className=\"text-red-400\">Calculate below</strong> what you SAVE with automated AI"
+  },
+  "inputs": {
+    "section_title": "Your Marketing Metrics",
+    "validation_error": "Please enter a value between {{min}} and {{max}}",
+    "team_size": {
+      "label": "Marketing Team Size",
+      "unit": "people",
+      "description": "How many people are in your marketing team?"
+    },
+    "channels": {
+      "label": "Marketing Channels",
+      "description": "How many channels do you actively manage? (Social media, email, blog, ads, etc.)"
+    },
+    "marketing_spend": {
+      "label": "Current Marketing Spend per Month (Optional)",
+      "description": "Approximate monthly budget for agencies, tools, or ads"
+    },
+    "avg_salary": {
+      "label": "Average Annual Salary",
+      "description": "Average yearly salary per team member (for ROI calculation)"
+    },
+    "campaigns": {
+      "label": "Monthly Campaign Volume",
+      "unit": "campaigns",
+      "description": "Number of marketing campaigns you run per month"
+    },
+    "team_size_buttons": {
+      "lean": "Lean (1-5)",
+      "growing": "Growing (5-15)",
+      "scaling": "⭐ Scaling (15-50) - Recommended"
+    },
+    "channel_descriptions": {
+      "starting": "Starting out",
+      "perfect": "⭐ Perfect fit",
+      "high_volume": "⭐ High volume",
+      "enterprise": "Enterprise scale"
+    },
+    "advanced_settings": "Advanced Settings (optional)",
+    "high_spend_alert": {
+      "title": "High spend detected!",
+      "description": "You could save significant costs with automation. Our AI can handle this workload at a fraction of the cost."
+    }
+  },
+  "results": {
+    "loading": "Calculating results...",
+    "roi_title": "Your Estimated Return on Investment",
+    "team_description": "For teams like yours: {{teamSize}} people managing {{channels}} channels",
+    "team_description_with_spend": "For teams like yours: {{teamSize}} people managing {{channels}} channels, spending {{spend}}/month",
+    "custom_built_advantage": {
+      "badge": "🔧 Custom-Built Advantage:",
+      "description": "This ROI is possible because the system is built specifically for YOUR workflow—not a template you need to adapt to."
+    },
+    "metric_labels": {
+      "time_saved": "Time Saved",
+      "labor_cost_savings": "Labor Cost Savings",
+      "content_output": "Content Output",
+      "revenue_increase": "Revenue Increase"
+    },
+    "section_titles": {
+      "current_costs": "Current Costs (Manual)",
+      "with_automation": "With AI Automation",
+      "your_gains": "Your Gains"
+    },
+    "metrics": {
+      "team_costs": "Team Costs",
+      "time_spent": "Time Spent",
+      "output": "Content Output",
+      "efficiency": "Efficiency",
+      "cost_per_post": "Cost per Post",
+      "time_saved": "Time Saved",
+      "cost_savings": "Cost Savings",
+      "roi": "ROI",
+      "break_even": "Break-Even",
+      "payback_period": "Payback Period"
+    },
+    "units": {
+      "per_month": "/month",
+      "per_year": "/year",
+      "hours_per_week": "h/week",
+      "posts_per_month": "posts/month",
+      "months": "months"
+    }
+  },
+  "share": {
+    "title": "Share Your Results",
+    "subtitle": "Save or share your ROI calculation with your team",
+    "button_share": "Share",
+    "button_export_pdf": "Export PDF",
+    "button_exporting": "Exporting...",
+    "link_copied": "✓ Link copied!",
+    "export_error": "PDF export failed. Please try again.",
+    "modal": {
+      "title": "Share Your Calculation",
+      "description": "Share your ROI calculation with your team via a link",
+      "copy_link_title": "Copy Link",
+      "copy_link_subtitle": "Share via any app",
+      "share_directly_title": "Share Directly",
+      "share_directly_subtitle": "Via social media or email",
+      "shareable_link_label": "📋 Your Shareable Link:",
+      "info_text": "Your link contains the current calculator values. Anyone with this link can view your calculation."
+    }
+  },
+  "cta": {
+    "see_how": "See How It Works",
+    "book_demo": "Book a Demo"
+  },
+  "comparison_table": {
+    "header": {
+      "title": "Before & After: Your Transformation",
+      "subtitle": "Side-by-side comparison of current situation vs automated AI"
+    },
+    "labels": {
+      "without_ai": "❌ Without AI",
+      "with_ai": "✅ With FutureMarketingAI",
+      "difference": "💎 Difference",
+      "before": "Before:",
+      "after": "After:"
+    },
+    "metrics": {
+      "content_output": {
+        "metric": "Content Output",
+        "unit_month": "posts/month",
+        "before_subtext": "Manual",
+        "after_subtext": "24/7 AI automation"
+      },
+      "time_per_month": {
+        "metric": "Time per Month (team)",
+        "unit_hours": "hours",
+        "before_subtext_template": "{{teamSize}} people × 60h",
+        "after_value": "40 hours",
+        "after_subtext": "2 people × 20h monitoring",
+        "difference_percentage": "93% less time"
+      },
+      "team_costs": {
+        "metric": "Team Costs (50% time on marketing)",
+        "before_subtext_template": "{{teamSize}} people",
+        "after_subtext": "2 people monitoring"
+      },
+      "platform_costs": {
+        "metric": "Platform Costs",
+        "before_value": "€0/month",
+        "before_subtext": "Manual work",
+        "after_subtext": "AI platform investment",
+        "difference_percentage": "Investment"
+      },
+      "publishing_consistency": {
+        "metric": "Publishing Consistency",
+        "before_value": "30-50%",
+        "before_subtext": "Irregular due to time shortage",
+        "after_value": "99.8%",
+        "after_subtext": "24/7 AI automation",
+        "difference_value": "+50%",
+        "difference_percentage": "2x better uptime"
+      },
+      "ad_roi": {
+        "metric": "Ad ROI & Pre-Testing",
+        "before_value": "Unmeasurable",
+        "before_subtext": "Guesswork without data",
+        "after_value": "3:1 ROAS",
+        "after_subtext": "€3 return per €1 spend",
+        "difference_value": "+285%",
+        "difference_percentage": "Through AI pre-testing"
+      }
+    },
+    "summary": {
+      "net_benefit": "NET BENEFIT",
+      "after_all_costs": "after all costs",
+      "per_month": "/month",
+      "per_year": "per year",
+      "roi_label": "ROI:"
+    }
+  },
+  "loading": {
+    "scheduling": "Loading scheduling..."
+  },
+  "final_cta": {
+    "title": "Ready to Transform Your Marketing?",
+    "description": "See how FutureMarketingAI can deliver {{roi}} ROI and save {{hours}} hours per month for your team.",
+    "book_call": "Book Call"
+  }
+}

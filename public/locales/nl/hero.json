@@ -1,0 +1,266 @@
+{
+  "headline_variants": {
+    "team_size": "10x Output, Zelfde Teamgrootte",
+    "pain_point": "Schaal Content Zonder Schaalbare Kosten",
+    "situation": "Team van 3, Output van 30",
+    "future_focused": "Autonome Marketing voor Teams 10-50",
+    "innovation_focused": "Marketing Die Zichzelf Runt",
+    "risk_reward": "De Toekomst is Autonoom"
+  },
+  "headline_subtitles": {
+    "team_size": "AI maakt 24/7 content terwijl uw team focust op strategie.",
+    "pain_point": "Vergroot output 10x zonder je team te vergroten.",
+    "situation": "Autonome AI schaalt uw marketing zonder aanwerving.",
+    "future_focused": "Sluit je aan bij de eerste 10 teams die het voordeel van morgen bouwen.",
+    "innovation_focused": "Wees een van de pioniers die bewijzen dat autonome marketing werkt.",
+    "risk_reward": "Sluit je aan bij de eerste 10 teams die het bewijzen."
+  },
+  "main_headline": "10x Meer Output, Zelfde Teamgrootte",
+  "subtitle": "Voor teams van 10-50 mensen. AI die 24/7 content maakt terwijl u focust op strategie.",
+  "stats_context": "Gemiddelde resultaten van teams die automatiseerden:",
+  "trust_signals": {
+    "team_size": "Teams 10-50",
+    "custom_built_usp": "Gebouwd VOOR U, Niet DOOR U",
+    "ai_powered": "GPT-4 & Claude"
+  },
+  "custom_built_badge": "Volledig Op Maat • Geen Templates",
+
+  "tech_stack": {
+    "label": "Aangedreven door Toonaangevende AI"
+  },
+
+  "vision_timeline": {
+    "badge": "Waar We Naartoe Gaan",
+    "title": "De Evolutie van Marketing Automatisering",
+    "early_adopter_window": "EARLY ADOPTER WINDOW",
+    "you_are_here": "U Bent Hier",
+    "insight": "Teams die vroeg AI-hulpmiddelen adopteerden (2020-2022) kregen 3-5 jaar voorsprong op concurrenten.",
+    "insight_emphasis": "Hetzelfde 2-jaar venster bestaat NU (eind 2025) voor autonome systemen.",
+    "insight_data": "<1% heeft dit vandaag. Mainstream komt 2027-2028. Handel nu = 2-3 jaar unfair advantage."
+  },
+
+  "stats": {
+    "hours_saved": {
+      "value": "360",
+      "label": "Uur Bespaard",
+      "suffix": "u/maand",
+      "detail": "Was: 6 personen × 60u/maand handmatig"
+    },
+    "content_output": {
+      "value": "160",
+      "label": "Content Output",
+      "suffix": " posts",
+      "detail": "Was: 40 posts (handmatig)"
+    },
+    "engagement": {
+      "value": "247",
+      "label": "Engagement",
+      "suffix": "%",
+      "detail": "Gemiddeld over alle platforms"
+    }
+  },
+
+  "cta": {
+    "primary": "Verken Platform",
+    "explore_platform": "Verken Platform →",
+    "secondary": "Bereken ROI",
+    "calendly": "Boek Kennismakingsgesprek"
+  },
+
+  "premium": {
+    "title": "All-in-One Premium Services",
+    "description": "Drie krachtige modules die naadloos samenwerken voor complete marketingautomatisering"
+  },
+
+  "early_adopter": {
+    "title": "Sluit Je Aan Bij De Eerste 10 Pioneer Teams",
+    "description": "Wees een van de early adopters die het concurrentievoordeel van morgen bouwen. 3 teams draaien al 24/7. Nog 7 Founders Pricing plekken beschikbaar (60% korting, voor altijd vastgelegd).",
+    "primary_cta": "Aanvraag Founders Pricing →",
+    "secondary_cta": "Bereken Je ROI",
+    "urgency": "",
+    "trust_indicators": {
+      "founder_access": "✓ Directe Slack toegang tot oprichter",
+      "co_create": "✓ Co-creëer de roadmap met ons",
+      "no_cc": "✓ Geen creditcard nodig - we beoordelen binnen 24u"
+    }
+  },
+
+  "floating_cta": {
+    "title": "Klaar Om Te Starten?",
+    "urgency": "⏰ Nog maar 3 plekken beschikbaar",
+    "trust_indicators": {
+      "quick_call": "✓ 30-min gesprek",
+      "no_commitment": "✓ Geen verplichtingen"
+    }
+  },
+
+  "exit_intent": {
+    "title": "Wacht! Mis Dit Niet",
+    "description": "Boek een gratis 30-minuten consultatie en ontdek hoe FutureMarketingAI jouw marketing kan automatiseren.",
+    "primary_cta": "Boek Gratis Gesprek",
+    "secondary_cta": "Nog Niet Nu",
+    "urgency": "⏰ Bonus: Gratis ROI scan",
+    "trust_indicators": {
+      "quick_call": "✓ 30-min gesprek",
+      "roi_analysis": "✓ Persoonlijke ROI analyse",
+      "no_commitment": "✓ Geen verplichtingen"
+    }
+  },
+
+  "loading": {
+    "diagram": "Diagram laden...",
+    "scheduling": "Planning laden..."
+  },
+
+  "case_studies": {
+    "ecommerce": {
+      "id": "1",
+      "industry": "E-commerce",
+      "company": "EcoShop NL",
+      "pain_point": "Team van 4 personen besteedde 60+ uur/week aan het handmatig maken van content. Slechts 30-40 posts/maand met inconsistente kwaliteit. 70% van productlanceringen gemist door content bottleneck.",
+      "solution": "Future Marketing AI automatiseerde het volledige contentproces met 24/7 AI-agents. Automatisch trendonderzoek, multi-platform contentgeneratie, slimme planning en realtime prestatie-tracking. Alles geïntegreerd met hun webshop en productcatalogus.",
+      "results": "Van 40 naar 160 posts/maand (4x), 80 uur/maand bespaard, engagement gestegen met 285%, en conversieratio verbeterd met 42%. Team kan zich nu focussen op strategie en klantervaring.",
+      "metrics": {
+        "posts": {
+          "label": "Posts/Maand",
+          "value": "160",
+          "improvement": "+300%"
+        },
+        "time": {
+          "label": "Tijd Bespaard",
+          "value": "80u",
+          "improvement": "+200%"
+        },
+        "engagement": {
+          "label": "Engagement",
+          "value": "+285%",
+          "improvement": "3x hoger"
+        },
+        "roi": {
+          "label": "ROI",
+          "value": "4.2x",
+          "improvement": "+320%"
+        }
+      },
+      "testimonial": {
+        "quote": "We besteedden 60+ uur/week aan content. Nu draait alles automatisch en onze engagement is 3x hoger. Ongelooflijk hoeveel tijd en geld we besparen.",
+        "author": "Lisa van Dam",
+        "role": "Oprichter & CEO @ EcoShop NL"
+      }
+    },
+    "saas": {
+      "id": "2",
+      "industry": "B2B SaaS",
+      "company": "TechForce Solutions",
+      "pain_point": "B2B contentmarketing was volledig ad-hoc. Geen trendtracking, slechte hashtagstrategie, nul ROI op advertenties. Beheren van 5 freelancers zonder meetbare resultaten. 80% van relevante branchetrends gemist.",
+      "solution": "Research Hub met 24/7 Perplexity AI trendvoorspelling, automatische concurrentieanalyse, data-gedreven contentplanning en advertentie pre-testsysteem. Alle content geoptimaliseerd voor B2B LinkedIn en branche-specifieke platforms.",
+      "results": "Advertentie ROI gestegen van break-even naar +340%. 3x meer gekwalificeerde leads per maand. Team geschaald van 2 naar 8 kanalen zonder nieuwe hires. Pre-testing voorkomt verspild advertentiebudget. Systematische aanpak genereert consistente resultaten.",
+      "metrics": {
+        "ad_roi": {
+          "label": "Advertentie ROI",
+          "value": "+340%",
+          "improvement": "Was: 0%"
+        },
+        "leads": {
+          "label": "Leads",
+          "value": "3x",
+          "improvement": "+200%"
+        },
+        "saved": {
+          "label": "Team Output",
+          "value": "8 kanalen",
+          "improvement": "2 mensen"
+        },
+        "time": {
+          "label": "Tijd",
+          "value": "-70u",
+          "improvement": "/maand"
+        }
+      },
+      "testimonial": {
+        "quote": "Van break-even naar +340% ROI. We testen nu elke advertentie vooraf voordat we budget besteden. Het systeem betaalt zichzelf 6x terug.",
+        "author": "Mark de Vries",
+        "role": "Marketing Director @ TechForce Solutions"
+      }
+    },
+    "retail": {
+      "id": "3",
+      "industry": "Retail & CPG",
+      "company": "GreenLife Brands",
+      "pain_point": "7 merken op 5 platforms—totale chaos. Team van 8 constant overbelast. 40% van geplande posts gemist door capaciteitsproblemen. Geen centraal overzicht, inconsistente branding, gemiste engagement-mogelijkheden.",
+      "solution": "Command Center dashboard voor alle merken. Automatische contentgeneratie met merkrichtlijnen per merk, slimme planning voor optimale momenten, 99.8% betrouwbare publicatie-engine en uniform analytics dashboard.",
+      "results": "Van 40% gemiste posts naar 99.8% consistentie. Team gereduceerd van 8 naar 3 personen voor monitoring. Beheer van 7 merken met 3-persoons team. Totale engagement gestegen met 215% door betere timing en hogere frequentie.",
+      "metrics": {
+        "consistency": {
+          "label": "Consistentie",
+          "value": "99.8%",
+          "improvement": "Was: 60%"
+        },
+        "team": {
+          "label": "Team",
+          "value": "-62%",
+          "improvement": "8 → 3"
+        },
+        "saved": {
+          "label": "Efficiëntie",
+          "value": "7 merken",
+          "improvement": "3 mensen"
+        },
+        "engagement": {
+          "label": "Engagement",
+          "value": "+215%",
+          "improvement": "2.15x"
+        }
+      },
+      "testimonial": {
+        "quote": "7 merken, 1 dashboard. Van chaos naar 99.8% consistentie. Ons team ging van 8 naar 3 personen. Game changer.",
+        "author": "Sarah Janssen",
+        "role": "COO @ GreenLife Brands"
+      }
+    }
+  },
+
+  "trust_badges": {
+    "gdpr": {
+      "name": "GDPR Compliant",
+      "description": "Volledig conform EU privacyregelgeving"
+    },
+    "iso27001": {
+      "name": "ISO 27001 Gecertificeerd",
+      "description": "Internationale beveiligingsmanagement standaard"
+    },
+    "soc2": {
+      "name": "SOC 2 Type II",
+      "description": "Geverifieerde beveiligings- en beschikbaarheidscontroles"
+    },
+    "ssl": {
+      "name": "256-bit SSL Encryptie",
+      "description": "Bankwaardige dataversleuteling"
+    }
+  },
+
+  "aggregate_metrics": {
+    "time_recovered": {
+      "value": "2.5",
+      "prefix": "€",
+      "suffix": "M+",
+      "label": "Tijd Teruggewonnen",
+      "pain_label": "€2.5M+ aan verspilde tijd teruggewonnen uit handmatige contentprocessen",
+      "icon": "⏰"
+    },
+    "posts_created": {
+      "value": "50",
+      "suffix": "K+",
+      "label": "Posts Gemaakt",
+      "pain_label": "50K+ posts gemaakt zonder enig handmatig werk—volledig AI-geautomatiseerd",
+      "icon": "🚀"
+    },
+    "companies_automated": {
+      "value": "20",
+      "suffix": "+",
+      "label": "Bedrijven Geautomatiseerd",
+      "pain_label": "20+ bedrijven bevrijd van contentchaos—van overwerkt naar geautomatiseerd",
+      "icon": "🎯"
+    }
+  }
+}

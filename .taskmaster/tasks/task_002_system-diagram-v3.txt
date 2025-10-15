@@ -1,0 +1,43 @@
+# Task ID: 2
+# Title: Implement 3D AI Core Sphere (CoreSphere3D)
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Develop the central 3D rotating AI Core sphere using Three.js and React Three Fiber, including custom shaders and interactive behaviors.
+# Details:
+Create CoreSphere3D.tsx using @react-three/fiber for scene management. Use Three.js Mesh with an IcosphereGeometry (detail: 4). Implement custom vertex and fragment shaders for inner glow and Fresnel effects (see PRD pseudo-code). Overlay a wireframe mesh with counter-rotation. Add two outer rings as separate Meshes with dotted line shaders. Integrate GSAP for pulsing and breathing animations. Implement mouse parallax rotation and camera zoom using lerp and event listeners. Add a particle orbit system (20 particles) as child objects. Optimize for 60fps and ensure the component is lazy-loaded. Use useFrame from @react-three/fiber for animation loops.
+
+# Test Strategy:
+Render CoreSphere3D in isolation. Validate visual appearance against PRD specs. Test mouse interactions (hover, move, click) and verify animation smoothness. Profile FPS and CPU/GPU usage. Confirm accessibility with ARIA labels and keyboard focus.
+
+# Subtasks:
+## 1. Set Up CoreSphere3D Scene and Geometry [pending]
+### Dependencies: None
+### Description: Initialize the CoreSphere3D.tsx component using @react-three/fiber, create the Three.js scene, and add an IcosphereGeometry mesh (detail: 4) as the core sphere.
+### Details:
+Configure the React Three Fiber Canvas, set up camera and lighting, and instantiate the main icosahedron mesh as the central sphere. Ensure the geometry and basic material are in place as the foundation for further enhancements.
+
+## 2. Implement Custom Shaders and Visual Effects [pending]
+### Dependencies: 2.1
+### Description: Develop and apply custom vertex and fragment shaders to the core sphere for inner glow and Fresnel effects. Overlay a wireframe mesh with counter-rotation.
+### Details:
+Write GLSL shaders for the main mesh to achieve inner glow and Fresnel rim lighting. Add a secondary mesh using the same geometry but with a wireframe material, and animate it to rotate in the opposite direction of the core sphere.
+
+## 3. Add Outer Rings and Dotted Line Shaders [pending]
+### Dependencies: 2.2
+### Description: Create two outer ring meshes around the core sphere, each using custom dotted line shaders for a holographic effect.
+### Details:
+Model two concentric rings as separate meshes, apply custom shaders to render dotted or dashed lines, and position them around the core sphere. Animate the rings as specified in the PRD.
+
+## 4. Integrate Animations and Interactive Behaviors [pending]
+### Dependencies: 2.3
+### Description: Use GSAP for pulsing and breathing animations, implement mouse parallax rotation, and enable camera zoom with lerp and event listeners.
+### Details:
+Set up GSAP timelines for sphere and ring pulsing/breathing. Add event listeners for mouse movement to drive parallax rotation and camera zoom, using lerp for smooth transitions. Ensure all animations are optimized for 60fps.
+
+## 5. Add Particle Orbit System and Optimize Performance [pending]
+### Dependencies: 2.4
+### Description: Implement a system of 20 orbiting particles as child objects of the core sphere and optimize the component for performance and lazy loading.
+### Details:
+Create and animate 20 particles orbiting the sphere, ensuring they are efficiently managed as children in the scene graph. Profile and optimize the component for 60fps, implement lazy loading, and use useFrame for animation loops.
+

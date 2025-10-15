@@ -1,0 +1,43 @@
+# Task ID: 7
+# Title: Add Executive Summary and Reporting Preview
+# Status: pending
+# Dependencies: 3, 6
+# Priority: medium
+# Description: Show a mock executive report preview with download option at the end of the calculator or as a new Explorer module.
+# Details:
+Develop `ExecutiveSummary` component with styled HTML or image preview. Use Chart.js/Recharts for charts. Add 'Download Sample Report' (PDF via react-pdf/jsPDF). Integrate with Calculator results and Explorer. Ensure professional, data-driven layout and accessibility.
+
+# Test Strategy:
+Test PDF generation, download, and chart rendering. Manually verify layout on all devices and browsers.
+
+# Subtasks:
+## 1. Design ExecutiveSummary Component Layout [pending]
+### Dependencies: None
+### Description: Create a professional, accessible layout for the ExecutiveSummary component, including sections for key metrics, charts, and summary text.
+### Details:
+Define the structure and visual hierarchy of the executive summary, ensuring it is data-driven and suitable for both HTML and PDF rendering. Apply accessible, responsive styling.
+
+## 2. Integrate Charting Functionality [pending]
+### Dependencies: 7.1
+### Description: Implement data visualization within the ExecutiveSummary using Chart.js or Recharts, displaying relevant calculator results.
+### Details:
+Select appropriate chart types for the report preview. Ensure charts are styled consistently with the summary and support both screen and PDF rendering.
+
+## 3. Implement PDF Generation and Download Option [pending]
+### Dependencies: 7.1, 7.2
+### Description: Enable users to download a sample executive report as a PDF using react-pdf or jsPDF, including all summary content and charts.
+### Details:
+Develop logic to convert the ExecutiveSummary preview into a downloadable PDF. Ensure the PDF matches the on-screen layout and includes all visual elements.
+
+## 4. Integrate with Calculator Results and Explorer Module [pending]
+### Dependencies: 7.1, 7.2, 7.3
+### Description: Connect the ExecutiveSummary component to live calculator results and make it accessible as a new Explorer module if required.
+### Details:
+Ensure the summary dynamically reflects user input from the calculator and is properly linked or embedded within the Explorer interface.
+
+## 5. Finalize Accessibility and Professional Polish [pending]
+### Dependencies: 7.1, 7.2, 7.3, 7.4
+### Description: Ensure the ExecutiveSummary and reporting preview meet accessibility standards and present a polished, professional appearance.
+### Details:
+Conduct a final audit for keyboard navigation, screen reader compatibility, color contrast, and responsive design. Refine visual details for executive-level presentation.
+

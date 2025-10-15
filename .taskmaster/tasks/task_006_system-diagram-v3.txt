@@ -1,0 +1,43 @@
+# Task ID: 6
+# Title: Implement Holographic Info Panels (HolographicInfoPanel)
+# Status: pending
+# Dependencies: 1, 2, 3, 4, 5
+# Priority: medium
+# Description: Create animated, glassmorphic info panels with scan line effects, per-node content, and smooth GSAP-driven transitions.
+# Details:
+Develop HolographicInfoPanel.tsx as a React component. Use CSS (backdrop-filter) for glassmorphic backgrounds and animated scan lines (CSS keyframes or Canvas overlay). Animate panel entry/exit with GSAP (cubic-bezier easing). Render per-node content, including stats, charts, and visualizations (use recharts or chart.js for mini-charts). Ensure color-coded accents and pulsing effects match node colors. Implement show/hide logic triggered by node hover/click, with ARIA live regions for accessibility. On mobile, replace with modal dialogs. Respect reduced motion settings.
+
+# Test Strategy:
+Test panel appearance and animation on all nodes. Validate content accuracy and chart rendering. Check keyboard and screen reader accessibility. Profile animation smoothness and performance. Confirm mobile modal fallback works.
+
+# Subtasks:
+## 1. Design Glassmorphic Panel Structure and Visual Effects [pending]
+### Dependencies: None
+### Description: Define the React component structure for HolographicInfoPanel, implementing glassmorphic backgrounds using CSS (backdrop-filter) and overlaying animated scan line effects via CSS keyframes or Canvas.
+### Details:
+Establish the panel's layout, layering, and visual style. Implement glassmorphic effects with CSS, ensuring proper use of transparency, blur, and color overlays. Develop animated scan lines using either CSS keyframes or a Canvas overlay, and ensure these effects are performant and visually consistent.
+
+## 2. Integrate GSAP Animations for Panel Transitions [pending]
+### Dependencies: 6.1
+### Description: Implement smooth entry and exit animations for the info panel using GSAP, applying cubic-bezier easing for natural motion.
+### Details:
+Configure GSAP to animate the panel's opacity, scale, and position on show/hide events. Ensure transitions are interruptible and respect user reduced motion preferences.
+
+## 3. Render Dynamic Per-Node Content with Charts and Visualizations [pending]
+### Dependencies: 6.1
+### Description: Develop logic to render node-specific content, including stats, charts, and visualizations, using recharts or chart.js for mini-charts.
+### Details:
+Accept node data as props and dynamically render relevant content. Integrate charting libraries for visualizations, ensuring responsive sizing and color-coded accents that match node colors. Implement pulsing effects for key stats.
+
+## 4. Implement Interaction Logic and Accessibility Features [pending]
+### Dependencies: 6.2, 6.3
+### Description: Add show/hide logic triggered by node hover/click, ARIA live regions for accessibility, and modal dialog fallback for mobile devices.
+### Details:
+Wire up event handlers for node interactions to control panel visibility. Use ARIA live regions to announce content changes. Detect mobile devices and replace the panel with a modal dialog as needed.
+
+## 5. Validate Performance, Responsiveness, and Cross-Platform Behavior [pending]
+### Dependencies: 6.4
+### Description: Profile animation and rendering performance, test responsiveness, and ensure consistent behavior across desktop and mobile platforms.
+### Details:
+Measure animation frame rates and resource usage. Test panel appearance and interaction on various devices and browsers. Confirm that reduced motion settings are respected and that all accessibility requirements are met.
+

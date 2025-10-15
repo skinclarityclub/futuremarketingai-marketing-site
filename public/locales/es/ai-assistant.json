@@ -1,0 +1,52 @@
+{
+  "name": "ARIA",
+  "tagline": "Tu Guía de Demo de Marketing",
+  "welcomeMessages": {
+    "home": "✨ ¡Bienvenido a FutureMarketingAI! Soy ARIA, tu guía personal de demostración. ¿En qué puedo ayudarte?",
+    "explorer": "🚀 ¡Genial! Estás explorando nuestros módulos de IA. Puedo explicar el ROI y casos de uso de cada módulo. ¿Qué te interesa?",
+    "calculator": "📊 ¡Veo que estás usando la calculadora de ROI! ¿Necesitas ayuda con las métricas o quieres ver ejemplos reales?",
+    "dashboard": "📈 ¡Bienvenido al panel! Puedo ayudarte a interpretar las métricas y mostrarte lo que es posible. ¿Qué te gustaría explorar?",
+    "default": "👋 ¡Bienvenido de nuevo! Has visitado {{visited}} de 3 secciones ({{percent}}%). ¿Quieres continuar explorando?"
+  },
+  "quickReplies": {
+    "home": {
+      "platform": "Iniciar tour",
+      "roi": "Calcular ROI",
+      "demo": "Reservar demo"
+    },
+    "explorer": {
+      "modules": "Mostrar módulos",
+      "roi": "Ver impacto ROI",
+      "cases": "Casos de uso"
+    },
+    "calculator": {
+      "understand": "Explicar métricas",
+      "roi": "Interpretar ROI",
+      "save": "Guardar resultados"
+    },
+    "dashboard": {
+      "metrics": "Métricas clave",
+      "insights": "Obtener insights",
+      "export": "Exportar datos"
+    }
+  },
+  "inputPlaceholder": "Haz una pregunta...",
+  "send": "Enviar",
+  "pressEnter": "Presiona {{key}} para enviar",
+  "close": "Cerrar",
+  "minimize": "Minimizar",
+  "online": "En línea",
+  "typing": "escribiendo...",
+  "progress": "Has visitado {{current}} de {{total}} secciones ({{percent}}%). ¡Sigue explorando!",
+  "errors": {
+    "generic": "Lo siento, algo salió mal. Inténtalo de nuevo.",
+    "network": "Error de conexión. Verifica tu internet.",
+    "rateLimit": "¡Despacio! Espera un momento antes de enviar más mensajes."
+  },
+  "navigation": {
+    "platform": "Resumen de Plataforma",
+    "calculator": "Calculadora de ROI",
+    "explorer": "Explorador de Módulos",
+    "dashboard": "Panel de Analíticas"
+  }
+}

@@ -1,0 +1,43 @@
+# Task ID: 4
+# Title: Deploy Strategic CTA Placement and Booking Integration
+# Status: done
+# Dependencies: 2, 3
+# Priority: high
+# Description: Implement prominent, contextual CTAs at key moments, including Calendly integration and exit-intent capture.
+# Details:
+Develop a reusable `StrategicCTA` component with gradient/glow styling. Integrate Calendly via their official React widget or embed API. Implement floating CTA (Hero), contextual CTAs (Explorer, Calculator), and exit-intent modal (use react-use for mouse events). Pre-fill booking modal with calculator data via props/context. Add trust indicators below CTAs. Ensure modals are accessible and mobile-friendly.
+
+# Test Strategy:
+E2E test CTA visibility, clickability, and booking flow. Simulate exit intent and verify modal triggers only once per session. Validate data pre-fill and fallback contact form.
+
+# Subtasks:
+## 1. Develop Reusable StrategicCTA Component with Enhanced Styling [done]
+### Dependencies: None
+### Description: Create a reusable StrategicCTA React component featuring gradient and glow styling, ensuring accessibility and mobile responsiveness.
+### Details:
+Implement the component using best practices for clean code, separation of concerns, and accessibility. Use Tailwind CSS or CSS-in-JS for styling. Ensure the component supports props for urgency indicators, trust signals, and variant logic.
+
+## 2. Integrate Calendly Booking via Official React Widget or Embed API [done]
+### Dependencies: 4.1
+### Description: Embed Calendly booking functionality within the StrategicCTA component using the official React widget or embed API.
+### Details:
+Configure the Calendly integration to support pre-filling booking modal fields via props or context, passing calculator data as needed. Ensure the booking flow is seamless and modals are accessible.
+
+## 3. Implement Floating and Contextual CTA Placement Across Key Pages [done]
+### Dependencies: 4.1
+### Description: Deploy floating CTA in Hero section and contextual CTAs in Explorer and Calculator pages, ensuring prominent placement at conversion-critical moments.
+### Details:
+Use the StrategicCTA component to render CTAs in designated locations. Pass relevant props for context-aware messaging and variant logic. Ensure CTAs are visually distinct and do not obstruct core content.
+
+## 4. Implement Exit-Intent Modal with React-Use Mouse Event Detection [done]
+### Dependencies: 4.1
+### Description: Create an exit-intent modal that triggers when mouse events indicate user intent to leave, using react-use for event detection.
+### Details:
+Ensure the modal uses the StrategicCTA component, supports trust indicators, and triggers only once per session. Modal must be accessible and mobile-friendly.
+
+## 5. Add Trust Indicators and Accessibility Enhancements to All CTAs [done]
+### Dependencies: 4.1, 4.2, 4.3, 4.4
+### Description: Integrate trust indicators (e.g., social proof, badges) below all CTAs and ensure all modals and components meet accessibility standards.
+### Details:
+Design and implement trust signals as first-class props. Audit all CTA components and modals for WCAG compliance, keyboard navigation, and screen reader support.
+

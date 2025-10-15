@@ -1,0 +1,74 @@
+# Task ID: 11
+# Title: Refine Content and Copy Across Demo
+# Status: pending
+# Dependencies: 2, 3, 4, 5, 6, 7, 8
+# Priority: medium
+# Description: Update all copy for clarity, persuasion, and conversion, focusing on value propositions, module descriptions, CTAs, and microcopy.
+# Details:
+Use AI-assisted copywriting tools (Jasper, ChatGPT-4, or Navattic AI Writing Assistant) to draft benefit-focused copy. Review and polish for brand tone and clarity. Update all modules, CTAs, and microcopy. Add tooltips for 'maatwerk' and other key terms. Validate translations if needed.
+<info added on 2025-10-02T13:24:30.430Z>
+Implement Problem-Agitate-Solution (PAS) Framework across all copy. Follow this structure for all content:
+
+1. Apply PAS framework to hero page with new Dutch copy:
+   - H1: "Worsteling met Multi-Platform Content Marketing?"
+   - H2: "Ontdek de All-in-One AI Marketing Machine die 24/7 voor je werkt"
+   - Above stats: "Gemiddelde resultaten voor bedrijven die deze problemen oplosten:"
+   - CTA: "Ontdek Hoe We Jouw Problemen Oplossen →"
+
+2. Map 7 key pain points to corresponding modules:
+   - Time-consuming manual content → Content Pipeline
+   - Multi-platform chaos → Command Center
+   - Inconsistent posting → Publishing Layer
+   - Can't measure ROI → Analytics & Monitoring
+   - Can't keep up with trends → Research & Planning
+   - Expensive to hire team → Calculator
+   - No automation expertise → AI Advisory Service
+
+3. Restructure all explorer module copy with three-part format:
+   - Section 1: "Het Probleem" - Pain statement with cost/consequence metrics
+   - Section 2: "De Oplossing" - Existing capabilities description
+   - Section 3: "Het Resultaat" - Metrics with added savings calculations
+
+4. Update calculator copy with comparison framework:
+   - Pre-section: "Wat kost je huidige aanpak je elke maand?"
+   - Results intro: "Jouw Situatie vs Met Future Marketing AI"
+   - Left column: "Nu (Handmatig)"
+   - Right column: "Met Automatisering"
+
+All copy must use informal Dutch ("je/jouw"), focus on benefits, lead with problems, and emphasize concrete results.
+</info added on 2025-10-02T13:24:30.430Z>
+
+# Test Strategy:
+Peer review for clarity and persuasion. A/B test key copy changes for impact on CTA click rate. Monitor support queries for confusion.
+
+# Subtasks:
+## 1. Audit Existing Demo Copy [pending]
+### Dependencies: None
+### Description: Review all current demo content, including value propositions, module descriptions, CTAs, and microcopy, to identify areas needing improvement for clarity, persuasion, and conversion.
+### Details:
+Systematically catalog all demo copy and flag sections that lack clarity, strong value messaging, or effective calls to action.
+
+## 2. Draft Benefit-Focused Copy Using AI Tools [pending]
+### Dependencies: 11.1
+### Description: Use AI-assisted copywriting tools (e.g., Jasper, ChatGPT-4, Navattic AI Writing Assistant) to generate new, benefit-focused copy for all flagged sections, ensuring alignment with brand tone and messaging.
+### Details:
+Select appropriate AI tools based on content type and desired output. Generate multiple copy variants for each section and select the most persuasive and clear options.
+
+## 3. Polish and Finalize Copy for Brand Tone and Clarity [done]
+### Dependencies: 11.2
+### Description: Edit and refine AI-generated copy to ensure it matches the brand’s voice, is free of errors, and maximizes clarity and conversion potential.
+### Details:
+Collaborate with stakeholders to review and approve final copy. Make adjustments for tone, style, and clarity as needed.
+
+## 4. Update Demo Modules, CTAs, Microcopy, and Add Tooltips [pending]
+### Dependencies: 11.3
+### Description: Implement the finalized copy across all demo modules, CTAs, and microcopy. Add explanatory tooltips for 'maatwerk' and other key terms to enhance user understanding.
+### Details:
+Coordinate with development/design teams to update content in the demo interface and ensure tooltips are contextually placed and styled.
+
+## 5. Validate Translations and Test Copy Effectiveness [pending]
+### Dependencies: 11.4
+### Description: Ensure all updated copy is accurately translated where needed and test key copy changes for impact on CTA click rate and user comprehension.
+### Details:
+Work with translation/localization teams to validate copy in all supported languages. Conduct A/B tests and monitor support queries for confusion.
+

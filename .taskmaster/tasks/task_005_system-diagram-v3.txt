@@ -1,0 +1,43 @@
+# Task ID: 5
+# Title: Build Enhanced Satellite Nodes (SatelliteNode)
+# Status: pending
+# Dependencies: 1, 2, 3, 4
+# Priority: medium
+# Description: Refactor and upgrade SatelliteNode to support glassmorphic layers, multi-ring animations, orbital particles, and rich interaction states.
+# Details:
+Implement SatelliteNode.tsx with three concentric SVG/CSS rings, glassmorphic center (backdrop-filter: blur), and drop shadow. Animate outer/middle rings with CSS keyframes or GSAP, supporting counter-rotation and breathing. Render the icon/symbol as SVG with floating animation. Integrate orbital particles using ParticleSystem hooks. Implement hover/click states with spring animations (GSAP or Framer Motion). Ensure all visual and interaction requirements from PRD are met. Support keyboard navigation and ARIA labeling for accessibility.
+
+# Test Strategy:
+Render all four nodes and validate visual structure. Test hover/click transitions and verify all animation timings. Confirm orbital particles are present and interactive. Check focus indicators and screen reader output. Profile performance with all nodes active.
+
+# Subtasks:
+## 1. Implement Glassmorphic Center and Visual Structure [pending]
+### Dependencies: None
+### Description: Create the SatelliteNode component with a glassmorphic center using CSS (backdrop-filter: blur), semi-transparent backgrounds, gradients, and drop shadows. Ensure the component supports three concentric SVG/CSS rings and a floating SVG icon/symbol.
+### Details:
+Apply glassmorphism principles for the center (blur, transparency, gradients, and shadow). Structure the component to render three concentric rings and position the icon with a floating animation. Use accessible color contrast and ARIA labeling for the main node container.
+
+## 2. Animate Rings and Icon with Counter-Rotation and Breathing [pending]
+### Dependencies: 5.1
+### Description: Add CSS keyframes or GSAP-based animations to the outer and middle rings for counter-rotation and breathing effects. Animate the icon/symbol with a floating motion.
+### Details:
+Implement counter-rotating animations for the outer and middle rings, and a subtle breathing scale effect. Animate the icon with a vertical floating loop. Ensure all animations are smooth and performant.
+
+## 3. Integrate Orbital Particles Using ParticleSystem Hooks [pending]
+### Dependencies: 5.1
+### Description: Incorporate a ParticleSystem hook to render and animate orbital particles around the SatelliteNode, ensuring they follow orbital paths and interact visually with the rings.
+### Details:
+Configure the ParticleSystem to emit and animate particles along orbital paths around the node. Tune particle count, speed, and color to match design requirements. Ensure particles do not interfere with interaction states.
+
+## 4. Implement Rich Interaction States (Hover, Click, Focus) [pending]
+### Dependencies: 5.1, 5.2, 5.3
+### Description: Add interactive states for hover, click, and keyboard focus using spring animations (GSAP or Framer Motion). Ensure visual feedback and accessibility compliance.
+### Details:
+Define and animate visual states for hover, click, and focus, including scaling, glow, or color changes. Use spring-based animation libraries for smooth transitions. Support keyboard navigation and visible focus indicators. Add ARIA attributes for screen reader support.
+
+## 5. Validate PRD Compliance and Accessibility [pending]
+### Dependencies: 5.4
+### Description: Review the SatelliteNode implementation to ensure all visual, animation, and interaction requirements from the PRD are met, including accessibility and keyboard navigation.
+### Details:
+Cross-check the component against the PRD for completeness. Validate keyboard navigation, ARIA labeling, and focus management. Profile performance and test with all nodes active.
+

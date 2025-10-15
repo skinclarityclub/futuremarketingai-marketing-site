@@ -1,0 +1,331 @@
+# Task ID: 26
+# Title: Streamline Industry Selection to Top 3 ICPs + Other
+# Status: done
+# Dependencies: 25
+# Priority: medium
+# Description: Simplify the application by reducing industry options from 10 to only 4 (E-commerce, SaaS, Agency, and Other), focusing on primary ICP segments while removing all unused industries to create a cleaner user experience and better ICP alignment.
+# Details:
+## Implementation Details:
+
+### 1. Update IndustrySelector Component
+```typescript
+// src/components/common/IndustrySelector.tsx
+export const INDUSTRIES = [
+  {
+    id: 'ecommerce',
+    name: 'E-commerce & Retail',
+    icon: ShoppingBagIcon,
+    proxyIndicators: ['product catalog', 'conversion optimization', 'customer retention']
+  },
+  {
+    id: 'saas',
+    name: 'Technology & SaaS',
+    icon: CodeBracketIcon,
+    proxyIndicators: ['user acquisition', 'product adoption', 'churn reduction']
+  },
+  {
+    id: 'agency',
+    name: 'Professional Services / Agency',
+    icon: BriefcaseIcon,
+    proxyIndicators: ['client acquisition', 'project management', 'service delivery']
+  },
+  {
+    id: 'other',
+    name: 'Other Industry',
+    icon: BuildingOfficeIcon,
+    proxyIndicators: ['business growth', 'marketing efficiency', 'customer engagement']
+  }
+];
+```
+
+- Update the grid layout from 3x3 to 2x2:
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {INDUSTRIES.map((industry) => (
+    <IndustryCard 
+      key={industry.id}
+      industry={industry}
+      selected={selectedIndustry === industry.id}
+      onSelect={() => handleIndustrySelect(industry.id)}
+    />
+  ))}
+</div>
+```
+
+### 2. Update Industry Personalization Config
+```typescript
+// src/config/industryPersonalization.ts
+export const industryBenchmarks = {
+  ecommerce: {
+    conversionRate: 3.2,
+    customerAcquisitionCost: 45,
+    // other ecommerce-specific benchmarks
+  },
+  saas: {
+    conversionRate: 2.5,
+    customerAcquisitionCost: 120,
+    // other saas-specific benchmarks
+  },
+  agency: {
+    conversionRate: 4.8,
+    customerAcquisitionCost: 250,
+    // other agency-specific benchmarks
+  },
+  other: {
+    // generic fallback benchmarks
+    conversionRate: 3.0,
+    customerAcquisitionCost: 80,
+  }
+};
+
+// Remove all other industry-specific configurations and keep only the 4 required ones
+export const industryModulePriorities = {
+  ecommerce: ['productCatalog', 'customerRetention', 'conversionRate'],
+  saas: ['userAcquisition', 'churnReduction', 'customerSuccess'],
+  agency: ['leadGeneration', 'clientRetention', 'projectManagement'],
+  other: ['marketingEfficiency', 'leadGeneration', 'customerEngagement']
+};
+
+// Update testimonials to only include the 4 industries
+export const industryTestimonials = {
+  ecommerce: [...],
+  saas: [...],
+  agency: [...],
+  other: [...]
+};
+
+// Update messaging configs
+export const industryMessaging = {
+  ecommerce: {
+    headline: "Autonomous Marketing for E-commerce & Retail",
+    painPoints: ["abandoned carts", "customer acquisition costs", "retention challenges"],
+    // other messaging elements
+  },
+  saas: {
+    headline: "Autonomous Marketing for SaaS Companies",
+    painPoints: ["high CAC", "churn reduction", "product adoption"],
+    // other messaging elements
+  },
+  agency: {
+    headline: "Autonomous Marketing for Agencies",
+    painPoints: ["client acquisition", "scaling services", "demonstrating ROI"],
+    // other messaging elements
+  },
+  other: {
+    headline: "Autonomous Marketing for Your Business",
+    painPoints: ["marketing efficiency", "lead generation", "growth challenges"],
+    // generic messaging elements
+  }
+};
+```
+
+### 3. Update Translation Files
+- Remove unused industry translations from all locale files (EN, NL, ES)
+- Example for English locale:
+```json
+// locales/en/common.json
+{
+  "industries": {
+    "ecommerce": "E-commerce & Retail",
+    "saas": "Technology & SaaS",
+    "agency": "Professional Services / Agency",
+    "other": "Other Industry"
+  },
+  // Remove all other industry translations
+}
+```
+
+### 4. Update Personalization Logic
+```typescript
+// src/utils/personalization.ts
+export function getIndustryDefaults(industry: string) {
+  // Ensure we have a valid industry or default to 'other'
+  const validIndustry = ['ecommerce', 'saas', 'agency'].includes(industry) 
+    ? industry 
+    : 'other';
+    
+  return {
+    benchmarks: industryBenchmarks[validIndustry],
+    modulePriorities: industryModulePriorities[validIndustry],
+    messaging: industryMessaging[validIndustry],
+    testimonials: industryTestimonials[validIndustry]
+  };
+}
+```
+
+### 5. Update Tests & Documentation
+- Update IndustrySelector tests to verify only 4 options are available
+- Update integration tests to use only valid industry values
+- Update documentation to reflect the simplified industry options
+
+### 6. Clean Up Unused Code
+- Remove any industry-specific components, images, or assets for removed industries
+- Update any hardcoded industry references throughout the codebase
+- Remove industry-specific routes or pages for removed industries
+
+# Test Strategy:
+## Testing Strategy:
+
+### 1. Component Testing
+- Verify IndustrySelector renders exactly 4 industry options
+- Confirm 2x2 grid layout renders correctly on desktop
+- Verify responsive behavior (single column on mobile)
+- Test selection state works correctly for all 4 options
+- Verify proxy indicators display correctly for each industry
+
+### 2. Integration Testing
+- Test industry selection flow from start to finish
+- Verify personalization applies correctly for each industry:
+  - E-commerce personalization shows correct messaging
+  - SaaS personalization shows correct messaging
+  - Agency personalization shows correct messaging
+  - "Other" shows generic messaging
+
+### 3. Configuration Testing
+- Verify all industry-specific configurations load correctly
+- Test fallback to "Other" when invalid industry is provided
+- Verify no references to removed industries exist in the codebase
+
+### 4. Localization Testing
+- Test all 4 industries display correctly in all supported languages (EN, NL, ES)
+- Verify no translation keys for removed industries remain
+- Test that industry-specific messaging is translated correctly
+
+### 5. Regression Testing
+- Verify existing functionality continues to work with reduced industry options
+- Test that personalization logic handles the simplified industry set
+- Ensure no broken links or references to removed industries
+
+### 6. Performance Testing
+- Measure bundle size reduction from removing unused industry data
+- Verify load time improvements (if any)
+- Check for any memory leaks or performance issues
+
+### 7. User Acceptance Testing
+- Verify the simplified industry selection improves user experience
+- Test that "Other" option adequately serves users from non-primary industries
+- Ensure the proxy indicators effectively communicate target audience
+
+# Subtasks:
+## 1. Update IndustrySelector Component [done]
+### Dependencies: None
+### Description: Modify the IndustrySelector component to display only the 4 required industries (E-commerce, SaaS, Agency, Other) and update the grid layout from 3x3 to 2x2.
+### Details:
+Update the INDUSTRIES array in src/components/common/IndustrySelector.tsx to include only the 4 required industries. Modify the grid layout CSS classes from 3x3 to 2x2 (grid-cols-1 md:grid-cols-2). Ensure the IndustryCard component works correctly with the updated industry data structure. Test the responsive behavior on mobile and desktop views.
+<info added on 2025-10-08T00:11:17.792Z>
+The subtask has been completed successfully with the following changes to the IndustrySelector component:
+
+1. Reduced industry options from 10 to 4:
+   - E-commerce & Retail (id: 'ecommerce')
+   - Technology & SaaS (id: 'saas', previously 'technology')
+   - Marketing Agency (id: 'agency', previously 'professional')
+   - Other Industry (id: 'other')
+
+2. Updated grid layout from 3x3 to 2x2:
+   - Changed from grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 to grid-cols-1 sm:grid-cols-2
+   - Mobile view displays as a single column
+   - Desktop view displays as a 2x2 grid
+
+3. Industry ID changes that will require migration handling:
+   - 'professional' → 'agency'
+   - 'technology' → 'saas'
+
+4. All proxy indicators for the industries have been preserved.
+
+The implementation creates a cleaner user experience with reduced cognitive load and better alignment with primary ICP segments.
+</info added on 2025-10-08T00:11:17.792Z>
+
+## 2. Update Industry Personalization Configuration [done]
+### Dependencies: 26.1
+### Description: Modify all industry-specific configuration files to include only the 4 required industries and remove all unused industry data.
+### Details:
+Update src/config/industryPersonalization.ts to include only ecommerce, saas, agency, and other industries. Remove all other industry-specific configurations from industryBenchmarks, industryModulePriorities, industryTestimonials, and industryMessaging objects. Ensure all industry-specific data is properly structured and complete for the 4 remaining industries.
+<info added on 2025-10-08T00:13:59.261Z>
+All industry-specific configuration data has been streamlined to only include the 4 primary industries: ecommerce, saas, agency, and other.
+
+Changes Made:
+
+1. INDUSTRY_BENCHMARKS Updated:
+   - Renamed 'technology' → 'saas'
+   - Renamed 'professional' → 'agency'
+   - Removed: healthcare, finance, real-estate, education, hospitality, manufacturing
+   - Retained: ecommerce, saas, agency, other
+
+2. MODULE_PRIORITIES Updated:
+   - Same ID changes and removals as benchmarks
+   - Priority ordering maintained for the 4 industries
+   - 'other' remains with balanced priority across all modules
+
+3. TESTIMONIALS Array Streamlined:
+   - Before: 8 testimonials (1 per removed industry)
+   - After: 3 testimonials (1 per primary ICP)
+   - Kept: ecom-1 (Mike Chen), saas-1 (Sarah Johnson), agency-1 (Robert Anderson)
+   - Removed: health-1, finance-1, realestate-1, edu-1, hosp-1
+   - Updated industry IDs in remaining testimonials
+
+4. INDUSTRY_MESSAGING Updated:
+   - Updated IDs: 'technology' → 'saas', 'professional' → 'agency'
+   - Removed messaging for 6 industries
+   - Retained hero subtitles, calculator intros, CTAs, and value propositions for the 4 industries
+
+5. Helper Functions:
+   - getIndustryMessaging(), getIndustryBenchmarks(), getModulePriorities() - already use fallback to 'other'
+   - No changes needed, they will handle the new structure automatically
+
+Impact:
+- Significantly reduced file size and complexity
+- All personalization logic now only operates on the 4 ICP-aligned industries
+- Fallback to 'other' ensures no breaking changes for edge cases
+- Better maintainability with focused configuration
+
+Files Modified:
+- src/config/industryPersonalization.ts
+</info added on 2025-10-08T00:13:59.261Z>
+
+## 3. Update Translation Files for Industry Labels [done]
+### Dependencies: 26.1
+### Description: Remove unused industry translations from all locale files and ensure the 4 remaining industries have proper translations.
+### Details:
+Update translation files in locales/en/common.json, locales/nl/common.json, and locales/es/common.json to remove all unused industry translations. Keep only translations for 'ecommerce', 'saas', 'agency', and 'other' industries. Verify that all translations are consistent across language files and match the industry names in the IndustrySelector component.
+<info added on 2025-10-08T00:15:16.500Z>
+Translation files have been updated to include only the 4 primary industries across language files. Modified files include public/locales/en/forms.json and public/locales/nl/forms.json. The English translations now show "E-commerce & Retail", "Technology & SaaS", "Marketing Agency", and "Other Industry". Dutch translations were similarly updated to "E-commerce & Retail", "Technologie & SaaS", "Marketing Bureau", and "Andere Branche". No changes were needed for Spanish as the forms.json file doesn't exist. This update ensures consistency across the application, simplifies the user experience with focused industry options, and aligns with our ICP strategy. All dropdowns and form fields now display only these 4 industry options.
+</info added on 2025-10-08T00:15:16.500Z>
+
+## 4. Update Personalization Logic for Industry Defaults [done]
+### Dependencies: 26.2
+### Description: Modify the personalization utility functions to handle the reduced set of industries and provide appropriate fallbacks to 'other' category.
+### Details:
+Update src/utils/personalization.ts to ensure the getIndustryDefaults function properly handles the reduced set of industries. Implement validation to check if the provided industry is one of the valid options ('ecommerce', 'saas', 'agency') and default to 'other' if not. Update any other personalization functions that reference industry-specific data to work with the new structure.
+<info added on 2025-10-08T00:16:54.404Z>
+Implemented comprehensive backward compatibility for industry personalization:
+
+1. Added version migration in personalizationStore.ts (v2→v3) with automatic industry ID mapping:
+   - 'professional' → 'agency'
+   - 'technology' → 'saas'
+   - All removed industries → 'other'
+
+2. Created new normalizeIndustryId() function in industryPersonalization.ts to centralize ID migration logic
+
+3. Updated all personalization helper functions to use normalization:
+   - getIndustryMessaging()
+   - getIndustryBenchmarks()
+   - getModulePriorities()
+   - getTestimonials()
+
+4. Implemented automatic migration that runs on first visit after update, with fallback to 'other' for any invalid/removed industry IDs
+
+5. Ensured zero breaking changes for existing users with seamless personalization continuity
+</info added on 2025-10-08T00:16:54.404Z>
+
+## 5. Update Tests and Documentation [done]
+### Dependencies: 26.1, 26.2, 26.3, 26.4
+### Description: Update all existing tests and documentation to reflect the reduced set of industry options.
+### Details:
+Update IndustrySelector tests to verify only 4 options are available. Modify integration tests to use only valid industry values. Update any documentation, storybook examples, or developer guides to reflect the simplified industry options. Ensure test coverage remains high for all modified components and utilities.
+
+## 6. Clean Up Unused Industry-Specific Code and Assets [done]
+### Dependencies: 26.1, 26.2, 26.3, 26.4, 26.5
+### Description: Remove any industry-specific components, images, assets, routes, or pages for the removed industries.
+### Details:
+Identify and remove any industry-specific components, images, or assets for removed industries. Update any hardcoded industry references throughout the codebase. Remove industry-specific routes or pages for removed industries. Perform a thorough search for any remaining references to removed industries and clean them up. Verify the application still functions correctly after cleanup.
+

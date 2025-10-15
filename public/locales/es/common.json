@@ -1,0 +1,515 @@
+{
+  "language": {
+    "select": "Seleccionar Idioma",
+    "current": "Español"
+  },
+  "buttons": {
+    "explore": "Explorar Plataforma",
+    "calculate": "Calcular ROI",
+    "book_call": "Reservar Llamada Gratis",
+    "start_trial": "Iniciar Prueba Gratis",
+    "learn_more": "Más Información",
+    "see_demo": "Ver Demo",
+    "get_started": "Comenzar",
+    "contact_us": "Contactar",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "submit": "Enviar"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "close_modal": "Cerrar modal",
+    "close_chat": "Cerrar chat",
+    "close_panel": "Cerrar panel",
+    "close_notification": "Cerrar notificación",
+    "close_floating_cta": "Cerrar CTA flotante",
+    "dismiss": "Descartar",
+    "dismiss_celebration": "Cerrar celebración",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "send": "Enviar",
+    "send_message": "Enviar mensaje",
+    "submit": "Enviar",
+    "export_csv": "Exportar a CSV",
+    "clear_selection": "Borrar selección",
+    "collapse_banner": "Colapsar banner",
+    "reload_page": "Recargar página",
+    "breadcrumb_nav": "Migas de pan"
+  },
+  "loading": {
+    "default": "Cargando...",
+    "please_wait": "Por favor espera...",
+    "processing": "Procesando...",
+    "scheduling": "Cargando programación...",
+    "component": "No se pudo cargar el componente"
+  },
+  "chat": {
+    "tooltip": "¿Necesitas ayuda? ¡Estoy aquí para asistirte!",
+    "preview": {
+      "default": "¿Necesitas ayuda con esta demo?",
+      "home": "¿Quieres un tour guiado por la plataforma?",
+      "explorer": "¿Puedo ayudarte con el Explorador de Escenarios?",
+      "calculator": "¿Necesitas ayuda con la Calculadora ROI?",
+      "dashboard": "¿Preguntas sobre el dashboard?"
+    }
+  },
+  "pricing": {
+    "payback_period": "Período de Recuperación",
+    "compare_all_tiers": "Comparar Todos los Niveles",
+    "custom_roi_analysis": "Análisis de ROI personalizado",
+    "sold_out": "Agotado",
+    "available": "Disponible",
+    "free_consultation": "Consulta gratuita de 30 min",
+    "no_credit_card": "No se requiere tarjeta de crédito",
+    "lock_in_spot": "Asegurar Lugar #{{spot}}",
+    "see_full_roadmap": "Ver Hoja de Ruta Completa",
+    "join_before_price_rise": "Únete ahora antes de que suban los precios • Tarifa bloqueada por {{months}} meses",
+    "transparent_roadmap": "Hoja de Ruta de Precios Transparente",
+    "pricing_roadmap": "Hoja de Ruta de Precios",
+    "roadmap_subtitle": "Progresión de precios transparente"
+  },
+  "trust_indicators": {
+    "gdpr": {
+      "title": "Cumple con RGPD",
+      "description": "Totalmente conforme con las regulaciones de privacidad de la UE"
+    },
+    "ssl": {
+      "title": "Encriptación SSL de 256 bits",
+      "description": "Encriptación de datos de nivel bancario"
+    },
+    "iso": {
+      "title": "Certificado ISO 27001",
+      "description": "Estándar internacional de gestión de seguridad"
+    },
+    "soc2": {
+      "title": "SOC 2 Tipo II",
+      "description": "Seguridad y cumplimiento verificados"
+    }
+  },
+  "metrics": {
+    "posts": "publicaciones",
+    "hours": "horas",
+    "saved": "ahorradas",
+    "per_month": "por mes",
+    "engagement": "engagement",
+    "conversion": "conversión",
+    "recovered": "recuperado"
+  },
+  "time": {
+    "minute": "minuto",
+    "minute_plural": "minutos",
+    "hour": "hora",
+    "hour_plural": "horas",
+    "day": "día",
+    "day_plural": "días",
+    "week": "semana",
+    "week_plural": "semanas",
+    "month": "mes",
+    "month_plural": "meses",
+    "year": "año",
+    "year_plural": "años"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingresa un correo electrónico válido",
+    "phone": "Por favor ingresa un número de teléfono válido",
+    "number": "Por favor ingresa un número válido",
+    "min": "El valor mínimo es {{min}}",
+    "max": "El valor máximo es {{max}}"
+  },
+  "success": {
+    "saved": "Configuración guardada exitosamente",
+    "sent": "¡Correo enviado! Responderemos en 24 horas.",
+    "updated": "Actualizado exitosamente",
+    "deleted": "Eliminado exitosamente",
+    "welcome": "¡Bienvenido! Comencemos."
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "not_found": "Página no encontrada",
+    "unauthorized": "Acceso no autorizado",
+    "server": "Error del servidor. Por favor intenta más tarde.",
+    "validation": "Por favor verifica tu entrada e intenta de nuevo."
+  },
+  "accessibility": {
+    "skip_to_content": "Ir al contenido principal",
+    "close_menu": "Cerrar menú",
+    "open_menu": "Abrir menú",
+    "main_navigation": "Navegación principal",
+    "personalization_settings": "Configuración de personalización",
+    "close_settings": "Cerrar configuración",
+    "view_achievements": "Ver tus logros",
+    "new_messages": "Nuevos mensajes",
+    "messages_list": "Mensajes del chat",
+    "navigation_suggestion": "Sugerencia de navegación",
+    "demo_booking": "Invitación para reservar demo",
+    "booking_actions": "Acciones de reserva",
+    "trust_indicators": "Indicadores de confianza",
+    "schedule_appointment": "Programar cita",
+    "what_to_expect": "Qué esperar",
+    "booking_calendar": "Calendario de reservas",
+    "open_calendly": "Abrir Calendly en nueva pestaña",
+    "helpful": "Marcar como útil",
+    "not_helpful": "Marcar como no útil",
+    "previous_card": "Tarjeta anterior",
+    "next_card": "Siguiente tarjeta",
+    "previous_module": "Módulo anterior",
+    "next_module": "Siguiente módulo",
+    "open_preferences": "Abrir preferencias de usuario",
+    "breadcrumb": "Ruta de navegación",
+    "ai_chat": "Chat del Asistente de Viaje IA",
+    "active_status": "Estado activo",
+    "launching_soon": "Indicador de lanzamiento próximo",
+    "current_stage": "Etapa actual en evolución del marketing",
+    "ai_core_system": "Sistema Core de IA",
+    "early_adopter_window": "Actualmente en ventana de early adopter",
+    "insight_about_adoption": "Insight clave sobre ventaja de early adoption",
+    "insight_icon": "Ícono de insight",
+    "timeline_evolution": "Línea de tiempo mostrando la evolución de la automatización de marketing",
+    "interactive_diagram": "Diagrama Interactivo del Sistema de Marketing IA - Usa las flechas para navegar módulos, Enter para seleccionar, Escape para cerrar paneles"
+  },
+  "navigation": {
+    "settings": "Configuración",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "placeholders": {
+    "search_accounts": "Buscar cuentas...",
+    "campaign_name": "ej., Lanzamiento de Producto de Verano",
+    "enter_message": "Ingresa mensaje de chat"
+  },
+  "images": {
+    "original": "Original",
+    "enhanced": "Mejorado",
+    "post_thumbnail": "Miniatura de publicación",
+    "ad_background": "Fondo de anuncio"
+  },
+  "testing": {
+    "test_error_tracking": "Probar seguimiento de errores",
+    "test_message_tracking": "Probar seguimiento de mensajes",
+    "test_warning_tracking": "Probar seguimiento de advertencias",
+    "clear_storage": "Limpiar localStorage y recargar",
+    "example_modal": "Modal de Ejemplo"
+  },
+  "pricing": {
+    "view_details": "Ver detalles de precios",
+    "view_breakdown": "Ver desglose completo de valor",
+    "view_roadmap": "Ver hoja de ruta de precios"
+  },
+  "calendly": {
+    "book_demo": "Reservar demo",
+    "maybe_later": "Tal vez más tarde",
+    "open_direct": "Abrir Calendly Directamente →",
+    "helpful": "Útil",
+    "not_helpful": "No útil"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "learn_more": "Más Información",
+    "view": "Ver →"
+  },
+  "cta": {
+    "book_appointment": "Reservar Cita",
+    "schedule_demo": "Programar una demo",
+    "book": "Reservar",
+    "default_urgency": "⏰ Sesión gratuita de hoja de ruta ($1,500 valor)",
+    "default_trust": {
+      "strategy_call": "✓ Llamada estratégica de 30 min",
+      "no_cc": "✓ No se requiere tarjeta de crédito",
+      "team_size": "✓ Construido para equipos de 10-50"
+    }
+  },
+  "pricing_banner": {
+    "exclusive_early_access": "Acceso Exclusivo Anticipado",
+    "availability": "Disponibilidad",
+    "remaining": "restantes",
+    "investment": "Inversión",
+    "rate_locked": "Tarifa bloqueada por {{months}} meses",
+    "free_months": "+ {{count}} mes GRATIS",
+    "free_months_plural": "+ {{count}} meses GRATIS",
+    "next_tier": "Próximo nivel de precios:",
+    "collapse_banner": "Colapsar banner",
+    "slots_remaining": "{{remaining}}/{{total}} restantes",
+    "slots_claimed": "{{percent}}% de espacios reclamados",
+    "slots_remaining_label": "{{remaining}} espacios restantes de {{total}} totales"
+  },
+  "slot_progress": {
+    "slots_remaining_label": "{{remaining}} de {{total}} espacios {{tier}} restantes",
+    "count_remaining": "{{remaining}}/{{total}} restantes",
+    "count_left": "{{remaining}}/{{total}} disponibles",
+    "only_left": "• ¡Solo quedan {{count}}!",
+    "only_slots_left": "Solo queda {{count}} espacio",
+    "only_slots_left_plural": "Solo quedan {{count}} espacios",
+    "slots_left_at_price": "Solo {{count}} espacio disponible a {{currency}}",
+    "slots_left_at_price_plural": "Solo {{count}} espacios disponibles a {{currency}}",
+    "slots_remaining_aria": "{{remaining}} espacios restantes de {{total}} totales",
+    "spots_remaining_cohort": "Solo <strong class=\"text-accent-primary text-lg\">{{count}} espacios restantes</strong> para el grupo de lanzamiento Q1"
+  },
+  "value_stacking": {
+    "title": "Valor Completo de la Plataforma",
+    "subtitle": "{{count}} módulos potentes • {{value}}/mes valor total",
+    "title_full": "Todo Lo Que Obtienes",
+    "subtitle_full": "Plataforma completa de automatización de marketing • {{count}} módulos integrados",
+    "total_value": "valor mensual total",
+    "your_price": "Tu Precio {{tier}}:",
+    "you_save": "Ahorras:",
+    "savings_vs_individual": "{{percent}}% de ahorro vs comprar individualmente",
+    "annual_savings": "Ahorro Anual",
+    "modules": {
+      "campaign_orchestra": {
+        "name": "Campaign Orchestra",
+        "description": "Automatización y programación de campañas multiplataforma",
+        "highlights": ["10+ integraciones de plataforma", "Programación inteligente", "Pruebas A/B"]
+      },
+      "ai_content_studio": {
+        "name": "AI Content Studio",
+        "description": "Generación de contenido y redacción impulsada por IA",
+        "highlights": ["Integración GPT-4", "Entrenamiento de voz de marca", "Generación ilimitada"]
+      },
+      "ad_builder_pro": {
+        "name": "Ad Builder Pro",
+        "description": "Anuncios de video con IA con presentadores virtuales",
+        "highlights": ["Presentadores IA", "Plantillas de video", "Eliminación de fondo"]
+      },
+      "analytics_center": {
+        "name": "Analytics Center",
+        "description": "Panel avanzado de análisis y seguimiento de ROI",
+        "highlights": ["Informes en tiempo real", "Calculadora de ROI", "Métricas personalizadas"]
+      },
+      "strategy_matrix": {
+        "name": "Strategy Matrix",
+        "description": "Estrategia y planificación de campañas impulsadas por IA",
+        "highlights": [
+          "Investigación Perplexity AI",
+          "Pronóstico de tendencias",
+          "Análisis de competidores"
+        ]
+      },
+      "content_calendar": {
+        "name": "Content Calendar",
+        "description": "Planificación inteligente de contenido y colaboración en equipo",
+        "highlights": [
+          "Planificación de arrastrar y soltar",
+          "Colaboración en equipo",
+          "Flujos de aprobación"
+        ]
+      },
+      "brand_management": {
+        "name": "Brand Management Suite",
+        "description": "Gestión de activos de múltiples marcas y directrices",
+        "highlights": ["Marcas ilimitadas", "Biblioteca de activos", "Directrices de marca"]
+      },
+      "ai_assistant": {
+        "name": "Experto en Marketing IA 24/7",
+        "description": "Asistente personal de IA para estrategia y soporte",
+        "highlights": ["Disponibilidad 24/7", "Consultas estratégicas", "Mejores prácticas"]
+      }
+    }
+  },
+  "errors": {
+    "something_went_wrong": "Algo salió mal",
+    "unexpected_error": "Ocurrió un error inesperado. Hemos registrado este problema y estamos trabajando en una solución.",
+    "technical_details": "Detalles técnicos (solo desarrollo)",
+    "try_again": "Intentar de nuevo",
+    "go_home": "Ir a inicio"
+  },
+  "ui": {
+    "total": "Total",
+    "average": "Promedio",
+    "minimum": "Mínimo",
+    "maximum": "Máximo",
+    "click_to_expand": "Haz clic para expandir el día",
+    "click_for_details": "Haz clic en la publicación para ver detalles",
+    "select_region": "Selecciona una Región",
+    "select_platforms": "Selecciona plataformas para ver cuentas",
+    "create_first_campaign": "Crea tu primera campaña para comenzar",
+    "no_data_yet": "Aún no hay datos. ¡Comparte la demo para recopilar datos!",
+    "total_uploaded": "Total Subido",
+    "total_accounts": "Total de Cuentas",
+    "total_reach": "Alcance Total",
+    "average_roi": "ROI Promedio",
+    "total_campaigns": "Total de Campañas",
+    "total_in_pipeline": "Total en Pipeline",
+    "total_requests": "Total de Solicitudes",
+    "average_time": "Tiempo Promedio",
+    "total_entered": "Total Ingresado",
+    "total_investment": "Inversión Total",
+    "total_conversions": "Total de Conversiones",
+    "average_campaign_roi": "ROI Promedio de Campaña",
+    "total_assignments": "Total de Asignaciones",
+    "total_cta_clicks": "Total de Clics en CTA",
+    "total_impressions": "Impresiones Totales"
+  },
+  "custom_build": {
+    "badge": "Proceso Personalizado",
+    "title": "Construido PARA Ti, No POR Ti",
+    "subtitle": "Cada sistema está adaptado a TU negocio, industria y flujos de trabajo específicos",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Analizamos TUS necesidades comerciales específicas"
+      },
+      "custom_build": {
+        "title": "Construcción Personalizada",
+        "description": "Construido PARA tu negocio, no POR ti"
+      },
+      "zero_compromises": {
+        "title": "Cero Compromisos",
+        "description": "Sin plantillas, sin limitaciones"
+      }
+    },
+    "footer_message": "<strong class=\"text-accent-gold\">No es una plantilla.</strong> Cada negocio es único, y tu automatización de marketing también debería serlo. No te pedimos que te adaptes a nuestro sistema - construimos el sistema que se adapta a <strong class=\"text-white\">TU</strong> flujo de trabajo."
+  },
+  "vision": {
+    "badge": "🔮 Desde el Futuro",
+    "title": "La Forma en que se Hará el Marketing en 2027",
+    "subtitle_line1": "No estamos alcanzando a los competidores.",
+    "subtitle_line2": "<strong class=\"text-white\">Estamos construyendo lo que viene después.</strong>",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "Marketing Asistido por IA",
+        "description": "ChatGPT ayuda a escribir textos"
+      },
+      "autonomous": {
+        "year": "2026",
+        "label": "Marketing Autónomo",
+        "description": "La IA ejecuta campañas completas de forma independiente"
+      },
+      "standard": {
+        "year": "2027+",
+        "label": "Práctica Estándar",
+        "description": "Todas las empresas usan IA autónoma"
+      }
+    },
+    "early_adopter_tag": "Oportunidad para Early Adopters",
+    "insight_title": "Los Early Adopters Obtienen 3-5 Años de Ventaja Competitiva",
+    "insight_salesforce": "<strong class=\"text-white\">Early adopters de Salesforce (2000s)</strong> → Multiplicaron por 10 su productividad de ventas mientras los competidores se pusieron al día 5 años después.",
+    "insight_ai_tools": "<strong class=\"text-white\">Early adopters de herramientas IA (2020-2022)</strong> → Obtuvieron 3-5 años de ventaja en producción de contenido y automatización.",
+    "insight_moment": "Este es ese momento para el marketing autónomo.",
+    "cta_message": "Únete a los equipos fundadores que están construyendo el futuro del marketing <strong class=\"text-white\">hoy</strong>, sin esperar a que se convierta en práctica estándar en 2027."
+  },
+  "risk_reduction": {
+    "badge": "🤝 Basado en Asociación",
+    "title": "Por Qué los Equipos Fundadores Nos Eligen",
+    "subtitle": "Compromisos transparentes para una plataforma personalizada",
+    "guarantees": {
+      "success": {
+        "title": "Garantía de Éxito",
+        "description": "No paramos hasta que funcione. Si el sistema no está entregando valor después de 3 meses, seguimos trabajando hasta que lo haga - sin costo adicional.",
+        "highlight": "Nos quedamos hasta que tengas éxito"
+      },
+      "partnership": {
+        "title": "Asociación con el Fundador",
+        "description": "Acceso directo al fundador por Slack. Llamadas estratégicas semanales. Asociación real, no solo un proveedor.",
+        "highlight": "Tu éxito = Nuestro éxito"
+      },
+      "custom": {
+        "title": "Completamente Personalizado",
+        "description": "Esto NO es software estándar. Cada sistema está adaptado específicamente a tu negocio, industria y flujos de trabajo.",
+        "highlight": "Construido para TI, no \"configurado\""
+      },
+      "trial": {
+        "title": "Prueba + Compromiso",
+        "description": "Prueba sin riesgo de 3 meses. Si funciona (lo hará), nos comprometemos juntos por 1 año para maximizar resultados.",
+        "highlight": "Crecer juntos, no mes a mes"
+      }
+    },
+    "footer_message": "<strong class=\"text-white\">Asociación real, compromiso real.</strong> Estamos construyendo esto junto con 3 equipos fundadores."
+  },
+  "founder_expertise": {
+    "badge": "Construido por Veteranos",
+    "title": "Operadores de Automatización de Marketing",
+    "subtitle": "No somos los típicos fundadores de SaaS - somos <strong class=\"text-white\">operadores</strong> que construimos este sistema de marketing autónomo <strong class=\"text-white\">primero para nosotros mismos</strong>.",
+    "credentials": {
+      "experience": {
+        "label": "15+ años",
+        "description": "Experiencia en automatización de marketing"
+      },
+      "founding_teams": {
+        "label": "3 equipos fundadores",
+        "description": "Construyendo juntos (Q1 2026)"
+      },
+      "early_adopters": {
+        "label": "Desde 2020",
+        "description": "Early adopters de IA"
+      },
+      "operators": {
+        "label": "Operadores",
+        "description": "Construido para nosotros primero"
+      }
+    },
+    "expertise_p1": "Hemos pasado <strong class=\"text-white\">más de 15 años</strong> en automatización de marketing y conocemos el dolor: gestionar múltiples canales, crear contenido sin fin y luchar por escalar sin equipos masivos.",
+    "expertise_p2": "Por eso construimos FutureMarketingAI - <strong class=\"text-white\">el sistema que siempre quisimos tener</strong>. Ahora estamos lanzando con 3 equipos fundadores en Q1 2026.",
+    "trust_badge": "Early adopters de IA • Expertos en automatización de marketing • Construido por operadores, para operadores"
+  },
+  "technical_showcase": {
+    "badge": "Ver la Tecnología",
+    "title": "No Es Solo Otro Chatbot",
+    "subtitle": "IA autónoma real con <strong>arquitectura multi-agente</strong>",
+    "tech_stats": {
+      "agents": {
+        "value": "9",
+        "label": "Agentes IA Autónomos"
+      },
+      "models": {
+        "value": "4",
+        "label": "Modelos de Base"
+      },
+      "operation": {
+        "value": "24/7",
+        "label": "Operación Continua"
+      }
+    },
+    "agents": {
+      "research": {
+        "name": "Agente de Investigación",
+        "status": "activo"
+      },
+      "content": {
+        "name": "Agente de Contenido",
+        "status": "activo"
+      },
+      "analytics": {
+        "name": "Agente de Analíticas",
+        "status": "monitoreando"
+      },
+      "publishing": {
+        "name": "Agente de Publicación",
+        "status": "activo"
+      },
+      "orchestrator": {
+        "name": "Orquestador",
+        "status": "coordinando"
+      }
+    }
+  },
+  "early_adopter_benefits": {
+    "founder_pricing": "Asegura <strong class=\"text-white\">precios de fundador</strong> para siempre",
+    "team_size": "Perfecto para equipos de <strong class=\"text-white\">10-50 personas</strong>",
+    "founder_access": "<strong class=\"text-white\">Acceso directo al fundador</strong> vía Slack",
+    "shape_product": "Da forma al producto <strong class=\"text-white\">con nosotros</strong>"
+  },
+  "notification_center": {
+    "title": "Notificaciones",
+    "unread_count": "{{count}} mensaje sin leer",
+    "unread_count_plural": "{{count}} mensajes sin leer",
+    "mark_all_read": "Marcar todo como leído",
+    "clear_all": "Limpiar todo",
+    "empty": {
+      "title": "Aún no hay notificaciones",
+      "subtitle": "¡Estás al día!"
+    }
+  }
+}

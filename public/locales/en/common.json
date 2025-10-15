@@ -1,0 +1,482 @@
+{
+  "loading": {
+    "default": "Loading...",
+    "page": "Loading page...",
+    "content": "Loading content...",
+    "scheduling": "Loading scheduling...",
+    "calendly": "Loading calendar...",
+    "component": "Component could not be loaded"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "close_modal": "Close modal",
+    "close_chat": "Close chat",
+    "close_panel": "Close panel",
+    "close_notification": "Close notification",
+    "close_floating_cta": "Close floating CTA",
+    "dismiss": "Dismiss",
+    "dismiss_celebration": "Dismiss celebration",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "send": "Send",
+    "send_message": "Send message",
+    "submit": "Submit",
+    "export_csv": "Export to CSV",
+    "clear_selection": "Clear selection",
+    "collapse_banner": "Collapse banner",
+    "reload_page": "Reload page",
+    "breadcrumb_nav": "Breadcrumb"
+  },
+  "personalization": {
+    "change_industry_tooltip": "Click to change industry",
+    "more_preferences": "More preferences",
+    "open_preferences": "Open user preferences"
+  },
+  "language_switcher": {
+    "change_language": "Change language"
+  },
+  "chat": {
+    "tooltip": "Need help? I'm here to assist!",
+    "preview": {
+      "default": "Need help with this demo?",
+      "home": "Want a guided tour of the platform?",
+      "explorer": "Can I help with the Scenario Explorer?",
+      "calculator": "Need help with the ROI Calculator?",
+      "dashboard": "Questions about the dashboard?"
+    }
+  },
+  "pricing": {
+    "payback_period": "Payback Period",
+    "compare_all_tiers": "Compare All Tiers",
+    "custom_roi_analysis": "Custom ROI analysis",
+    "sold_out": "Sold Out",
+    "available": "Available",
+    "free_consultation": "Free 30-min consultation",
+    "no_credit_card": "No credit card required",
+    "lock_in_spot": "Lock in Spot #{{spot}}",
+    "see_full_roadmap": "See Full Roadmap",
+    "join_before_price_rise": "Join now before prices rise • Rate locked for {{months}} months",
+    "transparent_roadmap": "Transparent Pricing Roadmap",
+    "pricing_roadmap": "Pricing Roadmap",
+    "roadmap_subtitle": "Transparent pricing progression"
+  },
+  "industry_selector": {
+    "modal_title": "Personalize Your Demo Experience",
+    "select_prompt": "Select your industry for a personalized demo",
+    "tailoring_info": "We tailor examples, benchmarks, and case studies to your sector",
+    "skip": "Skip, I'll view the general demo"
+  },
+  "trust_badges": {
+    "title": "Trusted by Companies Worldwide",
+    "subtitle": "Enterprise-grade security and compliance"
+  },
+  "case_studies": {
+    "title": "Success Stories",
+    "subtitle": "Discover how companies achieve concrete results"
+  },
+  "preferences": {
+    "modal_title": "Edit Preferences",
+    "company_size_label": "Company Size",
+    "role_label": "Your Role",
+    "budget_label": "Monthly Marketing Budget",
+    "pain_points_label": "Main Challenges (select multiple)",
+    "select_size": "Select size...",
+    "select_role": "Select role...",
+    "select_budget": "Select budget...",
+    "pain_points": [
+      "Not enough time for content",
+      "Lack of creativity",
+      "Inconsistent quality",
+      "Poor ROI on ads",
+      "Difficult to scale",
+      "Too many platforms",
+      "Lack of data/insights",
+      "No automation"
+    ],
+    "success_message": "Preferences saved!",
+    "save_button": "Save Preferences",
+    "saved_button": "Saved ✓",
+    "cancel_button": "Cancel",
+    "help_text": "These preferences help us tailor the demo to your specific situation"
+  },
+  "aggregate_metrics": {
+    "title": "Proven Impact Across Companies",
+    "subtitle": "Real-world results from companies that solved content chaos"
+  },
+  "progress": {
+    "label": "Progress"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to main content",
+    "close_menu": "Close menu",
+    "open_menu": "Open menu",
+    "main_navigation": "Main navigation",
+    "personalization_settings": "Personalization settings",
+    "close_settings": "Close settings",
+    "view_achievements": "View your achievements",
+    "new_messages": "New messages",
+    "messages_list": "Chat messages",
+    "navigation_suggestion": "Navigation suggestion",
+    "demo_booking": "Demo booking invitation",
+    "booking_actions": "Booking actions",
+    "trust_indicators": "Trust indicators",
+    "schedule_appointment": "Schedule appointment",
+    "what_to_expect": "What to expect",
+    "booking_calendar": "Booking calendar",
+    "open_calendly": "Open Calendly in new tab",
+    "helpful": "Mark as helpful",
+    "not_helpful": "Mark as not helpful",
+    "previous_card": "Previous card",
+    "next_card": "Next card",
+    "previous_module": "Previous module",
+    "next_module": "Next module",
+    "open_preferences": "Open user preferences",
+    "breadcrumb": "Breadcrumb",
+    "ai_chat": "AI Journey Assistant Chat",
+    "active_status": "Active status",
+    "launching_soon": "Launching soon indicator",
+    "current_stage": "Current stage in marketing evolution",
+    "ai_core_system": "AI Core System",
+    "early_adopter_window": "Currently in early adopter window",
+    "insight_about_adoption": "Key insight about early adoption advantage",
+    "insight_icon": "Insight icon",
+    "timeline_evolution": "Timeline showing the evolution of marketing automation",
+    "interactive_diagram": "Interactive AI Marketing System Diagram - Use arrow keys to navigate modules, Enter to select, Escape to close panels"
+  },
+  "navigation": {
+    "settings": "Settings",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "placeholders": {
+    "search_accounts": "Search accounts...",
+    "campaign_name": "e.g., Summer Product Launch",
+    "enter_message": "Enter chat message"
+  },
+  "images": {
+    "original": "Original",
+    "enhanced": "Enhanced",
+    "post_thumbnail": "Post thumbnail",
+    "ad_background": "Ad background"
+  },
+  "testing": {
+    "test_error_tracking": "Test error tracking",
+    "test_message_tracking": "Test message tracking",
+    "test_warning_tracking": "Test warning tracking",
+    "clear_storage": "Clear localStorage and reload",
+    "example_modal": "Example Modal"
+  },
+  "calendly": {
+    "book_demo": "Book demo",
+    "maybe_later": "Maybe later",
+    "open_direct": "Open Calendly Direct →",
+    "helpful": "Helpful",
+    "not_helpful": "Not helpful"
+  },
+  "cta": {
+    "book_appointment": "Book Appointment",
+    "schedule_demo": "Schedule a demo",
+    "book": "Book",
+    "default_urgency": "⏰ Free roadmap session ($1,500 value)",
+    "default_trust": {
+      "strategy_call": "✓ 30-min strategy call",
+      "no_cc": "✓ No credit card needed",
+      "team_size": "✓ Built for teams of 10-50"
+    }
+  },
+  "pricing_banner": {
+    "exclusive_early_access": "Exclusive Early Access",
+    "availability": "Availability",
+    "remaining": "remaining",
+    "investment": "Investment",
+    "rate_locked": "Rate locked for {{months}} months",
+    "free_months": "+ {{count}} month FREE",
+    "free_months_plural": "+ {{count}} months FREE",
+    "next_tier": "Next tier pricing:",
+    "collapse_banner": "Collapse banner",
+    "slots_remaining": "{{remaining}}/{{total}} remaining",
+    "slots_claimed": "{{percent}}% of slots claimed",
+    "slots_remaining_label": "{{remaining}} slots remaining out of {{total}} total"
+  },
+  "slot_progress": {
+    "slots_remaining_label": "{{remaining}} of {{total}} {{tier}} slots remaining",
+    "count_remaining": "{{remaining}}/{{total}} remaining",
+    "count_left": "{{remaining}}/{{total}} left",
+    "only_left": "• Only {{count}} left!",
+    "only_slots_left": "Only {{count}} slot left",
+    "only_slots_left_plural": "Only {{count}} slots left",
+    "slots_left_at_price": "Only {{count}} slot left at {{currency}}",
+    "slots_left_at_price_plural": "Only {{count}} slots left at {{currency}}",
+    "slots_remaining_aria": "{{remaining}} slots remaining out of {{total}} total",
+    "spots_remaining_cohort": "Only <strong class=\"text-accent-primary text-lg\">{{count}} spots remaining</strong> for Q1 launch cohort"
+  },
+  "value_stacking": {
+    "title": "Complete Platform Value",
+    "subtitle": "{{count}} powerful modules • {{value}}/month total value",
+    "title_full": "Everything You Get",
+    "subtitle_full": "Complete marketing automation platform • {{count}} integrated modules",
+    "total_value": "total monthly value",
+    "your_price": "Your {{tier}} Price:",
+    "you_save": "You Save:",
+    "savings_vs_individual": "{{percent}}% savings vs buying individually",
+    "annual_savings": "Annual Savings",
+    "modules": {
+      "campaign_orchestra": {
+        "name": "Campaign Orchestra",
+        "description": "Multi-platform campaign automation and scheduling",
+        "highlights": ["10+ platform integrations", "Smart scheduling", "A/B testing"]
+      },
+      "ai_content_studio": {
+        "name": "AI Content Studio",
+        "description": "AI-powered content generation and copywriting",
+        "highlights": ["GPT-4 integration", "Brand voice training", "Unlimited generation"]
+      },
+      "ad_builder_pro": {
+        "name": "Ad Builder Pro",
+        "description": "AI video ads with virtual presenters",
+        "highlights": ["AI presenters", "Video templates", "Background removal"]
+      },
+      "analytics_center": {
+        "name": "Analytics Center",
+        "description": "Advanced analytics and ROI tracking dashboard",
+        "highlights": ["Real-time reporting", "ROI calculator", "Custom metrics"]
+      },
+      "strategy_matrix": {
+        "name": "Strategy Matrix",
+        "description": "AI-powered campaign strategy and planning",
+        "highlights": ["Perplexity AI research", "Trend forecasting", "Competitor analysis"]
+      },
+      "content_calendar": {
+        "name": "Content Calendar",
+        "description": "Smart content planning and team collaboration",
+        "highlights": ["Drag-and-drop planning", "Team collaboration", "Approval workflows"]
+      },
+      "brand_management": {
+        "name": "Brand Management Suite",
+        "description": "Multi-brand asset management and guidelines",
+        "highlights": ["Unlimited brands", "Asset library", "Brand guidelines"]
+      },
+      "ai_assistant": {
+        "name": "24/7 AI Marketing Expert",
+        "description": "Personal AI assistant for strategy and support",
+        "highlights": ["24/7 availability", "Strategy consultations", "Best practices"]
+      }
+    }
+  },
+  "errors": {
+    "something_went_wrong": "Something went wrong",
+    "unexpected_error": "An unexpected error occurred. We have logged this issue and are working on a solution.",
+    "technical_details": "Technical details (development only)",
+    "try_again": "Try again",
+    "go_home": "Go to home"
+  },
+  "ui": {
+    "total": "Total",
+    "average": "Average",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "click_to_expand": "Click to expand day",
+    "click_for_details": "Click post for details",
+    "select_region": "Select a Region",
+    "select_platforms": "Select platforms to see accounts",
+    "create_first_campaign": "Create your first campaign to get started",
+    "no_data_yet": "No data yet. Share the demo to collect data!",
+    "total_uploaded": "Total Uploaded",
+    "total_accounts": "Total Accounts",
+    "total_reach": "Total Reach",
+    "average_roi": "Average ROI",
+    "total_campaigns": "Total Campaigns",
+    "total_in_pipeline": "Total in Pipeline",
+    "total_requests": "Total Requests",
+    "average_time": "Average Time",
+    "total_entered": "Total Entered",
+    "total_investment": "Total Investment",
+    "total_conversions": "Total Conversions",
+    "average_campaign_roi": "Average Campaign ROI",
+    "total_assignments": "Total Assignments",
+    "total_cta_clicks": "Total CTA Clicks",
+    "total_impressions": "Total Impressions"
+  },
+  "custom_build": {
+    "badge": "Custom-Built Process",
+    "title": "Built FOR You, Not BY You",
+    "subtitle": "Every system is tailored to YOUR specific business, industry, and workflows",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We analyze YOUR specific business needs"
+      },
+      "custom_build": {
+        "title": "Custom Build",
+        "description": "Built FOR your business, not BY you"
+      },
+      "zero_compromises": {
+        "title": "Zero Compromises",
+        "description": "No templates, no limitations"
+      }
+    },
+    "footer_message": "<strong class=\"text-accent-gold\">Not a template.</strong> Every business is unique, and your marketing automation should be too. We don't ask you to adapt to our system - we build the system that adapts to <strong class=\"text-white\">YOUR</strong> workflow."
+  },
+  "vision": {
+    "badge": "🔮 From the Future",
+    "title": "The Way Marketing Will Be Done in 2027",
+    "subtitle_line1": "We're not catching up to competitors.",
+    "subtitle_line2": "<strong class=\"text-white\">We're building what comes next.</strong>",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "AI-Assisted Marketing",
+        "description": "ChatGPT helps write copy"
+      },
+      "autonomous": {
+        "year": "2026",
+        "label": "Autonomous Marketing",
+        "description": "AI runs entire campaigns independently"
+      },
+      "standard": {
+        "year": "2027+",
+        "label": "Standard Practice",
+        "description": "Every company uses autonomous AI"
+      }
+    },
+    "early_adopter_tag": "Early Adopter Opportunity",
+    "insight_title": "Early Adopters Gain 3-5 Year Competitive Advantage",
+    "insight_salesforce": "<strong class=\"text-white\">Salesforce early adopters (2000s)</strong> → 10x'd their sales productivity while competitors caught up 5 years later.",
+    "insight_ai_tools": "<strong class=\"text-white\">AI tools early adopters (2020-2022)</strong> → Gained 3-5 year advantage in content production and automation.",
+    "insight_moment": "This is that moment for autonomous marketing.",
+    "cta_message": "Join the founding teams who are building the future of marketing <strong class=\"text-white\">today</strong>, not waiting for it to become standard practice in 2027."
+  },
+  "risk_reduction": {
+    "badge": "🤝 Partnership-Based",
+    "title": "Why Founding Teams Choose Us",
+    "subtitle": "Transparent commitments for a custom-built platform",
+    "guarantees": {
+      "success": {
+        "title": "Success Guarantee",
+        "description": "We don't stop until it works. If the system isn't delivering value after 3 months, we keep working until it does - no extra cost.",
+        "highlight": "We stay until you succeed"
+      },
+      "partnership": {
+        "title": "Founder Partnership",
+        "description": "Direct Slack access to founder. Weekly strategy calls. Real partnership, not just a vendor.",
+        "highlight": "Your success = Our success"
+      },
+      "custom": {
+        "title": "Fully Custom-Built",
+        "description": "This is NOT off-the-shelf software. Every system is tailored specifically to your business, industry, and workflows.",
+        "highlight": "Built for YOU, not \"configured\""
+      },
+      "trial": {
+        "title": "Trial + Commitment",
+        "description": "3-month risk-free trial. If it works (it will), we commit together for 1 year to maximize results.",
+        "highlight": "Grow together, not month-to-month"
+      }
+    },
+    "footer_message": "<strong class=\"text-white\">Real partnership, real commitment.</strong> We're building this together with 3 founding teams."
+  },
+  "founder_expertise": {
+    "badge": "Built by Veterans",
+    "title": "Marketing Automation Operators",
+    "subtitle": "Not your typical SaaS founders - we're <strong class=\"text-white\">operators</strong> who built this autonomous marketing system <strong class=\"text-white\">for ourselves first</strong>.",
+    "credentials": {
+      "experience": {
+        "label": "15+ years",
+        "description": "Marketing automation experience"
+      },
+      "founding_teams": {
+        "label": "3 founding teams",
+        "description": "Building together (Q1 2026)"
+      },
+      "early_adopters": {
+        "label": "Since 2020",
+        "description": "Early AI adopters"
+      },
+      "operators": {
+        "label": "Operators",
+        "description": "Built for ourselves first"
+      }
+    },
+    "expertise_p1": "We've spent <strong class=\"text-white\">15+ years</strong> in marketing automation and know the pain: managing multiple channels, creating endless content, and struggling to scale without massive teams.",
+    "expertise_p2": "That's why we built FutureMarketingAI - <strong class=\"text-white\">the system we wish we had</strong> all along. Now we're launching with 3 founding teams in Q1 2026.",
+    "trust_badge": "Early AI adopters • Marketing automation experts • Built by operators, for operators"
+  },
+  "technical_showcase": {
+    "badge": "See the Technology",
+    "title": "Not Just Another Chatbot",
+    "subtitle": "Real autonomous AI with <strong>multi-agent architecture</strong>",
+    "tech_stats": {
+      "agents": {
+        "value": "9",
+        "label": "Autonomous AI Agents"
+      },
+      "models": {
+        "value": "4",
+        "label": "Foundation Models"
+      },
+      "operation": {
+        "value": "24/7",
+        "label": "Continuous Operation"
+      }
+    },
+    "agents": {
+      "research": {
+        "name": "Research Agent",
+        "status": "active"
+      },
+      "content": {
+        "name": "Content Agent",
+        "status": "active"
+      },
+      "analytics": {
+        "name": "Analytics Agent",
+        "status": "monitoring"
+      },
+      "publishing": {
+        "name": "Publishing Agent",
+        "status": "active"
+      },
+      "orchestrator": {
+        "name": "Orchestrator",
+        "status": "coordinating"
+      }
+    }
+  },
+  "early_adopter_benefits": {
+    "founder_pricing": "Lock in <strong class=\"text-white\">founder pricing</strong> forever",
+    "team_size": "Perfect for teams of <strong class=\"text-white\">10-50 people</strong>",
+    "founder_access": "Direct <strong class=\"text-white\">founder access</strong> via Slack",
+    "shape_product": "Shape the product <strong class=\"text-white\">with us</strong>"
+  },
+  "notification_center": {
+    "title": "Notifications",
+    "unread_count": "{{count}} unread message",
+    "unread_count_plural": "{{count}} unread messages",
+    "mark_all_read": "Mark all as read",
+    "clear_all": "Clear all",
+    "empty": {
+      "title": "No notifications yet",
+      "subtitle": "You're all caught up!"
+    }
+  },
+  "cookie_consent": {
+    "title": "We respect your privacy",
+    "description": "We use cookies to improve your experience and understand how you use our demo. You can accept or decline.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy_policy": "Privacy Policy"
+  },
+  "footer": {
+    "privacy_policy": "Privacy Policy",
+    "cookie_policy": "Cookie Policy",
+    "terms": "Terms of Service",
+    "delete_my_data": "Delete My Data",
+    "delete_confirm": "Are you sure?",
+    "data_deleted_success": "Your data has been successfully deleted. The page will reload.",
+    "data_deleted_error": "Something went wrong deleting your data. Please try again.",
+    "all_rights_reserved": "All rights reserved.",
+    "demo_notice": "This is an interactive demo. Your data is stored locally and not shared with third parties."
+  }
+}

@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Integrate Analytics and A/B Testing for New Features
+# Status: cancelled
+# Dependencies: 5
+# Priority: medium
+# Description: Track user interactions, completion rates, and feature engagement using GA4 and Hotjar, and set up A/B tests for wizard vs linear flow and live preview positioning.
+# Details:
+Instrument all new components with GA4 event tracking (wizard steps, live preview, scenario explorer, badge unlocks). Configure Hotjar heatmaps and session recordings. Implement A/B testing logic for wizard vs linear form and live preview position using existing experimentation framework or a lightweight custom solution. Ensure all analytics events are GDPR-compliant and documented. Validate that funnel and engagement metrics are captured as per PRD success metrics.
+
+# Test Strategy:
+Test event firing for all tracked actions using GA4 debug tools. Validate A/B test assignment and variant rendering. Review Hotjar recordings for correct session capture. Confirm GDPR compliance and data accuracy.

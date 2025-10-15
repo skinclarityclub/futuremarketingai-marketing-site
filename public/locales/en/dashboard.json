@@ -1,0 +1,224 @@
+{
+  "page": {
+    "title": "Command Center",
+    "subtitle": "Real-time analytics and campaign management"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "analytics_hub": "Analytics Hub",
+    "strategy": "Strategy Hub",
+    "campaign_management": "Campaign Management",
+    "content_pipeline": "Content Pipeline",
+    "publishing_scheduler": "Publishing Scheduler",
+    "ai_assistants": "AI Assistants"
+  },
+  "overview": {
+    "title": "System Overview",
+    "title_with_industry": "{{industry}} System Overview",
+    "sections": {
+      "weekly_performance": "Weekly Performance Trends",
+      "active_campaigns": "Active Campaigns",
+      "system_performance": "System Performance",
+      "recent_activity": "Recent Activity",
+      "system_health": "System Health"
+    },
+    "table": {
+      "campaign": "Campaign",
+      "status": "Status",
+      "progress": "Progress",
+      "roi": "ROI"
+    },
+    "performance_labels": {
+      "ai_processing": "AI Processing",
+      "content_generation": "Content Generation",
+      "campaign_optimization": "Campaign Optimization"
+    },
+    "activity": {
+      "campaign_deployed": "Campaign \"{{name}}\" deployed",
+      "ai_optimization": "AI optimization increased CTR by {{percentage}}%",
+      "content_generated": "{{count}} new content pieces generated"
+    },
+    "health": {
+      "api_status": "API Status",
+      "ai_models": "AI Models",
+      "publishing_queue": "Publishing Queue",
+      "active_jobs": "Active Jobs",
+      "operational": "Operational",
+      "degraded": "Degraded",
+      "active_count": "{{active}}/{{total}} Active",
+      "pending_count": "{{count}} Pending",
+      "processing_count": "{{count}} Processing"
+    },
+    "campaign_status": {
+      "active": "Active",
+      "paused": "Paused",
+      "scheduled": "Scheduled",
+      "draft": "Draft"
+    },
+    "chart_legends": {
+      "roi": "ROI %",
+      "engagement": "Engagement %",
+      "reach": "Reach"
+    }
+  },
+  "content_pipeline": {
+    "title": "Content Pipeline"
+  },
+  "campaign_launcher": {
+    "title": "Launch New Campaign",
+    "configuration": {
+      "heading": "Campaign Configuration",
+      "name_label": "Campaign Name",
+      "name_required": "Campaign Name *",
+      "content_target_label": "Content Target: {{count}} pieces",
+      "duration_label": "Duration: {{days}} days",
+      "objective_label": "Campaign Objective",
+      "platforms_label": "Platforms *",
+      "target_audience_label": "Target Audience",
+      "launch_button": "🚀 Launch Campaign"
+    },
+    "objectives": {
+      "awareness": "Awareness",
+      "engagement": "Engagement",
+      "conversion": "Conversion",
+      "retention": "Retention"
+    },
+    "audiences": {
+      "all": "All Audiences",
+      "age_range": "Age {{range}}"
+    },
+    "preview": {
+      "heading": "Campaign Preview",
+      "name_label": "Campaign Name",
+      "untitled": "Untitled Campaign",
+      "content_target_label": "Content Target",
+      "pieces": "pieces",
+      "duration_label": "Duration",
+      "days": "days",
+      "objective_label": "Objective",
+      "platforms_label": "Selected Platforms",
+      "no_platforms": "No platforms selected",
+      "audience_label": "Target Audience",
+      "ai_optimization": "AI Optimization",
+      "enabled": "✓ Enabled",
+      "disabled": "✗ Disabled"
+    },
+    "results": {
+      "heading": "Estimated Output & Impact",
+      "estimated_reach": "Estimated Reach:",
+      "team_hours_saved": "Team Hours Saved:",
+      "engagement": "Est. Engagement:",
+      "hours_unit": "hrs"
+    },
+    "success": {
+      "title": "Campaign Launched!",
+      "message": "Your campaign has been successfully configured and will start processing soon."
+    },
+    "errors": {
+      "name_required": "Campaign name is required",
+      "content_min": "Minimum content target is 5 pieces",
+      "platforms_required": "Please select at least one platform"
+    }
+  },
+  "ad_manager": {
+    "title": "Ad Manager",
+    "summary_cards": {
+      "total_budget": "Total Budget",
+      "total_spent": "Total Spent",
+      "total_conversions": "Total Conversions",
+      "avg_roi": "Avg ROI",
+      "active_campaigns": "{{count}} active campaigns",
+      "utilized": "{{percent}}% utilized",
+      "avg_cpc": "Avg CPC:",
+      "across_all": "Across all campaigns"
+    },
+    "chart": {
+      "budget_distribution": "Budget Distribution",
+      "budget_label": "Budget",
+      "spent_label": "Spent"
+    },
+    "table": {
+      "title": "Active Campaigns",
+      "headers": {
+        "campaign": "Campaign",
+        "platform": "Platform",
+        "status": "Status",
+        "budget": "Budget",
+        "spent": "Spent",
+        "progress": "Progress",
+        "impressions": "Impressions",
+        "clicks": "Clicks",
+        "ctr": "CTR",
+        "conversions": "Conversions",
+        "cpc": "CPC",
+        "roi": "ROI",
+        "actions": "Actions"
+      }
+    },
+    "filters": {
+      "all_statuses": "All Statuses",
+      "all_platforms": "All Platforms"
+    },
+    "status": {
+      "active": "Active",
+      "paused": "Paused",
+      "ended": "Ended"
+    },
+    "actions": {
+      "view_details": "View Details",
+      "pause": "Pause",
+      "resume": "Resume",
+      "edit": "Edit"
+    },
+    "optimization": {
+      "title": "Optimization Suggestions",
+      "no_suggestions": "All campaigns performing optimally!"
+    }
+  },
+  "content_calendar": {
+    "title": "Content Calendar",
+    "view": {
+      "week": "Week View",
+      "month": "Month View"
+    },
+    "filter": {
+      "by_platform": "Filter by Platform:"
+    },
+    "week_of": "Week of {{range}}",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "status": {
+      "scheduled": "Scheduled",
+      "published": "Published",
+      "draft": "Draft"
+    },
+    "more_items": "+{{count}} more",
+    "legend": "Legend:",
+    "no_content": "No content scheduled"
+  },
+  "header": {
+    "brand": "Future Marketing AI",
+    "command_center": "Command Center",
+    "system_status": {
+      "operational": "All Systems Operational",
+      "warning": "Minor Issues Detected",
+      "error": "System Issues"
+    },
+    "menu": {
+      "settings": "Settings",
+      "notifications": "Notifications",
+      "logout": "Logout"
+    }
+  },
+  "system_health": {
+    "title": "System Status",
+    "last_updated": "Last updated:"
+  }
+}

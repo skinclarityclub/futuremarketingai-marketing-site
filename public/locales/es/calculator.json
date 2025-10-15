@@ -1,0 +1,193 @@
+{
+  "pain_section": {
+    "title": "¿Cuánto Te Está Costando Tu Enfoque Actual?",
+    "points": {
+      "hours": "<strong>Más de 60 horas/semana</strong> desperdiciadas en creación manual de contenido, publicación y análisis",
+      "costs": "<strong>€10K-€15K/mes</strong> en costos de equipo para marketing que no escala",
+      "posts": "<strong>Solo 40 publicaciones/mes</strong> en 7 plataformas = inconsistente",
+      "strategy": "<strong>Sin tiempo para estrategia</strong> constantemente apagando fuegos con contenido",
+      "advertising": "<strong>Publicidad a ciegas</strong> sin datos = presupuesto desperdiciado",
+      "offshelf": "<strong>Soluciones estándar</strong> requieren compromisos en TU flujo de trabajo específico"
+    },
+    "cta": "👇 <strong className=\"text-red-400\">Calcula abajo</strong> lo que AHORRAS con IA automatizada"
+  },
+  "inputs": {
+    "section_title": "Tus Métricas de Marketing",
+    "validation_error": "Por favor ingresa un valor entre {{min}} y {{max}}",
+    "team_size": {
+      "label": "Tamaño del Equipo de Marketing",
+      "unit": "personas",
+      "description": "¿Cuántas personas hay en tu equipo de marketing?"
+    },
+    "channels": {
+      "label": "Canales de Marketing",
+      "description": "¿Cuántos canales gestionas activamente? (Redes sociales, email, blog, anuncios, etc.)"
+    },
+    "marketing_spend": {
+      "label": "Gasto de Marketing Actual por Mes (Opcional)",
+      "description": "Presupuesto mensual aproximado para agencias, herramientas o anuncios"
+    },
+    "avg_salary": {
+      "label": "Salario Anual Promedio",
+      "description": "Salario anual promedio por miembro del equipo (para cálculo de ROI)"
+    },
+    "campaigns": {
+      "label": "Volumen Mensual de Campañas",
+      "unit": "campañas",
+      "description": "Número de campañas de marketing que ejecutas por mes"
+    },
+    "team_size_buttons": {
+      "lean": "Pequeño (1-5)",
+      "growing": "Creciendo (5-15)",
+      "scaling": "⭐ Escalando (15-50) - Recomendado"
+    },
+    "channel_descriptions": {
+      "starting": "Comenzando",
+      "perfect": "⭐ Ajuste perfecto",
+      "high_volume": "⭐ Alto volumen",
+      "enterprise": "Escala empresarial"
+    },
+    "advanced_settings": "Configuración Avanzada (opcional)",
+    "high_spend_alert": {
+      "title": "¡Alto gasto detectado!",
+      "description": "Podrías ahorrar costos significativos con automatización. Nuestra IA puede manejar esta carga de trabajo por una fracción del costo."
+    }
+  },
+  "results": {
+    "loading": "Calculando resultados...",
+    "roi_title": "Tu Retorno de Inversión Estimado",
+    "team_description": "Para equipos como el tuyo: {{teamSize}} personas gestionando {{channels}} canales",
+    "team_description_with_spend": "Para equipos como el tuyo: {{teamSize}} personas gestionando {{channels}} canales, gastando {{spend}}/mes",
+    "custom_built_advantage": {
+      "badge": "🔧 Ventaja Personalizada:",
+      "description": "Este ROI es posible porque el sistema está construido específicamente para TU flujo de trabajo—no una plantilla a la que debes adaptarte."
+    },
+    "metric_labels": {
+      "time_saved": "Tiempo Ahorrado",
+      "labor_cost_savings": "Ahorro en Costos Laborales",
+      "content_output": "Producción de Contenido",
+      "revenue_increase": "Aumento de Ingresos"
+    },
+    "section_titles": {
+      "current_costs": "Costos Actuales (Manual)",
+      "with_automation": "Con Automatización IA",
+      "your_gains": "Tus Ganancias"
+    },
+    "metrics": {
+      "team_costs": "Costos de Equipo",
+      "time_spent": "Tiempo Invertido",
+      "output": "Producción de Contenido",
+      "efficiency": "Eficiencia",
+      "cost_per_post": "Costo por Publicación",
+      "time_saved": "Tiempo Ahorrado",
+      "cost_savings": "Ahorro de Costos",
+      "roi": "ROI",
+      "break_even": "Punto de Equilibrio",
+      "payback_period": "Período de Recuperación"
+    },
+    "units": {
+      "per_month": "/mes",
+      "per_year": "/año",
+      "hours_per_week": "h/semana",
+      "posts_per_month": "publicaciones/mes",
+      "months": "meses"
+    }
+  },
+  "share": {
+    "title": "Comparte Tus Resultados",
+    "subtitle": "Guarda o comparte tu cálculo de ROI con tu equipo",
+    "button_share": "Compartir",
+    "button_export_pdf": "Exportar PDF",
+    "button_exporting": "Exportando...",
+    "link_copied": "✓ ¡Enlace copiado!",
+    "export_error": "Falló la exportación del PDF. Por favor intenta de nuevo.",
+    "modal": {
+      "title": "Comparte Tu Cálculo",
+      "description": "Comparte tu cálculo de ROI con tu equipo a través de un enlace",
+      "copy_link_title": "Copiar Enlace",
+      "copy_link_subtitle": "Compartir a través de cualquier app",
+      "share_directly_title": "Compartir Directamente",
+      "share_directly_subtitle": "A través de redes sociales o email",
+      "shareable_link_label": "📋 Tu Enlace para Compartir:",
+      "info_text": "Tu enlace contiene los valores actuales de la calculadora. Cualquiera con este enlace puede ver tu cálculo."
+    }
+  },
+  "cta": {
+    "see_how": "Ver Cómo Funciona",
+    "book_demo": "Reservar Demo"
+  },
+  "comparison_table": {
+    "header": {
+      "title": "Antes y Después: Tu Transformación",
+      "subtitle": "Comparación lado a lado de la situación actual vs IA automatizada"
+    },
+    "labels": {
+      "without_ai": "❌ Sin IA",
+      "with_ai": "✅ Con FutureMarketingAI",
+      "difference": "💎 Diferencia",
+      "before": "Antes:",
+      "after": "Después:"
+    },
+    "metrics": {
+      "content_output": {
+        "metric": "Producción de Contenido",
+        "unit_month": "publicaciones/mes",
+        "before_subtext": "Manual",
+        "after_subtext": "Automatización IA 24/7"
+      },
+      "time_per_month": {
+        "metric": "Tiempo por Mes (equipo)",
+        "unit_hours": "horas",
+        "before_subtext_template": "{{teamSize}} personas × 60h",
+        "after_value": "40 horas",
+        "after_subtext": "2 personas × 20h monitoreando",
+        "difference_percentage": "93% menos tiempo"
+      },
+      "team_costs": {
+        "metric": "Costos de Equipo (50% tiempo en marketing)",
+        "before_subtext_template": "{{teamSize}} personas",
+        "after_subtext": "2 personas monitoreando"
+      },
+      "platform_costs": {
+        "metric": "Costos de Plataforma",
+        "before_value": "€0/mes",
+        "before_subtext": "Trabajo manual",
+        "after_subtext": "Inversión en plataforma IA",
+        "difference_percentage": "Inversión"
+      },
+      "publishing_consistency": {
+        "metric": "Consistencia de Publicación",
+        "before_value": "30-50%",
+        "before_subtext": "Irregular por falta de tiempo",
+        "after_value": "99.8%",
+        "after_subtext": "Automatización IA 24/7",
+        "difference_value": "+50%",
+        "difference_percentage": "2x mejor tiempo de actividad"
+      },
+      "ad_roi": {
+        "metric": "ROI de Anuncios y Pre-Testing",
+        "before_value": "No medible",
+        "before_subtext": "Adivinanzas sin datos",
+        "after_value": "3:1 ROAS",
+        "after_subtext": "€3 retorno por €1 gastado",
+        "difference_value": "+285%",
+        "difference_percentage": "A través de pre-testing con IA"
+      }
+    },
+    "summary": {
+      "net_benefit": "BENEFICIO NETO",
+      "after_all_costs": "después de todos los costos",
+      "per_month": "/mes",
+      "per_year": "por año",
+      "roi_label": "ROI:"
+    }
+  },
+  "loading": {
+    "scheduling": "Cargando programación..."
+  },
+  "final_cta": {
+    "title": "¿Listo Para Transformar Tu Marketing?",
+    "description": "Descubre cómo FutureMarketingAI puede ofrecer {{roi}} ROI y ahorrar {{hours}} horas al mes para tu equipo.",
+    "book_call": "Reservar Llamada"
+  }
+}

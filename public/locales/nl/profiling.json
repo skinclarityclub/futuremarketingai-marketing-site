@@ -1,0 +1,63 @@
+{
+  "questions": {
+    "companySize": {
+      "title": "Hoe groot is je team?",
+      "subtitle": "Help ons de demo relevanter te maken",
+      "options": {
+        "small": "1-10 medewerkers",
+        "medium": "11-50 medewerkers",
+        "large": "51-200 medewerkers",
+        "enterprise": "200+ medewerkers"
+      }
+    },
+    "role": {
+      "title": "Wat is jouw rol?",
+      "subtitle": "We passen de content aan op jouw perspectief",
+      "options": {
+        "owner": "Eigenaar/Oprichter",
+        "cmo": "CMO/Marketing Directeur",
+        "manager": "Marketing Manager",
+        "specialist": "Marketing Specialist",
+        "other": "Andere rol"
+      }
+    },
+    "budget": {
+      "title": "Wat is je marketingbudget?",
+      "subtitle": "Optioneel - helpt ons een realistische ROI te tonen",
+      "options": {
+        "low": "< €5.000/maand",
+        "medium": "€5.000 - €20.000/maand",
+        "high": "€20.000+/maand"
+      }
+    },
+    "painPoints": {
+      "title": "Wat zijn je grootste uitdagingen?",
+      "subtitle": "Selecteer alles wat van toepassing is",
+      "options": {
+        "time": "Te weinig tijd",
+        "headcount": "Klein team, grote ambities",
+        "consistency": "Inconsistente output",
+        "scaling": "Kan niet schalen",
+        "cost": "Te hoge kosten",
+        "complexity": "Te complex/veel tools"
+      }
+    },
+    "useCases": {
+      "title": "Waar wil je AI gebruiken?",
+      "subtitle": "Selecteer je belangrijkste use cases",
+      "options": {
+        "content": "Content creatie",
+        "ads": "Ad campagnes",
+        "social": "Social media",
+        "email": "E-mail marketing",
+        "seo": "SEO & blogs",
+        "analytics": "Analytics & rapportage"
+      }
+    }
+  },
+  "actions": {
+    "skip": "Overslaan",
+    "confirm": "Bevestigen",
+    "dismiss": "Sluiten"
+  }
+}

@@ -1,0 +1,64 @@
+# Task ID: 5
+# Title: Build AI Advisory Service Module and Integrate Across Demo
+# Status: done
+# Dependencies: 2, 3
+# Priority: high
+# Description: Create a dedicated Explorer module for the AI advisory service and integrate mentions/badges throughout the demo.
+# Details:
+Add `AIAdvisoryModule` as the 7th module in Explorer. Use modal for details, including process steps and metrics. Add small badge/link in other module modals and calculator results. Update `PremiumServiceBadge` to include advisory pillar. Use SVG icons and ensure content is editable via CMS or JSON.
+<info added on 2025-10-02T13:23:51.630Z>
+Position the AI Advisory Service as a solution to the "No Automation Expertise" pain point with the following integration strategy:
+
+1. Set module title to "AI-Adviseur Partnership - Jouw Strategische Gids"
+2. Add pain point badge with text "Oplost: Geen automatisering expertise nodig"
+3. Include opening modal copy: "Geen technische kennis? Geen probleem. Ik begeleid je bij elke stap."
+
+Enhance the HolographicInfoPanel component:
+- Add optional `painPoint` prop
+- Display "Oplost: [pain]" badge when painPoint exists
+- Include "Saves you: €X/month" cost savings pill at bottom
+
+Integrate with other modules using specific pain-point badges:
+- Research Hub: "Oplost: Can't keep up with trends"
+- Content Pipeline: "Oplost: Time-consuming manual content"
+- Publishing: "Oplost: Inconsistent posting schedules"
+- Analytics: "Oplost: Unable to measure ROI"
+- Command Center: "Oplost: Multi-platform chaos"
+
+Each module should clearly communicate the problem it solves before explaining how it works.
+</info added on 2025-10-02T13:23:51.630Z>
+
+# Test Strategy:
+Unit test module rendering and modal logic. Manually verify integration points and badge visibility. Check accessibility and responsiveness.
+
+# Subtasks:
+## 1. Develop AIAdvisoryModule as 7th Explorer Module [done]
+### Dependencies: None
+### Description: Implement the dedicated AIAdvisoryModule as the seventh module within the Explorer, ensuring it follows existing module conventions.
+### Details:
+Create a new module component with modal support for detailed views. Structure content to allow for process steps and metrics display. Ensure the module is registered in the Explorer's module list and appears in the correct order.
+
+## 2. Design Modal Content and CMS/JSON Integration [done]
+### Dependencies: 5.1
+### Description: Build the modal for AIAdvisoryModule with editable content, process steps, and metrics, sourcing data from CMS or JSON.
+### Details:
+Implement modal UI with support for SVG icons, step-by-step process visualization, and metrics display. Integrate with CMS or JSON for content management, ensuring all text and icons are editable without code changes.
+
+## 3. Integrate Advisory Badges/Links Across Modules and Calculator [done]
+### Dependencies: 5.1
+### Description: Add small badge or link referencing the AI advisory service in other module modals and calculator results.
+### Details:
+Update all relevant module modals and calculator result components to include a consistent, accessible badge or link. Ensure the badge uses SVG icons and links to the AIAdvisoryModule modal.
+
+## 4. Update PremiumServiceBadge to Include Advisory Pillar [done]
+### Dependencies: None
+### Description: Modify the PremiumServiceBadge component to visually and textually represent the AI advisory pillar alongside existing pillars.
+### Details:
+Add new SVG icon and label for the advisory pillar. Update badge layout and animation as needed to accommodate the new element. Ensure content remains editable via CMS or JSON.
+
+## 5. Conduct Integration, Accessibility, and Responsiveness Testing [done]
+### Dependencies: 5.2, 5.3, 5.4
+### Description: Perform comprehensive testing of all new and updated components, focusing on integration points, accessibility, and responsive design.
+### Details:
+Verify all badges, modals, and module integrations function correctly across devices and screen sizes. Check keyboard navigation, ARIA attributes, and color contrast for accessibility compliance.
+

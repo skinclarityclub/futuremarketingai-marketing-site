@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "generatedAt": "2025-09-30T13:06:46.280Z",
+    "tasksAnalyzed": 7,
+    "totalTasks": 7,
+    "analysisCount": 7,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Project Setup and Dependency Installation",
+      "complexityScore": 6,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down project setup into: repository initialization, TypeScript React project scaffolding, dependency installation (grouped by type: core, dev, testing, linting), directory structure organization, code-splitting/lazy loading config, code quality tooling (ESLint, Prettier, Husky), performance profiling/bundle analysis scripts, and build tool (Webpack/Vite) optimization.",
+      "reasoning": "This task involves multiple distinct activities (tooling, configuration, code quality, performance, and testing setup) that each require specialized knowledge and careful integration. Industry best practices recommend isolating each setup area to ensure maintainability and reproducibility. The cognitive complexity is moderate-high due to the breadth of tools and the need for cross-tool compatibility[1][2][4]."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement 3D AI Core Sphere (CoreSphere3D)",
+      "complexityScore": 9,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Expand into subtasks for: scene setup, geometry creation, custom shader development (vertex/fragment), wireframe overlay, outer ring meshes, GSAP animation integration, mouse/camera interaction logic, particle orbit system, performance optimization (lazy loading, 60fps), accessibility (ARIA/keyboard), and unit/integration testing.",
+      "reasoning": "This task is highly complex due to custom shader programming, advanced animation, real-time 3D interactivity, and performance/accessibility requirements. Each feature (e.g., shaders, animation, interaction) is a significant engineering challenge and should be isolated for parallel development and testability[1][3][4]."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Develop Advanced Particle System (ParticleSystem)",
+      "complexityScore": 10,
+      "recommendedSubtasks": 12,
+      "expansionPrompt": "Decompose into: Canvas rendering setup, particle pool architecture, ambient particle logic, data stream particle logic (physics, motion blur), orbital particle logic, burst particle logic, main animation loop, offscreen culling, Web Worker integration, adaptive particle count, hooks API, reduced motion support, and profiling/testing.",
+      "reasoning": "This is a highly advanced, multi-faceted system requiring expertise in graphics, performance optimization, concurrency (Web Workers), and adaptive design. Each particle type and optimization strategy introduces significant cyclomatic and cognitive complexity, warranting fine-grained subtasks for maintainability and test coverage[1][2][3][4]."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Create Bezier Connection Beams (ConnectionBeam)",
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Expand into: SVG Bezier path calculation, dynamic control point logic, gradient rendering, drop-shadow/glow effects, stroke-dashoffset animation, Canvas side sparks, interaction state management (idle/hover/click), performance optimization (batching), and accessibility.",
+      "reasoning": "This task combines SVG and Canvas rendering, dynamic geometry, animation, and interactive state management. The need for real-time updates and visual polish increases both cyclomatic and cognitive complexity, justifying a breakdown by rendering, animation, and interaction concerns[1][3][4]."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Build Enhanced Satellite Nodes (SatelliteNode)",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break into: SVG/CSS ring rendering, glassmorphic center implementation, ring animation logic, icon rendering/animation, orbital particle integration, interaction state handling (hover/click), accessibility (keyboard/ARIA), and performance profiling.",
+      "reasoning": "This task involves advanced UI rendering, animation, and integration with the particle system. While less complex than the core 3D or particle engine, it still requires careful separation of visual, interactive, and accessibility concerns for maintainability and testability[1][3][4]."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Implement Holographic Info Panels (HolographicInfoPanel)",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Expand into: glassmorphic panel rendering, scan line animation, GSAP entry/exit transitions, per-node content rendering, chart integration, color accent logic, show/hide state management, accessibility (ARIA live, mobile modal), and reduced motion support.",
+      "reasoning": "This task requires advanced UI/UX engineering, animation, dynamic content rendering, and accessibility. The complexity is moderate-high due to the integration of multiple libraries (charts, GSAP), responsive design, and accessibility requirements[1][3][4]."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Integrate Global Interactions, Responsiveness, and Optimization",
+      "complexityScore": 9,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Decompose into: global mouse tracker hook, parallax effect integration, scroll event handling, idle state animation logic, Intersection Observer setup, responsive breakpoint implementation, reduced motion support, accessibility audit/fixes, performance profiling (Lighthouse/DevTools), and cross-browser testing.",
+      "reasoning": "This task is highly complex due to the need for centralized state management, real-time interaction, animation, responsive design, accessibility, and performance optimization. Each area is a best-practice concern in modern front-end architecture and should be isolated for clarity and maintainability[1][3][4]."
+    }
+  ]
+}

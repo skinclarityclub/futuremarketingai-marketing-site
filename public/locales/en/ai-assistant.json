@@ -1,0 +1,52 @@
+{
+  "name": "ARIA",
+  "tagline": "Your Marketing Demo Guide",
+  "welcomeMessages": {
+    "home": "✨ Welcome to FutureMarketingAI! I'm ARIA, your personal demo guide. What would you like to know?",
+    "explorer": "🚀 Great! You're exploring our AI modules. I can explain each module's ROI and use cases. What interests you?",
+    "calculator": "📊 I see you're using the ROI calculator! Need help understanding the metrics or want to see real-world examples?",
+    "dashboard": "📈 Welcome to the dashboard! I can help you interpret the metrics and show you what's possible. What would you like to explore?",
+    "default": "👋 Welcome back! I see you've visited {{visited}} of 3 sections ({{percent}}%). Want to continue exploring?"
+  },
+  "quickReplies": {
+    "home": {
+      "platform": "Start tour",
+      "roi": "Calculate ROI",
+      "demo": "Book demo"
+    },
+    "explorer": {
+      "modules": "Show modules",
+      "roi": "See ROI impact",
+      "cases": "Use cases"
+    },
+    "calculator": {
+      "understand": "Explain metrics",
+      "roi": "Interpret ROI",
+      "save": "Save results"
+    },
+    "dashboard": {
+      "metrics": "Key metrics",
+      "insights": "Get insights",
+      "export": "Export data"
+    }
+  },
+  "inputPlaceholder": "Ask a question...",
+  "send": "Send",
+  "pressEnter": "Press {{key}} to send",
+  "close": "Close",
+  "minimize": "Minimize",
+  "online": "Online",
+  "typing": "typing...",
+  "progress": "You've visited {{current}} of {{total}} sections ({{percent}}%). Keep exploring!",
+  "errors": {
+    "generic": "Sorry, something went wrong. Please try again.",
+    "network": "Connection error. Please check your internet.",
+    "rateLimit": "Whoa, slow down! Please wait a moment before sending more messages."
+  },
+  "navigation": {
+    "platform": "Platform Overview",
+    "calculator": "ROI Calculator",
+    "explorer": "Module Explorer",
+    "dashboard": "Analytics Dashboard"
+  }
+}

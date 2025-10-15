@@ -1,0 +1,98 @@
+/**
+ * Screen Reader Only Utility Class
+ * 
+ * Hides content visually but keeps it accessible to screen readers
+ * WCAG 2.2 Level AA compliant
+ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/**
+ * Skip Link (for keyboard navigation)
+ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/**
+ * Focus Visible Styles
+ * Enhanced focus indicators for better keyboard navigation
+ */
+*:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.8); /* Purple-500 */
+  outline-offset: 2px;
+}
+
+/* High contrast focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible,
+[role='tab']:focus-visible,
+[role='switch']:focus-visible {
+  outline: 3px solid rgba(139, 92, 246, 1);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.2);
+}
+
+/**
+ * Reduced Motion Support
+ * Respects user's motion preferences
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**
+ * High Contrast Mode Support
+ */
+@media (prefers-contrast: high) {
+  button,
+  a,
+  [role='button'] {
+    border: 2px solid currentColor;
+  }
+}
+
+/**
+ * Keyboard Navigation Hints
+ */
+[role='tablist'][aria-label]::before {
+  content: attr(aria-label);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

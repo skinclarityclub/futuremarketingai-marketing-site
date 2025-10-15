@@ -1,0 +1,611 @@
+{
+  "page": {
+    "title": "Verken de Marketing Machine",
+    "subtitle": "Van Research tot Resultaten - Ontdek hoe de 9 lagen van de autonome marketingmachine naadloos samenwerken, precies zoals gevisualiseerd in de AI Core Sphere. Elke component bouwt voort op de vorige voor maximale efficiëntie.",
+    "loading": "Module laden...",
+    "showing_for": "{{count}} uitgelichte modules voor",
+    "cta": {
+      "title": "Klaar om je Marketing te Automatiseren?",
+      "primary": "Plan Gratis Strategiegesprek"
+    }
+  },
+  "features": {
+    "research_planning": {
+      "title": "Research & Planning",
+      "subtitle": "Het Brein van de Machine",
+      "description": "Diepgaand online onderzoek met Perplexity AI voor trends, voorspellingen en hashtagstrategie. Perfect voor teams van 10-50 die strategische inzichten nodig hebben zonder researchers in te huren.",
+      "icon": "🧠",
+      "roi_metric": "95%",
+      "roi_label": "Trend Nauwkeurigheid",
+      "pain_point": "Geen tijd voor strategisch onderzoek",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je hebt geen tijd voor strategisch onderzoek.** Elke dag gaan uren verloren met handmatig zoeken naar trends, hashtags vergelijken en concurrent-content analyseren. Tegen de tijd dat je iets vindts, is de trend al voorbij.",
+          "solution": "De Research Hub draait 24/7 met 4 parallelle AI-agents die Perplexity gebruiken voor real-time trendvoorspelling. Automatische hashtag-ontdekking, concurrent-tracking en wekelijkse thema-planning geïntegreerd met je eigen merken en producten.",
+          "result": "**3.2K trends getrackt, 95% voorspellingsnauwkeurigheid en 147 uur bespaard per maand.** Je krijgt elke week een kant-en-klare contentstrategie die actueel en relevant is, zonder er zelf naar te hoeven zoeken."
+        },
+        "overview": "Het intelligente brein van de marketingmachine. Gebruikt Perplexity AI voor diepgaand onderzoek naar actuele trends, trendvoorspellingen en hashtagstrategieën. Creëert wekelijks contentthema's op basis van real-time data, je eigen merken, partners, diensten en webshopproducten.",
+        "capabilities": [
+          "Perplexity AI-aangedreven trendonderzoek",
+          "Hashtagstrategie en trending topics analyse",
+          "Wekelijkse themaplanning per platform",
+          "Multi-account strategie (verschillende talen & doelgroepen)",
+          "Integratie van eigen merken, partners en producten",
+          "Contentkalender volledig voorbereid en klaar voor workflow",
+          "Concurrent-content analyse en differentiatie",
+          "Seizoenstrend voorspelling (3-6 maanden vooruit)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Perplexity Research",
+            "description": "Diepgaand AI-onderzoek naar trends, hashtags, concurrent-activiteit en branche-inzichten"
+          },
+          {
+            "step": 2,
+            "title": "Themaselectie",
+            "description": "Selecteer wekelijks overkoepelend thema afgestemd op merkidentiteit en trends"
+          },
+          {
+            "step": 3,
+            "title": "Content Mapping",
+            "description": "Link eigen producten, diensten en partners aan wekelijks thema per platform"
+          },
+          {
+            "step": 4,
+            "title": "Kalender Creatie",
+            "description": "Complete contentkalender klaar voor Manager Workflow om uit te voeren"
+          }
+        ],
+        "metrics": [
+          {
+            "value": 95,
+            "label": "Trendvoorspelling Nauwkeurigheid",
+            "suffix": "%",
+            "decimals": 0
+          },
+          { "value": 147, "label": "Onderzoeksuren Bespaard", "suffix": "u/mnd", "decimals": 0 },
+          { "value": 12, "label": "Contentthema's per Maand", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "manager_workflow": {
+      "title": "Manager Workflow",
+      "subtitle": "Het Hart van de Machine",
+      "description": "Centrale workflow manager die wekelijks de agenda ophaalt, A/B-testing uitvoert en alles doorstuurt naar de Content Pipeline. Gebouwd voor lean teams die meerdere kanalen beheren.",
+      "icon": "❤️",
+      "roi_metric": "275%",
+      "roi_label": "ROI via Testing",
+      "pain_point": "Workflow en manuele coördinatie chaos",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je verdrinkt in workflows en manuele coördinatie.** Elke week dezelfde chaos: kalenders samenstellen, content verdelen over platforms, handmatig A/B-testen en constant switchen tussen tools. Niks is geautomatiseerd.",
+          "solution": "De Manager Workflow orkestreert alles centraal. Automatische kalender-ophaal, intelligente A/B-testing, Telegram-integratie voor directe controle en naadloze doorsturen naar Content Pipeline. Alles via één systeem.",
+          "result": "**275% ROI-verbetering door A/B-testing, 98% workflow-automatisering en 160 content-items per maand.** Je team hoeft niet meer te coördineren - het systeem regelt het."
+        },
+        "overview": "Het kloppende hart dat alles orkestreert. Haalt wekelijks (of individueel via Telegram) de contentkalender op van Research & Planning, voert strategische A/B-testing uit en stuurt optimale content door naar de Content Pipeline voor creatie.",
+        "capabilities": [
+          "Wekelijkse kalender-ophaal automatisering",
+          "Telegram-integratie voor individuele commando's",
+          "Geavanceerde A/B-testing per contenttype",
+          "Multi-account strategie management",
+          "Real-time workflow orchestratie",
+          "Content prioritering op basis van performance data",
+          "Feedback loop naar Research & Planning",
+          "Slimme planning voor optimale performance"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Kalender Ophalen",
+            "description": "Automatisch wekelijks of handmatig via Telegram-commando's"
+          },
+          {
+            "step": 2,
+            "title": "A/B Test Opzet",
+            "description": "Bepaal test-varianten per content-item voor optimale resultaten"
+          },
+          {
+            "step": 3,
+            "title": "Workflow Verdeling",
+            "description": "Verdeel taken naar Content Pipeline met prioriteit"
+          },
+          {
+            "step": 4,
+            "title": "Performance Monitoring",
+            "description": "Real-time tracking en bijsturing van actieve content-creatie"
+          }
+        ],
+        "metrics": [
+          { "value": 340, "label": "A/B Test ROI Verbetering", "suffix": "%", "decimals": 0 },
+          { "value": 98, "label": "Workflow Automatisering Rate", "suffix": "%", "decimals": 0 },
+          { "value": 450, "label": "Content Items/Maand", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "content_pipeline": {
+      "title": "Content Pipeline",
+      "subtitle": "De Productiefabriek",
+      "description": "Genereert content voor Instagram, Facebook, TikTok, YouTube, LinkedIn en blogs. Je team van 3 doet het werk van 30 - zonder extra mensen in te huren.",
+      "icon": "🏭",
+      "roi_metric": "4x",
+      "roi_label": "Content Output",
+      "pain_point": "Niet schaalbaar zonder budget te verbranden",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je kunt niet schalen zonder je budget te verbranden.** 1 contentmaker kan max 10 posts per week maken. Voor 7 platforms, diverse formaten en multi-account? Dan heb je een heel team nodig. Onbetaalbaar.",
+          "solution": "De Content Pipeline produceert content voor Instagram (posts, carousels, reels, stories), Facebook, TikTok, YouTube, LinkedIn en blogs. Met Telegram-goedkeuringssysteem voor kwaliteitscontrole en zelflerende AI die continu beter wordt.",
+          "result": "**4x content output (160 posts/maand), 94% goedkeuringsrate en €4.500/maand bespaard op freelancers.** Van 40 naar 160 posts per maand, zonder extra mensen aan te nemen."
+        },
+        "overview": "De content-productiefabriek die hoogwaardige posts creëert voor alle grote platformen. Intelligente platformaanpassing zorgt voor optimaal formaat en tone per kanaal. Zelflerende AI verbetert continu door Telegram-goedkeuringsfeedbackloop.",
+        "capabilities": [
+          "Multi-platform content generatie (7 platformen)",
+          "Instagram: posts, carousels, reels, stories",
+          "Facebook, TikTok, YouTube Shorts, LinkedIn",
+          "Blog artikelen met SEO-optimalisatie",
+          "Telegram-goedkeuringssysteem met feedbackloop",
+          "Zelflerende AI door goedkeuringspatronen",
+          "Platform-specifieke tone en formaat aanpassing",
+          "Automatische visuele content creatie en editing"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Content Briefing",
+            "description": "Ontvang briefing van Manager Workflow met thema en doel"
+          },
+          {
+            "step": 2,
+            "title": "AI Generatie",
+            "description": "Genereer platform-geoptimaliseerde content met visuals en captions"
+          },
+          {
+            "step": 3,
+            "title": "Telegram Review",
+            "description": "Presenteer content in Telegram voor goedkeuring of feedback"
+          },
+          {
+            "step": 4,
+            "title": "Publiceren of Itereren",
+            "description": "Stuur goedgekeurde content naar Publisher of verfijn op basis van feedback"
+          }
+        ],
+        "metrics": [
+          { "value": 160, "label": "Posts Gecreëerd per Maand", "suffix": "", "decimals": 0 },
+          { "value": 94, "label": "Goedkeuringsrate", "suffix": "%", "decimals": 0 },
+          {
+            "value": 4500,
+            "label": "Maandelijkse Freelancer Kosten Bespaard",
+            "suffix": "€",
+            "decimals": 0
+          }
+        ]
+      }
+    },
+    "analytics_lab": {
+      "title": "Analytics Lab",
+      "subtitle": "Het Inlichtingencentrum",
+      "description": "Real-time analytics met AI-powered inzichten. Perfect voor teams die 3-10 kanalen beheren en data-driven beslissingen nodig hebben zonder analisten in te huren.",
+      "icon": "📊",
+      "roi_metric": "327%",
+      "roi_label": "Performance ROI",
+      "pain_point": "Geen inzicht in wat daadwerkelijk werkt",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je hebt geen idee wat daadwerkelijk werkt.** Je post content, maar je weet niet welke formaten, onderwerpen of timings de beste resultaten opleveren. Je vliegt blind zonder data-gedreven beslissingen.",
+          "solution": "De Analytics Lab tracked alles real-time. AI-powered analyse identificeert patronen, optimale post-tijden en winnende content-formaten. Automatische feedback naar alle modules voor continue optimalisatie.",
+          "result": "**327% performance ROI-verbetering, 2.8K inzichten gegenereerd en 97% voorspellingsnauwkeurigheid.** Je weet precies wat werkt en het systeem optimaliseert automatisch op basis van die data."
+        },
+        "overview": "Het inlichtingencentrum dat alles meet, analyseert en optimaliseert. Verzamelt real-time performance data van alle platformen, past AI-analyse toe om patronen en kansen te identificeren en voert inzichten terug naar alle modules voor continue verbetering.",
+        "capabilities": [
+          "Real-time performance tracking over alle platformen",
+          "AI-powered patroonherkenning en inzichten",
+          "Optimale post-tijd identificatie per platform",
+          "Content formaat performance analyse",
+          "Publieksbetrokkenheid voorspelling",
+          "Automatische feedbackloops naar alle modules",
+          "Trend vs. performance correlatie analyse",
+          "ROI tracking per contenttype en campagne"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Data Verzameling",
+            "description": "Verzamel performance metrics van alle platformen real-time"
+          },
+          {
+            "step": 2,
+            "title": "AI Analyse",
+            "description": "Pas machine learning toe om patronen en kansen te identificeren"
+          },
+          {
+            "step": 3,
+            "title": "Inzicht Generatie",
+            "description": "Creëer actiegerichte aanbevelingen op basis van analyse"
+          },
+          {
+            "step": 4,
+            "title": "Systeem Optimalisatie",
+            "description": "Voer inzichten terug naar modules voor automatische verbetering"
+          }
+        ],
+        "metrics": [
+          { "value": 327, "label": "Performance ROI Verbetering", "suffix": "%", "decimals": 0 },
+          { "value": 2800, "label": "Inzichten Gegenereerd", "suffix": "", "decimals": 0 },
+          { "value": 97, "label": "Voorspellingsnauwkeurigheid", "suffix": "%", "decimals": 0 }
+        ]
+      }
+    },
+    "telegram_control": {
+      "title": "Telegram Control Center",
+      "subtitle": "Je Mobiele Commandocentrum",
+      "description": "Volledige systeemcontrole via Telegram. Keur content goed, geef feedback, vraag ad-hoc posts aan vanaf overal. Gebouwd voor drukke teams die mobiele flexibiliteit nodig hebben.",
+      "icon": "📱",
+      "roi_metric": "85%",
+      "roi_label": "Tijd Bespaard",
+      "pain_point": "Geen controle zonder achter computer te zitten",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je hebt geen controle zonder achter je computer te zitten.** Je bent altijd onderweg, maar belangrijke beslissingen vereisen dat je achter een laptop zit. Tegen de tijd dat je terug bent, zijn kansen voorbij.",
+          "solution": "Telegram Control Center geeft je volledige systeemcontrole vanaf je telefoon. Keur content goed, geef feedback, vraag ad-hoc posts aan, trigger workflows en monitor alles real-time. Alles via simpele chat-commando's.",
+          "result": "**85% tijd bespaard op coördinatie, 100% mobiele controle en 24/7 systeemtoegankelijkheid.** Je managet het hele systeem vanaf elke plek, elk moment, met alleen je telefoon."
+        },
+        "overview": "Je mobiele commandocentrum voor complete systeemcontrole. Keur content goed voor publicatie, geef feedback voor AI-leren, vraag ad-hoc content-creatie aan en monitor alle actieve workflows. Simpele chat-interface met rijke previews en snelle acties.",
+        "capabilities": [
+          "Content goedkeuring met visuele previews",
+          "Feedbacksysteem voor AI-leren",
+          "Ad-hoc content verzoeken via chat",
+          "Workflow status monitoring",
+          "Performance dashboard op mobiel",
+          "Noodcontroles en overrides",
+          "Team samenwerking en toewijzingen",
+          "Push notificaties voor urgente items"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Content Notificatie",
+            "description": "Ontvang Telegram-bericht met content preview"
+          },
+          {
+            "step": 2,
+            "title": "Snelle Review",
+            "description": "Keur goed, wijs af of geef specifieke feedback via knoppen"
+          },
+          {
+            "step": 3,
+            "title": "AI Leren",
+            "description": "Systeem leert van je feedbackpatronen"
+          },
+          {
+            "step": 4,
+            "title": "Automatische Verbetering",
+            "description": "Toekomstige content beter afgestemd op je voorkeuren"
+          }
+        ],
+        "metrics": [
+          { "value": 85, "label": "Coördinatie Tijd Bespaard", "suffix": "%", "decimals": 0 },
+          { "value": 100, "label": "Mobiele Controle Dekking", "suffix": "%", "decimals": 0 },
+          { "value": 47, "label": "Gemiddelde Responstijd", "suffix": "s", "decimals": 0 }
+        ]
+      }
+    },
+    "publishing_layer": {
+      "title": "Publishing Layer",
+      "subtitle": "Automatische Distributie",
+      "description": "Plant content automatisch in op ideale momenten per platform. Kleine teams publiceren als enterprise - 24/7 consistentie zonder handmatig werk.",
+      "icon": "📤",
+      "roi_metric": "360u",
+      "roi_label": "Tijd Bespaard/Maand",
+      "pain_point": "Inconsistent en tijdrovend handmatig posten",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je posting is inconsistent en slecht getimed.** Soms 3x per dag posten, dan 0. Verkeerde momenten, gemiste kansen, en handmatige planning kost uren. Je algoritme-ranking lijdt eronder.",
+          "solution": "De Publishing Layer analyseert optimale tijden per platform voor jouw publiek. Automatische slimme planning met tijdzone-optimalisatie, wachtrij-management, en 99.8% on-time posting. Zero handmatig werk.",
+          "result": "**360 uur bespaard per maand, 99.8% on-time levering, en €1.800/maand minder management overhead.** Perfecte consistentie over 7 platforms, 24/7, zonder er naar te hoeven kijken."
+        },
+        "overview": "De distributiemotor die automatisch alle content inplant op ideale tijdstippen. Analyseert per platform wanneer je publiek het meest actief is en plant automatisch in voor maximaal bereik en engagement.",
+        "capabilities": [
+          "Automatische planning op optimale tijden",
+          "Platform-specifieke timing optimalisatie",
+          "Multi-account gelijktijdige publicatie",
+          "Tijdzone-intelligente planning",
+          "Wachtrij management & conflict resolutie",
+          "Retry logica voor platform fouten",
+          "Publishing bevestiging & tracking",
+          "Emergency content override mogelijkheid",
+          "Draft vs Live status management",
+          "Cross-platform timing orchestratie"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Optimale Tijd Analyse",
+            "description": "AI bepaalt beste post tijden per platform en publiek"
+          },
+          {
+            "step": 2,
+            "title": "Planning Opzetten",
+            "description": "Content wordt ingepland met slimme spacing en frequentie caps"
+          },
+          {
+            "step": 3,
+            "title": "Geautomatiseerde Publishing",
+            "description": "Automatisch posten op ingeplande tijden via platform API's"
+          },
+          {
+            "step": 4,
+            "title": "Bevestiging & Tracking",
+            "description": "Real-time bevestiging en doorsturen naar Analytics"
+          }
+        ],
+        "metrics": [
+          { "value": 312, "label": "Tijd Bespaard Maandelijks", "suffix": "u", "decimals": 0 },
+          { "value": 99.2, "label": "Publishing Succes Rate", "suffix": "%", "decimals": 1 },
+          { "value": 47, "label": "Gem. Posts per Week", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ad_builder": {
+      "title": "Ad Builder",
+      "subtitle": "Ad Creatie Engine",
+      "description": "Upload een productfoto en genereer automatisch platform-specifieke ads. Teams die €10K+/maand aan ads uitgeven kunnen pre-testen voor budget allocatie.",
+      "icon": "🎬",
+      "roi_metric": "+320%",
+      "roi_label": "Ad ROI Verbetering",
+      "pain_point": "Dure ads zonder resultaten",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je ad budget verdampt zonder resultaten.** €1.000 in een ad die flopped, geen idee waarom. Trial and error is te duur. Welke creative werkt? Welke copy converteert? Puur gokwerk met je marketingbudget.",
+          "solution": "De Ad Builder test je ads organisch voordat je budget alloceert. Upload één productfoto, krijg 5 platform varianten, test ze gratis op sub-accounts, en investeer alleen in bewezen winners met voorspelbare ROI.",
+          "result": "**+320% ROI door pre-testing, €2.400/maand bespaard op verspild budget, en 87% nauwkeurigheid in voorspellen welke ad het best presteert.** Zero gokwerk - alleen data-driven ad spending."
+        },
+        "overview": "De ad creatie engine die productfoto's transformeert in platform-geoptimaliseerde ads. Genereert automatisch A/B test varianten, test ze organisch voor budget allocatie, en voorspelt performance met 87% nauwkeurigheid. Voorkom verspilde ad spend door alleen in winners te investeren.",
+        "capabilities": [
+          "Productfoto → AI ad generatie (automatische transformatie)",
+          "Platform-specifieke formatting (Instagram, Facebook, TikTok, LinkedIn, Pinterest)",
+          "A/B testing variant generator (3-5 varianten per upload)",
+          "Ad copy optimalisatie (headlines, CTAs, beschrijvingen)",
+          "Pre-testing op organische test accounts (geen budget waste)",
+          "ROI voorspeller gebaseerd op historische data",
+          "Auto-scaling voor verschillende ad sizes (Story, Feed, Reel formaten)",
+          "Brand guideline handhaving (kleuren, lettertypen, tone-of-voice)",
+          "Concurrent ad analyse (wat werkt in jouw niche)",
+          "Dynamische product catalogus integratie (webshop sync)",
+          "Video ad generatie (statisch → motion graphics)",
+          "Performance tracking per variant (real-time ROI monitoring)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Foto Upload",
+            "description": "Upload productfoto of creatieve asset met optionele brand guidelines"
+          },
+          {
+            "step": 2,
+            "title": "AI Analyse",
+            "description": "Computer vision analyseert product, context, en optimale messaging strategie"
+          },
+          {
+            "step": 3,
+            "title": "Variant Generatie",
+            "description": "AI creëert 3-5 platform-specifieke ad varianten met diverse hooks en CTAs"
+          },
+          {
+            "step": 4,
+            "title": "Organische Pre-Testing",
+            "description": "Beste varianten worden organisch getest op sub-accounts voor performance data"
+          },
+          {
+            "step": 5,
+            "title": "Budget Allocatie",
+            "description": "Winnende ad met hoogste voorspelde ROI krijgt betaald budget"
+          },
+          {
+            "step": 6,
+            "title": "Performance Tracking",
+            "description": "Real-time ROI monitoring en auto-optimalisatie tijdens campaign"
+          }
+        ],
+        "metrics": [
+          { "value": 320, "label": "Gem. Ad ROI Verbetering", "suffix": "%", "decimals": 0 },
+          { "value": 2400, "label": "Maandelijks Budget Bespaard", "suffix": " €", "decimals": 0 },
+          { "value": 87, "label": "Pre-test Voorspel Nauwkeurigheid", "suffix": "%", "decimals": 0 }
+        ]
+      }
+    },
+    "command_center": {
+      "title": "Command Center",
+      "subtitle": "Client Dashboard & Controle",
+      "description": "Centraal dashboard voor het lanceren van campagnes, ads maken, en complete data inzichten. Eén persoon controleert wat normaal een team van 10 vereist.",
+      "icon": "🎮",
+      "roi_metric": "100%",
+      "roi_label": "Controle & Transparantie",
+      "pain_point": "Multi-platform chaos",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je hebt geen centraal overzicht.** Data verspreid over 7 platforms, contentkalender in spreadsheets, research in notities, campagnes in nóg een systeem. Je verspilt uren met switchen tussen tools.",
+          "solution": "Het Command Center bundelt alles in één dashboard. Lanceer campagnes met 1 klik, maak ads van een productfoto, zie real-time data per platform, bekijk je contentkalender, en raadpleeg wekelijks research - allemaal op één plek.",
+          "result": "**100% transparantie, €1.600/maand bespaard op tool abonnementen, en 2.3x meer data-driven beslissingen per dag.** Alles wat je nodig hebt, één dashboard, zero chaos."
+        },
+        "overview": "Het centrale command center waar de klant volledige controle en transparantie heeft. Lanceer campagnes, maak ads van een productfoto, bekijk alle data inzichtelijk per platform (engagement, groei, etc.), zie de contentkalender en raadpleeg wekelijks research.",
+        "capabilities": [
+          "Campaign launcher met one-click start",
+          "Productfoto → Ad AI generator",
+          "Real-time dashboard per platform (engagement, reach, groei)",
+          "Contentkalender overzicht (week/maand weergave)",
+          "Wekelijkse research rapporten toegankelijk",
+          "Budget tracking & spend analyse",
+          "Account performance vergelijking",
+          "Snelle content approve/reject via interface",
+          "Custom campaign parameters setup",
+          "Export functionaliteit voor rapporten",
+          "Team collaboratie tools",
+          "Mobiele app voor on-the-go management"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Dashboard Login",
+            "description": "Toegang tot persoonlijke Command Center met alle accounts"
+          },
+          {
+            "step": 2,
+            "title": "Data Visualisatie",
+            "description": "Real-time inzicht in alle KPI's per platform en account"
+          },
+          {
+            "step": 3,
+            "title": "Actie Ondernemen",
+            "description": "Lanceer campagnes, maak ads, pas strategie aan op basis van data"
+          },
+          {
+            "step": 4,
+            "title": "Monitoren & Optimaliseren",
+            "description": "Continue monitoring en data-driven besluitvorming"
+          }
+        ],
+        "metrics": [
+          { "value": 100, "label": "Transparantie Score", "suffix": "%", "decimals": 0 },
+          { "value": 2.3, "label": "Gem. Dagelijkse Logins", "suffix": "", "decimals": 1 },
+          { "value": 6, "label": "Platforms Gemonitord", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ai_advisory": {
+      "title": "AI Advisor Partnership",
+      "subtitle": "Jouw Strategische Gids",
+      "description": "Geen technische kennis? Geen probleem. Persoonlijke begeleiding bij elke stap - perfect voor lean teams (1-5 mensen) die expert ondersteuning nodig hebben.",
+      "icon": "🤝",
+      "roi_metric": "€0",
+      "roi_label": "Expertise Nodig",
+      "pain_point": "Geen automation expertise nodig",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Je wilt automatiseren, maar hebt geen technische kennis.** Marketing automation klinkt geweldig, maar je hebt geen idee waar te beginnen. Setup, integraties, optimalisatie - het voelt overweldigend zonder expert op de achtergrond.",
+          "solution": "Als jouw AI expert ben ik je persoonlijke strategische partner. Ik help met onboarding, configuratie, strategie aanpassingen, en continue optimalisatie. Denk aan het als een marketing automation consultant 24/7 beschikbaar - zonder de consultant fee.",
+          "result": "**Zero technische kennis vereist, 90% sneller onboarded, en continue strategische begeleiding.** Je krijgt alle voordelen van automation zonder de leercurve. Ik los problemen op voordat je ze merkt."
+        },
+        "overview": "Je persoonlijke AI strategische partner die je helpt bij elke fase: van initiële setup en platform integraties, tot content strategie optimalisatie en performance analyse. Geen technische kennis vereist - ik begeleid je bij elke stap.",
+        "capabilities": [
+          "Persoonlijke onboarding & systeem setup begeleiding",
+          "Platform integratie troubleshooting",
+          "Content strategie ontwikkeling & optimalisatie",
+          "Performance analyse & aanbevelingen",
+          "Best practices voor jouw specifieke industry",
+          "Proactieve probleem detectie & oplossing",
+          "24/7 beschikbaar via chat interface",
+          "Wekelijkse strategie review & aanpassingen",
+          "Trend kansen & competitieve inzichten",
+          "ROI maximalisatie aanbevelingen",
+          "Custom automation workflows voor jouw behoeften",
+          "Continue leren van je merk & publiek"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Onboarding & Discovery",
+            "description": "Ik leer jouw business, doelen, tone-of-voice, en doelgroep kennen"
+          },
+          {
+            "step": 2,
+            "title": "Strategische Planning",
+            "description": "Samen ontwikkelen we een custom automation strategie voor jouw situatie"
+          },
+          {
+            "step": 3,
+            "title": "Implementatie Support",
+            "description": "Ik begeleid elke integratie, platform setup, en initiële configuratie"
+          },
+          {
+            "step": 4,
+            "title": "Continue Optimalisatie",
+            "description": "Doorlopende monitoring, aanbevelingen, en strategie aanpassingen voor maximale ROI"
+          }
+        ],
+        "metrics": [
+          { "value": 90, "label": "Sneller Onboarded", "suffix": "%", "decimals": 0 },
+          { "value": 24, "label": "Support Beschikbaarheid", "suffix": "/7", "decimals": 0 },
+          { "value": 0, "label": "Technische Kennis Vereist", "suffix": "", "decimals": 0 }
+        ]
+      }
+    }
+  },
+  "modal": {
+    "close": "Sluiten",
+    "sections": {
+      "problem": "Het Probleem",
+      "solution": "De Oplossing",
+      "result": "Het Resultaat",
+      "overview": "Overzicht",
+      "capabilities": "Mogelijkheden",
+      "how_it_works": "Hoe Het Werkt",
+      "metrics": "Belangrijkste Metrics",
+      "technical_overview": "Technisch Overzicht"
+    },
+    "technical": {
+      "title": "Technisch Overzicht",
+      "stack": "Technology Stack",
+      "apis": "API Integraties",
+      "architecture": "Architectuur"
+    }
+  },
+  "profiling_prompt": {
+    "trigger": "module_view"
+  },
+  "loading": {
+    "modal": "Details laden...",
+    "telegram_mockup": "Telegram mockup laden...",
+    "heatmap": "Heatmap laden...",
+    "ad_builder": "Ad builder laden...",
+    "scheduling": "Planning laden..."
+  },
+  "demo": {
+    "sample_caption": "Ontdek onze nieuwe collectie! 🌟 Premium kwaliteit voor de beste prijs. Link in bio voor meer info.",
+    "ad_builder_intro": "Zie hoe één productfoto transformeert naar platform-geoptimaliseerde advertentievarianten"
+  },
+  "custom_built": {
+    "card_workflow": {
+      "title": "JOUWWorkflow",
+      "description": "Past zich aan aan hoe jij werkt, niet hoe wij denken dat je zou moeten werken"
+    },
+    "card_industry": {
+      "title": "JOUW Sector",
+      "description": "Voorbeelden, templates en strategieën op maat voor jouw sector"
+    },
+    "card_limits": {
+      "title": "Nul Beperkingen",
+      "description": "Geen template restricties, alleen pure mogelijkheden"
+    }
+  },
+  "navigation": {
+    "back_home": "← Home",
+    "calculate_roi": "Bereken ROI →"
+  },
+  "cta": {
+    "calculate_roi_button": "Bereken ROI",
+    "urgency_text": "⏰ Gratis implementatie scan",
+    "trust_indicators": {
+      "call": "✓ 30-min gesprek",
+      "roi_analysis": "✓ ROI analyse",
+      "roadmap": "✓ Implementatie roadmap"
+    }
+  },
+  "modal_sections": {
+    "solves_label": "Oplossing voor:",
+    "live_approval_interface": "Live Goedkeuringsinterface",
+    "approval_experience": "Ervaar hoe content goedkeuring via Telegram werkt in real-time",
+    "forecast_accuracy": "Forecast Nauwkeurigheid Heat Map",
+    "forecast_description": "Real-time voorspelling nauwkeurigheid over belangrijke metrics per kwartaal",
+    "product_photo_ads": "Productfoto → Platform Advertenties",
+    "implementation_process": "Implementatie Proces",
+    "performance_metrics": "Performance Metrics",
+    "key_capabilities": "Belangrijkste Mogelijkheden",
+    "need_help": {
+      "title": "Hulp Nodig Bij Het Starten?",
+      "description": "Chat met je persoonlijke AI expert voor begeleiding →"
+    },
+    "demo_title": "{{feature}} Demo",
+    "close_button": "Sluiten"
+  }
+}

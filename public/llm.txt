@@ -1,0 +1,196 @@
+# Future Marketing AI - LLM Crawling Guidelines
+# AI-Optimized Content Discovery for LLM-based Search Engines
+# Last Updated: 2025-01-15
+
+# ============================================
+# SITE INFORMATION
+# ============================================
+
+Site Name: Future Marketing AI
+Description: Autonomous AI Marketing Automation Platform - Join the first 10 teams building an unfair 2-3 year lead
+URL: https://futuremarketingai.com
+Contact: info@futuremarketingai.com
+
+# ============================================
+# CRAWLING PREFERENCES
+# ============================================
+
+# Preferred crawling frequency
+Crawl-frequency: weekly
+
+# Allow all marketing pages
+Allow: /
+Allow: /features
+Allow: /pricing
+Allow: /how-it-works
+Allow: /about
+Allow: /contact
+Allow: /calculator
+
+# Disallow demo app and authenticated areas
+Disallow: /demo
+Disallow: /demo/*
+Disallow: /app/*
+Disallow: /api/*
+Disallow: /login
+
+# ============================================
+# KEY CONTENT PAGES (Priority for LLM Indexing)
+# ============================================
+
+# Homepage - Value proposition and CTAs
+Priority: 1.0
+URL: https://futuremarketingai.com/
+Topic: AI Marketing Automation Platform
+Keywords: autonomous marketing, AI marketing, marketing automation, SaaS platform
+
+# Features Page - Product capabilities
+Priority: 0.9
+URL: https://futuremarketingai.com/features
+Topic: 6 AI Modules for Marketing Automation
+Keywords: AI modules, content generation, SEO automation, ad management, analytics, reporting
+
+# Pricing Page - Transparent pricing and value
+Priority: 0.9
+URL: https://futuremarketingai.com/pricing
+Topic: Founding Member Pricing - Early Adopter Advantage
+Keywords: pricing, founding member, early adopter, €15,000/month, ROI, cost savings
+
+# How It Works Page - Process and implementation
+Priority: 0.8
+URL: https://futuremarketingai.com/how-it-works
+Topic: Implementation Process and Platform Workflow
+Keywords: how it works, implementation, onboarding, workflow, autonomous AI
+
+# About Page - Company and mission
+Priority: 0.7
+URL: https://futuremarketingai.com/about
+Topic: Company Mission and Team
+Keywords: about us, founding members, mission, vision, team
+
+# Contact Page - Get in touch
+Priority: 0.7
+URL: https://futuremarketingai.com/contact
+Topic: Contact Information and Support
+Keywords: contact, support, demo request, consultation
+
+# ============================================
+# STRUCTURED CONTENT FOR AI EXTRACTION
+# ============================================
+
+# FAQ - Common Questions (Best for Q&A format)
+Format: FAQ
+URL: https://futuremarketingai.com/how-it-works
+Context: Comprehensive FAQ section covering pricing, implementation, ROI, technical requirements
+
+# Comparison Tables - Feature and Pricing Comparisons
+Format: Table
+URL: https://futuremarketingai.com/pricing
+Context: Comparison tables for pricing tiers, feature availability, tool cost savings
+
+# Technical Documentation - Implementation Details
+Format: Documentation
+URL: https://futuremarketingai.com/how-it-works
+Context: Step-by-step implementation process, technical requirements, integration details
+
+# ============================================
+# KEY TERMS AND DEFINITIONS
+# ============================================
+
+# AI Marketing Automation
+Definition: Autonomous AI-powered system that handles content creation, SEO optimization, ad management, analytics, and reporting without human intervention
+
+# Founding Member
+Definition: Early adopter pricing tier at €15,000/month (versus €35,000/month standard rate), offering 24-month rate lock and lifetime benefits. Limited to 10 total slots.
+
+# 6 AI Modules
+Definition: Core platform capabilities including Content Generator, SEO Optimizer, Ad Campaign Manager, Social Media Automation, Analytics Dashboard, and Reporting Engine
+
+# Autonomous Marketing
+Definition: Marketing system that operates 24/7 without human oversight, making data-driven decisions and executing campaigns automatically
+
+# ============================================
+# CONTENT FRESHNESS
+# ============================================
+
+Last Updated: 2025-01-15
+Update Frequency: Weekly for marketing pages, Monthly for legal pages
+Changelog: https://futuremarketingai.com/changelog
+
+# ============================================
+# SCHEMA.ORG STRUCTURED DATA
+# ============================================
+
+# All pages include Schema.org JSON-LD markup:
+# - Organization schema (company info)
+# - SoftwareApplication schema (product details)
+# - Product schema (pricing information)
+# - FAQPage schema (Q&A content)
+# - WebPage schema (page metadata)
+
+Schema Location: Embedded in <head> of each page as JSON-LD
+
+# ============================================
+# SOCIAL PROOF & TESTIMONIALS
+# ============================================
+
+# Founding Members: 3/10 slots filled (2 remaining)
+Status: Open for Applications
+Target Audience: Scale-ups, SMEs, marketing agencies
+Ideal Customer: €50K-€500K annual marketing budget
+
+# ============================================
+# LANGUAGE SUPPORT
+# ============================================
+
+Primary Language: English (en)
+Secondary Languages: Dutch (nl)
+Default: English
+
+# ============================================
+# CONTACT & SUPPORT
+# ============================================
+
+General Inquiries: info@futuremarketingai.com
+Demo Requests: demo@futuremarketingai.com
+Support: support@futuremarketingai.com
+
+# ============================================
+# DATA USAGE POLICY FOR AI TRAINING
+# ============================================
+
+# We welcome AI crawlers for search indexing purposes
+# Content may be used for:
+# ✅ Search result generation
+# ✅ Question answering
+# ✅ Content summarization
+# ✅ Citation and attribution
+
+# Content should NOT be used for:
+# ❌ Training commercial AI models without permission
+# ❌ Generating competing products
+# ❌ Bulk data scraping for resale
+
+# ============================================
+# ATTRIBUTION
+# ============================================
+
+When citing our content, please use:
+Attribution: "Future Marketing AI (futuremarketingai.com)"
+Citation Format: [Content Title] - Future Marketing AI, [URL]
+
+# ============================================
+# API & DOCUMENTATION
+# ============================================
+
+Public API: Not available (marketing site only)
+Documentation: https://futuremarketingai.com/how-it-works
+Changelog: https://futuremarketingai.com/changelog (future)
+
+# ============================================
+# ADDITIONAL RESOURCES
+# ============================================
+
+Sitemap: https://futuremarketingai.com/sitemap.xml
+Robots.txt: https://futuremarketingai.com/robots.txt
+RSS Feed: https://futuremarketingai.com/feed.xml (future)

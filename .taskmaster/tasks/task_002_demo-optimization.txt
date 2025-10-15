@@ -1,0 +1,46 @@
+# Task ID: 2
+# Title: Implement Premium Service Badge System
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Develop a persistent, animated badge/banner communicating the three pillars of the premium service across all main pages.
+# Details:
+Create a `PremiumServiceBadge` React component with glassmorphic styling using Tailwind CSS and CSS backdrop filters. Animate entry with Framer Motion. Ensure mobile responsiveness (vertical stack on mobile). Integrate into Hero, Explorer, and Calculator pages. Use SVG icons for clarity. Respect prefers-reduced-motion for accessibility.
+<info added on 2025-10-02T13:20:36.273Z>
+Extend the badge functionality to incorporate pain-point messaging while maintaining existing features. Update the messaging to include "Custom-Made Solutions for Your Challenges" alongside the three pillars. Modify the Hero section to include the Dutch headline "Worsteling met Multi-Platform Content Marketing?" and subheadline "Ontdek de All-in-One AI Marketing Machine". Ensure the badge implementation creates a natural flow where the Hero identifies the problem, the Badge presents the premium solution, and the 3D sphere demonstrates how it works. This integration should enhance conversion by addressing pain points while preserving the visual appeal of existing elements.
+</info added on 2025-10-02T13:20:36.273Z>
+
+# Test Strategy:
+Unit test component rendering and animation. Manually verify visibility, non-obstruction, and responsiveness on all target devices and browsers.
+
+# Subtasks:
+## 1. Design Badge Layout and Content Structure [pending]
+### Dependencies: None
+### Description: Define the visual layout, content hierarchy, and messaging for the PremiumServiceBadge, ensuring clear communication of the three premium pillars and selection of appropriate SVG icons.
+### Details:
+Collaborate with design to finalize glassmorphic styling, iconography, and text for each pillar. Specify vertical stack for mobile and horizontal layout for desktop. Prepare SVG assets and accessibility labels.
+
+## 2. Develop PremiumServiceBadge React Component [pending]
+### Dependencies: 2.1
+### Description: Implement the PremiumServiceBadge component using React, Tailwind CSS, and CSS backdrop filters, supporting both desktop and mobile layouts.
+### Details:
+Code the component with glassmorphic effects, responsive flex layouts, and SVG icon integration. Ensure accessibility features such as aria-labels and semantic HTML structure.
+
+## 3. Integrate Framer Motion Animation and Accessibility Controls [pending]
+### Dependencies: 2.2
+### Description: Add entry animation using Framer Motion, ensuring that prefers-reduced-motion is respected for accessibility.
+### Details:
+Configure Framer Motion for smooth badge entry animation. Detect user motion preferences and disable or simplify animations accordingly.
+
+## 4. Embed Badge Component Across Main Pages [pending]
+### Dependencies: 2.3
+### Description: Integrate the PremiumServiceBadge into Hero, Explorer, and Calculator pages, ensuring persistent visibility and non-obstruction of core content.
+### Details:
+Update page layouts to include the badge in a consistent position. Test for overlap and ensure badge does not block interactive elements. Confirm visibility on all target devices.
+
+## 5. Validate Responsiveness, Accessibility, and Visual Consistency [pending]
+### Dependencies: 2.4
+### Description: Conduct comprehensive testing to ensure the badge is fully responsive, visually consistent, and accessible across all supported devices and browsers.
+### Details:
+Test vertical stacking on mobile, glassmorphic effects, SVG clarity, and accessibility features. Review with QA and stakeholders for final approval.
+

@@ -1,0 +1,283 @@
+---
+description: Beveiligingsrichtlijnen en best practices voor veilige web/platform ontwikkeling
+globs: **/*.{js,jsx,ts,tsx,php,py}
+alwaysApply: true
+---
+
+## Input Validatie & Sanitization
+
+- **Valideer ALTIJD gebruikersinput:**
+  ```typescript
+  // ✅ DO: Server-side validatie met schema
+  import { z } from 'zod';
+  
+  const userSchema = z.object({
+    email: z.string().email(),
+    age: z.number().min(18).max(120),
+    username: z.string().min(3).max(20).regex(/^[a-zA-Z0-9_]+$/)
+  });
+  
+  function validateUser(data: unknown) {
+    return userSchema.parse(data); // Throws bij ongeldige data
+  }
+  
+  // ❌ DON'T: Blindelings vertrouwen op client input
+  const username = req.body.username; // Geen validatie!
+  db.query(`SELECT * FROM users WHERE username = '${username}'`); // SQL injection!
+  ```
+
+- **HTML Sanitization:**
+  ```typescript
+  // ✅ DO: Sanitize HTML content
+  import DOMPurify from 'dompurify';
+  
+  const cleanHTML = DOMPurify.sanitize(userInput);
+  
+  // ❌ DON'T: Render raw HTML
+  <div dangerouslySetInnerHTML={{ __html: userInput }} /> // XSS kwetsbaarheid!
+  ```
+
+## XSS (Cross-Site Scripting) Preventie
+
+- **Content Security Policy (CSP):**
+  ```html
+  <!-- ✅ DO: Implementeer CSP headers -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; script-src 'self' 'nonce-{random}'; style-src 'self' 'unsafe-inline';">
+  ```
+
+- **Escape Output:**
+  ```typescript
+  // ✅ DO: React escaped automatisch
+  const username = "<script>alert('xss')</script>";
+  return <div>{username}</div>; // Veilig: toont letterlijk de string
+  
+  // ⚠️ DANGER: Alleen gebruiken met vertrouwde content
+  <div dangerouslySetInnerHTML={{ __html: trustedContent }} />
+  ```
+
+## Authenticatie & Autorisatie
+
+- **Wachtwoord Beveiliging:**
+  ```typescript
+  // ✅ DO: Hash wachtwoorden met bcrypt
+  import bcrypt from 'bcrypt';
+  
+  const saltRounds = 12;
+  const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+  
+  // Verificatie
+  const isValid = await bcrypt.compare(inputPassword, hashedPassword);
+  
+  // ❌ DON'T: NOOIT wachtwoorden in plain text opslaan
+  db.save({ username, password: plainPassword }); // GEVAARLIJK!
+  ```
+
+- **JWT Best Practices:**
+  ```typescript
+  // ✅ DO: Korte expiration voor access tokens
+  const accessToken = jwt.sign(
+    { userId: user.id },
+    process.env.JWT_SECRET,
+    { expiresIn: '15m' } // 15 minuten
+  );
+  
+  const refreshToken = jwt.sign(
+    { userId: user.id },
+    process.env.JWT_REFRESH_SECRET,
+    { expiresIn: '7d' } // 7 dagen
+  );
+  
+  // ✅ DO: Sla JWT tokens op in httpOnly cookies
+  res.cookie('accessToken', accessToken, {
+    httpOnly: true,
+    secure: true, // HTTPS only
+    sameSite: 'strict'
+  });
+  
+  // ❌ DON'T: Tokens in localStorage (kwetsbaar voor XSS)
+  localStorage.setItem('token', accessToken); // GEVAARLIJK!
+  ```
+
+## SQL Injection Preventie
+
+- **Gebruik Prepared Statements:**
+  ```typescript
+  // ✅ DO: Parameterized queries
+  const user = await db.query(
+    'SELECT * FROM users WHERE email = $1',
+    [userEmail]
+  );
+  
+  // ✅ DO: ORM met query builders
+  const user = await prisma.user.findUnique({
+    where: { email: userEmail }
+  });
+  
+  // ❌ DON'T: String concatenation in queries
+  const query = `SELECT * FROM users WHERE email = '${userEmail}'`; // SQL INJECTION!
+  ```
+
+## HTTPS & Secure Communication
+
+- **Forceer HTTPS:**
+  ```typescript
+  // ✅ DO: Redirect HTTP naar HTTPS
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https') {
+      res.redirect(`https://${req.header('host')}${req.url}`);
+    } else {
+      next();
+    }
+  });
+  ```
+
+- **CORS Configuratie:**
+  ```typescript
+  // ✅ DO: Specificeer toegestane origins
+  const corsOptions = {
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || 'https://yourdomain.com',
+    credentials: true,
+    optionsSuccessStatus: 200
+  };
+  
+  app.use(cors(corsOptions));
+  
+  // ❌ DON'T: Wildcard CORS in productie
+  app.use(cors({ origin: '*' })); // GEVAARLIJK in productie!
+  ```
+
+## Gevoelige Data Bescherming
+
+- **Environment Variables:**
+  ```typescript
+  // ✅ DO: Gebruik .env files (niet in git!)
+  // .env
+  DATABASE_URL=postgresql://user:pass@localhost/db
+  JWT_SECRET=super-secret-key-min-32-chars
+  API_KEY=your-api-key
+  
+  // ✅ DO: Valideer env vars bij startup
+  const envSchema = z.object({
+    DATABASE_URL: z.string().url(),
+    JWT_SECRET: z.string().min(32),
+    NODE_ENV: z.enum(['development', 'production', 'test'])
+  });
+  
+  const env = envSchema.parse(process.env);
+  
+  // ❌ DON'T: Hardcode secrets
+  const apiKey = "sk-1234567890abcdef"; // GEVAARLIJK!
+  ```
+
+- **Rate Limiting:**
+  ```typescript
+  // ✅ DO: Implementeer rate limiting
+  import rateLimit from 'express-rate-limit';
+  
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minuten
+    max: 100, // Max 100 requests per windowMs
+    message: 'Te veel verzoeken, probeer het later opnieuw.'
+  });
+  
+  app.use('/api/', limiter);
+  
+  // ✅ DO: Strenger voor login endpoints
+  const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5, // Max 5 login pogingen
+    skipSuccessfulRequests: true
+  });
+  
+  app.post('/api/login', loginLimiter, loginHandler);
+  ```
+
+## Security Headers
+
+- **Helmet.js voor Express:**
+  ```typescript
+  // ✅ DO: Gebruik helmet voor security headers
+  import helmet from 'helmet';
+  
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        scriptSrc: ["'self'"],
+        imgSrc: ["'self'", "data:", "https:"],
+      },
+    },
+    hsts: {
+      maxAge: 31536000,
+      includeSubDomains: true,
+      preload: true
+    }
+  }));
+  ```
+
+## Data Encryptie
+
+- **Encrypteer gevoelige data:**
+  ```typescript
+  // ✅ DO: Encrypteer gevoelige velden
+  import crypto from 'crypto';
+  
+  const algorithm = 'aes-256-gcm';
+  const key = Buffer.from(process.env.ENCRYPTION_KEY, 'hex');
+  
+  function encrypt(text: string): string {
+    const iv = crypto.randomBytes(16);
+    const cipher = crypto.createCipheriv(algorithm, key, iv);
+    
+    let encrypted = cipher.update(text, 'utf8', 'hex');
+    encrypted += cipher.final('hex');
+    
+    const authTag = cipher.getAuthTag();
+    
+    return iv.toString('hex') + ':' + authTag.toString('hex') + ':' + encrypted;
+  }
+  ```
+
+## Dependency Security
+
+- **Reguliere Updates & Audits:**
+  ```bash
+  # ✅ DO: Regelmatig dependencies checken
+  npm audit
+  npm audit fix
+  
+  # ✅ DO: Gebruik tools zoals Snyk of Dependabot
+  npm install -g snyk
+  snyk test
+  ```
+
+## OWASP Top 10
+
+Blijf op de hoogte van de [OWASP Top 10](https://owasp.org/www-project-top-ten/) kwetsbaarheden:
+1. Broken Access Control
+2. Cryptographic Failures
+3. Injection
+4. Insecure Design
+5. Security Misconfiguration
+6. Vulnerable and Outdated Components
+7. Identification and Authentication Failures
+8. Software and Data Integrity Failures
+9. Security Logging and Monitoring Failures
+10. Server-Side Request Forgery (SSRF)
+
+## Security Checklist
+
+Voor elke release:
+- [ ] Alle dependencies up-to-date en geen bekende kwetsbaarheden
+- [ ] Environment variables correct geconfigureerd
+- [ ] HTTPS geforceerd in productie
+- [ ] Security headers geïmplementeerd (CSP, HSTS, etc.)
+- [ ] Rate limiting actief op alle public endpoints
+- [ ] Input validatie op alle user inputs
+- [ ] SQL injection preventie (prepared statements/ORM)
+- [ ] XSS preventie (output escaping, CSP)
+- [ ] Secure authentication (hashed passwords, secure sessions)
+- [ ] Error messages lekken geen gevoelige informatie
+- [ ] Logging van security events actief

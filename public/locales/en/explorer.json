@@ -1,0 +1,601 @@
+{
+  "page": {
+    "title": "Explore the Marketing Machine",
+    "subtitle": "From Research to Results - Discover how the 9 layers of the autonomous marketing machine work seamlessly together, exactly as visualized in the AI Core Sphere. Each component builds on the previous for maximum efficiency.",
+    "loading": "Loading module...",
+    "showing_for": "Showing {{count}} featured modules for",
+    "cta": {
+      "title": "Ready to Automate Your Marketing?",
+      "primary": "Schedule Free Strategy Call"
+    }
+  },
+  "features": {
+    "research_planning": {
+      "title": "Research & Planning",
+      "subtitle": "The Brain of the Machine",
+      "description": "In-depth online research with Perplexity AI for trends, forecasting, and hashtag strategy. Perfect for teams of 10-50 who need strategic insights without hiring researchers.",
+      "icon": "🧠",
+      "roi_metric": "95%",
+      "roi_label": "Trend Accuracy",
+      "pain_point": "No time for strategic research",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You have no time for strategic research.** Every day, hours are lost manually searching for trends, comparing hashtags, and analyzing competitor content. By the time you find something useful, the trend has already passed.",
+          "solution": "The Research Hub runs 24/7 with 4 parallel AI agents using Perplexity for real-time trend forecasting. Automatic hashtag discovery, competitor tracking, and weekly theme planning integrated with your own brands and products.",
+          "result": "**3.2K trends tracked, 95% prediction accuracy, and 147 hours saved per month.** You get a ready-made content strategy every week that's current and relevant, without having to search for it yourself."
+        },
+        "overview": "The intelligent brain of the marketing machine. Uses Perplexity AI for in-depth research into current trends, trend forecasting, and hashtag strategies. Creates weekly content themes based on real-time data, your own brands, partners, services, and webshop products.",
+        "capabilities": [
+          "Perplexity AI powered trend research",
+          "Hashtag strategy and trending topics analysis",
+          "Weekly theme planning per platform",
+          "Multi-account strategy (different languages & audiences)",
+          "Integration of own brands, partners and products",
+          "Content calendar fully prepared and ready for workflow",
+          "Competitor content analysis and differentiation",
+          "Seasonal trend forecasting (3-6 months ahead)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Perplexity Research",
+            "description": "In-depth AI research into trends, hashtags, competitor activity and industry insights"
+          },
+          {
+            "step": 2,
+            "title": "Theme Selection",
+            "description": "Select weekly overarching theme aligned with brand identity and trends"
+          },
+          {
+            "step": 3,
+            "title": "Content Mapping",
+            "description": "Link own products, services and partners to weekly theme per platform"
+          },
+          {
+            "step": 4,
+            "title": "Calendar Creation",
+            "description": "Complete content calendar ready for Manager Workflow to execute"
+          }
+        ],
+        "metrics": [
+          { "value": 95, "label": "Trend Prediction Accuracy", "suffix": "%", "decimals": 0 },
+          { "value": 147, "label": "Research Hours Saved", "suffix": "h/mo", "decimals": 0 },
+          { "value": 12, "label": "Content Themes per Month", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "manager_workflow": {
+      "title": "Manager Workflow",
+      "subtitle": "The Heart of the Machine",
+      "description": "Central workflow manager that retrieves the agenda weekly, executes A/B testing, and forwards everything to the Content Pipeline. Built for lean teams managing multiple channels.",
+      "icon": "❤️",
+      "roi_metric": "275%",
+      "roi_label": "ROI via Testing",
+      "pain_point": "Workflow and manual coordination chaos",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You're drowning in workflows and manual coordination.** Every week the same chaos: assembling calendars, distributing content across platforms, manual A/B testing, and constantly switching between tools. Nothing is automated.",
+          "solution": "The Manager Workflow orchestrates everything centrally. Automatic calendar retrieval, intelligent A/B testing, Telegram integration for direct control, and seamless forwarding to the Content Pipeline. Everything through one system.",
+          "result": "**275% ROI improvement through A/B testing, 98% workflow automation, and 160 content items per month.** Your team no longer needs to coordinate - the system handles it."
+        },
+        "overview": "The beating heart that orchestrates everything. Retrieves the content calendar weekly (or individually via Telegram) from Research & Planning, executes strategic A/B testing, and forwards optimal content to the Content Pipeline for creation.",
+        "capabilities": [
+          "Weekly calendar retrieval automation",
+          "Telegram integration for individual commands",
+          "Advanced A/B testing per content type",
+          "Multi-account strategy management",
+          "Real-time workflow orchestration",
+          "Content prioritization based on performance data",
+          "Feedback loop to Research & Planning",
+          "Smart scheduling for optimal performance"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Calendar Retrieval",
+            "description": "Automatically weekly or manually via Telegram commands"
+          },
+          {
+            "step": 2,
+            "title": "A/B Test Setup",
+            "description": "Determine test variants per content item for optimal results"
+          },
+          {
+            "step": 3,
+            "title": "Workflow Distribution",
+            "description": "Distribute tasks to Content Pipeline with priority"
+          },
+          {
+            "step": 4,
+            "title": "Performance Monitoring",
+            "description": "Real-time tracking and adjustment of active content creation"
+          }
+        ],
+        "metrics": [
+          { "value": 340, "label": "A/B Test ROI Improvement", "suffix": "%", "decimals": 0 },
+          { "value": 98, "label": "Workflow Automation Rate", "suffix": "%", "decimals": 0 },
+          { "value": 450, "label": "Content Items/Month", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "content_pipeline": {
+      "title": "Content Pipeline",
+      "subtitle": "The Production Factory",
+      "description": "Generates content for Instagram, Facebook, TikTok, YouTube, LinkedIn and blogs. Your team of 3 doing the work of 30 - without hiring extra people.",
+      "icon": "🏭",
+      "roi_metric": "4x",
+      "roi_label": "Content Output",
+      "pain_point": "Not scalable without burning budget",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You can't scale without burning your budget.** 1 content creator can make max 10 posts per week. For 7 platforms, various formats and multi-account? You'd need an entire team. Unaffordable.",
+          "solution": "The Content Pipeline produces content for Instagram (posts, carousels, reels, stories), Facebook, TikTok, YouTube, LinkedIn and blogs. With Telegram approval system for quality control and self-learning AI that gets better continuously.",
+          "result": "**4x content output (160 posts/month), 94% approval rate, and €4,500/month saved on freelancers.** From 40 to 160 posts per month, without hiring extra people."
+        },
+        "overview": "The content production factory that creates high-quality posts for all major platforms. Intelligent platform adaptation ensures optimal format and tone per channel. Self-learning AI improves continuously through Telegram approval feedback loop.",
+        "capabilities": [
+          "Multi-platform content generation (7 platforms)",
+          "Instagram: posts, carousels, reels, stories",
+          "Facebook, TikTok, YouTube Shorts, LinkedIn",
+          "Blog articles with SEO optimization",
+          "Telegram approval system with feedback loop",
+          "Self-learning AI through approval patterns",
+          "Platform-specific tone and format adaptation",
+          "Automatic visual content creation and editing"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Content Briefing",
+            "description": "Receive briefing from Manager Workflow with theme and target"
+          },
+          {
+            "step": 2,
+            "title": "AI Generation",
+            "description": "Generate platform-optimized content with visuals and captions"
+          },
+          {
+            "step": 3,
+            "title": "Telegram Review",
+            "description": "Present content in Telegram for approval or feedback"
+          },
+          {
+            "step": 4,
+            "title": "Publish or Iterate",
+            "description": "Send approved content to Publisher or refine based on feedback"
+          }
+        ],
+        "metrics": [
+          { "value": 160, "label": "Posts Created per Month", "suffix": "", "decimals": 0 },
+          { "value": 94, "label": "Approval Rate", "suffix": "%", "decimals": 0 },
+          { "value": 4500, "label": "Monthly Freelancer Cost Saved", "suffix": "€", "decimals": 0 }
+        ]
+      }
+    },
+    "analytics_lab": {
+      "title": "Analytics Lab",
+      "subtitle": "The Intelligence Center",
+      "description": "Real-time analytics with AI-powered insights. Perfect for teams managing 3-10 channels who need data-driven decisions without hiring analysts.",
+      "icon": "📊",
+      "roi_metric": "327%",
+      "roi_label": "Performance ROI",
+      "pain_point": "No insight into what actually works",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You have no idea what actually works.** You post content, but you don't know which formats, topics, or timings deliver the best results. You're flying blind without data-driven decisions.",
+          "solution": "The Analytics Lab tracks everything in real-time. AI-powered analysis identifies patterns, optimal posting times, and winning content formats. Automatic feedback to all modules for continuous optimization.",
+          "result": "**327% performance ROI improvement, 2.8K insights generated, and 97% prediction accuracy.** You know exactly what works and the system automatically optimizes based on that data."
+        },
+        "overview": "The intelligence center that measures, analyzes, and optimizes everything. Collects real-time performance data from all platforms, applies AI analysis to identify patterns and opportunities, and feeds insights back to all modules for continuous improvement.",
+        "capabilities": [
+          "Real-time performance tracking across all platforms",
+          "AI-powered pattern recognition and insights",
+          "Optimal posting time identification per platform",
+          "Content format performance analysis",
+          "Audience engagement prediction",
+          "Automatic feedback loops to all modules",
+          "Trend vs. performance correlation analysis",
+          "ROI tracking per content type and campaign"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Data Collection",
+            "description": "Gather performance metrics from all platforms in real-time"
+          },
+          {
+            "step": 2,
+            "title": "AI Analysis",
+            "description": "Apply machine learning to identify patterns and opportunities"
+          },
+          {
+            "step": 3,
+            "title": "Insight Generation",
+            "description": "Create actionable recommendations based on analysis"
+          },
+          {
+            "step": 4,
+            "title": "System Optimization",
+            "description": "Feed insights back to modules for automatic improvement"
+          }
+        ],
+        "metrics": [
+          { "value": 327, "label": "Performance ROI Improvement", "suffix": "%", "decimals": 0 },
+          { "value": 2800, "label": "Insights Generated", "suffix": "", "decimals": 0 },
+          { "value": 97, "label": "Prediction Accuracy", "suffix": "%", "decimals": 0 }
+        ]
+      }
+    },
+    "telegram_control": {
+      "title": "Telegram Control Center",
+      "subtitle": "Your Mobile Command Center",
+      "description": "Full system control via Telegram. Approve content, give feedback, request ad-hoc posts from anywhere. Built for busy teams who need mobile flexibility.",
+      "icon": "📱",
+      "roi_metric": "85%",
+      "roi_label": "Time Saved",
+      "pain_point": "No control without being at the computer",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You have no control without being at your computer.** You're always on the go, but important decisions require you to be behind a laptop. By the time you're back, opportunities have passed.",
+          "solution": "Telegram Control Center gives you full system control from your phone. Approve content, give feedback, request ad-hoc posts, trigger workflows, and monitor everything in real-time. All through simple chat commands.",
+          "result": "**85% time saved on coordination, 100% mobile control, and 24/7 system accessibility.** You manage the entire system from anywhere, anytime, with just your phone."
+        },
+        "overview": "Your mobile command center for complete system control. Approve content for publication, provide feedback for AI learning, request ad-hoc content creation, and monitor all active workflows. Simple chat interface with rich previews and quick actions.",
+        "capabilities": [
+          "Content approval with visual previews",
+          "Feedback system for AI learning",
+          "Ad-hoc content requests via chat",
+          "Workflow status monitoring",
+          "Performance dashboard on mobile",
+          "Emergency controls and overrides",
+          "Team collaboration and assignments",
+          "Push notifications for urgent items"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Content Notification",
+            "description": "Receive Telegram message with content preview"
+          },
+          {
+            "step": 2,
+            "title": "Quick Review",
+            "description": "Approve, reject, or provide specific feedback via buttons"
+          },
+          {
+            "step": 3,
+            "title": "AI Learning",
+            "description": "System learns from your feedback patterns"
+          },
+          {
+            "step": 4,
+            "title": "Automatic Improvement",
+            "description": "Future content better aligned with your preferences"
+          }
+        ],
+        "metrics": [
+          { "value": 85, "label": "Coordination Time Saved", "suffix": "%", "decimals": 0 },
+          { "value": 100, "label": "Mobile Control Coverage", "suffix": "%", "decimals": 0 },
+          { "value": 47, "label": "Average Response Time", "suffix": "s", "decimals": 0 }
+        ]
+      }
+    },
+    "publishing_layer": {
+      "title": "Publishing Layer",
+      "subtitle": "Automatic Distribution",
+      "description": "Automatically schedules content at ideal times per platform. Small teams publishing like enterprise - 24/7 consistency without manual work.",
+      "icon": "📤",
+      "roi_metric": "360h",
+      "roi_label": "Time Saved/Month",
+      "pain_point": "Inconsistent and time-consuming manual posting",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Your posting is inconsistent and poorly timed.** Sometimes you post 3x per day, then 0. Wrong times, missed opportunities, and manual scheduling costs hours. Your algorithm ranking suffers.",
+          "solution": "The Publishing Layer analyzes optimal times per platform for your audience. Automatic smart scheduling with time-zone optimization, queue management, and 99.8% on-time posting. Zero manual work.",
+          "result": "**360 hours saved per month, 99.8% on-time delivery, and €1,800/month less management overhead.** Perfect consistency across 7 platforms, 24/7, without having to look at it."
+        },
+        "overview": "The distribution engine that automatically schedules all content at ideal times. Analyzes per platform when your audience is most active and automatically schedules for maximum reach and engagement.",
+        "capabilities": [
+          "Automatic scheduling at optimal times",
+          "Platform-specific timing optimization",
+          "Multi-account simultaneous publishing",
+          "Time-zone intelligent planning",
+          "Queue management & conflict resolution",
+          "Retry logic for platform errors",
+          "Publishing confirmation & tracking",
+          "Emergency content override capability",
+          "Draft vs Live status management",
+          "Cross-platform timing orchestration"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Optimal Time Analysis",
+            "description": "AI determines best posting times per platform and audience"
+          },
+          {
+            "step": 2,
+            "title": "Schedule Planning",
+            "description": "Content is scheduled with smart spacing and frequency caps"
+          },
+          {
+            "step": 3,
+            "title": "Automated Publishing",
+            "description": "Automatic posting at scheduled times via platform APIs"
+          },
+          {
+            "step": 4,
+            "title": "Confirmation & Tracking",
+            "description": "Real-time confirmation and forwarding to Analytics"
+          }
+        ],
+        "metrics": [
+          { "value": 312, "label": "Time Saved Monthly", "suffix": "h", "decimals": 0 },
+          { "value": 99.2, "label": "Publishing Success Rate", "suffix": "%", "decimals": 1 },
+          { "value": 47, "label": "Avg Posts per Week", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ad_builder": {
+      "title": "Ad Builder",
+      "subtitle": "Ad Creation Engine",
+      "description": "Upload a product photo and automatically generate platform-specific ads. Teams spending €10K+/month on ads can pre-test before budget allocation.",
+      "icon": "🎬",
+      "roi_metric": "+320%",
+      "roi_label": "Ad ROI Improvement",
+      "pain_point": "Expensive ads without results",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**Your ad budget evaporates without results.** €1,000 in an ad that flops, no idea why. Trial and error is too expensive. Which creative works? Which copy converts? Pure guesswork with your marketing budget.",
+          "solution": "The Ad Builder tests your ads organically before you allocate budget. Upload one product photo, get 5 platform variants, test them free on sub-accounts, and only invest in proven winners with predictable ROI.",
+          "result": "**+320% ROI through pre-testing, €2,400/month saved on wasted budget, and 87% accuracy in predicting which ad performs best.** Zero guesswork - only data-driven ad spending."
+        },
+        "overview": "The ad creation engine that transforms product photos into platform-optimized ads. Automatically generates A/B test variants, tests them organically for budget allocation, and predicts performance with 87% accuracy. Prevent wasted ad spend by only investing in winners.",
+        "capabilities": [
+          "Product photo → AI ad generation (automatic transformation)",
+          "Platform-specific formatting (Instagram, Facebook, TikTok, LinkedIn, Pinterest)",
+          "A/B testing variant generator (3-5 variants per upload)",
+          "Ad copy optimization (headlines, CTAs, descriptions)",
+          "Pre-testing on organic test accounts (no budget waste)",
+          "ROI predictor based on historical data)",
+          "Auto-scaling for different ad sizes (Story, Feed, Reel formats)",
+          "Brand guideline enforcement (colors, fonts, tone-of-voice)",
+          "Competitor ad analysis (what works in your niche)",
+          "Dynamic product catalog integration (webshop sync)",
+          "Video ad generation (static → motion graphics)",
+          "Performance tracking per variant (real-time ROI monitoring)"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Photo Upload",
+            "description": "Upload product photo or creative asset with optional brand guidelines"
+          },
+          {
+            "step": 2,
+            "title": "AI Analysis",
+            "description": "Computer vision analyzes product, context, and optimal messaging strategy"
+          },
+          {
+            "step": 3,
+            "title": "Variant Generation",
+            "description": "AI creates 3-5 platform-specific ad variants with diverse hooks and CTAs"
+          },
+          {
+            "step": 4,
+            "title": "Organic Pre-Testing",
+            "description": "Best variants are tested organically on sub-accounts for performance data"
+          },
+          {
+            "step": 5,
+            "title": "Budget Allocation",
+            "description": "Winning ad with highest predicted ROI gets paid budget"
+          },
+          {
+            "step": 6,
+            "title": "Performance Tracking",
+            "description": "Real-time ROI monitoring and auto-optimization during campaign"
+          }
+        ],
+        "metrics": [
+          { "value": 320, "label": "Avg Ad ROI Improvement", "suffix": "%", "decimals": 0 },
+          { "value": 2400, "label": "Monthly Budget Saved", "suffix": " €", "decimals": 0 },
+          { "value": 87, "label": "Pre-test Prediction Accuracy", "suffix": "%", "decimals": 0 }
+        ]
+      }
+    },
+    "command_center": {
+      "title": "Command Center",
+      "subtitle": "Client Dashboard & Control",
+      "description": "Central dashboard for launching campaigns, creating ads, and complete data insights. One person controlling what normally requires a team of 10.",
+      "icon": "🎮",
+      "roi_metric": "100%",
+      "roi_label": "Control & Transparency",
+      "pain_point": "Multi-platform chaos",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You have no central overview.** Data scattered across 7 platforms, content calendar in spreadsheets, research in notes, campaigns in yet another system. You waste hours switching between tools.",
+          "solution": "The Command Center bundles everything in one dashboard. Launch campaigns with 1 click, create ads from a product photo, see real-time data per platform, view your content calendar, and access weekly research - all in one place.",
+          "result": "**100% transparency, €1,600/month saved on tool subscriptions, and 2.3x more data-driven decisions per day.** Everything you need, one dashboard, zero chaos."
+        },
+        "overview": "The central command center where the client has complete control and transparency. Launch campaigns, create ads from a product photo, view all data insightfully per platform (engagement, growth, etc.), see the content calendar and view weekly research.",
+        "capabilities": [
+          "Campaign launcher with one-click start",
+          "Product photo → Ad AI generator",
+          "Real-time dashboard per platform (engagement, reach, growth)",
+          "Content calendar overview (week/month view)",
+          "Weekly research reports accessible",
+          "Budget tracking & spend analysis",
+          "Account performance comparison",
+          "Quick content approve/reject via interface",
+          "Custom campaign parameters setup",
+          "Export functionality for reports",
+          "Team collaboration tools",
+          "Mobile app for on-the-go management"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Dashboard Login",
+            "description": "Access to personal Command Center with all accounts"
+          },
+          {
+            "step": 2,
+            "title": "Data Visualization",
+            "description": "Real-time insight into all KPIs per platform and account"
+          },
+          {
+            "step": 3,
+            "title": "Take Action",
+            "description": "Launch campaigns, create ads, adjust strategy based on data"
+          },
+          {
+            "step": 4,
+            "title": "Monitor & Optimize",
+            "description": "Continuous monitoring and data-driven decision making"
+          }
+        ],
+        "metrics": [
+          { "value": 100, "label": "Transparency Score", "suffix": "%", "decimals": 0 },
+          { "value": 2.3, "label": "Avg. Daily Logins", "suffix": "", "decimals": 1 },
+          { "value": 6, "label": "Platforms Monitored", "suffix": "", "decimals": 0 }
+        ]
+      }
+    },
+    "ai_advisory": {
+      "title": "AI Advisor Partnership",
+      "subtitle": "Your Strategic Guide",
+      "description": "No technical knowledge? No problem. Personal guidance at every step - perfect for lean teams (1-5 people) who need expert support.",
+      "icon": "🤝",
+      "roi_metric": "€0",
+      "roi_label": "Expertise Needed",
+      "pain_point": "No automation expertise needed",
+      "modal": {
+        "pain_agitation": {
+          "problem": "**You want to automate, but have no technical knowledge.** Marketing automation sounds great, but you have no idea where to start. Setup, integrations, optimization - it feels overwhelming without an expert in the background.",
+          "solution": "As your AI expert, I am your personal strategic partner. I help with onboarding, configuration, strategy adjustments, and continuous optimization. Think of it as a marketing automation consultant available 24/7 - without the consultant fee.",
+          "result": "**Zero technical knowledge required, 90% faster onboarded, and continuous strategic guidance.** You get all benefits of automation without the learning curve. I solve problems before you notice them."
+        },
+        "overview": "Your personal AI strategic partner who helps you with every phase: from initial setup and platform integrations, to content strategy optimization and performance analysis. No technical knowledge required - I guide you at every step.",
+        "capabilities": [
+          "Personal onboarding & system setup guidance",
+          "Platform integration troubleshooting",
+          "Content strategy development & optimization",
+          "Performance analysis & recommendations",
+          "Best practices for your specific industry",
+          "Proactive problem detection & resolution",
+          "24/7 available via chat interface",
+          "Weekly strategy review & adjustments",
+          "Trend opportunities & competitive insights",
+          "ROI maximization recommendations",
+          "Custom automation workflows for your needs",
+          "Continuous learning of your brand & audience"
+        ],
+        "process_steps": [
+          {
+            "step": 1,
+            "title": "Onboarding & Discovery",
+            "description": "I learn your business, goals, tone-of-voice, and target audience"
+          },
+          {
+            "step": 2,
+            "title": "Strategic Planning",
+            "description": "Together we develop a custom automation strategy for your situation"
+          },
+          {
+            "step": 3,
+            "title": "Implementation Support",
+            "description": "I guide every integration, platform setup, and initial configuration"
+          },
+          {
+            "step": 4,
+            "title": "Continuous Optimization",
+            "description": "Ongoing monitoring, recommendations, and strategy adjustments for maximum ROI"
+          }
+        ],
+        "metrics": [
+          { "value": 90, "label": "Faster Onboarding", "suffix": "%", "decimals": 0 },
+          { "value": 24, "label": "Support Availability", "suffix": "/7", "decimals": 0 },
+          { "value": 0, "label": "Technical Knowledge Required", "suffix": "", "decimals": 0 }
+        ]
+      }
+    }
+  },
+  "modal": {
+    "close": "Close",
+    "sections": {
+      "problem": "The Problem",
+      "solution": "The Solution",
+      "result": "The Result",
+      "overview": "Overview",
+      "capabilities": "Capabilities",
+      "how_it_works": "How It Works",
+      "metrics": "Key Metrics",
+      "technical_overview": "Technical Overview"
+    },
+    "technical": {
+      "title": "Technical Overview",
+      "stack": "Technology Stack",
+      "apis": "API Integrations",
+      "architecture": "Architecture"
+    }
+  },
+  "profiling_prompt": {
+    "trigger": "module_view"
+  },
+  "loading": {
+    "modal": "Loading details...",
+    "telegram_mockup": "Loading Telegram mockup...",
+    "heatmap": "Loading heatmap...",
+    "ad_builder": "Loading ad builder...",
+    "scheduling": "Loading scheduling..."
+  },
+  "demo": {
+    "sample_caption": "Discover our new collection! 🌟 Premium quality at the best price. Link in bio for more info.",
+    "ad_builder_intro": "See how one product photo transforms into platform-optimized ad variants"
+  },
+  "custom_built": {
+    "card_workflow": {
+      "title": "YOUR Workflow",
+      "description": "Adapts to how you work, not how we think you should"
+    },
+    "card_industry": {
+      "title": "YOUR Industry",
+      "description": "Tailored examples, templates, and strategies for your sector"
+    },
+    "card_limits": {
+      "title": "Zero Limits",
+      "description": "No template restrictions, just pure capability"
+    }
+  },
+  "navigation": {
+    "back_home": "← Home",
+    "calculate_roi": "Calculate ROI →"
+  },
+  "cta": {
+    "calculate_roi_button": "Calculate ROI",
+    "urgency_text": "⏰ Free implementation scan",
+    "trust_indicators": {
+      "call": "✓ 30-min call",
+      "roi_analysis": "✓ ROI analysis",
+      "roadmap": "✓ Implementation roadmap"
+    }
+  },
+  "modal_sections": {
+    "solves_label": "Solves:",
+    "live_approval_interface": "Live Approval Interface",
+    "approval_experience": "Experience how content approval works via Telegram in real-time",
+    "forecast_accuracy": "Forecast Accuracy Heat Map",
+    "forecast_description": "Real-time prediction accuracy across key metrics by quarter",
+    "product_photo_ads": "Product Photo → Platform Ads",
+    "implementation_process": "Implementation Process",
+    "performance_metrics": "Performance Metrics",
+    "key_capabilities": "Key Capabilities",
+    "need_help": {
+      "title": "Need Help Getting Started?",
+      "description": "Chat with your personal AI expert for guidance →"
+    },
+    "demo_title": "{{feature}} Demo",
+    "close_button": "Close"
+  }
+}

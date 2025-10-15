@@ -1,0 +1,427 @@
+# Task ID: 20
+# Title: Enhanced Exit Intent System - Recovery & Retention
+# Status: pending
+# Dependencies: 17, 18, 19
+# Priority: high
+# Description: Implement smart exit-intent detection with personalized offers, progress preservation, and multi-trigger system to recover 10-15% of abandoning visitors.
+# Details:
+**Problem Identified (Audit Score: 85/100)**
+Current exit-intent exists but lacks personalization and smart trigger logic. Missing opportunity to recover 10-15% of abandoning visitors.
+
+**Solution Components:**
+
+## 1. Smart Exit Detection System
+
+```typescript
+// src/hooks/useExitIntent.ts
+export const useExitIntent = (config: ExitIntentConfig) => {
+  const [shouldShow, setShouldShow] = useState(false)
+  const [trigger, setTrigger] = useState<ExitTrigger>()
+  
+  useEffect(() => {
+    const handlers = {
+      // Mouse leaves viewport (desktop)
+      mouseLeave: (e: MouseEvent) => {
+        if (e.clientY <= 0 && !hasShownToday()) {
+          setTrigger('mouse_leave')
+          setShouldShow(true)
+        }
+      },
+      
+      // Rapid scroll (mobile + desktop)
+      rapidScroll: () => {
+        const scrollSpeed = getScrollSpeed()
+        if (scrollSpeed > config.scrollThreshold) {
+          setTrigger('rapid_scroll')
+          setShouldShow(true)
+        }
+      },
+      
+      // Back button (mobile)
+      backButton: (e: PopStateEvent) => {
+        e.preventDefault()
+        setTrigger('back_button')
+        setShouldShow(true)
+        // Push state back so user doesn't leave
+        window.history.pushState(null, '', window.location.href)
+      },
+      
+      // Tab visibility (user switches tab)
+      visibilityChange: () => {
+        if (document.hidden && timeOnPage > 30000) {
+          setTrigger('tab_switch')
+          setShouldShow(true)
+        }
+      },
+      
+      // Inactivity timeout
+      inactivity: () => {
+        if (timeSinceLastAction > 60000 && !calculatorUsed) {
+          setTrigger('inactivity')
+          setShouldShow(true)
+        }
+      },
+    }
+    
+    // Attach all handlers
+    document.addEventListener('mouseleave', handlers.mouseLeave)
+    window.addEventListener('scroll', handlers.rapidScroll)
+    window.addEventListener('popstate', handlers.backButton)
+    document.addEventListener('visibilitychange', handlers.visibilityChange)
+    
+    const inactivityTimer = setInterval(handlers.inactivity, 5000)
+    
+    return () => {
+      // Cleanup
+      document.removeEventListener('mouseleave', handlers.mouseLeave)
+      window.removeEventListener('scroll', handlers.rapidScroll)
+      window.removeEventListener('popstate', handlers.backButton)
+      document.removeEventListener('visibilitychange', handlers.visibilityChange)
+      clearInterval(inactivityTimer)
+    }
+  }, [config])
+  
+  return { shouldShow, trigger, dismiss: () => setShouldShow(false) }
+}
+```
+
+## 2. Personalized Exit Modal
+
+```tsx
+<ExitIntentModal 
+  show={shouldShow}
+  trigger={trigger}
+  userContext={userContext}
+  onDismiss={handleDismiss}
+>
+  {/* Variant based on user context */}
+  {renderVariant({
+    // Not calculated ROI yet
+    noROI: (
+      <>
+        <Icon>⏱️</Icon>
+        <Title>Wait! Calculate Your ROI First</Title>
+        <Subtitle>
+          See how much you could save in just 2 minutes
+        </Subtitle>
+        <HighlightBox>
+          <Stat>Average Result</Stat>
+          <Value className="gradient-text text-5xl">€104K</Value>
+          <Label>Potential Annual Savings</Label>
+        </HighlightBox>
+        <CTA>
+          <Button size="lg" glow onClick={goToCalculator}>
+            Calculate My Savings →
+          </Button>
+          <Button variant="ghost" onClick={dismiss}>
+            No thanks, I'll leave
+          </Button>
+        </CTA>
+      </>
+    ),
+    
+    // Calculated ROI but didn't book
+    calculatedROI: (
+      <>
+        <Icon>💰</Icon>
+        <Title>Don't Leave €{userROI} on the Table</Title>
+        <Subtitle>
+          You just calculated €{userROI} in potential savings.
+          <br />
+          Let's discuss how to achieve it.
+        </Subtitle>
+        <BonusBox>
+          <Badge>🎁 Bonus Offer</Badge>
+          <Text>
+            Book in the next 5 minutes and get:
+          </Text>
+          <Benefits>
+            <Benefit>✓ Free implementation roadmap (€2,500 value)</Benefit>
+            <Benefit>✓ Custom workflow analysis</Benefit>
+            <Benefit>✓ 30-day money-back guarantee</Benefit>
+          </Benefits>
+          <Timer>
+            <Clock>⏰</Clock>
+            <Countdown>{formatTime(timeRemaining)}</Countdown>
+          </Timer>
+        </BonusBox>
+        <CTA>
+          <Button size="lg" glow onClick={openCalendly}>
+            Claim My Consultation →
+          </Button>
+          <Button variant="secondary" onClick={saveProgress}>
+            Email Me My Results
+          </Button>
+        </CTA>
+      </>
+    ),
+    
+    // Explored features but no ROI
+    exploredFeatures: (
+      <>
+        <Icon>🔍</Icon>
+        <Title>You've Viewed {modulesViewed}/9 Features</Title>
+        <ProgressBar value={modulesViewed} max={9} />
+        <Subtitle>
+          Quick question: What's holding you back from booking a call?
+        </Subtitle>
+        <FeedbackOptions>
+          <Option onClick={() => handleFeedback('pricing')}>
+            💸 Need to see pricing
+          </Option>
+          <Option onClick={() => handleFeedback('roi')}>
+            📊 Want to calculate ROI first
+          </Option>
+          <Option onClick={() => handleFeedback('features')}>
+            🔍 Need more feature details
+          </Option>
+          <Option onClick={() => handleFeedback('team')}>
+            👥 Need to discuss with team
+          </Option>
+        </FeedbackOptions>
+        <CTA>
+          <Button size="lg" onClick={handleFeedbackCTA}>
+            Show Me →
+          </Button>
+        </CTA>
+      </>
+    ),
+    
+    // Default (minimal context)
+    default: (
+      <>
+        <Icon>👋</Icon>
+        <Title>Before You Go...</Title>
+        <Subtitle>
+          Get instant access to our free resources:
+        </Subtitle>
+        <ResourceList>
+          <Resource>
+            <Icon>📄</Icon>
+            <Name>AI Marketing Automation Guide</Name>
+            <Value>Free PDF</Value>
+          </Resource>
+          <Resource>
+            <Icon>🎬</Icon>
+            <Name>5-Minute Product Walkthrough</Name>
+            <Value>Video</Value>
+          </Resource>
+          <Resource>
+            <Icon>📊</Icon>
+            <Name>ROI Calculator Spreadsheet</Name>
+            <Value>Excel Template</Value>
+          </Resource>
+        </ResourceList>
+        <EmailCapture>
+          <Input 
+            type="email" 
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Button onClick={handleEmailSubmit}>
+            Send Me Resources
+          </Button>
+        </EmailCapture>
+      </>
+    ),
+  })}
+</ExitIntentModal>
+```
+
+## 3. Progress Preservation System
+
+```typescript
+// src/hooks/useProgressPreservation.ts
+export const useProgressPreservation = () => {
+  const saveProgress = async (email: string) => {
+    const progress = {
+      calculatorResults: getCalculatorState(),
+      modulesViewed: getExploredModules(),
+      timeSpent: getTimeOnSite(),
+      userContext: getUserContext(),
+      timestamp: Date.now(),
+    }
+    
+    // Save to localStorage (backup)
+    localStorage.setItem('demo_progress', JSON.stringify(progress))
+    
+    // Email unique link
+    const resumeToken = generateResumeToken(progress)
+    await emailResumeLink(email, resumeToken)
+    
+    // Track
+    trackGA4('progress_saved', { 
+      email_captured: true,
+      modules_viewed: progress.modulesViewed.length,
+      roi_calculated: !!progress.calculatorResults,
+    })
+    
+    return resumeToken
+  }
+  
+  const restoreProgress = (token: string) => {
+    const progress = decodeResumeToken(token)
+    
+    // Restore state
+    restoreCalculatorState(progress.calculatorResults)
+    restoreUserContext(progress.userContext)
+    
+    // Show welcome back message
+    showToast({
+      title: 'Welcome Back!',
+      message: 'We\'ve restored your progress from where you left off.',
+      variant: 'success',
+    })
+    
+    // Track
+    trackGA4('progress_restored', { token })
+  }
+  
+  return { saveProgress, restoreProgress }
+}
+```
+
+## 4. Email Capture Variants
+
+```tsx
+<EmailCaptureForm onSubmit={handleEmailCapture}>
+  <Heading>Get Your Demo Summary</Heading>
+  <Benefits>
+    <Benefit>📧 Your ROI calculation results</Benefit>
+    <Benefit>🔗 Resume link to continue later</Benefit>
+    <Benefit>📊 Implementation checklist</Benefit>
+  </Benefits>
+  
+  <Form>
+    <Input
+      type="email"
+      placeholder="work@company.com"
+      required
+      autoFocus
+      aria-label="Email address"
+    />
+    <Button type="submit" size="lg" glow>
+      Send Me My Results
+    </Button>
+  </Form>
+  
+  <Privacy className="text-xs text-white/60 mt-3">
+    🔒 We never spam. Unsubscribe anytime.
+  </Privacy>
+</EmailCaptureForm>
+```
+
+## 5. Smart Frequency Capping
+
+```typescript
+// src/utils/exitIntent.ts
+const FREQUENCY_RULES = {
+  maxShowsPerDay: 1,
+  minTimeBetweenShows: 24 * 60 * 60 * 1000, // 24 hours
+  maxShowsPerSession: 1,
+  cooldownAfterDismiss: 7 * 24 * 60 * 60 * 1000, // 7 days
+}
+
+export const shouldShowExitIntent = (): boolean => {
+  const lastShown = localStorage.getItem('exit_intent_last_shown')
+  const dismissCount = localStorage.getItem('exit_intent_dismiss_count')
+  
+  if (!lastShown) return true
+  
+  const timeSinceShown = Date.now() - Number(lastShown)
+  
+  // Dismissed too many times? Never show again
+  if (Number(dismissCount) >= 3) return false
+  
+  // Shown within cooldown period?
+  if (timeSinceShown < FREQUENCY_RULES.minTimeBetweenShows) return false
+  
+  // Shown this session?
+  if (sessionStorage.getItem('exit_intent_shown')) return false
+  
+  return true
+}
+```
+
+## Implementation Plan
+
+**New Components:**
+- `src/components/exit-intent/ExitIntentModal.tsx`
+- `src/components/exit-intent/EmailCaptureForm.tsx`
+- `src/components/exit-intent/FeedbackOptions.tsx`
+
+**New Hooks:**
+- `src/hooks/useExitIntent.ts`
+- `src/hooks/useProgressPreservation.ts`
+
+**New Utils:**
+- `src/utils/exitIntent.ts`
+- `src/utils/resumeToken.ts`
+
+**Files to Modify:**
+- `src/App.tsx` - Add ExitIntentModal at root level
+- `src/utils/analytics.ts` - Add exit intent events
+
+**Analytics Events:**
+```typescript
+trackGA4('exit_intent_triggered', { trigger: 'mouse_leave' })
+trackGA4('exit_intent_dismissed', { variant: 'calculatedROI' })
+trackGA4('exit_intent_cta_clicked', { action: 'book_call' })
+trackGA4('exit_intent_email_captured', { variant: 'default' })
+trackGA4('exit_intent_feedback', { reason: 'pricing' })
+```
+
+**Expected Impact:** +10-15% visitor recovery
+**Time Estimate:** 4-5 hours
+**Priority:** MEDIUM-HIGH - Prevents leakage
+
+# Test Strategy:
+**Testing Strategy:**
+
+1. **Trigger Testing:**
+   - Mouse leave (desktop): Cursor exits top of viewport
+   - Back button (mobile): Browser back button pressed
+   - Rapid scroll: Fast scroll detected
+   - Tab switch: User switches to another tab
+   - Inactivity: 60s of no interaction
+   - Verify: Each trigger only fires once per session
+
+2. **Variant Logic:**
+   - User with no ROI → Shows "Calculate ROI" variant
+   - User with ROI → Shows "Don't leave €X" variant
+   - User explored features → Shows progress variant
+   - Default → Shows resource download variant
+
+3. **Frequency Capping:**
+   - Shown once per session (max)
+   - Shown once per day (max)
+   - After 3 dismissals: Never show again
+   - Verify localStorage persistence
+
+4. **Email Capture:**
+   - Valid email required
+   - Sends resume link email
+   - Progress saved correctly
+   - Resume link restores state
+
+5. **Analytics Validation:**
+   ```typescript
+   'exit_intent_triggered' // When modal appears
+   'exit_intent_dismissed' // When user closes
+   'exit_intent_converted' // When user takes action
+   'email_captured' // When email submitted
+   'progress_saved' // When state saved
+   'progress_restored' // When resume link used
+   ```
+
+6. **A/B Test:**
+   - Control: Current exit intent
+   - Treatment: New personalized system
+   - Measure: Email capture rate, CTA clicks, visitor recovery
+
+7. **Performance:**
+   - No impact on page load (lazy loaded)
+   - Modal animates smoothly
+   - No memory leaks from event listeners
+   - Cleanup on unmount

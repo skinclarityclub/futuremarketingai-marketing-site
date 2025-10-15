@@ -1,0 +1,52 @@
+{
+  "validation": {
+    "required": "Dit veld is verplicht",
+    "email": "Voer een geldig e-mailadres in",
+    "phone": "Voer een geldig telefoonnummer in",
+    "url": "Voer een geldige URL in",
+    "number": "Voer een geldig nummer in",
+    "min": "Minimumwaarde is {{min}}",
+    "max": "Maximumwaarde is {{max}}",
+    "min_length": "Minimaal {{min}} karakters vereist",
+    "max_length": "Maximaal {{max}} karakters toegestaan",
+    "password_weak": "Wachtwoord is te zwak. Gebruik letters, cijfers en symbolen.",
+    "password_mismatch": "Wachtwoorden komen niet overeen"
+  },
+  "network": {
+    "generic": "Netwerkfout. Controleer je verbinding.",
+    "timeout": "Verzoek verlopen. Probeer het opnieuw.",
+    "offline": "Je bent offline. Controleer je internetverbinding.",
+    "server": "Serverfout. Probeer het later opnieuw.",
+    "unavailable": "Service tijdelijk niet beschikbaar"
+  },
+  "auth": {
+    "unauthorized": "Ongeautoriseerde toegang",
+    "session_expired": "Je sessie is verlopen. Log opnieuw in.",
+    "invalid_credentials": "Ongeldig e-mailadres of wachtwoord",
+    "account_locked": "Account tijdelijk geblokkeerd. Probeer het later opnieuw.",
+    "email_exists": "Er bestaat al een account met dit e-mailadres"
+  },
+  "api": {
+    "not_found": "Resource niet gevonden",
+    "forbidden": "Toegang verboden",
+    "rate_limit": "Te veel verzoeken. Vertraag alstublieft.",
+    "bad_request": "Ongeldig verzoek. Controleer je invoer.",
+    "internal_error": "Interne serverfout. Ons team is op de hoogte gesteld."
+  },
+  "upload": {
+    "too_large": "Bestand is te groot. Maximale grootte is {{max}}MB.",
+    "invalid_type": "Ongeldig bestandstype. Toegestaan: {{types}}",
+    "upload_failed": "Upload mislukt. Probeer het opnieuw."
+  },
+  "generic": {
+    "something_wrong": "Er is iets misgegaan. Probeer het opnieuw.",
+    "try_again": "Probeer het opnieuw",
+    "contact_support": "Als het probleem aanhoudt, neem contact op met support"
+  },
+  "actions": {
+    "retry": "Opnieuw Proberen",
+    "go_back": "Ga Terug",
+    "refresh": "Pagina Verversen",
+    "contact": "Contact Opnemen met Support"
+  }
+}

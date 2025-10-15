@@ -1,0 +1,43 @@
+# Task ID: 4
+# Title: Create Bezier Connection Beams (ConnectionBeam)
+# Status: pending
+# Dependencies: 1, 2, 3
+# Priority: high
+# Description: Implement animated Bezier curve connections with energy beam effects, side sparks, and interactive states between the core and satellite nodes.
+# Details:
+Develop ConnectionBeam.tsx using SVG for Bezier paths and Canvas for side sparks. Calculate cubic Bezier control points dynamically based on node positions. Render multi-stop gradients along the path and apply drop-shadow for glow. Animate stroke-dashoffset for flow effect (GSAP or CSS transitions). Render side sparks as Canvas overlays, spawning and animating per PRD. Implement pulsing intensity and interaction states (idle, hover, click) with GSAP. Optimize rendering by batching SVG updates and minimizing reflows. Expose props for dynamic updates from parent components.
+
+# Test Strategy:
+Render beams between core and each node. Validate gradient, flow, and spark effects visually. Test interaction states by simulating hover/click on nodes. Profile performance with all beams active. Confirm accessibility with ARIA roles and keyboard navigation.
+
+# Subtasks:
+## 1. Calculate Dynamic Cubic Bezier Control Points [pending]
+### Dependencies: None
+### Description: Implement logic to dynamically calculate cubic Bezier control points based on the positions of the core and satellite nodes.
+### Details:
+Use node coordinates to compute start, end, and two control points for each connection. Ensure calculations update in real-time as nodes move or interact.
+
+## 2. Render Animated Bezier Path with Energy Beam Effects [pending]
+### Dependencies: 4.1
+### Description: Create an SVG path for the Bezier curve and apply multi-stop gradients, drop-shadow glow, and animated stroke-dashoffset for flow effects.
+### Details:
+Use SVG to render the Bezier path. Apply a multi-stop gradient along the path and a drop-shadow filter for glow. Animate stroke-dashoffset using GSAP or CSS transitions to simulate energy flow.
+
+## 3. Implement Side Sparks Using Canvas Overlay [pending]
+### Dependencies: 4.2
+### Description: Render side sparks as animated Canvas overlays along the Bezier path, spawning and animating per PRD specifications.
+### Details:
+Overlay a Canvas on the SVG path. Spawn sparks at randomized intervals and animate their movement and fading along the curve. Optimize for performance by batching spark updates.
+
+## 4. Integrate Interactive States and Pulsing Intensity [pending]
+### Dependencies: 4.2, 4.3
+### Description: Add interactive states (idle, hover, click) and pulsing intensity effects to the beam and sparks, using GSAP for transitions.
+### Details:
+Implement state management for idle, hover, and click. Animate beam intensity and spark behavior based on interaction. Use GSAP to smoothly transition between states and pulse effects.
+
+## 5. Optimize Rendering and Expose Dynamic Props [pending]
+### Dependencies: 4.1, 4.2, 4.3, 4.4
+### Description: Batch SVG and Canvas updates to minimize reflows, and expose props for dynamic updates from parent components.
+### Details:
+Implement batching for SVG and Canvas rendering to reduce performance overhead. Expose props for node positions, interaction states, and animation parameters to allow dynamic updates.
+

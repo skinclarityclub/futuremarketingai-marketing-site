@@ -1,0 +1,201 @@
+{
+  "wizard": {
+    "steps": {
+      "upload": {
+        "title": "Uploaden",
+        "description": "Kies je afbeelding"
+      },
+      "enhance": {
+        "title": "Verbeteren",
+        "description": "AI verbeteringen"
+      },
+      "template": {
+        "title": "Template",
+        "description": "Selecteer video stijl"
+      },
+      "presenter": {
+        "title": "Presentator",
+        "description": "Voeg spreker toe"
+      },
+      "finalize": {
+        "title": "Afronden",
+        "description": "Exporteren & delen"
+      }
+    },
+    "navigation": {
+      "previous": "Vorige",
+      "next": "Volgende",
+      "finish": "Voltooien",
+      "restart": "Opnieuw Beginnen"
+    },
+    "demo": {
+      "button": "Start Demo",
+      "running": "Demo Actief..."
+    }
+  },
+  "upload": {
+    "header": {
+      "title": "Upload Je Afbeelding",
+      "subtitle": "Begin met het uploaden van een productfoto of selecteer een voorbeeldafbeelding"
+    },
+    "dropzone": {
+      "dragging": "Laat hier los!",
+      "idle": "Sleep & zet je afbeelding neer",
+      "or": "of",
+      "browse": "blader door bestanden",
+      "formats": "Ondersteunt JPG, PNG, WebP • Max 10MB"
+    },
+    "errors": {
+      "invalid_type": "Upload een geldig afbeeldingsbestand (JPG, PNG of WebP)",
+      "file_too_large": "Afbeeldingsgrootte moet kleiner zijn dan 10MB"
+    },
+    "preview": {
+      "uploaded_badge": "Geüpload"
+    },
+    "samples": {
+      "divider": "OF KIES EEN VOORBEELD"
+    }
+  },
+  "enhance": {
+    "header": {
+      "title": "AI Verbeter Studio",
+      "subtitle": "Pas AI-aangedreven verbeteringen toe om je afbeelding te perfectioneren",
+      "enhancements_applied": "{{count}} Verbetering Toegepast",
+      "enhancements_applied_plural": "{{count}} Verbeteringen Toegepast"
+    },
+    "comparison": {
+      "before": "Voor",
+      "after": "Na"
+    },
+    "processing": {
+      "title": "Verbetering Verwerken...",
+      "time_tooltip": "Verwerkingstijd: ~{{seconds}}s"
+    },
+    "enhancements": {
+      "bg_remove": {
+        "name": "Achtergrond Verwijderen",
+        "description": "AI-aangedreven achtergrondverwijdering voor schone productfoto's"
+      },
+      "upscale": {
+        "name": "AI Opschalen",
+        "description": "Verhoog resolutie tot 4K met neurale netwerken"
+      },
+      "color_correct": {
+        "name": "Kleurcorrectie",
+        "description": "Auto-aanpassen van kleuren, helderheid en contrast"
+      },
+      "smart_crop": {
+        "name": "Slim Bijsnijden",
+        "description": "Intelligent bijsnijden om te focussen op het hoofdonderwerp"
+      }
+    },
+    "status": {
+      "applied": "Toegepast"
+    },
+    "tip": {
+      "prefix": "Pro Tip:",
+      "text": "Pas meerdere verbeteringen toe voor het beste resultaat. Klik op een toegepaste verbetering om deze te verwijderen."
+    }
+  },
+  "template": {
+    "header": {
+      "title": "Kies Video Template",
+      "subtitle": "Selecteer een stijl die past bij je merk en boodschap",
+      "selected": "{{name}} Geselecteerd"
+    },
+    "filters": {
+      "label": "Filters:",
+      "style_label": "Stijl",
+      "usecase_label": "Gebruiksdoel",
+      "results": "{{count}} Template",
+      "results_plural": "{{count}} Templates"
+    },
+    "styles": {
+      "all": "Alle",
+      "dynamic": "Dynamisch",
+      "minimal": "Minimaal",
+      "elegant": "Elegant",
+      "bold": "Gedurfd",
+      "playful": "Speels"
+    },
+    "usecases": {
+      "all": "Alle",
+      "product": "Product",
+      "announcement": "Aankondiging",
+      "testimonial": "Testimonial",
+      "tutorial": "Tutorial"
+    },
+    "no_results": "Geen templates komen overeen met je filters. Pas je selectie aan.",
+    "preview": {
+      "perfect_for": "Perfect voor {{useCase}} content met een {{style}} stijl"
+    }
+  },
+  "presenter": {
+    "header": {
+      "title": "Voeg Virtuele Presentator Toe",
+      "subtitle": "Kies een AI-woordvoerder om je advertentie te presenteren",
+      "selected": "{{presenter}} met {{voice}} stem"
+    },
+    "sections": {
+      "select_presenter": "Selecteer Presentator",
+      "choose_voice": "Kies Stem",
+      "write_script": "Schrijf Script",
+      "preview": "Voorbeeld"
+    },
+    "script": {
+      "placeholder": "Voer hier je advertentiescript in... Houd het beknopt en boeiend!",
+      "estimated_duration": "~{{seconds}}s",
+      "tip_prefix": "Pro Tip:",
+      "tip_text": "Houd je script onder de 30 seconden voor maximale betrokkenheid. Begin met een hook!"
+    },
+    "preview_frame": {
+      "content_placeholder": "Je advertentie-inhoud verschijnt hier",
+      "drag_indicator": "Sleep om te verplaatsen",
+      "position_label": "{{presenter}} in positie",
+      "no_presenter": "Selecteer een presentator om voorbeeld te zien"
+    },
+    "positions": {
+      "title": "Snelle Posities",
+      "bottom_left": "Linksonder",
+      "bottom_center": "Middenonder",
+      "bottom_right": "Rechtsonder"
+    }
+  },
+  "finalize": {
+    "header": {
+      "title": "Je Advertentie is Klaar! 🎉",
+      "subtitle": "Bekijk en exporteer je AI-gegenereerde advertentie"
+    },
+    "generation": {
+      "title": "Je Advertentie Genereren...",
+      "subtitle": "Onze AI creëert magie ✨",
+      "progress_label": "{{percent}}%"
+    },
+    "preview": {
+      "title": "Definitief Advertentie Voorbeeld",
+      "replay": "Opnieuw Afspelen",
+      "live_indicator": "LIVE"
+    },
+    "summary": {
+      "title": "Advertentie Samenvatting",
+      "template": "Template:",
+      "presenter": "Presentator:",
+      "script_length": "Script Lengte:",
+      "duration": "Duur:",
+      "chars_suffix": "karakters",
+      "seconds_suffix": "~{{seconds}}s"
+    },
+    "export": {
+      "title": "Export Opties",
+      "success_badge": "Geëxporteerd!",
+      "share_button": "Advertentie Delen",
+      "share_copy_link": "Link Kopiëren",
+      "share_email": "E-mail",
+      "create_new": "Nieuwe Advertentie Maken"
+    },
+    "success": {
+      "title": "Export Succesvol! 🎉",
+      "subtitle": "Je advertentie is klaar voor lancering!"
+    }
+  }
+}

@@ -1,0 +1,497 @@
+---
+description: Performance optimization best practices voor snelle en responsive web applicaties
+globs: **/*.{js,jsx,ts,tsx,css,scss}
+alwaysApply: true
+---
+
+## Core Web Vitals
+
+- **Focus op deze metrics:**
+  - **LCP (Largest Contentful Paint):** < 2.5s - Wanneer belangrijkste content laadt
+  - **FID (First Input Delay):** < 100ms - Tijd tot eerste interactie
+  - **CLS (Cumulative Layout Shift):** < 0.1 - Visuele stabiliteit
+
+## React Performance
+
+- **Memo & Callbacks:**
+  ```typescript
+  // ✅ DO: Memoize expensive components
+  const ExpensiveComponent = React.memo(({ data }) => {
+    return <div>{/* Complex rendering */}</div>;
+  });
+  
+  // ✅ DO: useMemo voor dure berekeningen
+  const sortedData = useMemo(() => {
+    return data.sort((a, b) => a.value - b.value);
+  }, [data]);
+  
+  // ✅ DO: useCallback voor stabiele functie referenties
+  const handleClick = useCallback(() => {
+    doSomething(value);
+  }, [value]);
+  
+  // ❌ DON'T: Nieuwe functies in render
+  <Button onClick={() => doSomething(value)} /> // Re-creates elke render
+  ```
+
+- **Code Splitting:**
+  ```typescript
+  // ✅ DO: Route-based code splitting
+  const Dashboard = lazy(() => import('./pages/Dashboard'));
+  const Profile = lazy(() => import('./pages/Profile'));
+  
+  function App() {
+    return (
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Suspense>
+    );
+  }
+  
+  // ✅ DO: Component-level splitting voor grote componenten
+  const HeavyChart = lazy(() => import('./components/HeavyChart'));
+  
+  function Analytics() {
+    const [showChart, setShowChart] = useState(false);
+    
+    return (
+      <div>
+        <button onClick={() => setShowChart(true)}>Show Chart</button>
+        {showChart && (
+          <Suspense fallback={<Spinner />}>
+            <HeavyChart />
+          </Suspense>
+        )}
+      </div>
+    );
+  }
+  ```
+
+- **Virtualization voor lange lijsten:**
+  ```typescript
+  // ✅ DO: Virtualize lange lijsten
+  import { FixedSizeList } from 'react-window';
+  
+  function LongList({ items }) {
+    return (
+      <FixedSizeList
+        height={600}
+        itemCount={items.length}
+        itemSize={50}
+        width="100%"
+      >
+        {({ index, style }) => (
+          <div style={style}>
+            {items[index].name}
+          </div>
+        )}
+      </FixedSizeList>
+    );
+  }
+  
+  // ❌ DON'T: Render 1000+ items zonder virtualization
+  {items.map(item => <Item key={item.id} {...item} />)} // Slecht voor performance
+  ```
+
+## Bundle Optimization
+
+- **Tree Shaking:**
+  ```typescript
+  // ✅ DO: Named imports voor tree shaking
+  import { debounce, throttle } from 'lodash-es';
+  
+  // ❌ DON'T: Default import bundelt alles
+  import _ from 'lodash'; // Hele library!
+  
+  // ✅ DO: Gebruik modular imports
+  import debounce from 'lodash-es/debounce';
+  ```
+
+- **Dynamic Imports:**
+  ```typescript
+  // ✅ DO: Load alleen wat nodig is
+  async function handleExport() {
+    const { exportToExcel } = await import('./export-utils');
+    exportToExcel(data);
+  }
+  ```
+
+- **Bundle Analysis:**
+  ```bash
+  # Analyseer bundle size
+  npm run build -- --analyze
+  
+  # Of gebruik webpack-bundle-analyzer
+  npx webpack-bundle-analyzer build/stats.json
+  ```
+
+## Image Optimization
+
+- **Moderne Formats & Sizes:**
+  ```html
+  <!-- ✅ DO: Responsive images met srcset -->
+  <img
+    src="image-800.webp"
+    srcset="
+      image-400.webp 400w,
+      image-800.webp 800w,
+      image-1200.webp 1200w
+    "
+    sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+    alt="Description"
+    loading="lazy"
+    width="800"
+    height="600"
+  />
+  
+  <!-- ✅ DO: Picture element voor art direction -->
+  <picture>
+    <source media="(max-width: 600px)" srcset="mobile.webp" />
+    <source media="(max-width: 1200px)" srcset="tablet.webp" />
+    <img src="desktop.webp" alt="Description" loading="lazy" />
+  </picture>
+  ```
+
+- **Next.js Image Component:**
+  ```typescript
+  // ✅ DO: Gebruik Next.js Image voor automatische optimization
+  import Image from 'next/image';
+  
+  <Image
+    src="/hero.jpg"
+    alt="Hero image"
+    width={1200}
+    height={600}
+    priority // Voor above-fold images
+  />
+  
+  <Image
+    src="/product.jpg"
+    alt="Product"
+    width={400}
+    height={300}
+    loading="lazy" // Voor below-fold images
+  />
+  ```
+
+## CSS Performance
+
+- **Critical CSS:**
+  ```html
+  <!-- ✅ DO: Inline critical CSS -->
+  <style>
+    /* Above-fold styles */
+    .header { background: #fff; }
+    .hero { min-height: 100vh; }
+  </style>
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
+  ```
+
+- **CSS Containment:**
+  ```css
+  /* ✅ DO: Gebruik containment voor geïsoleerde componenten */
+  .card {
+    contain: layout style paint;
+  }
+  
+  /* Voor complexe componenten */
+  .complex-widget {
+    contain: strict; /* layout + style + paint + size */
+  }
+  ```
+
+- **Avoid Layout Thrashing:**
+  ```typescript
+  // ❌ DON'T: Mixed reads en writes (layout thrashing)
+  elements.forEach(el => {
+    const height = el.offsetHeight; // Read
+    el.style.height = height + 10 + 'px'; // Write
+  });
+  
+  // ✅ DO: Batch reads en writes
+  const heights = elements.map(el => el.offsetHeight); // All reads
+  elements.forEach((el, i) => {
+    el.style.height = heights[i] + 10 + 'px'; // All writes
+  });
+  ```
+
+## Network Optimization
+
+- **Resource Hints:**
+  ```html
+  <!-- ✅ DO: Preconnect to critical origins -->
+  <link rel="preconnect" href="https://api.example.com">
+  <link rel="dns-prefetch" href="https://analytics.example.com">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/critical.css" as="style">
+  
+  <!-- Prefetch volgende pagina resources -->
+  <link rel="prefetch" href="/dashboard.js">
+  ```
+
+- **Caching Strategies:**
+  ```typescript
+  // ✅ DO: Cache API responses
+  const cache = new Map();
+  
+  async function fetchWithCache(url: string) {
+    if (cache.has(url)) {
+      return cache.get(url);
+    }
+    
+    const data = await fetch(url).then(r => r.json());
+    cache.set(url, data);
+    return data;
+  }
+  
+  // ✅ DO: Use SWR/React Query voor intelligent caching
+  import { useQuery } from '@tanstack/react-query';
+  
+  function UserProfile({ userId }) {
+    const { data, isLoading } = useQuery({
+      queryKey: ['user', userId],
+      queryFn: () => fetchUser(userId),
+      staleTime: 5 * 60 * 1000, // 5 minuten
+      cacheTime: 10 * 60 * 1000 // 10 minuten
+    });
+  }
+  ```
+
+- **Compression:**
+  ```javascript
+  // ✅ DO: Enable compression (in server config)
+  // Express
+  const compression = require('compression');
+  app.use(compression());
+  
+  // Next.js (automatically enabled)
+  // Vite (in vite.config.js)
+  export default {
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true, // Remove console.logs in production
+        }
+      }
+    }
+  }
+  ```
+
+## JavaScript Performance
+
+- **Debounce & Throttle:**
+  ```typescript
+  // ✅ DO: Debounce search input
+  import { debounce } from 'lodash-es';
+  
+  const handleSearch = debounce((query: string) => {
+    fetchResults(query);
+  }, 300);
+  
+  <input onChange={(e) => handleSearch(e.target.value)} />
+  
+  // ✅ DO: Throttle scroll handlers
+  import { throttle } from 'lodash-es';
+  
+  const handleScroll = throttle(() => {
+    updateScrollPosition();
+  }, 100);
+  
+  window.addEventListener('scroll', handleScroll);
+  ```
+
+- **Web Workers voor zware berekeningen:**
+  ```typescript
+  // ✅ DO: Offload intensive tasks to Web Worker
+  // worker.ts
+  self.addEventListener('message', (e) => {
+    const result = heavyCalculation(e.data);
+    self.postMessage(result);
+  });
+  
+  // main.ts
+  const worker = new Worker(new URL('./worker.ts', import.meta.url));
+  worker.postMessage(data);
+  worker.addEventListener('message', (e) => {
+    console.log('Result:', e.data);
+  });
+  ```
+
+- **Avoid Memory Leaks:**
+  ```typescript
+  // ✅ DO: Cleanup event listeners en timers
+  useEffect(() => {
+    const handleResize = () => updateSize();
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup!
+    };
+  }, []);
+  
+  useEffect(() => {
+    const timer = setInterval(() => updateData(), 1000);
+    
+    return () => {
+      clearInterval(timer); // Cleanup!
+    };
+  }, []);
+  
+  // ❌ DON'T: Forget cleanup
+  useEffect(() => {
+    window.addEventListener('resize', handleResize); // Memory leak!
+  }, []);
+  ```
+
+## Database & API Performance
+
+- **Pagination:**
+  ```typescript
+  // ✅ DO: Implement cursor-based pagination
+  async function getUsers(cursor?: string, limit = 20) {
+    return prisma.user.findMany({
+      take: limit,
+      skip: cursor ? 1 : 0,
+      cursor: cursor ? { id: cursor } : undefined,
+      orderBy: { createdAt: 'desc' }
+    });
+  }
+  ```
+
+- **N+1 Query Prevention:**
+  ```typescript
+  // ❌ DON'T: N+1 queries
+  const users = await prisma.user.findMany();
+  for (const user of users) {
+    user.posts = await prisma.post.findMany({ where: { userId: user.id } });
+  }
+  
+  // ✅ DO: Eager loading met include
+  const users = await prisma.user.findMany({
+    include: {
+      posts: true
+    }
+  });
+  
+  // ✅ DO: Select alleen benodigde velden
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true
+    }
+  });
+  ```
+
+- **Query Optimization:**
+  ```sql
+  -- ✅ DO: Index frequently queried columns
+  CREATE INDEX idx_users_email ON users(email);
+  CREATE INDEX idx_posts_user_id ON posts(user_id);
+  
+  -- ✅ DO: Composite indexes voor multi-column queries
+  CREATE INDEX idx_posts_user_status ON posts(user_id, status);
+  ```
+
+## Monitoring & Profiling
+
+- **Performance Monitoring:**
+  ```typescript
+  // ✅ DO: Measure performance
+  import { reportWebVitals } from 'web-vitals';
+  
+  reportWebVitals((metric) => {
+    console.log(metric);
+    // Send to analytics
+    analytics.send({
+      name: metric.name,
+      value: metric.value,
+      id: metric.id
+    });
+  });
+  ```
+
+- **React DevTools Profiler:**
+  ```typescript
+  // ✅ DO: Wrap met Profiler voor development
+  <Profiler id="Dashboard" onRender={onRenderCallback}>
+    <Dashboard />
+  </Profiler>
+  
+  function onRenderCallback(
+    id,
+    phase,
+    actualDuration,
+    baseDuration,
+    startTime,
+    commitTime
+  ) {
+    console.log(`${id} (${phase}) took ${actualDuration}ms`);
+  }
+  ```
+
+## Performance Budget
+
+- **Target Metrics:**
+  ```json
+  {
+    "budgets": [
+      {
+        "resourceSizes": [
+          { "resourceType": "script", "budget": 300 },
+          { "resourceType": "style", "budget": 50 },
+          { "resourceType": "image", "budget": 500 },
+          { "resourceType": "font", "budget": 100 }
+        ],
+        "resourceCounts": [
+          { "resourceType": "script", "budget": 10 },
+          { "resourceType": "stylesheet", "budget": 5 }
+        ]
+      }
+    ]
+  }
+  ```
+
+## Lighthouse CI
+
+```yaml
+# .github/workflows/lighthouse.yml
+name: Lighthouse CI
+on: [push]
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm ci
+      - run: npm run build
+      - run: npm install -g @lhci/cli
+      - run: lhci autorun
+```
+
+## Performance Checklist
+
+- [ ] Code splitting geïmplementeerd voor routes
+- [ ] Images geoptimaliseerd (WebP, lazy loading, responsive)
+- [ ] Bundle size < 300KB (gzipped)
+- [ ] Time to Interactive < 3.5s
+- [ ] Largest Contentful Paint < 2.5s
+- [ ] First Input Delay < 100ms
+- [ ] Cumulative Layout Shift < 0.1
+- [ ] Lighthouse score > 90 (Performance)
+- [ ] Critical CSS inlined
+- [ ] Fonts preloaded
+- [ ] API responses < 1s
+- [ ] Database queries optimized met indexes
+- [ ] Caching strategy geïmplementeerd
+- [ ] No memory leaks (checked met DevTools)

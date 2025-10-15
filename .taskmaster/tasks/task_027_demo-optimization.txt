@@ -1,0 +1,43 @@
+# Task ID: 27
+# Title: Replace Hand-Drawn SVGs with Authentic Company Logos in TechStackBar
+# Status: done
+# Dependencies: 19
+# Priority: medium
+# Description: Update the TechStackBar component to use official, high-quality logos for OpenAI (GPT-4), Anthropic (Claude), Google (Gemini), and Perplexity AI, ensuring brand accuracy and compliance.
+# Details:
+1. **Logo Sourcing:**
+   - Download official SVG or PNG logo files from each company's brand or media page, prioritizing SVG for scalability and crispness. For OpenAI, use the official SVG from Wikimedia Commons or OpenAI's brand page[1][8]. For Anthropic, Google, and Perplexity AI, source logos from their respective brand guidelines or reputable logo repositories (e.g., Simple Icons, Worldvectorlogo, Brandfetch).
+   - Verify each logo's licensing and trademark usage rights. Ensure compliance with brand guidelines regarding color, clear space, and minimum size. Document sources and usage permissions for each logo.
+   - If official SVGs are unavailable, use Simple Icons or similar libraries, but confirm the icons match official branding and update colors as needed.
+2. **Asset Management:**
+   - Store all logo files in `public/logos/` with clear, consistent naming (e.g., `openai.svg`, `anthropic.svg`, `google-gemini.svg`, `perplexity.svg`).
+   - Optimize SVGs for web performance: remove unnecessary metadata, compress files, and ensure accessibility (e.g., `aria-label`, `title` attributes).
+3. **Component Update:**
+   - Refactor `src/components/common/TechStackBar.tsx` to import and render the new logo assets. Replace hand-drawn SVGs with `<img>` or inline SVGs, ensuring proper alt text and responsive sizing.
+   - Apply brand colors and styling per official guidelines. Use CSS or inline styles to maintain visual consistency and accessibility.
+   - Test logos on light and dark backgrounds for contrast and legibility.
+4. **Performance & Accessibility:**
+   - Lazy-load logo assets if necessary to optimize initial page load.
+   - Ensure all logos are accessible (alt text, ARIA roles) and responsive across devices.
+   - Document logo sources and licensing in the project README or a dedicated brand-assets file.
+
+**Best Practices:**
+- Always use the most up-to-date official logo files.
+- Respect trademark and brand usage guidelines.
+- Prefer SVG for scalability and performance.
+- Optimize for accessibility and web performance.
+
+# Test Strategy:
+1. **Visual Regression Testing:**
+   - Use Storybook or Chromatic to verify TechStackBar renders all logos correctly on desktop and mobile.
+   - Compare rendered logos to official brand guidelines for color, size, and clarity.
+2. **Accessibility Testing:**
+   - Use axe or Lighthouse to check for alt text, ARIA roles, and contrast compliance.
+   - Manually test keyboard navigation and screen reader compatibility.
+3. **Performance Testing:**
+   - Measure logo asset load times and impact on page performance using WebPageTest or Lighthouse.
+   - Confirm SVGs are optimized and do not bloat bundle size.
+4. **Licensing Verification:**
+   - Review documentation to ensure all logo usage complies with licensing and trademark requirements.
+5. **Cross-Browser/Device Testing:**
+   - Manually verify logo rendering on major browsers (Chrome, Firefox, Safari, Edge) and devices (mobile, tablet, desktop).

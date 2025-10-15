@@ -1,0 +1,570 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-10-08",
+  "categories": {
+    "product_features": {
+      "name": "Product Features",
+      "questions": [
+        {
+          "id": "pf_001",
+          "question": "Wat is de AI Ad Builder?",
+          "keywords": ["ad builder", "advertentie", "ads", "creatives"],
+          "answer": "🎨 **De AI Ad Builder Studio:**\n\n**Wat het doet:**\n• Upload productfoto of concept\n• AI genereert professionele ad variants\n• Geoptimaliseerd voor elk kanaal (Meta, Google, TikTok, LinkedIn)\n\n**Resultaat:**\n💰 Bespaar 15-20 uur/week aan creative productie",
+          "relatedModules": ["ad-builder"],
+          "cta": {
+            "text": "Bekijk de Ad Builder Demo",
+            "action": "navigate_module",
+            "value": "ad-builder"
+          }
+        },
+        {
+          "id": "pf_002",
+          "question": "Hoe werkt de Campaign Orchestrator?",
+          "keywords": ["campaign", "orchestrator", "multi-channel", "lanceren"],
+          "answer": "🎯 **Campaign Orchestrator:**\n\n**Wat het doet:**\n• Plan één master campaign\n• AI coördineert automatisch over alle kanalen\n• Zorgt voor timing & messaging consistency\n• Platform-specifieke optimalisaties\n\n**Resultaat:**\n⚡ Lanceer campaigns 5x sneller",
+          "relatedModules": ["campaign-orchestrator"],
+          "cta": {
+            "text": "Zie Campaign Orchestrator",
+            "action": "navigate_module",
+            "value": "campaign-orchestrator"
+          }
+        },
+        {
+          "id": "pf_003",
+          "question": "Wat doet het Analytics Hub?",
+          "keywords": ["analytics", "dashboard", "metrics", "rapportage", "data"],
+          "answer": "📊 **Analytics Hub:**\n\n**Alles in één dashboard:**\n• Meta Ads performance\n• Google Ads metrics\n• TikTok analytics\n• LinkedIn campaign data\n\n**Extra features:**\n• Geautomatiseerde insights\n• Anomalie detectie\n• Real-time updates\n\n✨ Stop met switchen tussen 5 platforms!",
+          "relatedModules": ["analytics-hub"],
+          "cta": {
+            "text": "Verken Analytics Hub",
+            "action": "navigate_module",
+            "value": "analytics-hub"
+          }
+        },
+        {
+          "id": "pf_004",
+          "question": "Hoe werkt de Content Pipeline?",
+          "keywords": ["content", "pipeline", "workflow", "social media", "blog"],
+          "answer": "📝 **Content Pipeline:**\n\n**Workflow van idee tot publicatie:**\n\n1. **Plan** topics & content calendar\n2. **Generate** content met AI\n   • Blog posts\n   • Social media updates\n   • Email campaigns\n3. **Review** met je team\n4. **Publish** automatisch op schedule\n\n✅ Perfect voor consistente content output",
+          "relatedModules": ["content-pipeline"],
+          "cta": {
+            "text": "Zie Content Pipeline",
+            "action": "navigate_module",
+            "value": "content-pipeline"
+          }
+        },
+        {
+          "id": "pf_005",
+          "question": "Kan ik meerdere accounts beheren?",
+          "keywords": ["multi-account", "meerdere", "klanten", "agency", "accounts"],
+          "answer": "✅ **Multi-Account Manager:**\n\n**Perfect voor:**\n• Agencies met meerdere klanten\n• In-house teams met meerdere brands\n\n**Features:**\n• Switch met 1 klik tussen accounts\n• Separate workspaces per account\n• Team permissions management\n\n📊 **Typisch gebruik:** 15+ client accounts",
+          "relatedModules": ["multi-account-manager"],
+          "cta": {
+            "text": "Bekijk Multi-Account Manager",
+            "action": "navigate_module",
+            "value": "multi-account-manager"
+          }
+        }
+      ]
+    },
+    "pricing": {
+      "name": "Pricing & Plans",
+      "questions": [
+        {
+          "id": "pr_001",
+          "question": "Hoeveel kost FutureMarketingAI?",
+          "keywords": ["prijs", "kosten", "pricing", "betalen", "tarief"],
+          "answer": "💰 **Custom pricing op basis van:**\n• Team size\n• Channel count\n• Benodigde features\n\n**Typische range:** €2.000 - €10.000/maand\n\n**Vergelijk met alternatieven:**\n• Agency: €5.000-€15.000/maand\n• Extra hire: €4.000-€6.000/maand per persoon\n\n📞 **In je demo call** bespreken we een plan specifiek voor jouw situatie",
+          "cta": {
+            "text": "Plan Pricing Call",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "pr_002",
+          "question": "Is er een gratis trial?",
+          "keywords": ["gratis", "trial", "proberen", "free", "proefperiode"],
+          "answer": "🎯 **Trial & Demo:**\n\n**Geen self-service trial**, maar wel:\n\n• **Persoonlijke demo**\n  Hands-on met het platform\n  \n• **Relevante features**\n  Toegespitst op jouw use case\n  \n• **Pilot periode**\n  Na demo te bespreken\n\n📅 **Voordeel:** Direct zien wat relevant is voor jou",
+          "cta": {
+            "text": "Boek Je Demo",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "pr_003",
+          "question": "Wat is de ROI van FutureMarketingAI?",
+          "keywords": ["roi", "return", "besparing", "investering", "terugverdienen"],
+          "answer": "📊 **Typische ROI voor klanten:**\n\n**Tijdsbesparing:**\n• 40-60% minder werk\n• 15-30 uur per week\n\n**Kostenbesparing:**\n• 25-50% op agency fees\n• Voor team van 10 personen: €5.000-€8.000/maand\n\n💡 **Tip:** Gebruik onze ROI Calculator voor jouw specifieke situatie",
+          "relatedModules": ["roi-calculator"],
+          "cta": {
+            "text": "Bereken Je ROI",
+            "action": "navigate_module",
+            "value": "roi-calculator"
+          }
+        }
+      ]
+    },
+    "implementation": {
+      "name": "Implementation & Setup",
+      "questions": [
+        {
+          "id": "im_001",
+          "question": "Hoe lang duurt de implementatie?",
+          "keywords": ["implementatie", "setup", "onboarding", "starten", "tijd"],
+          "answer": "⏱️ **Implementatie timeline:**\n\n**Typisch 2-4 weken**\n\n**Week 1:** Setup & Integrations\n• Platform configuratie\n• Account koppelingen\n\n**Week 2:** Team Training\n• Live training sessions\n• Best practices workshop\n\n**Week 3-4:** First Campaigns Live\n• Test campaigns\n• Optimalisatie & fine-tuning\n\n👤 **Dedicated onboarding specialist** vanaf dag 1",
+          "cta": {
+            "text": "Bespreek Implementatie",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "im_002",
+          "question": "Welke integraties ondersteunen jullie?",
+          "keywords": ["integraties", "integratie", "connecties", "api", "platforms"],
+          "answer": "🔗 **Native integraties met:**\n\n**Advertising Platforms:**\n• Meta Ads (Facebook & Instagram)\n• Google Ads\n• TikTok Ads\n• LinkedIn Ads\n\n**Analytics & CRM:**\n• Google Analytics\n• HubSpot\n• Salesforce\n\n**Collaboration:**\n• Slack & 50+ andere platforms\n\n⚙️ **Custom API integraties** mogelijk voor enterprise",
+          "cta": {
+            "text": "Zie Alle Integraties",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "im_003",
+          "question": "Hebben jullie training en support?",
+          "keywords": ["training", "support", "help", "ondersteuning", "hulp"],
+          "answer": "✅ **Complete support & training:**\n\n**Onboarding (30 dagen):**\n• Dedicated onboarding specialist\n• 1-op-1 setup sessies\n\n**Training & Resources:**\n• Uitgebreide video trainingen\n• Complete documentation library\n• Maandelijkse webinars voor nieuwe features\n\n**Ongoing Support:**\n• Priority support via chat & email\n• Dedicated customer success manager (enterprise)\n\n📚 **Alles om succesvol te zijn**",
+          "cta": {
+            "text": "Meer Over Support",
+            "action": "schedule_demo"
+          }
+        }
+      ]
+    },
+    "use_cases": {
+      "name": "Use Cases by Industry",
+      "questions": [
+        {
+          "id": "uc_001",
+          "question": "Hoe helpt dit e-commerce bedrijven?",
+          "keywords": ["ecommerce", "webshop", "online retail", "e-commerce"],
+          "answer": "✅ **E-commerce bedrijven gebruiken ons voor:**\n\n• **Bulk Product Ad Generation**\n  Upload 100 producten → krijg 1000 ad variants\n\n• **Automated Seasonal Campaigns**\n  Black Friday, zomersale, etc. automatisch uitrollen\n\n• **Real-time Inventory Optimization**\n  Ads passen zich aan aan voorraad levels\n\n• **Cross-platform Remarketing**\n  Gecoördineerde remarketing over alle kanalen\n\n💰 **Typische besparing:** 20 uur/week op ad creation",
+          "cta": {
+            "text": "Bekijk E-commerce Case Study",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "uc_002",
+          "question": "Is dit geschikt voor SaaS bedrijven?",
+          "keywords": ["saas", "software", "b2b", "tech"],
+          "answer": "✅ **Perfect voor SaaS! Gebruik voor:**\n\n• **Product Launch Campaigns**\n  Coördineer launches over alle kanalen\n\n• **Funnel Content Automation**\n  Van awareness → demo booking\n\n• **ABM Campaigns**\n  Target enterprise prospects met personalized content\n\n• **Customer Retention**\n  Automated onboarding & engagement campaigns\n\n🎯 **Ideaal voor:** Lean marketing teams die snel willen schalen",
+          "cta": {
+            "text": "Bekijk SaaS Case Study",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "uc_003",
+          "question": "Werken jullie met marketing agencies?",
+          "keywords": ["agency", "bureau", "agencies", "klanten"],
+          "answer": "✅ **Speciaal voor agencies:**\n\n**Multi-Client Management:**\n• 15+ clients in één platform\n• Per-client workspaces\n\n**White-Label Options:**\n• Eigen branding op reports\n• Client portals met jouw logo\n\n**Team Features:**\n• Collaboration tools\n• Role-based permissions\n• Client reporting dashboards\n\n📈 **Impact:** 300% meer client capacity zonder extra hires",
+          "cta": {
+            "text": "Agency Partnership Info",
+            "action": "schedule_demo"
+          }
+        }
+      ]
+    },
+    "technical": {
+      "name": "Technical Questions",
+      "questions": [
+        {
+          "id": "te_000",
+          "question": "Hoe werkt Perplexity AI?",
+          "keywords": [
+            "perplexity",
+            "perplexity ai",
+            "ai search",
+            "research tool",
+            "perplexity werkt"
+          ],
+          "answer": "🔍 **Perplexity AI** is een geavanceerde AI-zoekmachine:\n\n**Wat het doet:**\n• Doorzoekt het web in real-time\n• Analyseert bronnen en genereert gestructureerde inzichten\n• Geeft antwoorden met bronvermelding\n\n**Perfect voor:**\n• Marktanalyse\n• Competitor research\n• Trend spotting\n• Content research\n\n💡 **In ons platform:** We gebruiken Perplexity voor de Research & Planning module om je actuele marktinzichten te geven",
+          "relatedModules": ["research-planning"],
+          "cta": {
+            "text": "Bekijk Research Module",
+            "action": "navigate_module",
+            "value": "research-planning"
+          }
+        },
+        {
+          "id": "te_001",
+          "question": "Hoe zit het met data security?",
+          "keywords": ["security", "beveiliging", "privacy", "data", "gdpr"],
+          "answer": "🔒 **Enterprise-grade security:**\n\n**Compliance:**\n• SOC 2 Type II compliant\n• GDPR compliant (EU data residency)\n\n**Data Protection:**\n• End-to-end encryptie\n• Regular security audits\n• SSO support (enterprise)\n\n**Privacy Guarantee:**\n✅ Je data blijft 100% privé\n✅ Nooit gebruikt voor AI training",
+          "cta": {
+            "text": "Security Details",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "te_002",
+          "question": "Welke AI models gebruiken jullie?",
+          "keywords": ["ai", "models", "technologie", "gpt", "claude"],
+          "answer": "🤖 **Best-in-class AI ensemble:**\n\n**Text Generation:**\n• GPT-4 voor copy writing\n• Claude voor complex reasoning\n\n**Creative Generation:**\n• DALL-E 3 voor images\n• Midjourney voor ad creatives\n\n**Marketing-Specific:**\n• Proprietary models voor specifieke taken\n\n🎯 **Smart:** Systeem kiest automatisch beste model per use case",
+          "cta": {
+            "text": "Technische Details",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "te_003",
+          "question": "Is dit een cloud of on-premise oplossing?",
+          "keywords": ["cloud", "hosting", "on-premise", "deployment"],
+          "answer": "☁️ **Cloud-native SaaS platform:**\n\n**Infrastructure:**\n• Enterprise-grade hosting (AWS/GCP)\n• 99.9% uptime SLA\n• Global CDN voor snelle performance\n\n**Enterprise Options:**\n• Dedicated instances (1000+ users)\n• Private cloud deployment mogelijk\n• Custom SLA's beschikbaar\n\n⚡ **Altijd up-to-date** met nieuwste features",
+          "cta": {
+            "text": "Infrastructure Details",
+            "action": "schedule_demo"
+          }
+        }
+      ]
+    },
+    "general": {
+      "name": "General Questions",
+      "questions": [
+        {
+          "id": "ge_001",
+          "question": "Voor wie is FutureMarketingAI bedoeld?",
+          "keywords": ["wie", "doelgroep", "geschikt", "target"],
+          "answer": "🎯 **Ideaal voor:**\n\n**Team Size:** 5-50 mensen\n**Channels:** 3+ marketing kanalen\n\n**Typische klanten:**\n\n• **E-commerce**\n  100+ producten, veel ad variants nodig\n\n• **SaaS Scale-ups**\n  Snel groeien zonder headcount explosie\n\n• **Marketing Agencies**\n  Meerdere klanten efficiënt beheren\n\n• **In-house Teams**\n  Schalen zonder extra hires\n\n✅ **Perfect match** als dit op jou past!",
+          "cta": {
+            "text": "Ben Ik Een Fit?",
+            "action": "navigate_module",
+            "value": "roi-calculator"
+          }
+        },
+        {
+          "id": "ge_002",
+          "question": "Hoe verschilt dit van andere tools?",
+          "keywords": ["verschil", "vergelijking", "vs", "competitors", "alternatieven"],
+          "answer": "⚡ **Belangrijkste verschillen:**\n\n**End-to-End Platform**\n• Andere tools: slechts 1 ding (bijv. alleen social scheduling)\n• Wij: Complete marketing workflow\n\n**Autonomous AI**\n• Andere tools: suggesties & assistentie\n• Wij: Volledige workflow automatisering\n\n**Multi-Channel Native**\n• Andere tools: add-on integraties\n• Wij: Gebouwd voor cross-platform vanaf dag 1\n\n**Built for Teams**\n• Andere tools: collaboration als afterthought\n• Wij: Team collaboration is core\n\n💪 **All-in-one** in plaats van 5 losse tools",
+          "cta": {
+            "text": "Zie Comparison",
+            "action": "schedule_demo"
+          }
+        },
+        {
+          "id": "ge_003",
+          "question": "Kan ik een demo krijgen?",
+          "keywords": ["demo", "demonstratie", "bekijken", "tonen"],
+          "answer": "✅ **Natuurlijk! Boek je persoonlijke demo:**\n\n**Wat je krijgt in 30 minuten:**\n\n• **Platform Tour**\n  Live demo toegespitst op jouw industry\n\n• **Q&A Sessie**\n  Al je vragen beantwoord\n\n• **Custom Fit Check**\n  Hoe past het bij jouw situatie?\n\n• **ROI Berekening**\n  Wat levert het jou op?\n\n🎯 **100% relevant** voor jouw use case\n\n📅 **Kies je tijdstip** - vandaag nog mogelijk!",
+          "cta": {
+            "text": "Boek Nu Je Demo",
+            "action": "schedule_demo"
+          }
+        }
+      ]
+    }
+  },
+  "fallback_responses": [
+    "Interessante vraag! Dit specifieke onderwerp bespreek ik graag in detail tijdens een demo call. Wil je een demo inplannen?",
+    "Goede vraag! Voor een volledig antwoord is het handig om even te bellen. Zal ik een demo voor je inplannen?",
+    "Dat is een uitgebreide vraag. Ik kan je doorverbinden met ons team voor een persoonlijk antwoord. Interesse in een demo call?",
+    "Hmm, daar wil ik graag dieper op ingaan tijdens een demo. Zullen we een gesprek plannen?"
+  ],
+  "escalation_message": "Voor dit onderwerp is het beste om direct met ons team te spreken. Zal ik een demo call voor je inplannen waar we dit in detail kunnen bespreken?",
+  "modules": {
+    "name": "Platform Modules",
+    "questions": [
+      {
+        "id": "mod_001",
+        "question": "Wat is Research & Planning?",
+        "keywords": [
+          "research",
+          "planning",
+          "research module",
+          "wat is research",
+          "research planning"
+        ],
+        "answer": "🧠 **Research & Planning - Het Brein van de Machine:**\n\n**Wat het doet:**\n• **Perplexity AI onderzoek** - Real-time trends en marktinzichten\n• **Hashtag strategie** - Trending topics per platform\n• **Concurrent analyse** - Wat werkt in jouw niche\n• **Contentkalender** - Wekelijkse thema's automatisch gepland\n\n**ROI:**\n• 95% trend nauwkeurigheid\n• 147 uur bespaard per maand\n• 12 contentthema's per maand\n\n💡 **Perfect voor:** Teams zonder dedicated researchers",
+        "relatedModules": ["research-planning"],
+        "cta": {
+          "text": "Verken Research & Planning",
+          "action": "navigate_module",
+          "value": "research-planning"
+        }
+      },
+      {
+        "id": "mod_002",
+        "question": "Wat is Content Pipeline?",
+        "keywords": [
+          "content pipeline",
+          "content creatie",
+          "pipeline",
+          "content maken",
+          "content generatie"
+        ],
+        "answer": "🏭 **Content Pipeline - De Productiefabriek:**\n\n**Multi-platform creatie:**\n• **Instagram** - Posts, carousels, reels, stories\n• **Facebook** - Diverse formaten\n• **TikTok** - Video content\n• **YouTube Shorts** - Korte video's\n• **LinkedIn** - Professionele posts\n• **Blogs** - SEO-geoptimaliseerde artikelen\n\n**ROI:**\n• 4x content output (160 posts/maand)\n• 94% goedkeuringsrate\n• €4.500/maand bespaard\n\n💡 **Perfect voor:** Teams die moeten schalen zonder extra hires",
+        "relatedModules": ["content-pipeline"],
+        "cta": {
+          "text": "Bekijk Content Pipeline",
+          "action": "navigate_module",
+          "value": "content-pipeline"
+        }
+      },
+      {
+        "id": "mod_003",
+        "question": "Welke Instagram formaten worden ondersteund?",
+        "keywords": [
+          "instagram",
+          "ig",
+          "instagram formaten",
+          "reels",
+          "stories",
+          "instagram content"
+        ],
+        "answer": "📸 **Instagram Content Formaten:**\n\n**Alle formaten:**\n• **Feed posts** - 1:1 square of 4:5 portrait\n• **Carousels** - Tot 10 slides\n• **Reels** - 9:16 vertical video (15-90 sec)\n• **Stories** - 9:16 vertical (24u visible)\n\n**Automatische optimalisatie:**\n• Juiste aspect ratio per formaat\n• Hashtag placement\n• Caption lengte optimalisatie\n• Best practices per type\n\n✨ **Output:** Alles platform-ready, direct te publiceren",
+        "relatedModules": ["content-pipeline"]
+      },
+      {
+        "id": "mod_004",
+        "question": "Wat is Analytics Lab?",
+        "keywords": ["analytics", "analytics lab", "data", "metrics", "analytics module"],
+        "answer": "📊 **Analytics Lab - Het Inlichtingencentrum:**\n\n**Real-time tracking:**\n• **Performance** - Alle platforms in één dashboard\n• **AI-powered insights** - Automatische analyse\n• **Pattern recognition** - Wat werkt en waarom\n• **Predictive analytics** - Voorspel performance\n\n**ROI:**\n• 327% performance verbetering\n• 2.8K inzichten gegenereerd\n• 97% voorspellingsnauwkeurigheid\n\n💡 **Perfect voor:** Teams die data-driven willen werken",
+        "relatedModules": ["analytics-lab"],
+        "cta": {
+          "text": "Bekijk Analytics Lab",
+          "action": "navigate_module",
+          "value": "analytics-lab"
+        }
+      },
+      {
+        "id": "mod_005",
+        "question": "Wat is Telegram Control Center?",
+        "keywords": [
+          "telegram",
+          "telegram control",
+          "mobiele controle",
+          "control center",
+          "telegram module"
+        ],
+        "answer": "📱 **Telegram Control Center - Mobiel Commandocentrum:**\n\n**Volledige controle:**\n• **Content goedkeuring** - Approve/reject vanaf telefoon\n• **Ad-hoc requests** - Vraag content aan via chat\n• **Workflow monitoring** - Status tracking\n• **System commands** - Volledige systeemcontrole\n\n**ROI:**\n• 85% tijd bespaard op coördinatie\n• 100% mobiele controle\n• 47s gemiddelde responstijd\n\n💡 **Perfect voor:** Drukke teams die mobiele flexibiliteit nodig hebben",
+        "relatedModules": ["telegram-control"],
+        "cta": {
+          "text": "Bekijk Telegram Control",
+          "action": "navigate_module",
+          "value": "telegram-control"
+        }
+      },
+      {
+        "id": "mod_006",
+        "question": "Wat is Publishing Layer?",
+        "keywords": ["publishing", "publiceren", "scheduling", "auto post", "publishing layer"],
+        "answer": "📤 **Publishing Layer - Automatische Distributie:**\n\n**Smart scheduling:**\n• **Optimale timing** - AI bepaalt beste momenten\n• **Multi-platform** - Gelijktijdig over alle kanalen\n• **Timezone optimization** - Per publiek\n• **Conflict management** - Geen dubbel planning\n\n**ROI:**\n• 360 uur bespaard/maand\n• 99.8% on-time levering\n• €1.800/maand minder overhead\n\n💡 **Perfect voor:** Teams die 24/7 consistentie nodig hebben",
+        "relatedModules": ["publishing-layer"],
+        "cta": {
+          "text": "Bekijk Publishing Layer",
+          "action": "navigate_module",
+          "value": "publishing-layer"
+        }
+      },
+      {
+        "id": "mod_007",
+        "question": "Hoe werkt de Ad Builder?",
+        "keywords": ["ad builder", "ads maken", "advertenties", "ad creatie", "ad generator"],
+        "answer": "🎬 **Ad Builder - Ad Creatie Engine:**\n\n**Het proces:**\n1. **Upload** - Productfoto of asset\n2. **AI analyse** - Computer vision analyseert\n3. **Variant generatie** - 3-5 platform varianten\n4. **Pre-testing** - Organisch testen\n5. **Budget allocatie** - Alleen winners krijgen budget\n\n**ROI:**\n• +320% ROI verbetering\n• €2.400/maand budget bespaard\n• 87% voorspellingsnauwkeurigheid\n\n💡 **Perfect voor:** Teams die €10K+/maand aan ads spenderen",
+        "relatedModules": ["ad-builder"],
+        "cta": {
+          "text": "Test Ad Builder",
+          "action": "navigate_module",
+          "value": "ad-builder"
+        }
+      },
+      {
+        "id": "mod_008",
+        "question": "Wat is Command Center?",
+        "keywords": [
+          "command center",
+          "dashboard",
+          "controle center",
+          "client dashboard",
+          "command module"
+        ],
+        "answer": "🎮 **Command Center - Client Dashboard:**\n\n**Centraal overzicht:**\n• **Campaign launcher** - Start campaigns met 1 klik\n• **Real-time data** - Alle platforms in één view\n• **Contentkalender** - Week/maand overzicht\n• **Research rapporten** - Wekelijkse inzichten\n• **Budget tracking** - Spend analyse\n\n**ROI:**\n• 100% transparantie\n• €1.600/maand tool besparing\n• 2.3x meer data-driven beslissingen\n\n💡 **Perfect voor:** Eén persoon controleert het werk van 10",
+        "relatedModules": ["command-center"],
+        "cta": {
+          "text": "Bekijk Command Center",
+          "action": "navigate_module",
+          "value": "command-center"
+        }
+      },
+      {
+        "id": "mod_009",
+        "question": "Hoe werkt hashtag strategie?",
+        "keywords": ["hashtag", "hashtags", "hashtag strategie", "trending hashtags"],
+        "answer": "#️⃣ **Intelligente Hashtag Strategie:**\n\n**Automatische ontdekking:**\n• **Trending** - Real-time populaire hashtags\n• **Niche-specific** - Relevant voor jouw sector\n• **Grootte mix** - Van 10K tot 1M+ posts\n• **Platform-optimized** - Beste per kanaal\n\n**Per platform:**\n• Instagram: 20-30 hashtags\n• TikTok: 5-7 trending\n• LinkedIn: 3-5 professionele\n\n💡 **Update:** Elke week verse hashtag sets",
+        "relatedModules": ["research-planning"]
+      },
+      {
+        "id": "mod_010",
+        "question": "Wat is concurrent analyse?",
+        "keywords": ["concurrent", "concurrentie", "competitor", "analyse"],
+        "answer": "🔍 **Concurrent Content Analyse:**\n\n**Wat we tracken:**\n• **Top performing content** van concurrenten\n• **Posting frequentie** en timing\n• **Engagement patterns** wat werkt\n• **Content gaps** waar jij kunt differentiëren\n\n**Differentiatiestrategie:**\n• Identificeer wat zij missen\n• Vind je unique angle\n• Better, not just more\n\n📊 **Resultaat:** Weet precies hoe je opvalt in jouw niche",
+        "relatedModules": ["research-planning"]
+      },
+      {
+        "id": "mod_011",
+        "question": "Hoe werkt de contentkalender?",
+        "keywords": ["contentkalender", "content planning", "kalender", "planning"],
+        "answer": "📅 **Automatische Contentkalender:**\n\n**Wekelijkse generatie:**\n1. **Thema selectie** - Overkoepelend wekelijks thema\n2. **Platform mapping** - Aangepast per kanaal\n3. **Product linking** - Jouw producten/diensten erbij\n4. **Timing optimalisatie** - Beste post momenten\n\n**Output:**\n• 12 thema's per maand\n• ~40 content briefs per week\n• Volledig klaar voor productie\n\n✅ **Voordeel:** Van strategie naar executie in één systeem",
+        "relatedModules": ["research-planning"]
+      },
+      {
+        "id": "mod_012",
+        "question": "Wat is Manager Workflow?",
+        "keywords": ["manager", "workflow", "manager workflow", "orchestratie", "workflow manager"],
+        "answer": "❤️ **Manager Workflow - Het Hart van de Machine:**\n\n**Centrale orchestratie:**\n• **Kalender ophalen** - Wekelijks van Research module\n• **A/B testing** - Automatische variant setup\n• **Workflow verdeling** - Tasks naar Content Pipeline\n• **Performance monitoring** - Real-time tracking\n\n**ROI:**\n• 275% ROI via testing\n• 98% workflow automatisering\n• 450 content items/maand\n\n💡 **Perfect voor:** Teams die meerdere kanalen beheren",
+        "relatedModules": ["manager-workflow"],
+        "cta": {
+          "text": "Bekijk Manager Workflow",
+          "action": "navigate_module",
+          "value": "manager-workflow"
+        }
+      },
+      {
+        "id": "mod_013",
+        "question": "Hoe werkt A/B testing?",
+        "keywords": ["ab testing", "a/b test", "testing", "variant testing"],
+        "answer": "🧪 **Automatische A/B Testing:**\n\n**Test opzet:**\n• **Variant A** - Eerste versie\n• **Variant B** - Alternatief (headline, visual, CTA)\n• **Split traffic** - 50/50 verdeling\n• **Performance tracking** - Real-time resultaten\n\n**Wat we testen:**\n• Headlines\n• Visuals\n• CTAs\n• Post timing\n• Hashtag sets\n\n📊 **Resultaat:** 275% ROI verbetering door data-driven keuzes",
+        "relatedModules": ["manager-workflow"]
+      },
+      {
+        "id": "mod_014",
+        "question": "Hoe werk ik met Telegram commando's?",
+        "keywords": ["telegram commando", "telegram commands", "commando's", "telegram control"],
+        "answer": "📱 **Telegram Commando Controle:**\n\n**Basis commando's:**\n• `/calendar` - Haal wekelijkse kalender op\n• `/approve [id]` - Keur content goed\n• `/reject [id]` - Wijs content af\n• `/create [brief]` - Ad-hoc content request\n• `/status` - Workflow overzicht\n\n**Advanced:**\n• `/ab_test [id]` - Start A/B test\n• `/publish [id]` - Force publish\n• `/pause [workflow]` - Pauzeer workflow\n\n🎮 **Controle:** Volledig systeem vanaf je telefoon",
+        "relatedModules": ["manager-workflow", "telegram-control"]
+      },
+      {
+        "id": "mod_015",
+        "question": "Hoe werkt de Telegram goedkeuring?",
+        "keywords": ["goedkeuring", "approve", "telegram approve", "content review"],
+        "answer": "✅ **Telegram Goedkeuringssysteem:**\n\n**Het proces:**\n1. **Content notificatie** - Ontvang preview in Telegram\n2. **Visual preview** - Zie exact hoe het eruit ziet\n3. **Quick actions** - Approve/Reject/Edit knoppen\n4. **Feedback** - Geef specifieke verbeter-input\n\n**AI leert:**\n• Van je goedkeuringspatronen\n• Wat je wel/niet mooi vindt\n• Jouw tone-of-voice preferenties\n\n📊 **Resultaat:** 94% goedkeuringsrate na 2 weken leren",
+        "relatedModules": ["content-pipeline", "telegram-control"]
+      },
+      {
+        "id": "mod_016",
+        "question": "Kan Content Pipeline blog artikelen maken?",
+        "keywords": ["blog", "artikelen", "blog posts", "seo content"],
+        "answer": "📝 **Blog Artikel Generatie:**\n\n**Wat het maakt:**\n• **Lange artikelen** - 800-2000 woorden\n• **SEO-geoptimaliseerd** - Keywords, meta, headers\n• **Structured data** - Schema markup\n• **Internal linking** - Naar andere content\n\n**Content types:**\n• How-to guides\n• List articles\n• Product reviews\n• Industry insights\n• Trend analyses\n\n🎯 **SEO:** Automatisch geoptimaliseerd voor Google rankings",
+        "relatedModules": ["content-pipeline"]
+      },
+      {
+        "id": "mod_017",
+        "question": "Welke metrics tracked Analytics Lab?",
+        "keywords": ["metrics", "kpis", "data points", "tracking"],
+        "answer": "📈 **Tracked Metrics:**\n\n**Engagement:**\n• Likes, comments, shares\n• Saves, sends\n• Video views, watch time\n\n**Reach & Growth:**\n• Impressions, reach\n• Follower groei\n• Profile visits\n\n**Conversion:**\n• Click-through rate\n• Website clicks\n• Lead generation\n\n**Performance:**\n• Beste post tijden\n• Top content types\n• Platform performance\n\n📊 **Output:** Alle data in één overzicht",
+        "relatedModules": ["analytics-lab"]
+      },
+      {
+        "id": "mod_018",
+        "question": "Hoe werkt AI-powered analyse?",
+        "keywords": ["ai analyse", "ai insights", "automatische analyse"],
+        "answer": "🤖 **AI-Powered Analyse:**\n\n**Machine learning:**\n1. **Pattern detection** - AI ziet trends in data\n2. **Anomaly alerts** - Waarschuwt bij afwijkingen\n3. **Performance prediction** - Voorspelt resultaten\n4. **Optimization tips** - Concrete aanbevelingen\n\n**Voorbeelden:**\n• \"Posts op dinsdag 14:00 presteren 3x beter\"\n• \"Carousel formaat heeft 2.4x meer engagement\"\n• \"Deze hashtag set converteert 35% beter\"\n\n✨ **Resultaat:** Van data naar actie in seconden",
+        "relatedModules": ["analytics-lab"]
+      },
+      {
+        "id": "mod_019",
+        "question": "Welke notificaties krijg ik via Telegram?",
+        "keywords": ["notificaties", "notifications", "telegram alerts", "berichten"],
+        "answer": "🔔 **Telegram Notificaties:**\n\n**Content review:**\n• Nieuwe content ready voor goedkeuring\n• A/B test resultaten\n• Campaign performance updates\n\n**Systeem alerts:**\n• Publishing bevestigingen\n• Error waarschuwingen\n• Workflow completions\n\n**Performance:**\n• Viral content alerts (>1K likes)\n• Milestone notifications\n• Daily/weekly reports\n\n⚙️ **Configureerbaar:** Kies welke notificaties je wilt",
+        "relatedModules": ["telegram-control"]
+      },
+      {
+        "id": "mod_020",
+        "question": "Hoe bepaalt AI de beste post tijd?",
+        "keywords": ["post tijd", "timing", "beste tijd om te posten", "optimale timing"],
+        "answer": "⏰ **AI Timing Optimalisatie:**\n\n**Analyse factoren:**\n• **Publiek activiteit** - Wanneer zijn ze online\n• **Engagement patterns** - Beste reactie tijden\n• **Platform algoritmes** - Optimaal per kanaal\n• **Historical data** - Wat werkte in verleden\n\n**Per platform:**\n• Instagram: 11:00-13:00 + 19:00-21:00\n• LinkedIn: Werkdagen 8:00-10:00\n• TikTok: 18:00-22:00\n• Facebook: Variabel per doelgroep\n\n📊 **Resultaat:** 3x meer reach door perfecte timing",
+        "relatedModules": ["publishing-layer"]
+      },
+      {
+        "id": "mod_021",
+        "question": "Kan ik handmatig de timing aanpassen?",
+        "keywords": ["handmatig", "manual", "timing aanpassen", "eigen planning"],
+        "answer": "⚙️ **Manual Override Opties:**\n\n**Flexibiliteit:**\n• **Custom timing** - Kies exact tijdstip\n• **Date picker** - Plan weken vooruit\n• **Quick reschedule** - Verschuif met 1 klik\n• **Bulk edit** - Pas meerdere posts tegelijk aan\n\n**Smart suggestions:**\n• AI geeft alternatieve tijden\n• \"Deze tijd is beter\" notifications\n• Performance voorspelling per timing\n\n✅ **Balans:** AI suggesties + menselijke controle",
+        "relatedModules": ["publishing-layer", "command-center"]
+      },
+      {
+        "id": "mod_022",
+        "question": "Welke ad platforms ondersteunt Ad Builder?",
+        "keywords": ["ad platforms", "meta", "google ads", "tiktok ads"],
+        "answer": "🎯 **Ondersteunde Ad Platforms:**\n\n**Social Media:**\n• **Meta (Facebook/Instagram)** - Feed, Story, Reel ads\n• **TikTok** - In-feed video ads\n• **LinkedIn** - Sponsored content\n• **Pinterest** - Promoted pins\n\n**Display:**\n• **Google Ads** - Display network\n• **YouTube** - Pre-roll ads\n\n**E-commerce:**\n• **Google Shopping** - Product ads\n• **Meta Shops** - Catalog ads\n\n✨ **Auto-formatting:** Perfecte specs per platform",
+        "relatedModules": ["ad-builder"]
+      },
+      {
+        "id": "mod_023",
+        "question": "Hoe werkt pre-testing van ads?",
+        "keywords": ["pre-testing", "ad testing", "organisch testen", "test ads"],
+        "answer": "🧪 **Organische Ad Pre-Testing:**\n\n**Het systeem:**\n1. **Variant creatie** - 3-5 verschillende ads\n2. **Organische post** - Test op sub-accounts\n3. **Performance tracking** - 3-5 dagen data\n4. **Winner identificatie** - Beste ad krijgt budget\n\n**Voordelen:**\n• **Zero waste** - Geen budget aan slechte ads\n• **Data-driven** - Bewezen performance\n• **Risk-free** - Test gratis met organic reach\n\n💰 **Besparing:** €2.400/maand door niet in flops te investeren",
+        "relatedModules": ["ad-builder"]
+      },
+      {
+        "id": "mod_024",
+        "question": "Welke data zie ik in Command Center?",
+        "keywords": ["data", "metrics dashboard", "kpis dashboard", "analytics dashboard"],
+        "answer": "📊 **Dashboard Data Overzicht:**\n\n**Per platform:**\n• **Engagement** - Likes, comments, shares\n• **Reach** - Impressions, follower groei\n• **Conversion** - Clicks, leads, sales\n• **Content performance** - Top posts\n\n**Overall metrics:**\n• Total spend vs ROI\n• Campaign performance\n• Week over week growth\n• A/B test resultaten\n\n**Visual reports:**\n• Grafieken en trends\n• Heatmaps beste tijden\n• Performance rankings\n\n✨ **Update:** Real-time, elke 15 minuten",
+        "relatedModules": ["command-center", "analytics-lab"]
+      },
+      {
+        "id": "mod_025",
+        "question": "Wat is AI Advisor Partnership?",
+        "keywords": [
+          "ai advisor",
+          "advisor",
+          "begeleiding",
+          "support",
+          "hulp",
+          "advisor partnership"
+        ],
+        "answer": "🤝 **AI Advisor - Je Strategische Partner:**\n\n**Persoonlijke begeleiding:**\n• **Onboarding** - Complete setup assistentie\n• **Strategische planning** - Custom workflow ontwerp\n• **Troubleshooting** - Directe probleem oplossing\n• **Optimalisatie** - Continue verbeteringen\n• **Best practices** - Industry-specifieke tips\n\n**ROI:**\n• 90% sneller onboarded\n• 24/7 beschikbaar\n• Zero technische kennis vereist\n\n💡 **Perfect voor:** Teams zonder automation expertise",
+        "relatedModules": ["ai-advisory"],
+        "cta": {
+          "text": "Meer over AI Advisor",
+          "action": "schedule_demo"
+        }
+      },
+      {
+        "id": "mod_026",
+        "question": "Hoe snel krijg ik antwoord van AI Advisor?",
+        "keywords": ["respons tijd", "response time", "hoe snel", "support snelheid"],
+        "answer": "⚡ **Respons Tijden:**\n\n**Real-time beschikbaar:**\n• **Chat interface** - Instant messaging\n• **Gemiddeld** - <2 minuten respons\n• **Complex** - <15 minuten voor uitgebreide antwoorden\n\n**24/7 support:**\n• Geen wachttijden\n• Geen tickets systeem\n• Direct hulp wanneer nodig\n\n**Smart prioritization:**\n• Urgente issues eerst\n• Context-aware responses\n• Historische kennis van jouw setup\n\n🚀 **Snelheid:** Sneller dan een Slack bericht naar je team",
+        "relatedModules": ["ai-advisory"]
+      }
+    ]
+  },
+  "contextual_nudges": {
+    "after_3_modules": {
+      "message": "Je hebt al meerdere modules bekeken - geweldig! 🎉 Wil je je potentiële ROI berekenen met onze calculator?",
+      "cta": {
+        "text": "Bereken Mijn ROI",
+        "action": "navigate_module",
+        "value": "roi-calculator"
+      }
+    },
+    "on_roi_calculator": {
+      "message": "Mooi resultaat! Wil je bespreken hoe we dit voor jouw specifieke situatie kunnen realiseren?",
+      "cta": {
+        "text": "Plan Demo Call",
+        "action": "schedule_demo"
+      }
+    },
+    "after_2_minutes": {
+      "message": "Heb je vragen terwijl je rondkijkt? Ik help je graag verder! 😊"
+    },
+    "on_journey_completion": {
+      "message": "🏆 Geweldig! Je hebt de volledige demo ervaren. Klaar voor de volgende stap? Laten we een persoonlijk gesprek plannen!",
+      "cta": {
+        "text": "Boek Mijn Demo",
+        "action": "schedule_demo"
+      }
+    }
+  }
+}

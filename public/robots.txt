@@ -1,0 +1,130 @@
+# robots.txt for Future Marketing AI
+# SEO & LLM SEO Optimization
+# Last updated: 2025-01-15
+
+# Default crawling rules for all bots
+User-agent: *
+Allow: /
+# Disallow demo app (separate application)
+Disallow: /demo
+Disallow: /demo/
+Disallow: /explorer
+Disallow: /dashboard
+# Disallow platform routes (behind authentication)
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+# Disallow test/placeholder pages
+Disallow: /calculator-test
+Disallow: /placeholder
+# Future pages (not launched yet)
+Disallow: /blog
+Disallow: /case-studies
+Disallow: /careers
+Disallow: /partners
+Disallow: /documentation
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# ============================================
+# AI Crawler Directives (LLM SEO)
+# ============================================
+
+# OpenAI GPTBot (ChatGPT web browsing)
+User-agent: GPTBot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# OpenAI ChatGPT-User (ChatGPT user requests)
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# Perplexity AI Bot
+User-agent: PerplexityBot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# Anthropic Claude Web Crawler
+User-agent: Claude-Web
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# ============================================
+# Traditional Search Engine Bots
+# ============================================
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+Disallow: /calculator-test
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /demo
+Disallow: /demo/
+Disallow: /app/
+Disallow: /api/
+Disallow: /login
+
+# ============================================
+# Sitemap Location
+# ============================================
+Sitemap: https://futuremarketingai.com/sitemap.xml
+
+# ============================================
+# Additional Resources
+# ============================================
+# For AI-specific crawling guidance, see:
+# https://futuremarketingai.com/llm.txt
+

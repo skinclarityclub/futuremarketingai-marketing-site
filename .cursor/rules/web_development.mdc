@@ -1,0 +1,215 @@
+---
+description: Best practices en standaarden voor moderne web/platform ontwikkeling
+globs: **/*.{js,jsx,ts,tsx,html,css,scss}
+alwaysApply: true
+---
+
+## Code Structuur & Organisatie
+
+- **Modulaire Architectuur:**
+  - Verdeel code in logische, herbruikbare componenten
+  - Elke module heeft één duidelijke verantwoordelijkheid
+  - Gebruik feature-based folder structuur voor schaalbaarheid
+  ```typescript
+  // ✅ DO: Feature-based structuur
+  src/
+    features/
+      auth/
+        components/
+        hooks/
+        services/
+        types/
+      dashboard/
+        components/
+        hooks/
+  
+  // ❌ DON'T: Type-based structuur voor grote projecten
+  src/
+    components/  // Te veel componenten in één map
+    hooks/
+    services/
+  ```
+
+- **Naamgevingsconventies:**
+  - **Componenten:** PascalCase (bijv. `UserDashboard.tsx`)
+  - **Functies/variabelen:** camelCase (bijv. `getUserData`)
+  - **Constanten:** UPPER_SNAKE_CASE (bijv. `API_BASE_URL`)
+  - **CSS classes:** kebab-case (bijv. `user-profile-card`)
+  - **Bestanden:** Gebruik beschrijvende namen die de inhoud weerspiegelen
+
+## Responsive Design & UX
+
+- **Mobile-First Benadering:**
+  - Begin met mobile design en schaal op naar desktop
+  - Gebruik CSS breakpoints consistent
+  ```css
+  /* ✅ DO: Mobile-first met min-width */
+  .container {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      width: 970px;
+    }
+  }
+  ```
+
+- **Toegankelijkheid (a11y):**
+  - Gebruik semantische HTML elementen
+  - Voeg ARIA labels toe waar nodig
+  - Zorg voor keyboard navigatie
+  - Minimale contrast ratio: 4.5:1 voor normale tekst
+  ```tsx
+  // ✅ DO: Toegankelijke button
+  <button
+    aria-label="Sluit menu"
+    onClick={handleClose}
+    className="close-button"
+  >
+    <CloseIcon aria-hidden="true" />
+  </button>
+  
+  // ❌ DON'T: Div als button zonder accessibility
+  <div onClick={handleClose}>X</div>
+  ```
+
+## Prestatie Optimalisatie
+
+- **Code Splitting & Lazy Loading:**
+  ```typescript
+  // ✅ DO: Lazy load grote components
+  const Dashboard = lazy(() => import('./features/dashboard/Dashboard'));
+  
+  // ✅ DO: Dynamic imports voor route-based splitting
+  const routes = [
+    {
+      path: '/dashboard',
+      component: lazy(() => import('./pages/Dashboard'))
+    }
+  ];
+  ```
+
+- **Asset Optimalisatie:**
+  - Gebruik moderne image formaten (WebP, AVIF)
+  - Implementeer lazy loading voor afbeeldingen
+  - Minify CSS en JavaScript voor productie
+  - Gebruik CDN voor statische assets
+
+- **Rendering Optimalisatie:**
+  ```typescript
+  // ✅ DO: Memoize dure berekeningen
+  const expensiveValue = useMemo(() => {
+    return computeExpensiveValue(data);
+  }, [data]);
+  
+  // ✅ DO: Gebruik callback memoization
+  const handleClick = useCallback(() => {
+    doSomething(value);
+  }, [value]);
+  ```
+
+## State Management
+
+- **Kies de juiste tool:**
+  - Lokale UI state → useState/useReducer
+  - Server state → React Query/SWR/TanStack Query
+  - Globale client state → Zustand/Jotai (lichtgewicht) of Redux (complex)
+  
+- **State Management Principes:**
+  ```typescript
+  // ✅ DO: Houd state zo lokaal mogelijk
+  function UserProfile() {
+    const [isEditing, setIsEditing] = useState(false);
+    // State blijft binnen component
+  }
+  
+  // ✅ DO: Gebruik server state libraries voor API data
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['user', userId],
+    queryFn: () => fetchUser(userId)
+  });
+  
+  // ❌ DON'T: Server data in Redux/global state
+  const userData = useSelector(state => state.user.data); // Anti-pattern
+  ```
+
+## Error Handling
+
+- **Error Boundaries:**
+  ```typescript
+  // ✅ DO: Implementeer Error Boundaries
+  class ErrorBoundary extends React.Component {
+    state = { hasError: false };
+    
+    static getDerivedStateFromError(error) {
+      return { hasError: true };
+    }
+    
+    componentDidCatch(error, errorInfo) {
+      logErrorToService(error, errorInfo);
+    }
+    
+    render() {
+      if (this.state.hasError) {
+        return <ErrorFallback />;
+      }
+      return this.props.children;
+    }
+  }
+  ```
+
+- **API Error Handling:**
+  ```typescript
+  // ✅ DO: Consistente error handling
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Fetch failed:', error);
+    // Toon user-friendly error message
+    showToast('Er is iets misgegaan. Probeer het opnieuw.');
+    throw error;
+  }
+  ```
+
+## Documentatie & Comments
+
+- **JSDoc voor complexe functies:**
+  ```typescript
+  /**
+   * Berekent de totaalprijs inclusief BTW en korting
+   * @param price - Basisprijs in euros
+   * @param vatRate - BTW percentage (bijv. 21 voor 21%)
+   * @param discount - Kortingspercentage (0-100)
+   * @returns Totaalprijs afgerond op 2 decimalen
+   */
+  function calculateTotalPrice(
+    price: number,
+    vatRate: number,
+    discount: number = 0
+  ): number {
+    // Implementation
+  }
+  ```
+
+- **README.md voor elke feature:**
+  - Doel van de feature
+  - Gebruikte technologieën
+  - Setup instructies
+  - Voorbeelden van gebruik
+
+## Referenties
+
+- Volg [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/WCAG21/quickref/)
+- Gebruik [Can I Use](https://caniuse.com/) voor browser compatibiliteit
+- Test prestaties met [Lighthouse](https://developers.google.com/web/tools/lighthouse)

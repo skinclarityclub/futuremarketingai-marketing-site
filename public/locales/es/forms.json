@@ -1,0 +1,54 @@
+{
+  "labels": {
+    "email": "Dirección de Correo Electrónico",
+    "name": "Nombre Completo",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "company": "Nombre de la Empresa",
+    "phone": "Número de Teléfono",
+    "website": "URL del Sitio Web",
+    "job_title": "Cargo",
+    "team_size": "Tamaño del Equipo",
+    "industry": "Industria",
+    "message": "Mensaje",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar Contraseña"
+  },
+  "placeholders": {
+    "email": "Ingresa tu correo electrónico",
+    "name": "Ingresa tu nombre completo",
+    "company": "Nombre de tu empresa",
+    "phone": "+34 (600) 000-000",
+    "website": "https://tuempresa.com",
+    "message": "Cuéntanos sobre tus necesidades...",
+    "password": "Crea una contraseña segura"
+  },
+  "helpers": {
+    "email": "Nunca compartiremos tu correo con nadie.",
+    "password": "Usa al menos 8 caracteres con letras y números",
+    "phone": "Solo llamaremos durante horario laboral"
+  },
+  "team_sizes": {
+    "1-5": "1-5 personas",
+    "6-20": "6-20 personas",
+    "21-50": "21-50 personas",
+    "51-200": "51-200 personas",
+    "201+": "201+ personas"
+  },
+  "industries": {
+    "ecommerce": "E-commerce y Retail",
+    "saas": "Tecnología y SaaS",
+    "agency": "Agencia de Marketing",
+    "other": "Otra Industria"
+  },
+  "actions": {
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar Cambios",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "upload": "Subir",
+    "download": "Descargar"
+  }
+}

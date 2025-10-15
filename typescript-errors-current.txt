@@ -1,0 +1,109 @@
+src/components/ai-assistant/AIJourneyAssistant.tsx(29,19): error TS6133: 'addSystemMessage' is declared but its value is never read.
+src/components/ai-assistant/AIJourneyAssistant.tsx(31,71): error TS6133: 'visitedPages' is declared but its value is never read.
+src/components/ai-assistant/ChatDebugPanel.tsx(12,38): error TS6133: 'getVisitedPagesArray' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(7,13): error TS6133: 'Minimize2' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(7,24): error TS6133: 'Award' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(16,1): error TS6133: 'getProgressMessage' is declared but its value is never read.
+src/components/ai-assistant/ChatHeader.tsx(35,5): error TS6133: 'completionPercentage' is declared but its value is never read.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(42,5): error TS6133: 'getJourneyProgress' is declared but its value is never read.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(44,5): error TS6133: 'getProgressMessage' is declared but its value is never read.
+src/components/ai-assistant/EnhancedProgressIndicator.tsx(112,9): error TS6133: 'timeRemaining' is declared but its value is never read.
+src/components/ai-assistant/FloatingActionButton.tsx(16,30): error TS6133: 'fabHover' is declared but its value is never read.
+src/components/ai-assistant/FloatingActionButton.tsx(26,75): error TS6133: 'activeElement' is declared but its value is never read.
+src/components/ai-assistant/MessageList.tsx(7,29): error TS6133: 'useState' is declared but its value is never read.
+src/components/ai-assistant/MessageList.tsx(21,1): error TS6133: 'InfoPanel' is declared but its value is never read.
+src/components/ai-assistant/messages/QuickReplies.tsx(57,9): error TS6133: 'hasTourButton' is declared but its value is never read.
+src/components/ai-assistant/ProactiveSuggestions.tsx(22,31): error TS6133: 'completionPercentage' is declared but its value is never read.
+src/components/calculator/AchievementBadge.tsx(155,3): error TS6133: 'currentROAS' is declared but its value is never read.
+src/components/calculator/AchievementBadge.tsx(159,9): error TS6133: 't' is declared but its value is never read.
+src/components/calculator/CalculatorWizard.tsx(102,9): error TS6133: 't' is declared but its value is never read.
+src/components/calculator/CalculatorWizard.tsx(237,36): error TS6133: 'index' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(2,18): error TS6133: 'useMotionValue' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(2,34): error TS6133: 'useTransform' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(21,21): error TS6133: 'ChartTooltip' is declared but its value is never read.
+src/components/calculator/ComparisonCharts.tsx(22,15): error TS6196: 'TooltipEntry' is declared but never used.
+src/components/calculator/ComparisonCharts.tsx(23,1): error TS6192: All imports in import declaration are unused.
+src/components/calculator/ComparisonCharts.tsx(242,38): error TS6133: 'event' is declared but its value is never read.
+src/components/common/ABTestDashboard.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/components/common/ABTestDashboard.tsx(202,64): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+  Property 'future_focused' does not exist on type '{ team_size: { name: string; description: string; color: string; icon: string; }; pain_point: { name: string; description: string; color: string; icon: string; }; situation: { name: string; description: string; color: string; icon: string; }; }'.
+src/components/common/ABTestDashboard.tsx(204,20): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type 'VariantAnalyticsSummary'.
+  Property 'future_focused' does not exist on type 'VariantAnalyticsSummary'.
+src/components/common/ABTestDashboard.tsx(216,29): error TS7053: Element implicitly has an 'any' type because expression of type 'HeadlineVariant' can't be used to index type 'VariantAnalyticsSummary'.
+  Property 'future_focused' does not exist on type 'VariantAnalyticsSummary'.
+src/components/layer1-hero/CoreSphere3D.tsx(816,44): error TS2607: JSX element class does not support attributes because it does not have a 'props' property.
+src/components/layer1-hero/CoreSphere3D.tsx(816,45): error TS2786: 'Stats' cannot be used as a JSX component.
+  Its type 'typeof Stats' is not a valid JSX element type.
+    Types of construct signatures are incompatible.
+      Type 'new () => Stats' is not assignable to type 'new (props: any, deprecatedLegacyContext?: any) => Component<any, any, any>'.
+        Type 'Stats' is missing the following properties from type 'Component<any, any, any>': context, setState, forceUpdate, render, and 3 more.
+src/config/conversationPersonality.ts(7,1): error TS6133: 'Industry' is declared but its value is never read.
+src/config/industryPersonalization.ts(324,33): error TS6133: 'industryId' is declared but its value is never read.
+src/hooks/useCalendlyBooking.ts(175,78): error TS6133: 'eventTypeId' is declared but its value is never read.
+src/hooks/useChartInteractivity.ts(17,33): error TS6133: 'useMemo' is declared but its value is never read.
+src/hooks/useDemoSEO.ts(41,11): error TS6133: 't' is declared but its value is never read.
+src/hooks/useJourneyNudges.ts(23,27): error TS6133: 'timeOnSiteSeconds' is declared but its value is never read.
+src/hooks/useModuleFollowUp.ts(126,9): error TS6133: 'completedSteps' is declared but its value is never read.
+src/pages/Calculator.tsx(32,29): error TS6133: 'getPersonalizationConfig' is declared but its value is never read.
+src/pages/Hero.tsx(80,11): error TS6133: 'messaging' is declared but its value is never read.
+src/pages/Hero.tsx(80,22): error TS6133: 'industryName' is declared but its value is never read.
+src/stores/journeyStore.ts(15,3): error TS6133: 'getProactiveChatMessage' is declared but its value is never read.
+src/stores/journeyStore.ts(34,8): error TS6133: 'UserAchievements' is declared but its value is never read.
+src/stores/journeyStore.ts(201,22): error TS6133: 'industry' is declared but its value is never read.
+src/stores/journeyStore.ts(201,32): error TS6133: 'role' is declared but its value is never read.
+src/stores/personalizationStore.ts(224,41): error TS2345: Argument of type '{ teamSize: TeamSize; channels: ChannelsCount; painPoints: string[]; industry: "ecommerce" | "saas" | "agency" | "other"; currentSpend: number; }' is not assignable to parameter of type 'UserInput'.
+  Types of property 'painPoints' are incompatible.
+    Type 'string[]' is not assignable to type 'PainPoint[]'.
+      Type 'string' is not assignable to type 'PainPoint'.
+src/stores/userPreferencesStore.ts(101,11): error TS6133: 'get' is declared but its value is never read.
+src/utils/calendlyFunnelTracking.ts(145,11): error TS6133: 'sessionId' is declared but its value is never read.
+src/utils/conversationEngine.ts(8,27): error TS6133: 'extractEntities' is declared but its value is never read.
+src/utils/conversationEngine.ts(16,1): error TS6133: 'NavigationActionData' is declared but its value is never read.
+src/utils/conversationEngine.ts(25,8): error TS6133: 'FallbackCategory' is declared but its value is never read.
+src/utils/conversationEngine.ts(30,8): error TS6133: 'NavigationIntent' is declared but its value is never read.
+src/utils/conversationEngine.ts(37,3): error TS6133: 'getProactiveSuggestions' is declared but its value is never read.
+src/utils/conversationEngine.ts(38,8): error TS6133: 'QuestionMatch' is declared but its value is never read.
+src/utils/conversationEngine.ts(42,1): error TS6192: All imports in import declaration are unused.
+src/utils/conversationEngine.ts(48,1): error TS6133: 'usePersonalizationStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(49,1): error TS6133: 'useJourneyStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(50,1): error TS6133: 'useUserPreferencesStore' is declared but its value is never read.
+src/utils/conversationEngine.ts(222,23): error TS2554: Expected 1 arguments, but got 0.
+src/utils/conversationEngine.ts(364,30): error TS2339: Property 'content' does not exist on type 'ChatMessage'.
+  Property 'content' does not exist on type 'AchievementMessage'.
+src/utils/conversationEngine.ts(364,57): error TS2339: Property 'content' does not exist on type 'ChatMessage'.
+  Property 'content' does not exist on type 'AchievementMessage'.
+src/utils/conversationEngine.ts(452,9): error TS2322: Type 'NavigationActionData' is not assignable to type '{ label: string; route: string; icon?: "explorer" | "calculator" | "dashboard" | "sparkles" | undefined; helpText?: string | undefined; features?: string[] | undefined; ctaText?: string | undefined; }'.
+  Types of property 'icon' are incompatible.
+    Type '"explorer" | "calculator" | "demo" | "dashboard" | "sparkles" | undefined' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+      Type '"demo"' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+src/utils/conversationEngine.ts(539,13): error TS6133: 'fallbackCategory' is declared but its value is never read.
+src/utils/conversationEngine.ts(592,3): error TS6133: 'conversationHistory' is declared but its value is never read.
+src/utils/conversationEngine.ts(614,9): error TS6133: 'personality' is declared but its value is never read.
+src/utils/conversationEngine.ts(683,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(695,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(728,7): error TS2322: Type '"demo"' is not assignable to type '"explorer" | "calculator" | "dashboard" | "sparkles" | undefined'.
+src/utils/conversationEngine.ts(737,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(738,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(750,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(751,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationEngine.ts(768,3): error TS6133: 'templates' is declared but its value is never read.
+src/utils/conversationEngine.ts(769,3): error TS6133: 'context' is declared but its value is never read.
+src/utils/conversationPersonalization.ts(23,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/fallbackResponses.ts(37,3): error TS6133: 'userMessage' is declared but its value is never read.
+src/utils/fallbackResponses.ts(124,23): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/fallbackResponses.ts(143,23): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/fallbackResponses.ts(190,31): error TS6133: 'context' is declared but its value is never read.
+src/utils/fallbackResponses.ts(209,7): error TS18048: 'context.icpScore' is possibly 'undefined'.
+src/utils/journeyNudges.ts(380,52): error TS6133: 'context' is declared but its value is never read.
+src/utils/journeyPredictions.ts(15,1): error TS6192: All imports in import declaration are unused.
+src/utils/journeyPredictions.ts(16,1): error TS6133: 'JourneyStep' is declared but its value is never read.
+src/utils/journeyPredictions.ts(289,43): error TS6133: 'industry' is declared but its value is never read.
+src/utils/pageContextI18n.ts(47,9): error TS2741: Property 'unknown' is missing in type '{ home: { label: string; value: string; }[]; explorer: { label: string; value: string; }[]; calculator: { label: string; value: string; }[]; dashboard: { label: string; value: string; }[]; }' but required in type 'Record<PageRoute, { label: string; value: string; }[]>'.
+src/utils/personalizationEngine.ts(20,1): error TS6133: 'Industry' is declared but its value is never read.
+src/utils/personalizationEngine.ts(21,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/questionMatcher.ts(172,54): error TS6133: 'catKey' is declared but its value is never read.
+src/utils/relatedQuestions.ts(13,1): error TS6133: 'PLATFORM_KNOWLEDGE' is declared but its value is never read.
+tests/e2e/accessibility.spec.ts(109,11): error TS6133: 'loadingIndicator' is declared but its value is never read.
+tests/e2e/navigation.spec.ts(77,11): error TS6133: 'response' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(144,13): error TS6133: 'initialContent' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(157,13): error TS6133: 'updatedContent' is declared but its value is never read.

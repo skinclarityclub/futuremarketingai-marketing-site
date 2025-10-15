@@ -1,0 +1,266 @@
+{
+  "headline_variants": {
+    "team_size": "10x Producción, Mismo Tamaño",
+    "pain_point": "Escala Contenido Sin Escalar Costos",
+    "situation": "Equipo de 3, Producción de 30",
+    "future_focused": "Marketing Autónomo para Equipos 10-50",
+    "innovation_focused": "Marketing Que Se Ejecuta Solo",
+    "risk_reward": "El Futuro es Autónomo"
+  },
+  "headline_subtitles": {
+    "team_size": "IA crea contenido 24/7 mientras tu equipo se enfoca en estrategia.",
+    "pain_point": "Multiplica el output 10x sin crecer tu equipo.",
+    "situation": "IA autónoma escala tu marketing sin contratar.",
+    "future_focused": "Únete a los primeros 10 equipos construyendo la ventaja del mañana.",
+    "innovation_focused": "Sé uno de los pioneros que prueban que el marketing autónomo funciona.",
+    "risk_reward": "Únete a los primeros 10 equipos en probarlo."
+  },
+  "main_headline": "10x Más Producción de Marketing, Mismo Tamaño de Equipo",
+  "subtitle": "Para equipos de 10-50 personas. IA que crea contenido 24/7 mientras te enfocas en estrategia.",
+  "stats_context": "Resultados promedio de equipos que automatizaron:",
+  "trust_signals": {
+    "team_size": "Equipos 10-50",
+    "custom_built_usp": "Construido PARA Ti, No POR Ti",
+    "ai_powered": "GPT-4 & Claude"
+  },
+  "custom_built_badge": "Totalmente Personalizado • Sin Plantillas",
+
+  "tech_stack": {
+    "label": "Impulsado por IA Líder en la Industria"
+  },
+
+  "vision_timeline": {
+    "badge": "Hacia Dónde Vamos",
+    "title": "La Evolución de la Automatización de Marketing",
+    "early_adopter_window": "VENTANA DE EARLY ADOPTERS",
+    "you_are_here": "Estás Aquí",
+    "insight": "Los equipos que adoptaron herramientas IA-asistidas temprano (2020-2022) obtuvieron 3-5 años de ventaja.",
+    "insight_emphasis": "La MISMA ventana de 2 años existe AHORA (finales 2025) para sistemas autónomos.",
+    "insight_data": "<1% tiene esto hoy. Mainstream llega 2027-2028. Actúa ahora = ventaja injusta de 2-3 años."
+  },
+
+  "stats": {
+    "hours_saved": {
+      "value": "360",
+      "label": "Horas Ahorradas",
+      "suffix": "h/mes",
+      "detail": "Antes: 6 personas × 60h/mes manual"
+    },
+    "content_output": {
+      "value": "160",
+      "label": "Producción de Contenido",
+      "suffix": " publicaciones",
+      "detail": "Antes: 40 publicaciones (manual)"
+    },
+    "engagement": {
+      "value": "247",
+      "label": "Compromiso",
+      "suffix": "%",
+      "detail": "Promedio en todas las plataformas"
+    }
+  },
+
+  "cta": {
+    "primary": "Explorar Plataforma",
+    "explore_platform": "Explorar Plataforma →",
+    "secondary": "Calcular ROI",
+    "calendly": "Reservar Llamada de Descubrimiento"
+  },
+
+  "premium": {
+    "title": "Servicios Premium Todo en Uno",
+    "description": "Tres módulos potentes que trabajan sin problemas para automatización completa de marketing"
+  },
+
+  "early_adopter": {
+    "title": "Únete a los Primeros 10 Equipos Pioneros",
+    "description": "Sé uno de los primeros adoptantes en construir la ventaja competitiva del mañana. 3 equipos ya funcionando 24/7. 7 plazas de Precios para Fundadores disponibles (60% de descuento, bloqueado para siempre).",
+    "primary_cta": "Solicitar Precios para Fundadores →",
+    "secondary_cta": "Calcular Tu ROI",
+    "urgency": "",
+    "trust_indicators": {
+      "founder_access": "✓ Acceso directo por Slack al fundador",
+      "co_create": "✓ Co-crea la hoja de ruta con nosotros",
+      "no_cc": "✓ No se requiere tarjeta de crédito - revisamos en 24h"
+    }
+  },
+
+  "floating_cta": {
+    "title": "¿Listo Para Comenzar?",
+    "urgency": "⏰ Solo quedan 3 plazas",
+    "trust_indicators": {
+      "quick_call": "✓ Llamada de 30 min",
+      "no_commitment": "✓ Sin compromisos"
+    }
+  },
+
+  "exit_intent": {
+    "title": "¡Espera! No Te Pierdas Esto",
+    "description": "Reserva una consulta gratuita de 30 minutos y descubre cómo FutureMarketingAI puede automatizar tu marketing.",
+    "primary_cta": "Reservar Llamada Gratuita",
+    "secondary_cta": "Ahora No",
+    "urgency": "⏰ Bonus: Escaneo de ROI gratis",
+    "trust_indicators": {
+      "quick_call": "✓ Llamada de 30 min",
+      "roi_analysis": "✓ Análisis personal de ROI",
+      "no_commitment": "✓ Sin compromisos"
+    }
+  },
+
+  "loading": {
+    "diagram": "Cargando diagrama...",
+    "scheduling": "Cargando programación..."
+  },
+
+  "case_studies": {
+    "ecommerce": {
+      "id": "1",
+      "industry": "E-commerce",
+      "company": "EcoShop NL",
+      "pain_point": "Un equipo de 4 personas gastaba más de 60 horas/semana creando contenido manualmente. Solo 30-40 publicaciones/mes con calidad inconsistente. Perdieron el 70% de los lanzamientos de productos debido al cuello de botella de contenido.",
+      "solution": "Future Marketing AI automatizó todo el proceso de contenido con agentes de IA 24/7. Investigación automática de tendencias, generación de contenido multiplataforma, programación inteligente y seguimiento de rendimiento en tiempo real. Todo integrado con su tienda web y catálogo de productos.",
+      "results": "De 40 a 160 publicaciones/mes (4x), 80 horas/mes ahorradas, compromiso aumentó 285% y tasa de conversión mejoró 42%. El equipo ahora puede enfocarse en estrategia y experiencia del cliente.",
+      "metrics": {
+        "posts": {
+          "label": "Publicaciones/Mes",
+          "value": "160",
+          "improvement": "+300%"
+        },
+        "time": {
+          "label": "Tiempo Ahorrado",
+          "value": "80h",
+          "improvement": "+200%"
+        },
+        "engagement": {
+          "label": "Compromiso",
+          "value": "+285%",
+          "improvement": "3x más alto"
+        },
+        "roi": {
+          "label": "ROI",
+          "value": "4.2x",
+          "improvement": "+320%"
+        }
+      },
+      "testimonial": {
+        "quote": "Gastábamos más de 60 horas/semana en contenido. Ahora todo funciona automáticamente y nuestro compromiso es 3x más alto. Increíble cuánto tiempo y dinero ahorramos.",
+        "author": "Lisa van Dam",
+        "role": "Fundadora y CEO @ EcoShop NL"
+      }
+    },
+    "saas": {
+      "id": "2",
+      "industry": "B2B SaaS",
+      "company": "TechForce Solutions",
+      "pain_point": "El marketing de contenido B2B era completamente ad-hoc. Sin seguimiento de tendencias, mala estrategia de hashtags, cero ROI en anuncios. Gestionando 5 freelancers sin resultados medibles. Perdiendo el 80% de las tendencias relevantes de la industria.",
+      "solution": "Centro de Investigación con pronóstico de tendencias de IA Perplexity 24/7, análisis automático de competidores, planificación de contenido basada en datos y sistema de prueba previa de anuncios. Todo el contenido optimizado para LinkedIn B2B y plataformas específicas de la industria.",
+      "results": "El ROI de anuncios aumentó de punto de equilibrio a +340%. 3x más leads calificados por mes. El equipo escaló de 2 a 8 canales sin contratar. Las pruebas previas previenen el desperdicio de presupuesto publicitario. El enfoque sistemático genera resultados consistentes.",
+      "metrics": {
+        "ad_roi": {
+          "label": "ROI de Anuncios",
+          "value": "+340%",
+          "improvement": "Antes: 0%"
+        },
+        "leads": {
+          "label": "Leads",
+          "value": "3x",
+          "improvement": "+200%"
+        },
+        "saved": {
+          "label": "Producción del Equipo",
+          "value": "8 canales",
+          "improvement": "2 personas"
+        },
+        "time": {
+          "label": "Tiempo",
+          "value": "-70h",
+          "improvement": "/mes"
+        }
+      },
+      "testimonial": {
+        "quote": "De punto de equilibrio a +340% ROI. Ahora probamos previamente cada anuncio antes de gastar presupuesto. El sistema se paga a sí mismo 6x.",
+        "author": "Mark de Vries",
+        "role": "Director de Marketing @ TechForce Solutions"
+      }
+    },
+    "retail": {
+      "id": "3",
+      "industry": "Retail & CPG",
+      "company": "GreenLife Brands",
+      "pain_point": "7 marcas en 5 plataformas—caos total. Equipo de 8 constantemente sobrecargado. 40% de las publicaciones planificadas perdidas debido a problemas de capacidad. Sin visión general central, marca inconsistente, oportunidades de compromiso perdidas.",
+      "solution": "Panel de Centro de Comando para todas las marcas. Generación automática de contenido con directrices de marca por marca, programación inteligente para momentos óptimos, motor de publicación 99.8% confiable y panel de análisis unificado.",
+      "results": "De 40% de publicaciones perdidas a 99.8% de consistencia. Equipo reducido de 8 a 3 personas para monitoreo. Gestionando 7 marcas con un equipo de 3 personas. El compromiso general aumentó 215% a través de mejor temporización y mayor frecuencia.",
+      "metrics": {
+        "consistency": {
+          "label": "Consistencia",
+          "value": "99.8%",
+          "improvement": "Antes: 60%"
+        },
+        "team": {
+          "label": "Equipo",
+          "value": "-62%",
+          "improvement": "8 → 3"
+        },
+        "saved": {
+          "label": "Eficiencia",
+          "value": "7 marcas",
+          "improvement": "3 personas"
+        },
+        "engagement": {
+          "label": "Compromiso",
+          "value": "+215%",
+          "improvement": "2.15x"
+        }
+      },
+      "testimonial": {
+        "quote": "7 marcas, 1 panel. Del caos a 99.8% de consistencia. Nuestro equipo pasó de 8 a 3 personas. Un cambio de juego.",
+        "author": "Sarah Janssen",
+        "role": "COO @ GreenLife Brands"
+      }
+    }
+  },
+
+  "trust_badges": {
+    "gdpr": {
+      "name": "Cumple con GDPR",
+      "description": "Totalmente conforme con las regulaciones de privacidad de datos de la UE"
+    },
+    "iso27001": {
+      "name": "Certificado ISO 27001",
+      "description": "Estándar internacional de gestión de seguridad"
+    },
+    "soc2": {
+      "name": "SOC 2 Tipo II",
+      "description": "Controles de seguridad y disponibilidad verificados"
+    },
+    "ssl": {
+      "name": "Encriptación SSL de 256 bits",
+      "description": "Encriptación de datos a nivel bancario"
+    }
+  },
+
+  "aggregate_metrics": {
+    "time_recovered": {
+      "value": "2.5",
+      "prefix": "€",
+      "suffix": "M+",
+      "label": "Tiempo Recuperado",
+      "pain_label": "€2.5M+ en tiempo desperdiciado recuperado de procesos de contenido manual",
+      "icon": "⏰"
+    },
+    "posts_created": {
+      "value": "50",
+      "suffix": "K+",
+      "label": "Publicaciones Creadas",
+      "pain_label": "50K+ publicaciones creadas sin trabajo manual—totalmente automatizado con IA",
+      "icon": "🚀"
+    },
+    "companies_automated": {
+      "value": "20",
+      "suffix": "+",
+      "label": "Empresas Automatizadas",
+      "pain_label": "20+ empresas liberadas del caos de contenido—de sobrecargadas a automatizadas",
+      "icon": "🎯"
+    }
+  }
+}

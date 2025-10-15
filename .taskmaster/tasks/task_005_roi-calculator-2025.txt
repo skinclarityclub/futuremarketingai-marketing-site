@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: Add Achievement Badge System
+# Status: cancelled
+# Dependencies: 4
+# Priority: medium
+# Description: Gamify the calculator by awarding badges based on user results, with shareable badge images and unlock animations to encourage social sharing.
+# Details:
+Leverage existing achievementSystem.ts and useAchievementTracking hook. Build AchievementUnlock.tsx for full-screen badge reveal with 800ms spring animation (using Framer Motion or existing animation utilities). Create BadgeCard.tsx for shareable badge images with Open Graph support. Integrate badge logic into ROI calculation flow, triggering unlocks and share prompts. Ensure badges are only shown once per session and can be easily dismissed. Follow accessibility and reduced motion guidelines.
+
+# Test Strategy:
+Unit test badge unlock logic and animation triggers. Integration test badge display, sharing functionality, and session-based visibility. Validate Open Graph image generation. Test accessibility and reduced motion compliance.

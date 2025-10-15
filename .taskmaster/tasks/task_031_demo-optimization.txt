@@ -1,0 +1,170 @@
+# Task ID: 31
+# Title: Complete i18n Implementation - EN Primary, NL/ES Secondary
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Comprehensive internationalization implementation with English as primary language, Dutch and Spanish as secondary. Full translation coverage across entire demo with context-aware translations following 2025 best practices.
+# Details:
+## 🌐 i18n Complete Implementation Task
+
+### 🎯 Goal
+Transform the entire demo to use English as the primary language with full Dutch and Spanish translations. Ensure all text is properly translated with context awareness - translations that work naturally in each language, not just literal translations.
+
+### 📋 Current State Analysis
+- **Dutch (NL)**: 13 translation files (complete)
+- **English (EN)**: 13 translation files (complete)  
+- **Spanish (ES)**: Only 3 files (ai-assistant, common, hero) - needs 10 more
+
+**Missing ES files:**
+1. adbuilder.json
+2. analytics.json
+3. calculator.json
+4. calendly.json
+5. dashboard.json
+6. errors.json
+7. explorer.json
+8. forms.json
+9. navigation.json
+10. profiling.json
+
+### 🔬 Best Practices 2025 Research
+
+**Key Principles:**
+1. **Context-Aware Translations**: Don't translate word-for-word. Adapt to cultural context.
+2. **Tone Consistency**: Match brand voice in each language
+3. **RTL Ready**: Prepare structure for future RTL languages
+4. **Pluralization**: Use i18next pluralization features
+5. **Gender Neutrality**: Where applicable, use inclusive language
+6. **SEO Optimization**: Proper meta tags per language
+7. **Dynamic Content**: Handle dates, numbers, currency correctly
+8. **Fallback Chain**: en → nl → es hierarchy
+
+**Translation Quality Guidelines:**
+- ✅ Natural flow in target language
+- ✅ Industry-appropriate terminology
+- ✅ Consistent UI/UX terminology across app
+- ✅ No machine translation feel
+- ✅ Test with native speakers
+
+### 📂 File Structure
+```
+public/locales/
+├── en/ (Primary - 100% complete)
+│   ├── adbuilder.json
+│   ├── ai-assistant.json
+│   ├── analytics.json
+│   ├── calculator.json
+│   ├── calendly.json
+│   ├── common.json
+│   ├── dashboard.json
+│   ├── errors.json
+│   ├── explorer.json
+│   ├── forms.json
+│   ├── hero.json
+│   ├── navigation.json
+│   └── profiling.json
+├── nl/ (Secondary - 100% complete)
+│   └── [same 13 files]
+└── es/ (Secondary - 23% complete ⚠️)
+    ├── ai-assistant.json ✅
+    ├── common.json ✅
+    ├── hero.json ✅
+    └── [10 missing files] ❌
+```
+
+### 🛠️ Implementation Strategy
+
+**Phase 1: Audit & Analysis**
+- Review all EN translation keys for completeness
+- Identify hardcoded strings in components
+- Check for missing namespaces
+- Verify i18n hooks usage
+
+**Phase 2: Spanish Translation Completion**
+- Create 10 missing ES files
+- Professional translation (not machine)
+- Context-aware adaptations
+- Review with native speaker if possible
+
+**Phase 3: Quality Assurance**
+- Test all 3 languages across entire demo
+- Verify context-appropriate translations
+- Check UI overflow/truncation
+- Validate pluralization
+- Test language switching
+
+**Phase 4: Edge Cases**
+- Date/time formatting per locale
+- Number formatting (1,000 vs 1.000)
+- Currency symbols and placement
+- Address formats
+- Name order (first-last vs last-first)
+
+**Phase 5: Documentation**
+- Translation guidelines document
+- Key naming conventions
+- Context notes for translators
+- Contribution guide for future languages
+
+### 🎨 Special Considerations
+
+**UI Text Length Variations:**
+- German: +20-30% longer than English
+- Spanish: +15-20% longer  
+- Dutch: +10-15% longer
+→ Ensure flexible layouts
+
+**Cultural Adaptations:**
+- CTA buttons: "Book Demo" vs "Plan een Demo" vs "Reservar Demo"
+- Formality: "you" vs "je/jij" vs "tu/usted"
+- Industry terms: Keep English? Or translate?
+
+**Technical Terms:**
+- AI/ML terminology
+- Marketing jargon
+- Platform names
+- Feature names
+
+### 🔍 Components to Audit
+
+**Critical Pages:**
+1. Hero (landing page)
+2. Explorer (platform tour)
+3. Calculator (ROI tool)
+4. Dashboard (main interface)
+5. AI Assistant (chatbot)
+
+**UI Components:**
+1. Navigation (FloatingNav)
+2. CTAs (StrategicCTA)
+3. Forms (all input elements)
+4. Error messages
+5. Success toasts
+6. Loading states
+7. Empty states
+8. Modal dialogs
+
+### 📊 Success Metrics
+- [ ] 100% translation coverage (all 3 languages)
+- [ ] Zero hardcoded strings
+- [ ] All text visible in UI (no overflow)
+- [ ] Smooth language switching
+- [ ] SEO meta tags per language
+- [ ] Analytics tracking language preference
+- [ ] Professional quality translations
+
+### 🚀 Post-Implementation
+- Monitor user language preferences
+- Gather feedback on translation quality
+- A/B test different phrasings
+- Plan for additional languages (DE, FR, etc.)
+
+### 📝 Notes
+- Use GPT-4 for initial translations
+- Verify with native speakers
+- Consider hiring professional translators for marketing copy
+- Create glossary of key terms
+- Maintain translation memory for consistency
+
+# Test Strategy:
+

@@ -1,0 +1,21 @@
+src/components/calculator/ComparisonCharts.tsx(23,1): error TS6192: All imports in import declaration are unused.
+src/config/conversationPersonality.ts(7,1): error TS6133: 'Industry' is declared but its value is never read.
+src/utils/calendlyFunnelTracking.ts(145,11): error TS6133: 'sessionId' is declared but its value is never read.
+src/utils/conversationEngine.ts(22,3): error TS6133: 'detectFallbackCategory' is declared but its value is never read.
+src/utils/conversationEngine.ts(37,1): error TS6192: All imports in import declaration are unused.
+src/utils/conversationEngine.ts(719,7): error TS2353: Object literal may only specify known properties, and 'isDemoBooking' does not exist in type '{ label: string; route: string; icon?: "explorer" | "calculator" | "demo" | "dashboard" | "sparkles" | undefined; helpText?: string | undefined; features?: string[] | undefined; ctaText?: string | undefined; }'.
+src/utils/conversationPersonalization.ts(23,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/fallbackResponses.ts(37,3): error TS6133: 'userMessage' is declared but its value is never read.
+src/utils/fallbackResponses.ts(190,31): error TS6133: 'context' is declared but its value is never read.
+src/utils/journeyNudges.ts(380,52): error TS6133: 'context' is declared but its value is never read.
+src/utils/journeyPredictions.ts(15,1): error TS6192: All imports in import declaration are unused.
+src/utils/journeyPredictions.ts(16,1): error TS6133: 'JourneyStep' is declared but its value is never read.
+src/utils/journeyPredictions.ts(289,43): error TS6133: 'industry' is declared but its value is never read.
+src/utils/personalizationEngine.ts(20,1): error TS6133: 'Industry' is declared but its value is never read.
+src/utils/personalizationEngine.ts(21,1): error TS6133: 'UserProfile' is declared but its value is never read.
+src/utils/questionMatcher.ts(172,54): error TS6133: 'catKey' is declared but its value is never read.
+src/utils/relatedQuestions.ts(13,1): error TS6133: 'PLATFORM_KNOWLEDGE' is declared but its value is never read.
+tests/e2e/accessibility.spec.ts(109,11): error TS6133: 'loadingIndicator' is declared but its value is never read.
+tests/e2e/navigation.spec.ts(77,11): error TS6133: 'response' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(144,13): error TS6133: 'initialContent' is declared but its value is never read.
+tests/e2e/personalization.spec.ts(157,13): error TS6133: 'updatedContent' is declared but its value is never read.

@@ -1,0 +1,216 @@
+# Hybrid SaaS Architecture Implementation PRD
+
+## Executive Summary
+
+Implement a modern hybrid SaaS architecture following industry best practices from Vercel, Stripe, and Notion. Split current codebase into two repositories: Marketing+Demo (public, SEO-focused) and Platform (authenticated, full SaaS features), while maintaining single domain appearance via Vercel rewrites.
+
+## Business Goals
+
+- **SEO Maximization**: All pages under single domain (futuremarketingai.com) for maximum domain authority
+- **Demo Accessibility**: Public demos (no auth) to maximize conversion funnel
+- **Platform Security**: Isolated platform with proper authentication layer
+- **Maintainability**: Clean separation between marketing and platform code
+- **Scalability**: Independent deployment and scaling for each component
+
+## Current State
+
+### What We Have
+1. **Clean Demo Code (Local)**:
+   - TypeScript: 0 errors ✅
+   - Hero/Landing page
+   - ROI Calculator
+   - Explorer
+   - AI Journey Assistant
+
+2. **Platform Repo (GitHub)**:
+   - Full SaaS features (dashboard, analytics, campaigns)
+   - Supabase backend
+   - 5 duplicate headers identified
+   - 3 duplicate sidebars identified
+   - Needs cleanup
+
+## Target Architecture
+
+### Repository Structure
+
+**Repo 1: Future-MarketingAI-Marketing (NEW)**
+```
+futuremarketingai.com/
+├── / (landing page)
+├── /demo (demo hub)
+├── /demo/calculator
+├── /demo/explorer
+├── /pricing
+├── /about
+└── /login
+```
+
+**Repo 2: Future-MarketingAI (EXISTING - cleaned up)**
+```
+Deployed as: platform-internal.vercel.app
+Public URL: futuremarketingai.com/app (via Vercel rewrite)
+
+/app/
+├── /dashboard
+├── /analytics
+├── /campaigns
+└── /settings
+```
+
+### URL Structure
+- Marketing: `futuremarketingai.com/`
+- Demos: `futuremarketingai.com/demo/*` (public, no auth)
+- Platform: `futuremarketingai.com/app/*` (protected, auth required)
+
+## Technical Requirements
+
+### Phase 1: Foundation (Week 1)
+1. Git configuration and demo code commit
+2. Create marketing repository structure
+3. Migrate demo code to /demo routes
+4. Create landing page with CTA buttons
+5. Implement login page
+
+### Phase 2: Platform Cleanup (Week 2)
+1. Consolidate headers (5 → 1)
+2. Consolidate sidebars (3 → 1)
+3. Clean up layout components
+4. Update all imports
+5. Test platform functionality
+
+### Phase 3: Deployment (Week 2-3)
+1. Deploy marketing repo to Vercel
+2. Configure custom domain (futuremarketingai.com)
+3. Deploy platform repo
+4. Configure Vercel rewrites (/app/* → platform)
+5. Test authentication flow
+
+### Phase 4: Integration (Week 3)
+1. Implement cross-linking (marketing ↔ platform)
+2. Configure authentication redirects
+3. Test complete user journeys
+4. Verify cookie handling
+5. Test demo → platform conversion flow
+
+### Phase 5: SEO Optimization (Week 3)
+1. Create unified sitemap.xml
+2. Configure robots.txt
+3. Add meta tags and structured data
+4. Set up Google Search Console
+5. Verify SEO indexing
+
+### Phase 6: Testing & Launch (Week 3-4)
+1. End-to-end testing
+2. Performance optimization
+3. Security audit
+4. Analytics setup
+5. Launch monitoring
+
+## Success Criteria
+
+### Technical
+- ✅ Zero TypeScript errors in both repos
+- ✅ All pages accessible via single domain
+- ✅ Platform properly protected by authentication
+- ✅ Demos work without authentication
+- ✅ Smooth redirect flow for login
+- ✅ Fast page loads (<2s)
+
+### SEO
+- ✅ All marketing pages indexed by Google
+- ✅ Demo pages indexed and ranking
+- ✅ Platform pages properly noindexed
+- ✅ Unified sitemap.xml
+- ✅ Lighthouse score >90
+
+### User Experience
+- ✅ Seamless navigation across all pages
+- ✅ Single domain appearance (no confusing redirects)
+- ✅ Fast demo access (no login barrier)
+- ✅ Secure platform access (proper auth)
+- ✅ Clear CTAs on landing page
+
+## Implementation Strategy
+
+### Repository Management
+- Marketing repo: Fresh Next.js setup with clean demo code
+- Platform repo: Cleanup existing code, remove duplicates
+- Both repos: TypeScript strict mode, ESLint, Prettier
+
+### Deployment Strategy
+- Marketing: Vercel (static optimization, edge functions)
+- Platform: Vercel (full-stack, Supabase integration)
+- Rewrites: Configure in marketing vercel.json
+
+### Authentication Strategy
+- Login page: Marketing repo (/login)
+- Auth logic: Platform repo (Supabase)
+- Middleware: Platform repo (protect /app/*)
+- Redirects: Seamless between repos
+
+## Risk Mitigation
+
+### Risks Identified
+1. **Authentication complexity**: Login on marketing, auth on platform
+2. **Cookie sharing**: Must work across rewrite boundary
+3. **SEO confusion**: Google must see as single site
+4. **Duplicate cleanup**: Risk of breaking platform features
+
+### Mitigation Strategies
+1. Thorough testing of auth flow in staging
+2. Use Vercel rewrites (not redirects) for cookie continuity
+3. Proper headers and meta tags for SEO signals
+4. Incremental cleanup with testing after each step
+
+## Timeline
+
+- **Week 1**: Foundation (Git setup, repo creation, demo migration)
+- **Week 2**: Platform cleanup + Initial deployment
+- **Week 3**: Integration + SEO + Testing
+- **Week 4**: Launch + Monitoring
+
+## Resources Required
+
+### Development
+- Clean demo code (ready)
+- Platform repo access (available)
+- GitHub account (ready)
+- Vercel account (needed)
+
+### External Services
+- GitHub (version control)
+- Vercel (deployment)
+- Supabase (existing - platform backend)
+- Google Search Console (SEO)
+
+## Dependencies
+
+### Internal
+- Task 12 completion (TypeScript fixes) ✅
+- Demo code ready ✅
+- Platform repo accessible ✅
+
+### External
+- Domain ownership: futuremarketingai.com
+- Vercel account setup
+- DNS configuration access
+
+## Future Considerations
+
+### Post-Launch Enhancements
+- Blog section in marketing repo
+- Customer testimonials
+- Case studies
+- Interactive product tours
+- Advanced analytics dashboard
+
+### Scalability
+- CDN for static assets
+- Edge caching optimization
+- Database query optimization
+- A/B testing framework integration
+
+## Conclusion
+
+This hybrid architecture represents industry best practice for modern SaaS applications. By separating marketing/demo from platform while maintaining single domain appearance, we achieve optimal SEO, security, maintainability, and user experience. The implementation is straightforward with clear phases and measurable success criteria.
+

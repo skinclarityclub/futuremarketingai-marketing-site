@@ -1,0 +1,193 @@
+{
+  "pain_section": {
+    "title": "Wat Kost Uw Huidige Aanpak?",
+    "points": {
+      "hours": "<strong>60+ uur/week</strong> verspild aan handmatige contentcreatie, posten en analyse",
+      "costs": "<strong>€10K-€15K/maand</strong> aan teamkosten voor marketing die niet schaalt",
+      "posts": "<strong>Slechts 40 posts/maand</strong> over 7 platforms = inconsistent",
+      "strategy": "<strong>Geen tijd voor strategie</strong> constant brandje blussen met content",
+      "advertising": "<strong>Blind adverteren</strong> zonder data = verspild budget",
+      "offshelf": "<strong>Standaard oplossingen</strong> vereisen compromissen op UW specifieke workflow"
+    },
+    "cta": "👇 <strong className=\"text-red-400\">Bereken hieronder</strong> wat u BESPAART met geautomatiseerde AI"
+  },
+  "inputs": {
+    "section_title": "Uw Marketing Statistieken",
+    "validation_error": "Voer een waarde in tussen {{min}} en {{max}}",
+    "team_size": {
+      "label": "Marketing Teamgrootte",
+      "unit": "mensen",
+      "description": "Hoeveel mensen zitten er in uw marketingteam?"
+    },
+    "channels": {
+      "label": "Marketing Kanalen",
+      "description": "Hoeveel kanalen beheert u actief? (Social media, email, blog, ads, etc.)"
+    },
+    "marketing_spend": {
+      "label": "Huidige Marketing Uitgaven per Maand (Optioneel)",
+      "description": "Geschat maandelijks budget voor bureaus, tools of advertenties"
+    },
+    "avg_salary": {
+      "label": "Gemiddeld Jaarsalaris",
+      "description": "Gemiddeld jaarsalaris per teamlid (voor ROI berekening)"
+    },
+    "campaigns": {
+      "label": "Maandelijks Campagnevolume",
+      "unit": "campagnes",
+      "description": "Aantal marketingcampagnes die u per maand voert"
+    },
+    "team_size_buttons": {
+      "lean": "Lean (1-5)",
+      "growing": "Groeiend (5-15)",
+      "scaling": "⭐ Schalen (15-50) - Aanbevolen"
+    },
+    "channel_descriptions": {
+      "starting": "Net begonnen",
+      "perfect": "⭐ Perfect passend",
+      "high_volume": "⭐ Hoog volume",
+      "enterprise": "Enterprise schaal"
+    },
+    "advanced_settings": "Geavanceerde Instellingen (optioneel)",
+    "high_spend_alert": {
+      "title": "Hoge uitgaven gedetecteerd!",
+      "description": "U kunt aanzienlijke kosten besparen met automatisering. Onze AI kan deze werkdruk aan voor een fractie van de kosten."
+    }
+  },
+  "results": {
+    "loading": "Resultaten berekenen...",
+    "roi_title": "Uw Geschatte Return on Investment",
+    "team_description": "Voor teams zoals de uwe: {{teamSize}} mensen die {{channels}} kanalen beheren",
+    "team_description_with_spend": "Voor teams zoals de uwe: {{teamSize}} mensen die {{channels}} kanalen beheren, met {{spend}}/maand uitgaven",
+    "custom_built_advantage": {
+      "badge": "🔧 Maatwerk Voordeel:",
+      "description": "Deze ROI is mogelijk omdat het systeem specifiek voor UW workflow is gebouwd—geen sjabloon waaraan u moet aanpassen."
+    },
+    "metric_labels": {
+      "time_saved": "Tijd Bespaard",
+      "labor_cost_savings": "Arbeidskosten Besparing",
+      "content_output": "Content Output",
+      "revenue_increase": "Omzet Toename"
+    },
+    "section_titles": {
+      "current_costs": "Huidige Kosten (Handmatig)",
+      "with_automation": "Met AI Automatisering",
+      "your_gains": "Uw Winst"
+    },
+    "metrics": {
+      "team_costs": "Teamkosten",
+      "time_spent": "Tijd Besteed",
+      "output": "Content Output",
+      "efficiency": "Efficiëntie",
+      "cost_per_post": "Kosten per Post",
+      "time_saved": "Tijd Bespaard",
+      "cost_savings": "Kostenbesparingen",
+      "roi": "ROI",
+      "break_even": "Break-Even",
+      "payback_period": "Terugverdientijd"
+    },
+    "units": {
+      "per_month": "/maand",
+      "per_year": "/jaar",
+      "hours_per_week": "u/week",
+      "posts_per_month": "posts/maand",
+      "months": "maanden"
+    }
+  },
+  "share": {
+    "title": "Deel Uw Resultaten",
+    "subtitle": "Bewaar of deel uw ROI berekening met uw team",
+    "button_share": "Delen",
+    "button_export_pdf": "Exporteer PDF",
+    "button_exporting": "Exporteren...",
+    "link_copied": "✓ Link gekopieerd!",
+    "export_error": "PDF export mislukt. Probeer het opnieuw.",
+    "modal": {
+      "title": "Deel Je Berekening",
+      "description": "Deel je ROI berekening met je team via een link",
+      "copy_link_title": "Link Kopiëren",
+      "copy_link_subtitle": "Delen via elke app",
+      "share_directly_title": "Direct Delen",
+      "share_directly_subtitle": "Via social media of email",
+      "shareable_link_label": "📋 Jouw Deelbare Link:",
+      "info_text": "Je link bevat de huidige calculator waarden. Iedereen met deze link kan je berekening bekijken."
+    }
+  },
+  "cta": {
+    "see_how": "Zie Hoe Het Werkt",
+    "book_demo": "Boek een Demo"
+  },
+  "comparison_table": {
+    "header": {
+      "title": "Voor & Na: Jouw Transformatie",
+      "subtitle": "Side-by-side vergelijking van huidige situatie vs geautomatiseerde AI"
+    },
+    "labels": {
+      "without_ai": "❌ Zonder AI",
+      "with_ai": "✅ Met FutureMarketingAI",
+      "difference": "💎 Verschil",
+      "before": "Voor:",
+      "after": "Na:"
+    },
+    "metrics": {
+      "content_output": {
+        "metric": "Content Output",
+        "unit_month": "posts/maand",
+        "before_subtext": "Handmatig",
+        "after_subtext": "24/7 AI automation"
+      },
+      "time_per_month": {
+        "metric": "Tijd per Maand (team)",
+        "unit_hours": "uren",
+        "before_subtext_template": "{{teamSize}} mensen × 60h",
+        "after_value": "40 uren",
+        "after_subtext": "2 mensen × 20h monitoring",
+        "difference_percentage": "93% minder tijd"
+      },
+      "team_costs": {
+        "metric": "Team Kosten (50% tijd op marketing)",
+        "before_subtext_template": "{{teamSize}} mensen",
+        "after_subtext": "2 mensen monitoring"
+      },
+      "platform_costs": {
+        "metric": "Platform Kosten",
+        "before_value": "€0/maand",
+        "before_subtext": "Handmatig werk",
+        "after_subtext": "AI platform investering",
+        "difference_percentage": "Investering"
+      },
+      "publishing_consistency": {
+        "metric": "Publishing Consistentie",
+        "before_value": "30-50%",
+        "before_subtext": "Onregelmatig door tijd gebrek",
+        "after_value": "99.8%",
+        "after_subtext": "24/7 AI automation",
+        "difference_value": "+50%",
+        "difference_percentage": "2x betere uptime"
+      },
+      "ad_roi": {
+        "metric": "Ad ROI & Pre-Testing",
+        "before_value": "Onmeetbaar",
+        "before_subtext": "Gokwerk zonder data",
+        "after_value": "3:1 ROAS",
+        "after_subtext": "€3 return per €1 spend",
+        "difference_value": "+285%",
+        "difference_percentage": "Door AI pre-testing"
+      }
+    },
+    "summary": {
+      "net_benefit": "NET VOORDEEL",
+      "after_all_costs": "na alle kosten",
+      "per_month": "/maand",
+      "per_year": "per jaar",
+      "roi_label": "ROI:"
+    }
+  },
+  "loading": {
+    "scheduling": "Planning laden..."
+  },
+  "final_cta": {
+    "title": "Klaar Om Jouw Marketing Te Transformeren?",
+    "description": "Ontdek hoe FutureMarketingAI {{roi}} ROI kan leveren en {{hours}} uur per maand kan besparen voor jouw team.",
+    "book_call": "Gesprek Boeken"
+  }
+}

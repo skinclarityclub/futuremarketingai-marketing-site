@@ -1,0 +1,138 @@
+# Task ID: 30
+# Title: Integrate "Custom-Built" USP Throughout Demo
+# Status: done
+# Dependencies: 17, 19
+# Priority: high
+# Description: Integrate "Maatwerk/Custom-Built per business" as core differentiator throughout entire demo (Hero, Explorer, Calculator), positioning it as a premium, zero-compromise alternative to template-based SaaS.
+# Details:
+**Problem:**
+"Custom-built per business" is a key differentiator vs. off-the-shelf SaaS solutions but is currently only mentioned in the RiskReduction component on the Calculator page.
+
+**Implementation Phases:**
+
+## PHASE 1 - Quick Wins (15 min, HIGH PRIORITY):
+1. **Hero Updates:**
+   - Replace trust signal "Founder pricing" with "Built FOR you, not configured BY you"
+   - Add custom-built badge above headline: `<Badge>🔧 Fully Custom-Built • No Templates</Badge>`
+   - Update `TrustBar` component to include custom-built messaging
+
+2. **Calculator Updates:**
+   - Add template pain point to pain section: "Off-the-shelf solutions require compromises"
+   - Update RiskReduction component to emphasize custom-built advantage
+
+## PHASE 2 - High Impact (60 min, HIGH PRIORITY):
+1. **Hero Enhancement:**
+   ```tsx
+   // Create new CustomBuildProcess component
+   <CustomBuildProcess className="mt-12">
+     <ProcessStep number="1">
+       <Title>Discovery</Title>
+       <Description>We analyze YOUR specific business needs</Description>
+       <Icon>🔍</Icon>
+     </ProcessStep>
+     <ProcessStep number="2">
+       <Title>Custom Build</Title>
+       <Description>Built FOR your business, not BY you</Description>
+       <Icon>🔧</Icon>
+     </ProcessStep>
+     <ProcessStep number="3">
+       <Title>Zero Compromises</Title>
+       <Description>No templates, no limitations</Description>
+       <Icon>✅</Icon>
+     </ProcessStep>
+   </CustomBuildProcess>
+   ```
+
+2. **Explorer Enhancements:**
+   - Add industry-specific customization examples to each feature modal
+   - Update module descriptions to emphasize custom-built nature
+   - Integrate custom-built messaging into module headers
+
+## PHASE 3 - Competitive Positioning (30 min, MEDIUM PRIORITY):
+1. **Explorer Addition:**
+   ```tsx
+   // Add Template vs. Custom-Built comparison section
+   <ComparisonSection className="my-16">
+     <Header>
+       <Badge>⚔️ Comparison</Badge>
+       <Title>Template SaaS vs. Custom-Built Solution</Title>
+     </Header>
+     
+     <ComparisonTable>
+       <ComparisonRow>
+         <Category>Implementation</Category>
+         <TemplateOption>Configure yourself</TemplateOption>
+         <CustomOption>Built FOR you</CustomOption>
+       </ComparisonRow>
+       <ComparisonRow>
+         <Category>Workflow</Category>
+         <TemplateOption>Adapt to the software</TemplateOption>
+         <CustomOption>Adapts to YOUR workflow</CustomOption>
+       </ComparisonRow>
+       <ComparisonRow>
+         <Category>Industry Fit</Category>
+         <TemplateOption>Generic approach</TemplateOption>
+         <CustomOption>YOUR industry specifics</CustomOption>
+       </ComparisonRow>
+       <ComparisonRow>
+         <Category>Scaling</Category>
+         <TemplateOption>Hit template limitations</TemplateOption>
+         <CustomOption>Grows with YOUR business</CustomOption>
+       </ComparisonRow>
+     </ComparisonTable>
+   </ComparisonSection>
+   ```
+
+2. **Calculator Enhancement:**
+   - Add custom-built context to ROI display
+   - Highlight how custom implementation increases ROI vs. template solutions
+
+## CORE MESSAGING TO IMPLEMENT:
+- "Built FOR You, Not BY You"
+- "Zero Compromises"
+- "YOUR [Industry/Size/Workflow]"
+- "Not a Template"
+
+## KEY FILES TO MODIFY:
+- `src/pages/Hero.tsx` (Phase 1 & 2 changes)
+- `src/pages/Explorer.tsx` (Phase 2 & 3 changes)
+- `src/pages/Calculator.tsx` (Phase 1 & 3 changes)
+- `src/components/credibility/CustomBuildProcess.tsx` (NEW - Phase 2)
+- `src/components/comparison/ComparisonTable.tsx` (NEW - Phase 3)
+- `src/components/common/TrustBar.tsx` (Update with custom messaging)
+
+## EXPECTED IMPACT:
+- Differentiation: +30-40%
+- Premium positioning: Higher quality leads
+- Commitment readiness: +25%
+
+# Test Strategy:
+1. **Visual Testing:**
+   - Verify custom-built messaging appears consistently across all three main pages
+   - Check that new components render correctly on all screen sizes
+   - Ensure new badges and trust signals are visually prominent
+   - Validate that the CustomBuildProcess component is visually appealing and clear
+
+2. **Content Testing:**
+   - Review all custom-built messaging for consistency and clarity
+   - Verify industry-specific examples are accurate and relevant
+   - Check that comparison table presents fair but compelling contrasts
+   - Ensure messaging aligns with strategic plan in MAATWERK-USP-STRATEGIC-INTEGRATION.md
+
+3. **Functional Testing:**
+   - Test all new components render without errors
+   - Verify responsive behavior on mobile, tablet and desktop viewports
+   - Check that new components don't interfere with existing functionality
+   - Test that CustomBuildProcess component animations work correctly
+
+4. **Integration Testing:**
+   - Verify custom-built messaging integrates seamlessly with existing content
+   - Test that new components don't cause layout shifts or visual inconsistencies
+   - Ensure custom-built messaging doesn't contradict other value propositions
+   - Check that the comparison table doesn't negatively impact page load times
+
+5. **User Testing:**
+   - Conduct A/B testing to measure impact on conversion rates
+   - Gather feedback on clarity and persuasiveness of custom-built messaging
+   - Track user engagement with new components (time spent, interaction)
+   - Monitor impact on lead quality metrics after implementation

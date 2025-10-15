@@ -1,0 +1,560 @@
+---
+description: TypeScript best practices voor type-safe en maintainable code
+globs: **/*.{ts,tsx}
+alwaysApply: true
+---
+
+## Type Safety Fundamentals
+
+- **Strikte TypeScript configuratie:**
+  ```json
+  // tsconfig.json
+  {
+    "compilerOptions": {
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    }
+  }
+  ```
+
+## Type Definitions
+
+- **Prefer Types over Interfaces (meestal):**
+  ```typescript
+  // ✅ DO: Type voor object shapes
+  type User = {
+    id: number;
+    name: string;
+    email: string;
+  };
+  
+  // ✅ DO: Union types
+  type Status = 'pending' | 'active' | 'inactive';
+  
+  // ✅ ACCEPTABLE: Interface voor OOP patterns
+  interface Animal {
+    name: string;
+    makeSound(): void;
+  }
+  
+  interface Dog extends Animal {
+    breed: string;
+  }
+  
+  // ✅ DO: Type voor utility types
+  type Partial<T> = {
+    [P in keyof T]?: T[P];
+  };
+  ```
+
+- **Avoid Any:**
+  ```typescript
+  // ❌ DON'T: any defeats the purpose of TypeScript
+  function process(data: any) {
+    return data.value; // No type checking!
+  }
+  
+  // ✅ DO: Use specific types
+  function process(data: { value: string }) {
+    return data.value;
+  }
+  
+  // ✅ DO: Use unknown voor truly unknown types
+  function parse(json: string): unknown {
+    return JSON.parse(json);
+  }
+  
+  const result = parse('{"name": "John"}');
+  // Type guard needed
+  if (typeof result === 'object' && result !== null && 'name' in result) {
+    console.log(result.name);
+  }
+  ```
+
+## Advanced Types
+
+- **Generics:**
+  ```typescript
+  // ✅ DO: Reusable type-safe functions
+  function first<T>(arr: T[]): T | undefined {
+    return arr[0];
+  }
+  
+  const num = first([1, 2, 3]); // type: number | undefined
+  const str = first(['a', 'b']); // type: string | undefined
+  
+  // ✅ DO: Generic components
+  interface Props<T> {
+    items: T[];
+    renderItem: (item: T) => React.ReactNode;
+  }
+  
+  function List<T>({ items, renderItem }: Props<T>) {
+    return <>{items.map(renderItem)}</>;
+  }
+  
+  <List items={users} renderItem={(user) => <div>{user.name}</div>} />
+  ```
+
+- **Utility Types:**
+  ```typescript
+  // ✅ DO: Use built-in utility types
+  type User = {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+  };
+  
+  // Pick - select properties
+  type PublicUser = Pick<User, 'id' | 'name' | 'email'>;
+  
+  // Omit - exclude properties
+  type UserWithoutPassword = Omit<User, 'password'>;
+  
+  // Partial - all properties optional
+  type PartialUser = Partial<User>;
+  
+  // Required - all properties required
+  type RequiredUser = Required<PartialUser>;
+  
+  // Readonly - immutable
+  type ReadonlyUser = Readonly<User>;
+  
+  // Record - object with specific keys
+  type UserMap = Record<number, User>;
+  ```
+
+- **Template Literal Types:**
+  ```typescript
+  // ✅ DO: Type-safe string unions
+  type EventName = 'click' | 'focus' | 'blur';
+  type EventHandler = `on${Capitalize<EventName>}`;
+  // Result: 'onClick' | 'onFocus' | 'onBlur'
+  
+  type HTTPMethod = 'get' | 'post' | 'put' | 'delete';
+  type Endpoint = `/${string}`;
+  type Route = `${HTTPMethod}:${Endpoint}`;
+  // Result: 'get:/users' | 'post:/users' etc.
+  ```
+
+## Type Guards
+
+- **Runtime Type Checking:**
+  ```typescript
+  // ✅ DO: Type predicates
+  function isString(value: unknown): value is string {
+    return typeof value === 'string';
+  }
+  
+  function isUser(value: unknown): value is User {
+    return (
+      typeof value === 'object' &&
+      value !== null &&
+      'id' in value &&
+      'name' in value &&
+      'email' in value
+    );
+  }
+  
+  // Usage
+  if (isUser(data)) {
+    console.log(data.email); // TypeScript knows data is User
+  }
+  
+  // ✅ DO: Discriminated unions
+  type Success = {
+    status: 'success';
+    data: User;
+  };
+  
+  type Error = {
+    status: 'error';
+    message: string;
+  };
+  
+  type Result = Success | Error;
+  
+  function handleResult(result: Result) {
+    if (result.status === 'success') {
+      console.log(result.data.name); // TypeScript knows it's Success
+    } else {
+      console.log(result.message); // TypeScript knows it's Error
+    }
+  }
+  ```
+
+## Zod voor Runtime Validation
+
+- **Schema-based Validation:**
+  ```typescript
+  // ✅ DO: Combine TypeScript + runtime validation
+  import { z } from 'zod';
+  
+  const userSchema = z.object({
+    id: z.number(),
+    name: z.string().min(1),
+    email: z.string().email(),
+    age: z.number().min(18).optional(),
+    role: z.enum(['user', 'admin', 'moderator'])
+  });
+  
+  // Infer TypeScript type from schema
+  type User = z.infer<typeof userSchema>;
+  
+  // Runtime validation
+  function createUser(data: unknown): User {
+    return userSchema.parse(data); // Throws if invalid
+  }
+  
+  // Safe parsing
+  const result = userSchema.safeParse(data);
+  if (result.success) {
+    console.log(result.data); // type: User
+  } else {
+    console.error(result.error); // Validation errors
+  }
+  ```
+
+## React + TypeScript
+
+- **Component Props:**
+  ```typescript
+  // ✅ DO: Type component props
+  interface ButtonProps {
+    variant: 'primary' | 'secondary';
+    size?: 'small' | 'medium' | 'large';
+    onClick: () => void;
+    children: React.ReactNode;
+  }
+  
+  function Button({ variant, size = 'medium', onClick, children }: ButtonProps) {
+    return (
+      <button className={`btn-${variant} btn-${size}`} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+  
+  // ✅ DO: Generic components
+  interface SelectProps<T> {
+    options: T[];
+    value: T;
+    onChange: (value: T) => void;
+    getLabel: (option: T) => string;
+  }
+  
+  function Select<T>({ options, value, onChange, getLabel }: SelectProps<T>) {
+    return (
+      <select value={String(value)} onChange={(e) => onChange(options[Number(e.target.value)])}>
+        {options.map((option, index) => (
+          <option key={index} value={index}>
+            {getLabel(option)}
+          </option>
+        ))}
+      </select>
+    );
+  }
+  ```
+
+- **Hooks met TypeScript:**
+  ```typescript
+  // ✅ DO: Type useState
+  const [user, setUser] = useState<User | null>(null);
+  
+  // ✅ DO: Type useRef
+  const inputRef = useRef<HTMLInputElement>(null);
+  
+  // ✅ DO: Type custom hooks
+  function useLocalStorage<T>(key: string, initialValue: T) {
+    const [value, setValue] = useState<T>(() => {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    });
+    
+    const setStoredValue = (newValue: T) => {
+      setValue(newValue);
+      localStorage.setItem(key, JSON.stringify(newValue));
+    };
+    
+    return [value, setStoredValue] as const;
+  }
+  
+  // Usage
+  const [user, setUser] = useLocalStorage<User>('user', { id: 0, name: '' });
+  ```
+
+- **Event Handlers:**
+  ```typescript
+  // ✅ DO: Type event handlers
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log(e.currentTarget.value);
+  };
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Submit logic
+  };
+  ```
+
+## API Responses
+
+- **Type API data:**
+  ```typescript
+  // ✅ DO: Define API response types
+  interface ApiResponse<T> {
+    data: T;
+    status: number;
+    message?: string;
+  }
+  
+  interface PaginatedResponse<T> {
+    data: T[];
+    total: number;
+    page: number;
+    pageSize: number;
+  }
+  
+  // ✅ DO: Type fetch functions
+  async function fetchUser(id: number): Promise<User> {
+    const response = await fetch(`/api/users/${id}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data: ApiResponse<User> = await response.json();
+    return data.data;
+  }
+  
+  // ✅ DO: Use Zod for API validation
+  async function fetchUserSafe(id: number): Promise<User> {
+    const response = await fetch(`/api/users/${id}`);
+    const json = await response.json();
+    return userSchema.parse(json); // Runtime validation!
+  }
+  ```
+
+## Enums vs Union Types
+
+- **Prefer Union Types:**
+  ```typescript
+  // ❌ AVOID: Enums (generate runtime code)
+  enum Status {
+    Pending = 'pending',
+    Active = 'active',
+    Inactive = 'inactive'
+  }
+  
+  // ✅ DO: Union types (no runtime code)
+  type Status = 'pending' | 'active' | 'inactive';
+  
+  // ✅ DO: Const objects for values + types
+  const STATUS = {
+    PENDING: 'pending',
+    ACTIVE: 'active',
+    INACTIVE: 'inactive'
+  } as const;
+  
+  type Status = typeof STATUS[keyof typeof STATUS];
+  // type Status = 'pending' | 'active' | 'inactive'
+  ```
+
+## Type Narrowing
+
+- **Smart Type Narrowing:**
+  ```typescript
+  // ✅ DO: Use typeof guards
+  function process(value: string | number) {
+    if (typeof value === 'string') {
+      return value.toUpperCase(); // TypeScript knows it's string
+    }
+    return value.toFixed(2); // TypeScript knows it's number
+  }
+  
+  // ✅ DO: Use 'in' operator
+  type Cat = { meow: () => void };
+  type Dog = { bark: () => void };
+  
+  function makeSound(animal: Cat | Dog) {
+    if ('meow' in animal) {
+      animal.meow();
+    } else {
+      animal.bark();
+    }
+  }
+  
+  // ✅ DO: Discriminated unions
+  type Shape =
+    | { kind: 'circle'; radius: number }
+    | { kind: 'rectangle'; width: number; height: number };
+  
+  function area(shape: Shape): number {
+    switch (shape.kind) {
+      case 'circle':
+        return Math.PI * shape.radius ** 2;
+      case 'rectangle':
+        return shape.width * shape.height;
+    }
+  }
+  ```
+
+## Mapped Types
+
+- **Transform Types:**
+  ```typescript
+  // ✅ DO: Create mapped types
+  type User = {
+    id: number;
+    name: string;
+    email: string;
+  };
+  
+  // Make all properties optional
+  type OptionalUser = {
+    [K in keyof User]?: User[K];
+  };
+  
+  // Make all properties readonly
+  type ReadonlyUser = {
+    readonly [K in keyof User]: User[K];
+  };
+  
+  // Remove readonly
+  type Mutable<T> = {
+    -readonly [K in keyof T]: T[K];
+  };
+  
+  // Add string to all property values
+  type Stringify<T> = {
+    [K in keyof T]: string;
+  };
+  ```
+
+## Conditional Types
+
+- **Type Conditionals:**
+  ```typescript
+  // ✅ DO: Conditional types
+  type IsString<T> = T extends string ? true : false;
+  
+  type A = IsString<string>; // true
+  type B = IsString<number>; // false
+  
+  // Extract function return types
+  type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+  
+  function getUser() {
+    return { id: 1, name: 'John' };
+  }
+  
+  type User = ReturnType<typeof getUser>; // { id: number; name: string }
+  ```
+
+## TypeScript with External Libraries
+
+- **Type Declarations:**
+  ```bash
+  # Install types for libraries
+  npm install --save-dev @types/react
+  npm install --save-dev @types/node
+  npm install --save-dev @types/lodash
+  ```
+
+- **Custom Type Declarations:**
+  ```typescript
+  // ✅ DO: Declare types for untyped modules
+  // types/custom.d.ts
+  declare module 'untyped-library' {
+    export function doSomething(value: string): number;
+  }
+  
+  // Declare global variables
+  declare global {
+    interface Window {
+      myCustomProperty: string;
+    }
+  }
+  ```
+
+## Error Handling
+
+- **Type-safe Errors:**
+  ```typescript
+  // ✅ DO: Custom error types
+  class ValidationError extends Error {
+    constructor(
+      message: string,
+      public field: string
+    ) {
+      super(message);
+      this.name = 'ValidationError';
+    }
+  }
+  
+  // ✅ DO: Result type pattern
+  type Result<T, E = Error> =
+    | { success: true; value: T }
+    | { success: false; error: E };
+  
+  function divide(a: number, b: number): Result<number> {
+    if (b === 0) {
+      return { success: false, error: new Error('Division by zero') };
+    }
+    return { success: true, value: a / b };
+  }
+  
+  const result = divide(10, 2);
+  if (result.success) {
+    console.log(result.value); // type: number
+  } else {
+    console.error(result.error); // type: Error
+  }
+  ```
+
+## TypeScript Best Practices
+
+- **DO's:**
+  - ✅ Enable `strict` mode
+  - ✅ Use `unknown` instead of `any`
+  - ✅ Leverage type inference (don't over-annotate)
+  - ✅ Use utility types (`Pick`, `Omit`, `Partial`, etc.)
+  - ✅ Validate external data with Zod/io-ts
+  - ✅ Use discriminated unions voor state management
+  - ✅ Prefer `interface` voor publieke API's, `type` voor intern gebruik
+
+- **DON'Ts:**
+  - ❌ Don't use `any` (use `unknown` if needed)
+  - ❌ Don't disable strict checks without goede reden
+  - ❌ Don't use `as` casting (gebruik type guards)
+  - ❌ Don't ignore TypeScript errors met `@ts-ignore`
+  - ❌ Don't over-complicate types (KISS principle)
+
+## TypeScript Checklist
+
+- [ ] `strict: true` in tsconfig.json
+- [ ] No `any` types (use `unknown` where needed)
+- [ ] All external data validated (Zod schemas)
+- [ ] Component props fully typed
+- [ ] API responses typed
+- [ ] Event handlers typed
+- [ ] Custom hooks return types defined
+- [ ] No TypeScript errors in build
+- [ ] Types exported for library usage
+- [ ] Type guards voor runtime checks

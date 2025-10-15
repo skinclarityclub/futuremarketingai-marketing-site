@@ -1,0 +1,224 @@
+{
+  "page": {
+    "title": "Centro de Comando",
+    "subtitle": "Análisis en tiempo real y gestión de campañas"
+  },
+  "tabs": {
+    "overview": "Resumen",
+    "analytics_hub": "Centro de Análisis",
+    "strategy": "Centro de Estrategia",
+    "campaign_management": "Gestión de Campañas",
+    "content_pipeline": "Pipeline de Contenido",
+    "publishing_scheduler": "Programador de Publicación",
+    "ai_assistants": "Asistentes IA"
+  },
+  "overview": {
+    "title": "Resumen del Sistema",
+    "title_with_industry": "Resumen del Sistema {{industry}}",
+    "sections": {
+      "weekly_performance": "Tendencias de Rendimiento Semanal",
+      "active_campaigns": "Campañas Activas",
+      "system_performance": "Rendimiento del Sistema",
+      "recent_activity": "Actividad Reciente",
+      "system_health": "Salud del Sistema"
+    },
+    "table": {
+      "campaign": "Campaña",
+      "status": "Estado",
+      "progress": "Progreso",
+      "roi": "ROI"
+    },
+    "performance_labels": {
+      "ai_processing": "Procesamiento IA",
+      "content_generation": "Generación de Contenido",
+      "campaign_optimization": "Optimización de Campañas"
+    },
+    "activity": {
+      "campaign_deployed": "Campaña \"{{name}}\" desplegada",
+      "ai_optimization": "Optimización IA aumentó CTR en {{percentage}}%",
+      "content_generated": "{{count}} nuevas piezas de contenido generadas"
+    },
+    "health": {
+      "api_status": "Estado API",
+      "ai_models": "Modelos IA",
+      "publishing_queue": "Cola de Publicación",
+      "active_jobs": "Trabajos Activos",
+      "operational": "Operativo",
+      "degraded": "Degradado",
+      "active_count": "{{active}}/{{total}} Activos",
+      "pending_count": "{{count}} Pendientes",
+      "processing_count": "{{count}} Procesando"
+    },
+    "campaign_status": {
+      "active": "Activa",
+      "paused": "Pausada",
+      "scheduled": "Programada",
+      "draft": "Borrador"
+    },
+    "chart_legends": {
+      "roi": "ROI %",
+      "engagement": "Compromiso %",
+      "reach": "Alcance"
+    }
+  },
+  "content_pipeline": {
+    "title": "Pipeline de Contenido"
+  },
+  "campaign_launcher": {
+    "title": "Lanzar Nueva Campaña",
+    "configuration": {
+      "heading": "Configuración de Campaña",
+      "name_label": "Nombre de Campaña",
+      "name_required": "Nombre de Campaña *",
+      "content_target_label": "Objetivo de Contenido: {{count}} piezas",
+      "duration_label": "Duración: {{days}} días",
+      "objective_label": "Objetivo de Campaña",
+      "platforms_label": "Plataformas *",
+      "target_audience_label": "Audiencia Objetivo",
+      "launch_button": "🚀 Lanzar Campaña"
+    },
+    "objectives": {
+      "awareness": "Conciencia",
+      "engagement": "Engagement",
+      "conversion": "Conversión",
+      "retention": "Retención"
+    },
+    "audiences": {
+      "all": "Todas las Audiencias",
+      "age_range": "Edad {{range}}"
+    },
+    "preview": {
+      "heading": "Vista Previa de Campaña",
+      "name_label": "Nombre de Campaña",
+      "untitled": "Campaña Sin Título",
+      "content_target_label": "Objetivo de Contenido",
+      "pieces": "piezas",
+      "duration_label": "Duración",
+      "days": "días",
+      "objective_label": "Objetivo",
+      "platforms_label": "Plataformas Seleccionadas",
+      "no_platforms": "No hay plataformas seleccionadas",
+      "audience_label": "Audiencia Objetivo",
+      "ai_optimization": "Optimización IA",
+      "enabled": "✓ Habilitado",
+      "disabled": "✗ Deshabilitado"
+    },
+    "results": {
+      "heading": "Resultados Estimados e Impacto",
+      "estimated_reach": "Alcance Estimado:",
+      "team_hours_saved": "Horas de Equipo Ahorradas:",
+      "engagement": "Engagement Estimado:",
+      "hours_unit": "hrs"
+    },
+    "success": {
+      "title": "¡Campaña Lanzada!",
+      "message": "Tu campaña ha sido configurada exitosamente y comenzará a procesarse pronto."
+    },
+    "errors": {
+      "name_required": "El nombre de la campaña es obligatorio",
+      "content_min": "Se requieren mínimo 5 piezas de contenido",
+      "platforms_required": "Por favor selecciona al menos una plataforma"
+    }
+  },
+  "ad_manager": {
+    "title": "Gestor de Anuncios",
+    "summary_cards": {
+      "total_budget": "Presupuesto Total",
+      "total_spent": "Total Gastado",
+      "total_conversions": "Conversiones Totales",
+      "avg_roi": "ROI Promedio",
+      "active_campaigns": "{{count}} campañas activas",
+      "utilized": "{{percent}}% utilizado",
+      "avg_cpc": "CPC Promedio:",
+      "across_all": "En todas las campañas"
+    },
+    "chart": {
+      "budget_distribution": "Distribución de Presupuesto",
+      "budget_label": "Presupuesto",
+      "spent_label": "Gastado"
+    },
+    "table": {
+      "title": "Campañas Activas",
+      "headers": {
+        "campaign": "Campaña",
+        "platform": "Plataforma",
+        "status": "Estado",
+        "budget": "Presupuesto",
+        "spent": "Gastado",
+        "progress": "Progreso",
+        "impressions": "Impresiones",
+        "clicks": "Clics",
+        "ctr": "CTR",
+        "conversions": "Conversiones",
+        "cpc": "CPC",
+        "roi": "ROI",
+        "actions": "Acciones"
+      }
+    },
+    "filters": {
+      "all_statuses": "Todos los Estados",
+      "all_platforms": "Todas las Plataformas"
+    },
+    "status": {
+      "active": "Activa",
+      "paused": "Pausada",
+      "ended": "Finalizada"
+    },
+    "actions": {
+      "view_details": "Ver Detalles",
+      "pause": "Pausar",
+      "resume": "Reanudar",
+      "edit": "Editar"
+    },
+    "optimization": {
+      "title": "Sugerencias de Optimización",
+      "no_suggestions": "¡Todas las campañas funcionan de manera óptima!"
+    }
+  },
+  "content_calendar": {
+    "title": "Calendario de Contenido",
+    "view": {
+      "week": "Vista Semanal",
+      "month": "Vista Mensual"
+    },
+    "filter": {
+      "by_platform": "Filtrar por Plataforma:"
+    },
+    "week_of": "Semana del {{range}}",
+    "days": {
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mié",
+      "thu": "Jue",
+      "fri": "Vie",
+      "sat": "Sáb",
+      "sun": "Dom"
+    },
+    "status": {
+      "scheduled": "Programado",
+      "published": "Publicado",
+      "draft": "Borrador"
+    },
+    "more_items": "+{{count}} más",
+    "legend": "Leyenda:",
+    "no_content": "Sin contenido programado"
+  },
+  "header": {
+    "brand": "Future Marketing AI",
+    "command_center": "Centro de Comando",
+    "system_status": {
+      "operational": "Todos los Sistemas Operativos",
+      "warning": "Problemas Menores Detectados",
+      "error": "Problemas del Sistema"
+    },
+    "menu": {
+      "settings": "Configuración",
+      "notifications": "Notificaciones",
+      "logout": "Cerrar Sesión"
+    }
+  },
+  "system_health": {
+    "title": "Estado del Sistema",
+    "last_updated": "Última actualización:"
+  }
+}

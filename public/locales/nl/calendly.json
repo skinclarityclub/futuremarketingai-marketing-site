@@ -1,0 +1,20 @@
+{
+  "modal": {
+    "title": "Boek Je Gratis Consultatie",
+    "what_to_expect": {
+      "heading": "Wat Je Kunt Verwachten:",
+      "items": [
+        "30 minuten strategisch gesprek met een specialist",
+        "Analyse van je huidige marketingsituatie",
+        "Gepersonaliseerde ROI berekening voor jouw business",
+        "Praktische tips en inzichten"
+      ]
+    },
+    "loading": "Calendly laden...",
+    "trust_signals": {
+      "no_obligations": "✓ Geen verplichtingen",
+      "free_advice": "✓ Gratis advies",
+      "instant_booking": "✓ Direct inplannen"
+    }
+  }
+}

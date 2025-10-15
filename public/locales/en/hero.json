@@ -1,0 +1,266 @@
+{
+  "headline_variants": {
+    "team_size": "10x Output, Same Team Size",
+    "pain_point": "Scale Content Without Scaling Costs",
+    "situation": "Team of 3, Output of 30",
+    "future_focused": "Autonomous Marketing for Teams 10-50",
+    "innovation_focused": "Marketing That Runs Itself",
+    "risk_reward": "The Future is Autonomous"
+  },
+  "headline_subtitles": {
+    "team_size": "AI creates content 24/7 while your team focuses on strategy.",
+    "pain_point": "Multiply output 10x without growing your team.",
+    "situation": "Autonomous AI scales your marketing without hiring.",
+    "future_focused": "Join the first 10 teams building tomorrow's advantage.",
+    "innovation_focused": "Be among the pioneers proving autonomous marketing works.",
+    "risk_reward": "Join the first 10 teams to prove it."
+  },
+  "main_headline": "10x Marketing Output, Same Team Size",
+  "subtitle": "For teams of 10-50 people. AI that creates content 24/7 while you focus on strategy.",
+  "stats_context": "Average results from teams who automated:",
+  "trust_signals": {
+    "team_size": "Teams 10-50",
+    "custom_built_usp": "Built FOR You, Not BY You",
+    "ai_powered": "GPT-4 & Claude"
+  },
+  "custom_built_badge": "Fully Custom-Built • No Templates",
+
+  "tech_stack": {
+    "label": "Powered by Industry-Leading AI"
+  },
+
+  "vision_timeline": {
+    "badge": "Where We're Heading",
+    "title": "The Evolution of Marketing Automation",
+    "early_adopter_window": "EARLY ADOPTER WINDOW",
+    "you_are_here": "You Are Here",
+    "insight": "Teams that adopted AI-assisted tools early (2020-2022) gained 3-5 years on competitors.",
+    "insight_emphasis": "The SAME 2-year window exists NOW (end 2025) for autonomous.",
+    "insight_data": "<1% have this today. Mainstream hits 2027-2028. Act now = 2-3 year unfair advantage."
+  },
+
+  "stats": {
+    "hours_saved": {
+      "value": "360",
+      "label": "Hours Saved",
+      "suffix": "h/month",
+      "detail": "Was: 6 people × 60h/month manual"
+    },
+    "content_output": {
+      "value": "160",
+      "label": "Content Output",
+      "suffix": " posts",
+      "detail": "Was: 40 posts (manual)"
+    },
+    "engagement": {
+      "value": "247",
+      "label": "Engagement",
+      "suffix": "%",
+      "detail": "Average across all platforms"
+    }
+  },
+
+  "cta": {
+    "primary": "Explore Platform",
+    "explore_platform": "Explore Platform →",
+    "secondary": "Calculate ROI",
+    "calendly": "Book Discovery Call"
+  },
+
+  "premium": {
+    "title": "All-in-One Premium Services",
+    "description": "Three powerful modules working seamlessly for complete marketing automation"
+  },
+
+  "early_adopter": {
+    "title": "Join the First 10 Pioneer Teams",
+    "description": "Be among the early adopters building tomorrow's competitive advantage. 3 teams already running 24/7. 7 Founders Pricing spots remaining (60% off, locked forever).",
+    "primary_cta": "Apply for Founders Pricing →",
+    "secondary_cta": "Calculate Your ROI",
+    "urgency": "",
+    "trust_indicators": {
+      "founder_access": "✓ Direct Slack access to founder",
+      "co_create": "✓ Co-create the roadmap with us",
+      "no_cc": "✓ No credit card required - we review in 24h"
+    }
+  },
+
+  "floating_cta": {
+    "title": "Ready to Start?",
+    "urgency": "⏰ Only 3 spots left",
+    "trust_indicators": {
+      "quick_call": "✓ 30-min call",
+      "no_commitment": "✓ No commitments"
+    }
+  },
+
+  "exit_intent": {
+    "title": "Wait! Don't Miss This",
+    "description": "Book a free 30-minute consultation and discover how FutureMarketingAI can automate your marketing.",
+    "primary_cta": "Book Free Call",
+    "secondary_cta": "Not Now",
+    "urgency": "⏰ Bonus: Free ROI scan",
+    "trust_indicators": {
+      "quick_call": "✓ 30-min call",
+      "roi_analysis": "✓ Personal ROI analysis",
+      "no_commitment": "✓ No commitments"
+    }
+  },
+
+  "loading": {
+    "diagram": "Loading diagram...",
+    "scheduling": "Loading scheduling..."
+  },
+
+  "case_studies": {
+    "ecommerce": {
+      "id": "1",
+      "industry": "E-commerce",
+      "company": "EcoShop NL",
+      "pain_point": "4-person team spent 60+ hours/week creating content manually. Only 30-40 posts/month with inconsistent quality. Missed 70% of product launches due to content bottleneck.",
+      "solution": "Future Marketing AI automated the entire content process with 24/7 AI agents. Automatic trend research, multi-platform content generation, smart scheduling, and real-time performance tracking. All integrated with their webshop and product catalog.",
+      "results": "From 40 to 160 posts/month (4x), 80 hours/month saved, engagement up 285%, and conversion rate improved 42%. Team can now focus on strategy and customer experience.",
+      "metrics": {
+        "posts": {
+          "label": "Posts/Month",
+          "value": "160",
+          "improvement": "+300%"
+        },
+        "time": {
+          "label": "Time Saved",
+          "value": "80h",
+          "improvement": "+200%"
+        },
+        "engagement": {
+          "label": "Engagement",
+          "value": "+285%",
+          "improvement": "3x higher"
+        },
+        "roi": {
+          "label": "ROI",
+          "value": "4.2x",
+          "improvement": "+320%"
+        }
+      },
+      "testimonial": {
+        "quote": "We spent 60+ hours/week on content. Now everything runs automatically and our engagement is 3x higher. Incredible how much time and money we save.",
+        "author": "Lisa van Dam",
+        "role": "Founder & CEO @ EcoShop NL"
+      }
+    },
+    "saas": {
+      "id": "2",
+      "industry": "B2B SaaS",
+      "company": "TechForce Solutions",
+      "pain_point": "B2B content marketing was completely ad-hoc. No trend tracking, poor hashtag strategy, zero ROI on ads. Managing 5 freelancers without measurable results. Missing 80% of relevant industry trends.",
+      "solution": "Research Hub with 24/7 Perplexity AI trend forecasting, automatic competitor analysis, data-driven content planning, and ad pre-testing system. All content optimized for B2B LinkedIn and industry-specific platforms.",
+      "results": "Ad ROI increased from break-even to +340%. 3x more qualified leads per month. Team scaled from 2 to 8 channels without hiring. Pre-testing prevents wasted ad budget. Systematic approach generates consistent results.",
+      "metrics": {
+        "ad_roi": {
+          "label": "Ad ROI",
+          "value": "+340%",
+          "improvement": "Was: 0%"
+        },
+        "leads": {
+          "label": "Leads",
+          "value": "3x",
+          "improvement": "+200%"
+        },
+        "saved": {
+          "label": "Team Output",
+          "value": "8 channels",
+          "improvement": "2 people"
+        },
+        "time": {
+          "label": "Time",
+          "value": "-70h",
+          "improvement": "/month"
+        }
+      },
+      "testimonial": {
+        "quote": "From break-even to +340% ROI. We now pre-test every ad before spending budget. The system pays itself back 6x.",
+        "author": "Mark de Vries",
+        "role": "Marketing Director @ TechForce Solutions"
+      }
+    },
+    "retail": {
+      "id": "3",
+      "industry": "Retail & CPG",
+      "company": "GreenLife Brands",
+      "pain_point": "7 brands on 5 platforms—total chaos. Team of 8 constantly overworked. 40% of planned posts missed due to capacity issues. No central overview, inconsistent branding, missed engagement opportunities.",
+      "solution": "Command Center dashboard for all brands. Automatic content generation with brand guidelines per brand, smart scheduling for optimal times, 99.8% reliable publishing engine, and unified analytics dashboard.",
+      "results": "From 40% missed posts to 99.8% consistency. Team reduced from 8 to 3 people for monitoring. Managing 7 brands with 3-person team. Overall engagement increased 215% through better timing and higher frequency.",
+      "metrics": {
+        "consistency": {
+          "label": "Consistency",
+          "value": "99.8%",
+          "improvement": "Was: 60%"
+        },
+        "team": {
+          "label": "Team",
+          "value": "-62%",
+          "improvement": "8 → 3"
+        },
+        "saved": {
+          "label": "Efficiency",
+          "value": "7 brands",
+          "improvement": "3 people"
+        },
+        "engagement": {
+          "label": "Engagement",
+          "value": "+215%",
+          "improvement": "2.15x"
+        }
+      },
+      "testimonial": {
+        "quote": "7 brands, 1 dashboard. From chaos to 99.8% consistency. Our team went from 8 to 3 people. Game changer.",
+        "author": "Sarah Janssen",
+        "role": "COO @ GreenLife Brands"
+      }
+    }
+  },
+
+  "trust_badges": {
+    "gdpr": {
+      "name": "GDPR Compliant",
+      "description": "Fully compliant with EU data privacy regulations"
+    },
+    "iso27001": {
+      "name": "ISO 27001 Certified",
+      "description": "International security management standard"
+    },
+    "soc2": {
+      "name": "SOC 2 Type II",
+      "description": "Verified security and availability controls"
+    },
+    "ssl": {
+      "name": "256-bit SSL Encryption",
+      "description": "Bank-level data encryption"
+    }
+  },
+
+  "aggregate_metrics": {
+    "time_recovered": {
+      "value": "2.5",
+      "prefix": "€",
+      "suffix": "M+",
+      "label": "Time Recovered",
+      "pain_label": "€2.5M+ in wasted time recovered from manual content processes",
+      "icon": "⏰"
+    },
+    "posts_created": {
+      "value": "50",
+      "suffix": "K+",
+      "label": "Posts Created",
+      "pain_label": "50K+ posts created with zero manual work—fully AI-automated",
+      "icon": "🚀"
+    },
+    "companies_automated": {
+      "value": "20",
+      "suffix": "+",
+      "label": "Companies Automated",
+      "pain_label": "20+ companies freed from content chaos—from overworked to automated",
+      "icon": "🎯"
+    }
+  }
+}

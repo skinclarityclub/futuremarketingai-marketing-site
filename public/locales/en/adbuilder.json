@@ -1,0 +1,201 @@
+{
+  "wizard": {
+    "steps": {
+      "upload": {
+        "title": "Upload",
+        "description": "Choose your image"
+      },
+      "enhance": {
+        "title": "Enhance",
+        "description": "AI enhancements"
+      },
+      "template": {
+        "title": "Template",
+        "description": "Select video style"
+      },
+      "presenter": {
+        "title": "Presenter",
+        "description": "Add spokesperson"
+      },
+      "finalize": {
+        "title": "Finalize",
+        "description": "Export & share"
+      }
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "finish": "Finish",
+      "restart": "Start Over"
+    },
+    "demo": {
+      "button": "Run Guided Demo",
+      "running": "Running Demo..."
+    }
+  },
+  "upload": {
+    "header": {
+      "title": "Upload Your Image",
+      "subtitle": "Start by uploading a product photo or selecting a sample image"
+    },
+    "dropzone": {
+      "dragging": "Drop it here!",
+      "idle": "Drag & drop your image",
+      "or": "or",
+      "browse": "browse files",
+      "formats": "Supports JPG, PNG, WebP • Max 10MB"
+    },
+    "errors": {
+      "invalid_type": "Please upload a valid image file (JPG, PNG, or WebP)",
+      "file_too_large": "Image size must be less than 10MB"
+    },
+    "preview": {
+      "uploaded_badge": "Uploaded"
+    },
+    "samples": {
+      "divider": "OR CHOOSE A SAMPLE"
+    }
+  },
+  "enhance": {
+    "header": {
+      "title": "AI Enhancement Studio",
+      "subtitle": "Apply AI-powered enhancements to perfect your image",
+      "enhancements_applied": "{{count}} Enhancement Applied",
+      "enhancements_applied_plural": "{{count}} Enhancements Applied"
+    },
+    "comparison": {
+      "before": "Before",
+      "after": "After"
+    },
+    "processing": {
+      "title": "Processing Enhancement...",
+      "time_tooltip": "Processing time: ~{{seconds}}s"
+    },
+    "enhancements": {
+      "bg_remove": {
+        "name": "Remove Background",
+        "description": "AI-powered background removal for clean product shots"
+      },
+      "upscale": {
+        "name": "AI Upscale",
+        "description": "Enhance resolution up to 4K with neural networks"
+      },
+      "color_correct": {
+        "name": "Color Correction",
+        "description": "Auto-adjust colors, brightness, and contrast"
+      },
+      "smart_crop": {
+        "name": "Smart Crop",
+        "description": "Intelligently crop to focus on the main subject"
+      }
+    },
+    "status": {
+      "applied": "Applied"
+    },
+    "tip": {
+      "prefix": "Pro Tip:",
+      "text": "Apply multiple enhancements for the best results. Click on an applied enhancement to remove it."
+    }
+  },
+  "template": {
+    "header": {
+      "title": "Choose Video Template",
+      "subtitle": "Select a style that matches your brand and message",
+      "selected": "{{name}} Selected"
+    },
+    "filters": {
+      "label": "Filters:",
+      "style_label": "Style",
+      "usecase_label": "Use Case",
+      "results": "{{count}} Template",
+      "results_plural": "{{count}} Templates"
+    },
+    "styles": {
+      "all": "All",
+      "dynamic": "Dynamic",
+      "minimal": "Minimal",
+      "elegant": "Elegant",
+      "bold": "Bold",
+      "playful": "Playful"
+    },
+    "usecases": {
+      "all": "All",
+      "product": "Product",
+      "announcement": "Announcement",
+      "testimonial": "Testimonial",
+      "tutorial": "Tutorial"
+    },
+    "no_results": "No templates match your filters. Try adjusting your selection.",
+    "preview": {
+      "perfect_for": "Perfect for {{useCase}} content with a {{style}} style"
+    }
+  },
+  "presenter": {
+    "header": {
+      "title": "Add Virtual Presenter",
+      "subtitle": "Choose an AI spokesperson to present your ad",
+      "selected": "{{presenter}} with {{voice}} voice"
+    },
+    "sections": {
+      "select_presenter": "Select Presenter",
+      "choose_voice": "Choose Voice",
+      "write_script": "Write Script",
+      "preview": "Preview"
+    },
+    "script": {
+      "placeholder": "Enter your ad script here... Keep it concise and engaging!",
+      "estimated_duration": "~{{seconds}}s",
+      "tip_prefix": "Pro Tip:",
+      "tip_text": "Keep your script under 30 seconds for maximum engagement. Start with a hook!"
+    },
+    "preview_frame": {
+      "content_placeholder": "Your ad content will appear here",
+      "drag_indicator": "Drag to reposition",
+      "position_label": "{{presenter}} in position",
+      "no_presenter": "Select a presenter to see preview"
+    },
+    "positions": {
+      "title": "Quick Positions",
+      "bottom_left": "Bottom Left",
+      "bottom_center": "Bottom Center",
+      "bottom_right": "Bottom Right"
+    }
+  },
+  "finalize": {
+    "header": {
+      "title": "Your Ad is Ready! 🎉",
+      "subtitle": "Preview and export your AI-generated ad"
+    },
+    "generation": {
+      "title": "Generating Your Ad...",
+      "subtitle": "Our AI is creating magic ✨",
+      "progress_label": "{{percent}}%"
+    },
+    "preview": {
+      "title": "Final Ad Preview",
+      "replay": "Replay",
+      "live_indicator": "LIVE"
+    },
+    "summary": {
+      "title": "Ad Summary",
+      "template": "Template:",
+      "presenter": "Presenter:",
+      "script_length": "Script Length:",
+      "duration": "Duration:",
+      "chars_suffix": "chars",
+      "seconds_suffix": "~{{seconds}}s"
+    },
+    "export": {
+      "title": "Export Options",
+      "success_badge": "Exported!",
+      "share_button": "Share Ad",
+      "share_copy_link": "Copy Link",
+      "share_email": "Email",
+      "create_new": "Create New Ad"
+    },
+    "success": {
+      "title": "Export Successful! 🎉",
+      "subtitle": "Your ad is ready to launch!"
+    }
+  }
+}

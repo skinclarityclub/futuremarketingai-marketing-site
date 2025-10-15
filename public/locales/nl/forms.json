@@ -1,0 +1,54 @@
+{
+  "labels": {
+    "email": "E-mailadres",
+    "name": "Volledige Naam",
+    "first_name": "Voornaam",
+    "last_name": "Achternaam",
+    "company": "Bedrijfsnaam",
+    "phone": "Telefoonnummer",
+    "website": "Website URL",
+    "job_title": "Functietitel",
+    "team_size": "Teamgrootte",
+    "industry": "Branche",
+    "message": "Bericht",
+    "password": "Wachtwoord",
+    "confirm_password": "Bevestig Wachtwoord"
+  },
+  "placeholders": {
+    "email": "Voer je e-mailadres in",
+    "name": "Voer je volledige naam in",
+    "company": "Je bedrijfsnaam",
+    "phone": "+31 6 12345678",
+    "website": "https://jouwbedrijf.nl",
+    "message": "Vertel ons over je behoeften...",
+    "password": "Maak een sterk wachtwoord"
+  },
+  "helpers": {
+    "email": "We delen je e-mail nooit met anderen.",
+    "password": "Gebruik minimaal 8 karakters met letters en cijfers",
+    "phone": "We bellen alleen tijdens kantooruren"
+  },
+  "team_sizes": {
+    "1-5": "1-5 personen",
+    "6-20": "6-20 personen",
+    "21-50": "21-50 personen",
+    "51-200": "51-200 personen",
+    "201+": "201+ personen"
+  },
+  "industries": {
+    "ecommerce": "E-commerce & Retail",
+    "saas": "Technologie & SaaS",
+    "agency": "Marketing Bureau",
+    "other": "Andere Branche"
+  },
+  "actions": {
+    "submit": "Versturen",
+    "cancel": "Annuleren",
+    "save": "Wijzigingen Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "create": "Aanmaken",
+    "upload": "Uploaden",
+    "download": "Downloaden"
+  }
+}

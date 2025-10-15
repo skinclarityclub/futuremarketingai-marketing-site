@@ -1,0 +1,2445 @@
+# PRODUCT REQUIREMENTS DOCUMENT
+# Command Center Dashboard - Interactive Demo Showcase
+
+## EXECUTIVE SUMMARY
+
+Transform the Dashboard into a visually stunning, interactive DEMO that showcases what a real marketing automation command center would look like. This is a **prototype/demo environment** designed to wow prospects and demonstrate the system's potential - NOT a functional production application.
+
+**Goal**: Create an immersive, visually impressive dashboard demo that showcases the 9-layer marketing machine through polished UI, smooth animations, and intelligent mock data - without building complex backend logic.
+
+**Target Audience**: CMOs, Marketing Directors, Agency Owners, Growth Marketers
+**Technical Stack**: React + TypeScript, Framer Motion, Recharts, Mock Data (JSON), Local State
+**Timeline**: 2-3 weeks for full demo implementation
+
+---
+
+## 🎭 DEMO-FIRST PRINCIPLES
+
+### Critical Understanding: This is a DEMO, Not Production
+
+**What This Demo DOES:**
+✅ Shows what the system CAN do through polished UI
+✅ Creates "wow moments" with smooth animations
+✅ Demonstrates data visualization capabilities
+✅ Showcases AI-powered features (simulated)
+✅ Builds trust through professional design
+✅ Enables interactive exploration (clicks, hovers)
+
+**What This Demo DOES NOT:**
+❌ Save data to databases
+❌ Make real API calls
+❌ Persist user changes across sessions
+❌ Handle complex backend logic
+❌ Process actual payments or integrations
+❌ Require authentication or user management
+
+### Demo vs Production: What to Fake vs What to Make Real
+
+**✅ MAKE REAL (UI/Frontend):**
+- All UI components and interactions
+- Smooth animations and transitions
+- Interactive charts and visualizations
+- Navigation and tab switching
+- Hover effects and microinteractions
+- Modal/drawer opening and closing
+- Form inputs (local state only)
+- Filtering and sorting (client-side)
+- Event tracking (analytics for demo performance)
+
+**🎭 FAKE/SIMULATE (Backend/Data):**
+- Data persistence (use localStorage max, reset on refresh)
+- API integrations (use JSON mock data files)
+- Real-time updates (use `setInterval` for animation)
+- WebSockets (simulate with timed state updates)
+- AI processing (pre-calculated results, instant responses)
+- Platform connections (show "connected" status, no real OAuth)
+- Email sending (show success message, no actual sending)
+- External webhooks (show triggered, no actual HTTP calls)
+- Complex calculations (use pre-calculated mock values)
+
+---
+
+## 1. CORE PRINCIPLES
+
+### 1.1 Design Philosophy
+- **Alive & Breathing**: Every metric updates, every status indicator pulses, every action triggers visual feedback
+- **Professional & Trustworthy**: Enterprise-grade UI with glassmorphism, subtle animations, and polished details
+- **Interactive & Explorable**: Users can click, drag, hover, and explore - not just read
+- **Data-Driven Storytelling**: Show the journey from strategy → content → distribution → analytics
+- **AI-First Experience**: Highlight AI intelligence, learning, and automation throughout
+
+### 1.2 UX Goals
+- Reduce cognitive load through clear visual hierarchy and progressive disclosure
+- Build trust through compliance indicators, audit trails, and professional polish
+- Create "wow moments" with smooth animations and intelligent micro-interactions
+- Enable quick understanding through visual metaphors and intuitive layouts
+- Support both high-level overview and deep-dive exploration
+
+---
+
+## 2. ARCHITECTURAL OVERVIEW
+
+### 2.1 Dashboard Layout Structure
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ HEADER: Command Center | Real-time Status | User Profile       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ SYSTEM HEALTH BAR (Live Indicators Across Top)                 │
+│ [🟢 API] [🟢 AI Models] [🟢 Publishing] [⚡ Processing]       │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ HERO METRICS ROW (3-4 Large Animated Counters)                 │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐          │
+│  │ Active  │  │  Total  │  │  Conv.  │  │   ROI   │          │
+│  │Campaign │  │  Reach  │  │  Rate   │  │ Today   │          │
+│  └─────────┘  └─────────┘  └─────────┘  └─────────┘          │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│ MAIN CANVAS (Interactive Tabs/Sections)                        │
+│                                                                 │
+│  ┌────────┬────────┬────────┬────────┬────────┐              │
+│  │Overview│Pipeline│Campaign│Analytics│Control │              │
+│  └────────┴────────┴────────┴────────┴────────┘              │
+│                                                                 │
+│  [Dynamic Content Area with Interactive Widgets]               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 2.2 Core Modules (Tabs)
+
+1. **System Overview** - High-level metrics, recent activity, system health
+2. **Content Pipeline** - Visual workflow from research → content → approval → publishing
+3. **Campaign Orchestra** - Active campaigns, scheduling, multi-platform management
+4. **Analytics Hub** - Real-time performance, forecasting, A/B testing results
+5. **AI Control Panel** - AI settings, learning insights, optimization recommendations
+
+---
+
+## 3. DETAILED FEATURE SPECIFICATIONS
+
+### 3.1 SYSTEM HEALTH BAR
+
+**Purpose**: Real-time system status at a glance
+
+**Components**:
+- **API Status**: Green pulse when operational, red when issues, yellow for degraded
+- **AI Models**: Shows which models are active (Research, Content Gen, Optimization)
+- **Publishing Queue**: Count of pending/scheduled posts with progress indicator
+- **Processing Activity**: Live count of AI operations in progress
+
+**Technical**:
+```tsx
+<SystemHealthBar>
+  <StatusIndicator 
+    name="API" 
+    status="operational" 
+    pulse={true}
+    tooltip="All API endpoints responding normally"
+  />
+  <StatusIndicator 
+    name="AI Models" 
+    status="active"
+    details={["GPT-4: Research", "Claude: Content", "Gemini: Optimization"]}
+  />
+  <ProcessingCounter 
+    label="Publishing Queue"
+    count={12}
+    total={24}
+    color="accent-primary"
+  />
+  <ActivityIndicator 
+    label="AI Processing"
+    activeJobs={3}
+    animated={true}
+  />
+</SystemHealthBar>
+```
+
+**Interactions**:
+- Hover: Detailed tooltip with last update time
+- Click: Opens detailed status modal
+- Pulse animation on state changes
+
+---
+
+### 3.2 HERO METRICS ROW
+
+**Purpose**: Showcase key performance indicators with impact
+
+**Metrics** (4 animated counters):
+1. **Active Campaigns**: Count with trend indicator (↑ 12% vs last month)
+2. **Total Reach**: Large number with suffix (1.2M) + sparkline chart
+3. **Conversion Rate**: Percentage with color gradient based on performance
+4. **ROI Today**: Euro value with animated increase + comparison bar
+
+**Technical**:
+```tsx
+<HeroMetricsRow>
+  <MetricCard
+    value={24}
+    label="Active Campaigns"
+    trend={{ value: 12, direction: 'up', period: 'vs last month' }}
+    sparkline={campaignTrendData}
+    color="primary"
+    icon={<RocketIcon />}
+  />
+  <MetricCard
+    value={1.2}
+    suffix="M"
+    label="Total Reach"
+    trend={{ value: 28, direction: 'up' }}
+    sparkline={reachTrendData}
+    color="success"
+    icon={<UsersIcon />}
+  />
+  <MetricCard
+    value={8.4}
+    suffix="%"
+    label="Conversion Rate"
+    trend={{ value: 3.2, direction: 'up' }}
+    progressRing={true}
+    color="secondary"
+    icon={<TargetIcon />}
+  />
+  <MetricCard
+    value={12450}
+    prefix="€"
+    label="ROI Today"
+    compareBar={{ previous: 9200, current: 12450 }}
+    color="gradient"
+    icon={<TrendingUpIcon />}
+  />
+</HeroMetricsRow>
+```
+
+**Animations**:
+- Entrance: Staggered fade-in with scale effect (0.1s delay between cards)
+- Value changes: Count-up animation with number transitions
+- Hover: Lift effect with subtle glow
+- Click: Expand to detailed modal with drill-down analytics
+
+---
+
+### 3.3 CONTENT PIPELINE VISUALIZATION
+
+**Purpose**: Show the content journey from idea to published post
+
+**Visual Design**: Horizontal workflow with animated flow between stages
+
+**Stages**:
+1. **Research & Planning** (🧠)
+   - AI analyzing trends
+   - Topic generation
+   - Strategy formulation
+   
+2. **Content Generation** (🏭)
+   - 50 pieces in production
+   - Platform-specific variants
+   - AI writing in progress
+
+3. **Quality Control** (✅)
+   - 12 awaiting approval
+   - Telegram approval system
+   - Feedback loop active
+
+4. **Publishing Queue** (📤)
+   - 24 scheduled posts
+   - Multi-platform distribution
+   - Optimal timing AI
+
+5. **Live & Active** (🚀)
+   - 156 posts published
+   - Real-time performance
+   - Continuous optimization
+
+**Technical**:
+```tsx
+import ReactFlow, { Node, Edge } from 'react-flow-renderer';
+
+<ContentPipelineFlow>
+  <PipelineStage 
+    id="research"
+    title="Research & Planning"
+    icon="🧠"
+    metrics={{ active: 3, completed: 247 }}
+    status="processing"
+    aiActivity={true}
+  />
+  <AnimatedConnection 
+    source="research" 
+    target="content-gen"
+    flowRate="fast"
+    particleEffect={true}
+  />
+  <PipelineStage 
+    id="content-gen"
+    title="Content Generation"
+    icon="🏭"
+    metrics={{ inProgress: 50, generated: 1230 }}
+    status="active"
+    showPreview={true}
+  />
+  <AnimatedConnection 
+    source="content-gen" 
+    target="quality-control"
+    flowRate="medium"
+  />
+  <PipelineStage 
+    id="quality-control"
+    title="Quality Control"
+    icon="✅"
+    metrics={{ pending: 12, approved: 1150 }}
+    status="pending-action"
+    alertBadge={true}
+  />
+  {/* Continue for remaining stages */}
+</ContentPipelineFlow>
+```
+
+**Interactions**:
+- Click stage: Opens detailed view with current items
+- Hover connection: Shows flow metrics (items/hour)
+- Drag stages: Reorder pipeline (with save preference)
+- Click item bubble: Preview content piece
+
+**Animations**:
+- Particles flowing along connections
+- Pulse effects on active stages
+- Badge bounce when new items arrive
+- Status color transitions
+
+---
+
+### 3.4 CAMPAIGN ORCHESTRATION CANVAS
+
+**Purpose**: Visualize and manage active marketing campaigns
+
+**Layout**: Grid of campaign cards with status, progress, and quick actions
+
+**Campaign Card Components**:
+```tsx
+<CampaignCard
+  id="spring-launch"
+  name="Spring Product Launch"
+  status="active" // active | paused | completed | draft
+  progress={87} // 0-100%
+  metrics={{
+    reach: 24500,
+    engagement: 14.2,
+    roi: 342,
+    spend: 1240,
+    budget: 5000
+  }}
+  platforms={['instagram', 'facebook', 'tiktok', 'linkedin']}
+  schedule={{
+    start: '2025-03-01',
+    end: '2025-03-31',
+    postsRemaining: 18
+  }}
+  aiOptimizations={[
+    { type: 'timing', improvement: '+23% engagement' },
+    { type: 'targeting', improvement: '+15% reach' }
+  ]}
+  quickActions={[
+    { label: 'Pause', icon: 'pause', action: pauseCampaign },
+    { label: 'Boost Budget', icon: 'plus', action: boostBudget },
+    { label: 'View Analytics', icon: 'chart', action: viewAnalytics }
+  ]}
+/>
+```
+
+**Interactive Features**:
+- **Drag & Drop**: Reorder campaign priorities
+- **Progress Rings**: Visual circular progress indicators
+- **Platform Badges**: Color-coded icons for active channels
+- **AI Recommendations**: Floating badges with optimization tips
+- **Quick Actions**: Hover to reveal action buttons
+- **Expandable Details**: Click to see full campaign analytics
+
+**Bulk Operations Panel**:
+```tsx
+<BulkActionsBar selectedCampaigns={selectedIds}>
+  <BulkAction icon="pause">Pause Selected</BulkAction>
+  <BulkAction icon="duplicate">Duplicate</BulkAction>
+  <BulkAction icon="export">Export Reports</BulkAction>
+  <BulkAction icon="budget">Adjust Budget</BulkAction>
+</BulkActionsBar>
+```
+
+---
+
+### 3.5 REAL-TIME ANALYTICS HUB
+
+**Purpose**: Live performance monitoring with predictive insights
+
+**Key Visualizations**:
+
+1. **Performance Timeline** (Large Line Chart)
+   - Multi-metric overlay (ROI, Reach, Engagement, Conversions)
+   - Zoom & pan controls
+   - Annotation markers for campaign launches
+   - Time range selector (24h, 7d, 30d, 90d, All)
+
+2. **Funnel Visualization** (Animated Funnel)
+   - Impressions → Clicks → Leads → Conversions
+   - Drop-off rates with color coding
+   - Click to drill down into segment data
+
+3. **Platform Comparison** (Grouped Bar Charts)
+   - Side-by-side platform performance
+   - Sortable metrics
+   - Export to image/PDF
+
+4. **Heat Map Calendar** (Activity Calendar)
+   - Best posting times
+   - Engagement patterns
+   - AI-recommended schedule overlay
+
+5. **Geo Map** (Interactive World Map)
+   - Regional performance visualization
+   - Hover for detailed metrics
+   - Click to filter analytics by region
+
+**Technical**:
+```tsx
+<AnalyticsHub>
+  <PerformanceTimeline
+    data={timeSeriesData}
+    metrics={['roi', 'reach', 'engagement', 'conversions']}
+    updateInterval={5000} // Live updates every 5s
+    annotations={campaignLaunches}
+    enableZoom={true}
+    exportable={true}
+  />
+  
+  <FunnelVisualization
+    stages={[
+      { name: 'Impressions', value: 125000, color: '#00D4FF' },
+      { name: 'Clicks', value: 12500, color: '#00FF88', dropoff: 10 },
+      { name: 'Leads', value: 3750, color: '#B794F4', dropoff: 30 },
+      { name: 'Conversions', value: 1050, color: '#00D4FF', dropoff: 28 }
+    ]}
+    animated={true}
+    clickable={true}
+  />
+  
+  <PlatformComparison
+    platforms={['instagram', 'facebook', 'tiktok', 'linkedin', 'twitter']}
+    metrics={platformMetrics}
+    sortBy="roi"
+    showTrends={true}
+  />
+  
+  <HeatMapCalendar
+    data={engagementByTimeData}
+    aiRecommendations={optimalPostingTimes}
+    interactive={true}
+  />
+  
+  <GeoPerformanceMap
+    data={regionalMetrics}
+    colorScale="blue"
+    interactive={true}
+  />
+</AnalyticsHub>
+```
+
+---
+
+### 3.6 AI CONTROL PANEL
+
+**Purpose**: Showcase AI intelligence and allow configuration
+
+**Sections**:
+
+1. **AI Learning Dashboard**
+   - Model accuracy trends (line chart)
+   - Content approval rate over time
+   - Optimization success metrics
+   - Training data volume
+
+2. **Active AI Tasks** (Live Feed)
+   ```
+   🧠 Analyzing competitor content trends...
+   ✍️ Generating 15 Instagram captions...
+   🎯 Optimizing ad targeting for Campaign #12...
+   📊 Forecasting next week's performance...
+   ```
+
+3. **Optimization Recommendations** (Action Cards)
+   ```tsx
+   <AIRecommendationCard
+     title="Increase TikTok Budget by 30%"
+     confidence={87}
+     impact={{ metric: 'ROI', improvement: '+45%' }}
+     reasoning="TikTok showing 3x better CPL than other platforms"
+     actions={[
+       { label: 'Apply Now', variant: 'primary' },
+       { label: 'Schedule', variant: 'secondary' },
+       { label: 'Dismiss', variant: 'ghost' }
+     ]}
+   />
+   ```
+
+4. **AI Settings & Preferences**
+   - Content tone slider (Professional ↔ Casual)
+   - Posting frequency dial
+   - Risk tolerance (Conservative ↔ Aggressive)
+   - Budget automation toggle
+   - Learning feedback toggle
+
+5. **Model Performance Metrics**
+   - Content generation speed (avg 2.3s per post)
+   - Approval rate (94% first-pass)
+   - Optimization accuracy (89% predictions hit)
+   - User satisfaction score (4.7/5.0)
+
+---
+
+### 3.7 APPROVAL WORKFLOW CENTER
+
+**Purpose**: Showcase Telegram approval system integration
+
+**Components**:
+
+1. **Pending Approvals Queue**
+   ```tsx
+   <ApprovalQueue>
+     {pendingItems.map(item => (
+       <ApprovalCard
+         contentType={item.type} // post | reel | story | ad
+         platform={item.platform}
+         preview={item.preview}
+         caption={item.caption}
+         hashtags={item.hashtags}
+         scheduledTime={item.scheduledTime}
+         aiConfidence={item.confidence}
+         actions={[
+           <Button onClick={handleApprove}>✅ Approve</Button>,
+           <Button onClick={handleReject}>❌ Reject</Button>,
+           <Button onClick={handleEdit}>✏️ Edit</Button>
+         ]}
+       />
+     ))}
+   </ApprovalQueue>
+   ```
+
+2. **Approval Analytics**
+   - Average review time: 2.3 minutes
+   - Approval rate: 94%
+   - Peak review hours heatmap
+   - Rejection reasons breakdown
+
+3. **Telegram Integration Preview**
+   - Live mockup of Telegram approval interface
+   - Sample notification animations
+   - Feedback loop visualization
+
+4. **Approval History Timeline**
+   - Chronological log of all decisions
+   - Filterable by type, platform, decision
+   - Export audit trail
+
+---
+
+### 3.8 PUBLISHING SCHEDULER
+
+**Purpose**: Multi-platform content calendar and scheduling
+
+**Features**:
+
+1. **Calendar View** (Monthly/Weekly Grid)
+   - Drag & drop to reschedule
+   - Color-coded by platform
+   - Hover for content preview
+   - Click to edit details
+
+2. **Timeline View** (Gantt-style)
+   - Horizontal timeline with posts as blocks
+   - Zoom in/out for different time scales
+   - Conflict detection (too many posts at once)
+   - AI-recommended gaps highlighted
+
+3. **Bulk Scheduler**
+   - Upload CSV with content + times
+   - AI auto-schedule across platforms
+   - Balance frequency across channels
+   - Avoid audience overlap conflicts
+
+4. **Optimal Timing AI**
+   - Shows best posting times per platform
+   - Historical engagement overlays
+   - Audience active hours visualization
+   - One-click "Auto-optimize schedule"
+
+**Technical**:
+```tsx
+<PublishingScheduler>
+  <CalendarView
+    events={scheduledPosts}
+    onDragDrop={reschedulePost}
+    onEventClick={editPost}
+    aiOptimizationOverlay={true}
+  />
+  
+  <TimelineView
+    posts={allScheduledContent}
+    timeScale="day" // hour | day | week
+    conflictDetection={true}
+    aiRecommendations={true}
+  />
+  
+  <BulkScheduler
+    onCSVUpload={handleBulkUpload}
+    aiAutoSchedule={true}
+    balanceAcrossPlatforms={true}
+  />
+  
+  <OptimalTimingPanel
+    platform={selectedPlatform}
+    audienceActiveHours={activityData}
+    historicalBestTimes={historicalData}
+    autoOptimizeAction={autoOptimize}
+  />
+</PublishingScheduler>
+```
+
+---
+
+### 3.9 BUDGET DASHBOARD
+
+**Purpose**: Financial tracking and ROI visualization
+
+**Components**:
+
+1. **Budget Overview Cards**
+   ```tsx
+   <BudgetOverview>
+     <BudgetCard
+       title="Total Budget"
+       allocated={25000}
+       spent={18750}
+       remaining={6250}
+       progressRing={true}
+     />
+     <BudgetCard
+       title="Average CPL"
+       value={12.50}
+       trend={{ value: -15, direction: 'down', good: true }}
+       comparison="vs industry avg"
+     />
+     <BudgetCard
+       title="ROI"
+       value={342}
+       suffix="%"
+       forecast={385}
+       showForecast={true}
+     />
+   </BudgetOverview>
+   ```
+
+2. **Spend by Channel** (Donut Chart)
+   - Interactive segments
+   - Hover for detailed breakdown
+   - Click to drill into channel analytics
+
+3. **ROI Over Time** (Area Chart)
+   - Historical ROI trend
+   - Campaign markers
+   - Budget adjustment annotations
+
+4. **Budget Allocation Optimizer** (AI Tool)
+   - Slider for each channel
+   - Real-time ROI forecast update
+   - "AI Optimize" button for automatic allocation
+   - Compare scenarios side-by-side
+
+5. **Spend Alerts**
+   - Notification when budget threshold reached
+   - Pacing warnings (on track to underspend/overspend)
+   - ROI drop alerts
+
+---
+
+### 3.10 NOTIFICATION CENTER
+
+**Purpose**: Real-time alerts and activity feed
+
+**Features**:
+
+1. **Floating Notification Badge**
+   - Unread count on icon
+   - Red dot for urgent items
+   - Click to open drawer
+
+2. **Notification Drawer** (Slide-in Panel)
+   ```tsx
+   <NotificationDrawer>
+     <NotificationFilters>
+       <FilterTab active>All (24)</FilterTab>
+       <FilterTab>Urgent (3)</FilterTab>
+       <FilterTab>Approvals (12)</FilterTab>
+       <FilterTab>AI Insights (8)</FilterTab>
+     </NotificationFilters>
+     
+     <NotificationList>
+       {notifications.map(notif => (
+         <NotificationItem
+           type={notif.type} // success | warning | error | info
+           title={notif.title}
+           message={notif.message}
+           timestamp={notif.timestamp}
+           actionable={notif.actionable}
+           actions={notif.actions}
+           read={notif.read}
+         />
+       ))}
+     </NotificationList>
+   </NotificationDrawer>
+   ```
+
+3. **Notification Types**:
+   - **Approval Needed**: "12 posts awaiting approval"
+   - **AI Insight**: "AI detected 45% ROI increase opportunity"
+   - **Budget Alert**: "Campaign #5 reached 80% of budget"
+   - **Performance Milestone**: "Campaign hit 1M reach!"
+   - **System Status**: "Publishing complete for 15 posts"
+   - **Anomaly Detection**: "Unusual engagement spike on Instagram"
+
+4. **Notification Preferences**
+   - Toggle types on/off
+   - Delivery method (in-app, email, push)
+   - Digest mode (instant, hourly, daily)
+   - Do Not Disturb schedule
+
+---
+
+## 4. PLATFORM ANALYTICS & MULTI-ACCOUNT MANAGEMENT (DEMO SHOWCASE)
+
+**Purpose**: Visually impressive showcase of what a comprehensive analytics system WOULD look like, using pre-defined mock data and interactive UI components. This demonstrates the CONCEPT of multi-platform, multi-account management without building the actual backend infrastructure.
+
+**Demo Scope**:
+- ✅ Show 3-5 platforms (Instagram, Facebook, TikTok, LinkedIn, Twitter)
+- ✅ Display 2-3 mock accounts per platform with realistic metrics
+- ✅ Demonstrate strategy types through visual categorization
+- ✅ Enable filtering, sorting, and comparison (client-side only)
+- ✅ Show interactive charts with pre-calculated data
+- ❌ NO real API connections to social platforms
+- ❌ NO real OAuth or authentication flows
+- ❌ NO actual data fetching from external sources
+- ❌ NO complex backend calculations or aggregations
+
+### 4.1 PLATFORM ANALYTICS OVERVIEW DASHBOARD
+
+**Purpose**: Birds-eye view of all connected platforms and their aggregate performance
+
+**Layout**:
+```
+┌────────────────────────────────────────────────────────────┐
+│ PLATFORM OVERVIEW (Connected Platforms Grid)              │
+├────────────┬────────────┬────────────┬────────────────────┤
+│ Instagram  │ Facebook   │ TikTok     │ LinkedIn           │
+│ 5 accounts │ 3 accounts │ 2 accounts │ 2 accounts         │
+│ 🟢 Active  │ 🟢 Active  │ 🟢 Active  │ 🟢 Active          │
+│ +45% ROI   │ +32% ROI   │ +67% ROI   │ +28% ROI           │
+└────────────┴────────────┴────────────┴────────────────────┘
+```
+
+**Platform Card Components**:
+```tsx
+<PlatformCard
+  platform="instagram"
+  icon={<InstagramIcon />}
+  color="#E1306C" // Brand color
+  stats={{
+    accounts: 5,
+    totalPosts: 1240,
+    totalReach: 2400000,
+    totalEngagement: 187000,
+    avgEngagementRate: 7.8,
+    roi: 45,
+    activeStrategy: "Growth + Engagement"
+  }}
+  status="active" // active | warning | error | syncing
+  lastSync="2 minutes ago"
+  subAccounts={[
+    { name: "Main Account", handle: "@brand", followers: 125000 },
+    { name: "Product Line A", handle: "@brand_product_a", followers: 45000 },
+    { name: "Product Line B", handle: "@brand_product_b", followers: 38000 },
+    { name: "Test Account 1", handle: "@brand_test_1", followers: 12000 },
+    { name: "Test Account 2", handle: "@brand_test_2", followers: 8000 }
+  ]}
+  quickActions={[
+    { label: "View Analytics", action: openPlatformAnalytics },
+    { label: "Manage Accounts", action: openAccountManager },
+    { label: "Strategy Overview", action: openStrategyView }
+  ]}
+/>
+```
+
+**Interactions**:
+- Click card: Opens detailed platform analytics view
+- Hover: Shows mini-preview with key metrics
+- Platform status indicator: Pulses on active sync
+- Quick actions: Dropdown menu on hover
+
+---
+
+### 4.2 MULTI-ACCOUNT SUB-ACCOUNT MANAGER
+
+**Purpose**: Manage and monitor all sub-accounts per platform with hierarchy visualization
+
+**Features**:
+
+1. **Account Hierarchy Tree**
+   ```tsx
+   <AccountHierarchyTree platform="instagram">
+     <MainAccount 
+       handle="@brand"
+       role="Primary"
+       strategy="Brand Awareness + Conversions"
+       followers={125000}
+       engagement={8.2}
+     >
+       <SubAccount 
+         handle="@brand_product_a"
+         role="Product Focus"
+         strategy="Direct Sales"
+         followers={45000}
+         parentFeeds={true} // Reposts from main
+       />
+       <SubAccount 
+         handle="@brand_product_b"
+         role="Product Focus"
+         strategy="Education + Sales"
+         followers={38000}
+         parentFeeds={true}
+       />
+       <TestAccountGroup label="A/B Testing Accounts">
+         <SubAccount 
+           handle="@brand_test_1"
+           role="Testing"
+           strategy="Experimental - Casual Tone"
+           followers={12000}
+           testDuration="30 days"
+         />
+         <SubAccount 
+           handle="@brand_test_2"
+           role="Testing"
+           strategy="Experimental - Professional Tone"
+           followers={8000}
+           testDuration="30 days"
+         />
+       </TestAccountGroup>
+     </MainAccount>
+   </AccountHierarchyTree>
+   ```
+
+2. **Account Comparison Table**
+   - Side-by-side metrics for all sub-accounts
+   - Sortable columns
+   - Filterable by strategy, performance, status
+   - Export to CSV/Excel
+
+3. **Account Detail Drawer**
+   ```tsx
+   <AccountDetailDrawer account={selectedAccount}>
+     {/* Account Header */}
+     <AccountHeader
+       handle={account.handle}
+       name={account.name}
+       avatar={account.avatar}
+       followers={account.followers}
+       verified={account.verified}
+       connectionStatus={account.connectionStatus}
+     />
+     
+     {/* Strategy Info */}
+     <StrategySection
+       currentStrategy={account.strategy}
+       objectives={account.objectives}
+       targetAudience={account.targetAudience}
+       contentThemes={account.contentThemes}
+       postingFrequency={account.postingFrequency}
+     />
+     
+     {/* Performance Metrics */}
+     <PerformanceMetrics
+       reach={account.metrics.reach}
+       impressions={account.metrics.impressions}
+       engagement={account.metrics.engagement}
+       clicks={account.metrics.clicks}
+       conversions={account.metrics.conversions}
+       roi={account.metrics.roi}
+       timeRange="Last 30 days"
+     />
+     
+     {/* Content Performance */}
+     <TopPerformingContent
+       posts={account.topPosts}
+       sortBy="engagement"
+       limit={10}
+     />
+     
+     {/* Audience Insights */}
+     <AudienceInsights
+       demographics={account.audience.demographics}
+       interests={account.audience.interests}
+       activeHours={account.audience.activeHours}
+       locations={account.audience.locations}
+     />
+   </AccountDetailDrawer>
+   ```
+
+---
+
+### 4.3 STRATEGY TRACKING & PERFORMANCE MATRIX
+
+**Purpose**: Track what strategy each account uses and compare results
+
+**Strategy Overview Dashboard**:
+```tsx
+<StrategyMatrix>
+  {/* Strategy Types */}
+  <StrategyCategories>
+    <StrategyTag name="Brand Awareness" color="blue" accounts={3} />
+    <StrategyTag name="Direct Sales" color="green" accounts={4} />
+    <StrategyTag name="Lead Generation" color="purple" accounts={2} />
+    <StrategyTag name="Community Building" color="orange" accounts={2} />
+    <StrategyTag name="Education" color="yellow" accounts={3} />
+    <StrategyTag name="Experimental" color="red" accounts={2} />
+  </StrategyCategories>
+  
+  {/* Strategy Performance Table */}
+  <StrategyPerformanceTable>
+    <TableRow>
+      <Strategy>Brand Awareness</Strategy>
+      <Accounts>3 accounts</Accounts>
+      <AvgReach>850K/month</AvgReach>
+      <AvgEngagement>6.8%</AvgEngagement>
+      <AvgROI>+32%</AvgROI>
+      <TopPerformer>@brand (Instagram)</TopPerformer>
+    </TableRow>
+    <TableRow>
+      <Strategy>Direct Sales</Strategy>
+      <Accounts>4 accounts</Accounts>
+      <AvgReach>420K/month</AvgReach>
+      <AvgEngagement>4.2%</AvgEngagement>
+      <AvgROI>+67%</AvgROI>
+      <TopPerformer>@brand_product_a (Instagram)</TopPerformer>
+    </TableRow>
+    {/* More strategy rows */}
+  </StrategyPerformanceTable>
+  
+  {/* Strategy Comparison Chart */}
+  <StrategyComparisonChart
+    metrics={['reach', 'engagement', 'conversions', 'roi']}
+    strategies={allStrategies}
+    chartType="radar" // Radar chart for multi-metric comparison
+  />
+</StrategyMatrix>
+```
+
+**Strategy Detail View**:
+```tsx
+<StrategyDetailView strategy="Direct Sales">
+  {/* Accounts Using This Strategy */}
+  <AccountsList
+    accounts={accountsWithStrategy}
+    showPerformance={true}
+    sortBy="roi"
+  />
+  
+  {/* Strategy KPIs */}
+  <StrategyKPIs>
+    <KPI label="Total Conversions" value={1240} trend={+18} />
+    <KPI label="Avg Conversion Rate" value={3.2} suffix="%" trend={+0.5} />
+    <KPI label="Avg CPL" value={12.50} prefix="€" trend={-2.30} good />
+    <KPI label="Avg ROI" value={67} suffix="%" trend={+12} />
+  </StrategyKPIs>
+  
+  {/* Best Practices from This Strategy */}
+  <BestPractices>
+    <Practice
+      title="Product Photo Quality"
+      impact="High"
+      description="Accounts with professional product photos see 45% higher engagement"
+    />
+    <Practice
+      title="CTA in Bio Link"
+      impact="Medium"
+      description="Direct shop links in bio increase click-through by 28%"
+    />
+    <Practice
+      title="Story Highlights"
+      impact="High"
+      description="Product highlight stories boost conversions by 32%"
+    />
+  </BestPractices>
+  
+  {/* AI Recommendations */}
+  <AIStrategyRecommendations>
+    <Recommendation
+      title="Increase Posting Frequency"
+      confidence={87}
+      impact={{ metric: 'Conversions', improvement: '+15%' }}
+      reasoning="Analysis shows optimal frequency is 2x daily for sales-focused content"
+    />
+  </AIStrategyRecommendations>
+</StrategyDetailView>
+```
+
+---
+
+### 4.4 CROSS-PLATFORM ANALYTICS HUB
+
+**Purpose**: Compare performance across all platforms and accounts
+
+**Interactive Comparison Matrix**:
+```tsx
+<CrossPlatformMatrix>
+  {/* Platform Selector */}
+  <PlatformSelector
+    platforms={['instagram', 'facebook', 'tiktok', 'linkedin', 'twitter']}
+    selected={selectedPlatforms}
+    multiSelect={true}
+  />
+  
+  {/* Account Selector */}
+  <AccountSelector
+    accounts={allAccounts}
+    filterByPlatform={selectedPlatforms}
+    groupBy="platform" // platform | strategy | performance
+    multiSelect={true}
+  />
+  
+  {/* Metrics Selector */}
+  <MetricsSelector
+    metrics={[
+      'reach', 'impressions', 'engagement', 'clicks', 
+      'conversions', 'cpl', 'roi', 'followerGrowth'
+    ]}
+    selected={selectedMetrics}
+    multiSelect={true}
+  />
+  
+  {/* Comparison Visualization */}
+  <ComparisonVisualization
+    type="grouped-bar" // grouped-bar | line | radar | heatmap
+    data={filteredData}
+    xAxis="account"
+    yAxis={selectedMetrics}
+    groupBy="platform"
+    interactive={true}
+    exportable={true}
+  />
+  
+  {/* Performance Table */}
+  <PerformanceTable
+    data={filteredData}
+    sortable={true}
+    highlightTopPerformers={true}
+    showTrends={true}
+  />
+</CrossPlatformMatrix>
+```
+
+---
+
+### 4.5 CONTENT PERFORMANCE ANALYTICS
+
+**Purpose**: Deep dive into what content works best per platform/account
+
+**Content Performance Dashboard**:
+```tsx
+<ContentPerformanceHub>
+  {/* Top Performing Posts Grid */}
+  <TopPostsGrid
+    timeRange="last30days"
+    platform={selectedPlatform}
+    account={selectedAccount}
+    sortBy="engagement" // engagement | reach | conversions | roi
+  >
+    {topPosts.map(post => (
+      <ContentCard
+        id={post.id}
+        platform={post.platform}
+        account={post.account}
+        type={post.type} // post | reel | story | carousel
+        thumbnail={post.thumbnail}
+        caption={post.caption}
+        metrics={{
+          reach: post.reach,
+          impressions: post.impressions,
+          engagement: post.engagement,
+          engagementRate: post.engagementRate,
+          clicks: post.clicks,
+          conversions: post.conversions,
+          roi: post.roi
+        }}
+        postedAt={post.postedAt}
+        strategy={post.strategy}
+        aiScore={post.aiConfidence}
+        onClick={() => openPostDetail(post.id)}
+      />
+    ))}
+  </TopPostsGrid>
+  
+  {/* Content Type Performance */}
+  <ContentTypeBreakdown
+    platform={selectedPlatform}
+    account={selectedAccount}
+  >
+    <TypeCard type="Post" count={450} avgEngagement={6.2} bestTime="18:00" />
+    <TypeCard type="Reel" count={180} avgEngagement={12.8} bestTime="20:00" />
+    <TypeCard type="Story" count={620} avgEngagement={8.4} bestTime="09:00" />
+    <TypeCard type="Carousel" count={95} avgEngagement={9.6} bestTime="12:00" />
+  </ContentTypeBreakdown>
+  
+  {/* Topic/Theme Performance */}
+  <ThemePerformance>
+    <ThemeTag name="Product Launch" posts={45} avgEngagement={14.2} roi={+78} />
+    <ThemeTag name="Behind the Scenes" posts={38} avgEngagement={11.8} roi={+32} />
+    <ThemeTag name="Customer Testimonials" posts={52} avgEngagement={9.4} roi={+56} />
+    <ThemeTag name="Educational Content" posts={67} avgEngagement={8.2} roi={+28} />
+    <ThemeTag name="User Generated Content" posts={41} avgEngagement={13.6} roi={+45} />
+  </ThemePerformance>
+  
+  {/* Hashtag Performance Analysis */}
+  <HashtagAnalytics>
+    <TopHashtags
+      hashtags={topPerformingHashtags}
+      metric="reach"
+      showTrends={true}
+    />
+    <HashtagSuggestions
+      basedOn="topPerformers"
+      aiRecommended={true}
+    />
+  </HashtagAnalytics>
+  
+  {/* Posting Time Heatmap */}
+  <PostingTimeHeatmap
+    data={engagementByTimeData}
+    platform={selectedPlatform}
+    account={selectedAccount}
+    showOptimalTimes={true}
+  />
+</ContentPerformanceHub>
+```
+
+**Post Detail Modal**:
+```tsx
+<PostDetailModal postId={selectedPostId}>
+  {/* Post Header */}
+  <PostHeader
+    platform={post.platform}
+    account={post.account}
+    postedAt={post.postedAt}
+    type={post.type}
+  />
+  
+  {/* Visual Content */}
+  <PostVisual
+    media={post.media}
+    caption={post.caption}
+    hashtags={post.hashtags}
+  />
+  
+  {/* Performance Metrics */}
+  <PostMetrics
+    reach={post.reach}
+    impressions={post.impressions}
+    engagement={post.engagement}
+    engagementRate={post.engagementRate}
+    saves={post.saves}
+    shares={post.shares}
+    clicks={post.clicks}
+    conversions={post.conversions}
+    revenue={post.revenue}
+  />
+  
+  {/* Engagement Timeline */}
+  <EngagementTimeline
+    data={post.engagementOverTime}
+    showEvents={true} // Mark when shares, saves occurred
+  />
+  
+  {/* Audience Breakdown */}
+  <PostAudienceInsights
+    demographics={post.audienceDemographics}
+    locations={post.audienceLocations}
+    devices={post.audienceDevices}
+  />
+  
+  {/* AI Analysis */}
+  <AIPostAnalysis
+    score={post.aiScore}
+    insights={post.aiInsights}
+    recommendations={post.aiRecommendations}
+  />
+  
+  {/* Comments Sample */}
+  <TopComments
+    comments={post.topComments}
+    sentiment="positive" // positive | neutral | negative
+    showSentimentAnalysis={true}
+  />
+</PostDetailModal>
+```
+
+---
+
+### 4.6 AUDIENCE INSIGHTS PER PLATFORM/ACCOUNT
+
+**Purpose**: Deep audience analytics showing who engages with each account
+
+**Audience Dashboard**:
+```tsx
+<AudienceInsightsDashboard
+  platform={selectedPlatform}
+  account={selectedAccount}
+>
+  {/* Demographics Overview */}
+  <DemographicsSection>
+    <AgeDistribution
+      data={audienceAgeData}
+      chartType="bar"
+      showComparison={true} // vs industry avg
+    />
+    <GenderDistribution
+      data={audienceGenderData}
+      chartType="donut"
+    />
+    <LocationMap
+      data={audienceLocationData}
+      interactive={true}
+      showTopCities={true}
+    />
+  </DemographicsSection>
+  
+  {/* Interests & Behavior */}
+  <InterestsSection>
+    <TopInterests
+      interests={audienceInterests}
+      visualize="wordcloud" // wordcloud | bars | bubbles
+    />
+    <BehaviorPatterns
+      activeHours={audienceActiveHours}
+      activeDays={audienceActiveDays}
+      deviceUsage={audienceDevices}
+    />
+  </InterestsSection>
+  
+  {/* Follower Growth */}
+  <FollowerGrowthSection>
+    <GrowthTimeline
+      data={followerGrowthData}
+      showEvents={true} // Mark campaigns, viral posts
+      compareAccounts={true}
+    />
+    <GrowthMetrics
+      newFollowers={newFollowersCount}
+      unfollowers={unfollowersCount}
+      netGrowth={netGrowthRate}
+      growthRate={growthPercentage}
+    />
+    <GrowthSources
+      sources={[
+        { name: 'Organic', count: 1240, percentage: 45 },
+        { name: 'Paid Ads', count: 890, percentage: 32 },
+        { name: 'Influencer', count: 420, percentage: 15 },
+        { name: 'Cross-promotion', count: 220, percentage: 8 }
+      ]}
+    />
+  </FollowerGrowthSection>
+  
+  {/* Engagement Patterns */}
+  <EngagementPatternsSection>
+    <EngagementTypes
+      likes={engagementData.likes}
+      comments={engagementData.comments}
+      shares={engagementData.shares}
+      saves={engagementData.saves}
+      showTrends={true}
+    />
+    <TopEngagers
+      users={topEngagers}
+      showInfluencePotential={true}
+    />
+  </EngagementPatternsSection>
+  
+  {/* Audience Overlap Analysis */}
+  <AudienceOverlapSection>
+    <OverlapMatrix
+      accounts={selectedAccounts}
+      showPercentage={true}
+      visualize="venn" // venn | matrix | sankey
+    />
+    <UniqueAudienceCount
+      account={selectedAccount}
+      otherAccounts={comparisonAccounts}
+    />
+  </AudienceOverlapSection>
+</AudienceInsightsDashboard>
+```
+
+---
+
+### 4.7 PLATFORM-SPECIFIC METRICS & FEATURES
+
+**Purpose**: Show platform-unique metrics that matter
+
+**Instagram-Specific**:
+```tsx
+<InstagramAnalytics account={selectedAccount}>
+  {/* Story Metrics */}
+  <StoryMetrics
+    views={storyViews}
+    completion={storyCompletionRate}
+    exits={storyExits}
+    replies={storyReplies}
+    tapForward={storyTapForward}
+    tapBack={storyTapBack}
+  />
+  
+  {/* Reel Performance */}
+  <ReelMetrics
+    views={reelViews}
+    plays={reelPlays}
+    likes={reelLikes}
+    comments={reelComments}
+    shares={reelShares}
+    saves={reelSaves}
+    avgWatchTime={reelAvgWatchTime}
+  />
+  
+  {/* Hashtag Reach */}
+  <HashtagReach
+    totalHashtagImpressions={hashtagImpressions}
+    topHashtags={topReachHashtags}
+  />
+  
+  {/* Profile Activity */}
+  <ProfileActivity
+    profileVisits={profileVisits}
+    websiteClicks={websiteClicks}
+    emailClicks={emailClicks}
+    callClicks={callClicks}
+  />
+</InstagramAnalytics>
+```
+
+**TikTok-Specific**:
+```tsx
+<TikTokAnalytics account={selectedAccount}>
+  {/* Video Performance */}
+  <VideoMetrics
+    totalViews={videoViews}
+    avgWatchTime={avgWatchTime}
+    completionRate={completionRate}
+    viralityScore={viralityScore}
+  />
+  
+  {/* For You Page (FYP) Analytics */}
+  <FYPMetrics
+    fypViews={fypViews}
+    fypPercentage={fypPercentage}
+    algorithmScore={algorithmScore}
+  />
+  
+  {/* Sound/Music Performance */}
+  <SoundAnalytics
+    originalSounds={originalSoundUsage}
+    trendingSounds={trendingSoundUsage}
+    soundDiscovery={soundDiscoveryRate}
+  />
+  
+  {/* Duets & Stitches */}
+  <InteractiveFeatures
+    duets={duetCount}
+    stitches={stitchCount}
+    greenscreen={greenscreenUse}
+  />
+</TikTokAnalytics>
+```
+
+**LinkedIn-Specific**:
+```tsx
+<LinkedInAnalytics account={selectedAccount}>
+  {/* Professional Metrics */}
+  <ProfessionalMetrics
+    impressions={impressions}
+    clicks={clicks}
+    engagement={engagement}
+    followerDemographics={followerDemographics}
+  />
+  
+  {/* Post Types Performance */}
+  <PostTypeBreakdown
+    text={textPostMetrics}
+    image={imagePostMetrics}
+    video={videoPostMetrics}
+    article={articleMetrics}
+    document={documentMetrics}
+    poll={pollMetrics}
+  />
+  
+  {/* Audience Seniority */}
+  <AudienceSeniority
+    entry={seniorityData.entry}
+    midLevel={seniorityData.midLevel}
+    senior={seniorityData.senior}
+    director={seniorityData.director}
+    vp={seniorityData.vp}
+    cLevel={seniorityData.cLevel}
+  />
+  
+  {/* Industries & Companies */}
+  <AudienceCompanies
+    topIndustries={topIndustries}
+    topCompanies={topCompanies}
+    companySizes={companySizes}
+  />
+</LinkedInAnalytics>
+```
+
+---
+
+### 4.8 CROSS-ACCOUNT ATTRIBUTION & ROI TRACKING
+
+**Purpose**: Track customer journey across multiple platforms/accounts
+
+**Attribution Dashboard**:
+```tsx
+<AttributionHub>
+  {/* Attribution Model Selector */}
+  <AttributionModelSelector
+    models={[
+      'First Touch',
+      'Last Touch',
+      'Linear',
+      'Time Decay',
+      'U-Shaped',
+      'W-Shaped',
+      'Custom'
+    ]}
+    selected={selectedModel}
+    description="How to credit conversions across touchpoints"
+  />
+  
+  {/* Multi-Touch Journey Visualization */}
+  <CustomerJourneyFlow>
+    <JourneyStep
+      platform="instagram"
+      account="@brand"
+      action="Saw post"
+      timestamp="Day 1"
+      attribution={10}
+    />
+    <JourneyStep
+      platform="facebook"
+      account="Brand Page"
+      action="Clicked ad"
+      timestamp="Day 3"
+      attribution={20}
+    />
+    <JourneyStep
+      platform="instagram"
+      account="@brand_product_a"
+      action="Viewed story"
+      timestamp="Day 5"
+      attribution={15}
+    />
+    <JourneyStep
+      platform="website"
+      account="Landing page"
+      action="Converted"
+      timestamp="Day 7"
+      attribution={55}
+    />
+  </CustomerJourneyFlow>
+  
+  {/* Platform/Account Contribution */}
+  <AttributionBreakdown
+    data={attributionData}
+    visualize="sankey" // sankey | waterfall | sunburst
+  />
+  
+  {/* ROI by Platform/Account */}
+  <ROIBreakdown>
+    <ROICard
+      platform="Instagram"
+      account="@brand"
+      spend={5000}
+      revenue={22500}
+      roi={350}
+      conversions={240}
+      cpl={20.83}
+    />
+    <ROICard
+      platform="Instagram"
+      account="@brand_product_a"
+      spend={2500}
+      revenue={18750}
+      roi={650}
+      conversions={180}
+      cpl={13.89}
+    />
+    {/* More ROI cards */}
+  </ROIBreakdown>
+  
+  {/* Campaign Impact Analysis */}
+  <CampaignImpact>
+    <ImpactVisualization
+      campaigns={allCampaigns}
+      showCrossAccountImpact={true}
+      highlightSynergies={true}
+    />
+  </CampaignImpact>
+</AttributionHub>
+```
+
+---
+
+### 4.9 ACCOUNT HEALTH & STATUS MONITORING
+
+**Purpose**: Monitor connection status, API limits, and account health
+
+**Account Health Dashboard**:
+```tsx
+<AccountHealthMonitor>
+  {/* Connection Status Grid */}
+  <ConnectionStatusGrid>
+    {allAccounts.map(account => (
+      <AccountStatusCard
+        account={account.handle}
+        platform={account.platform}
+        status={account.connectionStatus} // connected | warning | error | syncing
+        lastSync={account.lastSync}
+        apiCalls={account.apiCalls}
+        apiLimit={account.apiLimit}
+        rateLimit={account.rateLimit}
+        issues={account.issues}
+        onClick={() => openAccountSettings(account.id)}
+      />
+    ))}
+  </ConnectionStatusGrid>
+  
+  {/* API Usage Tracker */}
+  <APIUsageTracker>
+    <UsageCard
+      platform="Instagram"
+      dailyLimit={5000}
+      used={3240}
+      remaining={1760}
+      resetIn="6 hours"
+    />
+    <UsageCard
+      platform="Facebook"
+      dailyLimit={10000}
+      used={7890}
+      remaining={2110}
+      resetIn="12 hours"
+    />
+    {/* More platforms */}
+  </APIUsageTracker>
+  
+  {/* Account Issues Alert */}
+  <IssuesPanel>
+    <IssueAlert
+      severity="high"
+      account="@brand"
+      platform="instagram"
+      issue="Access token expires in 3 days"
+      action="Reconnect account"
+    />
+    <IssueAlert
+      severity="medium"
+      account="Brand Page"
+      platform="facebook"
+      issue="Approaching API rate limit (85% used)"
+      action="Reduce polling frequency"
+    />
+  </IssuesPanel>
+  
+  {/* Sync History */}
+  <SyncHistoryLog>
+    <SyncEvent
+      timestamp="2 minutes ago"
+      account="@brand"
+      platform="instagram"
+      action="Fetched metrics"
+      status="success"
+      duration="1.2s"
+    />
+    <SyncEvent
+      timestamp="5 minutes ago"
+      account="@brand_product_a"
+      platform="instagram"
+      action="Published post"
+      status="success"
+      postId="ABC123"
+    />
+    {/* More sync events */}
+  </SyncHistoryLog>
+</AccountHealthMonitor>
+```
+
+---
+
+### 4.10 COMPETITIVE BENCHMARKING (BONUS FEATURE)
+
+**Purpose**: Compare your performance against competitors/industry benchmarks
+
+**Competitive Analysis Dashboard**:
+```tsx
+<CompetitiveBenchmarking>
+  {/* Competitor Selector */}
+  <CompetitorSelector
+    competitors={trackedCompetitors}
+    addCompetitor={openAddCompetitorModal}
+  />
+  
+  {/* Benchmark Comparison */}
+  <BenchmarkComparison>
+    <MetricCard
+      metric="Engagement Rate"
+      yourValue={7.8}
+      competitorAvg={5.2}
+      industryAvg={4.5}
+      ranking={1} // Your rank vs competitors
+    />
+    <MetricCard
+      metric="Posting Frequency"
+      yourValue={2.3} // per day
+      competitorAvg={1.8}
+      industryAvg={1.5}
+      ranking={2}
+    />
+    {/* More metrics */}
+  </BenchmarkComparison>
+  
+  {/* Share of Voice */}
+  <ShareOfVoice
+    data={shareOfVoiceData}
+    visualize="donut"
+    includeHashtags={true}
+  />
+  
+  {/* Content Strategy Analysis */}
+  <CompetitorContentAnalysis>
+    <ContentTypeComparison
+      yourMix={yourContentMix}
+      competitorMix={competitorContentMix}
+    />
+    <PostingTimeComparison
+      yourSchedule={yourPostingSchedule}
+      competitorSchedule={competitorPostingSchedule}
+    />
+  </CompetitorContentAnalysis>
+  
+  {/* AI Insights */}
+  <CompetitiveInsights>
+    <Insight
+      title="Competitor X is gaining momentum"
+      description="Their engagement rate increased 45% in the last 30 days due to Reels strategy"
+      action="Consider increasing Reels frequency"
+    />
+  </CompetitiveInsights>
+</CompetitiveBenchmarking>
+```
+
+---
+
+### 4.11 EXPORT & REPORTING
+
+**Purpose**: Export analytics data and generate reports
+
+**Export Features**:
+```tsx
+<ExportCenter>
+  {/* Quick Export Buttons */}
+  <QuickExports>
+    <ExportButton
+      format="PDF"
+      template="Executive Summary"
+      accounts={selectedAccounts}
+      timeRange="last30days"
+    />
+    <ExportButton
+      format="Excel"
+      template="Detailed Metrics"
+      accounts={selectedAccounts}
+      timeRange="last90days"
+    />
+    <ExportButton
+      format="CSV"
+      template="Raw Data"
+      accounts="all"
+      timeRange="custom"
+    />
+  </QuickExports>
+  
+  {/* Custom Report Builder */}
+  <CustomReportBuilder>
+    <ReportSettings>
+      <SelectAccounts multiSelect />
+      <SelectMetrics multiSelect />
+      <SelectTimeRange custom />
+      <SelectTemplate />
+      <BrandingOptions />
+    </ReportSettings>
+    <ReportPreview />
+    <GenerateButton />
+  </CustomReportBuilder>
+  
+  {/* Scheduled Reports */}
+  <ScheduledReports>
+    <ScheduleCard
+      name="Weekly Executive Report"
+      frequency="Every Monday 9:00 AM"
+      recipients={['ceo@brand.com', 'cmo@brand.com']}
+      lastSent="2 days ago"
+    />
+  </ScheduledReports>
+</ExportCenter>
+```
+
+---
+
+### 4.12 DEMO-FOCUSED TECHNICAL IMPLEMENTATION
+
+**Simplified Component Architecture** (Focus on Visual Polish):
+```
+src/components/platform-analytics/
+├── PlatformOverview/
+│   ├── PlatformCard.tsx          # Interactive card with mock data
+│   └── PlatformGrid.tsx           # Grid layout with animations
+├── AccountShowcase/
+│   ├── AccountCard.tsx            # Single account card
+│   ├── AccountGrid.tsx            # Grid of accounts
+│   └── AccountDetailModal.tsx    # Expanded view on click
+├── StrategyShowcase/
+│   ├── StrategyTag.tsx            # Colored strategy badges
+│   └── StrategyMatrix.tsx         # Visual matrix of strategies
+├── ChartsDemo/
+│   ├── ComparisonChart.tsx        # Recharts bar/line charts
+│   ├── FunnelChart.tsx            # Funnel visualization
+│   └── HeatmapChart.tsx           # Calendar heatmap
+└── MockDataGenerators/
+    ├── generatePlatformData.ts    # Generate mock platforms
+    ├── generateAccountData.ts     # Generate mock accounts
+    └── generateChartData.ts       # Generate chart datasets
+```
+
+**Simplified Data Models** (Demo-Only):
+```typescript
+// Minimal types for demo purposes
+interface Platform {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  color: string; // Brand color
+  accountCount: number;
+  totalReach: number;
+  roi: number;
+  status: 'connected' | 'syncing'; // Always show as connected in demo
+}
+
+interface Account {
+  id: string;
+  platform: string;
+  handle: string;
+  followers: number;
+  strategy: 'Brand Awareness' | 'Direct Sales' | 'Lead Gen';
+  performanceLevel: 'excellent' | 'good' | 'average'; // Simplified
+}
+
+interface MockChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    color: string;
+  }[];
+}
+```
+
+**Mock Data Generation** (No Database):
+```typescript
+// src/data/generateMockPlatformData.ts
+export function generateMockPlatformData() {
+  return [
+    {
+      id: 'instagram',
+      name: 'Instagram',
+      icon: <InstagramIcon />,
+      color: '#E1306C',
+      accountCount: 5,
+      totalReach: 2400000,
+      roi: 45,
+      status: 'connected',
+      accounts: [
+        {
+          id: 'ig-1',
+          platform: 'instagram',
+          handle: '@lifestylebrand',
+          followers: 125000,
+          strategy: 'Brand Awareness',
+          performanceLevel: 'excellent'
+        },
+        // 4 more mock accounts...
+      ]
+    },
+    // More platforms...
+  ]
+}
+
+// Use in component
+const platforms = useMemo(() => generateMockPlatformData(), [])
+```
+
+**Interaction Logic** (No Backend):
+```typescript
+// All interactions are UI-only, state resets on refresh
+const PlatformCard = ({ platform }: { platform: Platform }) => {
+  const [expanded, setExpanded] = useState(false)
+  
+  const handleClick = () => {
+    setExpanded(true)
+    // Show modal with more details (still mock data)
+  }
+  
+  const handleSync = () => {
+    // Simulate sync with fake loading state
+    toast.info('Syncing platform data...')
+    setTimeout(() => {
+      toast.success('Platform synced successfully!')
+    }, 1500)
+    // NOTE: No actual data fetch happens
+  }
+  
+  return (
+    <motion.div onClick={handleClick} whileHover={{ scale: 1.02 }}>
+      {/* Visual-only card */}
+    </motion.div>
+  )
+}
+```
+
+**Key Demo Simplifications**:
+1. **No Real-Time Sync**: Show "Last synced 2 min ago" but never actually sync
+2. **No API Calls**: All data from static JSON or generated functions
+3. **No Persistence**: Changes reset on page refresh (optional: use localStorage)
+4. **Pre-Calculated Metrics**: No complex aggregations or calculations
+5. **Simplified State**: Just enough to enable filtering/sorting UI
+6. **Focus on Animations**: Smooth transitions, hover effects, micro-interactions
+
+---
+
+## 5. INTERACTIVE MICROINTERACTIONS
+
+### 4.1 Hover Effects
+- **Metric Cards**: Lift with subtle shadow, show detailed tooltip
+- **Campaign Cards**: Reveal quick action buttons, highlight borders
+- **Chart Elements**: Highlight data point, show exact values
+- **Status Indicators**: Expand to show last updated time
+- **Pipeline Stages**: Glow effect, show processing count
+
+### 4.2 Click Actions
+- **Metric Cards**: Expand to modal with drill-down analytics
+- **Campaign Cards**: Navigate to detailed campaign view
+- **Pipeline Stages**: Open stage detail panel with current items
+- **Chart Data Points**: Filter entire dashboard to that time period
+- **Notification Items**: Mark as read, execute action, dismiss
+
+### 4.3 Drag & Drop
+- **Dashboard Widgets**: Rearrange layout, save preferences
+- **Campaign Cards**: Reorder priorities
+- **Calendar Events**: Reschedule posts
+- **Budget Sliders**: Reallocate funds between channels
+
+### 4.4 Loading States
+- **Skeleton Screens**: Animated placeholders for loading data
+- **Progress Indicators**: Linear or circular for known progress
+- **Pulse Animations**: For real-time data fetching
+- **Success Animations**: Checkmark or confetti on completion
+
+---
+
+## 5. TECHNICAL IMPLEMENTATION
+
+### 5.1 Component Architecture
+```
+src/components/command-center/
+├── SystemHealthBar/
+│   ├── StatusIndicator.tsx
+│   ├── ProcessingCounter.tsx
+│   └── ActivityIndicator.tsx
+├── HeroMetrics/
+│   ├── MetricCard.tsx
+│   ├── TrendIndicator.tsx
+│   └── SparklineChart.tsx
+├── ContentPipeline/
+│   ├── PipelineFlow.tsx
+│   ├── PipelineStage.tsx
+│   ├── AnimatedConnection.tsx
+│   └── StageDetailPanel.tsx
+├── CampaignOrchestra/
+│   ├── CampaignCard.tsx
+│   ├── CampaignGrid.tsx
+│   ├── BulkActionsBar.tsx
+│   └── CampaignModal.tsx
+├── AnalyticsHub/
+│   ├── PerformanceTimeline.tsx
+│   ├── FunnelVisualization.tsx
+│   ├── PlatformComparison.tsx
+│   ├── HeatMapCalendar.tsx
+│   └── GeoPerformanceMap.tsx
+├── AIControlPanel/
+│   ├── LearningDashboard.tsx
+│   ├── ActiveTasksFeed.tsx
+│   ├── RecommendationCard.tsx
+│   ├── AISettingsPanel.tsx
+│   └── ModelPerformance.tsx
+├── ApprovalWorkflow/
+│   ├── ApprovalQueue.tsx
+│   ├── ApprovalCard.tsx
+│   ├── ApprovalAnalytics.tsx
+│   └── TelegramMockup.tsx
+├── PublishingScheduler/
+│   ├── CalendarView.tsx
+│   ├── TimelineView.tsx
+│   ├── BulkScheduler.tsx
+│   └── OptimalTimingPanel.tsx
+├── BudgetDashboard/
+│   ├── BudgetOverview.tsx
+│   ├── SpendByChannelChart.tsx
+│   ├── ROITimeline.tsx
+│   ├── AllocationOptimizer.tsx
+│   └── SpendAlerts.tsx
+└── NotificationCenter/
+    ├── NotificationDrawer.tsx
+    ├── NotificationItem.tsx
+    ├── NotificationFilters.tsx
+    └── PreferencesModal.tsx
+```
+
+### 5.2 Demo Data Strategy
+
+**Mock Data Architecture**:
+```typescript
+// src/data/mockDashboard.ts
+export const mockDashboardData = {
+  systemHealth: {
+    api: { status: 'operational', lastCheck: new Date() },
+    aiModels: { active: 3, models: ['GPT-4', 'Claude', 'Gemini'] },
+    publishingQueue: { pending: 12, total: 24 },
+    processing: { activeJobs: 3 }
+  },
+  heroMetrics: {
+    activeCampaigns: { value: 24, trend: 12 },
+    totalReach: { value: 1200000, trend: 28 },
+    conversionRate: { value: 8.4, trend: 3.2 },
+    roiToday: { value: 12450, previous: 9200 }
+  },
+  campaigns: [
+    // Pre-defined campaign objects with realistic data
+  ],
+  analytics: {
+    timeSeriesData: [], // Pre-calculated chart data
+    funnelData: [],
+    platformComparison: []
+  }
+}
+```
+
+**Data Update Simulation**:
+```typescript
+// Simulate "real-time" updates without WebSockets
+useEffect(() => {
+  const interval = setInterval(() => {
+    setMetrics(prev => ({
+      ...prev,
+      roiToday: prev.roiToday + Math.random() * 100 // Fake live updates
+    }))
+  }, 5000)
+  
+  return () => clearInterval(interval)
+}, [])
+```
+
+**Key Principles**:
+- Store all mock data in JSON files or TypeScript constants
+- Use `setInterval` for "real-time" feel (update every 3-5 seconds)
+- Pre-calculate all metrics (no complex logic)
+- Use random variations for realistic movement
+- Keep data in localStorage for session persistence (optional)
+- Reset to defaults on page refresh for clean demos
+
+### 5.3 Simplified Technical Implementation
+
+**NO Backend Required**:
+- ❌ No database (Prisma, Supabase, etc.)
+- ❌ No API routes or serverless functions
+- ❌ No authentication or session management
+- ❌ No real WebSocket connections
+- ✅ Pure frontend React + TypeScript
+- ✅ Mock data in JSON/TS files
+- ✅ Local state management (Zustand for global state)
+- ✅ Client-side filtering/sorting only
+
+**State Management (Simplified)**:
+```typescript
+// src/stores/dashboardStore.ts
+import { create } from 'zustand'
+
+interface DashboardStore {
+  currentTab: string
+  metrics: DashboardMetrics
+  campaigns: Campaign[]
+  notifications: Notification[]
+  
+  // Actions (no API calls, just state updates)
+  setTab: (tab: string) => void
+  updateMetrics: (metrics: Partial<DashboardMetrics>) => void
+  addNotification: (notif: Notification) => void
+}
+
+export const useDashboardStore = create<DashboardStore>((set) => ({
+  currentTab: 'overview',
+  metrics: mockDashboardData.heroMetrics,
+  campaigns: mockDashboardData.campaigns,
+  notifications: [],
+  
+  setTab: (tab) => set({ currentTab: tab }),
+  updateMetrics: (metrics) => set((state) => ({ 
+    metrics: { ...state.metrics, ...metrics } 
+  })),
+  addNotification: (notif) => set((state) => ({
+    notifications: [notif, ...state.notifications]
+  }))
+}))
+```
+
+**Performance Optimizations**:
+- **Lazy Loading**: Code-split each tab with `React.lazy()`
+- **Memoization**: Use `React.memo()` for chart components
+- **Debounced Interactions**: Debounce filters/search inputs
+- **Virtual Scrolling**: For long lists (use `react-window`)
+- **Image Optimization**: Use WebP, lazy load images
+- **No Heavy Calculations**: Pre-calculate everything
+
+---
+
+## 6. MOBILE RESPONSIVENESS
+
+### 6.1 Mobile Layout Adaptations
+- **Hero Metrics**: Stack vertically, enlarge for thumb-friendly taps
+- **Pipeline**: Vertical scroll instead of horizontal flow
+- **Campaign Cards**: Full-width, swipeable carousel
+- **Charts**: Simplify to mobile-friendly bar/line charts
+- **Tabs**: Sticky tab bar at top, swipe to switch
+
+### 6.2 Touch Interactions
+- **Swipe Gestures**: Navigate between tabs, dismiss notifications
+- **Long Press**: Open context menus, quick actions
+- **Pull to Refresh**: Update dashboard data
+- **Bottom Sheets**: Replace modals on mobile
+
+---
+
+## 7. ACCESSIBILITY
+
+### 7.1 WCAG 2.1 AA Compliance
+- **Keyboard Navigation**: Full tab/arrow key support
+- **Screen Reader**: ARIA labels, roles, live regions for updates
+- **Color Contrast**: Minimum 4.5:1 for all text
+- **Focus Indicators**: Clear visual feedback on focus
+- **Alternative Text**: All icons and charts have text descriptions
+
+### 7.2 Reduced Motion
+- **prefers-reduced-motion**: Disable animations for users who prefer it
+- **Static Alternatives**: Non-animated versions of visualizations
+- **Simplified Interactions**: Remove complex gestures for accessibility
+
+---
+
+## 8. TRUST & COMPLIANCE INDICATORS
+
+### 8.1 Professional Signals
+- **SOC2 Badge**: Visible in footer/header
+- **GDPR Compliant**: Privacy notice and data handling info
+- **Uptime Stats**: "99.9% uptime last 30 days"
+- **Audit Trail**: All actions logged with timestamps
+- **Data Encryption**: "256-bit encryption" badge
+
+### 8.2 Transparency Features
+- **AI Explainability**: Show reasoning for recommendations
+- **Data Sources**: Display where metrics come from
+- **Calculation Methods**: Explain how ROI is calculated
+- **Privacy Controls**: Easy opt-out, data deletion requests
+- **Support Access**: Quick access to help, docs, chat support
+
+---
+
+## 9. SUCCESS METRICS
+
+### 9.1 User Engagement KPIs
+- **Time on Dashboard**: Target 5+ minutes per session
+- **Feature Interaction Rate**: 80%+ of users interact with at least 3 modules
+- **Return Visits**: 70%+ return within 7 days
+- **CTA Click-through**: 25%+ click "Book Demo" after exploring
+
+### 9.2 Technical Performance KPIs
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Time to Interactive**: < 3.5s
+- **Cumulative Layout Shift**: < 0.1
+- **Real-time Update Latency**: < 100ms
+
+### 9.3 Business Impact KPIs
+- **Demo Conversion Rate**: 35%+ of dashboard visitors book demo
+- **Lead Quality Score**: Higher engagement = higher quality leads
+- **Viral Sharing**: "Share Dashboard" feature usage
+
+---
+
+## 10. PHASED ROLLOUT PLAN
+
+### Phase 1: Foundation (Week 1)
+- System Health Bar
+- Hero Metrics Row
+- Basic tab navigation
+- One complete tab (System Overview)
+
+### Phase 2: Core Features (Week 2)
+- Content Pipeline visualization
+- Campaign Orchestration
+- Analytics Hub (basic charts)
+- Notification Center
+
+### Phase 3: Advanced Features (Week 3)
+- AI Control Panel
+- Approval Workflow integration
+- Publishing Scheduler
+- Budget Dashboard
+
+### Phase 4: Polish & Optimization (Week 4)
+- Microinteractions refinement
+- Mobile responsive testing
+- Accessibility audit
+- Performance optimization
+- User testing & feedback integration
+
+---
+
+## 11. EDGE CASES & CONSIDERATIONS
+
+### 11.1 Data States
+- **Empty State**: No campaigns yet, show onboarding flow
+- **Error State**: API failure, show friendly error with retry
+- **Loading State**: Skeleton screens, progressive loading
+- **Partial Data**: Gracefully handle incomplete metrics
+
+### 11.2 Browser Compatibility
+- **Modern Browsers**: Chrome, Edge, Safari, Firefox (latest 2 versions)
+- **Fallbacks**: Static charts for older browsers
+- **Progressive Enhancement**: Core features work without JS
+
+### 11.3 Performance Under Load
+- **Large Datasets**: Paginate, virtualize, lazy load
+- **Many Active Users**: Simulate with throttled updates
+- **Low Bandwidth**: Optimized images, deferred non-critical content
+
+---
+
+## 12. FUTURE ENHANCEMENTS (Post-MVP)
+
+### 12.1 Advanced AI Features
+- **Predictive Anomaly Detection**: Alert before issues occur
+- **Natural Language Queries**: "Show me best performing TikTok posts this month"
+- **Auto-pilot Mode**: Fully autonomous campaign management
+- **Competitor Intelligence**: Automated competitive analysis
+
+### 12.2 Collaboration Features
+- **Team Comments**: Inline discussions on campaigns
+- **Task Assignment**: Assign approvals, optimizations to team members
+- **Activity Feed**: Real-time team activity log
+- **Shared Views**: Save and share custom dashboard layouts
+
+### 12.3 Integration Ecosystem
+- **Webhook Support**: Send events to external systems
+- **API Access**: Programmatic control over campaigns
+- **Plugin Marketplace**: Third-party integrations
+- **Custom Widgets**: User-created dashboard modules
+
+---
+
+## 13. DESIGN SYSTEM GUIDELINES
+
+### 13.1 Color Palette
+- **Primary**: `#00D4FF` (Cyan) - CTAs, active states
+- **Secondary**: `#B794F4` (Purple) - Secondary actions, highlights
+- **Success**: `#00FF88` (Green) - Positive metrics, success states
+- **Warning**: `#FFB800` (Amber) - Warnings, moderate alerts
+- **Danger**: `#FF5555` (Red) - Errors, critical alerts
+- **Neutral**: Slate gray scale for text and backgrounds
+
+### 13.2 Typography
+- **Headings**: Inter/SF Pro - Bold, large, clear hierarchy
+- **Body**: Inter/SF Pro - Regular, optimized for readability
+- **Monospace**: Fira Code - For metrics, counters, data
+
+### 13.3 Spacing System
+- Base unit: 4px (0.25rem)
+- Scale: 4, 8, 12, 16, 24, 32, 48, 64, 96px
+- Consistent padding, margin, gap usage
+
+### 13.4 Animation Principles
+- **Duration**: 200-300ms for micro, 400-600ms for modals
+- **Easing**: Cubic-bezier for natural feel
+- **Purpose**: Every animation communicates state change
+- **Restraint**: Avoid animation overload
+
+---
+
+## 14. CONTENT STRATEGY
+
+### 14.1 Microcopy Guidelines
+- **Clear & Concise**: Avoid jargon, use plain language
+- **Action-Oriented**: "Launch Campaign" not "Campaign Launcher"
+- **Helpful**: Provide context in tooltips, hints
+- **Consistent**: Same terms throughout (e.g., "Post" not "Content Item")
+
+### 14.2 Demo Data Best Practices
+
+**Realistic Mock Data Requirements**:
+```typescript
+// ✅ DO: Industry-specific, believable numbers
+const mockCampaignData = {
+  name: "Spring Product Launch - Lifestyle Brand",
+  platform: "Instagram",
+  budget: 5000, // Realistic for SMB
+  reach: 245000, // Believable reach
+  roi: 342, // Impressive but not outrageous
+  strategy: "Brand Awareness + Direct Sales"
+}
+
+// ❌ DON'T: Generic, unrealistic data
+const badMockData = {
+  name: "Campaign 1",
+  platform: "Social Media",
+  budget: 999999999,
+  reach: 1000000000,
+  roi: 50000
+}
+```
+
+**Key Principles**:
+1. **Relevant**: Tailor to prospect's industry (e.g., e-commerce, SaaS, agency)
+2. **Believable**: Numbers that make sense (not "10M reach from €100 budget")
+3. **Dynamic**: Allow filters/sorts to work (even if data resets)
+4. **Storytelling**: Show progression over time (campaign grows, metrics improve)
+5. **Variety**: Mix of successful, paused, and "needs attention" items for realism
+6. **Safe**: NEVER use real customer data (GDPR compliance)
+
+**Mock Data Sources**:
+- **Pre-defined JSON files**: `src/data/mockCampaigns.json`
+- **Data generators**: Functions that create realistic variations
+- **Faker.js**: For names, dates, text (optional)
+- **Seeded randomness**: Same data on page reload for consistency
+
+**Example Mock Data Structure**:
+```typescript
+// src/data/mockPlatformData.ts
+export const mockPlatforms = [
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    accounts: [
+      { 
+        handle: '@lifestylebrand', 
+        followers: 125000,
+        strategy: 'Brand Awareness',
+        performance: 'excellent' // Determines color coding
+      },
+      { 
+        handle: '@lifestylebrand_shop', 
+        followers: 45000,
+        strategy: 'Direct Sales',
+        performance: 'good'
+      }
+    ],
+    overallROI: 45,
+    status: 'connected',
+    lastSync: '2 minutes ago'
+  },
+  // More platforms...
+]
+
+// Simulate "loading" for realism
+export const fetchMockData = (delay = 500) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(mockPlatforms), delay)
+  })
+}
+```
+
+**Interaction Simulation**:
+```typescript
+// Simulate actions without backend
+const handleCampaignPause = (campaignId: string) => {
+  // Update local state
+  setCampaigns(prev => prev.map(c => 
+    c.id === campaignId 
+      ? { ...c, status: 'paused' } 
+      : c
+  ))
+  
+  // Show success toast
+  toast.success('Campaign paused successfully')
+  
+  // Add to notification feed
+  addNotification({
+    type: 'info',
+    title: 'Campaign Paused',
+    message: `Campaign "${campaign.name}" has been paused`,
+    timestamp: new Date()
+  })
+  
+  // NOTE: Data resets on page refresh - this is a DEMO
+}
+```
+
+---
+
+## 15. TESTING STRATEGY
+
+### 15.1 Automated Testing
+- **Unit Tests**: All components, utils, hooks
+- **Integration Tests**: Component interactions, data flows
+- **E2E Tests**: Critical user paths (view metrics → drill down → take action)
+- **Visual Regression**: Screenshot comparisons for UI consistency
+
+### 15.2 Manual Testing Checklist
+- [ ] All tabs load and display correctly
+- [ ] Real-time updates work smoothly
+- [ ] Interactions (click, hover, drag) feel responsive
+- [ ] Animations are smooth (60fps)
+- [ ] Mobile responsive on all major devices
+- [ ] Keyboard navigation works
+- [ ] Screen reader announces correctly
+- [ ] No console errors or warnings
+- [ ] Performance meets KPI targets
+
+### 15.3 User Testing
+- **Target Users**: 5-10 CMOs, Marketing Directors
+- **Tasks**: "Find your best performing campaign", "Schedule a post", "Check ROI"
+- **Feedback**: Record sessions, conduct interviews, measure task completion
+- **Iterate**: Refine based on insights
+
+---
+
+## 16. DOCUMENTATION REQUIREMENTS
+
+### 16.1 Developer Docs
+- **Component API**: Props, events, examples for each component
+- **State Management**: How data flows, where state lives
+- **Styling Guide**: How to use Tailwind classes, custom styles
+- **Testing Guide**: How to write tests for dashboard components
+
+### 16.2 User Docs
+- **Feature Guides**: How to use each dashboard module
+- **Video Walkthrough**: Screen recording of full dashboard tour
+- **FAQ**: Common questions about metrics, actions, features
+- **Troubleshooting**: What to do if something doesn't work
+
+---
+
+## CONCLUSION
+
+This Command Center Dashboard is the **visual showcase centerpiece** of the FutureMarketingAI demo. It demonstrates what the system CAN do through:
+
+✅ **Visually Impressive UI**: Enterprise-grade design, glassmorphism, polished details
+✅ **Smooth Animations**: Framer Motion transitions that feel alive
+✅ **Interactive Elements**: Click, hover, filter - engage with the demo
+✅ **Realistic Mock Data**: Believable metrics and scenarios that tell a story
+✅ **AI Showcase**: Simulated AI features that demonstrate intelligence
+✅ **Professional Trust Signals**: Compliance badges, audit trails, status indicators
+✅ **Mobile Responsive**: Works beautifully on all devices
+✅ **Accessibility**: WCAG 2.1 AA compliant, keyboard navigable
+✅ **Performance**: Fast load, smooth 60fps animations
+
+### Key Demo Philosophy
+
+**"Looks Production, Feels Real, But It's All Frontend"** 🎭
+
+- NO backend complexity (databases, APIs, auth)
+- NO real-time data fetching (simulated with `setInterval`)
+- NO complex state management (Zustand for simple global state)
+- YES to polished UI and smooth interactions
+- YES to realistic mock data and scenarios
+- YES to impressive visual effects and animations
+
+### Implementation Priority
+
+**Phase 1 (MVP Demo)**: 
+1. System Health Bar + Hero Metrics (show impressive numbers)
+2. One complete tab (Overview or Analytics)
+3. Platform Cards with mock data
+4. Basic navigation and transitions
+
+**Phase 2 (Core Features)**:
+5. Interactive charts (Recharts with mock data)
+6. Campaign showcase cards
+7. Notification center simulation
+8. Mobile responsive polish
+
+**Phase 3 (Visual Polish)**:
+9. Microinteractions refinement
+10. Loading states and skeletons
+11. Hover effects and tooltips
+12. Accessibility audit
+
+**Phase 4 (Optimization)**:
+13. Performance optimization
+14. Code splitting and lazy loading
+15. Analytics tracking (track demo engagement)
+16. Final QA and user testing
+
+### Success Criteria (Demo-Specific)
+
+**Engagement Metrics**:
+- ⏱️ Time on Dashboard: >3 minutes average
+- 🖱️ Interaction Rate: >70% click at least 2 modules
+- 📱 Mobile Usage: >30% of visitors on mobile
+- 🎯 CTA Conversion: >20% click "Book Demo" after exploring
+
+**Technical Performance**:
+- 🚀 First Contentful Paint: <1.5s
+- ⚡ Time to Interactive: <2.5s
+- 📊 Lighthouse Score: >90 (Performance)
+- 🎨 Cumulative Layout Shift: <0.1
+
+**Business Impact**:
+- 💼 Demo Booking Rate: >25% of dashboard visitors
+- ⭐ Lead Quality: Higher engagement = warmer leads
+- 🔗 Viral Sharing: "Share Demo" feature usage
+
+### Next Steps
+
+1. **Parse PRD**: Generate tasks with Taskmaster in `command-center-v2` tag
+2. **Expand Tasks**: Break down complex features into subtasks
+3. **Prioritize**: Focus on visual impact first, complexity later
+4. **Iterate**: Build, test, refine based on user feedback
+5. **Track**: Monitor demo engagement and optimize
+
+**Impact**: A command center demo that wows prospects, builds trust, and drives bookings - all without building a complex backend! 🎯🚀
+

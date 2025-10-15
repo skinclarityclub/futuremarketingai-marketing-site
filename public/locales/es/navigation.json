@@ -1,0 +1,54 @@
+{
+  "main": {
+    "home": "Inicio",
+    "explorer": "Explorador",
+    "dashboard": "Panel",
+    "calculator": "Calculadora",
+    "ad_builder": "Creador de Anuncios"
+  },
+  "descriptions": {
+    "home": "Esfera Core IA",
+    "explorer": "9 Capas de Marketing",
+    "dashboard": "Centro de Comando",
+    "calculator": "Calcular ROI",
+    "ad_builder": "Crear Anuncios"
+  },
+  "mobile": {
+    "home": "Core",
+    "explorer": "Capas",
+    "dashboard": "Centro",
+    "calculator": "ROI",
+    "ad_builder": "Anuncios"
+  },
+  "footer": {
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre Nosotros",
+      "careers": "Carreras",
+      "contact": "Contacto",
+      "blog": "Blog"
+    },
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "pricing": "Precios",
+      "demo": "Solicitar Demo",
+      "changelog": "Registro de Cambios"
+    },
+    "resources": {
+      "title": "Recursos",
+      "documentation": "Documentación",
+      "guides": "Guías",
+      "api": "Referencia API",
+      "support": "Soporte"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookies": "Política de Cookies",
+      "gdpr": "RGPD"
+    }
+  },
+  "copyright": "© {{year}} FutureMarketingAI. Todos los derechos reservados."
+}

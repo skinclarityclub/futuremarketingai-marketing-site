@@ -1,0 +1,20 @@
+{
+  "modal": {
+    "title": "Reserva Tu Consulta Gratuita",
+    "what_to_expect": {
+      "heading": "Qué Esperar:",
+      "items": [
+        "Llamada estratégica de 30 minutos con un especialista",
+        "Análisis de tu situación actual de marketing",
+        "Cálculo personalizado de ROI para tu negocio",
+        "Consejos prácticos e insights"
+      ]
+    },
+    "loading": "Cargando Calendly...",
+    "trust_signals": {
+      "no_obligations": "✓ Sin obligaciones",
+      "free_advice": "✓ Asesoría gratuita",
+      "instant_booking": "✓ Reserva instantánea"
+    }
+  }
+}

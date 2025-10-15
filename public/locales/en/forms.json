@@ -1,0 +1,54 @@
+{
+  "labels": {
+    "email": "Email Address",
+    "name": "Full Name",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "company": "Company Name",
+    "phone": "Phone Number",
+    "website": "Website URL",
+    "job_title": "Job Title",
+    "team_size": "Team Size",
+    "industry": "Industry",
+    "message": "Message",
+    "password": "Password",
+    "confirm_password": "Confirm Password"
+  },
+  "placeholders": {
+    "email": "Enter your email address",
+    "name": "Enter your full name",
+    "company": "Your company name",
+    "phone": "+1 (555) 000-0000",
+    "website": "https://yourcompany.com",
+    "message": "Tell us about your needs...",
+    "password": "Create a strong password"
+  },
+  "helpers": {
+    "email": "We'll never share your email with anyone.",
+    "password": "Use at least 8 characters with letters and numbers",
+    "phone": "We'll only call during business hours"
+  },
+  "team_sizes": {
+    "1-5": "1-5 people",
+    "6-20": "6-20 people",
+    "21-50": "21-50 people",
+    "51-200": "51-200 people",
+    "201+": "201+ people"
+  },
+  "industries": {
+    "ecommerce": "E-commerce & Retail",
+    "saas": "Technology & SaaS",
+    "agency": "Marketing Agency",
+    "other": "Other Industry"
+  },
+  "actions": {
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "upload": "Upload",
+    "download": "Download"
+  }
+}

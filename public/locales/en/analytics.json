@@ -1,0 +1,46 @@
+{
+  "events": {
+    "page_load": "Page Loaded",
+    "page_view": "Page Viewed",
+    "hero_view": "Hero Section Viewed",
+    "cta_click": "CTA Clicked",
+    "cta_impression": "CTA Impression",
+    "calculator_interact": "Calculator Interaction",
+    "calendly_event": "Calendly Event",
+    "module_open": "Module Opened",
+    "navigation": "Navigation",
+    "outbound_click": "Outbound Link Clicked",
+    "error": "Error Occurred",
+    "engagement_time": "Engagement Time",
+    "scroll_depth": "Scroll Depth"
+  },
+  "categories": {
+    "user_engagement": "User Engagement",
+    "navigation": "Navigation",
+    "conversion": "Conversion",
+    "performance": "Performance",
+    "errors": "Errors"
+  },
+  "labels": {
+    "hero_cta": "Hero CTA",
+    "floating_cta": "Floating CTA",
+    "exit_intent": "Exit Intent",
+    "inline_cta": "Inline CTA",
+    "calculator_input": "Calculator Input",
+    "calculator_result": "Calculator Result",
+    "module_detail": "Module Detail View",
+    "nav_click": "Navigation Click"
+  },
+  "parameters": {
+    "cta_name": "CTA Name",
+    "cta_destination": "Destination",
+    "page_name": "Page Name",
+    "module_name": "Module Name",
+    "action": "Action",
+    "value": "Value",
+    "time_seconds": "Time (seconds)",
+    "depth_percent": "Depth (%)",
+    "error_type": "Error Type",
+    "error_message": "Error Message"
+  }
+}

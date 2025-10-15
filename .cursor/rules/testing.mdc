@@ -1,0 +1,400 @@
+---
+description: Testing best practices en richtlijnen voor betrouwbare code
+globs: **/*.{test,spec}.{js,jsx,ts,tsx}
+alwaysApply: true
+---
+
+## Testing Strategie
+
+- **Test Piramide:**
+  ```
+  E2E Tests (10%)         ← Weinig, duur, langzaam
+       /\
+      /  \
+     /    \
+    / Integ \
+   /  Tests  \    (20%)   ← Matig aantal
+  /    (30%)  \
+ /______________\
+ Unit Tests (70%)        ← Veel, goedkoop, snel
+  ```
+
+- **Wat te testen:**
+  - ✅ Unit Tests: Individuele functies en componenten
+  - ✅ Integration Tests: Samenwerking tussen modules
+  - ✅ E2E Tests: Kritieke user flows
+  - ❌ DON'T: Test implementation details, test behavior
+
+## Unit Testing
+
+- **React Component Testing:**
+  ```typescript
+  // ✅ DO: Test user behavior, niet implementatie
+  import { render, screen, userEvent } from '@testing-library/react';
+  
+  describe('LoginForm', () => {
+    it('should submit form with email and password', async () => {
+      const handleSubmit = vi.fn();
+      render(<LoginForm onSubmit={handleSubmit} />);
+      
+      // Interactie zoals een gebruiker het zou doen
+      await userEvent.type(
+        screen.getByLabelText(/email/i),
+        'user@example.com'
+      );
+      await userEvent.type(
+        screen.getByLabelText(/password/i),
+        'password123'
+      );
+      await userEvent.click(screen.getByRole('button', { name: /login/i }));
+      
+      // Verwacht resultaat
+      expect(handleSubmit).toHaveBeenCalledWith({
+        email: 'user@example.com',
+        password: 'password123'
+      });
+    });
+    
+    it('should show error message for invalid email', async () => {
+      render(<LoginForm />);
+      
+      await userEvent.type(screen.getByLabelText(/email/i), 'invalid');
+      await userEvent.click(screen.getByRole('button', { name: /login/i }));
+      
+      expect(screen.getByText(/invalid email/i)).toBeInTheDocument();
+    });
+  });
+  
+  // ❌ DON'T: Test implementation details
+  it('should update state when typing', () => {
+    const { container } = render(<LoginForm />);
+    const input = container.querySelector('input[name="email"]'); // Fragiel!
+    // Test intern state - breekt bij refactor
+  });
+  ```
+
+- **Pure Functions Testing:**
+  ```typescript
+  // ✅ DO: Test edge cases en happy path
+  describe('calculateDiscount', () => {
+    it('should apply 10% discount for orders over €100', () => {
+      expect(calculateDiscount(150)).toBe(135);
+    });
+    
+    it('should not apply discount for orders under €100', () => {
+      expect(calculateDiscount(50)).toBe(50);
+    });
+    
+    it('should handle zero amount', () => {
+      expect(calculateDiscount(0)).toBe(0);
+    });
+    
+    it('should handle negative amounts', () => {
+      expect(calculateDiscount(-10)).toBe(0);
+    });
+  });
+  ```
+
+## Mocking & Stubbing
+
+- **API Mocking:**
+  ```typescript
+  // ✅ DO: Mock externe dependencies
+  import { vi } from 'vitest';
+  import { fetchUser } from './api';
+  
+  vi.mock('./api', () => ({
+    fetchUser: vi.fn()
+  }));
+  
+  describe('UserProfile', () => {
+    it('should display user data', async () => {
+      const mockUser = { id: 1, name: 'John Doe' };
+      vi.mocked(fetchUser).mockResolvedValue(mockUser);
+      
+      render(<UserProfile userId={1} />);
+      
+      expect(await screen.findByText('John Doe')).toBeInTheDocument();
+    });
+    
+    it('should handle loading state', () => {
+      vi.mocked(fetchUser).mockReturnValue(new Promise(() => {})); // Never resolves
+      
+      render(<UserProfile userId={1} />);
+      
+      expect(screen.getByText(/loading/i)).toBeInTheDocument();
+    });
+    
+    it('should handle error state', async () => {
+      vi.mocked(fetchUser).mockRejectedValue(new Error('Network error'));
+      
+      render(<UserProfile userId={1} />);
+      
+      expect(await screen.findByText(/error/i)).toBeInTheDocument();
+    });
+  });
+  ```
+
+## Integration Testing
+
+- **API Integration Tests:**
+  ```typescript
+  // ✅ DO: Test daadwerkelijke API flows
+  import { setupServer } from 'msw/node';
+  import { http, HttpResponse } from 'msw';
+  
+  const server = setupServer(
+    http.get('/api/users/:id', ({ params }) => {
+      return HttpResponse.json({
+        id: params.id,
+        name: 'John Doe'
+      });
+    })
+  );
+  
+  beforeAll(() => server.listen());
+  afterEach(() => server.resetHandlers());
+  afterAll(() => server.close());
+  
+  describe('User API Integration', () => {
+    it('should fetch and display user data', async () => {
+      render(<App />);
+      
+      await userEvent.click(screen.getByText(/load user/i));
+      
+      expect(await screen.findByText('John Doe')).toBeInTheDocument();
+    });
+  });
+  ```
+
+## E2E Testing
+
+- **Playwright/Cypress Tests:**
+  ```typescript
+  // ✅ DO: Test kritieke user journeys
+  import { test, expect } from '@playwright/test';
+  
+  test('user can complete checkout process', async ({ page }) => {
+    // Login
+    await page.goto('/login');
+    await page.fill('[name="email"]', 'user@example.com');
+    await page.fill('[name="password"]', 'password123');
+    await page.click('button[type="submit"]');
+    
+    // Add product to cart
+    await page.goto('/products/123');
+    await page.click('button:has-text("Add to Cart")');
+    
+    // Verify cart
+    await page.click('[aria-label="Cart"]');
+    await expect(page.locator('.cart-item')).toBeVisible();
+    
+    // Checkout
+    await page.click('button:has-text("Checkout")');
+    await page.fill('[name="address"]', '123 Main St');
+    await page.click('button:has-text("Complete Order")');
+    
+    // Verify confirmation
+    await expect(page.locator('.order-confirmation')).toBeVisible();
+  });
+  ```
+
+## Test Coverage
+
+- **Coverage Goals:**
+  - Unit Tests: >80% coverage
+  - Critical paths: 100% coverage
+  - Edge cases: Getest voor belangrijke functies
+
+- **Run Coverage:**
+  ```json
+  // package.json
+  {
+    "scripts": {
+      "test": "vitest",
+      "test:coverage": "vitest --coverage",
+      "test:ui": "vitest --ui"
+    }
+  }
+  ```
+
+## Testing Best Practices
+
+- **AAA Pattern (Arrange, Act, Assert):**
+  ```typescript
+  it('should calculate total price correctly', () => {
+    // Arrange - Setup
+    const items = [
+      { price: 10, quantity: 2 },
+      { price: 5, quantity: 1 }
+    ];
+    
+    // Act - Uitvoeren
+    const total = calculateTotal(items);
+    
+    // Assert - Verificatie
+    expect(total).toBe(25);
+  });
+  ```
+
+- **Descriptive Test Names:**
+  ```typescript
+  // ✅ DO: Duidelijke test beschrijvingen
+  it('should show error when email is missing')
+  it('should disable submit button while loading')
+  it('should redirect to dashboard after successful login')
+  
+  // ❌ DON'T: Vage beschrijvingen
+  it('works correctly')
+  it('test email')
+  it('button test')
+  ```
+
+- **One Assertion Per Test (bij voorkeur):**
+  ```typescript
+  // ✅ DO: Eén concept per test
+  it('should validate email format', () => {
+    expect(isValidEmail('test@example.com')).toBe(true);
+  });
+  
+  it('should reject invalid email format', () => {
+    expect(isValidEmail('invalid')).toBe(false);
+  });
+  
+  // ⚠️ ACCEPTABLE: Gerelateerde assertions
+  it('should parse user data correctly', () => {
+    const user = parseUser(rawData);
+    expect(user.id).toBe(1);
+    expect(user.name).toBe('John');
+    expect(user.email).toBe('john@example.com');
+  });
+  ```
+
+## Test Data Management
+
+- **Factories & Fixtures:**
+  ```typescript
+  // ✅ DO: Herbruikbare test data factories
+  function createUser(overrides = {}) {
+    return {
+      id: 1,
+      name: 'Test User',
+      email: 'test@example.com',
+      role: 'user',
+      ...overrides
+    };
+  }
+  
+  // Gebruik in tests
+  it('should display admin badge for admin users', () => {
+    const admin = createUser({ role: 'admin' });
+    render(<UserCard user={admin} />);
+    expect(screen.getByText(/admin/i)).toBeInTheDocument();
+  });
+  ```
+
+## Continuous Integration
+
+- **Pre-commit Hooks:**
+  ```json
+  // package.json
+  {
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run test:changed",
+        "pre-push": "npm run test && npm run lint"
+      }
+    }
+  }
+  ```
+
+- **CI Pipeline:**
+  ```yaml
+  # .github/workflows/test.yml
+  name: Tests
+  on: [push, pull_request]
+  jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+        - run: npm ci
+        - run: npm run test:coverage
+        - run: npm run lint
+  ```
+
+## Performance Testing
+
+- **Lighthouse CI:**
+  ```javascript
+  // lighthouserc.js
+  module.exports = {
+    ci: {
+      collect: {
+        numberOfRuns: 3,
+        startServerCommand: 'npm run start',
+        url: ['http://localhost:3000/']
+      },
+      assert: {
+        assertions: {
+          'categories:performance': ['error', { minScore: 0.9 }],
+          'categories:accessibility': ['error', { minScore: 0.9 }]
+        }
+      }
+    }
+  };
+  ```
+
+## Debugging Tests
+
+- **Debug Mode:**
+  ```typescript
+  // ✅ DO: Gebruik debug helpers
+  import { render, screen } from '@testing-library/react';
+  
+  it('debug test', () => {
+    const { debug } = render(<MyComponent />);
+    
+    debug(); // Print hele DOM
+    debug(screen.getByRole('button')); // Print specifiek element
+    
+    screen.logTestingPlaygroundURL(); // Open in Testing Playground
+  });
+  ```
+
+## Test Anti-Patterns
+
+- **❌ DON'T: Test privé functies:**
+  ```typescript
+  // Slecht - test alleen public API
+  import { _internalHelper } from './utils';
+  expect(_internalHelper(x)).toBe(y);
+  ```
+
+- **❌ DON'T: Snapshot testing voor alles:**
+  ```typescript
+  // Alleen voor stabiele UI componenten
+  it('matches snapshot', () => {
+    expect(render(<Component />)).toMatchSnapshot(); // Te fragiel
+  });
+  ```
+
+- **❌ DON'T: Flaky tests negeren:**
+  ```typescript
+  // Fix unstable tests, gebruik geen:
+  it.skip('sometimes fails', () => { ... }); // Onderzoek en fix!
+  ```
+
+## Testing Checklist
+
+- [ ] Unit tests voor alle business logic
+- [ ] Component tests voor UI interacties
+- [ ] Integration tests voor API calls
+- [ ] E2E tests voor kritieke flows
+- [ ] Error states getest
+- [ ] Loading states getest
+- [ ] Edge cases getest
+- [ ] Accessibility in tests (screen readers, keyboard nav)
+- [ ] Performance tests voor kritieke paginas
+- [ ] Tests runnen in CI/CD pipeline

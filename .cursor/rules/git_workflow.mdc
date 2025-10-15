@@ -1,0 +1,429 @@
+---
+description: Git workflow en version control best practices voor gestructureerde development
+globs: **/*
+alwaysApply: true
+---
+
+## Branch Strategy
+
+- **Main Branches:**
+  - `main` - Productie-ready code (altijd stabiel)
+  - `develop` - Development branch (volgende release)
+
+- **Feature Branches:**
+  ```bash
+  # ✅ DO: Duidelijke branch naming
+  feature/user-authentication
+  feature/dashboard-redesign
+  feature/payment-integration
+  
+  # ✅ DO: Bug fixes
+  bugfix/login-validation
+  bugfix/cart-calculation
+  
+  # ✅ DO: Hotfixes (directe productie fixes)
+  hotfix/security-patch
+  hotfix/critical-error
+  
+  # ❌ DON'T: Vague namen
+  feature/updates
+  bugfix/fix
+  test-branch
+  ```
+
+- **Branch Lifecycle:**
+  ```bash
+  # Maak feature branch vanaf develop
+  git checkout develop
+  git pull origin develop
+  git checkout -b feature/new-feature
+  
+  # Work on feature...
+  
+  # Regelmatig rebasen met develop
+  git fetch origin
+  git rebase origin/develop
+  
+  # Merge terug naar develop via PR
+  # Delete branch na merge
+  git branch -d feature/new-feature
+  ```
+
+## Commit Messages
+
+- **Conventional Commits:**
+  ```bash
+  # ✅ DO: Structured commit messages
+  feat: add user authentication with JWT
+  fix: resolve cart calculation rounding error
+  docs: update API documentation
+  style: format code with prettier
+  refactor: simplify user validation logic
+  test: add unit tests for payment service
+  chore: update dependencies
+  perf: optimize image loading
+  
+  # Met scope voor context
+  feat(auth): implement password reset flow
+  fix(checkout): correct tax calculation
+  docs(api): add endpoint examples
+  
+  # Met breaking changes
+  feat!: change API response format
+  
+  BREAKING CHANGE: API now returns data in camelCase
+  ```
+
+- **Commit Message Format:**
+  ```
+  <type>(<scope>): <subject>
+  
+  <body>
+  
+  <footer>
+  ```
+  
+  **Voorbeeld:**
+  ```
+  feat(dashboard): add real-time analytics widget
+  
+  - Implemented WebSocket connection for live data
+  - Added charts using Chart.js
+  - Integrated with analytics API
+  
+  Closes #123
+  ```
+
+## Commit Best Practices
+
+- **Atomic Commits:**
+  ```bash
+  # ✅ DO: Één logische change per commit
+  git add src/auth/login.ts
+  git commit -m "feat(auth): add login validation"
+  
+  git add src/auth/password-reset.ts
+  git commit -m "feat(auth): implement password reset"
+  
+  # ❌ DON'T: Alles in één commit
+  git add .
+  git commit -m "updates" # Te vaag, te veel changes
+  ```
+
+- **Meaningful Commits:**
+  ```bash
+  # ✅ DO: Beschrijvende messages
+  "fix: resolve memory leak in WebSocket connection"
+  "refactor: extract validation logic into separate module"
+  "perf: lazy load dashboard components to improve initial load"
+  
+  # ❌ DON'T: Vage messages
+  "fix stuff"
+  "updates"
+  "wip"
+  "test"
+  ```
+
+## Pull Request Guidelines
+
+- **PR Title & Description:**
+  ```markdown
+  ## 🎯 Doel
+  Implementatie van gebruikersauthenticatie met JWT tokens
+  
+  ## 🔧 Changes
+  - Toegevoegd: Login/register endpoints
+  - Toegevoegd: JWT token generatie en validatie
+  - Toegevoegd: Protected route middleware
+  - Updated: User model met password hashing
+  
+  ## 🧪 Testing
+  - [x] Unit tests voor auth service
+  - [x] Integration tests voor login flow
+  - [x] Manual testing in development
+  
+  ## 📸 Screenshots
+  [Indien van toepassing]
+  
+  ## ✅ Checklist
+  - [x] Code follows project style guidelines
+  - [x] Tests pass locally
+  - [x] Documentation updated
+  - [x] No console errors
+  - [x] Responsive design tested
+  
+  Closes #123
+  ```
+
+- **PR Best Practices:**
+  - Houd PRs klein en gefocust (<400 lines bij voorkeur)
+  - Link naar related issues
+  - Request review van relevante team members
+  - Reageer op feedback binnen 24 uur
+  - Squash commits bij merge (indien relevant)
+
+## Code Review Process
+
+- **Als Reviewer:**
+  ```markdown
+  ## ✅ Approved - Great work!
+  Code ziet er goed uit. Kleine suggesties:
+  
+  **Optional improvements:**
+  - Overweeg error boundary toe te voegen
+  - Type voor `UserData` kan specifieker
+  
+  **Questions:**
+  - Waarom gebruiken we hier setTimeout?
+  ```
+
+- **Review Checklist:**
+  - [ ] Code is leesbaar en begrijpelijk
+  - [ ] Logica is correct geïmplementeerd
+  - [ ] Tests dekken belangrijke scenarios
+  - [ ] Geen security issues
+  - [ ] Performance overwegingen gemaakt
+  - [ ] Error handling is robuust
+  - [ ] Documentatie is up-to-date
+
+## Git Hooks (Husky)
+
+- **Pre-commit Hook:**
+  ```json
+  // package.json
+  {
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.{js,jsx,ts,tsx}": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+      ],
+      "*.{css,scss}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  }
+  ```
+
+- **Commit Message Validation:**
+  ```json
+  {
+    "husky": {
+      "hooks": {
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    }
+  }
+  ```
+
+## Merge Strategies
+
+- **Feature → Develop:**
+  - Gebruik **Squash and Merge** voor cleane history
+  - Of **Rebase and Merge** voor gedetailleerde history
+
+- **Develop → Main:**
+  - Gebruik **Merge Commit** voor duidelijke release points
+  - Tag releases: `v1.0.0`, `v1.1.0`
+
+## Versioning (SemVer)
+
+- **Semantic Versioning:**
+  ```
+  MAJOR.MINOR.PATCH
+  
+  1.0.0 → Initial release
+  1.1.0 → New features (backwards compatible)
+  1.1.1 → Bug fixes (backwards compatible)
+  2.0.0 → Breaking changes
+  ```
+
+- **Git Tags:**
+  ```bash
+  # Create release tag
+  git tag -a v1.2.0 -m "Release version 1.2.0"
+  git push origin v1.2.0
+  
+  # List tags
+  git tag -l
+  
+  # Checkout specific version
+  git checkout v1.2.0
+  ```
+
+## .gitignore Best Practices
+
+```gitignore
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Testing
+coverage/
+*.log
+
+# Production
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Task Master (optioneel - indien niet in Git)
+# .taskmaster/tasks/
+# .taskmaster/reports/
+```
+
+## Conflict Resolution
+
+- **Merge Conflicts:**
+  ```bash
+  # Pull laatste changes
+  git pull origin develop
+  
+  # Conflict!
+  # Open bestanden met <<<<<<< markers
+  
+  # Resolve manually, dan:
+  git add .
+  git commit -m "merge: resolve conflicts with develop"
+  
+  # Of abort merge
+  git merge --abort
+  ```
+
+- **Rebase Conflicts:**
+  ```bash
+  # Start rebase
+  git rebase develop
+  
+  # Conflict! Resolve dan:
+  git add .
+  git rebase --continue
+  
+  # Of skip commit
+  git rebase --skip
+  
+  # Of abort
+  git rebase --abort
+  ```
+
+## Useful Git Commands
+
+```bash
+# Stash changes temporarily
+git stash
+git stash pop
+
+# Amend last commit
+git commit --amend
+
+# Interactive rebase (clean history)
+git rebase -i HEAD~3
+
+# Cherry-pick specific commit
+git cherry-pick <commit-hash>
+
+# View file history
+git log --follow <filename>
+
+# Find who changed a line
+git blame <filename>
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Discard all local changes
+git reset --hard HEAD
+```
+
+## Task Master Integration
+
+- **Met Feature Branches:**
+  ```bash
+  # Create feature branch
+  git checkout -b feature/user-dashboard
+  
+  # In Task Master (via Cursor)
+  # Initialize tag for this feature
+  task-master add-tag feature-user-dashboard --from-branch
+  
+  # Work on tasks in this tag context
+  # Commit regularly met task references
+  git commit -m "feat(dashboard): complete task 5.2 - add widgets"
+  ```
+
+- **Commit Messages met Task IDs:**
+  ```bash
+  # Link commits to tasks
+  git commit -m "feat(auth): implement JWT validation
+  
+  Completes task #3 from Task Master
+  - Added token validation middleware
+  - Updated user routes with protection"
+  ```
+
+## GitHub Actions / CI/CD
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [ develop, main ]
+  pull_request:
+    branches: [ develop, main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test:coverage
+      - run: npm run build
+```
+
+## Git Workflow Checklist
+
+- [ ] Feature branch created from `develop`
+- [ ] Descriptive branch name gebruikt
+- [ ] Atomic commits met conventional commit messages
+- [ ] Code lokaal getest
+- [ ] Tests geschreven en passing
+- [ ] Code formatted (lint/prettier)
+- [ ] PR aangemaakt met duidelijke beschrijving
+- [ ] Code review feedback verwerkt
+- [ ] Conflicts resolved
+- [ ] CI/CD pipeline passing
+- [ ] Merged en branch deleted

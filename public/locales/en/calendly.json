@@ -1,0 +1,20 @@
+{
+  "modal": {
+    "title": "Book Your Free Consultation",
+    "what_to_expect": {
+      "heading": "What to Expect:",
+      "items": [
+        "30-minute strategic call with a specialist",
+        "Analysis of your current marketing situation",
+        "Personalized ROI calculation for your business",
+        "Actionable tips and insights"
+      ]
+    },
+    "loading": "Loading Calendly...",
+    "trust_signals": {
+      "no_obligations": "✓ No obligations",
+      "free_advice": "✓ Free advice",
+      "instant_booking": "✓ Instant booking"
+    }
+  }
+}

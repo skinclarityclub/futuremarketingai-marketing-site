@@ -1,0 +1,224 @@
+{
+  "page": {
+    "title": "Command Center",
+    "subtitle": "Real-time analytics en campagnebeheer"
+  },
+  "tabs": {
+    "overview": "Overzicht",
+    "analytics_hub": "Analytics Hub",
+    "strategy": "Strategie Hub",
+    "campaign_management": "Campagnebeheer",
+    "content_pipeline": "Content Pipeline",
+    "publishing_scheduler": "Publicatieplanner",
+    "ai_assistants": "AI Assistenten"
+  },
+  "overview": {
+    "title": "Systeemoverzicht",
+    "title_with_industry": "{{industry}} Systeemoverzicht",
+    "sections": {
+      "weekly_performance": "Wekelijkse Performance Trends",
+      "active_campaigns": "Actieve Campagnes",
+      "system_performance": "Systeemprestaties",
+      "recent_activity": "Recente Activiteit",
+      "system_health": "Systeemgezondheid"
+    },
+    "table": {
+      "campaign": "Campagne",
+      "status": "Status",
+      "progress": "Voortgang",
+      "roi": "ROI"
+    },
+    "performance_labels": {
+      "ai_processing": "AI Verwerking",
+      "content_generation": "Content Generatie",
+      "campaign_optimization": "Campagne Optimalisatie"
+    },
+    "activity": {
+      "campaign_deployed": "Campagne \"{{name}}\" gedeployed",
+      "ai_optimization": "AI-optimalisatie verhoogde CTR met {{percentage}}%",
+      "content_generated": "{{count}} nieuwe contentstukken gegenereerd"
+    },
+    "health": {
+      "api_status": "API Status",
+      "ai_models": "AI Modellen",
+      "publishing_queue": "Publicatiewachtrij",
+      "active_jobs": "Actieve Jobs",
+      "operational": "Operationeel",
+      "degraded": "Verslechterd",
+      "active_count": "{{active}}/{{total}} Actief",
+      "pending_count": "{{count}} In Wachtrij",
+      "processing_count": "{{count}} Verwerken"
+    },
+    "campaign_status": {
+      "active": "Actief",
+      "paused": "Gepauzeerd",
+      "scheduled": "Gepland",
+      "draft": "Concept"
+    },
+    "chart_legends": {
+      "roi": "ROI %",
+      "engagement": "Betrokkenheid %",
+      "reach": "Bereik"
+    }
+  },
+  "content_pipeline": {
+    "title": "Content Pipeline"
+  },
+  "campaign_launcher": {
+    "title": "Nieuwe Campagne Lanceren",
+    "configuration": {
+      "heading": "Campagne Configuratie",
+      "name_label": "Campagne Naam",
+      "name_required": "Campagne Naam *",
+      "content_target_label": "Content Doel: {{count}} stuks",
+      "duration_label": "Duur: {{days}} dagen",
+      "objective_label": "Campagne Doelstelling",
+      "platforms_label": "Platformen *",
+      "target_audience_label": "Doelgroep",
+      "launch_button": "🚀 Campagne Lanceren"
+    },
+    "objectives": {
+      "awareness": "Naamsbekendheid",
+      "engagement": "Betrokkenheid",
+      "conversion": "Conversie",
+      "retention": "Retentie"
+    },
+    "audiences": {
+      "all": "Alle Doelgroepen",
+      "age_range": "Leeftijd {{range}}"
+    },
+    "preview": {
+      "heading": "Campagne Voorbeeld",
+      "name_label": "Campagne Naam",
+      "untitled": "Naamloze Campagne",
+      "content_target_label": "Content Doel",
+      "pieces": "stuks",
+      "duration_label": "Duur",
+      "days": "dagen",
+      "objective_label": "Doelstelling",
+      "platforms_label": "Geselecteerde Platformen",
+      "no_platforms": "Geen platformen geselecteerd",
+      "audience_label": "Doelgroep",
+      "ai_optimization": "AI Optimalisatie",
+      "enabled": "✓ Ingeschakeld",
+      "disabled": "✗ Uitgeschakeld"
+    },
+    "results": {
+      "heading": "Verwachte Output & Impact",
+      "estimated_reach": "Geschat Bereik:",
+      "team_hours_saved": "Team Uren Bespaard:",
+      "engagement": "Geschatte Betrokkenheid:",
+      "hours_unit": "uur"
+    },
+    "success": {
+      "title": "Campagne Gelanceerd!",
+      "message": "Je campagne is succesvol geconfigureerd en wordt binnenkort gestart."
+    },
+    "errors": {
+      "name_required": "Campagne naam is verplicht",
+      "content_min": "Minimaal 5 content items vereist",
+      "platforms_required": "Selecteer minimaal één platform"
+    }
+  },
+  "ad_manager": {
+    "title": "Advertentie Manager",
+    "summary_cards": {
+      "total_budget": "Totaal Budget",
+      "total_spent": "Totaal Uitgegeven",
+      "total_conversions": "Totaal Conversies",
+      "avg_roi": "Gem. ROI",
+      "active_campaigns": "{{count}} actieve campagnes",
+      "utilized": "{{percent}}% gebruikt",
+      "avg_cpc": "Gem. CPC:",
+      "across_all": "Over alle campagnes"
+    },
+    "chart": {
+      "budget_distribution": "Budget Verdeling",
+      "budget_label": "Budget",
+      "spent_label": "Uitgegeven"
+    },
+    "table": {
+      "title": "Actieve Campagnes",
+      "headers": {
+        "campaign": "Campagne",
+        "platform": "Platform",
+        "status": "Status",
+        "budget": "Budget",
+        "spent": "Uitgegeven",
+        "progress": "Voortgang",
+        "impressions": "Vertoningen",
+        "clicks": "Kliks",
+        "ctr": "CTR",
+        "conversions": "Conversies",
+        "cpc": "CPC",
+        "roi": "ROI",
+        "actions": "Acties"
+      }
+    },
+    "filters": {
+      "all_statuses": "Alle Statussen",
+      "all_platforms": "Alle Platformen"
+    },
+    "status": {
+      "active": "Actief",
+      "paused": "Gepauzeerd",
+      "ended": "Beëindigd"
+    },
+    "actions": {
+      "view_details": "Bekijk Details",
+      "pause": "Pauzeren",
+      "resume": "Hervatten",
+      "edit": "Bewerken"
+    },
+    "optimization": {
+      "title": "Optimalisatie Suggesties",
+      "no_suggestions": "Alle campagnes presteren optimaal!"
+    }
+  },
+  "content_calendar": {
+    "title": "Content Kalender",
+    "view": {
+      "week": "Week Weergave",
+      "month": "Maand Weergave"
+    },
+    "filter": {
+      "by_platform": "Filter op Platform:"
+    },
+    "week_of": "Week van {{range}}",
+    "days": {
+      "mon": "Ma",
+      "tue": "Di",
+      "wed": "Wo",
+      "thu": "Do",
+      "fri": "Vr",
+      "sat": "Za",
+      "sun": "Zo"
+    },
+    "status": {
+      "scheduled": "Gepland",
+      "published": "Gepubliceerd",
+      "draft": "Concept"
+    },
+    "more_items": "+{{count}} meer",
+    "legend": "Legenda:",
+    "no_content": "Geen content gepland"
+  },
+  "header": {
+    "brand": "Future Marketing AI",
+    "command_center": "Commando Centrum",
+    "system_status": {
+      "operational": "Alle Systemen Operationeel",
+      "warning": "Kleine Problemen Gedetecteerd",
+      "error": "Systeem Problemen"
+    },
+    "menu": {
+      "settings": "Instellingen",
+      "notifications": "Notificaties",
+      "logout": "Uitloggen"
+    }
+  },
+  "system_health": {
+    "title": "Systeem Status",
+    "last_updated": "Laatst bijgewerkt:"
+  }
+}

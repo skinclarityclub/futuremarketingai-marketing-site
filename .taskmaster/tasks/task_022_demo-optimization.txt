@@ -1,0 +1,132 @@
+# Task ID: 22
+# Title: Video Testimonials - Authentic Social Proof
+# Status: pending
+# Dependencies: 17, 19
+# Priority: medium
+# Description: Replace customer testimonial videos with founder authority content. Instead of 2-3 client video testimonials, produce 2-3 short founder vision videos (45-90s each) that demonstrate technical credibility, explain the product vision, and show the real system in action. Goal: increase trust and conversion by 10-15% through authentic, transparent founder-led content.
+# Details:
+**Problem Identified (Audit)**
+No customer testimonials are available (only 2 companies, both founder's own). Text testimonials lack emotional impact, and fake testimonials would undermine trust. Early-stage buyers value authenticity and technical authority.
+
+**Solution: Founder Vision Video System**
+
+## 1. Founder Explanation Videos (Technical Authority)
+
+**Produce 2-3 founder videos:**
+- **Video 1: "How Autonomous Marketing Actually Works" (60s)**
+  - Script: Founder introduces self, explains the multi-agent AI system, shows real screen recording, shares personal results (e.g., 360 hours/month saved), and invites viewers to book a call.
+- **Video 2: "Why I Built This (The Vision)" (45s)**
+  - Script: Founder shares the market context, the inflection point with autonomous AI, and the opportunity for early adopters.
+- **Video 3: "Live System Walkthrough" (90s)**
+  - Script: Screen recording of the actual dashboard, showing content calendar, analytics, and campaign manager, with a call to action.
+
+**Alternative:** If not comfortable on camera, use animated text overlays and screen recordings with founder voiceover.
+
+## 2. Component Structure
+
+- Replace `VideoTestimonialSection` with `FounderVideoSection`.
+- Use a grid layout to display all founder videos with thumbnails, titles, durations, and play tracking.
+- Add a clear badge and subtitle explaining the absence of customer testimonials and emphasizing transparency.
+- CTA below videos: "Book a Founder Call".
+
+**Example JSX:**
+```tsx
+<FounderVideoSection className="py-16">
+  <Header>
+    <Badge>🎥 From the Founder</Badge>
+    <Title>See How It Actually Works</Title>
+    <Subtitle>
+      No customer testimonials yet (we're that new).
+      <br />
+      Instead, here's me showing you the actual technology.
+    </Subtitle>
+  </Header>
+  <VideoGrid className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <FounderVideo ... />
+    ...
+  </VideoGrid>
+  <CTABelow className="mt-12 text-center">
+    <Text className="text-lg text-white/90 mb-6">
+      Ready to see it running for your business?
+    </Text>
+    <Button size="lg" variant="primary" glow onClick={openCalendly}>
+      Book a Founder Call →
+    </Button>
+  </CTABelow>
+</FounderVideoSection>
+```
+
+## 3. Production Approach
+
+- **DIY:** Record with iPhone/webcam (1080p+), Loom for screen, CapCut/DaVinci for editing, Descript for subtitles. 4-6 hours, minimal cost.
+- **Semi-Pro:** Hire video editor for color grading, motion graphics, and pro subtitles. €200-500, 3-5 days turnaround.
+
+## 4. Implementation Files
+
+- Update: `src/components/testimonials/VideoTestimonial.tsx` → `FounderVideo.tsx`
+- Update: `src/components/testimonials/VideoTestimonialSection.tsx` → `FounderVideoSection.tsx`
+- Remove: Customer testimonial data files and fake testimonials
+- Add: `/public/videos/` (founder video files), `/docs/video-scripts.md` (scripts)
+
+## 5. Expected Impact
++10-15% trust and conversion (authentic founder content is more credible than fake testimonials at this stage)
+
+## 6. Time Estimate
+- Component update: 2-3 hours
+- Video production (DIY): 4-6 hours
+- Total: 6-9 hours
+
+## 7. Priority
+MEDIUM - Founder authority is credible for early-stage
+
+# Test Strategy:
+**Testing Strategy:**
+
+1. **Video Playback:**
+   - Test on Chrome, Safari, Firefox, Edge
+   - Test on iOS Safari, Android Chrome
+   - Test MP4 + WebM fallback
+   - Verify autoplay policies respected
+   - Verify playsinline works on mobile
+
+2. **Accessibility:**
+   - Subtitles display correctly (auto-generated or manual)
+   - Keyboard controls (space, arrows)
+   - Screen reader announces video presence
+   - Transcript available (optional)
+
+3. **Performance:**
+   - Videos lazy load below fold
+   - Thumbnail loads first (LQIP)
+   - No layout shift when loading
+   - Max 2MB per video (60-90s)
+   - Buffering indicator shows
+
+4. **Analytics Validation:**
+   - Track video play, pause, completion, and CTA clicks ("Book a Founder Call")
+   - Example events:
+     ```typescript
+     'founder_video_play' // When video starts
+     'founder_video_pause' // When paused
+     'founder_video_25' // 25% watched
+     'founder_video_50' // 50% watched
+     'founder_video_75' // 75% watched
+     'founder_video_complete' // Finished watching
+     'founder_video_cta_click' // CTA clicked after video
+     ```
+
+5. **User Testing:**
+   - Do founder videos increase trust?
+   - Is the technical explanation clear?
+   - Does it influence booking decision?
+   - Target: 70% say "videos helped"
+
+6. **A/B Test:**
+   - Control: No video or text only
+   - Treatment: Founder videos
+   - Measure: Trust score, CTA clicks, time on page
+
+7. **Bandwidth Fallback:**
+   - Slow 3G: Shows thumbnail + text overlay
+   - User can opt-in to play video
+   - No automatic video load on mobile data

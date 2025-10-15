@@ -1,0 +1,322 @@
+# Task ID: 23
+# Title: Thought Leadership Hub - Founder Authority Building
+# Status: pending
+# Dependencies: 17, 19
+# Priority: medium
+# Description: Create content hub with blog posts, case studies, and industry insights to establish founder as AI marketing expert. Build credibility through expertise, not customer count. Target: Position as category leader in autonomous marketing.
+# Details:
+**Problem:**
+No customer social proof available. Need alternative credibility signals. Research shows: Thought leadership = 3x trust vs. generic messaging for early-stage companies.
+
+**Solution: Content-Driven Authority**
+
+## 1. Content Hub Structure
+
+```tsx
+<InsightsHub className="py-20">
+  <Header>
+    <Badge>📚 Knowledge Base</Badge>
+    <Title>Learn About Autonomous Marketing</Title>
+    <Subtitle>
+      Insights, case studies, and technical deep-dives
+      from building the future of AI marketing
+    </Subtitle>
+  </Header>
+  
+  <ContentGrid>
+    <FeaturedPost>
+      <Category>Technical Deep-Dive</Category>
+      <Title>
+        How We Built a Multi-Agent AI System That Runs 24/7
+      </Title>
+      <Excerpt>
+        Inside look at our architecture: 9 autonomous agents,
+        4 AI models, and the orchestration layer that makes it work.
+      </Excerpt>
+      <Author>
+        <Avatar src="/founder-avatar.jpg" />
+        <Name>Daley [Last Name]</Name>
+        <Role>Founder & AI Engineer</Role>
+      </Author>
+      <Meta>
+        <ReadTime>12 min read</ReadTime>
+        <Published>2 days ago</Published>
+      </Meta>
+    </FeaturedPost>
+    
+    {/* More posts grid */}
+  </ContentGrid>
+</InsightsHub>
+```
+
+## 2. Content Topics (Authority Building)
+
+### **Technical Authority:**
+1. "The Architecture of Autonomous AI Marketing" (technical whitepaper)
+2. "From GPT-4 to Autonomous Agents: What Changed"
+3. "Why Most AI Marketing Tools Aren't Really Autonomous"
+4. "Building Trust with AI: Our Approach to Transparent AI"
+
+### **Vision / Thought Leadership:**
+5. "Why 2025 Is the Year Marketing Becomes Autonomous"
+6. "The Early Adopter Advantage: Lessons from AI Adoption 2020-2023"
+7. "What Marketing Teams Will Look Like in 2027"
+8. "Category Creation: How to Build What Doesn't Exist Yet"
+
+### **Use Cases (Without Customer Names):**
+9. "How We Use Our Own System: 360 Hours Saved Per Month"
+10. "E-commerce + Autonomous AI: A Match Made in Heaven"
+11. "B2B SaaS Content at Scale: The Autonomous Approach"
+12. "From 5 Posts/Week to 50: Scaling Without Hiring"
+
+### **Comparison / Education:**
+13. "Autonomous AI vs. AI-Assisted: What's the Difference?"
+14. "Why Your ChatGPT Prompts Aren't Enough Anymore"
+15. "The ROI Calculator Every Marketing Team Needs"
+
+## 3. Content Hub Components
+
+```tsx
+// Individual Post Page
+<BlogPost>
+  <Hero>
+    <Category>Technical Deep-Dive</Category>
+    <Title>{post.title}</Title>
+    <Meta>
+      <Author>
+        <Avatar src={author.avatar} />
+        <Name>{author.name}</Name>
+        <Role>{author.role}</Role>
+      </Author>
+      <Published>{post.publishedDate}</Published>
+      <ReadTime>{post.readTime}</ReadTime>
+    </Meta>
+  </Hero>
+  
+  <Content>
+    <TableOfContents sticky />
+    <Article markdown={post.content} />
+    <CodeBlocks syntax="typescript" />
+    <Diagrams interactive />
+  </Content>
+  
+  <CTASection>
+    <Title>Want to see this in action?</Title>
+    <Subtitle>
+      Book a call to discuss how autonomous AI could work for your team.
+    </Subtitle>
+    <Button size="lg" glow onClick={openCalendly}>
+      Schedule a Founder Call →
+    </Button>
+  </CTASection>
+  
+  <RelatedPosts>
+    {/* Suggest 3 related articles */}
+  </RelatedPosts>
+</BlogPost>
+```
+
+## 4. SEO & Distribution Strategy
+
+### **On-Site SEO:**
+- Blog at `/blog` or `/insights`
+- Proper meta tags, Open Graph
+- Internal linking strategy
+- Semantic HTML (article, h1-h6)
+- Image optimization (WebP, alt text)
+- Schema.org markup (Article, Person)
+
+### **Distribution Channels:**
+1. **LinkedIn** (primary for B2B):
+   - Post article link + thread
+   - Personal profile (Daley)
+   - Company page
+   - Relevant groups
+
+2. **Twitter/X**:
+   - Thread version of article
+   - Tag relevant accounts
+   - Use hashtags: #AIMarketing #MarketingAutomation
+
+3. **Hacker News** (for technical posts):
+   - Submit Show HN
+   - Engage in comments
+
+4. **Reddit**:
+   - r/marketing
+   - r/Entrepreneur
+   - r/SaaS (be authentic, not spammy)
+
+5. **Newsletter**:
+   - Weekly digest
+   - Grow email list
+   - Segment by interest
+
+6. **Guest Posts**:
+   - Pitch to industry blogs
+   - CMSWire, MarTech, VentureBeat
+
+## 5. Authority Metrics to Display
+
+```tsx
+<AuthorityBadges className="mt-8">
+  <Badge>
+    <Icon>📊</Icon>
+    <Value>15,000+</Value>
+    <Label>Monthly Readers</Label>
+  </Badge>
+  
+  <Badge>
+    <Icon>✍️</Icon>
+    <Value>25+</Value>
+    <Label>Published Articles</Label>
+  </Badge>
+  
+  <Badge>
+    <Icon>🎤</Icon>
+    <Value>10+</Value>
+    <Label>Speaking Engagements</Label>
+  </Badge>
+  
+  <Badge>
+    <Icon>🏆</Icon>
+    <Value>Featured In</Value>
+    <Label>TechCrunch, VentureBeat</Label>
+  </Badge>
+</AuthorityBadges>
+```
+
+## 6. Implementation Files
+
+**New Pages:**
+- `src/pages/Blog.tsx` (blog listing)
+- `src/pages/BlogPost.tsx` (individual post)
+- `src/pages/About.tsx` (founder story)
+
+**New Components:**
+- `src/components/blog/BlogCard.tsx`
+- `src/components/blog/BlogPost.tsx`
+- `src/components/blog/AuthorBio.tsx`
+- `src/components/blog/TableOfContents.tsx`
+- `src/components/blog/CodeBlock.tsx`
+- `src/components/blog/RelatedPosts.tsx`
+
+**Content Management:**
+- Option 1: Markdown files in `/content/blog/`
+- Option 2: Headless CMS (Contentful, Sanity)
+- Option 3: Notion API (easiest for founder to write)
+
+**Data Structure:**
+```typescript
+interface BlogPost {
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  content: string // Markdown
+  category: 'technical' | 'vision' | 'use-case' | 'comparison'
+  author: Author
+  publishedDate: Date
+  updatedDate?: Date
+  readTime: number // minutes
+  featured: boolean
+  tags: string[]
+  seo: {
+    title: string
+    description: string
+    image: string
+    keywords: string[]
+  }
+}
+```
+
+## 7. Content Production Strategy
+
+**Phase 1 (Week 1-2): Foundation Posts**
+- Post 1: "How We Built This" (technical)
+- Post 2: "Why I Built This" (vision)
+- Post 3: "Our Results After 6 Months" (use case)
+- Target: 3 posts published
+
+**Phase 2 (Week 3-4): Category Leadership**
+- Post 4: "Why 2025 Is the Year of Autonomous Marketing"
+- Post 5: "Autonomous vs. AI-Assisted: The Difference"
+- Post 6: "The Early Adopter Playbook"
+- Target: 6 posts total
+
+**Phase 3 (Month 2+): SEO & Authority**
+- Publish 2 posts/week
+- Guest posts on industry blogs
+- Engage in communities
+- Target: 20+ posts by end of Q1
+
+## 8. Analytics & Tracking
+
+```typescript
+trackGA4('blog_post_view', { postId, category, author })
+trackGA4('blog_cta_click', { postId, ctaType })
+trackGA4('blog_share', { postId, platform })
+trackGA4('blog_newsletter_signup', { postId })
+```
+
+## Expected Impact:
++15-20% trust & authority (long-term compounding)
+
+## Time Estimate:
+- Setup: 6-8 hours
+- Content production: 2-3 hours per post
+- Ongoing: 5-10 hours/week
+
+## Priority:
+MEDIUM-HIGH - Authority builds over time, start early
+
+
+# Test Strategy:
+**Testing Strategy:**
+
+1. **Content Quality:**
+   - Readability score: Grade 8-10 (Hemingway)
+   - Technical accuracy review
+   - SEO optimization check (Yoast/Surfer)
+   - Grammar/spelling (Grammarly)
+
+2. **Page Performance:**
+   - LCP < 2.5s for blog pages
+   - Images optimized (<100KB each)
+   - Code blocks syntax highlighted
+   - No layout shift on load
+
+3. **SEO Validation:**
+   - Meta tags present and correct
+   - Open Graph images (1200x630)
+   - Schema.org markup validates
+   - Internal linking structure
+   - XML sitemap includes blog
+
+4. **Analytics Tracking:**
+   ```typescript
+   'blog_post_view' // Track post views
+   'blog_read_completion' // Scroll depth 100%
+   'blog_cta_click' // CTA clicks from posts
+   'blog_share_click' // Social shares
+   'blog_newsletter_signup' // Email captures
+   ```
+
+5. **Mobile Optimization:**
+   - Responsive layout
+   - Readable font sizes (16px min)
+   - Touch-friendly CTAs
+   - Fast mobile load time
+
+6. **Authority Impact:**
+   - LinkedIn engagement (likes, comments, shares)
+   - Newsletter signups from blog
+   - Demo requests from blog readers
+   - Backlinks acquired
+   - Domain authority growth (Moz/Ahrefs)
+
+7. **A/B Test:**
+   - CTA placement (inline vs. end)
+   - CTA text variants
+   - Author bio placement
+   - Related posts layout

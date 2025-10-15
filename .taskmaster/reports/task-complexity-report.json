@@ -1,0 +1,253 @@
+{
+  "meta": {
+    "generatedAt": "2025-09-30T00:46:32.450Z",
+    "tasksAnalyzed": 30,
+    "totalTasks": 30,
+    "analysisCount": 30,
+    "thresholdScore": 6,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Initialize Project Repository and Tooling",
+      "complexityScore": 5,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the setup into: (1) Create Git repository, (2) Scaffold Vite + React + TypeScript, (3) Install and configure Tailwind CSS with custom theme, (4) Add and configure Prettier, (5) Add and configure ESLint, (6) Ensure Node.js 20+ compatibility and document setup steps.",
+      "reasoning": "This task is foundational but follows well-documented, standard patterns. Each tool (Vite, Tailwind, Prettier, ESLint) requires separate configuration and verification, and custom theming adds moderate complexity. Industry best practice is to modularize setup for maintainability and onboarding."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Configure Hosting and Deployment Pipeline",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Expand into: (1) Connect repository to Vercel, (2) Configure staging and production environments with environment variables, (3) Set up Cloudflare CDN for static assets, (4) Enable automatic deployments on main branch push, (5) Document deployment and rollback procedures.",
+      "reasoning": "Deployment configuration involves multiple external services and environment management. Each integration (Vercel, Cloudflare, env vars) is a discrete step with its own risks and verification needs. Best practice is to isolate and document each for reliability and reproducibility."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Implement Global Design System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Decompose into: (1) Define color palette and typography variables, (2) Configure Tailwind for glassmorphism, gradients, and effects, (3) Integrate and test custom fonts, (4) Create utility classes for effects, (5) Set up Storybook for design tokens, (6) Render and verify sample components.",
+      "reasoning": "A global design system impacts all UI and requires careful planning, configuration, and testing. Custom effects and typography integration increase complexity. Storybook integration is a best practice for visual regression and documentation."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement Routing and Layer Navigation",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Split into: (1) Install and configure React Router v6+, (2) Define route structure for all layers/sections, (3) Implement breadcrumbs, (4) Add progress indicator, (5) Enable and test smooth scroll transitions.",
+      "reasoning": "Routing is a core architectural concern. Adding breadcrumbs and progress indicators introduces cross-cutting concerns. Each feature is best handled as a subtask for clarity and testability."
+    },
+    {
+      "taskId": 19,
+      "taskTitle": "Build Campaign Launcher Form and Preview",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down into: (1) Design and implement controlled form with validation, (2) Add sliders, dropdowns, checkboxes with Tailwind styling, (3) Implement real-time preview updates, (4) Integrate success animation with Framer Motion, (5) Write unit tests for validation and preview, (6) Document form usage and edge cases.",
+      "reasoning": "Dynamic forms with real-time previews and animations are moderately complex, requiring state management, validation, and UI feedback. Each input type and animation should be isolated for maintainability and test coverage."
+    },
+    {
+      "taskId": 21,
+      "taskTitle": "Develop Analytics Center Visualizations",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Expand into: (1) Implement performance comparison graph, (2) Build winner highlights component, (3) Create ROI breakdown pie chart, (4) Develop trend predictions timeline, (5) Animate chart transitions, (6) Add export button visuals, (7) Test chart rendering and interactivity.",
+      "reasoning": "Multiple complex visualizations, each with unique data and animation requirements, increase cognitive and technical complexity. Export features and interactivity add further integration points. Best practice is to modularize each visualization."
+    },
+    {
+      "taskId": 29,
+      "taskTitle": "Ensure Accessibility Compliance",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Decompose into: (1) Audit for alt text and ARIA labels, (2) Add focus indicators and skip links, (3) Refactor for semantic HTML, (4) Test with screen readers, (5) Test keyboard navigation, (6) Run Lighthouse and Axe audits and fix issues.",
+      "reasoning": "Accessibility compliance is a cross-cutting concern requiring code review, refactoring, and manual/automated testing. Each aspect (labels, focus, semantics, testing) is a distinct area per WCAG 2.1 AA standards."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Implement ModuleCard Interactive Elements",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Split into: (1) Animate icons with Framer Motion, (2) Highlight ROI metric in neon green, (3) Implement 'Explore' button, (4) Integrate modal open/close with AnimatePresence, (5) Test all interactions and accessibility.",
+      "reasoning": "Interactive UI elements with animation and modal logic require careful state and accessibility handling. Each feature is a logical subtask for clarity and testability."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement Key Metrics Animated Counters",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down into: (1) Implement MetricCounter component, (2) Integrate Framer Motion for animation, (3) Apply JetBrains Mono font and styling, (4) Write unit tests for animation and accuracy.",
+      "reasoning": "Animated counters are a focused UI feature with moderate complexity, mainly in animation and accuracy. Best practice is to separate component logic, animation, styling, and testing."
+    },
+    {
+      "taskId": 23,
+      "taskTitle": "Implement ROI Calculator Input Section",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Expand into: (1) Implement InputSlider component, (2) Add input validation and error handling, (3) Display current values beside sliders, (4) Persist inputs in LocalStorage, (5) Test validation, responsiveness, and persistence.",
+      "reasoning": "Input handling with validation, persistence, and real-time feedback is moderately complex. Each concern (UI, validation, persistence, testing) should be isolated for maintainability and reliability."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Build Core Reusable UI Components",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build core reusable ui components.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop Hero Section System Diagram",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on develop hero section system diagram.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Add Interactive Module Hover and Click States",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on add interactive module hover and click states.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement Hero Section Tagline and Value Proposition",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on implement hero section tagline and value proposition.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Build 'Explore System' CTA and Smooth Scroll",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build 'explore system' cta and smooth scroll.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Develop Layer 2 Module Grid Layout",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on develop layer 2 module grid layout.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Build Module Modal System",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build module modal system.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Develop Per-Module Visualizations and Interactions",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on develop per-module visualizations and interactions.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Implement Module Content Structure and ROI Calculations",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on implement module content structure and roi calculations.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 16,
+      "taskTitle": "Add Modal Accessibility Features",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on add modal accessibility features.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 17,
+      "taskTitle": "Build Layer 3 Command Center Dashboard Structure",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build layer 3 command center dashboard structure.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 18,
+      "taskTitle": "Develop Overview Dashboard Widgets",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on develop overview dashboard widgets.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 20,
+      "taskTitle": "Implement Content Calendar with Drag & Drop Simulation",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on implement content calendar with drag & drop simulation.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 22,
+      "taskTitle": "Build Ad Manager Table and Budget Chart",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build ad manager table and budget chart.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 24,
+      "taskTitle": "Develop ROI Calculation Engine",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on develop roi calculation engine.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 25,
+      "taskTitle": "Build Results Display with Animated Metrics",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on build results display with animated metrics.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 26,
+      "taskTitle": "Implement Calculator CTA and Conversion Flow",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on implement calculator cta and conversion flow.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 27,
+      "taskTitle": "Integrate Analytics and Heatmap Tracking",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on integrate analytics and heatmap tracking.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 28,
+      "taskTitle": "Optimize Performance and Bundle Size",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on optimize performance and bundle size.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    },
+    {
+      "taskId": 30,
+      "taskTitle": "Cross-Browser and Device Testing",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down this task with a focus on cross-browser and device testing.",
+      "reasoning": "Automatically added due to missing analysis in AI response."
+    }
+  ]
+}

@@ -1,0 +1,1811 @@
+# PRODUCT REQUIREMENTS DOCUMENT (PRD)
+
+# FutureMarketingAI - Interactive Demo Showcase
+
+**Version:** 1.0  
+**Date:** September 30, 2025  
+**Status:** Planning Phase  
+**Owner:** FutureMarketingAI Product Team
+
+---
+
+## 1. EXECUTIVE SUMMARY
+
+### 1.1 Product Vision
+
+An **interactive, high-end demo website** that showcases FutureMarketingAI's complete Marketing Machine for potential enterprise clients. The demo must be overwhelming and immediately demonstrate the value and ROI of a €15,000/month AI marketing system.
+
+### 1.2 Target Audience
+
+- **Primary:** E-commerce & SaaS companies (€50k-€500k monthly revenue)
+- **Decision Makers:** Owners/CEOs who make direct decisions (small teams, 5-15 people)
+- **Pain Points:** Too much time/money spent on marketing, no consistent results
+- **Tech Savviness:** Average to high (understand AI but aren't developers)
+
+### 1.3 Success Metrics
+
+- **Engagement:** >3 minutes average session duration
+- **Interaction Rate:** >60% clicks on interactive elements
+- **Conversion:** 15%+ books demo call after going through showcase
+- **Visual Impact:** 9/10 "wow factor" score in first 10 seconds
+
+### 1.4 Use Case
+
+**Generic E-commerce Beauty Brand Scenario:**
+
+- Brand: "Generic Beauty Co" (can be kept generic or labeled "Brand X")
+- Niche: Beauty/Skincare (domain you know well)
+- Scenario: "Growing from €50k to €500k monthly with AI"
+- Timeframe: 90-day transformation story
+
+---
+
+## 2. PRODUCT OVERVIEW
+
+### 2.1 Purpose
+
+The demo site serves to:
+
+1. **Visually demonstrate** how the complete autonomous marketing system works
+2. **Make tangible** complex AI processes for non-technical users
+3. **Prove ROI** with concrete metrics and calculations
+4. **Build trust** through enterprise-grade appearance
+5. **Generate leads** via "Schedule Demo" CTA
+
+### 2.2 Core Value Proposition
+
+**"See the marketing machine from the future that generates 15x more content, saves 312 hours per month, and delivers 847% ROI - fully autonomous."**
+
+### 2.3 Key Differentiators
+
+- **Fully Autonomous:** Not just automation, but intelligent orchestration
+- **Self-Learning:** System improves continuously based on performance
+- **Enterprise-Grade:** Built for scale, not just small businesses
+- **Proven ROI:** Real metrics, not vague promises
+
+---
+
+## 3. TECHNICAL ARCHITECTURE
+
+### 3.1 Technology Stack
+
+#### Frontend Framework:
+
+- **React 18+** with TypeScript
+- **Vite** for blazing fast development
+- **Tailwind CSS** for utility-first styling
+
+#### Animation & Visualization Libraries:
+
+| Library                   | Use Case                             | Bundle Size | Priority |
+| ------------------------- | ------------------------------------ | ----------- | -------- |
+| **Framer Motion**         | UI animations, transitions, gestures | ~60KB       | HIGH     |
+| **D3.js**                 | Data visualizations, graphs, metrics | ~240KB      | MEDIUM   |
+| **Recharts**              | Pre-built chart components           | ~350KB      | MEDIUM   |
+| **React Flow** (optional) | Flow diagrams and node graphs        | ~280KB      | LOW      |
+
+#### Styling & Design:
+
+- **Glassmorphism** effects (frosted glass look)
+- **CSS Grid** & **Flexbox** for layouts
+- **Custom animations** via Framer Motion
+- **SVG** for icons and simple graphics
+
+#### Performance Requirements:
+
+- **Lazy loading** for heavy components
+- **Code splitting** per section
+- **Image optimization** (WebP format)
+- **Target:** <2s initial load, 60fps animations
+- **Lighthouse Score:** >90 performance
+
+### 3.2 Browser Support
+
+- Chrome 90+ (primary)
+- Safari 14+
+- Firefox 88+
+- Edge 90+
+- **Mobile:** Responsive but desktop-first (B2B target)
+
+### 3.3 Hosting & Deployment
+
+- **Vercel** (already in use for current landing)
+- **CDN:** Cloudflare for assets
+- **Analytics:** Google Analytics 4 + Hotjar for heatmaps
+- **Environment:** Production + Staging
+
+### 3.4 Data Strategy
+
+**All demo data is MOCK/SIMULATED:**
+
+- No real client data exposed
+- Realistic but fictional metrics
+- Static data (no database needed for demo)
+- Calculations done client-side
+
+---
+
+## 4. DESIGN SYSTEM
+
+### 4.1 Visual Identity
+
+#### Color Palette (based on current branding):
+
+```css
+/* Primary Colors */
+--bg-dark: #050814; /* Almost black background */
+--bg-surface: #0a0e27; /* Dark blue surface */
+--accent-primary: #00d4ff; /* Cyber blue - CTAs */
+--accent-secondary: #a855f7; /* Electric purple - AI elements */
+--success: #00ff88; /* Neon green - positive metrics */
+--warning: #ffa500; /* Orange - alerts */
+--text-primary: #ffffff; /* White text */
+--text-secondary: #94a3b8; /* Gray text */
+--glass-bg: rgba(255, 255, 255, 0.05); /* Glassmorphism */
+```
+
+#### Typography:
+
+```css
+/* Headings */
+font-family: 'Inter', 'Satoshi', sans-serif;
+H1: 48-72px, font-weight: 700 (Bold)
+H2: 36-48px, font-weight: 700
+H3: 24-32px, font-weight: 600 (SemiBold)
+H4: 18-24px, font-weight: 600
+
+/* Body */
+font-family: 'Inter', sans-serif;
+Body: 16-18px, font-weight: 400 (Regular)
+Small: 14px, font-weight: 400
+
+/* Monospace (for metrics/data) */
+font-family: 'JetBrains Mono', monospace;
+Metrics: 18-24px, font-weight: 500
+```
+
+#### UI Effects:
+
+- **Glassmorphism:**
+  ```css
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  ```
+- **Glow effects:**
+  ```css
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  ```
+- **Gradients:**
+  ```css
+  background: linear-gradient(135deg, #00d4ff 0%, #a855f7 100%);
+  ```
+- **Border radius:** 12px-24px for cards
+
+### 4.2 Component Library
+
+**Reusable Components:**
+
+1. **GlassCard** - Glassmorphic container with border
+2. **MetricCounter** - Animated number counting up
+3. **FlowNode** - System component visualization
+4. **DataStream** - Animated data flow lines (SVG)
+5. **InteractiveButton** - Hover/click animations
+6. **ProgressIndicator** - For multi-step flows
+7. **Modal** - Full-screen or centered overlays
+8. **Tooltip** - Hover information displays
+9. **TabNavigation** - Section switcher
+10. **ChartContainer** - Wrapper for D3/Recharts
+
+### 4.3 Animation Principles
+
+- **Duration:** 200-400ms for UI transitions
+- **Easing:** `cubic-bezier(0.4, 0.0, 0.2, 1)` for smooth feel
+- **Stagger:** 50-100ms delay for sequential animations
+- **Hover states:** Instant feedback (<100ms)
+- **Loading states:** Skeleton screens, not spinners
+
+---
+
+## 5. FEATURE REQUIREMENTS
+
+### 5.1 LAYER 1: HERO SECTION - "The Machine" ⭐ **MVP PRIORITY 1**
+
+#### Description:
+
+Animated visualization of the complete system that's immediately impressive.
+
+#### User Story:
+
+_"As a potential customer, I want to understand within 10 seconds what this machine does and why it's different from competitors."_
+
+#### Functional Requirements:
+
+**1. System Architecture Visualization**
+
+- Central "AI Core" with pulsating animation (heartbeat effect)
+- 6 modules arranged in circle around core, connected with animated lines:
+  - 🧠 Research & Planning
+  - 👑 Manager Orchestrator
+  - 🎭 Content Pipelines
+  - 📤 Publishing Layer
+  - 📊 Analytics Engine
+  - 💰 Ad Automation
+- Data particles flow between modules (direction shows data flow)
+- Each module has:
+  - Icon
+  - Label
+  - Status indicator (green dot = active)
+  - Hover state: Glow effect + brief description
+
+**2. Key Metrics Display (Animated Counters)**
+
+```
+⏱️ TIME SAVED: 312 hours/month
+💰 ROI: 847% average return
+📈 OUTPUT: 15x more content
+🎯 ENGAGEMENT: +94% increase
+```
+
+- Counters animate from 0 to target on page load
+- Large, bold numbers with icons
+- Positioned around or below the system diagram
+
+**3. Interactive Elements**
+
+- Click on module → Highlight connected flow path
+- Hover on metric → Show calculation breakdown tooltip
+- "Explore System" CTA button → Smooth scroll to Layer 2
+- Subtle background particles/grid animation
+
+**4. Tagline & Value Prop**
+
+```
+"The Autonomous Marketing Machine from the Future"
+
+Transform your marketing with AI that works 24/7,
+learns from every campaign, and scales infinitely.
+```
+
+#### Technical Implementation:
+
+- **Framer Motion** for module animations and orchestration
+- **SVG** for connecting lines (animated with stroke-dashoffset)
+- **useSpring** or **useMotionValue** for metric counters
+- **Canvas** (optional) for particle effects
+- **useInView** to trigger animations when section is visible
+
+#### Design Specifications:
+
+```
+Section Height: 100vh (full screen)
+Max Width: 1400px centered
+Background: Dark gradient with subtle grid
+Module Size: 120x120px circles
+Line Thickness: 2px
+Particle Count: ~50 (performance permitting)
+```
+
+#### Acceptance Criteria:
+
+- ✅ Animations run at 60fps on desktop
+- ✅ All metrics animate on page load within 2s
+- ✅ Hover states responsive <100ms
+- ✅ Mobile: Simplified vertical stack version
+- ✅ Works without JavaScript (progressive enhancement)
+
+---
+
+### 5.2 LAYER 2: INTERACTIVE SYSTEM EXPLORER 🔍 **MVP PRIORITY 2**
+
+#### Description:
+
+6 clickable modules that show deep-dives into each component of the system.
+
+#### User Story:
+
+_"As a decision maker, I want to understand what each component does and what ROI impact it has, so I can assess if this fits my business."_
+
+#### Functional Requirements:
+
+**Module Navigation:**
+
+- 2x3 or 3x2 grid layout with glassmorphic cards
+- Each card shows:
+  - Large icon (animated on hover)
+  - Title (H3)
+  - 1-line description
+  - ROI impact metric (highlighted in green)
+  - "Explore →" button
+- Click card or button → Modal/Slide-in panel opens
+- Smooth enter/exit animations
+
+**Per Module Content Structure:**
+
+**1. 🧠 Research & Planning Intelligence**
+
+**Visual:**
+
+- Animated "research in progress" (scanning effect)
+- Data source icons flowing into central processor
+
+**Content:**
+
+```
+What it does:
+- Analyzes market trends 24/7 using AI
+- Monitors competitors automatically
+- Generates content ideas based on performance data
+- Plans optimal content calendar
+
+How it works:
+1. Perplexity API scans 100+ data sources
+2. AI Agent processes intelligence
+3. Content Architecture Agent structures output
+4. Schedule Generator optimizes timing
+
+ROI Impact:
+"Replaces 40h/week research team"
+💰 €6,400/month saved
+```
+
+**Interactive Element:**
+
+- Toggle between different data sources visualization
+
+---
+
+**2. 👑 Manager Orchestration Engine**
+
+**Visual:**
+
+- "Today's agenda" simulation with items checking off
+- Multiple workflow branches showing parallel execution
+
+**Content:**
+
+```
+What it does:
+- Processes daily agenda automatically
+- Coordinates all content workflows
+- Manages A/B testing strategies
+- Distributes work to execution pipelines
+
+How it works:
+1. Reads scheduled content from database
+2. Generates variants for A/B testing
+3. Assigns to appropriate workflows
+4. Monitors execution and collects performance
+
+ROI Impact:
+"Eliminates need for 3 FTE coordinators"
+💰 €12,000/month saved
+```
+
+**Interactive Element:**
+
+- Click "Simulate Day" button → Watch agenda process
+
+---
+
+**3. 🎭 Content Creation Pipelines**
+
+**Visual:**
+
+- Template selection showcase
+- Before/after content examples
+- Multi-variant generation visualization
+
+**Content:**
+
+```
+What it does:
+- Creates platform-optimized content
+- Maintains brand consistency across all assets
+- Generates multiple variants automatically
+- Applies performance-driven templates
+
+Pipelines:
+• PostBuilder (Instagram/Facebook)
+• StoryBuilder (Interactive stories)
+• CarouselBuilder (Multi-slide content)
+• ReelBuilder (Short-form video)
+• LinkedInBuilder (Professional content)
+
+ROI Impact:
+"80% faster content production"
+💰 €8,000/month saved
+⚡ 15x output increase
+```
+
+**Interactive Element:**
+
+- Select content type → See generation process
+
+---
+
+**4. 📤 Smart Publishing Layer**
+
+**Visual:**
+
+- Heat map showing optimal posting times
+- Multi-platform calendar view
+- Audience targeting visualization (demographics)
+
+**Content:**
+
+```
+What it does:
+- Posts content at scientifically optimal times
+- Targets right audience segments
+- Coordinates cross-platform campaigns
+- Handles all platform APIs automatically
+
+Intelligence:
+- Analyzes engagement patterns by:
+  * Time of day
+  * Day of week
+  * Audience demographics
+  * Content type
+
+ROI Impact:
+"35% better engagement through timing"
+💰 +€15,000/month revenue
+```
+
+**Interactive Element:**
+
+- Hover over time slots → See engagement predictions
+
+---
+
+**5. 📊 Self-Learning Analytics**
+
+**Visual:**
+
+- Live performance dashboard
+- Winner detection algorithm in action
+- Pattern recognition graph
+
+**Content:**
+
+```
+What it does:
+- Tracks performance across all platforms
+- Identifies winning content patterns
+- Learns from every campaign
+- Continuously improves strategies
+
+Learning Loop:
+1. Collect performance data
+2. Analyze patterns with AI
+3. Identify winners and losers
+4. Adjust future strategies
+5. Repeat indefinitely
+
+ROI Impact:
+"23% monthly performance improvement"
+📈 Compound growth effect
+🧠 Gets smarter every day
+```
+
+**Interactive Element:**
+
+- Slider showing performance improvement over time
+
+---
+
+**6. 💰 Automated Ad Campaigns**
+
+**Visual:**
+
+- Winner content transforming into ad
+- Budget optimization graph
+- ROAS comparison chart
+
+**Content:**
+
+```
+What it does:
+- Converts winning organic posts to paid ads
+- Optimizes budget allocation automatically
+- Targets high-converting audiences
+- Tracks ROI in real-time
+
+Process:
+1. Analytics identifies top performers
+2. Auto-creates ad variations
+3. Launches campaigns with optimal budget
+4. Monitors and adjusts based on performance
+
+ROI Impact:
+"3.2x better ROAS than manual campaigns"
+💰 +€45,000/month revenue
+🎯 Cost per acquisition: -60%
+```
+
+**Interactive Element:**
+
+- Click "See Campaign Example" → Full workflow demo
+
+---
+
+#### Technical Implementation:
+
+- **Modal System** with Framer Motion `AnimatePresence`
+- **D3.js** for data visualizations (heat maps, graphs)
+- **Tabs** for sub-content within modules (if needed)
+- **Image optimization** for before/after examples
+- **Lazy load** modal content (only when opened)
+
+#### Design Specifications:
+
+```
+Grid Gap: 24px
+Card Padding: 32px
+Modal Size: 80vw x 80vh (centered)
+Animation Duration: 300ms
+Mobile: Single column stack
+```
+
+#### Acceptance Criteria:
+
+- ✅ Smooth modal open/close animations (no jank)
+- ✅ Each module loads in <500ms
+- ✅ All ROI calculations clear and visible
+- ✅ "Back" or "Close" button returns to grid
+- ✅ Keyboard navigation (ESC closes modal)
+- ✅ Focus trap inside modal for accessibility
+
+---
+
+### 5.3 LAYER 3: COMMAND CENTER PREVIEW 🎛️ **MVP PRIORITY 3**
+
+#### Description:
+
+Interactive mockup of the actual client dashboard interface.
+
+#### User Story:
+
+_"As a potential customer, I want to see what the interface looks like that I'll be working with, so I know it's user-friendly."_
+
+#### Functional Requirements:
+
+**Dashboard Structure:**
+
+- Tab navigation at top
+- 5 main sections (tabs)
+- Glassmorphic design consistent with brand
+- Realistic but clearly marked as "Demo Mode"
+
+---
+
+**Tab 1: 📊 Overview Dashboard**
+
+**Widgets:**
+
+1. **Key Metrics Cards** (4 across)
+
+   ```
+   📈 Total Content Published: 180 this month
+   ⏱️ Time Saved: 312 hours
+   💰 Revenue Generated: €185,000
+   🎯 Avg Engagement Rate: 7.8%
+   ```
+
+2. **Weekly Performance Graph**
+   - Line chart showing engagement trend
+   - Compare this week vs last week
+   - Interactive tooltips on data points
+
+3. **Active Campaigns List**
+
+   ```
+   Campaign Name       | Status    | Performance
+   -------------------|-----------|-------------
+   Holiday Campaign   | Active    | 🟢 +23%
+   Product Launch     | Active    | 🟢 +45%
+   Brand Awareness    | Scheduled | ⏸️ Pending
+   ```
+
+4. **System Health Indicator**
+   - Green checkmarks for all systems
+   - "All systems operational"
+   - Last updated timestamp
+
+**Interactive Elements:**
+
+- Hover on metrics → Show trend sparkline
+- Click on campaign → Navigate to campaign details
+
+---
+
+**Tab 2: 🚀 Campaign Launcher**
+
+**Form Fields:**
+
+```
+Campaign Type: [Dropdown]
+- Holiday Campaign
+- Product Launch
+- Service Promotion
+- Brand Awareness
+
+Target Platforms: [Multi-select checkboxes]
+☑️ Instagram
+☑️ Facebook
+☐ TikTok
+☑️ LinkedIn
+☐ YouTube
+
+Duration: [Slider] 7 days
+
+Intensity: [Radio buttons]
+○ Low (5 posts/week)
+● Medium (15 posts/week)
+○ High (30 posts/week)
+
+Budget Allocation:
+Organic: [Slider] 70%
+Paid: [Slider] 30%
+```
+
+**Preview Section:**
+
+- Real-time preview of what will be generated
+- Estimated content output
+- Projected timeline
+
+**Launch Button:**
+
+- Prominent CTA: "Launch Campaign 🚀"
+- Click → Success animation
+- "Campaign scheduled! Content generation starting..."
+
+**Interactive Elements:**
+
+- All form inputs are functional
+- Preview updates as you make selections
+- Launch shows realistic success message
+
+---
+
+**Tab 3: 📅 Content Calendar**
+
+**Layout:**
+
+- Week view (7 columns)
+- Each day shows scheduled content cards
+- Color coded by platform:
+  ```
+  Instagram: Purple
+  Facebook: Blue
+  LinkedIn: Dark Blue
+  TikTok: Black
+  ```
+
+**Content Cards:**
+
+```
+┌─────────────────┐
+│ 📸 Instagram    │
+│ 19:00           │
+│ "Beauty Tips"   │
+│ [thumbnail]     │
+│ Status: ✅ Ready│
+└─────────────────┘
+```
+
+**Features:**
+
+- Drag & drop simulation (visual feedback only)
+- Click card → Details popup showing:
+  - Full content
+  - Images
+  - Target audience
+  - Performance prediction
+- Filter by platform
+- View by: Week / Month
+
+**Interactive Elements:**
+
+- Hover shows preview
+- Click opens full details
+- Filter buttons work
+- Drag provides visual feedback (doesn't actually move)
+
+---
+
+**Tab 4: 📈 Analytics Center**
+
+**Visualizations:**
+
+1. **Performance Comparison Graph**
+   - Before AI vs After AI
+   - Bar chart or line chart
+   - Key metrics: Engagement, Reach, Conversions
+
+2. **Winner Highlights Section**
+
+   ```
+   🏆 Top Performing Content This Week:
+
+   1. "5 Skincare Myths Debunked"
+      Engagement: 12.4% | Reach: 45K
+
+   2. "Before & After Transformation"
+      Engagement: 10.8% | Reach: 38K
+
+   3. "Product Tutorial Video"
+      Engagement: 9.2% | Reach: 32K
+   ```
+
+3. **ROI Breakdown Pie Chart**
+
+   ```
+   Revenue Sources:
+   - Organic Social: 45%
+   - Paid Ads: 35%
+   - Email: 15%
+   - Other: 5%
+   ```
+
+4. **Trend Predictions Timeline**
+   - Next 30 days forecast
+   - Expected performance trajectory
+   - Confidence intervals
+
+**Interactive Elements:**
+
+- Toggle timeframes (7d / 30d / 90d / All time)
+- Hover on chart → Detailed tooltips
+- Click winner → See full content details
+- Export buttons (visual only)
+
+---
+
+**Tab 5: 💸 Ad Manager**
+
+**Active Campaigns Table:**
+
+```
+Campaign       | Budget  | Spent  | ROAS | Status
+--------------|---------|--------|------|--------
+Holiday Sale  | €5,000  | €3,200 | 4.2x | 🟢 Active
+Brand Launch  | €3,000  | €2,100 | 3.8x | 🟢 Active
+Product Demo  | €2,000  | €450   | 5.1x | 🟡 Starting
+```
+
+**Budget Distribution Donut Chart:**
+
+- Visual breakdown of budget allocation
+- Color coded by campaign
+- Total spend displayed in center
+
+**Performance Metrics Per Campaign:**
+
+- Impressions
+- Clicks
+- Conversions
+- Cost per acquisition
+- Return on ad spend
+
+**Optimization Suggestions:**
+
+```
+💡 Recommendations:
+
+1. "Holiday Sale" campaign performing 40% above target
+   → Increase budget by €1,000 for maximum ROI
+
+2. "Brand Launch" shows high engagement at 9pm
+   → Adjust schedule to focus on evening hours
+
+3. Winning creative: Video format
+   → Allocate 60% budget to video ads
+```
+
+**Interactive Elements:**
+
+- Click campaign row → Expand details
+- Hover on chart segments → Show values
+- Click suggestion → See detailed analysis
+- Toggle between campaigns
+
+---
+
+#### Technical Implementation:
+
+- **React Router** or **State Management** for tab navigation
+- **Recharts** for graphs and charts (easier than D3 for standard charts)
+- **Framer Motion** for tab transitions and micro-animations
+- **Table components** with sort/filter capabilities
+- **Mock data objects** (realistic but static)
+- **Form validation** for Campaign Launcher
+
+#### Design Specifications:
+
+```
+Tab Bar Height: 60px
+Content Area: Full height minus tab bar
+Card Padding: 24px
+Graph Height: 300-400px
+Table Row Height: 48px
+Spacing: 16-24px between elements
+```
+
+#### Acceptance Criteria:
+
+- ✅ Tab switching < 200ms
+- ✅ All graphs render correctly and are readable
+- ✅ Interactive elements provide visual feedback
+- ✅ Looks like professional production UI
+- ✅ No lorem ipsum or placeholder text
+- ✅ All mock data is realistic and consistent
+- ✅ Mobile: Responsive layout (stacked cards)
+
+---
+
+### 5.4 ROI CALCULATOR TOOL 💰 **MVP PRIORITY 4**
+
+#### Description:
+
+Interactive calculator where users input their own metrics to see personalized ROI.
+
+#### User Story:
+
+_"As a potential customer, I want to input my own numbers to see what the system would deliver FOR ME specifically."_
+
+#### Functional Requirements:
+
+**Input Section:**
+
+```
+Your Current Situation:
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 Monthly content output
+[Slider: 10 ←→ 100 posts] Current: 20 posts
+
+👥 Marketing team size
+[Slider: 1 ←→ 20 people] Current: 5 people
+
+💵 Average hourly rate
+[Slider: €25 ←→ €150] Current: €50/hour
+
+💰 Monthly ad spend
+[Slider: €1k ←→ €50k] Current: €10,000
+
+📈 Current ROAS
+[Slider: 1x ←→ 5x] Current: 2.1x
+
+📊 Current monthly revenue
+[Input: €] Current: €50,000
+```
+
+**Calculation Logic:**
+
+```javascript
+// Time Saved Calculation
+currentHoursPerMonth = contentOutput * 2 + teamSize * 160 * 0.4
+// Assume 2 hours per content piece + 40% of team time on coordination
+
+withAI_hoursPerMonth = contentOutput * 0.2 + 1 * 160 * 0.1
+// With AI: 0.2 hours per piece + 10% oversight time
+
+timeSavedHours = currentHoursPerMonth - withAI_hoursPerMonth
+laborCostSaved = timeSavedHours * hourlyRate
+
+// Content Output Increase
+newContentOutput = contentOutput * 15
+
+// Ad Performance Improvement
+newROAS = currentROAS * 1.85 // 85% improvement (conservative)
+currentRevenue = adSpend * currentROAS
+newRevenue = adSpend * newROAS
+revenueIncrease = newRevenue - currentRevenue
+
+// Total Calculations
+totalMonthlySavings = laborCostSaved
+totalMonthlyRevenue = revenueIncrease
+systemCost = 15000 // €15k/month
+netBenefit = totalMonthlySavings + totalMonthlyRevenue - systemCost
+roiPercentage = (netBenefit / systemCost) * 100
+breakEvenMonths = systemCost / (netBenefit / 12)
+```
+
+**Output Section (Real-time Updates):**
+
+```
+With FutureMarketingAI:
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+📈 Content Output
+[Progress bar: 20 → 300 posts]
++1400% increase (15x multiplier)
+
+⏱️ Time Saved
+[Large number: 312 hours/month]
+€15,600 in labor costs saved
+
+💰 Revenue Increase
+[Large number: +€89,000/month]
+ROAS improvement: 2.1x → 3.9x
+
+💵 Total Monthly Benefit
+[Highlighted: €104,600]
+Savings (€15,600) + Revenue (€89,000)
+
+⚖️ System Cost
+€15,000/month
+
+🎯 Net ROI
+[HUGE number: 597%]
+Every €1 invested returns €5.97
+
+📅 Break-even Time
+[Timeline visual: ~2 months]
+```
+
+**Visual Elements:**
+
+- Before/After comparison bars (animated)
+- Large, bold ROI percentage (primary focus)
+- Timeline showing path to break-even
+- All numbers animate when sliders change
+- Color coding: Green for positive, Blue for neutral
+
+**CTA Section:**
+
+```
+These are YOUR numbers. Imagine the possibilities.
+
+[Large Button: "Schedule Strategic Consultation →"]
+
+Limited slots available for Q1 2025
+```
+
+#### Technical Implementation:
+
+- **React state** (useState) for all input values
+- **useEffect** or direct calculation in render for real-time updates
+- **Framer Motion** for result animations (numbers count up)
+- **Sliders:** Custom styled range inputs
+- **Debounce:** Optional for performance (if calculations are heavy)
+- **LocalStorage:** Remember user's inputs (optional, nice-to-have)
+
+#### Design Specifications:
+
+```
+Section Background: Slightly lighter than main bg
+Max Width: 1200px centered
+Input Section Width: 50%
+Output Section Width: 50%
+Side-by-side on desktop, stacked on mobile
+Card Style: Glassmorphic
+Number Size: 32-48px for key metrics
+```
+
+#### Acceptance Criteria:
+
+- ✅ Calculations update instantly (<50ms)
+- ✅ All results animate smoothly when values change
+- ✅ Default values show impressive but realistic ROI
+- ✅ CTA button prominently placed and visible
+- ✅ Numbers formatted correctly (€ symbol, commas, etc.)
+- ✅ Sliders have clear labels and current values shown
+- ✅ Works on mobile (stacked layout)
+- ✅ No broken math (handle edge cases like 0 values)
+
+---
+
+## 6. USER FLOW & NAVIGATION
+
+### 6.1 Primary User Journey
+
+```
+Landing (Hero - Layer 1)
+   ↓
+   10 seconds: View animated system + key metrics
+   ↓
+   Decision: Impressed enough to learn more?
+   ↓
+Click "Explore System"
+   ↓
+Layer 2 (System Explorer)
+   ↓
+   2-3 minutes: Explore 2-3 modules in detail
+   ↓
+   Understanding: "I see how each piece works"
+   ↓
+Click "See Dashboard Preview"
+   ↓
+Layer 3 (Command Center)
+   ↓
+   1-2 minutes: Interact with dashboard tabs
+   ↓
+   Confidence: "This looks professional and usable"
+   ↓
+See "Calculate Your ROI" CTA
+   ↓
+ROI Calculator
+   ↓
+   1 minute: Input own metrics
+   ↓
+   See personalized results
+   ↓
+   Conviction: "This would transform MY business"
+   ↓
+Click "Schedule Demo"
+   ↓
+CONVERSION 🎯 (Calendly booking page)
+```
+
+### 6.2 Navigation Structure
+
+**Global Navigation Bar** (Sticky at top):
+
+```
+[Logo: FutureMarketingAI]                [Schedule Demo CTA]
+
+Optional nav links:
+- How It Works
+- Features
+- ROI Calculator
+- Contact
+```
+
+**Section Navigation** (Between layers):
+
+```
+Breadcrumbs or Progress Indicator:
+○ System Overview
+○ Explore Modules
+○ Dashboard Preview
+○ Calculate ROI
+```
+
+**Inter-layer CTAs:**
+
+```
+Layer 1 → Layer 2: "Explore the System →"
+Layer 2 → Layer 3: "See Dashboard Preview →"
+Layer 3 → Calculator: "Calculate Your ROI →"
+Calculator → Conversion: "Schedule Demo Now →"
+```
+
+**Back Navigation:**
+
+- Each layer has subtle "← Back" link
+- Breadcrumbs allow jumping to any layer
+- Smooth scroll behavior
+
+### 6.3 Alternative Flows
+
+**Quick Explorer Path:**
+
+```
+Hero → Directly to ROI Calculator
+(For users who already understand and want numbers)
+```
+
+**Deep Dive Path:**
+
+```
+Hero → Explore ALL 6 modules → Dashboard → Calculator
+(For thorough researchers)
+```
+
+**Mobile Path:**
+
+```
+Simplified versions of each layer
+Priority on key metrics and CTAs
+Swipe navigation between sections
+```
+
+---
+
+## 7. DEMO DATA & SCENARIOS
+
+### 7.1 Mock Company Profile
+
+**Company:** Generic Beauty Co
+**Industry:** E-commerce (Skincare)
+**Current State:**
+
+- Monthly Revenue: €50,000
+- Team: 5 people (1 content creator, 1 social manager, 1 designer, 1 coordinator, 1 analyst)
+- Content Output: 20 posts/month across all platforms
+- Ad Spend: €10,000/month
+- Current ROAS: 2.1x
+
+### 7.2 Transformation Story (90 Days)
+
+**Timeline:**
+
+**Day 0 (Before AI):**
+
+- 20 posts/month
+- 200 hours/month team time on content
+- €50k revenue
+- Struggling to scale
+
+**Day 30 (Integration):**
+
+- System learning phase
+- 150 posts/month (7.5x increase)
+- Team focused on strategy
+- Revenue: €95k (+90%)
+
+**Day 60 (Optimization):**
+
+- System fully optimized
+- 250 posts/month (12.5x increase)
+- Winners identified, ads launched
+- Revenue: €145k (+190%)
+
+**Day 90 (Autonomous):**
+
+- 300 posts/month (15x increase)
+- Self-learning active
+- Ad ROAS: 3.9x
+- Revenue: €185k (+270%)
+- Team saved: 312 hours/month
+
+### 7.3 Mock Performance Metrics
+
+**Content Performance:**
+
+```
+Average Engagement Rate:
+Before: 2.3%
+After: 7.8% (+239%)
+
+Reach Per Post:
+Before: 1,200
+After: 4,500 (+275%)
+
+Conversion Rate:
+Before: 1.8%
+After: 4.2% (+133%)
+```
+
+**Top Performing Content Examples:**
+
+1. "5 Skincare Myths Debunked" - Carousel
+   - Engagement: 12.4%
+   - Reach: 45,000
+   - Saves: 3,200
+
+2. "Before & After Transformation" - Story
+   - Engagement: 10.8%
+   - Reach: 38,000
+   - Shares: 1,800
+
+3. "Product Application Tutorial" - Reel
+   - Engagement: 9.2%
+   - Reach: 32,000
+   - Comments: 450
+
+### 7.4 Winner → Ad Campaign Example
+
+**Original Post:**
+
+- Type: Carousel (5 slides)
+- Topic: "Acne transformation 4-month journey"
+- Organic Performance: 11.2% engagement
+- Reach: 42,000
+
+**Converted to Ad:**
+
+- Budget: €2,000
+- Duration: 14 days
+- Targeting: Women 25-40, skincare interest
+- Results:
+  - Impressions: 380,000
+  - Clicks: 15,200 (4% CTR)
+  - Conversions: 456
+  - Cost per conversion: €4.39
+  - Revenue generated: €18,240
+  - ROAS: 9.1x
+
+---
+
+## 8. TECHNICAL REQUIREMENTS
+
+### 8.1 Code Structure
+
+```
+src/
+├── components/
+│   ├── common/
+│   │   ├── GlassCard.tsx
+│   │   ├── MetricCounter.tsx
+│   │   ├── Button.tsx
+│   │   ├── Modal.tsx
+│   │   └── Tooltip.tsx
+│   ├── layer1-hero/
+│   │   ├── SystemDiagram.tsx
+│   │   ├── FlowNode.tsx
+│   │   ├── DataStream.tsx
+│   │   └── KeyMetrics.tsx
+│   ├── layer2-explorer/
+│   │   ├── ModuleGrid.tsx
+│   │   ├── ModuleCard.tsx
+│   │   └── ModuleModal.tsx
+│   ├── layer3-dashboard/
+│   │   ├── DashboardTabs.tsx
+│   │   ├── OverviewTab.tsx
+│   │   ├── CampaignLauncher.tsx
+│   │   ├── ContentCalendar.tsx
+│   │   ├── AnalyticsCenter.tsx
+│   │   └── AdManager.tsx
+│   └── calculator/
+│       ├── ROICalculator.tsx
+│       ├── InputSlider.tsx
+│       └── ResultsDisplay.tsx
+├── data/
+│   ├── mockMetrics.ts
+│   ├── moduleContent.ts
+│   └── performanceData.ts
+├── hooks/
+│   ├── useAnimatedCounter.ts
+│   ├── useScrollReveal.ts
+│   └── useMediaQuery.ts
+├── utils/
+│   ├── calculations.ts
+│   └── formatters.ts
+└── styles/
+    └── globals.css
+```
+
+### 8.2 Animation Performance Guidelines
+
+**Critical Performance Rules:**
+
+1. **Use transform and opacity only** for animations (GPU accelerated)
+2. **Avoid animating:** width, height, top, left (triggers layout)
+3. **Use will-change:** sparingly and only during animation
+4. **Lazy load** heavy components (Three.js, complex D3 charts)
+5. **Debounce** expensive calculations (ROI calculator)
+6. **Virtual scrolling** if any long lists (calendar, analytics)
+
+**Framer Motion Best Practices:**
+
+```typescript
+// ✅ Good: Transform-based
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+/>
+
+// ❌ Bad: Layout-triggering
+<motion.div
+  initial={{ height: 0 }}
+  animate={{ height: 'auto' }}
+/>
+
+// ✅ Better alternative:
+<motion.div
+  initial={{ scaleY: 0 }}
+  animate={{ scaleY: 1 }}
+/>
+```
+
+### 8.3 State Management
+
+**Approach:** React Context + useState (sufficient for demo)
+
+**Not needed:**
+
+- Redux (overkill)
+- External state library
+
+**State Structure:**
+
+```typescript
+// App-level state
+interface AppState {
+  currentLayer: 1 | 2 | 3 | 4
+  selectedModule: string | null
+  calculatorInputs: CalculatorInputs
+  hasViewedIntro: boolean
+}
+
+// Calculator state
+interface CalculatorInputs {
+  contentOutput: number
+  teamSize: number
+  hourlyRate: number
+  adSpend: number
+  currentROAS: number
+  monthlyRevenue: number
+}
+```
+
+### 8.4 Accessibility Requirements
+
+**WCAG 2.1 Level AA Compliance:**
+
+- ✅ Keyboard navigation for all interactive elements
+- ✅ Focus indicators visible
+- ✅ Color contrast ratio > 4.5:1 for text
+- ✅ Alt text for all images
+- ✅ ARIA labels for interactive components
+- ✅ Skip to content link
+- ✅ No autoplay videos with sound
+
+**Screen Reader Support:**
+
+- Semantic HTML (header, nav, main, section)
+- ARIA landmarks
+- Announce live region updates (calculator results)
+- Descriptive button labels
+
+**Keyboard Shortcuts:**
+
+```
+ESC: Close modals
+Tab: Navigate elements
+Enter/Space: Activate buttons
+Arrow keys: Navigate tabs
+```
+
+---
+
+## 9. SUCCESS CRITERIA & TESTING
+
+### 9.1 Performance Benchmarks
+
+**Lighthouse Scores (Target):**
+
+- Performance: >90
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
+**Core Web Vitals:**
+
+- LCP (Largest Contentful Paint): <2.5s
+- FID (First Input Delay): <100ms
+- CLS (Cumulative Layout Shift): <0.1
+
+**Animation Performance:**
+
+- Maintain 60fps during all animations
+- No dropped frames on hero section
+- Smooth scrolling between sections
+
+### 9.2 Browser Testing Matrix
+
+| Browser       | Version | Priority | Status |
+| ------------- | ------- | -------- | ------ |
+| Chrome        | 90+     | HIGH     | ✅     |
+| Safari        | 14+     | HIGH     | 🟡     |
+| Firefox       | 88+     | MEDIUM   | 🟡     |
+| Edge          | 90+     | MEDIUM   | 🟡     |
+| Mobile Safari | iOS 14+ | HIGH     | 🟡     |
+| Mobile Chrome | Latest  | HIGH     | 🟡     |
+
+### 9.3 User Testing Goals
+
+**Test Scenarios:**
+
+1. **First Impression:** Does hero section wow in <10s?
+2. **Comprehension:** Can user explain system after Layer 2?
+3. **Usability:** Can user navigate without instructions?
+4. **Trust:** Does UI feel professional and trustworthy?
+5. **Action:** Does user want to schedule demo?
+
+**Success Metrics:**
+
+- 80% of testers understand value prop within 30s
+- 70% explore at least 3 modules
+- 60% interact with ROI calculator
+- 40% express interest in scheduling demo
+- 9/10 average "wow factor" rating
+
+### 9.4 Analytics Events to Track
+
+**Critical Events:**
+
+```
+- page_load: Initial landing
+- hero_view: Completed viewing hero (10s+)
+- system_explore_click: Clicked explore button
+- module_open: Opened a module (track which one)
+- dashboard_view: Viewed command center
+- tab_switch: Switched dashboard tabs (track which)
+- calculator_interact: Used ROI calculator
+- calculator_complete: Filled all inputs
+- cta_click: Clicked any "Schedule Demo" CTA
+- cta_location: Where CTA was clicked from
+```
+
+**Engagement Metrics:**
+
+```
+- time_on_page
+- scroll_depth
+- modules_explored (count)
+- interactions_count
+- exit_point (where users leave)
+```
+
+---
+
+## 10. IMPLEMENTATION PHASES
+
+### Phase 1: Foundation (Week 1) ⭐ **PRIORITY**
+
+**Goals:**
+
+- Set up project structure
+- Implement design system
+- Build reusable components
+
+**Deliverables:**
+
+- ✅ Vite + React + TypeScript setup
+- ✅ Tailwind configured with custom theme
+- ✅ GlassCard, Button, Modal components
+- ✅ Color palette and typography system
+- ✅ Basic routing structure
+
+**Success Criteria:**
+
+- Project builds without errors
+- Components render correctly
+- Design system documented
+
+---
+
+### Phase 2: Hero Section (Week 1-2) ⭐ **PRIORITY**
+
+**Goals:**
+
+- Build impressive Layer 1
+- Implement system diagram
+- Animate key metrics
+
+**Deliverables:**
+
+- ✅ System architecture visualization
+- ✅ Animated connecting lines
+- ✅ Metric counters with animations
+- ✅ Interactive hover states
+- ✅ Responsive mobile version
+
+**Success Criteria:**
+
+- 60fps animations
+- Works on all target browsers
+- Elicits "wow" reaction in testing
+
+---
+
+### Phase 3: System Explorer (Week 2-3)
+
+**Goals:**
+
+- Build Layer 2 with all 6 modules
+- Create engaging module content
+- Implement modal system
+
+**Deliverables:**
+
+- ✅ Module grid layout
+- ✅ 6 module modals with content
+- ✅ Interactive elements per module
+- ✅ Smooth animations
+
+**Success Criteria:**
+
+- All modules load quickly
+- Content is clear and compelling
+- ROI calculations accurate
+
+---
+
+### Phase 4: Command Center (Week 3-4)
+
+**Goals:**
+
+- Build Layer 3 dashboard
+- Implement all 5 tabs
+- Create realistic mock data
+
+**Deliverables:**
+
+- ✅ Tab navigation system
+- ✅ Overview dashboard
+- ✅ Campaign launcher
+- ✅ Content calendar
+- ✅ Analytics center
+- ✅ Ad manager
+
+**Success Criteria:**
+
+- Professional UI appearance
+- All interactions functional
+- Data visualizations clear
+
+---
+
+### Phase 5: ROI Calculator (Week 4)
+
+**Goals:**
+
+- Build interactive calculator
+- Implement real-time calculations
+- Design compelling results display
+
+**Deliverables:**
+
+- ✅ Input sliders with validation
+- ✅ Calculation engine
+- ✅ Animated results display
+- ✅ Prominent CTA
+
+**Success Criteria:**
+
+- Instant calculation updates
+- Accurate math
+- Compelling visualization
+
+---
+
+### Phase 6: Polish & Testing (Week 5)
+
+**Goals:**
+
+- Optimize performance
+- Fix bugs
+- User testing
+
+**Deliverables:**
+
+- ✅ Performance optimization
+- ✅ Browser compatibility fixes
+- ✅ Accessibility improvements
+- ✅ Analytics integration
+- ✅ User testing feedback implemented
+
+**Success Criteria:**
+
+- Lighthouse score >90
+- Zero critical bugs
+- Positive user feedback
+
+---
+
+### Phase 7: Launch (Week 6)
+
+**Goals:**
+
+- Deploy to production
+- Monitor analytics
+- Iterate based on data
+
+**Deliverables:**
+
+- ✅ Production deployment
+- ✅ Analytics dashboard
+- ✅ Performance monitoring
+- ✅ User feedback system
+
+**Success Criteria:**
+
+- Zero downtime
+- Meeting engagement targets
+- Generating demo bookings
+
+---
+
+## 11. OPEN QUESTIONS & DECISIONS NEEDED
+
+### 11.1 Strategic Decisions
+
+**Q1:** Should we use real client names (SkinClarity Club) or keep it generic?
+
+- **Option A:** Generic "Beauty Brand X" (safer, reusable)
+- **Option B:** SkinClarity Club (more authentic)
+- **Recommendation:** Start generic, can swap later
+
+**Q2:** Level of interactivity in Command Center?
+
+- **Option A:** Fully functional (can create campaigns, etc.)
+- **Option B:** Visual only (looks real, limited function)
+- **Recommendation:** Visual only for demo (faster to build)
+
+**Q3:** Should calculator save user inputs?
+
+- **Option A:** LocalStorage (remembers values)
+- **Option B:** Session only (resets on refresh)
+- **Recommendation:** LocalStorage (better UX)
+
+### 11.2 Technical Decisions
+
+**Q1:** Use Three.js for 3D visualizations?
+
+- **Pros:** Very impressive, futuristic
+- **Cons:** Large bundle size, complexity
+- **Recommendation:** Phase 2 enhancement, not MVP
+
+**Q2:** Implement dark/light mode toggle?
+
+- **Recommendation:** Dark only for launch (on brand)
+
+**Q3:** Build custom charts or use library?
+
+- **Recommendation:** Recharts (faster, good enough)
+
+### 11.3 Content Decisions
+
+**Q1:** What level of detail in module explanations?
+
+- **Recommendation:** High-level for demo, link to docs for depth
+
+**Q2:** Should we show code/technical details anywhere?
+
+- **Recommendation:** No, keep focused on business value
+
+**Q3:** Include testimonials or case studies?
+
+- **Recommendation:** Phase 2 enhancement
+
+---
+
+## 12. RISKS & MITIGATION
+
+### 12.1 Technical Risks
+
+| Risk                         | Impact | Probability | Mitigation                   |
+| ---------------------------- | ------ | ----------- | ---------------------------- |
+| Animation performance issues | HIGH   | MEDIUM      | Profile early, optimize      |
+| Browser compatibility bugs   | MEDIUM | HIGH        | Test on all browsers         |
+| Large bundle size            | MEDIUM | MEDIUM      | Code splitting, lazy loading |
+| Complex state management     | LOW    | LOW         | Keep state simple            |
+
+### 12.2 Design Risks
+
+| Risk                      | Impact | Probability | Mitigation                |
+| ------------------------- | ------ | ----------- | ------------------------- |
+| "Too complex" feedback    | HIGH   | MEDIUM      | User test early, simplify |
+| Not impressive enough     | HIGH   | LOW         | Focus on animations       |
+| Unclear value proposition | HIGH   | MEDIUM      | A/B test messaging        |
+| Mobile experience poor    | MEDIUM | MEDIUM      | Mobile-first approach     |
+
+### 12.3 Business Risks
+
+| Risk                     | Impact | Probability | Mitigation                 |
+| ------------------------ | ------ | ----------- | -------------------------- |
+| Low conversion rate      | HIGH   | MEDIUM      | Optimize CTAs, test        |
+| Competitors copy concept | MEDIUM | HIGH        | Launch quickly, iterate    |
+| Overpromising in demo    | HIGH   | MEDIUM      | Set realistic expectations |
+
+---
+
+## 13. POST-LAUNCH OPTIMIZATION
+
+### 13.1 Analytics Review (Weekly)
+
+**Metrics to Monitor:**
+
+- Bounce rate by section
+- Average time per layer
+- Module exploration rate
+- Calculator completion rate
+- CTA click-through rate
+- Demo booking conversion
+
+**Optimization Actions:**
+
+- A/B test headlines
+- Adjust animation timing
+- Simplify complex sections
+- Improve CTAs
+
+### 13.2 User Feedback Collection
+
+**Methods:**
+
+- Hotjar recordings
+- Exit surveys
+- Customer interviews
+- Sales team feedback
+
+**Questions:**
+
+- What impressed you most?
+- What was confusing?
+- What's missing?
+- Would you schedule a demo?
+
+### 13.3 Iteration Roadmap
+
+**Phase 2 Enhancements:**
+
+- Client testimonials section
+- Video demos of workflows
+- Live chat integration
+- Comparison with competitors
+- Pricing page
+- FAQ section
+
+**Phase 3 Enhancements:**
+
+- 3D visualizations (Three.js)
+- Personalized demo (based on industry)
+- Integration showcase (APIs)
+- Security/compliance section
+
+---
+
+## 14. APPENDIX
+
+### 14.1 Glossary
+
+- **Glassmorphism:** UI design style mimicking frosted glass
+- **ROAS:** Return on Ad Spend
+- **FTE:** Full-Time Equivalent
+- **CTA:** Call to Action
+- **MVP:** Minimum Viable Product
+- **LCP:** Largest Contentful Paint
+- **FID:** First Input Delay
+- **CLS:** Cumulative Layout Shift
+
+### 14.2 References
+
+**Design Inspiration:**
+
+- Apple product pages
+- Tesla website
+- Stripe marketing pages
+- Linear app showcase
+- Framer portfolio sites
+
+**Technical Resources:**
+
+- Framer Motion docs: https://motion.dev/docs
+- D3.js gallery: https://observablehq.com/@d3/gallery
+- Tailwind docs: https://tailwindcss.com/docs
+- React docs: https://react.dev
+
+### 14.3 Figma Design File
+
+**To be created:**
+
+- Component library
+- Layer 1-4 designs
+- Mobile responsive layouts
+- Animation specifications
+- Color and typography guide
+
+---
+
+## 15. APPROVAL & SIGN-OFF
+
+**Document Status:** Draft  
+**Last Updated:** September 30, 2025  
+**Next Review:** After stakeholder feedback
+
+**Stakeholders:**
+
+- [ ] Product Owner - Approval needed
+- [ ] Technical Lead - Review needed
+- [ ] Design Lead - Review needed
+- [ ] Marketing Lead - Input needed
+
+**Next Steps:**
+
+1. Review and approve this PRD
+2. Create design mockups in Figma
+3. Set up development environment
+4. Begin Phase 1 implementation
+
+---
+
+**END OF DOCUMENT**

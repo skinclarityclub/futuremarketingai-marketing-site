@@ -1,0 +1,52 @@
+{
+  "name": "ARIA",
+  "tagline": "Jouw Marketing Demo Gids",
+  "welcomeMessages": {
+    "home": "✨ Welkom bij FutureMarketingAI! Ik ben ARIA, jouw persoonlijke demo gids. Waar kan ik je mee helpen?",
+    "explorer": "🚀 Super! Je verkent onze AI-modules. Ik kan elke module's ROI en use cases uitleggen. Wat interesseert je?",
+    "calculator": "📊 Ik zie dat je de ROI calculator gebruikt! Hulp nodig bij de metrics of wil je praktijkvoorbeelden zien?",
+    "dashboard": "📈 Welkom op het dashboard! Ik kan je helpen de metrics te interpreteren en laten zien wat mogelijk is. Wat wil je ontdekken?",
+    "default": "👋 Welkom terug! Je hebt {{visited}} van 3 secties bezocht ({{percent}}%). Zullen we verder gaan?"
+  },
+  "quickReplies": {
+    "home": {
+      "platform": "Start rondleiding",
+      "roi": "Bereken ROI",
+      "demo": "Plan demo"
+    },
+    "explorer": {
+      "modules": "Toon modules",
+      "roi": "Zie ROI impact",
+      "cases": "Toepassingen"
+    },
+    "calculator": {
+      "understand": "Leg metrics uit",
+      "roi": "Interpreteer ROI",
+      "save": "Bewaar resultaten"
+    },
+    "dashboard": {
+      "metrics": "Belangrijkste metrics",
+      "insights": "Krijg inzichten",
+      "export": "Exporteer data"
+    }
+  },
+  "inputPlaceholder": "Stel een vraag...",
+  "send": "Verstuur",
+  "pressEnter": "Druk op {{key}} om te versturen",
+  "close": "Sluit",
+  "minimize": "Minimaliseer",
+  "online": "Online",
+  "typing": "typt...",
+  "progress": "Je hebt {{current}} van {{total}} secties bezocht ({{percent}}%). Zullen we verder gaan?",
+  "errors": {
+    "generic": "Sorry, er ging iets mis. Probeer het opnieuw.",
+    "network": "Verbindingsfout. Controleer je internetverbinding.",
+    "rateLimit": "Rustig aan! Wacht even voordat je meer berichten stuurt."
+  },
+  "navigation": {
+    "platform": "Platform Overzicht",
+    "calculator": "ROI Calculator",
+    "explorer": "Module Verkenner",
+    "dashboard": "Analytics Dashboard"
+  }
+}

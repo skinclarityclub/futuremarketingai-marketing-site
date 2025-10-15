@@ -1,0 +1,54 @@
+{
+  "main": {
+    "home": "Home",
+    "explorer": "Explorer",
+    "dashboard": "Dashboard",
+    "calculator": "Calculator",
+    "ad_builder": "Ad Builder"
+  },
+  "descriptions": {
+    "home": "AI Core Sphere",
+    "explorer": "9 Marketing Layers",
+    "dashboard": "Command Center",
+    "calculator": "Calculate ROI",
+    "ad_builder": "Create Ads"
+  },
+  "mobile": {
+    "home": "Core",
+    "explorer": "Layers",
+    "dashboard": "Center",
+    "calculator": "ROI",
+    "ad_builder": "Ads"
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "demo": "Request Demo",
+      "changelog": "Changelog"
+    },
+    "resources": {
+      "title": "Resources",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "api": "API Reference",
+      "support": "Support"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "gdpr": "GDPR"
+    }
+  },
+  "copyright": "© {{year}} FutureMarketingAI. All rights reserved."
+}

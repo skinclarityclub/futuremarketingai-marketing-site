@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "generatedAt": "2025-10-15T15:50:23.820Z",
+    "tasksAnalyzed": 25,
+    "totalTasks": 25,
+    "analysisCount": 25,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Initialize Marketing Repository with Next.js",
+      "complexityScore": 3,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down into: (1) create Next.js project with TypeScript, (2) configure ESLint and Prettier, (3) set up strict TypeScript mode, (4) initialize and push to GitHub.",
+      "reasoning": "This is a foundational task with clear, sequential steps. Each step is well-defined and low-risk, but automating and documenting each ensures reproducibility and reduces setup errors. The complexity is moderate due to the number of tools involved, but each subtask is straightforward."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Commit Clean Demo Code to Marketing Repo",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Divide into: (1) copy demo components to /pages/demo, (2) refactor for Next.js routing, (3) validate TypeScript types and test rendering.",
+      "reasoning": "This task involves code migration and refactoring, which can introduce subtle bugs, especially around routing and type safety. The need to ensure compatibility with Next.js and maintain type correctness raises the complexity. Breaking it down helps isolate potential issues."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Create Marketing Repository Structure",
+      "complexityScore": 4,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Split into: (1) implement file-based routes for all required paths, (2) test each route for correct rendering.",
+      "reasoning": "Setting up routes is routine in Next.js, but ensuring all intended paths work as expected requires careful validation. The complexity is moderate due to the number of routes, but the task is mostly declarative."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Develop Landing Page with CTAs",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Separate into: (1) design landing page layout, (2) implement and style CTA buttons, (3) test accessibility and responsiveness.",
+      "reasoning": "Design and frontend implementation have moderate complexity, especially when considering accessibility and cross-device compatibility. Subtasks help ensure all aspects are addressed systematically."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement Login Page in Marketing Repo",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break into: (1) build login form UI, (2) handle form submission and validation, (3) implement redirection to platform auth, (4) test end-to-end flow.",
+      "reasoning": "Authentication flows introduce higher complexity due to state management, validation, and cross-repo coordination. Subtasks help isolate UI, logic, integration, and testing concerns."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Consolidate Headers in Platform Repo",
+      "complexityScore": 7,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide into: (1) audit all header components, (2) extract shared logic/styles, (3) create unified header, (4) replace all instances and test.",
+      "reasoning": "Refactoring duplicated components across a codebase is complex due to the risk of regressions and the need to maintain consistency. The cognitive load is high, as it requires understanding all existing implementations before consolidation[6]."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Consolidate Sidebars in Platform Repo",
+      "complexityScore": 7,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Split into: (1) identify all sidebar components, (2) merge logic and styles, (3) update imports, (4) test across all pages.",
+      "reasoning": "Similar to header consolidation, this task is complex due to the need to understand and unify multiple implementations, with a high risk of introducing layout or functionality regressions."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Clean Up Layout Components in Platform Repo",
+      "complexityScore": 6,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down into: (1) audit layout components, (2) remove duplicates/unused code, (3) standardize and test layouts.",
+      "reasoning": "Cleaning up layout components is less complex than header/sidebar consolidation but still requires careful auditing and testing to avoid breaking existing pages."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Update All Imports in Platform Repo",
+      "complexityScore": 5,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Separate into: (1) search/replace imports, (2) fix any broken imports and verify with linter/compiler.",
+      "reasoning": "This is mostly mechanical but can be error-prone if not done systematically. The complexity is moderate due to the potential for missed cases or subtle breakages."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Test Platform Functionality After Cleanup",
+      "complexityScore": 8,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Divide into: (1) manual test critical flows, (2) write automated tests for key features, (3) run all unit/integration tests, (4) perform regression testing, (5) document any issues found.",
+      "reasoning": "Post-refactor testing is critical and complex, as it involves both manual and automated validation across the entire platform. The risk of undetected regressions is high, warranting thorough subtask breakdown."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Deploy Marketing Repo to Vercel",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Split into: (1) connect repo to Vercel, (2) configure build settings, (3) verify deployment and route accessibility.",
+      "reasoning": "Deployment is routine for Next.js on Vercel, but configuration and verification steps should be isolated to catch environment-specific issues early."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Configure Custom Domain for Marketing Repo",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break into: (1) update DNS records, (2) configure domain in Vercel, (3) test SSL and routing.",
+      "reasoning": "Domain configuration involves multiple systems (DNS, Vercel) and requires coordination. The complexity is moderate due to the potential for misconfiguration and the need for thorough testing."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Deploy Platform Repo to Vercel",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide into: (1) connect repo to Vercel, (2) configure environment variables, (3) set deployment target, (4) verify access to /app routes.",
+      "reasoning": "Platform deployment is more complex due to environment variables and the need to ensure backend services (e.g., Supabase) are properly integrated."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Configure Vercel Rewrites for /app/*",
+      "complexityScore": 7,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Split into: (1) edit vercel.json for rewrites, (2) test proxying behavior, (3) verify session/cookie continuity.",
+      "reasoning": "Rewrites between repos introduce integration complexity, especially around authentication and session handling. Careful testing is required to ensure seamless user experience."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Test Authentication Flow Across Repos",
+      "complexityScore": 9,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break into: (1) automate login/logout tests, (2) test session persistence, (3) validate protected route access, (4) test Supabase integration, (5) document edge cases.",
+      "reasoning": "Cross-repo authentication is one of the most complex tasks, involving multiple systems, session management, and potential edge cases. Rigorous subtask breakdown is essential to ensure reliability."
+    },
+    {
+      "taskId": 16,
+      "taskTitle": "Implement Cross-Linking Between Marketing and Platform",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Separate into: (1) update header/footer/navigation links, (2) test navigation behavior, (3) verify authentication handling.",
+      "reasoning": "Navigation updates are straightforward but require testing to ensure links work correctly across authentication states and repo boundaries."
+    },
+    {
+      "taskId": 17,
+      "taskTitle": "Configure Authentication Redirects",
+      "complexityScore": 6,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Divide into: (1) implement middleware for route protection, (2) test redirects for unauthenticated users, (3) test redirects for authenticated users.",
+      "reasoning": "Middleware-based redirects add moderate complexity due to the need to handle various authentication states and ensure correct user flow."
+    },
+    {
+      "taskId": 18,
+      "taskTitle": "Test Complete User Journeys",
+      "complexityScore": 8,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break into: (1) document major user flows, (2) implement end-to-end tests, (3) run manual regression tests, (4) log and triage issues.",
+      "reasoning": "End-to-end testing of complex user journeys is critical and inherently complex, requiring both automation and manual validation to cover all scenarios."
+    },
+    {
+      "taskId": 19,
+      "taskTitle": "Verify Cookie Handling Across Rewrites",
+      "complexityScore": 7,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Split into: (1) test cookie setting/reading, (2) adjust SameSite/domain attributes, (3) validate across browsers/devices.",
+      "reasoning": "Cookie management across different domains and rewrites is technically challenging and requires careful testing to avoid authentication issues."
+    },
+    {
+      "taskId": 20,
+      "taskTitle": "Test Demo to Platform Conversion Flow",
+      "complexityScore": 6,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Divide into: (1) add CTAs in demo pages, (2) test conversion flow, (3) verify analytics event tracking.",
+      "reasoning": "Conversion flow testing involves both UI changes and analytics integration, with moderate complexity due to the need to validate user experience and data capture."
+    },
+    {
+      "taskId": 21,
+      "taskTitle": "Create Unified sitemap.xml",
+      "complexityScore": 4,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Break into: (1) configure next-sitemap, (2) validate sitemap structure and exclusions.",
+      "reasoning": "Sitemap generation is routine but requires validation to ensure correct inclusion/exclusion of routes, especially with cross-repo boundaries."
+    },
+    {
+      "taskId": 22,
+      "taskTitle": "Configure robots.txt",
+      "complexityScore": 3,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Split into: (1) create robots.txt file, (2) test with validators and Search Console.",
+      "reasoning": "This is a simple, declarative task with low complexity, but should still be validated for correctness."
+    },
+    {
+      "taskId": 23,
+      "taskTitle": "Add Meta Tags and Structured Data",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Divide into: (1) implement meta tags, (2) add structured data, (3) validate with SEO tools.",
+      "reasoning": "SEO enhancements require careful implementation and validation across multiple pages, introducing moderate complexity."
+    },
+    {
+      "taskId": 24,
+      "taskTitle": "Set Up Google Search Console",
+      "complexityScore": 3,
+      "recommendedSubtasks": 2,
+      "expansionPrompt": "Break into: (1) verify domain ownership, (2) submit sitemap and monitor indexing.",
+      "reasoning": "Search Console setup is straightforward but should be validated to ensure successful indexing."
+    },
+    {
+      "taskId": 25,
+      "taskTitle": "End-to-End Testing, Performance, Security, and Launch Monitoring",
+      "complexityScore": 9,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Split into: (1) run Lighthouse audits, (2) conduct security audit, (3) set up analytics, (4) configure uptime monitoring, (5) prepare rollback plan, (6) monitor post-launch metrics.",
+      "reasoning": "This is a comprehensive, high-stakes task covering performance, security, analytics, and operational readiness. The complexity is very high due to the breadth of concerns and the need for meticulous validation before and after launch."
+    }
+  ]
+}

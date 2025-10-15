@@ -1,0 +1,52 @@
+{
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingresa un correo electrónico válido",
+    "phone": "Por favor ingresa un número de teléfono válido",
+    "url": "Por favor ingresa una URL válida",
+    "number": "Por favor ingresa un número válido",
+    "min": "El valor mínimo es {{min}}",
+    "max": "El valor máximo es {{max}}",
+    "min_length": "Se requieren mínimo {{min}} caracteres",
+    "max_length": "Máximo {{max}} caracteres permitidos",
+    "password_weak": "La contraseña es muy débil. Usa letras, números y símbolos.",
+    "password_mismatch": "Las contraseñas no coinciden"
+  },
+  "network": {
+    "generic": "Error de red. Por favor verifica tu conexión.",
+    "timeout": "Se agotó el tiempo de espera. Por favor intenta de nuevo.",
+    "offline": "Estás desconectado. Verifica tu conexión a internet.",
+    "server": "Error del servidor. Por favor intenta más tarde.",
+    "unavailable": "Servicio temporalmente no disponible"
+  },
+  "auth": {
+    "unauthorized": "Acceso no autorizado",
+    "session_expired": "Tu sesión ha expirado. Por favor inicia sesión de nuevo.",
+    "invalid_credentials": "Correo o contraseña inválidos",
+    "account_locked": "Cuenta temporalmente bloqueada. Intenta más tarde.",
+    "email_exists": "Ya existe una cuenta con este correo electrónico"
+  },
+  "api": {
+    "not_found": "Recurso no encontrado",
+    "forbidden": "Acceso prohibido",
+    "rate_limit": "Demasiadas solicitudes. Por favor reduce la velocidad.",
+    "bad_request": "Solicitud inválida. Por favor verifica tu entrada.",
+    "internal_error": "Error interno del servidor. Nuestro equipo ha sido notificado."
+  },
+  "upload": {
+    "too_large": "El archivo es muy grande. Tamaño máximo es {{max}}MB.",
+    "invalid_type": "Tipo de archivo inválido. Permitidos: {{types}}",
+    "upload_failed": "Falló la carga. Por favor intenta de nuevo."
+  },
+  "generic": {
+    "something_wrong": "Algo salió mal. Por favor intenta de nuevo.",
+    "try_again": "Por favor intenta de nuevo",
+    "contact_support": "Si el problema persiste, contacta soporte"
+  },
+  "actions": {
+    "retry": "Reintentar",
+    "go_back": "Volver",
+    "refresh": "Recargar Página",
+    "contact": "Contactar Soporte"
+  }
+}

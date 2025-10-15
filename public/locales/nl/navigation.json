@@ -1,0 +1,54 @@
+{
+  "main": {
+    "home": "Home",
+    "explorer": "Verkenner",
+    "dashboard": "Dashboard",
+    "calculator": "Calculator",
+    "ad_builder": "Advertentie Maker"
+  },
+  "descriptions": {
+    "home": "AI Kernsfeer",
+    "explorer": "9 Marketing Lagen",
+    "dashboard": "Commandocentrum",
+    "calculator": "Bereken ROI",
+    "ad_builder": "Maak Advertenties"
+  },
+  "mobile": {
+    "home": "Kern",
+    "explorer": "Lagen",
+    "dashboard": "Centrum",
+    "calculator": "ROI",
+    "ad_builder": "Ads"
+  },
+  "footer": {
+    "company": {
+      "title": "Bedrijf",
+      "about": "Over Ons",
+      "careers": "Carrières",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "product": {
+      "title": "Product",
+      "features": "Functies",
+      "pricing": "Prijzen",
+      "demo": "Demo Aanvragen",
+      "changelog": "Wijzigingslog"
+    },
+    "resources": {
+      "title": "Bronnen",
+      "documentation": "Documentatie",
+      "guides": "Gidsen",
+      "api": "API Referentie",
+      "support": "Ondersteuning"
+    },
+    "legal": {
+      "title": "Juridisch",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden",
+      "cookies": "Cookiebeleid",
+      "gdpr": "AVG"
+    }
+  },
+  "copyright": "© {{year}} FutureMarketingAI. Alle rechten voorbehouden."
+}

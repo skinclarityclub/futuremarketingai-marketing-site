@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "generatedAt": "2025-10-02T12:30:49.799Z",
+    "tasksAnalyzed": 12,
+    "totalTasks": 12,
+    "analysisCount": 12,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Establish Project Foundation and Tech Stack",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the project foundation setup into: monorepo initialization, Next.js configuration, styling and animation setup, state management integration, code quality tooling, build tooling, environment variable management, and CI/CD pipeline setup.",
+      "reasoning": "This task involves multiple technology integrations, monorepo setup, and CI/CD configuration, each with distinct best practices and potential pitfalls. The breadth of initial setup, cross-tooling, and need for automation justifies a high complexity and granular subtasking."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Premium Service Badge System",
+      "complexityScore": 5,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Expand into: badge component design, animation implementation, responsive/mobile adaptation, integration into target pages, and accessibility/compliance checks.",
+      "reasoning": "While the UI component is moderately complex due to animation and accessibility, the scope is contained and follows established React and CSS patterns. Integration across pages and accessibility add some complexity."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Enhance ROI Calculator with Personalization and Comparison",
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Decompose into: form refactor, industry data integration, personalized calculation logic, comparison table, charting/visualization, share/export features, state persistence, and accessibility/mobile QA.",
+      "reasoning": "This task requires significant refactoring, new data flows, advanced UI (comparison, charts), and persistence mechanisms. It touches multiple architectural layers and user flows, increasing both cyclomatic and cognitive complexity."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Implement Personalized Demo Paths and Progressive Profiling",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Split into: industry selector modal, state/context management, personalization logic for modules/testimonials, progressive profiling prompts, persistence (localStorage/URL), and mobile/responsive QA.",
+      "reasoning": "Personalization and progressive profiling require careful state management, context propagation, and dynamic UI logic, all of which increase complexity. However, the patterns are well-established in modern React apps."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Deploy Strategic CTA Placement and Booking Integration",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Divide into: CTA component creation, Calendly integration, floating/contextual CTA logic, exit-intent modal, data pre-fill, trust indicator integration, and accessibility/mobile QA.",
+      "reasoning": "This task spans reusable UI, third-party integration, event-driven modals, and data flow between components. Each aspect is a common pattern but combined, they require careful orchestration and testing."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop Social Proof and Trust Indicator Components",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break into: testimonial carousel, animated metrics, trust badge logic, case study cards/modals, CMS/JSON content integration, and accessibility/responsiveness QA.",
+      "reasoning": "Multiple UI components with animation, dynamic content, and conditional logic are involved. While each is individually standard, the integration and content management add moderate complexity."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Build AI Advisory Service Module and Integrate Across Demo",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Expand into: AI advisory module creation, modal/details implementation, badge/link integration in modules, calculator integration, PremiumServiceBadge update, and CMS/JSON content management.",
+      "reasoning": "This task involves both new module development and cross-module integration, requiring coordination and updates to shared components. Content management and accessibility are also considerations."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Add Executive Summary and Reporting Preview",
+      "complexityScore": 5,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Decompose into: executive summary component, chart integration, PDF generation, integration with calculator/explorer, and layout/accessibility QA.",
+      "reasoning": "The task is focused on a single feature with several standard subcomponents (charts, PDF export), making it moderately complex but well-bounded."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Accessibility, Compliance, and Final QA",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Split into: automated accessibility audits, manual accessibility fixes, ARIA/keyboard/focus management, compliance badge review, cross-browser/device QA, performance profiling, and compliance checklist validation.",
+      "reasoning": "Ensuring accessibility and compliance across a large, interactive app is highly complex, requiring both automated and manual review, cross-browser/device testing, and performance validation."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Integrate Advanced Analytics and Event Tracking",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down into: analytics hook extension, event mapping/implementation, funnel definition in GA4, A/B testing framework setup, dashboard API, dashboard UI, and QA/debugging.",
+      "reasoning": "Advanced analytics and A/B testing require careful event design, integration with third-party tools, and custom dashboarding. Each step is standard but the end-to-end flow is non-trivial."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Optimize for Mobile Responsiveness and Performance",
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Expand into: responsive audit, component refactoring, image/asset optimization, bundle analysis, lazy loading/Suspense, mobile-specific features (swipe/bottom-sheet), sticky CTA bar, and device/browser QA.",
+      "reasoning": "Mobile optimization and performance tuning require a holistic review and targeted improvements across the codebase, involving both UI and build-level changes. Device/browser QA adds further complexity."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Refine Content and Copy Across Demo",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Divide into: AI-assisted copywriting, peer review/editing, module/CTA/microcopy updates, tooltip implementation, translation validation, and A/B testing of key copy.",
+      "reasoning": "Content refinement is cross-cutting and requires coordination, review, and validation. While not technically complex, the breadth and need for quality control increase the effort."
+    }
+  ]
+}

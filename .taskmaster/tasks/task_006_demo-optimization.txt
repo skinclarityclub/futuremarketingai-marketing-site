@@ -1,0 +1,60 @@
+# Task ID: 6
+# Title: Develop Social Proof and Trust Indicator Components
+# Status: done
+# Dependencies: 1, 2
+# Priority: medium
+# Description: Showcase testimonials, aggregate results, trust badges, and case studies to build credibility.
+# Details:
+Create `SocialProofSection` with carousel (Swiper.js) for testimonials, animated counters (reuse AnimatedMetric), and trust badges (SVG). Add case study cards with modal or link to full story. Place on Hero, Calculator, and Explorer as specified. Ensure GDPR/SOC2 badges are conditional. All content editable via CMS or JSON.
+<info added on 2025-10-02T13:26:07.239Z>
+Implement pain-point focused testimonials with the following structure:
+- Photo + Name + Company + Industry
+- Pain Point: "We hadden [specific problem]"
+- Solution Impact: "Future Marketing AI loste dit op door [solution]"
+- Result: "Nu hebben we [specific outcome with metrics]"
+
+Example testimonial: "We verloren €5K/maand aan inefficiënte content processen. Future Marketing AI automatiseerde alles. Nu besparen we 80 uur per maand en onze engagement is 3x hoger." - Lisa van Dam, Founder @ EcoShop NL
+
+Reframe aggregate metrics to focus on pain points:
+- Change "€2.5M+ Saved" to "€2.5M+ aan verspilde tijd teruggewonnen"
+- Change "50K+ Content" to "50K+ posts zonder een enkel uur handmatig werk"
+- Change "20+ Businesses" to "20+ bedrijven los van content chaos"
+
+Format case study cards with: Industry + Pain Point + Solution + Results
+Example: "E-commerce | Geen tijd voor social media | Complete automatisering | 5x meer posts, 3x ROI"
+</info added on 2025-10-02T13:26:07.239Z>
+
+# Test Strategy:
+Snapshot and accessibility tests for all components. Manually verify carousel, counter animation, and badge display. Test on all screen sizes.
+
+# Subtasks:
+## 1. Design and Implement Testimonial Carousel [done]
+### Dependencies: None
+### Description: Develop a carousel component using Swiper.js to display customer testimonials, ensuring strong visual hierarchy and accessibility.
+### Details:
+Create a visually prominent testimonial carousel for the SocialProofSection, supporting both text and video testimonials. Ensure the component is accessible, responsive, and content-editable via CMS or JSON. Place on Hero, Calculator, and Explorer as specified.
+
+## 2. Integrate Animated Aggregate Metrics [done]
+### Dependencies: None
+### Description: Incorporate animated counters to showcase aggregate results and key statistics, reusing the AnimatedMetric component.
+### Details:
+Display animated counters for metrics such as customer count, success rates, or other impactful statistics. Ensure counters are editable via CMS or JSON and visually integrated with the SocialProofSection.
+
+## 3. Display Conditional Trust Badges [done]
+### Dependencies: None
+### Description: Add SVG-based trust badges (e.g., GDPR, SOC2) to the SocialProofSection, ensuring badges are shown or hidden based on configuration.
+### Details:
+Implement logic to conditionally render trust badges according to CMS/JSON settings. Ensure badges are visually clear, accessible, and contextually placed within the section.
+
+## 4. Develop Case Study Cards with Modal or Link [done]
+### Dependencies: None
+### Description: Create interactive case study cards that open a modal or link to a full story, highlighting detailed client success stories.
+### Details:
+Design cards summarizing each case study, with options to open a modal for more details or navigate to a dedicated page. Ensure all content is editable via CMS or JSON and cards are accessible and responsive.
+
+## 5. Configure Placement and Content Management Integration [done]
+### Dependencies: 6.1, 6.2, 6.3, 6.4
+### Description: Ensure all social proof components are placed on Hero, Calculator, and Explorer as specified, with content managed via CMS or JSON.
+### Details:
+Integrate the SocialProofSection and its subcomponents into the designated pages. Connect all content fields to the CMS or JSON source for easy editing and updates.
+

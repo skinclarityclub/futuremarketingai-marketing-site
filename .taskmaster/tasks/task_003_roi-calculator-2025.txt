@@ -1,0 +1,59 @@
+# Task ID: 3
+# Title: Build Competitive Benchmarking Visual
+# Status: done
+# Dependencies: 2
+# Priority: medium
+# Description: Introduce a visual benchmarking section that compares the user's metrics to industry averages and top performers, providing urgency and social proof.
+# Details:
+Develop BenchmarkBar.tsx for a 3-tier visual bar (user, industry average, top performers) and CompetitivePositionCard.tsx to encapsulate the benchmark section. Extend the benchmarks object in usePersonalization and update icpScoring.ts with industry-specific data. Reuse GlassCard for layout. Display clear positioning messages (e.g., 'You're in the bottom 25%'). Ensure horizontal scroll for bars on mobile. Follow accessibility best practices for color contrast and ARIA labeling.
+
+# Test Strategy:
+Unit test BenchmarkBar and CompetitivePositionCard for correct data rendering and visual accuracy. Integration test with different industries and user scenarios. Validate responsiveness and accessibility. Confirm correct data mapping from personalization engine.
+
+# Subtasks:
+## 1. Create BenchmarkBar.tsx Component [done]
+### Dependencies: None
+### Description: Develop the BenchmarkBar.tsx component that visualizes the 3-tier comparison between user metrics, industry averages, and top performers.
+### Details:
+Implement BenchmarkBar.tsx as a React component that renders three horizontal bars representing user metrics, industry averages, and top performers. Include props for data values, labels, and color schemes. Ensure the component is responsive and supports horizontal scrolling on mobile devices. Add appropriate ARIA attributes for accessibility and implement color contrast that meets WCAG standards. Include tooltips for additional context when hovering over each bar.
+
+## 2. Develop CompetitivePositionCard.tsx Component [done]
+### Dependencies: 3.1
+### Description: Create the CompetitivePositionCard.tsx component that encapsulates the benchmark visualization and positioning messages.
+### Details:
+Build CompetitivePositionCard.tsx using the GlassCard component as a container. Integrate the BenchmarkBar component created in the previous subtask. Add clear positioning messages (e.g., 'You're in the bottom 25%', 'You're outperforming 75% of similar companies') based on the user's metrics. Include a brief explanation of what the benchmark means and actionable insights. Ensure the card layout is responsive and maintains readability on all devices.
+
+## 3. Extend usePersonalization Hook with Benchmark Data [done]
+### Dependencies: None
+### Description: Update the usePersonalization hook to include benchmark data for different industries and metrics.
+### Details:
+Extend the benchmarks object in the usePersonalization hook to include industry-specific benchmark data. Create data structures for storing user metrics, industry averages, and top performer metrics across different categories. Implement functions to calculate the user's relative position within their industry (percentile, ranking, etc.). Ensure the hook efficiently retrieves and processes benchmark data without unnecessary re-renders.
+<info added on 2025-10-12T11:01:43.569Z>
+The usePersonalization hook has been extended with comprehensive industry-specific benchmark data. The IndustryBenchmarks interface now includes additional metrics:
+- topPerformerROI: Represents the ROI achieved by top 10% performers
+- avgTimeSaved: Industry average for monthly time saved
+- topTimeSaved: Time saved by top performers monthly
+- avgCostSavings: Industry average annual cost savings
+- topCostSavings: Annual cost savings achieved by top performers
+
+Industry-specific benchmark data has been implemented for all supported industries:
+- E-commerce: 650% top ROI, 200 hours top time saved, €85,000 top cost savings
+- SaaS: 550% top ROI, 250 hours top time saved, €110,000 top cost savings
+- Agency: 600% top ROI, 300 hours top time saved, €135,000 top cost savings
+- Other: 500% top ROI, 180 hours top time saved, €80,000 top cost savings
+
+The benchmarks object in the usePersonalization hook now automatically returns this extended data, enabling accurate industry comparisons for the competitive benchmarking visual.
+</info added on 2025-10-12T11:01:43.569Z>
+
+## 4. Update icpScoring.ts with Industry-Specific Benchmark Data [done]
+### Dependencies: 3.3
+### Description: Enhance the icpScoring.ts file with comprehensive industry-specific benchmark data for accurate comparisons.
+### Details:
+Update icpScoring.ts to include detailed benchmark data for different industries, company sizes, and business models. Structure the data to allow easy lookup based on user profile. Include metrics for industry averages and top performers across key performance indicators. Document the data structure and sources. Implement helper functions for data retrieval and comparison calculations that will be used by the benchmarking components.
+
+## 5. Integrate Benchmarking Components into Main Application Flow [done]
+### Dependencies: 3.1, 3.2, 3.3, 3.4
+### Description: Integrate the benchmarking visualization components into the main application and ensure they work with the existing personalization system.
+### Details:
+Integrate the CompetitivePositionCard into the main application flow, positioning it after the primary results and before the CTA section. Connect the component to the usePersonalization hook to receive real benchmark data. Implement any necessary state management to update the benchmarking visualization when user inputs change. Ensure the benchmarking section maintains visual consistency with the rest of the application. Add animations for the benchmark bars to enhance user engagement.
+

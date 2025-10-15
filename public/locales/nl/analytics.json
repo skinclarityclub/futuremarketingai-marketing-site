@@ -1,0 +1,46 @@
+{
+  "events": {
+    "page_load": "Pagina Geladen",
+    "page_view": "Pagina Bekeken",
+    "hero_view": "Hero Sectie Bekeken",
+    "cta_click": "CTA Geklikt",
+    "cta_impression": "CTA Impressie",
+    "calculator_interact": "Calculator Interactie",
+    "calendly_event": "Calendly Event",
+    "module_open": "Module Geopend",
+    "navigation": "Navigatie",
+    "outbound_click": "Uitgaande Link Geklikt",
+    "error": "Fout Opgetreden",
+    "engagement_time": "Betrokkenheidstijd",
+    "scroll_depth": "Scroll Diepte"
+  },
+  "categories": {
+    "user_engagement": "Gebruikersbetrokkenheid",
+    "navigation": "Navigatie",
+    "conversion": "Conversie",
+    "performance": "Prestatie",
+    "errors": "Fouten"
+  },
+  "labels": {
+    "hero_cta": "Hero CTA",
+    "floating_cta": "Zwevende CTA",
+    "exit_intent": "Verlaat Intentie",
+    "inline_cta": "Inline CTA",
+    "calculator_input": "Calculator Invoer",
+    "calculator_result": "Calculator Resultaat",
+    "module_detail": "Module Detail Weergave",
+    "nav_click": "Navigatie Klik"
+  },
+  "parameters": {
+    "cta_name": "CTA Naam",
+    "cta_destination": "Bestemming",
+    "page_name": "Paginanaam",
+    "module_name": "Modulenaam",
+    "action": "Actie",
+    "value": "Waarde",
+    "time_seconds": "Tijd (seconden)",
+    "depth_percent": "Diepte (%)",
+    "error_type": "Fouttype",
+    "error_message": "Foutmelding"
+  }
+}

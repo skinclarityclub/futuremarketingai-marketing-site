@@ -1,0 +1,46 @@
+{
+  "events": {
+    "page_load": "Página Cargada",
+    "page_view": "Página Vista",
+    "hero_view": "Sección Hero Vista",
+    "cta_click": "CTA Clickeado",
+    "cta_impression": "Impresión de CTA",
+    "calculator_interact": "Interacción con Calculadora",
+    "calendly_event": "Evento de Calendly",
+    "module_open": "Módulo Abierto",
+    "navigation": "Navegación",
+    "outbound_click": "Enlace Externo Clickeado",
+    "error": "Error Ocurrido",
+    "engagement_time": "Tiempo de Interacción",
+    "scroll_depth": "Profundidad de Scroll"
+  },
+  "categories": {
+    "user_engagement": "Interacción del Usuario",
+    "navigation": "Navegación",
+    "conversion": "Conversión",
+    "performance": "Rendimiento",
+    "errors": "Errores"
+  },
+  "labels": {
+    "hero_cta": "CTA del Hero",
+    "floating_cta": "CTA Flotante",
+    "exit_intent": "Intención de Salida",
+    "inline_cta": "CTA en Línea",
+    "calculator_input": "Entrada de Calculadora",
+    "calculator_result": "Resultado de Calculadora",
+    "module_detail": "Vista Detallada del Módulo",
+    "nav_click": "Click de Navegación"
+  },
+  "parameters": {
+    "cta_name": "Nombre del CTA",
+    "cta_destination": "Destino",
+    "page_name": "Nombre de Página",
+    "module_name": "Nombre del Módulo",
+    "action": "Acción",
+    "value": "Valor",
+    "time_seconds": "Tiempo (segundos)",
+    "depth_percent": "Profundidad (%)",
+    "error_type": "Tipo de Error",
+    "error_message": "Mensaje de Error"
+  }
+}
