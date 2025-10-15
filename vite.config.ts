@@ -13,80 +13,37 @@ export default defineConfig(({ mode }) => ({
     sitemap({
       hostname: 'https://futuremarketingai.com',
       dynamicRoutes: [
-        // Core marketing pages
-        {
-          url: '/',
-          changefreq: 'daily',
-          priority: 1.0,
-          lastmod: new Date(),
-        },
-        {
-          url: '/features',
-          changefreq: 'weekly',
-          priority: 0.9,
-        },
-        {
-          url: '/pricing',
-          changefreq: 'weekly',
-          priority: 0.9,
-        },
-        {
-          url: '/how-it-works',
-          changefreq: 'weekly',
-          priority: 0.8,
-        },
-        {
-          url: '/about',
-          changefreq: 'monthly',
-          priority: 0.7,
-        },
-        {
-          url: '/contact',
-          changefreq: 'monthly',
-          priority: 0.7,
-        },
-        // Utility pages
-        {
-          url: '/calculator',
-          changefreq: 'monthly',
-          priority: 0.6,
-        },
-        // Legal pages
-        {
-          url: '/privacy',
-          changefreq: 'yearly',
-          priority: 0.3,
-        },
-        {
-          url: '/terms',
-          changefreq: 'yearly',
-          priority: 0.3,
-        },
+        '/',
+        '/features',
+        '/pricing',
+        '/how-it-works',
+        '/about',
+        '/contact',
+        '/calculator',
+        '/privacy',
+        '/terms',
       ],
       exclude: [
-        // Exclude demo app (separate from marketing)
         '/demo',
         '/demo/*',
         '/explorer',
         '/dashboard',
-        // Exclude platform routes (behind authentication)
         '/app/*',
         '/api/*',
         '/login',
-        // Exclude test/placeholder pages
         '/calculator-test',
         '/placeholder',
-        '/blog', // Not launched yet
-        '/case-studies', // Not launched yet
-        '/careers', // Not launched yet
-        '/partners', // Not launched yet
-        '/documentation', // Not launched yet
-        '/legal', // Generic legal page
-        '/security', // Generic security page
-        '/gdpr', // Generic GDPR page
+        '/blog',
+        '/case-studies',
+        '/careers',
+        '/partners',
+        '/documentation',
+        '/legal',
+        '/security',
+        '/gdpr',
       ],
-      readable: true, // Generate readable sitemap (not minified)
-      outDir: 'dist', // Output to dist folder
+      readable: true,
+      outDir: 'dist',
     }),
     // Custom plugin to inject environment variables into HTML
     {
