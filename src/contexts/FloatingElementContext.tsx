@@ -10,7 +10,7 @@
  * 3. Banners (e.g., Founding Member) - Always visible, lowest z-index
  */
 
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react'
 
 type FloatingElementType = 'modal' | 'chat' | null
 
