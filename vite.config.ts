@@ -175,14 +175,24 @@ export default defineConfig(({ mode }) => ({
               return 'react-libs'
             }
 
-            // 3D rendering (largest dependencies)
-            if (id.includes('three') || id.includes('@react-three')) {
+            // React Three Fiber - MUST come after react-core (uses React heavily)
+            if (id.includes('@react-three')) {
+              return 'react-three'
+            }
+
+            // Three.js core (non-React)
+            if (id.includes('/three/') && !id.includes('@react-three')) {
               return 'three'
             }
 
-            // Charts & data visualization (including Redux for Recharts)
-            if (id.includes('recharts') || id.includes('d3') || id.includes('redux')) {
-              return 'charts'
+            // Recharts - React component library that uses createContext
+            if (id.includes('recharts')) {
+              return 'react-charts'
+            }
+
+            // D3 and Redux (non-React dependencies used by charts)
+            if (id.includes('d3') || id.includes('redux')) {
+              return 'charts-deps'
             }
 
             // Animation libraries
