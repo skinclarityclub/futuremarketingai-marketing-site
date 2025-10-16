@@ -102,6 +102,18 @@ export default defineConfig(({ mode }) => ({
     // Minification settings - use esbuild instead of terser to avoid hoisting issues
     minify: 'esbuild',
 
+    // CRITICAL: Configure module preload to ensure correct chunk load order
+    modulePreload: {
+      polyfill: true,
+      resolveDependencies: (filename, deps, { hostId, hostType }) => {
+        // Ensure react-core always loads before react-libs
+        if (filename.includes('react-libs')) {
+          return deps.filter((dep) => dep.includes('react-core'))
+        }
+        return deps
+      },
+    },
+
     // Keep terser config for reference if we need to switch back
     // terserOptions: {
     //   compress: {
@@ -143,8 +155,12 @@ export default defineConfig(({ mode }) => ({
         // everything else (potentially React-dependent) goes to react-libs
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // 1. Core React - MUST load first
-            if (id.match(/[\\/]react([-]dom|[-]is)?[\\/]/)) {
+            // 1. Core React - MUST load first (exact matching to avoid false positives)
+            if (
+              id.match(/[\\/]node_modules[\\/]react[\\/]/) ||
+              id.match(/[\\/]node_modules[\\/]react-dom[\\/]/) ||
+              id.match(/[\\/]node_modules[\\/]react-is[\\/]/)
+            ) {
               return 'react-core'
             }
 
