@@ -9,12 +9,13 @@ import {
   InputSlider,
   LoadingFallback,
   ShareExportButtons,
-  StrategicCTA,
   ProgressiveProfilingPrompt,
   shouldShowProfilePrompt,
   SlotProgressIndicator,
   PricingRevealModal,
 } from '../components'
+// Direct import to avoid circular dependency
+import { StrategicCTA } from '../components/common/StrategicCTA'
 import {
   CalculatorWizard,
   CompanySizeSelector,
