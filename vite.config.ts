@@ -139,68 +139,59 @@ export default defineConfig(({ mode }) => ({
       },
 
       output: {
-        // Advanced manual chunking strategy with explicit dependency order
+        // INVERTED chunking strategy: Define what goes to SPECIFIC chunks,
+        // everything else (potentially React-dependent) goes to react-libs
         manualChunks: (id) => {
-          // Node modules chunking
           if (id.includes('node_modules')) {
-            // Core React libraries - Use regex for precise matching
+            // 1. Core React - MUST load first
             if (id.match(/[\\/]react([-]dom|[-]is)?[\\/]/)) {
               return 'react-core'
             }
 
-            // CRITICAL: Catch ALL React-dependent libraries BEFORE they go to vendor-misc
-            // Any library with 'react' in the path that's not core React goes to react-libs
-            if (
-              id.includes('/react-') ||
-              id.includes('\\react-') ||
-              id.includes('@react-three') ||
-              id.includes('@sentry/react') ||
-              id.includes('recharts') || // React charts library
-              id.match(/zustand|@mdx-js[\\/]react|country-flag-icons[\\/]react|lucide-react/)
-            ) {
-              return 'react-libs'
-            }
-
-            // Three.js core (non-React only)
+            // 2. Pure non-React libraries (safe to load independently)
+            // Three.js (non-React)
             if (id.includes('/three/') && !id.includes('@react-three')) {
               return 'three'
             }
 
-            // D3 and Redux (non-React dependencies used by charts)
-            if (id.includes('d3') || id.includes('redux')) {
-              return 'charts-deps'
+            // D3 (non-React data visualization)
+            if (id.includes('/d3/') || id.includes('/d3-')) {
+              return 'vendor-viz'
             }
 
-            // Animation libraries
-            if (id.includes('framer-motion') || id.includes('gsap')) {
-              return 'motion'
+            // OpenAI SDK (non-React)
+            if (id.includes('openai')) {
+              return 'vendor-ai'
             }
 
-            // i18n - base i18next WITHOUT React bindings (react-i18next is in react-libs)
-            if ((id.includes('i18next') || id.includes('i18n')) && !id.includes('react-i18next')) {
-              return 'i18n'
+            // Utility libraries (non-React)
+            if (id.includes('jspdf') || id.includes('html2canvas')) {
+              return 'vendor-utils'
             }
 
-            // Analytics & monitoring - separate to avoid conflicts
+            // Animation libraries (non-React: GSAP is pure JS)
+            if (id.includes('gsap')) {
+              return 'vendor-animation'
+            }
+
+            // i18next core (non-React)
+            if (id.includes('i18next') && !id.includes('react-i18next')) {
+              return 'vendor-i18n'
+            }
+
+            // Sentry core (non-React)
+            if (id.includes('@sentry') && !id.includes('@sentry/react')) {
+              return 'vendor-monitoring'
+            }
+
+            // Web vitals (non-React)
             if (id.includes('web-vitals')) {
-              return 'web-vitals'
+              return 'vendor-vitals'
             }
 
-            // Sentry core (non-React parts) - React parts are in react-libs
-            if (
-              (id.includes('@sentry') || id.includes('sentry')) &&
-              !id.includes('@sentry/react')
-            ) {
-              return 'sentry'
-            }
-
-            // Utilities (PDF, clipboard, etc)
-            if (id.includes('jspdf') || id.includes('html2canvas') || id.includes('dompurify')) {
-              return 'utils'
-            }
-
-            // All other node_modules - much smaller now
-            return 'vendor-misc'
+            // 3. EVERYTHING ELSE goes to react-libs (assumes React dependency)
+            // This includes: react-*, framer-motion, recharts, zustand, etc.
+            return 'react-libs'
           }
         },
 
