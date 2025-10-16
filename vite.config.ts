@@ -148,39 +148,22 @@ export default defineConfig(({ mode }) => ({
               return 'react-core'
             }
 
-            // React ecosystem separately - but after core
-            if (id.includes('react-router')) {
-              return 'react-router'
-            }
-
-            if (id.includes('react-helmet')) {
-              return 'react-helmet'
-            }
-
-            // ALL React libraries that use createContext, hooks, or React APIs
-            // Use regex for comprehensive matching of React-dependent libraries
+            // CRITICAL: Catch ALL React-dependent libraries BEFORE they go to vendor-misc
+            // Any library with 'react' in the path that's not core React goes to react-libs
             if (
-              id.match(/react-(markdown|use|cookie-consent|calendly|ga4|i18next)/) ||
-              id.match(
-                /zustand|country-flag-icons[\\/]react|@sentry[\\/]react|lucide-react|react-icons/
-              )
+              id.includes('/react-') ||
+              id.includes('\\react-') ||
+              id.includes('@react-three') ||
+              id.includes('@sentry/react') ||
+              id.includes('recharts') || // React charts library
+              id.match(/zustand|@mdx-js[\\/]react|country-flag-icons[\\/]react|lucide-react/)
             ) {
               return 'react-libs'
             }
 
-            // React Three Fiber - MUST come after react-core (uses React heavily)
-            if (id.includes('@react-three')) {
-              return 'react-three'
-            }
-
-            // Three.js core (non-React)
+            // Three.js core (non-React only)
             if (id.includes('/three/') && !id.includes('@react-three')) {
               return 'three'
-            }
-
-            // Recharts - React component library that uses createContext
-            if (id.includes('recharts')) {
-              return 'react-charts'
             }
 
             // D3 and Redux (non-React dependencies used by charts)
