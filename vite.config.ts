@@ -141,9 +141,14 @@ export default defineConfig(({ mode }) => ({
         manualChunks: (id) => {
           // Node modules chunking
           if (id.includes('node_modules')) {
-            // Core React libraries
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'vendor'
+            // Core React libraries - MUST be first to ensure React is properly bundled
+            if (id.includes('/react/') || id.includes('/react-dom/')) {
+              return 'react-core'
+            }
+            
+            // React Router separately
+            if (id.includes('react-router')) {
+              return 'react-router'
             }
 
             // 3D rendering (largest dependencies)
