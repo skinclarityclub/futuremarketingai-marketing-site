@@ -101,7 +101,7 @@ export default defineConfig(({ mode }) => ({
 
     // Minification settings - use esbuild instead of terser to avoid hoisting issues
     minify: 'esbuild',
-    
+
     // Keep terser config for reference if we need to switch back
     // terserOptions: {
     //   compress: {
@@ -144,17 +144,27 @@ export default defineConfig(({ mode }) => ({
           // Node modules chunking
           if (id.includes('node_modules')) {
             // Core React libraries - MUST be first to ensure React is properly bundled
-            if (id.includes('/react/') || id.includes('/react-dom/')) {
+            if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/react-is/')) {
               return 'react-core'
             }
-            
-            // React ecosystem separately
+
+            // React ecosystem separately - but after core
             if (id.includes('react-router')) {
               return 'react-router'
             }
-            
+
             if (id.includes('react-helmet')) {
               return 'react-helmet'
+            }
+
+            // Other React libraries that depend on React
+            if (
+              id.includes('react-markdown') ||
+              id.includes('react-use') ||
+              id.includes('react-cookie-consent') ||
+              id.includes('react-calendly')
+            ) {
+              return 'react-libs'
             }
 
             // 3D rendering (largest dependencies)
@@ -181,11 +191,11 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('web-vitals')) {
               return 'web-vitals'
             }
-            
+
             if (id.includes('react-ga4')) {
               return 'analytics-ga'
             }
-            
+
             if (id.includes('@sentry') || id.includes('sentry')) {
               return 'sentry'
             }
@@ -198,11 +208,6 @@ export default defineConfig(({ mode }) => ({
             // Icon libraries
             if (id.includes('lucide-react') || id.includes('react-icons')) {
               return 'icons'
-            }
-            
-            // UI libraries
-            if (id.includes('calendly') || id.includes('react-calendly')) {
-              return 'calendly'
             }
 
             // All other node_modules - much smaller now
