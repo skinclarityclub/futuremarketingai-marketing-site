@@ -7,7 +7,6 @@ import {
   Button,
   LoadingFallback,
   MetricCounter,
-  StrategicCTA,
   ProgressiveProfilingPrompt,
   shouldShowProfilePrompt,
   PricingAvailabilityBanner,
@@ -15,6 +14,8 @@ import {
   MarkdownText,
   ComparisonSection,
 } from '../components'
+// Direct import to avoid circular dependency
+import { StrategicCTA } from '../components/common/StrategicCTA'
 import { TechnicalShowcase, FounderExpertise } from '../components/credibility'
 import type { HeatMapData } from '../components'
 import { usePageAnalytics, useCalendlyBooking, usePersonalization } from '../hooks'
