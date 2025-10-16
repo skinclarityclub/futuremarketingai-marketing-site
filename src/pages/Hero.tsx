@@ -17,12 +17,13 @@ import {
   PremiumBadge,
   PricingAvailabilityBanner,
   ValueStackingSection,
-  StrategicCTA,
   IndustrySelector,
   PersonalizationControlBar,
   CustomBuildProcess,
   type Industry,
 } from '../components'
+// Direct import to avoid circular dependency
+import { StrategicCTA } from '../components/common/StrategicCTA'
 // Credibility components moved to strategic placements:
 // - TechnicalShowcase: Explorer (mid-funnel technical proof)
 // - FounderExpertise: Explorer (mid-funnel team credibility)

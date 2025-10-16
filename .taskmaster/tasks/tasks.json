@@ -7402,7 +7402,7 @@
           4,
           5
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": []
       },
       {
@@ -7415,7 +7415,7 @@
         "dependencies": [
           11
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": []
       },
       {
@@ -7807,7 +7807,7 @@
     ],
     "metadata": {
       "created": "2025-10-15T15:37:22.513Z",
-      "updated": "2025-10-15T23:19:58.672Z",
+      "updated": "2025-10-15T23:50:09.007Z",
       "description": "Tasks for hybrid-architecture-2025 context"
     }
   }
