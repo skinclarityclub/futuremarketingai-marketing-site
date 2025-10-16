@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { InlineWidget } from 'react-calendly'
 import { useTranslation } from 'react-i18next'
-import { Modal } from './'
+// Direct import to avoid circular dependency
+import { Modal } from './Modal'
 import { trackCalendly } from '../../utils/analytics'
 import { trackGA4Event } from '../../utils/ga4'
 import { hotjarEvent, HotjarEvents } from '../../utils/hotjar'

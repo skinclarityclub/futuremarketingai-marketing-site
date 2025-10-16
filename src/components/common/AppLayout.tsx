@@ -1,5 +1,8 @@
 import React from 'react'
-import { Breadcrumbs, NavigationProgress, PremiumBadge } from './'
+// Direct imports to avoid circular dependency
+import { Breadcrumbs } from './Breadcrumbs'
+import { NavigationProgress } from './NavigationProgress'
+import { PremiumBadge } from './PremiumBadge'
 
 interface AppLayoutProps {
   children: React.ReactNode
