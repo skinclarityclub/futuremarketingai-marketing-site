@@ -157,12 +157,20 @@ export default defineConfig(({ mode }) => ({
               return 'react-helmet'
             }
 
-            // Other React libraries that depend on React
+            // ALL React libraries that use createContext, hooks, or React APIs
+            // MUST come after react-core to ensure proper load order
             if (
               id.includes('react-markdown') ||
               id.includes('react-use') ||
               id.includes('react-cookie-consent') ||
-              id.includes('react-calendly')
+              id.includes('react-calendly') ||
+              id.includes('react-ga4') ||
+              id.includes('react-i18next') ||
+              id.includes('zustand') ||
+              id.includes('country-flag-icons/react') ||
+              id.includes('@sentry/react') ||
+              id.includes('lucide-react') ||
+              id.includes('react-icons')
             ) {
               return 'react-libs'
             }
@@ -182,8 +190,8 @@ export default defineConfig(({ mode }) => ({
               return 'motion'
             }
 
-            // i18n
-            if (id.includes('i18next') || id.includes('i18n')) {
+            // i18n - base i18next WITHOUT React bindings (react-i18next is in react-libs)
+            if ((id.includes('i18next') || id.includes('i18n')) && !id.includes('react-i18next')) {
               return 'i18n'
             }
 
@@ -192,22 +200,17 @@ export default defineConfig(({ mode }) => ({
               return 'web-vitals'
             }
 
-            if (id.includes('react-ga4')) {
-              return 'analytics-ga'
-            }
-
-            if (id.includes('@sentry') || id.includes('sentry')) {
+            // Sentry core (non-React parts) - React parts are in react-libs
+            if (
+              (id.includes('@sentry') || id.includes('sentry')) &&
+              !id.includes('@sentry/react')
+            ) {
               return 'sentry'
             }
 
             // Utilities (PDF, clipboard, etc)
             if (id.includes('jspdf') || id.includes('html2canvas') || id.includes('dompurify')) {
               return 'utils'
-            }
-
-            // Icon libraries
-            if (id.includes('lucide-react') || id.includes('react-icons')) {
-              return 'icons'
             }
 
             // All other node_modules - much smaller now
