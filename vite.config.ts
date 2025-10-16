@@ -139,7 +139,7 @@ export default defineConfig(({ mode }) => ({
       },
 
       output: {
-        // Advanced manual chunking strategy
+        // Advanced manual chunking strategy - more granular to avoid circular deps
         manualChunks: (id) => {
           // Node modules chunking
           if (id.includes('node_modules')) {
@@ -148,9 +148,13 @@ export default defineConfig(({ mode }) => ({
               return 'react-core'
             }
             
-            // React Router separately
+            // React ecosystem separately
             if (id.includes('react-router')) {
               return 'react-router'
+            }
+            
+            if (id.includes('react-helmet')) {
+              return 'react-helmet'
             }
 
             // 3D rendering (largest dependencies)
@@ -158,8 +162,8 @@ export default defineConfig(({ mode }) => ({
               return 'three'
             }
 
-            // Charts & data visualization
-            if (id.includes('recharts') || id.includes('d3')) {
+            // Charts & data visualization (including Redux for Recharts)
+            if (id.includes('recharts') || id.includes('d3') || id.includes('redux')) {
               return 'charts'
             }
 
@@ -169,13 +173,21 @@ export default defineConfig(({ mode }) => ({
             }
 
             // i18n
-            if (id.includes('i18next')) {
+            if (id.includes('i18next') || id.includes('i18n')) {
               return 'i18n'
             }
 
-            // Analytics & monitoring
-            if (id.includes('web-vitals') || id.includes('react-ga4') || id.includes('@sentry')) {
-              return 'analytics'
+            // Analytics & monitoring - separate to avoid conflicts
+            if (id.includes('web-vitals')) {
+              return 'web-vitals'
+            }
+            
+            if (id.includes('react-ga4')) {
+              return 'analytics-ga'
+            }
+            
+            if (id.includes('@sentry') || id.includes('sentry')) {
+              return 'sentry'
             }
 
             // Utilities (PDF, clipboard, etc)
@@ -184,11 +196,16 @@ export default defineConfig(({ mode }) => ({
             }
 
             // Icon libraries
-            if (id.includes('react-icons')) {
+            if (id.includes('lucide-react') || id.includes('react-icons')) {
               return 'icons'
             }
+            
+            // UI libraries
+            if (id.includes('calendly') || id.includes('react-calendly')) {
+              return 'calendly'
+            }
 
-            // All other node_modules
+            // All other node_modules - much smaller now
             return 'vendor-misc'
           }
         },
