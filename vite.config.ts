@@ -99,31 +99,29 @@ export default defineConfig(({ mode }) => ({
     // Target modern browsers for better optimization
     target: 'es2020',
 
-    // Minification settings
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        // Remove console logs in production
-        drop_console: mode === 'production',
-        drop_debugger: true,
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
-        // Safe optimizations only - avoid unsafe transforms that can break code
-        passes: 1,
-        unsafe_arrows: false,
-        unsafe_methods: false,
-        unsafe_proto: false,
-        // Prevent variable hoisting issues
-        toplevel: false,
-      },
-      mangle: {
-        safari10: true,
-        // Preserve variable names that might cause initialization issues
-        keep_fnames: false,
-      },
-      format: {
-        comments: false, // Remove all comments
-      },
-    },
+    // Minification settings - use esbuild instead of terser to avoid hoisting issues
+    minify: 'esbuild',
+    
+    // Keep terser config for reference if we need to switch back
+    // terserOptions: {
+    //   compress: {
+    //     drop_console: mode === 'production',
+    //     drop_debugger: true,
+    //     pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+    //     passes: 1,
+    //     unsafe_arrows: false,
+    //     unsafe_methods: false,
+    //     unsafe_proto: false,
+    //     toplevel: false,
+    //   },
+    //   mangle: {
+    //     safari10: true,
+    //     keep_fnames: false,
+    //   },
+    //   format: {
+    //     comments: false,
+    //   },
+    // },
 
     // CSS code splitting
     cssCodeSplit: true,
