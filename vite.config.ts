@@ -139,12 +139,12 @@ export default defineConfig(({ mode }) => ({
       },
 
       output: {
-        // Advanced manual chunking strategy - more granular to avoid circular deps
+        // Advanced manual chunking strategy with explicit dependency order
         manualChunks: (id) => {
           // Node modules chunking
           if (id.includes('node_modules')) {
-            // Core React libraries - MUST be first to ensure React is properly bundled
-            if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/react-is/')) {
+            // Core React libraries - Use regex for precise matching
+            if (id.match(/[\\/]react([-]dom|[-]is)?[\\/]/)) {
               return 'react-core'
             }
 
@@ -158,19 +158,12 @@ export default defineConfig(({ mode }) => ({
             }
 
             // ALL React libraries that use createContext, hooks, or React APIs
-            // MUST come after react-core to ensure proper load order
+            // Use regex for comprehensive matching of React-dependent libraries
             if (
-              id.includes('react-markdown') ||
-              id.includes('react-use') ||
-              id.includes('react-cookie-consent') ||
-              id.includes('react-calendly') ||
-              id.includes('react-ga4') ||
-              id.includes('react-i18next') ||
-              id.includes('zustand') ||
-              id.includes('country-flag-icons/react') ||
-              id.includes('@sentry/react') ||
-              id.includes('lucide-react') ||
-              id.includes('react-icons')
+              id.match(/react-(markdown|use|cookie-consent|calendly|ga4|i18next)/) ||
+              id.match(
+                /zustand|country-flag-icons[\\/]react|@sentry[\\/]react|lucide-react|react-icons/
+              )
             ) {
               return 'react-libs'
             }
