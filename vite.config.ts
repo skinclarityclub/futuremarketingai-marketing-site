@@ -45,13 +45,33 @@ export default defineConfig(({ mode }) => ({
       readable: true,
       outDir: 'dist',
     }),
-    // Custom plugin to inject environment variables into HTML
+    // Custom plugin to inject environment variables and fix chunk loading order
     {
       name: 'html-transform',
-      transformIndexHtml(html) {
-        return html.replace(/%(\w+)%/g, (match, key) => {
-          return process.env[key] || match
-        })
+      transformIndexHtml: {
+        order: 'post',
+        handler(html, ctx) {
+          // Replace environment variables
+          html = html.replace(/%(\w+)%/g, (match, key) => {
+            return process.env[key] || match
+          })
+
+          // In production, ensure react-core loads before other chunks
+          if (mode === 'production' && ctx.bundle) {
+            // Find react-core chunk
+            const reactCoreChunk = Object.values(ctx.bundle).find(
+              (chunk) => chunk.type === 'chunk' && chunk.fileName.includes('react-core')
+            )
+
+            if (reactCoreChunk && reactCoreChunk.type === 'chunk') {
+              // Add preload for react-core at the very beginning of <head>
+              const preloadTag = `<link rel="modulepreload" href="/${reactCoreChunk.fileName}" />`
+              html = html.replace('<head>', `<head>\n    ${preloadTag}`)
+            }
+          }
+
+          return html
+        },
       },
     },
     // Gzip compression for production
@@ -106,9 +126,12 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: true,
       resolveDependencies: (filename, deps, { hostId, hostType }) => {
-        // Ensure react-core always loads before react-libs
-        if (filename.includes('react-libs')) {
-          return deps.filter((dep) => dep.includes('react-core'))
+        // Force react-core to load first before ANY other chunk
+        const reactCoreDep = deps.find((dep) => dep.includes('react-core'))
+        if (reactCoreDep && !filename.includes('react-core')) {
+          // Ensure react-core is at the beginning
+          const otherDeps = deps.filter((dep) => !dep.includes('react-core'))
+          return [reactCoreDep, ...otherDeps]
         }
         return deps
       },
@@ -159,9 +182,30 @@ export default defineConfig(({ mode }) => ({
             if (
               id.match(/[\\/]node_modules[\\/]react[\\/]/) ||
               id.match(/[\\/]node_modules[\\/]react-dom[\\/]/) ||
-              id.match(/[\\/]node_modules[\\/]react-is[\\/]/)
+              id.match(/[\\/]node_modules[\\/]react-is[\\/]/) ||
+              id.match(/[\\/]node_modules[\\/]scheduler[\\/]/)
             ) {
               return 'react-core'
+            }
+
+            // React ecosystem - depends on react-core
+            if (
+              id.includes('react-router') ||
+              id.includes('react-i18next') ||
+              id.includes('framer-motion') ||
+              id.includes('zustand') ||
+              id.includes('@sentry/react') ||
+              id.includes('react-helmet') ||
+              id.includes('react-ga4') ||
+              id.includes('react-calendly') ||
+              id.includes('react-cookie') ||
+              id.includes('react-icons') ||
+              id.includes('react-markdown') ||
+              id.includes('react-use') ||
+              id.includes('recharts') ||
+              id.includes('@react-three')
+            ) {
+              return 'react-libs'
             }
 
             // 2. Pure non-React libraries (safe to load independently)
@@ -205,9 +249,8 @@ export default defineConfig(({ mode }) => ({
               return 'vendor-vitals'
             }
 
-            // 3. EVERYTHING ELSE goes to react-libs (assumes React dependency)
-            // This includes: react-*, framer-motion, recharts, zustand, etc.
-            return 'react-libs'
+            // 3. Miscellaneous vendor code (non-React utilities)
+            return 'vendor-misc'
           }
         },
 
