@@ -107,14 +107,18 @@ export default defineConfig(({ mode }) => ({
         drop_console: mode === 'production',
         drop_debugger: true,
         pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
-        // Advanced optimizations
-        passes: 2,
-        unsafe_arrows: true,
-        unsafe_methods: true,
-        unsafe_proto: true,
+        // Safe optimizations only - avoid unsafe transforms that can break code
+        passes: 1,
+        unsafe_arrows: false,
+        unsafe_methods: false,
+        unsafe_proto: false,
+        // Prevent variable hoisting issues
+        toplevel: false,
       },
       mangle: {
         safari10: true,
+        // Preserve variable names that might cause initialization issues
+        keep_fnames: false,
       },
       format: {
         comments: false, // Remove all comments
