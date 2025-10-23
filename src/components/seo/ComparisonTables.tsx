@@ -14,180 +14,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Check, X, Sparkles } from 'lucide-react'
-
-/**
- * Early Adopter Pricing Tiers
- * Source: src/config/platformKnowledge.ts, src/services/llmService.ts
- */
-export const PRICING_TIERS = [
-  {
-    name: 'Founding Member',
-    price: '€15,000',
-    period: '/month',
-    savings: '€120,000 saved vs Standard',
-    slots: '2 of 5 remaining',
-    urgency: 'high',
-    features: [
-      'All 6 Core AI Modules',
-      'Rate locked for 24 months',
-      '2 months completely FREE',
-      'Roadmap influence priority',
-      'Dedicated success manager',
-      'Priority support (2h response)',
-      '42% discount vs Standard rate',
-    ],
-    badge: '🏆 Best Value',
-    badgeColor: 'gold',
-  },
-  {
-    name: 'Pioneer',
-    price: '€17,500',
-    period: '/month',
-    savings: '€60,000 saved vs Standard',
-    slots: '4 of 10 remaining',
-    urgency: 'medium',
-    features: [
-      'All 6 Core AI Modules',
-      'Rate locked for 24 months',
-      '1 month completely FREE',
-      'Roadmap feedback channel',
-      'Priority support (4h response)',
-      '22% discount vs Standard rate',
-    ],
-    badge: '💎 Popular',
-    badgeColor: 'blue',
-  },
-  {
-    name: 'Innovator',
-    price: '€20,000',
-    period: '/month',
-    savings: '€30,000 saved vs Standard',
-    slots: '2 of 10 remaining',
-    urgency: 'low',
-    features: [
-      'All 6 Core AI Modules',
-      'Rate locked for 12 months',
-      'Roadmap access',
-      'Standard support (8h response)',
-      '11% discount vs Standard rate',
-    ],
-    badge: '🚀 Limited',
-    badgeColor: 'purple',
-  },
-  {
-    name: 'Standard',
-    price: '€22,500',
-    period: '/month',
-    savings: null,
-    slots: 'Unlimited availability',
-    urgency: null,
-    features: [
-      'All 6 Core AI Modules',
-      'Month-to-month pricing',
-      'Standard support (12h response)',
-    ],
-    badge: null,
-    badgeColor: null,
-  },
-] as const
-
-/**
- * Core Platform Features
- * Source: src/config/platformKnowledge.ts
- */
-export const PLATFORM_FEATURES = [
-  {
-    category: 'AI Research & Planning',
-    description: 'Analyzes trends 24/7',
-    savings: '€6,400/month',
-    benefit: 'Never miss market opportunities',
-  },
-  {
-    category: 'Manager Orchestrator',
-    description: 'Coordinates all workflows',
-    savings: '€12,000/month',
-    benefit: 'Zero manual coordination needed',
-  },
-  {
-    category: 'Content Pipelines',
-    description: '15x faster content creation',
-    savings: '€8,000/month',
-    benefit: 'Scale content without hiring',
-  },
-  {
-    category: 'Smart Publishing',
-    description: '35% better engagement',
-    additionalRevenue: '€15,000/month',
-    benefit: 'Optimized multi-channel distribution',
-  },
-  {
-    category: 'Self-Learning Analytics',
-    description: '23% monthly improvement',
-    benefit: 'Platform gets smarter over time',
-  },
-  {
-    category: 'Ad Automation',
-    description: '3.2x better ROAS',
-    additionalRevenue: '€45,000/month',
-    benefit: 'Maximize advertising ROI',
-  },
-] as const
-
-/**
- * Traditional Tools vs Future Marketing AI
- */
-export const TOOL_COMPARISON = [
-  {
-    need: 'Content Creation',
-    traditional: 'Jasper + Copy.ai + Writesonic',
-    traditionalCost: '€300/month',
-    futureMarketing: 'Included (AI Content Pipelines)',
-    included: true,
-  },
-  {
-    need: 'Social Media Management',
-    traditional: 'Hootsuite Enterprise',
-    traditionalCost: '€600/month',
-    futureMarketing: 'Included (Smart Publishing)',
-    included: true,
-  },
-  {
-    need: 'Analytics & Reporting',
-    traditional: 'Google Analytics 360',
-    traditionalCost: '€12,500/month',
-    futureMarketing: 'Included (Self-Learning Analytics)',
-    included: true,
-  },
-  {
-    need: 'Ad Management',
-    traditional: 'AdEspresso + Smartly.io',
-    traditionalCost: '€1,200/month',
-    futureMarketing: 'Included (Ad Automation)',
-    included: true,
-  },
-  {
-    need: 'Marketing Automation',
-    traditional: 'HubSpot Enterprise',
-    traditionalCost: '€3,600/month',
-    futureMarketing: 'Included (Manager Orchestrator)',
-    included: true,
-  },
-  {
-    need: 'Market Research',
-    traditional: 'SEMrush + Ahrefs + BuzzSumo',
-    traditionalCost: '€800/month',
-    futureMarketing: 'Included (AI Research & Planning)',
-    included: true,
-  },
-  {
-    need: 'Agency Labor (3 FTEs)',
-    traditional: 'Full-service agency',
-    traditionalCost: '€7,000/month',
-    futureMarketing: 'Automated workflows',
-    included: true,
-  },
-] as const
+import { Check, Sparkles } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 interface PricingTableProps {
   /** Show Early Adopter urgency indicators */
@@ -195,6 +23,32 @@ interface PricingTableProps {
   /** Highlight a specific tier (by index) */
   highlightTier?: number
   className?: string
+}
+
+interface PricingTier {
+  name: string
+  price: string
+  period: string
+  savings: string | null
+  slots: string
+  features: string[]
+  badge: string | null
+  urgency?: 'high' | 'medium' | 'low' | null
+}
+
+interface PlatformFeature {
+  category: string
+  description: string
+  savings?: string
+  additionalRevenue?: string
+  benefit: string
+}
+
+interface ToolComparison {
+  need: string
+  traditional: string
+  traditionalCost: string
+  futureMarketing: string
 }
 
 /**
@@ -207,20 +61,42 @@ export const PricingTable: React.FC<PricingTableProps> = ({
   highlightTier = 0,
   className = '',
 }) => {
+  const { t } = useTranslation(['pricing_comparison'])
+
+  // Load pricing tiers from translations
+  const TIER_KEYS = ['founding_member', 'pioneer', 'innovator', 'standard'] as const
+  const tiers = TIER_KEYS.map((key) => {
+    const tierData = t(`pricing_comparison:pricing_tiers.${key}`, {
+      returnObjects: true,
+    }) as PricingTier
+    return {
+      ...tierData,
+      urgency:
+        key === 'founding_member'
+          ? ('high' as const)
+          : key === 'pioneer'
+            ? ('medium' as const)
+            : key === 'innovator'
+              ? ('low' as const)
+              : null,
+    }
+  })
+
   return (
     <section className={`py-16 md:py-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Early Adopter Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            {t('pricing_comparison:pricing_table.title')}
+          </h2>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Lock in founding rates and save up to €120,000 vs standard pricing. Limited slots
-            available.
+            {t('pricing_comparison:pricing_table.subtitle')}
           </p>
         </div>
 
         {/* Desktop: Grid Layout */}
         <div className="hidden lg:grid lg:grid-cols-4 gap-6">
-          {PRICING_TIERS.map((tier, index) => (
+          {tiers.map((tier: any, index) => (
             <motion.div
               key={tier.name}
               initial={{ opacity: 0, y: 20 }}
@@ -268,7 +144,7 @@ export const PricingTable: React.FC<PricingTableProps> = ({
 
               {/* Features */}
               <ul className="mt-6 space-y-3">
-                {tier.features.map((feature) => (
+                {tier.features.map((feature: string) => (
                   <li key={feature} className="flex items-start gap-2 text-sm text-blue-100">
                     <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <span>{feature}</span>
@@ -285,7 +161,9 @@ export const PricingTable: React.FC<PricingTableProps> = ({
                       : 'bg-white/10 border border-white/20 text-white hover:bg-white/20'
                   }`}
                 >
-                  {index === 3 ? 'Coming Soon' : 'Secure Slot'}
+                  {index === 3
+                    ? t('pricing_comparison:pricing_table.coming_soon')
+                    : t('pricing_comparison:pricing_table.secure_slot')}
                 </button>
               </div>
             </motion.div>
@@ -297,14 +175,22 @@ export const PricingTable: React.FC<PricingTableProps> = ({
           <table className="w-full border-collapse bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden">
             <thead>
               <tr className="bg-white/10">
-                <th className="px-4 py-3 text-left text-sm font-semibold text-white">Tier</th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-white">Price</th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-white">Savings</th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-white">Slots</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:pricing_table.table_headers.tier')}
+                </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:pricing_table.table_headers.price')}
+                </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:pricing_table.table_headers.savings')}
+                </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:pricing_table.table_headers.slots')}
+                </th>
               </tr>
             </thead>
             <tbody>
-              {PRICING_TIERS.map((tier) => (
+              {tiers.map((tier: any) => (
                 <tr key={tier.name} className="border-t border-white/10">
                   <td className="px-4 py-3 text-white font-medium">{tier.name}</td>
                   <td className="px-4 py-3 text-white">{tier.price}/mo</td>
@@ -326,13 +212,20 @@ export const PricingTable: React.FC<PricingTableProps> = ({
  * Shows platform features with cost savings in LLM-friendly format.
  */
 export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const totalSavings = PLATFORM_FEATURES.reduce((acc, feature) => {
-    const savings = 'savings' in feature && feature.savings ? parseInt(feature.savings.replace(/[^0-9]/g, '')) : 0
+  const { t } = useTranslation(['pricing_comparison'])
+
+  // Load platform features from translations
+  const features = t('pricing_comparison:platform_features', {
+    returnObjects: true,
+  }) as PlatformFeature[]
+
+  const totalSavings = features.reduce((acc, feature) => {
+    const savings = feature.savings ? parseInt(feature.savings.replace(/[^0-9]/g, '')) : 0
     return acc + savings
   }, 0)
 
-  const totalRevenue = PLATFORM_FEATURES.reduce((acc, feature) => {
-    const revenue = 'additionalRevenue' in feature && feature.additionalRevenue
+  const totalRevenue = features.reduce((acc, feature) => {
+    const revenue = feature.additionalRevenue
       ? parseInt(feature.additionalRevenue.replace(/[^0-9]/g, ''))
       : 0
     return acc + revenue
@@ -343,11 +236,13 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The Complete AI Marketing System
+            {t('pricing_comparison:feature_table.title')}
           </h2>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-6">
-            6 AI modules working together to save you €{totalSavings.toLocaleString()}/month and
-            generate €{totalRevenue.toLocaleString()}/month in additional revenue.
+            {t('pricing_comparison:feature_table.subtitle_template', {
+              savings: totalSavings.toLocaleString(),
+              revenue: totalRevenue.toLocaleString(),
+            })}
           </p>
         </div>
 
@@ -356,18 +251,22 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
           <table className="w-full border-collapse bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden">
             <thead>
               <tr className="bg-white/10">
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white">Module</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-white">Capability</th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-white">
-                  Monthly Value
+                  {t('pricing_comparison:feature_table.table_headers.module')}
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-white">
-                  Key Benefit
+                  {t('pricing_comparison:feature_table.table_headers.capability')}
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:feature_table.table_headers.monthly_value')}
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-white">
+                  {t('pricing_comparison:feature_table.table_headers.key_benefit')}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {PLATFORM_FEATURES.map((feature, index) => (
+              {features.map((feature, index) => (
                 <motion.tr
                   key={feature.category}
                   initial={{ opacity: 0 }}
@@ -378,16 +277,21 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
                   <td className="px-6 py-4 font-semibold text-white">{feature.category}</td>
                   <td className="px-6 py-4 text-blue-100">{feature.description}</td>
                   <td className="px-6 py-4">
-                    {'savings' in feature && feature.savings && (
-                      <span className="text-green-400 font-medium">{feature.savings} saved</span>
-                    )}
-                    {'additionalRevenue' in feature && feature.additionalRevenue && (
-                      <span className="text-purple-400 font-medium">
-                        +{feature.additionalRevenue} revenue
+                    {feature.savings && (
+                      <span className="text-green-400 font-medium">
+                        {feature.savings} {t('pricing_comparison:feature_table.value_labels.saved')}
                       </span>
                     )}
-                    {!('savings' in feature && feature.savings) && !('additionalRevenue' in feature && feature.additionalRevenue) && (
-                      <span className="text-blue-100">Included</span>
+                    {feature.additionalRevenue && (
+                      <span className="text-purple-400 font-medium">
+                        +{feature.additionalRevenue}{' '}
+                        {t('pricing_comparison:feature_table.value_labels.revenue')}
+                      </span>
+                    )}
+                    {!feature.savings && !feature.additionalRevenue && (
+                      <span className="text-blue-100">
+                        {t('pricing_comparison:feature_table.value_labels.included')}
+                      </span>
                     )}
                   </td>
                   <td className="px-6 py-4 text-blue-100">{feature.benefit}</td>
@@ -397,17 +301,21 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
             <tfoot>
               <tr className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-t-2 border-white/20">
                 <td colSpan={2} className="px-6 py-4 font-bold text-white text-lg">
-                  Total Platform Value
+                  {t('pricing_comparison:feature_table.footer.total_platform_value')}
                 </td>
                 <td className="px-6 py-4">
                   <div className="font-bold text-green-400 text-lg">
-                    €{totalSavings.toLocaleString()}/mo saved
+                    €{totalSavings.toLocaleString()}
+                    {t('pricing_comparison:feature_table.footer.saved_label')}
                   </div>
                   <div className="font-bold text-purple-400">
-                    +€{totalRevenue.toLocaleString()}/mo revenue
+                    +€{totalRevenue.toLocaleString()}
+                    {t('pricing_comparison:feature_table.footer.revenue_label')}
                   </div>
                 </td>
-                <td className="px-6 py-4 text-blue-100">847% average ROI</td>
+                <td className="px-6 py-4 text-blue-100">
+                  {t('pricing_comparison:feature_table.footer.average_roi')}
+                </td>
               </tr>
             </tfoot>
           </table>
@@ -417,12 +325,19 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
         <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl text-center">
           <p className="text-xl text-white font-semibold mb-2">
             <Sparkles className="inline w-6 h-6 text-yellow-400 mr-2" />
-            Platform ROI: €{(totalSavings + totalRevenue - 15000).toLocaleString()}/month net gain
+            {t('pricing_comparison:feature_table.value_proposition.platform_roi_template', {
+              net_gain: (totalSavings + totalRevenue - 15000).toLocaleString(),
+            })}
           </p>
           <p className="text-blue-100">
-            At Founding Member pricing (€15,000/month), you're saving €
-            {totalSavings.toLocaleString()} + generating €{totalRevenue.toLocaleString()} = €
-            {(totalSavings + totalRevenue).toLocaleString()} total value
+            {t(
+              'pricing_comparison:feature_table.value_proposition.founding_member_explanation_template',
+              {
+                savings: totalSavings.toLocaleString(),
+                revenue: totalRevenue.toLocaleString(),
+                total_value: (totalSavings + totalRevenue).toLocaleString(),
+              }
+            )}
           </p>
         </div>
       </div>
@@ -436,7 +351,12 @@ export const FeatureComparisonTable: React.FC<{ className?: string }> = ({ class
  * Shows what traditional tools Future Marketing AI replaces.
  */
 export const ToolComparisonTable: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const totalTraditionalCost = TOOL_COMPARISON.reduce((acc, item) => {
+  const { t } = useTranslation(['pricing_comparison'])
+
+  // Load tool comparison from translations
+  const tools = t('pricing_comparison:tool_comparison', { returnObjects: true }) as ToolComparison[]
+
+  const totalTraditionalCost = tools.reduce((acc, item) => {
     const cost = parseInt(item.traditionalCost.replace(/[^0-9]/g, ''))
     return acc + cost
   }, 0)
@@ -446,11 +366,10 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Replace 10+ Tools with One Platform
+            {t('pricing_comparison:tool_table.title')}
           </h2>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Stop paying for fragmented tools. Future Marketing AI replaces your entire marketing
-            stack.
+            {t('pricing_comparison:tool_table.subtitle')}
           </p>
         </div>
 
@@ -460,21 +379,21 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
             <thead>
               <tr className="bg-white/10">
                 <th className="px-6 py-4 text-left text-sm font-semibold text-white">
-                  Marketing Need
+                  {t('pricing_comparison:tool_table.table_headers.marketing_need')}
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-semibold text-white">
-                  Traditional Tools
+                  {t('pricing_comparison:tool_table.table_headers.traditional_tools')}
                 </th>
                 <th className="px-6 py-4 text-right text-sm font-semibold text-white">
-                  Traditional Cost
+                  {t('pricing_comparison:tool_table.table_headers.traditional_cost')}
                 </th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-white">
-                  Future Marketing AI
+                  {t('pricing_comparison:tool_table.table_headers.future_marketing_ai')}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {TOOL_COMPARISON.map((item, index) => (
+              {tools.map((item, index) => (
                 <motion.tr
                   key={item.need}
                   initial={{ opacity: 0 }}
@@ -488,17 +407,12 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
                     {item.traditionalCost}
                   </td>
                   <td className="px-6 py-4 text-center">
-                    {item.included ? (
-                      <div className="flex items-center justify-center gap-2">
-                        <Check className="w-5 h-5 text-green-400" />
-                        <span className="text-green-400 font-medium">Included</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-center gap-2">
-                        <X className="w-5 h-5 text-red-400" />
-                        <span className="text-red-400">Not included</span>
-                      </div>
-                    )}
+                    <div className="flex items-center justify-center gap-2">
+                      <Check className="w-5 h-5 text-green-400" />
+                      <span className="text-green-400 font-medium">
+                        {t('pricing_comparison:tool_table.status_labels.included')}
+                      </span>
+                    </div>
                   </td>
                 </motion.tr>
               ))}
@@ -506,7 +420,7 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
             <tfoot>
               <tr className="bg-gradient-to-r from-red-500/20 to-green-500/20 border-t-2 border-white/20">
                 <td colSpan={2} className="px-6 py-4 font-bold text-white text-lg">
-                  Total Monthly Cost
+                  {t('pricing_comparison:tool_table.footer.total_monthly_cost')}
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div className="font-bold text-red-400 text-lg line-through">
@@ -515,7 +429,9 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
                 </td>
                 <td className="px-6 py-4 text-center">
                   <div className="font-bold text-green-400 text-lg">€15,000/month</div>
-                  <div className="text-sm text-blue-100">(Founding Member rate)</div>
+                  <div className="text-sm text-blue-100">
+                    {t('pricing_comparison:tool_table.footer.founding_member_rate')}
+                  </div>
                 </td>
               </tr>
             </tfoot>
@@ -525,14 +441,18 @@ export const ToolComparisonTable: React.FC<{ className?: string }> = ({ classNam
         {/* Savings Highlight */}
         <div className="mt-8 p-6 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-xl text-center">
           <p className="text-2xl text-white font-bold mb-2">
-            💰 Save €{(totalTraditionalCost - 15000).toLocaleString()}/month
+            💰{' '}
+            {t('pricing_comparison:tool_table.savings_highlight.save_template', {
+              savings: (totalTraditionalCost - 15000).toLocaleString(),
+            })}
           </p>
           <p className="text-green-400 text-lg font-semibold">
-            That's €{((totalTraditionalCost - 15000) * 12).toLocaleString()}/year in immediate
-            savings
+            {t('pricing_comparison:tool_table.savings_highlight.yearly_savings_template', {
+              savings: ((totalTraditionalCost - 15000) * 12).toLocaleString(),
+            })}
           </p>
           <p className="text-blue-100 mt-2">
-            Plus you get a unified, autonomous system that becomes smarter over time.
+            {t('pricing_comparison:tool_table.savings_highlight.unified_system')}
           </p>
         </div>
       </div>

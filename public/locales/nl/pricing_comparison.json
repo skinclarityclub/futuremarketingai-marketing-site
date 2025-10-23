@@ -1,0 +1,206 @@
+{
+  "pricing_tiers": {
+    "founding_member": {
+      "name": "Oprichtend Lid",
+      "price": "€15.000",
+      "period": "/maand",
+      "savings": "€120.000 bespaard vs Standaard",
+      "slots": "2 van 5 over",
+      "features": [
+        "Alle 6 kernmodules",
+        "Tarief vastgezet voor 24 maanden",
+        "2 maanden volledig GRATIS",
+        "Roadmap invloed prioriteit",
+        "Toegewezen success manager",
+        "Prioriteitsondersteuning (2u respons)",
+        "42% korting vs Standaardtarief"
+      ],
+      "badge": "🏆 Beste Waarde"
+    },
+    "pioneer": {
+      "name": "Pioneer",
+      "price": "€17.500",
+      "period": "/maand",
+      "savings": "€60.000 bespaard vs Standaard",
+      "slots": "4 van 10 over",
+      "features": [
+        "Alle 6 kernmodules",
+        "Tarief vastgezet voor 24 maanden",
+        "1 maand volledig GRATIS",
+        "Roadmap feedbackkanaal",
+        "Prioriteitsondersteuning (4u respons)",
+        "22% korting vs Standaardtarief"
+      ],
+      "badge": "💎 Populair"
+    },
+    "innovator": {
+      "name": "Innovator",
+      "price": "€20.000",
+      "period": "/maand",
+      "savings": "€30.000 bespaard vs Standaard",
+      "slots": "2 van 10 over",
+      "features": [
+        "Alle 6 kernmodules",
+        "Tarief vastgezet voor 12 maanden",
+        "Toegang tot roadmap",
+        "Standaard ondersteuning (8u respons)",
+        "11% korting vs Standaardtarief"
+      ],
+      "badge": "🚀 Beperkt"
+    },
+    "standard": {
+      "name": "Standaard",
+      "price": "€22.500",
+      "period": "/maand",
+      "savings": null,
+      "slots": "Onbeperkte beschikbaarheid",
+      "features": [
+        "Alle 6 kernmodules",
+        "Maand-tot-maand prijzen",
+        "Standaard ondersteuning (12u respons)"
+      ],
+      "badge": null
+    }
+  },
+  "pricing_table": {
+    "title": "Early Adopter Prijzen",
+    "subtitle": "Vergrendel oprichterstarief en bespaar tot €120.000 vs standaardprijzen. Beperkte plekken beschikbaar.",
+    "secure_slot": "Plek Veiligstellen",
+    "coming_soon": "Binnenkort",
+    "table_headers": {
+      "tier": "Niveau",
+      "price": "Prijs",
+      "savings": "Besparing",
+      "slots": "Plekken"
+    }
+  },
+  "platform_features": [
+    {
+      "category": "AI Research & Planning",
+      "description": "Analyseert trends 24/7",
+      "savings": "€6.400/maand",
+      "benefit": "Mis nooit marktkansen"
+    },
+    {
+      "category": "Manager Orchestrator",
+      "description": "Coördineert alle workflows",
+      "savings": "€12.000/maand",
+      "benefit": "Geen handmatige coördinatie nodig"
+    },
+    {
+      "category": "Content Pipelines",
+      "description": "15x snellere contentcreatie",
+      "savings": "€8.000/maand",
+      "benefit": "Schaal content zonder aannemen"
+    },
+    {
+      "category": "Smart Publishing",
+      "description": "35% betere betrokkenheid",
+      "additionalRevenue": "€15.000/maand",
+      "benefit": "Geoptimaliseerde multi-channel distributie"
+    },
+    {
+      "category": "Self-Learning Analytics",
+      "description": "23% maandelijkse verbetering",
+      "benefit": "Platform wordt slimmer in de tijd"
+    },
+    {
+      "category": "Ad Automation",
+      "description": "3.2x betere ROAS",
+      "additionalRevenue": "€45.000/maand",
+      "benefit": "Maximaliseer advertentie ROI"
+    }
+  ],
+  "feature_table": {
+    "title": "Het Complete AI Marketing Systeem",
+    "subtitle_template": "6 AI-modules die samenwerken om {{savings}}/maand te besparen en {{revenue}}/maand extra omzet te genereren.",
+    "table_headers": {
+      "module": "Module",
+      "capability": "Mogelijkheid",
+      "monthly_value": "Maandelijkse Waarde",
+      "key_benefit": "Belangrijk Voordeel"
+    },
+    "value_labels": {
+      "saved": "bespaard",
+      "revenue": "omzet",
+      "included": "Inbegrepen"
+    },
+    "footer": {
+      "total_platform_value": "Totale Platformwaarde",
+      "saved_label": "/mnd bespaard",
+      "revenue_label": "/mnd omzet",
+      "average_roi": "847% gemiddelde ROI"
+    },
+    "value_proposition": {
+      "platform_roi_template": "Platform ROI: €{{net_gain}}/maand netto winst",
+      "founding_member_explanation_template": "Met Oprichtend Lid-prijzen (€15.000/maand), bespaar je €{{savings}} + genereer je €{{revenue}} = €{{total_value}} totale waarde"
+    }
+  },
+  "tool_comparison": [
+    {
+      "need": "Contentcreatie",
+      "traditional": "Jasper + Copy.ai + Writesonic",
+      "traditionalCost": "€300/maand",
+      "futureMarketing": "Inbegrepen (AI Content Pipelines)"
+    },
+    {
+      "need": "Social Media Management",
+      "traditional": "Hootsuite Enterprise",
+      "traditionalCost": "€600/maand",
+      "futureMarketing": "Inbegrepen (Smart Publishing)"
+    },
+    {
+      "need": "Analytics & Rapportage",
+      "traditional": "Google Analytics 360",
+      "traditionalCost": "€12.500/maand",
+      "futureMarketing": "Inbegrepen (Self-Learning Analytics)"
+    },
+    {
+      "need": "Advertentiebeheer",
+      "traditional": "AdEspresso + Smartly.io",
+      "traditionalCost": "€1.200/maand",
+      "futureMarketing": "Inbegrepen (Ad Automation)"
+    },
+    {
+      "need": "Marketing Automatisering",
+      "traditional": "HubSpot Enterprise",
+      "traditionalCost": "€3.600/maand",
+      "futureMarketing": "Inbegrepen (Manager Orchestrator)"
+    },
+    {
+      "need": "Marktonderzoek",
+      "traditional": "SEMrush + Ahrefs + BuzzSumo",
+      "traditionalCost": "€800/maand",
+      "futureMarketing": "Inbegrepen (AI Research & Planning)"
+    },
+    {
+      "need": "Bureau Arbeid (3 FTEs)",
+      "traditional": "Full-service bureau",
+      "traditionalCost": "€7.000/maand",
+      "futureMarketing": "Geautomatiseerde workflows"
+    }
+  ],
+  "tool_table": {
+    "title": "Vervang 10+ Tools met Één Platform",
+    "subtitle": "Stop met betalen voor gefragmenteerde tools. Future Marketing AI vervangt je volledige marketingstack.",
+    "table_headers": {
+      "marketing_need": "Marketing Behoefte",
+      "traditional_tools": "Traditionele Tools",
+      "traditional_cost": "Traditionele Kosten",
+      "future_marketing_ai": "Future Marketing AI"
+    },
+    "status_labels": {
+      "included": "Inbegrepen",
+      "not_included": "Niet inbegrepen"
+    },
+    "footer": {
+      "total_monthly_cost": "Totale Maandkosten",
+      "founding_member_rate": "(Oprichtend Lid-tarief)"
+    },
+    "savings_highlight": {
+      "save_template": "Bespaar €{{savings}}/maand",
+      "yearly_savings_template": "Dat is €{{savings}}/jaar aan directe besparingen",
+      "unified_system": "Plus je krijgt een uniform, autonoom systeem dat in de loop van de tijd slimmer wordt."
+    }
+  }
+}
