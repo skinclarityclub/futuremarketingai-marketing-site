@@ -753,6 +753,26 @@
         "demo_button": "Try Interactive Demo",
         "contact_button": "Book Founder Call"
       }
+    },
+    "hero_landing": {
+      "badge": "Next-Gen AI Marketing",
+      "main_headline": "Turn content into growth.",
+      "sub_headline": "On autopilot.",
+      "description": "Revolutionary AI-powered marketing automation that transforms premium businesses into market leaders. Experience enterprise-grade intelligent marketing designed for ambitious growth.",
+      "cta": {
+        "primary": "Try Interactive Demo",
+        "secondary": "Join Waitlist"
+      },
+      "solution_section": {
+        "badge": "The Solution",
+        "title": "How We Make It Happen",
+        "subtitle": "8 autonomous modules working 24/7 to accelerate your growth"
+      },
+      "final_cta": {
+        "title": "Ready to Claim Your Pioneer Advantage?",
+        "subtitle": "Join the first 10 teams building an unfair 2-3 year lead before mainstream adoption",
+        "button": "Join Waitlist - 2 Slots Left"
+      }
     }
   }
 }

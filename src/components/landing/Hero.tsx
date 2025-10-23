@@ -6,6 +6,7 @@
 
 import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
 
@@ -259,7 +260,7 @@ export const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
-  // t and showQualificationForm removed - not used in this static version
+  const { t } = useTranslation('common')
 
   useEffect(() => {
     if (isInView) {
@@ -290,19 +291,6 @@ export const Hero: React.FC = () => {
     },
   }
 
-  // Hardcoded translations for now (can be moved to i18n later)
-  const heroText = {
-    badge: 'Next-Gen AI Marketing',
-    mainHeadline: 'Turn content into growth.',
-    subHeadline: 'On autopilot.',
-    description:
-      'Revolutionary AI-powered marketing automation that transforms premium businesses into market leaders. Experience enterprise-grade intelligent marketing designed for ambitious growth.',
-    cta: {
-      primary: 'Try Interactive Demo',
-      secondary: 'Join Waitlist',
-    },
-  }
-
   return (
     <section
       ref={ref}
@@ -325,7 +313,7 @@ export const Hero: React.FC = () => {
         <motion.div className="flex justify-center mb-8" variants={itemVariants}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white">
             <Sparkles className="h-4 w-4 text-blue-400" />
-            <span className="text-sm font-medium">{heroText.badge}</span>
+            <span className="text-sm font-medium">{t('landing.hero_landing.badge')}</span>
             <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
           </div>
         </motion.div>
@@ -338,14 +326,14 @@ export const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              {heroText.mainHeadline}
+              {t('landing.hero_landing.main_headline')}
             </motion.span>
             <motion.span
               className="block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              {heroText.subHeadline}
+              {t('landing.hero_landing.sub_headline')}
             </motion.span>
           </h1>
         </motion.div>
@@ -355,7 +343,7 @@ export const Hero: React.FC = () => {
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 text-center max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-4"
           variants={itemVariants}
         >
-          {heroText.description}
+          {t('landing.hero_landing.description')}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -370,7 +358,7 @@ export const Hero: React.FC = () => {
               className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 w-full sm:w-auto"
             >
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
-              {heroText.cta.primary}
+              {t('landing.hero_landing.cta.primary')}
             </Button>
           </motion.div>
 
@@ -382,7 +370,7 @@ export const Hero: React.FC = () => {
               className="group bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl transition-all duration-300 w-full sm:w-auto"
             >
               <Play className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
-              {heroText.cta.secondary}
+              {t('landing.hero_landing.cta.secondary')}
             </Button>
           </motion.div>
         </motion.div>
@@ -479,11 +467,15 @@ export const Hero: React.FC = () => {
       >
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-4">
-            <span className="text-sm font-semibold text-blue-300">The Solution</span>
+            <span className="text-sm font-semibold text-blue-300">
+              {t('landing.hero_landing.solution_section.badge')}
+            </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Make It Happen</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            {t('landing.hero_landing.solution_section.title')}
+          </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            8 autonomous modules working 24/7 to accelerate your growth
+            {t('landing.hero_landing.solution_section.subtitle')}
           </p>
         </div>
 
@@ -506,10 +498,10 @@ export const Hero: React.FC = () => {
         transition={{ delay: 2, duration: 0.8 }}
       >
         <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Ready to Claim Your Pioneer Advantage?
+          {t('landing.hero_landing.final_cta.title')}
         </h3>
         <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-          Join the first 10 teams building an unfair 2-3 year lead before mainstream adoption
+          {t('landing.hero_landing.final_cta.subtitle')}
         </p>
 
         <motion.div
@@ -523,7 +515,7 @@ export const Hero: React.FC = () => {
             className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-12 py-6 text-lg font-semibold rounded-xl shadow-2xl"
           >
             <Sparkles className="mr-2 h-5 w-5" />
-            Join Waitlist - 2 Slots Left
+            {t('landing.hero_landing.final_cta.button')}
           </Button>
         </motion.div>
       </motion.div>
