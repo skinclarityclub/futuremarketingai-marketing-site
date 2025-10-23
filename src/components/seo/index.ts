@@ -15,16 +15,9 @@ export {
   type Rating,
   type StructuredDataProps,
 } from './StructuredData'
-export { FAQSection, FAQCompact, FAQ_ITEMS } from './FAQSection'
-export {
-  PricingTable,
-  FeatureComparisonTable,
-  ToolComparisonTable,
-  PRICING_TIERS,
-  PLATFORM_FEATURES,
-  TOOL_COMPARISON,
-} from './ComparisonTables'
-export { TermDefinitions, TermTooltip, MARKETING_TERMS, ADVANCED_TERMS } from './TermDefinitions'
+export { FAQSection, FAQCompact } from './FAQSection'
+export { PricingTable, FeatureComparisonTable, ToolComparisonTable } from './ComparisonTables'
+export { TermDefinitions, TermTooltip } from './TermDefinitions'
 
 // Landing Page Components (in landing/ folder, re-exported for convenience)
 export { FeaturesSection } from '../landing/FeaturesSection'

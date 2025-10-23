@@ -17,13 +17,18 @@ import {
   FeatureComparisonTable,
   ToolComparisonTable,
 } from '../components/seo/ComparisonTables'
-import { FAQSection, FAQ_ITEMS } from '../components/seo/FAQSection'
+import { FAQSection } from '../components/seo/FAQSection'
 
 export const PricingPage: React.FC = () => {
-  const { t } = useTranslation(['pricing', 'common'])
+  const { t } = useTranslation(['pricing', 'common', 'seo'])
 
-  // Filter FAQs to pricing-related only
-  const pricingFAQs = FAQ_ITEMS.filter(
+  // Load FAQ items from translations and filter to pricing-related only
+  const allFAQs = t('seo:faq.items', { returnObjects: true }) as Array<{
+    question: string
+    answer: string
+  }>
+
+  const pricingFAQs = allFAQs.filter(
     (faq) =>
       faq.question.toLowerCase().includes('price') ||
       faq.question.toLowerCase().includes('cost') ||
