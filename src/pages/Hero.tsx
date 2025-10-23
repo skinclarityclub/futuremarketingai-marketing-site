@@ -70,14 +70,19 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Check if animation has already played this session
-  const hasPlayedAnimation = React.useMemo(() => {
-    return sessionStorage.getItem('demoAnimationPlayed') === 'true'
+  // Check if we came from the landing page (flag is set and then immediately cleared)
+  const shouldPlayAnimation = React.useMemo(() => {
+    const flag = sessionStorage.getItem('playDemoTransition')
+    if (flag === 'true') {
+      sessionStorage.removeItem('playDemoTransition') // Clear immediately
+      return true
+    }
+    return false // Don't play if arriving from within demo
   }, [])
 
-  // Neural Warp animation state - only play if not seen before
-  const [showWarp, setShowWarp] = useState(!hasPlayedAnimation)
-  const [warpComplete, setWarpComplete] = useState(hasPlayedAnimation)
+  // Neural Warp animation state - only play if coming from landing page
+  const [showWarp, setShowWarp] = useState(shouldPlayAnimation)
+  const [warpComplete, setWarpComplete] = useState(!shouldPlayAnimation)
 
   // i18n translation hook
   const { t } = useTranslation(['hero', 'common'])
@@ -138,8 +143,6 @@ export const Hero: React.FC = () => {
     console.log('✅ Warp complete! Setting warpComplete to true')
     setShowWarp(false)
     setWarpComplete(true)
-    // Mark animation as played for this session
-    sessionStorage.setItem('demoAnimationPlayed', 'true')
   }
 
   // Case studies REMOVED - Replaced with transparent early-stage positioning
