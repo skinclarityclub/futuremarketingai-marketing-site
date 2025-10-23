@@ -28,11 +28,8 @@ export const SimpleHeader: React.FC = () => {
   const handleDemoClick = (e: React.MouseEvent) => {
     e.preventDefault()
 
-    // Set flag to trigger animation when demo loads
-    sessionStorage.setItem('playDemoTransition', 'true')
-
-    // Open demo in new window with fullscreen
-    const demoWindow = window.open('/demo', '_blank', 'noopener,noreferrer')
+    // Open demo in new window with animation flag in URL
+    const demoWindow = window.open('/demo?animate=true', '_blank', 'noopener,noreferrer')
 
     if (demoWindow) {
       // Wait for window to load, then request fullscreen

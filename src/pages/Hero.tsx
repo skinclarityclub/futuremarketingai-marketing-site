@@ -70,14 +70,18 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Check if we came from the landing page (flag is set and then immediately cleared)
+  // Check if we came from the landing page (via ?animate=true query param)
   const shouldPlayAnimation = React.useMemo(() => {
-    const flag = sessionStorage.getItem('playDemoTransition')
-    if (flag === 'true') {
-      sessionStorage.removeItem('playDemoTransition') // Clear immediately
+    const urlParams = new URLSearchParams(window.location.search)
+    const animateParam = urlParams.get('animate')
+
+    if (animateParam === 'true') {
+      // Remove the query param from URL without reload
+      const newUrl = window.location.pathname
+      window.history.replaceState({}, '', newUrl)
       return true
     }
-    return false // Don't play if arriving from within demo
+    return false
   }, [])
 
   // Neural Warp animation state - only play if coming from landing page
