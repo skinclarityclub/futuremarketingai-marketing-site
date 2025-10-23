@@ -10,6 +10,7 @@
 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { Button } from '../components/ui/button'
@@ -17,6 +18,7 @@ import { Mail, Calendar, Linkedin, Twitter, Send, CheckCircle2, MapPin, Phone } 
 import { motion } from 'framer-motion'
 
 export const ContactPage: React.FC = () => {
+  const { t } = useTranslation(['contact', 'common'])
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,9 +56,9 @@ export const ContactPage: React.FC = () => {
 
       {/* SEO Meta Tags */}
       <SEOHead
-        title="Contact Sales | Future Marketing AI"
-        description="Get in touch with Future Marketing AI. Book a demo call, send us a message, or reach out directly. We're here to help you transform your marketing with autonomous AI."
-        keywords={['contact', 'sales', 'demo call', 'get in touch', 'customer support']}
+        title={t('contact:seo.title')}
+        description={t('contact:seo.description')}
+        keywords={t('contact:seo.keywords', { returnObjects: true }) as string[]}
         canonical="https://futuremarketingai.com/contact"
       />
 
@@ -69,10 +71,11 @@ export const ContactPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Get in Touch</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              {t('contact:hero.title')}
+            </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Ready to transform your marketing with autonomous AI? Let's talk about how Future
-              Marketing AI can help your business.
+              {t('contact:hero.description')}
             </p>
           </motion.div>
 
@@ -86,12 +89,12 @@ export const ContactPage: React.FC = () => {
             >
               {!isSubmitted ? (
                 <>
-                  <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
+                  <h2 className="text-2xl font-bold text-white mb-6">{t('contact:form.title')}</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Name */}
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                        Your Name *
+                        {t('contact:form.name_label')}
                       </label>
                       <input
                         type="text"
@@ -100,7 +103,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="John Doe"
+                        placeholder={t('contact:form.name_placeholder')}
                         required
                       />
                     </div>
@@ -108,7 +111,7 @@ export const ContactPage: React.FC = () => {
                     {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                        Email Address *
+                        {t('contact:form.email_label')}
                       </label>
                       <input
                         type="email"
@@ -117,7 +120,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="you@company.com"
+                        placeholder={t('contact:form.email_placeholder')}
                         required
                       />
                     </div>
@@ -128,7 +131,7 @@ export const ContactPage: React.FC = () => {
                         htmlFor="company"
                         className="block text-sm font-medium text-white mb-2"
                       >
-                        Company
+                        {t('contact:form.company_label')}
                       </label>
                       <input
                         type="text"
@@ -137,7 +140,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="Your Company Inc."
+                        placeholder={t('contact:form.company_placeholder')}
                       />
                     </div>
 
@@ -147,7 +150,7 @@ export const ContactPage: React.FC = () => {
                         htmlFor="message"
                         className="block text-sm font-medium text-white mb-2"
                       >
-                        Message *
+                        {t('contact:form.message_label')}
                       </label>
                       <textarea
                         id="message"
@@ -156,7 +159,7 @@ export const ContactPage: React.FC = () => {
                         onChange={handleChange}
                         rows={5}
                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                        placeholder="Tell us about your marketing goals and how we can help..."
+                        placeholder={t('contact:form.message_placeholder')}
                         required
                       />
                     </div>
@@ -170,12 +173,12 @@ export const ContactPage: React.FC = () => {
                       {isLoading ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                          Sending...
+                          {t('contact:form.submitting')}
                         </>
                       ) : (
                         <>
                           <Send className="w-5 h-5 mr-2" />
-                          Send Message
+                          {t('contact:form.submit_button')}
                         </>
                       )}
                     </Button>
@@ -184,16 +187,16 @@ export const ContactPage: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <CheckCircle2 className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
-                  <p className="text-blue-100 mb-6">
-                    Thank you for reaching out. We'll get back to you within 24 hours.
-                  </p>
+                  <h3 className="text-2xl font-bold text-white mb-3">
+                    {t('contact:form.success_title')}
+                  </h3>
+                  <p className="text-blue-100 mb-6">{t('contact:form.success_message')}</p>
                   <Button
                     onClick={() => setIsSubmitted(false)}
                     variant="outline"
                     className="bg-white/10 border-white/20 text-white hover:bg-white/15"
                   >
-                    Send Another Message
+                    {t('contact:form.success_button')}
                   </Button>
                 </div>
               )}
@@ -209,11 +212,10 @@ export const ContactPage: React.FC = () => {
               {/* Book a Demo */}
               <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-2xl p-6">
                 <Calendar className="w-12 h-12 text-blue-400 mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-3">Book a Demo Call</h3>
-                <p className="text-blue-100 mb-4">
-                  Schedule a personalized demo to see the platform in action and discuss your
-                  specific needs.
-                </p>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {t('contact:book_demo.title')}
+                </h3>
+                <p className="text-blue-100 mb-4">{t('contact:book_demo.description')}</p>
                 <a
                   href="https://calendly.com/futuremarketingai/demo"
                   target="_blank"
@@ -221,13 +223,15 @@ export const ContactPage: React.FC = () => {
                   className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-all"
                 >
                   <Calendar className="w-5 h-5" />
-                  Schedule Demo
+                  {t('contact:book_demo.button')}
                 </a>
               </div>
 
               {/* Direct Contact */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Direct Contact</h3>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {t('contact:direct_contact.title')}
+                </h3>
                 <div className="space-y-4">
                   {/* Email */}
                   <a
@@ -236,8 +240,12 @@ export const ContactPage: React.FC = () => {
                   >
                     <Mail className="w-5 h-5 mt-0.5 text-blue-400 group-hover:text-blue-300" />
                     <div>
-                      <div className="text-sm text-blue-300 mb-1">Email</div>
-                      <div className="font-semibold">hello@futuremarketingai.com</div>
+                      <div className="text-sm text-blue-300 mb-1">
+                        {t('contact:direct_contact.email_label')}
+                      </div>
+                      <div className="font-semibold">
+                        {t('contact:direct_contact.email_address')}
+                      </div>
                     </div>
                   </a>
 
@@ -245,8 +253,12 @@ export const ContactPage: React.FC = () => {
                   <div className="flex items-start gap-3 text-blue-100">
                     <MapPin className="w-5 h-5 mt-0.5 text-blue-400" />
                     <div>
-                      <div className="text-sm text-blue-300 mb-1">Location</div>
-                      <div className="font-semibold">Netherlands (Remote-First)</div>
+                      <div className="text-sm text-blue-300 mb-1">
+                        {t('contact:direct_contact.location_label')}
+                      </div>
+                      <div className="font-semibold">
+                        {t('contact:direct_contact.location_text')}
+                      </div>
                     </div>
                   </div>
 
@@ -254,8 +266,12 @@ export const ContactPage: React.FC = () => {
                   <div className="flex items-start gap-3 text-blue-100">
                     <Phone className="w-5 h-5 mt-0.5 text-blue-400" />
                     <div>
-                      <div className="text-sm text-blue-300 mb-1">Response Time</div>
-                      <div className="font-semibold">Within 24 hours</div>
+                      <div className="text-sm text-blue-300 mb-1">
+                        {t('contact:direct_contact.response_time_label')}
+                      </div>
+                      <div className="font-semibold">
+                        {t('contact:direct_contact.response_time_text')}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -263,14 +279,14 @@ export const ContactPage: React.FC = () => {
 
               {/* Social Media */}
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
+                <h3 className="text-xl font-bold text-white mb-4">{t('contact:social.title')}</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://linkedin.com/company/futuremarketingai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-lg text-blue-400 hover:bg-blue-500/30 hover:text-blue-300 transition-all"
-                    aria-label="LinkedIn"
+                    aria-label={t('contact:social.linkedin_aria')}
                   >
                     <Linkedin className="w-6 h-6" />
                   </a>
@@ -279,7 +295,7 @@ export const ContactPage: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-lg text-blue-400 hover:bg-blue-500/30 hover:text-blue-300 transition-all"
-                    aria-label="Twitter"
+                    aria-label={t('contact:social.twitter_aria')}
                   >
                     <Twitter className="w-6 h-6" />
                   </a>
@@ -288,7 +304,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Not ready yet? */}
               <div className="bg-purple-500/10 border border-purple-500/20 rounded-2xl p-6 text-center">
-                <p className="text-blue-100 mb-4">Not ready to reach out?</p>
+                <p className="text-blue-100 mb-4">{t('contact:not_ready.text')}</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href="/demo"
@@ -296,13 +312,13 @@ export const ContactPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/15 transition-all text-sm"
                   >
-                    Try Interactive Demo
+                    {t('contact:not_ready.demo_button')}
                   </a>
                   <Link
                     to="/pricing"
                     className="inline-flex items-center justify-center px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/15 transition-all text-sm"
                   >
-                    View Pricing
+                    {t('contact:not_ready.pricing_button')}
                   </Link>
                 </div>
               </div>

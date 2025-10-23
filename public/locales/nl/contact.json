@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Contact | Future Marketing AI",
+    "description": "Neem contact op met Future Marketing AI. Boek een demo gesprek, stuur ons een bericht, of neem direct contact op. We helpen je graag om je marketing te transformeren met autonome AI.",
+    "keywords": ["contact", "verkoop", "demo gesprek", "contact opnemen", "klantenservice"]
+  },
+  "hero": {
+    "title": "Neem Contact Op",
+    "description": "Klaar om je marketing te transformeren met autonome AI? Laten we praten over hoe Future Marketing AI je bedrijf kan helpen."
+  },
+  "form": {
+    "title": "Stuur Ons Een Bericht",
+    "name_label": "Jouw Naam *",
+    "name_placeholder": "Jan Janssen",
+    "email_label": "E-mailadres *",
+    "email_placeholder": "jij@bedrijf.nl",
+    "company_label": "Bedrijf",
+    "company_placeholder": "Jouw Bedrijf B.V.",
+    "message_label": "Bericht *",
+    "message_placeholder": "Vertel ons over je marketingdoelen en hoe we kunnen helpen...",
+    "submit_button": "Verstuur Bericht",
+    "submitting": "Verzenden...",
+    "success_title": "Bericht Verzonden!",
+    "success_message": "Bedankt voor je bericht. We nemen binnen 24 uur contact met je op.",
+    "success_button": "Stuur Nog Een Bericht"
+  },
+  "book_demo": {
+    "title": "Boek Een Demo Gesprek",
+    "description": "Plan een gepersonaliseerde demo om het platform in actie te zien en je specifieke behoeften te bespreken.",
+    "button": "Plan Demo"
+  },
+  "direct_contact": {
+    "title": "Direct Contact",
+    "email_label": "E-mail",
+    "email_address": "hello@futuremarketingai.com",
+    "location_label": "Locatie",
+    "location_text": "Nederland (Remote-First)",
+    "response_time_label": "Reactietijd",
+    "response_time_text": "Binnen 24 uur"
+  },
+  "social": {
+    "title": "Volg Ons",
+    "linkedin_aria": "LinkedIn",
+    "twitter_aria": "Twitter"
+  },
+  "not_ready": {
+    "text": "Nog niet klaar om contact op te nemen?",
+    "demo_button": "Probeer Interactieve Demo",
+    "pricing_button": "Bekijk Prijzen"
+  }
+}

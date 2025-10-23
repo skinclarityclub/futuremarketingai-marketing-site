@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Contact Sales | Future Marketing AI",
+    "description": "Get in touch with Future Marketing AI. Book a demo call, send us a message, or reach out directly. We're here to help you transform your marketing with autonomous AI.",
+    "keywords": ["contact", "sales", "demo call", "get in touch", "customer support"]
+  },
+  "hero": {
+    "title": "Get in Touch",
+    "description": "Ready to transform your marketing with autonomous AI? Let's talk about how Future Marketing AI can help your business."
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "name_label": "Your Name *",
+    "name_placeholder": "John Doe",
+    "email_label": "Email Address *",
+    "email_placeholder": "you@company.com",
+    "company_label": "Company",
+    "company_placeholder": "Your Company Inc.",
+    "message_label": "Message *",
+    "message_placeholder": "Tell us about your marketing goals and how we can help...",
+    "submit_button": "Send Message",
+    "submitting": "Sending...",
+    "success_title": "Message Sent!",
+    "success_message": "Thank you for reaching out. We'll get back to you within 24 hours.",
+    "success_button": "Send Another Message"
+  },
+  "book_demo": {
+    "title": "Book a Demo Call",
+    "description": "Schedule a personalized demo to see the platform in action and discuss your specific needs.",
+    "button": "Schedule Demo"
+  },
+  "direct_contact": {
+    "title": "Direct Contact",
+    "email_label": "Email",
+    "email_address": "hello@futuremarketingai.com",
+    "location_label": "Location",
+    "location_text": "Netherlands (Remote-First)",
+    "response_time_label": "Response Time",
+    "response_time_text": "Within 24 hours"
+  },
+  "social": {
+    "title": "Follow Us",
+    "linkedin_aria": "LinkedIn",
+    "twitter_aria": "Twitter"
+  },
+  "not_ready": {
+    "text": "Not ready to reach out?",
+    "demo_button": "Try Interactive Demo",
+    "pricing_button": "View Pricing"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "seo": {
+    "title": "Contacto | Future Marketing AI",
+    "description": "Ponte en contacto con Future Marketing AI. Reserva una llamada de demostración, envíanos un mensaje o contáctanos directamente. Estamos aquí para ayudarte a transformar tu marketing con IA autónoma.",
+    "keywords": ["contacto", "ventas", "llamada demo", "ponerse en contacto", "atención al cliente"]
+  },
+  "hero": {
+    "title": "Contáctanos",
+    "description": "¿Listo para transformar tu marketing con IA autónoma? Hablemos sobre cómo Future Marketing AI puede ayudar a tu negocio."
+  },
+  "form": {
+    "title": "Envíanos un Mensaje",
+    "name_label": "Tu Nombre *",
+    "name_placeholder": "Juan Pérez",
+    "email_label": "Dirección de Email *",
+    "email_placeholder": "tu@empresa.com",
+    "company_label": "Empresa",
+    "company_placeholder": "Tu Empresa S.L.",
+    "message_label": "Mensaje *",
+    "message_placeholder": "Cuéntanos sobre tus objetivos de marketing y cómo podemos ayudar...",
+    "submit_button": "Enviar Mensaje",
+    "submitting": "Enviando...",
+    "success_title": "¡Mensaje Enviado!",
+    "success_message": "Gracias por contactarnos. Te responderemos dentro de 24 horas.",
+    "success_button": "Enviar Otro Mensaje"
+  },
+  "book_demo": {
+    "title": "Reservar Llamada de Demostración",
+    "description": "Programa una demostración personalizada para ver la plataforma en acción y discutir tus necesidades específicas.",
+    "button": "Programar Demo"
+  },
+  "direct_contact": {
+    "title": "Contacto Directo",
+    "email_label": "Email",
+    "email_address": "hello@futuremarketingai.com",
+    "location_label": "Ubicación",
+    "location_text": "Países Bajos (Remoto)",
+    "response_time_label": "Tiempo de Respuesta",
+    "response_time_text": "Dentro de 24 horas"
+  },
+  "social": {
+    "title": "Síguenos",
+    "linkedin_aria": "LinkedIn",
+    "twitter_aria": "Twitter"
+  },
+  "not_ready": {
+    "text": "¿Aún no estás listo para contactar?",
+    "demo_button": "Probar Demo Interactiva",
+    "pricing_button": "Ver Precios"
+  }
+}
