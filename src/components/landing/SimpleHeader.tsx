@@ -29,7 +29,6 @@ export const SimpleHeader: React.FC = () => {
     e.preventDefault()
 
     // Open demo in new window with fullscreen
-    // The KineticTypographyTransition will play automatically in the demo window
     const demoWindow = window.open('/demo', '_blank', 'noopener,noreferrer')
 
     if (demoWindow) {

@@ -70,9 +70,14 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Neural Warp animation state
-  const [showWarp, setShowWarp] = useState(true) // Auto-play on load
-  const [warpComplete, setWarpComplete] = useState(false)
+  // Check if animation has already played this session
+  const hasPlayedAnimation = React.useMemo(() => {
+    return sessionStorage.getItem('demoAnimationPlayed') === 'true'
+  }, [])
+
+  // Neural Warp animation state - only play if not seen before
+  const [showWarp, setShowWarp] = useState(!hasPlayedAnimation)
+  const [warpComplete, setWarpComplete] = useState(hasPlayedAnimation)
 
   // i18n translation hook
   const { t } = useTranslation(['hero', 'common'])
@@ -133,6 +138,8 @@ export const Hero: React.FC = () => {
     console.log('✅ Warp complete! Setting warpComplete to true')
     setShowWarp(false)
     setWarpComplete(true)
+    // Mark animation as played for this session
+    sessionStorage.setItem('demoAnimationPlayed', 'true')
   }
 
   // Case studies REMOVED - Replaced with transparent early-stage positioning
