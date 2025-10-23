@@ -53,19 +53,25 @@ async function callSecureAPI(
   })
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}))
+    const errorData: { message?: string } = await response.json().catch(() => ({}))
     throw new Error(errorData.message || `API request failed: ${response.status}`)
   }
 
-  return response.json()
+  return response.json() as Promise<{
+    choices: Array<{
+      message: {
+        content: string
+      }
+    }>
+  }>
 }
 
 /**
  * LLM Service for AI Journey Assistant
- * Handles OpenRouter API calls with guardrails
+ * Handles OpenAI API calls via secure backend proxy with guardrails
  */
 export class LLMService {
-  private model = 'openai/gpt-4o-mini' // Recommended for speed + quality
+  private model = 'gpt-4o-mini' // OpenAI's fast & affordable model
   private maxTokens = 200 // ✅ Best Practice 2025: ~280 chars ≈ 70 tokens x3 for safety
   private temperature = 0.7
 
@@ -90,35 +96,30 @@ export class LLMService {
     // 3. Convert conversation history to OpenAI format
     const messages = this.formatConversationHistory(conversationHistory, userMessage)
 
-    try {
-      // 4. Call secure backend proxy API
-      const completion = await callSecureAPI(
-        [{ role: 'system', content: systemPrompt }, ...messages],
-        this.model,
-        this.temperature,
-        this.maxTokens
-      )
+    // 4. Call secure backend proxy API
+    const completion = await callSecureAPI(
+      [{ role: 'system', content: systemPrompt }, ...messages],
+      this.model,
+      this.temperature,
+      this.maxTokens
+    )
 
-      const content = completion.choices[0]?.message?.content || ''
+    const content = completion.choices[0]?.message?.content || ''
 
-      // 5. Filter and process output
-      const filtered = this.filterOutput(content)
+    // 5. Filter and process output
+    const filtered = this.filterOutput(content)
 
-      // 6. Extract action if mentioned
-      const action = this.extractAction(filtered)
+    // 6. Extract action if mentioned
+    const action = this.extractAction(filtered)
 
-      // 7. Add suggested actions
-      const suggestedActions = this.getSuggestedActions(context, filtered)
+    // 7. Add suggested actions
+    const suggestedActions = this.getSuggestedActions(context, filtered)
 
-      return {
-        content: filtered,
-        action: action?.name,
-        actionParams: action?.params,
-        suggestedActions,
-      }
-    } catch (error) {
-      // Silent fail - will be caught by conversation engine for fallback
-      throw error
+    return {
+      content: filtered,
+      action: action?.name,
+      actionParams: action?.params,
+      suggestedActions,
     }
   }
 
@@ -263,10 +264,14 @@ Eindig met een relevante vraag of suggestie.`
 
     const formatted = recentHistory
       .filter((msg) => msg.type === 'text') // Only text messages
-      .map((msg) => ({
-        role: msg.sender === 'user' ? ('user' as const) : ('assistant' as const),
-        content: (msg as any).content as string,
-      }))
+      .map((msg) => {
+        // Type guard: ensure msg has content
+        const textMsg = msg as { sender: 'user' | 'system'; content?: string }
+        return {
+          role: textMsg.sender === 'user' ? ('user' as const) : ('assistant' as const),
+          content: textMsg.content || '',
+        }
+      })
 
     // Add current message
     formatted.push({ role: 'user', content: currentMessage })

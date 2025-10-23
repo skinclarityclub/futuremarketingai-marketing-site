@@ -1,13 +1,13 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 /**
- * Secure OpenRouter Proxy API
+ * Secure OpenAI Proxy API
  *
  * This serverless function acts as a secure proxy between the frontend
- * and OpenRouter API, keeping the API key hidden from the browser.
+ * and OpenAI API, keeping the API key hidden from the browser.
  */
 
-const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions'
 
 // CORS headers for browser requests
 const corsHeaders = {
@@ -33,10 +33,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Get API key from environment (server-side only)
-  const apiKey = process.env.OPENROUTER_API_KEY
+  const apiKey = process.env.OPENAI_API_KEY
 
   if (!apiKey) {
-    console.error('OPENROUTER_API_KEY is not configured')
+    console.error('OPENAI_API_KEY is not configured')
     return res.status(500).json({
       error: 'Configuration error',
       message: 'API key is not configured on the server',
@@ -55,17 +55,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       })
     }
 
-    // Make request to OpenRouter
-    const response = await fetch(OPENROUTER_API_URL, {
+    // Make request to OpenAI
+    const response = await fetch(OPENAI_API_URL, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': req.headers.referer || 'https://future-marketing.ai',
-        'X-Title': 'Future Marketing AI',
       },
       body: JSON.stringify({
-        model: model || 'openai/gpt-4o-mini',
+        model: model || 'gpt-4o-mini',
         messages,
         temperature: temperature || 0.7,
         max_tokens: max_tokens || 1000,
@@ -74,9 +72,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}))
-      console.error('OpenRouter API error:', response.status, errorData)
+      console.error('OpenAI API error:', response.status, errorData)
       return res.status(response.status).json({
-        error: 'OpenRouter API error',
+        error: 'OpenAI API error',
         message: errorData.error?.message || 'Failed to get response from AI',
         status: response.status,
       })
