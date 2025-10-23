@@ -1,0 +1,58 @@
+{
+  "seo": {
+    "title": "Hoe Het Werkt - Autonome AI Marketing Uitgelegd | Future Marketing AI",
+    "description": "Leer hoe de 6 autonome modules van Future Marketing AI samenwerken om je complete marketing workflow te automatiseren. Van AI research tot zelf-lerende optimalisatie—volledig automatisch.",
+    "keywords": [
+      "hoe AI marketing werkt",
+      "marketing automatisering uitgelegd",
+      "AI marketing proces",
+      "autonoom marketing systeem"
+    ]
+  },
+  "hero": {
+    "title": "Hoe Werkt Future Marketing AI?",
+    "description": "Een volledig autonoom systeem met 6 AI modules die 24/7 werken om je marketing te onderzoeken, creëren, publiceren en optimaliseren—volledig automatisch."
+  },
+  "process": {
+    "title": "De Autonome Marketing Loop",
+    "steps": {
+      "research": {
+        "step": "1. AI Research",
+        "title": "Platform Analyseert Je Markt 24/7",
+        "description": "Onze AI Research module monitort trends, concurrenten en kansen continu. Het identificeert welke content te maken, wanneer te publiceren en welke kanalen te prioriteren."
+      },
+      "content": {
+        "step": "2. Content Creatie",
+        "title": "AI Genereert Premium Content op Schaal",
+        "description": "Content Pipelines produceren 15x meer content dan traditionele methoden. Elk stuk is geoptimaliseerd voor je merkstem, doelgroep en platform vereisten."
+      },
+      "workflow": {
+        "step": "3. Workflow Orkestratie",
+        "title": "Manager Coördineert Alles",
+        "description": "De Manager Orchestrator fungeert als je AI marketing coördinator, die ervoor zorgt dat alle modules naadloos samenwerken. Geen handmatige coördinatie nodig."
+      },
+      "publishing": {
+        "step": "4. Slim Publiceren",
+        "title": "Optimale Distributie Over Kanalen",
+        "description": "Smart Publishing bepaalt de beste tijd, platform en messaging voor elk stuk content. Behaalt 35% betere betrokkenheid door intelligente timing."
+      },
+      "learning": {
+        "step": "5. Continu Leren",
+        "title": "Analytics Leren en Verbeteren",
+        "description": "Self-Learning Analytics volgen prestaties en identificeren winnende patronen. Het platform wordt 23% effectiever elke maand door van elke campagne te leren."
+      },
+      "ads": {
+        "step": "6. Ad Optimalisatie",
+        "title": "Beste Content Wordt Advertenties",
+        "description": "Best presterende organische content wordt automatisch omgezet naar betaalde advertenties met geoptimaliseerde targeting en budget allocatie. Levert 3.2x betere ROAS."
+      }
+    },
+    "loop_title": "🔄 Continue Loop:",
+    "loop_description": "Dit proces draait 24/7, waarbij elke iteratie het systeem slimmer maakt. Tegen maand 3 is je marketing 23% effectiever. Tegen maand 12 is het transformerend."
+  },
+  "cta": {
+    "title": "Ervaar Het Zelf",
+    "description": "De beste manier om te begrijpen hoe het werkt is door het te proberen. Onze interactieve demo toont het complete systeem in actie.",
+    "button": "Start Interactieve Demo"
+  }
+}

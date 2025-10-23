@@ -1,0 +1,58 @@
+{
+  "seo": {
+    "title": "Cómo Funciona - Marketing IA Autónomo Explicado | Future Marketing AI",
+    "description": "Aprende cómo los 6 módulos autónomos de Future Marketing AI trabajan juntos para automatizar todo tu flujo de trabajo de marketing. Desde investigación IA hasta optimización auto-aprendida—completamente automático.",
+    "keywords": [
+      "cómo funciona marketing IA",
+      "automatización marketing explicada",
+      "proceso marketing IA",
+      "sistema marketing autónomo"
+    ]
+  },
+  "hero": {
+    "title": "¿Cómo Funciona Future Marketing AI?",
+    "description": "Un sistema completamente autónomo con 6 módulos IA trabajando 24/7 para investigar, crear, publicar y optimizar tu marketing—completamente automático."
+  },
+  "process": {
+    "title": "El Ciclo de Marketing Autónomo",
+    "steps": {
+      "research": {
+        "step": "1. Investigación IA",
+        "title": "La Plataforma Analiza Tu Mercado 24/7",
+        "description": "Nuestro módulo de Investigación IA monitorea tendencias, competidores y oportunidades continuamente. Identifica qué contenido crear, cuándo publicar y qué canales priorizar."
+      },
+      "content": {
+        "step": "2. Creación de Contenido",
+        "title": "IA Genera Contenido Premium a Escala",
+        "description": "Los Content Pipelines producen 15x más contenido que los métodos tradicionales. Cada pieza está optimizada para tu voz de marca, audiencia objetivo y requisitos de plataforma."
+      },
+      "workflow": {
+        "step": "3. Orquestación de Flujo",
+        "title": "El Manager Coordina Todo",
+        "description": "El Manager Orchestrator actúa como tu coordinador de marketing IA, asegurando que todos los módulos trabajen juntos sin problemas. No se necesita coordinación manual."
+      },
+      "publishing": {
+        "step": "4. Publicación Inteligente",
+        "title": "Distribución Óptima Entre Canales",
+        "description": "Smart Publishing determina el mejor momento, plataforma y mensajería para cada pieza de contenido. Logra 35% mejor engagement mediante timing inteligente."
+      },
+      "learning": {
+        "step": "5. Aprendizaje Continuo",
+        "title": "Analytics Aprenden y Mejoran",
+        "description": "Self-Learning Analytics rastrean rendimiento e identifican patrones ganadores. La plataforma se vuelve 23% más efectiva cada mes aprendiendo de cada campaña."
+      },
+      "ads": {
+        "step": "6. Optimización de Anuncios",
+        "title": "El Mejor Contenido se Convierte en Anuncios",
+        "description": "El contenido orgánico de mejor rendimiento se convierte automáticamente en anuncios pagados con targeting optimizado y asignación de presupuesto. Entrega 3.2x mejor ROAS."
+      }
+    },
+    "loop_title": "🔄 Ciclo Continuo:",
+    "loop_description": "Este proceso funciona 24/7, con cada iteración haciendo el sistema más inteligente. Para el mes 3, tu marketing es 23% más efectivo. Para el mes 12, es transformacional."
+  },
+  "cta": {
+    "title": "Experiméntalo Tú Mismo",
+    "description": "La mejor manera de entender cómo funciona es probarlo. Nuestra demo interactiva muestra el sistema completo en acción.",
+    "button": "Lanzar Demo Interactiva"
+  }
+}
