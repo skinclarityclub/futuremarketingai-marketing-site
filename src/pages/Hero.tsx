@@ -70,17 +70,26 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Check if we came from the landing page (via ?animate=true query param)
+  // Check if we came from the landing page by checking the referrer
   const shouldPlayAnimation = React.useMemo(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    const animateParam = urlParams.get('animate')
+    // Check if this is the first load in this window (not a navigation within demo)
+    const isFirstLoad = !sessionStorage.getItem('demoVisited')
 
-    if (animateParam === 'true') {
-      // Remove the query param from URL without reload
-      const newUrl = window.location.pathname
-      window.history.replaceState({}, '', newUrl)
-      return true
+    if (isFirstLoad) {
+      // Mark that we've visited the demo
+      sessionStorage.setItem('demoVisited', 'true')
+
+      // Check if we came from landing page or external source
+      const referrer = document.referrer
+      const isFromLanding =
+        referrer.includes(window.location.origin) &&
+        (referrer.endsWith('/') || referrer.includes('?') || referrer.includes('#'))
+
+      // Play animation if coming from landing page OR if it's a fresh entry
+      return isFromLanding || !referrer
     }
+
+    // Don't play if already visited (navigating within demo)
     return false
   }, [])
 
