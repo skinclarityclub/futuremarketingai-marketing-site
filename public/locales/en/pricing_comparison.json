@@ -1,0 +1,206 @@
+{
+  "pricing_tiers": {
+    "founding_member": {
+      "name": "Founding Member",
+      "price": "€15,000",
+      "period": "/month",
+      "savings": "€120,000 saved vs Standard",
+      "slots": "2 of 5 remaining",
+      "features": [
+        "All 6 Core AI Modules",
+        "Rate locked for 24 months",
+        "2 months completely FREE",
+        "Roadmap influence priority",
+        "Dedicated success manager",
+        "Priority support (2h response)",
+        "42% discount vs Standard rate"
+      ],
+      "badge": "🏆 Best Value"
+    },
+    "pioneer": {
+      "name": "Pioneer",
+      "price": "€17,500",
+      "period": "/month",
+      "savings": "€60,000 saved vs Standard",
+      "slots": "4 of 10 remaining",
+      "features": [
+        "All 6 Core AI Modules",
+        "Rate locked for 24 months",
+        "1 month completely FREE",
+        "Roadmap feedback channel",
+        "Priority support (4h response)",
+        "22% discount vs Standard rate"
+      ],
+      "badge": "💎 Popular"
+    },
+    "innovator": {
+      "name": "Innovator",
+      "price": "€20,000",
+      "period": "/month",
+      "savings": "€30,000 saved vs Standard",
+      "slots": "2 of 10 remaining",
+      "features": [
+        "All 6 Core AI Modules",
+        "Rate locked for 12 months",
+        "Roadmap access",
+        "Standard support (8h response)",
+        "11% discount vs Standard rate"
+      ],
+      "badge": "🚀 Limited"
+    },
+    "standard": {
+      "name": "Standard",
+      "price": "€22,500",
+      "period": "/month",
+      "savings": null,
+      "slots": "Unlimited availability",
+      "features": [
+        "All 6 Core AI Modules",
+        "Month-to-month pricing",
+        "Standard support (12h response)"
+      ],
+      "badge": null
+    }
+  },
+  "pricing_table": {
+    "title": "Early Adopter Pricing",
+    "subtitle": "Lock in founding rates and save up to €120,000 vs standard pricing. Limited slots available.",
+    "secure_slot": "Secure Slot",
+    "coming_soon": "Coming Soon",
+    "table_headers": {
+      "tier": "Tier",
+      "price": "Price",
+      "savings": "Savings",
+      "slots": "Slots"
+    }
+  },
+  "platform_features": [
+    {
+      "category": "AI Research & Planning",
+      "description": "Analyzes trends 24/7",
+      "savings": "€6,400/month",
+      "benefit": "Never miss market opportunities"
+    },
+    {
+      "category": "Manager Orchestrator",
+      "description": "Coordinates all workflows",
+      "savings": "€12,000/month",
+      "benefit": "Zero manual coordination needed"
+    },
+    {
+      "category": "Content Pipelines",
+      "description": "15x faster content creation",
+      "savings": "€8,000/month",
+      "benefit": "Scale content without hiring"
+    },
+    {
+      "category": "Smart Publishing",
+      "description": "35% better engagement",
+      "additionalRevenue": "€15,000/month",
+      "benefit": "Optimized multi-channel distribution"
+    },
+    {
+      "category": "Self-Learning Analytics",
+      "description": "23% monthly improvement",
+      "benefit": "Platform gets smarter over time"
+    },
+    {
+      "category": "Ad Automation",
+      "description": "3.2x better ROAS",
+      "additionalRevenue": "€45,000/month",
+      "benefit": "Maximize advertising ROI"
+    }
+  ],
+  "feature_table": {
+    "title": "The Complete AI Marketing System",
+    "subtitle_template": "6 AI modules working together to save you {{savings}}/month and generate {{revenue}}/month in additional revenue.",
+    "table_headers": {
+      "module": "Module",
+      "capability": "Capability",
+      "monthly_value": "Monthly Value",
+      "key_benefit": "Key Benefit"
+    },
+    "value_labels": {
+      "saved": "saved",
+      "revenue": "revenue",
+      "included": "Included"
+    },
+    "footer": {
+      "total_platform_value": "Total Platform Value",
+      "saved_label": "/mo saved",
+      "revenue_label": "/mo revenue",
+      "average_roi": "847% average ROI"
+    },
+    "value_proposition": {
+      "platform_roi_template": "Platform ROI: €{{net_gain}}/month net gain",
+      "founding_member_explanation_template": "At Founding Member pricing (€15,000/month), you're saving €{{savings}} + generating €{{revenue}} = €{{total_value}} total value"
+    }
+  },
+  "tool_comparison": [
+    {
+      "need": "Content Creation",
+      "traditional": "Jasper + Copy.ai + Writesonic",
+      "traditionalCost": "€300/month",
+      "futureMarketing": "Included (AI Content Pipelines)"
+    },
+    {
+      "need": "Social Media Management",
+      "traditional": "Hootsuite Enterprise",
+      "traditionalCost": "€600/month",
+      "futureMarketing": "Included (Smart Publishing)"
+    },
+    {
+      "need": "Analytics & Reporting",
+      "traditional": "Google Analytics 360",
+      "traditionalCost": "€12,500/month",
+      "futureMarketing": "Included (Self-Learning Analytics)"
+    },
+    {
+      "need": "Ad Management",
+      "traditional": "AdEspresso + Smartly.io",
+      "traditionalCost": "€1,200/month",
+      "futureMarketing": "Included (Ad Automation)"
+    },
+    {
+      "need": "Marketing Automation",
+      "traditional": "HubSpot Enterprise",
+      "traditionalCost": "€3,600/month",
+      "futureMarketing": "Included (Manager Orchestrator)"
+    },
+    {
+      "need": "Market Research",
+      "traditional": "SEMrush + Ahrefs + BuzzSumo",
+      "traditionalCost": "€800/month",
+      "futureMarketing": "Included (AI Research & Planning)"
+    },
+    {
+      "need": "Agency Labor (3 FTEs)",
+      "traditional": "Full-service agency",
+      "traditionalCost": "€7,000/month",
+      "futureMarketing": "Automated workflows"
+    }
+  ],
+  "tool_table": {
+    "title": "Replace 10+ Tools with One Platform",
+    "subtitle": "Stop paying for fragmented tools. Future Marketing AI replaces your entire marketing stack.",
+    "table_headers": {
+      "marketing_need": "Marketing Need",
+      "traditional_tools": "Traditional Tools",
+      "traditional_cost": "Traditional Cost",
+      "future_marketing_ai": "Future Marketing AI"
+    },
+    "status_labels": {
+      "included": "Included",
+      "not_included": "Not included"
+    },
+    "footer": {
+      "total_monthly_cost": "Total Monthly Cost",
+      "founding_member_rate": "(Founding Member rate)"
+    },
+    "savings_highlight": {
+      "save_template": "Save €{{savings}}/month",
+      "yearly_savings_template": "That's €{{savings}}/year in immediate savings",
+      "unified_system": "Plus you get a unified, autonomous system that becomes smarter over time."
+    }
+  }
+}
