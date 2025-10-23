@@ -110,8 +110,13 @@ export const Hero: React.FC = () => {
     trackPageVisit('hero')
   }, [trackPageVisit])
 
-  // Activate fullscreen + landscape on mount
+  // Activate fullscreen + landscape on mount - ONLY for /demo (not /demo-home)
   useEffect(() => {
+    // Only request fullscreen if we're on the main /demo entry point (with animation)
+    if (!shouldPlayAnimation) {
+      return
+    }
+
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     )
@@ -130,14 +135,18 @@ export const Hero: React.FC = () => {
         .lock('landscape-primary')
         .catch((err: Error) => console.warn('Orientation lock failed:', err))
     }
-  }, [])
+  }, [shouldPlayAnimation])
 
   // Handle Neural Warp completion
-  const handleWarpComplete = () => {
+  const handleWarpComplete = React.useCallback(() => {
     console.log('✅ Warp complete! Setting warpComplete to true')
-    setShowWarp(false)
-    setWarpComplete(true)
-  }
+
+    // Use setTimeout to ensure state updates properly
+    setTimeout(() => {
+      setShowWarp(false)
+      setWarpComplete(true)
+    }, 100) // Small delay to ensure smooth transition
+  }, [])
 
   // Case studies REMOVED - Replaced with transparent early-stage positioning
   // See: EarlyAdopterBadge, TechnicalShowcase, FounderExpertise, RiskReduction components
