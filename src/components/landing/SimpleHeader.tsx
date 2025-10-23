@@ -11,7 +11,7 @@
  */
 
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -19,7 +19,6 @@ import { KineticTypographyTransition } from '../transitions/KineticTypographyTra
 
 export const SimpleHeader: React.FC = () => {
   const { t } = useTranslation('common')
-  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -35,7 +34,20 @@ export const SimpleHeader: React.FC = () => {
 
   const handleTransitionComplete = () => {
     setShowTransition(false)
-    navigate('/demo')
+
+    // Open demo in new window with fullscreen
+    const demoWindow = window.open('/demo', '_blank', 'noopener,noreferrer')
+
+    if (demoWindow) {
+      // Wait for window to load, then request fullscreen
+      demoWindow.addEventListener('load', () => {
+        try {
+          demoWindow.document.documentElement.requestFullscreen()
+        } catch (err) {
+          console.log('Fullscreen not available:', err)
+        }
+      })
+    }
   }
 
   // Handle scroll for sticky header effect + auto-hide
