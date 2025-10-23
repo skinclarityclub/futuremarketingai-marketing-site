@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "title": "Over Ons - Bouwend aan Autonome Marketing | Future Marketing AI",
+    "description": "We bouwen het autonome marketingplatform van de toekomst met 3 founding teams. Lancering Q1 2026. Aangedreven door GPT-4, Claude, Gemini en Perplexity.",
+    "keywords": [
+      "Future Marketing AI",
+      "autonoom marketingplatform",
+      "AI marketingbedrijf",
+      "marketing automatisering startup"
+    ]
+  },
+  "hero": {
+    "badge": "Lancering Q1 2026",
+    "title": "Over Future Marketing AI",
+    "tagline": "Bouwend aan het autonome marketingsysteem van de toekomst"
+  },
+  "mission": {
+    "heading": "Onze Missie",
+    "text": "Enterprise-grade AI marketing automatisering democratiseren voor ambitieuze bedrijven. Wij geloven dat elk bedrijf toegang moet hebben tot dezelfde intelligente marketingmogelijkheden als Fortune 500 bedrijven—zonder het Fortune 500 budget.",
+    "why_heading": "Waarom We Dit Bouwden",
+    "why_text": "We bouwden dit platform eerst voor onszelf. Als operators die onze eigen marketing runnen, waren we gefrustreerd door gefragmenteerde tools, handmatige workflows en het onvermogen om te schalen zonder aan te nemen. Dus bouwden we het systeem dat we wensten dat bestond."
+  },
+  "timeline": {
+    "title": "De Evolutie van Marketing Automatisering",
+    "eras": {
+      "assisted": {
+        "year": "2020-2024",
+        "title": "AI-Assisted Marketing Era",
+        "description": "ChatGPT en vergelijkbare tools helpen marketeers sneller werken, maar vereisen nog steeds aanzienlijk handmatig toezicht en coördinatie."
+      },
+      "autonomous": {
+        "year": "2025",
+        "title": "Autonome Marketing Era",
+        "description": "Complete AI-systemen die de hele workflow autonoom afhandelen. Dit is waar we zijn—en waar early adopters een 3-5 jaar concurrentievoordeel behalen.",
+        "you_are_here": "← U BENT HIER 🔥"
+      },
+      "standard": {
+        "year": "2027+",
+        "title": "Standaard Praktijk",
+        "description": "Autonome marketing wordt de norm. Tegen die tijd hebben early movers een onoverkomelijke voorsprong opgebouwd door samengestelde AI-leereffecten."
+      }
+    },
+    "key_message": {
+      "title": "Early adopters behalen een 3-5 jaar concurrentievoordeel",
+      "description": "Net als vroege Salesforce adopters in 2004 of vroege AI tool gebruikers in 2020—als eerste zijn stelt zich in de loop van de tijd samen."
+    }
+  },
+  "cta": {
+    "title": "Sluit Je Aan Bij De Founding Teams",
+    "description": "We bouwen dit in partnerschap met 3 vooruitdenkende bedrijven. Er blijven 7 founding slots over.",
+    "demo_button": "Probeer Interactieve Demo",
+    "contact_button": "Boek Founder Gesprek"
+  }
+}

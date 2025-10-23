@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "title": "Acerca de Nosotros - Construyendo Marketing Autónomo | Future Marketing AI",
+    "description": "Estamos construyendo la plataforma de marketing autónomo del futuro con 3 equipos fundadores. Lanzamiento Q1 2026. Impulsado por GPT-4, Claude, Gemini y Perplexity.",
+    "keywords": [
+      "Future Marketing AI",
+      "plataforma de marketing autónomo",
+      "empresa de marketing IA",
+      "startup de automatización de marketing"
+    ]
+  },
+  "hero": {
+    "badge": "Lanzamiento Q1 2026",
+    "title": "Acerca de Future Marketing AI",
+    "tagline": "Construyendo el sistema de marketing autónomo del futuro"
+  },
+  "mission": {
+    "heading": "Nuestra Misión",
+    "text": "Democratizar la automatización de marketing IA de nivel empresarial para negocios ambiciosos. Creemos que cada empresa debe tener acceso a las mismas capacidades de marketing inteligente que las empresas Fortune 500—sin el presupuesto Fortune 500.",
+    "why_heading": "Por Qué Construimos Esto",
+    "why_text": "Construimos esta plataforma primero para nosotros mismos. Como operadores gestionando nuestro propio marketing, estábamos frustrados por herramientas fragmentadas, flujos de trabajo manuales y la incapacidad de escalar sin contratar. Así que construimos el sistema que deseábamos que existiera."
+  },
+  "timeline": {
+    "title": "La Evolución de la Automatización de Marketing",
+    "eras": {
+      "assisted": {
+        "year": "2020-2024",
+        "title": "Era del Marketing Asistido por IA",
+        "description": "ChatGPT y herramientas similares ayudan a los especialistas en marketing a trabajar más rápido, pero aún requieren una supervisión y coordinación manual significativa."
+      },
+      "autonomous": {
+        "year": "2025",
+        "title": "Era del Marketing Autónomo",
+        "description": "Sistemas completos de IA que manejan todo el flujo de trabajo de forma autónoma. Aquí es donde estamos—y donde los early adopters obtienen una ventaja competitiva de 3-5 años.",
+        "you_are_here": "← ESTÁS AQUÍ 🔥"
+      },
+      "standard": {
+        "year": "2027+",
+        "title": "Práctica Estándar",
+        "description": "El marketing autónomo se convierte en la norma. Para entonces, los pioneros han construido una ventaja insuperable a través de efectos de aprendizaje de IA compuestos."
+      }
+    },
+    "key_message": {
+      "title": "Los early adopters obtienen una ventaja competitiva de 3-5 años",
+      "description": "Al igual que los primeros usuarios de Salesforce en 2004 o los primeros usuarios de herramientas IA en 2020—ser el primero se compone con el tiempo."
+    }
+  },
+  "cta": {
+    "title": "Únete a los Equipos Fundadores",
+    "description": "Estamos construyendo esto en asociación con 3 negocios con visión de futuro. Quedan 7 plazas fundadoras.",
+    "demo_button": "Probar Demo Interactiva",
+    "contact_button": "Reservar Llamada con Fundador"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "title": "About Us - Building Autonomous Marketing | Future Marketing AI",
+    "description": "We're building the autonomous marketing platform of the future with 3 founding teams. Launching Q1 2026. Powered by GPT-4, Claude, Gemini, and Perplexity.",
+    "keywords": [
+      "Future Marketing AI",
+      "autonomous marketing platform",
+      "AI marketing company",
+      "marketing automation startup"
+    ]
+  },
+  "hero": {
+    "badge": "Launching Q1 2026",
+    "title": "About Future Marketing AI",
+    "tagline": "Building the autonomous marketing system of the future"
+  },
+  "mission": {
+    "heading": "Our Mission",
+    "text": "To democratize enterprise-grade AI marketing automation for ambitious businesses. We believe every company should have access to the same intelligent marketing capabilities as Fortune 500 companies—without the Fortune 500 budget.",
+    "why_heading": "Why We Built This",
+    "why_text": "We built this platform for ourselves first. As operators running our own marketing, we were frustrated by fragmented tools, manual workflows, and the inability to scale without hiring. So we built the system we wished existed."
+  },
+  "timeline": {
+    "title": "The Evolution of Marketing Automation",
+    "eras": {
+      "assisted": {
+        "year": "2020-2024",
+        "title": "AI-Assisted Marketing Era",
+        "description": "ChatGPT and similar tools help marketers work faster, but still require significant manual oversight and coordination."
+      },
+      "autonomous": {
+        "year": "2025",
+        "title": "Autonomous Marketing Era",
+        "description": "Complete AI systems that handle the entire workflow autonomously. This is where we are—and where early adopters gain a 3-5 year competitive advantage.",
+        "you_are_here": "← YOU ARE HERE 🔥"
+      },
+      "standard": {
+        "year": "2027+",
+        "title": "Standard Practice",
+        "description": "Autonomous marketing becomes the norm. By then, early movers have built an insurmountable lead through compounding AI learning effects."
+      }
+    },
+    "key_message": {
+      "title": "Early adopters gain a 3-5 year competitive advantage",
+      "description": "Just like early Salesforce adopters in 2004 or early AI tool users in 2020—being first compounds over time."
+    }
+  },
+  "cta": {
+    "title": "Join the Founding Teams",
+    "description": "We're building this in partnership with 3 forward-thinking businesses. 7 founding slots remain.",
+    "demo_button": "Try Interactive Demo",
+    "contact_button": "Book Founder Call"
+  }
+}
