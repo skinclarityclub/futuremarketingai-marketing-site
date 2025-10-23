@@ -1,6 +1,5 @@
 import { renderHook } from '@testing-library/react'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { createElement } from 'react'
 import {
   useShouldLoadComponent,
   useConditionalPreload,
@@ -69,14 +68,22 @@ describe('Conditional Loading Utilities', () => {
         dispatchEvent: vi.fn(),
       }))
 
-      const { result } = renderHook(() =>
-        useShouldLoadComponent(['mobile', 'tablet'])
-      )
+      const { result } = renderHook(() => useShouldLoadComponent(['mobile', 'tablet']))
       expect(result.current).toBe(true)
     })
 
     it('should return true for desktop on desktop device', () => {
-      mockUseIsDesktop.mockReturnValue(true)
+      // Mock desktop device
+      vi.mocked(window.matchMedia).mockImplementation((query) => ({
+        matches: query === '(min-width: 1024px)',
+        media: query,
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }))
 
       const { result } = renderHook(() => useShouldLoadComponent('desktop'))
       expect(result.current).toBe(true)
@@ -134,9 +141,7 @@ describe('Conditional Loading Utilities', () => {
 
       const importFn = vi.fn(() => Promise.resolve({ default: () => null }))
 
-      const { result } = renderHook(() =>
-        useConditionalPreload(importFn, 'desktop')
-      )
+      const { result } = renderHook(() => useConditionalPreload(importFn, 'desktop'))
 
       // Call the preload function
       result.current()
@@ -356,4 +361,3 @@ describe('Conditional Loading Utilities', () => {
     })
   })
 })
-

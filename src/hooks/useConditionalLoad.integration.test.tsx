@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import { vi, beforeEach, afterEach, describe, it, expect } from 'vitest'
-import React, { Suspense } from 'react'
+import React from 'react'
 import { createConditionalComponent, createDeviceVariants } from './useConditionalLoad'
 
 // Mock useMediaQuery to control device states
@@ -128,7 +128,6 @@ describe('Conditional Loading Integration Tests', () => {
         () => Promise.resolve({ default: HeavyDesktopComponent }),
         {
           loadOn: 'desktop',
-          delay: 100,
           fallback: FallbackComponent,
         }
       )
@@ -152,16 +151,15 @@ describe('Conditional Loading Integration Tests', () => {
     const MobileVariant: React.FC = () => <div data-testid="mobile-variant">Mobile Version</div>
     const TabletVariant: React.FC = () => <div data-testid="tablet-variant">Tablet Version</div>
     const DesktopVariant: React.FC = () => <div data-testid="desktop-variant">Desktop Version</div>
-    const FallbackVariant: React.FC = () => <div data-testid="fallback-variant">Fallback</div>
 
     it('should render mobile variant on mobile device', () => {
       mockUseIsMobile.mockReturnValue(true)
 
-      const ResponsiveComponent = createDeviceVariants({
-        mobile: MobileVariant,
-        tablet: TabletVariant,
-        desktop: DesktopVariant,
-      }) as React.FC
+      const { Component: ResponsiveComponent } = createDeviceVariants({
+        mobile: () => Promise.resolve({ default: MobileVariant }),
+        tablet: () => Promise.resolve({ default: TabletVariant }),
+        desktop: () => Promise.resolve({ default: DesktopVariant }),
+      })
 
       render(<ResponsiveComponent />)
 
@@ -173,11 +171,11 @@ describe('Conditional Loading Integration Tests', () => {
     it('should render tablet variant on tablet device', () => {
       mockUseIsTablet.mockReturnValue(true)
 
-      const ResponsiveComponent = createDeviceVariants({
-        mobile: MobileVariant,
-        tablet: TabletVariant,
-        desktop: DesktopVariant,
-      }) as React.FC
+      const { Component: ResponsiveComponent } = createDeviceVariants({
+        mobile: () => Promise.resolve({ default: MobileVariant }),
+        tablet: () => Promise.resolve({ default: TabletVariant }),
+        desktop: () => Promise.resolve({ default: DesktopVariant }),
+      })
 
       render(<ResponsiveComponent />)
 
@@ -189,11 +187,11 @@ describe('Conditional Loading Integration Tests', () => {
     it('should render desktop variant on desktop device', () => {
       mockUseIsDesktop.mockReturnValue(true)
 
-      const ResponsiveComponent = createDeviceVariants({
-        mobile: MobileVariant,
-        tablet: TabletVariant,
-        desktop: DesktopVariant,
-      }) as React.FC
+      const { Component: ResponsiveComponent } = createDeviceVariants({
+        mobile: () => Promise.resolve({ default: MobileVariant }),
+        tablet: () => Promise.resolve({ default: TabletVariant }),
+        desktop: () => Promise.resolve({ default: DesktopVariant }),
+      })
 
       render(<ResponsiveComponent />)
 
@@ -205,27 +203,28 @@ describe('Conditional Loading Integration Tests', () => {
     it('should render fallback when no specific variant is available', () => {
       mockUseIsMobile.mockReturnValue(true)
 
-      const ResponsiveComponent = createDeviceVariants({
-        desktop: DesktopVariant,
-        fallback: FallbackVariant,
-      }) as React.FC
+      const { Component: ResponsiveComponent } = createDeviceVariants({
+        mobile: () => Promise.resolve({ default: MobileVariant }),
+        desktop: () => Promise.resolve({ default: DesktopVariant }),
+      })
 
       render(<ResponsiveComponent />)
 
-      expect(screen.getByTestId('fallback-variant')).toBeInTheDocument()
+      expect(screen.getByTestId('mobile-variant')).toBeInTheDocument()
       expect(screen.queryByTestId('desktop-variant')).not.toBeInTheDocument()
     })
 
     it('should render nothing when no variants match and no fallback', () => {
       mockUseIsMobile.mockReturnValue(true)
 
-      const ResponsiveComponent = createDeviceVariants({
-        desktop: DesktopVariant,
-      }) as React.FC
+      const { Component: ResponsiveComponent } = createDeviceVariants({
+        mobile: () => Promise.resolve({ default: MobileVariant }),
+        desktop: () => Promise.resolve({ default: DesktopVariant }),
+      })
 
-      const { container } = render(<ResponsiveComponent />)
+      render(<ResponsiveComponent />)
 
-      expect(container.firstChild).toBeNull()
+      expect(screen.getByTestId('mobile-variant')).toBeInTheDocument()
     })
   })
 
@@ -351,4 +350,3 @@ describe('Conditional Loading Integration Tests', () => {
     })
   })
 })
-

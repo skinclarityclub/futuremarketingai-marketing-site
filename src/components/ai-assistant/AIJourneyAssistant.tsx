@@ -26,9 +26,10 @@ const ChatPanel = lazy(() => import('./ChatPanel'))
 
 export default function AIJourneyAssistant() {
   const location = useLocation()
-  const { isOpen, messages } = useChatStore()
+  const { isOpen, addQuickRepliesMessage, messages } = useChatStore()
   const { activeElement } = useFloatingElement()
-  const { isJourneyStarted, startJourney, initializeSteps, visitPage } = useJourneyStore()
+  const { isJourneyStarted, startJourney, initializeSteps, visitPage, getVisitedPagesArray } =
+    useJourneyStore()
   const { selectedIndustry } = usePersonalizationStore()
   const hasInitialized = useRef(false)
   const lastPathname = useRef(location?.pathname || '/')
