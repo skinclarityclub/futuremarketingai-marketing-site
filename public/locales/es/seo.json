@@ -51,5 +51,92 @@
         "answer": "¡Absolutamente! Nuestra plataforma está construida para escala. Las agencias de marketing pueden gestionar 20+ cuentas de clientes con dashboards white-label y reportes automatizados. Los negocios de e-commerce pueden manejar múltiples marcas o líneas de productos. Cada cuenta tiene campañas aisladas, content pipelines y analytics, todo gestionado desde un hub central."
       }
     ]
+  },
+  "terms": {
+    "badge": "Glosario de Automatización de Marketing",
+    "title": "Términos y Definiciones Clave",
+    "subtitle": "Comprende la terminología detrás de la automatización de marketing impulsada por IA autónoma.",
+    "cta_title": "¿Quieres ver estas características en acción?",
+    "cta_description": "Prueba nuestra demo interactiva para experimentar marketing autónomo de primera mano.",
+    "cta_button": "Lanzar Demo",
+    "core_terms": [
+      {
+        "term": "Marketing Autónomo",
+        "definition": "Un sistema de marketing completamente auto-operativo que investiga, crea, publica y optimiza contenido sin intervención humana. El enfoque autónomo de Future Marketing AI ahorra 312 horas al mes comparado con marketing tradicional.",
+        "category": "Concepto Central"
+      },
+      {
+        "term": "Pipelines de Contenido IA",
+        "definition": "Flujos de trabajo automatizados que generan, optimizan y programan contenido de marketing a escala. Nuestros pipelines producen 15x más contenido que métodos tradicionales manteniendo calidad premium.",
+        "category": "Característica"
+      },
+      {
+        "term": "Analytics Auto-Aprendidas",
+        "definition": "Analytics impulsadas por IA que mejoran continuamente el rendimiento de campañas a través de machine learning. El sistema se vuelve 23% más efectivo cada mes analizando cada interacción.",
+        "category": "Característica"
+      },
+      {
+        "term": "Manager Orchestrator",
+        "definition": "El coordinador IA central que gestiona todos los flujos de trabajo de marketing, asegurando integración perfecta entre módulos de investigación, creación de contenido, publicación y analytics.",
+        "category": "Característica"
+      },
+      {
+        "term": "Publicación Inteligente",
+        "definition": "Distribución de contenido multi-canal inteligente que optimiza timing, selección de plataforma y mensajería para máximo engagement. Logra 35% mejor engagement que publicación manual.",
+        "category": "Característica"
+      },
+      {
+        "term": "Automatización de Anuncios",
+        "definition": "Gestión de campañas publicitarias impulsada por IA que optimiza continuamente creatividad de anuncios, targeting y asignación de presupuesto. Entrega 3.2x mejor ROAS comparado con gestión tradicional de anuncios.",
+        "category": "Característica"
+      },
+      {
+        "term": "ROAS (Return on Ad Spend)",
+        "definition": "Una métrica que mide los ingresos generados por cada euro gastado en publicidad. Los clientes de Future Marketing AI logran un promedio de 3.2x ROAS a través de optimización inteligente de anuncios.",
+        "category": "Métrica"
+      },
+      {
+        "term": "ICP (Perfil de Cliente Ideal)",
+        "definition": "Una descripción detallada del cliente perfecto para un negocio. Nuestra plataforma personaliza contenido basado en tres ICPs primarios: E-commerce (multi-canal), SaaS (post-PMF) y Agencias (10+ clientes).",
+        "category": "Estrategia"
+      },
+      {
+        "term": "Precios Founding Member",
+        "definition": "Tarifas de early adopter por tiempo limitado bloqueadas por 24 meses. Los Founding Members ahorran €120.000 vs precios Standard mientras ganan influencia en el roadmap y soporte dedicado.",
+        "category": "Precios"
+      },
+      {
+        "term": "Marketing Multi-Canal",
+        "definition": "Marketing coordinado a través de múltiples plataformas (redes sociales, email, anuncios, etc.). Future Marketing AI sincroniza todos los canales automáticamente, eliminando coordinación manual.",
+        "category": "Estrategia"
+      }
+    ],
+    "advanced_terms": [
+      {
+        "term": "Modelos ML Propietarios",
+        "definition": "Algoritmos de machine learning personalizados desarrollados exclusivamente para optimización de marketing. Estos modelos impulsan las capacidades auto-aprendidas de Future Marketing AI.",
+        "category": "Tecnología"
+      },
+      {
+        "term": "Atribución de Campaña",
+        "definition": "El proceso de identificar qué puntos de contacto de marketing llevaron a conversiones. Nuestros analytics proporcionan insights de atribución en tiempo real cross-channel.",
+        "category": "Analytics"
+      },
+      {
+        "term": "Velocidad de Contenido",
+        "definition": "La velocidad a la que se produce y publica contenido de marketing. Nuestros Pipelines IA logran 15x más velocidad de contenido que métodos tradicionales.",
+        "category": "Rendimiento"
+      },
+      {
+        "term": "Automatización de Flujo de Trabajo",
+        "definition": "La eliminación de tareas manuales repetitivas a través de automatización inteligente de procesos. Ahorra un promedio de 312 horas al mes por organización.",
+        "category": "Eficiencia"
+      },
+      {
+        "term": "ROI de Plataforma",
+        "definition": "El retorno total de inversión de usar Future Marketing AI. Incluye ahorros de costos (€26.000/mes en herramientas reemplazadas) más ganancias de ingresos (847% ROI promedio).",
+        "category": "Valor"
+      }
+    ]
   }
 }

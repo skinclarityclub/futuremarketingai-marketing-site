@@ -51,5 +51,92 @@
         "answer": "Absoluut! Ons platform is gebouwd voor schaal. Marketing agencies kunnen 20+ klantaccounts beheren met white-label dashboards en geautomatiseerde rapportage. E-commerce bedrijven kunnen meerdere merken of productlijnen afhandelen. Elk account heeft geïsoleerde campagnes, content pipelines en analytics, allemaal beheerd vanaf één centrale hub."
       }
     ]
+  },
+  "terms": {
+    "badge": "Marketing Automatisering Glossarium",
+    "title": "Belangrijkste Termen & Definities",
+    "subtitle": "Begrijp de terminologie achter autonome AI-gestuurde marketing automatisering.",
+    "cta_title": "Wil je deze functies in actie zien?",
+    "cta_description": "Probeer onze interactieve demo om autonome marketing firsthand te ervaren.",
+    "cta_button": "Start Demo",
+    "core_terms": [
+      {
+        "term": "Autonome Marketing",
+        "definition": "Een volledig zelfwerkend marketingsysteem dat onderzoekt, creëert, publiceert en content optimaliseert zonder menselijke tussenkomst. Future Marketing AI's autonome aanpak bespaart 312 uur per maand vergeleken met traditionele marketing.",
+        "category": "Kernconcept"
+      },
+      {
+        "term": "AI Content Pipelines",
+        "definition": "Geautomatiseerde workflows die marketing content genereren, optimaliseren en plannen op schaal. Onze pipelines produceren 15x meer content dan traditionele methoden met behoud van premium kwaliteit.",
+        "category": "Functie"
+      },
+      {
+        "term": "Zelf-Lerende Analytics",
+        "definition": "AI-gestuurde analytics die campagneprestaties continu verbeteren door machine learning. Het systeem wordt 23% effectiever elke maand door elke interactie te analyseren.",
+        "category": "Functie"
+      },
+      {
+        "term": "Manager Orchestrator",
+        "definition": "De centrale AI coördinator die alle marketing workflows beheert, met naadloze integratie tussen research, content creatie, publicatie en analytics modules.",
+        "category": "Functie"
+      },
+      {
+        "term": "Slim Publiceren",
+        "definition": "Intelligente multi-channel content distributie die timing, platformselectie en messaging optimaliseert voor maximale betrokkenheid. Bereikt 35% betere betrokkenheid dan handmatig publiceren.",
+        "category": "Functie"
+      },
+      {
+        "term": "Ad Automatisering",
+        "definition": "AI-gestuurde advertentiecampagne management die ad creative, targeting en budget allocatie continu optimaliseert. Levert 3.2x betere ROAS vergeleken met traditioneel ad management.",
+        "category": "Functie"
+      },
+      {
+        "term": "ROAS (Return on Ad Spend)",
+        "definition": "Een metric die inkomsten meet die gegenereerd worden voor elke euro uitgegeven aan advertenties. Future Marketing AI klanten bereiken gemiddeld 3.2x ROAS door intelligente ad optimalisatie.",
+        "category": "Metriek"
+      },
+      {
+        "term": "ICP (Ideal Customer Profile)",
+        "definition": "Een gedetailleerde beschrijving van de perfecte klant voor een bedrijf. Ons platform personaliseert content gebaseerd op drie primaire ICPs: E-commerce (multi-channel), SaaS (post-PMF), en Agencies (10+ klanten).",
+        "category": "Strategie"
+      },
+      {
+        "term": "Founding Member Prijzen",
+        "definition": "Tijdelijk early adopter tarief vergrendeld voor 24 maanden. Founding Members besparen €120.000 vs Standard prijzen terwijl ze roadmap invloed en toegewijd support krijgen.",
+        "category": "Prijzen"
+      },
+      {
+        "term": "Multi-Channel Marketing",
+        "definition": "Gecoördineerde marketing over meerdere platforms (social media, email, ads, etc.). Future Marketing AI synchroniseert alle kanalen automatisch, elimineert handmatige coördinatie.",
+        "category": "Strategie"
+      }
+    ],
+    "advanced_terms": [
+      {
+        "term": "Proprietary ML Modellen",
+        "definition": "Custom machine learning algoritmes exclusief ontwikkeld voor marketing optimalisatie. Deze modellen voeden Future Marketing AI's zelf-lerende capaciteiten.",
+        "category": "Technologie"
+      },
+      {
+        "term": "Campagne Attributie",
+        "definition": "Het proces van identificeren welke marketing touchpoints leidden tot conversies. Onze analytics bieden real-time, cross-channel attributie inzichten.",
+        "category": "Analytics"
+      },
+      {
+        "term": "Content Snelheid",
+        "definition": "De snelheid waarmee marketing content wordt geproduceerd en gepubliceerd. Onze AI Pipelines bereiken 15x snellere content snelheid dan traditionele methoden.",
+        "category": "Prestaties"
+      },
+      {
+        "term": "Workflow Automatisering",
+        "definition": "De eliminatie van repetitieve handmatige taken door intelligente proces automatisering. Bespaart gemiddeld 312 uur per maand per organisatie.",
+        "category": "Efficiëntie"
+      },
+      {
+        "term": "Platform ROI",
+        "definition": "Het totale return on investment van gebruik van Future Marketing AI. Omvat kostenbesparingen (€26.000/maand in vervangen tools) plus inkomstenwinsten (847% gemiddelde ROI).",
+        "category": "Waarde"
+      }
+    ]
   }
 }

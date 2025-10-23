@@ -10,109 +10,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { BookOpen, Sparkles } from 'lucide-react'
-
-/**
- * Key industry terms with clear definitions
- * Optimized for both user understanding and LLM extraction
- */
-export const MARKETING_TERMS = [
-  {
-    term: 'Autonomous Marketing',
-    definition:
-      "A fully self-operating marketing system that researches, creates, publishes, and optimizes content without human intervention. Future Marketing AI's autonomous approach saves 312 hours per month compared to traditional marketing.",
-    category: 'Core Concept',
-  },
-  {
-    term: 'AI Content Pipelines',
-    definition:
-      'Automated workflows that generate, optimize, and schedule marketing content at scale. Our pipelines produce 15x more content than traditional methods while maintaining premium quality.',
-    category: 'Feature',
-  },
-  {
-    term: 'Self-Learning Analytics',
-    definition:
-      'AI-powered analytics that continuously improve campaign performance through machine learning. The system becomes 23% more effective each month by analyzing every interaction.',
-    category: 'Feature',
-  },
-  {
-    term: 'Manager Orchestrator',
-    definition:
-      'The central AI coordinator that manages all marketing workflows, ensuring seamless integration between research, content creation, publishing, and analytics modules.',
-    category: 'Feature',
-  },
-  {
-    term: 'Smart Publishing',
-    definition:
-      'Intelligent multi-channel content distribution that optimizes timing, platform selection, and messaging for maximum engagement. Achieves 35% better engagement than manual publishing.',
-    category: 'Feature',
-  },
-  {
-    term: 'Ad Automation',
-    definition:
-      'AI-driven advertising campaign management that continuously optimizes ad creative, targeting, and budget allocation. Delivers 3.2x better ROAS compared to traditional ad management.',
-    category: 'Feature',
-  },
-  {
-    term: 'ROAS (Return on Ad Spend)',
-    definition:
-      'A metric measuring revenue generated for every euro spent on advertising. Future Marketing AI clients achieve an average 3.2x ROAS through intelligent ad optimization.',
-    category: 'Metric',
-  },
-  {
-    term: 'ICP (Ideal Customer Profile)',
-    definition:
-      'A detailed description of the perfect customer for a business. Our platform personalizes content based on three primary ICPs: E-commerce (multi-channel), SaaS (post-PMF), and Agencies (10+ clients).',
-    category: 'Strategy',
-  },
-  {
-    term: 'Founding Member Pricing',
-    definition:
-      'Limited-time early adopter rates locked for 24 months. Founding Members save €120,000 vs Standard pricing while gaining roadmap influence and dedicated support.',
-    category: 'Pricing',
-  },
-  {
-    term: 'Multi-Channel Marketing',
-    definition:
-      'Coordinated marketing across multiple platforms (social media, email, ads, etc.). Future Marketing AI synchronizes all channels automatically, eliminating manual coordination.',
-    category: 'Strategy',
-  },
-] as const
-
-/**
- * Additional terms for extended glossary
- */
-export const ADVANCED_TERMS = [
-  {
-    term: 'Proprietary ML Models',
-    definition:
-      "Custom machine learning algorithms developed exclusively for marketing optimization. These models power Future Marketing AI's self-learning capabilities.",
-    category: 'Technology',
-  },
-  {
-    term: 'Campaign Attribution',
-    definition:
-      'The process of identifying which marketing touchpoints led to conversions. Our analytics provide real-time, cross-channel attribution insights.',
-    category: 'Analytics',
-  },
-  {
-    term: 'Content Velocity',
-    definition:
-      'The speed at which marketing content is produced and published. Our AI Pipelines achieve 15x faster content velocity than traditional methods.',
-    category: 'Performance',
-  },
-  {
-    term: 'Workflow Automation',
-    definition:
-      'The elimination of repetitive manual tasks through intelligent process automation. Saves an average of 312 hours per month per organization.',
-    category: 'Efficiency',
-  },
-  {
-    term: 'Platform ROI',
-    definition:
-      'The total return on investment from using Future Marketing AI. Includes cost savings (€26,000/month in replaced tools) plus revenue gains (847% average ROI).',
-    category: 'Value',
-  },
-] as const
+import { useTranslation } from 'react-i18next'
 
 interface TermDefinitionsProps {
   /** Show advanced terms in addition to core terms */
@@ -146,9 +44,23 @@ export const TermDefinitions: React.FC<TermDefinitionsProps> = ({
   compact = false,
   className = '',
 }) => {
+  const { t } = useTranslation(['seo'])
+
+  // Load terms from translations
+  const coreTerms = t('seo:terms.core_terms', { returnObjects: true }) as Array<{
+    term: string
+    definition: string
+    category: string
+  }>
+  const advancedTerms = t('seo:terms.advanced_terms', { returnObjects: true }) as Array<{
+    term: string
+    definition: string
+    category: string
+  }>
+
   // Combine terms and filter by category if specified
-  const allTerms = showAdvanced ? [...MARKETING_TERMS, ...ADVANCED_TERMS] : MARKETING_TERMS
-  const filteredTerms = category ? allTerms.filter((t) => t.category === category) : allTerms
+  const allTerms = showAdvanced ? [...coreTerms, ...advancedTerms] : coreTerms
+  const filteredTerms = category ? allTerms.filter((term) => term.category === category) : allTerms
 
   // Group terms by category for organized display
   const groupedTerms = filteredTerms.reduce(
@@ -159,7 +71,7 @@ export const TermDefinitions: React.FC<TermDefinitionsProps> = ({
       acc[term.category].push(term)
       return acc
     },
-    {} as Record<string, Array<typeof filteredTerms[number]>>
+    {} as Record<string, Array<(typeof filteredTerms)[number]>>
   )
 
   if (compact) {
@@ -185,14 +97,10 @@ export const TermDefinitions: React.FC<TermDefinitionsProps> = ({
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4">
             <BookOpen className="w-5 h-5 text-blue-400" />
-            <span className="text-sm font-medium text-blue-100">Marketing Automation Glossary</span>
+            <span className="text-sm font-medium text-blue-100">{t('seo:terms.badge')}</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Key Terms & Definitions
-          </h2>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Understand the terminology behind autonomous AI-powered marketing automation.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('seo:terms.title')}</h2>
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto">{t('seo:terms.subtitle')}</p>
         </div>
 
         {/* Terms by Category */}
@@ -226,19 +134,15 @@ export const TermDefinitions: React.FC<TermDefinitionsProps> = ({
 
         {/* CTA to Learn More */}
         <div className="mt-12 text-center p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl">
-          <h3 className="text-xl font-bold text-white mb-2">
-            Want to see these features in action?
-          </h3>
-          <p className="text-blue-100 mb-4">
-            Try our interactive demo to experience autonomous marketing firsthand.
-          </p>
+          <h3 className="text-xl font-bold text-white mb-2">{t('seo:terms.cta_title')}</h3>
+          <p className="text-blue-100 mb-4">{t('seo:terms.cta_description')}</p>
           <a
             href="/demo"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all"
           >
-            Launch Demo
+            {t('seo:terms.cta_button')}
           </a>
         </div>
       </div>
@@ -260,7 +164,20 @@ export const TermTooltip: React.FC<{ term: string; children?: React.ReactNode }>
   term,
   children,
 }) => {
-  const allTerms = [...MARKETING_TERMS, ...ADVANCED_TERMS]
+  const { t } = useTranslation(['seo'])
+
+  const coreTerms = t('seo:terms.core_terms', { returnObjects: true }) as Array<{
+    term: string
+    definition: string
+    category: string
+  }>
+  const advancedTerms = t('seo:terms.advanced_terms', { returnObjects: true }) as Array<{
+    term: string
+    definition: string
+    category: string
+  }>
+
+  const allTerms = [...coreTerms, ...advancedTerms]
   const termDef = allTerms.find((t) => t.term === term)
 
   if (!termDef) {

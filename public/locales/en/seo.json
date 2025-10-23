@@ -51,5 +51,92 @@
         "answer": "Absolutely! Our platform is built for scale. Marketing agencies can manage 20+ client accounts with white-label dashboards and automated reporting. E-commerce businesses can handle multiple brands or product lines. Each account has isolated campaigns, content pipelines, and analytics, all managed from one central hub."
       }
     ]
+  },
+  "terms": {
+    "badge": "Marketing Automation Glossary",
+    "title": "Key Terms & Definitions",
+    "subtitle": "Understand the terminology behind autonomous AI-powered marketing automation.",
+    "cta_title": "Want to see these features in action?",
+    "cta_description": "Try our interactive demo to experience autonomous marketing firsthand.",
+    "cta_button": "Launch Demo",
+    "core_terms": [
+      {
+        "term": "Autonomous Marketing",
+        "definition": "A fully self-operating marketing system that researches, creates, publishes, and optimizes content without human intervention. Future Marketing AI's autonomous approach saves 312 hours per month compared to traditional marketing.",
+        "category": "Core Concept"
+      },
+      {
+        "term": "AI Content Pipelines",
+        "definition": "Automated workflows that generate, optimize, and schedule marketing content at scale. Our pipelines produce 15x more content than traditional methods while maintaining premium quality.",
+        "category": "Feature"
+      },
+      {
+        "term": "Self-Learning Analytics",
+        "definition": "AI-powered analytics that continuously improve campaign performance through machine learning. The system becomes 23% more effective each month by analyzing every interaction.",
+        "category": "Feature"
+      },
+      {
+        "term": "Manager Orchestrator",
+        "definition": "The central AI coordinator that manages all marketing workflows, ensuring seamless integration between research, content creation, publishing, and analytics modules.",
+        "category": "Feature"
+      },
+      {
+        "term": "Smart Publishing",
+        "definition": "Intelligent multi-channel content distribution that optimizes timing, platform selection, and messaging for maximum engagement. Achieves 35% better engagement than manual publishing.",
+        "category": "Feature"
+      },
+      {
+        "term": "Ad Automation",
+        "definition": "AI-driven advertising campaign management that continuously optimizes ad creative, targeting, and budget allocation. Delivers 3.2x better ROAS compared to traditional ad management.",
+        "category": "Feature"
+      },
+      {
+        "term": "ROAS (Return on Ad Spend)",
+        "definition": "A metric measuring revenue generated for every euro spent on advertising. Future Marketing AI clients achieve an average 3.2x ROAS through intelligent ad optimization.",
+        "category": "Metric"
+      },
+      {
+        "term": "ICP (Ideal Customer Profile)",
+        "definition": "A detailed description of the perfect customer for a business. Our platform personalizes content based on three primary ICPs: E-commerce (multi-channel), SaaS (post-PMF), and Agencies (10+ clients).",
+        "category": "Strategy"
+      },
+      {
+        "term": "Founding Member Pricing",
+        "definition": "Limited-time early adopter rates locked for 24 months. Founding Members save €120,000 vs Standard pricing while gaining roadmap influence and dedicated support.",
+        "category": "Pricing"
+      },
+      {
+        "term": "Multi-Channel Marketing",
+        "definition": "Coordinated marketing across multiple platforms (social media, email, ads, etc.). Future Marketing AI synchronizes all channels automatically, eliminating manual coordination.",
+        "category": "Strategy"
+      }
+    ],
+    "advanced_terms": [
+      {
+        "term": "Proprietary ML Models",
+        "definition": "Custom machine learning algorithms developed exclusively for marketing optimization. These models power Future Marketing AI's self-learning capabilities.",
+        "category": "Technology"
+      },
+      {
+        "term": "Campaign Attribution",
+        "definition": "The process of identifying which marketing touchpoints led to conversions. Our analytics provide real-time, cross-channel attribution insights.",
+        "category": "Analytics"
+      },
+      {
+        "term": "Content Velocity",
+        "definition": "The speed at which marketing content is produced and published. Our AI Pipelines achieve 15x faster content velocity than traditional methods.",
+        "category": "Performance"
+      },
+      {
+        "term": "Workflow Automation",
+        "definition": "The elimination of repetitive manual tasks through intelligent process automation. Saves an average of 312 hours per month per organization.",
+        "category": "Efficiency"
+      },
+      {
+        "term": "Platform ROI",
+        "definition": "The total return on investment from using Future Marketing AI. Includes cost savings (€26,000/month in replaced tools) plus revenue gains (847% average ROI).",
+        "category": "Value"
+      }
+    ]
   }
 }
