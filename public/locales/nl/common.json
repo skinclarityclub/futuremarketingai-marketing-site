@@ -565,6 +565,11 @@
           "stat": "+€45.000/mnd omzet"
         }
       },
+      "total_value": {
+        "label": "Totale Waarde",
+        "amount": "€26.000/maand bespaard",
+        "description": "Vervang 3 fulltime marketeers + elimineer software abonnementen"
+      },
       "detailed": {
         "research": {
           "name": "AI Research & Planning",

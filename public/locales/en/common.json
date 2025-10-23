@@ -565,6 +565,11 @@
           "stat": "+€45,000/mo revenue"
         }
       },
+      "total_value": {
+        "label": "Total Value",
+        "amount": "€26,000/month saved",
+        "description": "Replace 3 full-time marketers + eliminate software subscriptions"
+      },
       "detailed": {
         "research": {
           "name": "AI Research & Planning",

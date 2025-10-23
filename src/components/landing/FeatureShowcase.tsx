@@ -125,12 +125,16 @@ export const FeatureShowcase: React.FC = () => {
         <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 backdrop-blur-sm">
           <TrendingUp className="h-6 w-6 text-green-400" />
           <div className="text-left">
-            <div className="text-sm text-green-300 font-medium">Total Value</div>
-            <div className="text-2xl font-bold text-white">€26,000/month saved</div>
+            <div className="text-sm text-green-300 font-medium">
+              {t('landing.features.total_value.label')}
+            </div>
+            <div className="text-2xl font-bold text-white">
+              {t('landing.features.total_value.amount')}
+            </div>
           </div>
         </div>
         <p className="mt-4 text-sm text-blue-200/60">
-          Replace 3 full-time marketers + eliminate software subscriptions
+          {t('landing.features.total_value.description')}
         </p>
       </motion.div>
     </div>

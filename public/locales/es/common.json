@@ -598,6 +598,11 @@
           "stat": "+€45.000/mes de ingresos"
         }
       },
+      "total_value": {
+        "label": "Valor Total",
+        "amount": "€26.000/mes ahorrados",
+        "description": "Reemplaza 3 especialistas de marketing + elimina suscripciones de software"
+      },
       "detailed": {
         "research": {
           "name": "IA de Investigación y Planificación",
