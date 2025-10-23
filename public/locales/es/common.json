@@ -1,4 +1,9 @@
 {
+  "brandName": "FUTURE MARKETING AI",
+  "demoLabel": "Demo",
+  "tagline": "El Futuro de la Inteligencia de Marketing",
+  "taglineSubtitle": "Impulsado por IA. Basado en Datos. Enfocado en Resultados.",
+  "skip": "Saltar",
   "language": {
     "select": "Seleccionar Idioma",
     "current": "Español"
@@ -510,6 +515,55 @@
     "empty": {
       "title": "Aún no hay notificaciones",
       "subtitle": "¡Estás al día!"
+    }
+  },
+  "landing": {
+    "header": {
+      "brand": {
+        "future": "Future",
+        "marketing": "Marketing",
+        "ai": "AI"
+      },
+      "logo_aria": "Future Marketing AI Home",
+      "nav_aria": "Navegación principal",
+      "mobile_nav_aria": "Navegación móvil",
+      "mobile_menu_open": "Abrir menú",
+      "mobile_menu_close": "Cerrar menú",
+      "nav": {
+        "home": "Inicio",
+        "features": "Características",
+        "pricing": "Precios"
+      },
+      "login": "Iniciar Sesión",
+      "try_demo": "Probar Demo"
+    },
+    "footer": {
+      "brand_name": "Future Marketing AI",
+      "tagline": "Marketing autónomo con IA que ahorra tiempo y genera resultados.",
+      "copyright": "© {{year}} Future Marketing AI",
+      "status_badge": "Q1 2026 • 2/5 Plazas Disponibles",
+      "sections": {
+        "product": "Producto",
+        "company": "Empresa",
+        "resources": "Recursos",
+        "legal": "Legal"
+      },
+      "nav": {
+        "features": "Características",
+        "pricing": "Precios",
+        "demo": "Demo",
+        "about": "Acerca De",
+        "how_it_works": "Cómo Funciona",
+        "roi_calculator": "Calculadora de ROI",
+        "showcase": "Escaparate",
+        "privacy": "Privacidad",
+        "terms": "Términos"
+      },
+      "social_aria": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter"
+      }
     }
   }
 }

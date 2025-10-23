@@ -14,13 +14,20 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { useNeuralWarpNavigation } from '../../hooks/useNeuralWarpNavigation'
+import { KineticTypographyTransition } from '../transitions/KineticTypographyTransition'
 
 export const SimpleHeader: React.FC = () => {
+  const { t } = useTranslation('common')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+
+  // Neural Warp navigation hook
+  const { showWarp, triggerWarpNavigation, handleWarpComplete } = useNeuralWarpNavigation()
 
   // Handle scroll for sticky header effect + auto-hide
   useEffect(() => {
@@ -90,8 +97,8 @@ export const SimpleHeader: React.FC = () => {
 
   // 2025 Minimalism: Only essential navigation (2-3 items max)
   const navLinks = [
-    { label: 'Features', href: '/features' },
-    { label: 'Pricing', href: '/pricing' },
+    { label: t('landing.header.nav.features'), href: '/features' },
+    { label: t('landing.header.nav.pricing'), href: '/pricing' },
   ]
 
   const isActiveLink = (href: string) => {
@@ -129,7 +136,7 @@ export const SimpleHeader: React.FC = () => {
               <Link
                 to="/"
                 className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-xl"
-                aria-label="Future Marketing AI Home"
+                aria-label={t('landing.header.logo_aria')}
               >
                 {/* Icon with glow */}
                 <div className="relative">
@@ -140,19 +147,19 @@ export const SimpleHeader: React.FC = () => {
                 {/* Text Logo - Simplified */}
                 <div className="font-bold text-base sm:text-lg tracking-tight">
                   <span className="text-white/90 group-hover:text-white transition-colors">
-                    Future
+                    {t('landing.header.brand.future')}
                   </span>
                   <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Marketing
+                    {t('landing.header.brand.marketing')}
                   </span>
-                  <span className="text-cyan-400 ml-0.5">AI</span>
+                  <span className="text-cyan-400 ml-0.5">{t('landing.header.brand.ai')}</span>
                 </div>
               </Link>
 
               {/* Center: Minimal Navigation */}
               <nav
                 className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
-                aria-label="Main navigation"
+                aria-label={t('landing.header.nav_aria')}
               >
                 {navLinks.map((link) => (
                   <Link
@@ -176,37 +183,40 @@ export const SimpleHeader: React.FC = () => {
                 <Link to="/login">
                   <button className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
                     <LogIn className="w-4 h-4 inline mr-1.5" />
-                    Login
+                    {t('landing.header.login')}
                   </button>
                 </Link>
 
                 {/* Primary CTA - Dominant 2025 Style */}
-                <a href="/demo" target="_blank" rel="noopener noreferrer">
-                  <motion.button
-                    className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {/* Animated gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <motion.button
+                  onClick={triggerWarpNavigation}
+                  className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Animated gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    {/* Shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
 
-                    {/* Content */}
-                    <span className="relative flex items-center gap-1.5">
-                      Try Demo
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </span>
-                  </motion.button>
-                </a>
+                  {/* Content */}
+                  <span className="relative flex items-center gap-1.5">
+                    {t('landing.header.try_demo')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </motion.button>
               </div>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="lg:hidden p-2 rounded-lg text-white hover:bg-white/5 transition-colors"
-                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-label={
+                  isMobileMenuOpen
+                    ? t('landing.header.mobile_menu_close')
+                    : t('landing.header.mobile_menu_open')
+                }
                 aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -234,7 +244,10 @@ export const SimpleHeader: React.FC = () => {
 
             {/* Menu Container */}
             <div className="relative max-w-lg mx-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-              <nav className="flex flex-col p-4 space-y-1" aria-label="Mobile navigation">
+              <nav
+                className="flex flex-col p-4 space-y-1"
+                aria-label={t('landing.header.mobile_nav_aria')}
+              >
                 {/* Navigation Links */}
                 <Link
                   to="/"
@@ -245,7 +258,7 @@ export const SimpleHeader: React.FC = () => {
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Home
+                  {t('landing.header.nav.home')}
                 </Link>
 
                 {navLinks.map((link) => (
@@ -267,23 +280,21 @@ export const SimpleHeader: React.FC = () => {
                 <div className="h-px bg-white/10 my-2" />
 
                 {/* Mobile CTAs */}
-                <a
-                  href="/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  onClick={(e) => {
+                    triggerWarpNavigation(e)
+                    setIsMobileMenuOpen(false)
+                  }}
+                  className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2"
                 >
-                  <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2">
-                    Try Demo
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </a>
+                  {t('landing.header.try_demo')}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
                 <Link to="/login" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                   <button className="w-full px-4 py-2.5 bg-white/5 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
                     <LogIn className="w-4 h-4" />
-                    Login
+                    {t('landing.header.login')}
                   </button>
                 </Link>
               </nav>
@@ -291,6 +302,13 @@ export const SimpleHeader: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Kinetic Typography Transition Overlay */}
+      <KineticTypographyTransition
+        isActive={showWarp}
+        onComplete={handleWarpComplete}
+        duration={5500}
+      />
     </>
   )
 }

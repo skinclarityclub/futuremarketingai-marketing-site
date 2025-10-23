@@ -1,4 +1,9 @@
 {
+  "brandName": "FUTURE MARKETING AI",
+  "demoLabel": "Demo",
+  "tagline": "De Toekomst van Marketing Intelligentie",
+  "taglineSubtitle": "AI-Gedreven. Data-Gestuurd. Resultaatgericht.",
+  "skip": "Overslaan",
   "loading": {
     "default": "Laden...",
     "page": "Pagina laden...",
@@ -478,5 +483,54 @@
     "data_deleted_error": "Er is iets misgegaan bij het verwijderen van je data. Probeer het opnieuw.",
     "all_rights_reserved": "Alle rechten voorbehouden.",
     "demo_notice": "Dit is een interactieve demo. Je data wordt lokaal opgeslagen en niet gedeeld met derden."
+  },
+  "landing": {
+    "header": {
+      "brand": {
+        "future": "Future",
+        "marketing": "Marketing",
+        "ai": "AI"
+      },
+      "logo_aria": "Future Marketing AI Home",
+      "nav_aria": "Hoofdnavigatie",
+      "mobile_nav_aria": "Mobiele navigatie",
+      "mobile_menu_open": "Menu openen",
+      "mobile_menu_close": "Menu sluiten",
+      "nav": {
+        "home": "Home",
+        "features": "Functies",
+        "pricing": "Prijzen"
+      },
+      "login": "Inloggen",
+      "try_demo": "Probeer Demo"
+    },
+    "footer": {
+      "brand_name": "Future Marketing AI",
+      "tagline": "Autonome AI-marketing die tijd bespaart en resultaten levert.",
+      "copyright": "© {{year}} Future Marketing AI",
+      "status_badge": "Q1 2026 • 2/5 Plekken Beschikbaar",
+      "sections": {
+        "product": "Product",
+        "company": "Bedrijf",
+        "resources": "Bronnen",
+        "legal": "Juridisch"
+      },
+      "nav": {
+        "features": "Functies",
+        "pricing": "Prijzen",
+        "demo": "Demo",
+        "about": "Over Ons",
+        "how_it_works": "Hoe Het Werkt",
+        "roi_calculator": "ROI Calculator",
+        "showcase": "Showcase",
+        "privacy": "Privacy",
+        "terms": "Voorwaarden"
+      },
+      "social_aria": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter"
+      }
+    }
   }
 }

@@ -11,9 +11,11 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Sparkles, Github, Linkedin, Twitter } from 'lucide-react'
 
 export const LandingFooter: React.FC = () => {
+  const { t } = useTranslation('common')
   const currentYear = new Date().getFullYear()
 
   return (
@@ -26,12 +28,10 @@ export const LandingFooter: React.FC = () => {
             <Link to="/" className="flex items-center gap-2 group w-fit">
               <Sparkles className="w-5 h-5 text-blue-400 transition-transform group-hover:rotate-12" />
               <span className="font-bold text-base text-white">
-                Future<span className="text-blue-400">Marketing</span>AI
+                {t('landing.footer.brand_name')}
               </span>
             </Link>
-            <p className="text-sm text-slate-400 max-w-xs">
-              Autonomous AI marketing that saves time and drives results.
-            </p>
+            <p className="text-sm text-slate-400 max-w-xs">{t('landing.footer.tagline')}</p>
           </div>
 
           {/* Navigation Grid - Compact */}
@@ -39,7 +39,7 @@ export const LandingFooter: React.FC = () => {
             {/* Product */}
             <div>
               <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
-                Product
+                {t('landing.footer.sections.product')}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -47,7 +47,7 @@ export const LandingFooter: React.FC = () => {
                     to="/features"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Features
+                    {t('landing.footer.nav.features')}
                   </Link>
                 </li>
                 <li>
@@ -55,7 +55,7 @@ export const LandingFooter: React.FC = () => {
                     to="/pricing"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Pricing
+                    {t('landing.footer.nav.pricing')}
                   </Link>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ export const LandingFooter: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Demo
+                    {t('landing.footer.nav.demo')}
                   </a>
                 </li>
               </ul>
@@ -74,7 +74,7 @@ export const LandingFooter: React.FC = () => {
             {/* Company */}
             <div>
               <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
-                Company
+                {t('landing.footer.sections.company')}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -82,7 +82,7 @@ export const LandingFooter: React.FC = () => {
                     to="/about"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    About
+                    {t('landing.footer.nav.about')}
                   </Link>
                 </li>
                 <li>
@@ -90,7 +90,7 @@ export const LandingFooter: React.FC = () => {
                     to="/how-it-works"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    How It Works
+                    {t('landing.footer.nav.how_it_works')}
                   </Link>
                 </li>
               </ul>
@@ -99,7 +99,7 @@ export const LandingFooter: React.FC = () => {
             {/* Resources */}
             <div>
               <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
-                Resources
+                {t('landing.footer.sections.resources')}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -107,7 +107,7 @@ export const LandingFooter: React.FC = () => {
                     to="/calculator"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    ROI Calculator
+                    {t('landing.footer.nav.roi_calculator')}
                   </Link>
                 </li>
                 <li>
@@ -115,7 +115,7 @@ export const LandingFooter: React.FC = () => {
                     to="/explorer"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Showcase
+                    {t('landing.footer.nav.showcase')}
                   </Link>
                 </li>
               </ul>
@@ -124,7 +124,7 @@ export const LandingFooter: React.FC = () => {
             {/* Legal */}
             <div>
               <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
-                Legal
+                {t('landing.footer.sections.legal')}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -132,7 +132,7 @@ export const LandingFooter: React.FC = () => {
                     to="/privacy"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Privacy
+                    {t('landing.footer.nav.privacy')}
                   </Link>
                 </li>
                 <li>
@@ -140,7 +140,7 @@ export const LandingFooter: React.FC = () => {
                     to="/terms"
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    Terms
+                    {t('landing.footer.nav.terms')}
                   </Link>
                 </li>
               </ul>
@@ -153,10 +153,12 @@ export const LandingFooter: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Left: Copyright + Status */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <p className="text-xs text-slate-500">© {currentYear} Future Marketing AI</p>
+              <p className="text-xs text-slate-500">
+                {t('landing.footer.copyright', { year: currentYear })}
+              </p>
               <div className="flex items-center gap-2 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">
                 <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
-                <span className="text-xs text-purple-200">Q1 2026 • 2/5 Slots Left</span>
+                <span className="text-xs text-purple-200">{t('landing.footer.status_badge')}</span>
               </div>
             </div>
 
@@ -167,7 +169,7 @@ export const LandingFooter: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="GitHub"
+                aria-label={t('landing.footer.social_aria.github')}
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -176,7 +178,7 @@ export const LandingFooter: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="LinkedIn"
+                aria-label={t('landing.footer.social_aria.linkedin')}
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -185,7 +187,7 @@ export const LandingFooter: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Twitter"
+                aria-label={t('landing.footer.social_aria.twitter')}
               >
                 <Twitter className="w-4 h-4" />
               </a>

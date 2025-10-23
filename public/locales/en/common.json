@@ -1,4 +1,9 @@
 {
+  "brandName": "FUTURE MARKETING AI",
+  "demoLabel": "Demo",
+  "tagline": "The Future of Marketing Intelligence",
+  "taglineSubtitle": "AI-Powered. Data-Driven. Results-Focused.",
+  "skip": "Skip",
   "loading": {
     "default": "Loading...",
     "page": "Loading page...",
@@ -478,5 +483,54 @@
     "data_deleted_error": "Something went wrong deleting your data. Please try again.",
     "all_rights_reserved": "All rights reserved.",
     "demo_notice": "This is an interactive demo. Your data is stored locally and not shared with third parties."
+  },
+  "landing": {
+    "header": {
+      "brand": {
+        "future": "Future",
+        "marketing": "Marketing",
+        "ai": "AI"
+      },
+      "logo_aria": "Future Marketing AI Home",
+      "nav_aria": "Main navigation",
+      "mobile_nav_aria": "Mobile navigation",
+      "mobile_menu_open": "Open menu",
+      "mobile_menu_close": "Close menu",
+      "nav": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing"
+      },
+      "login": "Login",
+      "try_demo": "Try Demo"
+    },
+    "footer": {
+      "brand_name": "Future Marketing AI",
+      "tagline": "Autonomous AI marketing that saves time and drives results.",
+      "copyright": "© {{year}} Future Marketing AI",
+      "status_badge": "Q1 2026 • 2/5 Slots Left",
+      "sections": {
+        "product": "Product",
+        "company": "Company",
+        "resources": "Resources",
+        "legal": "Legal"
+      },
+      "nav": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "demo": "Demo",
+        "about": "About",
+        "how_it_works": "How It Works",
+        "roi_calculator": "ROI Calculator",
+        "showcase": "Showcase",
+        "privacy": "Privacy",
+        "terms": "Terms"
+      },
+      "social_aria": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter"
+      }
+    }
   }
 }
