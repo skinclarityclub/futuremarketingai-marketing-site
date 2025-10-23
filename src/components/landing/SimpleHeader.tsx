@@ -28,9 +28,11 @@ export const SimpleHeader: React.FC = () => {
   const handleDemoClick = (e: React.MouseEvent) => {
     e.preventDefault()
 
+    // Set a flag in localStorage with timestamp - this works across windows!
+    localStorage.setItem('fromLanding', Date.now().toString())
+
     // Open demo in new window
-    // The demo will detect it came from landing page via document.referrer
-    const demoWindow = window.open('/demo', '_blank', 'noopener,noreferrer')
+    const demoWindow = window.open('/demo', '_blank')
 
     if (demoWindow) {
       // Wait for window to load, then request fullscreen

@@ -70,27 +70,25 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Check if we came from the landing page by checking the referrer
+  // Check if we came from the landing page using localStorage flag
   const shouldPlayAnimation = React.useMemo(() => {
-    // Check if this is the first load in this window (not a navigation within demo)
-    const isFirstLoad = !sessionStorage.getItem('demoVisited')
+    const fromLanding = localStorage.getItem('fromLanding')
 
-    if (isFirstLoad) {
-      // Mark that we've visited the demo
-      sessionStorage.setItem('demoVisited', 'true')
+    if (fromLanding) {
+      const timestamp = parseInt(fromLanding, 10)
+      const now = Date.now()
 
-      // Check if we came from landing page or external source
-      const referrer = document.referrer
-      const isFromLanding =
-        referrer.includes(window.location.origin) &&
-        (referrer.endsWith('/') || referrer.includes('?') || referrer.includes('#'))
+      // Check if flag was set within last 5 seconds (fresh navigation)
+      if (now - timestamp < 5000) {
+        localStorage.removeItem('fromLanding') // Clear flag
+        return true // Play animation!
+      }
 
-      // Play animation if coming from landing page OR if it's a fresh entry
-      return isFromLanding || !referrer
+      // Flag too old, clear it
+      localStorage.removeItem('fromLanding')
     }
 
-    // Don't play if already visited (navigating within demo)
-    return false
+    return false // No animation
   }, [])
 
   // Neural Warp animation state - only play if coming from landing page
