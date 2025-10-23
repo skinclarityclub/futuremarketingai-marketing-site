@@ -11,23 +11,32 @@
  */
 
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { useNeuralWarpNavigation } from '../../hooks/useNeuralWarpNavigation'
 import { KineticTypographyTransition } from '../transitions/KineticTypographyTransition'
 
 export const SimpleHeader: React.FC = () => {
   const { t } = useTranslation('common')
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [showTransition, setShowTransition] = useState(false)
   const location = useLocation()
 
-  // Neural Warp navigation hook
-  const { showWarp, triggerWarpNavigation, handleWarpComplete } = useNeuralWarpNavigation()
+  // Handle transition to demo
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setShowTransition(true)
+  }
+
+  const handleTransitionComplete = () => {
+    setShowTransition(false)
+    navigate('/demo')
+  }
 
   // Handle scroll for sticky header effect + auto-hide
   useEffect(() => {
@@ -189,7 +198,7 @@ export const SimpleHeader: React.FC = () => {
 
                 {/* Primary CTA - Dominant 2025 Style */}
                 <motion.button
-                  onClick={triggerWarpNavigation}
+                  onClick={handleDemoClick}
                   className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -282,7 +291,7 @@ export const SimpleHeader: React.FC = () => {
                 {/* Mobile CTAs */}
                 <button
                   onClick={(e) => {
-                    triggerWarpNavigation(e)
+                    handleDemoClick(e)
                     setIsMobileMenuOpen(false)
                   }}
                   className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2"
@@ -305,8 +314,8 @@ export const SimpleHeader: React.FC = () => {
 
       {/* Kinetic Typography Transition Overlay */}
       <KineticTypographyTransition
-        isActive={showWarp}
-        onComplete={handleWarpComplete}
+        isActive={showTransition}
+        onComplete={handleTransitionComplete}
         duration={5500}
       />
     </>
