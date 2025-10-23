@@ -24,6 +24,7 @@ import { ToastProvider } from './contexts/ToastContext'
 import { FloatingElementProvider } from './contexts/FloatingElementContext'
 
 // Lazy load all page components for code splitting
+const Hero = lazy(() => import('./pages/Hero'))
 const LandingPage = lazy(() =>
   import('./pages/LandingPage').then((module) => ({ default: module.LandingPage }))
 )
@@ -175,7 +176,7 @@ function App() {
                     <Route path="/gdpr" element={<GDPRPage />} />
 
                     {/* Demo Pages */}
-                    <Route path="/demo" element={<Dashboard />} />
+                    <Route path="/demo" element={<Hero />} />
                     <Route path="/explorer" element={<Explorer />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/calculator" element={<Calculator />} />
