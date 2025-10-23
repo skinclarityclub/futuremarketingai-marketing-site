@@ -32,6 +32,23 @@
   "vision_timeline": {
     "badge": "Where We're Heading",
     "title": "The Evolution of Marketing Automation",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "AI-Assisted Era",
+        "description": "80% of teams stuck here with ChatGPT/Jasper"
+      },
+      "autonomous": {
+        "year": "2025-2026",
+        "label": "⚡ Pioneer Window",
+        "description": "<1% adoption NOW. First 10 teams building unfair advantage."
+      },
+      "mainstream": {
+        "year": "2027-2028",
+        "label": "Mainstream Adoption",
+        "description": "Everyone has it. Your 2-3 year lead evaporates."
+      }
+    },
     "early_adopter_window": "EARLY ADOPTER WINDOW",
     "you_are_here": "You Are Here",
     "insight": "Teams that adopted AI-assisted tools early (2020-2022) gained 3-5 years on competitors.",

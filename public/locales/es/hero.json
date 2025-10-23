@@ -32,6 +32,23 @@
   "vision_timeline": {
     "badge": "Hacia Dónde Vamos",
     "title": "La Evolución de la Automatización de Marketing",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "Era de IA Asistida",
+        "description": "80% de equipos atascados aquí con ChatGPT/Jasper"
+      },
+      "autonomous": {
+        "year": "2025-2026",
+        "label": "⚡ Ventana Pioneer",
+        "description": "<1% adopción AHORA. Primeros 10 equipos construyendo ventaja injusta."
+      },
+      "mainstream": {
+        "year": "2027-2028",
+        "label": "Adopción Masiva",
+        "description": "Todos lo tienen. Tu ventaja de 2-3 años se evapora."
+      }
+    },
     "early_adopter_window": "VENTANA DE EARLY ADOPTERS",
     "you_are_here": "Estás Aquí",
     "insight": "Los equipos que adoptaron herramientas IA-asistidas temprano (2020-2022) obtuvieron 3-5 años de ventaja.",

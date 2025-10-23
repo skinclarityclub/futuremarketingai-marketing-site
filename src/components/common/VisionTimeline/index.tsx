@@ -18,47 +18,53 @@ export interface VisionTimelineProps {
 }
 
 // ============================================================================
-// Default Eras
-// ============================================================================
-
-const DEFAULT_ERAS: TimelineEra[] = [
-  {
-    id: 'ai-assisted',
-    year: '2020-2024',
-    label: 'AI-Assisted Era',
-    description: '80% of teams stuck here with ChatGPT/Jasper',
-    icon: 'assisted',
-    status: 'past',
-  },
-  {
-    id: 'autonomous',
-    year: '2025-2026',
-    label: '⚡ Pioneer Window',
-    description: '<1% adoption NOW. First 10 teams building unfair advantage.',
-    icon: 'autonomous',
-    status: 'active',
-  },
-  {
-    id: 'standard',
-    year: '2027-2028',
-    label: 'Mainstream Adoption',
-    description: 'Everyone has it. Your 2-3 year lead evaporates.',
-    icon: 'standard',
-    status: 'future',
-  },
-]
-
-// ============================================================================
 // Component
 // ============================================================================
 
 export const VisionTimeline: React.FC<VisionTimelineProps> = ({
-  eras = DEFAULT_ERAS,
+  eras: customEras,
   className = '',
 }) => {
   const { t } = useTranslation(['hero'])
   const ref = React.useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  // Build eras from translations
+  const eras = customEras || [
+    {
+      id: 'ai-assisted',
+      year: t('hero:vision_timeline.eras.ai_assisted.year', '2020-2024'),
+      label: t('hero:vision_timeline.eras.ai_assisted.label', 'AI-Assisted Era'),
+      description: t(
+        'hero:vision_timeline.eras.ai_assisted.description',
+        '80% of teams stuck here with ChatGPT/Jasper'
+      ),
+      icon: 'assisted' as const,
+      status: 'past' as const,
+    },
+    {
+      id: 'autonomous',
+      year: t('hero:vision_timeline.eras.autonomous.year', '2025-2026'),
+      label: t('hero:vision_timeline.eras.autonomous.label', '⚡ Pioneer Window'),
+      description: t(
+        'hero:vision_timeline.eras.autonomous.description',
+        '<1% adoption NOW. First 10 teams building unfair advantage.'
+      ),
+      icon: 'autonomous' as const,
+      status: 'active' as const,
+    },
+    {
+      id: 'standard',
+      year: t('hero:vision_timeline.eras.mainstream.year', '2027-2028'),
+      label: t('hero:vision_timeline.eras.mainstream.label', 'Mainstream Adoption'),
+      description: t(
+        'hero:vision_timeline.eras.mainstream.description',
+        'Everyone has it. Your 2-3 year lead evaporates.'
+      ),
+      icon: 'standard' as const,
+      status: 'future' as const,
+    },
+  ]
 
   // Container animation variants
   const containerVariants = {

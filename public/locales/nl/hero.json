@@ -32,6 +32,23 @@
   "vision_timeline": {
     "badge": "Waar We Naartoe Gaan",
     "title": "De Evolutie van Marketing Automatisering",
+    "eras": {
+      "ai_assisted": {
+        "year": "2020-2024",
+        "label": "AI-Assisted Era",
+        "description": "80% van teams vastzit hier met ChatGPT/Jasper"
+      },
+      "autonomous": {
+        "year": "2025-2026",
+        "label": "⚡ Pioneer Window",
+        "description": "<1% adoptie NU. Eerste 10 teams bouwen unfair advantage."
+      },
+      "mainstream": {
+        "year": "2027-2028",
+        "label": "Mainstream Adoptie",
+        "description": "Iedereen heeft het. Je 2-3 jaar voorsprong verdampt."
+      }
+    },
     "early_adopter_window": "EARLY ADOPTER WINDOW",
     "you_are_here": "U Bent Hier",
     "insight": "Teams die vroeg AI-hulpmiddelen adopteerden (2020-2022) kregen 3-5 jaar voorsprong op concurrenten.",
