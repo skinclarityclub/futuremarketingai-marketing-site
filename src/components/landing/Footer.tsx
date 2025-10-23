@@ -19,7 +19,7 @@ export const LandingFooter: React.FC = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative mt-32 border-t border-white/5">
+    <footer className="relative mt-16 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section: Logo + Navigation + Status */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8">
