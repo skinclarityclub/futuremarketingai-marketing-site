@@ -25,5 +25,13 @@
     "description": "Only 2 Founding Member slots left: €15,000/month for €39,000 in enterprise automation. That's €24,000/month savings + 2 free months. Rate locked for 24 months.",
     "demo_button": "Try Interactive Demo",
     "contact_button": "Book Founder Call"
+  },
+  "mobile": {
+    "early_adopter": "Early Adopter Pricing",
+    "urgency_default": "2 slots remaining at current rates",
+    "starting_at": "Starting at",
+    "get_started": "Get Started",
+    "view_full_pricing": "View full pricing & features",
+    "full_comparison": "See detailed feature comparison on desktop"
   }
 }

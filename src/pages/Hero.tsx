@@ -37,19 +37,40 @@ import {
   useCalendlyBooking,
   useExitIntent,
   usePersonalization,
+  createConditionalComponent,
+  useIsMobile,
 } from '../hooks'
 import { trackHeroView, trackCTAClick } from '../utils/analytics'
 import { getHeadlineVariant, trackVariantCTAClick } from '../utils/headlineVariants'
 import { usePersonalizationStore } from '../stores'
 import { CalendlyFunnelSession } from '../utils/calendlyFunnelTracking'
 
-// Lazy load heavy components
-const SystemDiagram = lazy(() =>
-  import('../components/layer1-hero/SystemDiagram').then((module) => ({
-    default: module.SystemDiagram,
+// Mobile version of demo-home
+const DemoHomeMobile = lazy(() => import('./DemoHomeMobile'))
+
+// Mobile static infographic for complex visualizations
+const StaticSystemInfographic = lazy(() => 
+  import('../components/mobile/StaticSystemInfographic').then(module => ({
+    default: module.StaticSystemInfographic
   }))
 )
 
+// Lazy load heavy components - SystemDiagram ONLY on desktop (3D visualization)
+const SystemDiagram = createConditionalComponent(
+  () => import('../components/layer1-hero/SystemDiagram').then((module) => ({
+    default: module.SystemDiagram,
+  })),
+  {
+    loadOn: 'desktop', // Too heavy for mobile/tablet
+    fallback: () => (
+      <Suspense fallback={<div className="py-12 text-center text-slate-400">Loading...</div>}>
+        <StaticSystemInfographic showDesktopCTA={true} />
+      </Suspense>
+    ),
+  }
+)
+
+// Calendly can load on all devices
 const CalendlyModal = lazy(() =>
   import('../components/common/CalendlyModal').then((module) => ({
     default: module.CalendlyModal,
@@ -70,6 +91,19 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
+  // Mobile detection
+  const isMobile = useIsMobile()
+  
+  // If mobile, render simplified mobile version
+  if (isMobile) {
+    return (
+      <Suspense fallback={<LoadingFallback />}>
+        <DemoHomeMobile />
+      </Suspense>
+    )
+  }
+
+  // Desktop/Tablet: Full experience
   // Check if we're on /demo (with animation) or /demo-home (without animation)
   const location = window.location
   const shouldPlayAnimation = location.pathname === '/demo'
@@ -491,9 +525,8 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
           >
             <GlassCard className="p-8 overflow-hidden">
-              <Suspense fallback={<LoadingFallback message={t('hero:loading.diagram')} />}>
-                <SystemDiagram />
-              </Suspense>
+              {/* createConditionalComponent handles its own Suspense boundary */}
+              <SystemDiagram />
             </GlassCard>
           </motion.div>
 

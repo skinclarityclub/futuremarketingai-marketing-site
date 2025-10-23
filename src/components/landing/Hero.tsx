@@ -4,23 +4,27 @@
  * Source: future-marketing-ai-hero.tsx
  */
 
-import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useRef, useState, Suspense } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
+import { useIsMobile, createConditionalComponent } from '../../hooks'
+import { SimplifiedHeroMobile } from '../mobile/SimplifiedHeroMobile'
 
-// Lazy load heavy components for performance
-const VisionTimeline = lazy(() =>
-  import('../common/VisionTimeline').then((module) => ({
+// Lazy load heavy components for performance - ONLY on desktop
+const VisionTimeline = createConditionalComponent(
+  () => import('../common/VisionTimeline').then((module) => ({
     default: module.VisionTimeline,
-  }))
+  })),
+  { loadOn: ['desktop', 'tablet'] }
 )
 
-const FeatureShowcase = lazy(() =>
-  import('./FeatureShowcase').then((module) => ({
+const FeatureShowcase = createConditionalComponent(
+  () => import('./FeatureShowcase').then((module) => ({
     default: module.FeatureShowcase,
-  }))
+  })),
+  { loadOn: ['desktop', 'tablet'] }
 )
 
 // Fixed positions to prevent hydration mismatch
@@ -256,7 +260,8 @@ const GradientOrbs: React.FC = () => (
   </div>
 )
 
-export const Hero: React.FC = () => {
+// Desktop Hero Component (existing full hero)
+const HeroDesktop: React.FC = () => {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
@@ -296,7 +301,7 @@ export const Hero: React.FC = () => {
       ref={ref}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
     >
-      {/* Background Effects */}
+      {/* Background Effects - Desktop only */}
       <HolographicGrid />
       <NeuralNetwork />
       <FloatingParticles />
@@ -522,3 +527,17 @@ export const Hero: React.FC = () => {
     </section>
   )
 }
+
+// Main Hero export with device-specific rendering
+export const Hero: React.FC = () => {
+  const isMobile = useIsMobile()
+  
+  // Render mobile or desktop variant
+  if (isMobile) {
+    return <SimplifiedHeroMobile />
+  }
+  
+  return <HeroDesktop />
+}
+
+export default Hero

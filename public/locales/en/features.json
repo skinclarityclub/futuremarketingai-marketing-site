@@ -15,6 +15,28 @@
     "title": "The Complete AI Marketing System",
     "description": "6 autonomous AI modules working together to save you €26,000/month in tools and generate €60,000/month in additional revenue. All completely hands-free."
   },
+  "section_title": "Key Features",
+  "section_subtitle": "Swipe to explore",
+  "ai_automation": {
+    "title": "AI Automation",
+    "description": "Intelligent automation that learns and adapts to your business.",
+    "details": "Our AI continuously analyzes your marketing performance, automatically optimizes campaigns, and makes data-driven decisions to maximize your ROI without manual intervention."
+  },
+  "instant_results": {
+    "title": "Instant Results",
+    "description": "See measurable impact from day one with real-time insights.",
+    "details": "Start generating leads and revenue immediately. Our platform provides real-time analytics and performance tracking so you can see exactly how your marketing performs and adapts instantly."
+  },
+  "smart_targeting": {
+    "title": "Smart Targeting",
+    "description": "Reach the right audience at the perfect moment.",
+    "details": "Advanced AI algorithms identify your ideal customers, predict their behavior, and automatically target them with personalized messages across multiple channels for maximum conversion rates."
+  },
+  "growth_tracking": {
+    "title": "Growth Tracking",
+    "description": "Monitor your growth with enterprise-grade analytics.",
+    "details": "Comprehensive dashboards show your complete marketing funnel, ROI metrics, customer lifetime value, and predictive growth forecasts. Make informed decisions backed by real data."
+  },
   "cta": {
     "title": "See All Modules in Action",
     "description": "Try our interactive demo to experience how all 6 AI modules work together to transform your marketing.",

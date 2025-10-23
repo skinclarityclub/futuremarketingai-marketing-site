@@ -168,19 +168,19 @@ export function useScrollProgress(throttle = 16): number {
 }
 
 /**
- * Hook for detecting scroll direction
+ * Hook for detecting scroll delta
  * Returns 1 for down, -1 for up, 0 for no scroll
  *
  * @param throttle - Throttle interval in milliseconds (default: 16ms)
- * @returns Scroll direction
+ * @returns Scroll delta
  *
  * @example
  * ```tsx
- * const direction = useScrollDirection()
- * const isScrollingDown = direction === 1
+ * const delta = useScrollDelta()
+ * const isScrollingDown = delta === 1
  * ```
  */
-export function useScrollDirection(throttle = 16): number {
+export function useScrollDelta(throttle = 16): number {
   const { direction } = useScrollPosition({ throttle, trackVelocity: false })
   return direction
 }

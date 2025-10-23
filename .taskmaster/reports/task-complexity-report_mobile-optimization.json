@@ -1,0 +1,213 @@
+{
+	"meta": {
+		"generatedAt": "2025-10-23T17:15:05.230Z",
+		"tasksAnalyzed": 25,
+		"totalTasks": 25,
+		"analysisCount": 25,
+		"thresholdScore": 5,
+		"projectName": "Taskmaster",
+		"usedResearch": true
+	},
+	"complexityAnalysis": [
+		{
+			"taskId": 1,
+			"taskTitle": "Establish Mobile-First Responsive Design System",
+			"complexityScore": 9,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Break down the establishment of a mobile-first responsive design system into subtasks covering: Tailwind CSS setup with custom breakpoints, fluid grid and layout implementation, touch target and spacing standards, dark mode and system theme integration, color palette and WCAG compliance, mobile component directory structure, and comprehensive device/accessibility testing.",
+			"reasoning": "This task is foundational and highly complex, requiring architectural decisions, deep integration of Tailwind CSS with custom breakpoints, adherence to Apple HIG and WCAG, dark mode and system theme support, and robust accessibility/performance testing. It impacts all downstream components and sets the standard for the entire mobile experience. Each requirement (breakpoints, layouts, accessibility, color contrast, dark mode, etc.) involves significant implementation and testing effort, with high risk if not executed correctly. Industry best practices demand thorough device and accessibility validation, making this a multi-disciplinary, high-effort task."
+		},
+		{
+			"taskId": 2,
+			"taskTitle": "Enhance useMediaQuery and Conditional Rendering Utilities",
+			"complexityScore": 7,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Decompose the enhancement of useMediaQuery and conditional rendering utilities into subtasks: refactor useMediaQuery for matchMedia and SSR fallback, implement conditional loading utilities for heavy components, ensure device-specific rendering logic, and comprehensive unit/integration testing.",
+			"reasoning": "This task involves advanced React patterns, SSR compatibility, and robust device detection, which are non-trivial. Ensuring reliable conditional rendering across devices and environments (including SSR) is technically challenging and critical for performance and correctness. Testing must cover edge cases and regressions, especially for heavy/interactive components."
+		},
+		{
+			"taskId": 19,
+			"taskTitle": "Add OfflineIndicator Component",
+			"complexityScore": 4,
+			"recommendedSubtasks": 2,
+			"expansionPrompt": "Split the implementation of the OfflineIndicator into subtasks: service worker event integration and offline/online event handling, and accessible UI component development with testing.",
+			"reasoning": "This is a focused, low-risk task leveraging established patterns (Workbox, service worker events). The main complexity lies in ensuring accessibility and non-intrusive UX, but the technical scope is limited and well-supported by modern frameworks."
+		},
+		{
+			"taskId": 10,
+			"taskTitle": "Redesign Mobile Demo Home (/demo-home)",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the redesign of /demo-home for mobile into subtasks: layout simplification and removal of complex elements, integration of MobileFeatureCarousel, implementation of large tap targets and concise copy, and analytics integration/testing.",
+			"reasoning": "While the redesign is conceptually straightforward, it requires careful coordination with other components (carousel, analytics), attention to mobile UX best practices, and thorough testing. Dependencies increase coordination complexity, but the technical risk is moderate."
+		},
+		{
+			"taskId": 18,
+			"taskTitle": "Develop MobileOnboarding Walkthrough",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Divide the onboarding walkthrough into subtasks: onboarding flow implementation (using Joyride or custom), localStorage persistence and skip logic, and accessibility/persistence testing.",
+			"reasoning": "This task is moderately complex, involving third-party integration (Joyride), state persistence, and accessibility. The scope is contained, but ensuring a seamless, accessible, and non-intrusive onboarding experience requires careful implementation and testing."
+		},
+		{
+			"taskId": 11,
+			"taskTitle": "Implement Mobile Feature Showcase (Swipeable)",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Expand the swipeable feature showcase into subtasks: swipeable card implementation (Swiper.js/Framer Motion), lazy loading of images, 'View Interactive' button integration, and accessibility/performance testing.",
+			"reasoning": "Implementing a performant, accessible swipeable showcase with lazy loading and interactive elements is moderately complex. It requires coordination between UI, performance, and accessibility concerns, but leverages established libraries and patterns."
+		},
+		{
+			"taskId": 24,
+			"taskTitle": "Configure A/B Testing for Mobile Variants",
+			"complexityScore": 7,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down A/B testing setup into subtasks: feature flag implementation (LaunchDarkly/Optimizely), test group randomization, metrics tracking and analytics integration, and statistical significance validation.",
+			"reasoning": "A/B testing involves integrating third-party platforms, ensuring robust feature flagging, accurate user segmentation, and reliable analytics. Statistical validation adds further complexity. Industry standards require careful implementation to avoid bias and ensure actionable results."
+		},
+		{
+			"taskId": 3,
+			"taskTitle": "Implement SimplifiedHeroMobile Component",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Decompose the SimplifiedHeroMobile implementation into subtasks: component development with Tailwind, dismissible badge logic, and accessibility/visual regression testing.",
+			"reasoning": "This is a focused UI component with clear requirements. The main complexity is in ensuring accessibility, responsive layout, and correct badge behavior, but it follows standard patterns and is low risk."
+		},
+		{
+			"taskId": 4,
+			"taskTitle": "Develop MobileFeatureCarousel Component",
+			"complexityScore": 7,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break down the MobileFeatureCarousel into subtasks: swipe gesture implementation (Swiper.js/Framer Motion), card expand/collapse logic, lazy loading of images/icons, and accessibility/performance testing.",
+			"reasoning": "Swipeable carousels with expand/collapse and lazy loading are moderately complex, especially when accessibility and performance are priorities. Integration with animation libraries and ensuring smooth UX across devices adds to the challenge."
+		},
+		{
+			"taskId": 5,
+			"taskTitle": "Condense Social Proof Section for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Divide the social proof section into subtasks: testimonial carousel implementation, logo optimization and lazy loading, and accessibility/visual testing.",
+			"reasoning": "This task involves standard carousel and image optimization patterns. The main complexity is in ensuring accessibility and performance, but the technical risk is moderate and well-supported by libraries."
+		},
+		{
+			"taskId": 6,
+			"taskTitle": "Simplify Pricing/Value Section for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on simplify pricing/value section for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 7,
+			"taskTitle": "Implement StickyBottomCTA Component",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on implement stickybottomcta component.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 8,
+			"taskTitle": "Create DesktopBanner Component for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on create desktopbanner component for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 9,
+			"taskTitle": "Refactor Mobile Navigation: MobileBottomNav Component",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on refactor mobile navigation: mobilebottomnav component.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 12,
+			"taskTitle": "Optimize Calendly Integration for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on optimize calendly integration for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 13,
+			"taskTitle": "Hide or Replace Complex Visualizations on Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on hide or replace complex visualizations on mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 14,
+			"taskTitle": "Refactor PersonalizationControlBar for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on refactor personalizationcontrolbar for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 15,
+			"taskTitle": "Refactor AIJourneyAssistant for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on refactor aijourneyassistant for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 16,
+			"taskTitle": "Enhance MobileMenu Overlay",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on enhance mobilemenu overlay.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 17,
+			"taskTitle": "Implement EmailDesktopLinkForm Component",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on implement emaildesktoplinkform component.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 20,
+			"taskTitle": "Optimize Mobile Performance and Bundle Size",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on optimize mobile performance and bundle size.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 21,
+			"taskTitle": "Implement Touch-Optimized Interactions",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on implement touch-optimized interactions.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 22,
+			"taskTitle": "Implement Progressive Feature Reveal (Accordion/Expandable Cards)",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on implement progressive feature reveal (accordion/expandable cards).",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 23,
+			"taskTitle": "Integrate Analytics and Event Tracking for Mobile",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on integrate analytics and event tracking for mobile.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		},
+		{
+			"taskId": 25,
+			"taskTitle": "Conduct Cross-Device Testing and Accessibility Audit",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break down this task with a focus on conduct cross-device testing and accessibility audit.",
+			"reasoning": "Automatically added due to missing analysis in AI response."
+		}
+	]
+}

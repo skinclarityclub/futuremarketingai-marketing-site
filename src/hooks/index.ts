@@ -14,6 +14,41 @@ export {
   usePageAnalytics,
   useViewTracking,
 } from './useAnalytics'
+
+// Mobile-First Responsive Design Hooks
+export {
+  useMediaQuery,
+  useIsMobile,
+  useIsTablet,
+  useIsDesktop,
+  useIsMobileOrTablet,
+  usePrefersReducedMotion,
+  useIsTouchDevice,
+  usePrefersDarkMode,
+  useIsRetina,
+  useIsPortrait,
+  useIsLandscape,
+} from './useMediaQuery'
+export type { UseMediaQueryOptions } from './useMediaQuery'
+
+// Conditional Loading Utilities for Heavy Components
+export {
+  useShouldLoadComponent,
+  createConditionalComponent,
+  useConditionalPreload,
+  isMobileDevice,
+  isTabletDevice,
+  isDesktopDevice,
+  isMobileOrTabletDevice,
+  runByDevice,
+  createDeviceVariants,
+} from './useConditionalLoad'
+export type { DeviceType, ConditionalLoadOptions } from './useConditionalLoad'
+export {
+  useScrollBehavior,
+  useScrollDirection, // Alias for backwards compatibility
+  type ScrollDirection,
+} from './useScrollDirection'
 export {
   useMousePosition,
   useSmoothedMousePosition,
@@ -23,7 +58,7 @@ export {
 export {
   useScrollPosition,
   useScrollProgress,
-  useScrollDirection,
+  useScrollDelta,
   type ScrollPosition,
   type UseScrollPositionOptions,
 } from './useScrollPosition'
@@ -33,14 +68,6 @@ export {
   type UseIntersectionObserverOptions,
 } from './useIntersectionObserver'
 export { useIdleDetection, useIdleTime, type UseIdleDetectionOptions } from './useIdleDetection'
-export {
-  useMediaQuery,
-  useIsMobile,
-  useIsTablet,
-  useIsDesktop,
-  usePrefersReducedMotion,
-  useIsTouchDevice,
-} from './useMediaQuery'
 
 export { usePersonalization } from './usePersonalization'
 export { useModuleFollowUp } from './useModuleFollowUp'
