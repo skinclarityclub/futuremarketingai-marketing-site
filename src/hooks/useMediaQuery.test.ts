@@ -70,7 +70,7 @@ describe('useMediaQuery', () => {
         removeListener: vi.fn(),
         addEventListener: vi.fn((event, handler) => {
           if (event === 'change') {
-            changeHandler = handler as any
+            changeHandler = handler
           }
         }),
         removeEventListener: vi.fn(),

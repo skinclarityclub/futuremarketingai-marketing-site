@@ -19,7 +19,7 @@ export function responsive<T>(
   value: ResponsiveValue<T> | undefined,
   converter: (val: T, prefix: string) => string
 ): string {
-  if (!value) return '';
+  if (!value) {return '';}
 
   // Handle simple non-responsive values
   if (typeof value !== 'object' || value === null) {
@@ -126,9 +126,9 @@ export function alignItems(
  */
 export function flexWrap(value: ResponsiveValue<boolean | 'reverse'> | undefined): string {
   return responsive(value, (val, prefix) => {
-    if (val === true) return `${prefix}flex-wrap`;
-    if (val === 'reverse') return `${prefix}flex-wrap-reverse`;
-    if (val === false) return `${prefix}flex-nowrap`;
+    if (val === true) {return `${prefix}flex-wrap`;}
+    if (val === 'reverse') {return `${prefix}flex-wrap-reverse`;}
+    if (val === false) {return `${prefix}flex-nowrap`;}
     return '';
   });
 }

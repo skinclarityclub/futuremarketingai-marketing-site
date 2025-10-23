@@ -22,7 +22,6 @@ import { hotjarStateChange } from './utils/hotjar'
 import SentryTestButton from './components/common/SentryTestButton'
 import { ToastProvider } from './contexts/ToastContext'
 import { FloatingElementProvider } from './contexts/FloatingElementContext'
-import { TouchTargetDebug } from './components/mobile'
 
 // Lazy load all page components for code splitting
 const Hero = lazy(() => import('./pages/Hero'))

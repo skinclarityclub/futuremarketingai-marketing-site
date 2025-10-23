@@ -63,10 +63,10 @@ export const useShouldLoadComponent = (
   }
 
   // Check specific device types
-  if (loadOnArray.includes('mobile') && isMobile) return true
-  if (loadOnArray.includes('tablet') && isTablet) return true
-  if (loadOnArray.includes('desktop') && isDesktop) return true
-  if (loadOnArray.includes('mobileOrTablet') && isMobileOrTablet) return true
+  if (loadOnArray.includes('mobile') && isMobile) {return true}
+  if (loadOnArray.includes('tablet') && isTablet) {return true}
+  if (loadOnArray.includes('desktop') && isDesktop) {return true}
+  if (loadOnArray.includes('mobileOrTablet') && isMobileOrTablet) {return true}
 
   return false
 }
@@ -161,7 +161,7 @@ export const useConditionalPreload = (
  * }
  */
 export const isMobileDevice = (): boolean => {
-  if (typeof window === 'undefined') return false
+  if (typeof window === 'undefined') {return false}
   return window.matchMedia('(max-width: 639px)').matches
 }
 
@@ -169,7 +169,7 @@ export const isMobileDevice = (): boolean => {
  * Utility to check if we're on a tablet device (for use outside React components)
  */
 export const isTabletDevice = (): boolean => {
-  if (typeof window === 'undefined') return false
+  if (typeof window === 'undefined') {return false}
   return window.matchMedia('(min-width: 640px) and (max-width: 1023px)').matches
 }
 
@@ -177,7 +177,7 @@ export const isTabletDevice = (): boolean => {
  * Utility to check if we're on a desktop device (for use outside React components)
  */
 export const isDesktopDevice = (): boolean => {
-  if (typeof window === 'undefined') return false
+  if (typeof window === 'undefined') {return false}
   return window.matchMedia('(min-width: 1024px)').matches
 }
 
@@ -185,7 +185,7 @@ export const isDesktopDevice = (): boolean => {
  * Utility to check if we're on mobile or tablet (for use outside React components)
  */
 export const isMobileOrTabletDevice = (): boolean => {
-  if (typeof window === 'undefined') return false
+  if (typeof window === 'undefined') {return false}
   return window.matchMedia('(max-width: 1023px)').matches
 }
 

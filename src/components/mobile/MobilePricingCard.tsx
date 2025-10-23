@@ -10,9 +10,9 @@
  */
 
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Check, X, ExternalLink, Sparkles, TrendingUp } from 'lucide-react'
+import { Check, ExternalLink, Sparkles, TrendingUp } from 'lucide-react'
 import { Button } from '../ui/button'
 
 interface PricingPlan {

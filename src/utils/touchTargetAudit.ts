@@ -139,7 +139,7 @@ export function auditPageTouchTargets(
   elements.forEach((element) => {
     if (element instanceof HTMLElement) {
       // Skip hidden elements
-      if (element.offsetParent === null) return;
+      if (element.offsetParent === null) {return;}
       
       const result = auditTouchTarget(element, standard);
       results.push(result);
@@ -225,7 +225,7 @@ export function useTouchTargetAudit(
   enabled: boolean = process.env.NODE_ENV === 'development',
   standard: keyof typeof TOUCH_TARGET_STANDARDS = 'wcag'
 ): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined') {return;}
   
   if (enabled) {
     // Run audit after component renders

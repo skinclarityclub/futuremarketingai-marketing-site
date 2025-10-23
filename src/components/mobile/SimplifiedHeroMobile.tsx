@@ -61,7 +61,7 @@ export const SimplifiedHeroMobile: React.FC<SimplifiedHeroMobileProps> = ({
       onCTAClick()
     } else {
       // Default action: navigate to demo
-      navigate('/demo')
+      void navigate('/demo')
     }
   }
 

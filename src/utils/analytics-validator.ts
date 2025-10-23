@@ -299,7 +299,7 @@ export const validateAnalytics = (): ValidationReport => {
  * Expose validation function to window for easy console access
  */
 if (typeof window !== 'undefined' && !IS_PRODUCTION) {
-  ;(window as any).validateAnalytics = validateAnalytics
+  (window as any).validateAnalytics = validateAnalytics
   console.log('💡 Tip: Run validateAnalytics() in console to check analytics status')
 }
 

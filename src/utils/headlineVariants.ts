@@ -133,7 +133,7 @@ export function trackVariantCTAClick(ctaType: string): void {
 
   // Also track to GA4 if available
   if (typeof window !== 'undefined' && 'gtag' in window) {
-    ;(window as any).gtag('event', 'headline_variant_cta_click', {
+    (window as any).gtag('event', 'headline_variant_cta_click', {
       variant,
       cta_type: ctaType,
     })
@@ -163,7 +163,7 @@ export function trackVariantFormCompletion(formType: string): void {
 
   // Also track to GA4 if available
   if (typeof window !== 'undefined' && 'gtag' in window) {
-    ;(window as any).gtag('event', 'headline_variant_form_complete', {
+    (window as any).gtag('event', 'headline_variant_form_complete', {
       variant,
       form_type: formType,
     })

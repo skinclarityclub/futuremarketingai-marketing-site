@@ -79,15 +79,15 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
     setDirection(newDirection)
     setCurrentIndex((prevIndex) => {
       let nextIndex = prevIndex + newDirection
-      if (nextIndex < 0) nextIndex = testimonials.length - 1
-      if (nextIndex >= testimonials.length) nextIndex = 0
+      if (nextIndex < 0) {nextIndex = testimonials.length - 1}
+      if (nextIndex >= testimonials.length) {nextIndex = 0}
       return nextIndex
     })
   }, [testimonials.length])
 
   // Auto-advance
   useEffect(() => {
-    if (!autoAdvanceInterval || isPaused) return
+    if (!autoAdvanceInterval || isPaused) {return}
 
     const timer = setInterval(() => {
       paginate(1)

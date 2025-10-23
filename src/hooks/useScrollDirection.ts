@@ -60,7 +60,7 @@ export const useScrollBehavior = (
   }, [updateScrollDirection, debounce])
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') {return}
 
     lastScrollY.current = window.scrollY
     setScrollY(window.scrollY)

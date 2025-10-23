@@ -43,11 +43,11 @@ export const initHotjar = (): void => {
 
   try {
     // Hotjar initialization script
-    ;(function (h: any, o: any, t: string, j: string, a?: any, r?: any) {
+    (function (h: any, o: any, t: string, j: string, a?: any, r?: any) {
       h.hj =
         h.hj ||
         function () {
-          ;(h.hj.q = h.hj.q || []).push(arguments)
+          (h.hj.q = h.hj.q || []).push(arguments)
         }
       h._hjSettings = { hjid: HOTJAR_ID, hjsv: Number(HOTJAR_SV) }
       a = o.getElementsByTagName('head')[0]

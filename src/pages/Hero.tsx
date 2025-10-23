@@ -91,24 +91,15 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Mobile detection
+  // Mobile detection - must be called before any conditional returns
   const isMobile = useIsMobile()
   
-  // If mobile, render simplified mobile version
-  if (isMobile) {
-    return (
-      <Suspense fallback={<LoadingFallback />}>
-        <DemoHomeMobile />
-      </Suspense>
-    )
-  }
-
   // Desktop/Tablet: Full experience
   // Check if we're on /demo (with animation) or /demo-home (without animation)
   const location = window.location
   const shouldPlayAnimation = location.pathname === '/demo'
 
-  // Neural Warp animation state
+  // Neural Warp animation state - initialize regardless of device
   const [showWarp, setShowWarp] = useState(shouldPlayAnimation)
   const [warpComplete, setWarpComplete] = useState(!shouldPlayAnimation)
 
@@ -160,12 +151,12 @@ export const Hero: React.FC = () => {
     if (elem.requestFullscreen) {
       elem.requestFullscreen().catch((err) => console.warn('Fullscreen failed:', err))
     } else if ((elem as any).webkitRequestFullscreen) {
-      ;(elem as any).webkitRequestFullscreen()
+      (elem as any).webkitRequestFullscreen()
     }
 
     // Lock to landscape on mobile
     if (isMobile && screen.orientation && 'lock' in screen.orientation) {
-      ;(screen.orientation as any)
+      (screen.orientation as any)
         .lock('landscape-primary')
         .catch((err: Error) => console.warn('Orientation lock failed:', err))
     }
@@ -458,7 +449,8 @@ export const Hero: React.FC = () => {
     },
   }
 
-  return (
+  // Store desktop content in a variable to avoid hook order issues
+  const desktopContent = (
     <div className="min-h-screen bg-gradient-to-br from-bg-dark via-bg-surface to-bg-dark flex items-center justify-center p-4">
       {/* Hero Content - Fade in after animation completes */}
       <motion.div
@@ -776,6 +768,18 @@ export const Hero: React.FC = () => {
       />
     </div>
   )
+
+  // After all hooks are called, conditionally render mobile version
+  if (isMobile) {
+    return (
+      <Suspense fallback={<LoadingFallback />}>
+        <DemoHomeMobile />
+      </Suspense>
+    )
+  }
+
+  // Return desktop version
+  return desktopContent
 }
 
 export default Hero

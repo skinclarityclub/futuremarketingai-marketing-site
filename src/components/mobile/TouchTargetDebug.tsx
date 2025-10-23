@@ -27,7 +27,7 @@ export const TouchTargetDebug: React.FC<TouchTargetDebugProps> = ({
   const [showReport, setShowReport] = useState(false);
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled) {return;}
 
     const runAudit = () => {
       const auditResults = auditPageTouchTargets(standard);
@@ -52,7 +52,7 @@ export const TouchTargetDebug: React.FC<TouchTargetDebugProps> = ({
     };
   }, [enabled, standard]);
 
-  if (!enabled) return null;
+  if (!enabled) {return null;}
 
   const report = generateAuditReport(results);
   const requirements = TOUCH_TARGET_STANDARDS[standard];
@@ -109,7 +109,7 @@ export const TouchTargetDebug: React.FC<TouchTargetDebugProps> = ({
               'button, a, input[type="button"], input[type="submit"], [role="button"]'
             )[index];
             
-            if (!element) return null;
+            if (!element) {return null;}
             
             const rect = element.getBoundingClientRect();
             const className = result.passed
