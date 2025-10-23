@@ -531,6 +531,203 @@
         "linkedin": "LinkedIn",
         "twitter": "Twitter"
       }
+    },
+    "features": {
+      "showcase": {
+        "research": {
+          "title": "Research & Planning Intelligentie",
+          "description": "AI analyseert 24/7 markttrends en genereert automatisch content ideeën",
+          "stat": "€6.400/mnd bespaard"
+        },
+        "manager": {
+          "title": "Manager Orchestratie Engine",
+          "description": "Coördineert autonoom alle workflows en A/B testing strategieën",
+          "stat": "€12.000/mnd bespaard"
+        },
+        "content": {
+          "title": "Content Creatie Pipelines",
+          "description": "Creëert platform-geoptimaliseerde content met AI - 15x meer output",
+          "stat": "€8.000/mnd bespaard"
+        },
+        "publishing": {
+          "title": "Slimme Publicatie Laag",
+          "description": "Post op wetenschappelijk optimale tijden met perfecte doelgroep targeting",
+          "stat": "+€15.000/mnd omzet"
+        },
+        "analytics": {
+          "title": "Zelflerende Analytics",
+          "description": "Leert van elke campagne en verbetert continue de strategieën",
+          "stat": "23% maandelijkse verbetering"
+        },
+        "ads": {
+          "title": "Geautomatiseerde Advertentie Campagnes",
+          "description": "Zet winnende posts om naar advertenties met automatische budget optimalisatie",
+          "stat": "+€45.000/mnd omzet"
+        }
+      },
+      "detailed": {
+        "research": {
+          "name": "AI Research & Planning",
+          "tagline": "24/7 markt intelligentie",
+          "description": "Autonome AI analyseert trends, concurrent activiteit en marktkansen 24/7. Mis nooit meer een virale trend of opkomend onderwerp.",
+          "benefits": [
+            "Bespaart €6.400/maand aan research kosten",
+            "24/7 trend monitoring",
+            "Concurrent intelligentie automatisering",
+            "Content kansen identificatie"
+          ],
+          "useCases": [
+            "E-commerce: Product lanceer timing optimalisatie",
+            "SaaS: Feature aankondiging coördinatie",
+            "Agency: Klant industrie trend rapporten"
+          ]
+        },
+        "manager": {
+          "name": "Manager Orchestrator",
+          "tagline": "Jouw AI marketing coördinator",
+          "description": "Centraal AI brein dat alle modules coördineert, workflows beheert en naadloze uitvoering garandeert. Nul handmatige coördinatie nodig.",
+          "benefits": [
+            "Bespaart €12.000/maand aan arbeid",
+            "Elimineert workflow knelpunten",
+            "Automatisch prioriteiten beheer",
+            "Cross-module synchronisatie"
+          ],
+          "useCases": [
+            "E-commerce: Campagne coördinatie over kanalen",
+            "SaaS: Product lancering orchestratie",
+            "Agency: Multi-client workflow management"
+          ]
+        },
+        "content": {
+          "name": "Content Pipelines",
+          "tagline": "15x snellere content creatie",
+          "description": "AI-gedreven content generatie die premium-kwaliteit content produceert op ongekende snelheid met behoud van je merkstem.",
+          "benefits": [
+            "Bespaart €8.000/maand in productie",
+            "15x content output toename",
+            "Consistente merkstem",
+            "Multi-formaat generatie (blog, social, ads)"
+          ],
+          "useCases": [
+            "E-commerce: Product beschrijvingen & advertenties op schaal",
+            "SaaS: Blog posts, case studies, email sequences",
+            "Agency: Klant content pakketten"
+          ]
+        },
+        "publishing": {
+          "name": "Smart Publishing",
+          "tagline": "35% betere engagement",
+          "description": "Intelligente multi-channel distributie die timing, platform selectie en messaging optimaliseert voor maximale bereik en engagement.",
+          "benefits": [
+            "35% engagement verbetering",
+            "+€15.000/maand extra omzet",
+            "Optimale timing per platform",
+            "Cross-channel synchronisatie"
+          ],
+          "useCases": [
+            "E-commerce: Product promoties over kanalen",
+            "SaaS: Webinar promotie campagnes",
+            "Agency: Klant social media management"
+          ]
+        },
+        "analytics": {
+          "name": "Zelflerende Analytics",
+          "tagline": "23% maandelijkse verbetering",
+          "description": "AI analytics die continu leren van elke campagne, 23% effectiever worden elke maand door eigen ML modellen.",
+          "benefits": [
+            "23% maandelijkse prestatie winst",
+            "Real-time optimalisatie",
+            "Voorspellende inzichten",
+            "Cross-channel attributie"
+          ],
+          "useCases": [
+            "E-commerce: Sales funnel optimalisatie",
+            "SaaS: Lead conversie tracking",
+            "Agency: Klant ROI rapportage"
+          ]
+        },
+        "ads": {
+          "name": "Advertentie Automatisering",
+          "tagline": "3.2x betere ROAS",
+          "description": "Autonome advertentie campagne management dat continu creative, targeting en budget allocatie optimaliseert voor maximaal rendement.",
+          "benefits": [
+            "3.2x ROAS verbetering",
+            "+€45.000/maand advertentie omzet",
+            "Creative A/B testing automatisering",
+            "Budget optimalisatie 24/7"
+          ],
+          "useCases": [
+            "E-commerce: Dynamische product advertenties",
+            "SaaS: Lead generatie campagnes",
+            "Agency: Performance marketing op schaal"
+          ]
+        }
+      }
+    },
+    "social_proof": {
+      "badge": "Lancering Q1 2026",
+      "title": "Bouwen met 3 Founding Teams",
+      "subtitle": "We beloven geen resultaten die we nog niet hebben. In plaats daarvan bouwen we in partnerschap met vooruitdenkende teams die de toekomst van autonome marketing zien.",
+      "founding_teams": {
+        "title": "Founding Teams",
+        "teams": [
+          {
+            "name": "FutureMarketingAI",
+            "teamSize": 3,
+            "industry": "AI Marketing Tech",
+            "status": "Bouwen van het platform"
+          },
+          {
+            "name": "SkinClarity Club",
+            "teamSize": 5,
+            "industry": "E-commerce Beauty",
+            "status": "Pilot programma"
+          },
+          {
+            "name": "Den Hartogh Solutions",
+            "teamSize": 8,
+            "industry": "B2B SaaS",
+            "status": "Early adopter"
+          }
+        ]
+      },
+      "milestones": {
+        "title": "Technologie & Certificeringen",
+        "items": [
+          "Aangedreven door GPT-4, Claude 3.5, Gemini Pro en Perplexity",
+          "9 autonome AI agents die 24/7 werken",
+          "6 kernmodules volledig geïntegreerd",
+          "ISO 27001 security gecertificeerde infrastructuur",
+          "GDPR en SOC 2 compliance klaar",
+          "Gebouwd door marketing operators met 15+ jaar ervaring"
+        ]
+      },
+      "guarantees": {
+        "title": "Waarom Meedoen als Founding Member?",
+        "subtitle": "Echt partnerschap, geen leverancier relatie",
+        "items": [
+          {
+            "title": "Succes Garantie",
+            "description": "We stoppen niet tot het werkt. Als het systeem na 3 maanden geen waarde levert, blijven we werken tot het dat wel doet - geen extra kosten.",
+            "highlight": "We blijven tot jij succesvol bent"
+          },
+          {
+            "title": "Founder Partnerschap",
+            "description": "Direct Slack toegang tot de founder. Wekelijkse strategie calls. Echt partnerschap, niet alleen een leverancier.",
+            "highlight": "Jouw succes = Ons succes"
+          },
+          {
+            "title": "Volledig Op Maat Gebouwd",
+            "description": "Dit is GEEN kant-en-klare software. Elk systeem is specifiek afgestemd op jouw bedrijf, industrie en workflows.",
+            "highlight": "Gebouwd voor JOU, niet \"geconfigureerd\""
+          },
+          {
+            "title": "Trial + Commitment",
+            "description": "3 maanden risicovrije trial. Als het werkt (dat doet het), committeren we samen voor 1 jaar om resultaten te maximaliseren.",
+            "highlight": "Samen groeien, niet maand-tot-maand"
+          }
+        ]
+      }
     }
   }
 }

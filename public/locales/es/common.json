@@ -564,6 +564,203 @@
         "linkedin": "LinkedIn",
         "twitter": "Twitter"
       }
+    },
+    "features": {
+      "showcase": {
+        "research": {
+          "title": "Inteligencia de Investigación y Planificación",
+          "description": "La IA analiza tendencias del mercado 24/7 y genera ideas de contenido automáticamente",
+          "stat": "€6.400/mes ahorrados"
+        },
+        "manager": {
+          "title": "Motor de Orquestación del Manager",
+          "description": "Coordina autónomamente todos los flujos de trabajo y estrategias de pruebas A/B",
+          "stat": "€12.000/mes ahorrados"
+        },
+        "content": {
+          "title": "Pipelines de Creación de Contenido",
+          "description": "Crea contenido optimizado para plataformas con IA - 15x más producción",
+          "stat": "€8.000/mes ahorrados"
+        },
+        "publishing": {
+          "title": "Capa de Publicación Inteligente",
+          "description": "Publica en momentos científicamente óptimos con targeting perfecto de audiencia",
+          "stat": "+€15.000/mes de ingresos"
+        },
+        "analytics": {
+          "title": "Analítica de Auto-Aprendizaje",
+          "description": "Aprende de cada campaña y mejora continuamente las estrategias",
+          "stat": "23% mejora mensual"
+        },
+        "ads": {
+          "title": "Campañas Publicitarias Automatizadas",
+          "description": "Convierte publicaciones ganadoras en anuncios con optimización automática del presupuesto",
+          "stat": "+€45.000/mes de ingresos"
+        }
+      },
+      "detailed": {
+        "research": {
+          "name": "IA de Investigación y Planificación",
+          "tagline": "Inteligencia de mercado 24/7",
+          "description": "La IA autónoma analiza tendencias, actividad de competidores y oportunidades de mercado las 24 horas. Nunca pierdas una tendencia viral o tema emergente.",
+          "benefits": [
+            "Ahorra €6.400/mes en costos de investigación",
+            "Monitoreo de tendencias 24/7",
+            "Automatización de inteligencia competitiva",
+            "Identificación de oportunidades de contenido"
+          ],
+          "useCases": [
+            "E-commerce: Optimización de timing de lanzamiento de productos",
+            "SaaS: Coordinación de anuncios de características",
+            "Agencia: Informes de tendencias de la industria del cliente"
+          ]
+        },
+        "manager": {
+          "name": "Orquestador Manager",
+          "tagline": "Tu coordinador de marketing con IA",
+          "description": "Cerebro central de IA que coordina todos los módulos, gestiona flujos de trabajo y asegura una ejecución sin problemas. Cero coordinación manual necesaria.",
+          "benefits": [
+            "Ahorra €12.000/mes en mano de obra",
+            "Elimina cuellos de botella del flujo de trabajo",
+            "Gestión automática de prioridades",
+            "Sincronización entre módulos"
+          ],
+          "useCases": [
+            "E-commerce: Coordinación de campañas entre canales",
+            "SaaS: Orquestación de lanzamiento de productos",
+            "Agencia: Gestión de flujo de trabajo multi-cliente"
+          ]
+        },
+        "content": {
+          "name": "Pipelines de Contenido",
+          "tagline": "Creación de contenido 15x más rápida",
+          "description": "Generación de contenido potenciada por IA que produce contenido de calidad premium a velocidad sin precedentes manteniendo la voz de tu marca.",
+          "benefits": [
+            "Ahorra €8.000/mes en producción",
+            "Aumento de producción de contenido 15x",
+            "Voz de marca consistente",
+            "Generación multi-formato (blog, social, ads)"
+          ],
+          "useCases": [
+            "E-commerce: Descripciones de productos y anuncios a escala",
+            "SaaS: Posts de blog, casos de estudio, secuencias de email",
+            "Agencia: Paquetes de contenido para clientes"
+          ]
+        },
+        "publishing": {
+          "name": "Publicación Inteligente",
+          "tagline": "35% mejor engagement",
+          "description": "Distribución multicanal inteligente que optimiza timing, selección de plataforma y mensajería para máximo alcance y engagement.",
+          "benefits": [
+            "Mejora del 35% en engagement",
+            "+€15.000/mes de ingresos adicionales",
+            "Timing óptimo por plataforma",
+            "Sincronización entre canales"
+          ],
+          "useCases": [
+            "E-commerce: Promociones de productos entre canales",
+            "SaaS: Campañas de promoción de webinars",
+            "Agencia: Gestión de redes sociales de clientes"
+          ]
+        },
+        "analytics": {
+          "name": "Analítica de Auto-Aprendizaje",
+          "tagline": "23% de mejora mensual",
+          "description": "Analítica de IA que aprende continuamente de cada campaña, volviéndose 23% más efectiva cada mes a través de modelos ML propietarios.",
+          "benefits": [
+            "23% de ganancia de rendimiento mensual",
+            "Optimización en tiempo real",
+            "Insights predictivos",
+            "Atribución entre canales"
+          ],
+          "useCases": [
+            "E-commerce: Optimización del embudo de ventas",
+            "SaaS: Seguimiento de conversión de leads",
+            "Agencia: Informes de ROI de clientes"
+          ]
+        },
+        "ads": {
+          "name": "Automatización de Anuncios",
+          "tagline": "3.2x mejor ROAS",
+          "description": "Gestión autónoma de campañas publicitarias que optimiza continuamente creativos, targeting y asignación de presupuesto para máximo retorno.",
+          "benefits": [
+            "Mejora de 3.2x en ROAS",
+            "+€45.000/mes de ingresos publicitarios",
+            "Automatización de pruebas A/B creativas",
+            "Optimización de presupuesto 24/7"
+          ],
+          "useCases": [
+            "E-commerce: Anuncios dinámicos de productos",
+            "SaaS: Campañas de generación de leads",
+            "Agencia: Marketing de rendimiento a escala"
+          ]
+        }
+      }
+    },
+    "social_proof": {
+      "badge": "Lanzamiento Q1 2026",
+      "title": "Construyendo con 3 Equipos Fundadores",
+      "subtitle": "No prometemos resultados que aún no tenemos. En cambio, estamos construyendo en asociación con equipos visionarios que ven el futuro del marketing autónomo.",
+      "founding_teams": {
+        "title": "Equipos Fundadores",
+        "teams": [
+          {
+            "name": "FutureMarketingAI",
+            "teamSize": 3,
+            "industry": "Tecnología de Marketing con IA",
+            "status": "Construyendo la plataforma"
+          },
+          {
+            "name": "SkinClarity Club",
+            "teamSize": 5,
+            "industry": "Belleza E-commerce",
+            "status": "Programa piloto"
+          },
+          {
+            "name": "Den Hartogh Solutions",
+            "teamSize": 8,
+            "industry": "B2B SaaS",
+            "status": "Adoptante temprano"
+          }
+        ]
+      },
+      "milestones": {
+        "title": "Tecnología y Credenciales",
+        "items": [
+          "Impulsado por GPT-4, Claude 3.5, Gemini Pro y Perplexity",
+          "9 agentes de IA autónomos trabajando 24/7",
+          "6 módulos principales completamente integrados",
+          "Infraestructura certificada con seguridad ISO 27001",
+          "Cumplimiento GDPR y SOC 2 listo",
+          "Construido por operadores de marketing con más de 15 años de experiencia"
+        ]
+      },
+      "guarantees": {
+        "title": "¿Por Qué Unirse como Miembro Fundador?",
+        "subtitle": "Asociación real, no relación de proveedor",
+        "items": [
+          {
+            "title": "Garantía de Éxito",
+            "description": "No nos detenemos hasta que funcione. Si el sistema no está entregando valor después de 3 meses, seguimos trabajando hasta que lo haga - sin costo adicional.",
+            "highlight": "Nos quedamos hasta que tengas éxito"
+          },
+          {
+            "title": "Asociación con el Fundador",
+            "description": "Acceso directo por Slack al fundador. Llamadas de estrategia semanales. Asociación real, no solo un proveedor.",
+            "highlight": "Tu éxito = Nuestro éxito"
+          },
+          {
+            "title": "Totalmente Construido a Medida",
+            "description": "Esto NO es software estándar. Cada sistema está adaptado específicamente a tu negocio, industria y flujos de trabajo.",
+            "highlight": "Construido para TI, no \"configurado\""
+          },
+          {
+            "title": "Prueba + Compromiso",
+            "description": "Prueba sin riesgo de 3 meses. Si funciona (lo hará), nos comprometemos juntos durante 1 año para maximizar resultados.",
+            "highlight": "Crecer juntos, no mes a mes"
+          }
+        ]
+      }
     }
   }
 }

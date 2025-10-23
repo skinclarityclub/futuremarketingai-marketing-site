@@ -531,6 +531,203 @@
         "linkedin": "LinkedIn",
         "twitter": "Twitter"
       }
+    },
+    "features": {
+      "showcase": {
+        "research": {
+          "title": "Research & Planning Intelligence",
+          "description": "AI analyzes market trends 24/7 and generates content ideas automatically",
+          "stat": "€6,400/mo saved"
+        },
+        "manager": {
+          "title": "Manager Orchestration Engine",
+          "description": "Coordinates all workflows and A/B testing strategies autonomously",
+          "stat": "€12,000/mo saved"
+        },
+        "content": {
+          "title": "Content Creation Pipelines",
+          "description": "Creates platform-optimized content with AI - 15x output increase",
+          "stat": "€8,000/mo saved"
+        },
+        "publishing": {
+          "title": "Smart Publishing Layer",
+          "description": "Posts at scientifically optimal times with perfect audience targeting",
+          "stat": "+€15,000/mo revenue"
+        },
+        "analytics": {
+          "title": "Self-Learning Analytics",
+          "description": "Learns from every campaign and continuously improves strategies",
+          "stat": "23% monthly improvement"
+        },
+        "ads": {
+          "title": "Automated Ad Campaigns",
+          "description": "Converts winning posts to ads with automatic budget optimization",
+          "stat": "+€45,000/mo revenue"
+        }
+      },
+      "detailed": {
+        "research": {
+          "name": "AI Research & Planning",
+          "tagline": "24/7 market intelligence",
+          "description": "Autonomous AI analyzes trends, competitor activity, and market opportunities around the clock. Never miss a viral trend or emerging topic.",
+          "benefits": [
+            "Saves €6,400/month in research costs",
+            "24/7 trend monitoring",
+            "Competitor intelligence automation",
+            "Content opportunity identification"
+          ],
+          "useCases": [
+            "E-commerce: Product launch timing optimization",
+            "SaaS: Feature announcement coordination",
+            "Agency: Client industry trend reports"
+          ]
+        },
+        "manager": {
+          "name": "Manager Orchestrator",
+          "tagline": "Your AI marketing coordinator",
+          "description": "Central AI brain that coordinates all modules, manages workflows, and ensures seamless execution. Zero manual coordination needed.",
+          "benefits": [
+            "Saves €12,000/month in labor",
+            "Eliminates workflow bottlenecks",
+            "Automatic priority management",
+            "Cross-module synchronization"
+          ],
+          "useCases": [
+            "E-commerce: Campaign coordination across channels",
+            "SaaS: Product launch orchestration",
+            "Agency: Multi-client workflow management"
+          ]
+        },
+        "content": {
+          "name": "Content Pipelines",
+          "tagline": "15x faster content creation",
+          "description": "AI-powered content generation that produces premium-quality content at unprecedented speed while maintaining your brand voice.",
+          "benefits": [
+            "Saves €8,000/month in production",
+            "15x content output increase",
+            "Consistent brand voice",
+            "Multi-format generation (blog, social, ads)"
+          ],
+          "useCases": [
+            "E-commerce: Product descriptions & ads at scale",
+            "SaaS: Blog posts, case studies, email sequences",
+            "Agency: Client content packages"
+          ]
+        },
+        "publishing": {
+          "name": "Smart Publishing",
+          "tagline": "35% better engagement",
+          "description": "Intelligent multi-channel distribution that optimizes timing, platform selection, and messaging for maximum reach and engagement.",
+          "benefits": [
+            "35% engagement improvement",
+            "+€15,000/month additional revenue",
+            "Optimal timing per platform",
+            "Cross-channel synchronization"
+          ],
+          "useCases": [
+            "E-commerce: Product promotions across channels",
+            "SaaS: Webinar promotion campaigns",
+            "Agency: Client social media management"
+          ]
+        },
+        "analytics": {
+          "name": "Self-Learning Analytics",
+          "tagline": "23% monthly improvement",
+          "description": "AI analytics that continuously learn from every campaign, becoming 23% more effective each month through proprietary ML models.",
+          "benefits": [
+            "23% monthly performance gain",
+            "Real-time optimization",
+            "Predictive insights",
+            "Cross-channel attribution"
+          ],
+          "useCases": [
+            "E-commerce: Sales funnel optimization",
+            "SaaS: Lead conversion tracking",
+            "Agency: Client ROI reporting"
+          ]
+        },
+        "ads": {
+          "name": "Ad Automation",
+          "tagline": "3.2x better ROAS",
+          "description": "Autonomous ad campaign management that continuously optimizes creative, targeting, and budget allocation for maximum return.",
+          "benefits": [
+            "3.2x ROAS improvement",
+            "+€45,000/month ad revenue",
+            "Creative A/B testing automation",
+            "Budget optimization 24/7"
+          ],
+          "useCases": [
+            "E-commerce: Dynamic product ads",
+            "SaaS: Lead generation campaigns",
+            "Agency: Performance marketing at scale"
+          ]
+        }
+      }
+    },
+    "social_proof": {
+      "badge": "Launching Q1 2026",
+      "title": "Building with 3 Founding Teams",
+      "subtitle": "We're not promising results we don't have yet. Instead, we're building in partnership with forward-thinking teams who see the future of autonomous marketing.",
+      "founding_teams": {
+        "title": "Founding Teams",
+        "teams": [
+          {
+            "name": "FutureMarketingAI",
+            "teamSize": 3,
+            "industry": "AI Marketing Tech",
+            "status": "Building the platform"
+          },
+          {
+            "name": "SkinClarity Club",
+            "teamSize": 5,
+            "industry": "E-commerce Beauty",
+            "status": "Pilot program"
+          },
+          {
+            "name": "Den Hartogh Solutions",
+            "teamSize": 8,
+            "industry": "B2B SaaS",
+            "status": "Early adopter"
+          }
+        ]
+      },
+      "milestones": {
+        "title": "Technology & Credentials",
+        "items": [
+          "Powered by GPT-4, Claude 3.5, Gemini Pro, and Perplexity",
+          "9 autonomous AI agents working 24/7",
+          "6 core modules fully integrated",
+          "ISO 27001 security certified infrastructure",
+          "GDPR and SOC 2 compliance ready",
+          "Built by marketing operators with 15+ years experience"
+        ]
+      },
+      "guarantees": {
+        "title": "Why Join as a Founding Member?",
+        "subtitle": "Real partnership, not vendor relationship",
+        "items": [
+          {
+            "title": "Success Guarantee",
+            "description": "We don't stop until it works. If the system isn't delivering value after 3 months, we keep working until it does - no extra cost.",
+            "highlight": "We stay until you succeed"
+          },
+          {
+            "title": "Founder Partnership",
+            "description": "Direct Slack access to founder. Weekly strategy calls. Real partnership, not just a vendor.",
+            "highlight": "Your success = Our success"
+          },
+          {
+            "title": "Fully Custom-Built",
+            "description": "This is NOT off-the-shelf software. Every system is tailored specifically to your business, industry, and workflows.",
+            "highlight": "Built for YOU, not \"configured\""
+          },
+          {
+            "title": "Trial + Commitment",
+            "description": "3-month risk-free trial. If it works (it will), we commit together for 1 year to maximize results.",
+            "highlight": "Grow together, not month-to-month"
+          }
+        ]
+      }
     }
   }
 }

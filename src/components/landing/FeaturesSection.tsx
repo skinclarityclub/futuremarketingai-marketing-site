@@ -9,6 +9,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Brain,
   Settings,
@@ -25,115 +26,13 @@ import {
 /**
  * Core platform features based on the 6 AI modules
  */
-export const PLATFORM_FEATURES = [
-  {
-    icon: Brain,
-    name: 'AI Research & Planning',
-    tagline: '24/7 market intelligence',
-    description:
-      'Autonomous AI analyzes trends, competitor activity, and market opportunities around the clock. Never miss a viral trend or emerging topic.',
-    benefits: [
-      'Saves €6,400/month in research costs',
-      '24/7 trend monitoring',
-      'Competitor intelligence automation',
-      'Content opportunity identification',
-    ],
-    useCases: [
-      'E-commerce: Product launch timing optimization',
-      'SaaS: Feature announcement coordination',
-      'Agency: Client industry trend reports',
-    ],
-  },
-  {
-    icon: Settings,
-    name: 'Manager Orchestrator',
-    tagline: 'Your AI marketing coordinator',
-    description:
-      'Central AI brain that coordinates all modules, manages workflows, and ensures seamless execution. Zero manual coordination needed.',
-    benefits: [
-      'Saves €12,000/month in labor',
-      'Eliminates workflow bottlenecks',
-      'Automatic priority management',
-      'Cross-module synchronization',
-    ],
-    useCases: [
-      'E-commerce: Campaign coordination across channels',
-      'SaaS: Product launch orchestration',
-      'Agency: Multi-client workflow management',
-    ],
-  },
-  {
-    icon: Zap,
-    name: 'Content Pipelines',
-    tagline: '15x faster content creation',
-    description:
-      'AI-powered content generation that produces premium-quality content at unprecedented speed while maintaining your brand voice.',
-    benefits: [
-      'Saves €8,000/month in production',
-      '15x content output increase',
-      'Consistent brand voice',
-      'Multi-format generation (blog, social, ads)',
-    ],
-    useCases: [
-      'E-commerce: Product descriptions & ads at scale',
-      'SaaS: Blog posts, case studies, email sequences',
-      'Agency: Client content packages',
-    ],
-  },
-  {
-    icon: Send,
-    name: 'Smart Publishing',
-    tagline: '35% better engagement',
-    description:
-      'Intelligent multi-channel distribution that optimizes timing, platform selection, and messaging for maximum reach and engagement.',
-    benefits: [
-      '35% engagement improvement',
-      '+€15,000/month additional revenue',
-      'Optimal timing per platform',
-      'Cross-channel synchronization',
-    ],
-    useCases: [
-      'E-commerce: Product promotions across channels',
-      'SaaS: Webinar promotion campaigns',
-      'Agency: Client social media management',
-    ],
-  },
-  {
-    icon: BarChart3,
-    name: 'Self-Learning Analytics',
-    tagline: '23% monthly improvement',
-    description:
-      'AI analytics that continuously learn from every campaign, becoming 23% more effective each month through proprietary ML models.',
-    benefits: [
-      '23% monthly performance gain',
-      'Real-time optimization',
-      'Predictive insights',
-      'Cross-channel attribution',
-    ],
-    useCases: [
-      'E-commerce: Sales funnel optimization',
-      'SaaS: Lead conversion tracking',
-      'Agency: Client ROI reporting',
-    ],
-  },
-  {
-    icon: Target,
-    name: 'Ad Automation',
-    tagline: '3.2x better ROAS',
-    description:
-      'Autonomous ad campaign management that continuously optimizes creative, targeting, and budget allocation for maximum return.',
-    benefits: [
-      '3.2x ROAS improvement',
-      '+€45,000/month ad revenue',
-      'Creative A/B testing automation',
-      'Budget optimization 24/7',
-    ],
-    useCases: [
-      'E-commerce: Dynamic product ads',
-      'SaaS: Lead generation campaigns',
-      'Agency: Performance marketing at scale',
-    ],
-  },
+const FEATURE_KEYS = [
+  { key: 'research', icon: Brain },
+  { key: 'manager', icon: Settings },
+  { key: 'content', icon: Zap },
+  { key: 'publishing', icon: Send },
+  { key: 'analytics', icon: BarChart3 },
+  { key: 'ads', icon: Target },
 ] as const
 
 interface FeaturesSectionProps {
@@ -151,6 +50,8 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
   compact = false,
   className = '',
 }) => {
+  const { t } = useTranslation('common')
+
   return (
     <section className={`py-16 md:py-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-6">
@@ -188,11 +89,21 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PLATFORM_FEATURES.map((feature, index) => {
+          {FEATURE_KEYS.map((feature, index) => {
             const Icon = feature.icon
+            const name = t(`landing.features.detailed.${feature.key}.name`)
+            const tagline = t(`landing.features.detailed.${feature.key}.tagline`)
+            const description = t(`landing.features.detailed.${feature.key}.description`)
+            const benefits = t(`landing.features.detailed.${feature.key}.benefits`, {
+              returnObjects: true,
+            }) as string[]
+            const useCases = t(`landing.features.detailed.${feature.key}.useCases`, {
+              returnObjects: true,
+            }) as string[]
+
             return (
               <motion.div
-                key={feature.name}
+                key={feature.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -206,12 +117,12 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
 
                 {/* Title & Tagline */}
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                  {feature.name}
+                  {name}
                 </h3>
-                <p className="text-purple-300 font-semibold mb-4">{feature.tagline}</p>
+                <p className="text-purple-300 font-semibold mb-4">{tagline}</p>
 
                 {/* Description */}
-                <p className="text-blue-100 leading-relaxed mb-6">{feature.description}</p>
+                <p className="text-blue-100 leading-relaxed mb-6">{description}</p>
 
                 {/* Benefits */}
                 {!compact && (
@@ -221,8 +132,8 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                       Key Benefits
                     </h4>
                     <ul className="space-y-2 mb-6">
-                      {feature.benefits.map((benefit) => (
-                        <li key={benefit} className="text-sm text-blue-100 flex items-start gap-2">
+                      {benefits.map((benefit, i) => (
+                        <li key={i} className="text-sm text-blue-100 flex items-start gap-2">
                           <span className="text-green-400 mt-1">✓</span>
                           <span>{benefit}</span>
                         </li>
@@ -235,8 +146,8 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                       Use Cases
                     </h4>
                     <ul className="space-y-2">
-                      {feature.useCases.map((useCase) => (
-                        <li key={useCase} className="text-xs text-blue-100/80">
+                      {useCases.map((useCase, i) => (
+                        <li key={i} className="text-xs text-blue-100/80">
                           • {useCase}
                         </li>
                       ))}

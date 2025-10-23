@@ -13,6 +13,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   Users,
   Rocket,
@@ -24,80 +25,12 @@ import {
   Award,
 } from 'lucide-react'
 
-/**
- * REAL Founding Teams (3 actual companies)
- * Source: src/config/industryPersonalization.ts
- */
-export const FOUNDING_TEAMS = [
-  {
-    name: 'FutureMarketingAI',
-    teamSize: 3,
-    industry: 'AI Marketing Tech',
-    status: 'Building the platform',
-    icon: '🤖',
-  },
-  {
-    name: 'SkinClarity Club',
-    teamSize: 5,
-    industry: 'E-commerce Beauty',
-    status: 'Pilot program',
-    icon: '💄',
-  },
-  {
-    name: 'Den Hartogh Solutions',
-    teamSize: 8,
-    industry: 'B2B SaaS',
-    status: 'Early adopter',
-    icon: '🏢',
-  },
-] as const
-
-/**
- * Platform Milestones (Technology-focused, not fake customer metrics)
- */
-export const PLATFORM_MILESTONES = [
-  'Powered by GPT-4, Claude 3.5, Gemini Pro, and Perplexity',
-  '9 autonomous AI agents working 24/7',
-  '6 core modules fully integrated',
-  'ISO 27001 security certified infrastructure',
-  'GDPR and SOC 2 compliance ready',
-  'Built by marketing operators with 15+ years experience',
-] as const
-
-/**
- * Real Guarantees (not unrealistic promises)
- * Source: RISK-REDUCTION-TRANSPARENCY-UPDATE.md
- */
-export const GUARANTEES = [
-  {
-    icon: Shield,
-    title: 'Success Guarantee',
-    description:
-      "We don't stop until it works. If the system isn't delivering value after 3 months, we keep working until it does - no extra cost.",
-    highlight: 'We stay until you succeed',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Founder Partnership',
-    description:
-      'Direct Slack access to founder. Weekly strategy calls. Real partnership, not just a vendor.',
-    highlight: 'Your success = Our success',
-  },
-  {
-    icon: Wrench,
-    title: 'Fully Custom-Built',
-    description:
-      'This is NOT off-the-shelf software. Every system is tailored specifically to your business, industry, and workflows.',
-    highlight: 'Built for YOU, not "configured"',
-  },
-  {
-    icon: Rocket,
-    title: 'Trial + Commitment',
-    description:
-      '3-month risk-free trial. If it works (it will), we commit together for 1 year to maximize results.',
-    highlight: 'Grow together, not month-to-month',
-  },
-] as const
+const GUARANTEE_ICONS = {
+  0: Shield,
+  1: MessageSquare,
+  2: Wrench,
+  3: Rocket,
+} as const
 
 interface SocialProofProps {
   className?: string
@@ -109,6 +42,13 @@ interface SocialProofProps {
  * Uses REAL founding teams, tech credibility, and risk reversal instead of fake testimonials.
  */
 export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
+  const { t } = useTranslation('common')
+
+  const foundingTeams = t('landing.social_proof.founding_teams.teams', {
+    returnObjects: true,
+  }) as any[]
+  const milestones = t('landing.social_proof.milestones.items', { returnObjects: true }) as string[]
+  const guarantees = t('landing.social_proof.guarantees.items', { returnObjects: true }) as any[]
   return (
     <section className={`py-16 md:py-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-6">
@@ -121,7 +61,9 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
             className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4"
           >
             <Rocket className="w-5 h-5 text-blue-400" />
-            <span className="text-sm font-medium text-blue-100">Launching Q1 2026</span>
+            <span className="text-sm font-medium text-blue-100">
+              {t('landing.social_proof.badge')}
+            </span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +72,7 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
-            Building with 3 Founding Teams
+            {t('landing.social_proof.title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -139,37 +81,39 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
             transition={{ delay: 0.2 }}
             className="text-lg text-blue-100 max-w-2xl mx-auto"
           >
-            We're not promising results we don't have yet. Instead, we're building in partnership
-            with forward-thinking teams who see the future of autonomous marketing.
+            {t('landing.social_proof.subtitle')}
           </motion.p>
         </div>
 
         {/* Founding Teams Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {FOUNDING_TEAMS.map((team, index) => (
-            <motion.div
-              key={team.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all"
-            >
-              {/* Team Icon */}
-              <div className="text-6xl mb-4 text-center">{team.icon}</div>
+          {foundingTeams.map((team: any, index: number) => {
+            const icons = ['🤖', '💄', '🏢']
+            return (
+              <motion.div
+                key={team.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all"
+              >
+                {/* Team Icon */}
+                <div className="text-6xl mb-4 text-center">{icons[index]}</div>
 
-              {/* Team Info */}
-              <h3 className="text-xl font-bold text-white text-center mb-2">{team.name}</h3>
-              <p className="text-sm text-blue-200 text-center mb-1">{team.industry}</p>
-              <p className="text-xs text-blue-300 text-center mb-4">Team of {team.teamSize}</p>
+                {/* Team Info */}
+                <h3 className="text-xl font-bold text-white text-center mb-2">{team.name}</h3>
+                <p className="text-sm text-blue-200 text-center mb-1">{team.industry}</p>
+                <p className="text-xs text-blue-300 text-center mb-4">Team of {team.teamSize}</p>
 
-              {/* Status Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-100 mx-auto block w-fit">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                {team.status}
-              </div>
-            </motion.div>
-          ))}
+                {/* Status Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-100 mx-auto block w-fit">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  {team.status}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* Transparent Messaging */}
@@ -208,10 +152,10 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
             <Award className="w-7 h-7 text-yellow-400" />
-            Platform Technology & Capabilities
+            {t('landing.social_proof.milestones.title')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PLATFORM_MILESTONES.map((milestone, index) => (
+            {milestones.map((milestone: string, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -230,14 +174,14 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
         {/* Guarantees - Risk Reversal (Better than fake testimonials) */}
         <div>
           <h3 className="text-2xl font-bold text-white mb-6 text-center">
-            Partnership Commitments
+            {t('landing.social_proof.guarantees.title')}
           </h3>
           <p className="text-center text-blue-100 mb-8 max-w-2xl mx-auto">
-            Realistic guarantees for a custom-built platform. Partnership over transaction.
+            {t('landing.social_proof.guarantees.subtitle')}
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {GUARANTEES.map((guarantee, index) => {
-              const Icon = guarantee.icon
+            {guarantees.map((guarantee: any, index: number) => {
+              const Icon = GUARANTEE_ICONS[index as keyof typeof GUARANTEE_ICONS]
               return (
                 <motion.div
                   key={guarantee.title}
