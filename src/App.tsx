@@ -177,6 +177,7 @@ function App() {
 
                     {/* Demo Pages */}
                     <Route path="/demo" element={<Hero />} />
+                    <Route path="/demo-home" element={<Hero />} />
                     <Route path="/explorer" element={<Explorer />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/calculator" element={<Calculator />} />

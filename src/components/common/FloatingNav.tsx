@@ -43,7 +43,7 @@ export const FloatingNav: React.FC = () => {
     {
       id: 'home',
       label: t('navigation:main.home'),
-      path: '/demo',
+      path: '/demo-home', // Internal navigation without animation
       description: t('navigation:descriptions.home'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

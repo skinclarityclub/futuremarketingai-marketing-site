@@ -28,10 +28,7 @@ export const SimpleHeader: React.FC = () => {
   const handleDemoClick = (e: React.MouseEvent) => {
     e.preventDefault()
 
-    // Set a flag in localStorage with timestamp - this works across windows!
-    localStorage.setItem('fromLanding', Date.now().toString())
-
-    // Open demo in new window
+    // Open demo at /demo (with animation) in new window
     const demoWindow = window.open('/demo', '_blank')
 
     if (demoWindow) {

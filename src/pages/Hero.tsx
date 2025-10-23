@@ -70,28 +70,11 @@ const CalendlyModal = lazy(() =>
 // Aggregate Metrics will be loaded from translations dynamically inside component
 
 export const Hero: React.FC = () => {
-  // Check if we came from the landing page using localStorage flag
-  const shouldPlayAnimation = React.useMemo(() => {
-    const fromLanding = localStorage.getItem('fromLanding')
+  // Check if we're on /demo (with animation) or /demo-home (without animation)
+  const location = window.location
+  const shouldPlayAnimation = location.pathname === '/demo'
 
-    if (fromLanding) {
-      const timestamp = parseInt(fromLanding, 10)
-      const now = Date.now()
-
-      // Check if flag was set within last 5 seconds (fresh navigation)
-      if (now - timestamp < 5000) {
-        localStorage.removeItem('fromLanding') // Clear flag
-        return true // Play animation!
-      }
-
-      // Flag too old, clear it
-      localStorage.removeItem('fromLanding')
-    }
-
-    return false // No animation
-  }, [])
-
-  // Neural Warp animation state - only play if coming from landing page
+  // Neural Warp animation state
   const [showWarp, setShowWarp] = useState(shouldPlayAnimation)
   const [warpComplete, setWarpComplete] = useState(!shouldPlayAnimation)
 
