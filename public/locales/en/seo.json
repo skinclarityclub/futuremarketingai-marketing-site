@@ -1,0 +1,55 @@
+{
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Future Marketing AI. Can't find the answer you're looking for? Try our interactive demo or contact us directly.",
+    "show_less": "Show Less",
+    "show_more": "Show {{count}} More Questions",
+    "still_have_questions": "Still have questions?",
+    "cta_description": "Try our interactive demo or schedule a consultation with our experts.",
+    "demo_button": "Try Interactive Demo",
+    "contact_button": "Contact Us",
+    "quick_answers": "Quick Answers",
+    "items": [
+      {
+        "question": "What is Future Marketing AI and how does it work?",
+        "answer": "Future Marketing AI is an autonomous AI-powered marketing automation platform that transforms premium businesses into market leaders. It uses 6 core AI modules (Research & Planning, Manager Orchestrator, Content Pipelines, Smart Publishing, Self-Learning Analytics, and Ad Automation) to automate your entire marketing workflow. The platform is completely autonomous and self-learning, becoming smarter with every campaign."
+      },
+      {
+        "question": "How much time does Future Marketing AI save?",
+        "answer": "On average, businesses save 312 hours per month with Future Marketing AI. This includes automated content creation (15x faster production), 24/7 AI research and planning, intelligent publishing across all channels, and self-optimizing analytics. Many clients report eliminating the need for multiple full-time marketing roles."
+      },
+      {
+        "question": "What ROI can I expect from the platform?",
+        "answer": "Our clients see an average ROI of 847% within the first 90 days. The platform replaces €26,000/month in traditional tools and labor costs, while our Early Adopter pricing starts at €15,000/month - saving you €11,000/month immediately. Additionally, businesses typically see 35% better engagement and 3.2x better ROAS on advertising spend."
+      },
+      {
+        "question": "What industries does Future Marketing AI serve?",
+        "answer": "We specialize in three primary industries: E-commerce & Retail (managing multiple sales channels), Technology & SaaS (post-PMF, scaling content), and Marketing Agencies (managing 10+ client campaigns). However, any fast-growing business that needs to scale marketing operations can benefit from our platform."
+      },
+      {
+        "question": "Is there a free trial or demo available?",
+        "answer": "Yes! We offer a comprehensive interactive demo where you can explore all platform features without signup. Experience our AI Research Assistant, Content Pipelines, Multi-Channel Publisher, and more. The demo is personalized to your industry and shows real-world use cases. Simply visit our demo page to get started."
+      },
+      {
+        "question": "What is Early Adopter pricing and how long is it available?",
+        "answer": "Early Adopter pricing is our limited-time founding offer with rates locked for 24 months. We have three tiers: Founding Member (€15,000/month, 2 of 5 slots remaining), Pioneer (€17,500/month, 4 of 10 slots), and Innovator (€20,000/month, 2 of 10 slots). This pricing represents a 42% discount versus our Standard rate and includes 2 months free plus roadmap influence."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Implementation time varies by industry: E-commerce typically sees first results in 30 days, SaaS in 45 days, and Agencies can onboard their first client in just 15 days. Our platform is designed for rapid deployment with minimal setup required. Most businesses are fully operational within 4-6 weeks."
+      },
+      {
+        "question": "Do I need technical expertise to use the platform?",
+        "answer": "No technical expertise is required. Future Marketing AI is built for marketers and business owners, not developers. The platform features an intuitive interface with guided workflows. Our AI Manager Orchestrator handles all technical complexity, coordinating workflows automatically. You focus on strategy while AI handles execution."
+      },
+      {
+        "question": "What makes Future Marketing AI different from other marketing automation tools?",
+        "answer": "Unlike traditional tools that require manual setup and constant monitoring, Future Marketing AI is fully autonomous and self-learning. It uses proprietary ML models to optimize performance 24/7, becoming smarter with every campaign. The platform replaces 10+ separate tools (saving €26,000/month) with one unified, intelligent system that requires minimal human intervention."
+      },
+      {
+        "question": "Can I manage multiple clients or brands with one account?",
+        "answer": "Absolutely! Our platform is built for scale. Marketing agencies can manage 20+ client accounts with white-label dashboards and automated reporting. E-commerce businesses can handle multiple brands or product lines. Each account has isolated campaigns, content pipelines, and analytics, all managed from one central hub."
+      }
+    ]
+  }
+}

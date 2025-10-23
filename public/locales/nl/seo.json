@@ -1,0 +1,55 @@
+{
+  "faq": {
+    "title": "Veelgestelde Vragen",
+    "subtitle": "Alles wat je moet weten over Future Marketing AI. Kun je het antwoord niet vinden? Probeer onze interactieve demo of neem direct contact met ons op.",
+    "show_less": "Minder Tonen",
+    "show_more": "Toon {{count}} Meer Vragen",
+    "still_have_questions": "Nog steeds vragen?",
+    "cta_description": "Probeer onze interactieve demo of plan een consultatie met onze experts.",
+    "demo_button": "Probeer Interactieve Demo",
+    "contact_button": "Neem Contact Op",
+    "quick_answers": "Snelle Antwoorden",
+    "items": [
+      {
+        "question": "Wat is Future Marketing AI en hoe werkt het?",
+        "answer": "Future Marketing AI is een autonoom AI-gestuurd marketing automatiseringsplatform dat premium bedrijven transformeert tot marktleiders. Het gebruikt 6 kern AI modules (Research & Planning, Manager Orchestrator, Content Pipelines, Smart Publishing, Self-Learning Analytics en Ad Automation) om je complete marketing workflow te automatiseren. Het platform is volledig autonoom en zelf-lerend, en wordt slimmer met elke campagne."
+      },
+      {
+        "question": "Hoeveel tijd bespaart Future Marketing AI?",
+        "answer": "Gemiddeld besparen bedrijven 312 uur per maand met Future Marketing AI. Dit omvat geautomatiseerde content creatie (15x snellere productie), 24/7 AI research en planning, intelligente publicatie over alle kanalen, en zelf-optimaliserende analytics. Veel klanten rapporteren dat ze geen meerdere fulltime marketing rollen meer nodig hebben."
+      },
+      {
+        "question": "Welke ROI kan ik verwachten van het platform?",
+        "answer": "Onze klanten zien een gemiddelde ROI van 847% binnen de eerste 90 dagen. Het platform vervangt €26.000/maand aan traditionele tools en arbeidskosten, terwijl onze Early Adopter prijzen beginnen bij €15.000/maand - waarmee je direct €11.000/maand bespaart. Daarnaast zien bedrijven typisch 35% betere betrokkenheid en 3.2x betere ROAS op advertentie-uitgaven."
+      },
+      {
+        "question": "Welke industrieën bedient Future Marketing AI?",
+        "answer": "We zijn gespecialiseerd in drie primaire industrieën: E-commerce & Retail (beheer van meerdere verkoopkanalen), Technology & SaaS (post-PMF, opschalen van content), en Marketing Agencies (beheer van 10+ klantcampagnes). Elk snel groeiend bedrijf dat marketing operaties moet opschalen kan echter profiteren van ons platform."
+      },
+      {
+        "question": "Is er een gratis proefperiode of demo beschikbaar?",
+        "answer": "Ja! We bieden een uitgebreide interactieve demo waar je alle platformfuncties kunt verkennen zonder registratie. Ervaar onze AI Research Assistant, Content Pipelines, Multi-Channel Publisher en meer. De demo is gepersonaliseerd voor jouw industrie en toont real-world use cases. Bezoek simpelweg onze demo pagina om te beginnen."
+      },
+      {
+        "question": "Wat is Early Adopter prijzen en hoe lang is het beschikbaar?",
+        "answer": "Early Adopter prijzen zijn ons tijdelijk founding aanbod met tarieven vergrendeld voor 24 maanden. We hebben drie tiers: Founding Member (€15.000/maand, 2 van 5 slots over), Pioneer (€17.500/maand, 4 van 10 slots), en Innovator (€20.000/maand, 2 van 10 slots). Deze prijzen vertegenwoordigen een 42% korting versus ons Standard tarief en omvatten 2 maanden gratis plus roadmap invloed."
+      },
+      {
+        "question": "Hoe lang duurt implementatie?",
+        "answer": "Implementatietijd varieert per industrie: E-commerce ziet typisch eerste resultaten in 30 dagen, SaaS in 45 dagen, en Agencies kunnen hun eerste klant onboarden in slechts 15 dagen. Ons platform is ontworpen voor snelle deployment met minimale setup vereist. De meeste bedrijven zijn volledig operationeel binnen 4-6 weken."
+      },
+      {
+        "question": "Heb ik technische expertise nodig om het platform te gebruiken?",
+        "answer": "Geen technische expertise vereist. Future Marketing AI is gebouwd voor marketeers en bedrijfseigenaren, niet ontwikkelaars. Het platform heeft een intuïtieve interface met begeleide workflows. Onze AI Manager Orchestrator handelt alle technische complexiteit af, coördineert workflows automatisch. Jij focust op strategie terwijl AI de uitvoering regelt."
+      },
+      {
+        "question": "Wat maakt Future Marketing AI anders dan andere marketing automatiseringstools?",
+        "answer": "In tegenstelling tot traditionele tools die handmatige setup en constante monitoring vereisen, is Future Marketing AI volledig autonoom en zelf-lerend. Het gebruikt proprietary ML modellen om prestaties 24/7 te optimaliseren, en wordt slimmer met elke campagne. Het platform vervangt 10+ afzonderlijke tools (bespaart €26.000/maand) met één verenigd, intelligent systeem dat minimale menselijke interventie vereist."
+      },
+      {
+        "question": "Kan ik meerdere klanten of merken beheren met één account?",
+        "answer": "Absoluut! Ons platform is gebouwd voor schaal. Marketing agencies kunnen 20+ klantaccounts beheren met white-label dashboards en geautomatiseerde rapportage. E-commerce bedrijven kunnen meerdere merken of productlijnen afhandelen. Elk account heeft geïsoleerde campagnes, content pipelines en analytics, allemaal beheerd vanaf één centrale hub."
+      }
+    ]
+  }
+}

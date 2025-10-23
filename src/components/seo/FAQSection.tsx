@@ -15,64 +15,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { StructuredData, createFAQSchema, type FAQItem } from './StructuredData'
-
-/**
- * FAQ items optimized for SEO and LLM extraction
- * Based on actual platform knowledge and common user questions
- */
-export const FAQ_ITEMS: FAQItem[] = [
-  {
-    question: 'What is Future Marketing AI and how does it work?',
-    answer:
-      'Future Marketing AI is an autonomous AI-powered marketing automation platform that transforms premium businesses into market leaders. It uses 6 core AI modules (Research & Planning, Manager Orchestrator, Content Pipelines, Smart Publishing, Self-Learning Analytics, and Ad Automation) to automate your entire marketing workflow. The platform is completely autonomous and self-learning, becoming smarter with every campaign.',
-  },
-  {
-    question: 'How much time does Future Marketing AI save?',
-    answer:
-      'On average, businesses save 312 hours per month with Future Marketing AI. This includes automated content creation (15x faster production), 24/7 AI research and planning, intelligent publishing across all channels, and self-optimizing analytics. Many clients report eliminating the need for multiple full-time marketing roles.',
-  },
-  {
-    question: 'What ROI can I expect from the platform?',
-    answer:
-      'Our clients see an average ROI of 847% within the first 90 days. The platform replaces €26,000/month in traditional tools and labor costs, while our Early Adopter pricing starts at €15,000/month - saving you €11,000/month immediately. Additionally, businesses typically see 35% better engagement and 3.2x better ROAS on advertising spend.',
-  },
-  {
-    question: 'What industries does Future Marketing AI serve?',
-    answer:
-      'We specialize in three primary industries: E-commerce & Retail (managing multiple sales channels), Technology & SaaS (post-PMF, scaling content), and Marketing Agencies (managing 10+ client campaigns). However, any fast-growing business that needs to scale marketing operations can benefit from our platform.',
-  },
-  {
-    question: 'Is there a free trial or demo available?',
-    answer:
-      'Yes! We offer a comprehensive interactive demo where you can explore all platform features without signup. Experience our AI Research Assistant, Content Pipelines, Multi-Channel Publisher, and more. The demo is personalized to your industry and shows real-world use cases. Simply visit our demo page to get started.',
-  },
-  {
-    question: 'What is Early Adopter pricing and how long is it available?',
-    answer:
-      'Early Adopter pricing is our limited-time founding offer with rates locked for 24 months. We have three tiers: Founding Member (€15,000/month, 2 of 5 slots remaining), Pioneer (€17,500/month, 4 of 10 slots), and Innovator (€20,000/month, 2 of 10 slots). This pricing represents a 42% discount versus our Standard rate and includes 2 months free plus roadmap influence.',
-  },
-  {
-    question: 'How long does implementation take?',
-    answer:
-      'Implementation time varies by industry: E-commerce typically sees first results in 30 days, SaaS in 45 days, and Agencies can onboard their first client in just 15 days. Our platform is designed for rapid deployment with minimal setup required. Most businesses are fully operational within 4-6 weeks.',
-  },
-  {
-    question: 'Do I need technical expertise to use the platform?',
-    answer:
-      'No technical expertise is required. Future Marketing AI is built for marketers and business owners, not developers. The platform features an intuitive interface with guided workflows. Our AI Manager Orchestrator handles all technical complexity, coordinating workflows automatically. You focus on strategy while AI handles execution.',
-  },
-  {
-    question: 'What makes Future Marketing AI different from other marketing automation tools?',
-    answer:
-      'Unlike traditional tools that require manual setup and constant monitoring, Future Marketing AI is fully autonomous and self-learning. It uses proprietary ML models to optimize performance 24/7, becoming smarter with every campaign. The platform replaces 10+ separate tools (saving €26,000/month) with one unified, intelligent system that requires minimal human intervention.',
-  },
-  {
-    question: 'Can I manage multiple clients or brands with one account?',
-    answer:
-      'Absolutely! Our platform is built for scale. Marketing agencies can manage 20+ client accounts with white-label dashboards and automated reporting. E-commerce businesses can handle multiple brands or product lines. Each account has isolated campaigns, content pipelines, and analytics, all managed from one central hub.',
-  },
-]
 
 interface FAQSectionProps {
   /** Additional FAQ items beyond the defaults */
@@ -109,8 +53,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   includeSchema = true,
   className = '',
 }) => {
+  const { t } = useTranslation(['seo'])
   const [expandedIndex, setExpandedIndex] = React.useState<number | null>(null)
   const [showAll, setShowAll] = React.useState(false)
+
+  // Load FAQ items from translations
+  const FAQ_ITEMS: FAQItem[] = t('seo:faq.items', { returnObjects: true }) as FAQItem[]
 
   // Combine default and additional FAQs
   const allFAQs = [...FAQ_ITEMS, ...additionalFAQs]
@@ -133,13 +81,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
         <div className="max-w-4xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              Everything you need to know about Future Marketing AI. Can't find the answer you're
-              looking for? Try our interactive demo or contact us directly.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('seo:faq.title')}</h2>
+            <p className="text-lg text-blue-100 max-w-2xl mx-auto">{t('seo:faq.subtitle')}</p>
           </div>
 
           {/* FAQ Items */}
@@ -196,12 +139,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               >
                 {showAll ? (
                   <>
-                    Show Less
+                    {t('seo:faq.show_less')}
                     <ChevronDown className="w-4 h-4 rotate-180" />
                   </>
                 ) : (
                   <>
-                    Show {allFAQs.length - initialVisible} More Questions
+                    {t('seo:faq.show_more', { count: allFAQs.length - initialVisible })}
                     <ChevronDown className="w-4 h-4" />
                   </>
                 )}
@@ -211,10 +154,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
 
           {/* CTA Footer */}
           <div className="mt-12 text-center p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl">
-            <h3 className="text-xl font-bold text-white mb-2">Still have questions?</h3>
-            <p className="text-blue-100 mb-4">
-              Try our interactive demo or schedule a consultation with our experts.
-            </p>
+            <h3 className="text-xl font-bold text-white mb-2">
+              {t('seo:faq.still_have_questions')}
+            </h3>
+            <p className="text-blue-100 mb-4">{t('seo:faq.cta_description')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/demo"
@@ -222,13 +165,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all"
               >
-                Try Interactive Demo
+                {t('seo:faq.demo_button')}
               </a>
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all"
               >
-                Contact Us
+                {t('seo:faq.contact_button')}
               </a>
             </div>
           </div>
@@ -242,9 +185,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
  * Compact FAQ variant for footer or sidebar
  */
 export const FAQCompact: React.FC<{ maxItems?: number }> = ({ maxItems = 5 }) => {
+  const { t } = useTranslation(['seo'])
+  const FAQ_ITEMS: FAQItem[] = t('seo:faq.items', { returnObjects: true }) as FAQItem[]
+
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-bold text-white mb-4">Quick Answers</h3>
+      <h3 className="text-lg font-bold text-white mb-4">{t('seo:faq.quick_answers')}</h3>
       {FAQ_ITEMS.slice(0, maxItems).map((faq, index) => (
         <details key={index} className="group">
           <summary className="cursor-pointer text-blue-100 hover:text-white transition-colors list-none flex items-start gap-2">
