@@ -1,4 +1,3 @@
-import OpenAI from 'openai'
 import type { ChatMessage } from '../types/chat'
 import { PLATFORM_KNOWLEDGE } from '../config/platformKnowledge'
 
@@ -24,16 +23,42 @@ interface ValidationResult {
   reason?: string
 }
 
-// OpenRouter configuration (uses OpenAI SDK)
-const openrouter = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY,
-  baseURL: 'https://openrouter.ai/api/v1',
-  dangerouslyAllowBrowser: true, // Demo only!
-  defaultHeaders: {
-    'HTTP-Referer': window.location.origin,
-    'X-Title': 'FutureMarketingAI Demo',
-  },
-})
+// Secure API endpoint - routes through our backend proxy
+const API_ENDPOINT = '/api/chat'
+
+// Simple message type for API calls
+interface APIMessage {
+  role: 'system' | 'user' | 'assistant'
+  content: string
+}
+
+// Helper function to call our secure backend proxy
+async function callSecureAPI(
+  messages: APIMessage[],
+  model: string,
+  temperature: number,
+  maxTokens: number
+) {
+  const response = await fetch(API_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      messages,
+      model,
+      temperature,
+      max_tokens: maxTokens,
+    }),
+  })
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}))
+    throw new Error(errorData.message || `API request failed: ${response.status}`)
+  }
+
+  return response.json()
+}
 
 /**
  * LLM Service for AI Journey Assistant
@@ -66,13 +91,13 @@ export class LLMService {
     const messages = this.formatConversationHistory(conversationHistory, userMessage)
 
     try {
-      // 4. Call OpenRouter API
-      const completion = await openrouter.chat.completions.create({
-        model: this.model,
-        messages: [{ role: 'system', content: systemPrompt }, ...messages],
-        max_tokens: this.maxTokens,
-        temperature: this.temperature,
-      })
+      // 4. Call secure backend proxy API
+      const completion = await callSecureAPI(
+        [{ role: 'system', content: systemPrompt }, ...messages],
+        this.model,
+        this.temperature,
+        this.maxTokens
+      )
 
       const content = completion.choices[0]?.message?.content || ''
 
@@ -232,10 +257,7 @@ Eindig met een relevante vraag of suggestie.`
   /**
    * Format conversation history for OpenAI API
    */
-  private formatConversationHistory(
-    history: ChatMessage[],
-    currentMessage: string
-  ): Array<{ role: 'user' | 'assistant'; content: string }> {
+  private formatConversationHistory(history: ChatMessage[], currentMessage: string): APIMessage[] {
     // Take last 6 messages for context (3 exchanges)
     const recentHistory = history.slice(-6)
 
@@ -243,7 +265,7 @@ Eindig met een relevante vraag of suggestie.`
       .filter((msg) => msg.type === 'text') // Only text messages
       .map((msg) => ({
         role: msg.sender === 'user' ? ('user' as const) : ('assistant' as const),
-        content: msg.content,
+        content: (msg as any).content as string,
       }))
 
     // Add current message
