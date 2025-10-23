@@ -7,6 +7,7 @@
 
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { Button } from '../components/ui/button'
@@ -14,6 +15,7 @@ import { LogIn, Mail, Lock, ArrowRight, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export const LoginPage: React.FC = () => {
+  const { t } = useTranslation(['login'])
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -44,9 +46,9 @@ export const LoginPage: React.FC = () => {
 
       {/* SEO Meta Tags */}
       <SEOHead
-        title="Login to Platform | Future Marketing AI"
-        description="Access your Future Marketing AI dashboard. Manage your autonomous AI marketing campaigns, view analytics, and optimize performance."
-        keywords={['login', 'platform access', 'dashboard', 'AI marketing login']}
+        title={t('login:seo.title')}
+        description={t('login:seo.description')}
+        keywords={t('login:seo.keywords', { returnObjects: true }) as string[]}
         canonical="https://futuremarketingai.com/login"
       />
 
@@ -61,9 +63,9 @@ export const LoginPage: React.FC = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Sparkles className="w-8 h-8 text-blue-400" />
-              <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
+              <h1 className="text-3xl font-bold text-white">{t('login:hero.welcome')}</h1>
             </div>
-            <p className="text-blue-100">Login to access your autonomous marketing platform</p>
+            <p className="text-blue-100">{t('login:hero.subtitle')}</p>
           </div>
 
           {/* Login Card */}
@@ -72,7 +74,7 @@ export const LoginPage: React.FC = () => {
               {/* Email Input */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                  Email Address
+                  {t('login:form.email_label')}
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300" />
@@ -82,7 +84,7 @@ export const LoginPage: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="you@example.com"
+                    placeholder={t('login:form.email_placeholder')}
                     required
                   />
                 </div>
@@ -91,7 +93,7 @@ export const LoginPage: React.FC = () => {
               {/* Password Input */}
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
-                  Password
+                  {t('login:form.password_label')}
                 </label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300" />
@@ -101,7 +103,7 @@ export const LoginPage: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="••••••••"
+                    placeholder={t('login:form.password_placeholder')}
                     required
                   />
                 </div>
@@ -111,10 +113,10 @@ export const LoginPage: React.FC = () => {
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center gap-2 text-blue-100 cursor-pointer">
                   <input type="checkbox" className="rounded" />
-                  <span>Remember me</span>
+                  <span>{t('login:form.remember_me')}</span>
                 </label>
                 <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
-                  Forgot password?
+                  {t('login:form.forgot_password')}
                 </a>
               </div>
 
@@ -127,12 +129,12 @@ export const LoginPage: React.FC = () => {
                 {isLoading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                    Logging in...
+                    {t('login:form.logging_in')}
                   </>
                 ) : (
                   <>
                     <LogIn className="w-5 h-5 mr-2" />
-                    Login to Platform
+                    {t('login:form.login_button')}
                   </>
                 )}
               </Button>
@@ -143,7 +145,9 @@ export const LoginPage: React.FC = () => {
                   <div className="w-full border-t border-white/20" />
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-white/10 text-blue-100">Or continue with</span>
+                  <span className="px-4 bg-white/10 text-blue-100">
+                    {t('login:form.or_continue_with')}
+                  </span>
                 </div>
               </div>
 
@@ -171,32 +175,32 @@ export const LoginPage: React.FC = () => {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                   />
                 </svg>
-                Continue with Google
+                {t('login:form.google_button')}
               </button>
             </form>
 
             {/* Not a member? */}
             <div className="mt-6 text-center text-sm text-blue-100">
-              Not a member yet?{' '}
+              {t('login:signup.not_member')}{' '}
               <Link
                 to="/pricing"
                 className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
               >
-                Join the Waitlist
+                {t('login:signup.join_link')}
               </Link>
             </div>
           </div>
 
           {/* Demo Link */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-blue-100/70 mb-3">Not ready to login?</p>
+            <p className="text-sm text-blue-100/70 mb-3">{t('login:demo.not_ready')}</p>
             <a
               href="/demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
             >
-              Try Interactive Demo
+              {t('login:demo.try_demo')}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

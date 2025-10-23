@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Login to Platform | Future Marketing AI",
+    "description": "Access your Future Marketing AI dashboard. Manage your autonomous AI marketing campaigns, view analytics, and optimize performance.",
+    "keywords": ["login", "platform access", "dashboard", "AI marketing login"]
+  },
+  "hero": {
+    "welcome": "Welcome Back",
+    "subtitle": "Login to access your autonomous marketing platform"
+  },
+  "form": {
+    "email_label": "Email Address",
+    "email_placeholder": "you@example.com",
+    "password_label": "Password",
+    "password_placeholder": "••••••••",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password?",
+    "login_button": "Login to Platform",
+    "logging_in": "Logging in...",
+    "or_continue_with": "Or continue with",
+    "google_button": "Continue with Google"
+  },
+  "signup": {
+    "not_member": "Not a member yet?",
+    "join_link": "Join the Waitlist"
+  },
+  "demo": {
+    "not_ready": "Not ready to login?",
+    "try_demo": "Try Interactive Demo"
+  }
+}

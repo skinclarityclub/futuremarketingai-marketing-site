@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Iniciar Sesión en Plataforma | Future Marketing AI",
+    "description": "Accede a tu panel de Future Marketing AI. Gestiona tus campañas de marketing AI autónomas, ve analytics y optimiza rendimiento.",
+    "keywords": ["inicio de sesión", "acceso a plataforma", "panel", "login marketing AI"]
+  },
+  "hero": {
+    "welcome": "Bienvenido de Nuevo",
+    "subtitle": "Inicia sesión para acceder a tu plataforma de marketing autónoma"
+  },
+  "form": {
+    "email_label": "Dirección de Correo",
+    "email_placeholder": "tu@ejemplo.com",
+    "password_label": "Contraseña",
+    "password_placeholder": "••••••••",
+    "remember_me": "Recuérdame",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "login_button": "Iniciar Sesión en Plataforma",
+    "logging_in": "Iniciando sesión...",
+    "or_continue_with": "O continúa con",
+    "google_button": "Continuar con Google"
+  },
+  "signup": {
+    "not_member": "¿Aún no eres miembro?",
+    "join_link": "Únete a la Lista de Espera"
+  },
+  "demo": {
+    "not_ready": "¿No estás listo para iniciar sesión?",
+    "try_demo": "Prueba Demo Interactiva"
+  }
+}

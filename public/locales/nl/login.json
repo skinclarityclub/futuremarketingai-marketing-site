@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Login naar Platform | Future Marketing AI",
+    "description": "Toegang tot je Future Marketing AI dashboard. Beheer je autonome AI marketing campagnes, bekijk analytics en optimaliseer prestaties.",
+    "keywords": ["login", "platform toegang", "dashboard", "AI marketing login"]
+  },
+  "hero": {
+    "welcome": "Welkom Terug",
+    "subtitle": "Login om toegang te krijgen tot je autonome marketing platform"
+  },
+  "form": {
+    "email_label": "E-mailadres",
+    "email_placeholder": "jij@voorbeeld.nl",
+    "password_label": "Wachtwoord",
+    "password_placeholder": "••••••••",
+    "remember_me": "Onthoud mij",
+    "forgot_password": "Wachtwoord vergeten?",
+    "login_button": "Login naar Platform",
+    "logging_in": "Inloggen...",
+    "or_continue_with": "Of ga verder met",
+    "google_button": "Doorgaan met Google"
+  },
+  "signup": {
+    "not_member": "Nog geen lid?",
+    "join_link": "Doe Mee aan Waitlist"
+  },
+  "demo": {
+    "not_ready": "Nog niet klaar om in te loggen?",
+    "try_demo": "Probeer Interactieve Demo"
+  }
+}
