@@ -3,9 +3,11 @@ import { InlineWidget } from 'react-calendly'
 import { useTranslation } from 'react-i18next'
 // Direct import to avoid circular dependency
 import { Modal } from './Modal'
+import { MobileCalendlyModal } from './MobileCalendlyModal'
 import { trackCalendly } from '../../utils/analytics'
 import { trackGA4Event } from '../../utils/ga4'
 import { hotjarEvent, HotjarEvents } from '../../utils/hotjar'
+import { useIsMobile } from '../../hooks'
 
 // Default Calendly URL (fallback)
 const DEFAULT_CALENDLY_URL = 'https://calendly.com/futuremarketingai/platform-demo-30min'
@@ -69,6 +71,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
   inline = false,
 }) => {
   const { t } = useTranslation(['calendly'])
+  const isMobile = useIsMobile()
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
   const [isAdBlockerDetected, setIsAdBlockerDetected] = useState(false)
@@ -150,6 +153,11 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
 
     return undefined
   }, [isOpen, isLoading, onClose])
+
+  // Use MobileCalendlyModal for mobile devices (full-screen optimization)
+  if (isMobile && !inline) {
+    return <MobileCalendlyModal isOpen={isOpen} onClose={onClose} url={url} prefill={prefill} />
+  }
 
   if (inline) {
     return (

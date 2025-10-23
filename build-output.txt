@@ -1,0 +1,71 @@
+
+> futuremarketingai-demo@0.0.0 build
+> tsc && vite build
+
+src/components/common/MobilePersonalizationMenu.tsx(4,20): error TS6133: 'Building2' is declared but its value is never read.
+src/components/mobile/layouts/Container.tsx(57,6): error TS2741: Property 'map' is missing in type '{ children: ReactNode; className: string; style: CSSProperties | undefined; }' but required in type '{ scale?: number[] | undefined; imageBounds?: number[] | undefined; radius?: number | undefined; resolution?: number | undefined; color?: Color | undefined; map: Texture; zoom?: number | undefined; grayscale?: number | undefined; }'.
+src/components/mobile/layouts/Flex.tsx(52,6): error TS2741: Property 'map' is missing in type '{ children: ReactNode; className: string; style: CSSProperties | undefined; }' but required in type '{ scale?: number[] | undefined; imageBounds?: number[] | undefined; radius?: number | undefined; resolution?: number | undefined; color?: Color | undefined; map: Texture; zoom?: number | undefined; grayscale?: number | undefined; }'.
+src/components/mobile/layouts/Grid.tsx(50,6): error TS2741: Property 'map' is missing in type '{ children: ReactNode; className: string; style: CSSProperties | undefined; }' but required in type '{ scale?: number[] | undefined; imageBounds?: number[] | undefined; radius?: number | undefined; resolution?: number | undefined; color?: Color | undefined; map: Texture; zoom?: number | undefined; grayscale?: number | undefined; }'.
+src/components/mobile/layouts/MobileCard.tsx(68,6): error TS2741: Property 'map' is missing in type '{ children: ReactNode; className: string; style: CSSProperties | undefined; onClick: (() => void) | undefined; role: "button" | undefined; tabIndex: number | undefined; onKeyDown: ((e: KeyboardEvent<...> | ... 99 more ... | KeyboardEvent<...>) => void) | undefined; }' but required in type '{ scale?: number[] | undefined; imageBounds?: number[] | undefined; radius?: number | undefined; resolution?: number | undefined; color?: Color | undefined; map: Texture; zoom?: number | undefined; grayscale?: number | undefined; }'.
+src/components/mobile/layouts/ResponsiveLayout.tsx(11,1): error TS6133: 'Flex' is declared but its value is never read.
+src/components/mobile/layouts/Stack.tsx(68,6): error TS2741: Property 'map' is missing in type '{ children: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Element[] | null | undefined; className: string; style: CSSProperties | undefined; }' but required in type '{ scale?: number[] | undefined; imageBounds?: number[] | undefined; radius?: number | undefined; resolution?: number | undefined; color?: Color | undefined; map: Texture; zoom?: number | undefined; grayscale?: number | undefined; }'.
+src/components/mobile/layouts/TouchableArea.tsx(80,7): error TS2322: Type 'string | undefined' is not assignable to type 'undefined'.
+  Type 'string' is not assignable to type 'undefined'.
+src/components/mobile/MobileFeatureCarousel.tsx(92,19): error TS7030: Not all code paths return a value.
+src/components/mobile/MobileTestimonialCarousel.tsx(99,26): error TS6133: 'e' is declared but its value is never read.
+src/components/mobile/StaticSystemInfographic.tsx(38,3): error TS6133: 'usePlaceholder' is declared but its value is never read.
+src/components/mobile/TouchTargetDebug.tsx(14,8): error TS2307: Cannot find module '@/utils/touchTargetAudit' or its corresponding type declarations.
+src/components/mobile/TouchTargetDebug.tsx(149,91): error TS2339: Property 'toUpperCase' does not exist on type 'string | number | symbol'.
+  Property 'toUpperCase' does not exist on type 'number'.
+src/components/mobile/TouchTargetDebug.tsx(205,39): error TS7006: Parameter 'issue' implicitly has an 'any' type.
+src/components/mobile/TouchTargetDebug.tsx(205,46): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/mobile/TouchTargetDebug.tsx(216,42): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/mobile/TouchTargetDebug.tsx(216,45): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/components/mobile/TouchTargetDebug.tsx(247,52): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/components/mobile/TouchTargetDebug.tsx(247,55): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/hooks/useConditionalLoad.integration.test.tsx(3,17): error TS6133: 'Suspense' is declared but its value is never read.
+src/hooks/useConditionalLoad.integration.test.tsx(99,11): error TS2322: Type '"mobileOrTablet"' is not assignable to type 'DeviceType | DeviceType[] | undefined'.
+src/hooks/useConditionalLoad.integration.test.tsx(131,11): error TS2353: Object literal may only specify known properties, and 'delay' does not exist in type 'ConditionalLoadOptions'.
+src/hooks/useConditionalLoad.integration.test.tsx(160,35): error TS2352: Conversion of type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' to type 'FC<{}>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' provides no match for the signature '(props: {}, deprecatedLegacyContext?: any): ReactNode'.
+src/hooks/useConditionalLoad.integration.test.tsx(161,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(162,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(163,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(176,35): error TS2352: Conversion of type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' to type 'FC<{}>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' provides no match for the signature '(props: {}, deprecatedLegacyContext?: any): ReactNode'.
+src/hooks/useConditionalLoad.integration.test.tsx(177,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(178,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(179,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(192,35): error TS2352: Conversion of type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' to type 'FC<{}>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' provides no match for the signature '(props: {}, deprecatedLegacyContext?: any): ReactNode'.
+src/hooks/useConditionalLoad.integration.test.tsx(193,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(194,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(195,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(208,35): error TS2352: Conversion of type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' to type 'FC<{}>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' provides no match for the signature '(props: {}, deprecatedLegacyContext?: any): ReactNode'.
+src/hooks/useConditionalLoad.integration.test.tsx(209,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.integration.test.tsx(222,35): error TS2352: Conversion of type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' to type 'FC<{}>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ Component: ComponentType<any>; preloadMobile: () => void; preloadDesktop: () => void; }' provides no match for the signature '(props: {}, deprecatedLegacyContext?: any): ReactNode'.
+src/hooks/useConditionalLoad.integration.test.tsx(223,9): error TS2322: Type 'FC<{}>' is not assignable to type '() => Promise<{ default: ComponentType<any>; }>'.
+  Target signature provides too few arguments. Expected 1 or more, but got 0.
+src/hooks/useConditionalLoad.test.ts(3,1): error TS6133: 'createElement' is declared but its value is never read.
+src/hooks/useConditionalLoad.test.ts(79,7): error TS2304: Cannot find name 'mockUseIsDesktop'.
+src/hooks/useConditionalLoad.tsx(1,8): error TS6133: 'React' is declared but its value is never read.
+src/hooks/useConditionalLoad.tsx(1,38): error TS6133: 'LazyExoticComponent' is declared but its value is never read.
+src/hooks/useConditionalLoad.tsx(69,28): error TS2345: Argument of type '"mobileOrTablet"' is not assignable to parameter of type 'DeviceType'.
+src/pages/Calculator.tsx(971,28): error TS2339: Property 'click' does not exist on type 'Element'.
+npm notice
+npm notice New major version of npm available! 10.9.3 -> 11.6.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+npm notice To update run: npm install -g npm@11.6.2
+npm notice

@@ -196,6 +196,7 @@
   },
   "show_more": "Toon Meer",
   "show_less": "Toon Minder",
+  "view_interactive": "Bekijk Interactief",
   "expand": "Toon details",
   "collapse": "Verberg details",
   "swipe_hint": "← Swipe om meer te ontdekken →",
@@ -212,6 +213,18 @@
     "home": "Home",
     "explore": "Verken",
     "book": "Boek"
+  },
+  "mobile": {
+    "desktopBanner": {
+      "message": "🖥️ Best te bekijken op desktop",
+      "emailCta": "Email me link",
+      "dismissed": "Banner gesloten",
+      "label": "Desktop ervaring notificatie",
+      "emailSubject": "Stuur me een link om op desktop te bekijken",
+      "emailBody": "Stuur me alsjeblieft een link om deze pagina op mijn desktop te bekijken.",
+      "emailAriaLabel": "Stuur me een link om deze pagina op desktop te bekijken",
+      "closeAriaLabel": "Desktop notificatie sluiten"
+    }
   },
   "pricing_banner": {
     "exclusive_early_access": "Exclusieve Early Access",
@@ -688,7 +701,8 @@
             "Agency: Performance marketing op schaal"
           ]
         }
-      }
+      },
+      "tap_hint": "Tik op een module om details te bekijken"
     },
     "social_proof": {
       "badge": "Lancering Q1 2026",

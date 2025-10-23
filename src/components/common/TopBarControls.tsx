@@ -3,6 +3,7 @@
  *
  * Features:
  * - Language switcher with flag-only display
+ * - Mobile: Settings menu with personalization options
  * - Context/view switcher (optional)
  * - Minimal, compact design
  */
@@ -11,6 +12,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { LANGUAGES, type Language } from '../../i18n/config'
+import { useIsMobile } from '../../hooks'
+import { MobilePersonalizationMenu } from './MobilePersonalizationMenu'
 // Import flag SVG components
 import GB from 'country-flag-icons/react/3x2/GB'
 import NL from 'country-flag-icons/react/3x2/NL'
@@ -25,6 +28,7 @@ const FLAG_COMPONENTS = {
 
 export function TopBarControls() {
   const { i18n, t } = useTranslation(['common'])
+  const isMobile = useIsMobile()
   const [isOpen, setIsOpen] = useState(false)
   const currentLanguage = i18n.language as Language
   const currentLangData = LANGUAGES[currentLanguage] || LANGUAGES.en
@@ -139,6 +143,9 @@ export function TopBarControls() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Mobile: Settings Menu with Personalization Options */}
+      {isMobile && <MobilePersonalizationMenu />}
     </motion.div>
   )
 }

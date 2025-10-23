@@ -2,93 +2,92 @@
  * Type definitions for mobile layout components
  */
 
-export type Breakpoint = 'mobile' | 'tablet' | 'desktop' | 'xl' | '2xl';
+export type Breakpoint = 'mobile' | 'tablet' | 'desktop' | 'xl' | '2xl'
 
-export type ResponsiveValue<T> = T | Partial<Record<Breakpoint, T>>;
+export type ResponsiveValue<T> = T | Partial<Record<Breakpoint, T>>
 
 export interface SpacingProps {
   /** Padding (all sides) */
-  p?: ResponsiveValue<number>;
+  p?: ResponsiveValue<number>
   /** Padding horizontal (left & right) */
-  px?: ResponsiveValue<number>;
+  px?: ResponsiveValue<number>
   /** Padding vertical (top & bottom) */
-  py?: ResponsiveValue<number>;
+  py?: ResponsiveValue<number>
   /** Padding top */
-  pt?: ResponsiveValue<number>;
+  pt?: ResponsiveValue<number>
   /** Padding right */
-  pr?: ResponsiveValue<number>;
+  pr?: ResponsiveValue<number>
   /** Padding bottom */
-  pb?: ResponsiveValue<number>;
+  pb?: ResponsiveValue<number>
   /** Padding left */
-  pl?: ResponsiveValue<number>;
-  
+  pl?: ResponsiveValue<number>
+
   /** Margin (all sides) */
-  m?: ResponsiveValue<number>;
+  m?: ResponsiveValue<number>
   /** Margin horizontal (left & right) */
-  mx?: ResponsiveValue<number>;
+  mx?: ResponsiveValue<number>
   /** Margin vertical (top & bottom) */
-  my?: ResponsiveValue<number>;
+  my?: ResponsiveValue<number>
   /** Margin top */
-  mt?: ResponsiveValue<number>;
+  mt?: ResponsiveValue<number>
   /** Margin right */
-  mr?: ResponsiveValue<number>;
+  mr?: ResponsiveValue<number>
   /** Margin bottom */
-  mb?: ResponsiveValue<number>;
+  mb?: ResponsiveValue<number>
   /** Margin left */
-  ml?: ResponsiveValue<number>;
-  
+  ml?: ResponsiveValue<number>
+
   /** Gap between children (for flex/grid) */
-  gap?: ResponsiveValue<number>;
+  gap?: ResponsiveValue<number>
 }
 
 export interface LayoutProps extends SpacingProps {
   /** CSS class names */
-  className?: string;
+  className?: string
   /** Inline styles */
-  style?: React.CSSProperties;
+  style?: React.CSSProperties
   /** Content */
-  children?: React.ReactNode;
+  children?: React.ReactNode
   /** HTML element to render as */
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType
 }
 
 export interface GridProps extends LayoutProps {
   /** Number of columns */
-  columns?: ResponsiveValue<number>;
+  columns?: ResponsiveValue<number>
   /** Number of rows */
-  rows?: ResponsiveValue<number>;
+  rows?: ResponsiveValue<number>
   /** Auto-fit columns with min width */
-  autoFit?: ResponsiveValue<string>;
+  autoFit?: ResponsiveValue<string>
   /** Auto-fill columns with min width */
-  autoFill?: ResponsiveValue<string>;
+  autoFill?: ResponsiveValue<string>
 }
 
 export interface FlexProps extends LayoutProps {
   /** Flex direction */
-  direction?: ResponsiveValue<'row' | 'column' | 'row-reverse' | 'column-reverse'>;
+  direction?: ResponsiveValue<'row' | 'column' | 'row-reverse' | 'column-reverse'>
   /** Justify content */
-  justify?: ResponsiveValue<'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'>;
+  justify?: ResponsiveValue<'start' | 'end' | 'center' | 'between' | 'around' | 'evenly'>
   /** Align items */
-  align?: ResponsiveValue<'start' | 'end' | 'center' | 'baseline' | 'stretch'>;
+  align?: ResponsiveValue<'start' | 'end' | 'center' | 'baseline' | 'stretch'>
   /** Flex wrap */
-  wrap?: ResponsiveValue<boolean | 'reverse'>;
+  wrap?: ResponsiveValue<boolean | 'reverse'>
 }
 
 export interface StackProps extends LayoutProps {
   /** Stack direction (vertical or horizontal) */
-  direction?: ResponsiveValue<'vertical' | 'horizontal'>;
+  direction?: ResponsiveValue<'vertical' | 'horizontal'>
   /** Spacing between items */
-  spacing?: ResponsiveValue<number>;
+  spacing?: ResponsiveValue<number>
   /** Divider between items */
-  divider?: React.ReactNode;
+  divider?: React.ReactNode
 }
 
 export interface ContainerProps extends LayoutProps {
   /** Maximum width */
-  maxWidth?: ResponsiveValue<'mobile' | 'tablet' | 'desktop' | 'xl' | '2xl' | 'full'>;
+  maxWidth?: ResponsiveValue<'mobile' | 'tablet' | 'desktop' | 'xl' | '2xl' | 'full'>
   /** Center the container */
-  centered?: boolean;
+  centered?: boolean
   /** Full width on mobile */
-  fullWidthMobile?: boolean;
+  fullWidthMobile?: boolean
 }
-

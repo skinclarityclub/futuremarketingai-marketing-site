@@ -1,6 +1,6 @@
 /**
  * MobileFeatureCarousel Component
- * 
+ *
  * A touch-optimized, swipeable carousel for showcasing key features on mobile.
  * Features:
  * - Swipe gestures with Framer Motion
@@ -13,14 +13,15 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { 
-  Brain, 
-  Zap, 
-  Target, 
-  TrendingUp, 
-  ChevronDown, 
+import {
+  Brain,
+  Zap,
+  Target,
+  TrendingUp,
+  ChevronDown,
   ChevronUp,
-  LucideIcon 
+  ExternalLink,
+  LucideIcon,
 } from 'lucide-react'
 
 interface Feature {
@@ -29,6 +30,10 @@ interface Feature {
   titleKey: string
   descriptionKey: string
   detailsKey: string
+  /** Optional interactive link (e.g., to demo page, chart, or screenshot) */
+  interactiveLink?: string
+  /** Optional link label translation key */
+  interactiveLabelKey?: string
 }
 
 const FEATURES: Feature[] = [
@@ -91,6 +96,7 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
       }, autoPlayInterval)
       return () => clearInterval(interval)
     }
+    return undefined
   }, [currentIndex, autoPlayInterval])
 
   const paginate = (newDirection: number) => {
@@ -101,7 +107,10 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
     setExpandedId(null)
   }
 
-  const handleDragEnd = (_e: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
+  const handleDragEnd = (
+    _e: MouseEvent | TouchEvent | PointerEvent,
+    { offset, velocity }: PanInfo
+  ) => {
     const swipe = swipePower(offset.x, velocity.x)
 
     if (swipe < -swipeConfidenceThreshold) {
@@ -141,7 +150,7 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
   const isExpanded = expandedId === currentFeature.id
 
   return (
-    <section 
+    <section
       className="relative py-12 px-6 bg-gradient-to-b from-slate-900 to-slate-950"
       aria-label="Feature showcase"
     >
@@ -219,10 +228,16 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
                 onClick={() => toggleExpand(currentFeature.id)}
                 className="w-full mt-4 flex items-center justify-center gap-2 py-3 px-4 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-400/20 rounded-xl transition-colors touch-manipulation min-h-touch"
                 aria-expanded={isExpanded}
-                aria-label={isExpanded ? t('common:collapse', 'Collapse details') : t('common:expand', 'Expand details')}
+                aria-label={
+                  isExpanded
+                    ? t('common:collapse', 'Collapse details')
+                    : t('common:expand', 'Expand details')
+                }
               >
                 <span className="text-sm font-medium text-blue-300">
-                  {isExpanded ? t('common:show_less', 'Show Less') : t('common:show_more', 'Show More')}
+                  {isExpanded
+                    ? t('common:show_less', 'Show Less')
+                    : t('common:show_more', 'Show More')}
                 </span>
                 {isExpanded ? (
                   <ChevronUp className="w-4 h-4 text-blue-300" />
@@ -230,13 +245,39 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
                   <ChevronDown className="w-4 h-4 text-blue-300" />
                 )}
               </button>
+
+              {/* Optional Interactive Button */}
+              {currentFeature.interactiveLink && (
+                <a
+                  href={currentFeature.interactiveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full mt-3 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 border border-purple-400/30 rounded-xl transition-all touch-manipulation min-h-touch group"
+                  aria-label={t(
+                    currentFeature.interactiveLabelKey || 'common:view_interactive',
+                    'View Interactive Demo'
+                  )}
+                >
+                  <span className="text-sm font-semibold text-purple-200 group-hover:text-purple-100 transition-colors">
+                    {t(
+                      currentFeature.interactiveLabelKey || 'common:view_interactive',
+                      'View Interactive'
+                    )}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-purple-300 group-hover:text-purple-200 transition-colors" />
+                </a>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Feature navigation">
+      <div
+        className="flex justify-center gap-2 mt-6"
+        role="tablist"
+        aria-label="Feature navigation"
+      >
         {features.map((feature, index) => (
           <button
             key={feature.id}
@@ -253,9 +294,7 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
           >
             <div
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-blue-400 w-8'
-                  : 'bg-white/30 hover:bg-white/50'
+                index === currentIndex ? 'bg-blue-400 w-8' : 'bg-white/30 hover:bg-white/50'
               }`}
             />
           </button>
@@ -273,4 +312,3 @@ export const MobileFeatureCarousel: React.FC<MobileFeatureCarouselProps> = ({
 }
 
 export default MobileFeatureCarousel
-

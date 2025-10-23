@@ -1,32 +1,32 @@
 /**
  * TouchableArea Component
- * 
+ *
  * Ensures minimum touch target size (48x48px) for interactive elements.
  * Wraps content and adds appropriate padding to meet WCAG guidelines.
  */
 
-import React from 'react';
-import { type LayoutProps } from './types';
-import { cn, getSpacingClasses } from './utils';
+import React from 'react'
+import { type LayoutProps } from './types'
+import { cn, getSpacingClasses } from './utils'
 
 interface TouchableAreaProps extends LayoutProps {
   /** Touch target size */
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg'
   /** Enable press effect */
-  pressEffect?: boolean;
+  pressEffect?: boolean
   /** Disabled state */
-  disabled?: boolean;
+  disabled?: boolean
   /** Click handler */
-  onClick?: () => void;
+  onClick?: () => void
   /** ARIA label */
-  'aria-label'?: string;
+  'aria-label'?: string
 }
 
 const sizeMap = {
   sm: 'min-w-touch-sm min-h-touch-sm', // 44x44px (iOS minimum)
   md: 'min-w-touch-md min-h-touch-md', // 48x48px (WCAG AAA)
   lg: 'min-w-touch-lg min-h-touch-lg', // 56x56px (comfortable)
-};
+}
 
 export const TouchableArea: React.FC<TouchableAreaProps> = ({
   children,
@@ -45,30 +45,30 @@ export const TouchableArea: React.FC<TouchableAreaProps> = ({
     'inline-flex items-center justify-center',
     'rounded-lg',
     'transition-all duration-150',
-    
+
     // Touch target size
     sizeMap[size],
-    
+
     // Default padding if not provided
     !spacingProps.p && 'p-2',
-    
+
     // Interactive states
     !disabled && 'cursor-pointer',
     !disabled && pressEffect && 'active:scale-95',
     !disabled && 'hover:bg-bg-hover',
-    
+
     // Disabled state
     disabled && 'opacity-50 cursor-not-allowed',
-    
+
     // Focus visible for keyboard navigation
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary',
-    
+
     // Spacing
     getSpacingClasses(spacingProps),
-    
+
     // Custom classes
     className
-  );
+  )
 
   return (
     <Component
@@ -77,12 +77,11 @@ export const TouchableArea: React.FC<TouchableAreaProps> = ({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      type={Component === 'button' ? 'button' : undefined}
+      {...(Component === 'button' ? { type: 'button' as const } : {})}
     >
       {children}
     </Component>
-  );
-};
+  )
+}
 
-TouchableArea.displayName = 'TouchableArea';
-
+TouchableArea.displayName = 'TouchableArea'

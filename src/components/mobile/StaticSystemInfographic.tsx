@@ -1,9 +1,9 @@
 /**
  * StaticSystemInfographic Component
- * 
+ *
  * Lightweight static infographic for mobile devices
  * Replaces the heavy 3D SystemDiagram with an optimized image
- * 
+ *
  * Features:
  * - Optimized WebP image (<100KB)
  * - Responsive sizing
@@ -35,7 +35,6 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
   imageSrc = '/assets/system-diagram-static.webp',
   alt = 'FutureMarketingAI System Architecture',
   onDesktopCTAClick,
-  usePlaceholder = true,
 }) => {
   const { t } = useTranslation(['common'])
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -46,7 +45,7 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
     if (onDesktopCTAClick) {
       onDesktopCTAClick()
     }
-    
+
     // Track with gtag
     if (window.gtag) {
       window.gtag('event', 'view_desktop_visualization', {
@@ -57,16 +56,27 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
 
     // Copy current URL to clipboard for easy desktop access
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(window.location.href)
+      navigator.clipboard
+        .writeText(window.location.href)
         .then(() => {
           alert(t('common:url_copied', 'URL copied! Open on desktop for interactive experience.'))
         })
         .catch(() => {
           // Fallback: just show the message
-          alert(t('common:view_desktop_hint', 'Open this page on a desktop computer for the full interactive 3D experience.'))
+          alert(
+            t(
+              'common:view_desktop_hint',
+              'Open this page on a desktop computer for the full interactive 3D experience.'
+            )
+          )
         })
     } else {
-      alert(t('common:view_desktop_hint', 'Open this page on a desktop computer for the full interactive 3D experience.'))
+      alert(
+        t(
+          'common:view_desktop_hint',
+          'Open this page on a desktop computer for the full interactive 3D experience.'
+        )
+      )
     }
   }
 
@@ -107,9 +117,9 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
             setImageLoaded(true)
           }}
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ 
+          animate={{
             opacity: imageLoaded ? 1 : 0,
-            scale: imageLoaded ? 1 : 0.95
+            scale: imageLoaded ? 1 : 0.95,
           }}
           transition={{ duration: 0.4 }}
         />
@@ -143,7 +153,10 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
             <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
           </Button>
           <p className="mt-3 text-sm text-slate-400">
-            {t('common:interactive_hint', 'Experience the full 3D interactive visualization on a larger screen')}
+            {t(
+              'common:interactive_hint',
+              'Experience the full 3D interactive visualization on a larger screen'
+            )}
           </p>
         </motion.div>
       )}
@@ -152,4 +165,3 @@ export const StaticSystemInfographic: React.FC<StaticSystemInfographicProps> = (
 }
 
 export default StaticSystemInfographic
-

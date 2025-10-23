@@ -48,6 +48,12 @@
     "reload_page": "Recargar página",
     "breadcrumb_nav": "Migas de pan"
   },
+  "show_more": "Mostrar más",
+  "show_less": "Mostrar menos",
+  "view_interactive": "Ver Interactivo",
+  "expand": "Expandir detalles",
+  "collapse": "Colapsar detalles",
+  "swipe_hint": "← Desliza para explorar más →",
   "loading": {
     "default": "Cargando...",
     "please_wait": "Por favor espera...",
@@ -223,6 +229,23 @@
     "back": "Atrás",
     "learn_more": "Más Información",
     "view": "Ver →"
+  },
+  "nav": {
+    "home": "Inicio",
+    "explore": "Explorar",
+    "book": "Reservar"
+  },
+  "mobile": {
+    "desktopBanner": {
+      "message": "🖥️ Mejor visto en escritorio",
+      "emailCta": "Envíame el enlace",
+      "dismissed": "Banner cerrado",
+      "label": "Notificación de experiencia en escritorio",
+      "emailSubject": "Envíame un enlace para ver en escritorio",
+      "emailBody": "Por favor envíame un enlace para ver esta página en mi computadora de escritorio.",
+      "emailAriaLabel": "Envíame un enlace para ver esta página en escritorio",
+      "closeAriaLabel": "Cerrar notificación de escritorio"
+    }
   },
   "cta": {
     "book_appointment": "Reservar Cita",
@@ -700,7 +723,8 @@
             "Agencia: Marketing de rendimiento a escala"
           ]
         }
-      }
+      },
+      "tap_hint": "Toca cualquier módulo para explorar detalles"
     },
     "social_proof": {
       "badge": "Lanzamiento Q1 2026",

@@ -2,8 +2,8 @@
  * Floating Action Button (FAB)
  *
  * Entry point for the AI Journey Assistant.
- * Positioned at right-middle with breathing animation and context-aware preview to draw attention.
- * Updated: 2025 - Enhanced attention system with preview bubbles
+ * Positioned at right-middle on desktop, bottom-right (40x40px) on mobile
+ * Updated: 2025 - Enhanced attention system with preview bubbles + Mobile optimizations
  */
 
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
@@ -13,6 +13,8 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useChatStore } from '../../stores/chatStore'
 import { useFloatingElement } from '../../contexts/FloatingElementContext'
+import { useIsMobile } from '../../hooks'
+import { trackEvent } from '../../utils/analytics'
 import { breathingAnimation, reducedMotionVariants } from './styles/animations'
 
 interface FloatingActionButtonProps {
@@ -32,6 +34,7 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
   const { openChat: openChatCoordinator, closeChat: closeChatCoordinator } = useFloatingElement()
   const prefersReducedMotion = useReducedMotion()
   const location = useLocation()
+  const isMobile = useIsMobile()
 
   // Preview bubble state
   const [showPreview, setShowPreview] = useState(false)
@@ -74,9 +77,11 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
   }, [prefersReducedMotion, isOpen])
 
   // Show preview bubble after delay - Best practice: only if user hasn't engaged before
+  // MOBILE: Don't show preview on mobile devices (too intrusive)
   useEffect(() => {
     // Don't show if user has ever opened chat or manually dismissed
-    if (hasEverOpenedChat || hasManuallyDismissedPreview) {
+    // MOBILE: Don't show preview on mobile devices
+    if (hasEverOpenedChat || hasManuallyDismissedPreview || isMobile) {
       return undefined
     }
 
@@ -90,7 +95,14 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
       setShowPreview(false)
       return undefined
     }
-  }, [isOpen, previewDismissed, location.pathname, hasEverOpenedChat, hasManuallyDismissedPreview])
+  }, [
+    isOpen,
+    previewDismissed,
+    location.pathname,
+    hasEverOpenedChat,
+    hasManuallyDismissedPreview,
+    isMobile,
+  ])
 
   // Auto-dismiss preview after 10 seconds (best practice: 5-15s)
   useEffect(() => {
@@ -106,29 +118,69 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
   }, [showPreview])
 
   const handleClick = () => {
+    const deviceType = isMobile ? 'mobile' : 'desktop'
+
     if (isOpen) {
       // Close both
       closeChatStore()
       closeChatCoordinator()
+
+      // Track chat close
+      trackEvent({
+        category: 'AI Assistant',
+        action: 'Close Chat',
+        label: `${deviceType} - ${location.pathname}`,
+      })
     } else {
       // Open both (coordinator will auto-close modal if needed)
       openChatStore()
       openChatCoordinator()
+
+      // Track chat open with device metadata
+      trackEvent({
+        category: 'AI Assistant',
+        action: 'Open Chat',
+        label: `${deviceType} - ${location.pathname}`,
+      })
 
       // Track that user has opened chat (persistent - best practice)
       localStorage.setItem('chatEverOpened', 'true')
       // Hide preview permanently after first open
       setShowPreview(false)
       setPreviewDismissed(true)
+
+      // Track first-time chat open
+      if (!hasEverOpenedChat) {
+        trackEvent({
+          category: 'AI Assistant',
+          action: 'First Time Open',
+          label: `${deviceType} - ${location.pathname}`,
+        })
+      }
     }
 
     if (hasUnreadMessages) {
       markAsRead()
+
+      // Track marking messages as read
+      trackEvent({
+        category: 'AI Assistant',
+        action: 'Mark Messages Read',
+        label: deviceType,
+      })
     }
   }
 
   const handlePreviewDismiss = (e: React.MouseEvent) => {
     e.stopPropagation()
+
+    // Track preview dismissal
+    trackEvent({
+      category: 'AI Assistant',
+      action: 'Dismiss Preview Bubble',
+      label: location.pathname,
+    })
+
     // Persistent dismissal - best practice (localStorage)
     localStorage.setItem('chatPreviewDismissed', 'true')
     setPreviewDismissed(true)
@@ -137,9 +189,9 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
 
   return (
     <>
-      {/* Context-Aware Preview Bubble - Premium, ultra-smooth entrance */}
+      {/* Context-Aware Preview Bubble - Premium, ultra-smooth entrance - DESKTOP ONLY */}
       <AnimatePresence>
-        {showPreview && !isOpen && (
+        {showPreview && !isOpen && !isMobile && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 4 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -245,7 +297,7 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         )}
       </AnimatePresence>
 
-      {/* Main FAB Button */}
+      {/* Main FAB Button - Adaptive Size & Position */}
       <motion.button
         onClick={handleClick}
         variants={breathingVariant}
@@ -267,14 +319,15 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         whileTap="tap"
         className={`
           group
-          fixed right-6 top-[65%] -translate-y-1/2
+          fixed
+          ${isMobile ? 'right-4 bottom-20 safe-area-bottom' : 'right-6 top-[65%] -translate-y-1/2'}
           md:z-50 z-[9999]
-          w-16 h-16 
+          ${isMobile ? 'w-10 h-10' : 'w-16 h-16'}
           bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600
           hover:from-purple-500 hover:via-blue-500 hover:to-cyan-500
           text-white
           rounded-full
-          shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70
+          ${isMobile ? 'shadow-xl shadow-purple-500/40' : 'shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70'}
           flex items-center justify-center
           transition-all duration-300
           focus:outline-none focus:ring-4 focus:ring-purple-400/50
@@ -288,26 +341,30 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         {/* Animated Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shimmer" />
 
-        {/* Icon with rotation animation */}
+        {/* Icon with rotation animation - Adaptive Size */}
         <motion.div
           animate={{ rotate: isOpen ? 90 : 0 }}
           transition={{ duration: 0.3 }}
           className="relative z-10"
         >
           {isOpen ? (
-            <X size={28} strokeWidth={2.5} />
+            <X size={isMobile ? 20 : 28} strokeWidth={2.5} />
           ) : (
-            <MessageCircle size={28} strokeWidth={2.5} />
+            <MessageCircle size={isMobile ? 20 : 28} strokeWidth={2.5} />
           )}
         </motion.div>
 
-        {/* Unread Badge */}
+        {/* Unread Badge - Adaptive Size */}
         {hasUnreadMessages && !isOpen && (
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
-            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center z-20"
+            className={`
+              absolute -top-1 -right-1
+              ${isMobile ? 'w-3 h-3' : 'w-5 h-5'}
+              bg-red-500 rounded-full border-2 border-white flex items-center justify-center z-20
+            `}
             aria-label={t('common:accessibility.new_messages')}
           >
             <motion.span
@@ -320,13 +377,13 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="w-2 h-2 bg-white rounded-full"
+              className={`${isMobile ? 'w-1.5 h-1.5' : 'w-2 h-2'} bg-white rounded-full`}
             />
           </motion.div>
         )}
 
-        {/* Hover Tooltip (fallback) */}
-        {!isOpen && !showPreview && (
+        {/* Hover Tooltip (fallback) - Desktop only */}
+        {!isOpen && !showPreview && !isMobile && (
           <div className="absolute right-full mr-3 px-3 py-2 bg-gray-900/90 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 whitespace-nowrap">
             {t('common:chat.tooltip')}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full w-0 h-0 border-t-8 border-t-transparent border-l-8 border-l-gray-900/90 border-b-8 border-b-transparent" />

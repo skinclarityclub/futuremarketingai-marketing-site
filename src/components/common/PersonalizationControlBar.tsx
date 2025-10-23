@@ -60,14 +60,28 @@ export const PersonalizationControlBar: React.FC = () => {
   const displayIcon = selectedIndustry?.icon || '🎯' // Default icon if no industry
   const displayName = selectedIndustry?.name || 'Select Industry'
 
+  // Hide on mobile - will be in TopBarControls menu instead
+  if (isMobile) {
+    return (
+      <>
+        {/* Only render modals on mobile */}
+        <IndustrySelector
+          isOpen={showIndustrySelector}
+          onClose={handleIndustryClose}
+          onSelect={handleIndustrySelect}
+          selectedIndustry={selectedIndustry}
+          skippable={true}
+        />
+        <UserPreferencesModal isOpen={showPreferences} onClose={() => setShowPreferences(false)} />
+      </>
+    )
+  }
+
   return (
     <>
-      {/* Desktop - Top Left (below language switcher) */}
+      {/* Desktop Only - Top Left (below language switcher) */}
       <motion.div
-        className={`
-          fixed z-40 flex flex-col gap-2
-          ${isMobile ? 'top-4 left-1/2 -translate-x-1/2' : 'top-20 left-6'}
-        `}
+        className="fixed z-40 flex flex-col gap-2 top-20 left-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}

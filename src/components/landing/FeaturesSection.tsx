@@ -4,6 +4,9 @@
  * Comprehensive showcase of platform capabilities with benefits and use cases.
  * Based on the 6 core AI modules from the demo.
  *
+ * Mobile: Uses MobileFeaturesAccordion for progressive disclosure
+ * Desktop: Full grid view with all details visible
+ *
  * @see src/config/platformKnowledge.ts for feature details
  */
 
@@ -22,6 +25,8 @@ import {
   Users,
   Sparkles,
 } from 'lucide-react'
+import { useIsMobile } from '../../hooks'
+import { MobileFeaturesAccordion } from '../mobile/MobileFeaturesAccordion'
 
 /**
  * Core platform features based on the 6 AI modules
@@ -51,7 +56,14 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
   className = '',
 }) => {
   const { t } = useTranslation('common')
+  const isMobile = useIsMobile()
 
+  // On mobile, use accordion for progressive disclosure
+  if (isMobile) {
+    return <MobileFeaturesAccordion className={className} />
+  }
+
+  // Desktop: Full grid view (existing implementation)
   return (
     <section className={`py-16 md:py-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-6">

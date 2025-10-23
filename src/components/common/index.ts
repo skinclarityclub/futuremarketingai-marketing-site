@@ -41,6 +41,7 @@ export type { StrategicCTAProps } from './StrategicCTA'
 
 export { CalendlyModal } from './CalendlyModal'
 export type { CalendlyModalProps } from './CalendlyModal'
+export { MobileCalendlyModal } from './MobileCalendlyModal'
 export { CookieConsentBanner } from './CookieConsent'
 export { FloatingNav } from './FloatingNav'
 export { Footer } from './Footer'
@@ -51,9 +52,14 @@ export { TopBarControls } from './TopBarControls'
 export { IndustrySelector, INDUSTRIES } from './IndustrySelector'
 export type { Industry } from './IndustrySelector'
 export { PersonalizationControlBar } from './PersonalizationControlBar'
+export { MobilePersonalizationMenu } from './MobilePersonalizationMenu'
 export { UserPreferencesModal } from './UserPreferencesModal'
 export { ProgressiveProfilingPrompt, shouldShowProfilePrompt } from './ProgressiveProfilingPrompt'
 export type { ProfileQuestion } from './ProgressiveProfilingPrompt'
+
+// Accordion Components
+export { AccordionItem, Accordion } from './AccordionItem'
+export type { AccordionItemProps } from './AccordionItem'
 export {
   Mobile,
   Tablet,

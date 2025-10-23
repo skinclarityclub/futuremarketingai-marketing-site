@@ -1,6 +1,6 @@
 /**
  * MobileTestimonialCarousel Component
- * 
+ *
  * Swipeable testimonial carousel optimized for mobile:
  * - Shows 1-2 testimonials at a time
  * - Touch-friendly swipe gestures
@@ -75,19 +75,28 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
     return Math.abs(offset) * velocity
   }
 
-  const paginate = useCallback((newDirection: number) => {
-    setDirection(newDirection)
-    setCurrentIndex((prevIndex) => {
-      let nextIndex = prevIndex + newDirection
-      if (nextIndex < 0) {nextIndex = testimonials.length - 1}
-      if (nextIndex >= testimonials.length) {nextIndex = 0}
-      return nextIndex
-    })
-  }, [testimonials.length])
+  const paginate = useCallback(
+    (newDirection: number) => {
+      setDirection(newDirection)
+      setCurrentIndex((prevIndex) => {
+        let nextIndex = prevIndex + newDirection
+        if (nextIndex < 0) {
+          nextIndex = testimonials.length - 1
+        }
+        if (nextIndex >= testimonials.length) {
+          nextIndex = 0
+        }
+        return nextIndex
+      })
+    },
+    [testimonials.length]
+  )
 
   // Auto-advance
   useEffect(() => {
-    if (!autoAdvanceInterval || isPaused) {return}
+    if (!autoAdvanceInterval || isPaused) {
+      return
+    }
 
     const timer = setInterval(() => {
       paginate(1)
@@ -96,7 +105,10 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
     return () => clearInterval(timer)
   }, [autoAdvanceInterval, isPaused, paginate])
 
-  const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
+  const handleDragEnd = (
+    _e: MouseEvent | TouchEvent | PointerEvent,
+    { offset, velocity }: PanInfo
+  ) => {
     const swipe = swipePower(offset.x, velocity.x)
 
     if (swipe < -swipeConfidenceThreshold) {
@@ -124,7 +136,7 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
   }
 
   return (
-    <div 
+    <div
       className="relative w-full max-w-2xl mx-auto px-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -203,7 +215,11 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
 
       {/* Pagination Dots */}
       {showPagination && testimonials.length > 1 && (
-        <div className="flex justify-center gap-2 mt-6" role="tablist" aria-label="Testimonial navigation">
+        <div
+          className="flex justify-center gap-2 mt-6"
+          role="tablist"
+          aria-label="Testimonial navigation"
+        >
           {testimonials.map((_, index) => (
             <button
               key={index}
@@ -212,9 +228,7 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
                 setCurrentIndex(index)
               }}
               className={`w-2 h-2 rounded-full transition-all touch-manipulation ${
-                index === currentIndex
-                  ? 'bg-blue-400 w-8'
-                  : 'bg-slate-600 hover:bg-slate-500'
+                index === currentIndex ? 'bg-blue-400 w-8' : 'bg-slate-600 hover:bg-slate-500'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
               aria-selected={index === currentIndex}
@@ -240,4 +254,3 @@ export const MobileTestimonialCarousel: React.FC<MobileTestimonialCarouselProps>
 }
 
 export default MobileTestimonialCarousel
-

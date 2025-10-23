@@ -5,7 +5,7 @@
 
 import { useLocation } from 'react-router-dom'
 import { useJourneyStore } from '../../stores/journeyStore'
-import { detectPage, getProgressMessage } from '../../utils/pageContext'
+import { detectPage } from '../../utils/pageContext'
 
 export default function ChatDebugPanel() {
   const location = useLocation()
