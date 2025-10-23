@@ -760,6 +760,31 @@
             "highlight": "Crecer juntos, no mes a mes"
           }
         ]
+      },
+      "founding_message": {
+        "title": "7 Plazas Fundadoras Disponibles",
+        "description": "Limitamos nuestro lanzamiento a 10 equipos fundadores en total. Esto no es escasez artificial—es un compromiso de construir esta plataforma correctamente, con asociaciones profundas, no transacciones superficiales.",
+        "benefits": {
+          "rate_lock": {
+            "value": "24 meses",
+            "label": "Garantía de tarifa bloqueada"
+          },
+          "savings": {
+            "value": "€120.000",
+            "label": "Ahorro vs tarifa estándar"
+          },
+          "access": {
+            "value": "Acceso directo",
+            "label": "Asociación con fundador"
+          }
+        }
+      },
+      "cta": {
+        "title": "Únete a los Equipos Fundadores",
+        "subtitle": "Estamos construyendo esto en asociación con empresas visionarias.",
+        "note": "No buscamos salidas rápidas—socios de crecimiento a largo plazo.",
+        "demo_button": "Probar Demo Interactiva",
+        "contact_button": "Reservar Llamada con Fundador"
       }
     }
   }

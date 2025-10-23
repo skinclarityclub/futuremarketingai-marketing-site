@@ -727,6 +727,31 @@
             "highlight": "Samen groeien, niet maand-tot-maand"
           }
         ]
+      },
+      "founding_message": {
+        "title": "7 Founding Plekken Over",
+        "description": "We limiteren onze lancering tot 10 founding teams totaal. Dit is geen kunstmatige schaarste—het is een commitment om dit platform goed te bouwen, met diepe partnerships, geen oppervlakkige transacties.",
+        "benefits": {
+          "rate_lock": {
+            "value": "24 maanden",
+            "label": "Prijs garantie"
+          },
+          "savings": {
+            "value": "€120.000",
+            "label": "Bespaard vs Standaard tarief"
+          },
+          "access": {
+            "value": "Directe toegang",
+            "label": "Founder partnerschap"
+          }
+        }
+      },
+      "cta": {
+        "title": "Sluit je aan bij de Founding Teams",
+        "subtitle": "We bouwen dit in partnerschap met vooruitdenkende bedrijven.",
+        "note": "Geen quick exits—partners voor de lange termijn.",
+        "demo_button": "Probeer Interactieve Demo",
+        "contact_button": "Boek Founder Gesprek"
       }
     }
   }

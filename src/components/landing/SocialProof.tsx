@@ -125,24 +125,36 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
         >
           <div className="text-center max-w-3xl mx-auto">
             <Calendar className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">7 Founding Slots Remaining</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {t('landing.social_proof.founding_message.title')}
+            </h3>
             <p className="text-blue-100 leading-relaxed mb-6">
-              We're limiting our launch to 10 founding teams total. This isn't artificial
-              scarcity—it's a commitment to build this platform right, with deep partnerships, not
-              shallow transactions.
+              {t('landing.social_proof.founding_message.description')}
             </p>
             <div className="grid md:grid-cols-3 gap-4 text-sm">
               <div className="bg-white/5 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white mb-1">24 months</div>
-                <div className="text-blue-100">Rate lock guarantee</div>
+                <div className="text-2xl font-bold text-white mb-1">
+                  {t('landing.social_proof.founding_message.benefits.rate_lock.value')}
+                </div>
+                <div className="text-blue-100">
+                  {t('landing.social_proof.founding_message.benefits.rate_lock.label')}
+                </div>
               </div>
               <div className="bg-white/5 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white mb-1">€120,000</div>
-                <div className="text-blue-100">Saved vs Standard rate</div>
+                <div className="text-2xl font-bold text-white mb-1">
+                  {t('landing.social_proof.founding_message.benefits.savings.value')}
+                </div>
+                <div className="text-blue-100">
+                  {t('landing.social_proof.founding_message.benefits.savings.label')}
+                </div>
               </div>
               <div className="bg-white/5 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white mb-1">Direct access</div>
-                <div className="text-blue-100">Founder partnership</div>
+                <div className="text-2xl font-bold text-white mb-1">
+                  {t('landing.social_proof.founding_message.benefits.access.value')}
+                </div>
+                <div className="text-blue-100">
+                  {t('landing.social_proof.founding_message.benefits.access.label')}
+                </div>
               </div>
             </div>
           </div>
@@ -216,13 +228,11 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           viewport={{ once: true }}
           className="mt-16 text-center p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl"
         >
-          <h3 className="text-2xl font-bold text-white mb-3">Join the Founding Teams</h3>
-          <p className="text-blue-100 mb-2">
-            We're building this in partnership with forward-thinking businesses.
-          </p>
-          <p className="text-sm text-blue-100/70 mb-6">
-            Not looking for quick exits—long-term growth partners.
-          </p>
+          <h3 className="text-2xl font-bold text-white mb-3">
+            {t('landing.social_proof.cta.title')}
+          </h3>
+          <p className="text-blue-100 mb-2">{t('landing.social_proof.cta.subtitle')}</p>
+          <p className="text-sm text-blue-100/70 mb-6">{t('landing.social_proof.cta.note')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/demo"
@@ -230,13 +240,13 @@ export const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
             >
-              Try Interactive Demo
+              {t('landing.social_proof.cta.demo_button')}
             </a>
             <a
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all"
             >
-              Book Founder Call
+              {t('landing.social_proof.cta.contact_button')}
             </a>
           </div>
         </motion.div>

@@ -727,6 +727,31 @@
             "highlight": "Grow together, not month-to-month"
           }
         ]
+      },
+      "founding_message": {
+        "title": "7 Founding Slots Remaining",
+        "description": "We're limiting our launch to 10 founding teams total. This isn't artificial scarcity—it's a commitment to build this platform right, with deep partnerships, not shallow transactions.",
+        "benefits": {
+          "rate_lock": {
+            "value": "24 months",
+            "label": "Rate lock guarantee"
+          },
+          "savings": {
+            "value": "€120,000",
+            "label": "Saved vs Standard rate"
+          },
+          "access": {
+            "value": "Direct access",
+            "label": "Founder partnership"
+          }
+        }
+      },
+      "cta": {
+        "title": "Join the Founding Teams",
+        "subtitle": "We're building this in partnership with forward-thinking businesses.",
+        "note": "Not looking for quick exits—long-term growth partners.",
+        "demo_button": "Try Interactive Demo",
+        "contact_button": "Book Founder Call"
       }
     }
   }
