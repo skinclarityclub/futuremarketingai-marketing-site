@@ -4,9 +4,11 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!api|site\\.webmanifest|favicon\\.ico|.*\\.png|assets/).)*",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
