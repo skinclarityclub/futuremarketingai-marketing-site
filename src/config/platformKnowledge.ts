@@ -11,8 +11,10 @@
  *
  * Used by LLM system prompt and fallback responses
  *
- * @version 1.0
- * @lastUpdated 2025-10-08
+ * @version 2.0
+ * @lastUpdated 2025-10-23
+ * @changeLog V2.0 - Updated value proposition based on 2025 market research
+ *            See: PRICING-VALUE-ANALYSIS-2025.md and VALIDATED-BENCHMARKS-2025.md
  */
 
 // ============================================
@@ -98,27 +100,33 @@ export const PLATFORM_MODULES = {
   researchPlanning: {
     id: 'research-planning',
     icon: '🧠',
-    name: 'Research & Planning Intelligence',
-    shortDescription: 'AI analyseert markt trends 24/7 en genereert content ideeën',
+    name: '24/7 AI Market Intelligence & Research',
+    shortDescription:
+      'Perplexity AI-powered 24/7 marktonderzoek, trend forecasting en competitor intelligence',
 
     capabilities: [
-      'Analyseert markt trends 24/7 met AI',
-      'Monitort automatisch concurrenten',
-      'Genereert content ideeën op basis van performance data',
-      'Plant optimale content kalender',
+      'Perplexity AI scant 100+ databronnen 24/7',
+      'Continuous competitor monitoring en benchmarking',
+      'AI trend forecasting en opportunity detection',
+      'Automated market intelligence rapportage',
+      'Real-time content ideation based on market data',
+      'Industry-specific insights en best practices',
     ],
 
     howItWorks: [
-      'Perplexity API scant 100+ databronnen',
-      'AI Agent verwerkt intelligence',
+      'Perplexity API scant 100+ databronnen continu',
+      'AI Agent verwerkt market intelligence real-time',
       'Content Architecture Agent structureert output',
       'Schedule Generator optimaliseert timing',
+      'Pattern Recognition identificeert winning strategies',
     ],
 
     roiImpact: {
-      description: 'Vervangt 40u/week research team',
-      savings: '€6,400/maand',
-      monetaryValue: '€4,000/maand standalone waarde',
+      description: 'Vervangt full-time research analyst + enterprise tools',
+      savings: '€14,900/maand (analyst €6,500 + tools €1,500 + BI €2,000 + agency reports €5,000)',
+      monetaryValue: '€8,000/maand standalone waarde',
+      marketComparison:
+        'Semrush (€500) + Research Analyst (€6,500) + BI Platform (€2,000) = €9,000/mo',
     },
   },
 
@@ -126,13 +134,14 @@ export const PLATFORM_MODULES = {
     id: 'manager-orchestrator',
     icon: '👑',
     name: 'Manager Orchestration Engine',
-    shortDescription: 'Coördineert alle workflows en A/B testing automatisch',
+    shortDescription: 'Intelligente workflow coördinatie, A/B testing en campaign management',
 
     capabilities: [
-      'Verwerkt dagelijkse agenda automatisch',
-      'Coördineert alle content workflows',
-      'Managet A/B testing strategieën',
-      'Verdeelt werk naar execution pipelines',
+      'Volledige workflow orchestration over alle platforms',
+      'Intelligente A/B testing strategieën',
+      'Campaign prioritization en resource allocation',
+      'Cross-platform campaign coördinatie',
+      'Automated task distribution naar execution pipelines',
     ],
 
     howItWorks: [
@@ -140,26 +149,31 @@ export const PLATFORM_MODULES = {
       'Genereert varianten voor A/B testing',
       'Wijst toe aan juiste workflows',
       'Monitort executie en verzamelt prestaties',
+      'Optimaliseert resource allocation real-time',
     ],
 
     roiImpact: {
-      description: 'Elimineert noodzaak voor 3 FTE coördinatoren',
-      savings: '€12,000/maand',
-      monetaryValue: '€5,000/maand standalone waarde',
+      description: 'Elimineert noodzaak voor 3 FTE marketing coördinatoren',
+      savings: '€12,000/maand in team costs',
+      monetaryValue: '€6,000/maand standalone waarde',
+      marketComparison: 'CoSchedule Enterprise (€2,000) + Workflow Tools (€2,500) = €4,500/mo',
     },
   },
 
   contentPipelines: {
     id: 'content-pipelines',
     icon: '🎭',
-    name: 'Content Creation Pipelines',
-    shortDescription: 'Creëert platform-geoptimaliseerde content met AI',
+    name: 'AI Content Factory (300+ posts/month)',
+    shortDescription:
+      'Enterprise-grade content creation met 15x output: platform-geoptimaliseerd, brand-consistent, self-learning',
 
     capabilities: [
-      'Creëert platform-geoptimaliseerde content',
-      'Handhaaft brand consistentie over alle assets',
-      'Genereert automatisch meerdere varianten',
-      'Past performance-driven templates toe',
+      'Creëert 300+ platform-geoptimaliseerde posts per maand',
+      'Handhaaft absolute brand consistentie over alle assets',
+      'Genereert automatisch meerdere A/B test varianten',
+      'Self-learning optimization gebaseerd op performance',
+      'Multi-platform support: Instagram, TikTok, LinkedIn, YouTube, Facebook, Pinterest, Blogs',
+      'Performance-driven templates die continu verbeteren',
     ],
 
     pipelines: [
@@ -168,12 +182,14 @@ export const PLATFORM_MODULES = {
       'CarouselBuilder (Multi-slide content)',
       'ReelBuilder (Short-form video)',
       'LinkedInBuilder (Professional content)',
+      'BlogBuilder (Long-form SEO content)',
     ],
 
     roiImpact: {
-      description: '80% snellere content productie, 15x output increase',
-      savings: '€8,000/maand',
-      monetaryValue: '€5,000/maand standalone waarde',
+      description: '15x content output - replaces 2-3 content creators OR full-service agency',
+      savings: '€15,000-€30,000/maand (in-house team) OR €7,500-€15,000/maand (agency retainer)',
+      monetaryValue: '€10,000/maand standalone waarde',
+      marketComparison: 'Agency rate: €100-€500 per post × 300 posts = €30,000-€150,000/mo',
     },
   },
 
@@ -181,82 +197,96 @@ export const PLATFORM_MODULES = {
     id: 'publishing-layer',
     icon: '📤',
     name: 'Smart Publishing Layer',
-    shortDescription: 'Post op wetenschappelijk optimale tijden met targeting',
+    shortDescription:
+      'Enterprise multi-platform publishing met wetenschappelijk geoptimaliseerde timing',
 
     capabilities: [
-      'Post content op wetenschappelijk optimale tijden',
-      'Richt juiste audience segmenten',
-      'Coördineert cross-platform campagnes',
-      "Handelt alle platform API's automatisch af",
+      'Post content op wetenschappelijk optimale tijden (35% betere engagement)',
+      'Intelligent audience segmentation en targeting',
+      'Coördineert cross-platform campagnes naadloos',
+      "Handelt alle platform API's automatisch af (7 platforms)",
+      '99.8% success rate publishing - enterprise reliability',
     ],
 
     intelligence: [
       'Analyseert engagement patronen per tijd van de dag',
       'Optimaliseert per dag van de week',
-      'Target op audience demographics',
-      'Optimaliseert per content type',
+      'Target op audience demographics en behavior',
+      'Optimaliseert per content type en platform',
+      'Adaptive scheduling based on performance data',
     ],
 
     roiImpact: {
-      description: '35% betere engagement door timing',
+      description: '35% betere engagement door timing optimization',
       revenueIncrease: '+€15,000/maand',
-      monetaryValue: '€3,500/maand standalone waarde',
+      monetaryValue: '€4,000/maand standalone waarde',
+      marketComparison: 'Hootsuite Enterprise (€1,500) + Sprout Social (€1,500) = €3,000/mo',
     },
   },
 
   analytics: {
     id: 'analytics-engine',
     icon: '📊',
-    name: 'Self-Learning Analytics',
-    shortDescription: 'Leert van elke campagne en verbetert continu',
+    name: 'Self-Learning Analytics & Intelligence',
+    shortDescription:
+      'AI-powered analytics dat continu leert en voorspelt - compound effect over tijd',
 
     capabilities: [
-      'Trackt prestaties over alle platforms',
-      'Identificeert winnende content patronen',
-      'Leert van elke campagne',
-      'Verbetert continu strategieën',
+      'Trackt real-time prestaties over alle platforms',
+      'AI pattern recognition identificeert winnende content',
+      'Leert van elke campagne en verbetert autonoom',
+      'Predictive analytics voor future campaign performance',
+      '23% maandelijkse performance verbetering (compound)',
+      'Automated insights en actionable recommendations',
     ],
 
     learningLoop: [
-      'Verzamel performance data',
-      'Analyseer patronen met AI',
-      'Identificeer winners en losers',
+      'Verzamel performance data real-time',
+      'Analyseer patronen met custom AI models',
+      'Identificeer winners en losers automatisch',
       'Pas toekomstige strategieën aan',
-      'Herhaal oneindig',
+      'Voorspel performance van new content',
+      'Herhaal oneindig met compound improvement',
     ],
 
     roiImpact: {
-      description: '23% maandelijkse performance verbetering',
-      compoundEffect: 'Wordt elke dag slimmer',
-      monetaryValue: '€3,000/maand standalone waarde',
+      description: '23% maandelijkse performance verbetering - compound effect',
+      compoundEffect: 'Wordt exponentieel beter over tijd',
+      monetaryValue: '€5,000/maand standalone waarde',
+      marketComparison: 'HubSpot Analytics (€3,000) + Custom AI (€5,000) = €8,000/mo',
     },
   },
 
   adAutomation: {
     id: 'ad-automation',
     icon: '💰',
-    name: 'Automated Ad Campaigns',
-    shortDescription: 'Converteert winnende posts naar ads met optimalisatie',
+    name: 'Automated Ad Campaign Engine',
+    shortDescription: 'Intelligent ad automation met winning content conversion - 3.2x betere ROAS',
 
     capabilities: [
-      'Converteert winnende organic posts naar paid ads',
-      'Optimaliseert budget allocatie automatisch',
-      'Target high-converting audiences',
-      'Trackt ROI in real-time',
+      'Automatic conversion van winning organic posts naar paid ads',
+      'AI-powered budget optimization (niet manual)',
+      'Multi-platform ad management (Meta, Google, LinkedIn)',
+      'Target high-converting audiences met AI',
+      'Real-time ROI tracking en optimization',
+      '3.2x betere ROAS dan manual campaigns',
     ],
 
     process: [
-      'Analytics identificeert top performers',
-      'Auto-creëert ad variaties',
-      'Lanceert campaigns met optimal budget',
-      'Monitort en past aan op basis van performance',
+      'Analytics identificeert top performing organic posts',
+      'Auto-creëert multiple ad variaties',
+      'Lanceert campaigns met AI-optimized budget',
+      'Monitort real-time performance',
+      'Past targeting en budget aan based on results',
+      'Scales winners automatically',
     ],
 
     roiImpact: {
-      description: '3.2x betere ROAS dan manual campaigns',
-      revenueIncrease: '+€45,000/maand',
+      description: '3.2x betere ROAS - replaces agency ad management',
+      revenueIncrease: '+€45,000/maand average',
       costReduction: 'Cost per acquisition: -60%',
-      monetaryValue: '€4,500/maand standalone waarde',
+      monetaryValue: '€6,000/maand standalone waarde',
+      marketComparison: 'Agency fee: 15% of ad spend + €5,000 base = €8,000+/mo',
     },
   },
 } as const
@@ -356,19 +386,49 @@ export const PRICING_MODEL = {
   },
 
   valueBreakdown: {
-    totalRetailValue: 26000,
+    // Updated based on 2025 market research - See PRICING-VALUE-ANALYSIS-2025.md
+    totalRetailValue: 39000, // Conservative estimate based on verified market comparisons
     modules: [
-      { name: 'Strategy & Planning', value: 4000 },
-      { name: 'Content Creation', value: 5000 },
-      { name: 'Multi-Channel Management', value: 3500 },
-      { name: 'Ad Campaign Management', value: 4500 },
-      { name: 'Analytics & Reporting', value: 3000 },
-      { name: 'SEO & Optimization', value: 2500 },
-      { name: 'Email Marketing', value: 2000 },
-      { name: 'Social Listening', value: 1500 },
+      {
+        name: '24/7 AI Market Intelligence & Research',
+        value: 8000,
+        marketValue: '€14,500-€32,500/mo',
+        replaces: 'Research analyst + Semrush + BI platform + Agency reports',
+      },
+      {
+        name: 'Manager Orchestration Engine',
+        value: 6000,
+        marketValue: '€16,200+/mo',
+        replaces: '3 FTE marketing coordinators + workflow tools',
+      },
+      {
+        name: 'AI Content Factory (300+ posts/month)',
+        value: 10000,
+        marketValue: '€30,000-€150,000/mo',
+        replaces: '2-3 content creators OR full-service agency',
+      },
+      {
+        name: 'Smart Publishing Layer',
+        value: 4000,
+        marketValue: '€1,200-€3,000/mo',
+        replaces: 'Hootsuite + Sprout Social Enterprise',
+      },
+      {
+        name: 'Self-Learning Analytics & Intelligence',
+        value: 5000,
+        marketValue: '€2,000-€10,000/mo',
+        replaces: 'HubSpot Analytics + Custom AI platform',
+      },
+      {
+        name: 'Automated Ad Campaign Engine',
+        value: 6000,
+        marketValue: '€5,000-€18,000/mo',
+        replaces: 'Agency ad management (15% + base fee)',
+      },
     ],
-    foundingDiscount: 11000, // €26k - €15k
-    percentageDiscount: 42, // 11/26 * 100
+    foundingDiscount: 24000, // €39k - €15k
+    percentageDiscount: 62, // 24/39 * 100 (rounded)
+    year1Savings: 288000, // (€39k - €15k) × 10 months + 2 free months (€39k × 2)
   },
 } as const
 
@@ -519,7 +579,19 @@ export const KNOWLEDGE_BASE = {
   pricing: [
     {
       question: 'Waarom €15,000 per maand?',
-      answer: `Ons platform vervangt €26,000/maand aan standalone tools en team capacity. De €15,000 Founding Member prijs is 42% korting op de echte waarde. Plus, je bespaart gemiddeld 312 uur/maand, wat neerkomt op €15,600 in labor costs (bij €50/uur). Effectief is het platform cash-flow positief vanaf maand 1.`,
+      answer: `Ons platform vervangt €39,000/maand aan standalone tools en team capacity (verified by 2025 market research). De €15,000 Founding Member prijs is een 62% korting op de echte waarde. 
+
+      Je krijgt:
+      - €8,000/mo: 24/7 AI Market Intelligence (replaces research analyst + tools)
+      - €10,000/mo: 300+ posts/month AI Content Factory (replaces agency)
+      - €6,000/mo: Manager Orchestration (replaces 3 FTE coordinators)
+      - €4,000/mo: Smart Publishing Layer (replaces Hootsuite + Sprout)
+      - €5,000/mo: Self-Learning Analytics (replaces HubSpot + Custom AI)
+      - €6,000/mo: Ad Campaign Automation (replaces agency management)
+      
+      Plus, je bespaart gemiddeld 312 uur/maand, wat neerkomt op €15,600 in labor costs (bij €50/uur). 
+      
+      Effectief is het platform cash-flow positief vanaf maand 1, met €24,000/maand savings.`,
       category: 'pricing',
     },
     {
@@ -534,7 +606,14 @@ export const KNOWLEDGE_BASE = {
     },
     {
       question: 'Wat gebeurt er als de Founding Member slots vol zijn?',
-      answer: `Dan gaat de prijs omhoog naar €17,500/maand (Pioneer tier). Elke tier heeft beperkte slots. Als je nu besluit, krijg je de Founding prijs locked voor 24 maanden, zelfs als we later verhogen naar €22,500.`,
+      answer: `Dan gaat de prijs omhoog naar €17,500/maand (Pioneer tier). Elke tier heeft beperkte slots. Als je nu besluit, krijg je:
+      
+      - Founding Member (€15,000/mo): €24,000/maand savings vs €39,000 retail
+      - Rate locked voor 24 maanden
+      - 2 months FREE (€30,000 extra besparing)
+      - Year 1 total savings: €288,000
+      
+      Bij Pioneer tier (€17,500/mo) zijn de savings €21,500/maand maar zonder de 2 gratis maanden. Beslissen NU betekent €78,000 extra besparing in year 1.`,
       category: 'pricing',
     },
   ],

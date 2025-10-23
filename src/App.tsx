@@ -132,12 +132,12 @@ function App() {
             {/* SEO Meta Tags - Dynamic per page */}
             <SEOHelmet />
 
+            {/* Top Bar Controls - Language switcher (always visible) */}
+            <TopBarControls />
+
             {/* Demo UI Elements - Only show on demo routes, not on landing page */}
             {isDemoRoute && (
               <>
-                {/* Top Bar Controls - Language switcher (top-left) */}
-                <TopBarControls />
-
                 {/* Floating Navigation - Always visible */}
                 <FloatingNav />
 

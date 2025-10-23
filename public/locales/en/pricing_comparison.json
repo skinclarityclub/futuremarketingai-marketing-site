@@ -4,7 +4,7 @@
       "name": "Founding Member",
       "price": "€15,000",
       "period": "/month",
-      "savings": "€120,000 saved vs Standard",
+      "savings": "€288,000 saved year 1",
       "slots": "2 of 5 remaining",
       "features": [
         "All 6 Core AI Modules",
@@ -13,7 +13,7 @@
         "Roadmap influence priority",
         "Dedicated success manager",
         "Priority support (2h response)",
-        "42% discount vs Standard rate"
+        "62% discount vs €39,000 retail value"
       ],
       "badge": "🏆 Best Value"
     },
@@ -21,15 +21,15 @@
       "name": "Pioneer",
       "price": "€17,500",
       "period": "/month",
-      "savings": "€60,000 saved vs Standard",
-      "slots": "4 of 10 remaining",
+      "savings": "€257,500 saved year 1",
+      "slots": "Available after customer 5",
       "features": [
         "All 6 Core AI Modules",
         "Rate locked for 24 months",
         "1 month completely FREE",
         "Roadmap feedback channel",
         "Priority support (4h response)",
-        "22% discount vs Standard rate"
+        "55% discount vs €39,000 retail value"
       ],
       "badge": "💎 Popular"
     },
@@ -37,14 +37,14 @@
       "name": "Innovator",
       "price": "€20,000",
       "period": "/month",
-      "savings": "€30,000 saved vs Standard",
-      "slots": "2 of 10 remaining",
+      "savings": "€228,000 saved year 1",
+      "slots": "Available after customer 15",
       "features": [
         "All 6 Core AI Modules",
         "Rate locked for 12 months",
         "Roadmap access",
         "Standard support (8h response)",
-        "11% discount vs Standard rate"
+        "49% discount vs €39,000 retail value"
       ],
       "badge": "🚀 Limited"
     },
@@ -53,7 +53,7 @@
       "price": "€22,500",
       "period": "/month",
       "savings": null,
-      "slots": "Unlimited availability",
+      "slots": "Available after customer 25",
       "features": [
         "All 6 Core AI Modules",
         "Month-to-month pricing",
@@ -63,9 +63,10 @@
     }
   },
   "pricing_table": {
-    "title": "Early Adopter Pricing",
-    "subtitle": "Lock in founding rates and save up to €120,000 vs standard pricing. Limited slots available.",
+    "title": "Progressive Early Adopter Pricing",
+    "subtitle": "Prices increase as more customers join. Earlier customers lock in lower rates permanently. Limited slots at each tier.",
     "secure_slot": "Secure Slot",
+    "not_available_yet": "Not Available Yet",
     "coming_soon": "Coming Soon",
     "table_headers": {
       "tier": "Tier",
@@ -76,39 +77,39 @@
   },
   "platform_features": [
     {
-      "category": "AI Research & Planning",
-      "description": "Analyzes trends 24/7",
-      "savings": "€6,400/month",
-      "benefit": "Never miss market opportunities"
+      "category": "24/7 AI Market Intelligence",
+      "description": "Perplexity AI scans 100+ sources 24/7",
+      "savings": "€14,900/month",
+      "benefit": "Replaces research analyst + enterprise tools"
     },
     {
       "category": "Manager Orchestrator",
-      "description": "Coordinates all workflows",
+      "description": "Intelligent workflow coordination",
       "savings": "€12,000/month",
-      "benefit": "Zero manual coordination needed"
+      "benefit": "Eliminates 3 FTE marketing coordinators"
     },
     {
-      "category": "Content Pipelines",
-      "description": "15x faster content creation",
-      "savings": "€8,000/month",
-      "benefit": "Scale content without hiring"
+      "category": "AI Content Factory",
+      "description": "300+ posts/month - 15x output",
+      "savings": "€15,000/month",
+      "benefit": "Replaces full-service agency OR 2-3 creators"
     },
     {
       "category": "Smart Publishing",
       "description": "35% better engagement",
       "additionalRevenue": "€15,000/month",
-      "benefit": "Optimized multi-channel distribution"
+      "benefit": "Enterprise multi-platform publishing"
     },
     {
       "category": "Self-Learning Analytics",
-      "description": "23% monthly improvement",
-      "benefit": "Platform gets smarter over time"
+      "description": "23% monthly improvement (compound)",
+      "benefit": "AI becomes exponentially better over time"
     },
     {
-      "category": "Ad Automation",
+      "category": "Ad Campaign Automation",
       "description": "3.2x better ROAS",
       "additionalRevenue": "€45,000/month",
-      "benefit": "Maximize advertising ROI"
+      "benefit": "Replaces agency ad management"
     }
   ],
   "feature_table": {
@@ -138,46 +139,40 @@
   },
   "tool_comparison": [
     {
-      "need": "Content Creation",
-      "traditional": "Jasper + Copy.ai + Writesonic",
-      "traditionalCost": "€300/month",
-      "futureMarketing": "Included (AI Content Pipelines)"
+      "need": "24/7 Market Intelligence",
+      "traditional": "Research Analyst + Semrush + BI Platform",
+      "traditionalCost": "€9,000/month",
+      "futureMarketing": "Included (24/7 AI Intelligence)"
     },
     {
-      "need": "Social Media Management",
-      "traditional": "Hootsuite Enterprise",
-      "traditionalCost": "€600/month",
-      "futureMarketing": "Included (Smart Publishing)"
-    },
-    {
-      "need": "Analytics & Reporting",
-      "traditional": "Google Analytics 360",
-      "traditionalCost": "€12,500/month",
-      "futureMarketing": "Included (Self-Learning Analytics)"
-    },
-    {
-      "need": "Ad Management",
-      "traditional": "AdEspresso + Smartly.io",
-      "traditionalCost": "€1,200/month",
-      "futureMarketing": "Included (Ad Automation)"
-    },
-    {
-      "need": "Marketing Automation",
-      "traditional": "HubSpot Enterprise",
-      "traditionalCost": "€3,600/month",
+      "need": "Workflow Orchestration",
+      "traditional": "CoSchedule + Workflow Tools + 3 FTE Coordinators",
+      "traditionalCost": "€14,500/month",
       "futureMarketing": "Included (Manager Orchestrator)"
     },
     {
-      "need": "Market Research",
-      "traditional": "SEMrush + Ahrefs + BuzzSumo",
-      "traditionalCost": "€800/month",
-      "futureMarketing": "Included (AI Research & Planning)"
+      "need": "Content Creation (300+ posts)",
+      "traditional": "Full-service Agency OR 2-3 Content Creators",
+      "traditionalCost": "€15,000/month",
+      "futureMarketing": "Included (AI Content Factory)"
     },
     {
-      "need": "Agency Labor (3 FTEs)",
-      "traditional": "Full-service agency",
-      "traditionalCost": "€7,000/month",
-      "futureMarketing": "Automated workflows"
+      "need": "Social Media Publishing",
+      "traditional": "Hootsuite Enterprise + Sprout Social",
+      "traditionalCost": "€3,000/month",
+      "futureMarketing": "Included (Smart Publishing)"
+    },
+    {
+      "need": "Analytics & AI Optimization",
+      "traditional": "HubSpot Analytics + Custom AI Platform",
+      "traditionalCost": "€8,000/month",
+      "futureMarketing": "Included (Self-Learning Analytics)"
+    },
+    {
+      "need": "Ad Campaign Management",
+      "traditional": "Agency Fee (15% + €5k base)",
+      "traditionalCost": "€8,000/month",
+      "futureMarketing": "Included (Ad Automation)"
     }
   ],
   "tool_table": {

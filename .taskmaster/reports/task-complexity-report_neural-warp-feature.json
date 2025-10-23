@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "generatedAt": "2025-10-22T16:22:49.259Z",
+    "tasksAnalyzed": 10,
+    "totalTasks": 10,
+    "analysisCount": 10,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Project Setup and Component Scaffolding",
+      "complexityScore": 4,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down project setup into: (1) initializing repository and dev environment (Vite/Next.js), (2) installing and configuring dependencies, (3) scaffolding required components/hooks/utilities/types, (4) setting up ESLint, Prettier, Husky, (5) verifying TypeScript strict typing and basic test suite.",
+      "reasoning": "This task involves standard project initialization and scaffolding, which is well-documented and supported by modern tooling. While there are multiple dependencies and configuration steps, each is straightforward and follows established patterns for React/TypeScript projects[2][4][5]. The main complexity arises from ensuring all files are correctly structured and strictly typed, but no advanced logic or integration is required at this stage."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Reusable Asset Import and Helper Utilities",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide into: (1) exporting neural node and particle data from Hero, (2) implementing each math helper function, (3) ensuring pure/unit-testable helpers, (4) writing comprehensive unit tests for all helpers.",
+      "reasoning": "Implementing reusable utilities and math helpers requires careful attention to correctness, purity, and testability. While the functions themselves are not highly complex, edge case handling and strict typing add moderate complexity. Ensuring helpers are pure and unit-testable aligns with best practices and increases reliability[4][6]."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Canvas Renderer: NeuralWarpCanvas Implementation",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Expand into: (1) setting up Canvas 2D context and rendering pipeline, (2) implementing batch rendering and offscreen blur, (3) supporting all animation phases, (4) adaptive quality logic, (5) devicePixelRatio and fallback handling, (6) writing unit/integration/visual regression tests.",
+      "reasoning": "High-performance canvas rendering with adaptive quality, multiple animation phases, and device-specific optimizations is technically challenging. It requires deep understanding of the Canvas API, performance profiling, and robust fallback strategies. Testing rendering logic and visual output adds further complexity."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Animation Orchestration Hook: useNeuralWarp",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Split into: (1) designing state machine for animation phases, (2) implementing timing and transitions with useReducer/useRef, (3) supporting callbacks and error handling, (4) cleanup and error boundary integration, (5) testing phase transitions and integration with NeuralWarpCanvas.",
+      "reasoning": "Managing complex animation state, timing, and transitions in a custom hook requires careful design to avoid bugs and ensure reliability. Supporting callbacks, cleanup, and error boundaries increases the technical challenge, especially when integrating with rendering and accessibility requirements."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "NeuralWarpTransition Orchestrator Component",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down into: (1) portal overlay and z-index management, (2) prop handling and integration with canvas/hook, (3) skip button and keyboard accessibility, (4) screen reader announcements and aria-live, (5) reduced motion and fallback logic, (6) cleanup and localStorage preference handling.",
+      "reasoning": "This component orchestrates multiple subsystems: rendering, animation, accessibility, and user interaction. Integrating accessibility features and skip logic with animation flow adds significant complexity, especially when ensuring robust fallback and cleanup."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Device, Performance, and Quality Tier Detection",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Divide into: (1) implementing device and connection detection logic, (2) adaptive quality presets and real-time FPS monitoring, (3) prefers-reduced-motion and saveData handling, (4) fallback logic and testing under simulated conditions.",
+      "reasoning": "Detecting device capabilities and adapting animation fidelity involves integrating multiple browser APIs and handling real-time performance metrics. While not algorithmically complex, ensuring reliability across devices and conditions requires thorough testing and robust logic."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Integration with Navigation and Demo Entry Points",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Expand into: (1) replacing anchor navigation with animation triggers, (2) handling navigation post-animation, (3) preloading on hover and code splitting, (4) skip logic and repeat visitor handling.",
+      "reasoning": "Integrating the transition into navigation flows and demo entry points is a common pattern, but requires careful handling of user experience, code splitting, and skip logic. Complexity is moderate due to the need for robust integration and testing across entry points."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Analytics, Performance Monitoring, and Error Handling",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down into: (1) analytics event tracking integration, (2) performance monitoring and adaptive quality triggers, (3) error boundary and fallback implementation, (4) timeout and context loss handling, (5) feature detection for progressive enhancement.",
+      "reasoning": "Implementing analytics and performance monitoring requires integration with external systems and real-time data handling. Error boundaries and graceful degradation add complexity, especially when ensuring seamless fallback and robust event tracking."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Accessibility, Mobile, and Edge Case Handling",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Divide into: (1) accessibility feature implementation (aria-live, skip, keyboard/touch), (2) mobile optimization (canvas size, DPR), (3) reduced motion and saveData detection, (4) low battery/slow connection handling, (5) unsupported browser fallback, (6) cross-browser/device testing.",
+      "reasoning": "Ensuring full accessibility and robust handling of mobile and edge cases is challenging, requiring deep knowledge of accessibility standards, device/browser quirks, and thorough testing. The need to support a wide range of scenarios and fallback gracefully increases complexity."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Comprehensive Testing, Documentation, and Launch Readiness",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Expand into: (1) unit tests for helpers/hooks/components, (2) integration tests, (3) E2E tests, (4) performance and visual regression tests, (5) developer/user documentation, (6) feature flag implementation, (7) monitoring dashboard setup and QA checklist verification.",
+      "reasoning": "Coordinating comprehensive testing, documentation, and launch readiness across a complex feature set is highly demanding. It requires expertise in multiple testing strategies, documentation standards, feature flagging, and monitoring. Ensuring all success criteria and QA items are met adds significant project management and technical effort."
+    }
+  ]
+}

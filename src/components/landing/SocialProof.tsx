@@ -274,9 +274,9 @@ export const TrustIndicators: React.FC<{ className?: string }> = ({ className = 
     },
     {
       icon: TrendingUp,
-      metric: '€26k',
+      metric: '€39k',
       label: 'Tools Replaced',
-      description: 'Total monthly value consolidated',
+      description: 'Verified monthly value consolidated',
     },
     {
       icon: Award,

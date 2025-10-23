@@ -1,0 +1,62 @@
+# Task ID: 7
+# Title: Integration with Navigation and Demo Entry Points
+# Status: pending
+# Dependencies: 5
+# Priority: high
+# Description: Integrate NeuralWarpTransition into all 'Try Demo' and demo navigation entry points (SimpleHeader, Marketing Header, Hero CTA), intercepting navigation and triggering the animation, followed by fullscreen mode activation.
+# Details:
+Replace anchor navigation with onClick handlers that trigger NeuralWarpTransition overlay. On animation completion, activate fullscreen mode (desktop) or landscape orientation (mobile) before navigating to /demo (window.open or router.push as appropriate). Preload NeuralWarpTransition on hover for instant response. Ensure correct behavior for repeat visitors (skip if set in localStorage). Use React.lazy and dynamic import for code splitting. Implement fullscreen exit functionality via Escape key and dedicated button.
+
+# Test Strategy:
+Integration tests for all entry points to verify animation triggers, fullscreen activation, and navigation occurs after animation. E2E tests for navigation flow, fullscreen behavior, and orientation changes on mobile. Test fallback behavior for browsers without fullscreen support.
+
+# Subtasks:
+## 1. Replace Anchor Navigation with Animation Triggers in Demo Entry Points [in-progress]
+### Dependencies: None
+### Description: Update all 'Try Demo' and demo navigation entry points (SimpleHeader, Marketing Header, Hero CTA) to use onClick handlers that trigger NeuralWarpTransition overlay instead of anchor navigation.
+### Details:
+Identify all anchor tags or navigation elements leading to the demo. Refactor them to use onClick handlers that activate NeuralWarpTransition. Ensure accessibility and preserve existing styles and semantics.
+<info added on 2025-10-22T18:31:45.902Z>
+Implementation complete for Subtask 7.1. Created a custom hook `useNeuralWarpNavigation` that manages the Neural Warp animation and navigation flow. The hook handles animation triggering, fullscreen activation, landscape orientation locking, and navigation to /demo after animation completion. It includes browser compatibility features with fallbacks for legacy devices.
+
+The SimpleHeader component has been updated to use this hook, replacing the direct anchor link with an onClick handler that triggers the warp animation. Both desktop and mobile CTA buttons now properly trigger the animation sequence before navigation.
+
+The implementation supports a complete user flow: checking for skip preferences in localStorage, triggering the appropriate animation or direct navigation, handling fullscreen activation, and ensuring proper orientation on mobile devices. All code passes linting with no errors.
+</info added on 2025-10-22T18:31:45.902Z>
+
+## 2. Handle Navigation to /demo After Animation Completion [pending]
+### Dependencies: 7.1
+### Description: Implement logic to navigate to /demo only after NeuralWarpTransition animation completes, using window.open or router.push as appropriate.
+### Details:
+Pass an onComplete callback to NeuralWarpTransition that triggers navigation. Ensure compatibility with both SPA router (e.g., Next.js router.push) and fallback to window.open for legacy cases. Prevent navigation if animation is skipped.
+
+## 3. Implement Preloading and Code Splitting for NeuralWarpTransition [pending]
+### Dependencies: 7.1
+### Description: Preload NeuralWarpTransition on hover for instant response and use React.lazy/dynamic import for code splitting.
+### Details:
+Attach onMouseEnter handlers to entry points to preload NeuralWarpTransition via dynamic import. Refactor component loading to use React.lazy or Next.js dynamic import for optimal bundle splitting.
+
+## 4. Implement Skip Logic for Repeat Visitors Using localStorage [pending]
+### Dependencies: 7.1
+### Description: Ensure repeat visitors can skip the animation if a flag is set in localStorage, and entry points respect this preference.
+### Details:
+Check localStorage for a skip flag before triggering NeuralWarpTransition. If set, bypass animation and navigate directly. Provide mechanism to set/unset the flag based on user actions or completion.
+
+## 5. Implement Fullscreen Mode Activation After Animation [pending]
+### Dependencies: 7.2
+### Description: Implement fullscreen mode activation for desktop and landscape orientation for mobile devices after the NeuralWarpTransition animation completes.
+### Details:
+Extend the onComplete callback to activate fullscreen mode using document.documentElement.requestFullscreen() for desktop and screen.orientation.lock('landscape') for mobile devices. Implement detection logic to determine the appropriate method based on device type. Create fallback behavior for browsers without fullscreen support.
+
+## 6. Add Fullscreen Exit Functionality [pending]
+### Dependencies: 7.5
+### Description: Implement exit functionality for fullscreen mode via Escape key and a dedicated exit button in the demo interface.
+### Details:
+Add event listener for Escape key to exit fullscreen mode. Create a dedicated exit button in the demo interface that exits fullscreen and returns to normal viewing mode. Handle orientation changes on mobile devices when exiting fullscreen. Ensure proper cleanup of event listeners when component unmounts.
+
+## 7. Implement Orientation Change Detection and Handling [pending]
+### Dependencies: 7.5
+### Description: Add detection and handling for orientation changes on mobile devices during the demo experience.
+### Details:
+Implement event listeners for orientation change events. Create handlers to maintain landscape orientation when in fullscreen mode. Provide appropriate user feedback when orientation changes are attempted. Ensure proper behavior when exiting fullscreen mode.
+

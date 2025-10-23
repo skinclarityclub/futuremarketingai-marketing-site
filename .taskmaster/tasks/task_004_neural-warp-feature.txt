@@ -1,0 +1,43 @@
+# Task ID: 4
+# Title: Animation Orchestration Hook: useNeuralWarp
+# Status: done
+# Dependencies: 3
+# Priority: high
+# Description: Implement the useNeuralWarp hook to manage animation phase timing, state transitions, progress, and cleanup, supporting callbacks and error handling.
+# Details:
+In useNeuralWarp.ts, use React's useReducer and useRef for state and timing. Implement phase transitions as per PRD (activation, convergence, implosion, flash, materialization). Support duration override, onPhaseChange, and onComplete callbacks. Handle cleanup on unmount and error boundary integration. Respect prefers-reduced-motion and device quality tier. Use latest React best practices for hooks.
+
+# Test Strategy:
+Unit test all phase transitions, timing logic, and callback invocations. Simulate unmount and error scenarios. Integration test with NeuralWarpCanvas to verify correct phase rendering.
+
+# Subtasks:
+## 1. Design Animation Phase State Machine [done]
+### Dependencies: None
+### Description: Define the state machine representing animation phases and transitions as per PRD (activation, convergence, implosion, flash, materialization).
+### Details:
+Map out all animation phases, valid transitions, and associated metadata (e.g., default durations, allowed overrides). Document the state structure and transition logic to be used by the hook. Ensure the design supports extension and clear error states.
+
+## 2. Implement Timing and State Transitions with useReducer and useRef [done]
+### Dependencies: 4.1
+### Description: Develop the core hook logic using useReducer for state and useRef for timing, handling phase transitions and progress updates.
+### Details:
+Implement the reducer to manage phase state, progress, and timing. Use useRef to track timers and elapsed time. Ensure transitions occur according to the state machine and durations, supporting duration overrides. Integrate with React's lifecycle to avoid memory leaks.
+
+## 3. Add Callback Support and Error Handling [done]
+### Dependencies: 4.2
+### Description: Integrate onPhaseChange and onComplete callbacks, and robust error handling for invalid transitions or runtime issues.
+### Details:
+Invoke callbacks at appropriate points in the phase lifecycle. Catch and handle errors gracefully, providing meaningful error messages and fallback behavior. Ensure callback invocations are stable and do not cause re-renders or memory leaks.
+
+## 4. Implement Cleanup and Error Boundary Integration [done]
+### Dependencies: 4.3
+### Description: Ensure all timers and listeners are cleaned up on unmount, and integrate with React error boundaries for resilience.
+### Details:
+Use cleanup functions in useEffect to clear timers and listeners. Ensure the hook does not leak resources. Integrate with error boundaries to catch and report errors, and provide a fallback state if needed.
+
+## 5. Test Phase Transitions and Integration with NeuralWarpCanvas [done]
+### Dependencies: 4.4
+### Description: Develop comprehensive unit and integration tests for phase transitions, timing, callbacks, and NeuralWarpCanvas interaction.
+### Details:
+Write tests to cover all phase transitions, timing edge cases, callback invocations, cleanup, and error handling. Create integration tests to verify correct behavior when used with NeuralWarpCanvas, including accessibility and reduced motion scenarios.
+

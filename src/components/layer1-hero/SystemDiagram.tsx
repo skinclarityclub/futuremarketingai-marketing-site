@@ -212,6 +212,7 @@ export const SystemDiagram: React.FC = () => {
 
   // Define AI system modules - Complete Marketing Workflow Cycle
   // CENTER: Manager Workflow (Het Hart) + 6 SATELLITES in circular flow
+  // EXPORTED: Module node positions for Neural Warp Transition
   const modules: Module[] = [
     {
       id: 'core',

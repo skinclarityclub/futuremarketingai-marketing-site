@@ -1,0 +1,37 @@
+# Task ID: 6
+# Title: Device, Performance, and Quality Tier Detection
+# Status: pending
+# Dependencies: 5
+# Priority: medium
+# Description: Implement adaptive quality logic to detect device capabilities, connection speed, battery status, and user preferences, adjusting animation fidelity accordingly.
+# Details:
+In neuralWarpHelpers.ts, implement detectQualityTier using navigator.deviceMemory, navigator.connection, and user agent. Adjust node/particle counts, blur, and glow based on QUALITY_PRESETS. Monitor FPS in real time and downgrade quality if dropped frames exceed thresholds. Respect prefers-reduced-motion and saveData. Use offscreen canvas for blur on supported devices. Fallback to SimpleFadeTransition on low-end or unsupported devices.
+
+# Test Strategy:
+Unit tests for quality tier detection under various simulated device conditions. Integration tests to verify adaptive quality changes during animation. Performance benchmarks for FPS and dropped frames.
+
+# Subtasks:
+## 1. Implement Device and Connection Detection Logic [pending]
+### Dependencies: None
+### Description: Detect device capabilities, memory, connection speed, and battery status using browser APIs.
+### Details:
+Use navigator.deviceMemory, navigator.connection (including effectiveType and saveData), and user agent parsing in neuralWarpHelpers.ts. Extract relevant metrics for quality tier assignment. Ensure detection logic is robust across browsers and gracefully handles missing APIs.
+
+## 2. Implement Adaptive Quality Presets and Real-Time FPS Monitoring [pending]
+### Dependencies: 6.1
+### Description: Adjust animation fidelity based on detected device tier and monitor FPS to dynamically downgrade quality if performance drops.
+### Details:
+Map detected device/connection to QUALITY_PRESETS (node/particle counts, blur, glow). Integrate real-time FPS monitoring; if dropped frames exceed thresholds, automatically reduce quality tier. Ensure smooth transitions between quality levels.
+
+## 3. Handle Prefers-Reduced-Motion and SaveData User Preferences [pending]
+### Dependencies: 6.1
+### Description: Respect user settings for reduced motion and data saving, disabling or simplifying animations as needed.
+### Details:
+Detect prefers-reduced-motion using window.matchMedia and listen for changes. Check navigator.connection.saveData and effectiveType for data-saving preferences. Adjust or disable non-essential animations and resource-intensive effects accordingly.
+
+## 4. Implement Fallback Logic and Test Under Simulated Low-End Conditions [pending]
+### Dependencies: 6.1, 6.2, 6.3
+### Description: Provide fallback to SimpleFadeTransition and ensure robust behavior on low-end or unsupported devices.
+### Details:
+Detect unsupported or low-capability environments and switch to SimpleFadeTransition. Use offscreen canvas for blur only if supported. Simulate low-end conditions and verify fallback triggers. Document fallback criteria and ensure graceful degradation.
+

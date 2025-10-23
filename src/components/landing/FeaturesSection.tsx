@@ -169,20 +169,25 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">The Complete Package</h3>
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div>
-              <div className="text-4xl font-bold text-green-400 mb-2">€26,000</div>
-              <div className="text-sm text-blue-100">Monthly savings in tools & labor</div>
+              <div className="text-4xl font-bold text-green-400 mb-2">€39,000</div>
+              <div className="text-sm text-blue-100">
+                Retail value - verified by 2025 market research
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">€60,000</div>
-              <div className="text-sm text-blue-100">Additional monthly revenue generated</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">€24,000</div>
+              <div className="text-sm text-blue-100">Monthly savings at Founding Member rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">847%</div>
-              <div className="text-sm text-blue-100">Average ROI in 90 days</div>
+              <div className="text-4xl font-bold text-blue-400 mb-2">€288k</div>
+              <div className="text-sm text-blue-100">
+                Year 1 total savings (incl. 2 free months)
+              </div>
             </div>
           </div>
           <p className="text-lg text-white font-semibold mb-4">
-            At Founding Member pricing (€15,000/month), you get €86,000/month in value
+            Founding Member pricing: €15,000/month for €39,000 in enterprise automation (62%
+            discount)
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -4,7 +4,7 @@
       "name": "Miembro Fundador",
       "price": "€15.000",
       "period": "/mes",
-      "savings": "€120.000 ahorrados vs Estándar",
+      "savings": "€288.000 ahorrados año 1",
       "slots": "2 de 5 restantes",
       "features": [
         "Todos los 6 módulos principales",
@@ -13,7 +13,7 @@
         "Prioridad de influencia en roadmap",
         "Gerente de éxito dedicado",
         "Soporte prioritario (respuesta 2h)",
-        "42% descuento vs tarifa Estándar"
+        "62% descuento vs valor retail de €39.000"
       ],
       "badge": "🏆 Mejor Valor"
     },
@@ -21,15 +21,15 @@
       "name": "Pionero",
       "price": "€17.500",
       "period": "/mes",
-      "savings": "€60.000 ahorrados vs Estándar",
-      "slots": "4 de 10 restantes",
+      "savings": "€257.500 ahorrados año 1",
+      "slots": "Disponible después del cliente 5",
       "features": [
         "Todos los 6 módulos principales",
         "Tarifa bloqueada por 24 meses",
         "1 mes completamente GRATIS",
         "Canal de retroalimentación del roadmap",
         "Soporte prioritario (respuesta 4h)",
-        "22% descuento vs tarifa Estándar"
+        "55% descuento vs valor retail de €39.000"
       ],
       "badge": "💎 Popular"
     },
@@ -37,14 +37,14 @@
       "name": "Innovador",
       "price": "€20.000",
       "period": "/mes",
-      "savings": "€30.000 ahorrados vs Estándar",
-      "slots": "2 de 10 restantes",
+      "savings": "€228.000 ahorrados año 1",
+      "slots": "Disponible después del cliente 15",
       "features": [
         "Todos los 6 módulos principales",
         "Tarifa bloqueada por 12 meses",
         "Acceso al roadmap",
         "Soporte estándar (respuesta 8h)",
-        "11% descuento vs tarifa Estándar"
+        "49% descuento vs valor retail de €39.000"
       ],
       "badge": "🚀 Limitado"
     },
@@ -53,7 +53,7 @@
       "price": "€22.500",
       "period": "/mes",
       "savings": null,
-      "slots": "Disponibilidad ilimitada",
+      "slots": "Disponible después del cliente 25",
       "features": [
         "Todos los 6 módulos principales",
         "Precios mes a mes",
@@ -63,9 +63,10 @@
     }
   },
   "pricing_table": {
-    "title": "Precios para Primeros Adoptantes",
-    "subtitle": "Asegura tarifas fundacionales y ahorra hasta €120.000 vs precios estándar. Plazas limitadas disponibles.",
+    "title": "Precios Progresivos para Primeros Adoptantes",
+    "subtitle": "Los precios aumentan a medida que se unen más clientes. Los clientes más tempranos bloquean tarifas más bajas permanentemente. Plazas limitadas por nivel.",
     "secure_slot": "Asegurar Plaza",
+    "not_available_yet": "No Disponible Aún",
     "coming_soon": "Próximamente",
     "table_headers": {
       "tier": "Nivel",

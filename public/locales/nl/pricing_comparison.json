@@ -4,7 +4,7 @@
       "name": "Oprichtend Lid",
       "price": "€15.000",
       "period": "/maand",
-      "savings": "€120.000 bespaard vs Standaard",
+      "savings": "€288.000 bespaard jaar 1",
       "slots": "2 van 5 over",
       "features": [
         "Alle 6 kernmodules",
@@ -13,7 +13,7 @@
         "Roadmap invloed prioriteit",
         "Toegewezen success manager",
         "Prioriteitsondersteuning (2u respons)",
-        "42% korting vs Standaardtarief"
+        "62% korting vs €39.000 retail waarde"
       ],
       "badge": "🏆 Beste Waarde"
     },
@@ -21,15 +21,15 @@
       "name": "Pioneer",
       "price": "€17.500",
       "period": "/maand",
-      "savings": "€60.000 bespaard vs Standaard",
-      "slots": "4 van 10 over",
+      "savings": "€257.500 bespaard jaar 1",
+      "slots": "Beschikbaar na klant 5",
       "features": [
         "Alle 6 kernmodules",
         "Tarief vastgezet voor 24 maanden",
         "1 maand volledig GRATIS",
         "Roadmap feedbackkanaal",
         "Prioriteitsondersteuning (4u respons)",
-        "22% korting vs Standaardtarief"
+        "55% korting vs €39.000 retail waarde"
       ],
       "badge": "💎 Populair"
     },
@@ -37,14 +37,14 @@
       "name": "Innovator",
       "price": "€20.000",
       "period": "/maand",
-      "savings": "€30.000 bespaard vs Standaard",
-      "slots": "2 van 10 over",
+      "savings": "€228.000 bespaard jaar 1",
+      "slots": "Beschikbaar na klant 15",
       "features": [
         "Alle 6 kernmodules",
         "Tarief vastgezet voor 12 maanden",
         "Toegang tot roadmap",
         "Standaard ondersteuning (8u respons)",
-        "11% korting vs Standaardtarief"
+        "49% korting vs €39.000 retail waarde"
       ],
       "badge": "🚀 Beperkt"
     },
@@ -53,7 +53,7 @@
       "price": "€22.500",
       "period": "/maand",
       "savings": null,
-      "slots": "Onbeperkte beschikbaarheid",
+      "slots": "Beschikbaar na klant 25",
       "features": [
         "Alle 6 kernmodules",
         "Maand-tot-maand prijzen",
@@ -63,9 +63,10 @@
     }
   },
   "pricing_table": {
-    "title": "Early Adopter Prijzen",
-    "subtitle": "Vergrendel oprichterstarief en bespaar tot €120.000 vs standaardprijzen. Beperkte plekken beschikbaar.",
+    "title": "Progressive Early Adopter Prijzen",
+    "subtitle": "Prijzen stijgen naarmate meer klanten zich aansluiten. Vroege klanten zetten permanent lagere tarieven vast. Beperkte plekken per tier.",
     "secure_slot": "Plek Veiligstellen",
+    "not_available_yet": "Nog Niet Beschikbaar",
     "coming_soon": "Binnenkort",
     "table_headers": {
       "tier": "Niveau",
@@ -76,39 +77,39 @@
   },
   "platform_features": [
     {
-      "category": "AI Research & Planning",
-      "description": "Analyseert trends 24/7",
-      "savings": "€6.400/maand",
-      "benefit": "Mis nooit marktkansen"
+      "category": "24/7 AI Market Intelligence",
+      "description": "Perplexity AI scant 100+ bronnen 24/7",
+      "savings": "€14.900/maand",
+      "benefit": "Vervangt research analyst + enterprise tools"
     },
     {
       "category": "Manager Orchestrator",
-      "description": "Coördineert alle workflows",
+      "description": "Intelligente workflow coördinatie",
       "savings": "€12.000/maand",
-      "benefit": "Geen handmatige coördinatie nodig"
+      "benefit": "Elimineert 3 FTE marketing coördinatoren"
     },
     {
-      "category": "Content Pipelines",
-      "description": "15x snellere contentcreatie",
-      "savings": "€8.000/maand",
-      "benefit": "Schaal content zonder aannemen"
+      "category": "AI Content Factory",
+      "description": "300+ posts/maand - 15x output",
+      "savings": "€15.000/maand",
+      "benefit": "Vervangt full-service agency OF 2-3 creators"
     },
     {
       "category": "Smart Publishing",
       "description": "35% betere betrokkenheid",
       "additionalRevenue": "€15.000/maand",
-      "benefit": "Geoptimaliseerde multi-channel distributie"
+      "benefit": "Enterprise multi-platform publishing"
     },
     {
       "category": "Self-Learning Analytics",
-      "description": "23% maandelijkse verbetering",
-      "benefit": "Platform wordt slimmer in de tijd"
+      "description": "23% maandelijkse verbetering (compound)",
+      "benefit": "AI wordt exponentieel beter over tijd"
     },
     {
-      "category": "Ad Automation",
+      "category": "Ad Campaign Automation",
       "description": "3.2x betere ROAS",
       "additionalRevenue": "€45.000/maand",
-      "benefit": "Maximaliseer advertentie ROI"
+      "benefit": "Vervangt agency ad management"
     }
   ],
   "feature_table": {
@@ -138,46 +139,40 @@
   },
   "tool_comparison": [
     {
-      "need": "Contentcreatie",
-      "traditional": "Jasper + Copy.ai + Writesonic",
-      "traditionalCost": "€300/maand",
-      "futureMarketing": "Inbegrepen (AI Content Pipelines)"
+      "need": "24/7 Market Intelligence",
+      "traditional": "Research Analyst + Semrush + BI Platform",
+      "traditionalCost": "€9.000/maand",
+      "futureMarketing": "Inbegrepen (24/7 AI Intelligence)"
     },
     {
-      "need": "Social Media Management",
-      "traditional": "Hootsuite Enterprise",
-      "traditionalCost": "€600/maand",
-      "futureMarketing": "Inbegrepen (Smart Publishing)"
-    },
-    {
-      "need": "Analytics & Rapportage",
-      "traditional": "Google Analytics 360",
-      "traditionalCost": "€12.500/maand",
-      "futureMarketing": "Inbegrepen (Self-Learning Analytics)"
-    },
-    {
-      "need": "Advertentiebeheer",
-      "traditional": "AdEspresso + Smartly.io",
-      "traditionalCost": "€1.200/maand",
-      "futureMarketing": "Inbegrepen (Ad Automation)"
-    },
-    {
-      "need": "Marketing Automatisering",
-      "traditional": "HubSpot Enterprise",
-      "traditionalCost": "€3.600/maand",
+      "need": "Workflow Orchestratie",
+      "traditional": "CoSchedule + Workflow Tools + 3 FTE Coordinators",
+      "traditionalCost": "€14.500/maand",
       "futureMarketing": "Inbegrepen (Manager Orchestrator)"
     },
     {
-      "need": "Marktonderzoek",
-      "traditional": "SEMrush + Ahrefs + BuzzSumo",
-      "traditionalCost": "€800/maand",
-      "futureMarketing": "Inbegrepen (AI Research & Planning)"
+      "need": "Content Creatie (300+ posts)",
+      "traditional": "Full-service Agency OF 2-3 Content Creators",
+      "traditionalCost": "€15.000/maand",
+      "futureMarketing": "Inbegrepen (AI Content Factory)"
     },
     {
-      "need": "Bureau Arbeid (3 FTEs)",
-      "traditional": "Full-service bureau",
-      "traditionalCost": "€7.000/maand",
-      "futureMarketing": "Geautomatiseerde workflows"
+      "need": "Social Media Publishing",
+      "traditional": "Hootsuite Enterprise + Sprout Social",
+      "traditionalCost": "€3.000/maand",
+      "futureMarketing": "Inbegrepen (Smart Publishing)"
+    },
+    {
+      "need": "Analytics & AI Optimization",
+      "traditional": "HubSpot Analytics + Custom AI Platform",
+      "traditionalCost": "€8.000/maand",
+      "futureMarketing": "Inbegrepen (Self-Learning Analytics)"
+    },
+    {
+      "need": "Ad Campaign Management",
+      "traditional": "Agency Fee (15% + €5k base)",
+      "traditionalCost": "€8.000/maand",
+      "futureMarketing": "Inbegrepen (Ad Automation)"
     }
   ],
   "tool_table": {

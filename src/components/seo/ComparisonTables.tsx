@@ -120,7 +120,16 @@ export const PricingTable: React.FC<PricingTableProps> = ({
               {/* Header */}
               <div className="text-center mt-2">
                 <h3 className="text-xl font-bold text-white">{tier.name}</h3>
-                <div className="mt-4">
+                {/* Customer Range Badge */}
+                <div className="mt-2 mb-3">
+                  <span className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-blue-200">
+                    {index === 0 && 'Customers 1-5'}
+                    {index === 1 && 'Customers 6-15'}
+                    {index === 2 && 'Customers 16-25'}
+                    {index === 3 && 'Customer 26+'}
+                  </span>
+                </div>
+                <div className="mt-2">
                   <span className="text-4xl font-bold text-white">{tier.price}</span>
                   <span className="text-blue-100">{tier.period}</span>
                 </div>
@@ -156,14 +165,17 @@ export const PricingTable: React.FC<PricingTableProps> = ({
               <div className="mt-8">
                 <button
                   className={`w-full py-3 rounded-lg font-semibold transition-all ${
-                    index === highlightTier
+                    index === 0
                       ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
-                      : 'bg-white/10 border border-white/20 text-white hover:bg-white/20'
+                      : index === 3
+                        ? 'bg-white/5 border border-white/10 text-white/40 cursor-not-allowed'
+                        : 'bg-white/5 border border-white/10 text-white/40 cursor-not-allowed'
                   }`}
+                  disabled={index !== 0}
                 >
-                  {index === 3
-                    ? t('pricing_comparison:pricing_table.coming_soon')
-                    : t('pricing_comparison:pricing_table.secure_slot')}
+                  {index === 0
+                    ? t('pricing_comparison:pricing_table.secure_slot')
+                    : t('pricing_comparison:pricing_table.not_available_yet')}
                 </button>
               </div>
             </motion.div>
@@ -178,11 +190,9 @@ export const PricingTable: React.FC<PricingTableProps> = ({
                 <th className="px-4 py-3 text-left text-sm font-semibold text-white">
                   {t('pricing_comparison:pricing_table.table_headers.tier')}
                 </th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-white">Customers</th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-white">
                   {t('pricing_comparison:pricing_table.table_headers.price')}
-                </th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-white">
-                  {t('pricing_comparison:pricing_table.table_headers.savings')}
                 </th>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-white">
                   {t('pricing_comparison:pricing_table.table_headers.slots')}
@@ -190,11 +200,16 @@ export const PricingTable: React.FC<PricingTableProps> = ({
               </tr>
             </thead>
             <tbody>
-              {tiers.map((tier: any) => (
+              {tiers.map((tier: any, index) => (
                 <tr key={tier.name} className="border-t border-white/10">
                   <td className="px-4 py-3 text-white font-medium">{tier.name}</td>
+                  <td className="px-4 py-3 text-blue-200 text-sm">
+                    {index === 0 && '1-5'}
+                    {index === 1 && '6-15'}
+                    {index === 2 && '16-25'}
+                    {index === 3 && '26+'}
+                  </td>
                   <td className="px-4 py-3 text-white">{tier.price}/mo</td>
-                  <td className="px-4 py-3 text-green-400 text-sm">{tier.savings || '-'}</td>
                   <td className="px-4 py-3 text-blue-100 text-sm">{tier.slots}</td>
                 </tr>
               ))}

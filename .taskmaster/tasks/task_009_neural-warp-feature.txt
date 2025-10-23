@@ -1,0 +1,79 @@
+# Task ID: 9
+# Title: Accessibility, Mobile, and Edge Case Handling
+# Status: pending
+# Dependencies: 8
+# Priority: high
+# Description: Ensure full accessibility, mobile optimization, and robust handling of all edge cases including reduced motion, slow connections, low battery, unsupported browsers, and mobile landscape/fullscreen requirements.
+# Details:
+Implement prefers-reduced-motion and saveData detection. Provide always-visible skip button, Escape key, and touch-to-skip on mobile. Announce animation phases via aria-live. Adjust canvas size and DPR for mobile. Detect low battery and slow connection to skip or downgrade animation. Ensure fallback transition for unsupported browsers. Implement landscape orientation lock and fullscreen mode for mobile devices with appropriate user guidance. Test on all major browsers and devices.
+
+# Test Strategy:
+Accessibility audits (axe, Lighthouse), manual screen reader and keyboard testing, mobile device testing with orientation changes, fullscreen mode testing, and E2E tests for all edge cases.
+
+# Subtasks:
+## 1. Implement Accessibility Features (aria-live, Skip Controls, Keyboard/Touch Support) [pending]
+### Dependencies: None
+### Description: Add and verify accessibility features including aria-live announcements, always-visible skip button, Escape key support, and touch-to-skip on mobile.
+### Details:
+Integrate aria-live regions to announce animation phases. Ensure a skip button is always visible and accessible via keyboard and touch. Implement Escape key and touch-to-skip functionality. Confirm all controls are reachable and operable via keyboard and screen readers, following WCAG and ARIA best practices.
+
+## 2. Optimize for Mobile Devices (Canvas Size and Device Pixel Ratio) [pending]
+### Dependencies: None
+### Description: Adjust canvas rendering for mobile devices by optimizing size and device pixel ratio (DPR) for performance and clarity.
+### Details:
+Detect mobile devices and dynamically adjust the canvas size and DPR to balance performance and visual fidelity. Ensure touch targets are large enough and interactive elements are easily accessible on small screens.
+
+## 3. Detect and Respect Reduced Motion and saveData Preferences [pending]
+### Dependencies: None
+### Description: Implement detection for prefers-reduced-motion and saveData user preferences to reduce or skip animations as appropriate.
+### Details:
+Use CSS and JavaScript APIs to detect prefers-reduced-motion and saveData settings. Adjust or skip animations to accommodate users who prefer less motion or are on data-saving connections.
+
+## 4. Handle Low Battery and Slow Connection Edge Cases [pending]
+### Dependencies: None
+### Description: Detect low battery and slow network conditions to skip or downgrade animations for better user experience.
+### Details:
+Use the Battery Status API and Network Information API to detect low battery and slow connections. Implement logic to skip or downgrade animation quality under these conditions.
+
+## 5. Implement Fallback for Unsupported Browsers [pending]
+### Dependencies: None
+### Description: Provide a fallback transition or experience for browsers that do not support required features.
+### Details:
+Detect unsupported browsers or missing APIs (e.g., Canvas, Battery Status, Network Information) and provide a simple fallback transition or message. Ensure graceful degradation and accessibility in fallback mode.
+
+## 6. Cross-Browser and Device Testing for Accessibility and Edge Cases [pending]
+### Dependencies: 9.1, 9.2, 9.3, 9.4, 9.5
+### Description: Test all features across major browsers and devices to ensure accessibility, mobile optimization, and robust edge case handling.
+### Details:
+Perform comprehensive testing on all major browsers (Chrome, Firefox, Safari, Edge) and a variety of devices (desktop, tablet, mobile). Validate accessibility, mobile optimization, reduced motion, saveData, low battery, slow connection, landscape orientation, fullscreen mode, and fallback behaviors.
+
+## 7. Implement Landscape Orientation Lock for Mobile [pending]
+### Dependencies: None
+### Description: Automatically lock mobile devices to landscape orientation after neural warp transition begins.
+### Details:
+Use the Screen Orientation API to lock devices to landscape mode with `screen.orientation.lock('landscape-primary')`. Implement fallbacks like `screen.lockOrientation('landscape')` for older browsers. Create a polyfill for browsers with limited support. Ensure the orientation lock is applied after the neural warp transition begins.
+
+## 8. Implement Mobile Fullscreen Mode [pending]
+### Dependencies: None
+### Description: Enable fullscreen mode on mobile devices for an immersive neural warp experience.
+### Details:
+Use `document.documentElement.requestFullscreen()` for standard fullscreen implementation. Create iOS Safari-specific workarounds using meta viewport tags and CSS. Implement Android Chrome native fullscreen support. Ensure fullscreen mode is triggered appropriately during the neural warp transition.
+
+## 9. Create User Guidance for Device Orientation [pending]
+### Dependencies: None
+### Description: Provide clear visual guidance when users need to rotate their device to landscape mode.
+### Details:
+Implement a rotate device prompt that appears when portrait orientation is detected. Design an animated rotation icon that clearly demonstrates the required action. Add a 'Please rotate your device' message with appropriate localization. Ensure the guidance is accessible and clear to all users.
+
+## 10. Handle Orientation Change Events [pending]
+### Dependencies: None
+### Description: Detect and respond to orientation changes during the demo to maintain landscape mode.
+### Details:
+Listen for orientation change events using the appropriate browser APIs. Reapply landscape lock when orientation changes are detected. Implement graceful exit strategies when orientation lock cannot be maintained. Ensure smooth transitions between orientations without disrupting the user experience.
+
+## 11. Implement Mobile Touch Gestures and Controls [pending]
+### Dependencies: None
+### Description: Add touch-specific gestures and controls for mobile fullscreen and orientation management.
+### Details:
+Implement swipe gestures to exit fullscreen mode. Disable pinch-to-zoom functionality in fullscreen to prevent accidental exits. Add a touch-friendly exit button that is easily accessible but not intrusive. Ensure all touch controls follow accessibility best practices and are clearly visible to users.
+

@@ -1,0 +1,49 @@
+# Task ID: 5
+# Title: NeuralWarpTransition Orchestrator Component
+# Status: done
+# Dependencies: 4
+# Priority: high
+# Description: Build the NeuralWarpTransition.tsx component as a fullscreen portal overlay, integrating the canvas renderer, animation hook, accessibility features, and skip logic.
+# Details:
+Render as a React portal with z-index 9999. Accept isActive, onComplete, duration, and skipOnRepeat props. Integrate NeuralWarpCanvas and useNeuralWarp. Implement skip button (always visible, keyboard accessible), Escape key support, screen reader announcements (aria-live), and reduced motion fallback. Use framer-motion for fallback fade. Ensure automatic cleanup and localStorage preference for repeat visitors.
+
+# Test Strategy:
+Integration tests for overlay rendering, skip button, Escape key, reduced motion, and screen reader output. E2E tests for full animation flow and skip scenarios.
+
+# Subtasks:
+## 1. Implement Portal Overlay and Z-Index Management [done]
+### Dependencies: None
+### Description: Render the NeuralWarpTransition component as a fullscreen overlay using React portals, ensuring it appears above all other content with correct z-index.
+### Details:
+Use ReactDOM.createPortal to render the overlay into a dedicated DOM node (e.g., #modal-root). Apply CSS styles for fixed positioning, full viewport coverage, and set z-index to 9999. Ensure overlay is not constrained by parent styles and is always on top, referencing best practices for portal overlays[2][3].
+
+## 2. Prop Handling and Integration with Canvas Renderer and Animation Hook [done]
+### Dependencies: 5.1
+### Description: Accept and manage isActive, onComplete, duration, and skipOnRepeat props. Integrate NeuralWarpCanvas and useNeuralWarp hook for animation control.
+### Details:
+Define prop types and default values. Pass animation state and control props to NeuralWarpCanvas and useNeuralWarp. Ensure correct animation lifecycle based on isActive and duration. Call onComplete when animation finishes or is skipped. Support skipOnRepeat logic for repeat visitors.
+
+## 3. Implement Skip Button and Keyboard Accessibility [done]
+### Dependencies: 5.2
+### Description: Add an always-visible skip button with full keyboard accessibility, including Escape key support for skipping the animation.
+### Details:
+Render a skip button with appropriate ARIA roles and tabIndex. Ensure button is focusable and operable via keyboard (Enter/Space). Listen for Escape key events to trigger skip. Ensure button is visible at all times and accessible for screen readers.
+
+## 4. Screen Reader Announcements and Aria-Live Integration [done]
+### Dependencies: 5.3
+### Description: Implement screen reader announcements for animation phases using aria-live regions.
+### Details:
+Add an aria-live region to the overlay. Announce key animation states (start, skip, complete) for screen readers. Ensure announcements are concise and update appropriately during the animation lifecycle.
+
+## 5. Reduced Motion and Fallback Animation Logic [done]
+### Dependencies: 5.4
+### Description: Detect prefers-reduced-motion and implement fallback fade animation using framer-motion when reduced motion is requested.
+### Details:
+Use window.matchMedia to detect prefers-reduced-motion. If enabled, bypass canvas animation and use a simple fade transition with framer-motion. Ensure fallback is visually distinct and respects user preferences.
+
+## 6. Automatic Cleanup and LocalStorage Preference Handling [done]
+### Dependencies: 5.5
+### Description: Ensure proper cleanup of event listeners and animation resources. Store and read skipOnRepeat preference in localStorage for repeat visitors.
+### Details:
+Remove all event listeners and animation hooks on unmount. Use localStorage to persist skipOnRepeat flag and check it on mount to auto-skip for repeat users. Ensure no memory leaks or lingering DOM nodes.
+
