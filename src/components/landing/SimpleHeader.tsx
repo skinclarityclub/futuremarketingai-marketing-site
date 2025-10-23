@@ -15,7 +15,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { KineticTypographyTransition } from '../transitions/KineticTypographyTransition'
 
 export const SimpleHeader: React.FC = () => {
   const { t } = useTranslation('common')
@@ -23,19 +22,14 @@ export const SimpleHeader: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [showTransition, setShowTransition] = useState(false)
   const location = useLocation()
 
   // Handle transition to demo
   const handleDemoClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    setShowTransition(true)
-  }
-
-  const handleTransitionComplete = () => {
-    setShowTransition(false)
 
     // Open demo in new window with fullscreen
+    // The KineticTypographyTransition will play automatically in the demo window
     const demoWindow = window.open('/demo', '_blank', 'noopener,noreferrer')
 
     if (demoWindow) {
@@ -323,13 +317,6 @@ export const SimpleHeader: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Kinetic Typography Transition Overlay */}
-      <KineticTypographyTransition
-        isActive={showTransition}
-        onComplete={handleTransitionComplete}
-        duration={5500}
-      />
     </>
   )
 }
