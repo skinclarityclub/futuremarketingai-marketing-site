@@ -130,7 +130,23 @@ export default {
           '100%': { opacity: '1' },
         },
       },
+      // Mobile-specific touch target utilities (for mobile components ONLY)
+      // Apple HIG: 44x44px minimum | WCAG AAA: 48x48px recommended
+      spacing: {
+        'touch-sm': '44px',  // iOS minimum (Apple HIG)
+        'touch-md': '48px',  // WCAG AAA recommendation
+        'touch-lg': '56px',  // Extra comfortable
+        'touch-xl': '64px',  // Maximum comfortable
+      },
+      minWidth: {
+        'touch': '48px',     // Minimum tap target width
+      },
+      minHeight: {
+        'touch': '48px',     // Minimum tap target height
+      },
     },
   },
+  // Dark mode enabled (already dark-only app)
+  darkMode: 'class',
   plugins: [],
 }
