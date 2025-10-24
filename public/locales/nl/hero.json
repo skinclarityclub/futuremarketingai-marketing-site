@@ -317,6 +317,11 @@
         "title": "Dashboard",
         "desc": "Bekijk analyses en inzichten"
       }
+    },
+    "viz": {
+      "desktopOnly": "Alleen desktop",
+      "viewInteractive": "Bekijk Interactieve Versie",
+      "hint": "Volledige interactieve ervaring beschikbaar op desktop browsers"
     }
   }
 }

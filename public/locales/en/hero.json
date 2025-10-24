@@ -317,6 +317,11 @@
         "title": "Dashboard",
         "desc": "View analytics and insights"
       }
+    },
+    "viz": {
+      "desktopOnly": "Desktop only",
+      "viewInteractive": "View Interactive Version",
+      "hint": "Full interactive experience available on desktop browsers"
     }
   }
 }
