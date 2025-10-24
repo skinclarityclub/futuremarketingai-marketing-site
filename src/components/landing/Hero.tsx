@@ -7,10 +7,12 @@
 import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom'
 import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
+import { MobileDemoHome } from '../mobile/MobileDemoHome'
 
 // Lazy load heavy components for performance
 const VisionTimeline = lazy(() =>
@@ -261,6 +263,7 @@ const GradientOrbs: React.FC = () => (
 export const Hero: React.FC = () => {
   // All hooks must be called unconditionally (Rules of Hooks)
   const isMobile = useIsMobile()
+  const location = useLocation()
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
@@ -272,8 +275,13 @@ export const Hero: React.FC = () => {
     }
   }, [isInView, controls])
 
-  // Desktop-first: Render mobile variant for mobile devices
+  // Desktop-first: Render mobile variants for mobile devices
   if (isMobile) {
+    // For /demo-home route, show MobileDemoHome
+    if (location.pathname === '/demo-home' || location.pathname === '/demo') {
+      return <MobileDemoHome />
+    }
+    // For all other routes, show SimplifiedHeroMobile
     return <SimplifiedHeroMobile />
   }
 

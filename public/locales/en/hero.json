@@ -299,6 +299,24 @@
       "home": "Home",
       "explore": "Explore",
       "book": "Book"
+    },
+    "demo": {
+      "title": "Explore AI Marketing",
+      "subtitle": "Interactive demos showing the power of AI automation",
+      "exploreCta": "Explore All Features",
+      "status": "Live demos • No signup required",
+      "explorer": {
+        "title": "AI Explorer",
+        "desc": "Discover AI insights and trends"
+      },
+      "calculator": {
+        "title": "ROI Calculator",
+        "desc": "Calculate your potential savings"
+      },
+      "dashboard": {
+        "title": "Dashboard",
+        "desc": "View analytics and insights"
+      }
     }
   }
 }

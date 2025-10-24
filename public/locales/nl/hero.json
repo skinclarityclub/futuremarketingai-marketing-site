@@ -299,6 +299,24 @@
       "home": "Home",
       "explore": "Ontdek",
       "book": "Boek"
+    },
+    "demo": {
+      "title": "Ontdek AI Marketing",
+      "subtitle": "Interactieve demo's die de kracht van AI-automatisering tonen",
+      "exploreCta": "Bekijk Alle Features",
+      "status": "Live demo's • Geen registratie vereist",
+      "explorer": {
+        "title": "AI Explorer",
+        "desc": "Ontdek AI-inzichten en trends"
+      },
+      "calculator": {
+        "title": "ROI Calculator",
+        "desc": "Bereken je potentiële besparingen"
+      },
+      "dashboard": {
+        "title": "Dashboard",
+        "desc": "Bekijk analyses en inzichten"
+      }
     }
   }
 }
