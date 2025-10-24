@@ -504,6 +504,18 @@
       "login": "Login",
       "try_demo": "Try Demo"
     },
+    "mobile": {
+      "desktopBanner": {
+        "label": "Desktop experience notification",
+        "message": "Best experience on desktop",
+        "emailAction": "Email me desktop link",
+        "emailButton": "Email Link",
+        "dismiss": "Dismiss desktop notification",
+        "dismissed": "Desktop notification dismissed",
+        "emailSubject": "Desktop Link - FutureMarketingAI",
+        "emailBody": "Please send me the link to experience FutureMarketingAI on desktop for the full interactive demo."
+      }
+    },
     "footer": {
       "brand_name": "Future Marketing AI",
       "tagline": "Autonomous AI marketing that saves time and drives results.",

@@ -504,6 +504,18 @@
       "login": "Inloggen",
       "try_demo": "Probeer Demo"
     },
+    "mobile": {
+      "desktopBanner": {
+        "label": "Desktop ervaring notificatie",
+        "message": "Beste ervaring op desktop",
+        "emailAction": "Email me desktop link",
+        "emailButton": "Email Link",
+        "dismiss": "Sluit desktop notificatie",
+        "dismissed": "Desktop notificatie gesloten",
+        "emailSubject": "Desktop Link - FutureMarketingAI",
+        "emailBody": "Stuur me alstublieft de link om FutureMarketingAI op desktop te ervaren voor de volledige interactieve demo."
+      }
+    },
     "footer": {
       "brand_name": "Future Marketing AI",
       "tagline": "Autonome AI-marketing die tijd bespaart en resultaten levert.",
