@@ -4,9 +4,6 @@
 /* Landing Page Mobile Optimizations */
 @import './styles/landing/mobile-optimizations.css';
 
-/* Touch Target Standards */
-@import './styles/touch-targets.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

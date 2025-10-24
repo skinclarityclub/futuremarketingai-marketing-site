@@ -14,6 +14,17 @@ An interactive, high-end demo website showcasing FutureMarketingAI's complete Ma
 
 > 📚 **Quick Links:** [Production Guide](PRODUCTION-READINESS.md) | [Quality Audit](FINAL-QUALITY-AUDIT.md) | [E2E Tests](tests/e2e/README.md)
 
+## 🚨 Architecture: Desktop-First
+
+**THIS PROJECT IS DESKTOP-FIRST. MOBILE IS SUPPLEMENTAL.**
+
+- **Primary**: Desktop experience (B2B professionals)
+- **Supplemental**: Mobile variant for discovery/teaser
+- **Critical**: Desktop components NEVER modified for mobile
+- **Approach**: Separate mobile components + conditional rendering
+
+📖 **Read First**: [MOBILE-ARCHITECTURE-PRINCIPLES.md](MOBILE-ARCHITECTURE-PRINCIPLES.md) and [START-HERE.md](START-HERE.md)
+
 ## 🚀 Quick Start
 
 ```bash

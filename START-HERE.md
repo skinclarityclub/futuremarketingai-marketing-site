@@ -1,8 +1,29 @@
-# 🎯 START HERE - Hybrid Architecture Implementation
+# 🎯 START HERE - Mobile Optimization
 
-**Date:** October 15, 2025  
+## 🚨 CRITICAL: READ THIS FIRST 🚨
+
+### **Desktop-First Architecture - NON-NEGOTIABLE**
+
+**THIS PROJECT IS DESKTOP-FIRST. MOBILE IS A SUPPLEMENTAL VARIANT.**
+
+#### Before making ANY changes:
+1. 📖 Read [MOBILE-ARCHITECTURE-PRINCIPLES.md](MOBILE-ARCHITECTURE-PRINCIPLES.md) - **MANDATORY**
+2. 📖 Read [.cursor/rules/mobile-architecture.mdc](.cursor/rules/mobile-architecture.mdc)
+3. ⚠️ Remember: **Desktop components NEVER get modified for mobile**
+
+#### Key Rules:
+- ✅ Mobile = NEW separate components in `/src/components/mobile/`
+- ✅ Use conditional rendering: `{isMobile ? <MobileVariant /> : <DesktopVariant />}`
+- ❌ NO responsive Tailwind classes on desktop components
+- ❌ NO modifications to existing desktop components
+
+**If in doubt about implementation approach → Check the architecture docs first!**
+
+---
+
+**Date:** October 24, 2025  
 **Current Status:** Ready to begin!  
-**Active Tag:** `hybrid-architecture-2025`
+**Active Tag:** `mobile-optimization`
 
 ---
 

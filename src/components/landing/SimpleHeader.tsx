@@ -12,10 +12,9 @@
 
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { MobileFullScreenMenu } from '../mobile'
 
 export const SimpleHeader: React.FC = () => {
   const { t } = useTranslation('common')
@@ -241,13 +240,82 @@ export const SimpleHeader: React.FC = () => {
         </div>
       </motion.header>
 
-      {/* Mobile Full-Screen Menu Overlay - 2025 Enhanced */}
-      <MobileFullScreenMenu
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        onDemoClick={handleDemoClick}
-        navLinks={navLinks}
-      />
+      {/* Mobile Menu - 2025 Clean Style */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="lg:hidden fixed inset-x-0 top-0 z-40 pt-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-slate-950/95 backdrop-blur-2xl"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+
+            {/* Menu Container */}
+            <div className="relative max-w-lg mx-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+              <nav
+                className="flex flex-col p-4 space-y-1"
+                aria-label={t('landing.header.mobile_nav_aria')}
+              >
+                {/* Navigation Links */}
+                <Link
+                  to="/"
+                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    isActiveLink('/')
+                      ? 'text-white bg-white/10'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t('landing.header.nav.home')}
+                </Link>
+
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                      isActiveLink(link.href)
+                        ? 'text-white bg-white/10'
+                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                {/* Divider */}
+                <div className="h-px bg-white/10 my-2" />
+
+                {/* Mobile CTAs */}
+                <button
+                  onClick={(e) => {
+                    handleDemoClick(e)
+                    setIsMobileMenuOpen(false)
+                  }}
+                  className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2"
+                >
+                  {t('landing.header.try_demo')}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <Link to="/login" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                  <button className="w-full px-4 py-2.5 bg-white/5 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    <LogIn className="w-4 h-4" />
+                    {t('landing.header.login')}
+                  </button>
+                </Link>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

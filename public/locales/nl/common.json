@@ -190,40 +190,6 @@
       "strategy_call": "✓ 30-min strategiegesprek",
       "no_cc": "✓ Geen creditcard nodig",
       "team_size": "✓ Gebouwd voor teams van 10-50"
-    },
-    "start_free": "Start Gratis Demo",
-    "explore_features": "Verken Functies"
-  },
-  "show_more": "Toon Meer",
-  "show_less": "Toon Minder",
-  "view_interactive": "Bekijk Interactief",
-  "expand": "Toon details",
-  "collapse": "Verberg details",
-  "swipe_hint": "← Swipe om meer te ontdekken →",
-  "url_copied": "URL gekopieerd! Open op desktop voor interactieve ervaring.",
-  "view_desktop_hint": "Open deze pagina op een desktop computer voor de volledige interactieve 3D ervaring.",
-  "visualization_unavailable": "Visualisatie niet beschikbaar",
-  "static_view": "Statische Weergave",
-  "view_interactive": "Bekijk Interactief op Desktop",
-  "interactive_hint": "Ervaar de volledige 3D interactieve visualisatie op een groter scherm",
-  "previous": "Vorige",
-  "next": "Volgende",
-  "selected": "Geselecteerd",
-  "nav": {
-    "home": "Home",
-    "explore": "Verken",
-    "book": "Boek"
-  },
-  "mobile": {
-    "desktopBanner": {
-      "message": "🖥️ Best te bekijken op desktop",
-      "emailCta": "Email me link",
-      "dismissed": "Banner gesloten",
-      "label": "Desktop ervaring notificatie",
-      "emailSubject": "Stuur me een link om op desktop te bekijken",
-      "emailBody": "Stuur me alsjeblieft een link om deze pagina op mijn desktop te bekijken.",
-      "emailAriaLabel": "Stuur me een link om deze pagina op desktop te bekijken",
-      "closeAriaLabel": "Desktop notificatie sluiten"
     }
   },
   "pricing_banner": {
@@ -701,8 +667,7 @@
             "Agency: Performance marketing op schaal"
           ]
         }
-      },
-      "tap_hint": "Tik op een module om details te bekijken"
+      }
     },
     "social_proof": {
       "badge": "Lancering Q1 2026",
@@ -799,11 +764,6 @@
       "main_headline": "Turn content into growth.",
       "sub_headline": "On autopilot.",
       "description": "Revolutionaire AI-gedreven marketing automatisering die premium bedrijven transformeert tot marktleiders. Ervaar enterprise-grade intelligente marketing ontworpen voor ambitieuze groei.",
-      "mobile_headline": "Transformeer Content Naar Groei",
-      "mobile_value_prop": "AI-gedreven marketing automatisering voor premium bedrijven. Start vandaag je intelligente groeitraject.",
-      "desktop_badge": "Beste ervaring op desktop",
-      "trust_1": "Geen creditcard vereist",
-      "trust_2": "5-minuten setup",
       "cta": {
         "primary": "Probeer Interactieve Demo",
         "secondary": "Sluit aan bij Wachtlijst"

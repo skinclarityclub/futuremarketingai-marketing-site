@@ -25,13 +25,5 @@
     "description": "Nog slechts 2 Founding Member slots: €15.000/maand voor €39.000 aan enterprise automation. Dat is €24.000/maand savings + 2 gratis maanden. Rate locked voor 24 maanden.",
     "demo_button": "Probeer Interactieve Demo",
     "contact_button": "Boek Founder Gesprek"
-  },
-  "mobile": {
-    "early_adopter": "Early Adopter Prijzen",
-    "urgency_default": "2 slots over tegen huidige tarieven",
-    "starting_at": "Vanaf",
-    "get_started": "Ga van Start",
-    "view_full_pricing": "Bekijk volledige prijzen & features",
-    "full_comparison": "Zie gedetailleerde feature vergelijking op desktop"
   }
 }

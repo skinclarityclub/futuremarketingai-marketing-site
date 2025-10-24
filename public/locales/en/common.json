@@ -190,40 +190,6 @@
       "strategy_call": "✓ 30-min strategy call",
       "no_cc": "✓ No credit card needed",
       "team_size": "✓ Built for teams of 10-50"
-    },
-    "start_free": "Start Free Demo",
-    "explore_features": "Explore Features"
-  },
-  "show_more": "Show More",
-  "show_less": "Show Less",
-  "view_interactive": "View Interactive",
-  "expand": "Expand details",
-  "collapse": "Collapse details",
-  "swipe_hint": "← Swipe to explore more →",
-  "url_copied": "URL copied! Open on desktop for interactive experience.",
-  "view_desktop_hint": "Open this page on a desktop computer for the full interactive 3D experience.",
-  "visualization_unavailable": "Visualization unavailable",
-  "static_view": "Static View",
-  "view_interactive": "View Interactive on Desktop",
-  "interactive_hint": "Experience the full 3D interactive visualization on a larger screen",
-  "previous": "Previous",
-  "next": "Next",
-  "selected": "Selected",
-  "nav": {
-    "home": "Home",
-    "explore": "Explore",
-    "book": "Book"
-  },
-  "mobile": {
-    "desktopBanner": {
-      "message": "🖥️ Best viewed on desktop",
-      "emailCta": "Email me link",
-      "dismissed": "Banner dismissed",
-      "label": "Desktop experience notification",
-      "emailSubject": "Send me a link to view on desktop",
-      "emailBody": "Please send me a link to view this page on my desktop computer.",
-      "emailAriaLabel": "Send me a link to view this page on desktop",
-      "closeAriaLabel": "Dismiss desktop notification"
     }
   },
   "pricing_banner": {
@@ -701,8 +667,7 @@
             "Agency: Performance marketing at scale"
           ]
         }
-      },
-      "tap_hint": "Tap any module to explore details"
+      }
     },
     "social_proof": {
       "badge": "Launching Q1 2026",
@@ -799,11 +764,6 @@
       "main_headline": "Turn content into growth.",
       "sub_headline": "On autopilot.",
       "description": "Revolutionary AI-powered marketing automation that transforms premium businesses into market leaders. Experience enterprise-grade intelligent marketing designed for ambitious growth.",
-      "mobile_headline": "Transform Content Into Growth",
-      "mobile_value_prop": "AI-powered marketing automation for premium businesses. Start your intelligent growth journey today.",
-      "desktop_badge": "Best experience on desktop",
-      "trust_1": "No credit card required",
-      "trust_2": "5-minute setup",
       "cta": {
         "primary": "Try Interactive Demo",
         "secondary": "Join Waitlist"

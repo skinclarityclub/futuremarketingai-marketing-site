@@ -4,30 +4,8 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  // Enable dark mode with class strategy for better control
-  darkMode: 'class',
   theme: {
-    // Define custom breakpoints (mobile-first approach)
-    screens: {
-      'mobile': '0px',      // 0-639px (mobile devices)
-      'tablet': '640px',    // 640-1023px (tablets)
-      'desktop': '1024px',  // 1024px+ (desktop)
-      'xl': '1280px',       // Extra large screens
-      '2xl': '1536px',      // Ultra wide screens
-    },
     extend: {
-      // Minimum touch target sizes per Apple HIG and WCAG
-      spacing: {
-        'touch-sm': '44px',  // 44x44px - iOS minimum
-        'touch-md': '48px',  // 48x48px - WCAG AAA
-        'touch-lg': '56px',  // 56x56px - comfortable touch
-      },
-      minWidth: {
-        'touch': '48px',     // Minimum touch target width
-      },
-      minHeight: {
-        'touch': '48px',     // Minimum touch target height
-      },
       colors: {
         // Background Colors
         'bg-dark': '#050814',

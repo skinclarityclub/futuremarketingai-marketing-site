@@ -48,12 +48,7 @@ export function TopBarControls() {
   }
 
   return (
-    <motion.div
-      className="fixed top-6 left-6 z-[100] flex flex-col gap-2"
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-    >
+    <div className="fixed top-6 left-6 z-[100] flex flex-col gap-2">
       {/* Language Switcher - Flag Only */}
       <div className="relative">
         <motion.button
@@ -61,6 +56,9 @@ export function TopBarControls() {
           className="w-12 h-12 rounded-xl backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-center hover:transition-colors group overflow-hidden p-2"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
           aria-label={t('common:language_switcher.change_language')}
           aria-expanded={isOpen}
         >
@@ -145,7 +143,16 @@ export function TopBarControls() {
       </div>
 
       {/* Mobile: Settings Menu with Personalization Options */}
-      {isMobile && <MobilePersonalizationMenu />}
-    </motion.div>
+      {/* Only show on actual mobile devices (< 640px) */}
+      {isMobile && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <MobilePersonalizationMenu />
+        </motion.div>
+      )}
+    </div>
   )
 }

@@ -1,0 +1,124 @@
+---
+description: Critical mobile architecture principles - desktop-first approach is mandatory
+globs: src/components/mobile/**, src/hooks/useMediaQuery.ts
+alwaysApply: true
+---
+
+# 🚨 Mobile Architecture - Desktop-First Approach
+
+## Core Principle
+
+**THIS PROJECT IS DESKTOP-FIRST. MOBILE IS A SUPPLEMENTAL VARIANT.**
+
+Desktop performance and experience must NEVER be compromised for mobile.
+
+## Critical Rules
+
+### 1. **Desktop Components Stay Intact**
+- ✅ Create NEW mobile-specific components (e.g., `SimplifiedHeroMobile.tsx`)
+- ✅ Use conditional rendering to switch between desktop and mobile
+- ❌ NEVER modify existing desktop components for mobile responsiveness
+- ❌ NEVER add mobile-specific classes to desktop components
+
+### 2. **Conditional Rendering Pattern**
+
+```typescript
+// ✅ CORRECT - Separate components
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
+function MySection() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  
+  return (
+    <>
+      {!isMobile && <DesktopComponent />}  {/* Original intact */}
+      {isMobile && <MobileComponent />}     {/* New variant */}
+    </>
+  );
+}
+
+// ❌ WRONG - Modifying desktop component
+function MySection() {
+  return (
+    <div className="hidden md:flex">  {/* Affects desktop! */}
+      <DesktopComponent />
+    </div>
+  );
+}
+```
+
+### 3. **Component Structure**
+
+```
+src/components/
+  common/          # Desktop components (NEVER TOUCH for mobile!)
+    Hero.tsx
+    FeatureGrid.tsx
+  mobile/          # New mobile-only variants
+    SimplifiedHeroMobile.tsx
+    MobileFeatureCarousel.tsx
+```
+
+### 4. **Tailwind CSS Usage**
+
+```typescript
+// ✅ CORRECT - Desktop base, mobile separate
+// Desktop component (no breakpoint prefixes)
+<div className="grid grid-cols-3 gap-8">
+
+// Mobile component (can use any classes)
+<div className="flex flex-col gap-4">
+
+// ❌ WRONG - Responsive classes on desktop component
+<div className="grid md:grid-cols-3 sm:grid-cols-1">  // Affects desktop!
+```
+
+### 5. **Performance Priority**
+
+1. Desktop performance = **Priority #1** (must never decrease)
+2. Mobile performance = Priority #2 (optimize separately)
+3. If conflict arises, **desktop wins ALWAYS**
+
+## Testing Checklist
+
+Before committing mobile changes:
+- [ ] Desktop version unchanged and works exactly as before?
+- [ ] Desktop performance equal or better?
+- [ ] Mobile is fully separate component?
+- [ ] No responsive Tailwind classes added to desktop components?
+- [ ] Conditional rendering clean and working?
+
+## Code Review Red Flags
+
+❌ **Reject if you see:**
+- Responsive Tailwind classes (`sm:`, `md:`, `lg:`) on existing desktop components
+- Desktop components being modified/wrapped for mobile
+- Performance regression on desktop
+- Desktop bundle size increase due to mobile code
+- Shared logic between desktop and mobile that adds complexity
+
+✅ **Approve if you see:**
+- New mobile components in `/mobile` directory
+- Clean conditional rendering with `useMediaQuery`
+- Desktop components 100% unchanged
+- Separate mobile-specific logic
+- No desktop performance impact
+
+## Why Desktop-First?
+
+1. **Target audience**: B2B professionals on desktop
+2. **Demo complexity**: Interactive visualizations need desktop power
+3. **Conversion**: Desktop has higher conversion for B2B SaaS
+4. **Mobile purpose**: Discovery/teaser for desktop experience
+
+## Remember
+
+> **Desktop first. Mobile second. Never compromise desktop.**
+
+If in doubt about a mobile implementation, ask:
+- "Does this affect desktop in ANY way?"
+- If yes → wrong approach, redesign
+
+---
+
+Refer to [MOBILE-ARCHITECTURE-PRINCIPLES.md](mdc:MOBILE-ARCHITECTURE-PRINCIPLES.md) for complete guidelines.
