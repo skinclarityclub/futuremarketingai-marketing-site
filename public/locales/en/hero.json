@@ -279,5 +279,17 @@
       "pain_label": "20+ companies freed from content chaos—from overworked to automated",
       "icon": "🎯"
     }
+  },
+
+  "mobile": {
+    "hero": {
+      "headline": "Transform Marketing with AI Intelligence",
+      "valueProp": "Discover AI-powered marketing automation that drives real results.",
+      "desktopBadge": "✨ Best experience on desktop",
+      "cta": "Explore AI Marketing",
+      "trust1": "No credit card",
+      "trust2": "Free trial",
+      "status": "Live demo available"
+    }
   }
 }

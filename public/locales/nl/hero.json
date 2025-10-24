@@ -279,5 +279,17 @@
       "pain_label": "20+ bedrijven bevrijd van contentchaos—van overwerkt naar geautomatiseerd",
       "icon": "🎯"
     }
+  },
+
+  "mobile": {
+    "hero": {
+      "headline": "Transformeer Marketing met AI Intelligentie",
+      "valueProp": "Ontdek AI-gedreven marketingautomatisering die echte resultaten levert.",
+      "desktopBadge": "✨ Beste ervaring op desktop",
+      "cta": "Ontdek AI Marketing",
+      "trust1": "Geen creditcard",
+      "trust2": "Gratis proefversie",
+      "status": "Live demo beschikbaar"
+    }
   }
 }

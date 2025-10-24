@@ -9,6 +9,8 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
+import { useIsMobile } from '../../hooks/useMediaQuery'
+import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 
 // Lazy load heavy components for performance
 const VisionTimeline = lazy(() =>
@@ -257,6 +259,8 @@ const GradientOrbs: React.FC = () => (
 )
 
 export const Hero: React.FC = () => {
+  // All hooks must be called unconditionally (Rules of Hooks)
+  const isMobile = useIsMobile()
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
@@ -267,6 +271,13 @@ export const Hero: React.FC = () => {
       void controls.start('visible')
     }
   }, [isInView, controls])
+
+  // Desktop-first: Render mobile variant for mobile devices
+  if (isMobile) {
+    return <SimplifiedHeroMobile />
+  }
+
+  // Desktop Hero below (original implementation)
 
   const containerVariants = {
     hidden: { opacity: 0 },
