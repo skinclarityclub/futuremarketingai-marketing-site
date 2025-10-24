@@ -290,6 +290,10 @@
       "trust1": "Geen creditcard",
       "trust2": "Gratis proefversie",
       "status": "Live demo beschikbaar"
+    },
+    "cta": {
+      "primary": "Ontdek Platform",
+      "secondary": "Boek Gesprek"
     }
   }
 }

@@ -290,6 +290,10 @@
       "trust1": "No credit card",
       "trust2": "Free trial",
       "status": "Live demo available"
+    },
+    "cta": {
+      "primary": "Explore Platform",
+      "secondary": "Book Call"
     }
   }
 }
