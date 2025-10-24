@@ -294,6 +294,11 @@
     "cta": {
       "primary": "Ontdek Platform",
       "secondary": "Boek Gesprek"
+    },
+    "nav": {
+      "home": "Home",
+      "explore": "Ontdek",
+      "book": "Boek"
     }
   }
 }

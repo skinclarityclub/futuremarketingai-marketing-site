@@ -294,6 +294,11 @@
     "cta": {
       "primary": "Explore Platform",
       "secondary": "Book Call"
+    },
+    "nav": {
+      "home": "Home",
+      "explore": "Explore",
+      "book": "Book"
     }
   }
 }
