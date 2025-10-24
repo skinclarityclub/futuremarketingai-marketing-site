@@ -322,19 +322,6 @@
       "desktopOnly": "Desktop only",
       "viewInteractive": "View Interactive Version",
       "hint": "Full interactive experience available on desktop browsers"
-    },
-    "social": {
-      "title": "Trusted by Growing Teams",
-      "subtitle": "Real results from real companies",
-      "trustedBy": "Trusted by",
-      "stat1": "Hours Saved/Month",
-      "stat2": "Companies Automated",
-      "testimonial1": {
-        "quote": "We spent 60+ hours/week on content. Now everything runs automatically and our engagement is 3x higher."
-      },
-      "testimonial2": {
-        "quote": "From break-even to +340% ROI. We now pre-test every ad before spending budget."
-      }
     }
   }
 }

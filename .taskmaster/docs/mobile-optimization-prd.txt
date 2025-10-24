@@ -23,6 +23,14 @@ Transform the mobile experience of FutureMarketingAI from a desktop-compressed v
 4. **All mobile work uses conditional rendering** (e.g., `isMobile ? <MobileComponent /> : <DesktopComponent />`)
 5. **NO responsive Tailwind classes** (sm:, md:, lg:) on existing desktop components
 6. **Desktop-first philosophy**: If conflict arises, desktop wins ALWAYS
+7. **🔥 CRITICAL: Content Parity Rule** - Mobile MUST use EXACT same content as desktop
+   - ✅ Use EXACT same translation keys as desktop
+   - ✅ Use EXACT same data sources (API, state, props)
+   - ✅ Keep EXACT same text, testimonials, numbers, statistics
+   - ✅ Adapt ONLY layout/presentation (grid → carousel, 4-col → 2-col)
+   - ❌ NEVER create new content for mobile
+   - ❌ NEVER make new testimonials/quotes/data
+   - ❌ NEVER use different translation keys than desktop
 
 **Implementation Pattern:**
 ```typescript

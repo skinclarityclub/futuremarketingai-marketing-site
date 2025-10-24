@@ -322,19 +322,6 @@
       "desktopOnly": "Alleen desktop",
       "viewInteractive": "Bekijk Interactieve Versie",
       "hint": "Volledige interactieve ervaring beschikbaar op desktop browsers"
-    },
-    "social": {
-      "title": "Vertrouwd door Groeiende Teams",
-      "subtitle": "Echte resultaten van echte bedrijven",
-      "trustedBy": "Vertrouwd door",
-      "stat1": "Uren Bespaard/Maand",
-      "stat2": "Bedrijven Geautomatiseerd",
-      "testimonial1": {
-        "quote": "We besteedden 60+ uur/week aan content. Nu draait alles automatisch en onze engagement is 3x hoger."
-      },
-      "testimonial2": {
-        "quote": "Van break-even naar +340% ROI. We testen nu elke advertentie voordat we budget besteden."
-      }
     }
   }
 }

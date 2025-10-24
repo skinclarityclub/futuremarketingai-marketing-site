@@ -20,6 +20,32 @@ Desktop performance and experience must NEVER be compromised for mobile.
 - ❌ NEVER modify existing desktop components for mobile responsiveness
 - ❌ NEVER add mobile-specific classes to desktop components
 
+### 1.1 **🔥 CRITICAL: Content Parity Rule**
+**Mobile components MUST use EXACT same content as desktop.**
+
+- ✅ **DO:** Use EXACT same translation keys as desktop
+- ✅ **DO:** Use EXACT same data sources (API, state, props)
+- ✅ **DO:** Keep EXACT same text, testimonials, numbers, statistics
+- ✅ **DO:** Adapt ONLY layout/presentation (grid → carousel, 4-col → 2-col)
+- ❌ **DON'T:** NEVER create new content for mobile
+- ❌ **DON'T:** NEVER make new testimonials/quotes/data
+- ❌ **DON'T:** NEVER use different translation keys than desktop
+- ❌ **DON'T:** NEVER change wording or add features desktop doesn't have
+
+**Example:**
+```typescript
+// ❌ WRONG - New content for mobile
+const testimonials = [
+  { quote: "New mobile testimonial...", author: "Mobile User" }  // ERROR!
+]
+
+// ✅ CORRECT - Exact desktop data, different layout only
+const { t } = useTranslation('common')
+const foundingTeams = t('landing.social_proof.founding_teams.teams', {
+  returnObjects: true
+}) // SAME key as desktop!
+```
+
 ### 2. **Conditional Rendering Pattern**
 
 ```typescript
