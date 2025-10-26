@@ -53,10 +53,10 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   const sizeClasses = {
-    sm: 'tap-target-sm px-4 py-2 text-sm',
-    md: 'tap-target px-6 py-3 text-base',
-    lg: 'tap-target px-8 py-4 text-lg',
-    xl: 'tap-target px-10 py-5 text-xl font-bold',
+    sm: 'min-h-[36px] min-w-[36px] px-4 py-2 text-sm', // 36px (secondary only)
+    md: 'min-h-[44px] min-w-[44px] px-6 py-3 text-base', // 44px (acceptable)
+    lg: 'min-h-[56px] min-w-[56px] px-8 py-4 text-lg', // 56px (WCAG AAA for CTAs)
+    xl: 'min-h-[56px] min-w-[56px] px-10 py-5 text-xl font-bold', // 56px (WCAG AAA)
   }
 
   const widthClasses = fullWidth ? 'w-full' : ''

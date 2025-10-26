@@ -10,37 +10,61 @@
  * - Enhanced blur & transparency
  */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { LANGUAGES, type Language } from '../../i18n/config'
+import { useDemoRedirect } from '../../hooks'
+import { DesktopOnlyNoticeModal } from '../mobile/DesktopOnlyNoticeModal'
+// Import flag SVG components
+import GB from 'country-flag-icons/react/3x2/GB'
+import NL from 'country-flag-icons/react/3x2/NL'
+import ES from 'country-flag-icons/react/3x2/ES'
+
+// Map language codes to flag components
+const FLAG_COMPONENTS = {
+  en: GB,
+  nl: NL,
+  es: ES,
+} as const
 
 export const SimpleHeader: React.FC = () => {
-  const { t } = useTranslation('common')
+  const { t, i18n } = useTranslation('common')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isLangOpen, setIsLangOpen] = useState(false)
+  const langDropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
 
-  // Handle transition to demo
-  const handleDemoClick = (e: React.MouseEvent) => {
-    e.preventDefault()
+  // Use demo redirect hook for mobile modal
+  const { showDesktopNotice, openDemo, closeDesktopNotice, noticePage } = useDemoRedirect()
 
-    // Open demo at /demo (with animation) in new window
-    const demoWindow = window.open('/demo', '_blank')
+  const currentLanguage = (i18n.language?.split('-')[0] || 'en') as Language
+  const currentLangData = LANGUAGES[currentLanguage] || LANGUAGES.en
+  const FlagComponent = FLAG_COMPONENTS[currentLanguage] || GB
 
-    if (demoWindow) {
-      // Wait for window to load, then request fullscreen
-      demoWindow.addEventListener('load', () => {
-        try {
-          demoWindow.document.documentElement.requestFullscreen()
-        } catch (err) {
-          console.log('Fullscreen not available:', err)
-        }
+  const changeLanguage = (lang: Language) => {
+    void i18n.changeLanguage(lang)
+    setIsLangOpen(false)
+
+    // Track language change
+    if (window.gtag) {
+      window.gtag('event', 'language_change', {
+        previous_language: currentLanguage,
+        new_language: lang,
+        source: 'mobile_header',
       })
     }
+  }
+
+  // Handle transition to demo - now uses useDemoRedirect
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openDemo('demo')
   }
 
   // Handle scroll for sticky header effect + auto-hide
@@ -89,12 +113,30 @@ export const SimpleHeader: React.FC = () => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsMobileMenuOpen(false)
+        setIsLangOpen(false)
       }
     }
 
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
   }, [])
+
+  // Close language dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
+        setIsLangOpen(false)
+      }
+    }
+
+    if (isLangOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isLangOpen])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -170,6 +212,103 @@ export const SimpleHeader: React.FC = () => {
                 </div>
               </Link>
 
+              {/* Mobile: Language Switcher + Hamburger Menu */}
+              <div className="lg:hidden flex items-center gap-2">
+                {/* Language Switcher - Compact Flag Button */}
+                <div className="relative" ref={langDropdownRef}>
+                  <button
+                    onClick={() => setIsLangOpen(!isLangOpen)}
+                    className="w-9 h-9 rounded-lg backdrop-blur-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors p-1.5"
+                    aria-label={t('common:language_switcher.change_language')}
+                    aria-expanded={isLangOpen}
+                    type="button"
+                  >
+                    <div className="w-full h-full rounded overflow-hidden">
+                      <FlagComponent title={currentLangData.name} className="w-full h-full object-cover" />
+                    </div>
+                  </button>
+
+                  {/* Language Dropdown */}
+                  <AnimatePresence>
+                    {isLangOpen && (
+                      <>
+                        {/* Backdrop */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="fixed inset-0 z-40"
+                          onClick={() => setIsLangOpen(false)}
+                        />
+
+                        {/* Dropdown Menu */}
+                        <motion.div
+                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute right-0 top-full mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 min-w-[140px] z-50"
+                        >
+                          {Object.entries(LANGUAGES).map(([code, data]) => {
+                            const FlagIcon = FLAG_COMPONENTS[code as Language]
+                            return (
+                              <button
+                                key={code}
+                                onClick={() => changeLanguage(code as Language)}
+                                className={`
+                                  w-full px-3 py-2 text-left flex items-center gap-3 transition-colors
+                                  hover:bg-white/5
+                                  ${currentLanguage === code ? 'bg-blue-500/10' : ''}
+                                `}
+                                type="button"
+                              >
+                                <div className="w-6 h-4 rounded overflow-hidden shadow-sm flex-shrink-0">
+                                  <FlagIcon title={data.name} className="w-full h-full object-cover" />
+                                </div>
+                                <span
+                                  className={`text-sm font-medium ${
+                                    currentLanguage === code ? 'text-blue-400' : 'text-white/80'
+                                  }`}
+                                >
+                                  {data.name}
+                                </span>
+                                {currentLanguage === code && (
+                                  <svg
+                                    className="w-4 h-4 ml-auto text-blue-400"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                  >
+                                    <path
+                                      fillRule="evenodd"
+                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                      clipRule="evenodd"
+                                    />
+                                  </svg>
+                                )}
+                              </button>
+                            )
+                          })}
+                        </motion.div>
+                      </>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Hamburger Menu Button */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="p-2 rounded-lg text-white hover:bg-white/5 transition-colors"
+                  aria-label={
+                    isMobileMenuOpen
+                      ? t('landing.header.mobile_menu_close')
+                      : t('landing.header.mobile_menu_open')
+                  }
+                  aria-expanded={isMobileMenuOpen}
+                >
+                  {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
+              </div>
+
               {/* Center: Minimal Navigation */}
               <nav
                 className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
@@ -221,20 +360,6 @@ export const SimpleHeader: React.FC = () => {
                   </span>
                 </motion.button>
               </div>
-
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-white hover:bg-white/5 transition-colors"
-                aria-label={
-                  isMobileMenuOpen
-                    ? t('landing.header.mobile_menu_close')
-                    : t('landing.header.mobile_menu_open')
-                }
-                aria-expanded={isMobileMenuOpen}
-              >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
             </div>
           </div>
         </div>
@@ -316,6 +441,15 @@ export const SimpleHeader: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Desktop Notice Modal - Mobile Only */}
+      {showDesktopNotice && (
+        <DesktopOnlyNoticeModal
+          pageName={noticePage}
+          onClose={closeDesktopNotice}
+          isOpen={showDesktopNotice}
+        />
+      )}
     </>
   )
 }

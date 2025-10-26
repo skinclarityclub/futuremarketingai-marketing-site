@@ -376,7 +376,11 @@
    * MOBILE TOUCH INTERACTIONS
    * ================================ */
 
-  /* Touch-friendly tap targets - iOS/Material guideline: 44px minimum */
+  /* Touch-friendly tap targets
+   * - tap-target-sm: 36px (secondary elements, icons)
+   * - tap-target: 44px (iOS minimum, secondary buttons)
+   * - tap-target-lg: 56px (WCAG AAA, primary CTAs) ✅
+   */
   .tap-target {
     min-height: 44px;
     min-width: 44px;
@@ -388,6 +392,14 @@
   .tap-target-sm {
     min-height: 36px;
     min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tap-target-lg {
+    min-height: 56px;
+    min-width: 56px;
     display: inline-flex;
     align-items: center;
     justify-content: center;

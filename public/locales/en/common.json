@@ -4,6 +4,7 @@
   "tagline": "The Future of Marketing Intelligence",
   "taglineSubtitle": "AI-Powered. Data-Driven. Results-Focused.",
   "skip": "Skip",
+  "skipLabel": "Skip animation",
   "loading": {
     "default": "Loading...",
     "page": "Loading page...",
@@ -514,6 +515,20 @@
         "dismissed": "Desktop notification dismissed",
         "emailSubject": "Desktop Link - FutureMarketingAI",
         "emailBody": "Please send me the link to experience FutureMarketingAI on desktop for the full interactive demo."
+      },
+      "desktop_required": {
+        "title": "Desktop Experience Recommended",
+        "description": "Our interactive demo offers the best experience on desktop with 3D visualizations and real-time data.",
+        "cta_primary": "Open in New Tab",
+        "cta_secondary": "Book Demo",
+        "email_placeholder": "your@email.com",
+        "email_label": "Email address",
+        "send_email": "Send email",
+        "email_sent": "Link sent!",
+        "option1": "1. Open on Desktop",
+        "option2": "2. Email Link to Myself",
+        "option3": "3. Schedule a Personal Demo",
+        "continue_mobile": "Continue on mobile anyway"
       }
     },
     "footer": {

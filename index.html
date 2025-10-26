@@ -39,13 +39,14 @@
     <!-- Note: GA4 is initialized via react-ga4 in App.tsx -->
     <!-- This script is handled programmatically in the React app -->
     
-    <!-- Fonts -->
+    <!-- Fonts - Optimized for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Inter Variable Font (all weights in one file) + JetBrains Mono (only weight 400) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900&family=JetBrains+Mono:wght@400&display=swap&subset=latin" rel="stylesheet" />
     
-    <!-- Satoshi Font (via CDN fallback to Inter) -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+    <!-- Satoshi Font (Variable) -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,300..900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>

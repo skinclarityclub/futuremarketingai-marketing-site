@@ -16,7 +16,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from 'recharts'
-import { usePageAnalytics, usePersonalization, useCalendlyBooking } from '../hooks'
+import { usePageAnalytics, usePersonalization, useCalendlyBooking, useIsMobile } from '../hooks'
 import { generateAllMockData } from '../data/mock'
 import type { DashboardData } from '../types/dashboard'
 import { SystemHealthBar } from '../components/command-center/system-health'
@@ -31,6 +31,7 @@ import { convertCampaignsForOrchestra } from '../data/mock'
 import { StrategyHub } from '../components/command-center/strategy-hub'
 import { usePersonalizationStore } from '../stores'
 import { CalendlyFunnelSession } from '../utils/calendlyFunnelTracking'
+import { DesktopOnlyNotice } from '../components/mobile'
 
 // Lazy load CalendlyModal
 const CalendlyModal = lazy(() =>
@@ -49,6 +50,14 @@ export const Dashboard: React.FC = () => {
 
   // Track page analytics
   usePageAnalytics('Dashboard')
+
+  // Mobile detection
+  const isMobile = useIsMobile()
+
+  // Mobile variant - show desktop-only notice (temporary)
+  if (isMobile) {
+    return <DesktopOnlyNotice pageName="dashboard" />
+  }
 
   // Personalization
   const { industryName, messaging } = usePersonalization()

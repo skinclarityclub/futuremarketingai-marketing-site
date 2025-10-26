@@ -252,6 +252,24 @@ export default defineConfig(({ mode }) => ({
             // 3. Miscellaneous vendor code (non-React utilities)
             return 'vendor-misc'
           }
+
+          // NEW: Mobile-specific components (only load on mobile)
+          if (id.includes('/components/mobile/')) {
+            return 'mobile-components'
+          }
+
+          // Feature-specific chunks for large pages
+          if (id.includes('/pages/Calculator') || id.includes('/components/calculator/')) {
+            return 'calculator-feature'
+          }
+
+          if (id.includes('/pages/Dashboard') || id.includes('/components/dashboard/')) {
+            return 'dashboard-feature'
+          }
+
+          if (id.includes('/pages/Explorer') || id.includes('/components/explorer/')) {
+            return 'explorer-feature'
+          }
         },
 
         // Optimized chunk naming for better caching

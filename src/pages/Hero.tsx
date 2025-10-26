@@ -72,6 +72,7 @@ const CalendlyModal = lazy(() =>
 export const Hero: React.FC = () => {
   // Check if we're on /demo (with animation) or /demo-home (without animation)
   const location = window.location
+  // Play animation for /demo with or without query parameters (e.g., ?desktop=true)
   const shouldPlayAnimation = location.pathname === '/demo'
 
   // Neural Warp animation state
@@ -426,17 +427,18 @@ export const Hero: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-bg-dark via-bg-surface to-bg-dark flex items-center justify-center p-4">
-      {/* Hero Content - Fade in after animation completes */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: warpComplete ? 1 : 0 }}
-        transition={{
-          duration: 1,
-          ease: [0.25, 0.1, 0.25, 1], // Butter-smooth fade
-          delay: 0.2,
-        }}
-        className="w-full"
-      >
+      {/* Hero Content - Completely hidden until animation completes */}
+      {warpComplete && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            ease: [0.25, 0.1, 0.25, 1], // Butter-smooth fade
+            delay: 0.2,
+          }}
+          className="w-full"
+        >
         <motion.div
           ref={heroRef}
           className="text-center space-y-8 max-w-6xl mx-auto"
@@ -731,6 +733,7 @@ export const Hero: React.FC = () => {
           skippable={true}
         />
       </motion.div>
+      )}
 
       {/* Personalization Control Bar - Industry selector + Settings */}
       <PersonalizationControlBar />

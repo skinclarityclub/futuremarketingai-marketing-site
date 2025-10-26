@@ -187,6 +187,14 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
     setShowPreview(false)
   }
 
+  // Check for landing page to position button higher
+  const isLandingPage = location.pathname === '/'
+  
+  // Adaptive positioning - HIGHER on mobile landing page to avoid StickyBottomCTA overlap
+  const mobilePosition = isLandingPage
+    ? 'right-6 bottom-28 safe-area-bottom' // Higher position (112px from bottom) to avoid sticky CTA
+    : 'right-4 bottom-20 safe-area-bottom' // Default for demo routes
+
   return (
     <>
       {/* Context-Aware Preview Bubble - Premium, ultra-smooth entrance - DESKTOP ONLY */}
@@ -320,9 +328,9 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         className={`
           group
           fixed
-          ${isMobile ? 'right-4 bottom-20 safe-area-bottom' : 'right-6 top-[65%] -translate-y-1/2'}
+          ${isMobile ? mobilePosition : 'right-6 top-[65%] -translate-y-1/2'}
           md:z-50 z-[9999]
-          ${isMobile ? 'w-10 h-10' : 'w-16 h-16'}
+          ${isMobile ? 'w-14 h-14' : 'w-16 h-16'}
           bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600
           hover:from-purple-500 hover:via-blue-500 hover:to-cyan-500
           text-white
@@ -341,18 +349,18 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         {/* Animated Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shimmer" />
 
-        {/* Icon with rotation animation - Adaptive Size */}
-        <motion.div
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="relative z-10"
-        >
-          {isOpen ? (
-            <X size={isMobile ? 20 : 28} strokeWidth={2.5} />
-          ) : (
-            <MessageCircle size={isMobile ? 20 : 28} strokeWidth={2.5} />
-          )}
-        </motion.div>
+            {/* Icon with rotation animation - Adaptive Size */}
+            <motion.div
+              animate={{ rotate: isOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative z-10"
+            >
+              {isOpen ? (
+                <X size={isMobile ? 24 : 28} strokeWidth={2.5} />
+              ) : (
+                <MessageCircle size={isMobile ? 24 : 28} strokeWidth={2.5} />
+              )}
+            </motion.div>
 
         {/* Unread Badge - Adaptive Size */}
         {hasUnreadMessages && !isOpen && (

@@ -102,18 +102,18 @@ export const KineticTypographyTransition: React.FC<KineticTypographyTransitionPr
                 className="absolute inset-0 flex items-center justify-center px-4"
               >
                 <div className="text-center space-y-3">
-                  {/* Main brand name - Optimized size for readability */}
-                  <h1 className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 tracking-tight leading-tight">
+                  {/* Main brand name - Optimized size for mobile and desktop */}
+                  <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 tracking-tight leading-tight">
                     {t('brandName', 'FUTURE MARKETING AI')}
                   </h1>
 
-                  {/* DEMO label - Clear hierarchy */}
+                  {/* DEMO label - Clear hierarchy, mobile-optimized */}
                   <div className="flex items-center justify-center gap-3">
-                    <div className="h-px w-12 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
-                    <p className="text-xl md:text-3xl font-medium text-cyan-400/90 tracking-[0.3em] uppercase">
+                    <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+                    <p className="text-lg sm:text-xl md:text-3xl font-medium text-cyan-400/90 tracking-[0.2em] sm:tracking-[0.3em] uppercase">
                       {t('demoLabel', 'Demo')}
                     </p>
-                    <div className="h-px w-12 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+                    <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
                   </div>
                 </div>
               </motion.div>
@@ -130,13 +130,13 @@ export const KineticTypographyTransition: React.FC<KineticTypographyTransitionPr
                   duration: 0.7, // Slower transitions
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="absolute inset-0 flex items-center justify-center px-8"
+                className="absolute inset-0 flex items-center justify-center px-6 sm:px-8"
               >
-                <div className="text-center space-y-6 max-w-5xl">
-                  <p className="text-4xl md:text-7xl font-bold text-white/95 tracking-tight leading-tight">
+                <div className="text-center space-y-4 sm:space-y-6 max-w-5xl">
+                  <p className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-white/95 tracking-tight leading-tight px-2">
                     {t('tagline', 'The Future of Marketing Intelligence')}
                   </p>
-                  <p className="text-xl md:text-3xl text-cyan-400 font-medium tracking-wide">
+                  <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-cyan-400 font-medium tracking-wide px-2">
                     {t('taglineSubtitle', 'AI-Powered. Data-Driven. Results-Focused.')}
                   </p>
                 </div>
@@ -144,13 +144,14 @@ export const KineticTypographyTransition: React.FC<KineticTypographyTransitionPr
             )}
           </AnimatePresence>
 
-          {/* Skip button */}
+          {/* Skip button - Mobile optimized with better touch target */}
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.7 }}
             whileHover={{ opacity: 1 }}
             onClick={onComplete}
-            className="absolute bottom-8 right-8 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm rounded-lg hover:bg-white/20 transition-colors z-10"
+            className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 px-4 py-2.5 min-h-[44px] bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm rounded-lg hover:bg-white/20 transition-colors z-10 touch-manipulation"
+            aria-label={t('skipLabel', 'Skip animation')}
           >
             {t('skip', 'Skip')}
           </motion.button>

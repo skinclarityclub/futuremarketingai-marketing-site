@@ -4,6 +4,7 @@
   "tagline": "De Toekomst van Marketing Intelligentie",
   "taglineSubtitle": "AI-Gedreven. Data-Gestuurd. Resultaatgericht.",
   "skip": "Overslaan",
+  "skipLabel": "Animatie overslaan",
   "loading": {
     "default": "Laden...",
     "page": "Pagina laden...",
@@ -33,7 +34,9 @@
     "clear_selection": "Wis selectie",
     "collapse_banner": "Klap banner in",
     "reload_page": "Pagina herladen",
-    "breadcrumb_nav": "Broodkruimelpad"
+    "breadcrumb_nav": "Broodkruimelpad",
+    "open_desktop": "Open in Nieuw Tabblad",
+    "view_interactive": "Bekijk Interactieve Demo"
   },
   "personalization": {
     "change_industry_tooltip": "Klik om industrie te wijzigen",
@@ -204,7 +207,15 @@
     "collapse_banner": "Banner inklappen",
     "slots_remaining": "{{remaining}}/{{total}} over",
     "slots_claimed": "{{percent}}% van slots geclaimd",
-    "slots_remaining_label": "{{remaining}} slots over van {{total}} totaal"
+    "slots_remaining_label": "{{remaining}} slots over van {{total}} totaal",
+    "pricing": "Prijzen",
+    "early_adopter_message": "Vroege vogel voordeel - lagere prijzen voor eerste klanten",
+    "starting_at": "Vanaf",
+    "first_come_first_served": "Wie eerst komt, eerst maalt",
+    "claim_spot": "Claim jouw plek",
+    "be_customer": "Word klant #{{number}}",
+    "view_full_pricing": "Bekijk volledige prijzen",
+    "earlier_customers_lower_prices": "Eerdere klanten betalen minder"
   },
   "slot_progress": {
     "slots_remaining_label": "{{remaining}} van {{total}} {{tier}} slots over",
@@ -514,7 +525,22 @@
         "dismissed": "Desktop notificatie gesloten",
         "emailSubject": "Desktop Link - FutureMarketingAI",
         "emailBody": "Stuur me alstublieft de link om FutureMarketingAI op desktop te ervaren voor de volledige interactieve demo."
-      }
+      },
+      "desktop_required": {
+        "title": "Desktop Ervaring Aanbevolen",
+        "description": "Onze interactieve demo biedt de beste ervaring op desktop met 3D visualisaties en real-time data.",
+        "cta_primary": "Open in Nieuw Tabblad",
+        "cta_secondary": "Boek Demo",
+        "email_placeholder": "jouw@email.nl",
+        "email_label": "Email adres",
+        "send_email": "Verstuur email",
+        "email_sent": "Link verzonden!",
+        "option1": "1. Open op Desktop",
+        "option2": "2. Email Link naar Mijzelf",
+        "option3": "3. Plan een Persoonlijke Demo",
+        "continue_mobile": "Toch doorgaan op mobile"
+      },
+      "desktop_only": "Alleen beschikbaar op desktop"
     },
     "footer": {
       "brand_name": "Future Marketing AI",

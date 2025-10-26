@@ -44,6 +44,7 @@ export {
 
 export { usePersonalization } from './usePersonalization'
 export { useModuleFollowUp } from './useModuleFollowUp'
+export { useDemoRedirect } from './useDemoRedirect'
 
 export { useToast } from './useToast'
 export type { Toast } from './useToast'

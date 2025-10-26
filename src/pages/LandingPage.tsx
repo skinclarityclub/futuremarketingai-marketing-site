@@ -10,8 +10,12 @@ import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { Hero } from '../components/landing/Hero'
 import { SEOHead } from '../components/seo/SEOHead'
 import { StructuredDataPresets } from '../components/seo/StructuredData'
+import { StickyBottomCTA, MobileEvolutionTimeline } from '../components/mobile'
+import { useIsMobile } from '../hooks'
 
 export const LandingPage: React.FC = () => {
+  const isMobile = useIsMobile()
+
   return (
     <>
       {/* SEO Meta Tags - Homepage */}
@@ -42,6 +46,9 @@ export const LandingPage: React.FC = () => {
         {/* Hero Section - Now with placeholders */}
         <Hero />
 
+        {/* Evolution Timeline - Mobile Only */}
+        {isMobile && <MobileEvolutionTimeline />}
+
         {/* Below-the-fold content - Lazy loaded */}
         {/* <Suspense fallback={<LoadingFallback />}>
         <section className="relative z-10 max-w-5xl mx-auto px-6 py-20">
@@ -53,6 +60,9 @@ export const LandingPage: React.FC = () => {
 
         {/* Accessibility Helper - Floating */}
         {/* <ResponsiveAccessibilityHelper /> */}
+
+        {/* Sticky Bottom CTA - Mobile Only */}
+        {isMobile && <StickyBottomCTA />}
       </div>
     </>
   )

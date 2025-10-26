@@ -31,6 +31,8 @@ import {
 } from '../components/calculator'
 import type { CompanySize, PrimaryGoal } from '../components/calculator'
 import { calculateICPScore, type ICPInputData, type ChannelsCount } from '../utils/icpScoring'
+import { DesktopOnlyNotice } from '../components/mobile'
+import { useIsMobile } from '../hooks'
 
 // Lazy load heavy visualization components
 const AnimatedMetric = lazy(() =>
@@ -101,6 +103,14 @@ export const Calculator: React.FC = () => {
 
   // Track page analytics
   usePageAnalytics('Calculator')
+
+  // Mobile detection
+  const isMobile = useIsMobile()
+
+  // Mobile variant - show desktop-only notice (temporary)
+  if (isMobile) {
+    return <DesktopOnlyNotice pageName="calculator" />
+  }
 
   // Personalization
   const { benchmarks, messaging, industryName, getPersonalizedCTA, userIntent, updateICPScore } =

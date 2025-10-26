@@ -16,7 +16,7 @@ import {
   SEOHelmet,
 } from './components'
 import NudgeToast from './components/ai-assistant/NudgeToast'
-import { useScrollToTop } from './hooks'
+import { useScrollToTop, useIsMobile } from './hooks'
 import { trackGA4PageView } from './utils/ga4'
 import { hotjarStateChange } from './utils/hotjar'
 import SentryTestButton from './components/common/SentryTestButton'
@@ -27,6 +27,9 @@ import { FloatingElementProvider } from './contexts/FloatingElementContext'
 const Hero = lazy(() => import('./pages/Hero'))
 const LandingPage = lazy(() =>
   import('./pages/LandingPage').then((module) => ({ default: module.LandingPage }))
+)
+const DemoIntro = lazy(() =>
+  import('./components/demo/DemoIntro').then((module) => ({ default: module.DemoIntro }))
 )
 const Explorer = lazy(() => import('./pages/Explorer'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
@@ -66,6 +69,7 @@ const GDPRPage = lazy(() => import('./pages/GDPRPage'))
  */
 function App() {
   const location = useLocation()
+  const isMobile = useIsMobile()
 
   // Enable smooth scroll to top on route change
   useScrollToTop()
@@ -89,6 +93,7 @@ function App() {
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
+  const isLandingPage = location.pathname === '/'
 
   // Development-only analytics validation and performance logging
   // Note: Analytics are now initialized via CookieConsentBanner after user consent
@@ -132,8 +137,10 @@ function App() {
             {/* SEO Meta Tags - Dynamic per page */}
             <SEOHelmet />
 
-            {/* Top Bar Controls - Language switcher (always visible) */}
-            <TopBarControls />
+        {/* Top Bar Controls - Language switcher + settings */}
+        {/* Desktop: Show TopBarControls on all pages */}
+        {/* Mobile: TopBarControlsMobile DISABLED on landing (language now in header) */}
+        {!isMobile && <TopBarControls />}
 
             {/* Demo UI Elements - Only show on demo routes, not on landing page */}
             {isDemoRoute && (
@@ -177,10 +184,14 @@ function App() {
 
                     {/* Demo Pages */}
                     <Route path="/demo" element={<Hero />} />
+                    <Route path="/demo-intro" element={<DemoIntro targetPage="demo" />} />
                     <Route path="/demo-home" element={<Hero />} />
                     <Route path="/explorer" element={<Explorer />} />
+                    <Route path="/explorer-intro" element={<DemoIntro targetPage="explorer" />} />
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard-intro" element={<DemoIntro targetPage="dashboard" />} />
                     <Route path="/calculator" element={<Calculator />} />
+                    <Route path="/calculator-intro" element={<DemoIntro targetPage="calculator" />} />
                     <Route path="/calculator-test" element={<CalculatorTest />} />
                     <Route path="/ad-builder" element={<AdBuilder />} />
 

@@ -12,7 +12,7 @@
  * - Safe area insets for notched devices
  */
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight, Calendar } from 'lucide-react'
@@ -98,11 +98,8 @@ export function StickyBottomCTA({
     if (onPrimaryClick) {
       onPrimaryClick()
     } else {
-      // Default: scroll to demo section
-      const demoSection = document.getElementById('demo-section')
-      if (demoSection) {
-        demoSection.scrollIntoView({ behavior: 'smooth' })
-      }
+      // Default: Open interactive demo (same as hero primary CTA)
+      window.open('/demo', '_blank')
     }
   }
 
@@ -110,10 +107,14 @@ export function StickyBottomCTA({
     if (onSecondaryClick) {
       onSecondaryClick()
     } else {
-      // Default: open Calendly
-      window.open('https://calendly.com/futuremarketingai', '_blank')
+      // Default: Navigate to pricing/waitlist (same as hero secondary CTA)
+      window.location.href = '/pricing'
     }
   }
+
+  // Use landing page CTA labels by default for content parity
+  const defaultPrimaryLabel = t('landing.hero_landing.cta.primary', 'Probeer Interactieve Demo')
+  const defaultSecondaryLabel = t('landing.hero_landing.cta.secondary', 'Sluit aan bij Wachtlijst')
 
   return (
     <AnimatePresence>
@@ -155,10 +156,10 @@ export function StickyBottomCTA({
                 touch-manipulation
                 group
               "
-              aria-label={primaryLabel || t('mobile.cta.primary', 'Explore Platform')}
+              aria-label={primaryLabel || defaultPrimaryLabel}
               type="button"
             >
-              <span>{primaryLabel || t('mobile.cta.primary', 'Explore Platform')}</span>
+              <span>{primaryLabel || defaultPrimaryLabel}</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
 
@@ -177,7 +178,7 @@ export function StickyBottomCTA({
                 touch-manipulation
                 group
               "
-              aria-label={secondaryLabel || t('mobile.cta.secondary', 'Book Call')}
+              aria-label={secondaryLabel || defaultSecondaryLabel}
               type="button"
             >
               <Calendar className="w-6 h-6 transition-transform group-hover:scale-110" />

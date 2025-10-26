@@ -129,36 +129,40 @@ export const MobileSocialProof: React.FC<MobileSocialProofProps> = ({ className 
             </motion.div>
           </AnimatePresence>
 
-          {/* Carousel Controls */}
+          {/* Carousel Controls - WCAG AAA compliant (44x44px) */}
           <div className="flex items-center justify-between mt-4">
             <button
               onClick={handlePrevTeam}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors touch-manipulation"
+              className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors touch-manipulation tap-target"
               aria-label="Previous team"
               type="button"
             >
               <ChevronLeft className="w-5 h-5 text-white" />
             </button>
 
-            {/* Pagination Dots */}
-            <div className="flex gap-2">
+            {/* Pagination Dots - Touch-friendly tap area */}
+            <div className="flex gap-1">
               {foundingTeams.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveTeam(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === activeTeam ? 'bg-blue-400 w-6' : 'bg-white/20'
-                  }`}
+                  className="p-2 touch-manipulation tap-target-sm"
                   aria-label={`Go to team ${index + 1}`}
                   aria-current={index === activeTeam ? 'true' : 'false'}
                   type="button"
-                />
+                >
+                  <div
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === activeTeam ? 'bg-blue-400 w-6' : 'bg-white/20'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 
             <button
               onClick={handleNextTeam}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors touch-manipulation"
+              className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors touch-manipulation tap-target"
               aria-label="Next team"
               type="button"
             >
@@ -210,14 +214,14 @@ export const MobileSocialProof: React.FC<MobileSocialProofProps> = ({ className 
         </div>
       </motion.div>
 
-      {/* Platform Milestones - Condensed (first 4) */}
+      {/* Platform Milestones - ALL items (Content Parity) */}
       <div className="mb-12">
         <h3 className="text-xl font-bold text-white mb-4 text-center flex items-center justify-center gap-2">
           <Award className="w-6 h-6 text-yellow-400" />
           {t('landing.social_proof.milestones.title')}
         </h3>
         <div className="flex flex-col gap-2">
-          {milestones.slice(0, 4).map((milestone: string, index: number) => (
+          {milestones.map((milestone: string, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
@@ -286,13 +290,13 @@ export const MobileSocialProof: React.FC<MobileSocialProofProps> = ({ className 
             href="/demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 min-h-touch bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg touch-manipulation"
+            className="inline-flex items-center justify-center px-6 py-3 h-14 min-h-[56px] bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg touch-manipulation"
           >
             {t('landing.social_proof.cta.demo_button')}
           </a>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center px-6 py-3 min-h-touch bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all touch-manipulation"
+            className="inline-flex items-center justify-center px-6 py-3 h-14 min-h-[56px] bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all touch-manipulation"
           >
             {t('landing.social_proof.cta.contact_button')}
           </a>

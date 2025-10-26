@@ -48,6 +48,8 @@ export { Footer } from './Footer'
 export { SEOHelmet, defaultStructuredData } from './SEOHelmet'
 export { ProgressIndicator } from './ProgressIndicator'
 export { TopBarControls } from './TopBarControls'
+export { TopBarControlsMobile } from './TopBarControlsMobile'
+export { ResponsiveImage } from './ResponsiveImage'
 
 export { IndustrySelector, INDUSTRIES } from './IndustrySelector'
 export type { Industry } from './IndustrySelector'

@@ -18,11 +18,12 @@ import {
 import { StrategicCTA } from '../components/common/StrategicCTA'
 import { TechnicalShowcase, FounderExpertise } from '../components/credibility'
 import type { HeatMapData } from '../components'
-import { usePageAnalytics, useCalendlyBooking, usePersonalization } from '../hooks'
+import { usePageAnalytics, useCalendlyBooking, usePersonalization, useIsMobile } from '../hooks'
 import { useModuleFollowUp } from '../hooks/useModuleFollowUp'
 import { trackModuleOpen, trackCTAClick } from '../utils/analytics'
 import { usePersonalizationStore } from '../stores'
 import { CalendlyFunnelSession } from '../utils/calendlyFunnelTracking'
+import { MobileExplorer, DesktopOnlyNotice } from '../components/mobile'
 
 // Lazy load heavy components
 const Modal = lazy(() =>
@@ -70,6 +71,9 @@ export const Explorer: React.FC = () => {
 
   // Track page analytics
   usePageAnalytics('Explorer')
+
+  // Mobile detection
+  const isMobile = useIsMobile()
 
   // Personalization
   const { industryName, getPersonalizedCTA, messaging, userIntent } = usePersonalization()
@@ -481,6 +485,12 @@ export const Explorer: React.FC = () => {
   // All features are always shown
   // (Industry-based filtering will be reimplemented in AI Journey Assistant - Task 29)
 
+  // Mobile variant - show desktop-only notice (temporary)
+  if (isMobile) {
+    return <DesktopOnlyNotice pageName="explorer" />
+  }
+
+  // Desktop variant - full interactive experience
   return (
     <div className="min-h-screen bg-gradient-to-br from-bg-dark via-bg-surface to-bg-dark p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
