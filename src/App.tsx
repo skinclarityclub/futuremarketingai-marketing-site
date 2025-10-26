@@ -93,7 +93,7 @@ function App() {
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
-  const isLandingPage = location.pathname === '/'
+  // const isLandingPage = location.pathname === '/' // Not used currently
 
   // Development-only analytics validation and performance logging
   // Note: Analytics are now initialized via CookieConsentBanner after user consent

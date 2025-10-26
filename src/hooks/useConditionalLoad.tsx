@@ -1,5 +1,5 @@
-import React, { lazy, ComponentType, LazyExoticComponent } from 'react'
-import { useIsMobile, useIsTablet, useIsMobileOrTablet } from './useMediaQuery'
+import { lazy, ComponentType } from 'react'
+import { useIsMobile, useIsTablet } from './useMediaQuery'
 
 /**
  * Conditional Loading Utilities

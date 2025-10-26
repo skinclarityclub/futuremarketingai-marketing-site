@@ -66,7 +66,7 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
           dashboard: '/dashboard',
           demo: '/demo',
         }
-        navigate(routes[pageName])
+        void navigate(routes[pageName])
       }
     },
     [isMobile, navigate]

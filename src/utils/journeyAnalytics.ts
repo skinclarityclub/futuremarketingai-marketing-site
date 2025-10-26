@@ -340,6 +340,8 @@ function trackJourneyEvent(eventName: JourneyEventName, properties: JourneyEvent
     window.gtag('event', eventName, {
       event_category: 'journey_guidance',
       ...properties,
+      // Filter out null values
+      industry: properties.industry ?? undefined,
       // Add timestamp
       event_timestamp: Date.now(),
       // Add session ID (can be generated once per session)

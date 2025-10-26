@@ -23,7 +23,8 @@ import { useModuleFollowUp } from '../hooks/useModuleFollowUp'
 import { trackModuleOpen, trackCTAClick } from '../utils/analytics'
 import { usePersonalizationStore } from '../stores'
 import { CalendlyFunnelSession } from '../utils/calendlyFunnelTracking'
-import { MobileExplorer, DesktopOnlyNotice } from '../components/mobile'
+import { DesktopOnlyNotice } from '../components/mobile'
+// import { MobileExplorer } from '../components/mobile' // Not used yet
 
 // Lazy load heavy components
 const Modal = lazy(() =>

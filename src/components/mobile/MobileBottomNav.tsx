@@ -170,6 +170,6 @@ MobileBottomNav.displayName = 'MobileBottomNav'
 // Type for window.gtag
 declare global {
   interface Window {
-    gtag?: (command: string, eventName: string, params: Record<string, string | number>) => void
+    gtag?: (command: string, eventName: string, params?: Record<string, unknown>) => void
   }
 }

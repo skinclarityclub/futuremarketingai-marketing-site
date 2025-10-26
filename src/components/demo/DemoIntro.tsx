@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Zap, Play, Bot, Brain, TrendingUp } from 'lucide-react'
+import { Bot, Brain, TrendingUp } from 'lucide-react'
 import { useIsMobile } from '../../hooks'
 import { DesktopOnlyNoticeModal } from '../mobile'
 
