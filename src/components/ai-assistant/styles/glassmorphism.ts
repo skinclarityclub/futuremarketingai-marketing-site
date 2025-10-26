@@ -2,45 +2,40 @@
  * Glassmorphism Styles
  *
  * Reusable Tailwind classes for glassmorphic design
+ * NOTE: App is dark-mode-only, so all styles are optimized for dark backgrounds
  */
 
 /**
  * Base Glass Effect
- * Semi-transparent with backdrop blur
+ * Semi-transparent with backdrop blur (dark mode optimized)
  */
 export const glassBase = [
   'backdrop-blur-xl',
   'backdrop-saturate-150',
-  'border border-white/20',
+  'bg-slate-900/30',
+  'border border-slate-700/30',
 ].join(' ')
 
 /**
- * Dark Mode Glass Effect
+ * Full Glass Panel
+ * For larger components like modals and panels
  */
-export const glassDark = ['dark:bg-slate-900/30', 'dark:border-slate-700/30'].join(' ')
-
-/**
- * Full Glass Panel (Light + Dark)
- */
-export const glassPanel = [glassBase, glassDark, 'shadow-2xl', 'shadow-purple-500/10'].join(' ')
+export const glassPanel = [glassBase, 'shadow-2xl', 'shadow-purple-500/10'].join(' ')
 
 /**
  * Glass Card (Smaller component)
  */
-export const glassCard = [glassBase, glassDark, 'shadow-lg', 'rounded-xl'].join(' ')
+export const glassCard = [glassBase, 'shadow-lg', 'rounded-xl'].join(' ')
 
 /**
  * Glass Button
  */
 export const glassButton = [
-  'bg-white/20',
-  'hover:bg-white/30',
-  'active:bg-white/40',
+  'bg-slate-800/30',
+  'hover:bg-slate-800/50',
+  'active:bg-slate-800/70',
   'backdrop-blur-md',
-  'border border-white/30',
-  'dark:bg-slate-800/30',
-  'dark:hover:bg-slate-800/50',
-  'dark:border-slate-600/30',
+  'border border-slate-600/30',
   'transition-all duration-200',
 ].join(' ')
 
@@ -49,12 +44,10 @@ export const glassButton = [
  */
 export const glassInput = [
   'backdrop-blur-md',
-  'border border-white/20',
-  'focus:border-purple-400/50',
+  'bg-slate-900/20',
+  'border border-slate-700/30',
+  'focus:border-purple-500/50',
   'focus:ring-2 focus:ring-purple-400/20',
-  'dark:bg-slate-900/20',
-  'dark:border-slate-700/30',
-  'dark:focus:border-purple-500/50',
   'transition-all duration-200',
 ].join(' ')
 
@@ -63,7 +56,6 @@ export const glassInput = [
  */
 export const glassHeaderFooter = [
   'backdrop-blur-sm',
-  'border-b border-white/10',
-  'dark:from-slate-900/20',
-  'dark:border-slate-700/20',
+  'bg-gradient-to-b from-slate-900/20 to-transparent',
+  'border-b border-slate-700/20',
 ].join(' ')

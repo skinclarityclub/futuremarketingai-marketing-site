@@ -70,16 +70,16 @@ export const TelegramMockup: React.FC<TelegramMockupProps> = ({
       </motion.div>
 
       {/* Chat Message Container */}
-      <div className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4 min-h-[300px] rounded-b-2xl">
+      <div className="bg-gradient-to-b from-gray-900 to-gray-800 p-4 min-h-[300px] rounded-b-2xl">
         {/* Bot Message */}
         <motion.div
-          className="bg-white dark: rounded-2xl rounded-tl-none p-4 shadow-lg mb-4"
+          className="bg-gray-800 rounded-2xl rounded-tl-none p-4 shadow-lg mb-4"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Meta Info */}
-          <div className="flex items-center gap-2 mb-3 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-2 mb-3 text-sm text-gray-400">
             <span className="font-semibold">{sampleContent.platform}</span>
             <span>•</span>
             <span className="capitalize">{contentType}</span>
@@ -89,7 +89,7 @@ export const TelegramMockup: React.FC<TelegramMockupProps> = ({
 
           {/* Content Preview */}
           <div className="mb-4">
-            <div className="text-gray-800 dark:text-gray-200 mb-3 leading-relaxed">
+            <div className="text-gray-200 mb-3 leading-relaxed">
               {sampleContent.caption}
             </div>
 
@@ -111,7 +111,7 @@ export const TelegramMockup: React.FC<TelegramMockupProps> = ({
 
           {/* Image Placeholder */}
           <div className="w-full h-32 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 rounded-lg flex items-center justify-center mb-4">
-            <div className="text-center text-gray-500 dark:text-gray-400">
+            <div className="text-center text-gray-400">
               <svg
                 className="w-12 h-12 mx-auto mb-2 opacity-50"
                 fill="none"
@@ -185,7 +185,7 @@ export const TelegramMockup: React.FC<TelegramMockupProps> = ({
             </div>
             <div className="flex-1">
               <div className="text-sm font-semibold text-accent-primary">AI Learning...</div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-gray-400">
                 Processing your feedback to improve future content
               </div>
             </div>
@@ -194,7 +194,7 @@ export const TelegramMockup: React.FC<TelegramMockupProps> = ({
 
         {/* Stats Footer */}
         <motion.div
-          className="mt-4 text-center text-xs text-gray-500 dark:text-gray-400 space-y-1"
+          className="mt-4 text-center text-xs text-gray-400 space-y-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}

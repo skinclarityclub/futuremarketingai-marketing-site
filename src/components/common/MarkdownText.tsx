@@ -29,19 +29,19 @@ export default function MarkdownText({
   const variantClasses = {
     default: `
       prose-p:my-2 prose-p:leading-relaxed
-      prose-strong:font-bold prose-strong:text-gray-900 dark:prose-strong:text-white
-      prose-em:italic prose-em:text-gray-700 dark:prose-em:text-gray-300
+      prose-strong:font-bold prose-strong:text-white
+      prose-em:italic prose-em:text-gray-300
       prose-ul:my-3 prose-ul:list-disc prose-ul:pl-5
       prose-ol:my-3 prose-ol:list-decimal prose-ol:pl-5
       prose-li:my-1 prose-li:leading-relaxed
       prose-headings:font-bold prose-headings:mt-4 prose-headings:mb-2
       prose-h1:text-xl prose-h2:text-lg prose-h3:text-base
-      prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
-      prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+      prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+      prose-code:bg-gray-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
     `,
     compact: `
       prose-p:my-1 prose-p:leading-snug
-      prose-strong:font-bold prose-strong:text-gray-900 dark:prose-strong:text-white
+      prose-strong:font-bold prose-strong:text-white
       prose-em:italic
       prose-ul:my-1 prose-ul:list-disc prose-ul:pl-4
       prose-ol:my-1 prose-ol:list-decimal prose-ol:pl-4

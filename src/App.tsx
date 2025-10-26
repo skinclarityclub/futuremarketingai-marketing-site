@@ -76,6 +76,15 @@ function App() {
   const location = useLocation()
   const isMobile = useIsMobile()
 
+  // Force dark mode activation (app is dark-mode-only by design)
+  useEffect(() => {
+    // Add 'dark' class to HTML element to enable Tailwind dark: prefixes
+    document.documentElement.classList.add('dark')
+    
+    // Optional: Set data attribute for CSS targeting
+    document.documentElement.setAttribute('data-theme', 'dark')
+  }, [])
+
   // Enable smooth scroll to top on route change
   useScrollToTop()
 

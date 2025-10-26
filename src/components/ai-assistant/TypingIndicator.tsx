@@ -57,7 +57,7 @@ export default function TypingIndicator() {
           <span className={activityInfo.color}>{activityInfo.icon}</span>
 
           {/* Activity Text */}
-          <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+          <span className="text-xs text-gray-400 font-medium">
             {activityInfo.text}
           </span>
 

@@ -168,10 +168,10 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
       >
         {(hasError || isAdBlockerDetected) && (
           <div className="flex flex-col items-center justify-center min-h-[700px] p-8 text-center">
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <p className="text-lg font-semibold text-gray-100 mb-4">
               {isAdBlockerDetected ? '🚫 Ad Blocker Gedetecteerd' : '⚠️ Fout bij laden'}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-sm text-gray-400 mb-6">
               {isAdBlockerDetected
                 ? 'Schakel je ad blocker uit of gebruik de directe link hieronder.'
                 : 'De scheduling widget kon niet worden geladen.'}

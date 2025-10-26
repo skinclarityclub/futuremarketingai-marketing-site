@@ -1304,7 +1304,7 @@ export const Calculator: React.FC = () => {
                     className="w-6 h-6 border-3 border-blue-600 border-t-transparent rounded-full animate-spin"
                     aria-hidden="true"
                   />
-                  <p className="text-gray-900 dark:text-gray-100">
+                  <p className="text-gray-100">
                     {t('calculator:loading.scheduling')}
                   </p>
                 </div>

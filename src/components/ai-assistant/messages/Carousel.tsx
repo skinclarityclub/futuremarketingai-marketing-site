@@ -96,18 +96,18 @@ export default function Carousel({ cards, onAction }: CarouselProps) {
               absolute left-2 top-1/2 -translate-y-1/2
               w-10 h-10
               items-center justify-center
-              bg-white dark:bg-gray-800
+              bg-gray-800
               rounded-full
               shadow-lg
-              border border-gray-200 dark:border-white/10
+              border border-white/10
               disabled:opacity-30 disabled:cursor-not-allowed
-              hover:bg-gray-50 dark:hover:bg-gray-700
+              hover:bg-gray-700
               transition-all duration-200
               z-10
             "
             aria-label={t('common:accessibility.previous_card')}
           >
-            <ChevronLeft size={20} className="text-gray-700 dark:text-gray-300" />
+            <ChevronLeft size={20} className="text-gray-300" />
           </button>
 
           <button
@@ -118,18 +118,18 @@ export default function Carousel({ cards, onAction }: CarouselProps) {
               absolute right-2 top-1/2 -translate-y-1/2
               w-10 h-10
               items-center justify-center
-              bg-white dark:bg-gray-800
+              bg-gray-800
               rounded-full
               shadow-lg
-              border border-gray-200 dark:border-white/10
+              border border-white/10
               disabled:opacity-30 disabled:cursor-not-allowed
-              hover:bg-gray-50 dark:hover:bg-gray-700
+              hover:bg-gray-700
               transition-all duration-200
               z-10
             "
             aria-label={t('common:accessibility.next_card')}
           >
-            <ChevronRight size={20} className="text-gray-700 dark:text-gray-300" />
+            <ChevronRight size={20} className="text-gray-300" />
           </button>
         </>
       )}
@@ -145,8 +145,8 @@ export default function Carousel({ cards, onAction }: CarouselProps) {
                 w-2 h-2 rounded-full transition-all duration-200
                 ${
                   index === currentIndex
-                    ? 'bg-purple-600 dark:bg-purple-400 w-6'
-                    : 'bg-gray-300 dark:bg-gray-600'
+                    ? 'bg-purple-400 w-6'
+                    : 'bg-gray-600'
                 }
               `}
               aria-label={`Go to card ${index + 1}`}

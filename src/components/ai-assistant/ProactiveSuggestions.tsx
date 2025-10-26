@@ -40,11 +40,11 @@ function ProactiveSuggestions({ onQuestionClick }: ProactiveSuggestionsProps) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className="px-4 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border-t border-blue-100 dark:border-blue-900/30"
+      className="px-4 py-3 bg-gradient-to-r from-blue-950/20 to-indigo-950/20 border-t border-blue-900/30"
     >
       <div className="flex items-start gap-2 mb-2">
-        <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
-        <p className="text-xs font-medium text-blue-900 dark:text-blue-100">
+        <Sparkles className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+        <p className="text-xs font-medium text-blue-100">
           Misschien interessant:
         </p>
       </div>
@@ -61,10 +61,10 @@ function ProactiveSuggestions({ onQuestionClick }: ProactiveSuggestionsProps) {
             onClick={() => onQuestionClick(suggestion)}
             className="
               px-3 py-1.5 rounded-lg text-xs
-              bg-white dark:bg-gray-800
-              text-blue-700 dark:text-blue-300
-              border border-blue-200 dark:border-blue-800
-              hover:bg-blue-50 dark:hover:bg-blue-900/30
+              bg-gray-800
+              text-blue-300
+              border border-blue-800
+              hover:bg-blue-900/30
               transition-colors
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
             "

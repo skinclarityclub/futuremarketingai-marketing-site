@@ -63,9 +63,9 @@ function SystemMessage({ messageId, content, reaction: initialReaction }: System
       {/* Message Content with Markdown Support */}
       <div className={`${glassCard} px-4 py-3 max-w-[85%]`}>
         <div
-          className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed prose prose-sm max-w-none
+          className="text-sm text-gray-200 leading-relaxed prose prose-sm max-w-none
             prose-p:my-1 prose-p:leading-relaxed
-            prose-strong:font-bold prose-strong:text-gray-900 dark:prose-strong:text-white
+            prose-strong:font-bold prose-strong:text-white
             prose-em:italic
             prose-ul:my-2 prose-ul:list-disc prose-ul:pl-4
             prose-ol:my-2 prose-ol:list-decimal prose-ol:pl-4

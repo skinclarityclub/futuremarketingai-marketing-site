@@ -1086,7 +1086,7 @@ export const Explorer: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-gray-900 dark:text-gray-100">
+                  <p className="text-gray-100">
                     {t('explorer:loading.scheduling')}
                   </p>
                 </div>

@@ -27,7 +27,7 @@ interface AdVariantProps {
 const AdVariant: React.FC<AdVariantProps> = ({ platform, headline, cta, metrics, color }) => {
   return (
     <motion.div
-      className="ad-variant bg-white dark: rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+      className="ad-variant bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.02 }}
@@ -44,9 +44,9 @@ const AdVariant: React.FC<AdVariantProps> = ({ platform, headline, cta, metrics,
       {/* Ad Preview */}
       <div className="p-4">
         {/* Product Image Placeholder */}
-        <div className="relative w-full aspect-square mb-3 rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600">
+        <div className="relative w-full aspect-square mb-3 rounded-lg overflow-hidden bg-gradient-to-br from-gray-700 to-gray-600">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-gray-500 dark:text-gray-400">
+            <div className="text-center text-gray-400">
               <svg
                 className="w-16 h-16 mx-auto mb-2 opacity-50"
                 fill="none"
@@ -67,8 +67,8 @@ const AdVariant: React.FC<AdVariantProps> = ({ platform, headline, cta, metrics,
 
         {/* Ad Copy */}
         <div className="mb-3">
-          <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-2">{headline}</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+          <h4 className="font-bold text-gray-200 mb-2">{headline}</h4>
+          <p className="text-sm text-gray-400 mb-3">
             Premium quality at the best price. Limited time offer!
           </p>
 
@@ -81,17 +81,17 @@ const AdVariant: React.FC<AdVariantProps> = ({ platform, headline, cta, metrics,
         </div>
 
         {/* Metrics */}
-        <div className="flex gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex gap-4 pt-3 border-t border-gray-700">
           <div className="flex-1 text-center">
-            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">CTR</div>
+            <div className="text-xs text-gray-400 mb-1">CTR</div>
             <div className="text-lg font-bold text-success">{metrics.ctr}%</div>
           </div>
           <div className="flex-1 text-center">
-            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">CPC</div>
+            <div className="text-xs text-gray-400 mb-1">CPC</div>
             <div className="text-lg font-bold text-accent-primary">€{metrics.cpc}</div>
           </div>
           <div className="flex-1 text-center">
-            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">ROI</div>
+            <div className="text-xs text-gray-400 mb-1">ROI</div>
             <div className="text-lg font-bold text-accent-secondary">
               {((metrics.ctr / metrics.cpc) * 10).toFixed(0)}x
             </div>
@@ -132,7 +132,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
             transition={{ duration: 0.5 }}
           >
             {/* Upload Area */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border-2 border-dashed border-gray-300 dark:border-gray-600 hover:border-accent-primary dark:hover:border-accent-primary transition-colors">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border-2 border-dashed border-gray-600 hover:border-accent-primary transition-colors">
               <div className="text-center">
                 {/* Upload Icon */}
                 <motion.div
@@ -155,7 +155,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
                 </motion.div>
 
                 <h3 className="text-2xl font-bold gradient-text mb-2">Upload Product Photo</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-gray-400 mb-6">
                   Upload één productfoto en genereer automatisch 3-5 platform-geoptimaliseerde
                   advertenties
                 </p>
@@ -163,7 +163,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
                 {/* Sample Product Image */}
                 <div className="max-w-sm mx-auto mb-6">
                   <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-accent-primary/10 to-accent-secondary/10 flex items-center justify-center">
-                    <div className="text-center text-gray-500 dark:text-gray-400">
+                    <div className="text-center text-gray-400">
                       <svg
                         className="w-24 h-24 mx-auto mb-3 opacity-50"
                         fill="none"
@@ -261,7 +261,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
                 <span className="font-semibold">3 Platform Ads Generated!</span>
               </motion.div>
               <h3 className="text-2xl font-bold gradient-text mb-2">Platform-Optimized Variants</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-400">
                 AI analyzed your product and created these platform-specific ads with predicted
                 performance
               </p>
@@ -296,7 +296,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
             <div className="flex gap-4 justify-center">
               <motion.button
                 onClick={handleReset}
-                className="px-6 py-3  dark: text-gray-800 dark:text-gray-200 font-semibold rounded-xl hover: dark:hover: transition-colors"
+                className="px-6 py-3 bg-gray-800 text-gray-200 font-semibold rounded-xl hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -326,7 +326,7 @@ export const AdBuilderDemo: React.FC<AdBuilderDemoProps> = () => {
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-success">🏆 TikTok Predicted Winner</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-gray-400">
                     5.1% CTR + €0.15 CPC = Best ROI potential (+34x multiplier)
                   </div>
                 </div>

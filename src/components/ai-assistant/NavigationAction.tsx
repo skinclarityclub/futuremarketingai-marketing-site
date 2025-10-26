@@ -73,8 +73,8 @@ export default function NavigationAction({ action, onOpenInfo }: NavigationActio
         flex items-center gap-3
         p-4 rounded-xl
         bg-gradient-to-br from-blue-50 to-indigo-50
-        dark:from-blue-950/30 dark:to-indigo-950/30
-        border border-blue-200 dark:border-blue-900/50
+        from-blue-950/30 to-indigo-950/30
+        border border-blue-900/50
         hover:shadow-md
         transition-all duration-200
       "
@@ -93,10 +93,10 @@ export default function NavigationAction({ action, onOpenInfo }: NavigationActio
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-0.5">
+          <h4 className="text-sm font-semibold text-gray-100 mb-0.5">
             {action.label}
           </h4>
-          <p className="text-xs text-gray-600 dark:text-gray-400">
+          <p className="text-xs text-gray-400">
             {action.isDemoBooking
               ? 'Klik om je demo in te plannen'
               : isDirectNavigation

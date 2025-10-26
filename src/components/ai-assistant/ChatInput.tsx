@@ -150,8 +150,8 @@ export default function ChatInput() {
               ${glassInput}
               w-full px-4 py-3 pr-12
               rounded-xl resize-none
-              text-sm text-gray-900 dark:text-white
-              placeholder:text-gray-500
+              text-sm text-white
+              placeholder:text-gray-400
               focus:outline-none
               scrollbar-hide overflow-y-auto
             `}
@@ -161,7 +161,7 @@ export default function ChatInput() {
 
           {/* Character count (when approaching limit) */}
           {input.length > 400 && (
-            <div className="absolute bottom-2 right-2 text-xs text-gray-500">
+            <div className="absolute bottom-2 right-2 text-xs text-gray-400">
               {input.length}/500
             </div>
           )}
@@ -189,7 +189,7 @@ export default function ChatInput() {
       </div>
 
       {/* Helper text */}
-      <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+      <p className="mt-2 text-xs text-gray-400">
         {t('pressEnter', { key: 'Enter' })}
       </p>
     </form>

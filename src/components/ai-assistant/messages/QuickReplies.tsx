@@ -65,9 +65,9 @@ export default function QuickReplies({ replies, onSelect }: QuickRepliesProps) {
             duration: 0.4,
             ease: [0.4, 0, 0.2, 1], // Smooth easing curve
           }}
-          className="mt-4 p-4 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-2xl border border-blue-100 dark:border-blue-900/30 backdrop-blur-sm"
+          className="mt-4 p-4 bg-gradient-to-br from-blue-950/20 to-indigo-950/20 rounded-2xl border border-blue-900/30 backdrop-blur-sm"
         >
-          <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wider">
+          <p className="text-xs font-semibold text-blue-400 mb-3 uppercase tracking-wider">
             Snelle Acties
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-2.5">
@@ -113,7 +113,7 @@ export default function QuickReplies({ replies, onSelect }: QuickRepliesProps) {
                     `
                       : isPrimary
                         ? 'px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white shadow-lg'
-                        : 'px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-2 border-blue-200 dark:border-blue-800 shadow-md'
+                        : 'px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white border-2 border-blue-800 shadow-md'
                   }
                   ${!isTourButton ? 'rounded-xl min-w-[180px] sm:min-w-[160px]' : ''}
                   backdrop-blur-sm

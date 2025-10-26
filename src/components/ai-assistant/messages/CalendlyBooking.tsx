@@ -185,18 +185,18 @@ export default function CalendlyBooking({
         {/* Message Content */}
         <div className={`${glassCard} px-4 py-3 max-w-[85%]`}>
           <div
-            className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed prose prose-sm max-w-none
+            className="text-sm text-gray-200 leading-relaxed prose prose-sm max-w-none
             prose-p:my-1 prose-p:leading-relaxed
-            prose-strong:font-bold prose-strong:text-gray-900 dark:prose-strong:text-white"
+            prose-strong:font-bold prose-strong:text-white"
           >
             <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>{content}</ReactMarkdown>
           </div>
 
           {/* Success Indicator */}
-          <div className="mt-3 p-3 rounded-lg bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900/50">
+          <div className="mt-3 p-3 rounded-lg bg-green-950/30 border border-green-900/50">
             <div className="flex items-center gap-2">
               <span className="text-2xl">✅</span>
-              <div className="text-sm text-green-800 dark:text-green-200">
+              <div className="text-sm text-green-200">
                 <p className="font-semibold">Demo ingepland!</p>
                 <p className="text-xs">Check je email voor de bevestiging</p>
               </div>
@@ -222,9 +222,9 @@ export default function CalendlyBooking({
 
         {/* Message Content */}
         <div className={`${glassCard} px-4 py-3 max-w-[85%]`}>
-          <div className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+          <div className="text-sm text-gray-200 leading-relaxed">
             <p>Geen probleem! Neem gerust je tijd om het platform verder te verkennen.</p>
-            <p className="mt-2 text-xs text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-xs text-gray-400">
               💡 Tip: Probeer de <strong>ROI Calculator</strong> of verken een paar{' '}
               <strong>modules</strong> om een beter gevoel te krijgen voor de mogelijkheden.
             </p>
@@ -256,9 +256,9 @@ export default function CalendlyBooking({
         <div className={`${glassCard} px-4 py-3 max-w-[85%]`}>
           {/* Message Text with Markdown Support */}
           <div
-            className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed prose prose-sm max-w-none
+            className="text-sm text-gray-200 leading-relaxed prose prose-sm max-w-none
             prose-p:my-1 prose-p:leading-relaxed
-            prose-strong:font-bold prose-strong:text-gray-900 dark:prose-strong:text-white
+            prose-strong:font-bold prose-strong:text-white
             prose-em:italic
             prose-ul:my-2 prose-ul:list-disc prose-ul:pl-4
             prose-ol:my-2 prose-ol:list-decimal prose-ol:pl-4
@@ -274,7 +274,7 @@ export default function CalendlyBooking({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.3 }}
-            className="mt-4 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200 dark:border-blue-900/50"
+            className="mt-4 p-4 rounded-xl bg-gradient-to-br from-blue-950/30 to-indigo-950/30 border border-blue-900/50"
             role="complementary"
             aria-labelledby="booking-title"
           >
@@ -290,11 +290,11 @@ export default function CalendlyBooking({
               <div>
                 <p
                   id="booking-title"
-                  className="text-sm font-semibold text-gray-900 dark:text-gray-100"
+                  className="text-sm font-semibold text-gray-100"
                 >
                   {calendly.eventType.name}
                 </p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">
+                <p className="text-xs text-gray-400">
                   {calendly.eventType.duration} minuten • Persoonlijke demo
                 </p>
               </div>
@@ -338,7 +338,7 @@ export default function CalendlyBooking({
 
             {/* Trust Indicators */}
             <div
-              className="mt-3 pt-3 border-t border-blue-200 dark:border-blue-900/50 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 dark:text-gray-400"
+              className="mt-3 pt-3 border-t border-blue-900/50 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-400"
               role="list"
               aria-label={t('common:accessibility.trust_indicators')}
             >
@@ -361,7 +361,7 @@ export default function CalendlyBooking({
               >
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-gray-900 dark:text-gray-100">Scheduling laden...</p>
+                  <p className="text-gray-100">Scheduling laden...</p>
                 </div>
               </div>
             </div>

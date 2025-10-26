@@ -138,20 +138,20 @@ export default function ChatHeader({
             </div>
             {/* Online Status Indicator */}
             <div
-              className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full animate-pulse"
+              className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-gray-900 rounded-full animate-pulse"
               title={t('online')}
             />
           </div>
 
           {/* Name & Subtitle */}
           <div>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
               {t('name')}
-              <span className="text-xs font-normal text-gray-500 dark:text-gray-400">
+              <span className="text-xs font-normal text-gray-400">
                 AI Assistant
               </span>
             </h2>
-            <p className="text-xs text-gray-600 dark:text-gray-400 -mt-0.5">{t('tagline')}</p>
+            <p className="text-xs text-gray-400 -mt-0.5">{t('tagline')}</p>
           </div>
         </div>
 
@@ -177,7 +177,7 @@ export default function ChatHeader({
               aria-label={`Demo voortgang: ${completedCheckpoints} van ${totalCheckpoints} checkpoints voltooid`}
             />
           </div>
-          <span className="text-xs text-gray-600 dark:text-gray-400 font-medium whitespace-nowrap">
+          <span className="text-xs text-gray-400 font-medium whitespace-nowrap">
             {completedCheckpoints}/{totalCheckpoints}
           </span>
 
@@ -193,7 +193,7 @@ export default function ChatHeader({
         {/* Progress message tooltip */}
         {pageProgress > 0 && (
           <p
-            className="mt-0.5 text-xs text-gray-500 dark:text-gray-400 italic truncate"
+            className="mt-0.5 text-xs text-gray-400 italic truncate"
             title={progressMessage}
           >
             {progressMessage}
@@ -213,7 +213,7 @@ export default function ChatHeader({
           >
             <Settings
               size={16}
-              className="text-gray-600 dark:text-gray-400 group-hover:text-purple-500 transition-colors"
+              className="text-gray-400 group-hover:text-purple-500 transition-colors"
             />
           </button>
         )}
@@ -230,7 +230,7 @@ export default function ChatHeader({
               size={16}
               className="text-yellow-500 group-hover:scale-110 transition-transform"
             />
-            <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+            <span className="text-xs font-semibold text-gray-300">
               {achievedCount}
             </span>
           </button>
@@ -267,7 +267,7 @@ export default function ChatHeader({
               size={14}
               className="text-purple-500 group-hover:scale-110 transition-transform"
             />
-            <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">
+            <span className="text-xs font-semibold text-gray-200">
               {completedCheckpoints}/{totalCheckpoints}
             </span>
             {showProgress ? (
@@ -284,7 +284,7 @@ export default function ChatHeader({
           className="p-2 hover:rounded-lg transition-colors"
           aria-label={t('common:actions.close_chat')}
         >
-          <X size={20} className="text-gray-600 dark:text-gray-400" />
+          <X size={20} className="text-gray-400" />
         </button>
       </div>
     </div>
