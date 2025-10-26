@@ -157,6 +157,9 @@ export const SimpleHeader: React.FC = () => {
     { label: t('landing.header.nav.pricing'), href: '/pricing' },
   ]
 
+  // Temporary Innostock link (desktop only)
+  const tempLinks = [{ label: 'Innostock Pitch', href: '/skinclarity-pitch' }]
+
   const isActiveLink = (href: string) => {
     return location.pathname === href
   }
@@ -224,7 +227,10 @@ export const SimpleHeader: React.FC = () => {
                     type="button"
                   >
                     <div className="w-full h-full rounded overflow-hidden">
-                      <FlagComponent title={currentLangData.name} className="w-full h-full object-cover" />
+                      <FlagComponent
+                        title={currentLangData.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </button>
 
@@ -263,7 +269,10 @@ export const SimpleHeader: React.FC = () => {
                                 type="button"
                               >
                                 <div className="w-6 h-4 rounded overflow-hidden shadow-sm flex-shrink-0">
-                                  <FlagIcon title={data.name} className="w-full h-full object-cover" />
+                                  <FlagIcon
+                                    title={data.name}
+                                    className="w-full h-full object-cover"
+                                  />
                                 </div>
                                 <span
                                   className={`text-sm font-medium ${
@@ -327,6 +336,23 @@ export const SimpleHeader: React.FC = () => {
                   >
                     {link.label}
                   </Link>
+                ))}
+
+                {/* Temporary Innostock Link - Desktop Only */}
+                {tempLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+                      isActiveLink(link.href)
+                        ? 'text-white bg-white/10'
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
                 ))}
               </nav>
 

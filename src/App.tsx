@@ -57,6 +57,11 @@ const PartnersPage = lazy(() => import('./pages/PartnersPage'))
 const SecurityPage = lazy(() => import('./pages/SecurityPage'))
 const GDPRPage = lazy(() => import('./pages/GDPRPage'))
 
+// SkinClarity Club Pitch Page (Fulfillment Partner Presentation)
+const SkinClarityPitchPage = lazy(() =>
+  import('./pages/SkinClarityPitch').then((module) => ({ default: module.SkinClarityPitchPage }))
+)
+
 /**
  * App - Main application component with routing
  *
@@ -90,6 +95,7 @@ function App() {
     '/partners',
     '/security',
     '/gdpr',
+    '/skinclarity-pitch', // Special pitch page
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
@@ -137,10 +143,10 @@ function App() {
             {/* SEO Meta Tags - Dynamic per page */}
             <SEOHelmet />
 
-        {/* Top Bar Controls - Language switcher + settings */}
-        {/* Desktop: Show TopBarControls on all pages */}
-        {/* Mobile: TopBarControlsMobile DISABLED on landing (language now in header) */}
-        {!isMobile && <TopBarControls />}
+            {/* Top Bar Controls - Language switcher + settings */}
+            {/* Desktop: Show TopBarControls on all pages */}
+            {/* Mobile: TopBarControlsMobile DISABLED on landing (language now in header) */}
+            {!isMobile && <TopBarControls />}
 
             {/* Demo UI Elements - Only show on demo routes, not on landing page */}
             {isDemoRoute && (
@@ -182,6 +188,9 @@ function App() {
                     <Route path="/security" element={<SecurityPage />} />
                     <Route path="/gdpr" element={<GDPRPage />} />
 
+                    {/* SkinClarity Club Pitch - Fulfillment Partner Presentation */}
+                    <Route path="/skinclarity-pitch" element={<SkinClarityPitchPage />} />
+
                     {/* Demo Pages */}
                     <Route path="/demo" element={<Hero />} />
                     <Route path="/demo-intro" element={<DemoIntro targetPage="demo" />} />
@@ -191,7 +200,10 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/dashboard-intro" element={<DemoIntro targetPage="dashboard" />} />
                     <Route path="/calculator" element={<Calculator />} />
-                    <Route path="/calculator-intro" element={<DemoIntro targetPage="calculator" />} />
+                    <Route
+                      path="/calculator-intro"
+                      element={<DemoIntro targetPage="calculator" />}
+                    />
                     <Route path="/calculator-test" element={<CalculatorTest />} />
                     <Route path="/ad-builder" element={<AdBuilder />} />
 
