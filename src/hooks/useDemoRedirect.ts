@@ -59,17 +59,26 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
         setNoticePage(pageName)
         setShowDesktopNotice(true)
       } else {
-        // Desktop: Navigate normally
+        // Desktop: Open in NEW fullscreen window
         const routes: Record<string, string> = {
           explorer: '/explorer',
           calculator: '/calculator',
           dashboard: '/dashboard',
           demo: '/demo',
         }
-        void navigate(routes[pageName])
+        
+        // Open in new window with fullscreen-like dimensions
+        const screenWidth = window.screen.availWidth
+        const screenHeight = window.screen.availHeight
+        
+        window.open(
+          routes[pageName],
+          '_blank',
+          `width=${screenWidth},height=${screenHeight},left=0,top=0,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`
+        )
       }
     },
-    [isMobile, navigate]
+    [isMobile]
   )
 
   const closeDesktopNotice = useCallback(() => {
