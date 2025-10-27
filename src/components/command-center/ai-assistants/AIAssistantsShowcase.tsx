@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import {
   FaChartLine,
   FaRobot,
@@ -15,82 +16,88 @@ import { GlassCard } from '../../common'
 
 type AgentType = 'strategy' | 'campaign' | 'content' | 'approval'
 
-const AGENTS = [
-  {
-    id: 'strategy' as AgentType,
-    name: 'Strategy Advisor',
-    icon: FaChartLine,
-    color: 'from-blue-500 to-cyan-500',
-    description: 'Market insights & strategie planning',
-    avatar: '📊',
-    features: [
-      'Real-time markt analyse',
-      'Concurrentie monitoring',
-      'Trend voorspelling',
-      'Strategie aanbevelingen',
-    ],
-    useCases: [
-      'Wat zijn de trends voor Q1 2025?',
-      'Analyseer mijn concurrentie',
-      'Stel een growth strategie op',
-    ],
-  },
-  {
-    id: 'campaign' as AgentType,
-    name: 'Campaign Manager',
-    icon: FaRobot,
-    color: 'from-indigo-500 to-violet-500',
-    description: 'Campaign planning & optimization',
-    avatar: '🎯',
-    features: [
-      'Automatische campagne setup',
-      'Budget optimalisatie',
-      'A/B testing',
-      'Performance tracking',
-    ],
-    useCases: [
-      'Start een LinkedIn campagne',
-      'Optimaliseer mijn advertising budget',
-      'Analyseer campagne performance',
-    ],
-  },
-  {
-    id: 'content' as AgentType,
-    name: 'Content Creator',
-    icon: FaPenFancy,
-    color: 'from-pink-500 to-rose-500',
-    description: 'Content generation & editing',
-    avatar: '✍️',
-    features: [
-      'AI content generation',
-      'Multi-platform aanpassing',
-      'Tone-of-voice matching',
-      'SEO optimalisatie',
-    ],
-    useCases: [
-      'Schrijf een LinkedIn post over AI',
-      'Maak Instagram captions',
-      'Genereer blog content',
-    ],
-  },
-  {
-    id: 'approval' as AgentType,
-    name: 'Quick Approvals',
-    icon: FaCheckCircle,
-    color: 'from-emerald-500 to-green-500',
-    description: 'Fast approve/reject actions',
-    avatar: '✅',
-    features: ['Instant approvals', 'Bulk actions', 'Smart notifications', 'Approval analytics'],
-    useCases: [
-      'Approve wachtende content',
-      'Reject campagne voorstellen',
-      'Edit en re-submit content',
-    ],
-  },
-]
-
 export const AIAssistantsShowcase: React.FC = () => {
+  const { t } = useTranslation('dashboard')
   const [selectedAgent, setSelectedAgent] = useState<AgentType>('strategy')
+
+  const AGENTS = [
+    {
+      id: 'strategy' as AgentType,
+      name: t('ai_assistants_showcase.agents.strategy.name'),
+      icon: FaChartLine,
+      color: 'from-blue-500 to-cyan-500',
+      description: t('ai_assistants_showcase.agents.strategy.description'),
+      avatar: '📊',
+      features: [
+        t('ai_assistants_showcase.agents.strategy.features.0'),
+        t('ai_assistants_showcase.agents.strategy.features.1'),
+        t('ai_assistants_showcase.agents.strategy.features.2'),
+        t('ai_assistants_showcase.agents.strategy.features.3'),
+      ],
+      useCases: [
+        t('ai_assistants_showcase.agents.strategy.use_cases.0'),
+        t('ai_assistants_showcase.agents.strategy.use_cases.1'),
+        t('ai_assistants_showcase.agents.strategy.use_cases.2'),
+      ],
+    },
+    {
+      id: 'campaign' as AgentType,
+      name: t('ai_assistants_showcase.agents.campaign.name'),
+      icon: FaRobot,
+      color: 'from-indigo-500 to-violet-500',
+      description: t('ai_assistants_showcase.agents.campaign.description'),
+      avatar: '🎯',
+      features: [
+        t('ai_assistants_showcase.agents.campaign.features.0'),
+        t('ai_assistants_showcase.agents.campaign.features.1'),
+        t('ai_assistants_showcase.agents.campaign.features.2'),
+        t('ai_assistants_showcase.agents.campaign.features.3'),
+      ],
+      useCases: [
+        t('ai_assistants_showcase.agents.campaign.use_cases.0'),
+        t('ai_assistants_showcase.agents.campaign.use_cases.1'),
+        t('ai_assistants_showcase.agents.campaign.use_cases.2'),
+      ],
+    },
+    {
+      id: 'content' as AgentType,
+      name: t('ai_assistants_showcase.agents.content.name'),
+      icon: FaPenFancy,
+      color: 'from-pink-500 to-rose-500',
+      description: t('ai_assistants_showcase.agents.content.description'),
+      avatar: '✍️',
+      features: [
+        t('ai_assistants_showcase.agents.content.features.0'),
+        t('ai_assistants_showcase.agents.content.features.1'),
+        t('ai_assistants_showcase.agents.content.features.2'),
+        t('ai_assistants_showcase.agents.content.features.3'),
+      ],
+      useCases: [
+        t('ai_assistants_showcase.agents.content.use_cases.0'),
+        t('ai_assistants_showcase.agents.content.use_cases.1'),
+        t('ai_assistants_showcase.agents.content.use_cases.2'),
+      ],
+    },
+    {
+      id: 'approval' as AgentType,
+      name: t('ai_assistants_showcase.agents.approval.name'),
+      icon: FaCheckCircle,
+      color: 'from-emerald-500 to-green-500',
+      description: t('ai_assistants_showcase.agents.approval.description'),
+      avatar: '✅',
+      features: [
+        t('ai_assistants_showcase.agents.approval.features.0'),
+        t('ai_assistants_showcase.agents.approval.features.1'),
+        t('ai_assistants_showcase.agents.approval.features.2'),
+        t('ai_assistants_showcase.agents.approval.features.3'),
+      ],
+      useCases: [
+        t('ai_assistants_showcase.agents.approval.use_cases.0'),
+        t('ai_assistants_showcase.agents.approval.use_cases.1'),
+        t('ai_assistants_showcase.agents.approval.use_cases.2'),
+      ],
+    },
+  ]
 
   return (
     <div className="space-y-8">
@@ -117,7 +124,7 @@ export const AIAssistantsShowcase: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-5xl font-bold gradient-text mb-4"
         >
-          Telegram AI Assistants
+          {t('ai_assistants_showcase.hero.title')}
         </motion.h2>
 
         <motion.p
@@ -126,7 +133,7 @@ export const AIAssistantsShowcase: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="text-xl text-white/80 max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          4 gespecialiseerde AI agents die je helpen met strategie, campagnes, content en approvals.
+          {t('ai_assistants_showcase.hero.subtitle')}
           <br />
           <span className="text-blue-400 font-semibold">
             Altijd en overal bereikbaar via Telegram.
@@ -228,7 +235,9 @@ export const AIAssistantsShowcase: React.FC = () => {
 
                   {/* Features */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-white/80 mb-2">Features:</h4>
+                    <h4 className="text-sm font-semibold text-white/80 mb-2">
+                      {t('ai_assistants_showcase.labels.features')}
+                    </h4>
                     <div className="grid grid-cols-2 gap-2">
                       {agent.features.map((feature, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm text-white/60">
@@ -241,7 +250,9 @@ export const AIAssistantsShowcase: React.FC = () => {
 
                   {/* Use Cases */}
                   <div>
-                    <h4 className="text-sm font-semibold text-white/80 mb-2">Voorbeelden:</h4>
+                    <h4 className="text-sm font-semibold text-white/80 mb-2">
+                      {t('ai_assistants_showcase.labels.examples')}
+                    </h4>
                     <div className="space-y-1">
                       {agent.useCases.slice(0, 2).map((useCase, i) => (
                         <div key={i} className="text-xs text-white/50 rounded px-2 py-1">
@@ -280,8 +291,8 @@ export const AIAssistantsShowcase: React.FC = () => {
             <FaTelegram className="w-9 h-9 text-white" />
           </motion.div>
           <div>
-            <h3 className="text-3xl font-bold text-white mb-1">Live Demo</h3>
-            <p className="text-white/70">Test alle agents in real-time Telegram interface</p>
+            <h3 className="text-3xl font-bold text-white mb-1">{t('ai_assistants_showcase.demo.title')}</h3>
+            <p className="text-white/70">{t('ai_assistants_showcase.demo.subtitle')}</p>
           </div>
         </motion.div>
 
@@ -294,16 +305,16 @@ export const AIAssistantsShowcase: React.FC = () => {
           {/* Info Panel */}
           <div className="w-full lg:w-1/2 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-white mb-3">Hoe het werkt:</h4>
+              <h4 className="text-lg font-semibold text-white mb-3">{t('ai_assistants_showcase.demo.how_it_works.title')}</h4>
               <div className="space-y-3">
                 <div className="flex gap-3">
                   <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0 text-indigo-400 font-bold">
                     1
                   </div>
                   <div>
-                    <h5 className="font-medium text-white">Stuur een bericht</h5>
+                    <h5 className="font-medium text-white">{t('ai_assistants_showcase.demo.how_it_works.step1.title')}</h5>
                     <p className="text-sm text-white/60">
-                      Chat met de AI via Telegram, net als met een collega
+                      {t('ai_assistants_showcase.demo.how_it_works.step1.description')}
                     </p>
                   </div>
                 </div>
@@ -313,9 +324,9 @@ export const AIAssistantsShowcase: React.FC = () => {
                     2
                   </div>
                   <div>
-                    <h5 className="font-medium text-white">Smart Routing</h5>
+                    <h5 className="font-medium text-white">{t('ai_assistants_showcase.demo.how_it_works.step2.title')}</h5>
                     <p className="text-sm text-white/60">
-                      AI bepaalt automatisch welke agent je vraag moet beantwoorden
+                      {t('ai_assistants_showcase.demo.how_it_works.step2.description')}
                     </p>
                   </div>
                 </div>
@@ -325,9 +336,9 @@ export const AIAssistantsShowcase: React.FC = () => {
                     3
                   </div>
                   <div>
-                    <h5 className="font-medium text-white">Instant Response</h5>
+                    <h5 className="font-medium text-white">{t('ai_assistants_showcase.demo.how_it_works.step3.title')}</h5>
                     <p className="text-sm text-white/60">
-                      Krijg binnen seconden een expert antwoord met acties
+                      {t('ai_assistants_showcase.demo.how_it_works.step3.description')}
                     </p>
                   </div>
                 </div>
@@ -337,9 +348,9 @@ export const AIAssistantsShowcase: React.FC = () => {
                     4
                   </div>
                   <div>
-                    <h5 className="font-medium text-white">Autonomous Execution</h5>
+                    <h5 className="font-medium text-white">{t('ai_assistants_showcase.demo.how_it_works.step4.title')}</h5>
                     <p className="text-sm text-white/60">
-                      AI voert taken automatisch uit en rapporteert terug
+                      {t('ai_assistants_showcase.demo.how_it_works.step4.description')}
                     </p>
                   </div>
                 </div>

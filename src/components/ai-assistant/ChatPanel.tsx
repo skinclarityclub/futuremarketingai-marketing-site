@@ -113,7 +113,7 @@ export default function ChatPanel({ onOpenInfoPanel }: ChatPanelProps) {
           ${
             isMobile
               ? 'bottom-0 left-0 right-0 rounded-t-3xl max-h-[70vh] z-[9999]'
-              : 'right-6 top-[10vh] w-[600px] h-[70vh] rounded-2xl shadow-2xl z-50'
+              : 'right-6 top-[10vh] w-[600px] h-[80vh] rounded-2xl shadow-2xl z-50'
           }
           ${glassPanel}
           overflow-hidden

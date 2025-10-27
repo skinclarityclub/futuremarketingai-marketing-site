@@ -220,5 +220,124 @@
   "system_health": {
     "title": "Systeem Status",
     "last_updated": "Laatst bijgewerkt:"
+  },
+  "ai_assistants_showcase": {
+    "hero": {
+      "title": "Ontmoet je AI Marketing Team",
+      "subtitle": "4 gespecialiseerde AI agents die 24/7 beschikbaar zijn via Telegram",
+      "cta": "Test Nu Live in Telegram"
+    },
+    "agents": {
+      "strategy": {
+        "name": "Strategy Advisor",
+        "description": "Market insights & strategie planning",
+        "features": {
+          "0": "Real-time markt analyse",
+          "1": "Concurrentie monitoring",
+          "2": "Trend voorspelling",
+          "3": "Strategie aanbevelingen"
+        },
+        "use_cases": {
+          "0": "Wat zijn de trends voor Q1 2025?",
+          "1": "Analyseer mijn concurrentie",
+          "2": "Stel een growth strategie op"
+        }
+      },
+      "campaign": {
+        "name": "Campaign Manager",
+        "description": "Campaign planning & optimization",
+        "features": {
+          "0": "Automatische campagne setup",
+          "1": "Budget optimalisatie",
+          "2": "A/B testing",
+          "3": "Performance tracking"
+        },
+        "use_cases": {
+          "0": "Start een LinkedIn campagne",
+          "1": "Optimaliseer mijn advertising budget",
+          "2": "Analyseer campagne performance"
+        }
+      },
+      "content": {
+        "name": "Content Creator",
+        "description": "Content generation & editing",
+        "features": {
+          "0": "AI content generation",
+          "1": "Multi-platform aanpassing",
+          "2": "Tone-of-voice matching",
+          "3": "SEO optimalisatie"
+        },
+        "use_cases": {
+          "0": "Schrijf een LinkedIn post over AI",
+          "1": "Maak Instagram captions",
+          "2": "Genereer blog content"
+        }
+      },
+      "approval": {
+        "name": "Quick Approvals",
+        "description": "Fast approve/reject actions",
+        "features": {
+          "0": "Instant approvals",
+          "1": "Bulk actions",
+          "2": "Smart notifications",
+          "3": "Approval analytics"
+        },
+        "use_cases": {
+          "0": "Approve wachtende content",
+          "1": "Reject campagne voorstellen",
+          "2": "Edit en re-submit content"
+        }
+      }
+    },
+    "demo": {
+      "title": "Live Demo",
+      "subtitle": "Test alle agents in real-time Telegram interface",
+      "how_it_works": {
+        "title": "Hoe het werkt:",
+        "step1": {
+          "title": "Stuur een bericht",
+          "description": "Chat met de AI via Telegram, net als met een collega"
+        },
+        "step2": {
+          "title": "Smart Routing",
+          "description": "AI bepaalt automatisch welke agent je vraag moet beantwoorden"
+        },
+        "step3": {
+          "title": "Instant Response",
+          "description": "Krijg binnen seconden een expert antwoord met acties"
+        },
+        "step4": {
+          "title": "Autonomous Execution",
+          "description": "AI voert taken automatisch uit en rapporteert terug"
+        }
+      },
+      "integration": {
+        "title": "Technische Integratie",
+        "features": {
+          "0": "Seamless Telegram Bot API",
+          "1": "Webhook-based real-time messaging",
+          "2": "Encrypted end-to-end communication",
+          "3": "Multi-agent orchestration",
+          "4": "Context-aware conversations",
+          "5": "Auto-scaling infrastructure"
+        }
+      },
+      "business_value": {
+        "title": "Business Value",
+        "benefits": {
+          "0": "24/7 beschikbaarheid zonder extra kosten",
+          "1": "Response tijd < 3 seconden",
+          "2": "Schaalt met je team zonder training",
+          "3": "Naadloze integratie in je workflow",
+          "4": "Volledig geautomatiseerde taakuitvoering",
+          "5": "Real-time rapportage en inzichten"
+        }
+      },
+      "cta": "Start Gratis Trial"
+    },
+    "labels": {
+      "features": "Features:",
+      "examples": "Voorbeelden:"
+    }
   }
 }
