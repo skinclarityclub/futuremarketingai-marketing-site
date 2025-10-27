@@ -59,7 +59,7 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
         setNoticePage(pageName)
         setShowDesktopNotice(true)
       } else {
-        // Desktop: Open in NEW maximized window (best we can do without user prompt)
+        // Desktop: Open in new window (simple - browser handles it)
         const routes: Record<string, string> = {
           explorer: '/explorer',
           calculator: '/calculator',
@@ -67,18 +67,8 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
           demo: '/demo',
         }
         
-        // Get screen dimensions
-        const screenLeft = window.screenLeft || window.screenX || 0
-        const screenTop = window.screenTop || window.screenY || 0
-        const width = window.screen.availWidth
-        const height = window.screen.availHeight
-        
-        // Open maximized window (fills entire screen like maximized app)
-        window.open(
-          routes[pageName],
-          '_blank',
-          `width=${width},height=${height},left=${screenLeft},top=${screenTop},resizable=yes,scrollbars=yes`
-        )
+        // Simple window.open - browser will open new tab/window based on user settings
+        window.open(routes[pageName], '_blank')
       }
     },
     [isMobile]
