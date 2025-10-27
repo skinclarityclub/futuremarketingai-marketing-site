@@ -10332,11 +10332,58 @@
             "testStrategy": "Manually review all assets in both themes. Ensure documentation is clear, actionable, and includes examples. Verify that new components adhere to guidelines during code review."
           }
         ]
+      },
+      {
+        "id": 27,
+        "title": "Refactor \"Teams 10-50\" Positioning to Outcome-Based Messaging",
+        "description": "Replace all instances of \"Teams 10-50\" and specific team size references with flexible, outcome-based messaging across the application to create more inclusive positioning and align with industry best practices.",
+        "details": "Implementation will follow a phased approach:\n\n1. **Phase 1: Hero & Trust Signals (~15 occurrences)**\n   - Replace \"Teams 10-50\" with \"Built for Scale\" or \"Growth-Stage Teams\"\n   - Update subtitle \"voor teams van 10-50 mensen\" to \"voor groeiende marketing teams\"\n   - Modify all hero section copy to remove specific team size references\n\n2. **Phase 2: Feature Pages (~30 occurrences)**\n   - Change \"Perfect voor teams van 10-50\" to \"Perfect voor scaling teams\"\n   - Update all feature descriptions to use outcome-based language\n   - Ensure consistent terminology across all feature pages\n\n3. **Phase 3: Documentation (~24 occurrences)**\n   - Update configuration files and markdown documentation\n   - Maintain specific team size references only in:\n     - Paid ads targeting\n     - Pricing page expectations\n     - Case studies (as social proof)\n     - Sales CRM (backend)\n\nTechnical implementation:\n- Create a terminology mapping document for consistent replacements\n- Use search tools to identify all 69 instances of \"10-50\" in the codebase\n- Implement string replacements in React components, static content, and documentation\n- Update i18n translation files if applicable\n- Reference the TEAM-SIZE-POSITIONING-ALTERNATIVE-STRATEGY.md document for guidance\n- Ensure all copy changes maintain brand voice and tone",
+        "testStrategy": "1. **Automated Testing**:\n   - Create unit tests for components with updated messaging\n   - Verify that no hard-coded \"10-50\" references remain in the codebase (except in allowed areas)\n   - Run regression tests to ensure functionality is not affected\n\n2. **Manual Testing**:\n   - Visual inspection of all pages where copy was changed\n   - Verify consistent messaging across the application\n   - Check responsive design to ensure new copy fits properly on all screen sizes\n   - Review all landing pages, feature pages, and documentation for consistent terminology\n\n3. **Validation**:\n   - Conduct A/B testing to measure impact on conversion rates\n   - Gather feedback from marketing and sales teams on the new positioning\n   - Monitor analytics to track if a wider range of team sizes engage with the platform\n   - Verify SEO impact of copy changes",
+        "status": "pending",
+        "dependencies": [
+          2,
+          26
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Update Hero Sections and Trust Signals",
+            "description": "Replace all instances of 'Teams 10-50' and specific team size references in hero sections and trust signals with outcome-based messaging.",
+            "dependencies": [],
+            "details": "Focus on hero.json files (approximately 15 occurrences). Replace 'Teams 10-50' with 'Built for Scale' or 'Growth-Stage Teams'. Update subtitle 'voor teams van 10-50 mensen' to 'voor groeiende marketing teams'. Create a terminology mapping document to ensure consistent replacements. Use search tools to identify all instances in hero sections. Update i18n translation files if applicable. Test all hero sections across different screen sizes to ensure proper display of new messaging.",
+            "status": "in-progress",
+            "testStrategy": "Conduct visual inspection of all hero sections to verify updated messaging. Run automated tests to ensure no hard-coded '10-50' references remain in hero.json files. Verify that all translations are updated correctly in i18n files."
+          },
+          {
+            "id": 2,
+            "title": "Refactor Feature Pages Messaging",
+            "description": "Update all feature pages to replace team size references with outcome-based language across approximately 30 occurrences.",
+            "dependencies": [
+              1
+            ],
+            "details": "Target explorer.json and common.json files. Change 'Perfect voor teams van 10-50' to 'Perfect voor scaling teams'. Update all feature descriptions to use outcome-based language. Ensure consistent terminology across all feature pages following the mapping document created in subtask 1. Implement string replacements in React components and static content. Maintain brand voice and tone in all copy changes. Reference the TEAM-SIZE-POSITIONING-ALTERNATIVE-STRATEGY.md document for guidance on appropriate terminology.",
+            "status": "pending",
+            "testStrategy": "Create unit tests for components with updated messaging. Run regression tests to ensure functionality is not affected. Perform content review to verify consistent terminology usage across all feature pages."
+          },
+          {
+            "id": 3,
+            "title": "Documentation and Configuration Files Cleanup",
+            "description": "Update all documentation and configuration files to remove specific team size references while maintaining references only in specified areas.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Focus on config files and MD files (approximately 24 occurrences). Update configuration files and markdown documentation to use outcome-based messaging. Maintain specific team size references only in: paid ads targeting, pricing page expectations, case studies (as social proof), and sales CRM (backend). Use search tools to identify all instances of '10-50' in documentation. Implement replacements according to the terminology mapping document. Ensure all documentation remains clear and consistent with the new messaging approach.",
+            "status": "pending",
+            "testStrategy": "Perform comprehensive documentation review to verify all updates. Create automated tests to scan documentation files for unauthorized team size references. Test documentation rendering to ensure formatting remains intact after updates."
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-10-23T17:11:34.940Z",
-      "updated": "2025-10-26T22:33:00.507Z",
+      "updated": "2025-10-27T23:27:56.513Z",
       "description": "Tasks for mobile-optimization context"
     }
   }

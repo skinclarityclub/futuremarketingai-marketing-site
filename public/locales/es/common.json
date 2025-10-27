@@ -255,7 +255,7 @@
     "default_trust": {
       "strategy_call": "✓ Llamada estratégica de 30 min",
       "no_cc": "✓ No se requiere tarjeta de crédito",
-      "team_size": "✓ Construido para equipos de 10-50"
+      "team_size": "✓ Construido PARA Escalar"
     }
   },
   "pricing_banner": {
@@ -525,7 +525,7 @@
   },
   "early_adopter_benefits": {
     "founder_pricing": "Asegura <strong class=\"text-white\">precios de fundador</strong> para siempre",
-    "team_size": "Perfecto para equipos de <strong class=\"text-white\">10-50 personas</strong>",
+    "team_size": "Perfecto para <strong class=\"text-white\">equipos de marketing en crecimiento</strong>",
     "founder_access": "<strong class=\"text-white\">Acceso directo al fundador</strong> vía Slack",
     "shape_product": "Da forma al producto <strong class=\"text-white\">con nosotros</strong>"
   },

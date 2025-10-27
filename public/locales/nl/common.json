@@ -192,7 +192,7 @@
     "default_trust": {
       "strategy_call": "✓ 30-min strategiegesprek",
       "no_cc": "✓ Geen creditcard nodig",
-      "team_size": "✓ Gebouwd voor teams van 10-50"
+      "team_size": "✓ Gebouwd VOOR Groei"
     }
   },
   "pricing_banner": {
@@ -462,7 +462,7 @@
   },
   "early_adopter_benefits": {
     "founder_pricing": "Lock <strong class=\"text-white\">founder pricing</strong> voor altijd",
-    "team_size": "Perfect voor teams van <strong class=\"text-white\">10-50 mensen</strong>",
+    "team_size": "Perfect voor <strong class=\"text-white\">groeiende marketing teams</strong>",
     "founder_access": "Directe <strong class=\"text-white\">founder toegang</strong> via Slack",
     "shape_product": "Vorm het product <strong class=\"text-white\">met ons</strong> mee"
   },
