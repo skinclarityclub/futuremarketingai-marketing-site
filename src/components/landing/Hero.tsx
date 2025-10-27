@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom'
 import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useIsMobile } from '../../hooks/useMediaQuery'
+import { useDemoRedirect } from '../../hooks/useDemoRedirect'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
 
@@ -373,7 +374,7 @@ export const Hero: React.FC = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              onClick={() => window.open('/demo', '_blank')}
+              onClick={() => openDemo('demo')}
               className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 w-full sm:w-auto"
             >
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
