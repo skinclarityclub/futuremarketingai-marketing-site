@@ -146,6 +146,7 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
         ringColor: { value: new THREE.Color('#00D4FF') },
         dotSpacing: { value: 0.15 },
         dotSize: { value: 0.08 },
+        cameraPosition: { value: new THREE.Vector3() },
       },
       vertexShader: `
         varying vec2 vUv;
@@ -162,6 +163,7 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
         uniform vec3 ringColor;
         uniform float dotSpacing;
         uniform float dotSize;
+        uniform vec3 cameraPosition;
         
         varying vec2 vUv;
         varying vec3 vPosition;
@@ -496,6 +498,10 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
     }
     if (dottedRingMaterial.uniforms.time) {
       dottedRingMaterial.uniforms.time.value = time * timeMultiplier
+    }
+    // Update camera position uniform for fresnel effect
+    if (dottedRingMaterial.uniforms.cameraPosition) {
+      dottedRingMaterial.uniforms.cameraPosition.value.copy(camera.position)
     }
 
     // Scroll-based rotation with velocity influence (only when visible)
