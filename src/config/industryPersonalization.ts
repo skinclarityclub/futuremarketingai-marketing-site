@@ -206,7 +206,7 @@ export const FOUNDING_TEAMS: FoundingTeam[] = [
 
 /**
  * Industry-Specific Messaging
- * Targets scaling teams (10-50 people) managing multiple channels
+ * Targets scaling teams managing multiple channels
  */
 export interface IndustryMessaging {
   heroSubtitle: string
@@ -239,7 +239,7 @@ export const INDUSTRY_MESSAGING: Record<string, IndustryMessaging> = {
   },
   other: {
     heroSubtitle:
-      'For marketing teams of 10-50 people managing multiple channels without adding headcount',
+      'For fast-moving marketing teams managing multiple channels without adding headcount',
     calculatorIntro:
       'Calculate what you save: autonomous marketing with your current 3-6 person team',
     ctaPrimaryMessage: 'Start My Growth',

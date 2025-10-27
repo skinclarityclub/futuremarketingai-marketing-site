@@ -51,7 +51,7 @@ export function getNavigationAction(intent: NavigationIntent): NavigationActionD
         '📊 Automatische trend analyse en voorspellingen',
         '🎯 Hashtag strategie optimalisatie',
         '📈 Competitor intelligence en benchmarking',
-        '💡 Strategische inzichten voor 10-50 marketeers',
+        '💡 Strategische inzichten voor scaling teams',
       ],
     },
     dashboard: {
