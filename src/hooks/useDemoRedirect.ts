@@ -59,7 +59,7 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
         setNoticePage(pageName)
         setShowDesktopNotice(true)
       } else {
-        // Desktop: Open in NEW window and request fullscreen
+        // Desktop: Open in NEW maximized window (best we can do without user prompt)
         const routes: Record<string, string> = {
           explorer: '/explorer',
           calculator: '/calculator',
@@ -67,25 +67,18 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
           demo: '/demo',
         }
         
-        // Open new window
-        const newWindow = window.open(
+        // Get screen dimensions
+        const screenLeft = window.screenLeft || window.screenX || 0
+        const screenTop = window.screenTop || window.screenY || 0
+        const width = window.screen.availWidth
+        const height = window.screen.availHeight
+        
+        // Open maximized window (fills entire screen like maximized app)
+        window.open(
           routes[pageName],
           '_blank',
-          'width=1920,height=1080'
+          `width=${width},height=${height},left=${screenLeft},top=${screenTop},resizable=yes,scrollbars=yes`
         )
-        
-        // Request fullscreen after window loads
-        if (newWindow) {
-          newWindow.addEventListener('load', () => {
-            // Try to enter fullscreen mode
-            const docElement = newWindow.document.documentElement
-            if (docElement.requestFullscreen) {
-              docElement.requestFullscreen().catch((err) => {
-                console.log('Fullscreen request failed:', err)
-              })
-            }
-          })
-        }
       }
     },
     [isMobile]
