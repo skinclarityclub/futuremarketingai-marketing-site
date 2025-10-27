@@ -269,6 +269,7 @@ export const Hero: React.FC = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
   const { t } = useTranslation('common')
+  const { openDemo } = useDemoRedirect()
 
   useEffect(() => {
     if (isInView) {
