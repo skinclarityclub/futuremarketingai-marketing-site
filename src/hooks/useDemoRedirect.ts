@@ -59,7 +59,7 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
         setNoticePage(pageName)
         setShowDesktopNotice(true)
       } else {
-        // Desktop: Open in NEW fullscreen window
+        // Desktop: Open in NEW window and request fullscreen
         const routes: Record<string, string> = {
           explorer: '/explorer',
           calculator: '/calculator',
@@ -67,15 +67,25 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
           demo: '/demo',
         }
         
-        // Open in new window with fullscreen-like dimensions
-        const screenWidth = window.screen.availWidth
-        const screenHeight = window.screen.availHeight
-        
-        window.open(
+        // Open new window
+        const newWindow = window.open(
           routes[pageName],
           '_blank',
-          `width=${screenWidth},height=${screenHeight},left=0,top=0,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no`
+          'width=1920,height=1080'
         )
+        
+        // Request fullscreen after window loads
+        if (newWindow) {
+          newWindow.addEventListener('load', () => {
+            // Try to enter fullscreen mode
+            const docElement = newWindow.document.documentElement
+            if (docElement.requestFullscreen) {
+              docElement.requestFullscreen().catch((err) => {
+                console.log('Fullscreen request failed:', err)
+              })
+            }
+          })
+        }
       }
     },
     [isMobile]
