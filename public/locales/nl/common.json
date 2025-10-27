@@ -816,6 +816,141 @@
         "subtitle": "Sluit je aan bij de eerste 10 teams die een oneerlijke 2-3 jaar voorsprong opbouwen voor mainstream adoptie",
         "button": "Sluit aan bij Wachtlijst - 2 Plekken Over"
       }
+    },
+    "system_diagram": {
+      "modules": {
+        "core": {
+          "label": "Manager Core",
+          "description": "Centrale workflow orchestratie, A/B testing, en Telegram command hub",
+          "painPoint": "Handmatig Workflow Chaos",
+          "stats": {
+            "workflows": "Workflows",
+            "abtests": "A/B Tests",
+            "commands": "Commando's",
+            "success": "Succes"
+          },
+          "features": [
+            "Wekelijkse agenda distributie",
+            "A/B testing coördinatie",
+            "Telegram bot integratie",
+            "Kwaliteitscontrole workflow",
+            "Multi-account orchestratie"
+          ]
+        },
+        "research": {
+          "label": "Research Hub",
+          "description": "Diepgaande multi-agent research: trends, hashtags, en wekelijkse thema planning",
+          "painPoint": "Geen Tijd voor Strategie",
+          "stats": {
+            "agents": "AI Agents",
+            "trends": "Trends Gevonden",
+            "hashtags": "Hashtags",
+            "themes": "Thema's/Week"
+          },
+          "features": [
+            "4 parallelle AI research agents",
+            "Trend voorspelling & analyse",
+            "Hashtag ontdekking & tracking",
+            "Wekelijkse thema generatie",
+            "Merk/product integratie",
+            "Multi-taal research"
+          ]
+        },
+        "content": {
+          "label": "Content Factory",
+          "description": "Multi-platform content generatie: Instagram, TikTok, YouTube, LinkedIn, Blogs",
+          "painPoint": "Kan Niet Schalen",
+          "stats": {
+            "platforms": "Platforms",
+            "posts": "Posts/Maand",
+            "formats": "Formaten",
+            "quality": "Kwaliteit"
+          },
+          "features": [
+            "Instagram: Posts, Carousels, Reels, Stories",
+            "Facebook, TikTok, YouTube, LinkedIn",
+            "Website & Webshop blogs",
+            "Multi-taal content",
+            "Zelf-lerend AI optimalisatie",
+            "Telegram goedkeuringssysteem"
+          ]
+        },
+        "publishing": {
+          "label": "Publishing Engine",
+          "description": "Auto-planning en intelligent posten op optimale tijden per platform",
+          "painPoint": "Inconsistent Posten",
+          "stats": {
+            "scheduled": "Gepland",
+            "posts": "Posts/Maand",
+            "ontime": "Op Tijd",
+            "platforms": "Platforms"
+          },
+          "features": [
+            "Platform-specifieke optimale timing",
+            "Auto-planning kalender",
+            "Multi-platform distributie",
+            "Wachtrij beheer",
+            "Tijdzone optimalisatie"
+          ]
+        },
+        "analytics": {
+          "label": "Analytics Monitor",
+          "description": "Performance tracking, winner detectie, en multi-account ROI optimalisatie",
+          "painPoint": "Blind Flying",
+          "stats": {
+            "scans": "Dagelijkse Scans",
+            "winners": "Winners",
+            "roi": "ROI Boost",
+            "accounts": "Accounts"
+          },
+          "features": [
+            "Dagelijkse performance analyse",
+            "Winner content detectie",
+            "Sub-account → Main promotie",
+            "Strategie vergelijking testen",
+            "ROI optimalisatie voor ads",
+            "Engagement patroon leren"
+          ]
+        },
+        "command": {
+          "label": "Command Center",
+          "description": "Klant dashboard: campagnes, ads, analytics, en content kalender overzicht",
+          "painPoint": "Geen Centraal Overzicht",
+          "stats": {
+            "campaigns": "Campagnes",
+            "ads": "Actieve Ads",
+            "calendar": "Kalender",
+            "reports": "Rapporten"
+          },
+          "features": [
+            "Campagne launcher",
+            "Product foto → Ad creator",
+            "Real-time platform inzichten",
+            "Content kalender weergave",
+            "Wekelijkse research rapporten",
+            "Engagement & groei metrics"
+          ]
+        },
+        "automation": {
+          "label": "Automation Engine",
+          "description": "Zelf-lerend systeem met Telegram goedkeuring en kwaliteitscontrole",
+          "painPoint": "Geen Automation Expertise",
+          "stats": {
+            "approvals": "Goedkeuringen",
+            "autolearn": "Auto-Learn",
+            "quality": "Kwaliteit",
+            "workflows": "Workflows"
+          },
+          "features": [
+            "Telegram goedkeuringssysteem",
+            "Zelf-lerend van feedback",
+            "Kwaliteitsscore tracking",
+            "Content afwijzing analyse",
+            "Continue verbetering",
+            "Slimme workflow automatisering"
+          ]
+        }
+      }
     }
   }
 }

@@ -216,28 +216,22 @@ export const SystemDiagram: React.FC = () => {
   const modules: Module[] = [
     {
       id: 'core',
-      label: 'Manager Core',
-      description: 'Central workflow orchestration, A/B testing, and Telegram command hub',
+      label: t('system_diagram.modules.core.label'),
+      description: t('system_diagram.modules.core.description'),
       x: 50,
       y: 50,
       color: '#00D4FF',
       glow: '0 0 30px rgba(0, 212, 255, 0.6)',
       status: 'active',
-      painPoint: 'Manual Workflow Chaos',
+      painPoint: t('system_diagram.modules.core.painPoint'),
       monthlySavings: 2800,
       stats: [
-        { label: 'Workflows', value: '247', trend: 'up' },
-        { label: 'A/B Tests', value: '89', trend: 'up' },
-        { label: 'Commands', value: '1.2K', trend: 'up' },
-        { label: 'Success', value: '97.8%', trend: 'up' },
+        { label: t('system_diagram.modules.core.stats.workflows'), value: '247', trend: 'up' },
+        { label: t('system_diagram.modules.core.stats.abtests'), value: '89', trend: 'up' },
+        { label: t('system_diagram.modules.core.stats.commands'), value: '1.2K', trend: 'up' },
+        { label: t('system_diagram.modules.core.stats.success'), value: '97.8%', trend: 'up' },
       ],
-      features: [
-        'Weekly agenda distribution',
-        'A/B testing coordination',
-        'Telegram bot integration',
-        'Quality control workflow',
-        'Multi-account orchestration',
-      ],
+      features: t('system_diagram.modules.core.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
@@ -247,29 +241,22 @@ export const SystemDiagram: React.FC = () => {
     // 1. RESEARCH HUB (Het Brein) - Top position (12 o'clock)
     {
       id: 'research',
-      label: 'Research Hub',
-      description: 'Deep multi-agent research: trends, hashtags, and weekly theme planning',
+      label: t('system_diagram.modules.research.label'),
+      description: t('system_diagram.modules.research.description'),
       x: 50,
       y: 12,
       color: '#9333EA',
       glow: '0 0 20px rgba(147, 51, 234, 0.5)',
       status: 'processing',
-      painPoint: 'Geen Tijd voor Strategie',
+      painPoint: t('system_diagram.modules.research.painPoint'),
       monthlySavings: 3200,
       stats: [
-        { label: 'AI Agents', value: '4', trend: 'neutral' },
-        { label: 'Trends Found', value: '842', trend: 'up' },
-        { label: 'Hashtags', value: '3.2K', trend: 'up' },
-        { label: 'Themes/Week', value: '1', trend: 'neutral' },
+        { label: t('system_diagram.modules.research.stats.agents'), value: '4', trend: 'neutral' },
+        { label: t('system_diagram.modules.research.stats.trends'), value: '842', trend: 'up' },
+        { label: t('system_diagram.modules.research.stats.hashtags'), value: '3.2K', trend: 'up' },
+        { label: t('system_diagram.modules.research.stats.themes'), value: '1', trend: 'neutral' },
       ],
-      features: [
-        '4 parallel AI research agents',
-        'Trend forecasting & analysis',
-        'Hashtag discovery & tracking',
-        'Weekly theme generation',
-        'Brand/product integration',
-        'Multi-language research',
-      ],
+      features: t('system_diagram.modules.research.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
@@ -279,29 +266,22 @@ export const SystemDiagram: React.FC = () => {
     // 2. CONTENT FACTORY - Right-top position (2 o'clock)
     {
       id: 'content',
-      label: 'Content Factory',
-      description: 'Multi-platform content generation: Instagram, TikTok, YouTube, LinkedIn, Blogs',
+      label: t('system_diagram.modules.content.label'),
+      description: t('system_diagram.modules.content.description'),
       x: 84,
       y: 23,
       color: '#EC4899',
       glow: '0 0 20px rgba(236, 72, 153, 0.5)',
       status: 'active',
-      painPoint: 'Kan Niet Schalen',
+      painPoint: t('system_diagram.modules.content.painPoint'),
       monthlySavings: 4500,
       stats: [
-        { label: 'Platforms', value: '7', trend: 'neutral' },
-        { label: 'Posts/Maand', value: '160', trend: 'up' },
-        { label: 'Formats', value: '12+', trend: 'neutral' },
-        { label: 'Quality', value: '94%', trend: 'up' },
+        { label: t('system_diagram.modules.content.stats.platforms'), value: '7', trend: 'neutral' },
+        { label: t('system_diagram.modules.content.stats.posts'), value: '160', trend: 'up' },
+        { label: t('system_diagram.modules.content.stats.formats'), value: '12+', trend: 'neutral' },
+        { label: t('system_diagram.modules.content.stats.quality'), value: '94%', trend: 'up' },
       ],
-      features: [
-        'Instagram: Posts, Carousels, Reels, Stories',
-        'Facebook, TikTok, YouTube, LinkedIn',
-        'Website & Webshop blogs',
-        'Multi-language content',
-        'Self-learning AI optimization',
-        'Telegram approval system',
-      ],
+      features: t('system_diagram.modules.content.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -315,28 +295,22 @@ export const SystemDiagram: React.FC = () => {
     // 3. PUBLISHING ENGINE - Right-bottom position (4 o'clock)
     {
       id: 'publishing',
-      label: 'Publishing Engine',
-      description: 'Auto-scheduling and intelligent posting at optimal times per platform',
+      label: t('system_diagram.modules.publishing.label'),
+      description: t('system_diagram.modules.publishing.description'),
       x: 84,
       y: 77,
       color: '#10B981',
       glow: '0 0 20px rgba(16, 185, 129, 0.5)',
       status: 'active',
-      painPoint: 'Inconsistent Posting',
+      painPoint: t('system_diagram.modules.publishing.painPoint'),
       monthlySavings: 1800,
       stats: [
-        { label: 'Scheduled', value: '160', trend: 'up' },
-        { label: 'Posts/Maand', value: '160', trend: 'neutral' },
-        { label: 'On-Time', value: '99.8%', trend: 'neutral' },
-        { label: 'Platforms', value: '7', trend: 'neutral' },
+        { label: t('system_diagram.modules.publishing.stats.scheduled'), value: '160', trend: 'up' },
+        { label: t('system_diagram.modules.publishing.stats.posts'), value: '160', trend: 'neutral' },
+        { label: t('system_diagram.modules.publishing.stats.ontime'), value: '99.8%', trend: 'neutral' },
+        { label: t('system_diagram.modules.publishing.stats.platforms'), value: '7', trend: 'neutral' },
       ],
-      features: [
-        'Platform-specific optimal timing',
-        'Auto-scheduling calendar',
-        'Multi-platform distribution',
-        'Queue management',
-        'Timezone optimization',
-      ],
+      features: t('system_diagram.modules.publishing.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -350,29 +324,22 @@ export const SystemDiagram: React.FC = () => {
     // 4. ANALYTICS MONITOR - Bottom position (6 o'clock)
     {
       id: 'analytics',
-      label: 'Analytics Monitor',
-      description: 'Performance tracking, winner detection, and multi-account ROI optimization',
+      label: t('system_diagram.modules.analytics.label'),
+      description: t('system_diagram.modules.analytics.description'),
       x: 50,
       y: 88,
       color: '#06B6D4',
       glow: '0 0 20px rgba(6, 182, 212, 0.5)',
       status: 'active',
-      painPoint: 'Blind Flying',
+      painPoint: t('system_diagram.modules.analytics.painPoint'),
       monthlySavings: 2400,
       stats: [
-        { label: 'Daily Scans', value: '7', trend: 'neutral' },
-        { label: 'Winners', value: '47', trend: 'up' },
-        { label: 'ROI Boost', value: '+285%', trend: 'up' },
-        { label: 'Accounts', value: '12', trend: 'neutral' },
+        { label: t('system_diagram.modules.analytics.stats.scans'), value: '7', trend: 'neutral' },
+        { label: t('system_diagram.modules.analytics.stats.winners'), value: '47', trend: 'up' },
+        { label: t('system_diagram.modules.analytics.stats.roi'), value: '+285%', trend: 'up' },
+        { label: t('system_diagram.modules.analytics.stats.accounts'), value: '12', trend: 'neutral' },
       ],
-      features: [
-        'Daily performance analysis',
-        'Winner content detection',
-        'Sub-account → Main promotion',
-        'Strategy comparison testing',
-        'ROI optimization before ads',
-        'Engagement pattern learning',
-      ],
+      features: t('system_diagram.modules.analytics.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
@@ -382,29 +349,22 @@ export const SystemDiagram: React.FC = () => {
     // 5. COMMAND CENTER - Left-bottom position (8 o'clock)
     {
       id: 'command',
-      label: 'Command Center',
-      description: 'Client dashboard: campaigns, ads, analytics, and content calendar overview',
+      label: t('system_diagram.modules.command.label'),
+      description: t('system_diagram.modules.command.description'),
       x: 16,
       y: 77,
       color: '#F59E0B',
       glow: '0 0 20px rgba(245, 158, 11, 0.5)',
       status: 'idle',
-      painPoint: 'Geen Centraal Overzicht',
+      painPoint: t('system_diagram.modules.command.painPoint'),
       monthlySavings: 1600,
       stats: [
-        { label: 'Campaigns', value: '24', trend: 'up' },
-        { label: 'Active Ads', value: '8', trend: 'neutral' },
-        { label: 'Calendar', value: '100%', trend: 'neutral' },
-        { label: 'Reports', value: '48', trend: 'up' },
+        { label: t('system_diagram.modules.command.stats.campaigns'), value: '24', trend: 'up' },
+        { label: t('system_diagram.modules.command.stats.ads'), value: '8', trend: 'neutral' },
+        { label: t('system_diagram.modules.command.stats.calendar'), value: '100%', trend: 'neutral' },
+        { label: t('system_diagram.modules.command.stats.reports'), value: '48', trend: 'up' },
       ],
-      features: [
-        'Campaign launcher',
-        'Product photo → Ad creator',
-        'Real-time platform insights',
-        'Content calendar view',
-        'Weekly research reports',
-        'Engagement & growth metrics',
-      ],
+      features: t('system_diagram.modules.command.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
@@ -414,29 +374,22 @@ export const SystemDiagram: React.FC = () => {
     // 6. AUTOMATION ENGINE - Left-top position (10 o'clock)
     {
       id: 'automation',
-      label: 'Automation Engine',
-      description: 'Self-learning system with Telegram approval and quality control',
+      label: t('system_diagram.modules.automation.label'),
+      description: t('system_diagram.modules.automation.description'),
       x: 16,
       y: 23,
       color: '#8B5CF6',
       glow: '0 0 20px rgba(139, 92, 246, 0.5)',
       status: 'active',
-      painPoint: 'Geen Automation Expertise',
+      painPoint: t('system_diagram.modules.automation.painPoint'),
       monthlySavings: 3500,
       stats: [
-        { label: 'Approvals', value: '892', trend: 'up' },
-        { label: 'Auto-Learn', value: '98%', trend: 'up' },
-        { label: 'Quality', value: '96.2%', trend: 'up' },
-        { label: 'Workflows', value: '47', trend: 'neutral' },
+        { label: t('system_diagram.modules.automation.stats.approvals'), value: '892', trend: 'up' },
+        { label: t('system_diagram.modules.automation.stats.autolearn'), value: '98%', trend: 'up' },
+        { label: t('system_diagram.modules.automation.stats.quality'), value: '96.2%', trend: 'up' },
+        { label: t('system_diagram.modules.automation.stats.workflows'), value: '47', trend: 'neutral' },
       ],
-      features: [
-        'Telegram approval system',
-        'Self-learning from feedback',
-        'Quality score tracking',
-        'Content rejection analysis',
-        'Continuous improvement',
-        'Smart workflow automation',
-      ],
+      features: t('system_diagram.modules.automation.features', { returnObjects: true }) as string[],
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
           <path
