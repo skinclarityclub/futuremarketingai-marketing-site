@@ -575,10 +575,11 @@ export const Explorer: React.FC = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3">
+                <div>
                   <Button
                     variant="primary"
                     size="sm"
+                    className="w-full"
                     onClick={() => {
                       setSelectedFeature(feature.id)
                       trackModuleOpen(feature.title)
@@ -594,16 +595,6 @@ export const Explorer: React.FC = () => {
                   >
                     {t('common:actions.learn_more')}
                   </Button>
-                  <Link to={feature.link} className="flex-1">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      onClick={() => trackCTAClick(`Explore ${feature.title}`, feature.link)}
-                    >
-                      {t('common:actions.view')}
-                    </Button>
-                  </Link>
                 </div>
               </GlassCard>
             </motion.div>
@@ -1086,9 +1077,7 @@ export const Explorer: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-gray-100">
-                    {t('explorer:loading.scheduling')}
-                  </p>
+                  <p className="text-gray-100">{t('explorer:loading.scheduling')}</p>
                 </div>
               </div>
             </div>

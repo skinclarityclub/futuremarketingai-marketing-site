@@ -34,7 +34,11 @@
     "clear_selection": "Clear selection",
     "collapse_banner": "Collapse banner",
     "reload_page": "Reload page",
-    "breadcrumb_nav": "Breadcrumb"
+    "breadcrumb_nav": "Breadcrumb",
+    "open_desktop": "Open in New Tab",
+    "view_interactive": "View Interactive Demo",
+    "learn_more": "Learn More",
+    "view": "View"
   },
   "personalization": {
     "change_industry_tooltip": "Click to change industry",

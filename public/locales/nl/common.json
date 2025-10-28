@@ -36,7 +36,9 @@
     "reload_page": "Pagina herladen",
     "breadcrumb_nav": "Broodkruimelpad",
     "open_desktop": "Open in Nieuw Tabblad",
-    "view_interactive": "Bekijk Interactieve Demo"
+    "view_interactive": "Bekijk Interactieve Demo",
+    "learn_more": "Meer Info",
+    "view": "Bekijken"
   },
   "personalization": {
     "change_industry_tooltip": "Klik om industrie te wijzigen",

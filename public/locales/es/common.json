@@ -46,7 +46,11 @@
     "clear_selection": "Borrar selección",
     "collapse_banner": "Colapsar banner",
     "reload_page": "Recargar página",
-    "breadcrumb_nav": "Migas de pan"
+    "breadcrumb_nav": "Migas de pan",
+    "open_desktop": "Abrir en Nueva Pestaña",
+    "view_interactive": "Ver Demo Interactiva",
+    "learn_more": "Más Información",
+    "view": "Ver"
   },
   "show_more": "Mostrar más",
   "show_less": "Mostrar menos",
