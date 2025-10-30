@@ -5,7 +5,6 @@
 
 import { useState, useCallback } from 'react'
 import { useIsMobile } from './useMediaQuery'
-import { useNavigate } from 'react-router-dom'
 
 interface UseDemoRedirectReturn {
   /** Show modal state */
@@ -20,17 +19,17 @@ interface UseDemoRedirectReturn {
 
 /**
  * Hook to handle demo navigation with mobile redirect
- * 
+ *
  * Usage:
  * ```tsx
  * const { showDesktopNotice, openDemo, closeDesktopNotice, noticePage } = useDemoRedirect()
- * 
+ *
  * // In your button:
  * <Button onClick={() => openDemo('explorer')}>Try Demo</Button>
- * 
+ *
  * // In your render:
  * {showDesktopNotice && (
- *   <DesktopOnlyNoticeModal 
+ *   <DesktopOnlyNoticeModal
  *     pageName={noticePage}
  *     onClose={closeDesktopNotice}
  *   />
@@ -39,7 +38,6 @@ interface UseDemoRedirectReturn {
  */
 export function useDemoRedirect(): UseDemoRedirectReturn {
   const isMobile = useIsMobile()
-  const navigate = useNavigate()
   const [showDesktopNotice, setShowDesktopNotice] = useState(false)
   const [noticePage, setNoticePage] = useState('demo')
 
@@ -66,7 +64,7 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
           dashboard: '/dashboard',
           demo: '/demo',
         }
-        
+
         // Simple window.open - browser will open new tab/window based on user settings
         window.open(routes[pageName], '_blank')
       }
@@ -85,4 +83,3 @@ export function useDemoRedirect(): UseDemoRedirectReturn {
     noticePage,
   }
 }
-
