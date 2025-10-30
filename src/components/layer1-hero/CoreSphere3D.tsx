@@ -146,7 +146,7 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
         ringColor: { value: new THREE.Color('#00D4FF') },
         dotSpacing: { value: 0.15 },
         dotSize: { value: 0.08 },
-        cameraPosition: { value: new THREE.Vector3() },
+        // Note: cameraPosition is built-in to THREE.js shaders, no need to define it
       },
       vertexShader: `
         varying vec2 vUv;
@@ -163,7 +163,6 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
         uniform vec3 ringColor;
         uniform float dotSpacing;
         uniform float dotSize;
-        uniform vec3 cameraPosition;
         
         varying vec2 vUv;
         varying vec3 vPosition;
@@ -177,11 +176,12 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
           float animatedPos = fract(normalizedAngle + time * 0.1);
           float dotPattern = fract(animatedPos / dotSpacing);
           
-          // Create dot with smooth edges
-          float dot = smoothstep(dotSize, dotSize * 0.5, dotPattern);
-          dot += smoothstep(1.0 - dotSize * 0.5, 1.0 - dotSize, dotPattern);
+          // Create dotValue with smooth edges
+          float dotValue = smoothstep(dotSize, dotSize * 0.5, dotPattern);
+          dotValue += smoothstep(1.0 - dotSize * 0.5, 1.0 - dotSize, dotPattern);
           
           // Fade based on camera angle (holographic effect)
+          // cameraPosition is built-in to THREE.js shaders
           vec3 viewDir = normalize(cameraPosition - vPosition);
           float fresnel = pow(1.0 - abs(dot(viewDir, vec3(0.0, 1.0, 0.0))), 2.0);
           
@@ -189,7 +189,7 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
           float glow = sin(time * 1.5) * 0.2 + 0.9;
           
           vec3 color = ringColor * glow * fresnel * 1.3;
-          float alpha = dot * 0.7 * fresnel;
+          float alpha = dotValue * 0.7 * fresnel;
           
           gl_FragColor = vec4(color, alpha);
         }
@@ -499,10 +499,7 @@ const CoreSphereInner: React.FC<CoreSphereProps> = ({
     if (dottedRingMaterial.uniforms.time) {
       dottedRingMaterial.uniforms.time.value = time * timeMultiplier
     }
-    // Update camera position uniform for fresnel effect
-    if (dottedRingMaterial.uniforms.cameraPosition) {
-      dottedRingMaterial.uniforms.cameraPosition.value.copy(camera.position)
-    }
+    // Note: cameraPosition is built-in to THREE.js shaders, no manual update needed
 
     // Scroll-based rotation with velocity influence (only when visible)
     if (sphereRef.current && isVisible) {
