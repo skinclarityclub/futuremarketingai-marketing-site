@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
@@ -16,27 +16,16 @@ import { motion } from 'framer-motion'
 
 export const LoginPage: React.FC = () => {
   const { t } = useTranslation(['login'])
-  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsLoading(true)
-
-    // TODO: Implement actual authentication with Supabase
-    // For now, simulate login and redirect to dashboard
-    setTimeout(() => {
-      console.log('Login:', { email, password })
-      navigate('/dashboard')
-      setIsLoading(false)
-    }, 1000)
+    window.location.href = 'https://app.future-marketing.ai/login'
   }
 
   const handleGoogleLogin = () => {
-    // TODO: Implement Google OAuth
-    console.log('Google login clicked')
+    window.location.href = 'https://app.future-marketing.ai/login'
   }
 
   return (
@@ -124,19 +113,12 @@ export const LoginPage: React.FC = () => {
               <Button
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg transition-all shadow-lg hover:shadow-xl"
-                disabled={isLoading}
+                disabled={false}
               >
-                {isLoading ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                    {t('login:form.logging_in')}
-                  </>
-                ) : (
-                  <>
-                    <LogIn className="w-5 h-5 mr-2" />
-                    {t('login:form.login_button')}
-                  </>
-                )}
+                <>
+                  <LogIn className="w-5 h-5 mr-2" />
+                  {t('login:form.login_button')}
+                </>
               </Button>
 
               {/* Divider */}

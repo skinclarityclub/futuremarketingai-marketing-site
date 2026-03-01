@@ -330,7 +330,7 @@ export function MarketingHeader({ onAuthModalOpen, className = '' }: MarketingHe
       onAuthModalOpen(type)
     } else {
       // Fallback to navigation
-      window.location.href = type === 'login' ? '/auth/login' : '/auth/signup'
+      window.location.href = 'https://app.future-marketing.ai/login'
     }
   }
 

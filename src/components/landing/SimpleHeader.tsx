@@ -339,12 +339,12 @@ export const SimpleHeader: React.FC = () => {
               {/* Right: CTA Hierarchy (2025 Pattern) */}
               <div className="hidden lg:flex items-center gap-2">
                 {/* Secondary CTA - Subtle */}
-                <Link to="/login">
+                <a href="https://app.future-marketing.ai/login">
                   <button className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
                     <LogIn className="w-4 h-4 inline mr-1.5" />
                     {t('landing.header.login')}
                   </button>
-                </Link>
+                </a>
 
                 {/* Primary CTA - Dominant 2025 Style */}
                 <motion.button
@@ -436,12 +436,16 @@ export const SimpleHeader: React.FC = () => {
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <Link to="/login" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                <a
+                  href="https://app.future-marketing.ai/login"
+                  className="w-full"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   <button className="w-full px-4 py-2.5 bg-white/5 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
                     <LogIn className="w-4 h-4" />
                     {t('landing.header.login')}
                   </button>
-                </Link>
+                </a>
               </nav>
             </div>
           </motion.div>
