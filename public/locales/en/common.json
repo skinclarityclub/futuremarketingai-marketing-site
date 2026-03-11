@@ -791,23 +791,24 @@
       }
     },
     "hero_landing": {
-      "badge": "Next-Gen AI Marketing",
-      "main_headline": "Turn content into growth.",
-      "sub_headline": "On autopilot.",
-      "description": "Revolutionary AI-powered marketing automation that transforms premium businesses into market leaders. Experience enterprise-grade intelligent marketing designed for ambitious growth.",
+      "badge": "AI Implementation Partner",
+      "main_headline": "AI Systems That Run",
+      "sub_headline": "Your Business.",
+      "description": "We implement AI that actually works — marketing automation, custom workflows, chatbots, and voice agents for SaaS and e-commerce companies.",
+      "trust_anchor": "Businesses working with AI partners are 2.5x more likely to succeed",
       "cta": {
-        "primary": "Try Interactive Demo",
-        "secondary": "Join Waitlist"
+        "primary": "See What We Build",
+        "secondary": "Book a Strategy Call"
       },
       "solution_section": {
-        "badge": "The Solution",
-        "title": "How We Make It Happen",
-        "subtitle": "8 autonomous modules working 24/7 to accelerate your growth"
+        "badge": "Our Services",
+        "title": "What We Build For You",
+        "subtitle": "End-to-end AI implementation — from workflow automation to autonomous marketing systems"
       },
       "final_cta": {
-        "title": "Ready to Claim Your Pioneer Advantage?",
-        "subtitle": "Join the first 10 teams building an unfair 2-3 year lead before mainstream adoption",
-        "button": "Join Waitlist - 2 Slots Left"
+        "title": "Ready to Automate Your Business?",
+        "subtitle": "Book a free 30-minute strategy call and discover what AI can do for your operations",
+        "button": "Book a Free Strategy Call"
       }
     }
   }

@@ -269,7 +269,7 @@ export const Hero: React.FC = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
   const { t } = useTranslation('common')
-  const { openDemo } = useDemoRedirect()
+  useDemoRedirect() // Hook must be called unconditionally (Rules of Hooks)
 
   useEffect(() => {
     if (isInView) {
@@ -361,10 +361,18 @@ export const Hero: React.FC = () => {
 
         {/* Description */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 text-center max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-4"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 text-center max-w-4xl mx-auto mb-6 leading-relaxed px-4"
           variants={itemVariants}
         >
           {t('landing.hero_landing.description')}
+        </motion.p>
+
+        {/* Trust Anchor */}
+        <motion.p
+          className="text-sm text-blue-300/80 text-center mb-8 md:mb-12 px-4"
+          variants={itemVariants}
+        >
+          {t('landing.hero_landing.trust_anchor')}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -375,7 +383,7 @@ export const Hero: React.FC = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
-              onClick={() => openDemo('demo')}
+              onClick={() => (window.location.href = '/automations')}
               className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 w-full sm:w-auto"
             >
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
@@ -387,7 +395,7 @@ export const Hero: React.FC = () => {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => (window.location.href = '/pricing')}
+              onClick={() => window.open('https://calendly.com/futureai/strategy-call', '_blank')}
               className="group bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl transition-all duration-300 w-full sm:w-auto"
             >
               <Play className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
@@ -532,7 +540,7 @@ export const Hero: React.FC = () => {
         >
           <Button
             size="lg"
-            onClick={() => (window.location.href = '/pricing')}
+            onClick={() => window.open('https://calendly.com/futureai/strategy-call', '_blank')}
             className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-12 py-6 text-lg font-semibold rounded-xl shadow-2xl"
           >
             <Sparkles className="mr-2 h-5 w-5" />
