@@ -493,21 +493,21 @@
     "header": {
       "brand": {
         "future": "Future",
-        "marketing": "Marketing",
+        "marketing": "",
         "ai": "AI"
       },
-      "logo_aria": "Future Marketing AI Home",
+      "logo_aria": "Future AI Home",
       "nav_aria": "Main navigation",
       "mobile_nav_aria": "Mobile navigation",
       "mobile_menu_open": "Open menu",
       "mobile_menu_close": "Close menu",
       "nav": {
         "home": "Home",
-        "features": "Features",
+        "features": "Services",
         "pricing": "Pricing"
       },
       "login": "Login",
-      "try_demo": "Try Demo"
+      "try_demo": "See Our Work"
     },
     "mobile": {
       "desktopBanner": {
@@ -517,8 +517,8 @@
         "emailButton": "Email Link",
         "dismiss": "Dismiss desktop notification",
         "dismissed": "Desktop notification dismissed",
-        "emailSubject": "Desktop Link - FutureMarketingAI",
-        "emailBody": "Please send me the link to experience FutureMarketingAI on desktop for the full interactive demo."
+        "emailSubject": "Desktop Link - Future AI",
+        "emailBody": "Please send me the link to experience Future AI on desktop for the full interactive demo."
       },
       "desktop_required": {
         "title": "Desktop Experience Recommended",
@@ -536,9 +536,9 @@
       }
     },
     "footer": {
-      "brand_name": "Future Marketing AI",
-      "tagline": "Autonomous AI marketing that saves time and drives results.",
-      "copyright": "© {{year}} Future Marketing AI",
+      "brand_name": "Future AI",
+      "tagline": "AI systems that run your business — marketing, automations, chatbots, and voice agents.",
+      "copyright": "© {{year}} Future AI",
       "status_badge": "Q1 2026 • 2/5 Slots Left",
       "sections": {
         "product": "Product",

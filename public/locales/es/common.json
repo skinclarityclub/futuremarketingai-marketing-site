@@ -548,26 +548,26 @@
     "header": {
       "brand": {
         "future": "Future",
-        "marketing": "Marketing",
+        "marketing": "",
         "ai": "AI"
       },
-      "logo_aria": "Future Marketing AI Home",
+      "logo_aria": "Future AI Home",
       "nav_aria": "Navegación principal",
       "mobile_nav_aria": "Navegación móvil",
       "mobile_menu_open": "Abrir menú",
       "mobile_menu_close": "Cerrar menú",
       "nav": {
         "home": "Inicio",
-        "features": "Características",
+        "features": "Servicios",
         "pricing": "Precios"
       },
       "login": "Iniciar Sesión",
-      "try_demo": "Probar Demo"
+      "try_demo": "Ver Nuestro Trabajo"
     },
     "footer": {
-      "brand_name": "Future Marketing AI",
-      "tagline": "Marketing autónomo con IA que ahorra tiempo y genera resultados.",
-      "copyright": "© {{year}} Future Marketing AI",
+      "brand_name": "Future AI",
+      "tagline": "Sistemas de IA que gestionan tu negocio — marketing, automatizaciones, chatbots y agentes de voz.",
+      "copyright": "© {{year}} Future AI",
       "status_badge": "Q1 2026 • 2/5 Plazas Disponibles",
       "sections": {
         "product": "Producto",
