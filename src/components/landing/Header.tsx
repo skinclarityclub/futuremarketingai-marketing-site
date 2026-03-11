@@ -394,7 +394,7 @@ export function MarketingHeader({ onAuthModalOpen, className = '' }: MarketingHe
           <Link
             to="/"
             className="flex items-center group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-950 rounded-lg"
-            aria-label="FutureMarketingAI home"
+            aria-label="Future AI home"
           >
             <div className="font-black text-xl tracking-tight">
               <span className="text-white group-hover:text-blue-300 transition-colors duration-300">
