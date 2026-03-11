@@ -1,0 +1,382 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { SimpleHeader } from '../components/landing/SimpleHeader'
+import { SEOHead } from '../components/seo/SEOHead'
+import {
+  Bot,
+  MessageSquare,
+  Users,
+  Calendar,
+  HelpCircle,
+  ArrowRight,
+  CheckCircle,
+} from 'lucide-react'
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+  viewport: { once: true as const },
+}
+
+const useCases = [
+  {
+    icon: MessageSquare,
+    title: 'Customer Service',
+    description:
+      'Handle 70% of customer inquiries automatically — instant responses, 24/7 availability.',
+  },
+  {
+    icon: Users,
+    title: 'Lead Qualification',
+    description: 'Score and route leads around the clock. Never miss a hot prospect again.',
+  },
+  {
+    icon: Calendar,
+    title: 'Appointment Booking',
+    description:
+      'Fill your calendar without manual back-and-forth. Integrated with Calendly, Cal.com, and more.',
+  },
+  {
+    icon: HelpCircle,
+    title: 'FAQ Automation',
+    description:
+      'Consistent, accurate answers — always available. Trained on your specific knowledge base.',
+  },
+]
+
+const processSteps = [
+  {
+    step: '01',
+    title: 'Discovery',
+    description:
+      'We map your use case, identify key intents, and plan integration with your existing tools.',
+  },
+  {
+    step: '02',
+    title: 'Build',
+    description:
+      'Custom LLM-powered chatbot, trained on your data. Multi-platform deployment ready.',
+  },
+  {
+    step: '03',
+    title: 'Optimize',
+    description:
+      'Ongoing improvement based on real conversation data. Monthly performance reports.',
+  },
+]
+
+const pricingTiers = [
+  {
+    name: 'Basic',
+    price: '€1,500',
+    description: 'FAQ chatbot for one platform',
+    features: [
+      'FAQ chatbot',
+      '1 platform (web or WhatsApp)',
+      'Trained on your content',
+      '7-day delivery',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Standard',
+    price: '€2,500 – €3,500',
+    description: 'Multi-intent with CRM integration',
+    features: [
+      'Multi-intent recognition',
+      'CRM integration',
+      'Analytics dashboard',
+      'Multi-platform',
+    ],
+    highlighted: true,
+  },
+  {
+    name: 'Custom',
+    price: '€5,000+',
+    description: 'Enterprise-grade AI chatbot',
+    features: [
+      'Full custom workflows',
+      'Advanced analytics',
+      'Multi-language support',
+      'Dedicated account manager',
+    ],
+    highlighted: false,
+  },
+]
+
+const faqs = [
+  {
+    q: 'What platforms can you deploy chatbots on?',
+    a: 'We deploy on websites (widget), WhatsApp, Slack, Discord, Facebook Messenger, and any platform with an API.',
+  },
+  {
+    q: 'How is the chatbot trained?',
+    a: 'We train on your existing documentation, FAQs, product info, and past support conversations. The bot learns your specific domain and brand voice.',
+  },
+  {
+    q: 'Can the chatbot hand off to a human agent?',
+    a: 'Yes. Smart escalation routes complex queries to your team via email, Slack, or your helpdesk tool — with full conversation context.',
+  },
+  {
+    q: 'What about data privacy?',
+    a: 'We follow GDPR best practices. Your data stays in your infrastructure. We can deploy models that run entirely on your own servers if required.',
+  },
+]
+
+export const ChatbotsPage: React.FC = () => {
+  return (
+    <>
+      <SimpleHeader />
+      <SEOHead
+        title="AI Chatbot Development Services | Future AI"
+        description="Custom AI chatbots that answer questions, qualify leads, and book calls — while you sleep. Integrated with your CRM, calendar, and support tools."
+        keywords={[
+          'AI chatbot',
+          'customer service bot',
+          'lead generation chatbot',
+          'ChatGPT integration',
+          'AI customer support',
+        ]}
+        canonical="https://future-marketing.ai/chatbots"
+      />
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+        {/* Hero */}
+        <section className="relative pt-32 pb-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div {...fadeInUp}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
+                <Bot className="w-4 h-4 text-blue-400" />
+                <span className="text-sm font-medium text-blue-100">24/7 Lead Qualification</span>
+              </div>
+            </motion.div>
+
+            <motion.h1 className="text-4xl md:text-6xl font-bold text-white mb-6" {...fadeInUp}>
+              AI Chatbots That Never Sleep
+            </motion.h1>
+
+            <motion.p
+              className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-10"
+              {...fadeInUp}
+            >
+              Custom AI chatbots that answer questions, qualify leads, and book calls — while you
+              sleep. Integrated with your CRM, calendar, and support tools.
+            </motion.p>
+
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" {...fadeInUp}>
+              <a
+                href="/demo"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
+              >
+                See a Live Demo
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="https://calendly.com/futureai/strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+              >
+                Get a Free Strategy Session
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div className="text-center mb-12" {...fadeInUp}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                What Our Chatbots Do
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {useCases.map((useCase, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <useCase.icon className="w-10 h-10 text-blue-400 mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-2">{useCase.title}</h3>
+                  <p className="text-blue-100/80">{useCase.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div className="text-center mb-12" {...fadeInUp}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Build It</h2>
+            </motion.div>
+
+            <div className="space-y-6">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  className="flex gap-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="text-3xl font-black text-blue-400/30 flex-shrink-0">
+                    {step.step}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
+                    <p className="text-blue-100/80">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div className="text-center mb-12" {...fadeInUp}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Pricing</h2>
+              <p className="text-lg text-blue-100">Maintenance retainer from €500/mo</p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {pricingTiers.map((tier, i) => (
+                <motion.div
+                  key={i}
+                  className={`relative bg-white/5 backdrop-blur-sm border rounded-xl p-8 ${
+                    tier.highlighted
+                      ? 'border-blue-500/50 shadow-lg shadow-blue-500/10'
+                      : 'border-white/10'
+                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {tier.highlighted && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold rounded-full">
+                      Most Popular
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-white mb-1">{tier.name}</h3>
+                  <p className="text-sm text-blue-100/60 mb-4">{tier.description}</p>
+                  <div className="text-2xl font-bold text-white mb-6">{tier.price}</div>
+                  <ul className="space-y-3 mb-8">
+                    {tier.features.map((feature, j) => (
+                      <li key={j} className="flex items-center gap-2 text-blue-100/80">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="https://calendly.com/futureai/strategy-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block text-center px-6 py-3 font-semibold rounded-xl transition-all ${
+                      tier.highlighted
+                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
+                        : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
+                    }`}
+                  >
+                    Get Started
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Metrics */}
+        <section className="py-12 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div className="grid grid-cols-3 gap-6 text-center" {...fadeInUp}>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-white">70%</div>
+                <div className="text-sm text-blue-100/60">inquiries handled automatically</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-white">24/7</div>
+                <div className="text-sm text-blue-100/60">availability</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-white">CRM</div>
+                <div className="text-sm text-blue-100/60">fully integrated</div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 px-6">
+          <div className="max-w-3xl mx-auto">
+            <motion.div className="text-center mb-12" {...fadeInUp}>
+              <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            </motion.div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <motion.details
+                  key={i}
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  viewport={{ once: true }}
+                >
+                  <summary className="px-6 py-4 cursor-pointer text-white font-medium list-none flex justify-between items-center">
+                    {faq.q}
+                    <span className="text-blue-400 group-open:rotate-45 transition-transform text-xl">
+                      +
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-4 text-blue-100/80">{faq.a}</div>
+                </motion.details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl p-12"
+              {...fadeInUp}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Get a Free Chatbot Strategy Session
+              </h2>
+              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+                We'll analyze your use case and show you exactly how an AI chatbot can save your
+                team hours every week.
+              </p>
+              <a
+                href="https://calendly.com/futureai/strategy-call"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl text-lg"
+              >
+                Book Free Session
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
+
+export default ChatbotsPage
