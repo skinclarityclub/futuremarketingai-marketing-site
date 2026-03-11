@@ -48,6 +48,11 @@ const AboutPage = lazy(() => import('./pages/AboutPage'))
 const LoginPage = lazy(() => import('./pages/LoginPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 
+// Service Pages
+const AutomationsPage = lazy(() => import('./pages/AutomationsPage'))
+const ChatbotsPage = lazy(() => import('./pages/ChatbotsPage'))
+const VoiceAgentsPage = lazy(() => import('./pages/VoiceAgentsPage'))
+
 // Placeholder Pages (Coming Soon)
 const CaseStudiesPage = lazy(() => import('./pages/CaseStudiesPage'))
 const BlogPage = lazy(() => import('./pages/BlogPage'))
@@ -80,7 +85,7 @@ function App() {
   useEffect(() => {
     // Add 'dark' class to HTML element to enable Tailwind dark: prefixes
     document.documentElement.classList.add('dark')
-    
+
     // Optional: Set data attribute for CSS targeting
     document.documentElement.setAttribute('data-theme', 'dark')
   }, [])
@@ -105,6 +110,9 @@ function App() {
     '/security',
     '/gdpr',
     '/skinclarity-pitch', // Special pitch page
+    '/automations',
+    '/chatbots',
+    '/voice-agents',
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
@@ -187,6 +195,11 @@ function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+
+                    {/* Service Pages */}
+                    <Route path="/automations" element={<AutomationsPage />} />
+                    <Route path="/chatbots" element={<ChatbotsPage />} />
+                    <Route path="/voice-agents" element={<VoiceAgentsPage />} />
 
                     {/* Placeholder Pages (Coming Soon) */}
                     <Route path="/case-studies" element={<CaseStudiesPage />} />
