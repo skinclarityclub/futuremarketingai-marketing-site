@@ -13,7 +13,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles, ArrowRight, LogIn } from 'lucide-react'
+import { Menu, X, Sparkles, ArrowRight, LogIn, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { LANGUAGES, type Language } from '../../i18n/config'
 import { useDemoRedirect } from '../../hooks'
@@ -37,11 +37,13 @@ export const SimpleHeader: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const langDropdownRef = useRef<HTMLDivElement>(null)
+  const servicesDropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
 
   // Use demo redirect hook for mobile modal
-  const { showDesktopNotice, openDemo, closeDesktopNotice, noticePage } = useDemoRedirect()
+  const { showDesktopNotice, closeDesktopNotice, noticePage } = useDemoRedirect()
 
   const currentLanguage = (i18n.language?.split('-')[0] || 'en') as Language
   const currentLangData = LANGUAGES[currentLanguage] || LANGUAGES.en
@@ -59,12 +61,6 @@ export const SimpleHeader: React.FC = () => {
         source: 'mobile_header',
       })
     }
-  }
-
-  // Handle transition to demo - now uses useDemoRedirect
-  const handleDemoClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    openDemo('demo')
   }
 
   // Handle scroll for sticky header effect + auto-hide
@@ -127,16 +123,22 @@ export const SimpleHeader: React.FC = () => {
       if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
         setIsLangOpen(false)
       }
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false)
+      }
     }
 
-    if (isLangOpen) {
+    if (isLangOpen || isServicesOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isLangOpen])
+  }, [isLangOpen, isServicesOpen])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -151,11 +153,16 @@ export const SimpleHeader: React.FC = () => {
     }
   }, [isMobileMenuOpen])
 
-  // 2025 Minimalism: Only essential navigation (2-3 items max)
-  const navLinks = [
-    { label: t('landing.header.nav.features'), href: '/features' },
-    { label: t('landing.header.nav.pricing'), href: '/pricing' },
+  // Services dropdown items
+  const serviceLinks = [
+    { label: 'AI Automations', href: '/automations' },
+    { label: 'AI Chatbots', href: '/chatbots' },
+    { label: 'AI Voice Agents', href: '/voice-agents' },
+    { label: 'AI Marketing Machine', href: '/demo' },
   ]
+
+  // 2025 Minimalism: Only essential navigation
+  const navLinks = [{ label: t('landing.header.nav.pricing'), href: '/pricing' }]
 
   const isActiveLink = (href: string) => {
     return location.pathname === href
@@ -320,6 +327,56 @@ export const SimpleHeader: React.FC = () => {
                 className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
                 aria-label={t('landing.header.nav_aria')}
               >
+                {/* Services Dropdown */}
+                <div
+                  className="relative"
+                  ref={servicesDropdownRef}
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 flex items-center gap-1 ${
+                      serviceLinks.some((s) => isActiveLink(s.href))
+                        ? 'text-white bg-white/10'
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                    type="button"
+                  >
+                    {t('landing.header.nav.features')}
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -5, scale: 0.97 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -5, scale: 0.97 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute left-0 top-full mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 min-w-[200px] z-50"
+                      >
+                        {serviceLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            to={link.href}
+                            className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                              isActiveLink(link.href)
+                                ? 'text-blue-400 bg-blue-500/10'
+                                : 'text-white/80 hover:text-white hover:bg-white/5'
+                            }`}
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -347,9 +404,11 @@ export const SimpleHeader: React.FC = () => {
                 </a>
 
                 {/* Primary CTA - Dominant 2025 Style */}
-                <motion.button
-                  onClick={handleDemoClick}
-                  className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500"
+                <motion.a
+                  href="https://calendly.com/futureai/strategy-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500 inline-block"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -364,7 +423,7 @@ export const SimpleHeader: React.FC = () => {
                     {t('landing.header.try_demo')}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </span>
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </div>
@@ -424,17 +483,36 @@ export const SimpleHeader: React.FC = () => {
                 {/* Divider */}
                 <div className="h-px bg-white/10 my-2" />
 
+                {/* Mobile: Service Links */}
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                      isActiveLink(link.href)
+                        ? 'text-white bg-white/10'
+                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                {/* Divider */}
+                <div className="h-px bg-white/10 my-1" />
+
                 {/* Mobile CTAs */}
-                <button
-                  onClick={(e) => {
-                    handleDemoClick(e)
-                    setIsMobileMenuOpen(false)
-                  }}
+                <a
+                  href="https://calendly.com/futureai/strategy-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t('landing.header.try_demo')}
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
 
                 <a
                   href="https://app.future-marketing.ai/login"
