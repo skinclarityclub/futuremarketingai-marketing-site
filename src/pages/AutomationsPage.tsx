@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
+import { CalendlyModal } from '../components/common/CalendlyModal'
 import {
   Zap,
   Clock,
@@ -16,6 +17,9 @@ import {
   ArrowRight,
   CheckCircle,
 } from 'lucide-react'
+
+const CALENDLY_URL =
+  'https://calendly.com/futureai/strategy-call?background_color=111520&text_color=e8ecf4&primary_color=00D4AA'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -127,6 +131,8 @@ const faqs = [
 ]
 
 export const AutomationsPage: React.FC = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
+
   return (
     <>
       <SimpleHeader />
@@ -168,15 +174,13 @@ export const AutomationsPage: React.FC = () => {
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" {...fadeInUp}>
-              <a
-                href="https://calendly.com/futureai/strategy-call"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
               >
                 Get a Free Automation Audit
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               <a
                 href="#what-we-automate"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
@@ -306,18 +310,16 @@ export const AutomationsPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="https://calendly.com/futureai/strategy-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-center px-6 py-3 font-semibold rounded-xl transition-all ${
+                  <button
+                    onClick={() => setIsCalendlyOpen(true)}
+                    className={`block w-full text-center px-6 py-3 font-semibold rounded-xl transition-all ${
                       tier.highlighted
                         ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
                         : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
                     }`}
                   >
                     {tier.cta}
-                  </a>
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -388,19 +390,23 @@ export const AutomationsPage: React.FC = () => {
                 We'll map your manual processes and tell you exactly what AI can automate — and how
                 much time and money you'll save.
               </p>
-              <a
-                href="https://calendly.com/futureai/strategy-call"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl text-lg"
               >
                 Book Free Audit
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>
       </div>
+
+      <CalendlyModal
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        url={CALENDLY_URL}
+      />
     </>
   )
 }

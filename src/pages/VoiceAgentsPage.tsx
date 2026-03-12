@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
+import { CalendlyModal } from '../components/common/CalendlyModal'
 import {
   Phone,
   Calendar,
@@ -11,6 +12,9 @@ import {
   CheckCircle,
   Handshake,
 } from 'lucide-react'
+
+const CALENDLY_URL =
+  'https://calendly.com/futureai/strategy-call?background_color=111520&text_color=e8ecf4&primary_color=00D4AA'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -104,6 +108,8 @@ const faqs = [
 ]
 
 export const VoiceAgentsPage: React.FC = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
+
   return (
     <>
       <SimpleHeader />
@@ -147,15 +153,13 @@ export const VoiceAgentsPage: React.FC = () => {
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" {...fadeInUp}>
-              <a
-                href="https://calendly.com/futureai/strategy-call"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
               >
                 Book a Demo Call
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               <a
                 href="#use-cases"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
@@ -232,18 +236,16 @@ export const VoiceAgentsPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="https://calendly.com/futureai/strategy-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block text-center px-6 py-3 font-semibold rounded-xl transition-all ${
+                  <button
+                    onClick={() => setIsCalendlyOpen(true)}
+                    className={`block w-full text-center px-6 py-3 font-semibold rounded-xl transition-all ${
                       tier.highlighted
                         ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
                         : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
                     }`}
                   >
                     Get Started
-                  </a>
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -336,19 +338,23 @@ export const VoiceAgentsPage: React.FC = () => {
                 Hear a live demo of our voice AI and discover how it can qualify leads and book
                 meetings for your business.
               </p>
-              <a
-                href="https://calendly.com/futureai/strategy-call"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
                 className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl text-lg"
               >
                 Book Demo Call
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
             </motion.div>
           </div>
         </section>
       </div>
+
+      <CalendlyModal
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        url={CALENDLY_URL}
+      />
     </>
   )
 }
