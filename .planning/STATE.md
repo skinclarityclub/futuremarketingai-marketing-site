@@ -4,11 +4,11 @@
 
 - **Milestone:** v1.0
 - **Phase:** 3 — Design Overhaul & FMai Rebrand
-- **Current Plan:** 03-02 (Shared Components) — COMPLETE
+- **Current Plan:** 03-03 (Critical Fixes)
 - **Status:** executing
-- **Last completed:** Phase 3 Plan 02 (Shared Components — SystemPanel, StatusIndicator, MetricDisplay, CTAButton, SectionContainer)
-- **Last session:** 2026-03-13T00:00:50Z
-- **Stopped at:** Completed 03-design-overhaul plan 02 (Shared Components)
+- **Last completed:** Phase 3 Plan 01 (Design Tokens — Living System teal/amber palette, Space Grotesk font)
+- **Last session:** 2026-03-12T23:53:06Z
+- **Stopped at:** Completed 03-design-overhaul plan 01 (Design Tokens & Typography)
 
 ## Decisions
 
@@ -17,6 +17,8 @@
 - 2026-03-13: Brand decision — "Future AI" → "FMai" (FM**ai**)
 - 2026-03-13: [Phase 03-design-overhaul]: CTAButton self-manages Calendly modal state — callers just pass calendly={true}
 - 2026-03-13: [Phase 03-design-overhaul]: SystemPanel uses forwardRef for composability with Framer Motion and ref-consuming libraries
+- 2026-03-13: [03-01]: Dropped Satoshi (fontshare) in favor of Space Grotesk (Google Fonts) for display font
+- 2026-03-13: [03-01]: gradient-text-success renamed to gradient-text-flow (teal-to-amber Living System flow gradient)
 
 ## Context
 

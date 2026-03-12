@@ -6,7 +6,7 @@
 | ----- | -------------------------- | ----------- | ----- | -------- |
 | 1     | Website Rebrand            | Complete    | —     | 100%     |
 | 2     | Service Pages              | Complete    | —     | 100%     |
-| 3     | 1/3                        | In Progress |       | 0%       |
+| 3     | 2/3                        | In Progress |       | 0%       |
 | 4     | Upwork & Fiverr Setup      | Pending     | —     | 0%       |
 | 5     | Cold Email Campaign        | Pending     | —     | 0%       |
 | 6     | Voice Agent Partnership    | Pending     | —     | 0%       |
