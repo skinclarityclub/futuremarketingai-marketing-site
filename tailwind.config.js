@@ -7,37 +7,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Background Colors
-        'bg-dark': '#050814',
-        'bg-surface': '#0A0E27',
-        'bg-card': '#0F1629',
-        'bg-hover': '#1A1F3A',
-        
-        // Accent Colors
-        'accent-primary': '#6366F1', // Indigo - Calm, Professional, Tech
-        'accent-secondary': '#8B5CF6', // Violet - Creative, Premium
-        'accent-tertiary': '#EC4899', // Pink - Engaging, Social
-        
+        // Background Colors — "Living System" palette
+        'bg-deep': '#0A0D14',
+        'bg-surface': '#111520',
+        'bg-elevated': '#1A1F2E',
+
+        // Accent Colors — Two-accent system (machine + human)
+        'accent-system': '#00D4AA',  // Teal-green: "system running"
+        'accent-human': '#F5A623',   // Amber: "human attention needed"
+
         // Status Colors
-        'success': '#10B981', // Emerald Green - Professional
-        'warning': '#F59E0B', // Amber - Clear warning
-        'error': '#EF4444', // Red - Clear danger signal
-        'info': '#3B82F6', // Blue - Information
-        
-        // Text Colors (WCAG AA compliant - 4.5:1 contrast minimum)
-        'text-primary': '#FFFFFF',
-        'text-secondary': '#B8C5D8', // Improved contrast: 4.6:1 (was 3.8:1)
-        'text-tertiary': '#8B9BB5', // Improved contrast: 4.7:1 (was 3.2:1)
-        'text-muted': '#6B7A94', // Improved contrast: 4.5:1 (was 2.8:1)
-        
+        'status-active': '#22C55E',  // Green: live/operational
+        'success': '#22C55E',
+        'warning': '#F5A623',
+        'error': '#EF4444',
+        'info': '#00D4AA',
+
+        // Text Colors (WCAG AA — 4.5:1 minimum on #0A0D14)
+        'text-primary': '#E8ECF4',
+        'text-secondary': '#9BA3B5',
+        'text-muted': '#5A6378',
+
         // Border & Divider
-        'border-primary': 'rgba(255, 255, 255, 0.1)',
-        'border-accent': 'rgba(99, 102, 241, 0.3)', // Indigo accent borders
-        'divider': 'rgba(255, 255, 255, 0.05)',
+        'border-primary': 'rgba(255, 255, 255, 0.06)',
+        'border-accent': 'rgba(0, 212, 170, 0.3)',
+        'divider': 'rgba(255, 255, 255, 0.04)',
       },
       fontFamily: {
-        sans: ['Inter', 'Satoshi', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Satoshi', 'Inter', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Space Grotesk', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
       },
       fontSize: {
@@ -76,20 +74,19 @@ export default {
         'full': '9999px',
       },
       boxShadow: {
-        'glow-sm': '0 0 10px rgba(99, 102, 241, 0.3)', // Indigo glow
-        'glow': '0 0 20px rgba(99, 102, 241, 0.4)',
-        'glow-lg': '0 0 40px rgba(99, 102, 241, 0.5)',
-        'glow-purple': '0 0 20px rgba(139, 92, 246, 0.4)', // Violet
-        'glow-green': '0 0 20px rgba(16, 185, 129, 0.4)',
-        'glow-indigo': '0 0 20px rgba(99, 102, 241, 0.5)', // Primary glow
-        'inner-glow': 'inset 0 0 20px rgba(99, 102, 241, 0.2)',
+        'glow-sm': '0 0 10px rgba(0, 212, 170, 0.2)',
+        'glow': '0 0 20px rgba(0, 212, 170, 0.3)',
+        'glow-lg': '0 0 40px rgba(0, 212, 170, 0.4)',
+        'glow-amber': '0 0 20px rgba(245, 166, 35, 0.3)',
+        'glow-active': '0 0 20px rgba(34, 197, 94, 0.3)',
+        'inner-glow': 'inset 0 0 20px rgba(0, 212, 170, 0.15)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)', // Indigo to Violet
-        'gradient-secondary': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', // Violet to Pink
-        'gradient-success': 'linear-gradient(135deg, #10B981 0%, #6366F1 100%)', // Green to Indigo
+        'gradient-system': 'linear-gradient(135deg, #00D4AA 0%, #00A88A 100%)',
+        'gradient-human': 'linear-gradient(135deg, #F5A623 0%, #D4891A 100%)',
+        'gradient-flow': 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)',
       },
       backdropBlur: {
         'xs': '2px',
@@ -107,6 +104,8 @@ export default {
         'slide-up': 'slide-up 0.5s ease-out',
         'slide-down': 'slide-down 0.5s ease-out',
         'fade-in': 'fade-in 0.3s ease-in',
+        'status-pulse': 'status-pulse 3s ease-in-out infinite',
+        'data-flow': 'data-flow 2s linear infinite',
       },
       keyframes: {
         'glow-pulse': {
@@ -128,6 +127,14 @@ export default {
         'fade-in': {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        'status-pulse': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.4' },
+        },
+        'data-flow': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
       // Mobile-specific touch target utilities (for mobile components ONLY)
