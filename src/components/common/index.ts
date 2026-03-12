@@ -84,6 +84,7 @@ export { SystemPanel } from './SystemPanel'
 export { StatusIndicator } from './StatusIndicator'
 export { MetricDisplay } from './MetricDisplay'
 export { CTAButton } from './CTAButton'
+export { SectionContainer } from './SectionContainer'
 export { ChartTooltip, createTooltipEntry } from './ChartTooltip'
 export type { ChartTooltipProps, TooltipEntry } from './ChartTooltip'
 
