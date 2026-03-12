@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
+import { Trash2 } from 'lucide-react'
 
 /**
  * Footer - Privacy-compliant footer with policy links and data controls
@@ -105,7 +106,8 @@ export function Footer() {
                 className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white border border-slate-600 hover:border-red-500/50 rounded-lg transition-all hover:bg-red-500/10"
                 aria-label={t('footer.delete_my_data')}
               >
-                🗑️ {t('footer.delete_my_data')}
+                <Trash2 className="w-4 h-4 inline-block mr-1" aria-hidden="true" />
+                {t('footer.delete_my_data')}
               </button>
             ) : (
               <motion.div
