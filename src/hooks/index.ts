@@ -55,7 +55,11 @@ export { useAchievementTracking } from './useAchievementTracking'
 export { useJourneyNudges } from './useJourneyNudges'
 
 // Reduced Motion utilities
-export { getReducedMotionConfig, getReducedMotionTransition } from './useReducedMotion'
+export {
+  getReducedMotionConfig,
+  getReducedMotionTransition,
+  useMotionSafe,
+} from './useReducedMotion'
 
 // SEO utilities
 export { useDemoSEO, usePageTitle } from './useDemoSEO'

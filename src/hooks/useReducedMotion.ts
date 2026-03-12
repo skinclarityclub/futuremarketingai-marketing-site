@@ -6,6 +6,29 @@
  *
  * @see https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html
  */
+import { useReducedMotion as useFramerReducedMotion } from 'framer-motion'
+
+/**
+ * Returns animation props that respect prefers-reduced-motion.
+ * When reduced motion is preferred, animations are disabled.
+ *
+ * Usage:
+ *   const fadeInUp = useMotionSafe({
+ *     initial: { opacity: 0, y: 30 },
+ *     whileInView: { opacity: 1, y: 0 },
+ *     transition: { duration: 0.5 },
+ *   })
+ *   <motion.div {...fadeInUp}>
+ */
+export function useMotionSafe(animationProps: Record<string, unknown>) {
+  const shouldReduceMotion = useFramerReducedMotion()
+
+  if (shouldReduceMotion) {
+    return {}
+  }
+
+  return animationProps
+}
 
 /**
  * getReducedMotionConfig - Helper to get reduced motion variants/config
