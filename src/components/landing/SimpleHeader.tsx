@@ -153,6 +153,47 @@ export const SimpleHeader: React.FC = () => {
     }
   }, [isMobileMenuOpen])
 
+  // Focus trap for mobile menu (WCAG requirement)
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return
+    }
+
+    const menuEl = document.getElementById('mobile-menu')
+    if (!menuEl) {
+      return
+    }
+
+    const focusableEls = menuEl.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+    const firstEl = focusableEls[0]
+    const lastEl = focusableEls[focusableEls.length - 1]
+
+    const trapFocus = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') {
+        return
+      }
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault()
+          lastEl?.focus()
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault()
+          firstEl?.focus()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', trapFocus)
+    firstEl?.focus()
+
+    return () => document.removeEventListener('keydown', trapFocus)
+  }, [isMobileMenuOpen])
+
   // Services dropdown items
   const serviceLinks = [
     { label: 'AI Automations', href: '/automations' },
@@ -447,7 +488,10 @@ export const SimpleHeader: React.FC = () => {
             />
 
             {/* Menu Container */}
-            <div className="relative max-w-lg mx-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+            <div
+              id="mobile-menu"
+              className="relative max-w-lg mx-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+            >
               <nav
                 className="flex flex-col p-4 space-y-1"
                 aria-label={t('landing.header.mobile_nav_aria')}
