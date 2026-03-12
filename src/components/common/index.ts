@@ -81,6 +81,7 @@ export { VisionTimeline } from './VisionTimeline'
 export type { TimelineEra, TimelineStatus, IconType } from './VisionTimeline/types'
 
 export { SystemPanel } from './SystemPanel'
+export { StatusIndicator } from './StatusIndicator'
 export { ChartTooltip, createTooltipEntry } from './ChartTooltip'
 export type { ChartTooltipProps, TooltipEntry } from './ChartTooltip'
 
