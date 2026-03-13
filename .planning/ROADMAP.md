@@ -42,4 +42,7 @@
   - **Goal:** Transform homepage from marketing-focused to general FutureAI overview. Create /marketing-machine page with relocated SocialProof/Features content + demo CTA. Ensure all translations consistent across EN/NL/ES.
   - **Requirement IDs:** REQ-HOMEPAGE-RESTRUCTURE
   - **Depends on:** Phase 9
-  - **Plans:** 0 plans (run /gsd:plan-phase 10 to break down)
+  - **Plans:** 3 plans
+    - [ ] 10-01-PLAN.md — Homepage hub restructuring (Hero rework, service cards grid, SimpleHeader branding)
+    - [ ] 10-02-PLAN.md — MarketingMachinePage creation + routing (relocated components, App.tsx route)
+    - [ ] 10-03-PLAN.md — i18n sync (NL/ES hero_landing fix, service card translations, ES structural fixes)

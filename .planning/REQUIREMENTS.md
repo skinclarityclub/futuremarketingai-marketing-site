@@ -34,3 +34,17 @@
 - Fix hardcoded Dutch text in mobile hero
 - Update service pages to use new design components
 - **Phase:** 3 (Wave 4)
+
+## REQ-HOMEPAGE-RESTRUCTURE: Homepage Restructuring & Marketing Machine Page
+
+- Transform homepage from marketing-automation-focused to general FutureAI hub
+- Homepage hero reworked for FutureAI identity (all services, not just marketing)
+- New service cards grid on homepage linking to /automations, /chatbots, /voice-agents, /marketing-machine
+- VisionTimeline, FeatureShowcase, MobileEvolutionTimeline relocated from homepage to /marketing-machine
+- New /marketing-machine page created with FutureMarketingAI branding
+- SimpleHeader brandMiddle logic updated: homepage shows FutureAI, /marketing-machine shows FutureMarketingAI
+- Services dropdown link updated from /demo to /marketing-machine
+- /marketing-machine added to router and marketingPaths
+- i18n: NL/ES hero_landing keys synced with EN (remove stale founding-member copy)
+- i18n: ES common.json structural issues fixed (duplicate blocks, missing keys)
+- **Phase:** 10
