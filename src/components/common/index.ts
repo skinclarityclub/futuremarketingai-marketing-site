@@ -96,3 +96,8 @@ export type { ExportButtonProps } from './ExportButton'
 
 export { GradientMesh } from './GradientMesh'
 export { OrbitVisual } from './OrbitVisual'
+
+// Phase 12: Design Polish & Media
+export { SplineHero } from './SplineHero'
+export { ScrollReveal } from './ScrollReveal'
+export { ProductMedia } from './ProductMedia'
