@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
+import { ScrollReveal } from '../components/common/ScrollReveal'
+import { ProductMedia } from '../components/common/ProductMedia'
 import { Sparkles, Loader2, CheckCircle } from 'lucide-react'
 
 // Lazy load heavy components
@@ -146,6 +148,19 @@ export default function MarketingMachinePage() {
           <FeaturesSection />
         </Suspense>
 
+        {/* Product Demo Media */}
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto px-12 py-16">
+            {/* TODO: Replace with real demo video/screenshot */}
+            <ProductMedia
+              videoSrc="/media/placeholder-marketing-machine.mp4"
+              posterSrc="/media/placeholder-marketing-machine-poster.webp"
+              alt="Marketing Machine demo"
+              className="max-w-4xl mx-auto"
+            />
+          </div>
+        </ScrollReveal>
+
         {/* Pricing Teaser */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-12">
@@ -174,7 +189,7 @@ export default function MarketingMachinePage() {
                 return (
                   <motion.div
                     key={tierKey}
-                    className={`relative card-gradient-border rounded-card bg-white/[0.02] border p-8 ${
+                    className={`relative card-gradient-border card-tilt rounded-card bg-white/[0.02] border p-8 ${
                       highlighted
                         ? 'border-accent-system/50 shadow-glow-sm'
                         : 'border-border-primary'

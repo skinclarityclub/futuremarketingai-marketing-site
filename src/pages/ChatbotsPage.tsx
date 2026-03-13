@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
+import { ScrollReveal } from '../components/common/ScrollReveal'
+import { ProductMedia } from '../components/common/ProductMedia'
 import { Bot, MessageSquare, Users, Calendar, HelpCircle, CheckCircle } from 'lucide-react'
 
 const useCases = [
@@ -188,7 +190,7 @@ export const ChatbotsPage: React.FC = () => {
               {useCases.map((useCase, i) => (
                 <motion.div
                   key={i}
-                  className="card-gradient-border bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                  className="card-gradient-border card-tilt bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -224,7 +226,7 @@ export const ChatbotsPage: React.FC = () => {
               {processSteps.map((step, i) => (
                 <motion.div
                   key={i}
-                  className="card-gradient-border flex gap-6 bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                  className="card-gradient-border card-tilt flex gap-6 bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
@@ -376,6 +378,19 @@ export const ChatbotsPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Product Demo Media */}
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto px-12 py-16">
+            {/* TODO: Replace with real demo video/screenshot */}
+            <ProductMedia
+              videoSrc="/media/placeholder-chatbots.mp4"
+              posterSrc="/media/placeholder-chatbots-poster.webp"
+              alt="Chatbots demo"
+              className="max-w-4xl mx-auto"
+            />
+          </div>
+        </ScrollReveal>
 
         {/* Final CTA */}
         <section className="py-16 px-12">
