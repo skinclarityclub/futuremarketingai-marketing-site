@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: completed
-stopped_at: Completed 10-03-PLAN.md — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
-last_updated: '2026-03-13T02:41:57.153Z'
+current_plan: Plan 02 of 7 in Phase 11
+status: in-progress
+stopped_at: Completed 11-02-PLAN.md — Global chrome components rebuilt (CTAButton, SimpleHeader, Footer)
+last_updated: '2026-03-13T03:23:16.000Z'
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 14
+  completed_plans: 12
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 10 — Homepage Restructuring & Marketing Machine Page
-- **Current Plan:** Not started
-- **Status:** Milestone complete
-- **Last completed:** Phase 10 Plan 03 — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
-- **Last session:** 2026-03-13T02:37:11.740Z
-- **Stopped at:** Completed 10-03-PLAN.md — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
+- **Phase:** 11 — Living System Full Rebuild
+- **Current Plan:** Plan 02 of 7
+- **Status:** In progress
+- **Last completed:** Phase 11 Plan 02 — Global chrome components rebuilt (CTAButton warm gradient, SimpleHeader backdrop-blur nav, Footer token cleanup)
+- **Last session:** 2026-03-13T03:23:16Z
+- **Stopped at:** Completed 11-02-PLAN.md — Global chrome components rebuilt (CTAButton, SimpleHeader, Footer)
 
 ## Decisions
 
@@ -52,6 +52,9 @@ progress:
 - [Phase 10-02]: Pricing teaser on /marketing-machine links to /pricing — avoids duplication, consistent with homepage service cards pattern
 - [Phase 10]: ES common.json required full rewrite to fix duplicate top-level keys — JSON silently discards duplicate keys, Edit tool cannot distinguish them
 - [Phase 10]: Orphaned ES top-level keys (language, buttons, metrics, time, validation, success, nav, mobile) removed — no EN counterparts, not used by any component
+- [11-01]: CSS variables updated to match DM Sans as primary font alongside Tailwind config
+- [11-02]: brandMiddle displayed between FM and ai only when non-empty — homepage shows FMai, service pages show FM{service}ai
+- [11-02]: Removed Sparkles icon entirely — FM+ai text logo is self-sufficient
 
 ## Context
 
@@ -71,3 +74,5 @@ progress:
 ### Roadmap Evolution
 
 - Phase 10 added: Homepage Restructuring & Marketing Machine Page
+- Phase 11 added: Living System Full Rebuild — structural rebuild of all pages to match prototype-2 design
+- Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
