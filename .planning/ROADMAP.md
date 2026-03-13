@@ -17,7 +17,7 @@
 | 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
 | 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
 | 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
-| 14    | Service Page i18n              | Pending  | —          | 0%       |
+| 14    | Service Page i18n              | Planned  | 3 plans    | 0%       |
 
 ## Phases
 
@@ -103,3 +103,7 @@
   - **Requirement IDs:** REQ-SERVICE-I18N
   - **Gap Closure:** v1.0 milestone audit — broken service page language switch flow
   - **Depends on:** Phase 12
+  - **Plans:** 3 plans
+    - [ ] 14-01-PLAN.md — AutomationsPage i18n (EN/NL/ES namespace + component refactor)
+    - [ ] 14-02-PLAN.md — ChatbotsPage i18n (EN/NL/ES namespace + component refactor)
+    - [ ] 14-03-PLAN.md — VoiceAgentsPage i18n (EN/NL/ES namespace + component refactor)
