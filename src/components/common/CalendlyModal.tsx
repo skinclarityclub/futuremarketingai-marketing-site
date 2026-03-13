@@ -9,8 +9,9 @@ import { trackGA4Event } from '../../utils/ga4'
 import { hotjarEvent, HotjarEvents } from '../../utils/hotjar'
 import { useIsMobile } from '../../hooks'
 
-// Default Calendly URL (fallback)
-const DEFAULT_CALENDLY_URL = 'https://calendly.com/futuremarketingai/platform-demo-30min'
+// Default Calendly URL (fallback) — with Living System dark theme params
+const DEFAULT_CALENDLY_URL =
+  'https://calendly.com/futureai/strategy-call?background_color=111520&text_color=e8ecf4&primary_color=00D4AA'
 
 // Calendly Prefill type structure
 interface CalendlyPrefill {
@@ -180,7 +181,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 bg-accent-system text-bg-deep rounded-sm hover:bg-accent-system/90 transition-colors"
             >
               {t('common:calendly.open_direct')}
             </a>
@@ -237,7 +238,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
             >
               <div className="flex flex-col items-center gap-3">
                 <div
-                  className="w-12 h-12 border-4 border-accent-primary/30 border-t-accent-primary rounded-full animate-spin"
+                  className="w-12 h-12 border-4 border-accent-system/30 border-t-accent-system rounded-full animate-spin"
                   aria-hidden="true"
                 />
                 <p className="text-white/80 text-sm">{t('calendly:modal.loading')}</p>
