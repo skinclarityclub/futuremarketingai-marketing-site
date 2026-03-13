@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "badge": "Delivered in 1-2 Weeks",
+    "title": "Automate Your Business With AI",
+    "description": "We build custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences, and more. Powered by n8n, Make, and custom integrations.",
+    "cta_primary": "Get a Free Automation Audit",
+    "cta_secondary": "See Examples"
+  },
+  "pain_points": {
+    "manual_work": {
+      "title": "Hours Lost to Manual Work",
+      "description": "Your team spends hours on work AI can do in minutes"
+    },
+    "disconnected_tools": {
+      "title": "Disconnected Tools",
+      "description": "Your tools don't talk to each other — data gets lost between apps"
+    },
+    "scaling": {
+      "title": "Scaling Means Hiring",
+      "description": "Scaling means hiring more people, not working smarter"
+    }
+  },
+  "what_we_automate": {
+    "title": "What We Automate",
+    "subtitle": "From lead generation to customer onboarding — we automate the workflows that slow your team down.",
+    "items": {
+      "lead_qualification": "Lead qualification & CRM enrichment",
+      "email_sequences": "Email sequences & follow-ups",
+      "social_media": "Social media scheduling & content",
+      "invoicing": "Invoice & billing workflows",
+      "onboarding": "Customer onboarding flows",
+      "data_sync": "Data sync between platforms"
+    }
+  },
+  "process": {
+    "title": "How It Works",
+    "steps": {
+      "audit": {
+        "title": "Free Audit",
+        "description": "We map your manual processes and identify automation opportunities. 30 minutes, no obligation."
+      },
+      "build": {
+        "title": "Build",
+        "description": "1-2 weeks delivery, fully documented workflows. We build, test, and hand over."
+      },
+      "optimize": {
+        "title": "Optimize",
+        "description": "Optional ongoing retainer for new workflows, optimization, and dedicated support."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Transparent pricing. No surprises.",
+    "most_popular": "Most Popular",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "\u20ac1,000 \u2013 \u20ac2,500",
+        "description": "Perfect for getting started",
+        "cta": "Get Started",
+        "features": ["1-3 workflows", "Full documentation", "7-day delivery", "Email support"]
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "\u20ac2,500 \u2013 \u20ac5,000",
+        "description": "For teams ready to scale",
+        "cta": "Most Popular",
+        "features": ["5-10 workflows", "End-to-end testing", "Priority support", "14-day delivery"]
+      },
+      "retainer": {
+        "name": "Retainer",
+        "price": "\u20ac2,000 \u2013 \u20ac5,000/mo",
+        "description": "Ongoing automation partner",
+        "cta": "Let's Talk",
+        "features": [
+          "Unlimited workflow builds",
+          "Continuous optimization",
+          "Dedicated support",
+          "Monthly strategy call"
+        ]
+      }
+    }
+  },
+  "trust_metrics": {
+    "hours_saved": {
+      "value": "15-30 hrs",
+      "label": "saved per week"
+    },
+    "delivery_time": {
+      "value": "1-2 weeks",
+      "label": "delivery time"
+    },
+    "success_rate": {
+      "value": "2.5x",
+      "label": "success rate with AI partner"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "integrations": {
+        "q": "What tools do you integrate with?",
+        "a": "We work with n8n, Make, Zapier, and custom API integrations. We connect any tool that has an API — CRMs, email platforms, payment systems, and more."
+      },
+      "delivery": {
+        "q": "How long does delivery take?",
+        "a": "Most projects are delivered within 1-2 weeks. Simple workflows can be ready in days, while more complex multi-step automations take up to 14 days."
+      },
+      "technical": {
+        "q": "Do I need technical knowledge?",
+        "a": "No. We handle all the technical work. You get fully documented workflows with clear instructions for your team."
+      },
+      "breaks": {
+        "q": "What happens if something breaks?",
+        "a": "All workflows include error handling and monitoring. Retainer clients get priority support. One-time projects include 7 days of post-delivery support."
+      },
+      "multi_tool": {
+        "q": "Can you automate processes across multiple tools?",
+        "a": "Absolutely. Most of our workflows connect 3-5 different tools. We specialize in making your entire stack work together seamlessly."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Book a Free 30-min Automation Audit",
+    "description": "We'll map your manual processes and tell you exactly what AI can automate — and how much time and money you'll save.",
+    "button": "Book Free Audit"
+  }
+}

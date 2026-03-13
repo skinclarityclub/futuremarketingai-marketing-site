@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "badge": "Entrega en 1-2 semanas",
+    "title": "Automatiza Tu Negocio Con IA",
+    "description": "Creamos flujos de trabajo de IA personalizados que eliminan el trabajo manual \u2014 enrutamiento de leads, enriquecimiento de CRM, secuencias de email y m\u00e1s. Impulsado por n8n, Make e integraciones personalizadas.",
+    "cta_primary": "Obtener una Auditor\u00eda de Automatizaci\u00f3n Gratuita",
+    "cta_secondary": "Ver Ejemplos"
+  },
+  "pain_points": {
+    "manual_work": {
+      "title": "Horas Perdidas en Trabajo Manual",
+      "description": "Tu equipo dedica horas a trabajo que la IA puede hacer en minutos"
+    },
+    "disconnected_tools": {
+      "title": "Herramientas Desconectadas",
+      "description": "Tus herramientas no se comunican entre s\u00ed \u2014 los datos se pierden entre aplicaciones"
+    },
+    "scaling": {
+      "title": "Escalar Significa Contratar",
+      "description": "Escalar significa contratar m\u00e1s personas, no trabajar m\u00e1s inteligentemente"
+    }
+  },
+  "what_we_automate": {
+    "title": "Lo Que Automatizamos",
+    "subtitle": "Desde la generaci\u00f3n de leads hasta la incorporaci\u00f3n de clientes \u2014 automatizamos los flujos de trabajo que ralentizan a tu equipo.",
+    "items": {
+      "lead_qualification": "Cualificaci\u00f3n de leads y enriquecimiento de CRM",
+      "email_sequences": "Secuencias de email y seguimientos",
+      "social_media": "Programaci\u00f3n de redes sociales y contenido",
+      "invoicing": "Facturaci\u00f3n y flujos de pago",
+      "onboarding": "Flujos de incorporaci\u00f3n de clientes",
+      "data_sync": "Sincronizaci\u00f3n de datos entre plataformas"
+    }
+  },
+  "process": {
+    "title": "C\u00f3mo Funciona",
+    "steps": {
+      "audit": {
+        "title": "Auditor\u00eda Gratuita",
+        "description": "Mapeamos tus procesos manuales e identificamos oportunidades de automatizaci\u00f3n. 30 minutos, sin compromiso."
+      },
+      "build": {
+        "title": "Construir",
+        "description": "Entrega en 1-2 semanas, flujos de trabajo completamente documentados. Construimos, probamos y entregamos."
+      },
+      "optimize": {
+        "title": "Optimizar",
+        "description": "Retainer continuo opcional para nuevos flujos de trabajo, optimizaci\u00f3n y soporte dedicado."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Precios",
+    "subtitle": "Precios transparentes. Sin sorpresas.",
+    "most_popular": "M\u00e1s Popular",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "\u20ac1.000 \u2013 \u20ac2.500",
+        "description": "Perfecto para empezar",
+        "cta": "Empezar",
+        "features": [
+          "1-3 flujos de trabajo",
+          "Documentaci\u00f3n completa",
+          "Entrega en 7 d\u00edas",
+          "Soporte por email"
+        ]
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "\u20ac2.500 \u2013 \u20ac5.000",
+        "description": "Para equipos listos para escalar",
+        "cta": "M\u00e1s Popular",
+        "features": [
+          "5-10 flujos de trabajo",
+          "Pruebas end-to-end",
+          "Soporte prioritario",
+          "Entrega en 14 d\u00edas"
+        ]
+      },
+      "retainer": {
+        "name": "Retainer",
+        "price": "\u20ac2.000 \u2013 \u20ac5.000/mes",
+        "description": "Partner de automatizaci\u00f3n continuo",
+        "cta": "Hablemos",
+        "features": [
+          "Flujos de trabajo ilimitados",
+          "Optimizaci\u00f3n continua",
+          "Soporte dedicado",
+          "Llamada de estrategia mensual"
+        ]
+      }
+    }
+  },
+  "trust_metrics": {
+    "hours_saved": {
+      "value": "15-30 hrs",
+      "label": "ahorradas por semana"
+    },
+    "delivery_time": {
+      "value": "1-2 semanas",
+      "label": "tiempo de entrega"
+    },
+    "success_rate": {
+      "value": "2,5x",
+      "label": "tasa de \u00e9xito con partner de IA"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "items": {
+      "integrations": {
+        "q": "\u00bfCon qu\u00e9 herramientas integran?",
+        "a": "Trabajamos con n8n, Make, Zapier e integraciones API personalizadas. Conectamos cualquier herramienta que tenga una API \u2014 CRMs, plataformas de email, sistemas de pago y m\u00e1s."
+      },
+      "delivery": {
+        "q": "\u00bfCu\u00e1nto tiempo tarda la entrega?",
+        "a": "La mayor\u00eda de proyectos se entregan en 1-2 semanas. Flujos de trabajo simples pueden estar listos en d\u00edas, mientras que automatizaciones multi-paso m\u00e1s complejas tardan hasta 14 d\u00edas."
+      },
+      "technical": {
+        "q": "\u00bfNecesito conocimientos t\u00e9cnicos?",
+        "a": "No. Nosotros nos encargamos de todo el trabajo t\u00e9cnico. Recibes flujos de trabajo completamente documentados con instrucciones claras para tu equipo."
+      },
+      "breaks": {
+        "q": "\u00bfQu\u00e9 pasa si algo se rompe?",
+        "a": "Todos los flujos de trabajo incluyen manejo de errores y monitoreo. Los clientes retainer reciben soporte prioritario. Los proyectos puntuales incluyen 7 d\u00edas de soporte post-entrega."
+      },
+      "multi_tool": {
+        "q": "\u00bfPueden automatizar procesos en m\u00faltiples herramientas?",
+        "a": "Absolutamente. La mayor\u00eda de nuestros flujos de trabajo conectan 3-5 herramientas diferentes. Nos especializamos en hacer que todo tu stack funcione de manera integrada."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Reserva una Auditor\u00eda de Automatizaci\u00f3n Gratuita de 30 min",
+    "description": "Mapearemos tus procesos manuales y te diremos exactamente qu\u00e9 puede automatizar la IA \u2014 y cu\u00e1nto tiempo y dinero ahorrar\u00e1s.",
+    "button": "Reservar Auditor\u00eda Gratuita"
+  }
+}
