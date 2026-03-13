@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: '17-03'
+current_plan: '17-04'
 status: executing
-stopped_at: Completed 17-02-PLAN.md
-last_updated: '2026-03-13T18:20:00.000Z'
+stopped_at: Completed 17-03-PLAN.md
+last_updated: '2026-03-13T18:30:13.000Z'
 progress:
   total_phases: 12
   completed_phases: 9
   total_plans: 37
-  completed_plans: 35
+  completed_plans: 36
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 17 — ChatWidget UI Components
-- **Current Plan:** 17-03
+- **Current Plan:** 17-04
 - **Status:** Executing
-- **Last completed:** Phase 17 Plan 02 — Core Chat UI: ChatHeader, ChatMessages, ChatInput, SuggestedPrompts
-- **Last session:** 2026-03-13T18:20:00Z
-- **Stopped at:** Completed 17-02-PLAN.md
+- **Last completed:** Phase 17 Plan 03 — Tool Result Cards: ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard + ToolResultRenderer
+- **Last session:** 2026-03-13T18:33:21.794Z
+- **Stopped at:** Completed 17-03-PLAN.md
 
 ## Decisions
 
@@ -102,6 +102,7 @@ progress:
 - [Phase 17]: [17-02]: ToolResultPlaceholder uses cast via unknown for tool part types -- Plan 03 ToolResultRenderer replaces with proper typed handling
 - [Phase 17]: [17-02]: CSS-only animations (fadeIn, chatDotBounce) on messages instead of Framer Motion -- lighter weight per plan spec
 - [Phase 17]: [17-02]: Auto-scroll uses 80px threshold from bottom to detect manual scroll-up
+- [Phase 17-03]: index.tsx (not index.ts) for barrel+renderer -- file contains JSX for ToolLoadingCard, ToolErrorCard, and ToolResultRenderer
 
 ## Context
 
