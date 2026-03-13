@@ -2,22 +2,27 @@
 
 ## Progress
 
-| Phase | Name                           | Status   | Plans      | Progress |
-| ----- | ------------------------------ | -------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete | —          | 100%     |
-| 2     | Service Pages                  | Complete | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
-| 8     | Language Expansion             | Pending  | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
-| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| Phase | Name                            | Status   | Plans      | Progress |
+| ----- | ------------------------------- | -------- | ---------- | -------- |
+| 1     | Website Rebrand                 | Complete | —          | 100%     |
+| 2     | Service Pages                   | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand  | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup           | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign             | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership         | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development      | Pending  | —          | 0%       |
+| 8     | Language Expansion              | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion   | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                             | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media           | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                             | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 15    | Chatbot Engine Foundation       | Pending  | —          | 0%       |
+| 16    | Chatbot Personas & Knowledge    | Pending  | —          | 0%       |
+| 17    | ChatWidget UI Components        | Pending  | —          | 0%       |
+| 18    | ChatbotsPage Demo Playground    | Pending  | —          | 0%       |
+| 19    | Homepage Concierge + Demo Guide | Pending  | —          | 0%       |
 
 ## Phases
 
@@ -107,3 +112,97 @@
     - [ ] 14-01-PLAN.md — AutomationsPage i18n (EN/NL/ES namespace + component refactor)
     - [ ] 14-02-PLAN.md — ChatbotsPage i18n (EN/NL/ES namespace + component refactor)
     - [ ] 14-03-PLAN.md — VoiceAgentsPage i18n (EN/NL/ES namespace + component refactor)
+
+- [ ] **Phase 15: Chatbot Engine Foundation** — Build the shared persona-driven chatbot backend: Vercel AI SDK streaming, Claude integration, prompt caching, tool calling framework, persona router, rate limiting, security guardrails.
+  - **Goal:** Create a single API endpoint (`/api/chatbot`) that serves multiple chatbot personas with streaming responses, dual-model routing (Haiku/Sonnet), prompt caching, and tool execution. This is the backend foundation all chatbot personas depend on.
+  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
+  - **Requirement IDs:** REQ-CHATBOT-ENGINE
+  - **Depends on:** Phase 14
+  - **Key patterns adopted from SKC Sindy:** Hybrid prompt caching (static prefix + dynamic knowledge), zero-latency topic router, dual-model complexity routing, tool availability matrix, persona detection by request param.
+  - **Scope:**
+    - `api/chatbot.ts` — Single Vercel serverless endpoint with SSE streaming
+    - `src/lib/chatbot/engine.ts` — Core engine: persona loading, model routing, streaming orchestration
+    - `src/lib/chatbot/types.ts` — TypeScript types (ChatRequest, ChatResponse, PersonaConfig, ToolDefinition, etc.)
+    - `src/lib/chatbot/persona-router.ts` — Persona config loading + validation
+    - `src/lib/chatbot/topic-router.ts` — Zero-latency keyword-based knowledge selection (SKC pattern)
+    - `src/lib/chatbot/prompt-builder.ts` — Hybrid prompt caching: static prefix (cached) + dynamic knowledge (per-request)
+    - `src/lib/chatbot/tool-executor.ts` — Central tool execution with Zod validation + persona gating
+    - `src/lib/chatbot/rate-limiter.ts` — Session limits (15 msg) + global limits (100/hr) + per-IP limits
+    - `src/lib/chatbot/security.ts` — Input validation, PII blocking, output sanitization, prompt injection defense
+    - `src/lib/chatbot/complexity-detector.ts` — Keyword + length based routing to Haiku vs Sonnet
+    - Dependencies: `@ai-sdk/anthropic`, `ai` (Vercel AI SDK), `zod`
+    - Remove: `openai` package dependency
+  - **Plans:** 3 plans
+    - [ ] 15-01-PLAN.md — Foundation: install deps + types.ts + security.ts + rate-limiter.ts + complexity-detector.ts
+    - [ ] 15-02-PLAN.md — Persona infrastructure: topic-router.ts + prompt-builder.ts + persona-router.ts + tool-executor.ts
+    - [ ] 15-03-PLAN.md — Engine wiring: engine.ts + api/chatbot.ts + index.ts + vercel.json CSP update
+
+- [ ] **Phase 16: Chatbot Personas & Knowledge** — Build all 5 persona configurations: system prompts, tool definitions, knowledge bases, topic routers, and conversation starters for concierge, e-commerce, lead-gen, support, and demo-guide personas.
+  - **Goal:** Create complete persona configs that plug into the Phase 15 engine. Each persona has: system prompt (with prompt-cache-friendly static prefix), tools with Zod schemas, knowledge base content, topic router keywords, suggested conversation starters (EN/NL/ES), and demo scenario descriptions.
+  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
+  - **Requirement IDs:** REQ-CHATBOT-PERSONAS
+  - **Depends on:** Phase 15
+  - **Parallel:** Can execute in parallel with Phase 17 (both depend only on Phase 15)
+  - **Scope:**
+    - `src/lib/chatbot/personas/concierge.ts` — Website concierge: FMai services, pricing, case studies, navigation. Tools: `get_services`, `book_call`, `navigate_to_page`, `get_case_study`
+    - `src/lib/chatbot/personas/ecommerce.ts` — E-commerce advisor demo: mock skincare catalog (anonymized SKC data). Tools: `search_products`, `get_product_details`, `build_routine`, `add_to_cart_suggestion`
+    - `src/lib/chatbot/personas/leadgen.ts` — Lead qualification demo: B2B SaaS scenario. Tools: `qualify_lead`, `get_pricing_info`, `schedule_demo`, `get_roi_estimate`
+    - `src/lib/chatbot/personas/support.ts` — Knowledge base support demo: mock helpdesk. Tools: `search_knowledge_base`, `create_ticket`, `check_status`, `escalate_to_human`
+    - `src/lib/chatbot/personas/demo-guide.ts` — Demo guide (ARIA v2): marketing machine demo flow. Tools: `navigate_to_page`, `explain_module`, `get_roi_info`, `book_demo`
+    - `src/lib/chatbot/personas/index.ts` — Persona registry + factory
+    - `src/lib/chatbot/knowledge/` — Knowledge base content files per persona
+    - `src/lib/chatbot/tools/` — Tool executor implementations per persona (concierge-tools.ts, ecommerce-tools.ts, etc.)
+    - i18n: Conversation starters + demo scenario descriptions in EN/NL/ES
+
+- [ ] **Phase 17: ChatWidget UI Components** — Build the shared ChatWidget React component supporting floating mode (concierge/demo-guide) and embedded mode (demo playground). Includes message rendering with streaming, tool result cards, and suggested conversation starters.
+  - **Goal:** Create a single, configurable ChatWidget that works in two modes: floating (FAB + panel, for homepage concierge and demo guide) and embedded (inline, for /chatbots demo playground). Uses Vercel AI SDK `useChat` hook for streaming. Renders tool results as visual cards.
+  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
+  - **Requirement IDs:** REQ-CHATWIDGET-UI
+  - **Depends on:** Phase 15
+  - **Parallel:** Can execute in parallel with Phase 16 (both depend only on Phase 15)
+  - **Scope:**
+    - `src/components/chatbot/ChatWidget.tsx` — Main component with floating/embedded modes, Living System design tokens
+    - `src/components/chatbot/ChatMessages.tsx` — Message list with streaming text display, typing indicators
+    - `src/components/chatbot/ChatInput.tsx` — Input field with suggested conversation starters, send button
+    - `src/components/chatbot/ChatHeader.tsx` — Persona name/avatar, minimize/close, demo mode badge + message counter
+    - `src/components/chatbot/FloatingButton.tsx` — FAB for floating mode (replaces old FloatingActionButton)
+    - `src/components/chatbot/tool-results/ProductCard.tsx` — E-commerce product display (image, price, description, CTA)
+    - `src/components/chatbot/tool-results/LeadScoreCard.tsx` — Lead qualification score visualization
+    - `src/components/chatbot/tool-results/KBArticleCard.tsx` — Knowledge base article preview
+    - `src/components/chatbot/tool-results/TicketCard.tsx` — Support ticket status display
+    - `src/components/chatbot/tool-results/ServiceCard.tsx` — FMai service info display (concierge)
+    - `src/components/chatbot/tool-results/index.ts` — Barrel exports + ToolResultRenderer component
+    - `src/stores/chatStore.ts` — New Zustand store: per-persona message history, streaming state, session management
+    - `src/hooks/usePersonaChat.ts` — Hook wrapping Vercel AI SDK `useChat` with persona config
+    - Styling: Living System design (dark surface, teal/amber accents, gradient borders, DM Sans)
+
+- [ ] **Phase 18: ChatbotsPage Demo Playground** — Restructure /chatbots page with interactive demo playground (3 switchable personas), multi-platform visual showcase, progressive CTAs, and updated marketing copy.
+  - **Goal:** Transform the /chatbots service page from static marketing into an interactive experience. Visitors can try 3 live chatbot demos (e-commerce, lead-gen, support) via tab switching. Each demo has scenario context, suggested starters, and session limits. Multi-platform showcase visualizes the 1-backend-multi-platform architecture. Progressive CTAs convert demo users to leads.
+  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
+  - **Requirement IDs:** REQ-CHATBOT-PLAYGROUND
+  - **Depends on:** Phase 16, Phase 17
+  - **Parallel:** Can execute in parallel with Phase 19 (both depend on Phase 16+17)
+  - **Scope:**
+    - `src/components/chatbot/DemoPlayground.tsx` — Full demo section: tab selector, context card, embedded ChatWidget, message counter, progressive CTAs
+    - `src/components/chatbot/PersonaSelector.tsx` — Tab component for switching between e-commerce/leadgen/support demos
+    - `src/components/chatbot/DemoContextCard.tsx` — Scenario description + capabilities list per active persona
+    - `src/components/chatbot/ProgressiveCTA.tsx` — CTA that changes based on message count (subtle → strong → gate)
+    - `src/components/chatbot/MultiPlatformShowcase.tsx` — Animated visual: 1 backend → website + Shopify + WhatsApp, with SKC case study
+    - Update `src/pages/ChatbotsPage.tsx` — New hero copy, wire DemoPlayground + MultiPlatformShowcase, update use-cases to link to demos
+    - i18n: Update `public/locales/{en,nl,es}/chatbots.json` with new demo copy, scenario descriptions, CTA text
+    - Conversion funnel: Messages 1-4 pure demo, msg 5 subtle CTA, msg 10 stronger CTA, msg 15 gate with Calendly
+
+- [ ] **Phase 19: Homepage Concierge + Demo Guide + ARIA Cleanup** — Wire concierge persona as floating chatbot on marketing pages, demo-guide persona on demo pages, remove all old ARIA code and OpenAI dependencies.
+  - **Goal:** Replace the entire ARIA system with the new persona-driven chatbot. Concierge persona floats on marketing pages (/, /pricing, /about, /chatbots, etc.). Demo-guide persona activates on demo pages (/explorer, /calculator, /dashboard) with page-context awareness and module follow-up behavior (preserved from ARIA). Clean removal of all old code.
+  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
+  - **Requirement IDs:** REQ-CHATBOT-CONCIERGE, REQ-ARIA-CLEANUP
+  - **Depends on:** Phase 16, Phase 17
+  - **Parallel:** Can execute in parallel with Phase 18 (both depend on Phase 16+17)
+  - **Scope:**
+    - Wire ChatWidget (floating mode) into `src/App.tsx` with persona switching based on route (marketing → concierge, demo → demo-guide)
+    - Page context detection: concierge knows which marketing page visitor is on, demo-guide knows which demo step
+    - Demo-guide: preserve ARIA's module follow-up behavior, contextual greetings, journey nudges — but powered by new engine
+    - **Remove:** `src/components/ai-assistant/` (entire directory), `src/services/llmService.ts`, `src/utils/conversationEngine.ts`, `src/utils/intentRecognition.ts`, `src/utils/questionMatcher.ts`, `src/stores/chatStore.ts` (old), `src/stores/journeyStore.ts`, `src/types/chat.ts` (old), `src/config/knowledgeBase.json`, `src/config/conversationPersonality.ts`, `src/config/platformKnowledge.ts`, `src/config/assistantJourneys.ts`, `src/hooks/useModuleFollowUp.ts`, `src/hooks/useJourneyNudges.ts`, `src/hooks/useAchievementTracking.ts`, `api/chat.ts`
+    - Remove `openai` package from dependencies
+    - Update `src/App.tsx` to use new ChatWidget instead of AIJourneyAssistant
+    - Verify all demo pages still work correctly without ARIA coupling
