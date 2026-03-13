@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** Plan 06 of 7
 - **Status:** In progress
 - **Last completed:** Phase 11 Plan 06 — MarketingMachinePage i18n (EN/NL/ES) + prototype layout rebuild
-- **Last session:** 2026-03-13T03:37:01Z
-- **Stopped at:** Completed 11-06-PLAN.md
+- **Last session:** 2026-03-13T03:42:19.715Z
+- **Stopped at:** Completed 11-05-PLAN.md — Supporting pages rebuilt with prototype patterns
 
 ## Decisions
 
@@ -60,6 +60,9 @@ progress:
 - [11-03]: GradientMesh rendered in LandingPage (not App.tsx) since Hero no longer has its own backgrounds
 - [Phase 11-04]: Removed fadeInUp motion variant object — hero uses inline CSS animation styles, scroll sections use explicit whileInView props
 - [Phase 11-04]: FAQ details elements get card-gradient-border + rounded-card for visual consistency with other cards
+- [11-05]: ComparisonTables rebuilt alongside PricingPage — all blue/purple/gradient colors replaced with design tokens
+- [11-05]: LegalPage Framer Motion wrappers replaced with CSS fadeIn — lighter weight for text-heavy content
+- [11-05]: HowItWorksPage step numbers use accent-human with font-mono — visual hierarchy between labels and system icons
 - [11-06]: Pricing tiers driven by TIER_KEYS array + t() with returnObjects — no hardcoded tier data in MarketingMachinePage component
 - [11-06]: SEO meta tags kept as hardcoded EN strings — SEO handled separately from UI i18n
 
@@ -86,4 +89,5 @@ progress:
 - Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
 - Phase 11 Plan 03 complete: Hero rebuilt — left-aligned layout with OrbitVisual orbit rings on right, 2x2 numbered service cards (01-04) with card-gradient-border, 4 Framer Motion background layers removed, GradientMesh wired in LandingPage
 - Phase 11 Plan 04 complete: All 3 service pages rebuilt — card-gradient-border + rounded-card on all cards, CSS fadeIn/fadeInUp hero animations, max-w-7xl px-12 layout, font-display on headings
+- Phase 11 Plan 05 complete: All 5 supporting pages rebuilt — About, Pricing, HowItWorks, Contact, Legal with card-gradient-border + rounded-card, CSS fadeIn heroes, glass form container, ComparisonTables fully tokenized
 - Phase 11 Plan 06 complete: MarketingMachinePage fully internationalized (EN/NL/ES) with card-gradient-border pricing cards, CSS fadeIn hero, max-w-7xl layout

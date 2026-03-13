@@ -14,7 +14,7 @@
 | 8     | Language Expansion             | Pending     | —          | 0%       |
 | 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
 | 10    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 11    | 5/7                            | In Progress |            | 0%       |
+| 11    | 6/7                            | In Progress |            | 0%       |
 
 ## Phases
 
