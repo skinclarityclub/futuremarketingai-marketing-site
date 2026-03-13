@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: completed
-stopped_at: Completed 09-living-system-page-conversion — all 5 plans complete, full-site Living System migration done
-last_updated: '2026-03-13T01:59:22.554Z'
+current_plan: 10-02
+status: in-progress
+stopped_at: Completed 10-01-PLAN.md — homepage restructured as FutureAI hub with service cards grid
+last_updated: '2026-03-13T02:21:00.000Z'
 progress:
-  total_phases: 2
+  total_phases: 3
   completed_phases: 2
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 9
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 9 — Living System Page Conversion
-- **Current Plan:** Not started
-- **Status:** Milestone complete
-- **Last completed:** Phase 09 Plan 05 (Utility Components & CSS — LoadingFallback, FloatingNav, CookieConsent, index.css + full-site visual audit PASSED)
-- **Last session:** 2026-03-13T02:00:00.000Z
-- **Stopped at:** Completed 09-living-system-page-conversion — all 5 plans complete, full-site Living System migration done
+- **Phase:** 10 — Homepage Restructuring & Marketing Machine Page
+- **Current Plan:** 10-02 (next)
+- **Status:** In Progress
+- **Last completed:** Phase 10 Plan 01 — Homepage restructured as FutureAI hub (service cards grid, VisionTimeline/FeatureShowcase removed, SimpleHeader branding updated)
+- **Last session:** 2026-03-13T02:21:00.000Z
+- **Stopped at:** Completed 10-01-PLAN.md — homepage restructured as FutureAI hub with service cards grid
 
 ## Decisions
 
@@ -45,6 +45,9 @@ progress:
 - [Phase 09-living-system-page-conversion]: CTAButton replaces all hand-rolled Calendly anchor/button elements in SimpleHeader and Hero — no local Calendly state in parents
 - [Phase 09-living-system-page-conversion]: SVG inline elements use hex values #00D4AA/#F5A623 directly since SVG stopColor does not support Tailwind class names
 - [Phase 09-05]: CookieConsent text elements use inline style={{ color }} because react-cookie-consent injects styles that override Tailwind classes
+- [10-01]: MotionLink = motion(Link) pattern for animated service cards — enables both SPA navigation and Framer Motion whileHover animations
+- [10-01]: Primary homepage CTA uses #services hash scroll (not /automations) — low-friction above-fold action, Calendly CTA placed after service grid
+- [10-01]: solution_section i18n keys preserved in common.json — Plan 02 will reference them on marketing-machine page
 
 ## Context
 
@@ -55,8 +58,9 @@ progress:
 - All Calendly CTAs use modal pattern with dark theme params across VoiceAgents, Automations, Chatbots pages
 - 2026-03-13: Phase 9 complete — Living System Page Conversion (all 5 plans executed, all pages converted from old glassmorphism to teal/amber tokens)
 - Full-site visual audit passed: zero old indigo/purple/blue palette elements on any page
-- Next phase: Phase 10 — Homepage Restructuring & Marketing Machine Page
-- Phase 10 added: Restructure homepage as general FutureAI hub, create /marketing-machine page with relocated content, fix i18n sync
+- Phase 10 in progress — Homepage Restructuring & Marketing Machine Page
+- Phase 10 Plan 01 complete: Homepage restructured as FutureAI hub — 4 service cards, VisionTimeline/FeatureShowcase removed, SimpleHeader branding updated, legacy gradient wrapper fixed
+- Next: Phase 10 Plan 02 — Create MarketingMachinePage with VisionTimeline, FeatureShowcase, and marketing content relocated from homepage
 
 ### Roadmap Evolution
 
