@@ -1,28 +1,44 @@
 import type { PersonaConfig } from './types'
+import type { Tool } from 'ai'
 import { tool } from 'ai'
 import { z } from 'zod'
 import { getPersona } from './persona-router'
+import { conciergeTools } from './tools/concierge-tools'
+import { ecommerceTools } from './tools/ecommerce-tools'
+import { leadgenTools } from './tools/leadgen-tools'
+import { supportTools } from './tools/support-tools'
+import { demoGuideTools } from './tools/demo-guide-tools'
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyToolRecord = Record<string, Tool<any, any>>
+
+/**
+ * Maps persona ID to its AI SDK tool definitions.
+ * Uses Tool<any, any> because each persona has differently-typed tool schemas.
+ */
+const PERSONA_TOOLS: Record<string, AnyToolRecord> = {
+  concierge: conciergeTools,
+  ecommerce: ecommerceTools,
+  leadgen: leadgenTools,
+  support: supportTools,
+  'demo-guide': demoGuideTools,
+}
 
 /**
  * Factory that takes a PersonaConfig and returns AI SDK tool() wrapped versions.
- * Phase 15: returns empty record. Phase 16 fills in actual tool definitions.
  */
-export function createPersonaTools(
-  _persona: PersonaConfig
-): Record<string, ReturnType<typeof tool>> {
-  // Actual tool definitions come in Phase 16 per persona
-  return {}
+export function createPersonaTools(persona: PersonaConfig): AnyToolRecord {
+  return PERSONA_TOOLS[persona.id] ?? {}
 }
 
 /**
  * Manual tool execution path (backup if streamText auto-execution is not used).
  * Validates tool availability by persona before executing.
- * Phase 15: returns stub. Phase 16 fills in actual handlers.
  */
 export async function executeToolCall(
   personaId: string,
   toolName: string,
-  _args: unknown
+  args: unknown
 ): Promise<unknown> {
   const persona = getPersona(personaId)
 
@@ -30,8 +46,17 @@ export async function executeToolCall(
     throw new Error(`Tool ${toolName} not available for persona ${personaId}`)
   }
 
-  // Phase 16 fills in actual tool execution handlers
-  return { error: 'Tool execution not yet implemented' }
+  const tools = PERSONA_TOOLS[personaId]
+  if (!tools || !(toolName in tools)) {
+    return { error: `Tool ${toolName} not implemented for persona ${personaId}` }
+  }
+
+  const toolDef = tools[toolName]
+  if (toolDef && 'execute' in toolDef && typeof toolDef.execute === 'function') {
+    return (toolDef.execute as (args: unknown) => Promise<unknown>)(args)
+  }
+
+  return { error: `Tool ${toolName} has no execute handler` }
 }
 
 /**
