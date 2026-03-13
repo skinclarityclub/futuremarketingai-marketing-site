@@ -64,35 +64,35 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative z-10 py-8 px-6 border-t border-white/10 backdrop-blur-xl bg-black/20">
+    <footer className="relative z-10 py-8 px-6 border-t border-border-primary bg-bg-surface/50">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Privacy Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-slate-300">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-text-secondary">
             <a
               href="https://futuremarketingai.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition-colors underline"
+              className="hover:text-accent-system transition-colors underline"
             >
               {t('footer.privacy_policy')}
             </a>
-            <span className="text-slate-600">•</span>
+            <span className="text-text-muted">•</span>
             <a
               href="https://futuremarketingai.com/cookies"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition-colors underline"
+              className="hover:text-accent-system transition-colors underline"
             >
               {t('footer.cookie_policy')}
             </a>
-            <span className="text-slate-600">•</span>
+            <span className="text-text-muted">•</span>
             <a
               href="https://futuremarketingai.com/terms"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-indigo-400 transition-colors underline"
+              className="hover:text-accent-system transition-colors underline"
             >
               {t('footer.terms')}
             </a>
@@ -103,7 +103,7 @@ export function Footer() {
             {!showDeleteConfirm ? (
               <button
                 onClick={() => setShowDeleteConfirm(true)}
-                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white border border-slate-600 hover:border-red-500/50 rounded-lg transition-all hover:bg-red-500/10"
+                className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-white border border-border-primary hover:border-red-500/50 rounded-lg transition-all hover:bg-red-500/10"
                 aria-label={t('footer.delete_my_data')}
               >
                 <Trash2 className="w-4 h-4 inline-block mr-1" aria-hidden="true" />
@@ -115,7 +115,7 @@ export function Footer() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-lg"
               >
-                <span className="text-sm text-slate-300">{t('footer.delete_confirm')}</span>
+                <span className="text-sm text-text-secondary">{t('footer.delete_confirm')}</span>
                 <button
                   onClick={handleDeleteData}
                   disabled={isDeleting}
@@ -125,7 +125,7 @@ export function Footer() {
                 </button>
                 <button
                   onClick={() => setShowDeleteConfirm(false)}
-                  className="px-3 py-1 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                  className="px-3 py-1 text-sm font-medium text-text-secondary hover:text-white transition-colors"
                 >
                   {t('common:actions.cancel')}
                 </button>
@@ -135,7 +135,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 pt-6 border-t border-white/5 text-center text-xs text-slate-500">
+        <div className="mt-6 pt-6 border-t border-border-primary text-center text-xs text-text-muted">
           <p>
             © {new Date().getFullYear()} FutureMarketingAI. {t('footer.all_rights_reserved')}
           </p>

@@ -1,14 +1,14 @@
 /**
  * SimpleHeader Component - Living System Header
- * Converted from glassmorphism to Living System teal/amber tokens.
+ * Full-width backdrop-blur nav with gradient underline on hover.
  *
- * Design: bg-bg-surface, teal accents, sharp corners (rounded-sm), no backdrop-blur.
+ * Design: Full-width backdrop-blur, FM+gradient-ai logo, gradient underline links.
  */
 
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles, LogIn, ChevronDown } from 'lucide-react'
+import { Menu, X, LogIn, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { LANGUAGES, type Language } from '../../i18n/config'
 import { useDemoRedirect } from '../../hooks'
@@ -222,11 +222,9 @@ export const SimpleHeader: React.FC = () => {
 
   return (
     <>
-      {/* Living System Floating Header with Auto-Hide */}
+      {/* Living System Full-Width Header with Auto-Hide */}
       <motion.header
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'py-2' : 'py-4'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50"
         initial={{ y: -100, opacity: 0 }}
         animate={{
           y: isVisible ? 0 : -100,
@@ -234,228 +232,221 @@ export const SimpleHeader: React.FC = () => {
         }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Floating Container - Living System surface */}
-          <div
-            className={`relative transition-all duration-700 ${
-              isScrolled
-                ? 'bg-bg-surface/95 border border-border-primary shadow-glow-sm'
-                : 'bg-bg-surface/80 border border-border-primary shadow-lg'
-            } rounded-sm`}
-          >
-            <div className="relative flex items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
-              {/* Logo - Living System Style */}
-              <Link
-                to="/"
-                className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-system rounded-sm"
-                aria-label={t('landing.header.logo_aria')}
-              >
-                {/* Icon */}
-                <div className="relative">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-accent-system transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                </div>
-
-                {/* Text Logo */}
-                <div className="font-bold text-base sm:text-lg tracking-tight">
-                  <span className="text-text-primary group-hover:text-text-primary transition-colors">
-                    {t('landing.header.brand.future')}
+        <div
+          className={`bg-[rgba(12,12,20,0.5)] backdrop-blur-[24px] border-b border-border-primary transition-all duration-500 ${
+            isScrolled ? 'py-3' : 'py-5'
+          }`}
+        >
+          <div className="relative flex items-center justify-between px-12">
+            {/* Logo - FM + gradient ai */}
+            <Link
+              to="/"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-system rounded-sm"
+              aria-label={t('landing.header.logo_aria')}
+            >
+              <span className="font-display font-bold text-xl tracking-tight">
+                <span className="text-white">FM</span>
+                {brandMiddle && (
+                  <span className="text-text-secondary text-base font-medium mx-0.5">
                     {brandMiddle}
                   </span>
-                  <span className="text-accent-system">{t('landing.header.brand.ai')}</span>
-                </div>
-              </Link>
+                )}
+                <span className="bg-gradient-to-r from-accent-human to-accent-system bg-clip-text text-transparent">
+                  ai
+                </span>
+              </span>
+            </Link>
 
-              {/* Mobile: Language Switcher + Hamburger Menu */}
-              <div className="lg:hidden flex items-center gap-2">
-                {/* Language Switcher - Compact Flag Button */}
-                <div className="relative" ref={langDropdownRef}>
-                  <button
-                    onClick={() => setIsLangOpen(!isLangOpen)}
-                    className="w-9 h-9 rounded-sm bg-bg-elevated border border-border-primary flex items-center justify-center hover:bg-bg-elevated/80 transition-colors p-1.5"
-                    aria-label={t('common:language_switcher.change_language')}
-                    aria-expanded={isLangOpen}
-                    type="button"
-                  >
-                    <div className="w-full h-full rounded overflow-hidden">
-                      <FlagComponent
-                        title={currentLangData.name}
-                        className="w-full h-full object-cover"
+            {/* Mobile: Language Switcher + Hamburger Menu */}
+            <div className="lg:hidden flex items-center gap-2">
+              {/* Language Switcher - Compact Flag Button */}
+              <div className="relative" ref={langDropdownRef}>
+                <button
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="w-9 h-9 rounded-sm bg-bg-elevated border border-border-primary flex items-center justify-center hover:bg-bg-elevated/80 transition-colors p-1.5"
+                  aria-label={t('common:language_switcher.change_language')}
+                  aria-expanded={isLangOpen}
+                  type="button"
+                >
+                  <div className="w-full h-full rounded overflow-hidden">
+                    <FlagComponent
+                      title={currentLangData.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </button>
+
+                {/* Language Dropdown */}
+                <AnimatePresence>
+                  {isLangOpen && (
+                    <>
+                      {/* Backdrop */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-40"
+                        onClick={() => setIsLangOpen(false)}
                       />
-                    </div>
-                  </button>
 
-                  {/* Language Dropdown */}
-                  <AnimatePresence>
-                    {isLangOpen && (
-                      <>
-                        {/* Backdrop */}
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          className="fixed inset-0 z-40"
-                          onClick={() => setIsLangOpen(false)}
-                        />
-
-                        {/* Dropdown Menu */}
-                        <motion.div
-                          initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute right-0 top-full mt-2 bg-bg-elevated border border-border-primary rounded-sm shadow-glow-sm py-2 min-w-[140px] z-50"
-                        >
-                          {Object.entries(LANGUAGES).map(([code, data]) => {
-                            const FlagIcon = FLAG_COMPONENTS[code as Language]
-                            return (
-                              <button
-                                key={code}
-                                onClick={() => changeLanguage(code as Language)}
-                                className={`
+                      {/* Dropdown Menu */}
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute right-0 top-full mt-2 bg-bg-elevated border border-border-primary rounded-sm shadow-glow-sm py-2 min-w-[140px] z-50"
+                      >
+                        {Object.entries(LANGUAGES).map(([code, data]) => {
+                          const FlagIcon = FLAG_COMPONENTS[code as Language]
+                          return (
+                            <button
+                              key={code}
+                              onClick={() => changeLanguage(code as Language)}
+                              className={`
                                   w-full px-3 py-2 text-left flex items-center gap-3 transition-colors
                                   hover:bg-bg-surface
                                   ${currentLanguage === code ? 'bg-accent-system/10' : ''}
                                 `}
-                                type="button"
+                              type="button"
+                            >
+                              <div className="w-6 h-4 rounded overflow-hidden shadow-sm flex-shrink-0">
+                                <FlagIcon
+                                  title={data.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <span
+                                className={`text-sm font-medium ${
+                                  currentLanguage === code
+                                    ? 'text-accent-system'
+                                    : 'text-text-secondary'
+                                }`}
                               >
-                                <div className="w-6 h-4 rounded overflow-hidden shadow-sm flex-shrink-0">
-                                  <FlagIcon
-                                    title={data.name}
-                                    className="w-full h-full object-cover"
-                                  />
-                                </div>
-                                <span
-                                  className={`text-sm font-medium ${
-                                    currentLanguage === code
-                                      ? 'text-accent-system'
-                                      : 'text-text-secondary'
-                                  }`}
+                                {data.name}
+                              </span>
+                              {currentLanguage === code && (
+                                <svg
+                                  className="w-4 h-4 ml-auto text-accent-system"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
                                 >
-                                  {data.name}
-                                </span>
-                                {currentLanguage === code && (
-                                  <svg
-                                    className="w-4 h-4 ml-auto text-accent-system"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                  >
-                                    <path
-                                      fillRule="evenodd"
-                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                      clipRule="evenodd"
-                                    />
-                                  </svg>
-                                )}
-                              </button>
-                            )
-                          })}
-                        </motion.div>
-                      </>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Hamburger Menu Button */}
-                <button
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="p-2 rounded-sm text-text-primary hover:bg-bg-elevated transition-colors"
-                  aria-label={
-                    isMobileMenuOpen
-                      ? t('landing.header.mobile_menu_close')
-                      : t('landing.header.mobile_menu_open')
-                  }
-                  aria-expanded={isMobileMenuOpen}
-                >
-                  {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
-              </div>
-
-              {/* Center: Minimal Navigation */}
-              <nav
-                className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
-                aria-label={t('landing.header.nav_aria')}
-              >
-                {/* Services Dropdown */}
-                <div
-                  className="relative"
-                  ref={servicesDropdownRef}
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                >
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-300 flex items-center gap-1 ${
-                      serviceLinks.some((s) => isActiveLink(s.href))
-                        ? 'text-text-primary bg-bg-elevated'
-                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
-                    }`}
-                    type="button"
-                  >
-                    {t('landing.header.nav.features')}
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-
-                  <AnimatePresence>
-                    {isServicesOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -5, scale: 0.97 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -5, scale: 0.97 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute left-0 top-full mt-2 bg-bg-elevated border border-border-primary rounded-sm shadow-glow-sm py-2 min-w-[200px] z-50"
-                      >
-                        {serviceLinks.map((link) => (
-                          <Link
-                            key={link.href}
-                            to={link.href}
-                            className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
-                              isActiveLink(link.href)
-                                ? 'text-accent-system bg-accent-system/10'
-                                : 'text-text-secondary hover:text-text-primary hover:bg-bg-surface'
-                            }`}
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            {link.label}
-                          </Link>
-                        ))}
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              )}
+                            </button>
+                          )
+                        })}
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-300 ${
-                      isActiveLink(link.href)
-                        ? 'text-text-primary bg-bg-elevated'
-                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
-                    }`}
-                    aria-current={isActiveLink(link.href) ? 'page' : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-
-              {/* Right: CTA Hierarchy */}
-              <div className="hidden lg:flex items-center gap-2">
-                {/* Secondary CTA - Login */}
-                <a href="https://app.future-marketing.ai/login">
-                  <button className="px-3 py-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors rounded-sm hover:bg-bg-elevated">
-                    <LogIn className="w-4 h-4 inline mr-1.5" />
-                    {t('landing.header.login')}
-                  </button>
-                </a>
-
-                {/* Primary CTA - Living System CTAButton */}
-                <CTAButton size="sm" calendly>
-                  {t('landing.header.try_demo')}
-                </CTAButton>
+                    </>
+                  )}
+                </AnimatePresence>
               </div>
+
+              {/* Hamburger Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 rounded-sm text-text-primary hover:bg-bg-elevated transition-colors"
+                aria-label={
+                  isMobileMenuOpen
+                    ? t('landing.header.mobile_menu_close')
+                    : t('landing.header.mobile_menu_open')
+                }
+                aria-expanded={isMobileMenuOpen}
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* Center: Minimal Navigation */}
+            <nav
+              className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2"
+              aria-label={t('landing.header.nav_aria')}
+            >
+              {/* Services Dropdown */}
+              <div
+                className="relative"
+                ref={servicesDropdownRef}
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className={`relative px-3 py-1.5 text-sm font-medium transition-all duration-300 flex items-center gap-1 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-gradient-to-r after:from-accent-human after:to-accent-system after:transition-all after:duration-300 hover:after:w-full ${
+                    serviceLinks.some((s) => isActiveLink(s.href))
+                      ? 'text-text-primary after:w-full'
+                      : 'text-text-secondary hover:text-text-primary'
+                  }`}
+                  type="button"
+                >
+                  {t('landing.header.nav.features')}
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {isServicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -5, scale: 0.97 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-0 top-full mt-2 bg-[rgba(12,12,20,0.8)] backdrop-blur-[24px] border border-border-primary rounded-card shadow-glow-sm py-2 min-w-[200px] z-50"
+                    >
+                      {serviceLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          to={link.href}
+                          className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                            isActiveLink(link.href)
+                              ? 'text-accent-system bg-accent-system/10'
+                              : 'text-text-secondary hover:text-text-primary hover:bg-bg-surface'
+                          }`}
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`relative px-3 py-1.5 text-sm font-medium transition-all duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-gradient-to-r after:from-accent-human after:to-accent-system after:transition-all after:duration-300 hover:after:w-full ${
+                    isActiveLink(link.href)
+                      ? 'text-text-primary after:w-full'
+                      : 'text-text-secondary hover:text-text-primary'
+                  }`}
+                  aria-current={isActiveLink(link.href) ? 'page' : undefined}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right: CTA Hierarchy */}
+            <div className="hidden lg:flex items-center gap-2">
+              {/* Secondary CTA - Login */}
+              <a href="https://app.future-marketing.ai/login">
+                <button className="px-3 py-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors rounded-sm hover:bg-bg-elevated">
+                  <LogIn className="w-4 h-4 inline mr-1.5" />
+                  {t('landing.header.login')}
+                </button>
+              </a>
+
+              {/* Primary CTA - Living System CTAButton */}
+              <CTAButton size="sm" calendly>
+                {t('landing.header.try_demo')}
+              </CTAButton>
             </div>
           </div>
         </div>
