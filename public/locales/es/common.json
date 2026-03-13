@@ -840,5 +840,61 @@
         "button": "Reserva una Auditoria Gratis"
       }
     }
+  },
+  "marketing_machine": {
+    "hero_badge": "La Marketing Machine",
+    "hero_title": "160 Posts/Mes.",
+    "hero_title_highlight": "Cero Trabajo Manual.",
+    "hero_description": "6 modulos de IA trabajando 24/7 para crear, optimizar y distribuir tu contenido — mientras tu te enfocas en hacer crecer tu negocio.",
+    "hero_cta_primary": "Reserva una Llamada",
+    "hero_cta_secondary": "Calcula Tu ROI",
+    "hero_trust_note": "Sin tarjeta de credito · Llamada de 30 min · Respuesta en 24h",
+    "modules_badge": "Los 6 Modulos de IA",
+    "modules_title": "Tu Equipo de Marketing Autonomo",
+    "modules_description": "Cada modulo es un agente de IA especializado — trabajando en conjunto para gestionar toda tu operacion de marketing.",
+    "pricing_title": "Precios para Miembros Fundadores",
+    "pricing_subtitle": "Unete a los primeros 10 equipos construyendo una ventaja de IA de 2-3 anos.",
+    "pricing_most_popular": "Mas Popular",
+    "pricing_see_plans": "Ver Planes de Precios",
+    "pricing_see_all_plans": "Ver Todos los Planes",
+    "pricing_tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "€2.500/mes",
+        "description": "Para equipos listos para construir una base de contenido con IA",
+        "features": [
+          "2 modulos de IA activos",
+          "40 posts/mes",
+          "Estrategia de contenido",
+          "Llamada de revision mensual"
+        ]
+      },
+      "marketing_machine": {
+        "name": "Marketing Machine",
+        "price": "€4.500/mes",
+        "description": "Automatizacion completa — 6 modulos, 160 posts/mes",
+        "features": [
+          "Los 6 modulos de IA",
+          "160 posts/mes",
+          "Gestion de anuncios pagados",
+          "Reportes de rendimiento semanales",
+          "Soporte prioritario"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Personalizado",
+        "description": "Equipo de IA dedicado para tu organizacion",
+        "features": [
+          "Configuracion de modulos personalizada",
+          "Volumen de contenido ilimitado",
+          "Estratega de IA dedicado",
+          "Garantia SLA"
+        ]
+      }
+    },
+    "final_cta_title": "Listo para Automatizar Tu Marketing?",
+    "final_cta_description": "Habla con una persona. 30 minutos, sin compromiso.",
+    "final_cta_button": "Reserva una Llamada"
   }
 }

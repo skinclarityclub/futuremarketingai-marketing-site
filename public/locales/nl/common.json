@@ -841,5 +841,61 @@
         "button": "Plan een Gratis Audit"
       }
     }
+  },
+  "marketing_machine": {
+    "hero_badge": "De Marketing Machine",
+    "hero_title": "160 Posts/Maand.",
+    "hero_title_highlight": "Nul Handmatig Werk.",
+    "hero_description": "6 AI-modules die 24/7 jouw content creeren, optimaliseren en distribueren — terwijl jij je focust op het groeien van je bedrijf.",
+    "hero_cta_primary": "Plan een Kennismakingsgesprek",
+    "hero_cta_secondary": "Bereken Je ROI",
+    "hero_trust_note": "Geen creditcard · 30 min gesprek · 24u reactie",
+    "modules_badge": "De 6 AI-Modules",
+    "modules_title": "Jouw Autonome Marketing Team",
+    "modules_description": "Elke module is een gespecialiseerde AI-agent — die samenwerken om jouw volledige marketingoperatie te draaien.",
+    "pricing_title": "Founding Member Prijzen",
+    "pricing_subtitle": "Sluit je aan bij de eerste 10 teams die een oneerlijke 2-3 jaar AI-voorsprong opbouwen.",
+    "pricing_most_popular": "Meest Populair",
+    "pricing_see_plans": "Bekijk Prijsplannen",
+    "pricing_see_all_plans": "Bekijk Alle Prijsplannen",
+    "pricing_tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "€2.500/mnd",
+        "description": "Voor teams die klaar zijn om een AI-contentbasis te bouwen",
+        "features": [
+          "2 actieve AI-modules",
+          "40 posts/maand",
+          "Content strategie",
+          "Maandelijks evaluatiegesprek"
+        ]
+      },
+      "marketing_machine": {
+        "name": "Marketing Machine",
+        "price": "€4.500/mnd",
+        "description": "Volledige automatisering — 6 modules, 160 posts/maand",
+        "features": [
+          "Alle 6 AI-modules",
+          "160 posts/maand",
+          "Betaalde advertentie management",
+          "Wekelijkse prestatierapporten",
+          "Prioritaire ondersteuning"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Op maat",
+        "description": "Dedicated AI-team voor jouw organisatie",
+        "features": [
+          "Aangepaste module configuratie",
+          "Onbeperkt content volume",
+          "Dedicated AI-strateeg",
+          "SLA-garantie"
+        ]
+      }
+    },
+    "final_cta_title": "Klaar om Je Marketing te Automatiseren?",
+    "final_cta_description": "Praat met een mens. 30 minuten, vrijblijvend.",
+    "final_cta_button": "Plan een Kennismakingsgesprek"
   }
 }

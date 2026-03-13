@@ -832,5 +832,61 @@
         "button": "Book a Free Audit"
       }
     }
+  },
+  "marketing_machine": {
+    "hero_badge": "The Marketing Machine",
+    "hero_title": "160 Posts/Month.",
+    "hero_title_highlight": "Zero Manual Work.",
+    "hero_description": "6 AI modules working 24/7 to create, optimise, and distribute your content — while you focus on growing your business.",
+    "hero_cta_primary": "Book a Discovery Call",
+    "hero_cta_secondary": "Calculate Your ROI",
+    "hero_trust_note": "No credit card · 30-min call · 24h response",
+    "modules_badge": "The 6 AI Modules",
+    "modules_title": "Your Autonomous Marketing Team",
+    "modules_description": "Each module is a specialised AI agent — working in concert to run your entire marketing operation.",
+    "pricing_title": "Founding Member Pricing",
+    "pricing_subtitle": "Join the first 10 teams building an unfair 2–3 year AI lead.",
+    "pricing_most_popular": "Most Popular",
+    "pricing_see_plans": "See Pricing Plans",
+    "pricing_see_all_plans": "See All Pricing Plans",
+    "pricing_tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "€2,500/mo",
+        "description": "For teams ready to build an AI content foundation",
+        "features": [
+          "2 active AI modules",
+          "40 posts/month",
+          "Content strategy",
+          "Monthly review call"
+        ]
+      },
+      "marketing_machine": {
+        "name": "Marketing Machine",
+        "price": "€4,500/mo",
+        "description": "Full automation — 6 modules, 160 posts/month",
+        "features": [
+          "All 6 AI modules",
+          "160 posts/month",
+          "Paid ad management",
+          "Weekly performance reports",
+          "Priority support"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "description": "Dedicated AI team for your organisation",
+        "features": [
+          "Custom module configuration",
+          "Unlimited content volume",
+          "Dedicated AI strategist",
+          "SLA guarantee"
+        ]
+      }
+    },
+    "final_cta_title": "Ready to Automate Your Marketing?",
+    "final_cta_description": "Talk to a human. 30 minutes, no obligation.",
+    "final_cta_button": "Book a Discovery Call"
   }
 }
