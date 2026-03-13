@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: planning
-stopped_at: Completed 13-02-PLAN.md
-last_updated: '2026-03-13T15:05:08.195Z'
+current_plan: Plan 2 of 3
+status: executing
+stopped_at: Completed 14-01-PLAN.md
+last_updated: '2026-03-13T15:34:05.000Z'
 progress:
-  total_phases: 7
+  total_phases: 8
   completed_phases: 6
-  total_plans: 24
-  completed_plans: 24
+  total_plans: 27
+  completed_plans: 25
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 13 — Dead Code Cleanup & Media Fix
-- **Current Plan:** Not started
-- **Status:** Ready to plan
-- **Last completed:** Phase 13 Plan 02 — Placeholder media files for ProductMedia components
-- **Last session:** 2026-03-13T15:00:34Z
-- **Stopped at:** Completed 13-02-PLAN.md
+- **Phase:** 14 — Service Page i18n
+- **Current Plan:** Plan 2 of 3
+- **Status:** Executing
+- **Last completed:** Phase 14 Plan 01 — AutomationsPage i18n (EN/NL/ES)
+- **Last session:** 2026-03-13T15:35:56.970Z
+- **Stopped at:** Completed 14-01-PLAN.md
 
 ## Decisions
 
@@ -78,6 +78,10 @@ progress:
 - [12-03]: ComparisonTables.tsx modified for pricing card-tilt since PricingPage delegates card rendering to that component
 - [13-02]: Minimal valid binary files via base64 decode -- no external tools (sharp/ffmpeg) needed for placeholder media
 - [13-02]: WebP 1x1 dark pixel (43 bytes) and MP4 minimal ftyp+moov container (736 bytes) -- smallest valid files browsers accept
+- [14-01]: Service page i18n uses KEYS array + ICONS record at module scope, .map(key => t()) inside component
+- [14-01]: Pricing tier features loaded via t(key, { returnObjects: true }) as string[]
+- [14-01]: NL prices use dot-separator (1.000) matching Dutch locale convention
+- [Phase 14]: Pricing tier features use t() with returnObjects for translated arrays; module-level key/config maps keep static config separate from t() text
 
 ## Context
 
@@ -116,3 +120,5 @@ progress:
 - Phase 13 Plan 01 complete: Deleted 4 orphaned Phase 3 components (SystemPanel, StatusIndicator, MetricDisplay, SectionContainer) + useTilt hook; cleaned barrel exports; build passes
 - Phase 13 Plan 02 complete: 8 placeholder media files (4 MP4 + 4 WebP) in public/media/ -- zero ProductMedia 404 errors on service pages
 - Phase 13 COMPLETE: All 2 plans done -- Dead Code Cleanup & Media Fix finished
+- Phase 14 added: Service Page i18n -- wire useTranslation into 3 service pages, extract EN strings, add NL/ES translations
+- Phase 14 Plan 01 complete: AutomationsPage internationalized -- ~73 strings extracted to automations.json (EN/NL/ES), key-based mapping pattern for const arrays
