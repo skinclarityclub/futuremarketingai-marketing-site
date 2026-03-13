@@ -18,6 +18,7 @@ import {
   ToolComparisonTable,
 } from '../components/seo/ComparisonTables'
 import { FAQSection } from '../components/seo/FAQSection'
+import { CTAButton } from '../components/common/CTAButton'
 
 export const PricingPage: React.FC = () => {
   const { t } = useTranslation(['pricing', 'common', 'seo'])
@@ -58,25 +59,29 @@ export const PricingPage: React.FC = () => {
         availability="LimitedAvailability"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="min-h-screen bg-bg-deep">
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-6">
-              <span className="text-sm font-medium text-yellow-100">{t('pricing:hero.badge')}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full mb-6">
+              <span className="text-sm font-medium text-text-secondary">
+                {t('pricing:hero.badge')}
+              </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
               {t('pricing:hero.title')}
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-8">
               {t('pricing:hero.description')}
             </p>
 
             {/* Transparency Notice */}
-            <div className="inline-flex items-start gap-3 px-6 py-4 bg-blue-500/10 border border-blue-500/20 rounded-lg text-left max-w-2xl mx-auto">
-              <Info className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-              <div className="text-sm text-blue-100">
-                <strong className="text-white">{t('pricing:hero.transparency_title')}</strong>{' '}
+            <div className="inline-flex items-start gap-3 px-6 py-4 bg-accent-system/5 border border-accent-system/20 rounded-sm text-left max-w-2xl mx-auto">
+              <Info className="w-5 h-5 text-accent-system flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-text-secondary">
+                <strong className="text-text-primary">
+                  {t('pricing:hero.transparency_title')}
+                </strong>{' '}
                 {t('pricing:hero.transparency_text')}
               </div>
             </div>
@@ -98,26 +103,20 @@ export const PricingPage: React.FC = () => {
         {/* Final CTA */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-bg-surface border border-border-primary rounded-sm p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
                 {t('pricing:cta.title')}
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 {t('pricing:cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-                >
+                <CTAButton calendly arrow size="lg">
                   {t('pricing:cta.demo_button')}
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                </CTAButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-sm hover:bg-bg-surface transition-all"
                 >
                   {t('pricing:cta.contact_button')}
                   <ArrowRight className="w-5 h-5" />

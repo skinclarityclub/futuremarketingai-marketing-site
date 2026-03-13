@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { ArrowRight, Brain, Settings, Zap, Send, BarChart3, Target } from 'lucide-react'
+import { Brain, Settings, Zap, Send, BarChart3, Target } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
@@ -14,6 +14,7 @@ import { SEOHead } from '../components/seo/SEOHead'
 import { StructuredDataPresets } from '../components/seo/StructuredData'
 import { FAQSection } from '../components/seo/FAQSection'
 import { TermDefinitions } from '../components/seo/TermDefinitions'
+import { CTAButton } from '../components/common/CTAButton'
 
 export const HowItWorksPage: React.FC = () => {
   const { t } = useTranslation(['how-it-works', 'common'])
@@ -38,14 +39,14 @@ export const HowItWorksPage: React.FC = () => {
       {/* Structured Data - FAQPage */}
       <StructuredDataPresets.faqPage />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="min-h-screen bg-bg-deep">
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
               {t('how-it-works:hero.title')}
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
               {t('how-it-works:hero.description')}
             </p>
           </div>
@@ -54,7 +55,7 @@ export const HowItWorksPage: React.FC = () => {
         {/* Process Steps */}
         <section className="py-16 px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-12 text-center">
               {t('how-it-works:process.title')}
             </h2>
             <div className="space-y-8">
@@ -67,24 +68,24 @@ export const HowItWorksPage: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex flex-col md:flex-row gap-6 items-start bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all"
+                    className="flex flex-col md:flex-row gap-6 items-start bg-bg-surface border border-border-primary rounded-sm p-8 hover:bg-bg-elevated transition-all"
                   >
                     {/* Icon */}
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <Icon className="w-8 h-8 text-white" />
+                      <div className="w-16 h-16 bg-accent-system/20 border border-accent-system/30 rounded-sm flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-accent-system" />
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-grow">
-                      <div className="text-sm font-semibold text-blue-300 mb-2">
+                      <div className="text-sm font-semibold text-accent-system mb-2">
                         {t(`how-it-works:process.steps.${stepKey}.step`)}
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-3">
+                      <h3 className="text-2xl font-bold text-text-primary mb-3">
                         {t(`how-it-works:process.steps.${stepKey}.title`)}
                       </h3>
-                      <p className="text-blue-100 leading-relaxed">
+                      <p className="text-text-secondary leading-relaxed">
                         {t(`how-it-works:process.steps.${stepKey}.description`)}
                       </p>
                     </div>
@@ -94,9 +95,11 @@ export const HowItWorksPage: React.FC = () => {
             </div>
 
             {/* Loop Indicator */}
-            <div className="mt-8 text-center p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-xl">
-              <p className="text-blue-100">
-                <strong className="text-white">{t('how-it-works:process.loop_title')}</strong>{' '}
+            <div className="mt-8 text-center p-6 bg-accent-system/5 border border-accent-system/20 rounded-sm">
+              <p className="text-text-secondary">
+                <strong className="text-text-primary">
+                  {t('how-it-works:process.loop_title')}
+                </strong>{' '}
                 {t('how-it-works:process.loop_description')}
               </p>
             </div>
@@ -112,22 +115,16 @@ export const HowItWorksPage: React.FC = () => {
         {/* Final CTA */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-bg-surface border border-border-primary rounded-sm p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
                 {t('how-it-works:cta.title')}
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 {t('how-it-works:cta.description')}
               </p>
-              <a
-                href="/demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-              >
+              <CTAButton calendly arrow size="lg">
                 {t('how-it-works:cta.button')}
-                <ArrowRight className="w-5 h-5" />
-              </a>
+              </CTAButton>
             </div>
           </div>
         </section>

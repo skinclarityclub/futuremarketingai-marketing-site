@@ -81,15 +81,15 @@ export function LegalPage() {
 
   if (error || !type || !docMap[type]) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-bg-deep flex items-center justify-center p-6">
         <div className="max-w-md w-full text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">404</h1>
-          <p className="text-slate-300 mb-6">
+          <h1 className="text-4xl font-bold text-text-primary mb-4">404</h1>
+          <p className="text-text-secondary mb-6">
             {lang === 'nl' ? 'Document niet gevonden' : 'Document not found'}
           </p>
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors"
+            className="px-6 py-3 bg-accent-system hover:bg-accent-system/90 text-bg-deep rounded-sm transition-colors"
           >
             {lang === 'nl' ? 'Terug naar Demo' : 'Back to Demo'}
           </button>
@@ -102,18 +102,18 @@ export function LegalPage() {
   const title = lang === 'nl' ? doc.titleNl : doc.title
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-bg-deep">
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="border-b border-white/10 backdrop-blur-xl bg-black/20 sticky top-0 z-50"
+        className="border-b border-border-primary bg-bg-surface sticky top-0 z-50"
       >
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-white">{title}</h1>
+          <h1 className="text-2xl font-bold text-text-primary">{title}</h1>
           <button
             onClick={() => navigate('/')}
-            className="px-4 py-2 text-sm text-slate-300 hover:text-white border border-slate-600 hover:border-indigo-500 rounded-lg transition-all"
+            className="px-4 py-2 text-sm text-text-secondary hover:text-text-primary border border-border-primary hover:border-accent-system rounded-sm transition-all"
           >
             {lang === 'nl' ? '← Terug naar Demo' : '← Back to Demo'}
           </button>
@@ -128,35 +128,35 @@ export function LegalPage() {
         className="max-w-4xl mx-auto px-6 py-12"
       >
         <article className="prose prose-invert prose-lg max-w-none">
-          <div className="bg-black/20 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12">
+          <div className="bg-bg-surface border border-border-primary rounded-sm p-8 md:p-12">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 // Custom component styling for better readability
                 h1: ({ children, ...props }) => (
-                  <h1 className="text-4xl font-bold text-white mb-6" {...props}>
+                  <h1 className="text-4xl font-bold text-text-primary mb-6" {...props}>
                     {children}
                   </h1>
                 ),
                 h2: ({ children, ...props }) => (
-                  <h2 className="text-3xl font-bold text-white mt-12 mb-4" {...props}>
+                  <h2 className="text-3xl font-bold text-text-primary mt-12 mb-4" {...props}>
                     {children}
                   </h2>
                 ),
                 h3: ({ children, ...props }) => (
-                  <h3 className="text-2xl font-semibold text-slate-200 mt-8 mb-3" {...props}>
+                  <h3 className="text-2xl font-semibold text-text-secondary mt-8 mb-3" {...props}>
                     {children}
                   </h3>
                 ),
                 p: ({ children, ...props }) => (
-                  <p className="text-slate-300 leading-relaxed mb-4" {...props}>
+                  <p className="text-text-secondary leading-relaxed mb-4" {...props}>
                     {children}
                   </p>
                 ),
                 a: ({ children, href, ...props }) => (
                   <a
                     href={href}
-                    className="text-indigo-400 hover:text-indigo-300 underline transition-colors"
+                    className="text-accent-system hover:text-accent-system/80 underline transition-colors"
                     target={href?.startsWith('http') ? '_blank' : undefined}
                     rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                     {...props}
@@ -165,19 +165,25 @@ export function LegalPage() {
                   </a>
                 ),
                 ul: ({ children, ...props }) => (
-                  <ul className="list-disc list-inside text-slate-300 space-y-2 mb-4" {...props}>
+                  <ul
+                    className="list-disc list-inside text-text-secondary space-y-2 mb-4"
+                    {...props}
+                  >
                     {children}
                   </ul>
                 ),
                 ol: ({ children, ...props }) => (
-                  <ol className="list-decimal list-inside text-slate-300 space-y-2 mb-4" {...props}>
+                  <ol
+                    className="list-decimal list-inside text-text-secondary space-y-2 mb-4"
+                    {...props}
+                  >
                     {children}
                   </ol>
                 ),
                 table: ({ children, ...props }) => (
                   <div className="overflow-x-auto mb-6">
                     <table
-                      className="min-w-full border-collapse border border-slate-700"
+                      className="min-w-full border-collapse border border-border-primary"
                       {...props}
                     >
                       {children}
@@ -186,26 +192,29 @@ export function LegalPage() {
                 ),
                 th: ({ children, ...props }) => (
                   <th
-                    className="border border-slate-700 bg-slate-800 px-4 py-2 text-left text-white font-semibold"
+                    className="border border-border-primary bg-bg-elevated px-4 py-2 text-left text-text-primary font-semibold"
                     {...props}
                   >
                     {children}
                   </th>
                 ),
                 td: ({ children, ...props }) => (
-                  <td className="border border-slate-700 px-4 py-2 text-slate-300" {...props}>
+                  <td
+                    className="border border-border-primary px-4 py-2 text-text-secondary"
+                    {...props}
+                  >
                     {children}
                   </td>
                 ),
                 code: ({ children, ...props }) => (
                   <code
-                    className="bg-slate-800 text-indigo-300 px-2 py-1 rounded text-sm"
+                    className="bg-bg-elevated text-accent-system px-2 py-1 rounded-sm text-sm"
                     {...props}
                   >
                     {children}
                   </code>
                 ),
-                hr: ({ ...props }) => <hr className="border-slate-700 my-8" {...props} />,
+                hr: ({ ...props }) => <hr className="border-border-primary my-8" {...props} />,
               }}
             >
               {content}
@@ -218,7 +227,7 @@ export function LegalPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-400"
+          className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-text-muted"
         >
           {Object.entries(docMap)
             .filter(([key]) => key !== type)
@@ -226,7 +235,7 @@ export function LegalPage() {
               <button
                 key={key}
                 onClick={() => navigate(`/${key}`)}
-                className="hover:text-indigo-400 transition-colors underline"
+                className="hover:text-accent-system transition-colors underline"
               >
                 {lang === 'nl' ? doc.titleNl : doc.title}
               </button>
