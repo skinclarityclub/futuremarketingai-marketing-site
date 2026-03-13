@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** Not started
 - **Status:** Milestone complete
 - **Last completed:** Phase 3 Plan 03 (UX & Accessibility Fixes — Calendly modal, focus trap, reduced motion, trust metrics)
-- **Last session:** 2026-03-13T01:23:28Z
-- **Stopped at:** Completed 09-living-system-page-conversion plan 03 (Service Pages Conversion — Automations, Chatbots, Voice Agents)
+- **Last session:** 2026-03-13T01:27:19.642Z
+- **Stopped at:** Completed 09-living-system-page-conversion plan 01 (Homepage Foundation Components)
 
 ## Decisions
 
@@ -42,6 +42,8 @@ progress:
 - [Phase 09-living-system-page-conversion]: CTAButton with calendly prop replaces all old gradient anchor CTA buttons across supporting pages
 - [09-03]: Pricing card CTAs use CTAButton with w-full justify-center className to maintain full-width appearance
 - [09-03]: Highlighted pricing badges converted from blue/purple gradient rounded-full to accent-system rounded-sm — consistent with Living System
+- [Phase 09-living-system-page-conversion]: CTAButton replaces all hand-rolled Calendly anchor/button elements in SimpleHeader and Hero — no local Calendly state in parents
+- [Phase 09-living-system-page-conversion]: SVG inline elements use hex values #00D4AA/#F5A623 directly since SVG stopColor does not support Tailwind class names
 
 ## Context
 
