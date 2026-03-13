@@ -19,7 +19,6 @@ import { StrategicCTA } from '../components/common/StrategicCTA'
 import { TechnicalShowcase, FounderExpertise } from '../components/credibility'
 import type { HeatMapData } from '../components'
 import { usePageAnalytics, useCalendlyBooking, usePersonalization, useIsMobile } from '../hooks'
-import { useModuleFollowUp } from '../hooks/useModuleFollowUp'
 import { trackModuleOpen, trackCTAClick } from '../utils/analytics'
 import { usePersonalizationStore } from '../stores'
 import { CalendlyFunnelSession } from '../utils/calendlyFunnelTracking'
@@ -165,8 +164,7 @@ export const Explorer: React.FC = () => {
   // Calendly integration
   // (Floating Guide integration removed - will be reimplemented in AI Journey Assistant - Task 29)
 
-  // 🤖 Proactive chat follow-up when modules are closed
-  useModuleFollowUp()
+  // Module follow-up removed — demo-guide persona handles this via chatbot engine
 
   // Open modal from URL hash (e.g., #research-planning or #telegram-control)
   useEffect(() => {

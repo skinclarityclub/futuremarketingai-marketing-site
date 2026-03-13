@@ -8,7 +8,6 @@ import { TierBadge } from './TierBadge'
 import { PricingTier } from '../../types/pricing'
 import { trackCTAImpression, trackCTAClick } from '../../utils/analytics'
 import { useIsMobile } from '../../hooks'
-import { useFloatingElement } from '../../contexts/FloatingElementContext'
 
 export interface StrategicCTAProps {
   /** Main CTA text */
@@ -91,26 +90,6 @@ export const StrategicCTA: React.FC<StrategicCTAProps> = ({
   const [hasTrackedImpression, setHasTrackedImpression] = useState(false)
   const [impressionTime, setImpressionTime] = useState<number>(0)
   const [isVisible, setIsVisible] = useState(true)
-  const hasRegisteredRef = useRef(false)
-
-  // Floating element coordination (only for floating variant)
-  const { activeElement, openModal, closeModal } = useFloatingElement()
-
-  // Register as modal when floating variant mounts (only once)
-  useEffect(() => {
-    if (variant === 'floating' && isVisible && !hasRegisteredRef.current) {
-      openModal()
-      hasRegisteredRef.current = true
-    }
-  }, [variant, isVisible, openModal])
-
-  // Hide floating CTA when chat opens (DON'T call closeModal - chat will handle it)
-  useEffect(() => {
-    if (variant === 'floating' && activeElement === 'chat') {
-      setIsVisible(false)
-      hasRegisteredRef.current = false
-    }
-  }, [variant, activeElement])
 
   // Track impression with Intersection Observer (more performant than scroll listeners)
   useEffect(() => {
@@ -189,7 +168,6 @@ export const StrategicCTA: React.FC<StrategicCTAProps> = ({
   // Handle close (floating variant only)
   const handleClose = () => {
     setIsVisible(false)
-    closeModal()
   }
 
   // Don't render floating variant if hidden

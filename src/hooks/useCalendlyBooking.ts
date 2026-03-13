@@ -2,7 +2,6 @@ import { useState, useCallback, useMemo } from 'react'
 import { trackCTAClick, trackCalendly } from '../utils/analytics'
 import { trackVariantFormCompletion } from '../utils/headlineVariants'
 import { usePersonalizationStore } from '../stores'
-import { useJourneyStore } from '../stores/journeyStore'
 import {
   getCalendlyEventTypeByJourney,
   getEventTypeDisplayName,
@@ -63,20 +62,18 @@ export const useCalendlyBooking = (initialPrefill?: CalendlyPrefillData) => {
   const { selectedIndustry, userProfile, userJourney, userContact, icpScore } =
     usePersonalizationStore()
 
-  // Get journey data
-  const { completedSteps, timeOnSite } = useJourneyStore()
-
   // Smart event type selection based on ICP score and journey
+  // Note: journeyStore dependency removed — using hardcoded defaults for completedSteps/timeOnSite
   const recommendedEventType = useMemo(() => {
     const journeyContext = {
-      completedSteps: completedSteps?.length || 0,
-      timeOnSite: timeOnSite || 0,
+      completedSteps: 0,
+      timeOnSite: 0,
       exploredModules: userJourney.viewedModules.length,
       calculatorCompleted: !!userJourney.calculatorInputs?.teamSize,
     }
 
     return getCalendlyEventTypeByJourney(icpScore?.overall || null, journeyContext)
-  }, [icpScore, completedSteps, timeOnSite, userJourney])
+  }, [icpScore, userJourney])
 
   // Auto-generate base prefill data from personalization
   const basePrefillData = useMemo((): Partial<CalendlyPrefillData> => {
@@ -141,14 +138,8 @@ export const useCalendlyBooking = (initialPrefill?: CalendlyPrefillData) => {
 
     // Add journey engagement metrics
     const journeyMetrics = []
-    if (completedSteps && completedSteps.length > 0) {
-      journeyMetrics.push(`${completedSteps.length} stappen voltooid`)
-    }
     if (userJourney.viewedModules.length > 0) {
       journeyMetrics.push(`${userJourney.viewedModules.length} modules bekeken`)
-    }
-    if (timeOnSite && timeOnSite > 60) {
-      journeyMetrics.push(`${Math.round(timeOnSite / 60)} min op site`)
     }
     if (journeyMetrics.length > 0) {
       customAnswers.a8 = `Engagement: ${journeyMetrics.join(', ')}`
@@ -157,15 +148,7 @@ export const useCalendlyBooking = (initialPrefill?: CalendlyPrefillData) => {
     data.customAnswers = customAnswers
 
     return data
-  }, [
-    selectedIndustry,
-    userProfile,
-    userContact,
-    icpScore,
-    completedSteps,
-    timeOnSite,
-    userJourney,
-  ])
+  }, [selectedIndustry, userProfile, userContact, icpScore, userJourney])
 
   // Generate UTM parameters based on user journey
   const generateUTMParams = useCallback(
