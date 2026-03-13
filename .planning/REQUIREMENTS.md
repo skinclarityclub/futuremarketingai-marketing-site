@@ -48,3 +48,22 @@
 - i18n: NL/ES hero_landing keys synced with EN (remove stale founding-member copy)
 - i18n: ES common.json structural issues fixed (duplicate blocks, missing keys)
 - **Phase:** 10
+
+## REQ-LIVING-SYSTEM-REBUILD: Living System Full Structural Rebuild
+
+- Complete structural rebuild of every page to match prototype-2-living-system.html
+- Switch body font from Inter to DM Sans, keep Space Grotesk + JetBrains Mono
+- Add global GradientMesh background (3 CSS blobs, replaces 4 Framer Motion bg layers)
+- Rebuild Hero with left-aligned layout + orbit visual (spinning rings with dots)
+- Rebuild service cards as 2x2 numbered grid with gradient border hover (::before mask)
+- CTAButton primary: warm amber gradient (not flat teal), rounded-14px
+- CTAButton secondary: glass backdrop-blur effect
+- Navigation: full-width backdrop-blur, gradient underline hover on links, FM+gradient-ai logo
+- Footer: replace remaining hardcoded slate/indigo classes with Living System tokens
+- Service pages: structural rebuild with gradient mesh, card-gradient-border, warm CTAs
+- Supporting pages: same structural rebuild (About, Pricing, HowItWorks, Contact, Legal)
+- MarketingMachinePage: add i18n support (currently all hardcoded EN)
+- SimplifiedHeroMobile: rebuild to match new design language
+- CSS animations for blobs/orbit/fadeIn (replace Framer Motion where simple CSS suffices)
+- Preserve all existing content, routes, i18n keys, and functionality
+- **Phase:** 11

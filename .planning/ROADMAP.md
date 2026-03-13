@@ -14,6 +14,7 @@
 | 8     | Language Expansion             | Pending  | —          | 0%       |
 | 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
 | 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 11    | Living System Full Rebuild     | Planned  | 2026-03-13 | 0%       |
 
 ## Phases
 
@@ -46,3 +47,30 @@
     - [ ] 10-01-PLAN.md — Homepage hub restructuring (Hero rework, service cards grid, SimpleHeader branding)
     - [ ] 10-02-PLAN.md — MarketingMachinePage creation + routing (relocated components, App.tsx route)
     - [ ] 10-03-PLAN.md — i18n sync (NL/ES hero_landing fix, service card translations, ES structural fixes)
+
+- [ ] **Phase 11: Living System Full Rebuild** — Structural rebuild of all pages to match prototype-2-living-system.html design. All existing content/functionality preserved, only layout/styling/animations rebuilt.
+  - **Goal:** Complete structural rebuild — not color swap — of every page to match the Living System prototype (prototype-2-living-system.html). All existing page content, routes, i18n, and functionality must be preserved; only the visual structure, layout, and animations change.
+  - **Design reference:** `prototype-2-living-system.html` (root of repo)
+  - **Requirement IDs:** REQ-LIVING-SYSTEM-REBUILD
+  - **Depends on:** Phase 10
+  - **Scope:**
+    - **Homepage (Hero.tsx, LandingPage.tsx):** Replace centered layout with left-aligned hero + right-side orbit visual (spinning rings with dots). Remove 4 background layers (NeuralNetwork, HolographicGrid, FloatingParticles, GradientOrbs) and replace with animated gradient mesh blobs (warm/cool/mixed, blurred, floating). Rebuild service cards as 2x2 numbered grid (01-04) with gradient border hover effect and arrow circles — not 4-column icon cards.
+    - **Navigation (SimpleHeader.tsx):** Rebuild nav to match prototype — backdrop-blur with gradient underline hover on links, FMai logo with gradient "ai" suffix, warm gradient primary CTA button (not flat teal).
+    - **Footer (Footer.tsx):** Fix remaining slate/indigo hardcoded colors (text-slate-300, border-slate-600, hover:text-indigo-400). Convert fully to Living System tokens.
+    - **Service pages (AutomationsPage, ChatbotsPage, VoiceAgentsPage):** Structural rebuild of layouts to match prototype aesthetic — gradient mesh blob backgrounds, card redesign with gradient borders, warm CTA buttons. Not just color tokens.
+    - **Supporting pages (AboutPage, PricingPage, HowItWorksPage, ContactPage, LegalPage):** Same structural rebuild — match prototype card styling, typography hierarchy, button design.
+    - **MarketingMachinePage:** Add i18n support (currently hardcoded EN). Rebuild layout to match prototype aesthetic.
+    - **Typography:** Switch body font from Inter to DM Sans (as prototype). Keep Space Grotesk for headings, JetBrains Mono for data.
+    - **Shared components:** Evaluate SystemPanel, StatusIndicator, MetricDisplay, SectionContainer — build if useful for consistency, or intentionally skip and document why.
+    - **Button design:** Primary CTAs use warm gradient (amber→darker amber, rounded-14px) not flat teal. Secondary CTAs use glass effect (backdrop-blur, subtle border).
+    - **Card design:** All cards use gradient border-on-hover pattern from prototype (::before pseudo-element with mask). Numbered with service-number pattern.
+    - **Animations:** Smooth CSS animations (fadeIn, fadeInUp, blob floating) — remove heavy Framer Motion where simple CSS suffices.
+    - **Mobile:** SimplifiedHeroMobile.tsx must also be rebuilt to match new design language.
+  - **Plans:** 7 plans
+    - [ ] 11-01-PLAN.md — Foundation: DM Sans typography, Tailwind config (card/btn radius), CSS animations, GradientMesh component
+    - [ ] 11-02-PLAN.md — Global chrome: CTAButton warm gradient + glass, SimpleHeader backdrop-blur nav, Footer token cleanup
+    - [ ] 11-03-PLAN.md — Homepage: Hero left-aligned + OrbitVisual, 2x2 numbered service cards, GradientMesh wired globally
+    - [ ] 11-04-PLAN.md — Service pages: Automations, Chatbots, VoiceAgents structural rebuild (card-gradient-border, CSS animations)
+    - [ ] 11-05-PLAN.md — Supporting pages: About, Pricing, HowItWorks, Contact, Legal structural rebuild
+    - [ ] 11-06-PLAN.md — MarketingMachinePage i18n (EN/NL/ES) + structural rebuild
+    - [ ] 11-07-PLAN.md — Mobile hero rebuild + full-site visual verification checkpoint
