@@ -67,3 +67,38 @@
 - CSS animations for blobs/orbit/fadeIn (replace Framer Motion where simple CSS suffices)
 - Preserve all existing content, routes, i18n keys, and functionality
 - **Phase:** 11
+
+## REQ-HERO-3D: Interactive 3D Hero Visual
+
+- Install @splinetool/react-spline + @splinetool/runtime
+- Create SplineHero component with React.lazy + Suspense loading
+- OrbitVisual kept as permanent fallback during Spline load and below lg breakpoint
+- Hero heading text remains LCP element (Spline never blocks initial paint)
+- Spline hidden on mobile (desktop-first per CLAUDE.md)
+- prefers-reduced-motion respected (static fallback)
+- **Phase:** 12
+
+## REQ-SCROLL-MICRO: Scroll Reveals & Card Micro-Interactions
+
+- ScrollReveal reusable wrapper component using Framer Motion whileInView
+- useTilt custom hook for mouse-tracking card parallax (desktop only, disabled on touch)
+- Apply scroll reveals to below-fold sections across all pages (section-level, not per-element)
+- Apply card tilt to service cards and pricing cards
+- CTAButton icon micro-animation on hover (arrow shift)
+- All animations respect useMotionSafe / prefers-reduced-motion
+- **Phase:** 12
+
+## REQ-PRODUCT-MEDIA: Product Media Components
+
+- ProductMedia component for video/screenshot with poster frame
+- Video uses autoPlay muted loop playsInline with preload="none"
+- Reduced motion shows static poster image instead of video
+- Placeholder media structure on service pages (swap real assets when available)
+- **Phase:** 12
+
+## REQ-TYPOGRAPHY-POLISH: Typography Fine-Tuning
+
+- Letter-spacing adjustments for Space Grotesk display headings
+- Consistent section spacing rhythm across all pages
+- Fine-tune heading sizes for 1280px and 1440px breakpoints
+- **Phase:** 12
