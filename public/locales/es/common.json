@@ -4,26 +4,14 @@
   "tagline": "El Futuro de la Inteligencia de Marketing",
   "taglineSubtitle": "Impulsado por IA. Basado en Datos. Enfocado en Resultados.",
   "skip": "Saltar",
-  "language": {
-    "select": "Seleccionar Idioma",
-    "current": "Español"
-  },
-  "buttons": {
-    "explore": "Explorar Plataforma",
-    "calculate": "Calcular ROI",
-    "book_call": "Reservar Llamada Gratis",
-    "start_trial": "Iniciar Prueba Gratis",
-    "learn_more": "Más Información",
-    "see_demo": "Ver Demo",
-    "get_started": "Comenzar",
-    "contact_us": "Contactar",
-    "close": "Cerrar",
-    "cancel": "Cancelar",
-    "confirm": "Confirmar",
-    "save": "Guardar",
-    "next": "Siguiente",
-    "back": "Atrás",
-    "submit": "Enviar"
+  "skipLabel": "Saltar animación",
+  "loading": {
+    "default": "Cargando...",
+    "page": "Cargando página...",
+    "content": "Cargando contenido...",
+    "scheduling": "Cargando programación...",
+    "calendly": "Cargando calendario...",
+    "component": "No se pudo cargar el componente"
   },
   "actions": {
     "save": "Guardar",
@@ -52,18 +40,13 @@
     "learn_more": "Más Información",
     "view": "Ver"
   },
-  "show_more": "Mostrar más",
-  "show_less": "Mostrar menos",
-  "view_interactive": "Ver Interactivo",
-  "expand": "Expandir detalles",
-  "collapse": "Colapsar detalles",
-  "swipe_hint": "← Desliza para explorar más →",
-  "loading": {
-    "default": "Cargando...",
-    "please_wait": "Por favor espera...",
-    "processing": "Procesando...",
-    "scheduling": "Cargando programación...",
-    "component": "No se pudo cargar el componente"
+  "personalization": {
+    "change_industry_tooltip": "Haz clic para cambiar la industria",
+    "more_preferences": "Más preferencias",
+    "open_preferences": "Abrir preferencias de usuario"
+  },
+  "language_switcher": {
+    "change_language": "Cambiar idioma"
   },
   "chat": {
     "tooltip": "¿Necesitas ayuda? ¡Estoy aquí para asistirte!",
@@ -90,69 +73,51 @@
     "pricing_roadmap": "Hoja de Ruta de Precios",
     "roadmap_subtitle": "Progresión de precios transparente"
   },
-  "trust_indicators": {
-    "gdpr": {
-      "title": "Cumple con RGPD",
-      "description": "Totalmente conforme con las regulaciones de privacidad de la UE"
-    },
-    "ssl": {
-      "title": "Encriptación SSL de 256 bits",
-      "description": "Encriptación de datos de nivel bancario"
-    },
-    "iso": {
-      "title": "Certificado ISO 27001",
-      "description": "Estándar internacional de gestión de seguridad"
-    },
-    "soc2": {
-      "title": "SOC 2 Tipo II",
-      "description": "Seguridad y cumplimiento verificados"
-    }
+  "industry_selector": {
+    "modal_title": "Personaliza Tu Experiencia de Demo",
+    "select_prompt": "Selecciona tu industria para una demo personalizada",
+    "tailoring_info": "Adaptamos ejemplos, referencias y casos de estudio a tu sector",
+    "skip": "Saltar, veré la demo general"
   },
-  "metrics": {
-    "posts": "publicaciones",
-    "hours": "horas",
-    "saved": "ahorradas",
-    "per_month": "por mes",
-    "engagement": "engagement",
-    "conversion": "conversión",
-    "recovered": "recuperado"
+  "trust_badges": {
+    "title": "Con la Confianza de Empresas en Todo el Mundo",
+    "subtitle": "Seguridad y cumplimiento de nivel empresarial"
   },
-  "time": {
-    "minute": "minuto",
-    "minute_plural": "minutos",
-    "hour": "hora",
-    "hour_plural": "horas",
-    "day": "día",
-    "day_plural": "días",
-    "week": "semana",
-    "week_plural": "semanas",
-    "month": "mes",
-    "month_plural": "meses",
-    "year": "año",
-    "year_plural": "años"
+  "case_studies": {
+    "title": "Casos de Éxito",
+    "subtitle": "Descubre cómo las empresas logran resultados concretos"
   },
-  "validation": {
-    "required": "Este campo es obligatorio",
-    "email": "Por favor ingresa un correo electrónico válido",
-    "phone": "Por favor ingresa un número de teléfono válido",
-    "number": "Por favor ingresa un número válido",
-    "min": "El valor mínimo es {{min}}",
-    "max": "El valor máximo es {{max}}"
+  "preferences": {
+    "modal_title": "Editar Preferencias",
+    "company_size_label": "Tamaño de Empresa",
+    "role_label": "Tu Rol",
+    "budget_label": "Presupuesto Mensual de Marketing",
+    "pain_points_label": "Principales Desafíos (selecciona varios)",
+    "select_size": "Selecciona tamaño...",
+    "select_role": "Selecciona rol...",
+    "select_budget": "Selecciona presupuesto...",
+    "pain_points": [
+      "No hay suficiente tiempo para contenido",
+      "Falta de creatividad",
+      "Calidad inconsistente",
+      "Bajo ROI en anuncios",
+      "Difícil de escalar",
+      "Demasiadas plataformas",
+      "Falta de datos/insights",
+      "Sin automatización"
+    ],
+    "success_message": "¡Preferencias guardadas!",
+    "save_button": "Guardar Preferencias",
+    "saved_button": "Guardado ✓",
+    "cancel_button": "Cancelar",
+    "help_text": "Estas preferencias nos ayudan a adaptar la demo a tu situación específica"
   },
-  "success": {
-    "saved": "Configuración guardada exitosamente",
-    "sent": "¡Correo enviado! Responderemos en 24 horas.",
-    "updated": "Actualizado exitosamente",
-    "deleted": "Eliminado exitosamente",
-    "welcome": "¡Bienvenido! Comencemos."
+  "aggregate_metrics": {
+    "title": "Impacto Comprobado en Empresas",
+    "subtitle": "Resultados reales de empresas que resolvieron el caos de contenido"
   },
-  "errors": {
-    "generic": "Algo salió mal. Por favor intenta de nuevo.",
-    "network": "Error de red. Por favor verifica tu conexión.",
-    "not_found": "Página no encontrada",
-    "unauthorized": "Acceso no autorizado",
-    "server": "Error del servidor. Por favor intenta más tarde.",
-    "validation": "Por favor verifica tu entrada e intenta de nuevo."
+  "progress": {
+    "label": "Progreso"
   },
   "accessibility": {
     "skip_to_content": "Ir al contenido principal",
@@ -214,42 +179,12 @@
     "clear_storage": "Limpiar localStorage y recargar",
     "example_modal": "Modal de Ejemplo"
   },
-  "pricing": {
-    "view_details": "Ver detalles de precios",
-    "view_breakdown": "Ver desglose completo de valor",
-    "view_roadmap": "Ver hoja de ruta de precios"
-  },
   "calendly": {
     "book_demo": "Reservar demo",
     "maybe_later": "Tal vez más tarde",
     "open_direct": "Abrir Calendly Directamente →",
     "helpful": "Útil",
     "not_helpful": "No útil"
-  },
-  "actions": {
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "continue": "Continuar",
-    "back": "Atrás",
-    "learn_more": "Más Información",
-    "view": "Ver →"
-  },
-  "nav": {
-    "home": "Inicio",
-    "explore": "Explorar",
-    "book": "Reservar"
-  },
-  "mobile": {
-    "desktopBanner": {
-      "message": "🖥️ Mejor visto en escritorio",
-      "emailCta": "Envíame el enlace",
-      "dismissed": "Banner cerrado",
-      "label": "Notificación de experiencia en escritorio",
-      "emailSubject": "Envíame un enlace para ver en escritorio",
-      "emailBody": "Por favor envíame un enlace para ver esta página en mi computadora de escritorio.",
-      "emailAriaLabel": "Envíame un enlace para ver esta página en escritorio",
-      "closeAriaLabel": "Cerrar notificación de escritorio"
-    }
   },
   "cta": {
     "book_appointment": "Reservar Cita",
@@ -544,6 +479,24 @@
       "subtitle": "¡Estás al día!"
     }
   },
+  "cookie_consent": {
+    "title": "Respetamos tu privacidad",
+    "description": "Usamos cookies para mejorar tu experiencia y entender cómo usas nuestra demo. Puedes aceptar o rechazar.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "privacy_policy": "Política de Privacidad"
+  },
+  "footer": {
+    "privacy_policy": "Política de Privacidad",
+    "cookie_policy": "Política de Cookies",
+    "terms": "Términos de Servicio",
+    "delete_my_data": "Eliminar Mis Datos",
+    "delete_confirm": "¿Estás seguro?",
+    "data_deleted_success": "Tus datos han sido eliminados correctamente. La página se recargará.",
+    "data_deleted_error": "Algo salió mal al eliminar tus datos. Por favor inténtalo de nuevo.",
+    "all_rights_reserved": "Todos los derechos reservados.",
+    "demo_notice": "Esta es una demo interactiva. Tus datos se almacenan localmente y no se comparten con terceros."
+  },
   "landing": {
     "header": {
       "brand": {
@@ -563,6 +516,32 @@
       },
       "login": "Iniciar Sesión",
       "try_demo": "Ver Nuestro Trabajo"
+    },
+    "mobile": {
+      "desktopBanner": {
+        "label": "Notificación de experiencia en escritorio",
+        "message": "Mejor experiencia en escritorio",
+        "emailAction": "Envíame el enlace de escritorio",
+        "emailButton": "Enviar Enlace",
+        "dismiss": "Cerrar notificación de escritorio",
+        "dismissed": "Notificación de escritorio cerrada",
+        "emailSubject": "Enlace de Escritorio - Future AI",
+        "emailBody": "Por favor envíame el enlace para experimentar Future AI en escritorio para la demo interactiva completa."
+      },
+      "desktop_required": {
+        "title": "Experiencia de Escritorio Recomendada",
+        "description": "Nuestra demo interactiva ofrece la mejor experiencia en escritorio con visualizaciones 3D y datos en tiempo real.",
+        "cta_primary": "Abrir en Nueva Pestaña",
+        "cta_secondary": "Reservar Demo",
+        "email_placeholder": "tu@email.com",
+        "email_label": "Dirección de correo",
+        "send_email": "Enviar correo",
+        "email_sent": "¡Enlace enviado!",
+        "option1": "1. Abrir en Escritorio",
+        "option2": "2. Enviarme el Enlace por Email",
+        "option3": "3. Programar una Demo Personal",
+        "continue_mobile": "Continuar en móvil de todos modos"
+      }
     },
     "footer": {
       "brand_name": "Future AI",
@@ -727,8 +706,7 @@
             "Agencia: Marketing de rendimiento a escala"
           ]
         }
-      },
-      "tap_hint": "Toca cualquier módulo para explorar detalles"
+      }
     },
     "social_proof": {
       "badge": "Lanzamiento Q1 2026",
@@ -821,23 +799,45 @@
       }
     },
     "hero_landing": {
-      "badge": "Next-Gen AI Marketing",
-      "main_headline": "Turn content into growth.",
-      "sub_headline": "On autopilot.",
-      "description": "Automatización de marketing impulsada por IA revolucionaria que transforma empresas premium en líderes del mercado. Experimenta marketing inteligente de nivel empresarial diseñado para un crecimiento ambicioso.",
+      "badge": "Socio de Implementacion AI",
+      "main_headline": "Sistemas AI Que Gestionan",
+      "sub_headline": "Tu Negocio.",
+      "description": "Implementamos IA que realmente funciona — automatización de marketing, flujos de trabajo personalizados, chatbots y agentes de voz para empresas de SaaS y e-commerce.",
+      "trust_anchor": "Las empresas que trabajan con socios de IA tienen 2,5 veces más probabilidades de éxito",
       "cta": {
-        "primary": "Probar Demo Interactiva",
-        "secondary": "Unirse a Lista de Espera"
+        "primary": "Explora Nuestros Servicios",
+        "secondary": "Reserva una Llamada Estrategica"
       },
       "solution_section": {
-        "badge": "La Solución",
-        "title": "Cómo Lo Hacemos Realidad",
-        "subtitle": "8 módulos autónomos trabajando 24/7 para acelerar tu crecimiento"
+        "badge": "Nuestros Servicios",
+        "title": "Lo Que Construimos Para Ti",
+        "subtitle": "Implementación de IA de extremo a extremo — desde automatización de flujos de trabajo hasta sistemas de marketing autónomos"
+      },
+      "services": {
+        "title": "Plataformas AI Construidas para el Crecimiento",
+        "subtitle": "Tres plataformas AI especializadas. Elige tu punto de partida.",
+        "cta_label": "Saber mas",
+        "marketing": {
+          "name": "FutureMarketingAI",
+          "pitch": "Creacion autonoma de contenido, programacion y automatizacion de campanas"
+        },
+        "chat": {
+          "name": "FutureChatAI",
+          "pitch": "Agentes de chat AI que cualifican leads y atienden clientes 24/7"
+        },
+        "voice": {
+          "name": "FutureVoiceAI",
+          "pitch": "Agentes de voz que gestionan llamadas entrantes y salientes"
+        },
+        "automations": {
+          "name": "Automatizaciones AI",
+          "pitch": "Automatizacion de flujos de trabajo personalizados conectando tus herramientas"
+        }
       },
       "final_cta": {
-        "title": "¿Listo para Reclamar Tu Ventaja de Pionero?",
-        "subtitle": "Únete a los primeros 10 equipos construyendo una ventaja injusta de 2-3 años antes de la adopción masiva",
-        "button": "Unirse a Lista de Espera - 2 Plazas Disponibles"
+        "title": "No Sabes Por Donde Empezar?",
+        "subtitle": "Reserva una auditoria AI gratuita de 30 minutos. Identificaremos tus oportunidades.",
+        "button": "Reserva una Auditoria Gratis"
       }
     }
   }
