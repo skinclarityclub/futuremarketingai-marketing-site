@@ -47,7 +47,7 @@ export const SimpleHeader: React.FC = () => {
     if (path.startsWith('/voice-agents')) {
       return 'Voice'
     }
-    if (path === '/' || path.startsWith('/automations')) {
+    if (path.startsWith('/automations') || path.startsWith('/marketing-machine')) {
       return 'Marketing'
     }
     return ''
@@ -210,7 +210,7 @@ export const SimpleHeader: React.FC = () => {
     { label: 'AI Automations', href: '/automations' },
     { label: 'AI Chatbots', href: '/chatbots' },
     { label: 'AI Voice Agents', href: '/voice-agents' },
-    { label: 'AI Marketing Machine', href: '/demo' },
+    { label: 'AI Marketing Machine', href: '/marketing-machine' },
   ]
 
   // Minimal navigation
