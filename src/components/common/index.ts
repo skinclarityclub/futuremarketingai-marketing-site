@@ -93,3 +93,5 @@ export type { InteractiveLegendProps, LegendItem } from './InteractiveLegend'
 
 export { ExportButton } from './ExportButton'
 export type { ExportButtonProps } from './ExportButton'
+
+export { GradientMesh } from './GradientMesh'
