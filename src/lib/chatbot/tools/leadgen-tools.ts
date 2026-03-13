@@ -2,11 +2,15 @@ import { tool } from 'ai'
 import { z } from 'zod'
 
 const qualify_lead = tool({
-  description: 'Qualify a B2B lead based on company profile and buying signals. Returns a lead score (0-100) with qualification level and recommended next steps.',
+  description:
+    'Qualify a B2B lead based on company profile and buying signals. Returns a lead score (0-100) with qualification level and recommended next steps.',
   inputSchema: z.object({
     companySize: z.number().optional().describe('Number of employees at the company'),
     budget: z.number().optional().describe('Monthly marketing budget in EUR'),
-    timeline: z.enum(['immediate', '1-3months', '3-6months', '6months+']).optional().describe('Expected implementation timeline'),
+    timeline: z
+      .enum(['immediate', '1-3months', '3-6months', '6months+'])
+      .optional()
+      .describe('Expected implementation timeline'),
     useCase: z.string().optional().describe('Primary use case or pain point'),
     isDecisionMaker: z.boolean().optional().describe('Whether the contact is a decision maker'),
   }),
@@ -46,25 +50,29 @@ const qualify_lead = tool({
 
     if (score >= 86) {
       qualification = 'qualified'
-      recommendation = 'This lead is fully qualified. Recommend immediate sales handoff and demo booking.'
+      recommendation =
+        'This lead is fully qualified. Recommend immediate sales handoff and demo booking.'
       nextSteps.push('Schedule a personalized demo')
       nextSteps.push('Prepare custom ROI analysis')
       nextSteps.push('Connect with account executive')
     } else if (score >= 61) {
       qualification = 'hot'
-      recommendation = 'Strong lead with high potential. Gather remaining qualification data and move to demo.'
+      recommendation =
+        'Strong lead with high potential. Gather remaining qualification data and move to demo.'
       nextSteps.push('Complete qualification questions')
       nextSteps.push('Share relevant case studies')
       nextSteps.push('Offer ROI estimate')
     } else if (score >= 31) {
       qualification = 'warm'
-      recommendation = 'Interested prospect but needs nurturing. Focus on education and value demonstration.'
+      recommendation =
+        'Interested prospect but needs nurturing. Focus on education and value demonstration.'
       nextSteps.push('Share product overview materials')
       nextSteps.push('Invite to upcoming webinar')
       nextSteps.push('Follow up in 1-2 weeks')
     } else {
       qualification = 'cold'
-      recommendation = 'Early-stage or poor fit. Provide general information and add to nurture sequence.'
+      recommendation =
+        'Early-stage or poor fit. Provide general information and add to nurture sequence.'
       nextSteps.push('Add to email nurture sequence')
       nextSteps.push('Share educational content')
       nextSteps.push('Revisit in 30 days')
@@ -75,9 +83,13 @@ const qualify_lead = tool({
 })
 
 const get_pricing_info = tool({
-  description: 'Retrieve pricing information for a specific tier or all tiers of the marketing automation platform.',
+  description:
+    'Retrieve pricing information for a specific tier or all tiers of the marketing automation platform.',
   inputSchema: z.object({
-    tier: z.enum(['starter', 'professional', 'enterprise', 'all']).default('all').describe('Which pricing tier to retrieve'),
+    tier: z
+      .enum(['starter', 'professional', 'enterprise', 'all'])
+      .default('all')
+      .describe('Which pricing tier to retrieve'),
   }),
   execute: async ({ tier }) => {
     const tiers = {
@@ -87,7 +99,12 @@ const get_pricing_info = tool({
         annualPrice: 2870,
         maxUsers: 5,
         contacts: 1000,
-        features: ['Basic email automation', 'Landing page builder (5 pages)', 'Basic lead scoring', 'Email support'],
+        features: [
+          'Basic email automation',
+          'Landing page builder (5 pages)',
+          'Basic lead scoring',
+          'Email support',
+        ],
       },
       professional: {
         name: 'Professional',
@@ -95,7 +112,13 @@ const get_pricing_info = tool({
         annualPrice: 7670,
         maxUsers: 20,
         contacts: 10000,
-        features: ['Advanced workflow automation', 'Unlimited landing pages', 'Advanced lead scoring + CRM', 'Analytics dashboard', 'Priority support + dedicated CSM'],
+        features: [
+          'Advanced workflow automation',
+          'Unlimited landing pages',
+          'Advanced lead scoring + CRM',
+          'Analytics dashboard',
+          'Priority support + dedicated CSM',
+        ],
       },
       enterprise: {
         name: 'Enterprise',
@@ -103,7 +126,14 @@ const get_pricing_info = tool({
         annualPrice: 19190,
         maxUsers: -1,
         contacts: -1,
-        features: ['Custom integrations', 'Dedicated CSM', 'Advanced analytics + reporting', 'SSO + advanced security', 'Custom onboarding', 'SLA guarantee'],
+        features: [
+          'Custom integrations',
+          'Dedicated CSM',
+          'Advanced analytics + reporting',
+          'SSO + advanced security',
+          'Custom onboarding',
+          'SLA guarantee',
+        ],
       },
     }
 
@@ -116,7 +146,8 @@ const get_pricing_info = tool({
 })
 
 const schedule_demo = tool({
-  description: 'Schedule a product demo for a qualified lead. Captures contact information and preferred time.',
+  description:
+    'Schedule a product demo for a qualified lead. Captures contact information and preferred time.',
   inputSchema: z.object({
     name: z.string().describe('Full name of the contact'),
     email: z.string().describe('Email address of the contact'),
@@ -133,24 +164,36 @@ const schedule_demo = tool({
 })
 
 const get_roi_estimate = tool({
-  description: 'Calculate estimated ROI based on team size, current marketing hours, and hourly rate. Returns monthly/annual savings and payback period.',
+  description:
+    'Calculate estimated ROI based on team size, current marketing hours, and hourly rate. Returns monthly/annual savings and payback period.',
   inputSchema: z.object({
     teamSize: z.number().describe('Number of marketing team members'),
-    currentHoursOnMarketing: z.number().describe('Current hours per week each team member spends on manual marketing tasks'),
-    averageHourlyRate: z.number().default(50).describe('Average hourly rate of team members in EUR'),
+    currentHoursOnMarketing: z
+      .number()
+      .describe('Current hours per week each team member spends on manual marketing tasks'),
+    averageHourlyRate: z
+      .number()
+      .default(50)
+      .describe('Average hourly rate of team members in EUR'),
     monthlySubscription: z.number().default(799).describe('Monthly subscription cost in EUR'),
   }),
-  execute: async ({ teamSize, currentHoursOnMarketing, averageHourlyRate, monthlySubscription }) => {
+  execute: async ({
+    teamSize,
+    currentHoursOnMarketing,
+    averageHourlyRate,
+    monthlySubscription,
+  }) => {
     // Time saved: platform saves ~15 hours/week per team member (capped at current hours)
     const hoursSavedPerWeek = Math.min(15, currentHoursOnMarketing) * teamSize
     const timeSavedMonthly = hoursSavedPerWeek * 4
     const costSavedMonthly = timeSavedMonthly * averageHourlyRate
-    const roiPercent = Math.round(((costSavedMonthly - monthlySubscription) / monthlySubscription) * 100)
+    const roiPercent = Math.round(
+      ((costSavedMonthly - monthlySubscription) / monthlySubscription) * 100
+    )
     const monthlySavings = Math.round(costSavedMonthly - monthlySubscription)
     const annualSavings = monthlySavings * 12
-    const paybackPeriodMonths = monthlySavings > 0
-      ? Math.max(1, Math.round(monthlySubscription / monthlySavings))
-      : 0
+    const paybackPeriodMonths =
+      monthlySavings > 0 ? Math.max(1, Math.round(monthlySubscription / monthlySavings)) : 0
 
     return {
       monthlySavings,

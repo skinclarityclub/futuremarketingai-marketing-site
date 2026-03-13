@@ -47,7 +47,12 @@ export const leadgenPersona: PersonaConfig = {
   topicDefinitions: LEADGEN_TOPICS,
   tools: leadgenTools as unknown as Record<string, unknown>,
   defaultModel: 'haiku',
-  complexityKeywords: ['ROI calculation', 'competitor comparison', 'enterprise requirements', 'custom integration'],
+  complexityKeywords: [
+    'ROI calculation',
+    'competitor comparison',
+    'enterprise requirements',
+    'custom integration',
+  ],
   maxTokens: 500,
   temperature: 0.7,
 }
