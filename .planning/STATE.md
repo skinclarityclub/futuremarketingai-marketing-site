@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** 17-02
 - **Status:** Executing
 - **Last completed:** Phase 17 Plan 01 — Foundation: Engine Compatibility, Chat Store, usePersonaChat Hook
-- **Last session:** 2026-03-13T18:06:21Z
-- **Stopped at:** Completed 17-01-PLAN.md
+- **Last session:** 2026-03-13T18:09:23.402Z
+- **Stopped at:** Completed 16-03-PLAN.md
 
 ## Decisions
 
@@ -97,6 +97,8 @@ progress:
 - [Phase 17]: [17-01]: chatbotStore uses fmai-chatbot-state localStorage key (separate from old fmai-chat-state)
 - [Phase 17]: [17-01]: usePersonaChat uses useChat id param for per-persona message isolation
 - [Phase 17]: [17-01]: Demo message limit set at 15 messages per session
+- [Phase 16-03]: AnyToolRecord type (Tool<any, any>) used for PERSONA_TOOLS map — each persona has differently-typed Zod schemas
+- [Phase 16-03]: Barrel index.ts imports ./personas for side-effect registration — consumers importing from chatbot barrel get personas automatically
 
 ## Context
 

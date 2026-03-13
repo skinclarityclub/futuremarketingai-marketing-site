@@ -19,7 +19,7 @@
 | 13    | 2/2                             | Complete    | 2026-03-13 | 0%       |
 | 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
 | 15    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 16    | 2/3                             | In Progress |            | 0%       |
+| 16    | 3/3                             | Complete    | 2026-03-13 | 0%       |
 | 17    | 1/4                             | In Progress |            | 0%       |
 | 18    | ChatbotsPage Demo Playground    | Pending     | —          | 0%       |
 | 19    | Homepage Concierge + Demo Guide | Pending     | —          | 0%       |
@@ -137,7 +137,7 @@
     - [ ] 15-02-PLAN.md — Persona infrastructure: topic-router.ts + prompt-builder.ts + persona-router.ts + tool-executor.ts
     - [ ] 15-03-PLAN.md — Engine wiring: engine.ts + api/chatbot.ts + index.ts + vercel.json CSP update
 
-- [ ] **Phase 16: Chatbot Personas & Knowledge** — Build all 5 persona configurations: system prompts, tool definitions, knowledge bases, topic routers, and conversation starters for concierge, e-commerce, lead-gen, support, and demo-guide personas.
+- [x] **Phase 16: Chatbot Personas & Knowledge** — Build all 5 persona configurations: system prompts, tool definitions, knowledge bases, topic routers, and conversation starters for concierge, e-commerce, lead-gen, support, and demo-guide personas. (completed 2026-03-13)
   - **Goal:** Create complete persona configs that plug into the Phase 15 engine. Each persona has: system prompt (with prompt-cache-friendly static prefix), tools with Zod schemas, knowledge base content, topic router keywords, suggested conversation starters (EN/NL/ES), and demo scenario descriptions.
   - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
   - **Requirement IDs:** REQ-CHATBOT-PERSONAS
