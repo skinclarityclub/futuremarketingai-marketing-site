@@ -2,27 +2,27 @@
 
 ## Progress
 
-| Phase | Name                            | Status      | Plans      | Progress |
-| ----- | ------------------------------- | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                 | Complete    | —          | 100%     |
-| 2     | Service Pages                   | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand  | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup           | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign             | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership         | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development      | Pending     | —          | 0%       |
-| 8     | Language Expansion              | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion   | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                             | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media           | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                             | Complete    | 2026-03-13 | 0%       |
-| 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 15    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 16    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 17    | 4/4                             | Complete    | 2026-03-13 | 0%       |
-| 18    | 2/3                             | In Progress |            | 0%       |
-| 19    | Homepage Concierge + Demo Guide | Pending     | —          | 0%       |
+| Phase | Name                            | Status   | Plans      | Progress |
+| ----- | ------------------------------- | -------- | ---------- | -------- |
+| 1     | Website Rebrand                 | Complete | —          | 100%     |
+| 2     | Service Pages                   | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand  | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup           | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign             | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership         | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development      | Pending  | —          | 0%       |
+| 8     | Language Expansion              | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion   | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                             | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media           | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                             | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 15    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 16    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 17    | 4/4                             | Complete | 2026-03-13 | 0%       |
+| 18    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 19    | Homepage Concierge + Demo Guide | Pending  | —          | 0%       |
 
 ## Phases
 
@@ -180,7 +180,7 @@
     - `src/hooks/usePersonaChat.ts` — Hook wrapping Vercel AI SDK `useChat` with persona config
     - Styling: Living System design (dark surface, teal/amber accents, gradient borders, DM Sans)
 
-- [ ] **Phase 18: ChatbotsPage Demo Playground** — Restructure /chatbots page with interactive demo playground (3 switchable personas), multi-platform visual showcase, progressive CTAs, and updated marketing copy.
+- [x] **Phase 18: ChatbotsPage Demo Playground** — Restructure /chatbots page with interactive demo playground (3 switchable personas), multi-platform visual showcase, progressive CTAs, and updated marketing copy. (completed 2026-03-13)
   - **Goal:** Transform the /chatbots service page from static marketing into an interactive experience. Visitors can try 3 live chatbot demos (e-commerce, lead-gen, support) via tab switching. Each demo has scenario context, suggested starters, and session limits. Multi-platform showcase visualizes the 1-backend-multi-platform architecture. Progressive CTAs convert demo users to leads.
   - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
   - **Requirement IDs:** REQ-CHATBOT-PLAYGROUND

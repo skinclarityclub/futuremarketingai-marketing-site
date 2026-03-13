@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 18-02 complete
+current_plan: 18-03 complete
 status: executing
-stopped_at: Completed 18-02-PLAN.md
-last_updated: '2026-03-13T19:44:53.000Z'
+stopped_at: Completed 18-03-PLAN.md
+last_updated: '2026-03-13T20:05:00.000Z'
 progress:
   total_phases: 12
-  completed_phases: 10
+  completed_phases: 11
   total_plans: 39
-  completed_plans: 38
+  completed_plans: 39
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 18 — ChatbotsPage Demo Playground
-- **Current Plan:** 18-02 complete
+- **Current Plan:** 18-03 complete
 - **Status:** Executing
-- **Last completed:** Phase 18 Plan 02 — CTA & Showcase Components
-- **Last session:** 2026-03-13T19:49:09.917Z
-- **Stopped at:** Completed 18-01-PLAN.md
+- **Last completed:** Phase 18 Plan 03 — Page Integration & i18n
+- **Last session:** 2026-03-13T20:05:00.000Z
+- **Stopped at:** Completed 18-03-PLAN.md
 
 ## Decisions
 
@@ -110,6 +110,8 @@ progress:
 - [Phase 18]: [18-02]: Inline style tag for brainPulse/expandLine keyframes -- component-scoped CSS animations, no global pollution
 - [Phase 18]: Per-persona messageCounts as Record<string, number> with standalone getMessageCount selector export
 - [Phase 18]: DemoPlayground activeTab state lifted to parent for scroll-to-tab coordination from use case cards
+- [Phase 18]: [18-03]: Hero CTA uses scrollIntoView to #demo-playground instead of route navigation
+- [Phase 18]: [18-03]: Use case cards map to persona IDs via USE_CASE_TO_PERSONA Record for scroll-to-tab coordination
 
 ## Context
 
@@ -162,3 +164,7 @@ progress:
 - Phase 17 Plan 03 complete: Tool Result Cards -- ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard + ToolResultRenderer router component
 - Phase 17 Plan 04 complete: ChatWidget dual-mode (floating FAB panel + embedded inline) + FloatingButton breathing animation + barrel exports
 - Phase 17 COMPLETE: All 4 plans done -- ChatWidget UI Components finished (full component library for Phase 18 demo playground and Phase 19 homepage concierge)
+- Phase 18 Plan 01 complete: Demo Playground Core -- DemoPlayground orchestrator with 3 ChatWidgets, PersonaSelector tab bar, DemoContextCard, per-persona message counting
+- Phase 18 Plan 02 complete: CTA & Showcase Components -- ProgressiveCTA (4-threshold message system), MultiPlatformShowcase (brain node + 3 platforms + SKC case study)
+- Phase 18 Plan 03 complete: Page Integration & i18n -- ChatbotsPage restructured with DemoPlayground + MultiPlatformShowcase, hero scroll-to-demo CTA, use case scroll-to-tab, full EN/NL/ES i18n
+- Phase 18 COMPLETE: All 3 plans done -- ChatbotsPage Demo Playground finished (interactive demo with 3 persona tabs, progressive CTAs, multi-platform showcase, full i18n)
