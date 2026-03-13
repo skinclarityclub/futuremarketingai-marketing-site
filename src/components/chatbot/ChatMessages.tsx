@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
+import { ToolResultRenderer } from './tool-results'
 
 interface ChatMessagesProps {
   messages: UIMessage[]
@@ -26,40 +27,6 @@ function MarkdownContent({ text }: { text: string }) {
       </ReactMarkdown>
     </div>
   )
-}
-
-// ---------------------------------------------------------------------------
-// ToolResultPlaceholder — temporary until Plan 03 ToolResultRenderer
-// ---------------------------------------------------------------------------
-function ToolResultPlaceholder({
-  part,
-}: {
-  part: { toolName: string; state: string; output?: unknown; errorText?: string }
-}) {
-  if (part.state === 'input-streaming' || part.state === 'input-available') {
-    return (
-      <div className="my-1 inline-flex items-center gap-2 rounded-full bg-bg-elevated px-3 py-1 font-mono text-xs text-text-secondary animate-pulse">
-        <span className="h-1.5 w-1.5 rounded-full bg-accent-system" />
-        {part.toolName}
-      </div>
-    )
-  }
-
-  if (part.state === 'output-available' && part.output !== undefined) {
-    return (
-      <pre className="my-1 overflow-x-auto rounded-lg bg-bg-elevated p-2 font-mono text-xs text-text-secondary">
-        {JSON.stringify(part.output, null, 2)}
-      </pre>
-    )
-  }
-
-  if (part.state === 'output-error') {
-    return (
-      <div className="my-1 text-xs text-red-400">Error: {part.errorText ?? 'Unknown error'}</div>
-    )
-  }
-
-  return null
 }
 
 // ---------------------------------------------------------------------------
@@ -138,13 +105,7 @@ export function ChatMessages({ messages, status }: ChatMessagesProps) {
                 return <MarkdownContent key={i} text={part.text} />
               }
               if ('toolName' in part) {
-                const toolPart = part as unknown as {
-                  toolName: string
-                  state: string
-                  output?: unknown
-                  errorText?: string
-                }
-                return <ToolResultPlaceholder key={i} part={toolPart} />
+                return <ToolResultRenderer key={i} part={part} />
               }
               return null
             })}
