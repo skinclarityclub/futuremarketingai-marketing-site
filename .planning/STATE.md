@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: planning
-stopped_at: Completed 15-03-PLAN.md
+current_plan: '16-03'
+status: executing
+stopped_at: Completed 16-02-PLAN.md
 last_updated: '2026-03-13T17:20:01.054Z'
 progress:
   total_phases: 12
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 15 — Chatbot Engine Foundation
-- **Current Plan:** Not started
-- **Status:** Ready to plan
-- **Last completed:** Phase 15 Plan 03 — Engine Orchestration and API Endpoint
-- **Last session:** 2026-03-13T17:15:33Z
-- **Stopped at:** Completed 15-03-PLAN.md
+- **Phase:** 16 — Chatbot Personas & Knowledge
+- **Current Plan:** 16-03
+- **Status:** Executing
+- **Last completed:** Phase 16 Plan 02 — Lead-Gen and Support Personas
+- **Last session:** 2026-03-13T18:00:31.975Z
+- **Stopped at:** Completed 16-02-PLAN.md
 
 ## Decisions
 
@@ -89,6 +89,7 @@ progress:
 - [Phase 15]: [15-02]: Map.forEach pattern continued from 15-01 to avoid downlevelIteration requirement
 - [Phase 15]: [15-03]: maxOutputTokens used instead of maxTokens — AI SDK v6 renamed this parameter
 - [Phase 15]: [15-03]: toTextStreamResponse used for simplicity — Phase 17 can switch to toUIMessageStreamResponse if useChat adopted
+- [Phase 16]: tools cast as unknown as Record<string, unknown> to bridge AI SDK tool() return type with PersonaConfig generic tools type
 
 ## Context
 
