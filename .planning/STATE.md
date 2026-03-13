@@ -95,3 +95,4 @@ progress:
 - Phase 11 Plan 06 complete: MarketingMachinePage fully internationalized (EN/NL/ES) with card-gradient-border pricing cards, CSS fadeIn hero, max-w-7xl layout
 - Phase 11 Plan 07 complete: SimplifiedHeroMobile rebuilt with DM Sans, blob background, CSS animations; full-site visual quality human-approved
 - Phase 11 COMPLETE: All 7 plans done — Living System Full Rebuild finished across all pages
+- Phase 12 added: Design Polish & Media — Spline/Rive hero visual, product media, micro-interactions, typography polish. Research pre-gathered.

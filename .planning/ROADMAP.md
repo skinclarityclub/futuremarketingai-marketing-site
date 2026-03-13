@@ -74,3 +74,9 @@
     - [ ] 11-05-PLAN.md — Supporting pages: About, Pricing, HowItWorks, Contact, Legal structural rebuild
     - [ ] 11-06-PLAN.md — MarketingMachinePage i18n (EN/NL/ES) + structural rebuild
     - [ ] 11-07-PLAN.md — Mobile hero rebuild + full-site visual verification checkpoint
+
+- [ ] **Phase 12: Design Polish & Media** — Premium hero visual (Spline 3D or Rive), product screenshots/demo video on service pages, micro-interactions (scroll reveals, card hover parallax), typography fine-tuning.
+  - **Goal:** Elevate the site from "well-structured" to "premium agency" level. Add interactive 3D hero visual, real product media (screenshots, demo videos), scroll-triggered animations, and typography polish. Research already gathered in phase directory.
+  - **Research:** `.planning/phases/12-design-polish-media/RESEARCH-NOTES.md`
+  - **Depends on:** Phase 11
+  - **Plans:** 0 plans (run `/gsd:plan-phase 12` to break down)
