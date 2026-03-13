@@ -12,7 +12,7 @@
 | 6     | Voice Agent Partnership        | Pending     | —          | 0%       |
 | 7     | SKC Case Study Development     | Pending     | —          | 0%       |
 | 8     | Language Expansion             | Pending     | —          | 0%       |
-| 9     | 2/5                            | In Progress |            | 0%       |
+| 9     | 3/5                            | In Progress |            | 0%       |
 
 ## Phases
 

@@ -2,18 +2,20 @@
  * Hero Section Component
  * Converted from Next.js to React Router
  * Source: future-marketing-ai-hero.tsx
+ *
+ * Living System conversion: teal/amber palette, bg-bg-deep, no glassmorphism.
  */
 
 import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
-import { Sparkles, TrendingUp, Play, Zap, Brain, Bot, Loader2 } from 'lucide-react'
-import { Button } from '../ui/button'
+import { Sparkles, TrendingUp, Zap, Brain, Bot, Loader2 } from 'lucide-react'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import { useDemoRedirect } from '../../hooks/useDemoRedirect'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
+import { CTAButton } from '../common'
 
 // Lazy load heavy components for performance
 const VisionTimeline = lazy(() =>
@@ -97,7 +99,7 @@ const PARTICLE_POSITIONS = [
   { x: 51.24, y: 42.35, size: 2.76 },
 ]
 
-// Neural Network Component
+// Neural Network Component — Living System teal palette
 const NeuralNetwork: React.FC = () => {
   const [mounted, setMounted] = useState(false)
 
@@ -114,13 +116,13 @@ const NeuralNetwork: React.FC = () => {
       <svg className="w-full h-full">
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#00D4AA" stopOpacity="0.8" />
+            <stop offset="50%" stopColor="#F5A623" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#00D4AA" stopOpacity="0.4" />
           </linearGradient>
           <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#00D4AA" stopOpacity="0.7" />
           </radialGradient>
         </defs>
 
@@ -168,15 +170,15 @@ const NeuralNetwork: React.FC = () => {
   )
 }
 
-// Holographic Grid Component
+// Holographic Grid Component — Living System teal grid lines
 const HolographicGrid: React.FC = () => (
   <div className="absolute inset-0 opacity-20">
     <div
       className="w-full h-full"
       style={{
         backgroundImage: `
-          linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          linear-gradient(rgba(0, 212, 170, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 212, 170, 0.1) 1px, transparent 1px)
         `,
         backgroundSize: '50px 50px',
       }}
@@ -184,7 +186,7 @@ const HolographicGrid: React.FC = () => (
   </div>
 )
 
-// Floating Particles Component
+// Floating Particles Component — Living System teal particles
 const FloatingParticles: React.FC = () => {
   const [mounted, setMounted] = useState(false)
 
@@ -201,7 +203,7 @@ const FloatingParticles: React.FC = () => {
       {PARTICLE_POSITIONS.map((particle, i) => (
         <motion.div
           key={i}
-          className="absolute bg-blue-400/20 rounded-full"
+          className="absolute bg-accent-system/20 rounded-full"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -225,13 +227,13 @@ const FloatingParticles: React.FC = () => {
   )
 }
 
-// Gradient Orbs Component
+// Gradient Orbs Component — Living System teal/amber orbs
 const GradientOrbs: React.FC = () => (
   <div className="absolute inset-0 overflow-hidden">
     <motion.div
       className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full"
       style={{
-        background: 'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(0, 212, 170, 0.15) 0%, transparent 70%)',
       }}
       animate={{
         scale: [1, 1.2, 1],
@@ -246,7 +248,7 @@ const GradientOrbs: React.FC = () => (
     <motion.div
       className="absolute top-3/4 left-3/4 w-48 h-48 rounded-full"
       style={{
-        background: 'radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(245, 166, 35, 0.15) 0%, transparent 70%)',
       }}
       animate={{
         scale: [1, 1.3, 1],
@@ -315,7 +317,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg-deep"
     >
       {/* Background Effects */}
       <HolographicGrid />
@@ -332,10 +334,12 @@ export const Hero: React.FC = () => {
       >
         {/* Badge */}
         <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white">
-            <Sparkles className="h-4 w-4 text-blue-400" />
-            <span className="text-sm font-medium">{t('landing.hero_landing.badge')}</span>
-            <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-accent-system/10 border border-accent-system/20 text-text-primary">
+            <Sparkles className="h-4 w-4 text-accent-system" />
+            <span className="text-sm font-medium text-text-secondary">
+              {t('landing.hero_landing.badge')}
+            </span>
+            <div className="w-1 h-1 rounded-full bg-accent-system animate-pulse" />
           </div>
         </motion.div>
 
@@ -343,14 +347,14 @@ export const Hero: React.FC = () => {
         <motion.div className="text-center mb-6 md:mb-8" variants={itemVariants}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black mb-4">
             <motion.span
-              className="block bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent"
+              className="block text-text-primary"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
               {t('landing.hero_landing.main_headline')}
             </motion.span>
             <motion.span
-              className="block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              className="block bg-gradient-flow bg-clip-text text-transparent"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
@@ -361,7 +365,7 @@ export const Hero: React.FC = () => {
 
         {/* Description */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 text-center max-w-4xl mx-auto mb-6 leading-relaxed px-4"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-secondary text-center max-w-4xl mx-auto mb-6 leading-relaxed px-4"
           variants={itemVariants}
         >
           {t('landing.hero_landing.description')}
@@ -369,7 +373,7 @@ export const Hero: React.FC = () => {
 
         {/* Trust Anchor */}
         <motion.p
-          className="text-sm text-blue-300/80 text-center mb-8 md:mb-12 px-4"
+          className="text-sm text-text-muted text-center mb-8 md:mb-12 px-4"
           variants={itemVariants}
         >
           {t('landing.hero_landing.trust_anchor')}
@@ -381,33 +385,23 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              size="lg"
-              onClick={() => (window.location.href = '/automations')}
-              className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl shadow-2xl transition-all duration-300 w-full sm:w-auto"
-            >
-              <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:rotate-12 transition-transform" />
+            <CTAButton size="lg" href="/automations" arrow>
+              <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               {t('landing.hero_landing.cta.primary')}
-            </Button>
+            </CTAButton>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => window.open('https://calendly.com/futureai/strategy-call', '_blank')}
-              className="group bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-xl transition-all duration-300 w-full sm:w-auto"
-            >
-              <Play className="mr-2 h-4 w-4 md:h-5 md:w-5 group-hover:scale-110 transition-transform" />
+            <CTAButton variant="secondary" size="lg" calendly arrow>
               {t('landing.hero_landing.cta.secondary')}
-            </Button>
+            </CTAButton>
           </motion.div>
         </motion.div>
 
         {/* Floating Icons */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
-            className="absolute top-1/4 left-10 text-blue-400"
+            className="absolute top-1/4 left-10 text-accent-system"
             animate={{
               y: [-20, 20, -20],
               rotate: [0, 360],
@@ -422,7 +416,7 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="absolute top-1/3 right-16 text-purple-400"
+            className="absolute top-1/3 right-16 text-accent-human"
             animate={{
               y: [20, -20, 20],
               rotate: [360, 0],
@@ -437,7 +431,7 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-1/4 left-1/4 text-cyan-400"
+            className="absolute bottom-1/4 left-1/4 text-accent-system"
             animate={{
               y: [-15, 15, -15],
               x: [-10, 10, -10],
@@ -452,7 +446,7 @@ export const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-1/3 right-1/4 text-green-400"
+            className="absolute bottom-1/3 right-1/4 text-accent-human"
             animate={{
               y: [10, -10, 10],
               rotate: [0, 180, 360],
@@ -468,8 +462,7 @@ export const Hero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Placeholder sections - Components temporarily disabled for debugging */}
-      {/* 1. WHY NOW? - VisionTimeline showing urgency of Pioneer Window */}
+      {/* VisionTimeline section */}
       <motion.section
         className="relative z-10 max-w-7xl mx-auto px-6 py-20"
         initial={{ opacity: 0, y: 50 }}
@@ -479,7 +472,7 @@ export const Hero: React.FC = () => {
         <Suspense
           fallback={
             <div className="flex items-center justify-center min-h-[400px]">
-              <Loader2 className="h-12 w-12 animate-spin text-blue-500" />
+              <Loader2 className="h-12 w-12 animate-spin text-accent-system" />
             </div>
           }
         >
@@ -487,7 +480,7 @@ export const Hero: React.FC = () => {
         </Suspense>
       </motion.section>
 
-      {/* 2. HOW? - Feature Showcase showing key capabilities */}
+      {/* Feature Showcase section */}
       <motion.section
         className="relative z-10 max-w-7xl mx-auto px-6 py-20"
         initial={{ opacity: 0, y: 50 }}
@@ -495,15 +488,15 @@ export const Hero: React.FC = () => {
         transition={{ delay: 1.4, duration: 0.8 }}
       >
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-4">
-            <span className="text-sm font-semibold text-blue-300">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-accent-system/10 border border-accent-system/20 mb-4">
+            <span className="text-sm font-semibold text-text-secondary">
               {t('landing.hero_landing.solution_section.badge')}
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
             {t('landing.hero_landing.solution_section.title')}
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             {t('landing.hero_landing.solution_section.subtitle')}
           </p>
         </div>
@@ -511,7 +504,7 @@ export const Hero: React.FC = () => {
         <Suspense
           fallback={
             <div className="flex items-center justify-center min-h-[400px]">
-              <Loader2 className="h-12 w-12 animate-spin text-blue-500" />
+              <Loader2 className="h-12 w-12 animate-spin text-accent-system" />
             </div>
           }
         >
@@ -526,10 +519,10 @@ export const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h3 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
           {t('landing.hero_landing.final_cta.title')}
         </h3>
-        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
           {t('landing.hero_landing.final_cta.subtitle')}
         </p>
 
@@ -538,14 +531,10 @@ export const Hero: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           className="inline-block"
         >
-          <Button
-            size="lg"
-            onClick={() => window.open('https://calendly.com/futureai/strategy-call', '_blank')}
-            className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-12 py-6 text-lg font-semibold rounded-xl shadow-2xl"
-          >
+          <CTAButton size="lg" calendly arrow>
             <Sparkles className="mr-2 h-5 w-5" />
             {t('landing.hero_landing.final_cta.button')}
-          </Button>
+          </CTAButton>
         </motion.div>
       </motion.div>
     </section>

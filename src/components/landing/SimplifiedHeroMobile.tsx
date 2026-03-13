@@ -1,27 +1,23 @@
 /**
  * SimplifiedHeroMobile - Mobile-specific Hero component
  *
- * ✅ DESKTOP-FIRST COMPLIANT
+ * Living System conversion: teal/amber palette, bg-bg-deep, no glassmorphism.
+ *
+ * DESKTOP-FIRST COMPLIANT
  * - This is a NEW mobile component, completely separate from desktop Hero
  * - Used via conditional rendering: {isMobile ? <SimplifiedHeroMobile /> : <Hero />}
  * - Desktop Hero remains 100% unchanged and unaffected
  *
- * ✅ CONTENT PARITY COMPLIANT
+ * CONTENT PARITY COMPLIANT
  * - Uses EXACT same translation keys as desktop Hero (landing.hero_landing.*)
  * - NEVER creates new content - only adapts layout/presentation
  * - Same data, different UI
- *
- * ENHANCED VERSION:
- * - Premium visual quality (closer to desktop)
- * - Mobile-optimized animations (GPU-accelerated)
- * - Reduced particle count for performance
- * - 60fps smooth animations
  */
 
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { ArrowRight, Zap } from 'lucide-react'
-import { Button } from '../ui/button'
+import { CTAButton } from '../common'
 import { useNavigate } from 'react-router-dom'
 
 interface SimplifiedHeroMobileProps {
@@ -53,30 +49,37 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
 
   return (
     <section
-      className={`relative min-h-screen flex flex-col justify-center px-6 py-12 overflow-hidden ${className}`}
+      className={`relative min-h-screen flex flex-col justify-center px-6 py-12 overflow-hidden bg-bg-deep ${className}`}
       aria-label="Hero section"
     >
-      {/* Premium gradient background (same as desktop) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900" />
-
-      {/* Grid pattern (optimized for mobile) */}
+      {/* Living System grid pattern (optimized for mobile) */}
       <div className="absolute inset-0 opacity-20">
         <div
           className="w-full h-full"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)
+              linear-gradient(rgba(0, 212, 170, 0.15) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 212, 170, 0.15) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
           }}
         />
       </div>
 
-      {/* Radial glow (desktop-quality, mobile-optimized) */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/30 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-[100px]" />
+      {/* Teal radial glow */}
+      <div className="absolute inset-0 opacity-25">
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-[120px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(0, 212, 170, 0.3) 0%, transparent 70%)',
+          }}
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full blur-[100px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(245, 166, 35, 0.2) 0%, transparent 70%)',
+          }}
+        />
       </div>
 
       {/* Animated particles (reduced count, GPU-accelerated) */}
@@ -84,7 +87,7 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
         {MOBILE_PARTICLES.map((particle, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-gradient-to-br from-blue-400/40 to-purple-400/40 backdrop-blur-sm"
+            className="absolute rounded-full bg-accent-system/30"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
@@ -117,10 +120,10 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <h1 className="text-4xl sm:text-5xl font-black mb-3 leading-tight">
-            <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-lg">
+            <span className="block text-text-primary drop-shadow-lg">
               {t('landing.hero_landing.main_headline')}
             </span>
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-lg">
+            <span className="block bg-gradient-flow bg-clip-text text-transparent drop-shadow-lg">
               {t('landing.hero_landing.sub_headline')}
             </span>
           </h1>
@@ -128,7 +131,7 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
 
         {/* Description - SAME as desktop */}
         <motion.p
-          className="text-base sm:text-lg text-blue-100/90 text-center mb-8 leading-relaxed max-w-2xl mx-auto drop-shadow-md"
+          className="text-base sm:text-lg text-text-secondary text-center mb-8 leading-relaxed max-w-2xl mx-auto drop-shadow-md"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -136,72 +139,51 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
           {t('landing.hero_landing.description')}
         </motion.p>
 
-        {/* CTA Buttons - Enhanced with glow effects */}
+        {/* CTA Buttons */}
         <motion.div
           className="flex flex-col gap-3 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Primary CTA - Premium glow effect */}
-          <div className="relative group">
-            {/* Glow effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-300" />
+          {/* Primary CTA */}
+          <CTAButton
+            size="lg"
+            onClick={() => navigate('/demo-intro')}
+            className="w-full justify-center h-14"
+          >
+            <Zap className="mr-2 h-5 w-5" />
+            {t('landing.hero_landing.cta.primary')}
+          </CTAButton>
 
-            {/* Button */}
-            <Button
-              size="lg"
-              onClick={() => navigate('/demo-intro')}
-              className="
-                relative w-full h-14
-                bg-gradient-to-r from-blue-500 to-purple-600
-                hover:from-blue-600 hover:to-purple-700
-                text-white border-0
-                text-base font-semibold rounded-xl
-                shadow-2xl shadow-blue-500/50
-                transition-all duration-300
-                tap-target
-                touch-manipulation
-              "
-            >
-              <Zap className="mr-2 h-5 w-5" />
-              {t('landing.hero_landing.cta.primary')}
-            </Button>
-          </div>
-
-          {/* Secondary CTA - Glass morphism */}
-          <Button
-            variant="outline"
+          {/* Secondary CTA */}
+          <CTAButton
+            variant="secondary"
             size="lg"
             onClick={() => (window.location.href = '/pricing')}
-            className="
-              w-full h-14 
-              bg-white/10 backdrop-blur-md
-              border border-white/20
-              text-white 
-              hover:bg-white/20 hover:border-white/30
-              text-base font-semibold rounded-xl 
-              shadow-lg shadow-black/20
-              transition-all duration-300
-              tap-target
-              touch-manipulation
-            "
+            className="w-full justify-center h-14"
           >
             <ArrowRight className="mr-2 h-5 w-5" />
             {t('landing.hero_landing.cta.secondary')}
-          </Button>
+          </CTAButton>
         </motion.div>
 
-        {/* Status Indicator - Premium styling */}
+        {/* Status Indicator */}
         <motion.div
-          className="flex items-center justify-center gap-2.5 text-sm text-blue-200/90"
+          className="flex items-center justify-center gap-2.5 text-sm text-text-secondary"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <div className="relative">
-            <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
-            <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-green-400 blur-sm opacity-75" aria-hidden="true" />
+            <div
+              className="w-2.5 h-2.5 rounded-full bg-accent-system animate-pulse"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-accent-system blur-sm opacity-75"
+              aria-hidden="true"
+            />
           </div>
           <span className="font-medium">Live interactieve demo beschikbaar</span>
         </motion.div>

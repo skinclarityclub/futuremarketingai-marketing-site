@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** Not started
 - **Status:** Milestone complete
 - **Last completed:** Phase 3 Plan 03 (UX & Accessibility Fixes — Calendly modal, focus trap, reduced motion, trust metrics)
-- **Last session:** 2026-03-13T01:23:36.620Z
-- **Stopped at:** Completed 09-living-system-page-conversion plan 04 (Supporting Pages Conversion)
+- **Last session:** 2026-03-13T01:23:28Z
+- **Stopped at:** Completed 09-living-system-page-conversion plan 03 (Service Pages Conversion — Automations, Chatbots, Voice Agents)
 
 ## Decisions
 
@@ -40,6 +40,8 @@ progress:
 - [Phase 09-living-system-page-conversion]: FeatureShowcase removes background glow orbs entirely — cleaner Living System aesthetic without atmospheric glassmorphism effects
 - [Phase 09-living-system-page-conversion]: AboutPage hero badge uses accent-human (amber) — human/team-centric content gets warm accent, not teal
 - [Phase 09-living-system-page-conversion]: CTAButton with calendly prop replaces all old gradient anchor CTA buttons across supporting pages
+- [09-03]: Pricing card CTAs use CTAButton with w-full justify-center className to maintain full-width appearance
+- [09-03]: Highlighted pricing badges converted from blue/purple gradient rounded-full to accent-system rounded-sm — consistent with Living System
 
 ## Context
 
