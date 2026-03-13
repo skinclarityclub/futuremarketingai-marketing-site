@@ -22,7 +22,7 @@ progress:
 - **Current Plan:** Plan 3 of 3
 - **Status:** Phase complete
 - **Last completed:** Phase 14 Plan 03 — VoiceAgentsPage i18n (EN/NL/ES)
-- **Last session:** 2026-03-13T15:35:20Z
+- **Last session:** 2026-03-13T15:37:12.664Z
 - **Stopped at:** Completed 14-03-PLAN.md
 
 ## Decisions
@@ -123,3 +123,4 @@ progress:
 - Phase 13 COMPLETE: All 2 plans done -- Dead Code Cleanup & Media Fix finished
 - Phase 14 added: Service Page i18n -- wire useTranslation into 3 service pages, extract EN strings, add NL/ES translations
 - Phase 14 Plan 01 complete: AutomationsPage internationalized -- ~73 strings extracted to automations.json (EN/NL/ES), key-based mapping pattern for const arrays
+- Phase 14 Plan 03 complete: VoiceAgentsPage internationalized -- ~59 strings extracted to voice-agents.json (EN/NL/ES), partnership note + trust metrics fully translated
