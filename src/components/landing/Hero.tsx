@@ -5,6 +5,9 @@
  *
  * Living System rebuild: no Framer Motion background layers,
  * global GradientMesh handles background via LandingPage.
+ *
+ * SplineHero integration: Set SPLINE_SCENE_URL to a valid Spline
+ * scene URL to replace OrbitVisual with an interactive 3D scene.
  */
 
 import React, { lazy, Suspense, useRef } from 'react'
@@ -17,6 +20,10 @@ import { useDemoRedirect } from '../../hooks/useDemoRedirect'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
 import { CTAButton, OrbitVisual } from '../common'
+import { SplineHero } from '../common/SplineHero'
+
+// Set to Spline scene URL when 3D asset is ready. Empty string = OrbitVisual fallback.
+const SPLINE_SCENE_URL = ''
 
 const VisionTimeline = lazy(() =>
   import('../common/VisionTimeline').then((m) => ({ default: m.VisionTimeline }))
@@ -132,8 +139,12 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Orbit Visual — right side, desktop only */}
-        <OrbitVisual />
+        {/* Hero visual — right side, desktop only */}
+        {SPLINE_SCENE_URL ? (
+          <SplineHero sceneUrl={SPLINE_SCENE_URL} className="w-full h-full" />
+        ) : (
+          <OrbitVisual />
+        )}
       </div>
 
       {/* Service Cards Grid — 2x2 numbered layout */}
@@ -158,7 +169,7 @@ export const Hero: React.FC = () => {
             <Link
               key={service.href}
               to={service.href}
-              className="relative card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
+              className="relative card-gradient-border card-tilt rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
             >
               {/* Service number */}
               <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
