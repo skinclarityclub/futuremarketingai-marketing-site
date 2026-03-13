@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 12-02
+current_plan: 12-03
 status: in-progress
-stopped_at: Completed 12-01-PLAN.md
-last_updated: '2026-03-13T13:56:14Z'
+stopped_at: Completed 12-02-PLAN.md
+last_updated: '2026-03-13T14:04:21Z'
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 22
-  completed_plans: 19
+  completed_plans: 20
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 12 — Design Polish & Media
-- **Current Plan:** 02 of 4
+- **Current Plan:** 03 of 4
 - **Status:** In progress
-- **Last completed:** Phase 12 Plan 01 — Foundation components (SplineHero, ScrollReveal, ProductMedia, useTilt)
-- **Last session:** 2026-03-13T13:56:14Z
-- **Stopped at:** Completed 12-01-PLAN.md
+- **Last completed:** Phase 12 Plan 02 — Homepage polish (SplineHero integration, ScrollReveal, CTAButton arrow, card-tilt)
+- **Last session:** 2026-03-13T14:04:21Z
+- **Stopped at:** Completed 12-02-PLAN.md
 
 ## Decisions
 
@@ -70,6 +70,9 @@ progress:
 - [12-01]: SplineHero uses React.lazy + Suspense with OrbitVisual fallback — zero JS cost until Spline runtime loads
 - [12-01]: ScrollReveal delegates reduced-motion to useMotionSafe — returns empty props when motion disabled
 - [12-01]: useTilt is caller-guarded — hook returns values unconditionally, callers apply desktop-only check
+- [12-02]: CSS card-tilt on hero service cards instead of useTilt hook — 4 hook instances unnecessary, useTilt saved for Plan 03 service pages
+- [12-02]: Tailwind group/cta named group on CTAButton — isolates hover scope from parent group classes on service card Links
+- [12-02]: ScrollReveal wraps Hero.tsx sections (not LandingPage.tsx) — below-fold content lives in Hero component
 
 ## Context
 
@@ -100,3 +103,4 @@ progress:
 - Phase 11 COMPLETE: All 7 plans done — Living System Full Rebuild finished across all pages
 - Phase 12 added: Design Polish & Media — Spline/Rive hero visual, product media, micro-interactions, typography polish. Research pre-gathered.
 - Phase 12 Plan 01 complete: Foundation components — SplineHero (lazy Spline 3D + OrbitVisual fallback), ScrollReveal (whileInView wrapper), ProductMedia (video/poster + reduced-motion), useTilt (mouse parallax hook)
+- Phase 12 Plan 02 complete: Homepage polish — SplineHero wired into Hero (SPLINE_SCENE_URL constant, OrbitVisual fallback), ScrollReveal on service cards + VisionTimeline, CTAButton arrow hover via group-hover/cta, card-tilt CSS class
