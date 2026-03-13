@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: '16-03'
+current_plan: '17-02'
 status: executing
-stopped_at: Completed 16-02-PLAN.md
-last_updated: '2026-03-13T17:20:01.054Z'
+stopped_at: Completed 17-01-PLAN.md
+last_updated: '2026-03-13T18:06:21.000Z'
 progress:
   total_phases: 12
   completed_phases: 8
-  total_plans: 30
-  completed_plans: 30
+  total_plans: 34
+  completed_plans: 31
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 16 — Chatbot Personas & Knowledge
-- **Current Plan:** 16-03
+- **Phase:** 17 — ChatWidget UI Components
+- **Current Plan:** 17-02
 - **Status:** Executing
-- **Last completed:** Phase 16 Plan 02 — Lead-Gen and Support Personas
-- **Last session:** 2026-03-13T18:01:38.595Z
-- **Stopped at:** Completed 16-01-PLAN.md
+- **Last completed:** Phase 17 Plan 01 — Foundation: Engine Compatibility, Chat Store, usePersonaChat Hook
+- **Last session:** 2026-03-13T18:06:21Z
+- **Stopped at:** Completed 17-01-PLAN.md
 
 ## Decisions
 
@@ -92,6 +92,11 @@ progress:
 - [Phase 16]: tools cast as unknown as Record<string, unknown> to bridge AI SDK tool() return type with PersonaConfig generic tools type
 - [Phase 16]: [16-01]: Persona vertical slice pattern: knowledge-kb.ts + tools.ts + persona.ts per persona
 - [Phase 16]: [16-01]: PRODUCT_CATALOG exported as typed array for tool handler querying
+- [Phase 17]: [17-01]: Engine switched from toTextStreamResponse to toUIMessageStreamResponse for useChat compatibility
+- [Phase 17]: [17-01]: convertToModelMessages (async) converts UIMessage[] to model messages server-side
+- [Phase 17]: [17-01]: chatbotStore uses fmai-chatbot-state localStorage key (separate from old fmai-chat-state)
+- [Phase 17]: [17-01]: usePersonaChat uses useChat id param for per-persona message isolation
+- [Phase 17]: [17-01]: Demo message limit set at 15 messages per session
 
 ## Context
 
@@ -138,3 +143,5 @@ progress:
 - Phase 15 Plan 02 complete: Persona infrastructure -- topic router, prompt builder with cache control, persona registry, tool executor with AI SDK v6 pattern
 - Phase 15 Plan 03 complete: Engine orchestration + API endpoint -- handleChatRequest pipeline, Vercel Web API streaming endpoint, barrel exports, CSP cleanup
 - Phase 15 COMPLETE: All 3 plans done -- Chatbot Engine Foundation finished (full pipeline from POST /api/chatbot to streaming Claude response)
+- Phase 17 added: ChatWidget UI Components -- shared ChatWidget React component for floating and embedded chat modes
+- Phase 17 Plan 01 complete: Foundation -- engine switched to toUIMessageStreamResponse, chatbotStore Zustand store, usePersonaChat hook with DefaultChatTransport
