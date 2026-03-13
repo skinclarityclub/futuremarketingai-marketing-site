@@ -55,4 +55,9 @@ progress:
 - All Calendly CTAs use modal pattern with dark theme params across VoiceAgents, Automations, Chatbots pages
 - 2026-03-13: Phase 9 complete — Living System Page Conversion (all 5 plans executed, all pages converted from old glassmorphism to teal/amber tokens)
 - Full-site visual audit passed: zero old indigo/purple/blue palette elements on any page
-- Next phase: TBD
+- Next phase: Phase 10 — Homepage Restructuring & Marketing Machine Page
+- Phase 10 added: Restructure homepage as general FutureAI hub, create /marketing-machine page with relocated content, fix i18n sync
+
+### Roadmap Evolution
+
+- Phase 10 added: Homepage Restructuring & Marketing Machine Page

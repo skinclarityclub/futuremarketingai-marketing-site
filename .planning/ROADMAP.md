@@ -2,17 +2,18 @@
 
 ## Progress
 
-| Phase | Name                           | Status   | Plans      | Progress |
-| ----- | ------------------------------ | -------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete | —          | 100%     |
-| 2     | Service Pages                  | Complete | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
-| 8     | Language Expansion             | Pending  | —          | 0%       |
-| 9     | 5/5                            | Complete | 2026-03-13 | 0%       |
+| Phase | Name                                            | Status   | Plans      | Progress |
+| ----- | ----------------------------------------------- | -------- | ---------- | -------- |
+| 1     | Website Rebrand                                 | Complete | —          | 100%     |
+| 2     | Service Pages                                   | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand                  | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup                           | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign                             | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership                         | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development                      | Pending  | —          | 0%       |
+| 8     | Language Expansion                              | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion                   | Complete | 2026-03-13 | 100%     |
+| 10    | Homepage Restructuring & Marketing Machine Page | Pending  | —          | 0%       |
 
 ## Phases
 
@@ -36,3 +37,9 @@
     - [ ] 09-03-PLAN.md — Service pages (Automations, Chatbots, VoiceAgents) conversion + CTAButton migration
     - [ ] 09-04-PLAN.md — Supporting pages (About, Pricing, Contact, HowItWorks, Legal) conversion
     - [ ] 09-05-PLAN.md — Common components (LoadingFallback, FloatingNav, CookieConsent) + CSS + visual audit
+
+- [ ] **Phase 10: Homepage Restructuring & Marketing Machine Page** — Restructure homepage as general FutureAI hub, create dedicated /marketing-machine page with moved content, dynamic branding per route, full i18n (EN/NL/ES)
+  - **Goal:** Transform homepage from marketing-focused to general FutureAI overview. Create /marketing-machine page with relocated SocialProof/Features content + demo CTA. Ensure all translations consistent across EN/NL/ES.
+  - **Requirement IDs:** REQ-HOMEPAGE-RESTRUCTURE
+  - **Depends on:** Phase 9
+  - **Plans:** 0 plans (run /gsd:plan-phase 10 to break down)
