@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: completed
-stopped_at: Completed 14-03-PLAN.md
-last_updated: '2026-03-13T15:41:04.165Z'
+current_plan: 15-02
+status: in-progress
+stopped_at: Completed 15-01-PLAN.md
+last_updated: '2026-03-13T17:02:00.000Z'
 progress:
-  total_phases: 7
+  total_phases: 8
   completed_phases: 7
-  total_plans: 27
-  completed_plans: 27
+  total_plans: 30
+  completed_plans: 28
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 14 — Service Page i18n
-- **Current Plan:** Not started
-- **Status:** Milestone complete
-- **Last completed:** Phase 14 Plan 03 — VoiceAgentsPage i18n (EN/NL/ES)
-- **Last session:** 2026-03-13T15:37:12.664Z
-- **Stopped at:** Completed 14-03-PLAN.md
+- **Phase:** 15 — Chatbot Engine Foundation
+- **Current Plan:** 15-02
+- **Status:** In progress
+- **Last completed:** Phase 15 Plan 01 — Types, Security, Rate Limiting, Complexity
+- **Last session:** 2026-03-13T17:02:00Z
+- **Stopped at:** Completed 15-01-PLAN.md
 
 ## Decisions
 
@@ -83,6 +83,8 @@ progress:
 - [14-01]: NL prices use dot-separator (1.000) matching Dutch locale convention
 - [Phase 14]: Pricing tier features use t() with returnObjects for translated arrays; module-level key/config maps keep static config separate from t() text
 - [14-03]: VoiceAgentsPage trust metric values (24/7, 500+, 98%) stored in locale files for potential localization
+- [Phase 15]: [15-01]: Map.forEach used instead of for-of iteration — avoids downlevelIteration tsconfig requirement
+- [Phase 15]: [15-01]: MODEL_IDS uses shorthand IDs (claude-haiku-4-5, claude-sonnet-4-5) — provider resolves to latest
 
 ## Context
 
