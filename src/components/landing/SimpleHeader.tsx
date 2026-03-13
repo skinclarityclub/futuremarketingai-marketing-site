@@ -38,6 +38,21 @@ export const SimpleHeader: React.FC = () => {
   const servicesDropdownRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
 
+  // Dynamic brand middle text based on current route
+  const brandMiddle = (() => {
+    const path = location.pathname
+    if (path.startsWith('/chatbots')) {
+      return 'Chat'
+    }
+    if (path.startsWith('/voice-agents')) {
+      return 'Voice'
+    }
+    if (path === '/' || path.startsWith('/automations')) {
+      return 'Marketing'
+    }
+    return ''
+  })()
+
   // Use demo redirect hook for mobile modal
   const { showDesktopNotice, closeDesktopNotice, noticePage } = useDemoRedirect()
 
@@ -244,8 +259,9 @@ export const SimpleHeader: React.FC = () => {
                 <div className="font-bold text-base sm:text-lg tracking-tight">
                   <span className="text-text-primary group-hover:text-text-primary transition-colors">
                     {t('landing.header.brand.future')}
+                    {brandMiddle}
                   </span>
-                  <span className="text-accent-system ml-0.5">{t('landing.header.brand.ai')}</span>
+                  <span className="text-accent-system">{t('landing.header.brand.ai')}</span>
                 </div>
               </Link>
 
