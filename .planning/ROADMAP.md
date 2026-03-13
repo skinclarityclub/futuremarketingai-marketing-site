@@ -2,27 +2,27 @@
 
 ## Progress
 
-| Phase | Name                           | Status      | Plans      | Progress |
-| ----- | ------------------------------ | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete    | —          | 100%     |
-| 2     | Service Pages                  | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending     | —          | 0%       |
-| 8     | Language Expansion             | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 14    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 15    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 16    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 17    | 4/4                            | Complete    | 2026-03-13 | 0%       |
-| 18    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 19    | 1/2                            | In Progress |            | 0%       |
+| Phase | Name                           | Status   | Plans      | Progress |
+| ----- | ------------------------------ | -------- | ---------- | -------- |
+| 1     | Website Rebrand                | Complete | —          | 100%     |
+| 2     | Service Pages                  | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
+| 8     | Language Expansion             | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 15    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 16    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
+| 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
 
 ## Phases
 
@@ -200,7 +200,7 @@
     - [ ] 18-02-PLAN.md — ProgressiveCTA + MultiPlatformShowcase (conversion + marketing components)
     - [ ] 18-03-PLAN.md — ChatbotsPage wiring + i18n (EN/NL/ES) + barrel exports + visual verification
 
-- [ ] **Phase 19: Homepage Concierge + Demo Guide + ARIA Cleanup** — Wire concierge persona as floating chatbot on marketing pages, demo-guide persona on demo pages, remove all old ARIA code and OpenAI dependencies.
+- [x] **Phase 19: Homepage Concierge + Demo Guide + ARIA Cleanup** — Wire concierge persona as floating chatbot on marketing pages, demo-guide persona on demo pages, remove all old ARIA code and OpenAI dependencies. (completed 2026-03-13)
   - **Goal:** Replace the entire ARIA system with the new persona-driven chatbot. Concierge persona floats on marketing pages (/, /pricing, /about, /chatbots, etc.). Demo-guide persona activates on demo pages (/explorer, /calculator, /dashboard) with page-context awareness and module follow-up behavior (preserved from ARIA). Clean removal of all old code.
   - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
   - **Requirement IDs:** REQ-CHATBOT-CONCIERGE, REQ-ARIA-CLEANUP

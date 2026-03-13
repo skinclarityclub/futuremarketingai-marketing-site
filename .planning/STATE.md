@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 19-01
+current_plan: 19-02
 status: executing
-stopped_at: Completed 19-01-PLAN.md
-last_updated: '2026-03-13T22:09:17Z'
+stopped_at: Completed 19-02-PLAN.md
+last_updated: '2026-03-13T22:21:02Z'
 progress:
   total_phases: 13
-  completed_phases: 11
-  total_plans: 41
-  completed_plans: 41
+  completed_phases: 12
+  total_plans: 42
+  completed_plans: 42
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 19 — Homepage Concierge + Demo Guide + ARIA Cleanup
-- **Current Plan:** 19-01 complete
+- **Current Plan:** 19-02 complete
 - **Status:** Executing
-- **Last completed:** Phase 19 Plan 01 — Homepage Concierge + Demo Guide Wiring
-- **Last session:** 2026-03-13T22:09:17Z
-- **Stopped at:** Completed 19-01-PLAN.md
+- **Last completed:** Phase 19 Plan 02 — ARIA Cleanup
+- **Last session:** 2026-03-13T22:21:02Z
+- **Stopped at:** Completed 19-02-PLAN.md
 
 ## Decisions
 
@@ -114,6 +114,8 @@ progress:
 - [Phase 18]: [18-03]: Use case cards map to persona IDs via USE_CASE_TO_PERSONA Record for scroll-to-tab coordination
 - [Phase 19]: [19-01]: isDemoPage uses startsWith array match for /explorer, /calculator, /dashboard, /demo prefixes
 - [Phase 19]: [19-01]: Old fmai-chat-state localStorage key cleaned up on mount in existing dark mode useEffect
+- [Phase 19]: [19-02]: useCalendlyBooking uses hardcoded journey defaults (completedSteps: 0, timeOnSite: 0) replacing journeyStore dependency
+- [Phase 19]: [19-02]: StrategicCTA floating variant removed all FloatingElementContext coordination logic -- CTA shows independently of chat panel
 
 ## Context
 
@@ -171,3 +173,5 @@ progress:
 - Phase 18 Plan 03 complete: Page Integration & i18n -- ChatbotsPage restructured with DemoPlayground + MultiPlatformShowcase, hero scroll-to-demo CTA, use case scroll-to-tab, full EN/NL/ES i18n
 - Phase 18 COMPLETE: All 3 plans done -- ChatbotsPage Demo Playground finished (interactive demo with 3 persona tabs, progressive CTAs, multi-platform showcase, full i18n)
 - Phase 19 Plan 01 complete: ChatWidget floating mode wired into App.tsx replacing AIJourneyAssistant, route-based concierge/demo-guide persona switching, pageContext forwarding to API
+- Phase 19 Plan 02 complete: Complete ARIA cleanup -- 53 files deleted (12,169 lines), refactored useCalendlyBooking/StrategicCTA/Explorer/App.tsx, cleaned barrels and i18n, zero dead imports
+- Phase 19 COMPLETE: All 2 plans done -- Homepage Concierge + Demo Guide + ARIA Cleanup finished (persona-driven chatbot replaces entire ARIA system)
