@@ -121,13 +121,51 @@
     }
   },
   "demo": {
+    "title": "Probeer Het Zelf",
+    "subtitle": "Interacteer met 3 live AI-chatbot demo's — elk getraind voor een ander gebruik.",
+    "capabilities_label": "Deze bot kan:",
     "cta_subtle": "Onder de indruk?",
     "cta_subtle_link": "Wij bouwen chatbots op maat voor jouw bedrijf",
     "cta_strong": "Klaar voor je eigen AI-chatbot? Boek een gratis strategiesessie.",
     "cta_strong_button": "Gratis Strategiesessie Boeken",
     "cta_gate_title": "Demolimiet Bereikt",
     "cta_gate_description": "Je hebt de demo verkend — stel je nu voor dat dit op maat is gemaakt voor jouw bedrijf. Boek een gesprek voor de volledige versie.",
-    "cta_gate_button": "Gesprek Boeken"
+    "cta_gate_button": "Gesprek Boeken",
+    "tabs": {
+      "ecommerce": {
+        "label": "E-commerce Adviseur",
+        "scenario_title": "Skincare Webshop",
+        "scenario": "Je bladert door een premium skincare webshop. De AI-adviseur helpt je de juiste producten te vinden voor jouw huidtype, bouwt gepersonaliseerde routines en beantwoordt ingredientvragen.",
+        "capabilities": [
+          "Producten aanbevelen op huidtype",
+          "Gepersonaliseerde routines samenstellen",
+          "Ingredienten uitleggen",
+          "Artikelen voorstellen voor winkelwagen"
+        ]
+      },
+      "leadgen": {
+        "label": "Lead Kwalificeerder",
+        "scenario_title": "B2B Leadkwalificatie",
+        "scenario": "Een potentiele klant bezoekt de website van je marketingbureau. De AI-kwalificeerder gaat het gesprek aan, identificeert hun behoeften, scoort hun geschiktheid en routeert warme leads naar je salesteam.",
+        "capabilities": [
+          "Leads kwalificeren met slimme vragen",
+          "Prospect-fit automatisch scoren",
+          "Contactgegevens vastleggen",
+          "Warme leads naar sales routeren"
+        ]
+      },
+      "support": {
+        "label": "Support Agent",
+        "scenario_title": "Klantenservice",
+        "scenario": "Een klant heeft hulp nodig met zijn bestelling of account. De AI-supportagent lost veelvoorkomende problemen direct op, zoekt de orderstatus op en escaleert complexe zaken naar je team.",
+        "capabilities": [
+          "Veelvoorkomende problemen direct oplossen",
+          "Bestelling- en accountinfo opzoeken",
+          "Supporttickets aanmaken",
+          "Escaleren naar menselijke medewerkers"
+        ]
+      }
+    }
   },
   "multi_platform": {
     "title": "Eeen Brein, Elk Kanaal",

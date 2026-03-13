@@ -12,3 +12,9 @@ export {
   TicketCard,
   ServiceCard,
 } from './tool-results'
+export { ProgressiveCTA } from './ProgressiveCTA'
+export { MultiPlatformShowcase } from './MultiPlatformShowcase'
+export { DemoPlayground } from './DemoPlayground'
+export { PersonaSelector, DEMO_PERSONAS } from './PersonaSelector'
+export type { DemoPersonaId } from './PersonaSelector'
+export { DemoContextCard } from './DemoContextCard'

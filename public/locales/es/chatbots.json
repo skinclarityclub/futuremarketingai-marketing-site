@@ -121,13 +121,51 @@
     }
   },
   "demo": {
+    "title": "Pruebalo Tu Mismo",
+    "subtitle": "Interactua con 3 demos de chatbot IA en vivo — cada uno entrenado para un caso de uso diferente.",
+    "capabilities_label": "Este bot puede:",
     "cta_subtle": "¿Te gusta lo que ves?",
     "cta_subtle_link": "Construimos chatbots personalizados para tu negocio",
     "cta_strong": "¿Listo para tu propio chatbot IA? Reserva una sesion de estrategia gratuita.",
     "cta_strong_button": "Reservar Sesion Gratuita",
     "cta_gate_title": "Limite de Demo Alcanzado",
     "cta_gate_description": "Has explorado la demo — ahora imagina esto adaptado a tu negocio. Reserva una llamada para la version completa.",
-    "cta_gate_button": "Reservar Llamada"
+    "cta_gate_button": "Reservar Llamada",
+    "tabs": {
+      "ecommerce": {
+        "label": "Asesor E-commerce",
+        "scenario_title": "Tienda de Skincare",
+        "scenario": "Estas navegando una tienda premium de skincare. El asesor IA te ayuda a encontrar los productos adecuados para tu tipo de piel, crea rutinas personalizadas y responde preguntas sobre ingredientes.",
+        "capabilities": [
+          "Recomendar productos por tipo de piel",
+          "Crear rutinas personalizadas",
+          "Explicar ingredientes",
+          "Sugerir articulos para el carrito"
+        ]
+      },
+      "leadgen": {
+        "label": "Calificador de Leads",
+        "scenario_title": "Calificacion de Leads B2B",
+        "scenario": "Un cliente potencial visita el sitio web de tu agencia de marketing. El calificador IA los involucra, identifica sus necesidades, evalua su ajuste y enruta leads calientes a tu equipo de ventas.",
+        "capabilities": [
+          "Calificar leads con preguntas inteligentes",
+          "Evaluar ajuste de prospectos automaticamente",
+          "Capturar informacion de contacto",
+          "Enrutar leads calientes a ventas"
+        ]
+      },
+      "support": {
+        "label": "Agente de Soporte",
+        "scenario_title": "Soporte al Cliente",
+        "scenario": "Un cliente necesita ayuda con su pedido o cuenta. El agente de soporte IA resuelve problemas comunes al instante, busca el estado del pedido y escala casos complejos a tu equipo.",
+        "capabilities": [
+          "Resolver problemas comunes al instante",
+          "Buscar informacion de pedidos y cuentas",
+          "Crear tickets de soporte",
+          "Escalar a agentes humanos"
+        ]
+      }
+    }
   },
   "multi_platform": {
     "title": "Un Cerebro, Cada Canal",
