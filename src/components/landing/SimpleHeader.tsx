@@ -245,9 +245,6 @@ export const SimpleHeader: React.FC = () => {
                   <span className="text-text-primary group-hover:text-text-primary transition-colors">
                     {t('landing.header.brand.future')}
                   </span>
-                  <span className="text-accent-system">
-                    {t('landing.header.brand.marketing')}
-                  </span>
                   <span className="text-accent-system ml-0.5">{t('landing.header.brand.ai')}</span>
                 </div>
               </Link>
@@ -313,7 +310,9 @@ export const SimpleHeader: React.FC = () => {
                                 </div>
                                 <span
                                   className={`text-sm font-medium ${
-                                    currentLanguage === code ? 'text-accent-system' : 'text-text-secondary'
+                                    currentLanguage === code
+                                      ? 'text-accent-system'
+                                      : 'text-text-secondary'
                                   }`}
                                 >
                                   {data.name}
