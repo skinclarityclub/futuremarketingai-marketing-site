@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
@@ -6,92 +7,53 @@ import { CTAButton } from '../components/common'
 import { ScrollReveal } from '../components/common/ScrollReveal'
 import { ProductMedia } from '../components/common/ProductMedia'
 import { Phone, Calendar, Headphones, RefreshCw, CheckCircle, Handshake } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const useCases = [
-  {
-    icon: Phone,
-    title: 'Outbound Lead Qualification',
-    description:
-      'Call and qualify hundreds of leads per day. AI handles the first conversation so your sales team only talks to qualified prospects.',
-  },
-  {
-    icon: Calendar,
-    title: 'Appointment Setting',
-    description:
-      'Fill calendars automatically. The voice agent books meetings directly into your calendar system.',
-  },
-  {
-    icon: Headphones,
-    title: 'Inbound Customer Service',
-    description:
-      'Handle routine calls 24/7. Answer FAQs, route complex issues, and never put a customer on hold.',
-  },
-  {
-    icon: RefreshCw,
-    title: 'Post-Sale Follow-up',
-    description: 'Automated check-ins, renewal reminders, and satisfaction surveys — at scale.',
-  },
-]
+const USE_CASE_KEYS = [
+  'outbound_leads',
+  'appointment_setting',
+  'inbound_service',
+  'post_sale',
+] as const
+const USE_CASE_ICONS: Record<string, LucideIcon> = {
+  outbound_leads: Phone,
+  appointment_setting: Calendar,
+  inbound_service: Headphones,
+  post_sale: RefreshCw,
+}
 
-const pricingTiers = [
-  {
-    name: 'Basic',
-    price: '€1,000 – €2,000',
-    description: 'Single-purpose voice agent',
-    features: [
-      '1 workflow (e.g., appointment booking)',
-      'Basic CRM integration',
-      'Call recording & transcripts',
-      '14-day delivery',
-    ],
-    highlighted: false,
-  },
-  {
-    name: 'Standard',
-    price: '€2,000 – €5,000',
-    description: 'Multi-purpose voice agent',
-    features: [
-      'Multiple workflows',
-      'Full CRM integration',
-      'Analytics dashboard',
-      'Multi-language support',
-    ],
-    highlighted: true,
-  },
-  {
-    name: 'Ongoing',
-    price: 'from €500/mo',
-    description: 'Hosting, monitoring & optimization',
-    features: [
-      'Cloud hosting',
-      'Performance monitoring',
-      'Monthly optimization',
-      'Priority support',
-    ],
-    highlighted: false,
-  },
-]
-
-const faqs = [
-  {
-    q: 'How natural does the AI voice sound?',
-    a: 'Modern voice AI is remarkably natural. We use the latest text-to-speech models that sound indistinguishable from human voices in most conversations.',
-  },
-  {
-    q: 'Can the voice agent handle objections?',
-    a: 'Yes. We train the agent on your specific objection-handling scripts. It can navigate common pushbacks and knows when to escalate to a human.',
-  },
-  {
-    q: 'What languages are supported?',
-    a: 'English, Spanish, French, German, Dutch, and many more. Multi-language support is available on Standard and above.',
-  },
-  {
-    q: 'How does it integrate with my CRM?',
-    a: 'We integrate with HubSpot, Salesforce, Pipedrive, and any CRM with an API. Call outcomes, transcripts, and lead scores are automatically synced.',
-  },
-]
+const PRICING_TIER_KEYS = ['basic', 'standard', 'ongoing'] as const
+const PRICING_TIER_CONFIG: Record<string, { highlighted: boolean }> = {
+  basic: { highlighted: false },
+  standard: { highlighted: true },
+  ongoing: { highlighted: false },
+}
+const FAQ_KEYS = ['voice_quality', 'objections', 'languages', 'crm'] as const
 
 export const VoiceAgentsPage: React.FC = () => {
+  const { t } = useTranslation(['voice-agents', 'common'])
+
+  const useCases = USE_CASE_KEYS.map((key) => ({
+    icon: USE_CASE_ICONS[key],
+    title: t(`voice-agents:use_cases.items.${key}.title`),
+    description: t(`voice-agents:use_cases.items.${key}.description`),
+  }))
+
+  const pricingTiers = PRICING_TIER_KEYS.map((key) => ({
+    name: t(`voice-agents:pricing.tiers.${key}.name`),
+    price: t(`voice-agents:pricing.tiers.${key}.price`),
+    description: t(`voice-agents:pricing.tiers.${key}.description`),
+    features: t(`voice-agents:pricing.tiers.${key}.features`, {
+      returnObjects: true,
+    }) as string[],
+    highlighted: PRICING_TIER_CONFIG[key].highlighted,
+  }))
+
+  const faqs = FAQ_KEYS.map((key) => ({
+    q: t(`voice-agents:faq.items.${key}.q`),
+    a: t(`voice-agents:faq.items.${key}.a`),
+  }))
+
   return (
     <>
       <SimpleHeader />
@@ -117,7 +79,7 @@ export const VoiceAgentsPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
                 <Phone className="w-4 h-4 text-accent-system" />
                 <span className="text-sm font-medium text-text-secondary">
-                  AI That Handles Your Calls
+                  {t('voice-agents:hero.badge')}
                 </span>
               </div>
             </div>
@@ -126,15 +88,14 @@ export const VoiceAgentsPage: React.FC = () => {
               className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
             >
-              AI Voice Agents for Lead Qualification & Booking
+              {t('voice-agents:hero.title')}
             </h1>
 
             <p
               className="text-xl text-text-muted leading-relaxed max-w-3xl mx-auto mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
-              AI voice agents that call prospects, qualify leads, and book appointments — at scale,
-              without a sales team.
+              {t('voice-agents:hero.description')}
             </p>
 
             <div
@@ -142,10 +103,10 @@ export const VoiceAgentsPage: React.FC = () => {
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
               <CTAButton size="lg" calendly arrow>
-                Book a Demo Call
+                {t('voice-agents:hero.cta_primary')}
               </CTAButton>
               <CTAButton variant="secondary" size="lg" href="#use-cases">
-                See Use Cases
+                {t('voice-agents:hero.cta_secondary')}
               </CTAButton>
             </div>
           </div>
@@ -162,7 +123,7 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                What Voice Agents Can Do
+                {t('voice-agents:use_cases.title')}
               </h2>
             </motion.div>
 
@@ -198,11 +159,9 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Pricing
+                {t('voice-agents:pricing.title')}
               </h2>
-              <p className="text-lg text-text-secondary">
-                Transparent pricing for voice AI solutions
-              </p>
+              <p className="text-lg text-text-secondary">{t('voice-agents:pricing.subtitle')}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -221,7 +180,7 @@ export const VoiceAgentsPage: React.FC = () => {
                 >
                   {tier.highlighted && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
-                      Most Popular
+                      {t('voice-agents:pricing.most_popular')}
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-display text-text-primary mb-1">
@@ -243,7 +202,7 @@ export const VoiceAgentsPage: React.FC = () => {
                     variant={tier.highlighted ? 'primary' : 'secondary'}
                     className="w-full justify-center"
                   >
-                    Get Started
+                    {t('voice-agents:pricing.cta')}
                   </CTAButton>
                 </motion.div>
               ))}
@@ -264,13 +223,9 @@ export const VoiceAgentsPage: React.FC = () => {
               <Handshake className="w-10 h-10 text-accent-system flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-lg font-semibold font-display text-text-primary mb-2">
-                  Built With Specialized Partners
+                  {t('voice-agents:partnership.title')}
                 </h3>
-                <p className="text-text-muted">
-                  Our voice agent solutions are built in collaboration with specialized voice AI
-                  partners, ensuring you get the best technology and expertise available in the
-                  market.
-                </p>
+                <p className="text-text-muted">{t('voice-agents:partnership.description')}</p>
               </div>
             </motion.div>
           </div>
@@ -287,16 +242,28 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <div>
-                <div className="text-3xl font-bold font-display text-text-primary mb-1">24/7</div>
-                <div className="text-sm text-text-muted">Always Available</div>
+                <div className="text-3xl font-bold font-display text-text-primary mb-1">
+                  {t('voice-agents:trust_metrics.availability.value')}
+                </div>
+                <div className="text-sm text-text-muted">
+                  {t('voice-agents:trust_metrics.availability.label')}
+                </div>
               </div>
               <div>
-                <div className="text-3xl font-bold font-display text-text-primary mb-1">500+</div>
-                <div className="text-sm text-text-muted">Calls Per Day</div>
+                <div className="text-3xl font-bold font-display text-text-primary mb-1">
+                  {t('voice-agents:trust_metrics.calls.value')}
+                </div>
+                <div className="text-sm text-text-muted">
+                  {t('voice-agents:trust_metrics.calls.label')}
+                </div>
               </div>
               <div>
-                <div className="text-3xl font-bold font-display text-text-primary mb-1">98%</div>
-                <div className="text-sm text-text-muted">Accuracy Rate</div>
+                <div className="text-3xl font-bold font-display text-text-primary mb-1">
+                  {t('voice-agents:trust_metrics.accuracy.value')}
+                </div>
+                <div className="text-sm text-text-muted">
+                  {t('voice-agents:trust_metrics.accuracy.label')}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -313,7 +280,7 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
-                Frequently Asked Questions
+                {t('voice-agents:faq.title')}
               </h2>
             </motion.div>
 
@@ -364,14 +331,13 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Book a Voice Agent Demo
+                {t('voice-agents:final_cta.title')}
               </h2>
               <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                Hear a live demo of our voice AI and discover how it can qualify leads and book
-                meetings for your business.
+                {t('voice-agents:final_cta.description')}
               </p>
               <CTAButton size="lg" calendly arrow>
-                Book Demo Call
+                {t('voice-agents:final_cta.button')}
               </CTAButton>
             </motion.div>
           </div>
