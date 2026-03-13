@@ -1,10 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
 import { ScrollReveal } from '../components/common/ScrollReveal'
 import { ProductMedia } from '../components/common/ProductMedia'
+import type { LucideIcon } from 'lucide-react'
 import {
   Zap,
   Clock,
@@ -19,109 +21,78 @@ import {
   CheckCircle,
 } from 'lucide-react'
 
-const painPoints = [
-  {
-    icon: Clock,
-    title: 'Hours Lost to Manual Work',
-    description: 'Your team spends hours on work AI can do in minutes',
-  },
-  {
-    icon: Link2,
-    title: 'Disconnected Tools',
-    description: "Your tools don't talk to each other — data gets lost between apps",
-  },
-  {
-    icon: TrendingUp,
-    title: 'Scaling Means Hiring',
-    description: 'Scaling means hiring more people, not working smarter',
-  },
-]
+// Key arrays and icon mappings at module level (icons are not translatable)
+const PAIN_POINT_KEYS = ['manual_work', 'disconnected_tools', 'scaling'] as const
+const PAIN_POINT_ICONS: Record<string, LucideIcon> = {
+  manual_work: Clock,
+  disconnected_tools: Link2,
+  scaling: TrendingUp,
+}
 
-const automations = [
-  { icon: Users, label: 'Lead qualification & CRM enrichment' },
-  { icon: Mail, label: 'Email sequences & follow-ups' },
-  { icon: Share2, label: 'Social media scheduling & content' },
-  { icon: FileText, label: 'Invoice & billing workflows' },
-  { icon: UserPlus, label: 'Customer onboarding flows' },
-  { icon: RefreshCw, label: 'Data sync between platforms' },
-]
+const AUTOMATION_KEYS = [
+  'lead_qualification',
+  'email_sequences',
+  'social_media',
+  'invoicing',
+  'onboarding',
+  'data_sync',
+] as const
+const AUTOMATION_ICONS: Record<string, LucideIcon> = {
+  lead_qualification: Users,
+  email_sequences: Mail,
+  social_media: Share2,
+  invoicing: FileText,
+  onboarding: UserPlus,
+  data_sync: RefreshCw,
+}
 
-const processSteps = [
-  {
-    step: '01',
-    title: 'Free Audit',
-    description:
-      'We map your manual processes and identify automation opportunities. 30 minutes, no obligation.',
-  },
-  {
-    step: '02',
-    title: 'Build',
-    description: '1-2 weeks delivery, fully documented workflows. We build, test, and hand over.',
-  },
-  {
-    step: '03',
-    title: 'Optimize',
-    description:
-      'Optional ongoing retainer for new workflows, optimization, and dedicated support.',
-  },
-]
+const PROCESS_STEP_KEYS = ['audit', 'build', 'optimize'] as const
+const PROCESS_STEP_NUMBERS = ['01', '02', '03'] as const
 
-const pricingTiers = [
-  {
-    name: 'Starter',
-    price: '€1,000 – €2,500',
-    description: 'Perfect for getting started',
-    features: ['1-3 workflows', 'Full documentation', '7-day delivery', 'Email support'],
-    cta: 'Get Started',
-    highlighted: false,
-  },
-  {
-    name: 'Growth',
-    price: '€2,500 – €5,000',
-    description: 'For teams ready to scale',
-    features: ['5-10 workflows', 'End-to-end testing', 'Priority support', '14-day delivery'],
-    cta: 'Most Popular',
-    highlighted: true,
-  },
-  {
-    name: 'Retainer',
-    price: '€2,000 – €5,000/mo',
-    description: 'Ongoing automation partner',
-    features: [
-      'Unlimited workflow builds',
-      'Continuous optimization',
-      'Dedicated support',
-      'Monthly strategy call',
-    ],
-    cta: "Let's Talk",
-    highlighted: false,
-  },
-]
+const PRICING_TIER_KEYS = ['starter', 'growth', 'retainer'] as const
+const PRICING_TIER_HIGHLIGHTED: Record<string, boolean> = {
+  starter: false,
+  growth: true,
+  retainer: false,
+}
 
-const faqs = [
-  {
-    q: 'What tools do you integrate with?',
-    a: 'We work with n8n, Make, Zapier, and custom API integrations. We connect any tool that has an API — CRMs, email platforms, payment systems, and more.',
-  },
-  {
-    q: 'How long does delivery take?',
-    a: 'Most projects are delivered within 1-2 weeks. Simple workflows can be ready in days, while more complex multi-step automations take up to 14 days.',
-  },
-  {
-    q: 'Do I need technical knowledge?',
-    a: 'No. We handle all the technical work. You get fully documented workflows with clear instructions for your team.',
-  },
-  {
-    q: 'What happens if something breaks?',
-    a: 'All workflows include error handling and monitoring. Retainer clients get priority support. One-time projects include 7 days of post-delivery support.',
-  },
-  {
-    q: 'Can you automate processes across multiple tools?',
-    a: 'Absolutely. Most of our workflows connect 3-5 different tools. We specialize in making your entire stack work together seamlessly.',
-  },
-]
+const FAQ_KEYS = ['integrations', 'delivery', 'technical', 'breaks', 'multi_tool'] as const
 
 export const AutomationsPage: React.FC = () => {
+  const { t } = useTranslation(['automations', 'common'])
+
+  // Build translated data arrays inside component
+  const painPoints = PAIN_POINT_KEYS.map((key) => ({
+    icon: PAIN_POINT_ICONS[key],
+    title: t(`automations:pain_points.${key}.title`),
+    description: t(`automations:pain_points.${key}.description`),
+  }))
+
+  const automations = AUTOMATION_KEYS.map((key) => ({
+    icon: AUTOMATION_ICONS[key],
+    label: t(`automations:what_we_automate.items.${key}`),
+  }))
+
+  const processSteps = PROCESS_STEP_KEYS.map((key, i) => ({
+    step: PROCESS_STEP_NUMBERS[i],
+    title: t(`automations:process.steps.${key}.title`),
+    description: t(`automations:process.steps.${key}.description`),
+  }))
+
+  const pricingTiers = PRICING_TIER_KEYS.map((key) => ({
+    name: t(`automations:pricing.tiers.${key}.name`),
+    price: t(`automations:pricing.tiers.${key}.price`),
+    description: t(`automations:pricing.tiers.${key}.description`),
+    cta: t(`automations:pricing.tiers.${key}.cta`),
+    features: t(`automations:pricing.tiers.${key}.features`, { returnObjects: true }) as string[],
+    highlighted: PRICING_TIER_HIGHLIGHTED[key],
+  }))
+
+  const faqs = FAQ_KEYS.map((key) => ({
+    q: t(`automations:faq.items.${key}.q`),
+    a: t(`automations:faq.items.${key}.a`),
+  }))
+
   return (
     <>
       <SimpleHeader />
@@ -147,7 +118,7 @@ export const AutomationsPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
                 <Zap className="w-4 h-4 text-accent-system" />
                 <span className="text-sm font-medium text-text-secondary">
-                  Delivered in 1-2 Weeks
+                  {t('automations:hero.badge')}
                 </span>
               </div>
             </div>
@@ -156,15 +127,14 @@ export const AutomationsPage: React.FC = () => {
               className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
             >
-              Automate Your Business With AI
+              {t('automations:hero.title')}
             </h1>
 
             <p
               className="text-xl text-text-muted leading-relaxed max-w-3xl mx-auto mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
-              We build custom AI workflows that eliminate manual work — lead routing, CRM
-              enrichment, email sequences, and more. Powered by n8n, Make, and custom integrations.
+              {t('automations:hero.description')}
             </p>
 
             <div
@@ -172,10 +142,10 @@ export const AutomationsPage: React.FC = () => {
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
               <CTAButton size="lg" calendly arrow>
-                Get a Free Automation Audit
+                {t('automations:hero.cta_primary')}
               </CTAButton>
               <CTAButton variant="secondary" size="lg" href="#what-we-automate">
-                See Examples
+                {t('automations:hero.cta_secondary')}
               </CTAButton>
             </div>
           </div>
@@ -216,11 +186,10 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                What We Automate
+                {t('automations:what_we_automate.title')}
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-                From lead generation to customer onboarding — we automate the workflows that slow
-                your team down.
+                {t('automations:what_we_automate.subtitle')}
               </p>
             </motion.div>
 
@@ -253,7 +222,7 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                How It Works
+                {t('automations:process.title')}
               </h2>
             </motion.div>
 
@@ -293,9 +262,9 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Pricing
+                {t('automations:pricing.title')}
               </h2>
-              <p className="text-lg text-text-secondary">Transparent pricing. No surprises.</p>
+              <p className="text-lg text-text-secondary">{t('automations:pricing.subtitle')}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -314,7 +283,7 @@ export const AutomationsPage: React.FC = () => {
                 >
                   {tier.highlighted && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
-                      Most Popular
+                      {t('automations:pricing.most_popular')}
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-display text-text-primary mb-1">
@@ -356,21 +325,27 @@ export const AutomationsPage: React.FC = () => {
             >
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  15-30 hrs
+                  {t('automations:trust_metrics.hours_saved.value')}
                 </div>
-                <div className="text-sm text-text-muted">saved per week</div>
+                <div className="text-sm text-text-muted">
+                  {t('automations:trust_metrics.hours_saved.label')}
+                </div>
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  1-2 weeks
+                  {t('automations:trust_metrics.delivery_time.value')}
                 </div>
-                <div className="text-sm text-text-muted">delivery time</div>
+                <div className="text-sm text-text-muted">
+                  {t('automations:trust_metrics.delivery_time.label')}
+                </div>
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  2.5x
+                  {t('automations:trust_metrics.success_rate.value')}
                 </div>
-                <div className="text-sm text-text-muted">success rate with AI partner</div>
+                <div className="text-sm text-text-muted">
+                  {t('automations:trust_metrics.success_rate.label')}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -387,7 +362,7 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
-                Frequently Asked Questions
+                {t('automations:faq.title')}
               </h2>
             </motion.div>
 
@@ -438,14 +413,13 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Book a Free 30-min Automation Audit
+                {t('automations:final_cta.title')}
               </h2>
               <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                We'll map your manual processes and tell you exactly what AI can automate — and how
-                much time and money you'll save.
+                {t('automations:final_cta.description')}
               </p>
               <CTAButton size="lg" calendly arrow>
-                Book Free Audit
+                {t('automations:final_cta.button')}
               </CTAButton>
             </motion.div>
           </div>
