@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
-import { ScrollReveal } from '../components/common/ScrollReveal'
-import { ProductMedia } from '../components/common/ProductMedia'
+import { DemoPlayground, MultiPlatformShowcase, ProgressiveCTA } from '../components/chatbot'
+import type { DemoPersonaId } from '../components/chatbot/PersonaSelector'
+import { useChatbotStore } from '../stores/chatbotStore'
 import { Bot, MessageSquare, Users, Calendar, HelpCircle, CheckCircle } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -20,6 +21,13 @@ const USE_CASE_ICONS: Record<string, LucideIcon> = {
   lead_qualification: Users,
   appointment_booking: Calendar,
   faq_automation: HelpCircle,
+}
+
+const USE_CASE_TO_PERSONA: Record<string, DemoPersonaId | null> = {
+  customer_service: 'support',
+  lead_qualification: 'leadgen',
+  appointment_booking: null,
+  faq_automation: 'support',
 }
 
 const PROCESS_STEP_KEYS = ['discovery', 'build', 'optimize'] as const
@@ -40,11 +48,22 @@ const FAQ_KEYS = ['platforms', 'training', 'handoff', 'privacy'] as const
 
 export const ChatbotsPage: React.FC = () => {
   const { t } = useTranslation(['chatbots', 'common'])
+  const [activeTab, setActiveTab] = useState<DemoPersonaId>('ecommerce')
+  const messageCounts = useChatbotStore((s) => s.messageCounts)
+
+  const scrollToDemo = (personaId: DemoPersonaId) => {
+    setActiveTab(personaId)
+    requestAnimationFrame(() => {
+      document.getElementById('demo-playground')?.scrollIntoView({ behavior: 'smooth' })
+    })
+  }
 
   const useCases = USE_CASE_KEYS.map((key) => ({
+    key,
     icon: USE_CASE_ICONS[key],
     title: t(`chatbots:use_cases.items.${key}.title`),
     description: t(`chatbots:use_cases.items.${key}.description`),
+    personaId: USE_CASE_TO_PERSONA[key],
   }))
 
   const processSteps = PROCESS_STEP_KEYS.map((key) => ({
@@ -113,7 +132,13 @@ export const ChatbotsPage: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
-              <CTAButton size="lg" href="/demo" arrow>
+              <CTAButton
+                size="lg"
+                arrow
+                onClick={() => {
+                  document.getElementById('demo-playground')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
                 {t('chatbots:hero.cta_primary')}
               </CTAButton>
               <CTAButton size="lg" variant="secondary" calendly>
@@ -122,6 +147,15 @@ export const ChatbotsPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Demo Playground */}
+        <DemoPlayground activeTab={activeTab} onTabChange={setActiveTab} />
+        <div className="max-w-7xl mx-auto px-12">
+          <ProgressiveCTA messageCount={messageCounts[activeTab] || 0} />
+        </div>
+
+        {/* Multi-Platform Showcase */}
+        <MultiPlatformShowcase />
 
         {/* Use Cases */}
         <section className="py-16 px-12">
@@ -141,18 +175,22 @@ export const ChatbotsPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {useCases.map((useCase, i) => (
                 <motion.div
-                  key={i}
-                  className="card-gradient-border card-tilt bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                  key={useCase.key}
+                  className={`card-gradient-border card-tilt bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]${useCase.personaId ? ' cursor-pointer' : ''}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
+                  onClick={useCase.personaId ? () => scrollToDemo(useCase.personaId!) : undefined}
                 >
                   <useCase.icon className="w-10 h-10 text-accent-system mb-4" />
                   <h3 className="text-xl font-semibold font-display text-text-primary mb-2">
                     {useCase.title}
                   </h3>
                   <p className="text-text-muted">{useCase.description}</p>
+                  {useCase.personaId && (
+                    <p className="mt-3 text-sm text-accent-system font-medium">Try it &rarr;</p>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -337,21 +375,8 @@ export const ChatbotsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Product Demo Media */}
-        <ScrollReveal>
-          <div className="max-w-7xl mx-auto px-12 py-16">
-            {/* TODO: Replace with real demo video/screenshot */}
-            <ProductMedia
-              videoSrc="/media/placeholder-chatbots.mp4"
-              posterSrc="/media/placeholder-chatbots-poster.webp"
-              alt="Chatbots demo"
-              className="max-w-4xl mx-auto"
-            />
-          </div>
-        </ScrollReveal>
-
         {/* Final CTA */}
-        <section className="py-16 px-12">
+        <section id="final-cta" className="py-16 px-12">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               className="card-gradient-border bg-accent-system/5 border border-border-primary rounded-card p-12"
