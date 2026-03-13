@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** 18-02 complete
 - **Status:** Executing
 - **Last completed:** Phase 18 Plan 02 — CTA & Showcase Components
-- **Last session:** 2026-03-13T19:47:42.796Z
-- **Stopped at:** Completed 18-02-PLAN.md
+- **Last session:** 2026-03-13T19:49:09.917Z
+- **Stopped at:** Completed 18-01-PLAN.md
 
 ## Decisions
 
@@ -108,6 +108,8 @@ progress:
 - [Phase 17-04]: Barrel index.ts exports all chatbot components including tool-results for Phase 18/19 consumers
 - [Phase 18]: [18-02]: CSS dividers with animated gradient instead of SVG for connection lines -- simpler and responsive-friendly
 - [Phase 18]: [18-02]: Inline style tag for brainPulse/expandLine keyframes -- component-scoped CSS animations, no global pollution
+- [Phase 18]: Per-persona messageCounts as Record<string, number> with standalone getMessageCount selector export
+- [Phase 18]: DemoPlayground activeTab state lifted to parent for scroll-to-tab coordination from use case cards
 
 ## Context
 
