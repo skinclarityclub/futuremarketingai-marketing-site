@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** 16-03
 - **Status:** Executing
 - **Last completed:** Phase 16 Plan 02 — Lead-Gen and Support Personas
-- **Last session:** 2026-03-13T18:00:31.975Z
-- **Stopped at:** Completed 16-02-PLAN.md
+- **Last session:** 2026-03-13T18:01:38.595Z
+- **Stopped at:** Completed 16-01-PLAN.md
 
 ## Decisions
 
@@ -90,6 +90,8 @@ progress:
 - [Phase 15]: [15-03]: maxOutputTokens used instead of maxTokens — AI SDK v6 renamed this parameter
 - [Phase 15]: [15-03]: toTextStreamResponse used for simplicity — Phase 17 can switch to toUIMessageStreamResponse if useChat adopted
 - [Phase 16]: tools cast as unknown as Record<string, unknown> to bridge AI SDK tool() return type with PersonaConfig generic tools type
+- [Phase 16]: [16-01]: Persona vertical slice pattern: knowledge-kb.ts + tools.ts + persona.ts per persona
+- [Phase 16]: [16-01]: PRODUCT_CATALOG exported as typed array for tool handler querying
 
 ## Context
 

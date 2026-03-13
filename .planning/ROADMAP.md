@@ -19,7 +19,7 @@
 | 13    | 2/2                             | Complete    | 2026-03-13 | 0%       |
 | 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
 | 15    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 16    | 1/3                             | In Progress |            | 0%       |
+| 16    | 2/3                             | In Progress |            | 0%       |
 | 17    | ChatWidget UI Components        | Pending     | —          | 0%       |
 | 18    | ChatbotsPage Demo Playground    | Pending     | —          | 0%       |
 | 19    | Homepage Concierge + Demo Guide | Pending     | —          | 0%       |
