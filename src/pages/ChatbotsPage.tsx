@@ -5,13 +5,6 @@ import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
 import { Bot, MessageSquare, Users, Calendar, HelpCircle, CheckCircle } from 'lucide-react'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-  viewport: { once: true as const },
-}
-
 const useCases = [
   {
     icon: MessageSquare,
@@ -136,47 +129,56 @@ export const ChatbotsPage: React.FC = () => {
 
       <div className="min-h-screen bg-bg-deep">
         {/* Hero */}
-        <section className="relative pt-32 pb-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div {...fadeInUp}>
+        <section className="relative pt-32 pb-16 px-12">
+          <div className="max-w-7xl mx-auto text-center">
+            <div style={{ animation: 'fadeIn 0.8s ease-out' }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
                 <Bot className="w-4 h-4 text-accent-system" />
                 <span className="text-sm font-medium text-text-secondary">
                   24/7 Lead Qualification
                 </span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.h1
+            <h1
               className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
-              {...fadeInUp}
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
             >
               AI Chatbots That Never Sleep
-            </motion.h1>
+            </h1>
 
-            <motion.p
+            <p
               className="text-xl text-text-muted leading-relaxed max-w-3xl mx-auto mb-10"
-              {...fadeInUp}
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
               Custom AI chatbots that answer questions, qualify leads, and book calls — while you
               sleep. Integrated with your CRM, calendar, and support tools.
-            </motion.p>
+            </p>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" {...fadeInUp}>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
+            >
               <CTAButton size="lg" href="/demo" arrow>
                 See a Live Demo
               </CTAButton>
               <CTAButton size="lg" variant="secondary" calendly>
                 Get a Free Strategy Session
               </CTAButton>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Use Cases */}
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div className="text-center mb-12" {...fadeInUp}>
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 What Our Chatbots Do
               </h2>
@@ -186,14 +188,16 @@ export const ChatbotsPage: React.FC = () => {
               {useCases.map((useCase, i) => (
                 <motion.div
                   key={i}
-                  className="bg-bg-surface border border-border-primary rounded-sm p-8"
+                  className="card-gradient-border bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <useCase.icon className="w-10 h-10 text-accent-system mb-4" />
-                  <h3 className="text-xl font-semibold text-text-primary mb-2">{useCase.title}</h3>
+                  <h3 className="text-xl font-semibold font-display text-text-primary mb-2">
+                    {useCase.title}
+                  </h3>
                   <p className="text-text-muted">{useCase.description}</p>
                 </motion.div>
               ))}
@@ -202,9 +206,15 @@ export const ChatbotsPage: React.FC = () => {
         </section>
 
         {/* Process */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div className="text-center mb-12" {...fadeInUp}>
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 How We Build It
               </h2>
@@ -214,7 +224,7 @@ export const ChatbotsPage: React.FC = () => {
               {processSteps.map((step, i) => (
                 <motion.div
                   key={i}
-                  className="flex gap-6 bg-bg-surface border border-border-primary rounded-sm p-8"
+                  className="card-gradient-border flex gap-6 bg-white/[0.02] border border-border-primary rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
@@ -224,7 +234,9 @@ export const ChatbotsPage: React.FC = () => {
                     {step.step}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-text-primary mb-2">{step.title}</h3>
+                    <h3 className="text-xl font-semibold font-display text-text-primary mb-2">
+                      {step.title}
+                    </h3>
                     <p className="text-text-muted">{step.description}</p>
                   </div>
                 </motion.div>
@@ -234,9 +246,15 @@ export const ChatbotsPage: React.FC = () => {
         </section>
 
         {/* Pricing */}
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div className="text-center mb-12" {...fadeInUp}>
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 Pricing
               </h2>
@@ -247,7 +265,7 @@ export const ChatbotsPage: React.FC = () => {
               {pricingTiers.map((tier, i) => (
                 <motion.div
                   key={i}
-                  className={`relative bg-bg-surface border rounded-sm p-8 ${
+                  className={`card-gradient-border relative bg-white/[0.02] border rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
                     tier.highlighted
                       ? 'border-accent-system/50 shadow-glow-sm'
                       : 'border-border-primary'
@@ -262,7 +280,9 @@ export const ChatbotsPage: React.FC = () => {
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-text-primary mb-1">{tier.name}</h3>
+                  <h3 className="text-xl font-bold font-display text-text-primary mb-1">
+                    {tier.name}
+                  </h3>
                   <p className="text-sm text-text-muted mb-4">{tier.description}</p>
                   <div className="text-2xl font-bold text-text-primary mb-6">{tier.price}</div>
                   <ul className="space-y-3 mb-8">
@@ -288,19 +308,31 @@ export const ChatbotsPage: React.FC = () => {
         </section>
 
         {/* Trust Metrics */}
-        <section className="py-12 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div className="grid grid-cols-3 gap-6 text-center" {...fadeInUp}>
+        <section className="py-12 px-12">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="grid grid-cols-3 gap-6 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-text-primary">70%</div>
+                <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
+                  70%
+                </div>
                 <div className="text-sm text-text-muted">inquiries handled automatically</div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-text-primary">24/7</div>
+                <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
+                  24/7
+                </div>
                 <div className="text-sm text-text-muted">availability</div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-text-primary">CRM</div>
+                <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
+                  CRM
+                </div>
                 <div className="text-sm text-text-muted">fully integrated</div>
               </div>
             </motion.div>
@@ -308,19 +340,25 @@ export const ChatbotsPage: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-6">
-          <div className="max-w-3xl mx-auto">
-            <motion.div className="text-center mb-12" {...fadeInUp}>
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
                 Frequently Asked Questions
               </h2>
             </motion.div>
 
-            <div className="space-y-4">
+            <div className="max-w-3xl mx-auto space-y-4">
               {faqs.map((faq, i) => (
                 <motion.details
                   key={i}
-                  className="group bg-bg-surface border border-border-primary rounded-sm"
+                  className="group card-gradient-border bg-white/[0.02] border border-border-primary rounded-card"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
@@ -340,11 +378,14 @@ export const ChatbotsPage: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              className="bg-accent-system/5 border border-border-primary rounded-sm p-12"
-              {...fadeInUp}
+              className="card-gradient-border bg-accent-system/5 border border-border-primary rounded-card p-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 Get a Free Chatbot Strategy Session
