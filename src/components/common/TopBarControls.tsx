@@ -48,7 +48,7 @@ export function TopBarControls() {
   }
 
   return (
-    <div className="fixed top-6 left-6 z-[100] flex flex-col gap-2">
+    <div className="fixed top-24 left-6 z-[100] flex flex-col gap-2">
       {/* Language Switcher - Flag Only */}
       <div className="relative">
         <motion.button

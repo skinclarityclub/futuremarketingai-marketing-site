@@ -237,7 +237,7 @@ export const SimpleHeader: React.FC = () => {
             isScrolled ? 'py-3' : 'py-5'
           }`}
         >
-          <div className="relative flex items-center justify-between px-12">
+          <div className="relative flex items-center justify-between px-4 lg:px-12">
             {/* Logo - FM + gradient ai */}
             <Link
               to="/"

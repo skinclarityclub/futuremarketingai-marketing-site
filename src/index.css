@@ -624,9 +624,83 @@
   animation: blobFloat3 22s ease-in-out infinite;
 }
 
+/* ── Orbit Visual: Premium Hero Animation ── */
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes orbit-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes orbit-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+@keyframes orbit-particle-float {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+  }
+}
+
+@keyframes orbit-core-breathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(40px);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: blur(50px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes orbit-arc-rotate {
+  from {
+    transform: rotate(var(--arc-start));
+  }
+  to {
+    transform: rotate(calc(var(--arc-start) + 360deg));
+  }
+}
+
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .blob {
+  .blob,
+  [data-orbit] * {
     animation: none !important;
   }
 }

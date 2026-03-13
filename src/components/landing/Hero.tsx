@@ -79,15 +79,12 @@ export const Hero: React.FC = () => {
       <div className="relative min-h-screen flex items-center px-12 pt-[140px] pb-20">
         {/* Left-aligned Hero Content */}
         <div className="relative z-10 max-w-[720px]">
-          {/* Badge */}
+          {/* Eyebrow — accent line + text */}
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-accent-system/10 border border-accent-system/20 text-text-primary mb-8"
+            className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
             style={{ animation: 'fadeIn 0.8s ease-out' }}
           >
-            <span className="text-sm font-medium text-text-secondary">
-              {t('landing.hero_landing.badge')}
-            </span>
-            <div className="w-1 h-1 rounded-full bg-accent-system animate-pulse" />
+            {t('landing.hero_landing.badge')}
           </div>
 
           {/* Headline */}
@@ -98,7 +95,7 @@ export const Hero: React.FC = () => {
             <span className="block text-text-primary">
               {t('landing.hero_landing.main_headline')}
             </span>
-            <span className="block bg-gradient-flow bg-clip-text text-transparent">
+            <span className="relative inline-block bg-gradient-flow bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-accent-human after:to-transparent after:rounded-sm">
               {t('landing.hero_landing.sub_headline')}
             </span>
           </h1>
@@ -161,29 +158,35 @@ export const Hero: React.FC = () => {
             <Link
               key={service.href}
               to={service.href}
-              className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
+              className="relative card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
             >
-              {/* Top row: number + arrow circle */}
-              <div className="flex items-center justify-between">
-                <span className="text-text-muted font-mono text-sm">{service.number}</span>
-                <div className="w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-accent-human">
-                  <svg
-                    className="w-4 h-4 text-text-muted transition-colors duration-300 group-hover:text-bg-deep"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M4 12L12 4M12 4H6M12 4V10" />
-                  </svg>
-                </div>
-              </div>
+              {/* Service number */}
+              <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
+                {service.number}
+              </span>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-text-primary mt-6">{t(service.nameKey)}</h3>
+              <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight mb-3.5">
+                {t(service.nameKey)}
+              </h3>
 
               {/* Description */}
-              <p className="text-text-secondary mt-3 leading-relaxed">{t(service.pitchKey)}</p>
+              <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
+                {t(service.pitchKey)}
+              </p>
+
+              {/* Arrow circle — bottom-right */}
+              <div className="absolute bottom-9 right-9 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-accent-human group-hover:border-accent-human">
+                <svg
+                  className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
+                  <path d="M4 12L12 4M12 4H6M12 4V10" />
+                </svg>
+              </div>
             </Link>
           ))}
         </div>
