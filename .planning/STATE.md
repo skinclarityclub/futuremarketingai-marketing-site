@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 04 of 7 in Phase 11
+current_plan: Plan 06 of 7 in Phase 11
 status: in-progress
-stopped_at: Completed 11-04-PLAN.md — Service pages rebuilt with card-gradient-border, rounded-card, CSS fadeIn hero animations
-last_updated: '2026-03-13T03:31:03.000Z'
+stopped_at: Completed 11-06-PLAN.md — MarketingMachinePage i18n (EN/NL/ES) + prototype layout rebuild
+last_updated: '2026-03-13T03:37:01.000Z'
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 14
-  completed_plans: 14
+  completed_plans: 16
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 11 — Living System Full Rebuild
-- **Current Plan:** Plan 04 of 7
+- **Current Plan:** Plan 06 of 7
 - **Status:** In progress
-- **Last completed:** Phase 11 Plan 04 — Service pages rebuilt with card-gradient-border, rounded-card, CSS fadeIn hero animations
-- **Last session:** 2026-03-13T03:32:44.061Z
-- **Stopped at:** Completed 11-04-PLAN.md
+- **Last completed:** Phase 11 Plan 06 — MarketingMachinePage i18n (EN/NL/ES) + prototype layout rebuild
+- **Last session:** 2026-03-13T03:37:01Z
+- **Stopped at:** Completed 11-06-PLAN.md
 
 ## Decisions
 
@@ -60,6 +60,8 @@ progress:
 - [11-03]: GradientMesh rendered in LandingPage (not App.tsx) since Hero no longer has its own backgrounds
 - [Phase 11-04]: Removed fadeInUp motion variant object — hero uses inline CSS animation styles, scroll sections use explicit whileInView props
 - [Phase 11-04]: FAQ details elements get card-gradient-border + rounded-card for visual consistency with other cards
+- [11-06]: Pricing tiers driven by TIER_KEYS array + t() with returnObjects — no hardcoded tier data in MarketingMachinePage component
+- [11-06]: SEO meta tags kept as hardcoded EN strings — SEO handled separately from UI i18n
 
 ## Context
 
@@ -84,3 +86,4 @@ progress:
 - Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
 - Phase 11 Plan 03 complete: Hero rebuilt — left-aligned layout with OrbitVisual orbit rings on right, 2x2 numbered service cards (01-04) with card-gradient-border, 4 Framer Motion background layers removed, GradientMesh wired in LandingPage
 - Phase 11 Plan 04 complete: All 3 service pages rebuilt — card-gradient-border + rounded-card on all cards, CSS fadeIn/fadeInUp hero animations, max-w-7xl px-12 layout, font-display on headings
+- Phase 11 Plan 06 complete: MarketingMachinePage fully internationalized (EN/NL/ES) with card-gradient-border pricing cards, CSS fadeIn hero, max-w-7xl layout
