@@ -11,6 +11,7 @@ import { Hero } from '../components/landing/Hero'
 import { SEOHead } from '../components/seo/SEOHead'
 import { StructuredDataPresets } from '../components/seo/StructuredData'
 import { StickyBottomCTA } from '../components/mobile'
+import { GradientMesh } from '../components/common'
 import { useIsMobile } from '../hooks'
 
 export const LandingPage: React.FC = () => {
@@ -39,6 +40,9 @@ export const LandingPage: React.FC = () => {
       <StructuredDataPresets.website />
 
       <div className="relative min-h-screen bg-bg-deep">
+        {/* Global background mesh — replaces old Framer Motion background layers */}
+        <GradientMesh />
+
         {/* Simple Header - Minimal navigation for conversion */}
         <SimpleHeader />
 
