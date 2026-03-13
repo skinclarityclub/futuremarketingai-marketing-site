@@ -12,7 +12,7 @@ import { Brain, Crown, Palette, Send, BarChart3, DollarSign, TrendingUp } from '
 interface Feature {
   icon: React.ReactNode
   translationKey: string
-  color: string
+  accentColor: string
 }
 
 // Real platform modules from Explorer (src/config/platformKnowledge.ts)
@@ -20,32 +20,32 @@ const features: Feature[] = [
   {
     icon: <Brain className="h-8 w-8" />,
     translationKey: 'research',
-    color: 'from-blue-500 to-cyan-500',
+    accentColor: 'text-accent-system',
   },
   {
     icon: <Crown className="h-8 w-8" />,
     translationKey: 'manager',
-    color: 'from-purple-500 to-pink-500',
+    accentColor: 'text-accent-human',
   },
   {
     icon: <Palette className="h-8 w-8" />,
     translationKey: 'content',
-    color: 'from-pink-500 to-rose-500',
+    accentColor: 'text-accent-system',
   },
   {
     icon: <Send className="h-8 w-8" />,
     translationKey: 'publishing',
-    color: 'from-green-500 to-emerald-500',
+    accentColor: 'text-accent-human',
   },
   {
     icon: <BarChart3 className="h-8 w-8" />,
     translationKey: 'analytics',
-    color: 'from-cyan-500 to-blue-500',
+    accentColor: 'text-accent-system',
   },
   {
     icon: <DollarSign className="h-8 w-8" />,
     translationKey: 'ads',
-    color: 'from-yellow-500 to-orange-500',
+    accentColor: 'text-accent-human',
   },
 ]
 
@@ -53,12 +53,6 @@ export const FeatureShowcase: React.FC = () => {
   const { t } = useTranslation('common')
   return (
     <div className="relative">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
-      </div>
-
       {/* Grid of feature cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
         {features.map((feature, index) => {
@@ -77,37 +71,35 @@ export const FeatureShowcase: React.FC = () => {
               className="group relative"
             >
               {/* Card */}
-              <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
-                {/* Gradient glow on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                />
+              <div className="relative h-full p-6 rounded-sm bg-bg-surface border border-border-primary hover:border-accent-system/40 transition-all duration-300 overflow-hidden">
+                {/* Accent glow on hover */}
+                <div className="absolute inset-0 bg-accent-system opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
 
                 {/* Content */}
                 <div className="relative z-10 space-y-4">
                   {/* Icon */}
                   <div
-                    className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} text-white shadow-lg`}
+                    className={`inline-flex p-3 rounded-sm bg-bg-elevated border border-border-primary ${feature.accentColor}`}
                   >
                     {feature.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-text-primary group-hover:text-accent-system transition-all duration-300">
                     {title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-blue-100/80 leading-relaxed">{description}</p>
+                  <p className="text-sm text-text-muted leading-relaxed">{description}</p>
 
                   {/* Stat badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-                    <span className="text-xs font-semibold text-blue-300">{stat}</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-accent-system/10 border border-accent-system/20">
+                    <span className="text-xs font-semibold text-accent-system">{stat}</span>
                   </div>
                 </div>
 
-                {/* Animated corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-accent-system/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.div>
           )
@@ -122,18 +114,18 @@ export const FeatureShowcase: React.FC = () => {
         transition={{ delay: 0.6, duration: 0.5 }}
         className="mt-12 text-center"
       >
-        <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 backdrop-blur-sm">
+        <div className="inline-flex items-center gap-3 px-8 py-4 rounded-sm bg-bg-surface border border-border-primary">
           <TrendingUp className="h-6 w-6 text-green-400" />
           <div className="text-left">
-            <div className="text-sm text-green-300 font-medium">
+            <div className="text-sm text-text-secondary font-medium">
               {t('landing.features.total_value.label')}
             </div>
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-text-primary">
               {t('landing.features.total_value.amount')}
             </div>
           </div>
         </div>
-        <p className="mt-4 text-sm text-blue-200/60">
+        <p className="mt-4 text-sm text-text-muted">
           {t('landing.features.total_value.description')}
         </p>
       </motion.div>

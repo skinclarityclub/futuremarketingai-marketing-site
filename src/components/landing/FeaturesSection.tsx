@@ -61,17 +61,17 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-4"
           >
-            <Sparkles className="w-5 h-5 text-purple-400" />
-            <span className="text-sm font-medium text-purple-100">Complete Marketing OS</span>
+            <Sparkles className="w-5 h-5 text-accent-system" />
+            <span className="text-sm font-medium text-text-secondary">Complete Marketing OS</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl md:text-5xl font-bold font-display text-text-primary mb-4"
           >
             6 AI Modules, One Autonomous System
           </motion.h2>
@@ -80,7 +80,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto"
           >
             Each module works independently while the Manager Orchestrator ensures perfect
             coordination. The result: a marketing system that runs itself.
@@ -108,32 +108,32 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 hover:border-white/20 transition-all"
+                className="group bg-bg-surface border border-border-primary rounded-sm p-8 hover:bg-bg-elevated hover:border-l-2 hover:border-l-accent-system transition-all"
               >
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-4 group-hover:scale-110 transition-transform">
-                  <Icon className="w-7 h-7 text-white" />
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-accent-system rounded-sm mb-4 group-hover:scale-110 transition-transform">
+                  <Icon className="w-7 h-7 text-bg-deep" />
                 </div>
 
                 {/* Title & Tagline */}
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                <h3 className="text-2xl font-bold text-text-primary mb-2 group-hover:text-accent-system transition-colors">
                   {name}
                 </h3>
-                <p className="text-purple-300 font-semibold mb-4">{tagline}</p>
+                <p className="text-accent-human font-semibold mb-4">{tagline}</p>
 
                 {/* Description */}
-                <p className="text-blue-100 leading-relaxed mb-6">{description}</p>
+                <p className="text-text-secondary leading-relaxed mb-6">{description}</p>
 
                 {/* Benefits */}
                 {!compact && (
                   <>
-                    <h4 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-text-primary mb-3 flex items-center gap-2">
                       <TrendingUp className="w-4 h-4 text-green-400" />
                       Key Benefits
                     </h4>
                     <ul className="space-y-2 mb-6">
                       {benefits.map((benefit, i) => (
-                        <li key={i} className="text-sm text-blue-100 flex items-start gap-2">
+                        <li key={i} className="text-sm text-text-secondary flex items-start gap-2">
                           <span className="text-green-400 mt-1">✓</span>
                           <span>{benefit}</span>
                         </li>
@@ -141,13 +141,13 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                     </ul>
 
                     {/* Use Cases */}
-                    <h4 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-blue-400" />
+                    <h4 className="text-sm font-bold text-text-primary mb-3 flex items-center gap-2">
+                      <Users className="w-4 h-4 text-accent-system" />
                       Use Cases
                     </h4>
                     <ul className="space-y-2">
                       {useCases.map((useCase, i) => (
-                        <li key={i} className="text-xs text-blue-100/80">
+                        <li key={i} className="text-xs text-text-muted">
                           • {useCase}
                         </li>
                       ))}
@@ -164,28 +164,32 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl text-center"
+          className="mt-16 p-8 bg-bg-surface border border-border-primary rounded-sm text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">The Complete Package</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+            The Complete Package
+          </h3>
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div>
               <div className="text-4xl font-bold text-green-400 mb-2">€39,000</div>
-              <div className="text-sm text-blue-100">
+              <div className="text-sm text-text-secondary">
                 Retail value - verified by 2025 market research
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">€24,000</div>
-              <div className="text-sm text-blue-100">Monthly savings at Founding Member rate</div>
+              <div className="text-4xl font-bold text-accent-human mb-2">€24,000</div>
+              <div className="text-sm text-text-secondary">
+                Monthly savings at Founding Member rate
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-400 mb-2">€288k</div>
-              <div className="text-sm text-blue-100">
+              <div className="text-4xl font-bold text-accent-system mb-2">€288k</div>
+              <div className="text-sm text-text-secondary">
                 Year 1 total savings (incl. 2 free months)
               </div>
             </div>
           </div>
-          <p className="text-lg text-white font-semibold mb-4">
+          <p className="text-lg text-text-primary font-semibold mb-4">
             Founding Member pricing: €15,000/month for €39,000 in enterprise automation (62%
             discount)
           </p>
@@ -194,7 +198,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = ({
               href="/demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-flow text-bg-deep font-semibold rounded-sm hover:opacity-90 transition-all shadow-lg"
             >
               <Clock className="w-5 h-5 mr-2" />
               Try All Modules Now

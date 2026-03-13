@@ -1,12 +1,8 @@
 /**
- * LandingFooter Component - 2025 Minimalist Footer
+ * LandingFooter Component - Living System Footer
+ * Converted from glassmorphism to Living System teal/amber tokens.
  *
- * Based on Linear, Vercel, Stripe patterns
- * Key principles:
- * - Extreme simplification
- * - Single row layout
- * - No redundancy
- * - Trust signals integrated
+ * Design: teal accent icons, muted link text, border-border-primary dividers.
  */
 
 import React from 'react'
@@ -19,33 +15,33 @@ export const LandingFooter: React.FC = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative mt-16 border-t border-white/5">
+    <footer className="relative mt-16 border-t border-border-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section: Logo + Navigation + Status */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8">
           {/* Logo & Tagline */}
           <div className="flex flex-col gap-3">
             <Link to="/" className="flex items-center gap-2 group w-fit">
-              <Sparkles className="w-5 h-5 text-blue-400 transition-transform group-hover:rotate-12" />
-              <span className="font-bold text-base text-white">
+              <Sparkles className="w-5 h-5 text-accent-system transition-transform group-hover:rotate-12" />
+              <span className="font-bold text-base text-text-primary">
                 {t('landing.footer.brand_name')}
               </span>
             </Link>
-            <p className="text-sm text-slate-400 max-w-xs">{t('landing.footer.tagline')}</p>
+            <p className="text-sm text-text-muted max-w-xs">{t('landing.footer.tagline')}</p>
           </div>
 
           {/* Navigation Grid - Compact */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6">
             {/* Product */}
             <div>
-              <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
                 {t('landing.footer.sections.product')}
               </h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/features"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.features')}
                   </Link>
@@ -53,7 +49,7 @@ export const LandingFooter: React.FC = () => {
                 <li>
                   <Link
                     to="/pricing"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.pricing')}
                   </Link>
@@ -63,7 +59,7 @@ export const LandingFooter: React.FC = () => {
                     href="/demo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.demo')}
                   </a>
@@ -73,14 +69,14 @@ export const LandingFooter: React.FC = () => {
 
             {/* Company */}
             <div>
-              <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
                 {t('landing.footer.sections.company')}
               </h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/about"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.about')}
                   </Link>
@@ -88,7 +84,7 @@ export const LandingFooter: React.FC = () => {
                 <li>
                   <Link
                     to="/how-it-works"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.how_it_works')}
                   </Link>
@@ -98,14 +94,14 @@ export const LandingFooter: React.FC = () => {
 
             {/* Resources */}
             <div>
-              <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
                 {t('landing.footer.sections.resources')}
               </h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/calculator"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.roi_calculator')}
                   </Link>
@@ -113,7 +109,7 @@ export const LandingFooter: React.FC = () => {
                 <li>
                   <Link
                     to="/explorer"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.showcase')}
                   </Link>
@@ -123,14 +119,14 @@ export const LandingFooter: React.FC = () => {
 
             {/* Legal */}
             <div>
-              <h3 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
                 {t('landing.footer.sections.legal')}
               </h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.privacy')}
                   </Link>
@@ -138,7 +134,7 @@ export const LandingFooter: React.FC = () => {
                 <li>
                   <Link
                     to="/terms"
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.terms')}
                   </Link>
@@ -149,16 +145,16 @@ export const LandingFooter: React.FC = () => {
         </div>
 
         {/* Bottom Section: Copyright, Status, Social */}
-        <div className="pt-8 border-t border-white/5">
+        <div className="pt-8 border-t border-border-primary">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Left: Copyright + Status */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-text-muted">
                 {t('landing.footer.copyright', { year: currentYear })}
               </p>
-              <div className="flex items-center gap-2 px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">
-                <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
-                <span className="text-xs text-purple-200">{t('landing.footer.status_badge')}</span>
+              <div className="flex items-center gap-2 px-3 py-1 bg-accent-system/10 border border-accent-system/20 rounded-sm">
+                <div className="w-1.5 h-1.5 bg-accent-system rounded-full animate-pulse" />
+                <span className="text-xs text-text-secondary">{t('landing.footer.status_badge')}</span>
               </div>
             </div>
 
@@ -168,7 +164,7 @@ export const LandingFooter: React.FC = () => {
                 href="https://github.com/futuremarketingai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
+                className="text-accent-system hover:text-text-primary transition-colors"
                 aria-label={t('landing.footer.social_aria.github')}
               >
                 <Github className="w-4 h-4" />
@@ -177,7 +173,7 @@ export const LandingFooter: React.FC = () => {
                 href="https://linkedin.com/company/futuremarketingai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
+                className="text-accent-system hover:text-text-primary transition-colors"
                 aria-label={t('landing.footer.social_aria.linkedin')}
               >
                 <Linkedin className="w-4 h-4" />
@@ -186,7 +182,7 @@ export const LandingFooter: React.FC = () => {
                 href="https://twitter.com/FutureMarketAI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
+                className="text-accent-system hover:text-text-primary transition-colors"
                 aria-label={t('landing.footer.social_aria.twitter')}
               >
                 <Twitter className="w-4 h-4" />

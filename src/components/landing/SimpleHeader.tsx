@@ -1,23 +1,19 @@
 /**
- * SimpleHeader Component - 2025 Modern SaaS Header
- * Based on Linear, Vercel, Stripe design patterns
+ * SimpleHeader Component - Living System Header
+ * Converted from glassmorphism to Living System teal/amber tokens.
  *
- * Key 2025 Trends:
- * - Extreme minimalism with breathing space
- * - Floating/lifted design with depth
- * - Primary CTA dominance
- * - Subtle micro-interactions
- * - Enhanced blur & transparency
+ * Design: bg-bg-surface, teal accents, sharp corners (rounded-sm), no backdrop-blur.
  */
 
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles, ArrowRight, LogIn, ChevronDown } from 'lucide-react'
+import { Menu, X, Sparkles, LogIn, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { LANGUAGES, type Language } from '../../i18n/config'
 import { useDemoRedirect } from '../../hooks'
 import { DesktopOnlyNoticeModal } from '../mobile/DesktopOnlyNoticeModal'
+import { CTAButton } from '../common'
 // Import flag SVG components
 import GB from 'country-flag-icons/react/3x2/GB'
 import NL from 'country-flag-icons/react/3x2/NL'
@@ -202,7 +198,7 @@ export const SimpleHeader: React.FC = () => {
     { label: 'AI Marketing Machine', href: '/demo' },
   ]
 
-  // 2025 Minimalism: Only essential navigation
+  // Minimal navigation
   const navLinks = [{ label: t('landing.header.nav.pricing'), href: '/pricing' }]
 
   const isActiveLink = (href: string) => {
@@ -211,7 +207,7 @@ export const SimpleHeader: React.FC = () => {
 
   return (
     <>
-      {/* 2025 Floating Header with Depth + Auto-Hide */}
+      {/* Living System Floating Header with Auto-Hide */}
       <motion.header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled ? 'py-2' : 'py-4'
@@ -224,39 +220,35 @@ export const SimpleHeader: React.FC = () => {
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Floating Container with Enhanced Glass Effect */}
+          {/* Floating Container - Living System surface */}
           <div
             className={`relative transition-all duration-700 ${
               isScrolled
-                ? 'bg-slate-950/90 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/40'
-                : 'bg-slate-950/60 backdrop-blur-xl border border-white/5 shadow-lg shadow-black/20'
-            } rounded-2xl`}
+                ? 'bg-bg-surface/95 border border-border-primary shadow-glow-sm'
+                : 'bg-bg-surface/80 border border-border-primary shadow-lg'
+            } rounded-sm`}
           >
-            {/* Ambient Glow */}
-            <div className="absolute -inset-px bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
             <div className="relative flex items-center justify-between px-4 sm:px-6 h-14 sm:h-16">
-              {/* Logo - Clean 2025 Style */}
+              {/* Logo - Living System Style */}
               <Link
                 to="/"
-                className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-xl"
+                className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-system rounded-sm"
                 aria-label={t('landing.header.logo_aria')}
               >
-                {/* Icon with glow */}
+                {/* Icon */}
                 <div className="relative">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                  <div className="absolute inset-0 bg-blue-400/40 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-accent-system transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" />
                 </div>
 
-                {/* Text Logo - Simplified */}
+                {/* Text Logo */}
                 <div className="font-bold text-base sm:text-lg tracking-tight">
-                  <span className="text-white/90 group-hover:text-white transition-colors">
+                  <span className="text-text-primary group-hover:text-text-primary transition-colors">
                     {t('landing.header.brand.future')}
                   </span>
-                  <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <span className="text-accent-system">
                     {t('landing.header.brand.marketing')}
                   </span>
-                  <span className="text-cyan-400 ml-0.5">{t('landing.header.brand.ai')}</span>
+                  <span className="text-accent-system ml-0.5">{t('landing.header.brand.ai')}</span>
                 </div>
               </Link>
 
@@ -266,7 +258,7 @@ export const SimpleHeader: React.FC = () => {
                 <div className="relative" ref={langDropdownRef}>
                   <button
                     onClick={() => setIsLangOpen(!isLangOpen)}
-                    className="w-9 h-9 rounded-lg backdrop-blur-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors p-1.5"
+                    className="w-9 h-9 rounded-sm bg-bg-elevated border border-border-primary flex items-center justify-center hover:bg-bg-elevated/80 transition-colors p-1.5"
                     aria-label={t('common:language_switcher.change_language')}
                     aria-expanded={isLangOpen}
                     type="button"
@@ -298,7 +290,7 @@ export const SimpleHeader: React.FC = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute right-0 top-full mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 min-w-[140px] z-50"
+                          className="absolute right-0 top-full mt-2 bg-bg-elevated border border-border-primary rounded-sm shadow-glow-sm py-2 min-w-[140px] z-50"
                         >
                           {Object.entries(LANGUAGES).map(([code, data]) => {
                             const FlagIcon = FLAG_COMPONENTS[code as Language]
@@ -308,8 +300,8 @@ export const SimpleHeader: React.FC = () => {
                                 onClick={() => changeLanguage(code as Language)}
                                 className={`
                                   w-full px-3 py-2 text-left flex items-center gap-3 transition-colors
-                                  hover:bg-white/5
-                                  ${currentLanguage === code ? 'bg-blue-500/10' : ''}
+                                  hover:bg-bg-surface
+                                  ${currentLanguage === code ? 'bg-accent-system/10' : ''}
                                 `}
                                 type="button"
                               >
@@ -321,14 +313,14 @@ export const SimpleHeader: React.FC = () => {
                                 </div>
                                 <span
                                   className={`text-sm font-medium ${
-                                    currentLanguage === code ? 'text-blue-400' : 'text-white/80'
+                                    currentLanguage === code ? 'text-accent-system' : 'text-text-secondary'
                                   }`}
                                 >
                                   {data.name}
                                 </span>
                                 {currentLanguage === code && (
                                   <svg
-                                    className="w-4 h-4 ml-auto text-blue-400"
+                                    className="w-4 h-4 ml-auto text-accent-system"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                   >
@@ -351,7 +343,7 @@ export const SimpleHeader: React.FC = () => {
                 {/* Hamburger Menu Button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="p-2 rounded-lg text-white hover:bg-white/5 transition-colors"
+                  className="p-2 rounded-sm text-text-primary hover:bg-bg-elevated transition-colors"
                   aria-label={
                     isMobileMenuOpen
                       ? t('landing.header.mobile_menu_close')
@@ -377,10 +369,10 @@ export const SimpleHeader: React.FC = () => {
                 >
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 flex items-center gap-1 ${
+                    className={`px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-300 flex items-center gap-1 ${
                       serviceLinks.some((s) => isActiveLink(s.href))
-                        ? 'text-white bg-white/10'
-                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                        ? 'text-text-primary bg-bg-elevated'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                     }`}
                     type="button"
                   >
@@ -397,7 +389,7 @@ export const SimpleHeader: React.FC = () => {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -5, scale: 0.97 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute left-0 top-full mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl py-2 min-w-[200px] z-50"
+                        className="absolute left-0 top-full mt-2 bg-bg-elevated border border-border-primary rounded-sm shadow-glow-sm py-2 min-w-[200px] z-50"
                       >
                         {serviceLinks.map((link) => (
                           <Link
@@ -405,8 +397,8 @@ export const SimpleHeader: React.FC = () => {
                             to={link.href}
                             className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
                               isActiveLink(link.href)
-                                ? 'text-blue-400 bg-blue-500/10'
-                                : 'text-white/80 hover:text-white hover:bg-white/5'
+                                ? 'text-accent-system bg-accent-system/10'
+                                : 'text-text-secondary hover:text-text-primary hover:bg-bg-surface'
                             }`}
                             onClick={() => setIsServicesOpen(false)}
                           >
@@ -422,10 +414,10 @@ export const SimpleHeader: React.FC = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+                    className={`px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-300 ${
                       isActiveLink(link.href)
-                        ? 'text-white bg-white/10'
-                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                        ? 'text-text-primary bg-bg-elevated'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                     }`}
                     aria-current={isActiveLink(link.href) ? 'page' : undefined}
                   >
@@ -434,44 +426,27 @@ export const SimpleHeader: React.FC = () => {
                 ))}
               </nav>
 
-              {/* Right: CTA Hierarchy (2025 Pattern) */}
+              {/* Right: CTA Hierarchy */}
               <div className="hidden lg:flex items-center gap-2">
-                {/* Secondary CTA - Subtle */}
+                {/* Secondary CTA - Login */}
                 <a href="https://app.future-marketing.ai/login">
-                  <button className="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+                  <button className="px-3 py-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors rounded-sm hover:bg-bg-elevated">
                     <LogIn className="w-4 h-4 inline mr-1.5" />
                     {t('landing.header.login')}
                   </button>
                 </a>
 
-                {/* Primary CTA - Dominant 2025 Style */}
-                <motion.a
-                  href="https://calendly.com/futureai/strategy-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl overflow-hidden group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-500 inline-block"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Animated gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-
-                  {/* Content */}
-                  <span className="relative flex items-center gap-1.5">
-                    {t('landing.header.try_demo')}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
-                </motion.a>
+                {/* Primary CTA - Living System CTAButton */}
+                <CTAButton size="sm" calendly>
+                  {t('landing.header.try_demo')}
+                </CTAButton>
               </div>
             </div>
           </div>
         </div>
       </motion.header>
 
-      {/* Mobile Menu - 2025 Clean Style */}
+      {/* Mobile Menu - Living System Style */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -483,14 +458,14 @@ export const SimpleHeader: React.FC = () => {
           >
             {/* Backdrop */}
             <div
-              className="absolute inset-0 bg-slate-950/95 backdrop-blur-2xl"
+              className="absolute inset-0 bg-bg-deep/95"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
             {/* Menu Container */}
             <div
               id="mobile-menu"
-              className="relative max-w-lg mx-4 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+              className="relative max-w-lg mx-4 bg-bg-surface border border-border-primary rounded-sm shadow-glow-sm overflow-hidden"
             >
               <nav
                 className="flex flex-col p-4 space-y-1"
@@ -499,10 +474,10 @@ export const SimpleHeader: React.FC = () => {
                 {/* Navigation Links */}
                 <Link
                   to="/"
-                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  className={`px-4 py-2.5 rounded-sm text-sm font-medium transition-all ${
                     isActiveLink('/')
-                      ? 'text-white bg-white/10'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      ? 'text-text-primary bg-bg-elevated'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -513,10 +488,10 @@ export const SimpleHeader: React.FC = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    className={`px-4 py-2.5 rounded-sm text-sm font-medium transition-all ${
                       isActiveLink(link.href)
-                        ? 'text-white bg-white/10'
-                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                        ? 'text-text-primary bg-bg-elevated'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -525,17 +500,17 @@ export const SimpleHeader: React.FC = () => {
                 ))}
 
                 {/* Divider */}
-                <div className="h-px bg-white/10 my-2" />
+                <div className="h-px bg-border-primary my-2" />
 
                 {/* Mobile: Service Links */}
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                    className={`px-4 py-2.5 rounded-sm text-sm font-medium transition-all ${
                       isActiveLink(link.href)
-                        ? 'text-white bg-white/10'
-                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                        ? 'text-text-primary bg-bg-elevated'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -544,26 +519,21 @@ export const SimpleHeader: React.FC = () => {
                 ))}
 
                 {/* Divider */}
-                <div className="h-px bg-white/10 my-1" />
+                <div className="h-px bg-border-primary my-1" />
 
                 {/* Mobile CTAs */}
-                <a
-                  href="https://calendly.com/futureai/strategy-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all flex items-center justify-center gap-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {t('landing.header.try_demo')}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <div onClick={() => setIsMobileMenuOpen(false)}>
+                  <CTAButton size="md" calendly className="w-full justify-center">
+                    {t('landing.header.try_demo')}
+                  </CTAButton>
+                </div>
 
                 <a
                   href="https://app.future-marketing.ai/login"
                   className="w-full"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <button className="w-full px-4 py-2.5 bg-white/5 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                  <button className="w-full px-4 py-2.5 bg-bg-elevated text-text-primary text-sm font-medium rounded-sm hover:bg-bg-elevated/80 transition-all flex items-center justify-center gap-2 border border-border-primary">
                     <LogIn className="w-4 h-4" />
                     {t('landing.header.login')}
                   </button>
