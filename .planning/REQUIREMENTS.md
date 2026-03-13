@@ -15,7 +15,8 @@
 - MetricDisplay: large monospace numbers with labels
 - CTAButton: consistent CTA with Calendly modal integration
 - SectionContainer: consistent section layout wrapper
-- **Phase:** 3
+- **Phase:** 3 → **Gap closure Phase:** 13 (remove orphaned components, keep CTAButton)
+- **Status:** Orphaned — Phase 11 rebuild used inline Tailwind patterns instead. CTAButton is the only actively used component.
 
 ## REQ-UX-FIXES: Critical UX & Accessibility Fixes
 
@@ -94,7 +95,8 @@
 - Video uses autoPlay muted loop playsInline with preload="none"
 - Reduced motion shows static poster image instead of video
 - Placeholder media structure on service pages (swap real assets when available)
-- **Phase:** 12
+- Create public/media/ directory with lightweight placeholder assets
+- **Phase:** 12 → **Gap closure Phase:** 13 (fix placeholder 404s)
 
 ## REQ-TYPOGRAPHY-POLISH: Typography Fine-Tuning
 
@@ -102,3 +104,12 @@
 - Consistent section spacing rhythm across all pages
 - Fine-tune heading sizes for 1280px and 1440px breakpoints
 - **Phase:** 12
+
+## REQ-SERVICE-I18N: Service Page Internationalization
+
+- Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage
+- Extract all hardcoded English strings into EN locale JSON
+- Add NL translations for all service page content
+- Add ES translations for all service page content
+- Language switcher produces correct content on all service routes
+- **Phase:** 14
