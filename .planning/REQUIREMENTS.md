@@ -113,3 +113,18 @@
 - Add ES translations for all service page content
 - Language switcher produces correct content on all service routes
 - **Phase:** 14
+
+## REQ-CHATBOT-PERSONAS: Chatbot Persona Configurations
+
+- Build 5 persona configurations: concierge, e-commerce, lead-gen, support, demo-guide
+- Each persona has: system prompt (static prefix for prompt caching), topic-routed knowledge base, AI SDK tool definitions with Zod schemas
+- Concierge: FMai services/pricing/process/case studies knowledge, tools for service info + Calendly + navigation + case studies
+- E-commerce: Mock skincare catalog (8 products), tools for product search + details + routine builder + cart
+- Lead-gen: B2B SaaS qualification framework (BANT), tools for lead scoring + pricing + demo scheduling + ROI estimation
+- Support: Mock helpdesk FAQ (15-20 articles), tools for KB search + ticket creation + status check + human escalation
+- Demo Guide: Marketing Machine 7-module knowledge, tools for navigation + module explanation + ROI + demo booking
+- Persona registry index triggers registration of all 5 personas on import
+- createPersonaTools() maps persona IDs to correct tool definitions
+- Conversation starters in EN/NL/ES for each persona
+- All tools return mock/static data (demo tools, no external API calls)
+- **Phase:** 16

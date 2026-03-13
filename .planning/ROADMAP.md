@@ -153,6 +153,10 @@
     - `src/lib/chatbot/knowledge/` — Knowledge base content files per persona
     - `src/lib/chatbot/tools/` — Tool executor implementations per persona (concierge-tools.ts, ecommerce-tools.ts, etc.)
     - i18n: Conversation starters + demo scenario descriptions in EN/NL/ES
+  - **Plans:** 3 plans
+    - [ ] 16-01-PLAN.md — Concierge + E-commerce personas (knowledge, tools, config, i18n starters)
+    - [ ] 16-02-PLAN.md — Lead-gen + Support personas (knowledge, tools, config, i18n starters)
+    - [ ] 16-03-PLAN.md — Demo Guide persona + registry index + tool-executor wiring + barrel exports
 
 - [ ] **Phase 17: ChatWidget UI Components** — Build the shared ChatWidget React component supporting floating mode (concierge/demo-guide) and embedded mode (demo playground). Includes message rendering with streaming, tool result cards, and suggested conversation starters.
   - **Goal:** Create a single, configurable ChatWidget that works in two modes: floating (FAB + panel, for homepage concierge and demo guide) and embedded (inline, for /chatbots demo playground). Uses Vercel AI SDK `useChat` hook for streaming. Renders tool results as visual cards.
