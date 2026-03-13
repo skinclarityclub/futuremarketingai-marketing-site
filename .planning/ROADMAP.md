@@ -2,27 +2,27 @@
 
 ## Progress
 
-| Phase | Name                            | Status      | Plans      | Progress |
-| ----- | ------------------------------- | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                 | Complete    | —          | 100%     |
-| 2     | Service Pages                   | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand  | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup           | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign             | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership         | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development      | Pending     | —          | 0%       |
-| 8     | Language Expansion              | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion   | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                             | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media           | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                             | Complete    | 2026-03-13 | 0%       |
-| 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 15    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 16    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 17    | 3/4                             | In Progress |            | 0%       |
-| 18    | ChatbotsPage Demo Playground    | Pending     | —          | 0%       |
-| 19    | Homepage Concierge + Demo Guide | Pending     | —          | 0%       |
+| Phase | Name                            | Status   | Plans      | Progress |
+| ----- | ------------------------------- | -------- | ---------- | -------- |
+| 1     | Website Rebrand                 | Complete | —          | 100%     |
+| 2     | Service Pages                   | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand  | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup           | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign             | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership         | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development      | Pending  | —          | 0%       |
+| 8     | Language Expansion              | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion   | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                             | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media           | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                             | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 15    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 16    | 3/3                             | Complete | 2026-03-13 | 0%       |
+| 17    | 4/4                             | Complete | 2026-03-13 | 0%       |
+| 18    | ChatbotsPage Demo Playground    | Pending  | —          | 0%       |
+| 19    | Homepage Concierge + Demo Guide | Pending  | —          | 0%       |
 
 ## Phases
 
@@ -158,7 +158,7 @@
     - [ ] 16-02-PLAN.md — Lead-gen + Support personas (knowledge, tools, config, i18n starters)
     - [ ] 16-03-PLAN.md — Demo Guide persona + registry index + tool-executor wiring + barrel exports
 
-- [ ] **Phase 17: ChatWidget UI Components** — Build the shared ChatWidget React component supporting floating mode (concierge/demo-guide) and embedded mode (demo playground). Includes message rendering with streaming, tool result cards, and suggested conversation starters.
+- [x] **Phase 17: ChatWidget UI Components** — Build the shared ChatWidget React component supporting floating mode (concierge/demo-guide) and embedded mode (demo playground). Includes message rendering with streaming, tool result cards, and suggested conversation starters. (completed 2026-03-13)
   - **Goal:** Create a single, configurable ChatWidget that works in two modes: floating (FAB + panel, for homepage concierge and demo guide) and embedded (inline, for /chatbots demo playground). Uses Vercel AI SDK `useChat` hook for streaming. Renders tool results as visual cards.
   - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
   - **Requirement IDs:** REQ-CHATWIDGET-UI

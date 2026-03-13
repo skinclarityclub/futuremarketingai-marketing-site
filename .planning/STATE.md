@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_plan: '17-04'
-status: executing
-stopped_at: Completed 17-03-PLAN.md
-last_updated: '2026-03-13T18:30:13.000Z'
+status: phase-complete
+stopped_at: Completed 17-04-PLAN.md
+last_updated: '2026-03-13T19:00:00.000Z'
 progress:
   total_phases: 12
-  completed_phases: 9
+  completed_phases: 10
   total_plans: 37
-  completed_plans: 36
+  completed_plans: 37
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 17 — ChatWidget UI Components
-- **Current Plan:** 17-04
-- **Status:** Executing
-- **Last completed:** Phase 17 Plan 03 — Tool Result Cards: ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard + ToolResultRenderer
-- **Last session:** 2026-03-13T18:33:21.794Z
-- **Stopped at:** Completed 17-03-PLAN.md
+- **Current Plan:** 17-04 (phase complete)
+- **Status:** Phase Complete
+- **Last completed:** Phase 17 Plan 04 — ChatWidget + FloatingButton: Dual-Mode Widget + Barrel Exports
+- **Last session:** 2026-03-13T19:00:00Z
+- **Stopped at:** Completed 17-04-PLAN.md
 
 ## Decisions
 
@@ -103,6 +103,9 @@ progress:
 - [Phase 17]: [17-02]: CSS-only animations (fadeIn, chatDotBounce) on messages instead of Framer Motion -- lighter weight per plan spec
 - [Phase 17]: [17-02]: Auto-scroll uses 80px threshold from bottom to detect manual scroll-up
 - [Phase 17-03]: index.tsx (not index.ts) for barrel+renderer -- file contains JSX for ToolLoadingCard, ToolErrorCard, and ToolResultRenderer
+- [Phase 17-04]: FloatingButton uses CSS @keyframes breathe instead of Framer Motion for always-on animation -- lighter weight
+- [Phase 17-04]: ChatWidget dual-mode via single component with mode prop -- shared hook/state logic cleaner than separate components
+- [Phase 17-04]: Barrel index.ts exports all chatbot components including tool-results for Phase 18/19 consumers
 
 ## Context
 
@@ -152,3 +155,6 @@ progress:
 - Phase 17 added: ChatWidget UI Components -- shared ChatWidget React component for floating and embedded chat modes
 - Phase 17 Plan 01 complete: Foundation -- engine switched to toUIMessageStreamResponse, chatbotStore Zustand store, usePersonaChat hook with DefaultChatTransport
 - Phase 17 Plan 02 complete: Core Chat UI -- ChatHeader, ChatMessages (parts-based rendering, auto-scroll, typing indicator), ChatInput (local useState, auto-resize), SuggestedPrompts
+- Phase 17 Plan 03 complete: Tool Result Cards -- ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard + ToolResultRenderer router component
+- Phase 17 Plan 04 complete: ChatWidget dual-mode (floating FAB panel + embedded inline) + FloatingButton breathing animation + barrel exports
+- Phase 17 COMPLETE: All 4 plans done -- ChatWidget UI Components finished (full component library for Phase 18 demo playground and Phase 19 homepage concierge)
