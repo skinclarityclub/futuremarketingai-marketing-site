@@ -11,11 +11,10 @@ import {
   ErrorBoundary,
   AsyncErrorBoundary,
   SkipLink,
-  AIJourneyAssistant,
   CookieConsentBanner,
   SEOHelmet,
 } from './components'
-import NudgeToast from './components/ai-assistant/NudgeToast'
+import { ChatWidget } from './components/chatbot'
 import { useScrollToTop, useIsMobile } from './hooks'
 import { trackGA4PageView } from './utils/ga4'
 import { hotjarStateChange } from './utils/hotjar'
@@ -89,6 +88,9 @@ function App() {
 
     // Optional: Set data attribute for CSS targeting
     document.documentElement.setAttribute('data-theme', 'dark')
+
+    // Clean up old ARIA chatStore localStorage key from returning visitors
+    localStorage.removeItem('fmai-chat-state')
   }, [])
 
   // Enable smooth scroll to top on route change
@@ -119,6 +121,11 @@ function App() {
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
   // const isLandingPage = location.pathname === '/' // Not used currently
+
+  // Route-based persona detection for floating chatbot
+  const isDemoPage = ['/explorer', '/calculator', '/dashboard', '/demo'].some((p) =>
+    location.pathname.startsWith(p)
+  )
 
   // Development-only analytics validation and performance logging
   // Note: Analytics are now initialized via CookieConsentBanner after user consent
@@ -178,8 +185,12 @@ function App() {
               </>
             )}
 
-            {/* AI Journey Assistant - Show everywhere (conversion opportunity on landing page too) */}
-            <AIJourneyAssistant />
+            {/* Floating Chatbot - Route-based persona switching */}
+            <ChatWidget
+              mode="floating"
+              personaId={isDemoPage ? 'demo-guide' : 'concierge'}
+              pageContext={{ pathname: location.pathname }}
+            />
 
             {/* Sentry Test Button - Development only (hidden for demo) */}
             {import.meta.env.DEV && false && <SentryTestButton />}
@@ -244,9 +255,6 @@ function App() {
             {/* Footer - Context-aware */}
             {isMarketingRoute ? <LandingFooter /> : <Footer />}
           </ErrorBoundary>
-
-          {/* Nudge Toast System */}
-          <NudgeToast />
 
           {/* Cookie Consent Banner - GDPR/CCPA Compliance */}
           <CookieConsentBanner />
