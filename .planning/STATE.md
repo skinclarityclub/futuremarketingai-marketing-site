@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 02 of 7 in Phase 11
+current_plan: Plan 03 of 7 in Phase 11
 status: in-progress
-stopped_at: Completed 11-02-PLAN.md — Global chrome components rebuilt (CTAButton, SimpleHeader, Footer)
-last_updated: '2026-03-13T03:23:16.000Z'
+stopped_at: Completed 11-03-PLAN.md — Hero rebuilt with left-aligned layout, OrbitVisual, 2x2 service cards, GradientMesh wired
+last_updated: '2026-03-13T03:30:20.000Z'
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 14
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 11 — Living System Full Rebuild
-- **Current Plan:** Plan 02 of 7
+- **Current Plan:** Plan 03 of 7
 - **Status:** In progress
-- **Last completed:** Phase 11 Plan 02 — Global chrome components rebuilt (CTAButton warm gradient, SimpleHeader backdrop-blur nav, Footer token cleanup)
-- **Last session:** 2026-03-13T03:23:16Z
-- **Stopped at:** Completed 11-02-PLAN.md — Global chrome components rebuilt (CTAButton, SimpleHeader, Footer)
+- **Last completed:** Phase 11 Plan 03 — Hero rebuilt with left-aligned layout, OrbitVisual orbit rings, 2x2 numbered service cards, GradientMesh global background
+- **Last session:** 2026-03-13T03:30:20Z
+- **Stopped at:** Completed 11-03-PLAN.md — Hero rebuilt with left-aligned layout, OrbitVisual, 2x2 service cards, GradientMesh wired
 
 ## Decisions
 
@@ -55,6 +55,9 @@ progress:
 - [11-01]: CSS variables updated to match DM Sans as primary font alongside Tailwind config
 - [11-02]: brandMiddle displayed between FM and ai only when non-empty — homepage shows FMai, service pages show FM{service}ai
 - [11-02]: Removed Sparkles icon entirely — FM+ai text logo is self-sufficient
+- [11-03]: Service card order: 01=Automations, 02=Chatbots, 03=Voice Agents, 04=Marketing Machine
+- [11-03]: VisionTimeline kept inside Hero section as natural document flow below service cards
+- [11-03]: GradientMesh rendered in LandingPage (not App.tsx) since Hero no longer has its own backgrounds
 
 ## Context
 
@@ -77,3 +80,4 @@ progress:
 - Phase 11 added: Living System Full Rebuild — structural rebuild of all pages to match prototype-2 design
 - Phase 11 Plan 01 complete: Foundation layer — DM Sans typography, GradientMesh 3-blob component, CSS keyframe animations, card/btn border-radius tokens
 - Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
+- Phase 11 Plan 03 complete: Hero rebuilt — left-aligned layout with OrbitVisual orbit rings on right, 2x2 numbered service cards (01-04) with card-gradient-border, 4 Framer Motion background layers removed, GradientMesh wired in LandingPage
