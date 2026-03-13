@@ -22,7 +22,7 @@
 | 16    | 3/3                             | Complete | 2026-03-13 | 0%       |
 | 17    | 4/4                             | Complete | 2026-03-13 | 0%       |
 | 18    | 3/3                             | Complete | 2026-03-13 | 0%       |
-| 19    | Homepage Concierge + Demo Guide | Pending  | —          | 0%       |
+| 19    | Homepage Concierge + Demo Guide | Planned  | 2 plans    | 0%       |
 
 ## Phases
 
@@ -214,3 +214,6 @@
     - Remove `openai` package from dependencies
     - Update `src/App.tsx` to use new ChatWidget instead of AIJourneyAssistant
     - Verify all demo pages still work correctly without ARIA coupling
+  - **Plans:** 2 plans
+    - [ ] 19-01-PLAN.md — Wire ChatWidget floating mode with route-based persona switching + pageContext plumbing
+    - [ ] 19-02-PLAN.md — Systematic ARIA cleanup (refactor shared deps, delete all ARIA files, clean barrels/i18n)
