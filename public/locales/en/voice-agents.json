@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "badge": "AI That Handles Your Calls",
+    "title": "AI Voice Agents for Lead Qualification & Booking",
+    "description": "AI voice agents that call prospects, qualify leads, and book appointments — at scale, without a sales team.",
+    "cta_primary": "Book a Demo Call",
+    "cta_secondary": "See Use Cases"
+  },
+  "use_cases": {
+    "title": "What Voice Agents Can Do",
+    "items": {
+      "outbound_leads": {
+        "title": "Outbound Lead Qualification",
+        "description": "Call and qualify hundreds of leads per day. AI handles the first conversation so your sales team only talks to qualified prospects."
+      },
+      "appointment_setting": {
+        "title": "Appointment Setting",
+        "description": "Fill calendars automatically. The voice agent books meetings directly into your calendar system."
+      },
+      "inbound_service": {
+        "title": "Inbound Customer Service",
+        "description": "Handle routine calls 24/7. Answer FAQs, route complex issues, and never put a customer on hold."
+      },
+      "post_sale": {
+        "title": "Post-Sale Follow-up",
+        "description": "Automated check-ins, renewal reminders, and satisfaction surveys — at scale."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Transparent pricing for voice AI solutions",
+    "most_popular": "Most Popular",
+    "cta": "Get Started",
+    "tiers": {
+      "basic": {
+        "name": "Basic",
+        "price": "\u20ac1,000 \u2013 \u20ac2,000",
+        "description": "Single-purpose voice agent",
+        "features": [
+          "1 workflow (e.g., appointment booking)",
+          "Basic CRM integration",
+          "Call recording & transcripts",
+          "14-day delivery"
+        ]
+      },
+      "standard": {
+        "name": "Standard",
+        "price": "\u20ac2,000 \u2013 \u20ac5,000",
+        "description": "Multi-purpose voice agent",
+        "features": [
+          "Multiple workflows",
+          "Full CRM integration",
+          "Analytics dashboard",
+          "Multi-language support"
+        ]
+      },
+      "ongoing": {
+        "name": "Ongoing",
+        "price": "from \u20ac500/mo",
+        "description": "Hosting, monitoring & optimization",
+        "features": [
+          "Cloud hosting",
+          "Performance monitoring",
+          "Monthly optimization",
+          "Priority support"
+        ]
+      }
+    }
+  },
+  "partnership": {
+    "title": "Built With Specialized Partners",
+    "description": "Our voice agent solutions are built in collaboration with specialized voice AI partners, ensuring you get the best technology and expertise available in the market."
+  },
+  "trust_metrics": {
+    "availability": {
+      "value": "24/7",
+      "label": "Always Available"
+    },
+    "calls": {
+      "value": "500+",
+      "label": "Calls Per Day"
+    },
+    "accuracy": {
+      "value": "98%",
+      "label": "Accuracy Rate"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "voice_quality": {
+        "q": "How natural does the AI voice sound?",
+        "a": "Modern voice AI is remarkably natural. We use the latest text-to-speech models that sound indistinguishable from human voices in most conversations."
+      },
+      "objections": {
+        "q": "Can the voice agent handle objections?",
+        "a": "Yes. We train the agent on your specific objection-handling scripts. It can navigate common pushbacks and knows when to escalate to a human."
+      },
+      "languages": {
+        "q": "What languages are supported?",
+        "a": "English, Spanish, French, German, Dutch, and many more. Multi-language support is available on Standard and above."
+      },
+      "crm": {
+        "q": "How does it integrate with my CRM?",
+        "a": "We integrate with HubSpot, Salesforce, Pipedrive, and any CRM with an API. Call outcomes, transcripts, and lead scores are automatically synced."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Book a Voice Agent Demo",
+    "description": "Hear a live demo of our voice AI and discover how it can qualify leads and book meetings for your business.",
+    "button": "Book Demo Call"
+  }
+}

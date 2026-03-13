@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "badge": "AI Die Uw Gesprekken Afhandelt",
+    "title": "AI Voice Agents voor Leadkwalificatie & Boekingen",
+    "description": "AI voice agents die prospects bellen, leads kwalificeren en afspraken boeken — op schaal, zonder een salesteam.",
+    "cta_primary": "Demo Gesprek Boeken",
+    "cta_secondary": "Bekijk Toepassingen"
+  },
+  "use_cases": {
+    "title": "Wat Voice Agents Kunnen Doen",
+    "items": {
+      "outbound_leads": {
+        "title": "Uitgaande Leadkwalificatie",
+        "description": "Bel en kwalificeer honderden leads per dag. AI voert het eerste gesprek zodat uw salesteam alleen met gekwalificeerde prospects spreekt."
+      },
+      "appointment_setting": {
+        "title": "Afspraken Inplannen",
+        "description": "Vul agenda's automatisch. De voice agent boekt vergaderingen rechtstreeks in uw agendasysteem."
+      },
+      "inbound_service": {
+        "title": "Inkomende Klantenservice",
+        "description": "Behandel routinegesprekken 24/7. Beantwoord veelgestelde vragen, routeer complexe problemen en laat klanten nooit wachten."
+      },
+      "post_sale": {
+        "title": "Nazorg & Opvolging",
+        "description": "Geautomatiseerde check-ins, verlengingsherinneringen en tevredenheidsonderzoeken — op schaal."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "subtitle": "Transparante prijzen voor voice AI-oplossingen",
+    "most_popular": "Meest Populair",
+    "cta": "Aan de Slag",
+    "tiers": {
+      "basic": {
+        "name": "Basis",
+        "price": "\u20ac1.000 \u2013 \u20ac2.000",
+        "description": "Enkelvoudige voice agent",
+        "features": [
+          "1 workflow (bijv. afspraken boeken)",
+          "Basis CRM-integratie",
+          "Gespreksopname & transcripties",
+          "14 dagen levertijd"
+        ]
+      },
+      "standard": {
+        "name": "Standaard",
+        "price": "\u20ac2.000 \u2013 \u20ac5.000",
+        "description": "Meervoudige voice agent",
+        "features": [
+          "Meerdere workflows",
+          "Volledige CRM-integratie",
+          "Analytics dashboard",
+          "Meertalige ondersteuning"
+        ]
+      },
+      "ongoing": {
+        "name": "Doorlopend",
+        "price": "vanaf \u20ac500/mnd",
+        "description": "Hosting, monitoring & optimalisatie",
+        "features": [
+          "Cloud hosting",
+          "Prestatiemonitoring",
+          "Maandelijkse optimalisatie",
+          "Prioriteitsondersteuning"
+        ]
+      }
+    }
+  },
+  "partnership": {
+    "title": "Gebouwd Met Gespecialiseerde Partners",
+    "description": "Onze voice agent-oplossingen worden gebouwd in samenwerking met gespecialiseerde voice AI-partners, zodat u de beste technologie en expertise krijgt die beschikbaar is op de markt."
+  },
+  "trust_metrics": {
+    "availability": {
+      "value": "24/7",
+      "label": "Altijd Beschikbaar"
+    },
+    "calls": {
+      "value": "500+",
+      "label": "Gesprekken Per Dag"
+    },
+    "accuracy": {
+      "value": "98%",
+      "label": "Nauwkeurigheidsgraad"
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde Vragen",
+    "items": {
+      "voice_quality": {
+        "q": "Hoe natuurlijk klinkt de AI-stem?",
+        "a": "Moderne voice AI klinkt opmerkelijk natuurlijk. We gebruiken de nieuwste text-to-speech-modellen die in de meeste gesprekken niet te onderscheiden zijn van menselijke stemmen."
+      },
+      "objections": {
+        "q": "Kan de voice agent bezwaren afhandelen?",
+        "a": "Ja. We trainen de agent op uw specifieke bezwaarafhandelingsscripts. De agent kan veelvoorkomende tegenargumenten navigeren en weet wanneer er moet worden doorgeschakeld naar een mens."
+      },
+      "languages": {
+        "q": "Welke talen worden ondersteund?",
+        "a": "Engels, Spaans, Frans, Duits, Nederlands en nog veel meer. Meertalige ondersteuning is beschikbaar bij Standaard en hoger."
+      },
+      "crm": {
+        "q": "Hoe integreert het met mijn CRM?",
+        "a": "We integreren met HubSpot, Salesforce, Pipedrive en elk CRM met een API. Gespreksresultaten, transcripties en leadscores worden automatisch gesynchroniseerd."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Boek een Voice Agent Demo",
+    "description": "Luister naar een live demo van onze voice AI en ontdek hoe het leads kan kwalificeren en vergaderingen kan boeken voor uw bedrijf.",
+    "button": "Demo Gesprek Boeken"
+  }
+}
