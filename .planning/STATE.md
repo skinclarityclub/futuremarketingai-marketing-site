@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: completed
-stopped_at: Completed 11-07-PLAN.md — Phase 11 Living System Full Rebuild complete
-last_updated: '2026-03-13T13:32:58.195Z'
+current_plan: 12-02
+status: in-progress
+stopped_at: Completed 12-01-PLAN.md
+last_updated: '2026-03-13T13:56:14Z'
 progress:
-  total_phases: 4
+  total_phases: 5
   completed_phases: 4
-  total_plans: 18
-  completed_plans: 18
+  total_plans: 22
+  completed_plans: 19
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 11 — Living System Full Rebuild
-- **Current Plan:** Not started
-- **Status:** Milestone complete
-- **Last completed:** Phase 11 Plan 07 — Mobile hero rebuild + full-site visual verification approved
-- **Last session:** 2026-03-13T04:05:00.000Z
-- **Stopped at:** Completed 11-07-PLAN.md — Phase 11 Living System Full Rebuild complete
+- **Phase:** 12 — Design Polish & Media
+- **Current Plan:** 02 of 4
+- **Status:** In progress
+- **Last completed:** Phase 12 Plan 01 — Foundation components (SplineHero, ScrollReveal, ProductMedia, useTilt)
+- **Last session:** 2026-03-13T13:56:14Z
+- **Stopped at:** Completed 12-01-PLAN.md
 
 ## Decisions
 
@@ -67,6 +67,9 @@ progress:
 - [11-06]: SEO meta tags kept as hardcoded EN strings — SEO handled separately from UI i18n
 - [11-07]: Mobile hero uses single blob-warm (300px, opacity 0.08) instead of GradientMesh for performance
 - [11-07]: Framer Motion wrappers replaced with CSS fadeIn/fadeInUp on mobile — lighter weight for touch devices
+- [12-01]: SplineHero uses React.lazy + Suspense with OrbitVisual fallback — zero JS cost until Spline runtime loads
+- [12-01]: ScrollReveal delegates reduced-motion to useMotionSafe — returns empty props when motion disabled
+- [12-01]: useTilt is caller-guarded — hook returns values unconditionally, callers apply desktop-only check
 
 ## Context
 
@@ -96,3 +99,4 @@ progress:
 - Phase 11 Plan 07 complete: SimplifiedHeroMobile rebuilt with DM Sans, blob background, CSS animations; full-site visual quality human-approved
 - Phase 11 COMPLETE: All 7 plans done — Living System Full Rebuild finished across all pages
 - Phase 12 added: Design Polish & Media — Spline/Rive hero visual, product media, micro-interactions, typography polish. Research pre-gathered.
+- Phase 12 Plan 01 complete: Foundation components — SplineHero (lazy Spline 3D + OrbitVisual fallback), ScrollReveal (whileInView wrapper), ProductMedia (video/poster + reduced-motion), useTilt (mouse parallax hook)
