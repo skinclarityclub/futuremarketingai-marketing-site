@@ -89,7 +89,6 @@ i18n
       'forms', // Form elements
       'errors', // Error messages
       'analytics', // Analytics labels
-      'ai-assistant', // AI chatbot
     ],
     defaultNS: 'common',
 

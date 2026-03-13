@@ -43,7 +43,6 @@ export {
 } from './useMediaQuery'
 
 export { usePersonalization } from './usePersonalization'
-export { useModuleFollowUp } from './useModuleFollowUp'
 export { useDemoRedirect } from './useDemoRedirect'
 
 export { useToast } from './useToast'
@@ -51,8 +50,6 @@ export type { Toast } from './useToast'
 
 export { useDebounce } from './useDebounce'
 export { useFocusManagement, useFocusTrap } from './useFocusManagement'
-export { useAchievementTracking } from './useAchievementTracking'
-export { useJourneyNudges } from './useJourneyNudges'
 
 // Reduced Motion utilities
 export {

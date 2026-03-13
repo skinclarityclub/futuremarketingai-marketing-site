@@ -18,12 +18,6 @@ export { ComparisonSection } from './comparison/ComparisonSection'
 // Visualizations
 export * from './visualizations'
 
-// Journey Components removed - Will be reimplemented in Task #29 (AI Journey Assistant)
-
-// AI Journey Assistant (Task #29)
-export { default as AIJourneyAssistant } from './ai-assistant/AIJourneyAssistant'
-export * from './ai-assistant'
-
 // Credibility Components (Task #19)
 export * from './credibility'
 
