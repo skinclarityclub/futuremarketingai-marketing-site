@@ -80,11 +80,7 @@ export type { TechStackItem } from './TechStackBar'
 export { VisionTimeline } from './VisionTimeline'
 export type { TimelineEra, TimelineStatus, IconType } from './VisionTimeline/types'
 
-export { SystemPanel } from './SystemPanel'
-export { StatusIndicator } from './StatusIndicator'
-export { MetricDisplay } from './MetricDisplay'
 export { CTAButton } from './CTAButton'
-export { SectionContainer } from './SectionContainer'
 export { ChartTooltip, createTooltipEntry } from './ChartTooltip'
 export type { ChartTooltipProps, TooltipEntry } from './ChartTooltip'
 
