@@ -1,20 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
-import { CalendlyModal } from '../components/common/CalendlyModal'
-import {
-  Phone,
-  Calendar,
-  Headphones,
-  RefreshCw,
-  ArrowRight,
-  CheckCircle,
-  Handshake,
-} from 'lucide-react'
-
-const CALENDLY_URL =
-  'https://calendly.com/futureai/strategy-call?background_color=111520&text_color=e8ecf4&primary_color=00D4AA'
+import { CTAButton } from '../components/common'
+import { Phone, Calendar, Headphones, RefreshCw, CheckCircle, Handshake } from 'lucide-react'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -108,8 +97,6 @@ const faqs = [
 ]
 
 export const VoiceAgentsPage: React.FC = () => {
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
-
   return (
     <>
       <SimpleHeader />
@@ -127,25 +114,28 @@ export const VoiceAgentsPage: React.FC = () => {
         canonical="https://future-marketing.ai/voice-agents"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="min-h-screen bg-bg-deep">
         {/* Hero */}
         <section className="relative pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div {...fadeInUp}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-                <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-sm font-medium text-blue-100">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
+                <Phone className="w-4 h-4 text-accent-system" />
+                <span className="text-sm font-medium text-text-secondary">
                   AI That Handles Your Calls
                 </span>
               </div>
             </motion.div>
 
-            <motion.h1 className="text-4xl md:text-6xl font-bold text-white mb-6" {...fadeInUp}>
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
+              {...fadeInUp}
+            >
               AI Voice Agents for Lead Qualification & Booking
             </motion.h1>
 
             <motion.p
-              className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-10"
+              className="text-xl text-text-muted leading-relaxed max-w-3xl mx-auto mb-10"
               {...fadeInUp}
             >
               AI voice agents that call prospects, qualify leads, and book appointments — at scale,
@@ -153,19 +143,12 @@ export const VoiceAgentsPage: React.FC = () => {
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" {...fadeInUp}>
-              <button
-                onClick={() => setIsCalendlyOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-              >
+              <CTAButton size="lg" calendly arrow>
                 Book a Demo Call
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <a
-                href="#use-cases"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
-              >
+              </CTAButton>
+              <CTAButton variant="secondary" size="lg" href="#use-cases">
                 See Use Cases
-              </a>
+              </CTAButton>
             </motion.div>
           </div>
         </section>
@@ -174,7 +157,7 @@ export const VoiceAgentsPage: React.FC = () => {
         <section id="use-cases" className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 What Voice Agents Can Do
               </h2>
             </motion.div>
@@ -183,15 +166,15 @@ export const VoiceAgentsPage: React.FC = () => {
               {useCases.map((useCase, i) => (
                 <motion.div
                   key={i}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8"
+                  className="bg-bg-surface border border-border-primary rounded-sm p-8"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <useCase.icon className="w-10 h-10 text-blue-400 mb-4" />
-                  <h3 className="text-xl font-semibold text-white mb-2">{useCase.title}</h3>
-                  <p className="text-blue-100/80">{useCase.description}</p>
+                  <useCase.icon className="w-10 h-10 text-accent-system mb-4" />
+                  <h3 className="text-xl font-semibold text-text-primary mb-2">{useCase.title}</h3>
+                  <p className="text-text-muted">{useCase.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -202,18 +185,22 @@ export const VoiceAgentsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Pricing</h2>
-              <p className="text-lg text-blue-100">Transparent pricing for voice AI solutions</p>
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                Pricing
+              </h2>
+              <p className="text-lg text-text-secondary">
+                Transparent pricing for voice AI solutions
+              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {pricingTiers.map((tier, i) => (
                 <motion.div
                   key={i}
-                  className={`relative bg-white/5 backdrop-blur-sm border rounded-xl p-8 ${
+                  className={`relative bg-bg-surface border rounded-sm p-8 ${
                     tier.highlighted
-                      ? 'border-blue-500/50 shadow-lg shadow-blue-500/10'
-                      : 'border-white/10'
+                      ? 'border-accent-system/50 shadow-glow-sm'
+                      : 'border-border-primary'
                   }`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -221,31 +208,29 @@ export const VoiceAgentsPage: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   {tier.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
                       Most Popular
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-white mb-1">{tier.name}</h3>
-                  <p className="text-sm text-blue-100/60 mb-4">{tier.description}</p>
-                  <div className="text-2xl font-bold text-white mb-6">{tier.price}</div>
+                  <h3 className="text-xl font-bold text-text-primary mb-1">{tier.name}</h3>
+                  <p className="text-sm text-text-muted mb-4">{tier.description}</p>
+                  <div className="text-2xl font-bold text-text-primary mb-6">{tier.price}</div>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-2 text-blue-100/80">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <li key={j} className="flex items-center gap-2 text-text-muted">
+                        <CheckCircle className="w-4 h-4 text-accent-system flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => setIsCalendlyOpen(true)}
-                    className={`block w-full text-center px-6 py-3 font-semibold rounded-xl transition-all ${
-                      tier.highlighted
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700'
-                        : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
-                    }`}
+                  <CTAButton
+                    size="md"
+                    calendly
+                    variant={tier.highlighted ? 'primary' : 'secondary'}
+                    className="w-full justify-center"
                   >
                     Get Started
-                  </button>
+                  </CTAButton>
                 </motion.div>
               ))}
             </div>
@@ -256,15 +241,15 @@ export const VoiceAgentsPage: React.FC = () => {
         <section className="py-12 px-6">
           <div className="max-w-3xl mx-auto">
             <motion.div
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 flex gap-6 items-start"
+              className="bg-bg-surface border border-border-primary rounded-sm p-8 flex gap-6 items-start"
               {...fadeInUp}
             >
-              <Handshake className="w-10 h-10 text-blue-400 flex-shrink-0 mt-1" />
+              <Handshake className="w-10 h-10 text-accent-system flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
                   Built With Specialized Partners
                 </h3>
-                <p className="text-blue-100/80">
+                <p className="text-text-muted">
                   Our voice agent solutions are built in collaboration with specialized voice AI
                   partners, ensuring you get the best technology and expertise available in the
                   market.
@@ -279,16 +264,16 @@ export const VoiceAgentsPage: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <motion.div className="grid grid-cols-3 gap-8 text-center" {...fadeInUp}>
               <div>
-                <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                <div className="text-sm text-blue-100/60">Always Available</div>
+                <div className="text-3xl font-bold text-text-primary mb-1">24/7</div>
+                <div className="text-sm text-text-muted">Always Available</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-sm text-blue-100/60">Calls Per Day</div>
+                <div className="text-3xl font-bold text-text-primary mb-1">500+</div>
+                <div className="text-sm text-text-muted">Calls Per Day</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white mb-1">98%</div>
-                <div className="text-sm text-blue-100/60">Accuracy Rate</div>
+                <div className="text-3xl font-bold text-text-primary mb-1">98%</div>
+                <div className="text-sm text-text-muted">Accuracy Rate</div>
               </div>
             </motion.div>
           </div>
@@ -298,26 +283,28 @@ export const VoiceAgentsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
+                Frequently Asked Questions
+              </h2>
             </motion.div>
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <motion.details
                   key={i}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl"
+                  className="group bg-bg-surface border border-border-primary rounded-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                   viewport={{ once: true }}
                 >
-                  <summary className="px-6 py-4 cursor-pointer text-white font-medium list-none flex justify-between items-center">
+                  <summary className="px-6 py-4 cursor-pointer text-text-primary font-medium list-none flex justify-between items-center">
                     {faq.q}
-                    <span className="text-blue-400 group-open:rotate-45 transition-transform text-xl">
+                    <span className="text-accent-system group-open:rotate-45 transition-transform text-xl">
                       +
                     </span>
                   </summary>
-                  <div className="px-6 pb-4 text-blue-100/80">{faq.a}</div>
+                  <div className="px-6 pb-4 text-text-muted">{faq.a}</div>
                 </motion.details>
               ))}
             </div>
@@ -328,33 +315,23 @@ export const VoiceAgentsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl p-12"
+              className="bg-accent-system/5 border border-border-primary rounded-sm p-12"
               {...fadeInUp}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 Book a Voice Agent Demo
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 Hear a live demo of our voice AI and discover how it can qualify leads and book
                 meetings for your business.
               </p>
-              <button
-                onClick={() => setIsCalendlyOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl text-lg"
-              >
+              <CTAButton size="lg" calendly arrow>
                 Book Demo Call
-                <ArrowRight className="w-5 h-5" />
-              </button>
+              </CTAButton>
             </motion.div>
           </div>
         </section>
       </div>
-
-      <CalendlyModal
-        isOpen={isCalendlyOpen}
-        onClose={() => setIsCalendlyOpen(false)}
-        url={CALENDLY_URL}
-      />
     </>
   )
 }
