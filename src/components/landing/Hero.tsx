@@ -11,7 +11,7 @@
  */
 
 import React, { lazy, Suspense, useRef } from 'react'
-import { motion, useAnimation, useInView } from 'framer-motion'
+import { useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
 import { Zap, Loader2 } from 'lucide-react'
@@ -21,6 +21,7 @@ import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
 import { CTAButton, OrbitVisual } from '../common'
 import { SplineHero } from '../common/SplineHero'
+import { ScrollReveal } from '../common/ScrollReveal'
 
 // Set to Spline scene URL when 3D asset is ready. Empty string = OrbitVisual fallback.
 const SPLINE_SCENE_URL = ''
@@ -147,80 +148,80 @@ export const Hero: React.FC = () => {
         )}
       </div>
 
-      {/* Service Cards Grid — 2x2 numbered layout */}
-      <motion.div
-        id="services"
-        className="relative z-10 px-12 pb-20"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-      >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-            {t('landing.hero_landing.services.title')}
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t('landing.hero_landing.services.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {SERVICE_CARDS.map((service) => (
-            <Link
-              key={service.href}
-              to={service.href}
-              className="relative card-gradient-border card-tilt rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
-            >
-              {/* Service number */}
-              <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
-                {service.number}
-              </span>
-
-              {/* Title */}
-              <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight mb-3.5">
-                {t(service.nameKey)}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
-                {t(service.pitchKey)}
-              </p>
-
-              {/* Arrow circle — bottom-right */}
-              <div className="absolute bottom-9 right-9 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-accent-human group-hover:border-accent-human">
-                <svg
-                  className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M4 12L12 4M12 4H6M12 4V10" />
-                </svg>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Light CTA after service cards */}
-        <div className="text-center mt-12">
-          <p className="text-text-secondary mb-6">{t('landing.hero_landing.final_cta.subtitle')}</p>
-          <CTAButton size="lg" calendly arrow>
-            {t('landing.hero_landing.final_cta.button')}
-          </CTAButton>
-        </div>
-      </motion.div>
-
-      {/* Vision Timeline — Future roadmap section */}
-      <Suspense
-        fallback={
-          <div className="flex items-center justify-center py-24">
-            <Loader2 className="w-8 h-8 text-accent-system animate-spin" />
+      {/* Service Cards Grid — 2x2 numbered layout, scroll-revealed */}
+      <ScrollReveal direction="up" delay={0}>
+        <div id="services" className="relative z-10 px-12 pb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              {t('landing.hero_landing.services.title')}
+            </h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              {t('landing.hero_landing.services.subtitle')}
+            </p>
           </div>
-        }
-      >
-        <VisionTimeline />
-      </Suspense>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {SERVICE_CARDS.map((service) => (
+              <Link
+                key={service.href}
+                to={service.href}
+                className="relative card-gradient-border card-tilt rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
+              >
+                {/* Service number */}
+                <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
+                  {service.number}
+                </span>
+
+                {/* Title */}
+                <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight mb-3.5">
+                  {t(service.nameKey)}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
+                  {t(service.pitchKey)}
+                </p>
+
+                {/* Arrow circle — bottom-right */}
+                <div className="absolute bottom-9 right-9 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-accent-human group-hover:border-accent-human">
+                  <svg
+                    className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M4 12L12 4M12 4H6M12 4V10" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Light CTA after service cards */}
+          <div className="text-center mt-12">
+            <p className="text-text-secondary mb-6">
+              {t('landing.hero_landing.final_cta.subtitle')}
+            </p>
+            <CTAButton size="lg" calendly arrow>
+              {t('landing.hero_landing.final_cta.button')}
+            </CTAButton>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* Vision Timeline — Future roadmap section, scroll-revealed */}
+      <ScrollReveal direction="up" delay={0.1}>
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center py-24">
+              <Loader2 className="w-8 h-8 text-accent-system animate-spin" />
+            </div>
+          }
+        >
+          <VisionTimeline />
+        </Suspense>
+      </ScrollReveal>
     </section>
   )
 }

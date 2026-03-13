@@ -525,6 +525,16 @@
   .card-gradient-border:hover::before {
     background: linear-gradient(135deg, #f5a623, #0abab5);
   }
+
+  /* Card tilt — subtle depth on hover (desktop only) */
+  @media (hover: hover) and (pointer: fine) {
+    .card-tilt {
+      transition: transform 0.2s ease-out;
+    }
+    .card-tilt:hover {
+      transform: perspective(800px) rotateX(-1deg) rotateY(1deg) translateY(-2px);
+    }
+  }
 }
 
 /* Blob Float Keyframes */

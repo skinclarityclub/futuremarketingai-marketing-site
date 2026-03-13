@@ -59,7 +59,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   }
 
   const baseClasses = [
-    'inline-flex items-center justify-center gap-2',
+    'group/cta inline-flex items-center justify-center gap-2',
     'rounded-btn transition-all duration-200',
     'no-select touch-active',
     variantClasses[variant],
@@ -78,7 +78,11 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   const content = (
     <>
       {children}
-      {arrow && <ArrowRight className="w-4 h-4" />}
+      {arrow && (
+        <span className="inline-flex transition-transform duration-200 group-hover/cta:translate-x-1">
+          <ArrowRight className="w-4 h-4" />
+        </span>
+      )}
     </>
   )
 
