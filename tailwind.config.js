@@ -34,8 +34,8 @@ export default {
         'divider': 'rgba(255, 255, 255, 0.04)',
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Space Grotesk', 'DM Sans', 'sans-serif'],
         mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
       },
       fontSize: {
@@ -71,6 +71,8 @@ export default {
         'xl': '1.5rem',
         '2xl': '2rem',
         '3xl': '3rem',
+        'card': '20px',
+        'btn': '14px',
         'full': '9999px',
       },
       boxShadow: {
