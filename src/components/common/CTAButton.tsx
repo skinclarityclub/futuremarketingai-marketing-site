@@ -4,7 +4,7 @@ import { CalendlyModal } from './CalendlyModal'
 
 interface CTAButtonProps {
   children: React.ReactNode
-  /** Primary: filled teal. Secondary: bordered, transparent */
+  /** Primary: warm amber gradient. Secondary: glass backdrop-blur */
   variant?: 'primary' | 'secondary'
   /** sm: nav-sized. md: section CTA. lg: hero CTA */
   size?: 'sm' | 'md' | 'lg'
@@ -27,8 +27,8 @@ const DEFAULT_CALENDLY_URL = `https://calendly.com/futureai/strategy-call?${CALE
 
 /**
  * CTAButton — Consistent CTA across all pages.
- * Primary: filled accent-system (teal), sharp corners.
- * Secondary: transparent + border, fills on hover.
+ * Primary: warm amber gradient, rounded-btn.
+ * Secondary: glass backdrop-blur, rounded-btn.
  * Can open Calendly modal directly.
  */
 export const CTAButton: React.FC<CTAButtonProps> = ({
@@ -47,9 +47,9 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 
   const variantClasses = {
     primary:
-      'bg-accent-system text-bg-deep font-semibold hover:bg-accent-system/90 active:bg-accent-system/80',
+      'bg-gradient-to-br from-accent-human to-[#E8941A] text-bg-deep font-semibold hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(245,166,35,0.3)] active:translate-y-0',
     secondary:
-      'bg-transparent border border-border-primary text-text-primary hover:bg-bg-elevated active:bg-bg-elevated/80',
+      'bg-white/[0.04] backdrop-blur-[12px] border border-white/[0.08] text-text-primary hover:bg-white/[0.07] hover:border-white/[0.12] hover:-translate-y-0.5',
   }
 
   const sizeClasses = {
@@ -60,7 +60,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 
   const baseClasses = [
     'inline-flex items-center justify-center gap-2',
-    'rounded-sm transition-all duration-200',
+    'rounded-btn transition-all duration-200',
     'no-select touch-active',
     variantClasses[variant],
     sizeClasses[size],
