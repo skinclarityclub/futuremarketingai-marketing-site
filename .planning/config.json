@@ -1,0 +1,13 @@
+{
+  "project_name": "FMai Website",
+  "milestone": "v1.0",
+  "milestone_description": "Launch FMai website with Living System design, gateway services, and founding member beta",
+  "executor_model": "sonnet",
+  "verifier_model": "sonnet",
+  "parallelization": true,
+  "branching_strategy": "none",
+  "commit_docs": true,
+  "workflow": {
+    "auto_advance": false
+  }
+}
