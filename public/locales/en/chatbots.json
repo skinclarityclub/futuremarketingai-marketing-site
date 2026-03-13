@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "badge": "24/7 Lead Qualification",
+    "title": "AI Chatbots That Never Sleep",
+    "description": "Custom AI chatbots that answer questions, qualify leads, and book calls — while you sleep. Integrated with your CRM, calendar, and support tools.",
+    "cta_primary": "See a Live Demo",
+    "cta_secondary": "Get a Free Strategy Session"
+  },
+  "use_cases": {
+    "title": "What Our Chatbots Do",
+    "items": {
+      "customer_service": {
+        "title": "Customer Service",
+        "description": "Handle 70% of customer inquiries automatically — instant responses, 24/7 availability."
+      },
+      "lead_qualification": {
+        "title": "Lead Qualification",
+        "description": "Score and route leads around the clock. Never miss a hot prospect again."
+      },
+      "appointment_booking": {
+        "title": "Appointment Booking",
+        "description": "Fill your calendar without manual back-and-forth. Integrated with Calendly, Cal.com, and more."
+      },
+      "faq_automation": {
+        "title": "FAQ Automation",
+        "description": "Consistent, accurate answers — always available. Trained on your specific knowledge base."
+      }
+    }
+  },
+  "process": {
+    "title": "How We Build It",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We map your use case, identify key intents, and plan integration with your existing tools."
+      },
+      "build": {
+        "title": "Build",
+        "description": "Custom LLM-powered chatbot, trained on your data. Multi-platform deployment ready."
+      },
+      "optimize": {
+        "title": "Optimize",
+        "description": "Ongoing improvement based on real conversation data. Monthly performance reports."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Maintenance retainer from €500/mo",
+    "most_popular": "Most Popular",
+    "cta": "Get Started",
+    "tiers": {
+      "basic": {
+        "name": "Basic",
+        "price": "€1,500",
+        "description": "FAQ chatbot for one platform",
+        "features": [
+          "FAQ chatbot",
+          "1 platform (web or WhatsApp)",
+          "Trained on your content",
+          "7-day delivery"
+        ]
+      },
+      "standard": {
+        "name": "Standard",
+        "price": "€2,500 – €3,500",
+        "description": "Multi-intent with CRM integration",
+        "features": [
+          "Multi-intent recognition",
+          "CRM integration",
+          "Analytics dashboard",
+          "Multi-platform"
+        ]
+      },
+      "custom": {
+        "name": "Custom",
+        "price": "€5,000+",
+        "description": "Enterprise-grade AI chatbot",
+        "features": [
+          "Full custom workflows",
+          "Advanced analytics",
+          "Multi-language support",
+          "Dedicated account manager"
+        ]
+      }
+    }
+  },
+  "trust_metrics": {
+    "inquiries": {
+      "value": "70%",
+      "label": "inquiries handled automatically"
+    },
+    "availability": {
+      "value": "24/7",
+      "label": "availability"
+    },
+    "crm": {
+      "value": "CRM",
+      "label": "fully integrated"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "platforms": {
+        "q": "What platforms can you deploy chatbots on?",
+        "a": "We deploy on websites (widget), WhatsApp, Slack, Discord, Facebook Messenger, and any platform with an API."
+      },
+      "training": {
+        "q": "How is the chatbot trained?",
+        "a": "We train on your existing documentation, FAQs, product info, and past support conversations. The bot learns your specific domain and brand voice."
+      },
+      "handoff": {
+        "q": "Can the chatbot hand off to a human agent?",
+        "a": "Yes. Smart escalation routes complex queries to your team via email, Slack, or your helpdesk tool — with full conversation context."
+      },
+      "privacy": {
+        "q": "What about data privacy?",
+        "a": "We follow GDPR best practices. Your data stays in your infrastructure. We can deploy models that run entirely on your own servers if required."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Get a Free Chatbot Strategy Session",
+    "description": "We'll analyze your use case and show you exactly how an AI chatbot can save your team hours every week.",
+    "button": "Book Free Session"
+  }
+}

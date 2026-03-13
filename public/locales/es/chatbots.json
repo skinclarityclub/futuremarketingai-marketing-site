@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "badge": "Calificacion de Leads 24/7",
+    "title": "Chatbots IA Que Nunca Duermen",
+    "description": "Chatbots de IA personalizados que responden preguntas, califican leads y reservan llamadas — mientras duermes. Integrados con tu CRM, calendario y herramientas de soporte.",
+    "cta_primary": "Ver una Demo en Vivo",
+    "cta_secondary": "Sesion de Estrategia Gratuita"
+  },
+  "use_cases": {
+    "title": "Lo Que Hacen Nuestros Chatbots",
+    "items": {
+      "customer_service": {
+        "title": "Servicio al Cliente",
+        "description": "Gestiona el 70% de las consultas de clientes automaticamente — respuestas instantaneas, disponibilidad 24/7."
+      },
+      "lead_qualification": {
+        "title": "Calificacion de Leads",
+        "description": "Evalua y enruta leads las 24 horas. Nunca mas pierdas un prospecto interesado."
+      },
+      "appointment_booking": {
+        "title": "Reserva de Citas",
+        "description": "Llena tu agenda sin intercambios manuales. Integrado con Calendly, Cal.com y mas."
+      },
+      "faq_automation": {
+        "title": "Automatizacion de FAQ",
+        "description": "Respuestas consistentes y precisas — siempre disponibles. Entrenado en tu base de conocimiento especifica."
+      }
+    }
+  },
+  "process": {
+    "title": "Como Lo Construimos",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Mapeamos tu caso de uso, identificamos las intenciones clave y planificamos la integracion con tus herramientas existentes."
+      },
+      "build": {
+        "title": "Construccion",
+        "description": "Chatbot personalizado con LLM, entrenado con tus datos. Listo para despliegue multiplataforma."
+      },
+      "optimize": {
+        "title": "Optimizacion",
+        "description": "Mejora continua basada en datos de conversaciones reales. Informes de rendimiento mensuales."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Precios",
+    "subtitle": "Retencion de mantenimiento desde €500/mes",
+    "most_popular": "Mas Popular",
+    "cta": "Comenzar",
+    "tiers": {
+      "basic": {
+        "name": "Basico",
+        "price": "€1.500",
+        "description": "Chatbot FAQ para una plataforma",
+        "features": [
+          "Chatbot FAQ",
+          "1 plataforma (web o WhatsApp)",
+          "Entrenado con tu contenido",
+          "Entrega en 7 dias"
+        ]
+      },
+      "standard": {
+        "name": "Estandar",
+        "price": "€2.500 – €3.500",
+        "description": "Multi-intencion con integracion CRM",
+        "features": [
+          "Reconocimiento multi-intencion",
+          "Integracion CRM",
+          "Panel de analytics",
+          "Multiplataforma"
+        ]
+      },
+      "custom": {
+        "name": "Personalizado",
+        "price": "€5.000+",
+        "description": "Chatbot IA de nivel empresarial",
+        "features": [
+          "Flujos de trabajo personalizados",
+          "Analytics avanzados",
+          "Soporte multiidioma",
+          "Gestor de cuenta dedicado"
+        ]
+      }
+    }
+  },
+  "trust_metrics": {
+    "inquiries": {
+      "value": "70%",
+      "label": "consultas gestionadas automaticamente"
+    },
+    "availability": {
+      "value": "24/7",
+      "label": "disponibilidad"
+    },
+    "crm": {
+      "value": "CRM",
+      "label": "completamente integrado"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "items": {
+      "platforms": {
+        "q": "¿En que plataformas puedes desplegar chatbots?",
+        "a": "Desplegamos en sitios web (widget), WhatsApp, Slack, Discord, Facebook Messenger y cualquier plataforma con API."
+      },
+      "training": {
+        "q": "¿Como se entrena el chatbot?",
+        "a": "Entrenamos con tu documentacion existente, FAQs, informacion de productos y conversaciones de soporte anteriores. El bot aprende tu dominio especifico y voz de marca."
+      },
+      "handoff": {
+        "q": "¿Puede el chatbot transferir a un agente humano?",
+        "a": "Si. La escalacion inteligente enruta consultas complejas a tu equipo por email, Slack o tu herramienta de helpdesk — con el contexto completo de la conversacion."
+      },
+      "privacy": {
+        "q": "¿Que hay sobre la privacidad de datos?",
+        "a": "Seguimos las mejores practicas de GDPR. Tus datos permanecen en tu infraestructura. Podemos desplegar modelos que se ejecutan completamente en tus propios servidores si es necesario."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Sesion de Estrategia de Chatbot Gratuita",
+    "description": "Analizaremos tu caso de uso y te mostraremos exactamente como un chatbot de IA puede ahorrar horas a tu equipo cada semana.",
+    "button": "Reservar Sesion Gratuita"
+  }
+}

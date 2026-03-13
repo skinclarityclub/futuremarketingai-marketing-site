@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "badge": "24/7 Leadkwalificatie",
+    "title": "AI Chatbots Die Nooit Slapen",
+    "description": "Op maat gemaakte AI-chatbots die vragen beantwoorden, leads kwalificeren en gesprekken inplannen — terwijl jij slaapt. Geintegreerd met je CRM, agenda en supporttools.",
+    "cta_primary": "Bekijk een Live Demo",
+    "cta_secondary": "Gratis Strategiesessie"
+  },
+  "use_cases": {
+    "title": "Wat Onze Chatbots Doen",
+    "items": {
+      "customer_service": {
+        "title": "Klantenservice",
+        "description": "Behandel 70% van klantvragen automatisch — directe antwoorden, 24/7 beschikbaar."
+      },
+      "lead_qualification": {
+        "title": "Leadkwalificatie",
+        "description": "Score en routeer leads de klok rond. Mis nooit meer een warme prospect."
+      },
+      "appointment_booking": {
+        "title": "Afspraken Inplannen",
+        "description": "Vul je agenda zonder handmatig heen-en-weer. Geintegreerd met Calendly, Cal.com en meer."
+      },
+      "faq_automation": {
+        "title": "FAQ-automatisering",
+        "description": "Consistente, nauwkeurige antwoorden — altijd beschikbaar. Getraind op jouw specifieke kennisbank."
+      }
+    }
+  },
+  "process": {
+    "title": "Hoe We Het Bouwen",
+    "steps": {
+      "discovery": {
+        "title": "Ontdekking",
+        "description": "We brengen je use case in kaart, identificeren belangrijke intenties en plannen integratie met je bestaande tools."
+      },
+      "build": {
+        "title": "Bouwen",
+        "description": "Op maat gemaakte LLM-chatbot, getraind op jouw data. Klaar voor multi-platform deployment."
+      },
+      "optimize": {
+        "title": "Optimaliseren",
+        "description": "Voortdurende verbetering op basis van echte gespreksdata. Maandelijkse prestatierapporten."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "subtitle": "Onderhoudsretainer vanaf €500/mnd",
+    "most_popular": "Meest Populair",
+    "cta": "Aan de Slag",
+    "tiers": {
+      "basic": {
+        "name": "Basis",
+        "price": "€1.500",
+        "description": "FAQ-chatbot voor een platform",
+        "features": [
+          "FAQ-chatbot",
+          "1 platform (web of WhatsApp)",
+          "Getraind op jouw content",
+          "7 dagen levertijd"
+        ]
+      },
+      "standard": {
+        "name": "Standaard",
+        "price": "€2.500 – €3.500",
+        "description": "Multi-intent met CRM-integratie",
+        "features": [
+          "Multi-intent herkenning",
+          "CRM-integratie",
+          "Analytics dashboard",
+          "Multi-platform"
+        ]
+      },
+      "custom": {
+        "name": "Op Maat",
+        "price": "€5.000+",
+        "description": "Enterprise-grade AI-chatbot",
+        "features": [
+          "Volledig op maat gemaakte workflows",
+          "Geavanceerde analytics",
+          "Meertalige ondersteuning",
+          "Dedicated accountmanager"
+        ]
+      }
+    }
+  },
+  "trust_metrics": {
+    "inquiries": {
+      "value": "70%",
+      "label": "vragen automatisch afgehandeld"
+    },
+    "availability": {
+      "value": "24/7",
+      "label": "beschikbaarheid"
+    },
+    "crm": {
+      "value": "CRM",
+      "label": "volledig geintegreerd"
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde Vragen",
+    "items": {
+      "platforms": {
+        "q": "Op welke platformen kun je chatbots inzetten?",
+        "a": "We deployen op websites (widget), WhatsApp, Slack, Discord, Facebook Messenger en elk platform met een API."
+      },
+      "training": {
+        "q": "Hoe wordt de chatbot getraind?",
+        "a": "We trainen op je bestaande documentatie, FAQ's, productinformatie en eerdere supportgesprekken. De bot leert jouw specifieke domein en merkidentiteit."
+      },
+      "handoff": {
+        "q": "Kan de chatbot overdragen aan een menselijke medewerker?",
+        "a": "Ja. Slimme escalatie routeert complexe vragen naar je team via e-mail, Slack of je helpdesktool — met volledige gesprekscontext."
+      },
+      "privacy": {
+        "q": "Hoe zit het met dataprivacy?",
+        "a": "We volgen GDPR-best practices. Je data blijft in jouw infrastructuur. We kunnen modellen deployen die volledig op je eigen servers draaien indien gewenst."
+      }
+    }
+  },
+  "final_cta": {
+    "title": "Gratis Chatbot Strategiesessie",
+    "description": "We analyseren je use case en laten precies zien hoe een AI-chatbot je team uren per week kan besparen.",
+    "button": "Gratis Sessie Boeken"
+  }
+}
