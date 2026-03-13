@@ -4,7 +4,7 @@ import { useChatbotStore } from '../stores/chatbotStore'
 
 const DEMO_MESSAGE_LIMIT = 15
 
-export function usePersonaChat(personaId: string) {
+export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
   const { sessionId, messageCounts, incrementMessageCount } = useChatbotStore()
 
   const messageCount = messageCounts[personaId] || 0
@@ -16,6 +16,7 @@ export function usePersonaChat(personaId: string) {
       body: {
         personaId,
         sessionId,
+        context: pageContext,
       },
     }),
     onFinish: () => {

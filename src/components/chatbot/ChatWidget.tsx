@@ -16,6 +16,7 @@ interface ChatWidgetProps {
   suggestedPrompts?: string[]
   height?: string // embedded mode only, e.g., '500px'
   messageLimit?: number // demo limit, default 15
+  pageContext?: { pathname: string }
 }
 
 export function ChatWidget({
@@ -26,8 +27,12 @@ export function ChatWidget({
   suggestedPrompts,
   height,
   messageLimit = 15,
+  pageContext,
 }: ChatWidgetProps) {
-  const { messages, sendMessage, status, messageCount, isAtLimit } = usePersonaChat(personaId)
+  const { messages, sendMessage, status, messageCount, isAtLimit } = usePersonaChat(
+    personaId,
+    pageContext
+  )
   const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
 
   // Send handler — uses AI SDK v6 sendMessage({ text })
