@@ -61,22 +61,33 @@ export const PricingPage: React.FC = () => {
 
       <div className="min-h-screen bg-bg-deep">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full mb-6">
-              <span className="text-sm font-medium text-text-secondary">
-                {t('pricing:hero.badge')}
-              </span>
+        <section className="relative pt-32 pb-16 px-12">
+          <div className="max-w-7xl mx-auto text-center">
+            <div style={{ animation: 'fadeIn 0.8s ease-out' }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full mb-6">
+                <span className="text-sm font-medium text-text-secondary">
+                  {t('pricing:hero.badge')}
+                </span>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+            <h1
+              className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
+            >
               {t('pricing:hero.title')}
             </h1>
-            <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-8">
+            <p
+              className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-8"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
+            >
               {t('pricing:hero.description')}
             </p>
 
             {/* Transparency Notice */}
-            <div className="inline-flex items-start gap-3 px-6 py-4 bg-accent-system/5 border border-accent-system/20 rounded-sm text-left max-w-2xl mx-auto">
+            <div
+              className="inline-flex items-start gap-3 px-6 py-4 bg-accent-system/5 border border-accent-system/20 rounded-card text-left max-w-2xl mx-auto"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
+            >
               <Info className="w-5 h-5 text-accent-system flex-shrink-0 mt-0.5" />
               <div className="text-sm text-text-secondary">
                 <strong className="text-text-primary">
@@ -101,10 +112,10 @@ export const PricingPage: React.FC = () => {
         <FAQSection additionalFAQs={pricingFAQs} initialVisible={5} />
 
         {/* Final CTA */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-bg-surface border border-border-primary rounded-sm p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <section className="py-16 px-12">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
                 {t('pricing:cta.title')}
               </h2>
               <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
@@ -116,7 +127,7 @@ export const PricingPage: React.FC = () => {
                 </CTAButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-sm hover:bg-bg-surface transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-btn hover:bg-bg-surface transition-all"
                 >
                   {t('pricing:cta.contact_button')}
                   <ArrowRight className="w-5 h-5" />
