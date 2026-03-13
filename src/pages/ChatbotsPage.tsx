@@ -1,118 +1,71 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
 import { ScrollReveal } from '../components/common/ScrollReveal'
 import { ProductMedia } from '../components/common/ProductMedia'
 import { Bot, MessageSquare, Users, Calendar, HelpCircle, CheckCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const useCases = [
-  {
-    icon: MessageSquare,
-    title: 'Customer Service',
-    description:
-      'Handle 70% of customer inquiries automatically — instant responses, 24/7 availability.',
-  },
-  {
-    icon: Users,
-    title: 'Lead Qualification',
-    description: 'Score and route leads around the clock. Never miss a hot prospect again.',
-  },
-  {
-    icon: Calendar,
-    title: 'Appointment Booking',
-    description:
-      'Fill your calendar without manual back-and-forth. Integrated with Calendly, Cal.com, and more.',
-  },
-  {
-    icon: HelpCircle,
-    title: 'FAQ Automation',
-    description:
-      'Consistent, accurate answers — always available. Trained on your specific knowledge base.',
-  },
-]
+const USE_CASE_KEYS = [
+  'customer_service',
+  'lead_qualification',
+  'appointment_booking',
+  'faq_automation',
+] as const
+const USE_CASE_ICONS: Record<string, LucideIcon> = {
+  customer_service: MessageSquare,
+  lead_qualification: Users,
+  appointment_booking: Calendar,
+  faq_automation: HelpCircle,
+}
 
-const processSteps = [
-  {
-    step: '01',
-    title: 'Discovery',
-    description:
-      'We map your use case, identify key intents, and plan integration with your existing tools.',
-  },
-  {
-    step: '02',
-    title: 'Build',
-    description:
-      'Custom LLM-powered chatbot, trained on your data. Multi-platform deployment ready.',
-  },
-  {
-    step: '03',
-    title: 'Optimize',
-    description:
-      'Ongoing improvement based on real conversation data. Monthly performance reports.',
-  },
-]
+const PROCESS_STEP_KEYS = ['discovery', 'build', 'optimize'] as const
+const PROCESS_STEP_NUMBERS: Record<string, string> = {
+  discovery: '01',
+  build: '02',
+  optimize: '03',
+}
 
-const pricingTiers = [
-  {
-    name: 'Basic',
-    price: '€1,500',
-    description: 'FAQ chatbot for one platform',
-    features: [
-      'FAQ chatbot',
-      '1 platform (web or WhatsApp)',
-      'Trained on your content',
-      '7-day delivery',
-    ],
-    highlighted: false,
-  },
-  {
-    name: 'Standard',
-    price: '€2,500 – €3,500',
-    description: 'Multi-intent with CRM integration',
-    features: [
-      'Multi-intent recognition',
-      'CRM integration',
-      'Analytics dashboard',
-      'Multi-platform',
-    ],
-    highlighted: true,
-  },
-  {
-    name: 'Custom',
-    price: '€5,000+',
-    description: 'Enterprise-grade AI chatbot',
-    features: [
-      'Full custom workflows',
-      'Advanced analytics',
-      'Multi-language support',
-      'Dedicated account manager',
-    ],
-    highlighted: false,
-  },
-]
+const PRICING_TIER_KEYS = ['basic', 'standard', 'custom'] as const
+const PRICING_TIER_CONFIG: Record<string, { highlighted: boolean }> = {
+  basic: { highlighted: false },
+  standard: { highlighted: true },
+  custom: { highlighted: false },
+}
 
-const faqs = [
-  {
-    q: 'What platforms can you deploy chatbots on?',
-    a: 'We deploy on websites (widget), WhatsApp, Slack, Discord, Facebook Messenger, and any platform with an API.',
-  },
-  {
-    q: 'How is the chatbot trained?',
-    a: 'We train on your existing documentation, FAQs, product info, and past support conversations. The bot learns your specific domain and brand voice.',
-  },
-  {
-    q: 'Can the chatbot hand off to a human agent?',
-    a: 'Yes. Smart escalation routes complex queries to your team via email, Slack, or your helpdesk tool — with full conversation context.',
-  },
-  {
-    q: 'What about data privacy?',
-    a: 'We follow GDPR best practices. Your data stays in your infrastructure. We can deploy models that run entirely on your own servers if required.',
-  },
-]
+const FAQ_KEYS = ['platforms', 'training', 'handoff', 'privacy'] as const
 
 export const ChatbotsPage: React.FC = () => {
+  const { t } = useTranslation(['chatbots', 'common'])
+
+  const useCases = USE_CASE_KEYS.map((key) => ({
+    icon: USE_CASE_ICONS[key],
+    title: t(`chatbots:use_cases.items.${key}.title`),
+    description: t(`chatbots:use_cases.items.${key}.description`),
+  }))
+
+  const processSteps = PROCESS_STEP_KEYS.map((key) => ({
+    step: PROCESS_STEP_NUMBERS[key],
+    title: t(`chatbots:process.steps.${key}.title`),
+    description: t(`chatbots:process.steps.${key}.description`),
+  }))
+
+  const pricingTiers = PRICING_TIER_KEYS.map((key) => ({
+    name: t(`chatbots:pricing.tiers.${key}.name`),
+    price: t(`chatbots:pricing.tiers.${key}.price`),
+    description: t(`chatbots:pricing.tiers.${key}.description`),
+    features: t(`chatbots:pricing.tiers.${key}.features`, { returnObjects: true }) as string[],
+    highlighted: PRICING_TIER_CONFIG[key].highlighted,
+  }))
+
+  const faqs = FAQ_KEYS.map((key) => ({
+    q: t(`chatbots:faq.items.${key}.q`),
+    a: t(`chatbots:faq.items.${key}.a`),
+  }))
+
   return (
     <>
       <SimpleHeader />
@@ -137,7 +90,7 @@ export const ChatbotsPage: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
                 <Bot className="w-4 h-4 text-accent-system" />
                 <span className="text-sm font-medium text-text-secondary">
-                  24/7 Lead Qualification
+                  {t('chatbots:hero.badge')}
                 </span>
               </div>
             </div>
@@ -146,15 +99,14 @@ export const ChatbotsPage: React.FC = () => {
               className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
             >
-              AI Chatbots That Never Sleep
+              {t('chatbots:hero.title')}
             </h1>
 
             <p
               className="text-xl text-text-muted leading-relaxed max-w-3xl mx-auto mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
-              Custom AI chatbots that answer questions, qualify leads, and book calls — while you
-              sleep. Integrated with your CRM, calendar, and support tools.
+              {t('chatbots:hero.description')}
             </p>
 
             <div
@@ -162,10 +114,10 @@ export const ChatbotsPage: React.FC = () => {
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
               <CTAButton size="lg" href="/demo" arrow>
-                See a Live Demo
+                {t('chatbots:hero.cta_primary')}
               </CTAButton>
               <CTAButton size="lg" variant="secondary" calendly>
-                Get a Free Strategy Session
+                {t('chatbots:hero.cta_secondary')}
               </CTAButton>
             </div>
           </div>
@@ -182,7 +134,7 @@ export const ChatbotsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                What Our Chatbots Do
+                {t('chatbots:use_cases.title')}
               </h2>
             </motion.div>
 
@@ -218,7 +170,7 @@ export const ChatbotsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                How We Build It
+                {t('chatbots:process.title')}
               </h2>
             </motion.div>
 
@@ -258,9 +210,9 @@ export const ChatbotsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Pricing
+                {t('chatbots:pricing.title')}
               </h2>
-              <p className="text-lg text-text-secondary">Maintenance retainer from €500/mo</p>
+              <p className="text-lg text-text-secondary">{t('chatbots:pricing.subtitle')}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -279,7 +231,7 @@ export const ChatbotsPage: React.FC = () => {
                 >
                   {tier.highlighted && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
-                      Most Popular
+                      {t('chatbots:pricing.most_popular')}
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-display text-text-primary mb-1">
@@ -301,7 +253,7 @@ export const ChatbotsPage: React.FC = () => {
                     variant={tier.highlighted ? 'primary' : 'secondary'}
                     className="w-full justify-center"
                   >
-                    Get Started
+                    {t('chatbots:pricing.cta')}
                   </CTAButton>
                 </motion.div>
               ))}
@@ -321,21 +273,27 @@ export const ChatbotsPage: React.FC = () => {
             >
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  70%
+                  {t('chatbots:trust_metrics.inquiries.value')}
                 </div>
-                <div className="text-sm text-text-muted">inquiries handled automatically</div>
+                <div className="text-sm text-text-muted">
+                  {t('chatbots:trust_metrics.inquiries.label')}
+                </div>
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  24/7
+                  {t('chatbots:trust_metrics.availability.value')}
                 </div>
-                <div className="text-sm text-text-muted">availability</div>
+                <div className="text-sm text-text-muted">
+                  {t('chatbots:trust_metrics.availability.label')}
+                </div>
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-                  CRM
+                  {t('chatbots:trust_metrics.crm.value')}
                 </div>
-                <div className="text-sm text-text-muted">fully integrated</div>
+                <div className="text-sm text-text-muted">
+                  {t('chatbots:trust_metrics.crm.label')}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -352,7 +310,7 @@ export const ChatbotsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
-                Frequently Asked Questions
+                {t('chatbots:faq.title')}
               </h2>
             </motion.div>
 
@@ -403,14 +361,13 @@ export const ChatbotsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                Get a Free Chatbot Strategy Session
+                {t('chatbots:final_cta.title')}
               </h2>
               <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                We'll analyze your use case and show you exactly how an AI chatbot can save your
-                team hours every week.
+                {t('chatbots:final_cta.description')}
               </p>
               <CTAButton size="lg" calendly arrow>
-                Book Free Session
+                {t('chatbots:final_cta.button')}
               </CTAButton>
             </motion.div>
           </div>
