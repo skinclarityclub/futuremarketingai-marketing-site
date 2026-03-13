@@ -15,6 +15,7 @@ import { StructuredDataPresets } from '../components/seo/StructuredData'
 import { SocialProof } from '../components/landing/SocialProof'
 import { FAQSection } from '../components/seo/FAQSection'
 import { TermDefinitions } from '../components/seo/TermDefinitions'
+import { CTAButton } from '../components/common/CTAButton'
 
 export const AboutPage: React.FC = () => {
   const { t } = useTranslation(['about', 'common'])
@@ -34,18 +35,20 @@ export const AboutPage: React.FC = () => {
       {/* Structured Data - Organization */}
       <StructuredDataPresets.organization />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="min-h-screen bg-bg-deep">
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-6">
-              <Rocket className="w-5 h-5 text-purple-400" />
-              <span className="text-sm font-medium text-purple-100">{t('about:hero.badge')}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full mb-6">
+              <Rocket className="w-5 h-5 text-accent-human" />
+              <span className="text-sm font-medium text-text-secondary">
+                {t('about:hero.badge')}
+              </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
               {t('about:hero.title')}
             </h1>
-            <p className="text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-2xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-8">
               {t('about:hero.tagline')}
             </p>
           </div>
@@ -54,18 +57,20 @@ export const AboutPage: React.FC = () => {
         {/* Mission */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-12">
-              <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-blue-400" />
+            <div className="bg-bg-surface border border-border-primary rounded-sm p-12">
+              <h2 className="text-3xl font-bold text-text-primary mb-6 flex items-center gap-3">
+                <Target className="w-8 h-8 text-accent-system" />
                 {t('about:mission.heading')}
               </h2>
-              <p className="text-lg text-blue-100 leading-relaxed mb-6">
+              <p className="text-lg text-text-secondary leading-relaxed mb-6">
                 {t('about:mission.text')}
               </p>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-text-primary mb-4">
                 {t('about:mission.why_heading')}
               </h3>
-              <p className="text-lg text-blue-100 leading-relaxed">{t('about:mission.why_text')}</p>
+              <p className="text-lg text-text-secondary leading-relaxed">
+                {t('about:mission.why_text')}
+              </p>
             </div>
           </div>
         </section>
@@ -73,7 +78,7 @@ export const AboutPage: React.FC = () => {
         {/* Timeline - Vision Section */}
         <section className="py-16 px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-12 text-center">
               {t('about:timeline.title')}
             </h2>
             <div className="space-y-8">
@@ -83,16 +88,16 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0 * 0.1 }}
-                className="relative border-l-4 border-white/20 pl-8 py-6 rounded-r-xl"
+                className="relative border-l-4 border-border-primary pl-8 py-6 rounded-r-sm"
               >
-                <div className="absolute -left-3 top-8 w-6 h-6 bg-blue-500 rounded-full border-4 border-slate-950" />
-                <div className="text-sm font-semibold text-blue-300 mb-2">
+                <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
+                <div className="text-sm font-semibold text-accent-system mb-2">
                   {t('about:timeline.eras.assisted.year')}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-2xl font-bold text-text-primary mb-3">
                   {t('about:timeline.eras.assisted.title')}
                 </h3>
-                <p className="text-blue-100 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   {t('about:timeline.eras.assisted.description')}
                 </p>
               </motion.div>
@@ -103,19 +108,19 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1 * 0.1 }}
-                className="relative border-l-4 border-blue-500 bg-blue-500/10 pl-8 py-6 rounded-r-xl"
+                className="relative border-l-4 border-accent-system bg-accent-system/10 pl-8 py-6 rounded-r-sm"
               >
-                <div className="absolute -left-3 top-8 w-6 h-6 bg-blue-500 rounded-full border-4 border-slate-950" />
-                <div className="text-sm font-semibold text-blue-300 mb-2">
+                <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
+                <div className="text-sm font-semibold text-accent-system mb-2">
                   {t('about:timeline.eras.autonomous.year')}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-2xl font-bold text-text-primary mb-3">
                   {t('about:timeline.eras.autonomous.title')}
-                  <span className="ml-3 text-lg text-blue-400">
+                  <span className="ml-3 text-lg text-accent-system">
                     {t('about:timeline.eras.autonomous.you_are_here')}
                   </span>
                 </h3>
-                <p className="text-blue-100 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   {t('about:timeline.eras.autonomous.description')}
                 </p>
               </motion.div>
@@ -126,27 +131,27 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 2 * 0.1 }}
-                className="relative border-l-4 border-white/20 pl-8 py-6 rounded-r-xl"
+                className="relative border-l-4 border-border-primary pl-8 py-6 rounded-r-sm"
               >
-                <div className="absolute -left-3 top-8 w-6 h-6 bg-blue-500 rounded-full border-4 border-slate-950" />
-                <div className="text-sm font-semibold text-blue-300 mb-2">
+                <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
+                <div className="text-sm font-semibold text-accent-system mb-2">
                   {t('about:timeline.eras.standard.year')}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-2xl font-bold text-text-primary mb-3">
                   {t('about:timeline.eras.standard.title')}
                 </h3>
-                <p className="text-blue-100 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   {t('about:timeline.eras.standard.description')}
                 </p>
               </motion.div>
             </div>
 
             {/* Key Message */}
-            <div className="mt-12 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl text-center">
-              <p className="text-xl font-semibold text-white mb-2">
+            <div className="mt-12 p-8 bg-accent-system/5 border border-accent-system/20 rounded-sm text-center">
+              <p className="text-xl font-semibold text-text-primary mb-2">
                 {t('about:timeline.key_message.title')}
               </p>
-              <p className="text-blue-100">{t('about:timeline.key_message.description')}</p>
+              <p className="text-text-secondary">{t('about:timeline.key_message.description')}</p>
             </div>
           </div>
         </section>
@@ -163,26 +168,20 @@ export const AboutPage: React.FC = () => {
         {/* Final CTA */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-bg-surface border border-border-primary rounded-sm p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
                 {t('about:cta.title')}
               </h2>
-              <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 {t('about:cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-                >
+                <CTAButton calendly arrow size="lg">
                   {t('about:cta.demo_button')}
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+                </CTAButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-sm hover:bg-bg-surface transition-all"
                 >
                   {t('about:cta.contact_button')}
                   <ArrowRight className="w-5 h-5" />
