@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: planning
-stopped_at: Completed 17-04-PLAN.md
-last_updated: '2026-03-13T19:19:25.508Z'
+current_plan: 18-02 complete
+status: executing
+stopped_at: Completed 18-02-PLAN.md
+last_updated: '2026-03-13T19:44:53.000Z'
 progress:
   total_phases: 12
   completed_phases: 10
-  total_plans: 37
-  completed_plans: 37
+  total_plans: 39
+  completed_plans: 38
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 17 — ChatWidget UI Components
-- **Current Plan:** Not started
-- **Status:** Ready to plan
-- **Last completed:** Phase 17 Plan 04 — ChatWidget + FloatingButton: Dual-Mode Widget + Barrel Exports
-- **Last session:** 2026-03-13T19:00:00Z
-- **Stopped at:** Completed 17-04-PLAN.md
+- **Phase:** 18 — ChatbotsPage Demo Playground
+- **Current Plan:** 18-02 complete
+- **Status:** Executing
+- **Last completed:** Phase 18 Plan 02 — CTA & Showcase Components
+- **Last session:** 2026-03-13T19:47:42.796Z
+- **Stopped at:** Completed 18-02-PLAN.md
 
 ## Decisions
 
@@ -106,6 +106,8 @@ progress:
 - [Phase 17-04]: FloatingButton uses CSS @keyframes breathe instead of Framer Motion for always-on animation -- lighter weight
 - [Phase 17-04]: ChatWidget dual-mode via single component with mode prop -- shared hook/state logic cleaner than separate components
 - [Phase 17-04]: Barrel index.ts exports all chatbot components including tool-results for Phase 18/19 consumers
+- [Phase 18]: [18-02]: CSS dividers with animated gradient instead of SVG for connection lines -- simpler and responsive-friendly
+- [Phase 18]: [18-02]: Inline style tag for brainPulse/expandLine keyframes -- component-scoped CSS animations, no global pollution
 
 ## Context
 
