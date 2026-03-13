@@ -1,4 +1,4 @@
-import { streamText } from 'ai'
+import { streamText, convertToModelMessages } from 'ai'
 import { anthropic } from '@ai-sdk/anthropic'
 import { validateInput } from './security'
 import { checkAllRateLimits } from './rate-limiter'
@@ -50,7 +50,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     }
 
     // 4. Destructure
-    const { personaId, message, sessionId, conversationHistory, context } = body
+    const { personaId, message, sessionId, conversationHistory, messages, context } = body
 
     // 5. Validate required fields
     if (!personaId || typeof personaId !== 'string') {
@@ -59,9 +59,6 @@ export async function handleChatRequest(request: Request): Promise<Response> {
         { status: 400, headers: CORS_HEADERS }
       )
     }
-    if (!message || typeof message !== 'string') {
-      return Response.json({ error: 'message is required' }, { status: 400, headers: CORS_HEADERS })
-    }
     if (!sessionId || typeof sessionId !== 'string') {
       return Response.json(
         { error: 'sessionId is required' },
@@ -69,8 +66,20 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       )
     }
 
+    // Determine mode: useChat sends `messages` array, legacy sends `message` string
+    const isUseChatMode = Array.isArray(messages) && messages.length > 0
+
+    if (!isUseChatMode && (!message || typeof message !== 'string')) {
+      return Response.json({ error: 'message is required' }, { status: 400, headers: CORS_HEADERS })
+    }
+
+    // Extract the user message text for validation and topic routing
+    const userMessageText = isUseChatMode
+      ? (messages[messages.length - 1]?.content ?? '')
+      : (message as string)
+
     // 6. Validate input via security module
-    const validation = validateInput(message)
+    const validation = validateInput(userMessageText)
     if (!validation.valid) {
       return Response.json({ error: validation.reason }, { status: 400, headers: CORS_HEADERS })
     }
@@ -101,44 +110,45 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     }
 
     // 9. Route knowledge via topic router
-    const topicResult = routeToKnowledge(message, persona.topicDefinitions)
+    const topicResult = routeToKnowledge(userMessageText, persona.topicDefinitions)
 
     // 10. Build system messages with prompt caching
     const systemMessages = buildSystemMessages(persona, topicResult, context)
 
     // 11. Detect complexity for model routing
-    const complexity = detectComplexity(
-      message,
-      conversationHistory?.length ?? 0,
-      persona.complexityKeywords
-    )
+    const historyLength = isUseChatMode ? messages.length : (conversationHistory?.length ?? 0)
+    const complexity = detectComplexity(userMessageText, historyLength, persona.complexityKeywords)
     const modelId = MODEL_IDS[complexity]
 
     // 12. Create persona tools
     const tools = createPersonaTools(persona)
 
-    // 13. Stream response
+    // 13. Build messages for streamText
+    const modelMessages = isUseChatMode
+      ? await convertToModelMessages(messages as Parameters<typeof convertToModelMessages>[0])
+      : [
+          ...(conversationHistory ?? []).map((msg) => ({
+            role: msg.role,
+            content: msg.content,
+          })),
+          { role: 'user' as const, content: validation.sanitizedInput ?? (message as string) },
+        ]
+
+    // 14. Stream response
     const result = streamText({
       model: anthropic(modelId),
-      messages: [
-        ...systemMessages,
-        ...(conversationHistory ?? []).map((msg) => ({
-          role: msg.role,
-          content: msg.content,
-        })),
-        { role: 'user' as const, content: validation.sanitizedInput ?? message },
-      ],
+      messages: [...systemMessages, ...modelMessages],
       tools: Object.keys(tools).length > 0 ? tools : undefined,
       toolChoice: Object.keys(tools).length > 0 ? 'auto' : undefined,
       maxOutputTokens: persona.maxTokens,
       temperature: persona.temperature,
     })
 
-    return result.toTextStreamResponse({
+    return result.toUIMessageStreamResponse({
       headers: CORS_HEADERS,
     })
   } catch (error) {
-    // 14. Unexpected error handler
+    // 15. Unexpected error handler
     console.error('[chatbot-engine] Unexpected error:', error)
     return Response.json({ error: 'Internal server error' }, { status: 500, headers: CORS_HEADERS })
   }

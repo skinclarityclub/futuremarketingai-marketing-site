@@ -2,12 +2,13 @@ export type ComplexityLevel = 'haiku' | 'sonnet'
 
 export interface ChatRequest {
   personaId: string
-  message: string
+  message?: string
   sessionId: string
   conversationHistory?: Array<{
     role: 'user' | 'assistant'
     content: string
   }>
+  messages?: Array<{ role: string; content: string; parts?: unknown[] }>
   context?: {
     language?: string
     currentPage?: string

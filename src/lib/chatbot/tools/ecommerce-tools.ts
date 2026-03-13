@@ -17,7 +17,10 @@ export const ecommerceTools = {
         .enum(['dry', 'oily', 'combination', 'normal', 'sensitive'])
         .optional()
         .describe('Filter by skin type suitability'),
-      concern: z.string().optional().describe('Filter by skin concern (e.g. acne, hydration, brightening)'),
+      concern: z
+        .string()
+        .optional()
+        .describe('Filter by skin concern (e.g. acne, hydration, brightening)'),
       limit: z.number().min(1).max(5).default(3).describe('Maximum number of results to return'),
     }),
     execute: async ({ query, skinType, concern, limit }) => {
@@ -30,7 +33,7 @@ export const ecommerceTools = {
       if (concern) {
         const lowerConcern = concern.toLowerCase()
         filtered = filtered.filter((p) =>
-          p.concerns.some((c) => c.toLowerCase().includes(lowerConcern)),
+          p.concerns.some((c) => c.toLowerCase().includes(lowerConcern))
         )
       }
 
@@ -39,7 +42,7 @@ export const ecommerceTools = {
         filtered = filtered.filter(
           (p) =>
             p.name.toLowerCase().includes(lowerQuery) ||
-            p.description.toLowerCase().includes(lowerQuery),
+            p.description.toLowerCase().includes(lowerQuery)
         )
       }
 
@@ -62,8 +65,7 @@ export const ecommerceTools = {
   }),
 
   build_routine: tool({
-    description:
-      'Build a personalized skincare routine for a given skin type and time of day.',
+    description: 'Build a personalized skincare routine for a given skin type and time of day.',
     inputSchema: z.object({
       skinType: z
         .enum(['dry', 'oily', 'combination', 'normal', 'sensitive'])
@@ -74,21 +76,43 @@ export const ecommerceTools = {
         .describe('Morning routine, evening routine, or both'),
     }),
     execute: async ({ skinType, timeOfDay }) => {
-      const findProduct = (concerns: string[]): { id: string; name: string; price: number } | null => {
+      const findProduct = (
+        concerns: string[]
+      ): { id: string; name: string; price: number } | null => {
         const match = PRODUCT_CATALOG.find(
           (p) =>
             p.skinTypes.includes(skinType) &&
-            concerns.some((c) => p.concerns.some((pc) => pc.includes(c))),
+            concerns.some((c) => p.concerns.some((pc) => pc.includes(c)))
         )
         return match ? { id: match.id, name: match.name, price: match.price } : null
       }
 
-      const cleanser = findProduct(['cleansing']) || { id: 'gentle-cleansing-foam', name: 'Gentle Cleansing Foam', price: 24.95 }
-      const toner = findProduct(['balance', 'pores']) || { id: 'balancing-toner', name: 'Balancing Toner', price: 19.95 }
-      const daySerum = findProduct(['brightening', 'hydration']) || { id: 'hydra-boost-serum', name: 'Hydra Boost Serum', price: 34.95 }
-      const moisturizer = findProduct(['barrier repair', 'dryness', 'hydration']) || { id: 'barrier-repair-cream', name: 'Barrier Repair Cream', price: 29.95 }
+      const cleanser = findProduct(['cleansing']) || {
+        id: 'gentle-cleansing-foam',
+        name: 'Gentle Cleansing Foam',
+        price: 24.95,
+      }
+      const toner = findProduct(['balance', 'pores']) || {
+        id: 'balancing-toner',
+        name: 'Balancing Toner',
+        price: 19.95,
+      }
+      const daySerum = findProduct(['brightening', 'hydration']) || {
+        id: 'hydra-boost-serum',
+        name: 'Hydra Boost Serum',
+        price: 34.95,
+      }
+      const moisturizer = findProduct(['barrier repair', 'dryness', 'hydration']) || {
+        id: 'barrier-repair-cream',
+        name: 'Barrier Repair Cream',
+        price: 29.95,
+      }
       const spf = { id: 'daily-spf-50', name: 'Daily SPF 50', price: 27.95 }
-      const nightTreatment = findProduct(['overnight repair', 'anti-aging']) || { id: 'night-recovery-mask', name: 'Night Recovery Mask', price: 36.95 }
+      const nightTreatment = findProduct(['overnight repair', 'anti-aging']) || {
+        id: 'night-recovery-mask',
+        name: 'Night Recovery Mask',
+        price: 36.95,
+      }
 
       const morning: ProductStep[] = [
         { step: 'Cleanser', product: cleanser },
