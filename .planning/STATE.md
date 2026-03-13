@@ -75,4 +75,5 @@ progress:
 
 - Phase 10 added: Homepage Restructuring & Marketing Machine Page
 - Phase 11 added: Living System Full Rebuild — structural rebuild of all pages to match prototype-2 design
+- Phase 11 Plan 01 complete: Foundation layer — DM Sans typography, GradientMesh 3-blob component, CSS keyframe animations, card/btn border-radius tokens
 - Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
