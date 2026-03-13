@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { LoadingFallback } from '../components'
@@ -10,9 +9,9 @@ import { LoadingFallback } from '../components'
  * LegalPage - Displays Privacy Policy, Cookie Policy, or Terms of Service
  *
  * Routes:
- * - /privacy → Privacy Policy
- * - /cookies → Cookie Policy
- * - /terms → Terms of Service
+ * - /privacy -> Privacy Policy
+ * - /cookies -> Cookie Policy
+ * - /terms -> Terms of Service
  *
  * Automatically selects language (NL/EN) based on i18n
  */
@@ -81,15 +80,15 @@ export function LegalPage() {
 
   if (error || !type || !docMap[type]) {
     return (
-      <div className="min-h-screen bg-bg-deep flex items-center justify-center p-6">
+      <div className="min-h-screen bg-bg-deep flex items-center justify-center p-12">
         <div className="max-w-md w-full text-center">
-          <h1 className="text-4xl font-bold text-text-primary mb-4">404</h1>
+          <h1 className="text-4xl font-bold font-display text-text-primary mb-4">404</h1>
           <p className="text-text-secondary mb-6">
             {lang === 'nl' ? 'Document niet gevonden' : 'Document not found'}
           </p>
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-3 bg-accent-system hover:bg-accent-system/90 text-bg-deep rounded-sm transition-colors"
+            className="px-6 py-3 bg-accent-system hover:bg-accent-system/90 text-bg-deep rounded-btn transition-colors"
           >
             {lang === 'nl' ? 'Terug naar Demo' : 'Back to Demo'}
           </button>
@@ -104,47 +103,50 @@ export function LegalPage() {
   return (
     <div className="min-h-screen bg-bg-deep">
       {/* Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <header
         className="border-b border-border-primary bg-bg-surface sticky top-0 z-50"
+        style={{ animation: 'fadeIn 0.5s ease-out' }}
       >
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-text-primary">{title}</h1>
+        <div className="max-w-7xl mx-auto px-12 py-4 flex items-center justify-between">
+          <h1 className="text-2xl font-bold font-display text-text-primary">{title}</h1>
           <button
             onClick={() => navigate('/')}
-            className="px-4 py-2 text-sm text-text-secondary hover:text-text-primary border border-border-primary hover:border-accent-system rounded-sm transition-all"
+            className="px-4 py-2 text-sm text-text-secondary hover:text-text-primary border border-border-primary hover:border-accent-system rounded-btn transition-all"
           >
-            {lang === 'nl' ? '← Terug naar Demo' : '← Back to Demo'}
+            {lang === 'nl' ? 'Terug naar Demo' : 'Back to Demo'}
           </button>
         </div>
-      </motion.header>
+      </header>
 
       {/* Content */}
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="max-w-4xl mx-auto px-6 py-12"
+      <main
+        className="max-w-7xl mx-auto px-12 py-12"
+        style={{ animation: 'fadeIn 0.8s ease-out 0.2s both' }}
       >
         <article className="prose prose-invert prose-lg max-w-none">
-          <div className="bg-bg-surface border border-border-primary rounded-sm p-8 md:p-12">
+          <div className="bg-white/[0.02] border border-border-primary rounded-card p-8 md:p-12">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 // Custom component styling for better readability
                 h1: ({ children, ...props }) => (
-                  <h1 className="text-4xl font-bold text-text-primary mb-6" {...props}>
+                  <h1 className="text-4xl font-bold font-display text-text-primary mb-6" {...props}>
                     {children}
                   </h1>
                 ),
                 h2: ({ children, ...props }) => (
-                  <h2 className="text-3xl font-bold text-text-primary mt-12 mb-4" {...props}>
+                  <h2
+                    className="text-3xl font-bold font-display text-text-primary mt-12 mb-4"
+                    {...props}
+                  >
                     {children}
                   </h2>
                 ),
                 h3: ({ children, ...props }) => (
-                  <h3 className="text-2xl font-semibold text-text-secondary mt-8 mb-3" {...props}>
+                  <h3
+                    className="text-2xl font-semibold font-display text-text-secondary mt-8 mb-3"
+                    {...props}
+                  >
                     {children}
                   </h3>
                 ),
@@ -208,7 +210,7 @@ export function LegalPage() {
                 ),
                 code: ({ children, ...props }) => (
                   <code
-                    className="bg-bg-elevated text-accent-system px-2 py-1 rounded-sm text-sm"
+                    className="bg-bg-elevated text-accent-system px-2 py-1 rounded-sm text-sm font-mono"
                     {...props}
                   >
                     {children}
@@ -223,11 +225,9 @@ export function LegalPage() {
         </article>
 
         {/* Footer Links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
+        <div
           className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-text-muted"
+          style={{ animation: 'fadeIn 0.8s ease-out 0.4s both' }}
         >
           {Object.entries(docMap)
             .filter(([key]) => key !== type)
@@ -240,8 +240,8 @@ export function LegalPage() {
                 {lang === 'nl' ? doc.titleNl : doc.title}
               </button>
             ))}
-        </motion.div>
-      </motion.main>
+        </div>
+      </main>
     </div>
   )
 }

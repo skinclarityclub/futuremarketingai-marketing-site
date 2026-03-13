@@ -15,7 +15,6 @@ import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { SEOHead } from '../components/seo/SEOHead'
 import { Button } from '../components/ui/button'
 import { Mail, Calendar, Linkedin, Twitter, Send, CheckCircle2, MapPin, Phone } from 'lucide-react'
-import { motion } from 'framer-motion'
 import { CTAButton } from '../components/common/CTAButton'
 
 export const ContactPage: React.FC = () => {
@@ -63,34 +62,30 @@ export const ContactPage: React.FC = () => {
         canonical="https://futuremarketingai.com/contact"
       />
 
-      <div className="min-h-screen bg-bg-deep px-6 py-20">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen bg-bg-deep px-12 py-20">
+        <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-6">
+          <div className="text-center mb-16" style={{ animation: 'fadeIn 0.8s ease-out' }}>
+            <h1
+              className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
+            >
               {t('contact:hero.title')}
             </h1>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            <p
+              className="text-xl text-text-secondary max-w-3xl mx-auto"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
+            >
               {t('contact:hero.description')}
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <motion.div
-              className="bg-bg-surface border border-border-primary rounded-sm p-8"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            {/* Contact Form — Glass Container */}
+            <div className="bg-white/[0.04] backdrop-blur-[12px] border border-white/[0.08] rounded-card p-10">
               {!isSubmitted ? (
                 <>
-                  <h2 className="text-2xl font-bold text-text-primary mb-6">
+                  <h2 className="text-2xl font-bold font-display text-text-primary mb-6">
                     {t('contact:form.title')}
                   </h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -108,7 +103,7 @@ export const ContactPage: React.FC = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-bg-elevated border border-border-primary rounded-sm text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system focus:border-accent-system transition-all"
+                        className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-btn text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
                         placeholder={t('contact:form.name_placeholder')}
                         required
                       />
@@ -128,7 +123,7 @@ export const ContactPage: React.FC = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-bg-elevated border border-border-primary rounded-sm text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system focus:border-accent-system transition-all"
+                        className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-btn text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
                         placeholder={t('contact:form.email_placeholder')}
                         required
                       />
@@ -148,7 +143,7 @@ export const ContactPage: React.FC = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-bg-elevated border border-border-primary rounded-sm text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system focus:border-accent-system transition-all"
+                        className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-btn text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
                         placeholder={t('contact:form.company_placeholder')}
                       />
                     </div>
@@ -167,7 +162,7 @@ export const ContactPage: React.FC = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full px-4 py-3 bg-bg-elevated border border-border-primary rounded-sm text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system focus:border-accent-system transition-all resize-none"
+                        className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-btn text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all resize-none"
                         placeholder={t('contact:form.message_placeholder')}
                         required
                       />
@@ -176,7 +171,7 @@ export const ContactPage: React.FC = () => {
                     {/* Submit Button */}
                     <Button
                       type="submit"
-                      className="w-full bg-accent-system hover:bg-accent-system/90 text-bg-deep font-semibold py-3 rounded-sm transition-all"
+                      className="w-full bg-accent-system hover:bg-accent-system/90 text-bg-deep font-semibold py-3 rounded-btn transition-all"
                       disabled={isLoading}
                     >
                       {isLoading ? (
@@ -196,32 +191,27 @@ export const ContactPage: React.FC = () => {
               ) : (
                 <div className="text-center py-12">
                   <CheckCircle2 className="w-16 h-16 text-accent-system mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-text-primary mb-3">
+                  <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
                     {t('contact:form.success_title')}
                   </h3>
                   <p className="text-text-secondary mb-6">{t('contact:form.success_message')}</p>
                   <Button
                     onClick={() => setIsSubmitted(false)}
                     variant="outline"
-                    className="bg-bg-elevated border-border-primary text-text-primary hover:bg-bg-surface"
+                    className="bg-bg-elevated border-border-primary text-text-primary hover:bg-bg-surface rounded-btn"
                   >
                     {t('contact:form.success_button')}
                   </Button>
                 </div>
               )}
-            </motion.div>
+            </div>
 
             {/* Contact Info & CTAs */}
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div className="space-y-6">
               {/* Book a Demo */}
-              <div className="bg-accent-system/10 border border-accent-system/20 rounded-sm p-6">
+              <div className="card-gradient-border rounded-card bg-accent-system/10 border border-accent-system/20 p-6 transition-all duration-500 hover:bg-accent-system/15 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
                 <Calendar className="w-12 h-12 text-accent-system mb-4" />
-                <h3 className="text-2xl font-bold text-text-primary mb-3">
+                <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
                   {t('contact:book_demo.title')}
                 </h3>
                 <p className="text-text-secondary mb-4">{t('contact:book_demo.description')}</p>
@@ -232,8 +222,8 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {/* Direct Contact */}
-              <div className="bg-bg-surface border border-border-primary rounded-sm p-6">
-                <h3 className="text-xl font-bold text-text-primary mb-4">
+              <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-6 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <h3 className="text-xl font-bold font-display text-text-primary mb-4">
                   {t('contact:direct_contact.title')}
                 </h3>
                 <div className="space-y-4">
@@ -282,8 +272,8 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-bg-surface border border-border-primary rounded-sm p-6">
-                <h3 className="text-xl font-bold text-text-primary mb-4">
+              <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-6 transition-all duration-500 hover:bg-white/[0.03]">
+                <h3 className="text-xl font-bold font-display text-text-primary mb-4">
                   {t('contact:social.title')}
                 </h3>
                 <div className="flex gap-4">
@@ -291,7 +281,7 @@ export const ContactPage: React.FC = () => {
                     href="https://linkedin.com/company/futuremarketingai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 bg-accent-system/10 border border-accent-system/20 rounded-sm text-accent-system hover:bg-accent-system/20 hover:text-accent-system/80 transition-all"
+                    className="flex items-center justify-center w-12 h-12 bg-accent-system/10 border border-accent-system/20 rounded-btn text-accent-system hover:bg-accent-system/20 hover:text-accent-system/80 transition-all"
                     aria-label={t('contact:social.linkedin_aria')}
                   >
                     <Linkedin className="w-6 h-6" />
@@ -300,7 +290,7 @@ export const ContactPage: React.FC = () => {
                     href="https://twitter.com/FutureMarketAI"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 bg-accent-system/10 border border-accent-system/20 rounded-sm text-accent-system hover:bg-accent-system/20 hover:text-accent-system/80 transition-all"
+                    className="flex items-center justify-center w-12 h-12 bg-accent-system/10 border border-accent-system/20 rounded-btn text-accent-system hover:bg-accent-system/20 hover:text-accent-system/80 transition-all"
                     aria-label={t('contact:social.twitter_aria')}
                   >
                     <Twitter className="w-6 h-6" />
@@ -309,26 +299,26 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {/* Not ready yet? */}
-              <div className="bg-accent-human/10 border border-accent-human/20 rounded-sm p-6 text-center">
+              <div className="card-gradient-border rounded-card bg-accent-human/10 border border-accent-human/20 p-6 text-center transition-all duration-500 hover:bg-accent-human/15">
                 <p className="text-text-secondary mb-4">{t('contact:not_ready.text')}</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href="/demo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-4 py-2 bg-bg-elevated border border-border-primary rounded-sm text-text-primary hover:bg-bg-surface transition-all text-sm"
+                    className="inline-flex items-center justify-center px-4 py-2 bg-bg-elevated border border-border-primary rounded-btn text-text-primary hover:bg-bg-surface transition-all text-sm"
                   >
                     {t('contact:not_ready.demo_button')}
                   </a>
                   <Link
                     to="/pricing"
-                    className="inline-flex items-center justify-center px-4 py-2 bg-bg-elevated border border-border-primary rounded-sm text-text-primary hover:bg-bg-surface transition-all text-sm"
+                    className="inline-flex items-center justify-center px-4 py-2 bg-bg-elevated border border-border-primary rounded-btn text-text-primary hover:bg-bg-surface transition-all text-sm"
                   >
                     {t('contact:not_ready.pricing_button')}
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
