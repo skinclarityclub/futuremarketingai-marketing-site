@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: planning
-stopped_at: Completed 16-03-PLAN.md
-last_updated: '2026-03-13T18:13:36.430Z'
+current_plan: '17-03'
+status: executing
+stopped_at: Completed 17-02-PLAN.md
+last_updated: '2026-03-13T18:20:00.000Z'
 progress:
   total_phases: 12
   completed_phases: 9
   total_plans: 37
-  completed_plans: 34
+  completed_plans: 35
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 17 — ChatWidget UI Components
-- **Current Plan:** Not started
-- **Status:** Ready to plan
-- **Last completed:** Phase 17 Plan 01 — Foundation: Engine Compatibility, Chat Store, usePersonaChat Hook
-- **Last session:** 2026-03-13T18:09:23.402Z
-- **Stopped at:** Completed 16-03-PLAN.md
+- **Current Plan:** 17-03
+- **Status:** Executing
+- **Last completed:** Phase 17 Plan 02 — Core Chat UI: ChatHeader, ChatMessages, ChatInput, SuggestedPrompts
+- **Last session:** 2026-03-13T18:20:00Z
+- **Stopped at:** Completed 17-02-PLAN.md
 
 ## Decisions
 
@@ -99,6 +99,9 @@ progress:
 - [Phase 17]: [17-01]: Demo message limit set at 15 messages per session
 - [Phase 16-03]: AnyToolRecord type (Tool<any, any>) used for PERSONA_TOOLS map — each persona has differently-typed Zod schemas
 - [Phase 16-03]: Barrel index.ts imports ./personas for side-effect registration — consumers importing from chatbot barrel get personas automatically
+- [Phase 17]: [17-02]: ToolResultPlaceholder uses cast via unknown for tool part types -- Plan 03 ToolResultRenderer replaces with proper typed handling
+- [Phase 17]: [17-02]: CSS-only animations (fadeIn, chatDotBounce) on messages instead of Framer Motion -- lighter weight per plan spec
+- [Phase 17]: [17-02]: Auto-scroll uses 80px threshold from bottom to detect manual scroll-up
 
 ## Context
 
@@ -147,3 +150,4 @@ progress:
 - Phase 15 COMPLETE: All 3 plans done -- Chatbot Engine Foundation finished (full pipeline from POST /api/chatbot to streaming Claude response)
 - Phase 17 added: ChatWidget UI Components -- shared ChatWidget React component for floating and embedded chat modes
 - Phase 17 Plan 01 complete: Foundation -- engine switched to toUIMessageStreamResponse, chatbotStore Zustand store, usePersonaChat hook with DefaultChatTransport
+- Phase 17 Plan 02 complete: Core Chat UI -- ChatHeader, ChatMessages (parts-based rendering, auto-scroll, typing indicator), ChatInput (local useState, auto-resize), SuggestedPrompts

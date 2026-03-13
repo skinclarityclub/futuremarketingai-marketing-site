@@ -20,7 +20,7 @@
 | 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
 | 15    | 3/3                             | Complete    | 2026-03-13 | 0%       |
 | 16    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 17    | 1/4                             | In Progress |            | 0%       |
+| 17    | 2/4                             | In Progress |            | 0%       |
 | 18    | ChatbotsPage Demo Playground    | Pending     | —          | 0%       |
 | 19    | Homepage Concierge + Demo Guide | Pending     | —          | 0%       |
 
