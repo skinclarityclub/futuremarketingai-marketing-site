@@ -13,7 +13,7 @@
 | 7     | SKC Case Study Development     | Pending     | —          | 0%       |
 | 8     | Language Expansion             | Pending     | —          | 0%       |
 | 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
-| 10    | 1/3                            | In Progress |            | 0%       |
+| 10    | 2/3                            | In Progress |            | 0%       |
 
 ## Phases
 

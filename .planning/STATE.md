@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 10-02
+current_plan: 10-03
 status: in-progress
-stopped_at: Completed 10-01-PLAN.md — homepage restructured as FutureAI hub with service cards grid
-last_updated: '2026-03-13T02:21:00.000Z'
+stopped_at: Completed 10-02-PLAN.md — MarketingMachinePage created with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof
+last_updated: '2026-03-13T02:27:47.000Z'
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 10 — Homepage Restructuring & Marketing Machine Page
-- **Current Plan:** 10-02 (next)
+- **Current Plan:** 10-03 (next)
 - **Status:** In Progress
-- **Last completed:** Phase 10 Plan 01 — Homepage restructured as FutureAI hub (service cards grid, VisionTimeline/FeatureShowcase removed, SimpleHeader branding updated)
-- **Last session:** 2026-03-13T02:21:00.000Z
-- **Stopped at:** Completed 10-01-PLAN.md — homepage restructured as FutureAI hub with service cards grid
+- **Last completed:** Phase 10 Plan 02 — /marketing-machine page created (MarketingMachinePage with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof, pricing teaser, Calendly CTA)
+- **Last session:** 2026-03-13T02:27:37.764Z
+- **Stopped at:** Completed 10-02-PLAN.md — MarketingMachinePage created with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof
 
 ## Decisions
 
@@ -48,6 +48,8 @@ progress:
 - [10-01]: MotionLink = motion(Link) pattern for animated service cards — enables both SPA navigation and Framer Motion whileHover animations
 - [10-01]: Primary homepage CTA uses #services hash scroll (not /automations) — low-friction above-fold action, Calendly CTA placed after service grid
 - [10-01]: solution_section i18n keys preserved in common.json — Plan 02 will reference them on marketing-machine page
+- [Phase 10-02]: MarketingMachinePage uses lazy imports for all heavy section components (VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof) with Loader2 Suspense fallback
+- [Phase 10-02]: Pricing teaser on /marketing-machine links to /pricing — avoids duplication, consistent with homepage service cards pattern
 
 ## Context
 
@@ -60,7 +62,8 @@ progress:
 - Full-site visual audit passed: zero old indigo/purple/blue palette elements on any page
 - Phase 10 in progress — Homepage Restructuring & Marketing Machine Page
 - Phase 10 Plan 01 complete: Homepage restructured as FutureAI hub — 4 service cards, VisionTimeline/FeatureShowcase removed, SimpleHeader branding updated, legacy gradient wrapper fixed
-- Next: Phase 10 Plan 02 — Create MarketingMachinePage with VisionTimeline, FeatureShowcase, and marketing content relocated from homepage
+- Phase 10 Plan 02 complete: /marketing-machine page created — MarketingMachinePage with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof, pricing teaser, Calendly CTA; route and marketingPaths registered in App.tsx
+- Next: Phase 10 Plan 03 — SimpleHeader branding update (show FutureMarketingAI on /marketing-machine)
 
 ### Roadmap Evolution
 
