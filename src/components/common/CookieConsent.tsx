@@ -16,6 +16,9 @@ import { initAnalyticsIntegration } from '../../utils/analytics-integration'
  * - CCPA (California): $7,500 per violation
  * - Must get consent BEFORE placing cookies
  *
+ * Note: react-cookie-consent injects inline styles that override Tailwind.
+ * All styling uses the library's style/buttonStyle/declineButtonStyle props.
+ *
  * @returns Cookie consent banner component
  */
 export function CookieConsentBanner() {
@@ -48,9 +51,9 @@ export function CookieConsentBanner() {
         })
       }
 
-      console.log('✅ Analytics initialized after cookie consent')
+      console.log('Analytics initialized after cookie consent')
     } catch (error) {
-      console.error('❌ Failed to initialize analytics:', error)
+      console.error('Failed to initialize analytics:', error)
     }
   }
 
@@ -69,7 +72,7 @@ export function CookieConsentBanner() {
   const handleDecline = () => {
     setConsentGiven(false)
     localStorage.setItem('cookieConsent', 'false')
-    console.log('❌ Analytics disabled - user declined cookies')
+    console.log('Analytics disabled - user declined cookies')
   }
 
   // Don't show banner if consent already given
@@ -93,34 +96,34 @@ export function CookieConsentBanner() {
       declineButtonClasses="cookie-consent-decline"
       contentClasses="cookie-consent-content"
       style={{
-        background: 'rgba(15, 23, 42, 0.98)', // slate-900 with opacity
-        backdropFilter: 'blur(12px)',
+        background: '#111520', // bg-bg-surface
+        borderTop: '1px solid rgba(0, 212, 170, 0.2)', // accent-system teal border
+        color: '#E8ECF4', // text-text-primary
         padding: '20px',
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: '20px',
-        borderTop: '1px solid rgba(99, 102, 241, 0.3)', // indigo-500
         zIndex: 9999,
       }}
       buttonStyle={{
-        background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-        color: '#fff',
+        background: '#00D4AA', // accent-system teal
+        color: '#0A0D14', // bg-bg-deep (dark text on teal)
         fontSize: '14px',
         fontWeight: '600',
         padding: '12px 24px',
-        borderRadius: '8px',
+        borderRadius: '0.125rem', // rounded-sm
         border: 'none',
         cursor: 'pointer',
         transition: 'all 0.2s ease',
       }}
       declineButtonStyle={{
-        background: 'rgba(71, 85, 105, 0.5)', // slate-600
-        color: '#e2e8f0', // slate-200
+        background: 'transparent',
+        color: '#9BA3B5', // text-text-secondary
         fontSize: '14px',
         fontWeight: '500',
         padding: '12px 24px',
-        borderRadius: '8px',
-        border: '1px solid rgba(148, 163, 184, 0.3)', // slate-400
+        borderRadius: '0.125rem', // rounded-sm
+        border: '1px solid rgba(90, 99, 120, 0.3)', // border-border-primary
         cursor: 'pointer',
         transition: 'all 0.2s ease',
       }}
@@ -129,18 +132,21 @@ export function CookieConsentBanner() {
         margin: '0',
         fontSize: '14px',
         lineHeight: '1.6',
-        color: '#e2e8f0', // slate-200
+        color: '#E8ECF4', // text-text-primary
       }}
     >
       <div className="flex flex-col gap-2">
-        <p className="font-semibold text-base text-white">{t('cookie_consent.title')}</p>
-        <p className="text-sm text-slate-300">
+        <p className="font-semibold text-base" style={{ color: '#E8ECF4' }}>
+          {t('cookie_consent.title')}
+        </p>
+        <p className="text-sm" style={{ color: '#9BA3B5' }}>
           {t('cookie_consent.description')}{' '}
           <a
             href="https://futuremarketingai.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-indigo-300 underline transition-colors"
+            style={{ color: '#00D4AA' }}
+            className="underline transition-colors hover:opacity-80"
           >
             {t('cookie_consent.privacy_policy')}
           </a>

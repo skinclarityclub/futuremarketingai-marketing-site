@@ -19,7 +19,7 @@ const CalendlyModal = lazy(() =>
  * - Quick access to all main sections
  * - Active state indicators
  * - CTA button for appointments
- * - Glass morphism design
+ * - Living System design (no glassmorphism)
  * - Responsive (sidebar on desktop, bottom nav on mobile)
  */
 
@@ -186,10 +186,7 @@ export const FloatingNav: React.FC = () => {
         transition={{ delay: 0.5, duration: 0.5 }}
       >
         {/* Navigation Items + CTA in one container */}
-        <div
-          className="flex flex-col gap-2 p-3 rounded-2xl backdrop-blur-xl border border-white/10 shadow-2xl"
-          style={{ background: 'rgba(0, 0, 0, 0.4)' }}
-        >
+        <div className="flex flex-col gap-2 p-3 rounded-sm bg-bg-surface border border-border-primary shadow-2xl">
           {navItems.map((item) => {
             const active = isActive(item.path)
 
@@ -202,12 +199,11 @@ export const FloatingNav: React.FC = () => {
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 <motion.div
-                  className={`relative w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 border ${
+                  className={`relative w-14 h-14 rounded-sm flex items-center justify-center transition-all duration-300 border ${
                     active
-                      ? 'bg-gradient-to-br from-accent-primary to-accent-secondary text-white shadow-lg shadow-accent-primary/30 border-accent-primary'
-                      : 'text-white/70 hover:text-white hover:border-accent-primary/30 border-white/10'
+                      ? 'bg-accent-system text-bg-deep border-accent-system shadow-lg shadow-accent-system/30'
+                      : 'bg-bg-elevated text-text-secondary hover:text-text-primary hover:border-accent-system/30 border-border-primary'
                   }`}
-                  style={!active ? { background: 'rgba(0, 0, 0, 0.3)' } : undefined}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -218,20 +214,16 @@ export const FloatingNav: React.FC = () => {
                 <AnimatePresence>
                   {hoveredItem === item.id && (
                     <motion.div
-                      className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-4 py-2 rounded-xl border border-white/10 shadow-xl whitespace-nowrap"
-                      style={{ background: 'rgba(0, 0, 0, 0.5)' }}
+                      className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-4 py-2 rounded-sm bg-bg-elevated border border-border-primary shadow-xl whitespace-nowrap"
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -10 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="text-sm font-semibold text-white">{item.label}</div>
-                      <div className="text-xs text-white/60">{item.description}</div>
+                      <div className="text-sm font-semibold text-text-primary">{item.label}</div>
+                      <div className="text-xs text-text-secondary">{item.description}</div>
                       {/* Arrow */}
-                      <div
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-45 w-2 h-2 border-l border-t border-white/10"
-                        style={{ background: 'rgba(0, 0, 0, 0.5)' }}
-                      />
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-45 w-2 h-2 border-l border-t border-border-primary bg-bg-elevated" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -240,19 +232,16 @@ export const FloatingNav: React.FC = () => {
           })}
 
           {/* Divider */}
-          <div className="h-px my-1" style={{ background: 'rgba(255, 255, 255, 0.1)' }} />
+          <div className="h-px my-1 bg-border-primary" />
 
           {/* CTA Button - Integrated in nav container */}
           <motion.button
             onClick={handleCTAClick}
             onMouseEnter={() => setHoveredItem('book')}
             onMouseLeave={() => setHoveredItem(null)}
-            className="relative w-14 h-14 rounded-xl border border-accent-primary/40 text-white/90 hover:border-accent-primary transition-all flex items-center justify-center cta-pulse"
-            style={{ background: 'rgba(0, 0, 0, 0.3)' }}
+            className="relative w-14 h-14 rounded-sm border border-accent-system/40 text-text-secondary hover:text-text-primary hover:border-accent-system bg-bg-elevated transition-all flex items-center justify-center cta-pulse"
             whileHover={{
               scale: 1.08,
-              background:
-                'linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(167, 139, 250, 0.15))',
               transition: { duration: 0.15 },
             }}
             whileTap={{
@@ -273,22 +262,18 @@ export const FloatingNav: React.FC = () => {
             <AnimatePresence>
               {hoveredItem === 'book' && (
                 <motion.div
-                  className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-4 py-2 rounded-xl border border-white/10 shadow-xl whitespace-nowrap"
-                  style={{ background: 'rgba(0, 0, 0, 0.5)' }}
+                  className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-4 py-2 rounded-sm bg-bg-elevated border border-border-primary shadow-xl whitespace-nowrap"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-text-primary">
                     {t('common:cta.book_appointment')}
                   </div>
-                  <div className="text-xs text-white/60">{t('common:cta.schedule_demo')}</div>
+                  <div className="text-xs text-text-secondary">{t('common:cta.schedule_demo')}</div>
                   {/* Arrow */}
-                  <div
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-45 w-2 h-2 border-l border-t border-white/10"
-                    style={{ background: 'rgba(0, 0, 0, 0.5)' }}
-                  />
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-45 w-2 h-2 border-l border-t border-border-primary bg-bg-elevated" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -303,10 +288,7 @@ export const FloatingNav: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        <div
-          className="mb-4 flex items-center gap-2 p-2 rounded-2xl backdrop-blur-xl border border-white/10 shadow-2xl"
-          style={{ background: 'rgba(0, 0, 0, 0.4)' }}
-        >
+        <div className="mb-4 flex items-center gap-2 p-2 rounded-sm bg-bg-surface border border-border-primary shadow-2xl">
           {/* Nav Items */}
           {navItems.map((item) => {
             const active = isActive(item.path)
@@ -314,10 +296,10 @@ export const FloatingNav: React.FC = () => {
             return (
               <Link key={item.id} to={item.path} className="flex-1">
                 <motion.div
-                  className={`flex flex-col items-center gap-1 py-2 px-3 rounded-xl transition-all ${
+                  className={`flex flex-col items-center gap-1 py-2 px-3 rounded-sm transition-all ${
                     active
-                      ? 'bg-gradient-to-br from-accent-primary to-accent-secondary text-white shadow-lg shadow-accent-primary/30'
-                      : 'bg-transparent text-white/70'
+                      ? 'bg-accent-system text-bg-deep shadow-lg shadow-accent-system/30'
+                      : 'bg-transparent text-text-secondary'
                   }`}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -331,8 +313,7 @@ export const FloatingNav: React.FC = () => {
           {/* CTA Button on Mobile - Subtle version */}
           <motion.button
             onClick={handleCTAClick}
-            className="flex-1 flex flex-col items-center gap-1 py-2 px-3 rounded-xl border border-accent-primary/40 text-white/90 cta-pulse"
-            style={{ background: 'rgba(0, 0, 0, 0.3)' }}
+            className="flex-1 flex flex-col items-center gap-1 py-2 px-3 rounded-sm border border-accent-system/40 text-text-secondary bg-bg-elevated cta-pulse"
             whileTap={{ scale: 0.96, transition: { duration: 0.1 } }}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -352,16 +333,11 @@ export const FloatingNav: React.FC = () => {
       {calendly.isOpen && (
         <Suspense
           fallback={
-            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] flex items-center justify-center">
-              <div
-                className="bg-white rounded-lg p-6 shadow-xl"
-                style={{ background: 'rgba(0, 0, 0, 0.4)' }}
-              >
+            <div className="fixed inset-0 bg-bg-deep/80 z-[9999] flex items-center justify-center">
+              <div className="bg-bg-elevated border border-border-primary rounded-sm p-6 shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 border-3 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-gray-100">
-                    {t('common:loading.scheduling')}
-                  </p>
+                  <div className="w-6 h-6 border-2 border-accent-system/30 border-t-accent-system rounded-full animate-spin" />
+                  <p className="text-text-secondary">{t('common:loading.scheduling')}</p>
                 </div>
               </div>
             </div>

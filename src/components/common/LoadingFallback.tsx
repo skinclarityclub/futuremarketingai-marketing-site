@@ -15,7 +15,7 @@ export function LoadingFallback({
   fullScreen = false,
 }: LoadingFallbackProps) {
   const containerClass = fullScreen
-    ? 'fixed inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900'
+    ? 'fixed inset-0 flex items-center justify-center bg-bg-deep'
     : 'flex items-center justify-center min-h-[400px]'
 
   return (
@@ -29,7 +29,7 @@ export function LoadingFallback({
       <div className="text-center">
         {/* Animated spinner */}
         <motion.div
-          className="w-16 h-16 mx-auto mb-4 border-4 border-blue-500/30 border-t-blue-500 rounded-full"
+          className="w-16 h-16 mx-auto mb-4 border-4 border-accent-system/30 border-t-accent-system rounded-full"
           animate={{ rotate: 360 }}
           transition={{
             duration: 1,
@@ -41,7 +41,7 @@ export function LoadingFallback({
 
         {/* Loading text */}
         <motion.p
-          className="text-blue-200 text-lg"
+          className="text-text-secondary text-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
