@@ -2,22 +2,22 @@
 
 ## Progress
 
-| Phase | Name                           | Status      | Plans      | Progress |
-| ----- | ------------------------------ | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete    | —          | 100%     |
-| 2     | Service Pages                  | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending     | —          | 0%       |
-| 8     | Language Expansion             | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 14    | 2/3                            | In Progress |            | 0%       |
+| Phase | Name                           | Status   | Plans      | Progress |
+| ----- | ------------------------------ | -------- | ---------- | -------- |
+| 1     | Website Rebrand                | Complete | —          | 100%     |
+| 2     | Service Pages                  | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
+| 8     | Language Expansion             | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
 
 ## Phases
 
@@ -98,7 +98,7 @@
     - [ ] 13-01-PLAN.md — Dead code deletion (4 orphaned components + useTilt hook + barrel export cleanup)
     - [ ] 13-02-PLAN.md — Placeholder media assets (8 files in public/media/ for ProductMedia components)
 
-- [ ] **Phase 14: Service Page i18n** — Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage. Extract hardcoded English strings, add NL/ES translations. Gap closure from v1.0 audit.
+- [x] **Phase 14: Service Page i18n** — Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage. Extract hardcoded English strings, add NL/ES translations. Gap closure from v1.0 audit. (completed 2026-03-13)
   - **Goal:** Make all service pages multilingual (EN/NL/ES) so the language switcher works consistently across the entire site. Currently these 3 pages have all text hardcoded in English.
   - **Requirement IDs:** REQ-SERVICE-I18N
   - **Gap Closure:** v1.0 milestone audit — broken service page language switch flow
