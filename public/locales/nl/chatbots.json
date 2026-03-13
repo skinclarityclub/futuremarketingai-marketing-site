@@ -120,6 +120,40 @@
       }
     }
   },
+  "demo": {
+    "cta_subtle": "Onder de indruk?",
+    "cta_subtle_link": "Wij bouwen chatbots op maat voor jouw bedrijf",
+    "cta_strong": "Klaar voor je eigen AI-chatbot? Boek een gratis strategiesessie.",
+    "cta_strong_button": "Gratis Strategiesessie Boeken",
+    "cta_gate_title": "Demolimiet Bereikt",
+    "cta_gate_description": "Je hebt de demo verkend — stel je nu voor dat dit op maat is gemaakt voor jouw bedrijf. Boek een gesprek voor de volledige versie.",
+    "cta_gate_button": "Gesprek Boeken"
+  },
+  "multi_platform": {
+    "title": "Eeen Brein, Elk Kanaal",
+    "subtitle": "Train eenmaal, deploy overal. Dezelfde AI-assistent past zijn gedrag per platform aan.",
+    "brain_label": "Claude AI",
+    "platforms": {
+      "website": {
+        "name": "Website Widget",
+        "behavior": "Educatiegericht, boekt consulten, leert huidverzorging"
+      },
+      "shopify": {
+        "name": "Shopify Store",
+        "behavior": "Verkoopgericht, beveelt producten aan, bouwt routines, voegt toe aan winkelwagen"
+      },
+      "whatsapp": {
+        "name": "WhatsApp Business",
+        "behavior": "Snelle support, orderstatus, afspraakherinneringen"
+      }
+    },
+    "case_study": "Echte case: SkinClarity Club gebruikt een AI-assistent op hun website EN Shopify-winkel. Dezelfde kennis, ander gedrag per platform.",
+    "stats": {
+      "inquiries": { "value": "70%", "label": "vragen afgehandeld" },
+      "availability": { "value": "24/7", "label": "beschikbaarheid" },
+      "platforms": { "value": "2+", "label": "platformen bediend" }
+    }
+  },
   "final_cta": {
     "title": "Gratis Chatbot Strategiesessie",
     "description": "We analyseren je use case en laten precies zien hoe een AI-chatbot je team uren per week kan besparen.",

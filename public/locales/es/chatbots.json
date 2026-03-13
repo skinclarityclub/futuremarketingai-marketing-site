@@ -120,6 +120,40 @@
       }
     }
   },
+  "demo": {
+    "cta_subtle": "¿Te gusta lo que ves?",
+    "cta_subtle_link": "Construimos chatbots personalizados para tu negocio",
+    "cta_strong": "¿Listo para tu propio chatbot IA? Reserva una sesion de estrategia gratuita.",
+    "cta_strong_button": "Reservar Sesion Gratuita",
+    "cta_gate_title": "Limite de Demo Alcanzado",
+    "cta_gate_description": "Has explorado la demo — ahora imagina esto adaptado a tu negocio. Reserva una llamada para la version completa.",
+    "cta_gate_button": "Reservar Llamada"
+  },
+  "multi_platform": {
+    "title": "Un Cerebro, Cada Canal",
+    "subtitle": "Entrena una vez, despliega en todas partes. El mismo asistente IA adapta su comportamiento por plataforma.",
+    "brain_label": "Claude AI",
+    "platforms": {
+      "website": {
+        "name": "Widget Web",
+        "behavior": "Enfocado en educacion, reserva consultas, ensena cuidado de piel"
+      },
+      "shopify": {
+        "name": "Tienda Shopify",
+        "behavior": "Enfocado en ventas, recomienda productos, crea rutinas, agrega al carrito"
+      },
+      "whatsapp": {
+        "name": "WhatsApp Business",
+        "behavior": "Soporte rapido, estado de pedidos, recordatorios de citas"
+      }
+    },
+    "case_study": "Caso real: SkinClarity Club usa un asistente IA en su sitio web Y tienda Shopify. Mismo conocimiento, diferente comportamiento por plataforma.",
+    "stats": {
+      "inquiries": { "value": "70%", "label": "consultas gestionadas" },
+      "availability": { "value": "24/7", "label": "disponibilidad" },
+      "platforms": { "value": "2+", "label": "plataformas servidas" }
+    }
+  },
   "final_cta": {
     "title": "Sesion de Estrategia de Chatbot Gratuita",
     "description": "Analizaremos tu caso de uso y te mostraremos exactamente como un chatbot de IA puede ahorrar horas a tu equipo cada semana.",

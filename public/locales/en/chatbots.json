@@ -120,6 +120,78 @@
       }
     }
   },
+  "demo": {
+    "title": "Try It Yourself",
+    "subtitle": "Interact with 3 live AI chatbot demos — each trained for a different use case.",
+    "capabilities_label": "This bot can:",
+    "cta_subtle": "Like what you see?",
+    "cta_subtle_link": "We build custom chatbots for your business",
+    "cta_strong": "Ready to get your own AI chatbot? Book a free strategy session.",
+    "cta_strong_button": "Book Free Strategy Session",
+    "cta_gate_title": "Demo Limit Reached",
+    "cta_gate_description": "You've explored the demo — now imagine this tailored to your business. Book a call to experience the full version.",
+    "cta_gate_button": "Book a Call",
+    "tabs": {
+      "ecommerce": {
+        "label": "E-commerce Advisor",
+        "scenario_title": "Skincare Webshop",
+        "scenario": "You're browsing a premium skincare webshop. The AI advisor helps you find the right products for your skin type, builds personalized routines, and answers ingredient questions.",
+        "capabilities": [
+          "Recommend products by skin type",
+          "Build personalized routines",
+          "Explain ingredients",
+          "Suggest add-to-cart items"
+        ]
+      },
+      "leadgen": {
+        "label": "Lead Qualifier",
+        "scenario_title": "B2B Lead Qualification",
+        "scenario": "A potential client visits your marketing agency website. The AI qualifier engages them, identifies their needs, scores their fit, and routes hot leads to your sales team.",
+        "capabilities": [
+          "Qualify leads with smart questions",
+          "Score prospect fit automatically",
+          "Capture contact information",
+          "Route hot leads to sales"
+        ]
+      },
+      "support": {
+        "label": "Support Agent",
+        "scenario_title": "Customer Support",
+        "scenario": "A customer needs help with their order or account. The AI support agent resolves common issues instantly, looks up order status, and escalates complex cases to your team.",
+        "capabilities": [
+          "Resolve common issues instantly",
+          "Look up order and account info",
+          "Create support tickets",
+          "Escalate to human agents"
+        ]
+      }
+    }
+  },
+  "multi_platform": {
+    "title": "One Brain, Every Channel",
+    "subtitle": "Train once, deploy everywhere. The same AI assistant adapts its behavior per platform.",
+    "brain_label": "Claude AI",
+    "platforms": {
+      "website": {
+        "name": "Website Widget",
+        "behavior": "Education-focused, books consultations, teaches skincare"
+      },
+      "shopify": {
+        "name": "Shopify Store",
+        "behavior": "Sales-focused, recommends products, builds routines, adds to cart"
+      },
+      "whatsapp": {
+        "name": "WhatsApp Business",
+        "behavior": "Quick support, order status, appointment reminders"
+      }
+    },
+    "case_study": "Real case: SkinClarity Club uses one AI assistant across their website AND Shopify store. Same knowledge, different behavior per platform.",
+    "stats": {
+      "inquiries": { "value": "70%", "label": "inquiries handled" },
+      "availability": { "value": "24/7", "label": "availability" },
+      "platforms": { "value": "2+", "label": "platforms served" }
+    }
+  },
   "final_cta": {
     "title": "Get a Free Chatbot Strategy Session",
     "description": "We'll analyze your use case and show you exactly how an AI chatbot can save your team hours every week.",
