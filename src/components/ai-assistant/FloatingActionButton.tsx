@@ -189,7 +189,7 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
 
   // Check for landing page to position button higher
   const isLandingPage = location.pathname === '/'
-  
+
   // Adaptive positioning - HIGHER on mobile landing page to avoid StickyBottomCTA overlap
   const mobilePosition = isLandingPage
     ? 'right-6 bottom-28 safe-area-bottom' // Higher position (112px from bottom) to avoid sticky CTA
@@ -218,20 +218,20 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
           >
             {/* Premium Speech Bubble Container */}
             <motion.div
-              className="relative bg-gradient-to-br from-purple-600/92 to-blue-600/92 backdrop-blur-2xl text-white text-sm rounded-2xl px-4 py-3.5 border border-white/20"
+              className="relative bg-gradient-to-br from-accent-system/92 to-accent-system/80 backdrop-blur-2xl text-white text-sm rounded-2xl px-4 py-3.5 border border-white/20"
               style={{
                 boxShadow:
-                  '0 8px 32px rgba(139, 92, 246, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                  '0 8px 32px rgba(0, 212, 170, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
               }}
               initial={{
                 boxShadow:
-                  '0 8px 32px rgba(139, 92, 246, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                  '0 8px 32px rgba(0, 212, 170, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
               }}
               animate={{
                 boxShadow: [
-                  '0 8px 32px rgba(139, 92, 246, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
-                  '0 10px 40px rgba(139, 92, 246, 0.30), 0 4px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                  '0 8px 32px rgba(139, 92, 246, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                  '0 8px 32px rgba(0, 212, 170, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                  '0 10px 40px rgba(0, 212, 170, 0.30), 0 4px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                  '0 8px 32px rgba(0, 212, 170, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
                 ],
               }}
               transition={{
@@ -256,7 +256,7 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
                 viewBox="0 0 16 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ filter: 'drop-shadow(2px 0 4px rgba(139, 92, 246, 0.2))' }}
+                style={{ filter: 'drop-shadow(2px 0 4px rgba(0, 212, 170, 0.2))' }}
               >
                 {/* Smooth curved tail pointing to FAB */}
                 <motion.path
@@ -282,8 +282,8 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
                 />
                 <defs>
                   <linearGradient id="tailGradient" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.92" />
-                    <stop offset="100%" stopColor="rgb(96, 165, 250)" stopOpacity="0.88" />
+                    <stop offset="0%" stopColor="rgb(0, 212, 170)" stopOpacity="0.92" />
+                    <stop offset="100%" stopColor="rgb(0, 232, 190)" stopOpacity="0.88" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -291,7 +291,7 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
               {/* Premium minimal close button */}
               <button
                 onClick={handlePreviewDismiss}
-                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white/95 hover:bg-white text-purple-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 z-20 backdrop-blur-sm group"
+                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white/95 hover:bg-white text-accent-system rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 z-20 backdrop-blur-sm group"
                 aria-label="Sluit preview"
               >
                 <X
@@ -331,14 +331,14 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
           ${isMobile ? mobilePosition : 'right-6 top-[65%] -translate-y-1/2'}
           md:z-50 z-[9999]
           ${isMobile ? 'w-14 h-14' : 'w-16 h-16'}
-          bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600
-          hover:from-purple-500 hover:via-blue-500 hover:to-cyan-500
+          bg-gradient-to-br from-accent-system via-accent-system/80 to-accent-human
+          hover:from-accent-system/90 hover:via-accent-system/70 hover:to-accent-human/90
           text-white
           rounded-full
-          ${isMobile ? 'shadow-xl shadow-purple-500/40' : 'shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70'}
+          ${isMobile ? 'shadow-xl shadow-accent-system/40' : 'shadow-2xl shadow-accent-system/50 hover:shadow-accent-system/70'}
           flex items-center justify-center
           transition-all duration-300
-          focus:outline-none focus:ring-4 focus:ring-purple-400/50
+          focus:outline-none focus:ring-4 focus:ring-accent-system/50
           overflow-hidden
           ${className}
         `}
@@ -349,18 +349,18 @@ export default function FloatingActionButton({ className = '' }: FloatingActionB
         {/* Animated Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shimmer" />
 
-            {/* Icon with rotation animation - Adaptive Size */}
-            <motion.div
-              animate={{ rotate: isOpen ? 90 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative z-10"
-            >
-              {isOpen ? (
-                <X size={isMobile ? 24 : 28} strokeWidth={2.5} />
-              ) : (
-                <MessageCircle size={isMobile ? 24 : 28} strokeWidth={2.5} />
-              )}
-            </motion.div>
+        {/* Icon with rotation animation - Adaptive Size */}
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="relative z-10"
+        >
+          {isOpen ? (
+            <X size={isMobile ? 24 : 28} strokeWidth={2.5} />
+          ) : (
+            <MessageCircle size={isMobile ? 24 : 28} strokeWidth={2.5} />
+          )}
+        </motion.div>
 
         {/* Unread Badge - Adaptive Size */}
         {hasUnreadMessages && !isOpen && (
