@@ -16,7 +16,7 @@
 | 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
 | 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
 | 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
-| 13    | Dead Code Cleanup & Media Fix  | Pending  | —          | 0%       |
+| 13    | Dead Code Cleanup & Media Fix  | Planned  | 2026-03-13 | 0%       |
 | 14    | Service Page i18n              | Pending  | —          | 0%       |
 
 ## Phases
@@ -94,6 +94,9 @@
   - **Requirement IDs:** REQ-COMPONENTS, REQ-PRODUCT-MEDIA
   - **Gap Closure:** v1.0 milestone audit — orphaned components, missing media directory
   - **Depends on:** Phase 12
+  - **Plans:** 2 plans
+    - [ ] 13-01-PLAN.md — Dead code deletion (4 orphaned components + useTilt hook + barrel export cleanup)
+    - [ ] 13-02-PLAN.md — Placeholder media assets (8 files in public/media/ for ProductMedia components)
 
 - [ ] **Phase 14: Service Page i18n** — Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage. Extract hardcoded English strings, add NL/ES translations. Gap closure from v1.0 audit.
   - **Goal:** Make all service pages multilingual (EN/NL/ES) so the language switcher works consistently across the entire site. Currently these 3 pages have all text hardcoded in English.
