@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 03 of 7 in Phase 11
+current_plan: Plan 04 of 7 in Phase 11
 status: in-progress
-stopped_at: Completed 11-03-PLAN.md — Hero rebuilt with left-aligned layout, OrbitVisual, 2x2 service cards, GradientMesh wired
-last_updated: '2026-03-13T03:30:20.000Z'
+stopped_at: Completed 11-04-PLAN.md — Service pages rebuilt with card-gradient-border, rounded-card, CSS fadeIn hero animations
+last_updated: '2026-03-13T03:31:03.000Z'
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 14
-  completed_plans: 13
+  completed_plans: 14
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 11 — Living System Full Rebuild
-- **Current Plan:** Plan 03 of 7
+- **Current Plan:** Plan 04 of 7
 - **Status:** In progress
-- **Last completed:** Phase 11 Plan 03 — Hero rebuilt with left-aligned layout, OrbitVisual orbit rings, 2x2 numbered service cards, GradientMesh global background
-- **Last session:** 2026-03-13T03:30:20Z
-- **Stopped at:** Completed 11-03-PLAN.md — Hero rebuilt with left-aligned layout, OrbitVisual, 2x2 service cards, GradientMesh wired
+- **Last completed:** Phase 11 Plan 04 — Service pages rebuilt with card-gradient-border, rounded-card, CSS fadeIn hero animations
+- **Last session:** 2026-03-13T03:32:44.061Z
+- **Stopped at:** Completed 11-04-PLAN.md
 
 ## Decisions
 
@@ -58,6 +58,8 @@ progress:
 - [11-03]: Service card order: 01=Automations, 02=Chatbots, 03=Voice Agents, 04=Marketing Machine
 - [11-03]: VisionTimeline kept inside Hero section as natural document flow below service cards
 - [11-03]: GradientMesh rendered in LandingPage (not App.tsx) since Hero no longer has its own backgrounds
+- [Phase 11-04]: Removed fadeInUp motion variant object — hero uses inline CSS animation styles, scroll sections use explicit whileInView props
+- [Phase 11-04]: FAQ details elements get card-gradient-border + rounded-card for visual consistency with other cards
 
 ## Context
 
@@ -81,3 +83,4 @@ progress:
 - Phase 11 Plan 01 complete: Foundation layer — DM Sans typography, GradientMesh 3-blob component, CSS keyframe animations, card/btn border-radius tokens
 - Phase 11 Plan 02 complete: Global chrome components rebuilt — CTAButton warm gradient + glass, SimpleHeader full-width backdrop-blur nav with FM+ai logo, Footer zero hardcoded colors
 - Phase 11 Plan 03 complete: Hero rebuilt — left-aligned layout with OrbitVisual orbit rings on right, 2x2 numbered service cards (01-04) with card-gradient-border, 4 Framer Motion background layers removed, GradientMesh wired in LandingPage
+- Phase 11 Plan 04 complete: All 3 service pages rebuilt — card-gradient-border + rounded-card on all cards, CSS fadeIn/fadeInUp hero animations, max-w-7xl px-12 layout, font-display on headings
