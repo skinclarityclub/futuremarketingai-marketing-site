@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 06 of 7 in Phase 11
-status: in-progress
-stopped_at: Completed 11-06-PLAN.md — MarketingMachinePage i18n (EN/NL/ES) + prototype layout rebuild
-last_updated: '2026-03-13T03:37:01.000Z'
+current_plan: Plan 07 of 7 in Phase 11 (COMPLETE)
+status: phase-complete
+stopped_at: Completed 11-07-PLAN.md — Mobile hero rebuild + full-site visual verification approved
+last_updated: '2026-03-13T04:05:00.000Z'
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 14
-  completed_plans: 16
+  completed_plans: 17
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 11 — Living System Full Rebuild
-- **Current Plan:** Plan 06 of 7
-- **Status:** In progress
-- **Last completed:** Phase 11 Plan 06 — MarketingMachinePage i18n (EN/NL/ES) + prototype layout rebuild
-- **Last session:** 2026-03-13T03:42:19.715Z
-- **Stopped at:** Completed 11-05-PLAN.md — Supporting pages rebuilt with prototype patterns
+- **Current Plan:** Plan 07 of 7 (COMPLETE)
+- **Status:** Phase complete
+- **Last completed:** Phase 11 Plan 07 — Mobile hero rebuild + full-site visual verification approved
+- **Last session:** 2026-03-13T04:05:00.000Z
+- **Stopped at:** Completed 11-07-PLAN.md — Phase 11 Living System Full Rebuild complete
 
 ## Decisions
 
@@ -65,6 +65,8 @@ progress:
 - [11-05]: HowItWorksPage step numbers use accent-human with font-mono — visual hierarchy between labels and system icons
 - [11-06]: Pricing tiers driven by TIER_KEYS array + t() with returnObjects — no hardcoded tier data in MarketingMachinePage component
 - [11-06]: SEO meta tags kept as hardcoded EN strings — SEO handled separately from UI i18n
+- [11-07]: Mobile hero uses single blob-warm (300px, opacity 0.08) instead of GradientMesh for performance
+- [11-07]: Framer Motion wrappers replaced with CSS fadeIn/fadeInUp on mobile — lighter weight for touch devices
 
 ## Context
 
@@ -91,3 +93,5 @@ progress:
 - Phase 11 Plan 04 complete: All 3 service pages rebuilt — card-gradient-border + rounded-card on all cards, CSS fadeIn/fadeInUp hero animations, max-w-7xl px-12 layout, font-display on headings
 - Phase 11 Plan 05 complete: All 5 supporting pages rebuilt — About, Pricing, HowItWorks, Contact, Legal with card-gradient-border + rounded-card, CSS fadeIn heroes, glass form container, ComparisonTables fully tokenized
 - Phase 11 Plan 06 complete: MarketingMachinePage fully internationalized (EN/NL/ES) with card-gradient-border pricing cards, CSS fadeIn hero, max-w-7xl layout
+- Phase 11 Plan 07 complete: SimplifiedHeroMobile rebuilt with DM Sans, blob background, CSS animations; full-site visual quality human-approved
+- Phase 11 COMPLETE: All 7 plans done — Living System Full Rebuild finished across all pages
