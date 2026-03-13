@@ -4,11 +4,11 @@
 
 - **Milestone:** v1.0
 - **Phase:** 3 — Design Overhaul & FMai Rebrand
-- **Current Plan:** 03-03 (Critical Fixes)
-- **Status:** executing
-- **Last completed:** Phase 3 Plan 01 (Design Tokens — Living System teal/amber palette, Space Grotesk font)
-- **Last session:** 2026-03-12T23:53:06Z
-- **Stopped at:** Completed 03-design-overhaul plan 01 (Design Tokens & Typography)
+- **Current Plan:** 03-04 (Homepage Redesign)
+- **Status:** ready
+- **Last completed:** Phase 3 Plan 03 (UX & Accessibility Fixes — Calendly modal, focus trap, reduced motion, trust metrics)
+- **Last session:** 2026-03-13T00:02:34Z
+- **Stopped at:** Completed 03-design-overhaul plan 03 (UX & Accessibility Fixes)
 
 ## Decisions
 
@@ -19,11 +19,14 @@
 - 2026-03-13: [Phase 03-design-overhaul]: SystemPanel uses forwardRef for composability with Framer Motion and ref-consuming libraries
 - 2026-03-13: [03-01]: Dropped Satoshi (fontshare) in favor of Space Grotesk (Google Fonts) for display font
 - 2026-03-13: [03-01]: gradient-text-success renamed to gradient-text-flow (teal-to-amber Living System flow gradient)
+- 2026-03-13: [03-03]: useMotionSafe consolidated into existing useReducedMotion.ts (not a new file) to keep all reduced motion utilities together
+- 2026-03-13: [03-03]: Each service page uses a local CALENDLY_URL constant with dark theme params — avoids shared import coupling
 
 ## Context
 
 - Phase 1 (Website Rebrand) and Phase 2 (Service Pages) already committed on main
 - Phase 3 split into 4 waves: Foundation → Homepage → Marketing Machine → Brand Cleanup
-- Wave 1 Foundation: Plan 01 (Design Tokens) and Plan 02 (Shared Components) — both COMPLETE
+- Wave 1 Foundation: Plan 01 (Design Tokens), Plan 02 (Shared Components), Plan 03 (UX & Accessibility Fixes) — all COMPLETE
 - All 5 Living System shared components exported from src/components/common/index.ts
-- Next: Plan 03 (Critical Fixes) or Plan 04+ (Homepage/Service page redesigns)
+- All Calendly CTAs use modal pattern with dark theme params across VoiceAgents, Automations, Chatbots pages
+- Next: Plan 04+ (Homepage/Service page redesigns)
