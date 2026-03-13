@@ -10,7 +10,7 @@ import { SimpleHeader } from '../components/landing/SimpleHeader'
 import { Hero } from '../components/landing/Hero'
 import { SEOHead } from '../components/seo/SEOHead'
 import { StructuredDataPresets } from '../components/seo/StructuredData'
-import { StickyBottomCTA, MobileEvolutionTimeline } from '../components/mobile'
+import { StickyBottomCTA } from '../components/mobile'
 import { useIsMobile } from '../hooks'
 
 export const LandingPage: React.FC = () => {
@@ -20,16 +20,15 @@ export const LandingPage: React.FC = () => {
     <>
       {/* SEO Meta Tags - Homepage */}
       <SEOHead
-        title="Future Marketing AI - Autonomous AI Marketing Automation Platform"
-        description="Join the first 10 teams building an unfair 2-3 year lead with autonomous AI marketing. 6 AI modules work 24/7. Founding member pricing: €15,000/month. Only 2 slots remaining."
+        title="FutureAI - AI Systems That Run Your Business"
+        description="AI automation, chatbots, and voice agents for growth teams. Three specialized platforms, one agency. Book a free AI audit."
         keywords={[
-          'AI marketing automation',
-          'autonomous marketing',
-          'marketing AI platform',
-          'SaaS marketing automation',
-          'AI marketing software',
-          'marketing automation platform',
-          'enterprise marketing AI',
+          'AI agency',
+          'AI automation',
+          'AI chatbots',
+          'AI voice agents',
+          'business automation',
+          'FutureAI',
         ]}
         canonical="https://futuremarketingai.com"
         ogImage="https://futuremarketingai.com/og-image-home.png"
@@ -39,15 +38,12 @@ export const LandingPage: React.FC = () => {
       <StructuredDataPresets.organization />
       <StructuredDataPresets.website />
 
-      <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+      <div className="relative min-h-screen bg-bg-deep">
         {/* Simple Header - Minimal navigation for conversion */}
         <SimpleHeader />
 
         {/* Hero Section - Now with placeholders */}
         <Hero />
-
-        {/* Evolution Timeline - Mobile Only */}
-        {isMobile && <MobileEvolutionTimeline />}
 
         {/* Below-the-fold content - Lazy loaded */}
         {/* <Suspense fallback={<LoadingFallback />}>

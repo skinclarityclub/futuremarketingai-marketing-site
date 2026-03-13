@@ -6,29 +6,18 @@
  * Living System conversion: teal/amber palette, bg-bg-deep, no glassmorphism.
  */
 
-import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
-import { Sparkles, TrendingUp, Zap, Brain, Bot, Loader2 } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { Sparkles, TrendingUp, Zap, Brain, Bot } from 'lucide-react'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import { useDemoRedirect } from '../../hooks/useDemoRedirect'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
 import { CTAButton } from '../common'
 
-// Lazy load heavy components for performance
-const VisionTimeline = lazy(() =>
-  import('../common/VisionTimeline').then((module) => ({
-    default: module.VisionTimeline,
-  }))
-)
-
-const FeatureShowcase = lazy(() =>
-  import('./FeatureShowcase').then((module) => ({
-    default: module.FeatureShowcase,
-  }))
-)
+const MotionLink = motion(Link)
 
 // Fixed positions to prevent hydration mismatch
 const NEURAL_NODES = [
@@ -385,7 +374,7 @@ export const Hero: React.FC = () => {
           variants={itemVariants}
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <CTAButton size="lg" href="/automations" arrow>
+            <CTAButton size="lg" href="#services" arrow>
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               {t('landing.hero_landing.cta.primary')}
             </CTAButton>
@@ -462,80 +451,93 @@ export const Hero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* VisionTimeline section */}
-      <motion.section
-        className="relative z-10 max-w-7xl mx-auto px-6 py-20"
-        initial={{ opacity: 0, y: 50 }}
+      {/* Service Cards Grid — Hub Navigation */}
+      <motion.div
+        id="services"
+        className="relative z-10 max-w-6xl mx-auto px-6 pb-20"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <Suspense
-          fallback={
-            <div className="flex items-center justify-center min-h-[400px]">
-              <Loader2 className="h-12 w-12 animate-spin text-accent-system" />
-            </div>
-          }
-        >
-          <VisionTimeline />
-        </Suspense>
-      </motion.section>
-
-      {/* Feature Showcase section */}
-      <motion.section
-        className="relative z-10 max-w-7xl mx-auto px-6 py-20"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-      >
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-accent-system/10 border border-accent-system/20 mb-4">
-            <span className="text-sm font-semibold text-text-secondary">
-              {t('landing.hero_landing.solution_section.badge')}
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            {t('landing.hero_landing.solution_section.title')}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            {t('landing.hero_landing.services.title')}
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            {t('landing.hero_landing.solution_section.subtitle')}
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            {t('landing.hero_landing.services.subtitle')}
           </p>
         </div>
 
-        <Suspense
-          fallback={
-            <div className="flex items-center justify-center min-h-[400px]">
-              <Loader2 className="h-12 w-12 animate-spin text-accent-system" />
-            </div>
-          }
-        >
-          <FeatureShowcase />
-        </Suspense>
-      </motion.section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {[
+            {
+              icon: Zap,
+              name: t('landing.hero_landing.services.marketing.name'),
+              pitch: t('landing.hero_landing.services.marketing.pitch'),
+              href: '/marketing-machine',
+              accent: 'accent-system',
+            },
+            {
+              icon: Bot,
+              name: t('landing.hero_landing.services.chat.name'),
+              pitch: t('landing.hero_landing.services.chat.pitch'),
+              href: '/chatbots',
+              accent: 'accent-human',
+            },
+            {
+              icon: Brain,
+              name: t('landing.hero_landing.services.voice.name'),
+              pitch: t('landing.hero_landing.services.voice.pitch'),
+              href: '/voice-agents',
+              accent: 'accent-system',
+            },
+            {
+              icon: TrendingUp,
+              name: t('landing.hero_landing.services.automations.name'),
+              pitch: t('landing.hero_landing.services.automations.pitch'),
+              href: '/automations',
+              accent: 'accent-human',
+            },
+          ].map((service, i) => (
+            <MotionLink
+              key={service.href}
+              to={service.href}
+              className="group bg-bg-surface border border-border-primary rounded-sm p-6 hover:bg-bg-elevated hover:border-l-2 hover:border-l-accent-system transition-all duration-200 cursor-pointer block"
+              whileHover={{ y: -4 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4 + i * 0.1, duration: 0.5 }}
+            >
+              <div
+                className={`w-10 h-10 bg-${service.accent}/10 rounded-sm flex items-center justify-center mb-4`}
+              >
+                <service.icon className={`h-5 w-5 text-${service.accent}`} />
+              </div>
+              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-accent-system transition-colors">
+                {service.name}
+              </h3>
+              <p className="text-sm text-text-secondary mb-4">{service.pitch}</p>
+              <span className="text-sm font-medium text-accent-system">
+                {t('landing.hero_landing.services.cta_label')} →
+              </span>
+            </MotionLink>
+          ))}
+        </div>
 
-      {/* Final CTA Section */}
-      <motion.div
-        className="relative z-10 max-w-5xl mx-auto px-6 pb-20 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 0.8 }}
-      >
-        <h3 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-          {t('landing.hero_landing.final_cta.title')}
-        </h3>
-        <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-          {t('landing.hero_landing.final_cta.subtitle')}
-        </p>
-
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block"
-        >
-          <CTAButton size="lg" calendly arrow>
-            <Sparkles className="mr-2 h-5 w-5" />
-            {t('landing.hero_landing.final_cta.button')}
-          </CTAButton>
-        </motion.div>
+        {/* Light CTA after service cards */}
+        <div className="text-center">
+          <p className="text-text-secondary mb-6">{t('landing.hero_landing.final_cta.subtitle')}</p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
+          >
+            <CTAButton size="lg" calendly arrow>
+              <Sparkles className="mr-2 h-5 w-5" />
+              {t('landing.hero_landing.final_cta.button')}
+            </CTAButton>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   )

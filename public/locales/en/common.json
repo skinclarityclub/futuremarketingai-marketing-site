@@ -797,7 +797,7 @@
       "description": "We implement AI that actually works — marketing automation, custom workflows, chatbots, and voice agents for SaaS and e-commerce companies.",
       "trust_anchor": "Businesses working with AI partners are 2.5x more likely to succeed",
       "cta": {
-        "primary": "See What We Build",
+        "primary": "Explore Our Services",
         "secondary": "Book a Strategy Call"
       },
       "solution_section": {
@@ -805,10 +805,31 @@
         "title": "What We Build For You",
         "subtitle": "End-to-end AI implementation — from workflow automation to autonomous marketing systems"
       },
+      "services": {
+        "title": "AI Platforms Built for Growth",
+        "subtitle": "Three specialized AI platforms. Choose your starting point.",
+        "cta_label": "Learn more",
+        "marketing": {
+          "name": "FutureMarketingAI",
+          "pitch": "Autonomous content creation, scheduling, and campaign automation"
+        },
+        "chat": {
+          "name": "FutureChatAI",
+          "pitch": "AI chat agents that qualify leads and support customers 24/7"
+        },
+        "voice": {
+          "name": "FutureVoiceAI",
+          "pitch": "Voice agents that handle inbound and outbound calls"
+        },
+        "automations": {
+          "name": "AI Automations",
+          "pitch": "Custom workflow automation connecting your tools and processes"
+        }
+      },
       "final_cta": {
-        "title": "Ready to Automate Your Business?",
-        "subtitle": "Book a free 30-minute strategy call and discover what AI can do for your operations",
-        "button": "Book a Free Strategy Call"
+        "title": "Not Sure Where to Start?",
+        "subtitle": "Book a free 30-minute AI audit. We'll map your opportunities.",
+        "button": "Book a Free Audit"
       }
     }
   }

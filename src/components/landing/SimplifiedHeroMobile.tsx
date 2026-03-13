@@ -185,7 +185,7 @@ export function SimplifiedHeroMobile({ className = '' }: SimplifiedHeroMobilePro
               aria-hidden="true"
             />
           </div>
-          <span className="font-medium">Live interactieve demo beschikbaar</span>
+          <span className="font-medium">{t('landing.hero_landing.badge')}</span>
         </motion.div>
       </div>
     </section>
