@@ -19,7 +19,7 @@ interface ChatbotState {
 
   // Session
   sessionId: string
-  messageCount: number
+  messageCounts: Record<string, number>
 
   // Actions
   setActivePersona: (id: string) => void
@@ -29,7 +29,7 @@ interface ChatbotState {
   toggle: () => void
   markRead: () => void
   setUnread: () => void
-  incrementMessageCount: () => void
+  incrementMessageCount: (personaId: string) => void
   resetSession: () => void
 }
 
@@ -42,7 +42,7 @@ export const useChatbotStore = create<ChatbotState>()(
       isMinimized: false,
       hasUnread: false,
       sessionId: generateSessionId(),
-      messageCount: 0,
+      messageCounts: {},
 
       // Actions
       setActivePersona: (id: string) => set({ activePersonaId: id }),
@@ -58,20 +58,30 @@ export const useChatbotStore = create<ChatbotState>()(
         }),
       markRead: () => set({ hasUnread: false }),
       setUnread: () => set({ hasUnread: true }),
-      incrementMessageCount: () => set((state) => ({ messageCount: state.messageCount + 1 })),
+      incrementMessageCount: (personaId: string) =>
+        set((state) => ({
+          messageCounts: {
+            ...state.messageCounts,
+            [personaId]: (state.messageCounts[personaId] || 0) + 1,
+          },
+        })),
       resetSession: () =>
         set({
           sessionId: generateSessionId(),
-          messageCount: 0,
+          messageCounts: {},
         }),
     }),
     {
       name: 'fmai-chatbot-state',
       partialize: (state) => ({
         sessionId: state.sessionId,
-        messageCount: state.messageCount,
+        messageCounts: state.messageCounts,
         activePersonaId: state.activePersonaId,
       }),
     }
   )
 )
+
+/** Standalone selector for reading a specific persona's message count */
+export const getMessageCount = (personaId: string): number =>
+  useChatbotStore.getState().messageCounts[personaId] || 0

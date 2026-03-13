@@ -5,7 +5,9 @@ import { useChatbotStore } from '../stores/chatbotStore'
 const DEMO_MESSAGE_LIMIT = 15
 
 export function usePersonaChat(personaId: string) {
-  const { sessionId, messageCount, incrementMessageCount } = useChatbotStore()
+  const { sessionId, messageCounts, incrementMessageCount } = useChatbotStore()
+
+  const messageCount = messageCounts[personaId] || 0
 
   const chat = useChat({
     id: `chat-${personaId}`,
@@ -17,7 +19,7 @@ export function usePersonaChat(personaId: string) {
       },
     }),
     onFinish: () => {
-      incrementMessageCount()
+      incrementMessageCount(personaId)
     },
     onError: (error) => {
       console.error(`[chat-${personaId}]`, error)
