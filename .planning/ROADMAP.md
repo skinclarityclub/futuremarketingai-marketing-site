@@ -2,16 +2,17 @@
 
 ## Progress
 
-| Phase | Name                       | Status   | Plans      | Progress |
-| ----- | -------------------------- | -------- | ---------- | -------- |
-| 1     | Website Rebrand            | Complete | —          | 100%     |
-| 2     | Service Pages              | Complete | —          | 100%     |
-| 3     | 3/3                        | Complete | 2026-03-13 | 0%       |
-| 4     | Upwork & Fiverr Setup      | Pending  | —          | 0%       |
-| 5     | Cold Email Campaign        | Pending  | —          | 0%       |
-| 6     | Voice Agent Partnership    | Pending  | —          | 0%       |
-| 7     | SKC Case Study Development | Pending  | —          | 0%       |
-| 8     | Language Expansion         | Pending  | —          | 0%       |
+| Phase | Name                           | Status   | Plans      | Progress |
+| ----- | ------------------------------ | -------- | ---------- | -------- |
+| 1     | Website Rebrand                | Complete | —          | 100%     |
+| 2     | Service Pages                  | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
+| 8     | Language Expansion             | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion  | Planned  | 5 plans    | 0%       |
 
 ## Phases
 
@@ -25,3 +26,13 @@
 - [ ] **Phase 6: Voice Agent Partnership** — Referral model with friend for voice agent delivery
 - [ ] **Phase 7: SKC Case Study Development** — Track and publish pilot results at 8-12 weeks
 - [ ] **Phase 8: Language Expansion** — German, Spanish improvements, French
+- [ ] **Phase 9: Living System Page Conversion** — Convert all existing pages from indigo/violet/purple glassmorphism to Living System teal/amber tokens
+  - **Goal:** Replace all old indigo/violet/purple/blue glassmorphism classes across homepage, header, footer, and service pages with Living System teal/amber design tokens. Eliminate 819 legacy color references across 126 files.
+  - **Requirement IDs:** REQ-PAGE-CONVERSION
+  - **Depends on:** Phase 3
+  - **Plans:** 5 plans
+    - [ ] 09-01-PLAN.md — Homepage Header, Hero, Mobile Hero, Footer conversion
+    - [ ] 09-02-PLAN.md — Homepage SocialProof, FeaturesSection, FeatureShowcase conversion
+    - [ ] 09-03-PLAN.md — Service pages (Automations, Chatbots, VoiceAgents) conversion + CTAButton migration
+    - [ ] 09-04-PLAN.md — Supporting pages (About, Pricing, Contact, HowItWorks, Legal) conversion
+    - [ ] 09-05-PLAN.md — Common components (LoadingFallback, FloatingNav, CookieConsent) + CSS + visual audit
