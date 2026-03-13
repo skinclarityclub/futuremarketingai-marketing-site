@@ -52,6 +52,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'))
 const AutomationsPage = lazy(() => import('./pages/AutomationsPage'))
 const ChatbotsPage = lazy(() => import('./pages/ChatbotsPage'))
 const VoiceAgentsPage = lazy(() => import('./pages/VoiceAgentsPage'))
+const MarketingMachinePage = lazy(() => import('./pages/MarketingMachinePage'))
 
 // Placeholder Pages (Coming Soon)
 const CaseStudiesPage = lazy(() => import('./pages/CaseStudiesPage'))
@@ -113,6 +114,7 @@ function App() {
     '/automations',
     '/chatbots',
     '/voice-agents',
+    '/marketing-machine',
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
   const isDemoRoute = !isMarketingRoute
@@ -200,6 +202,7 @@ function App() {
                     <Route path="/automations" element={<AutomationsPage />} />
                     <Route path="/chatbots" element={<ChatbotsPage />} />
                     <Route path="/voice-agents" element={<VoiceAgentsPage />} />
+                    <Route path="/marketing-machine" element={<MarketingMachinePage />} />
 
                     {/* Placeholder Pages (Coming Soon) */}
                     <Route path="/case-studies" element={<CaseStudiesPage />} />
