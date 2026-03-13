@@ -128,3 +128,18 @@
 - Conversation starters in EN/NL/ES for each persona
 - All tools return mock/static data (demo tools, no external API calls)
 - **Phase:** 16
+
+## REQ-CHATBOT-PLAYGROUND: ChatbotsPage Demo Playground
+
+- Transform /chatbots from static marketing to interactive demo experience
+- 3 switchable persona demos: e-commerce advisor, lead qualifier, support agent
+- Each demo tab has independent chat history and message counter
+- Desktop side-by-side layout (30% context card, 70% embedded chat widget)
+- Mobile stacked layout (context card above chat)
+- Progressive CTA system: no CTA msgs 1-4, subtle at 5, strong Calendly at 10, gate at 15
+- Multi-platform showcase with animated architecture diagram (CSS-only animations)
+- SKC case study as proof point in multi-platform section
+- Use case cards link/scroll to specific demo tabs
+- Hero CTA scrolls to demo playground
+- Full i18n support (EN/NL/ES) for all new content
+- **Phase:** 18
