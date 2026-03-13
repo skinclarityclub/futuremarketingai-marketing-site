@@ -151,11 +151,16 @@ export const AutomationsPage: React.FC = () => {
             <motion.div {...fadeInUp}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-system/10 border border-accent-system/20 rounded-sm mb-6">
                 <Zap className="w-4 h-4 text-accent-system" />
-                <span className="text-sm font-medium text-text-secondary">Delivered in 1-2 Weeks</span>
+                <span className="text-sm font-medium text-text-secondary">
+                  Delivered in 1-2 Weeks
+                </span>
               </div>
             </motion.div>
 
-            <motion.h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6" {...fadeInUp}>
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
+              {...fadeInUp}
+            >
               Automate Your Business With AI
             </motion.h1>
 
@@ -204,7 +209,9 @@ export const AutomationsPage: React.FC = () => {
         <section id="what-we-automate" className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">What We Automate</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                What We Automate
+              </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
                 From lead generation to customer onboarding — we automate the workflows that slow
                 your team down.
@@ -233,7 +240,9 @@ export const AutomationsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">How It Works</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                How It Works
+              </h2>
             </motion.div>
 
             <div className="space-y-6">
@@ -263,7 +272,9 @@ export const AutomationsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">Pricing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                Pricing
+              </h2>
               <p className="text-lg text-text-secondary">Transparent pricing. No surprises.</p>
             </motion.div>
 
@@ -335,7 +346,9 @@ export const AutomationsPage: React.FC = () => {
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className="text-3xl font-bold font-display text-text-primary mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold font-display text-text-primary mb-4">
+                Frequently Asked Questions
+              </h2>
             </motion.div>
 
             <div className="space-y-4">

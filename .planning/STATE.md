@@ -22,8 +22,8 @@ progress:
 - **Current Plan:** Not started
 - **Status:** Milestone complete
 - **Last completed:** Phase 3 Plan 03 (UX & Accessibility Fixes — Calendly modal, focus trap, reduced motion, trust metrics)
-- **Last session:** 2026-03-13T00:48:29.030Z
-- **Stopped at:** Completed 03-design-overhaul plan 01 (Design Tokens & Typography)
+- **Last session:** 2026-03-13T01:22:48.865Z
+- **Stopped at:** Completed 09-living-system-page-conversion plan 02 (SocialProof, FeaturesSection, FeatureShowcase)
 
 ## Decisions
 
@@ -36,6 +36,8 @@ progress:
 - 2026-03-13: [03-01]: gradient-text-success renamed to gradient-text-flow (teal-to-amber Living System flow gradient)
 - 2026-03-13: [03-03]: useMotionSafe consolidated into existing useReducedMotion.ts (not a new file) to keep all reduced motion utilities together
 - 2026-03-13: [03-03]: Each service page uses a local CALENDLY_URL constant with dark theme params — avoids shared import coupling
+- [Phase 09-living-system-page-conversion]: Animated motion.div cards keep className conversion instead of SystemPanel wrapper to preserve Framer Motion animations
+- [Phase 09-living-system-page-conversion]: FeatureShowcase removes background glow orbs entirely — cleaner Living System aesthetic without atmospheric glassmorphism effects
 
 ## Context
 
