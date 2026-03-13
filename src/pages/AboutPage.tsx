@@ -16,6 +16,7 @@ import { SocialProof } from '../components/landing/SocialProof'
 import { FAQSection } from '../components/seo/FAQSection'
 import { TermDefinitions } from '../components/seo/TermDefinitions'
 import { CTAButton } from '../components/common/CTAButton'
+import { ScrollReveal } from '../components/common/ScrollReveal'
 
 export const AboutPage: React.FC = () => {
   const { t } = useTranslation(['about', 'common'])
@@ -63,25 +64,27 @@ export const AboutPage: React.FC = () => {
         </section>
 
         {/* Mission */}
-        <section className="py-16 px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
-              <h2 className="text-3xl font-bold font-display text-text-primary mb-6 flex items-center gap-3">
-                <Target className="w-8 h-8 text-accent-system" />
-                {t('about:mission.heading')}
-              </h2>
-              <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                {t('about:mission.text')}
-              </p>
-              <h3 className="text-2xl font-bold font-display text-text-primary mb-4">
-                {t('about:mission.why_heading')}
-              </h3>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                {t('about:mission.why_text')}
-              </p>
+        <ScrollReveal>
+          <section className="py-16 px-12">
+            <div className="max-w-7xl mx-auto">
+              <div className="card-gradient-border card-tilt rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <h2 className="text-3xl font-bold font-display text-text-primary mb-6 flex items-center gap-3">
+                  <Target className="w-8 h-8 text-accent-system" />
+                  {t('about:mission.heading')}
+                </h2>
+                <p className="text-lg text-text-secondary leading-relaxed mb-6">
+                  {t('about:mission.text')}
+                </p>
+                <h3 className="text-2xl font-bold font-display text-text-primary mb-4">
+                  {t('about:mission.why_heading')}
+                </h3>
+                <p className="text-lg text-text-secondary leading-relaxed">
+                  {t('about:mission.why_text')}
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
 
         {/* Timeline - Vision Section */}
         <section className="py-16 px-12">
@@ -96,7 +99,7 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0 * 0.1 }}
-                className="card-gradient-border rounded-card relative border-l-4 border-border-primary pl-8 py-6 bg-white/[0.02] border transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                className="card-gradient-border card-tilt rounded-card relative border-l-4 border-border-primary pl-8 py-6 bg-white/[0.02] border transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
               >
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
                 <div className="text-sm font-semibold font-mono text-accent-system mb-2">
@@ -116,7 +119,7 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1 * 0.1 }}
-                className="card-gradient-border rounded-card relative border-l-4 border-accent-system bg-accent-system/10 pl-8 py-6 border transition-all duration-500 hover:bg-accent-system/15 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                className="card-gradient-border card-tilt rounded-card relative border-l-4 border-accent-system bg-accent-system/10 pl-8 py-6 border transition-all duration-500 hover:bg-accent-system/15 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
               >
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
                 <div className="text-sm font-semibold font-mono text-accent-system mb-2">
@@ -139,7 +142,7 @@ export const AboutPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 2 * 0.1 }}
-                className="card-gradient-border rounded-card relative border-l-4 border-border-primary pl-8 py-6 bg-white/[0.02] border transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                className="card-gradient-border card-tilt rounded-card relative border-l-4 border-border-primary pl-8 py-6 bg-white/[0.02] border transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
               >
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-accent-system rounded-full border-4 border-bg-deep" />
                 <div className="text-sm font-semibold font-mono text-accent-system mb-2">
@@ -174,30 +177,32 @@ export const AboutPage: React.FC = () => {
         <TermDefinitions showAdvanced />
 
         {/* Final CTA */}
-        <section className="py-16 px-12">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                {t('about:cta.title')}
-              </h2>
-              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                {t('about:cta.description')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton calendly arrow size="lg">
-                  {t('about:cta.demo_button')}
-                </CTAButton>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-btn hover:bg-bg-surface transition-all"
-                >
-                  {t('about:cta.contact_button')}
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+        <ScrollReveal delay={0.1}>
+          <section className="py-16 px-12">
+            <div className="max-w-7xl mx-auto text-center">
+              <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                  {t('about:cta.title')}
+                </h2>
+                <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                  {t('about:cta.description')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <CTAButton calendly arrow size="lg">
+                    {t('about:cta.demo_button')}
+                  </CTAButton>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-bg-elevated border border-border-primary text-text-primary font-semibold rounded-btn hover:bg-bg-surface transition-all"
+                  >
+                    {t('about:cta.contact_button')}
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
       </div>
     </>
   )

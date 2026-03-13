@@ -102,7 +102,7 @@ export const PricingTable: React.FC<PricingTableProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`card-gradient-border relative rounded-card bg-white/[0.02] border p-6 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
+              className={`card-gradient-border card-tilt relative rounded-card bg-white/[0.02] border p-6 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
                 index === highlightTier ? 'border-accent-human/30' : 'border-border-primary'
               }`}
             >

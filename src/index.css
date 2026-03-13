@@ -707,6 +707,43 @@
   }
 }
 
+/* ── Typography Polish ── */
+
+/* Tighter tracking on large display headings */
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+/* Consistent section spacing rhythm */
+.section-gap {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1280px) {
+  .section-gap {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  /* Slightly larger headings at xl */
+  .hero-heading-xl {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-gap {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .hero-heading-xl {
+    font-size: 4.5rem;
+  }
+}
+
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .blob,

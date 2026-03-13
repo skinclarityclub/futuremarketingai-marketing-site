@@ -15,6 +15,7 @@ import { StructuredDataPresets } from '../components/seo/StructuredData'
 import { FAQSection } from '../components/seo/FAQSection'
 import { TermDefinitions } from '../components/seo/TermDefinitions'
 import { CTAButton } from '../components/common/CTAButton'
+import { ScrollReveal } from '../components/common/ScrollReveal'
 
 export const HowItWorksPage: React.FC = () => {
   const { t } = useTranslation(['how-it-works', 'common'])
@@ -74,7 +75,7 @@ export const HowItWorksPage: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="card-gradient-border rounded-card flex flex-col md:flex-row gap-6 items-start bg-white/[0.02] border border-border-primary p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                    className="card-gradient-border card-tilt rounded-card flex flex-col md:flex-row gap-6 items-start bg-white/[0.02] border border-border-primary p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   >
                     {/* Step Number + Icon */}
                     <div className="flex-shrink-0">
@@ -122,21 +123,23 @@ export const HowItWorksPage: React.FC = () => {
         <TermDefinitions showAdvanced />
 
         {/* Final CTA */}
-        <section className="py-16 px-12">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
-              <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                {t('how-it-works:cta.title')}
-              </h2>
-              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                {t('how-it-works:cta.description')}
-              </p>
-              <CTAButton calendly arrow size="lg">
-                {t('how-it-works:cta.button')}
-              </CTAButton>
+        <ScrollReveal>
+          <section className="py-16 px-12">
+            <div className="max-w-7xl mx-auto text-center">
+              <div className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-12 transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
+                  {t('how-it-works:cta.title')}
+                </h2>
+                <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                  {t('how-it-works:cta.description')}
+                </p>
+                <CTAButton calendly arrow size="lg">
+                  {t('how-it-works:cta.button')}
+                </CTAButton>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
       </div>
     </>
   )
