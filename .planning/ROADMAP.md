@@ -21,7 +21,7 @@
 | 15    | 3/3                             | Complete | 2026-03-13 | 0%       |
 | 16    | 3/3                             | Complete | 2026-03-13 | 0%       |
 | 17    | 4/4                             | Complete | 2026-03-13 | 0%       |
-| 18    | ChatbotsPage Demo Playground    | Pending  | —          | 0%       |
+| 18    | ChatbotsPage Demo Playground    | Planned  | 3          | 0%       |
 | 19    | Homepage Concierge + Demo Guide | Pending  | —          | 0%       |
 
 ## Phases
@@ -195,6 +195,10 @@
     - Update `src/pages/ChatbotsPage.tsx` — New hero copy, wire DemoPlayground + MultiPlatformShowcase, update use-cases to link to demos
     - i18n: Update `public/locales/{en,nl,es}/chatbots.json` with new demo copy, scenario descriptions, CTA text
     - Conversion funnel: Messages 1-4 pure demo, msg 5 subtle CTA, msg 10 stronger CTA, msg 15 gate with Calendly
+  - **Plans:** 3 plans
+    - [ ] 18-01-PLAN.md — Store extension + DemoPlayground + PersonaSelector + DemoContextCard (core orchestration)
+    - [ ] 18-02-PLAN.md — ProgressiveCTA + MultiPlatformShowcase (conversion + marketing components)
+    - [ ] 18-03-PLAN.md — ChatbotsPage wiring + i18n (EN/NL/ES) + barrel exports + visual verification
 
 - [ ] **Phase 19: Homepage Concierge + Demo Guide + ARIA Cleanup** — Wire concierge persona as floating chatbot on marketing pages, demo-guide persona on demo pages, remove all old ARIA code and OpenAI dependencies.
   - **Goal:** Replace the entire ARIA system with the new persona-driven chatbot. Concierge persona floats on marketing pages (/, /pricing, /about, /chatbots, etc.). Demo-guide persona activates on demo pages (/explorer, /calculator, /dashboard) with page-context awareness and module follow-up behavior (preserved from ARIA). Clean removal of all old code.
