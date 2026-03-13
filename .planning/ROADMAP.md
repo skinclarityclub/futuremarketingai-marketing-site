@@ -18,7 +18,7 @@
 | 12    | Design Polish & Media           | Complete    | 2026-03-13 | 100%     |
 | 13    | 2/2                             | Complete    | 2026-03-13 | 0%       |
 | 14    | 3/3                             | Complete    | 2026-03-13 | 0%       |
-| 15    | 1/3                             | In Progress |            | 0%       |
+| 15    | 2/3                             | In Progress |            | 0%       |
 | 16    | Chatbot Personas & Knowledge    | Pending     | —          | 0%       |
 | 17    | ChatWidget UI Components        | Pending     | —          | 0%       |
 | 18    | ChatbotsPage Demo Playground    | Pending     | —          | 0%       |

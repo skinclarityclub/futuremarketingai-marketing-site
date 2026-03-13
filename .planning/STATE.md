@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 15-02
+current_plan: 15-03
 status: in-progress
-stopped_at: Completed 15-01-PLAN.md
-last_updated: '2026-03-13T17:02:00.000Z'
+stopped_at: Completed 15-02-PLAN.md
+last_updated: '2026-03-13T17:10:00.000Z'
 progress:
   total_phases: 8
   completed_phases: 7
   total_plans: 30
-  completed_plans: 28
+  completed_plans: 29
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 15 — Chatbot Engine Foundation
-- **Current Plan:** 15-02
+- **Current Plan:** 15-03
 - **Status:** In progress
-- **Last completed:** Phase 15 Plan 01 — Types, Security, Rate Limiting, Complexity
-- **Last session:** 2026-03-13T17:02:00Z
-- **Stopped at:** Completed 15-01-PLAN.md
+- **Last completed:** Phase 15 Plan 02 — Persona Infrastructure Modules
+- **Last session:** 2026-03-13T17:10:00Z
+- **Stopped at:** Completed 15-02-PLAN.md
 
 ## Decisions
 
@@ -85,6 +85,8 @@ progress:
 - [14-03]: VoiceAgentsPage trust metric values (24/7, 500+, 98%) stored in locale files for potential localization
 - [Phase 15]: [15-01]: Map.forEach used instead of for-of iteration — avoids downlevelIteration tsconfig requirement
 - [Phase 15]: [15-01]: MODEL_IDS uses shorthand IDs (claude-haiku-4-5, claude-sonnet-4-5) — provider resolves to latest
+- [Phase 15]: [15-02]: AI SDK v6 uses inputSchema (not parameters) for tool() definitions — DEMO_TOOL updated accordingly
+- [Phase 15]: [15-02]: Map.forEach pattern continued from 15-01 to avoid downlevelIteration requirement
 
 ## Context
 
