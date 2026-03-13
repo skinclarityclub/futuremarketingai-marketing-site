@@ -800,23 +800,45 @@
       }
     },
     "hero_landing": {
-      "badge": "Next-Gen AI Marketing",
-      "main_headline": "Turn content into growth.",
-      "sub_headline": "On autopilot.",
-      "description": "Revolutionaire AI-gedreven marketing automatisering die premium bedrijven transformeert tot marktleiders. Ervaar enterprise-grade intelligente marketing ontworpen voor ambitieuze groei.",
+      "badge": "AI Implementatie Partner",
+      "main_headline": "AI Systemen Die Jouw",
+      "sub_headline": "Bedrijf Runnen.",
+      "description": "Wij implementeren AI die echt werkt — marketing automatisering, maatwerk workflows, chatbots en voice agents voor SaaS- en e-commercebedrijven.",
+      "trust_anchor": "Bedrijven die samenwerken met AI-partners zijn 2,5x meer kans om te slagen",
       "cta": {
-        "primary": "Probeer Interactieve Demo",
-        "secondary": "Sluit aan bij Wachtlijst"
+        "primary": "Ontdek Onze Services",
+        "secondary": "Plan een Strategiegesprek"
       },
       "solution_section": {
-        "badge": "De Oplossing",
-        "title": "Hoe We Het Laten Werken",
-        "subtitle": "8 autonome modules die 24/7 werken om jouw groei te versnellen"
+        "badge": "Onze Services",
+        "title": "Wat We Voor Jou Bouwen",
+        "subtitle": "End-to-end AI implementatie — van workflow automatisering tot autonome marketingsystemen"
+      },
+      "services": {
+        "title": "AI Platforms Gebouwd voor Groei",
+        "subtitle": "Drie gespecialiseerde AI platforms. Kies je startpunt.",
+        "cta_label": "Meer info",
+        "marketing": {
+          "name": "FutureMarketingAI",
+          "pitch": "Autonome contentcreatie, planning en campagne-automatisering"
+        },
+        "chat": {
+          "name": "FutureChatAI",
+          "pitch": "AI chatagenten die leads kwalificeren en klanten 24/7 ondersteunen"
+        },
+        "voice": {
+          "name": "FutureVoiceAI",
+          "pitch": "Spraakagenten die inkomende en uitgaande gesprekken afhandelen"
+        },
+        "automations": {
+          "name": "AI Automatisering",
+          "pitch": "Maatwerk workflow-automatisering die jouw tools en processen verbindt"
+        }
       },
       "final_cta": {
-        "title": "Klaar om Je Pioneer Voordeel Te Claimen?",
-        "subtitle": "Sluit je aan bij de eerste 10 teams die een oneerlijke 2-3 jaar voorsprong opbouwen voor mainstream adoptie",
-        "button": "Sluit aan bij Wachtlijst - 2 Plekken Over"
+        "title": "Niet Zeker Waar te Beginnen?",
+        "subtitle": "Plan een gratis 30 minuten AI audit. We brengen jouw kansen in kaart.",
+        "button": "Plan een Gratis Audit"
       }
     }
   }
