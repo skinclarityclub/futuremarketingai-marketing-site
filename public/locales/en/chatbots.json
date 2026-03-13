@@ -122,7 +122,7 @@
   },
   "demo": {
     "title": "Try It Yourself",
-    "subtitle": "Interact with 3 live AI chatbot demos — each trained for a different use case.",
+    "subtitle": "Interact with 4 live AI chatbot demos — each trained for a different use case.",
     "capabilities_label": "This bot can:",
     "cta_subtle": "Like what you see?",
     "cta_subtle_link": "We build custom chatbots for your business",
@@ -163,6 +163,17 @@
           "Look up order and account info",
           "Create support tickets",
           "Escalate to human agents"
+        ]
+      },
+      "concierge": {
+        "label": "Website Concierge",
+        "scenario_title": "Website Concierge",
+        "scenario": "A visitor lands on your website for the first time. The AI concierge greets them, answers questions about your services, shares case studies, and guides them toward booking a discovery call — like a 24/7 sales assistant.",
+        "capabilities": [
+          "Answer service and pricing questions",
+          "Share relevant case studies",
+          "Navigate visitors to the right page",
+          "Guide toward booking a call"
         ]
       }
     }

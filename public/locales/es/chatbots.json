@@ -122,7 +122,7 @@
   },
   "demo": {
     "title": "Pruebalo Tu Mismo",
-    "subtitle": "Interactua con 3 demos de chatbot IA en vivo — cada uno entrenado para un caso de uso diferente.",
+    "subtitle": "Interactua con 4 demos de chatbot IA en vivo — cada uno entrenado para un caso de uso diferente.",
     "capabilities_label": "Este bot puede:",
     "cta_subtle": "¿Te gusta lo que ves?",
     "cta_subtle_link": "Construimos chatbots personalizados para tu negocio",
@@ -163,6 +163,17 @@
           "Buscar informacion de pedidos y cuentas",
           "Crear tickets de soporte",
           "Escalar a agentes humanos"
+        ]
+      },
+      "concierge": {
+        "label": "Concierge del Sitio",
+        "scenario_title": "Concierge del Sitio Web",
+        "scenario": "Un visitante llega a tu sitio web por primera vez. El concierge IA los recibe, responde preguntas sobre tus servicios, comparte casos de estudio y los guia hacia reservar una llamada de descubrimiento — como un asistente de ventas 24/7.",
+        "capabilities": [
+          "Responder preguntas de servicios y precios",
+          "Compartir casos de estudio relevantes",
+          "Navegar visitantes a la pagina correcta",
+          "Guiar hacia reservar una llamada"
         ]
       }
     }

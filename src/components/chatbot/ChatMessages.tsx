@@ -6,6 +6,7 @@ import { ToolResultRenderer } from './tool-results'
 interface ChatMessagesProps {
   messages: UIMessage[]
   status: string
+  welcomeMessage?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -65,7 +66,7 @@ const assistantBubbleClass =
 // ---------------------------------------------------------------------------
 // ChatMessages
 // ---------------------------------------------------------------------------
-export function ChatMessages({ messages, status }: ChatMessagesProps) {
+export function ChatMessages({ messages, status, welcomeMessage }: ChatMessagesProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
@@ -93,6 +94,15 @@ export function ChatMessages({ messages, status }: ChatMessagesProps) {
       onScroll={handleScroll}
       className="flex-1 space-y-4 overflow-y-auto px-4 py-4"
     >
+      {/* Welcome message when no messages yet */}
+      {messages.length === 0 && welcomeMessage && (
+        <div className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
+          <div className={assistantBubbleClass}>
+            <MarkdownContent text={welcomeMessage} />
+          </div>
+        </div>
+      )}
+
       {messages.map((message) => (
         <div
           key={message.id}

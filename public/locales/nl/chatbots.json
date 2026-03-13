@@ -122,7 +122,7 @@
   },
   "demo": {
     "title": "Probeer Het Zelf",
-    "subtitle": "Interacteer met 3 live AI-chatbot demo's — elk getraind voor een ander gebruik.",
+    "subtitle": "Interacteer met 4 live AI-chatbot demo's — elk getraind voor een ander gebruik.",
     "capabilities_label": "Deze bot kan:",
     "cta_subtle": "Onder de indruk?",
     "cta_subtle_link": "Wij bouwen chatbots op maat voor jouw bedrijf",
@@ -163,6 +163,17 @@
           "Bestelling- en accountinfo opzoeken",
           "Supporttickets aanmaken",
           "Escaleren naar menselijke medewerkers"
+        ]
+      },
+      "concierge": {
+        "label": "Website Concierge",
+        "scenario_title": "Website Concierge",
+        "scenario": "Een bezoeker landt voor het eerst op je website. De AI-concierge verwelkomt ze, beantwoordt vragen over je diensten, deelt case studies en begeleidt ze naar het boeken van een kennismakingsgesprek — als een 24/7 sales assistent.",
+        "capabilities": [
+          "Diensten- en prijsvragen beantwoorden",
+          "Relevante case studies delen",
+          "Bezoekers naar de juiste pagina navigeren",
+          "Begeleiden naar het boeken van een gesprek"
         ]
       }
     }

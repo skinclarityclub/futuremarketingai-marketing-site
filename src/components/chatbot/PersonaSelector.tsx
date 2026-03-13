@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next'
-import { ShoppingCart, Target, LifeBuoy, type LucideIcon } from 'lucide-react'
+import { ShoppingCart, Target, LifeBuoy, MessageCircle, type LucideIcon } from 'lucide-react'
 
-export const DEMO_PERSONAS = ['ecommerce', 'leadgen', 'support'] as const
+export const DEMO_PERSONAS = ['ecommerce', 'leadgen', 'support', 'concierge'] as const
 export type DemoPersonaId = (typeof DEMO_PERSONAS)[number]
 
 const TAB_ICONS: Record<DemoPersonaId, LucideIcon> = {
   ecommerce: ShoppingCart,
   leadgen: Target,
   support: LifeBuoy,
+  concierge: MessageCircle,
 }
 
 interface PersonaSelectorProps {

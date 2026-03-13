@@ -89,6 +89,7 @@ i18n
       'forms', // Form elements
       'errors', // Error messages
       'analytics', // Analytics labels
+      'chatbots', // Chatbots showcase page
     ],
     defaultNS: 'common',
 

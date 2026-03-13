@@ -17,6 +17,7 @@ interface ChatWidgetProps {
   height?: string // embedded mode only, e.g., '500px'
   messageLimit?: number // demo limit, default 15
   pageContext?: { pathname: string }
+  welcomeMessage?: string
 }
 
 export function ChatWidget({
@@ -28,6 +29,7 @@ export function ChatWidget({
   height,
   messageLimit = 15,
   pageContext,
+  welcomeMessage,
 }: ChatWidgetProps) {
   const { messages, sendMessage, status, messageCount, isAtLimit } = usePersonaChat(
     personaId,
@@ -130,7 +132,7 @@ export function ChatWidget({
                 onMinimize={minimize}
                 onClose={close}
               />
-              <ChatMessages messages={messages} status={status} />
+              <ChatMessages messages={messages} status={status} welcomeMessage={welcomeMessage} />
               {showPrompts && (
                 <SuggestedPrompts
                   prompts={suggestedPrompts}
@@ -164,7 +166,7 @@ export function ChatWidget({
         messageCount={messageCount}
         messageLimit={messageLimit}
       />
-      <ChatMessages messages={messages} status={status} />
+      <ChatMessages messages={messages} status={status} welcomeMessage={welcomeMessage} />
       {showPrompts && (
         <SuggestedPrompts prompts={suggestedPrompts} onSelect={handleSend} disabled={isAtLimit} />
       )}

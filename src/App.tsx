@@ -15,7 +15,9 @@ import {
   SEOHelmet,
 } from './components'
 import { ChatWidget } from './components/chatbot'
+import { CONCIERGE_STARTERS, DEMO_GUIDE_STARTERS } from './lib/chatbot/personas'
 import { useScrollToTop, useIsMobile } from './hooks'
+import { useTranslation } from 'react-i18next'
 import { trackGA4PageView } from './utils/ga4'
 import { hotjarStateChange } from './utils/hotjar'
 import SentryTestButton from './components/common/SentryTestButton'
@@ -79,6 +81,8 @@ const SkinClarityPitchPage = lazy(() =>
 function App() {
   const location = useLocation()
   const isMobile = useIsMobile()
+  const { i18n } = useTranslation()
+  const lang = i18n.language || 'en'
 
   // Force dark mode activation (app is dark-mode-only by design)
   useEffect(() => {
@@ -187,6 +191,18 @@ function App() {
           <ChatWidget
             mode="floating"
             personaId={isDemoPage ? 'demo-guide' : 'concierge'}
+            personaName={isDemoPage ? 'Demo Guide' : 'FMai Concierge'}
+            personaAvatar={isDemoPage ? '🎯' : '✦'}
+            suggestedPrompts={
+              isDemoPage
+                ? DEMO_GUIDE_STARTERS[lang] || DEMO_GUIDE_STARTERS.en
+                : CONCIERGE_STARTERS[lang] || CONCIERGE_STARTERS.en
+            }
+            welcomeMessage={
+              isDemoPage
+                ? "Welcome to the Marketing Machine! I'll walk you through everything — pick a question or ask your own."
+                : "Hey! I'm the FMai Concierge — ask me anything about our services, pricing, or how AI can transform your marketing."
+            }
             pageContext={{ pathname: location.pathname }}
           />
 
