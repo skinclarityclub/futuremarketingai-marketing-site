@@ -265,7 +265,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="px-6 py-3 bg-accent-system text-bg-deep rounded-sm hover:bg-accent-system/90 transition-colors focus:ring-2 focus:ring-accent-system focus:ring-offset-2"
                 aria-label={t('common:accessibility.open_calendly')}
               >
                 {t('common:calendly.open_direct')}
