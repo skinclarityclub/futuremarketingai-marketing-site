@@ -1,268 +1,65 @@
 /**
  * Hero Section Component
- * Converted from Next.js to React Router
- * Source: future-marketing-ai-hero.tsx
+ * Left-aligned editorial layout with OrbitVisual decoration.
+ * 2x2 numbered service card grid with gradient border hover.
  *
- * Living System conversion: teal/amber palette, bg-bg-deep, no glassmorphism.
+ * Living System rebuild: no Framer Motion background layers,
+ * global GradientMesh handles background via LandingPage.
  */
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { lazy, Suspense, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
-import { Sparkles, TrendingUp, Zap, Brain, Bot } from 'lucide-react'
+import { Zap, Loader2 } from 'lucide-react'
 import { useIsMobile } from '../../hooks/useMediaQuery'
 import { useDemoRedirect } from '../../hooks/useDemoRedirect'
 import { SimplifiedHeroMobile } from './SimplifiedHeroMobile'
 import { MobileDemoHome } from '../mobile/MobileDemoHome'
-import { CTAButton } from '../common'
+import { CTAButton, OrbitVisual } from '../common'
 
-const MotionLink = motion(Link)
-
-// Fixed positions to prevent hydration mismatch
-const NEURAL_NODES = [
-  { x: 93.38, y: 40.68 },
-  { x: 70.07, y: 50.82 },
-  { x: 31.68, y: 28.83 },
-  { x: 71.44, y: 2.63 },
-  { x: 4.61, y: 23.71 },
-  { x: 84.47, y: 7.66 },
-  { x: 29.16, y: 47.8 },
-  { x: 98.19, y: 87.97 },
-  { x: 11.9, y: 58.98 },
-  { x: 70.58, y: 18.82 },
-  { x: 56.53, y: 18.15 },
-  { x: 30.93, y: 92.44 },
-]
-
-const PARTICLE_POSITIONS = [
-  { x: 14.58, y: 14.98, size: 4.58 },
-  { x: 74.99, y: 2.8, size: 1.1 },
-  { x: 69.14, y: 61.05, size: 3.58 },
-  { x: 82.4, y: 55.2, size: 4.29 },
-  { x: 71.34, y: 39.42, size: 2.77 },
-  { x: 42.54, y: 31.28, size: 3.25 },
-  { x: 17.99, y: 97.19, size: 1.42 },
-  { x: 81.78, y: 42.08, size: 3.19 },
-  { x: 26.33, y: 95.51, size: 2.22 },
-  { x: 92.36, y: 20.77, size: 2.63 },
-  { x: 41.39, y: 56.8, size: 2.63 },
-  { x: 3.61, y: 80.42, size: 2.99 },
-  { x: 16.44, y: 16.6, size: 2.02 },
-  { x: 26.78, y: 54.11, size: 2.86 },
-  { x: 46.53, y: 21.19, size: 4.18 },
-  { x: 71.54, y: 26.13, size: 1.24 },
-  { x: 53.57, y: 77.37, size: 1.98 },
-  { x: 98.26, y: 57.87, size: 4.3 },
-  { x: 13.28, y: 15.85, size: 2.34 },
-  { x: 47.18, y: 92.42, size: 4.7 },
-  { x: 42.55, y: 76.8, size: 4.17 },
-  { x: 71.07, y: 46.02, size: 4.9 },
-  { x: 47.68, y: 29.54, size: 2.96 },
-  { x: 11.98, y: 65.11, size: 1.38 },
-  { x: 78.58, y: 86.42, size: 3.5 },
-  { x: 27.63, y: 66.8, size: 2.09 },
-  { x: 54.48, y: 95.44, size: 3.1 },
-  { x: 45.3, y: 1.29, size: 3.1 },
-  { x: 25.43, y: 84.01, size: 2.59 },
-  { x: 27.48, y: 79.76, size: 2.98 },
-  { x: 72.94, y: 91.25, size: 2.99 },
-  { x: 65.45, y: 71.01, size: 4.24 },
-  { x: 88.96, y: 32.46, size: 4.07 },
-  { x: 94.87, y: 85.7, size: 1.91 },
-  { x: 5.41, y: 69.62, size: 2.88 },
-  { x: 77.01, y: 58.6, size: 4.96 },
-  { x: 52.43, y: 48.46, size: 2.69 },
-  { x: 42.03, y: 11.38, size: 1.82 },
-  { x: 31.86, y: 23.15, size: 2.42 },
-  { x: 52.28, y: 48.67, size: 2.74 },
-  { x: 87.78, y: 49.1, size: 2.98 },
-  { x: 37.83, y: 3.56, size: 1.9 },
-  { x: 18.74, y: 15.96, size: 4.81 },
-  { x: 1.68, y: 62.39, size: 4.5 },
-  { x: 34.82, y: 90.63, size: 3.68 },
-  { x: 45.61, y: 48.21, size: 1.71 },
-  { x: 51.32, y: 39.9, size: 1.52 },
-  { x: 68.11, y: 13.78, size: 3.66 },
-  { x: 79.43, y: 86.62, size: 1.93 },
-  { x: 51.24, y: 42.35, size: 2.76 },
-]
-
-// Neural Network Component — Living System teal palette
-const NeuralNetwork: React.FC = () => {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <div className="absolute inset-0 opacity-30" /> // Placeholder
-  }
-
-  return (
-    <div className="absolute inset-0 opacity-30">
-      <svg className="w-full h-full">
-        <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00D4AA" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="#F5A623" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#00D4AA" stopOpacity="0.4" />
-          </linearGradient>
-          <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#00D4AA" stopOpacity="0.7" />
-          </radialGradient>
-        </defs>
-
-        {/* Render connections */}
-        {NEURAL_NODES.map((node, i) =>
-          NEURAL_NODES.slice(i + 1).map((targetNode, j) => (
-            <motion.line
-              key={`${i}-${j}`}
-              x1={`${node.x}%`}
-              y1={`${node.y}%`}
-              x2={`${targetNode.x}%`}
-              y2={`${targetNode.y}%`}
-              stroke="url(#gradient)"
-              strokeWidth="1"
-              initial={{ opacity: 0, pathLength: 0 }}
-              animate={{ opacity: 0.3, pathLength: 1 }}
-              transition={{
-                duration: 2,
-                delay: i * 0.1 + j * 0.05,
-                ease: 'easeInOut',
-              }}
-            />
-          ))
-        )}
-
-        {/* Render nodes */}
-        {NEURAL_NODES.map((node, i) => (
-          <motion.circle
-            key={i}
-            cx={`${node.x}%`}
-            cy={`${node.y}%`}
-            r="3"
-            fill="url(#nodeGradient)"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: i * 0.1,
-              ease: 'easeOut',
-            }}
-          />
-        ))}
-      </svg>
-    </div>
-  )
-}
-
-// Holographic Grid Component — Living System teal grid lines
-const HolographicGrid: React.FC = () => (
-  <div className="absolute inset-0 opacity-20">
-    <div
-      className="w-full h-full"
-      style={{
-        backgroundImage: `
-          linear-gradient(rgba(0, 212, 170, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 212, 170, 0.1) 1px, transparent 1px)
-        `,
-        backgroundSize: '50px 50px',
-      }}
-    />
-  </div>
+const VisionTimeline = lazy(() =>
+  import('../common/VisionTimeline').then((m) => ({ default: m.VisionTimeline }))
 )
 
-// Floating Particles Component — Living System teal particles
-const FloatingParticles: React.FC = () => {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <div className="absolute inset-0" /> // Placeholder
-  }
-
-  return (
-    <div className="absolute inset-0">
-      {PARTICLE_POSITIONS.map((particle, i) => (
-        <motion.div
-          key={i}
-          className="absolute bg-accent-system/20 rounded-full"
-          style={{
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
-          }}
-          animate={{
-            y: [-10, 10, -10],
-            x: [-5, 5, -5],
-            opacity: [0.2, 0.8, 0.2],
-          }}
-          transition={{
-            duration: 4 + (i % 3),
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: i * 0.1,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
-// Gradient Orbs Component — Living System teal/amber orbs
-const GradientOrbs: React.FC = () => (
-  <div className="absolute inset-0 overflow-hidden">
-    <motion.div
-      className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full"
-      style={{
-        background: 'radial-gradient(circle, rgba(0, 212, 170, 0.15) 0%, transparent 70%)',
-      }}
-      animate={{
-        scale: [1, 1.2, 1],
-        rotate: [360, 0],
-      }}
-      transition={{
-        duration: 25,
-        repeat: Infinity,
-        ease: 'linear',
-      }}
-    />
-    <motion.div
-      className="absolute top-3/4 left-3/4 w-48 h-48 rounded-full"
-      style={{
-        background: 'radial-gradient(circle, rgba(245, 166, 35, 0.15) 0%, transparent 70%)',
-      }}
-      animate={{
-        scale: [1, 1.3, 1],
-        rotate: [0, 180, 360],
-      }}
-      transition={{
-        duration: 15,
-        repeat: Infinity,
-        ease: 'linear',
-      }}
-    />
-  </div>
-)
+/** Service card data — order: 01 Automations, 02 Chatbots, 03 Voice Agents, 04 Marketing Machine */
+const SERVICE_CARDS = [
+  {
+    number: '01',
+    nameKey: 'landing.hero_landing.services.automations.name',
+    pitchKey: 'landing.hero_landing.services.automations.pitch',
+    href: '/automations',
+  },
+  {
+    number: '02',
+    nameKey: 'landing.hero_landing.services.chat.name',
+    pitchKey: 'landing.hero_landing.services.chat.pitch',
+    href: '/chatbots',
+  },
+  {
+    number: '03',
+    nameKey: 'landing.hero_landing.services.voice.name',
+    pitchKey: 'landing.hero_landing.services.voice.pitch',
+    href: '/voice-agents',
+  },
+  {
+    number: '04',
+    nameKey: 'landing.hero_landing.services.marketing.name',
+    pitchKey: 'landing.hero_landing.services.marketing.pitch',
+    href: '/marketing-machine',
+  },
+]
 
 export const Hero: React.FC = () => {
-  // All hooks must be called unconditionally (Rules of Hooks)
   const isMobile = useIsMobile()
   const location = useLocation()
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const controls = useAnimation()
   const { t } = useTranslation('common')
-  useDemoRedirect() // Hook must be called unconditionally (Rules of Hooks)
+  useDemoRedirect()
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isInView) {
       void controls.start('visible')
     }
@@ -270,191 +67,82 @@ export const Hero: React.FC = () => {
 
   // Desktop-first: Render mobile variants for mobile devices
   if (isMobile) {
-    // For /demo-home route, show MobileDemoHome
     if (location.pathname === '/demo-home' || location.pathname === '/demo') {
       return <MobileDemoHome />
     }
-    // For all other routes, show SimplifiedHeroMobile
     return <SimplifiedHeroMobile />
   }
 
-  // Desktop Hero below (original implementation)
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  }
-
   return (
-    <section
-      ref={ref}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-bg-deep"
-    >
-      {/* Background Effects */}
-      <HolographicGrid />
-      <NeuralNetwork />
-      <FloatingParticles />
-      <GradientOrbs />
-
-      {/* Main Hero Content */}
-      <motion.div
-        className="relative z-10 max-w-6xl mx-auto px-6 py-20"
-        variants={containerVariants}
-        initial="hidden"
-        animate={controls}
-      >
-        {/* Badge */}
-        <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-accent-system/10 border border-accent-system/20 text-text-primary">
-            <Sparkles className="h-4 w-4 text-accent-system" />
+    <section ref={ref} className="relative bg-bg-deep">
+      {/* Hero area — left-aligned content with orbit visual */}
+      <div className="relative min-h-screen flex items-center px-12 pt-[140px] pb-20">
+        {/* Left-aligned Hero Content */}
+        <div className="relative z-10 max-w-[720px]">
+          {/* Badge */}
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-accent-system/10 border border-accent-system/20 text-text-primary mb-8"
+            style={{ animation: 'fadeIn 0.8s ease-out' }}
+          >
             <span className="text-sm font-medium text-text-secondary">
               {t('landing.hero_landing.badge')}
             </span>
             <div className="w-1 h-1 rounded-full bg-accent-system animate-pulse" />
           </div>
-        </motion.div>
 
-        {/* Main Headline */}
-        <motion.div className="text-center mb-6 md:mb-8" variants={itemVariants}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black mb-4">
-            <motion.span
-              className="block text-text-primary"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
+          {/* Headline */}
+          <h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
+          >
+            <span className="block text-text-primary">
               {t('landing.hero_landing.main_headline')}
-            </motion.span>
-            <motion.span
-              className="block bg-gradient-flow bg-clip-text text-transparent"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-            >
+            </span>
+            <span className="block bg-gradient-flow bg-clip-text text-transparent">
               {t('landing.hero_landing.sub_headline')}
-            </motion.span>
+            </span>
           </h1>
-        </motion.div>
 
-        {/* Description */}
-        <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-secondary text-center max-w-4xl mx-auto mb-6 leading-relaxed px-4"
-          variants={itemVariants}
-        >
-          {t('landing.hero_landing.description')}
-        </motion.p>
+          {/* Description */}
+          <p
+            className="text-lg lg:text-xl text-text-secondary max-w-xl mb-6 leading-relaxed"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
+          >
+            {t('landing.hero_landing.description')}
+          </p>
 
-        {/* Trust Anchor */}
-        <motion.p
-          className="text-sm text-text-muted text-center mb-8 md:mb-12 px-4"
-          variants={itemVariants}
-        >
-          {t('landing.hero_landing.trust_anchor')}
-        </motion.p>
+          {/* Trust Anchor */}
+          <p
+            className="text-sm text-text-muted mb-10"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
+          >
+            {t('landing.hero_landing.trust_anchor')}
+          </p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-16 md:mb-20 px-4"
-          variants={itemVariants}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          {/* CTA Buttons — left-aligned */}
+          <div
+            className="flex flex-wrap gap-4"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
+          >
             <CTAButton size="lg" href="#services" arrow>
-              <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+              <Zap className="mr-2 h-5 w-5" />
               {t('landing.hero_landing.cta.primary')}
             </CTAButton>
-          </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <CTAButton variant="secondary" size="lg" calendly arrow>
               {t('landing.hero_landing.cta.secondary')}
             </CTAButton>
-          </motion.div>
-        </motion.div>
-
-        {/* Floating Icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            className="absolute top-1/4 left-10 text-accent-system"
-            animate={{
-              y: [-20, 20, -20],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <Bot className="h-8 w-8" />
-          </motion.div>
-
-          <motion.div
-            className="absolute top-1/3 right-16 text-accent-human"
-            animate={{
-              y: [20, -20, 20],
-              rotate: [360, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <Brain className="h-10 w-10" />
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-1/4 left-1/4 text-accent-system"
-            animate={{
-              y: [-15, 15, -15],
-              x: [-10, 10, -10],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <TrendingUp className="h-6 w-6" />
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-1/3 right-1/4 text-accent-human"
-            animate={{
-              y: [10, -10, 10],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <Zap className="h-7 w-7" />
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
 
-      {/* Service Cards Grid — Hub Navigation */}
+        {/* Orbit Visual — right side, desktop only */}
+        <OrbitVisual />
+      </div>
+
+      {/* Service Cards Grid — 2x2 numbered layout */}
       <motion.div
         id="services"
-        className="relative z-10 max-w-6xl mx-auto px-6 pb-20"
+        className="relative z-10 px-12 pb-20"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
@@ -468,77 +156,57 @@ export const Hero: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {[
-            {
-              icon: Zap,
-              name: t('landing.hero_landing.services.marketing.name'),
-              pitch: t('landing.hero_landing.services.marketing.pitch'),
-              href: '/marketing-machine',
-              accent: 'accent-system',
-            },
-            {
-              icon: Bot,
-              name: t('landing.hero_landing.services.chat.name'),
-              pitch: t('landing.hero_landing.services.chat.pitch'),
-              href: '/chatbots',
-              accent: 'accent-human',
-            },
-            {
-              icon: Brain,
-              name: t('landing.hero_landing.services.voice.name'),
-              pitch: t('landing.hero_landing.services.voice.pitch'),
-              href: '/voice-agents',
-              accent: 'accent-system',
-            },
-            {
-              icon: TrendingUp,
-              name: t('landing.hero_landing.services.automations.name'),
-              pitch: t('landing.hero_landing.services.automations.pitch'),
-              href: '/automations',
-              accent: 'accent-human',
-            },
-          ].map((service, i) => (
-            <MotionLink
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {SERVICE_CARDS.map((service) => (
+            <Link
               key={service.href}
               to={service.href}
-              className="group bg-bg-surface border border-border-primary rounded-sm p-6 hover:bg-bg-elevated hover:border-l-2 hover:border-l-accent-system transition-all duration-200 cursor-pointer block"
-              whileHover={{ y: -4 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4 + i * 0.1, duration: 0.5 }}
+              className="card-gradient-border rounded-card bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
             >
-              <div
-                className={`w-10 h-10 bg-${service.accent}/10 rounded-sm flex items-center justify-center mb-4`}
-              >
-                <service.icon className={`h-5 w-5 text-${service.accent}`} />
+              {/* Top row: number + arrow circle */}
+              <div className="flex items-center justify-between">
+                <span className="text-text-muted font-mono text-sm">{service.number}</span>
+                <div className="w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-accent-human">
+                  <svg
+                    className="w-4 h-4 text-text-muted transition-colors duration-300 group-hover:text-bg-deep"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M4 12L12 4M12 4H6M12 4V10" />
+                  </svg>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-accent-system transition-colors">
-                {service.name}
-              </h3>
-              <p className="text-sm text-text-secondary mb-4">{service.pitch}</p>
-              <span className="text-sm font-medium text-accent-system">
-                {t('landing.hero_landing.services.cta_label')} →
-              </span>
-            </MotionLink>
+
+              {/* Title */}
+              <h3 className="text-xl font-semibold text-text-primary mt-6">{t(service.nameKey)}</h3>
+
+              {/* Description */}
+              <p className="text-text-secondary mt-3 leading-relaxed">{t(service.pitchKey)}</p>
+            </Link>
           ))}
         </div>
 
         {/* Light CTA after service cards */}
-        <div className="text-center">
+        <div className="text-center mt-12">
           <p className="text-text-secondary mb-6">{t('landing.hero_landing.final_cta.subtitle')}</p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block"
-          >
-            <CTAButton size="lg" calendly arrow>
-              <Sparkles className="mr-2 h-5 w-5" />
-              {t('landing.hero_landing.final_cta.button')}
-            </CTAButton>
-          </motion.div>
+          <CTAButton size="lg" calendly arrow>
+            {t('landing.hero_landing.final_cta.button')}
+          </CTAButton>
         </div>
       </motion.div>
+
+      {/* Vision Timeline — Future roadmap section */}
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center py-24">
+            <Loader2 className="w-8 h-8 text-accent-system animate-spin" />
+          </div>
+        }
+      >
+        <VisionTimeline />
+      </Suspense>
     </section>
   )
 }

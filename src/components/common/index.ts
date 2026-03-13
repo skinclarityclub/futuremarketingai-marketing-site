@@ -95,3 +95,4 @@ export { ExportButton } from './ExportButton'
 export type { ExportButtonProps } from './ExportButton'
 
 export { GradientMesh } from './GradientMesh'
+export { OrbitVisual } from './OrbitVisual'
