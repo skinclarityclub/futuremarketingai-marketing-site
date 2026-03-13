@@ -217,3 +217,9 @@
   - **Plans:** 2 plans
     - [ ] 19-01-PLAN.md — Wire ChatWidget floating mode with route-based persona switching + pageContext plumbing
     - [ ] 19-02-PLAN.md — Systematic ARIA cleanup (refactor shared deps, delete all ARIA files, clean barrels/i18n)
+
+- [ ] **Phase 20: Flagship Concierge Chatbot** — Unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities. The "best of the best" main chatbot combining all tools, no message limit, rich UI with info panels and page navigation.
+  - **Goal:** Transform the floating concierge from a basic chat window into a flagship showcase — unlimited messages, all tools from every persona (navigation, product search, lead qualification, support tickets, booking, ROI calculation), expandable side panel for rich content (case studies, product cards, module details), and proactive page navigation buttons. This is the live demo of what FMai builds for clients.
+  - **Depends on:** Phase 19
+  - **Plans:** 0 plans
+    - [ ] TBD (run /gsd:plan-phase 20 to break down)

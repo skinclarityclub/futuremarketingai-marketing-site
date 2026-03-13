@@ -175,3 +175,4 @@ progress:
 - Phase 19 Plan 01 complete: ChatWidget floating mode wired into App.tsx replacing AIJourneyAssistant, route-based concierge/demo-guide persona switching, pageContext forwarding to API
 - Phase 19 Plan 02 complete: Complete ARIA cleanup -- 53 files deleted (12,169 lines), refactored useCalendlyBooking/StrategicCTA/Explorer/App.tsx, cleaned barrels and i18n, zero dead imports
 - Phase 19 COMPLETE: All 2 plans done -- Homepage Concierge + Demo Guide + ARIA Cleanup finished (persona-driven chatbot replaces entire ARIA system)
+- Phase 20 added: Flagship Concierge Chatbot -- unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities
