@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 current_plan: 15-03
-status: in-progress
-stopped_at: Completed 15-02-PLAN.md
-last_updated: '2026-03-13T17:10:00.000Z'
+status: phase-complete
+stopped_at: Completed 15-03-PLAN.md
+last_updated: '2026-03-13T17:15:33.000Z'
 progress:
   total_phases: 8
-  completed_phases: 7
+  completed_phases: 8
   total_plans: 30
-  completed_plans: 29
+  completed_plans: 30
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 15 — Chatbot Engine Foundation
-- **Current Plan:** 15-03
-- **Status:** In progress
-- **Last completed:** Phase 15 Plan 02 — Persona Infrastructure Modules
-- **Last session:** 2026-03-13T17:10:00Z
-- **Stopped at:** Completed 15-02-PLAN.md
+- **Current Plan:** 15-03 (COMPLETE)
+- **Status:** Phase complete
+- **Last completed:** Phase 15 Plan 03 — Engine Orchestration and API Endpoint
+- **Last session:** 2026-03-13T17:15:33Z
+- **Stopped at:** Completed 15-03-PLAN.md
 
 ## Decisions
 
@@ -87,6 +87,8 @@ progress:
 - [Phase 15]: [15-01]: MODEL_IDS uses shorthand IDs (claude-haiku-4-5, claude-sonnet-4-5) — provider resolves to latest
 - [Phase 15]: [15-02]: AI SDK v6 uses inputSchema (not parameters) for tool() definitions — DEMO_TOOL updated accordingly
 - [Phase 15]: [15-02]: Map.forEach pattern continued from 15-01 to avoid downlevelIteration requirement
+- [Phase 15]: [15-03]: maxOutputTokens used instead of maxTokens — AI SDK v6 renamed this parameter
+- [Phase 15]: [15-03]: toTextStreamResponse used for simplicity — Phase 17 can switch to toUIMessageStreamResponse if useChat adopted
 
 ## Context
 
@@ -128,3 +130,8 @@ progress:
 - Phase 14 added: Service Page i18n -- wire useTranslation into 3 service pages, extract EN strings, add NL/ES translations
 - Phase 14 Plan 01 complete: AutomationsPage internationalized -- ~73 strings extracted to automations.json (EN/NL/ES), key-based mapping pattern for const arrays
 - Phase 14 Plan 03 complete: VoiceAgentsPage internationalized -- ~59 strings extracted to voice-agents.json (EN/NL/ES), partnership note + trust metrics fully translated
+- Phase 15 added: Chatbot Engine Foundation -- types, security, rate limiting, complexity detection, topic routing, prompt building, persona registry, tool execution, engine orchestration, API endpoint
+- Phase 15 Plan 01 complete: Types, security, rate limiting, complexity detection -- 4 foundation modules with PII blocking, 3-level rate limiter, Haiku/Sonnet model routing
+- Phase 15 Plan 02 complete: Persona infrastructure -- topic router, prompt builder with cache control, persona registry, tool executor with AI SDK v6 pattern
+- Phase 15 Plan 03 complete: Engine orchestration + API endpoint -- handleChatRequest pipeline, Vercel Web API streaming endpoint, barrel exports, CSP cleanup
+- Phase 15 COMPLETE: All 3 plans done -- Chatbot Engine Foundation finished (full pipeline from POST /api/chatbot to streaming Claude response)
