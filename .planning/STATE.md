@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 10-03
-status: in-progress
-stopped_at: Completed 10-02-PLAN.md — MarketingMachinePage created with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof
-last_updated: '2026-03-13T02:27:47.000Z'
+current_plan: complete
+status: complete
+stopped_at: Completed 10-03-PLAN.md — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
+last_updated: '2026-03-13T02:36:14.000Z'
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 10 — Homepage Restructuring & Marketing Machine Page
-- **Current Plan:** 10-03 (next)
-- **Status:** In Progress
-- **Last completed:** Phase 10 Plan 02 — /marketing-machine page created (MarketingMachinePage with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof, pricing teaser, Calendly CTA)
-- **Last session:** 2026-03-13T02:27:37.764Z
-- **Stopped at:** Completed 10-02-PLAN.md — MarketingMachinePage created with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof
+- **Current Plan:** Complete (all 11 plans done)
+- **Status:** Complete
+- **Last completed:** Phase 10 Plan 03 — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
+- **Last session:** 2026-03-13T02:37:11.740Z
+- **Stopped at:** Completed 10-03-PLAN.md — NL and ES hero_landing keys synced, ES structural issues fixed, service card translations added
 
 ## Decisions
 
@@ -50,6 +50,8 @@ progress:
 - [10-01]: solution_section i18n keys preserved in common.json — Plan 02 will reference them on marketing-machine page
 - [Phase 10-02]: MarketingMachinePage uses lazy imports for all heavy section components (VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof) with Loader2 Suspense fallback
 - [Phase 10-02]: Pricing teaser on /marketing-machine links to /pricing — avoids duplication, consistent with homepage service cards pattern
+- [Phase 10]: ES common.json required full rewrite to fix duplicate top-level keys — JSON silently discards duplicate keys, Edit tool cannot distinguish them
+- [Phase 10]: Orphaned ES top-level keys (language, buttons, metrics, time, validation, success, nav, mobile) removed — no EN counterparts, not used by any component
 
 ## Context
 
@@ -63,7 +65,8 @@ progress:
 - Phase 10 in progress — Homepage Restructuring & Marketing Machine Page
 - Phase 10 Plan 01 complete: Homepage restructured as FutureAI hub — 4 service cards, VisionTimeline/FeatureShowcase removed, SimpleHeader branding updated, legacy gradient wrapper fixed
 - Phase 10 Plan 02 complete: /marketing-machine page created — MarketingMachinePage with VisionTimeline, FeatureShowcase, FeaturesSection, SocialProof, pricing teaser, Calendly CTA; route and marketingPaths registered in App.tsx
-- Next: Phase 10 Plan 03 — SimpleHeader branding update (show FutureMarketingAI on /marketing-machine)
+- Phase 10 Plan 03 complete: NL and ES hero_landing keys synced with EN — gateway services copy, service card translations, ES structural issues (duplicate pricing/actions blocks, orphaned keys, missing cookie_consent) fixed
+- Phase 10 COMPLETE: All 3 plans done, milestone v1.0 complete
 
 ### Roadmap Evolution
 
