@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 02 of 03
-status: in-progress
-stopped_at: Completed 20-02-PLAN.md
-last_updated: '2026-03-14T01:08:41.000Z'
+current_plan: Plan 03 of 03
+status: phase-complete
+stopped_at: Completed 20-03-PLAN.md
+last_updated: '2026-03-14T01:42:00.000Z'
 progress:
   total_phases: 13
-  completed_phases: 12
+  completed_phases: 13
   total_plans: 45
-  completed_plans: 44
+  completed_plans: 45
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 20 — Flagship Concierge Chatbot
-- **Current Plan:** Plan 02 of 03
-- **Status:** In progress
-- **Last completed:** Phase 20 Plan 02 — Flagship Concierge UI
-- **Last session:** 2026-03-14T01:26:22.878Z
-- **Stopped at:** Completed 20-02-PLAN.md
+- **Current Plan:** Plan 03 of 03
+- **Status:** Phase complete
+- **Last completed:** Phase 20 Plan 03 — Flagship Wiring + Context-Awareness
+- **Last session:** 2026-03-14T01:42:00.000Z
+- **Stopped at:** Completed 20-03-PLAN.md
 
 ## Decisions
 
@@ -123,6 +123,9 @@ progress:
 - [Phase 20]: SidePanelTrigger auto-opens side panel on mount via useEffect, View details button for re-open
 - [Phase 20]: navigate_to_page renders NavigationButton directly instead of ServiceCard via TOOL_CARD_MAP
 - [Phase 20]: FLAGSHIP_PERSONA_ID constant for client-side demo limit bypass
+- [Phase 20]: [20-03]: usePersonaChat maps pathname to currentPage for server-side context matching
+- [Phase 20]: [20-03]: Follow-up prompts activate after 3+ flagship messages to guide toward conversion
+- [Phase 20]: [20-03]: filterToolsByContext returns all tools as safety fallback if filtering yields empty set
 
 ## Context
 
@@ -183,3 +186,5 @@ progress:
 - Phase 19 Plan 02 complete: Complete ARIA cleanup -- 53 files deleted (12,169 lines), refactored useCalendlyBooking/StrategicCTA/Explorer/App.tsx, cleaned barrels and i18n, zero dead imports
 - Phase 19 COMPLETE: All 2 plans done -- Homepage Concierge + Demo Guide + ARIA Cleanup finished (persona-driven chatbot replaces entire ARIA system)
 - Phase 20 added: Flagship Concierge Chatbot -- unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities
+- Phase 20 Plan 03 complete: Flagship wiring + context-awareness -- useConciergeContext hook (page greetings EN/NL/ES, contextual prompts, journey tracking), engine tool filtering by page, App.tsx switched to flagship persona
+- Phase 20 COMPLETE: All 3 plans done -- Flagship Concierge Chatbot finished (flagship persona with all 17 tools, side panel, navigation buttons, context-aware behavior, page-specific greetings and prompts)

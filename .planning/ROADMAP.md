@@ -2,28 +2,28 @@
 
 ## Progress
 
-| Phase | Name                           | Status      | Plans      | Progress |
-| ----- | ------------------------------ | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete    | —          | 100%     |
-| 2     | Service Pages                  | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending     | —          | 0%       |
-| 8     | Language Expansion             | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 14    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 15    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 16    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 17    | 4/4                            | Complete    | 2026-03-13 | 0%       |
-| 18    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 19    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 20    | 2/3                            | In Progress |            | 33%      |
+| Phase | Name                           | Status   | Plans      | Progress |
+| ----- | ------------------------------ | -------- | ---------- | -------- |
+| 1     | Website Rebrand                | Complete | —          | 100%     |
+| 2     | Service Pages                  | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
+| 8     | Language Expansion             | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 15    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 16    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
+| 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 20    | 3/3                            | Complete | 2026-03-14 | 33%      |
 
 ## Phases
 
@@ -219,7 +219,7 @@
     - [ ] 19-01-PLAN.md — Wire ChatWidget floating mode with route-based persona switching + pageContext plumbing
     - [ ] 19-02-PLAN.md — Systematic ARIA cleanup (refactor shared deps, delete all ARIA files, clean barrels/i18n)
 
-- [ ] **Phase 20: Flagship Concierge Chatbot** — Unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities. The "best of the best" main chatbot combining all tools, no message limit, rich UI with info panels and page navigation.
+- [x] **Phase 20: Flagship Concierge Chatbot** — Unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities. The "best of the best" main chatbot combining all tools, no message limit, rich UI with info panels and page navigation. (completed 2026-03-14)
   - **Goal:** Transform the floating concierge from a basic chat window into a flagship showcase — unlimited messages, all tools from every persona (navigation, product search, lead qualification, support tickets, booking, ROI calculation), expandable side panel for rich content (case studies, product cards, module details), and proactive page navigation buttons. This is the live demo of what FMai builds for clients.
   - **Requirement IDs:** REQ-FLAGSHIP-PERSONA, REQ-TOOL-CONSOLIDATION, REQ-UNLIMITED-MODE, REQ-SIDE-PANEL, REQ-NAVIGATION-ACTIONS, REQ-ARIA-REVIVAL, REQ-CONTEXT-AWARENESS, REQ-FLAGSHIP-WIRING
   - **Depends on:** Phase 19
