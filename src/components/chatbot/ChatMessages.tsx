@@ -1,12 +1,15 @@
 import { useEffect, useRef, useCallback } from 'react'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
-import { ToolResultRenderer } from './tool-results'
+import { ExternalLink } from 'lucide-react'
+import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
+import { useChatbotStore } from '../../stores/chatbotStore'
 
 interface ChatMessagesProps {
   messages: UIMessage[]
   status: string
   welcomeMessage?: string
+  flagship?: boolean
 }
 
 // ---------------------------------------------------------------------------
@@ -55,6 +58,30 @@ function TypingIndicator() {
 }
 
 // ---------------------------------------------------------------------------
+// SidePanelTrigger — auto-opens side panel on mount, shows "View details" to reopen
+// ---------------------------------------------------------------------------
+function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
+  const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
+
+  useEffect(() => {
+    openSidePanelTrigger(toolName, data)
+    // Only open on initial mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return (
+    <button
+      type="button"
+      onClick={() => openSidePanelTrigger(toolName, data)}
+      className="my-1 inline-flex items-center gap-1.5 text-xs text-accent-system hover:underline cursor-pointer"
+    >
+      <ExternalLink className="h-3 w-3" />
+      View details
+    </button>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Bubble class constants
 // ---------------------------------------------------------------------------
 const userBubbleClass =
@@ -66,7 +93,7 @@ const assistantBubbleClass =
 // ---------------------------------------------------------------------------
 // ChatMessages
 // ---------------------------------------------------------------------------
-export function ChatMessages({ messages, status, welcomeMessage }: ChatMessagesProps) {
+export function ChatMessages({ messages, status, welcomeMessage, flagship }: ChatMessagesProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
@@ -115,6 +142,15 @@ export function ChatMessages({ messages, status, welcomeMessage }: ChatMessagesP
                 return <MarkdownContent key={i} text={part.text} />
               }
               if ('toolName' in part) {
+                // In flagship mode, route rich tool results to side panel
+                if (
+                  flagship &&
+                  'state' in part &&
+                  part.state === 'output-available' &&
+                  shouldUseSidePanel(part.toolName)
+                ) {
+                  return <SidePanelTrigger key={i} toolName={part.toolName} data={part.output} />
+                }
                 return <ToolResultRenderer key={i} part={part} />
               }
               return null

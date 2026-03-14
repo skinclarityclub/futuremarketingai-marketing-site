@@ -5,6 +5,7 @@ import { LeadScoreCard } from './LeadScoreCard'
 import { KBArticleCard } from './KBArticleCard'
 import { TicketCard } from './TicketCard'
 import { ServiceCard } from './ServiceCard'
+import { NavigationButton } from '../NavigationButton'
 
 // Re-export all cards
 export { ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard }
@@ -15,10 +16,42 @@ export type { TicketData } from './TicketCard'
 export type { ServiceCardData } from './ServiceCard'
 
 // ---------------------------------------------------------------------------
+// Side panel vs inline routing
+// ---------------------------------------------------------------------------
+const SIDE_PANEL_TOOLS = new Set([
+  'search_products',
+  'get_product_details',
+  'build_routine',
+  'get_case_study',
+  'explain_module',
+  'get_roi_info',
+  'get_roi_estimate',
+  'get_pricing_info',
+  'qualify_lead',
+  'search_knowledge_base',
+])
+
+const INLINE_TOOLS = new Set([
+  'navigate_to_page',
+  'book_call',
+  'create_ticket',
+  'check_status',
+  'escalate_to_human',
+  'get_services',
+])
+
+export function shouldUseSidePanel(toolName: string): boolean {
+  return SIDE_PANEL_TOOLS.has(toolName)
+}
+
+// Keep sets available for reference
+export { SIDE_PANEL_TOOLS, INLINE_TOOLS }
+
+// ---------------------------------------------------------------------------
 // Tool name -> Card component mapping
 // ---------------------------------------------------------------------------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
+export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   // E-commerce persona
   search_products: ProductCard,
   get_product_details: ProductCard,
@@ -37,7 +70,6 @@ const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   // Concierge persona
   get_services: ServiceCard,
   get_case_study: ServiceCard,
-  navigate_to_page: ServiceCard,
   book_call: ServiceCard,
   // Demo-guide persona
   explain_module: ServiceCard,
@@ -91,6 +123,21 @@ export function ToolResultRenderer({ part }: ToolResultRendererProps) {
 
   // Output available — route to correct card
   if (part.state === 'output-available') {
+    // Navigation tool renders NavigationButton instead of a card
+    if (part.toolName === 'navigate_to_page' && part.output) {
+      const { url, label, description } = part.output as {
+        url?: string
+        label?: string
+        description?: string
+      }
+      return (
+        <div className="my-2 space-y-1.5">
+          {description && <p className="text-xs text-text-secondary">{description}</p>}
+          {url && label && <NavigationButton url={url} label={label} />}
+        </div>
+      )
+    }
+
     const Card = TOOL_CARD_MAP[part.toolName]
     if (!Card) {
       // Unknown tool — render raw JSON as fallback
