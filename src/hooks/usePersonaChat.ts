@@ -3,6 +3,7 @@ import { DefaultChatTransport } from 'ai'
 import { useChatbotStore } from '../stores/chatbotStore'
 
 const DEMO_MESSAGE_LIMIT = 15
+const FLAGSHIP_PERSONA_ID = 'flagship'
 
 export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
   const { sessionId, messageCounts, incrementMessageCount } = useChatbotStore()
@@ -30,6 +31,6 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
   return {
     ...chat,
     messageCount,
-    isAtLimit: messageCount >= DEMO_MESSAGE_LIMIT,
+    isAtLimit: personaId === FLAGSHIP_PERSONA_ID ? false : messageCount >= DEMO_MESSAGE_LIMIT,
   }
 }

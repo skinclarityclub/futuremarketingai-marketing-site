@@ -9,6 +9,8 @@ interface ChatHeaderProps {
   messageLimit?: number
   onMinimize?: () => void
   onClose?: () => void
+  badge?: string
+  showLimit?: boolean
 }
 
 export function ChatHeader({
@@ -19,6 +21,8 @@ export function ChatHeader({
   messageLimit,
   onMinimize,
   onClose,
+  badge,
+  showLimit = true,
 }: ChatHeaderProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
 
@@ -28,7 +32,7 @@ export function ChatHeader({
     }
   }, [])
 
-  const showDemoBadge = messageCount !== undefined && messageLimit !== undefined
+  const showDemoBadge = showLimit && messageCount !== undefined && messageLimit !== undefined
 
   return (
     <div
@@ -44,6 +48,11 @@ export function ChatHeader({
           </span>
         )}
         <span className="font-sans text-sm font-medium text-text-primary">{personaName}</span>
+        {badge && (
+          <span className="text-[10px] font-mono uppercase tracking-wider text-accent-system/70 bg-accent-system/10 px-1.5 py-0.5 rounded">
+            {badge}
+          </span>
+        )}
         {showDemoBadge && (
           <span className="font-mono text-xs text-text-secondary">
             {messageCount}/{messageLimit}

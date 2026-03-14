@@ -7,6 +7,7 @@ import { ChatHeader } from './ChatHeader'
 import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { SuggestedPrompts } from './SuggestedPrompts'
+import { SidePanel } from './SidePanel'
 
 interface ChatWidgetProps {
   mode: 'floating' | 'embedded'
@@ -36,6 +37,11 @@ export function ChatWidget({
     pageContext
   )
   const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
+  const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
+  const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
+  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+
+  const isFlagship = personaId === 'flagship'
 
   // Send handler — uses AI SDK v6 sendMessage({ text })
   const handleSend = useCallback(
@@ -114,38 +120,53 @@ export function ChatWidget({
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
               className="fixed z-50 right-6 bottom-24 lg:right-20 lg:top-[10vh] lg:bottom-auto
-                         w-[calc(100vw-3rem)] max-w-[420px] h-[70vh] max-h-[600px]
-                         bg-bg-surface/95 backdrop-blur-xl
-                         border border-border-primary rounded-2xl
-                         shadow-2xl shadow-black/40
-                         flex flex-col overflow-hidden"
+                         flex overflow-hidden rounded-2xl border border-border-primary
+                         shadow-2xl shadow-black/40 bg-bg-surface/95 backdrop-blur-xl"
               role="dialog"
               aria-label={`Chat with ${personaName || 'assistant'}`}
               aria-modal="true"
             >
-              <ChatHeader
-                personaName={personaName || 'Assistant'}
-                personaAvatar={personaAvatar}
-                mode="floating"
-                messageCount={messageCount}
-                messageLimit={messageLimit}
-                onMinimize={minimize}
-                onClose={close}
-              />
-              <ChatMessages messages={messages} status={status} welcomeMessage={welcomeMessage} />
-              {showPrompts && (
-                <SuggestedPrompts
-                  prompts={suggestedPrompts}
-                  onSelect={handleSend}
+              {/* Chat panel */}
+              <div className="w-[calc(100vw-3rem)] max-w-[420px] h-[70vh] max-h-[600px] flex flex-col">
+                <ChatHeader
+                  personaName={personaName || 'Assistant'}
+                  personaAvatar={personaAvatar}
+                  mode="floating"
+                  messageCount={messageCount}
+                  messageLimit={messageLimit}
+                  onMinimize={minimize}
+                  onClose={close}
+                  badge={isFlagship ? 'Concierge' : undefined}
+                  showLimit={!isFlagship}
+                />
+                <ChatMessages
+                  messages={messages}
+                  status={status}
+                  welcomeMessage={welcomeMessage}
+                  flagship={isFlagship}
+                />
+                {showPrompts && (
+                  <SuggestedPrompts
+                    prompts={suggestedPrompts}
+                    onSelect={handleSend}
+                    disabled={isAtLimit}
+                  />
+                )}
+                {limitBanner}
+                <ChatInput
+                  onSend={handleSend}
                   disabled={isAtLimit}
+                  placeholder={isAtLimit ? 'Demo limit reached' : 'Type a message...'}
+                />
+              </div>
+              {/* Side panel (flagship only) */}
+              {isFlagship && (
+                <SidePanel
+                  isOpen={isSidePanelOpen}
+                  content={sidePanelContent}
+                  onClose={closeSidePanel}
                 />
               )}
-              {limitBanner}
-              <ChatInput
-                onSend={handleSend}
-                disabled={isAtLimit}
-                placeholder={isAtLimit ? 'Demo limit reached' : 'Type a message...'}
-              />
             </motion.div>
           )}
         </AnimatePresence>
