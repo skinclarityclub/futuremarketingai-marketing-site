@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Not started
-status: completed
-stopped_at: Completed 19-02-PLAN.md
-last_updated: '2026-03-13T22:28:13.044Z'
+current_plan: Plan 01 of 03
+status: in-progress
+stopped_at: Completed 20-01-PLAN.md
+last_updated: '2026-03-14T01:08:41.000Z'
 progress:
-  total_phases: 12
+  total_phases: 13
   completed_phases: 12
-  total_plans: 42
-  completed_plans: 42
+  total_plans: 45
+  completed_plans: 43
 ---
 
 # Project State
@@ -18,12 +18,12 @@ progress:
 ## Current Position
 
 - **Milestone:** v1.0
-- **Phase:** 19 — Homepage Concierge + Demo Guide + ARIA Cleanup
-- **Current Plan:** Not started
-- **Status:** Milestone complete
-- **Last completed:** Phase 19 Plan 02 — ARIA Cleanup
-- **Last session:** 2026-03-13T22:21:02Z
-- **Stopped at:** Completed 19-02-PLAN.md
+- **Phase:** 20 — Flagship Concierge Chatbot
+- **Current Plan:** Plan 01 of 03
+- **Status:** In progress
+- **Last completed:** Phase 20 Plan 01 — Flagship Persona Backend
+- **Last session:** 2026-03-14T01:08:41Z
+- **Stopped at:** Completed 20-01-PLAN.md
 
 ## Decisions
 
@@ -116,6 +116,9 @@ progress:
 - [Phase 19]: [19-01]: Old fmai-chat-state localStorage key cleaned up on mount in existing dark mode useEffect
 - [Phase 19]: [19-02]: useCalendlyBooking uses hardcoded journey defaults (completedSteps: 0, timeOnSite: 0) replacing journeyStore dependency
 - [Phase 19]: [19-02]: StrategicCTA floating variant removed all FloatingElementContext coordination logic -- CTA shows independently of chat panel
+- [Phase 20]: [20-01]: 17 tools instead of ~16 -- kept both get_roi_info (simple overview) and get_roi_estimate (detailed calculation)
+- [Phase 20]: [20-01]: Unified navigate_to_page merges concierge marketing routes + demo-guide demo routes into single tool with expanded Zod enum
+- [Phase 20]: [20-01]: book_call (concierge) is the single booking tool, replacing schedule_demo (leadgen) and book_demo (demo-guide)
 
 ## Context
 

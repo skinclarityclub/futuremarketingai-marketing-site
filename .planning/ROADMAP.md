@@ -23,7 +23,7 @@
 | 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
 | 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
 | 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
-| 20    | Flagship Concierge Chatbot     | Planned  | 2026-03-14 | 0%       |
+| 20    | Flagship Concierge Chatbot     | Active   | 1/3        | 33%      |
 
 ## Phases
 
