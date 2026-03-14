@@ -138,6 +138,14 @@ export function ChatMessages({ messages, status, welcomeMessage, flagship }: Cha
         >
           <div className={message.role === 'user' ? userBubbleClass : assistantBubbleClass}>
             {message.parts.map((part, i) => {
+              if (import.meta.env.DEV) {
+                console.log(
+                  `[ChatMsg] part ${i}:`,
+                  part.type,
+                  'toolName' in part ? (part as any).toolName : '-',
+                  'state' in part ? (part as any).state : '-'
+                )
+              }
               if (part.type === 'text') {
                 return <MarkdownContent key={i} text={part.text} />
               }
