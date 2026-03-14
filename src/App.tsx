@@ -15,7 +15,8 @@ import {
   SEOHelmet,
 } from './components'
 import { ChatWidget } from './components/chatbot'
-import { CONCIERGE_STARTERS, DEMO_GUIDE_STARTERS } from './lib/chatbot/personas'
+import { DEMO_GUIDE_STARTERS } from './lib/chatbot/personas'
+import { useConciergeContext } from './hooks/useConciergeContext'
 import { useScrollToTop, useIsMobile } from './hooks'
 import { useTranslation } from 'react-i18next'
 import { trackGA4PageView } from './utils/ga4'
@@ -130,6 +131,9 @@ function App() {
     location.pathname.startsWith(p)
   )
 
+  // Context-aware concierge hook for flagship persona on marketing pages
+  const conciergeCtx = useConciergeContext(location.pathname, lang)
+
   // Development-only analytics validation and performance logging
   // Note: Analytics are now initialized via CookieConsentBanner after user consent
   useEffect(() => {
@@ -190,20 +194,20 @@ function App() {
           {/* Floating Chatbot - Route-based persona switching */}
           <ChatWidget
             mode="floating"
-            personaId={isDemoPage ? 'demo-guide' : 'concierge'}
+            personaId={isDemoPage ? 'demo-guide' : 'flagship'}
             personaName={isDemoPage ? 'Demo Guide' : 'FMai Concierge'}
             personaAvatar={isDemoPage ? '🎯' : '✦'}
             suggestedPrompts={
               isDemoPage
                 ? DEMO_GUIDE_STARTERS[lang] || DEMO_GUIDE_STARTERS.en
-                : CONCIERGE_STARTERS[lang] || CONCIERGE_STARTERS.en
+                : conciergeCtx.suggestedPrompts
             }
             welcomeMessage={
               isDemoPage
                 ? "Welcome to the Marketing Machine! I'll walk you through everything — pick a question or ask your own."
-                : "Hey! I'm the FMai Concierge — ask me anything about our services, pricing, or how AI can transform your marketing."
+                : conciergeCtx.welcomeMessage
             }
-            pageContext={{ pathname: location.pathname }}
+            pageContext={conciergeCtx.pageContext}
           />
 
           {/* Sentry Test Button - Development only (hidden for demo) */}
