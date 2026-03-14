@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: Plan 01 of 03
+current_plan: Plan 02 of 03
 status: in-progress
-stopped_at: Completed 20-01-PLAN.md
+stopped_at: Completed 20-02-PLAN.md
 last_updated: '2026-03-14T01:08:41.000Z'
 progress:
   total_phases: 13
   completed_phases: 12
   total_plans: 45
-  completed_plans: 43
+  completed_plans: 44
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 20 — Flagship Concierge Chatbot
-- **Current Plan:** Plan 01 of 03
+- **Current Plan:** Plan 02 of 03
 - **Status:** In progress
-- **Last completed:** Phase 20 Plan 01 — Flagship Persona Backend
-- **Last session:** 2026-03-14T01:08:41Z
-- **Stopped at:** Completed 20-01-PLAN.md
+- **Last completed:** Phase 20 Plan 02 — Flagship Concierge UI
+- **Last session:** 2026-03-14T01:26:22.878Z
+- **Stopped at:** Completed 20-02-PLAN.md
 
 ## Decisions
 
@@ -119,6 +119,10 @@ progress:
 - [Phase 20]: [20-01]: 17 tools instead of ~16 -- kept both get_roi_info (simple overview) and get_roi_estimate (detailed calculation)
 - [Phase 20]: [20-01]: Unified navigate_to_page merges concierge marketing routes + demo-guide demo routes into single tool with expanded Zod enum
 - [Phase 20]: [20-01]: book_call (concierge) is the single booking tool, replacing schedule_demo (leadgen) and book_demo (demo-guide)
+- [Phase 20]: SidePanel uses CSS-based responsive approach (hidden/flex) for desktop inline vs mobile overlay
+- [Phase 20]: SidePanelTrigger auto-opens side panel on mount via useEffect, View details button for re-open
+- [Phase 20]: navigate_to_page renders NavigationButton directly instead of ServiceCard via TOOL_CARD_MAP
+- [Phase 20]: FLAGSHIP_PERSONA_ID constant for client-side demo limit bypass
 
 ## Context
 
