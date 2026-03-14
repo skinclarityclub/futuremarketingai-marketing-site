@@ -1,14 +1,95 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
 import sitemap from 'vite-plugin-sitemap'
+import * as dotenv from 'dotenv'
+
+// Load .env.local for server-side env vars (ANTHROPIC_API_KEY etc.)
+dotenv.config({ path: '.env.local' })
+
+/**
+ * Dev-only plugin: handles /api/chatbot POST requests inside Vite dev server.
+ * In production, Vercel Edge Functions handle this route.
+ */
+function devApiPlugin(): Plugin {
+  return {
+    name: 'dev-api-chatbot',
+    configureServer(server) {
+      server.middlewares.use('/api/chatbot', async (req, res) => {
+        if (req.method === 'OPTIONS') {
+          res.writeHead(200, {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          })
+          res.end()
+          return
+        }
+
+        if (req.method !== 'POST') {
+          res.writeHead(405, { 'Content-Type': 'application/json' })
+          res.end(JSON.stringify({ error: 'Method not allowed' }))
+          return
+        }
+
+        // Collect request body
+        const chunks: Buffer[] = []
+        for await (const chunk of req) {
+          chunks.push(chunk as Buffer)
+        }
+        const bodyText = Buffer.concat(chunks).toString()
+
+        // Create a Request object compatible with the engine
+        const request = new Request('http://localhost/api/chatbot', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: bodyText,
+        })
+
+        try {
+          const { handleChatRequest } = await server.ssrLoadModule('/src/lib/chatbot/engine.ts')
+          const response: Response = await handleChatRequest(request)
+
+          // Forward status and headers
+          const headers: Record<string, string> = {}
+          response.headers.forEach((value, key) => {
+            headers[key] = value
+          })
+          res.writeHead(response.status, headers)
+
+          // Stream the response body
+          if (response.body) {
+            const reader = response.body.getReader()
+            const pump = async () => {
+              while (true) {
+                const { done, value } = await reader.read()
+                if (done) break
+                res.write(value)
+              }
+              res.end()
+            }
+            await pump()
+          } else {
+            res.end(await response.text())
+          }
+        } catch (error) {
+          console.error('[dev-api] Error:', error)
+          res.writeHead(500, { 'Content-Type': 'application/json' })
+          res.end(JSON.stringify({ error: 'Internal server error' }))
+        }
+      })
+    },
+  }
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
+    // Dev API handler — serves /api/chatbot in Vite dev mode
+    devApiPlugin(),
     // Sitemap generation for SEO - Marketing pages only
     sitemap({
       hostname: 'https://futuremarketingai.com',
@@ -108,13 +189,6 @@ export default defineConfig(({ mode }) => ({
       '.ngrok.io', // Allow all ngrok paid domains
       'localhost',
     ],
-    // Proxy API requests to Vercel dev server (run `vercel dev` on port 3000)
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-      },
-    },
   },
   build: {
     // Generate sourcemaps only in analyze mode
