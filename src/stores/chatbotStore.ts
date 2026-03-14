@@ -8,6 +8,11 @@ function generateSessionId(): string {
   return Date.now().toString(36) + Math.random().toString(36).slice(2)
 }
 
+interface SidePanelContent {
+  toolName: string
+  data: unknown
+}
+
 interface ChatbotState {
   // Active persona
   activePersonaId: string
@@ -16,6 +21,10 @@ interface ChatbotState {
   isOpen: boolean
   isMinimized: boolean
   hasUnread: boolean
+
+  // Side panel (ephemeral, not persisted)
+  isSidePanelOpen: boolean
+  sidePanelContent: SidePanelContent | null
 
   // Session
   sessionId: string
@@ -31,6 +40,8 @@ interface ChatbotState {
   setUnread: () => void
   incrementMessageCount: (personaId: string) => void
   resetSession: () => void
+  openSidePanel: (toolName: string, data: unknown) => void
+  closeSidePanel: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -41,6 +52,8 @@ export const useChatbotStore = create<ChatbotState>()(
       isOpen: false,
       isMinimized: false,
       hasUnread: false,
+      isSidePanelOpen: false,
+      sidePanelContent: null,
       sessionId: generateSessionId(),
       messageCounts: {},
 
@@ -70,6 +83,9 @@ export const useChatbotStore = create<ChatbotState>()(
           sessionId: generateSessionId(),
           messageCounts: {},
         }),
+      openSidePanel: (toolName: string, data: unknown) =>
+        set({ isSidePanelOpen: true, sidePanelContent: { toolName, data } }),
+      closeSidePanel: () => set({ isSidePanelOpen: false, sidePanelContent: null }),
     }),
     {
       name: 'fmai-chatbot-state',
