@@ -4,6 +4,14 @@ const SESSION_LIMIT = 15
 const GLOBAL_LIMIT = 100
 const IP_LIMIT = 10
 
+/**
+ * Persona-specific session limits. Personas not listed here default to SESSION_LIMIT.
+ * Flagship persona gets 100 messages/hour (effectively unlimited for demo purposes).
+ */
+const PERSONA_SESSION_LIMITS: Record<string, number> = {
+  flagship: 100,
+}
+
 const SESSION_WINDOW_MS = 3_600_000 // 1 hour
 const GLOBAL_WINDOW_MS = 3_600_000 // 1 hour
 const IP_WINDOW_MS = 60_000 // 1 minute
@@ -42,8 +50,9 @@ function checkRateLimit(
   }
 }
 
-export function checkSessionLimit(sessionId: string): RateLimitResult {
-  const result = checkRateLimit(`session:${sessionId}`, SESSION_LIMIT, SESSION_WINDOW_MS)
+export function checkSessionLimit(sessionId: string, personaId?: string): RateLimitResult {
+  const limit = PERSONA_SESSION_LIMITS[personaId || ''] || SESSION_LIMIT
+  const result = checkRateLimit(`session:${sessionId}`, limit, SESSION_WINDOW_MS)
   return { ...result, limitType: 'session' }
 }
 
@@ -57,7 +66,11 @@ export function checkIpLimit(ip: string): RateLimitResult {
   return { ...result, limitType: 'ip' }
 }
 
-export function checkAllRateLimits(sessionId: string, ip: string): RateLimitResult {
+export function checkAllRateLimits(
+  sessionId: string,
+  ip: string,
+  personaId?: string
+): RateLimitResult {
   // Check IP limit first (most granular)
   const ipResult = checkIpLimit(ip)
   if (!ipResult.allowed) {
@@ -70,8 +83,8 @@ export function checkAllRateLimits(sessionId: string, ip: string): RateLimitResu
     return globalResult
   }
 
-  // Then session
-  const sessionResult = checkSessionLimit(sessionId)
+  // Then session (persona-aware)
+  const sessionResult = checkSessionLimit(sessionId, personaId)
   if (!sessionResult.allowed) {
     return sessionResult
   }

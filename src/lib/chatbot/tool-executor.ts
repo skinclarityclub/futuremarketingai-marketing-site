@@ -8,6 +8,7 @@ import { ecommerceTools } from './tools/ecommerce-tools'
 import { leadgenTools } from './tools/leadgen-tools'
 import { supportTools } from './tools/support-tools'
 import { demoGuideTools } from './tools/demo-guide-tools'
+import { flagshipTools } from './tools/flagship-tools'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyToolRecord = Record<string, Tool<any, any>>
@@ -22,6 +23,7 @@ const PERSONA_TOOLS: Record<string, AnyToolRecord> = {
   leadgen: leadgenTools,
   support: supportTools,
   'demo-guide': demoGuideTools,
+  flagship: flagshipTools,
 }
 
 /**
