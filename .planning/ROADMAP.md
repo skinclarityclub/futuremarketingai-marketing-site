@@ -23,6 +23,7 @@
 | 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
 | 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
 | 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 20    | Flagship Concierge Chatbot     | Planned  | 2026-03-14 | 0%       |
 
 ## Phases
 
@@ -220,6 +221,9 @@
 
 - [ ] **Phase 20: Flagship Concierge Chatbot** — Unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities. The "best of the best" main chatbot combining all tools, no message limit, rich UI with info panels and page navigation.
   - **Goal:** Transform the floating concierge from a basic chat window into a flagship showcase — unlimited messages, all tools from every persona (navigation, product search, lead qualification, support tickets, booking, ROI calculation), expandable side panel for rich content (case studies, product cards, module details), and proactive page navigation buttons. This is the live demo of what FMai builds for clients.
+  - **Requirement IDs:** REQ-FLAGSHIP-PERSONA, REQ-TOOL-CONSOLIDATION, REQ-UNLIMITED-MODE, REQ-SIDE-PANEL, REQ-NAVIGATION-ACTIONS, REQ-ARIA-REVIVAL, REQ-CONTEXT-AWARENESS, REQ-FLAGSHIP-WIRING
   - **Depends on:** Phase 19
-  - **Plans:** 0 plans
-    - [ ] TBD (run /gsd:plan-phase 20 to break down)
+  - **Plans:** 3 plans
+    - [ ] 20-01-PLAN.md — Flagship persona backend (merged tools, KB, curated prompt, persona-aware rate limiter)
+    - [ ] 20-02-PLAN.md — Side panel + navigation buttons + ChatWidget flagship mode
+    - [ ] 20-03-PLAN.md — App.tsx flagship wiring + context-awareness hook + ARIA feature revival
