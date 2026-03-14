@@ -71,6 +71,6 @@ export function detectComplexity(
 }
 
 export const MODEL_IDS = {
-  haiku: 'claude-haiku-4-5',
-  sonnet: 'claude-sonnet-4-5',
+  haiku: 'anthropic/claude-haiku-4-5-20251001',
+  sonnet: 'anthropic/claude-sonnet-4-5-20250514',
 } as const

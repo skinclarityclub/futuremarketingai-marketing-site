@@ -108,6 +108,13 @@ export default defineConfig(({ mode }) => ({
       '.ngrok.io', // Allow all ngrok paid domains
       'localhost',
     ],
+    // Proxy API requests to Vercel dev server (run `vercel dev` on port 3000)
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     // Generate sourcemaps only in analyze mode

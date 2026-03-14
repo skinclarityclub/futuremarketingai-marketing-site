@@ -1,7 +1,7 @@
 import { handleChatRequest } from '../src/lib/chatbot/engine'
 
-export default {
-  async fetch(request: Request): Promise<Response> {
-    return handleChatRequest(request)
-  },
+export const config = { runtime: 'edge' }
+
+export default function handler(request: Request): Promise<Response> {
+  return handleChatRequest(request)
 }
