@@ -1,5 +1,5 @@
 import { streamText, convertToModelMessages } from 'ai'
-import { createOpenAI } from '@ai-sdk/openai'
+import { anthropic } from '@ai-sdk/anthropic'
 import { validateInput } from './security'
 import { checkAllRateLimits } from './rate-limiter'
 import { getPersona } from './persona-router'
@@ -9,12 +9,6 @@ import { detectComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
 import type { ChatRequest } from './types'
 import type { Tool } from 'ai'
-
-// OpenRouter provider (OpenAI-compatible API)
-const openrouter = createOpenAI({
-  baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.OPENROUTER_API_KEY ?? process.env.VITE_OPENROUTER_API_KEY ?? '',
-})
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyToolRecord = Record<string, Tool<any, any>>
@@ -194,7 +188,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // 14. Stream response
     const result = streamText({
-      model: openrouter(modelId),
+      model: anthropic(modelId),
       messages: [...systemMessages, ...modelMessages],
       tools: Object.keys(tools).length > 0 ? tools : undefined,
       toolChoice: Object.keys(tools).length > 0 ? 'auto' : undefined,
