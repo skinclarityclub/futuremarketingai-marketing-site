@@ -1,8 +1,10 @@
-import { streamText, convertToModelMessages } from 'ai'
+import { streamText, convertToModelMessages, stepCountIs } from 'ai'
 import { anthropic } from '@ai-sdk/anthropic'
 import { validateInput } from './security'
 import { checkAllRateLimits } from './rate-limiter'
 import { getPersona } from './persona-router'
+// Side-effect: registers all personas in the registry
+import './personas'
 import { routeToKnowledge } from './topic-router'
 import { buildSystemMessages } from './prompt-builder'
 import { detectComplexity, MODEL_IDS } from './complexity-detector'
@@ -123,9 +125,21 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     }
 
     // Extract the user message text for validation and topic routing
-    const userMessageText = isUseChatMode
-      ? (messages[messages.length - 1]?.content ?? '')
-      : (message as string)
+    // AI SDK v6 messages use `parts` array; fall back to `content` for legacy format
+    let userMessageText: string
+    if (isUseChatMode) {
+      const lastMsg = messages[messages.length - 1]
+      if (lastMsg?.parts && Array.isArray(lastMsg.parts)) {
+        userMessageText = lastMsg.parts
+          .filter((p: { type: string }) => p.type === 'text')
+          .map((p: { text: string }) => p.text)
+          .join('')
+      } else {
+        userMessageText = typeof lastMsg?.content === 'string' ? lastMsg.content : ''
+      }
+    } else {
+      userMessageText = message as string
+    }
 
     // 6. Validate input via security module
     const validation = validateInput(userMessageText)
@@ -192,6 +206,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       messages: [...systemMessages, ...modelMessages],
       tools: Object.keys(tools).length > 0 ? tools : undefined,
       toolChoice: Object.keys(tools).length > 0 ? 'auto' : undefined,
+      stopWhen: stepCountIs(3), // Allow model to call tools AND respond with the results
       maxOutputTokens: persona.maxTokens,
       temperature: persona.temperature,
     })

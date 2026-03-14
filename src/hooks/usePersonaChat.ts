@@ -1,5 +1,6 @@
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
+import { useMemo } from 'react'
 import { useChatbotStore } from '../stores/chatbotStore'
 
 const DEMO_MESSAGE_LIMIT = 15
@@ -10,21 +11,28 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
 
   const messageCount = messageCounts[personaId] || 0
 
+  // Memoize transport to prevent re-creation on every render
+  const transport = useMemo(
+    () =>
+      new DefaultChatTransport({
+        api: '/api/chatbot',
+        body: {
+          personaId,
+          sessionId,
+          context: pageContext ? { currentPage: pageContext.pathname } : undefined,
+        },
+      }),
+    [personaId, sessionId, pageContext?.pathname]
+  )
+
   const chat = useChat({
     id: `chat-${personaId}`,
-    transport: new DefaultChatTransport({
-      api: '/api/chatbot',
-      body: {
-        personaId,
-        sessionId,
-        context: pageContext ? { currentPage: pageContext.pathname } : undefined,
-      },
-    }),
+    transport,
     onFinish: () => {
       incrementMessageCount(personaId)
     },
     onError: (error) => {
-      console.error(`[chat-${personaId}]`, error)
+      console.error(`[chat-${personaId}] error:`, error)
     },
   })
 
