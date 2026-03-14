@@ -30,6 +30,10 @@ interface ChatbotState {
   sessionId: string
   messageCounts: Record<string, number>
 
+  // Journey tracking
+  visitedPages: string[]
+  toolsUsed: string[]
+
   // Actions
   setActivePersona: (id: string) => void
   open: () => void
@@ -42,6 +46,8 @@ interface ChatbotState {
   resetSession: () => void
   openSidePanel: (toolName: string, data: unknown) => void
   closeSidePanel: () => void
+  addVisitedPage: (page: string) => void
+  addToolUsed: (tool: string) => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -56,6 +62,8 @@ export const useChatbotStore = create<ChatbotState>()(
       sidePanelContent: null,
       sessionId: generateSessionId(),
       messageCounts: {},
+      visitedPages: [],
+      toolsUsed: [],
 
       // Actions
       setActivePersona: (id: string) => set({ activePersonaId: id }),
@@ -86,6 +94,20 @@ export const useChatbotStore = create<ChatbotState>()(
       openSidePanel: (toolName: string, data: unknown) =>
         set({ isSidePanelOpen: true, sidePanelContent: { toolName, data } }),
       closeSidePanel: () => set({ isSidePanelOpen: false, sidePanelContent: null }),
+      addVisitedPage: (page: string) =>
+        set((state) => {
+          if (state.visitedPages.includes(page)) {
+            return state
+          }
+          return { visitedPages: [...state.visitedPages, page] }
+        }),
+      addToolUsed: (tool: string) =>
+        set((state) => {
+          if (state.toolsUsed.includes(tool)) {
+            return state
+          }
+          return { toolsUsed: [...state.toolsUsed, tool] }
+        }),
     }),
     {
       name: 'fmai-chatbot-state',
@@ -93,6 +115,8 @@ export const useChatbotStore = create<ChatbotState>()(
         sessionId: state.sessionId,
         messageCounts: state.messageCounts,
         activePersonaId: state.activePersonaId,
+        visitedPages: state.visitedPages,
+        toolsUsed: state.toolsUsed,
       }),
     }
   )

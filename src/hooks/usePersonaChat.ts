@@ -17,7 +17,7 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
       body: {
         personaId,
         sessionId,
-        context: pageContext,
+        context: pageContext ? { currentPage: pageContext.pathname } : undefined,
       },
     }),
     onFinish: () => {

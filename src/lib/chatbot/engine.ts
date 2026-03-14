@@ -8,6 +8,55 @@ import { buildSystemMessages } from './prompt-builder'
 import { detectComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
 import type { ChatRequest } from './types'
+import type { Tool } from 'ai'
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyToolRecord = Record<string, Tool<any, any>>
+
+/** Tools always available regardless of page context */
+const ALWAYS_AVAILABLE = ['get_services', 'book_call', 'navigate_to_page', 'get_case_study']
+
+/** Additional tools surfaced per page path */
+const PAGE_TOOLS: Record<string, string[]> = {
+  '/chatbots': [
+    'search_products',
+    'get_product_details',
+    'build_routine',
+    'search_knowledge_base',
+    'create_ticket',
+  ],
+  '/marketing-machine': ['explain_module', 'get_roi_info', 'get_roi_estimate'],
+  '/pricing': ['get_pricing_info', 'get_roi_estimate', 'qualify_lead'],
+  '/voice-agents': ['get_pricing_info', 'qualify_lead'],
+  '/automations': ['get_pricing_info', 'qualify_lead'],
+  '/contact': ['qualify_lead', 'create_ticket'],
+}
+
+/**
+ * Filters tools by page context for the flagship persona.
+ * Reduces prompt size from ~17 tools to ~6-8 per request.
+ */
+function filterToolsByContext(
+  allTools: AnyToolRecord,
+  context: { currentPage?: string }
+): AnyToolRecord {
+  if (!context.currentPage) {
+    return allTools
+  }
+
+  const pageSpecific = PAGE_TOOLS[context.currentPage] ?? []
+  const allowedNames = [...ALWAYS_AVAILABLE, ...pageSpecific]
+
+  const filtered: AnyToolRecord = {}
+  Object.entries(allTools).forEach(([name, toolDef]) => {
+    if (allowedNames.includes(name)) {
+      filtered[name] = toolDef
+    }
+  })
+
+  // If filtering would result in too few tools, return all (safety fallback)
+  return Object.keys(filtered).length > 0 ? filtered : allTools
+}
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -120,8 +169,11 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     const complexity = detectComplexity(userMessageText, historyLength, persona.complexityKeywords)
     const modelId = MODEL_IDS[complexity]
 
-    // 12. Create persona tools
-    const tools = createPersonaTools(persona)
+    // 12. Create persona tools (with context-aware filtering for flagship)
+    let tools = createPersonaTools(persona)
+    if (persona.id === 'flagship' && context?.currentPage) {
+      tools = filterToolsByContext(tools, { currentPage: context.currentPage })
+    }
 
     // 13. Build messages for streamText
     const modelMessages = isUseChatMode
