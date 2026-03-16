@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 21-02-PLAN.md
+current_plan: 21-03-PLAN.md
 status: ready
-stopped_at: Completed 21-01-PLAN.md
+stopped_at: Completed 21-02-PLAN.md
 last_updated: '2026-03-16T17:01:00.000Z'
 progress:
   total_phases: 14
   completed_phases: 13
   total_plans: 48
-  completed_plans: 46
+  completed_plans: 47
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 21 — Guided Demo Mode
-- **Current Plan:** 21-02-PLAN.md
+- **Current Plan:** 21-03-PLAN.md
 - **Status:** Ready for execution
-- **Last completed:** Phase 21 Plan 01 — Foundation Data and Components
-- **Last session:** 2026-03-16T17:01:00.000Z
-- **Stopped at:** Completed 21-01-PLAN.md
+- **Last completed:** Phase 21 Plan 02 — Demo UI Components
+- **Last session:** 2026-03-16T17:07:27.718Z
+- **Stopped at:** Completed 21-02-PLAN.md
 
 ## Decisions
 
@@ -129,6 +129,7 @@ progress:
 - [Phase 21]: [21-01]: Demo state fields are ephemeral (not persisted) and reset on page reload
 - [Phase 21]: [21-01]: book_call moved from INLINE_TOOLS to SIDE_PANEL_TOOLS for richer Calendly embed in side panel
 - [Phase 21]: [21-01]: BookingCard renders Calendly iframe with dark theme params matching site palette
+- [Phase 21]: All 4 demo UI components are pure presentational with props and callbacks only
 
 ## Context
 

@@ -24,7 +24,7 @@
 | 18    | 3/3                            | Complete    | 2026-03-13 | 0%       |
 | 19    | 2/2                            | Complete    | 2026-03-13 | 0%       |
 | 20    | 3/3                            | Complete    | 2026-03-14 | 33%      |
-| 21    | 1/3                            | In Progress |            | 0%       |
+| 21    | 2/3                            | In Progress |            | 0%       |
 
 ## Phases
 
