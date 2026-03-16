@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 21-01-PLAN.md
+current_plan: 21-02-PLAN.md
 status: ready
-stopped_at: Phase 21 planned, ready for execution
-last_updated: '2026-03-16T12:00:00.000Z'
+stopped_at: Completed 21-01-PLAN.md
+last_updated: '2026-03-16T17:01:00.000Z'
 progress:
   total_phases: 14
   completed_phases: 13
   total_plans: 48
-  completed_plans: 45
+  completed_plans: 46
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 21 — Guided Demo Mode
-- **Current Plan:** 21-01-PLAN.md
+- **Current Plan:** 21-02-PLAN.md
 - **Status:** Ready for execution
-- **Last completed:** Phase 20 Plan 03 — Flagship Wiring + Context-Awareness
-- **Last session:** 2026-03-16T12:00:00.000Z
-- **Stopped at:** Phase 21 planned, ready for execution
+- **Last completed:** Phase 21 Plan 01 — Foundation Data and Components
+- **Last session:** 2026-03-16T17:01:00.000Z
+- **Stopped at:** Completed 21-01-PLAN.md
 
 ## Decisions
 
@@ -126,6 +126,9 @@ progress:
 - [Phase 20]: [20-03]: usePersonaChat maps pathname to currentPage for server-side context matching
 - [Phase 20]: [20-03]: Follow-up prompts activate after 3+ flagship messages to guide toward conversion
 - [Phase 20]: [20-03]: filterToolsByContext returns all tools as safety fallback if filtering yields empty set
+- [Phase 21]: [21-01]: Demo state fields are ephemeral (not persisted) and reset on page reload
+- [Phase 21]: [21-01]: book_call moved from INLINE_TOOLS to SIDE_PANEL_TOOLS for richer Calendly embed in side panel
+- [Phase 21]: [21-01]: BookingCard renders Calendly iframe with dark theme params matching site palette
 
 ## Context
 
