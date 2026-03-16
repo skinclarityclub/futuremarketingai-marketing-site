@@ -61,19 +61,19 @@ const PAGE_PROMPTS: Record<string, Record<string, string[]>> = {
   '/': {
     en: [
       'What services does FMai offer?',
-      'Show me a chatbot demo',
+      'Start guided demo',
       'How does AI marketing work?',
       'I want to book a call',
     ],
     nl: [
       'Welke diensten biedt FMai aan?',
-      'Laat me een chatbot-demo zien',
+      'Start guided demo',
       'Hoe werkt AI-marketing?',
       'Ik wil een gesprek plannen',
     ],
     es: [
       'Que servicios ofrece FMai?',
-      'Muestrame una demo de chatbot',
+      'Start guided demo',
       'Como funciona el marketing con IA?',
       'Quiero agendar una llamada',
     ],
