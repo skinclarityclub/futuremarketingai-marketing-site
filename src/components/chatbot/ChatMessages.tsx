@@ -10,6 +10,7 @@ interface ChatMessagesProps {
   status: string
   welcomeMessage?: string
   flagship?: boolean
+  onStartDemo?: () => void
 }
 
 // ---------------------------------------------------------------------------
@@ -93,7 +94,13 @@ const assistantBubbleClass =
 // ---------------------------------------------------------------------------
 // ChatMessages
 // ---------------------------------------------------------------------------
-export function ChatMessages({ messages, status, welcomeMessage, flagship }: ChatMessagesProps) {
+export function ChatMessages({
+  messages,
+  status,
+  welcomeMessage,
+  flagship,
+  onStartDemo,
+}: ChatMessagesProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
@@ -126,6 +133,15 @@ export function ChatMessages({ messages, status, welcomeMessage, flagship }: Cha
         <div className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
           <div className={assistantBubbleClass}>
             <MarkdownContent text={welcomeMessage} />
+            {onStartDemo && (
+              <button
+                type="button"
+                onClick={onStartDemo}
+                className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-accent-system/30 bg-accent-system/10 px-3 py-1.5 text-xs font-medium text-accent-system transition-colors hover:bg-accent-system/20 cursor-pointer"
+              >
+                Take a guided tour
+              </button>
+            )}
           </div>
         </div>
       )}
