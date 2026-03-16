@@ -34,6 +34,13 @@ interface ChatbotState {
   visitedPages: string[]
   toolsUsed: string[]
 
+  // Demo mode (ephemeral, not persisted)
+  demoMode: boolean
+  demoScenarioId: string | null
+  demoStepIndex: number
+  demoStatus: 'idle' | 'choosing' | 'running' | 'checkpoint' | 'completed'
+  demoStartedAt: number | null
+
   // Actions
   setActivePersona: (id: string) => void
   open: () => void
@@ -48,6 +55,11 @@ interface ChatbotState {
   closeSidePanel: () => void
   addVisitedPage: (page: string) => void
   addToolUsed: (tool: string) => void
+  startDemo: () => void
+  selectScenario: (id: string) => void
+  advanceStep: () => void
+  setDemoStatus: (status: ChatbotState['demoStatus']) => void
+  endDemo: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -64,6 +76,11 @@ export const useChatbotStore = create<ChatbotState>()(
       messageCounts: {},
       visitedPages: [],
       toolsUsed: [],
+      demoMode: false,
+      demoScenarioId: null,
+      demoStepIndex: 0,
+      demoStatus: 'idle',
+      demoStartedAt: null,
 
       // Actions
       setActivePersona: (id: string) => set({ activePersonaId: id }),
@@ -107,6 +124,37 @@ export const useChatbotStore = create<ChatbotState>()(
             return state
           }
           return { toolsUsed: [...state.toolsUsed, tool] }
+        }),
+      startDemo: () =>
+        set({
+          demoMode: true,
+          demoScenarioId: null,
+          demoStepIndex: 0,
+          demoStatus: 'choosing',
+          demoStartedAt: null,
+          isOpen: true,
+          isMinimized: false,
+        }),
+      selectScenario: (id: string) =>
+        set({
+          demoScenarioId: id,
+          demoStepIndex: 0,
+          demoStatus: 'running',
+          demoStartedAt: Date.now(),
+        }),
+      advanceStep: () =>
+        set((state) => ({
+          demoStepIndex: state.demoStepIndex + 1,
+          demoStatus: 'running' as const,
+        })),
+      setDemoStatus: (status) => set({ demoStatus: status }),
+      endDemo: () =>
+        set({
+          demoMode: false,
+          demoScenarioId: null,
+          demoStepIndex: 0,
+          demoStatus: 'idle',
+          demoStartedAt: null,
         }),
     }),
     {
