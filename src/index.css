@@ -624,6 +624,16 @@
   animation: breathe 3s ease-in-out infinite;
 }
 
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 8px 2px rgba(0, 212, 255, 0.3);
+  }
+}
+
 /* Blob Base + Variants */
 .blob {
   position: absolute;
