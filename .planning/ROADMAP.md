@@ -24,6 +24,7 @@
 | 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
 | 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
 | 20    | 3/3                            | Complete | 2026-03-14 | 33%      |
+| 21    | Guided Demo Mode               | Planned  | 2026-03-16 | 0%       |
 
 ## Phases
 
@@ -227,3 +228,14 @@
     - [ ] 20-01-PLAN.md — Flagship persona backend (merged tools, KB, curated prompt, persona-aware rate limiter)
     - [ ] 20-02-PLAN.md — Side panel + navigation buttons + ChatWidget flagship mode
     - [ ] 20-03-PLAN.md — App.tsx flagship wiring + context-awareness hook + ARIA feature revival
+
+- [ ] **Phase 21: Guided Demo Mode** — Add guided demo mode to the flagship chatbot: hybrid orchestration (scripted user messages + real AI tool calls), 3 scenario-based flows, BookingCard with Calendly embed in side panel, progress indicators, checkpoints, and premium UX animations. (planned 2026-03-16)
+  - **Goal:** Walk prospects through realistic business scenarios with a single button press, showcasing all chatbot capabilities (17 tools, side panel, booking) using real AI responses. Two entry points: welcome message CTA + suggested prompt. Three scenarios: New Client Journey, E-commerce Brand, Client Support.
+  - **Design reference:** `docs/plans/2026-03-16-guided-demo-mode-design.md`
+  - **Implementation reference:** `docs/plans/2026-03-16-guided-demo-implementation.md`
+  - **Requirement IDs:** REQ-DEMO-SCENARIOS, REQ-DEMO-STATE, REQ-BOOKING-SIDEPANEL, REQ-DEMO-UI-COMPONENTS, REQ-DEMO-ORCHESTRATOR, REQ-DEMO-ENTRY-POINTS, REQ-DEBUG-CLEANUP
+  - **Depends on:** Phase 20
+  - **Plans:** 3 plans
+    - [ ] 21-01-PLAN.md — Foundation: scenario data + Zustand store extension + BookingCard + debug cleanup
+    - [ ] 21-02-PLAN.md — Demo UI components: DemoScenarioCard + DemoCheckpoint + DemoProgress + DemoCompletionCard + pulseGlow CSS
+    - [ ] 21-03-PLAN.md — Integration: DemoOrchestrator state machine + ChatWidget wiring + entry points + E2E test
