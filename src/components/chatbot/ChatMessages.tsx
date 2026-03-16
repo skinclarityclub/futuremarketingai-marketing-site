@@ -138,28 +138,28 @@ export function ChatMessages({ messages, status, welcomeMessage, flagship }: Cha
         >
           <div className={message.role === 'user' ? userBubbleClass : assistantBubbleClass}>
             {message.parts.map((part, i) => {
-              if (import.meta.env.DEV) {
-                console.log(
-                  `[ChatMsg] part ${i}:`,
-                  part.type,
-                  'toolName' in part ? (part as any).toolName : '-',
-                  'state' in part ? (part as any).state : '-'
-                )
-              }
               if (part.type === 'text') {
                 return <MarkdownContent key={i} text={part.text} />
               }
-              if ('toolName' in part) {
+              // AI SDK v6: dynamic tools have type 'dynamic-tool' with toolName/state
+              // Static tools have type 'tool-<name>' with state but no toolName
+              const toolName =
+                'toolName' in part
+                  ? (part as any).toolName
+                  : part.type.startsWith('tool-')
+                    ? part.type.slice(5)
+                    : null
+              if (toolName && 'state' in part) {
+                const toolPart = part as any
                 // In flagship mode, route rich tool results to side panel
                 if (
                   flagship &&
-                  'state' in part &&
-                  part.state === 'output-available' &&
-                  shouldUseSidePanel(part.toolName)
+                  toolPart.state === 'output-available' &&
+                  shouldUseSidePanel(toolName)
                 ) {
-                  return <SidePanelTrigger key={i} toolName={part.toolName} data={part.output} />
+                  return <SidePanelTrigger key={i} toolName={toolName} data={toolPart.output} />
                 }
-                return <ToolResultRenderer key={i} part={part} />
+                return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
               }
               return null
             })}

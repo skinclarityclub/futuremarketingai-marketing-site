@@ -5,15 +5,17 @@ import { LeadScoreCard } from './LeadScoreCard'
 import { KBArticleCard } from './KBArticleCard'
 import { TicketCard } from './TicketCard'
 import { ServiceCard } from './ServiceCard'
+import { CaseStudyCard } from './CaseStudyCard'
 import { NavigationButton } from '../NavigationButton'
 
 // Re-export all cards
-export { ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard }
+export { ProductCard, LeadScoreCard, KBArticleCard, TicketCard, ServiceCard, CaseStudyCard }
 export type { ProductCardData } from './ProductCard'
 export type { LeadScoreData } from './LeadScoreCard'
 export type { KBArticleData } from './KBArticleCard'
 export type { TicketData } from './TicketCard'
 export type { ServiceCardData } from './ServiceCard'
+export type { CaseStudyData } from './CaseStudyCard'
 
 // ---------------------------------------------------------------------------
 // Side panel vs inline routing
@@ -69,7 +71,7 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   escalate_to_human: TicketCard,
   // Concierge persona
   get_services: ServiceCard,
-  get_case_study: ServiceCard,
+  get_case_study: CaseStudyCard,
   book_call: ServiceCard,
   // Demo-guide persona
   explain_module: ServiceCard,

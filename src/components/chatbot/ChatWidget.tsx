@@ -126,6 +126,14 @@ export function ChatWidget({
               aria-label={`Chat with ${personaName || 'assistant'}`}
               aria-modal="true"
             >
+              {/* Side panel LEFT of chat (flagship only) */}
+              {isFlagship && (
+                <SidePanel
+                  isOpen={isSidePanelOpen}
+                  content={sidePanelContent}
+                  onClose={closeSidePanel}
+                />
+              )}
               {/* Chat panel */}
               <div className="w-[calc(100vw-3rem)] max-w-[420px] h-[70vh] max-h-[600px] flex flex-col">
                 <ChatHeader
@@ -159,14 +167,6 @@ export function ChatWidget({
                   placeholder={isAtLimit ? 'Demo limit reached' : 'Type a message...'}
                 />
               </div>
-              {/* Side panel (flagship only) */}
-              {isFlagship && (
-                <SidePanel
-                  isOpen={isSidePanelOpen}
-                  content={sidePanelContent}
-                  onClose={closeSidePanel}
-                />
-              )}
             </motion.div>
           )}
         </AnimatePresence>
