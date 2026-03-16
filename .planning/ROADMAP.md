@@ -2,29 +2,29 @@
 
 ## Progress
 
-| Phase | Name                           | Status      | Plans      | Progress |
-| ----- | ------------------------------ | ----------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete    | —          | 100%     |
-| 2     | Service Pages                  | Complete    | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete    | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending     | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending     | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending     | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending     | —          | 0%       |
-| 8     | Language Expansion             | Pending     | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete    | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete    | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete    | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 14    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 15    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 16    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 17    | 4/4                            | Complete    | 2026-03-13 | 0%       |
-| 18    | 3/3                            | Complete    | 2026-03-13 | 0%       |
-| 19    | 2/2                            | Complete    | 2026-03-13 | 0%       |
-| 20    | 3/3                            | Complete    | 2026-03-14 | 33%      |
-| 21    | 2/3                            | In Progress |            | 0%       |
+| Phase | Name                           | Status   | Plans      | Progress |
+| ----- | ------------------------------ | -------- | ---------- | -------- |
+| 1     | Website Rebrand                | Complete | —          | 100%     |
+| 2     | Service Pages                  | Complete | —          | 100%     |
+| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
+| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
+| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
+| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
+| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
+| 8     | Language Expansion             | Pending  | —          | 0%       |
+| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
+| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
+| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
+| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 15    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 16    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
+| 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
+| 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
+| 20    | 3/3                            | Complete | 2026-03-14 | 33%      |
+| 21    | 3/3                            | Complete | 2026-03-16 | 0%       |
 
 ## Phases
 
@@ -229,7 +229,7 @@
     - [ ] 20-02-PLAN.md — Side panel + navigation buttons + ChatWidget flagship mode
     - [ ] 20-03-PLAN.md — App.tsx flagship wiring + context-awareness hook + ARIA feature revival
 
-- [ ] **Phase 21: Guided Demo Mode** — Add guided demo mode to the flagship chatbot: hybrid orchestration (scripted user messages + real AI tool calls), 3 scenario-based flows, BookingCard with Calendly embed in side panel, progress indicators, checkpoints, and premium UX animations. (planned 2026-03-16)
+- [x] **Phase 21: Guided Demo Mode** — Add guided demo mode to the flagship chatbot: hybrid orchestration (scripted user messages + real AI tool calls), 3 scenario-based flows, BookingCard with Calendly embed in side panel, progress indicators, checkpoints, and premium UX animations. (planned 2026-03-16) (completed 2026-03-16)
   - **Goal:** Walk prospects through realistic business scenarios with a single button press, showcasing all chatbot capabilities (17 tools, side panel, booking) using real AI responses. Two entry points: welcome message CTA + suggested prompt. Three scenarios: New Client Journey, E-commerce Brand, Client Support.
   - **Design reference:** `docs/plans/2026-03-16-guided-demo-mode-design.md`
   - **Implementation reference:** `docs/plans/2026-03-16-guided-demo-implementation.md`

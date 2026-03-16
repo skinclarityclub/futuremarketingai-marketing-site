@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_plan: 21-03-PLAN.md
-status: ready
-stopped_at: Completed 21-02-PLAN.md
-last_updated: '2026-03-16T17:01:00.000Z'
+current_plan: phase-complete
+status: phase-complete
+stopped_at: Completed 21-03-PLAN.md
+last_updated: '2026-03-16T17:14:00.000Z'
 progress:
   total_phases: 14
-  completed_phases: 13
+  completed_phases: 14
   total_plans: 48
-  completed_plans: 47
+  completed_plans: 48
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 
 - **Milestone:** v1.0
 - **Phase:** 21 — Guided Demo Mode
-- **Current Plan:** 21-03-PLAN.md
-- **Status:** Ready for execution
-- **Last completed:** Phase 21 Plan 02 — Demo UI Components
-- **Last session:** 2026-03-16T17:07:27.718Z
-- **Stopped at:** Completed 21-02-PLAN.md
+- **Current Plan:** Phase complete
+- **Status:** Phase 21 complete
+- **Last completed:** Phase 21 Plan 03 — Orchestrator and Integration
+- **Last session:** 2026-03-16T17:16:53.043Z
+- **Stopped at:** Completed 21-03-PLAN.md
 
 ## Decisions
 
@@ -130,6 +130,9 @@ progress:
 - [Phase 21]: [21-01]: book_call moved from INLINE_TOOLS to SIDE_PANEL_TOOLS for richer Calendly embed in side panel
 - [Phase 21]: [21-01]: BookingCard renders Calendly iframe with dark theme params matching site palette
 - [Phase 21]: All 4 demo UI components are pure presentational with props and callbacks only
+- [Phase 21]: [21-03]: DemoOrchestrator uses hasSentRef pattern to prevent double-sends in useEffect-based message dispatching
+- [Phase 21]: [21-03]: "Start guided demo" text kept in English across all locales since it is an action trigger matched by handlePromptSelect
+- [Phase 21]: [21-03]: onStartDemo passed as undefined when demoMode active to hide welcome CTA during demo
 
 ## Context
 
@@ -192,3 +195,8 @@ progress:
 - Phase 20 added: Flagship Concierge Chatbot -- unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities
 - Phase 20 Plan 03 complete: Flagship wiring + context-awareness -- useConciergeContext hook (page greetings EN/NL/ES, contextual prompts, journey tracking), engine tool filtering by page, App.tsx switched to flagship persona
 - Phase 20 COMPLETE: All 3 plans done -- Flagship Concierge Chatbot finished (flagship persona with all 17 tools, side panel, navigation buttons, context-aware behavior, page-specific greetings and prompts)
+- Phase 21 added: Guided Demo Mode -- DemoOrchestrator state machine, scenario data, demo UI components, ChatWidget integration
+- Phase 21 Plan 01 complete: Foundation data -- 3 typed demo scenarios, Zustand demo state (ephemeral), BookingCard Calendly embed, book_call side panel routing
+- Phase 21 Plan 02 complete: Demo UI components -- DemoScenarioCard, DemoCheckpoint + pulseGlow, DemoProgress animated dots, DemoCompletionCard with social proof
+- Phase 21 Plan 03 complete: Orchestrator + integration -- DemoOrchestrator state machine, ChatWidget demo mode (badge, progress, orchestrator), dual entry points (welcome CTA + suggested prompt)
+- Phase 21 COMPLETE: All 3 plans done -- Guided Demo Mode finished (3 scenarios, state machine orchestrator, dual entry points, checkpoint flow, booking finale)
