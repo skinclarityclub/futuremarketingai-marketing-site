@@ -12,6 +12,7 @@ export interface ChatRequest {
   context?: {
     language?: string
     currentPage?: string
+    demoMode?: boolean
   }
 }
 

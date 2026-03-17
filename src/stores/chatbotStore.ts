@@ -38,7 +38,7 @@ interface ChatbotState {
   demoMode: boolean
   demoScenarioId: string | null
   demoStepIndex: number
-  demoStatus: 'idle' | 'choosing' | 'running' | 'checkpoint' | 'completed'
+  demoStatus: 'idle' | 'choosing' | 'running' | 'awaiting-continue' | 'checkpoint' | 'completed'
   demoStartedAt: number | null
 
   // Actions
@@ -134,6 +134,9 @@ export const useChatbotStore = create<ChatbotState>()(
           demoStartedAt: null,
           isOpen: true,
           isMinimized: false,
+          // Close side panel to clear any previous tool results
+          isSidePanelOpen: false,
+          sidePanelContent: null,
         }),
       selectScenario: (id: string) =>
         set({
@@ -141,6 +144,9 @@ export const useChatbotStore = create<ChatbotState>()(
           demoStepIndex: 0,
           demoStatus: 'running',
           demoStartedAt: Date.now(),
+          // Close side panel from previous scenario (e.g. Calendly)
+          isSidePanelOpen: false,
+          sidePanelContent: null,
         }),
       advanceStep: () =>
         set((state) => ({

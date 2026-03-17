@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMai — The Engine Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #09090B; --surface: #131316; --text: #EDEDEF; --muted: #63636E;
+  --blue: #2563EB; --orange: #F97316; --border: rgba(255,255,255,0.05);
+  --green: #22C55E;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; overflow-x: hidden; line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'Syne', sans-serif; font-weight: 700; line-height: 1.15; }
+.mono { font-family: 'Fira Code', monospace; }
+a { color: inherit; text-decoration: none; }
+
+/* --- ANIMATED FLOW LINE --- */
+@keyframes flowLine { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+@keyframes pulse { 0%, 100% { opacity: 0.4; box-shadow: 0 0 4px var(--blue); } 50% { opacity: 1; box-shadow: 0 0 12px var(--blue); } }
+@keyframes dashFlow { to { stroke-dashoffset: -40; } }
+@keyframes dotMove { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes countUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes borderFlow { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+@keyframes hFlow { 0% { left: -8px; } 100% { left: calc(100% + 8px); } }
+@keyframes vFlow { 0% { top: -8px; } 100% { top: calc(100% + 8px); } }
+@keyframes ekgFlow { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+
+.flow-line {
+  height: 1px; width: 100%;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--orange), transparent);
+  background-size: 200% 100%;
+  animation: flowLine 4s linear infinite;
+}
+.node-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--blue);
+  animation: pulse 2s ease-in-out infinite;
+  display: inline-block; flex-shrink: 0;
+}
+
+/* --- NAV --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(9,9,11,0.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 32px; font-size: 0.9rem; color: var(--muted); }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-size: 0.85rem; font-weight: 600; padding: 8px 20px; border-radius: 6px;
+  background: var(--blue); color: #fff; transition: all 0.3s;
+}
+.nav-cta:hover { background: #3b82f6; }
+.nav-flow { height: 1px; background: linear-gradient(90deg, transparent 0%, var(--blue) 30%, var(--orange) 70%, transparent 100%); background-size: 200% 100%; animation: flowLine 6s linear infinite; }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* --- HERO --- */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; padding: 100px 24px 60px;
+  max-width: 1200px; margin: 0 auto; gap: 60px;
+}
+.hero-text { flex: 1.4; }
+.hero-text h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); letter-spacing: -0.03em; margin-bottom: 24px; }
+.hero-text h1 .accent { color: var(--blue); }
+.hero-text p { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin-bottom: 36px; line-height: 1.7; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 28px; border-radius: 8px; background: var(--blue); color: #fff;
+  font-weight: 600; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s;
+}
+.btn-primary:hover { background: #3b82f6; transform: translateY(-1px); }
+.btn-secondary {
+  padding: 14px 28px; border-radius: 8px; background: transparent; color: var(--text);
+  font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s;
+}
+.btn-secondary:hover { border-color: var(--muted); }
+.hero-diagram { flex: 1; display: flex; justify-content: center; align-items: center; }
+.hero-diagram svg { width: 100%; max-width: 420px; height: auto; }
+@media (max-width: 768px) {
+  .hero { flex-direction: column; text-align: center; min-height: auto; padding-top: 120px; }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .hero-ctas { justify-content: center; }
+  .hero-diagram svg { max-width: 280px; }
+}
+
+/* --- SECTION CONNECTOR --- */
+.section-connector {
+  display: flex; flex-direction: column; align-items: center; padding: 20px 0;
+}
+.section-connector .vline { width: 1px; height: 60px; background: var(--border); position: relative; overflow: hidden; }
+.section-connector .vline::after {
+  content: ''; position: absolute; width: 1px; height: 16px; background: var(--blue);
+  animation: vFlow 3s linear infinite; left: 0;
+}
+
+/* --- FLOW SECTION --- */
+.flow-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;
+}
+.section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 60px; letter-spacing: -0.02em; }
+.flow-stages { display: flex; align-items: flex-start; gap: 0; position: relative; }
+.flow-stage {
+  flex: 1; text-align: center; padding: 32px 20px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  position: relative; transition: all 0.4s; z-index: 2;
+}
+.flow-stage:hover { border-color: rgba(37,99,235,0.3); box-shadow: 0 0 30px rgba(37,99,235,0.08); }
+.flow-stage-icon {
+  width: 48px; height: 48px; margin: 0 auto 16px; border-radius: 10px;
+  background: rgba(37,99,235,0.08); display: flex; align-items: center; justify-content: center;
+}
+.flow-stage h3 { font-size: 1rem; margin-bottom: 8px; letter-spacing: 0.03em; }
+.flow-stage p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.flow-connector {
+  width: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  position: relative; height: 2px; align-self: center; z-index: 1;
+}
+.flow-connector .hline { width: 100%; height: 1px; background: var(--border); position: relative; overflow: hidden; }
+.flow-connector .hline::after {
+  content: ''; position: absolute; width: 12px; height: 1px; background: var(--blue);
+  animation: hFlow 2.5s linear infinite; top: 0;
+}
+@media (max-width: 768px) {
+  .flow-stages { flex-direction: column; gap: 0; align-items: center; }
+  .flow-connector { width: 2px; height: 40px; flex-direction: column; }
+  .flow-connector .hline { width: 1px; height: 100%; }
+  .flow-connector .hline::after { width: 1px; height: 12px; animation: vFlow 2.5s linear infinite; }
+  .flow-stage { width: 100%; max-width: 400px; }
+}
+
+/* --- SERVICES --- */
+.services-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; }
+.service-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 36px; position: relative; overflow: hidden; transition: all 0.4s;
+}
+.service-card:hover { border-color: rgba(37,99,235,0.25); }
+.circuit-deco {
+  position: absolute; top: 0; left: 0; width: 40px; height: 40px;
+  border-left: 1px solid var(--border); border-top: 1px solid var(--border);
+  transition: all 0.5s;
+}
+.circuit-deco .cd-dot {
+  position: absolute; top: -3px; left: -3px; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--muted); transition: all 0.5s;
+}
+.service-card:hover .circuit-deco { width: 60px; height: 60px; border-color: var(--blue); }
+.service-card:hover .circuit-deco .cd-dot { background: var(--blue); box-shadow: 0 0 8px var(--blue); }
+.service-card h3 { font-size: 1.2rem; margin-bottom: 10px; margin-top: 12px; }
+.service-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+.throughput {
+  font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--blue);
+  padding: 6px 12px; background: rgba(37,99,235,0.06); border-radius: 6px; display: inline-block;
+}
+/* Grid traces */
+.services-grid::before {
+  content: ''; position: absolute; top: 50%; left: 20px; right: 20px;
+  height: 1px; background: var(--border); z-index: 0;
+}
+.services-grid::after {
+  content: ''; position: absolute; left: 50%; top: 20px; bottom: 20px;
+  width: 1px; background: var(--border); z-index: 0;
+}
+.service-card { z-index: 1; }
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid::after { display: none; }
+}
+
+/* --- METRICS --- */
+.metrics-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.metrics-row { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+.metric-item { text-align: center; flex: 1; min-width: 140px; }
+.metric-value {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800; letter-spacing: -0.03em; margin-bottom: 4px;
+}
+.metric-value.blue { color: var(--blue); }
+.metric-value.green { color: var(--green); }
+.metric-value.orange { color: var(--orange); }
+.metric-label { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.ekg-line {
+  height: 2px; width: 100%; border-radius: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue) 20%, var(--orange) 50%, var(--blue) 80%, transparent);
+  background-size: 200% 100%; animation: ekgFlow 6s linear infinite;
+}
+
+/* --- LIVE SYSTEM --- */
+.live-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.live-panel {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 48px; position: relative; overflow: hidden;
+}
+.live-panel::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+.live-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
+.live-header h2 { font-size: 1.4rem; }
+.live-subtitle { font-size: 0.9rem; color: var(--muted); margin-bottom: 40px; }
+.live-diagram { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0; padding: 20px 0; }
+.live-node {
+  text-align: center; padding: 20px 16px; background: rgba(37,99,235,0.04);
+  border: 1px solid rgba(37,99,235,0.12); border-radius: 10px; min-width: 130px;
+}
+.live-node-label { font-family: 'Fira Code', monospace; font-size: 0.7rem; color: var(--blue); margin-bottom: 6px; text-transform: uppercase; }
+.live-node-metric { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.live-arrow { color: var(--muted); font-size: 1.2rem; padding: 0 8px; flex-shrink: 0; }
+.live-status {
+  margin-top: 32px; font-family: 'Fira Code', monospace; font-size: 0.8rem; color: var(--green);
+  display: flex; align-items: center; gap: 8px;
+}
+@media (max-width: 768px) {
+  .live-diagram { flex-direction: column; gap: 8px; }
+  .live-arrow { transform: rotate(90deg); }
+  .live-panel { padding: 28px; }
+}
+
+/* --- CTA --- */
+.cta-section { padding: 100px 24px; text-align: center; max-width: 800px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 32px; letter-spacing: -0.03em; }
+.cta-btn-wrap { display: inline-block; position: relative; border-radius: 10px; padding: 2px; background: linear-gradient(90deg, var(--blue), var(--orange), var(--blue)); background-size: 300% 100%; animation: borderFlow 4s linear infinite; }
+.cta-btn {
+  display: block; padding: 18px 40px; border-radius: 8px; background: var(--bg);
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text);
+  border: none; cursor: pointer; transition: background 0.3s;
+}
+.cta-btn:hover { background: var(--surface); }
+
+/* --- FOOTER --- */
+footer {
+  border-top: 1px solid var(--border); padding: 40px 24px;
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; }
+.footer-logo span { color: var(--blue); }
+.footer-info { font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 16px; }
+.footer-status { display: flex; align-items: center; gap: 8px; font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--green); }
+
+/* --- REVEAL --- */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; } .reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; } .reveal-d4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">FM<span>ai</span></a>
+    <div class="nav-links">
+      <a href="#flow">How it works</a>
+      <a href="#services">Systems</a>
+      <a href="#metrics">Performance</a>
+      <a href="#live">Live</a>
+    </div>
+    <a href="#cta" class="nav-cta">Start building &rarr;</a>
+  </div>
+  <div class="nav-flow"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text reveal">
+    <h1>The machine behind<br>your <span class="accent">marketing</span></h1>
+    <p>FMai connects, automates, and optimizes every part of your marketing stack. Not a tool — a living system.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary">Start building &rarr;</button>
+      <button class="btn-secondary">See it running</button>
+    </div>
+  </div>
+  <div class="hero-diagram reveal reveal-d2">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines -->
+      <defs>
+        <style>
+          .flow-path { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 1; }
+          .flow-path-active { fill: none; stroke: var(--blue); stroke-width: 1; stroke-dasharray: 8 8; animation: dashFlow 1.5s linear infinite; opacity: 0.6; }
+          .node-circle { fill: var(--surface); stroke: rgba(255,255,255,0.1); stroke-width: 1; }
+          .node-inner { fill: var(--blue); opacity: 0.8; }
+          .node-glow { fill: var(--blue); opacity: 0; }
+          .node-text { fill: var(--muted); font-family: 'Fira Code', monospace; font-size: 9px; text-anchor: middle; letter-spacing: 0.08em; }
+          .center-text { fill: var(--text); font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; text-anchor: middle; }
+          @keyframes glowPulse1 { 0%, 100% { opacity: 0; r: 6; } 50% { opacity: 0.3; r: 14; } }
+          @keyframes glowPulse2 { 0%, 100% { opacity: 0; r: 6; } 50% { opacity: 0.3; r: 14; } }
+          .glow1 { animation: glowPulse1 2.5s ease-in-out infinite; }
+          .glow2 { animation: glowPulse2 2.5s ease-in-out infinite 0.5s; }
+          .glow3 { animation: glowPulse1 2.5s ease-in-out infinite 1s; }
+          .glow4 { animation: glowPulse2 2.5s ease-in-out infinite 1.5s; }
+          .glow5 { animation: glowPulse1 2.5s ease-in-out infinite 2s; }
+        </style>
+      </defs>
+      <!-- Paths between nodes: INPUT(200,60) PROCESS(340,150) CREATE(300,310) DISTRIBUTE(100,310) LEARN(60,150) -->
+      <path class="flow-path" d="M200,60 Q280,80 340,150"/>
+      <path class="flow-path-active" d="M200,60 Q280,80 340,150"/>
+      <path class="flow-path" d="M340,150 Q340,240 300,310"/>
+      <path class="flow-path-active" d="M340,150 Q340,240 300,310" style="animation-delay:0.3s"/>
+      <path class="flow-path" d="M300,310 Q200,360 100,310"/>
+      <path class="flow-path-active" d="M300,310 Q200,360 100,310" style="animation-delay:0.6s"/>
+      <path class="flow-path" d="M100,310 Q60,240 60,150"/>
+      <path class="flow-path-active" d="M100,310 Q60,240 60,150" style="animation-delay:0.9s"/>
+      <path class="flow-path" d="M60,150 Q120,80 200,60"/>
+      <path class="flow-path-active" d="M60,150 Q120,80 200,60" style="animation-delay:1.2s"/>
+      <!-- Inner spokes to center -->
+      <line x1="200" y1="60" x2="200" y2="185" class="flow-path" opacity="0.5"/>
+      <line x1="340" y1="150" x2="220" y2="195" class="flow-path" opacity="0.5"/>
+      <line x1="300" y1="310" x2="210" y2="210" class="flow-path" opacity="0.5"/>
+      <line x1="100" y1="310" x2="190" y2="210" class="flow-path" opacity="0.5"/>
+      <line x1="60" y1="150" x2="180" y2="195" class="flow-path" opacity="0.5"/>
+      <!-- Center -->
+      <text x="200" y="205" class="center-text">FMai</text>
+      <!-- Nodes -->
+      <!-- INPUT -->
+      <circle cx="200" cy="60" r="22" class="node-circle"/>
+      <circle cx="200" cy="60" r="6" class="node-glow glow1"/>
+      <circle cx="200" cy="60" r="4" class="node-inner"/>
+      <text x="200" y="38" class="node-text">INPUT</text>
+      <!-- PROCESS -->
+      <circle cx="340" cy="150" r="22" class="node-circle"/>
+      <circle cx="340" cy="150" r="6" class="node-glow glow2"/>
+      <circle cx="340" cy="150" r="4" class="node-inner"/>
+      <text x="370" y="145" class="node-text" text-anchor="start">PROCESS</text>
+      <!-- CREATE -->
+      <circle cx="300" cy="310" r="22" class="node-circle"/>
+      <circle cx="300" cy="310" r="6" class="node-glow glow3"/>
+      <circle cx="300" cy="310" r="4" class="node-inner"/>
+      <text x="300" y="345" class="node-text">CREATE</text>
+      <!-- DISTRIBUTE -->
+      <circle cx="100" cy="310" r="22" class="node-circle"/>
+      <circle cx="100" cy="310" r="6" class="node-glow glow4"/>
+      <circle cx="100" cy="310" r="4" class="node-inner"/>
+      <text x="100" y="345" class="node-text">DISTRIBUTE</text>
+      <!-- LEARN -->
+      <circle cx="60" cy="150" r="22" class="node-circle"/>
+      <circle cx="60" cy="150" r="6" class="node-glow glow5"/>
+      <circle cx="60" cy="150" r="4" class="node-inner"/>
+      <text x="28" y="145" class="node-text" text-anchor="end">LEARN</text>
+      <!-- Traveling dots on paths -->
+      <circle r="3" fill="#2563EB" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M200,60 Q280,80 340,150"/>
+      </circle>
+      <circle r="3" fill="#2563EB" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite" begin="0.6s" path="M340,150 Q340,240 300,310"/>
+      </circle>
+      <circle r="3" fill="#2563EB" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite" begin="1.2s" path="M300,310 Q200,360 100,310"/>
+      </circle>
+      <circle r="3" fill="#F97316" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite" begin="1.8s" path="M100,310 Q60,240 60,150"/>
+      </circle>
+      <circle r="3" fill="#F97316" opacity="0.9">
+        <animateMotion dur="3s" repeatCount="indefinite" begin="2.4s" path="M60,150 Q120,80 200,60"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div><div class="node-dot"></div><div class="vline"></div></div>
+
+<!-- FLOW SECTION -->
+<section class="flow-section" id="flow">
+  <div class="reveal">
+    <p class="section-label">// process</p>
+    <h2 class="section-title">How the engine works</h2>
+  </div>
+  <div class="flow-stages">
+    <div class="flow-stage reveal reveal-d1">
+      <div class="flow-stage-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/><path d="M6 10v2a2 2 0 002 2h2M18 10v-2a2 2 0 00-2-2h-2"/></svg>
+      </div>
+      <h3>CONNECT</h3>
+      <p>We plug into your existing tools and platforms</p>
+    </div>
+    <div class="flow-connector"><div class="hline"></div></div>
+    <div class="flow-stage reveal reveal-d2">
+      <div class="flow-stage-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="16" height="4" rx="1"/><rect x="4" y="10" width="16" height="4" rx="1"/><rect x="4" y="16" width="16" height="4" rx="1"/></svg>
+      </div>
+      <h3>BUILD</h3>
+      <p>Custom AI workflows designed for your business</p>
+    </div>
+    <div class="flow-connector"><div class="hline"></div></div>
+    <div class="flow-stage reveal reveal-d3">
+      <div class="flow-stage-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="12"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <h3>ACTIVATE</h3>
+      <p>Systems go live in under 2 weeks</p>
+    </div>
+    <div class="flow-connector"><div class="hline"></div></div>
+    <div class="flow-stage reveal reveal-d4">
+      <div class="flow-stage-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c-2.5-3-4-6.5-4-9s1.5-6 4-9m0 18c2.5-3 4-6.5 4-9s-1.5-6-4-9M3 12a9 9 0 019-9"/></svg>
+      </div>
+      <h3>EVOLVE</h3>
+      <p>AI learns and improves continuously</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div><div class="node-dot" style="animation-delay:0.5s"></div><div class="vline"></div></div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="reveal">
+    <p class="section-label">// systems</p>
+    <h2 class="section-title">Core systems</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-d1">
+      <div class="circuit-deco"><div class="cd-dot"></div></div>
+      <h3>AI Content Engine</h3>
+      <p>Automated content creation, scheduling, and publishing across all channels. From strategy to post — no human bottleneck.</p>
+      <span class="throughput">847 posts/mo</span>
+    </div>
+    <div class="service-card reveal reveal-d2">
+      <div class="circuit-deco"><div class="cd-dot"></div></div>
+      <h3>Conversational AI</h3>
+      <p>Intelligent chatbots and voice agents that handle inquiries, qualify leads, and book appointments 24/7.</p>
+      <span class="throughput">2.8k conversations</span>
+    </div>
+    <div class="service-card reveal reveal-d3">
+      <div class="circuit-deco"><div class="cd-dot"></div></div>
+      <h3>AI Voice Agents</h3>
+      <p>Human-quality voice assistants for inbound and outbound calls. Follow-ups, reminders, and scheduling on autopilot.</p>
+      <span class="throughput">142 calls/wk</span>
+    </div>
+    <div class="service-card reveal reveal-d4">
+      <div class="circuit-deco"><div class="cd-dot"></div></div>
+      <h3>Workflow Automation</h3>
+      <p>End-to-end process automation connecting your CRM, email, social, and analytics into one intelligent system.</p>
+      <span class="throughput">12 workflows active</span>
+    </div>
+  </div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div><div class="node-dot" style="animation-delay:1s"></div><div class="vline"></div></div>
+
+<!-- METRICS -->
+<section class="metrics-section" id="metrics">
+  <div class="reveal">
+    <p class="section-label">// performance</p>
+    <h2 class="section-title">Engine performance</h2>
+  </div>
+  <div class="metrics-row reveal reveal-d1">
+    <div class="metric-item">
+      <div class="metric-value blue" data-target="10" data-suffix="x">0x</div>
+      <div class="metric-label">Output increase</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-value blue" data-target="360" data-suffix="h">0h</div>
+      <div class="metric-label">Monthly savings</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-value green" data-target="99.8" data-suffix="%" data-decimal="1">0%</div>
+      <div class="metric-label">System uptime</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-value orange" data-prefix="<" data-target="14" data-suffix="d">0d</div>
+      <div class="metric-label">Time to deploy</div>
+    </div>
+  </div>
+  <div class="ekg-line reveal reveal-d2"></div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div><div class="node-dot" style="animation-delay:1.5s"></div><div class="vline"></div></div>
+
+<!-- LIVE SYSTEM -->
+<section class="live-section" id="live">
+  <div class="live-panel reveal">
+    <div class="live-header">
+      <div class="status-dot"></div>
+      <h2>Currently running: SkinClarity Club</h2>
+    </div>
+    <p class="live-subtitle">Fully autonomous marketing engine — content, distribution, analytics, optimization</p>
+    <div class="live-diagram">
+      <div class="live-node">
+        <div class="live-node-label">Content AI</div>
+        <div class="live-node-metric">312 posts</div>
+      </div>
+      <div class="live-arrow">&rarr;</div>
+      <div class="live-node">
+        <div class="live-node-label">Carousel Gen</div>
+        <div class="live-node-metric">89 designs</div>
+      </div>
+      <div class="live-arrow">&rarr;</div>
+      <div class="live-node">
+        <div class="live-node-label">Publisher</div>
+        <div class="live-node-metric">4 platforms</div>
+      </div>
+      <div class="live-arrow">&rarr;</div>
+      <div class="live-node">
+        <div class="live-node-label">Analytics</div>
+        <div class="live-node-metric">24/7 track</div>
+      </div>
+      <div class="live-arrow" style="opacity:0.4">&#8634;</div>
+    </div>
+    <div class="live-status">
+      <div class="status-dot" style="width:6px;height:6px"></div>
+      Autonomous since February 2026
+    </div>
+  </div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div><div class="node-dot" style="animation-delay:2s"></div><div class="vline"></div></div>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <h2 class="reveal">Ready to build<br>your engine?</h2>
+  <div class="reveal reveal-d1">
+    <div class="cta-btn-wrap">
+      <button class="cta-btn">Start building &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section connector -->
+<div class="section-connector"><div class="vline"></div></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">FM<span>ai</span></div>
+  <div class="footer-info">
+    <span>future-marketing.ai</span>
+    <div class="footer-status">
+      <div class="status-dot" style="width:6px;height:6px;animation-delay:0.3s"></div>
+      Systems running 24/7
+    </div>
+  </div>
+</footer>
+
+<div class="flow-line" style="margin-top:0"></div>
+
+<script>
+// Intersection Observer for reveals
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Count-up for metrics
+      if (entry.target.querySelector('.metric-value')) {
+        entry.target.querySelectorAll('.metric-value').forEach(el => animateMetric(el));
+      }
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Metric count-up animation
+function animateMetric(el) {
+  if (el.dataset.animated) return;
+  el.dataset.animated = '1';
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const decimal = parseInt(el.dataset.decimal) || 0;
+  const duration = 1800;
+  const start = performance.now();
+
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current = (target * eased).toFixed(decimal);
+    el.textContent = prefix + current + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

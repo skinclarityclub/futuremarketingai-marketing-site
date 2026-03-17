@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useMemo } from 'react'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import { ExternalLink } from 'lucide-react'
@@ -59,16 +59,11 @@ function TypingIndicator() {
 }
 
 // ---------------------------------------------------------------------------
-// SidePanelTrigger — auto-opens side panel on mount, shows "View details" to reopen
+// SidePanelTrigger — pure render component, shows "View details" button to open side panel
+// No side effects on mount — the centralized useEffect in ChatMessages handles auto-open
 // ---------------------------------------------------------------------------
 function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
   const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
-
-  useEffect(() => {
-    openSidePanelTrigger(toolName, data)
-    // Only open on initial mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <button
@@ -94,6 +89,19 @@ const assistantBubbleClass =
 // ---------------------------------------------------------------------------
 // ChatMessages
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// Helper: extract the toolName from a message part (handles both static and dynamic tools)
+// ---------------------------------------------------------------------------
+function getToolName(part: any): string | null {
+  if ('toolName' in part) {
+    return part.toolName
+  }
+  if (typeof part.type === 'string' && part.type.startsWith('tool-')) {
+    return part.type.slice(5)
+  }
+  return null
+}
+
 export function ChatMessages({
   messages,
   status,
@@ -104,6 +112,7 @@ export function ChatMessages({
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
+  const openSidePanel = useChatbotStore((s) => s.openSidePanel)
 
   // Track whether user has scrolled up
   const handleScroll = useCallback(() => {
@@ -121,6 +130,40 @@ export function ChatMessages({
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   }, [messages.length, status])
+
+  // Centralized side panel auto-open: find the LAST tool result from the LAST
+  // assistant message that qualifies for the side panel. This single effect
+  // replaces all the individual SidePanelTrigger useEffects, eliminating the
+  // race condition where previous messages' triggers would re-fire.
+  const lastSidePanelTool = useMemo(() => {
+    if (!flagship) {
+      return null
+    }
+    // Walk backwards to find the last assistant message
+    for (let i = messages.length - 1; i >= 0; i--) {
+      const msg = messages[i]
+      if (msg.role !== 'assistant') {
+        continue
+      }
+      // Walk backwards through parts to find the last qualifying tool
+      for (let j = msg.parts.length - 1; j >= 0; j--) {
+        const part = msg.parts[j] as any
+        const tn = getToolName(part)
+        if (tn && part.state === 'output-available' && shouldUseSidePanel(tn)) {
+          return { toolName: tn, data: part.output }
+        }
+      }
+      // Only check the last assistant message
+      break
+    }
+    return null
+  }, [flagship, messages])
+
+  useEffect(() => {
+    if (lastSidePanelTool) {
+      openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
+    }
+  }, [lastSidePanelTool, openSidePanel])
 
   return (
     <div
@@ -146,42 +189,45 @@ export function ChatMessages({
         </div>
       )}
 
-      {messages.map((message) => (
-        <div
-          key={message.id}
-          className={message.role === 'user' ? 'flex justify-end' : 'flex justify-start'}
-          style={{ animation: 'fadeIn 0.3s ease-in' }}
-        >
-          <div className={message.role === 'user' ? userBubbleClass : assistantBubbleClass}>
-            {message.parts.map((part, i) => {
-              if (part.type === 'text') {
-                return <MarkdownContent key={i} text={part.text} />
-              }
-              // AI SDK v6: dynamic tools have type 'dynamic-tool' with toolName/state
-              // Static tools have type 'tool-<name>' with state but no toolName
-              const toolName =
-                'toolName' in part
-                  ? (part as any).toolName
-                  : part.type.startsWith('tool-')
-                    ? part.type.slice(5)
-                    : null
-              if (toolName && 'state' in part) {
-                const toolPart = part as any
-                // In flagship mode, route rich tool results to side panel
-                if (
-                  flagship &&
-                  toolPart.state === 'output-available' &&
-                  shouldUseSidePanel(toolName)
-                ) {
-                  return <SidePanelTrigger key={i} toolName={toolName} data={toolPart.output} />
+      {messages.map((message) => {
+        return (
+          <div
+            key={message.id}
+            className={message.role === 'user' ? 'flex justify-end' : 'flex justify-start'}
+            style={{ animation: 'fadeIn 0.3s ease-in' }}
+          >
+            <div className={message.role === 'user' ? userBubbleClass : assistantBubbleClass}>
+              {message.parts.map((part, i) => {
+                if (part.type === 'text') {
+                  return <MarkdownContent key={i} text={part.text} />
                 }
-                return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
-              }
-              return null
-            })}
+                // AI SDK v6: dynamic tools have type 'dynamic-tool' with toolName/state
+                // Static tools have type 'tool-<name>' with state but no toolName
+                const toolName = getToolName(part)
+                if (toolName && 'state' in part) {
+                  const toolPart = part as any
+                  // In flagship mode, route rich tool results to side panel
+                  if (
+                    flagship &&
+                    toolPart.state === 'output-available' &&
+                    shouldUseSidePanel(toolName)
+                  ) {
+                    return (
+                      <SidePanelTrigger
+                        key={`${message.id}-${i}`}
+                        toolName={toolName}
+                        data={toolPart.output}
+                      />
+                    )
+                  }
+                  return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
+                }
+                return null
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
 
       {/* Typing indicator when waiting for first token */}
       {status === 'submitted' && <TypingIndicator />}

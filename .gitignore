@@ -49,3 +49,5 @@ stats.html
 storybook-static
 
 .vercel
+.claude/
+__pycache__/

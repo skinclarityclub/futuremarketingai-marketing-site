@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMai — Your Business, Powered by Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --amber:#F5A623;--teal:#0ABAB5;--bg:#0C0C14;--surface:#13131f;
+  --card:#18182a;--border:#1e1e32;--text:#e8e6e1;--muted:#7a7880;
+  --mono:'Space Mono',monospace;--heading:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--amber);color:var(--bg)}
+
+/* Noise overlay */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.025}
+
+/* Cursor glow */
+#cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(245,166,35,0.06) 0%,transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity .3s}
+
+/* Gradient mesh background */
+.gradient-mesh{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.gradient-mesh span{position:absolute;border-radius:50%;filter:blur(120px);animation:drift 25s ease-in-out infinite alternate}
+.gradient-mesh .g1{width:600px;height:600px;background:rgba(245,166,35,0.07);top:-10%;left:-5%;animation-delay:0s}
+.gradient-mesh .g2{width:500px;height:500px;background:rgba(10,186,181,0.05);top:30%;right:-10%;animation-delay:-5s}
+.gradient-mesh .g3{width:700px;height:700px;background:rgba(245,166,35,0.04);bottom:-15%;left:40%;animation-delay:-10s}
+.gradient-mesh .g4{width:400px;height:400px;background:rgba(10,186,181,0.04);top:60%;left:10%;animation-delay:-15s}
+.gradient-mesh .g5{width:500px;height:500px;background:rgba(245,166,35,0.03);top:10%;right:30%;animation-delay:-20s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}100%{transform:translate(-30px,50px) scale(0.95)}}
+
+/* NAV */
+.nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:1000;
+  background:rgba(19,19,31,0.8);backdrop-filter:blur(20px);border:1px solid var(--border);
+  border-radius:60px;padding:12px 32px;display:flex;align-items:center;gap:32px;
+  transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s}
+.nav.hidden{transform:translateX(-50%) translateY(-120%);opacity:0}
+.nav-logo{font-family:var(--heading);font-weight:700;font-size:1.25rem;letter-spacing:-0.02em;white-space:nowrap}
+.nav-logo .ai{background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--amber);color:var(--bg);font-family:var(--heading);font-weight:600;font-size:.8rem;
+  padding:10px 22px;border-radius:40px;text-decoration:none;letter-spacing:.02em;transition:all .3s;white-space:nowrap}
+.nav-cta:hover{box-shadow:0 0 24px rgba(245,166,35,0.3);transform:scale(1.03)}
+
+/* Section reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-child{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible .reveal-child{opacity:1;transform:translateY(0)}
+
+/* Accent divider */
+.accent-divider{width:50px;height:2px;background:linear-gradient(90deg,var(--amber),var(--teal));margin:0 auto}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-eyebrow{font-family:var(--mono);font-size:.75rem;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:var(--heading);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 .shift{background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-image:linear-gradient(90deg,var(--amber),var(--teal),var(--amber));animation:colorShift 8s ease-in-out infinite}
+@keyframes colorShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:1.1rem;color:var(--muted);line-height:1.6;max-width:440px;margin-bottom:36px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn-warm{background:linear-gradient(135deg,var(--amber),#e09520);color:var(--bg);font-family:var(--heading);
+  font-weight:600;font-size:.95rem;padding:14px 32px;border-radius:40px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+.btn-warm:hover{box-shadow:0 4px 30px rgba(245,166,35,0.35);transform:translateY(-2px)}
+.btn-glass{background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--text);font-family:var(--heading);
+  font-weight:500;font-size:.95rem;padding:14px 32px;border-radius:40px;text-decoration:none;cursor:pointer;
+  backdrop-filter:blur(8px);transition:all .3s}
+.btn-glass:hover{border-color:var(--amber);color:var(--amber)}
+
+/* Morphing blob */
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
+.blob-wrap{position:relative;width:380px;height:380px}
+.blob{width:100%;height:100%;
+  background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(10,186,181,0.12));
+  border:1px solid rgba(245,166,35,0.12);
+  animation:morph 18s ease-in-out infinite;
+  display:flex;align-items:center;justify-content:center}
+.blob-text{font-family:var(--heading);font-size:4rem;font-weight:700;
+  background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  position:relative;z-index:1}
+@keyframes morph{
+  0%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
+  14%{border-radius:40% 60% 70% 30%/50% 60% 30% 60%}
+  28%{border-radius:50% 60% 30% 60%/30% 50% 70% 50%}
+  42%{border-radius:30% 60% 70% 40%/50% 30% 70% 60%}
+  57%{border-radius:60% 40% 50% 60%/70% 50% 30% 50%}
+  71%{border-radius:40% 70% 50% 50%/40% 60% 50% 70%}
+  85%{border-radius:50% 30% 60% 40%/60% 40% 60% 30%}
+  100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
+}
+.blob::before{content:'';position:absolute;inset:-2px;
+  background:linear-gradient(135deg,rgba(245,166,35,0.08),rgba(10,186,181,0.06));
+  animation:morph 18s ease-in-out infinite reverse;filter:blur(40px);z-index:0}
+
+/* Social proof */
+.social-proof{padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.social-proof p{text-align:center;font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:24px;font-family:var(--mono)}
+.social-logos{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.social-logos span{font-family:var(--mono);font-size:.85rem;color:rgba(255,255,255,0.2);letter-spacing:.05em}
+
+/* Stat row */
+.stat-row{padding:80px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border)}
+.stat-cell{padding:40px 32px;text-align:center;border-right:1px solid var(--border);transition:all .4s}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:rgba(245,166,35,0.03);box-shadow:inset 0 0 40px rgba(245,166,35,0.04)}
+.stat-number{font-family:var(--mono);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--amber);line-height:1;margin-bottom:8px}
+.stat-label{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+/* Section header */
+.section-header{margin-bottom:56px}
+.section-header .accent{width:40px;height:2px;background:var(--amber);margin-bottom:16px}
+.section-header h2{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;letter-spacing:-.02em}
+
+/* Services */
+.services{padding:80px 0}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.service-card{position:relative;background:var(--card);padding:40px;border-radius:16px;
+  border:1px solid transparent;overflow:hidden;cursor:pointer;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.service-card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;
+  background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.service-card:hover::before{opacity:1}
+.service-card:hover{transform:translateY(-4px)}
+.service-num{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-bottom:16px}
+.service-title{font-family:var(--heading);font-size:1.3rem;font-weight:600;margin-bottom:12px;position:relative;display:inline-block}
+.service-title::before{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;
+  background:linear-gradient(90deg,var(--amber),var(--teal));transition:width .4s cubic-bezier(.25,.46,.45,.94)}
+.service-card:hover .service-title::before{width:100%}
+.service-desc{font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.service-arrow{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.service-card:hover .service-arrow{border-color:var(--amber);background:rgba(245,166,35,0.1)}
+.service-arrow svg{width:16px;height:16px;stroke:var(--muted);transition:stroke .3s}
+.service-card:hover .service-arrow svg{stroke:var(--amber)}
+
+/* How it works */
+.how{padding:80px 0}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.how-line{position:absolute;top:32px;left:15%;right:15%;height:2px;
+  background:linear-gradient(90deg,var(--amber),var(--teal));opacity:0.3}
+.how-step{text-align:center;padding:0 24px;position:relative}
+.how-num{font-family:var(--mono);font-size:.75rem;color:var(--amber);width:64px;height:64px;border-radius:50%;
+  border:1px solid rgba(245,166,35,0.2);display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;background:var(--bg);position:relative;z-index:1}
+.how-step h3{font-family:var(--heading);font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.how-step p{font-size:.85rem;color:var(--muted);line-height:1.5}
+
+/* Terminal */
+.terminal-section{padding:80px 0}
+.terminal-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.terminal-info h2{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+.terminal-info p{color:var(--muted);line-height:1.6;font-size:.95rem}
+.terminal-window{background:#0a0a12;border:1px solid var(--border);overflow:hidden}
+.terminal-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.02)}
+.terminal-dot{width:10px;height:10px;border-radius:50%}
+.terminal-dot.r{background:#ff5f57}.terminal-dot.y{background:#ffbd2e}.terminal-dot.g{background:#28c840}
+.terminal-bar span{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:8px}
+.terminal-body{padding:20px;min-height:260px;font-family:var(--mono);font-size:.78rem;line-height:1.8}
+.terminal-line{opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .4s}
+.terminal-line.show{opacity:1;transform:translateX(0)}
+.terminal-line .prompt{color:var(--teal)}
+.terminal-line .cmd{color:var(--text)}
+.terminal-line .ok{color:#28c840}
+.terminal-line .warn{color:var(--amber)}
+.terminal-line .pct{color:var(--amber)}
+
+/* Live pilot */
+.pilot{padding:80px 0}
+.pilot-card{background:var(--card);border-radius:20px;padding:48px;position:relative;overflow:hidden;
+  border:1px solid transparent}
+.pilot-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
+  background:linear-gradient(135deg,rgba(245,166,35,0.4),rgba(10,186,181,0.3));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.pilot-card::after{content:'';position:absolute;inset:0;border-radius:20px;
+  background:radial-gradient(ellipse at 30% 50%,rgba(245,166,35,0.04),transparent 60%);pointer-events:none}
+.pilot-label{font-family:var(--mono);font-size:.7rem;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.pilot-client{font-family:var(--heading);font-size:1.6rem;font-weight:700;margin-bottom:32px}
+.pilot-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.pilot-metric-value{font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--amber)}
+.pilot-metric-label{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+
+/* Why FMai */
+.why{padding:80px 0}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;grid-template-rows:auto auto}
+.why-card{background:var(--card);border-radius:16px;padding:36px;position:relative;overflow:hidden;
+  border:1px solid transparent;transition:transform .3s}
+.why-card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;
+  background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.why-card:hover::before{opacity:1}
+.why-card:hover{transform:translateY(-3px)}
+.why-card.tall{grid-row:span 2}
+.why-card h3{font-family:var(--heading);font-size:1.2rem;font-weight:600;margin-bottom:12px}
+.why-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.why-icon{width:44px;height:44px;border-radius:12px;background:rgba(245,166,35,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-icon svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:1.5}
+
+/* Founder */
+.founder{padding:80px 0;text-align:center}
+.founder-card{max-width:560px;margin:0 auto;padding:40px;background:var(--card);border-radius:16px;border:1px solid var(--border)}
+.founder-card p{font-size:1.05rem;line-height:1.7;color:var(--muted);font-style:italic}
+.founder-card .sig{font-family:var(--mono);font-size:.75rem;color:var(--amber);margin-top:16px;letter-spacing:.05em}
+
+/* Bottom CTA */
+.bottom-cta{padding:120px 0;text-align:center;position:relative}
+.bottom-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(245,166,35,0.08),transparent 70%);pointer-events:none}
+.bottom-cta h2{font-family:var(--heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:24px}
+.bottom-cta p{color:var(--muted);margin-bottom:36px;font-size:1rem}
+
+/* Footer */
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+footer .foot-logo{font-family:var(--heading);font-weight:700;font-size:1.1rem;margin-bottom:6px}
+footer .foot-logo .ai{background:linear-gradient(135deg,var(--amber),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+footer .foot-url{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-bottom:4px}
+footer .foot-copy{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,0.2)}
+
+/* Slide-fill on interactive items */
+.slide-fill{position:relative;overflow:hidden;display:inline-block}
+.slide-fill::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:100%;
+  background:linear-gradient(90deg,rgba(245,166,35,0.08),rgba(10,186,181,0.06));
+  transform:translateX(-101%);transition:transform .4s cubic-bezier(.25,.46,.45,.94);z-index:0}
+.slide-fill:hover::after{transform:translateX(0)}
+.slide-fill>*{position:relative;z-index:1}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .nav{padding:10px 20px;gap:16px}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .hero-visual{display:none}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .stat-cell{border-bottom:1px solid var(--border)}
+  .stat-cell:nth-child(2){border-right:none}
+  .services-grid{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr;gap:40px}
+  .how-line{display:none}
+  .terminal-grid{grid-template-columns:1fr}
+  .pilot-metrics{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .why-card.tall{grid-row:auto}
+  .social-logos{gap:24px}
+}
+@media(max-width:480px){
+  .stat-grid{grid-template-columns:1fr}
+  .stat-cell{border-right:none}
+  .pilot-metrics{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-glow"></div>
+
+<div class="gradient-mesh">
+  <span class="g1"></span><span class="g2"></span><span class="g3"></span><span class="g4"></span><span class="g5"></span>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">FM<span class="ai">ai</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#pilot">Pilot</a></li>
+    <li><a href="#why">Why us</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Book a call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <p class="hero-eyebrow reveal-child">Founding member spots open</p>
+        <h1 class="reveal-child" style="transition-delay:.1s">Your business,<br>powered by <span class="shift">intelligence</span></h1>
+        <p class="hero-sub reveal-child" style="transition-delay:.2s">We build AI systems that run your marketing, answer your customers, and automate your operations. Not theory. Deployed and live.</p>
+        <div class="hero-buttons reveal-child" style="transition-delay:.3s">
+          <a href="#cta" class="btn-warm">Start building</a>
+          <a href="#pilot" class="btn-glass">See live pilot</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" style="transition-delay:.2s">
+        <div class="blob-wrap">
+          <div class="blob">
+            <span class="blob-text">FM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof reveal">
+  <div class="container">
+    <p>Trusted by forward-thinking teams</p>
+    <div class="social-logos">
+      <span>SkinClarity</span>
+      <span>VoltHealth</span>
+      <span>NovaRetail</span>
+      <span>ArcFitness</span>
+      <span>PulseMedia</span>
+    </div>
+  </div>
+</section>
+
+<!-- STAT ROW -->
+<section class="stat-row reveal" id="stats">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-cell reveal-child">
+        <div class="stat-number" data-target="247" data-suffix="%">0%</div>
+        <div class="stat-label">Avg. engagement lift</div>
+      </div>
+      <div class="stat-cell reveal-child" style="transition-delay:.1s">
+        <div class="stat-number" data-target="360" data-suffix=" hrs">0 hrs</div>
+        <div class="stat-label">Saved per quarter</div>
+      </div>
+      <div class="stat-cell reveal-child" style="transition-delay:.2s">
+        <div class="stat-number" data-raw="24/7">24/7</div>
+        <div class="stat-label">System availability</div>
+      </div>
+      <div class="stat-cell reveal-child" style="transition-delay:.3s">
+        <div class="stat-number" data-raw="< 2wk">< 2wk</div>
+        <div class="stat-label">Deploy time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- SERVICES -->
+<section class="services reveal" id="services">
+  <div class="container">
+    <div class="section-header reveal-child">
+      <div class="accent"></div>
+      <h2>What we build</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal-child slide-fill" style="transition-delay:.05s">
+        <div class="service-num">01</div>
+        <div class="service-title">AI Content Systems</div>
+        <p class="service-desc">Automated content pipelines that research, write, design, and post across every channel. Consistent brand voice, zero manual work.</p>
+        <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="service-card reveal-child slide-fill" style="transition-delay:.1s">
+        <div class="service-num">02</div>
+        <div class="service-title">AI Chatbots</div>
+        <p class="service-desc">Conversational agents trained on your business. Handle sales inquiries, support tickets, and bookings around the clock.</p>
+        <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="service-card reveal-child slide-fill" style="transition-delay:.15s">
+        <div class="service-num">03</div>
+        <div class="service-title">AI Voice Agents</div>
+        <p class="service-desc">Natural-sounding voice AI that handles phone calls, qualifies leads, and books appointments without a human in the loop.</p>
+        <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+      <div class="service-card reveal-child slide-fill" style="transition-delay:.2s">
+        <div class="service-num">04</div>
+        <div class="service-title">AI Automations</div>
+        <p class="service-desc">End-to-end workflow automation connecting your CRM, email, scheduling, and analytics. Custom-built for your stack.</p>
+        <div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how reveal" id="how">
+  <div class="container">
+    <div class="section-header reveal-child" style="text-align:center">
+      <div class="accent" style="margin:0 auto 16px"></div>
+      <h2>How it works</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-line"></div>
+      <div class="how-step reveal-child" style="transition-delay:.1s">
+        <div class="how-num">01</div>
+        <h3>Discovery</h3>
+        <p>We audit your workflows, map your bottlenecks, and design a system tailored to your operations.</p>
+      </div>
+      <div class="how-step reveal-child" style="transition-delay:.2s">
+        <div class="how-num">02</div>
+        <h3>Build</h3>
+        <p>We configure, train, and wire up your AI stack. You see progress in real-time, not after months.</p>
+      </div>
+      <div class="how-step reveal-child" style="transition-delay:.3s">
+        <div class="how-num">03</div>
+        <h3>Launch</h3>
+        <p>Systems go live, we monitor performance, and iterate based on real data. Ongoing support included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- LIVE TERMINAL -->
+<section class="terminal-section reveal" id="terminal">
+  <div class="container">
+    <div class="terminal-grid">
+      <div class="terminal-info reveal-child">
+        <div class="section-header">
+          <div class="accent"></div>
+          <h2>Systems deploying now</h2>
+        </div>
+        <p>Our deployment pipeline runs continuously. When we build for you, this is what it looks like under the hood: real integrations, real APIs, real results.</p>
+      </div>
+      <div class="terminal-window reveal-child" style="transition-delay:.15s" id="terminal-win">
+        <div class="terminal-bar">
+          <div class="terminal-dot r"></div>
+          <div class="terminal-dot y"></div>
+          <div class="terminal-dot g"></div>
+          <span>deploy.sh</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line" data-delay="0"><span class="prompt">$</span> <span class="cmd">fmai deploy --client skc --env production</span></div>
+          <div class="terminal-line" data-delay="600"><span class="prompt">></span> <span class="cmd">Authenticating API keys...</span> <span class="ok">verified</span></div>
+          <div class="terminal-line" data-delay="1200"><span class="prompt">></span> <span class="cmd">Connecting to CRM...</span> <span class="ok">done</span></div>
+          <div class="terminal-line" data-delay="1800"><span class="prompt">></span> <span class="cmd">Training chatbot on 2,847 entries...</span> <span class="pct">94%</span></div>
+          <div class="terminal-line" data-delay="2400"><span class="prompt">></span> <span class="cmd">Voice agent calibrating...</span> <span class="ok">ready</span></div>
+          <div class="terminal-line" data-delay="3000"><span class="prompt">></span> <span class="cmd">Content pipeline synced</span> <span class="ok">12 channels active</span></div>
+          <div class="terminal-line" data-delay="3600"><span class="prompt">></span> <span class="cmd">Running integration tests...</span> <span class="ok">all passed</span></div>
+          <div class="terminal-line" data-delay="4200"><span class="prompt">></span> <span class="cmd">Deploying to production...</span> <span class="warn">standby</span></div>
+          <div class="terminal-line" data-delay="4800"><span class="prompt">></span> <span class="ok">System live.</span> <span class="cmd">Monitoring engaged.</span></div>
+          <div class="terminal-line" data-delay="5400"><span class="prompt">$</span> <span class="ok">_</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- LIVE PILOT -->
+<section class="pilot reveal" id="pilot">
+  <div class="container">
+    <div class="pilot-card">
+      <div class="pilot-label reveal-child">Live pilot</div>
+      <h2 class="pilot-client reveal-child" style="transition-delay:.05s">Currently running on SkinClarity Club</h2>
+      <div class="pilot-metrics">
+        <div class="reveal-child" style="transition-delay:.1s">
+          <div class="pilot-metric-value" data-count="847" data-suffix="">0</div>
+          <div class="pilot-metric-label">Posts generated</div>
+        </div>
+        <div class="reveal-child" style="transition-delay:.15s">
+          <div class="pilot-metric-value" data-count="4.2" data-suffix="%" data-decimals="1">0%</div>
+          <div class="pilot-metric-label">Engagement rate</div>
+        </div>
+        <div class="reveal-child" style="transition-delay:.2s">
+          <div class="pilot-metric-value" data-count="12" data-suffix="k">0k</div>
+          <div class="pilot-metric-label">Reach</div>
+        </div>
+        <div class="reveal-child" style="transition-delay:.25s">
+          <div class="pilot-metric-value" data-count="99.8" data-suffix="%" data-decimals="1">0%</div>
+          <div class="pilot-metric-label">Uptime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- WHY FMai -->
+<section class="why reveal" id="why">
+  <div class="container">
+    <div class="section-header reveal-child">
+      <div class="accent"></div>
+      <h2>Why FMai</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal-child" style="transition-delay:.05s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Builder, not seller</h3>
+        <p>No account managers, no handoffs. You work directly with the person writing the code and training the models.</p>
+      </div>
+      <div class="why-card tall reveal-child" style="transition-delay:.1s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Speed of delivery</h3>
+        <p>Most agencies quote 8-12 weeks. We deploy in under two. Our stack is proven, our processes are tight, and we ship daily.</p>
+        <p style="margin-top:16px">Every system comes with monitoring, iteration, and real-time performance data from day one.</p>
+      </div>
+      <div class="why-card reveal-child" style="transition-delay:.15s">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Founding member terms</h3>
+        <p>Early clients lock in priority access, lower rates, and direct input on the product roadmap. Limited spots available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder reveal">
+  <div class="container">
+    <div class="founder-card reveal-child">
+      <p>"Built by a founder who ships AI daily. Not a sales team -- a builder. Every system I deploy, I stake my name on."</p>
+      <div class="sig">-- Founder, FMai</div>
+    </div>
+  </div>
+</section>
+
+<div class="accent-divider reveal"></div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta reveal" id="cta">
+  <div class="container">
+    <h2 class="reveal-child">Ready to automate?</h2>
+    <p class="reveal-child" style="transition-delay:.1s">Book a discovery call. We'll map your workflows and show you what AI can do for your business.</p>
+    <a href="#" class="btn-warm reveal-child" style="transition-delay:.2s;display:inline-block">Book a call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-logo">FM<span class="ai">ai</span></div>
+    <div class="foot-url">future-marketing.ai</div>
+    <div class="foot-copy">&copy; 2026 FMai. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Cursor glow
+  const glow = document.getElementById('cursor-glow');
+  let mx = 0, my = 0, gx = 0, gy = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animGlow() {
+    gx += (mx - gx) * 0.1;
+    gy += (my - gy) * 0.1;
+    glow.style.left = gx + 'px';
+    glow.style.top = gy + 'px';
+    requestAnimationFrame(animGlow);
+  }
+  animGlow();
+
+  // Nav hide/show on scroll
+  let lastY = 0;
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 100) nav.classList.add('hidden');
+    else nav.classList.remove('hidden');
+    lastY = y;
+  }, { passive: true });
+
+  // Intersection observer for reveals
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Animated counter
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const decimals = parseInt(el.dataset.decimals) || 0;
+    const duration = 2000;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = (target * ease).toFixed(decimals);
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+  // Stat row counters (data-target)
+  function animateStat(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * ease) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        if (e.target.dataset.target) animateStat(e.target);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number[data-target]').forEach(el => statObs.observe(el));
+
+  // Terminal animation
+  let terminalStarted = false;
+  const termObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !terminalStarted) {
+        terminalStarted = true;
+        const lines = document.querySelectorAll('.terminal-line');
+        lines.forEach(line => {
+          const delay = parseInt(line.dataset.delay) || 0;
+          setTimeout(() => line.classList.add('show'), delay);
+        });
+        termObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const termWin = document.getElementById('terminal-win');
+  if (termWin) termObs.observe(termWin);
+})();
+</script>
+</body>
+</html>

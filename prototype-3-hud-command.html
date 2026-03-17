@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMai // Data Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #111111;
+            --accent: #FF4D00;
+            --text: #F5F0EB;
+            --text-muted: #777370;
+            --border: rgba(245, 240, 235, 0.1);
+            --border-strong: rgba(245, 240, 235, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Visible grid pattern */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 120px 120px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Side navigation */
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 72px;
+            height: 100vh;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            z-index: 100;
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .side-nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 14px;
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            color: var(--accent);
+        }
+
+        .side-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .side-nav-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            writing-mode: vertical-lr;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .side-nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .side-nav-links a::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.2s ease;
+        }
+
+        .side-nav-links a:hover::before {
+            height: 20px;
+        }
+
+        .side-nav-index {
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            color: var(--text-muted);
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Top bar */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 72px;
+            right: 0;
+            height: 56px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .top-bar-left {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .top-bar-left span {
+            color: var(--accent);
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #22C55E;
+            border-radius: 0;
+            animation: statusBlink 3s ease-in-out infinite;
+        }
+
+        @keyframes statusBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .top-bar-btn {
+            padding: 8px 20px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .top-bar-btn:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 72px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 80px 80px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease both;
+        }
+
+        .hero h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 48px;
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            display: inline;
+            border-right: 3px solid var(--accent);
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 56px;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2px;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .btn-fill {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-fill:hover {
+            background: var(--text);
+        }
+
+        .btn-fill svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-border {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border-strong);
+            border-radius: 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-border:hover {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat {
+            flex: 1;
+            padding: 40px;
+            border-right: 1px solid var(--border);
+            transition: background 0.2s ease;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat:hover {
+            background: rgba(255, 77, 0, 0.03);
+        }
+
+        .stat-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Services Section */
+        .services {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .services-header {
+            padding: 60px 80px 0;
+        }
+
+        .services-header h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .services-header .line {
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .services-table {
+            width: 100%;
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 2fr 120px;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            transition: all 0.15s ease;
+            cursor: default;
+        }
+
+        .service-row:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .service-row:hover .service-desc {
+            color: rgba(17, 17, 17, 0.7);
+        }
+
+        .service-row:hover .service-idx {
+            color: rgba(17, 17, 17, 0.5);
+        }
+
+        .service-row:hover .service-link {
+            color: var(--bg);
+        }
+
+        .service-idx {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 32px 0 32px 24px;
+            transition: color 0.15s ease;
+        }
+
+        .service-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 32px 24px;
+        }
+
+        .service-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding: 32px 24px;
+            line-height: 1.6;
+            transition: color 0.15s ease;
+        }
+
+        .service-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 32px 24px 32px 0;
+            text-align: right;
+            color: var(--text-muted);
+            transition: color 0.15s ease;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 48px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .footer-right {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 900px) {
+            .side-nav {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .top-bar {
+                left: 0;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .stats-row {
+                flex-direction: column;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 28px 24px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .service-row {
+                grid-template-columns: 40px 1fr;
+                grid-template-rows: auto auto;
+            }
+
+            .service-desc {
+                grid-column: 1 / -1;
+                padding-top: 0;
+            }
+
+            .service-link {
+                display: none;
+            }
+
+            .services-header {
+                padding: 40px 24px 0;
+            }
+
+            .footer {
+                padding: 32px 24px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-fill, .btn-border {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .top-bar {
+                padding: 0 16px;
+            }
+
+            .status-indicator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <div class="side-nav-logo">FMAI</div>
+        <ul class="side-nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Platform</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="side-nav-index">V1.0</div>
+    </aside>
+
+    <!-- Top bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span>//</span> future-marketing.ai
+        </div>
+        <div class="top-bar-right">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                Systems operational
+            </div>
+            <button class="top-bar-btn">Book call</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-label">// AI Systems Architecture</div>
+            <h1>WE BUILD THE<br>MACHINES THAT<br>RUN YOUR<br>MARKETING<span class="typewriter"></span></h1>
+            <p class="hero-sub">FMai designs, deploys, and maintains autonomous AI systems for marketing, sales, and support. No dashboards to monitor. No prompts to write. Just results.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-fill">
+                    Deploy now
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn-border">Read the docs</a>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-row">
+            <div class="stat">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Core Services</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Integrations</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Platform</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Autonomous</div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services" id="services">
+            <div class="services-header">
+                <h2>// Service Index</h2>
+                <div class="line"></div>
+            </div>
+            <div class="services-table">
+                <div class="service-row">
+                    <div class="service-idx">01</div>
+                    <div class="service-name">AI Automations</div>
+                    <div class="service-desc">Custom n8n and Make workflows that connect your tools and eliminate manual processes. From lead routing to reporting.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-idx">02</div>
+                    <div class="service-name">AI Chatbots</div>
+                    <div class="service-desc">Trained conversational agents embedded on your site. Support, sales, and booking -- all handled without human input.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-idx">03</div>
+                    <div class="service-name">Voice Agents</div>
+                    <div class="service-desc">Phone-based AI agents for outbound prospecting and inbound support. Natural language, real-time responses.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row">
+                    <div class="service-idx">04</div>
+                    <div class="service-name">AI Marketing Machine</div>
+                    <div class="service-desc">Full-stack automated marketing. Content generation, distribution, analytics, and optimization in one system.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-left">FMai // future-marketing.ai</div>
+            <div class="footer-right">Founding members 2026</div>
+        </footer>
+    </main>
+
+    <script>
+        // Typewriter effect for headline cursor
+        // The cursor blink is CSS-only; this just adds a subtle scroll-based opacity
+        const hero = document.querySelector('.hero');
+        const heroElements = document.querySelectorAll('.hero-label, .hero h1, .hero-sub, .hero-buttons');
+
+        // Simple intersection observer for fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-row').forEach((row, i) => {
+            row.style.opacity = '0';
+            row.style.transform = 'translateY(10px)';
+            row.style.transition = `all 0.4s ease ${i * 0.08}s`;
+            observer.observe(row);
+        });
+
+        document.querySelectorAll('.stat').forEach((stat, i) => {
+            stat.style.opacity = '0';
+            stat.style.transform = 'translateY(10px)';
+            stat.style.transition = `all 0.4s ease ${i * 0.1}s`;
+            observer.observe(stat);
+        });
+    </script>
+</body>
+</html>

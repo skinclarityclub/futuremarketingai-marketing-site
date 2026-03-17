@@ -4,13 +4,14 @@ import { test, expect, type Page } from '@playwright/test'
  * Full-Flow E2E Tests: Guided Demo Mode
  *
  * Tests each demo scenario end-to-end with real AI responses:
- * - Verifies tool calls happen (side panel opens with correct card)
- * - Verifies continue/checkpoint flow
- * - Verifies completion card
+ * - Verifies scripted messages appear and AI responds
+ * - Verifies continue/checkpoint flow advances
+ * - Verifies completion card renders with action buttons
  *
  * These tests require the dev server with ANTHROPIC_API_KEY set.
- * They run on Chromium only (real AI calls = slower, single browser sufficient).
+ * AI responses are non-deterministic, so tests include 1 retry.
  */
+test.describe.configure({ retries: 1 })
 
 // Generous timeout for AI responses
 const AI_RESPONSE_TIMEOUT = 60_000

@@ -2,12 +2,25 @@
   "project_name": "FMai Website",
   "milestone": "v1.0",
   "milestone_description": "Launch FMai website with Living System design, gateway services, and founding member beta",
-  "executor_model": "sonnet",
-  "verifier_model": "sonnet",
+  "model_profile": "quality",
+  "model_overrides": {
+    "gsd-verifier": "opus",
+    "gsd-plan-checker": "opus",
+    "gsd-research-synthesizer": "opus",
+    "gsd-codebase-mapper": "opus",
+    "gsd-integration-checker": "opus"
+  },
   "parallelization": true,
   "branching_strategy": "none",
   "commit_docs": true,
   "workflow": {
-    "auto_advance": false
+    "research": true,
+    "plan_check": true,
+    "verifier": true,
+    "auto_advance": false,
+    "nyquist_validation": false
+  },
+  "git": {
+    "branching_strategy": "none"
   }
 }

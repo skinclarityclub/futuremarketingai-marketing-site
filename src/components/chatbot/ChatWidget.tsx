@@ -109,9 +109,13 @@ export function ChatWidget({
     }
   }, [mode, isOpen, isMinimized, close])
 
-  // Suggested prompts visibility
+  // Suggested prompts visibility — hide during demo mode
   const showPrompts =
-    messages.length === 0 && suggestedPrompts && suggestedPrompts.length > 0 && !isAtLimit
+    messages.length === 0 &&
+    suggestedPrompts &&
+    suggestedPrompts.length > 0 &&
+    !isAtLimit &&
+    !demoMode
 
   // Demo limit banner
   const limitBanner = isAtLimit && (
@@ -139,14 +143,15 @@ export function ChatWidget({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed z-50 right-6 bottom-24 lg:right-20 lg:top-[10vh] lg:bottom-auto
-                         flex overflow-hidden rounded-2xl border border-border-primary
+              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6
+                         flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)]
+                         overflow-hidden rounded-2xl border border-border-primary
                          shadow-2xl shadow-black/40 bg-bg-surface/95 backdrop-blur-xl"
               role="dialog"
               aria-label={`Chat with ${personaName || 'assistant'}`}
               aria-modal="true"
             >
-              {/* Side panel LEFT of chat (flagship only) */}
+              {/* Side panel LEFT of chat (slides out to the left) */}
               {isFlagship && (
                 <SidePanel
                   isOpen={isSidePanelOpen}
@@ -155,7 +160,7 @@ export function ChatWidget({
                 />
               )}
               {/* Chat panel */}
-              <div className="w-[calc(100vw-3rem)] max-w-[420px] h-[70vh] max-h-[600px] flex flex-col">
+              <div className="w-[calc(100vw-3rem)] max-w-[480px] min-w-[320px] h-full flex flex-col">
                 <ChatHeader
                   personaName={personaName || 'Assistant'}
                   personaAvatar={personaAvatar}
@@ -179,7 +184,11 @@ export function ChatWidget({
                   flagship={isFlagship}
                   onStartDemo={demoMode ? undefined : startDemo}
                 />
-                <DemoOrchestrator chatStatus={status} onSendMessage={handleSend} />
+                <DemoOrchestrator
+                  chatStatus={status}
+                  messageCount={messages.length}
+                  onSendMessage={handleSend}
+                />
                 {showPrompts && (
                   <SuggestedPrompts
                     prompts={suggestedPrompts}
@@ -226,7 +235,11 @@ export function ChatWidget({
         welcomeMessage={welcomeMessage}
         onStartDemo={demoMode ? undefined : startDemo}
       />
-      <DemoOrchestrator chatStatus={status} onSendMessage={handleSend} />
+      <DemoOrchestrator
+        chatStatus={status}
+        messageCount={messages.length}
+        onSendMessage={handleSend}
+      />
       {showPrompts && (
         <SuggestedPrompts
           prompts={suggestedPrompts}

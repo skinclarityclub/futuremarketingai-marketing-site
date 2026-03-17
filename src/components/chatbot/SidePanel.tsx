@@ -85,10 +85,10 @@ export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
         {isOpen && content && (
           <motion.div
             initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: 400 }}
+            animate={{ opacity: 1, width: 'min(520px, 40vw)' }}
             exit={{ opacity: 0, width: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="hidden lg:flex h-full shrink-0 flex-col border-r border-border-primary bg-bg-surface/95 backdrop-blur-xl overflow-hidden"
+            className="hidden lg:flex h-full shrink-0 flex-col border-r border-border-primary bg-bg-surface/95 backdrop-blur-xl overflow-hidden min-w-[280px]"
           >
             <div className="flex items-center justify-between border-b border-border-primary px-4 py-3 shrink-0">
               <div className="flex items-center gap-2">

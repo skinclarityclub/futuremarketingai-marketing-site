@@ -1,53 +1,317 @@
-import { Check } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Check, ArrowRight, Zap, Bot, BarChart3, Megaphone } from 'lucide-react'
 
 export interface ServiceCardData {
   name: string
   description?: string
   features?: string[]
+  highlights?: string[] // tool returns 'highlights', card expects 'features'
   price?: string
+  starting_price?: string // tool returns 'starting_price', card expects 'price'
   url?: string
+  // Multi-service format from get_services (array or object)
+  services?: ServiceCardData[] | Record<string, ServiceCardData>
+  // Pricing tiers format from get_pricing_info (array or object)
+  tiers?:
+    | { name: string; price: string; features: string[]; highlighted?: boolean }[]
+    | Record<
+        string,
+        {
+          name: string
+          monthlyPrice?: number
+          annualPrice?: number
+          price?: string
+          features: string[]
+          highlighted?: boolean
+        }
+      >
+  // Module explanation from explain_module (string or object)
+  module?: string | { name: string; description?: string; features?: string[]; icon?: string }
+  benefits?: string[]
+  metrics?: { label: string; value: string }[]
 }
 
-export function ServiceCard({ data }: { data: ServiceCardData }) {
-  const Wrapper = data.url ? 'a' : 'div'
-  const wrapperProps = data.url
-    ? { href: data.url, target: '_blank' as const, rel: 'noopener noreferrer' }
-    : {}
+const SERVICE_ICONS: Record<string, typeof Zap> = {
+  chatbot: Bot,
+  'ai chatbot': Bot,
+  voice: Megaphone,
+  'voice agent': Megaphone,
+  automation: Zap,
+  marketing: BarChart3,
+  'marketing machine': BarChart3,
+}
+
+function getServiceIcon(name?: string) {
+  if (!name) {
+    return Zap
+  }
+  const lower = name.toLowerCase()
+  for (const [key, Icon] of Object.entries(SERVICE_ICONS)) {
+    if (lower.includes(key)) {
+      return Icon
+    }
+  }
+  return Zap
+}
+
+function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
+  const Icon = getServiceIcon(data.name)
 
   return (
-    <Wrapper
-      {...wrapperProps}
-      className={`my-2 block w-full rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md transition-colors duration-200 hover:border-accent-system/30${data.url ? ' cursor-pointer' : ''}`}
-      style={{ animation: 'fadeIn 0.3s ease-in' }}
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: (index ?? 0) * 0.08, duration: 0.25 }}
+      className="rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md transition-colors duration-200 hover:border-accent-system/30"
     >
-      {/* Service name */}
-      <p className="font-sans text-sm font-medium text-text-primary">{data.name}</p>
+      <div className="flex items-start gap-3">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-system/15">
+          <Icon className="h-4 w-4 text-accent-system" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-sans text-sm font-semibold text-text-primary">
+            {data.name || 'Service'}
+          </p>
+          {data.description && (
+            <p className="mt-0.5 text-xs leading-relaxed text-text-secondary">{data.description}</p>
+          )}
+        </div>
+      </div>
 
-      {/* Description */}
-      {data.description && <p className="mt-1 text-xs text-text-secondary">{data.description}</p>}
-
-      {/* Features */}
       {data.features && data.features.length > 0 && (
-        <ul className="mt-2 space-y-1">
+        <ul className="mt-3 space-y-1.5">
           {data.features.map((feature, i) => (
-            <li key={i} className="flex items-start gap-1.5 text-xs text-text-secondary">
-              <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-system" />
+            <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
+              <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
               {feature}
             </li>
           ))}
         </ul>
       )}
 
-      {/* Price */}
-      {data.price && <p className="mt-2 font-mono text-sm text-accent-human">{data.price}</p>}
-
-      {/* CTA */}
-      {data.url && (
-        <span className="mt-2 inline-block text-xs text-accent-system hover:underline">
-          Learn More
-        </span>
+      {data.price && (
+        <div className="mt-3 flex items-center justify-between">
+          <p className="font-mono text-sm font-bold text-accent-human">{data.price}</p>
+          {data.url && (
+            <a
+              href={data.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-accent-system hover:underline"
+            >
+              Learn more <ArrowRight className="h-3 w-3" />
+            </a>
+          )}
+        </div>
       )}
-    </Wrapper>
+    </motion.div>
+  )
+}
+
+function PricingTier({
+  tier,
+  index,
+}: {
+  tier: { name: string; price: string; features: string[]; highlighted?: boolean }
+  index: number
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.25 }}
+      className={`rounded-xl border p-4 ${
+        tier.highlighted
+          ? 'border-accent-system/40 bg-accent-system/5 ring-1 ring-accent-system/20'
+          : 'border-border-primary bg-bg-elevated/80'
+      }`}
+    >
+      <div className="flex items-center justify-between">
+        <p className="font-sans text-sm font-semibold text-text-primary">{tier.name}</p>
+        {tier.highlighted && (
+          <span className="rounded-full bg-accent-system/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-system">
+            Popular
+          </span>
+        )}
+      </div>
+      <p className="mt-1 font-mono text-lg font-bold text-accent-human">{tier.price}</p>
+      <ul className="mt-3 space-y-1.5">
+        {tier.features.map((f, i) => (
+          <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
+            <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
+            {f}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  )
+}
+
+export function ServiceCard({ data }: { data: ServiceCardData }) {
+  // Normalize tiers: convert object format to array format (#2 get_pricing_info)
+  let normalizedTiers:
+    | { name: string; price: string; features: string[]; highlighted?: boolean }[]
+    | undefined
+  if (data.tiers) {
+    if (Array.isArray(data.tiers)) {
+      normalizedTiers = data.tiers
+    } else if (typeof data.tiers === 'object') {
+      // Tool returns { starter: { name, monthlyPrice, annualPrice, features }, ... }
+      normalizedTiers = Object.values(data.tiers).map((tier: any) => ({
+        name: tier.name || 'Plan',
+        price:
+          typeof tier.price === 'string'
+            ? tier.price
+            : tier.monthlyPrice !== null && tier.monthlyPrice !== undefined
+              ? `\u20AC${tier.monthlyPrice}/mo`
+              : tier.annualPrice !== null && tier.annualPrice !== undefined
+                ? `\u20AC${tier.annualPrice}/yr`
+                : 'Custom',
+        features: tier.features || [],
+        highlighted: tier.highlighted,
+      }))
+    }
+  }
+
+  // Pricing tiers format
+  if (normalizedTiers && normalizedTiers.length > 0) {
+    return (
+      <div className="w-full space-y-3">
+        <p className="font-sans text-sm font-semibold text-text-primary">Pricing Plans</p>
+        {normalizedTiers.map((tier, i) => (
+          <PricingTier key={tier.name} tier={tier} index={i} />
+        ))}
+        <a
+          href="/contact"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+        >
+          Get a custom quote
+        </a>
+      </div>
+    )
+  }
+
+  // Normalize module: when object, extract fields (#7 explain_module)
+  let moduleName: string | undefined
+  let moduleDescription = data.description
+  let moduleFeatures = data.features
+  if (data.module) {
+    if (typeof data.module === 'object') {
+      moduleName = data.module.name
+      moduleDescription = data.module.description || data.description
+      moduleFeatures = data.module.features || data.features
+    } else {
+      moduleName = data.module
+    }
+  }
+
+  // Module explanation with metrics
+  if (moduleName || data.metrics) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="w-full space-y-3"
+      >
+        <div className="rounded-xl border border-accent-system/20 bg-accent-system/5 p-4">
+          <p className="font-sans text-sm font-semibold text-text-primary">
+            {moduleName || data.name}
+          </p>
+          {moduleDescription && (
+            <p className="mt-1 text-xs leading-relaxed text-text-secondary">{moduleDescription}</p>
+          )}
+        </div>
+
+        {data.metrics && data.metrics.length > 0 && (
+          <div className="grid grid-cols-2 gap-2">
+            {data.metrics.map((m, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 * i, duration: 0.2 }}
+                className="rounded-lg border border-border-primary bg-bg-elevated/80 p-3 text-center"
+              >
+                <p className="font-mono text-lg font-bold text-accent-system">{m.value}</p>
+                <p className="mt-0.5 text-[10px] uppercase tracking-wider text-text-secondary">
+                  {m.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        )}
+
+        {data.benefits && data.benefits.length > 0 && (
+          <ul className="space-y-1.5 px-1">
+            {data.benefits.map((b, i) => (
+              <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
+                <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
+                {b}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {moduleFeatures && moduleFeatures.length > 0 && (
+          <ul className="space-y-1.5 px-1">
+            {moduleFeatures.map((f, i) => (
+              <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
+                <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
+                {f}
+              </li>
+            ))}
+          </ul>
+        )}
+      </motion.div>
+    )
+  }
+
+  // Normalize services: convert object format to array format (#6 get_services)
+  let normalizedServices: ServiceCardData[] | undefined
+  if (data.services) {
+    if (Array.isArray(data.services)) {
+      normalizedServices = data.services
+    } else if (typeof data.services === 'object') {
+      // Tool returns { chatbots: { name, description, highlights[], starting_price }, ... }
+      normalizedServices = Object.values(data.services).map((svc: any) => ({
+        name: svc.name || 'Service',
+        description: svc.description,
+        features: svc.features || svc.highlights || [],
+        price: svc.price || svc.starting_price,
+      }))
+    }
+  }
+
+  // Multi-service listing from get_services
+  if (normalizedServices && normalizedServices.length > 0) {
+    return (
+      <div className="w-full space-y-3">
+        <p className="font-sans text-sm font-semibold text-text-primary">Our Services</p>
+        {normalizedServices.map((service, i) => (
+          <SingleServiceCard key={service.name || i} data={service} index={i} />
+        ))}
+        <a
+          href="/contact"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+        >
+          Book a discovery call
+        </a>
+      </div>
+    )
+  }
+
+  // Single service — normalize highlights → features, starting_price → price
+  const normalizedData: ServiceCardData = {
+    ...data,
+    features: data.features || data.highlights,
+    price: data.price || data.starting_price,
+  }
+
+  return (
+    <div className="my-2">
+      <SingleServiceCard data={normalizedData} />
+    </div>
   )
 }
 

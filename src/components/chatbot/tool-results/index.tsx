@@ -42,15 +42,13 @@ const SIDE_PANEL_TOOLS = new Set([
   'qualify_lead',
   'search_knowledge_base',
   'book_call',
-])
-
-const INLINE_TOOLS = new Set([
-  'navigate_to_page',
+  'get_services',
   'create_ticket',
   'check_status',
   'escalate_to_human',
-  'get_services',
 ])
+
+const INLINE_TOOLS = new Set(['navigate_to_page'])
 
 export function shouldUseSidePanel(toolName: string): boolean {
   return SIDE_PANEL_TOOLS.has(toolName)

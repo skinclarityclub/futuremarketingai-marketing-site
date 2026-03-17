@@ -70,7 +70,7 @@ Each task was committed atomically:
 1. **Task 1: Refactor shared dependencies before deletion** - `b470962` (refactor)
 2. **Task 2: Delete all ARIA files, clean barrels, clean i18n** - `f25f1e6` (feat)
 
-**Plan metadata:** pending (docs: complete plan)
+**Plan metadata:** `49fa8a4` (docs: complete plan)
 
 ## Files Created/Modified
 

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMai — Mission Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #0A0D14;
+    color: #E8ECF4;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 52px;
+    background: rgba(10, 13, 20, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+  }
+  .topbar-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 18px; letter-spacing: -0.5px;
+    color: #E8ECF4;
+  }
+  .topbar-logo span { color: #00D4AA; }
+  .topbar-status {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.5px; color: #5A6378;
+  }
+  .status-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #22C55E;
+    animation: blink 3s ease-in-out infinite;
+  }
+  .status-dot.amber { background: #F59E0B; }
+  @keyframes blink {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+  }
+  .topbar-right { display: flex; align-items: center; gap: 20px; }
+  .topbar-clock {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #5A6378; letter-spacing: 0.5px;
+  }
+  .btn-call {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.5px;
+    padding: 6px 16px;
+    background: transparent; border: 1px solid rgba(0,212,170,0.4);
+    color: #00D4AA; border-radius: 4px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-call:hover { background: rgba(0,212,170,0.1); border-color: #00D4AA; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 80px 28px 60px;
+    display: flex; flex-direction: column; justify-content: center;
+    max-width: 1120px; margin: 0 auto;
+  }
+  .mission-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 1.5px; color: #5A6378;
+    margin-bottom: 32px;
+  }
+  .panel-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 48px;
+  }
+  .panel {
+    background: #111520;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 20px 22px;
+    position: relative; overflow: hidden;
+  }
+  .panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px
+    );
+    pointer-events: none;
+  }
+  .panel-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 16px;
+  }
+  .panel-icon {
+    width: 16px; height: 16px; opacity: 0.5;
+  }
+  .panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 1.5px; color: #5A6378;
+  }
+  .panel-status {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: #22C55E; letter-spacing: 0.5px;
+  }
+  .panel-status.amber-status { color: #F59E0B; }
+  .panel-metric {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; font-weight: 700; color: #E8ECF4;
+    margin-bottom: 4px;
+  }
+  .panel-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #5A6378; margin-bottom: 14px;
+  }
+  .sparkline {
+    display: flex; align-items: flex-end; gap: 2px; height: 24px; margin-top: 12px;
+  }
+  .sparkline-bar {
+    width: 4px; border-radius: 1px; background: #00D4AA; opacity: 0.6;
+    animation: sparkPulse 2s ease-in-out infinite;
+  }
+  @keyframes sparkPulse {
+    0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; }
+  }
+  .agent-dots { display: flex; gap: 6px; margin: 10px 0; }
+  .agent-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .agent-dot.green { background: #22C55E; animation: blink 3s ease-in-out infinite; }
+  .agent-dot.amber { background: #F59E0B; animation: blink 3s ease-in-out 1s infinite; }
+  .waveform {
+    display: flex; align-items: center; gap: 2px; height: 20px; margin: 10px 0;
+  }
+  .wave-bar {
+    width: 3px; border-radius: 1px; background: #00D4AA; opacity: 0.5;
+    animation: wave 1.2s ease-in-out infinite;
+  }
+  .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+  .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+  .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+  .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+  .wave-bar:nth-child(6) { animation-delay: 0.5s; }
+  .wave-bar:nth-child(7) { animation-delay: 0.6s; }
+  .wave-bar:nth-child(8) { animation-delay: 0.7s; }
+  @keyframes wave {
+    0%, 100% { height: 4px; } 50% { height: 18px; }
+  }
+  .workflow-grid {
+    display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0;
+  }
+  .workflow-dot {
+    width: 6px; height: 6px; border-radius: 2px;
+    animation: blink 3s ease-in-out infinite;
+  }
+  .workflow-dot.green { background: #22C55E; }
+  .workflow-dot.amber { background: #F59E0B; }
+  .progress-bar-wrap {
+    height: 3px; background: rgba(255,255,255,0.06);
+    border-radius: 2px; margin-top: 10px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; background: #00D4AA; border-radius: 2px;
+    animation: progressCycle 4s ease-in-out infinite;
+  }
+  @keyframes progressCycle {
+    0% { width: 15%; } 50% { width: 95%; } 100% { width: 15%; }
+  }
+  .panel-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #5A6378;
+  }
+  .panel-sub .teal { color: #00D4AA; }
+
+  .hero-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600; line-height: 1.2;
+    color: #E8ECF4; margin-bottom: 24px;
+  }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; letter-spacing: 0.3px;
+    padding: 12px 28px;
+    background: #00D4AA; color: #0A0D14;
+    border: none; border-radius: 5px; cursor: pointer;
+    font-weight: 500; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #00e6b8; }
+  .btn-outline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; letter-spacing: 0.3px;
+    padding: 12px 28px;
+    background: transparent; color: #E8ECF4;
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 5px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.25); }
+
+  /* SECTIONS */
+  section { max-width: 1120px; margin: 0 auto; padding: 80px 28px; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 2px; color: #5A6378;
+    margin-bottom: 32px;
+  }
+
+  /* SERVICES */
+  .service-row {
+    display: grid;
+    grid-template-columns: 72px 180px 1fr auto;
+    align-items: center; gap: 20px;
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-left: 2px solid transparent;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .service-row:first-of-type { border-top: 1px solid rgba(255,255,255,0.06); }
+  .service-row:hover {
+    background: rgba(0,212,170,0.03);
+    border-left-color: rgba(0,212,170,0.5);
+  }
+  .service-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #00D4AA; letter-spacing: 0.5px;
+  }
+  .service-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 500;
+  }
+  .service-desc {
+    font-size: 13px; color: #5A6378;
+  }
+  .service-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 1px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px; color: #5A6378;
+    white-space: nowrap;
+  }
+
+  /* LOG */
+  .log-viewer {
+    background: #111520;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; line-height: 2;
+    min-height: 200px;
+    position: relative; overflow: hidden;
+  }
+  .log-viewer::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px
+    );
+    pointer-events: none;
+  }
+  .log-line {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.4s ease;
+    color: #5A6378;
+  }
+  .log-line.visible { opacity: 1; transform: translateY(0); }
+  .log-line .ts { color: #00D4AA; }
+  .log-line .success { color: #22C55E; }
+  .log-line .processing { color: #F59E0B; }
+
+  /* METRICS */
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px; overflow: hidden;
+  }
+  .metric-cell {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .metric-cell:last-child { border-right: none; }
+  .metric-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .metric-number.teal { color: #00D4AA; }
+  .metric-number.green { color: #22C55E; }
+  .metric-number.amber { color: #F59E0B; }
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 1.5px; color: #5A6378;
+  }
+
+  /* PILOT */
+  .pilot-panel {
+    background: #111520;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px; padding: 32px;
+    position: relative; overflow: hidden;
+  }
+  .pilot-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px
+    );
+    pointer-events: none;
+  }
+  .pilot-header {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+  .pilot-header .status-dot { width: 8px; height: 8px; }
+  .pilot-metrics {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px; margin-bottom: 24px;
+  }
+  .pilot-metric-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px; font-weight: 700; color: #00D4AA;
+  }
+  .pilot-metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 1px; color: #5A6378;
+    margin-top: 4px;
+  }
+  .pilot-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #5A6378; margin-bottom: 12px;
+  }
+  .pilot-progress {
+    height: 4px; background: rgba(255,255,255,0.06);
+    border-radius: 2px; margin-bottom: 20px; overflow: hidden;
+  }
+  .pilot-progress-fill {
+    height: 100%; width: 66%; background: #00D4AA; border-radius: 2px;
+  }
+  .pilot-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #00D4AA; text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+  .pilot-link:hover { text-decoration: underline; }
+
+  /* CTA */
+  .cta-section {
+    text-align: center; padding: 100px 28px;
+    position: relative;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 200px;
+    background: radial-gradient(ellipse, rgba(0,212,170,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600; margin-bottom: 14px;
+  }
+  .cta-sub {
+    font-size: 15px; color: #5A6378; margin-bottom: 32px;
+  }
+
+  /* FOOTER */
+  .footer {
+    max-width: 1120px; margin: 0 auto;
+    padding: 28px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #5A6378; letter-spacing: 0.5px;
+  }
+  .footer-right {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #5A6378;
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .panel-grid { grid-template-columns: 1fr; }
+    .panel::before { display: none; }
+    .service-row { grid-template-columns: 60px 1fr; gap: 6px; }
+    .service-desc { display: none; }
+    .service-badge { display: none; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .metric-cell { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .pilot-metrics { grid-template-columns: 1fr 1fr; }
+    .topbar-status { display: none; }
+    .hero-tagline { font-size: 26px; }
+  }
+  @media (max-width: 480px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+    .pilot-metrics { grid-template-columns: 1fr; }
+    .topbar { padding: 0 16px; }
+    .hero, section { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <div class="topbar-logo">FM<span>ai</span></div>
+  <div class="topbar-status">
+    <div class="status-dot"></div>
+    SYSTEM STATUS: ALL OPERATIONAL
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-clock" id="clock">00:00:00</div>
+    <button class="btn-call">Book a call</button>
+  </div>
+</nav>
+
+<!-- HERO / CONTROL PANEL -->
+<div class="hero">
+  <div class="mission-badge">MISSION CONTROL v2.0</div>
+
+  <div class="panel-grid">
+    <!-- Panel 1: Content Engine -->
+    <div class="panel">
+      <div class="panel-header">
+        <svg class="panel-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" stroke="#5A6378" stroke-width="1.5"/>
+          <line x1="4" y1="5" x2="12" y2="5" stroke="#5A6378" stroke-width="1.5"/>
+          <line x1="4" y1="8" x2="10" y2="8" stroke="#5A6378" stroke-width="1.5"/>
+          <line x1="4" y1="11" x2="8" y2="11" stroke="#5A6378" stroke-width="1.5"/>
+        </svg>
+        <span class="panel-title">CONTENT ENGINE</span>
+        <span class="panel-status">ACTIVE</span>
+      </div>
+      <div class="panel-metric">847</div>
+      <div class="panel-label">posts generated</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <div class="sparkline">
+        <div class="sparkline-bar" style="height:8px;animation-delay:0s"></div>
+        <div class="sparkline-bar" style="height:14px;animation-delay:0.15s"></div>
+        <div class="sparkline-bar" style="height:6px;animation-delay:0.3s"></div>
+        <div class="sparkline-bar" style="height:18px;animation-delay:0.45s"></div>
+        <div class="sparkline-bar" style="height:12px;animation-delay:0.6s"></div>
+        <div class="sparkline-bar" style="height:20px;animation-delay:0.75s"></div>
+        <div class="sparkline-bar" style="height:10px;animation-delay:0.9s"></div>
+        <div class="sparkline-bar" style="height:16px;animation-delay:1.05s"></div>
+        <div class="sparkline-bar" style="height:22px;animation-delay:1.2s"></div>
+        <div class="sparkline-bar" style="height:9px;animation-delay:1.35s"></div>
+        <div class="sparkline-bar" style="height:15px;animation-delay:1.5s"></div>
+        <div class="sparkline-bar" style="height:7px;animation-delay:1.65s"></div>
+        <div class="sparkline-bar" style="height:19px;animation-delay:1.8s"></div>
+        <div class="sparkline-bar" style="height:11px;animation-delay:1.95s"></div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Chatbot Fleet -->
+    <div class="panel">
+      <div class="panel-header">
+        <svg class="panel-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="2" width="14" height="10" rx="2" stroke="#5A6378" stroke-width="1.5"/>
+          <path d="M5 12L4 15" stroke="#5A6378" stroke-width="1.5"/>
+          <path d="M11 12L12 15" stroke="#5A6378" stroke-width="1.5"/>
+          <circle cx="5.5" cy="7" r="1" fill="#5A6378"/>
+          <circle cx="10.5" cy="7" r="1" fill="#5A6378"/>
+        </svg>
+        <span class="panel-title">CHATBOT FLEET</span>
+        <span class="panel-status">3 ONLINE</span>
+      </div>
+      <div class="panel-metric">2,847</div>
+      <div class="panel-label">conversations this month</div>
+      <div class="agent-dots">
+        <div class="agent-dot green"></div>
+        <div class="agent-dot green"></div>
+        <div class="agent-dot amber"></div>
+      </div>
+      <div class="panel-sub">Agent-01 <span class="teal">active</span> / Agent-02 <span class="teal">active</span> / Agent-03 <span style="color:#F59E0B">training</span></div>
+    </div>
+
+    <!-- Panel 3: Voice Systems -->
+    <div class="panel">
+      <div class="panel-header">
+        <svg class="panel-icon" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1V10" stroke="#5A6378" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M4 7C4 9.2 5.8 11 8 11C10.2 11 12 9.2 12 7" stroke="#5A6378" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="6" y1="14" x2="10" y2="14" stroke="#5A6378" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="11" x2="8" y2="14" stroke="#5A6378" stroke-width="1.5"/>
+        </svg>
+        <span class="panel-title">VOICE SYSTEMS</span>
+        <span class="panel-status">ACTIVE</span>
+      </div>
+      <div class="panel-sub" style="margin-bottom:6px">Inbound: <span class="teal">ACTIVE</span> / Outbound: <span style="color:#5A6378">STANDBY</span></div>
+      <div class="panel-metric">142</div>
+      <div class="panel-label">calls processed</div>
+      <div class="waveform">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+    </div>
+
+    <!-- Panel 4: Automation Grid -->
+    <div class="panel">
+      <div class="panel-header">
+        <svg class="panel-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="5" height="5" rx="1" stroke="#5A6378" stroke-width="1.5"/>
+          <rect x="10" y="1" width="5" height="5" rx="1" stroke="#5A6378" stroke-width="1.5"/>
+          <rect x="1" y="10" width="5" height="5" rx="1" stroke="#5A6378" stroke-width="1.5"/>
+          <rect x="10" y="10" width="5" height="5" rx="1" stroke="#5A6378" stroke-width="1.5"/>
+        </svg>
+        <span class="panel-title">AUTOMATION GRID</span>
+        <span class="panel-status">12 ACTIVE</span>
+      </div>
+      <div class="panel-metric">99.8%</div>
+      <div class="panel-label">uptime</div>
+      <div class="workflow-grid">
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot amber"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+        <div class="workflow-dot green"></div>
+      </div>
+      <div class="panel-sub">12 workflows / 1 pending review</div>
+    </div>
+  </div>
+
+  <h1 class="hero-tagline">Your marketing, on autopilot.</h1>
+  <div class="hero-buttons">
+    <button class="btn-primary">Launch your system &rarr;</button>
+    <button class="btn-outline">View demo</button>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+  <div class="section-label">AVAILABLE SYSTEMS</div>
+  <div class="service-row">
+    <span class="service-num">SYS-01</span>
+    <span class="service-name">AI Content Engine</span>
+    <span class="service-desc">Autonomous content creation, scheduling, and publishing across all platforms</span>
+    <span class="service-badge">DEPLOYABLE</span>
+  </div>
+  <div class="service-row">
+    <span class="service-num">SYS-02</span>
+    <span class="service-name">Chatbot Fleet</span>
+    <span class="service-desc">Multi-agent conversational AI for sales, support, and lead qualification</span>
+    <span class="service-badge">DEPLOYABLE</span>
+  </div>
+  <div class="service-row">
+    <span class="service-num">SYS-03</span>
+    <span class="service-name">Voice Agents</span>
+    <span class="service-desc">Inbound and outbound AI voice systems with natural conversation flow</span>
+    <span class="service-badge">DEPLOYABLE</span>
+  </div>
+  <div class="service-row">
+    <span class="service-num">SYS-04</span>
+    <span class="service-name">Automation Grid</span>
+    <span class="service-desc">End-to-end workflow automation connecting your entire marketing stack</span>
+    <span class="service-badge">DEPLOYABLE</span>
+  </div>
+</section>
+
+<!-- DEPLOYMENT LOG -->
+<section>
+  <div class="section-label">DEPLOYMENT LOG</div>
+  <div class="log-viewer" id="logViewer">
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:01]</span> Content pipeline initialized for client_047</div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:03]</span> Generating carousel batch... <span class="success">12/12 complete</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:05]</span> Publishing to Instagram, LinkedIn, Twitter... <span class="processing">in progress</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:08]</span> Analytics sync: engagement <span class="success">+23% vs baseline</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:12]</span> Voice agent SYS-03 handling inbound call... <span class="processing">active</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:15]</span> Chatbot Agent-01: lead qualified, <span class="success">forwarded to CRM</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:18]</span> Workflow WF-07 triggered: <span class="success">email sequence deployed</span></div>
+    <div class="log-line">&gt; <span class="ts">[2026-03-12 14:23:22]</span> System health check: <span class="success">all systems nominal</span></div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section>
+  <div class="section-label">SYSTEM PERFORMANCE</div>
+  <div class="metrics-grid">
+    <div class="metric-cell">
+      <div class="metric-number teal" data-target="247" data-suffix="%">0%</div>
+      <div class="metric-label">AVG ENGAGEMENT INCREASE</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number teal" data-target="360" data-suffix="">0</div>
+      <div class="metric-label">HOURS SAVED / MONTH</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number green" data-target="99.8" data-suffix="%" data-decimal="true">0%</div>
+      <div class="metric-label">SYSTEM UPTIME</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-number amber" data-prefix="<" data-target="14" data-suffix="">0</div>
+      <div class="metric-label">DAYS TO DEPLOY</div>
+    </div>
+  </div>
+</section>
+
+<!-- PILOT STATUS -->
+<section>
+  <div class="section-label">ACTIVE MISSION</div>
+  <div class="pilot-panel">
+    <div class="pilot-header">
+      <div class="status-dot" style="width:8px;height:8px"></div>
+      ACTIVE PILOT: SKINCLARITY CLUB
+    </div>
+    <div class="pilot-metrics">
+      <div>
+        <div class="pilot-metric-val">312</div>
+        <div class="pilot-metric-label">POSTS AUTOMATED</div>
+      </div>
+      <div>
+        <div class="pilot-metric-val">8.4%</div>
+        <div class="pilot-metric-label">ENGAGEMENT RATE</div>
+      </div>
+      <div>
+        <div class="pilot-metric-val">47.2K</div>
+        <div class="pilot-metric-label">TOTAL REACH</div>
+      </div>
+      <div>
+        <div class="pilot-metric-val">99.9%</div>
+        <div class="pilot-metric-label">UPTIME</div>
+      </div>
+    </div>
+    <div class="pilot-status">Week 8 of 12 -- Pilot phase</div>
+    <div class="pilot-progress">
+      <div class="pilot-progress-fill"></div>
+    </div>
+    <a href="#" class="pilot-link">View full report &rarr;</a>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <h2 class="cta-headline">Ready for launch?</h2>
+  <p class="cta-sub">Deploy your AI marketing systems in under 2 weeks.</p>
+  <button class="btn-primary">Initiate deployment &rarr;</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">FMai // future-marketing.ai</div>
+  <div class="footer-right">
+    <div class="status-dot"></div>
+    Systems operational
+  </div>
+</footer>
+
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = h + ':' + m + ':' + s;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Intersection Observer for log lines
+  const logViewer = document.getElementById('logViewer');
+  const logLines = logViewer.querySelectorAll('.log-line');
+  let logAnimated = false;
+
+  const logObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !logAnimated) {
+        logAnimated = true;
+        logLines.forEach(function(line, i) {
+          setTimeout(function() {
+            line.classList.add('visible');
+          }, i * 600);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  logObserver.observe(logViewer);
+
+  // Count-up animation for metrics
+  const metricNumbers = document.querySelectorAll('.metric-number[data-target]');
+  const metricObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (el.dataset.animated) return;
+        el.dataset.animated = 'true';
+
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const isDecimal = el.dataset.decimal === 'true';
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function animate(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = eased * target;
+
+          if (isDecimal) {
+            el.textContent = prefix + current.toFixed(1) + suffix;
+          } else {
+            el.textContent = prefix + Math.round(current) + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        }
+        requestAnimationFrame(animate);
+        metricObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  metricNumbers.forEach(function(el) {
+    metricObserver.observe(el);
+  });
+</script>
+</body>
+</html>

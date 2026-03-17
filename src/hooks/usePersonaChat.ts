@@ -7,7 +7,7 @@ const DEMO_MESSAGE_LIMIT = 15
 const FLAGSHIP_PERSONA_ID = 'flagship'
 
 export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
-  const { sessionId, messageCounts, incrementMessageCount } = useChatbotStore()
+  const { sessionId, messageCounts, incrementMessageCount, demoMode } = useChatbotStore()
 
   const messageCount = messageCounts[personaId] || 0
 
@@ -19,10 +19,14 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
         body: {
           personaId,
           sessionId,
-          context: pageContext ? { currentPage: pageContext.pathname } : undefined,
+          context: pageContext
+            ? { currentPage: pageContext.pathname, demoMode: demoMode || undefined }
+            : demoMode
+              ? { demoMode: true }
+              : undefined,
         },
       }),
-    [personaId, sessionId, pageContext?.pathname]
+    [personaId, sessionId, pageContext?.pathname, demoMode]
   )
 
   const chat = useChat({

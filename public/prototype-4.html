@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FMai — The AI Marketing Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #08080A;
+    --text: #F0ECE5;
+    --amber: #E8A838;
+    --sage: #7A9E7E;
+    --muted: #5A5852;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'Space Mono', monospace;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) var(--bg);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* --- Scroll Progress Bar --- */
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--amber);
+    z-index: 1000;
+    transition: width 0.1s linear;
+  }
+
+  /* --- Scene Dots --- */
+  #scene-dots {
+    position: fixed;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .scene-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: background 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
+  }
+
+  .scene-dot.active {
+    background: var(--text);
+    transform: scale(1.5);
+  }
+
+  /* --- Mini Nav --- */
+  #mini-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    pointer-events: none;
+  }
+
+  #mini-nav .nav-logo {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: auto;
+  }
+
+  #mini-nav .nav-logo.visible { opacity: 1; }
+
+  #mini-nav .nav-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    pointer-events: auto;
+  }
+
+  #mini-nav .nav-cta:hover { color: var(--amber); }
+
+  /* --- Scene Base --- */
+  .scene {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+    padding: 60px 40px;
+  }
+
+  /* --- Reveal Animation --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal.delay-1 { transition-delay: 0.15s; }
+  .reveal.delay-2 { transition-delay: 0.3s; }
+  .reveal.delay-3 { transition-delay: 0.45s; }
+  .reveal.delay-4 { transition-delay: 0.6s; }
+  .reveal.delay-5 { transition-delay: 0.75s; }
+  .reveal.delay-6 { transition-delay: 0.9s; }
+
+  /* ==============================
+     SCENE 1 — OPENING
+     ============================== */
+  #scene-1 .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(64px, 12vw, 160px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-align: center;
+  }
+
+  #scene-1 .scroll-hint {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 48px;
+  }
+
+  #scene-1 .expanding-line {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background: var(--muted);
+    animation: expandLine 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 1s;
+    width: 0;
+  }
+
+  @keyframes expandLine {
+    0% { width: 0; }
+    100% { width: min(60vw, 500px); }
+  }
+
+  /* ==============================
+     SCENE 2 — THE PROBLEM
+     ============================== */
+  #scene-2 { padding: 60px 10vw; align-items: flex-start; }
+
+  #scene-2 .problem-text {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 900px;
+  }
+
+  #scene-2 .problem-text .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  #scene-2 .problem-text .word.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #scene-2 .problem-text .highlight {
+    color: var(--amber);
+    font-weight: 600;
+  }
+
+  /* ==============================
+     SCENE 3 — THE SHIFT
+     ============================== */
+  #scene-3 { text-align: center; }
+
+  #scene-3 .shift-question {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.5vw, 64px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.3;
+    max-width: 800px;
+    margin-bottom: 80px;
+  }
+
+  #scene-3 .shift-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 48px;
+  }
+
+  #scene-3 .shift-word {
+    font-size: clamp(24px, 3vw, 48px);
+    line-height: 1;
+  }
+
+  #scene-3 .shift-word:nth-child(1) {
+    font-family: var(--serif);
+    font-weight: 600;
+  }
+
+  #scene-3 .shift-word:nth-child(2) {
+    font-family: var(--sans);
+    font-weight: 500;
+    color: var(--amber);
+  }
+
+  #scene-3 .shift-word:nth-child(3) {
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--sage);
+  }
+
+  #scene-3 .shift-word:nth-child(4) {
+    font-family: var(--sans);
+    font-weight: 300;
+    text-decoration: underline;
+    text-decoration-color: var(--muted);
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+  }
+
+  /* ==============================
+     SCENE 4 — SERVICES
+     ============================== */
+  #scene-4 {
+    padding: 80px 10vw;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #scene-4 .services-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 64px;
+  }
+
+  .services-list {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(90, 88, 82, 0.25);
+  }
+
+  .service-item:first-child { border-top: 1px solid rgba(90, 88, 82, 0.25); }
+
+  .service-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+    width: 32px;
+  }
+
+  .service-content { flex: 1; }
+
+  .service-title {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .service-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--amber);
+    text-decoration: none;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-item:hover .service-link { opacity: 1; }
+
+  /* ==============================
+     SCENE 5 — THE MACHINE
+     ============================== */
+  #scene-5 { text-align: center; gap: 60px; }
+
+  #scene-5 .machine-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.5vw, 64px);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .machine-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    max-width: 900px;
+  }
+
+  .flow-node {
+    font-family: var(--mono);
+    font-size: clamp(11px, 1.4vw, 14px);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 0;
+    position: relative;
+    color: var(--text);
+  }
+
+  .flow-node.accent { color: var(--amber); }
+
+  .flow-arrow {
+    font-family: var(--sans);
+    font-size: 18px;
+    color: var(--muted);
+    padding: 0 20px;
+    user-select: none;
+  }
+
+  .flow-loop {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .flow-loop svg {
+    width: 200px;
+    height: 24px;
+  }
+
+  .machine-beta {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    border: 1px solid rgba(122, 158, 126, 0.3);
+    padding: 14px 28px;
+    display: inline-block;
+  }
+
+  /* ==============================
+     SCENE 6 — PROOF
+     ============================== */
+  #scene-6 {
+    padding: 80px 10vw;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  #scene-6 .proof-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  #scene-6 .proof-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 56px);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 48px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 16px;
+  }
+
+  .metric-item {}
+
+  .metric-number {
+    font-family: var(--mono);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-label {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .proof-footnote {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ==============================
+     SCENE 7 — CTA / CLOSE
+     ============================== */
+  #scene-7 { text-align: center; gap: 48px; }
+
+  #scene-7 .close-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 7vw, 96px);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  #scene-7 .close-cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--amber);
+    color: var(--bg);
+    padding: 18px 48px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  #scene-7 .close-cta:hover {
+    background: #d49530;
+    transform: translateY(-1px);
+  }
+
+  #scene-7 .close-brand {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  #scene-7 .contracting-line {
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background: var(--muted);
+    width: min(60vw, 500px);
+    transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  #scene-7 .contracting-line.contract { width: 0; }
+
+  /* ==============================
+     MOBILE
+     ============================== */
+  @media (max-width: 768px) {
+    html { scroll-snap-type: none; }
+
+    .scene { padding: 80px 24px; min-height: 100vh; }
+
+    #scene-dots { display: none; }
+
+    #mini-nav { padding: 16px 20px; }
+
+    #scene-2 { padding: 80px 24px; }
+
+    #scene-4 { padding: 80px 24px; }
+
+    .service-item { flex-direction: column; gap: 12px; }
+
+    .service-link { opacity: 1; }
+
+    .machine-flow { gap: 0; }
+
+    .flow-arrow { padding: 0 10px; font-size: 14px; }
+
+    #scene-6 { padding: 80px 24px; }
+
+    .metrics-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+    #scene-3 .shift-words { flex-direction: column; gap: 20px; }
+  }
+
+  @media (max-width: 480px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- Selection --- */
+  ::selection {
+    background: var(--amber);
+    color: var(--bg);
+  }
+
+  /* --- Custom scrollbar --- */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- Scene Dots -->
+<nav id="scene-dots" aria-label="Scene navigation">
+  <div class="scene-dot active" data-scene="1"></div>
+  <div class="scene-dot" data-scene="2"></div>
+  <div class="scene-dot" data-scene="3"></div>
+  <div class="scene-dot" data-scene="4"></div>
+  <div class="scene-dot" data-scene="5"></div>
+  <div class="scene-dot" data-scene="6"></div>
+  <div class="scene-dot" data-scene="7"></div>
+</nav>
+
+<!-- Mini Nav -->
+<header id="mini-nav">
+  <div class="nav-logo">FMai</div>
+  <a href="https://calendly.com/futuremarketing" class="nav-cta" target="_blank" rel="noopener">Book a call</a>
+</header>
+
+<!-- ========================
+     SCENE 1 — OPENING
+     ======================== -->
+<section class="scene" id="scene-1">
+  <h1 class="hero-title">FMai</h1>
+  <p class="scroll-hint">Scroll to begin</p>
+  <div class="expanding-line"></div>
+</section>
+
+<!-- ========================
+     SCENE 2 — THE PROBLEM
+     ======================== -->
+<section class="scene" id="scene-2">
+  <p class="problem-text" id="problem-text">
+    Your team spends <span class="highlight">80%</span> of their time on work AI should be doing.
+  </p>
+</section>
+
+<!-- ========================
+     SCENE 3 — THE SHIFT
+     ======================== -->
+<section class="scene" id="scene-3">
+  <p class="shift-question reveal">What if your marketing ran itself?</p>
+  <div class="shift-words">
+    <span class="shift-word reveal delay-2">Automations.</span>
+    <span class="shift-word reveal delay-3">Chatbots.</span>
+    <span class="shift-word reveal delay-4">Voice.</span>
+    <span class="shift-word reveal delay-5">Content.</span>
+  </div>
+</section>
+
+<!-- ========================
+     SCENE 4 — SERVICES
+     ======================== -->
+<section class="scene" id="scene-4">
+  <p class="services-label reveal">What we build</p>
+  <div class="services-list">
+    <div class="service-item reveal delay-1">
+      <span class="service-num">01</span>
+      <div class="service-content">
+        <h3 class="service-title">AI Automations</h3>
+        <p class="service-desc">End-to-end workflows that replace manual marketing tasks overnight.</p>
+      </div>
+      <a href="#" class="service-link">Learn more &rarr;</a>
+    </div>
+    <div class="service-item reveal delay-2">
+      <span class="service-num">02</span>
+      <div class="service-content">
+        <h3 class="service-title">AI Chatbots</h3>
+        <p class="service-desc">Conversational agents that qualify leads and close while you sleep.</p>
+      </div>
+      <a href="#" class="service-link">Learn more &rarr;</a>
+    </div>
+    <div class="service-item reveal delay-3">
+      <span class="service-num">03</span>
+      <div class="service-content">
+        <h3 class="service-title">AI Voice Agents</h3>
+        <p class="service-desc">Phone-ready voices that handle calls with the nuance of your best rep.</p>
+      </div>
+      <a href="#" class="service-link">Learn more &rarr;</a>
+    </div>
+    <div class="service-item reveal delay-4">
+      <span class="service-num">04</span>
+      <div class="service-content">
+        <h3 class="service-title">AI Content Engine</h3>
+        <p class="service-desc">Research, create, publish, and optimize. Autonomous content at scale.</p>
+      </div>
+      <a href="#" class="service-link">Learn more &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SCENE 5 — THE MACHINE
+     ======================== -->
+<section class="scene" id="scene-5">
+  <h2 class="machine-title reveal">The AI Marketing Machine</h2>
+  <div class="machine-flow reveal delay-1">
+    <span class="flow-node accent">Research</span>
+    <span class="flow-arrow">&mdash;</span>
+    <span class="flow-node">Create</span>
+    <span class="flow-arrow">&mdash;</span>
+    <span class="flow-node accent">Publish</span>
+    <span class="flow-arrow">&mdash;</span>
+    <span class="flow-node">Optimize</span>
+    <span class="flow-arrow">&mdash;</span>
+    <span class="flow-node accent">Learn</span>
+    <span class="flow-arrow">&mdash;</span>
+    <span class="flow-node" style="color: var(--muted); font-style: italic;">repeat</span>
+  </div>
+  <div class="flow-loop reveal delay-2">
+    <svg viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 12 C10 4, 40 4, 100 4 C160 4, 190 4, 190 12" stroke="#5A5852" stroke-width="0.75" fill="none"/>
+      <path d="M190 12 C190 20, 160 20, 100 20 C40 20, 10 20, 10 12" stroke="#5A5852" stroke-width="0.75" fill="none" stroke-dasharray="3,3"/>
+      <polygon points="7,12 13,9 13,15" fill="#5A5852"/>
+    </svg>
+  </div>
+  <p class="machine-beta reveal delay-3">Controlled beta &mdash; 3 founding member spots</p>
+</section>
+
+<!-- ========================
+     SCENE 6 — PROOF
+     ======================== -->
+<section class="scene" id="scene-6">
+  <p class="proof-label reveal">Live pilot</p>
+  <h2 class="proof-title reveal delay-1">SkinClarity Club</h2>
+  <div class="metrics-grid">
+    <div class="metric-item reveal delay-2">
+      <div class="metric-number" data-target="847" data-suffix="">0</div>
+      <p class="metric-label">posts automated</p>
+    </div>
+    <div class="metric-item reveal delay-3">
+      <div class="metric-number" data-target="4.2" data-suffix="%" data-decimal="true">0%</div>
+      <p class="metric-label">engagement rate</p>
+    </div>
+    <div class="metric-item reveal delay-4">
+      <div class="metric-number" data-target="12000" data-suffix="" data-format="comma">0</div>
+      <p class="metric-label">monthly reach</p>
+    </div>
+  </div>
+  <p class="proof-footnote reveal delay-5">Results after 8 weeks of autonomous operation.</p>
+</section>
+
+<!-- ========================
+     SCENE 7 — CTA / CLOSE
+     ======================== -->
+<section class="scene" id="scene-7">
+  <h2 class="close-title reveal">Let's build yours.</h2>
+  <a href="https://calendly.com/futuremarketing" class="close-cta reveal delay-2" target="_blank" rel="noopener">Book a strategy call</a>
+  <p class="close-brand reveal delay-3">FMai &mdash; future-marketing.ai</p>
+  <div class="contracting-line"></div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  // --- Utilities ---
+  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
+
+  // --- Scroll Progress ---
+  const progressBar = $('#scroll-progress');
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+
+  // --- Scene Dots ---
+  const dots = $$('.scene-dot');
+  const scenes = $$('.scene');
+
+  function updateDots() {
+    const scrollCenter = window.scrollY + window.innerHeight * 0.5;
+    let activeIndex = 0;
+    scenes.forEach((scene, i) => {
+      const top = scene.offsetTop;
+      const bottom = top + scene.offsetHeight;
+      if (scrollCenter >= top && scrollCenter < bottom) activeIndex = i;
+    });
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.scene, 10) - 1;
+      scenes[idx].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // --- Mini Nav logo visibility ---
+  const navLogo = $('.nav-logo');
+
+  function updateNavLogo() {
+    const scene1Bottom = scenes[0].offsetTop + scenes[0].offsetHeight;
+    navLogo.classList.toggle('visible', window.scrollY > scene1Bottom * 0.5);
+  }
+
+  // --- Reveal on Scroll (IntersectionObserver) ---
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  $$('.reveal').forEach(el => revealObserver.observe(el));
+
+  // --- Scene 2: Word-by-word reveal ---
+  function initWordReveal() {
+    const container = $('#problem-text');
+    const html = container.innerHTML;
+    // Split into tokens preserving HTML tags
+    const tokens = [];
+    let inTag = false;
+    let current = '';
+
+    for (let i = 0; i < html.length; i++) {
+      const ch = html[i];
+      if (ch === '<') {
+        if (current.trim()) {
+          current.split(/(\s+)/).forEach(part => {
+            if (part.trim()) tokens.push({ type: 'word', text: part });
+            else if (part) tokens.push({ type: 'space', text: part });
+          });
+        } else if (current) {
+          tokens.push({ type: 'space', text: current });
+        }
+        current = '<';
+        inTag = true;
+      } else if (ch === '>' && inTag) {
+        current += '>';
+        tokens.push({ type: 'tag', text: current });
+        current = '';
+        inTag = false;
+      } else {
+        current += ch;
+      }
+    }
+    if (current.trim()) {
+      current.split(/(\s+)/).forEach(part => {
+        if (part.trim()) tokens.push({ type: 'word', text: part });
+        else if (part) tokens.push({ type: 'space', text: part });
+      });
+    }
+
+    let rebuilt = '';
+    let wordIndex = 0;
+    tokens.forEach(token => {
+      if (token.type === 'word') {
+        rebuilt += `<span class="word" style="transition-delay:${wordIndex * 0.08}s">${token.text}</span>`;
+        wordIndex++;
+      } else {
+        rebuilt += token.text;
+      }
+    });
+
+    container.innerHTML = rebuilt;
+
+    const words = $$('.word', container);
+    const wordObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Reveal all words when container enters
+            words.forEach(w => w.classList.add('visible'));
+            wordObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    wordObserver.observe(container);
+  }
+
+  initWordReveal();
+
+  // --- Scene 6: Counter animation ---
+  const counterEls = $$('.metric-number[data-target]');
+  let countersStarted = false;
+
+  function animateCounters() {
+    if (countersStarted) return;
+    countersStarted = true;
+
+    counterEls.forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = el.dataset.decimal === 'true';
+      const useComma = el.dataset.format === 'comma';
+      const duration = 2000;
+      const start = performance.now();
+
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        let current = eased * target;
+
+        if (isDecimal) {
+          el.textContent = current.toFixed(1) + suffix;
+        } else if (useComma) {
+          el.textContent = Math.round(current).toLocaleString('en-US') + suffix;
+        } else {
+          el.textContent = Math.round(current) + suffix;
+        }
+
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          counterObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  const metricsGrid = $('.metrics-grid');
+  if (metricsGrid) counterObserver.observe(metricsGrid);
+
+  // --- Scene 7: Contracting line ---
+  const contractLine = $('.contracting-line');
+  const contractObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => contractLine.classList.add('contract'), 800);
+          contractObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  if (contractLine) contractObserver.observe($('#scene-7'));
+
+  // --- Parallax on headlines ---
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    const vh = window.innerHeight;
+
+    scenes.forEach(scene => {
+      const rect = scene.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const offset = (center - vh / 2) * 0.06;
+
+      const headline = scene.querySelector('.hero-title, .problem-text, .shift-question, .machine-title, .proof-title, .close-title');
+      if (headline) {
+        headline.style.transform = `translateY(${offset}px)`;
+      }
+    });
+  }
+
+  // --- Unified scroll handler ---
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateProgress();
+        updateDots();
+        updateNavLogo();
+        updateParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    updateProgress();
+    updateDots();
+  });
+
+  // Initial calls
+  updateProgress();
+  updateDots();
+  updateNavLogo();
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMai // Data Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #111111;
+            --bg-elevated: #1a1a1a;
+            --accent: #FF4D00;
+            --accent-dim: rgba(255, 77, 0, 0.15);
+            --text: #F5F0EB;
+            --text-muted: #777370;
+            --border: rgba(245, 240, 235, 0.08);
+            --border-strong: rgba(245, 240, 235, 0.2);
+            --grid-size: 120px;
+            --side-nav-w: 72px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── GRID OVERLAY ── */
+        .grid-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(245,240,235,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245,240,235,0.04) 1px, transparent 1px);
+            background-size: var(--grid-size) var(--grid-size);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .grid-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(255,77,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,77,0,0.03) 1px, transparent 1px);
+            background-size: calc(var(--grid-size) * 4) calc(var(--grid-size) * 4);
+        }
+
+        /* ── SIDE NAVIGATION ── */
+        .side-nav {
+            position: fixed;
+            left: 0; top: 0;
+            width: var(--side-nav-w);
+            height: 100vh;
+            border-right: 2px solid var(--border-strong);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0;
+            z-index: 100;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(16px);
+        }
+
+        .side-nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 14px;
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            color: var(--accent);
+        }
+
+        .side-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .side-nav-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            writing-mode: vertical-lr;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .side-nav-links a:hover,
+        .side-nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Progress indicator bar */
+        .side-nav-links a::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+
+        .side-nav-links a:hover::before,
+        .side-nav-links a.active::before {
+            height: 100%;
+        }
+
+        .side-nav-progress {
+            width: 3px;
+            height: 80px;
+            background: var(--border);
+            position: relative;
+        }
+
+        .side-nav-progress-fill {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 0%;
+            background: var(--accent);
+            transition: height 0.15s linear;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: var(--side-nav-w);
+            right: 0;
+            height: 56px;
+            border-bottom: 2px solid var(--border-strong);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 100;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(16px);
+        }
+
+        .top-bar-left {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .top-bar-left span { color: var(--accent); }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 6px; height: 6px;
+            background: #22C55E;
+            animation: statusBlink 3s ease-in-out infinite;
+        }
+
+        @keyframes statusBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .top-bar-btn {
+            padding: 8px 20px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .top-bar-btn:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main {
+            margin-left: var(--side-nav-w);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── SECTION DIVIDERS ── */
+        .harsh-divider {
+            height: 6px;
+            background: var(--accent);
+            width: 100%;
+        }
+
+        .harsh-divider--thin {
+            height: 3px;
+            background: var(--border-strong);
+            width: 100%;
+        }
+
+        /* ── HERO SECTION ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 80px 80px;
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(28px, 4.5vw, 60px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 48px;
+            min-height: 4.6em;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.9em;
+            background: var(--accent);
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: cursorBlink 0.7s step-end infinite;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 56px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.6s ease;
+        }
+
+        .hero-sub.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.6s ease 0.15s;
+        }
+
+        .hero-buttons.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-fill {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-fill:hover {
+            background: var(--text);
+        }
+
+        .btn-fill svg {
+            width: 16px; height: 16px;
+        }
+
+        .btn-border {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border-strong);
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-border:hover {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+        }
+
+        /* ── DATA DASHBOARD ── */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .metric-card {
+            padding: 48px 40px;
+            border-right: 2px solid var(--border-strong);
+            position: relative;
+            transition: background 0.2s ease;
+        }
+
+        .metric-card:last-child { border-right: none; }
+
+        .metric-card:hover { background: var(--accent-dim); }
+
+        .metric-card::before {
+            content: attr(data-index);
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .metric-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ── MANIFESTO ── */
+        .manifesto {
+            padding: 120px 80px;
+            border-bottom: 2px solid var(--border-strong);
+            position: relative;
+        }
+
+        .manifesto-text {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(24px, 3.5vw, 48px);
+            font-weight: 700;
+            line-height: 1.4;
+            max-width: 960px;
+            text-transform: uppercase;
+        }
+
+        .manifesto-text .accent { color: var(--accent); }
+        .manifesto-text .muted { color: var(--text-muted); }
+
+        .manifesto-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        /* ── SERVICES TABLE ── */
+        .services {
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .section-header {
+            padding: 60px 80px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+        }
+
+        .section-header .section-count {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .services-table { width: 100%; }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 2fr 120px;
+            align-items: center;
+            border-top: 2px solid var(--border-strong);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slide-fill hover animation */
+        .service-row::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 0%; height: 100%;
+            background: var(--accent);
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 0;
+        }
+
+        .service-row:hover::before {
+            width: 100%;
+        }
+
+        .service-row > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-row:hover .service-desc { color: rgba(17, 17, 17, 0.7); }
+        .service-row:hover .service-idx { color: rgba(17, 17, 17, 0.5); }
+        .service-row:hover .service-name { color: var(--bg); }
+        .service-row:hover .service-link { color: var(--bg); }
+
+        .service-idx {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 36px 0 36px 24px;
+            transition: color 0.3s ease;
+        }
+
+        .service-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 36px 24px;
+            transition: color 0.3s ease;
+        }
+
+        .service-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+            padding: 36px 24px;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .service-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 36px 24px 36px 0;
+            text-align: right;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        /* ── LIVE TERMINAL ── */
+        .terminal-section {
+            border-bottom: 2px solid var(--border-strong);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .terminal-info {
+            padding: 60px 80px;
+            border-right: 2px solid var(--border-strong);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .terminal-info h3 {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .terminal-info p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 400px;
+        }
+
+        .terminal-window {
+            background: #0a0a0a;
+            padding: 0;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        .terminal-titlebar {
+            background: #1a1a1a;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dot {
+            width: 8px; height: 8px;
+            background: var(--text-muted);
+        }
+
+        .terminal-dot--red { background: #FF4D00; }
+        .terminal-dot--yellow { background: #FFC107; }
+        .terminal-dot--green { background: #22C55E; }
+
+        .terminal-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 12px;
+        }
+
+        .terminal-body {
+            padding: 24px;
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-line {
+            color: var(--text-muted);
+            line-height: 2;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(8px);
+            animation: terminalFadeIn 0.3s ease forwards;
+        }
+
+        .terminal-line .prompt { color: var(--accent); }
+        .terminal-line .success { color: #22C55E; }
+        .terminal-line .warn { color: #FFC107; }
+        .terminal-line .info { color: var(--text); }
+
+        @keyframes terminalFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── DEPLOYMENT PROCESS ── */
+        .process {
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .process-step {
+            padding: 48px 40px;
+            border-right: 2px solid var(--border-strong);
+            border-top: 2px solid var(--border-strong);
+            position: relative;
+        }
+
+        .process-step:last-child { border-right: none; }
+
+        .process-step-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .process-step-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .process-step-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .process-step-duration {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 24px;
+            display: block;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 48px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--border-strong);
+        }
+
+        .footer-left {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .footer-right {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            font-family: 'Space Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 1024px) {
+            .terminal-section { grid-template-columns: 1fr; }
+            .terminal-info { border-right: none; border-bottom: 2px solid var(--border-strong); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step:nth-child(2) { border-right: none; }
+            .process-step:nth-child(4) { border-right: none; }
+            .dashboard { grid-template-columns: repeat(2, 1fr); }
+            .metric-card:nth-child(2) { border-right: none; }
+            .metric-card:nth-child(3) { border-top: 2px solid var(--border-strong); }
+            .metric-card:nth-child(4) { border-top: 2px solid var(--border-strong); border-right: none; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --side-nav-w: 0px; }
+
+            .side-nav { display: none; }
+            .top-bar { left: 0; padding: 0 16px; }
+            .hero { padding: 100px 24px 60px; }
+            .manifesto { padding: 80px 24px; }
+            .section-header { padding: 40px 24px 24px; }
+            .terminal-info { padding: 40px 24px; }
+
+            .dashboard { grid-template-columns: 1fr 1fr; }
+
+            .service-row {
+                grid-template-columns: 40px 1fr;
+                grid-template-rows: auto auto;
+            }
+            .service-desc { grid-column: 1 / -1; padding-top: 0; }
+            .service-link { display: none; }
+
+            .process-grid { grid-template-columns: 1fr; }
+            .process-step { border-right: none; }
+
+            .footer {
+                padding: 32px 24px;
+                flex-direction: column;
+                gap: 24px;
+                align-items: flex-start;
+            }
+
+            .hero-buttons { flex-direction: column; }
+            .btn-fill, .btn-border { text-align: center; justify-content: center; }
+            .status-indicator { display: none; }
+            .metric-card { padding: 32px 24px; }
+            .footer-links { flex-wrap: wrap; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-overlay"></div>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <div class="side-nav-logo">FMAI</div>
+        <ul class="side-nav-links">
+            <li><a href="#hero" data-section="hero">Systems</a></li>
+            <li><a href="#dashboard" data-section="dashboard">Data</a></li>
+            <li><a href="#manifesto" data-section="manifesto">Manifesto</a></li>
+            <li><a href="#services" data-section="services">Services</a></li>
+            <li><a href="#terminal" data-section="terminal">Terminal</a></li>
+            <li><a href="#process" data-section="process">Deploy</a></li>
+        </ul>
+        <div class="side-nav-progress">
+            <div class="side-nav-progress-fill" id="progressFill"></div>
+        </div>
+    </aside>
+
+    <!-- Top bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span>//</span> future-marketing.ai
+        </div>
+        <div class="top-bar-right">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                Systems operational
+            </div>
+            <button class="top-bar-btn">Book call</button>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ═══════ HERO ═══════ -->
+        <section class="hero" id="hero">
+            <div class="hero-label">// AI Systems Architecture</div>
+            <h1 id="headline" aria-label="We build the machines that run your marketing"></h1>
+            <p class="hero-sub" id="heroSub">FMai designs, deploys, and maintains autonomous AI systems for marketing, sales, and support. No dashboards to monitor. No prompts to write. Just results.</p>
+            <div class="hero-buttons" id="heroButtons">
+                <a href="#" class="btn-fill">
+                    Deploy now
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                </a>
+                <a href="#" class="btn-border">Read the docs</a>
+            </div>
+        </section>
+
+        <!-- ═══════ HARSH DIVIDER ═══════ -->
+        <div class="harsh-divider"></div>
+
+        <!-- ═══════ DATA DASHBOARD ═══════ -->
+        <section class="dashboard" id="dashboard">
+            <div class="metric-card reveal" data-index="metric_01">
+                <div class="metric-value">247%</div>
+                <div class="metric-label">Average engagement increase across deployed systems</div>
+            </div>
+            <div class="metric-card reveal" data-index="metric_02">
+                <div class="metric-value">360</div>
+                <div class="metric-label">Hours per month automated for each client operation</div>
+            </div>
+            <div class="metric-card reveal" data-index="metric_03">
+                <div class="metric-value">24/7</div>
+                <div class="metric-label">System uptime. No shifts. No breaks. No holidays.</div>
+            </div>
+            <div class="metric-card reveal" data-index="metric_04">
+                <div class="metric-value">&lt; 2wk</div>
+                <div class="metric-label">From kickoff to fully deployed production system</div>
+            </div>
+        </section>
+
+        <!-- ═══════ HARSH DIVIDER ═══════ -->
+        <div class="harsh-divider--thin"></div>
+
+        <!-- ═══════ MANIFESTO ═══════ -->
+        <section class="manifesto" id="manifesto">
+            <span class="manifesto-tag">// Manifesto</span>
+            <div class="manifesto-text reveal">
+                <span class="muted">We don't build tools.</span><br>
+                <span class="accent">We build systems.</span><br><br>
+                <span class="muted">We don't optimize workflows.</span><br>
+                <span class="accent">We replace them.</span><br><br>
+                <span class="muted">We don't consult.</span><br>
+                <span class="accent">We deploy.</span>
+            </div>
+        </section>
+
+        <!-- ═══════ HARSH DIVIDER ═══════ -->
+        <div class="harsh-divider"></div>
+
+        <!-- ═══════ SERVICES ═══════ -->
+        <section class="services" id="services">
+            <div class="section-header">
+                <h2>// Service Index</h2>
+                <span class="section-count">04 ACTIVE</span>
+            </div>
+            <div class="services-table">
+                <div class="service-row reveal">
+                    <div class="service-idx">01</div>
+                    <div class="service-name">AI Automations</div>
+                    <div class="service-desc">Custom n8n and Make workflows that connect your tools and eliminate manual processes. From lead routing to reporting.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row reveal">
+                    <div class="service-idx">02</div>
+                    <div class="service-name">AI Chatbots</div>
+                    <div class="service-desc">Trained conversational agents embedded on your site. Support, sales, and booking -- all handled without human input.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row reveal">
+                    <div class="service-idx">03</div>
+                    <div class="service-name">Voice Agents</div>
+                    <div class="service-desc">Phone-based AI agents for outbound prospecting and inbound support. Natural language, real-time responses.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+                <div class="service-row reveal">
+                    <div class="service-idx">04</div>
+                    <div class="service-name">AI Marketing Machine</div>
+                    <div class="service-desc">Full-stack automated marketing. Content generation, distribution, analytics, and optimization in one system.</div>
+                    <div class="service-link">View --&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ HARSH DIVIDER ═══════ -->
+        <div class="harsh-divider--thin"></div>
+
+        <!-- ═══════ LIVE TERMINAL ═══════ -->
+        <section class="terminal-section" id="terminal">
+            <div class="terminal-info">
+                <h3>// Live Deployment Feed</h3>
+                <p>Every system we deploy follows the same rigorous pipeline. Automated testing, staged rollout, continuous monitoring. Watch a deployment in progress.</p>
+            </div>
+            <div class="terminal-window">
+                <div class="terminal-titlebar">
+                    <div class="terminal-dot terminal-dot--red"></div>
+                    <div class="terminal-dot terminal-dot--yellow"></div>
+                    <div class="terminal-dot terminal-dot--green"></div>
+                    <span class="terminal-title">fmai-deploy v2.4.1</span>
+                </div>
+                <div class="terminal-body" id="terminalBody"></div>
+            </div>
+        </section>
+
+        <!-- ═══════ HARSH DIVIDER ═══════ -->
+        <div class="harsh-divider"></div>
+
+        <!-- ═══════ DEPLOYMENT PROCESS ═══════ -->
+        <section class="process" id="process">
+            <div class="section-header">
+                <h2>// Deployment Process</h2>
+                <span class="section-count">4 PHASES</span>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-step-number">01</div>
+                    <div class="process-step-title">Audit</div>
+                    <div class="process-step-desc">Map existing systems, identify automation targets, define integration points and data flows.</div>
+                    <span class="process-step-duration">Day 1-3</span>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">02</div>
+                    <div class="process-step-title">Architect</div>
+                    <div class="process-step-desc">Design system blueprint. Select models, define workflows, set up monitoring and fallback protocols.</div>
+                    <span class="process-step-duration">Day 3-5</span>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">03</div>
+                    <div class="process-step-title">Build</div>
+                    <div class="process-step-desc">Develop, train, and test. Every system undergoes staged testing before touching production data.</div>
+                    <span class="process-step-duration">Day 5-10</span>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-step-number">04</div>
+                    <div class="process-step-title">Deploy</div>
+                    <div class="process-step-desc">Go live with real-time monitoring. Performance tuning and iteration based on live data feedback.</div>
+                    <span class="process-step-duration">Day 10-14</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ FOOTER ═══════ -->
+        <footer class="footer">
+            <div class="footer-left">FMai // future-marketing.ai</div>
+            <div class="footer-links">
+                <a href="#">Services</a>
+                <a href="#">Platform</a>
+                <a href="#">Docs</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-right">Founding members 2026</div>
+        </footer>
+    </main>
+
+    <script>
+        /* ── TYPEWRITER EFFECT ── */
+        (function() {
+            var headline = document.getElementById('headline');
+            var fullText = 'WE BUILD THE\nMACHINES THAT\nRUN YOUR\nMARKETING';
+            var charIndex = 0;
+            var cursor = document.createElement('span');
+            cursor.className = 'typewriter-cursor';
+
+            function type() {
+                if (charIndex < fullText.length) {
+                    var char = fullText[charIndex];
+                    if (char === '\n') {
+                        headline.appendChild(document.createElement('br'));
+                    } else {
+                        headline.appendChild(document.createTextNode(char));
+                    }
+                    charIndex++;
+                    headline.appendChild(cursor);
+                    var delay = char === '\n' ? 120 : 45 + Math.random() * 35;
+                    setTimeout(type, delay);
+                } else {
+                    headline.appendChild(cursor);
+                    // Show sub-elements after typing completes
+                    document.getElementById('heroSub').classList.add('visible');
+                    document.getElementById('heroButtons').classList.add('visible');
+                }
+            }
+
+            setTimeout(type, 600);
+        })();
+
+        /* ── SCROLL PROGRESS ── */
+        (function() {
+            var progressFill = document.getElementById('progressFill');
+            if (!progressFill) return;
+
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.scrollY;
+                var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                progressFill.style.height = progress + '%';
+            });
+        })();
+
+        /* ── ACTIVE NAV TRACKING ── */
+        (function() {
+            var sections = document.querySelectorAll('section[id]');
+            var navLinks = document.querySelectorAll('.side-nav-links a');
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var id = entry.target.getAttribute('id');
+                        navLinks.forEach(function(link) {
+                            link.classList.remove('active');
+                            if (link.getAttribute('data-section') === id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
+
+            sections.forEach(function(section) {
+                observer.observe(section);
+            });
+        })();
+
+        /* ── SCROLL REVEAL ── */
+        (function() {
+            var reveals = document.querySelectorAll('.reveal');
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, idx) {
+                    if (entry.isIntersecting) {
+                        // Stagger siblings
+                        var parent = entry.target.parentElement;
+                        var siblings = parent.querySelectorAll('.reveal');
+                        var index = Array.prototype.indexOf.call(siblings, entry.target);
+                        entry.target.style.transitionDelay = (index * 0.08) + 's';
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(function(el) { observer.observe(el); });
+        })();
+
+        /* ── LIVE TERMINAL ── */
+        (function() {
+            var terminalBody = document.getElementById('terminalBody');
+            var lines = [
+                { prompt: '>', text: ' Initializing FMai deployment pipeline...', cls: 'info' },
+                { prompt: '>', text: ' Loading client configuration... ', cls: 'info', suffix: 'done', suffixCls: 'success' },
+                { prompt: '>', text: ' Connecting to CRM endpoint... ', cls: 'info', suffix: 'connected', suffixCls: 'success' },
+                { prompt: '>', text: ' Syncing contact database [14,238 records]... ', cls: 'info', suffix: 'complete', suffixCls: 'success' },
+                { prompt: '>', text: ' Training chatbot model v3.2... ', cls: 'info', suffix: '100%', suffixCls: 'success' },
+                { prompt: '>', text: ' Validating response accuracy... ', cls: 'info', suffix: '97.3% pass rate', suffixCls: 'success' },
+                { prompt: '>', text: ' Voice agent calibrating... ', cls: 'info', suffix: 'optimal', suffixCls: 'success' },
+                { prompt: '!', text: ' Latency spike detected on node-3... ', cls: 'warn', suffix: 'auto-resolved', suffixCls: 'success' },
+                { prompt: '>', text: ' Deploying automation workflow [7 nodes]... ', cls: 'info', suffix: 'active', suffixCls: 'success' },
+                { prompt: '>', text: ' Email sequence armed [4 triggers]... ', cls: 'info', suffix: 'ready', suffixCls: 'success' },
+                { prompt: '>', text: ' Running integration tests... ', cls: 'info', suffix: '24/24 passed', suffixCls: 'success' },
+                { prompt: '>', text: ' Performance benchmark: ', cls: 'info', suffix: '247% above baseline', suffixCls: 'success' },
+                { prompt: '>', text: ' System health: ', cls: 'info', suffix: 'ALL GREEN', suffixCls: 'success' },
+                { prompt: '#', text: ' DEPLOYMENT COMPLETE', cls: 'success' },
+                { prompt: '>', text: ' Monitoring active. Next report in 3600s.', cls: 'info' },
+                { prompt: '', text: '', cls: 'info' },
+                { prompt: '>', text: ' Awaiting next deployment request...', cls: 'info' },
+            ];
+
+            var currentLine = 0;
+            var maxVisible = 12;
+            var started = false;
+
+            function addLine() {
+                var lineData = lines[currentLine % lines.length];
+                var div = document.createElement('div');
+                div.className = 'terminal-line';
+                div.style.animationDelay = '0s';
+
+                var html = '';
+                if (lineData.prompt) {
+                    html += '<span class="prompt">' + lineData.prompt + '</span>';
+                }
+                html += '<span class="' + lineData.cls + '">' + lineData.text + '</span>';
+                if (lineData.suffix) {
+                    html += '<span class="' + lineData.suffixCls + '">' + lineData.suffix + '</span>';
+                }
+                div.innerHTML = html;
+                terminalBody.appendChild(div);
+
+                // Remove old lines
+                var allLines = terminalBody.querySelectorAll('.terminal-line');
+                if (allLines.length > maxVisible) {
+                    allLines[0].remove();
+                }
+
+                currentLine++;
+
+                // Loop with pause
+                var delay = 800 + Math.random() * 1200;
+                if (currentLine % lines.length === 0) {
+                    delay = 3000;
+                }
+                setTimeout(addLine, delay);
+            }
+
+            // Start terminal when visible
+            var termObserver = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting && !started) {
+                    started = true;
+                    setTimeout(addLine, 500);
+                }
+            }, { threshold: 0.2 });
+
+            termObserver.observe(document.getElementById('terminal'));
+        })();
+    </script>
+</body>
+</html>

@@ -78,7 +78,7 @@ Each task was committed atomically:
 1. **Task 1: Rebuild AboutPage + PricingPage structural layout** - `ce2d74e` (feat)
 2. **Task 2: Rebuild HowItWorksPage + ContactPage + LegalPage** - `862f085` (feat)
 
-**Plan metadata:** [pending] (docs: complete plan)
+**Plan metadata:** `745e74f` (docs: complete plan)
 
 ## Files Created/Modified
 
