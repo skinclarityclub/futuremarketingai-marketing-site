@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import { X, Check } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { X, Check } from 'lucide-react'
 
 interface BeforeAfterSide {
-  title: string;
-  items: string[];
-  metric: string;
-  metricLabel: string;
+  title: string
+  items: string[]
+  metric: string
+  metricLabel: string
 }
 
 interface BeforeAfterProps {
-  before: BeforeAfterSide;
-  after: BeforeAfterSide;
+  before: BeforeAfterSide
+  after: BeforeAfterSide
 }
 
 export function BeforeAfter({ before, after }: BeforeAfterProps) {
@@ -38,9 +38,7 @@ export function BeforeAfter({ before, after }: BeforeAfterProps) {
         </ul>
 
         <div className="border-t border-red-500/20 pt-4">
-          <span className="font-mono text-2xl font-bold text-red-400">
-            {before.metric}
-          </span>
+          <span className="font-mono text-2xl font-bold text-red-400">{before.metric}</span>
           <p className="text-text-muted text-xs mt-1">{before.metricLabel}</p>
         </div>
       </motion.div>
@@ -67,14 +65,12 @@ export function BeforeAfter({ before, after }: BeforeAfterProps) {
         </ul>
 
         <div className="border-t border-accent-system/20 pt-4">
-          <span className="font-mono text-2xl font-bold text-accent-system">
-            {after.metric}
-          </span>
+          <span className="font-mono text-2xl font-bold text-accent-system">{after.metric}</span>
           <p className="text-text-muted text-xs mt-1">{after.metricLabel}</p>
         </div>
       </motion.div>
     </div>
-  );
+  )
 }
 
-export default BeforeAfter;
+export default BeforeAfter
