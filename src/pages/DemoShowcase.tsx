@@ -1,16 +1,32 @@
+import { lazy, Suspense } from 'react'
+import { SimpleHeader } from '../components/landing'
+import HeroSection from '../components/demo-showcase/HeroSection'
+import SocialProofBar from '../components/demo-showcase/SocialProofBar'
+import AutomationShowcase from '../components/demo-showcase/AutomationShowcase'
+import ServicePreview from '../components/demo-showcase/ServicePreview'
+import { FounderSection } from '../components/demo-showcase/FounderSection'
+import FinalCTA from '../components/demo-showcase/FinalCTA'
+
+const ROICalculatorSection = lazy(() => import('../components/demo-showcase/ROICalculatorSection'))
+
 export default function DemoShowcase() {
   return (
     <div className="min-h-screen bg-bg-deep">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section id="hero" className="pt-24 pb-16">
-          <h1 className="font-display text-4xl font-bold text-text-primary md:text-5xl lg:text-6xl">
-            Bespaar 40+ uur per week met AI
-          </h1>
-          <p className="mt-4 text-lg text-text-secondary">
-            Automations, Chatbots &amp; Voice Agents — gebouwd en geleverd door een specialist.
-          </p>
-        </section>
-      </div>
+      <SimpleHeader />
+
+      <main>
+        <HeroSection />
+        <SocialProofBar />
+        <AutomationShowcase />
+        <ServicePreview />
+
+        <Suspense fallback={<div className="h-96" />}>
+          <ROICalculatorSection />
+        </Suspense>
+
+        <FounderSection />
+        <FinalCTA />
+      </main>
     </div>
   )
 }
