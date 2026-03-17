@@ -102,6 +102,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // 4. Destructure
     const { personaId, message, sessionId, conversationHistory, messages, context } = body
+    console.log('[ENGINE-V2] persona:', personaId, 'demoMode:', context?.demoMode)
 
     // 5. Validate required fields
     if (!personaId || typeof personaId !== 'string') {
@@ -130,9 +131,9 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     if (isUseChatMode) {
       const lastMsg = messages[messages.length - 1]
       if (lastMsg?.parts && Array.isArray(lastMsg.parts)) {
-        userMessageText = lastMsg.parts
-          .filter((p: { type: string }) => p.type === 'text')
-          .map((p: { text: string }) => p.text)
+        userMessageText = (lastMsg.parts as { type: string; text?: string }[])
+          .filter((p) => p.type === 'text')
+          .map((p) => p.text ?? '')
           .join('')
       } else {
         userMessageText = typeof lastMsg?.content === 'string' ? lastMsg.content : ''
@@ -184,9 +185,18 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     const modelId = MODEL_IDS[complexity]
 
     // 12. Create persona tools (with context-aware filtering for flagship)
+    // During demo mode, all tools are needed regardless of page context
     let tools = createPersonaTools(persona)
-    if (persona.id === 'flagship' && context?.currentPage) {
-      tools = filterToolsByContext(tools, { currentPage: context.currentPage })
+    if (persona.id === 'flagship') {
+      if (context?.demoMode) {
+        // Demo mode: all tools EXCEPT navigate_to_page (it's a catch-all that
+        // interferes with specific tool demos — AI picks it instead of
+        // search_knowledge_base, explain_module, etc.)
+        const { navigate_to_page: _, ...demoTools } = tools
+        tools = demoTools
+      } else if (context?.currentPage) {
+        tools = filterToolsByContext(tools, { currentPage: context.currentPage })
+      }
     }
 
     // 13. Build messages for streamText
@@ -201,12 +211,16 @@ export async function handleChatRequest(request: Request): Promise<Response> {
         ]
 
     // 14. Stream response
+    // In demo mode, force tool usage so the AI always showcases capabilities
+    const hasTools = Object.keys(tools).length > 0
     const result = streamText({
       model: anthropic(modelId),
       messages: [...systemMessages, ...modelMessages],
-      tools: Object.keys(tools).length > 0 ? tools : undefined,
-      toolChoice: Object.keys(tools).length > 0 ? 'auto' : undefined,
-      stopWhen: stepCountIs(3), // Allow model to call tools AND respond with the results
+      tools: hasTools ? tools : undefined,
+      toolChoice: hasTools ? (context?.demoMode ? 'required' : 'auto') : undefined,
+      // Demo mode: 1 step = 1 tool call + text response (no chaining)
+      // Normal mode: allow up to 3 rounds of tool calls
+      stopWhen: stepCountIs(context?.demoMode ? 2 : 3),
       maxOutputTokens: persona.maxTokens,
       temperature: persona.temperature,
     })
