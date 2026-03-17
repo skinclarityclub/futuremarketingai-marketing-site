@@ -123,9 +123,10 @@ function App() {
     '/chatbots',
     '/voice-agents',
     '/marketing-machine',
+    '/demo',
+    '/demo-home',
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
-  // const isDemoRoute = !isMarketingRoute  // Parked during demo page restructure
   // const isLandingPage = location.pathname === '/' // Not used currently
 
   // Route-based persona detection for floating chatbot
@@ -195,7 +196,7 @@ function App() {
             }
             welcomeMessage={
               isDemoPage
-                ? "Welcome to the Marketing Machine! I'll walk you through everything — pick a question or ask your own."
+                ? 'Welcome to FMai! I can help you explore our AI automation, chatbot, and voice agent solutions.'
                 : conciergeCtx.welcomeMessage
             }
             pageContext={conciergeCtx.pageContext}
