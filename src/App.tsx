@@ -3,10 +3,10 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import {
   LoadingFallback,
-  FloatingNav,
+  // FloatingNav,  // Parked during demo page restructure
   Footer,
   LandingFooter,
-  PersonalizationControlBar,
+  // PersonalizationControlBar,  // Parked during demo page restructure
   TopBarControls,
   ErrorBoundary,
   AsyncErrorBoundary,
@@ -25,17 +25,19 @@ import SentryTestButton from './components/common/SentryTestButton'
 import { ToastProvider } from './contexts/ToastContext'
 
 // Lazy load all page components for code splitting
-const Hero = lazy(() => import('./pages/Hero'))
+// const Hero = lazy(() => import('./pages/Hero'))  // Parked during demo page restructure
+const DemoShowcase = lazy(() => import('./pages/DemoShowcase'))
 const LandingPage = lazy(() =>
   import('./pages/LandingPage').then((module) => ({ default: module.LandingPage }))
 )
-const DemoIntro = lazy(() =>
-  import('./components/demo/DemoIntro').then((module) => ({ default: module.DemoIntro }))
-)
-const Explorer = lazy(() => import('./pages/Explorer'))
-const Dashboard = lazy(() => import('./pages/Dashboard'))
+// Parked during demo page restructure
+// const DemoIntro = lazy(() =>
+//   import('./components/demo/DemoIntro').then((module) => ({ default: module.DemoIntro }))
+// )
+// const Explorer = lazy(() => import('./pages/Explorer'))
+// const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Calculator = lazy(() => import('./pages/Calculator'))
-const AdBuilder = lazy(() => import('./pages/AdBuilder'))
+// const AdBuilder = lazy(() => import('./pages/AdBuilder'))  // Parked during demo page restructure
 const CalculatorTest = lazy(() => import('./pages/CalculatorTest'))
 const LegalPage = lazy(() => import('./pages/LegalPage'))
 
@@ -123,13 +125,11 @@ function App() {
     '/marketing-machine',
   ]
   const isMarketingRoute = marketingPaths.includes(location.pathname)
-  const isDemoRoute = !isMarketingRoute
+  // const isDemoRoute = !isMarketingRoute  // Parked during demo page restructure
   // const isLandingPage = location.pathname === '/' // Not used currently
 
   // Route-based persona detection for floating chatbot
-  const isDemoPage = ['/explorer', '/calculator', '/dashboard', '/demo'].some((p) =>
-    location.pathname.startsWith(p)
-  )
+  const isDemoPage = location.pathname.startsWith('/demo')
 
   // Context-aware concierge hook for flagship persona on marketing pages
   const conciergeCtx = useConciergeContext(location.pathname, lang)
@@ -180,16 +180,7 @@ function App() {
           {/* Mobile: TopBarControlsMobile DISABLED on landing (language now in header) */}
           {!isMobile && <TopBarControls />}
 
-          {/* Demo UI Elements - Only show on demo routes, not on landing page */}
-          {isDemoRoute && (
-            <>
-              {/* Floating Navigation - Always visible */}
-              <FloatingNav />
-
-              {/* Personalization Control Bar - Always visible when industry selected */}
-              <PersonalizationControlBar />
-            </>
-          )}
+          {/* Floating Navigation and Personalization - removed during demo page restructure */}
 
           {/* Floating Chatbot - Route-based persona switching */}
           <ChatWidget
@@ -246,17 +237,22 @@ function App() {
                   <Route path="/skinclarity-pitch" element={<SkinClarityPitchPage />} />
 
                   {/* Demo Pages */}
-                  <Route path="/demo" element={<Hero />} />
+                  <Route path="/demo" element={<DemoShowcase />} />
+                  <Route path="/demo-home" element={<DemoShowcase />} />
+
+                  {/* Active calculator routes */}
+                  <Route path="/calculator" element={<Calculator />} />
+                  <Route path="/calculator-test" element={<CalculatorTest />} />
+
+                  {/* Old demo routes - parked for Marketing Machine launch
                   <Route path="/demo-intro" element={<DemoIntro targetPage="demo" />} />
-                  <Route path="/demo-home" element={<Hero />} />
                   <Route path="/explorer" element={<Explorer />} />
                   <Route path="/explorer-intro" element={<DemoIntro targetPage="explorer" />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/dashboard-intro" element={<DemoIntro targetPage="dashboard" />} />
-                  <Route path="/calculator" element={<Calculator />} />
                   <Route path="/calculator-intro" element={<DemoIntro targetPage="calculator" />} />
-                  <Route path="/calculator-test" element={<CalculatorTest />} />
                   <Route path="/ad-builder" element={<AdBuilder />} />
+                  */}
 
                   {/* Legal Documents */}
                   <Route path="/privacy" element={<LegalPage />} />
