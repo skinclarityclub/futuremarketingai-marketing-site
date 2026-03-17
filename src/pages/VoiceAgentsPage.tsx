@@ -9,8 +9,18 @@ import { ProductMedia } from '../components/common/ProductMedia'
 import { VoiceDemoSection } from '../components/voice/VoiceDemoSection'
 import { VoiceDemoFAB } from '../components/voice/VoiceDemoFAB'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
-import { Phone, Calendar, Headphones, RefreshCw, CheckCircle, Handshake } from 'lucide-react'
+import {
+  Phone,
+  Calendar,
+  Headphones,
+  RefreshCw,
+  CheckCircle,
+  Handshake,
+  ArrowRight,
+} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { GATEWAY_TIERS, formatGatewayPrice } from '../lib/gateway-pricing'
 
 const USE_CASE_KEYS = [
   'outbound_leads',
@@ -25,11 +35,10 @@ const USE_CASE_ICONS: Record<string, LucideIcon> = {
   post_sale: RefreshCw,
 }
 
-const PRICING_TIER_KEYS = ['basic', 'standard', 'ongoing'] as const
-const PRICING_TIER_CONFIG: Record<string, { highlighted: boolean }> = {
-  basic: { highlighted: false },
-  standard: { highlighted: true },
-  ongoing: { highlighted: false },
+const VOICE_FEATURES: Record<string, string[]> = {
+  starter: ['200 minutes/mo', 'Email support', 'Setup in 1-2 weeks'],
+  growth: ['500 minutes/mo', 'Analytics dashboard', 'Setup in 2-3 weeks'],
+  scale: ['1,000 minutes/mo', 'Priority support', 'Monthly strategy call'],
 }
 const FAQ_KEYS = ['voice_quality', 'objections', 'languages', 'crm'] as const
 
@@ -45,15 +54,19 @@ export const VoiceAgentsPage: React.FC = () => {
     description: t(`voice-agents:use_cases.items.${key}.description`),
   }))
 
-  const pricingTiers = PRICING_TIER_KEYS.map((key) => ({
-    name: t(`voice-agents:pricing.tiers.${key}.name`),
-    price: t(`voice-agents:pricing.tiers.${key}.price`),
-    description: t(`voice-agents:pricing.tiers.${key}.description`),
-    features: t(`voice-agents:pricing.tiers.${key}.features`, {
-      returnObjects: true,
-    }) as string[],
-    highlighted: PRICING_TIER_CONFIG[key].highlighted,
-  }))
+  const pricingTiers = GATEWAY_TIERS.map((tier) => {
+    const limit = tier.limits.find((l) => l.service === 'voice')
+    return {
+      name: tier.name,
+      price: `${formatGatewayPrice(tier.price)}/mo`,
+      setupFee: `Setup from ${formatGatewayPrice(tier.setupFee)}`,
+      description: tier.description,
+      limit: limit ? `${limit.value.toLocaleString('en-US')} ${limit.unit}` : '',
+      features: VOICE_FEATURES[tier.id] || [],
+      highlighted: !!tier.highlighted,
+      badge: tier.badge,
+    }
+  })
 
   const faqs = FAQ_KEYS.map((key) => ({
     q: t(`voice-agents:faq.items.${key}.q`),
@@ -168,9 +181,11 @@ export const VoiceAgentsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                {t('voice-agents:pricing.title')}
+                Voice Agent Packages
               </h2>
-              <p className="text-lg text-text-secondary">{t('voice-agents:pricing.subtitle')}</p>
+              <p className="text-lg text-text-secondary">
+                Gateway pricing — one subscription, full-stack AI
+              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -187,16 +202,20 @@ export const VoiceAgentsPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {tier.highlighted && (
+                  {tier.highlighted && tier.badge && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
-                      {t('voice-agents:pricing.most_popular')}
+                      {tier.badge}
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-display text-text-primary mb-1">
                     {tier.name}
                   </h3>
-                  <p className="text-sm text-text-muted mb-4">{tier.description}</p>
-                  <div className="text-2xl font-bold text-text-primary mb-6">{tier.price}</div>
+                  <p className="text-sm text-text-muted mb-2">{tier.description}</p>
+                  {tier.limit && (
+                    <p className="text-sm text-accent-system font-medium mb-4">{tier.limit}</p>
+                  )}
+                  <div className="text-2xl font-bold text-text-primary mb-1">{tier.price}</div>
+                  <p className="text-xs text-text-muted mb-6">{tier.setupFee}</p>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
                       <li key={j} className="flex items-center gap-2 text-text-muted">
@@ -211,10 +230,19 @@ export const VoiceAgentsPage: React.FC = () => {
                     variant={tier.highlighted ? 'primary' : 'secondary'}
                     className="w-full justify-center"
                   >
-                    {t('voice-agents:pricing.cta')}
+                    Get Started
                   </CTAButton>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-2 text-accent-system hover:underline font-medium"
+              >
+                View all packages <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>

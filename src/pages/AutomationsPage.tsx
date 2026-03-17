@@ -19,7 +19,10 @@ import {
   UserPlus,
   RefreshCw,
   CheckCircle,
+  ArrowRight,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { GATEWAY_TIERS, formatGatewayPrice } from '../lib/gateway-pricing'
 
 // Key arrays and icon mappings at module level (icons are not translatable)
 const PAIN_POINT_KEYS = ['manual_work', 'disconnected_tools', 'scaling'] as const
@@ -49,11 +52,10 @@ const AUTOMATION_ICONS: Record<string, LucideIcon> = {
 const PROCESS_STEP_KEYS = ['audit', 'build', 'optimize'] as const
 const PROCESS_STEP_NUMBERS = ['01', '02', '03'] as const
 
-const PRICING_TIER_KEYS = ['starter', 'growth', 'retainer'] as const
-const PRICING_TIER_HIGHLIGHTED: Record<string, boolean> = {
-  starter: false,
-  growth: true,
-  retainer: false,
+const AUTOMATION_FEATURES: Record<string, string[]> = {
+  starter: ['5 custom workflows', 'Email support', 'Setup in 1-2 weeks'],
+  growth: ['10 custom workflows', 'Analytics dashboard', 'Setup in 2-3 weeks'],
+  scale: ['20 custom workflows', 'Priority support', 'Monthly strategy call'],
 }
 
 const FAQ_KEYS = ['integrations', 'delivery', 'technical', 'breaks', 'multi_tool'] as const
@@ -79,14 +81,19 @@ export const AutomationsPage: React.FC = () => {
     description: t(`automations:process.steps.${key}.description`),
   }))
 
-  const pricingTiers = PRICING_TIER_KEYS.map((key) => ({
-    name: t(`automations:pricing.tiers.${key}.name`),
-    price: t(`automations:pricing.tiers.${key}.price`),
-    description: t(`automations:pricing.tiers.${key}.description`),
-    cta: t(`automations:pricing.tiers.${key}.cta`),
-    features: t(`automations:pricing.tiers.${key}.features`, { returnObjects: true }) as string[],
-    highlighted: PRICING_TIER_HIGHLIGHTED[key],
-  }))
+  const pricingTiers = GATEWAY_TIERS.map((tier) => {
+    const limit = tier.limits.find((l) => l.service === 'automations')
+    return {
+      name: tier.name,
+      price: `${formatGatewayPrice(tier.price)}/mo`,
+      setupFee: `Setup from ${formatGatewayPrice(tier.setupFee)}`,
+      description: tier.description,
+      limit: limit ? `${limit.value} ${limit.unit}` : '',
+      features: AUTOMATION_FEATURES[tier.id] || [],
+      highlighted: !!tier.highlighted,
+      badge: tier.badge,
+    }
+  })
 
   const faqs = FAQ_KEYS.map((key) => ({
     q: t(`automations:faq.items.${key}.q`),
@@ -262,9 +269,11 @@ export const AutomationsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4">
-                {t('automations:pricing.title')}
+                Automation Packages
               </h2>
-              <p className="text-lg text-text-secondary">{t('automations:pricing.subtitle')}</p>
+              <p className="text-lg text-text-secondary">
+                Gateway pricing — one subscription, full-stack AI
+              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -281,16 +290,20 @@ export const AutomationsPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {tier.highlighted && (
+                  {tier.highlighted && tier.badge && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-system text-bg-deep text-xs font-semibold rounded-sm">
-                      {t('automations:pricing.most_popular')}
+                      {tier.badge}
                     </div>
                   )}
                   <h3 className="text-xl font-bold font-display text-text-primary mb-1">
                     {tier.name}
                   </h3>
-                  <p className="text-sm text-text-muted mb-4">{tier.description}</p>
-                  <div className="text-2xl font-bold text-text-primary mb-6">{tier.price}</div>
+                  <p className="text-sm text-text-muted mb-2">{tier.description}</p>
+                  {tier.limit && (
+                    <p className="text-sm text-accent-system font-medium mb-4">{tier.limit}</p>
+                  )}
+                  <div className="text-2xl font-bold text-text-primary mb-1">{tier.price}</div>
+                  <p className="text-xs text-text-muted mb-6">{tier.setupFee}</p>
                   <ul className="space-y-3 mb-8">
                     {tier.features.map((feature, j) => (
                       <li key={j} className="flex items-center gap-2 text-text-muted">
@@ -305,10 +318,19 @@ export const AutomationsPage: React.FC = () => {
                     variant={tier.highlighted ? 'primary' : 'secondary'}
                     className="w-full justify-center"
                   >
-                    {tier.cta}
+                    Get Started
                   </CTAButton>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-2 text-accent-system hover:underline font-medium"
+              >
+                View all packages <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
