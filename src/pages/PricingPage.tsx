@@ -132,10 +132,10 @@ export const PricingPage: React.FC = () => {
               return (
                 <motion.div
                   key={tier.id}
-                  className={`relative card-gradient-border bg-white/[0.02] rounded-card p-8 flex flex-col transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
+                  className={`relative bg-white/[0.02] rounded-card p-8 flex flex-col transition-all duration-500 hover:bg-white/[0.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
                     isHighlighted
-                      ? 'border border-accent-system/50 shadow-glow-sm'
-                      : 'border border-border-primary'
+                      ? 'border border-accent-system/50 shadow-glow-sm overflow-visible'
+                      : 'card-gradient-border border border-border-primary'
                   }`}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}

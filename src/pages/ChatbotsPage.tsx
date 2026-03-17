@@ -274,10 +274,10 @@ export const ChatbotsPage: React.FC = () => {
               {pricingTiers.map((tier, i) => (
                 <motion.div
                   key={i}
-                  className={`card-gradient-border relative bg-white/[0.02] border rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
+                  className={`relative bg-white/[0.02] border rounded-card p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] ${
                     tier.highlighted
-                      ? 'border-accent-system/50 shadow-glow-sm'
-                      : 'border-border-primary'
+                      ? 'border-accent-system/50 shadow-glow-sm overflow-visible'
+                      : 'card-gradient-border border-border-primary'
                   }`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
