@@ -1,20 +1,20 @@
-import { motion } from 'framer-motion';
-import { Clock, Rocket, Calendar } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { Clock, Rocket, Calendar } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 interface Metric {
-  icon: LucideIcon;
-  value: string;
-  label: string;
+  icon: LucideIcon
+  value: string
+  label: string
 }
 
 const metrics: Metric[] = [
   { icon: Clock, value: '240+', label: 'Hours automated' },
   { icon: Rocket, value: '3', label: 'Live implementations' },
   { icon: Calendar, value: '14 days', label: 'Average deployment' },
-];
+]
 
-const techStack = ['n8n', 'Claude', 'Vapi', 'Make', 'OpenAI'];
+const techStack = ['n8n', 'Claude', 'Vapi', 'Make', 'OpenAI']
 
 export default function SocialProofBar() {
   return (
@@ -29,29 +29,24 @@ export default function SocialProofBar() {
         {/* Metrics row */}
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           {metrics.map((metric) => {
-            const Icon = metric.icon;
+            const Icon = metric.icon
             return (
-              <div
-                key={metric.label}
-                className="flex items-center gap-3"
-              >
+              <div key={metric.label} className="flex items-center gap-3">
                 <Icon className="h-5 w-5 text-accent-system" />
                 <div className="flex flex-col">
                   <span className="font-mono text-lg font-bold text-text-primary">
                     {metric.value}
                   </span>
-                  <span className="text-xs text-text-secondary">
-                    {metric.label}
-                  </span>
+                  <span className="text-xs text-text-secondary">{metric.label}</span>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
 
         {/* Tech stack badges */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <span className="text-xs text-text-secondary">Built with</span>
+          <span className="text-xs text-text-secondary">Gebouwd met</span>
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -63,5 +58,5 @@ export default function SocialProofBar() {
         </div>
       </div>
     </motion.section>
-  );
+  )
 }

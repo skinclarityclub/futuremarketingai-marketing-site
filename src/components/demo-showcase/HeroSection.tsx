@@ -9,9 +9,9 @@ interface ServiceCard {
 }
 
 const services: ServiceCard[] = [
-  { id: 'automations', icon: Zap, title: 'AI Automations', metric: 'Save 40+ hours/week' },
-  { id: 'chatbots', icon: Bot, title: 'AI Chatbots', metric: '84% auto-resolved' },
-  { id: 'voice', icon: Phone, title: 'AI Voice Agents', metric: '24/7, zero hold time' },
+  { id: 'automations', icon: Zap, title: 'AI Automations', metric: 'Bespaar 40+ uur/week' },
+  { id: 'chatbots', icon: Bot, title: 'AI Chatbots', metric: '84% automatisch opgelost' },
+  { id: 'voice', icon: Phone, title: 'AI Voice Agents', metric: '24/7, geen wachttijd' },
 ]
 
 const containerVariants = {
@@ -46,7 +46,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Stop met handwerk. <span className="text-accent-system">Start met AI.</span>
+        Stop met tijdverspilling. <span className="text-accent-system">Start met AI.</span>
       </motion.h1>
 
       {/* Subtext */}
@@ -56,8 +56,8 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Direct access to a specialist who builds your AI automations, chatbots, and voice agents —
-        no generic tools, no DIY setup.
+        Directe toegang tot een specialist die uw AI automations, chatbots en voice agents bouwt —
+        geen standaard tools, geen DIY.
       </motion.p>
 
       {/* Service Cards */}

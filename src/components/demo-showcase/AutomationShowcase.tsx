@@ -48,13 +48,32 @@ export default function AutomationShowcase() {
 
               <div className="mt-6">
                 <p className="mb-2 text-center text-xs uppercase tracking-wider text-text-muted">
-                  How it works
+                  Hoe het werkt
                 </p>
                 <AnimatedWorkflow steps={useCase.workflow} />
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Subtle CTA */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className="mb-3 text-text-secondary">
+            Wilt u weten wat automations voor uw bedrijf kunnen betekenen?
+          </p>
+          <a
+            href="#calculator"
+            className="inline-flex items-center gap-1 font-mono text-sm text-accent-system transition-colors hover:text-accent-system/80"
+          >
+            Bereken uw besparing &darr;
+          </a>
+        </motion.div>
       </div>
     </section>
   )

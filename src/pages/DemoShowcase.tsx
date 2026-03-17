@@ -17,12 +17,30 @@ export default function DemoShowcase() {
       <main>
         <HeroSection />
         <SocialProofBar />
+
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-border-primary to-transparent" />
+        </div>
+
         <AutomationShowcase />
+
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-border-primary to-transparent" />
+        </div>
+
         <ServicePreview />
+
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-border-primary to-transparent" />
+        </div>
 
         <Suspense fallback={<div className="h-96" />}>
           <ROICalculatorSection />
         </Suspense>
+
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="h-px bg-gradient-to-r from-transparent via-border-primary to-transparent" />
+        </div>
 
         <FounderSection />
         <FinalCTA />

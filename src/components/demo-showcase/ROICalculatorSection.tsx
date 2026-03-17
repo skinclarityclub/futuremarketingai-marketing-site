@@ -123,24 +123,24 @@ const ROICalculatorSection: React.FC = () => {
         return (
           <div className="space-y-6">
             <InputSlider
-              label="Internal Team Costs (Monthly)"
+              label="Interne teamkosten (maandelijks)"
               value={inputs.marketingSpend}
               min={0}
               max={50000}
               step={1000}
               isCurrency
               onChange={(value) => onChange('marketingSpend', value)}
-              description="Salaries, tools, software - your internal marketing team expenses"
+              description="Salarissen, tools, software - uw interne marketingteam kosten"
             />
             <InputSlider
-              label="Campaigns per Month"
+              label="Campagnes per maand"
               value={inputs.campaignsPerMonth}
               min={1}
               max={200}
               step={5}
               unit="/month"
               onChange={(value) => onChange('campaignsPerMonth', value)}
-              description="How many marketing campaigns do you run each month?"
+              description="Hoeveel marketingcampagnes voert u per maand uit?"
             />
           </div>
         )
@@ -150,19 +150,19 @@ const ROICalculatorSection: React.FC = () => {
           <div className="space-y-6">
             <div className="mb-6 p-4 rounded-xl bg-white/5 border border-white/10">
               <p className="text-sm text-white/80">
-                Almost done! These advanced settings help us calculate more accurate ROI for your
-                specific situation.
+                Bijna klaar! Deze geavanceerde instellingen helpen ons een nauwkeurigere ROI te
+                berekenen voor uw specifieke situatie.
               </p>
             </div>
             <InputSlider
-              label="Average Employee Salary (Yearly)"
+              label="Gemiddeld salaris medewerker (jaarlijks)"
               value={inputs.avgSalary}
               min={30000}
               max={200000}
               step={5000}
               isCurrency
               onChange={(value) => onChange('avgSalary', value)}
-              description="Average annual salary for your marketing team members"
+              description="Gemiddeld jaarsalaris van uw marketingteamleden"
             />
           </div>
         )
@@ -174,23 +174,25 @@ const ROICalculatorSection: React.FC = () => {
               <div className="flex items-start gap-3">
                 <span className="text-3xl">&#128142;</span>
                 <div>
-                  <h4 className="text-sm font-semibold text-white mb-1">Test First, Then Scale</h4>
+                  <h4 className="text-sm font-semibold text-white mb-1">
+                    Eerst testen, dan schalen
+                  </h4>
                   <p className="text-xs text-white/70">
-                    Most businesses waste 30-50% of ad spend by launching without testing.
-                    AI-powered testing can improve your ROAS by 4-7x!
+                    De meeste bedrijven verspillen 30-50% van hun advertentiebudget door te lanceren
+                    zonder te testen. AI-gestuurde testing kan uw ROAS met 4-7x verbeteren!
                   </p>
                 </div>
               </div>
             </div>
             <InputSlider
-              label="Paid Ad Spend (Monthly, Optional)"
+              label="Advertentie-uitgaven (maandelijks, optioneel)"
               value={inputs.monthlyAdBudget || 0}
               min={0}
               max={50000}
               step={1000}
               isCurrency
               onChange={(value) => onChange('monthlyAdBudget', value)}
-              description="Facebook, Google, LinkedIn Ads - separate from team costs"
+              description="Facebook, Google, LinkedIn Ads - los van teamkosten"
             />
           </div>
         )
