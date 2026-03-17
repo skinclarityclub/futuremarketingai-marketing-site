@@ -19,7 +19,9 @@ export default function AnimatedWorkflow({ steps }: AnimatedWorkflowProps) {
   const isInView = useInView(containerRef, { once: true, margin: '-100px' })
 
   useEffect(() => {
-    if (!isInView) return
+    if (!isInView) {
+      return
+    }
 
     let current = 0
     const interval = setInterval(() => {
@@ -35,8 +37,7 @@ export default function AnimatedWorkflow({ steps }: AnimatedWorkflowProps) {
 
   const activeClasses =
     'border-accent-system/40 bg-accent-system/10 shadow-glow-sm text-accent-system'
-  const inactiveClasses =
-    'border-border-primary bg-bg-surface/50 text-text-muted'
+  const inactiveClasses = 'border-border-primary bg-bg-surface/50 text-text-muted'
 
   return (
     <div ref={containerRef}>
@@ -50,24 +51,16 @@ export default function AnimatedWorkflow({ steps }: AnimatedWorkflowProps) {
             <div key={i} className="flex items-center gap-3">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
-                animate={
-                  isInView
-                    ? { scale: 1, opacity: 1 }
-                    : { scale: 0.8, opacity: 0 }
-                }
+                animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.3 }}
                 className={`rounded-xl border p-4 flex flex-col items-center gap-2 transition-colors duration-300 ${
                   isActive ? activeClasses : inactiveClasses
                 }`}
               >
                 <Icon className="w-6 h-6" />
-                <span className="text-sm font-medium whitespace-nowrap">
-                  {step.label}
-                </span>
+                <span className="text-sm font-medium whitespace-nowrap">{step.label}</span>
                 {step.detail && (
-                  <span className="text-xs text-text-muted text-center">
-                    {step.detail}
-                  </span>
+                  <span className="text-xs text-text-muted text-center">{step.detail}</span>
                 )}
               </motion.div>
 
@@ -93,11 +86,7 @@ export default function AnimatedWorkflow({ steps }: AnimatedWorkflowProps) {
             <div key={i} className="flex flex-col items-center gap-3">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
-                animate={
-                  isInView
-                    ? { scale: 1, opacity: 1 }
-                    : { scale: 0.8, opacity: 0 }
-                }
+                animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.3 }}
                 className={`rounded-xl border p-4 flex items-center gap-3 w-full transition-colors duration-300 ${
                   isActive ? activeClasses : inactiveClasses
@@ -106,11 +95,7 @@ export default function AnimatedWorkflow({ steps }: AnimatedWorkflowProps) {
                 <Icon className="w-6 h-6 flex-shrink-0" />
                 <div className="flex flex-col">
                   <span className="text-sm font-medium">{step.label}</span>
-                  {step.detail && (
-                    <span className="text-xs text-text-muted">
-                      {step.detail}
-                    </span>
-                  )}
+                  {step.detail && <span className="text-xs text-text-muted">{step.detail}</span>}
                 </div>
               </motion.div>
 
