@@ -39,7 +39,6 @@
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.12.69",
     "@types/d3": "^7.4.3",
-    "@vapi-ai/client-sdk-react": "0.1.1",
     "@vapi-ai/web": "2.5.2",
     "ai": "^6.0.116",
     "country-flag-icons": "^1.5.21",

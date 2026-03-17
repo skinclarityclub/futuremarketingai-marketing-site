@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SimpleHeader } from '../components/landing/SimpleHeader'
@@ -6,12 +6,11 @@ import { SEOHead } from '../components/seo/SEOHead'
 import { CTAButton } from '../components/common'
 import { ScrollReveal } from '../components/common/ScrollReveal'
 import { ProductMedia } from '../components/common/ProductMedia'
+import { VoiceDemoSection } from '../components/voice/VoiceDemoSection'
+import { VoiceDemoFAB } from '../components/voice/VoiceDemoFAB'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { Phone, Calendar, Headphones, RefreshCw, CheckCircle, Handshake } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-
-const VoiceDemoWidget = lazy(() =>
-  import('../components/voice/VoiceDemoWidget').then((m) => ({ default: m.VoiceDemoWidget }))
-)
 
 const USE_CASE_KEYS = [
   'outbound_leads',
@@ -36,6 +35,9 @@ const FAQ_KEYS = ['voice_quality', 'objections', 'languages', 'crm'] as const
 
 export const VoiceAgentsPage: React.FC = () => {
   const { t } = useTranslation(['voice-agents', 'common'])
+  const [demoRef, isDemoVisible] = useIntersectionObserver<HTMLElement>({
+    threshold: 0.1,
+  })
 
   const useCases = USE_CASE_KEYS.map((key) => ({
     icon: USE_CASE_ICONS[key],
@@ -113,27 +115,11 @@ export const VoiceAgentsPage: React.FC = () => {
                 {t('voice-agents:hero.cta_secondary')}
               </CTAButton>
             </div>
-
-            {/* Live Demo Section */}
-            <div
-              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6"
-              style={{ animation: 'fadeInUp 0.8s ease-out 0.8s both' }}
-            >
-              <div className="flex items-center gap-3 bg-white/[0.02] border border-border-primary rounded-card px-6 py-4">
-                <Phone className="w-5 h-5 text-accent-system" />
-                <div>
-                  <p className="text-xs text-text-muted">Or call our AI agent:</p>
-                  <a
-                    href="tel:+15707838236"
-                    className="text-lg font-semibold text-text-primary hover:text-accent-system transition-colors"
-                  >
-                    +1 (570) 783-8236
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
+
+        {/* Interactive Demo */}
+        <VoiceDemoSection sectionRef={demoRef} />
 
         {/* Use Cases */}
         <section id="use-cases" className="py-16 px-12">
@@ -367,10 +353,8 @@ export const VoiceAgentsPage: React.FC = () => {
         </section>
       </div>
 
-      {/* Floating voice demo widget */}
-      <Suspense fallback={null}>
-        <VoiceDemoWidget />
-      </Suspense>
+      {/* Floating FAB — appears when demo section scrolls out */}
+      <VoiceDemoFAB visible={!isDemoVisible} />
     </>
   )
 }

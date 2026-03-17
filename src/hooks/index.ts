@@ -61,3 +61,6 @@ export {
 // SEO utilities
 export { useDemoSEO, usePageTitle } from './useDemoSEO'
 export type { SEOData } from './useDemoSEO'
+
+export { useVapiCall } from './useVapiCall'
+export type { TranscriptMessage, CallState, UseVapiCallReturn } from './useVapiCall'
