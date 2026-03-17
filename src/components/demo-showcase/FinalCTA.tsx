@@ -24,14 +24,12 @@ export const FinalCTA = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="font-display text-3xl font-bold text-white">
-            Laten we praten
-          </h2>
+          <h2 className="font-display text-3xl font-bold text-white">Laten we praten</h2>
 
           {/* Subtext */}
           <p className="text-text-secondary text-lg leading-relaxed max-w-lg">
-            15 minuten. Geen verplichtingen. We bespreken uw grootste
-            automation-kans en of FMai de juiste fit is.
+            15 minuten. Geen verplichtingen. We bespreken uw grootste automation-kans en of FMai de
+            juiste fit is.
           </p>
 
           {/* CTA Button */}
