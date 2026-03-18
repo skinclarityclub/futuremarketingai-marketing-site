@@ -69,11 +69,11 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [x] **PAGE-03**: Chatbots service page with demo playground
 - [x] **PAGE-04**: Voice Agents service page
 - [x] **PAGE-05**: Marketing Machine service page
-- [ ] **PAGE-06**: About page
-- [ ] **PAGE-07**: Pricing page with comparison tables
-- [ ] **PAGE-08**: How It Works page
-- [ ] **PAGE-09**: Contact page
-- [ ] **PAGE-10**: Legal page
+- [x] **PAGE-06**: About page
+- [x] **PAGE-07**: Pricing page with comparison tables
+- [x] **PAGE-08**: How It Works page
+- [x] **PAGE-09**: Contact page
+- [x] **PAGE-10**: Legal page
 - [x] **PAGE-11**: Content/copy rework for SEO on all pages
 
 ## v2 Requirements
@@ -157,11 +157,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PAGE-03     | Phase 2 | Complete |
 | PAGE-04     | Phase 2 | Complete |
 | PAGE-05     | Phase 2 | Complete |
-| PAGE-06     | Phase 2 | Pending  |
-| PAGE-07     | Phase 2 | Pending  |
-| PAGE-08     | Phase 2 | Pending  |
-| PAGE-09     | Phase 2 | Pending  |
-| PAGE-10     | Phase 2 | Pending  |
+| PAGE-06     | Phase 2 | Complete |
+| PAGE-07     | Phase 2 | Complete |
+| PAGE-08     | Phase 2 | Complete |
+| PAGE-09     | Phase 2 | Complete |
+| PAGE-10     | Phase 2 | Complete |
 | PAGE-11     | Phase 2 | Complete |
 
 **Coverage:**

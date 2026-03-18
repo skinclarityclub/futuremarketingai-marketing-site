@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 6 (Page Migration and Core SEO)
-Plan: 4 of 4 in current phase
-Status: In Progress
-Last activity: 2026-03-18 — Completed 02-03 Homepage and Service Pages (5 pages with JSON-LD)
+Plan: 4 of 4 in current phase (COMPLETE)
+Status: Phase 2 Complete
+Last activity: 2026-03-18 — Completed 02-04 Supporting Pages (About, Pricing, How It Works, Contact, Legal)
 
 Progress: [████░░░░░░] 33%
 
@@ -33,16 +33,16 @@ Progress: [████░░░░░░] 33%
 
 **Velocity:**
 
-- Total plans completed: 6
-- Average duration: 7 min
-- Total execution time: 0.68 hours
+- Total plans completed: 7
+- Average duration: 8 min
+- Total execution time: 1.0 hours
 
 **By Phase:**
 
 | Phase | Plans | Total  | Avg/Plan |
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
-| 02    | 3     | 26 min | 9 min    |
+| 02    | 4     | 45 min | 11 min   |
 
 **Recent Trend:**
 
@@ -78,6 +78,9 @@ Recent decisions affecting current work:
 - 2026-03-18: Full Next.js scaffold created inline (fmai-nextjs/ was documentation-only, never built)
 - 2026-03-18: reactCompiler removed from next.config.ts (babel-plugin not installed)
 - 2026-03-18: fmai-nextjs added to parent .eslintignore (separate tsconfig)
+- 2026-03-18: Pricing tiers use indexed keys (features_0..features_4) for next-intl compatibility
+- 2026-03-18: Contact form static HTML only -- Route Handler deferred to Phase 3
+- 2026-03-18: Legal page consolidates all legal content on single page (not separate routes)
 
 ### Pending Todos
 
@@ -91,5 +94,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-03-PLAN.md (Homepage and Service Pages)
-Resume file: .planning/phases/02-page-migration-and-core-seo/02-03-SUMMARY.md
+Stopped at: Completed 02-04-PLAN.md (Supporting Pages — Phase 2 complete)
+Resume file: .planning/phases/02-page-migration-and-core-seo/02-04-SUMMARY.md
