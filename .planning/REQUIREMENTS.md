@@ -21,7 +21,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [x] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
 - [x] **SEO-11**: Open Graph images for all pages (static or generated)
 - [x] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
-- [ ] **SEO-13**: Core Web Vitals green scores (LCP <2.5s, INP <200ms, CLS <0.1)
+- [x] **SEO-13**: Core Web Vitals green scores (LCP <2.5s, INP <200ms, CLS <0.1)
 
 ### Structured Data
 
@@ -124,7 +124,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-10      | Phase 2 | Complete |
 | SEO-11      | Phase 4 | Complete |
 | SEO-12      | Phase 4 | Complete |
-| SEO-13      | Phase 6 | Pending  |
+| SEO-13      | Phase 6 | Complete |
 | SCHEMA-01   | Phase 2 | Complete |
 | SCHEMA-02   | Phase 2 | Complete |
 | SCHEMA-03   | Phase 2 | Complete |

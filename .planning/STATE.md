@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
-**Current focus:** Phase 5 — Content Hub (complete)
+**Current focus:** Phase 6 — Performance, Polish, and Cutover
 
 ## Current Position
 
-Phase: 5 of 6 (Content Hub) -- COMPLETE
-Plan: 2 of 2 in current phase (all complete)
-Status: Phase 05 complete (blog infrastructure + post template + seed article + sitemap)
-Last activity: 2026-03-18 — Completed 05-02 Blog Post Template and Seed Article
+Phase: 6 of 6 (Performance, Polish, and Cutover)
+Plan: 1 of 2 in current phase (06-01 complete)
+Status: Phase 06 Plan 01 complete (bundle optimization + lazy-loading)
+Last activity: 2026-03-18 — Completed 06-01 Bundle Optimization
 
-Progress: [██████████] 55%
+Progress: [████████████] 60%
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Progress: [██████████] 55%
 _Updated after each plan completion_
 | Phase 05 P01 | 5min | 2 tasks | 9 files |
 | Phase 05 P02 | 4min | 2 tasks | 6 files |
+| Phase 06 P01 | 5min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -106,6 +107,8 @@ Recent decisions affecting current work:
 - [Phase 05]: CategoryFilter uses URL search params for server-compatible filtering
 - [Phase 05]: @content tsconfig path alias for dynamic MDX imports from content directory
 - [Phase 05]: dynamicParams = false for strict 404 on unknown blog slugs
+- [Phase 06]: ClientIslands 'use client' wrapper required because next/dynamic with ssr:false is disallowed in Server Components (Next.js 16)
+- [Phase 06]: withAnalyze outermost in config chain: withAnalyze(withNextIntl(withMDX(nextConfig)))
 
 ### Pending Todos
 
@@ -119,5 +122,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 05-02-PLAN.md (Blog Post Template + Seed Article + Sitemap integration)
-Resume file: .planning/phases/05-content-hub/05-02-SUMMARY.md
+Stopped at: Completed 06-01-PLAN.md (Bundle Optimization + Lazy Loading)
+Resume file: .planning/phases/06-performance-polish-and-cutover/06-01-SUMMARY.md
