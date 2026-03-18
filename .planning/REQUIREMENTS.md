@@ -15,8 +15,8 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [ ] **SEO-04**: Hreflang tags and canonical URLs via metadata alternates
 - [ ] **SEO-05**: XML sitemap with locale alternates for all pages
 - [ ] **SEO-06**: robots.txt with AI crawler allow-policy (allow retrieval bots, block training bots)
-- [ ] **SEO-07**: Semantic HTML structure across all pages (proper h1-h6, nav, main, section, article)
-- [ ] **SEO-08**: All images use next/image with explicit dimensions
+- [x] **SEO-07**: Semantic HTML structure across all pages (proper h1-h6, nav, main, section, article)
+- [x] **SEO-08**: All images use next/image with explicit dimensions
 - [x] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
 - [ ] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
 - [ ] **SEO-11**: Open Graph images for all pages (static or generated)
@@ -118,8 +118,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-04      | Phase 2 | Pending  |
 | SEO-05      | Phase 2 | Pending  |
 | SEO-06      | Phase 2 | Pending  |
-| SEO-07      | Phase 2 | Pending  |
-| SEO-08      | Phase 2 | Pending  |
+| SEO-07      | Phase 2 | Complete |
+| SEO-08      | Phase 2 | Complete |
 | SEO-09      | Phase 1 | Complete |
 | SEO-10      | Phase 2 | Pending  |
 | SEO-11      | Phase 4 | Pending  |

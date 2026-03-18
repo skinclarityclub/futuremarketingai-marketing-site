@@ -18,30 +18,31 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
-**Current focus:** Phase 1 — Foundation and Infrastructure
+**Current focus:** Phase 2 — Page Migration and Core SEO
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation and Infrastructure)
-Plan: 3 of 3 in current phase
-Status: Phase 1 Complete
-Last activity: 2026-03-18 — Completed 01-03 Zustand stores and server/client boundary
+Phase: 2 of 6 (Page Migration and Core SEO)
+Plan: 2 of 4 in current phase
+Status: In Progress
+Last activity: 2026-03-18 — Completed 02-02 Shared UI components migration
 
-Progress: [██░░░░░░░░] 15%
+Progress: [███░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 5 min
-- Total execution time: 0.25 hours
+- Total execution time: 0.33 hours
 
 **By Phase:**
 
 | Phase | Plans | Total  | Avg/Plan |
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
+| 02    | 1     | 5 min  | 5 min    |
 
 **Recent Trend:**
 
@@ -68,6 +69,9 @@ Recent decisions affecting current work:
 - 2026-03-18: skipHydration + delayed rehydrate pattern for all Zustand persist stores
 - 2026-03-18: IndustrySelection interface decouples store from UI component imports
 - 2026-03-18: Composable Providers wrapper for future provider additions
+- 2026-03-18: Navigation keys in common.nav.\* namespace shared by Header and Footer
+- 2026-03-18: HeaderClient minimal client island for locale switcher only
+- 2026-03-18: CTAButton polymorphic rendering (Link/a/button) based on href
 
 ### Pending Todos
 
@@ -81,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-03-PLAN.md (Zustand stores and server/client boundary)
-Resume file: .planning/phases/01-foundation-and-infrastructure/01-03-SUMMARY.md
+Stopped at: Completed 02-02-PLAN.md (Shared UI components migration)
+Resume file: .planning/phases/02-page-migration-and-core-seo/02-02-SUMMARY.md
