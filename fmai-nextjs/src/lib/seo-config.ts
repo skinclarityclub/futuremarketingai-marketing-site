@@ -3,6 +3,9 @@ export const SITE_NAME = 'Future Marketing AI'
 export const ORG_EMAIL = 'info@futuremarketingai.com'
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
 
+export const ENTITY_DESCRIPTION =
+  'Future Marketing AI is a B2B AI marketing automation agency that deploys AI-powered automations, chatbots, voice agents, and integrated marketing machines for growth-stage companies.'
+
 export const PAGE_DATES: Record<string, string> = {
   '/': '2026-03-18',
   '/automations': '2026-03-18',
