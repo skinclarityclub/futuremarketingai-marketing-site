@@ -5,6 +5,9 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
+import type { FaqItem } from '@/components/seo/FaqJsonLd'
+import { QuickAnswerBlock } from '@/components/ui/QuickAnswerBlock'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -43,6 +46,39 @@ const HOW_IT_WORKS_STEPS = [
   { key: 'step3', number: '03' },
 ] as const
 
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: 'What is the AI Marketing Machine?',
+    answer:
+      'The AI Marketing Machine is an integrated system combining workflow automations, conversational AI, content production, and paid amplification into a single self-optimizing growth engine managed for you.',
+  },
+  {
+    question: 'How is this different from buying individual tools?',
+    answer:
+      'Individual tools require manual orchestration. The Marketing Machine is a managed service where AI coordinates the tools, and we handle strategy, operations, and optimization.',
+  },
+  {
+    question: "What does 'Marketing Machine' include?",
+    answer:
+      'A standard engagement includes: lead generation automations, a configured chatbot, content calendar and AI-assisted production, ad campaign management, and monthly optimization sprints.',
+  },
+  {
+    question: 'How long until I see results?',
+    answer:
+      'Infrastructure setup takes 3-4 weeks. Most clients see measurable pipeline impact (qualified leads, booked calls) within 60 days of launch.',
+  },
+  {
+    question: 'Is this suitable for B2C companies?',
+    answer:
+      'The Marketing Machine is optimized for B2B. B2C companies with high-ticket products (EUR 1.000+) can benefit, but the playbook is calibrated for longer sales cycles and account-based targeting.',
+  },
+  {
+    question: 'What does ongoing management involve?',
+    answer:
+      'Monthly: performance review, A/B test analysis, content refresh, ad budget reallocation, and chatbot knowledge base updates. Quarterly: strategy reassessment and roadmap update.',
+  },
+]
+
 export default async function MarketingMachinePage({
   params,
 }: {
@@ -76,6 +112,7 @@ export default async function MarketingMachinePage({
         ]}
         locale={locale}
       />
+      <FaqJsonLd items={FAQ_ITEMS} />
 
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
@@ -103,10 +140,15 @@ export default async function MarketingMachinePage({
         </div>
       </section>
 
-      {/* Feature Showcase */}
+      {/* Quick Answer Block */}
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 pb-8">
+        <QuickAnswerBlock definition="The AI Marketing Machine by Future Marketing AI is an integrated system combining automations, chatbots, content production, and paid amplification into a single self-optimizing growth engine." />
+      </div>
+
+      {/* What Does the Marketing Machine Include? */}
       <section aria-labelledby="features" className="py-20 px-6 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          <SectionHeading id="features">{t('features.title')}</SectionHeading>
+          <SectionHeading id="features">What Does the Marketing Machine Include?</SectionHeading>
           <p className="text-lg text-text-secondary text-center max-w-3xl mx-auto mb-12">
             {t('features.subtitle')}
           </p>
@@ -125,10 +167,12 @@ export default async function MarketingMachinePage({
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How Does the Marketing Machine Get Built? */}
       <section aria-labelledby="how-it-works" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="how-it-works">{t('howItWorks.title')}</SectionHeading>
+          <SectionHeading id="how-it-works">
+            How Does the Marketing Machine Get Built?
+          </SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             {HOW_IT_WORKS_STEPS.map((step, index) => (
               <ScrollReveal key={step.key} delay={index * 0.1}>
@@ -144,6 +188,23 @@ export default async function MarketingMachinePage({
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="faq" className="text-center mb-10">
+            Frequently Asked Questions
+          </SectionHeading>
+          <dl className="space-y-6">
+            {FAQ_ITEMS.map((item) => (
+              <div key={item.question} className="bg-bg-surface/30 rounded-lg p-6">
+                <dt className="text-lg font-semibold text-text-primary mb-2">{item.question}</dt>
+                <dd className="text-text-secondary leading-relaxed">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

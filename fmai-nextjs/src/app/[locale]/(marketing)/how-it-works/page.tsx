@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { HowToJsonLd } from '@/components/seo/HowToJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -30,6 +31,33 @@ export async function generateMetadata({
 
 const STEP_KEYS = ['research', 'content', 'workflow', 'publishing', 'learning', 'ads'] as const
 
+const HOW_TO_STEPS = [
+  {
+    name: 'Discovery & Research',
+    text: 'We audit your current marketing stack, identify automation opportunities, and map your ideal customer journey.',
+  },
+  {
+    name: 'Content Strategy',
+    text: 'We develop AI-optimized content plans aligned with your ICP and funnel stages.',
+  },
+  {
+    name: 'Workflow Build',
+    text: 'We build and configure automations, chatbots, or voice agents in your stack.',
+  },
+  {
+    name: 'Publishing & Launch',
+    text: 'We deploy, test end-to-end, and launch with monitoring in place.',
+  },
+  {
+    name: 'Learning & Optimization',
+    text: 'AI models learn from real interactions; we tune monthly for performance gains.',
+  },
+  {
+    name: 'Paid Amplification',
+    text: 'We layer targeted ads to amplify organic growth and generate pipeline.',
+  },
+]
+
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
@@ -50,6 +78,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           { name: 'How It Works', path: '/how-it-works' },
         ]}
         locale={locale}
+      />
+      <HowToJsonLd
+        name="How Future Marketing AI Works"
+        description="A 6-step process for deploying AI-powered marketing for growth-stage companies"
+        steps={HOW_TO_STEPS}
       />
 
       {/* Hero Section */}
