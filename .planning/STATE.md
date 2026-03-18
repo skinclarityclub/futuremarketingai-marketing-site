@@ -18,24 +18,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
-**Current focus:** Phase 3 — Interactive Features
+**Current focus:** Phase 4 — SEO Differentiation and GEO/LLMEO
 
 ## Current Position
 
-Phase: 3 of 6 (Interactive Features)
-Plan: 4 of 4 in current phase (PHASE COMPLETE)
-Status: Phase 3 complete (including gap closure), ready for Phase 4
-Last activity: 2026-03-18 — Completed 03-04 Gap Closure (ScrollReveal + CalendlyModal wiring)
+Phase: 4 of 6 (SEO Differentiation and GEO/LLMEO)
+Plan: 2 of 2 in current phase (PHASE COMPLETE)
+Status: Phase 4 Plan 02 complete (LLMEO + OG Images), phase complete
+Last activity: 2026-03-18 — Completed 04-02 LLMEO and OG Images
 
-Progress: [████████░░] 48%
+Progress: [█████████░] 52%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 12
-- Average duration: 9 min
-- Total execution time: 1.6 hours
+- Total plans completed: 13
+- Average duration: 8 min
+- Total execution time: 1.65 hours
 
 **By Phase:**
 
@@ -44,6 +44,7 @@ Progress: [████████░░] 48%
 | 01    | 3     | 15 min | 5 min    |
 | 02    | 5     | 48 min | 10 min   |
 | 03    | 4     | 34 min | 9 min    |
+| 04    | 1     | 3 min  | 3 min    |
 
 **Recent Trend:**
 
@@ -92,6 +93,9 @@ Recent decisions affecting current work:
 - 2026-03-18: Indexed translation keys (capabilities_0..N) for next-intl array-like data
 - 2026-03-18: DemoPlayground self-contained client island (no props from server)
 - 2026-03-18: Extended chatbotStore with DemoStatus type and full orchestration actions
+- 2026-03-18: DM Sans variable TTF from Google Fonts GitHub (single file covers all weights for Satori)
+- 2026-03-18: Shared OgImageTemplate with Satori-safe CSS only (no grid, no absolute positioning)
+- 2026-03-18: Middleware matcher updated with opengraph-image bypass to prevent redirect loops
 
 ### Pending Todos
 
@@ -105,5 +109,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 03-04-PLAN.md (Gap Closure — ScrollReveal + CalendlyModal wiring, Phase 3 fully complete)
-Resume file: .planning/phases/03-interactive-features/03-04-SUMMARY.md
+Stopped at: Completed 04-02-PLAN.md (LLMEO + OG Images)
+Resume file: .planning/phases/04-seo-differentiation-and-geo-llmeo/04-02-SUMMARY.md

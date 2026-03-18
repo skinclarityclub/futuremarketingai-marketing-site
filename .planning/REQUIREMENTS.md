@@ -19,8 +19,8 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [x] **SEO-08**: All images use next/image with explicit dimensions
 - [x] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
 - [x] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
-- [ ] **SEO-11**: Open Graph images for all pages (static or generated)
-- [ ] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
+- [x] **SEO-11**: Open Graph images for all pages (static or generated)
+- [x] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
 - [ ] **SEO-13**: Core Web Vitals green scores (LCP <2.5s, INP <200ms, CLS <0.1)
 
 ### Structured Data
@@ -36,8 +36,8 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 ### GEO/LLMEO
 
-- [ ] **GEO-01**: llms.txt at domain root with site summary and key page links
-- [ ] **GEO-02**: llms-full.txt with expanded content for AI crawlers
+- [x] **GEO-01**: llms.txt at domain root with site summary and key page links
+- [x] **GEO-02**: llms-full.txt with expanded content for AI crawlers
 - [ ] **GEO-03**: Quick-answer blocks (1-2 sentence definitions) above fold on each service page
 - [ ] **GEO-04**: Entity-first content — consistent FMai entity definition across all pages
 - [ ] **GEO-05**: Prompt-aligned headings — question-based H2/H3 matching AI query patterns
@@ -122,8 +122,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-08      | Phase 2 | Complete |
 | SEO-09      | Phase 1 | Complete |
 | SEO-10      | Phase 2 | Complete |
-| SEO-11      | Phase 4 | Pending  |
-| SEO-12      | Phase 4 | Pending  |
+| SEO-11      | Phase 4 | Complete |
+| SEO-12      | Phase 4 | Complete |
 | SEO-13      | Phase 6 | Pending  |
 | SCHEMA-01   | Phase 2 | Complete |
 | SCHEMA-02   | Phase 2 | Complete |
@@ -133,8 +133,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCHEMA-06   | Phase 4 | Pending  |
 | SCHEMA-07   | Phase 4 | Pending  |
 | SCHEMA-08   | Phase 2 | Complete |
-| GEO-01      | Phase 4 | Pending  |
-| GEO-02      | Phase 4 | Pending  |
+| GEO-01      | Phase 4 | Complete |
+| GEO-02      | Phase 4 | Complete |
 | GEO-03      | Phase 4 | Pending  |
 | GEO-04      | Phase 4 | Pending  |
 | GEO-05      | Phase 4 | Pending  |
