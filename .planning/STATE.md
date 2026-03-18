@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 6 (Page Migration and Core SEO)
-Plan: 2 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In Progress
-Last activity: 2026-03-18 — Completed 02-02 Shared UI components migration
+Last activity: 2026-03-18 — Completed 02-01 SEO infrastructure (metadata, JSON-LD, sitemap, robots, error pages)
 
 Progress: [███░░░░░░░] 25%
 
@@ -33,16 +33,16 @@ Progress: [███░░░░░░░] 25%
 
 **Velocity:**
 
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 5 min
-- Total execution time: 0.33 hours
+- Total execution time: 0.45 hours
 
 **By Phase:**
 
 | Phase | Plans | Total  | Avg/Plan |
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
-| 02    | 1     | 5 min  | 5 min    |
+| 02    | 2     | 12 min | 6 min    |
 
 **Recent Trend:**
 
@@ -72,6 +72,9 @@ Recent decisions affecting current work:
 - 2026-03-18: Navigation keys in common.nav.\* namespace shared by Header and Footer
 - 2026-03-18: HeaderClient minimal client island for locale switcher only
 - 2026-03-18: CTAButton polymorphic rendering (Link/a/button) based on href
+- 2026-03-18: Service JSON-LD uses type assertion for dateModified (schema-dts lacks it)
+- 2026-03-18: metaKeyPrefix option in generatePageMetadata for seo._/meta._ patterns
+- 2026-03-18: Error boundary uses hardcoded English (use client prevents server translations)
 
 ### Pending Todos
 
@@ -85,5 +88,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-02-PLAN.md (Shared UI components migration)
-Resume file: .planning/phases/02-page-migration-and-core-seo/02-02-SUMMARY.md
+Stopped at: Completed 02-01-PLAN.md (SEO infrastructure)
+Resume file: .planning/phases/02-page-migration-and-core-seo/02-01-SUMMARY.md
