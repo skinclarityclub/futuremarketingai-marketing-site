@@ -214,7 +214,10 @@ export const SimpleHeader: React.FC = () => {
   ]
 
   // Minimal navigation
-  const navLinks = [{ label: t('landing.header.nav.pricing'), href: '/pricing' }]
+  const navLinks = [
+    { label: t('landing.header.nav.pricing'), href: '/pricing' },
+    { label: 'Demo', href: '/demo' },
+  ]
 
   const isActiveLink = (href: string) => {
     return location.pathname === href
