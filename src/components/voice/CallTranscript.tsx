@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import type { TranscriptMessage } from '../../hooks/useVapiCall'
+import type { TranscriptMessage } from '../../hooks/useElevenLabsCall'
 import { cn } from '../../lib/utils'
 
 interface CallTranscriptProps {

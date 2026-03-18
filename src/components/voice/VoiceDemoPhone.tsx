@@ -1,11 +1,11 @@
 import { Mic, PhoneOff, Loader2 } from 'lucide-react'
 import { WaveformVisualizer } from './WaveformVisualizer'
 import { CallTranscript } from './CallTranscript'
-import type { UseVapiCallReturn } from '../../hooks/useVapiCall'
+import type { UseElevenLabsCallReturn } from '../../hooks/useElevenLabsCall'
 import { cn } from '../../lib/utils'
 
 interface VoiceDemoPhoneProps {
-  call: UseVapiCallReturn
+  call: UseElevenLabsCallReturn
   compact?: boolean
 }
 

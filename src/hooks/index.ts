@@ -62,5 +62,5 @@ export {
 export { useDemoSEO, usePageTitle } from './useDemoSEO'
 export type { SEOData } from './useDemoSEO'
 
-export { useVapiCall } from './useVapiCall'
-export type { TranscriptMessage, CallState, UseVapiCallReturn } from './useVapiCall'
+export { useElevenLabsCall } from './useElevenLabsCall'
+export type { TranscriptMessage, CallState, UseElevenLabsCallReturn } from './useElevenLabsCall'

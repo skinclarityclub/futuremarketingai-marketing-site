@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Zap, Clock, Bot } from 'lucide-react'
-import { useVapiCall } from '../../hooks/useVapiCall'
+import { useElevenLabsCall } from '../../hooks/useElevenLabsCall'
 import { PhoneMockup } from './PhoneMockup'
 import { VoiceDemoPhone } from './VoiceDemoPhone'
 
@@ -16,7 +16,7 @@ const features = [
 ]
 
 export function VoiceDemoSection({ sectionRef }: VoiceDemoSectionProps) {
-  const call = useVapiCall()
+  const call = useElevenLabsCall()
 
   return (
     <section

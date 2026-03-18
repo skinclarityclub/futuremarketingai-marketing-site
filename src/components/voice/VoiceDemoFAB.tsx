@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Mic, X } from 'lucide-react'
-import { useVapiCall } from '../../hooks/useVapiCall'
+import { useElevenLabsCall } from '../../hooks/useElevenLabsCall'
 import { VoiceDemoPhone } from './VoiceDemoPhone'
 import { cn } from '../../lib/utils'
 
@@ -11,7 +11,7 @@ interface VoiceDemoFABProps {
 
 export function VoiceDemoFAB({ visible }: VoiceDemoFABProps) {
   const [expanded, setExpanded] = useState(false)
-  const call = useVapiCall()
+  const call = useElevenLabsCall()
   const isInCall = call.state === 'active' || call.state === 'connecting'
 
   return (
