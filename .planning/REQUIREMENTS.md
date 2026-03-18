@@ -1,145 +1,126 @@
-# Requirements — FMai Website v1.0
+# Requirements: FMai Website — Next.js Migration
 
-## REQ-DESIGN: Living System Design Tokens
+**Defined:** 2026-03-18
+**Core Value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
 
-- Replace indigo/violet/pink palette with teal (#00D4AA) + amber (#F5A623) system
-- Update Tailwind config colors, fonts, shadows, gradients
-- Update CSS custom properties to match new palette
-- Add Space Grotesk font, keep Inter + JetBrains Mono, remove Satoshi
-- **Phase:** 3
+## v1 Requirements
 
-## REQ-COMPONENTS: Shared Component Library
+Requirements for the Next.js migration. Each maps to roadmap phases.
 
-- SystemPanel: primary container (replaces GlassCard)
-- StatusIndicator: pulsing status dots with monospace labels
-- MetricDisplay: large monospace numbers with labels
-- CTAButton: consistent CTA with Calendly modal integration
-- SectionContainer: consistent section layout wrapper
-- **Phase:** 3 → **Gap closure Phase:** 13 (remove orphaned components, keep CTAButton)
-- **Status:** Orphaned — Phase 11 rebuild used inline Tailwind patterns instead. CTAButton is the only actively used component.
+### SEO Infrastructure
 
-## REQ-UX-FIXES: Critical UX & Accessibility Fixes
+- [ ] **SEO-01**: All pages server-rendered via Next.js App Router (SSR/SSG)
+- [ ] **SEO-02**: Per-page metadata (title, description, OG tags) localized for EN/NL/ES
+- [ ] **SEO-03**: Locale-prefixed URL routing (/en/, /nl/, /es/) with next-intl
+- [ ] **SEO-04**: Hreflang tags and canonical URLs via metadata alternates
+- [ ] **SEO-05**: XML sitemap with locale alternates for all pages
+- [ ] **SEO-06**: robots.txt with AI crawler allow-policy (allow retrieval bots, block training bots)
+- [ ] **SEO-07**: Semantic HTML structure across all pages (proper h1-h6, nav, main, section, article)
+- [ ] **SEO-08**: All images use next/image with explicit dimensions
+- [ ] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
+- [ ] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
+- [ ] **SEO-11**: Open Graph images for all pages (static or generated)
+- [ ] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
+- [ ] **SEO-13**: Core Web Vitals green scores (LCP <2.5s, INP <200ms, CLS <0.1)
 
-- VoiceAgents page: add missing secondary CTA + trust metrics
-- prefers-reduced-motion support for Framer Motion
-- Mobile menu focus trap (WCAG)
-- All Calendly CTAs open as modal, not new tab
-- Footer emoji replaced with Lucide icon
-- CalendlyModal dark theme colors
-- **Phase:** 3
+### Structured Data
 
-## REQ-BRAND: FMai Rebrand
+- [ ] **SCHEMA-01**: Organization JSON-LD on all pages
+- [ ] **SCHEMA-02**: WebSite JSON-LD on homepage with SearchAction
+- [ ] **SCHEMA-03**: WebPage JSON-LD on all subpages
+- [ ] **SCHEMA-04**: Service JSON-LD per service page (Automations, Chatbots, Voice Agents, Marketing Machine)
+- [ ] **SCHEMA-05**: BreadcrumbList JSON-LD generated from route structure
+- [ ] **SCHEMA-06**: FAQPage JSON-LD with 5-8 FAQ items per service page
+- [ ] **SCHEMA-07**: HowTo JSON-LD on How It Works page
+- [ ] **SCHEMA-08**: dateModified in JSON-LD on all pages for content freshness
 
-- Update ~80 brand references to "FMai"
-- Fix domain mismatch in SEO components
-- Fix hardcoded Dutch text in mobile hero
-- Update service pages to use new design components
-- **Phase:** 3 (Wave 4)
+### GEO/LLMEO
 
-## REQ-HOMEPAGE-RESTRUCTURE: Homepage Restructuring & Marketing Machine Page
+- [ ] **GEO-01**: llms.txt at domain root with site summary and key page links
+- [ ] **GEO-02**: llms-full.txt with expanded content for AI crawlers
+- [ ] **GEO-03**: Quick-answer blocks (1-2 sentence definitions) above fold on each service page
+- [ ] **GEO-04**: Entity-first content — consistent FMai entity definition across all pages
+- [ ] **GEO-05**: Prompt-aligned headings — question-based H2/H3 matching AI query patterns
 
-- Transform homepage from marketing-automation-focused to general FutureAI hub
-- Homepage hero reworked for FutureAI identity (all services, not just marketing)
-- New service cards grid on homepage linking to /automations, /chatbots, /voice-agents, /marketing-machine
-- VisionTimeline, FeatureShowcase, MobileEvolutionTimeline relocated from homepage to /marketing-machine
-- New /marketing-machine page created with FutureMarketingAI branding
-- SimpleHeader brandMiddle logic updated: homepage shows FutureAI, /marketing-machine shows FutureMarketingAI
-- Services dropdown link updated from /demo to /marketing-machine
-- /marketing-machine added to router and marketingPaths
-- i18n: NL/ES hero_landing keys synced with EN (remove stale founding-member copy)
-- i18n: ES common.json structural issues fixed (duplicate blocks, missing keys)
-- **Phase:** 10
+### Content Hub
 
-## REQ-LIVING-SYSTEM-REBUILD: Living System Full Structural Rebuild
+- [ ] **BLOG-01**: Blog/content hub page structure with MDX support
+- [ ] **BLOG-02**: Blog listing page with category filtering
+- [ ] **BLOG-03**: Individual blog post template with Article JSON-LD
+- [ ] **BLOG-04**: Author attribution with Person schema
+- [ ] **BLOG-05**: ISR (Incremental Static Regeneration) for blog pages
 
-- Complete structural rebuild of every page to match prototype-2-living-system.html
-- Switch body font from Inter to DM Sans, keep Space Grotesk + JetBrains Mono
-- Add global GradientMesh background (3 CSS blobs, replaces 4 Framer Motion bg layers)
-- Rebuild Hero with left-aligned layout + orbit visual (spinning rings with dots)
-- Rebuild service cards as 2x2 numbered grid with gradient border hover (::before mask)
-- CTAButton primary: warm amber gradient (not flat teal), rounded-14px
-- CTAButton secondary: glass backdrop-blur effect
-- Navigation: full-width backdrop-blur, gradient underline hover on links, FM+gradient-ai logo
-- Footer: replace remaining hardcoded slate/indigo classes with Living System tokens
-- Service pages: structural rebuild with gradient mesh, card-gradient-border, warm CTAs
-- Supporting pages: same structural rebuild (About, Pricing, HowItWorks, Contact, Legal)
-- MarketingMachinePage: add i18n support (currently all hardcoded EN)
-- SimplifiedHeroMobile: rebuild to match new design language
-- CSS animations for blobs/orbit/fadeIn (replace Framer Motion where simple CSS suffices)
-- Preserve all existing content, routes, i18n keys, and functionality
-- **Phase:** 11
+### Interactive Features
 
-## REQ-HERO-3D: Interactive 3D Hero Visual
+- [ ] **INT-01**: Flagship concierge chatbot with SSR chrome and client hydration
+- [ ] **INT-02**: All 17 chatbot tools migrated to Next.js Route Handlers
+- [ ] **INT-03**: 3-persona demo playground on Chatbots page
+- [ ] **INT-04**: Guided demo mode with 3 scenarios and state machine
+- [ ] **INT-05**: motion v12 animations with "use client" wrapper pattern
+- [ ] **INT-06**: Zustand stores migrated with hydration-safe patterns
+- [ ] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
+- [ ] **INT-08**: Calendly CTA integration with modal pattern
+- [ ] **INT-09**: Cookie consent
 
-- Install @splinetool/react-spline + @splinetool/runtime
-- Create SplineHero component with React.lazy + Suspense loading
-- OrbitVisual kept as permanent fallback during Spline load and below lg breakpoint
-- Hero heading text remains LCP element (Spline never blocks initial paint)
-- Spline hidden on mobile (desktop-first per CLAUDE.md)
-- prefers-reduced-motion respected (static fallback)
-- **Phase:** 12
+### Page Migration
 
-## REQ-SCROLL-MICRO: Scroll Reveals & Card Micro-Interactions
+- [ ] **PAGE-01**: Homepage with service cards, orbit visual, gradient mesh
+- [ ] **PAGE-02**: Automations service page
+- [ ] **PAGE-03**: Chatbots service page with demo playground
+- [ ] **PAGE-04**: Voice Agents service page
+- [ ] **PAGE-05**: Marketing Machine service page
+- [ ] **PAGE-06**: About page
+- [ ] **PAGE-07**: Pricing page with comparison tables
+- [ ] **PAGE-08**: How It Works page
+- [ ] **PAGE-09**: Contact page
+- [ ] **PAGE-10**: Legal page
+- [ ] **PAGE-11**: Content/copy rework for SEO on all pages
 
-- ScrollReveal reusable wrapper component using Framer Motion whileInView
-- useTilt custom hook for mouse-tracking card parallax (desktop only, disabled on touch)
-- Apply scroll reveals to below-fold sections across all pages (section-level, not per-element)
-- Apply card tilt to service cards and pricing cards
-- CTAButton icon micro-animation on hover (arrow shift)
-- All animations respect useMotionSafe / prefers-reduced-motion
-- **Phase:** 12
+## v2 Requirements
 
-## REQ-PRODUCT-MEDIA: Product Media Components
+Deferred to future release. Tracked but not in current roadmap.
 
-- ProductMedia component for video/screenshot with poster frame
-- Video uses autoPlay muted loop playsInline with preload="none"
-- Reduced motion shows static poster image instead of video
-- Placeholder media structure on service pages (swap real assets when available)
-- Create public/media/ directory with lightweight placeholder assets
-- **Phase:** 12 → **Gap closure Phase:** 13 (fix placeholder 404s)
+### Content Strategy
 
-## REQ-TYPOGRAPHY-POLISH: Typography Fine-Tuning
+- **CONT-01**: Comparison and "vs" content pages (AI chatbot vs live chat, etc.)
+- **CONT-02**: Data-dense content with defensible statistics
+- **CONT-03**: Regular publishing cadence for topical authority
+- **CONT-04**: CMS integration (Sanity/Contentful) when content volume justifies it
 
-- Letter-spacing adjustments for Space Grotesk display headings
-- Consistent section spacing rhythm across all pages
-- Fine-tune heading sizes for 1280px and 1440px breakpoints
-- **Phase:** 12
+### Analytics
 
-## REQ-SERVICE-I18N: Service Page Internationalization
+- **ANAL-01**: AI citation tracking (tooling immature in 2026, revisit quarterly)
+- **ANAL-02**: Advanced SEO rank tracking per locale
 
-- Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage
-- Extract all hardcoded English strings into EN locale JSON
-- Add NL translations for all service page content
-- Add ES translations for all service page content
-- Language switcher produces correct content on all service routes
-- **Phase:** 14
+## Out of Scope
 
-## REQ-CHATBOT-PERSONAS: Chatbot Persona Configurations
+| Feature                                 | Reason                                                         |
+| --------------------------------------- | -------------------------------------------------------------- |
+| Mobile app                              | Web only                                                       |
+| E-commerce/payments                     | Demo/showcase site, not transactional                          |
+| User accounts/authentication            | No login system needed                                         |
+| Programmatic SEO / auto-generated pages | Low-quality pages hurt domain authority for a 4-service agency |
+| Separate mobile site (m-dot)            | Responsive design within same routes                           |
+| Client-side-only routing for content    | Defeats the migration purpose                                  |
+| Keyword stuffing / SEO spam             | Penalized by Google and AI systems                             |
+| Full CMS integration                    | Blog structure only, content source TBD                        |
+| Visual redesign                         | Keeping Living System design                                   |
 
-- Build 5 persona configurations: concierge, e-commerce, lead-gen, support, demo-guide
-- Each persona has: system prompt (static prefix for prompt caching), topic-routed knowledge base, AI SDK tool definitions with Zod schemas
-- Concierge: FMai services/pricing/process/case studies knowledge, tools for service info + Calendly + navigation + case studies
-- E-commerce: Mock skincare catalog (8 products), tools for product search + details + routine builder + cart
-- Lead-gen: B2B SaaS qualification framework (BANT), tools for lead scoring + pricing + demo scheduling + ROI estimation
-- Support: Mock helpdesk FAQ (15-20 articles), tools for KB search + ticket creation + status check + human escalation
-- Demo Guide: Marketing Machine 7-module knowledge, tools for navigation + module explanation + ROI + demo booking
-- Persona registry index triggers registration of all 5 personas on import
-- createPersonaTools() maps persona IDs to correct tool definitions
-- Conversation starters in EN/NL/ES for each persona
-- All tools return mock/static data (demo tools, no external API calls)
-- **Phase:** 16
+## Traceability
 
-## REQ-CHATBOT-PLAYGROUND: ChatbotsPage Demo Playground
+Which phases cover which requirements. Updated during roadmap creation.
 
-- Transform /chatbots from static marketing to interactive demo experience
-- 3 switchable persona demos: e-commerce advisor, lead qualifier, support agent
-- Each demo tab has independent chat history and message counter
-- Desktop side-by-side layout (30% context card, 70% embedded chat widget)
-- Mobile stacked layout (context card above chat)
-- Progressive CTA system: no CTA msgs 1-4, subtle at 5, strong Calendly at 10, gate at 15
-- Multi-platform showcase with animated architecture diagram (CSS-only animations)
-- SKC case study as proof point in multi-platform section
-- Use case cards link/scroll to specific demo tabs
-- Hero CTA scrolls to demo playground
-- Full i18n support (EN/NL/ES) for all new content
-- **Phase:** 18
+| Requirement                         | Phase | Status |
+| ----------------------------------- | ----- | ------ |
+| (populated during roadmap creation) |       |        |
+
+**Coverage:**
+
+- v1 requirements: 42 total
+- Mapped to phases: 0
+- Unmapped: 42
+
+---
+
+_Requirements defined: 2026-03-18_
+_Last updated: 2026-03-18 after initial definition_
