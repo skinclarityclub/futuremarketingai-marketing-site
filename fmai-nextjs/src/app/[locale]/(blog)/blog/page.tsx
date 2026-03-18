@@ -5,6 +5,8 @@ import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, BLOG_CATEGORIES } from '@/lib/blog'
 import { BlogPostCard } from '@/components/blog/BlogPostCard'
 import { CategoryFilter } from '@/components/blog/CategoryFilter'
+import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 
 export const revalidate = 3600
 
@@ -71,6 +73,19 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
 
   return (
     <main className="mx-auto max-w-6xl px-6 pb-20 pt-32">
+      <WebPageJsonLd
+        name="Blog | Future Marketing AI"
+        description="Insights on AI marketing automation, chatbots, voice agents, and growth strategies for B2B companies."
+        path="/blog"
+        locale={locale}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+        ]}
+        locale={locale}
+      />
       <h1 className="mb-2 text-4xl font-bold tracking-tight text-text-primary">Blog</h1>
       <p className="mb-10 text-lg text-text-secondary">
         Insights on AI marketing automation, chatbots, and growth strategies.

@@ -8,6 +8,7 @@ export function OrganizationJsonLd() {
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_URL,
+    logo: `${SITE_URL}/favicon.ico`,
     email: ORG_EMAIL,
     sameAs: [LINKEDIN_URL],
   }

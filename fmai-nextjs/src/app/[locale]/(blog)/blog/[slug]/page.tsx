@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, getPostSlugs } from '@/lib/blog'
 import { ArticleJsonLd } from '@/components/seo/ArticleJsonLd'
+import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { BlogContent } from '@/components/blog/BlogContent'
 
 export const revalidate = 3600
@@ -95,6 +96,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         datePublished={post.publishedAt}
         dateModified={post.updatedAt}
         slug={slug}
+        locale={locale}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${slug}` },
+        ]}
         locale={locale}
       />
 
