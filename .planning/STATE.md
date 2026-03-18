@@ -23,19 +23,19 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 3 of 6 (Interactive Features)
-Plan: 2 of 3 in current phase
-Status: Plan 03-02 complete, continuing Phase 3
-Last activity: 2026-03-18 — Completed 03-02 Chatbot Engine and UI Migration
+Plan: 3 of 3 in current phase (PHASE COMPLETE)
+Status: Phase 3 complete, ready for Phase 4
+Last activity: 2026-03-18 — Completed 03-03 Demo Playground and Booking Integration
 
-Progress: [██████░░░░] 42%
+Progress: [███████░░░] 46%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: 9 min
-- Total execution time: 1.5 hours
+- Total execution time: 1.6 hours
 
 **By Phase:**
 
@@ -43,7 +43,7 @@ Progress: [██████░░░░] 42%
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
 | 02    | 5     | 48 min | 10 min   |
-| 03    | 2     | 25 min | 13 min   |
+| 03    | 3     | 32 min | 11 min   |
 
 **Recent Trend:**
 
@@ -88,6 +88,10 @@ Recent decisions affecting current work:
 - 2026-03-18: Extended chatbotStore with full side panel, minimize, and demo state for ChatWidget
 - 2026-03-18: Route Handler delegation pattern: thin route.ts delegates to engine.ts handleChatRequest
 - 2026-03-18: DemoOrchestrator/DemoProgress deferred from ChatWidget (not in plan scope)
+- 2026-03-18: 3 personas in playground (ecommerce, leadgen, support) -- concierge excluded as main floating chatbot
+- 2026-03-18: Indexed translation keys (capabilities_0..N) for next-intl array-like data
+- 2026-03-18: DemoPlayground self-contained client island (no props from server)
+- 2026-03-18: Extended chatbotStore with DemoStatus type and full orchestration actions
 
 ### Pending Todos
 
@@ -101,5 +105,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 03-02-PLAN.md (Chatbot Engine and UI Migration — 30 server files, 18 UI components, floating chatbot)
-Resume file: .planning/phases/03-interactive-features/03-02-SUMMARY.md
+Stopped at: Completed 03-03-PLAN.md (Demo Playground and Booking Integration — Phase 3 complete)
+Resume file: .planning/phases/03-interactive-features/03-03-SUMMARY.md

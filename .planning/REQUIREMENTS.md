@@ -54,13 +54,13 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 - [x] **INT-01**: Flagship concierge chatbot with SSR chrome and client hydration
 - [x] **INT-02**: All 17 chatbot tools migrated to Next.js Route Handlers
-- [ ] **INT-03**: 3-persona demo playground on Chatbots page
-- [ ] **INT-04**: Guided demo mode with 3 scenarios and state machine
+- [x] **INT-03**: 3-persona demo playground on Chatbots page
+- [x] **INT-04**: Guided demo mode with 3 scenarios and state machine
 - [x] **INT-05**: motion v12 animations with "use client" wrapper pattern
 - [x] **INT-06**: Zustand stores migrated with hydration-safe patterns
 - [x] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
-- [ ] **INT-08**: Calendly CTA integration with modal pattern
-- [ ] **INT-09**: Cookie consent
+- [x] **INT-08**: Calendly CTA integration with modal pattern
+- [x] **INT-09**: Cookie consent
 
 ### Page Migration
 
@@ -145,13 +145,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BLOG-05     | Phase 5 | Pending  |
 | INT-01      | Phase 3 | Complete |
 | INT-02      | Phase 3 | Complete |
-| INT-03      | Phase 3 | Pending  |
-| INT-04      | Phase 3 | Pending  |
+| INT-03      | Phase 3 | Complete |
+| INT-04      | Phase 3 | Complete |
 | INT-05      | Phase 3 | Complete |
 | INT-06      | Phase 1 | Complete |
 | INT-07      | Phase 1 | Complete |
-| INT-08      | Phase 3 | Pending  |
-| INT-09      | Phase 3 | Pending  |
+| INT-08      | Phase 3 | Complete |
+| INT-09      | Phase 3 | Complete |
 | PAGE-01     | Phase 2 | Complete |
 | PAGE-02     | Phase 2 | Complete |
 | PAGE-03     | Phase 2 | Complete |
