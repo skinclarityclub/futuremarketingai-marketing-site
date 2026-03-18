@@ -37,6 +37,21 @@
       "successGuarantee": "Success guarantee — we stay until it works",
       "trialCommitment": "3-month risk-free trial"
     },
+    "stats": {
+      "automations": { "value": "50+", "label": "Automatizaciones Activas" },
+      "support": { "value": "24/7", "label": "Soporte IA" },
+      "growth": { "value": "3x", "label": "Crecimiento de Ingresos" },
+      "setup": { "value": "< 2 Semanas", "label": "Tiempo de Configuracion" }
+    },
+    "badges": {
+      "title": "Confiado por Equipos de Crecimiento",
+      "gdpr": "Cumplimiento RGPD",
+      "enterprise": "Seguridad Empresarial",
+      "uptime": "99.9% Uptime SLA",
+      "support": "Gestor de Exito Dedicado",
+      "integrations": "200+ Integraciones",
+      "noLockIn": "Sin Contratos de Permanencia"
+    },
     "cta": {
       "title": "Ready to Automate Your Growth?",
       "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
@@ -291,24 +306,32 @@
     },
     "landing": {
       "footer": {
-        "tagline": "AI systems that run your business — marketing, automations, chatbots, and voice agents.",
-        "copyright": "Copyright {year} Future AI",
+        "brand_name": "Future Marketing AI",
+        "tagline": "Sistemas de IA que gestionan tu negocio — marketing, automatizaciones, chatbots y agentes de voz.",
+        "copyright": "\u00a9 {year} Future Marketing AI. Todos los derechos reservados.",
         "sections": {
-          "product": "Product",
-          "company": "Company",
-          "resources": "Resources",
-          "legal": "Legal"
+          "services": "Servicios",
+          "company": "Empresa",
+          "resources": "Recursos"
         },
         "nav": {
-          "features": "Features",
-          "pricing": "Pricing",
-          "demo": "Demo",
-          "about": "About",
-          "how_it_works": "How It Works",
-          "roi_calculator": "ROI Calculator",
-          "showcase": "Showcase",
-          "privacy": "Privacy",
-          "terms": "Terms"
+          "chatbots": "Chatbots",
+          "automations": "Automatizaciones",
+          "voice_agents": "Agentes de Voz",
+          "marketing_machine": "Marketing Machine",
+          "pricing": "Precios",
+          "about": "Acerca de",
+          "how_it_works": "Cómo funciona",
+          "blog": "Blog",
+          "contact": "Contacto",
+          "privacy": "Privacidad",
+          "terms": "Términos",
+          "cookies": "Cookies"
+        },
+        "status_badge": "Todos los sistemas operativos",
+        "social_aria": {
+          "linkedin": "Síguenos en LinkedIn",
+          "twitter": "Síguenos en X"
         }
       }
     },

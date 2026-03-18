@@ -37,6 +37,21 @@
       "successGuarantee": "Success guarantee — we stay until it works",
       "trialCommitment": "3-month risk-free trial"
     },
+    "stats": {
+      "automations": { "value": "50+", "label": "Active Automations" },
+      "support": { "value": "24/7", "label": "AI Support" },
+      "growth": { "value": "3x", "label": "Revenue Growth" },
+      "setup": { "value": "< 2 Weeks", "label": "Setup Time" }
+    },
+    "badges": {
+      "title": "Trusted by Growth Teams",
+      "gdpr": "GDPR Compliant",
+      "enterprise": "Enterprise-grade Security",
+      "uptime": "99.9% Uptime SLA",
+      "support": "Dedicated Success Manager",
+      "integrations": "200+ Integrations",
+      "noLockIn": "No Lock-in Contracts"
+    },
     "cta": {
       "title": "Ready to Automate Your Growth?",
       "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
@@ -322,24 +337,32 @@
     },
     "landing": {
       "footer": {
+        "brand_name": "Future Marketing AI",
         "tagline": "AI systems that run your business — marketing, automations, chatbots, and voice agents.",
-        "copyright": "Copyright {year} Future AI",
+        "copyright": "\u00a9 {year} Future Marketing AI. All rights reserved.",
         "sections": {
-          "product": "Product",
+          "services": "Services",
           "company": "Company",
-          "resources": "Resources",
-          "legal": "Legal"
+          "resources": "Resources"
         },
         "nav": {
-          "features": "Features",
+          "chatbots": "Chatbots",
+          "automations": "Automations",
+          "voice_agents": "Voice Agents",
+          "marketing_machine": "Marketing Machine",
           "pricing": "Pricing",
-          "demo": "Demo",
           "about": "About",
           "how_it_works": "How It Works",
-          "roi_calculator": "ROI Calculator",
-          "showcase": "Showcase",
+          "blog": "Blog",
+          "contact": "Contact",
           "privacy": "Privacy",
-          "terms": "Terms"
+          "terms": "Terms",
+          "cookies": "Cookies"
+        },
+        "status_badge": "All systems operational",
+        "social_aria": {
+          "linkedin": "Follow us on LinkedIn",
+          "twitter": "Follow us on X"
         }
       }
     },

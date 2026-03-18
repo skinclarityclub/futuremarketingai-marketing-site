@@ -37,6 +37,21 @@
       "successGuarantee": "Success guarantee — we stay until it works",
       "trialCommitment": "3-month risk-free trial"
     },
+    "stats": {
+      "automations": { "value": "50+", "label": "Actieve Automations" },
+      "support": { "value": "24/7", "label": "AI Support" },
+      "growth": { "value": "3x", "label": "Omzetgroei" },
+      "setup": { "value": "< 2 Weken", "label": "Opzettijd" }
+    },
+    "badges": {
+      "title": "Vertrouwd door Groeiteams",
+      "gdpr": "AVG-conform",
+      "enterprise": "Enterprise-grade Beveiliging",
+      "uptime": "99.9% Uptime SLA",
+      "support": "Dedicated Succesmanager",
+      "integrations": "200+ Integraties",
+      "noLockIn": "Geen Lock-in Contracten"
+    },
     "cta": {
       "title": "Ready to Automate Your Growth?",
       "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
@@ -322,24 +337,32 @@
     },
     "landing": {
       "footer": {
-        "tagline": "AI systems that run your business — marketing, automations, chatbots, and voice agents.",
-        "copyright": "Copyright {year} Future AI",
+        "brand_name": "Future Marketing AI",
+        "tagline": "AI-systemen die je bedrijf runnen — marketing, automatiseringen, chatbots en voice agents.",
+        "copyright": "\u00a9 {year} Future Marketing AI. Alle rechten voorbehouden.",
         "sections": {
-          "product": "Product",
-          "company": "Company",
-          "resources": "Resources",
-          "legal": "Legal"
+          "services": "Diensten",
+          "company": "Bedrijf",
+          "resources": "Bronnen"
         },
         "nav": {
-          "features": "Features",
-          "pricing": "Pricing",
-          "demo": "Demo",
-          "about": "About",
-          "how_it_works": "How It Works",
-          "roi_calculator": "ROI Calculator",
-          "showcase": "Showcase",
+          "chatbots": "Chatbots",
+          "automations": "Automatiseringen",
+          "voice_agents": "Voice Agents",
+          "marketing_machine": "Marketing Machine",
+          "pricing": "Prijzen",
+          "about": "Over ons",
+          "how_it_works": "Hoe het werkt",
+          "blog": "Blog",
+          "contact": "Contact",
           "privacy": "Privacy",
-          "terms": "Terms"
+          "terms": "Voorwaarden",
+          "cookies": "Cookies"
+        },
+        "status_badge": "Alle systemen operationeel",
+        "social_aria": {
+          "linkedin": "Volg ons op LinkedIn",
+          "twitter": "Volg ons op X"
         }
       }
     },
