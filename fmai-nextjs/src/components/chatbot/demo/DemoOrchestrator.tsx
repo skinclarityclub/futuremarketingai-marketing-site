@@ -34,6 +34,7 @@ export function DemoOrchestrator({
     advanceStep,
     setDemoStatus,
     endDemo,
+    openCalendly,
   } = useChatbotStore()
 
   const hasSentRef = useRef(false)
@@ -135,9 +136,8 @@ export function DemoOrchestrator({
   )
 
   const handleCompletionBookCall = useCallback(() => {
-    hasSentRef.current = false
-    onSendMessage(BOOKING_STEP.userMessage)
-  }, [onSendMessage])
+    openCalendly()
+  }, [openCalendly])
 
   if (!demoMode) {
     return null
