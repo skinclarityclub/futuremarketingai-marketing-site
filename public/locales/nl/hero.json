@@ -31,29 +31,29 @@
 
   "vision_timeline": {
     "badge": "Waar We Naartoe Gaan",
-    "title": "De Evolutie van Marketing Automatisering",
+    "title": "De Evolutie van AI in Business",
     "eras": {
       "ai_assisted": {
         "year": "2020-2024",
-        "label": "AI-Assisted Era",
-        "description": "80% van teams vastzit hier met ChatGPT/Jasper"
+        "label": "AI-Assisted Tijdperk",
+        "description": "80% van bedrijven zit hier vast — AI voor losse taken zoals content of een chatbot"
       },
       "autonomous": {
         "year": "2025-2026",
         "label": "⚡ Pioneer Window",
-        "description": "<1% adoptie NU. Eerste 10 teams bouwen unfair advantage."
+        "description": "<1% adoptie NU. Voorlopers automatiseren complete workflows, sales pipelines en klantoperaties."
       },
       "mainstream": {
         "year": "2027-2028",
         "label": "Mainstream Adoptie",
-        "description": "Iedereen heeft het. Je 2-3 jaar voorsprong verdampt."
+        "description": "Iedereen heeft het. Uw 2-3 jaar voorsprong verdampt."
       }
     },
     "early_adopter_window": "EARLY ADOPTER WINDOW",
     "you_are_here": "U Bent Hier",
-    "insight": "Teams die vroeg AI-hulpmiddelen adopteerden (2020-2022) kregen 3-5 jaar voorsprong op concurrenten.",
-    "insight_emphasis": "Hetzelfde 2-jaar venster bestaat NU (eind 2025) voor autonome systemen.",
-    "insight_data": "<1% heeft dit vandaag. Mainstream komt 2027-2028. Handel nu = 2-3 jaar unfair advantage."
+    "insight": "Bedrijven die vroeg AI adopteerden (2020-2022) kregen 3-5 jaar voorsprong op concurrenten.",
+    "insight_emphasis": "Hetzelfde 2-jaar venster bestaat NU voor volledige AI-automatisering — sales, support en operaties.",
+    "insight_data": "<1% heeft dit vandaag. Mainstream komt 2027-2028. Handel nu = 2-3 jaar voorsprong."
   },
 
   "stats": {
