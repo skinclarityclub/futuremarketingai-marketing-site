@@ -59,7 +59,7 @@ Plans:
 3. JSON-LD structured data renders in page source: Organization on all pages, WebSite with SearchAction on homepage, Service on each service page, WebPage on subpages, BreadcrumbList from route structure, dateModified on all pages
 4. XML sitemap is accessible with all pages and locale alternates; robots.txt includes AI crawler allow-policy
 5. Custom 404 page returns HTTP 404 status; all images use next/image with explicit dimensions; hreflang and canonical URLs are correct
-   **Plans**: 3 plans
+   **Plans**: 4 plans
 
 Plans:
 
