@@ -138,12 +138,12 @@ Plans:
 2. All JSON-LD structured data validates with zero errors in Google Rich Results Test
 3. Full sitemap and robots.txt are verified complete; hreflang tags are correct across all locale/page combinations
 4. Site renders correctly in Chrome, Firefox, Safari, and Edge with no visual regressions compared to the Vite version
-   **Plans**: 3 plans
+   **Plans**: 2 plans
 
 Plans:
 
-- [ ] 06-01: Performance optimization (bundle analysis, code splitting, image optimization, CWV tuning)
-- [ ] 06-02: Cross-validation (structured data audit, browser testing, visual regression check) and cutover preparation
+- [ ] 06-01-PLAN.md — Performance optimization (bundle analyzer, dynamic imports for chatbot/calendly, CWV tuning)
+- [ ] 06-02-PLAN.md — Cross-validation (structured data audit, Lighthouse CWV audit, browser testing) and cutover readiness
 
 ## Progress
 
