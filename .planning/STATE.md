@@ -24,8 +24,8 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 
 Phase: 4 of 6 (SEO Differentiation and GEO/LLMEO)
 Plan: 2 of 2 in current phase (PHASE COMPLETE)
-Status: Phase 4 Plan 02 complete (LLMEO + OG Images), phase complete
-Last activity: 2026-03-18 — Completed 04-02 LLMEO and OG Images
+Status: Phase 4 complete (both GEO content optimization and LLMEO/OG Images done)
+Last activity: 2026-03-18 — Completed 04-01 GEO Content Optimization (FAQ/HowTo schema + QuickAnswer blocks)
 
 Progress: [█████████░] 52%
 
@@ -33,9 +33,9 @@ Progress: [█████████░] 52%
 
 **Velocity:**
 
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: 8 min
-- Total execution time: 1.65 hours
+- Total execution time: 1.73 hours
 
 **By Phase:**
 
@@ -44,7 +44,7 @@ Progress: [█████████░] 52%
 | 01    | 3     | 15 min | 5 min    |
 | 02    | 5     | 48 min | 10 min   |
 | 03    | 4     | 34 min | 9 min    |
-| 04    | 1     | 3 min  | 3 min    |
+| 04    | 2     | 8 min  | 4 min    |
 
 **Recent Trend:**
 
@@ -96,6 +96,9 @@ Recent decisions affecting current work:
 - 2026-03-18: DM Sans variable TTF from Google Fonts GitHub (single file covers all weights for Satori)
 - 2026-03-18: Shared OgImageTemplate with Satori-safe CSS only (no grid, no absolute positioning)
 - 2026-03-18: Middleware matcher updated with opengraph-image bypass to prevent redirect loops
+- 2026-03-18: FAQ content hardcoded in English for Phase 4 (i18n deferred to content phase)
+- 2026-03-18: Visible FAQ sections use dl/dt/dd semantic markup for accessibility
+- 2026-03-18: QuickAnswerBlock placed after hero, before first body section on all service pages
 
 ### Pending Todos
 
@@ -109,5 +112,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 04-02-PLAN.md (LLMEO + OG Images)
-Resume file: .planning/phases/04-seo-differentiation-and-geo-llmeo/04-02-SUMMARY.md
+Stopped at: Completed 04-01-PLAN.md (GEO Content Optimization — FAQ/HowTo schema + QuickAnswer blocks)
+Resume file: .planning/phases/04-seo-differentiation-and-geo-llmeo/04-01-SUMMARY.md

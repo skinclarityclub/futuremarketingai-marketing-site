@@ -30,17 +30,17 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [x] **SCHEMA-03**: WebPage JSON-LD on all subpages
 - [x] **SCHEMA-04**: Service JSON-LD per service page (Automations, Chatbots, Voice Agents, Marketing Machine)
 - [x] **SCHEMA-05**: BreadcrumbList JSON-LD generated from route structure
-- [ ] **SCHEMA-06**: FAQPage JSON-LD with 5-8 FAQ items per service page
-- [ ] **SCHEMA-07**: HowTo JSON-LD on How It Works page
+- [x] **SCHEMA-06**: FAQPage JSON-LD with 5-8 FAQ items per service page
+- [x] **SCHEMA-07**: HowTo JSON-LD on How It Works page
 - [x] **SCHEMA-08**: dateModified in JSON-LD on all pages for content freshness
 
 ### GEO/LLMEO
 
 - [x] **GEO-01**: llms.txt at domain root with site summary and key page links
 - [x] **GEO-02**: llms-full.txt with expanded content for AI crawlers
-- [ ] **GEO-03**: Quick-answer blocks (1-2 sentence definitions) above fold on each service page
-- [ ] **GEO-04**: Entity-first content — consistent FMai entity definition across all pages
-- [ ] **GEO-05**: Prompt-aligned headings — question-based H2/H3 matching AI query patterns
+- [x] **GEO-03**: Quick-answer blocks (1-2 sentence definitions) above fold on each service page
+- [x] **GEO-04**: Entity-first content — consistent FMai entity definition across all pages
+- [x] **GEO-05**: Prompt-aligned headings — question-based H2/H3 matching AI query patterns
 
 ### Content Hub
 
@@ -130,14 +130,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCHEMA-03   | Phase 2 | Complete |
 | SCHEMA-04   | Phase 2 | Complete |
 | SCHEMA-05   | Phase 2 | Complete |
-| SCHEMA-06   | Phase 4 | Pending  |
-| SCHEMA-07   | Phase 4 | Pending  |
+| SCHEMA-06   | Phase 4 | Complete |
+| SCHEMA-07   | Phase 4 | Complete |
 | SCHEMA-08   | Phase 2 | Complete |
 | GEO-01      | Phase 4 | Complete |
 | GEO-02      | Phase 4 | Complete |
-| GEO-03      | Phase 4 | Pending  |
-| GEO-04      | Phase 4 | Pending  |
-| GEO-05      | Phase 4 | Pending  |
+| GEO-03      | Phase 4 | Complete |
+| GEO-04      | Phase 4 | Complete |
+| GEO-05      | Phase 4 | Complete |
 | BLOG-01     | Phase 5 | Pending  |
 | BLOG-02     | Phase 5 | Pending  |
 | BLOG-03     | Phase 5 | Pending  |
