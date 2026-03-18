@@ -85,7 +85,7 @@ Plans:
 
 Plans:
 
-- [ ] 03-01: Animation wrapper pattern (motion v12 "use client" islands) and shared interactive components
+- [x] 03-01: Animation wrapper pattern (motion v12 "use client" islands) and shared interactive components
 - [ ] 03-02: Chatbot engine migration (Route Handler, AI SDK streaming, 17 tools, side panel, persona routing)
 - [ ] 03-03: Demo mode, persona playground, Calendly integration, and cookie consent
 
