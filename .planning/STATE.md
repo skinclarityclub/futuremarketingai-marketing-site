@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 6 (Foundation and Infrastructure)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-03-18 — Completed 01-01 Next.js foundation scaffold
+Last activity: 2026-03-18 — Completed 01-02 i18n translation migration
 
-Progress: [█░░░░░░░░░] 5%
+Progress: [██░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 1
-- Average duration: 8 min
-- Total execution time: 0.13 hours
+- Total plans completed: 2
+- Average duration: 5 min
+- Total execution time: 0.17 hours
 
 **By Phase:**
 
-| Phase | Plans | Total | Avg/Plan |
-| ----- | ----- | ----- | -------- |
-| 01    | 1     | 8 min | 8 min    |
+| Phase | Plans | Total  | Avg/Plan |
+| ----- | ----- | ------ | -------- |
+| 01    | 2     | 10 min | 5 min    |
 
 **Recent Trend:**
 
@@ -50,6 +50,8 @@ Recent decisions affecting current work:
 - 2026-03-18: SEO built into pages during migration, not bolted on after
 - 2026-03-18: middleware.ts over proxy.ts -- Next.js 16 still uses middleware convention
 - 2026-03-18: Tailwind v4 @theme directive for all design tokens (CSS-native, no JS config)
+- 2026-03-18: Namespace keys preserved with hyphens (how-it-works) -- next-intl handles natively
+- 2026-03-18: middleware.ts confirmed over proxy.ts for locale routing
 
 ### Pending Todos
 
@@ -63,5 +65,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 01-01-PLAN.md (Next.js foundation)
-Resume file: .planning/phases/01-foundation-and-infrastructure/01-01-SUMMARY.md
+Stopped at: Completed 01-02-PLAN.md (i18n translation migration)
+Resume file: .planning/phases/01-foundation-and-infrastructure/01-02-SUMMARY.md

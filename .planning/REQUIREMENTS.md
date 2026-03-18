@@ -11,7 +11,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 - [x] **SEO-01**: All pages server-rendered via Next.js App Router (SSR/SSG)
 - [ ] **SEO-02**: Per-page metadata (title, description, OG tags) localized for EN/NL/ES
-- [ ] **SEO-03**: Locale-prefixed URL routing (/en/, /nl/, /es/) with next-intl
+- [x] **SEO-03**: Locale-prefixed URL routing (/en/, /nl/, /es/) with next-intl
 - [ ] **SEO-04**: Hreflang tags and canonical URLs via metadata alternates
 - [ ] **SEO-05**: XML sitemap with locale alternates for all pages
 - [ ] **SEO-06**: robots.txt with AI crawler allow-policy (allow retrieval bots, block training bots)
@@ -58,7 +58,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [ ] **INT-04**: Guided demo mode with 3 scenarios and state machine
 - [ ] **INT-05**: motion v12 animations with "use client" wrapper pattern
 - [ ] **INT-06**: Zustand stores migrated with hydration-safe patterns
-- [ ] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
+- [x] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
 - [ ] **INT-08**: Calendly CTA integration with modal pattern
 - [ ] **INT-09**: Cookie consent
 
@@ -114,7 +114,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ----------- | ------- | -------- |
 | SEO-01      | Phase 1 | Complete |
 | SEO-02      | Phase 2 | Pending  |
-| SEO-03      | Phase 1 | Pending  |
+| SEO-03      | Phase 1 | Complete |
 | SEO-04      | Phase 2 | Pending  |
 | SEO-05      | Phase 2 | Pending  |
 | SEO-06      | Phase 2 | Pending  |
@@ -149,7 +149,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INT-04      | Phase 3 | Pending  |
 | INT-05      | Phase 3 | Pending  |
 | INT-06      | Phase 1 | Pending  |
-| INT-07      | Phase 1 | Pending  |
+| INT-07      | Phase 1 | Complete |
 | INT-08      | Phase 3 | Pending  |
 | INT-09      | Phase 3 | Pending  |
 | PAGE-01     | Phase 2 | Pending  |
