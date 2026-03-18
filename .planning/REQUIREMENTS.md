@@ -110,17 +110,67 @@ Deferred to future release. Tracked but not in current roadmap.
 
 Which phases cover which requirements. Updated during roadmap creation.
 
-| Requirement                         | Phase | Status |
-| ----------------------------------- | ----- | ------ |
-| (populated during roadmap creation) |       |        |
+| Requirement | Phase   | Status  |
+| ----------- | ------- | ------- |
+| SEO-01      | Phase 1 | Pending |
+| SEO-02      | Phase 2 | Pending |
+| SEO-03      | Phase 1 | Pending |
+| SEO-04      | Phase 2 | Pending |
+| SEO-05      | Phase 2 | Pending |
+| SEO-06      | Phase 2 | Pending |
+| SEO-07      | Phase 2 | Pending |
+| SEO-08      | Phase 2 | Pending |
+| SEO-09      | Phase 1 | Pending |
+| SEO-10      | Phase 2 | Pending |
+| SEO-11      | Phase 4 | Pending |
+| SEO-12      | Phase 4 | Pending |
+| SEO-13      | Phase 6 | Pending |
+| SCHEMA-01   | Phase 2 | Pending |
+| SCHEMA-02   | Phase 2 | Pending |
+| SCHEMA-03   | Phase 2 | Pending |
+| SCHEMA-04   | Phase 2 | Pending |
+| SCHEMA-05   | Phase 2 | Pending |
+| SCHEMA-06   | Phase 4 | Pending |
+| SCHEMA-07   | Phase 4 | Pending |
+| SCHEMA-08   | Phase 2 | Pending |
+| GEO-01      | Phase 4 | Pending |
+| GEO-02      | Phase 4 | Pending |
+| GEO-03      | Phase 4 | Pending |
+| GEO-04      | Phase 4 | Pending |
+| GEO-05      | Phase 4 | Pending |
+| BLOG-01     | Phase 5 | Pending |
+| BLOG-02     | Phase 5 | Pending |
+| BLOG-03     | Phase 5 | Pending |
+| BLOG-04     | Phase 5 | Pending |
+| BLOG-05     | Phase 5 | Pending |
+| INT-01      | Phase 3 | Pending |
+| INT-02      | Phase 3 | Pending |
+| INT-03      | Phase 3 | Pending |
+| INT-04      | Phase 3 | Pending |
+| INT-05      | Phase 3 | Pending |
+| INT-06      | Phase 1 | Pending |
+| INT-07      | Phase 1 | Pending |
+| INT-08      | Phase 3 | Pending |
+| INT-09      | Phase 3 | Pending |
+| PAGE-01     | Phase 2 | Pending |
+| PAGE-02     | Phase 2 | Pending |
+| PAGE-03     | Phase 2 | Pending |
+| PAGE-04     | Phase 2 | Pending |
+| PAGE-05     | Phase 2 | Pending |
+| PAGE-06     | Phase 2 | Pending |
+| PAGE-07     | Phase 2 | Pending |
+| PAGE-08     | Phase 2 | Pending |
+| PAGE-09     | Phase 2 | Pending |
+| PAGE-10     | Phase 2 | Pending |
+| PAGE-11     | Phase 2 | Pending |
 
 **Coverage:**
 
-- v1 requirements: 42 total
-- Mapped to phases: 0
-- Unmapped: 42
+- v1 requirements: 51 total
+- Mapped to phases: 51
+- Unmapped: 0
 
 ---
 
 _Requirements defined: 2026-03-18_
-_Last updated: 2026-03-18 after initial definition_
+_Last updated: 2026-03-18 after roadmap creation_

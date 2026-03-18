@@ -1,241 +1,158 @@
-# Roadmap — FMai Website v1.0
+# Roadmap: FMai Website — Next.js Migration
 
-## Progress
+## Milestones
 
-| Phase | Name                           | Status   | Plans      | Progress |
-| ----- | ------------------------------ | -------- | ---------- | -------- |
-| 1     | Website Rebrand                | Complete | —          | 100%     |
-| 2     | Service Pages                  | Complete | —          | 100%     |
-| 3     | Design Overhaul & FMai Rebrand | Complete | 2026-03-13 | 100%     |
-| 4     | Upwork & Fiverr Setup          | Pending  | —          | 0%       |
-| 5     | Cold Email Campaign            | Pending  | —          | 0%       |
-| 6     | Voice Agent Partnership        | Pending  | —          | 0%       |
-| 7     | SKC Case Study Development     | Pending  | —          | 0%       |
-| 8     | Language Expansion             | Pending  | —          | 0%       |
-| 9     | Living System Page Conversion  | Complete | 2026-03-13 | 100%     |
-| 10    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 11    | 7/7                            | Complete | 2026-03-13 | 0%       |
-| 12    | Design Polish & Media          | Complete | 2026-03-13 | 100%     |
-| 13    | 2/2                            | Complete | 2026-03-13 | 0%       |
-| 14    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 15    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 16    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 17    | 4/4                            | Complete | 2026-03-13 | 0%       |
-| 18    | 3/3                            | Complete | 2026-03-13 | 0%       |
-| 19    | 2/2                            | Complete | 2026-03-13 | 0%       |
-| 20    | 3/3                            | Complete | 2026-03-14 | 33%      |
-| 21    | 3/3                            | Complete | 2026-03-16 | 0%       |
+- **v1.0 MVP** - Phases 1-21 (shipped 2026-03-16) — Vite/React SPA complete
+- **v2.0 Next.js Migration** - Phases 1-6 (in progress) — SSR/SSG with full SEO/GEO/LLMEO
+
+## Overview
+
+Migrate the FMai demo/showcase website from a Vite/React SPA to Next.js with App Router, transforming an invisible-to-search-engines SPA into a fully indexable, AI-discoverable B2B website. The migration progresses from infrastructure (i18n routing, design system, server/client boundary patterns) through page migration with built-in SEO, interactive feature migration (chatbot with 17 tools as the most complex), SEO differentiation layers (GEO/LLMEO), blog infrastructure, and finally performance validation and domain cutover. This is a new repository -- the existing Vite codebase stays intact as reference.
 
 ## Phases
 
-- [x] **Phase 1: Website Rebrand** — Update meta tags, i18n brand keys, hero, header navigation
-- [x] **Phase 2: Service Pages** — Build /automations, /chatbots, /voice-agents pages
-- [x] **Phase 3: Design Overhaul & FMai Rebrand** — Transform site to Living System design, rebrand to FMai, build /marketing-machine (completed 2026-03-13)
-  - **Goal:** Replace indigo/violet/pink glassmorphism with Living System teal/amber palette. Create shared components. Fix critical UX issues. Rebrand to FMai.
-  - **Requirement IDs:** REQ-DESIGN, REQ-COMPONENTS, REQ-UX-FIXES, REQ-BRAND
-- [ ] **Phase 4: Upwork & Fiverr Setup** — Launch freelance profiles and gigs
-- [ ] **Phase 5: Cold Email Campaign** — Build ICP list, set up outreach sequences
-- [ ] **Phase 6: Voice Agent Partnership** — Referral model with friend for voice agent delivery
-- [ ] **Phase 7: SKC Case Study Development** — Track and publish pilot results at 8-12 weeks
-- [ ] **Phase 8: Language Expansion** — German, Spanish improvements, French
-- [x] **Phase 9: Living System Page Conversion** — Convert all existing pages from indigo/violet/purple glassmorphism to Living System teal/amber tokens (completed 2026-03-13)
-  - **Goal:** Replace all old indigo/violet/purple/blue glassmorphism classes across homepage, header, footer, and service pages with Living System teal/amber design tokens. Eliminate 819 legacy color references across 126 files.
-  - **Requirement IDs:** REQ-PAGE-CONVERSION
-  - **Depends on:** Phase 3
-  - **Plans:** 5 plans
-    - [ ] 09-01-PLAN.md — Homepage Header, Hero, Mobile Hero, Footer conversion
-    - [ ] 09-02-PLAN.md — Homepage SocialProof, FeaturesSection, FeatureShowcase conversion
-    - [ ] 09-03-PLAN.md — Service pages (Automations, Chatbots, VoiceAgents) conversion + CTAButton migration
-    - [ ] 09-04-PLAN.md — Supporting pages (About, Pricing, Contact, HowItWorks, Legal) conversion
-    - [ ] 09-05-PLAN.md — Common components (LoadingFallback, FloatingNav, CookieConsent) + CSS + visual audit
+**Phase Numbering:**
 
-- [x] **Phase 10: Homepage Restructuring & Marketing Machine Page** — Restructure homepage as general FutureAI hub, create dedicated /marketing-machine page with moved content, dynamic branding per route, full i18n (EN/NL/ES) (completed 2026-03-13)
-  - **Goal:** Transform homepage from marketing-focused to general FutureAI overview. Create /marketing-machine page with relocated SocialProof/Features content + demo CTA. Ensure all translations consistent across EN/NL/ES.
-  - **Requirement IDs:** REQ-HOMEPAGE-RESTRUCTURE
-  - **Depends on:** Phase 9
-  - **Plans:** 3 plans
-    - [ ] 10-01-PLAN.md — Homepage hub restructuring (Hero rework, service cards grid, SimpleHeader branding)
-    - [ ] 10-02-PLAN.md — MarketingMachinePage creation + routing (relocated components, App.tsx route)
-    - [ ] 10-03-PLAN.md — i18n sync (NL/ES hero_landing fix, service card translations, ES structural fixes)
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [x] **Phase 11: Living System Full Rebuild** — Structural rebuild of all pages to match prototype-2-living-system.html design. All existing content/functionality preserved, only layout/styling/animations rebuilt. (completed 2026-03-13)
-  - **Goal:** Complete structural rebuild — not color swap — of every page to match the Living System prototype (prototype-2-living-system.html). All existing page content, routes, i18n, and functionality must be preserved; only the visual structure, layout, and animations change.
-  - **Design reference:** `prototype-2-living-system.html` (root of repo)
-  - **Requirement IDs:** REQ-LIVING-SYSTEM-REBUILD
-  - **Depends on:** Phase 10
-  - **Scope:**
-    - **Homepage (Hero.tsx, LandingPage.tsx):** Replace centered layout with left-aligned hero + right-side orbit visual (spinning rings with dots). Remove 4 background layers (NeuralNetwork, HolographicGrid, FloatingParticles, GradientOrbs) and replace with animated gradient mesh blobs (warm/cool/mixed, blurred, floating). Rebuild service cards as 2x2 numbered grid (01-04) with gradient border hover effect and arrow circles — not 4-column icon cards.
-    - **Navigation (SimpleHeader.tsx):** Rebuild nav to match prototype — backdrop-blur with gradient underline hover on links, FMai logo with gradient "ai" suffix, warm gradient primary CTA button (not flat teal).
-    - **Footer (Footer.tsx):** Fix remaining slate/indigo hardcoded colors (text-slate-300, border-slate-600, hover:text-indigo-400). Convert fully to Living System tokens.
-    - **Service pages (AutomationsPage, ChatbotsPage, VoiceAgentsPage):** Structural rebuild of layouts to match prototype aesthetic — gradient mesh blob backgrounds, card redesign with gradient borders, warm CTA buttons. Not just color tokens.
-    - **Supporting pages (AboutPage, PricingPage, HowItWorksPage, ContactPage, LegalPage):** Same structural rebuild — match prototype card styling, typography hierarchy, button design.
-    - **MarketingMachinePage:** Add i18n support (currently hardcoded EN). Rebuild layout to match prototype aesthetic.
-    - **Typography:** Switch body font from Inter to DM Sans (as prototype). Keep Space Grotesk for headings, JetBrains Mono for data.
-    - **Shared components:** Evaluate SystemPanel, StatusIndicator, MetricDisplay, SectionContainer — build if useful for consistency, or intentionally skip and document why.
-    - **Button design:** Primary CTAs use warm gradient (amber→darker amber, rounded-14px) not flat teal. Secondary CTAs use glass effect (backdrop-blur, subtle border).
-    - **Card design:** All cards use gradient border-on-hover pattern from prototype (::before pseudo-element with mask). Numbered with service-number pattern.
-    - **Animations:** Smooth CSS animations (fadeIn, fadeInUp, blob floating) — remove heavy Framer Motion where simple CSS suffices.
-    - **Mobile:** SimplifiedHeroMobile.tsx must also be rebuilt to match new design language.
-  - **Plans:** 7 plans
-    - [ ] 11-01-PLAN.md — Foundation: DM Sans typography, Tailwind config (card/btn radius), CSS animations, GradientMesh component
-    - [ ] 11-02-PLAN.md — Global chrome: CTAButton warm gradient + glass, SimpleHeader backdrop-blur nav, Footer token cleanup
-    - [ ] 11-03-PLAN.md — Homepage: Hero left-aligned + OrbitVisual, 2x2 numbered service cards, GradientMesh wired globally
-    - [ ] 11-04-PLAN.md — Service pages: Automations, Chatbots, VoiceAgents structural rebuild (card-gradient-border, CSS animations)
-    - [ ] 11-05-PLAN.md — Supporting pages: About, Pricing, HowItWorks, Contact, Legal structural rebuild
-    - [ ] 11-06-PLAN.md — MarketingMachinePage i18n (EN/NL/ES) + structural rebuild
-    - [ ] 11-07-PLAN.md — Mobile hero rebuild + full-site visual verification checkpoint
+Decimal phases appear between their surrounding integers in numeric order.
 
-- [x] **Phase 12: Design Polish & Media** — Premium hero visual (Spline 3D or Rive), product screenshots/demo video on service pages, micro-interactions (scroll reveals, card hover parallax), typography fine-tuning. (completed 2026-03-13)
-  - **Goal:** Elevate the site from "well-structured" to "premium agency" level. Add interactive 3D hero visual, real product media (screenshots, demo videos), scroll-triggered animations, and typography polish. Research already gathered in phase directory.
-  - **Requirement IDs:** REQ-HERO-3D, REQ-SCROLL-MICRO, REQ-PRODUCT-MEDIA, REQ-TYPOGRAPHY-POLISH
-  - **Research:** `.planning/phases/12-design-polish-media/RESEARCH-NOTES.md`
-  - **Depends on:** Phase 11
-  - **Plans:** 4 plans
-    - [ ] 12-01-PLAN.md — Foundation components: SplineHero, ScrollReveal, ProductMedia, useTilt hook + Spline dependency
-    - [ ] 12-02-PLAN.md — Homepage wiring: SplineHero in Hero.tsx, ScrollReveal on sections, card tilt, CTAButton arrow animation
-    - [ ] 12-03-PLAN.md — Service & supporting pages: ScrollReveal + card-tilt + ProductMedia placeholders + typography polish
-    - [ ] 12-04-PLAN.md — Barrel exports + full-site visual verification checkpoint
+- [ ] **Phase 1: Foundation and Infrastructure** - Next.js scaffold, i18n routing with next-intl, Tailwind v4 design system, server/client boundary patterns
+- [ ] **Phase 2: Page Migration and Core SEO** - All 10 pages server-rendered with per-page metadata, JSON-LD structured data, and semantic HTML
+- [ ] **Phase 3: Interactive Features** - Chatbot engine with 17 tools via Route Handler, demo mode, persona playground, motion v12 animations, Calendly, cookie consent
+- [ ] **Phase 4: SEO Differentiation and GEO/LLMEO** - FAQ schema, llms.txt, quick-answer blocks, entity-first content, dynamic OG images
+- [ ] **Phase 5: Content Hub** - Blog infrastructure with MDX/Velite, article schema, author attribution, ISR
+- [ ] **Phase 6: Performance, Polish, and Cutover** - Core Web Vitals optimization, structured data validation, cross-browser testing, domain cutover
 
-- [x] **Phase 13: Dead Code Cleanup & Media Fix** — Remove orphaned Phase 3 components, delete useTilt hook, create placeholder media assets so ProductMedia doesn't 404. Gap closure from v1.0 audit. (completed 2026-03-13)
-  - **Goal:** Clean up dead code from superseded Phase 3 components and fix ProductMedia 404s by providing lightweight placeholder assets. Resolve REQ-COMPONENTS (remove dead code) and REQ-PRODUCT-MEDIA (fix broken video elements).
-  - **Requirement IDs:** REQ-COMPONENTS, REQ-PRODUCT-MEDIA
-  - **Gap Closure:** v1.0 milestone audit — orphaned components, missing media directory
-  - **Depends on:** Phase 12
-  - **Plans:** 2 plans
-    - [ ] 13-01-PLAN.md — Dead code deletion (4 orphaned components + useTilt hook + barrel export cleanup)
-    - [ ] 13-02-PLAN.md — Placeholder media assets (8 files in public/media/ for ProductMedia components)
+## Phase Details
 
-- [x] **Phase 14: Service Page i18n** — Wire useTranslation into AutomationsPage, ChatbotsPage, VoiceAgentsPage. Extract hardcoded English strings, add NL/ES translations. Gap closure from v1.0 audit. (completed 2026-03-13)
-  - **Goal:** Make all service pages multilingual (EN/NL/ES) so the language switcher works consistently across the entire site. Currently these 3 pages have all text hardcoded in English.
-  - **Requirement IDs:** REQ-SERVICE-I18N
-  - **Gap Closure:** v1.0 milestone audit — broken service page language switch flow
-  - **Depends on:** Phase 12
-  - **Plans:** 3 plans
-    - [ ] 14-01-PLAN.md — AutomationsPage i18n (EN/NL/ES namespace + component refactor)
-    - [ ] 14-02-PLAN.md — ChatbotsPage i18n (EN/NL/ES namespace + component refactor)
-    - [ ] 14-03-PLAN.md — VoiceAgentsPage i18n (EN/NL/ES namespace + component refactor)
+### Phase 1: Foundation and Infrastructure
 
-- [x] **Phase 15: Chatbot Engine Foundation** — Build the shared persona-driven chatbot backend: Vercel AI SDK streaming, Claude integration, prompt caching, tool calling framework, persona router, rate limiting, security guardrails. (completed 2026-03-13)
-  - **Goal:** Create a single API endpoint (`/api/chatbot`) that serves multiple chatbot personas with streaming responses, dual-model routing (Haiku/Sonnet), prompt caching, and tool execution. This is the backend foundation all chatbot personas depend on.
-  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
-  - **Requirement IDs:** REQ-CHATBOT-ENGINE
-  - **Depends on:** Phase 14
-  - **Key patterns adopted from SKC Sindy:** Hybrid prompt caching (static prefix + dynamic knowledge), zero-latency topic router, dual-model complexity routing, tool availability matrix, persona detection by request param.
-  - **Scope:**
-    - `api/chatbot.ts` — Single Vercel serverless endpoint with SSE streaming
-    - `src/lib/chatbot/engine.ts` — Core engine: persona loading, model routing, streaming orchestration
-    - `src/lib/chatbot/types.ts` — TypeScript types (ChatRequest, ChatResponse, PersonaConfig, ToolDefinition, etc.)
-    - `src/lib/chatbot/persona-router.ts` — Persona config loading + validation
-    - `src/lib/chatbot/topic-router.ts` — Zero-latency keyword-based knowledge selection (SKC pattern)
-    - `src/lib/chatbot/prompt-builder.ts` — Hybrid prompt caching: static prefix (cached) + dynamic knowledge (per-request)
-    - `src/lib/chatbot/tool-executor.ts` — Central tool execution with Zod validation + persona gating
-    - `src/lib/chatbot/rate-limiter.ts` — Session limits (15 msg) + global limits (100/hr) + per-IP limits
-    - `src/lib/chatbot/security.ts` — Input validation, PII blocking, output sanitization, prompt injection defense
-    - `src/lib/chatbot/complexity-detector.ts` — Keyword + length based routing to Haiku vs Sonnet
-    - Dependencies: `@ai-sdk/anthropic`, `ai` (Vercel AI SDK), `zod`
-    - Remove: `openai` package dependency
-  - **Plans:** 3 plans
-    - [ ] 15-01-PLAN.md — Foundation: install deps + types.ts + security.ts + rate-limiter.ts + complexity-detector.ts
-    - [ ] 15-02-PLAN.md — Persona infrastructure: topic-router.ts + prompt-builder.ts + persona-router.ts + tool-executor.ts
-    - [ ] 15-03-PLAN.md — Engine wiring: engine.ts + api/chatbot.ts + index.ts + vercel.json CSP update
+**Goal**: A working Next.js foundation exists with locale-routed pages, migrated design system, and documented server/client boundary patterns that prevent "use client" overuse
+**Depends on**: Nothing (first phase)
+**Requirements**: SEO-01, SEO-03, SEO-09, INT-06, INT-07
+**Success Criteria** (what must be TRUE):
 
-- [x] **Phase 16: Chatbot Personas & Knowledge** — Build all 5 persona configurations: system prompts, tool definitions, knowledge bases, topic routers, and conversation starters for concierge, e-commerce, lead-gen, support, and demo-guide personas. (completed 2026-03-13)
-  - **Goal:** Create complete persona configs that plug into the Phase 15 engine. Each persona has: system prompt (with prompt-cache-friendly static prefix), tools with Zod schemas, knowledge base content, topic router keywords, suggested conversation starters (EN/NL/ES), and demo scenario descriptions.
-  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
-  - **Requirement IDs:** REQ-CHATBOT-PERSONAS
-  - **Depends on:** Phase 15
-  - **Parallel:** Can execute in parallel with Phase 17 (both depend only on Phase 15)
-  - **Scope:**
-    - `src/lib/chatbot/personas/concierge.ts` — Website concierge: FMai services, pricing, case studies, navigation. Tools: `get_services`, `book_call`, `navigate_to_page`, `get_case_study`
-    - `src/lib/chatbot/personas/ecommerce.ts` — E-commerce advisor demo: mock skincare catalog (anonymized SKC data). Tools: `search_products`, `get_product_details`, `build_routine`, `add_to_cart_suggestion`
-    - `src/lib/chatbot/personas/leadgen.ts` — Lead qualification demo: B2B SaaS scenario. Tools: `qualify_lead`, `get_pricing_info`, `schedule_demo`, `get_roi_estimate`
-    - `src/lib/chatbot/personas/support.ts` — Knowledge base support demo: mock helpdesk. Tools: `search_knowledge_base`, `create_ticket`, `check_status`, `escalate_to_human`
-    - `src/lib/chatbot/personas/demo-guide.ts` — Demo guide (ARIA v2): marketing machine demo flow. Tools: `navigate_to_page`, `explain_module`, `get_roi_info`, `book_demo`
-    - `src/lib/chatbot/personas/index.ts` — Persona registry + factory
-    - `src/lib/chatbot/knowledge/` — Knowledge base content files per persona
-    - `src/lib/chatbot/tools/` — Tool executor implementations per persona (concierge-tools.ts, ecommerce-tools.ts, etc.)
-    - i18n: Conversation starters + demo scenario descriptions in EN/NL/ES
-  - **Plans:** 3 plans
-    - [ ] 16-01-PLAN.md — Concierge + E-commerce personas (knowledge, tools, config, i18n starters)
-    - [ ] 16-02-PLAN.md — Lead-gen + Support personas (knowledge, tools, config, i18n starters)
-    - [ ] 16-03-PLAN.md — Demo Guide persona + registry index + tool-executor wiring + barrel exports
+1. Next.js app runs locally with App Router and the [locale] dynamic segment routing requests to /en/, /nl/, /es/ URLs correctly
+2. A sample page renders server-side with next-intl translations loaded from migrated translation files in all 3 locales (EN/NL/ES)
+3. Tailwind CSS 4 is configured with Living System design tokens (DM Sans typography, teal/amber palette) and a reference component renders identically to the Vite version
+4. A documented server/client boundary pattern exists with a working example of a Server Component page containing a "use client" island (prevents the critical "use client" overuse pitfall)
+5. Zustand stores are migrated with hydration-safe patterns (skipHydration + delayed rehydration) verified with zero server/client mismatch errors
+   **Plans**: TBD
 
-- [x] **Phase 17: ChatWidget UI Components** — Build the shared ChatWidget React component supporting floating mode (concierge/demo-guide) and embedded mode (demo playground). Includes message rendering with streaming, tool result cards, and suggested conversation starters. (completed 2026-03-13)
-  - **Goal:** Create a single, configurable ChatWidget that works in two modes: floating (FAB + panel, for homepage concierge and demo guide) and embedded (inline, for /chatbots demo playground). Uses Vercel AI SDK `useChat` hook for streaming. Renders tool results as visual cards.
-  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
-  - **Requirement IDs:** REQ-CHATWIDGET-UI
-  - **Depends on:** Phase 15
-  - **Parallel:** Can execute in parallel with Phase 16 (both depend only on Phase 15)
-  - **Scope:**
-    - `src/components/chatbot/ChatWidget.tsx` — Main component with floating/embedded modes, Living System design tokens
-    - `src/components/chatbot/ChatMessages.tsx` — Message list with streaming text display, typing indicators
-    - `src/components/chatbot/ChatInput.tsx` — Input field with suggested conversation starters, send button
-    - `src/components/chatbot/ChatHeader.tsx` — Persona name/avatar, minimize/close, demo mode badge + message counter
-    - `src/components/chatbot/FloatingButton.tsx` — FAB for floating mode (replaces old FloatingActionButton)
-    - `src/components/chatbot/tool-results/ProductCard.tsx` — E-commerce product display (image, price, description, CTA)
-    - `src/components/chatbot/tool-results/LeadScoreCard.tsx` — Lead qualification score visualization
-    - `src/components/chatbot/tool-results/KBArticleCard.tsx` — Knowledge base article preview
-    - `src/components/chatbot/tool-results/TicketCard.tsx` — Support ticket status display
-    - `src/components/chatbot/tool-results/ServiceCard.tsx` — FMai service info display (concierge)
-    - `src/components/chatbot/tool-results/index.ts` — Barrel exports + ToolResultRenderer component
-    - `src/stores/chatStore.ts` — New Zustand store: per-persona message history, streaming state, session management
-    - `src/hooks/usePersonaChat.ts` — Hook wrapping Vercel AI SDK `useChat` with persona config
-    - Styling: Living System design (dark surface, teal/amber accents, gradient borders, DM Sans)
+Plans:
 
-- [x] **Phase 18: ChatbotsPage Demo Playground** — Restructure /chatbots page with interactive demo playground (3 switchable personas), multi-platform visual showcase, progressive CTAs, and updated marketing copy. (completed 2026-03-13)
-  - **Goal:** Transform the /chatbots service page from static marketing into an interactive experience. Visitors can try 3 live chatbot demos (e-commerce, lead-gen, support) via tab switching. Each demo has scenario context, suggested starters, and session limits. Multi-platform showcase visualizes the 1-backend-multi-platform architecture. Progressive CTAs convert demo users to leads.
-  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
-  - **Requirement IDs:** REQ-CHATBOT-PLAYGROUND
-  - **Depends on:** Phase 16, Phase 17
-  - **Parallel:** Can execute in parallel with Phase 19 (both depend on Phase 16+17)
-  - **Scope:**
-    - `src/components/chatbot/DemoPlayground.tsx` — Full demo section: tab selector, context card, embedded ChatWidget, message counter, progressive CTAs
-    - `src/components/chatbot/PersonaSelector.tsx` — Tab component for switching between e-commerce/leadgen/support demos
-    - `src/components/chatbot/DemoContextCard.tsx` — Scenario description + capabilities list per active persona
-    - `src/components/chatbot/ProgressiveCTA.tsx` — CTA that changes based on message count (subtle → strong → gate)
-    - `src/components/chatbot/MultiPlatformShowcase.tsx` — Animated visual: 1 backend → website + Shopify + WhatsApp, with SKC case study
-    - Update `src/pages/ChatbotsPage.tsx` — New hero copy, wire DemoPlayground + MultiPlatformShowcase, update use-cases to link to demos
-    - i18n: Update `public/locales/{en,nl,es}/chatbots.json` with new demo copy, scenario descriptions, CTA text
-    - Conversion funnel: Messages 1-4 pure demo, msg 5 subtle CTA, msg 10 stronger CTA, msg 15 gate with Calendly
-  - **Plans:** 3 plans
-    - [ ] 18-01-PLAN.md — Store extension + DemoPlayground + PersonaSelector + DemoContextCard (core orchestration)
-    - [ ] 18-02-PLAN.md — ProgressiveCTA + MultiPlatformShowcase (conversion + marketing components)
-    - [ ] 18-03-PLAN.md — ChatbotsPage wiring + i18n (EN/NL/ES) + barrel exports + visual verification
+- [ ] 01-01: Next.js project scaffold and App Router configuration
+- [ ] 01-02: i18n routing and translation migration (i18next to next-intl, 30+ translation files)
+- [ ] 01-03: Design system migration (Tailwind v4, next/font, tokens) and provider setup (Zustand hydration)
 
-- [x] **Phase 19: Homepage Concierge + Demo Guide + ARIA Cleanup** — Wire concierge persona as floating chatbot on marketing pages, demo-guide persona on demo pages, remove all old ARIA code and OpenAI dependencies. (completed 2026-03-13)
-  - **Goal:** Replace the entire ARIA system with the new persona-driven chatbot. Concierge persona floats on marketing pages (/, /pricing, /about, /chatbots, etc.). Demo-guide persona activates on demo pages (/explorer, /calculator, /dashboard) with page-context awareness and module follow-up behavior (preserved from ARIA). Clean removal of all old code.
-  - **Design reference:** `docs/plans/2026-03-13-chatbot-showcase-design.md`
-  - **Requirement IDs:** REQ-CHATBOT-CONCIERGE, REQ-ARIA-CLEANUP
-  - **Depends on:** Phase 16, Phase 17
-  - **Parallel:** Can execute in parallel with Phase 18 (both depend on Phase 16+17)
-  - **Scope:**
-    - Wire ChatWidget (floating mode) into `src/App.tsx` with persona switching based on route (marketing → concierge, demo → demo-guide)
-    - Page context detection: concierge knows which marketing page visitor is on, demo-guide knows which demo step
-    - Demo-guide: preserve ARIA's module follow-up behavior, contextual greetings, journey nudges — but powered by new engine
-    - **Remove:** `src/components/ai-assistant/` (entire directory), `src/services/llmService.ts`, `src/utils/conversationEngine.ts`, `src/utils/intentRecognition.ts`, `src/utils/questionMatcher.ts`, `src/stores/chatStore.ts` (old), `src/stores/journeyStore.ts`, `src/types/chat.ts` (old), `src/config/knowledgeBase.json`, `src/config/conversationPersonality.ts`, `src/config/platformKnowledge.ts`, `src/config/assistantJourneys.ts`, `src/hooks/useModuleFollowUp.ts`, `src/hooks/useJourneyNudges.ts`, `src/hooks/useAchievementTracking.ts`, `api/chat.ts`
-    - Remove `openai` package from dependencies
-    - Update `src/App.tsx` to use new ChatWidget instead of AIJourneyAssistant
-    - Verify all demo pages still work correctly without ARIA coupling
-  - **Plans:** 2 plans
-    - [ ] 19-01-PLAN.md — Wire ChatWidget floating mode with route-based persona switching + pageContext plumbing
-    - [ ] 19-02-PLAN.md — Systematic ARIA cleanup (refactor shared deps, delete all ARIA files, clean barrels/i18n)
+### Phase 2: Page Migration and Core SEO
 
-- [x] **Phase 20: Flagship Concierge Chatbot** — Unlimited multi-tool assistant with expandable side panel, navigation actions, and all persona capabilities. The "best of the best" main chatbot combining all tools, no message limit, rich UI with info panels and page navigation. (completed 2026-03-14)
-  - **Goal:** Transform the floating concierge from a basic chat window into a flagship showcase — unlimited messages, all tools from every persona (navigation, product search, lead qualification, support tickets, booking, ROI calculation), expandable side panel for rich content (case studies, product cards, module details), and proactive page navigation buttons. This is the live demo of what FMai builds for clients.
-  - **Requirement IDs:** REQ-FLAGSHIP-PERSONA, REQ-TOOL-CONSOLIDATION, REQ-UNLIMITED-MODE, REQ-SIDE-PANEL, REQ-NAVIGATION-ACTIONS, REQ-ARIA-REVIVAL, REQ-CONTEXT-AWARENESS, REQ-FLAGSHIP-WIRING
-  - **Depends on:** Phase 19
-  - **Plans:** 3 plans
-    - [ ] 20-01-PLAN.md — Flagship persona backend (merged tools, KB, curated prompt, persona-aware rate limiter)
-    - [ ] 20-02-PLAN.md — Side panel + navigation buttons + ChatWidget flagship mode
-    - [ ] 20-03-PLAN.md — App.tsx flagship wiring + context-awareness hook + ARIA feature revival
+**Goal**: All 10 existing pages are server-rendered with per-page metadata, JSON-LD structured data, and semantic HTML -- every page is fully indexable by search engines and AI crawlers
+**Depends on**: Phase 1
+**Requirements**: SEO-02, SEO-04, SEO-05, SEO-06, SEO-07, SEO-08, SEO-10, SCHEMA-01, SCHEMA-02, SCHEMA-03, SCHEMA-04, SCHEMA-05, SCHEMA-08, PAGE-01, PAGE-02, PAGE-03, PAGE-04, PAGE-05, PAGE-06, PAGE-07, PAGE-08, PAGE-09, PAGE-10, PAGE-11
+**Success Criteria** (what must be TRUE):
 
-- [x] **Phase 21: Guided Demo Mode** — Add guided demo mode to the flagship chatbot: hybrid orchestration (scripted user messages + real AI tool calls), 3 scenario-based flows, BookingCard with Calendly embed in side panel, progress indicators, checkpoints, and premium UX animations. (planned 2026-03-16) (completed 2026-03-16)
-  - **Goal:** Walk prospects through realistic business scenarios with a single button press, showcasing all chatbot capabilities (17 tools, side panel, booking) using real AI responses. Two entry points: welcome message CTA + suggested prompt. Three scenarios: New Client Journey, E-commerce Brand, Client Support.
-  - **Design reference:** `docs/plans/2026-03-16-guided-demo-mode-design.md`
-  - **Implementation reference:** `docs/plans/2026-03-16-guided-demo-implementation.md`
-  - **Requirement IDs:** REQ-DEMO-SCENARIOS, REQ-DEMO-STATE, REQ-BOOKING-SIDEPANEL, REQ-DEMO-UI-COMPONENTS, REQ-DEMO-ORCHESTRATOR, REQ-DEMO-ENTRY-POINTS, REQ-DEBUG-CLEANUP
-  - **Depends on:** Phase 20
-  - **Plans:** 3 plans
-    - [ ] 21-01-PLAN.md — Foundation: scenario data + Zustand store extension + BookingCard + debug cleanup
-    - [ ] 21-02-PLAN.md — Demo UI components: DemoScenarioCard + DemoCheckpoint + DemoProgress + DemoCompletionCard + pulseGlow CSS
-    - [ ] 21-03-PLAN.md — Integration: DemoOrchestrator state machine + ChatWidget wiring + entry points + E2E test
+1. All 10 pages (Homepage, Automations, Chatbots, Voice Agents, Marketing Machine, About, Pricing, How It Works, Contact, Legal) render server-side with correct content in all 3 locales
+2. Every page has unique, localized meta title, description, and Open Graph tags visible in the HTML source
+3. JSON-LD structured data renders in page source: Organization on all pages, WebSite with SearchAction on homepage, Service on each service page, WebPage on subpages, BreadcrumbList from route structure, dateModified on all pages
+4. XML sitemap is accessible with all pages and locale alternates; robots.txt includes AI crawler allow-policy
+5. Custom 404 page returns HTTP 404 status; all images use next/image with explicit dimensions; hreflang and canonical URLs are correct
+   **Plans**: TBD
+
+Plans:
+
+- [ ] 02-01: SEO infrastructure (shared metadata generator, JSON-LD components, sitemap, robots.txt, error pages)
+- [ ] 02-02: Shared UI component migration (layout, cards, buttons, modals) with semantic HTML
+- [ ] 02-03: Homepage and 4 service page migration with structured data and SEO copy rework
+- [ ] 02-04: Supporting page migration (About, Pricing, How It Works, Contact, Legal) with structured data
+
+### Phase 3: Interactive Features
+
+**Goal**: All interactive features from the Vite site work in the Next.js app -- the flagship chatbot with streaming and 17 tools, demo mode, persona playground, motion animations, Calendly integration, and cookie consent
+**Depends on**: Phase 2
+**Requirements**: INT-01, INT-02, INT-03, INT-04, INT-05, INT-08, INT-09
+**Success Criteria** (what must be TRUE):
+
+1. Chatbot opens with server-rendered chrome, streams responses via Next.js Route Handler, and all 17 tools execute correctly with results rendering in the side panel
+2. 3-persona demo playground on the Chatbots page lets users switch personas and receive persona-specific responses with progressive CTAs
+3. Guided demo mode walks through all 3 scenarios with the state machine orchestrator controlling progression and booking flow
+4. Motion v12 animations render without layout shift above the fold -- scroll reveals, card tilts, page transitions, and gradient mesh all work
+5. Calendly modal opens from CTA buttons across all pages; cookie consent banner appears and persists user preference
+   **Plans**: TBD
+
+Plans:
+
+- [ ] 03-01: Animation wrapper pattern (motion v12 "use client" islands) and shared interactive components
+- [ ] 03-02: Chatbot engine migration (Route Handler, AI SDK streaming, 17 tools, side panel, persona routing)
+- [ ] 03-03: Demo mode, persona playground, Calendly integration, and cookie consent
+
+### Phase 4: SEO Differentiation and GEO/LLMEO
+
+**Goal**: The site goes beyond basic SEO with AI-optimized content structures that make FMai citeable by AI assistants and prominent in generative search results
+**Depends on**: Phase 2 (pages must exist; independent of Phase 3)
+**Requirements**: SEO-11, SEO-12, SCHEMA-06, SCHEMA-07, GEO-01, GEO-02, GEO-03, GEO-04, GEO-05
+**Success Criteria** (what must be TRUE):
+
+1. Every service page has a 5-8 item FAQ section with valid FAQPage JSON-LD; How It Works page has HowTo JSON-LD
+2. llms.txt and llms-full.txt are accessible at the domain root with accurate site summary and key page links
+3. Each service page has a quick-answer block (1-2 sentence definition) above the fold and question-based H2/H3 headings matching AI query patterns
+4. "Future Marketing AI" entity definition appears consistently across all pages with entity-first content structure
+5. Dynamic OG images generate via Satori for all pages with branded social preview design
+   **Plans**: TBD
+
+Plans:
+
+- [ ] 04-01: FAQ sections with FAQPage/HowTo schema and GEO content optimization (quick-answers, prompt-aligned headings, entity-first)
+- [ ] 04-02: LLMEO artifacts (llms.txt, llms-full.txt) and dynamic OG image generation (Satori + static OG fallbacks)
+
+### Phase 5: Content Hub
+
+**Goal**: A functional blog infrastructure exists where MDX articles render as fully SEO-optimized pages with proper schema and ISR, ready for content to be published
+**Depends on**: Phase 2 (pages must exist; independent of Phases 3-4)
+**Requirements**: BLOG-01, BLOG-02, BLOG-03, BLOG-04, BLOG-05
+**Success Criteria** (what must be TRUE):
+
+1. Blog listing page displays posts with category filtering, renders server-side, and is included in sitemap
+2. Individual blog posts render from MDX files with Article JSON-LD, datePublished, dateModified, and author Person schema
+3. Blog pages use ISR so new posts appear without full rebuild
+4. At least one seed article is published as proof the full pipeline works end-to-end (MDX to rendered page with schema)
+   **Plans**: TBD
+
+Plans:
+
+- [ ] 05-01: Blog infrastructure (Velite/MDX setup, content types, listing page with category filter)
+- [ ] 05-02: Blog post template, Article/Person schema, ISR configuration, and seed content
+
+### Phase 6: Performance, Polish, and Cutover
+
+**Goal**: The site meets all Core Web Vitals targets, passes structured data validation, works across browsers, and is production-ready for domain cutover from the Vite site
+**Depends on**: Phase 3, Phase 4, Phase 5 (everything must be built before final validation)
+**Requirements**: SEO-13
+**Success Criteria** (what must be TRUE):
+
+1. Core Web Vitals are green on all pages: LCP <2.5s, INP <200ms, CLS <0.1 as measured by Lighthouse
+2. All JSON-LD structured data validates with zero errors in Google Rich Results Test
+3. Full sitemap and robots.txt are verified complete; hreflang tags are correct across all locale/page combinations
+4. Site renders correctly in Chrome, Firefox, Safari, and Edge with no visual regressions compared to the Vite version
+   **Plans**: TBD
+
+Plans:
+
+- [ ] 06-01: Performance optimization (bundle analysis, code splitting, image optimization, CWV tuning)
+- [ ] 06-02: Cross-validation (structured data audit, browser testing, visual regression check) and cutover preparation
+
+## Progress
+
+**Execution Order:**
+Phases 1 and 2 are sequential. After Phase 2, Phases 3, 4, and 5 can execute in parallel (all depend on Phase 2 but not on each other). Phase 6 waits for all others.
+
+| Phase                                | Plans Complete | Status      | Completed |
+| ------------------------------------ | -------------- | ----------- | --------- |
+| 1. Foundation and Infrastructure     | 0/3            | Not started | -         |
+| 2. Page Migration and Core SEO       | 0/4            | Not started | -         |
+| 3. Interactive Features              | 0/3            | Not started | -         |
+| 4. SEO Differentiation and GEO/LLMEO | 0/2            | Not started | -         |
+| 5. Content Hub                       | 0/2            | Not started | -         |
+| 6. Performance, Polish, and Cutover  | 0/2            | Not started | -         |
