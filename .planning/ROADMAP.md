@@ -102,12 +102,12 @@ Plans:
 3. Each service page has a quick-answer block (1-2 sentence definition) above the fold and question-based H2/H3 headings matching AI query patterns
 4. "Future Marketing AI" entity definition appears consistently across all pages with entity-first content structure
 5. Dynamic OG images generate via Satori for all pages with branded social preview design
-   **Plans**: 3 plans
+   **Plans**: 2 plans
 
 Plans:
 
-- [ ] 04-01: FAQ sections with FAQPage/HowTo schema and GEO content optimization (quick-answers, prompt-aligned headings, entity-first)
-- [ ] 04-02: LLMEO artifacts (llms.txt, llms-full.txt) and dynamic OG image generation (Satori + static OG fallbacks)
+- [ ] 04-01-PLAN.md — FAQ/HowTo schema + GEO content (QuickAnswer blocks, entity-first, question-based headings)
+- [ ] 04-02-PLAN.md — LLMEO artifacts (llms.txt, llms-full.txt) + dynamic OG images (Satori + middleware fix)
 
 ### Phase 5: Content Hub
 
