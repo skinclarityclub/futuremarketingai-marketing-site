@@ -46,9 +46,9 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 - [x] **BLOG-01**: Blog/content hub page structure with MDX support
 - [x] **BLOG-02**: Blog listing page with category filtering
-- [ ] **BLOG-03**: Individual blog post template with Article JSON-LD
-- [ ] **BLOG-04**: Author attribution with Person schema
-- [ ] **BLOG-05**: ISR (Incremental Static Regeneration) for blog pages
+- [x] **BLOG-03**: Individual blog post template with Article JSON-LD
+- [x] **BLOG-04**: Author attribution with Person schema
+- [x] **BLOG-05**: ISR (Incremental Static Regeneration) for blog pages
 
 ### Interactive Features
 
@@ -140,9 +140,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEO-05      | Phase 4 | Complete |
 | BLOG-01     | Phase 5 | Complete |
 | BLOG-02     | Phase 5 | Complete |
-| BLOG-03     | Phase 5 | Pending  |
-| BLOG-04     | Phase 5 | Pending  |
-| BLOG-05     | Phase 5 | Pending  |
+| BLOG-03     | Phase 5 | Complete |
+| BLOG-04     | Phase 5 | Complete |
+| BLOG-05     | Phase 5 | Complete |
 | INT-01      | Phase 3 | Complete |
 | INT-02      | Phase 3 | Complete |
 | INT-03      | Phase 3 | Complete |

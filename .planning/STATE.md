@@ -18,24 +18,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
-**Current focus:** Phase 4 — SEO Differentiation and GEO/LLMEO
+**Current focus:** Phase 5 — Content Hub (complete)
 
 ## Current Position
 
-Phase: 5 of 6 (Content Hub)
-Plan: 1 of 2 in current phase
-Status: Plan 05-01 complete (MDX blog infrastructure + listing page)
-Last activity: 2026-03-18 — Completed 05-01 Blog Infrastructure (MDX pipeline + listing page + category filter)
+Phase: 5 of 6 (Content Hub) -- COMPLETE
+Plan: 2 of 2 in current phase (all complete)
+Status: Phase 05 complete (blog infrastructure + post template + seed article + sitemap)
+Last activity: 2026-03-18 — Completed 05-02 Blog Post Template and Seed Article
 
-Progress: [█████████░] 52%
+Progress: [██████████] 55%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 14
+- Total plans completed: 15
 - Average duration: 8 min
-- Total execution time: 1.73 hours
+- Total execution time: 1.80 hours
 
 **By Phase:**
 
@@ -53,6 +53,7 @@ Progress: [█████████░] 52%
 
 _Updated after each plan completion_
 | Phase 05 P01 | 5min | 2 tasks | 9 files |
+| Phase 05 P02 | 4min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,8 @@ Recent decisions affecting current work:
 - [Phase 05]: MDX plugin chain: withNextIntl(withMDX(config)) -- next-intl outermost
 - [Phase 05]: Blog page hardcoded English metadata (matches Phase 4 FAQ pattern)
 - [Phase 05]: CategoryFilter uses URL search params for server-compatible filtering
+- [Phase 05]: @content tsconfig path alias for dynamic MDX imports from content directory
+- [Phase 05]: dynamicParams = false for strict 404 on unknown blog slugs
 
 ### Pending Todos
 
@@ -116,5 +119,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 05-01-PLAN.md (Blog Infrastructure — MDX pipeline + listing page + category filter)
-Resume file: .planning/phases/05-content-hub/05-01-SUMMARY.md
+Stopped at: Completed 05-02-PLAN.md (Blog Post Template + Seed Article + Sitemap integration)
+Resume file: .planning/phases/05-content-hub/05-02-SUMMARY.md
