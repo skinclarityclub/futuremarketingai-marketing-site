@@ -22,12 +22,14 @@ export async function generatePageMetadata({
 
   const title = t(`${metaKeyPrefix}.title`)
   const description = t(`${metaKeyPrefix}.description`)
-  const url = `${SITE_URL}/${locale}${path === '/' ? '' : path}`
+  const canonicalPath = path === '/' ? '' : path
+  const url = `${SITE_URL}/${locale}${canonicalPath}`
 
   const alternates: Record<string, string> = {}
   for (const loc of routing.locales) {
-    alternates[loc] = `${SITE_URL}/${loc}${path === '/' ? '' : path}`
+    alternates[loc] = `${SITE_URL}/${loc}${canonicalPath}`
   }
+  alternates['x-default'] = `${SITE_URL}/en${canonicalPath}`
 
   return {
     title,
