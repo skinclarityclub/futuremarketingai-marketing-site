@@ -23,26 +23,26 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 2 of 6 (Page Migration and Core SEO)
-Plan: 3 of 4 in current phase
+Plan: 4 of 4 in current phase
 Status: In Progress
-Last activity: 2026-03-18 — Completed 02-01 SEO infrastructure (metadata, JSON-LD, sitemap, robots, error pages)
+Last activity: 2026-03-18 — Completed 02-03 Homepage and Service Pages (5 pages with JSON-LD)
 
-Progress: [███░░░░░░░] 25%
+Progress: [████░░░░░░] 33%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 5
-- Average duration: 5 min
-- Total execution time: 0.45 hours
+- Total plans completed: 6
+- Average duration: 7 min
+- Total execution time: 0.68 hours
 
 **By Phase:**
 
 | Phase | Plans | Total  | Avg/Plan |
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
-| 02    | 2     | 12 min | 6 min    |
+| 02    | 3     | 26 min | 9 min    |
 
 **Recent Trend:**
 
@@ -75,6 +75,9 @@ Recent decisions affecting current work:
 - 2026-03-18: Service JSON-LD uses type assertion for dateModified (schema-dts lacks it)
 - 2026-03-18: metaKeyPrefix option in generatePageMetadata for seo._/meta._ patterns
 - 2026-03-18: Error boundary uses hardcoded English (use client prevents server translations)
+- 2026-03-18: Full Next.js scaffold created inline (fmai-nextjs/ was documentation-only, never built)
+- 2026-03-18: reactCompiler removed from next.config.ts (babel-plugin not installed)
+- 2026-03-18: fmai-nextjs added to parent .eslintignore (separate tsconfig)
 
 ### Pending Todos
 
@@ -88,5 +91,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 02-01-PLAN.md (SEO infrastructure)
-Resume file: .planning/phases/02-page-migration-and-core-seo/02-01-SUMMARY.md
+Stopped at: Completed 02-03-PLAN.md (Homepage and Service Pages)
+Resume file: .planning/phases/02-page-migration-and-core-seo/02-03-SUMMARY.md

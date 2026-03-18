@@ -64,17 +64,17 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 ### Page Migration
 
-- [ ] **PAGE-01**: Homepage with service cards, orbit visual, gradient mesh
-- [ ] **PAGE-02**: Automations service page
-- [ ] **PAGE-03**: Chatbots service page with demo playground
-- [ ] **PAGE-04**: Voice Agents service page
-- [ ] **PAGE-05**: Marketing Machine service page
+- [x] **PAGE-01**: Homepage with service cards, orbit visual, gradient mesh
+- [x] **PAGE-02**: Automations service page
+- [x] **PAGE-03**: Chatbots service page with demo playground
+- [x] **PAGE-04**: Voice Agents service page
+- [x] **PAGE-05**: Marketing Machine service page
 - [ ] **PAGE-06**: About page
 - [ ] **PAGE-07**: Pricing page with comparison tables
 - [ ] **PAGE-08**: How It Works page
 - [ ] **PAGE-09**: Contact page
 - [ ] **PAGE-10**: Legal page
-- [ ] **PAGE-11**: Content/copy rework for SEO on all pages
+- [x] **PAGE-11**: Content/copy rework for SEO on all pages
 
 ## v2 Requirements
 
@@ -152,17 +152,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INT-07      | Phase 1 | Complete |
 | INT-08      | Phase 3 | Pending  |
 | INT-09      | Phase 3 | Pending  |
-| PAGE-01     | Phase 2 | Pending  |
-| PAGE-02     | Phase 2 | Pending  |
-| PAGE-03     | Phase 2 | Pending  |
-| PAGE-04     | Phase 2 | Pending  |
-| PAGE-05     | Phase 2 | Pending  |
+| PAGE-01     | Phase 2 | Complete |
+| PAGE-02     | Phase 2 | Complete |
+| PAGE-03     | Phase 2 | Complete |
+| PAGE-04     | Phase 2 | Complete |
+| PAGE-05     | Phase 2 | Complete |
 | PAGE-06     | Phase 2 | Pending  |
 | PAGE-07     | Phase 2 | Pending  |
 | PAGE-08     | Phase 2 | Pending  |
 | PAGE-09     | Phase 2 | Pending  |
 | PAGE-10     | Phase 2 | Pending  |
-| PAGE-11     | Phase 2 | Pending  |
+| PAGE-11     | Phase 2 | Complete |
 
 **Coverage:**
 
