@@ -22,10 +22,10 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 
 ## Current Position
 
-Phase: 4 of 6 (SEO Differentiation and GEO/LLMEO)
-Plan: 2 of 2 in current phase (PHASE COMPLETE)
-Status: Phase 4 complete (both GEO content optimization and LLMEO/OG Images done)
-Last activity: 2026-03-18 — Completed 04-01 GEO Content Optimization (FAQ/HowTo schema + QuickAnswer blocks)
+Phase: 5 of 6 (Content Hub)
+Plan: 1 of 2 in current phase
+Status: Plan 05-01 complete (MDX blog infrastructure + listing page)
+Last activity: 2026-03-18 — Completed 05-01 Blog Infrastructure (MDX pipeline + listing page + category filter)
 
 Progress: [█████████░] 52%
 
@@ -52,6 +52,7 @@ Progress: [█████████░] 52%
 - Trend: -
 
 _Updated after each plan completion_
+| Phase 05 P01 | 5min | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,9 @@ Recent decisions affecting current work:
 - 2026-03-18: FAQ content hardcoded in English for Phase 4 (i18n deferred to content phase)
 - 2026-03-18: Visible FAQ sections use dl/dt/dd semantic markup for accessibility
 - 2026-03-18: QuickAnswerBlock placed after hero, before first body section on all service pages
+- [Phase 05]: MDX plugin chain: withNextIntl(withMDX(config)) -- next-intl outermost
+- [Phase 05]: Blog page hardcoded English metadata (matches Phase 4 FAQ pattern)
+- [Phase 05]: CategoryFilter uses URL search params for server-compatible filtering
 
 ### Pending Todos
 
@@ -112,5 +116,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 04-01-PLAN.md (GEO Content Optimization — FAQ/HowTo schema + QuickAnswer blocks)
-Resume file: .planning/phases/04-seo-differentiation-and-geo-llmeo/04-01-SUMMARY.md
+Stopped at: Completed 05-01-PLAN.md (Blog Infrastructure — MDX pipeline + listing page + category filter)
+Resume file: .planning/phases/05-content-hub/05-01-SUMMARY.md
