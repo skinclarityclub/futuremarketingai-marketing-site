@@ -52,8 +52,8 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 ### Interactive Features
 
-- [ ] **INT-01**: Flagship concierge chatbot with SSR chrome and client hydration
-- [ ] **INT-02**: All 17 chatbot tools migrated to Next.js Route Handlers
+- [x] **INT-01**: Flagship concierge chatbot with SSR chrome and client hydration
+- [x] **INT-02**: All 17 chatbot tools migrated to Next.js Route Handlers
 - [ ] **INT-03**: 3-persona demo playground on Chatbots page
 - [ ] **INT-04**: Guided demo mode with 3 scenarios and state machine
 - [x] **INT-05**: motion v12 animations with "use client" wrapper pattern
@@ -143,8 +143,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BLOG-03     | Phase 5 | Pending  |
 | BLOG-04     | Phase 5 | Pending  |
 | BLOG-05     | Phase 5 | Pending  |
-| INT-01      | Phase 3 | Pending  |
-| INT-02      | Phase 3 | Pending  |
+| INT-01      | Phase 3 | Complete |
+| INT-02      | Phase 3 | Complete |
 | INT-03      | Phase 3 | Pending  |
 | INT-04      | Phase 3 | Pending  |
 | INT-05      | Phase 3 | Complete |

@@ -23,19 +23,19 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 3 of 6 (Interactive Features)
-Plan: 1 of 3 in current phase
-Status: Plan 03-01 complete, continuing Phase 3
-Last activity: 2026-03-18 — Completed 03-01 Interactive Foundation (motion wrappers, chatbotStore, Providers)
+Plan: 2 of 3 in current phase
+Status: Plan 03-02 complete, continuing Phase 3
+Last activity: 2026-03-18 — Completed 03-02 Chatbot Engine and UI Migration
 
-Progress: [██████░░░░] 38%
+Progress: [██████░░░░] 42%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 9
-- Average duration: 8 min
-- Total execution time: 1.2 hours
+- Total plans completed: 10
+- Average duration: 9 min
+- Total execution time: 1.5 hours
 
 **By Phase:**
 
@@ -43,7 +43,7 @@ Progress: [██████░░░░] 38%
 | ----- | ----- | ------ | -------- |
 | 01    | 3     | 15 min | 5 min    |
 | 02    | 5     | 48 min | 10 min   |
-| 03    | 1     | 5 min  | 5 min    |
+| 03    | 2     | 25 min | 13 min   |
 
 **Recent Trend:**
 
@@ -85,6 +85,9 @@ Recent decisions affecting current work:
 - 2026-03-18: motion/react imports (not framer-motion) for motion v12 compatibility
 - 2026-03-18: Simplified chatbotStore interface vs Vite version (Plan 02 extends as needed)
 - 2026-03-18: Mounted guard pattern for SSR-unsafe third-party components
+- 2026-03-18: Extended chatbotStore with full side panel, minimize, and demo state for ChatWidget
+- 2026-03-18: Route Handler delegation pattern: thin route.ts delegates to engine.ts handleChatRequest
+- 2026-03-18: DemoOrchestrator/DemoProgress deferred from ChatWidget (not in plan scope)
 
 ### Pending Todos
 
@@ -98,5 +101,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed 03-01-PLAN.md (Interactive Foundation — motion wrappers, chatbotStore, Providers, CookieConsentBanner)
-Resume file: .planning/phases/03-interactive-features/03-01-SUMMARY.md
+Stopped at: Completed 03-02-PLAN.md (Chatbot Engine and UI Migration — 30 server files, 18 UI components, floating chatbot)
+Resume file: .planning/phases/03-interactive-features/03-02-SUMMARY.md
