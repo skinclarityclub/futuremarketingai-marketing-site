@@ -9,6 +9,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
 import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
+import { ChatWidgetIsland } from '@/components/chatbot/ChatWidgetIsland'
 import '@/app/globals.css'
 
 export function generateStaticParams() {
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
             {children}
             <Footer locale={locale} />
             <CookieConsentBanner />
+            <ChatWidgetIsland />
           </Providers>
         </NextIntlClientProvider>
       </body>

@@ -15,6 +15,10 @@ interface ChatbotState {
   personaId: string
   /** Whether the chatbot panel is open */
   isOpen: boolean
+  /** Whether the chatbot panel is minimized */
+  isMinimized: boolean
+  /** Whether there are unread messages */
+  hasUnread: boolean
   /** Session identifier (UUID) */
   sessionId: string
   /** Message counts per persona */
@@ -22,18 +26,26 @@ interface ChatbotState {
   /** Demo mode toggle */
   demoMode: boolean
   /** Active demo scenario ID */
-  demoScenario: string | null
+  demoScenarioId: string | null
   /** Current demo step index */
-  demoStep: number
+  demoStepIndex: number
+  /** Side panel open state */
+  isSidePanelOpen: boolean
+  /** Side panel content */
+  sidePanelContent: { toolName: string; data: unknown } | null
 
   // Actions
   setPersona: (id: string) => void
-  toggleOpen: () => void
+  toggle: () => void
+  close: () => void
+  minimize: () => void
+  markRead: () => void
   incrementMessageCount: (personaId: string) => void
   setDemoMode: (enabled: boolean) => void
-  setDemoScenario: (id: string | null) => void
-  setDemoStep: (step: number) => void
+  startDemo: () => void
   resetDemo: () => void
+  openSidePanel: (toolName: string, data: unknown) => void
+  closeSidePanel: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -42,15 +54,26 @@ export const useChatbotStore = create<ChatbotState>()(
       // Defaults
       personaId: 'concierge',
       isOpen: false,
+      isMinimized: false,
+      hasUnread: false,
       sessionId: generateSessionId(),
       messageCounts: {},
       demoMode: false,
-      demoScenario: null,
-      demoStep: 0,
+      demoScenarioId: null,
+      demoStepIndex: 0,
+      isSidePanelOpen: false,
+      sidePanelContent: null,
 
       // Actions
       setPersona: (id: string) => set({ personaId: id }),
-      toggleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+      toggle: () =>
+        set((state) => ({
+          isOpen: !state.isOpen,
+          isMinimized: false,
+        })),
+      close: () => set({ isOpen: false, isMinimized: false }),
+      minimize: () => set({ isMinimized: true }),
+      markRead: () => set({ hasUnread: false }),
       incrementMessageCount: (personaId: string) =>
         set((state) => ({
           messageCounts: {
@@ -59,13 +82,27 @@ export const useChatbotStore = create<ChatbotState>()(
           },
         })),
       setDemoMode: (enabled: boolean) => set({ demoMode: enabled }),
-      setDemoScenario: (id: string | null) => set({ demoScenario: id }),
-      setDemoStep: (step: number) => set({ demoStep: step }),
+      startDemo: () =>
+        set({
+          demoMode: true,
+          demoScenarioId: 'flagship-tour',
+          demoStepIndex: 0,
+        }),
       resetDemo: () =>
         set({
           demoMode: false,
-          demoScenario: null,
-          demoStep: 0,
+          demoScenarioId: null,
+          demoStepIndex: 0,
+        }),
+      openSidePanel: (toolName: string, data: unknown) =>
+        set({
+          isSidePanelOpen: true,
+          sidePanelContent: { toolName, data },
+        }),
+      closeSidePanel: () =>
+        set({
+          isSidePanelOpen: false,
+          sidePanelContent: null,
         }),
     }),
     {
