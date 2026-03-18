@@ -120,12 +120,12 @@ Plans:
 2. Individual blog posts render from MDX files with Article JSON-LD, datePublished, dateModified, and author Person schema
 3. Blog pages use ISR so new posts appear without full rebuild
 4. At least one seed article is published as proof the full pipeline works end-to-end (MDX to rendered page with schema)
-   **Plans**: 3 plans
+   **Plans**: 2 plans
 
 Plans:
 
-- [ ] 05-01: Blog infrastructure (Velite/MDX setup, content types, listing page with category filter)
-- [ ] 05-02: Blog post template, Article/Person schema, ISR configuration, and seed content
+- [ ] 05-01-PLAN.md — Blog infrastructure (@next/mdx setup, blog utilities, listing page with category filter)
+- [ ] 05-02-PLAN.md — Blog post template, Article/Person JSON-LD, ISR, sitemap integration, and seed article
 
 ### Phase 6: Performance, Polish, and Cutover
 
