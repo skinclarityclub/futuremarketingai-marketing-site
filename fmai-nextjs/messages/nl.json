@@ -139,8 +139,39 @@
       }
     },
     "demo": {
-      "title": "Interactive Demo",
-      "placeholder": "Interactive chatbot demo coming soon. In the meantime, book a strategy session to see a live demonstration."
+      "title": "Interactieve Demo",
+      "subtitle": "Wissel tussen persona's en zie hoe elke chatbot verschillende scenario's afhandelt.",
+      "placeholder": "Interactieve chatbot demo komt binnenkort. Plan in de tussentijd een strategiesessie voor een live demonstratie.",
+      "capabilities_label": "Mogelijkheden",
+      "tabs": {
+        "ecommerce": {
+          "label": "E-commerce",
+          "scenario_title": "Huidverzorging Productadviseur",
+          "scenario": "Een AI-aangedreven productadviseur die klanten helpt de juiste huidverzorgingsproducten te vinden op basis van hun huidtype, zorgen en voorkeuren.",
+          "capabilities_0": "Producten zoeken en aanbevelingen",
+          "capabilities_1": "Routine samenstellen voor ochtend/avond",
+          "capabilities_2": "Ingredientenanalyse",
+          "capabilities_3": "Bestelling volgen en ondersteuning"
+        },
+        "leadgen": {
+          "label": "Lead Kwalificatie",
+          "scenario_title": "AI Lead Kwalificeerder",
+          "scenario": "Een lead kwalificatie bot die prospects evalueert, hun behoeften begrijpt en gekwalificeerde leads naar uw sales team doorstuurt.",
+          "capabilities_0": "Behoefteanalyse en scoring",
+          "capabilities_1": "Budget en tijdlijn kwalificatie",
+          "capabilities_2": "ROI schatting",
+          "capabilities_3": "Geautomatiseerde boekingsoverdracht"
+        },
+        "support": {
+          "label": "Klantenservice",
+          "scenario_title": "Support Agent",
+          "scenario": "Een intelligente support agent die veelvoorkomende problemen oplost, tickets aanmaakt voor complexe kwesties en escaleert wanneer nodig.",
+          "capabilities_0": "Kennisbank doorzoeken",
+          "capabilities_1": "Ticket aanmaken en volgen",
+          "capabilities_2": "Prioriteit escalatie",
+          "capabilities_3": "Meertalige ondersteuning"
+        }
+      }
     },
     "process": {
       "title": "How We Build It",

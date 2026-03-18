@@ -140,7 +140,38 @@
     },
     "demo": {
       "title": "Interactive Demo",
-      "placeholder": "Interactive chatbot demo coming soon. In the meantime, book a strategy session to see a live demonstration."
+      "subtitle": "Switch between personas and see how each chatbot handles different scenarios.",
+      "placeholder": "Interactive chatbot demo coming soon. In the meantime, book a strategy session to see a live demonstration.",
+      "capabilities_label": "Capabilities",
+      "tabs": {
+        "ecommerce": {
+          "label": "E-commerce",
+          "scenario_title": "Skincare Product Advisor",
+          "scenario": "An AI-powered product advisor that helps customers find the right skincare products based on their skin type, concerns, and preferences.",
+          "capabilities_0": "Product search and recommendations",
+          "capabilities_1": "Routine builder for AM/PM",
+          "capabilities_2": "Ingredient analysis",
+          "capabilities_3": "Order tracking and support"
+        },
+        "leadgen": {
+          "label": "Lead Qualification",
+          "scenario_title": "AI Lead Qualifier",
+          "scenario": "A lead qualification bot that evaluates prospects, understands their needs, and routes qualified leads to your sales team.",
+          "capabilities_0": "Needs assessment and scoring",
+          "capabilities_1": "Budget and timeline qualification",
+          "capabilities_2": "ROI estimation",
+          "capabilities_3": "Automated booking handoff"
+        },
+        "support": {
+          "label": "Customer Support",
+          "scenario_title": "Support Agent",
+          "scenario": "An intelligent support agent that resolves common issues, creates tickets for complex problems, and escalates when needed.",
+          "capabilities_0": "Knowledge base search",
+          "capabilities_1": "Ticket creation and tracking",
+          "capabilities_2": "Priority escalation",
+          "capabilities_3": "Multi-language support"
+        }
+      }
     },
     "process": {
       "title": "How We Build It",

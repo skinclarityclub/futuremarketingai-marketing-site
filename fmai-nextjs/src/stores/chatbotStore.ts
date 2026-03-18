@@ -10,6 +10,8 @@ function generateSessionId(): string {
   return Date.now().toString(36) + Math.random().toString(36).slice(2)
 }
 
+export type DemoStatus = 'choosing' | 'running' | 'awaiting-continue' | 'checkpoint' | 'completed'
+
 interface ChatbotState {
   /** Active persona identifier */
   personaId: string
@@ -29,6 +31,10 @@ interface ChatbotState {
   demoScenarioId: string | null
   /** Current demo step index */
   demoStepIndex: number
+  /** Demo orchestration status */
+  demoStatus: DemoStatus
+  /** Timestamp when demo started */
+  demoStartedAt: number | null
   /** Side panel open state */
   isSidePanelOpen: boolean
   /** Side panel content */
@@ -44,6 +50,10 @@ interface ChatbotState {
   setDemoMode: (enabled: boolean) => void
   startDemo: () => void
   resetDemo: () => void
+  selectScenario: (id: string) => void
+  advanceStep: () => void
+  setDemoStatus: (status: DemoStatus) => void
+  endDemo: () => void
   openSidePanel: (toolName: string, data: unknown) => void
   closeSidePanel: () => void
 }
@@ -61,6 +71,8 @@ export const useChatbotStore = create<ChatbotState>()(
       demoMode: false,
       demoScenarioId: null,
       demoStepIndex: 0,
+      demoStatus: 'choosing' as DemoStatus,
+      demoStartedAt: null,
       isSidePanelOpen: false,
       sidePanelContent: null,
 
@@ -85,14 +97,39 @@ export const useChatbotStore = create<ChatbotState>()(
       startDemo: () =>
         set({
           demoMode: true,
-          demoScenarioId: 'flagship-tour',
+          demoScenarioId: null,
           demoStepIndex: 0,
+          demoStatus: 'choosing' as DemoStatus,
+          demoStartedAt: Date.now(),
         }),
       resetDemo: () =>
         set({
           demoMode: false,
           demoScenarioId: null,
           demoStepIndex: 0,
+          demoStatus: 'choosing' as DemoStatus,
+          demoStartedAt: null,
+        }),
+      selectScenario: (id: string) =>
+        set({
+          demoScenarioId: id,
+          demoStepIndex: 0,
+          demoStatus: 'running' as DemoStatus,
+          demoStartedAt: Date.now(),
+        }),
+      advanceStep: () =>
+        set((state) => ({
+          demoStepIndex: state.demoStepIndex + 1,
+          demoStatus: 'running' as DemoStatus,
+        })),
+      setDemoStatus: (status: DemoStatus) => set({ demoStatus: status }),
+      endDemo: () =>
+        set({
+          demoMode: false,
+          demoScenarioId: null,
+          demoStepIndex: 0,
+          demoStatus: 'choosing' as DemoStatus,
+          demoStartedAt: null,
         }),
       openSidePanel: (toolName: string, data: unknown) =>
         set({
