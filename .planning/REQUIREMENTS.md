@@ -9,7 +9,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 
 ### SEO Infrastructure
 
-- [ ] **SEO-01**: All pages server-rendered via Next.js App Router (SSR/SSG)
+- [x] **SEO-01**: All pages server-rendered via Next.js App Router (SSR/SSG)
 - [ ] **SEO-02**: Per-page metadata (title, description, OG tags) localized for EN/NL/ES
 - [ ] **SEO-03**: Locale-prefixed URL routing (/en/, /nl/, /es/) with next-intl
 - [ ] **SEO-04**: Hreflang tags and canonical URLs via metadata alternates
@@ -17,7 +17,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [ ] **SEO-06**: robots.txt with AI crawler allow-policy (allow retrieval bots, block training bots)
 - [ ] **SEO-07**: Semantic HTML structure across all pages (proper h1-h6, nav, main, section, article)
 - [ ] **SEO-08**: All images use next/image with explicit dimensions
-- [ ] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
+- [x] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
 - [ ] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
 - [ ] **SEO-11**: Open Graph images for all pages (static or generated)
 - [ ] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
@@ -110,59 +110,59 @@ Deferred to future release. Tracked but not in current roadmap.
 
 Which phases cover which requirements. Updated during roadmap creation.
 
-| Requirement | Phase   | Status  |
-| ----------- | ------- | ------- |
-| SEO-01      | Phase 1 | Pending |
-| SEO-02      | Phase 2 | Pending |
-| SEO-03      | Phase 1 | Pending |
-| SEO-04      | Phase 2 | Pending |
-| SEO-05      | Phase 2 | Pending |
-| SEO-06      | Phase 2 | Pending |
-| SEO-07      | Phase 2 | Pending |
-| SEO-08      | Phase 2 | Pending |
-| SEO-09      | Phase 1 | Pending |
-| SEO-10      | Phase 2 | Pending |
-| SEO-11      | Phase 4 | Pending |
-| SEO-12      | Phase 4 | Pending |
-| SEO-13      | Phase 6 | Pending |
-| SCHEMA-01   | Phase 2 | Pending |
-| SCHEMA-02   | Phase 2 | Pending |
-| SCHEMA-03   | Phase 2 | Pending |
-| SCHEMA-04   | Phase 2 | Pending |
-| SCHEMA-05   | Phase 2 | Pending |
-| SCHEMA-06   | Phase 4 | Pending |
-| SCHEMA-07   | Phase 4 | Pending |
-| SCHEMA-08   | Phase 2 | Pending |
-| GEO-01      | Phase 4 | Pending |
-| GEO-02      | Phase 4 | Pending |
-| GEO-03      | Phase 4 | Pending |
-| GEO-04      | Phase 4 | Pending |
-| GEO-05      | Phase 4 | Pending |
-| BLOG-01     | Phase 5 | Pending |
-| BLOG-02     | Phase 5 | Pending |
-| BLOG-03     | Phase 5 | Pending |
-| BLOG-04     | Phase 5 | Pending |
-| BLOG-05     | Phase 5 | Pending |
-| INT-01      | Phase 3 | Pending |
-| INT-02      | Phase 3 | Pending |
-| INT-03      | Phase 3 | Pending |
-| INT-04      | Phase 3 | Pending |
-| INT-05      | Phase 3 | Pending |
-| INT-06      | Phase 1 | Pending |
-| INT-07      | Phase 1 | Pending |
-| INT-08      | Phase 3 | Pending |
-| INT-09      | Phase 3 | Pending |
-| PAGE-01     | Phase 2 | Pending |
-| PAGE-02     | Phase 2 | Pending |
-| PAGE-03     | Phase 2 | Pending |
-| PAGE-04     | Phase 2 | Pending |
-| PAGE-05     | Phase 2 | Pending |
-| PAGE-06     | Phase 2 | Pending |
-| PAGE-07     | Phase 2 | Pending |
-| PAGE-08     | Phase 2 | Pending |
-| PAGE-09     | Phase 2 | Pending |
-| PAGE-10     | Phase 2 | Pending |
-| PAGE-11     | Phase 2 | Pending |
+| Requirement | Phase   | Status   |
+| ----------- | ------- | -------- |
+| SEO-01      | Phase 1 | Complete |
+| SEO-02      | Phase 2 | Pending  |
+| SEO-03      | Phase 1 | Pending  |
+| SEO-04      | Phase 2 | Pending  |
+| SEO-05      | Phase 2 | Pending  |
+| SEO-06      | Phase 2 | Pending  |
+| SEO-07      | Phase 2 | Pending  |
+| SEO-08      | Phase 2 | Pending  |
+| SEO-09      | Phase 1 | Complete |
+| SEO-10      | Phase 2 | Pending  |
+| SEO-11      | Phase 4 | Pending  |
+| SEO-12      | Phase 4 | Pending  |
+| SEO-13      | Phase 6 | Pending  |
+| SCHEMA-01   | Phase 2 | Pending  |
+| SCHEMA-02   | Phase 2 | Pending  |
+| SCHEMA-03   | Phase 2 | Pending  |
+| SCHEMA-04   | Phase 2 | Pending  |
+| SCHEMA-05   | Phase 2 | Pending  |
+| SCHEMA-06   | Phase 4 | Pending  |
+| SCHEMA-07   | Phase 4 | Pending  |
+| SCHEMA-08   | Phase 2 | Pending  |
+| GEO-01      | Phase 4 | Pending  |
+| GEO-02      | Phase 4 | Pending  |
+| GEO-03      | Phase 4 | Pending  |
+| GEO-04      | Phase 4 | Pending  |
+| GEO-05      | Phase 4 | Pending  |
+| BLOG-01     | Phase 5 | Pending  |
+| BLOG-02     | Phase 5 | Pending  |
+| BLOG-03     | Phase 5 | Pending  |
+| BLOG-04     | Phase 5 | Pending  |
+| BLOG-05     | Phase 5 | Pending  |
+| INT-01      | Phase 3 | Pending  |
+| INT-02      | Phase 3 | Pending  |
+| INT-03      | Phase 3 | Pending  |
+| INT-04      | Phase 3 | Pending  |
+| INT-05      | Phase 3 | Pending  |
+| INT-06      | Phase 1 | Pending  |
+| INT-07      | Phase 1 | Pending  |
+| INT-08      | Phase 3 | Pending  |
+| INT-09      | Phase 3 | Pending  |
+| PAGE-01     | Phase 2 | Pending  |
+| PAGE-02     | Phase 2 | Pending  |
+| PAGE-03     | Phase 2 | Pending  |
+| PAGE-04     | Phase 2 | Pending  |
+| PAGE-05     | Phase 2 | Pending  |
+| PAGE-06     | Phase 2 | Pending  |
+| PAGE-07     | Phase 2 | Pending  |
+| PAGE-08     | Phase 2 | Pending  |
+| PAGE-09     | Phase 2 | Pending  |
+| PAGE-10     | Phase 2 | Pending  |
+| PAGE-11     | Phase 2 | Pending  |
 
 **Coverage:**
 

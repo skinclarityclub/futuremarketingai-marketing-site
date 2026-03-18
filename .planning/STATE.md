@@ -10,25 +10,25 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 1 of 6 (Foundation and Infrastructure)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-03-18 — Roadmap created for v2.0 Next.js migration
+Plan: 1 of 3 in current phase
+Status: Executing
+Last activity: 2026-03-18 — Completed 01-01 Next.js foundation scaffold
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 5%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 8 min
+- Total execution time: 0.13 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 | ----- | ----- | ----- | -------- |
-| -     | -     | -     | -        |
+| 01    | 1     | 8 min | 8 min    |
 
 **Recent Trend:**
 
@@ -48,6 +48,8 @@ Recent decisions affecting current work:
 - 2026-03-18: next-intl replaces i18next (RSC incompatibility)
 - 2026-03-18: Server-first, client-islands architecture (prevent "use client" overuse)
 - 2026-03-18: SEO built into pages during migration, not bolted on after
+- 2026-03-18: middleware.ts over proxy.ts -- Next.js 16 still uses middleware convention
+- 2026-03-18: Tailwind v4 @theme directive for all design tokens (CSS-native, no JS config)
 
 ### Pending Todos
 
@@ -61,5 +63,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Roadmap created, ready to plan Phase 1
-Resume file: None
+Stopped at: Completed 01-01-PLAN.md (Next.js foundation)
+Resume file: .planning/phases/01-foundation-and-infrastructure/01-01-SUMMARY.md
