@@ -1,0 +1,559 @@
+{
+  "home": {
+    "meta": {
+      "title": "AI Automation, Chatbots & Voice Agents for Growth",
+      "description": "Future Marketing AI builds custom AI automation, chatbots, and voice agents for growth teams. Three specialized platforms, one partner. Book a free AI audit."
+    },
+    "hero": {
+      "headline": "AI Systems That Run Your Business",
+      "subtitle": "We implement AI that actually works — marketing automation, custom workflows, chatbots, and voice agents for SaaS and e-commerce companies.",
+      "cta": "Explore Our Services",
+      "ctaSecondary": "Book a Strategy Call"
+    },
+    "services": {
+      "title": "What We Build For You",
+      "subtitle": "End-to-end AI implementation — from workflow automation to autonomous marketing systems",
+      "automations": {
+        "title": "AI Automations",
+        "description": "Custom workflow automation connecting your tools and processes. Eliminate manual work in days."
+      },
+      "chatbots": {
+        "title": "AI Chatbots",
+        "description": "Intelligent chatbots that qualify leads, support customers, and book appointments 24/7."
+      },
+      "voiceAgents": {
+        "title": "AI Voice Agents",
+        "description": "Voice agents that call prospects, qualify leads, and book appointments at scale."
+      },
+      "marketingMachine": {
+        "title": "The Marketing Machine",
+        "description": "6 AI modules working 24/7 to create, optimise, and distribute your marketing content."
+      }
+    },
+    "trust": {
+      "title": "Why Teams Choose Us",
+      "customBuilt": "Fully Custom-Built — no templates, no limitations",
+      "founderAccess": "Direct founder access via Slack",
+      "successGuarantee": "Success guarantee — we stay until it works",
+      "trialCommitment": "3-month risk-free trial"
+    },
+    "cta": {
+      "title": "Ready to Automate Your Growth?",
+      "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
+      "button": "Book a Free Audit"
+    }
+  },
+  "automations": {
+    "meta": {
+      "title": "AI Marketing Automation | Future Marketing AI",
+      "description": "Custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences. Delivered in 1-2 weeks. Powered by n8n, Make, and custom integrations."
+    },
+    "hero": {
+      "badge": "Delivered in 1-2 Weeks",
+      "title": "Automate Your Business With AI",
+      "description": "We build custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences, and more. Powered by n8n, Make, and custom integrations.",
+      "cta_primary": "Get a Free Automation Audit",
+      "cta_secondary": "See Examples"
+    },
+    "pain_points": {
+      "title": "Challenges We Solve",
+      "manual_work": {
+        "title": "Hours Lost to Manual Work",
+        "description": "Your team spends hours on work AI can do in minutes"
+      },
+      "disconnected_tools": {
+        "title": "Disconnected Tools",
+        "description": "Your tools don't talk to each other — data gets lost between apps"
+      },
+      "scaling": {
+        "title": "Scaling Means Hiring",
+        "description": "Scaling means hiring more people, not working smarter"
+      }
+    },
+    "what_we_automate": {
+      "title": "What We Automate",
+      "subtitle": "From lead generation to customer onboarding — we automate the workflows that slow your team down.",
+      "items": {
+        "lead_qualification": "Lead qualification & CRM enrichment",
+        "email_sequences": "Email sequences & follow-ups",
+        "social_media": "Social media scheduling & content",
+        "invoicing": "Invoice & billing workflows",
+        "onboarding": "Customer onboarding flows",
+        "data_sync": "Data sync between platforms"
+      }
+    },
+    "process": {
+      "title": "How It Works",
+      "steps": {
+        "audit": {
+          "title": "Free Audit",
+          "description": "We map your manual processes and identify automation opportunities. 30 minutes, no obligation."
+        },
+        "build": {
+          "title": "Build",
+          "description": "1-2 weeks delivery, fully documented workflows. We build, test, and hand over."
+        },
+        "optimize": {
+          "title": "Optimize",
+          "description": "Optional ongoing retainer for new workflows, optimization, and dedicated support."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Eliminate Manual Work?",
+      "subtitle": "Book a free automation audit. 30 minutes, no obligation.",
+      "button": "Get a Free Audit"
+    }
+  },
+  "chatbots": {
+    "meta": {
+      "title": "AI Chatbot Solutions | Future Marketing AI",
+      "description": "Custom AI chatbots that handle customer service, qualify leads, and book appointments 24/7. Try our interactive demos. Multi-platform deployment ready."
+    },
+    "hero": {
+      "badge": "Interactive Demo",
+      "title": "Experience AI Chatbots in Action",
+      "description": "Don't take our word for it — try them yourself. Three live demos showing what AI chatbots can do for your business.",
+      "cta_primary": "Try a Demo Below",
+      "cta_secondary": "Get a Free Strategy Session"
+    },
+    "use_cases": {
+      "title": "What Our Chatbots Do",
+      "items": {
+        "customer_service": {
+          "title": "Customer Service",
+          "description": "Handle 70% of customer inquiries automatically — instant responses, 24/7 availability."
+        },
+        "lead_qualification": {
+          "title": "Lead Qualification",
+          "description": "Score and route leads around the clock. Never miss a hot prospect again."
+        },
+        "appointment_booking": {
+          "title": "Appointment Booking",
+          "description": "Fill your calendar without manual back-and-forth. Integrated with Calendly, Cal.com, and more."
+        },
+        "faq_automation": {
+          "title": "FAQ Automation",
+          "description": "Consistent, accurate answers — always available. Trained on your specific knowledge base."
+        }
+      }
+    },
+    "demo": {
+      "title": "Interactive Demo",
+      "placeholder": "Interactive chatbot demo coming soon. In the meantime, book a strategy session to see a live demonstration."
+    },
+    "process": {
+      "title": "How We Build It",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "description": "We map your use case, identify key intents, and plan integration with your existing tools."
+        },
+        "build": {
+          "title": "Build",
+          "description": "Custom LLM-powered chatbot, trained on your data. Multi-platform deployment ready."
+        },
+        "optimize": {
+          "title": "Optimize",
+          "description": "Ongoing improvement based on real conversation data. Monthly performance reports."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready for 24/7 Customer Engagement?",
+      "subtitle": "Book a free strategy session. We will map your chatbot opportunities.",
+      "button": "Get a Free Strategy Session"
+    }
+  },
+  "voice-agents": {
+    "meta": {
+      "title": "AI Voice Agents | Future Marketing AI",
+      "description": "AI voice agents that call prospects, qualify leads, and book appointments at scale. Built with specialized voice AI partners for maximum quality."
+    },
+    "hero": {
+      "badge": "AI That Handles Your Calls",
+      "title": "AI Voice Agents for Lead Qualification & Booking",
+      "description": "AI voice agents that call prospects, qualify leads, and book appointments — at scale, without a sales team.",
+      "cta_primary": "Book a Demo Call",
+      "cta_secondary": "See Use Cases"
+    },
+    "use_cases": {
+      "title": "What Voice Agents Can Do",
+      "items": {
+        "outbound_leads": {
+          "title": "Outbound Lead Qualification",
+          "description": "Call and qualify hundreds of leads per day. AI handles the first conversation so your sales team only talks to qualified prospects."
+        },
+        "appointment_setting": {
+          "title": "Appointment Setting",
+          "description": "Fill calendars automatically. The voice agent books meetings directly into your calendar system."
+        },
+        "inbound_service": {
+          "title": "Inbound Customer Service",
+          "description": "Handle routine calls 24/7. Answer FAQs, route complex issues, and never put a customer on hold."
+        },
+        "post_sale": {
+          "title": "Post-Sale Follow-up",
+          "description": "Automated check-ins, renewal reminders, and satisfaction surveys — at scale."
+        }
+      }
+    },
+    "partnership": {
+      "title": "Built With Specialized Partners",
+      "description": "Our voice agent solutions are built in collaboration with specialized voice AI partners, ensuring you get the best technology and expertise available in the market."
+    },
+    "cta": {
+      "title": "Ready to Scale Your Outreach?",
+      "subtitle": "Book a demo call and hear an AI voice agent in action.",
+      "button": "Book a Demo Call"
+    }
+  },
+  "marketing-machine": {
+    "meta": {
+      "title": "The Marketing Machine | Future Marketing AI",
+      "description": "6 AI modules working 24/7 to create, optimise, and distribute your content. 160 posts/month. Zero manual work. Join the first 10 founding teams."
+    },
+    "hero": {
+      "badge": "The Marketing Machine",
+      "title": "160 Posts/Month.",
+      "titleHighlight": "Zero Manual Work.",
+      "description": "6 AI modules working 24/7 to create, optimise, and distribute your content — while you focus on growing your business.",
+      "cta_primary": "Book a Discovery Call",
+      "cta_secondary": "Calculate Your ROI"
+    },
+    "features": {
+      "title": "Your Autonomous Marketing Team",
+      "subtitle": "Each module is a specialised AI agent — working in concert to run your entire marketing operation.",
+      "research": {
+        "title": "AI Research & Planning",
+        "description": "24/7 market intelligence — trend monitoring, competitor analysis, and content opportunity identification."
+      },
+      "content": {
+        "title": "Content Creation Pipelines",
+        "description": "AI-powered content generation that produces premium-quality content at unprecedented speed."
+      },
+      "publishing": {
+        "title": "Smart Publishing Layer",
+        "description": "Posts at scientifically optimal times with perfect audience targeting across all platforms."
+      },
+      "analytics": {
+        "title": "Self-Learning Analytics",
+        "description": "AI analytics that continuously learn from every campaign, improving 23% each month."
+      },
+      "ads": {
+        "title": "Automated Ad Campaigns",
+        "description": "Converts winning posts to ads with automatic budget optimization for maximum ROAS."
+      },
+      "orchestrator": {
+        "title": "Manager Orchestration Engine",
+        "description": "Central AI brain that coordinates all modules and ensures seamless execution."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Discovery Call",
+        "description": "30-minute strategy session to map your marketing goals and current processes."
+      },
+      "step2": {
+        "title": "Custom Configuration",
+        "description": "We configure all 6 modules for your brand voice, audience, and platforms."
+      },
+      "step3": {
+        "title": "Launch & Optimize",
+        "description": "System goes live. Weekly performance reports. Monthly strategy calls."
+      }
+    },
+    "cta": {
+      "title": "Ready to Automate Your Marketing?",
+      "subtitle": "Talk to a human. 30 minutes, no obligation.",
+      "button": "Book a Discovery Call"
+    }
+  },
+  "common": {
+    "nav": {
+      "home": "Home",
+      "automations": "Automations",
+      "chatbots": "Chatbots",
+      "voiceAgents": "Voice Agents",
+      "marketingMachine": "Marketing Machine",
+      "pricing": "Pricing",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "footer": {
+      "company": "Company",
+      "services": "Services",
+      "legal": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "Copyright {year} Future Marketing AI. All rights reserved."
+    },
+    "landing": {
+      "footer": {
+        "tagline": "AI systems that run your business — marketing, automations, chatbots, and voice agents.",
+        "copyright": "Copyright {year} Future AI",
+        "sections": {
+          "product": "Product",
+          "company": "Company",
+          "resources": "Resources",
+          "legal": "Legal"
+        },
+        "nav": {
+          "features": "Features",
+          "pricing": "Pricing",
+          "demo": "Demo",
+          "about": "About",
+          "how_it_works": "How It Works",
+          "roi_calculator": "ROI Calculator",
+          "showcase": "Showcase",
+          "privacy": "Privacy",
+          "terms": "Terms"
+        }
+      }
+    },
+    "footer_all_rights": "All rights reserved.",
+    "actions": {
+      "learn_more": "Learn More"
+    },
+    "errors": {
+      "notFound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for does not exist.",
+        "backHome": "Back to Home"
+      },
+      "generic": {
+        "title": "Something went wrong",
+        "description": "An unexpected error occurred.",
+        "tryAgain": "Try again"
+      }
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "The page you are looking for does not exist.",
+      "backHome": "Back to Home"
+    },
+    "generic": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred.",
+      "tryAgain": "Try again"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Acerca de Future Marketing AI | Agencia IA para Equipos",
+      "description": "Conoce Future Marketing AI, la plataforma de marketing autonomo construida por operadores."
+    },
+    "hero": {
+      "badge": "Lanzamiento Q1 2026",
+      "title": "Acerca de Future Marketing AI",
+      "tagline": "Construyendo el sistema de marketing autonomo del futuro"
+    },
+    "mission": {
+      "heading": "Nuestra Mision",
+      "text": "Democratizar la automatizacion de marketing IA de nivel empresarial para negocios ambiciosos.",
+      "why_heading": "Por Que Construimos Esto",
+      "why_text": "Construimos esta plataforma para nosotros mismos primero."
+    },
+    "timeline": {
+      "title": "La Evolucion de la Automatizacion de Marketing",
+      "eras": {
+        "assisted": {
+          "year": "2020-2024",
+          "title": "Era del Marketing Asistido por IA",
+          "description": "ChatGPT and similar tools help marketers work faster, but still require significant manual oversight and coordination."
+        },
+        "autonomous": {
+          "year": "2025",
+          "title": "Era del Marketing Autonomo",
+          "description": "Complete AI systems that handle the entire workflow autonomously. This is where we are — and where early adopters gain a 3-5 year competitive advantage."
+        },
+        "standard": {
+          "year": "2027+",
+          "title": "Practica Estandar",
+          "description": "Autonomous marketing becomes the norm. By then, early movers have built an insurmountable lead through compounding AI learning effects."
+        }
+      },
+      "key_message": {
+        "title": "Early adopters gain a 3-5 year competitive advantage",
+        "description": "Just like early Salesforce adopters in 2004 or early AI tool users in 2020 — being first compounds over time."
+      }
+    },
+    "cta": {
+      "title": "Unete a los Equipos Fundadores",
+      "description": "Estamos construyendo esto con 3 negocios visionarios.",
+      "demo_button": "Reservar una Llamada",
+      "contact_button": "Contactenos"
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Precios | Future Marketing AI",
+      "description": "Precios transparentes para servicios de IA gestionados."
+    },
+    "hero": {
+      "title": "IA Que Trabaja Para Ti",
+      "description": "Servicios de IA gestionados a medida para tu negocio."
+    },
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "1,497",
+        "description": "Perfect for businesses ready to start with one AI service.",
+        "service_count": "1 service",
+        "features_0": "Choose 1 service",
+        "features_1": "Hosting & infrastructure included",
+        "features_2": "Monthly updates & maintenance",
+        "features_3": "Email support",
+        "features_4": "Setup in 1-2 weeks"
+      },
+      "growth": {
+        "name": "Growth",
+        "price": "2,497",
+        "badge": "Most Popular",
+        "description": "For growing teams that need multiple AI capabilities.",
+        "service_count": "2 services",
+        "features_0": "Choose 2 services",
+        "features_1": "Analytics dashboard",
+        "features_2": "Monthly performance report",
+        "features_3": "Chat & email support",
+        "features_4": "Setup in 2-3 weeks"
+      },
+      "scale": {
+        "name": "Scale",
+        "price": "3,997",
+        "description": "The complete package for ambitious companies.",
+        "service_count": "All 3 services",
+        "features_0": "All 3 services included",
+        "features_1": "Priority support (<4h response)",
+        "features_2": "Monthly strategy call",
+        "features_3": "Advanced analytics",
+        "features_4": "Setup in 2-4 weeks"
+      }
+    },
+    "cta": {
+      "title": "Listo Para Poner la IA a Trabajar?",
+      "description": "Reserva una llamada de estrategia gratuita.",
+      "primary_button": "Reservar una Llamada",
+      "secondary_button": "Contactenos"
+    }
+  },
+  "how-it-works": {
+    "meta": {
+      "title": "Como Funciona | Future Marketing AI",
+      "description": "Aprende como los 6 modulos autonomos automatizan tu marketing."
+    },
+    "hero": {
+      "title": "Como Funciona Future Marketing AI?",
+      "description": "Un sistema completamente autonomo con 6 modulos IA trabajando 24/7."
+    },
+    "process": {
+      "title": "El Ciclo de Marketing Autonomo",
+      "steps": {
+        "research": {
+          "step": "Step 1",
+          "title": "Platform Analyzes Your Market 24/7",
+          "description": "Our AI Research module monitors trends, competitors, and opportunities continuously. It identifies what content to create, when to publish, and which channels to prioritize."
+        },
+        "content": {
+          "step": "Step 2",
+          "title": "AI Generates Premium Content at Scale",
+          "description": "Content Pipelines produce 15x more content than traditional methods. Every piece is optimized for your brand voice, target audience, and platform requirements."
+        },
+        "workflow": {
+          "step": "Step 3",
+          "title": "Manager Coordinates Everything",
+          "description": "The Manager Orchestrator acts as your AI marketing coordinator, ensuring all modules work together seamlessly. No manual coordination needed."
+        },
+        "publishing": {
+          "step": "Step 4",
+          "title": "Optimal Distribution Across Channels",
+          "description": "Smart Publishing determines the best time, platform, and messaging for each piece of content. Achieves 35% better engagement through intelligent timing."
+        },
+        "learning": {
+          "step": "Step 5",
+          "title": "Analytics Learn and Improve",
+          "description": "Self-Learning Analytics track performance and identify winning patterns. The platform becomes 23% more effective each month by learning from every campaign."
+        },
+        "ads": {
+          "step": "Step 6",
+          "title": "Best Content Becomes Ads",
+          "description": "Top-performing organic content is automatically converted to paid ads with optimized targeting and budget allocation. Delivers 3.2x better ROAS."
+        }
+      },
+      "loop_title": "Continuous Loop",
+      "loop_description": "This process runs 24/7, with each iteration making the system smarter. By month 3, your marketing is 23% more effective. By month 12, it is transformational."
+    },
+    "cta": {
+      "title": "Experimentalo Tu Mismo",
+      "description": "La mejor manera de entender como funciona es probarlo.",
+      "button": "Reservar una Llamada"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto | Future Marketing AI",
+      "description": "Ponte en contacto con Future Marketing AI."
+    },
+    "hero": {
+      "title": "Contactanos",
+      "description": "Listo para transformar tu marketing con IA autonoma?"
+    },
+    "form": {
+      "title": "Envianos un Mensaje",
+      "name_label": "Tu Nombre",
+      "name_placeholder": "Juan Perez",
+      "email_label": "Direccion de Email",
+      "email_placeholder": "tu@empresa.com",
+      "company_label": "Empresa",
+      "company_placeholder": "Tu Empresa S.L.",
+      "message_label": "Mensaje",
+      "message_placeholder": "Cuentanos sobre tus objetivos de marketing...",
+      "submit_button": "Enviar Mensaje"
+    },
+    "book_demo": {
+      "title": "Reservar Llamada de Demo",
+      "description": "Programa una demo personalizada.",
+      "button": "Programar Demo"
+    },
+    "direct_contact": {
+      "title": "Contacto Directo",
+      "email_label": "Email",
+      "email_address": "hello@futuremarketingai.com",
+      "location_label": "Location",
+      "location_text": "Paises Bajos (Remoto)",
+      "response_time_label": "Tiempo de Respuesta",
+      "response_time_text": "Dentro de 24 horas"
+    }
+  },
+  "legal": {
+    "meta": {
+      "title": "Legal | Future Marketing AI",
+      "description": "Informacion legal para Future Marketing AI."
+    },
+    "hero": {
+      "title": "Legal"
+    },
+    "sections": {
+      "terms": {
+        "title": "Terminos de Servicio",
+        "content": "By using our services, you agree to the following terms and conditions. Future Marketing AI provides AI-powered marketing automation services on a subscription basis. All subscriptions are month-to-month unless otherwise agreed upon. We reserve the right to modify these terms with 30 days notice. Services are provided as-is, and while we strive for maximum uptime, we do not guarantee uninterrupted availability."
+      },
+      "privacy": {
+        "title": "Politica de Privacidad",
+        "content": "We collect personal data necessary to provide our services, including name, email, and company information submitted via our contact forms. Your data is processed in accordance with GDPR regulations. We do not sell your personal information to third parties. Data is stored securely within the EU and retained only for the duration of your business relationship with us. You have the right to access, rectify, or delete your personal data at any time."
+      },
+      "cookies": {
+        "title": "Politica de Cookies",
+        "content": "Our website uses essential cookies required for basic functionality and optional analytics cookies to improve our services. Essential cookies cannot be disabled as they are necessary for the website to function. Analytics cookies are only set with your explicit consent. You can manage your cookie preferences at any time through your browser settings."
+      },
+      "disclaimer": {
+        "title": "Aviso Legal",
+        "content": "The information on this website is provided for general informational purposes only. While we strive to keep the information accurate and up-to-date, we make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information. Any reliance you place on such information is strictly at your own risk."
+      }
+    },
+    "last_updated": "Ultima actualizacion: marzo 2026"
+  }
+}

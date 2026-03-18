@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colors */
+  --color-bg-deep: #0a0d14;
+  --color-bg-surface: #111520;
+  --color-bg-elevated: #1a1f2e;
+  --color-accent-system: #00d4aa;
+  --color-accent-human: #f5a623;
+  --color-status-active: #22c55e;
+  --color-success: #22c55e;
+  --color-warning: #f5a623;
+  --color-error: #ef4444;
+  --color-info: #00d4aa;
+  --color-text-primary: #e8ecf4;
+  --color-text-secondary: #9ba3b5;
+  --color-text-muted: #5a6378;
+  --color-border-primary: rgba(255, 255, 255, 0.06);
+  --color-border-accent: rgba(0, 212, 170, 0.3);
+  --color-divider: rgba(255, 255, 255, 0.04);
+
+  /* Fonts */
+  --font-sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-dm-sans), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), Consolas, Monaco, monospace;
+
+  /* Border radius */
+  --radius-card: 20px;
+  --radius-btn: 14px;
+
+  /* Shadows */
+  --shadow-glow-sm: 0 0 10px rgba(0, 212, 170, 0.2);
+  --shadow-glow: 0 0 20px rgba(0, 212, 170, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(0, 212, 170, 0.4);
+  --shadow-glow-amber: 0 0 20px rgba(245, 166, 35, 0.3);
+  --shadow-glow-active: 0 0 20px rgba(34, 197, 94, 0.3);
+  --shadow-inner-glow: inset 0 0 20px rgba(0, 212, 170, 0.15);
+
+  /* Animations */
+  --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-down: slide-down 0.5s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-status-pulse: status-pulse 2s ease-in-out infinite;
+  --animate-data-flow: data-flow 2s linear infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes data-flow {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

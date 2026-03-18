@@ -3,4 +3,5 @@ dist
 build
 coverage
 vite.config.ts.timestamp-*
+fmai-nextjs
 

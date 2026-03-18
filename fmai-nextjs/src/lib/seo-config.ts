@@ -1,0 +1,17 @@
+export const SITE_URL = 'https://futuremarketingai.com'
+export const SITE_NAME = 'Future Marketing AI'
+export const ORG_EMAIL = 'info@futuremarketingai.com'
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
+
+export const PAGE_DATES: Record<string, string> = {
+  '/': '2026-03-18',
+  '/automations': '2026-03-18',
+  '/chatbots': '2026-03-18',
+  '/voice-agents': '2026-03-18',
+  '/marketing-machine': '2026-03-18',
+  '/about': '2026-03-18',
+  '/contact': '2026-03-18',
+  '/pricing': '2026-03-18',
+  '/calculator': '2026-03-18',
+  '/privacy': '2026-03-18',
+}
