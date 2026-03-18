@@ -1,7 +1,11 @@
 {
-  "project_name": "FMai Website",
-  "milestone": "v1.0",
-  "milestone_description": "Launch FMai website with Living System design, gateway services, and founding member beta",
+  "project_name": "FMai Website — Next.js Migration",
+  "milestone": "v2.0",
+  "milestone_description": "Migrate FMai website from Vite/React SPA to Next.js with full SEO/GEO/LLMEO",
+  "mode": "yolo",
+  "depth": "standard",
+  "parallelization": true,
+  "commit_docs": true,
   "model_profile": "quality",
   "model_overrides": {
     "gsd-verifier": "opus",
@@ -10,15 +14,11 @@
     "gsd-codebase-mapper": "opus",
     "gsd-integration-checker": "opus"
   },
-  "parallelization": true,
-  "branching_strategy": "none",
-  "commit_docs": true,
   "workflow": {
     "research": true,
     "plan_check": true,
     "verifier": true,
-    "auto_advance": false,
-    "nyquist_validation": false
+    "auto_advance": false
   },
   "git": {
     "branching_strategy": "none"
