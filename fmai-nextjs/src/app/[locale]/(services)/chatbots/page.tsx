@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { DemoPlayground } from '@/components/chatbot/DemoPlayground'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -109,13 +110,15 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Demo Placeholder */}
-      <section aria-labelledby="demo" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <SectionHeading id="demo">{t('demo.title')}</SectionHeading>
-          <GlassCard className="mt-8">
-            <p className="text-text-secondary text-lg py-8">{t('demo.placeholder')}</p>
-          </GlassCard>
+      {/* Demo Playground -- client island */}
+      <section
+        id="demo"
+        aria-labelledby="demo-heading"
+        className="py-20 px-6 lg:px-12 bg-bg-surface/30"
+      >
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading id="demo-heading">{t('demo.title')}</SectionHeading>
+          <DemoPlayground />
         </div>
       </section>
 
