@@ -59,7 +59,7 @@ Plans:
 3. JSON-LD structured data renders in page source: Organization on all pages, WebSite with SearchAction on homepage, Service on each service page, WebPage on subpages, BreadcrumbList from route structure, dateModified on all pages
 4. XML sitemap is accessible with all pages and locale alternates; robots.txt includes AI crawler allow-policy
 5. Custom 404 page returns HTTP 404 status; all images use next/image with explicit dimensions; hreflang and canonical URLs are correct
-   **Plans**: 4 plans
+   **Plans**: 5 plans
 
 Plans:
 
@@ -67,6 +67,7 @@ Plans:
 - [ ] 02-02: Shared UI component migration (layout, cards, buttons, modals) with semantic HTML
 - [ ] 02-03: Homepage and 4 service page migration with structured data and SEO copy rework
 - [ ] 02-04: Supporting page migration (About, Pricing, How It Works, Contact, Legal) with structured data
+- [ ] 02-05: Gap closure -- sitemap.ts, robots.ts, not-found.tsx, error.tsx, x-default hreflang fix
 
 ### Phase 3: Interactive Features
 
@@ -151,7 +152,7 @@ Phases 1 and 2 are sequential. After Phase 2, Phases 3, 4, and 5 can execute in 
 | Phase                                | Plans Complete | Status      | Completed |
 | ------------------------------------ | -------------- | ----------- | --------- |
 | 1. Foundation and Infrastructure     | 0/3            | Not started | -         |
-| 2. Page Migration and Core SEO       | 0/4            | Not started | -         |
+| 2. Page Migration and Core SEO       | 0/5            | Not started | -         |
 | 3. Interactive Features              | 0/3            | Not started | -         |
 | 4. SEO Differentiation and GEO/LLMEO | 0/2            | Not started | -         |
 | 5. Content Hub                       | 0/2            | Not started | -         |
