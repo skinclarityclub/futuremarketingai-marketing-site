@@ -39,7 +39,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 3. Tailwind CSS 4 is configured with Living System design tokens (DM Sans typography, teal/amber palette) and a reference component renders identically to the Vite version
 4. A documented server/client boundary pattern exists with a working example of a Server Component page containing a "use client" island (prevents the critical "use client" overuse pitfall)
 5. Zustand stores are migrated with hydration-safe patterns (skipHydration + delayed rehydration) verified with zero server/client mismatch errors
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
@@ -59,7 +59,7 @@ Plans:
 3. JSON-LD structured data renders in page source: Organization on all pages, WebSite with SearchAction on homepage, Service on each service page, WebPage on subpages, BreadcrumbList from route structure, dateModified on all pages
 4. XML sitemap is accessible with all pages and locale alternates; robots.txt includes AI crawler allow-policy
 5. Custom 404 page returns HTTP 404 status; all images use next/image with explicit dimensions; hreflang and canonical URLs are correct
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
@@ -80,7 +80,7 @@ Plans:
 3. Guided demo mode walks through all 3 scenarios with the state machine orchestrator controlling progression and booking flow
 4. Motion v12 animations render without layout shift above the fold -- scroll reveals, card tilts, page transitions, and gradient mesh all work
 5. Calendly modal opens from CTA buttons across all pages; cookie consent banner appears and persists user preference
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
@@ -100,7 +100,7 @@ Plans:
 3. Each service page has a quick-answer block (1-2 sentence definition) above the fold and question-based H2/H3 headings matching AI query patterns
 4. "Future Marketing AI" entity definition appears consistently across all pages with entity-first content structure
 5. Dynamic OG images generate via Satori for all pages with branded social preview design
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
@@ -118,7 +118,7 @@ Plans:
 2. Individual blog posts render from MDX files with Article JSON-LD, datePublished, dateModified, and author Person schema
 3. Blog pages use ISR so new posts appear without full rebuild
 4. At least one seed article is published as proof the full pipeline works end-to-end (MDX to rendered page with schema)
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
@@ -136,7 +136,7 @@ Plans:
 2. All JSON-LD structured data validates with zero errors in Google Rich Results Test
 3. Full sitemap and robots.txt are verified complete; hreflang tags are correct across all locale/page combinations
 4. Site renders correctly in Chrome, Firefox, Safari, and Edge with no visual regressions compared to the Vite version
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
