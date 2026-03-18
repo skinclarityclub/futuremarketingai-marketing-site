@@ -316,6 +316,12 @@
     "actions": {
       "learn_more": "Learn More"
     },
+    "cookie_consent": {
+      "title": "Usamos cookies",
+      "description": "Usamos cookies para mejorar su experiencia y analizar el trafico del sitio. Al aceptar, acepta nuestro uso de cookies analiticas.",
+      "accept": "Aceptar",
+      "decline": "Rechazar"
+    },
     "errors": {
       "notFound": {
         "title": "Page Not Found",
@@ -328,6 +334,10 @@
         "tryAgain": "Try again"
       }
     }
+  },
+  "calendly": {
+    "modal_title": "Programar una llamada estrategica",
+    "close": "Cerrar"
   },
   "errors": {
     "notFound": {

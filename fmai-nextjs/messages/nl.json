@@ -316,6 +316,12 @@
     "actions": {
       "learn_more": "Learn More"
     },
+    "cookie_consent": {
+      "title": "Wij gebruiken cookies",
+      "description": "Wij gebruiken cookies om uw ervaring te verbeteren en het siteverkeer te analyseren. Door te accepteren gaat u akkoord met ons gebruik van analytische cookies.",
+      "accept": "Accepteren",
+      "decline": "Weigeren"
+    },
     "errors": {
       "notFound": {
         "title": "Page Not Found",
@@ -328,6 +334,10 @@
         "tryAgain": "Try again"
       }
     }
+  },
+  "calendly": {
+    "modal_title": "Plan een strategiegesprek",
+    "close": "Sluiten"
   },
   "errors": {
     "notFound": {

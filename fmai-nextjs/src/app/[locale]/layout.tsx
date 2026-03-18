@@ -7,6 +7,8 @@ import { dmSans, jetbrainsMono, spaceGrotesk } from '@/lib/fonts'
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { Providers } from '@/components/providers/Providers'
+import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
 import '@/app/globals.css'
 
 export function generateStaticParams() {
@@ -37,10 +39,13 @@ export default async function LocaleLayout({
     >
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
-          <OrganizationJsonLd />
-          <Header locale={locale} />
-          {children}
-          <Footer locale={locale} />
+          <Providers>
+            <OrganizationJsonLd />
+            <Header locale={locale} />
+            {children}
+            <Footer locale={locale} />
+            <CookieConsentBanner />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
