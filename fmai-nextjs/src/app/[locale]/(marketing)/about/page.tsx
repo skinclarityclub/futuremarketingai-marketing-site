@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -65,16 +66,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* Mission Section */}
       <section className="py-12 px-6 lg:px-12" aria-labelledby="mission">
         <div className="max-w-7xl mx-auto">
-          <GlassCard>
-            <SectionHeading id="mission">{t('mission.heading')}</SectionHeading>
-            <p className="text-lg text-text-secondary leading-relaxed mt-4 mb-6">
-              {t('mission.text')}
-            </p>
-            <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-              {t('mission.why_heading')}
-            </h3>
-            <p className="text-lg text-text-secondary leading-relaxed">{t('mission.why_text')}</p>
-          </GlassCard>
+          <ScrollReveal>
+            <GlassCard>
+              <SectionHeading id="mission">{t('mission.heading')}</SectionHeading>
+              <p className="text-lg text-text-secondary leading-relaxed mt-4 mb-6">
+                {t('mission.text')}
+              </p>
+              <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                {t('mission.why_heading')}
+              </h3>
+              <p className="text-lg text-text-secondary leading-relaxed">{t('mission.why_text')}</p>
+            </GlassCard>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -86,22 +89,23 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </SectionHeading>
 
           <div className="space-y-6">
-            {ERA_KEYS.map((era) => (
-              <GlassCard
-                key={era}
-                highlighted={era === 'autonomous'}
-                className="relative border-l-4 border-l-accent-system pl-8"
-              >
-                <div className="text-sm font-semibold font-mono text-accent-system mb-2">
-                  {t(`timeline.eras.${era}.year`)}
-                </div>
-                <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-                  {t(`timeline.eras.${era}.title`)}
-                </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  {t(`timeline.eras.${era}.description`)}
-                </p>
-              </GlassCard>
+            {ERA_KEYS.map((era, index) => (
+              <ScrollReveal key={era} delay={index * 0.1}>
+                <GlassCard
+                  highlighted={era === 'autonomous'}
+                  className="relative border-l-4 border-l-accent-system pl-8"
+                >
+                  <div className="text-sm font-semibold font-mono text-accent-system mb-2">
+                    {t(`timeline.eras.${era}.year`)}
+                  </div>
+                  <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                    {t(`timeline.eras.${era}.title`)}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {t(`timeline.eras.${era}.description`)}
+                  </p>
+                </GlassCard>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -118,22 +122,24 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* CTA Section */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="about-cta">
         <div className="max-w-7xl mx-auto text-center">
-          <GlassCard className="p-12">
-            <SectionHeading id="about-cta" className="mb-4">
-              {t('cta.title')}
-            </SectionHeading>
-            <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-              {t('cta.description')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/contact" size="lg">
-                {t('cta.demo_button')}
-              </CTAButton>
-              <CTAButton href="/contact" variant="secondary" size="lg">
-                {t('cta.contact_button')}
-              </CTAButton>
-            </div>
-          </GlassCard>
+          <ScrollReveal>
+            <GlassCard className="p-12">
+              <SectionHeading id="about-cta" className="mb-4">
+                {t('cta.title')}
+              </SectionHeading>
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                {t('cta.description')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/contact" size="lg">
+                  {t('cta.demo_button')}
+                </CTAButton>
+                <CTAButton href="/contact" variant="secondary" size="lg">
+                  {t('cta.contact_button')}
+                </CTAButton>
+              </div>
+            </GlassCard>
+          </ScrollReveal>
         </div>
       </section>
     </PageShell>

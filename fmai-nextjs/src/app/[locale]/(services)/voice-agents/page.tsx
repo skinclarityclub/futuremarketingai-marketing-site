@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -91,13 +92,15 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         <div className="max-w-5xl mx-auto">
           <SectionHeading id="use-cases">{t('use_cases.title')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            {USE_CASE_KEYS.map((key) => (
-              <GlassCard key={key}>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {t(`use_cases.items.${key}.title`)}
-                </h3>
-                <p className="text-text-secondary">{t(`use_cases.items.${key}.description`)}</p>
-              </GlassCard>
+            {USE_CASE_KEYS.map((key, index) => (
+              <ScrollReveal key={key} delay={index * 0.1}>
+                <GlassCard>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`use_cases.items.${key}.title`)}
+                  </h3>
+                  <p className="text-text-secondary">{t(`use_cases.items.${key}.description`)}</p>
+                </GlassCard>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -107,21 +110,25 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
       <section aria-labelledby="partnership" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeading id="partnership">{t('partnership.title')}</SectionHeading>
-          <p className="text-lg text-text-secondary leading-relaxed mt-6">
-            {t('partnership.description')}
-          </p>
+          <ScrollReveal>
+            <p className="text-lg text-text-secondary leading-relaxed mt-6">
+              {t('partnership.description')}
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-          <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-          <CTAButton href="/contact" size="lg">
-            {t('cta.button')}
-          </CTAButton>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
+            <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
+            <CTAButton href="/contact" size="lg">
+              {t('cta.button')}
+            </CTAButton>
+          </div>
+        </ScrollReveal>
       </section>
     </PageShell>
   )

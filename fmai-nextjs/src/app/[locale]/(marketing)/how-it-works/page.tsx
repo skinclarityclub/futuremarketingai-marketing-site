@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -73,29 +74,31 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <ol className="space-y-6">
             {STEP_KEYS.map((stepKey, index) => (
               <li key={stepKey}>
-                <GlassCard className="flex flex-col md:flex-row gap-6 items-start">
-                  {/* Step Number */}
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-accent-system/20 border border-accent-system/30 rounded-[var(--radius-card)] flex items-center justify-center">
-                      <span className="text-2xl font-bold font-mono text-accent-system">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
+                <ScrollReveal delay={index * 0.1}>
+                  <GlassCard className="flex flex-col md:flex-row gap-6 items-start">
+                    {/* Step Number */}
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-accent-system/20 border border-accent-system/30 rounded-[var(--radius-card)] flex items-center justify-center">
+                        <span className="text-2xl font-bold font-mono text-accent-system">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex-grow">
-                    <div className="text-sm font-semibold font-mono text-accent-human mb-2">
-                      {t(`process.steps.${stepKey}.step`)}
+                    {/* Content */}
+                    <div className="flex-grow">
+                      <div className="text-sm font-semibold font-mono text-accent-human mb-2">
+                        {t(`process.steps.${stepKey}.step`)}
+                      </div>
+                      <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                        {t(`process.steps.${stepKey}.title`)}
+                      </h3>
+                      <p className="text-text-secondary leading-relaxed">
+                        {t(`process.steps.${stepKey}.description`)}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-                      {t(`process.steps.${stepKey}.title`)}
-                    </h3>
-                    <p className="text-text-secondary leading-relaxed">
-                      {t(`process.steps.${stepKey}.description`)}
-                    </p>
-                  </div>
-                </GlassCard>
+                  </GlassCard>
+                </ScrollReveal>
               </li>
             ))}
           </ol>
@@ -113,17 +116,19 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       {/* CTA Section */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="hiw-cta">
         <div className="max-w-7xl mx-auto text-center">
-          <GlassCard className="p-12">
-            <SectionHeading id="hiw-cta" className="mb-4">
-              {t('cta.title')}
-            </SectionHeading>
-            <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-              {t('cta.description')}
-            </p>
-            <CTAButton href="/contact" size="lg">
-              {t('cta.button')}
-            </CTAButton>
-          </GlassCard>
+          <ScrollReveal>
+            <GlassCard className="p-12">
+              <SectionHeading id="hiw-cta" className="mb-4">
+                {t('cta.title')}
+              </SectionHeading>
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                {t('cta.description')}
+              </p>
+              <CTAButton href="/contact" size="lg">
+                {t('cta.button')}
+              </CTAButton>
+            </GlassCard>
+          </ScrollReveal>
         </div>
       </section>
     </PageShell>

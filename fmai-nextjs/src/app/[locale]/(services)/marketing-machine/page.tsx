@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -110,13 +111,15 @@ export default async function MarketingMachinePage({
             {t('features.subtitle')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {FEATURE_KEYS.map((key) => (
-              <GlassCard key={key}>
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {t(`features.${key}.title`)}
-                </h3>
-                <p className="text-text-secondary text-sm">{t(`features.${key}.description`)}</p>
-              </GlassCard>
+            {FEATURE_KEYS.map((key, index) => (
+              <ScrollReveal key={key} delay={index * 0.1}>
+                <GlassCard>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`features.${key}.title`)}
+                  </h3>
+                  <p className="text-text-secondary text-sm">{t(`features.${key}.description`)}</p>
+                </GlassCard>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -127,16 +130,18 @@ export default async function MarketingMachinePage({
         <div className="max-w-5xl mx-auto">
           <SectionHeading id="how-it-works">{t('howItWorks.title')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-            {HOW_IT_WORKS_STEPS.map((step) => (
-              <div key={step.key} className="text-center">
-                <div className="text-4xl font-bold font-mono text-accent-system/30 mb-4">
-                  {step.number}
+            {HOW_IT_WORKS_STEPS.map((step, index) => (
+              <ScrollReveal key={step.key} delay={index * 0.1}>
+                <div className="text-center">
+                  <div className="text-4xl font-bold font-mono text-accent-system/30 mb-4">
+                    {step.number}
+                  </div>
+                  <h3 className="text-xl font-semibold text-text-primary mb-2">
+                    {t(`howItWorks.${step.key}.title`)}
+                  </h3>
+                  <p className="text-text-secondary">{t(`howItWorks.${step.key}.description`)}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-text-primary mb-2">
-                  {t(`howItWorks.${step.key}.title`)}
-                </h3>
-                <p className="text-text-secondary">{t(`howItWorks.${step.key}.description`)}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -144,13 +149,15 @@ export default async function MarketingMachinePage({
 
       {/* CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-          <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-          <CTAButton href="/contact" size="lg">
-            {t('cta.button')}
-          </CTAButton>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
+            <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
+            <CTAButton href="/contact" size="lg">
+              {t('cta.button')}
+            </CTAButton>
+          </div>
+        </ScrollReveal>
       </section>
     </PageShell>
   )

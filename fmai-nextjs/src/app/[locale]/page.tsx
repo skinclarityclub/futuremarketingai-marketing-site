@@ -10,6 +10,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -92,17 +93,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {t('services.subtitle')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {SERVICE_CARDS.map((card) => (
-              <Link key={card.key} href={card.href}>
-                <GlassCard className="h-full hover:border-border-accent transition-all cursor-pointer">
-                  <h3 className="text-xl font-semibold font-display text-text-primary mb-3">
-                    {t(`services.${card.key}.title`)}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {t(`services.${card.key}.description`)}
-                  </p>
-                </GlassCard>
-              </Link>
+            {SERVICE_CARDS.map((card, index) => (
+              <ScrollReveal key={card.key} delay={index * 0.1}>
+                <Link href={card.href}>
+                  <GlassCard className="h-full hover:border-border-accent transition-all cursor-pointer">
+                    <h3 className="text-xl font-semibold font-display text-text-primary mb-3">
+                      {t(`services.${card.key}.title`)}
+                    </h3>
+                    <p className="text-text-secondary leading-relaxed">
+                      {t(`services.${card.key}.description`)}
+                    </p>
+                  </GlassCard>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -112,36 +115,40 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeading id="trust">{t('trust.title')}</SectionHeading>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-            <div className="flex items-start gap-3 text-left">
-              <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
-              <p className="text-text-secondary">{t('trust.customBuilt')}</p>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+              <div className="flex items-start gap-3 text-left">
+                <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
+                <p className="text-text-secondary">{t('trust.customBuilt')}</p>
+              </div>
+              <div className="flex items-start gap-3 text-left">
+                <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
+                <p className="text-text-secondary">{t('trust.founderAccess')}</p>
+              </div>
+              <div className="flex items-start gap-3 text-left">
+                <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
+                <p className="text-text-secondary">{t('trust.successGuarantee')}</p>
+              </div>
+              <div className="flex items-start gap-3 text-left">
+                <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
+                <p className="text-text-secondary">{t('trust.trialCommitment')}</p>
+              </div>
             </div>
-            <div className="flex items-start gap-3 text-left">
-              <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
-              <p className="text-text-secondary">{t('trust.founderAccess')}</p>
-            </div>
-            <div className="flex items-start gap-3 text-left">
-              <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
-              <p className="text-text-secondary">{t('trust.successGuarantee')}</p>
-            </div>
-            <div className="flex items-start gap-3 text-left">
-              <span className="text-accent-system mt-1 shrink-0">&#10003;</span>
-              <p className="text-text-secondary">{t('trust.trialCommitment')}</p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Final CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-          <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-          <CTAButton href="/contact" size="lg">
-            {t('cta.button')}
-          </CTAButton>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
+            <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
+            <CTAButton href="/contact" size="lg">
+              {t('cta.button')}
+            </CTAButton>
+          </div>
+        </ScrollReveal>
       </section>
     </PageShell>
   )

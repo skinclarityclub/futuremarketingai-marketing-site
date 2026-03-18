@@ -9,6 +9,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -64,73 +65,75 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       <section className="py-12 px-6 lg:px-12" aria-labelledby="pricing-tiers">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {TIER_KEYS.map((tier) => {
+            {TIER_KEYS.map((tier, index) => {
               const isGrowth = tier === 'growth'
 
               return (
-                <GlassCard key={tier} highlighted={isGrowth} className="relative flex flex-col">
-                  {/* Badge */}
-                  {isGrowth && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="px-4 py-1 bg-accent-system text-bg-deep text-sm font-semibold rounded-full">
-                        {t('tiers.growth.badge')}
+                <ScrollReveal key={tier} delay={index * 0.15}>
+                  <GlassCard highlighted={isGrowth} className="relative flex flex-col">
+                    {/* Badge */}
+                    {isGrowth && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                        <span className="px-4 py-1 bg-accent-system text-bg-deep text-sm font-semibold rounded-full">
+                          {t('tiers.growth.badge')}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Tier Name */}
+                    <h3 className="text-2xl font-bold font-display text-text-primary mb-2">
+                      {t(`tiers.${tier}.name`)}
+                    </h3>
+
+                    {/* Price */}
+                    <div className="mb-4">
+                      <span className="font-mono text-4xl font-bold text-text-primary">
+                        &euro;{t(`tiers.${tier}.price`)}
                       </span>
+                      <span className="text-text-muted text-lg">/mo</span>
                     </div>
-                  )}
 
-                  {/* Tier Name */}
-                  <h3 className="text-2xl font-bold font-display text-text-primary mb-2">
-                    {t(`tiers.${tier}.name`)}
-                  </h3>
+                    {/* Service count */}
+                    <p className="text-accent-system font-semibold mb-4">
+                      {t(`tiers.${tier}.service_count`)}
+                    </p>
 
-                  {/* Price */}
-                  <div className="mb-4">
-                    <span className="font-mono text-4xl font-bold text-text-primary">
-                      &euro;{t(`tiers.${tier}.price`)}
-                    </span>
-                    <span className="text-text-muted text-lg">/mo</span>
-                  </div>
+                    {/* Description */}
+                    <p className="text-text-secondary text-sm mb-6 leading-relaxed">
+                      {t(`tiers.${tier}.description`)}
+                    </p>
 
-                  {/* Service count */}
-                  <p className="text-accent-system font-semibold mb-4">
-                    {t(`tiers.${tier}.service_count`)}
-                  </p>
+                    {/* Divider */}
+                    <div className="border-t border-border-primary mb-6" />
 
-                  {/* Description */}
-                  <p className="text-text-secondary text-sm mb-6 leading-relaxed">
-                    {t(`tiers.${tier}.description`)}
-                  </p>
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8 flex-1">
+                      {Array.from({ length: FEATURE_COUNT }).map((_, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+                          <svg
+                            className="w-4 h-4 text-accent-system flex-shrink-0 mt-0.5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {t(`tiers.${tier}.features_${i}`)}
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* Divider */}
-                  <div className="border-t border-border-primary mb-6" />
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {Array.from({ length: FEATURE_COUNT }).map((_, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                        <svg
-                          className="w-4 h-4 text-accent-system flex-shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {t(`tiers.${tier}.features_${i}`)}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <CTAButton
-                    href="/contact"
-                    variant={isGrowth ? 'primary' : 'secondary'}
-                    className="w-full justify-center"
-                  >
-                    {t('cta.primary_button')}
-                  </CTAButton>
-                </GlassCard>
+                    {/* CTA */}
+                    <CTAButton
+                      href="/contact"
+                      variant={isGrowth ? 'primary' : 'secondary'}
+                      className="w-full justify-center"
+                    >
+                      {t('cta.primary_button')}
+                    </CTAButton>
+                  </GlassCard>
+                </ScrollReveal>
               )
             })}
           </div>
@@ -140,22 +143,24 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {/* CTA Section */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="pricing-cta">
         <div className="max-w-7xl mx-auto text-center">
-          <GlassCard className="p-12">
-            <SectionHeading id="pricing-cta" className="mb-4">
-              {t('cta.title')}
-            </SectionHeading>
-            <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-              {t('cta.description')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/contact" size="lg">
-                {t('cta.primary_button')}
-              </CTAButton>
-              <CTAButton href="/contact" variant="secondary" size="lg">
-                {t('cta.secondary_button')}
-              </CTAButton>
-            </div>
-          </GlassCard>
+          <ScrollReveal>
+            <GlassCard className="p-12">
+              <SectionHeading id="pricing-cta" className="mb-4">
+                {t('cta.title')}
+              </SectionHeading>
+              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                {t('cta.description')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton href="/contact" size="lg">
+                  {t('cta.primary_button')}
+                </CTAButton>
+                <CTAButton href="/contact" variant="secondary" size="lg">
+                  {t('cta.secondary_button')}
+                </CTAButton>
+              </div>
+            </GlassCard>
+          </ScrollReveal>
         </div>
       </section>
     </PageShell>
