@@ -57,7 +57,7 @@ Requirements for the Next.js migration. Each maps to roadmap phases.
 - [ ] **INT-03**: 3-persona demo playground on Chatbots page
 - [ ] **INT-04**: Guided demo mode with 3 scenarios and state machine
 - [ ] **INT-05**: motion v12 animations with "use client" wrapper pattern
-- [ ] **INT-06**: Zustand stores migrated with hydration-safe patterns
+- [x] **INT-06**: Zustand stores migrated with hydration-safe patterns
 - [x] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
 - [ ] **INT-08**: Calendly CTA integration with modal pattern
 - [ ] **INT-09**: Cookie consent
@@ -148,7 +148,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INT-03      | Phase 3 | Pending  |
 | INT-04      | Phase 3 | Pending  |
 | INT-05      | Phase 3 | Pending  |
-| INT-06      | Phase 1 | Pending  |
+| INT-06      | Phase 1 | Complete |
 | INT-07      | Phase 1 | Complete |
 | INT-08      | Phase 3 | Pending  |
 | INT-09      | Phase 3 | Pending  |
