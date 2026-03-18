@@ -1,0 +1,31 @@
+# Future Marketing AI
+
+> B2B AI marketing automation agency helping growth-stage companies deploy
+> AI-powered automations, chatbots, voice agents, and full-stack marketing machines.
+> Based in the Netherlands, serving international B2B teams with custom-built AI systems.
+
+## Services
+
+- [AI Marketing Automations](https://futuremarketingai.com/en/automations): Replace manual marketing workflows with AI-driven lead qualification, email sequences, social media publishing, invoice handling, onboarding, and CRM synchronization. Workflows are built for B2B growth-stage companies with existing martech stacks. Most automations launch within 1-2 weeks. Integrations include HubSpot, Salesforce, ActiveCampaign, n8n, Make, and most REST API platforms.
+
+- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Custom AI chatbots that handle customer service, qualify leads, and book appointments around the clock. Each chatbot is configured with a brand persona and trained on your knowledge base. Interactive demos let prospects test the experience before buying. Multi-platform deployment covers website, WhatsApp, Slack, and other channels.
+
+- [AI Voice Agents](https://futuremarketingai.com/en/voice-agents): AI voice agents that call prospects, qualify leads, and book appointments at scale. Built with specialized voice AI partners for maximum quality and natural conversation flow. Suitable for both inbound support and outbound sales campaigns. Voice agents integrate with your CRM and calendar for seamless handoff.
+
+- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Six AI modules working 24/7 to create, optimise, and distribute your marketing content. Produces up to 160 posts per month with zero manual work. Covers content creation, SEO optimisation, social distribution, ad management, analytics, and pipeline automation. Designed for founding teams who want full-stack marketing without hiring a department.
+
+## Company
+
+- [About Future Marketing AI](https://futuremarketingai.com/en/about): Learn about the mission, approach, and founding story behind Future Marketing AI. Founded to help B2B growth teams deploy AI systems that actually work, with direct founder access and a success guarantee.
+
+- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step overview of the delivery process from initial AI audit through build, launch, and ongoing optimisation. Most projects go live in 1-3 weeks depending on complexity.
+
+- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers and investment overview for all AI solutions. Transparent pricing with a 3-month risk-free trial commitment. Options range from standalone automations to full marketing machine packages.
+
+## Legal
+
+- [Legal](https://futuremarketingai.com/en/legal): Privacy policy, terms of service, and cookie policy. All legal documentation consolidated on a single page.
+
+## Optional
+
+- [Contact](https://futuremarketingai.com/en/contact): Book a free 30-minute AI audit and discovery call. Direct access to the founder for strategy discussions and project scoping.

@@ -1,0 +1,21 @@
+# Future Marketing AI
+
+> B2B AI marketing automation agency helping growth-stage companies deploy
+> AI-powered automations, chatbots, voice agents, and full-stack marketing machines.
+
+## Services
+
+- [AI Marketing Automations](https://futuremarketingai.com/en/automations): End-to-end workflow automation for lead qualification, email sequences, and CRM sync
+- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Conversational AI with persona configuration and live demo playground
+- [AI Voice Agents](https://futuremarketingai.com/en/voice-agents): Inbound/outbound voice automation for sales and support
+- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Integrated content, ads, and pipeline automation
+
+## Company
+
+- [About Future Marketing AI](https://futuremarketingai.com/en/about): Mission, approach, and founding story
+- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step delivery process
+- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers and investment overview
+
+## Optional
+
+- [Contact](https://futuremarketingai.com/en/contact): Book a discovery call
