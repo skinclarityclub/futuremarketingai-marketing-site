@@ -87,7 +87,7 @@ export async function Footer({ locale }: FooterProps) {
 
         <div className="mt-8 pt-8 border-t border-border-primary text-center">
           <p className="text-xs text-text-muted">
-            &copy; {year} Future Marketing AI. {t('footer.all_rights_reserved')}
+            &copy; {year} Future Marketing AI. {t('footer_all_rights')}
           </p>
         </div>
       </div>
