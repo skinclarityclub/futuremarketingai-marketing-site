@@ -81,13 +81,14 @@ Plans:
 3. Guided demo mode walks through all 3 scenarios with the state machine orchestrator controlling progression and booking flow
 4. Motion v12 animations render without layout shift above the fold -- scroll reveals, card tilts, page transitions, and gradient mesh all work
 5. Calendly modal opens from CTA buttons across all pages; cookie consent banner appears and persists user preference
-   **Plans**: 3 plans
+   **Plans**: 4 plans
 
 Plans:
 
 - [x] 03-01: Animation wrapper pattern (motion v12 "use client" islands) and shared interactive components
 - [ ] 03-02: Chatbot engine migration (Route Handler, AI SDK streaming, 17 tools, side panel, persona routing)
 - [ ] 03-03: Demo mode, persona playground, Calendly integration, and cookie consent
+- [ ] 03-04: Gap closure -- Wire orphaned ScrollReveal into pages and CalendlyModal into layout/CTAs
 
 ### Phase 4: SEO Differentiation and GEO/LLMEO
 
@@ -153,7 +154,7 @@ Phases 1 and 2 are sequential. After Phase 2, Phases 3, 4, and 5 can execute in 
 | ------------------------------------ | -------------- | ----------- | --------- |
 | 1. Foundation and Infrastructure     | 0/3            | Not started | -         |
 | 2. Page Migration and Core SEO       | 0/5            | Not started | -         |
-| 3. Interactive Features              | 0/3            | Not started | -         |
+| 3. Interactive Features              | 0/4            | Not started | -         |
 | 4. SEO Differentiation and GEO/LLMEO | 0/2            | Not started | -         |
 | 5. Content Hub                       | 0/2            | Not started | -         |
 | 6. Performance, Polish, and Cutover  | 0/2            | Not started | -         |
