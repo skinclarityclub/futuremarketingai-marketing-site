@@ -36,7 +36,7 @@ export async function Footer({ locale }: FooterProps) {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/services/chatbots"
+                    href="/chatbots"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.chatbots')}
@@ -44,7 +44,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/automations"
+                    href="/automations"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.automations')}
@@ -52,7 +52,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/voice-agents"
+                    href="/voice-agents"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.voice_agents')}
@@ -60,7 +60,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/marketing-machine"
+                    href="/marketing-machine"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.marketing_machine')}

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { routing } from '@/i18n/routing'
 import { SITE_URL, PAGE_DATES } from '@/lib/seo-config'
-import { getAllPosts } from '@/lib/blog'
+import { getAllPostsAllLocales } from '@/lib/blog'
 
 const pages = [
   { path: '/', changeFrequency: 'weekly' as const, priority: 1 },
@@ -37,22 +37,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  const blogPosts = getAllPosts()
-  const blogEntries = blogPosts.map((post) => {
-    const languages: Record<string, string> = {}
-    for (const locale of routing.locales) {
-      languages[locale] = `${SITE_URL}/${locale}/blog/${post.slug}`
-    }
+  // Group posts by slug to find which locales each post exists in
+  const allPosts = getAllPostsAllLocales()
+  const postsBySlug = new Map<string, typeof allPosts>()
+  for (const post of allPosts) {
+    const existing = postsBySlug.get(post.slug) ?? []
+    existing.push(post)
+    postsBySlug.set(post.slug, existing)
+  }
 
-    return {
-      url: `${SITE_URL}/en/blog/${post.slug}`,
+  const blogEntries = Array.from(postsBySlug.entries()).flatMap(([slug, versions]) => {
+    // Only add hreflang alternates if the post exists in multiple locales
+    const languages: Record<string, string> | undefined =
+      versions.length > 1
+        ? Object.fromEntries(
+            versions.map((v) => [v.locale, `${SITE_URL}/${v.locale}/blog/${slug}`])
+          )
+        : undefined
+
+    return versions.map((post) => ({
+      url: `${SITE_URL}/${post.locale}/blog/${post.slug}`,
       lastModified: new Date(post.updatedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-      alternates: {
-        languages,
-      },
-    }
+      ...(languages ? { alternates: { languages } } : {}),
+    }))
   })
 
   return [...staticEntries, ...blogEntries]

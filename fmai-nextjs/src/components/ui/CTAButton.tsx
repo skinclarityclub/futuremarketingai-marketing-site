@@ -25,8 +25,10 @@ export function CTAButton({
     'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-btn)] transition-all'
 
   const variantStyles = {
-    primary: 'bg-accent-system text-bg-deep hover:bg-accent-system/90',
-    secondary: 'bg-bg-elevated border border-border-primary text-text-primary hover:bg-bg-surface',
+    primary:
+      'bg-gradient-to-br from-[#F5A623] to-[#E8941A] text-bg-deep font-semibold hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(245,166,35,0.3)] active:translate-y-0',
+    secondary:
+      'bg-white/[0.04] backdrop-blur-[12px] border border-white/[0.08] text-text-primary hover:bg-white/[0.07] hover:border-white/[0.12] hover:-translate-y-0.5',
     ghost: 'text-text-secondary hover:text-text-primary',
   }
 

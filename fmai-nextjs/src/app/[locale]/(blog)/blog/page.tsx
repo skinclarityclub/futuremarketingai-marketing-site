@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, BLOG_CATEGORIES } from '@/lib/blog'
@@ -65,6 +65,8 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
   const { category } = await searchParams
   setRequestLocale(locale)
 
+  const t = await getTranslations({ locale, namespace: 'blog' })
+
   const allPosts = getAllPosts(locale)
   const activeCategory = category ?? null
   const filteredPosts = activeCategory
@@ -86,10 +88,8 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         ]}
         locale={locale}
       />
-      <h1 className="mb-2 text-4xl font-bold tracking-tight text-text-primary">Blog</h1>
-      <p className="mb-10 text-lg text-text-secondary">
-        Insights on AI marketing automation, chatbots, and growth strategies.
-      </p>
+      <h1 className="mb-2 text-4xl font-bold tracking-tight text-text-primary">{t('title')}</h1>
+      <p className="mb-10 text-lg text-text-secondary">{t('subtitle')}</p>
 
       <CategoryFilter
         categories={BLOG_CATEGORIES}

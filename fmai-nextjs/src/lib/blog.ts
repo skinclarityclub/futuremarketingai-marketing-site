@@ -66,3 +66,60 @@ export function getPostSlugs(): string[] {
     .filter((f) => f.endsWith('.mdx'))
     .map((f) => f.replace(/\.mdx$/, ''))
 }
+
+/**
+ * Returns slug+locale pairs for all posts across all locales.
+ * Used by generateStaticParams to only generate routes for
+ * the locale each post is written in.
+ */
+export function getPostSlugsWithLocales(): { slug: string; locale: string }[] {
+  if (!fs.existsSync(CONTENT_DIR)) {
+    return []
+  }
+
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx'))
+
+  return files.map((filename) => {
+    const filePath = path.join(CONTENT_DIR, filename)
+    const fileContents = fs.readFileSync(filePath, 'utf-8')
+    const { data } = matter(fileContents)
+
+    return {
+      slug: filename.replace(/\.mdx$/, ''),
+      locale: (data.locale as string) ?? 'en',
+    }
+  })
+}
+
+/**
+ * Returns all posts regardless of locale.
+ * Each post includes its locale field so callers can build
+ * locale-specific URLs.
+ */
+export function getAllPostsAllLocales(): BlogPostMeta[] {
+  if (!fs.existsSync(CONTENT_DIR)) {
+    return []
+  }
+
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx'))
+
+  return files
+    .map((filename) => {
+      const filePath = path.join(CONTENT_DIR, filename)
+      const fileContents = fs.readFileSync(filePath, 'utf-8')
+      const { data } = matter(fileContents)
+
+      return {
+        slug: filename.replace(/\.mdx$/, ''),
+        title: data.title ?? '',
+        description: data.description ?? '',
+        author: data.author ?? '',
+        publishedAt: data.publishedAt ?? '',
+        updatedAt: data.updatedAt ?? '',
+        category: data.category ?? '',
+        tags: Array.isArray(data.tags) ? data.tags : [],
+        locale: data.locale ?? 'en',
+      }
+    })
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+}

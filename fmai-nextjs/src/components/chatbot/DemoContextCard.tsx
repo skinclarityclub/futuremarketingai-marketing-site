@@ -11,17 +11,10 @@ interface DemoContextCardProps {
 export function DemoContextCard({ personaId }: DemoContextCardProps) {
   const t = useTranslations('chatbots')
 
-  // next-intl does not support returnObjects; use indexed keys instead
+  // next-intl does not support returnObjects; use indexed keys (4 capabilities per persona)
   const capabilities: string[] = []
-  for (let i = 0; i < 5; i++) {
-    try {
-      const cap = t(`demo.tabs.${personaId}.capabilities_${i}`)
-      if (cap && !cap.startsWith('demo.tabs.')) {
-        capabilities.push(cap)
-      }
-    } catch {
-      break
-    }
+  for (let i = 0; i < 4; i++) {
+    capabilities.push(t(`demo.tabs.${personaId}.capabilities_${i}`))
   }
 
   return (

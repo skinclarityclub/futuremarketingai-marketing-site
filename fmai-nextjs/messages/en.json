@@ -5,36 +5,47 @@
       "description": "Future Marketing AI builds custom AI automation, chatbots, and voice agents for growth teams. Three specialized platforms, one partner. Book a free AI audit."
     },
     "hero": {
-      "headline": "AI Systems That Run Your Business",
+      "badge": "AI Implementation Partner",
+      "headlineMain": "AI Automation Agency That Runs",
+      "headlineAccent": "Your Business.",
       "subtitle": "We implement AI that actually works — marketing automation, custom workflows, chatbots, and voice agents for SaaS and e-commerce companies.",
+      "trustAnchor": "Businesses working with AI partners are 2.5x more likely to succeed",
       "cta": "Explore Our Services",
       "ctaSecondary": "Book a Strategy Call"
     },
     "services": {
-      "title": "What We Build For You",
-      "subtitle": "End-to-end AI implementation — from workflow automation to autonomous marketing systems",
+      "title": "AI Platforms Built for Growth",
+      "subtitle": "Three specialized AI platforms. Choose your starting point.",
       "automations": {
+        "number": "01",
         "title": "AI Automations",
-        "description": "Custom workflow automation connecting your tools and processes. Eliminate manual work in days."
+        "description": "Custom workflow automation connecting your tools and processes"
       },
       "chatbots": {
-        "title": "AI Chatbots",
-        "description": "Intelligent chatbots that qualify leads, support customers, and book appointments 24/7."
+        "number": "02",
+        "title": "FutureChatAI",
+        "description": "AI chat agents that qualify leads and support customers 24/7"
       },
       "voiceAgents": {
-        "title": "AI Voice Agents",
-        "description": "Voice agents that call prospects, qualify leads, and book appointments at scale."
+        "number": "03",
+        "title": "FutureVoiceAI",
+        "description": "Voice agents that handle inbound and outbound calls"
       },
       "marketingMachine": {
-        "title": "The Marketing Machine",
-        "description": "6 AI modules working 24/7 to create, optimise, and distribute your marketing content."
+        "number": "04",
+        "title": "FutureMarketingAI",
+        "description": "Autonomous content creation, scheduling, and campaign automation"
       }
     },
     "trust": {
       "title": "Why Teams Choose Us",
+      "customBuiltTitle": "Custom-Built Solutions",
       "customBuilt": "Fully Custom-Built — no templates, no limitations",
+      "founderAccessTitle": "Direct Founder Access",
       "founderAccess": "Direct founder access via Slack",
+      "successGuaranteeTitle": "Success Guarantee",
       "successGuarantee": "Success guarantee — we stay until it works",
+      "trialTitle": "Risk-Free Trial",
       "trialCommitment": "3-month risk-free trial"
     },
     "stats": {
@@ -56,6 +67,31 @@
       "title": "Ready to Automate Your Growth?",
       "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
       "button": "Book a Free Audit"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "q1": {
+          "question": "What is an AI implementation partner?",
+          "answer": "An AI implementation partner is a specialized agency that designs, builds, and deploys custom AI systems for your business — including chatbots, workflow automations, and voice agents — so you get production-ready solutions without hiring an in-house AI team."
+        },
+        "q2": {
+          "question": "How long does it take to implement AI?",
+          "answer": "Most single-service implementations (chatbot, automation workflow, or voice agent) go live within 1-3 weeks. A full Marketing Machine engagement typically takes 3-4 weeks for initial setup, with continuous optimization from day one."
+        },
+        "q3": {
+          "question": "Do you work with SaaS and e-commerce companies?",
+          "answer": "Yes — SaaS and e-commerce are our core verticals. We build AI automations that integrate with platforms like HubSpot, Salesforce, Shopify, and WooCommerce, tailored to the specific workflows of subscription and retail businesses."
+        },
+        "q4": {
+          "question": "What makes FMai different from other AI agencies?",
+          "answer": "We are not a consultancy that hands you a slide deck. We build, deploy, and manage your AI systems end-to-end. You get direct founder access, a success guarantee, and month-to-month contracts with no lock-in."
+        },
+        "q5": {
+          "question": "How much does AI automation cost?",
+          "answer": "Our managed plans start at EUR 1,497/month for a single AI service and scale to EUR 3,997/month for the full suite. Every plan includes hosting, maintenance, and ongoing support — no hidden fees."
+        }
+      }
     }
   },
   "automations": {
@@ -69,6 +105,46 @@
       "description": "We build custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences, and more. Powered by n8n, Make, and custom integrations.",
       "cta_primary": "Get a Free Automation Audit",
       "cta_secondary": "See Examples"
+    },
+    "quick_answer": "AI Marketing Automations by Future Marketing AI replace manual marketing workflows with intelligent, self-running systems — so your team focuses on strategy while AI handles execution.",
+    "sections": {
+      "challenges_heading": "Why Does Your Marketing Team Need AI Automation?",
+      "automations_heading": "What Does Our Automation Service Include?",
+      "process_heading": "How Does an Automation Workflow Get Built?",
+      "faq_heading": "Frequently Asked Questions",
+      "related_heading": "Related Services"
+    },
+    "faq": {
+      "items": {
+        "q1": {
+          "question": "What is AI marketing automation?",
+          "answer": "AI marketing automation uses machine learning to execute repetitive marketing tasks — lead qualification, email sequences, CRM sync — without human intervention, running 24/7 with consistent quality."
+        },
+        "q2": {
+          "question": "How long does it take to deploy an automation workflow?",
+          "answer": "Most workflow automations go live within 2-3 weeks: one week for audit and design, one week for build and testing, and a final integration sprint."
+        },
+        "q3": {
+          "question": "Which tools do you integrate with?",
+          "answer": "We integrate with HubSpot, Salesforce, ActiveCampaign, Zapier, Make (Integromat), Airtable, Slack, Google Workspace, and most REST API-based platforms."
+        },
+        "q4": {
+          "question": "Is AI automation suitable for small marketing teams?",
+          "answer": "Yes — AI automation scales down as well as up. Small teams (2-5 people) often see the biggest productivity gains because automation eliminates tasks that previously required dedicated headcount."
+        },
+        "q5": {
+          "question": "What happens if an automation breaks?",
+          "answer": "All workflows include monitoring and error-handling. We provide 30-day post-launch support and can configure Slack/email alerts for any failure states."
+        }
+      }
+    },
+    "related": {
+      "chatbots_title": "AI Chatbots",
+      "chatbots_description": "AI chat agents that qualify leads and support customers 24/7",
+      "voice_agents_title": "Voice Agents",
+      "voice_agents_description": "AI voice agents that handle inbound and outbound calls at scale",
+      "marketing_machine_title": "Marketing Machine",
+      "marketing_machine_description": "Autonomous content creation, scheduling, and campaign automation"
     },
     "pain_points": {
       "title": "Challenges We Solve",
@@ -132,6 +208,13 @@
       "cta_primary": "Try a Demo Below",
       "cta_secondary": "Get a Free Strategy Session"
     },
+    "quick_answer": "AI Chatbots by Future Marketing AI are conversational agents configured to your brand persona — qualifying leads, answering questions, and booking demos 24/7 without human intervention.",
+    "sections": {
+      "use_cases_heading": "What Can an AI Chatbot Do for Your Business?",
+      "process_heading": "How Does a Chatbot Get Deployed?",
+      "faq_heading": "Frequently Asked Questions",
+      "related_heading": "Related Services"
+    },
     "use_cases": {
       "title": "What Our Chatbots Do",
       "items": {
@@ -188,6 +271,42 @@
         }
       }
     },
+    "faq": {
+      "items": {
+        "q1": {
+          "question": "What makes an AI chatbot different from a rule-based chatbot?",
+          "answer": "AI chatbots use large language models to understand intent and generate contextual responses, while rule-based bots follow fixed decision trees. AI chatbots handle novel questions without pre-programmed paths."
+        },
+        "q2": {
+          "question": "Can I try the chatbot before purchasing?",
+          "answer": "Yes — our Chatbots page features a live demo playground with 3 pre-configured personas: e-commerce, lead generation, and customer support."
+        },
+        "q3": {
+          "question": "How do you configure the chatbot's persona?",
+          "answer": "Each chatbot receives a system prompt, tone guidelines, knowledge base documents, and example conversations. Configuration typically takes 3-5 business days for a production-ready persona."
+        },
+        "q4": {
+          "question": "Does the chatbot integrate with my CRM?",
+          "answer": "Yes — chatbot-captured leads are routed directly to HubSpot, Salesforce, or your CRM via webhook. We configure the field mapping during onboarding."
+        },
+        "q5": {
+          "question": "What languages does the chatbot support?",
+          "answer": "The underlying models support 50+ languages. We configure and test for your primary languages (EN/NL/ES as standard) during deployment."
+        },
+        "q6": {
+          "question": "Is the chatbot GDPR compliant?",
+          "answer": "Yes — all conversation data is processed within EU data centers, chat history is not retained beyond the session by default, and we provide a DPA on request."
+        }
+      }
+    },
+    "related": {
+      "automations_title": "AI Automations",
+      "automations_description": "Custom workflow automation connecting your tools and processes",
+      "voice_agents_title": "Voice Agents",
+      "voice_agents_description": "AI voice agents that handle inbound and outbound calls at scale",
+      "marketing_machine_title": "Marketing Machine",
+      "marketing_machine_description": "Autonomous content creation, scheduling, and campaign automation"
+    },
     "process": {
       "title": "How We Build It",
       "steps": {
@@ -222,6 +341,45 @@
       "description": "AI voice agents that call prospects, qualify leads, and book appointments — at scale, without a sales team.",
       "cta_primary": "Book a Demo Call",
       "cta_secondary": "See Use Cases"
+    },
+    "quick_answer": "AI Voice Agents by Future Marketing AI handle inbound and outbound calls autonomously — qualifying prospects, scheduling appointments, and resolving support queries at scale.",
+    "sections": {
+      "use_cases_heading": "What Can AI Voice Agents Do?",
+      "partnership_heading": "How Do Voice Agents Integrate With Your Stack?",
+      "faq_heading": "Frequently Asked Questions",
+      "related_heading": "Related Services"
+    },
+    "faq": {
+      "items": {
+        "q1": {
+          "question": "What is an AI voice agent?",
+          "answer": "An AI voice agent is a conversational telephone bot that can handle inbound calls (qualifying prospects, answering FAQs) or make outbound calls (follow-ups, appointment reminders) using natural language."
+        },
+        "q2": {
+          "question": "How human-like is the voice?",
+          "answer": "Modern text-to-speech models produce near-human speech with adjustable tone, pace, and accent. Most callers cannot distinguish the agent from a human in the first 30 seconds."
+        },
+        "q3": {
+          "question": "What call scenarios can voice agents handle?",
+          "answer": "Lead qualification, appointment scheduling, inbound support routing, outbound reminders, NPS surveys, and post-purchase follow-up calls are the most common use cases."
+        },
+        "q4": {
+          "question": "How do voice agents integrate with my phone system?",
+          "answer": "We use Twilio or Vonage as the telephony layer, which connects to most VoIP systems. SIP trunking or PSTN integration is included in all deployments."
+        },
+        "q5": {
+          "question": "What is the average call deflection rate?",
+          "answer": "Clients typically see 40-70% deflection on repeat/FAQ inbound queries within the first 90 days, reducing live agent queue time significantly."
+        }
+      }
+    },
+    "related": {
+      "automations_title": "AI Automations",
+      "automations_description": "Custom workflow automation connecting your tools and processes",
+      "chatbots_title": "AI Chatbots",
+      "chatbots_description": "AI chat agents that qualify leads and support customers 24/7",
+      "marketing_machine_title": "Marketing Machine",
+      "marketing_machine_description": "Autonomous content creation, scheduling, and campaign automation"
     },
     "use_cases": {
       "title": "What Voice Agents Can Do",
@@ -266,6 +424,49 @@
       "description": "6 AI modules working 24/7 to create, optimise, and distribute your content — while you focus on growing your business.",
       "cta_primary": "Book a Discovery Call",
       "cta_secondary": "Calculate Your ROI"
+    },
+    "quick_answer": "The AI Marketing Machine by Future Marketing AI is an integrated system combining automations, chatbots, content production, and paid amplification into a single self-optimizing growth engine.",
+    "sections": {
+      "features_heading": "What Does the Marketing Machine Include?",
+      "how_it_works_heading": "How Does the Marketing Machine Get Built?",
+      "faq_heading": "Frequently Asked Questions",
+      "related_heading": "Related Services"
+    },
+    "faq": {
+      "items": {
+        "q1": {
+          "question": "What is the AI Marketing Machine?",
+          "answer": "The AI Marketing Machine is an integrated system combining workflow automations, conversational AI, content production, and paid amplification into a single self-optimizing growth engine managed for you."
+        },
+        "q2": {
+          "question": "How is this different from buying individual tools?",
+          "answer": "Individual tools require manual orchestration. The Marketing Machine is a managed service where AI coordinates the tools, and we handle strategy, operations, and optimization."
+        },
+        "q3": {
+          "question": "What does 'Marketing Machine' include?",
+          "answer": "A standard engagement includes: lead generation automations, a configured chatbot, content calendar and AI-assisted production, ad campaign management, and monthly optimization sprints."
+        },
+        "q4": {
+          "question": "How long until I see results?",
+          "answer": "Infrastructure setup takes 3-4 weeks. Most clients see measurable pipeline impact (qualified leads, booked calls) within 60 days of launch."
+        },
+        "q5": {
+          "question": "Is this suitable for B2C companies?",
+          "answer": "The Marketing Machine is optimized for B2B. B2C companies with high-ticket products (EUR 1.000+) can benefit, but the playbook is calibrated for longer sales cycles and account-based targeting."
+        },
+        "q6": {
+          "question": "What does ongoing management involve?",
+          "answer": "Monthly: performance review, A/B test analysis, content refresh, ad budget reallocation, and chatbot knowledge base updates. Quarterly: strategy reassessment and roadmap update."
+        }
+      }
+    },
+    "related": {
+      "automations_title": "AI Automations",
+      "automations_description": "Custom workflow automation connecting your tools and processes",
+      "chatbots_title": "AI Chatbots",
+      "chatbots_description": "AI chat agents that qualify leads and support customers 24/7",
+      "voice_agents_title": "Voice Agents",
+      "voice_agents_description": "AI voice agents that handle inbound and outbound calls at scale"
     },
     "features": {
       "title": "Your Autonomous Marketing Team",
@@ -502,6 +703,27 @@
       "description": "Book a free strategy call and we will map out exactly which services will drive the most impact for your business.",
       "primary_button": "Book a Strategy Call",
       "secondary_button": "Contact Us"
+    },
+    "faq": {
+      "title": "Pricing Questions",
+      "items": {
+        "q1": {
+          "question": "Can I switch plans later?",
+          "answer": "Yes — you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle. No penalties, no lock-in."
+        },
+        "q2": {
+          "question": "Is there a setup fee?",
+          "answer": "No. Setup, configuration, and onboarding are included in every plan. You pay only the monthly subscription fee — nothing extra to get started."
+        },
+        "q3": {
+          "question": "What's included in each plan?",
+          "answer": "Every plan includes hosting, infrastructure, monthly maintenance, and support. Higher tiers add more AI services, analytics dashboards, priority support, and dedicated strategy calls."
+        },
+        "q4": {
+          "question": "Do you offer custom enterprise pricing?",
+          "answer": "Yes — for organizations needing custom integrations, dedicated infrastructure, or SLA guarantees beyond our standard plans, we offer tailored enterprise agreements. Contact us to discuss your requirements."
+        }
+      }
     }
   },
   "how-it-works": {
@@ -562,7 +784,7 @@
       "description": "Get in touch with Future Marketing AI. Book a demo call, send us a message, or reach out directly. We respond within 24 hours."
     },
     "hero": {
-      "title": "Get in Touch",
+      "title": "Get a Free AI Consultation",
       "description": "Ready to transform your marketing with autonomous AI? Let us talk about how Future Marketing AI can help your business."
     },
     "form": {
@@ -619,5 +841,9 @@
       }
     },
     "last_updated": "Last updated: March 2026"
+  },
+  "blog": {
+    "title": "AI Marketing & Automation Insights",
+    "subtitle": "Insights on AI marketing automation, chatbots, and growth strategies."
   }
 }

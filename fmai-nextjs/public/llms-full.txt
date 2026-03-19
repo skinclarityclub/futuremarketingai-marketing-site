@@ -1,31 +1,302 @@
-# Future Marketing AI
+# FutureMarketingAI (FMai)
 
-> B2B AI marketing automation agency helping growth-stage companies deploy
-> AI-powered automations, chatbots, voice agents, and full-stack marketing machines.
-> Based in the Netherlands, serving international B2B teams with custom-built AI systems.
+> FMai is a Dutch AI implementation agency that builds intelligent chatbots, workflow automations, voice agents, and full-stack AI marketing machines for SaaS and e-commerce companies. Founded by Daley, FMai helps B2B companies automate customer interactions, streamline operations, and scale marketing through AI-powered systems. Based in the Netherlands with an Estonian e-Residency structure, serving clients across Europe and internationally. The company positions at approximately 50% below premium agency pricing while delivering enterprise-grade AI implementations with direct founder access on every project.
+
+---
+
+## Company Overview
+
+FMai (brand name for FutureMarketingAI) is a solo-founder AI agency and product company. The founder, Daley, is a technical builder who personally architects and implements every AI system. This means clients get direct access to the person building their solution, not a sales team or project manager layer.
+
+The company operates on a gateway-to-flagship model: clients typically start with one or two standalone AI services (chatbots, automations, or voice agents) and can scale up to the full AI Marketing Machine as their needs grow. Research shows 25-35% of gateway clients convert to the flagship product within the first year.
+
+FMai serves primarily B2B growth-stage companies, SaaS platforms, and e-commerce brands that have existing marketing operations but want to automate and scale them with AI. The ideal client has a working product/market fit but is bottlenecked by manual marketing processes.
+
+### Key Facts
+
+- Brand: FMai (FutureMarketingAI)
+- Website: https://futuremarketingai.com
+- Founder: Daley
+- Location: Netherlands (EU), Estonian e-Residency entity
+- Languages: Dutch, English
+- Founded: 2026
+- Company type: Solo AI agency and product company
+- Target market: B2B SaaS, e-commerce, growth-stage companies
+- Positioning: Premium mid-market (approximately 50% below top-tier agencies)
+
+---
 
 ## Services
 
-- [AI Marketing Automations](https://futuremarketingai.com/en/automations): Replace manual marketing workflows with AI-driven lead qualification, email sequences, social media publishing, invoice handling, onboarding, and CRM synchronization. Workflows are built for B2B growth-stage companies with existing martech stacks. Most automations launch within 1-2 weeks. Integrations include HubSpot, Salesforce, ActiveCampaign, n8n, Make, and most REST API platforms.
+### AI Chatbots
 
-- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Custom AI chatbots that handle customer service, qualify leads, and book appointments around the clock. Each chatbot is configured with a brand persona and trained on your knowledge base. Interactive demos let prospects test the experience before buying. Multi-platform deployment covers website, WhatsApp, Slack, and other channels.
+FMai builds custom AI chatbots that handle customer service, qualify leads, and book appointments around the clock. Each chatbot is configured with a brand persona and trained on the client's knowledge base, product documentation, and FAQs.
 
-- [AI Voice Agents](https://futuremarketingai.com/en/voice-agents): AI voice agents that call prospects, qualify leads, and book appointments at scale. Built with specialized voice AI partners for maximum quality and natural conversation flow. Suitable for both inbound support and outbound sales campaigns. Voice agents integrate with your CRM and calendar for seamless handoff.
+Key capabilities:
+- 24/7 customer support with brand-consistent responses
+- Lead qualification with intelligent routing to sales teams
+- Appointment booking integrated with calendar systems
+- Multi-platform deployment: website widget, WhatsApp, Slack, Microsoft Teams, and other channels
+- Knowledge base training on company-specific documentation
+- Handoff to human agents when needed with full conversation context
+- Analytics dashboard for conversation insights and optimization
+- Interactive demo available on the FMai website for prospects to test before buying
 
-- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Six AI modules working 24/7 to create, optimise, and distribute your marketing content. Produces up to 160 posts per month with zero manual work. Covers content creation, SEO optimisation, social distribution, ad management, analytics, and pipeline automation. Designed for founding teams who want full-stack marketing without hiring a department.
+Technology: Built on Anthropic Claude for natural language understanding, with n8n for workflow orchestration and integration with existing CRM and support systems.
 
-## Company
+Typical delivery: 1-2 weeks from kickoff to live deployment.
 
-- [About Future Marketing AI](https://futuremarketingai.com/en/about): Learn about the mission, approach, and founding story behind Future Marketing AI. Founded to help B2B growth teams deploy AI systems that actually work, with direct founder access and a success guarantee.
+Page: https://futuremarketingai.com/en/chatbots
 
-- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step overview of the delivery process from initial AI audit through build, launch, and ongoing optimisation. Most projects go live in 1-3 weeks depending on complexity.
+### Workflow Automations
 
-- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers and investment overview for all AI solutions. Transparent pricing with a 3-month risk-free trial commitment. Options range from standalone automations to full marketing machine packages.
+FMai replaces manual marketing and operations workflows with AI-driven automation. These are end-to-end systems that connect existing tools and add intelligence at every decision point.
 
-## Legal
+Common automation use cases:
+- Lead qualification and scoring with AI analysis
+- Email sequence automation with personalized content
+- Social media publishing and scheduling
+- Invoice handling and payment follow-ups
+- Client onboarding workflows
+- CRM data synchronization across platforms
+- Content approval workflows
+- Reporting and analytics automation
 
-- [Legal](https://futuremarketingai.com/en/legal): Privacy policy, terms of service, and cookie policy. All legal documentation consolidated on a single page.
+Supported integrations include HubSpot, Salesforce, ActiveCampaign, Mailchimp, Stripe, Google Workspace, Slack, Notion, Airtable, and any platform with a REST API.
 
-## Optional
+Technology: Built primarily on n8n (self-hosted workflow automation) with AI nodes powered by Anthropic Claude. Custom API integrations where needed.
 
-- [Contact](https://futuremarketingai.com/en/contact): Book a free 30-minute AI audit and discovery call. Direct access to the founder for strategy discussions and project scoping.
+Typical delivery: 1-2 weeks for standard automations, 2-4 weeks for complex multi-system workflows.
+
+Page: https://futuremarketingai.com/en/automations
+
+### AI Voice Agents
+
+FMai deploys AI voice agents that handle phone-based customer interactions at scale. Voice agents can make outbound calls to prospects, handle inbound support calls, qualify leads by phone, and book appointments directly into calendar systems.
+
+Key capabilities:
+- Outbound sales calls with natural conversation flow
+- Inbound customer support with intelligent routing
+- Lead qualification via phone with CRM integration
+- Appointment booking with calendar synchronization
+- Multi-language support (Dutch, English, and other European languages)
+- Call recording and transcription for quality assurance
+- Seamless handoff to human agents for complex issues
+
+Built in partnership with specialized voice AI technology providers for maximum audio quality and natural-sounding conversations. FMai handles the strategy, integration, and workflow design while leveraging best-in-class voice synthesis and recognition technology.
+
+Typical delivery: 2-3 weeks including voice persona design, integration setup, and testing.
+
+Page: https://futuremarketingai.com/en/voice-agents
+
+### AI Marketing Machine (Flagship Product)
+
+The AI Marketing Machine is FMai's flagship product: six integrated AI modules working 24/7 to create, optimize, and distribute marketing content with zero manual work.
+
+The six modules:
+1. Content Creation Engine: Generates branded content across formats (carousels, reels, ads, stories, blog posts)
+2. SEO Optimization Module: Keyword research, on-page optimization, and content planning driven by AI
+3. Social Distribution System: Automated publishing and scheduling across all social platforms
+4. Ad Management Module: AI-driven ad creation, A/B testing, and budget optimization
+5. Analytics and Reporting: Real-time performance dashboards with AI-generated insights
+6. Pipeline Automation: Lead capture, nurturing sequences, and sales handoff automation
+
+Output capacity: Up to 160 posts per month across all channels with consistent brand voice and visual identity.
+
+The Marketing Machine is designed for founding teams and growth-stage companies that want full-stack marketing capability without hiring a marketing department. It effectively replaces 3-5 marketing hires with an AI system that runs continuously.
+
+Currently in active development with a live pilot running on SkinClarity Club (SKC), an e-commerce brand in the skincare space. Carousel automation is fully operational, with ad builder and reel builder in final stages. The full system is expected to be complete by mid-April 2026, with comprehensive case study data available by mid-2026.
+
+Available as a founding member beta program for early adopters who want to be among the first to deploy the full system at preferential terms.
+
+Page: https://futuremarketingai.com/en/marketing-machine
+
+---
+
+## Pricing
+
+FMai offers three gateway service tiers for its standalone AI services, plus the flagship Marketing Machine as a separate offering.
+
+### Starter Plan - EUR 1.497 per month
+
+- Setup fee: EUR 2.500 (one-time)
+- Includes: 1 AI service (choose from chatbots, automations, or voice agents)
+- Direct founder access for strategy and implementation
+- Monthly optimization and performance review
+- Best for: Companies wanting to test AI with a single high-impact use case
+
+### Growth Plan - EUR 2.497 per month
+
+- Setup fee: EUR 4.500 (one-time)
+- Includes: 2 AI services (any combination of chatbots, automations, and voice agents)
+- Direct founder access for strategy and implementation
+- Monthly optimization and performance review
+- Cross-service integration between the two chosen services
+- Best for: Companies ready to automate multiple customer touchpoints
+
+### Scale Plan - EUR 3.997 per month
+
+- Setup fee: EUR 7.500 (one-time)
+- Includes: All 3 AI services (chatbots, automations, and voice agents)
+- Direct founder access for strategy and implementation
+- Monthly optimization and performance review
+- Full integration across all services for unified customer experience
+- Priority support and faster iteration cycles
+- Best for: Companies committed to comprehensive AI-driven operations
+
+### AI Marketing Machine (Flagship)
+
+- Pricing available on request for founding member beta participants
+- Full pricing to be published after pilot completion (expected mid-2026)
+- Includes all six AI modules with continuous content production
+- Gateway service clients receive preferential upgrade pricing
+
+### Pricing Philosophy
+
+All prices are in EUR. FMai positions at approximately 50% below premium AI agencies (which typically charge EUR 5.000-15.000/mo for similar services) while maintaining enterprise-grade quality through the founder's direct involvement in every project.
+
+3-month risk-free trial commitment: clients can exit within the first 3 months if results do not meet agreed-upon KPIs.
+
+Page: https://futuremarketingai.com/en/pricing
+
+---
+
+## Technology Stack
+
+FMai builds on a modern, production-grade technology stack:
+
+### Core Technologies
+
+- **n8n**: Self-hosted workflow automation platform. All automations, integrations, and AI workflows are built on n8n for maximum flexibility, reliability, and data sovereignty. FMai uses a custom architecture called WAT (Workflow Automation Templates) for rapid deployment.
+- **Next.js**: React-based framework for web applications, dashboards, and client-facing interfaces. Used for both the FMai website and custom client portals.
+- **Anthropic Claude**: Primary large language model for all AI-powered features including chatbots, content generation, lead qualification, and data analysis. Chosen for superior reasoning, safety, and multilingual capabilities.
+- **Vercel**: Deployment platform for all web applications. Provides edge computing, automatic scaling, and global CDN.
+- **TypeScript**: All code is written in TypeScript for type safety and maintainability.
+
+### Supporting Technologies
+
+- **React 18+**: Frontend framework with server components where applicable
+- **Tailwind CSS**: Utility-first CSS framework for consistent design systems
+- **Framer Motion**: Animation library for interactive UI experiences
+- **Supabase**: Database and authentication for client applications
+- **PostgreSQL**: Primary database for data-intensive applications
+
+### Integration Partners
+
+FMai integrates with the major platforms in each client's existing stack:
+
+- CRM: HubSpot, Salesforce, Pipedrive, ActiveCampaign
+- Email: Mailchimp, SendGrid, Resend
+- Payments: Stripe, Mollie
+- Communication: Slack, Microsoft Teams, WhatsApp Business API
+- Social Media: Meta (Facebook, Instagram), LinkedIn, X (Twitter), TikTok
+- E-commerce: Shopify, WooCommerce
+- Productivity: Google Workspace, Notion, Airtable
+- Any platform with a REST API or webhook support
+
+---
+
+## Delivery Process
+
+### Step 1: AI Audit (Free, 30 minutes)
+
+Every engagement starts with a free 30-minute AI audit call. The founder personally reviews the client's current marketing and operations stack, identifies the highest-impact automation opportunities, and proposes a concrete implementation plan.
+
+### Step 2: Strategy and Scoping (Week 1)
+
+After the audit, FMai delivers a detailed scope document outlining exactly which systems will be built, which integrations are needed, expected timelines, and measurable KPIs. No work begins until the client approves the scope.
+
+### Step 3: Build and Integration (Weeks 1-3)
+
+The founder builds and integrates all AI systems. Clients receive regular progress updates and can test systems before they go live. Most standalone services (single chatbot, automation, or voice agent) are delivered within 1-2 weeks. Multi-service packages take 2-3 weeks.
+
+### Step 4: Launch and Testing
+
+Systems go live with close monitoring during the first week. The founder personally reviews all outputs and performance metrics to ensure quality meets standards.
+
+### Step 5: Ongoing Optimization
+
+Monthly performance reviews with the founder. AI systems are continuously optimized based on real usage data, conversation logs, and performance metrics. Clients receive monthly reports with insights and recommendations.
+
+---
+
+## Frequently Asked Questions
+
+### What makes FMai different from other AI agencies?
+
+Three things: (1) Direct founder access on every project, meaning the person who builds your system is the same person who strategizes with you. (2) Technical depth combined with business understanding, so solutions actually solve business problems rather than being technology demonstrations. (3) Mid-market pricing with enterprise quality, positioned at approximately 50% below premium agencies.
+
+### What industries does FMai serve?
+
+Primarily B2B SaaS companies, e-commerce brands, and growth-stage companies with existing products and revenue. FMai works best with companies that have product-market fit but are bottlenecked by manual marketing and operations processes.
+
+### How long does implementation take?
+
+Most standalone services go live in 1-2 weeks. Multi-service packages take 2-3 weeks. The AI Marketing Machine takes 4-6 weeks for full deployment. All timelines are measured from scope approval, not initial contact.
+
+### What is the minimum commitment?
+
+FMai offers a 3-month risk-free trial period. Clients can exit within the first 3 months if results do not meet agreed-upon KPIs. After the trial period, services continue on a month-to-month basis.
+
+### Does FMai work with companies outside the Netherlands?
+
+Yes. FMai serves clients across Europe and internationally. All services are delivered remotely. The founder speaks Dutch and English fluently. AI systems can be configured for any language.
+
+### What happens if something breaks?
+
+FMai provides support for all deployed systems. Critical issues are addressed within 24 hours. The founder monitors all systems proactively and often identifies and resolves issues before clients notice them.
+
+### Can FMai integrate with our existing tools?
+
+Almost certainly. FMai integrates with all major CRM, email, payment, communication, and productivity platforms. Any tool with a REST API or webhook support can be connected. During the AI audit, the founder reviews your existing stack and confirms integration feasibility.
+
+### What is the AI Marketing Machine?
+
+The AI Marketing Machine is FMai's flagship product: an integrated system of six AI modules that handles content creation, SEO, social distribution, ad management, analytics, and pipeline automation. It produces up to 160 pieces of content per month and is designed to replace 3-5 marketing hires. Currently available as a founding member beta program.
+
+---
+
+## Competitive Differentiators
+
+1. **Founder-led delivery**: Every project gets direct access to the technical founder. No account managers, no project managers, no communication layers.
+
+2. **Speed to value**: Most implementations go live in 1-3 weeks, compared to 2-3 months at traditional agencies.
+
+3. **Mid-market pricing**: Enterprise-grade AI at approximately 50% below premium agency pricing.
+
+4. **Full-stack capability**: From chatbots to voice agents to complete marketing automation, all under one roof with unified architecture.
+
+5. **Modern AI-native stack**: Built on Anthropic Claude, n8n, and Next.js rather than legacy marketing tools with AI bolted on.
+
+6. **Risk-free trial**: 3-month commitment with exit option if KPIs are not met.
+
+7. **Data sovereignty**: All automation workflows run on self-hosted n8n instances, giving clients full control over their data.
+
+8. **Continuous optimization**: Not a build-and-forget agency. Monthly reviews and ongoing optimization are included in every plan.
+
+---
+
+## Contact
+
+- Website: https://futuremarketingai.com
+- Contact page: https://futuremarketingai.com/en/contact
+- Book an AI audit: Available via Calendly through the contact page
+- Founder: Daley (direct access on all projects)
+- Location: Netherlands, EU
+- Languages: Dutch, English
+
+---
+
+## Pages
+
+- [Homepage](https://futuremarketingai.com): Main landing page with company overview and service highlights
+- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Chatbot service details and interactive demo
+- [Workflow Automations](https://futuremarketingai.com/en/automations): Automation service details and use cases
+- [Voice Agents](https://futuremarketingai.com/en/voice-agents): Voice agent service details and capabilities
+- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Flagship product details and founding member program
+- [About](https://futuremarketingai.com/en/about): Company story, mission, and founder background
+- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step delivery process
+- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers, pricing, and comparison
+- [Blog](https://futuremarketingai.com/en/blog): Articles on AI implementation and marketing automation
+- [Contact](https://futuremarketingai.com/en/contact): Book a discovery call or send a message
+- [Legal](https://futuremarketingai.com/en/legal): Privacy policy and terms of service

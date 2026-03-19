@@ -39,6 +39,10 @@ interface ChatbotState {
   isSidePanelOpen: boolean
   /** Side panel content */
   sidePanelContent: { toolName: string; data: unknown } | null
+  /** Calendly modal open state */
+  calendlyOpen: boolean
+  /** Calendly prefill data */
+  calendlyPrefill: { name?: string; email?: string } | undefined
 
   // Actions
   setPersona: (id: string) => void
@@ -56,6 +60,8 @@ interface ChatbotState {
   endDemo: () => void
   openSidePanel: (toolName: string, data: unknown) => void
   closeSidePanel: () => void
+  openCalendly: (prefill?: { name?: string; email?: string }) => void
+  closeCalendly: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -75,6 +81,8 @@ export const useChatbotStore = create<ChatbotState>()(
       demoStartedAt: null,
       isSidePanelOpen: false,
       sidePanelContent: null,
+      calendlyOpen: false,
+      calendlyPrefill: undefined,
 
       // Actions
       setPersona: (id: string) => set({ personaId: id }),
@@ -140,6 +148,16 @@ export const useChatbotStore = create<ChatbotState>()(
         set({
           isSidePanelOpen: false,
           sidePanelContent: null,
+        }),
+      openCalendly: (prefill?: { name?: string; email?: string }) =>
+        set({
+          calendlyOpen: true,
+          calendlyPrefill: prefill,
+        }),
+      closeCalendly: () =>
+        set({
+          calendlyOpen: false,
+          calendlyPrefill: undefined,
         }),
     }),
     {

@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { usePathname, useRouter, Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, LogIn, Sparkles, Bot, Workflow, Mic, Megaphone } from 'lucide-react'
+import { Menu, X, ChevronDown, LogIn, Bot, Workflow, Mic, Megaphone } from 'lucide-react'
 
 interface HeaderClientProps {
   locale: string
@@ -38,10 +38,8 @@ const SERVICE_ITEMS = [
 ]
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '/' as const },
   { label: 'Services', href: '/#services' as const, hasDropdown: true },
   { label: 'Pricing', href: '/pricing' as const },
-  { label: 'How It Works', href: '/how-it-works' as const },
   { label: 'About', href: '/about' as const },
   { label: 'Contact', href: '/contact' as const },
 ]
@@ -54,6 +52,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [localeOpen, setLocaleOpen] = useState(false)
 
   // Scroll effect
   useEffect(() => {
@@ -84,7 +83,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
 
   // Close services dropdown when clicking outside
   useEffect(() => {
-    const handleClick = () => setServicesOpen(false)
+    const handleClick = () => {
+      setServicesOpen(false)
+      setLocaleOpen(false)
+    }
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
   }, [])
@@ -106,14 +108,11 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group" aria-label="Future AI home">
-          <Sparkles className="w-5 h-5 text-accent-system group-hover:text-white transition-colors duration-300" />
-          <span className="text-xl font-bold font-display">
-            <span className="text-text-primary group-hover:text-accent-system transition-colors duration-300">
-              Future
-            </span>
-            <span className="text-accent-system group-hover:text-white transition-colors duration-300">
-              AI
+        <Link href="/" className="flex items-center group" aria-label="FMai home">
+          <span className="font-display font-bold text-xl tracking-tight">
+            <span className="text-white">FM</span>
+            <span className="bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] bg-clip-text text-transparent">
+              ai
             </span>
           </span>
         </Link>
@@ -194,30 +193,66 @@ export function HeaderClient({ locale }: HeaderClientProps) {
 
         {/* Right side: Login + Locale Switcher + Mobile Menu */}
         <div className="flex items-center gap-3">
-          {/* Login Button - desktop only */}
+          {/* Login text link */}
           <a
             href="https://app.future-marketing.ai/login"
-            className="hidden md:flex items-center gap-2 border border-white/20 hover:border-accent-system/50 text-text-secondary hover:text-text-primary rounded-lg font-medium transition-all duration-300 px-4 py-2 text-sm hover:bg-white/5"
+            className="hidden md:flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5"
           >
             <LogIn className="w-4 h-4" />
-            Log In
+            Login
           </a>
 
-          {/* Locale Switcher - desktop */}
-          <div className="hidden md:flex items-center gap-1">
-            {routing.locales.map((loc) => (
-              <button
-                key={loc}
-                onClick={() => handleLocaleChange(loc)}
-                className={`text-xs font-mono uppercase px-2 py-1 rounded transition-colors ${
-                  loc === locale
-                    ? 'bg-accent-system/20 text-accent-system'
-                    : 'text-text-muted hover:text-text-secondary'
-                }`}
-              >
-                {loc}
-              </button>
-            ))}
+          {/* Primary CTA */}
+          <Link
+            href="/contact"
+            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] text-bg-deep font-semibold text-sm px-4 py-2 rounded-[var(--radius-btn)] hover:opacity-90 transition-all"
+          >
+            See Our Work
+          </Link>
+
+          {/* Locale Switcher - compact flag dropdown */}
+          <div className="relative hidden md:block" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => {
+                setServicesOpen(false)
+                setLocaleOpen(!localeOpen)
+              }}
+              className="w-9 h-9 rounded-lg bg-bg-elevated border border-border-primary flex items-center justify-center hover:bg-bg-elevated/80 transition-colors text-xs font-mono uppercase font-bold text-accent-system"
+              aria-label="Change language"
+            >
+              {locale.toUpperCase()}
+            </button>
+            <AnimatePresence>
+              {localeOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -5, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -5, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 top-full mt-2 bg-bg-elevated/98 backdrop-blur-xl border border-border-primary rounded-lg shadow-2xl py-1 min-w-[120px] z-50"
+                >
+                  {routing.locales.map((loc) => (
+                    <button
+                      key={loc}
+                      onClick={() => {
+                        handleLocaleChange(loc)
+                        setLocaleOpen(false)
+                      }}
+                      className={`w-full px-3 py-2 text-left text-sm font-medium transition-colors flex items-center gap-2 ${
+                        locale === loc
+                          ? 'text-accent-system bg-accent-system/10'
+                          : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
+                      }`}
+                    >
+                      <span className="font-mono uppercase text-xs">{loc}</span>
+                      <span>
+                        {loc === 'en' ? 'English' : loc === 'nl' ? 'Nederlands' : 'Español'}
+                      </span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Mobile Menu Button */}

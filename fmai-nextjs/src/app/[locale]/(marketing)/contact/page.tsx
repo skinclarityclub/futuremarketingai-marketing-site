@@ -10,6 +10,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { ContactForm } from '@/components/contact/ContactForm'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -67,83 +68,19 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <SectionHeading id="contact-form" className="text-2xl mb-6">
                 {t('form.title')}
               </SectionHeading>
-              <form className="space-y-6">
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="block text-sm font-medium text-text-primary mb-2"
-                  >
-                    {t('form.name_label')}
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="name"
-                    className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
-                    placeholder={t('form.name_placeholder')}
-                    required
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-medium text-text-primary mb-2"
-                  >
-                    {t('form.email_label')}
-                  </label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
-                    placeholder={t('form.email_placeholder')}
-                    required
-                  />
-                </div>
-
-                {/* Company */}
-                <div>
-                  <label
-                    htmlFor="contact-company"
-                    className="block text-sm font-medium text-text-primary mb-2"
-                  >
-                    {t('form.company_label')}
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-company"
-                    name="company"
-                    className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all"
-                    placeholder={t('form.company_placeholder')}
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label
-                    htmlFor="contact-message"
-                    className="block text-sm font-medium text-text-primary mb-2"
-                  >
-                    {t('form.message_label')}
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all resize-none"
-                    placeholder={t('form.message_placeholder')}
-                    required
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <CTAButton type="submit" className="w-full justify-center">
-                  {t('form.submit_button')}
-                </CTAButton>
-              </form>
+              <ContactForm
+                labels={{
+                  name: t('form.name_label'),
+                  namePlaceholder: t('form.name_placeholder'),
+                  email: t('form.email_label'),
+                  emailPlaceholder: t('form.email_placeholder'),
+                  company: t('form.company_label'),
+                  companyPlaceholder: t('form.company_placeholder'),
+                  message: t('form.message_label'),
+                  messagePlaceholder: t('form.message_placeholder'),
+                  submit: t('form.submit_button'),
+                }}
+              />
             </GlassCard>
           </ScrollReveal>
 
@@ -164,7 +101,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <h3 className="text-xl font-bold font-display text-text-primary mb-4">
                   {t('direct_contact.title')}
                 </h3>
-                <div className="space-y-4">
+                <address className="space-y-4 not-italic">
                   {/* Email */}
                   <a
                     href="mailto:hello@futuremarketingai.com"
@@ -241,7 +178,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                       <div className="font-semibold">{t('direct_contact.response_time_text')}</div>
                     </div>
                   </div>
-                </div>
+                </address>
               </GlassCard>
             </div>
           </ScrollReveal>

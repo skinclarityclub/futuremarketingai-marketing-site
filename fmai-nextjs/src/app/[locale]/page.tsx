@@ -5,12 +5,15 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { WebSiteJsonLd } from '@/components/seo/WebSiteJsonLd'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { OrbitVisual } from '@/components/hero/OrbitVisual'
+import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -26,27 +29,17 @@ export async function generateMetadata({
 }
 
 const SERVICE_CARDS = [
-  {
-    key: 'automations',
-    href: '/automations',
-  },
-  {
-    key: 'chatbots',
-    href: '/chatbots',
-  },
-  {
-    key: 'voiceAgents',
-    href: '/voice-agents',
-  },
-  {
-    key: 'marketingMachine',
-    href: '/marketing-machine',
-  },
+  { key: 'automations', href: '/automations' },
+  { key: 'chatbots', href: '/chatbots' },
+  { key: 'voiceAgents', href: '/voice-agents' },
+  { key: 'marketingMachine', href: '/marketing-machine' },
 ] as const
 
 const STAT_KEYS = ['automations', 'support', 'growth', 'setup'] as const
 
 const BADGE_KEYS = ['gdpr', 'enterprise', 'uptime', 'support', 'integrations', 'noLockIn'] as const
+
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -65,28 +58,79 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         locale={locale}
       />
       <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }]} locale={locale} />
+      <FaqJsonLd
+        items={FAQ_KEYS.map((key) => ({
+          question: t(`faq.items.${key}.question`),
+          answer: t(`faq.items.${key}.answer`),
+        }))}
+      />
 
-      {/* Hero Section */}
-      <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* Hero Section — Left-aligned split layout with OrbitVisual */}
+      <section
+        aria-labelledby="hero"
+        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-[140px] pb-20"
+      >
+        {/* Left-aligned Hero Content */}
+        <div className="relative z-10 max-w-[720px]">
+          {/* Eyebrow badge */}
+          <div
+            className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
+            style={{ animation: 'fadeIn 0.8s ease-out' }}
+          >
+            {t('hero.badge')}
+          </div>
+
+          {/* Headline with gradient accent */}
           <h1
             id="hero"
-            className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
           >
-            {t('hero.headline')}
+            <span className="block text-text-primary">{t('hero.headlineMain')}</span>
+            <span
+              className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
+              style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
+            >
+              {t('hero.headlineAccent')}
+            </span>
           </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-10">
+
+          {/* Description */}
+          <p
+            className="text-lg lg:text-xl text-text-secondary max-w-xl mb-6 leading-relaxed"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
+          >
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/contact" size="lg" className="cta-primary">
+
+          {/* Trust anchor */}
+          <p
+            className="text-sm text-text-muted mb-10"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
+          >
+            {t('hero.trustAnchor')}
+          </p>
+
+          {/* CTA Buttons — left-aligned */}
+          <div
+            className="flex flex-wrap gap-4"
+            style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
+          >
+            <CTAButton size="lg" href="#services">
+              <Zap className="mr-1 h-5 w-5" />
               {t('hero.cta')}
+              <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
-            <CTAButton href="/contact" variant="secondary" size="lg" className="cta-secondary">
+
+            <CTAButton variant="secondary" size="lg" href="/contact">
               {t('hero.ctaSecondary')}
+              <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
           </div>
         </div>
+
+        {/* Hero visual — right side, desktop only */}
+        <OrbitVisual />
       </section>
 
       {/* Stats / Metrics Bar */}
@@ -110,31 +154,73 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section aria-labelledby="services" className="py-20 px-6 lg:px-12">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading id="services">{t('services.title')}</SectionHeading>
-          <p className="text-lg text-text-secondary text-center max-w-3xl mx-auto mb-12">
-            {t('services.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {SERVICE_CARDS.map((card, index) => (
-              <ScrollReveal key={card.key} delay={index * 0.1}>
-                <Link href={card.href}>
-                  <GlassCard className="h-full hover:border-border-accent transition-all cursor-pointer">
-                    <h3 className="text-xl font-semibold font-display text-text-primary mb-3">
-                      {t(`services.${card.key}.title`)}
-                    </h3>
-                    <p className="text-text-secondary leading-relaxed">
-                      {t(`services.${card.key}.description`)}
-                    </p>
-                  </GlassCard>
-                </Link>
-              </ScrollReveal>
+      {/* Services — Numbered 2x2 Cards */}
+      <ScrollReveal>
+        <section
+          id="services"
+          aria-labelledby="services-heading"
+          className="relative z-10 px-6 lg:px-12 pb-20"
+        >
+          <div className="text-center mb-12">
+            <h2
+              id="services-heading"
+              className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4"
+            >
+              {t('services.title')}
+            </h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              {t('services.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {SERVICE_CARDS.map((card) => (
+              <Link
+                key={card.key}
+                href={card.href}
+                className="relative card-gradient-border card-tilt rounded-[var(--radius-card)] bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
+              >
+                {/* Service number */}
+                <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
+                  {t(`services.${card.key}.number`)}
+                </span>
+
+                {/* Title */}
+                <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight mb-3.5">
+                  {t(`services.${card.key}.title`)}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
+                  {t(`services.${card.key}.description`)}
+                </p>
+
+                {/* Arrow circle — bottom-right */}
+                <div className="absolute bottom-9 right-9 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-[#F5A623] group-hover:border-[#F5A623]">
+                  <svg
+                    className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M4 12L12 4M12 4H6M12 4V10" />
+                  </svg>
+                </div>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
+
+          {/* Final CTA after service cards */}
+          <div className="text-center mt-12">
+            <p className="text-text-secondary mb-6">{t('cta.subtitle')}</p>
+            <CTAButton size="lg" href="/contact">
+              {t('cta.button')}
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </CTAButton>
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Trust Badges / Social Proof */}
       <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
@@ -177,25 +263,54 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
               <GlassCard className="text-left">
                 <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">Custom-Built Solutions</p>
+                <p className="text-text-primary font-semibold mb-1">
+                  {t('trust.customBuiltTitle')}
+                </p>
                 <p className="text-text-secondary text-sm">{t('trust.customBuilt')}</p>
               </GlassCard>
               <GlassCard className="text-left">
                 <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">Direct Founder Access</p>
+                <p className="text-text-primary font-semibold mb-1">
+                  {t('trust.founderAccessTitle')}
+                </p>
                 <p className="text-text-secondary text-sm">{t('trust.founderAccess')}</p>
               </GlassCard>
               <GlassCard className="text-left">
                 <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">Success Guarantee</p>
+                <p className="text-text-primary font-semibold mb-1">
+                  {t('trust.successGuaranteeTitle')}
+                </p>
                 <p className="text-text-secondary text-sm">{t('trust.successGuarantee')}</p>
               </GlassCard>
               <GlassCard className="text-left">
                 <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">Risk-Free Trial</p>
+                <p className="text-text-primary font-semibold mb-1">{t('trust.trialTitle')}</p>
                 <p className="text-text-secondary text-sm">{t('trust.trialCommitment')}</p>
               </GlassCard>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="faq" className="text-center mb-10">
+            {t('faq.title')}
+          </SectionHeading>
+          <ScrollReveal>
+            <dl className="space-y-6">
+              {FAQ_KEYS.map((key) => (
+                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                  <dt className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`faq.items.${key}.question`)}
+                  </dt>
+                  <dd className="text-text-secondary leading-relaxed">
+                    {t(`faq.items.${key}.answer`)}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </ScrollReveal>
         </div>
       </section>
@@ -206,7 +321,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/contact" size="lg" className="cta-primary">
+            <CTAButton href="/contact" size="lg">
               {t('cta.button')}
             </CTAButton>
           </div>

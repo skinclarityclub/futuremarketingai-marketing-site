@@ -45,6 +45,9 @@
   --animate-fade-in: fade-in 0.5s ease-out;
   --animate-status-pulse: status-pulse 2s ease-in-out infinite;
   --animate-data-flow: data-flow 2s linear infinite;
+
+  /* Gradients */
+  --bg-gradient-flow: linear-gradient(135deg, #00d4aa 0%, #f5a623 100%);
 }
 
 @keyframes glow-pulse {
@@ -114,5 +117,188 @@
   }
   to {
     transform: translateX(100%);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes orbit-core-breathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes orbit-particle-float {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
+@keyframes blobFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes blobFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(1.05);
+  }
+  66% {
+    transform: translate(30px, -20px) scale(0.95);
+  }
+}
+
+@keyframes blobFloat3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, 40px) scale(1.03);
+  }
+  66% {
+    transform: translate(-30px, -30px) scale(0.97);
+  }
+}
+
+@keyframes chatDotBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Gradient flow background */
+.bg-gradient-flow {
+  background: linear-gradient(135deg, #00d4aa 0%, #f5a623 100%);
+}
+
+/* Blob mesh background */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  will-change: transform;
+}
+.blob-warm {
+  width: 600px;
+  height: 600px;
+  background: #f5a623;
+  top: -10%;
+  right: -5%;
+  animation: blobFloat1 25s ease-in-out infinite;
+}
+.blob-cool {
+  width: 500px;
+  height: 500px;
+  background: #0abab5;
+  bottom: -10%;
+  left: -10%;
+  animation: blobFloat2 30s ease-in-out infinite;
+}
+.blob-mixed {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #f5a623, #0abab5);
+  top: 40%;
+  left: 30%;
+  animation: blobFloat3 20s ease-in-out infinite;
+}
+
+/* Card gradient border -- hover-activated gradient outline */
+.card-gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+.card-gradient-border:hover::before {
+  background: linear-gradient(135deg, #f5a623, #0abab5);
+}
+
+/* Card tilt -- subtle depth on hover (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .card-tilt {
+    transition: transform 0.2s ease-out;
+  }
+  .card-tilt:hover {
+    transform: perspective(800px) rotateX(-1deg) rotateY(1deg) translateY(-2px);
   }
 }

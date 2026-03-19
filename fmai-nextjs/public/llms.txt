@@ -1,21 +1,33 @@
-# Future Marketing AI
+# FutureMarketingAI (FMai)
 
-> B2B AI marketing automation agency helping growth-stage companies deploy
-> AI-powered automations, chatbots, voice agents, and full-stack marketing machines.
+> FMai is a Dutch AI implementation agency that builds intelligent chatbots, workflow automations, voice agents, and full-stack AI marketing machines for SaaS and e-commerce companies. Founded by Daley, FMai helps B2B companies automate customer interactions, streamline operations, and scale marketing through AI-powered systems built on n8n, Next.js, and Anthropic Claude. Based in the Netherlands, serving clients across Europe and internationally.
+
+FMai operates as a premium mid-market AI agency with three gateway service tiers: Starter (EUR 1.497/mo), Growth (EUR 2.497/mo), and Scale (EUR 3.997/mo). The flagship product is the AI Marketing Machine, an automated content creation and distribution system. The company positions approximately 50% below premium agency pricing while delivering enterprise-grade AI implementations.
+
+- Brand: FMai (FutureMarketingAI)
+- Domain: futuremarketingai.com
+- Founder: Daley
+- Location: Netherlands (EU), Estonian e-Residency
+- Languages: Dutch, English
+- Tech stack: n8n, Next.js, Anthropic Claude, Vercel, TypeScript
+- Contact: Available via website contact form and Calendly booking
 
 ## Services
 
-- [AI Marketing Automations](https://futuremarketingai.com/en/automations): End-to-end workflow automation for lead qualification, email sequences, and CRM sync
-- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Conversational AI with persona configuration and live demo playground
-- [AI Voice Agents](https://futuremarketingai.com/en/voice-agents): Inbound/outbound voice automation for sales and support
-- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Integrated content, ads, and pipeline automation
+- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Custom AI chatbots for customer support, lead qualification, appointment booking, and sales automation across website, WhatsApp, Slack, and other channels
+- [Workflow Automations](https://futuremarketingai.com/en/automations): End-to-end business process automation using n8n and AI for lead qualification, email sequences, CRM sync, invoice handling, and onboarding
+- [Voice Agents](https://futuremarketingai.com/en/voice-agents): AI-powered voice assistants for inbound support and outbound sales calls, built with specialized voice AI partners
+- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Flagship automated content creation system producing up to 160 posts per month across carousels, reels, ads, and stories
 
 ## Company
 
-- [About Future Marketing AI](https://futuremarketingai.com/en/about): Mission, approach, and founding story
-- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step delivery process
-- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers and investment overview
+- [About FMai](https://futuremarketingai.com/en/about): Company background, mission, founder story, and direct founder access guarantee
+- [Pricing](https://futuremarketingai.com/en/pricing): Three service tiers (Starter, Growth, Scale) with transparent pricing and 3-month risk-free trial
+- [How It Works](https://futuremarketingai.com/en/how-it-works): Delivery process from AI audit through build, launch, and ongoing optimization (1-3 weeks typical)
+- [Contact](https://futuremarketingai.com/en/contact): Book a free 30-minute AI audit and discovery call
 
 ## Optional
 
-- [Contact](https://futuremarketingai.com/en/contact): Book a discovery call
+- [Blog](https://futuremarketingai.com/en/blog): Articles on AI implementation, automation strategies, and marketing technology
+- [Legal](https://futuremarketingai.com/en/legal): Privacy policy, terms of service, and cookie policy
+- [Full Documentation](https://futuremarketingai.com/llms-full.txt): Comprehensive company and service information for LLMs

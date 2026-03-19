@@ -11,6 +11,14 @@ export interface PageMetadataOptions {
   metaKeyPrefix?: string
 }
 
+const OG_LOCALE_MAP: Record<string, string> = {
+  en: 'en_US',
+  nl: 'nl_NL',
+  es: 'es_ES',
+}
+
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
+
 export async function generatePageMetadata({
   locale,
   namespace,
@@ -31,6 +39,8 @@ export async function generatePageMetadata({
   }
   alternates['x-default'] = `${SITE_URL}/en${canonicalPath}`
 
+  const ogLocale = OG_LOCALE_MAP[locale] ?? locale
+
   return {
     title,
     description,
@@ -43,9 +53,9 @@ export async function generatePageMetadata({
       description,
       url,
       siteName: SITE_NAME,
-      locale,
+      locale: ogLocale,
       type: 'website',
-      ...(ogImage ? { images: [{ url: ogImage }] } : {}),
+      images: [{ url: ogImage ?? DEFAULT_OG_IMAGE }],
     },
     twitter: {
       card: 'summary_large_image',

@@ -6,7 +6,6 @@ import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
-import type { FaqItem } from '@/components/seo/FaqJsonLd'
 import { QuickAnswerBlock } from '@/components/ui/QuickAnswerBlock'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -14,6 +13,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { DemoPlayground } from '@/components/chatbot/DemoPlayground'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { Link } from '@/i18n/navigation'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -41,38 +41,7 @@ const PROCESS_STEPS = [
   { key: 'optimize', number: '03' },
 ] as const
 
-const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: 'What makes an AI chatbot different from a rule-based chatbot?',
-    answer:
-      'AI chatbots use large language models to understand intent and generate contextual responses, while rule-based bots follow fixed decision trees. AI chatbots handle novel questions without pre-programmed paths.',
-  },
-  {
-    question: 'Can I try the chatbot before purchasing?',
-    answer:
-      'Yes — our Chatbots page features a live demo playground with 3 pre-configured personas: e-commerce, lead generation, and customer support.',
-  },
-  {
-    question: "How do you configure the chatbot's persona?",
-    answer:
-      'Each chatbot receives a system prompt, tone guidelines, knowledge base documents, and example conversations. Configuration typically takes 3-5 business days for a production-ready persona.',
-  },
-  {
-    question: 'Does the chatbot integrate with my CRM?',
-    answer:
-      'Yes — chatbot-captured leads are routed directly to HubSpot, Salesforce, or your CRM via webhook. We configure the field mapping during onboarding.',
-  },
-  {
-    question: 'What languages does the chatbot support?',
-    answer:
-      'The underlying models support 50+ languages. We configure and test for your primary languages (EN/NL/ES as standard) during deployment.',
-  },
-  {
-    question: 'Is the chatbot GDPR compliant?',
-    answer:
-      'Yes — all conversation data is processed within EU data centers, chat history is not retained beyond the session by default, and we provide a DPA on request.',
-  },
-]
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const
 
 export default async function ChatbotsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -103,7 +72,12 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
         ]}
         locale={locale}
       />
-      <FaqJsonLd items={FAQ_ITEMS} />
+      <FaqJsonLd
+        items={FAQ_KEYS.map((key) => ({
+          question: t(`faq.items.${key}.question`),
+          answer: t(`faq.items.${key}.answer`),
+        }))}
+      />
 
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
@@ -133,15 +107,13 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
 
       {/* Quick Answer Block */}
       <div className="max-w-5xl mx-auto px-6 lg:px-12 pb-8">
-        <QuickAnswerBlock definition="AI Chatbots by Future Marketing AI are conversational agents configured to your brand persona — qualifying leads, answering questions, and booking demos 24/7 without human intervention." />
+        <QuickAnswerBlock definition={t('quick_answer')} />
       </div>
 
       {/* What Can an AI Chatbot Do for Your Business? */}
       <section aria-labelledby="use-cases" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="use-cases">
-            What Can an AI Chatbot Do for Your Business?
-          </SectionHeading>
+          <SectionHeading id="use-cases">{t('sections.use_cases_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {USE_CASE_KEYS.map((key, index) => (
               <ScrollReveal key={key} delay={index * 0.1}>
@@ -172,7 +144,7 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
       {/* How Does a Chatbot Get Deployed? */}
       <section aria-labelledby="process" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="process">How Does a Chatbot Get Deployed?</SectionHeading>
+          <SectionHeading id="process">{t('sections.process_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             {PROCESS_STEPS.map((step, index) => (
               <ScrollReveal key={step.key} delay={index * 0.1}>
@@ -197,16 +169,63 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
       <section aria-labelledby="faq" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
           <SectionHeading id="faq" className="text-center mb-10">
-            Frequently Asked Questions
+            {t('sections.faq_heading')}
           </SectionHeading>
           <dl className="space-y-6">
-            {FAQ_ITEMS.map((item) => (
-              <div key={item.question} className="bg-bg-surface/30 rounded-lg p-6">
-                <dt className="text-lg font-semibold text-text-primary mb-2">{item.question}</dt>
-                <dd className="text-text-secondary leading-relaxed">{item.answer}</dd>
+            {FAQ_KEYS.map((key) => (
+              <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                <dt className="text-lg font-semibold text-text-primary mb-2">
+                  {t(`faq.items.${key}.question`)}
+                </dt>
+                <dd className="text-text-secondary leading-relaxed">
+                  {t(`faq.items.${key}.answer`)}
+                </dd>
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section aria-labelledby="related-services" className="py-16 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <h2
+            id="related-services"
+            className="text-2xl font-bold font-display text-text-primary mb-8 text-center"
+          >
+            {t('sections.related_heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              href="/automations"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.automations_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">{t('related.automations_description')}</p>
+            </Link>
+            <Link
+              href="/voice-agents"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.voice_agents_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">{t('related.voice_agents_description')}</p>
+            </Link>
+            <Link
+              href="/marketing-machine"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.marketing_machine_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">
+                {t('related.marketing_machine_description')}
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

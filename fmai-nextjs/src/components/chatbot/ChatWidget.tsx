@@ -10,6 +10,9 @@ import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { SuggestedPrompts } from './SuggestedPrompts'
 import { SidePanel } from './SidePanel'
+import { DemoOrchestrator } from './demo/DemoOrchestrator'
+import { DemoProgress } from './demo/DemoProgress'
+import { DEMO_SCENARIOS } from './demo/scenarios'
 
 interface ChatWidgetProps {
   mode: 'floating' | 'embedded'
@@ -43,9 +46,12 @@ export function ChatWidget({
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const demoMode = useChatbotStore((s) => s.demoMode)
+  const demoScenarioId = useChatbotStore((s) => s.demoScenarioId)
+  const demoStepIndex = useChatbotStore((s) => s.demoStepIndex)
   const startDemo = useChatbotStore((s) => s.startDemo)
 
   const isFlagship = personaId === 'flagship'
+  const demoScenario = DEMO_SCENARIOS.find((s) => s.id === demoScenarioId)
 
   const handleSend = useCallback(
     (text: string) => {
@@ -143,12 +149,22 @@ export function ChatWidget({
                   badge={demoMode ? 'Demo' : isFlagship ? 'Concierge' : undefined}
                   showLimit={!isFlagship}
                 />
+                {demoMode && demoScenario && (
+                  <div className="border-b border-border-primary px-4 py-2 bg-bg-surface/95">
+                    <DemoProgress totalSteps={demoScenario.stepCount} currentStep={demoStepIndex} />
+                  </div>
+                )}
                 <ChatMessages
                   messages={messages}
                   status={status}
                   welcomeMessage={welcomeMessage}
                   flagship={isFlagship}
                   onStartDemo={demoMode ? undefined : startDemo}
+                />
+                <DemoOrchestrator
+                  chatStatus={status}
+                  messageCount={messages.length}
+                  onSendMessage={handleSend}
                 />
                 {showPrompts && (
                   <SuggestedPrompts
@@ -184,11 +200,21 @@ export function ChatWidget({
         messageLimit={messageLimit}
         badge={demoMode ? 'Demo' : undefined}
       />
+      {demoMode && demoScenario && (
+        <div className="border-b border-border-primary px-4 py-2 bg-bg-surface/95">
+          <DemoProgress totalSteps={demoScenario.stepCount} currentStep={demoStepIndex} />
+        </div>
+      )}
       <ChatMessages
         messages={messages}
         status={status}
         welcomeMessage={welcomeMessage}
         onStartDemo={demoMode ? undefined : startDemo}
+      />
+      <DemoOrchestrator
+        chatStatus={status}
+        messageCount={messages.length}
+        onSendMessage={handleSend}
       />
       {showPrompts && (
         <SuggestedPrompts

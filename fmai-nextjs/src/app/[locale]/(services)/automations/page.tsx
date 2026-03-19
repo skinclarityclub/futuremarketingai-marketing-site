@@ -6,13 +6,13 @@ import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
-import type { FaqItem } from '@/components/seo/FaqJsonLd'
 import { QuickAnswerBlock } from '@/components/ui/QuickAnswerBlock'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { Link } from '@/i18n/navigation'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -44,33 +44,7 @@ const PROCESS_STEPS = [
   { key: 'optimize', number: '03' },
 ] as const
 
-const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: 'What is AI marketing automation?',
-    answer:
-      'AI marketing automation uses machine learning to execute repetitive marketing tasks — lead qualification, email sequences, CRM sync — without human intervention, running 24/7 with consistent quality.',
-  },
-  {
-    question: 'How long does it take to deploy an automation workflow?',
-    answer:
-      'Most workflow automations go live within 2-3 weeks: one week for audit and design, one week for build and testing, and a final integration sprint.',
-  },
-  {
-    question: 'Which tools do you integrate with?',
-    answer:
-      'We integrate with HubSpot, Salesforce, ActiveCampaign, Zapier, Make (Integromat), Airtable, Slack, Google Workspace, and most REST API-based platforms.',
-  },
-  {
-    question: 'Is AI automation suitable for small marketing teams?',
-    answer:
-      'Yes — AI automation scales down as well as up. Small teams (2-5 people) often see the biggest productivity gains because automation eliminates tasks that previously required dedicated headcount.',
-  },
-  {
-    question: 'What happens if an automation breaks?',
-    answer:
-      'All workflows include monitoring and error-handling. We provide 30-day post-launch support and can configure Slack/email alerts for any failure states.',
-  },
-]
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
 
 export default async function AutomationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -101,7 +75,12 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
         ]}
         locale={locale}
       />
-      <FaqJsonLd items={FAQ_ITEMS} />
+      <FaqJsonLd
+        items={FAQ_KEYS.map((key) => ({
+          question: t(`faq.items.${key}.question`),
+          answer: t(`faq.items.${key}.answer`),
+        }))}
+      />
 
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
@@ -131,15 +110,13 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
 
       {/* Quick Answer Block */}
       <div className="max-w-5xl mx-auto px-6 lg:px-12 pb-8">
-        <QuickAnswerBlock definition="AI Marketing Automations by Future Marketing AI replace manual marketing workflows with intelligent, self-running systems — so your team focuses on strategy while AI handles execution." />
+        <QuickAnswerBlock definition={t('quick_answer')} />
       </div>
 
       {/* Why Does Your Marketing Team Need AI Automation? */}
       <section aria-labelledby="challenges" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="challenges">
-            Why Does Your Marketing Team Need AI Automation?
-          </SectionHeading>
+          <SectionHeading id="challenges">{t('sections.challenges_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             {PAIN_POINT_KEYS.map((key, index) => (
               <ScrollReveal key={key} delay={index * 0.1}>
@@ -158,9 +135,7 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
       {/* What Does Our Automation Service Include? */}
       <section aria-labelledby="automations" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="automations">
-            What Does Our Automation Service Include?
-          </SectionHeading>
+          <SectionHeading id="automations">{t('sections.automations_heading')}</SectionHeading>
           <p className="text-lg text-text-secondary text-center max-w-3xl mx-auto mb-12">
             {t('what_we_automate.subtitle')}
           </p>
@@ -181,7 +156,7 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
       {/* How Does an Automation Workflow Get Built? */}
       <section aria-labelledby="process" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="process">How Does an Automation Workflow Get Built?</SectionHeading>
+          <SectionHeading id="process">{t('sections.process_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             {PROCESS_STEPS.map((step, index) => (
               <ScrollReveal key={step.key} delay={index * 0.1}>
@@ -206,16 +181,63 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
       <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <SectionHeading id="faq" className="text-center mb-10">
-            Frequently Asked Questions
+            {t('sections.faq_heading')}
           </SectionHeading>
           <dl className="space-y-6">
-            {FAQ_ITEMS.map((item) => (
-              <div key={item.question} className="bg-bg-surface/30 rounded-lg p-6">
-                <dt className="text-lg font-semibold text-text-primary mb-2">{item.question}</dt>
-                <dd className="text-text-secondary leading-relaxed">{item.answer}</dd>
+            {FAQ_KEYS.map((key) => (
+              <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                <dt className="text-lg font-semibold text-text-primary mb-2">
+                  {t(`faq.items.${key}.question`)}
+                </dt>
+                <dd className="text-text-secondary leading-relaxed">
+                  {t(`faq.items.${key}.answer`)}
+                </dd>
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section aria-labelledby="related-services" className="py-16 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <h2
+            id="related-services"
+            className="text-2xl font-bold font-display text-text-primary mb-8 text-center"
+          >
+            {t('sections.related_heading')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              href="/chatbots"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.chatbots_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">{t('related.chatbots_description')}</p>
+            </Link>
+            <Link
+              href="/voice-agents"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.voice_agents_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">{t('related.voice_agents_description')}</p>
+            </Link>
+            <Link
+              href="/marketing-machine"
+              className="block border border-border-primary bg-white/[0.02] rounded-xl p-6 text-center transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
+            >
+              <h3 className="text-lg font-semibold text-text-primary mb-1">
+                {t('related.marketing_machine_title')}
+              </h3>
+              <p className="text-sm text-text-secondary">
+                {t('related.marketing_machine_description')}
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

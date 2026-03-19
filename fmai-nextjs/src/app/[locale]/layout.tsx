@@ -10,6 +10,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
 import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
 import { ClientIslands } from '@/components/providers/ClientIslands'
+import { GradientMesh } from '@/components/hero/GradientMesh'
 import '@/app/globals.css'
 
 export function generateStaticParams() {
@@ -39,6 +40,7 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
+        <GradientMesh />
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <OrganizationJsonLd />

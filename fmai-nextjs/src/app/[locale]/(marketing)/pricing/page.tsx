@@ -5,6 +5,8 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
+import { PricingJsonLd } from '@/components/seo/PricingJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -26,6 +28,7 @@ export async function generateMetadata({
 
 const TIER_KEYS = ['starter', 'growth', 'scale'] as const
 const FEATURE_COUNT = 5
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4'] as const
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -48,6 +51,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         ]}
         locale={locale}
       />
+      <FaqJsonLd
+        items={FAQ_KEYS.map((key) => ({
+          question: t(`faq.items.${key}.question`),
+          answer: t(`faq.items.${key}.answer`),
+        }))}
+      />
+      <PricingJsonLd />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">
@@ -137,6 +147,29 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="pricing-faq" className="text-center mb-10">
+            {t('faq.title')}
+          </SectionHeading>
+          <ScrollReveal>
+            <dl className="space-y-6">
+              {FAQ_KEYS.map((key) => (
+                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                  <dt className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`faq.items.${key}.question`)}
+                  </dt>
+                  <dd className="text-text-secondary leading-relaxed">
+                    {t(`faq.items.${key}.answer`)}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </ScrollReveal>
         </div>
       </section>
 

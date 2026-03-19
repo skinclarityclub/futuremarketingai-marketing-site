@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'motion/react'
+import { useChatbotStore } from '@/stores/chatbotStore'
 
 interface ProgressiveCTAProps {
   messageCount: number
@@ -17,6 +18,8 @@ interface ProgressiveCTAProps {
  * - 15+ messages: Gate banner — demo limit reached
  */
 export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) => {
+  const { openCalendly } = useChatbotStore()
+
   // No CTA for first 4 messages — let the demo speak for itself
   if (messageCount < 5) {
     return null
@@ -36,14 +39,13 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
         <p className="text-sm text-text-secondary mb-4">
           Book a discovery call to explore all capabilities.
         </p>
-        <a
-          href="https://calendly.com/futuremarketingai/discovery"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        <button
+          type="button"
+          onClick={() => openCalendly()}
+          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
         >
           Book a Discovery Call
-        </a>
+        </button>
       </motion.div>
     )
   }
@@ -59,14 +61,13 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
         <p className="text-sm text-text-primary font-medium mb-3">
           Ready to see what this can do for your business?
         </p>
-        <a
-          href="https://calendly.com/futuremarketingai/discovery"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90"
+        <button
+          type="button"
+          onClick={() => openCalendly()}
+          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
         >
           Schedule a Demo
-        </a>
+        </button>
       </motion.div>
     )
   }
