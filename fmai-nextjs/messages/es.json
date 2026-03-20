@@ -938,5 +938,486 @@
   "blog": {
     "title": "Ideas sobre Marketing IA y Automatizacion",
     "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento para agencias."
+  },
+  "skills-content-creator": {
+    "meta": {
+      "title": "Habilidad Content Creator | Empleado de Marketing IA | FMai",
+      "description": "Creacion de contenido impulsada por IA para clientes de agencia. Posts de blog, contenido social, newsletters y reutilizacion multiplataforma — producidos diariamente por su Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Habilidad Content Creator",
+      "title": "Creacion de Contenido IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA escribe posts de blog, contenido social, newsletters y reutiliza contenido en todas las plataformas — diariamente, para cada cliente."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Content Creator",
+      "items": {
+        "blog": {
+          "title": "Escritura de Blog con IA",
+          "description": "Posts de blog optimizados para SEO escritos en la voz de marca de cada cliente. Investigacion, esquema, borrador y publicacion — totalmente autonomo."
+        },
+        "social": {
+          "title": "Posts en Redes Sociales",
+          "description": "Contenido social nativo para LinkedIn, Instagram, X y Facebook. Adaptado a la audiencia y tono de cada cliente."
+        },
+        "newsletters": {
+          "title": "Newsletters por Email",
+          "description": "Newsletters semanales o mensuales elaborados con el contenido mas reciente, noticias del sector y actualizaciones de campanas de sus clientes."
+        },
+        "repurposing": {
+          "title": "Reutilizacion de Contenido",
+          "description": "Una pieza de contenido se convierte en diez. Los posts de blog se transforman en hilos sociales, newsletters, guiones de video y mas — automaticamente."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "connect": {
+          "title": "Conectar Marca del Cliente",
+          "description": "Suba directrices de marca, tono de voz y perfiles de audiencia objetivo. Su empleado IA aprende la identidad del cliente."
+        },
+        "generate": {
+          "title": "La IA Crea Contenido",
+          "description": "Su empleado IA investiga temas, escribe borradores y optimiza para SEO — todo en la voz de marca del cliente."
+        },
+        "review": {
+          "title": "Aprobar y Publicar",
+          "description": "Revise el contenido generado por IA en su dashboard, apruebe con un clic y publique en todas las plataformas."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Escale la produccion de contenido para todos sus clientes sin contratar mas redactores. Un empleado IA produce la salida de un equipo completo de contenido."
+        },
+        "ecommerce": {
+          "title": "Marcas de E-commerce",
+          "description": "Descripciones de productos, paginas de categoria, campanas de email y contenido social — producidos diariamente para mantener su tienda fresca y posicionada."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Content Creator",
+      "subtitle": "Agregue creacion de contenido impulsada por IA a su Empleado de Marketing IA y comience a producir contenido para todos sus clientes.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-voice-agent": {
+    "meta": {
+      "title": "Habilidad Voice Agent | Empleado de Marketing IA | FMai",
+      "description": "Llamadas entrantes y salientes impulsadas por IA para clientes de agencia. Atencion telefonica 24/7, calificacion de leads por telefono y reserva de citas por su Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Habilidad Voice Agent",
+      "title": "Llamadas Telefonicas IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA gestiona llamadas entrantes y salientes — calificando leads, reservando citas y dando seguimiento a prospectos las 24 horas."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Voice Agent",
+      "items": {
+        "inbound": {
+          "title": "Atender Llamadas 24/7",
+          "description": "No pierda mas llamadas. Su empleado IA contesta llamadas entrantes, gestiona preguntas frecuentes y enruta consultas complejas a la persona adecuada."
+        },
+        "outbound": {
+          "title": "Llamadas Proactivas",
+          "description": "Llamadas salientes impulsadas por IA para seguimientos, recordatorios de citas y reactivacion de prospectos — a escala."
+        },
+        "qualification": {
+          "title": "Calificar Leads por Telefono",
+          "description": "Calificacion BANT en cada llamada. Su empleado IA puntua prospectos y solo pasa leads calificados a su equipo de ventas."
+        },
+        "booking": {
+          "title": "Programar Citas",
+          "description": "Integracion directa con calendario. El agente de voz programa reuniones en Calendly, Cal.com o Google Calendar durante la llamada."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "setup": {
+          "title": "Configurar Persona de Voz",
+          "description": "Establezca la voz, tono y personalidad para cada cliente. Suba guiones de llamada y criterios de calificacion."
+        },
+        "deploy": {
+          "title": "Activar en Numero del Cliente",
+          "description": "Conecte al sistema telefonico del cliente via SIP o desvio. El empleado IA comienza a gestionar llamadas inmediatamente."
+        },
+        "optimize": {
+          "title": "Mejorar con Datos de Llamadas",
+          "description": "Revise transcripciones y analytics de llamadas. Su empleado IA aprende de cada conversacion y mejora semanalmente."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Ofrezca atencion telefonica impulsada por IA como servicio a sus clientes. Escale operaciones telefonicas sin contratar personal de call center."
+        },
+        "sales": {
+          "title": "Equipos de Ventas",
+          "description": "Califique cientos de leads por dia por telefono. Su equipo de ventas solo habla con prospectos listos para comprar."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Voice Agent",
+      "subtitle": "Agregue llamadas telefonicas impulsadas por IA a su Empleado de Marketing IA y no pierda mas ningun lead.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-lead-qualifier": {
+    "meta": {
+      "title": "Habilidad Lead Qualifier | Empleado de Marketing IA | FMai",
+      "description": "Chatbot IA que califica leads web 24/7 para clientes de agencia. Engagement en tiempo real, puntuacion BANT, traspaso en caliente y secuencias de seguimiento automatizadas."
+    },
+    "hero": {
+      "badge": "Habilidad Lead Qualifier",
+      "title": "Calificacion de Leads IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA interactua con visitantes web en tiempo real, los califica con puntuacion BANT y traspasa leads calificados directamente a los equipos de ventas de sus clientes."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Lead Qualifier",
+      "items": {
+        "engage": {
+          "title": "Engagement de Visitantes en Tiempo Real",
+          "description": "El chatbot IA saluda a cada visitante web, responde preguntas e inicia conversaciones de calificacion — 24/7, en cada sitio de cliente."
+        },
+        "qualify": {
+          "title": "Puntuacion de Calificacion BANT",
+          "description": "Presupuesto, Autoridad, Necesidad, Tiempo — cada lead se puntua automaticamente para que los equipos de ventas se concentren en los mejores prospectos."
+        },
+        "handoff": {
+          "title": "Traspaso en Caliente a Ventas",
+          "description": "Los leads calificados se enrutan instantaneamente al vendedor correcto con contexto completo de la conversacion y puntuacion de calificacion."
+        },
+        "nurture": {
+          "title": "Secuencias de Seguimiento Automatizadas",
+          "description": "Los leads no listos para comprar entran en secuencias de nurture — emails automatizados y retargeting para mantenerlos comprometidos."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "configure": {
+          "title": "Establecer Criterios de Calificacion",
+          "description": "Defina como es un lead calificado para cada cliente — umbrales de presupuesto, tamano de empresa, industria y senales de compra."
+        },
+        "embed": {
+          "title": "Agregar al Sitio Web del Cliente",
+          "description": "Una linea de codigo incorpora el chatbot IA en el sitio web de su cliente. Comienza a calificar visitantes inmediatamente."
+        },
+        "convert": {
+          "title": "Comenzar a Calificar Leads",
+          "description": "Vea leads calificados fluir al CRM de sus clientes con contexto completo. Su empleado IA trabaja cada visitante, cada vez."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Despliegue chatbots de calificacion de leads en todos los sitios web de sus clientes. Demuestre ROI con conteos de leads calificados y datos de conversion."
+        },
+        "saas": {
+          "title": "Empresas SaaS",
+          "description": "Califique registros de prueba gratuita y solicitudes de demo automaticamente. Enrute prospectos empresariales a ventas, el resto va self-serve."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Lead Qualifier",
+      "subtitle": "Agregue calificacion de leads impulsada por IA a su Empleado de Marketing IA y convierta mas visitantes web en clientes.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-social-media": {
+    "meta": {
+      "title": "Habilidad Social Media | Empleado de Marketing IA | FMai",
+      "description": "Gestion de redes sociales multiplataforma impulsada por IA para clientes de agencia. Programacion, analytics, creacion de contenido y monitoreo de marca por su Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Habilidad Social Media",
+      "title": "Gestion de Redes Sociales IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA gestiona redes sociales en todas las plataformas — creando contenido, programando posts, rastreando rendimiento y monitoreando menciones de marca."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Social Media",
+      "items": {
+        "scheduling": {
+          "title": "Programacion Multiplataforma",
+          "description": "Horarios de publicacion optimizados por IA en LinkedIn, Instagram, X, Facebook y TikTok. El contenido de cada cliente se publica en momentos de maximo engagement."
+        },
+        "analytics": {
+          "title": "Seguimiento de Rendimiento",
+          "description": "Analytics en tiempo real en todas las plataformas. Rastree engagement, alcance, crecimiento de seguidores y rendimiento de contenido por cliente."
+        },
+        "creation": {
+          "title": "Generacion de Contenido IA",
+          "description": "Contenido nativo por plataforma creado en la voz de marca de cada cliente. Descripciones, hashtags y visuales optimizados para cada red."
+        },
+        "monitoring": {
+          "title": "Seguimiento de Menciones de Marca",
+          "description": "Monitoree menciones de marca, actividad de competidores y tendencias del sector en todas las plataformas sociales. Reciba alertas de conversaciones importantes."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "connect": {
+          "title": "Vincular Cuentas Sociales",
+          "description": "Conecte las cuentas de redes sociales de sus clientes. Su empleado IA obtiene acceso para publicar, monitorear y analizar en todas las plataformas."
+        },
+        "plan": {
+          "title": "La IA Crea Calendario de Contenido",
+          "description": "Su empleado IA construye un calendario de contenido basado en la estrategia, datos de audiencia y temas tendencia de cada cliente."
+        },
+        "publish": {
+          "title": "Publicar Automaticamente segun Programa",
+          "description": "El contenido se publica automaticamente en horarios optimos. Su empleado IA gestiona la publicacion, hashtags y formato multiplataforma."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Gestione redes sociales para decenas de clientes simultaneamente. Un empleado IA reemplaza a un equipo completo de social media."
+        },
+        "brands": {
+          "title": "Gerentes de Marca",
+          "description": "Mantenga una presencia de marca consistente en todas las plataformas sin el trabajo manual de publicar y monitorear diariamente."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Social Media",
+      "subtitle": "Agregue gestion de redes sociales impulsada por IA a su Empleado de Marketing IA y escale la presencia social de sus clientes.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-ad-creator": {
+    "meta": {
+      "title": "Habilidad Ad Creator | Empleado de Marketing IA | FMai",
+      "description": "Anuncios estaticos y de video generados por IA para clientes de agencia. De briefing de campana a variaciones de anuncio a lanzamiento en plataforma — todo por su Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Habilidad Ad Creator",
+      "title": "Creacion de Anuncios IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA crea anuncios estaticos y de video a partir de briefings de campana, genera variaciones para pruebas A/B y los envia directamente a plataformas publicitarias."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Ad Creator",
+      "items": {
+        "static": {
+          "title": "Generacion de Anuncios de Imagen",
+          "description": "Anuncios display, anuncios sociales y banners generados por IA en multiples formatos y tamanos — listos para Meta, Google y LinkedIn."
+        },
+        "video": {
+          "title": "Anuncios de Video Cortos",
+          "description": "Anuncios de video producidos por IA para Reels, Stories, TikTok y YouTube Shorts. Del guion al video terminado en minutos."
+        },
+        "copy": {
+          "title": "Variantes de Texto Publicitario",
+          "description": "Titulares, descripciones y CTAs generados en la voz de marca de cada cliente. Multiples variaciones para pruebas y optimizacion."
+        },
+        "variants": {
+          "title": "Variaciones para Pruebas A/B",
+          "description": "Generacion automatica de variantes creativas para split testing. Su empleado IA optimiza basandose en datos de rendimiento."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "brief": {
+          "title": "Ingresar Briefing de Campana",
+          "description": "Proporcione el objetivo de la campana, audiencia objetivo y activos de marca. Su empleado IA se encarga del resto."
+        },
+        "generate": {
+          "title": "La IA Crea Variaciones de Anuncios",
+          "description": "Multiples creativos publicitarios generados en segundos — imagenes, video, texto y variaciones de formato para cada plataforma."
+        },
+        "launch": {
+          "title": "Enviar a Plataformas Publicitarias",
+          "description": "Los anuncios aprobados se envian directamente a Meta Ads, Google Ads y LinkedIn Campaign Manager. Un clic para lanzar."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Produzca creativos publicitarios para todos sus clientes a escala. Sin mas cuellos de botella esperando a disenadores y redactores."
+        },
+        "performance": {
+          "title": "Marketeros de Performance",
+          "description": "Genere cientos de variaciones de anuncios para pruebas rapidas. Encuentre creativos ganadores mas rapido con iteracion impulsada por IA."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Ad Creator",
+      "subtitle": "Agregue creacion de anuncios impulsada por IA a su Empleado de Marketing IA y lance campanas mas rapido para cada cliente.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-reporting": {
+    "meta": {
+      "title": "Habilidad Reporting | Empleado de Marketing IA | FMai",
+      "description": "Dashboards multiplataforma y reportes semanales impulsados por IA para clientes de agencia. Analytics en tiempo real, deteccion de tendencias y seguimiento de ROI por su Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Habilidad Reporting & Analytics",
+      "title": "Reportes IA para los Clientes de Su Agencia",
+      "description": "Su Empleado de Marketing IA construye dashboards en tiempo real, genera reportes semanales, detecta tendencias y rastrea ROI en todos los canales para cada cliente."
+    },
+    "features": {
+      "heading": "Que Hace la Habilidad Reporting",
+      "items": {
+        "dashboards": {
+          "title": "Dashboards de Cliente en Tiempo Real",
+          "description": "Dashboards en vivo mostrando KPIs en todos los canales. Comparta con clientes para total transparencia sobre el rendimiento de campanas."
+        },
+        "weekly": {
+          "title": "Reportes Semanales Automatizados",
+          "description": "Reportes de rendimiento semanales generados por IA enviados a su bandeja y a sus clientes. Sin extraccion manual de datos ni formateo."
+        },
+        "trends": {
+          "title": "Deteccion de Tendencias y Alertas",
+          "description": "Su empleado IA detecta anomalias de rendimiento, tendencias emergentes y oportunidades de optimizacion antes que usted."
+        },
+        "roi": {
+          "title": "Seguimiento de ROI y Atribucion",
+          "description": "Atribucion multi-touch en todos los canales. Sepa exactamente que campanas generan ingresos para cada cliente."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "integrate": {
+          "title": "Conectar Fuentes de Datos",
+          "description": "Vincule Google Analytics, plataformas publicitarias, cuentas sociales y CRM. Su empleado IA extrae datos de todas las fuentes automaticamente."
+        },
+        "analyze": {
+          "title": "La IA Procesa Metricas",
+          "description": "Su empleado IA analiza datos de rendimiento, identifica patrones y genera insights — sin necesidad de analista."
+        },
+        "report": {
+          "title": "Generar Reportes Automaticamente",
+          "description": "Reportes hermosos y con marca generados semanalmente y enviados a sus clientes. Los dashboards se actualizan en tiempo real."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quien Usa Esta Habilidad",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Entregue reportes profesionales a cada cliente sin pasar horas en hojas de calculo. Su empleado IA se encarga del trabajo de datos."
+        },
+        "managers": {
+          "title": "Gerentes de Marketing",
+          "description": "Obtenga una imagen clara del rendimiento de campanas en todos los canales. Insights impulsados por IA le ayudan a tomar mejores decisiones mas rapido."
+        }
+      }
+    },
+    "cta": {
+      "title": "Active la Habilidad Reporting",
+      "subtitle": "Agregue reportes impulsados por IA a su Empleado de Marketing IA y ofrezca analytics profesionales a cada cliente.",
+      "button": "Ver Precios"
+    }
+  },
+  "founding-member": {
+    "meta": {
+      "title": "Miembro Fundador — Empleado de Marketing IA | FMai",
+      "description": "Unase al programa de miembro fundador y asegure EUR 997/mes de por vida. Solo 10 plazas disponibles. Obtenga su Empleado de Marketing IA con acceso directo al fundador y soporte prioritario."
+    },
+    "hero": {
+      "badge": "Solo 10 Plazas",
+      "title": "Conviertase en Miembro Fundador",
+      "description": "Sea una de las primeras 10 agencias en desplegar un Empleado de Marketing IA. Asegure el precio mas bajo para siempre, obtenga acceso directo al fundador y ayude a dar forma al producto."
+    },
+    "pricing": {
+      "heading": "Precios de Miembro Fundador",
+      "currency": "EUR",
+      "price": "997",
+      "period": "/mes",
+      "locked": "Precio bloqueado de por vida",
+      "comparison": "El precio regular comienza en EUR 1.497/mes",
+      "includes": "Empleado de Marketing IA completo + 1 habilidad a eleccion"
+    },
+    "benefits": {
+      "heading": "Beneficios de Miembro Fundador",
+      "items": {
+        "price_lock": {
+          "title": "Precio Bloqueado para Siempre",
+          "description": "Su tarifa de EUR 997/mes nunca aumenta, sin importar cuantas habilidades o funciones agreguemos. Los miembros fundadores obtienen permanentemente la mejor oferta."
+        },
+        "priority": {
+          "title": "Soporte Prioritario y Acceso al Fundador",
+          "description": "Saltese la cola. Canal directo de Slack con el fundador para preguntas, feedback y asesoramiento estrategico sobre su empleado IA."
+        },
+        "influence": {
+          "title": "Influya en la Hoja de Ruta",
+          "description": "Su feedback influye directamente en lo que construimos a continuacion. Los miembros fundadores votan sobre nuevas habilidades, integraciones y funciones."
+        },
+        "early_access": {
+          "title": "Primero en Obtener Nuevas Funciones",
+          "description": "Cada nueva habilidad y funcion se lanza primero para miembros fundadores. Siempre tiene acceso a nuestras ultimas capacidades antes que nadie."
+        },
+        "community": {
+          "title": "Comunidad Exclusiva de Miembros Fundadores",
+          "description": "Comunidad privada de las primeras 10 agencias usando Empleados de Marketing IA. Comparta estrategias, resultados y mejores practicas."
+        },
+        "onboarding": {
+          "title": "Onboarding Personalizado",
+          "description": "Onboarding personalizado con el fundador. Configuramos juntos su primer espacio de trabajo de cliente y configuramos su empleado IA para maximo impacto."
+        }
+      }
+    },
+    "faq": {
+      "heading": "Preguntas Frecuentes",
+      "items": {
+        "q1": {
+          "question": "Que incluye el plan de miembro fundador?",
+          "answer": "Obtiene un Empleado de Marketing IA completo funcionando 24/7, una habilidad a eleccion (Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator o Reporting), hasta 3 espacios de trabajo de clientes, acceso directo al fundador via Slack y soporte prioritario. Puede agregar mas habilidades a EUR 497/mes cada una."
+        },
+        "q2": {
+          "question": "Cual es la duracion del compromiso?",
+          "answer": "Pedimos un compromiso inicial de 6 meses para dar al empleado IA tiempo suficiente para aprender las marcas de sus clientes y entregar resultados medibles. Despues de 6 meses, continua mes a mes al mismo precio bloqueado."
+        },
+        "q3": {
+          "question": "Que pasa despues del periodo de fundacion?",
+          "answer": "No hay fecha de finalizacion para miembros fundadores. Su precio de EUR 997/mes esta bloqueado de por vida. Mientras aumentamos precios para nuevos clientes, su tarifa permanece igual — para siempre."
+        },
+        "q4": {
+          "question": "Cuantas plazas quedan?",
+          "answer": "Limitamos el programa de miembros fundadores a exactamente 10 agencias. Una vez que se llenen todas las plazas, las nuevas agencias comienzan en el nivel Starter (EUR 1.497/mes). Consulte esta pagina para disponibilidad actual."
+        },
+        "q5": {
+          "question": "Hay garantia de devolucion?",
+          "answer": "Si. Si su Empleado de Marketing IA no entrega resultados medibles en los primeros 60 dias, le reembolsamos su inversion completa. Sin preguntas, sin letra pequena."
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Ser el Primero?",
+      "subtitle": "Unase al programa de miembro fundador y asegure el precio mas bajo para siempre.",
+      "button": "Solicitar Ahora"
+    }
   }
 }
