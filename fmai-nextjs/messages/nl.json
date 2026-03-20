@@ -1,112 +1,122 @@
 {
   "home": {
     "meta": {
-      "title": "AI Automation, Chatbots & Voice Agents for Growth",
-      "description": "Future Marketing AI builds custom AI automation, chatbots, and voice agents for growth teams. Three specialized platforms, one partner. Book a free AI audit."
+      "title": "AI Marketing Medewerker voor Bureaus | FMai",
+      "description": "De eerste AI Marketing Medewerker voor jouw bureau. Een persistent AI-agent met inplugbare skills — contentcreatie, voice agents, leadkwalificatie, social media, advertenties en rapportages. Gebouwd voor marketingbureaus."
     },
     "hero": {
-      "badge": "AI Implementatie Partner",
-      "headlineMain": "AI Automatisering Bureau Dat Jouw",
-      "headlineAccent": "Bedrijf Runnen.",
-      "subtitle": "Wij implementeren AI die echt werkt — marketing automatisering, custom workflows, chatbots en voice agents voor SaaS- en e-commerce bedrijven.",
-      "trustAnchor": "Bedrijven met een AI-partner zijn 2.5x succesvoller",
-      "cta": "Ontdek Onze Services",
-      "ctaSecondary": "Plan een Strategiegesprek"
+      "badge": "AI Marketing Medewerker voor Bureaus",
+      "headlineMain": "De Eerste AI Medewerker",
+      "headlineAccent": "Van Je Bureau.",
+      "subtitle": "Een AI-medewerker die 24/7 draait, de merken van je klanten leert kennen en elke week beter wordt. Activeer skills zoals contentcreatie, voice agents, leadkwalificatie en meer — zonder aan te nemen.",
+      "trustAnchor": "Bureaus met AI-medewerkers schalen 3x sneller zonder personeel",
+      "cta": "Ontdek Skills",
+      "ctaSecondary": "Bekijk Prijzen"
     },
     "services": {
-      "title": "AI Platformen voor Groei",
-      "subtitle": "Drie gespecialiseerde AI-platformen. Kies jouw startpunt.",
-      "automations": {
+      "title": "Skills Die Je AI-Medewerker Kan Leren",
+      "subtitle": "Zes inplugbare skills. Activeer wat je nodig hebt, voeg meer toe als je groeit.",
+      "contentCreator": {
         "number": "01",
-        "title": "AI Automations",
-        "description": "Custom workflow automatisering die jouw tools en processen verbindt"
+        "title": "Content Creator",
+        "description": "Blogposts, social content, e-mail nieuwsbrieven — dagelijks geproduceerd voor elk van je klanten"
       },
-      "chatbots": {
+      "voiceAgent": {
         "number": "02",
-        "title": "FutureChatAI",
-        "description": "AI chat agents die leads kwalificeren en klanten 24/7 ondersteunen"
+        "title": "Voice Agent",
+        "description": "Inkomende en uitgaande gesprekken, afspraken boeken en leadkwalificatie per telefoon"
       },
-      "voiceAgents": {
+      "leadQualifier": {
         "number": "03",
-        "title": "FutureVoiceAI",
-        "description": "Voice agents die inkomende en uitgaande gesprekken afhandelen"
+        "title": "Lead Qualifier",
+        "description": "AI-chatbot op de websites van je klanten die leads scoort en doorstuurt naar sales"
       },
-      "marketingMachine": {
+      "socialMedia": {
         "number": "04",
-        "title": "FutureMarketingAI",
-        "description": "Autonome contentcreatie, planning en campagne-automatisering"
+        "title": "Social Media Manager",
+        "description": "Multi-platform planning, engagement tracking en prestatieanalytics"
+      },
+      "adCreator": {
+        "number": "05",
+        "title": "Ad Creator",
+        "description": "AI-gegenereerde statische en video-advertenties direct gepubliceerd op Meta, Google en meer"
+      },
+      "reporting": {
+        "number": "06",
+        "title": "Reporting & Analytics",
+        "description": "Cross-platform dashboards, wekelijkse prestatierapporten en anomaliedetectie"
       }
     },
     "trust": {
-      "title": "Waarom Teams voor Ons Kiezen",
-      "customBuiltTitle": "Op Maat Gebouwde Oplossingen",
-      "customBuilt": "Volledig op maat gebouwd — geen templates, geen beperkingen",
+      "title": "Waarom Bureau-eigenaren voor FMai Kiezen",
+      "customBuiltTitle": "Een Medewerker, Alle Skills",
+      "customBuilt": "Een AI-medewerker regelt content, voice, ads, social, leads en rapportages",
       "founderAccessTitle": "Direct Contact met Oprichter",
-      "founderAccess": "Direct contact met de oprichter via Slack",
-      "successGuaranteeTitle": "Succesgarantie",
-      "successGuarantee": "Succesgarantie — we blijven tot het werkt",
-      "trialTitle": "Risicovrije Proefperiode",
-      "trialCommitment": "3 maanden risicovrij proberen"
+      "founderAccess": "Direct contact met de oprichter via Slack — geen supporttickets",
+      "successGuaranteeTitle": "Leert Je Klanten Kennen",
+      "successGuarantee": "Je AI-medewerker leert de merkstem, doelgroep en doelen van elke klant",
+      "trialTitle": "Founding Member Prijzen",
+      "trialCommitment": "Zeker je prijs van EUR 997/maand als founding member — slechts 10 plekken"
     },
     "stats": {
-      "automations": { "value": "50+", "label": "Actieve Automations" },
-      "support": { "value": "24/7", "label": "AI Support" },
-      "growth": { "value": "3x", "label": "Omzetgroei" },
-      "setup": { "value": "< 2 Weken", "label": "Opzettijd" }
+      "clients": { "value": "50+", "label": "Klanten Beheerd" },
+      "content": { "value": "160+", "label": "Contentstukken/Maand" },
+      "hours": { "value": "38u", "label": "Uren Bespaard/Week" },
+      "languages": { "value": "3", "label": "Talen Ondersteund" }
     },
     "badges": {
-      "title": "Vertrouwd door Groeiteams",
-      "gdpr": "AVG-conform",
-      "enterprise": "Enterprise-grade Beveiliging",
-      "uptime": "99.9% Uptime SLA",
-      "support": "Dedicated Succesmanager",
+      "title": "Gebouwd voor Europese Bureaus",
+      "gdpr": "AVG-First",
+      "enterprise": "Powered by Enterprise AI",
+      "dutch": "Nederlandse Support",
+      "uptime": "99,9% Uptime SLA",
       "integrations": "200+ Integraties",
       "noLockIn": "Geen Lock-in Contracten"
     },
     "cta": {
-      "title": "Ready to Automate Your Growth?",
-      "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
-      "button": "Book a Free Audit"
+      "title": "Klaar om Je AI-Medewerker Aan Te Nemen?",
+      "subtitle": "Boek een gratis strategiegesprek van 30 minuten. We laten zien hoe een AI Marketing Medewerker bij jouw bureau past.",
+      "button": "Boek een Strategiegesprek"
     },
     "faq": {
       "title": "Veelgestelde Vragen",
       "items": {
         "q1": {
-          "question": "Wat is een AI-implementatiepartner?",
-          "answer": "Een AI-implementatiepartner is een gespecialiseerd bureau dat op maat gemaakte AI-systemen ontwerpt, bouwt en implementeert voor jouw bedrijf — inclusief chatbots, workflow-automatiseringen en voice agents — zodat je productieklare oplossingen krijgt zonder een intern AI-team aan te nemen."
+          "question": "Wat is een AI Marketing Medewerker?",
+          "answer": "Een AI Marketing Medewerker is een persistent AI-agent die 24/7 voor jouw bureau werkt. In tegenstelling tot tools die je zelf moet bedienen, voert je AI-medewerker taken autonoom uit — content maken, leads kwalificeren, social media beheren, advertenties draaien en rapporten genereren voor elk van je klanten."
         },
         "q2": {
-          "question": "Hoe lang duurt het om AI te implementeren?",
-          "answer": "De meeste enkelvoudige implementaties (chatbot, automatiseringsworkflow of voice agent) gaan binnen 1-3 weken live. Een volledige Marketing Machine-implementatie duurt doorgaans 3-4 weken voor de eerste setup, met continue optimalisatie vanaf dag een."
+          "question": "Hoe leert het de merken van mijn klanten kennen?",
+          "answer": "Tijdens onboarding neemt je AI-medewerker de merkrichtlijnen, tone of voice, doelgroep en historische content van elke klant op. Het verbetert continu door prestatiedata en feedback te analyseren en wordt elke week beter afgestemd op het merk van elke klant."
         },
         "q3": {
-          "question": "Werken jullie met SaaS- en e-commercebedrijven?",
-          "answer": "Ja — SaaS en e-commerce zijn onze kerngebieden. We bouwen AI-automatiseringen die integreren met platforms zoals HubSpot, Salesforce, Shopify en WooCommerce, afgestemd op de specifieke workflows van abonnements- en retailbedrijven."
+          "question": "Welke skills zijn beschikbaar?",
+          "answer": "Zes skills zijn beschikbaar: Content Creator (blogposts, social content, nieuwsbrieven), Voice Agent (bellen en afspraken boeken), Lead Qualifier (chatbot en lead scoring), Social Media Manager (planning en analytics), Ad Creator (statische en video-advertenties) en Reporting & Analytics (dashboards en wekelijkse rapporten). Activeer wat je nodig hebt, voeg meer toe wanneer je wilt."
         },
         "q4": {
-          "question": "Wat maakt FMai anders dan andere AI-bureaus?",
-          "answer": "Wij zijn geen consultancybureau dat je een presentatie overhandigt. Wij bouwen, implementeren en beheren jouw AI-systemen van begin tot eind. Je krijgt direct contact met de oprichter, een succesgarantie en maandelijkse contracten zonder lock-in."
+          "question": "Hoe verschilt dit van het aannemen van een junior marketeer?",
+          "answer": "Een junior marketeer kost EUR 45.000-60.000/jaar, werkt 40 uur/week en behandelt een klant tegelijk. Je AI-medewerker kost vanaf EUR 997/maand, werkt 24/7, behandelt al je klanten tegelijkertijd en meldt zich nooit ziek. Het is geen vervanging voor strategie — het is een vervanging voor repetitieve uitvoering."
         },
         "q5": {
-          "question": "Hoeveel kost AI-automatisering?",
-          "answer": "Onze managed-plannen starten vanaf EUR 1.497/maand voor een enkele AI-dienst en schalen op tot EUR 3.997/maand voor het volledige pakket. Elk plan omvat hosting, onderhoud en doorlopende support — geen verborgen kosten."
+          "question": "Hoe zit het met AVG en gegevensprivacy?",
+          "answer": "FMai is AVG-first. Alle gegevensverwerking vindt plaats binnen EU-datacenters. We leveren een Verwerkersovereenkomst voor elke bureauklant. De gegevens van je klanten zijn geisoleerd per werkruimte — geen cross-client datalekken. We zijn vanaf dag een gebouwd voor Europese compliance."
         }
       }
     }
   },
   "automations": {
     "meta": {
-      "title": "AI Marketing Automation | Future Marketing AI",
-      "description": "Custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences. Delivered in 1-2 weeks. Powered by n8n, Make, and custom integrations."
+      "title": "AI Marketing Automatisering | Future Marketing AI",
+      "description": "Custom AI workflows die handmatig werk elimineren — lead routing, CRM-verrijking, e-mailsequenties. Opgeleverd in 1-2 weken."
     },
     "hero": {
-      "badge": "Delivered in 1-2 Weeks",
-      "title": "Automate Your Business With AI",
-      "description": "We build custom AI workflows that eliminate manual work — lead routing, CRM enrichment, email sequences, and more. Powered by n8n, Make, and custom integrations.",
+      "badge": "Opgeleverd in 1-2 Weken",
+      "title": "Automatiseer Je Bureau Met AI",
+      "description": "Wij bouwen custom AI workflows die handmatig werk elimineren — lead routing, CRM-verrijking, e-mailsequenties en meer.",
       "cta_primary": "Vraag een Gratis Automation Audit Aan",
       "cta_secondary": "Bekijk Voorbeelden"
     },
-    "quick_answer": "AI Marketing Automations van Future Marketing AI vervangen handmatige marketingworkflows door intelligente, zelfstandig draaiende systemen — zodat jouw team zich richt op strategie terwijl AI de uitvoering doet.",
+    "quick_answer": "AI Marketing Automations van Future Marketing AI vervangen handmatige marketingworkflows door intelligente, zelfstandig draaiende systemen.",
     "sections": {
       "challenges_heading": "Waarom Heeft Jouw Marketingteam AI Automatisering Nodig?",
       "automations_heading": "Wat Omvat Onze Automatiseringsdienst?",
@@ -122,19 +132,19 @@
         },
         "q2": {
           "question": "Hoe lang duurt het om een automatiseringsworkflow te implementeren?",
-          "answer": "De meeste workflow-automatiseringen gaan live binnen 2-3 weken: een week voor audit en ontwerp, een week voor bouwen en testen, en een laatste integratiesprint."
+          "answer": "De meeste workflow-automatiseringen gaan live binnen 2-3 weken."
         },
         "q3": {
           "question": "Met welke tools integreren jullie?",
-          "answer": "Wij integreren met HubSpot, Salesforce, ActiveCampaign, Zapier, Make (Integromat), Airtable, Slack, Google Workspace en de meeste REST API-platforms."
+          "answer": "HubSpot, Salesforce, ActiveCampaign, Zapier, Make (Integromat), Airtable, Slack, Google Workspace en de meeste REST API-platforms."
         },
         "q4": {
           "question": "Is AI automatisering geschikt voor kleine marketingteams?",
-          "answer": "Ja — AI automatisering schaalt zowel naar beneden als naar boven. Kleine teams (2-5 personen) zien vaak de grootste productiviteitswinst omdat automatisering taken elimineert die eerder dedicated personeel vereisten."
+          "answer": "Ja — kleine teams (2-5 personen) zien vaak de grootste productiviteitswinst."
         },
         "q5": {
           "question": "Wat gebeurt er als een automatisering stopt met werken?",
-          "answer": "Alle workflows bevatten monitoring en foutafhandeling. Wij bieden 30 dagen post-launch support en kunnen Slack/e-mail alerts configureren voor eventuele fouten."
+          "answer": "Alle workflows bevatten monitoring en foutafhandeling. Wij bieden 30 dagen post-launch support."
         }
       }
     },
@@ -178,15 +188,15 @@
       "steps": {
         "audit": {
           "title": "Gratis Audit",
-          "description": "Wij brengen je handmatige processen in kaart en identificeren automatiseringsmogelijkheden. 30 minuten, vrijblijvend."
+          "description": "Wij brengen je handmatige processen in kaart. 30 minuten, vrijblijvend."
         },
         "build": {
           "title": "Bouwen",
-          "description": "1-2 weken oplevering, volledig gedocumenteerde workflows. Wij bouwen, testen en dragen over."
+          "description": "1-2 weken oplevering, volledig gedocumenteerde workflows."
         },
         "optimize": {
           "title": "Optimaliseren",
-          "description": "Optioneel doorlopend retainer voor nieuwe workflows, optimalisatie en dedicated support."
+          "description": "Optioneel doorlopend retainer voor nieuwe workflows en optimalisatie."
         }
       }
     },
@@ -199,18 +209,18 @@
   "chatbots": {
     "meta": {
       "title": "AI Chatbot Oplossingen | Future Marketing AI",
-      "description": "Op maat gemaakte AI chatbots die klantenservice afhandelen, leads kwalificeren en afspraken boeken 24/7. Probeer onze interactieve demo's. Multi-platform deployment ready."
+      "description": "Op maat gemaakte AI chatbots die klantenservice afhandelen, leads kwalificeren en afspraken boeken 24/7."
     },
     "hero": {
       "badge": "Interactieve Demo",
       "title": "Ervaar AI Chatbots in Actie",
-      "description": "Geloof ons niet op ons woord — probeer ze zelf. Drie live demo's die laten zien wat AI chatbots voor jouw bedrijf kunnen doen.",
+      "description": "Probeer ze zelf. Drie live demos die laten zien wat AI chatbots voor jouw bureau kunnen doen.",
       "cta_primary": "Probeer een Demo Hieronder",
       "cta_secondary": "Vraag een Gratis Strategiesessie Aan"
     },
-    "quick_answer": "AI Chatbots van Future Marketing AI zijn conversatie-agents geconfigureerd naar jouw merkpersoonlijkheid — leads kwalificeren, vragen beantwoorden en demo's boeken 24/7 zonder menselijke tussenkomst.",
+    "quick_answer": "AI Chatbots van Future Marketing AI zijn conversatie-agents geconfigureerd naar jouw merkpersoonlijkheid — leads kwalificeren, vragen beantwoorden en demos boeken 24/7.",
     "sections": {
-      "use_cases_heading": "Wat Kan een AI Chatbot voor Jouw Bedrijf Doen?",
+      "use_cases_heading": "Wat Kan een AI Chatbot voor Jouw Bureau Doen?",
       "process_heading": "Hoe Wordt een Chatbot Ingezet?",
       "faq_heading": "Veelgestelde Vragen",
       "related_heading": "Gerelateerde Diensten"
@@ -224,28 +234,28 @@
         },
         "lead_qualification": {
           "title": "Leadkwalificatie",
-          "description": "Score en routeer leads dag en nacht. Mis nooit meer een warme prospect."
+          "description": "Score en routeer leads dag en nacht."
         },
         "appointment_booking": {
           "title": "Afspraken Boeken",
-          "description": "Vul je agenda zonder handmatig heen-en-weer. Geintegreerd met Calendly, Cal.com en meer."
+          "description": "Vul je agenda zonder handmatig heen-en-weer."
         },
         "faq_automation": {
           "title": "FAQ Automatisering",
-          "description": "Consistente, accurate antwoorden — altijd beschikbaar. Getraind op jouw specifieke kennisbank."
+          "description": "Consistente, accurate antwoorden — altijd beschikbaar."
         }
       }
     },
     "demo": {
       "title": "Interactieve Demo",
-      "subtitle": "Wissel tussen persona's en zie hoe elke chatbot verschillende scenario's afhandelt.",
-      "placeholder": "Interactieve chatbot demo komt binnenkort. Plan in de tussentijd een strategiesessie voor een live demonstratie.",
+      "subtitle": "Wissel tussen personas en zie hoe elke chatbot verschillende scenarios afhandelt.",
+      "placeholder": "Interactieve chatbot demo komt binnenkort.",
       "capabilities_label": "Mogelijkheden",
       "tabs": {
         "ecommerce": {
           "label": "E-commerce",
           "scenario_title": "Huidverzorging Productadviseur",
-          "scenario": "Een AI-aangedreven productadviseur die klanten helpt de juiste huidverzorgingsproducten te vinden op basis van hun huidtype, zorgen en voorkeuren.",
+          "scenario": "Een AI-aangedreven productadviseur die klanten helpt de juiste huidverzorgingsproducten te vinden.",
           "capabilities_0": "Producten zoeken en aanbevelingen",
           "capabilities_1": "Routine samenstellen voor ochtend/avond",
           "capabilities_2": "Ingredientenanalyse",
@@ -254,7 +264,7 @@
         "leadgen": {
           "label": "Lead Kwalificatie",
           "scenario_title": "AI Lead Kwalificeerder",
-          "scenario": "Een lead kwalificatie bot die prospects evalueert, hun behoeften begrijpt en gekwalificeerde leads naar uw sales team doorstuurt.",
+          "scenario": "Een lead kwalificatie bot die prospects evalueert en gekwalificeerde leads doorstuurt.",
           "capabilities_0": "Behoefteanalyse en scoring",
           "capabilities_1": "Budget en tijdlijn kwalificatie",
           "capabilities_2": "ROI schatting",
@@ -263,7 +273,7 @@
         "support": {
           "label": "Klantenservice",
           "scenario_title": "Support Agent",
-          "scenario": "Een intelligente support agent die veelvoorkomende problemen oplost, tickets aanmaakt voor complexe kwesties en escaleert wanneer nodig.",
+          "scenario": "Een intelligente support agent die veelvoorkomende problemen oplost.",
           "capabilities_0": "Kennisbank doorzoeken",
           "capabilities_1": "Ticket aanmaken en volgen",
           "capabilities_2": "Prioriteit escalatie",
@@ -275,27 +285,27 @@
       "items": {
         "q1": {
           "question": "Wat maakt een AI chatbot anders dan een regelgebaseerde chatbot?",
-          "answer": "AI chatbots gebruiken grote taalmodellen om intentie te begrijpen en contextuele antwoorden te genereren, terwijl regelgebaseerde bots vaste beslisbomen volgen. AI chatbots behandelen nieuwe vragen zonder voorgeprogrammeerde paden."
+          "answer": "AI chatbots gebruiken grote taalmodellen om intentie te begrijpen en contextuele antwoorden te genereren."
         },
         "q2": {
           "question": "Kan ik de chatbot uitproberen voor aankoop?",
-          "answer": "Ja — onze Chatbots-pagina bevat een live demo playground met 3 voorgeconfigureerde persona's: e-commerce, leadgeneratie en klantenservice."
+          "answer": "Ja — onze Chatbots-pagina bevat een live demo playground met 3 voorgeconfigureerde personas."
         },
         "q3": {
           "question": "Hoe configureren jullie de persona van de chatbot?",
-          "answer": "Elke chatbot ontvangt een systeemprompt, toonrichtlijnen, kennisbankdocumenten en voorbeeldgesprekken. Configuratie duurt doorgaans 3-5 werkdagen voor een productieklare persona."
+          "answer": "Elke chatbot ontvangt een systeemprompt, toonrichtlijnen, kennisbankdocumenten en voorbeeldgesprekken."
         },
         "q4": {
           "question": "Integreert de chatbot met mijn CRM?",
-          "answer": "Ja — door chatbot vastgelegde leads worden direct doorgestuurd naar HubSpot, Salesforce of jouw CRM via webhook. Wij configureren de veldkoppeling tijdens onboarding."
+          "answer": "Ja — leads worden direct doorgestuurd naar HubSpot, Salesforce of jouw CRM via webhook."
         },
         "q5": {
           "question": "Welke talen ondersteunt de chatbot?",
-          "answer": "De onderliggende modellen ondersteunen 50+ talen. Wij configureren en testen voor jouw primaire talen (NL/EN/ES als standaard) tijdens deployment."
+          "answer": "De onderliggende modellen ondersteunen 50+ talen. Wij configureren NL/EN/ES als standaard."
         },
         "q6": {
           "question": "Is de chatbot AVG-conform?",
-          "answer": "Ja — alle gespreksdata wordt verwerkt binnen EU-datacenters, chatgeschiedenis wordt standaard niet bewaard na de sessie, en wij bieden een verwerkersovereenkomst op aanvraag."
+          "answer": "Ja — alle gespreksdata wordt verwerkt binnen EU-datacenters en wij bieden een verwerkersovereenkomst op aanvraag."
         }
       }
     },
@@ -312,28 +322,28 @@
       "steps": {
         "discovery": {
           "title": "Discovery",
-          "description": "Wij brengen je use case in kaart, identificeren belangrijke intenties en plannen integratie met je bestaande tools."
+          "description": "Wij brengen je use case in kaart en plannen integratie met je bestaande tools."
         },
         "build": {
           "title": "Bouwen",
-          "description": "Op maat gemaakte LLM-chatbot, getraind op jouw data. Multi-platform deployment ready."
+          "description": "Op maat gemaakte LLM-chatbot, getraind op jouw data."
         },
         "optimize": {
           "title": "Optimaliseren",
-          "description": "Doorlopende verbetering op basis van echte gespreksdata. Maandelijkse prestatierapporten."
+          "description": "Doorlopende verbetering op basis van echte gespreksdata."
         }
       }
     },
     "cta": {
       "title": "Klaar voor 24/7 Klantbetrokkenheid?",
-      "subtitle": "Boek een gratis strategiesessie. Wij brengen jouw chatbot-mogelijkheden in kaart.",
+      "subtitle": "Boek een gratis strategiesessie.",
       "button": "Vraag een Gratis Strategiesessie Aan"
     }
   },
   "voice-agents": {
     "meta": {
       "title": "AI Voice Agents | Future Marketing AI",
-      "description": "AI voice agents die prospects bellen, leads kwalificeren en afspraken boeken op schaal. Gebouwd met gespecialiseerde voice AI partners voor maximale kwaliteit."
+      "description": "AI voice agents die prospects bellen, leads kwalificeren en afspraken boeken op schaal."
     },
     "hero": {
       "badge": "AI Die Jouw Gesprekken Afhandelt",
@@ -342,7 +352,7 @@
       "cta_primary": "Boek een Demo Gesprek",
       "cta_secondary": "Bekijk Use Cases"
     },
-    "quick_answer": "AI Voice Agents van Future Marketing AI handelen inkomende en uitgaande gesprekken autonoom af — prospects kwalificeren, afspraken plannen en supportvragen oplossen op schaal.",
+    "quick_answer": "AI Voice Agents van Future Marketing AI handelen inkomende en uitgaande gesprekken autonoom af.",
     "sections": {
       "use_cases_heading": "Wat Kunnen AI Voice Agents Doen?",
       "partnership_heading": "Hoe Integreren Voice Agents Met Jouw Stack?",
@@ -353,23 +363,23 @@
       "items": {
         "q1": {
           "question": "Wat is een AI voice agent?",
-          "answer": "Een AI voice agent is een conversationele telefoonbot die inkomende gesprekken kan afhandelen (prospects kwalificeren, FAQ's beantwoorden) of uitgaande gesprekken kan voeren (follow-ups, afspraakherinneringen) met natuurlijke taal."
+          "answer": "Een AI voice agent is een conversationele telefoonbot die inkomende en uitgaande gesprekken kan afhandelen met natuurlijke taal."
         },
         "q2": {
           "question": "Hoe menselijk klinkt de stem?",
-          "answer": "Moderne text-to-speech modellen produceren bijna-menselijke spraak met instelbare toon, snelheid en accent. De meeste bellers kunnen de agent niet onderscheiden van een mens in de eerste 30 seconden."
+          "answer": "Moderne text-to-speech modellen produceren bijna-menselijke spraak."
         },
         "q3": {
-          "question": "Welke belscenario's kunnen voice agents afhandelen?",
-          "answer": "Leadkwalificatie, afspraakplanning, inkomende supportrouting, uitgaande herinneringen, NPS-enquetes en post-aankoop follow-up gesprekken zijn de meest voorkomende use cases."
+          "question": "Welke belscenarios kunnen voice agents afhandelen?",
+          "answer": "Leadkwalificatie, afspraakplanning, inkomende supportrouting, uitgaande herinneringen, NPS-enquetes en post-aankoop follow-ups."
         },
         "q4": {
           "question": "Hoe integreren voice agents met mijn telefoonsysteem?",
-          "answer": "Wij gebruiken Twilio of Vonage als telefonie-laag, die met de meeste VoIP-systemen verbindt. SIP-trunking of PSTN-integratie is inbegrepen bij alle deployments."
+          "answer": "Wij gebruiken Twilio of Vonage als telefonie-laag."
         },
         "q5": {
           "question": "Wat is het gemiddelde oproepafhandelingspercentage?",
-          "answer": "Klanten zien doorgaans 40-70% afhandeling van herhaalde/FAQ inkomende vragen binnen de eerste 90 dagen, wat de wachttijd voor live agents aanzienlijk vermindert."
+          "answer": "Klanten zien doorgaans 40-70% afhandeling binnen de eerste 90 dagen."
         }
       }
     },
@@ -386,25 +396,25 @@
       "items": {
         "outbound_leads": {
           "title": "Uitgaande Leadkwalificatie",
-          "description": "Bel en kwalificeer honderden leads per dag. AI handelt het eerste gesprek af zodat jouw salesteam alleen met gekwalificeerde prospects praat."
+          "description": "Bel en kwalificeer honderden leads per dag."
         },
         "appointment_setting": {
           "title": "Afspraken Plannen",
-          "description": "Vul agenda's automatisch. De voice agent boekt vergaderingen direct in jouw agendaysteem."
+          "description": "Vul agendas automatisch."
         },
         "inbound_service": {
           "title": "Inkomende Klantenservice",
-          "description": "Handel routinegesprekken 24/7 af. Beantwoord FAQ's, routeer complexe problemen en laat klanten nooit wachten."
+          "description": "Handel routinegesprekken 24/7 af."
         },
         "post_sale": {
           "title": "Post-Sale Follow-up",
-          "description": "Geautomatiseerde check-ins, verlengingsherinneringen en tevredenheidsenquetes — op schaal."
+          "description": "Geautomatiseerde check-ins en tevredenheidsenquetes — op schaal."
         }
       }
     },
     "partnership": {
       "title": "Gebouwd Met Gespecialiseerde Partners",
-      "description": "Onze voice agent oplossingen worden gebouwd in samenwerking met gespecialiseerde voice AI partners, zodat je de beste technologie en expertise krijgt die beschikbaar is in de markt."
+      "description": "Onze voice agent oplossingen worden gebouwd in samenwerking met gespecialiseerde voice AI partners."
     },
     "cta": {
       "title": "Klaar om Jouw Bereik te Schalen?",
@@ -421,11 +431,11 @@
       "badge": "De Marketing Machine",
       "title": "160 Posts/Maand.",
       "titleHighlight": "Nul Handmatig Werk.",
-      "description": "6 AI modules die 24/7 werken om jouw content te creeren, optimaliseren en distribueren — terwijl jij je richt op het groeien van je bedrijf.",
+      "description": "6 AI modules die 24/7 werken om jouw content te creeren, optimaliseren en distribueren — terwijl jij je richt op het groeien van je bureau.",
       "cta_primary": "Boek een Discovery Gesprek",
       "cta_secondary": "Bereken Jouw ROI"
     },
-    "quick_answer": "De AI Marketing Machine van Future Marketing AI is een geintegreerd systeem dat automatiseringen, chatbots, contentproductie en betaalde versterking combineert in een enkele zelfoptimaliserende groeimotor.",
+    "quick_answer": "De AI Marketing Machine is een geintegreerd systeem dat automatiseringen, chatbots, contentproductie en betaalde versterking combineert.",
     "sections": {
       "features_heading": "Wat Omvat de Marketing Machine?",
       "how_it_works_heading": "Hoe Wordt de Marketing Machine Gebouwd?",
@@ -436,79 +446,76 @@
       "items": {
         "q1": {
           "question": "Wat is de AI Marketing Machine?",
-          "answer": "De AI Marketing Machine is een geintegreerd systeem dat workflow-automatiseringen, conversationele AI, contentproductie en betaalde versterking combineert in een enkele zelfoptimaliserende groeimotor die voor jou wordt beheerd."
+          "answer": "Een geintegreerd systeem dat workflow-automatiseringen, conversationele AI, contentproductie en betaalde versterking combineert."
         },
         "q2": {
           "question": "Hoe verschilt dit van het kopen van individuele tools?",
-          "answer": "Individuele tools vereisen handmatige orchestratie. De Marketing Machine is een beheerde dienst waarbij AI de tools coordineert, en wij strategie, operaties en optimalisatie afhandelen."
+          "answer": "De Marketing Machine is een beheerde dienst waarbij AI de tools coordineert."
         },
         "q3": {
           "question": "Wat omvat 'Marketing Machine'?",
-          "answer": "Een standaard engagement omvat: leadgeneratie-automatiseringen, een geconfigureerde chatbot, contentkalender en AI-ondersteunde productie, advertentiecampagnebeheer en maandelijkse optimalisatiesprints."
+          "answer": "Leadgeneratie-automatiseringen, chatbot, contentkalender, advertentiecampagnebeheer en optimalisatiesprints."
         },
         "q4": {
           "question": "Hoe lang duurt het voordat ik resultaten zie?",
-          "answer": "Infrastructuurinstallatie duurt 3-4 weken. De meeste klanten zien meetbare pipeline-impact (gekwalificeerde leads, geboekte gesprekken) binnen 60 dagen na lancering."
+          "answer": "3-4 weken setup. Meetbare impact binnen 60 dagen."
         },
         "q5": {
-          "question": "Is dit geschikt voor B2C-bedrijven?",
-          "answer": "De Marketing Machine is geoptimaliseerd voor B2B. B2C-bedrijven met high-ticket producten (EUR 1.000+) kunnen profiteren, maar het draaiboek is afgestemd op langere salescycli en account-based targeting."
+          "question": "Is dit geschikt voor B2C-bureaus?",
+          "answer": "Geoptimaliseerd voor B2B. B2C met high-ticket producten (EUR 1.000+) kan profiteren."
         },
         "q6": {
           "question": "Wat houdt doorlopend beheer in?",
-          "answer": "Maandelijks: prestatieoverzicht, A/B-testanalyse, content refresh, advertentiebudget herallocatie en chatbot kennisbank updates. Per kwartaal: strategie-herziening en roadmap-update."
+          "answer": "Maandelijks: prestatieoverzicht, A/B-tests, content refresh, budgetherallocatie. Per kwartaal: strategie-herziening."
         }
       }
     },
     "related": {
       "automations_title": "AI Automations",
-      "automations_description": "Custom workflow automatisering die jouw tools en processen verbindt",
+      "automations_description": "Custom workflow automatisering",
       "chatbots_title": "AI Chatbots",
-      "chatbots_description": "AI chat agents die leads kwalificeren en klanten 24/7 ondersteunen",
+      "chatbots_description": "AI chat agents die leads kwalificeren 24/7",
       "voice_agents_title": "Voice Agents",
-      "voice_agents_description": "AI voice agents die inkomende en uitgaande gesprekken op schaal afhandelen"
+      "voice_agents_description": "AI voice agents op schaal"
     },
     "features": {
       "title": "Jouw Autonome Marketing Team",
       "subtitle": "Elke module is een gespecialiseerde AI-agent — die samenwerkt om jouw volledige marketingoperatie te runnen.",
       "research": {
         "title": "AI Onderzoek & Planning",
-        "description": "24/7 marktintelligentie — trendmonitoring, concurrentieanalyse en content-kansidentificatie."
+        "description": "24/7 marktintelligentie — trendmonitoring, concurrentieanalyse en kansidentificatie."
       },
       "content": {
         "title": "Content Creatie Pipelines",
-        "description": "AI-aangedreven contentgeneratie die premiumkwaliteit content produceert op ongekende snelheid."
+        "description": "AI-aangedreven contentgeneratie op ongekende snelheid."
       },
       "publishing": {
         "title": "Slimme Publicatielaag",
-        "description": "Publiceert op wetenschappelijk optimale tijden met perfecte doelgroeptargeting op alle platformen."
+        "description": "Publiceert op optimale tijden met perfecte doelgroeptargeting."
       },
       "analytics": {
         "title": "Zelflerende Analytics",
-        "description": "AI analytics die continu leren van elke campagne, elke maand 23% effectiever."
+        "description": "AI analytics die continu leren, elke maand 23% effectiever."
       },
       "ads": {
         "title": "Geautomatiseerde Advertentiecampagnes",
-        "description": "Zet winnende posts om in advertenties met automatische budgetoptimalisatie voor maximale ROAS."
+        "description": "Zet winnende posts om in advertenties met automatische budgetoptimalisatie."
       },
       "orchestrator": {
         "title": "Manager Orchestratie Engine",
-        "description": "Centraal AI-brein dat alle modules coordineert en naadloze uitvoering garandeert."
+        "description": "Centraal AI-brein dat alle modules coordineert."
       }
     },
     "howItWorks": {
       "title": "Hoe Het Werkt",
-      "step1": {
-        "title": "Discovery Gesprek",
-        "description": "30 minuten strategiesessie om jouw marketingdoelen en huidige processen in kaart te brengen."
-      },
+      "step1": { "title": "Discovery Gesprek", "description": "30 minuten strategiesessie." },
       "step2": {
         "title": "Maatwerk Configuratie",
-        "description": "Wij configureren alle 6 modules voor jouw merkstem, doelgroep en platformen."
+        "description": "Wij configureren alle 6 modules voor jouw merkstem."
       },
       "step3": {
         "title": "Lancering & Optimalisatie",
-        "description": "Systeem gaat live. Wekelijkse prestatierapporten. Maandelijkse strategiegesprekken."
+        "description": "Systeem gaat live. Wekelijkse rapporten."
       }
     },
     "cta": {
@@ -524,28 +531,24 @@
       "chatbots": "Chatbots",
       "voiceAgents": "Voice Agents",
       "marketingMachine": "Marketing Machine",
-      "pricing": "Pricing",
-      "about": "About",
+      "pricing": "Prijzen",
+      "about": "Over Ons",
       "contact": "Contact"
     },
     "footer": {
-      "company": "Company",
-      "services": "Services",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "copyright": "Copyright {year} Future Marketing AI. All rights reserved."
+      "company": "Bedrijf",
+      "services": "Skills",
+      "legal": "Juridisch",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden",
+      "copyright": "Copyright {year} Future Marketing AI. Alle rechten voorbehouden."
     },
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "De AI Marketing Medewerker voor jouw bureau — contentcreatie, social media, voice agents en meer.",
+        "tagline": "De AI Marketing Medewerker voor jouw bureau — content, voice, ads, social, leads en rapportages in een altijd-aan systeem.",
         "copyright": "\u00a9 {year} Future Marketing AI. Alle rechten voorbehouden.",
-        "sections": {
-          "skills": "Skills",
-          "company": "Bedrijf",
-          "resources": "Bronnen"
-        },
+        "sections": { "services": "Skills", "company": "Bedrijf", "resources": "Bronnen" },
         "nav": {
           "content_creator": "Content Creator",
           "voice_agent": "Voice Agent",
@@ -564,145 +567,170 @@
           "cookies": "Cookies"
         },
         "status_badge": "Alle systemen operationeel",
-        "social_aria": {
-          "linkedin": "Volg ons op LinkedIn",
-          "twitter": "Volg ons op X"
-        }
+        "social_aria": { "linkedin": "Volg ons op LinkedIn", "twitter": "Volg ons op X" }
       }
     },
-    "footer_all_rights": "All rights reserved.",
-    "actions": {
-      "learn_more": "Learn More"
-    },
+    "footer_all_rights": "Alle rechten voorbehouden.",
+    "actions": { "learn_more": "Meer Leren" },
     "cookie_consent": {
       "title": "Wij gebruiken cookies",
-      "description": "Wij gebruiken cookies om uw ervaring te verbeteren en het siteverkeer te analyseren. Door te accepteren gaat u akkoord met ons gebruik van analytische cookies.",
+      "description": "Wij gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
       "accept": "Accepteren",
       "decline": "Weigeren"
     },
     "errors": {
       "notFound": {
-        "title": "Page Not Found",
-        "description": "The page you are looking for does not exist.",
-        "backHome": "Back to Home"
+        "title": "Pagina Niet Gevonden",
+        "description": "De pagina die je zoekt bestaat niet.",
+        "backHome": "Terug naar Home"
       },
       "generic": {
-        "title": "Something went wrong",
-        "description": "An unexpected error occurred.",
-        "tryAgain": "Try again"
+        "title": "Er ging iets mis",
+        "description": "Er is een onverwachte fout opgetreden.",
+        "tryAgain": "Probeer opnieuw"
       }
     }
   },
-  "calendly": {
-    "modal_title": "Plan een strategiegesprek",
-    "close": "Sluiten"
-  },
+  "calendly": { "modal_title": "Plan een Strategiegesprek", "close": "Sluiten" },
   "errors": {
     "notFound": {
-      "title": "Page Not Found",
-      "description": "The page you are looking for does not exist.",
-      "backHome": "Back to Home"
+      "title": "Pagina Niet Gevonden",
+      "description": "De pagina die je zoekt bestaat niet.",
+      "backHome": "Terug naar Home"
     },
     "generic": {
-      "title": "Something went wrong",
-      "description": "An unexpected error occurred.",
-      "tryAgain": "Try again"
+      "title": "Er ging iets mis",
+      "description": "Er is een onverwachte fout opgetreden.",
+      "tryAgain": "Probeer opnieuw"
     }
   },
   "about": {
     "meta": {
-      "title": "Over Future Marketing AI | AI-bureau voor Groeiende Teams",
-      "description": "Leer over Future Marketing AI, het autonome marketingplatform gebouwd door operators voor ambitieuze bedrijven."
+      "title": "Over FMai | AI Marketing Medewerker voor Bureaus",
+      "description": "FMai bouwt persistente AI Marketing Medewerkers voor marketingbureaus. Gebouwd in Nederland voor Europese bureaus."
     },
     "hero": {
-      "badge": "Lancering Q1 2026",
-      "title": "Over Future Marketing AI",
-      "tagline": "Bouwend aan het autonome marketingsysteem van de toekomst"
+      "badge": "Nu Founding Members Aan Het Onboarden",
+      "title": "Over FMai",
+      "tagline": "De eerste AI Marketing Medewerker voor bureaus bouwen"
     },
     "mission": {
       "heading": "Onze Missie",
-      "text": "Enterprise-grade AI marketing automatisering democratiseren voor ambitieuze bedrijven. Wij geloven dat elk bedrijf toegang moet hebben tot dezelfde intelligente marketingmogelijkheden als Fortune 500 bedrijven — zonder het Fortune 500 budget.",
+      "text": "Elk marketingbureau toegang geven tot een AI-medewerker die de uitvoering regelt — zodat bureauteams zich kunnen richten op strategie, creativiteit en klantrelaties.",
       "why_heading": "Waarom We Dit Bouwden",
-      "why_text": "We bouwden dit platform eerst voor onszelf. Als operators die onze eigen marketing runnen, waren we gefrustreerd door gefragmenteerde tools, handmatige workflows en het onvermogen om te schalen zonder aan te nemen."
+      "why_text": "We runden zelf marketingoperaties en zagen hetzelfde probleem dat elk bureau heeft: te veel klanten, te veel repetitief werk, te weinig uren. Dus bouwden we de AI-medewerker die we wensten te hebben."
     },
     "timeline": {
-      "title": "De Evolutie van Marketing Automatisering",
+      "title": "De Evolutie van Bureau-operaties",
       "eras": {
         "assisted": {
           "year": "2020-2024",
-          "title": "AI-Assisted Marketing Era",
-          "description": "ChatGPT en vergelijkbare tools helpen marketeers sneller werken, maar vereisen nog steeds aanzienlijk handmatig toezicht."
+          "title": "AI-Assisted Era",
+          "description": "Bureaus adopteerden ChatGPT en AI-tools voor snellere content, maar hadden nog steeds mensen nodig om alles te coordineren."
         },
         "autonomous": {
-          "year": "2025",
-          "title": "Autonome Marketing Era",
-          "description": "Complete AI-systemen die de hele workflow autonoom afhandelen."
+          "year": "2025-2026",
+          "title": "AI Medewerker Era",
+          "description": "Persistente AI-agents die volledige workflows autonoom uitvoeren. Dit is waar early-adopter bureaus een onoverbrugbaar voordeel opbouwen."
         },
         "standard": {
           "year": "2027+",
           "title": "Standaard Praktijk",
-          "description": "Autonome marketing wordt de norm."
+          "description": "Elk bureau heeft AI-medewerkers. Bureaus die vroeg begonnen hebben 2-3 jaar samengestelde AI-learnings."
         }
       },
       "key_message": {
-        "title": "Early adopters behalen een 3-5 jaar concurrentievoordeel",
-        "description": "Net als vroege Salesforce adopters in 2004."
+        "title": "Early-adopter bureaus bouwen een 2-3 jaar concurrentievoordeel op",
+        "description": "Het samengesteld effect van AI-learning betekent dat nu beginnen een voordeel creert dat laatkomers niet kunnen inlopen."
       }
     },
     "cta": {
-      "title": "Sluit Je Aan Bij De Founding Teams",
-      "description": "We bouwen dit in partnerschap met 3 vooruitdenkende bedrijven.",
+      "title": "Word Founding Member",
+      "description": "We onboarden onze eerste 10 founding member bureaus voor EUR 997/maand. Zeker je laagste prijs en help het product vormen.",
       "demo_button": "Boek een Strategiegesprek",
       "contact_button": "Neem Contact Op"
     }
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen | Future Marketing AI",
-      "description": "Transparante prijzen voor managed AI-diensten. Kies Starter, Growth of Scale."
+      "title": "Prijzen | AI Marketing Medewerker voor Bureaus | FMai",
+      "description": "Transparante agent-tier prijzen. Founding Member EUR 997/maand, Starter EUR 1.497/maand, Growth EUR 1.997/maand, Agency EUR 3.497/maand."
     },
     "hero": {
-      "title": "AI Die Voor Jou Werkt — Kies Je Plan",
-      "description": "Managed AI-diensten op maat van je bedrijf. Geen langetermijncontracten."
+      "title": "Een AI-Medewerker. Kies Je Tier.",
+      "description": "Elke tier bevat je persistente AI Marketing Medewerker. Hogere tiers ontgrendelen meer skills, meer klantwerkruimtes en prioriteitssupport."
     },
     "tiers": {
+      "founding": {
+        "name": "Founding Member",
+        "price": "997",
+        "badge": "Slechts 10 Plekken",
+        "description": "Voor early-adopter bureaus die de toekomst van AI-marketing willen vormgeven.",
+        "service_count": "2 skills inbegrepen",
+        "features_0": "Persistente AI-medewerker (24/7)",
+        "features_1": "2 skills naar keuze",
+        "features_2": "Tot 3 klantwerkruimtes",
+        "features_3": "Direct contact met oprichter via Slack",
+        "features_4": "Invloed op productroadmap",
+        "features_5": "Prijs voor altijd vastgelegd"
+      },
       "starter": {
         "name": "Starter",
-        "price": "1,497",
-        "description": "Perfect voor bedrijven die willen starten met een AI-dienst.",
-        "service_count": "1 dienst",
-        "features_0": "Kies 1 dienst",
-        "features_1": "Hosting & infrastructuur inbegrepen",
-        "features_2": "Maandelijkse updates & onderhoud",
-        "features_3": "E-mail support",
-        "features_4": "Setup in 1-2 weken"
+        "price": "1.497",
+        "description": "Voor bureaus die starten met hun eerste AI-medewerker.",
+        "service_count": "2 skills inbegrepen",
+        "features_0": "Persistente AI-medewerker (24/7)",
+        "features_1": "2 skills naar keuze",
+        "features_2": "Tot 5 klantwerkruimtes",
+        "features_3": "E-mail & chat support",
+        "features_4": "Maandelijks prestatierapport"
       },
       "growth": {
         "name": "Growth",
-        "price": "2,497",
+        "price": "1.997",
         "badge": "Populairst",
-        "description": "Voor groeiende teams die meerdere AI-mogelijkheden nodig hebben.",
-        "service_count": "2 diensten",
-        "features_0": "Kies 2 diensten",
-        "features_1": "Analytics dashboard",
-        "features_2": "Maandelijks prestatierapport",
-        "features_3": "Chat & e-mail support",
-        "features_4": "Setup in 2-3 weken"
+        "description": "Voor groeiende bureaus die meer skills en klantcapaciteit nodig hebben.",
+        "service_count": "4 skills inbegrepen",
+        "features_0": "Persistente AI-medewerker (24/7)",
+        "features_1": "4 skills naar keuze",
+        "features_2": "Tot 15 klantwerkruimtes",
+        "features_3": "Prioriteitssupport (<4u respons)",
+        "features_4": "Wekelijkse prestatierapporten",
+        "features_5": "Analytics dashboard"
       },
-      "scale": {
-        "name": "Scale",
-        "price": "3,997",
-        "description": "Het complete pakket voor ambitieuze bedrijven.",
-        "service_count": "Alle 3 diensten",
-        "features_0": "Alle 3 diensten inbegrepen",
-        "features_1": "Prioriteit support (<4u respons)",
-        "features_2": "Maandelijks strategiegesprek",
-        "features_3": "Geavanceerde analytics",
-        "features_4": "Setup in 2-4 weken"
+      "agency": {
+        "name": "Agency",
+        "price": "3.497",
+        "description": "Voor gevestigde bureaus die de volledige AI-medewerker met alle skills willen.",
+        "service_count": "Alle 6 skills",
+        "features_0": "Persistente AI-medewerker (24/7)",
+        "features_1": "Alle 6 skills inbegrepen",
+        "features_2": "Onbeperkt klantwerkruimtes",
+        "features_3": "Dedicated succesmanager",
+        "features_4": "Maandelijks strategiegesprek",
+        "features_5": "Custom integraties",
+        "features_6": "White-label rapportages"
       }
     },
+    "addons": {
+      "title": "Skill Add-ons",
+      "description": "Voeg extra skills toe aan elke tier voor EUR 497/maand per skill.",
+      "items": {
+        "content_creator": "Content Creator",
+        "voice_agent": "Voice Agent",
+        "lead_qualifier": "Lead Qualifier",
+        "social_media": "Social Media Manager",
+        "ad_creator": "Ad Creator",
+        "reporting": "Reporting & Analytics"
+      }
+    },
+    "founding_cta": {
+      "title": "Founding Member Aanbod",
+      "description": "Word een van de eerste 10 bureaus met een AI Marketing Medewerker. EUR 997/maand voor altijd vastgelegd.",
+      "button": "Claim Je Plek"
+    },
     "cta": {
-      "title": "Klaar Om AI Aan Het Werk Te Zetten?",
+      "title": "Klaar om Je AI-Medewerker Aan Te Nemen?",
       "description": "Boek een gratis strategiegesprek.",
       "primary_button": "Boek een Strategiegesprek",
       "secondary_button": "Neem Contact Op"
@@ -711,107 +739,97 @@
       "title": "Vragen over Prijzen",
       "items": {
         "q1": {
-          "question": "Kan ik later van plan wisselen?",
-          "answer": "Ja — je kunt je plan op elk moment upgraden of downgraden. Wijzigingen gaan in bij de start van je volgende factuurcyclus. Geen boetes, geen lock-in."
+          "question": "Kan ik later van tier wisselen?",
+          "answer": "Ja — upgraden of downgraden op elk moment. Geen boetes, geen lock-in."
         },
         "q2": {
           "question": "Zijn er setupkosten?",
-          "answer": "Nee. Setup, configuratie en onboarding zijn inbegrepen in elk plan. Je betaalt alleen de maandelijkse abonnementskosten — niets extra om te starten."
+          "answer": "Nee. Onboarding en configuratie zijn inbegrepen."
         },
         "q3": {
-          "question": "Wat is inbegrepen in elk plan?",
-          "answer": "Elk plan omvat hosting, infrastructuur, maandelijks onderhoud en support. Hogere pakketten voegen meer AI-diensten, analytics-dashboards, prioriteitssupport en dedicated strategiegesprekken toe."
+          "question": "Wat is inbegrepen in elke tier?",
+          "answer": "Persistente AI-medewerker 24/7, dashboard, prestatierapporten en support."
         },
         "q4": {
-          "question": "Bieden jullie maatwerk enterprise-prijzen aan?",
-          "answer": "Ja — voor organisaties die maatwerk integraties, dedicated infrastructuur of SLA-garanties nodig hebben buiten onze standaardplannen, bieden wij op maat gemaakte enterprise-overeenkomsten. Neem contact op om je eisen te bespreken."
+          "question": "Kan ik individuele skills toevoegen zonder te upgraden?",
+          "answer": "Ja — EUR 497/maand per skill."
         }
       }
     }
   },
   "how-it-works": {
     "meta": {
-      "title": "Hoe Het Werkt | Future Marketing AI",
-      "description": "Leer hoe de 6 autonome modules van Future Marketing AI samenwerken."
+      "title": "Hoe Het Werkt | AI Marketing Medewerker voor Bureaus | FMai",
+      "description": "Ontdek hoe je AI Marketing Medewerker wordt ongeboardd in vier stappen."
     },
     "hero": {
-      "title": "Hoe Werkt Future Marketing AI?",
-      "description": "Een volledig autonoom systeem met 6 AI modules die 24/7 werken."
+      "title": "Hoe Begint Je AI-Medewerker?",
+      "description": "Vier eenvoudige stappen van aanmelding tot je AI Marketing Medewerker die de uitvoering voor al je klanten regelt."
     },
     "process": {
-      "title": "De Autonome Marketing Loop",
+      "title": "De Agent Onboarding Reis",
       "steps": {
-        "research": {
+        "choose": {
           "step": "Stap 1",
-          "title": "Platform Analyseert Je Markt 24/7",
-          "description": "Onze AI Research module monitort trends, concurrenten en kansen continu."
+          "title": "Kies Je Agent Tier",
+          "description": "Selecteer de tier die past bij je bureau. Founding Member, Starter, Growth of Agency — elke tier bevat je persistente AI-medewerker."
         },
-        "content": {
+        "activate": {
           "step": "Stap 2",
-          "title": "AI Genereert Premium Content op Schaal",
-          "description": "Content Pipelines produceren 15x meer content dan traditionele methoden."
+          "title": "Activeer Skills",
+          "description": "Kies de skills die je AI-medewerker moet leren: Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator of Reporting."
         },
-        "workflow": {
+        "connect": {
           "step": "Stap 3",
-          "title": "Manager Coordineert Alles",
-          "description": "De Manager Orchestrator zorgt ervoor dat alle modules naadloos samenwerken."
+          "title": "Koppel Je Klanten",
+          "description": "Maak een werkruimte voor elke klant. Upload merkrichtlijnen, koppel social accounts en configureer tone of voice."
         },
-        "publishing": {
+        "working": {
           "step": "Stap 4",
-          "title": "Optimale Distributie Over Kanalen",
-          "description": "Smart Publishing bepaalt de beste tijd en messaging voor elk stuk content."
-        },
-        "learning": {
-          "step": "Stap 5",
-          "title": "Analytics Leren en Verbeteren",
-          "description": "Self-Learning Analytics volgen prestaties en identificeren winnende patronen."
-        },
-        "ads": {
-          "step": "Stap 6",
-          "title": "Beste Content Wordt Advertenties",
-          "description": "Best presterende content wordt automatisch omgezet naar betaalde advertenties."
+          "title": "AI-Medewerker Begint te Werken",
+          "description": "Je AI Marketing Medewerker begint met uitvoeren — content maken, leads kwalificeren, social beheren, ads draaien en rapporten genereren. 24/7."
         }
       },
-      "loop_title": "Continue Loop",
-      "loop_description": "Dit proces draait 24/7, waarbij elke iteratie het systeem slimmer maakt."
+      "loop_title": "Continue Verbetering",
+      "loop_description": "Je AI-medewerker wordt elke week beter. Tegen maand 3 presteert het beter dan de meeste junior marketeers qua snelheid en consistentie."
     },
     "cta": {
-      "title": "Ervaar Het Zelf",
-      "description": "De beste manier om te begrijpen hoe het werkt is door het te proberen.",
+      "title": "Zie Het In Actie",
+      "description": "Boek een strategiegesprek voor een live walkthrough.",
       "button": "Boek een Strategiegesprek"
     }
   },
   "contact": {
     "meta": {
       "title": "Contact | Future Marketing AI",
-      "description": "Neem contact op met Future Marketing AI."
+      "description": "Neem contact op met Future Marketing AI. We reageren binnen 24 uur."
     },
     "hero": {
       "title": "Vraag een Gratis AI Consultatie Aan",
-      "description": "Klaar om je marketing te transformeren met autonome AI?"
+      "description": "Klaar om jouw bureau een AI Marketing Medewerker te geven? Laten we bespreken welke skills en tier het best bij jouw bureau passen."
     },
     "form": {
       "title": "Stuur Ons Een Bericht",
       "name_label": "Jouw Naam",
       "name_placeholder": "Jan Janssen",
       "email_label": "E-mailadres",
-      "email_placeholder": "jij@bedrijf.nl",
-      "company_label": "Bedrijf",
-      "company_placeholder": "Jouw Bedrijf B.V.",
+      "email_placeholder": "jij@bureau.nl",
+      "company_label": "Bureau",
+      "company_placeholder": "Jouw Bureau B.V.",
       "message_label": "Bericht",
-      "message_placeholder": "Vertel ons over je marketingdoelen...",
+      "message_placeholder": "Vertel ons over je bureau en welke skills je interesseren...",
       "submit_button": "Verstuur Bericht"
     },
     "book_demo": {
-      "title": "Boek Een Demo Gesprek",
-      "description": "Plan een gepersonaliseerde demo.",
-      "button": "Plan Demo"
+      "title": "Boek een Strategiegesprek",
+      "description": "Plan een gepersonaliseerde walkthrough om je AI Marketing Medewerker in actie te zien.",
+      "button": "Plan Gesprek"
     },
     "direct_contact": {
       "title": "Direct Contact",
       "email_label": "Email",
       "email_address": "hello@futuremarketingai.com",
-      "location_label": "Location",
+      "location_label": "Locatie",
       "location_text": "Nederland (Remote-First)",
       "response_time_label": "Reactietijd",
       "response_time_text": "Binnen 24 uur"
@@ -822,512 +840,29 @@
       "title": "Juridisch | Future Marketing AI",
       "description": "Juridische informatie voor Future Marketing AI."
     },
-    "hero": {
-      "title": "Juridisch"
-    },
+    "hero": { "title": "Juridisch" },
     "sections": {
       "terms": {
         "title": "Servicevoorwaarden",
-        "content": "By using our services, you agree to the following terms and conditions. Future Marketing AI provides AI-powered marketing automation services on a subscription basis. All subscriptions are month-to-month unless otherwise agreed upon. We reserve the right to modify these terms with 30 days notice. Services are provided as-is, and while we strive for maximum uptime, we do not guarantee uninterrupted availability."
+        "content": "Door onze diensten te gebruiken ga je akkoord met de volgende voorwaarden. Future Marketing AI biedt AI Marketing Medewerker diensten (Agent as a Service) aan op abonnementsbasis."
       },
       "privacy": {
         "title": "Privacybeleid",
-        "content": "We collect personal data necessary to provide our services, including name, email, and company information submitted via our contact forms. Your data is processed in accordance with GDPR regulations. We do not sell your personal information to third parties. Data is stored securely within the EU and retained only for the duration of your business relationship with us. You have the right to access, rectify, or delete your personal data at any time."
+        "content": "Wij verzamelen persoonsgegevens die nodig zijn om onze diensten te leveren. Je gegevens worden verwerkt conform de AVG. Wij verkopen je persoonlijke informatie niet aan derden."
       },
       "cookies": {
         "title": "Cookiebeleid",
-        "content": "Our website uses essential cookies required for basic functionality and optional analytics cookies to improve our services. Essential cookies cannot be disabled as they are necessary for the website to function. Analytics cookies are only set with your explicit consent. You can manage your cookie preferences at any time through your browser settings."
+        "content": "Onze website gebruikt essentiele cookies en optionele analytische cookies. Je kunt je cookievoorkeuren beheren via je browserinstellingen."
       },
       "disclaimer": {
         "title": "Disclaimer",
-        "content": "The information on this website is provided for general informational purposes only. While we strive to keep the information accurate and up-to-date, we make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information. Any reliance you place on such information is strictly at your own risk."
+        "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat je stelt in dergelijke informatie is op eigen risico."
       }
     },
     "last_updated": "Laatst bijgewerkt: maart 2026"
   },
   "blog": {
     "title": "AI Marketing & Automatisering Inzichten",
-    "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen."
-  },
-  "skills-content-creator": {
-    "meta": {
-      "title": "Content Creator Skill | AI Marketing Medewerker | FMai",
-      "description": "Geautomatiseerde blogposts, social content en nieuwsbrieven — je AI Marketing Medewerker creert on-brand content op de automatische piloot."
-    },
-    "hero": {
-      "badge": "Content Creator Skill",
-      "title": "Blogposts, Social Content, Nieuwsbrieven — Op de Automatische Piloot",
-      "description": "Je AI Marketing Medewerker schrijft, plant en publiceert content over alle kanalen."
-    },
-    "features": {
-      "heading": "Wat de Content Creator Doet",
-      "items": {
-        "blog": {
-          "title": "Blogposts",
-          "description": "SEO-geoptimaliseerde artikelen in de merkstijl van je klant"
-        },
-        "social": {
-          "title": "Social Content",
-          "description": "Platform-native posts voor LinkedIn, Instagram, X en meer"
-        },
-        "newsletters": {
-          "title": "Nieuwsbrieven",
-          "description": "Wekelijkse of maandelijkse email content, opgesteld en klaar om te versturen"
-        },
-        "repurposing": {
-          "title": "Content Hergebruik",
-          "description": "Een stuk content automatisch omgezet in 10+ formaten"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "connect": {
-          "title": "Verbinden",
-          "description": "Koppel de merkrichtlijnen, tone of voice en contentkalender van je klant"
-        },
-        "generate": {
-          "title": "Genereren",
-          "description": "De AI maakt concepten op basis van trending topics, keywords en je strategie"
-        },
-        "review": {
-          "title": "Review & Publiceren",
-          "description": "Goedkeuren of automatisch publiceren — jij houdt controle over kwaliteit"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Schaal contentproductie over meerdere klanten zonder schrijvers in te huren"
-        },
-        "ecommerce": {
-          "title": "E-commerce Merken",
-          "description": "Productbeschrijvingen, seizoenscampagnes en social content op schaal"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Contentproductie te Schalen?",
-      "subtitle": "Voeg de Content Creator skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "skills-voice-agent": {
-    "meta": {
-      "title": "Voice Agent Skill | AI Marketing Medewerker | FMai",
-      "description": "AI-gestuurde inkomende en uitgaande gesprekken. Je AI Marketing Medewerker beantwoordt telefoontjes en kwalificeert leads — 24/7."
-    },
-    "hero": {
-      "badge": "Voice Agent Skill",
-      "title": "AI-Gestuurde Inkomende en Uitgaande Gesprekken",
-      "description": "Je AI Marketing Medewerker beantwoordt telefoontjes, kwalificeert leads en boekt afspraken."
-    },
-    "features": {
-      "heading": "Wat de Voice Agent Doet",
-      "items": {
-        "inbound": {
-          "title": "Inkomende Gesprekken",
-          "description": "Beantwoord klantvragen en routeer naar het juiste teamlid"
-        },
-        "outbound": {
-          "title": "Uitgaande Gesprekken",
-          "description": "Follow-up op leads, bevestig afspraken en voer outreach campagnes"
-        },
-        "qualification": {
-          "title": "Lead Kwalificatie",
-          "description": "Stel kwalificatievragen en scoor leads voor overdracht"
-        },
-        "booking": {
-          "title": "Afspraken Boeken",
-          "description": "Controleer beschikbaarheid en boek vergaderingen direct in agenda's"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "setup": {
-          "title": "Setup",
-          "description": "Configureer je telefoonnummer, begroetingsscript en kwalificatiecriteria"
-        },
-        "deploy": {
-          "title": "Deployen",
-          "description": "De voice agent gaat live en behandelt gesprekken in realtime"
-        },
-        "optimize": {
-          "title": "Optimaliseren",
-          "description": "Bekijk gesprekstranscripten en verbeter de reacties"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Bied AI telefoonagenten aan als extra service voor je klanten"
-        },
-        "sales": {
-          "title": "Salesteams",
-          "description": "Pre-kwalificeer inkomende leads voordat ze je salesmedewerkers bereiken"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Telefoongesprekken te Automatiseren?",
-      "subtitle": "Voeg de Voice Agent skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "skills-lead-qualifier": {
-    "meta": {
-      "title": "Lead Qualifier Skill | AI Marketing Medewerker | FMai",
-      "description": "AI chatbot die leads kwalificeert 24/7. Je AI Marketing Medewerker engageert bezoekers en levert sales-ready leads."
-    },
-    "hero": {
-      "badge": "Lead Qualifier Skill",
-      "title": "Chatbot Die Leads Kwalificeert 24/7",
-      "description": "Je AI Marketing Medewerker engageert elke websitebezoeker en draagt gekwalificeerde leads over aan je team."
-    },
-    "features": {
-      "heading": "Wat de Lead Qualifier Doet",
-      "items": {
-        "engage": {
-          "title": "Bezoeker Engagement",
-          "description": "Proactief bezoekers begroeten en kwalificatiegesprekken starten"
-        },
-        "qualify": {
-          "title": "Slimme Kwalificatie",
-          "description": "Vraag naar budget, tijdlijn en fit op basis van je ICP-criteria"
-        },
-        "handoff": {
-          "title": "Lead Overdracht",
-          "description": "Routeer gekwalificeerde leads naar CRM, email of Slack in realtime"
-        },
-        "nurture": {
-          "title": "Lead Nurturing",
-          "description": "Follow-up met ongekwalificeerde leads via geautomatiseerde email sequences"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "configure": {
-          "title": "Configureren",
-          "description": "Definieer je ideale klantprofiel en kwalificatiecriteria"
-        },
-        "embed": {
-          "title": "Embedden",
-          "description": "Voeg de chatbot widget toe aan de website van je klant"
-        },
-        "convert": {
-          "title": "Converteren",
-          "description": "Zie gekwalificeerde leads automatisch in je pipeline stromen"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Lever always-on lead kwalificatie als service aan je klanten"
-        },
-        "saas": {
-          "title": "SaaS Bedrijven",
-          "description": "Kwalificeer free trial signups en routeer enterprise leads naar sales"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Leads 24/7 te Kwalificeren?",
-      "subtitle": "Voeg de Lead Qualifier skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "skills-social-media": {
-    "meta": {
-      "title": "Social Media Skill | AI Marketing Medewerker | FMai",
-      "description": "Multi-platform scheduling en analytics. Je AI Marketing Medewerker beheert social media op LinkedIn, Instagram, X en meer."
-    },
-    "hero": {
-      "badge": "Social Media Skill",
-      "title": "Multi-Platform Planning en Analytics",
-      "description": "Je AI Marketing Medewerker maakt, plant en analyseert social media content over alle grote platforms."
-    },
-    "features": {
-      "heading": "Wat de Social Media Skill Doet",
-      "items": {
-        "scheduling": {
-          "title": "Slim Plannen",
-          "description": "Auto-schedule posts op optimale tijden per platform"
-        },
-        "analytics": {
-          "title": "Prestatie Analytics",
-          "description": "Volg engagement, bereik en groei over alle kanalen"
-        },
-        "creation": {
-          "title": "Content Creatie",
-          "description": "Genereer platform-native posts met hashtags en visuals"
-        },
-        "monitoring": {
-          "title": "Merk Monitoring",
-          "description": "Volg mentions en reageer automatisch op comments"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "connect": {
-          "title": "Verbinden",
-          "description": "Koppel de social accounts en merkrichtlijnen van je klant"
-        },
-        "plan": {
-          "title": "Plannen",
-          "description": "De AI genereert een contentkalender op basis van je strategie"
-        },
-        "publish": {
-          "title": "Publiceren & Analyseren",
-          "description": "Content gaat automatisch live met wekelijkse prestatierapporten"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Beheer social media voor tientallen klanten zonder je team uit te breiden"
-        },
-        "brands": {
-          "title": "Groeiende Merken",
-          "description": "Onderhoud consistente social presence zonder dedicated social media manager"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Social Media Management te Schalen?",
-      "subtitle": "Voeg de Social Media skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "skills-ad-creator": {
-    "meta": {
-      "title": "Ad Creator Skill | AI Marketing Medewerker | FMai",
-      "description": "AI-gegenereerde statische en video advertenties. Je AI Marketing Medewerker maakt hoog-converterende ad creatives."
-    },
-    "hero": {
-      "badge": "Ad Creator Skill",
-      "title": "AI-Gegenereerde Statische en Video Advertenties",
-      "description": "Je AI Marketing Medewerker ontwerpt ad creatives, schrijft copy en genereert video ads."
-    },
-    "features": {
-      "heading": "Wat de Ad Creator Doet",
-      "items": {
-        "static": {
-          "title": "Statische Ad Design",
-          "description": "On-brand display ads en social ad creatives in meerdere formaten"
-        },
-        "video": {
-          "title": "Video Ads",
-          "description": "Korte video ads met motion graphics en ondertiteling"
-        },
-        "copy": {
-          "title": "Ad Copywriting",
-          "description": "Headlines, beschrijvingen en CTAs geoptimaliseerd per platform"
-        },
-        "variants": {
-          "title": "A/B Varianten",
-          "description": "Genereer meerdere creatieve varianten voor split testing"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "brief": {
-          "title": "Brief",
-          "description": "Geef campagnedoelen, doelgroep en merkassets op"
-        },
-        "generate": {
-          "title": "Genereren",
-          "description": "De AI maakt ad creatives over formaten en platforms"
-        },
-        "launch": {
-          "title": "Lanceren",
-          "description": "Download assets of push direct naar ad platforms"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Produceer ad creatives op schaal voor meerdere klantcampagnes"
-        },
-        "performance": {
-          "title": "Performance Teams",
-          "description": "Genereer verse ad varianten sneller dan handmatig design"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Ad Creative Productie te Schalen?",
-      "subtitle": "Voeg de Ad Creator skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "skills-reporting": {
-    "meta": {
-      "title": "Reporting Skill | AI Marketing Medewerker | FMai",
-      "description": "Cross-platform dashboards en wekelijkse rapporten. Je AI Marketing Medewerker aggregeert data en levert actionable insights."
-    },
-    "hero": {
-      "badge": "Reporting Skill",
-      "title": "Cross-Platform Dashboards en Wekelijkse Rapporten",
-      "description": "Je AI Marketing Medewerker haalt data uit elk kanaal, bouwt dashboards en stuurt wekelijkse prestatierapporten."
-    },
-    "features": {
-      "heading": "Wat de Reporting Skill Doet",
-      "items": {
-        "dashboards": {
-          "title": "Live Dashboards",
-          "description": "Realtime data van Google Analytics, social, ads en CRM in een overzicht"
-        },
-        "weekly": {
-          "title": "Wekelijkse Rapporten",
-          "description": "Geautomatiseerde klantrapporten met insights en aanbevelingen"
-        },
-        "trends": {
-          "title": "Trend Detectie",
-          "description": "AI signaleert anomalieen en groeikansen in je data"
-        },
-        "roi": {
-          "title": "ROI Tracking",
-          "description": "Volg campagneprestaties en marketing ROI over kanalen"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Hoe Het Werkt",
-      "steps": {
-        "integrate": {
-          "title": "Integreren",
-          "description": "Verbind databronnen — analytics, ads, CRM, social platforms"
-        },
-        "analyze": {
-          "title": "Analyseren",
-          "description": "De AI aggregeert data en genereert automatisch insights"
-        },
-        "report": {
-          "title": "Rapporteren",
-          "description": "Ontvang wekelijkse rapporten via email of deel live dashboards met klanten"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Lever professionele klantrapporten zonder uren handmatig data te trekken"
-        },
-        "managers": {
-          "title": "Marketing Managers",
-          "description": "Krijg een single source of truth voor alle marketing prestatiedata"
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Klantrapportage te Automatiseren?",
-      "subtitle": "Voeg de Reporting skill toe aan je AI Marketing Medewerker.",
-      "button": "Bekijk Prijzen"
-    }
-  },
-  "founding-member": {
-    "meta": {
-      "title": "Founding Member Programma | AI Marketing Medewerker | FMai",
-      "description": "Word een van 10 Founding Members. Vergrendel EUR 997/mnd voor altijd — de laagste prijs voor je AI Marketing Medewerker."
-    },
-    "hero": {
-      "badge": "Slechts 10 Plekken Beschikbaar",
-      "title": "Word Founding Member",
-      "description": "Vergrendel de laagste prijs voor altijd. Wees een van de eerste 10 bureaus die een AI Marketing Medewerker inzetten met FMai."
-    },
-    "pricing": {
-      "heading": "Founding Member Prijzen",
-      "price": "997",
-      "currency": "EUR",
-      "period": "/mnd",
-      "locked": "Vergrendeld voor altijd",
-      "comparison": "Reguliere prijs begint bij EUR 1.497/mnd",
-      "includes": "Agent + 1 skill naar keuze"
-    },
-    "benefits": {
-      "heading": "Founding Member Voordelen",
-      "items": {
-        "price_lock": {
-          "title": "Prijsgarantie",
-          "description": "Je EUR 997/mnd tarief stijgt nooit, zelfs als we features toevoegen en prijzen verhogen"
-        },
-        "priority": {
-          "title": "Prioriteit Support",
-          "description": "Directe toegang tot het founding team — sla de wachtrij over"
-        },
-        "influence": {
-          "title": "Product Invloed",
-          "description": "Vorm de roadmap — jouw feature requests krijgen prioriteit"
-        },
-        "early_access": {
-          "title": "Vroege Toegang",
-          "description": "Wees de eerste die nieuwe skills en mogelijkheden test"
-        },
-        "community": {
-          "title": "Founder Community",
-          "description": "Exclusieve groep vooruitstrevende bureau-eigenaren die AI strategieen delen"
-        },
-        "onboarding": {
-          "title": "White-Glove Onboarding",
-          "description": "We richten je eerste klant samen in — hands-on, persoonlijk"
-        }
-      }
-    },
-    "faq": {
-      "heading": "Veelgestelde Vragen",
-      "items": {
-        "q1": {
-          "question": "Wat betekent 'prijsgarantie' precies?",
-          "answer": "Je maandelijkse tarief van EUR 997 stijgt nooit zolang je lid blijft."
-        },
-        "q2": {
-          "question": "Wat is inbegrepen in het founding member plan?",
-          "answer": "Je krijgt de volledige AI Marketing Medewerker met 1 skill naar keuze. Je kunt altijd extra skills toevoegen."
-        },
-        "q3": {
-          "question": "Is er een commitment periode?",
-          "answer": "Ja, founding members committeren aan een founding periode van 6 maanden. Daarna ga je maand-tot-maand door tegen hetzelfde tarief."
-        },
-        "q4": {
-          "question": "Hoeveel plekken zijn beschikbaar?",
-          "answer": "We accepteren precies 10 founding members. Zodra alle plekken gevuld zijn, sluit het programma definitief."
-        },
-        "q5": {
-          "question": "Kan ik later meer skills toevoegen?",
-          "answer": "Absoluut. Je kunt op elk moment skills toevoegen of verwijderen als add-ons bovenop je basistarief."
-        }
-      }
-    },
-    "cta": {
-      "title": "Klaar om Founding Member te Worden?",
-      "subtitle": "Slechts 10 plekken beschikbaar. Boek een gesprek om je plek te reserveren.",
-      "button": "Boek een Gesprek"
-    }
+    "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen voor bureaus."
   }
 }

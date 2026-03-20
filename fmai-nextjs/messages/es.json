@@ -1,95 +1,105 @@
 {
   "home": {
     "meta": {
-      "title": "AI Automation, Chatbots & Voice Agents for Growth",
-      "description": "Future Marketing AI builds custom AI automation, chatbots, and voice agents for growth teams. Three specialized platforms, one partner. Book a free AI audit."
+      "title": "Empleado de Marketing IA para Agencias | FMai",
+      "description": "El primer Empleado de Marketing IA para su agencia. Un agente de IA persistente con habilidades conectables — creacion de contenido, agentes de voz, calificacion de leads, redes sociales, anuncios y reportes. Creado para agencias de marketing."
     },
     "hero": {
-      "badge": "Partner de Implementacion IA",
-      "headlineMain": "Agencia de Automatizacion IA Que Gestiona",
-      "headlineAccent": "Tu Negocio.",
-      "subtitle": "Implementamos IA que realmente funciona — automatizacion de marketing, workflows personalizados, chatbots y agentes de voz para empresas SaaS y e-commerce.",
-      "trustAnchor": "Las empresas con un socio de IA tienen 2.5x mas probabilidades de exito",
-      "cta": "Explorar Nuestros Servicios",
-      "ctaSecondary": "Reservar una Llamada Estrategica"
+      "badge": "Empleado de Marketing IA para Agencias",
+      "headlineMain": "El Primer Empleado IA",
+      "headlineAccent": "De Su Agencia.",
+      "subtitle": "Un empleado de IA persistente que trabaja 24/7, aprende las marcas de sus clientes y mejora cada semana. Active habilidades como creacion de contenido, agentes de voz, calificacion de leads y mas — sin contratar.",
+      "trustAnchor": "Las agencias con empleados IA escalan 3x mas rapido sin contratar",
+      "cta": "Explorar Habilidades",
+      "ctaSecondary": "Ver Precios"
     },
     "services": {
-      "title": "Plataformas IA para el Crecimiento",
-      "subtitle": "Tres plataformas de IA especializadas. Elige tu punto de partida.",
-      "automations": {
+      "title": "Habilidades Que Su Empleado IA Puede Aprender",
+      "subtitle": "Seis habilidades conectables. Active lo que necesite, agregue mas a medida que crece.",
+      "contentCreator": {
         "number": "01",
-        "title": "AI Automations",
-        "description": "Automatizacion de workflows personalizados que conectan tus herramientas y procesos"
+        "title": "Creador de Contenido",
+        "description": "Posts de blog, contenido social, newsletters — producidos diariamente para cada uno de sus clientes"
       },
-      "chatbots": {
+      "voiceAgent": {
         "number": "02",
-        "title": "FutureChatAI",
-        "description": "Agentes de chat IA que califican leads y atienden clientes 24/7"
+        "title": "Agente de Voz",
+        "description": "Llamadas entrantes y salientes, reserva de citas y calificacion de leads por telefono"
       },
-      "voiceAgents": {
+      "leadQualifier": {
         "number": "03",
-        "title": "FutureVoiceAI",
-        "description": "Agentes de voz que gestionan llamadas entrantes y salientes"
+        "title": "Calificador de Leads",
+        "description": "Chatbot IA en los sitios web de sus clientes que puntua leads y los dirige a ventas"
       },
-      "marketingMachine": {
+      "socialMedia": {
         "number": "04",
-        "title": "FutureMarketingAI",
-        "description": "Creacion autonoma de contenido, programacion y automatizacion de campanas"
+        "title": "Social Media Manager",
+        "description": "Programacion multiplataforma, seguimiento de engagement y analytics de rendimiento"
+      },
+      "adCreator": {
+        "number": "05",
+        "title": "Creador de Anuncios",
+        "description": "Anuncios estaticos y de video generados por IA publicados directamente en Meta, Google y mas"
+      },
+      "reporting": {
+        "number": "06",
+        "title": "Reportes & Analytics",
+        "description": "Dashboards multiplataforma, informes de rendimiento semanales y deteccion de anomalias"
       }
     },
     "trust": {
-      "title": "Por Que los Equipos Nos Eligen",
-      "customBuiltTitle": "Soluciones a Medida",
-      "customBuilt": "Totalmente personalizado — sin plantillas, sin limitaciones",
+      "title": "Por Que los Propietarios de Agencias Eligen FMai",
+      "customBuiltTitle": "Un Empleado, Todas las Habilidades",
+      "customBuilt": "Un empleado IA gestiona contenido, voz, anuncios, social, leads y reportes",
       "founderAccessTitle": "Acceso Directo al Fundador",
-      "founderAccess": "Acceso directo al fundador via Slack",
-      "successGuaranteeTitle": "Garantia de Exito",
-      "successGuarantee": "Garantia de exito — nos quedamos hasta que funcione",
-      "trialTitle": "Periodo de Prueba Sin Riesgo",
-      "trialCommitment": "3 meses de prueba sin riesgo"
+      "founderAccess": "Acceso directo al fundador via Slack — sin tickets de soporte",
+      "successGuaranteeTitle": "Aprende Sus Clientes",
+      "successGuarantee": "Su empleado IA aprende la voz de marca, audiencia y objetivos de cada cliente",
+      "trialTitle": "Precios de Miembro Fundador",
+      "trialCommitment": "Asegure EUR 997/mes como miembro fundador — solo 10 plazas"
     },
     "stats": {
-      "automations": { "value": "50+", "label": "Automatizaciones Activas" },
-      "support": { "value": "24/7", "label": "Soporte IA" },
-      "growth": { "value": "3x", "label": "Crecimiento de Ingresos" },
-      "setup": { "value": "< 2 Semanas", "label": "Tiempo de Configuracion" }
+      "clients": { "value": "50+", "label": "Clientes Gestionados" },
+      "content": { "value": "160+", "label": "Piezas de Contenido/Mes" },
+      "hours": { "value": "38h", "label": "Horas Ahorradas/Semana" },
+      "languages": { "value": "3", "label": "Idiomas Soportados" }
     },
     "badges": {
-      "title": "Confiado por Equipos de Crecimiento",
-      "gdpr": "Cumplimiento RGPD",
-      "enterprise": "Seguridad Empresarial",
+      "title": "Construido para Agencias Europeas",
+      "gdpr": "RGPD-First",
+      "enterprise": "Powered by Enterprise AI",
+      "dutch": "Soporte en Neerlandes",
       "uptime": "99.9% Uptime SLA",
-      "support": "Gestor de Exito Dedicado",
       "integrations": "200+ Integraciones",
       "noLockIn": "Sin Contratos de Permanencia"
     },
     "cta": {
-      "title": "Ready to Automate Your Growth?",
-      "subtitle": "Book a free 30-minute AI audit. We will map your opportunities.",
-      "button": "Book a Free Audit"
+      "title": "Listo para Contratar Su Empleado IA?",
+      "subtitle": "Reserve una llamada de estrategia gratuita de 30 minutos. Le mostraremos como un Empleado de Marketing IA encaja en su agencia.",
+      "button": "Reservar una Llamada"
     },
     "faq": {
       "title": "Preguntas Frecuentes",
       "items": {
         "q1": {
-          "question": "Que es un socio de implementacion de IA?",
-          "answer": "Un socio de implementacion de IA es una agencia especializada que disena, construye y despliega sistemas de IA personalizados para tu negocio — incluyendo chatbots, automatizaciones de flujo de trabajo y agentes de voz — para que obtengas soluciones listas para produccion sin contratar un equipo interno de IA."
+          "question": "Que es un Empleado de Marketing IA?",
+          "answer": "Un Empleado de Marketing IA es un agente de IA persistente que trabaja 24/7 para su agencia. A diferencia de las herramientas que usted debe operar, su empleado IA ejecuta tareas de forma autonoma — creando contenido, calificando leads, gestionando redes sociales, ejecutando anuncios y generando informes para cada uno de sus clientes."
         },
         "q2": {
-          "question": "Cuanto tiempo tarda en implementarse la IA?",
-          "answer": "La mayoria de las implementaciones de un solo servicio (chatbot, flujo de automatizacion o agente de voz) se lanzan en 1-3 semanas. Una implementacion completa de Marketing Machine generalmente toma 3-4 semanas para la configuracion inicial, con optimizacion continua desde el primer dia."
+          "question": "Como aprende las marcas de mis clientes?",
+          "answer": "Durante la incorporacion, su empleado IA absorbe las directrices de marca, tono de voz, audiencia objetivo y contenido historico de cada cliente. Mejora continuamente analizando datos de rendimiento y retroalimentacion, alineandose mas con la marca de cada cliente cada semana."
         },
         "q3": {
-          "question": "Trabajan con empresas SaaS y de e-commerce?",
-          "answer": "Si — SaaS y e-commerce son nuestros verticales principales. Construimos automatizaciones de IA que se integran con plataformas como HubSpot, Salesforce, Shopify y WooCommerce, adaptadas a los flujos de trabajo especificos de negocios de suscripcion y retail."
+          "question": "Que habilidades estan disponibles?",
+          "answer": "Seis habilidades disponibles: Creador de Contenido (blogs, social, newsletters), Agente de Voz (llamadas y reservas), Calificador de Leads (chatbot y scoring), Social Media Manager (programacion y analytics), Creador de Anuncios (estaticos y video) y Reportes & Analytics (dashboards e informes semanales). Active lo que necesite, agregue mas en cualquier momento."
         },
         "q4": {
-          "question": "Que hace diferente a FMai de otras agencias de IA?",
-          "answer": "No somos una consultora que te entrega una presentacion. Construimos, desplegamos y gestionamos tus sistemas de IA de principio a fin. Obtienes acceso directo al fundador, garantia de exito y contratos mensuales sin permanencia."
+          "question": "En que se diferencia de contratar un marketero junior?",
+          "answer": "Un marketero junior cuesta EUR 45.000-60.000/ano, trabaja 40 horas/semana y gestiona un cliente a la vez. Su empleado IA cuesta desde EUR 997/mes, trabaja 24/7, gestiona todos sus clientes simultaneamente y nunca se reporta enfermo. No es un reemplazo de la estrategia — es un reemplazo de la ejecucion repetitiva."
         },
         "q5": {
-          "question": "Cuanto cuesta la automatizacion con IA?",
-          "answer": "Nuestros planes gestionados comienzan desde EUR 1.497/mes para un solo servicio de IA y escalan hasta EUR 3.997/mes para el paquete completo. Cada plan incluye hosting, mantenimiento y soporte continuo — sin costes ocultos."
+          "question": "Que hay del RGPD y la privacidad de datos?",
+          "answer": "FMai es RGPD-first. Todo el procesamiento de datos ocurre dentro de centros de datos de la UE. Proporcionamos un Acuerdo de Procesamiento de Datos para cada cliente de agencia. Los datos de sus clientes estan aislados por espacio de trabajo — sin fugas de datos entre clientes. Estamos construidos para el cumplimiento europeo desde el primer dia."
         }
       }
     }
@@ -97,19 +107,19 @@
   "automations": {
     "meta": {
       "title": "Automatizacion de Marketing con IA | Future Marketing AI",
-      "description": "Flujos de trabajo de IA personalizados que eliminan el trabajo manual — enrutamiento de leads, enriquecimiento de CRM, secuencias de email. Entregado en 1-2 semanas."
+      "description": "Flujos de trabajo de IA personalizados que eliminan el trabajo manual. Entregado en 1-2 semanas."
     },
     "hero": {
       "badge": "Entregado en 1-2 Semanas",
-      "title": "Automatiza Tu Negocio Con IA",
-      "description": "Construimos flujos de trabajo de IA personalizados que eliminan el trabajo manual — enrutamiento de leads, enriquecimiento de CRM, secuencias de email y mas. Con n8n, Make e integraciones personalizadas.",
+      "title": "Automatiza Tu Agencia Con IA",
+      "description": "Construimos flujos de trabajo de IA personalizados que eliminan el trabajo manual — enrutamiento de leads, enriquecimiento de CRM, secuencias de email y mas.",
       "cta_primary": "Solicita una Auditoria Gratuita",
       "cta_secondary": "Ver Ejemplos"
     },
-    "quick_answer": "Las Automatizaciones de Marketing con IA de Future Marketing AI reemplazan los flujos de trabajo de marketing manuales con sistemas inteligentes y autonomos — para que tu equipo se enfoque en la estrategia mientras la IA gestiona la ejecucion.",
+    "quick_answer": "Las Automatizaciones de Marketing con IA reemplazan los flujos de trabajo manuales con sistemas inteligentes y autonomos.",
     "sections": {
-      "challenges_heading": "Por Que Tu Equipo de Marketing Necesita Automatizacion con IA?",
-      "automations_heading": "Que Incluye Nuestro Servicio de Automatizacion?",
+      "challenges_heading": "Por Que Su Equipo Necesita Automatizacion con IA?",
+      "automations_heading": "Que Incluye Nuestro Servicio?",
       "process_heading": "Como Se Construye un Flujo de Automatizacion?",
       "faq_heading": "Preguntas Frecuentes",
       "related_heading": "Servicios Relacionados"
@@ -118,43 +128,43 @@
       "items": {
         "q1": {
           "question": "Que es la automatizacion de marketing con IA?",
-          "answer": "La automatizacion de marketing con IA utiliza machine learning para ejecutar tareas de marketing repetitivas — calificacion de leads, secuencias de email, sincronizacion de CRM — sin intervencion humana, funcionando 24/7 con calidad consistente."
+          "answer": "Usa machine learning para ejecutar tareas repetitivas — calificacion de leads, secuencias de email, sincronizacion de CRM — 24/7 con calidad consistente."
         },
         "q2": {
-          "question": "Cuanto tiempo tarda en implementarse un flujo de automatizacion?",
-          "answer": "La mayoria de las automatizaciones de flujo de trabajo se lanzan en 2-3 semanas: una semana para auditoria y diseno, una semana para construccion y pruebas, y un sprint final de integracion."
+          "question": "Cuanto tiempo tarda la implementacion?",
+          "answer": "La mayoria se lanzan en 2-3 semanas."
         },
         "q3": {
           "question": "Con que herramientas se integran?",
-          "answer": "Nos integramos con HubSpot, Salesforce, ActiveCampaign, Zapier, Make (Integromat), Airtable, Slack, Google Workspace y la mayoria de plataformas basadas en API REST."
+          "answer": "HubSpot, Salesforce, ActiveCampaign, Zapier, Make, Airtable, Slack, Google Workspace y mas."
         },
         "q4": {
-          "question": "Es la automatizacion con IA adecuada para equipos de marketing pequenos?",
-          "answer": "Si — la automatizacion con IA escala tanto hacia abajo como hacia arriba. Los equipos pequenos (2-5 personas) suelen ver las mayores ganancias de productividad porque la automatizacion elimina tareas que antes requerian personal dedicado."
+          "question": "Es adecuada para equipos pequenos?",
+          "answer": "Si — los equipos pequenos suelen ver las mayores ganancias de productividad."
         },
         "q5": {
           "question": "Que pasa si una automatizacion falla?",
-          "answer": "Todos los flujos de trabajo incluyen monitoreo y manejo de errores. Proporcionamos 30 dias de soporte post-lanzamiento y podemos configurar alertas de Slack/email para cualquier estado de fallo."
+          "answer": "Todos los flujos incluyen monitoreo y manejo de errores. 30 dias de soporte post-lanzamiento."
         }
       }
     },
     "related": {
       "chatbots_title": "AI Chatbots",
-      "chatbots_description": "Agentes de chat IA que califican leads y atienden clientes 24/7",
+      "chatbots_description": "Agentes de chat IA que califican leads 24/7",
       "voice_agents_title": "Voice Agents",
-      "voice_agents_description": "Agentes de voz IA que gestionan llamadas entrantes y salientes a escala",
+      "voice_agents_description": "Agentes de voz IA a escala",
       "marketing_machine_title": "Marketing Machine",
-      "marketing_machine_description": "Creacion autonoma de contenido, programacion y automatizacion de campanas"
+      "marketing_machine_description": "Creacion autonoma de contenido y automatizacion"
     },
     "pain_points": {
       "title": "Desafios Que Resolvemos",
       "manual_work": {
         "title": "Horas Perdidas en Trabajo Manual",
-        "description": "Tu equipo dedica horas a trabajo que la IA puede hacer en minutos"
+        "description": "Su equipo dedica horas a trabajo que la IA puede hacer en minutos"
       },
       "disconnected_tools": {
         "title": "Herramientas Desconectadas",
-        "description": "Tus herramientas no se comunican entre si — los datos se pierden entre aplicaciones"
+        "description": "Sus herramientas no se comunican — los datos se pierden"
       },
       "scaling": {
         "title": "Escalar Significa Contratar",
@@ -163,7 +173,7 @@
     },
     "what_we_automate": {
       "title": "Que Automatizamos",
-      "subtitle": "Desde la generacion de leads hasta la incorporacion de clientes — automatizamos los flujos de trabajo que ralentizan a tu equipo.",
+      "subtitle": "Desde la generacion de leads hasta la incorporacion de clientes.",
       "items": {
         "lead_qualification": "Calificacion de leads y enriquecimiento de CRM",
         "email_sequences": "Secuencias de email y seguimientos",
@@ -178,39 +188,39 @@
       "steps": {
         "audit": {
           "title": "Auditoria Gratuita",
-          "description": "Mapeamos tus procesos manuales e identificamos oportunidades de automatizacion. 30 minutos, sin compromiso."
+          "description": "Mapeamos sus procesos manuales. 30 minutos, sin compromiso."
         },
         "build": {
           "title": "Construccion",
-          "description": "Entrega en 1-2 semanas, flujos de trabajo completamente documentados. Construimos, probamos y entregamos."
+          "description": "Entrega en 1-2 semanas, flujos completamente documentados."
         },
         "optimize": {
           "title": "Optimizar",
-          "description": "Retainer continuo opcional para nuevos flujos, optimizacion y soporte dedicado."
+          "description": "Retainer continuo opcional para nuevos flujos y optimizacion."
         }
       }
     },
     "cta": {
       "title": "Listo para Eliminar el Trabajo Manual?",
-      "subtitle": "Reserva una auditoria de automatizacion gratuita. 30 minutos, sin compromiso.",
+      "subtitle": "Reserva una auditoria gratuita. 30 minutos, sin compromiso.",
       "button": "Solicita una Auditoria Gratuita"
     }
   },
   "chatbots": {
     "meta": {
       "title": "Soluciones de Chatbot IA | Future Marketing AI",
-      "description": "Chatbots de IA personalizados que gestionan servicio al cliente, califican leads y reservan citas 24/7. Prueba nuestras demos interactivas."
+      "description": "Chatbots de IA personalizados que gestionan servicio al cliente, califican leads y reservan citas 24/7."
     },
     "hero": {
       "badge": "Demo Interactiva",
       "title": "Experimenta los Chatbots de IA en Accion",
-      "description": "No confies solo en nuestra palabra — pruebalos tu mismo. Tres demos en vivo mostrando lo que los chatbots de IA pueden hacer por tu negocio.",
+      "description": "Pruebalos usted mismo. Tres demos en vivo mostrando lo que los chatbots pueden hacer para su agencia.",
       "cta_primary": "Prueba una Demo Abajo",
-      "cta_secondary": "Solicita una Sesion Estrategica Gratuita"
+      "cta_secondary": "Solicita una Sesion Estrategica"
     },
-    "quick_answer": "Los Chatbots de IA de Future Marketing AI son agentes conversacionales configurados para la personalidad de tu marca — calificando leads, respondiendo preguntas y reservando demos 24/7 sin intervencion humana.",
+    "quick_answer": "Los Chatbots de IA de Future Marketing AI son agentes conversacionales configurados para la personalidad de su marca.",
     "sections": {
-      "use_cases_heading": "Que Puede Hacer un Chatbot de IA por Tu Negocio?",
+      "use_cases_heading": "Que Puede Hacer un Chatbot IA para Su Agencia?",
       "process_heading": "Como Se Despliega un Chatbot?",
       "faq_heading": "Preguntas Frecuentes",
       "related_heading": "Servicios Relacionados"
@@ -220,52 +230,52 @@
       "items": {
         "customer_service": {
           "title": "Servicio al Cliente",
-          "description": "Gestiona el 70% de las consultas de clientes automaticamente — respuestas instantaneas, disponible 24/7."
+          "description": "Gestiona el 70% de las consultas automaticamente — 24/7."
         },
         "lead_qualification": {
           "title": "Calificacion de Leads",
-          "description": "Puntua y enruta leads las 24 horas. Nunca mas pierdas un prospecto caliente."
+          "description": "Puntua y enruta leads las 24 horas."
         },
         "appointment_booking": {
           "title": "Reserva de Citas",
-          "description": "Llena tu agenda sin idas y venidas manuales. Integrado con Calendly, Cal.com y mas."
+          "description": "Llena su agenda sin idas y venidas manuales."
         },
         "faq_automation": {
           "title": "Automatizacion de FAQ",
-          "description": "Respuestas consistentes y precisas — siempre disponibles. Entrenado en tu base de conocimiento especifica."
+          "description": "Respuestas consistentes y precisas — siempre disponibles."
         }
       }
     },
     "demo": {
       "title": "Demo Interactiva",
-      "subtitle": "Cambia entre personas y observa como cada chatbot maneja diferentes escenarios.",
-      "placeholder": "Demo interactiva de chatbot proximamente. Mientras tanto, reserva una sesion estrategica para ver una demostracion en vivo.",
+      "subtitle": "Cambie entre personas y observe como cada chatbot maneja diferentes escenarios.",
+      "placeholder": "Demo interactiva de chatbot proximamente.",
       "capabilities_label": "Capacidades",
       "tabs": {
         "ecommerce": {
           "label": "E-commerce",
           "scenario_title": "Asesor de Productos Skincare",
-          "scenario": "Un asesor de productos impulsado por IA que ayuda a los clientes a encontrar los productos de skincare adecuados segun su tipo de piel, preocupaciones y preferencias.",
-          "capabilities_0": "Busqueda y recomendaciones de productos",
+          "scenario": "Un asesor de productos impulsado por IA que ayuda a encontrar los productos adecuados.",
+          "capabilities_0": "Busqueda y recomendaciones",
           "capabilities_1": "Constructor de rutinas AM/PM",
           "capabilities_2": "Analisis de ingredientes",
-          "capabilities_3": "Seguimiento de pedidos y soporte"
+          "capabilities_3": "Seguimiento de pedidos"
         },
         "leadgen": {
           "label": "Calificacion de Leads",
           "scenario_title": "Calificador de Leads IA",
-          "scenario": "Un bot de calificacion de leads que evalua prospectos, comprende sus necesidades y dirige leads calificados a tu equipo de ventas.",
-          "capabilities_0": "Evaluacion de necesidades y puntuacion",
-          "capabilities_1": "Calificacion de presupuesto y plazos",
+          "scenario": "Un bot que evalua prospectos y dirige leads calificados a su equipo de ventas.",
+          "capabilities_0": "Evaluacion de necesidades",
+          "capabilities_1": "Calificacion de presupuesto",
           "capabilities_2": "Estimacion de ROI",
-          "capabilities_3": "Traspaso automatizado de reservas"
+          "capabilities_3": "Traspaso automatizado"
         },
         "support": {
           "label": "Soporte al Cliente",
           "scenario_title": "Agente de Soporte",
-          "scenario": "Un agente de soporte inteligente que resuelve problemas comunes, crea tickets para problemas complejos y escala cuando es necesario.",
+          "scenario": "Un agente inteligente que resuelve problemas comunes y escala cuando es necesario.",
           "capabilities_0": "Busqueda en base de conocimiento",
-          "capabilities_1": "Creacion y seguimiento de tickets",
+          "capabilities_1": "Creacion de tickets",
           "capabilities_2": "Escalacion prioritaria",
           "capabilities_3": "Soporte multiidioma"
         }
@@ -274,78 +284,78 @@
     "faq": {
       "items": {
         "q1": {
-          "question": "Que diferencia a un chatbot de IA de uno basado en reglas?",
-          "answer": "Los chatbots de IA usan modelos de lenguaje grandes para entender la intencion y generar respuestas contextuales, mientras que los bots basados en reglas siguen arboles de decision fijos. Los chatbots de IA manejan preguntas nuevas sin rutas preprogramadas."
+          "question": "Que diferencia a un chatbot IA de uno basado en reglas?",
+          "answer": "Los chatbots IA usan modelos de lenguaje grandes para entender la intencion y generar respuestas contextuales."
         },
         "q2": {
-          "question": "Puedo probar el chatbot antes de comprarlo?",
-          "answer": "Si — nuestra pagina de Chatbots incluye un playground de demo en vivo con 3 personas preconfiguradas: e-commerce, generacion de leads y soporte al cliente."
+          "question": "Puedo probar el chatbot antes de comprar?",
+          "answer": "Si — nuestra pagina de Chatbots incluye un playground de demo en vivo."
         },
         "q3": {
           "question": "Como configuran la persona del chatbot?",
-          "answer": "Cada chatbot recibe un prompt de sistema, directrices de tono, documentos de base de conocimiento y conversaciones de ejemplo. La configuracion suele tardar 3-5 dias habiles para una persona lista para produccion."
+          "answer": "Cada chatbot recibe prompt de sistema, tono, base de conocimiento y conversaciones de ejemplo."
         },
         "q4": {
-          "question": "Se integra el chatbot con mi CRM?",
-          "answer": "Si — los leads capturados por el chatbot se envian directamente a HubSpot, Salesforce o tu CRM via webhook. Configuramos el mapeo de campos durante la incorporacion."
+          "question": "Se integra con mi CRM?",
+          "answer": "Si — los leads se envian directamente a HubSpot, Salesforce o su CRM via webhook."
         },
         "q5": {
-          "question": "Que idiomas soporta el chatbot?",
-          "answer": "Los modelos subyacentes soportan mas de 50 idiomas. Configuramos y probamos para tus idiomas principales (EN/NL/ES como estandar) durante el despliegue."
+          "question": "Que idiomas soporta?",
+          "answer": "Los modelos soportan 50+ idiomas. Configuramos EN/NL/ES como estandar."
         },
         "q6": {
-          "question": "Es el chatbot compatible con el RGPD?",
-          "answer": "Si — todos los datos de conversacion se procesan en centros de datos de la UE, el historial de chat no se retiene mas alla de la sesion por defecto, y proporcionamos un DPA a solicitud."
+          "question": "Es compatible con el RGPD?",
+          "answer": "Si — datos procesados en la UE, historial no retenido, DPA disponible."
         }
       }
     },
     "related": {
       "automations_title": "AI Automations",
-      "automations_description": "Automatizacion de workflows personalizados que conectan tus herramientas y procesos",
+      "automations_description": "Automatizacion de workflows personalizados",
       "voice_agents_title": "Voice Agents",
-      "voice_agents_description": "Agentes de voz IA que gestionan llamadas entrantes y salientes a escala",
+      "voice_agents_description": "Agentes de voz IA a escala",
       "marketing_machine_title": "Marketing Machine",
-      "marketing_machine_description": "Creacion autonoma de contenido, programacion y automatizacion de campanas"
+      "marketing_machine_description": "Creacion autonoma de contenido y automatizacion"
     },
     "process": {
       "title": "Como Lo Construimos",
       "steps": {
         "discovery": {
           "title": "Descubrimiento",
-          "description": "Mapeamos tu caso de uso, identificamos las intenciones clave y planificamos la integracion con tus herramientas existentes."
+          "description": "Mapeamos su caso de uso y planificamos la integracion."
         },
         "build": {
           "title": "Construccion",
-          "description": "Chatbot personalizado con LLM, entrenado con tus datos. Listo para despliegue multi-plataforma."
+          "description": "Chatbot LLM personalizado, entrenado con sus datos."
         },
         "optimize": {
           "title": "Optimizar",
-          "description": "Mejora continua basada en datos de conversaciones reales. Informes de rendimiento mensuales."
+          "description": "Mejora continua basada en datos de conversaciones reales."
         }
       }
     },
     "cta": {
-      "title": "Listo para Atencion al Cliente 24/7?",
-      "subtitle": "Reserva una sesion de estrategia gratuita. Mapearemos tus oportunidades de chatbot.",
-      "button": "Solicita una Sesion Estrategica Gratuita"
+      "title": "Listo para Atencion 24/7?",
+      "subtitle": "Reserva una sesion estrategica gratuita.",
+      "button": "Solicita una Sesion Estrategica"
     }
   },
   "voice-agents": {
     "meta": {
       "title": "Agentes de Voz IA | Future Marketing AI",
-      "description": "Agentes de voz IA que llaman prospectos, califican leads y reservan citas a escala. Construidos con socios especializados en voz IA."
+      "description": "Agentes de voz IA que llaman prospectos, califican leads y reservan citas a escala."
     },
     "hero": {
-      "badge": "IA Que Gestiona Tus Llamadas",
-      "title": "Agentes de Voz IA para Calificacion de Leads y Reservas",
-      "description": "Agentes de voz IA que llaman prospectos, califican leads y reservan citas — a escala, sin un equipo de ventas.",
+      "badge": "IA Que Gestiona Sus Llamadas",
+      "title": "Agentes de Voz IA para Calificacion y Reservas",
+      "description": "Agentes de voz IA que llaman prospectos, califican leads y reservan citas — a escala, sin equipo de ventas.",
       "cta_primary": "Reserva una Llamada Demo",
       "cta_secondary": "Ver Casos de Uso"
     },
-    "quick_answer": "Los Agentes de Voz IA de Future Marketing AI gestionan llamadas entrantes y salientes de forma autonoma — calificando prospectos, programando citas y resolviendo consultas de soporte a escala.",
+    "quick_answer": "Los Agentes de Voz IA gestionan llamadas entrantes y salientes de forma autonoma.",
     "sections": {
       "use_cases_heading": "Que Pueden Hacer los Agentes de Voz IA?",
-      "partnership_heading": "Como Se Integran los Agentes de Voz Con Tu Stack?",
+      "partnership_heading": "Como Se Integran con Su Stack?",
       "faq_heading": "Preguntas Frecuentes",
       "related_heading": "Servicios Relacionados"
     },
@@ -353,82 +363,82 @@
       "items": {
         "q1": {
           "question": "Que es un agente de voz IA?",
-          "answer": "Un agente de voz IA es un bot telefónico conversacional que puede gestionar llamadas entrantes (calificar prospectos, responder FAQ) o realizar llamadas salientes (seguimientos, recordatorios de citas) usando lenguaje natural."
+          "answer": "Un bot telefonico conversacional que gestiona llamadas entrantes y salientes con lenguaje natural."
         },
         "q2": {
           "question": "Que tan humana suena la voz?",
-          "answer": "Los modelos modernos de texto a voz producen un habla casi humana con tono, ritmo y acento ajustables. La mayoria de los llamantes no pueden distinguir al agente de un humano en los primeros 30 segundos."
+          "answer": "Modelos modernos producen habla casi humana. La mayoria no distingue al agente en los primeros 30 segundos."
         },
         "q3": {
-          "question": "Que escenarios de llamada pueden manejar los agentes de voz?",
-          "answer": "Calificacion de leads, programacion de citas, enrutamiento de soporte entrante, recordatorios salientes, encuestas NPS y llamadas de seguimiento post-compra son los casos de uso mas comunes."
+          "question": "Que escenarios pueden manejar?",
+          "answer": "Calificacion de leads, citas, soporte entrante, recordatorios, encuestas NPS y seguimiento post-compra."
         },
         "q4": {
-          "question": "Como se integran los agentes de voz con mi sistema telefonico?",
-          "answer": "Usamos Twilio o Vonage como capa de telefonia, que se conecta con la mayoria de sistemas VoIP. La integracion SIP trunking o PSTN esta incluida en todos los despliegues."
+          "question": "Como se integran con mi sistema telefonico?",
+          "answer": "Usamos Twilio o Vonage como capa de telefonia."
         },
         "q5": {
-          "question": "Cual es la tasa promedio de desviacion de llamadas?",
-          "answer": "Los clientes suelen ver una desviacion del 40-70% en consultas entrantes repetidas/FAQ dentro de los primeros 90 dias, reduciendo significativamente el tiempo de espera de los agentes."
+          "question": "Cual es la tasa de desviacion promedio?",
+          "answer": "40-70% desviacion en consultas repetidas dentro de los primeros 90 dias."
         }
       }
     },
     "related": {
       "automations_title": "AI Automations",
-      "automations_description": "Automatizacion de workflows personalizados que conectan tus herramientas y procesos",
+      "automations_description": "Automatizacion de workflows personalizados",
       "chatbots_title": "AI Chatbots",
-      "chatbots_description": "Agentes de chat IA que califican leads y atienden clientes 24/7",
+      "chatbots_description": "Agentes de chat IA 24/7",
       "marketing_machine_title": "Marketing Machine",
-      "marketing_machine_description": "Creacion autonoma de contenido, programacion y automatizacion de campanas"
+      "marketing_machine_description": "Creacion autonoma de contenido"
     },
     "use_cases": {
       "title": "Que Pueden Hacer los Agentes de Voz",
       "items": {
         "outbound_leads": {
-          "title": "Calificacion de Leads Salientes",
-          "description": "Llama y califica cientos de leads por dia. La IA gestiona la primera conversacion para que tu equipo de ventas solo hable con prospectos calificados."
+          "title": "Calificacion Saliente",
+          "description": "Llame y califique cientos de leads por dia."
         },
         "appointment_setting": {
           "title": "Programacion de Citas",
-          "description": "Llena agendas automaticamente. El agente de voz reserva reuniones directamente en tu sistema de calendario."
+          "description": "Llene agendas automaticamente."
         },
         "inbound_service": {
-          "title": "Servicio al Cliente Entrante",
-          "description": "Gestiona llamadas rutinarias 24/7. Responde FAQ, enruta problemas complejos y nunca pone a un cliente en espera."
+          "title": "Servicio Entrante",
+          "description": "Gestione llamadas rutinarias 24/7."
         },
         "post_sale": {
           "title": "Seguimiento Post-Venta",
-          "description": "Check-ins automatizados, recordatorios de renovacion y encuestas de satisfaccion — a escala."
+          "description": "Check-ins automatizados y encuestas — a escala."
         }
       }
     },
     "partnership": {
       "title": "Construido Con Socios Especializados",
-      "description": "Nuestras soluciones de agentes de voz se construyen en colaboracion con socios especializados en voz IA, asegurando que obtengas la mejor tecnologia y experiencia disponible en el mercado."
+      "description": "Nuestras soluciones se construyen con socios especializados en voz IA."
     },
     "cta": {
-      "title": "Listo para Escalar Tu Alcance?",
-      "subtitle": "Reserva una llamada demo y escucha un agente de voz IA en accion.",
+      "title": "Listo para Escalar Su Alcance?",
+      "subtitle": "Reserva una llamada demo.",
       "button": "Reserva una Llamada Demo"
     }
   },
   "marketing-machine": {
     "meta": {
       "title": "La Marketing Machine | Future Marketing AI",
-      "description": "6 modulos de IA trabajando 24/7 para crear, optimizar y distribuir tu contenido. 160 publicaciones/mes. Cero trabajo manual."
+      "description": "6 modulos IA trabajando 24/7. 160 publicaciones/mes. Cero trabajo manual."
     },
     "hero": {
       "badge": "La Marketing Machine",
       "title": "160 Posts/Mes.",
       "titleHighlight": "Cero Trabajo Manual.",
-      "description": "6 modulos de IA trabajando 24/7 para crear, optimizar y distribuir tu contenido — mientras te enfocas en hacer crecer tu negocio.",
-      "cta_primary": "Reserva una Llamada de Descubrimiento",
-      "cta_secondary": "Calcula Tu ROI"
+      "description": "6 modulos IA trabajando 24/7 para crear, optimizar y distribuir su contenido — mientras usted hace crecer su agencia.",
+      "cta_primary": "Reserva una Llamada",
+      "cta_secondary": "Calcula Su ROI"
     },
-    "quick_answer": "La AI Marketing Machine de Future Marketing AI es un sistema integrado que combina automatizaciones, chatbots, produccion de contenido y amplificacion pagada en un unico motor de crecimiento auto-optimizable.",
+    "quick_answer": "La AI Marketing Machine es un sistema integrado que combina automatizaciones, chatbots, produccion de contenido y amplificacion pagada.",
     "sections": {
       "features_heading": "Que Incluye la Marketing Machine?",
-      "how_it_works_heading": "Como Se Construye la Marketing Machine?",
+      "how_it_works_heading": "Como Se Construye?",
       "faq_heading": "Preguntas Frecuentes",
       "related_heading": "Servicios Relacionados"
     },
@@ -436,127 +446,120 @@
       "items": {
         "q1": {
           "question": "Que es la AI Marketing Machine?",
-          "answer": "La AI Marketing Machine es un sistema integrado que combina automatizaciones de flujo de trabajo, IA conversacional, produccion de contenido y amplificacion pagada en un unico motor de crecimiento auto-optimizable gestionado para ti."
+          "answer": "Un sistema integrado de automatizaciones, IA conversacional, contenido y amplificacion pagada."
         },
         "q2": {
-          "question": "En que se diferencia de comprar herramientas individuales?",
-          "answer": "Las herramientas individuales requieren orquestacion manual. La Marketing Machine es un servicio gestionado donde la IA coordina las herramientas, y nosotros gestionamos estrategia, operaciones y optimizacion."
+          "question": "En que se diferencia de herramientas individuales?",
+          "answer": "Es un servicio gestionado donde la IA coordina las herramientas."
         },
         "q3": {
-          "question": "Que incluye 'Marketing Machine'?",
-          "answer": "Un engagement estandar incluye: automatizaciones de generacion de leads, un chatbot configurado, calendario de contenido y produccion asistida por IA, gestion de campanas de anuncios y sprints de optimizacion mensuales."
+          "question": "Que incluye?",
+          "answer": "Automatizaciones de leads, chatbot, calendario de contenido, gestion de anuncios y optimizacion mensual."
         },
         "q4": {
-          "question": "Cuanto tiempo hasta que vea resultados?",
-          "answer": "La configuracion de infraestructura toma 3-4 semanas. La mayoria de los clientes ven impacto medible en el pipeline (leads calificados, llamadas reservadas) dentro de los 60 dias posteriores al lanzamiento."
+          "question": "Cuanto tiempo hasta ver resultados?",
+          "answer": "3-4 semanas de setup. Impacto medible en 60 dias."
         },
         "q5": {
-          "question": "Es esto adecuado para empresas B2C?",
-          "answer": "La Marketing Machine esta optimizada para B2B. Las empresas B2C con productos de alto valor (EUR 1.000+) pueden beneficiarse, pero el playbook esta calibrado para ciclos de venta mas largos y targeting basado en cuentas."
+          "question": "Es adecuado para B2C?",
+          "answer": "Optimizado para B2B. B2C con productos de alto valor (EUR 1.000+) puede beneficiarse."
         },
         "q6": {
           "question": "Que implica la gestion continua?",
-          "answer": "Mensualmente: revision de rendimiento, analisis de tests A/B, actualizacion de contenido, reasignacion de presupuesto de anuncios y actualizaciones de la base de conocimiento del chatbot. Trimestralmente: reevaluacion de estrategia y actualizacion de roadmap."
+          "answer": "Mensualmente: revision de rendimiento, tests A/B, contenido y presupuesto. Trimestralmente: estrategia."
         }
       }
     },
     "related": {
       "automations_title": "AI Automations",
-      "automations_description": "Automatizacion de workflows personalizados que conectan tus herramientas y procesos",
+      "automations_description": "Automatizacion de workflows",
       "chatbots_title": "AI Chatbots",
-      "chatbots_description": "Agentes de chat IA que califican leads y atienden clientes 24/7",
+      "chatbots_description": "Agentes de chat IA 24/7",
       "voice_agents_title": "Voice Agents",
-      "voice_agents_description": "Agentes de voz IA que gestionan llamadas entrantes y salientes a escala"
+      "voice_agents_description": "Agentes de voz IA a escala"
     },
     "features": {
-      "title": "Tu Equipo de Marketing Autonomo",
-      "subtitle": "Cada modulo es un agente de IA especializado — trabajando en conjunto para gestionar toda tu operacion de marketing.",
+      "title": "Su Equipo de Marketing Autonomo",
+      "subtitle": "Cada modulo es un agente IA especializado — trabajando en conjunto.",
       "research": {
         "title": "Investigacion y Planificacion IA",
-        "description": "Inteligencia de mercado 24/7 — monitoreo de tendencias, analisis de competencia e identificacion de oportunidades de contenido."
+        "description": "Inteligencia de mercado 24/7."
       },
       "content": {
-        "title": "Pipelines de Creacion de Contenido",
-        "description": "Generacion de contenido con IA que produce contenido de calidad premium a velocidad sin precedentes."
+        "title": "Pipelines de Contenido",
+        "description": "Generacion de contenido premium con IA."
       },
       "publishing": {
-        "title": "Capa de Publicacion Inteligente",
-        "description": "Publica en momentos cientificamente optimos con targeting de audiencia perfecto en todas las plataformas."
+        "title": "Publicacion Inteligente",
+        "description": "Publica en momentos optimos con targeting perfecto."
       },
       "analytics": {
         "title": "Analytics Auto-Aprendizaje",
-        "description": "Analytics de IA que aprenden continuamente de cada campana, mejorando un 23% cada mes."
+        "description": "Mejoran un 23% cada mes."
       },
       "ads": {
-        "title": "Campanas de Anuncios Automatizadas",
-        "description": "Convierte publicaciones ganadoras en anuncios con optimizacion automatica de presupuesto para maximo ROAS."
+        "title": "Campanas Automatizadas",
+        "description": "Convierte publicaciones ganadoras en anuncios."
       },
       "orchestrator": {
-        "title": "Motor de Orquestacion Manager",
-        "description": "Cerebro central de IA que coordina todos los modulos y asegura una ejecucion fluida."
+        "title": "Motor de Orquestacion",
+        "description": "Cerebro central que coordina todos los modulos."
       }
     },
     "howItWorks": {
       "title": "Como Funciona",
-      "step1": {
-        "title": "Llamada de Descubrimiento",
-        "description": "Sesion de estrategia de 30 minutos para mapear tus objetivos de marketing y procesos actuales."
-      },
+      "step1": { "title": "Llamada de Descubrimiento", "description": "30 minutos de estrategia." },
       "step2": {
         "title": "Configuracion Personalizada",
-        "description": "Configuramos los 6 modulos para tu voz de marca, audiencia y plataformas."
+        "description": "Configuramos los 6 modulos para su marca."
       },
       "step3": {
         "title": "Lanzamiento y Optimizacion",
-        "description": "El sistema se activa. Informes de rendimiento semanales. Llamadas de estrategia mensuales."
+        "description": "Sistema activo. Informes semanales."
       }
     },
     "cta": {
-      "title": "Listo para Automatizar Tu Marketing?",
-      "subtitle": "Habla con un humano. 30 minutos, sin compromiso.",
-      "button": "Reserva una Llamada de Descubrimiento"
+      "title": "Listo para Automatizar Su Marketing?",
+      "subtitle": "Hable con un humano. 30 minutos, sin compromiso.",
+      "button": "Reserva una Llamada"
     }
   },
   "common": {
     "nav": {
-      "home": "Home",
-      "automations": "Automations",
+      "home": "Inicio",
+      "automations": "Automatizaciones",
       "chatbots": "Chatbots",
-      "voiceAgents": "Voice Agents",
+      "voiceAgents": "Agentes de Voz",
       "marketingMachine": "Marketing Machine",
-      "pricing": "Pricing",
-      "about": "About",
-      "contact": "Contact"
+      "pricing": "Precios",
+      "about": "Acerca de",
+      "contact": "Contacto"
     },
     "footer": {
-      "company": "Company",
-      "services": "Services",
+      "company": "Empresa",
+      "services": "Habilidades",
       "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "copyright": "Copyright {year} Future Marketing AI. All rights reserved."
+      "privacy": "Politica de Privacidad",
+      "terms": "Terminos de Servicio",
+      "copyright": "Copyright {year} Future Marketing AI. Todos los derechos reservados."
     },
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "El Empleado de Marketing IA para tu agencia — creacion de contenido, redes sociales, agentes de voz y mas.",
+        "tagline": "El Empleado de Marketing IA para su agencia — contenido, voz, anuncios, social, leads y reportes en un sistema siempre activo.",
         "copyright": "\u00a9 {year} Future Marketing AI. Todos los derechos reservados.",
-        "sections": {
-          "skills": "Skills",
-          "company": "Empresa",
-          "resources": "Recursos"
-        },
+        "sections": { "services": "Habilidades", "company": "Empresa", "resources": "Recursos" },
         "nav": {
-          "content_creator": "Content Creator",
-          "voice_agent": "Voice Agent",
-          "lead_qualifier": "Lead Qualifier",
-          "social_media": "Social Media",
-          "ad_creator": "Ad Creator",
-          "reporting": "Reporting",
+          "content_creator": "Creador de Contenido",
+          "voice_agent": "Agente de Voz",
+          "lead_qualifier": "Calificador de Leads",
+          "social_media": "Redes Sociales",
+          "ad_creator": "Creador de Anuncios",
+          "reporting": "Reportes",
           "pricing": "Precios",
           "about": "Acerca de",
-          "how_it_works": "Como funciona",
-          "founding_member": "Founding Member",
+          "how_it_works": "Como Funciona",
+          "founding_member": "Miembro Fundador",
           "blog": "Blog",
           "contact": "Contacto",
           "privacy": "Privacidad",
@@ -564,146 +567,171 @@
           "cookies": "Cookies"
         },
         "status_badge": "Todos los sistemas operativos",
-        "social_aria": {
-          "linkedin": "Síguenos en LinkedIn",
-          "twitter": "Síguenos en X"
-        }
+        "social_aria": { "linkedin": "Siguenos en LinkedIn", "twitter": "Siguenos en X" }
       }
     },
-    "footer_all_rights": "All rights reserved.",
-    "actions": {
-      "learn_more": "Learn More"
-    },
+    "footer_all_rights": "Todos los derechos reservados.",
+    "actions": { "learn_more": "Saber Mas" },
     "cookie_consent": {
       "title": "Usamos cookies",
-      "description": "Usamos cookies para mejorar su experiencia y analizar el trafico del sitio. Al aceptar, acepta nuestro uso de cookies analiticas.",
+      "description": "Usamos cookies para mejorar su experiencia y analizar el trafico.",
       "accept": "Aceptar",
       "decline": "Rechazar"
     },
     "errors": {
       "notFound": {
-        "title": "Page Not Found",
-        "description": "The page you are looking for does not exist.",
-        "backHome": "Back to Home"
+        "title": "Pagina No Encontrada",
+        "description": "La pagina que busca no existe.",
+        "backHome": "Volver al Inicio"
       },
       "generic": {
-        "title": "Something went wrong",
-        "description": "An unexpected error occurred.",
-        "tryAgain": "Try again"
+        "title": "Algo salio mal",
+        "description": "Ocurrio un error inesperado.",
+        "tryAgain": "Intentar de nuevo"
       }
     }
   },
-  "calendly": {
-    "modal_title": "Programar una llamada estrategica",
-    "close": "Cerrar"
-  },
+  "calendly": { "modal_title": "Programar una Llamada Estrategica", "close": "Cerrar" },
   "errors": {
     "notFound": {
-      "title": "Page Not Found",
-      "description": "The page you are looking for does not exist.",
-      "backHome": "Back to Home"
+      "title": "Pagina No Encontrada",
+      "description": "La pagina que busca no existe.",
+      "backHome": "Volver al Inicio"
     },
     "generic": {
-      "title": "Something went wrong",
-      "description": "An unexpected error occurred.",
-      "tryAgain": "Try again"
+      "title": "Algo salio mal",
+      "description": "Ocurrio un error inesperado.",
+      "tryAgain": "Intentar de nuevo"
     }
   },
   "about": {
     "meta": {
-      "title": "Acerca de Future Marketing AI | Agencia IA para Equipos",
-      "description": "Conoce Future Marketing AI, la plataforma de marketing autonomo construida por operadores."
+      "title": "Acerca de FMai | Empleado de Marketing IA para Agencias",
+      "description": "FMai construye Empleados de Marketing IA persistentes para agencias. Construido en los Paises Bajos para agencias europeas."
     },
     "hero": {
-      "badge": "Lanzamiento Q1 2026",
-      "title": "Acerca de Future Marketing AI",
-      "tagline": "Construyendo el sistema de marketing autonomo del futuro"
+      "badge": "Incorporando Miembros Fundadores",
+      "title": "Acerca de FMai",
+      "tagline": "Construyendo el primer Empleado de Marketing IA para agencias"
     },
     "mission": {
       "heading": "Nuestra Mision",
-      "text": "Democratizar la automatizacion de marketing IA de nivel empresarial para negocios ambiciosos.",
+      "text": "Dar a cada agencia acceso a un empleado IA que gestione la ejecucion — para que los equipos se enfoquen en estrategia, creatividad y relaciones con clientes.",
       "why_heading": "Por Que Construimos Esto",
-      "why_text": "Construimos esta plataforma para nosotros mismos primero."
+      "why_text": "Gestionamos operaciones de marketing y vimos el mismo problema: demasiados clientes, demasiado trabajo repetitivo. Asi que construimos el empleado IA que deseabamos tener."
     },
     "timeline": {
-      "title": "La Evolucion de la Automatizacion de Marketing",
+      "title": "La Evolucion de las Operaciones de Agencia",
       "eras": {
         "assisted": {
           "year": "2020-2024",
-          "title": "Era del Marketing Asistido por IA",
-          "description": "ChatGPT and similar tools help marketers work faster, but still require significant manual oversight and coordination."
+          "title": "Era Asistida por IA",
+          "description": "Las agencias adoptaron ChatGPT y herramientas IA, pero aun necesitaban humanos para coordinar todo."
         },
         "autonomous": {
-          "year": "2025",
-          "title": "Era del Marketing Autonomo",
-          "description": "Complete AI systems that handle the entire workflow autonomously. This is where we are — and where early adopters gain a 3-5 year competitive advantage."
+          "year": "2025-2026",
+          "title": "Era del Empleado IA",
+          "description": "Agentes IA persistentes que ejecutan flujos de trabajo completos de forma autonoma. Aqui es donde las agencias early-adopter ganan una ventaja insuperable."
         },
         "standard": {
           "year": "2027+",
           "title": "Practica Estandar",
-          "description": "Autonomous marketing becomes the norm. By then, early movers have built an insurmountable lead through compounding AI learning effects."
+          "description": "Todas las agencias tienen empleados IA. Las que empezaron temprano tienen 2-3 anos de aprendizaje compuesto."
         }
       },
       "key_message": {
-        "title": "Early adopters gain a 3-5 year competitive advantage",
-        "description": "Just like early Salesforce adopters in 2004 or early AI tool users in 2020 — being first compounds over time."
+        "title": "Las agencias early-adopter ganan 2-3 anos de ventaja competitiva",
+        "description": "El efecto compuesto del aprendizaje IA significa que empezar ahora crea una ventaja que los tardios no pueden cerrar."
       }
     },
     "cta": {
-      "title": "Unete a los Equipos Fundadores",
-      "description": "Estamos construyendo esto con 3 negocios visionarios.",
+      "title": "Sea Miembro Fundador",
+      "description": "Estamos incorporando nuestras primeras 10 agencias fundadoras a EUR 997/mes. Asegure el precio mas bajo y ayude a dar forma al producto.",
       "demo_button": "Reservar una Llamada",
       "contact_button": "Contactenos"
     }
   },
   "pricing": {
     "meta": {
-      "title": "Precios | Future Marketing AI",
-      "description": "Precios transparentes para servicios de IA gestionados."
+      "title": "Precios | Empleado de Marketing IA para Agencias | FMai",
+      "description": "Precios transparentes por nivel. Miembro Fundador EUR 997/mes, Starter EUR 1.497/mes, Growth EUR 1.997/mes, Agency EUR 3.497/mes."
     },
     "hero": {
-      "title": "IA Que Trabaja Para Ti",
-      "description": "Servicios de IA gestionados a medida para tu negocio."
+      "title": "Un Empleado IA. Elija Su Nivel.",
+      "description": "Cada nivel incluye su Empleado de Marketing IA persistente. Niveles superiores desbloquean mas habilidades y espacios de trabajo."
     },
     "tiers": {
+      "founding": {
+        "name": "Miembro Fundador",
+        "price": "997",
+        "badge": "Solo 10 Plazas",
+        "description": "Para agencias early-adopter listas para dar forma al futuro del marketing IA.",
+        "service_count": "2 habilidades incluidas",
+        "features_0": "Empleado IA persistente (24/7)",
+        "features_1": "2 habilidades a eleccion",
+        "features_2": "Hasta 3 espacios de trabajo",
+        "features_3": "Acceso directo al fundador via Slack",
+        "features_4": "Influencia en la hoja de ruta",
+        "features_5": "Precio bloqueado de por vida"
+      },
       "starter": {
         "name": "Starter",
-        "price": "1,497",
-        "description": "Perfect for businesses ready to start with one AI service.",
-        "service_count": "1 service",
-        "features_0": "Choose 1 service",
-        "features_1": "Hosting & infrastructure included",
-        "features_2": "Monthly updates & maintenance",
-        "features_3": "Email support",
-        "features_4": "Setup in 1-2 weeks"
+        "price": "1.497",
+        "description": "Para agencias que comienzan con su primer empleado IA.",
+        "service_count": "2 habilidades incluidas",
+        "features_0": "Empleado IA persistente (24/7)",
+        "features_1": "2 habilidades a eleccion",
+        "features_2": "Hasta 5 espacios de trabajo",
+        "features_3": "Soporte por email y chat",
+        "features_4": "Informe mensual de rendimiento"
       },
       "growth": {
         "name": "Growth",
-        "price": "2,497",
-        "badge": "Most Popular",
-        "description": "For growing teams that need multiple AI capabilities.",
-        "service_count": "2 services",
-        "features_0": "Choose 2 services",
-        "features_1": "Analytics dashboard",
-        "features_2": "Monthly performance report",
-        "features_3": "Chat & email support",
-        "features_4": "Setup in 2-3 weeks"
+        "price": "1.997",
+        "badge": "Mas Popular",
+        "description": "Para agencias en crecimiento que necesitan mas habilidades y capacidad.",
+        "service_count": "4 habilidades incluidas",
+        "features_0": "Empleado IA persistente (24/7)",
+        "features_1": "4 habilidades a eleccion",
+        "features_2": "Hasta 15 espacios de trabajo",
+        "features_3": "Soporte prioritario (<4h)",
+        "features_4": "Informes semanales",
+        "features_5": "Dashboard de analytics"
       },
-      "scale": {
-        "name": "Scale",
-        "price": "3,997",
-        "description": "The complete package for ambitious companies.",
-        "service_count": "All 3 services",
-        "features_0": "All 3 services included",
-        "features_1": "Priority support (<4h response)",
-        "features_2": "Monthly strategy call",
-        "features_3": "Advanced analytics",
-        "features_4": "Setup in 2-4 weeks"
+      "agency": {
+        "name": "Agency",
+        "price": "3.497",
+        "description": "Para agencias establecidas que quieren el empleado IA completo con todas las habilidades.",
+        "service_count": "Las 6 habilidades",
+        "features_0": "Empleado IA persistente (24/7)",
+        "features_1": "Las 6 habilidades incluidas",
+        "features_2": "Espacios de trabajo ilimitados",
+        "features_3": "Gestor de exito dedicado",
+        "features_4": "Llamada de estrategia mensual",
+        "features_5": "Integraciones personalizadas",
+        "features_6": "Reportes white-label"
       }
     },
+    "addons": {
+      "title": "Habilidades Adicionales",
+      "description": "Agregue habilidades extra a cualquier nivel por EUR 497/mes cada una.",
+      "items": {
+        "content_creator": "Creador de Contenido",
+        "voice_agent": "Agente de Voz",
+        "lead_qualifier": "Calificador de Leads",
+        "social_media": "Social Media Manager",
+        "ad_creator": "Creador de Anuncios",
+        "reporting": "Reportes & Analytics"
+      }
+    },
+    "founding_cta": {
+      "title": "Oferta Miembro Fundador",
+      "description": "Sea una de las primeras 10 agencias. EUR 997/mes bloqueado de por vida.",
+      "button": "Reclame Su Plaza"
+    },
     "cta": {
-      "title": "Listo Para Poner la IA a Trabajar?",
-      "description": "Reserva una llamada de estrategia gratuita.",
+      "title": "Listo para Contratar Su Empleado IA?",
+      "description": "Reserve una llamada estrategica gratuita.",
       "primary_button": "Reservar una Llamada",
       "secondary_button": "Contactenos"
     },
@@ -711,107 +739,97 @@
       "title": "Preguntas sobre Precios",
       "items": {
         "q1": {
-          "question": "Puedo cambiar de plan mas adelante?",
-          "answer": "Si — puedes actualizar o reducir tu plan en cualquier momento. Los cambios se aplican al inicio de tu siguiente ciclo de facturacion. Sin penalizaciones, sin permanencia."
+          "question": "Puedo cambiar de nivel?",
+          "answer": "Si — actualice o reduzca en cualquier momento. Sin penalizaciones."
         },
         "q2": {
-          "question": "Hay una tarifa de configuracion?",
-          "answer": "No. La configuracion, instalacion e incorporacion estan incluidas en cada plan. Solo pagas la suscripcion mensual — nada extra para empezar."
+          "question": "Hay tarifa de configuracion?",
+          "answer": "No. Incorporacion y configuracion incluidas."
         },
         "q3": {
-          "question": "Que incluye cada plan?",
-          "answer": "Cada plan incluye hosting, infraestructura, mantenimiento mensual y soporte. Los niveles superiores anaden mas servicios de IA, dashboards de analytics, soporte prioritario y llamadas de estrategia dedicadas."
+          "question": "Que incluye cada nivel?",
+          "answer": "Empleado IA persistente 24/7, dashboard, informes y soporte."
         },
         "q4": {
-          "question": "Ofrecen precios personalizados para empresas?",
-          "answer": "Si — para organizaciones que necesitan integraciones personalizadas, infraestructura dedicada o garantias de SLA mas alla de nuestros planes estandar, ofrecemos acuerdos empresariales a medida. Contactanos para discutir tus necesidades."
+          "question": "Puedo agregar habilidades sin subir de nivel?",
+          "answer": "Si — EUR 497/mes por habilidad."
         }
       }
     }
   },
   "how-it-works": {
     "meta": {
-      "title": "Como Funciona | Future Marketing AI",
-      "description": "Aprende como los 6 modulos autonomos automatizan tu marketing."
+      "title": "Como Funciona | Empleado de Marketing IA | FMai",
+      "description": "Descubra como su Empleado de Marketing IA se incorpora en cuatro pasos."
     },
     "hero": {
-      "title": "Como Funciona Future Marketing AI?",
-      "description": "Un sistema completamente autonomo con 6 modulos IA trabajando 24/7."
+      "title": "Como Empieza Su Empleado IA?",
+      "description": "Cuatro pasos simples desde el registro hasta que su Empleado de Marketing IA gestione la ejecucion para todos sus clientes."
     },
     "process": {
-      "title": "El Ciclo de Marketing Autonomo",
+      "title": "El Viaje de Incorporacion del Agente",
       "steps": {
-        "research": {
-          "step": "Step 1",
-          "title": "Platform Analyzes Your Market 24/7",
-          "description": "Our AI Research module monitors trends, competitors, and opportunities continuously. It identifies what content to create, when to publish, and which channels to prioritize."
+        "choose": {
+          "step": "Paso 1",
+          "title": "Elija Su Nivel de Agente",
+          "description": "Seleccione el nivel que se ajuste a su agencia. Cada uno incluye su empleado IA persistente."
         },
-        "content": {
-          "step": "Step 2",
-          "title": "AI Generates Premium Content at Scale",
-          "description": "Content Pipelines produce 15x more content than traditional methods. Every piece is optimized for your brand voice, target audience, and platform requirements."
+        "activate": {
+          "step": "Paso 2",
+          "title": "Active Habilidades",
+          "description": "Elija las habilidades: Creador de Contenido, Agente de Voz, Calificador de Leads, Social Media, Creador de Anuncios o Reportes."
         },
-        "workflow": {
-          "step": "Step 3",
-          "title": "Manager Coordinates Everything",
-          "description": "The Manager Orchestrator acts as your AI marketing coordinator, ensuring all modules work together seamlessly. No manual coordination needed."
+        "connect": {
+          "step": "Paso 3",
+          "title": "Conecte Sus Clientes",
+          "description": "Cree un espacio de trabajo por cliente. Suba directrices de marca y conecte cuentas sociales."
         },
-        "publishing": {
-          "step": "Step 4",
-          "title": "Optimal Distribution Across Channels",
-          "description": "Smart Publishing determines the best time, platform, and messaging for each piece of content. Achieves 35% better engagement through intelligent timing."
-        },
-        "learning": {
-          "step": "Step 5",
-          "title": "Analytics Learn and Improve",
-          "description": "Self-Learning Analytics track performance and identify winning patterns. The platform becomes 23% more effective each month by learning from every campaign."
-        },
-        "ads": {
-          "step": "Step 6",
-          "title": "Best Content Becomes Ads",
-          "description": "Top-performing organic content is automatically converted to paid ads with optimized targeting and budget allocation. Delivers 3.2x better ROAS."
+        "working": {
+          "step": "Paso 4",
+          "title": "El Empleado IA Empieza a Trabajar",
+          "description": "Su Empleado de Marketing IA comienza a ejecutar — creando contenido, calificando leads, gestionando social y generando reportes. 24/7."
         }
       },
-      "loop_title": "Continuous Loop",
-      "loop_description": "This process runs 24/7, with each iteration making the system smarter. By month 3, your marketing is 23% more effective. By month 12, it is transformational."
+      "loop_title": "Mejora Continua",
+      "loop_description": "Su empleado IA mejora cada semana. En el mes 3, supera a la mayoria de marketeros junior en velocidad y consistencia."
     },
     "cta": {
-      "title": "Experimentalo Tu Mismo",
-      "description": "La mejor manera de entender como funciona es probarlo.",
+      "title": "Vealo en Accion",
+      "description": "Reserve una llamada estrategica para un recorrido en vivo.",
       "button": "Reservar una Llamada"
     }
   },
   "contact": {
     "meta": {
       "title": "Contacto | Future Marketing AI",
-      "description": "Ponte en contacto con Future Marketing AI."
+      "description": "Contacte a Future Marketing AI. Respondemos en 24 horas."
     },
     "hero": {
-      "title": "Solicita una Consulta IA Gratuita",
-      "description": "Listo para transformar tu marketing con IA autonoma?"
+      "title": "Solicite una Consulta IA Gratuita",
+      "description": "Listo para darle a su agencia un Empleado de Marketing IA? Hablemos sobre que habilidades y nivel se ajustan mejor."
     },
     "form": {
-      "title": "Envianos un Mensaje",
-      "name_label": "Tu Nombre",
+      "title": "Envienos un Mensaje",
+      "name_label": "Su Nombre",
       "name_placeholder": "Juan Perez",
-      "email_label": "Direccion de Email",
-      "email_placeholder": "tu@empresa.com",
-      "company_label": "Empresa",
-      "company_placeholder": "Tu Empresa S.L.",
+      "email_label": "Email",
+      "email_placeholder": "usted@agencia.com",
+      "company_label": "Agencia",
+      "company_placeholder": "Su Agencia S.L.",
       "message_label": "Mensaje",
-      "message_placeholder": "Cuentanos sobre tus objetivos de marketing...",
+      "message_placeholder": "Cuentenos sobre su agencia y que habilidades le interesan...",
       "submit_button": "Enviar Mensaje"
     },
     "book_demo": {
-      "title": "Reservar Llamada de Demo",
-      "description": "Programa una demo personalizada.",
-      "button": "Programar Demo"
+      "title": "Reserve una Llamada Estrategica",
+      "description": "Programe un recorrido personalizado de su Empleado de Marketing IA.",
+      "button": "Programar Llamada"
     },
     "direct_contact": {
       "title": "Contacto Directo",
       "email_label": "Email",
       "email_address": "hello@futuremarketingai.com",
-      "location_label": "Location",
+      "location_label": "Ubicacion",
       "location_text": "Paises Bajos (Remoto)",
       "response_time_label": "Tiempo de Respuesta",
       "response_time_text": "Dentro de 24 horas"
@@ -820,514 +838,31 @@
   "legal": {
     "meta": {
       "title": "Legal | Future Marketing AI",
-      "description": "Informacion legal para Future Marketing AI."
+      "description": "Informacion legal de Future Marketing AI."
     },
-    "hero": {
-      "title": "Legal"
-    },
+    "hero": { "title": "Legal" },
     "sections": {
       "terms": {
         "title": "Terminos de Servicio",
-        "content": "By using our services, you agree to the following terms and conditions. Future Marketing AI provides AI-powered marketing automation services on a subscription basis. All subscriptions are month-to-month unless otherwise agreed upon. We reserve the right to modify these terms with 30 days notice. Services are provided as-is, and while we strive for maximum uptime, we do not guarantee uninterrupted availability."
+        "content": "Al usar nuestros servicios, acepta los siguientes terminos. Future Marketing AI proporciona servicios de Empleado de Marketing IA (Agent as a Service) por suscripcion."
       },
       "privacy": {
         "title": "Politica de Privacidad",
-        "content": "We collect personal data necessary to provide our services, including name, email, and company information submitted via our contact forms. Your data is processed in accordance with GDPR regulations. We do not sell your personal information to third parties. Data is stored securely within the EU and retained only for the duration of your business relationship with us. You have the right to access, rectify, or delete your personal data at any time."
+        "content": "Recopilamos datos personales necesarios para nuestros servicios. Sus datos se procesan conforme al RGPD. No vendemos su informacion a terceros."
       },
       "cookies": {
         "title": "Politica de Cookies",
-        "content": "Our website uses essential cookies required for basic functionality and optional analytics cookies to improve our services. Essential cookies cannot be disabled as they are necessary for the website to function. Analytics cookies are only set with your explicit consent. You can manage your cookie preferences at any time through your browser settings."
+        "content": "Nuestro sitio usa cookies esenciales y analiticas opcionales. Gestione sus preferencias en su navegador."
       },
       "disclaimer": {
         "title": "Aviso Legal",
-        "content": "The information on this website is provided for general informational purposes only. While we strive to keep the information accurate and up-to-date, we make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information. Any reliance you place on such information is strictly at your own risk."
+        "content": "La informacion en este sitio web se proporciona para fines informativos generales. Cualquier confianza que deposite en dicha informacion es bajo su propio riesgo."
       }
     },
     "last_updated": "Ultima actualizacion: marzo 2026"
   },
   "blog": {
     "title": "Ideas sobre Marketing IA y Automatizacion",
-    "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento."
-  },
-  "skills-content-creator": {
-    "meta": {
-      "title": "Content Creator Skill | Empleado de Marketing IA | FMai",
-      "description": "Posts de blog, contenido social y newsletters automatizados. Tu Empleado de Marketing IA crea contenido de marca en piloto automatico."
-    },
-    "hero": {
-      "badge": "Content Creator Skill",
-      "title": "Posts de Blog, Contenido Social, Newsletters — En Piloto Automatico",
-      "description": "Tu Empleado de Marketing IA escribe, programa y publica contenido en todos los canales."
-    },
-    "features": {
-      "heading": "Que Hace el Content Creator",
-      "items": {
-        "blog": {
-          "title": "Posts de Blog",
-          "description": "Articulos optimizados para SEO en la voz de marca de tu cliente"
-        },
-        "social": {
-          "title": "Contenido Social",
-          "description": "Posts nativos para LinkedIn, Instagram, X y mas"
-        },
-        "newsletters": {
-          "title": "Newsletters",
-          "description": "Contenido de email semanal o mensual, redactado y listo para enviar"
-        },
-        "repurposing": {
-          "title": "Reutilizacion de Contenido",
-          "description": "Una pieza de contenido convertida en 10+ formatos automaticamente"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "connect": {
-          "title": "Conectar",
-          "description": "Vincula las directrices de marca y calendario de contenido de tu cliente"
-        },
-        "generate": {
-          "title": "Generar",
-          "description": "La IA crea borradores basados en temas trending y tu estrategia"
-        },
-        "review": {
-          "title": "Revisar y Publicar",
-          "description": "Aprueba o auto-publica — tu controlas la calidad"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Escala la produccion de contenido para multiples clientes sin contratar escritores"
-        },
-        "ecommerce": {
-          "title": "Marcas E-commerce",
-          "description": "Descripciones de productos, campanas estacionales y contenido social a escala"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Escalar la Produccion de Contenido?",
-      "subtitle": "Anade la skill Content Creator a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-voice-agent": {
-    "meta": {
-      "title": "Voice Agent Skill | Empleado de Marketing IA | FMai",
-      "description": "Llamadas entrantes y salientes con IA. Tu Empleado de Marketing IA gestiona consultas telefonicas y califica leads — 24/7."
-    },
-    "hero": {
-      "badge": "Voice Agent Skill",
-      "title": "Llamadas Entrantes y Salientes con IA",
-      "description": "Tu Empleado de Marketing IA responde llamadas, califica leads y agenda citas."
-    },
-    "features": {
-      "heading": "Que Hace el Voice Agent",
-      "items": {
-        "inbound": {
-          "title": "Llamadas Entrantes",
-          "description": "Responde consultas de clientes y dirige al miembro correcto del equipo"
-        },
-        "outbound": {
-          "title": "Llamadas Salientes",
-          "description": "Seguimiento de leads, confirmacion de citas y campanas de alcance"
-        },
-        "qualification": {
-          "title": "Calificacion de Leads",
-          "description": "Hace preguntas de calificacion y puntua leads antes del traspaso"
-        },
-        "booking": {
-          "title": "Reserva de Citas",
-          "description": "Verifica disponibilidad y agenda reuniones directamente en calendarios"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "setup": {
-          "title": "Configurar",
-          "description": "Configura tu numero de telefono, guion de saludo y criterios de calificacion"
-        },
-        "deploy": {
-          "title": "Desplegar",
-          "description": "El agente de voz se activa y gestiona llamadas en tiempo real"
-        },
-        "optimize": {
-          "title": "Optimizar",
-          "description": "Revisa transcripciones de llamadas y ajusta las respuestas"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Ofrece agentes de telefono IA como servicio adicional a tus clientes"
-        },
-        "sales": {
-          "title": "Equipos de Ventas",
-          "description": "Pre-califica leads entrantes antes de que lleguen a tus representantes"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Automatizar Conversaciones Telefonicas?",
-      "subtitle": "Anade la skill Voice Agent a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-lead-qualifier": {
-    "meta": {
-      "title": "Lead Qualifier Skill | Empleado de Marketing IA | FMai",
-      "description": "Chatbot IA que califica leads 24/7. Tu Empleado de Marketing IA involucra visitantes y entrega leads listos para ventas."
-    },
-    "hero": {
-      "badge": "Lead Qualifier Skill",
-      "title": "Chatbot Que Califica Leads 24/7",
-      "description": "Tu Empleado de Marketing IA involucra a cada visitante del sitio web y entrega leads calificados a tu equipo."
-    },
-    "features": {
-      "heading": "Que Hace el Lead Qualifier",
-      "items": {
-        "engage": {
-          "title": "Engagement de Visitantes",
-          "description": "Saluda proactivamente a los visitantes e inicia conversaciones de calificacion"
-        },
-        "qualify": {
-          "title": "Calificacion Inteligente",
-          "description": "Pregunta sobre presupuesto, plazos y ajuste segun tus criterios ICP"
-        },
-        "handoff": {
-          "title": "Traspaso de Leads",
-          "description": "Dirige leads calificados a CRM, email o Slack en tiempo real"
-        },
-        "nurture": {
-          "title": "Nurturing de Leads",
-          "description": "Seguimiento de leads no calificados via secuencias de email automatizadas"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "configure": {
-          "title": "Configurar",
-          "description": "Define tu perfil de cliente ideal y criterios de calificacion"
-        },
-        "embed": {
-          "title": "Integrar",
-          "description": "Anade el widget de chatbot al sitio web de tu cliente en minutos"
-        },
-        "convert": {
-          "title": "Convertir",
-          "description": "Observa leads calificados fluir automaticamente a tu pipeline"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Entrega calificacion de leads always-on como servicio a tus clientes"
-        },
-        "saas": {
-          "title": "Empresas SaaS",
-          "description": "Califica registros de prueba gratuita y dirige leads enterprise a ventas"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Calificar Leads las 24 Horas?",
-      "subtitle": "Anade la skill Lead Qualifier a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-social-media": {
-    "meta": {
-      "title": "Social Media Skill | Empleado de Marketing IA | FMai",
-      "description": "Programacion y analitica multi-plataforma. Tu Empleado de Marketing IA gestiona redes sociales en LinkedIn, Instagram, X y mas."
-    },
-    "hero": {
-      "badge": "Social Media Skill",
-      "title": "Programacion y Analitica Multi-Plataforma",
-      "description": "Tu Empleado de Marketing IA crea, programa y analiza contenido de redes sociales en todas las plataformas."
-    },
-    "features": {
-      "heading": "Que Hace la Skill Social Media",
-      "items": {
-        "scheduling": {
-          "title": "Programacion Inteligente",
-          "description": "Auto-programa publicaciones en horarios optimos por plataforma"
-        },
-        "analytics": {
-          "title": "Analitica de Rendimiento",
-          "description": "Rastrea engagement, alcance y crecimiento en todos los canales"
-        },
-        "creation": {
-          "title": "Creacion de Contenido",
-          "description": "Genera publicaciones nativas con hashtags y visuales"
-        },
-        "monitoring": {
-          "title": "Monitoreo de Marca",
-          "description": "Rastrea menciones y responde comentarios automaticamente"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "connect": {
-          "title": "Conectar",
-          "description": "Vincula las cuentas sociales y directrices de marca de tu cliente"
-        },
-        "plan": {
-          "title": "Planificar",
-          "description": "La IA genera un calendario de contenido basado en tu estrategia"
-        },
-        "publish": {
-          "title": "Publicar y Analizar",
-          "description": "El contenido se publica automaticamente con informes semanales"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Gestiona redes sociales para docenas de clientes sin ampliar tu equipo"
-        },
-        "brands": {
-          "title": "Marcas en Crecimiento",
-          "description": "Mantiene presencia social consistente sin un gestor dedicado"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Escalar la Gestion de Redes Sociales?",
-      "subtitle": "Anade la skill Social Media a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-ad-creator": {
-    "meta": {
-      "title": "Ad Creator Skill | Empleado de Marketing IA | FMai",
-      "description": "Anuncios estaticos y de video generados por IA. Tu Empleado de Marketing IA crea creatividades de alta conversion."
-    },
-    "hero": {
-      "badge": "Ad Creator Skill",
-      "title": "Anuncios Estaticos y de Video Generados por IA",
-      "description": "Tu Empleado de Marketing IA disena creatividades, escribe copy y genera video ads."
-    },
-    "features": {
-      "heading": "Que Hace el Ad Creator",
-      "items": {
-        "static": {
-          "title": "Diseno de Anuncios Estaticos",
-          "description": "Display ads y creatividades sociales de marca en multiples tamanos"
-        },
-        "video": {
-          "title": "Video Ads",
-          "description": "Videos cortos con graficos en movimiento y subtitulos"
-        },
-        "copy": {
-          "title": "Copywriting de Anuncios",
-          "description": "Headlines, descripciones y CTAs optimizados por plataforma"
-        },
-        "variants": {
-          "title": "Variantes A/B",
-          "description": "Genera multiples variantes creativas para split testing"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "brief": {
-          "title": "Brief",
-          "description": "Proporciona objetivos de campana, audiencia y assets de marca"
-        },
-        "generate": {
-          "title": "Generar",
-          "description": "La IA crea creatividades en formatos y plataformas"
-        },
-        "launch": {
-          "title": "Lanzar",
-          "description": "Descarga assets o envia directamente a plataformas de anuncios"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Produce creatividades a escala para campanas de multiples clientes"
-        },
-        "performance": {
-          "title": "Equipos de Performance",
-          "description": "Genera variantes de anuncios frescos mas rapido que el diseno manual"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Escalar la Produccion de Creatividades?",
-      "subtitle": "Anade la skill Ad Creator a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-reporting": {
-    "meta": {
-      "title": "Reporting Skill | Empleado de Marketing IA | FMai",
-      "description": "Dashboards multi-plataforma e informes semanales. Tu Empleado de Marketing IA agrega datos y entrega insights accionables."
-    },
-    "hero": {
-      "badge": "Reporting Skill",
-      "title": "Dashboards Multi-Plataforma e Informes Semanales",
-      "description": "Tu Empleado de Marketing IA extrae datos de cada canal, construye dashboards y envia informes semanales."
-    },
-    "features": {
-      "heading": "Que Hace la Skill Reporting",
-      "items": {
-        "dashboards": {
-          "title": "Dashboards en Vivo",
-          "description": "Datos en tiempo real de Google Analytics, social, ads y CRM en una vista"
-        },
-        "weekly": {
-          "title": "Informes Semanales",
-          "description": "Informes automatizados para clientes con insights y recomendaciones"
-        },
-        "trends": {
-          "title": "Deteccion de Tendencias",
-          "description": "La IA detecta anomalias y oportunidades de crecimiento en tus datos"
-        },
-        "roi": {
-          "title": "Seguimiento de ROI",
-          "description": "Rastrea rendimiento de campanas y ROI de marketing en canales"
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "integrate": {
-          "title": "Integrar",
-          "description": "Conecta fuentes de datos — analytics, ads, CRM, plataformas sociales"
-        },
-        "analyze": {
-          "title": "Analizar",
-          "description": "La IA agrega datos y genera insights automaticamente"
-        },
-        "report": {
-          "title": "Reportar",
-          "description": "Recibe informes semanales por email o comparte dashboards en vivo"
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Casos de Uso",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Entrega informes profesionales sin horas de extraccion manual de datos"
-        },
-        "managers": {
-          "title": "Gerentes de Marketing",
-          "description": "Obten una fuente unica de verdad para todos los datos de rendimiento"
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Automatizar Reportes de Clientes?",
-      "subtitle": "Anade la skill Reporting a tu Empleado de Marketing IA.",
-      "button": "Ver Precios"
-    }
-  },
-  "founding-member": {
-    "meta": {
-      "title": "Programa Founding Member | Empleado de Marketing IA | FMai",
-      "description": "Unete como uno de 10 Founding Members. Bloquea EUR 997/mes para siempre — el precio mas bajo para tu Empleado de Marketing IA."
-    },
-    "hero": {
-      "badge": "Solo 10 Plazas Disponibles",
-      "title": "Conviertete en Founding Member",
-      "description": "Bloquea el precio mas bajo para siempre. Se una de las primeras 10 agencias en desplegar un Empleado de Marketing IA con FMai."
-    },
-    "pricing": {
-      "heading": "Precios Founding Member",
-      "price": "997",
-      "currency": "EUR",
-      "period": "/mes",
-      "locked": "Bloqueado de por vida",
-      "comparison": "El precio regular comienza en EUR 1.497/mes",
-      "includes": "Agente + 1 skill a eleccion"
-    },
-    "benefits": {
-      "heading": "Beneficios Founding Member",
-      "items": {
-        "price_lock": {
-          "title": "Garantia de Precio",
-          "description": "Tu tarifa de EUR 997/mes nunca aumenta, incluso cuando anadamos funciones"
-        },
-        "priority": {
-          "title": "Soporte Prioritario",
-          "description": "Acceso directo al equipo fundador — salta la cola"
-        },
-        "influence": {
-          "title": "Influencia en Producto",
-          "description": "Moldea la hoja de ruta — tus solicitudes obtienen prioridad"
-        },
-        "early_access": {
-          "title": "Acceso Anticipado",
-          "description": "Se el primero en probar nuevas skills antes del lanzamiento publico"
-        },
-        "community": {
-          "title": "Comunidad Founder",
-          "description": "Grupo exclusivo de propietarios de agencias visionarios compartiendo estrategias IA"
-        },
-        "onboarding": {
-          "title": "Onboarding Personalizado",
-          "description": "Configuramos tu primer cliente juntos — practico y personalizado"
-        }
-      }
-    },
-    "faq": {
-      "heading": "Preguntas Frecuentes",
-      "items": {
-        "q1": {
-          "question": "Que significa 'garantia de precio' exactamente?",
-          "answer": "Tu tarifa mensual de EUR 997 nunca aumentara mientras seas miembro."
-        },
-        "q2": {
-          "question": "Que incluye el plan founding member?",
-          "answer": "Obtienes el Empleado de Marketing IA completo con 1 skill a eleccion. Puedes anadir mas skills en cualquier momento."
-        },
-        "q3": {
-          "question": "Hay un periodo de compromiso?",
-          "answer": "Si, los founding members se comprometen a un periodo de 6 meses. Despues, continuas mes a mes a la misma tarifa."
-        },
-        "q4": {
-          "question": "Cuantas plazas hay disponibles?",
-          "answer": "Aceptamos exactamente 10 founding members. Una vez llenas, el programa cierra permanentemente."
-        },
-        "q5": {
-          "question": "Puedo anadir mas skills despues?",
-          "answer": "Absolutamente. Puedes anadir o eliminar skills en cualquier momento como add-ons sobre tu tarifa base."
-        }
-      }
-    },
-    "cta": {
-      "title": "Listo para Ser Founding Member?",
-      "subtitle": "Solo 10 plazas disponibles. Reserva una llamada para asegurar tu lugar.",
-      "button": "Reservar Llamada"
-    }
+    "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento para agencias."
   }
 }
