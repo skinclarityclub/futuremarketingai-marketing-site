@@ -49,7 +49,7 @@ Progress: [██████████] 100%
 
 **Recent Trend:**
 
-- Last 5 plans: 03-02 (6min), 05-03 (4min), 03-01 (18min), 02-01 (2min), 02-03 (2min)
+- Last 5 plans: 05-03 (4min), 03-01 (18min), 02-01 (2min), 02-03 (2min), 02-02 (2min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -104,6 +104,10 @@ Recent decisions affecting current work:
 - [02-03]: SkillToggle as separate client component with optimistic state and useTransition
 - [02-03]: Client detail page rewritten to focus on skill activation (removed old edit form, brand profile, blog links)
 - [02-03]: Dashboard removed all SKC widgets (pipeline, revenue, tokens, shopify, insights, account health)
+- [02-02]: Re-exported AGENT_TIERS/SKILL_ADDONS from stripe.ts for backward-compatible imports
+- [02-02]: BillingClient extracted as client component for useTransition-based checkout/portal redirects
+- [02-02]: Webhook idempotency check on checkout.session.completed prevents duplicate subscription writes
+- [02-02]: Dynamic import of AGENT_TIERS in webhook to match price ID back to tier name
 
 ### Pending Todos
 
@@ -117,5 +121,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 02-03-PLAN.md (dashboard overview, client workspaces, skill toggles, placeholder pages)
+Stopped at: Completed 02-02-PLAN.md (Stripe billing integration, checkout actions, webhook handler, billing page)
 Resume file: None

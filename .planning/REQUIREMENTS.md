@@ -32,7 +32,7 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 - [x] **DASH-03**: Agency data model implemented (fma_agencies table, agency → clients hierarchy)
 - [x] **DASH-04**: Client workspace management page (agency creates/manages client workspaces)
 - [x] **DASH-05**: Skill activation toggles per client workspace (enable/disable content, voice, ads, etc.)
-- [ ] **DASH-06**: Stripe billing integration (base agent subscription + skill add-on products)
+- [x] **DASH-06**: Stripe billing integration (base agent subscription + skill add-on products)
 - [ ] **DASH-07**: Agency onboarding wizard (signup → first client → first skill activation)
 - [x] **DASH-08**: Route redirects for renamed pages (old routes → new routes)
 
@@ -124,7 +124,7 @@ Deferred to after founding member validation.
 | DASH-03     | Phase 2: Dashboard Reframe | Complete |
 | DASH-04     | Phase 2: Dashboard Reframe | Complete |
 | DASH-05     | Phase 2: Dashboard Reframe | Complete |
-| DASH-06     | Phase 2: Dashboard Reframe | Pending  |
+| DASH-06     | Phase 2: Dashboard Reframe | Complete |
 | DASH-07     | Phase 2: Dashboard Reframe | Pending  |
 | DASH-08     | Phase 2: Dashboard Reframe | Complete |
 | N8N-01      | Phase 3: n8n Multi-Tenant  | Pending  |
