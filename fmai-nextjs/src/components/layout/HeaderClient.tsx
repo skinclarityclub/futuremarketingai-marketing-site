@@ -15,62 +15,80 @@ import {
   Megaphone,
   BarChart3,
   Mail,
+  MessageSquare,
+  ArrowRight,
+  Sparkles,
 } from 'lucide-react'
 
 interface HeaderClientProps {
   locale: string
 }
 
-const SKILL_ITEMS = [
+const SKILL_CATEGORIES = [
   {
-    icon: PenTool,
-    title: 'Content Creator',
-    description: 'Clyde writes blog posts, social content, and newsletters for your clients',
-    href: '/skills/content-creator' as const,
+    label: 'Create & Publish',
+    description: 'Content production at scale',
+    items: [
+      {
+        icon: PenTool,
+        title: 'Content Creator',
+        description: 'Blog posts, social content & newsletters',
+        href: '/skills/content-creator' as const,
+      },
+      {
+        icon: Share2,
+        title: 'Social Media',
+        description: 'Multi-platform scheduling & analytics',
+        href: '/skills/social-media' as const,
+      },
+      {
+        icon: Megaphone,
+        title: 'Ad Creator',
+        description: 'Static & video ad generation',
+        href: '/skills/ad-creator' as const,
+      },
+      {
+        icon: Mail,
+        title: 'Email',
+        description: 'Campaigns, follow-ups & inbox AI',
+        href: '/skills/email' as const,
+      },
+    ],
   },
   {
-    icon: Mic,
-    title: 'Voice Agent',
-    description: 'Clyde calls leads, books appointments, and handles phone inquiries',
-    href: '/skills/voice-agent' as const,
-  },
-  {
-    icon: Bot,
-    title: 'Lead Qualifier',
-    description: 'Clyde scores and qualifies every lead using BANT methodology',
-    href: '/skills/lead-qualifier' as const,
-  },
-  {
-    icon: Bot,
-    title: 'Chatbot',
-    description: 'Clyde deploys and manages AI chatbots trained on client FAQs',
-    href: '/skills/chatbot' as const,
-  },
-  {
-    icon: Share2,
-    title: 'Social Media',
-    description: 'Clyde creates, schedules, and posts across all platforms',
-    href: '/skills/social-media' as const,
-  },
-  {
-    icon: Megaphone,
-    title: 'Ad Creator',
-    description: 'Clyde generates ad copy and creative variations for campaigns',
-    href: '/skills/ad-creator' as const,
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    description: 'Clyde writes and sends email sequences, follow-ups, and newsletters',
-    href: '/skills/email' as const,
-  },
-  {
-    icon: BarChart3,
-    title: 'Reporting',
-    description: 'Clyde generates weekly performance reports for all clients',
-    href: '/skills/reporting' as const,
+    label: 'Engage & Convert',
+    description: 'Lead capture and client interaction',
+    items: [
+      {
+        icon: Mic,
+        title: 'Voice Agent',
+        description: 'AI-powered inbound & outbound calls',
+        href: '/skills/voice-agent' as const,
+      },
+      {
+        icon: MessageSquare,
+        title: 'Chatbot',
+        description: 'Website chatbots trained on client data',
+        href: '/skills/chatbot' as const,
+      },
+      {
+        icon: Bot,
+        title: 'Lead Qualifier',
+        description: 'BANT scoring & smart routing',
+        href: '/skills/lead-qualifier' as const,
+      },
+      {
+        icon: BarChart3,
+        title: 'Reporting',
+        description: 'Dashboards & weekly performance reports',
+        href: '/skills/reporting' as const,
+      },
+    ],
   },
 ]
+
+// Flat list for any usage that needs all items
+const ALL_SKILL_ITEMS = SKILL_CATEGORIES.flatMap((cat) => [...cat.items])
 
 const NAV_ITEMS = [
   { label: 'Skills', href: '/#skills' as const, hasDropdown: true },
@@ -174,34 +192,73 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         initial={{ opacity: 0, y: -8, scale: 0.96 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.96 }}
-                        transition={{ duration: 0.15, ease: 'easeOut' }}
-                        className="absolute top-full left-0 mt-1 w-80 bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 p-4 z-50"
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
+                        style={{ width: '580px' }}
                         role="menu"
                       >
-                        <div className="space-y-1">
-                          {SKILL_ITEMS.map((skill) => (
-                            <Link
-                              key={skill.href}
-                              href={skill.href}
-                              className="flex items-start gap-3 p-3 rounded-lg transition-all group/item hover:bg-white/5 border border-transparent hover:border-white/10"
-                              role="menuitem"
-                            >
-                              <div className="p-2 rounded-md bg-surface-elevated group-hover/item:bg-accent-system/20 transition-all">
-                                <skill.icon
-                                  className="w-4 h-4 text-accent-system"
-                                  aria-hidden="true"
-                                />
+                        {/* Two-column category layout */}
+                        <div className="grid grid-cols-2 gap-0 divide-x divide-border-primary">
+                          {SKILL_CATEGORIES.map((category) => (
+                            <div key={category.label} className="p-4">
+                              <div className="px-3 mb-3">
+                                <h3 className="text-[11px] font-semibold uppercase tracking-widest text-accent-system">
+                                  {category.label}
+                                </h3>
+                                <p className="text-[10px] text-text-muted mt-0.5">
+                                  {category.description}
+                                </p>
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="font-semibold text-sm text-text-primary group-hover/item:text-accent-system transition-colors">
-                                  {skill.title}
-                                </div>
-                                <div className="text-xs text-text-muted group-hover/item:text-text-secondary transition-colors leading-relaxed">
-                                  {skill.description}
-                                </div>
+                              <div className="space-y-0.5">
+                                {category.items.map((skill) => (
+                                  <Link
+                                    key={skill.href}
+                                    href={skill.href}
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group/item hover:bg-white/5 cursor-pointer"
+                                    role="menuitem"
+                                  >
+                                    <div className="p-1.5 rounded-md bg-white/5 group-hover/item:bg-accent-system/15 transition-all duration-200">
+                                      <skill.icon
+                                        className="w-4 h-4 text-text-muted group-hover/item:text-accent-system transition-colors duration-200"
+                                        aria-hidden="true"
+                                      />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
+                                        {skill.title}
+                                      </div>
+                                      <div className="text-[11px] text-text-muted group-hover/item:text-text-secondary transition-colors duration-200 leading-snug">
+                                        {skill.description}
+                                      </div>
+                                    </div>
+                                  </Link>
+                                ))}
                               </div>
-                            </Link>
+                            </div>
                           ))}
+                        </div>
+
+                        {/* Featured CTA banner */}
+                        <div className="border-t border-border-primary bg-white/[0.02]">
+                          <Link
+                            href="/skills/chatbot"
+                            className="flex items-center justify-between px-6 py-3.5 group/cta cursor-pointer hover:bg-white/5 transition-all duration-200"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="p-1.5 rounded-md bg-gradient-to-br from-[#F5A623]/20 to-[#0ABAB5]/20">
+                                <Sparkles className="w-4 h-4 text-[#F5A623]" aria-hidden="true" />
+                              </div>
+                              <div>
+                                <span className="text-sm font-semibold text-text-primary">
+                                  Meet Clyde
+                                </span>
+                                <span className="text-[11px] text-text-muted ml-2">
+                                  Try your AI employee live
+                                </span>
+                              </div>
+                            </div>
+                            <ArrowRight className="w-4 h-4 text-text-muted group-hover/cta:text-accent-system group-hover/cta:translate-x-0.5 transition-all duration-200" />
+                          </Link>
                         </div>
                       </motion.div>
                     )}
@@ -289,20 +346,31 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="pl-4 space-y-2 overflow-hidden"
+                              className="pl-2 space-y-4 overflow-hidden pt-2"
                             >
-                              {SKILL_ITEMS.map((skill) => (
-                                <Link
-                                  key={skill.href}
-                                  href={skill.href}
-                                  className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 text-text-secondary hover:text-text-primary border border-white/10 hover:border-white/20 transition-all"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  <div className="p-2 rounded-md bg-surface-elevated">
-                                    <skill.icon className="w-4 h-4 text-accent-system" />
+                              {SKILL_CATEGORIES.map((category) => (
+                                <div key={category.label}>
+                                  <div className="px-3 mb-2">
+                                    <span className="text-[10px] font-semibold uppercase tracking-widest text-accent-system">
+                                      {category.label}
+                                    </span>
                                   </div>
-                                  <div className="font-medium text-sm">{skill.title}</div>
-                                </Link>
+                                  <div className="space-y-1">
+                                    {category.items.map((skill) => (
+                                      <Link
+                                        key={skill.href}
+                                        href={skill.href}
+                                        className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 text-text-secondary hover:text-text-primary border border-white/5 hover:border-white/15 transition-all cursor-pointer"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        <div className="p-1.5 rounded-md bg-white/5">
+                                          <skill.icon className="w-4 h-4 text-accent-system" />
+                                        </div>
+                                        <div className="font-medium text-sm">{skill.title}</div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
                               ))}
                             </motion.div>
                           )}
