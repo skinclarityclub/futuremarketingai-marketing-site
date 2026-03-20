@@ -59,13 +59,14 @@ Plans:
 3. Agency owner can create client workspaces and toggle skills on/off per workspace from the dashboard
 4. Stripe billing is connected: agency subscribes to a base agent tier and can add/remove skill add-ons that update their invoice
 5. New agency owner completes onboarding wizard (signup, first client creation, first skill activation) in a guided flow
-   **Plans**: TBD
+   **Plans**: 4 plans
 
 Plans:
 
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md — Agency data model migration + skills config + sidebar relabel + route redirects (Wave 1)
+- [ ] 02-02-PLAN.md — Stripe billing integration: tier config, checkout, webhook, billing page (Wave 2)
+- [ ] 02-03-PLAN.md — Dashboard overview + client workspace management + skill toggles (Wave 2)
+- [ ] 02-04-PLAN.md — Agency onboarding wizard + visual verification checkpoint (Wave 3)
 
 ### Phase 3: n8n Multi-Tenant
 
@@ -139,7 +140,7 @@ Phases execute in parallel waves:
 | Phase                | Plans Complete | Status      | Completed  |
 | -------------------- | -------------- | ----------- | ---------- |
 | 1. Website Rebrand   | 5/5            | Complete    | 2026-03-20 |
-| 2. Dashboard Reframe | 0/3            | Not started | -          |
+| 2. Dashboard Reframe | 0/4            | Not started | -          |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
 | 5. Go-to-Market      | 2/3            | In progress | -          |
