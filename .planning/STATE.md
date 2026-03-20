@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 7 of 7 (Website Copy Overhaul) -- IN PROGRESS
-Plan: 2 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: Executing
-Last activity: 2026-03-20 -- Completed 07-02-PLAN.md (Homepage and header Clyde messaging rewrite)
+Last activity: 2026-03-20 -- Completed 07-03-PLAN.md (Skill pages Clyde rewrite + task-demo sections)
 
-Progress: [██████████] 100% (phases 1-6) | Phase 7: [=====-----] 2/4
+Progress: [██████████] 100% (phases 1-6) | Phase 7: [========--] 3/4
 
 ## Performance Metrics
 
@@ -50,13 +50,14 @@ Progress: [██████████] 100% (phases 1-6) | Phase 7: [=====--
 
 **Recent Trend:**
 
-- Last 5 plans: 06-01 (4min), 06-04 (4min), 06-03 (6min), 07-01 (11min), 07-02 (4min)
+- Last 5 plans: 06-04 (4min), 06-03 (6min), 07-01 (11min), 07-02 (4min), 07-03 (16min)
 - Trend: Stable
 
 _Updated after each plan completion_
 | Phase 06 P02 | 7min | 2 tasks | 7 files |
 | Phase 07 P01 | 11min | 2 tasks | 9 files |
 | Phase 07 P02 | 4min | 2 tasks | 3 files |
+| Phase 07 P03 | 16min | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -137,6 +138,10 @@ Recent decisions affecting current work:
 - [07-02]: FAQ rewritten with 5 Clyde-specific questions (what is Clyde, brand learning, multi-client, mistakes, vs ChatGPT)
 - [07-02]: Header CTA changed from "See Our Work" to "Meet Clyde" linking to /skills/chatbot
 - [07-02]: Stats updated to Clyde-relevant: 24/7 availability, 6 skills, 160+ content/mo, <2min response
+- [07-03]: Per-skill pricing tiers replaced with simplified CTA to /pricing (avoids per-skill vs agent-tier pricing conflict)
+- [07-03]: Task-demo section uses GlassCard with accent-system/green color coding for You/Clyde bubbles
+- [07-03]: "Meet Clyde" primary CTA routes to /skills/chatbot (DemoPlayground); "Book a Strategy Call" secondary to /contact
+- [07-03]: PricingTiers component import removed from 6 pages that no longer render tier cards
 
 ### Roadmap Evolution
 
@@ -154,5 +159,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 07-02-PLAN.md (Homepage and header Clyde messaging rewrite)
+Stopped at: Completed 07-03-PLAN.md (Skill pages Clyde rewrite + task-demo sections)
 Resume file: None
