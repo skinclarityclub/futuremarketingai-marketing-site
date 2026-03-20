@@ -7,8 +7,8 @@ last_updated: '2026-03-20T18:42:04.445Z'
 progress:
   total_phases: 2
   completed_phases: 2
-  total_plans: 7
-  completed_plans: 7
+  total_plans: 14
+  completed_plans: 8
 ---
 
 # Project State
@@ -22,18 +22,18 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 1 of 5 (Website Rebrand) -- COMPLETE
-Plan: 5 of 5 in current phase (all done)
-Status: Phase Complete
-Last activity: 2026-03-20 -- Completed 01-05-PLAN.md (chatbot persona engines rewritten for agency use cases)
+Phase: 5 of 5 (Go-to-Market) -- IN PROGRESS
+Plan: 1 of 3 in current phase (05-01 done)
+Status: Executing
+Last activity: 2026-03-20 -- Completed 05-01-PLAN.md (LinkedIn profile assets, demo video script, content calendar)
 
-Progress: [███████░░░] 50%
+Progress: [█████░░░░░] 57%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: ~13 min
 - Total execution time: ~1.5 hours
 
@@ -43,6 +43,7 @@ Progress: [███████░░░] 50%
 | ------------------ | ----- | ------ | -------- |
 | 1. Website Rebrand | 5/5   | ~56min | ~11min   |
 | 4. Compliance      | 2/2   | ~18min | ~9min    |
+| 5. Go-to-Market    | 1/3   | ~3min  | ~3min    |
 
 **Recent Trend:**
 
@@ -76,6 +77,9 @@ Recent decisions affecting current work:
 - [04-02]: DPIA identifies 7 risks across all 6 AI skills with residual risk assessment
 - [04-02]: Legal page uses SECTION_SUBSECTIONS map pattern for subsection rendering
 - [04-02]: Terms of service: 7 subsections, Privacy policy: 9 subsections
+- [05-01]: Dutch headline leads with problem-first positioning for LinkedIn
+- [05-01]: Demo video uses Loom recording -- authenticity over production polish
+- [05-01]: Content calendar splits pre-outreach authority building (week 1) and launch push (week 2)
 - [01-05]: Persona IDs kept unchanged (ecommerce, leadgen, support) for DemoPlayground compatibility
 - [01-05]: Content Creator temp 0.8 (creative), ROI Calculator temp 0.5 (precise), both maxTokens 600
 - [01-04]: All 7 namespaces use identical key structures across EN/NL/ES (29 keys per skill, 39 keys for founding-member)
@@ -93,5 +97,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 01-04-PLAN.md (locale namespaces + how-it-works fix)
+Stopped at: Completed 05-01-PLAN.md (LinkedIn assets + demo video script + content calendar)
 Resume file: None

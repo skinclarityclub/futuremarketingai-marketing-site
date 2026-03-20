@@ -58,8 +58,8 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 
 ### Go-to-Market
 
-- [ ] **GTM-01**: LinkedIn profile optimized for "AI Marketing Employee for agencies" positioning
-- [ ] **GTM-02**: Demo video created (under 5 min, showing agent skills in action)
+- [x] **GTM-01**: LinkedIn profile optimized for "AI Marketing Employee for agencies" positioning
+- [x] **GTM-02**: Demo video created (under 5 min, showing agent skills in action)
 - [ ] **GTM-03**: 50 target agencies identified (30 NL, 20 UK) matching ICP
 - [ ] **GTM-04**: Founding member outreach sequence (LinkedIn engagement → DM → call → close)
 - [ ] **GTM-05**: 3-5 founding members signed (EUR 997/mo, 6-month commitment)
@@ -141,8 +141,8 @@ Deferred to after founding member validation.
 | COMP-04     | Phase 4: Compliance        | Complete |
 | COMP-05     | Phase 4: Compliance        | Complete |
 | COMP-06     | Phase 4: Compliance        | Complete |
-| GTM-01      | Phase 5: Go-to-Market      | Pending  |
-| GTM-02      | Phase 5: Go-to-Market      | Pending  |
+| GTM-01      | Phase 5: Go-to-Market      | Complete |
+| GTM-02      | Phase 5: Go-to-Market      | Complete |
 | GTM-03      | Phase 5: Go-to-Market      | Pending  |
 | GTM-04      | Phase 5: Go-to-Market      | Pending  |
 | GTM-05      | Phase 5: Go-to-Market      | Pending  |
