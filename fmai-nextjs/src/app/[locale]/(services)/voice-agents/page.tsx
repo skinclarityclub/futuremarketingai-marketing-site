@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -12,7 +13,21 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { TrustMetrics } from '@/components/common/TrustMetrics'
+import { PricingTiers } from '@/components/common/PricingTiers'
 import { Link } from '@/i18n/navigation'
+import { Handshake } from 'lucide-react'
+
+const VoiceDemoSection = dynamic(
+  () =>
+    import('@/components/voice/VoiceDemoSection').then((m) => ({ default: m.VoiceDemoSection })),
+  { ssr: false }
+)
+
+const VoiceDemoFAB = dynamic(
+  () => import('@/components/voice/VoiceDemoFAB').then((m) => ({ default: m.VoiceDemoFAB })),
+  { ssr: false }
+)
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -35,6 +50,35 @@ const USE_CASE_KEYS = [
 ] as const
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
+
+const VOICE_TRUST_METRICS = [
+  { value: '99.9%', label: 'Uptime', description: 'Enterprise-grade availability' },
+  { value: '10,000+', label: 'Calls Completed', description: 'Across all voice agents' },
+  { value: '95%+', label: 'Accuracy', description: 'Intent recognition rate' },
+]
+
+const VOICE_PRICING_TIERS = [
+  {
+    name: 'Starter',
+    price: '\u20AC997',
+    period: '/mo',
+    features: ['200 minutes/mo', 'Email support', 'Setup in 1-2 weeks'],
+  },
+  {
+    name: 'Growth',
+    price: '\u20AC1,497',
+    period: '/mo',
+    features: ['500 minutes/mo', 'Analytics dashboard', 'Setup in 2-3 weeks'],
+    highlighted: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'Scale',
+    price: '\u20AC1,997',
+    period: '/mo',
+    features: ['1,000 minutes/mo', 'Priority support', 'Monthly strategy call'],
+  },
+]
 
 export default async function VoiceAgentsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -72,7 +116,7 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         }))}
       />
 
-      {/* Hero */}
+      {/* 1. Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-system/10 border border-accent-system/20 rounded-full mb-6">
@@ -98,12 +142,12 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* Quick Answer Block */}
+      {/* 2. Quick Answer Block */}
       <div className="max-w-5xl mx-auto px-6 lg:px-12 pb-8">
         <QuickAnswerBlock definition={t('quick_answer')} />
       </div>
 
-      {/* What Can AI Voice Agents Do? */}
+      {/* 3. Use Cases */}
       <section aria-labelledby="use-cases" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
           <SectionHeading id="use-cases">{t('sections.use_cases_heading')}</SectionHeading>
@@ -122,20 +166,71 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* How Do Voice Agents Integrate With Your Stack? */}
+      {/* 4. Voice Demo (dynamic, client-only) */}
+      <section aria-labelledby="voice-demo" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="voice-demo">Try Our Voice Agent Live</SectionHeading>
+          <div className="mt-10">
+            <VoiceDemoSection />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Trust Metrics */}
+      <section aria-labelledby="trust-metrics" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="trust-metrics" className="text-center mb-10">
+            Trusted Performance
+          </SectionHeading>
+          <TrustMetrics metrics={VOICE_TRUST_METRICS} />
+        </div>
+      </section>
+
+      {/* 6. Partnership (enhanced with GlassCard) */}
       <section aria-labelledby="partnership" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <SectionHeading id="partnership">{t('sections.partnership_heading')}</SectionHeading>
           <ScrollReveal>
-            <p className="text-lg text-text-secondary leading-relaxed mt-6">
-              {t('partnership.description')}
-            </p>
+            <GlassCard className="mt-8 border-l-4 border-l-accent-system">
+              <div className="flex gap-6 items-start">
+                <Handshake className="w-10 h-10 text-accent-system flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-lg font-semibold font-display text-text-primary mb-2">
+                    {t('sections.partnership_heading')}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {t('partnership.description')}
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Frequently Asked Questions */}
-      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+      {/* 7. Pricing Tiers */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="pricing" className="text-center mb-4">
+            Voice Agent Packages
+          </SectionHeading>
+          <p className="text-lg text-text-secondary text-center mb-10">
+            Choose the plan that fits your call volume
+          </p>
+          <PricingTiers tiers={VOICE_PRICING_TIERS} ctaHref="/contact" ctaLabel="Get Started" />
+          <div className="text-center mt-8">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-accent-system hover:underline font-medium text-sm"
+            >
+              View all packages
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ */}
+      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
           <SectionHeading id="faq" className="text-center mb-10">
             {t('sections.faq_heading')}
@@ -155,7 +250,7 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* Related Services */}
+      {/* 9. Related Services */}
       <section aria-labelledby="related-services" className="py-16 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h2
@@ -198,7 +293,7 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 10. CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
@@ -210,6 +305,9 @@ export default async function VoiceAgentsPage({ params }: { params: Promise<{ lo
           </div>
         </ScrollReveal>
       </section>
+
+      {/* Floating FAB -- appears when voice demo scrolls out of viewport */}
+      <VoiceDemoFAB />
     </PageShell>
   )
 }
