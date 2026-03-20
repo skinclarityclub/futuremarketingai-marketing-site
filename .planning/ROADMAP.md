@@ -37,13 +37,13 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 3. Pricing page displays 4 agent tiers with skill add-ons and a founding member CTA links to dedicated landing page with 10-spot scarcity
 4. All supporting pages (About, How-it-works, FAQ) reflect AaaS positioning with agency-relevant trust badges, stats, and social proof
 5. SEO metadata (titles, descriptions, JSON-LD, sitemap) targets "AI marketing employee agencies" keywords in all 3 languages
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
+- [ ] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
+- [ ] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
 
 ### Phase 2: Dashboard Reframe
 
@@ -132,7 +132,7 @@ Phases execute in parallel waves:
 
 | Phase                | Plans Complete | Status      | Completed |
 | -------------------- | -------------- | ----------- | --------- |
-| 1. Website Rebrand   | 0/3            | Not started | -         |
+| 1. Website Rebrand   | 0/3            | Planned     | -         |
 | 2. Dashboard Reframe | 0/3            | Not started | -         |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -         |
 | 4. Compliance        | 0/1            | Not started | -         |
