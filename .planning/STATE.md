@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: '2026-03-20T20:39:23.000Z'
+last_updated: '2026-03-20T20:49:00.000Z'
 progress:
   total_phases: 6
   completed_phases: 3
   total_plans: 21
-  completed_plans: 17
+  completed_plans: 18
 ---
 
 # Project State
@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 6 IN PROGRESS (plans 1+4 done, 2+3 remaining). Next: Phase 6 plan 2, Phase 2 plan 4, Phase 5 plan 3
+**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 6 IN PROGRESS (plans 1+3+4 done, 2 remaining). Next: Phase 6 plan 2, Phase 2 plan 4, Phase 5 plan 3
 
 ## Current Position
 
 Phase: 6 of 6 (Vite Feature Parity) -- IN PROGRESS
-Plan: 2 of 4 in current phase (06-01 + 06-04 done, 06-02/06-03 remaining)
+Plan: 3 of 4 in current phase (06-01 + 06-03 + 06-04 done, 06-02 remaining)
 Status: Executing
-Last activity: 2026-03-20 -- Completed 06-04-PLAN.md (Marketing machine + automations feature parity)
+Last activity: 2026-03-20 -- Completed 06-03-PLAN.md (Voice demo components + voice agents page enhancements)
 
 Progress: [██████████] 100%
 
@@ -33,7 +33,7 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 17
+- Total plans completed: 18
 - Average duration: ~9 min
 - Total execution time: ~2.5 hours
 
@@ -46,11 +46,11 @@ Progress: [██████████] 100%
 | 4. Compliance       | 2/2   | ~18min | ~9min    |
 | 2. Dashboard Refr.  | 3/4   | ~6min  | ~2min    |
 | 5. Go-to-Market     | 2/3   | ~8min  | ~4min    |
-| 6. Vite Feat. Par.  | 2/4   | ~8min  | ~4min    |
+| 6. Vite Feat. Par.  | 3/4   | ~14min | ~5min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 02-03 (2min), 02-02 (2min), 03-03 (11min), 06-01 (4min), 06-04 (4min)
+- Last 5 plans: 02-02 (2min), 03-03 (11min), 06-01 (4min), 06-04 (4min), 06-03 (6min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -121,6 +121,9 @@ Recent decisions affecting current work:
 - [06-04]: FeatureShowcase is a server component with props-based API (no hardcoded data)
 - [06-04]: Pricing data hardcoded in page files matching Vite approach
 - [06-04]: Automation icons use direct Lucide component mapping via Record<string, LucideIcon>
+- [06-03]: useElevenLabsCall uses dynamic import with webpackIgnore to avoid build-time SDK dependency
+- [06-03]: VoiceDemoFAB uses IntersectionObserver on section ID instead of passed ref
+- [06-03]: Voice pricing uses EUR tiers matching AaaS pricing structure (997/1497/1997)
 
 ### Roadmap Evolution
 
@@ -138,5 +141,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 06-04-PLAN.md (Marketing machine + automations feature parity)
+Stopped at: Completed 06-03-PLAN.md (Voice demo components + voice agents page enhancements)
 Resume file: None
