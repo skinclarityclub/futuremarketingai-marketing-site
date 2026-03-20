@@ -1,97 +1,123 @@
-# FMai Website — Next.js Migration
+# FMai AaaS Pivot — Agent as a Service for Marketing Agencies
 
 ## What This Is
 
-A complete migration of the FMai demo/showcase website from Vite/React SPA to Next.js with App Router. The migration preserves all existing functionality (service pages, chatbot, demo playground, guided demo mode) while adding full SEO/GEO/LLMEO capabilities, a blog/content hub, restructured pages, and performance optimizations. The goal is discoverability — ranking on Google for AI agency/marketing automation keywords and getting cited by AI assistants (ChatGPT, Perplexity, Gemini) when users ask about AI marketing services.
+FutureMarketingAI (FMai) is being rebranded from an "AI automation agency for businesses" to an "Agent as a Service (AaaS) platform for marketing agencies." Instead of selling individual services (automations, chatbots, voice agents), we sell ONE persistent AI Marketing Employee per agency with pluggable skills — targeting performance/growth agency owners (3-12 employees) in NL and UK first.
 
 ## Core Value
 
-Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content — making FMai discoverable wherever potential B2B clients are searching.
+Marketing agencies can scale from 10 to 50 clients without hiring by deploying an AI Marketing Employee that runs 24/7 with pluggable skills (content, voice, ads, social, reporting, lead qualification).
 
 ## Requirements
 
 ### Validated
 
-<!-- From existing Vite site — these work and must be preserved -->
+<!-- Existing systems that already work and we're keeping -->
 
-- ✓ Living System design with DM Sans typography, teal/amber palette — existing
-- ✓ Homepage with 4 service cards, orbit visual, gradient mesh — existing
-- ✓ 4 service pages: Automations, Chatbots, Voice Agents, Marketing Machine — existing
-- ✓ Supporting pages: About, Pricing, HowItWorks, Contact, Legal — existing
-- ✓ Flagship concierge chatbot with 17 tools, side panel, context-aware behavior — existing
-- ✓ 3-persona demo playground on Chatbots page — existing
-- ✓ Guided demo mode with 3 scenarios, state machine orchestrator — existing
-- ✓ EN/NL/ES internationalization — existing
-- ✓ Framer Motion animations, ScrollReveal, card-tilt micro-interactions — existing
-- ✓ Calendly CTA integration with modal pattern — existing
-- ✓ Cookie consent — existing
+- ✓ Content generation pipeline (R&P: Research → Strategy → Content → Validate) — n8n production
+- ✓ Social media posting (CarouselBuilder, StoryBuilder, Blotato scheduling) — n8n production
+- ✓ Ad creative pipeline (Shopify → fal.ai/Kling → Orshot/Creatomate) — n8n production
+- ✓ Blog pipeline with PubMed citations and AI validation — n8n production
+- ✓ Voice agent infrastructure (Vapi webhook server, assistant CRUD, call logging) — n8n active
+- ✓ Dashboard auth (Supabase email + Google/GitHub OAuth) — fma-app working
+- ✓ Dashboard UI shell (20+ pages, 93 API routes, ad builder, analytics) — fma-app production MVP
+- ✓ Website with i18n (EN/NL/ES), 11 pages, 59 components, SEO — Next.js 85-90% complete
+- ✓ Multi-client data model (fma_clients table with account_keys[]) — Supabase partial
 
 ### Active
 
-<!-- New capabilities for this migration -->
+<!-- What we're building in this milestone -->
 
-- [ ] Next.js App Router with SSR/SSG for all pages
-- [ ] SEO infrastructure: meta tags, Open Graph, JSON-LD structured data per page
-- [ ] Sitemap.xml and robots.txt generation
-- [ ] Blog/content hub page structure (content source TBD)
-- [ ] Next.js i18n routing for EN/NL/ES with locale-prefixed URLs
-- [ ] Image optimization via next/image
-- [ ] Core Web Vitals optimization (LCP, FID, CLS targets)
-- [ ] Semantic HTML structure across all pages
-- [ ] Chatbot SSR enhancement — server-rendered initial load with client hydration
-- [ ] Content/copy rework for SEO — keyword-optimized headlines and body text
-- [ ] Page structure improvements — navigation, landing page hierarchy
-- [ ] LLMEO optimization — AI-crawlable content, FAQ schemas, clear entity definitions
-- [ ] API routes migration (chatbot endpoint) to Next.js Route Handlers
+- [ ] Website rebrand: all copy targeting "marketing agencies" instead of "businesses"
+- [ ] Website new pricing page with Agent tiers (Founding Member €997, Starter €1,497, Growth €1,997, Agency €3,497)
+- [ ] Website founding member landing page
+- [ ] Website skill pages replacing service pages (/skills/content-creator, /skills/voice-agent, etc.)
+- [ ] Dashboard reframe: UI labels from SaaS to "AI Employee" language
+- [ ] Dashboard agency onboarding wizard
+- [ ] Dashboard skill activation toggles per client workspace
+- [ ] Dashboard Stripe billing (base agent + skill add-ons)
+- [ ] n8n multi-tenant parameterization (client brand/accounts injected into existing workflows)
+- [ ] n8n agency client setup workflow (new client → auto-configure all skill workflows)
+- [ ] n8n usage metering per client (execution counts, voice minutes, content items)
+- [ ] n8n activate analytics collectors (Daily Intel, Weekly Performance)
+- [ ] Compliance: AI-disclosure in chatbot/voice, DPA template, DPIA document
+- [ ] Go-to-market: LinkedIn profile, demo video, founding member outreach
 
 ### Out of Scope
 
-- Mobile app — web only
-- CMS integration — blog structure only, content source decided later
-- E-commerce/payments — this is a demo/showcase site
-- User accounts/authentication — no login system needed
-- Analytics platform migration — handled separately
-- Redesign — keeping Living System design, not creating new visual language
+- Building custom platform on OpenClaw — enterprise readiness 1.2/5, alpha stage, used as narrative only
+- LATAM market launch — defer to Year 2, pricing mismatch
+- Mobile app — web-first
+- Self-serve onboarding — manual founding member onboarding first
+- Full marketplace for skills — simple toggle UI first
+- Healthcare/dental vertical-specific compliance (HIPAA) — v2 after product-market fit
+- Real-time multi-agent orchestration (CrewAI) — n8n workflows sufficient for v1
 
 ## Context
 
-The current Vite/React site is fully built (v1.0 milestone complete, 14 phases, 48 plans). It's a client-side rendered SPA which means zero SEO value — search engines and AI crawlers see an empty shell. The migration to Next.js unlocks server-side rendering, static generation, and proper metadata for every page.
+### What Exists (Brownfield)
 
-The existing codebase has:
+**Three codebases being rebranded:**
 
-- ~50+ React components across pages, chatbot, and shared UI
-- Zustand stores for chatbot state, demo state
-- i18next with 3 locale files per namespace
-- AI SDK v6 integration for chatbot streaming
-- Vercel API endpoint for chatbot backend
-- Tailwind CSS with custom design tokens
-- Framer Motion throughout
+1. **Website** (`fmai-nextjs/`): Next.js 16, Tailwind 4, next-intl (EN/NL/ES), Living System design (teal #00D4AA / amber #F5A623), 11 pages, 59 components, interactive chatbot demo with Claude API, comprehensive SEO (JSON-LD, sitemap, hreflang). Currently targets "SaaS and e-commerce companies" — needs agency-focused copy.
 
-This will be a **new repository** — clean Next.js project with components migrated from the Vite codebase. The old repo stays intact as reference.
+2. **Dashboard** (`C:\Users\daley\Desktop\fma-app`): Next.js 16, Supabase auth + PostgreSQL, 93 API routes, Recharts, Framer Motion. Features: ad builder (Kling/HeyGen/Remotion/Creatify), Meta Ads dashboard, Shopify integration, AI Copilot (anomaly detection, chat), voice agents section, content pipeline with n8n sync, blog management with SEO scoring. Auth works; most features use real data from n8n/Supabase.
 
-Source repo: `C:\Users\daley\Desktop\Futuremarketingai` (this repo — Vite/React)
-Target: New repo for Next.js build
+3. **n8n Automations** (`C:\Users\daley\Desktop\FMai`): 115 workflows on n8n Cloud (skinclarityclub.app.n8n.cloud). WAT architecture (4-layer: Intelligence → Production → Distribution → Analytics). Active production workflows: R&P content pipeline, CarouselBuilder v5, Content Posting Pipeline v2, Ad Creative (static + video DPA), Blog Orchestrator. Voice: Vapi webhook server active. Multi-client loop exists in R&P Orchestrator. ~60-70% of AaaS "skills" already built.
+
+### Market Research (19 agents, 100+ sources)
+
+- AI agents market: $7.8B → $52.6B by 2030 (46% CAGR)
+- Jensen Huang (NVIDIA GTC 2026): "Every SaaS becomes GaaS"
+- NL: 28,153 agencies, 95% have AI programs but only 5% extract value
+- Zero AI agent platforms targeting Dutch marketing agencies
+- Generic AI agency market saturated (15K+ agencies globally)
+- Agency owners (3-12 employees) make buying decisions in 3-14 days
+- EUR 997/mo = "serious evaluation" zone (1-2 weeks decision)
+- Performance agencies: highest budget (EUR 3-5K/mo tool spend), data-driven buyers
+- EU AI Act: marketing agents = limited risk, transparency obligation by Aug 2026
+
+### ICP (Ideal Customer Profile)
+
+- **Type**: Performance/growth agency (paid ads, SEO, lead gen)
+- **Size**: 3-12 employees, EUR 500K-1.5M revenue
+- **Decision maker**: Founder/CEO personally
+- **Psychographic**: Growth-hungry, time-starved, hiring-averse
+- **Trigger**: Turning down work due to capacity constraints
+- **Geography**: NL first, UK simultaneously, ES month 3-6
+
+### Positioning
+
+- One-liner: "De eerste AI marketing medewerker voor bureaus"
+- Competitive frame: "GoHighLevel geeft je tools. Wij geven je een medewerker die de tools voor je gebruikt."
+- Dutch: "Digitale collega" framing (softer than "AI employee")
+- NVIDIA narrative: "Powered by enterprise AI, GDPR-first"
 
 ## Constraints
 
-- **Stack**: Next.js 15+ with App Router, React 19, TypeScript, Tailwind CSS 4
-- **Deployment**: Vercel — same platform, optimized for Next.js
-- **Design**: Living System design preserved — no visual redesign
-- **i18n**: EN/NL/ES with locale-prefixed URL routing (/en/, /nl/, /es/)
-- **Performance**: Core Web Vitals green scores (LCP <2.5s, FID <100ms, CLS <0.1)
-- **Quality**: Full SEO optimization before domain switch — no "ship fast, fix later"
-- **Compatibility**: Chatbot API routes must maintain same streaming behavior
+- **Solo founder**: Everything must be achievable by one person — parallel execution via agents
+- **Zero revenue**: Pre-selling and founding members critical for runway
+- **Existing codebases**: Must rebrand, not rebuild — leverage 60-70% existing work
+- **Three repos**: Website (this repo), Dashboard (fma-app), n8n (FMai) — changes span all three
+- **Compliance deadline**: EU AI Act transparency obligation by 2 August 2026
+- **Time pressure**: OpenClaw/GaaS narrative window = 3-6 months before commoditization
+- **Stack locked**: Next.js 16, Supabase, n8n, Vapi, Tailwind 4 — no migrations
+- **i18n exists**: EN/NL/ES translation files already built — update content, not infrastructure
 
 ## Key Decisions
 
-| Decision                       | Rationale                                                            | Outcome   |
-| ------------------------------ | -------------------------------------------------------------------- | --------- |
-| New repository                 | Clean Next.js setup without Vite config conflicts, fresh git history | — Pending |
-| Next.js App Router (not Pages) | Modern architecture, RSC support, better data fetching               | — Pending |
-| Blog structure without CMS     | Content source TBD — set up file-based structure, swap source later  | — Pending |
-| SSR chatbot enhancement        | Server-render initial chatbot chrome for faster perceived load       | — Pending |
-| Quality over speed             | Everything optimized before domain switch                            | — Pending |
+| Decision                                     | Rationale                                                                                | Outcome   |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------- | --------- |
+| AaaS over SaaS                               | Generic AI agency market saturated (15K+); agent-first positioning differentiated        | — Pending |
+| n8n as brain, NOT OpenClaw                   | OpenClaw enterprise readiness 1.2/5, alpha, banned by Big Tech; n8n is production-proven | — Pending |
+| OpenClaw as narrative only                   | NVIDIA hype creates credibility; "Powered by NemoClaw" as trust badge, not foundation    | — Pending |
+| NL + UK first                                | NL: zero competition, home market, 28K agencies; UK: good budgets, English content ready | — Pending |
+| Performance agencies as primary ICP          | Highest budget, data-driven buyers, fastest ROI proof, 3-14 day sales cycle              | — Pending |
+| Founding member model (10 spots, EUR 997/mo) | Validates demand before scaling; creates case studies; 50% discount creates urgency      | — Pending |
+| Rebrand over rebuild                         | 60-70% of product exists; reframing UI labels + copy is faster than starting fresh       | — Pending |
+| Horizontal product, vertical sales           | Product works for any agency; sales targets performance agencies first                   | — Pending |
+| Hetzner EU hosting for GDPR                  | EUR 40-80/mo, Amsterdam region, GDPR-compliant by default                                | — Pending |
 
 ---
 
-_Last updated: 2026-03-18 after initialization_
+_Last updated: 2026-03-20 after AaaS pivot design approval_
