@@ -33,7 +33,7 @@ Progress: [███████░░░] 50%
 
 **Recent Trend:**
 
-- Last 5 plans: 01-03 (25min), 04-01 (9min), 04-02 (9min), 01-04 (TBD), 01-05 (5min)
+- Last 5 plans: 01-03 (25min), 04-01 (9min), 04-02 (9min), 01-04 (11min), 01-05 (5min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -65,6 +65,8 @@ Recent decisions affecting current work:
 - [04-02]: Terms of service: 7 subsections, Privacy policy: 9 subsections
 - [01-05]: Persona IDs kept unchanged (ecommerce, leadgen, support) for DemoPlayground compatibility
 - [01-05]: Content Creator temp 0.8 (creative), ROI Calculator temp 0.5 (precise), both maxTokens 600
+- [01-04]: All 7 namespaces use identical key structures across EN/NL/ES (29 keys per skill, 39 keys for founding-member)
+- [01-04]: HowToJsonLd updated to 4-step agent onboarding description
 
 ### Pending Todos
 
@@ -78,5 +80,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 01-05-PLAN.md (Phase 1 Website Rebrand COMPLETE - all 5 plans done)
+Stopped at: Completed 01-04-PLAN.md (locale namespaces + how-it-works fix)
 Resume file: None

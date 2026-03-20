@@ -44,7 +44,7 @@ Plans:
 - [x] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
 - [x] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
 - [x] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
-- [ ] 01-04-PLAN.md — Gap closure: missing locale namespaces for skill/founding-member pages + how-it-works fix (Wave 3)
+- [x] 01-04-PLAN.md — Gap closure: missing locale namespaces for skill/founding-member pages + how-it-works fix (Wave 3)
 - [x] 01-05-PLAN.md — Gap closure: chatbot persona engines rewritten for agency use cases (Wave 3)
 
 ### Phase 2: Dashboard Reframe
