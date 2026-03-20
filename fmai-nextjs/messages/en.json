@@ -955,5 +955,486 @@
   "blog": {
     "title": "AI Marketing & Automation Insights",
     "subtitle": "Insights on AI marketing automation, chatbots, and growth strategies for agencies."
+  },
+  "skills-content-creator": {
+    "meta": {
+      "title": "Content Creator Skill | AI Marketing Employee | FMai",
+      "description": "AI-powered content creation for agency clients. Blog posts, social content, newsletters, and cross-platform repurposing — produced daily by your AI Marketing Employee."
+    },
+    "hero": {
+      "badge": "Content Creator Skill",
+      "title": "AI Content Creation for Your Agency Clients",
+      "description": "Your AI Marketing Employee writes blog posts, social content, email newsletters, and repurposes content across platforms — daily, for every client."
+    },
+    "features": {
+      "heading": "What the Content Creator Skill Does",
+      "items": {
+        "blog": {
+          "title": "AI Blog Writing",
+          "description": "SEO-optimized blog posts written in each client's brand voice. Research, outline, draft, and publish — fully autonomous."
+        },
+        "social": {
+          "title": "Social Media Posts",
+          "description": "Platform-native social content for LinkedIn, Instagram, X, and Facebook. Tailored to each client's audience and tone."
+        },
+        "newsletters": {
+          "title": "Email Newsletters",
+          "description": "Weekly or monthly newsletters crafted from your clients' latest content, industry news, and campaign updates."
+        },
+        "repurposing": {
+          "title": "Content Repurposing",
+          "description": "One piece of content becomes ten. Blog posts become social threads, newsletters, video scripts, and more — automatically."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "connect": {
+          "title": "Connect Client Brand",
+          "description": "Upload brand guidelines, tone of voice, and target audience profiles. Your AI employee learns the client's identity."
+        },
+        "generate": {
+          "title": "AI Creates Content",
+          "description": "Your AI employee researches topics, writes drafts, and optimizes for SEO — all in the client's brand voice."
+        },
+        "review": {
+          "title": "Approve and Publish",
+          "description": "Review AI-generated content in your dashboard, approve with one click, and publish across all platforms."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Scale content production across all your clients without hiring more writers. One AI employee handles the output of an entire content team."
+        },
+        "ecommerce": {
+          "title": "E-commerce Brands",
+          "description": "Product descriptions, category pages, email campaigns, and social content — produced daily to keep your store fresh and ranking."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Content Creator Skill",
+      "subtitle": "Add AI-powered content creation to your AI Marketing Employee and start producing content for all your clients.",
+      "button": "See Pricing"
+    }
+  },
+  "skills-voice-agent": {
+    "meta": {
+      "title": "Voice Agent Skill | AI Marketing Employee | FMai",
+      "description": "AI-powered inbound and outbound calling for agency clients. 24/7 call handling, lead qualification by phone, and appointment booking by your AI Marketing Employee."
+    },
+    "hero": {
+      "badge": "Voice Agent Skill",
+      "title": "AI Phone Calls for Your Agency Clients",
+      "description": "Your AI Marketing Employee handles inbound and outbound calls — qualifying leads, booking appointments, and following up with prospects around the clock."
+    },
+    "features": {
+      "heading": "What the Voice Agent Skill Does",
+      "items": {
+        "inbound": {
+          "title": "Answer Calls 24/7",
+          "description": "Never miss a call again. Your AI employee answers inbound calls, handles FAQs, and routes complex queries to the right person."
+        },
+        "outbound": {
+          "title": "Proactive Outreach",
+          "description": "AI-powered outbound calls for follow-ups, appointment reminders, and prospect re-engagement — at scale."
+        },
+        "qualification": {
+          "title": "Qualify Leads by Phone",
+          "description": "BANT qualification on every call. Your AI employee scores prospects and only passes warm leads to your sales team."
+        },
+        "booking": {
+          "title": "Schedule Appointments",
+          "description": "Direct calendar integration. The voice agent books meetings into Calendly, Cal.com, or Google Calendar during the call."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "setup": {
+          "title": "Configure Voice Persona",
+          "description": "Set the voice, tone, and personality for each client. Upload call scripts and qualification criteria."
+        },
+        "deploy": {
+          "title": "Activate on Client Number",
+          "description": "Connect to your client's phone system via SIP or forwarding. The AI employee starts handling calls immediately."
+        },
+        "optimize": {
+          "title": "Improve from Call Data",
+          "description": "Review call transcripts and analytics. Your AI employee learns from every conversation and improves weekly."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Offer AI-powered call handling as a service to your clients. Scale phone operations without hiring call center staff."
+        },
+        "sales": {
+          "title": "Sales Teams",
+          "description": "Qualify hundreds of leads per day by phone. Your sales team only talks to prospects who are ready to buy."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Voice Agent Skill",
+      "subtitle": "Add AI-powered phone calls to your AI Marketing Employee and never miss a lead again.",
+      "button": "See Pricing"
+    }
+  },
+  "skills-lead-qualifier": {
+    "meta": {
+      "title": "Lead Qualifier Skill | AI Marketing Employee | FMai",
+      "description": "AI chatbot that qualifies website leads 24/7 for agency clients. Real-time engagement, BANT scoring, warm handoffs, and automated follow-up sequences."
+    },
+    "hero": {
+      "badge": "Lead Qualifier Skill",
+      "title": "AI Lead Qualification for Your Agency Clients",
+      "description": "Your AI Marketing Employee engages website visitors in real time, qualifies them with BANT scoring, and hands warm leads directly to your clients' sales teams."
+    },
+    "features": {
+      "heading": "What the Lead Qualifier Skill Does",
+      "items": {
+        "engage": {
+          "title": "Real-Time Visitor Engagement",
+          "description": "AI chatbot greets every website visitor, answers questions, and starts qualifying conversations — 24/7, on every client site."
+        },
+        "qualify": {
+          "title": "BANT Qualification Scoring",
+          "description": "Budget, Authority, Need, Timeline — every lead is scored automatically so your clients' sales teams focus on the best prospects."
+        },
+        "handoff": {
+          "title": "Warm Handoff to Sales",
+          "description": "Qualified leads are routed instantly to the right salesperson with full conversation context and qualification score."
+        },
+        "nurture": {
+          "title": "Automated Follow-Up Sequences",
+          "description": "Leads not ready to buy enter nurture sequences — automated emails and retargeting to keep them engaged until they are."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "configure": {
+          "title": "Set Qualification Criteria",
+          "description": "Define what a qualified lead looks like for each client — budget thresholds, company size, industry, and buying signals."
+        },
+        "embed": {
+          "title": "Add to Client Website",
+          "description": "One line of code embeds the AI chatbot on your client's website. It starts qualifying visitors immediately."
+        },
+        "convert": {
+          "title": "Start Qualifying Leads",
+          "description": "Watch qualified leads flow into your clients' CRM with full context. Your AI employee works every visitor, every time."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Deploy lead qualification chatbots across all your clients' websites. Prove ROI with qualified lead counts and conversion data."
+        },
+        "saas": {
+          "title": "SaaS Companies",
+          "description": "Qualify free trial signups and demo requests automatically. Route enterprise prospects to sales, self-serve the rest."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Lead Qualifier Skill",
+      "subtitle": "Add AI-powered lead qualification to your AI Marketing Employee and convert more website visitors into clients.",
+      "button": "See Pricing"
+    }
+  },
+  "skills-social-media": {
+    "meta": {
+      "title": "Social Media Skill | AI Marketing Employee | FMai",
+      "description": "AI-powered multi-platform social media management for agency clients. Scheduling, analytics, content creation, and brand monitoring by your AI Marketing Employee."
+    },
+    "hero": {
+      "badge": "Social Media Skill",
+      "title": "AI Social Media Management for Your Agency Clients",
+      "description": "Your AI Marketing Employee manages social media across all platforms — creating content, scheduling posts, tracking performance, and monitoring brand mentions."
+    },
+    "features": {
+      "heading": "What the Social Media Skill Does",
+      "items": {
+        "scheduling": {
+          "title": "Cross-Platform Scheduling",
+          "description": "AI-optimized posting times across LinkedIn, Instagram, X, Facebook, and TikTok. Every client's content goes live at peak engagement windows."
+        },
+        "analytics": {
+          "title": "Performance Tracking",
+          "description": "Real-time analytics across all platforms. Track engagement, reach, follower growth, and content performance per client."
+        },
+        "creation": {
+          "title": "AI Content Generation",
+          "description": "Platform-native content created in each client's brand voice. Captions, hashtags, and visuals optimized for each network."
+        },
+        "monitoring": {
+          "title": "Brand Mention Tracking",
+          "description": "Monitor brand mentions, competitor activity, and industry trends across all social platforms. Get alerts for important conversations."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "connect": {
+          "title": "Link Social Accounts",
+          "description": "Connect your clients' social media accounts. Your AI employee gains access to post, monitor, and analyze across all platforms."
+        },
+        "plan": {
+          "title": "AI Creates Content Calendar",
+          "description": "Your AI employee builds a content calendar based on each client's strategy, audience data, and trending topics."
+        },
+        "publish": {
+          "title": "Auto-Post on Schedule",
+          "description": "Content goes live automatically at optimal times. Your AI employee handles posting, hashtags, and cross-platform formatting."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Manage social media for dozens of clients simultaneously. One AI employee replaces an entire social media team."
+        },
+        "brands": {
+          "title": "Brand Managers",
+          "description": "Maintain consistent brand presence across all platforms without the manual work of daily posting and monitoring."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Social Media Skill",
+      "subtitle": "Add AI-powered social media management to your AI Marketing Employee and scale your clients' social presence.",
+      "button": "See Pricing"
+    }
+  },
+  "skills-ad-creator": {
+    "meta": {
+      "title": "Ad Creator Skill | AI Marketing Employee | FMai",
+      "description": "AI-generated static and video ads for agency clients. Campaign briefs to ad variations to platform launch — all handled by your AI Marketing Employee."
+    },
+    "hero": {
+      "badge": "Ad Creator Skill",
+      "title": "AI Ad Creation for Your Agency Clients",
+      "description": "Your AI Marketing Employee creates static and video ads from campaign briefs, generates A/B test variations, and pushes them directly to ad platforms."
+    },
+    "features": {
+      "heading": "What the Ad Creator Skill Does",
+      "items": {
+        "static": {
+          "title": "Image Ad Generation",
+          "description": "AI-generated display ads, social ads, and banner ads in multiple formats and sizes — ready for Meta, Google, and LinkedIn."
+        },
+        "video": {
+          "title": "Short-Form Video Ads",
+          "description": "AI-produced video ads for Reels, Stories, TikTok, and YouTube Shorts. From script to finished video in minutes."
+        },
+        "copy": {
+          "title": "Ad Copy Variants",
+          "description": "Headlines, descriptions, and CTAs generated in each client's brand voice. Multiple variations for testing and optimization."
+        },
+        "variants": {
+          "title": "A/B Test Variations",
+          "description": "Automatic generation of creative variants for split testing. Your AI employee optimizes based on performance data."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "brief": {
+          "title": "Input Campaign Brief",
+          "description": "Provide the campaign objective, target audience, and brand assets. Your AI employee takes it from there."
+        },
+        "generate": {
+          "title": "AI Creates Ad Variations",
+          "description": "Multiple ad creatives generated in seconds — images, video, copy, and format variations for every platform."
+        },
+        "launch": {
+          "title": "Push to Ad Platforms",
+          "description": "Approved ads are pushed directly to Meta Ads, Google Ads, and LinkedIn Campaign Manager. One click to launch."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Produce ad creatives for all your clients at scale. No more bottlenecks waiting for designers and copywriters."
+        },
+        "performance": {
+          "title": "Performance Marketers",
+          "description": "Generate hundreds of ad variations for rapid testing. Find winning creatives faster with AI-powered iteration."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Ad Creator Skill",
+      "subtitle": "Add AI-powered ad creation to your AI Marketing Employee and launch campaigns faster for every client.",
+      "button": "See Pricing"
+    }
+  },
+  "skills-reporting": {
+    "meta": {
+      "title": "Reporting Skill | AI Marketing Employee | FMai",
+      "description": "AI-powered cross-platform dashboards and weekly reports for agency clients. Real-time analytics, trend detection, and ROI tracking by your AI Marketing Employee."
+    },
+    "hero": {
+      "badge": "Reporting & Analytics Skill",
+      "title": "AI Reporting for Your Agency Clients",
+      "description": "Your AI Marketing Employee builds real-time dashboards, generates weekly reports, detects trends, and tracks ROI across all channels for every client."
+    },
+    "features": {
+      "heading": "What the Reporting Skill Does",
+      "items": {
+        "dashboards": {
+          "title": "Real-Time Client Dashboards",
+          "description": "Live dashboards showing KPIs across all channels. Share with clients for full transparency on campaign performance."
+        },
+        "weekly": {
+          "title": "Automated Weekly Reports",
+          "description": "AI-generated weekly performance reports sent to your inbox and your clients. No manual data pulling or formatting."
+        },
+        "trends": {
+          "title": "Trend Detection and Alerts",
+          "description": "Your AI employee spots performance anomalies, emerging trends, and optimization opportunities before you do."
+        },
+        "roi": {
+          "title": "ROI Tracking and Attribution",
+          "description": "Multi-touch attribution across all channels. Know exactly which campaigns drive revenue for each client."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How It Works",
+      "steps": {
+        "integrate": {
+          "title": "Connect Data Sources",
+          "description": "Link Google Analytics, ad platforms, social accounts, and CRM. Your AI employee pulls data from all sources automatically."
+        },
+        "analyze": {
+          "title": "AI Processes Metrics",
+          "description": "Your AI employee analyzes performance data, identifies patterns, and generates insights — no analyst required."
+        },
+        "report": {
+          "title": "Auto-Generate Reports",
+          "description": "Beautiful, branded reports generated weekly and sent to your clients. Dashboards update in real time."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Uses This Skill",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Deliver professional reporting to every client without spending hours in spreadsheets. Your AI employee handles the data work."
+        },
+        "managers": {
+          "title": "Marketing Managers",
+          "description": "Get a clear picture of campaign performance across all channels. AI-powered insights help you make better decisions faster."
+        }
+      }
+    },
+    "cta": {
+      "title": "Activate the Reporting Skill",
+      "subtitle": "Add AI-powered reporting to your AI Marketing Employee and give every client professional analytics.",
+      "button": "See Pricing"
+    }
+  },
+  "founding-member": {
+    "meta": {
+      "title": "Founding Member — AI Marketing Employee | FMai",
+      "description": "Join the founding member program and lock in EUR 997/mo for life. Only 10 spots available. Get your AI Marketing Employee with direct founder access and priority support."
+    },
+    "hero": {
+      "badge": "10 Spots Only",
+      "title": "Become a Founding Member",
+      "description": "Be one of the first 10 agencies to deploy an AI Marketing Employee. Lock in the lowest price forever, get direct founder access, and help shape the product."
+    },
+    "pricing": {
+      "heading": "Founding Member Pricing",
+      "currency": "EUR",
+      "price": "997",
+      "period": "/month",
+      "locked": "Price locked for life",
+      "comparison": "Regular price starts at EUR 1,497/month",
+      "includes": "Full AI Marketing Employee + 1 skill of your choice"
+    },
+    "benefits": {
+      "heading": "Founding Member Benefits",
+      "items": {
+        "price_lock": {
+          "title": "Locked-In Pricing Forever",
+          "description": "Your EUR 997/mo rate never increases, no matter how many skills or features we add. Founding members get the best deal — permanently."
+        },
+        "priority": {
+          "title": "Priority Support & Founder Access",
+          "description": "Skip the queue. Direct Slack channel with the founder for questions, feedback, and strategic advice on using your AI employee."
+        },
+        "influence": {
+          "title": "Shape the Product Roadmap",
+          "description": "Your feedback directly influences what we build next. Founding members vote on new skills, integrations, and features."
+        },
+        "early_access": {
+          "title": "First to Get New Features",
+          "description": "Every new skill and feature launches to founding members first. You always have access to our latest capabilities before anyone else."
+        },
+        "community": {
+          "title": "Exclusive Founding Member Community",
+          "description": "Private community of the first 10 agencies using AI Marketing Employees. Share strategies, results, and best practices."
+        },
+        "onboarding": {
+          "title": "White-Glove Onboarding",
+          "description": "Personalized onboarding with the founder. We set up your first client workspace together and configure your AI employee for maximum impact."
+        }
+      }
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": {
+        "q1": {
+          "question": "What is included in the founding member plan?",
+          "answer": "You get a full AI Marketing Employee running 24/7, one skill of your choice (Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator, or Reporting), up to 3 client workspaces, direct founder access via Slack, and priority support. You can add more skills at EUR 497/mo each."
+        },
+        "q2": {
+          "question": "What is the commitment length?",
+          "answer": "We ask for a 6-month initial commitment to give the AI employee enough time to learn your clients' brands and deliver measurable results. After 6 months, you continue month-to-month at the same locked-in price."
+        },
+        "q3": {
+          "question": "What happens after the founding period ends?",
+          "answer": "There is no end date for founding members. Your EUR 997/mo price is locked for the lifetime of your subscription. As we raise prices for new customers, your rate stays the same — forever."
+        },
+        "q4": {
+          "question": "How many spots are remaining?",
+          "answer": "We are limiting the founding member program to exactly 10 agencies. Once all spots are filled, new agencies start at the Starter tier (EUR 1,497/mo). Check this page for current availability."
+        },
+        "q5": {
+          "question": "Is there a money-back guarantee?",
+          "answer": "Yes. If your AI Marketing Employee does not deliver measurable results within the first 60 days, we will refund your investment in full. No questions asked, no fine print."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Be First?",
+      "subtitle": "Join the founding member program and lock in the lowest price forever.",
+      "button": "Apply Now"
+    }
   }
 }

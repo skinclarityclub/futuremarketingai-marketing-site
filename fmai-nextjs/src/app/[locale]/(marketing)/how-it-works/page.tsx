@@ -29,32 +29,24 @@ export async function generateMetadata({
   })
 }
 
-const STEP_KEYS = ['research', 'content', 'workflow', 'publishing', 'learning', 'ads'] as const
+const STEP_KEYS = ['choose', 'activate', 'connect', 'working'] as const
 
 const HOW_TO_STEPS = [
   {
-    name: 'Discovery & Research',
-    text: 'We audit your current marketing stack, identify automation opportunities, and map your ideal customer journey.',
+    name: 'Choose Your Agent Tier',
+    text: 'Select the tier that matches your agency size — Founding Member, Starter, Growth, or Agency — each includes your persistent AI employee.',
   },
   {
-    name: 'Content Strategy',
-    text: 'We develop AI-optimized content plans aligned with your ICP and funnel stages.',
+    name: 'Activate Skills',
+    text: 'Pick the skills your AI employee should learn: Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator, or Reporting.',
   },
   {
-    name: 'Workflow Build',
-    text: 'We build and configure automations, chatbots, or voice agents in your stack.',
+    name: 'Connect Your Clients',
+    text: 'Create a workspace for each client, upload brand guidelines, connect social accounts, and configure tone of voice.',
   },
   {
-    name: 'Publishing & Launch',
-    text: 'We deploy, test end-to-end, and launch with monitoring in place.',
-  },
-  {
-    name: 'Learning & Optimization',
-    text: 'AI models learn from real interactions; we tune monthly for performance gains.',
-  },
-  {
-    name: 'Paid Amplification',
-    text: 'We layer targeted ads to amplify organic growth and generate pipeline.',
+    name: 'AI Employee Starts Working',
+    text: 'Your AI Marketing Employee begins executing — creating content, qualifying leads, managing social, running ads, and generating reports 24/7.',
   },
 ]
 
@@ -80,8 +72,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         locale={locale}
       />
       <HowToJsonLd
-        name="How Future Marketing AI Works"
-        description="A 6-step process for deploying AI-powered marketing for growth-stage companies"
+        name="How Your AI Marketing Employee Gets Started"
+        description="A 4-step agent onboarding process: choose your tier, activate skills, connect clients, and your AI employee starts working"
         steps={HOW_TO_STEPS}
       />
 
