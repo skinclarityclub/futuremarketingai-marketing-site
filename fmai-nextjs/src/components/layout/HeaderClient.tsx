@@ -25,49 +25,49 @@ const SKILL_ITEMS = [
   {
     icon: PenTool,
     title: 'Content Creator',
-    description: 'Blog posts, social content, newsletters — on autopilot',
+    description: 'Clyde writes blog posts, social content, and newsletters for your clients',
     href: '/skills/content-creator' as const,
   },
   {
     icon: Mic,
     title: 'Voice Agent',
-    description: 'AI-powered inbound and outbound calls',
+    description: 'Clyde calls leads, books appointments, and handles phone inquiries',
     href: '/skills/voice-agent' as const,
   },
   {
     icon: Bot,
     title: 'Lead Qualifier',
-    description: 'Chatbot that qualifies leads 24/7',
+    description: 'Clyde scores and qualifies every lead using BANT methodology',
     href: '/skills/lead-qualifier' as const,
   },
   {
     icon: Bot,
     title: 'Chatbot',
-    description: 'AI chatbots that qualify and convert 24/7',
+    description: 'Clyde deploys and manages AI chatbots trained on client FAQs',
     href: '/skills/chatbot' as const,
   },
   {
     icon: Share2,
     title: 'Social Media',
-    description: 'Multi-platform scheduling and analytics',
+    description: 'Clyde creates, schedules, and posts across all platforms',
     href: '/skills/social-media' as const,
   },
   {
     icon: Megaphone,
     title: 'Ad Creator',
-    description: 'AI-generated static and video ads',
+    description: 'Clyde generates ad copy and creative variations for campaigns',
     href: '/skills/ad-creator' as const,
   },
   {
     icon: Mail,
     title: 'Email',
-    description: 'Automated campaigns, follow-ups, and inbox AI',
+    description: 'Clyde writes and sends email sequences, follow-ups, and newsletters',
     href: '/skills/email' as const,
   },
   {
     icon: BarChart3,
     title: 'Reporting',
-    description: 'Cross-platform dashboards and weekly reports',
+    description: 'Clyde generates weekly performance reports for all clients',
     href: '/skills/reporting' as const,
   },
 ]
@@ -232,10 +232,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
 
           {/* Primary CTA */}
           <Link
-            href="/contact"
+            href="/skills/chatbot"
             className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] text-bg-deep font-semibold text-sm px-4 py-2 rounded-[var(--radius-btn)] hover:opacity-90 transition-all"
           >
-            See Our Work
+            Meet Clyde
           </Link>
 
           {/* Mobile Menu Button */}
