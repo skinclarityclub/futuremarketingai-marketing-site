@@ -1512,14 +1512,186 @@
   },
   "skills-chatbot": {
     "meta": {
-      "title": "Chatbot Skill | AI Marketing Employee | FMai",
-      "description": "Deploy intelligent AI chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7."
+      "title": "Habilidad Chatbot | Empleado de Marketing IA | FMai",
+      "description": "Despliegue chatbots IA inteligentes en los sitios web de sus clientes que califican leads, responden preguntas y convierten visitantes 24/7."
+    },
+    "hero": {
+      "badge": "Habilidad Chatbot",
+      "title": "Chatbots IA para los Clientes de Su Agencia",
+      "description": "Despliegue chatbots inteligentes en los sitios web de sus clientes que califican leads, responden preguntas y convierten visitantes 24/7. White-label y totalmente personalizables para cada cliente."
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "customer_service": {
+          "title": "Servicio al Cliente",
+          "description": "Despliegue chatbots IA que gestionan consultas de clientes, resuelven problemas y escalan casos complejos a agentes humanos sin fricciones."
+        },
+        "faq_automation": {
+          "title": "Automatizacion de FAQ",
+          "description": "Responda automaticamente las preguntas frecuentes con respuestas contextuales, reduciendo el volumen de tickets de soporte hasta un 70%."
+        },
+        "appointment_booking": {
+          "title": "Reserva de Citas",
+          "description": "Deje que los chatbots gestionen la programacion, reprogramacion y recordatorios \u2014 integrados directamente con los sistemas de calendario de sus clientes."
+        },
+        "product_recommendations": {
+          "title": "Recomendaciones de Productos",
+          "description": "Sugerencias de productos impulsadas por IA basadas en el comportamiento del cliente, preferencias e historial de compras para aumentar las conversiones."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mes",
+          "features_0": "1 chatbot",
+          "features_1": "Integracion web",
+          "features_2": "1.000 conversaciones/mes",
+          "features_3": "Analytics basicos"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "3 chatbots",
+          "features_1": "Web + WhatsApp",
+          "features_2": "5.000 conversaciones/mes",
+          "features_3": "Lead scoring y sincronizacion CRM",
+          "features_4": "Pruebas A/B"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mes",
+          "features_0": "Chatbots ilimitados",
+          "features_1": "Todas las plataformas",
+          "features_2": "Conversaciones ilimitadas",
+          "features_3": "Integraciones personalizadas",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultados Que Hablan",
+      "metrics": {
+        "inquiries": {
+          "value": "70%",
+          "label": "Consultas Gestionadas",
+          "description": "Resueltas automaticamente sin intervencion humana"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Siempre Disponible",
+          "description": "Sin oportunidades perdidas, dia y noche"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Tiempo de Respuesta",
+          "description": "Interaccion instantanea con cada visitante"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Desplegar Chatbots IA?",
+      "subtitle": "Comience hoy a ofrecer soluciones de chatbot a los clientes de su agencia.",
+      "button": "Comenzar"
     }
   },
   "skills-email": {
     "meta": {
-      "title": "Email Skill | AI Marketing Employee | FMai",
-      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
+      "title": "Habilidad Email | Empleado de Marketing IA | FMai",
+      "description": "Campanas de email automatizadas, seguimientos inteligentes y gestion de inbox impulsada por IA para los clientes de su agencia."
+    },
+    "hero": {
+      "badge": "Habilidad Email",
+      "title": "Gestion de Email IA para los Clientes de Su Agencia",
+      "description": "Campanas de email automatizadas, seguimientos inteligentes y gestion de inbox impulsada por IA. Entregue resultados para sus clientes sin el trabajo manual."
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "automated_campaigns": {
+          "title": "Campanas Automatizadas",
+          "description": "Secuencias de email escritas por IA basadas en segmentos de audiencia. Personalizadas a escala con contenido dinamico que se adapta a cada destinatario."
+        },
+        "smart_followups": {
+          "title": "Seguimientos Inteligentes",
+          "description": "Emails de seguimiento automaticos activados por el comportamiento del lead. No pierda ningun lead caliente gracias al timing y mensajes inteligentes."
+        },
+        "newsletter_generation": {
+          "title": "Generacion de Newsletters",
+          "description": "Newsletters semanales o mensuales compilados desde su calendario de contenido. Curados, escritos y programados automaticamente."
+        },
+        "inbox_management": {
+          "title": "Gestion de Inbox",
+          "description": "Enrutamiento inteligente, auto-respuestas y marcado de prioridades. Mantenga los inboxes de los clientes organizados y los tiempos de respuesta bajo control."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac397",
+          "period": "/mes",
+          "features_0": "1.000 emails/mes",
+          "features_1": "1 cuenta de cliente",
+          "features_2": "Plantillas de campana",
+          "features_3": "Analytics basicos"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac797",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "5.000 emails/mes",
+          "features_1": "5 cuentas de cliente",
+          "features_2": "Seguimientos inteligentes",
+          "features_3": "Pruebas A/B",
+          "features_4": "Integracion CRM"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.497",
+          "period": "/mes",
+          "features_0": "Emails ilimitados",
+          "features_1": "Clientes ilimitados",
+          "features_2": "Gestion de inbox completa",
+          "features_3": "Workflows personalizados",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultados Que Hablan",
+      "metrics": {
+        "open_rates": {
+          "value": "45%",
+          "label": "Mayor Tasa de Apertura",
+          "description": "Lineas de asunto y horarios de envio optimizados por IA"
+        },
+        "replies": {
+          "value": "3x",
+          "label": "Mas Respuestas",
+          "description": "Contenido personalizado que conecta"
+        },
+        "sending": {
+          "value": "24/7",
+          "label": "Envio",
+          "description": "Entrega automatizada en horarios optimos"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Automatizar el Email?",
+      "subtitle": "Comience hoy a ofrecer soluciones de email impulsadas por IA a los clientes de su agencia.",
+      "button": "Comenzar"
     }
   }
 }

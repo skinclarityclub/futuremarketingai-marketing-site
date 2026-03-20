@@ -1514,12 +1514,184 @@
     "meta": {
       "title": "Chatbot Skill | AI Marketing Employee | FMai",
       "description": "Deploy intelligent AI chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7."
+    },
+    "hero": {
+      "badge": "Chatbot Skill",
+      "title": "AI Chatbots for Your Agency Clients",
+      "description": "Deploy intelligent chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7. White-labeled and fully customizable for each client."
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "customer_service": {
+          "title": "Customer Service",
+          "description": "Deploy AI chatbots that handle customer inquiries, resolve issues, and escalate complex cases to human agents seamlessly."
+        },
+        "faq_automation": {
+          "title": "FAQ Automation",
+          "description": "Automatically answer frequently asked questions with context-aware responses, reducing support ticket volume by up to 70%."
+        },
+        "appointment_booking": {
+          "title": "Appointment Booking",
+          "description": "Let chatbots manage scheduling, rescheduling, and reminders — integrated directly with your clients' calendar systems."
+        },
+        "product_recommendations": {
+          "title": "Product Recommendations",
+          "description": "AI-powered product suggestions based on customer behavior, preferences, and purchase history to boost conversions."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mo",
+          "features_0": "1 chatbot",
+          "features_1": "Website embed",
+          "features_2": "1,000 conversations/mo",
+          "features_3": "Basic analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "3 chatbots",
+          "features_1": "Website + WhatsApp",
+          "features_2": "5,000 conversations/mo",
+          "features_3": "Lead scoring & CRM sync",
+          "features_4": "A/B testing"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1,997",
+          "period": "/mo",
+          "features_0": "Unlimited chatbots",
+          "features_1": "All platforms",
+          "features_2": "Unlimited conversations",
+          "features_3": "Custom integrations",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Results That Speak",
+      "metrics": {
+        "inquiries": {
+          "value": "70%",
+          "label": "Inquiries Handled",
+          "description": "Automatically resolved without human intervention"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Available",
+          "description": "No missed opportunities, day or night"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Response Time",
+          "description": "Instant engagement with every visitor"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Deploy AI Chatbots?",
+      "subtitle": "Start delivering chatbot solutions to your agency clients today.",
+      "button": "Get Started"
     }
   },
   "skills-email": {
     "meta": {
       "title": "Email Skill | AI Marketing Employee | FMai",
       "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
+    },
+    "hero": {
+      "badge": "Email Skill",
+      "title": "AI Email Management for Your Agency Clients",
+      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management. Deliver results for your clients without the manual grind."
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "automated_campaigns": {
+          "title": "Automated Campaigns",
+          "description": "AI-written email sequences based on audience segments. Personalized at scale with dynamic content that adapts to each recipient."
+        },
+        "smart_followups": {
+          "title": "Smart Follow-ups",
+          "description": "Automatic follow-up emails triggered by lead behavior. Never miss a warm lead with intelligent timing and messaging."
+        },
+        "newsletter_generation": {
+          "title": "Newsletter Generation",
+          "description": "Weekly or monthly newsletters compiled from your content calendar. Curated, written, and scheduled automatically."
+        },
+        "inbox_management": {
+          "title": "Inbox Management",
+          "description": "Smart routing, auto-replies, and priority flagging. Keep client inboxes organized and response times under control."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac397",
+          "period": "/mo",
+          "features_0": "1,000 emails/mo",
+          "features_1": "1 client account",
+          "features_2": "Campaign templates",
+          "features_3": "Basic analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac797",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "5,000 emails/mo",
+          "features_1": "5 client accounts",
+          "features_2": "Smart follow-ups",
+          "features_3": "A/B testing",
+          "features_4": "CRM integration"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1,497",
+          "period": "/mo",
+          "features_0": "Unlimited emails",
+          "features_1": "Unlimited clients",
+          "features_2": "Full inbox management",
+          "features_3": "Custom workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Results That Speak",
+      "metrics": {
+        "open_rates": {
+          "value": "45%",
+          "label": "Higher Open Rates",
+          "description": "AI-optimized subject lines and send times"
+        },
+        "replies": {
+          "value": "3x",
+          "label": "More Replies",
+          "description": "Personalized content that resonates"
+        },
+        "sending": {
+          "value": "24/7",
+          "label": "Sending",
+          "description": "Automated delivery at optimal times"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Automate Email?",
+      "subtitle": "Start delivering AI-powered email solutions to your agency clients today.",
+      "button": "Get Started"
     }
   }
 }

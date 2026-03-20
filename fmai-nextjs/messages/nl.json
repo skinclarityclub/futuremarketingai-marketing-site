@@ -1512,14 +1512,186 @@
   },
   "skills-chatbot": {
     "meta": {
-      "title": "Chatbot Skill | AI Marketing Employee | FMai",
-      "description": "Deploy intelligent AI chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7."
+      "title": "Chatbot Skill | AI Marketing Medewerker | FMai",
+      "description": "Implementeer intelligente AI-chatbots op klantwebsites die leads kwalificeren, vragen beantwoorden en bezoekers 24/7 converteren."
+    },
+    "hero": {
+      "badge": "Chatbot Skill",
+      "title": "AI Chatbots voor Jouw Bureauklanten",
+      "description": "Implementeer intelligente chatbots op klantwebsites die leads kwalificeren, vragen beantwoorden en bezoekers 24/7 converteren. White-label en volledig aanpasbaar per klant."
+    },
+    "use_cases": {
+      "heading": "Toepassingen",
+      "items": {
+        "customer_service": {
+          "title": "Klantenservice",
+          "description": "Zet AI-chatbots in die klantvragen afhandelen, problemen oplossen en complexe zaken naadloos doorschakelen naar menselijke medewerkers."
+        },
+        "faq_automation": {
+          "title": "FAQ Automatisering",
+          "description": "Beantwoord veelgestelde vragen automatisch met contextbewuste antwoorden en verminder het ticketvolume met tot 70%."
+        },
+        "appointment_booking": {
+          "title": "Afspraken Plannen",
+          "description": "Laat chatbots planning, herplanning en herinneringen beheren \u2014 direct gekoppeld aan de agendasystemen van je klanten."
+        },
+        "product_recommendations": {
+          "title": "Productaanbevelingen",
+          "description": "AI-gestuurde productsuggesties op basis van klantgedrag, voorkeuren en aankoopgeschiedenis om conversies te verhogen."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mnd",
+          "features_0": "1 chatbot",
+          "features_1": "Website-integratie",
+          "features_2": "1.000 gesprekken/mnd",
+          "features_3": "Basis analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "3 chatbots",
+          "features_1": "Website + WhatsApp",
+          "features_2": "5.000 gesprekken/mnd",
+          "features_3": "Lead scoring & CRM-sync",
+          "features_4": "A/B testing"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mnd",
+          "features_0": "Onbeperkt chatbots",
+          "features_1": "Alle platformen",
+          "features_2": "Onbeperkt gesprekken",
+          "features_3": "Maatwerk integraties",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultaten Die Spreken",
+      "metrics": {
+        "inquiries": {
+          "value": "70%",
+          "label": "Vragen Afgehandeld",
+          "description": "Automatisch opgelost zonder menselijke tussenkomst"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Altijd Beschikbaar",
+          "description": "Geen gemiste kansen, dag en nacht"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Reactietijd",
+          "description": "Directe interactie met elke bezoeker"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om AI Chatbots In te Zetten?",
+      "subtitle": "Begin vandaag met het leveren van chatbot-oplossingen aan je bureauklanten.",
+      "button": "Aan de Slag"
     }
   },
   "skills-email": {
     "meta": {
-      "title": "Email Skill | AI Marketing Employee | FMai",
-      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
+      "title": "Email Skill | AI Marketing Medewerker | FMai",
+      "description": "Geautomatiseerde e-mailcampagnes, intelligente opvolgingen en AI-gestuurd inbox management voor je bureauklanten."
+    },
+    "hero": {
+      "badge": "Email Skill",
+      "title": "AI E-mailbeheer voor Jouw Bureauklanten",
+      "description": "Geautomatiseerde e-mailcampagnes, intelligente opvolgingen en AI-gestuurd inbox management. Lever resultaten voor je klanten zonder handmatig werk."
+    },
+    "use_cases": {
+      "heading": "Toepassingen",
+      "items": {
+        "automated_campaigns": {
+          "title": "Geautomatiseerde Campagnes",
+          "description": "AI-geschreven e-mailsequenties op basis van doelgroepsegmenten. Gepersonaliseerd op schaal met dynamische content die zich aanpast aan elke ontvanger."
+        },
+        "smart_followups": {
+          "title": "Slimme Opvolgingen",
+          "description": "Automatische opvolg-e-mails getriggerd door leadgedrag. Mis nooit een warme lead dankzij intelligente timing en berichten."
+        },
+        "newsletter_generation": {
+          "title": "Nieuwsbrief Generatie",
+          "description": "Wekelijkse of maandelijkse nieuwsbrieven samengesteld uit je contentkalender. Gecureerd, geschreven en automatisch ingepland."
+        },
+        "inbox_management": {
+          "title": "Inbox Management",
+          "description": "Slimme routering, auto-replies en prioriteit markering. Houd klant-inboxen georganiseerd en reactietijden onder controle."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac397",
+          "period": "/mnd",
+          "features_0": "1.000 e-mails/mnd",
+          "features_1": "1 klantaccount",
+          "features_2": "Campagne templates",
+          "features_3": "Basis analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac797",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "5.000 e-mails/mnd",
+          "features_1": "5 klantaccounts",
+          "features_2": "Slimme opvolgingen",
+          "features_3": "A/B testing",
+          "features_4": "CRM-integratie"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.497",
+          "period": "/mnd",
+          "features_0": "Onbeperkt e-mails",
+          "features_1": "Onbeperkt klanten",
+          "features_2": "Volledig inbox management",
+          "features_3": "Maatwerk workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultaten Die Spreken",
+      "metrics": {
+        "open_rates": {
+          "value": "45%",
+          "label": "Hogere Open Rates",
+          "description": "AI-geoptimaliseerde onderwerpregels en verzendtijden"
+        },
+        "replies": {
+          "value": "3x",
+          "label": "Meer Reacties",
+          "description": "Gepersonaliseerde content die resoneert"
+        },
+        "sending": {
+          "value": "24/7",
+          "label": "Verzending",
+          "description": "Geautomatiseerde bezorging op optimale tijden"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om E-mail te Automatiseren?",
+      "subtitle": "Begin vandaag met het leveren van AI-gestuurde e-mailoplossingen aan je bureauklanten.",
+      "button": "Aan de Slag"
     }
   }
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
@@ -30,41 +30,22 @@ export async function generateMetadata({
 }
 
 const USE_CASE_KEYS = [
-  {
-    key: 'automated_campaigns',
-    title: 'Automated Campaigns',
-    description:
-      'AI-written email sequences based on audience segments. Personalized at scale with dynamic content that adapts to each recipient.',
-  },
-  {
-    key: 'smart_followups',
-    title: 'Smart Follow-ups',
-    description:
-      'Automatic follow-up emails triggered by lead behavior. Never miss a warm lead with intelligent timing and messaging.',
-  },
-  {
-    key: 'newsletter_generation',
-    title: 'Newsletter Generation',
-    description:
-      'Weekly or monthly newsletters compiled from your content calendar. Curated, written, and scheduled automatically.',
-  },
-  {
-    key: 'inbox_management',
-    title: 'Inbox Management',
-    description:
-      'Smart routing, auto-replies, and priority flagging. Keep client inboxes organized and response times under control.',
-  },
+  'automated_campaigns',
+  'smart_followups',
+  'newsletter_generation',
+  'inbox_management',
 ] as const
 
 export default async function EmailPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
+  const t = await getTranslations({ locale, namespace: 'skills-email' })
 
   return (
     <PageShell>
       <WebPageJsonLd
-        name="AI Email Management for Your Agency Clients"
-        description="Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
+        name={t('meta.title')}
+        description={t('meta.description')}
         path="/skills/email"
         locale={locale}
       />
@@ -80,21 +61,20 @@ export default async function EmailPage({ params }: { params: Promise<{ locale: 
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-system/10 border border-accent-system/20 rounded-full mb-6">
-            <span className="text-sm font-medium text-accent-system">Email Skill</span>
+            <span className="text-sm font-medium text-accent-system">{t('hero.badge')}</span>
           </div>
           <h1
             id="hero"
             className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6"
           >
-            AI Email Management for Your Agency Clients
+            {t('hero.title')}
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-10">
-            Automated email campaigns, intelligent follow-ups, and AI-powered inbox management.
-            Deliver results for your clients without the manual grind.
+            {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton href="/pricing" size="lg">
-              Get Started
+              {t('cta.button')}
             </CTAButton>
           </div>
         </div>
@@ -103,13 +83,15 @@ export default async function EmailPage({ params }: { params: Promise<{ locale: 
       {/* Use Cases */}
       <section aria-labelledby="use-cases" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="use-cases">Use Cases</SectionHeading>
+          <SectionHeading id="use-cases">{t('use_cases.heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            {USE_CASE_KEYS.map((useCase, index) => (
-              <ScrollReveal key={useCase.key} delay={index * 0.1}>
+            {USE_CASE_KEYS.map((key, index) => (
+              <ScrollReveal key={key} delay={index * 0.1}>
                 <GlassCard>
-                  <h3 className="text-lg font-semibold text-text-primary mb-2">{useCase.title}</h3>
-                  <p className="text-text-secondary">{useCase.description}</p>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`use_cases.items.${key}.title`)}
+                  </h3>
+                  <p className="text-text-secondary">{t(`use_cases.items.${key}.description`)}</p>
                 </GlassCard>
               </ScrollReveal>
             ))}
@@ -120,45 +102,45 @@ export default async function EmailPage({ params }: { params: Promise<{ locale: 
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
           <div className="mt-10">
             <PricingTiers
               tiers={[
                 {
-                  name: 'Starter',
-                  price: '\u20AC397',
-                  period: '/mo',
+                  name: t('pricing.tiers.starter.name'),
+                  price: t('pricing.tiers.starter.price'),
+                  period: t('pricing.tiers.starter.period'),
                   features: [
-                    '1,000 emails/mo',
-                    '1 client account',
-                    'Campaign templates',
-                    'Basic analytics',
+                    t('pricing.tiers.starter.features_0'),
+                    t('pricing.tiers.starter.features_1'),
+                    t('pricing.tiers.starter.features_2'),
+                    t('pricing.tiers.starter.features_3'),
                   ],
                 },
                 {
-                  name: 'Growth',
-                  price: '\u20AC797',
-                  period: '/mo',
+                  name: t('pricing.tiers.growth.name'),
+                  price: t('pricing.tiers.growth.price'),
+                  period: t('pricing.tiers.growth.period'),
                   highlighted: true,
-                  badge: 'Most Popular',
+                  badge: t('pricing.tiers.growth.badge'),
                   features: [
-                    '5,000 emails/mo',
-                    '5 client accounts',
-                    'Smart follow-ups',
-                    'A/B testing',
-                    'CRM integration',
+                    t('pricing.tiers.growth.features_0'),
+                    t('pricing.tiers.growth.features_1'),
+                    t('pricing.tiers.growth.features_2'),
+                    t('pricing.tiers.growth.features_3'),
+                    t('pricing.tiers.growth.features_4'),
                   ],
                 },
                 {
-                  name: 'Scale',
-                  price: '\u20AC1,497',
-                  period: '/mo',
+                  name: t('pricing.tiers.scale.name'),
+                  price: t('pricing.tiers.scale.price'),
+                  period: t('pricing.tiers.scale.period'),
                   features: [
-                    'Unlimited emails',
-                    'Unlimited clients',
-                    'Full inbox management',
-                    'Custom workflows',
-                    'Dedicated support',
+                    t('pricing.tiers.scale.features_0'),
+                    t('pricing.tiers.scale.features_1'),
+                    t('pricing.tiers.scale.features_2'),
+                    t('pricing.tiers.scale.features_3'),
+                    t('pricing.tiers.scale.features_4'),
                   ],
                 },
               ]}
@@ -170,24 +152,24 @@ export default async function EmailPage({ params }: { params: Promise<{ locale: 
       {/* Trust Metrics */}
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <SectionHeading id="trust">{t('trust.heading')}</SectionHeading>
           <div className="mt-10">
             <TrustMetrics
               metrics={[
                 {
-                  value: '45%',
-                  label: 'Higher Open Rates',
-                  description: 'AI-optimized subject lines and send times',
+                  value: t('trust.metrics.open_rates.value'),
+                  label: t('trust.metrics.open_rates.label'),
+                  description: t('trust.metrics.open_rates.description'),
                 },
                 {
-                  value: '3x',
-                  label: 'More Replies',
-                  description: 'Personalized content that resonates',
+                  value: t('trust.metrics.replies.value'),
+                  label: t('trust.metrics.replies.label'),
+                  description: t('trust.metrics.replies.description'),
                 },
                 {
-                  value: '24/7',
-                  label: 'Sending',
-                  description: 'Automated delivery at optimal times',
+                  value: t('trust.metrics.sending.value'),
+                  label: t('trust.metrics.sending.label'),
+                  description: t('trust.metrics.sending.description'),
                 },
               ]}
             />
@@ -199,12 +181,10 @@ export default async function EmailPage({ params }: { params: Promise<{ locale: 
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading id="cta">Ready to Automate Email?</SectionHeading>
-            <p className="text-lg text-text-secondary mb-8">
-              Start delivering AI-powered email solutions to your agency clients today.
-            </p>
+            <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
+            <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
             <CTAButton href="/pricing" size="lg">
-              Get Started
+              {t('cta.button')}
             </CTAButton>
           </div>
         </ScrollReveal>
