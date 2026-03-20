@@ -23,6 +23,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - [x] **Phase 4: Compliance** - AI-disclosure, legal documents, and privacy policies for EU AI Act readiness
 - [ ] **Phase 5: Go-to-Market** - Founding member outreach, demo assets, and first 3-5 signed agencies
 - [ ] **Phase 6: Vite Feature Parity** - Port all interactive demos, missing UI sections, and enhanced language switcher from Vite to Next.js
+- [ ] **Phase 7: Website Copy Overhaul** - Introduce Clyde as named AI marketing employee with task-result storytelling across all pages
 
 ## Phase Details
 
@@ -150,6 +151,27 @@ Plans:
 - [ ] 06-03-PLAN.md — Voice agents page: VoiceDemoSection + VoiceDemoFAB + useElevenLabsCall + pricing/trust (Wave 2)
 - [ ] 06-04-PLAN.md — Marketing machine + automations pages: VisionTimeline + FeatureShowcase + pricing/trust/icons (Wave 2)
 
+### Phase 7: Website Copy Overhaul - AI Employee Messaging and Skill Page Storytelling
+
+**Goal**: All website copy (homepage + 8 skill pages) introduces Clyde as a named AI marketing employee with task-result storytelling, premium authority tone, and native-quality EN/NL/ES copy
+**Depends on**: Phase 6 (Vite feature parity must be complete)
+**Requirements**: WEB-01
+**Success Criteria** (what must be TRUE):
+
+1. All 8 skill pages use translation keys for every visible string (no hardcoded English)
+2. Homepage hero introduces Clyde by name with wow-first messaging hierarchy
+3. Every skill page has a task-demo section showing an example command to Clyde and his response
+4. Header navigation descriptions reference Clyde's capabilities
+5. Dutch and Spanish copy are native-quality rewrites (not translations) with "Clyde" consistent across all languages
+   **Plans**: 4 plans
+
+Plans:
+
+- [ ] 07-01-PLAN.md — Translation architecture fix: convert chatbot/email to t() keys + extract hardcoded props from 4 other pages (Wave 1)
+- [ ] 07-02-PLAN.md — Homepage + header English copy rewrite with Clyde messaging (Wave 2)
+- [ ] 07-03-PLAN.md — All 8 skill pages English copy rewrite + task-demo sections (Wave 2)
+- [ ] 07-04-PLAN.md — Native Dutch and Spanish rewrites of all Clyde messaging (Wave 3)
+
 ## Progress
 
 **Execution Order:**
@@ -167,14 +189,4 @@ Phases execute in parallel waves:
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
 | 5. Go-to-Market      | 2/3            | In progress | -          |
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
-
-### Phase 7: Website Copy Overhaul - AI Employee Messaging and Skill Page Storytelling
-
-**Goal:** [To be planned]
-**Requirements**: TBD
-**Depends on:** Phase 6
-**Plans:** 0 plans
-
-Plans:
-
-- [ ] TBD (run /gsd:plan-phase 7 to break down)
+| 7. Copy Overhaul     | 0/4            | Not started | -          |
