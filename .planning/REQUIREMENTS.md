@@ -1,176 +1,122 @@
-# Requirements: FMai Website — Next.js Migration
+# Requirements: FMai AaaS Pivot
 
-**Defined:** 2026-03-18
-**Core Value:** Every page must be fully indexable by search engines and AI crawlers, with structured data, semantic HTML, and optimized content
+**Defined:** 2026-03-20
+**Core Value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
 
 ## v1 Requirements
 
-Requirements for the Next.js migration. Each maps to roadmap phases.
+Requirements for AaaS launch. Each maps to roadmap phases.
 
-### SEO Infrastructure
+### Website Rebrand
 
-- [x] **SEO-01**: All pages server-rendered via Next.js App Router (SSR/SSG)
-- [x] **SEO-02**: Per-page metadata (title, description, OG tags) localized for EN/NL/ES
-- [x] **SEO-03**: Locale-prefixed URL routing (/en/, /nl/, /es/) with next-intl
-- [x] **SEO-04**: Hreflang tags and canonical URLs via metadata alternates
-- [x] **SEO-05**: XML sitemap with locale alternates for all pages
-- [x] **SEO-06**: robots.txt with AI crawler allow-policy (allow retrieval bots, block training bots)
-- [x] **SEO-07**: Semantic HTML structure across all pages (proper h1-h6, nav, main, section, article)
-- [x] **SEO-08**: All images use next/image with explicit dimensions
-- [x] **SEO-09**: Typography via next/font (DM Sans, JetBrains Mono) with zero layout shift
-- [x] **SEO-10**: Custom 404 and error pages with proper HTTP status codes
-- [x] **SEO-11**: Open Graph images for all pages (static or generated)
-- [x] **SEO-12**: Dynamic OG image generation with Satori for branded social previews
-- [x] **SEO-13**: Core Web Vitals green scores (LCP <2.5s, INP <200ms, CLS <0.1)
+- [ ] **WEB-01**: All homepage copy targets "marketing agencies" instead of "businesses" (EN/NL/ES)
+- [ ] **WEB-02**: Hero section communicates "AI Marketing Employee for agencies" value prop
+- [ ] **WEB-03**: Service pages restructured as skill pages (/skills/content-creator, /skills/voice-agent, /skills/lead-qualifier, /skills/social-media, /skills/ad-creator, /skills/reporting)
+- [ ] **WEB-04**: Pricing page shows Agent tiers (Founding Member EUR 997, Starter EUR 1,497, Growth EUR 1,997, Agency EUR 3,497) with skill add-ons
+- [ ] **WEB-05**: Founding member landing page with 10-spot scarcity, benefits, and signup CTA
+- [ ] **WEB-06**: Trust badges updated ("GDPR-First", "Powered by Enterprise AI", "Dutch Support")
+- [ ] **WEB-07**: Stats section updated with agency-relevant metrics
+- [ ] **WEB-08**: Testimonials/social proof rewritten for agency audience
+- [ ] **WEB-09**: FAQ rewritten for agency buyer questions
+- [ ] **WEB-10**: SEO metadata updated (titles, descriptions, JSON-LD) for "AI marketing employee agencies"
+- [ ] **WEB-11**: Navigation restructured (Services dropdown → Skills dropdown)
+- [ ] **WEB-12**: Footer links and descriptions updated for AaaS positioning
+- [ ] **WEB-13**: About page rewritten with AaaS mission and agency focus
+- [ ] **WEB-14**: How-it-works page reframed as agent onboarding journey
+- [ ] **WEB-15**: Chatbot demo personas updated for agency use cases
 
-### Structured Data
+### Dashboard Reframe
 
-- [x] **SCHEMA-01**: Organization JSON-LD on all pages
-- [x] **SCHEMA-02**: WebSite JSON-LD on homepage with SearchAction
-- [x] **SCHEMA-03**: WebPage JSON-LD on all subpages
-- [x] **SCHEMA-04**: Service JSON-LD per service page (Automations, Chatbots, Voice Agents, Marketing Machine)
-- [x] **SCHEMA-05**: BreadcrumbList JSON-LD generated from route structure
-- [x] **SCHEMA-06**: FAQPage JSON-LD with 5-8 FAQ items per service page
-- [x] **SCHEMA-07**: HowTo JSON-LD on How It Works page
-- [x] **SCHEMA-08**: dateModified in JSON-LD on all pages for content freshness
+- [ ] **DASH-01**: Sidebar labels reframed (Pipeline → Agent Activity, Campaigns → Tasks, etc.)
+- [ ] **DASH-02**: Dashboard overview shows "AI Employee" status and daily activity summary
+- [ ] **DASH-03**: Agency data model implemented (fma_agencies table, agency → clients hierarchy)
+- [ ] **DASH-04**: Client workspace management page (agency creates/manages client workspaces)
+- [ ] **DASH-05**: Skill activation toggles per client workspace (enable/disable content, voice, ads, etc.)
+- [ ] **DASH-06**: Stripe billing integration (base agent subscription + skill add-on products)
+- [ ] **DASH-07**: Agency onboarding wizard (signup → first client → first skill activation)
+- [ ] **DASH-08**: Route redirects for renamed pages (old routes → new routes)
 
-### GEO/LLMEO
+### n8n Multi-Tenant
 
-- [x] **GEO-01**: llms.txt at domain root with site summary and key page links
-- [x] **GEO-02**: llms-full.txt with expanded content for AI crawlers
-- [x] **GEO-03**: Quick-answer blocks (1-2 sentence definitions) above fold on each service page
-- [x] **GEO-04**: Entity-first content — consistent FMai entity definition across all pages
-- [x] **GEO-05**: Prompt-aligned headings — question-based H2/H3 matching AI query patterns
+- [ ] **N8N-01**: Init Config parameterized for agency client context (brand voice, accounts, API keys per client)
+- [ ] **N8N-02**: R&P Pipeline runs per-client with isolated data (content_schedule per client)
+- [ ] **N8N-03**: Posting Pipeline parameterized for per-client social accounts
+- [ ] **N8N-04**: Agency client setup workflow (new client → auto-configure all active skill workflows)
+- [ ] **N8N-05**: Usage metering per client (execution count, content items, voice minutes logged to Supabase)
+- [ ] **N8N-06**: Daily Analytics Collector activated and parameterized per client
+- [ ] **N8N-07**: Weekly Performance Intelligence activated with per-client reporting
+- [ ] **N8N-08**: Error handling sends per-client notifications (Telegram/Slack to agency owner)
 
-### Content Hub
+### Compliance
 
-- [x] **BLOG-01**: Blog/content hub page structure with MDX support
-- [x] **BLOG-02**: Blog listing page with category filtering
-- [x] **BLOG-03**: Individual blog post template with Article JSON-LD
-- [x] **BLOG-04**: Author attribution with Person schema
-- [x] **BLOG-05**: ISR (Incremental Static Regeneration) for blog pages
+- [ ] **COMP-01**: AI-disclosure text implemented in chatbot widget ("Ik ben een AI-assistent")
+- [ ] **COMP-02**: AI-disclosure in voice agent (Vapi greeting identifies as AI)
+- [ ] **COMP-03**: Verwerkersovereenkomst (DPA) template drafted
+- [ ] **COMP-04**: DPIA document created for AI agent data processing
+- [ ] **COMP-05**: Terms of service updated with AaaS-specific clauses and liability limits
+- [ ] **COMP-06**: Privacy policy updated for agent data processing
 
-### Interactive Features
+### Go-to-Market
 
-- [x] **INT-01**: Flagship concierge chatbot with SSR chrome and client hydration
-- [x] **INT-02**: All 17 chatbot tools migrated to Next.js Route Handlers
-- [x] **INT-03**: 3-persona demo playground on Chatbots page
-- [x] **INT-04**: Guided demo mode with 3 scenarios and state machine
-- [x] **INT-05**: motion v12 animations with "use client" wrapper pattern
-- [x] **INT-06**: Zustand stores migrated with hydration-safe patterns
-- [x] **INT-07**: i18next → next-intl translation migration (EN/NL/ES, all namespaces)
-- [x] **INT-08**: Calendly CTA integration with modal pattern
-- [x] **INT-09**: Cookie consent
-
-### Page Migration
-
-- [x] **PAGE-01**: Homepage with service cards, orbit visual, gradient mesh
-- [x] **PAGE-02**: Automations service page
-- [x] **PAGE-03**: Chatbots service page with demo playground
-- [x] **PAGE-04**: Voice Agents service page
-- [x] **PAGE-05**: Marketing Machine service page
-- [x] **PAGE-06**: About page
-- [x] **PAGE-07**: Pricing page with comparison tables
-- [x] **PAGE-08**: How It Works page
-- [x] **PAGE-09**: Contact page
-- [x] **PAGE-10**: Legal page
-- [x] **PAGE-11**: Content/copy rework for SEO on all pages
+- [ ] **GTM-01**: LinkedIn profile optimized for "AI Marketing Employee for agencies" positioning
+- [ ] **GTM-02**: Demo video created (under 5 min, showing agent skills in action)
+- [ ] **GTM-03**: 50 target agencies identified (30 NL, 20 UK) matching ICP
+- [ ] **GTM-04**: Founding member outreach sequence (LinkedIn engagement → DM → call → close)
+- [ ] **GTM-05**: 3-5 founding members signed (EUR 997/mo, 6-month commitment)
 
 ## v2 Requirements
 
-Deferred to future release. Tracked but not in current roadmap.
+Deferred to after founding member validation.
 
-### Content Strategy
+### Advanced Skills
 
-- **CONT-01**: Comparison and "vs" content pages (AI chatbot vs live chat, etc.)
-- **CONT-02**: Data-dense content with defensible statistics
-- **CONT-03**: Regular publishing cadence for topical authority
-- **CONT-04**: CMS integration (Sanity/Contentful) when content volume justifies it
+- **SKILL-01**: Ad Creator skill with Meta Ads direct publishing per client
+- **SKILL-02**: Blog Writer skill with per-client WordPress/Webflow integration
+- **SKILL-03**: SEO Optimizer skill with keyword tracking per client
 
-### Analytics
+### Platform Features
 
-- **ANAL-01**: AI citation tracking (tooling immature in 2026, revisit quarterly)
-- **ANAL-02**: Advanced SEO rank tracking per locale
+- **PLAT-01**: Self-serve agency signup (currently invite-only)
+- **PLAT-02**: White-label dashboard for agencies to show clients
+- **PLAT-03**: Skill marketplace with third-party skill templates
+- **PLAT-04**: Advanced usage-based billing (per voice minute, per content item)
+
+### Market Expansion
+
+- **MARK-01**: Spain market launch with localized pricing
+- **MARK-02**: Healthcare/dental vertical-specific compliance and templates
+- **MARK-03**: E-commerce vertical-specific Shopify integrations
 
 ## Out of Scope
 
-| Feature                                 | Reason                                                         |
-| --------------------------------------- | -------------------------------------------------------------- |
-| Mobile app                              | Web only                                                       |
-| E-commerce/payments                     | Demo/showcase site, not transactional                          |
-| User accounts/authentication            | No login system needed                                         |
-| Programmatic SEO / auto-generated pages | Low-quality pages hurt domain authority for a 4-service agency |
-| Separate mobile site (m-dot)            | Responsive design within same routes                           |
-| Client-side-only routing for content    | Defeats the migration purpose                                  |
-| Keyword stuffing / SEO spam             | Penalized by Google and AI systems                             |
-| Full CMS integration                    | Blog structure only, content source TBD                        |
-| Visual redesign                         | Keeping Living System design                                   |
+| Feature                             | Reason                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| Building on OpenClaw/NemoClaw       | Enterprise readiness 1.2/5, alpha stage, Big Tech bans — use as narrative only |
+| Mobile app                          | Web dashboard sufficient for B2B agency owners                                 |
+| Real-time multi-agent orchestration | n8n scheduled workflows are production-proven and sufficient                   |
+| Custom LLM fine-tuning per client   | Prompt engineering + brand docs sufficient for v1                              |
+| LATAM market                        | Currency instability, pricing mismatch — defer to Year 2                       |
+| Open API for integrations           | Not needed until 50+ clients                                                   |
+| Rebuilding dashboard from scratch   | 93 API routes exist; reframe labels and add agency layer                       |
+| Rebuilding n8n workflows            | 115 workflows exist; parameterize for multi-tenant                             |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
-| Requirement | Phase   | Status   |
-| ----------- | ------- | -------- |
-| SEO-01      | Phase 1 | Complete |
-| SEO-02      | Phase 2 | Complete |
-| SEO-03      | Phase 1 | Complete |
-| SEO-04      | Phase 2 | Complete |
-| SEO-05      | Phase 2 | Complete |
-| SEO-06      | Phase 2 | Complete |
-| SEO-07      | Phase 2 | Complete |
-| SEO-08      | Phase 2 | Complete |
-| SEO-09      | Phase 1 | Complete |
-| SEO-10      | Phase 2 | Complete |
-| SEO-11      | Phase 4 | Complete |
-| SEO-12      | Phase 4 | Complete |
-| SEO-13      | Phase 6 | Complete |
-| SCHEMA-01   | Phase 2 | Complete |
-| SCHEMA-02   | Phase 2 | Complete |
-| SCHEMA-03   | Phase 2 | Complete |
-| SCHEMA-04   | Phase 2 | Complete |
-| SCHEMA-05   | Phase 2 | Complete |
-| SCHEMA-06   | Phase 4 | Complete |
-| SCHEMA-07   | Phase 4 | Complete |
-| SCHEMA-08   | Phase 2 | Complete |
-| GEO-01      | Phase 4 | Complete |
-| GEO-02      | Phase 4 | Complete |
-| GEO-03      | Phase 4 | Complete |
-| GEO-04      | Phase 4 | Complete |
-| GEO-05      | Phase 4 | Complete |
-| BLOG-01     | Phase 5 | Complete |
-| BLOG-02     | Phase 5 | Complete |
-| BLOG-03     | Phase 5 | Complete |
-| BLOG-04     | Phase 5 | Complete |
-| BLOG-05     | Phase 5 | Complete |
-| INT-01      | Phase 3 | Complete |
-| INT-02      | Phase 3 | Complete |
-| INT-03      | Phase 3 | Complete |
-| INT-04      | Phase 3 | Complete |
-| INT-05      | Phase 3 | Complete |
-| INT-06      | Phase 1 | Complete |
-| INT-07      | Phase 1 | Complete |
-| INT-08      | Phase 3 | Complete |
-| INT-09      | Phase 3 | Complete |
-| PAGE-01     | Phase 2 | Complete |
-| PAGE-02     | Phase 2 | Complete |
-| PAGE-03     | Phase 2 | Complete |
-| PAGE-04     | Phase 2 | Complete |
-| PAGE-05     | Phase 2 | Complete |
-| PAGE-06     | Phase 2 | Complete |
-| PAGE-07     | Phase 2 | Complete |
-| PAGE-08     | Phase 2 | Complete |
-| PAGE-09     | Phase 2 | Complete |
-| PAGE-10     | Phase 2 | Complete |
-| PAGE-11     | Phase 2 | Complete |
+| Requirement        | Phase   | Status  |
+| ------------------ | ------- | ------- |
+| WEB-01 to WEB-15   | Phase 1 | Pending |
+| DASH-01 to DASH-08 | Phase 2 | Pending |
+| N8N-01 to N8N-08   | Phase 3 | Pending |
+| COMP-01 to COMP-06 | Phase 4 | Pending |
+| GTM-01 to GTM-05   | Phase 5 | Pending |
 
 **Coverage:**
 
-- v1 requirements: 51 total
-- Mapped to phases: 51
-- Unmapped: 0
+- v1 requirements: 42 total
+- Mapped to phases: 42
+- Unmapped: 0 ✓
 
 ---
 
-_Requirements defined: 2026-03-18_
-_Last updated: 2026-03-18 after roadmap creation_
+_Requirements defined: 2026-03-20_
+_Last updated: 2026-03-20 after initial definition_
