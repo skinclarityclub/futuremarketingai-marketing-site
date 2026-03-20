@@ -167,3 +167,14 @@ Phases execute in parallel waves:
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
 | 5. Go-to-Market      | 2/3            | In progress | -          |
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
+
+### Phase 7: Website Copy Overhaul - AI Employee Messaging and Skill Page Storytelling
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 6
+**Plans:** 0 plans
+
+Plans:
+
+- [ ] TBD (run /gsd:plan-phase 7 to break down)
