@@ -1,26 +1,12 @@
 {
-  "project_name": "FMai Website — Next.js Migration",
-  "milestone": "v2.0",
-  "milestone_description": "Migrate FMai website from Vite/React SPA to Next.js with full SEO/GEO/LLMEO",
   "mode": "yolo",
   "depth": "standard",
   "parallelization": true,
   "commit_docs": true,
   "model_profile": "quality",
-  "model_overrides": {
-    "gsd-verifier": "opus",
-    "gsd-plan-checker": "opus",
-    "gsd-research-synthesizer": "opus",
-    "gsd-codebase-mapper": "opus",
-    "gsd-integration-checker": "opus"
-  },
   "workflow": {
     "research": true,
     "plan_check": true,
-    "verifier": true,
-    "auto_advance": false
-  },
-  "git": {
-    "branching_strategy": "none"
+    "verifier": true
   }
 }
