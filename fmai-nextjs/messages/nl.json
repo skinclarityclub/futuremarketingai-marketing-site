@@ -848,5 +848,486 @@
   "blog": {
     "title": "AI Marketing & Automatisering Inzichten",
     "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen."
+  },
+  "skills-content-creator": {
+    "meta": {
+      "title": "Content Creator Skill | AI Marketing Medewerker | FMai",
+      "description": "Geautomatiseerde blogposts, social content en nieuwsbrieven — je AI Marketing Medewerker creert on-brand content op de automatische piloot."
+    },
+    "hero": {
+      "badge": "Content Creator Skill",
+      "title": "Blogposts, Social Content, Nieuwsbrieven — Op de Automatische Piloot",
+      "description": "Je AI Marketing Medewerker schrijft, plant en publiceert content over alle kanalen."
+    },
+    "features": {
+      "heading": "Wat de Content Creator Doet",
+      "items": {
+        "blog": {
+          "title": "Blogposts",
+          "description": "SEO-geoptimaliseerde artikelen in de merkstijl van je klant"
+        },
+        "social": {
+          "title": "Social Content",
+          "description": "Platform-native posts voor LinkedIn, Instagram, X en meer"
+        },
+        "newsletters": {
+          "title": "Nieuwsbrieven",
+          "description": "Wekelijkse of maandelijkse email content, opgesteld en klaar om te versturen"
+        },
+        "repurposing": {
+          "title": "Content Hergebruik",
+          "description": "Een stuk content automatisch omgezet in 10+ formaten"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "connect": {
+          "title": "Verbinden",
+          "description": "Koppel de merkrichtlijnen, tone of voice en contentkalender van je klant"
+        },
+        "generate": {
+          "title": "Genereren",
+          "description": "De AI maakt concepten op basis van trending topics, keywords en je strategie"
+        },
+        "review": {
+          "title": "Review & Publiceren",
+          "description": "Goedkeuren of automatisch publiceren — jij houdt controle over kwaliteit"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Schaal contentproductie over meerdere klanten zonder schrijvers in te huren"
+        },
+        "ecommerce": {
+          "title": "E-commerce Merken",
+          "description": "Productbeschrijvingen, seizoenscampagnes en social content op schaal"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Contentproductie te Schalen?",
+      "subtitle": "Voeg de Content Creator skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "skills-voice-agent": {
+    "meta": {
+      "title": "Voice Agent Skill | AI Marketing Medewerker | FMai",
+      "description": "AI-gestuurde inkomende en uitgaande gesprekken. Je AI Marketing Medewerker beantwoordt telefoontjes en kwalificeert leads — 24/7."
+    },
+    "hero": {
+      "badge": "Voice Agent Skill",
+      "title": "AI-Gestuurde Inkomende en Uitgaande Gesprekken",
+      "description": "Je AI Marketing Medewerker beantwoordt telefoontjes, kwalificeert leads en boekt afspraken."
+    },
+    "features": {
+      "heading": "Wat de Voice Agent Doet",
+      "items": {
+        "inbound": {
+          "title": "Inkomende Gesprekken",
+          "description": "Beantwoord klantvragen en routeer naar het juiste teamlid"
+        },
+        "outbound": {
+          "title": "Uitgaande Gesprekken",
+          "description": "Follow-up op leads, bevestig afspraken en voer outreach campagnes"
+        },
+        "qualification": {
+          "title": "Lead Kwalificatie",
+          "description": "Stel kwalificatievragen en scoor leads voor overdracht"
+        },
+        "booking": {
+          "title": "Afspraken Boeken",
+          "description": "Controleer beschikbaarheid en boek vergaderingen direct in agenda's"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "setup": {
+          "title": "Setup",
+          "description": "Configureer je telefoonnummer, begroetingsscript en kwalificatiecriteria"
+        },
+        "deploy": {
+          "title": "Deployen",
+          "description": "De voice agent gaat live en behandelt gesprekken in realtime"
+        },
+        "optimize": {
+          "title": "Optimaliseren",
+          "description": "Bekijk gesprekstranscripten en verbeter de reacties"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Bied AI telefoonagenten aan als extra service voor je klanten"
+        },
+        "sales": {
+          "title": "Salesteams",
+          "description": "Pre-kwalificeer inkomende leads voordat ze je salesmedewerkers bereiken"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Telefoongesprekken te Automatiseren?",
+      "subtitle": "Voeg de Voice Agent skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "skills-lead-qualifier": {
+    "meta": {
+      "title": "Lead Qualifier Skill | AI Marketing Medewerker | FMai",
+      "description": "AI chatbot die leads kwalificeert 24/7. Je AI Marketing Medewerker engageert bezoekers en levert sales-ready leads."
+    },
+    "hero": {
+      "badge": "Lead Qualifier Skill",
+      "title": "Chatbot Die Leads Kwalificeert 24/7",
+      "description": "Je AI Marketing Medewerker engageert elke websitebezoeker en draagt gekwalificeerde leads over aan je team."
+    },
+    "features": {
+      "heading": "Wat de Lead Qualifier Doet",
+      "items": {
+        "engage": {
+          "title": "Bezoeker Engagement",
+          "description": "Proactief bezoekers begroeten en kwalificatiegesprekken starten"
+        },
+        "qualify": {
+          "title": "Slimme Kwalificatie",
+          "description": "Vraag naar budget, tijdlijn en fit op basis van je ICP-criteria"
+        },
+        "handoff": {
+          "title": "Lead Overdracht",
+          "description": "Routeer gekwalificeerde leads naar CRM, email of Slack in realtime"
+        },
+        "nurture": {
+          "title": "Lead Nurturing",
+          "description": "Follow-up met ongekwalificeerde leads via geautomatiseerde email sequences"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "configure": {
+          "title": "Configureren",
+          "description": "Definieer je ideale klantprofiel en kwalificatiecriteria"
+        },
+        "embed": {
+          "title": "Embedden",
+          "description": "Voeg de chatbot widget toe aan de website van je klant"
+        },
+        "convert": {
+          "title": "Converteren",
+          "description": "Zie gekwalificeerde leads automatisch in je pipeline stromen"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Lever always-on lead kwalificatie als service aan je klanten"
+        },
+        "saas": {
+          "title": "SaaS Bedrijven",
+          "description": "Kwalificeer free trial signups en routeer enterprise leads naar sales"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Leads 24/7 te Kwalificeren?",
+      "subtitle": "Voeg de Lead Qualifier skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "skills-social-media": {
+    "meta": {
+      "title": "Social Media Skill | AI Marketing Medewerker | FMai",
+      "description": "Multi-platform scheduling en analytics. Je AI Marketing Medewerker beheert social media op LinkedIn, Instagram, X en meer."
+    },
+    "hero": {
+      "badge": "Social Media Skill",
+      "title": "Multi-Platform Planning en Analytics",
+      "description": "Je AI Marketing Medewerker maakt, plant en analyseert social media content over alle grote platforms."
+    },
+    "features": {
+      "heading": "Wat de Social Media Skill Doet",
+      "items": {
+        "scheduling": {
+          "title": "Slim Plannen",
+          "description": "Auto-schedule posts op optimale tijden per platform"
+        },
+        "analytics": {
+          "title": "Prestatie Analytics",
+          "description": "Volg engagement, bereik en groei over alle kanalen"
+        },
+        "creation": {
+          "title": "Content Creatie",
+          "description": "Genereer platform-native posts met hashtags en visuals"
+        },
+        "monitoring": {
+          "title": "Merk Monitoring",
+          "description": "Volg mentions en reageer automatisch op comments"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "connect": {
+          "title": "Verbinden",
+          "description": "Koppel de social accounts en merkrichtlijnen van je klant"
+        },
+        "plan": {
+          "title": "Plannen",
+          "description": "De AI genereert een contentkalender op basis van je strategie"
+        },
+        "publish": {
+          "title": "Publiceren & Analyseren",
+          "description": "Content gaat automatisch live met wekelijkse prestatierapporten"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Beheer social media voor tientallen klanten zonder je team uit te breiden"
+        },
+        "brands": {
+          "title": "Groeiende Merken",
+          "description": "Onderhoud consistente social presence zonder dedicated social media manager"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Social Media Management te Schalen?",
+      "subtitle": "Voeg de Social Media skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "skills-ad-creator": {
+    "meta": {
+      "title": "Ad Creator Skill | AI Marketing Medewerker | FMai",
+      "description": "AI-gegenereerde statische en video advertenties. Je AI Marketing Medewerker maakt hoog-converterende ad creatives."
+    },
+    "hero": {
+      "badge": "Ad Creator Skill",
+      "title": "AI-Gegenereerde Statische en Video Advertenties",
+      "description": "Je AI Marketing Medewerker ontwerpt ad creatives, schrijft copy en genereert video ads."
+    },
+    "features": {
+      "heading": "Wat de Ad Creator Doet",
+      "items": {
+        "static": {
+          "title": "Statische Ad Design",
+          "description": "On-brand display ads en social ad creatives in meerdere formaten"
+        },
+        "video": {
+          "title": "Video Ads",
+          "description": "Korte video ads met motion graphics en ondertiteling"
+        },
+        "copy": {
+          "title": "Ad Copywriting",
+          "description": "Headlines, beschrijvingen en CTAs geoptimaliseerd per platform"
+        },
+        "variants": {
+          "title": "A/B Varianten",
+          "description": "Genereer meerdere creatieve varianten voor split testing"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "brief": {
+          "title": "Brief",
+          "description": "Geef campagnedoelen, doelgroep en merkassets op"
+        },
+        "generate": {
+          "title": "Genereren",
+          "description": "De AI maakt ad creatives over formaten en platforms"
+        },
+        "launch": {
+          "title": "Lanceren",
+          "description": "Download assets of push direct naar ad platforms"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Produceer ad creatives op schaal voor meerdere klantcampagnes"
+        },
+        "performance": {
+          "title": "Performance Teams",
+          "description": "Genereer verse ad varianten sneller dan handmatig design"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Ad Creative Productie te Schalen?",
+      "subtitle": "Voeg de Ad Creator skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "skills-reporting": {
+    "meta": {
+      "title": "Reporting Skill | AI Marketing Medewerker | FMai",
+      "description": "Cross-platform dashboards en wekelijkse rapporten. Je AI Marketing Medewerker aggregeert data en levert actionable insights."
+    },
+    "hero": {
+      "badge": "Reporting Skill",
+      "title": "Cross-Platform Dashboards en Wekelijkse Rapporten",
+      "description": "Je AI Marketing Medewerker haalt data uit elk kanaal, bouwt dashboards en stuurt wekelijkse prestatierapporten."
+    },
+    "features": {
+      "heading": "Wat de Reporting Skill Doet",
+      "items": {
+        "dashboards": {
+          "title": "Live Dashboards",
+          "description": "Realtime data van Google Analytics, social, ads en CRM in een overzicht"
+        },
+        "weekly": {
+          "title": "Wekelijkse Rapporten",
+          "description": "Geautomatiseerde klantrapporten met insights en aanbevelingen"
+        },
+        "trends": {
+          "title": "Trend Detectie",
+          "description": "AI signaleert anomalieen en groeikansen in je data"
+        },
+        "roi": {
+          "title": "ROI Tracking",
+          "description": "Volg campagneprestaties en marketing ROI over kanalen"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Hoe Het Werkt",
+      "steps": {
+        "integrate": {
+          "title": "Integreren",
+          "description": "Verbind databronnen — analytics, ads, CRM, social platforms"
+        },
+        "analyze": {
+          "title": "Analyseren",
+          "description": "De AI aggregeert data en genereert automatisch insights"
+        },
+        "report": {
+          "title": "Rapporteren",
+          "description": "Ontvang wekelijkse rapporten via email of deel live dashboards met klanten"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Use Cases",
+      "items": {
+        "agencies": {
+          "title": "Marketingbureaus",
+          "description": "Lever professionele klantrapporten zonder uren handmatig data te trekken"
+        },
+        "managers": {
+          "title": "Marketing Managers",
+          "description": "Krijg een single source of truth voor alle marketing prestatiedata"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Klantrapportage te Automatiseren?",
+      "subtitle": "Voeg de Reporting skill toe aan je AI Marketing Medewerker.",
+      "button": "Bekijk Prijzen"
+    }
+  },
+  "founding-member": {
+    "meta": {
+      "title": "Founding Member Programma | AI Marketing Medewerker | FMai",
+      "description": "Word een van 10 Founding Members. Vergrendel EUR 997/mnd voor altijd — de laagste prijs voor je AI Marketing Medewerker."
+    },
+    "hero": {
+      "badge": "Slechts 10 Plekken Beschikbaar",
+      "title": "Word Founding Member",
+      "description": "Vergrendel de laagste prijs voor altijd. Wees een van de eerste 10 bureaus die een AI Marketing Medewerker inzetten met FMai."
+    },
+    "pricing": {
+      "heading": "Founding Member Prijzen",
+      "price": "997",
+      "currency": "EUR",
+      "period": "/mnd",
+      "locked": "Vergrendeld voor altijd",
+      "comparison": "Reguliere prijs begint bij EUR 1.497/mnd",
+      "includes": "Agent + 1 skill naar keuze"
+    },
+    "benefits": {
+      "heading": "Founding Member Voordelen",
+      "items": {
+        "price_lock": {
+          "title": "Prijsgarantie",
+          "description": "Je EUR 997/mnd tarief stijgt nooit, zelfs als we features toevoegen en prijzen verhogen"
+        },
+        "priority": {
+          "title": "Prioriteit Support",
+          "description": "Directe toegang tot het founding team — sla de wachtrij over"
+        },
+        "influence": {
+          "title": "Product Invloed",
+          "description": "Vorm de roadmap — jouw feature requests krijgen prioriteit"
+        },
+        "early_access": {
+          "title": "Vroege Toegang",
+          "description": "Wees de eerste die nieuwe skills en mogelijkheden test"
+        },
+        "community": {
+          "title": "Founder Community",
+          "description": "Exclusieve groep vooruitstrevende bureau-eigenaren die AI strategieen delen"
+        },
+        "onboarding": {
+          "title": "White-Glove Onboarding",
+          "description": "We richten je eerste klant samen in — hands-on, persoonlijk"
+        }
+      }
+    },
+    "faq": {
+      "heading": "Veelgestelde Vragen",
+      "items": {
+        "q1": {
+          "question": "Wat betekent 'prijsgarantie' precies?",
+          "answer": "Je maandelijkse tarief van EUR 997 stijgt nooit zolang je lid blijft."
+        },
+        "q2": {
+          "question": "Wat is inbegrepen in het founding member plan?",
+          "answer": "Je krijgt de volledige AI Marketing Medewerker met 1 skill naar keuze. Je kunt altijd extra skills toevoegen."
+        },
+        "q3": {
+          "question": "Is er een commitment periode?",
+          "answer": "Ja, founding members committeren aan een founding periode van 6 maanden. Daarna ga je maand-tot-maand door tegen hetzelfde tarief."
+        },
+        "q4": {
+          "question": "Hoeveel plekken zijn beschikbaar?",
+          "answer": "We accepteren precies 10 founding members. Zodra alle plekken gevuld zijn, sluit het programma definitief."
+        },
+        "q5": {
+          "question": "Kan ik later meer skills toevoegen?",
+          "answer": "Absoluut. Je kunt op elk moment skills toevoegen of verwijderen als add-ons bovenop je basistarief."
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om Founding Member te Worden?",
+      "subtitle": "Slechts 10 plekken beschikbaar. Boek een gesprek om je plek te reserveren.",
+      "button": "Boek een Gesprek"
+    }
   }
 }

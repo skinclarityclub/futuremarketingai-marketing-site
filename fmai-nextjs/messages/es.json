@@ -848,5 +848,486 @@
   "blog": {
     "title": "Ideas sobre Marketing IA y Automatizacion",
     "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento."
+  },
+  "skills-content-creator": {
+    "meta": {
+      "title": "Content Creator Skill | Empleado de Marketing IA | FMai",
+      "description": "Posts de blog, contenido social y newsletters automatizados. Tu Empleado de Marketing IA crea contenido de marca en piloto automatico."
+    },
+    "hero": {
+      "badge": "Content Creator Skill",
+      "title": "Posts de Blog, Contenido Social, Newsletters — En Piloto Automatico",
+      "description": "Tu Empleado de Marketing IA escribe, programa y publica contenido en todos los canales."
+    },
+    "features": {
+      "heading": "Que Hace el Content Creator",
+      "items": {
+        "blog": {
+          "title": "Posts de Blog",
+          "description": "Articulos optimizados para SEO en la voz de marca de tu cliente"
+        },
+        "social": {
+          "title": "Contenido Social",
+          "description": "Posts nativos para LinkedIn, Instagram, X y mas"
+        },
+        "newsletters": {
+          "title": "Newsletters",
+          "description": "Contenido de email semanal o mensual, redactado y listo para enviar"
+        },
+        "repurposing": {
+          "title": "Reutilizacion de Contenido",
+          "description": "Una pieza de contenido convertida en 10+ formatos automaticamente"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "connect": {
+          "title": "Conectar",
+          "description": "Vincula las directrices de marca y calendario de contenido de tu cliente"
+        },
+        "generate": {
+          "title": "Generar",
+          "description": "La IA crea borradores basados en temas trending y tu estrategia"
+        },
+        "review": {
+          "title": "Revisar y Publicar",
+          "description": "Aprueba o auto-publica — tu controlas la calidad"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Escala la produccion de contenido para multiples clientes sin contratar escritores"
+        },
+        "ecommerce": {
+          "title": "Marcas E-commerce",
+          "description": "Descripciones de productos, campanas estacionales y contenido social a escala"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Escalar la Produccion de Contenido?",
+      "subtitle": "Anade la skill Content Creator a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-voice-agent": {
+    "meta": {
+      "title": "Voice Agent Skill | Empleado de Marketing IA | FMai",
+      "description": "Llamadas entrantes y salientes con IA. Tu Empleado de Marketing IA gestiona consultas telefonicas y califica leads — 24/7."
+    },
+    "hero": {
+      "badge": "Voice Agent Skill",
+      "title": "Llamadas Entrantes y Salientes con IA",
+      "description": "Tu Empleado de Marketing IA responde llamadas, califica leads y agenda citas."
+    },
+    "features": {
+      "heading": "Que Hace el Voice Agent",
+      "items": {
+        "inbound": {
+          "title": "Llamadas Entrantes",
+          "description": "Responde consultas de clientes y dirige al miembro correcto del equipo"
+        },
+        "outbound": {
+          "title": "Llamadas Salientes",
+          "description": "Seguimiento de leads, confirmacion de citas y campanas de alcance"
+        },
+        "qualification": {
+          "title": "Calificacion de Leads",
+          "description": "Hace preguntas de calificacion y puntua leads antes del traspaso"
+        },
+        "booking": {
+          "title": "Reserva de Citas",
+          "description": "Verifica disponibilidad y agenda reuniones directamente en calendarios"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "setup": {
+          "title": "Configurar",
+          "description": "Configura tu numero de telefono, guion de saludo y criterios de calificacion"
+        },
+        "deploy": {
+          "title": "Desplegar",
+          "description": "El agente de voz se activa y gestiona llamadas en tiempo real"
+        },
+        "optimize": {
+          "title": "Optimizar",
+          "description": "Revisa transcripciones de llamadas y ajusta las respuestas"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Ofrece agentes de telefono IA como servicio adicional a tus clientes"
+        },
+        "sales": {
+          "title": "Equipos de Ventas",
+          "description": "Pre-califica leads entrantes antes de que lleguen a tus representantes"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Automatizar Conversaciones Telefonicas?",
+      "subtitle": "Anade la skill Voice Agent a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-lead-qualifier": {
+    "meta": {
+      "title": "Lead Qualifier Skill | Empleado de Marketing IA | FMai",
+      "description": "Chatbot IA que califica leads 24/7. Tu Empleado de Marketing IA involucra visitantes y entrega leads listos para ventas."
+    },
+    "hero": {
+      "badge": "Lead Qualifier Skill",
+      "title": "Chatbot Que Califica Leads 24/7",
+      "description": "Tu Empleado de Marketing IA involucra a cada visitante del sitio web y entrega leads calificados a tu equipo."
+    },
+    "features": {
+      "heading": "Que Hace el Lead Qualifier",
+      "items": {
+        "engage": {
+          "title": "Engagement de Visitantes",
+          "description": "Saluda proactivamente a los visitantes e inicia conversaciones de calificacion"
+        },
+        "qualify": {
+          "title": "Calificacion Inteligente",
+          "description": "Pregunta sobre presupuesto, plazos y ajuste segun tus criterios ICP"
+        },
+        "handoff": {
+          "title": "Traspaso de Leads",
+          "description": "Dirige leads calificados a CRM, email o Slack en tiempo real"
+        },
+        "nurture": {
+          "title": "Nurturing de Leads",
+          "description": "Seguimiento de leads no calificados via secuencias de email automatizadas"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "configure": {
+          "title": "Configurar",
+          "description": "Define tu perfil de cliente ideal y criterios de calificacion"
+        },
+        "embed": {
+          "title": "Integrar",
+          "description": "Anade el widget de chatbot al sitio web de tu cliente en minutos"
+        },
+        "convert": {
+          "title": "Convertir",
+          "description": "Observa leads calificados fluir automaticamente a tu pipeline"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Entrega calificacion de leads always-on como servicio a tus clientes"
+        },
+        "saas": {
+          "title": "Empresas SaaS",
+          "description": "Califica registros de prueba gratuita y dirige leads enterprise a ventas"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Calificar Leads las 24 Horas?",
+      "subtitle": "Anade la skill Lead Qualifier a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-social-media": {
+    "meta": {
+      "title": "Social Media Skill | Empleado de Marketing IA | FMai",
+      "description": "Programacion y analitica multi-plataforma. Tu Empleado de Marketing IA gestiona redes sociales en LinkedIn, Instagram, X y mas."
+    },
+    "hero": {
+      "badge": "Social Media Skill",
+      "title": "Programacion y Analitica Multi-Plataforma",
+      "description": "Tu Empleado de Marketing IA crea, programa y analiza contenido de redes sociales en todas las plataformas."
+    },
+    "features": {
+      "heading": "Que Hace la Skill Social Media",
+      "items": {
+        "scheduling": {
+          "title": "Programacion Inteligente",
+          "description": "Auto-programa publicaciones en horarios optimos por plataforma"
+        },
+        "analytics": {
+          "title": "Analitica de Rendimiento",
+          "description": "Rastrea engagement, alcance y crecimiento en todos los canales"
+        },
+        "creation": {
+          "title": "Creacion de Contenido",
+          "description": "Genera publicaciones nativas con hashtags y visuales"
+        },
+        "monitoring": {
+          "title": "Monitoreo de Marca",
+          "description": "Rastrea menciones y responde comentarios automaticamente"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "connect": {
+          "title": "Conectar",
+          "description": "Vincula las cuentas sociales y directrices de marca de tu cliente"
+        },
+        "plan": {
+          "title": "Planificar",
+          "description": "La IA genera un calendario de contenido basado en tu estrategia"
+        },
+        "publish": {
+          "title": "Publicar y Analizar",
+          "description": "El contenido se publica automaticamente con informes semanales"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Gestiona redes sociales para docenas de clientes sin ampliar tu equipo"
+        },
+        "brands": {
+          "title": "Marcas en Crecimiento",
+          "description": "Mantiene presencia social consistente sin un gestor dedicado"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Escalar la Gestion de Redes Sociales?",
+      "subtitle": "Anade la skill Social Media a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-ad-creator": {
+    "meta": {
+      "title": "Ad Creator Skill | Empleado de Marketing IA | FMai",
+      "description": "Anuncios estaticos y de video generados por IA. Tu Empleado de Marketing IA crea creatividades de alta conversion."
+    },
+    "hero": {
+      "badge": "Ad Creator Skill",
+      "title": "Anuncios Estaticos y de Video Generados por IA",
+      "description": "Tu Empleado de Marketing IA disena creatividades, escribe copy y genera video ads."
+    },
+    "features": {
+      "heading": "Que Hace el Ad Creator",
+      "items": {
+        "static": {
+          "title": "Diseno de Anuncios Estaticos",
+          "description": "Display ads y creatividades sociales de marca en multiples tamanos"
+        },
+        "video": {
+          "title": "Video Ads",
+          "description": "Videos cortos con graficos en movimiento y subtitulos"
+        },
+        "copy": {
+          "title": "Copywriting de Anuncios",
+          "description": "Headlines, descripciones y CTAs optimizados por plataforma"
+        },
+        "variants": {
+          "title": "Variantes A/B",
+          "description": "Genera multiples variantes creativas para split testing"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "brief": {
+          "title": "Brief",
+          "description": "Proporciona objetivos de campana, audiencia y assets de marca"
+        },
+        "generate": {
+          "title": "Generar",
+          "description": "La IA crea creatividades en formatos y plataformas"
+        },
+        "launch": {
+          "title": "Lanzar",
+          "description": "Descarga assets o envia directamente a plataformas de anuncios"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Produce creatividades a escala para campanas de multiples clientes"
+        },
+        "performance": {
+          "title": "Equipos de Performance",
+          "description": "Genera variantes de anuncios frescos mas rapido que el diseno manual"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Escalar la Produccion de Creatividades?",
+      "subtitle": "Anade la skill Ad Creator a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "skills-reporting": {
+    "meta": {
+      "title": "Reporting Skill | Empleado de Marketing IA | FMai",
+      "description": "Dashboards multi-plataforma e informes semanales. Tu Empleado de Marketing IA agrega datos y entrega insights accionables."
+    },
+    "hero": {
+      "badge": "Reporting Skill",
+      "title": "Dashboards Multi-Plataforma e Informes Semanales",
+      "description": "Tu Empleado de Marketing IA extrae datos de cada canal, construye dashboards y envia informes semanales."
+    },
+    "features": {
+      "heading": "Que Hace la Skill Reporting",
+      "items": {
+        "dashboards": {
+          "title": "Dashboards en Vivo",
+          "description": "Datos en tiempo real de Google Analytics, social, ads y CRM en una vista"
+        },
+        "weekly": {
+          "title": "Informes Semanales",
+          "description": "Informes automatizados para clientes con insights y recomendaciones"
+        },
+        "trends": {
+          "title": "Deteccion de Tendencias",
+          "description": "La IA detecta anomalias y oportunidades de crecimiento en tus datos"
+        },
+        "roi": {
+          "title": "Seguimiento de ROI",
+          "description": "Rastrea rendimiento de campanas y ROI de marketing en canales"
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Como Funciona",
+      "steps": {
+        "integrate": {
+          "title": "Integrar",
+          "description": "Conecta fuentes de datos — analytics, ads, CRM, plataformas sociales"
+        },
+        "analyze": {
+          "title": "Analizar",
+          "description": "La IA agrega datos y genera insights automaticamente"
+        },
+        "report": {
+          "title": "Reportar",
+          "description": "Recibe informes semanales por email o comparte dashboards en vivo"
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Casos de Uso",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Entrega informes profesionales sin horas de extraccion manual de datos"
+        },
+        "managers": {
+          "title": "Gerentes de Marketing",
+          "description": "Obten una fuente unica de verdad para todos los datos de rendimiento"
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Automatizar Reportes de Clientes?",
+      "subtitle": "Anade la skill Reporting a tu Empleado de Marketing IA.",
+      "button": "Ver Precios"
+    }
+  },
+  "founding-member": {
+    "meta": {
+      "title": "Programa Founding Member | Empleado de Marketing IA | FMai",
+      "description": "Unete como uno de 10 Founding Members. Bloquea EUR 997/mes para siempre — el precio mas bajo para tu Empleado de Marketing IA."
+    },
+    "hero": {
+      "badge": "Solo 10 Plazas Disponibles",
+      "title": "Conviertete en Founding Member",
+      "description": "Bloquea el precio mas bajo para siempre. Se una de las primeras 10 agencias en desplegar un Empleado de Marketing IA con FMai."
+    },
+    "pricing": {
+      "heading": "Precios Founding Member",
+      "price": "997",
+      "currency": "EUR",
+      "period": "/mes",
+      "locked": "Bloqueado de por vida",
+      "comparison": "El precio regular comienza en EUR 1.497/mes",
+      "includes": "Agente + 1 skill a eleccion"
+    },
+    "benefits": {
+      "heading": "Beneficios Founding Member",
+      "items": {
+        "price_lock": {
+          "title": "Garantia de Precio",
+          "description": "Tu tarifa de EUR 997/mes nunca aumenta, incluso cuando anadamos funciones"
+        },
+        "priority": {
+          "title": "Soporte Prioritario",
+          "description": "Acceso directo al equipo fundador — salta la cola"
+        },
+        "influence": {
+          "title": "Influencia en Producto",
+          "description": "Moldea la hoja de ruta — tus solicitudes obtienen prioridad"
+        },
+        "early_access": {
+          "title": "Acceso Anticipado",
+          "description": "Se el primero en probar nuevas skills antes del lanzamiento publico"
+        },
+        "community": {
+          "title": "Comunidad Founder",
+          "description": "Grupo exclusivo de propietarios de agencias visionarios compartiendo estrategias IA"
+        },
+        "onboarding": {
+          "title": "Onboarding Personalizado",
+          "description": "Configuramos tu primer cliente juntos — practico y personalizado"
+        }
+      }
+    },
+    "faq": {
+      "heading": "Preguntas Frecuentes",
+      "items": {
+        "q1": {
+          "question": "Que significa 'garantia de precio' exactamente?",
+          "answer": "Tu tarifa mensual de EUR 997 nunca aumentara mientras seas miembro."
+        },
+        "q2": {
+          "question": "Que incluye el plan founding member?",
+          "answer": "Obtienes el Empleado de Marketing IA completo con 1 skill a eleccion. Puedes anadir mas skills en cualquier momento."
+        },
+        "q3": {
+          "question": "Hay un periodo de compromiso?",
+          "answer": "Si, los founding members se comprometen a un periodo de 6 meses. Despues, continuas mes a mes a la misma tarifa."
+        },
+        "q4": {
+          "question": "Cuantas plazas hay disponibles?",
+          "answer": "Aceptamos exactamente 10 founding members. Una vez llenas, el programa cierra permanentemente."
+        },
+        "q5": {
+          "question": "Puedo anadir mas skills despues?",
+          "answer": "Absolutamente. Puedes anadir o eliminar skills en cualquier momento como add-ons sobre tu tarifa base."
+        }
+      }
+    },
+    "cta": {
+      "title": "Listo para Ser Founding Member?",
+      "subtitle": "Solo 10 plazas disponibles. Reserva una llamada para asegurar tu lugar.",
+      "button": "Reservar Llamada"
+    }
   }
 }

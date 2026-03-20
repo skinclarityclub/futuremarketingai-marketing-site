@@ -14,12 +14,13 @@ const withAnalyze = withBundleAnalyzer({
 // ---------------------------------------------------------------------------
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com https://unpkg.com;
   style-src 'self' 'unsafe-inline' https://assets.calendly.com;
-  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com;
+  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://prod.spline.design;
   font-src 'self' data:;
-  connect-src 'self' https://api.anthropic.com https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com;
+  connect-src 'self' https://api.anthropic.com https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
   frame-src https://calendly.com;
+  worker-src 'self' blob:;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
@@ -81,6 +82,30 @@ const nextConfig: NextConfig = {
         // Apply security headers to all routes
         source: '/(.*)',
         headers: securityHeaders,
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:locale/chatbots',
+        destination: '/:locale/skills/lead-qualifier',
+        permanent: true,
+      },
+      {
+        source: '/:locale/automations',
+        destination: '/:locale/skills/content-creator',
+        permanent: true,
+      },
+      {
+        source: '/:locale/voice-agents',
+        destination: '/:locale/skills/voice-agent',
+        permanent: true,
+      },
+      {
+        source: '/:locale/marketing-machine',
+        destination: '/:locale/skills/content-creator',
+        permanent: true,
       },
     ]
   },

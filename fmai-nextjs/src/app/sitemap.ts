@@ -5,10 +5,13 @@ import { getAllPostsAllLocales } from '@/lib/blog'
 
 const pages = [
   { path: '/', changeFrequency: 'weekly' as const, priority: 1 },
-  { path: '/automations', changeFrequency: 'monthly' as const, priority: 0.8 },
-  { path: '/chatbots', changeFrequency: 'monthly' as const, priority: 0.8 },
-  { path: '/voice-agents', changeFrequency: 'monthly' as const, priority: 0.8 },
-  { path: '/marketing-machine', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/content-creator', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/voice-agent', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/lead-qualifier', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/social-media', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/ad-creator', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/reporting', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/founding-member', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/pricing', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/how-it-works', changeFrequency: 'monthly' as const, priority: 0.6 },
