@@ -878,6 +878,12 @@
     },
     "last_updated": "Last updated: March 2026"
   },
+  "chatbot": {
+    "disclosure": {
+      "badge": "AI Assistant",
+      "notice": "I'm an AI assistant"
+    }
+  },
   "blog": {
     "title": "AI Marketing & Automation Insights",
     "subtitle": "Insights on AI marketing automation, chatbots, and growth strategies for agencies."

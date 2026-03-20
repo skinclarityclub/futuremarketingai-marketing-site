@@ -21,11 +21,11 @@ const PERSONA_NAMES: Record<DemoPersonaId, string> = {
 
 const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
   ecommerce:
-    "Welcome! I'm your AI Marketing Employee onboarding assistant. Tell me about your client's brand and I'll show you how I learn their voice, audience, and style.",
+    "Welcome! I'm an AI assistant — your AI Marketing Employee onboarding guide. Tell me about your client's brand and I'll show you how I learn their voice, audience, and style.",
   leadgen:
-    "Hi! I'm the Content Creator skill. Give me a topic and a client brief, and I'll draft an SEO-optimized blog post tailored to their brand voice.",
+    "Hi! I'm an AI assistant — the Content Creator skill. Give me a topic and a client brief, and I'll draft an SEO-optimized blog post tailored to their brand voice.",
   support:
-    "Hello! I'm the ROI Calculator. Tell me about your agency — team size, hourly rates, and client count — and I'll estimate your savings with an AI Marketing Employee.",
+    "Hello! I'm an AI assistant — the ROI Calculator. Tell me about your agency — team size, hourly rates, and client count — and I'll estimate your savings with an AI Marketing Employee.",
 }
 
 export function DemoPlayground() {

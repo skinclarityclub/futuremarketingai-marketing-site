@@ -17,7 +17,7 @@ export function ChatWidgetIsland() {
         'Show me a case study',
         'Start guided demo',
       ]}
-      welcomeMessage="Hi! I'm the FMai Concierge. I can help you explore our services, demo our AI chatbots, or book a discovery call. What would you like to know?"
+      welcomeMessage="Hi! I'm an AI assistant — the FMai Concierge. I can help you explore our skills, demo our AI agents, or book a discovery call. What would you like to know?"
     />
   )
 }

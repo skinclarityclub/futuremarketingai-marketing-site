@@ -861,6 +861,12 @@
     },
     "last_updated": "Laatst bijgewerkt: maart 2026"
   },
+  "chatbot": {
+    "disclosure": {
+      "badge": "AI-assistent",
+      "notice": "Ik ben een AI-assistent"
+    }
+  },
   "blog": {
     "title": "AI Marketing & Automatisering Inzichten",
     "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen voor bureaus."

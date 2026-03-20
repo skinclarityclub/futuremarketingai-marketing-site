@@ -861,6 +861,12 @@
     },
     "last_updated": "Ultima actualizacion: marzo 2026"
   },
+  "chatbot": {
+    "disclosure": {
+      "badge": "Asistente de IA",
+      "notice": "Soy un asistente de IA"
+    }
+  },
   "blog": {
     "title": "Ideas sobre Marketing IA y Automatizacion",
     "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento para agencias."

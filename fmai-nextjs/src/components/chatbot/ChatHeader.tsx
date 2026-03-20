@@ -50,6 +50,9 @@ export function ChatHeader({
           </span>
         )}
         <span className="font-sans text-sm font-medium text-text-primary">{personaName}</span>
+        <span className="text-[10px] text-text-muted/60 uppercase tracking-wider">
+          AI Assistant
+        </span>
         {badge && (
           <span className="text-[10px] font-mono uppercase tracking-wider text-accent-system/70 bg-accent-system/10 px-1.5 py-0.5 rounded">
             {badge}
