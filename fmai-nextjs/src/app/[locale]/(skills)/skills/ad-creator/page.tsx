@@ -68,8 +68,11 @@ export default async function AdCreatorPage({ params }: { params: Promise<{ loca
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/pricing" size="lg">
+            <CTAButton href="/skills/chatbot" size="lg">
               {t('cta.button')}
+            </CTAButton>
+            <CTAButton href="/contact" size="lg" variant="secondary">
+              Book a Strategy Call
             </CTAButton>
           </div>
         </div>
@@ -90,6 +93,32 @@ export default async function AdCreatorPage({ params }: { params: Promise<{ loca
                 </GlassCard>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Task Demo -- Clyde in Action */}
+      <section aria-labelledby="task-demo" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="task-demo">{t('task_demo.heading')}</SectionHeading>
+          <div className="mt-10 space-y-6">
+            <GlassCard className="border-accent-system/30">
+              <div className="flex items-start gap-3">
+                <span className="text-sm font-mono text-accent-system">You:</span>
+                <p className="text-text-primary font-medium">{t('task_demo.command')}</p>
+              </div>
+            </GlassCard>
+            <GlassCard>
+              <div className="flex items-start gap-3">
+                <span className="text-sm font-mono text-[#00FF88]">Clyde:</span>
+                <div>
+                  <p className="text-text-primary font-semibold mb-2">
+                    {t('task_demo.result_title')}
+                  </p>
+                  <p className="text-text-secondary">{t('task_demo.result_description')}</p>
+                </div>
+              </div>
+            </GlassCard>
           </div>
         </div>
       </section>
@@ -137,15 +166,31 @@ export default async function AdCreatorPage({ params }: { params: Promise<{ loca
         </div>
       </section>
 
+      {/* Pricing */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-3xl mx-auto text-center">
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
+          <p className="text-lg text-text-secondary mt-4 mb-8">{t('pricing.description')}</p>
+          <CTAButton href={t('pricing.cta_link')} size="lg">
+            {t('pricing.cta')}
+          </CTAButton>
+        </div>
+      </section>
+
       {/* CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/pricing" size="lg">
-              {t('cta.button')}
-            </CTAButton>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton href="/skills/chatbot" size="lg">
+                {t('cta.button')}
+              </CTAButton>
+              <CTAButton href="/contact" size="lg" variant="secondary">
+                Book a Strategy Call
+              </CTAButton>
+            </div>
           </div>
         </ScrollReveal>
       </section>

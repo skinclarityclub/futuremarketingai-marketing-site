@@ -13,7 +13,6 @@ import { VisionTimeline } from '@/components/marketing-machine/VisionTimeline'
 import { FeatureShowcase } from '@/components/marketing-machine/FeatureShowcase'
 import { SocialProof } from '@/components/common/SocialProof'
 import { ProductMedia } from '@/components/common/ProductMedia'
-import { PricingTiers } from '@/components/common/PricingTiers'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -77,8 +76,11 @@ export default async function ContentCreatorPage({
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/pricing" size="lg">
+            <CTAButton href="/skills/chatbot" size="lg">
               {t('cta.button')}
+            </CTAButton>
+            <CTAButton href="/contact" size="lg" variant="secondary">
+              Book a Strategy Call
             </CTAButton>
           </div>
         </div>
@@ -159,6 +161,32 @@ export default async function ContentCreatorPage({
         </div>
       </section>
 
+      {/* Task Demo -- Clyde in Action */}
+      <section aria-labelledby="task-demo" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="task-demo">{t('task_demo.heading')}</SectionHeading>
+          <div className="mt-10 space-y-6">
+            <GlassCard className="border-accent-system/30">
+              <div className="flex items-start gap-3">
+                <span className="text-sm font-mono text-accent-system">You:</span>
+                <p className="text-text-primary font-medium">{t('task_demo.command')}</p>
+              </div>
+            </GlassCard>
+            <GlassCard>
+              <div className="flex items-start gap-3">
+                <span className="text-sm font-mono text-[#00FF88]">Clyde:</span>
+                <div>
+                  <p className="text-text-primary font-semibold mb-2">
+                    {t('task_demo.result_title')}
+                  </p>
+                  <p className="text-text-secondary">{t('task_demo.result_description')}</p>
+                </div>
+              </div>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section aria-labelledby="how-it-works" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
@@ -217,51 +245,12 @@ export default async function ContentCreatorPage({
 
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center">
           <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
-          <div className="mt-10">
-            <PricingTiers
-              tiers={[
-                {
-                  name: t('pricing.tiers.starter.name'),
-                  price: t('pricing.tiers.starter.price'),
-                  period: t('pricing.tiers.starter.period'),
-                  features: [
-                    t('pricing.tiers.starter.features_0'),
-                    t('pricing.tiers.starter.features_1'),
-                    t('pricing.tiers.starter.features_2'),
-                    t('pricing.tiers.starter.features_3'),
-                  ],
-                },
-                {
-                  name: t('pricing.tiers.growth.name'),
-                  price: t('pricing.tiers.growth.price'),
-                  period: t('pricing.tiers.growth.period'),
-                  highlighted: true,
-                  badge: t('pricing.tiers.growth.badge'),
-                  features: [
-                    t('pricing.tiers.growth.features_0'),
-                    t('pricing.tiers.growth.features_1'),
-                    t('pricing.tiers.growth.features_2'),
-                    t('pricing.tiers.growth.features_3'),
-                    t('pricing.tiers.growth.features_4'),
-                  ],
-                },
-                {
-                  name: t('pricing.tiers.scale.name'),
-                  price: t('pricing.tiers.scale.price'),
-                  period: t('pricing.tiers.scale.period'),
-                  features: [
-                    t('pricing.tiers.scale.features_0'),
-                    t('pricing.tiers.scale.features_1'),
-                    t('pricing.tiers.scale.features_2'),
-                    t('pricing.tiers.scale.features_3'),
-                    t('pricing.tiers.scale.features_4'),
-                  ],
-                },
-              ]}
-            />
-          </div>
+          <p className="text-lg text-text-secondary mt-4 mb-8">{t('pricing.description')}</p>
+          <CTAButton href={t('pricing.cta_link')} size="lg">
+            {t('pricing.cta')}
+          </CTAButton>
         </div>
       </section>
 
@@ -271,9 +260,14 @@ export default async function ContentCreatorPage({
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/pricing" size="lg">
-              {t('cta.button')}
-            </CTAButton>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton href="/skills/chatbot" size="lg">
+                {t('cta.button')}
+              </CTAButton>
+              <CTAButton href="/contact" size="lg" variant="secondary">
+                Book a Strategy Call
+              </CTAButton>
+            </div>
           </div>
         </ScrollReveal>
       </section>
