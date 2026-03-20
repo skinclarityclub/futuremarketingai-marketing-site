@@ -21,8 +21,8 @@ Progress: [██░░░░░░░░] 13%
 **Velocity:**
 
 - Total plans completed: 2
-- Average duration: ~13 min
-- Total execution time: ~0.4 hours
+- Average duration: ~19 min
+- Total execution time: ~0.6 hours
 
 **By Phase:**
 
@@ -32,7 +32,7 @@ Progress: [██░░░░░░░░] 13%
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (13min), 01-02 (13min)
+- Last 5 plans: 01-01 (24min), 01-02 (13min)
 - Trend: Stable
 
 _Updated after each plan completion_
@@ -47,6 +47,10 @@ Recent decisions affecting current work:
 - [Roadmap]: 5 phases derived from 5 requirement categories (WEB, DASH, N8N, COMP, GTM)
 - [Roadmap]: Parallel execution waves -- Phase 1+4+5 simultaneous, Phase 2 after 1, Phase 3 after 2
 - [Roadmap]: Brownfield rebrand approach -- reframe existing code, do not rebuild
+- [01-01]: Used 6 skill names from AaaS design doc (contentCreator, voiceAgent, leadQualifier, socialMedia, adCreator, reporting)
+- [01-01]: 4 pricing tiers established: Founding Member EUR 997, Starter EUR 1,497, Growth EUR 1,997, Agency EUR 3,497
+- [01-01]: Dutch "AI Marketing Medewerker voor bureaus", Spanish "Empleado de Marketing IA para agencias"
+- [01-01]: How-it-works reframed as 4-step agent onboarding (choose/activate/connect/working)
 - [01-02]: Kept HeaderClient.tsx nav strings hardcoded English (matches existing pattern)
 - [01-02]: Used (skills) route group with nested /skills/ folder for /skills/{slug} URL structure
 - [01-02]: Created full scaffold translations for 7 new pages in all 3 locales
@@ -63,5 +67,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 01-02-PLAN.md
+Stopped at: Completed 01-01-PLAN.md (core copy rebrand)
 Resume file: None
