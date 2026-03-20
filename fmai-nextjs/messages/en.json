@@ -59,10 +59,22 @@
       "trialCommitment": "Lock in EUR 997/mo as a founding member — 10 spots only"
     },
     "stats": {
-      "clients": { "value": "50+", "label": "Clients Managed" },
-      "content": { "value": "160+", "label": "Content Pieces/Month" },
-      "hours": { "value": "38h", "label": "Hours Saved/Week" },
-      "languages": { "value": "3", "label": "Languages Supported" }
+      "clients": {
+        "value": "50+",
+        "label": "Clients Managed"
+      },
+      "content": {
+        "value": "160+",
+        "label": "Content Pieces/Month"
+      },
+      "hours": {
+        "value": "38h",
+        "label": "Hours Saved/Week"
+      },
+      "languages": {
+        "value": "3",
+        "label": "Languages Supported"
+      }
     },
     "badges": {
       "title": "Built for European Agencies",
@@ -223,7 +235,10 @@
       "use_cases_heading": "What Can an AI Chatbot Do for Your Business?",
       "process_heading": "How Does a Chatbot Get Deployed?",
       "faq_heading": "Frequently Asked Questions",
-      "related_heading": "Related Services"
+      "related_heading": "Related Services",
+      "pricing_heading": "Chatbot Packages",
+      "pricing_subtitle": "Gateway pricing — one subscription, full-stack AI",
+      "multi_platform_heading": "Multi-Platform Integration"
     },
     "use_cases": {
       "title": "What Our Chatbots Do",
@@ -278,6 +293,15 @@
           "capabilities_1": "Hours saved estimation",
           "capabilities_2": "Client capacity projection",
           "capabilities_3": "Break-even analysis"
+        },
+        "concierge": {
+          "label": "Website Concierge",
+          "scenario_title": "Website Concierge Demo",
+          "scenario": "Meet the FMai Concierge — a hybrid tour guide and sales assistant. Ask about services, pricing, or how AI marketing can transform your agency.",
+          "capabilities_0": "Service navigation",
+          "capabilities_1": "Pricing overview",
+          "capabilities_2": "Case study highlights",
+          "capabilities_3": "Discovery call booking"
         }
       }
     },
@@ -338,6 +362,55 @@
       "title": "Ready for 24/7 Customer Engagement?",
       "subtitle": "Book a free strategy session. We will map your chatbot opportunities.",
       "button": "Get a Free Strategy Session"
+    },
+    "multi_platform": {
+      "title": "One Brain, Every Channel",
+      "subtitle": "A single AI model powers your chatbot across all platforms — consistent brand voice, shared knowledge, unified analytics.",
+      "brain_label": "Claude AI",
+      "platforms": {
+        "website": {
+          "name": "Website Widget",
+          "behavior": "Embedded chat with full product knowledge and lead capture"
+        },
+        "shopify": {
+          "name": "Shopify Integration",
+          "behavior": "Product recommendations, order tracking, and cart recovery"
+        },
+        "whatsapp": {
+          "name": "WhatsApp Business",
+          "behavior": "Conversational commerce with rich media and quick replies"
+        }
+      },
+      "case_study": "Already live: SkinClarity Club runs the same AI brain across website, Shopify, and WhatsApp — with zero context drift between channels.",
+      "stats": {
+        "inquiries": {
+          "value": "50,000+",
+          "label": "Monthly Inquiries"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Available"
+        },
+        "platforms": {
+          "value": "3+",
+          "label": "Platforms Connected"
+        }
+      }
+    },
+    "trust_metrics": {
+      "title": "Trusted by Growing Businesses",
+      "inquiries": {
+        "value": "50,000+",
+        "label": "Inquiries Processed"
+      },
+      "availability": {
+        "value": "24/7",
+        "label": "Always Available"
+      },
+      "crm": {
+        "value": "15+",
+        "label": "CRM Integrations"
+      }
     }
   },
   "voice-agents": {
@@ -550,7 +623,7 @@
       "footer": {
         "brand_name": "Future Marketing AI",
         "tagline": "Your agency's AI Marketing Employee — content, voice, ads, social, leads, and reporting in one always-on system.",
-        "copyright": "\u00a9 {year} Future Marketing AI. All rights reserved.",
+        "copyright": "© {year} Future Marketing AI. All rights reserved.",
         "sections": {
           "skills": "Skills",
           "company": "Company",

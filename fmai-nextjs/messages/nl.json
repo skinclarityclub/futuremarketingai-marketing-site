@@ -59,10 +59,22 @@
       "trialCommitment": "Zeker je prijs van EUR 997/maand als founding member — slechts 10 plekken"
     },
     "stats": {
-      "clients": { "value": "50+", "label": "Klanten Beheerd" },
-      "content": { "value": "160+", "label": "Contentstukken/Maand" },
-      "hours": { "value": "38u", "label": "Uren Bespaard/Week" },
-      "languages": { "value": "3", "label": "Talen Ondersteund" }
+      "clients": {
+        "value": "50+",
+        "label": "Klanten Beheerd"
+      },
+      "content": {
+        "value": "160+",
+        "label": "Contentstukken/Maand"
+      },
+      "hours": {
+        "value": "38u",
+        "label": "Uren Bespaard/Week"
+      },
+      "languages": {
+        "value": "3",
+        "label": "Talen Ondersteund"
+      }
     },
     "badges": {
       "title": "Gebouwd voor Europese Bureaus",
@@ -223,7 +235,10 @@
       "use_cases_heading": "Wat Kan een AI Chatbot voor Jouw Bureau Doen?",
       "process_heading": "Hoe Wordt een Chatbot Ingezet?",
       "faq_heading": "Veelgestelde Vragen",
-      "related_heading": "Gerelateerde Diensten"
+      "related_heading": "Gerelateerde Diensten",
+      "pricing_heading": "Chatbot Pakketten",
+      "pricing_subtitle": "Gateway prijzen — een abonnement, volledige AI-stack",
+      "multi_platform_heading": "Multi-Platform Integratie"
     },
     "use_cases": {
       "title": "Wat Onze Chatbots Doen",
@@ -278,6 +293,15 @@
           "capabilities_1": "Bespaarde uren inschatting",
           "capabilities_2": "Klantcapaciteit projectie",
           "capabilities_3": "Break-even analyse"
+        },
+        "concierge": {
+          "label": "Website Concierge",
+          "scenario_title": "Website Concierge Demo",
+          "scenario": "Maak kennis met de FMai Concierge — een hybride rondleider en verkoopmedewerker. Vraag naar diensten, prijzen of hoe AI-marketing uw bureau kan transformeren.",
+          "capabilities_0": "Diensten navigatie",
+          "capabilities_1": "Prijsoverzicht",
+          "capabilities_2": "Case study highlights",
+          "capabilities_3": "Kennismakingsgesprek plannen"
         }
       }
     },
@@ -338,6 +362,55 @@
       "title": "Klaar voor 24/7 Klantbetrokkenheid?",
       "subtitle": "Boek een gratis strategiesessie.",
       "button": "Vraag een Gratis Strategiesessie Aan"
+    },
+    "multi_platform": {
+      "title": "Een Brein, Elk Kanaal",
+      "subtitle": "Een enkel AI-model bestuurt uw chatbot op alle platformen — consistente merkstem, gedeelde kennis, uniforme analytics.",
+      "brain_label": "Claude AI",
+      "platforms": {
+        "website": {
+          "name": "Website Widget",
+          "behavior": "Ingebedde chat met volledige productkennis en leadcapture"
+        },
+        "shopify": {
+          "name": "Shopify Integratie",
+          "behavior": "Productaanbevelingen, ordertracking en verlaten winkelwagen herstel"
+        },
+        "whatsapp": {
+          "name": "WhatsApp Business",
+          "behavior": "Conversational commerce met rich media en snelle antwoorden"
+        }
+      },
+      "case_study": "Al live: SkinClarity Club draait hetzelfde AI-brein over website, Shopify en WhatsApp — zonder contextverlies tussen kanalen.",
+      "stats": {
+        "inquiries": {
+          "value": "50.000+",
+          "label": "Maandelijkse Vragen"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Altijd Beschikbaar"
+        },
+        "platforms": {
+          "value": "3+",
+          "label": "Platformen Verbonden"
+        }
+      }
+    },
+    "trust_metrics": {
+      "title": "Vertrouwd door Groeiende Bedrijven",
+      "inquiries": {
+        "value": "50.000+",
+        "label": "Vragen Verwerkt"
+      },
+      "availability": {
+        "value": "24/7",
+        "label": "Altijd Beschikbaar"
+      },
+      "crm": {
+        "value": "15+",
+        "label": "CRM Integraties"
+      }
     }
   },
   "voice-agents": {
@@ -508,7 +581,10 @@
     },
     "howItWorks": {
       "title": "Hoe Het Werkt",
-      "step1": { "title": "Discovery Gesprek", "description": "30 minuten strategiesessie." },
+      "step1": {
+        "title": "Discovery Gesprek",
+        "description": "30 minuten strategiesessie."
+      },
       "step2": {
         "title": "Maatwerk Configuratie",
         "description": "Wij configureren alle 6 modules voor jouw merkstem."
@@ -547,8 +623,12 @@
       "footer": {
         "brand_name": "Future Marketing AI",
         "tagline": "De AI Marketing Medewerker voor jouw bureau — content, voice, ads, social, leads en rapportages in een altijd-aan systeem.",
-        "copyright": "\u00a9 {year} Future Marketing AI. Alle rechten voorbehouden.",
-        "sections": { "skills": "Skills", "company": "Bedrijf", "resources": "Bronnen" },
+        "copyright": "© {year} Future Marketing AI. Alle rechten voorbehouden.",
+        "sections": {
+          "skills": "Skills",
+          "company": "Bedrijf",
+          "resources": "Bronnen"
+        },
         "nav": {
           "content_creator": "Content Creator",
           "voice_agent": "Voice Agent",
@@ -567,11 +647,16 @@
           "cookies": "Cookies"
         },
         "status_badge": "Alle systemen operationeel",
-        "social_aria": { "linkedin": "Volg ons op LinkedIn", "twitter": "Volg ons op X" }
+        "social_aria": {
+          "linkedin": "Volg ons op LinkedIn",
+          "twitter": "Volg ons op X"
+        }
       }
     },
     "footer_all_rights": "Alle rechten voorbehouden.",
-    "actions": { "learn_more": "Meer Leren" },
+    "actions": {
+      "learn_more": "Meer Leren"
+    },
     "cookie_consent": {
       "title": "Wij gebruiken cookies",
       "description": "Wij gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
@@ -591,7 +676,10 @@
       }
     }
   },
-  "calendly": { "modal_title": "Plan een Strategiegesprek", "close": "Sluiten" },
+  "calendly": {
+    "modal_title": "Plan een Strategiegesprek",
+    "close": "Sluiten"
+  },
   "errors": {
     "notFound": {
       "title": "Pagina Niet Gevonden",
@@ -840,7 +928,9 @@
       "title": "Juridisch | Future Marketing AI",
       "description": "Juridische informatie voor Future Marketing AI."
     },
-    "hero": { "title": "Juridisch" },
+    "hero": {
+      "title": "Juridisch"
+    },
     "sections": {
       "terms": {
         "title": "Servicevoorwaarden",

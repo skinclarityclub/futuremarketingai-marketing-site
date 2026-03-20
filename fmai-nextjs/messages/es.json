@@ -59,10 +59,22 @@
       "trialCommitment": "Asegure EUR 997/mes como miembro fundador — solo 10 plazas"
     },
     "stats": {
-      "clients": { "value": "50+", "label": "Clientes Gestionados" },
-      "content": { "value": "160+", "label": "Piezas de Contenido/Mes" },
-      "hours": { "value": "38h", "label": "Horas Ahorradas/Semana" },
-      "languages": { "value": "3", "label": "Idiomas Soportados" }
+      "clients": {
+        "value": "50+",
+        "label": "Clientes Gestionados"
+      },
+      "content": {
+        "value": "160+",
+        "label": "Piezas de Contenido/Mes"
+      },
+      "hours": {
+        "value": "38h",
+        "label": "Horas Ahorradas/Semana"
+      },
+      "languages": {
+        "value": "3",
+        "label": "Idiomas Soportados"
+      }
     },
     "badges": {
       "title": "Construido para Agencias Europeas",
@@ -223,7 +235,10 @@
       "use_cases_heading": "Que Puede Hacer un Chatbot IA para Su Agencia?",
       "process_heading": "Como Se Despliega un Chatbot?",
       "faq_heading": "Preguntas Frecuentes",
-      "related_heading": "Servicios Relacionados"
+      "related_heading": "Servicios Relacionados",
+      "pricing_heading": "Paquetes de Chatbot",
+      "pricing_subtitle": "Precios gateway — una suscripcion, IA completa",
+      "multi_platform_heading": "Integracion Multi-Plataforma"
     },
     "use_cases": {
       "title": "Que Hacen Nuestros Chatbots",
@@ -278,6 +293,15 @@
           "capabilities_1": "Estimacion de horas ahorradas",
           "capabilities_2": "Proyeccion de capacidad de clientes",
           "capabilities_3": "Analisis de punto de equilibrio"
+        },
+        "concierge": {
+          "label": "Concierge Web",
+          "scenario_title": "Demo del Concierge Web",
+          "scenario": "Conoce al Concierge de FMai — un guia hibrido y asistente de ventas. Pregunta sobre servicios, precios o como el marketing con IA puede transformar tu agencia.",
+          "capabilities_0": "Navegacion de servicios",
+          "capabilities_1": "Resumen de precios",
+          "capabilities_2": "Casos de estudio destacados",
+          "capabilities_3": "Reservar llamada de descubrimiento"
         }
       }
     },
@@ -338,6 +362,55 @@
       "title": "Listo para Atencion 24/7?",
       "subtitle": "Reserva una sesion estrategica gratuita.",
       "button": "Solicita una Sesion Estrategica"
+    },
+    "multi_platform": {
+      "title": "Un Cerebro, Cada Canal",
+      "subtitle": "Un unico modelo de IA impulsa tu chatbot en todas las plataformas — voz de marca consistente, conocimiento compartido, analiticas unificadas.",
+      "brain_label": "Claude AI",
+      "platforms": {
+        "website": {
+          "name": "Widget Web",
+          "behavior": "Chat integrado con conocimiento completo del producto y captura de leads"
+        },
+        "shopify": {
+          "name": "Integracion Shopify",
+          "behavior": "Recomendaciones de productos, seguimiento de pedidos y recuperacion de carritos"
+        },
+        "whatsapp": {
+          "name": "WhatsApp Business",
+          "behavior": "Comercio conversacional con medios enriquecidos y respuestas rapidas"
+        }
+      },
+      "case_study": "Ya en vivo: SkinClarity Club ejecuta el mismo cerebro de IA en web, Shopify y WhatsApp — sin deriva de contexto entre canales.",
+      "stats": {
+        "inquiries": {
+          "value": "50,000+",
+          "label": "Consultas Mensuales"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Siempre Disponible"
+        },
+        "platforms": {
+          "value": "3+",
+          "label": "Plataformas Conectadas"
+        }
+      }
+    },
+    "trust_metrics": {
+      "title": "Confianza de Empresas en Crecimiento",
+      "inquiries": {
+        "value": "50,000+",
+        "label": "Consultas Procesadas"
+      },
+      "availability": {
+        "value": "24/7",
+        "label": "Siempre Disponible"
+      },
+      "crm": {
+        "value": "15+",
+        "label": "Integraciones CRM"
+      }
     }
   },
   "voice-agents": {
@@ -508,7 +581,10 @@
     },
     "howItWorks": {
       "title": "Como Funciona",
-      "step1": { "title": "Llamada de Descubrimiento", "description": "30 minutos de estrategia." },
+      "step1": {
+        "title": "Llamada de Descubrimiento",
+        "description": "30 minutos de estrategia."
+      },
       "step2": {
         "title": "Configuracion Personalizada",
         "description": "Configuramos los 6 modulos para su marca."
@@ -547,8 +623,12 @@
       "footer": {
         "brand_name": "Future Marketing AI",
         "tagline": "El Empleado de Marketing IA para su agencia — contenido, voz, anuncios, social, leads y reportes en un sistema siempre activo.",
-        "copyright": "\u00a9 {year} Future Marketing AI. Todos los derechos reservados.",
-        "sections": { "skills": "Habilidades", "company": "Empresa", "resources": "Recursos" },
+        "copyright": "© {year} Future Marketing AI. Todos los derechos reservados.",
+        "sections": {
+          "skills": "Habilidades",
+          "company": "Empresa",
+          "resources": "Recursos"
+        },
         "nav": {
           "content_creator": "Creador de Contenido",
           "voice_agent": "Agente de Voz",
@@ -567,11 +647,16 @@
           "cookies": "Cookies"
         },
         "status_badge": "Todos los sistemas operativos",
-        "social_aria": { "linkedin": "Siguenos en LinkedIn", "twitter": "Siguenos en X" }
+        "social_aria": {
+          "linkedin": "Siguenos en LinkedIn",
+          "twitter": "Siguenos en X"
+        }
       }
     },
     "footer_all_rights": "Todos los derechos reservados.",
-    "actions": { "learn_more": "Saber Mas" },
+    "actions": {
+      "learn_more": "Saber Mas"
+    },
     "cookie_consent": {
       "title": "Usamos cookies",
       "description": "Usamos cookies para mejorar su experiencia y analizar el trafico.",
@@ -591,7 +676,10 @@
       }
     }
   },
-  "calendly": { "modal_title": "Programar una Llamada Estrategica", "close": "Cerrar" },
+  "calendly": {
+    "modal_title": "Programar una Llamada Estrategica",
+    "close": "Cerrar"
+  },
   "errors": {
     "notFound": {
       "title": "Pagina No Encontrada",
@@ -840,7 +928,9 @@
       "title": "Legal | Future Marketing AI",
       "description": "Informacion legal de Future Marketing AI."
     },
-    "hero": { "title": "Legal" },
+    "hero": {
+      "title": "Legal"
+    },
     "sections": {
       "terms": {
         "title": "Terminos de Servicio",

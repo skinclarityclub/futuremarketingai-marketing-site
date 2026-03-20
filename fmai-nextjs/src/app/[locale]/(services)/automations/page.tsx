@@ -13,6 +13,11 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Link } from '@/i18n/navigation'
+import { TrustMetrics } from '@/components/common/TrustMetrics'
+import { ProductMedia } from '@/components/common/ProductMedia'
+import { PricingTiers } from '@/components/common/PricingTiers'
+import { Target, Mail, Share2, Receipt, UserPlus, RefreshCw } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -38,6 +43,15 @@ const AUTOMATION_KEYS = [
   'data_sync',
 ] as const
 
+const AUTOMATION_ICONS: Record<string, LucideIcon> = {
+  lead_qualification: Target,
+  email_sequences: Mail,
+  social_media: Share2,
+  invoicing: Receipt,
+  onboarding: UserPlus,
+  data_sync: RefreshCw,
+}
+
 const PROCESS_STEPS = [
   { key: 'audit', number: '01' },
   { key: 'build', number: '02' },
@@ -45,6 +59,59 @@ const PROCESS_STEPS = [
 ] as const
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
+
+const TRUST_METRICS_DATA = [
+  {
+    value: '1,200+',
+    label: 'Hours Saved Monthly',
+    description: 'Across all client automations',
+  },
+  {
+    value: '< 24h',
+    label: 'Delivery Time',
+    description: 'From audit to first workflow',
+  },
+  {
+    value: '99.7%',
+    label: 'Success Rate',
+    description: 'Workflow execution reliability',
+  },
+]
+
+const PRICING_TIERS = [
+  {
+    name: 'Starter',
+    price: '\u20AC497',
+    period: '/mo',
+    features: ['5 custom workflows', 'Email support', 'Setup in 1-2 weeks'],
+    highlighted: false,
+  },
+  {
+    name: 'Growth',
+    price: '\u20AC997',
+    period: '/mo',
+    features: [
+      '10 custom workflows',
+      'Analytics dashboard',
+      'Setup in 2-3 weeks',
+      'Priority support',
+    ],
+    highlighted: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'Scale',
+    price: '\u20AC1,997',
+    period: '/mo',
+    features: [
+      '20 custom workflows',
+      'Priority support',
+      'Monthly strategy call',
+      'Custom integrations',
+    ],
+    highlighted: false,
+  },
+]
 
 export default async function AutomationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -140,21 +207,54 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
             {t('what_we_automate.subtitle')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {AUTOMATION_KEYS.map((key, index) => (
-              <ScrollReveal key={key} delay={index * 0.1}>
-                <GlassCard className="text-center">
-                  <p className="text-text-primary font-medium">
-                    {t(`what_we_automate.items.${key}`)}
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-            ))}
+            {AUTOMATION_KEYS.map((key, index) => {
+              const Icon = AUTOMATION_ICONS[key]
+              return (
+                <ScrollReveal key={key} delay={index * 0.1}>
+                  <GlassCard className="text-center">
+                    <Icon className="w-8 h-8 text-accent-system mb-3 mx-auto" />
+                    <p className="text-text-primary font-medium">
+                      {t(`what_we_automate.items.${key}`)}
+                    </p>
+                  </GlassCard>
+                </ScrollReveal>
+              )
+            })}
           </div>
         </div>
       </section>
 
+      {/* Trust Metrics */}
+      <section aria-labelledby="trust-metrics" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="trust-metrics">Proven Results</SectionHeading>
+          <div className="mt-10">
+            <TrustMetrics metrics={TRUST_METRICS_DATA} />
+          </div>
+        </div>
+      </section>
+
+      {/* Product Media */}
+      <section aria-labelledby="product-media" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="product-media">Automation Dashboard Preview</SectionHeading>
+          <ProductMedia title="Automation Dashboard Preview" />
+        </div>
+      </section>
+
+      {/* Pricing Tiers */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading id="pricing">Automation Packages</SectionHeading>
+          <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+            Choose the right automation package for your team.
+          </p>
+          <PricingTiers tiers={PRICING_TIERS} ctaHref="/contact" ctaLabel="Get Started" />
+        </div>
+      </section>
+
       {/* How Does an Automation Workflow Get Built? */}
-      <section aria-labelledby="process" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+      <section aria-labelledby="process" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
           <SectionHeading id="process">{t('sections.process_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
@@ -178,7 +278,7 @@ export default async function AutomationsPage({ params }: { params: Promise<{ lo
       </section>
 
       {/* Frequently Asked Questions */}
-      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
           <SectionHeading id="faq" className="text-center mb-10">
             {t('sections.faq_heading')}

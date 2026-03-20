@@ -1,15 +1,16 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { UserPlus, PenTool, Calculator, type LucideIcon } from 'lucide-react'
+import { UserPlus, PenTool, Calculator, MessageCircle, type LucideIcon } from 'lucide-react'
 
-export const DEMO_PERSONAS = ['ecommerce', 'leadgen', 'support'] as const
+export const DEMO_PERSONAS = ['ecommerce', 'leadgen', 'support', 'concierge'] as const
 export type DemoPersonaId = (typeof DEMO_PERSONAS)[number]
 
 const TAB_ICONS: Record<DemoPersonaId, LucideIcon> = {
   ecommerce: UserPlus,
   leadgen: PenTool,
   support: Calculator,
+  concierge: MessageCircle,
 }
 
 interface PersonaSelectorProps {

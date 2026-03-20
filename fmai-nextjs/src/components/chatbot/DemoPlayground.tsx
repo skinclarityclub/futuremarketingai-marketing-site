@@ -5,18 +5,25 @@ import { useTranslations } from 'next-intl'
 import { PersonaSelector, DEMO_PERSONAS, type DemoPersonaId } from './PersonaSelector'
 import { DemoContextCard } from './DemoContextCard'
 import { ChatWidget } from './ChatWidget'
-import { ECOMMERCE_STARTERS, LEADGEN_STARTERS, SUPPORT_STARTERS } from '@/lib/chatbot/personas'
+import {
+  ECOMMERCE_STARTERS,
+  LEADGEN_STARTERS,
+  SUPPORT_STARTERS,
+  CONCIERGE_STARTERS,
+} from '@/lib/chatbot/personas'
 
 const PERSONA_STARTERS: Record<DemoPersonaId, Record<string, string[]>> = {
   ecommerce: ECOMMERCE_STARTERS,
   leadgen: LEADGEN_STARTERS,
   support: SUPPORT_STARTERS,
+  concierge: CONCIERGE_STARTERS,
 }
 
 const PERSONA_NAMES: Record<DemoPersonaId, string> = {
   ecommerce: 'Onboarding Assistant',
   leadgen: 'Content Creator',
   support: 'ROI Calculator',
+  concierge: 'Website Concierge',
 }
 
 const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
@@ -26,6 +33,8 @@ const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
     "Hi! I'm an AI assistant — the Content Creator skill. Give me a topic and a client brief, and I'll draft an SEO-optimized blog post tailored to their brand voice.",
   support:
     "Hello! I'm an AI assistant — the ROI Calculator. Tell me about your agency — team size, hourly rates, and client count — and I'll estimate your savings with an AI Marketing Employee.",
+  concierge:
+    "Hey! I'm an AI assistant — the FMai Concierge. Ask me anything about our services, pricing, or how AI can transform your marketing.",
 }
 
 export function DemoPlayground() {
