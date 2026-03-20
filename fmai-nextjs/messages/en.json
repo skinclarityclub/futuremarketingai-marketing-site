@@ -1031,679 +1031,749 @@
   },
   "skills-content-creator": {
     "meta": {
-      "title": "Content Creator Skill | AI Marketing Employee | FMai",
-      "description": "AI-powered content creation for agency clients. Blog posts, social content, newsletters, and cross-platform repurposing — produced daily by your AI Marketing Employee."
+      "title": "Clyde Writes Your Content | AI Marketing Employee | FMai",
+      "description": "Clyde writes blog posts, social content, newsletters, and repurposes across platforms. Your AI marketing colleague produces daily content for every client."
     },
     "hero": {
-      "badge": "Content Creator Skill",
-      "title": "AI Content Creation for Your Agency Clients",
-      "description": "Your AI Marketing Employee writes blog posts, social content, email newsletters, and repurposes content across platforms — daily, for every client."
+      "badge": "Content Creator",
+      "title": "Clyde Writes Your Content",
+      "description": "Give Clyde a topic. He researches, writes, optimizes for SEO, and publishes across platforms. A human marketer writes 2 blog posts a day. Clyde writes 20. Every day. For every client."
     },
     "features": {
-      "heading": "What the Content Creator Skill Does",
+      "heading": "What Clyde Does With Content",
       "items": {
         "blog": {
-          "title": "AI Blog Writing",
-          "description": "SEO-optimized blog posts written in each client's brand voice. Research, outline, draft, and publish — fully autonomous."
+          "title": "Writes SEO Blog Posts",
+          "description": "Clyde researches keywords, outlines, drafts, and publishes SEO-optimized blog posts in each client's brand voice. Fully autonomous."
         },
         "social": {
-          "title": "Social Media Posts",
-          "description": "Platform-native social content for LinkedIn, Instagram, X, and Facebook. Tailored to each client's audience and tone."
+          "title": "Creates Social Content",
+          "description": "Clyde produces platform-native content for LinkedIn, Instagram, X, and Facebook. Tailored to each client's audience and tone."
         },
         "newsletters": {
-          "title": "Email Newsletters",
-          "description": "Weekly or monthly newsletters crafted from your clients' latest content, industry news, and campaign updates."
+          "title": "Builds Email Newsletters",
+          "description": "Clyde crafts weekly or monthly newsletters from your clients' latest content, industry news, and campaign updates."
         },
         "repurposing": {
-          "title": "Content Repurposing",
-          "description": "One piece of content becomes ten. Blog posts become social threads, newsletters, video scripts, and more — automatically."
+          "title": "Repurposes Everything",
+          "description": "One piece of content becomes ten. Clyde turns blog posts into social threads, newsletters, video scripts, and more."
         }
       }
     },
     "how_it_works": {
-      "heading": "How It Works",
+      "heading": "How You Work With Clyde",
       "steps": {
         "connect": {
-          "title": "Connect Client Brand",
-          "description": "Upload brand guidelines, tone of voice, and target audience profiles. Your AI employee learns the client's identity."
+          "title": "Tell Clyde About the Client",
+          "description": "Share brand guidelines, tone of voice, and target audience. Clyde learns the client's identity and starts writing in their voice."
         },
         "generate": {
-          "title": "AI Creates Content",
-          "description": "Your AI employee researches topics, writes drafts, and optimizes for SEO — all in the client's brand voice."
+          "title": "Clyde Gets to Work",
+          "description": "Clyde researches topics, writes drafts, and optimizes for SEO. He produces content around the clock without prompting."
         },
         "review": {
-          "title": "Approve and Publish",
-          "description": "Review AI-generated content in your dashboard, approve with one click, and publish across all platforms."
+          "title": "Review and Approve",
+          "description": "Review Clyde's work in your dashboard. Approve with one click and publish across all platforms instantly."
         }
       }
     },
     "use_cases": {
-      "heading": "Who Uses This Skill",
+      "heading": "Who Works With Clyde",
       "items": {
         "agencies": {
           "title": "Marketing Agencies",
-          "description": "Scale content production across all your clients without hiring more writers. One AI employee handles the output of an entire content team."
+          "description": "Scale content production across all your clients. Clyde handles the output of an entire content team. No hiring, no freelancers, no missed deadlines."
         },
         "ecommerce": {
           "title": "E-commerce Brands",
-          "description": "Product descriptions, category pages, email campaigns, and social content — produced daily to keep your store fresh and ranking."
+          "description": "Product descriptions, category pages, email campaigns, and social content. Clyde keeps your store fresh, ranking, and converting."
         }
       }
     },
     "social_proof": {
-      "quote": "We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved.",
+      "quote": "We gave Clyde our 8 client brands. He now produces more content than our 3-person team ever did. Quality improved too.",
       "author": "Marketing Director",
       "role": "E-commerce Agency",
       "company": "Amsterdam"
     },
     "showcase": {
-      "heading": "The AI Content Engine",
+      "heading": "Clyde's Content Engine",
       "items": {
         "seo_research": {
           "title": "SEO Research",
-          "description": "Automatically identifies high-value keywords and content gaps in your niche."
+          "description": "Clyde identifies high-value keywords and content gaps before writing a single word."
         },
         "content_generation": {
           "title": "Content Generation",
-          "description": "Writes blog posts, social captions, and newsletters in your brand voice."
+          "description": "Clyde writes blog posts, social captions, and newsletters in your client's brand voice."
         },
         "visual_creation": {
           "title": "Visual Creation",
-          "description": "Generates on-brand images, carousels, and video thumbnails."
+          "description": "Clyde generates on-brand images, carousels, and video thumbnails to go with the content."
         },
         "multi_channel": {
           "title": "Multi-Channel Publishing",
-          "description": "Publishes to WordPress, LinkedIn, Instagram, and more \u2014 automatically."
+          "description": "Clyde publishes to WordPress, LinkedIn, Instagram, and more. Automatically."
         },
         "performance_analytics": {
           "title": "Performance Analytics",
-          "description": "Tracks engagement, conversions, and ROI across all channels."
+          "description": "Clyde tracks engagement, conversions, and ROI across all channels and adjusts strategy."
         },
         "ai_orchestrator": {
-          "title": "AI Orchestrator",
-          "description": "Coordinates all modules, learns from results, and continuously improves output."
+          "title": "Continuous Learning",
+          "description": "Clyde learns from results. Every piece of content makes the next one better."
         }
       }
     },
     "product_media": {
-      "heading": "See It in Action",
+      "heading": "See Clyde in Action",
       "title": "Content Creator Demo",
-      "description": "Watch how the AI Content Creator researches, writes, and publishes a complete blog post in under 5 minutes."
+      "description": "Watch Clyde research, write, and publish a complete blog post in under 5 minutes."
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Write 5 blog posts about local SEO for Bakkerij De Groot",
+      "result_title": "Done. 5 blog posts written and scheduled.",
+      "result_description": "I researched local SEO keywords for bakeries in Amsterdam, wrote 5 SEO-optimized posts (avg. 1,200 words each) in Bakkerij De Groot's warm, artisanal brand voice, added internal links and meta descriptions, and scheduled them for the next 2 weeks. Estimated organic traffic increase: 35% within 60 days."
     },
     "pricing": {
       "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mo",
-          "features_0": "20 blog posts/mo",
-          "features_1": "60 social posts/mo",
-          "features_2": "1 brand voice",
-          "features_3": "WordPress integration"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "50 blog posts/mo",
-          "features_1": "150 social posts/mo",
-          "features_2": "3 brand voices",
-          "features_3": "Multi-platform publishing",
-          "features_4": "SEO optimization"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1,997",
-          "period": "/mo",
-          "features_0": "Unlimited content",
-          "features_1": "Unlimited brand voices",
-          "features_2": "All platforms",
-          "features_3": "Custom workflows",
-          "features_4": "Dedicated support"
-        }
-      }
+      "description": "Clyde's Content Creator skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
     },
     "cta": {
-      "title": "Activate the Content Creator Skill",
-      "subtitle": "Add AI-powered content creation to your AI Marketing Employee and start producing content for all your clients.",
-      "button": "See Pricing"
+      "title": "Meet Clyde, Your Content Creator",
+      "subtitle": "See how Clyde produces content for agency clients. One conversation and you will understand why agencies are replacing content teams.",
+      "button": "Meet Clyde"
     }
   },
   "skills-voice-agent": {
     "meta": {
-      "title": "Voice Agent Skill | AI Marketing Employee | FMai",
-      "description": "AI-powered inbound and outbound calling for agency clients. 24/7 call handling, lead qualification by phone, and appointment booking by your AI Marketing Employee."
+      "title": "Clyde Calls Your Leads | AI Marketing Employee | FMai",
+      "description": "Clyde handles inbound and outbound calls 24/7. Lead qualification by phone, appointment booking, and follow-ups. Your AI colleague never misses a call."
     },
     "hero": {
-      "badge": "Voice Agent Skill",
-      "title": "AI Phone Calls for Your Agency Clients",
-      "description": "Your AI Marketing Employee handles inbound and outbound calls — qualifying leads, booking appointments, and following up with prospects around the clock."
+      "badge": "Voice Agent",
+      "title": "Clyde Calls Your Leads",
+      "description": "A sales rep makes 40 calls a day. Clyde makes 400. He qualifies leads, books appointments, and follows up with prospects. Around the clock. Without a lunch break."
     },
     "features": {
-      "heading": "What the Voice Agent Skill Does",
+      "heading": "What Clyde Does on the Phone",
       "items": {
         "inbound": {
-          "title": "Answer Calls 24/7",
-          "description": "Never miss a call again. Your AI employee answers inbound calls, handles FAQs, and routes complex queries to the right person."
+          "title": "Answers Every Call",
+          "description": "Clyde picks up every inbound call instantly. He handles FAQs, routes complex queries, and never puts anyone on hold."
         },
         "outbound": {
-          "title": "Proactive Outreach",
-          "description": "AI-powered outbound calls for follow-ups, appointment reminders, and prospect re-engagement — at scale."
+          "title": "Calls Prospects Proactively",
+          "description": "Clyde makes outbound calls for follow-ups, appointment reminders, and prospect re-engagement. At scale."
         },
         "qualification": {
-          "title": "Qualify Leads by Phone",
-          "description": "BANT qualification on every call. Your AI employee scores prospects and only passes warm leads to your sales team."
+          "title": "Qualifies Leads by Phone",
+          "description": "BANT qualification on every call. Clyde scores prospects and only passes warm leads to your sales team."
         },
         "booking": {
-          "title": "Schedule Appointments",
-          "description": "Direct calendar integration. The voice agent books meetings into Calendly, Cal.com, or Google Calendar during the call."
+          "title": "Books Appointments",
+          "description": "Clyde books meetings directly into Calendly, Cal.com, or Google Calendar during the call. No back-and-forth."
         }
       }
     },
     "how_it_works": {
-      "heading": "How It Works",
+      "heading": "How You Work With Clyde",
       "steps": {
         "setup": {
-          "title": "Configure Voice Persona",
-          "description": "Set the voice, tone, and personality for each client. Upload call scripts and qualification criteria."
+          "title": "Tell Clyde the Script",
+          "description": "Set the voice, tone, and persona for each client. Share call scripts and qualification criteria. Clyde adapts instantly."
         },
         "deploy": {
-          "title": "Activate on Client Number",
-          "description": "Connect to your client's phone system via SIP or forwarding. The AI employee starts handling calls immediately."
+          "title": "Clyde Goes Live",
+          "description": "Connect to your client's phone system. Clyde starts handling calls immediately. No training period."
         },
         "optimize": {
-          "title": "Improve from Call Data",
-          "description": "Review call transcripts and analytics. Your AI employee learns from every conversation and improves weekly."
+          "title": "Clyde Learns and Improves",
+          "description": "Review call transcripts and analytics. Clyde learns from every conversation and gets better every week."
         }
       }
     },
     "use_cases": {
-      "heading": "Who Uses This Skill",
+      "heading": "Who Works With Clyde",
       "items": {
         "agencies": {
           "title": "Marketing Agencies",
-          "description": "Offer AI-powered call handling as a service to your clients. Scale phone operations without hiring call center staff."
+          "description": "Offer AI-powered call handling to your clients. Scale phone operations without hiring call center staff. Clyde handles them all."
         },
         "sales": {
           "title": "Sales Teams",
-          "description": "Qualify hundreds of leads per day by phone. Your sales team only talks to prospects who are ready to buy."
+          "description": "Clyde qualifies hundreds of leads per day by phone. Your sales team only talks to prospects who are ready to buy."
         }
       }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Call all yesterday's leads and book follow-up appointments",
+      "result_title": "Done. 47 calls completed, 12 appointments booked.",
+      "result_description": "I called all 47 leads from yesterday. 12 qualified prospects booked follow-up appointments (already in your Calendly). 8 requested more info (email follow-ups sent). 15 were not interested (marked in CRM). 12 voicemails left with callback scheduling links. Average call duration: 3 minutes 20 seconds."
     },
     "pricing": {
       "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac597",
-          "period": "/mo",
-          "features_0": "1 voice agent",
-          "features_1": "500 minutes/mo",
-          "features_2": "Inbound calls",
-          "features_3": "Basic call analytics"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac1,197",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "3 voice agents",
-          "features_1": "2,000 minutes/mo",
-          "features_2": "Inbound + outbound",
-          "features_3": "CRM integration",
-          "features_4": "Call recording & transcripts"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac2,497",
-          "period": "/mo",
-          "features_0": "Unlimited agents",
-          "features_1": "Unlimited minutes",
-          "features_2": "Custom voice cloning",
-          "features_3": "Multi-language support",
-          "features_4": "Dedicated support"
-        }
-      }
+      "description": "Clyde's Voice Agent skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Results That Speak",
+      "heading": "Clyde's Track Record",
       "metrics": {
         "response_time": {
           "value": "<1s",
           "label": "Response Time",
-          "description": "Faster than any human agent"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Availability",
-          "description": "Never miss a call again"
-        },
-        "resolution": {
-          "value": "85%",
-          "label": "Resolution Rate",
-          "description": "Without human handoff"
-        }
-      }
-    },
-    "cta": {
-      "title": "Activate the Voice Agent Skill",
-      "subtitle": "Add AI-powered phone calls to your AI Marketing Employee and never miss a lead again.",
-      "button": "See Pricing"
-    }
-  },
-  "skills-lead-qualifier": {
-    "meta": {
-      "title": "Lead Qualifier Skill | AI Marketing Employee | FMai",
-      "description": "AI chatbot that qualifies website leads 24/7 for agency clients. Real-time engagement, BANT scoring, warm handoffs, and automated follow-up sequences."
-    },
-    "hero": {
-      "badge": "Lead Qualifier Skill",
-      "title": "AI Lead Qualification for Your Agency Clients",
-      "description": "Your AI Marketing Employee engages website visitors in real time, qualifies them with BANT scoring, and hands warm leads directly to your clients' sales teams."
-    },
-    "features": {
-      "heading": "What the Lead Qualifier Skill Does",
-      "items": {
-        "engage": {
-          "title": "Real-Time Visitor Engagement",
-          "description": "AI chatbot greets every website visitor, answers questions, and starts qualifying conversations — 24/7, on every client site."
-        },
-        "qualify": {
-          "title": "BANT Qualification Scoring",
-          "description": "Budget, Authority, Need, Timeline — every lead is scored automatically so your clients' sales teams focus on the best prospects."
-        },
-        "handoff": {
-          "title": "Warm Handoff to Sales",
-          "description": "Qualified leads are routed instantly to the right salesperson with full conversation context and qualification score."
-        },
-        "nurture": {
-          "title": "Automated Follow-Up Sequences",
-          "description": "Leads not ready to buy enter nurture sequences — automated emails and retargeting to keep them engaged until they are."
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "How It Works",
-      "steps": {
-        "configure": {
-          "title": "Set Qualification Criteria",
-          "description": "Define what a qualified lead looks like for each client — budget thresholds, company size, industry, and buying signals."
-        },
-        "embed": {
-          "title": "Add to Client Website",
-          "description": "One line of code embeds the AI chatbot on your client's website. It starts qualifying visitors immediately."
-        },
-        "convert": {
-          "title": "Start Qualifying Leads",
-          "description": "Watch qualified leads flow into your clients' CRM with full context. Your AI employee works every visitor, every time."
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Who Uses This Skill",
-      "items": {
-        "agencies": {
-          "title": "Marketing Agencies",
-          "description": "Deploy lead qualification chatbots across all your clients' websites. Prove ROI with qualified lead counts and conversion data."
-        },
-        "saas": {
-          "title": "SaaS Companies",
-          "description": "Qualify free trial signups and demo requests automatically. Route enterprise prospects to sales, self-serve the rest."
-        }
-      }
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mo",
-          "features_0": "1 chatbot persona",
-          "features_1": "Website embed",
-          "features_2": "1,000 conversations/mo",
-          "features_3": "Basic analytics"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "3 chatbot personas",
-          "features_1": "Website + WhatsApp",
-          "features_2": "5,000 conversations/mo",
-          "features_3": "Lead scoring & CRM sync",
-          "features_4": "A/B testing"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1,997",
-          "period": "/mo",
-          "features_0": "Unlimited personas",
-          "features_1": "All platforms",
-          "features_2": "Unlimited conversations",
-          "features_3": "Custom integrations",
-          "features_4": "Dedicated support"
-        }
-      }
-    },
-    "trust": {
-      "heading": "Results That Speak",
-      "metrics": {
-        "qualified_leads": {
-          "value": "3x",
-          "label": "More Qualified Leads",
-          "description": "vs. traditional contact forms"
+          "description": "Clyde picks up faster than any human"
         },
         "availability": {
           "value": "24/7",
           "label": "Always Available",
-          "description": "No missed opportunities"
+          "description": "Clyde never sleeps, never calls in sick"
         },
-        "response_time": {
-          "value": "<2s",
-          "label": "Response Time",
-          "description": "Instant engagement"
+        "resolution": {
+          "value": "85%",
+          "label": "Resolution Rate",
+          "description": "Clyde handles it without human help"
         }
       }
     },
     "cta": {
-      "title": "Activate the Lead Qualifier Skill",
-      "subtitle": "Add AI-powered lead qualification to your AI Marketing Employee and convert more website visitors into clients.",
-      "button": "See Pricing"
+      "title": "Meet Clyde, Your Voice Agent",
+      "subtitle": "Hear Clyde in action. One demo call and you will understand why agencies are replacing SDR teams.",
+      "button": "Meet Clyde"
     }
   },
-  "skills-social-media": {
+  "skills-lead-qualifier": {
     "meta": {
-      "title": "Social Media Skill | AI Marketing Employee | FMai",
-      "description": "AI-powered multi-platform social media management for agency clients. Scheduling, analytics, content creation, and brand monitoring by your AI Marketing Employee."
+      "title": "Clyde Qualifies Your Leads | AI Marketing Employee | FMai",
+      "description": "Clyde engages every website visitor, scores leads with BANT, and hands warm prospects to sales. 24/7 lead qualification on autopilot."
     },
     "hero": {
-      "badge": "Social Media Skill",
-      "title": "AI Social Media Management for Your Agency Clients",
-      "description": "Your AI Marketing Employee manages social media across all platforms — creating content, scheduling posts, tracking performance, and monitoring brand mentions."
+      "badge": "Lead Qualifier",
+      "title": "Clyde Qualifies Your Leads",
+      "description": "Every visitor gets Clyde's attention. He engages, qualifies with BANT scoring, and hands warm leads to sales. A human rep qualifies 20 leads a day. Clyde qualifies 200."
     },
     "features": {
-      "heading": "What the Social Media Skill Does",
+      "heading": "What Clyde Does With Leads",
       "items": {
-        "scheduling": {
-          "title": "Cross-Platform Scheduling",
-          "description": "AI-optimized posting times across LinkedIn, Instagram, X, Facebook, and TikTok. Every client's content goes live at peak engagement windows."
+        "engage": {
+          "title": "Engages Every Visitor",
+          "description": "Clyde greets every website visitor, answers questions, and starts qualifying conversations. 24/7, on every client site."
         },
-        "analytics": {
-          "title": "Performance Tracking",
-          "description": "Real-time analytics across all platforms. Track engagement, reach, follower growth, and content performance per client."
+        "qualify": {
+          "title": "Scores With BANT",
+          "description": "Budget, Authority, Need, Timeline. Clyde scores every lead automatically so your sales team focuses on the best prospects."
         },
-        "creation": {
-          "title": "AI Content Generation",
-          "description": "Platform-native content created in each client's brand voice. Captions, hashtags, and visuals optimized for each network."
+        "handoff": {
+          "title": "Hands Off to Sales",
+          "description": "Clyde routes qualified leads instantly to the right salesperson with full conversation context and qualification score."
         },
-        "monitoring": {
-          "title": "Brand Mention Tracking",
-          "description": "Monitor brand mentions, competitor activity, and industry trends across all social platforms. Get alerts for important conversations."
+        "nurture": {
+          "title": "Nurtures the Rest",
+          "description": "Leads not ready to buy enter Clyde's nurture sequences. Automated emails and retargeting keep them engaged."
         }
       }
     },
     "how_it_works": {
-      "heading": "How It Works",
+      "heading": "How You Work With Clyde",
       "steps": {
-        "connect": {
-          "title": "Link Social Accounts",
-          "description": "Connect your clients' social media accounts. Your AI employee gains access to post, monitor, and analyze across all platforms."
+        "configure": {
+          "title": "Tell Clyde What Qualified Means",
+          "description": "Define what a qualified lead looks like for each client. Budget thresholds, company size, industry, and buying signals."
         },
-        "plan": {
-          "title": "AI Creates Content Calendar",
-          "description": "Your AI employee builds a content calendar based on each client's strategy, audience data, and trending topics."
+        "embed": {
+          "title": "Clyde Joins the Website",
+          "description": "One line of code. Clyde appears on your client's website and starts qualifying visitors immediately."
         },
-        "publish": {
-          "title": "Auto-Post on Schedule",
-          "description": "Content goes live automatically at optimal times. Your AI employee handles posting, hashtags, and cross-platform formatting."
+        "convert": {
+          "title": "Clyde Starts Delivering Leads",
+          "description": "Qualified leads flow into your clients' CRM with full context. Clyde works every visitor, every time."
         }
       }
     },
     "use_cases": {
-      "heading": "Who Uses This Skill",
+      "heading": "Who Works With Clyde",
       "items": {
         "agencies": {
           "title": "Marketing Agencies",
-          "description": "Manage social media for dozens of clients simultaneously. One AI employee replaces an entire social media team."
+          "description": "Deploy Clyde across all your clients' websites. Prove ROI with qualified lead counts and conversion data. No extra headcount."
+        },
+        "saas": {
+          "title": "SaaS Companies",
+          "description": "Clyde qualifies free trial signups and demo requests automatically. Enterprise prospects go to sales. Everyone else self-serves."
+        }
+      }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Score all website visitors from the last 24 hours using BANT",
+      "result_title": "Done. 156 visitors scored. 23 qualified leads identified.",
+      "result_description": "I analyzed 156 unique visitors from the last 24 hours. 23 scored 8+ on BANT (hot leads, routed to sales with full context). 41 scored 5-7 (warm, added to nurture sequence). 92 scored below 5 (informational visitors, tagged for retargeting). 3 enterprise prospects flagged for immediate follow-up."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "description": "Clyde's Lead Qualifier skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
+    },
+    "trust": {
+      "heading": "Clyde's Track Record",
+      "metrics": {
+        "qualified_leads": {
+          "value": "3x",
+          "label": "More Qualified Leads",
+          "description": "Clyde outperforms contact forms by 3x"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Qualifying",
+          "description": "Clyde never misses a visitor"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Response Time",
+          "description": "Clyde engages instantly"
+        }
+      }
+    },
+    "cta": {
+      "title": "Meet Clyde, Your Lead Qualifier",
+      "subtitle": "See how Clyde turns website visitors into qualified leads. No forms. No waiting. Just results.",
+      "button": "Meet Clyde"
+    }
+  },
+  "skills-social-media": {
+    "meta": {
+      "title": "Clyde Runs Your Social Media | AI Marketing Employee | FMai",
+      "description": "Clyde manages multi-platform social media for all your clients. Content creation, scheduling, analytics, and brand monitoring. One AI colleague, unlimited accounts."
+    },
+    "hero": {
+      "badge": "Social Media",
+      "title": "Clyde Runs Your Social Media",
+      "description": "A social media manager handles 3 client accounts. Clyde handles 30. He creates content, schedules posts, tracks performance, and monitors brand mentions. Across every platform."
+    },
+    "features": {
+      "heading": "What Clyde Does on Social",
+      "items": {
+        "scheduling": {
+          "title": "Posts at the Perfect Time",
+          "description": "Clyde posts at AI-optimized times across LinkedIn, Instagram, X, Facebook, and TikTok. Every client's content goes live at peak engagement."
+        },
+        "analytics": {
+          "title": "Tracks Everything",
+          "description": "Clyde monitors engagement, reach, follower growth, and content performance per client. Real-time analytics across all platforms."
+        },
+        "creation": {
+          "title": "Creates Platform-Native Content",
+          "description": "Clyde writes captions, generates hashtags, and creates visuals optimized for each network. In each client's brand voice."
+        },
+        "monitoring": {
+          "title": "Watches the Conversation",
+          "description": "Clyde monitors brand mentions, competitor activity, and industry trends. He alerts you to important conversations instantly."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "How You Work With Clyde",
+      "steps": {
+        "connect": {
+          "title": "Connect the Accounts",
+          "description": "Link your clients' social media accounts. Clyde gains access to post, monitor, and analyze across all platforms."
+        },
+        "plan": {
+          "title": "Clyde Builds the Calendar",
+          "description": "Clyde creates a content calendar based on each client's strategy, audience data, and trending topics."
+        },
+        "publish": {
+          "title": "Clyde Posts and Optimizes",
+          "description": "Content goes live automatically at optimal times. Clyde handles posting, hashtags, and cross-platform formatting."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Who Works With Clyde",
+      "items": {
+        "agencies": {
+          "title": "Marketing Agencies",
+          "description": "Manage social media for dozens of clients simultaneously. Clyde replaces an entire social media team. No hiring, no burnout."
         },
         "brands": {
           "title": "Brand Managers",
-          "description": "Maintain consistent brand presence across all platforms without the manual work of daily posting and monitoring."
+          "description": "Consistent brand presence across all platforms. Clyde handles daily posting and monitoring so you focus on strategy."
         }
       }
     },
     "social_proof": {
-      "quote": "FMai's Social Media skill manages all our client accounts. We scaled from 5 to 20 clients without adding headcount.",
+      "quote": "Clyde manages all 20 of our client social accounts. We did not hire a single extra person to get here.",
       "author": "Agency Owner",
       "role": "Digital Marketing Agency",
       "company": "Rotterdam"
     },
     "showcase": {
-      "heading": "The AI Social Media Engine",
+      "heading": "Clyde's Social Media Engine",
       "items": {
         "smart_scheduling": {
           "title": "Smart Scheduling",
-          "description": "AI-optimized posting times across all platforms for maximum reach and engagement."
+          "description": "Clyde posts at AI-optimized times for maximum reach and engagement."
         },
         "analytics_dashboard": {
           "title": "Analytics Dashboard",
-          "description": "Real-time performance tracking across all social channels with actionable insights."
+          "description": "Clyde tracks performance across all social channels with actionable insights."
         },
         "engagement_automation": {
           "title": "Engagement Automation",
-          "description": "Auto-respond to comments, DMs, and mentions with on-brand, context-aware replies."
+          "description": "Clyde responds to comments, DMs, and mentions with on-brand, context-aware replies."
         },
         "content_repurposing": {
           "title": "Content Repurposing",
-          "description": "Automatically adapt content for each platform \u2014 blog to carousel, video to reel, post to story."
+          "description": "Clyde adapts content for each platform. Blog to carousel, video to reel, post to story."
         },
         "trend_monitoring": {
           "title": "Trend Monitoring",
-          "description": "Stay ahead with AI-powered trend detection and content suggestions based on what's working."
+          "description": "Clyde detects trends early and suggests content based on what is working."
         },
         "competitor_tracking": {
           "title": "Competitor Tracking",
-          "description": "Monitor competitor activity, benchmark performance, and identify content gaps."
+          "description": "Clyde monitors competitor activity, benchmarks performance, and identifies content gaps."
         }
       }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Create and schedule next week's posts for all 3 client accounts",
+      "result_title": "Done. 45 posts created and scheduled across 3 accounts.",
+      "result_description": "I created 15 posts per client account (3 LinkedIn, 4 Instagram, 3 X, 2 Facebook, 3 TikTok) in each client's brand voice. All posts scheduled at AI-optimized times for peak engagement. Carousel assets generated for Instagram. Hashtag research completed. Content calendar updated in your dashboard."
     },
     "pricing": {
       "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mo",
-          "features_0": "3 platforms",
-          "features_1": "60 posts/mo",
-          "features_2": "Basic scheduling",
-          "features_3": "Performance reports"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "6 platforms",
-          "features_1": "150 posts/mo",
-          "features_2": "AI-optimized scheduling",
-          "features_3": "Engagement automation",
-          "features_4": "Competitor tracking"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1,997",
-          "period": "/mo",
-          "features_0": "Unlimited platforms",
-          "features_1": "Unlimited posts",
-          "features_2": "Full automation suite",
-          "features_3": "Custom workflows",
-          "features_4": "Dedicated support"
-        }
-      }
+      "description": "Clyde's Social Media skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Results That Speak",
+      "heading": "Clyde's Track Record",
       "metrics": {
         "engagement": {
           "value": "2x",
-          "label": "Engagement",
-          "description": "Average increase in social engagement"
+          "label": "More Engagement",
+          "description": "Clyde doubles average social engagement"
         },
         "time_saved": {
           "value": "15h",
           "label": "Saved Per Week",
-          "description": "Time saved on social media management"
+          "description": "Clyde frees 15 hours of social work weekly"
         },
         "platforms": {
           "value": "6+",
-          "label": "Platforms",
-          "description": "Managed from a single dashboard"
+          "label": "Platforms Managed",
+          "description": "Clyde runs them all from one dashboard"
         }
       }
     },
     "cta": {
-      "title": "Activate the Social Media Skill",
-      "subtitle": "Add AI-powered social media management to your AI Marketing Employee and scale your clients' social presence.",
-      "button": "See Pricing"
+      "title": "Meet Clyde, Your Social Media Manager",
+      "subtitle": "See how Clyde manages social media for agency clients. One demo and you will never hire another social media coordinator.",
+      "button": "Meet Clyde"
     }
   },
   "skills-ad-creator": {
     "meta": {
-      "title": "Ad Creator Skill | AI Marketing Employee | FMai",
-      "description": "AI-generated static and video ads for agency clients. Campaign briefs to ad variations to platform launch — all handled by your AI Marketing Employee."
+      "title": "Clyde Creates Your Ads | AI Marketing Employee | FMai",
+      "description": "Clyde generates static and video ads from campaign briefs, creates A/B test variations, and pushes them to ad platforms. Your AI ad specialist."
     },
     "hero": {
-      "badge": "Ad Creator Skill",
-      "title": "AI Ad Creation for Your Agency Clients",
-      "description": "Your AI Marketing Employee creates static and video ads from campaign briefs, generates A/B test variations, and pushes them directly to ad platforms."
+      "badge": "Ad Creator",
+      "title": "Clyde Creates Your Ads",
+      "description": "Give Clyde a campaign brief. He generates image ads, video ads, ad copy, and A/B test variations. Then pushes them directly to Meta, Google, and LinkedIn. In minutes, not days."
     },
     "features": {
-      "heading": "What the Ad Creator Skill Does",
+      "heading": "What Clyde Does With Ads",
       "items": {
         "static": {
-          "title": "Image Ad Generation",
-          "description": "AI-generated display ads, social ads, and banner ads in multiple formats and sizes — ready for Meta, Google, and LinkedIn."
+          "title": "Generates Image Ads",
+          "description": "Clyde creates display ads, social ads, and banners in multiple formats and sizes. Ready for Meta, Google, and LinkedIn."
         },
         "video": {
-          "title": "Short-Form Video Ads",
-          "description": "AI-produced video ads for Reels, Stories, TikTok, and YouTube Shorts. From script to finished video in minutes."
+          "title": "Produces Video Ads",
+          "description": "Clyde creates short-form video ads for Reels, Stories, TikTok, and YouTube Shorts. Script to finished video in minutes."
         },
         "copy": {
-          "title": "Ad Copy Variants",
-          "description": "Headlines, descriptions, and CTAs generated in each client's brand voice. Multiple variations for testing and optimization."
+          "title": "Writes Ad Copy",
+          "description": "Headlines, descriptions, and CTAs in each client's brand voice. Clyde generates multiple variations for testing."
         },
         "variants": {
-          "title": "A/B Test Variations",
-          "description": "Automatic generation of creative variants for split testing. Your AI employee optimizes based on performance data."
+          "title": "Creates A/B Variations",
+          "description": "Clyde automatically generates creative variants for split testing. He optimizes based on performance data."
         }
       }
     },
     "how_it_works": {
-      "heading": "How It Works",
+      "heading": "How You Work With Clyde",
       "steps": {
         "brief": {
-          "title": "Input Campaign Brief",
-          "description": "Provide the campaign objective, target audience, and brand assets. Your AI employee takes it from there."
+          "title": "Give Clyde the Brief",
+          "description": "Share the campaign objective, target audience, and brand assets. Clyde takes it from there."
         },
         "generate": {
-          "title": "AI Creates Ad Variations",
-          "description": "Multiple ad creatives generated in seconds — images, video, copy, and format variations for every platform."
+          "title": "Clyde Creates Variations",
+          "description": "Multiple ad creatives generated in seconds. Images, video, copy, and format variations for every platform."
         },
         "launch": {
-          "title": "Push to Ad Platforms",
-          "description": "Approved ads are pushed directly to Meta Ads, Google Ads, and LinkedIn Campaign Manager. One click to launch."
+          "title": "Clyde Launches the Campaign",
+          "description": "Approved ads are pushed directly to Meta Ads, Google Ads, and LinkedIn Campaign Manager. One click."
         }
       }
     },
     "use_cases": {
-      "heading": "Who Uses This Skill",
+      "heading": "Who Works With Clyde",
       "items": {
         "agencies": {
           "title": "Marketing Agencies",
-          "description": "Produce ad creatives for all your clients at scale. No more bottlenecks waiting for designers and copywriters."
+          "description": "Clyde produces ad creatives for all your clients at scale. No more bottlenecks waiting for designers and copywriters."
         },
         "performance": {
           "title": "Performance Marketers",
-          "description": "Generate hundreds of ad variations for rapid testing. Find winning creatives faster with AI-powered iteration."
+          "description": "Clyde generates hundreds of ad variations for rapid testing. Find winning creatives faster."
         }
       }
     },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Generate 5 Meta ad variations for the spring campaign",
+      "result_title": "Done. 5 ad variations ready for review.",
+      "result_description": "I created 5 Meta ad variations for the spring campaign: 3 image ads (1080x1080, 1200x628, 9:16 Story) and 2 short-form video ads (15s Reel, 6s Story). Each variation has 3 headline options and 2 CTA variants. Brand colors and fonts applied. Estimated reach at current budget: 45,000-62,000 impressions."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "description": "Clyde's Ad Creator skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
+    },
     "cta": {
-      "title": "Activate the Ad Creator Skill",
-      "subtitle": "Add AI-powered ad creation to your AI Marketing Employee and launch campaigns faster for every client.",
-      "button": "See Pricing"
+      "title": "Meet Clyde, Your Ad Creator",
+      "subtitle": "See how Clyde generates ad creatives for agency clients. One brief, unlimited variations, instant launch.",
+      "button": "Meet Clyde"
     }
   },
   "skills-reporting": {
     "meta": {
-      "title": "Reporting Skill | AI Marketing Employee | FMai",
-      "description": "AI-powered cross-platform dashboards and weekly reports for agency clients. Real-time analytics, trend detection, and ROI tracking by your AI Marketing Employee."
+      "title": "Clyde Generates Your Reports | AI Marketing Employee | FMai",
+      "description": "Clyde builds real-time dashboards, generates weekly reports, detects trends, and tracks ROI across all channels. Your AI analytics specialist."
     },
     "hero": {
-      "badge": "Reporting & Analytics Skill",
-      "title": "AI Reporting for Your Agency Clients",
-      "description": "Your AI Marketing Employee builds real-time dashboards, generates weekly reports, detects trends, and tracks ROI across all channels for every client."
+      "badge": "Reporting & Analytics",
+      "title": "Clyde Generates Your Reports",
+      "description": "An analyst spends 4 hours per client per week on reporting. Clyde does it in 4 minutes. Real-time dashboards, weekly reports, trend detection, and ROI tracking for every client."
     },
     "features": {
-      "heading": "What the Reporting Skill Does",
+      "heading": "What Clyde Does With Data",
       "items": {
         "dashboards": {
-          "title": "Real-Time Client Dashboards",
-          "description": "Live dashboards showing KPIs across all channels. Share with clients for full transparency on campaign performance."
+          "title": "Builds Live Dashboards",
+          "description": "Clyde creates real-time dashboards showing KPIs across all channels. Share with clients for full performance transparency."
         },
         "weekly": {
-          "title": "Automated Weekly Reports",
-          "description": "AI-generated weekly performance reports sent to your inbox and your clients. No manual data pulling or formatting."
+          "title": "Generates Weekly Reports",
+          "description": "Clyde writes and sends weekly performance reports to your inbox and your clients. No manual data pulling."
         },
         "trends": {
-          "title": "Trend Detection and Alerts",
-          "description": "Your AI employee spots performance anomalies, emerging trends, and optimization opportunities before you do."
+          "title": "Detects Trends and Anomalies",
+          "description": "Clyde spots performance changes, emerging trends, and optimization opportunities before you do."
         },
         "roi": {
-          "title": "ROI Tracking and Attribution",
-          "description": "Multi-touch attribution across all channels. Know exactly which campaigns drive revenue for each client."
+          "title": "Tracks ROI and Attribution",
+          "description": "Multi-touch attribution across all channels. Clyde knows exactly which campaigns drive revenue for each client."
         }
       }
     },
     "how_it_works": {
-      "heading": "How It Works",
+      "heading": "How You Work With Clyde",
       "steps": {
         "integrate": {
-          "title": "Connect Data Sources",
-          "description": "Link Google Analytics, ad platforms, social accounts, and CRM. Your AI employee pulls data from all sources automatically."
+          "title": "Connect the Data Sources",
+          "description": "Link Google Analytics, ad platforms, social accounts, and CRM. Clyde pulls data from all sources automatically."
         },
         "analyze": {
-          "title": "AI Processes Metrics",
-          "description": "Your AI employee analyzes performance data, identifies patterns, and generates insights — no analyst required."
+          "title": "Clyde Analyzes Everything",
+          "description": "Clyde processes performance data, identifies patterns, and generates insights. No analyst required."
         },
         "report": {
-          "title": "Auto-Generate Reports",
-          "description": "Beautiful, branded reports generated weekly and sent to your clients. Dashboards update in real time."
+          "title": "Clyde Delivers the Reports",
+          "description": "Beautiful, branded reports generated weekly. Dashboards update in real time. Clients stay informed."
         }
       }
     },
     "use_cases": {
-      "heading": "Who Uses This Skill",
+      "heading": "Who Works With Clyde",
       "items": {
         "agencies": {
           "title": "Marketing Agencies",
-          "description": "Deliver professional reporting to every client without spending hours in spreadsheets. Your AI employee handles the data work."
+          "description": "Clyde delivers professional reporting to every client. No more hours in spreadsheets. He handles the data work."
         },
         "managers": {
           "title": "Marketing Managers",
-          "description": "Get a clear picture of campaign performance across all channels. AI-powered insights help you make better decisions faster."
+          "description": "Clear picture of campaign performance across all channels. Clyde's insights help you make better decisions faster."
+        }
+      }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Generate a weekly performance report for all active clients",
+      "result_title": "Done. 8 client reports generated and delivered.",
+      "result_description": "I compiled performance data from Google Analytics, Meta Ads, LinkedIn, and Instagram for all 8 active clients. Each report includes: traffic overview, conversion metrics, campaign ROI, top-performing content, and optimization recommendations. Reports emailed to clients and account managers. 3 anomalies flagged for review."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "description": "Clyde's Reporting skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
+    },
+    "cta": {
+      "title": "Meet Clyde, Your Reporting Analyst",
+      "subtitle": "See how Clyde handles analytics for agency clients. Professional reports, zero manual work.",
+      "button": "Meet Clyde"
+    }
+  },
+  "skills-chatbot": {
+    "meta": {
+      "title": "Clyde Deploys Your Chatbots | AI Marketing Employee | FMai",
+      "description": "Clyde deploys intelligent chatbots across client websites. Lead qualification, customer support, FAQ automation, and appointment booking. 24/7, white-labeled."
+    },
+    "hero": {
+      "badge": "Chatbot",
+      "title": "Clyde Deploys Your Chatbots",
+      "description": "A support agent handles one conversation at a time. Clyde handles thousands. He deploys intelligent chatbots on your clients' websites that qualify leads, answer questions, and convert visitors. All day, every day."
+    },
+    "use_cases": {
+      "heading": "What Clyde's Chatbots Do",
+      "items": {
+        "customer_service": {
+          "title": "Handle Customer Service",
+          "description": "Clyde's chatbots resolve customer inquiries, handle complaints, and escalate complex cases to human agents. Seamlessly."
+        },
+        "faq_automation": {
+          "title": "Automate FAQs",
+          "description": "Clyde trains chatbots on your clients' knowledge base. Context-aware responses reduce support tickets by up to 70%."
+        },
+        "appointment_booking": {
+          "title": "Book Appointments",
+          "description": "Clyde's chatbots manage scheduling, rescheduling, and reminders. Integrated with Calendly, Cal.com, and Google Calendar."
+        },
+        "product_recommendations": {
+          "title": "Recommend Products",
+          "description": "AI-powered product suggestions based on customer behavior and preferences. Clyde drives conversions while you sleep."
+        }
+      }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Deploy a support chatbot on client X's website trained on their FAQ",
+      "result_title": "Done. Chatbot live on client X's website.",
+      "result_description": "I ingested client X's 47 FAQ pages, product documentation, and return policy. Chatbot deployed with the client's brand colors, logo, and tone of voice. Already handling inquiries. First 24 hours: 89 conversations, 62 resolved without escalation (70% deflection rate). Widget positioned bottom-right, mobile-responsive."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "description": "Clyde's Chatbot skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
+    },
+    "trust": {
+      "heading": "Clyde's Track Record",
+      "metrics": {
+        "inquiries": {
+          "value": "70%",
+          "label": "Inquiries Handled",
+          "description": "Clyde resolves 70% without human help"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Available",
+          "description": "Clyde never misses a visitor, day or night"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Response Time",
+          "description": "Clyde engages every visitor instantly"
         }
       }
     },
     "cta": {
-      "title": "Activate the Reporting Skill",
-      "subtitle": "Add AI-powered reporting to your AI Marketing Employee and give every client professional analytics.",
-      "button": "See Pricing"
+      "title": "Meet Clyde, Your Chatbot Specialist",
+      "subtitle": "See how Clyde deploys chatbots for agency clients. One demo and you will want one on every client site.",
+      "button": "Meet Clyde"
+    }
+  },
+  "skills-email": {
+    "meta": {
+      "title": "Clyde Manages Your Email | AI Marketing Employee | FMai",
+      "description": "Clyde runs email campaigns, writes follow-up sequences, generates newsletters, and manages inboxes. Your AI email marketing specialist."
+    },
+    "hero": {
+      "badge": "Email",
+      "title": "Clyde Manages Your Email",
+      "description": "A marketer spends 6 hours writing one email sequence. Clyde writes it in 6 minutes. He handles campaigns, follow-ups, newsletters, and inbox management for every client."
+    },
+    "use_cases": {
+      "heading": "What Clyde Does With Email",
+      "items": {
+        "automated_campaigns": {
+          "title": "Runs Automated Campaigns",
+          "description": "Clyde writes email sequences based on audience segments. Personalized at scale with dynamic content that adapts to each recipient."
+        },
+        "smart_followups": {
+          "title": "Sends Smart Follow-ups",
+          "description": "Clyde triggers follow-up emails based on lead behavior. He never misses a warm lead. Intelligent timing, personalized messaging."
+        },
+        "newsletter_generation": {
+          "title": "Builds Newsletters",
+          "description": "Clyde compiles weekly or monthly newsletters from your content calendar. Curated, written, and scheduled automatically."
+        },
+        "inbox_management": {
+          "title": "Manages Inboxes",
+          "description": "Smart routing, auto-replies, and priority flagging. Clyde keeps client inboxes organized and response times under control."
+        }
+      }
+    },
+    "task_demo": {
+      "heading": "See Clyde in Action",
+      "command": "Send a follow-up sequence to all demo no-shows from this week",
+      "result_title": "Done. 3-email sequence created and sending.",
+      "result_description": "I identified 14 demo no-shows from this week. Created a 3-email re-engagement sequence: Email 1 (sent now) acknowledges the missed demo with a one-click reschedule link. Email 2 (day 3) shares a relevant case study. Email 3 (day 7) offers an alternative format (async video walkthrough). Subject lines A/B tested. Open rate tracking enabled."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "description": "Clyde's Email skill is included in your agent tier subscription.",
+      "cta": "View Pricing Plans",
+      "cta_link": "/pricing"
+    },
+    "trust": {
+      "heading": "Clyde's Track Record",
+      "metrics": {
+        "open_rates": {
+          "value": "45%",
+          "label": "Higher Open Rates",
+          "description": "Clyde optimizes subject lines and send times"
+        },
+        "replies": {
+          "value": "3x",
+          "label": "More Replies",
+          "description": "Clyde's personalized content resonates"
+        },
+        "sending": {
+          "value": "24/7",
+          "label": "Always Sending",
+          "description": "Clyde delivers at the optimal time, always"
+        }
+      }
+    },
+    "cta": {
+      "title": "Meet Clyde, Your Email Specialist",
+      "subtitle": "See how Clyde handles email marketing for agency clients. Campaigns, follow-ups, newsletters. Zero manual work.",
+      "button": "Meet Clyde"
     }
   },
   "founding-member": {
@@ -1783,190 +1853,6 @@
       "title": "Ready to Be First?",
       "subtitle": "Join the founding member program and lock in the lowest price forever.",
       "button": "Apply Now"
-    }
-  },
-  "skills-chatbot": {
-    "meta": {
-      "title": "Chatbot Skill | AI Marketing Employee | FMai",
-      "description": "Deploy intelligent AI chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7."
-    },
-    "hero": {
-      "badge": "Chatbot Skill",
-      "title": "AI Chatbots for Your Agency Clients",
-      "description": "Deploy intelligent chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7. White-labeled and fully customizable for each client."
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "customer_service": {
-          "title": "Customer Service",
-          "description": "Deploy AI chatbots that handle customer inquiries, resolve issues, and escalate complex cases to human agents seamlessly."
-        },
-        "faq_automation": {
-          "title": "FAQ Automation",
-          "description": "Automatically answer frequently asked questions with context-aware responses, reducing support ticket volume by up to 70%."
-        },
-        "appointment_booking": {
-          "title": "Appointment Booking",
-          "description": "Let chatbots manage scheduling, rescheduling, and reminders — integrated directly with your clients' calendar systems."
-        },
-        "product_recommendations": {
-          "title": "Product Recommendations",
-          "description": "AI-powered product suggestions based on customer behavior, preferences, and purchase history to boost conversions."
-        }
-      }
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mo",
-          "features_0": "1 chatbot",
-          "features_1": "Website embed",
-          "features_2": "1,000 conversations/mo",
-          "features_3": "Basic analytics"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "3 chatbots",
-          "features_1": "Website + WhatsApp",
-          "features_2": "5,000 conversations/mo",
-          "features_3": "Lead scoring & CRM sync",
-          "features_4": "A/B testing"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1,997",
-          "period": "/mo",
-          "features_0": "Unlimited chatbots",
-          "features_1": "All platforms",
-          "features_2": "Unlimited conversations",
-          "features_3": "Custom integrations",
-          "features_4": "Dedicated support"
-        }
-      }
-    },
-    "trust": {
-      "heading": "Results That Speak",
-      "metrics": {
-        "inquiries": {
-          "value": "70%",
-          "label": "Inquiries Handled",
-          "description": "Automatically resolved without human intervention"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Always Available",
-          "description": "No missed opportunities, day or night"
-        },
-        "response_time": {
-          "value": "<2s",
-          "label": "Response Time",
-          "description": "Instant engagement with every visitor"
-        }
-      }
-    },
-    "cta": {
-      "title": "Ready to Deploy AI Chatbots?",
-      "subtitle": "Start delivering chatbot solutions to your agency clients today.",
-      "button": "Get Started"
-    }
-  },
-  "skills-email": {
-    "meta": {
-      "title": "Email Skill | AI Marketing Employee | FMai",
-      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
-    },
-    "hero": {
-      "badge": "Email Skill",
-      "title": "AI Email Management for Your Agency Clients",
-      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management. Deliver results for your clients without the manual grind."
-    },
-    "use_cases": {
-      "heading": "Use Cases",
-      "items": {
-        "automated_campaigns": {
-          "title": "Automated Campaigns",
-          "description": "AI-written email sequences based on audience segments. Personalized at scale with dynamic content that adapts to each recipient."
-        },
-        "smart_followups": {
-          "title": "Smart Follow-ups",
-          "description": "Automatic follow-up emails triggered by lead behavior. Never miss a warm lead with intelligent timing and messaging."
-        },
-        "newsletter_generation": {
-          "title": "Newsletter Generation",
-          "description": "Weekly or monthly newsletters compiled from your content calendar. Curated, written, and scheduled automatically."
-        },
-        "inbox_management": {
-          "title": "Inbox Management",
-          "description": "Smart routing, auto-replies, and priority flagging. Keep client inboxes organized and response times under control."
-        }
-      }
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac397",
-          "period": "/mo",
-          "features_0": "1,000 emails/mo",
-          "features_1": "1 client account",
-          "features_2": "Campaign templates",
-          "features_3": "Basic analytics"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac797",
-          "period": "/mo",
-          "badge": "Most Popular",
-          "features_0": "5,000 emails/mo",
-          "features_1": "5 client accounts",
-          "features_2": "Smart follow-ups",
-          "features_3": "A/B testing",
-          "features_4": "CRM integration"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1,497",
-          "period": "/mo",
-          "features_0": "Unlimited emails",
-          "features_1": "Unlimited clients",
-          "features_2": "Full inbox management",
-          "features_3": "Custom workflows",
-          "features_4": "Dedicated support"
-        }
-      }
-    },
-    "trust": {
-      "heading": "Results That Speak",
-      "metrics": {
-        "open_rates": {
-          "value": "45%",
-          "label": "Higher Open Rates",
-          "description": "AI-optimized subject lines and send times"
-        },
-        "replies": {
-          "value": "3x",
-          "label": "More Replies",
-          "description": "Personalized content that resonates"
-        },
-        "sending": {
-          "value": "24/7",
-          "label": "Sending",
-          "description": "Automated delivery at optimal times"
-        }
-      }
-    },
-    "cta": {
-      "title": "Ready to Automate Email?",
-      "subtitle": "Start delivering AI-powered email solutions to your agency clients today.",
-      "button": "Get Started"
     }
   }
 }
