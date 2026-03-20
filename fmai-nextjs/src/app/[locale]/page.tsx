@@ -12,7 +12,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { OrbitVisual } from '@/components/hero/OrbitVisual'
+import { HeroSpline } from '@/components/hero/HeroSpline'
 import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -29,15 +29,17 @@ export async function generateMetadata({
 }
 
 const SERVICE_CARDS = [
-  { key: 'automations', href: '/automations' },
-  { key: 'chatbots', href: '/chatbots' },
-  { key: 'voiceAgents', href: '/voice-agents' },
-  { key: 'marketingMachine', href: '/marketing-machine' },
+  { key: 'contentCreator', href: '/skills/content-creator' },
+  { key: 'voiceAgent', href: '/skills/voice-agent' },
+  { key: 'leadQualifier', href: '/skills/lead-qualifier' },
+  { key: 'socialMedia', href: '/skills/social-media' },
+  { key: 'adCreator', href: '/skills/ad-creator' },
+  { key: 'reporting', href: '/skills/reporting' },
 ] as const
 
-const STAT_KEYS = ['automations', 'support', 'growth', 'setup'] as const
+const STAT_KEYS = ['clients', 'content', 'hours', 'languages'] as const
 
-const BADGE_KEYS = ['gdpr', 'enterprise', 'uptime', 'support', 'integrations', 'noLockIn'] as const
+const BADGE_KEYS = ['gdpr', 'enterprise', 'dutch', 'uptime', 'integrations', 'noLockIn'] as const
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
 
@@ -65,72 +67,74 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         }))}
       />
 
-      {/* Hero Section — Left-aligned split layout with OrbitVisual */}
+      {/* Hero Section — Split layout with Spline 3D */}
       <section
         aria-labelledby="hero"
-        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-[140px] pb-20"
+        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-[140px] pb-20 overflow-hidden"
       >
-        {/* Left-aligned Hero Content */}
-        <div className="relative z-10 max-w-[720px]">
-          {/* Eyebrow badge */}
-          <div
-            className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
-            style={{ animation: 'fadeIn 0.8s ease-out' }}
-          >
-            {t('hero.badge')}
-          </div>
-
-          {/* Headline with gradient accent */}
-          <h1
-            id="hero"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
-            style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
-          >
-            <span className="block text-text-primary">{t('hero.headlineMain')}</span>
-            <span
-              className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
-              style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
+        <div className="flex flex-col lg:flex-row items-center w-full gap-8">
+          {/* Left content */}
+          <div className="relative z-10 flex-1 max-w-[720px]">
+            {/* Eyebrow badge */}
+            <div
+              className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
+              style={{ animation: 'fadeIn 0.8s ease-out' }}
             >
-              {t('hero.headlineAccent')}
-            </span>
-          </h1>
+              {t('hero.badge')}
+            </div>
 
-          {/* Description */}
-          <p
-            className="text-lg lg:text-xl text-text-secondary max-w-xl mb-6 leading-relaxed"
-            style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
-          >
-            {t('hero.subtitle')}
-          </p>
+            {/* Headline with gradient accent */}
+            <h1
+              id="hero"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
+            >
+              <span className="block text-text-primary">{t('hero.headlineMain')}</span>
+              <span
+                className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
+                style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
+              >
+                {t('hero.headlineAccent')}
+              </span>
+            </h1>
 
-          {/* Trust anchor */}
-          <p
-            className="text-sm text-text-muted mb-10"
-            style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
-          >
-            {t('hero.trustAnchor')}
-          </p>
+            {/* Description */}
+            <p
+              className="text-lg lg:text-xl text-text-secondary max-w-xl mb-6 leading-relaxed"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
+            >
+              {t('hero.subtitle')}
+            </p>
 
-          {/* CTA Buttons — left-aligned */}
-          <div
-            className="flex flex-wrap gap-4"
-            style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
-          >
-            <CTAButton size="lg" href="#services">
-              <Zap className="mr-1 h-5 w-5" />
-              {t('hero.cta')}
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </CTAButton>
+            {/* Trust anchor */}
+            <p
+              className="text-sm text-text-muted mb-10"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
+            >
+              {t('hero.trustAnchor')}
+            </p>
 
-            <CTAButton variant="secondary" size="lg" href="/contact">
-              {t('hero.ctaSecondary')}
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </CTAButton>
+            {/* CTA Buttons — left-aligned */}
+            <div
+              className="flex flex-wrap gap-4"
+              style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
+            >
+              <CTAButton size="lg" href="#services">
+                <Zap className="mr-1 h-5 w-5" />
+                {t('hero.cta')}
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </CTAButton>
+
+              <CTAButton variant="secondary" size="lg" href="/pricing">
+                {t('hero.ctaSecondary')}
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </CTAButton>
+            </div>
           </div>
-        </div>
 
-        {/* Hero visual — right side, desktop only */}
-        <OrbitVisual />
+          {/* Right content — 3D Spline Scene */}
+          <HeroSpline />
+        </div>
       </section>
 
       {/* Stats / Metrics Bar */}
@@ -173,7 +177,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {SERVICE_CARDS.map((card) => (
               <Link
                 key={card.key}
