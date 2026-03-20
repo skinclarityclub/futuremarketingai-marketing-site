@@ -81,11 +81,13 @@ Plans:
 5. Analytics collectors (Daily Intel, Weekly Performance) run per-client and error notifications route to the correct agency owner
    **Plans**: TBD
 
+**Plans**: 3 plans
+
 Plans:
 
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
+- [ ] 03-01-PLAN.md — Usage metrics table + Content Posting Pipeline parameterization (Wave 1)
+- [ ] 03-02-PLAN.md — Analytics workflows multi-client + error notification routing (Wave 1)
+- [ ] 03-03-PLAN.md — Usage Metering + Agency Client Setup workflows + verification (Wave 2)
 
 ### Phase 4: Compliance
 
