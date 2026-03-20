@@ -17,7 +17,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - **Wave B (after Phase 1):** Phase 2 -- needs website positioning settled
 - **Wave C (after Phase 2):** Phase 3 -- needs dashboard data model
 
-- [x] **Phase 1: Website Rebrand** - All website copy, pages, and SEO reframed for agency AaaS positioning
+- [ ] **Phase 1: Website Rebrand** - All website copy, pages, and SEO reframed for agency AaaS positioning
 - [ ] **Phase 2: Dashboard Reframe** - Dashboard UI relabeled and agency data model with billing implemented
 - [ ] **Phase 3: n8n Multi-Tenant** - Existing workflows parameterized for per-client isolation and metering
 - [ ] **Phase 4: Compliance** - AI-disclosure, legal documents, and privacy policies for EU AI Act readiness
@@ -37,13 +37,15 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 3. Pricing page displays 4 agent tiers with skill add-ons and a founding member CTA links to dedicated landing page with 10-spot scarcity
 4. All supporting pages (About, How-it-works, FAQ) reflect AaaS positioning with agency-relevant trust badges, stats, and social proof
 5. SEO metadata (titles, descriptions, JSON-LD, sitemap) targets "AI marketing employee agencies" keywords in all 3 languages
-   **Plans**: 3 plans
+   **Plans**: 5 plans
 
 Plans:
 
 - [x] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
 - [x] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
 - [x] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
+- [ ] 01-04-PLAN.md — Gap closure: missing locale namespaces for skill/founding-member pages + how-it-works fix (Wave 3)
+- [ ] 01-05-PLAN.md — Gap closure: chatbot persona engines rewritten for agency use cases (Wave 3)
 
 ### Phase 2: Dashboard Reframe
 
@@ -131,10 +133,10 @@ Phases execute in parallel waves:
 - Wave B: Phase 2 (after Phase 1 positioning settled)
 - Wave C: Phase 3 (after Phase 2 data model complete)
 
-| Phase                | Plans Complete | Status      | Completed  |
-| -------------------- | -------------- | ----------- | ---------- |
-| 1. Website Rebrand   | 3/3            | Complete    | 2026-03-20 |
-| 2. Dashboard Reframe | 0/3            | Not started | -          |
-| 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
-| 4. Compliance        | 0/2            | Not started | -          |
-| 5. Go-to-Market      | 0/2            | Not started | -          |
+| Phase                | Plans Complete | Status      | Completed |
+| -------------------- | -------------- | ----------- | --------- |
+| 1. Website Rebrand   | 3/5            | Gap closure | -         |
+| 2. Dashboard Reframe | 0/3            | Not started | -         |
+| 3. n8n Multi-Tenant  | 0/3            | Not started | -         |
+| 4. Compliance        | 0/2            | Not started | -         |
+| 5. Go-to-Market      | 0/2            | Not started | -         |
