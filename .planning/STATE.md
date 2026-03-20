@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: '2026-03-20T18:42:04.445Z'
+last_updated: '2026-03-20T19:30:00.000Z'
 progress:
   total_phases: 2
   completed_phases: 2
   total_plans: 14
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -23,19 +23,19 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 5 of 5 (Go-to-Market) -- IN PROGRESS
-Plan: 1 of 3 in current phase (05-01 done)
+Plan: 2 of 3 in current phase (05-01, 05-02 done)
 Status: Executing
-Last activity: 2026-03-20 -- Completed 05-01-PLAN.md (LinkedIn profile assets, demo video script, content calendar)
+Last activity: 2026-03-20 -- Completed 05-02-PLAN.md (ICP checklist, outreach templates, founding member agreement)
 
-Progress: [█████░░░░░] 57%
+Progress: [██████░░░░] 64%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 8
-- Average duration: ~13 min
-- Total execution time: ~1.5 hours
+- Total plans completed: 9
+- Average duration: ~12 min
+- Total execution time: ~1.6 hours
 
 **By Phase:**
 
@@ -43,11 +43,11 @@ Progress: [█████░░░░░] 57%
 | ------------------ | ----- | ------ | -------- |
 | 1. Website Rebrand | 5/5   | ~56min | ~11min   |
 | 4. Compliance      | 2/2   | ~18min | ~9min    |
-| 5. Go-to-Market    | 1/3   | ~3min  | ~3min    |
+| 5. Go-to-Market    | 2/3   | ~8min  | ~4min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-03 (25min), 04-01 (9min), 04-02 (9min), 01-04 (11min), 01-05 (5min)
+- Last 5 plans: 04-01 (9min), 04-02 (9min), 01-04 (11min), 01-05 (5min), 05-02 (5min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -84,6 +84,10 @@ Recent decisions affecting current work:
 - [01-05]: Content Creator temp 0.8 (creative), ROI Calculator temp 0.5 (precise), both maxTokens 600
 - [01-04]: All 7 namespaces use identical key structures across EN/NL/ES (29 keys per skill, 39 keys for founding-member)
 - [01-04]: HowToJsonLd updated to 4-step agent onboarding description
+- [05-02]: ICP scoring uses 6 criteria (0-2 each, max 12) with 8+ hot, 5-7 warm, below 5 skip
+- [05-02]: Outreach follows 5-touch cadence over 21 days with 3-Touch Rule before pitching
+- [05-02]: Founding member agreement in Dutch with EUR 997/mo and 6-month minimum commitment
+- [05-02]: CSV tracking uses 11-stage pipeline from prospect to signed/lost
 
 ### Pending Todos
 
@@ -97,5 +101,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 05-01-PLAN.md (LinkedIn assets + demo video script + content calendar)
+Stopped at: Completed 05-02-PLAN.md (ICP checklist, outreach templates, founding member agreement)
 Resume file: None

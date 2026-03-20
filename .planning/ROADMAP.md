@@ -124,7 +124,7 @@ Plans:
 Plans:
 
 - [x] 05-01-PLAN.md — LinkedIn profile assets + demo video script + content calendar (Wave 1)
-- [ ] 05-02-PLAN.md — ICP checklist + target tracking CSV + outreach templates + founding member agreement (Wave 1)
+- [x] 05-02-PLAN.md — ICP checklist + target tracking CSV + outreach templates + founding member agreement (Wave 1)
 - [ ] 05-03-PLAN.md — Demo call script + launch checklist + GTM execution kickoff (Wave 2)
 
 ## Progress
@@ -142,4 +142,4 @@ Phases execute in parallel waves:
 | 2. Dashboard Reframe | 0/3            | Not started | -          |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
-| 5. Go-to-Market      | 1/3            | In progress | -          |
+| 5. Go-to-Market      | 2/3            | In progress | -          |
