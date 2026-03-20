@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: '2026-03-20T19:30:00.000Z'
+status: executing
+last_updated: '2026-03-20T20:01:00.000Z'
 progress:
   total_phases: 2
   completed_phases: 2
   total_plans: 14
-  completed_plans: 9
+  completed_plans: 12
 ---
 
 # Project State
@@ -18,36 +18,38 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE. Next: Phase 2 (Dashboard Reframe) or Phase 5 (Go-to-Market)
+**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 1/4 done), Phase 3 IN PROGRESS (plan 2/3 done). Next: Phase 2 plan 2, Phase 3 plan 3, Phase 5 plan 3
 
 ## Current Position
 
-Phase: 5 of 5 (Go-to-Market) -- IN PROGRESS
-Plan: 2 of 3 in current phase (05-01, 05-02 done)
+Phase: 2 of 5 (Dashboard Reframe) -- IN PROGRESS
+Plan: 1 of 4 in current phase (02-01 done, 02-02/02-03/02-04 remaining)
 Status: Executing
-Last activity: 2026-03-20 -- Completed 05-02-PLAN.md (ICP checklist, outreach templates, founding member agreement)
+Last activity: 2026-03-20 -- Completed 02-01-PLAN.md (agency data model, skills config, sidebar relabel, route redirects)
 
-Progress: [██████░░░░] 64%
+Progress: [████████░░] 86%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 9
-- Average duration: ~12 min
-- Total execution time: ~1.6 hours
+- Total plans completed: 12
+- Average duration: ~10 min
+- Total execution time: ~2.1 hours
 
 **By Phase:**
 
-| Phase              | Plans | Total  | Avg/Plan |
-| ------------------ | ----- | ------ | -------- |
-| 1. Website Rebrand | 5/5   | ~56min | ~11min   |
-| 4. Compliance      | 2/2   | ~18min | ~9min    |
-| 5. Go-to-Market    | 2/3   | ~8min  | ~4min    |
+| Phase               | Plans | Total  | Avg/Plan |
+| ------------------- | ----- | ------ | -------- |
+| 1. Website Rebrand  | 5/5   | ~56min | ~11min   |
+| 3. n8n Multi-Tenant | 2/3   | ~30min | ~10min   |
+| 4. Compliance       | 2/2   | ~18min | ~9min    |
+| 2. Dashboard Refr.  | 1/4   | ~2min  | ~2min    |
+| 5. Go-to-Market     | 2/3   | ~8min  | ~4min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 04-01 (9min), 04-02 (9min), 01-04 (11min), 01-05 (5min), 05-02 (5min)
+- Last 5 plans: 05-02 (5min), 03-02 (6min), 05-03 (4min), 03-01 (18min), 02-01 (2min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -88,6 +90,13 @@ Recent decisions affecting current work:
 - [05-02]: Outreach follows 5-touch cadence over 21 days with 3-Touch Rule before pitching
 - [05-02]: Founding member agreement in Dutch with EUR 997/mo and 6-month minimum commitment
 - [05-02]: CSV tracking uses 11-stage pipeline from prospect to signed/lost
+- [03-02]: Replaced Supabase node with HTTP Request for content_items query to enable client_id filtering
+- [03-02]: SKC Telegram credentials as fallback defaults in expression functions (not hardcoded node params)
+- [03-02]: Both analytics workflows kept INACTIVE -- activation when agency clients provide IG tokens
+- [03-02]: client_id added to instagram_post_snapshots and scheduling_intelligence payloads
+- [03-01]: usage_metrics RLS simplified to authenticated read (clients table has no agency_id column yet)
+- [03-01]: Set Client ID node added between triggers and config loading for schedule/webhook normalization
+- [03-01]: Supabase Management API used for DDL (PostgREST doesn't support CREATE TABLE)
 
 ### Pending Todos
 
@@ -101,5 +110,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 05-02-PLAN.md (ICP checklist, outreach templates, founding member agreement)
+Stopped at: Completed 03-01-PLAN.md (usage_metrics table + Content Posting Pipeline parameterization)
 Resume file: None

@@ -40,9 +40,9 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 
 - [ ] **N8N-01**: Init Config parameterized for agency client context (brand voice, accounts, API keys per client)
 - [ ] **N8N-02**: R&P Pipeline runs per-client with isolated data (content_schedule per client)
-- [ ] **N8N-03**: Posting Pipeline parameterized for per-client social accounts
+- [x] **N8N-03**: Posting Pipeline parameterized for per-client social accounts
 - [ ] **N8N-04**: Agency client setup workflow (new client → auto-configure all active skill workflows)
-- [ ] **N8N-05**: Usage metering per client (execution count, content items, voice minutes logged to Supabase)
+- [x] **N8N-05**: Usage metering per client (execution count, content items, voice minutes logged to Supabase)
 - [ ] **N8N-06**: Daily Analytics Collector activated and parameterized per client
 - [ ] **N8N-07**: Weekly Performance Intelligence activated with per-client reporting
 - [ ] **N8N-08**: Error handling sends per-client notifications (Telegram/Slack to agency owner)
@@ -129,9 +129,9 @@ Deferred to after founding member validation.
 | DASH-08     | Phase 2: Dashboard Reframe | Pending  |
 | N8N-01      | Phase 3: n8n Multi-Tenant  | Pending  |
 | N8N-02      | Phase 3: n8n Multi-Tenant  | Pending  |
-| N8N-03      | Phase 3: n8n Multi-Tenant  | Pending  |
+| N8N-03      | Phase 3: n8n Multi-Tenant  | Complete |
 | N8N-04      | Phase 3: n8n Multi-Tenant  | Pending  |
-| N8N-05      | Phase 3: n8n Multi-Tenant  | Pending  |
+| N8N-05      | Phase 3: n8n Multi-Tenant  | Complete |
 | N8N-06      | Phase 3: n8n Multi-Tenant  | Pending  |
 | N8N-07      | Phase 3: n8n Multi-Tenant  | Pending  |
 | N8N-08      | Phase 3: n8n Multi-Tenant  | Pending  |
