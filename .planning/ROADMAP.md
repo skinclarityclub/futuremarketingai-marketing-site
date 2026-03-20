@@ -117,12 +117,13 @@ Plans:
 3. 50 target agencies (30 NL, 20 UK) are identified and documented matching ICP criteria
 4. Outreach sequence is executing (LinkedIn engagement, DMs, calls) with tracking
 5. 3-5 agencies have signed founding member agreements (EUR 997/mo, 6-month commitment)
-   **Plans**: TBD
+   **Plans**: 3 plans
 
 Plans:
 
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
+- [ ] 05-01-PLAN.md — LinkedIn profile assets + demo video script + content calendar (Wave 1)
+- [ ] 05-02-PLAN.md — ICP checklist + target tracking CSV + outreach templates + founding member agreement (Wave 1)
+- [ ] 05-03-PLAN.md — Demo call script + launch checklist + GTM execution kickoff (Wave 2)
 
 ## Progress
 
@@ -139,4 +140,4 @@ Phases execute in parallel waves:
 | 2. Dashboard Reframe | 0/3            | Not started | -          |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
-| 5. Go-to-Market      | 0/2            | Not started | -          |
+| 5. Go-to-Market      | 0/3            | Not started | -          |
