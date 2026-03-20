@@ -539,25 +539,28 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "Sistemas de IA que gestionan tu negocio — marketing, automatizaciones, chatbots y agentes de voz.",
+        "tagline": "El Empleado de Marketing IA para tu agencia — creacion de contenido, redes sociales, agentes de voz y mas.",
         "copyright": "\u00a9 {year} Future Marketing AI. Todos los derechos reservados.",
         "sections": {
-          "services": "Servicios",
+          "skills": "Skills",
           "company": "Empresa",
           "resources": "Recursos"
         },
         "nav": {
-          "chatbots": "Chatbots",
-          "automations": "Automatizaciones",
-          "voice_agents": "Agentes de Voz",
-          "marketing_machine": "Marketing Machine",
+          "content_creator": "Content Creator",
+          "voice_agent": "Voice Agent",
+          "lead_qualifier": "Lead Qualifier",
+          "social_media": "Social Media",
+          "ad_creator": "Ad Creator",
+          "reporting": "Reporting",
           "pricing": "Precios",
           "about": "Acerca de",
-          "how_it_works": "Cómo funciona",
+          "how_it_works": "Como funciona",
+          "founding_member": "Founding Member",
           "blog": "Blog",
           "contact": "Contacto",
           "privacy": "Privacidad",
-          "terms": "Términos",
+          "terms": "Terminos",
           "cookies": "Cookies"
         },
         "status_badge": "Todos los sistemas operativos",

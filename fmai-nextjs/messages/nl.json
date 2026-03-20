@@ -539,21 +539,24 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "AI-systemen die je bedrijf runnen — marketing, automatiseringen, chatbots en voice agents.",
+        "tagline": "De AI Marketing Medewerker voor jouw bureau — contentcreatie, social media, voice agents en meer.",
         "copyright": "\u00a9 {year} Future Marketing AI. Alle rechten voorbehouden.",
         "sections": {
-          "services": "Diensten",
+          "skills": "Skills",
           "company": "Bedrijf",
           "resources": "Bronnen"
         },
         "nav": {
-          "chatbots": "Chatbots",
-          "automations": "Automatiseringen",
-          "voice_agents": "Voice Agents",
-          "marketing_machine": "Marketing Machine",
+          "content_creator": "Content Creator",
+          "voice_agent": "Voice Agent",
+          "lead_qualifier": "Lead Qualifier",
+          "social_media": "Social Media",
+          "ad_creator": "Ad Creator",
+          "reporting": "Reporting",
           "pricing": "Prijzen",
           "about": "Over ons",
           "how_it_works": "Hoe het werkt",
+          "founding_member": "Founding Member",
           "blog": "Blog",
           "contact": "Contact",
           "privacy": "Privacy",

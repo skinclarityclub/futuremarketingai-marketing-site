@@ -28,42 +28,58 @@ export async function Footer({ locale }: FooterProps) {
 
           {/* Navigation Grid: Services | Company | Resources */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
-            {/* Services */}
-            <nav aria-label="Services">
+            {/* Skills */}
+            <nav aria-label="Skills">
               <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
-                {t('landing.footer.sections.services')}
+                {t('landing.footer.sections.skills')}
               </h3>
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/chatbots"
+                    href="/skills/content-creator"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.chatbots')}
+                    {t('landing.footer.nav.content_creator')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/automations"
+                    href="/skills/voice-agent"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.automations')}
+                    {t('landing.footer.nav.voice_agent')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/voice-agents"
+                    href="/skills/lead-qualifier"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.voice_agents')}
+                    {t('landing.footer.nav.lead_qualifier')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/marketing-machine"
+                    href="/skills/social-media"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.marketing_machine')}
+                    {t('landing.footer.nav.social_media')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/ad-creator"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.ad_creator')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/reporting"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.reporting')}
                   </Link>
                 </li>
                 <li>
@@ -97,6 +113,14 @@ export async function Footer({ locale }: FooterProps) {
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.how_it_works')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/founding-member"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.founding_member')}
                   </Link>
                 </li>
               </ul>
