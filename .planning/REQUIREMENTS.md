@@ -12,8 +12,8 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 - [x] **WEB-01**: All homepage copy targets "marketing agencies" instead of "businesses" (EN/NL/ES)
 - [x] **WEB-02**: Hero section communicates "AI Marketing Employee for agencies" value prop
 - [x] **WEB-03**: Service pages restructured as skill pages (/skills/content-creator, /skills/voice-agent, /skills/lead-qualifier, /skills/social-media, /skills/ad-creator, /skills/reporting)
-- [ ] **WEB-04**: Pricing page shows Agent tiers (Founding Member EUR 997, Starter EUR 1,497, Growth EUR 1,997, Agency EUR 3,497) with skill add-ons
-- [ ] **WEB-05**: Founding member landing page with 10-spot scarcity, benefits, and signup CTA
+- [x] **WEB-04**: Pricing page shows Agent tiers (Founding Member EUR 997, Starter EUR 1,497, Growth EUR 1,997, Agency EUR 3,497) with skill add-ons
+- [x] **WEB-05**: Founding member landing page with 10-spot scarcity, benefits, and signup CTA
 - [x] **WEB-06**: Trust badges updated ("GDPR-First", "Powered by Enterprise AI", "Dutch Support")
 - [x] **WEB-07**: Stats section updated with agency-relevant metrics
 - [x] **WEB-08**: Testimonials/social proof rewritten for agency audience
@@ -23,7 +23,7 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 - [x] **WEB-12**: Footer links and descriptions updated for AaaS positioning
 - [x] **WEB-13**: About page rewritten with AaaS mission and agency focus
 - [x] **WEB-14**: How-it-works page reframed as agent onboarding journey
-- [ ] **WEB-15**: Chatbot demo personas updated for agency use cases
+- [x] **WEB-15**: Chatbot demo personas updated for agency use cases
 
 ### Dashboard Reframe
 

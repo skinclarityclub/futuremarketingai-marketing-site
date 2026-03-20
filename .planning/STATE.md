@@ -5,34 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1: Website Rebrand (Wave A -- parallel with Phase 4 and Phase 5)
+**Current focus:** Phase 1 COMPLETE. Next: Phase 2 (Dashboard Reframe) or continue Wave A (Phase 4/5)
 
 ## Current Position
 
-Phase: 1 of 5 (Website Rebrand)
-Plan: 2 of 3 in current phase
-Status: Executing
-Last activity: 2026-03-20 -- Completed 01-02-PLAN.md (Navigation restructure + skill routes)
+Phase: 1 of 5 (Website Rebrand) -- COMPLETE
+Plan: 3 of 3 in current phase (all done)
+Status: Phase Complete
+Last activity: 2026-03-20 -- Completed 01-03-PLAN.md (Pricing page redesign + homepage updates + chatbot personas)
 
-Progress: [██░░░░░░░░] 13%
+Progress: [████░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 2
-- Average duration: ~19 min
-- Total execution time: ~0.6 hours
+- Total plans completed: 3
+- Average duration: ~18 min
+- Total execution time: ~0.9 hours
 
 **By Phase:**
 
 | Phase              | Plans | Total  | Avg/Plan |
 | ------------------ | ----- | ------ | -------- |
-| 1. Website Rebrand | 2/3   | ~26min | ~13min   |
+| 1. Website Rebrand | 3/3   | ~51min | ~17min   |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (24min), 01-02 (13min)
+- Last 5 plans: 01-01 (24min), 01-02 (13min), 01-03 (25min)
 - Trend: Stable
 
 _Updated after each plan completion_
@@ -54,6 +54,9 @@ Recent decisions affecting current work:
 - [01-02]: Kept HeaderClient.tsx nav strings hardcoded English (matches existing pattern)
 - [01-02]: Used (skills) route group with nested /skills/ folder for /skills/{slug} URL structure
 - [01-02]: Created full scaffold translations for 7 new pages in all 3 locales
+- [01-03]: 4-column xl grid for pricing tiers, responsive 2-col on md
+- [01-03]: Founding Member tier highlighted with accent border and "10 Spots Only" badge
+- [01-03]: Homepage SERVICE_CARDS replaced with SKILL_CARDS for 6 skills
 
 ### Pending Todos
 
@@ -67,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 01-01-PLAN.md (core copy rebrand)
+Stopped at: Completed 01-03-PLAN.md (Phase 1 Website Rebrand COMPLETE)
 Resume file: None

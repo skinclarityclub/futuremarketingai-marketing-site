@@ -17,7 +17,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - **Wave B (after Phase 1):** Phase 2 -- needs website positioning settled
 - **Wave C (after Phase 2):** Phase 3 -- needs dashboard data model
 
-- [ ] **Phase 1: Website Rebrand** - All website copy, pages, and SEO reframed for agency AaaS positioning
+- [x] **Phase 1: Website Rebrand** - All website copy, pages, and SEO reframed for agency AaaS positioning
 - [ ] **Phase 2: Dashboard Reframe** - Dashboard UI relabeled and agency data model with billing implemented
 - [ ] **Phase 3: n8n Multi-Tenant** - Existing workflows parameterized for per-client isolation and metering
 - [ ] **Phase 4: Compliance** - AI-disclosure, legal documents, and privacy policies for EU AI Act readiness
@@ -43,7 +43,7 @@ Plans:
 
 - [x] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
 - [x] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
-- [ ] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
+- [x] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
 
 ### Phase 2: Dashboard Reframe
 
@@ -130,10 +130,10 @@ Phases execute in parallel waves:
 - Wave B: Phase 2 (after Phase 1 positioning settled)
 - Wave C: Phase 3 (after Phase 2 data model complete)
 
-| Phase                | Plans Complete | Status      | Completed |
-| -------------------- | -------------- | ----------- | --------- |
-| 1. Website Rebrand   | 2/3            | In Progress | -         |
-| 2. Dashboard Reframe | 0/3            | Not started | -         |
-| 3. n8n Multi-Tenant  | 0/3            | Not started | -         |
-| 4. Compliance        | 0/1            | Not started | -         |
-| 5. Go-to-Market      | 0/2            | Not started | -         |
+| Phase                | Plans Complete | Status      | Completed  |
+| -------------------- | -------------- | ----------- | ---------- |
+| 1. Website Rebrand   | 3/3            | Complete    | 2026-03-20 |
+| 2. Dashboard Reframe | 0/3            | Not started | -          |
+| 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
+| 4. Compliance        | 0/1            | Not started | -          |
+| 5. Go-to-Market      | 0/2            | Not started | -          |
