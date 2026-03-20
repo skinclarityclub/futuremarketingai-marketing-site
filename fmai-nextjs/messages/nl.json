@@ -253,31 +253,31 @@
       "capabilities_label": "Mogelijkheden",
       "tabs": {
         "ecommerce": {
-          "label": "E-commerce",
-          "scenario_title": "Huidverzorging Productadviseur",
-          "scenario": "Een AI-aangedreven productadviseur die klanten helpt de juiste huidverzorgingsproducten te vinden.",
-          "capabilities_0": "Producten zoeken en aanbevelingen",
-          "capabilities_1": "Routine samenstellen voor ochtend/avond",
-          "capabilities_2": "Ingredientenanalyse",
-          "capabilities_3": "Bestelling volgen en ondersteuning"
+          "label": "Klant Onboarding",
+          "scenario_title": "Bureau Klant Onboarding",
+          "scenario": "Zie hoe je AI-medewerker een nieuwe klant leert kennen — merkrichtlijnen, tone of voice en doelgroep worden ingevoerd om binnen uren on-brand content te produceren.",
+          "capabilities_0": "Merkstem invoeren",
+          "capabilities_1": "Contentstijl kalibreren",
+          "capabilities_2": "Doelgroepanalyse",
+          "capabilities_3": "Multi-klant workspace setup"
         },
         "leadgen": {
-          "label": "Lead Kwalificatie",
-          "scenario_title": "AI Lead Kwalificeerder",
-          "scenario": "Een lead kwalificatie bot die prospects evalueert en gekwalificeerde leads doorstuurt.",
-          "capabilities_0": "Behoefteanalyse en scoring",
-          "capabilities_1": "Budget en tijdlijn kwalificatie",
-          "capabilities_2": "ROI schatting",
-          "capabilities_3": "Geautomatiseerde boekingsoverdracht"
+          "label": "Content Creatie",
+          "scenario_title": "Content Creatie Demo",
+          "scenario": "Bekijk hoe de Content Creator skill een blogpost maakt voor een bureau-klant — van onderzoek tot SEO-geoptimaliseerd concept, gepubliceerd op alle platforms.",
+          "capabilities_0": "Onderzoek en ideeontwikkeling",
+          "capabilities_1": "SEO-geoptimaliseerde blogconcepten",
+          "capabilities_2": "Multi-platform publicatie",
+          "capabilities_3": "Prestatietracking"
         },
         "support": {
-          "label": "Klantenservice",
-          "scenario_title": "Support Agent",
-          "scenario": "Een intelligente support agent die veelvoorkomende problemen oplost.",
-          "capabilities_0": "Kennisbank doorzoeken",
-          "capabilities_1": "Ticket aanmaken en volgen",
-          "capabilities_2": "Prioriteit escalatie",
-          "capabilities_3": "Meertalige ondersteuning"
+          "label": "ROI Calculator",
+          "scenario_title": "Bureau ROI Calculator",
+          "scenario": "Bereken hoeveel je bureau bespaart met een AI Marketing Medewerker — vergelijk wervingskosten, bespaarde uren en klantcapaciteit.",
+          "capabilities_0": "Kostenvergelijking vs. inhuren",
+          "capabilities_1": "Bespaarde uren inschatting",
+          "capabilities_2": "Klantcapaciteit projectie",
+          "capabilities_3": "Break-even analyse"
         }
       }
     },

@@ -218,10 +218,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {/* Final CTA after service cards */}
           <div className="text-center mt-12">
             <p className="text-text-secondary mb-6">{t('cta.subtitle')}</p>
-            <CTAButton size="lg" href="/contact">
-              {t('cta.button')}
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </CTAButton>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton size="lg" href="/pricing">
+                {t('hero.ctaSecondary')}
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </CTAButton>
+              <CTAButton variant="secondary" size="lg" href="/founding-member">
+                {t('trust.trialTitle')}
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </CTAButton>
+            </div>
           </div>
         </section>
       </ScrollReveal>

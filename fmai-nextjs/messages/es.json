@@ -253,31 +253,31 @@
       "capabilities_label": "Capacidades",
       "tabs": {
         "ecommerce": {
-          "label": "E-commerce",
-          "scenario_title": "Asesor de Productos Skincare",
-          "scenario": "Un asesor de productos impulsado por IA que ayuda a encontrar los productos adecuados.",
-          "capabilities_0": "Busqueda y recomendaciones",
-          "capabilities_1": "Constructor de rutinas AM/PM",
-          "capabilities_2": "Analisis de ingredientes",
-          "capabilities_3": "Seguimiento de pedidos"
+          "label": "Onboarding de Clientes",
+          "scenario_title": "Onboarding de Clientes de Agencia",
+          "scenario": "Vea como su empleado IA aprende la marca de un nuevo cliente — ingiriendo directrices de marca, tono de voz y audiencia objetivo para producir contenido alineado en horas.",
+          "capabilities_0": "Ingestion de voz de marca",
+          "capabilities_1": "Calibracion de estilo de contenido",
+          "capabilities_2": "Analisis de audiencia",
+          "capabilities_3": "Configuracion de workspace multi-cliente"
         },
         "leadgen": {
-          "label": "Calificacion de Leads",
-          "scenario_title": "Calificador de Leads IA",
-          "scenario": "Un bot que evalua prospectos y dirige leads calificados a su equipo de ventas.",
-          "capabilities_0": "Evaluacion de necesidades",
-          "capabilities_1": "Calificacion de presupuesto",
-          "capabilities_2": "Estimacion de ROI",
-          "capabilities_3": "Traspaso automatizado"
+          "label": "Creacion de Contenido",
+          "scenario_title": "Demo de Creacion de Contenido",
+          "scenario": "Observe como la skill de Content Creator produce un articulo de blog para un cliente de agencia — desde investigacion hasta borrador optimizado para SEO, publicado en todas las plataformas.",
+          "capabilities_0": "Investigacion y generacion de ideas",
+          "capabilities_1": "Borradores de blog optimizados para SEO",
+          "capabilities_2": "Publicacion multi-plataforma",
+          "capabilities_3": "Seguimiento de rendimiento"
         },
         "support": {
-          "label": "Soporte al Cliente",
-          "scenario_title": "Agente de Soporte",
-          "scenario": "Un agente inteligente que resuelve problemas comunes y escala cuando es necesario.",
-          "capabilities_0": "Busqueda en base de conocimiento",
-          "capabilities_1": "Creacion de tickets",
-          "capabilities_2": "Escalacion prioritaria",
-          "capabilities_3": "Soporte multiidioma"
+          "label": "Calculadora de ROI",
+          "scenario_title": "Calculadora de ROI para Agencias",
+          "scenario": "Estime cuanto ahorra su agencia con un Empleado de Marketing IA — compare costos de contratacion, horas ahorradas y capacidad de clientes.",
+          "capabilities_0": "Comparacion de costos vs contratacion",
+          "capabilities_1": "Estimacion de horas ahorradas",
+          "capabilities_2": "Proyeccion de capacidad de clientes",
+          "capabilities_3": "Analisis de punto de equilibrio"
         }
       }
     },

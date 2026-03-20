@@ -253,31 +253,31 @@
       "capabilities_label": "Capabilities",
       "tabs": {
         "ecommerce": {
-          "label": "E-commerce",
-          "scenario_title": "Skincare Product Advisor",
-          "scenario": "An AI-powered product advisor that helps customers find the right skincare products based on their skin type, concerns, and preferences.",
-          "capabilities_0": "Product search and recommendations",
-          "capabilities_1": "Routine builder for AM/PM",
-          "capabilities_2": "Ingredient analysis",
-          "capabilities_3": "Order tracking and support"
+          "label": "Client Onboarding",
+          "scenario_title": "Agency Client Onboarding",
+          "scenario": "See how your AI employee learns a new client's brand — ingesting brand guidelines, tone of voice, and target audience to start producing on-brand content within hours.",
+          "capabilities_0": "Brand voice ingestion",
+          "capabilities_1": "Content style calibration",
+          "capabilities_2": "Audience analysis",
+          "capabilities_3": "Multi-client workspace setup"
         },
         "leadgen": {
-          "label": "Lead Qualification",
-          "scenario_title": "AI Lead Qualifier",
-          "scenario": "A lead qualification bot that evaluates prospects, understands their needs, and routes qualified leads to your sales team.",
-          "capabilities_0": "Needs assessment and scoring",
-          "capabilities_1": "Budget and timeline qualification",
-          "capabilities_2": "ROI estimation",
-          "capabilities_3": "Automated booking handoff"
+          "label": "Content Creation",
+          "scenario_title": "Content Creation Demo",
+          "scenario": "Watch the Content Creator skill produce a blog post for an agency client — from topic research to SEO-optimized draft, published across platforms.",
+          "capabilities_0": "Topic research and ideation",
+          "capabilities_1": "SEO-optimized blog drafts",
+          "capabilities_2": "Multi-platform publishing",
+          "capabilities_3": "Performance tracking"
         },
         "support": {
-          "label": "Customer Support",
-          "scenario_title": "Support Agent",
-          "scenario": "An intelligent support agent that resolves common issues, creates tickets for complex problems, and escalates when needed.",
-          "capabilities_0": "Knowledge base search",
-          "capabilities_1": "Ticket creation and tracking",
-          "capabilities_2": "Priority escalation",
-          "capabilities_3": "Multi-language support"
+          "label": "ROI Calculator",
+          "scenario_title": "Agency ROI Calculator",
+          "scenario": "Estimate how much your agency saves with an AI Marketing Employee — compare hiring costs, hours saved, and client capacity gains.",
+          "capabilities_0": "Cost comparison vs hiring",
+          "capabilities_1": "Hours saved estimation",
+          "capabilities_2": "Client capacity projection",
+          "capabilities_3": "Break-even analysis"
         }
       }
     },
