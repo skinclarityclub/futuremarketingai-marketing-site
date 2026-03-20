@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: '2026-03-20T20:14:21.000Z'
+status: unknown
+last_updated: '2026-03-20T20:30:45.166Z'
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 15
+  total_phases: 6
+  completed_phases: 3
+  total_plans: 21
   completed_plans: 15
 ---
 
@@ -112,6 +112,10 @@ Recent decisions affecting current work:
 - [03-03]: Agency Client Setup loads config/accounts/pillars in parallel from webhook for faster validation
 - [03-03]: Init Config has 6 client\_\* tables (not 8) -- actual schema differs from plan assumption
 - [03-03]: Usage Metering V1.0 (vhDFFD8WN3VeWNNw) and Agency Client Setup V1.0 (gn0vxvXrV176fnuE) workflow IDs
+
+### Roadmap Evolution
+
+- Phase 6 added (2026-03-20): Vite Feature Parity — port all interactive demos (chatbot DemoPlayground, voice VoiceDemoSection, VisionTimeline, FeatureShowcase), missing UI sections (pricing tiers, trust metrics, social proof, product media), and enhanced language switcher with flag emojis from original Vite project to Next.js
 
 ### Pending Todos
 
