@@ -27,14 +27,14 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 
 ### Dashboard Reframe
 
-- [ ] **DASH-01**: Sidebar labels reframed (Pipeline → Agent Activity, Campaigns → Tasks, etc.)
+- [x] **DASH-01**: Sidebar labels reframed (Pipeline → Agent Activity, Campaigns → Tasks, etc.)
 - [ ] **DASH-02**: Dashboard overview shows "AI Employee" status and daily activity summary
-- [ ] **DASH-03**: Agency data model implemented (fma_agencies table, agency → clients hierarchy)
+- [x] **DASH-03**: Agency data model implemented (fma_agencies table, agency → clients hierarchy)
 - [ ] **DASH-04**: Client workspace management page (agency creates/manages client workspaces)
 - [ ] **DASH-05**: Skill activation toggles per client workspace (enable/disable content, voice, ads, etc.)
 - [ ] **DASH-06**: Stripe billing integration (base agent subscription + skill add-on products)
 - [ ] **DASH-07**: Agency onboarding wizard (signup → first client → first skill activation)
-- [ ] **DASH-08**: Route redirects for renamed pages (old routes → new routes)
+- [x] **DASH-08**: Route redirects for renamed pages (old routes → new routes)
 
 ### n8n Multi-Tenant
 
@@ -119,14 +119,14 @@ Deferred to after founding member validation.
 | WEB-13      | Phase 1: Website Rebrand   | Done     |
 | WEB-14      | Phase 1: Website Rebrand   | Done     |
 | WEB-15      | Phase 1: Website Rebrand   | Complete |
-| DASH-01     | Phase 2: Dashboard Reframe | Pending  |
+| DASH-01     | Phase 2: Dashboard Reframe | Complete |
 | DASH-02     | Phase 2: Dashboard Reframe | Pending  |
-| DASH-03     | Phase 2: Dashboard Reframe | Pending  |
+| DASH-03     | Phase 2: Dashboard Reframe | Complete |
 | DASH-04     | Phase 2: Dashboard Reframe | Pending  |
 | DASH-05     | Phase 2: Dashboard Reframe | Pending  |
 | DASH-06     | Phase 2: Dashboard Reframe | Pending  |
 | DASH-07     | Phase 2: Dashboard Reframe | Pending  |
-| DASH-08     | Phase 2: Dashboard Reframe | Pending  |
+| DASH-08     | Phase 2: Dashboard Reframe | Complete |
 | N8N-01      | Phase 3: n8n Multi-Tenant  | Pending  |
 | N8N-02      | Phase 3: n8n Multi-Tenant  | Pending  |
 | N8N-03      | Phase 3: n8n Multi-Tenant  | Complete |

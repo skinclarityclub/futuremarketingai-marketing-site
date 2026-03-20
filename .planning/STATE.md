@@ -97,6 +97,10 @@ Recent decisions affecting current work:
 - [03-01]: usage_metrics RLS simplified to authenticated read (clients table has no agency_id column yet)
 - [03-01]: Set Client ID node added between triggers and config loading for schedule/webhook normalization
 - [03-01]: Supabase Management API used for DDL (PostgREST doesn't support CREATE TABLE)
+- [02-01]: Extended fma_organizations with agency columns instead of creating separate fma_agencies table
+- [02-01]: Used TEXT[] for active_skills with GIN index for efficient array queries
+- [02-01]: 12 sidebar items: removed 7 SKC-specific, relabeled remaining for AaaS
+- [02-01]: Permanent (308) redirects for pipeline->agent-activity and campaigns->tasks
 
 ### Pending Todos
 
@@ -110,5 +114,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 03-01-PLAN.md (usage_metrics table + Content Posting Pipeline parameterization)
+Stopped at: Completed 02-01-PLAN.md (agency data model, skills config, sidebar relabel, route redirects)
 Resume file: None
