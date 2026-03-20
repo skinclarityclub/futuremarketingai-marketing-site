@@ -14,6 +14,7 @@ import {
   Share2,
   Megaphone,
   BarChart3,
+  Mail,
 } from 'lucide-react'
 
 interface HeaderClientProps {
@@ -40,6 +41,12 @@ const SKILL_ITEMS = [
     href: '/skills/lead-qualifier' as const,
   },
   {
+    icon: Bot,
+    title: 'Chatbot',
+    description: 'AI chatbots that qualify and convert 24/7',
+    href: '/skills/chatbot' as const,
+  },
+  {
     icon: Share2,
     title: 'Social Media',
     description: 'Multi-platform scheduling and analytics',
@@ -50,6 +57,12 @@ const SKILL_ITEMS = [
     title: 'Ad Creator',
     description: 'AI-generated static and video ads',
     href: '/skills/ad-creator' as const,
+  },
+  {
+    icon: Mail,
+    title: 'Email',
+    description: 'Automated campaigns, follow-ups, and inbox AI',
+    href: '/skills/email' as const,
   },
   {
     icon: BarChart3,

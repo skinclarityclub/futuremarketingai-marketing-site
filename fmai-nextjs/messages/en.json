@@ -1509,5 +1509,17 @@
       "subtitle": "Join the founding member program and lock in the lowest price forever.",
       "button": "Apply Now"
     }
+  },
+  "skills-chatbot": {
+    "meta": {
+      "title": "Chatbot Skill | AI Marketing Employee | FMai",
+      "description": "Deploy intelligent AI chatbots across client websites that qualify leads, answer questions, and convert visitors 24/7."
+    }
+  },
+  "skills-email": {
+    "meta": {
+      "title": "Email Skill | AI Marketing Employee | FMai",
+      "description": "Automated email campaigns, intelligent follow-ups, and AI-powered inbox management for your agency clients."
+    }
   }
 }
