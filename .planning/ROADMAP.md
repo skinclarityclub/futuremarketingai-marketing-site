@@ -41,8 +41,8 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 
 Plans:
 
-- [ ] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
-- [ ] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
+- [x] 01-01-PLAN.md — Core copy rebrand: all 3 locale files + SEO config (Wave 1)
+- [x] 01-02-PLAN.md — Navigation restructure + skill routes + redirects + sitemap (Wave 1)
 - [ ] 01-03-PLAN.md — Pricing page redesign + homepage updates + chatbot personas (Wave 2)
 
 ### Phase 2: Dashboard Reframe
@@ -132,7 +132,7 @@ Phases execute in parallel waves:
 
 | Phase                | Plans Complete | Status      | Completed |
 | -------------------- | -------------- | ----------- | --------- |
-| 1. Website Rebrand   | 0/3            | Planned     | -         |
+| 1. Website Rebrand   | 2/3            | In Progress | -         |
 | 2. Dashboard Reframe | 0/3            | Not started | -         |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -         |
 | 4. Compliance        | 0/1            | Not started | -         |

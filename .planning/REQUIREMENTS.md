@@ -11,7 +11,7 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 
 - [ ] **WEB-01**: All homepage copy targets "marketing agencies" instead of "businesses" (EN/NL/ES)
 - [ ] **WEB-02**: Hero section communicates "AI Marketing Employee for agencies" value prop
-- [ ] **WEB-03**: Service pages restructured as skill pages (/skills/content-creator, /skills/voice-agent, /skills/lead-qualifier, /skills/social-media, /skills/ad-creator, /skills/reporting)
+- [x] **WEB-03**: Service pages restructured as skill pages (/skills/content-creator, /skills/voice-agent, /skills/lead-qualifier, /skills/social-media, /skills/ad-creator, /skills/reporting)
 - [ ] **WEB-04**: Pricing page shows Agent tiers (Founding Member EUR 997, Starter EUR 1,497, Growth EUR 1,997, Agency EUR 3,497) with skill add-ons
 - [ ] **WEB-05**: Founding member landing page with 10-spot scarcity, benefits, and signup CTA
 - [ ] **WEB-06**: Trust badges updated ("GDPR-First", "Powered by Enterprise AI", "Dutch Support")
@@ -19,8 +19,8 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 - [ ] **WEB-08**: Testimonials/social proof rewritten for agency audience
 - [ ] **WEB-09**: FAQ rewritten for agency buyer questions
 - [ ] **WEB-10**: SEO metadata updated (titles, descriptions, JSON-LD) for "AI marketing employee agencies"
-- [ ] **WEB-11**: Navigation restructured (Services dropdown → Skills dropdown)
-- [ ] **WEB-12**: Footer links and descriptions updated for AaaS positioning
+- [x] **WEB-11**: Navigation restructured (Services dropdown -> Skills dropdown)
+- [x] **WEB-12**: Footer links and descriptions updated for AaaS positioning
 - [ ] **WEB-13**: About page rewritten with AaaS mission and agency focus
 - [ ] **WEB-14**: How-it-works page reframed as agent onboarding journey
 - [ ] **WEB-15**: Chatbot demo personas updated for agency use cases
@@ -106,7 +106,7 @@ Deferred to after founding member validation.
 | ----------- | -------------------------- | ------- |
 | WEB-01      | Phase 1: Website Rebrand   | Pending |
 | WEB-02      | Phase 1: Website Rebrand   | Pending |
-| WEB-03      | Phase 1: Website Rebrand   | Pending |
+| WEB-03      | Phase 1: Website Rebrand   | Done    |
 | WEB-04      | Phase 1: Website Rebrand   | Pending |
 | WEB-05      | Phase 1: Website Rebrand   | Pending |
 | WEB-06      | Phase 1: Website Rebrand   | Pending |
@@ -114,8 +114,8 @@ Deferred to after founding member validation.
 | WEB-08      | Phase 1: Website Rebrand   | Pending |
 | WEB-09      | Phase 1: Website Rebrand   | Pending |
 | WEB-10      | Phase 1: Website Rebrand   | Pending |
-| WEB-11      | Phase 1: Website Rebrand   | Pending |
-| WEB-12      | Phase 1: Website Rebrand   | Pending |
+| WEB-11      | Phase 1: Website Rebrand   | Done    |
+| WEB-12      | Phase 1: Website Rebrand   | Done    |
 | WEB-13      | Phase 1: Website Rebrand   | Pending |
 | WEB-14      | Phase 1: Website Rebrand   | Pending |
 | WEB-15      | Phase 1: Website Rebrand   | Pending |
