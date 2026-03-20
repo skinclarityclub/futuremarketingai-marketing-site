@@ -167,7 +167,7 @@ Plans:
 
 Plans:
 
-- [ ] 07-01-PLAN.md — Translation architecture fix: convert chatbot/email to t() keys + extract hardcoded props from 4 other pages (Wave 1)
+- [x] 07-01-PLAN.md — Translation architecture fix: convert chatbot/email to t() keys + extract hardcoded props from 4 other pages (Wave 1)
 - [ ] 07-02-PLAN.md — Homepage + header English copy rewrite with Clyde messaging (Wave 2)
 - [ ] 07-03-PLAN.md — All 8 skill pages English copy rewrite + task-demo sections (Wave 2)
 - [ ] 07-04-PLAN.md — Native Dutch and Spanish rewrites of all Clyde messaging (Wave 3)
@@ -189,4 +189,4 @@ Phases execute in parallel waves:
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
 | 5. Go-to-Market      | 2/3            | In progress | -          |
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
-| 7. Copy Overhaul     | 0/4            | Not started | -          |
+| 7. Copy Overhaul     | 1/4            | In Progress | -          |
