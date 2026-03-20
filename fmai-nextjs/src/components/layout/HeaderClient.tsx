@@ -17,8 +17,26 @@ import {
   BarChart3,
 } from 'lucide-react'
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
 interface HeaderClientProps {
   locale: string
+}
+
+const LOCALE_FLAGS: Record<string, string> = {
+  en: '\u{1F1EC}\u{1F1E7}',
+  nl: '\u{1F1F3}\u{1F1F1}',
+  es: '\u{1F1EA}\u{1F1F8}',
+}
+
+const LOCALE_NAMES: Record<string, string> = {
+  en: 'English',
+  nl: 'Nederlands',
+  es: 'Espa\u00f1ol',
 }
 
 const SKILL_ITEMS = [
@@ -115,6 +133,12 @@ export function HeaderClient({ locale }: HeaderClientProps) {
   }, [])
 
   const handleLocaleChange = (newLocale: string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'language_switch', {
+        from_language: locale,
+        to_language: newLocale,
+      })
+    }
     router.replace(pathname, { locale: newLocale })
   }
 
@@ -240,10 +264,11 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                 setSkillsOpen(false)
                 setLocaleOpen(!localeOpen)
               }}
-              className="w-9 h-9 rounded-lg bg-bg-elevated border border-border-primary flex items-center justify-center hover:bg-bg-elevated/80 transition-colors text-xs font-mono uppercase font-bold text-accent-system"
+              className="h-9 px-2.5 rounded-lg bg-bg-elevated border border-border-primary flex items-center justify-center gap-1.5 hover:bg-bg-elevated/80 transition-colors text-xs font-mono uppercase font-bold text-accent-system"
               aria-label="Change language"
             >
-              {locale.toUpperCase()}
+              <span>{LOCALE_FLAGS[locale] || ''}</span>
+              <span>{locale.toUpperCase()}</span>
             </button>
             <AnimatePresence>
               {localeOpen && (
@@ -267,10 +292,29 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                           : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
                       }`}
                     >
+                      <span className="text-base">{LOCALE_FLAGS[loc] || ''}</span>
                       <span className="font-mono uppercase text-xs">{loc}</span>
-                      <span>
-                        {loc === 'en' ? 'English' : loc === 'nl' ? 'Nederlands' : 'Español'}
-                      </span>
+                      <span>{LOCALE_NAMES[loc] || loc}</span>
+                      {locale === loc && (
+                        <motion.span
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-auto"
+                        >
+                          <svg
+                            className="w-4 h-4 text-accent-system"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </motion.span>
+                      )}
                     </button>
                   ))}
                 </motion.div>
@@ -379,13 +423,33 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                           handleLocaleChange(loc)
                           setMobileOpen(false)
                         }}
-                        className={`text-xs font-mono uppercase px-3 py-1.5 rounded transition-colors ${
+                        className={`text-xs font-mono uppercase px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 ${
                           loc === locale
                             ? 'bg-accent-system/20 text-accent-system'
                             : 'text-text-muted hover:text-text-secondary'
                         }`}
                       >
-                        {loc}
+                        <span className="text-sm">{LOCALE_FLAGS[loc] || ''}</span>
+                        <span>{loc}</span>
+                        {loc === locale && (
+                          <motion.span
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <svg
+                              className="w-3 h-3 text-accent-system"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </motion.span>
+                        )}
                       </button>
                     ))}
                   </div>
