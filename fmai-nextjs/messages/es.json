@@ -1,117 +1,117 @@
 {
   "home": {
     "meta": {
-      "title": "Empleado de Marketing IA para Agencias | FMai",
-      "description": "El primer Empleado de Marketing IA para su agencia. Un agente de IA persistente con habilidades conectables — creacion de contenido, agentes de voz, calificacion de leads, redes sociales, anuncios y reportes. Creado para agencias de marketing."
+      "title": "Conoce a Clyde — El Empleado de Marketing IA de Tu Agencia | FMai",
+      "description": "Clyde es el empleado de marketing IA de tu agencia. Escribe contenido, llama leads, gestiona redes sociales, crea anuncios y reporta resultados — 24/7, para cada cliente. Creado por FutureMarketingAI."
     },
     "hero": {
-      "badge": "Empleado de Marketing IA para Agencias",
-      "headlineMain": "El Primer Empleado IA",
-      "headlineAccent": "De Su Agencia.",
-      "subtitle": "Un empleado de IA persistente que trabaja 24/7, aprende las marcas de sus clientes y mejora cada semana. Active habilidades como creacion de contenido, agentes de voz, calificacion de leads y mas — sin contratar.",
-      "trustAnchor": "Las agencias con empleados IA escalan 3x mas rapido sin contratar",
-      "cta": "Explorar Habilidades",
-      "ctaSecondary": "Ver Precios"
+      "badge": "FutureMarketingAI presenta a Clyde",
+      "headlineMain": "Conoce a Clyde.",
+      "headlineAccent": "Tu Empleado de Marketing IA.",
+      "subtitle": "Un marketero trabaja 8 horas. Clyde trabaja 24. Escribe los posts de tus clientes, llama a sus leads, gestiona sus redes sociales y entrega reportes semanales — sin tomarse nunca un día libre.",
+      "trustAnchor": "Confiado por agencias visionarias en toda Europa",
+      "cta": "Conoce a Clyde",
+      "ctaSecondary": "Reserva una Llamada Estratégica"
     },
     "services": {
-      "title": "Habilidades Que Su Empleado IA Puede Aprender",
-      "subtitle": "Seis habilidades conectables. Active lo que necesite, agregue mas a medida que crece.",
+      "title": "Lo Que Clyde Hace por Tu Agencia",
+      "subtitle": "Seis habilidades especializadas. Dile a Clyde lo que necesitas — él lo ejecuta.",
       "contentCreator": {
         "number": "01",
-        "title": "Creador de Contenido",
-        "description": "Posts de blog, contenido social, newsletters — producidos diariamente para cada uno de sus clientes"
+        "title": "Content Creator",
+        "description": "Clyde escribe posts de blog, captions para redes y newsletters a diario — adaptados a la voz de marca y audiencia de cada cliente"
       },
       "voiceAgent": {
         "number": "02",
-        "title": "Agente de Voz",
-        "description": "Llamadas entrantes y salientes, reserva de citas y calificacion de leads por telefono"
+        "title": "Voice Agent",
+        "description": "Clyde llama leads, agenda citas y gestiona consultas entrantes — en español, inglés u holandés"
       },
       "leadQualifier": {
         "number": "03",
-        "title": "Calificador de Leads",
-        "description": "Chatbot IA en los sitios web de sus clientes que puntua leads y los dirige a ventas"
+        "title": "Lead Qualifier",
+        "description": "Clyde puntua cada visitante web con metodología BANT y envía los leads calificados a tu equipo de ventas"
       },
       "socialMedia": {
         "number": "04",
         "title": "Social Media Manager",
-        "description": "Programacion multiplataforma, seguimiento de engagement y analytics de rendimiento"
+        "description": "Clyde crea, programa y publica posts en Instagram, LinkedIn, Facebook y X para todos tus clientes"
       },
       "adCreator": {
         "number": "05",
-        "title": "Creador de Anuncios",
-        "description": "Anuncios estaticos y de video generados por IA publicados directamente en Meta, Google y mas"
+        "title": "Ad Creator",
+        "description": "Clyde genera textos publicitarios y variaciones creativas para campañas en Meta, Google y LinkedIn — probados y optimizados"
       },
       "reporting": {
         "number": "06",
-        "title": "Reportes & Analytics",
-        "description": "Dashboards multiplataforma, informes de rendimiento semanales y deteccion de anomalias"
+        "title": "Reporting & Analytics",
+        "description": "Clyde genera reportes de rendimiento semanales para cada cliente — multiplataforma, con alertas de anomalías integradas"
       }
     },
     "trust": {
-      "title": "Por Que los Propietarios de Agencias Eligen FMai",
-      "customBuiltTitle": "Un Empleado, Todas las Habilidades",
-      "customBuilt": "Un empleado IA gestiona contenido, voz, anuncios, social, leads y reportes",
-      "founderAccessTitle": "Acceso Directo al Fundador",
-      "founderAccess": "Acceso directo al fundador via Slack — sin tickets de soporte",
-      "successGuaranteeTitle": "Aprende Sus Clientes",
-      "successGuarantee": "Su empleado IA aprende la voz de marca, audiencia y objetivos de cada cliente",
-      "trialTitle": "Precios de Miembro Fundador",
-      "trialCommitment": "Asegure EUR 997/mes como miembro fundador — solo 10 plazas"
+      "title": "Por Qué las Agencias Contratan a Clyde",
+      "customBuiltTitle": "Siempre Activo, Nunca Enfermo",
+      "customBuilt": "Clyde trabaja de noche, fines de semana y festivos. Sin vacaciones, sin bajas, sin rotación",
+      "founderAccessTitle": "Aprende Continuamente",
+      "founderAccess": "Clyde estudia la voz de marca, datos de audiencia e historial de rendimiento de cada cliente — mejorando cada semana",
+      "successGuaranteeTitle": "Gestiona Todos Tus Clientes",
+      "successGuarantee": "Un solo Clyde gestiona 10, 20 o 50 clientes simultáneamente sin pérdida de calidad",
+      "trialTitle": "Infraestructura IA Enterprise",
+      "trialCommitment": "Clyde funciona sobre infraestructura IA de nivel empresarial con 99,9% de uptime y residencia de datos en la UE"
     },
     "stats": {
       "clients": {
-        "value": "50+",
-        "label": "Clientes Gestionados"
+        "value": "24/7",
+        "label": "Disponibilidad"
       },
       "content": {
+        "value": "6",
+        "label": "Habilidades Especializadas"
+      },
+      "hours": {
         "value": "160+",
         "label": "Piezas de Contenido/Mes"
       },
-      "hours": {
-        "value": "38h",
-        "label": "Horas Ahorradas/Semana"
-      },
       "languages": {
-        "value": "3",
-        "label": "Idiomas Soportados"
+        "value": "<2min",
+        "label": "Tiempo Medio de Respuesta"
       }
     },
     "badges": {
       "title": "Construido para Agencias Europeas",
-      "gdpr": "RGPD-First",
-      "enterprise": "Powered by Enterprise AI",
-      "dutch": "Soporte en Neerlandes",
-      "uptime": "99.9% Uptime SLA",
+      "gdpr": "RGPD-First IA",
+      "enterprise": "Infraestructura IA Enterprise",
+      "dutch": "Soporte en Holandés Nativo",
+      "uptime": "99,9% Uptime SLA",
       "integrations": "200+ Integraciones",
       "noLockIn": "Sin Contratos de Permanencia"
     },
     "cta": {
-      "title": "Listo para Contratar Su Empleado IA?",
-      "subtitle": "Reserve una llamada de estrategia gratuita de 30 minutos. Le mostraremos como un Empleado de Marketing IA encaja en su agencia.",
-      "button": "Reservar una Llamada"
+      "title": "¿Listo para Conocer a Clyde?",
+      "subtitle": "Solo 10 plazas de miembro fundador disponibles a EUR 997/mes. Conoce a Clyde y descubre lo que puede hacer por tu agencia.",
+      "button": "Conoce a Clyde"
     },
     "faq": {
       "title": "Preguntas Frecuentes",
       "items": {
         "q1": {
-          "question": "Que es un Empleado de Marketing IA?",
-          "answer": "Un Empleado de Marketing IA es un agente de IA persistente que trabaja 24/7 para su agencia. A diferencia de las herramientas que usted debe operar, su empleado IA ejecuta tareas de forma autonoma — creando contenido, calificando leads, gestionando redes sociales, ejecutando anuncios y generando informes para cada uno de sus clientes."
+          "question": "¿Qué es Clyde exactamente?",
+          "answer": "Clyde es un empleado de marketing IA construido específicamente para agencias. No es una herramienta que tú operas — es un colega al que asignas tareas. Dile a Clyde que escriba posts para el Cliente A, llame leads para el Cliente B y genere reportes para el Cliente C. Ejecuta todo de forma autónoma, 24/7."
         },
         "q2": {
-          "question": "Como aprende las marcas de mis clientes?",
-          "answer": "Durante la incorporacion, su empleado IA absorbe las directrices de marca, tono de voz, audiencia objetivo y contenido historico de cada cliente. Mejora continuamente analizando datos de rendimiento y retroalimentacion, alineandose mas con la marca de cada cliente cada semana."
+          "question": "¿Cómo aprende Clyde las marcas de mis clientes?",
+          "answer": "Durante el onboarding, Clyde absorbe las directrices de marca, tono de voz, audiencia objetivo y contenido histórico de cada cliente. Mejora continuamente analizando datos de rendimiento y tu feedback. Cada semana, Clyde se alinea mejor con la marca de cada cliente."
         },
         "q3": {
-          "question": "Que habilidades estan disponibles?",
-          "answer": "Seis habilidades disponibles: Creador de Contenido (blogs, social, newsletters), Agente de Voz (llamadas y reservas), Calificador de Leads (chatbot y scoring), Social Media Manager (programacion y analytics), Creador de Anuncios (estaticos y video) y Reportes & Analytics (dashboards e informes semanales). Active lo que necesite, agregue mas en cualquier momento."
+          "question": "¿Puede Clyde trabajar para varios clientes simultáneamente?",
+          "answer": "Sí. Clyde gestiona 10, 20 o 50 clientes al mismo tiempo sin pérdida de calidad. Cada cliente tiene su propio contexto de marca, así que Clyde nunca mezcla tono, audiencia o mensajes entre cuentas."
         },
         "q4": {
-          "question": "En que se diferencia de contratar un marketero junior?",
-          "answer": "Un marketero junior cuesta EUR 45.000-60.000/ano, trabaja 40 horas/semana y gestiona un cliente a la vez. Su empleado IA cuesta desde EUR 997/mes, trabaja 24/7, gestiona todos sus clientes simultaneamente y nunca se reporta enfermo. No es un reemplazo de la estrategia — es un reemplazo de la ejecucion repetitiva."
+          "question": "¿Qué pasa si Clyde comete un error?",
+          "answer": "Todo lo que Clyde produce pasa por tu flujo de aprobación antes de publicarse. Tú defines los límites — Clyde trabaja dentro de ellos. Si algo necesita ajuste, Clyde aprende de la corrección y no repite el error."
         },
         "q5": {
-          "question": "Que hay del RGPD y la privacidad de datos?",
-          "answer": "FMai es RGPD-first. Todo el procesamiento de datos ocurre dentro de centros de datos de la UE. Proporcionamos un Acuerdo de Procesamiento de Datos para cada cliente de agencia. Los datos de sus clientes estan aislados por espacio de trabajo — sin fugas de datos entre clientes. Estamos construidos para el cumplimiento europeo desde el primer dia."
+          "question": "¿En qué se diferencia Clyde de ChatGPT u otras herramientas IA?",
+          "answer": "ChatGPT es una herramienta genérica que prompts manualmente. Clyde es un empleado de marketing especializado que trabaja de forma autónoma. Conoce a tus clientes, sigue sus directrices de marca, publica según calendario y reporta resultados — sin que tú escribas un solo prompt. Piensa en un colega, no en una herramienta."
         }
       }
     }
@@ -1031,679 +1031,611 @@
   },
   "skills-content-creator": {
     "meta": {
-      "title": "Habilidad Content Creator | Empleado de Marketing IA | FMai",
-      "description": "Creacion de contenido impulsada por IA para clientes de agencia. Posts de blog, contenido social, newsletters y reutilizacion multiplataforma — producidos diariamente por su Empleado de Marketing IA."
+      "title": "Clyde Escribe Tu Contenido | Empleado de Marketing IA | FMai",
+      "description": "Clyde escribe posts de blog, contenido social, newsletters y reutiliza todo en múltiples plataformas. Tu colega de marketing IA produce contenido diario para cada cliente."
     },
     "hero": {
-      "badge": "Habilidad Content Creator",
-      "title": "Creacion de Contenido IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA escribe posts de blog, contenido social, newsletters y reutiliza contenido en todas las plataformas — diariamente, para cada cliente."
+      "badge": "Content Creator",
+      "title": "Clyde Escribe Tu Contenido",
+      "description": "Dale a Clyde un tema. Investiga, escribe, optimiza para SEO y publica en todas las plataformas. Un marketero humano escribe 2 posts al día. Clyde escribe 20. Cada día. Para cada cliente."
     },
     "features": {
-      "heading": "Que Hace la Habilidad Content Creator",
+      "heading": "Lo Que Clyde Hace con el Contenido",
       "items": {
         "blog": {
-          "title": "Escritura de Blog con IA",
-          "description": "Posts de blog optimizados para SEO escritos en la voz de marca de cada cliente. Investigacion, esquema, borrador y publicacion — totalmente autonomo."
+          "title": "Escribe Posts SEO",
+          "description": "Clyde investiga palabras clave, crea esquemas, redacta borradores y publica posts de blog optimizados para SEO en la voz de marca de cada cliente. Totalmente autónomo."
         },
         "social": {
-          "title": "Posts en Redes Sociales",
-          "description": "Contenido social nativo para LinkedIn, Instagram, X y Facebook. Adaptado a la audiencia y tono de cada cliente."
+          "title": "Crea Contenido Social",
+          "description": "Clyde produce contenido nativo para LinkedIn, Instagram, X y Facebook. Adaptado a la audiencia y tono de cada cliente."
         },
         "newsletters": {
-          "title": "Newsletters por Email",
-          "description": "Newsletters semanales o mensuales elaborados con el contenido mas reciente, noticias del sector y actualizaciones de campanas de sus clientes."
+          "title": "Construye Newsletters",
+          "description": "Clyde elabora newsletters semanales o mensuales a partir del contenido más reciente, noticias del sector y actualizaciones de campañas de tus clientes."
         },
         "repurposing": {
-          "title": "Reutilizacion de Contenido",
-          "description": "Una pieza de contenido se convierte en diez. Los posts de blog se transforman en hilos sociales, newsletters, guiones de video y mas — automaticamente."
+          "title": "Reutiliza Todo",
+          "description": "Una pieza de contenido se convierte en diez. Clyde transforma posts de blog en hilos sociales, newsletters, guiones de video y más."
         }
       }
     },
     "how_it_works": {
-      "heading": "Como Funciona",
+      "heading": "Cómo Trabajas con Clyde",
       "steps": {
         "connect": {
-          "title": "Conectar Marca del Cliente",
-          "description": "Suba directrices de marca, tono de voz y perfiles de audiencia objetivo. Su empleado IA aprende la identidad del cliente."
+          "title": "Cuéntale a Clyde Sobre el Cliente",
+          "description": "Comparte directrices de marca, tono de voz y audiencia objetivo. Clyde aprende la identidad del cliente y empieza a escribir en su voz."
         },
         "generate": {
-          "title": "La IA Crea Contenido",
-          "description": "Su empleado IA investiga temas, escribe borradores y optimiza para SEO — todo en la voz de marca del cliente."
+          "title": "Clyde Se Pone a Trabajar",
+          "description": "Clyde investiga temas, escribe borradores y optimiza para SEO. Produce contenido las 24 horas sin necesidad de que le dirijas."
         },
         "review": {
-          "title": "Aprobar y Publicar",
-          "description": "Revise el contenido generado por IA en su dashboard, apruebe con un clic y publique en todas las plataformas."
+          "title": "Revisa y Aprueba",
+          "description": "Revisa el trabajo de Clyde en tu dashboard. Aprueba con un clic y publica en todas las plataformas al instante."
         }
       }
     },
     "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
+      "heading": "Quién Trabaja con Clyde",
       "items": {
         "agencies": {
           "title": "Agencias de Marketing",
-          "description": "Escale la produccion de contenido para todos sus clientes sin contratar mas redactores. Un empleado IA produce la salida de un equipo completo de contenido."
+          "description": "Escala la producción de contenido para todos tus clientes. Clyde produce la salida de un equipo completo de contenido. Sin freelancers, sin plazos incumplidos."
         },
         "ecommerce": {
           "title": "Marcas de E-commerce",
-          "description": "Descripciones de productos, paginas de categoria, campanas de email y contenido social — producidos diariamente para mantener su tienda fresca y posicionada."
+          "description": "Descripciones de productos, páginas de categoría, campañas de email y contenido social. Clyde mantiene tu tienda fresca, posicionada y convirtiendo."
         }
       }
     },
     "social_proof": {
-      "quote": "Reemplazamos un equipo de contenido de 3 personas con el Content Creator de FMai. La produccion se triplico y la calidad realmente mejoro.",
+      "quote": "Le dimos a Clyde nuestras 8 marcas de clientes. Ahora produce más contenido del que nuestro equipo de 3 personas jamas logró. La calidad también mejoró.",
       "author": "Director de Marketing",
       "role": "Agencia de E-commerce",
       "company": "Amsterdam"
     },
     "showcase": {
-      "heading": "El Motor de Contenido IA",
+      "heading": "El Motor de Contenido de Clyde",
       "items": {
         "seo_research": {
-          "title": "Investigacion SEO",
-          "description": "Identifica automaticamente palabras clave de alto valor y brechas de contenido en su nicho."
+          "title": "Investigación SEO",
+          "description": "Clyde identifica palabras clave de alto valor y brechas de contenido antes de escribir una sola palabra."
         },
         "content_generation": {
-          "title": "Generacion de Contenido",
-          "description": "Escribe posts de blog, captions para redes sociales y newsletters en la voz de su marca."
+          "title": "Generación de Contenido",
+          "description": "Clyde escribe posts de blog, captions sociales y newsletters en la voz de marca de tu cliente."
         },
         "visual_creation": {
-          "title": "Creacion Visual",
-          "description": "Genera imagenes on-brand, carruseles y miniaturas de video."
+          "title": "Creación Visual",
+          "description": "Clyde genera imágenes on-brand, carruseles y miniaturas de video para acompañar el contenido."
         },
         "multi_channel": {
-          "title": "Publicacion Multicanal",
-          "description": "Publica en WordPress, LinkedIn, Instagram y mas \u2014 automaticamente."
+          "title": "Publicación Multicanal",
+          "description": "Clyde publica en WordPress, LinkedIn, Instagram y más. Automáticamente."
         },
         "performance_analytics": {
           "title": "Analytics de Rendimiento",
-          "description": "Rastrea engagement, conversiones y ROI en todos los canales."
+          "description": "Clyde rastrea engagement, conversiones y ROI en todos los canales y ajusta la estrategia."
         },
         "ai_orchestrator": {
-          "title": "Orquestador IA",
-          "description": "Coordina todos los modulos, aprende de los resultados y mejora continuamente la produccion."
+          "title": "Aprendizaje Continuo",
+          "description": "Clyde aprende de los resultados. Cada pieza de contenido hace que la siguiente sea mejor."
         }
       }
     },
     "product_media": {
-      "heading": "Vea en Accion",
+      "heading": "Mira a Clyde en Acción",
       "title": "Demo del Content Creator",
-      "description": "Vea como el Content Creator IA investiga, escribe y publica un post de blog completo en menos de 5 minutos."
+      "description": "Observa cómo Clyde investiga, escribe y publica un post de blog completo en menos de 5 minutos."
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Escribe 5 posts de blog sobre SEO local para Panadería El Buen Pan",
+      "result_title": "Listo. 5 posts de blog escritos y programados.",
+      "result_description": "Investigue palabras clave de SEO local para panaderías en Madrid, escribí 5 posts optimizados para SEO (promedio 1.200 palabras cada uno) en la voz de marca cálida y artesanal de Panadería El Buen Pan, añadí enlaces internos y meta descripciones, y los programé para las próximas 2 semanas. Aumento estimado de tráfico orgánico: 35% en 60 días."
     },
     "pricing": {
       "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mes",
-          "features_0": "20 posts de blog/mes",
-          "features_1": "60 posts sociales/mes",
-          "features_2": "1 voz de marca",
-          "features_3": "Integracion WordPress"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "50 posts de blog/mes",
-          "features_1": "150 posts sociales/mes",
-          "features_2": "3 voces de marca",
-          "features_3": "Publicacion multiplataforma",
-          "features_4": "Optimizacion SEO"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1.997",
-          "period": "/mes",
-          "features_0": "Contenido ilimitado",
-          "features_1": "Voces de marca ilimitadas",
-          "features_2": "Todas las plataformas",
-          "features_3": "Workflows personalizados",
-          "features_4": "Soporte dedicado"
-        }
-      }
+      "description": "La habilidad Content Creator de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
     },
     "cta": {
-      "title": "Active la Habilidad Content Creator",
-      "subtitle": "Agregue creacion de contenido impulsada por IA a su Empleado de Marketing IA y comience a producir contenido para todos sus clientes.",
-      "button": "Ver Precios"
+      "title": "Conoce a Clyde, Tu Content Creator",
+      "subtitle": "Descubre cómo Clyde produce contenido para clientes de agencia. Una conversación y entenderás por qué las agencias están reemplazando equipos de contenido.",
+      "button": "Conoce a Clyde"
     }
   },
   "skills-voice-agent": {
     "meta": {
-      "title": "Habilidad Voice Agent | Empleado de Marketing IA | FMai",
-      "description": "Llamadas entrantes y salientes impulsadas por IA para clientes de agencia. Atencion telefonica 24/7, calificacion de leads por telefono y reserva de citas por su Empleado de Marketing IA."
+      "title": "Clyde Llama a Tus Leads | Empleado de Marketing IA | FMai",
+      "description": "Clyde gestiona llamadas entrantes y salientes 24/7. Calificación de leads por teléfono, reserva de citas y seguimientos. Tu colega IA nunca pierde una llamada."
     },
     "hero": {
-      "badge": "Habilidad Voice Agent",
-      "title": "Llamadas Telefonicas IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA gestiona llamadas entrantes y salientes — calificando leads, reservando citas y dando seguimiento a prospectos las 24 horas."
+      "badge": "Voice Agent",
+      "title": "Clyde Llama a Tus Leads",
+      "description": "Un vendedor hace 40 llamadas al día. Clyde hace 400. Califica leads, agenda citas y da seguimiento a prospectos. Las 24 horas. Sin pausa para almuerzo."
     },
     "features": {
-      "heading": "Que Hace la Habilidad Voice Agent",
+      "heading": "Lo Que Clyde Hace por Teléfono",
       "items": {
         "inbound": {
-          "title": "Atender Llamadas 24/7",
-          "description": "No pierda mas llamadas. Su empleado IA contesta llamadas entrantes, gestiona preguntas frecuentes y enruta consultas complejas a la persona adecuada."
+          "title": "Contesta Cada Llamada",
+          "description": "Clyde contesta cada llamada entrante al instante. Gestiona preguntas frecuentes, enruta consultas complejas y nunca pone a nadie en espera."
         },
         "outbound": {
-          "title": "Llamadas Proactivas",
-          "description": "Llamadas salientes impulsadas por IA para seguimientos, recordatorios de citas y reactivacion de prospectos — a escala."
+          "title": "Llama a Prospectos Proactivamente",
+          "description": "Clyde realiza llamadas salientes para seguimientos, recordatorios de citas y reactivación de prospectos. A escala."
         },
         "qualification": {
-          "title": "Calificar Leads por Telefono",
-          "description": "Calificacion BANT en cada llamada. Su empleado IA puntua prospectos y solo pasa leads calificados a su equipo de ventas."
+          "title": "Califica Leads por Teléfono",
+          "description": "Calificación BANT en cada llamada. Clyde puntua prospectos y solo pasa leads calificados a tu equipo de ventas."
         },
         "booking": {
-          "title": "Programar Citas",
-          "description": "Integracion directa con calendario. El agente de voz programa reuniones en Calendly, Cal.com o Google Calendar durante la llamada."
+          "title": "Agenda Citas",
+          "description": "Clyde agenda reuniones directamente en Calendly, Cal.com o Google Calendar durante la llamada. Sin idas y venidas."
         }
       }
     },
     "how_it_works": {
-      "heading": "Como Funciona",
+      "heading": "Cómo Trabajas con Clyde",
       "steps": {
         "setup": {
-          "title": "Configurar Persona de Voz",
-          "description": "Establezca la voz, tono y personalidad para cada cliente. Suba guiones de llamada y criterios de calificacion."
+          "title": "Dale a Clyde el Guión",
+          "description": "Configura la voz, tono y persona para cada cliente. Comparte guiones de llamada y criterios de calificación. Clyde se adapta al instante."
         },
         "deploy": {
-          "title": "Activar en Numero del Cliente",
-          "description": "Conecte al sistema telefonico del cliente via SIP o desvio. El empleado IA comienza a gestionar llamadas inmediatamente."
+          "title": "Clyde Sale en Vivo",
+          "description": "Conecta al sistema telefónico de tu cliente. Clyde empieza a gestionar llamadas inmediatamente. Sin periodo de formación."
         },
         "optimize": {
-          "title": "Mejorar con Datos de Llamadas",
-          "description": "Revise transcripciones y analytics de llamadas. Su empleado IA aprende de cada conversacion y mejora semanalmente."
+          "title": "Clyde Aprende y Mejora",
+          "description": "Revisa transcripciones y analytics de llamadas. Clyde aprende de cada conversación y mejora cada semana."
         }
       }
     },
     "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
+      "heading": "Quién Trabaja con Clyde",
       "items": {
         "agencies": {
           "title": "Agencias de Marketing",
-          "description": "Ofrezca atencion telefonica impulsada por IA como servicio a sus clientes. Escale operaciones telefonicas sin contratar personal de call center."
+          "description": "Ofrece atención telefónica impulsada por IA a tus clientes. Escala operaciones telefónicas sin contratar personal de call center. Clyde lo hace todo."
         },
         "sales": {
           "title": "Equipos de Ventas",
-          "description": "Califique cientos de leads por dia por telefono. Su equipo de ventas solo habla con prospectos listos para comprar."
+          "description": "Clyde califica cientos de leads por día por teléfono. Tu equipo de ventas solo habla con prospectos listos para comprar."
         }
       }
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Llama a todos los leads de ayer y agenda citas de seguimiento",
+      "result_title": "Listo. 47 llamadas completadas, 12 citas agendadas.",
+      "result_description": "Llamé a los 47 leads de ayer. 12 prospectos calificados agendaron citas de seguimiento (ya están en tu Calendly). 8 pidieron más información (emails de seguimiento enviados). 15 no estaban interesados (marcados en CRM). 12 buzones de voz dejados con enlaces de reprogramación. Duración media de llamada: 3 minutos y 20 segundos."
     },
     "pricing": {
       "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac597",
-          "period": "/mes",
-          "features_0": "1 agente de voz",
-          "features_1": "500 minutos/mes",
-          "features_2": "Llamadas entrantes",
-          "features_3": "Analytics basicos de llamadas"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac1.197",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "3 agentes de voz",
-          "features_1": "2.000 minutos/mes",
-          "features_2": "Entrantes + salientes",
-          "features_3": "Integracion CRM",
-          "features_4": "Grabacion de llamadas y transcripciones"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac2.497",
-          "period": "/mes",
-          "features_0": "Agentes ilimitados",
-          "features_1": "Minutos ilimitados",
-          "features_2": "Clonacion de voz personalizada",
-          "features_3": "Soporte multilingue",
-          "features_4": "Soporte dedicado"
-        }
-      }
+      "description": "La habilidad Voice Agent de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Resultados Que Hablan",
+      "heading": "El Historial de Clyde",
       "metrics": {
         "response_time": {
           "value": "<1s",
           "label": "Tiempo de Respuesta",
-          "description": "Mas rapido que cualquier agente humano"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Disponibilidad",
-          "description": "No pierda mas llamadas"
-        },
-        "resolution": {
-          "value": "85%",
-          "label": "Tasa de Resolucion",
-          "description": "Sin traspaso humano"
-        }
-      }
-    },
-    "cta": {
-      "title": "Active la Habilidad Voice Agent",
-      "subtitle": "Agregue llamadas telefonicas impulsadas por IA a su Empleado de Marketing IA y no pierda mas ningun lead.",
-      "button": "Ver Precios"
-    }
-  },
-  "skills-lead-qualifier": {
-    "meta": {
-      "title": "Habilidad Lead Qualifier | Empleado de Marketing IA | FMai",
-      "description": "Chatbot IA que califica leads web 24/7 para clientes de agencia. Engagement en tiempo real, puntuacion BANT, traspaso en caliente y secuencias de seguimiento automatizadas."
-    },
-    "hero": {
-      "badge": "Habilidad Lead Qualifier",
-      "title": "Calificacion de Leads IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA interactua con visitantes web en tiempo real, los califica con puntuacion BANT y traspasa leads calificados directamente a los equipos de ventas de sus clientes."
-    },
-    "features": {
-      "heading": "Que Hace la Habilidad Lead Qualifier",
-      "items": {
-        "engage": {
-          "title": "Engagement de Visitantes en Tiempo Real",
-          "description": "El chatbot IA saluda a cada visitante web, responde preguntas e inicia conversaciones de calificacion — 24/7, en cada sitio de cliente."
-        },
-        "qualify": {
-          "title": "Puntuacion de Calificacion BANT",
-          "description": "Presupuesto, Autoridad, Necesidad, Tiempo — cada lead se puntua automaticamente para que los equipos de ventas se concentren en los mejores prospectos."
-        },
-        "handoff": {
-          "title": "Traspaso en Caliente a Ventas",
-          "description": "Los leads calificados se enrutan instantaneamente al vendedor correcto con contexto completo de la conversacion y puntuacion de calificacion."
-        },
-        "nurture": {
-          "title": "Secuencias de Seguimiento Automatizadas",
-          "description": "Los leads no listos para comprar entran en secuencias de nurture — emails automatizados y retargeting para mantenerlos comprometidos."
-        }
-      }
-    },
-    "how_it_works": {
-      "heading": "Como Funciona",
-      "steps": {
-        "configure": {
-          "title": "Establecer Criterios de Calificacion",
-          "description": "Defina como es un lead calificado para cada cliente — umbrales de presupuesto, tamano de empresa, industria y senales de compra."
-        },
-        "embed": {
-          "title": "Agregar al Sitio Web del Cliente",
-          "description": "Una linea de codigo incorpora el chatbot IA en el sitio web de su cliente. Comienza a calificar visitantes inmediatamente."
-        },
-        "convert": {
-          "title": "Comenzar a Calificar Leads",
-          "description": "Vea leads calificados fluir al CRM de sus clientes con contexto completo. Su empleado IA trabaja cada visitante, cada vez."
-        }
-      }
-    },
-    "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
-      "items": {
-        "agencies": {
-          "title": "Agencias de Marketing",
-          "description": "Despliegue chatbots de calificacion de leads en todos los sitios web de sus clientes. Demuestre ROI con conteos de leads calificados y datos de conversion."
-        },
-        "saas": {
-          "title": "Empresas SaaS",
-          "description": "Califique registros de prueba gratuita y solicitudes de demo automaticamente. Enrute prospectos empresariales a ventas, el resto va self-serve."
-        }
-      }
-    },
-    "pricing": {
-      "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mes",
-          "features_0": "1 persona de chatbot",
-          "features_1": "Integracion web",
-          "features_2": "1.000 conversaciones/mes",
-          "features_3": "Analytics basicos"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "3 personas de chatbot",
-          "features_1": "Web + WhatsApp",
-          "features_2": "5.000 conversaciones/mes",
-          "features_3": "Lead scoring y sincronizacion CRM",
-          "features_4": "Pruebas A/B"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1.997",
-          "period": "/mes",
-          "features_0": "Personas ilimitadas",
-          "features_1": "Todas las plataformas",
-          "features_2": "Conversaciones ilimitadas",
-          "features_3": "Integraciones personalizadas",
-          "features_4": "Soporte dedicado"
-        }
-      }
-    },
-    "trust": {
-      "heading": "Resultados Que Hablan",
-      "metrics": {
-        "qualified_leads": {
-          "value": "3x",
-          "label": "Mas Leads Calificados",
-          "description": "vs. formularios de contacto tradicionales"
+          "description": "Clyde contesta más rápido que cualquier humano"
         },
         "availability": {
           "value": "24/7",
           "label": "Siempre Disponible",
-          "description": "Sin oportunidades perdidas"
+          "description": "Clyde nunca duerme, nunca se reporta enfermo"
+        },
+        "resolution": {
+          "value": "85%",
+          "label": "Tasa de Resolución",
+          "description": "Clyde lo resuelve sin ayuda humana"
+        }
+      }
+    },
+    "cta": {
+      "title": "Conoce a Clyde, Tu Voice Agent",
+      "subtitle": "Escucha a Clyde en acción. Una llamada demo y entenderás por qué las agencias están reemplazando equipos de SDR.",
+      "button": "Conoce a Clyde"
+    }
+  },
+  "skills-lead-qualifier": {
+    "meta": {
+      "title": "Clyde Califica Tus Leads | Empleado de Marketing IA | FMai",
+      "description": "Clyde interactua con cada visitante web, puntua leads con BANT y entrega prospectos calificados a ventas. Calificación de leads 24/7 en piloto automático."
+    },
+    "hero": {
+      "badge": "Lead Qualifier",
+      "title": "Clyde Califica Tus Leads",
+      "description": "Cada visitante recibe la atención de Clyde. Interactúa, califica con puntuación BANT y entrega leads calificados a ventas. Un representante humano califica 20 leads al día. Clyde califica 200."
+    },
+    "features": {
+      "heading": "Lo Que Clyde Hace con los Leads",
+      "items": {
+        "engage": {
+          "title": "Interactúa con Cada Visitante",
+          "description": "Clyde saluda a cada visitante web, responde preguntas e inicia conversaciones de calificación. 24/7, en cada sitio de cliente."
+        },
+        "qualify": {
+          "title": "Puntua con BANT",
+          "description": "Presupuesto, Autoridad, Necesidad, Tiempo. Clyde puntua cada lead automáticamente para que tu equipo de ventas se enfoque en los mejores prospectos."
+        },
+        "handoff": {
+          "title": "Entrega a Ventas",
+          "description": "Clyde envía leads calificados directamente al vendedor correcto con contexto completo de la conversación y puntuación de calificación."
+        },
+        "nurture": {
+          "title": "Nutre el Resto",
+          "description": "Los leads que aún no están listos entran en las secuencias de nurture de Clyde. Emails automáticos y retargeting los mantienen comprometidos."
+        }
+      }
+    },
+    "how_it_works": {
+      "heading": "Cómo Trabajas con Clyde",
+      "steps": {
+        "configure": {
+          "title": "Dile a Clyde Qué Significa Calificado",
+          "description": "Define cómo es un lead calificado para cada cliente. Umbrales de presupuesto, tamaño de empresa, industria y señales de compra."
+        },
+        "embed": {
+          "title": "Clyde Se Une al Sitio Web",
+          "description": "Una línea de código. Clyde aparece en el sitio web de tu cliente y empieza a calificar visitantes inmediatamente."
+        },
+        "convert": {
+          "title": "Clyde Empieza a Entregar Leads",
+          "description": "Los leads calificados fluyen al CRM de tus clientes con contexto completo. Clyde trabaja cada visitante, cada vez."
+        }
+      }
+    },
+    "use_cases": {
+      "heading": "Quién Trabaja con Clyde",
+      "items": {
+        "agencies": {
+          "title": "Agencias de Marketing",
+          "description": "Despliega a Clyde en todos los sitios web de tus clientes. Demuestra ROI con conteos de leads calificados y datos de conversión. Sin personal extra."
+        },
+        "saas": {
+          "title": "Empresas SaaS",
+          "description": "Clyde califica registros de prueba gratuita y solicitudes de demo automáticamente. Los prospectos enterprise van a ventas. El resto se auto-gestiona."
+        }
+      }
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Puntua todos los visitantes web de las últimas 24 horas usando BANT",
+      "result_title": "Listo. 156 visitantes puntuados. 23 leads calificados identificados.",
+      "result_description": "Analicé 156 visitantes únicos de las últimas 24 horas. 23 puntuaron 8+ en BANT (leads calientes, enviados a ventas con contexto completo). 41 puntuaron 5-7 (tibios, añadidos a secuencia de nurture). 92 puntuaron por debajo de 5 (visitantes informativos, etiquetados para retargeting). 3 prospectos enterprise marcados para seguimiento inmediato."
+    },
+    "pricing": {
+      "heading": "Precios",
+      "description": "La habilidad Lead Qualifier de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
+    },
+    "trust": {
+      "heading": "El Historial de Clyde",
+      "metrics": {
+        "qualified_leads": {
+          "value": "3x",
+          "label": "Más Leads Calificados",
+          "description": "Clyde supera a los formularios de contacto por 3x"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Siempre Calificando",
+          "description": "Clyde nunca pierde un visitante"
         },
         "response_time": {
           "value": "<2s",
           "label": "Tiempo de Respuesta",
-          "description": "Engagement instantaneo"
+          "description": "Clyde interactúa al instante"
         }
       }
     },
     "cta": {
-      "title": "Active la Habilidad Lead Qualifier",
-      "subtitle": "Agregue calificacion de leads impulsada por IA a su Empleado de Marketing IA y convierta mas visitantes web en clientes.",
-      "button": "Ver Precios"
+      "title": "Conoce a Clyde, Tu Lead Qualifier",
+      "subtitle": "Descubre cómo Clyde convierte visitantes web en leads calificados. Sin formularios. Sin esperas. Solo resultados.",
+      "button": "Conoce a Clyde"
     }
   },
   "skills-social-media": {
     "meta": {
-      "title": "Habilidad Social Media | Empleado de Marketing IA | FMai",
-      "description": "Gestion de redes sociales multiplataforma impulsada por IA para clientes de agencia. Programacion, analytics, creacion de contenido y monitoreo de marca por su Empleado de Marketing IA."
+      "title": "Clyde Gestiona Tus Redes Sociales | Empleado de Marketing IA | FMai",
+      "description": "Clyde gestiona redes sociales multiplataforma para todos tus clientes. Creación de contenido, programación, analytics y monitoreo de marca. Un colega IA, cuentas ilimitadas."
     },
     "hero": {
-      "badge": "Habilidad Social Media",
-      "title": "Gestion de Redes Sociales IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA gestiona redes sociales en todas las plataformas — creando contenido, programando posts, rastreando rendimiento y monitoreando menciones de marca."
+      "badge": "Social Media",
+      "title": "Clyde Gestiona Tus Redes Sociales",
+      "description": "Un community manager gestiona 3 cuentas de clientes. Clyde gestiona 30. Crea contenido, programa posts, rastrea rendimiento y monitorea menciones de marca. En todas las plataformas."
     },
     "features": {
-      "heading": "Que Hace la Habilidad Social Media",
+      "heading": "Lo Que Clyde Hace en Redes",
       "items": {
         "scheduling": {
-          "title": "Programacion Multiplataforma",
-          "description": "Horarios de publicacion optimizados por IA en LinkedIn, Instagram, X, Facebook y TikTok. El contenido de cada cliente se publica en momentos de maximo engagement."
+          "title": "Publica en el Momento Perfecto",
+          "description": "Clyde publica en horarios optimizados por IA en LinkedIn, Instagram, X, Facebook y TikTok. El contenido de cada cliente sale en el pico de engagement."
         },
         "analytics": {
-          "title": "Seguimiento de Rendimiento",
-          "description": "Analytics en tiempo real en todas las plataformas. Rastree engagement, alcance, crecimiento de seguidores y rendimiento de contenido por cliente."
+          "title": "Rastrea Todo",
+          "description": "Clyde monitorea engagement, alcance, crecimiento de seguidores y rendimiento del contenido por cliente. Analytics en tiempo real en todas las plataformas."
         },
         "creation": {
-          "title": "Generacion de Contenido IA",
-          "description": "Contenido nativo por plataforma creado en la voz de marca de cada cliente. Descripciones, hashtags y visuales optimizados para cada red."
+          "title": "Crea Contenido Nativo por Plataforma",
+          "description": "Clyde escribe captions, genera hashtags y crea visuales optimizados para cada red. En la voz de marca de cada cliente."
         },
         "monitoring": {
-          "title": "Seguimiento de Menciones de Marca",
-          "description": "Monitoree menciones de marca, actividad de competidores y tendencias del sector en todas las plataformas sociales. Reciba alertas de conversaciones importantes."
+          "title": "Sigue la Conversación",
+          "description": "Clyde monitorea menciones de marca, actividad de competidores y tendencias del sector. Te alerta instantáneamente sobre conversaciones importantes."
         }
       }
     },
     "how_it_works": {
-      "heading": "Como Funciona",
+      "heading": "Cómo Trabajas con Clyde",
       "steps": {
         "connect": {
-          "title": "Vincular Cuentas Sociales",
-          "description": "Conecte las cuentas de redes sociales de sus clientes. Su empleado IA obtiene acceso para publicar, monitorear y analizar en todas las plataformas."
+          "title": "Conecta las Cuentas",
+          "description": "Vincula las cuentas de redes sociales de tus clientes. Clyde obtiene acceso para publicar, monitorear y analizar en todas las plataformas."
         },
         "plan": {
-          "title": "La IA Crea Calendario de Contenido",
-          "description": "Su empleado IA construye un calendario de contenido basado en la estrategia, datos de audiencia y temas tendencia de cada cliente."
+          "title": "Clyde Construye el Calendario",
+          "description": "Clyde crea un calendario de contenido basado en la estrategia, datos de audiencia y temas tendencia de cada cliente."
         },
         "publish": {
-          "title": "Publicar Automaticamente segun Programa",
-          "description": "El contenido se publica automaticamente en horarios optimos. Su empleado IA gestiona la publicacion, hashtags y formato multiplataforma."
+          "title": "Clyde Publica y Optimiza",
+          "description": "El contenido se publica automáticamente en horarios óptimos. Clyde gestiona la publicación, hashtags y formato multiplataforma."
         }
       }
     },
     "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
+      "heading": "Quién Trabaja con Clyde",
       "items": {
         "agencies": {
           "title": "Agencias de Marketing",
-          "description": "Gestione redes sociales para decenas de clientes simultaneamente. Un empleado IA reemplaza a un equipo completo de social media."
+          "description": "Gestiona redes sociales para decenas de clientes simultáneamente. Clyde reemplaza a un equipo completo de social media. Sin personal extra, sin burnout."
         },
         "brands": {
           "title": "Gerentes de Marca",
-          "description": "Mantenga una presencia de marca consistente en todas las plataformas sin el trabajo manual de publicar y monitorear diariamente."
+          "description": "Presencia de marca consistente en todas las plataformas. Clyde gestiona las publicaciones diarias y el monitoreo para que tú te enfoques en la estrategia."
         }
       }
     },
-    "cta": {
-      "title": "Active la Habilidad Social Media",
-      "subtitle": "Agregue gestion de redes sociales impulsada por IA a su Empleado de Marketing IA y escale la presencia social de sus clientes.",
-      "button": "Ver Precios"
-    },
     "social_proof": {
-      "quote": "La habilidad Social Media de FMai gestiona todas las cuentas de nuestros clientes. Escalamos de 5 a 20 clientes sin contratar mas personal.",
-      "author": "Propietario de Agencia",
+      "quote": "Clyde gestiona las 20 cuentas sociales de nuestros clientes. No contratamos a una sola persona más.",
+      "author": "Dueño de Agencia",
       "role": "Agencia de Marketing Digital",
       "company": "Rotterdam"
     },
     "showcase": {
-      "heading": "El Motor de Redes Sociales IA",
+      "heading": "El Motor de Redes Sociales de Clyde",
       "items": {
         "smart_scheduling": {
-          "title": "Programacion Inteligente",
-          "description": "Horarios de publicacion optimizados por IA en todas las plataformas para maximo alcance y engagement."
+          "title": "Programación Inteligente",
+          "description": "Clyde publica en horarios optimizados por IA para máximo alcance y engagement."
         },
         "analytics_dashboard": {
           "title": "Dashboard de Analytics",
-          "description": "Seguimiento de rendimiento en tiempo real en todos los canales sociales con insights accionables."
+          "description": "Clyde rastrea el rendimiento en todos los canales sociales con insights accionables."
         },
         "engagement_automation": {
-          "title": "Automatizacion de Engagement",
-          "description": "Respuestas automaticas a comentarios, DMs y menciones con respuestas contextuales y on-brand."
+          "title": "Automatización de Engagement",
+          "description": "Clyde responde a comentarios, DMs y menciones con respuestas on-brand y contextuales."
         },
         "content_repurposing": {
-          "title": "Reutilizacion de Contenido",
-          "description": "Adapte contenido automaticamente para cada plataforma \u2014 blog a carrusel, video a reel, post a story."
+          "title": "Reutilización de Contenido",
+          "description": "Clyde adapta contenido para cada plataforma. Blog a carrusel, video a reel, post a story."
         },
         "trend_monitoring": {
           "title": "Monitoreo de Tendencias",
-          "description": "Mantengase adelante con deteccion de tendencias impulsada por IA y sugerencias de contenido basadas en lo que funciona."
+          "description": "Clyde detecta tendencias temprano y sugiere contenido basado en lo que funciona."
         },
         "competitor_tracking": {
           "title": "Seguimiento de Competidores",
-          "description": "Monitoree la actividad de competidores, compare rendimiento e identifique brechas de contenido."
+          "description": "Clyde monitorea la actividad de competidores, compara rendimiento e identifica brechas de contenido."
         }
       }
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Crea y programa los posts de la próxima semana para las 3 cuentas de clientes",
+      "result_title": "Listo. 45 posts creados y programados para 3 cuentas.",
+      "result_description": "Creé 15 posts por cuenta de cliente (3 LinkedIn, 4 Instagram, 3 X, 2 Facebook, 3 TikTok) en la voz de marca de cada cliente. Todos los posts programados en horarios optimizados por IA para máximo engagement. Assets de carrusel generados para Instagram. Investigación de hashtags completada. Calendario de contenido actualizado en tu dashboard."
     },
     "pricing": {
       "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mes",
-          "features_0": "3 plataformas",
-          "features_1": "60 posts/mes",
-          "features_2": "Programacion basica",
-          "features_3": "Informes de rendimiento"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "6 plataformas",
-          "features_1": "150 posts/mes",
-          "features_2": "Programacion optimizada por IA",
-          "features_3": "Automatizacion de engagement",
-          "features_4": "Seguimiento de competidores"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1.997",
-          "period": "/mes",
-          "features_0": "Plataformas ilimitadas",
-          "features_1": "Posts ilimitados",
-          "features_2": "Suite de automatizacion completa",
-          "features_3": "Workflows personalizados",
-          "features_4": "Soporte dedicado"
-        }
-      }
+      "description": "La habilidad Social Media de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Resultados Que Hablan",
+      "heading": "El Historial de Clyde",
       "metrics": {
         "engagement": {
           "value": "2x",
-          "label": "Engagement",
-          "description": "Aumento promedio en engagement social"
+          "label": "Más Engagement",
+          "description": "Clyde duplica el engagement social promedio"
         },
         "time_saved": {
           "value": "15h",
           "label": "Ahorradas Por Semana",
-          "description": "Tiempo ahorrado en gestion de redes sociales"
+          "description": "Clyde libera 15 horas de trabajo social semanal"
         },
         "platforms": {
           "value": "6+",
-          "label": "Plataformas",
-          "description": "Gestionadas desde un solo dashboard"
+          "label": "Plataformas Gestionadas",
+          "description": "Clyde las gestiona todas desde un solo dashboard"
         }
       }
+    },
+    "cta": {
+      "title": "Conoce a Clyde, Tu Social Media Manager",
+      "subtitle": "Descubre cómo Clyde gestiona redes sociales para clientes de agencia. Una demo y nunca más contratarás a otro community manager.",
+      "button": "Conoce a Clyde"
     }
   },
   "skills-ad-creator": {
     "meta": {
-      "title": "Habilidad Ad Creator | Empleado de Marketing IA | FMai",
-      "description": "Anuncios estaticos y de video generados por IA para clientes de agencia. De briefing de campana a variaciones de anuncio a lanzamiento en plataforma — todo por su Empleado de Marketing IA."
+      "title": "Clyde Crea Tus Anuncios | Empleado de Marketing IA | FMai",
+      "description": "Clyde genera anuncios estáticos y de video desde briefings de campaña, crea variaciones A/B y los envía a plataformas publicitarias. Tu especialista IA en publicidad."
     },
     "hero": {
-      "badge": "Habilidad Ad Creator",
-      "title": "Creacion de Anuncios IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA crea anuncios estaticos y de video a partir de briefings de campana, genera variaciones para pruebas A/B y los envia directamente a plataformas publicitarias."
+      "badge": "Ad Creator",
+      "title": "Clyde Crea Tus Anuncios",
+      "description": "Dale a Clyde un briefing de campaña. Genera anuncios de imagen, video, textos publicitarios y variaciones A/B. Y los envía directamente a Meta, Google y LinkedIn. En minutos, no días."
     },
     "features": {
-      "heading": "Que Hace la Habilidad Ad Creator",
+      "heading": "Lo Que Clyde Hace con los Anuncios",
       "items": {
         "static": {
-          "title": "Generacion de Anuncios de Imagen",
-          "description": "Anuncios display, anuncios sociales y banners generados por IA en multiples formatos y tamanos — listos para Meta, Google y LinkedIn."
+          "title": "Genera Anuncios de Imagen",
+          "description": "Clyde crea anuncios display, sociales y banners en múltiples formatos y tamaños. Listos para Meta, Google y LinkedIn."
         },
         "video": {
-          "title": "Anuncios de Video Cortos",
-          "description": "Anuncios de video producidos por IA para Reels, Stories, TikTok y YouTube Shorts. Del guion al video terminado en minutos."
+          "title": "Produce Video Ads",
+          "description": "Clyde crea anuncios de video cortos para Reels, Stories, TikTok y YouTube Shorts. Del guión al video terminado en minutos."
         },
         "copy": {
-          "title": "Variantes de Texto Publicitario",
-          "description": "Titulares, descripciones y CTAs generados en la voz de marca de cada cliente. Multiples variaciones para pruebas y optimizacion."
+          "title": "Escribe Textos Publicitarios",
+          "description": "Títulos, descripciones y CTAs en la voz de marca de cada cliente. Clyde genera múltiples variaciones para testing."
         },
         "variants": {
-          "title": "Variaciones para Pruebas A/B",
-          "description": "Generacion automatica de variantes creativas para split testing. Su empleado IA optimiza basandose en datos de rendimiento."
+          "title": "Crea Variaciones A/B",
+          "description": "Clyde genera automáticamente variantes creativas para split testing. Optimiza basándose en datos de rendimiento."
         }
       }
     },
     "how_it_works": {
-      "heading": "Como Funciona",
+      "heading": "Cómo Trabajas con Clyde",
       "steps": {
         "brief": {
-          "title": "Ingresar Briefing de Campana",
-          "description": "Proporcione el objetivo de la campana, audiencia objetivo y activos de marca. Su empleado IA se encarga del resto."
+          "title": "Dale a Clyde el Briefing",
+          "description": "Comparte el objetivo de la campaña, audiencia objetivo y activos de marca. Clyde se encarga del resto."
         },
         "generate": {
-          "title": "La IA Crea Variaciones de Anuncios",
-          "description": "Multiples creativos publicitarios generados en segundos — imagenes, video, texto y variaciones de formato para cada plataforma."
+          "title": "Clyde Crea Variaciones",
+          "description": "Múltiples creativos publicitarios generados en segundos. Imágenes, video, texto y variaciones de formato para cada plataforma."
         },
         "launch": {
-          "title": "Enviar a Plataformas Publicitarias",
-          "description": "Los anuncios aprobados se envian directamente a Meta Ads, Google Ads y LinkedIn Campaign Manager. Un clic para lanzar."
+          "title": "Clyde Lanza la Campaña",
+          "description": "Los anuncios aprobados se envían directamente a Meta Ads, Google Ads y LinkedIn Campaign Manager. Un clic."
         }
       }
     },
     "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
+      "heading": "Quién Trabaja con Clyde",
       "items": {
         "agencies": {
           "title": "Agencias de Marketing",
-          "description": "Produzca creativos publicitarios para todos sus clientes a escala. Sin mas cuellos de botella esperando a disenadores y redactores."
+          "description": "Clyde produce creativos publicitarios para todos tus clientes a escala. Sin más cuellos de botella esperando a diseñadores y redactores."
         },
         "performance": {
           "title": "Marketeros de Performance",
-          "description": "Genere cientos de variaciones de anuncios para pruebas rapidas. Encuentre creativos ganadores mas rapido con iteracion impulsada por IA."
+          "description": "Clyde genera cientos de variaciones de anuncios para testing rápido. Encuentra creativos ganadores más rápido."
         }
       }
     },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Genera 5 variaciones de anuncios Meta para la campaña de primavera",
+      "result_title": "Listo. 5 variaciones de anuncios listas para revisión.",
+      "result_description": "Creé 5 variaciones de anuncios Meta para la campaña de primavera: 3 anuncios de imagen (1080x1080, 1200x628, 9:16 Story) y 2 video ads cortos (15s Reel, 6s Story). Cada variación tiene 3 opciones de título y 2 variantes de CTA. Colores y tipografías de marca aplicados. Alcance estimado con presupuesto actual: 45.000-62.000 impresiones."
+    },
+    "pricing": {
+      "heading": "Precios",
+      "description": "La habilidad Ad Creator de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
+    },
     "cta": {
-      "title": "Active la Habilidad Ad Creator",
-      "subtitle": "Agregue creacion de anuncios impulsada por IA a su Empleado de Marketing IA y lance campanas mas rapido para cada cliente.",
-      "button": "Ver Precios"
+      "title": "Conoce a Clyde, Tu Ad Creator",
+      "subtitle": "Descubre cómo Clyde genera creativos publicitarios para clientes de agencia. Un briefing, variaciones ilimitadas, lanzamiento instantáneo.",
+      "button": "Conoce a Clyde"
     }
   },
   "skills-reporting": {
     "meta": {
-      "title": "Habilidad Reporting | Empleado de Marketing IA | FMai",
-      "description": "Dashboards multiplataforma y reportes semanales impulsados por IA para clientes de agencia. Analytics en tiempo real, deteccion de tendencias y seguimiento de ROI por su Empleado de Marketing IA."
+      "title": "Clyde Genera Tus Reportes | Empleado de Marketing IA | FMai",
+      "description": "Clyde construye dashboards en tiempo real, genera reportes semanales, detecta tendencias y rastrea ROI en todos los canales. Tu especialista IA en analytics."
     },
     "hero": {
-      "badge": "Habilidad Reporting & Analytics",
-      "title": "Reportes IA para los Clientes de Su Agencia",
-      "description": "Su Empleado de Marketing IA construye dashboards en tiempo real, genera reportes semanales, detecta tendencias y rastrea ROI en todos los canales para cada cliente."
+      "badge": "Reporting & Analytics",
+      "title": "Clyde Genera Tus Reportes",
+      "description": "Un analista dedica 4 horas por cliente a la semana en reportes. Clyde lo hace en 4 minutos. Dashboards en tiempo real, reportes semanales, detección de tendencias y seguimiento de ROI para cada cliente."
     },
     "features": {
-      "heading": "Que Hace la Habilidad Reporting",
+      "heading": "Lo Que Clyde Hace con los Datos",
       "items": {
         "dashboards": {
-          "title": "Dashboards de Cliente en Tiempo Real",
-          "description": "Dashboards en vivo mostrando KPIs en todos los canales. Comparta con clientes para total transparencia sobre el rendimiento de campanas."
+          "title": "Construye Dashboards en Vivo",
+          "description": "Clyde crea dashboards en tiempo real mostrando KPIs en todos los canales. Compártelos con clientes para total transparencia sobre el rendimiento."
         },
         "weekly": {
-          "title": "Reportes Semanales Automatizados",
-          "description": "Reportes de rendimiento semanales generados por IA enviados a su bandeja y a sus clientes. Sin extraccion manual de datos ni formateo."
+          "title": "Genera Reportes Semanales",
+          "description": "Clyde escribe y envía reportes de rendimiento semanales a tu bandeja y a la de tus clientes. Sin extracción manual de datos."
         },
         "trends": {
-          "title": "Deteccion de Tendencias y Alertas",
-          "description": "Su empleado IA detecta anomalias de rendimiento, tendencias emergentes y oportunidades de optimizacion antes que usted."
+          "title": "Detecta Tendencias y Anomalías",
+          "description": "Clyde identifica cambios de rendimiento, tendencias emergentes y oportunidades de optimización antes que tú."
         },
         "roi": {
-          "title": "Seguimiento de ROI y Atribucion",
-          "description": "Atribucion multi-touch en todos los canales. Sepa exactamente que campanas generan ingresos para cada cliente."
+          "title": "Rastrea ROI y Atribución",
+          "description": "Atribución multi-touch en todos los canales. Clyde sabe exactamente qué campañas generan ingresos para cada cliente."
         }
       }
     },
     "how_it_works": {
-      "heading": "Como Funciona",
+      "heading": "Cómo Trabajas con Clyde",
       "steps": {
         "integrate": {
-          "title": "Conectar Fuentes de Datos",
-          "description": "Vincule Google Analytics, plataformas publicitarias, cuentas sociales y CRM. Su empleado IA extrae datos de todas las fuentes automaticamente."
+          "title": "Conecta las Fuentes de Datos",
+          "description": "Vincula Google Analytics, plataformas publicitarias, cuentas sociales y CRM. Clyde extrae datos de todas las fuentes automáticamente."
         },
         "analyze": {
-          "title": "La IA Procesa Metricas",
-          "description": "Su empleado IA analiza datos de rendimiento, identifica patrones y genera insights — sin necesidad de analista."
+          "title": "Clyde Analiza Todo",
+          "description": "Clyde procesa datos de rendimiento, identifica patrones y genera insights. Sin necesidad de analista."
         },
         "report": {
-          "title": "Generar Reportes Automaticamente",
-          "description": "Reportes hermosos y con marca generados semanalmente y enviados a sus clientes. Los dashboards se actualizan en tiempo real."
+          "title": "Clyde Entrega los Reportes",
+          "description": "Reportes hermosos y con marca generados semanalmente. Los dashboards se actualizan en tiempo real. Los clientes se mantienen informados."
         }
       }
     },
     "use_cases": {
-      "heading": "Quien Usa Esta Habilidad",
+      "heading": "Quién Trabaja con Clyde",
       "items": {
         "agencies": {
           "title": "Agencias de Marketing",
-          "description": "Entregue reportes profesionales a cada cliente sin pasar horas en hojas de calculo. Su empleado IA se encarga del trabajo de datos."
+          "description": "Clyde entrega reportes profesionales a cada cliente. Sin más horas en hojas de cálculo. Él se encarga del trabajo de datos."
         },
         "managers": {
           "title": "Gerentes de Marketing",
-          "description": "Obtenga una imagen clara del rendimiento de campanas en todos los canales. Insights impulsados por IA le ayudan a tomar mejores decisiones mas rapido."
+          "description": "Visión clara del rendimiento de campañas en todos los canales. Los insights de Clyde te ayudan a tomar mejores decisiones más rápido."
         }
       }
     },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Genera un reporte de rendimiento semanal para todos los clientes activos",
+      "result_title": "Listo. 8 reportes de clientes generados y entregados.",
+      "result_description": "Compilé datos de rendimiento de Google Analytics, Meta Ads, LinkedIn e Instagram para los 8 clientes activos. Cada reporte incluye: resumen de tráfico, métricas de conversión, ROI de campañas, contenido de mejor rendimiento y recomendaciones de optimización. Reportes enviados a clientes y account managers. 3 anomalías marcadas para revisión."
+    },
+    "pricing": {
+      "heading": "Precios",
+      "description": "La habilidad Reporting de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
+    },
     "cta": {
-      "title": "Active la Habilidad Reporting",
-      "subtitle": "Agregue reportes impulsados por IA a su Empleado de Marketing IA y ofrezca analytics profesionales a cada cliente.",
-      "button": "Ver Precios"
+      "title": "Conoce a Clyde, Tu Analista de Reportes",
+      "subtitle": "Descubre cómo Clyde gestiona analytics para clientes de agencia. Reportes profesionales, cero trabajo manual.",
+      "button": "Conoce a Clyde"
     }
   },
   "founding-member": {
@@ -1787,186 +1719,140 @@
   },
   "skills-chatbot": {
     "meta": {
-      "title": "Habilidad Chatbot | Empleado de Marketing IA | FMai",
-      "description": "Despliegue chatbots IA inteligentes en los sitios web de sus clientes que califican leads, responden preguntas y convierten visitantes 24/7."
+      "title": "Clyde Despliega Tus Chatbots | Empleado de Marketing IA | FMai",
+      "description": "Clyde despliega chatbots inteligentes en los sitios web de tus clientes. Calificación de leads, atención al cliente, automatización de FAQ y reserva de citas. 24/7, white-label."
     },
     "hero": {
-      "badge": "Habilidad Chatbot",
-      "title": "Chatbots IA para los Clientes de Su Agencia",
-      "description": "Despliegue chatbots inteligentes en los sitios web de sus clientes que califican leads, responden preguntas y convierten visitantes 24/7. White-label y totalmente personalizables para cada cliente."
+      "badge": "Chatbot",
+      "title": "Clyde Despliega Tus Chatbots",
+      "description": "Un agente de soporte gestiona una conversación a la vez. Clyde gestiona miles. Despliega chatbots inteligentes en los sitios web de tus clientes que califican leads, responden preguntas y convierten visitantes. Todo el día, todos los días."
     },
     "use_cases": {
-      "heading": "Casos de Uso",
+      "heading": "Lo Que Hacen los Chatbots de Clyde",
       "items": {
         "customer_service": {
-          "title": "Servicio al Cliente",
-          "description": "Despliegue chatbots IA que gestionan consultas de clientes, resuelven problemas y escalan casos complejos a agentes humanos sin fricciones."
+          "title": "Gestionan Atención al Cliente",
+          "description": "Los chatbots de Clyde resuelven consultas de clientes, gestionan quejas y escalan casos complejos a agentes humanos. Sin fricciones."
         },
         "faq_automation": {
-          "title": "Automatizacion de FAQ",
-          "description": "Responda automaticamente las preguntas frecuentes con respuestas contextuales, reduciendo el volumen de tickets de soporte hasta un 70%."
+          "title": "Automatizan FAQs",
+          "description": "Clyde entrena chatbots con la base de conocimiento de tus clientes. Respuestas contextuales reducen tickets de soporte hasta un 70%."
         },
         "appointment_booking": {
-          "title": "Reserva de Citas",
-          "description": "Deje que los chatbots gestionen la programacion, reprogramacion y recordatorios \u2014 integrados directamente con los sistemas de calendario de sus clientes."
+          "title": "Agendan Citas",
+          "description": "Los chatbots de Clyde gestionan programación, reprogramación y recordatorios. Integrados con Calendly, Cal.com y Google Calendar."
         },
         "product_recommendations": {
-          "title": "Recomendaciones de Productos",
-          "description": "Sugerencias de productos impulsadas por IA basadas en el comportamiento del cliente, preferencias e historial de compras para aumentar las conversiones."
+          "title": "Recomiendan Productos",
+          "description": "Sugerencias de productos impulsadas por IA basadas en comportamiento y preferencias del cliente. Clyde impulsa conversiones mientras tú duermes."
         }
       }
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Despliega un chatbot de soporte en el sitio web del cliente X entrenado con su FAQ",
+      "result_title": "Listo. Chatbot en vivo en el sitio web del cliente X.",
+      "result_description": "Ingesté las 47 páginas de FAQ, documentación de producto y política de devoluciones del cliente X. Chatbot desplegado con los colores de marca, logo y tono del cliente. Ya está gestionando consultas. Primeras 24 horas: 89 conversaciones, 62 resueltas sin escalación (70% tasa de deflexión). Widget posicionado abajo a la derecha, responsive en móvil."
     },
     "pricing": {
       "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac497",
-          "period": "/mes",
-          "features_0": "1 chatbot",
-          "features_1": "Integracion web",
-          "features_2": "1.000 conversaciones/mes",
-          "features_3": "Analytics basicos"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac997",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "3 chatbots",
-          "features_1": "Web + WhatsApp",
-          "features_2": "5.000 conversaciones/mes",
-          "features_3": "Lead scoring y sincronizacion CRM",
-          "features_4": "Pruebas A/B"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1.997",
-          "period": "/mes",
-          "features_0": "Chatbots ilimitados",
-          "features_1": "Todas las plataformas",
-          "features_2": "Conversaciones ilimitadas",
-          "features_3": "Integraciones personalizadas",
-          "features_4": "Soporte dedicado"
-        }
-      }
+      "description": "La habilidad Chatbot de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Resultados Que Hablan",
+      "heading": "El Historial de Clyde",
       "metrics": {
         "inquiries": {
           "value": "70%",
           "label": "Consultas Gestionadas",
-          "description": "Resueltas automaticamente sin intervencion humana"
+          "description": "Clyde resuelve el 70% sin ayuda humana"
         },
         "availability": {
           "value": "24/7",
           "label": "Siempre Disponible",
-          "description": "Sin oportunidades perdidas, dia y noche"
+          "description": "Clyde nunca pierde un visitante, día o noche"
         },
         "response_time": {
           "value": "<2s",
           "label": "Tiempo de Respuesta",
-          "description": "Interaccion instantanea con cada visitante"
+          "description": "Clyde interactúa con cada visitante al instante"
         }
       }
     },
     "cta": {
-      "title": "Listo para Desplegar Chatbots IA?",
-      "subtitle": "Comience hoy a ofrecer soluciones de chatbot a los clientes de su agencia.",
-      "button": "Comenzar"
+      "title": "Conoce a Clyde, Tu Especialista en Chatbots",
+      "subtitle": "Descubre cómo Clyde despliega chatbots para clientes de agencia. Una demo y querrás uno en cada sitio de cliente.",
+      "button": "Conoce a Clyde"
     }
   },
   "skills-email": {
     "meta": {
-      "title": "Habilidad Email | Empleado de Marketing IA | FMai",
-      "description": "Campanas de email automatizadas, seguimientos inteligentes y gestion de inbox impulsada por IA para los clientes de su agencia."
+      "title": "Clyde Gestiona Tu Email | Empleado de Marketing IA | FMai",
+      "description": "Clyde ejecuta campañas de email, escribe secuencias de seguimiento, genera newsletters y gestiona bandejas de entrada. Tu especialista IA en email marketing."
     },
     "hero": {
-      "badge": "Habilidad Email",
-      "title": "Gestion de Email IA para los Clientes de Su Agencia",
-      "description": "Campanas de email automatizadas, seguimientos inteligentes y gestion de inbox impulsada por IA. Entregue resultados para sus clientes sin el trabajo manual."
+      "badge": "Email",
+      "title": "Clyde Gestiona Tu Email",
+      "description": "Un marketero dedica 6 horas a escribir una secuencia de email. Clyde la escribe en 6 minutos. Gestiona campañas, seguimientos, newsletters y bandejas de entrada para cada cliente."
     },
     "use_cases": {
-      "heading": "Casos de Uso",
+      "heading": "Lo Que Clyde Hace con el Email",
       "items": {
         "automated_campaigns": {
-          "title": "Campanas Automatizadas",
-          "description": "Secuencias de email escritas por IA basadas en segmentos de audiencia. Personalizadas a escala con contenido dinamico que se adapta a cada destinatario."
+          "title": "Ejecuta Campañas Automatizadas",
+          "description": "Clyde escribe secuencias de email basadas en segmentos de audiencia. Personalizadas a escala con contenido dinámico que se adapta a cada destinatario."
         },
         "smart_followups": {
-          "title": "Seguimientos Inteligentes",
-          "description": "Emails de seguimiento automaticos activados por el comportamiento del lead. No pierda ningun lead caliente gracias al timing y mensajes inteligentes."
+          "title": "Envía Seguimientos Inteligentes",
+          "description": "Clyde dispara emails de seguimiento basados en el comportamiento del lead. Nunca pierde un lead caliente. Timing inteligente, mensajes personalizados."
         },
         "newsletter_generation": {
-          "title": "Generacion de Newsletters",
-          "description": "Newsletters semanales o mensuales compilados desde su calendario de contenido. Curados, escritos y programados automaticamente."
+          "title": "Construye Newsletters",
+          "description": "Clyde compila newsletters semanales o mensuales desde tu calendario de contenido. Curados, escritos y programados automáticamente."
         },
         "inbox_management": {
-          "title": "Gestion de Inbox",
-          "description": "Enrutamiento inteligente, auto-respuestas y marcado de prioridades. Mantenga los inboxes de los clientes organizados y los tiempos de respuesta bajo control."
+          "title": "Gestiona Bandejas de Entrada",
+          "description": "Enrutamiento inteligente, auto-respuestas y marcado de prioridades. Clyde mantiene las bandejas de los clientes organizadas y los tiempos de respuesta bajo control."
         }
       }
+    },
+    "task_demo": {
+      "heading": "Mira a Clyde en Acción",
+      "command": "Envía una secuencia de seguimiento a todos los no-shows de demos de esta semana",
+      "result_title": "Listo. Secuencia de 3 emails creada y enviando.",
+      "result_description": "Identifiqué 14 no-shows de demos de esta semana. Creé una secuencia de reactivación de 3 emails: Email 1 (enviado ahora) reconoce la demo perdida con un enlace de reprogramación en un clic. Email 2 (día 3) comparte un caso de estudio relevante. Email 3 (día 7) ofrece un formato alternativo (video walkthrough asíncrono). Líneas de asunto con A/B testing. Seguimiento de apertura activado."
     },
     "pricing": {
       "heading": "Precios",
-      "tiers": {
-        "starter": {
-          "name": "Starter",
-          "price": "\u20ac397",
-          "period": "/mes",
-          "features_0": "1.000 emails/mes",
-          "features_1": "1 cuenta de cliente",
-          "features_2": "Plantillas de campana",
-          "features_3": "Analytics basicos"
-        },
-        "growth": {
-          "name": "Growth",
-          "price": "\u20ac797",
-          "period": "/mes",
-          "badge": "Mas Popular",
-          "features_0": "5.000 emails/mes",
-          "features_1": "5 cuentas de cliente",
-          "features_2": "Seguimientos inteligentes",
-          "features_3": "Pruebas A/B",
-          "features_4": "Integracion CRM"
-        },
-        "scale": {
-          "name": "Scale",
-          "price": "\u20ac1.497",
-          "period": "/mes",
-          "features_0": "Emails ilimitados",
-          "features_1": "Clientes ilimitados",
-          "features_2": "Gestion de inbox completa",
-          "features_3": "Workflows personalizados",
-          "features_4": "Soporte dedicado"
-        }
-      }
+      "description": "La habilidad Email de Clyde está incluida en tu suscripción de nivel de agente.",
+      "cta": "Ver Precios",
+      "cta_link": "/pricing"
     },
     "trust": {
-      "heading": "Resultados Que Hablan",
+      "heading": "El Historial de Clyde",
       "metrics": {
         "open_rates": {
           "value": "45%",
           "label": "Mayor Tasa de Apertura",
-          "description": "Lineas de asunto y horarios de envio optimizados por IA"
+          "description": "Clyde optimiza líneas de asunto y horarios de envío"
         },
         "replies": {
           "value": "3x",
-          "label": "Mas Respuestas",
-          "description": "Contenido personalizado que conecta"
+          "label": "Más Respuestas",
+          "description": "El contenido personalizado de Clyde conecta"
         },
         "sending": {
           "value": "24/7",
-          "label": "Envio",
-          "description": "Entrega automatizada en horarios optimos"
+          "label": "Siempre Enviando",
+          "description": "Clyde entrega siempre en el momento óptimo"
         }
       }
     },
     "cta": {
-      "title": "Listo para Automatizar el Email?",
-      "subtitle": "Comience hoy a ofrecer soluciones de email impulsadas por IA a los clientes de su agencia.",
-      "button": "Comenzar"
+      "title": "Conoce a Clyde, Tu Especialista en Email",
+      "subtitle": "Descubre cómo Clyde gestiona email marketing para clientes de agencia. Campañas, seguimientos, newsletters. Cero trabajo manual.",
+      "button": "Conoce a Clyde"
     }
   }
 }
