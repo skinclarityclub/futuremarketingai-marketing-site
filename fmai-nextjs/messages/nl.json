@@ -548,7 +548,7 @@
         "brand_name": "Future Marketing AI",
         "tagline": "De AI Marketing Medewerker voor jouw bureau — content, voice, ads, social, leads en rapportages in een altijd-aan systeem.",
         "copyright": "\u00a9 {year} Future Marketing AI. Alle rechten voorbehouden.",
-        "sections": { "services": "Skills", "company": "Bedrijf", "resources": "Bronnen" },
+        "sections": { "skills": "Skills", "company": "Bedrijf", "resources": "Bronnen" },
         "nav": {
           "content_creator": "Content Creator",
           "voice_agent": "Voice Agent",

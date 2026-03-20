@@ -548,7 +548,7 @@
         "brand_name": "Future Marketing AI",
         "tagline": "El Empleado de Marketing IA para su agencia — contenido, voz, anuncios, social, leads y reportes en un sistema siempre activo.",
         "copyright": "\u00a9 {year} Future Marketing AI. Todos los derechos reservados.",
-        "sections": { "services": "Habilidades", "company": "Empresa", "resources": "Recursos" },
+        "sections": { "skills": "Habilidades", "company": "Empresa", "resources": "Recursos" },
         "nav": {
           "content_creator": "Creador de Contenido",
           "voice_agent": "Agente de Voz",
