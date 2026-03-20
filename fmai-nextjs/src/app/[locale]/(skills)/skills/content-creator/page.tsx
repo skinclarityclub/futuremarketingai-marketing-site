@@ -84,6 +84,66 @@ export default async function ContentCreatorPage({
         </div>
       </section>
 
+      {/* Social Proof */}
+      <section className="py-20 px-6 lg:px-12">
+        <SocialProof
+          quote="We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved."
+          author="Marketing Director"
+          role="E-commerce Agency"
+          company="Amsterdam"
+        />
+      </section>
+
+      {/* Vision Timeline */}
+      <VisionTimeline />
+
+      {/* AI Feature Showcase */}
+      <section aria-labelledby="ai-features" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="ai-features">The AI Content Engine</SectionHeading>
+          <div className="mt-10">
+            <FeatureShowcase
+              features={[
+                {
+                  title: 'SEO Research',
+                  description:
+                    'Automatically identifies high-value keywords and content gaps in your niche.',
+                  icon: '\uD83D\uDD0D',
+                },
+                {
+                  title: 'Content Generation',
+                  description:
+                    'Writes blog posts, social captions, and newsletters in your brand voice.',
+                  icon: '\u270D\uFE0F',
+                },
+                {
+                  title: 'Visual Creation',
+                  description: 'Generates on-brand images, carousels, and video thumbnails.',
+                  icon: '\uD83C\uDFA8',
+                },
+                {
+                  title: 'Multi-Channel Publishing',
+                  description:
+                    'Publishes to WordPress, LinkedIn, Instagram, and more — automatically.',
+                  icon: '\uD83D\uDE80',
+                },
+                {
+                  title: 'Performance Analytics',
+                  description: 'Tracks engagement, conversions, and ROI across all channels.',
+                  icon: '\uD83D\uDCCA',
+                },
+                {
+                  title: 'AI Orchestrator',
+                  description:
+                    'Coordinates all modules, learns from results, and continuously improves output.',
+                  icon: '\uD83E\uDDE0',
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section aria-labelledby="features" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
@@ -146,56 +206,6 @@ export default async function ContentCreatorPage({
         </div>
       </section>
 
-      {/* Vision Timeline */}
-      <VisionTimeline />
-
-      {/* AI Feature Showcase */}
-      <section aria-labelledby="ai-features" className="py-20 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeading id="ai-features">The AI Content Engine</SectionHeading>
-          <div className="mt-10">
-            <FeatureShowcase
-              features={[
-                {
-                  title: 'SEO Research',
-                  description:
-                    'Automatically identifies high-value keywords and content gaps in your niche.',
-                  icon: '\uD83D\uDD0D',
-                },
-                {
-                  title: 'Content Generation',
-                  description:
-                    'Writes blog posts, social captions, and newsletters in your brand voice.',
-                  icon: '\u270D\uFE0F',
-                },
-                {
-                  title: 'Visual Creation',
-                  description: 'Generates on-brand images, carousels, and video thumbnails.',
-                  icon: '\uD83C\uDFA8',
-                },
-                {
-                  title: 'Multi-Channel Publishing',
-                  description:
-                    'Publishes to WordPress, LinkedIn, Instagram, and more — automatically.',
-                  icon: '\uD83D\uDE80',
-                },
-                {
-                  title: 'Performance Analytics',
-                  description: 'Tracks engagement, conversions, and ROI across all channels.',
-                  icon: '\uD83D\uDCCA',
-                },
-                {
-                  title: 'AI Orchestrator',
-                  description:
-                    'Coordinates all modules, learns from results, and continuously improves output.',
-                  icon: '\uD83E\uDDE0',
-                },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Product Media */}
       <section className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
@@ -207,16 +217,6 @@ export default async function ContentCreatorPage({
             />
           </div>
         </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-20 px-6 lg:px-12">
-        <SocialProof
-          quote="We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved."
-          author="Marketing Director"
-          role="E-commerce Agency"
-          company="Amsterdam"
-        />
       </section>
 
       {/* Pricing */}

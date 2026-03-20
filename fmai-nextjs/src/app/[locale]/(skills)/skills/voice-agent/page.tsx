@@ -79,6 +79,9 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
         </div>
       </section>
 
+      {/* Voice Demo */}
+      <VoiceDemoSection />
+
       {/* Features */}
       <section aria-labelledby="features" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
@@ -140,9 +143,6 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
-
-      {/* Voice Demo */}
-      <VoiceDemoSection />
 
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">

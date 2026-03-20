@@ -83,6 +83,14 @@ export default async function LeadQualifierPage({
         </div>
       </section>
 
+      {/* Demo Playground */}
+      <DemoPlayground />
+
+      {/* Multi-Platform Showcase */}
+      <section className="py-20 px-6 lg:px-12">
+        <MultiPlatformShowcase />
+      </section>
+
       {/* Features */}
       <section aria-labelledby="features" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
@@ -143,14 +151,6 @@ export default async function LeadQualifierPage({
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Demo Playground */}
-      <DemoPlayground />
-
-      {/* Multi-Platform Showcase */}
-      <section className="py-20 px-6 lg:px-12">
-        <MultiPlatformShowcase />
       </section>
 
       {/* Pricing */}
