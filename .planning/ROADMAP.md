@@ -129,6 +129,27 @@ Plans:
 - [x] 05-02-PLAN.md — ICP checklist + target tracking CSV + outreach templates + founding member agreement (Wave 1)
 - [ ] 05-03-PLAN.md — Demo call script + launch checklist + GTM execution kickoff (Wave 2)
 
+### Phase 6: Vite Feature Parity
+
+**Goal**: All 4 service pages (chatbots, voice agents, marketing machine, automations) have full interactive demo and UI section parity with the original Vite website, and the language switcher is enhanced with flags and analytics
+**Depends on**: Phase 1 (website rebrand must be complete)
+**Requirements**: WEB-01, WEB-03
+**Success Criteria** (what must be TRUE):
+
+1. Language switcher shows flag emojis, full language names, animated checkmark, and fires gtag analytics event
+2. Chatbots page has 4-persona DemoPlayground, MultiPlatformShowcase, ProgressiveCTA, pricing tiers, and trust metrics
+3. Voice agents page has interactive VoiceDemoSection with phone mockup, VoiceDemoFAB, pricing tiers, trust metrics, and enhanced partnership card
+4. Marketing machine page has VisionTimeline, FeatureShowcase with visual hierarchy, SocialProof, ProductMedia, and pricing tiers
+5. Automations page has icon-enhanced automation grid, trust metrics, ProductMedia, and pricing tiers
+   **Plans**: 4 plans
+
+Plans:
+
+- [ ] 06-01-PLAN.md — Language switcher enhancement + shared reusable components (TrustMetrics, PricingTiers, SocialProof, ProductMedia) (Wave 1)
+- [ ] 06-02-PLAN.md — Chatbots page: DemoPlayground 4th persona + MultiPlatformShowcase + ProgressiveCTA + pricing/trust (Wave 2)
+- [ ] 06-03-PLAN.md — Voice agents page: VoiceDemoSection + VoiceDemoFAB + useElevenLabsCall + pricing/trust (Wave 2)
+- [ ] 06-04-PLAN.md — Marketing machine + automations pages: VisionTimeline + FeatureShowcase + pricing/trust/icons (Wave 2)
+
 ## Progress
 
 **Execution Order:**
@@ -145,3 +166,4 @@ Phases execute in parallel waves:
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
 | 4. Compliance        | 2/2            | Complete    | 2026-03-20 |
 | 5. Go-to-Market      | 2/3            | In progress | -          |
+| 6. Vite Feature Par. | 0/4            | Not started | -          |
