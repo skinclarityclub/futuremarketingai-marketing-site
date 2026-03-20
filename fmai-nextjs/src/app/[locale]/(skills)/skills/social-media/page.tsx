@@ -83,10 +83,10 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ lo
       {/* Social Proof */}
       <section className="py-20 px-6 lg:px-12">
         <SocialProof
-          quote="FMai's Social Media skill manages all our client accounts. We scaled from 5 to 20 clients without adding headcount."
-          author="Agency Owner"
-          role="Digital Marketing Agency"
-          company="Rotterdam"
+          quote={t('social_proof.quote')}
+          author={t('social_proof.author')}
+          role={t('social_proof.role')}
+          company={t('social_proof.company')}
         />
       </section>
 
@@ -115,44 +115,38 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ lo
       {/* AI Feature Showcase */}
       <section aria-labelledby="ai-features" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="ai-features">The AI Social Media Engine</SectionHeading>
+          <SectionHeading id="ai-features">{t('showcase.heading')}</SectionHeading>
           <div className="mt-10">
             <FeatureShowcase
               features={[
                 {
-                  title: 'Smart Scheduling',
-                  description:
-                    'AI-optimized posting times across all platforms for maximum reach and engagement.',
+                  title: t('showcase.items.smart_scheduling.title'),
+                  description: t('showcase.items.smart_scheduling.description'),
                   icon: '\uD83D\uDCC5',
                 },
                 {
-                  title: 'Analytics Dashboard',
-                  description:
-                    'Real-time performance tracking across all social channels with actionable insights.',
+                  title: t('showcase.items.analytics_dashboard.title'),
+                  description: t('showcase.items.analytics_dashboard.description'),
                   icon: '\uD83D\uDCCA',
                 },
                 {
-                  title: 'Engagement Automation',
-                  description:
-                    'Auto-respond to comments, DMs, and mentions with on-brand, context-aware replies.',
+                  title: t('showcase.items.engagement_automation.title'),
+                  description: t('showcase.items.engagement_automation.description'),
                   icon: '\uD83D\uDCAC',
                 },
                 {
-                  title: 'Content Repurposing',
-                  description:
-                    'Automatically adapt content for each platform — blog to carousel, video to reel, post to story.',
+                  title: t('showcase.items.content_repurposing.title'),
+                  description: t('showcase.items.content_repurposing.description'),
                   icon: '\uD83D\uDD04',
                 },
                 {
-                  title: 'Trend Monitoring',
-                  description:
-                    "Stay ahead with AI-powered trend detection and content suggestions based on what's working.",
+                  title: t('showcase.items.trend_monitoring.title'),
+                  description: t('showcase.items.trend_monitoring.description'),
                   icon: '\uD83D\uDD25',
                 },
                 {
-                  title: 'Competitor Tracking',
-                  description:
-                    'Monitor competitor activity, benchmark performance, and identify content gaps.',
+                  title: t('showcase.items.competitor_tracking.title'),
+                  description: t('showcase.items.competitor_tracking.description'),
                   icon: '\uD83D\uDD0D',
                 },
               ]}
@@ -207,45 +201,45 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ lo
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
           <div className="mt-10">
             <PricingTiers
               tiers={[
                 {
-                  name: 'Starter',
-                  price: '\u20AC497',
-                  period: '/mo',
+                  name: t('pricing.tiers.starter.name'),
+                  price: t('pricing.tiers.starter.price'),
+                  period: t('pricing.tiers.starter.period'),
                   features: [
-                    '3 platforms',
-                    '60 posts/mo',
-                    'Basic scheduling',
-                    'Performance reports',
+                    t('pricing.tiers.starter.features_0'),
+                    t('pricing.tiers.starter.features_1'),
+                    t('pricing.tiers.starter.features_2'),
+                    t('pricing.tiers.starter.features_3'),
                   ],
                 },
                 {
-                  name: 'Growth',
-                  price: '\u20AC997',
-                  period: '/mo',
+                  name: t('pricing.tiers.growth.name'),
+                  price: t('pricing.tiers.growth.price'),
+                  period: t('pricing.tiers.growth.period'),
                   highlighted: true,
-                  badge: 'Most Popular',
+                  badge: t('pricing.tiers.growth.badge'),
                   features: [
-                    '6 platforms',
-                    '150 posts/mo',
-                    'AI-optimized scheduling',
-                    'Engagement automation',
-                    'Competitor tracking',
+                    t('pricing.tiers.growth.features_0'),
+                    t('pricing.tiers.growth.features_1'),
+                    t('pricing.tiers.growth.features_2'),
+                    t('pricing.tiers.growth.features_3'),
+                    t('pricing.tiers.growth.features_4'),
                   ],
                 },
                 {
-                  name: 'Scale',
-                  price: '\u20AC1,997',
-                  period: '/mo',
+                  name: t('pricing.tiers.scale.name'),
+                  price: t('pricing.tiers.scale.price'),
+                  period: t('pricing.tiers.scale.period'),
                   features: [
-                    'Unlimited platforms',
-                    'Unlimited posts',
-                    'Full automation suite',
-                    'Custom workflows',
-                    'Dedicated support',
+                    t('pricing.tiers.scale.features_0'),
+                    t('pricing.tiers.scale.features_1'),
+                    t('pricing.tiers.scale.features_2'),
+                    t('pricing.tiers.scale.features_3'),
+                    t('pricing.tiers.scale.features_4'),
                   ],
                 },
               ]}
@@ -257,21 +251,25 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ lo
       {/* Trust Metrics */}
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <SectionHeading id="trust">{t('trust.heading')}</SectionHeading>
           <div className="mt-10">
             <TrustMetrics
               metrics={[
                 {
-                  value: '2x',
-                  label: 'Engagement',
-                  description: 'Average increase in social engagement',
+                  value: t('trust.metrics.engagement.value'),
+                  label: t('trust.metrics.engagement.label'),
+                  description: t('trust.metrics.engagement.description'),
                 },
                 {
-                  value: '15h',
-                  label: 'Saved Per Week',
-                  description: 'Time saved on social media management',
+                  value: t('trust.metrics.time_saved.value'),
+                  label: t('trust.metrics.time_saved.label'),
+                  description: t('trust.metrics.time_saved.description'),
                 },
-                { value: '6+', label: 'Platforms', description: 'Managed from a single dashboard' },
+                {
+                  value: t('trust.metrics.platforms.value'),
+                  label: t('trust.metrics.platforms.label'),
+                  description: t('trust.metrics.platforms.description'),
+                },
               ]}
             />
           </div>

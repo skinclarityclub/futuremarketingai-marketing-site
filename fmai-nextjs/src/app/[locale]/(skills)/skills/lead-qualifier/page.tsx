@@ -146,45 +146,45 @@ export default async function LeadQualifierPage({
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
           <div className="mt-10">
             <PricingTiers
               tiers={[
                 {
-                  name: 'Starter',
-                  price: '\u20AC497',
-                  period: '/mo',
+                  name: t('pricing.tiers.starter.name'),
+                  price: t('pricing.tiers.starter.price'),
+                  period: t('pricing.tiers.starter.period'),
                   features: [
-                    '1 chatbot persona',
-                    'Website embed',
-                    '1,000 conversations/mo',
-                    'Basic analytics',
+                    t('pricing.tiers.starter.features_0'),
+                    t('pricing.tiers.starter.features_1'),
+                    t('pricing.tiers.starter.features_2'),
+                    t('pricing.tiers.starter.features_3'),
                   ],
                 },
                 {
-                  name: 'Growth',
-                  price: '\u20AC997',
-                  period: '/mo',
+                  name: t('pricing.tiers.growth.name'),
+                  price: t('pricing.tiers.growth.price'),
+                  period: t('pricing.tiers.growth.period'),
                   highlighted: true,
-                  badge: 'Most Popular',
+                  badge: t('pricing.tiers.growth.badge'),
                   features: [
-                    '3 chatbot personas',
-                    'Website + WhatsApp',
-                    '5,000 conversations/mo',
-                    'Lead scoring & CRM sync',
-                    'A/B testing',
+                    t('pricing.tiers.growth.features_0'),
+                    t('pricing.tiers.growth.features_1'),
+                    t('pricing.tiers.growth.features_2'),
+                    t('pricing.tiers.growth.features_3'),
+                    t('pricing.tiers.growth.features_4'),
                   ],
                 },
                 {
-                  name: 'Scale',
-                  price: '\u20AC1,997',
-                  period: '/mo',
+                  name: t('pricing.tiers.scale.name'),
+                  price: t('pricing.tiers.scale.price'),
+                  period: t('pricing.tiers.scale.period'),
                   features: [
-                    'Unlimited personas',
-                    'All platforms',
-                    'Unlimited conversations',
-                    'Custom integrations',
-                    'Dedicated support',
+                    t('pricing.tiers.scale.features_0'),
+                    t('pricing.tiers.scale.features_1'),
+                    t('pricing.tiers.scale.features_2'),
+                    t('pricing.tiers.scale.features_3'),
+                    t('pricing.tiers.scale.features_4'),
                   ],
                 },
               ]}
@@ -196,21 +196,25 @@ export default async function LeadQualifierPage({
       {/* Trust Metrics */}
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <SectionHeading id="trust">{t('trust.heading')}</SectionHeading>
           <div className="mt-10">
             <TrustMetrics
               metrics={[
                 {
-                  value: '3x',
-                  label: 'More Qualified Leads',
-                  description: 'vs. traditional contact forms',
+                  value: t('trust.metrics.qualified_leads.value'),
+                  label: t('trust.metrics.qualified_leads.label'),
+                  description: t('trust.metrics.qualified_leads.description'),
                 },
                 {
-                  value: '24/7',
-                  label: 'Always Available',
-                  description: 'No missed opportunities',
+                  value: t('trust.metrics.availability.value'),
+                  label: t('trust.metrics.availability.label'),
+                  description: t('trust.metrics.availability.description'),
                 },
-                { value: '<2s', label: 'Response Time', description: 'Instant engagement' },
+                {
+                  value: t('trust.metrics.response_time.value'),
+                  label: t('trust.metrics.response_time.label'),
+                  description: t('trust.metrics.response_time.description'),
+                },
               ]}
             />
           </div>

@@ -147,45 +147,45 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
           <div className="mt-10">
             <PricingTiers
               tiers={[
                 {
-                  name: 'Starter',
-                  price: '\u20AC597',
-                  period: '/mo',
+                  name: t('pricing.tiers.starter.name'),
+                  price: t('pricing.tiers.starter.price'),
+                  period: t('pricing.tiers.starter.period'),
                   features: [
-                    '1 voice agent',
-                    '500 minutes/mo',
-                    'Inbound calls',
-                    'Basic call analytics',
+                    t('pricing.tiers.starter.features_0'),
+                    t('pricing.tiers.starter.features_1'),
+                    t('pricing.tiers.starter.features_2'),
+                    t('pricing.tiers.starter.features_3'),
                   ],
                 },
                 {
-                  name: 'Growth',
-                  price: '\u20AC1,197',
-                  period: '/mo',
+                  name: t('pricing.tiers.growth.name'),
+                  price: t('pricing.tiers.growth.price'),
+                  period: t('pricing.tiers.growth.period'),
                   highlighted: true,
-                  badge: 'Most Popular',
+                  badge: t('pricing.tiers.growth.badge'),
                   features: [
-                    '3 voice agents',
-                    '2,000 minutes/mo',
-                    'Inbound + outbound',
-                    'CRM integration',
-                    'Call recording & transcripts',
+                    t('pricing.tiers.growth.features_0'),
+                    t('pricing.tiers.growth.features_1'),
+                    t('pricing.tiers.growth.features_2'),
+                    t('pricing.tiers.growth.features_3'),
+                    t('pricing.tiers.growth.features_4'),
                   ],
                 },
                 {
-                  name: 'Scale',
-                  price: '\u20AC2,497',
-                  period: '/mo',
+                  name: t('pricing.tiers.scale.name'),
+                  price: t('pricing.tiers.scale.price'),
+                  period: t('pricing.tiers.scale.period'),
                   features: [
-                    'Unlimited agents',
-                    'Unlimited minutes',
-                    'Custom voice cloning',
-                    'Multi-language support',
-                    'Dedicated support',
+                    t('pricing.tiers.scale.features_0'),
+                    t('pricing.tiers.scale.features_1'),
+                    t('pricing.tiers.scale.features_2'),
+                    t('pricing.tiers.scale.features_3'),
+                    t('pricing.tiers.scale.features_4'),
                   ],
                 },
               ]}
@@ -197,17 +197,25 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
       {/* Trust Metrics */}
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <SectionHeading id="trust">{t('trust.heading')}</SectionHeading>
           <div className="mt-10">
             <TrustMetrics
               metrics={[
                 {
-                  value: '<1s',
-                  label: 'Response Time',
-                  description: 'Faster than any human agent',
+                  value: t('trust.metrics.response_time.value'),
+                  label: t('trust.metrics.response_time.label'),
+                  description: t('trust.metrics.response_time.description'),
                 },
-                { value: '24/7', label: 'Availability', description: 'Never miss a call again' },
-                { value: '85%', label: 'Resolution Rate', description: 'Without human handoff' },
+                {
+                  value: t('trust.metrics.availability.value'),
+                  label: t('trust.metrics.availability.label'),
+                  description: t('trust.metrics.availability.description'),
+                },
+                {
+                  value: t('trust.metrics.resolution.value'),
+                  label: t('trust.metrics.resolution.label'),
+                  description: t('trust.metrics.resolution.description'),
+                },
               ]}
             />
           </div>

@@ -1090,6 +1090,81 @@
         }
       }
     },
+    "social_proof": {
+      "quote": "Reemplazamos un equipo de contenido de 3 personas con el Content Creator de FMai. La produccion se triplico y la calidad realmente mejoro.",
+      "author": "Director de Marketing",
+      "role": "Agencia de E-commerce",
+      "company": "Amsterdam"
+    },
+    "showcase": {
+      "heading": "El Motor de Contenido IA",
+      "items": {
+        "seo_research": {
+          "title": "Investigacion SEO",
+          "description": "Identifica automaticamente palabras clave de alto valor y brechas de contenido en su nicho."
+        },
+        "content_generation": {
+          "title": "Generacion de Contenido",
+          "description": "Escribe posts de blog, captions para redes sociales y newsletters en la voz de su marca."
+        },
+        "visual_creation": {
+          "title": "Creacion Visual",
+          "description": "Genera imagenes on-brand, carruseles y miniaturas de video."
+        },
+        "multi_channel": {
+          "title": "Publicacion Multicanal",
+          "description": "Publica en WordPress, LinkedIn, Instagram y mas \u2014 automaticamente."
+        },
+        "performance_analytics": {
+          "title": "Analytics de Rendimiento",
+          "description": "Rastrea engagement, conversiones y ROI en todos los canales."
+        },
+        "ai_orchestrator": {
+          "title": "Orquestador IA",
+          "description": "Coordina todos los modulos, aprende de los resultados y mejora continuamente la produccion."
+        }
+      }
+    },
+    "product_media": {
+      "heading": "Vea en Accion",
+      "title": "Demo del Content Creator",
+      "description": "Vea como el Content Creator IA investiga, escribe y publica un post de blog completo en menos de 5 minutos."
+    },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mes",
+          "features_0": "20 posts de blog/mes",
+          "features_1": "60 posts sociales/mes",
+          "features_2": "1 voz de marca",
+          "features_3": "Integracion WordPress"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "50 posts de blog/mes",
+          "features_1": "150 posts sociales/mes",
+          "features_2": "3 voces de marca",
+          "features_3": "Publicacion multiplataforma",
+          "features_4": "Optimizacion SEO"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mes",
+          "features_0": "Contenido ilimitado",
+          "features_1": "Voces de marca ilimitadas",
+          "features_2": "Todas las plataformas",
+          "features_3": "Workflows personalizados",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
     "cta": {
       "title": "Active la Habilidad Content Creator",
       "subtitle": "Agregue creacion de contenido impulsada por IA a su Empleado de Marketing IA y comience a producir contenido para todos sus clientes.",
@@ -1157,6 +1232,61 @@
         }
       }
     },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac597",
+          "period": "/mes",
+          "features_0": "1 agente de voz",
+          "features_1": "500 minutos/mes",
+          "features_2": "Llamadas entrantes",
+          "features_3": "Analytics basicos de llamadas"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac1.197",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "3 agentes de voz",
+          "features_1": "2.000 minutos/mes",
+          "features_2": "Entrantes + salientes",
+          "features_3": "Integracion CRM",
+          "features_4": "Grabacion de llamadas y transcripciones"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac2.497",
+          "period": "/mes",
+          "features_0": "Agentes ilimitados",
+          "features_1": "Minutos ilimitados",
+          "features_2": "Clonacion de voz personalizada",
+          "features_3": "Soporte multilingue",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultados Que Hablan",
+      "metrics": {
+        "response_time": {
+          "value": "<1s",
+          "label": "Tiempo de Respuesta",
+          "description": "Mas rapido que cualquier agente humano"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Disponibilidad",
+          "description": "No pierda mas llamadas"
+        },
+        "resolution": {
+          "value": "85%",
+          "label": "Tasa de Resolucion",
+          "description": "Sin traspaso humano"
+        }
+      }
+    },
     "cta": {
       "title": "Active la Habilidad Voice Agent",
       "subtitle": "Agregue llamadas telefonicas impulsadas por IA a su Empleado de Marketing IA y no pierda mas ningun lead.",
@@ -1221,6 +1351,61 @@
         "saas": {
           "title": "Empresas SaaS",
           "description": "Califique registros de prueba gratuita y solicitudes de demo automaticamente. Enrute prospectos empresariales a ventas, el resto va self-serve."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mes",
+          "features_0": "1 persona de chatbot",
+          "features_1": "Integracion web",
+          "features_2": "1.000 conversaciones/mes",
+          "features_3": "Analytics basicos"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "3 personas de chatbot",
+          "features_1": "Web + WhatsApp",
+          "features_2": "5.000 conversaciones/mes",
+          "features_3": "Lead scoring y sincronizacion CRM",
+          "features_4": "Pruebas A/B"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mes",
+          "features_0": "Personas ilimitadas",
+          "features_1": "Todas las plataformas",
+          "features_2": "Conversaciones ilimitadas",
+          "features_3": "Integraciones personalizadas",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultados Que Hablan",
+      "metrics": {
+        "qualified_leads": {
+          "value": "3x",
+          "label": "Mas Leads Calificados",
+          "description": "vs. formularios de contacto tradicionales"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Siempre Disponible",
+          "description": "Sin oportunidades perdidas"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Tiempo de Respuesta",
+          "description": "Engagement instantaneo"
         }
       }
     },
@@ -1295,6 +1480,96 @@
       "title": "Active la Habilidad Social Media",
       "subtitle": "Agregue gestion de redes sociales impulsada por IA a su Empleado de Marketing IA y escale la presencia social de sus clientes.",
       "button": "Ver Precios"
+    },
+    "social_proof": {
+      "quote": "La habilidad Social Media de FMai gestiona todas las cuentas de nuestros clientes. Escalamos de 5 a 20 clientes sin contratar mas personal.",
+      "author": "Propietario de Agencia",
+      "role": "Agencia de Marketing Digital",
+      "company": "Rotterdam"
+    },
+    "showcase": {
+      "heading": "El Motor de Redes Sociales IA",
+      "items": {
+        "smart_scheduling": {
+          "title": "Programacion Inteligente",
+          "description": "Horarios de publicacion optimizados por IA en todas las plataformas para maximo alcance y engagement."
+        },
+        "analytics_dashboard": {
+          "title": "Dashboard de Analytics",
+          "description": "Seguimiento de rendimiento en tiempo real en todos los canales sociales con insights accionables."
+        },
+        "engagement_automation": {
+          "title": "Automatizacion de Engagement",
+          "description": "Respuestas automaticas a comentarios, DMs y menciones con respuestas contextuales y on-brand."
+        },
+        "content_repurposing": {
+          "title": "Reutilizacion de Contenido",
+          "description": "Adapte contenido automaticamente para cada plataforma \u2014 blog a carrusel, video a reel, post a story."
+        },
+        "trend_monitoring": {
+          "title": "Monitoreo de Tendencias",
+          "description": "Mantengase adelante con deteccion de tendencias impulsada por IA y sugerencias de contenido basadas en lo que funciona."
+        },
+        "competitor_tracking": {
+          "title": "Seguimiento de Competidores",
+          "description": "Monitoree la actividad de competidores, compare rendimiento e identifique brechas de contenido."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Precios",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mes",
+          "features_0": "3 plataformas",
+          "features_1": "60 posts/mes",
+          "features_2": "Programacion basica",
+          "features_3": "Informes de rendimiento"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mes",
+          "badge": "Mas Popular",
+          "features_0": "6 plataformas",
+          "features_1": "150 posts/mes",
+          "features_2": "Programacion optimizada por IA",
+          "features_3": "Automatizacion de engagement",
+          "features_4": "Seguimiento de competidores"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mes",
+          "features_0": "Plataformas ilimitadas",
+          "features_1": "Posts ilimitados",
+          "features_2": "Suite de automatizacion completa",
+          "features_3": "Workflows personalizados",
+          "features_4": "Soporte dedicado"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultados Que Hablan",
+      "metrics": {
+        "engagement": {
+          "value": "2x",
+          "label": "Engagement",
+          "description": "Aumento promedio en engagement social"
+        },
+        "time_saved": {
+          "value": "15h",
+          "label": "Ahorradas Por Semana",
+          "description": "Tiempo ahorrado en gestion de redes sociales"
+        },
+        "platforms": {
+          "value": "6+",
+          "label": "Plataformas",
+          "description": "Gestionadas desde un solo dashboard"
+        }
+      }
     }
   },
   "skills-ad-creator": {

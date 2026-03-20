@@ -1090,6 +1090,81 @@
         }
       }
     },
+    "social_proof": {
+      "quote": "We hebben een contentteam van 3 personen vervangen door FMai's Content Creator. De output verdrievoudigde en de kwaliteit ging er zelfs op vooruit.",
+      "author": "Marketing Director",
+      "role": "E-commerce Bureau",
+      "company": "Amsterdam"
+    },
+    "showcase": {
+      "heading": "De AI Content Engine",
+      "items": {
+        "seo_research": {
+          "title": "SEO Research",
+          "description": "Identificeert automatisch waardevolle zoekwoorden en contentgaten in jouw niche."
+        },
+        "content_generation": {
+          "title": "Content Generatie",
+          "description": "Schrijft blogposts, social captions en nieuwsbrieven in jouw merkstijl."
+        },
+        "visual_creation": {
+          "title": "Visuele Creatie",
+          "description": "Genereert on-brand afbeeldingen, carrousels en video-thumbnails."
+        },
+        "multi_channel": {
+          "title": "Multi-Channel Publicatie",
+          "description": "Publiceert naar WordPress, LinkedIn, Instagram en meer \u2014 automatisch."
+        },
+        "performance_analytics": {
+          "title": "Prestatie-analytics",
+          "description": "Volgt engagement, conversies en ROI over alle kanalen."
+        },
+        "ai_orchestrator": {
+          "title": "AI Orchestrator",
+          "description": "Coordineert alle modules, leert van resultaten en verbetert de output continu."
+        }
+      }
+    },
+    "product_media": {
+      "heading": "Bekijk Het in Actie",
+      "title": "Content Creator Demo",
+      "description": "Bekijk hoe de AI Content Creator onderzoekt, schrijft en een complete blogpost publiceert in minder dan 5 minuten."
+    },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mnd",
+          "features_0": "20 blogposts/mnd",
+          "features_1": "60 social posts/mnd",
+          "features_2": "1 merkstijl",
+          "features_3": "WordPress-integratie"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "50 blogposts/mnd",
+          "features_1": "150 social posts/mnd",
+          "features_2": "3 merkstijlen",
+          "features_3": "Multi-platform publicatie",
+          "features_4": "SEO-optimalisatie"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mnd",
+          "features_0": "Onbeperkt content",
+          "features_1": "Onbeperkt merkstijlen",
+          "features_2": "Alle platformen",
+          "features_3": "Maatwerk workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
     "cta": {
       "title": "Activeer de Content Creator Skill",
       "subtitle": "Voeg AI-aangedreven contentcreatie toe aan je AI Marketing Medewerker en begin met het produceren van content voor al je klanten.",
@@ -1157,6 +1232,61 @@
         }
       }
     },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac597",
+          "period": "/mnd",
+          "features_0": "1 voice agent",
+          "features_1": "500 minuten/mnd",
+          "features_2": "Inkomende gesprekken",
+          "features_3": "Basis belanalytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac1.197",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "3 voice agents",
+          "features_1": "2.000 minuten/mnd",
+          "features_2": "Inkomend + uitgaand",
+          "features_3": "CRM-integratie",
+          "features_4": "Gespreksopnames & transcripties"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac2.497",
+          "period": "/mnd",
+          "features_0": "Onbeperkt agents",
+          "features_1": "Onbeperkt minuten",
+          "features_2": "Custom voice cloning",
+          "features_3": "Meertalige ondersteuning",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultaten Die Spreken",
+      "metrics": {
+        "response_time": {
+          "value": "<1s",
+          "label": "Reactietijd",
+          "description": "Sneller dan elke menselijke agent"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Beschikbaarheid",
+          "description": "Mis nooit meer een telefoontje"
+        },
+        "resolution": {
+          "value": "85%",
+          "label": "Oplossingspercentage",
+          "description": "Zonder menselijke tussenkomst"
+        }
+      }
+    },
     "cta": {
       "title": "Activeer de Voice Agent Skill",
       "subtitle": "Voeg AI-aangedreven telefoongesprekken toe aan je AI Marketing Medewerker en mis nooit meer een lead.",
@@ -1221,6 +1351,61 @@
         "saas": {
           "title": "SaaS-bedrijven",
           "description": "Kwalificeer free trial-aanmeldingen en demo-aanvragen automatisch. Stuur enterprise prospects naar sales, de rest gaat self-serve."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mnd",
+          "features_0": "1 chatbot persona",
+          "features_1": "Website-integratie",
+          "features_2": "1.000 gesprekken/mnd",
+          "features_3": "Basis analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "3 chatbot persona's",
+          "features_1": "Website + WhatsApp",
+          "features_2": "5.000 gesprekken/mnd",
+          "features_3": "Lead scoring & CRM-sync",
+          "features_4": "A/B testing"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mnd",
+          "features_0": "Onbeperkt persona's",
+          "features_1": "Alle platformen",
+          "features_2": "Onbeperkt gesprekken",
+          "features_3": "Maatwerk integraties",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultaten Die Spreken",
+      "metrics": {
+        "qualified_leads": {
+          "value": "3x",
+          "label": "Meer Gekwalificeerde Leads",
+          "description": "vs. traditionele contactformulieren"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Altijd Beschikbaar",
+          "description": "Geen gemiste kansen"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Reactietijd",
+          "description": "Directe engagement"
         }
       }
     },
@@ -1295,6 +1480,96 @@
       "title": "Activeer de Social Media Skill",
       "subtitle": "Voeg AI-aangedreven social media management toe aan je AI Marketing Medewerker en schaal de social presence van je klanten.",
       "button": "Bekijk Prijzen"
+    },
+    "social_proof": {
+      "quote": "FMai's Social Media skill beheert al onze klantaccounts. We schaalde van 5 naar 20 klanten zonder extra personeel.",
+      "author": "Bureau-eigenaar",
+      "role": "Digitaal Marketing Bureau",
+      "company": "Rotterdam"
+    },
+    "showcase": {
+      "heading": "De AI Social Media Engine",
+      "items": {
+        "smart_scheduling": {
+          "title": "Slimme Planning",
+          "description": "AI-geoptimaliseerde posttijden op alle platformen voor maximaal bereik en engagement."
+        },
+        "analytics_dashboard": {
+          "title": "Analytics Dashboard",
+          "description": "Realtime prestatie-tracking over alle social kanalen met bruikbare inzichten."
+        },
+        "engagement_automation": {
+          "title": "Engagement Automatisering",
+          "description": "Automatisch reageren op comments, DM's en vermeldingen met on-brand, contextbewuste antwoorden."
+        },
+        "content_repurposing": {
+          "title": "Content Hergebruik",
+          "description": "Pas content automatisch aan voor elk platform \u2014 blog naar carrousel, video naar reel, post naar story."
+        },
+        "trend_monitoring": {
+          "title": "Trend Monitoring",
+          "description": "Blijf voorop met AI-gestuurde trenddetectie en contentsuggesties op basis van wat werkt."
+        },
+        "competitor_tracking": {
+          "title": "Concurrent Monitoring",
+          "description": "Monitor concurrentactiviteit, benchmark prestaties en identificeer contentgaten."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Prijzen",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mnd",
+          "features_0": "3 platformen",
+          "features_1": "60 posts/mnd",
+          "features_2": "Basis planning",
+          "features_3": "Prestatierapporten"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mnd",
+          "badge": "Populairst",
+          "features_0": "6 platformen",
+          "features_1": "150 posts/mnd",
+          "features_2": "AI-geoptimaliseerde planning",
+          "features_3": "Engagement automatisering",
+          "features_4": "Concurrent monitoring"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1.997",
+          "period": "/mnd",
+          "features_0": "Onbeperkt platformen",
+          "features_1": "Onbeperkt posts",
+          "features_2": "Volledige automatisering",
+          "features_3": "Maatwerk workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Resultaten Die Spreken",
+      "metrics": {
+        "engagement": {
+          "value": "2x",
+          "label": "Engagement",
+          "description": "Gemiddelde toename in social engagement"
+        },
+        "time_saved": {
+          "value": "15u",
+          "label": "Bespaard Per Week",
+          "description": "Tijdsbesparing op social media management"
+        },
+        "platforms": {
+          "value": "6+",
+          "label": "Platformen",
+          "description": "Beheerd vanuit een enkel dashboard"
+        }
+      }
     }
   },
   "skills-ad-creator": {

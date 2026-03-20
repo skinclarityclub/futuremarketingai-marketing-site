@@ -87,10 +87,10 @@ export default async function ContentCreatorPage({
       {/* Social Proof */}
       <section className="py-20 px-6 lg:px-12">
         <SocialProof
-          quote="We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved."
-          author="Marketing Director"
-          role="E-commerce Agency"
-          company="Amsterdam"
+          quote={t('social_proof.quote')}
+          author={t('social_proof.author')}
+          role={t('social_proof.role')}
+          company={t('social_proof.company')}
         />
       </section>
 
@@ -100,42 +100,38 @@ export default async function ContentCreatorPage({
       {/* AI Feature Showcase */}
       <section aria-labelledby="ai-features" className="py-20 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="ai-features">The AI Content Engine</SectionHeading>
+          <SectionHeading id="ai-features">{t('showcase.heading')}</SectionHeading>
           <div className="mt-10">
             <FeatureShowcase
               features={[
                 {
-                  title: 'SEO Research',
-                  description:
-                    'Automatically identifies high-value keywords and content gaps in your niche.',
+                  title: t('showcase.items.seo_research.title'),
+                  description: t('showcase.items.seo_research.description'),
                   icon: '\uD83D\uDD0D',
                 },
                 {
-                  title: 'Content Generation',
-                  description:
-                    'Writes blog posts, social captions, and newsletters in your brand voice.',
+                  title: t('showcase.items.content_generation.title'),
+                  description: t('showcase.items.content_generation.description'),
                   icon: '\u270D\uFE0F',
                 },
                 {
-                  title: 'Visual Creation',
-                  description: 'Generates on-brand images, carousels, and video thumbnails.',
+                  title: t('showcase.items.visual_creation.title'),
+                  description: t('showcase.items.visual_creation.description'),
                   icon: '\uD83C\uDFA8',
                 },
                 {
-                  title: 'Multi-Channel Publishing',
-                  description:
-                    'Publishes to WordPress, LinkedIn, Instagram, and more — automatically.',
+                  title: t('showcase.items.multi_channel.title'),
+                  description: t('showcase.items.multi_channel.description'),
                   icon: '\uD83D\uDE80',
                 },
                 {
-                  title: 'Performance Analytics',
-                  description: 'Tracks engagement, conversions, and ROI across all channels.',
+                  title: t('showcase.items.performance_analytics.title'),
+                  description: t('showcase.items.performance_analytics.description'),
                   icon: '\uD83D\uDCCA',
                 },
                 {
-                  title: 'AI Orchestrator',
-                  description:
-                    'Coordinates all modules, learns from results, and continuously improves output.',
+                  title: t('showcase.items.ai_orchestrator.title'),
+                  description: t('showcase.items.ai_orchestrator.description'),
                   icon: '\uD83E\uDDE0',
                 },
               ]}
@@ -209,11 +205,11 @@ export default async function ContentCreatorPage({
       {/* Product Media */}
       <section className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading id="product-demo">See It in Action</SectionHeading>
+          <SectionHeading id="product-demo">{t('product_media.heading')}</SectionHeading>
           <div className="mt-10">
             <ProductMedia
-              title="Content Creator Demo"
-              description="Watch how the AI Content Creator researches, writes, and publishes a complete blog post in under 5 minutes."
+              title={t('product_media.title')}
+              description={t('product_media.description')}
             />
           </div>
         </div>
@@ -222,45 +218,45 @@ export default async function ContentCreatorPage({
       {/* Pricing */}
       <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <SectionHeading id="pricing">{t('pricing.heading')}</SectionHeading>
           <div className="mt-10">
             <PricingTiers
               tiers={[
                 {
-                  name: 'Starter',
-                  price: '\u20AC497',
-                  period: '/mo',
+                  name: t('pricing.tiers.starter.name'),
+                  price: t('pricing.tiers.starter.price'),
+                  period: t('pricing.tiers.starter.period'),
                   features: [
-                    '20 blog posts/mo',
-                    '60 social posts/mo',
-                    '1 brand voice',
-                    'WordPress integration',
+                    t('pricing.tiers.starter.features_0'),
+                    t('pricing.tiers.starter.features_1'),
+                    t('pricing.tiers.starter.features_2'),
+                    t('pricing.tiers.starter.features_3'),
                   ],
                 },
                 {
-                  name: 'Growth',
-                  price: '\u20AC997',
-                  period: '/mo',
+                  name: t('pricing.tiers.growth.name'),
+                  price: t('pricing.tiers.growth.price'),
+                  period: t('pricing.tiers.growth.period'),
                   highlighted: true,
-                  badge: 'Most Popular',
+                  badge: t('pricing.tiers.growth.badge'),
                   features: [
-                    '50 blog posts/mo',
-                    '150 social posts/mo',
-                    '3 brand voices',
-                    'Multi-platform publishing',
-                    'SEO optimization',
+                    t('pricing.tiers.growth.features_0'),
+                    t('pricing.tiers.growth.features_1'),
+                    t('pricing.tiers.growth.features_2'),
+                    t('pricing.tiers.growth.features_3'),
+                    t('pricing.tiers.growth.features_4'),
                   ],
                 },
                 {
-                  name: 'Scale',
-                  price: '\u20AC1,997',
-                  period: '/mo',
+                  name: t('pricing.tiers.scale.name'),
+                  price: t('pricing.tiers.scale.price'),
+                  period: t('pricing.tiers.scale.period'),
                   features: [
-                    'Unlimited content',
-                    'Unlimited brand voices',
-                    'All platforms',
-                    'Custom workflows',
-                    'Dedicated support',
+                    t('pricing.tiers.scale.features_0'),
+                    t('pricing.tiers.scale.features_1'),
+                    t('pricing.tiers.scale.features_2'),
+                    t('pricing.tiers.scale.features_3'),
+                    t('pricing.tiers.scale.features_4'),
                   ],
                 },
               ]}

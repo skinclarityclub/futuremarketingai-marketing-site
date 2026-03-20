@@ -1090,6 +1090,81 @@
         }
       }
     },
+    "social_proof": {
+      "quote": "We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved.",
+      "author": "Marketing Director",
+      "role": "E-commerce Agency",
+      "company": "Amsterdam"
+    },
+    "showcase": {
+      "heading": "The AI Content Engine",
+      "items": {
+        "seo_research": {
+          "title": "SEO Research",
+          "description": "Automatically identifies high-value keywords and content gaps in your niche."
+        },
+        "content_generation": {
+          "title": "Content Generation",
+          "description": "Writes blog posts, social captions, and newsletters in your brand voice."
+        },
+        "visual_creation": {
+          "title": "Visual Creation",
+          "description": "Generates on-brand images, carousels, and video thumbnails."
+        },
+        "multi_channel": {
+          "title": "Multi-Channel Publishing",
+          "description": "Publishes to WordPress, LinkedIn, Instagram, and more \u2014 automatically."
+        },
+        "performance_analytics": {
+          "title": "Performance Analytics",
+          "description": "Tracks engagement, conversions, and ROI across all channels."
+        },
+        "ai_orchestrator": {
+          "title": "AI Orchestrator",
+          "description": "Coordinates all modules, learns from results, and continuously improves output."
+        }
+      }
+    },
+    "product_media": {
+      "heading": "See It in Action",
+      "title": "Content Creator Demo",
+      "description": "Watch how the AI Content Creator researches, writes, and publishes a complete blog post in under 5 minutes."
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mo",
+          "features_0": "20 blog posts/mo",
+          "features_1": "60 social posts/mo",
+          "features_2": "1 brand voice",
+          "features_3": "WordPress integration"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "50 blog posts/mo",
+          "features_1": "150 social posts/mo",
+          "features_2": "3 brand voices",
+          "features_3": "Multi-platform publishing",
+          "features_4": "SEO optimization"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1,997",
+          "period": "/mo",
+          "features_0": "Unlimited content",
+          "features_1": "Unlimited brand voices",
+          "features_2": "All platforms",
+          "features_3": "Custom workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
     "cta": {
       "title": "Activate the Content Creator Skill",
       "subtitle": "Add AI-powered content creation to your AI Marketing Employee and start producing content for all your clients.",
@@ -1154,6 +1229,61 @@
         "sales": {
           "title": "Sales Teams",
           "description": "Qualify hundreds of leads per day by phone. Your sales team only talks to prospects who are ready to buy."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac597",
+          "period": "/mo",
+          "features_0": "1 voice agent",
+          "features_1": "500 minutes/mo",
+          "features_2": "Inbound calls",
+          "features_3": "Basic call analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac1,197",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "3 voice agents",
+          "features_1": "2,000 minutes/mo",
+          "features_2": "Inbound + outbound",
+          "features_3": "CRM integration",
+          "features_4": "Call recording & transcripts"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac2,497",
+          "period": "/mo",
+          "features_0": "Unlimited agents",
+          "features_1": "Unlimited minutes",
+          "features_2": "Custom voice cloning",
+          "features_3": "Multi-language support",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Results That Speak",
+      "metrics": {
+        "response_time": {
+          "value": "<1s",
+          "label": "Response Time",
+          "description": "Faster than any human agent"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Availability",
+          "description": "Never miss a call again"
+        },
+        "resolution": {
+          "value": "85%",
+          "label": "Resolution Rate",
+          "description": "Without human handoff"
         }
       }
     },
@@ -1224,6 +1354,61 @@
         }
       }
     },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mo",
+          "features_0": "1 chatbot persona",
+          "features_1": "Website embed",
+          "features_2": "1,000 conversations/mo",
+          "features_3": "Basic analytics"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "3 chatbot personas",
+          "features_1": "Website + WhatsApp",
+          "features_2": "5,000 conversations/mo",
+          "features_3": "Lead scoring & CRM sync",
+          "features_4": "A/B testing"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1,997",
+          "period": "/mo",
+          "features_0": "Unlimited personas",
+          "features_1": "All platforms",
+          "features_2": "Unlimited conversations",
+          "features_3": "Custom integrations",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Results That Speak",
+      "metrics": {
+        "qualified_leads": {
+          "value": "3x",
+          "label": "More Qualified Leads",
+          "description": "vs. traditional contact forms"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Available",
+          "description": "No missed opportunities"
+        },
+        "response_time": {
+          "value": "<2s",
+          "label": "Response Time",
+          "description": "Instant engagement"
+        }
+      }
+    },
     "cta": {
       "title": "Activate the Lead Qualifier Skill",
       "subtitle": "Add AI-powered lead qualification to your AI Marketing Employee and convert more website visitors into clients.",
@@ -1288,6 +1473,96 @@
         "brands": {
           "title": "Brand Managers",
           "description": "Maintain consistent brand presence across all platforms without the manual work of daily posting and monitoring."
+        }
+      }
+    },
+    "social_proof": {
+      "quote": "FMai's Social Media skill manages all our client accounts. We scaled from 5 to 20 clients without adding headcount.",
+      "author": "Agency Owner",
+      "role": "Digital Marketing Agency",
+      "company": "Rotterdam"
+    },
+    "showcase": {
+      "heading": "The AI Social Media Engine",
+      "items": {
+        "smart_scheduling": {
+          "title": "Smart Scheduling",
+          "description": "AI-optimized posting times across all platforms for maximum reach and engagement."
+        },
+        "analytics_dashboard": {
+          "title": "Analytics Dashboard",
+          "description": "Real-time performance tracking across all social channels with actionable insights."
+        },
+        "engagement_automation": {
+          "title": "Engagement Automation",
+          "description": "Auto-respond to comments, DMs, and mentions with on-brand, context-aware replies."
+        },
+        "content_repurposing": {
+          "title": "Content Repurposing",
+          "description": "Automatically adapt content for each platform \u2014 blog to carousel, video to reel, post to story."
+        },
+        "trend_monitoring": {
+          "title": "Trend Monitoring",
+          "description": "Stay ahead with AI-powered trend detection and content suggestions based on what's working."
+        },
+        "competitor_tracking": {
+          "title": "Competitor Tracking",
+          "description": "Monitor competitor activity, benchmark performance, and identify content gaps."
+        }
+      }
+    },
+    "pricing": {
+      "heading": "Pricing",
+      "tiers": {
+        "starter": {
+          "name": "Starter",
+          "price": "\u20ac497",
+          "period": "/mo",
+          "features_0": "3 platforms",
+          "features_1": "60 posts/mo",
+          "features_2": "Basic scheduling",
+          "features_3": "Performance reports"
+        },
+        "growth": {
+          "name": "Growth",
+          "price": "\u20ac997",
+          "period": "/mo",
+          "badge": "Most Popular",
+          "features_0": "6 platforms",
+          "features_1": "150 posts/mo",
+          "features_2": "AI-optimized scheduling",
+          "features_3": "Engagement automation",
+          "features_4": "Competitor tracking"
+        },
+        "scale": {
+          "name": "Scale",
+          "price": "\u20ac1,997",
+          "period": "/mo",
+          "features_0": "Unlimited platforms",
+          "features_1": "Unlimited posts",
+          "features_2": "Full automation suite",
+          "features_3": "Custom workflows",
+          "features_4": "Dedicated support"
+        }
+      }
+    },
+    "trust": {
+      "heading": "Results That Speak",
+      "metrics": {
+        "engagement": {
+          "value": "2x",
+          "label": "Engagement",
+          "description": "Average increase in social engagement"
+        },
+        "time_saved": {
+          "value": "15h",
+          "label": "Saved Per Week",
+          "description": "Time saved on social media management"
+        },
+        "platforms": {
+          "value": "6+",
+          "label": "Platforms",
+          "description": "Managed from a single dashboard"
         }
       }
     },
