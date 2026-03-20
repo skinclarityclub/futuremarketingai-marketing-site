@@ -9,6 +9,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
 import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
+import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import '@/app/globals.css'
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
           <Providers>
             <OrganizationJsonLd />
             <Header locale={locale} />
+            <FloatingLocaleSwitcher />
             {children}
             <Footer locale={locale} />
             <CookieConsentBanner />

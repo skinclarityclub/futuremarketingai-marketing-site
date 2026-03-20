@@ -9,6 +9,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { DemoPlayground } from '@/components/chatbot/DemoPlayground'
+import { MultiPlatformShowcase } from '@/components/chatbot/MultiPlatformShowcase'
+import { TrustMetrics } from '@/components/common/TrustMetrics'
+import { PricingTiers } from '@/components/common/PricingTiers'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -137,6 +141,88 @@ export default async function LeadQualifierPage({
                 </GlassCard>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Playground */}
+      <DemoPlayground />
+
+      {/* Multi-Platform Showcase */}
+      <section className="py-20 px-6 lg:px-12">
+        <MultiPlatformShowcase />
+      </section>
+
+      {/* Pricing */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <div className="mt-10">
+            <PricingTiers
+              tiers={[
+                {
+                  name: 'Starter',
+                  price: '\u20AC497',
+                  period: '/mo',
+                  features: [
+                    '1 chatbot persona',
+                    'Website embed',
+                    '1,000 conversations/mo',
+                    'Basic analytics',
+                  ],
+                },
+                {
+                  name: 'Growth',
+                  price: '\u20AC997',
+                  period: '/mo',
+                  highlighted: true,
+                  badge: 'Most Popular',
+                  features: [
+                    '3 chatbot personas',
+                    'Website + WhatsApp',
+                    '5,000 conversations/mo',
+                    'Lead scoring & CRM sync',
+                    'A/B testing',
+                  ],
+                },
+                {
+                  name: 'Scale',
+                  price: '\u20AC1,997',
+                  period: '/mo',
+                  features: [
+                    'Unlimited personas',
+                    'All platforms',
+                    'Unlimited conversations',
+                    'Custom integrations',
+                    'Dedicated support',
+                  ],
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Metrics */}
+      <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <div className="mt-10">
+            <TrustMetrics
+              metrics={[
+                {
+                  value: '3x',
+                  label: 'More Qualified Leads',
+                  description: 'vs. traditional contact forms',
+                },
+                {
+                  value: '24/7',
+                  label: 'Always Available',
+                  description: 'No missed opportunities',
+                },
+                { value: '<2s', label: 'Response Time', description: 'Instant engagement' },
+              ]}
+            />
           </div>
         </div>
       </section>

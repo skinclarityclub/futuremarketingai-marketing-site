@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { usePathname, useRouter, Link } from '@/i18n/navigation'
-import { routing } from '@/i18n/routing'
+import { useState, useEffect } from 'react'
+import { usePathname, Link } from '@/i18n/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Menu,
@@ -17,26 +16,8 @@ import {
   BarChart3,
 } from 'lucide-react'
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void
-  }
-}
-
 interface HeaderClientProps {
   locale: string
-}
-
-const LOCALE_FLAGS: Record<string, string> = {
-  en: '\u{1F1EC}\u{1F1E7}',
-  nl: '\u{1F1F3}\u{1F1F1}',
-  es: '\u{1F1EA}\u{1F1F8}',
-}
-
-const LOCALE_NAMES: Record<string, string> = {
-  en: 'English',
-  nl: 'Nederlands',
-  es: 'Espa\u00f1ol',
 }
 
 const SKILL_ITEMS = [
@@ -87,13 +68,11 @@ const NAV_ITEMS = [
 
 export function HeaderClient({ locale }: HeaderClientProps) {
   const pathname = usePathname()
-  const router = useRouter()
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [skillsOpen, setSkillsOpen] = useState(false)
   const [mobileSkillsOpen, setMobileSkillsOpen] = useState(false)
-  const [localeOpen, setLocaleOpen] = useState(false)
 
   // Scroll effect
   useEffect(() => {
@@ -126,21 +105,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
   useEffect(() => {
     const handleClick = () => {
       setSkillsOpen(false)
-      setLocaleOpen(false)
     }
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
   }, [])
-
-  const handleLocaleChange = (newLocale: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'language_switch', {
-        from_language: locale,
-        to_language: newLocale,
-      })
-    }
-    router.replace(pathname, { locale: newLocale })
-  }
 
   return (
     <header
@@ -257,71 +225,6 @@ export function HeaderClient({ locale }: HeaderClientProps) {
             See Our Work
           </Link>
 
-          {/* Locale Switcher - compact flag dropdown */}
-          <div className="relative hidden md:block" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => {
-                setSkillsOpen(false)
-                setLocaleOpen(!localeOpen)
-              }}
-              className="h-9 px-2.5 rounded-lg bg-bg-elevated border border-border-primary flex items-center justify-center gap-1.5 hover:bg-bg-elevated/80 transition-colors text-xs font-mono uppercase font-bold text-accent-system"
-              aria-label="Change language"
-            >
-              <span>{LOCALE_FLAGS[locale] || ''}</span>
-              <span>{locale.toUpperCase()}</span>
-            </button>
-            <AnimatePresence>
-              {localeOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -5, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -5, scale: 0.95 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute right-0 top-full mt-2 bg-bg-elevated/98 backdrop-blur-xl border border-border-primary rounded-lg shadow-2xl py-1 min-w-[120px] z-50"
-                >
-                  {routing.locales.map((loc) => (
-                    <button
-                      key={loc}
-                      onClick={() => {
-                        handleLocaleChange(loc)
-                        setLocaleOpen(false)
-                      }}
-                      className={`w-full px-3 py-2 text-left text-sm font-medium transition-colors flex items-center gap-2 ${
-                        locale === loc
-                          ? 'text-accent-system bg-accent-system/10'
-                          : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
-                      }`}
-                    >
-                      <span className="text-base">{LOCALE_FLAGS[loc] || ''}</span>
-                      <span className="font-mono uppercase text-xs">{loc}</span>
-                      <span>{LOCALE_NAMES[loc] || loc}</span>
-                      {locale === loc && (
-                        <motion.span
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ duration: 0.2 }}
-                          className="ml-auto"
-                        >
-                          <svg
-                            className="w-4 h-4 text-accent-system"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </motion.span>
-                      )}
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-all border border-transparent hover:border-white/20"
@@ -404,7 +307,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                   </div>
                 ))}
 
-                {/* Mobile Login + Locale */}
+                {/* Mobile Login */}
                 <div className="space-y-3 pt-4 border-t border-white/10">
                   <a
                     href="https://app.future-marketing.ai/login"
@@ -414,45 +317,6 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                     <LogIn className="w-5 h-5" />
                     Log In
                   </a>
-
-                  <div className="flex items-center justify-center gap-2">
-                    {routing.locales.map((loc) => (
-                      <button
-                        key={loc}
-                        onClick={() => {
-                          handleLocaleChange(loc)
-                          setMobileOpen(false)
-                        }}
-                        className={`text-xs font-mono uppercase px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 ${
-                          loc === locale
-                            ? 'bg-accent-system/20 text-accent-system'
-                            : 'text-text-muted hover:text-text-secondary'
-                        }`}
-                      >
-                        <span className="text-sm">{LOCALE_FLAGS[loc] || ''}</span>
-                        <span>{loc}</span>
-                        {loc === locale && (
-                          <motion.span
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <svg
-                              className="w-3 h-3 text-accent-system"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </motion.span>
-                        )}
-                      </button>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>

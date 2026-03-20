@@ -9,6 +9,11 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { VisionTimeline } from '@/components/marketing-machine/VisionTimeline'
+import { FeatureShowcase } from '@/components/marketing-machine/FeatureShowcase'
+import { SocialProof } from '@/components/common/SocialProof'
+import { ProductMedia } from '@/components/common/ProductMedia'
+import { PricingTiers } from '@/components/common/PricingTiers'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -137,6 +142,129 @@ export default async function ContentCreatorPage({
                 </GlassCard>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Timeline */}
+      <VisionTimeline />
+
+      {/* AI Feature Showcase */}
+      <section aria-labelledby="ai-features" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="ai-features">The AI Content Engine</SectionHeading>
+          <div className="mt-10">
+            <FeatureShowcase
+              features={[
+                {
+                  title: 'SEO Research',
+                  description:
+                    'Automatically identifies high-value keywords and content gaps in your niche.',
+                  icon: '\uD83D\uDD0D',
+                },
+                {
+                  title: 'Content Generation',
+                  description:
+                    'Writes blog posts, social captions, and newsletters in your brand voice.',
+                  icon: '\u270D\uFE0F',
+                },
+                {
+                  title: 'Visual Creation',
+                  description: 'Generates on-brand images, carousels, and video thumbnails.',
+                  icon: '\uD83C\uDFA8',
+                },
+                {
+                  title: 'Multi-Channel Publishing',
+                  description:
+                    'Publishes to WordPress, LinkedIn, Instagram, and more — automatically.',
+                  icon: '\uD83D\uDE80',
+                },
+                {
+                  title: 'Performance Analytics',
+                  description: 'Tracks engagement, conversions, and ROI across all channels.',
+                  icon: '\uD83D\uDCCA',
+                },
+                {
+                  title: 'AI Orchestrator',
+                  description:
+                    'Coordinates all modules, learns from results, and continuously improves output.',
+                  icon: '\uD83E\uDDE0',
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Product Media */}
+      <section className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="product-demo">See It in Action</SectionHeading>
+          <div className="mt-10">
+            <ProductMedia
+              title="Content Creator Demo"
+              description="Watch how the AI Content Creator researches, writes, and publishes a complete blog post in under 5 minutes."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-20 px-6 lg:px-12">
+        <SocialProof
+          quote="We replaced a 3-person content team with FMai's Content Creator. Output tripled and quality actually improved."
+          author="Marketing Director"
+          role="E-commerce Agency"
+          company="Amsterdam"
+        />
+      </section>
+
+      {/* Pricing */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <div className="mt-10">
+            <PricingTiers
+              tiers={[
+                {
+                  name: 'Starter',
+                  price: '\u20AC497',
+                  period: '/mo',
+                  features: [
+                    '20 blog posts/mo',
+                    '60 social posts/mo',
+                    '1 brand voice',
+                    'WordPress integration',
+                  ],
+                },
+                {
+                  name: 'Growth',
+                  price: '\u20AC997',
+                  period: '/mo',
+                  highlighted: true,
+                  badge: 'Most Popular',
+                  features: [
+                    '50 blog posts/mo',
+                    '150 social posts/mo',
+                    '3 brand voices',
+                    'Multi-platform publishing',
+                    'SEO optimization',
+                  ],
+                },
+                {
+                  name: 'Scale',
+                  price: '\u20AC1,997',
+                  period: '/mo',
+                  features: [
+                    'Unlimited content',
+                    'Unlimited brand voices',
+                    'All platforms',
+                    'Custom workflows',
+                    'Dedicated support',
+                  ],
+                },
+              ]}
+            />
           </div>
         </div>
       </section>

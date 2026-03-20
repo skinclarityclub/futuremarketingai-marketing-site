@@ -9,6 +9,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { VoiceDemoSection } from '@/components/voice/VoiceDemoSection'
+import { VoiceDemoFAB } from '@/components/voice/VoiceDemoFAB'
+import { TrustMetrics } from '@/components/common/TrustMetrics'
+import { PricingTiers } from '@/components/common/PricingTiers'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -137,6 +141,79 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
         </div>
       </section>
 
+      {/* Voice Demo */}
+      <VoiceDemoSection />
+
+      {/* Pricing */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="pricing">Pricing</SectionHeading>
+          <div className="mt-10">
+            <PricingTiers
+              tiers={[
+                {
+                  name: 'Starter',
+                  price: '\u20AC597',
+                  period: '/mo',
+                  features: [
+                    '1 voice agent',
+                    '500 minutes/mo',
+                    'Inbound calls',
+                    'Basic call analytics',
+                  ],
+                },
+                {
+                  name: 'Growth',
+                  price: '\u20AC1,197',
+                  period: '/mo',
+                  highlighted: true,
+                  badge: 'Most Popular',
+                  features: [
+                    '3 voice agents',
+                    '2,000 minutes/mo',
+                    'Inbound + outbound',
+                    'CRM integration',
+                    'Call recording & transcripts',
+                  ],
+                },
+                {
+                  name: 'Scale',
+                  price: '\u20AC2,497',
+                  period: '/mo',
+                  features: [
+                    'Unlimited agents',
+                    'Unlimited minutes',
+                    'Custom voice cloning',
+                    'Multi-language support',
+                    'Dedicated support',
+                  ],
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Metrics */}
+      <section aria-labelledby="trust" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="trust">Results That Speak</SectionHeading>
+          <div className="mt-10">
+            <TrustMetrics
+              metrics={[
+                {
+                  value: '<1s',
+                  label: 'Response Time',
+                  description: 'Faster than any human agent',
+                },
+                { value: '24/7', label: 'Availability', description: 'Never miss a call again' },
+                { value: '85%', label: 'Resolution Rate', description: 'Without human handoff' },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
@@ -149,6 +226,9 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
           </div>
         </ScrollReveal>
       </section>
+
+      {/* Voice Demo FAB */}
+      <VoiceDemoFAB />
     </PageShell>
   )
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -17,10 +16,7 @@ import { TrustMetrics } from '@/components/common/TrustMetrics'
 import { PricingTiers } from '@/components/common/PricingTiers'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Link } from '@/i18n/navigation'
-
-const MultiPlatformShowcase = dynamic(() => import('@/components/chatbot/MultiPlatformShowcase'), {
-  ssr: false,
-})
+import MultiPlatformShowcase from '@/components/chatbot/MultiPlatformShowcase'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

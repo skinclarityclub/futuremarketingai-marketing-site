@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -17,17 +16,8 @@ import { TrustMetrics } from '@/components/common/TrustMetrics'
 import { PricingTiers } from '@/components/common/PricingTiers'
 import { Link } from '@/i18n/navigation'
 import { Handshake } from 'lucide-react'
-
-const VoiceDemoSection = dynamic(
-  () =>
-    import('@/components/voice/VoiceDemoSection').then((m) => ({ default: m.VoiceDemoSection })),
-  { ssr: false }
-)
-
-const VoiceDemoFAB = dynamic(
-  () => import('@/components/voice/VoiceDemoFAB').then((m) => ({ default: m.VoiceDemoFAB })),
-  { ssr: false }
-)
+import { VoiceDemoSection } from '@/components/voice/VoiceDemoSection'
+import { VoiceDemoFAB } from '@/components/voice/VoiceDemoFAB'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

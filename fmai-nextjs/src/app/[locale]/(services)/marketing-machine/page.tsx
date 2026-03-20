@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -17,14 +16,7 @@ import { SocialProof } from '@/components/common/SocialProof'
 import { FeatureShowcase } from '@/components/marketing-machine/FeatureShowcase'
 import { ProductMedia } from '@/components/common/ProductMedia'
 import { PricingTiers } from '@/components/common/PricingTiers'
-
-const VisionTimeline = dynamic(
-  () =>
-    import('@/components/marketing-machine/VisionTimeline').then((m) => ({
-      default: m.VisionTimeline,
-    })),
-  { ssr: false }
-)
+import { VisionTimeline } from '@/components/marketing-machine/VisionTimeline'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))

@@ -1,160 +1,124 @@
 import { tool } from 'ai'
 import { z } from 'zod'
-import { PRODUCT_CATALOG } from '../knowledge/ecommerce-kb'
-
-interface ProductStep {
-  step: string
-  product: { id: string; name: string; price: number }
-}
+import { ECOMMERCE_TOPICS } from '../knowledge/ecommerce-kb'
 
 export const ecommerceTools = {
   search_products: tool({
     description:
-      'Search the skincare product catalog by skin type, concern, or text query. Returns matching products.',
+      'Search the knowledge base for topics matching a query. Returns matching topic content.',
     inputSchema: z.object({
-      query: z.string().optional().describe('Text to search in product names and descriptions'),
+      query: z.string().optional().describe('Text to search in topic content and keywords'),
       skinType: z
         .enum(['dry', 'oily', 'combination', 'normal', 'sensitive'])
         .optional()
-        .describe('Filter by skin type suitability'),
-      concern: z
-        .string()
-        .optional()
-        .describe('Filter by skin concern (e.g. acne, hydration, brightening)'),
+        .describe('Filter by skin type keyword'),
+      concern: z.string().optional().describe('Filter by concern keyword'),
       limit: z.number().min(1).max(5).default(3).describe('Maximum number of results to return'),
     }),
     execute: async ({ query, skinType, concern, limit }) => {
-      let filtered = [...PRODUCT_CATALOG]
+      let filtered = [...ECOMMERCE_TOPICS]
 
       if (skinType) {
-        filtered = filtered.filter((p) => p.skinTypes.includes(skinType))
+        filtered = filtered.filter(
+          (t) =>
+            t.content.toLowerCase().includes(skinType) ||
+            t.keywords.some((kw) => kw.toLowerCase().includes(skinType))
+        )
       }
 
       if (concern) {
         const lowerConcern = concern.toLowerCase()
-        filtered = filtered.filter((p) =>
-          p.concerns.some((c) => c.toLowerCase().includes(lowerConcern))
+        filtered = filtered.filter(
+          (t) =>
+            t.content.toLowerCase().includes(lowerConcern) ||
+            t.keywords.some((kw) => kw.toLowerCase().includes(lowerConcern))
         )
       }
 
       if (query) {
         const lowerQuery = query.toLowerCase()
         filtered = filtered.filter(
-          (p) =>
-            p.name.toLowerCase().includes(lowerQuery) ||
-            p.description.toLowerCase().includes(lowerQuery)
+          (t) =>
+            t.key.toLowerCase().includes(lowerQuery) ||
+            t.content.toLowerCase().includes(lowerQuery) ||
+            t.keywords.some((kw) => kw.toLowerCase().includes(lowerQuery))
         )
       }
 
-      return { products: filtered.slice(0, limit) }
+      return {
+        products: filtered.slice(0, limit).map((t) => ({
+          id: t.key,
+          name: t.key.replace(/_/g, ' '),
+          snippet: t.content.slice(0, 200),
+        })),
+      }
     },
   }),
 
   get_product_details: tool({
-    description: 'Get full details for a specific product by its ID.',
+    description: 'Get full details for a specific topic by its key.',
     inputSchema: z.object({
-      productId: z.string().describe('The product identifier (e.g. "hydra-boost-serum")'),
+      productId: z.string().describe('The topic key identifier'),
     }),
     execute: async ({ productId }) => {
-      const product = PRODUCT_CATALOG.find((p) => p.id === productId)
-      if (!product) {
-        return { error: `Product not found: ${productId}` }
+      const topic = ECOMMERCE_TOPICS.find((t) => t.key === productId)
+      if (!topic) {
+        return { error: `Topic not found: ${productId}` }
       }
-      return { product }
+      return {
+        product: {
+          id: topic.key,
+          name: topic.key.replace(/_/g, ' '),
+          content: topic.content,
+          keywords: topic.keywords,
+        },
+      }
     },
   }),
 
   build_routine: tool({
-    description: 'Build a personalized skincare routine for a given skin type and time of day.',
+    description: 'Build a recommended workflow based on a topic area.',
     inputSchema: z.object({
       skinType: z
         .enum(['dry', 'oily', 'combination', 'normal', 'sensitive'])
-        .describe('The skin type to build a routine for'),
+        .describe('The topic area to build recommendations for'),
       timeOfDay: z
         .enum(['morning', 'evening', 'both'])
         .default('both')
         .describe('Morning routine, evening routine, or both'),
     }),
     execute: async ({ skinType, timeOfDay }) => {
-      const findProduct = (
-        concerns: string[]
-      ): { id: string; name: string; price: number } | null => {
-        const match = PRODUCT_CATALOG.find(
-          (p) =>
-            p.skinTypes.includes(skinType) &&
-            concerns.some((c) => p.concerns.some((pc) => pc.includes(c)))
-        )
-        return match ? { id: match.id, name: match.name, price: match.price } : null
-      }
+      const relevantTopics = ECOMMERCE_TOPICS.filter(
+        (t) =>
+          t.content.toLowerCase().includes(skinType) ||
+          t.keywords.some((kw) => kw.toLowerCase().includes(skinType))
+      )
 
-      const cleanser = findProduct(['cleansing']) || {
-        id: 'gentle-cleansing-foam',
-        name: 'Gentle Cleansing Foam',
-        price: 24.95,
+      return {
+        routine: timeOfDay,
+        recommendations: relevantTopics.map((t) => ({
+          id: t.key,
+          name: t.key.replace(/_/g, ' '),
+          snippet: t.content.slice(0, 150),
+        })),
       }
-      const toner = findProduct(['balance', 'pores']) || {
-        id: 'balancing-toner',
-        name: 'Balancing Toner',
-        price: 19.95,
-      }
-      const daySerum = findProduct(['brightening', 'hydration']) || {
-        id: 'hydra-boost-serum',
-        name: 'Hydra Boost Serum',
-        price: 34.95,
-      }
-      const moisturizer = findProduct(['barrier repair', 'dryness', 'hydration']) || {
-        id: 'barrier-repair-cream',
-        name: 'Barrier Repair Cream',
-        price: 29.95,
-      }
-      const spf = { id: 'daily-spf-50', name: 'Daily SPF 50', price: 27.95 }
-      const nightTreatment = findProduct(['overnight repair', 'anti-aging']) || {
-        id: 'night-recovery-mask',
-        name: 'Night Recovery Mask',
-        price: 36.95,
-      }
-
-      const morning: ProductStep[] = [
-        { step: 'Cleanser', product: cleanser },
-        { step: 'Toner', product: toner },
-        { step: 'Serum', product: daySerum },
-        { step: 'Moisturizer', product: moisturizer },
-        { step: 'SPF', product: spf },
-      ]
-
-      const evening: ProductStep[] = [
-        { step: 'Cleanser', product: cleanser },
-        { step: 'Toner', product: toner },
-        { step: 'Treatment', product: nightTreatment },
-        { step: 'Night Cream', product: moisturizer },
-      ]
-
-      const result: { morning?: ProductStep[]; evening?: ProductStep[] } = {}
-      if (timeOfDay === 'morning' || timeOfDay === 'both') {
-        result.morning = morning
-      }
-      if (timeOfDay === 'evening' || timeOfDay === 'both') {
-        result.evening = evening
-      }
-
-      return result
     },
   }),
 
   add_to_cart_suggestion: tool({
-    description: 'Suggest adding a product to the shopping cart (simulated for demo).',
+    description: 'Suggest adding a topic/product to the shopping cart (simulated for demo).',
     inputSchema: z.object({
-      productId: z.string().describe('The product identifier to add'),
+      productId: z.string().describe('The topic key identifier to add'),
       quantity: z.number().default(1).describe('Number of units to add'),
     }),
     execute: async ({ productId, quantity }) => {
-      const product = PRODUCT_CATALOG.find((p) => p.id === productId)
-      if (!product) {
-        return { error: `Product not found: ${productId}` }
+      const topic = ECOMMERCE_TOPICS.find((t) => t.key === productId)
+      if (!topic) {
+        return { error: `Topic not found: ${productId}` }
       }
       return {
         action: 'add_to_cart',
-        product: { id: product.id, name: product.name, price: product.price },
+        product: { id: topic.key, name: topic.key.replace(/_/g, ' ') },
         quantity,
         message: 'Added to cart!',
       }

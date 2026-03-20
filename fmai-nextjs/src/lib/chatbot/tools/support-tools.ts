@@ -1,39 +1,40 @@
 import { tool } from 'ai'
 import { z } from 'zod'
-import { KB_ARTICLES } from '../knowledge/support-kb'
+import { SUPPORT_TOPICS } from '../knowledge/support-kb'
 
 const search_knowledge_base = tool({
   description:
-    'Search the knowledge base for articles matching a query. Filters by category if specified. Returns article titles and snippets.',
+    'Search the knowledge base for topics matching a query. Returns topic keys and snippets.',
   inputSchema: z.object({
-    query: z.string().describe('Search query to match against article titles, content, and tags'),
+    query: z.string().describe('Search query to match against topic content and keywords'),
     category: z
       .enum(['billing', 'technical', 'account', 'getting_started', 'all'])
       .default('all')
-      .describe('Category to filter by'),
-    limit: z.number().min(1).max(5).default(3).describe('Maximum number of articles to return'),
+      .describe('Category to filter by (matched against topic keywords)'),
+    limit: z.number().min(1).max(5).default(3).describe('Maximum number of topics to return'),
   }),
   execute: async ({ query, category, limit }) => {
     const queryLower = query.toLowerCase()
 
-    let filtered = KB_ARTICLES
+    let filtered = SUPPORT_TOPICS
     if (category !== 'all') {
-      filtered = filtered.filter((a) => a.category === category)
+      filtered = filtered.filter((t) =>
+        t.keywords.some((kw) => kw.toLowerCase().includes(category))
+      )
     }
 
-    const matched = filtered.filter((article) => {
-      const titleMatch = article.title.toLowerCase().includes(queryLower)
-      const contentMatch = article.content.toLowerCase().includes(queryLower)
-      const tagMatch = article.tags.some((tag) => tag.toLowerCase().includes(queryLower))
-      return titleMatch || contentMatch || tagMatch
+    const matched = filtered.filter((topic) => {
+      const contentMatch = topic.content.toLowerCase().includes(queryLower)
+      const keywordMatch = topic.keywords.some((kw) => kw.toLowerCase().includes(queryLower))
+      const keyMatch = topic.key.toLowerCase().includes(queryLower)
+      return contentMatch || keywordMatch || keyMatch
     })
 
     return {
-      articles: matched.slice(0, limit).map((a) => ({
-        id: a.id,
-        title: a.title,
-        category: a.category,
-        snippet: a.content.slice(0, 200),
+      articles: matched.slice(0, limit).map((t) => ({
+        id: t.key,
+        title: t.key.replace(/_/g, ' '),
+        snippet: t.content.slice(0, 200),
       })),
       totalResults: matched.length,
     }
