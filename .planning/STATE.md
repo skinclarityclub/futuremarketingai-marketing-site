@@ -8,7 +8,7 @@ progress:
   total_phases: 6
   completed_phases: 4
   total_plans: 21
-  completed_plans: 19
+  completed_plans: 20
 ---
 
 # Project State
@@ -23,17 +23,17 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 7 of 7 (Website Copy Overhaul) -- IN PROGRESS
-Plan: 1 of 4 in current phase
+Plan: 2 of 4 in current phase
 Status: Executing
-Last activity: 2026-03-20 -- Completed 07-01-PLAN.md (Translation architecture fix: all 8 skill pages fully i18n)
+Last activity: 2026-03-20 -- Completed 07-02-PLAN.md (Homepage and header Clyde messaging rewrite)
 
-Progress: [██████████] 100% (phases 1-6) | Phase 7: [===-------] 1/4
+Progress: [██████████] 100% (phases 1-6) | Phase 7: [=====-----] 2/4
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 19
+- Total plans completed: 20
 - Average duration: ~9 min
 - Total execution time: ~2.5 hours
 
@@ -50,12 +50,13 @@ Progress: [██████████] 100% (phases 1-6) | Phase 7: [===----
 
 **Recent Trend:**
 
-- Last 5 plans: 03-03 (11min), 06-01 (4min), 06-04 (4min), 06-03 (6min), 07-01 (11min)
+- Last 5 plans: 06-01 (4min), 06-04 (4min), 06-03 (6min), 07-01 (11min), 07-02 (4min)
 - Trend: Stable
 
 _Updated after each plan completion_
 | Phase 06 P02 | 7min | 2 tasks | 7 files |
 | Phase 07 P01 | 11min | 2 tasks | 9 files |
+| Phase 07 P02 | 4min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -132,6 +133,10 @@ Recent decisions affecting current work:
 - [07-01]: Pricing tier features use indexed keys (features_0, features_1, etc.) for PricingTiers prop translation
 - [07-01]: FeatureShowcase icons stay hardcoded (emoji strings are language-independent)
 - [07-01]: SocialProof/FeatureShowcase receive translated strings as props from page-level t() calls
+- [07-02]: Hero headline "Meet Clyde. Your AI Marketing Employee." -- Clyde introduced by name in hero
+- [07-02]: FAQ rewritten with 5 Clyde-specific questions (what is Clyde, brand learning, multi-client, mistakes, vs ChatGPT)
+- [07-02]: Header CTA changed from "See Our Work" to "Meet Clyde" linking to /skills/chatbot
+- [07-02]: Stats updated to Clyde-relevant: 24/7 availability, 6 skills, 160+ content/mo, <2min response
 
 ### Roadmap Evolution
 
@@ -149,5 +154,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 07-01-PLAN.md (Translation architecture fix: all 8 skill pages fully i18n)
+Stopped at: Completed 07-02-PLAN.md (Homepage and header Clyde messaging rewrite)
 Resume file: None
