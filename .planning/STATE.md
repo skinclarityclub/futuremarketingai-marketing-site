@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: '2026-03-20T20:06:07.000Z'
+last_updated: '2026-03-20T20:14:21.000Z'
 progress:
   total_phases: 2
   completed_phases: 2
-  total_plans: 14
-  completed_plans: 14
+  total_plans: 15
+  completed_plans: 15
 ---
 
 # Project State
@@ -18,7 +18,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 3/4 done), Phase 3 IN PROGRESS (plan 2/3 done). Next: Phase 2 plan 4, Phase 3 plan 3, Phase 5 plan 3
+**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 3/4 done). Next: Phase 2 plan 4, Phase 5 plan 3
 
 ## Current Position
 
@@ -33,23 +33,23 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 14
+- Total plans completed: 15
 - Average duration: ~9 min
-- Total execution time: ~2.2 hours
+- Total execution time: ~2.4 hours
 
 **By Phase:**
 
 | Phase               | Plans | Total  | Avg/Plan |
 | ------------------- | ----- | ------ | -------- |
 | 1. Website Rebrand  | 5/5   | ~56min | ~11min   |
-| 3. n8n Multi-Tenant | 2/3   | ~30min | ~10min   |
+| 3. n8n Multi-Tenant | 3/3   | ~41min | ~14min   |
 | 4. Compliance       | 2/2   | ~18min | ~9min    |
 | 2. Dashboard Refr.  | 3/4   | ~6min  | ~2min    |
 | 5. Go-to-Market     | 2/3   | ~8min  | ~4min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 05-03 (4min), 03-01 (18min), 02-01 (2min), 02-03 (2min), 02-02 (2min)
+- Last 5 plans: 03-01 (18min), 02-01 (2min), 02-03 (2min), 02-02 (2min), 03-03 (11min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -108,6 +108,10 @@ Recent decisions affecting current work:
 - [02-02]: BillingClient extracted as client component for useTransition-based checkout/portal redirects
 - [02-02]: Webhook idempotency check on checkout.session.completed prevents duplicate subscription writes
 - [02-02]: Dynamic import of AGENT_TIERS in webhook to match price ID back to tier name
+- [03-03]: executeWorkflowTrigger must use typeVersion 1 (not 1.1) for n8n Cloud compatibility
+- [03-03]: Agency Client Setup loads config/accounts/pillars in parallel from webhook for faster validation
+- [03-03]: Init Config has 6 client\_\* tables (not 8) -- actual schema differs from plan assumption
+- [03-03]: Usage Metering V1.0 (vhDFFD8WN3VeWNNw) and Agency Client Setup V1.0 (gn0vxvXrV176fnuE) workflow IDs
 
 ### Pending Todos
 
@@ -121,5 +125,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 02-02-PLAN.md (Stripe billing integration, checkout actions, webhook handler, billing page)
+Stopped at: Completed 03-03-PLAN.md (Agency Client Setup, Usage Metering, multi-tenant verification -- Phase 3 COMPLETE)
 Resume file: None

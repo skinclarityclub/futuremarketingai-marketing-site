@@ -22,6 +22,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - [ ] **Phase 3: n8n Multi-Tenant** - Existing workflows parameterized for per-client isolation and metering
 - [x] **Phase 4: Compliance** - AI-disclosure, legal documents, and privacy policies for EU AI Act readiness
 - [ ] **Phase 5: Go-to-Market** - Founding member outreach, demo assets, and first 3-5 signed agencies
+- [ ] **Phase 6: Vite Feature Parity** - Port all interactive demos, missing UI sections, and enhanced language switcher from Vite to Next.js
 
 ## Phase Details
 
