@@ -5,35 +5,36 @@
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE. Next: Phase 2 (Dashboard Reframe) or continue Wave A (Phase 4/5)
+**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE. Next: Phase 2 (Dashboard Reframe) or Phase 5 (Go-to-Market)
 
 ## Current Position
 
-Phase: 1 of 5 (Website Rebrand) -- COMPLETE
-Plan: 3 of 3 in current phase (all done)
+Phase: 4 of 5 (Compliance) -- COMPLETE
+Plan: 2 of 2 in current phase (all done)
 Status: Phase Complete
-Last activity: 2026-03-20 -- Completed 01-03-PLAN.md (Pricing page redesign + homepage updates + chatbot personas)
+Last activity: 2026-03-20 -- Completed 04-02-PLAN.md (DPA, DPIA legal documents + legal page ToS/privacy expansion)
 
-Progress: [████░░░░░░] 20%
+Progress: [█████░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 3
-- Average duration: ~18 min
-- Total execution time: ~0.9 hours
+- Total plans completed: 5
+- Average duration: ~15 min
+- Total execution time: ~1.2 hours
 
 **By Phase:**
 
 | Phase              | Plans | Total  | Avg/Plan |
 | ------------------ | ----- | ------ | -------- |
 | 1. Website Rebrand | 3/3   | ~51min | ~17min   |
+| 4. Compliance      | 2/2   | ~18min | ~9min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (24min), 01-02 (13min), 01-03 (25min)
-- Trend: Stable
+- Last 5 plans: 01-01 (24min), 01-02 (13min), 01-03 (25min), 04-01 (9min), 04-02 (9min)
+- Trend: Improving
 
 _Updated after each plan completion_
 
@@ -57,6 +58,11 @@ Recent decisions affecting current work:
 - [01-03]: 4-column xl grid for pricing tiers, responsive 2-col on md
 - [01-03]: Founding Member tier highlighted with accent border and "10 Spots Only" badge
 - [01-03]: Homepage SERVICE_CARDS replaced with SKILL_CARDS for 6 skills
+- [04-01]: AI disclosure badge and notice added to chatbot widget in all 3 locales
+- [04-02]: DPA drafted in Dutch with 8 sub-processors in Annex A
+- [04-02]: DPIA identifies 7 risks across all 6 AI skills with residual risk assessment
+- [04-02]: Legal page uses SECTION_SUBSECTIONS map pattern for subsection rendering
+- [04-02]: Terms of service: 7 subsections, Privacy policy: 9 subsections
 
 ### Pending Todos
 
@@ -70,5 +76,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 01-03-PLAN.md (Phase 1 Website Rebrand COMPLETE)
+Stopped at: Completed 04-02-PLAN.md (Phase 4 Compliance COMPLETE)
 Resume file: None
