@@ -844,11 +844,79 @@
     "sections": {
       "terms": {
         "title": "Terminos de Servicio",
-        "content": "Al usar nuestros servicios, acepta los siguientes terminos. Future Marketing AI proporciona servicios de Empleado de Marketing IA (Agent as a Service) por suscripcion."
+        "content": "Estos Terminos de Servicio rigen el uso de la plataforma Future Marketing AI (FMai) y los servicios de Empleado de Marketing IA. Al suscribirse o utilizar nuestros servicios, usted acepta quedar vinculado por estos terminos. FMai opera como proveedor de Agent as a Service (AaaS), ofreciendo agentes de IA persistentes con habilidades de marketing configurables a agencias de marketing. Lea estos terminos detenidamente antes de utilizar nuestra plataforma.",
+        "subsections": {
+          "service_description": {
+            "title": "1. Descripcion del servicio",
+            "content": "FMai proporciona una plataforma Agent as a Service (AaaS) que ofrece servicios de Empleado de Marketing IA con habilidades configurables. Las habilidades disponibles incluyen Content Creator (articulos de blog, contenido social, boletines), Voice Agent (llamadas entrantes/salientes, programacion de citas), Lead Qualifier (chatbot, puntuacion de leads, enrutamiento), Social Media Manager (planificacion multiplataforma, seguimiento de engagement), Ad Creator (anuncios estaticos y de video generados por IA), y Reporting & Analytics (dashboards multiplataforma, informes semanales, deteccion de anomalias). Las habilidades se activan por nivel de suscripcion y pueden agregarse o eliminarse en cualquier momento."
+          },
+          "subscription_terms": {
+            "title": "2. Terminos de suscripcion",
+            "content": "Los servicios se ofrecen en base a suscripcion mensual en cuatro niveles: Founding Member (EUR 997/mes), Starter (EUR 1.497/mes), Growth (EUR 1.997/mes) y Agency (EUR 3.497/mes). Cada nivel incluye un numero determinado de habilidades y espacios de trabajo de clientes. Se pueden agregar habilidades adicionales a cualquier nivel por EUR 497/mes por habilidad. La facturacion se realiza mensualmente por adelantado. Puede cancelar su suscripcion con 30 dias de aviso por escrito, efectivo al final del ciclo de facturacion vigente. Los precios de Founding Member quedan fijados de por vida durante la suscripcion."
+          },
+          "ai_output_disclaimer": {
+            "title": "3. Descargo de responsabilidad sobre la salida de IA",
+            "content": "Todo el contenido, las recomendaciones y los resultados generados por su Empleado de Marketing IA se proporcionan como borradores que requieren revision humana antes de su publicacion o distribucion. FMai no garantiza la precision, originalidad, correccion factual o idoneidad de la salida generada por IA para ningun proposito especifico. La agencia suscriptora es la unica responsable de revisar, editar y aprobar toda la salida de IA antes de publicarla a o en nombre de sus clientes. El contenido generado por IA no debe considerarse como asesoramiento profesional, legal, financiero o medico."
+          },
+          "liability_limitation": {
+            "title": "4. Limitacion de responsabilidad",
+            "content": "La responsabilidad total agregada de FMai derivada de o relacionada con estos terminos no excedera el total de las tarifas pagadas por el suscriptor en los doce (12) meses anteriores al evento que da lugar a la reclamacion. FMai no sera responsable de ningun dano indirecto, incidental, especial, consecuente o punitivo, incluyendo pero no limitado a perdida de beneficios, datos, oportunidades comerciales o fondo de comercio. La salida generada por IA no constituye asesoramiento profesional de ningun tipo, y FMai no acepta responsabilidad por decisiones tomadas en base a dicha salida."
+          },
+          "data_processing": {
+            "title": "5. Procesamiento de datos",
+            "content": "FMai procesa datos en nombre de la agencia suscriptora de conformidad con el articulo 28 del RGPD. Los terminos detallados de procesamiento de datos se establecen en el Acuerdo de Procesamiento de Datos (Verwerkersovereenkomst), que forma parte integral de estos terminos. La agencia, como responsable del tratamiento, es responsable de garantizar que existan bases legales apropiadas para el procesamiento de datos personales a traves de la plataforma FMai. Una copia del DPA esta disponible previa solicitud en privacy@futuremarketingai.com."
+          },
+          "termination": {
+            "title": "6. Terminacion",
+            "content": "Cualquiera de las partes puede terminar la suscripcion con 30 dias de aviso por escrito. Tras la terminacion, su periodo de exportacion de datos es de 30 dias calendario, durante los cuales puede descargar todos los datos del espacio de trabajo, contenido, informes y configuraciones. Despues del periodo de exportacion de 30 dias, todos los datos de la agencia, datos del espacio de trabajo del cliente y contenido asociado seran eliminados permanentemente de nuestros sistemas y sub-procesadores. FMai puede terminar su cuenta inmediatamente por incumplimiento material de estos terminos, incluyendo falta de pago superior a 30 dias."
+          },
+          "governing_law": {
+            "title": "7. Ley aplicable y disputas",
+            "content": "Estos terminos se rigen e interpretan de conformidad con las leyes de los Paises Bajos. Cualquier disputa derivada de o en conexion con estos terminos sera sometida a la jurisdiccion exclusiva de los tribunales de Amsterdam, Paises Bajos. Antes de iniciar procedimientos legales, ambas partes acuerdan intentar la resolucion mediante negociacion de buena fe durante un periodo de al menos 30 dias."
+          }
+        }
       },
       "privacy": {
         "title": "Politica de Privacidad",
-        "content": "Recopilamos datos personales necesarios para nuestros servicios. Sus datos se procesan conforme al RGPD. No vendemos su informacion a terceros."
+        "content": "Esta Politica de Privacidad describe como Future Marketing AI (FMai) recopila, utiliza, almacena y protege los datos personales en relacion con nuestra plataforma de Empleado de Marketing IA. FMai se compromete a proteger la privacidad de nuestros suscriptores, sus clientes y usuarios finales de conformidad con el Reglamento General de Proteccion de Datos (RGPD) y las leyes de proteccion de datos aplicables en los Paises Bajos. Esta politica se aplica a todos los datos procesados a traves de nuestra plataforma y sitio web.",
+        "subsections": {
+          "data_collected": {
+            "title": "1. Datos que recopilamos",
+            "content": "Recopilamos las siguientes categorias de datos personales: Datos de cuenta (nombre, direccion de correo electronico, nombre de la empresa, informacion de facturacion), Datos del espacio de trabajo del cliente (documentos de voz de marca, conexiones de cuentas de redes sociales, calendarios de contenido, perfiles de audiencia objetivo), Datos de uso (registros de actividad de la plataforma, uso de funciones, recuentos de ejecucion), y Datos de interaccion con IA (mensajes de chat con agentes de IA, transcripciones de llamadas de voz, prompts de generacion de contenido). No recopilamos intencionalmente datos personales sensibles (categorias especiales segun el articulo 9 del RGPD)."
+          },
+          "purpose_of_processing": {
+            "title": "2. Proposito del procesamiento",
+            "content": "Procesamos datos personales para los siguientes propositos: Proporcionar servicios de Empleado de Marketing IA (creacion de contenido, operaciones de agente de voz, calificacion de leads, gestion de redes sociales, creacion de anuncios, informes), mejorar la calidad del servicio y el rendimiento de la IA mediante analisis de uso agregado, facturacion y gestion de suscripciones, proporcionar soporte tecnico y servicio al cliente, y cumplir con obligaciones legales incluyendo requisitos fiscales, contables y regulatorios."
+          },
+          "legal_basis": {
+            "title": "3. Base legal",
+            "content": "Nuestro procesamiento de datos personales se basa en los siguientes fundamentos legales: Ejecucion de contrato (RGPD articulo 6(1)(b)) para la prestacion de nuestros servicios suscritos, interes legitimo (RGPD articulo 6(1)(f)) para la mejora del servicio, monitorizacion de seguridad y prevencion de fraude, consentimiento (RGPD articulo 6(1)(a)) para cookies analiticas y comunicaciones de marketing opcionales, y obligacion legal (RGPD articulo 6(1)(c)) para el cumplimiento fiscal y regulatorio."
+          },
+          "ai_data_processing": {
+            "title": "4. Procesamiento de datos por IA",
+            "content": "Nuestro Empleado de Marketing IA procesa datos de la siguiente manera: La habilidad Content Creator utiliza documentos de voz de marca y briefings de contenido para generar contenido de marketing — solo el contexto minimo necesario se envia a los proveedores de IA. La habilidad Voice Agent procesa audio de llamadas para reconocimiento de voz y generacion de respuestas — las grabaciones se conservan durante 90 dias para garantia de calidad. La habilidad Lead Qualifier analiza envios de formularios y mensajes de chat para puntuar y enrutar leads — la puntuacion de leads es consultiva y no toma decisiones automatizadas. Los proveedores de IA (OpenAI, Anthropic) procesan datos bajo politicas de Zero Data Retention, lo que significa que sus datos no se utilizan para entrenar modelos de IA."
+          },
+          "sub_processors": {
+            "title": "5. Sub-procesadores",
+            "content": "Utilizamos los siguientes sub-procesadores clave para prestar nuestros servicios: OpenAI (generacion de contenido, EE.UU. con certificacion EU Data Privacy Framework), Anthropic (generacion de contenido, EE.UU. con certificacion EU Data Privacy Framework), Supabase (base de datos y autenticacion, region UE - Frankfurt), Vercel (hosting y CDN, regiones UE y globales), y Vapi (procesamiento de agente de voz, EE.UU.). Una lista completa y actualizada de sub-procesadores se mantiene en nuestro Acuerdo de Procesamiento de Datos (DPA). Notificamos a los suscriptores con al menos 30 dias de antelacion antes de agregar nuevos sub-procesadores."
+          },
+          "data_retention": {
+            "title": "6. Retencion de datos",
+            "content": "Cuentas activas: Todos los datos se conservan durante la vigencia del acuerdo de servicio. Tras la terminacion: Se proporciona un periodo de exportacion de datos de 30 dias, despues del cual todos los datos se eliminan permanentemente. Grabaciones de voz y registros de chat: Conservados durante 90 dias despues del procesamiento para garantia de calidad y resolucion de disputas. Registros de la plataforma: Conservados durante 90 dias. Copias de seguridad: Eliminadas dentro de los 30 dias posteriores a la eliminacion de los datos fuente. Registros de facturacion: Conservados segun lo requiera la legislacion fiscal neerlandesa (7 anos)."
+          },
+          "data_subject_rights": {
+            "title": "7. Sus derechos",
+            "content": "En virtud del RGPD, usted tiene derecho a: Acceder a sus datos personales y recibir una copia, rectificar datos personales inexactos o incompletos, suprimir sus datos personales (derecho al olvido), limitar el procesamiento de sus datos personales, portabilidad de datos (recibir sus datos en un formato estructurado y legible por maquina), oponerse al procesamiento basado en interes legitimo, y retirar el consentimiento en cualquier momento para el procesamiento basado en consentimiento. Para ejercer cualquiera de estos derechos, contactenos en privacy@futuremarketingai.com. Responderemos dentro de los 30 dias segun lo exige el RGPD."
+          },
+          "international_transfers": {
+            "title": "8. Transferencias internacionales de datos",
+            "content": "Algunos de nuestros sub-procesadores estan ubicados fuera de la UE/EEE, principalmente en los Estados Unidos. Para estas transferencias, nos basamos en las siguientes garantias: El Marco de Privacidad de Datos UE-EE.UU. (DPF) para empresas estadounidenses certificadas (OpenAI, Anthropic, Vercel, Stripe), y Clausulas Contractuales Tipo (SCCs) aprobadas por la Comision Europea donde la certificacion DPF no esta disponible. Cuando es posible, utilizamos regiones de centros de datos de la UE para minimizar las transferencias internacionales. Monitoreamos los desarrollos legales con respecto a las transferencias internacionales, incluidos posibles desafios al DPF."
+          },
+          "contact": {
+            "title": "9. Contacto y autoridad supervisora",
+            "content": "Responsable del tratamiento: Future Marketing AI, Paises Bajos. Para consultas de privacidad, solicitudes de interesados o quejas: privacy@futuremarketingai.com. Si considera que sus derechos de proteccion de datos han sido vulnerados, tiene derecho a presentar una queja ante la Autoridad Neerlandesa de Proteccion de Datos (Autoriteit Persoonsgegevens / AP) en autoriteitpersoonsgegevens.nl."
+          }
+        }
       },
       "cookies": {
         "title": "Politica de Cookies",

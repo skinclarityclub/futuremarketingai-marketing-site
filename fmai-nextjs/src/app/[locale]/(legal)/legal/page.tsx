@@ -23,6 +23,31 @@ export async function generateMetadata({
 
 const SECTION_KEYS = ['terms', 'privacy', 'cookies', 'disclaimer'] as const
 
+const SECTION_SUBSECTIONS: Record<string, string[]> = {
+  terms: [
+    'service_description',
+    'subscription_terms',
+    'ai_output_disclaimer',
+    'liability_limitation',
+    'data_processing',
+    'termination',
+    'governing_law',
+  ],
+  privacy: [
+    'data_collected',
+    'purpose_of_processing',
+    'legal_basis',
+    'ai_data_processing',
+    'sub_processors',
+    'data_retention',
+    'data_subject_rights',
+    'international_transfers',
+    'contact',
+  ],
+  cookies: [],
+  disclaimer: [],
+}
+
 export default async function LegalPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
@@ -66,6 +91,16 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
                 <p className="text-text-secondary leading-relaxed">
                   {t(`sections.${sectionKey}.content`)}
                 </p>
+                {SECTION_SUBSECTIONS[sectionKey]?.map((subKey) => (
+                  <div key={subKey} className="mt-6">
+                    <h3 className="text-lg font-semibold text-text-primary mb-2">
+                      {t(`sections.${sectionKey}.subsections.${subKey}.title`)}
+                    </h3>
+                    <p className="text-text-secondary leading-relaxed">
+                      {t(`sections.${sectionKey}.subsections.${subKey}.content`)}
+                    </p>
+                  </div>
+                ))}
               </div>
             </section>
           ))}

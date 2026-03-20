@@ -844,11 +844,79 @@
     "sections": {
       "terms": {
         "title": "Servicevoorwaarden",
-        "content": "Door onze diensten te gebruiken ga je akkoord met de volgende voorwaarden. Future Marketing AI biedt AI Marketing Medewerker diensten (Agent as a Service) aan op abonnementsbasis."
+        "content": "Deze Servicevoorwaarden zijn van toepassing op uw gebruik van het Future Marketing AI (FMai) platform en de AI Marketing Medewerker diensten. Door u te abonneren op of gebruik te maken van onze diensten, gaat u akkoord met deze voorwaarden. FMai opereert als een Agent as a Service (AaaS) aanbieder en levert persistente AI-agenten met instelbare marketingvaardigheden aan marketing agencies. Lees deze voorwaarden zorgvuldig door voordat u ons platform gebruikt.",
+        "subsections": {
+          "service_description": {
+            "title": "1. Beschrijving van de dienst",
+            "content": "FMai biedt een Agent as a Service (AaaS) platform dat AI Marketing Medewerker diensten levert met instelbare vaardigheden (skills). Beschikbare skills zijn Content Creator (blogartikelen, social content, nieuwsbrieven), Voice Agent (inbound/outbound gesprekken, afspraakplanning), Lead Qualifier (chatbot, lead scoring, routering), Social Media Manager (multi-platform planning, engagement tracking), Ad Creator (AI-gegenereerde statische en video advertenties), en Reporting & Analytics (cross-platform dashboards, weekrapporten, anomaliedetectie). Skills worden geactiveerd per abonnementsniveau en kunnen op elk moment worden toegevoegd of verwijderd."
+          },
+          "subscription_terms": {
+            "title": "2. Abonnementsvoorwaarden",
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier niveaus: Founding Member (EUR 997/mnd), Starter (EUR 1.497/mnd), Growth (EUR 1.997/mnd) en Agency (EUR 3.497/mnd). Elk niveau omvat een vast aantal skills en klantworkspaces. Extra skills kunnen aan elk niveau worden toegevoegd voor EUR 497/mnd per skill. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode. Founding Member-prijzen zijn vergrendeld voor de gehele duur van het abonnement."
+          },
+          "ai_output_disclaimer": {
+            "title": "3. AI Output Disclaimer",
+            "content": "Alle content, aanbevelingen en output gegenereerd door uw AI Marketing Medewerker worden geleverd als concepten die menselijke beoordeling vereisen voor publicatie of verspreiding. FMai garandeert niet de nauwkeurigheid, originaliteit, feitelijke juistheid of geschiktheid van AI-gegenereerde output voor enig specifiek doel. Het abonnerende bureau is als enige verantwoordelijk voor het beoordelen, bewerken en goedkeuren van alle AI-output voordat deze wordt gepubliceerd aan of namens hun klanten. AI-gegenereerde content mag niet worden beschouwd als professioneel, juridisch, financieel of medisch advies."
+          },
+          "liability_limitation": {
+            "title": "4. Beperking van aansprakelijkheid",
+            "content": "De totale aansprakelijkheid van FMai voortvloeiend uit of verband houdend met deze voorwaarden is beperkt tot het totaal aan vergoedingen betaald door de abonnee in de twaalf (12) maanden voorafgaand aan de gebeurtenis die aanleiding geeft tot de claim. FMai is niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolgschade of punitieve schade, met inbegrip van maar niet beperkt tot verlies van winst, gegevens, zakelijke kansen of goodwill. AI-gegenereerde output vormt geen professioneel advies van welke aard dan ook, en FMai aanvaardt geen aansprakelijkheid voor beslissingen genomen op basis van dergelijke output."
+          },
+          "data_processing": {
+            "title": "5. Gegevensverwerking",
+            "content": "FMai verwerkt gegevens namens het abonnerende bureau conform AVG artikel 28. Gedetailleerde verwerkingsvoorwaarden zijn vastgelegd in de Verwerkersovereenkomst, die een integraal onderdeel vormt van deze voorwaarden. Het bureau is als verwerkingsverantwoordelijke verantwoordelijk voor het waarborgen dat passende rechtsgronden bestaan voor de verwerking van persoonsgegevens via het FMai-platform. Een exemplaar van de Verwerkersovereenkomst is op verzoek beschikbaar via privacy@futuremarketingai.com."
+          },
+          "termination": {
+            "title": "6. Beeindiging",
+            "content": "Beide partijen kunnen het abonnement beeindigen met 30 dagen schriftelijke opzegtermijn. Na beeindiging heeft u een exportperiode van 30 kalenderdagen, waarin u alle workspace-gegevens, content, rapporten en configuraties kunt downloaden. Na de exportperiode van 30 dagen worden alle bureaugegevens, klantworkspace-gegevens en bijbehorende content permanent verwijderd uit onze systemen en sub-verwerkers. FMai kan uw account onmiddellijk beeindigen bij wezenlijke schending van deze voorwaarden, inclusief wanbetaling van meer dan 30 dagen."
+          },
+          "governing_law": {
+            "title": "7. Toepasselijk recht en geschillen",
+            "content": "Op deze voorwaarden is Nederlands recht van toepassing. Geschillen voortvloeiend uit of verband houdend met deze voorwaarden worden voorgelegd aan de exclusieve bevoegdheid van de rechtbank Amsterdam. Voordat juridische procedures worden gestart, komen beide partijen overeen om gedurende een periode van ten minste 30 dagen te pogen het geschil op te lossen door middel van onderhandeling te goeder trouw."
+          }
+        }
       },
       "privacy": {
         "title": "Privacybeleid",
-        "content": "Wij verzamelen persoonsgegevens die nodig zijn om onze diensten te leveren. Je gegevens worden verwerkt conform de AVG. Wij verkopen je persoonlijke informatie niet aan derden."
+        "content": "Dit Privacybeleid beschrijft hoe Future Marketing AI (FMai) persoonsgegevens verzamelt, gebruikt, opslaat en beschermt in verband met ons AI Marketing Medewerker platform. FMai is toegewijd aan het beschermen van de privacy van onze abonnees, hun klanten en eindgebruikers, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) en toepasselijke Nederlandse wetgeving inzake gegevensbescherming. Dit beleid is van toepassing op alle gegevens die via ons platform en onze website worden verwerkt.",
+        "subsections": {
+          "data_collected": {
+            "title": "1. Gegevens die wij verzamelen",
+            "content": "Wij verzamelen de volgende categorieen persoonsgegevens: Accountgegevens (naam, e-mailadres, bedrijfsnaam, factuurgegevens), Klantworkspace-gegevens (brand voice documenten, social media accountkoppelingen, contentplanningen, doelgroepprofielen), Gebruiksgegevens (platformactiviteitslogs, functiegebruik, uitvoeringsaantallen), en AI-interactiegegevens (chatberichten met AI-agenten, telefoongesprekstranscripties, contentgeneratie-prompts). Wij verzamelen niet opzettelijk bijzondere persoonsgegevens (bijzondere categorieen conform AVG artikel 9)."
+          },
+          "purpose_of_processing": {
+            "title": "2. Doel van de verwerking",
+            "content": "Wij verwerken persoonsgegevens voor de volgende doeleinden: Het leveren van AI Marketing Medewerker diensten (contentcreatie, voice agent operaties, leadkwalificatie, social media management, advertentiecreatie, rapportage), het verbeteren van de dienstkwaliteit en AI-prestaties door geaggregeerde gebruiksanalyse, facturering en abonnementsbeheer, het bieden van technische ondersteuning en klantenservice, en het voldoen aan wettelijke verplichtingen waaronder fiscale, boekhoudkundige en regelgevende vereisten."
+          },
+          "legal_basis": {
+            "title": "3. Rechtsgrond",
+            "content": "Onze verwerking van persoonsgegevens is gebaseerd op de volgende rechtsgronden: Uitvoering van een overeenkomst (AVG artikel 6(1)(b)) voor het leveren van onze geabonneerde diensten, gerechtvaardigd belang (AVG artikel 6(1)(f)) voor dienstverbetering, beveiligingsmonitoring en fraudepreventie, toestemming (AVG artikel 6(1)(a)) voor analytische cookies en optionele marketingcommunicatie, en wettelijke verplichting (AVG artikel 6(1)(c)) voor fiscale en regelgevende naleving."
+          },
+          "ai_data_processing": {
+            "title": "4. AI-gegevensverwerking",
+            "content": "Onze AI Marketing Medewerker verwerkt gegevens als volgt: De Content Creator skill gebruikt brand voice documenten en contentbriefings om marketingcontent te genereren — alleen de minimaal benodigde context wordt naar AI-providers gestuurd. De Voice Agent skill verwerkt gespreksaudio voor spraakherkenning en antwoordgeneratie — opnames worden 90 dagen bewaard voor kwaliteitsborging. De Lead Qualifier skill analyseert formulierinzendingen en chatberichten om leads te scoren en te routeren — lead scoring is adviserend en neemt geen geautomatiseerde beslissingen. AI-providers (OpenAI, Anthropic) verwerken gegevens onder Zero Data Retention beleid, wat betekent dat uw gegevens niet worden gebruikt om AI-modellen te trainen."
+          },
+          "sub_processors": {
+            "title": "5. Sub-verwerkers",
+            "content": "Wij gebruiken de volgende belangrijke sub-verwerkers om onze diensten te leveren: OpenAI (contentgeneratie, VS met EU Data Privacy Framework certificering), Anthropic (contentgeneratie, VS met EU Data Privacy Framework certificering), Supabase (database en authenticatie, EU-regio - Frankfurt), Vercel (hosting en CDN, EU en wereldwijde regio's), en Vapi (voice agent verwerking, VS). Een volledige en actuele lijst van sub-verwerkers wordt bijgehouden in onze Verwerkersovereenkomst. Wij stellen abonnees ten minste 30 dagen vooraf op de hoogte van nieuwe sub-verwerkers."
+          },
+          "data_retention": {
+            "title": "6. Bewaartermijnen",
+            "content": "Actieve accounts: Alle gegevens worden bewaard voor de duur van de serviceovereenkomst. Na beeindiging: Een exportperiode van 30 dagen wordt geboden, waarna alle gegevens permanent worden verwijderd. Spraakopnames en chatlogs: 90 dagen bewaard na verwerking voor kwaliteitsborging en geschiloplossing. Platformlogs: 90 dagen bewaard. Back-ups: Verwijderd binnen 30 dagen na verwijdering van brongegevens. Factuurgegevens: Bewaard conform Nederlandse belastingwetgeving (7 jaar)."
+          },
+          "data_subject_rights": {
+            "title": "7. Uw rechten",
+            "content": "Op grond van de AVG heeft u het recht op: Inzage in uw persoonsgegevens en het ontvangen van een kopie, rectificatie van onjuiste of onvolledige persoonsgegevens, wissing van uw persoonsgegevens (recht op vergetelheid), beperking van de verwerking van uw persoonsgegevens, gegevensoverdraagbaarheid (ontvangst van uw gegevens in een gestructureerd, machineleesbaar formaat), bezwaar tegen verwerking op basis van gerechtvaardigd belang, en intrekking van toestemming op elk moment voor op toestemming gebaseerde verwerking. Om een van deze rechten uit te oefenen, neem contact met ons op via privacy@futuremarketingai.com. Wij reageren binnen 30 dagen conform de AVG."
+          },
+          "international_transfers": {
+            "title": "8. Internationale gegevensdoorgifte",
+            "content": "Sommige van onze sub-verwerkers zijn gevestigd buiten de EU/EER, voornamelijk in de Verenigde Staten. Voor deze doorgiftes vertrouwen wij op de volgende waarborgen: Het EU-VS Data Privacy Framework (DPF) voor gecertificeerde Amerikaanse bedrijven (OpenAI, Anthropic, Vercel, Stripe), en Standard Contractual Clauses (SCCs) goedgekeurd door de Europese Commissie waar DPF-certificering niet beschikbaar is. Waar mogelijk gebruiken wij EU-datacenterregio's om internationale doorgiftes te minimaliseren. Wij monitoren juridische ontwikkelingen met betrekking tot internationale doorgiftes, inclusief mogelijke aanvechtingen van het DPF."
+          },
+          "contact": {
+            "title": "9. Contact en toezichthouder",
+            "content": "Verwerkingsverantwoordelijke: Future Marketing AI, Nederland. Voor privacyvragen, verzoeken van betrokkenen of klachten: privacy@futuremarketingai.com. Indien u van mening bent dat uw gegevensbeschermingsrechten zijn geschonden, heeft u het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP) via autoriteitpersoonsgegevens.nl."
+          }
+        }
       },
       "cookies": {
         "title": "Cookiebeleid",
