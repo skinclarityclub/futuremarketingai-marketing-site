@@ -49,8 +49,8 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 
 ### Compliance
 
-- [ ] **COMP-01**: AI-disclosure text implemented in chatbot widget ("Ik ben een AI-assistent")
-- [ ] **COMP-02**: AI-disclosure in voice agent (Vapi greeting identifies as AI)
+- [x] **COMP-01**: AI-disclosure text implemented in chatbot widget ("Ik ben een AI-assistent")
+- [x] **COMP-02**: AI-disclosure in voice agent (Vapi greeting identifies as AI)
 - [x] **COMP-03**: Verwerkersovereenkomst (DPA) template drafted
 - [x] **COMP-04**: DPIA document created for AI agent data processing
 - [x] **COMP-05**: Terms of service updated with AaaS-specific clauses and liability limits
