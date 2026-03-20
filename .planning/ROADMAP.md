@@ -96,11 +96,12 @@ Plans:
 2. DPA (Verwerkersovereenkomst) template is drafted and ready to send to agency clients
 3. DPIA document exists covering AI agent data processing risks and mitigations
 4. Terms of service and privacy policy are updated with AaaS-specific clauses, liability limits, and agent data processing descriptions
-   **Plans**: TBD
+   **Plans**: 2 plans
 
 Plans:
 
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — AI disclosure in chatbot widget + voice agent documentation (Wave 1)
+- [ ] 04-02-PLAN.md — DPA, DPIA legal documents + legal page ToS/privacy expansion (Wave 1)
 
 ### Phase 5: Go-to-Market
 
@@ -135,5 +136,5 @@ Phases execute in parallel waves:
 | 1. Website Rebrand   | 3/3            | Complete    | 2026-03-20 |
 | 2. Dashboard Reframe | 0/3            | Not started | -          |
 | 3. n8n Multi-Tenant  | 0/3            | Not started | -          |
-| 4. Compliance        | 0/1            | Not started | -          |
+| 4. Compliance        | 0/2            | Not started | -          |
 | 5. Go-to-Market      | 0/2            | Not started | -          |
