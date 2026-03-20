@@ -9,31 +9,31 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 4 of 5 (Compliance) -- COMPLETE
-Plan: 2 of 2 in current phase (all done)
+Phase: 1 of 5 (Website Rebrand) -- COMPLETE
+Plan: 5 of 5 in current phase (all done)
 Status: Phase Complete
-Last activity: 2026-03-20 -- Completed 04-02-PLAN.md (DPA, DPIA legal documents + legal page ToS/privacy expansion)
+Last activity: 2026-03-20 -- Completed 01-05-PLAN.md (chatbot persona engines rewritten for agency use cases)
 
-Progress: [█████░░░░░] 40%
+Progress: [███████░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 5
-- Average duration: ~15 min
-- Total execution time: ~1.2 hours
+- Total plans completed: 7
+- Average duration: ~13 min
+- Total execution time: ~1.5 hours
 
 **By Phase:**
 
 | Phase              | Plans | Total  | Avg/Plan |
 | ------------------ | ----- | ------ | -------- |
-| 1. Website Rebrand | 3/3   | ~51min | ~17min   |
+| 1. Website Rebrand | 5/5   | ~56min | ~11min   |
 | 4. Compliance      | 2/2   | ~18min | ~9min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (24min), 01-02 (13min), 01-03 (25min), 04-01 (9min), 04-02 (9min)
+- Last 5 plans: 01-03 (25min), 04-01 (9min), 04-02 (9min), 01-04 (TBD), 01-05 (5min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -63,6 +63,8 @@ Recent decisions affecting current work:
 - [04-02]: DPIA identifies 7 risks across all 6 AI skills with residual risk assessment
 - [04-02]: Legal page uses SECTION_SUBSECTIONS map pattern for subsection rendering
 - [04-02]: Terms of service: 7 subsections, Privacy policy: 9 subsections
+- [01-05]: Persona IDs kept unchanged (ecommerce, leadgen, support) for DemoPlayground compatibility
+- [01-05]: Content Creator temp 0.8 (creative), ROI Calculator temp 0.5 (precise), both maxTokens 600
 
 ### Pending Todos
 
@@ -76,5 +78,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 04-02-PLAN.md (Phase 4 Compliance COMPLETE)
+Stopped at: Completed 01-05-PLAN.md (Phase 1 Website Rebrand COMPLETE - all 5 plans done)
 Resume file: None
