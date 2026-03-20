@@ -102,21 +102,58 @@ Deferred to after founding member validation.
 
 ## Traceability
 
-| Requirement        | Phase   | Status  |
-| ------------------ | ------- | ------- |
-| WEB-01 to WEB-15   | Phase 1 | Pending |
-| DASH-01 to DASH-08 | Phase 2 | Pending |
-| N8N-01 to N8N-08   | Phase 3 | Pending |
-| COMP-01 to COMP-06 | Phase 4 | Pending |
-| GTM-01 to GTM-05   | Phase 5 | Pending |
+| Requirement | Phase                      | Status  |
+| ----------- | -------------------------- | ------- |
+| WEB-01      | Phase 1: Website Rebrand   | Pending |
+| WEB-02      | Phase 1: Website Rebrand   | Pending |
+| WEB-03      | Phase 1: Website Rebrand   | Pending |
+| WEB-04      | Phase 1: Website Rebrand   | Pending |
+| WEB-05      | Phase 1: Website Rebrand   | Pending |
+| WEB-06      | Phase 1: Website Rebrand   | Pending |
+| WEB-07      | Phase 1: Website Rebrand   | Pending |
+| WEB-08      | Phase 1: Website Rebrand   | Pending |
+| WEB-09      | Phase 1: Website Rebrand   | Pending |
+| WEB-10      | Phase 1: Website Rebrand   | Pending |
+| WEB-11      | Phase 1: Website Rebrand   | Pending |
+| WEB-12      | Phase 1: Website Rebrand   | Pending |
+| WEB-13      | Phase 1: Website Rebrand   | Pending |
+| WEB-14      | Phase 1: Website Rebrand   | Pending |
+| WEB-15      | Phase 1: Website Rebrand   | Pending |
+| DASH-01     | Phase 2: Dashboard Reframe | Pending |
+| DASH-02     | Phase 2: Dashboard Reframe | Pending |
+| DASH-03     | Phase 2: Dashboard Reframe | Pending |
+| DASH-04     | Phase 2: Dashboard Reframe | Pending |
+| DASH-05     | Phase 2: Dashboard Reframe | Pending |
+| DASH-06     | Phase 2: Dashboard Reframe | Pending |
+| DASH-07     | Phase 2: Dashboard Reframe | Pending |
+| DASH-08     | Phase 2: Dashboard Reframe | Pending |
+| N8N-01      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-02      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-03      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-04      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-05      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-06      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-07      | Phase 3: n8n Multi-Tenant  | Pending |
+| N8N-08      | Phase 3: n8n Multi-Tenant  | Pending |
+| COMP-01     | Phase 4: Compliance        | Pending |
+| COMP-02     | Phase 4: Compliance        | Pending |
+| COMP-03     | Phase 4: Compliance        | Pending |
+| COMP-04     | Phase 4: Compliance        | Pending |
+| COMP-05     | Phase 4: Compliance        | Pending |
+| COMP-06     | Phase 4: Compliance        | Pending |
+| GTM-01      | Phase 5: Go-to-Market      | Pending |
+| GTM-02      | Phase 5: Go-to-Market      | Pending |
+| GTM-03      | Phase 5: Go-to-Market      | Pending |
+| GTM-04      | Phase 5: Go-to-Market      | Pending |
+| GTM-05      | Phase 5: Go-to-Market      | Pending |
 
 **Coverage:**
 
 - v1 requirements: 42 total
 - Mapped to phases: 42
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 
 _Requirements defined: 2026-03-20_
-_Last updated: 2026-03-20 after initial definition_
+_Last updated: 2026-03-20 after roadmap creation_
