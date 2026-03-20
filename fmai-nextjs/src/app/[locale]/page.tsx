@@ -119,13 +119,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               className="flex flex-wrap gap-4"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
-              <CTAButton size="lg" href="#services">
+              <CTAButton size="lg" href="/skills/chatbot">
                 <Zap className="mr-1 h-5 w-5" />
                 {t('hero.cta')}
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
 
-              <CTAButton variant="secondary" size="lg" href="/pricing">
+              <CTAButton variant="secondary" size="lg" href="/contact">
                 {t('hero.ctaSecondary')}
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
@@ -331,7 +331,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/contact" size="lg">
+            <CTAButton href="/skills/chatbot" size="lg">
               {t('cta.button')}
             </CTAButton>
           </div>

@@ -1,117 +1,117 @@
 {
   "home": {
     "meta": {
-      "title": "AI Marketing Employee for Agencies | FMai",
-      "description": "Your agency's first AI Marketing Employee. A persistent AI agent with pluggable skills — content creation, voice agents, lead qualification, social media, ads, and reporting. Built for marketing agencies."
+      "title": "Meet Clyde — Your Agency's AI Marketing Employee | FMai",
+      "description": "Clyde is your agency's first AI marketing employee. He writes content, calls leads, manages social media, creates ads, and reports on performance — 24/7, for every client. Built by FutureMarketingAI."
     },
     "hero": {
-      "badge": "AI Marketing Employee for Agencies",
-      "headlineMain": "Your Agency's First",
-      "headlineAccent": "AI Employee.",
-      "subtitle": "One persistent AI employee that runs 24/7, learns your clients' brands, and gets better every week. Activate skills like content creation, voice agents, lead qualification, and more — without hiring.",
-      "trustAnchor": "Agencies with AI employees scale 3x faster without hiring",
-      "cta": "Explore Skills",
-      "ctaSecondary": "See Pricing"
+      "badge": "FutureMarketingAI presents Clyde",
+      "headlineMain": "Meet Clyde.",
+      "headlineAccent": "Your AI Marketing Employee.",
+      "subtitle": "A marketer works 8 hours. Clyde works 24. He writes your clients' blog posts, calls their leads, manages their social media, and delivers weekly reports — without ever taking a day off.",
+      "trustAnchor": "Trusted by forward-thinking agencies across Europe",
+      "cta": "Meet Clyde",
+      "ctaSecondary": "Book a Strategy Call"
     },
     "services": {
-      "title": "Skills Your AI Employee Can Learn",
-      "subtitle": "Six pluggable skills. Activate what you need, add more as you grow.",
+      "title": "What Clyde Does for Your Agency",
+      "subtitle": "Six specialized skills. Tell Clyde what you need — he executes.",
       "contentCreator": {
         "number": "01",
         "title": "Content Creator",
-        "description": "Blog posts, social content, email newsletters — produced daily for each of your clients"
+        "description": "Clyde writes blog posts, social captions, and newsletters daily — tailored to each client's brand voice and audience"
       },
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Inbound and outbound calls, appointment booking, and lead qualification by phone"
+        "description": "Clyde calls leads, books appointments, and handles inbound inquiries — in Dutch, English, or Spanish"
       },
       "leadQualifier": {
         "number": "03",
         "title": "Lead Qualifier",
-        "description": "AI chatbot on your clients' websites that scores leads and routes them to sales"
+        "description": "Clyde scores every website visitor using BANT methodology and routes qualified leads to your sales team"
       },
       "socialMedia": {
         "number": "04",
         "title": "Social Media Manager",
-        "description": "Multi-platform scheduling, engagement tracking, and performance analytics"
+        "description": "Clyde creates, schedules, and publishes posts across Instagram, LinkedIn, Facebook, and X for all your clients"
       },
       "adCreator": {
         "number": "05",
         "title": "Ad Creator",
-        "description": "AI-generated static and video ads published directly to Meta, Google, and more"
+        "description": "Clyde generates ad copy and creative variations for Meta, Google, and LinkedIn campaigns — tested and optimized"
       },
       "reporting": {
         "number": "06",
         "title": "Reporting & Analytics",
-        "description": "Cross-platform dashboards, weekly performance reports, and anomaly detection"
+        "description": "Clyde generates weekly performance reports for every client — cross-platform, with anomaly alerts built in"
       }
     },
     "trust": {
-      "title": "Why Agency Owners Choose FMai",
-      "customBuiltTitle": "One Employee, All Skills",
-      "customBuilt": "One AI employee handles content, voice, ads, social, leads, and reporting",
-      "founderAccessTitle": "Direct Founder Access",
-      "founderAccess": "Direct access to the founder via Slack — no support tickets",
-      "successGuaranteeTitle": "Learns Your Clients",
-      "successGuarantee": "Your AI employee learns each client's brand voice, audience, and goals",
-      "trialTitle": "Founding Member Pricing",
-      "trialCommitment": "Lock in EUR 997/mo as a founding member — 10 spots only"
+      "title": "Why Agencies Hire Clyde",
+      "customBuiltTitle": "Always On, Never Sick",
+      "customBuilt": "Clyde works nights, weekends, and holidays. No PTO requests, no sick days, no turnover",
+      "founderAccessTitle": "Learns Continuously",
+      "founderAccess": "Clyde studies every client's brand voice, audience data, and performance history — improving every week",
+      "successGuaranteeTitle": "Handles All Your Clients",
+      "successGuarantee": "One Clyde instance manages 10, 20, or 50 clients simultaneously without quality loss",
+      "trialTitle": "Enterprise AI Backbone",
+      "trialCommitment": "Clyde runs on enterprise-grade AI infrastructure with 99.9% uptime and EU data residency"
     },
     "stats": {
       "clients": {
-        "value": "50+",
-        "label": "Clients Managed"
+        "value": "24/7",
+        "label": "Availability"
       },
       "content": {
+        "value": "6",
+        "label": "Specialized Skills"
+      },
+      "hours": {
         "value": "160+",
         "label": "Content Pieces/Month"
       },
-      "hours": {
-        "value": "38h",
-        "label": "Hours Saved/Week"
-      },
       "languages": {
-        "value": "3",
-        "label": "Languages Supported"
+        "value": "<2min",
+        "label": "Average Response Time"
       }
     },
     "badges": {
       "title": "Built for European Agencies",
-      "gdpr": "GDPR-First",
-      "enterprise": "Powered by Enterprise AI",
-      "dutch": "Dutch Support",
+      "gdpr": "GDPR-First AI",
+      "enterprise": "Enterprise AI Backbone",
+      "dutch": "Native Dutch Support",
       "uptime": "99.9% Uptime SLA",
       "integrations": "200+ Integrations",
       "noLockIn": "No Lock-in Contracts"
     },
     "cta": {
-      "title": "Ready to Hire Your AI Employee?",
-      "subtitle": "Book a free 30-minute strategy call. We will map how an AI Marketing Employee fits your agency.",
-      "button": "Book a Strategy Call"
+      "title": "Ready to Meet Clyde?",
+      "subtitle": "Only 10 founding member spots available at EUR 997/mo. Meet Clyde and see what he can do for your agency.",
+      "button": "Meet Clyde"
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "items": {
         "q1": {
-          "question": "What is an AI Marketing Employee?",
-          "answer": "An AI Marketing Employee is a persistent AI agent that works 24/7 for your agency. Unlike tools you have to operate, your AI employee executes tasks autonomously — creating content, qualifying leads, managing social media, running ads, and generating reports for each of your clients."
+          "question": "What is Clyde exactly?",
+          "answer": "Clyde is an AI marketing employee built specifically for agencies. He is not a tool you operate — he is a colleague you assign tasks to. Tell Clyde to write blog posts for Client A, call leads for Client B, and generate reports for Client C. He executes autonomously, 24/7."
         },
         "q2": {
-          "question": "How does it learn my clients' brands?",
-          "answer": "During onboarding, your AI employee ingests each client's brand guidelines, tone of voice, target audience, and historical content. It continuously improves by analyzing performance data and feedback, getting more aligned with each client's brand every week."
+          "question": "How does Clyde learn my clients' brands?",
+          "answer": "During onboarding, Clyde ingests each client's brand guidelines, tone of voice, target audience, and historical content. He continuously improves by analyzing performance data and your feedback. Every week, Clyde gets more aligned with each client's brand."
         },
         "q3": {
-          "question": "What skills are available?",
-          "answer": "Six skills are available: Content Creator (blog posts, social content, newsletters), Voice Agent (calls and appointment booking), Lead Qualifier (chatbot and lead scoring), Social Media Manager (scheduling and analytics), Ad Creator (static and video ads), and Reporting & Analytics (dashboards and weekly reports). Activate what you need, add more anytime."
+          "question": "Can Clyde work for multiple clients simultaneously?",
+          "answer": "Yes. Clyde handles 10, 20, or 50 clients at the same time without quality loss. Each client gets isolated brand context, so Clyde never mixes up tone, audience, or messaging between accounts."
         },
         "q4": {
-          "question": "How is this different from hiring a junior marketer?",
-          "answer": "A junior marketer costs EUR 45,000-60,000/year, works 40 hours/week, and handles one client at a time. Your AI employee costs from EUR 997/month, works 24/7, handles all your clients simultaneously, and never calls in sick. It is not a replacement for strategy — it is a replacement for repetitive execution."
+          "question": "What happens if Clyde makes a mistake?",
+          "answer": "Every piece of content Clyde produces goes through your approval workflow before publishing. You set the guardrails — Clyde executes within them. If something needs adjustment, Clyde learns from the correction and avoids repeating it."
         },
         "q5": {
-          "question": "What about GDPR and data privacy?",
-          "answer": "FMai is GDPR-first. All data processing happens within EU data centers. We provide a Data Processing Agreement (Verwerkersovereenkomst) for every agency client. Your clients' data is isolated per workspace — no cross-client data leakage. We are built for European compliance from day one."
+          "question": "How is Clyde different from ChatGPT or other AI tools?",
+          "answer": "ChatGPT is a general-purpose tool you prompt manually. Clyde is a specialized marketing employee that works autonomously. He knows your clients, follows your brand guidelines, publishes on schedule, and reports on results — without you writing a single prompt. Think colleague, not tool."
         }
       }
     }
