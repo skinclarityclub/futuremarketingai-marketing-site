@@ -66,7 +66,7 @@ Each task was committed atomically:
 1. **Task 1: Rewrite homepage English copy with Clyde messaging** - `95b6bce` (feat)
 2. **Task 2: Update header navigation with Clyde skill descriptions** - `014d256` (feat)
 
-**Plan metadata:** pending (docs: complete plan)
+**Plan metadata:** `d412a1a` (docs: complete plan)
 
 ## Files Created/Modified
 
