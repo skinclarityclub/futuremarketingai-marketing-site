@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: '2026-03-20T20:01:00.000Z'
+last_updated: '2026-03-20T20:06:07.000Z'
 progress:
   total_phases: 2
   completed_phases: 2
   total_plans: 14
-  completed_plans: 12
+  completed_plans: 14
 ---
 
 # Project State
@@ -18,24 +18,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 1/4 done), Phase 3 IN PROGRESS (plan 2/3 done). Next: Phase 2 plan 2, Phase 3 plan 3, Phase 5 plan 3
+**Current focus:** Phase 1 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 3/4 done), Phase 3 IN PROGRESS (plan 2/3 done). Next: Phase 2 plan 4, Phase 3 plan 3, Phase 5 plan 3
 
 ## Current Position
 
 Phase: 2 of 5 (Dashboard Reframe) -- IN PROGRESS
-Plan: 1 of 4 in current phase (02-01 done, 02-02/02-03/02-04 remaining)
+Plan: 3 of 4 in current phase (02-01/02-02/02-03 done, 02-04 remaining)
 Status: Executing
-Last activity: 2026-03-20 -- Completed 02-01-PLAN.md (agency data model, skills config, sidebar relabel, route redirects)
+Last activity: 2026-03-20 -- Completed 02-02-PLAN.md (Stripe billing integration, checkout actions, webhook handler, billing page)
 
-Progress: [████████░░] 86%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 12
-- Average duration: ~10 min
-- Total execution time: ~2.1 hours
+- Total plans completed: 14
+- Average duration: ~9 min
+- Total execution time: ~2.2 hours
 
 **By Phase:**
 
@@ -44,12 +44,12 @@ Progress: [████████░░] 86%
 | 1. Website Rebrand  | 5/5   | ~56min | ~11min   |
 | 3. n8n Multi-Tenant | 2/3   | ~30min | ~10min   |
 | 4. Compliance       | 2/2   | ~18min | ~9min    |
-| 2. Dashboard Refr.  | 1/4   | ~2min  | ~2min    |
+| 2. Dashboard Refr.  | 3/4   | ~6min  | ~2min    |
 | 5. Go-to-Market     | 2/3   | ~8min  | ~4min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 05-02 (5min), 03-02 (6min), 05-03 (4min), 03-01 (18min), 02-01 (2min)
+- Last 5 plans: 03-02 (6min), 05-03 (4min), 03-01 (18min), 02-01 (2min), 02-03 (2min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -101,6 +101,9 @@ Recent decisions affecting current work:
 - [02-01]: Used TEXT[] for active_skills with GIN index for efficient array queries
 - [02-01]: 12 sidebar items: removed 7 SKC-specific, relabeled remaining for AaaS
 - [02-01]: Permanent (308) redirects for pipeline->agent-activity and campaigns->tasks
+- [02-03]: SkillToggle as separate client component with optimistic state and useTransition
+- [02-03]: Client detail page rewritten to focus on skill activation (removed old edit form, brand profile, blog links)
+- [02-03]: Dashboard removed all SKC widgets (pipeline, revenue, tokens, shopify, insights, account health)
 
 ### Pending Todos
 
@@ -114,5 +117,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 02-01-PLAN.md (agency data model, skills config, sidebar relabel, route redirects)
+Stopped at: Completed 02-03-PLAN.md (dashboard overview, client workspaces, skill toggles, placeholder pages)
 Resume file: None
