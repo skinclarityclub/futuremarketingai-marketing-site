@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -12,8 +13,14 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { DemoPlayground } from '@/components/chatbot/DemoPlayground'
+import { TrustMetrics } from '@/components/common/TrustMetrics'
+import { PricingTiers } from '@/components/common/PricingTiers'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Link } from '@/i18n/navigation'
+
+const MultiPlatformShowcase = dynamic(() => import('@/components/chatbot/MultiPlatformShowcase'), {
+  ssr: false,
+})
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -141,8 +148,94 @@ export default async function ChatbotsPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* Multi-Platform Showcase */}
+      <section aria-labelledby="multi-platform" className="py-20 px-6 lg:px-12">
+        <MultiPlatformShowcase />
+      </section>
+
+      {/* Trust Metrics */}
+      <section aria-labelledby="trust-metrics" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-5xl mx-auto">
+          <TrustMetrics
+            metrics={[
+              {
+                value: '50,000+',
+                label: 'Inquiries Processed',
+                description: 'Monthly across all clients',
+              },
+              {
+                value: '24/7',
+                label: 'Always Available',
+                description: 'No downtime, no sick days',
+              },
+              {
+                value: '15+',
+                label: 'CRM Integrations',
+                description: 'HubSpot, Salesforce, Pipedrive...',
+              },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* Pricing Tiers */}
+      <section aria-labelledby="pricing" className="py-20 px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading id="pricing">{t('sections.pricing_heading')}</SectionHeading>
+          <p className="text-lg text-text-secondary text-center mb-10 -mt-4">
+            {t('sections.pricing_subtitle')}
+          </p>
+          <PricingTiers
+            tiers={[
+              {
+                name: 'Starter',
+                price: '\u20AC497',
+                period: '/mo',
+                features: [
+                  '1,000 conversations/mo',
+                  'Email support',
+                  'Setup in 1-2 weeks',
+                  '1 platform',
+                  'Basic analytics',
+                ],
+                highlighted: false,
+              },
+              {
+                name: 'Growth',
+                price: '\u20AC997',
+                period: '/mo',
+                badge: 'Most Popular',
+                features: [
+                  '3,000 conversations/mo',
+                  'Analytics dashboard',
+                  'Setup in 2-3 weeks',
+                  '2 platforms',
+                  'Priority support',
+                ],
+                highlighted: true,
+              },
+              {
+                name: 'Scale',
+                price: '\u20AC1,997',
+                period: '/mo',
+                features: [
+                  '5,000 conversations/mo',
+                  'Priority support',
+                  'Monthly strategy call',
+                  '3+ platforms',
+                  'Custom integrations',
+                ],
+                highlighted: false,
+              },
+            ]}
+            ctaHref="/contact"
+            ctaLabel="Get Started"
+          />
+        </div>
+      </section>
+
       {/* How Does a Chatbot Get Deployed? */}
-      <section aria-labelledby="process" className="py-20 px-6 lg:px-12">
+      <section aria-labelledby="process" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
           <SectionHeading id="process">{t('sections.process_heading')}</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">

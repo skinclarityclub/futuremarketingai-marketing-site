@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl'
 import { PersonaSelector, DEMO_PERSONAS, type DemoPersonaId } from './PersonaSelector'
 import { DemoContextCard } from './DemoContextCard'
 import { ChatWidget } from './ChatWidget'
+import { ProgressiveCTA } from './ProgressiveCTA'
+import { useChatbotStore } from '@/stores/chatbotStore'
 import {
   ECOMMERCE_STARTERS,
   LEADGEN_STARTERS,
@@ -40,6 +42,7 @@ const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
 export function DemoPlayground() {
   const t = useTranslations('chatbots')
   const [activeTab, setActiveTab] = useState<DemoPersonaId>('ecommerce')
+  const messageCounts = useChatbotStore((s) => s.messageCounts)
 
   return (
     <section id="demo-playground" className="py-16 px-6 lg:px-12">
@@ -69,6 +72,9 @@ export function DemoPlayground() {
             ))}
           </div>
         </div>
+
+        {/* Progressive CTA -- appears based on message count */}
+        <ProgressiveCTA messageCount={messageCounts[activeTab] || 0} />
       </div>
     </section>
   )
