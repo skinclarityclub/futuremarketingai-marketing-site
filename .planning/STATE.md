@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: '2026-03-20T20:30:45.166Z'
+last_updated: '2026-03-20T20:39:23.000Z'
 progress:
   total_phases: 6
   completed_phases: 3
   total_plans: 21
-  completed_plans: 15
+  completed_plans: 16
 ---
 
 # Project State
@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 2 IN PROGRESS (plan 3/4 done). Next: Phase 2 plan 4, Phase 5 plan 3
+**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 6 IN PROGRESS (plan 1/4 done). Next: Phase 6 plan 2, Phase 2 plan 4, Phase 5 plan 3
 
 ## Current Position
 
-Phase: 2 of 5 (Dashboard Reframe) -- IN PROGRESS
-Plan: 3 of 4 in current phase (02-01/02-02/02-03 done, 02-04 remaining)
+Phase: 6 of 6 (Vite Feature Parity) -- IN PROGRESS
+Plan: 1 of 4 in current phase (06-01 done, 06-02/06-03/06-04 remaining)
 Status: Executing
-Last activity: 2026-03-20 -- Completed 02-02-PLAN.md (Stripe billing integration, checkout actions, webhook handler, billing page)
+Last activity: 2026-03-20 -- Completed 06-01-PLAN.md (Language switcher enhancement + 4 shared reusable components)
 
 Progress: [██████████] 100%
 
@@ -33,9 +33,9 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 15
+- Total plans completed: 16
 - Average duration: ~9 min
-- Total execution time: ~2.4 hours
+- Total execution time: ~2.5 hours
 
 **By Phase:**
 
@@ -46,10 +46,11 @@ Progress: [██████████] 100%
 | 4. Compliance       | 2/2   | ~18min | ~9min    |
 | 2. Dashboard Refr.  | 3/4   | ~6min  | ~2min    |
 | 5. Go-to-Market     | 2/3   | ~8min  | ~4min    |
+| 6. Vite Feat. Par.  | 1/4   | ~4min  | ~4min    |
 
 **Recent Trend:**
 
-- Last 5 plans: 03-01 (18min), 02-01 (2min), 02-03 (2min), 02-02 (2min), 03-03 (11min)
+- Last 5 plans: 02-01 (2min), 02-03 (2min), 02-02 (2min), 03-03 (11min), 06-01 (4min)
 - Trend: Improving
 
 _Updated after each plan completion_
@@ -112,6 +113,10 @@ Recent decisions affecting current work:
 - [03-03]: Agency Client Setup loads config/accounts/pillars in parallel from webhook for faster validation
 - [03-03]: Init Config has 6 client\_\* tables (not 8) -- actual schema differs from plan assumption
 - [03-03]: Usage Metering V1.0 (vhDFFD8WN3VeWNNw) and Agency Client Setup V1.0 (gn0vxvXrV176fnuE) workflow IDs
+- [06-01]: Flag emojis use Unicode escape sequences for cross-platform rendering
+- [06-01]: Shared components are server components (no 'use client') importing client components as needed
+- [06-01]: Common components pattern established in src/components/common/
+- [06-01]: PricingTiers uses CTAButton variant prop for highlighted vs standard tiers
 
 ### Roadmap Evolution
 
@@ -129,5 +134,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 03-03-PLAN.md (Agency Client Setup, Usage Metering, multi-tenant verification -- Phase 3 COMPLETE)
+Stopped at: Completed 06-01-PLAN.md (Language switcher enhancement + 4 shared reusable components)
 Resume file: None
