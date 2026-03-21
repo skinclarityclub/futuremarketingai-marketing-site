@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 9 of 9 (Codebase Cleanup) -- IN PROGRESS
-Plan: 1 of 3 in current phase (1 complete)
+Plan: 2 of 3 in current phase (2 complete)
 Status: In Progress
-Last activity: 2026-03-21 -- Completed 09-01-PLAN.md (Delete old Vite project and orphaned files)
+Last activity: 2026-03-21 -- Completed 09-02-PLAN.md (Fix persona crash, delete orphaned pages)
 
-Progress: [████████░░] 87% | Phase 9: [███░░░░░░░] 1/3
+Progress: [█████████░] 93% | Phase 9: [██████░░░░] 2/3
 
 ## Performance Metrics
 
@@ -61,6 +61,8 @@ _Updated after each plan completion_
 | Phase 07 P04 | 17min | 2 tasks | 2 files |
 | Phase 08 P01 | 3min | 2 tasks | 6 files |
 | Phase 08 P02 | 2min | 2 tasks | 3 files |
+| Phase 09 P01 | 5min | 2 tasks | 442 files |
+| Phase 09 P02 | 7min | 2 tasks | 17 files |
 | Phase 09 P01 | 4min | 2 tasks | 966 files |
 
 ## Accumulated Context
@@ -154,6 +156,11 @@ Recent decisions affecting current work:
 - [08-02]: WELCOME_MESSAGES uses 'default' key with nullish coalescing for clean pathname fallback
 - [08-02]: Flagship persona ID kept as fallback in engine for persisted store compatibility
 - [08-02]: filterToolsByContext function kept as dead code to avoid breaking potential references
+- [09-02]: DemoPlayground sends personaId='clyde' for all 4 tabs (tabs keep distinct display names and welcome messages)
+- [09-02]: Engine falls back to clyde for unknown persona IDs (graceful degradation, no 404)
+- [09-02]: Knowledge base and tool files restored (still needed by flagship aggregator that feeds Clyde)
+- [09-02]: Redirect destinations updated: /chatbots -> /skills/chatbot, /automations -> /skills/ad-creator
+- [09-02]: ChatWidget treats 'clyde' as flagship-equivalent for side panel and badge features
 - [09-01]: Deleted .github, .husky, .vercel, .cursor, .taskmaster alongside Vite dirs (all old project infrastructure)
 - [09-01]: Simplified .gitignore to only Next.js-relevant patterns
 - [09-01]: Kept DEPLOYMENT.md at root (still relevant for Vercel deployment)
@@ -177,5 +184,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-21
-Stopped at: Completed 09-01-PLAN.md (Delete old Vite project and orphaned files)
+Stopped at: Completed 09-02-PLAN.md (Fix persona crash, delete orphaned pages)
 Resume file: None
