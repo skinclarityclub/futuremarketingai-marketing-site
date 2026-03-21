@@ -70,7 +70,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero Section — Immersive layout with Spline 3D */}
       <section
         aria-labelledby="hero"
-        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-[140px] pb-20 overflow-hidden"
+        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
       >
         {/* 3D Robot — absolute, bleeds across full hero */}
         <HeroSpline />
@@ -80,7 +80,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="relative z-10 flex-1 max-w-[720px]">
             {/* Eyebrow badge */}
             <div
-              className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
+              className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 lg:mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
               style={{ animation: 'fadeIn 0.8s ease-out' }}
             >
               {t('hero.badge')}
@@ -103,7 +103,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Description */}
             <p
-              className="text-lg lg:text-xl text-text-secondary max-w-xl mb-6 leading-relaxed"
+              className="text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
               {t('hero.subtitle')}
@@ -111,7 +111,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Trust anchor */}
             <p
-              className="text-sm text-text-muted mb-10"
+              className="text-sm text-text-muted mb-6 lg:mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
             >
               {t('hero.trustAnchor')}

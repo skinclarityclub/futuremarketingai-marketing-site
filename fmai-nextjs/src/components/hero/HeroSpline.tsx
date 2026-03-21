@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { SplineScene } from '@/components/ui/splite'
 
 export function HeroSpline() {
@@ -36,39 +35,42 @@ export function HeroSpline() {
         </div>
       </div>
 
-      {/* Mobile — static robot image, lightweight */}
-      <div className="absolute inset-0 lg:hidden pointer-events-none">
-        {/* Ambient glow — centered for mobile */}
+      {/* Mobile — perspective grid with radial glow */}
+      <div className="absolute inset-0 lg:hidden pointer-events-none overflow-hidden">
+        {/* Perspective grid floor */}
         <div
-          className="absolute top-[45%] left-[55%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-20 blur-[80px]"
+          className="absolute bottom-0 left-0 right-0 h-[55%]"
           style={{
-            background:
-              'radial-gradient(circle, rgba(0,212,255,0.4) 0%, rgba(168,85,247,0.15) 50%, transparent 70%)',
+            backgroundImage: `
+              linear-gradient(rgba(0,212,255,0.06) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,212,255,0.06) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            transform: 'perspective(500px) rotateX(60deg)',
+            transformOrigin: 'center bottom',
+            maskImage: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 70%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 70%)',
           }}
         />
 
-        {/* Static robot render — behind text as atmospheric element */}
+        {/* Central radial glow */}
         <div
-          className="absolute top-[15%] right-[-15%] w-[75%] h-[80%]"
+          className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full blur-[80px]"
           style={{
-            maskImage:
-              'linear-gradient(to bottom, transparent 0%, black 10%, black 65%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 75%, transparent 100%)',
-            maskComposite: 'intersect',
-            WebkitMaskImage:
-              'linear-gradient(to bottom, transparent 0%, black 10%, black 65%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 75%, transparent 100%)',
-            WebkitMaskComposite: 'source-in',
-            opacity: 0.4,
+            background:
+              'radial-gradient(ellipse, rgba(0,212,255,0.18) 0%, rgba(168,85,247,0.08) 40%, transparent 70%)',
+            animation: 'heroGridGlow 4s ease-in-out infinite',
           }}
-        >
-          <Image
-            src="/images/hero-robot.png"
-            alt="Clyde AI Marketing Employee"
-            fill
-            className="object-contain object-center"
-            sizes="(max-width: 1024px) 75vw, 0px"
-            priority
-          />
-        </div>
+        />
+
+        {/* Horizon accent line */}
+        <div
+          className="absolute top-[52%] left-[8%] right-[8%] h-px"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent, rgba(0,212,255,0.25) 30%, rgba(168,85,247,0.25) 70%, transparent)',
+          }}
+        />
       </div>
     </>
   )
