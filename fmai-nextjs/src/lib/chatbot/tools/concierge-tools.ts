@@ -77,10 +77,12 @@ const CASE_STUDIES: Record<
 
 const PAGE_LABELS: Record<string, string> = {
   '/': 'Home',
-  '/automations': 'Automations',
-  '/chatbots': 'AI Chatbots',
-  '/voice-agents': 'Voice Agents',
-  '/marketing-machine': 'Marketing Machine',
+  '/skills/chatbot': 'AI Chatbot',
+  '/skills/content-creator': 'Content Creator',
+  '/skills/voice-agent': 'Voice Agent',
+  '/skills/ad-creator': 'Ad Creator',
+  '/skills/social-media': 'Social Media',
+  '/skills/lead-qualifier': 'Lead Qualifier',
   '/pricing': 'Pricing',
   '/about': 'About Us',
   '/contact': 'Contact',
@@ -126,10 +128,12 @@ export const conciergeTools = {
       page: z
         .enum([
           '/',
-          '/automations',
-          '/chatbots',
-          '/voice-agents',
-          '/marketing-machine',
+          '/skills/chatbot',
+          '/skills/content-creator',
+          '/skills/voice-agent',
+          '/skills/ad-creator',
+          '/skills/social-media',
+          '/skills/lead-qualifier',
           '/pricing',
           '/about',
           '/contact',

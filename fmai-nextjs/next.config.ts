@@ -89,12 +89,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/:locale/chatbots',
-        destination: '/:locale/skills/lead-qualifier',
+        destination: '/:locale/skills/chatbot',
         permanent: true,
       },
       {
         source: '/:locale/automations',
-        destination: '/:locale/skills/content-creator',
+        destination: '/:locale/skills/ad-creator',
         permanent: true,
       },
       {

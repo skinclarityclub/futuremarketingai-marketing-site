@@ -20,43 +20,37 @@ const navigate_to_page = tool({
   inputSchema: z.object({
     page: z
       .enum([
-        // Marketing pages (from concierge)
         '/',
-        '/automations',
-        '/chatbots',
-        '/voice-agents',
-        '/marketing-machine',
+        '/skills/chatbot',
+        '/skills/content-creator',
+        '/skills/voice-agent',
+        '/skills/ad-creator',
+        '/skills/social-media',
+        '/skills/lead-qualifier',
         '/pricing',
         '/about',
         '/contact',
         '/how-it-works',
-        // Demo pages (from demo-guide)
-        'explorer',
-        'calculator',
-        'dashboard',
       ])
-      .describe('The page URL or demo page to navigate to'),
+      .describe('The page URL to navigate to'),
     reason: z.string().optional().describe('Why suggesting this navigation'),
   }),
   execute: async ({ page, reason }) => {
     const PAGE_LABELS: Record<string, string> = {
       '/': 'Home',
-      '/automations': 'Automations',
-      '/chatbots': 'AI Chatbots',
-      '/voice-agents': 'Voice Agents',
-      '/marketing-machine': 'Marketing Machine',
+      '/skills/chatbot': 'AI Chatbot',
+      '/skills/content-creator': 'Content Creator',
+      '/skills/voice-agent': 'Voice Agent',
+      '/skills/ad-creator': 'Ad Creator',
+      '/skills/social-media': 'Social Media',
+      '/skills/lead-qualifier': 'Lead Qualifier',
       '/pricing': 'Pricing',
       '/about': 'About Us',
       '/contact': 'Contact',
       '/how-it-works': 'How It Works',
-      explorer: 'Module Explorer',
-      calculator: 'ROI Calculator',
-      dashboard: 'Live Dashboard',
     }
 
-    // Demo pages get prefixed with /marketing-machine/
-    const isDemoPage = ['explorer', 'calculator', 'dashboard'].includes(page)
-    const url = isDemoPage ? `/marketing-machine/${page}` : page
+    const url = page
 
     return {
       action: 'navigate',
