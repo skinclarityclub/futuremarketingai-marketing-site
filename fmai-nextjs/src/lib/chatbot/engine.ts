@@ -172,16 +172,14 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     // 11. Create persona tools (with context-aware filtering for flagship)
     // During demo mode, all tools are needed regardless of page context
     let tools = createPersonaTools(persona)
-    if (persona.id === 'flagship') {
+    // For Clyde: all tools always available (no page-based filtering)
+    // For demo mode: exclude navigate_to_page (catches too many queries)
+    if (persona.id === 'clyde' || persona.id === 'flagship') {
       if (context?.demoMode) {
-        // Demo mode: all tools EXCEPT navigate_to_page (it's a catch-all that
-        // interferes with specific tool demos — AI picks it instead of
-        // search_knowledge_base, explain_module, etc.)
         const { navigate_to_page: _, ...demoTools } = tools
         tools = demoTools
-      } else if (context?.currentPage) {
-        tools = filterToolsByContext(tools, { currentPage: context.currentPage })
       }
+      // No else -- Clyde gets all tools on every page
     }
 
     // 12. Build messages for streamText
