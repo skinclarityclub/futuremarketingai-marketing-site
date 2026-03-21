@@ -7,18 +7,13 @@ import { DemoContextCard } from './DemoContextCard'
 import { ChatWidget } from './ChatWidget'
 import { ProgressiveCTA } from './ProgressiveCTA'
 import { useChatbotStore } from '@/stores/chatbotStore'
-import {
-  ECOMMERCE_STARTERS,
-  LEADGEN_STARTERS,
-  SUPPORT_STARTERS,
-  CONCIERGE_STARTERS,
-} from '@/lib/chatbot/personas'
+import { CLYDE_STARTERS } from '@/lib/chatbot/personas'
 
 const PERSONA_STARTERS: Record<DemoPersonaId, Record<string, string[]>> = {
-  ecommerce: ECOMMERCE_STARTERS,
-  leadgen: LEADGEN_STARTERS,
-  support: SUPPORT_STARTERS,
-  concierge: CONCIERGE_STARTERS,
+  ecommerce: CLYDE_STARTERS,
+  leadgen: CLYDE_STARTERS,
+  support: CLYDE_STARTERS,
+  concierge: CLYDE_STARTERS,
 }
 
 const PERSONA_NAMES: Record<DemoPersonaId, string> = {
