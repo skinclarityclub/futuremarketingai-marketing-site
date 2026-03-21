@@ -67,11 +67,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         }))}
       />
 
-      {/* Hero Section — Split layout with Spline 3D */}
+      {/* Hero Section — Immersive layout with Spline 3D */}
       <section
         aria-labelledby="hero"
         className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-[140px] pb-20 overflow-hidden"
       >
+        {/* 3D Robot — absolute, bleeds across full hero */}
+        <HeroSpline />
+
         <div className="flex flex-col lg:flex-row items-center w-full gap-8">
           {/* Left content */}
           <div className="relative z-10 flex-1 max-w-[720px]">
@@ -132,8 +135,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
 
-          {/* Right content — 3D Spline Scene */}
-          <HeroSpline />
+          {/* Right spacer — reserves space for the absolute-positioned 3D scene */}
+          <div className="flex-1 hidden lg:block" />
         </div>
       </section>
 
