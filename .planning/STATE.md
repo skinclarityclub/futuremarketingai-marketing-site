@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: '2026-03-21T00:19:01.636Z'
+status: in_progress
+last_updated: '2026-03-21T19:17:21.000Z'
 progress:
-  total_phases: 8
-  completed_phases: 6
-  total_plans: 27
-  completed_plans: 25
+  total_phases: 9
+  completed_phases: 8
+  total_plans: 30
+  completed_plans: 26
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 8 of 8 (Clyde Chatbot Personality) -- COMPLETE
-Plan: 2 of 2 in current phase (2 complete)
-Status: Complete
-Last activity: 2026-03-21 -- Completed 08-02-PLAN.md (Context-aware UI: welcome messages, header branding, tool access)
+Phase: 9 of 9 (Codebase Cleanup) -- IN PROGRESS
+Plan: 1 of 3 in current phase (1 complete)
+Status: In Progress
+Last activity: 2026-03-21 -- Completed 09-01-PLAN.md (Delete old Vite project and orphaned files)
 
-Progress: [██████████] 100% | Phase 8: [==========] 2/2
+Progress: [████████░░] 87% | Phase 9: [███░░░░░░░] 1/3
 
 ## Performance Metrics
 
@@ -61,6 +61,7 @@ _Updated after each plan completion_
 | Phase 07 P04 | 17min | 2 tasks | 2 files |
 | Phase 08 P01 | 3min | 2 tasks | 6 files |
 | Phase 08 P02 | 2min | 2 tasks | 3 files |
+| Phase 09 P01 | 4min | 2 tasks | 966 files |
 
 ## Accumulated Context
 
@@ -153,12 +154,16 @@ Recent decisions affecting current work:
 - [08-02]: WELCOME_MESSAGES uses 'default' key with nullish coalescing for clean pathname fallback
 - [08-02]: Flagship persona ID kept as fallback in engine for persisted store compatibility
 - [08-02]: filterToolsByContext function kept as dead code to avoid breaking potential references
+- [09-01]: Deleted .github, .husky, .vercel, .cursor, .taskmaster alongside Vite dirs (all old project infrastructure)
+- [09-01]: Simplified .gitignore to only Next.js-relevant patterns
+- [09-01]: Kept DEPLOYMENT.md at root (still relevant for Vercel deployment)
 
 ### Roadmap Evolution
 
 - Phase 6 added (2026-03-20): Vite Feature Parity — port all interactive demos (chatbot DemoPlayground, voice VoiceDemoSection, VisionTimeline, FeatureShowcase), missing UI sections (pricing tiers, trust metrics, social proof, product media), and enhanced language switcher with flag emojis from original Vite project to Next.js
 - Phase 7 added (2026-03-20): Website Copy Overhaul — rewrite all copy to introduce Clyde as AI marketing employee, wow-first messaging, task-result storytelling, premium tone, native EN/NL/ES copy
 - Phase 8 added (2026-03-21): Clyde Chatbot Personality — unify 6 personas into single Clyde persona with context-aware welcome messages, confident expert tone, all 17 tools on every page
+- Phase 9 added (2026-03-21): Codebase Cleanup — delete Vite legacy (442 files), fix persona crash, add contact email + analytics, remove orphaned pages
 
 ### Pending Todos
 
@@ -172,5 +177,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-21
-Stopped at: Completed 08-02-PLAN.md (Context-aware UI: welcome messages, header branding, tool access)
+Stopped at: Completed 09-01-PLAN.md (Delete old Vite project and orphaned files)
 Resume file: None
