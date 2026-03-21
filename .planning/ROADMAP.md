@@ -24,6 +24,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - [ ] **Phase 5: Go-to-Market** - Founding member outreach, demo assets, and first 3-5 signed agencies
 - [ ] **Phase 6: Vite Feature Parity** - Port all interactive demos, missing UI sections, and enhanced language switcher from Vite to Next.js
 - [ ] **Phase 7: Website Copy Overhaul** - Introduce Clyde as named AI marketing employee with task-result storytelling across all pages
+- [ ] **Phase 8: Clyde Chatbot Personality** - Unified Clyde persona replacing 6 personas, context-aware welcome messages, all 17 tools on every page
 
 ## Phase Details
 
@@ -172,6 +173,29 @@ Plans:
 - [ ] 07-03-PLAN.md — All 8 skill pages English copy rewrite + task-demo sections (Wave 2)
 - [ ] 07-04-PLAN.md — Native Dutch and Spanish rewrites of all Clyde messaging (Wave 3)
 
+### Phase 8: Clyde Chatbot Personality - Unified Persona and Context-Aware Messaging
+
+**Goal:** The floating chatbot widget becomes Clyde — one unified persona replacing 6 separate personas, with context-aware welcome messages, confident expert tone, and all 17 tools available on every page
+**Depends on:** Phase 7 (Clyde messaging must be in place)
+**Requirements**: WEB-01
+
+**Success Criteria** (what must be TRUE):
+
+1. All 6 persona files (flagship, concierge, demo-guide, ecommerce, leadgen, support) are replaced by a single unified Clyde persona
+2. Chat header shows "Clyde" with subtitle "AI Marketing Employee" (EU AI Act disclosure)
+3. Welcome message adapts per page context (12 different pages mapped)
+4. Suggested prompts adapt per page context
+5. Clyde has access to all 17 tools on every page and selects the right one based on context
+6. Clyde's tone is confident expert + ultra-concise (max 2 sentences + tool output)
+7. Default persona in chatbot store is 'clyde' instead of 'concierge'
+
+**Plans:** 2 plans
+
+Plans:
+
+- [ ] 08-01-PLAN.md — Unified Clyde persona + persona index rewrite + store default + prompt-builder context (Wave 1)
+- [ ] 08-02-PLAN.md — ChatWidgetIsland context-aware messages/prompts + ChatHeader Clyde branding + engine tool-filtering removal (Wave 2)
+
 ## Progress
 
 **Execution Order:**
@@ -190,3 +214,4 @@ Phases execute in parallel waves:
 | 5. Go-to-Market      | 2/3            | In progress | -          |
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
 | 7. Copy Overhaul     | 3/4            | In Progress |            |
+| 8. Clyde Chatbot     | 0/2            | Not started | -          |
