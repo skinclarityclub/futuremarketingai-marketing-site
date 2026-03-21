@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: '2026-03-20T23:25:11.936Z'
+last_updated: '2026-03-21T00:14:14.000Z'
 progress:
-  total_phases: 7
-  completed_phases: 5
-  total_plans: 25
-  completed_plans: 23
+  total_phases: 8
+  completed_phases: 8
+  total_plans: 27
+  completed_plans: 27
 ---
 
 # Project State
@@ -22,18 +22,18 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 8 of 8 (Clyde Chatbot Personality) -- IN PROGRESS
-Plan: 1 of 2 in current phase (1 complete)
-Status: In Progress
-Last activity: 2026-03-21 -- Completed 08-01-PLAN.md (Unified Clyde persona + store + prompt-builder)
+Phase: 8 of 8 (Clyde Chatbot Personality) -- COMPLETE
+Plan: 2 of 2 in current phase (2 complete)
+Status: Complete
+Last activity: 2026-03-21 -- Completed 08-02-PLAN.md (Context-aware UI: welcome messages, header branding, tool access)
 
-Progress: [████████░░] 80% | Phase 8: [=====-----] 1/2
+Progress: [██████████] 100% | Phase 8: [==========] 2/2
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 20
+- Total plans completed: 22
 - Average duration: ~9 min
 - Total execution time: ~2.5 hours
 
@@ -50,7 +50,7 @@ Progress: [████████░░] 80% | Phase 8: [=====-----] 1/2
 
 **Recent Trend:**
 
-- Last 5 plans: 07-01 (11min), 07-02 (4min), 07-03 (16min), 07-04 (17min), 08-01 (3min)
+- Last 5 plans: 07-03 (16min), 07-04 (17min), 08-01 (3min), 08-02 (2min)
 - Trend: Stable
 
 _Updated after each plan completion_
@@ -60,6 +60,7 @@ _Updated after each plan completion_
 | Phase 07 P03 | 16min | 2 tasks | 9 files |
 | Phase 07 P04 | 17min | 2 tasks | 2 files |
 | Phase 08 P01 | 3min | 2 tasks | 6 files |
+| Phase 08 P02 | 2min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -149,6 +150,9 @@ Recent decisions affecting current work:
 - [08-01]: maxTokens 300 (between flagship 250 and concierge 500) per design doc
 - [08-01]: PAGE_CONTEXT_HINTS as module-level const for 11 route-specific behavior hints
 - [08-01]: DemoPlayground updated to use CLYDE_STARTERS for all 4 demo persona tabs
+- [08-02]: WELCOME_MESSAGES uses 'default' key with nullish coalescing for clean pathname fallback
+- [08-02]: Flagship persona ID kept as fallback in engine for persisted store compatibility
+- [08-02]: filterToolsByContext function kept as dead code to avoid breaking potential references
 
 ### Roadmap Evolution
 
@@ -168,5 +172,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-21
-Stopped at: Completed 08-01-PLAN.md (Unified Clyde persona + store + prompt-builder)
+Stopped at: Completed 08-02-PLAN.md (Context-aware UI: welcome messages, header branding, tool access)
 Resume file: None
