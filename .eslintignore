@@ -1,7 +1,0 @@
-node_modules
-dist
-build
-coverage
-vite.config.ts.timestamp-*
-fmai-nextjs
-

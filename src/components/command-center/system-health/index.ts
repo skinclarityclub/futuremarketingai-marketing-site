@@ -1,1 +1,0 @@
-export { SystemHealthBar } from './SystemHealthBar'

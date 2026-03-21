@@ -1,6 +1,0 @@
-export { HeatMap } from './HeatMap'
-export type { HeatMapData } from './HeatMap'
-export { TelegramMockup } from './TelegramMockup'
-export type { TelegramMockupProps } from './TelegramMockup'
-export { AdBuilderDemo } from './AdBuilderDemo'
-export type { AdBuilderDemoProps } from './AdBuilderDemo'
