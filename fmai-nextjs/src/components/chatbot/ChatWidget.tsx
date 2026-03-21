@@ -50,7 +50,7 @@ export function ChatWidget({
   const demoStepIndex = useChatbotStore((s) => s.demoStepIndex)
   const startDemo = useChatbotStore((s) => s.startDemo)
 
-  const isFlagship = personaId === 'flagship'
+  const isFlagship = personaId === 'clyde' || personaId === 'flagship'
   const demoScenario = DEMO_SCENARIOS.find((s) => s.id === demoScenarioId)
 
   const handleSend = useCallback(

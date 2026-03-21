@@ -3,11 +3,6 @@ import type { Tool } from 'ai'
 import { tool } from 'ai'
 import { z } from 'zod'
 import { getPersona } from './persona-router'
-import { conciergeTools } from './tools/concierge-tools'
-import { ecommerceTools } from './tools/ecommerce-tools'
-import { leadgenTools } from './tools/leadgen-tools'
-import { supportTools } from './tools/support-tools'
-import { demoGuideTools } from './tools/demo-guide-tools'
 import { flagshipTools } from './tools/flagship-tools'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,14 +10,11 @@ type AnyToolRecord = Record<string, Tool<any, any>>
 
 /**
  * Maps persona ID to its AI SDK tool definitions.
- * Uses Tool<any, any> because each persona has differently-typed tool schemas.
+ * Clyde uses the flagship tool set (all 17 tools).
+ * 'flagship' kept as alias for backward compatibility with persisted store.
  */
 const PERSONA_TOOLS: Record<string, AnyToolRecord> = {
-  concierge: conciergeTools,
-  ecommerce: ecommerceTools,
-  leadgen: leadgenTools,
-  support: supportTools,
-  'demo-guide': demoGuideTools,
+  clyde: flagshipTools,
   flagship: flagshipTools,
 }
 

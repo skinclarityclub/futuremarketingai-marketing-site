@@ -57,7 +57,7 @@ export function DemoPlayground() {
               <div key={id} className={activeTab === id ? 'block' : 'hidden'}>
                 <ChatWidget
                   mode="embedded"
-                  personaId={id}
+                  personaId="clyde"
                   personaName={PERSONA_NAMES[id]}
                   suggestedPrompts={PERSONA_STARTERS[id]?.en || []}
                   welcomeMessage={PERSONA_WELCOME[id]}
