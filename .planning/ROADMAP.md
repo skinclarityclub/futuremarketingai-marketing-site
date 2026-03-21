@@ -194,7 +194,32 @@ Plans:
 Plans:
 
 - [x] 08-01-PLAN.md — Unified Clyde persona + persona index rewrite + store default + prompt-builder context (Wave 1)
-- [ ] 08-02-PLAN.md — ChatWidgetIsland context-aware messages/prompts + ChatHeader Clyde branding + engine tool-filtering removal (Wave 2)
+- [x] 08-02-PLAN.md — ChatWidgetIsland context-aware messages/prompts + ChatHeader Clyde branding + engine tool-filtering removal (Wave 2)
+
+### Phase 9: Codebase Cleanup — Dead Code, Persona Fix, Contact Form, Analytics
+
+**Goal:** Remove all legacy Vite code, orphaned files, and dead persona files. Fix DemoPlayground persona crash. Add working contact form email delivery and website analytics. Clean foundation for further development.
+**Depends on:** Phase 8 (Clyde persona must be in place)
+**Requirements**: WEB-01
+
+**Success Criteria** (what must be TRUE):
+
+1. Root src/, dist/, old config files, old package.json, 211 orphan markdown files, and 55 screenshot PNGs are deleted from the repo
+2. Only fmai-nextjs/ project remains as active code (no dual-project confusion)
+3. DemoPlayground either uses registered persona IDs or falls back gracefully (no crash on unknown persona)
+4. 6 orphaned persona files (concierge.ts, flagship.ts, demo-guide.ts, ecommerce.ts, leadgen.ts, support.ts) are deleted
+5. Contact form sends actual email via Resend/SendGrid when submitted (not just console.log)
+6. Website analytics (Google Analytics or Plausible) is integrated and tracking page views
+7. Old (services) pages either redirect to corresponding (skills) pages or are deleted
+8. Header nav SKILL_CATEGORIES use translation keys (not hardcoded English)
+
+**Plans:** 3 plans
+
+Plans:
+
+- [ ] 09-01-PLAN.md — Delete old Vite project (src/, dist/, configs, scripts, orphaned MDs, PNGs) (Wave 1)
+- [ ] 09-02-PLAN.md — Fix DemoPlayground persona crash + delete orphaned personas + handle (services) pages (Wave 1)
+- [ ] 09-03-PLAN.md — Contact form email (Resend) + Google Analytics 4 + header nav i18n (Wave 2)
 
 ## Progress
 
@@ -215,3 +240,4 @@ Phases execute in parallel waves:
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
 | 7. Copy Overhaul     | 3/4            | In Progress |            |
 | 8. Clyde Chatbot     | 2/2            | Complete    | 2026-03-21 |
+| 9. Codebase Cleanup  | 0/3            | Not started | -          |
