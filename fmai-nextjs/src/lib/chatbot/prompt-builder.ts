@@ -1,5 +1,26 @@
 import type { PersonaConfig, TopicRouterResult } from './types'
 
+const PAGE_CONTEXT_HINTS: Record<string, string> = {
+  '/': 'User is on the homepage. Give an overview of capabilities, route to relevant skills.',
+  '/skills/content-creator':
+    'User is on the Content Creator skill page. Offer to write content for their client.',
+  '/skills/voice-agent':
+    'User is on the Voice Agent skill page. Explain how you handle calls or answer questions.',
+  '/skills/chatbot':
+    'User is on the Chatbot skill page. You ARE the demo — point out they are chatting with you right now.',
+  '/skills/lead-qualifier':
+    'User is on the Lead Qualifier skill page. Offer to score a sample lead.',
+  '/skills/social-media':
+    'User is on the Social Media skill page. Offer to create a content calendar.',
+  '/skills/ad-creator': 'User is on the Ad Creator skill page. Offer to generate ad variations.',
+  '/skills/email':
+    'User is on the Email skill page. Talk about campaigns, follow-ups, inbox management.',
+  '/skills/reporting':
+    'User is on the Reporting skill page. Offer to show a weekly performance report.',
+  '/pricing': 'User is on the Pricing page. Help calculate ROI and walk through tiers.',
+  '/about': 'User is on the About page. Share how you work.',
+}
+
 interface SystemMessage {
   role: 'system'
   content: string
@@ -38,6 +59,11 @@ export function buildSystemMessages(
   // NO cacheControl
   if (context) {
     let contextContent = `## Context:\n- Language: ${context.language ?? 'en'}\n- Current page: ${context.currentPage ?? 'unknown'}`
+
+    const pageHint = context.currentPage ? PAGE_CONTEXT_HINTS[context.currentPage] : undefined
+    if (pageHint) {
+      contextContent += `\n- Page context: ${pageHint}`
+    }
 
     if (context.demoMode) {
       contextContent += `\n\n## DEMO MODE ACTIVE

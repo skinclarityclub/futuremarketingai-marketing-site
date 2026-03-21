@@ -68,7 +68,7 @@ export const useChatbotStore = create<ChatbotState>()(
   persist(
     (set) => ({
       // Defaults
-      personaId: 'concierge',
+      personaId: 'clyde',
       isOpen: false,
       isMinimized: false,
       hasUnread: false,
