@@ -193,7 +193,7 @@ Plans:
 
 Plans:
 
-- [ ] 08-01-PLAN.md — Unified Clyde persona + persona index rewrite + store default + prompt-builder context (Wave 1)
+- [x] 08-01-PLAN.md — Unified Clyde persona + persona index rewrite + store default + prompt-builder context (Wave 1)
 - [ ] 08-02-PLAN.md — ChatWidgetIsland context-aware messages/prompts + ChatHeader Clyde branding + engine tool-filtering removal (Wave 2)
 
 ## Progress
@@ -214,4 +214,4 @@ Phases execute in parallel waves:
 | 5. Go-to-Market      | 2/3            | In progress | -          |
 | 6. Vite Feature Par. | 3/4            | In Progress |            |
 | 7. Copy Overhaul     | 3/4            | In Progress |            |
-| 8. Clyde Chatbot     | 0/2            | Not started | -          |
+| 8. Clyde Chatbot     | 1/2            | In Progress | -          |

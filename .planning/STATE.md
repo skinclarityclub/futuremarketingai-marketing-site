@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 7 of 7 (Website Copy Overhaul) -- COMPLETE
-Plan: 4 of 4 in current phase (all complete)
-Status: Phase Complete
-Last activity: 2026-03-21 -- Completed 07-04-PLAN.md (NL/ES native Clyde rewrite)
+Phase: 8 of 8 (Clyde Chatbot Personality) -- IN PROGRESS
+Plan: 1 of 2 in current phase (1 complete)
+Status: In Progress
+Last activity: 2026-03-21 -- Completed 08-01-PLAN.md (Unified Clyde persona + store + prompt-builder)
 
-Progress: [██████████] 100% (all phases complete) | Phase 7: [==========] 4/4
+Progress: [████████░░] 80% | Phase 8: [=====-----] 1/2
 
 ## Performance Metrics
 
@@ -50,7 +50,7 @@ Progress: [██████████] 100% (all phases complete) | Phase 7:
 
 **Recent Trend:**
 
-- Last 5 plans: 06-03 (6min), 07-01 (11min), 07-02 (4min), 07-03 (16min), 07-04 (17min)
+- Last 5 plans: 07-01 (11min), 07-02 (4min), 07-03 (16min), 07-04 (17min), 08-01 (3min)
 - Trend: Stable
 
 _Updated after each plan completion_
@@ -59,6 +59,7 @@ _Updated after each plan completion_
 | Phase 07 P02 | 4min | 2 tasks | 3 files |
 | Phase 07 P03 | 16min | 2 tasks | 9 files |
 | Phase 07 P04 | 17min | 2 tasks | 2 files |
+| Phase 08 P01 | 3min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -144,10 +145,16 @@ Recent decisions affecting current work:
 - [07-03]: "Meet Clyde" primary CTA routes to /skills/chatbot (DemoPlayground); "Book a Strategy Call" secondary to /contact
 - [07-03]: PricingTiers component import removed from 6 pages that no longer render tier cards
 - [Phase 07-04]: Dutch task_demo examples use Dutch business names; Spanish uses Spanish names; Clyde stays Clyde everywhere
+- [08-01]: Reused FLAGSHIP_TOPICS knowledge base for Clyde (covers all topics already)
+- [08-01]: maxTokens 300 (between flagship 250 and concierge 500) per design doc
+- [08-01]: PAGE_CONTEXT_HINTS as module-level const for 11 route-specific behavior hints
+- [08-01]: DemoPlayground updated to use CLYDE_STARTERS for all 4 demo persona tabs
 
 ### Roadmap Evolution
 
 - Phase 6 added (2026-03-20): Vite Feature Parity — port all interactive demos (chatbot DemoPlayground, voice VoiceDemoSection, VisionTimeline, FeatureShowcase), missing UI sections (pricing tiers, trust metrics, social proof, product media), and enhanced language switcher with flag emojis from original Vite project to Next.js
+- Phase 7 added (2026-03-20): Website Copy Overhaul — rewrite all copy to introduce Clyde as AI marketing employee, wow-first messaging, task-result storytelling, premium tone, native EN/NL/ES copy
+- Phase 8 added (2026-03-21): Clyde Chatbot Personality — unify 6 personas into single Clyde persona with context-aware welcome messages, confident expert tone, all 17 tools on every page
 
 ### Pending Todos
 
@@ -161,5 +168,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-21
-Stopped at: Completed 07-04-PLAN.md (NL/ES native Clyde rewrite) -- Phase 7 COMPLETE
+Stopped at: Completed 08-01-PLAN.md (Unified Clyde persona + store + prompt-builder)
 Resume file: None
