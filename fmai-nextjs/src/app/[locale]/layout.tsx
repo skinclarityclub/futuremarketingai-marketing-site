@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { Viewport } from 'next'
 import { notFound } from 'next/navigation'
 import { setRequestLocale, getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
@@ -13,6 +14,16 @@ import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitch
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import '@/app/globals.css'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
+
+export const metadata = {
+  metadataBase: new URL('https://futuremarketingai.com'),
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -40,6 +51,11 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://prod.spline.design" />
+        <link rel="dns-prefetch" href="https://prod.spline.design" />
+        <link rel="preconnect" href="https://unpkg.com" />
+      </head>
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
         <GradientMesh />
         <NextIntlClientProvider messages={messages}>
