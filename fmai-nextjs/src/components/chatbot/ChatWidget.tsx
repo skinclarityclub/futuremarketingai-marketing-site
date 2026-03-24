@@ -125,7 +125,7 @@ export function ChatWidget({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6 flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)] overflow-hidden rounded-2xl border border-border-primary shadow-2xl shadow-black/40 bg-bg-surface/95 backdrop-blur-xl"
+              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6 flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)] overflow-hidden rounded-2xl border border-border-primary shadow-2xl shadow-black/40 bg-bg-surface/95 backdrop-blur-md"
               role="dialog"
               aria-label={`Chat with ${personaName || 'assistant'}`}
               aria-modal="true"

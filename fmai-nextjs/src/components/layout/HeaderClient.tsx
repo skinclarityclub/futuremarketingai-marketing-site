@@ -145,7 +145,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-bg-deep/95 backdrop-blur-xl border-b border-accent-system/20 shadow-2xl shadow-accent-system/5'
+          ? 'bg-bg-deep/95 backdrop-blur-md border-b border-accent-system/20 shadow-2xl shadow-accent-system/5'
           : 'bg-bg-deep/80 backdrop-blur-md border-b border-border-primary'
       }`}
     >
@@ -193,7 +193,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.96 }}
                         transition={{ duration: 0.2, ease: 'easeOut' }}
-                        className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
+                        className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
                         style={{ width: '580px' }}
                         role="menu"
                       >
@@ -319,7 +319,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-bg-deep/98 backdrop-blur-xl border-t border-border-primary overflow-hidden"
+            className="md:hidden bg-bg-deep/98 backdrop-blur-md border-t border-border-primary overflow-hidden"
           >
             <div className="max-w-7xl mx-auto px-6 py-6">
               <div className="space-y-4">
