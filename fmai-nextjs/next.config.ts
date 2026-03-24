@@ -73,8 +73,28 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  compress: true,
+  productionBrowserSourceMaps: false,
   images: {
     remotePatterns: [],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [375, 640, 750, 828, 1024, 1280, 1536, 1920],
+    minimumCacheTTL: 31536000,
+  },
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      'motion',
+      'react-markdown',
+      'zustand',
+    ],
+  },
+  webpack: (config) => {
+    config.optimization = {
+      ...config.optimization,
+      moduleIds: 'deterministic',
+    }
+    return config
   },
   async headers() {
     return [
