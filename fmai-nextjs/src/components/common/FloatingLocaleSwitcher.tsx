@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { useLocale } from 'next-intl'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 
 const LOCALE_FLAGS: Record<string, string> = {
   en: '\u{1F1EC}\u{1F1E7}',

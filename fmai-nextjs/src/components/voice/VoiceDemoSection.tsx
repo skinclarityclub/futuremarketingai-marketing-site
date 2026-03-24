@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Phone, Zap, Clock, Bot } from 'lucide-react'
 import { useElevenLabsCall } from '@/hooks/useElevenLabsCall'
 import { PhoneMockup } from './PhoneMockup'
