@@ -278,6 +278,7 @@
   filter: blur(100px);
   opacity: 0.12;
   will-change: transform;
+  contain: layout style paint;
 }
 .blob-warm {
   width: 600px;
@@ -302,6 +303,14 @@
   top: 40%;
   left: 30%;
   animation: blobFloat3 20s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-warm,
+  .blob-cool,
+  .blob-mixed {
+    animation: none;
+  }
 }
 
 /* Card gradient border -- hover-activated gradient outline */
@@ -336,4 +345,9 @@
   .card-tilt:hover {
     transform: perspective(800px) rotateX(-1deg) rotateY(1deg) translateY(-2px);
   }
+}
+
+/* Pause all child animations when parent SVG is paused */
+svg[style*="animation-play-state: paused"] * {
+  animation-play-state: paused !important;
 }
