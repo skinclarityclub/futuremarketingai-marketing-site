@@ -12,6 +12,7 @@ import { Providers } from '@/components/providers/Providers'
 import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
 import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
+import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import '@/app/globals.css'
 
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
             <Footer locale={locale} />
             <CookieConsentBanner />
             <ClientIslands />
+            <WebVitalsReporter />
           </Providers>
         </NextIntlClientProvider>
       </body>
