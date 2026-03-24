@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "¿Listo para Conocer a Clyde?",
-      "subtitle": "Solo 10 plazas de miembro fundador disponibles a EUR 997/mes. Conoce a Clyde y descubre lo que puede hacer por tu agencia.",
+      "subtitle": "Solo 5 plazas de agencia fundadora a EUR 697/mes — Full Agency Suite, todas las habilidades, 12 meses bloqueados. Conoce a Clyde y descubre lo que puede hacer por tu agencia.",
       "button": "Conoce a Clyde"
     },
     "faq": {
@@ -742,84 +742,74 @@
   "pricing": {
     "meta": {
       "title": "Precios | Empleado de Marketing IA para Agencias | FMai",
-      "description": "Precios transparentes por nivel. Miembro Fundador EUR 997/mes, Starter EUR 1.497/mes, Growth EUR 1.997/mes, Agency EUR 3.497/mes."
+      "description": "Precios por Vertical Pack para su Empleado de Marketing IA. Social Media Engine EUR 997/mes, Ecommerce Growth EUR 1.497/mes, Full Agency Suite EUR 1.997/mes. Miembro Fundador EUR 697/mes."
     },
     "hero": {
-      "title": "Un Empleado IA. Elija Su Nivel.",
-      "description": "Cada nivel incluye su Empleado de Marketing IA persistente. Niveles superiores desbloquean mas habilidades y espacios de trabajo."
+      "title": "Un Empleado IA. Elija Su Pack.",
+      "description": "Cada pack incluye a Clyde, su Empleado de Marketing IA persistente. Elija la vertical que se ajuste a su agencia y agregue habilidades a medida que crece."
     },
     "tiers": {
-      "founding": {
-        "name": "Miembro Fundador",
+      "social": {
+        "name": "Social Media Engine",
         "price": "997",
-        "badge": "Solo 10 Plazas",
-        "description": "Para agencias early-adopter listas para dar forma al futuro del marketing IA.",
-        "service_count": "2 habilidades incluidas",
-        "features_0": "Empleado IA persistente (24/7)",
-        "features_1": "2 habilidades a eleccion",
-        "features_2": "Hasta 3 espacios de trabajo",
-        "features_3": "Acceso directo al fundador via Slack",
-        "features_4": "Influencia en la hoja de ruta",
-        "features_5": "Precio bloqueado de por vida"
+        "description": "Para agencias enfocadas en gestion de redes sociales en todos los canales de sus clientes.",
+        "service_count": "3 espacios de trabajo",
+        "features_0": "Clyde Empleado de Marketing IA (24/7)",
+        "features_1": "Posts, stories y carruseles de Instagram",
+        "features_2": "Publicaciones en Facebook y LinkedIn",
+        "features_3": "Content Factory (generacion automatica de contenido)",
+        "features_4": "Analytics e informes de rendimiento",
+        "features_5": "Clyde 24/7 via Telegram y dashboard"
       },
-      "starter": {
-        "name": "Starter",
+      "ecommerce": {
+        "name": "Ecommerce Growth",
         "price": "1.497",
-        "description": "Para agencias que comienzan con su primer empleado IA.",
-        "service_count": "2 habilidades incluidas",
-        "features_0": "Empleado IA persistente (24/7)",
-        "features_1": "2 habilidades a eleccion",
-        "features_2": "Hasta 5 espacios de trabajo",
-        "features_3": "Soporte por email y chat",
-        "features_4": "Informe mensual de rendimiento"
-      },
-      "growth": {
-        "name": "Growth",
-        "price": "1.997",
         "badge": "Mas Popular",
-        "description": "Para agencias en crecimiento que necesitan mas habilidades y capacidad.",
-        "service_count": "4 habilidades incluidas",
-        "features_0": "Empleado IA persistente (24/7)",
-        "features_1": "4 habilidades a eleccion",
-        "features_2": "Hasta 15 espacios de trabajo",
-        "features_3": "Soporte prioritario (<4h)",
-        "features_4": "Informes semanales",
-        "features_5": "Dashboard de analytics"
+        "description": "Para agencias con clientes de ecommerce que necesitan habilidades de social, contenido y conversion.",
+        "service_count": "5 espacios de trabajo",
+        "features_0": "Todo lo de Social Media Engine",
+        "features_1": "Blog Factory (articulos optimizados para SEO)",
+        "features_2": "Automatizacion ManyChat DM",
+        "features_3": "Sincronizacion de productos y pedidos Shopify",
+        "features_4": "Dashboard de analytics avanzado",
+        "features_5": "Soporte prioritario (<4h respuesta)"
       },
-      "agency": {
-        "name": "Agency",
-        "price": "3.497",
-        "description": "Para agencias establecidas que quieren el empleado IA completo con todas las habilidades.",
-        "service_count": "Las 6 habilidades",
-        "features_0": "Empleado IA persistente (24/7)",
-        "features_1": "Las 6 habilidades incluidas",
-        "features_2": "Espacios de trabajo ilimitados",
-        "features_3": "Gestor de exito dedicado",
-        "features_4": "Llamada de estrategia mensual",
-        "features_5": "Integraciones personalizadas",
-        "features_6": "Reportes white-label"
+      "full": {
+        "name": "Full Agency Suite",
+        "price": "1.997",
+        "badge": "Todas las Habilidades",
+        "description": "Para agencias establecidas que quieren todas las habilidades de Clyde, mas prioridad en todo.",
+        "service_count": "10 espacios de trabajo",
+        "features_0": "Todo lo de Ecommerce Growth",
+        "features_1": "Agente de Voz (500 min/mes incluidos)",
+        "features_2": "Gestion de campanas de email",
+        "features_3": "Monitoreo de anuncios y seguimiento de competencia",
+        "features_4": "Priority Clyde (respuesta mas rapida, limites mas altos)",
+        "features_5": "Gestor de exito dedicado",
+        "features_6": "Integraciones personalizadas"
       }
     },
     "addons": {
-      "title": "Habilidades Adicionales",
-      "description": "Agregue habilidades extra a cualquier nivel por EUR 497/mes cada una.",
+      "title": "Biblioteca de Habilidades Adicionales",
+      "description": "Extienda cualquier pack con habilidades individuales. Mezcle y combine para su agencia.",
       "items": {
-        "content_creator": "Creador de Contenido",
-        "voice_agent": "Agente de Voz",
-        "lead_qualifier": "Calificador de Leads",
-        "social_media": "Social Media Manager",
-        "ad_creator": "Creador de Anuncios",
-        "reporting": "Reportes & Analytics"
+        "blog": "Blog Factory — EUR 247/mes",
+        "manychat": "ManyChat DM — EUR 247/mes",
+        "voice": "Agente de Voz — EUR 347/mes + uso",
+        "email": "Gestion de Email — EUR 197/mes",
+        "ad_builder": "Ad Builder — EUR 347/mes",
+        "reel_builder": "Reel Builder — EUR 347/mes",
+        "extra_workspace": "Espacio de Trabajo Extra — EUR 97/mes"
       }
     },
     "founding_cta": {
-      "title": "Oferta Miembro Fundador",
-      "description": "Sea una de las primeras 10 agencias. EUR 997/mes bloqueado de por vida.",
+      "title": "Miembro Fundador — EUR 697/mes",
+      "description": "Full Agency Suite con todas las habilidades, bloqueado a EUR 697/mes por 12 meses. Solo 5 agencias. Acceso directo al fundador, influya en la hoja de ruta, prioridad en todo.",
       "button": "Reclame Su Plaza"
     },
     "cta": {
       "title": "Listo para Contratar Su Empleado IA?",
-      "description": "Reserve una llamada estrategica gratuita.",
+      "description": "Reserve una llamada estrategica gratuita y le mostraremos exactamente que pack tendra mas impacto para su agencia.",
       "primary_button": "Reservar una Llamada",
       "secondary_button": "Contactenos"
     },
@@ -827,20 +817,20 @@
       "title": "Preguntas sobre Precios",
       "items": {
         "q1": {
-          "question": "Puedo cambiar de nivel?",
-          "answer": "Si — actualice o reduzca en cualquier momento. Sin penalizaciones."
+          "question": "Puedo cambiar de pack?",
+          "answer": "Si — actualice o reduzca en cualquier momento. Los cambios surten efecto en el siguiente ciclo de facturacion. Sin penalizaciones, sin permanencia."
         },
         "q2": {
           "question": "Hay tarifa de configuracion?",
-          "answer": "No. Incorporacion y configuracion incluidas."
+          "answer": "No. Incorporacion, configuracion y creacion de espacios de trabajo estan incluidas en cada pack. Solo paga la suscripcion mensual."
         },
         "q3": {
-          "question": "Que incluye cada nivel?",
-          "answer": "Empleado IA persistente 24/7, dashboard, informes y soporte."
+          "question": "Que incluye cada pack?",
+          "answer": "Cada pack incluye a Clyde, su Empleado de Marketing IA persistente funcionando 24/7, un dashboard, informes de rendimiento y soporte. Packs superiores agregan mas habilidades y espacios de trabajo."
         },
         "q4": {
-          "question": "Puedo agregar habilidades sin subir de nivel?",
-          "answer": "Si — EUR 497/mes por habilidad."
+          "question": "Puedo agregar habilidades sin subir de pack?",
+          "answer": "Si — las habilidades de nuestra biblioteca se pueden agregar a cualquier pack. Blog Factory y ManyChat a EUR 247/mes, Agente de Voz a EUR 347/mes mas uso, y mas. Espacios de trabajo extra son EUR 97/mes cada uno."
         }
       }
     }
@@ -859,8 +849,8 @@
       "steps": {
         "choose": {
           "step": "Paso 1",
-          "title": "Elija Su Nivel de Agente",
-          "description": "Seleccione el nivel que se ajuste a su agencia. Cada uno incluye su empleado IA persistente."
+          "title": "Elija Su Pack",
+          "description": "Seleccione el pack vertical que se ajuste a su agencia — Social Media Engine, Ecommerce Growth o Full Agency Suite. Cada pack incluye a Clyde, su Empleado de Marketing IA persistente, con habilidades y espacios de trabajo."
         },
         "activate": {
           "step": "Paso 2",
@@ -942,7 +932,7 @@
           },
           "subscription_terms": {
             "title": "2. Terminos de suscripcion",
-            "content": "Los servicios se ofrecen en base a suscripcion mensual en cuatro niveles: Founding Member (EUR 997/mes), Starter (EUR 1.497/mes), Growth (EUR 1.997/mes) y Agency (EUR 3.497/mes). Cada nivel incluye un numero determinado de habilidades y espacios de trabajo de clientes. Se pueden agregar habilidades adicionales a cualquier nivel por EUR 497/mes por habilidad. La facturacion se realiza mensualmente por adelantado. Puede cancelar su suscripcion con 30 dias de aviso por escrito, efectivo al final del ciclo de facturacion vigente. Los precios de Founding Member quedan fijados de por vida durante la suscripcion."
+            "content": "Los servicios se ofrecen en base a suscripcion mensual en tres packs verticales: Social Media Engine (EUR 997/mes), Ecommerce Growth (EUR 1.497/mes) y Full Agency Suite (EUR 1.997/mes). Cada pack incluye un numero determinado de habilidades y espacios de trabajo. Se pueden agregar habilidades adicionales a cualquier pack desde la biblioteca de add-ons (EUR 97-347/mes por habilidad). Un programa de Miembro Fundador ofrece la Full Agency Suite a EUR 697/mes durante 12 meses, limitado a 5 agencias. La facturacion se realiza mensualmente por adelantado. Puede cancelar su suscripcion con 30 dias de aviso por escrito, efectivo al final del ciclo de facturacion vigente, excepto para el compromiso de 12 meses del Miembro Fundador."
           },
           "ai_output_disclaimer": {
             "title": "3. Descargo de responsabilidad sobre la salida de IA",
@@ -1641,32 +1631,32 @@
   "founding-member": {
     "meta": {
       "title": "Miembro Fundador — Empleado de Marketing IA | FMai",
-      "description": "Unase al programa de miembro fundador y asegure EUR 997/mes de por vida. Solo 10 plazas disponibles. Obtenga su Empleado de Marketing IA con acceso directo al fundador y soporte prioritario."
+      "description": "Unase al programa de miembro fundador: Full Agency Suite a EUR 697/mes por 12 meses. Solo 5 agencias. Obtenga todas las habilidades de Clyde con acceso directo al fundador."
     },
     "hero": {
-      "badge": "Solo 10 Plazas",
+      "badge": "Solo 5 Agencias",
       "title": "Conviertase en Miembro Fundador",
-      "description": "Sea una de las primeras 10 agencias en desplegar un Empleado de Marketing IA. Asegure el precio mas bajo para siempre, obtenga acceso directo al fundador y ayude a dar forma al producto."
+      "description": "Sea una de las primeras 5 agencias en desplegar un Empleado de Marketing IA con la Full Agency Suite. EUR 697/mes bloqueado por 12 meses — todas las habilidades, prioridad en todo, acceso directo al fundador."
     },
     "pricing": {
       "heading": "Precios de Miembro Fundador",
       "currency": "EUR",
-      "price": "997",
+      "price": "697",
       "period": "/mes",
-      "locked": "Precio bloqueado de por vida",
-      "comparison": "El precio regular comienza en EUR 1.497/mes",
-      "includes": "Empleado de Marketing IA completo + 1 habilidad a eleccion"
+      "locked": "Precio bloqueado por 12 meses",
+      "comparison": "Full Agency Suite normalmente EUR 1.997/mes — ahorra EUR 1.300/mes",
+      "includes": "Full Agency Suite — todas las habilidades, 10 espacios de trabajo, Priority Clyde"
     },
     "benefits": {
       "heading": "Beneficios de Miembro Fundador",
       "items": {
         "price_lock": {
-          "title": "Precio Bloqueado para Siempre",
-          "description": "Su tarifa de EUR 997/mes nunca aumenta, sin importar cuantas habilidades o funciones agreguemos. Los miembros fundadores obtienen permanentemente la mejor oferta."
+          "title": "EUR 697/mes por 12 Meses",
+          "description": "Full Agency Suite con 65% de descuento por un ano completo. Todas las habilidades incluidas — Social, Blog, ManyChat, Voice, Email, Ads y mas. Sin cargos de add-on."
         },
         "priority": {
           "title": "Soporte Prioritario y Acceso al Fundador",
-          "description": "Saltese la cola. Canal directo de Slack con el fundador para preguntas, feedback y asesoramiento estrategico sobre su empleado IA."
+          "description": "Saltese la cola. Canal directo de Slack con el fundador para preguntas, feedback y asesoramiento estrategico sobre el despliegue de Clyde para sus clientes."
         },
         "influence": {
           "title": "Influya en la Hoja de Ruta",
@@ -1677,12 +1667,12 @@
           "description": "Cada nueva habilidad y funcion se lanza primero para miembros fundadores. Siempre tiene acceso a nuestras ultimas capacidades antes que nadie."
         },
         "community": {
-          "title": "Comunidad Exclusiva de Miembros Fundadores",
-          "description": "Comunidad privada de las primeras 10 agencias usando Empleados de Marketing IA. Comparta estrategias, resultados y mejores practicas."
+          "title": "Red Exclusiva de Agencias Fundadoras",
+          "description": "Comunidad privada de las primeras 5 agencias usando Empleados de Marketing IA. Comparta estrategias, resultados y mejores practicas con otros pioneros."
         },
         "onboarding": {
           "title": "Onboarding Personalizado",
-          "description": "Onboarding personalizado con el fundador. Configuramos juntos su primer espacio de trabajo de cliente y configuramos su empleado IA para maximo impacto."
+          "description": "Onboarding personalizado con el fundador. Configuramos juntos sus espacios de trabajo de clientes y configuramos Clyde para maximo margen de reventa."
         }
       }
     },
@@ -1691,19 +1681,19 @@
       "items": {
         "q1": {
           "question": "Que incluye el plan de miembro fundador?",
-          "answer": "Obtiene un Empleado de Marketing IA completo funcionando 24/7, una habilidad a eleccion (Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator o Reporting), hasta 3 espacios de trabajo de clientes, acceso directo al fundador via Slack y soporte prioritario. Puede agregar mas habilidades a EUR 497/mes cada una."
+          "answer": "Obtiene la Full Agency Suite — todas las habilidades de Clyde: redes sociales, blog factory, ManyChat DM, agente de voz (500 min), gestion de email, monitoreo de anuncios y mas. Mas 10 espacios de trabajo, Priority Clyde y acceso directo al fundador. Nada esta excluido."
         },
         "q2": {
           "question": "Cual es la duracion del compromiso?",
-          "answer": "Pedimos un compromiso inicial de 6 meses para dar al empleado IA tiempo suficiente para aprender las marcas de sus clientes y entregar resultados medibles. Despues de 6 meses, continua mes a mes al mismo precio bloqueado."
+          "answer": "12 meses a EUR 697/mes. Esto le da a Clyde tiempo suficiente para aprender las marcas de sus clientes y entregar resultados medibles. Despues de 12 meses, continua al precio vigente de Full Agency Suite o elige un pack diferente."
         },
         "q3": {
-          "question": "Que pasa despues del periodo de fundacion?",
-          "answer": "No hay fecha de finalizacion para miembros fundadores. Su precio de EUR 997/mes esta bloqueado de por vida. Mientras aumentamos precios para nuevos clientes, su tarifa permanece igual — para siempre."
+          "question": "Que pasa despues de los 12 meses?",
+          "answer": "Despues de su periodo de fundacion, transiciona a precios regulares. La Full Agency Suite es EUR 1.997/mes, pero tambien puede elegir un pack mas pequeno. Los miembros fundadores siempre obtienen precios prioritarios en renovaciones."
         },
         "q4": {
           "question": "Cuantas plazas quedan?",
-          "answer": "Limitamos el programa de miembros fundadores a exactamente 10 agencias. Una vez que se llenen todas las plazas, las nuevas agencias comienzan en el nivel Starter (EUR 1.497/mes). Consulte esta pagina para disponibilidad actual."
+          "answer": "Limitamos el programa de miembros fundadores a exactamente 5 agencias. Una vez que se llenen todas las plazas, las nuevas agencias comienzan con precios regulares de pack. Consulte esta pagina para disponibilidad actual."
         },
         "q5": {
           "question": "Hay garantia de devolucion?",
@@ -1713,7 +1703,7 @@
     },
     "cta": {
       "title": "Listo para Ser el Primero?",
-      "subtitle": "Unase al programa de miembro fundador y asegure el precio mas bajo para siempre.",
+      "subtitle": "Unase al programa de miembro fundador — Full Agency Suite a EUR 697/mes por 12 meses. Solo 5 agencias.",
       "button": "Solicitar Ahora"
     }
   },

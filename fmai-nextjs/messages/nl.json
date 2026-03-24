@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "Klaar om Clyde te Ontmoeten?",
-      "subtitle": "Slechts 10 founding member plekken beschikbaar voor EUR 997/maand. Ontmoet Clyde en ontdek wat hij voor jouw bureau kan doen.",
+      "subtitle": "Slechts 5 founding agency plekken voor EUR 697/maand — Full Agency Suite, alle skills, 12 maanden vastgelegd. Ontmoet Clyde en ontdek wat hij voor jouw bureau kan doen.",
       "button": "Ontmoet Clyde"
     },
     "faq": {
@@ -742,84 +742,74 @@
   "pricing": {
     "meta": {
       "title": "Prijzen | AI Marketing Medewerker voor Bureaus | FMai",
-      "description": "Transparante agent-tier prijzen. Founding Member EUR 997/maand, Starter EUR 1.497/maand, Growth EUR 1.997/maand, Agency EUR 3.497/maand."
+      "description": "Vertical Pack prijzen voor je AI Marketing Medewerker. Social Media Engine EUR 997/maand, Ecommerce Growth EUR 1.497/maand, Full Agency Suite EUR 1.997/maand. Founding Member EUR 697/maand."
     },
     "hero": {
-      "title": "Een AI-Medewerker. Kies Je Tier.",
-      "description": "Elke tier bevat je persistente AI Marketing Medewerker. Hogere tiers ontgrendelen meer skills, meer klantwerkruimtes en prioriteitssupport."
+      "title": "Een AI-Medewerker. Kies Je Pack.",
+      "description": "Elk pack bevat Clyde, je persistente AI Marketing Medewerker. Kies de vertical die bij je bureau past en voeg skills toe naarmate je groeit."
     },
     "tiers": {
-      "founding": {
-        "name": "Founding Member",
+      "social": {
+        "name": "Social Media Engine",
         "price": "997",
-        "badge": "Slechts 10 Plekken",
-        "description": "Voor early-adopter bureaus die de toekomst van AI-marketing willen vormgeven.",
-        "service_count": "2 skills inbegrepen",
-        "features_0": "Persistente AI-medewerker (24/7)",
-        "features_1": "2 skills naar keuze",
-        "features_2": "Tot 3 klantwerkruimtes",
-        "features_3": "Direct contact met oprichter via Slack",
-        "features_4": "Invloed op productroadmap",
-        "features_5": "Prijs voor altijd vastgelegd"
+        "description": "Voor bureaus gericht op social media management voor alle klantkanalen.",
+        "service_count": "3 klantwerkruimtes",
+        "features_0": "Clyde AI Marketing Medewerker (24/7)",
+        "features_1": "Instagram posts, stories & carrousels",
+        "features_2": "Facebook & LinkedIn publicaties",
+        "features_3": "Content Factory (automatisch content genereren)",
+        "features_4": "Analytics & prestatierapporten",
+        "features_5": "Clyde 24/7 via Telegram & dashboard"
       },
-      "starter": {
-        "name": "Starter",
+      "ecommerce": {
+        "name": "Ecommerce Growth",
         "price": "1.497",
-        "description": "Voor bureaus die starten met hun eerste AI-medewerker.",
-        "service_count": "2 skills inbegrepen",
-        "features_0": "Persistente AI-medewerker (24/7)",
-        "features_1": "2 skills naar keuze",
-        "features_2": "Tot 5 klantwerkruimtes",
-        "features_3": "E-mail & chat support",
-        "features_4": "Maandelijks prestatierapport"
-      },
-      "growth": {
-        "name": "Growth",
-        "price": "1.997",
         "badge": "Populairst",
-        "description": "Voor groeiende bureaus die meer skills en klantcapaciteit nodig hebben.",
-        "service_count": "4 skills inbegrepen",
-        "features_0": "Persistente AI-medewerker (24/7)",
-        "features_1": "4 skills naar keuze",
-        "features_2": "Tot 15 klantwerkruimtes",
-        "features_3": "Prioriteitssupport (<4u respons)",
-        "features_4": "Wekelijkse prestatierapporten",
-        "features_5": "Analytics dashboard"
+        "description": "Voor bureaus met e-commerce klanten die social, content en conversie-skills nodig hebben.",
+        "service_count": "5 klantwerkruimtes",
+        "features_0": "Alles uit Social Media Engine",
+        "features_1": "Blog Factory (SEO-geoptimaliseerde artikelen)",
+        "features_2": "ManyChat DM-automatisering",
+        "features_3": "Shopify product- & ordersynchronisatie",
+        "features_4": "Geavanceerd analytics dashboard",
+        "features_5": "Prioriteitssupport (<4u respons)"
       },
-      "agency": {
-        "name": "Agency",
-        "price": "3.497",
-        "description": "Voor gevestigde bureaus die de volledige AI-medewerker met alle skills willen.",
-        "service_count": "Alle 6 skills",
-        "features_0": "Persistente AI-medewerker (24/7)",
-        "features_1": "Alle 6 skills inbegrepen",
-        "features_2": "Onbeperkt klantwerkruimtes",
-        "features_3": "Dedicated succesmanager",
-        "features_4": "Maandelijks strategiegesprek",
-        "features_5": "Custom integraties",
-        "features_6": "White-label rapportages"
+      "full": {
+        "name": "Full Agency Suite",
+        "price": "1.997",
+        "badge": "Alle Skills",
+        "description": "Voor gevestigde bureaus die elke skill van Clyde willen, plus prioriteit op alles.",
+        "service_count": "10 klantwerkruimtes",
+        "features_0": "Alles uit Ecommerce Growth",
+        "features_1": "Voice Agent (500 min/maand inbegrepen)",
+        "features_2": "E-mailcampagne management",
+        "features_3": "Ad monitoring & concurrentie-tracking",
+        "features_4": "Priority Clyde (snellere respons, hogere limieten)",
+        "features_5": "Dedicated succesmanager",
+        "features_6": "Custom integraties"
       }
     },
     "addons": {
-      "title": "Skill Add-ons",
-      "description": "Voeg extra skills toe aan elke tier voor EUR 497/maand per skill.",
+      "title": "Skill Add-on Bibliotheek",
+      "description": "Breid elk pack uit met individuele skills. Mix en match voor jouw bureau.",
       "items": {
-        "content_creator": "Content Creator",
-        "voice_agent": "Voice Agent",
-        "lead_qualifier": "Lead Qualifier",
-        "social_media": "Social Media Manager",
-        "ad_creator": "Ad Creator",
-        "reporting": "Reporting & Analytics"
+        "blog": "Blog Factory — EUR 247/maand",
+        "manychat": "ManyChat DM — EUR 247/maand",
+        "voice": "Voice Agent — EUR 347/maand + gebruik",
+        "email": "E-mailbeheer — EUR 197/maand",
+        "ad_builder": "Ad Builder — EUR 347/maand",
+        "reel_builder": "Reel Builder — EUR 347/maand",
+        "extra_workspace": "Extra Werkruimte — EUR 97/maand"
       }
     },
     "founding_cta": {
-      "title": "Founding Member Aanbod",
-      "description": "Word een van de eerste 10 bureaus met een AI Marketing Medewerker. EUR 997/maand voor altijd vastgelegd.",
+      "title": "Founding Member — EUR 697/maand",
+      "description": "Full Agency Suite met alle skills, vastgelegd op EUR 697/maand voor 12 maanden. Slechts 5 bureaus. Direct contact met oprichter, vorm de roadmap, prioriteit op alles.",
       "button": "Claim Je Plek"
     },
     "cta": {
       "title": "Klaar om Je AI-Medewerker Aan Te Nemen?",
-      "description": "Boek een gratis strategiegesprek.",
+      "description": "Boek een gratis strategiegesprek en we laten je precies zien welk pack het meeste impact heeft voor jouw bureau.",
       "primary_button": "Boek een Strategiegesprek",
       "secondary_button": "Neem Contact Op"
     },
@@ -827,20 +817,20 @@
       "title": "Vragen over Prijzen",
       "items": {
         "q1": {
-          "question": "Kan ik later van tier wisselen?",
-          "answer": "Ja — upgraden of downgraden op elk moment. Geen boetes, geen lock-in."
+          "question": "Kan ik later van pack wisselen?",
+          "answer": "Ja — upgraden of downgraden op elk moment. Wijzigingen gaan in bij de volgende factureringsperiode. Geen boetes, geen lock-in."
         },
         "q2": {
           "question": "Zijn er setupkosten?",
-          "answer": "Nee. Onboarding en configuratie zijn inbegrepen."
+          "answer": "Nee. Onboarding, configuratie en werkruimte-setup zijn inbegrepen in elk pack. Je betaalt alleen het maandabonnement."
         },
         "q3": {
-          "question": "Wat is inbegrepen in elke tier?",
-          "answer": "Persistente AI-medewerker 24/7, dashboard, prestatierapporten en support."
+          "question": "Wat is inbegrepen in elk pack?",
+          "answer": "Elk pack bevat Clyde, je persistente AI Marketing Medewerker die 24/7 draait, een dashboard, prestatierapporten en support. Hogere packs voegen meer skills en klantwerkruimtes toe."
         },
         "q4": {
           "question": "Kan ik individuele skills toevoegen zonder te upgraden?",
-          "answer": "Ja — EUR 497/maand per skill."
+          "answer": "Ja — skills uit onze add-on bibliotheek kun je aan elk pack toevoegen. Blog Factory en ManyChat voor EUR 247/maand, Voice Agent voor EUR 347/maand plus gebruik, en meer. Extra werkruimtes zijn EUR 97/maand per stuk."
         }
       }
     }
@@ -859,8 +849,8 @@
       "steps": {
         "choose": {
           "step": "Stap 1",
-          "title": "Kies Je Agent Tier",
-          "description": "Selecteer de tier die past bij je bureau. Founding Member, Starter, Growth of Agency — elke tier bevat je persistente AI-medewerker."
+          "title": "Kies Je Pack",
+          "description": "Selecteer het vertical pack dat bij je bureau past — Social Media Engine, Ecommerce Growth of Full Agency Suite. Elk pack bevat Clyde, je persistente AI Marketing Medewerker, met skills en klantwerkruimtes."
         },
         "activate": {
           "step": "Stap 2",
@@ -942,7 +932,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier niveaus: Founding Member (EUR 997/mnd), Starter (EUR 1.497/mnd), Growth (EUR 1.997/mnd) en Agency (EUR 3.497/mnd). Elk niveau omvat een vast aantal skills en klantworkspaces. Extra skills kunnen aan elk niveau worden toegevoegd voor EUR 497/mnd per skill. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode. Founding Member-prijzen zijn vergrendeld voor de gehele duur van het abonnement."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in drie vertical packs: Social Media Engine (EUR 997/mnd), Ecommerce Growth (EUR 1.497/mnd) en Full Agency Suite (EUR 1.997/mnd). Elk pack omvat een vast aantal skills en klantwerkruimtes. Extra skills kunnen aan elk pack worden toegevoegd uit de add-on bibliotheek (EUR 97-347/mnd per skill). Een Founding Member programma biedt de Full Agency Suite voor EUR 697/mnd gedurende 12 maanden, beperkt tot 5 bureaus. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode, met uitzondering van de Founding Member 12-maanden commitment."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -1641,32 +1631,32 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member — AI Marketing Medewerker | FMai",
-      "description": "Word founding member en zeker EUR 997/maand voor altijd. Slechts 10 plekken beschikbaar. Krijg je AI Marketing Medewerker met direct contact met de oprichter en prioriteitssupport."
+      "description": "Word founding member: Full Agency Suite voor EUR 697/maand gedurende 12 maanden. Slechts 5 bureaus. Krijg elke skill die Clyde biedt met direct contact met de oprichter."
     },
     "hero": {
-      "badge": "Slechts 10 Plekken",
+      "badge": "Slechts 5 Bureaus",
       "title": "Word Founding Member",
-      "description": "Wees een van de eerste 10 bureaus die een AI Marketing Medewerker inzetten. Zeker de laagste prijs voor altijd, krijg direct contact met de oprichter en help het product vormgeven."
+      "description": "Wees een van de eerste 5 bureaus die een AI Marketing Medewerker inzetten met de Full Agency Suite. EUR 697/maand vastgelegd voor 12 maanden — alle skills, prioriteit op alles, direct contact met de oprichter."
     },
     "pricing": {
       "heading": "Founding Member Prijzen",
       "currency": "EUR",
-      "price": "997",
+      "price": "697",
       "period": "/maand",
-      "locked": "Prijs voor altijd vastgelegd",
-      "comparison": "Normale prijs begint bij EUR 1.497/maand",
-      "includes": "Volledige AI Marketing Medewerker + 1 skill naar keuze"
+      "locked": "Prijs vastgelegd voor 12 maanden",
+      "comparison": "Full Agency Suite normaal EUR 1.997/maand — je bespaart EUR 1.300/maand",
+      "includes": "Full Agency Suite — alle skills, 10 klantwerkruimtes, Priority Clyde"
     },
     "benefits": {
       "heading": "Founding Member Voordelen",
       "items": {
         "price_lock": {
-          "title": "Prijs Voor Altijd Vastgelegd",
-          "description": "Je EUR 997/maand tarief stijgt nooit, ongeacht hoeveel skills of features we toevoegen. Founding members krijgen permanent de beste deal."
+          "title": "EUR 697/maand voor 12 Maanden",
+          "description": "Full Agency Suite met 65% korting voor een heel jaar. Alle skills inbegrepen — Social, Blog, ManyChat, Voice, E-mail, Ads en meer. Geen add-on kosten."
         },
         "priority": {
           "title": "Prioriteitssupport & Oprichtertoegang",
-          "description": "Sla de wachtrij over. Direct Slack-kanaal met de oprichter voor vragen, feedback en strategisch advies over je AI-medewerker."
+          "description": "Sla de wachtrij over. Direct Slack-kanaal met de oprichter voor vragen, feedback en strategisch advies over het inzetten van Clyde voor je klanten."
         },
         "influence": {
           "title": "Vorm de Productroadmap",
@@ -1677,12 +1667,12 @@
           "description": "Elke nieuwe skill en feature lanceert eerst bij founding members. Je hebt altijd als eerste toegang tot onze nieuwste mogelijkheden."
         },
         "community": {
-          "title": "Exclusieve Founding Member Community",
-          "description": "Besloten community van de eerste 10 bureaus die AI Marketing Medewerkers gebruiken. Deel strategieen, resultaten en best practices."
+          "title": "Exclusief Founding Agency Netwerk",
+          "description": "Besloten community van de eerste 5 bureaus die AI Marketing Medewerkers gebruiken. Deel strategieen, resultaten en best practices met mede-pioniers."
         },
         "onboarding": {
           "title": "White-Glove Onboarding",
-          "description": "Gepersonaliseerde onboarding met de oprichter. We richten samen je eerste klantwerkruimte in en configureren je AI-medewerker voor maximale impact."
+          "description": "Gepersonaliseerde onboarding met de oprichter. We richten samen je klantwerkruimtes in en configureren Clyde voor maximale doorverkoopmarge."
         }
       }
     },
@@ -1691,19 +1681,19 @@
       "items": {
         "q1": {
           "question": "Wat is inbegrepen in het founding member plan?",
-          "answer": "Je krijgt een volledige AI Marketing Medewerker die 24/7 draait, een skill naar keuze (Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator of Reporting), tot 3 klantwerkruimtes, direct oprichtertoegang via Slack en prioriteitssupport. Je kunt meer skills toevoegen voor EUR 497/maand per stuk."
+          "answer": "Je krijgt de Full Agency Suite — elke skill die Clyde biedt: social media, blog factory, ManyChat DM, voice agent (500 min), e-mailbeheer, ad monitoring en meer. Plus 10 klantwerkruimtes, Priority Clyde en direct oprichtertoegang. Niets is uitgesloten."
         },
         "q2": {
           "question": "Hoe lang is de looptijd?",
-          "answer": "We vragen een initiele commitment van 6 maanden om de AI-medewerker voldoende tijd te geven om de merken van je klanten te leren en meetbare resultaten te leveren. Na 6 maanden ga je maandelijks verder tegen dezelfde vastgelegde prijs."
+          "answer": "12 maanden tegen EUR 697/maand. Dit geeft Clyde voldoende tijd om de merken van je klanten te leren en meetbare resultaten te leveren. Na 12 maanden ga je verder tegen de dan geldende Full Agency Suite prijs of kies je een ander pack."
         },
         "q3": {
-          "question": "Wat gebeurt er na de founding periode?",
-          "answer": "Er is geen einddatum voor founding members. Je EUR 997/maand prijs is voor altijd vastgelegd. Terwijl we de prijzen verhogen voor nieuwe klanten, blijft jouw tarief hetzelfde — permanent."
+          "question": "Wat gebeurt er na de 12 maanden?",
+          "answer": "Na je founding periode ga je over naar reguliere prijzen. De Full Agency Suite is EUR 1.997/maand, maar je kunt ook een kleiner pack kiezen. Founding members krijgen altijd voorrang op verlengingsprijzen."
         },
         "q4": {
           "question": "Hoeveel plekken zijn er nog?",
-          "answer": "We beperken het founding member programma tot precies 10 bureaus. Zodra alle plekken gevuld zijn, starten nieuwe bureaus op de Starter-tier (EUR 1.497/maand). Check deze pagina voor actuele beschikbaarheid."
+          "answer": "We beperken het founding member programma tot precies 5 bureaus. Zodra alle plekken gevuld zijn, starten nieuwe bureaus op reguliere packprijzen. Check deze pagina voor actuele beschikbaarheid."
         },
         "q5": {
           "question": "Is er een geld-terug-garantie?",
@@ -1713,7 +1703,7 @@
     },
     "cta": {
       "title": "Klaar om de Eerste te Zijn?",
-      "subtitle": "Word founding member en zeker de laagste prijs voor altijd.",
+      "subtitle": "Word founding member — Full Agency Suite voor EUR 697/maand gedurende 12 maanden. Slechts 5 bureaus.",
       "button": "Nu Aanmelden"
     }
   },

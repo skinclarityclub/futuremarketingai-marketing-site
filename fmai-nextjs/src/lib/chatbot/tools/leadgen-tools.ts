@@ -84,64 +84,76 @@ const qualify_lead = tool({
 
 const get_pricing_info = tool({
   description:
-    'Retrieve pricing information for a specific tier or all tiers of the marketing automation platform.',
+    'Retrieve pricing information for a specific pack or all packs of the AI Marketing Employee platform.',
   inputSchema: z.object({
     tier: z
-      .enum(['starter', 'professional', 'enterprise', 'all'])
+      .enum(['social', 'ecommerce', 'full', 'founding', 'all'])
       .default('all')
-      .describe('Which pricing tier to retrieve'),
+      .describe('Which pricing pack to retrieve'),
   }),
   execute: async ({ tier }) => {
     const tiers = {
-      starter: {
-        name: 'Starter',
-        monthlyPrice: 299,
-        annualPrice: 2870,
-        maxUsers: 5,
-        contacts: 1000,
+      social: {
+        name: 'Social Media Engine',
+        monthlyPrice: 997,
+        workspaces: 3,
         features: [
-          'Basic email automation',
-          'Landing page builder (5 pages)',
-          'Basic lead scoring',
-          'Email support',
+          'Clyde AI Marketing Employee (24/7)',
+          'Instagram posts, stories & carousels',
+          'Facebook & LinkedIn publishing',
+          'Content Factory',
+          'Analytics & performance reporting',
+          'Clyde 24/7 via Telegram & dashboard',
         ],
       },
-      professional: {
-        name: 'Professional',
-        monthlyPrice: 799,
-        annualPrice: 7670,
-        maxUsers: 20,
-        contacts: 10000,
+      ecommerce: {
+        name: 'Ecommerce Growth',
+        monthlyPrice: 1497,
+        workspaces: 5,
         features: [
-          'Advanced workflow automation',
-          'Unlimited landing pages',
-          'Advanced lead scoring + CRM',
-          'Analytics dashboard',
-          'Priority support + dedicated CSM',
+          'Everything in Social Media Engine',
+          'Blog Factory (SEO-optimized articles)',
+          'ManyChat DM automation',
+          'Shopify product & order sync',
+          'Advanced analytics dashboard',
+          'Priority support (<4h response)',
         ],
       },
-      enterprise: {
-        name: 'Enterprise',
-        monthlyPrice: 1999,
-        annualPrice: 19190,
-        maxUsers: -1,
-        contacts: -1,
+      full: {
+        name: 'Full Agency Suite',
+        monthlyPrice: 1997,
+        workspaces: 10,
         features: [
+          'Everything in Ecommerce Growth',
+          'Voice Agent (500 min/mo included)',
+          'Email campaign management',
+          'Ad monitoring & competitor tracking',
+          'Priority Clyde',
+          'Dedicated success manager',
           'Custom integrations',
-          'Dedicated CSM',
-          'Advanced analytics + reporting',
-          'SSO + advanced security',
-          'Custom onboarding',
-          'SLA guarantee',
+        ],
+      },
+      founding: {
+        name: 'Founding Member',
+        monthlyPrice: 697,
+        workspaces: 10,
+        commitment: '12 months',
+        spotsTotal: 5,
+        features: [
+          'Full Agency Suite — all skills included',
+          '10 client workspaces',
+          'Priority Clyde',
+          'Direct founder access',
+          'Shape the product roadmap',
         ],
       },
     }
 
     if (tier === 'all') {
-      return { tiers, annualDiscount: '20%' }
+      return { tiers }
     }
 
-    return { tier: tiers[tier], annualDiscount: '20%' }
+    return { tier: tiers[tier] }
   },
 })
 

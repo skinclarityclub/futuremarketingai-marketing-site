@@ -33,8 +33,8 @@ const STEP_KEYS = ['choose', 'activate', 'connect', 'working'] as const
 
 const HOW_TO_STEPS = [
   {
-    name: 'Choose Your Agent Tier',
-    text: 'Select the tier that matches your agency size — Founding Member, Starter, Growth, or Agency — each includes your persistent AI employee.',
+    name: 'Choose Your Pack',
+    text: 'Select the vertical pack that matches your agency — Social Media Engine, Ecommerce Growth, or Full Agency Suite — each includes Clyde, your persistent AI Marketing Employee.',
   },
   {
     name: 'Activate Skills',

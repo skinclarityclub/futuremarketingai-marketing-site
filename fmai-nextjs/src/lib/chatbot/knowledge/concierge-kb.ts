@@ -5,81 +5,93 @@ export const CONCIERGE_TOPICS: TopicDefinition[] = [
     key: 'services',
     content: `## FMai Services Overview
 
-FMai delivers four core AI-powered services for B2B businesses:
+FMai delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execution across six core skill areas:
 
-**AI Chatbots**
-- Multi-platform deployment (website, WhatsApp, Instagram, Messenger)
-- 24/7 availability with zero downtime
-- Multi-lingual support (EN, NL, ES and more)
-- Persona-based conversations tailored to your brand voice
-- Seamless handoff to human agents when needed
+**Content Factory & Social Media**
+- Instagram posts, stories, carousels
+- Facebook, LinkedIn, X publishing
+- Auto-generated content tailored to each client's brand voice
+- Content calendar management and scheduling
 
-**Voice Agents**
-- AI-powered phone systems through our partnership model
-- Natural conversation handling for inbound and outbound calls
-- Call routing, appointment scheduling, and FAQ resolution
-- Reduces call center load by up to 60%
+**Blog Factory**
+- SEO-optimized blog articles
+- Keyword research and internal linking
+- Published directly to client websites
 
-**Automations**
-- Built on n8n workflow engine for maximum flexibility
-- Content pipelines: automated blog posts, social media, newsletters
-- Lead nurturing sequences triggered by user behavior
-- CRM integrations, data enrichment, and reporting dashboards
-- Custom workflow design for any repeatable business process
+**Voice Agent**
+- AI-powered phone calls for inbound and outbound
+- Lead qualification, appointment scheduling, FAQ resolution
+- Natural conversation in Dutch, English, and Spanish
 
-**Marketing Machine**
-- Full autonomous marketing system combining all services
-- AI-driven content creation, distribution, and optimization
-- Chatbot + Voice + Automation working as one unified engine
-- Monthly strategy reviews with performance dashboards`,
+**ManyChat DM Automation**
+- Instagram and Facebook DM flows
+- Lead capture, nurturing, and conversion
+- Automated responses with brand personality
+
+**Email Campaign Management**
+- Newsletter creation and scheduling
+- Drip sequences and lead nurturing
+- Performance tracking and optimization
+
+**Ad Monitoring & Competitor Tracking**
+- Meta ad library monitoring
+- Competitor creative analysis
+- Performance alerts and recommendations`,
     keywords: [
       'services',
       'chatbot',
       'voice agent',
       'automation',
-      'marketing machine',
       'what do you do',
       'capabilities',
       'offerings',
       'solutions',
+      'skills',
+      'clyde',
     ],
     priority: 10,
   },
   {
     key: 'pricing',
-    content: `## FMai Pricing Tiers
+    content: `## FMai Vertical Pack Pricing
 
-We offer three flexible tiers — no upfront commitment, monthly billing:
+We offer three vertical packs — pick the one that fits your agency:
 
-**Starter (EUR 500 - 1,500/mo)**
-- Ideal for businesses getting started with AI
-- Includes one core service (chatbot, voice agent, or automation)
-- Basic setup + monthly optimization
-- Email support with 24-hour response time
+**Social Media Engine (EUR 997/mo)**
+- For agencies focused on social media management
+- 3 client workspaces
+- Instagram, Facebook, LinkedIn, Content Factory, Analytics
+- Clyde AI Marketing Employee available 24/7
 
-**Growth (EUR 1,500 - 3,500/mo)**
-- For businesses ready to scale their AI capabilities
-- Includes two or more services combined
-- Advanced customization and integrations
-- Priority support with dedicated account contact
-- Monthly performance reviews
+**Ecommerce Growth (EUR 1,497/mo)** — Most Popular
+- For agencies managing ecommerce clients
+- 5 client workspaces
+- Everything in Social Media Engine plus Blog Factory, ManyChat DM, Shopify sync
+- Priority support with <4h response time
 
-**Enterprise (Custom pricing)**
-- Full Marketing Machine deployment
-- All four services unified into one system
-- Custom development, dedicated infrastructure
-- White-glove onboarding and ongoing strategic consulting
-- SLA guarantees and priority escalation
+**Full Agency Suite (EUR 1,997/mo)**
+- For agencies that want every skill
+- 10 client workspaces
+- All skills: social, blog, ManyChat, voice agent (500 min), email, ad monitoring
+- Priority Clyde, dedicated success manager, custom integrations
 
-Every engagement starts with a free Discovery Call to understand your needs. No contracts — cancel anytime with 30-day notice.`,
+**Founding Member (EUR 697/mo)** — 5 agencies only
+- Full Agency Suite at 65% off for 12 months
+- All skills, 10 workspaces, Priority Clyde, direct founder access
+
+**Skill Add-ons (any pack):**
+Blog EUR 247/mo | ManyChat EUR 247/mo | Voice EUR 347/mo + usage | Email EUR 197/mo | Ad Builder EUR 347/mo | Reel Builder EUR 347/mo | Extra Workspace EUR 97/mo
+
+Every engagement starts with a free Strategy Call. No lock-in contracts — cancel anytime with 30-day notice (except Founding Member 12-month commitment).`,
     keywords: [
       'pricing',
       'cost',
       'price',
       'tier',
-      'starter',
-      'growth',
-      'enterprise',
+      'pack',
+      'social media engine',
+      'ecommerce growth',
+      'full agency suite',
       'budget',
       'investment',
       'how much',
@@ -91,24 +103,21 @@ Every engagement starts with a free Discovery Call to understand your needs. No 
     key: 'process',
     content: `## FMai Delivery Process
 
-Our streamlined 5-step process gets you from idea to live AI in weeks, not months:
+Our streamlined 4-step process gets your agency from signup to Clyde executing for your clients:
 
-**1. Discovery Call (30 min)**
-Free consultation to understand your business, goals, and current pain points. We assess where AI can deliver the most impact.
+**1. Strategy Call (30 min)**
+Free consultation to understand your agency, clients, and goals. We assess which pack and skills deliver the most impact.
 
-**2. Strategy and Scoping (1 week)**
-We design a tailored AI strategy with clear deliverables, timeline, and expected outcomes. You approve the scope before we build.
+**2. Choose Your Pack**
+Select Social Media Engine, Ecommerce Growth, or Full Agency Suite. Add any skill add-ons you need.
 
-**3. Build Sprint (2-4 weeks)**
-Rapid development of your AI solution. Weekly demos so you see progress and can provide feedback. No black-box development.
+**3. Onboarding (1 week)**
+We set up your client workspaces together. Upload brand guidelines, connect social accounts, and configure Clyde for each client's brand voice.
 
-**4. Launch and Optimize (1 week)**
-Go live with monitoring in place. We fine-tune responses, workflows, and integrations based on real user interactions.
+**4. Clyde Starts Working**
+Your AI Marketing Employee begins executing — creating content, publishing posts, qualifying leads, managing email, and generating reports. 24/7.
 
-**5. Ongoing Support**
-Monthly optimization cycles, performance reporting, and continuous improvement. Your AI gets smarter over time.
-
-We emphasize speed and iteration — most clients are live within 4-6 weeks of signing.`,
+Clyde continuously improves by analyzing performance data and your feedback. By month 3, he outperforms most junior marketers on execution speed and consistency.`,
     keywords: [
       'process',
       'how it works',
@@ -116,7 +125,6 @@ We emphasize speed and iteration — most clients are live within 4-6 weeks of s
       'delivery',
       'onboarding',
       'steps',
-      'sprint',
       'launch',
       'how long',
       'get started',
@@ -162,23 +170,23 @@ We emphasize speed and iteration — most clients are live within 4-6 weeks of s
     key: 'about',
     content: `## About FMai
 
-FMai is an AI-first agency built by practitioners, not consultants. We do not just advise — we build, deploy, and optimize AI systems that run your marketing.
+FMai builds Clyde, the AI Marketing Employee for agencies. We do not just advise — we build, deploy, and optimize an AI colleague that handles marketing execution for your clients.
 
 **Who We Are:**
 - Small team with deep AI and marketing expertise
-- Based in the Netherlands, serving clients across Europe
+- Based in the Netherlands, serving agencies across Europe
 - Founded by builders who use AI daily in production environments
 
 **Our Philosophy:**
-- AI should work for you autonomously, not create more work
-- Every solution must deliver measurable business impact
-- Speed matters — we ship in weeks, not quarters
+- Clyde is a colleague, not a tool — you assign tasks, he executes
+- Every agency should be able to scale without hiring
+- Speed matters — agencies are live within 1 week of signing
 - Transparency in pricing, process, and results
 
 **Our Focus:**
-- B2B service businesses and e-commerce brands
-- Companies ready to integrate AI into their core operations
-- Businesses that value speed and results over lengthy consulting engagements`,
+- Marketing agencies (B2B2B model)
+- Agencies managing 3-50 client brands
+- Agencies that want to increase resell margin through AI-powered execution`,
     keywords: [
       'about',
       'team',
@@ -196,8 +204,8 @@ FMai is an AI-first agency built by practitioners, not consultants. We do not ju
     key: 'contact',
     content: `## Get in Touch with FMai
 
-**Discovery Call:**
-Book a free 30-minute Discovery Call to discuss your AI needs:
+**Strategy Call:**
+Book a free 30-minute Strategy Call to discuss your agency's needs:
 https://calendly.com/futuremarketingai/discovery
 
 **Email:**
@@ -206,7 +214,7 @@ We respond within 24 hours on business days.
 
 **What to Expect:**
 - No sales pressure — we listen first
-- Honest assessment of whether AI fits your use case
+- Honest assessment of which pack fits your agency
 - If we are not the right fit, we will tell you`,
     keywords: [
       'contact',
@@ -219,6 +227,7 @@ We respond within 24 hours on business days.
       'meeting',
       'calendly',
       'discovery call',
+      'strategy call',
     ],
     priority: 5,
   },
