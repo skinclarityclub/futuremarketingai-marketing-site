@@ -26,6 +26,7 @@ export function HeroSpline() {
             WebkitMaskImage:
               'linear-gradient(to right, transparent 0%, black 30%, black 85%, transparent 100%), linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
             WebkitMaskComposite: 'source-in',
+            contain: 'layout paint',
           }}
         >
           <SplineScene
