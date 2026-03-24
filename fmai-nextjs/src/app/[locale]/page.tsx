@@ -12,6 +12,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
 import { Zap, ArrowRight } from 'lucide-react'
 
@@ -141,27 +142,30 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Stats / Metrics Bar */}
-      <section aria-label="Key metrics" className="py-12 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {STAT_KEYS.map((key) => (
-                <div
-                  key={key}
-                  className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-2xl p-6 text-center"
-                >
-                  <span className="block text-3xl font-bold text-accent-system mb-1">
-                    {t(`stats.${key}.value`)}
-                  </span>
-                  <span className="text-sm text-text-secondary">{t(`stats.${key}.label`)}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <LazySection minHeight="150px">
+        <section aria-label="Key metrics" className="py-12 px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <ScrollReveal>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {STAT_KEYS.map((key) => (
+                  <div
+                    key={key}
+                    className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-2xl p-6 text-center"
+                  >
+                    <span className="block text-3xl font-bold text-accent-system mb-1">
+                      {t(`stats.${key}.value`)}
+                    </span>
+                    <span className="text-sm text-text-secondary">{t(`stats.${key}.label`)}</span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      </LazySection>
 
       {/* Services — Numbered 2x2 Cards */}
+      <LazySection minHeight="400px">
       <ScrollReveal>
         <section
           id="services"
@@ -234,8 +238,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </ScrollReveal>
+      </LazySection>
 
       {/* Trust Badges / Social Proof */}
+      <LazySection minHeight="200px">
       <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <SectionHeading id="badges">{t('badges.title')}</SectionHeading>
@@ -267,8 +273,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ScrollReveal>
         </div>
       </section>
+      </LazySection>
 
       {/* Why Teams Choose Us */}
+      <LazySection minHeight="300px">
       <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeading id="trust">{t('trust.title')}</SectionHeading>
@@ -304,8 +312,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ScrollReveal>
         </div>
       </section>
+      </LazySection>
 
       {/* FAQ Section */}
+      <LazySection minHeight="400px">
       <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <SectionHeading id="faq" className="text-center mb-10">
@@ -327,8 +337,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ScrollReveal>
         </div>
       </section>
+      </LazySection>
 
       {/* Final CTA */}
+      <LazySection minHeight="200px">
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
@@ -340,6 +352,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </ScrollReveal>
       </section>
+      </LazySection>
     </PageShell>
   )
 }
