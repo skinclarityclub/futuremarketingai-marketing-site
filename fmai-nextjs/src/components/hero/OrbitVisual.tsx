@@ -5,7 +5,11 @@
  * 5 concentric orbit rings, glowing orbital dots with pulse animation,
  * gradient arc trails, breathing multi-layer core, and ambient particles.
  * Pure CSS/SVG — zero JS animation. Hidden below lg breakpoint.
+ * Viewport-aware: pauses all animations when off-screen.
  */
+
+import { useRef } from 'react'
+import { useInView } from 'motion/react'
 
 const RINGS = [
   { r: 210, width: 1, opacity: 0.06, dur: '55s', dash: false, reverse: false },
@@ -117,10 +121,18 @@ const CX = 240
 const CY = 240
 
 export function OrbitVisual() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { margin: '100px' })
+
   return (
     <div
+      ref={ref}
       className="absolute right-[4%] top-1/2 -translate-y-1/2 w-[480px] h-[480px] hidden lg:block"
       aria-hidden="true"
+      style={{
+        contain: 'layout paint',
+        willChange: isInView ? 'transform' : 'auto',
+      }}
     >
       {/* Core glow layers */}
       <div
@@ -139,7 +151,7 @@ export function OrbitVisual() {
         }}
       />
 
-      <svg viewBox="0 0 480 480" className="absolute inset-0 w-full h-full">
+      <svg viewBox="0 0 480 480" className="absolute inset-0 w-full h-full" style={{ animationPlayState: isInView ? 'running' : 'paused' }}>
         <defs>
           {ARCS.map((arc, i) => (
             <linearGradient key={`ag${i}`} id={`arc-grad-${i}`}>
