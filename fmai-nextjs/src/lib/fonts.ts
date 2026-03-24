@@ -5,12 +5,16 @@ export const dmSans = DM_Sans({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 })
 
 export const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 })
 
 export const spaceGrotesk = Space_Grotesk({
@@ -18,4 +22,6 @@ export const spaceGrotesk = Space_Grotesk({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 })
