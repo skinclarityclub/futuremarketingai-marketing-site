@@ -741,96 +741,127 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing | AI Marketing Employee for Agencies | FMai",
-      "description": "Vertical Pack pricing for your AI Marketing Employee. Social Media Engine EUR 997/mo, Ecommerce Growth EUR 1,497/mo, Full Agency Suite EUR 1,997/mo. Founding Member EUR 697/mo."
+      "title": "Pricing | AI Marketing Agents for Agencies | FMai",
+      "description": "Premium AI agent pricing for marketing agencies. Growth EUR 1,497/mo, Professional EUR 2,997/mo, Enterprise EUR 4,997/mo. All 11 AI skills included in every tier."
     },
     "hero": {
-      "title": "One AI Employee. Choose Your Pack.",
-      "description": "Every pack includes Clyde, your persistent AI Marketing Employee. Pick the vertical that fits your agency and add skills as you grow."
+      "title": "Premium AI Agents. Built for Agencies.",
+      "description": "Every tier includes all 11 AI skills. Choose the scale that fits your agency and grow with flexible credit packs."
     },
+    "all_skills_badge": "All 11 AI skills included",
+    "onboarding_label": "One-time onboarding",
+    "credits_label": "credits/month",
     "tiers": {
-      "social": {
-        "name": "Social Media Engine",
-        "price": "997",
-        "description": "For agencies focused on social media management across all client channels.",
-        "service_count": "3 client workspaces",
-        "features_0": "Clyde AI Marketing Employee (24/7)",
-        "features_1": "Instagram posts, stories & carousels",
-        "features_2": "Facebook & LinkedIn publishing",
-        "features_3": "Content Factory (auto-generate content)",
-        "features_4": "Analytics & performance reporting",
-        "features_5": "Clyde 24/7 via Telegram & dashboard"
-      },
-      "ecommerce": {
-        "name": "Ecommerce Growth",
+      "growth": {
+        "name": "Growth",
         "price": "1,497",
-        "badge": "Most Popular",
-        "description": "For agencies managing ecommerce clients who need social, content, and conversion skills.",
-        "service_count": "5 client workspaces",
-        "features_0": "Everything in Social Media Engine",
-        "features_1": "Blog Factory (SEO-optimized articles)",
-        "features_2": "ManyChat DM automation",
-        "features_3": "Shopify product & order sync",
-        "features_4": "Advanced analytics dashboard",
-        "features_5": "Priority support (<4h response)"
+        "description": "For agencies getting started with AI-powered marketing execution across their first clients.",
+        "service_count": "5 workspaces",
+        "credits_included": "3,000",
+        "onboarding": "1,500",
+        "support": "Email support",
+        "features_0": "All 11 AI skills included",
+        "features_1": "5 client workspaces",
+        "features_2": "3,000 credits per month",
+        "features_3": "Content Factory & Social Media",
+        "features_4": "Analytics & performance reporting",
+        "features_5": "Email support",
+        "features_6": "GDPR & EU AI Act compliant"
       },
-      "full": {
-        "name": "Full Agency Suite",
-        "price": "1,997",
-        "badge": "All Skills",
-        "description": "For established agencies that want every skill Clyde offers, plus priority everything.",
-        "service_count": "10 client workspaces",
-        "features_0": "Everything in Ecommerce Growth",
-        "features_1": "Voice Agent (500 min/mo included)",
-        "features_2": "Email campaign management",
-        "features_3": "Ad monitoring & competitor tracking",
-        "features_4": "Priority Clyde (faster response, higher limits)",
-        "features_5": "Dedicated success manager",
-        "features_6": "Custom integrations"
+      "professional": {
+        "name": "Professional",
+        "price": "2,997",
+        "badge": "Most Popular",
+        "description": "For scaling agencies that need more capacity, dedicated support, and deeper AI integration.",
+        "service_count": "15 workspaces",
+        "credits_included": "8,000",
+        "onboarding": "3,000",
+        "support": "Dedicated Slack + Monthly Call",
+        "features_0": "All 11 AI skills included",
+        "features_1": "15 client workspaces",
+        "features_2": "8,000 credits per month",
+        "features_3": "Dedicated Slack channel",
+        "features_4": "Monthly strategy call",
+        "features_5": "Voice Agent & Lead Qualifier",
+        "features_6": "Advanced analytics dashboard",
+        "features_7": "GDPR & EU AI Act compliant"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "4,997",
+        "badge": "Full Power",
+        "description": "For established agencies that need unlimited scale, custom SLAs, and a dedicated customer success manager.",
+        "service_count": "Unlimited workspaces",
+        "credits_included": "20,000",
+        "onboarding": "5,000",
+        "support": "Dedicated CSM + Custom SLA",
+        "features_0": "All 11 AI skills included",
+        "features_1": "Unlimited client workspaces",
+        "features_2": "20,000 credits per month",
+        "features_3": "Dedicated Customer Success Manager",
+        "features_4": "Custom SLA & priority response",
+        "features_5": "Custom integrations & API access",
+        "features_6": "White-label options",
+        "features_7": "GDPR & EU AI Act compliant"
       }
     },
-    "addons": {
-      "title": "Skill Add-on Library",
-      "description": "Extend any pack with individual skills. Mix and match to fit your agency.",
+    "credit_packs": {
+      "title": "Credit Packs",
+      "description": "Need more credits? Add a pack anytime — no commitment, instant activation.",
       "items": {
-        "blog": "Blog Factory — EUR 247/mo",
-        "manychat": "ManyChat DM — EUR 247/mo",
-        "voice": "Voice Agent — EUR 347/mo + usage",
-        "email": "Email Management — EUR 197/mo",
-        "ad_builder": "Ad Builder — EUR 347/mo",
-        "reel_builder": "Reel Builder — EUR 347/mo",
-        "extra_workspace": "Extra Workspace — EUR 97/mo"
+        "boost": {
+          "name": "Boost",
+          "credits": "2,000",
+          "price": "149"
+        },
+        "scale": {
+          "name": "Scale",
+          "credits": "5,000",
+          "price": "297"
+        },
+        "unlimited": {
+          "name": "Unlimited",
+          "credits": "15,000",
+          "price": "697"
+        }
       }
     },
     "founding_cta": {
-      "title": "Founding Member — EUR 697/mo",
-      "description": "Full Agency Suite with all skills, locked at EUR 697/mo for 12 months. Only 5 agencies. Direct founder access, shape the roadmap, priority everything.",
+      "title": "Founding Member — EUR 997/mo (lifetime)",
+      "description": "Professional tier normally EUR 2,997/month — you save EUR 2,000/mo. Unlimited workspaces, 10,000 credits, all skills. Locked at this price forever.",
+      "spots": "10 Agencies Only",
       "button": "Claim Your Spot"
     },
+    "badges": {
+      "nvidia": "Powered by NVIDIA NemoClaw",
+      "gdpr": "GDPR Compliant",
+      "eu_ai_act": "EU AI Act Ready"
+    },
     "cta": {
-      "title": "Ready to Hire Your AI Employee?",
-      "description": "Book a free strategy call and we will show you exactly which pack will drive the most impact for your agency.",
+      "title": "Ready to Scale Your Agency with AI?",
+      "description": "Book a free strategy call and we will show you exactly which tier will drive the most impact for your agency.",
       "primary_button": "Book a Strategy Call",
       "secondary_button": "Contact Us"
     },
+    "contact_sales": "Contact Sales",
     "faq": {
       "title": "Pricing Questions",
       "items": {
         "q1": {
-          "question": "Can I switch packs later?",
-          "answer": "Yes — you can upgrade or downgrade your pack at any time. Changes take effect at the start of your next billing cycle. No penalties, no lock-in."
+          "question": "Can I switch tiers later?",
+          "answer": "Yes — you can upgrade or downgrade your tier at any time. Changes take effect at the start of your next billing cycle. No penalties, no lock-in."
         },
         "q2": {
-          "question": "Is there a setup fee?",
-          "answer": "No. Onboarding, configuration, and client workspace setup are included in every pack. You pay only the monthly subscription — nothing extra to get started."
+          "question": "What is the onboarding fee?",
+          "answer": "Each tier has a one-time onboarding fee that covers setup, configuration, workspace creation, and initial training of your AI agents. Growth EUR 1,500, Professional EUR 3,000, Enterprise EUR 5,000."
         },
         "q3": {
-          "question": "What is included in every pack?",
-          "answer": "Every pack includes Clyde, your persistent AI Marketing Employee running 24/7, a dashboard for monitoring activity, performance reporting, and support. Higher packs add more skills and client workspaces."
+          "question": "What are credits and how do they work?",
+          "answer": "Credits are the unit of AI work. Each AI action (generating content, qualifying a lead, running analytics) consumes credits. Your monthly allocation resets each billing cycle, and you can purchase credit packs if you need more."
         },
         "q4": {
-          "question": "Can I add individual skills without upgrading?",
-          "answer": "Yes — skills from our add-on library can be added to any pack. Blog Factory and ManyChat at EUR 247/mo, Voice Agent at EUR 347/mo plus usage, and more. Extra workspaces are EUR 97/mo each."
+          "question": "Do all tiers really include all 11 skills?",
+          "answer": "Yes — every tier includes all 11 AI skills: Content Creator, Social Media, Blog Factory, Voice Agent, Lead Qualifier, Email Management, Ad Creator, Reel Builder, ManyChat DM, Analytics, and Reporting. Tiers differ in workspaces, credits, and support level."
         }
       }
     }
@@ -1769,48 +1800,48 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member — AI Marketing Employee | FMai",
-      "description": "Join the founding member program: Full Agency Suite at EUR 697/mo for 12 months. Only 5 agencies. Get every skill Clyde offers with direct founder access."
+      "description": "Join the founding member program: Professional tier at €997/mo — lifetime price lock. Only 10 agencies. Get all 11 skills, 10,000 credits/mo, unlimited workspaces, and direct founder access."
     },
     "hero": {
-      "badge": "5 Agencies Only",
+      "badge": "10 Agencies Only",
       "title": "Become a Founding Member",
-      "description": "Be one of the first 5 agencies to deploy an AI Marketing Employee with the Full Agency Suite. EUR 697/mo locked for 12 months — every skill, priority everything, direct founder access."
+      "description": "For less than the cost of one junior marketing coordinator, get an AI team that works 24/7 across 11 disciplines. €997/mo lifetime lock — every skill, unlimited workspaces, direct founder access."
     },
     "pricing": {
       "heading": "Founding Member Pricing",
-      "currency": "EUR",
-      "price": "697",
+      "currency": "€",
+      "price": "997",
       "period": "/month",
-      "locked": "Price locked for 12 months",
-      "comparison": "Full Agency Suite normally EUR 1,997/month — you save EUR 1,300/mo",
-      "includes": "Full Agency Suite — all skills, 10 client workspaces, Priority Clyde"
+      "locked": "Lifetime pricing lock — never increases",
+      "comparison": "Professional tier normally €2,997/month — you save €2,000/mo",
+      "includes": "All 11 skills — 10,000 credits/mo, unlimited workspaces, €0 onboarding fee"
     },
     "benefits": {
       "heading": "Founding Member Benefits",
       "items": {
         "price_lock": {
-          "title": "EUR 697/mo for 12 Months",
-          "description": "Full Agency Suite at 65% off for a full year. All skills included — Social, Blog, ManyChat, Voice, Email, Ads, and more. No add-on fees."
+          "title": "Lifetime Price Lock at €997/mo",
+          "description": "Lifetime pricing lock at €997/mo — never increases. All 11 skills included. At €997/mo, you save €2,000/mo vs Professional — that’s €24,000/year back in your pocket."
         },
         "priority": {
-          "title": "Priority Support & Founder Access",
-          "description": "Skip the queue. Direct Slack channel with the founder for questions, feedback, and strategic advice on deploying Clyde for your clients."
+          "title": "Priority Feature Requests",
+          "description": "Priority feature requests and roadmap influence. Your agency’s needs directly shape what we build next."
         },
         "influence": {
-          "title": "Shape the Product Roadmap",
-          "description": "Your feedback directly influences what we build next. Founding members vote on new skills, integrations, and features."
+          "title": "Direct Founder Access",
+          "description": "Shape the product with direct founder access. Private Slack channel for questions, feedback, and strategic advice on deploying Clyde."
         },
         "early_access": {
-          "title": "First to Get New Features",
-          "description": "Every new skill and feature launches to founding members first. You always have access to our latest capabilities before anyone else."
+          "title": "First Access to New Skills",
+          "description": "First access to new AI skills as they launch. Every new capability rolls out to founding members before anyone else."
         },
         "community": {
-          "title": "Exclusive Founding Agency Network",
-          "description": "Private community of the first 5 agencies using AI Marketing Employees. Share strategies, results, and best practices with fellow pioneers."
+          "title": "Exclusive Founders Club",
+          "description": "Exclusive Founders Club Slack channel. Connect with the first 10 agencies using AI Marketing Employees — share strategies, results, and best practices."
         },
         "onboarding": {
-          "title": "White-Glove Onboarding",
-          "description": "Personalized onboarding with the founder. We set up your client workspaces together and configure Clyde for maximum resell margin."
+          "title": "Free Onboarding (Worth €3,000)",
+          "description": "Free onboarding — normally €3,000 for Professional tier. We set up your workspaces together and configure Clyde for maximum results from day one."
         }
       }
     },
@@ -1819,30 +1850,36 @@
       "items": {
         "q1": {
           "question": "What is included in the founding member plan?",
-          "answer": "You get the Full Agency Suite — every skill Clyde offers: social media, blog factory, ManyChat DM, voice agent (500 min), email management, ad monitoring, and more. Plus 10 client workspaces, Priority Clyde, and direct founder access. Nothing is excluded."
+          "answer": "You get the full Professional tier — all 11 skills Clyde offers: social media, blog factory, ManyChat DM, voice agent, email management, ad monitoring, and more. Plus 10,000 credits/mo, unlimited workspaces, and direct founder access. No onboarding fee (€0)."
         },
         "q2": {
-          "question": "What is the commitment length?",
-          "answer": "12 months at EUR 697/mo. This gives Clyde enough time to learn your clients' brands and deliver measurable results. After 12 months, you continue at the then-current Full Agency Suite rate or choose a different pack."
+          "question": "How long is the price locked?",
+          "answer": "Forever. Your €997/mo rate is locked for life as a founding member — it never increases, regardless of future pricing changes."
         },
         "q3": {
-          "question": "What happens after the 12 months?",
-          "answer": "After your founding period, you transition to regular pricing. The Full Agency Suite is EUR 1,997/mo, but you can also pick a smaller pack. Founding members always get priority pricing on renewals."
+          "question": "What do agencies normally pay?",
+          "answer": "The Professional tier is €2,997/mo with a €3,000 onboarding fee. As a founding member, you pay €997/mo with €0 onboarding — saving €2,000/mo (€24,000/year) plus the onboarding fee."
         },
         "q4": {
           "question": "How many spots are remaining?",
-          "answer": "We are limiting the founding member program to exactly 5 agencies. Once all spots are filled, new agencies start at regular pack pricing. Check this page for current availability."
+          "answer": "We are limiting the founding member program to exactly 10 agencies. Once all spots are filled, new agencies start at the regular Professional price of €2,997/mo. Check this page for current availability."
         },
         "q5": {
-          "question": "Is there a money-back guarantee?",
-          "answer": "Yes. If your AI Marketing Employee does not deliver measurable results within the first 60 days, we will refund your investment in full. No questions asked, no fine print."
+          "question": "What ROI can I expect?",
+          "answer": "Agencies using Clyde serve 3-5x more clients without additional headcount. At €997/mo — less than a junior marketing coordinator — you get an AI team that works 24/7 across 11 disciplines."
         }
       }
     },
     "cta": {
       "title": "Ready to Be First?",
-      "subtitle": "Join the founding member program — Full Agency Suite at EUR 697/mo for 12 months. Only 5 agencies.",
+      "subtitle": "At €997/mo, you save €2,000/mo vs Professional — that’s €24,000/year. Only 10 founding member spots available.",
       "button": "Apply Now"
+    },
+    "value": {
+      "heading": "Why This Deal Is Unmatched",
+      "line1": "For less than the cost of one junior marketing coordinator, get an AI team that works 24/7 across 11 disciplines.",
+      "line2": "At €997/mo, you save €2,000/mo vs Professional — that’s €24,000/year back in your budget.",
+      "line3": "Agencies using Clyde serve 3-5x more clients without additional headcount."
     }
   }
 }

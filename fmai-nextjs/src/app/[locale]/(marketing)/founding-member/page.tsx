@@ -108,6 +108,29 @@ export default async function FoundingMemberPage({
         </div>
       </section>
 
+      {/* Value Proposition */}
+      <section aria-labelledby="value-prop" className="py-16 px-6 lg:px-12">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <h2
+              id="value-prop"
+              className="text-2xl md:text-3xl font-bold font-display text-text-primary mb-6"
+            >
+              {t('value.heading')}
+            </h2>
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
+              {t('value.line1')}
+            </p>
+            <p className="text-lg text-text-secondary leading-relaxed mb-4">
+              {t('value.line2')}
+            </p>
+            <p className="text-lg font-semibold text-accent-system">
+              {t('value.line3')}
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section aria-labelledby="benefits" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
