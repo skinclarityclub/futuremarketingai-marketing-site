@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "Ready to Meet Clyde?",
-      "subtitle": "Only 5 founding agency spots at EUR 697/mo — Full Agency Suite, all skills, 12 months locked. Meet Clyde and see what he can do for your agency.",
+      "subtitle": "Only 10 founding agency spots at EUR 997/mo — all skills, unlimited workspaces, 10,000 credits, lifetime pricing lock.",
       "button": "Meet Clyde"
     },
     "faq": {
@@ -881,7 +881,7 @@
         "choose": {
           "step": "Step 1",
           "title": "Choose Your Pack",
-          "description": "Select the vertical pack that matches your agency — Social Media Engine, Ecommerce Growth, or Full Agency Suite. Each includes Clyde, your persistent AI Marketing Employee, with a set number of skills and client workspaces."
+          "description": "Select the plan that matches your agency — Growth, Professional, or Enterprise. Each includes Clyde, your persistent AI Marketing Employee, with all skills and a monthly credit allocation."
         },
         "activate": {
           "step": "Step 2",
@@ -963,7 +963,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription Terms",
-            "content": "Services are offered on a monthly subscription basis across three vertical packs: Social Media Engine (EUR 997/mo), Ecommerce Growth (EUR 1,497/mo), and Full Agency Suite (EUR 1,997/mo). Each pack includes a set number of skills and client workspaces. Additional skills can be added to any pack from the add-on library (EUR 97-347/mo per skill). A Founding Member program offers the Full Agency Suite at EUR 697/mo for 12 months, limited to 5 agencies. Billing occurs monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle, except for the Founding Member 12-month commitment."
+            "content": "Services are offered on a monthly subscription basis across three tiers: Growth (EUR 1,497/mo), Professional (EUR 2,997/mo), and Enterprise (EUR 4,997/mo). All plans include all AI skills. Usage is measured in credits, with each plan including a monthly credit allocation. Additional credits can be purchased in packs. The Founding Member program offers all features at EUR 997/mo with a lifetime pricing lock, limited to 10 agencies. Billing occurs monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",

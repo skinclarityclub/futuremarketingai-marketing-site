@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "Klaar om Clyde te Ontmoeten?",
-      "subtitle": "Slechts 5 founding agency plekken voor EUR 697/maand — Full Agency Suite, alle skills, 12 maanden vastgelegd. Ontmoet Clyde en ontdek wat hij voor jouw bureau kan doen.",
+      "subtitle": "Slechts 10 founding agency plekken voor EUR 997/maand — alle skills, onbeperkt werkplekken, 10.000 credits, lifetime prijsgarantie.",
       "button": "Ontmoet Clyde"
     },
     "faq": {
@@ -881,7 +881,7 @@
         "choose": {
           "step": "Stap 1",
           "title": "Kies Je Pack",
-          "description": "Selecteer het vertical pack dat bij je bureau past — Social Media Engine, Ecommerce Growth of Full Agency Suite. Elk pack bevat Clyde, je persistente AI Marketing Medewerker, met skills en klantwerkruimtes."
+          "description": "Selecteer het plan dat bij je bureau past — Growth, Professional of Enterprise. Elk plan bevat Clyde, je persistente AI Marketing Medewerker, met alle skills en een maandelijkse credittoewijzing."
         },
         "activate": {
           "step": "Stap 2",
@@ -963,7 +963,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in drie vertical packs: Social Media Engine (EUR 997/mnd), Ecommerce Growth (EUR 1.497/mnd) en Full Agency Suite (EUR 1.997/mnd). Elk pack omvat een vast aantal skills en klantwerkruimtes. Extra skills kunnen aan elk pack worden toegevoegd uit de add-on bibliotheek (EUR 97-347/mnd per skill). Een Founding Member programma biedt de Full Agency Suite voor EUR 697/mnd gedurende 12 maanden, beperkt tot 5 bureaus. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode, met uitzondering van de Founding Member 12-maanden commitment."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in drie tiers: Growth (EUR 1.497/mnd), Professional (EUR 2.997/mnd) en Enterprise (EUR 4.997/mnd). Alle plannen bevatten alle AI-skills. Gebruik wordt gemeten in credits, waarbij elk plan een maandelijkse credittoewijzing bevat. Extra credits kunnen in pakketten worden aangeschaft. Het Founding Member programma biedt alle functionaliteit voor EUR 997/mnd met een lifetime prijsgarantie, beperkt tot 10 bureaus. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",

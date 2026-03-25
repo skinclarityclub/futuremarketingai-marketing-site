@@ -87,7 +87,7 @@
     },
     "cta": {
       "title": "¿Listo para Conocer a Clyde?",
-      "subtitle": "Solo 5 plazas de agencia fundadora a EUR 697/mes — Full Agency Suite, todas las habilidades, 12 meses bloqueados. Conoce a Clyde y descubre lo que puede hacer por tu agencia.",
+      "subtitle": "Solo 10 plazas de agencia fundadora a EUR 997/mes — todas las habilidades, espacios ilimitados, 10.000 créditos, precio garantizado de por vida.",
       "button": "Conoce a Clyde"
     },
     "faq": {
@@ -881,7 +881,7 @@
         "choose": {
           "step": "Paso 1",
           "title": "Elija Su Pack",
-          "description": "Seleccione el pack vertical que se ajuste a su agencia — Social Media Engine, Ecommerce Growth o Full Agency Suite. Cada pack incluye a Clyde, su Empleado de Marketing IA persistente, con habilidades y espacios de trabajo."
+          "description": "Seleccione el plan que se ajuste a su agencia — Growth, Professional o Enterprise. Cada plan incluye a Clyde, su Empleado de Marketing IA persistente, con todas las habilidades y una asignacion mensual de creditos."
         },
         "activate": {
           "step": "Paso 2",
@@ -963,7 +963,7 @@
           },
           "subscription_terms": {
             "title": "2. Terminos de suscripcion",
-            "content": "Los servicios se ofrecen en base a suscripcion mensual en tres packs verticales: Social Media Engine (EUR 997/mes), Ecommerce Growth (EUR 1.497/mes) y Full Agency Suite (EUR 1.997/mes). Cada pack incluye un numero determinado de habilidades y espacios de trabajo. Se pueden agregar habilidades adicionales a cualquier pack desde la biblioteca de add-ons (EUR 97-347/mes por habilidad). Un programa de Miembro Fundador ofrece la Full Agency Suite a EUR 697/mes durante 12 meses, limitado a 5 agencias. La facturacion se realiza mensualmente por adelantado. Puede cancelar su suscripcion con 30 dias de aviso por escrito, efectivo al final del ciclo de facturacion vigente, excepto para el compromiso de 12 meses del Miembro Fundador."
+            "content": "Los servicios se ofrecen en base a suscripcion mensual en tres niveles: Growth (EUR 1.497/mes), Professional (EUR 2.997/mes) y Enterprise (EUR 4.997/mes). Todos los planes incluyen todas las habilidades de IA. El uso se mide en creditos, y cada plan incluye una asignacion mensual de creditos. Se pueden comprar creditos adicionales en paquetes. El programa de Miembro Fundador ofrece todas las funciones a EUR 997/mes con precio garantizado de por vida, limitado a 10 agencias. La facturacion se realiza mensualmente por adelantado. Puede cancelar su suscripcion con 30 dias de aviso por escrito, efectivo al final del ciclo de facturacion vigente."
           },
           "ai_output_disclaimer": {
             "title": "3. Descargo de responsabilidad sobre la salida de IA",

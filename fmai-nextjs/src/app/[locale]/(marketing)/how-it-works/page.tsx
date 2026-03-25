@@ -33,8 +33,8 @@ const STEP_KEYS = ['choose', 'activate', 'connect', 'working'] as const
 
 const HOW_TO_STEPS = [
   {
-    name: 'Choose Your Pack',
-    text: 'Select the vertical pack that matches your agency — Social Media Engine, Ecommerce Growth, or Full Agency Suite — each includes Clyde, your persistent AI Marketing Employee.',
+    name: 'Choose Your Plan',
+    text: 'Select the plan that matches your agency — Growth, Professional, or Enterprise — each includes Clyde, your persistent AI Marketing Employee, with all skills and a monthly credit allocation.',
   },
   {
     name: 'Activate Skills',
