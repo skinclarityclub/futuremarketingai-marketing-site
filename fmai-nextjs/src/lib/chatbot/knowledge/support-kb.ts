@@ -11,60 +11,49 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
       'tier',
       'plan',
       'pack',
-      'founding member',
-      'social media engine',
-      'ecommerce growth',
-      'full agency suite',
+      'founders club',
+      'growth',
+      'professional',
+      'enterprise',
       'subscription',
       'monthly',
       'EUR',
     ],
-    content: `## FMai Vertical Pack Pricing
+    content: `## FMai Pricing Plans
 
-**Social Media Engine — EUR 997/mo**
-- 3 client workspaces
-- Clyde AI Marketing Employee (24/7)
-- Instagram posts, stories & carousels
-- Facebook & LinkedIn publishing
-- Content Factory (auto-generate content)
-- Analytics & performance reporting
-- Clyde 24/7 via Telegram & dashboard
+All plans include all 11 AI skills — no feature restrictions. Credits scale with your usage — heavier skills like video and voice use more credits.
 
-**Ecommerce Growth — EUR 1,497/mo** (Most Popular)
-- 5 client workspaces
-- Everything in Social Media Engine
-- Blog Factory (SEO-optimized articles)
-- ManyChat DM automation
-- Shopify product & order sync
-- Advanced analytics dashboard
-- Priority support (<4h response)
+**Growth (AI Marketing Starter) — EUR 1,497/mo**
+- 5 workspaces
+- 3,000 credits/mo
+- All 11 AI skills included
+- EUR 1,500 onboarding fee
 
-**Full Agency Suite — EUR 1,997/mo** (All Skills)
-- 10 client workspaces
-- Everything in Ecommerce Growth
-- Voice Agent (500 min/mo included)
-- Email campaign management
-- Ad monitoring & competitor tracking
-- Priority Clyde (faster response, higher limits)
-- Dedicated success manager
-- Custom integrations
+**Professional (AI Marketing Pro) — EUR 2,997/mo** (Most Popular)
+- 15 workspaces
+- 8,000 credits/mo
+- All 11 AI skills included
+- Dedicated Slack channel
+- EUR 3,000 onboarding fee
 
-**Founding Member — EUR 697/mo** (5 agencies only, 12-month commitment)
-- Full Agency Suite with all skills included
-- 10 client workspaces
-- Priority Clyde
+**Enterprise (AI Marketing Suite) — EUR 4,997/mo** (All Skills, Unlimited Scale)
+- Unlimited workspaces
+- 20,000 credits/mo
+- All 11 AI skills included
+- Dedicated Customer Success Manager
+- EUR 5,000+ onboarding fee
+
+**Founders Club — EUR 997/mo** (10 spots only, lifetime price lock)
+- Unlimited workspaces
+- 10,000 credits/mo
+- All 11 AI skills included
 - Direct founder access
 - Shape the product roadmap
-- Saves EUR 1,300/mo vs. regular Full Agency Suite
 
-**Skill Add-ons (available for any pack):**
-- Blog Factory — EUR 247/mo
-- ManyChat DM — EUR 247/mo
-- Voice Agent — EUR 347/mo + usage
-- Email Management — EUR 197/mo
-- Ad Builder — EUR 347/mo
-- Reel Builder — EUR 347/mo
-- Extra Workspace — EUR 97/mo`,
+**Credit Packs (top up anytime):**
+- Boost — 2,000 credits — EUR 149
+- Scale — 5,000 credits — EUR 297
+- Unlimited — 15,000 credits — EUR 697`,
   },
   {
     key: 'cost_benchmarks',
@@ -85,30 +74,34 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
     ],
     content: `## Cost Benchmarks: Hiring vs. AI Marketing Employee
 
-**Junior Marketing Employee (Netherlands)**
-- Gross salary: EUR 2,800-3,500/mo
-- Employer costs (social charges, pension, insurance): +30% = EUR 3,640-4,550/mo
-- Total annual cost: EUR 43,680-54,600
+**Junior Marketing Coordinator (Netherlands)**
+- Gross salary + employer costs: EUR 4,500-6,200/mo
 - Capacity: 1 person, 40 hrs/week, handles 2-3 clients max
 - Ramp-up time: 3-6 months to full productivity
 
-**Freelance Content Creator**
-- Rate: EUR 50-100/hr (Netherlands market)
-- Average 20 hrs/week for 3 clients: EUR 4,000-8,000/mo
-- No benefits, no consistency guarantee, no scaling
+**Separate Tool Stack**
+- Marketing tools (scheduling, analytics, SEO, ads, email): EUR 2,000-3,400/mo
+- No AI execution, just tools — you still need people
 
-**AI Marketing Employee (FMai Social Media Engine)**
-- Cost: EUR 997/mo
-- Capacity: up to 3 clients simultaneously
+**Agency Retainer (Multichannel)**
+- EUR 5,000-20,000/mo for a multichannel marketing agency
+- Limited scalability, dependency on team availability
+
+**Single-Skill AI Competitor (e.g. 11x AI)**
+- USD 5,000/mo for one skill only
+- No European focus, no multi-skill integration
+
+**FMai Growth Plan**
+- Cost: EUR 1,497/mo for 5 workspaces and all 11 AI skills
 - Available 24/7, no sick days, no vacation
 - Consistent quality across all clients
-- Scales instantly: add a client workspace in 15 minutes
+- Scales instantly: add a workspace in 15 minutes
 
 **Key Comparison:**
-- Junior hire for 3 clients: ~EUR 4,000/mo = EUR 1,333/client
-- FMai Social Media Engine for 3 clients: EUR 997/mo = EUR 332/client
-- Cost per client drops 75% with FMai
-- Founding Member for 10 clients: EUR 697/mo = EUR 70/client`,
+- Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
+- FMai Growth for 5 clients: EUR 1,497/mo = EUR 299/client
+- Cost per client drops 80% with FMai
+- Founders Club for unlimited clients: EUR 997/mo — best value in the market`,
   },
   {
     key: 'time_benchmarks',
@@ -171,29 +164,30 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
 **Basic ROI Formula:**
 Monthly ROI = (Cost Savings + Revenue Increase - FMai Subscription) / FMai Subscription x 100%
 
-**Scenario A: Small Agency (Social Media Engine — EUR 997/mo)**
-- Current content costs: 1 freelancer (EUR 3,000/mo)
-- FMai cost: EUR 997/mo
-- Direct savings: EUR 2,003/mo
-- Additional capacity: can take on more clients without hiring
-- ROI: 201%
-
-**Scenario B: Ecommerce Agency (Ecommerce Growth — EUR 1,497/mo)**
-- Current content costs: 1 junior hire (EUR 4,000/mo) + freelancer overflow (EUR 2,000/mo) = EUR 6,000/mo
+**Scenario A: Growing Agency (Growth — EUR 1,497/mo)**
+- Current content costs: 1 junior marketer (EUR 4,500/mo) + tools (EUR 2,000/mo) = EUR 6,500/mo
 - FMai cost: EUR 1,497/mo
-- Direct savings: EUR 4,503/mo
-- Additional capacity: can serve 5 clients without hiring
-- Resell margin: charge clients EUR 500-1,500/mo per client for AI services
-- ROI: 301% on direct savings alone
+- Direct savings: EUR 5,003/mo
+- Additional capacity: 5 workspaces, all 11 AI skills, can take on more clients without hiring
+- ROI: 334%
 
-**Scenario C: Full Agency (Full Agency Suite — EUR 1,997/mo)**
-- Current costs: 2 junior hires (EUR 8,000/mo) + tools (EUR 2,000/mo) = EUR 10,000/mo
-- FMai cost: EUR 1,997/mo
+**Scenario B: Scaling Agency (Professional — EUR 2,997/mo)**
+- Current costs: 1 junior hire (EUR 5,500/mo) + freelancer overflow (EUR 3,000/mo) + tools (EUR 2,500/mo) = EUR 11,000/mo
+- FMai cost: EUR 2,997/mo
 - Direct savings: EUR 8,003/mo
-- Resell margin on 10 clients: potentially EUR 5,000-15,000/mo additional revenue
-- ROI: 401% on direct savings alone
+- Additional capacity: 15 workspaces, dedicated Slack support
+- Resell margin: charge clients EUR 500-1,500/mo per client for AI services
+- ROI: 267% on direct savings alone
 
-**Founding Member (EUR 697/mo):** All the above at 65% off. ROI is astronomical.
+**Scenario C: Full Scale Agency (Enterprise — EUR 4,997/mo)**
+- Current costs: 2 junior hires (EUR 10,000/mo) + tools (EUR 3,400/mo) + agency retainer (EUR 5,000/mo) = EUR 18,400/mo
+- FMai cost: EUR 4,997/mo
+- Direct savings: EUR 13,403/mo
+- Unlimited workspaces, dedicated CSM
+- Resell margin on unlimited clients: potentially EUR 10,000-30,000/mo additional revenue
+- ROI: 268% on direct savings alone
+
+**Founders Club (EUR 997/mo):** All 11 skills, unlimited workspaces, 10,000 credits. ROI is astronomical — less than the cost of one junior marketing coordinator.
 
 **Payback Period:** Typically 1 month — savings exceed subscription from day one.`,
   },
@@ -212,34 +206,33 @@ Monthly ROI = (Cost Savings + Revenue Increase - FMai Subscription) / FMai Subsc
       'benefit',
       'exclusive',
     ],
-    content: `## Founding Member Program
+    content: `## Founders Club Program
 
 **What Is It?**
-The Founding Member program offers the first 5 agencies the Full Agency Suite at EUR 697/mo (vs. EUR 1,997/mo regular price) in exchange for a 12-month commitment and product feedback.
+The Founders Club offers the first 10 agencies access at EUR 997/mo with a lifetime price lock — while regular plans start at EUR 1,497/mo.
 
 **Benefits:**
-- EUR 697/mo locked for 12 months (EUR 1,300/mo savings vs. Full Agency Suite, EUR 15,600/yr savings)
-- Full Agency Suite — all skills included (social, blog, ManyChat, voice, email, ads, and more)
-- 10 client workspaces
-- Priority Clyde (faster response, higher limits)
+- EUR 997/mo locked for life (vs. EUR 1,497-4,997/mo regular plans)
+- Unlimited workspaces (same as Enterprise at EUR 4,997/mo)
+- 10,000 credits/mo (more than Professional at EUR 2,997/mo)
+- All 11 AI skills included — no feature restrictions
 - Direct access to the founder for support and feature requests
 - Priority for new feature rollouts
 - Shape the product roadmap based on your agency's needs
 - Founding Agency Network membership
 
 **Requirements:**
-- 12-month commitment at EUR 697/mo
 - Monthly 30-minute feedback call
 - Permission to use anonymized results as case study
 
 **Who Is It For?**
-Marketing agencies with 3-10 clients who want to:
-- Reduce content production costs by 70-90%
-- Scale client capacity without hiring
+Marketing agencies who want to:
+- Get all capabilities at the best price in the market
+- Scale client capacity without hiring — unlimited workspaces
 - Maximize resell margin on AI marketing services
 - Get early access to AI marketing tools before competitors
 - Have direct influence on product development
 
-**Spots Remaining:** Limited to 5 agencies total. First come, first served.`,
+**Spots Remaining:** Limited to 10 agencies total. First come, first served.`,
   },
 ]

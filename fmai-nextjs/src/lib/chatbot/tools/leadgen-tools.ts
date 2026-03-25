@@ -87,62 +87,64 @@ const get_pricing_info = tool({
     'Retrieve pricing information for a specific pack or all packs of the AI Marketing Employee platform.',
   inputSchema: z.object({
     tier: z
-      .enum(['social', 'ecommerce', 'full', 'founding', 'all'])
+      .enum(['growth', 'professional', 'enterprise', 'founding', 'all'])
       .default('all')
-      .describe('Which pricing pack to retrieve'),
+      .describe('Which pricing plan to retrieve'),
   }),
   execute: async ({ tier }) => {
     const tiers = {
-      social: {
-        name: 'Social Media Engine',
-        monthlyPrice: 997,
-        workspaces: 3,
-        features: [
-          'Clyde AI Marketing Employee (24/7)',
-          'Instagram posts, stories & carousels',
-          'Facebook & LinkedIn publishing',
-          'Content Factory',
-          'Analytics & performance reporting',
-          'Clyde 24/7 via Telegram & dashboard',
-        ],
-      },
-      ecommerce: {
-        name: 'Ecommerce Growth',
+      growth: {
+        name: 'Growth (AI Marketing Starter)',
         monthlyPrice: 1497,
         workspaces: 5,
+        credits: 3000,
+        onboardingFee: 1500,
         features: [
-          'Everything in Social Media Engine',
-          'Blog Factory (SEO-optimized articles)',
-          'ManyChat DM automation',
-          'Shopify product & order sync',
-          'Advanced analytics dashboard',
-          'Priority support (<4h response)',
+          'All 11 AI skills included',
+          '5 workspaces',
+          '3,000 credits/mo',
+          'EUR 1,500 onboarding fee',
         ],
       },
-      full: {
-        name: 'Full Agency Suite',
-        monthlyPrice: 1997,
-        workspaces: 10,
+      professional: {
+        name: 'Professional (AI Marketing Pro)',
+        monthlyPrice: 2997,
+        workspaces: 15,
+        credits: 8000,
+        onboardingFee: 3000,
         features: [
-          'Everything in Ecommerce Growth',
-          'Voice Agent (500 min/mo included)',
-          'Email campaign management',
-          'Ad monitoring & competitor tracking',
-          'Priority Clyde',
-          'Dedicated success manager',
-          'Custom integrations',
+          'All 11 AI skills included',
+          '15 workspaces',
+          '8,000 credits/mo',
+          'Dedicated Slack channel',
+          'EUR 3,000 onboarding fee',
+        ],
+      },
+      enterprise: {
+        name: 'Enterprise (AI Marketing Suite)',
+        monthlyPrice: 4997,
+        workspaces: -1, // unlimited
+        credits: 20000,
+        onboardingFee: 5000,
+        features: [
+          'All 11 AI skills included',
+          'Unlimited workspaces',
+          '20,000 credits/mo',
+          'Dedicated Customer Success Manager',
+          'EUR 5,000+ onboarding fee',
         ],
       },
       founding: {
-        name: 'Founding Member',
-        monthlyPrice: 697,
-        workspaces: 10,
-        commitment: '12 months',
-        spotsTotal: 5,
+        name: 'Founders Club',
+        monthlyPrice: 997,
+        workspaces: -1, // unlimited
+        credits: 10000,
+        spotsTotal: 10,
         features: [
-          'Full Agency Suite — all skills included',
-          '10 client workspaces',
-          'Priority Clyde',
+          'All 11 AI skills included',
+          'Unlimited workspaces',
+          '10,000 credits/mo',
+          'Lifetime price lock',
           'Direct founder access',
           'Shape the product roadmap',
         ],
@@ -187,7 +189,7 @@ const get_roi_estimate = tool({
       .number()
       .default(50)
       .describe('Average hourly rate of team members in EUR'),
-    monthlySubscription: z.number().default(799).describe('Monthly subscription cost in EUR'),
+    monthlySubscription: z.number().default(1497).describe('Monthly subscription cost in EUR'),
   }),
   execute: async ({
     teamSize,

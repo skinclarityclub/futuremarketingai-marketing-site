@@ -53,45 +53,53 @@ FMai delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execut
   },
   {
     key: 'pricing',
-    content: `## FMai Vertical Pack Pricing
+    content: `## FMai Pricing Plans
 
-We offer three vertical packs — pick the one that fits your agency:
+All plans include all 11 AI skills — no feature restrictions. Credits scale with your usage — heavier skills like video and voice use more credits.
 
-**Social Media Engine (EUR 997/mo)**
-- For agencies focused on social media management
-- 3 client workspaces
-- Instagram, Facebook, LinkedIn, Content Factory, Analytics
-- Clyde AI Marketing Employee available 24/7
+**Growth (AI Marketing Starter) — EUR 1,497/mo**
+- 5 workspaces
+- 3,000 credits/mo
+- All 11 AI skills included
+- EUR 1,500 onboarding fee
 
-**Ecommerce Growth (EUR 1,497/mo)** — Most Popular
-- For agencies managing ecommerce clients
-- 5 client workspaces
-- Everything in Social Media Engine plus Blog Factory, ManyChat DM, Shopify sync
-- Priority support with <4h response time
+**Professional (AI Marketing Pro) — EUR 2,997/mo** — Most Popular
+- 15 workspaces
+- 8,000 credits/mo
+- All 11 AI skills included
+- Dedicated Slack channel
+- EUR 3,000 onboarding fee
 
-**Full Agency Suite (EUR 1,997/mo)**
-- For agencies that want every skill
-- 10 client workspaces
-- All skills: social, blog, ManyChat, voice agent (500 min), email, ad monitoring
-- Priority Clyde, dedicated success manager, custom integrations
+**Enterprise (AI Marketing Suite) — EUR 4,997/mo**
+- Unlimited workspaces
+- 20,000 credits/mo
+- All 11 AI skills included
+- Dedicated Customer Success Manager
+- EUR 5,000+ onboarding fee
 
-**Founding Member (EUR 697/mo)** — 5 agencies only
-- Full Agency Suite at 65% off for 12 months
-- All skills, 10 workspaces, Priority Clyde, direct founder access
+**Founders Club — EUR 997/mo** — 10 spots only
+- Unlimited workspaces
+- 10,000 credits/mo
+- All 11 AI skills included
+- Lifetime price lock
+- Direct founder access
 
-**Skill Add-ons (any pack):**
-Blog EUR 247/mo | ManyChat EUR 247/mo | Voice EUR 347/mo + usage | Email EUR 197/mo | Ad Builder EUR 347/mo | Reel Builder EUR 347/mo | Extra Workspace EUR 97/mo
+**Credit Packs (top up anytime):**
+Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Unlimited 15,000 credits EUR 697
 
-Every engagement starts with a free Strategy Call. No lock-in contracts — cancel anytime with 30-day notice (except Founding Member 12-month commitment).`,
+For less than the cost of one junior marketing coordinator (EUR 4,500/mo), you get an AI team that works 24/7. No direct competitor in Europe offers this combination of capabilities.
+
+Every engagement starts with a free Strategy Call. No lock-in contracts — cancel anytime with 30-day notice.`,
     keywords: [
       'pricing',
       'cost',
       'price',
       'tier',
       'pack',
-      'social media engine',
-      'ecommerce growth',
-      'full agency suite',
+      'growth',
+      'professional',
+      'enterprise',
+      'founders club',
       'budget',
       'investment',
       'how much',
@@ -109,7 +117,7 @@ Our streamlined 4-step process gets your agency from signup to Clyde executing f
 Free consultation to understand your agency, clients, and goals. We assess which pack and skills deliver the most impact.
 
 **2. Choose Your Pack**
-Select Social Media Engine, Ecommerce Growth, or Full Agency Suite. Add any skill add-ons you need.
+Select Growth, Professional, or Enterprise. Top up with credit packs as needed.
 
 **3. Onboarding (1 week)**
 We set up your client workspaces together. Upload brand guidelines, connect social accounts, and configure Clyde for each client's brand voice.

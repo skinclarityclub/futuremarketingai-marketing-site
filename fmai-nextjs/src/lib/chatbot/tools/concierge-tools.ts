@@ -8,50 +8,50 @@ const SERVICE_DATA: Record<
   chatbots: {
     name: 'AI Chatbots',
     description:
-      'Multi-platform conversational AI with persona-based responses, 24/7 availability, and multi-lingual support.',
+      'Multi-platform conversational AI with persona-based responses, 24/7 availability, and multi-lingual support. Included in all plans.',
     highlights: [
       'Deploy on website, WhatsApp, Instagram, Messenger',
       '24/7 availability with zero downtime',
       'Multi-lingual (EN, NL, ES and more)',
       'Seamless human agent handoff',
     ],
-    starting_price: 'From EUR 500/mo',
+    starting_price: 'Included in all plans (from EUR 1,497/mo)',
   },
   'voice-agents': {
     name: 'Voice Agents',
     description:
-      'AI-powered phone systems for inbound and outbound calls through our partnership model.',
+      'AI-powered phone systems for inbound and outbound calls. Included in all plans — voice uses more credits per interaction.',
     highlights: [
       'Natural conversation handling',
       'Appointment scheduling and FAQ resolution',
       'Call routing and escalation',
       'Reduces call center load by up to 60%',
     ],
-    starting_price: 'From EUR 750/mo',
+    starting_price: 'Included in all plans (from EUR 1,497/mo)',
   },
   automations: {
     name: 'Automations',
     description:
-      'n8n-powered workflow automation for content pipelines, lead nurturing, and business process optimization.',
+      'n8n-powered workflow automation for content pipelines, lead nurturing, and business process optimization. Included in all plans.',
     highlights: [
       'Content pipelines: blogs, social, newsletters',
       'Lead nurturing sequences',
       'CRM integrations and reporting',
       'Custom workflow design',
     ],
-    starting_price: 'From EUR 500/mo',
+    starting_price: 'Included in all plans (from EUR 1,497/mo)',
   },
   'marketing-machine': {
     name: 'Marketing Machine',
     description:
-      'Full autonomous marketing system combining chatbots, voice agents, and automations into one unified engine.',
+      'Full autonomous marketing system combining all 11 AI skills into one unified engine. All plans include all skills — no feature restrictions.',
     highlights: [
+      'All 11 AI skills working as one unified system',
       'AI-driven content creation and distribution',
-      'All services working as one unified system',
       'Monthly strategy reviews with dashboards',
       'Continuous optimization and improvement',
     ],
-    starting_price: 'Custom pricing',
+    starting_price: 'From EUR 1,497/mo (Growth plan)',
   },
 }
 
