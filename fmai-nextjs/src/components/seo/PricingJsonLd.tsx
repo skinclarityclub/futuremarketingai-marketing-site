@@ -4,28 +4,14 @@ export function PricingJsonLd() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'FutureMarketingAI Pricing Packs',
+    name: 'FutureMarketingAI Pricing Tiers',
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Social Media Engine',
-        description: 'AI Marketing Employee for social media management — Instagram, Facebook, LinkedIn, Content Factory, Analytics, Clyde 24/7. 3 client workspaces.',
-        price: '997',
-        priceCurrency: 'EUR',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '997',
-          priceCurrency: 'EUR',
-          billingDuration: 'P1M',
-        },
-        seller: { '@type': 'Organization', name: 'Future Marketing AI' },
-      },
-      {
-        '@type': 'Offer',
-        name: 'Ecommerce Growth',
+        name: 'AI Marketing Starter',
+        description: 'Growth tier — All 11 AI skills, 5 workspaces, 3,000 credits/month, email support. One-time onboarding EUR 1,500.',
         price: '1497',
         priceCurrency: 'EUR',
-        description: 'All Social Media Engine skills plus Blog Factory, ManyChat DM automation, Shopify sync. 5 client workspaces.',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           price: '1497',
@@ -36,13 +22,27 @@ export function PricingJsonLd() {
       },
       {
         '@type': 'Offer',
-        name: 'Full Agency Suite',
-        price: '1997',
+        name: 'AI Marketing Pro',
+        description: 'Professional tier — All 11 AI skills, 15 workspaces, 8,000 credits/month, dedicated Slack + monthly call. One-time onboarding EUR 3,000.',
+        price: '2997',
         priceCurrency: 'EUR',
-        description: 'All skills included — Voice Agent, Email Management, Ad Monitoring, Priority Clyde, dedicated success manager. 10 client workspaces.',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '1997',
+          price: '2997',
+          priceCurrency: 'EUR',
+          billingDuration: 'P1M',
+        },
+        seller: { '@type': 'Organization', name: 'Future Marketing AI' },
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Marketing Suite',
+        description: 'Enterprise tier — All 11 AI skills, unlimited workspaces, 20,000 credits/month, dedicated CSM + custom SLA. One-time onboarding EUR 5,000.',
+        price: '4997',
+        priceCurrency: 'EUR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '4997',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },
