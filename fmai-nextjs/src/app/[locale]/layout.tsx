@@ -53,9 +53,10 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://prod.spline.design" />
+        {/* Spline runtime fetches WASM from unpkg */}
         <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
+        {/* Prefetch self-hosted scene for faster 3D init */}
+        <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
       </head>
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
         <GradientMesh />
