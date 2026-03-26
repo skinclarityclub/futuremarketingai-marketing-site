@@ -1,103 +1,92 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { Suspense, lazy, useState, useCallback, useEffect } from 'react'
+import Image from 'next/image'
+
+const Spline = lazy(() => import('@splinetool/react-spline'))
 
 interface SplineSceneProps {
   scene: string
   className?: string
-}
-
-function SplineSkeleton() {
-  return (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="relative w-48 h-48">
-        <div
-          className="absolute inset-0 rounded-full opacity-40"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(0,212,255,0.25) 0%, rgba(168,85,247,0.08) 50%, transparent 70%)',
-            animation: 'glow-pulse 2.5s ease-in-out infinite',
-          }}
-        />
-        <div
-          className="absolute inset-12 rounded-full border border-cyan-500/15"
-          style={{ animation: 'spin 4s linear infinite' }}
-        />
-      </div>
-    </div>
-  )
+  /** Static preview image shown instantly while 3D loads */
+  previewSrc?: string
 }
 
 /**
- * SplineScene — renders a Spline 3D scene inside an iframe.
+ * SplineScene — smooth-loading 3D scene with instant static preview.
  *
- * Why iframe? Spline's WebGL shader compilation blocks the main thread,
- * causing jank in CSS animations and text rendering. An iframe isolates
- * the WebGL context in a separate browsing context, keeping the main
- * page smooth during initialization.
- *
- * The scene file is self-hosted at /spline/scene.splinecode for fast
- * same-origin delivery with Brotli compression.
+ * Strategy:
+ * 1. Show static WebP screenshot instantly (13KB, zero delay)
+ * 2. Defer Spline mount until browser is idle (requestIdleCallback)
+ * 3. Pause blur-blob CSS animations during WebGL shader compilation
+ * 4. Cross-fade from static image to interactive 3D (0.8s ease-out)
+ * 5. Resume blob animations after scene is stable
  */
-export function SplineScene({ scene, className }: SplineSceneProps) {
-  const [loaded, setLoaded] = useState(false)
+export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) {
   const [shouldMount, setShouldMount] = useState(false)
-  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [loaded, setLoaded] = useState(false)
 
-  // Listen for 'spline-loaded' message from iframe
-  const handleMessage = useCallback((e: MessageEvent) => {
-    if (e.data?.type === 'spline-loaded') {
-      // Double rAF to let the iframe render a few frames before revealing
+  const onLoad = useCallback(() => {
+    // Let GPU render a few frames before revealing
+    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setLoaded(true)
-          document.documentElement.classList.remove('spline-loading')
-        })
+        setLoaded(true)
+        // Resume blob animations
+        document.documentElement.classList.remove('spline-loading')
       })
-    }
+    })
   }, [])
 
   useEffect(() => {
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [handleMessage])
-
-  useEffect(() => {
-    // Pause blur-blobs while WebGL initializes in iframe
+    // Pause heavy blur-blobs while WebGL initializes
     document.documentElement.classList.add('spline-loading')
 
-    // Defer iframe mount until browser is idle
+    // Defer Spline mount until browser is idle
     if ('requestIdleCallback' in window) {
-      const id = requestIdleCallback(() => setShouldMount(true), { timeout: 2000 })
+      const id = requestIdleCallback(() => setShouldMount(true), { timeout: 2500 })
       return () => cancelIdleCallback(id)
     } else {
-      const t = setTimeout(() => setShouldMount(true), 600)
+      const t = setTimeout(() => setShouldMount(true), 800)
       return () => clearTimeout(t)
     }
   }, [])
 
   return (
-    <div className={className} style={{ contain: 'layout paint' }}>
-      {shouldMount && (
-        <iframe
-          ref={iframeRef}
-          src="/spline/viewer.html"
-          title="3D Robot"
-          className="w-full h-full border-0"
+    <div className={className} style={{ contain: 'layout paint', position: 'relative' }}>
+      {/* Static preview — visible instantly, fades out when 3D is ready */}
+      {previewSrc && (
+        <div
+          className="absolute inset-0 z-10"
           style={{
-            opacity: loaded ? 1 : 0,
+            opacity: loaded ? 0 : 1,
             transition: 'opacity 0.8s ease-out',
-            colorScheme: 'normal',
-            background: 'transparent',
+            pointerEvents: loaded ? 'none' : 'auto',
           }}
-          loading="eager"
-          allow="autoplay"
-        />
-      )}
-      {!loaded && (
-        <div className="absolute inset-0">
-          <SplineSkeleton />
+        >
+          <Image
+            src={previewSrc}
+            alt=""
+            fill
+            className="object-contain object-center"
+            priority
+            sizes="60vw"
+          />
         </div>
+      )}
+
+      {/* Interactive 3D — loads behind the preview, fades in when ready */}
+      {shouldMount && (
+        <Suspense fallback={null}>
+          <div
+            className="w-full h-full"
+            style={{
+              opacity: loaded ? 1 : 0,
+              transition: 'opacity 0.8s ease-out',
+            }}
+          >
+            <Spline scene={scene} className="w-full h-full" onLoad={onLoad} />
+          </div>
+        </Suspense>
       )}
     </div>
   )

@@ -1,0 +1,13 @@
+[Homepage] Header: Logo with home link
+[Homepage] Header: Login/Sign-in button
+[Homepage] Header: Mobile menu button
+[Homepage] Header: Services dropdown/mega menu
+[Homepage] Footer: Product/Services section
+[Homepage] Footer: Resources section
+[Homepage] Footer: Social media links
+[Homepage] Footer: Blog link
+[Homepage] Homepage: CTA buttons (found 0)
+[Homepage] Homepage: Trust badges/social proof
+[Homepage] Homepage: Stats/metrics section
+[Automations] Automations: CTA button
+[Marketing Machine] Marketing Machine: CTA button
