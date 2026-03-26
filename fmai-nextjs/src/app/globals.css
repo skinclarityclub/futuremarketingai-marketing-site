@@ -313,6 +313,14 @@
   }
 }
 
+/* Pause heavy blur-blob animations while Spline WebGL initializes.
+   The .spline-loading class is toggled by SplineScene component. */
+.spline-loading .blob-warm,
+.spline-loading .blob-cool,
+.spline-loading .blob-mixed {
+  animation-play-state: paused;
+}
+
 /* Card gradient border -- hover-activated gradient outline */
 .card-gradient-border {
   position: relative;

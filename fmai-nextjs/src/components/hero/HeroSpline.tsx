@@ -7,12 +7,14 @@ export function HeroSpline() {
     <>
       {/* Desktop — interactive 3D Spline scene */}
       <div className="absolute inset-0 hidden lg:block pointer-events-none">
-        {/* Ambient glow — radiates from the robot's position */}
+        {/* Ambient glow — radiates from the robot's position (reduced blur for performance) */}
         <div
-          className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-25 blur-[120px]"
+          className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-20"
           style={{
             background:
-              'radial-gradient(circle, rgba(0,212,255,0.35) 0%, rgba(168,85,247,0.12) 50%, transparent 70%)',
+              'radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(168,85,247,0.1) 40%, transparent 65%)',
+            filter: 'blur(80px)',
+            willChange: 'auto',
           }}
         />
 
