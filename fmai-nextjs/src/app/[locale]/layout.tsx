@@ -53,16 +53,12 @@ export default async function LocaleLayout({
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
       <head>
-        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://prod.spline.design" />
+        {/* Spline runtime loaded from unpkg in viewer iframe */}
         <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
-        {/* Prefetch Spline scene binary so it's cached before component mounts */}
-        <link
-          rel="prefetch"
-          href="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
+        <link rel="dns-prefetch" href="https://unpkg.com" />
+        {/* Prefetch self-hosted scene + viewer for instant iframe load */}
+        <link rel="prefetch" href="/spline/viewer.html" as="document" />
+        <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
       </head>
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
         <GradientMesh />

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  * { margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; }
+  canvas { display: block; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+<canvas id="canvas3d"></canvas>
+<script type="module">
+import { Application } from 'https://unpkg.com/@splinetool/runtime@1.12.70/build/runtime.js';
+
+const canvas = document.getElementById('canvas3d');
+const app = new Application(canvas);
+
+app.load('/spline/scene.splinecode').then(() => {
+  // Signal to parent that scene is ready
+  window.parent.postMessage({ type: 'spline-loaded' }, '*');
+});
+</script>
+</body>
+</html>

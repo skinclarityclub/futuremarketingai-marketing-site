@@ -32,7 +32,7 @@ export function HeroSpline() {
           }}
         >
           <SplineScene
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            scene="/spline/scene.splinecode"
             className="w-full h-full"
           />
         </div>

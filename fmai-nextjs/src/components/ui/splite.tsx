@@ -1,7 +1,6 @@
 'use client'
 
-import { Suspense, lazy, useState, useCallback, useEffect } from 'react'
-const Spline = lazy(() => import('@splinetool/react-spline'))
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 interface SplineSceneProps {
   scene: string
@@ -12,7 +11,6 @@ function SplineSkeleton() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="relative w-48 h-48">
-        {/* Soft ambient glow matching robot position */}
         <div
           className="absolute inset-0 rounded-full opacity-40"
           style={{
@@ -30,59 +28,76 @@ function SplineSkeleton() {
   )
 }
 
+/**
+ * SplineScene — renders a Spline 3D scene inside an iframe.
+ *
+ * Why iframe? Spline's WebGL shader compilation blocks the main thread,
+ * causing jank in CSS animations and text rendering. An iframe isolates
+ * the WebGL context in a separate browsing context, keeping the main
+ * page smooth during initialization.
+ *
+ * The scene file is self-hosted at /spline/scene.splinecode for fast
+ * same-origin delivery with Brotli compression.
+ */
 export function SplineScene({ scene, className }: SplineSceneProps) {
-  const [shouldMount, setShouldMount] = useState(false)
   const [loaded, setLoaded] = useState(false)
+  const [shouldMount, setShouldMount] = useState(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
-  const onLoad = useCallback(() => {
-    // Small delay to let GPU finish first few frames behind the fade
-    requestAnimationFrame(() => {
+  // Listen for 'spline-loaded' message from iframe
+  const handleMessage = useCallback((e: MessageEvent) => {
+    if (e.data?.type === 'spline-loaded') {
+      // Double rAF to let the iframe render a few frames before revealing
       requestAnimationFrame(() => {
-        setLoaded(true)
-        // Resume blob animations after Spline is stable
-        document.documentElement.classList.remove('spline-loading')
+        requestAnimationFrame(() => {
+          setLoaded(true)
+          document.documentElement.classList.remove('spline-loading')
+        })
       })
-    })
+    }
   }, [])
 
   useEffect(() => {
-    // Pause heavy CSS blur-blobs while WebGL initializes
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [handleMessage])
+
+  useEffect(() => {
+    // Pause blur-blobs while WebGL initializes in iframe
     document.documentElement.classList.add('spline-loading')
 
-    // Defer Spline mount until browser is idle (hero text animates first)
+    // Defer iframe mount until browser is idle
     if ('requestIdleCallback' in window) {
-      const id = requestIdleCallback(() => setShouldMount(true), { timeout: 2500 })
+      const id = requestIdleCallback(() => setShouldMount(true), { timeout: 2000 })
       return () => cancelIdleCallback(id)
     } else {
-      const t = setTimeout(() => setShouldMount(true), 800)
+      const t = setTimeout(() => setShouldMount(true), 600)
       return () => clearTimeout(t)
     }
   }, [])
 
   return (
-    <div
-      className={className}
-      style={{ contain: 'layout paint' }}
-    >
-      {shouldMount ? (
-        <Suspense fallback={<SplineSkeleton />}>
-          <div
-            className="w-full h-full"
-            style={{
-              opacity: loaded ? 1 : 0,
-              transition: 'opacity 0.8s ease-out',
-            }}
-          >
-            <Spline scene={scene} className="w-full h-full" onLoad={onLoad} />
-          </div>
-          {!loaded && (
-            <div className="absolute inset-0">
-              <SplineSkeleton />
-            </div>
-          )}
-        </Suspense>
-      ) : (
-        <SplineSkeleton />
+    <div className={className} style={{ contain: 'layout paint' }}>
+      {shouldMount && (
+        <iframe
+          ref={iframeRef}
+          src="/spline/viewer.html"
+          title="3D Robot"
+          className="w-full h-full border-0"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: 'opacity 0.8s ease-out',
+            colorScheme: 'normal',
+            background: 'transparent',
+          }}
+          loading="eager"
+          allow="autoplay"
+        />
+      )}
+      {!loaded && (
+        <div className="absolute inset-0">
+          <SplineSkeleton />
+        </div>
       )}
     </div>
   )
