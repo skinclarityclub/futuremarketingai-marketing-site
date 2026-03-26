@@ -1,9 +1,15 @@
 'use client'
 
-import { Suspense, lazy, useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-const Spline = lazy(() => import('@splinetool/react-spline'))
+// Dynamic import with SSR disabled — prevents server-side WebGL errors
+// and splits the 638KB Spline runtime into a separate chunk
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+  loading: () => null,
+})
 
 interface SplineSceneProps {
   scene: string
@@ -13,54 +19,62 @@ interface SplineSceneProps {
 }
 
 /**
- * SplineScene — smooth-loading 3D scene with instant static preview.
+ * SplineScene — progressive 3D loading with zero perceived jank.
  *
- * Strategy:
- * 1. Show static WebP screenshot instantly (13KB, zero delay)
- * 2. Defer Spline mount until browser is idle (requestIdleCallback)
- * 3. Pause blur-blob CSS animations during WebGL shader compilation
- * 4. Cross-fade from static image to interactive 3D (0.8s ease-out)
- * 5. Resume blob animations after scene is stable
+ * The Spline runtime (638KB) blocks the main thread for ~1.6s during
+ * shader compilation. We can't prevent this, but we can HIDE it:
+ *
+ * 1. Show static WebP preview instantly (17KB, priority image)
+ * 2. Wait 3s for page to be fully interactive (text, animations, nav)
+ * 3. Mount Spline behind the preview (invisible, opacity: 0)
+ * 4. Main thread blocks for ~1.6s BUT user sees the static preview
+ * 5. After onLoad, cross-fade from preview to interactive 3D
+ * 6. Resume blob animations
+ *
+ * The user never notices the block because the preview covers it.
  */
 export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) {
-  const [shouldMount, setShouldMount] = useState(false)
-  const [loaded, setLoaded] = useState(false)
+  const [phase, setPhase] = useState<'preview' | 'loading' | 'ready'>('preview')
+  const mountedRef = useRef(false)
 
   const onLoad = useCallback(() => {
-    // Let GPU render a few frames before revealing
+    // GPU needs a few frames to stabilize after shader compilation
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        setLoaded(true)
-        // Resume blob animations
-        document.documentElement.classList.remove('spline-loading')
+        requestAnimationFrame(() => {
+          setPhase('ready')
+          document.documentElement.classList.remove('spline-loading')
+        })
       })
     })
   }, [])
 
   useEffect(() => {
-    // Pause heavy blur-blobs while WebGL initializes
+    // Pause blur-blobs during the entire loading process
     document.documentElement.classList.add('spline-loading')
 
-    // Defer Spline mount until browser is idle
-    if ('requestIdleCallback' in window) {
-      const id = requestIdleCallback(() => setShouldMount(true), { timeout: 2500 })
-      return () => cancelIdleCallback(id)
-    } else {
-      const t = setTimeout(() => setShouldMount(true), 800)
-      return () => clearTimeout(t)
-    }
+    // Wait 3 seconds for page to be fully rendered and interactive
+    // This ensures hero text animations, navbar, and CSS play first
+    const timer = setTimeout(() => {
+      if (!mountedRef.current) {
+        mountedRef.current = true
+        setPhase('loading')
+      }
+    }, 3000)
+
+    return () => clearTimeout(timer)
   }, [])
 
   return (
     <div className={className} style={{ contain: 'layout paint', position: 'relative' }}>
-      {/* Static preview — visible instantly, fades out when 3D is ready */}
+      {/* Static preview — always rendered, fades out when 3D ready */}
       {previewSrc && (
         <div
           className="absolute inset-0 z-10"
           style={{
-            opacity: loaded ? 0 : 1,
-            transition: 'opacity 0.8s ease-out',
-            pointerEvents: loaded ? 'none' : 'auto',
+            opacity: phase === 'ready' ? 0 : 1,
+            transition: 'opacity 1s ease-out',
+            pointerEvents: phase === 'ready' ? 'none' : 'auto',
           }}
         >
           <Image
@@ -74,19 +88,17 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
         </div>
       )}
 
-      {/* Interactive 3D — loads behind the preview, fades in when ready */}
-      {shouldMount && (
-        <Suspense fallback={null}>
-          <div
-            className="w-full h-full"
-            style={{
-              opacity: loaded ? 1 : 0,
-              transition: 'opacity 0.8s ease-out',
-            }}
-          >
-            <Spline scene={scene} className="w-full h-full" onLoad={onLoad} />
-          </div>
-        </Suspense>
+      {/* Interactive 3D — mounts after 3s delay, hidden until onLoad */}
+      {phase !== 'preview' && (
+        <div
+          className="w-full h-full absolute inset-0"
+          style={{
+            opacity: phase === 'ready' ? 1 : 0,
+            transition: 'opacity 1s ease-out',
+          }}
+        >
+          <Spline scene={scene} className="w-full h-full" onLoad={onLoad} />
+        </div>
       )}
     </div>
   )
