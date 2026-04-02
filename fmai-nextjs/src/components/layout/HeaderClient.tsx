@@ -157,7 +157,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         <Link href="/" className="flex items-center group" aria-label="FutureMarketingAI home">
           <span className="font-display font-bold text-xl tracking-tight">
             <span className="text-white">Future</span>
-            <span className="bg-gradient-to-r from-[#00D4FF] to-[#A855F7] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] bg-clip-text text-transparent">
               Marketing
             </span>
             <span className="text-white">AI</span>
