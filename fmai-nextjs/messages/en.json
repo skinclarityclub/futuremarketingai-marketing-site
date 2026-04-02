@@ -1,7 +1,7 @@
 {
   "home": {
     "meta": {
-      "title": "Meet Clyde — Your Agency's AI Marketing Employee | FMai",
+      "title": "Meet Clyde — Your Agency's AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde is your agency's first AI marketing employee. He writes content, calls leads, manages social media, creates ads, and reports on performance — 24/7, for every client. Built by FutureMarketingAI."
     },
     "hero": {
@@ -297,7 +297,7 @@
         "concierge": {
           "label": "Website Concierge",
           "scenario_title": "Website Concierge Demo",
-          "scenario": "Meet the FMai Concierge — a hybrid tour guide and sales assistant. Ask about services, pricing, or how AI marketing can transform your agency.",
+          "scenario": "Meet the FutureMarketingAI Concierge — a hybrid tour guide and sales assistant. Ask about services, pricing, or how AI marketing can transform your agency.",
           "capabilities_0": "Service navigation",
           "capabilities_1": "Pricing overview",
           "capabilities_2": "Case study highlights",
@@ -694,12 +694,12 @@
   },
   "about": {
     "meta": {
-      "title": "About FMai | AI Marketing Employee for Agencies",
-      "description": "FMai builds persistent AI Marketing Employees for marketing agencies. One agent, pluggable skills, always learning. Built in the Netherlands for European agencies."
+      "title": "About FutureMarketingAI | AI Marketing Employee for Agencies",
+      "description": "FutureMarketingAI builds persistent AI Marketing Employees for marketing agencies. One agent, pluggable skills, always learning. Built in the Netherlands for European agencies."
     },
     "hero": {
       "badge": "Now Onboarding Founding Members",
-      "title": "About FMai",
+      "title": "About FutureMarketingAI",
       "tagline": "Building the first AI Marketing Employee for agencies"
     },
     "mission": {
@@ -741,7 +741,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing | AI Marketing Agents for Agencies | FMai",
+      "title": "Pricing | AI Marketing Agents for Agencies | FutureMarketingAI",
       "description": "Premium AI agent pricing for marketing agencies. Growth EUR 1,497/mo, Professional EUR 2,997/mo, Enterprise EUR 4,997/mo. All 11 AI skills included in every tier."
     },
     "hero": {
@@ -868,7 +868,7 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "How It Works | AI Marketing Employee for Agencies | FMai",
+      "title": "How It Works | AI Marketing Employee for Agencies | FutureMarketingAI",
       "description": "See how your AI Marketing Employee gets onboarded: choose your tier, activate skills, connect clients, and your AI employee starts working within days."
     },
     "hero": {
@@ -955,11 +955,11 @@
     "sections": {
       "terms": {
         "title": "Terms of Service",
-        "content": "These Terms of Service govern your use of the Future Marketing AI (FMai) platform and AI Marketing Employee services. By subscribing to or using our services, you agree to be bound by these terms. FMai operates as an Agent as a Service (AaaS) provider, delivering persistent AI agents with pluggable marketing skills to marketing agencies. Please read these terms carefully before using our platform.",
+        "content": "These Terms of Service govern your use of the Future Marketing AI (FutureMarketingAI) platform and AI Marketing Employee services. By subscribing to or using our services, you agree to be bound by these terms. FutureMarketingAI operates as an Agent as a Service (AaaS) provider, delivering persistent AI agents with pluggable marketing skills to marketing agencies. Please read these terms carefully before using our platform.",
         "subsections": {
           "service_description": {
             "title": "1. Service Description",
-            "content": "FMai provides an Agent as a Service (AaaS) platform delivering AI Marketing Employee services with pluggable skills. Available skills include Content Creator (blog posts, social content, newsletters), Voice Agent (inbound/outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Creator (AI-generated static and video ads), and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
+            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform delivering AI Marketing Employee services with pluggable skills. Available skills include Content Creator (blog posts, social content, newsletters), Voice Agent (inbound/outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Creator (AI-generated static and video ads), and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
           },
           "subscription_terms": {
             "title": "2. Subscription Terms",
@@ -967,19 +967,19 @@
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
-            "content": "All content, recommendations, and outputs generated by your AI Marketing Employee are provided as drafts requiring human review before publication or distribution. FMai does not guarantee the accuracy, originality, factual correctness, or suitability of AI-generated output for any specific purpose. The subscribing agency is solely responsible for reviewing, editing, and approving all AI output before publishing to or on behalf of their clients. AI-generated content should not be relied upon as professional, legal, financial, or medical advice."
+            "content": "All content, recommendations, and outputs generated by your AI Marketing Employee are provided as drafts requiring human review before publication or distribution. FutureMarketingAI does not guarantee the accuracy, originality, factual correctness, or suitability of AI-generated output for any specific purpose. The subscribing agency is solely responsible for reviewing, editing, and approving all AI output before publishing to or on behalf of their clients. AI-generated content should not be relied upon as professional, legal, financial, or medical advice."
           },
           "liability_limitation": {
             "title": "4. Limitation of Liability",
-            "content": "FMai's total aggregate liability arising out of or related to these terms shall not exceed the total fees paid by the subscriber in the twelve (12) months preceding the event giving rise to the claim. FMai shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, business opportunities, or goodwill. AI-generated output does not constitute professional advice of any kind, and FMai accepts no liability for decisions made based on such output."
+            "content": "FutureMarketingAI's total aggregate liability arising out of or related to these terms shall not exceed the total fees paid by the subscriber in the twelve (12) months preceding the event giving rise to the claim. FutureMarketingAI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, business opportunities, or goodwill. AI-generated output does not constitute professional advice of any kind, and FutureMarketingAI accepts no liability for decisions made based on such output."
           },
           "data_processing": {
             "title": "5. Data Processing",
-            "content": "FMai processes data on behalf of the subscribing agency in accordance with GDPR Article 28. Detailed data processing terms are set forth in the Data Processing Agreement (Verwerkersovereenkomst), which forms an integral part of these terms. The agency, as data controller, is responsible for ensuring that appropriate legal bases exist for the processing of personal data through the FMai platform. A copy of the DPA is available upon request at privacy@futuremarketingai.com."
+            "content": "FutureMarketingAI processes data on behalf of the subscribing agency in accordance with GDPR Article 28. Detailed data processing terms are set forth in the Data Processing Agreement (Verwerkersovereenkomst), which forms an integral part of these terms. The agency, as data controller, is responsible for ensuring that appropriate legal bases exist for the processing of personal data through the FutureMarketingAI platform. A copy of the DPA is available upon request at privacy@futuremarketingai.com."
           },
           "termination": {
             "title": "6. Termination",
-            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, your data export window is 30 calendar days, during which you can download all workspace data, content, reports, and configurations. After the 30-day export period, all agency data, client workspace data, and associated content will be permanently deleted from our systems and sub-processors. FMai may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
+            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, your data export window is 30 calendar days, during which you can download all workspace data, content, reports, and configurations. After the 30-day export period, all agency data, client workspace data, and associated content will be permanently deleted from our systems and sub-processors. FutureMarketingAI may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
           },
           "governing_law": {
             "title": "7. Governing Law and Disputes",
@@ -989,7 +989,7 @@
       },
       "privacy": {
         "title": "Privacy Policy",
-        "content": "This Privacy Policy describes how Future Marketing AI (FMai) collects, uses, stores, and protects personal data in connection with our AI Marketing Employee platform. FMai is committed to protecting the privacy of our subscribers, their clients, and end users in compliance with the General Data Protection Regulation (GDPR) and applicable Dutch data protection laws. This policy applies to all data processed through our platform and website.",
+        "content": "This Privacy Policy describes how Future Marketing AI (FutureMarketingAI) collects, uses, stores, and protects personal data in connection with our AI Marketing Employee platform. FutureMarketingAI is committed to protecting the privacy of our subscribers, their clients, and end users in compliance with the General Data Protection Regulation (GDPR) and applicable Dutch data protection laws. This policy applies to all data processed through our platform and website.",
         "subsections": {
           "data_collected": {
             "title": "1. Data We Collect",
@@ -1052,7 +1052,7 @@
   },
   "skills-content-creator": {
     "meta": {
-      "title": "Clyde Writes Your Content | AI Marketing Employee | FMai",
+      "title": "Clyde Writes Your Content | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde writes blog posts, social content, newsletters, and repurposes across platforms. Your AI marketing colleague produces daily content for every client."
     },
     "hero": {
@@ -1171,7 +1171,7 @@
   },
   "skills-voice-agent": {
     "meta": {
-      "title": "Clyde Calls Your Leads | AI Marketing Employee | FMai",
+      "title": "Clyde Calls Your Leads | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde handles inbound and outbound calls 24/7. Lead qualification by phone, appointment booking, and follow-ups. Your AI colleague never misses a call."
     },
     "hero": {
@@ -1270,7 +1270,7 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Clyde Qualifies Your Leads | AI Marketing Employee | FMai",
+      "title": "Clyde Qualifies Your Leads | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde engages every website visitor, scores leads with BANT, and hands warm prospects to sales. 24/7 lead qualification on autopilot."
     },
     "hero": {
@@ -1369,7 +1369,7 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Clyde Runs Your Social Media | AI Marketing Employee | FMai",
+      "title": "Clyde Runs Your Social Media | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde manages multi-platform social media for all your clients. Content creation, scheduling, analytics, and brand monitoring. One AI colleague, unlimited accounts."
     },
     "hero": {
@@ -1503,7 +1503,7 @@
   },
   "skills-ad-creator": {
     "meta": {
-      "title": "Clyde Creates Your Ads | AI Marketing Employee | FMai",
+      "title": "Clyde Creates Your Ads | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde generates static and video ads from campaign briefs, creates A/B test variations, and pushes them to ad platforms. Your AI ad specialist."
     },
     "hero": {
@@ -1582,7 +1582,7 @@
   },
   "skills-reporting": {
     "meta": {
-      "title": "Clyde Generates Your Reports | AI Marketing Employee | FMai",
+      "title": "Clyde Generates Your Reports | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde builds real-time dashboards, generates weekly reports, detects trends, and tracks ROI across all channels. Your AI analytics specialist."
     },
     "hero": {
@@ -1661,7 +1661,7 @@
   },
   "skills-chatbot": {
     "meta": {
-      "title": "Clyde Deploys Your Chatbots | AI Marketing Employee | FMai",
+      "title": "Clyde Deploys Your Chatbots | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde deploys intelligent chatbots across client websites. Lead qualification, customer support, FAQ automation, and appointment booking. 24/7, white-labeled."
     },
     "hero": {
@@ -1730,7 +1730,7 @@
   },
   "skills-email": {
     "meta": {
-      "title": "Clyde Manages Your Email | AI Marketing Employee | FMai",
+      "title": "Clyde Manages Your Email | AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde runs email campaigns, writes follow-up sequences, generates newsletters, and manages inboxes. Your AI email marketing specialist."
     },
     "hero": {
@@ -1799,7 +1799,7 @@
   },
   "founding-member": {
     "meta": {
-      "title": "Founding Member — AI Marketing Employee | FMai",
+      "title": "Founding Member — AI Marketing Employee | FutureMarketingAI",
       "description": "Join the founding member program: Professional tier at €997/mo — lifetime price lock. Only 10 agencies. Get all 11 skills, 10,000 credits/mo, unlimited workspaces, and direct founder access."
     },
     "hero": {

@@ -67,7 +67,7 @@ export function buildSystemMessages(
 
     if (context.demoMode) {
       contextContent += `\n\n## DEMO MODE ACTIVE
-You are in a guided demo showcasing FMai capabilities. The user is a prospect being walked through scripted scenarios.
+You are in a guided demo showcasing FutureMarketingAI capabilities. The user is a prospect being walked through scripted scenarios.
 
 **CRITICAL RULES FOR DEMO MODE:**
 1. You MUST use a tool for EVERY response. The tool cards in the side panel ARE the demo — your text is just a 1-sentence bridge.

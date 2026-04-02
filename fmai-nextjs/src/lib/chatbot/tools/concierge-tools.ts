@@ -92,7 +92,7 @@ const PAGE_LABELS: Record<string, string> = {
 export const conciergeTools = {
   get_services: tool({
     description:
-      'Get information about FMai services. Use "all" to get an overview of every service, or pick a specific one.',
+      'Get information about FutureMarketingAI services. Use "all" to get an overview of every service, or pick a specific one.',
     inputSchema: z.object({
       serviceType: z
         .enum(['chatbots', 'voice-agents', 'automations', 'marketing-machine', 'all'])
@@ -111,7 +111,7 @@ export const conciergeTools = {
   }),
 
   book_call: tool({
-    description: 'Open the Calendly booking page for a discovery call with FMai.',
+    description: 'Open the Calendly booking page for a discovery call with FutureMarketingAI.',
     inputSchema: z.object({
       reason: z.string().describe('Why the user wants to book a call'),
     }),
@@ -123,7 +123,7 @@ export const conciergeTools = {
   }),
 
   navigate_to_page: tool({
-    description: 'Navigate the user to a specific page on the FMai website.',
+    description: 'Navigate the user to a specific page on the FutureMarketingAI website.',
     inputSchema: z.object({
       page: z
         .enum([
@@ -149,7 +149,7 @@ export const conciergeTools = {
   }),
 
   get_case_study: tool({
-    description: 'Get a detailed case study showing FMai results with a real client.',
+    description: 'Get a detailed case study showing FutureMarketingAI results with a real client.',
     inputSchema: z.object({
       studyId: z.enum(['skc']).default('skc').describe('The case study identifier'),
     }),

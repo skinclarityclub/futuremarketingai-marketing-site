@@ -22,11 +22,11 @@ export const DEMO_SCENARIOS: DemoScenario[] = [
   {
     id: 'new-client',
     title: 'The New Client Journey',
-    subtitle: 'See how prospects discover and evaluate FMai',
+    subtitle: 'See how prospects discover and evaluate FutureMarketingAI',
     icon: 'Briefcase',
     stepCount: 6,
     steps: [
-      { userMessage: 'What services does FMai offer?', expectTool: 'get_services' },
+      { userMessage: 'What services does FutureMarketingAI offer?', expectTool: 'get_services' },
       { userMessage: 'Do you have any case studies?', expectTool: 'get_case_study' },
       {
         userMessage:
@@ -61,7 +61,7 @@ export const DEMO_SCENARIOS: DemoScenario[] = [
   {
     id: 'ecommerce',
     title: 'E-commerce Brand in Action',
-    subtitle: 'See how FMai powers a skincare brand',
+    subtitle: 'See how FutureMarketingAI powers a skincare brand',
     icon: 'ShoppingBag',
     stepCount: 6,
     steps: [

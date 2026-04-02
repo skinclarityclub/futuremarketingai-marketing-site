@@ -108,8 +108,8 @@ test.describe('Full Flow: New Client Journey', () => {
 
     await startDemoAndSelectScenario(page, 'The New Client Journey')
 
-    // Step 1: "What services does FMai offer?" → get_services
-    await expect(page.getByText(/What services does FMai offer/i)).toBeVisible({
+    // Step 1: "What services does FutureMarketingAI offer?" → get_services
+    await expect(page.getByText(/What services does FutureMarketingAI offer/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)

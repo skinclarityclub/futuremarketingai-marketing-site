@@ -45,7 +45,7 @@ test.describe('Navigation', () => {
     await expect(page.locator('h1').first()).toBeVisible()
 
     // Navigate back to Home via logo
-    await page.click('a[aria-label="FMai home"]')
+    await page.click('a[aria-label="FutureMarketingAI home"]')
     await expect(page).toHaveURL(/\/en$/)
   })
 

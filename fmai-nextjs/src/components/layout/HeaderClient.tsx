@@ -154,7 +154,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center group" aria-label="FMai home">
+        <Link href="/" className="flex items-center group" aria-label="FutureMarketingAI home">
           <span className="font-display font-bold text-xl tracking-tight">
             <span className="text-white">FM</span>
             <span className="bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] bg-clip-text text-transparent">

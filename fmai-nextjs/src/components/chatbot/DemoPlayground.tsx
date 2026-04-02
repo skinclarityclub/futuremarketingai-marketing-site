@@ -31,7 +31,7 @@ const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
   support:
     "Hello! I'm an AI assistant — the ROI Calculator. Tell me about your agency — team size, hourly rates, and client count — and I'll estimate your savings with an AI Marketing Employee.",
   concierge:
-    "Hey! I'm an AI assistant — the FMai Concierge. Ask me anything about our services, pricing, or how AI can transform your marketing.",
+    "Hey! I'm an AI assistant — the FutureMarketingAI Concierge. Ask me anything about our services, pricing, or how AI can transform your marketing.",
 }
 
 export function DemoPlayground() {

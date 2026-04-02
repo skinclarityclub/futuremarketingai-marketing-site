@@ -82,7 +82,7 @@ test.describe('Homepage Sections', () => {
     await expect(header).toBeVisible()
 
     // Logo should be visible
-    const logo = page.locator('a[aria-label="FMai home"]')
+    const logo = page.locator('a[aria-label="FutureMarketingAI home"]')
     await expect(logo).toBeVisible()
 
     // Login link should be visible (desktop)

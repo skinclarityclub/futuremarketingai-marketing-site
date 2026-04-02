@@ -3,9 +3,9 @@ import type { TopicDefinition } from '../types'
 export const CONCIERGE_TOPICS: TopicDefinition[] = [
   {
     key: 'services',
-    content: `## FMai Services Overview
+    content: `## FutureMarketingAI Services Overview
 
-FMai delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execution across six core skill areas:
+FutureMarketingAI delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execution across six core skill areas:
 
 **Content Factory & Social Media**
 - Instagram posts, stories, carousels
@@ -53,7 +53,7 @@ FMai delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execut
   },
   {
     key: 'pricing',
-    content: `## FMai Pricing Plans
+    content: `## FutureMarketingAI Pricing Plans
 
 All plans include all 11 AI skills — no feature restrictions. Credits scale with your usage — heavier skills like video and voice use more credits.
 
@@ -109,7 +109,7 @@ Every engagement starts with a free Strategy Call. No lock-in contracts — canc
   },
   {
     key: 'process',
-    content: `## FMai Delivery Process
+    content: `## FutureMarketingAI Delivery Process
 
 Our streamlined 4-step process gets your agency from signup to Clyde executing for your clients:
 
@@ -176,9 +176,9 @@ Clyde continuously improves by analyzing performance data and your feedback. By 
   },
   {
     key: 'about',
-    content: `## About FMai
+    content: `## About FutureMarketingAI
 
-FMai builds Clyde, the AI Marketing Employee for agencies. We do not just advise — we build, deploy, and optimize an AI colleague that handles marketing execution for your clients.
+FutureMarketingAI builds Clyde, the AI Marketing Employee for agencies. We do not just advise — we build, deploy, and optimize an AI colleague that handles marketing execution for your clients.
 
 **Who We Are:**
 - Small team with deep AI and marketing expertise
@@ -210,7 +210,7 @@ FMai builds Clyde, the AI Marketing Employee for agencies. We do not just advise
   },
   {
     key: 'contact',
-    content: `## Get in Touch with FMai
+    content: `## Get in Touch with FutureMarketingAI
 
 **Strategy Call:**
 Book a free 30-minute Strategy Call to discuss your agency's needs:

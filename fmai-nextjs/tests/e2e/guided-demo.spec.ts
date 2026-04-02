@@ -131,8 +131,8 @@ test.describe('Guided Demo — Scenario Cards', () => {
     await expect(page.getByText('4 steps')).toBeVisible()
 
     // Check subtitles
-    await expect(page.getByText('See how prospects discover and evaluate FMai')).toBeVisible()
-    await expect(page.getByText('See how FMai powers a skincare brand')).toBeVisible()
+    await expect(page.getByText('See how prospects discover and evaluate FutureMarketingAI')).toBeVisible()
+    await expect(page.getByText('See how FutureMarketingAI powers a skincare brand')).toBeVisible()
     await expect(page.getByText('See how we handle customer support')).toBeVisible()
   })
 

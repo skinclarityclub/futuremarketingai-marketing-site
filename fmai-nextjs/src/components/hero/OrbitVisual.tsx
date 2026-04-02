@@ -281,7 +281,7 @@ export function OrbitVisual() {
             letterSpacing={-1}
             fill="url(#center-text-grad)"
           >
-            FMai
+            FutureMarketingAI
           </text>
         </g>
       </svg>

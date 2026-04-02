@@ -16,7 +16,7 @@ type AnyToolRecord = Record<string, Tool<any, any>>
  */
 const navigate_to_page = tool({
   description:
-    'Navigate the user to any page on the FMai website, including marketing pages and demo pages.',
+    'Navigate the user to any page on the FutureMarketingAI website, including marketing pages and demo pages.',
   inputSchema: z.object({
     page: z
       .enum([

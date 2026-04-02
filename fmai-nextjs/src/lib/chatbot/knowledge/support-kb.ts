@@ -19,7 +19,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
       'monthly',
       'EUR',
     ],
-    content: `## FMai Pricing Plans
+    content: `## FutureMarketingAI Pricing Plans
 
 All plans include all 11 AI skills — no feature restrictions. Credits scale with your usage — heavier skills like video and voice use more credits.
 
@@ -91,7 +91,7 @@ All plans include all 11 AI skills — no feature restrictions. Credits scale wi
 - USD 5,000/mo for one skill only
 - No European focus, no multi-skill integration
 
-**FMai Growth Plan**
+**FutureMarketingAI Growth Plan**
 - Cost: EUR 1,497/mo for 5 workspaces and all 11 AI skills
 - Available 24/7, no sick days, no vacation
 - Consistent quality across all clients
@@ -99,8 +99,8 @@ All plans include all 11 AI skills — no feature restrictions. Credits scale wi
 
 **Key Comparison:**
 - Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
-- FMai Growth for 5 clients: EUR 1,497/mo = EUR 299/client
-- Cost per client drops 80% with FMai
+- FutureMarketingAI Growth for 5 clients: EUR 1,497/mo = EUR 299/client
+- Cost per client drops 80% with FutureMarketingAI
 - Founders Club for unlimited clients: EUR 997/mo — best value in the market`,
   },
   {
@@ -139,7 +139,7 @@ All plans include all 11 AI skills — no feature restrictions. Credits scale wi
 
 **For a 5-Client Agency:**
 - Human approach: 75-100 hours/week (needs 2-3 full-time people)
-- With FMai: 5-10 hours/week (review and approval only)
+- With FutureMarketingAI: 5-10 hours/week (review and approval only)
 - Time saved: 65-90 hours/week
 - That is 1.5-2 full-time employees worth of time, freed up for strategy and client relationships`,
   },
@@ -162,18 +162,18 @@ All plans include all 11 AI skills — no feature restrictions. Credits scale wi
     content: `## ROI Calculation Framework
 
 **Basic ROI Formula:**
-Monthly ROI = (Cost Savings + Revenue Increase - FMai Subscription) / FMai Subscription x 100%
+Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription) / FutureMarketingAI Subscription x 100%
 
 **Scenario A: Growing Agency (Growth — EUR 1,497/mo)**
 - Current content costs: 1 junior marketer (EUR 4,500/mo) + tools (EUR 2,000/mo) = EUR 6,500/mo
-- FMai cost: EUR 1,497/mo
+- FutureMarketingAI cost: EUR 1,497/mo
 - Direct savings: EUR 5,003/mo
 - Additional capacity: 5 workspaces, all 11 AI skills, can take on more clients without hiring
 - ROI: 334%
 
 **Scenario B: Scaling Agency (Professional — EUR 2,997/mo)**
 - Current costs: 1 junior hire (EUR 5,500/mo) + freelancer overflow (EUR 3,000/mo) + tools (EUR 2,500/mo) = EUR 11,000/mo
-- FMai cost: EUR 2,997/mo
+- FutureMarketingAI cost: EUR 2,997/mo
 - Direct savings: EUR 8,003/mo
 - Additional capacity: 15 workspaces, dedicated Slack support
 - Resell margin: charge clients EUR 500-1,500/mo per client for AI services
@@ -181,7 +181,7 @@ Monthly ROI = (Cost Savings + Revenue Increase - FMai Subscription) / FMai Subsc
 
 **Scenario C: Full Scale Agency (Enterprise — EUR 4,997/mo)**
 - Current costs: 2 junior hires (EUR 10,000/mo) + tools (EUR 3,400/mo) + agency retainer (EUR 5,000/mo) = EUR 18,400/mo
-- FMai cost: EUR 4,997/mo
+- FutureMarketingAI cost: EUR 4,997/mo
 - Direct savings: EUR 13,403/mo
 - Unlimited workspaces, dedicated CSM
 - Resell margin on unlimited clients: potentially EUR 10,000-30,000/mo additional revenue
