@@ -1881,5 +1881,15 @@
       "subtitle": "Descubre cómo Clyde gestiona email marketing para clientes de agencia. Campañas, seguimientos, newsletters. Cero trabajo manual.",
       "button": "Conoce a Clyde"
     }
+  },
+  "booking": {
+    "title": "Reserva una Llamada Estratégica",
+    "subtitle": "Descubre cómo Clyde puede transformar tu marketing",
+    "bullet1": "Auditoría gratuita de tu marketing actual",
+    "bullet2": "Demo en vivo de Clyde con tu marca",
+    "bullet3": "Recomendaciones estratégicas personalizadas",
+    "bullet4": "Discusión transparente de precios",
+    "credential": "Daley — Fundador, FutureMarketingAI",
+    "close": "Cerrar"
   }
 }

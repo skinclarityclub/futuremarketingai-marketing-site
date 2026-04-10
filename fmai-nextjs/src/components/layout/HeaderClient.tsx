@@ -19,6 +19,7 @@ import {
   ArrowRight,
   Sparkles,
 } from 'lucide-react'
+import { useBookingStore } from '@/stores/bookingStore'
 
 interface HeaderClientProps {
   locale: string
@@ -100,6 +101,7 @@ const NAV_ITEMS = [
 export function HeaderClient({ locale }: HeaderClientProps) {
   const pathname = usePathname()
 
+  const openBooking = useBookingStore((s) => s.openBooking)
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [skillsOpen, setSkillsOpen] = useState(false)
@@ -241,9 +243,9 @@ export function HeaderClient({ locale }: HeaderClientProps) {
 
                         {/* Featured CTA banner */}
                         <div className="border-t border-border-primary bg-white/[0.02]">
-                          <Link
-                            href="/skills/chatbot"
-                            className="flex items-center justify-between px-6 py-3.5 group/cta cursor-pointer hover:bg-white/5 transition-all duration-200"
+                          <button
+                            onClick={() => { setSkillsOpen(false); openBooking() }}
+                            className="flex items-center justify-between w-full px-6 py-3.5 group/cta cursor-pointer hover:bg-white/5 transition-all duration-200"
                           >
                             <div className="flex items-center gap-3">
                               <div className="p-1.5 rounded-md bg-gradient-to-br from-[#F5A623]/20 to-[#0ABAB5]/20">
@@ -254,12 +256,12 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                                   Meet Clyde
                                 </span>
                                 <span className="text-[11px] text-text-muted ml-2">
-                                  Try your AI employee live
+                                  Book a strategy call
                                 </span>
                               </div>
                             </div>
                             <ArrowRight className="w-4 h-4 text-text-muted group-hover/cta:text-accent-system group-hover/cta:translate-x-0.5 transition-all duration-200" />
-                          </Link>
+                          </button>
                         </div>
                       </motion.div>
                     )}
@@ -289,12 +291,12 @@ export function HeaderClient({ locale }: HeaderClientProps) {
           </a>
 
           {/* Primary CTA */}
-          <Link
-            href="/skills/chatbot"
+          <button
+            onClick={openBooking}
             className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] text-bg-deep font-semibold text-sm px-4 py-2 rounded-[var(--radius-btn)] hover:opacity-90 transition-all"
           >
             Meet Clyde
-          </Link>
+          </button>
 
           {/* Mobile Menu Button */}
           <button

@@ -23,11 +23,17 @@ const CalendlyIsland = dynamic(
   { ssr: false }
 )
 
+const BookingModal = dynamic(
+  () => import('@/components/booking/BookingModal').then((mod) => mod.BookingModal),
+  { ssr: false }
+)
+
 export function ClientIslands() {
   return (
     <>
       <ChatWidgetIsland />
       <CalendlyIsland />
+      <BookingModal />
     </>
   )
 }

@@ -8,6 +8,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { BookingCTA } from '@/components/booking/BookingCTA'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { VisionTimeline } from '@/components/marketing-machine/VisionTimeline'
 import { FeatureShowcase } from '@/components/marketing-machine/FeatureShowcase'
@@ -76,12 +77,12 @@ export default async function ContentCreatorPage({
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/skills/chatbot" size="lg">
+            <BookingCTA size="lg">
               {t('cta.button')}
-            </CTAButton>
-            <CTAButton href="/contact" size="lg" variant="secondary">
+            </BookingCTA>
+            <BookingCTA size="lg" variant="secondary">
               Book a Strategy Call
-            </CTAButton>
+            </BookingCTA>
           </div>
         </div>
       </section>
@@ -261,12 +262,12 @@ export default async function ContentCreatorPage({
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/skills/chatbot" size="lg">
+              <BookingCTA size="lg">
                 {t('cta.button')}
-              </CTAButton>
-              <CTAButton href="/contact" size="lg" variant="secondary">
+              </BookingCTA>
+              <BookingCTA size="lg" variant="secondary">
                 Book a Strategy Call
-              </CTAButton>
+              </BookingCTA>
             </div>
           </div>
         </ScrollReveal>

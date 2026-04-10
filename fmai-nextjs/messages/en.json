@@ -1881,5 +1881,15 @@
       "line2": "At €997/mo, you save €2,000/mo vs Professional — that’s €24,000/year back in your budget.",
       "line3": "Agencies using Clyde serve 3-5x more clients without additional headcount."
     }
+  },
+  "booking": {
+    "title": "Book a Strategy Call",
+    "subtitle": "See how Clyde can transform your marketing",
+    "bullet1": "Free audit of your current marketing",
+    "bullet2": "Live Clyde demo with your brand",
+    "bullet3": "Custom strategy recommendations",
+    "bullet4": "Transparent pricing discussion",
+    "credential": "Daley — Founder, FutureMarketingAI",
+    "close": "Close"
   }
 }

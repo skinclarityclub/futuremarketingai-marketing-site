@@ -8,6 +8,7 @@ import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { BookingCTA } from '@/components/booking/BookingCTA'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { VoiceDemoSection } from '@/components/voice/VoiceDemoSection'
 import { VoiceDemoFAB } from '@/components/voice/VoiceDemoFAB'
@@ -71,12 +72,12 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton href="/skills/chatbot" size="lg">
+            <BookingCTA size="lg">
               {t('cta.button')}
-            </CTAButton>
-            <CTAButton href="/contact" size="lg" variant="secondary">
+            </BookingCTA>
+            <BookingCTA size="lg" variant="secondary">
               Book a Strategy Call
-            </CTAButton>
+            </BookingCTA>
           </div>
         </div>
       </section>
@@ -218,12 +219,12 @@ export default async function VoiceAgentPage({ params }: { params: Promise<{ loc
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton href="/skills/chatbot" size="lg">
+              <BookingCTA size="lg">
                 {t('cta.button')}
-              </CTAButton>
-              <CTAButton href="/contact" size="lg" variant="secondary">
+              </BookingCTA>
+              <BookingCTA size="lg" variant="secondary">
                 Book a Strategy Call
-              </CTAButton>
+              </BookingCTA>
             </div>
           </div>
         </ScrollReveal>

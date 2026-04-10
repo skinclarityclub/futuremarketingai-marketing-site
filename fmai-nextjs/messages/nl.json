@@ -1881,5 +1881,15 @@
       "subtitle": "Zie hoe Clyde e-mailmarketing afhandelt voor bureauklanten. Campagnes, opvolgingen, nieuwsbrieven. Nul handmatig werk.",
       "button": "Ontmoet Clyde"
     }
+  },
+  "booking": {
+    "title": "Plan een Strategiegesprek",
+    "subtitle": "Ontdek hoe Clyde je marketing kan transformeren",
+    "bullet1": "Gratis audit van je huidige marketing",
+    "bullet2": "Live Clyde demo met jouw merk",
+    "bullet3": "Op maat gemaakte strategie-aanbevelingen",
+    "bullet4": "Transparante prijsbespreking",
+    "credential": "Daley — Oprichter, FutureMarketingAI",
+    "close": "Sluiten"
   }
 }

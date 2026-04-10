@@ -14,6 +14,7 @@ import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
+import { BookingCTA } from '@/components/booking/BookingCTA'
 import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -123,16 +124,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               className="flex flex-wrap gap-4"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
-              <CTAButton size="lg" href="/skills/chatbot">
+              <BookingCTA size="lg">
                 <Zap className="mr-1 h-5 w-5" />
                 {t('hero.cta')}
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
+              </BookingCTA>
 
-              <CTAButton variant="secondary" size="lg" href="/contact">
+              <BookingCTA variant="secondary" size="lg">
                 {t('hero.ctaSecondary')}
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
+              </BookingCTA>
             </div>
           </div>
 
@@ -346,9 +347,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/skills/chatbot" size="lg">
+            <BookingCTA size="lg">
               {t('cta.button')}
-            </CTAButton>
+            </BookingCTA>
           </div>
         </ScrollReveal>
       </section>

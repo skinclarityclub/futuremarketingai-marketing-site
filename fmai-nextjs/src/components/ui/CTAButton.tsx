@@ -5,6 +5,7 @@ import { twMerge } from 'tailwind-merge'
 interface CTAButtonProps {
   children: ReactNode
   href?: string
+  onClick?: () => void
   variant?: 'primary' | 'secondary' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   className?: string
@@ -15,6 +16,7 @@ interface CTAButtonProps {
 export function CTAButton({
   children,
   href,
+  onClick,
   variant = 'primary',
   size = 'md',
   className,
@@ -46,7 +48,7 @@ export function CTAButton({
     className
   )
 
-  if (href && !disabled) {
+  if (href && !disabled && !onClick) {
     if (href.startsWith('http')) {
       return (
         <a href={href} className={styles} target="_blank" rel="noopener noreferrer">
@@ -62,7 +64,7 @@ export function CTAButton({
   }
 
   return (
-    <button type={type} className={styles} disabled={disabled}>
+    <button type={type} className={styles} disabled={disabled} onClick={onClick}>
       {children}
     </button>
   )
