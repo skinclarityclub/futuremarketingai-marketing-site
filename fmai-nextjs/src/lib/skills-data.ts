@@ -13,6 +13,8 @@ export type SkillCategory = 'create' | 'engage' | 'grow'
 
 export type SkillStatus = 'live' | 'coming_soon'
 
+// Keep TierKey and per-skill tierCaps in sync with fma-app/src/lib/skills.ts
+// (AGENT_TIERS keys + SKILL_CAPS). Pricing SSoT = fma-app.
 export type TierKey = 'PARTNER' | 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE' | 'FOUNDING_MEMBER'
 
 export interface SkillTierCap {
@@ -202,13 +204,13 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'engage',
     status: 'coming_soon',
-    creditCostLabel: '5 cr / campaign',
+    creditCostLabel: '5 cr / actie',
     tierCaps: {
       PARTNER: { included: 5, label: '5/mo' },
       GROWTH: { included: 20 },
       PROFESSIONAL: { included: 60 },
       ENTERPRISE: { included: -1, label: 'unlimited' },
-      FOUNDING_MEMBER: { included: 30 },
+      FOUNDING_MEMBER: { included: 40 },
     },
   },
   {
