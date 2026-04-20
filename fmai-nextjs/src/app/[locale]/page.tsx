@@ -15,6 +15,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
 import { BookingCTA } from '@/components/booking/BookingCTA'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -85,7 +86,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 lg:mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
               style={{ animation: 'fadeIn 0.8s ease-out' }}
             >
-              {t('hero.badge')}
+              {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
             </div>
 
             {/* Headline with gradient accent */}

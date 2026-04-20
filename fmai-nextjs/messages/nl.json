@@ -5,13 +5,13 @@
       "description": "Clyde is de AI-medewerker van jouw bureau. Hij schrijft content, belt leads, beheert social media, maakt advertenties en rapporteert over prestaties — 24/7, voor elke klant. Gebouwd door FutureMarketingAI."
     },
     "hero": {
-      "badge": "FutureMarketingAI presenteert Clyde",
-      "headlineMain": "Dit is Clyde.",
+      "badge": "Jouw AI Marketing Medewerker met lange-termijn geheugen — {taken} van {total} founding plekken bezet",
+      "headlineMain": "Maak kennis met Clyde.",
       "headlineAccent": "Jouw AI Marketing Medewerker.",
-      "subtitle": "Een marketeer werkt 8 uur. Clyde werkt 24. Hij schrijft de blogposts van je klanten, belt hun leads, beheert hun social media en levert wekelijkse rapporten — zonder ooit een vrije dag op te nemen.",
-      "trustAnchor": "Vertrouwd door vooruitstrevende bureaus in heel Europa",
-      "cta": "Ontmoet Clyde",
-      "ctaSecondary": "Boek een Strategiegesprek"
+      "subtitle": "Clyde onthoudt elke klant, leert van elke campagne, en runt twaalf vaardigheden autonoom — social, blogs, voice, ads, SEO en analytics. Eén AI-medewerker voor jouw hele klantportfolio.",
+      "trustAnchor": "Gebouwd met Nederlandse bureaus in de praktijk — max 20 partners per jaar.",
+      "cta": "Plan een gesprek",
+      "ctaSecondary": "Ontmoet Clyde"
     },
     "services": {
       "title": "Wat Clyde Doet voor Jouw Bureau",
