@@ -8,7 +8,6 @@ import {
   X,
   ChevronDown,
   LogIn,
-  PenTool,
   Mic,
   Bot,
   Share2,
@@ -16,6 +15,12 @@ import {
   BarChart3,
   Mail,
   MessageSquare,
+  MessageCircle,
+  BookOpen,
+  Clapperboard,
+  Phone,
+  Search,
+  Globe,
   ArrowRight,
   Sparkles,
 } from 'lucide-react'
@@ -30,28 +35,29 @@ const SKILL_CATEGORIES = [
     description: 'Content production at scale',
     items: [
       {
-        icon: PenTool,
-        title: 'Content Creator',
-        description: 'Blog posts, social content & newsletters',
-        href: '/skills/content-creator' as const,
-      },
-      {
         icon: Share2,
         title: 'Social Media',
-        description: 'Multi-platform scheduling & analytics',
+        description: 'Captions, scheduling, carousels & stories',
         href: '/skills/social-media' as const,
+      },
+      {
+        icon: BookOpen,
+        title: 'Blog Factory',
+        description: 'Longform SEO articles 1500-3000 words',
+        href: '/skills/blog-factory' as const,
       },
       {
         icon: Megaphone,
         title: 'Ad Creator',
-        description: 'Static & video ad generation',
+        description: 'Static & video ads for Meta',
         href: '/skills/ad-creator' as const,
       },
       {
-        icon: Mail,
-        title: 'Email',
-        description: 'Campaigns, follow-ups & inbox AI',
-        href: '/skills/email' as const,
+        icon: Clapperboard,
+        title: 'Reel Builder',
+        description: 'Vertical videos with captions & music',
+        href: '/skills/reel-builder' as const,
+        comingSoon: true,
       },
     ],
   },
@@ -60,41 +66,71 @@ const SKILL_CATEGORIES = [
     description: 'Lead capture and client interaction',
     items: [
       {
-        icon: Mic,
+        icon: Phone,
         title: 'Voice Agent',
-        description: 'AI-powered inbound & outbound calls',
+        description: 'Inbound + outbound AI phone calls',
         href: '/skills/voice-agent' as const,
       },
       {
         icon: MessageSquare,
-        title: 'Chatbot',
-        description: 'Website chatbots trained on client data',
-        href: '/skills/chatbot' as const,
-      },
-      {
-        icon: Bot,
         title: 'Lead Qualifier',
-        description: 'BANT scoring & smart routing',
+        description: 'Website chatbot + lead scoring',
         href: '/skills/lead-qualifier' as const,
       },
       {
-        icon: BarChart3,
-        title: 'Reporting',
-        description: 'Dashboards & weekly performance reports',
-        href: '/skills/reporting' as const,
+        icon: Mail,
+        title: 'Email Management',
+        description: 'Gmail classify + daily digest',
+        href: '/skills/email-management' as const,
+        comingSoon: true,
+      },
+      {
+        icon: MessageCircle,
+        title: 'ManyChat DM',
+        description: 'Instagram DM triggers + AI replies',
+        href: '/skills/manychat' as const,
+        comingSoon: true,
       },
     ],
   },
-]
-
-// Flat list for any usage that needs all items
-const ALL_SKILL_ITEMS = SKILL_CATEGORIES.flatMap((cat) => [...cat.items])
+  {
+    label: 'Grow & Optimize',
+    description: 'Analytics, research and orchestration',
+    items: [
+      {
+        icon: BarChart3,
+        title: 'Reporting',
+        description: 'Dashboards, digests, anomaly alerts',
+        href: '/skills/reporting' as const,
+      },
+      {
+        icon: Globe,
+        title: 'SEO / GEO Analyst',
+        description: 'SEO audits + AI citation monitoring',
+        href: '/skills/seo-geo' as const,
+      },
+      {
+        icon: Search,
+        title: 'Research',
+        description: 'Market research + trend monitoring',
+        href: '/skills/research' as const,
+      },
+      {
+        icon: Bot,
+        title: 'Clyde AI Employee',
+        description: 'The central orchestrator of all skills',
+        href: '/skills/clyde' as const,
+      },
+    ],
+  },
+] as const
 
 const NAV_ITEMS = [
   { label: 'Skills', href: '/#skills' as const, hasDropdown: true },
+  { label: 'Memory', href: '/memory' as const },
+  { label: 'Case Studies', href: '/case-studies/skinclarity-club' as const },
   { label: 'Pricing', href: '/pricing' as const },
   { label: 'About', href: '/about' as const },
-  { label: 'How It Works', href: '/how-it-works' as const },
 ]
 
 export function HeaderClient({ locale }: HeaderClientProps) {
@@ -195,11 +231,11 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         exit={{ opacity: 0, y: -8, scale: 0.96 }}
                         transition={{ duration: 0.2, ease: 'easeOut' }}
                         className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
-                        style={{ width: '580px' }}
+                        style={{ width: '880px' }}
                         role="menu"
                       >
-                        {/* Two-column category layout */}
-                        <div className="grid grid-cols-2 gap-0 divide-x divide-border-primary">
+                        {/* Three-column category layout */}
+                        <div className="grid grid-cols-3 gap-0 divide-x divide-border-primary">
                           {SKILL_CATEGORIES.map((category) => (
                             <div key={category.label} className="p-4">
                               <div className="px-3 mb-3">
@@ -225,8 +261,15 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                                       />
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                      <div className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
-                                        {skill.title}
+                                      <div className="flex items-center gap-2">
+                                        <span className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
+                                          {skill.title}
+                                        </span>
+                                        {'comingSoon' in skill && skill.comingSoon && (
+                                          <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                                            Soon
+                                          </span>
+                                        )}
                                       </div>
                                       <div className="text-[11px] text-text-muted group-hover/item:text-text-secondary transition-colors duration-200 leading-snug">
                                         {skill.description}
