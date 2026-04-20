@@ -49,31 +49,45 @@
     },
     "trust": {
       "title": "Waarom Bureaus Clyde Inhuren",
-      "customBuiltTitle": "Altijd Aan, Nooit Ziek",
-      "customBuilt": "Clyde werkt 's nachts, in het weekend en op feestdagen. Geen vakantieaanvragen, geen ziektedagen, geen verloop",
-      "founderAccessTitle": "Leert Continu",
-      "founderAccess": "Clyde bestudeert de merkstem, doelgroepdata en prestatiegeschiedenis van elke klant — en wordt elke week beter",
-      "successGuaranteeTitle": "Beheert Al Je Klanten",
-      "successGuarantee": "Eén Clyde beheert 10, 20 of 50 klanten tegelijk zonder kwaliteitsverlies",
-      "trialTitle": "Enterprise AI Backbone",
-      "trialCommitment": "Clyde draait op enterprise-grade AI-infrastructuur met 99,9% uptime en EU-dataopslag"
+      "customBuiltTitle": "Clyde onthoudt alles",
+      "customBuilt": "Persistent geheugen per klant. Clyde bestudeert merkstem, doelgroep en prestatiegeschiedenis — elke week scherper, per merk geïsoleerd.",
+      "founderAccessTitle": "AI partner, geen platform",
+      "founderAccess": "Max 20 bureaus per jaar. Persoonlijke onboarding door Daley. Geen self-service — elke klant is een partnership.",
+      "successGuaranteeTitle": "Clyde schaalt met jouw portfolio",
+      "successGuarantee": "SkinClarity Club draait al 3 Instagram-accounts × 4 merken × meerdere content-types autonoom. Wat je klantportfolio ook is, Clyde past zich aan.",
+      "trialTitle": "EU-native, zero lock-in",
+      "trialCommitment": "Self-hosted infrastructuur op Europese servers. AVG + EU AI Act ready. Je data blijft van jou."
+    },
+    "icp": {
+      "title": "Voor welke bureaus bouwen we Clyde?",
+      "subtitle": "Geen marketing-pitch. Lees het eerlijk: we werken liever niet met iedereen.",
+      "fitTitle": "Voor wie werkt dit?",
+      "fit1": "Bureaus met 5-30 FTE die 10-50 merken bedienen en willen schalen zonder extra personeel",
+      "fit2": "Marketing operators die data-driven werken en content als groeistrategie zien",
+      "fit3": "Founders die een partner zoeken, geen tool — bereid workflows te herijken, niet alleen uit te voeren",
+      "fit4": "NL/EU-first bureaus die waarde hechten aan dataresidentie en AVG/EU AI Act compliance",
+      "notFitTitle": "Waarschijnlijk niet de juiste match als",
+      "notFit1": "Je minder dan €300K jaaromzet hebt — het budget past niet en we willen je groei niet in de weg staan",
+      "notFit2": "Je puur branding, identity of creative doet — Clyde levert performance content, geen design work",
+      "notFit3": "Je op zoek bent naar 'set-and-forget' — Clyde leert van jou, dat vereist 4 weken onboarding en blijvende input",
+      "notFit4": "Je een bureau runt met >30 FTE en een eigen AI/tech-team — wij bouwen voor bureaus die willen versnellen, niet voor enterprises die zelf bouwen"
     },
     "stats": {
       "clients": {
-        "value": "24/7",
-        "label": "Beschikbaarheid"
+        "value": "3 × 4 merken",
+        "label": "SkinClarity Club autonoom"
       },
       "content": {
-        "value": "6",
-        "label": "Gespecialiseerde Skills"
+        "value": "12",
+        "label": "Gespecialiseerde vaardigheden"
       },
       "hours": {
-        "value": "160+",
-        "label": "Contentstukken/Maand"
+        "value": "Persistent",
+        "label": "Geheugen per klant"
       },
       "languages": {
-        "value": "<2min",
-        "label": "Gemiddelde Responstijd"
+        "value": "Max 20",
+        "label": "Plekken per jaar"
       }
     },
     "badges": {

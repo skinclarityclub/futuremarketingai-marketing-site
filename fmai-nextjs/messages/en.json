@@ -58,6 +58,20 @@
       "trialTitle": "Enterprise AI Backbone",
       "trialCommitment": "Clyde runs on enterprise-grade AI infrastructure with 99.9% uptime and EU data residency"
     },
+    "icp": {
+      "title": "Voor welke bureaus bouwen we Clyde?",
+      "subtitle": "Geen marketing-pitch. Lees het eerlijk: we werken liever niet met iedereen.",
+      "fitTitle": "Voor wie werkt dit?",
+      "fit1": "Bureaus met 5-30 FTE die 10-50 merken bedienen en willen schalen zonder extra personeel",
+      "fit2": "Marketing operators die data-driven werken en content als groeistrategie zien",
+      "fit3": "Founders die een partner zoeken, geen tool — bereid workflows te herijken, niet alleen uit te voeren",
+      "fit4": "NL/EU-first bureaus die waarde hechten aan dataresidentie en AVG/EU AI Act compliance",
+      "notFitTitle": "Waarschijnlijk niet de juiste match als",
+      "notFit1": "Je minder dan €300K jaaromzet hebt — het budget past niet en we willen je groei niet in de weg staan",
+      "notFit2": "Je puur branding, identity of creative doet — Clyde levert performance content, geen design work",
+      "notFit3": "Je op zoek bent naar 'set-and-forget' — Clyde leert van jou, dat vereist 4 weken onboarding en blijvende input",
+      "notFit4": "Je een bureau runt met >30 FTE en een eigen AI/tech-team — wij bouwen voor bureaus die willen versnellen, niet voor enterprises die zelf bouwen"
+    },
     "stats": {
       "clients": {
         "value": "24/7",

@@ -15,6 +15,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
 import { BookingCTA } from '@/components/booking/BookingCTA'
+import { IcpSection } from '@/components/home/IcpSection'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { Zap, ArrowRight } from 'lucide-react'
 
@@ -228,7 +229,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="text-center mt-12">
             <p className="text-text-secondary mb-6">{t('cta.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton size="lg" href="/pricing">
+              <CTAButton size="lg" href="/skills/clyde">
                 {t('hero.ctaSecondary')}
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
@@ -314,6 +315,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ScrollReveal>
         </div>
       </section>
+      </LazySection>
+
+      {/* Hybrid ICP — who is this for / not for */}
+      <LazySection minHeight="400px">
+        <ScrollReveal>
+          <IcpSection locale={locale} />
+        </ScrollReveal>
       </LazySection>
 
       {/* FAQ Section */}
