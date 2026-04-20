@@ -100,34 +100,40 @@
       "noLockIn": "Geen Lock-in Contracten"
     },
     "cta": {
-      "title": "Klaar om Clyde te Ontmoeten?",
-      "subtitle": "Slechts 10 founding agency plekken voor EUR 997/maand — alle skills, onbeperkt werkplekken, 10.000 credits, lifetime prijsgarantie.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om kennis te maken met Clyde?",
+      "subtitle": "Max 20 bureaus per jaar. {taken} van {total} founding plekken bezet. Plan een gesprek — we bespreken samen of Clyde past bij jouw portfolio.",
+      "button": "Plan een gesprek",
+      "buttonSecondary": "Lees SkinClarity case"
     },
     "faq": {
       "title": "Veelgestelde Vragen",
       "items": {
         "q1": {
-          "question": "Wat is Clyde precies?",
-          "answer": "Clyde is een AI-marketingmedewerker die specifiek gebouwd is voor bureaus. Hij is geen tool die je zelf bedient — hij is een collega aan wie je taken toekent. Vertel Clyde dat hij blogposts moet schrijven voor Klant A, leads moet bellen voor Klant B en rapporten moet genereren voor Klant C. Hij voert alles zelfstandig uit, 24/7."
+          "question": "Hoe verschilt Clyde van ChatGPT of Jasper?",
+          "answer": "ChatGPT en Jasper zijn generieke tools zonder geheugen — je moet context bij elke prompt opnieuw leveren. Clyde heeft persistent geheugen per klant: merkstem, doelgroep, prestatiegeschiedenis en voorkeuren blijven bewaard. Plus: Clyde orkestreert 12 gespecialiseerde vaardigheden (social, blogs, voice, ads, SEO, analytics), niet alleen tekst. Eén brein met gedeeld geheugen, niet een los tool per taak."
         },
         "q2": {
-          "question": "Hoe leert Clyde de merken van mijn klanten?",
-          "answer": "Tijdens de onboarding neemt Clyde de merkrichtlijnen, tone of voice, doelgroep en historische content van elke klant op. Hij verbetert continu door prestatiedata en feedback te analyseren. Elke week raakt Clyde beter afgestemd op het merk van elke klant."
+          "question": "Wat als ik wil opzeggen?",
+          "answer": "Zero lock-in. Je data is altijd exporteerbaar (JSON + CSV) binnen 24 uur. Self-hosted infrastructuur op EU-servers betekent dat we geen proprietary wrapper om je data zetten — alles wat Clyde leert over jouw klanten is van jou. Bij opzegging heb je 30 dagen voor volledige export voordat we je workspace afbouwen."
         },
         "q3": {
-          "question": "Kan Clyde voor meerdere klanten tegelijk werken?",
-          "answer": "Ja. Clyde beheert 10, 20 of 50 klanten tegelijkertijd zonder kwaliteitsverlies. Elke klant krijgt een eigen merkcontext, zodat Clyde nooit toon, doelgroep of boodschap door elkaar haalt tussen accounts."
+          "question": "Waarom een application-gate? Waarom geen self-service?",
+          "answer": "Clyde is een high-touch AI partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. We accepteren maximaal 20 nieuwe bureaus per jaar. De application is niet om je af te wijzen — het is om te checken of we beide de juiste match zijn. Geen generieke sign-up past bij wat we leveren."
         },
         "q4": {
-          "question": "Wat als Clyde een fout maakt?",
-          "answer": "Alles wat Clyde produceert gaat door jouw goedkeuringsworkflow voordat het wordt gepubliceerd. Jij bepaalt de kaders — Clyde werkt daarbinnen. Als iets moet worden aangepast, leert Clyde van de correctie en herhaalt de fout niet."
+          "question": "Hoeveel vaardigheden krijg ik precies?",
+          "answer": "Twaalf totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 coming_soon (Reel Builder, Email Management, ManyChat DM). Skill-beschikbaarheid verschilt per tier — Partner heeft 8 skills + 2 add-on paden, Growth/Pro/Enterprise/Founding hebben alle 12 met caps op de duurdere skills (voice, video, reels)."
         },
         "q5": {
-          "question": "Hoe verschilt Clyde van ChatGPT of andere AI-tools?",
-          "answer": "ChatGPT is een generieke tool die je handmatig prompt. Clyde is een gespecialiseerde marketingmedewerker die zelfstandig werkt. Hij kent je klanten, volgt hun merkrichtlijnen, publiceert op schema en rapporteert over resultaten — zonder dat jij een enkele prompt hoeft te schrijven. Denk collega, niet tool."
+          "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
+          "answer": "Omdat het één brein is met gedeeld geheugen, niet 12 losse tools. Wat Clyde leert over klant X in social media, gebruikt hij automatisch bij hun blogs en ad creative. Cross-skill learning is onmogelijk met afzonderlijke tools — daar verlies je context bij elke handover. Eén AI-medewerker voor je hele portfolio betekent dat patronen en data tussen skills meereizen."
         }
       }
+    },
+    "trustStrip": {
+      "title": "Gebouwd met en voor Nederlandse bureaus en merken",
+      "subtitle": "SkinClarity Club — onze eerste Founding partner — draait al maanden volledig autonoom op Clyde.",
+      "caseLink": "Bekijk de SKC case study"
     }
   },
   "chatbots": {

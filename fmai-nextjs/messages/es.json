@@ -5,13 +5,13 @@
       "description": "Clyde es el empleado de marketing IA de tu agencia. Escribe contenido, llama leads, gestiona redes sociales, crea anuncios y reporta resultados — 24/7, para cada cliente. Creado por FutureMarketingAI."
     },
     "hero": {
-      "badge": "FutureMarketingAI presenta a Clyde",
+      "badge": "Tu Empleado de Marketing IA con memoria a largo plazo — {taken} de {total} plazas founding ocupadas",
       "headlineMain": "Conoce a Clyde.",
       "headlineAccent": "Tu Empleado de Marketing IA.",
-      "subtitle": "Un marketero trabaja 8 horas. Clyde trabaja 24. Escribe los posts de tus clientes, llama a sus leads, gestiona sus redes sociales y entrega reportes semanales — sin tomarse nunca un día libre.",
-      "trustAnchor": "Confiado por agencias visionarias en toda Europa",
-      "cta": "Conoce a Clyde",
-      "ctaSecondary": "Reserva una Llamada Estratégica"
+      "subtitle": "Clyde recuerda a cada cliente, aprende de cada campaña y ejecuta doce habilidades especializadas de forma autónoma — social, blogs, voz, anuncios, SEO y analítica. Un único empleado IA para todo tu portfolio de clientes.",
+      "trustAnchor": "Construido con agencias neerlandesas en la práctica — máx. 20 partners al año.",
+      "cta": "Reserva una llamada",
+      "ctaSecondary": "Conoce a Clyde"
     },
     "services": {
       "title": "Lo Que Clyde Hace por Tu Agencia",
@@ -48,46 +48,46 @@
       }
     },
     "trust": {
-      "title": "Por Qué las Agencias Contratan a Clyde",
-      "customBuiltTitle": "Siempre Activo, Nunca Enfermo",
-      "customBuilt": "Clyde trabaja de noche, fines de semana y festivos. Sin vacaciones, sin bajas, sin rotación",
-      "founderAccessTitle": "Aprende Continuamente",
-      "founderAccess": "Clyde estudia la voz de marca, datos de audiencia e historial de rendimiento de cada cliente — mejorando cada semana",
-      "successGuaranteeTitle": "Gestiona Todos Tus Clientes",
-      "successGuarantee": "Un solo Clyde gestiona 10, 20 o 50 clientes simultáneamente sin pérdida de calidad",
-      "trialTitle": "Infraestructura IA Enterprise",
-      "trialCommitment": "Clyde funciona sobre infraestructura IA de nivel empresarial con 99,9% de uptime y residencia de datos en la UE"
+      "title": "Por qué las agencias contratan a Clyde",
+      "customBuiltTitle": "Clyde lo recuerda todo",
+      "customBuilt": "Memoria persistente por cliente. Clyde estudia la voz de marca, la audiencia y el historial de rendimiento — más afilado cada semana, aislado por marca.",
+      "founderAccessTitle": "Partner IA, no una plataforma",
+      "founderAccess": "Máximo 20 agencias al año. Onboarding personal por Daley. Sin self-service — cada cliente es una partnership.",
+      "successGuaranteeTitle": "Clyde escala con tu portfolio",
+      "successGuarantee": "SkinClarity Club ya gestiona 3 cuentas de Instagram × 4 marcas × múltiples tipos de contenido de forma autónoma. Sea como sea tu portfolio, Clyde se adapta.",
+      "trialTitle": "EU-native, zero lock-in",
+      "trialCommitment": "Infraestructura self-hosted en servidores europeos. Cumple GDPR + EU AI Act. Tus datos siguen siendo tuyos."
     },
     "icp": {
-      "title": "Voor welke bureaus bouwen we Clyde?",
-      "subtitle": "Geen marketing-pitch. Lees het eerlijk: we werken liever niet met iedereen.",
-      "fitTitle": "Voor wie werkt dit?",
-      "fit1": "Bureaus met 5-30 FTE die 10-50 merken bedienen en willen schalen zonder extra personeel",
-      "fit2": "Marketing operators die data-driven werken en content als groeistrategie zien",
-      "fit3": "Founders die een partner zoeken, geen tool — bereid workflows te herijken, niet alleen uit te voeren",
-      "fit4": "NL/EU-first bureaus die waarde hechten aan dataresidentie en AVG/EU AI Act compliance",
-      "notFitTitle": "Waarschijnlijk niet de juiste match als",
-      "notFit1": "Je minder dan €300K jaaromzet hebt — het budget past niet en we willen je groei niet in de weg staan",
-      "notFit2": "Je puur branding, identity of creative doet — Clyde levert performance content, geen design work",
-      "notFit3": "Je op zoek bent naar 'set-and-forget' — Clyde leert van jou, dat vereist 4 weken onboarding en blijvende input",
-      "notFit4": "Je een bureau runt met >30 FTE en een eigen AI/tech-team — wij bouwen voor bureaus die willen versnellen, niet voor enterprises die zelf bouwen"
+      "title": "¿Para qué agencias estamos construyendo a Clyde?",
+      "subtitle": "Sin pitch de marketing. Léelo con honestidad: preferimos no trabajar con todo el mundo.",
+      "fitTitle": "¿Para quién es esto?",
+      "fit1": "Agencias con 5-30 FTE que sirven a 10-50 marcas y quieren escalar sin añadir personal",
+      "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como estrategia de crecimiento",
+      "fit3": "Founders que buscan un partner, no una herramienta — dispuestos a recalibrar workflows, no solo a ejecutarlos",
+      "fit4": "Agencias NL/EU-first que valoran la residencia de datos y el cumplimiento GDPR/EU AI Act",
+      "notFitTitle": "Probablemente no es el match correcto si",
+      "notFit1": "Facturas menos de 300K EUR al año — el presupuesto no encaja y no queremos frenar tu crecimiento",
+      "notFit2": "Haces puramente branding, identidad o creativo — Clyde entrega contenido de performance, no diseño",
+      "notFit3": "Buscas set-and-forget — Clyde aprende de ti, lo que requiere 4 semanas de onboarding e input continuo",
+      "notFit4": "Diriges una agencia de >30 FTE con equipo propio de IA/tech — construimos para agencias que quieren acelerar, no para enterprises que construyen in-house"
     },
     "stats": {
       "clients": {
-        "value": "24/7",
-        "label": "Disponibilidad"
+        "value": "3 × 4 marcas",
+        "label": "SkinClarity Club autónomo"
       },
       "content": {
-        "value": "6",
-        "label": "Habilidades Especializadas"
+        "value": "12",
+        "label": "Habilidades especializadas"
       },
       "hours": {
-        "value": "160+",
-        "label": "Piezas de Contenido/Mes"
+        "value": "Persistente",
+        "label": "Memoria por cliente"
       },
       "languages": {
-        "value": "<2min",
-        "label": "Tiempo Medio de Respuesta"
+        "value": "Máx. 20",
+        "label": "Plazas por año"
       }
     },
     "badges": {
@@ -100,34 +100,40 @@
       "noLockIn": "Sin Contratos de Permanencia"
     },
     "cta": {
-      "title": "¿Listo para Conocer a Clyde?",
-      "subtitle": "Solo 10 plazas de agencia fundadora a EUR 997/mes — todas las habilidades, espacios ilimitados, 10.000 créditos, precio garantizado de por vida.",
-      "button": "Conoce a Clyde"
+      "title": "¿Listo para conocer a Clyde?",
+      "subtitle": "Máx. 20 agencias al año. {taken} de {total} plazas founding ocupadas. Reserva una llamada — hablemos sobre si Clyde encaja con tu portfolio.",
+      "button": "Reserva una llamada",
+      "buttonSecondary": "Lee el caso SkinClarity"
     },
     "faq": {
       "title": "Preguntas Frecuentes",
       "items": {
         "q1": {
-          "question": "¿Qué es Clyde exactamente?",
-          "answer": "Clyde es un empleado de marketing IA construido específicamente para agencias. No es una herramienta que tú operas — es un colega al que asignas tareas. Dile a Clyde que escriba posts para el Cliente A, llame leads para el Cliente B y genere reportes para el Cliente C. Ejecuta todo de forma autónoma, 24/7."
+          "question": "¿En qué se diferencia Clyde de ChatGPT o Jasper?",
+          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria — tienes que dar contexto en cada prompt. Clyde tiene memoria persistente por cliente: voz de marca, audiencia, historial de rendimiento y preferencias se mantienen. Además: Clyde orquesta 12 habilidades especializadas (social, blogs, voz, anuncios, SEO, analítica), no solo texto. Un cerebro con memoria compartida, no una herramienta por tarea."
         },
         "q2": {
-          "question": "¿Cómo aprende Clyde las marcas de mis clientes?",
-          "answer": "Durante el onboarding, Clyde absorbe las directrices de marca, tono de voz, audiencia objetivo y contenido histórico de cada cliente. Mejora continuamente analizando datos de rendimiento y tu feedback. Cada semana, Clyde se alinea mejor con la marca de cada cliente."
+          "question": "¿Qué pasa si quiero cancelar?",
+          "answer": "Zero lock-in. Tus datos siempre son exportables (JSON + CSV) en 24 horas. Infraestructura self-hosted en servidores EU significa que no envolvemos tus datos en formatos propietarios — todo lo que Clyde aprende sobre tus clientes es tuyo. Al cancelar tienes 30 días para export completo antes de desmantelar el workspace."
         },
         "q3": {
-          "question": "¿Puede Clyde trabajar para varios clientes simultáneamente?",
-          "answer": "Sí. Clyde gestiona 10, 20 o 50 clientes al mismo tiempo sin pérdida de calidad. Cada cliente tiene su propio contexto de marca, así que Clyde nunca mezcla tono, audiencia o mensajes entre cuentas."
+          "question": "¿Por qué un application gate? ¿Por qué no self-service?",
+          "answer": "Clyde es una partnership IA high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal de Daley (founder) y 4 semanas de partnership setup. Aceptamos máx. 20 nuevas agencias al año. La application no es para rechazarte — es para comprobar si ambos somos el match correcto. Un sign-up genérico no encaja con lo que entregamos."
         },
         "q4": {
-          "question": "¿Qué pasa si Clyde comete un error?",
-          "answer": "Todo lo que Clyde produce pasa por tu flujo de aprobación antes de publicarse. Tú defines los límites — Clyde trabaja dentro de ellos. Si algo necesita ajuste, Clyde aprende de la corrección y no repite el error."
+          "question": "¿Cuántas habilidades obtengo exactamente?",
+          "answer": "Doce en total: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde orchestrator) y 3 coming_soon (Reel Builder, Email Management, ManyChat DM). La disponibilidad varía por tier — Partner tiene 8 skills + 2 vías add-on, Growth/Pro/Enterprise/Founding tienen las 12 con caps en las más costosas (voz, video, reels)."
         },
         "q5": {
-          "question": "¿En qué se diferencia Clyde de ChatGPT u otras herramientas IA?",
-          "answer": "ChatGPT es una herramienta genérica que prompts manualmente. Clyde es un empleado de marketing especializado que trabaja de forma autónoma. Conoce a tus clientes, sigue sus directrices de marca, publica según calendario y reporta resultados — sin que tú escribas un solo prompt. Piensa en un colega, no en una herramienta."
+          "question": "¿Por qué funciona mejor para agencias que herramientas separadas?",
+          "answer": "Porque es un cerebro con memoria compartida, no 12 herramientas sueltas. Lo que Clyde aprende sobre el cliente X en social media lo usa automáticamente en sus blogs y creativos de anuncios. El aprendizaje cross-skill es imposible con herramientas separadas — pierdes contexto en cada handover. Un empleado IA para todo tu portfolio significa que los patrones y datos viajan entre skills."
         }
       }
+    },
+    "trustStrip": {
+      "title": "Construido con y para agencias y marcas neerlandesas",
+      "subtitle": "SkinClarity Club — nuestro primer Founding partner — lleva meses funcionando completamente autónomo con Clyde.",
+      "caseLink": "Ver el caso SKC"
     }
   },
   "chatbots": {
