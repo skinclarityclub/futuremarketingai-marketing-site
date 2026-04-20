@@ -226,7 +226,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
           {/* Final CTA after service cards */}
           <div className="text-center mt-12">
-            <p className="text-text-secondary mb-6">{t('cta.subtitle')}</p>
+            <p className="text-text-secondary mb-6">{t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CTAButton size="lg" href="/skills/clyde">
                 {t('hero.ctaSecondary')}
