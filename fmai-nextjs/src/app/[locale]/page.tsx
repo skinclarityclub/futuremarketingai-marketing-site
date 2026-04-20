@@ -233,7 +233,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
               <CTAButton variant="secondary" size="lg" href="/founding-member">
-                {t('trust.trialTitle')}
+                {t('cta.foundingLabel')}
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
             </div>

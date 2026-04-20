@@ -199,19 +199,19 @@ export async function Footer({ locale }: FooterProps) {
               </div>
               <div className="flex items-center gap-3">
                 <Link
-                  href="/legal"
+                  href="/legal/privacy"
                   className="text-xs text-text-muted hover:text-text-primary transition-colors"
                 >
                   {t('landing.footer.nav.privacy')}
                 </Link>
                 <Link
-                  href="/legal"
+                  href="/legal/terms"
                   className="text-xs text-text-muted hover:text-text-primary transition-colors"
                 >
                   {t('landing.footer.nav.terms')}
                 </Link>
                 <Link
-                  href="/legal"
+                  href="/legal/cookies"
                   className="text-xs text-text-muted hover:text-text-primary transition-colors"
                 >
                   {t('landing.footer.nav.cookies')}

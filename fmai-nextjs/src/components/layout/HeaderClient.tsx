@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 import { usePathname, Link } from '@/i18n/navigation'
 import { motion, AnimatePresence } from 'motion/react'
 import {
@@ -135,6 +136,7 @@ const NAV_ITEMS = [
 
 export function HeaderClient({ locale }: HeaderClientProps) {
   const pathname = usePathname()
+  const t = useTranslations('nav')
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -329,7 +331,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
             className="hidden md:flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5"
           >
             <LogIn className="w-4 h-4" />
-            Login
+            {t('login')}
           </a>
 
           {/* Primary CTA */}
@@ -337,7 +339,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
             href="/apply"
             className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] text-bg-deep font-semibold text-sm px-4 py-2 rounded-[var(--radius-btn)] hover:opacity-90 transition-all"
           >
-            Apply
+            {t('apply')}
           </Link>
 
           {/* Mobile Menu Button */}
@@ -441,7 +443,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                     onClick={() => setMobileOpen(false)}
                   >
                     <LogIn className="w-5 h-5" />
-                    Log In
+                    {t('login')}
                   </a>
                 </div>
               </div>

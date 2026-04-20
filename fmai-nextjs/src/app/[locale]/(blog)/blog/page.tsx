@@ -106,8 +106,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
       ) : (
         <div className="py-20 text-center">
           <p className="text-lg text-text-muted">
-            No posts found
-            {activeCategory ? ` in this category` : ''}.
+            {activeCategory ? t('noPostsInCategory') : t('noPosts')}
           </p>
         </div>
       )}

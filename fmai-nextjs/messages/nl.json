@@ -103,7 +103,8 @@
       "title": "Klaar om kennis te maken met Clyde?",
       "subtitle": "Max 20 bureaus per jaar. {taken} van {total} founding plekken bezet. Plan een gesprek — we bespreken samen of Clyde past bij jouw portfolio.",
       "button": "Plan een gesprek",
-      "buttonSecondary": "Lees SkinClarity case"
+      "buttonSecondary": "Lees SkinClarity case",
+      "foundingLabel": "Bekijk Founding tier"
     },
     "faq": {
       "title": "Veelgestelde Vragen",
@@ -334,10 +335,6 @@
   "common": {
     "nav": {
       "home": "Home",
-      "automations": "Automations",
-      "chatbots": "Chatbots",
-      "voiceAgents": "Voice Agents",
-      "marketingMachine": "Marketing Machine",
       "pricing": "Prijzen",
       "about": "Over Ons",
       "contact": "Contact"
@@ -938,7 +935,9 @@
   },
   "blog": {
     "title": "AI Marketing & Automatisering Inzichten",
-    "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen voor bureaus."
+    "subtitle": "Inzichten over AI marketing automatisering, chatbots en groeistrategieen voor bureaus.",
+    "noPosts": "Geen artikelen gevonden.",
+    "noPostsInCategory": "Geen artikelen in deze categorie."
   },
   "skills-voice-agent": {
     "meta": {
@@ -2176,5 +2175,9 @@
       "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
       "button": "Plan een gesprek"
     }
+  },
+  "nav": {
+    "login": "Login",
+    "apply": "Plan een gesprek"
   }
 }

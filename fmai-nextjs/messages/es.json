@@ -103,7 +103,8 @@
       "title": "¿Listo para conocer a Clyde?",
       "subtitle": "Máx. 20 agencias al año. {taken} de {total} plazas founding ocupadas. Reserva una llamada — hablemos sobre si Clyde encaja con tu portfolio.",
       "button": "Reserva una llamada",
-      "buttonSecondary": "Lee el caso SkinClarity"
+      "buttonSecondary": "Lee el caso SkinClarity",
+      "foundingLabel": "Ver tier Founding"
     },
     "faq": {
       "title": "Preguntas Frecuentes",
@@ -334,10 +335,6 @@
   "common": {
     "nav": {
       "home": "Inicio",
-      "automations": "Automatizaciones",
-      "chatbots": "Chatbots",
-      "voiceAgents": "Agentes de Voz",
-      "marketingMachine": "Marketing Machine",
       "pricing": "Precios",
       "about": "Acerca de",
       "contact": "Contacto"
@@ -938,7 +935,9 @@
   },
   "blog": {
     "title": "Ideas sobre Marketing IA y Automatizacion",
-    "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento para agencias."
+    "subtitle": "Ideas sobre automatizacion de marketing IA, chatbots y estrategias de crecimiento para agencias.",
+    "noPosts": "No hay artículos.",
+    "noPostsInCategory": "No hay artículos en esta categoría."
   },
   "skills-voice-agent": {
     "meta": {
@@ -1649,7 +1648,6 @@
       },
       "testimonial": {
         "quote": "Clyde beheert onze volledige social content-operatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom in de achtergrond. Ik review, Clyde voert uit.",
-        "quoteTranslated": "Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes tomaba una tarde entera a la semana ahora corre autónomo en background. Yo reviso, Clyde ejecuta.",
         "author": "Sindy",
         "role": "Founder, SkinClarity Club"
       },
@@ -2177,5 +2175,9 @@
       "subtitle": "Reserva una llamada — hablemos sobre cómo esta skill encaja con tus clientes.",
       "button": "Reserva una llamada"
     }
+  },
+  "nav": {
+    "login": "Login",
+    "apply": "Reserva llamada"
   }
 }
