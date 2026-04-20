@@ -472,74 +472,140 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen | AI Marketing Agents voor Bureaus | FutureMarketingAI",
-      "description": "Premium AI-agent prijzen voor marketingbureaus. Growth EUR 1.497/maand, Professional EUR 2.997/maand, Enterprise EUR 4.997/maand. Alle 11 AI-skills inbegrepen in elk tier."
+      "title": "Pricing — 5 tiers. Transparant. Van Partner €347 tot Enterprise €7.997 | FutureMarketingAI",
+      "description": "Premium AI marketing partnership — 5 tiers met skill-caps, credit-allocatie en add-on packs. Geen verborgen kosten, geen self-service. Max 20 bureaus per jaar."
     },
     "hero": {
-      "title": "Premium AI Agents. Gebouwd voor Bureaus.",
-      "description": "Elk tier bevat alle 11 AI-skills. Kies de schaal die bij je bureau past en groei met flexibele credit packs."
+      "title": "Premium partnerships. 5 tiers. Transparant.",
+      "description": "Alle prijzen zichtbaar. 5 tiers voor iedere portfolio-grootte — van solo operator tot enterprise. Skill-gating eerlijk uitgelegd, geen verborgen kosten, geen contact-us-voor-pricing.",
+      "counter": "{taken} van {total} Founding plekken bezet"
     },
-    "all_skills_badge": "Alle 11 AI-skills inbegrepen",
-    "onboarding_label": "Eenmalige onboarding",
-    "credits_label": "credits/maand",
+    "visibility": {
+      "title": "Waarom onze prijzen zichtbaar zijn",
+      "body": "Bij premium AI partners zien we vaak \"Contact us for pricing\" — dat ondermijnt de relatie voordat die begint. Wij laten liever zien wat Clyde kost, wat je krijgt en welke caps er zijn, zodat jij zelf kunt inschatten of de investering past. Geen sales dans nodig."
+    },
+    "onboardingLabel": "Eenmalig onboarding",
+    "creditsLabel": "credits/mo",
+    "workspacesLabel": "werkruimtes",
+    "applyCta": "Plan een gesprek",
     "tiers": {
+      "partner": {
+        "name": "Partner",
+        "subtitle": "Voor solo operators",
+        "price": "347",
+        "onboarding": "497",
+        "workspaces": "1",
+        "credits": "1.000",
+        "tagline": "1 workspace. 8 skills included + 2 add-on paden. Geen Voice/Video/Reel.",
+        "description": "Het instap-tier voor solo marketing operators die Clyde willen gebruiken voor één eigen praktijk of één klant. Lage instap, beperkte caps — perfect om het partnership-model te proeven zonder grote commitment.",
+        "features_0": "1 werkruimte",
+        "features_1": "1.000 credits/maand",
+        "features_2": "Social Media, Blog Factory, Lead Qualifier",
+        "features_3": "SEO/GEO, Reporting, Research",
+        "features_4": "Clyde AI Employee (orchestrator)",
+        "features_5": "Email Management (5/mo inbox classify)",
+        "features_6": "Static ads via add-on (€97 → 15/mo)",
+        "features_7": "ManyChat DM via add-on (€47 → 300/mo)",
+        "features_8": "Email support",
+        "features_9": "Geen Voice Agent, Video Ads of Reel Builder"
+      },
       "growth": {
         "name": "Growth",
-        "price": "1.497",
-        "description": "Voor bureaus die starten met AI-aangedreven marketinguitvoering voor hun eerste klanten.",
-        "service_count": "5 werkruimtes",
-        "credits_included": "3.000",
-        "onboarding": "1.500",
-        "support": "E-mail support",
-        "features_0": "Alle 11 AI-skills inbegrepen",
-        "features_1": "5 klantwerkruimtes",
-        "features_2": "3.000 credits per maand",
-        "features_3": "Content Factory & Social Media",
-        "features_4": "Analytics & prestatierapporten",
-        "features_5": "E-mail support",
-        "features_6": "AVG & EU AI Act compliant"
+        "subtitle": "Voor kleine bureaus",
+        "price": "2.497",
+        "onboarding": "1.997",
+        "workspaces": "5",
+        "credits": "4.000",
+        "tagline": "5 workspaces. Alle 12 skills. Caps op dure skills.",
+        "description": "Voor bureaus met 1-5 klanten die Clyde als hele marketing-medewerker willen inzetten. Alle 12 skills beschikbaar met tier-caps op de duurdere (voice, video, reels).",
+        "features_0": "5 werkruimtes",
+        "features_1": "4.000 credits/maand",
+        "features_2": "Alle 12 skills beschikbaar",
+        "features_3": "Blog Factory: 8/mo",
+        "features_4": "Static ads: 15/mo — Video ads: 4/mo",
+        "features_5": "Reel Builder: 4/mo",
+        "features_6": "Voice Agent: 30 min/mo",
+        "features_7": "ManyChat DM: 200 DMs/mo",
+        "features_8": "Email + app support"
       },
       "professional": {
         "name": "Professional",
-        "price": "2.997",
-        "badge": "Populairst",
-        "description": "Voor groeiende bureaus die meer capaciteit, dedicated support en diepere AI-integratie nodig hebben.",
-        "service_count": "15 werkruimtes",
-        "credits_included": "8.000",
-        "onboarding": "3.000",
-        "support": "Dedicated Slack + Maandelijks Gesprek",
-        "features_0": "Alle 11 AI-skills inbegrepen",
-        "features_1": "15 klantwerkruimtes",
-        "features_2": "8.000 credits per maand",
-        "features_3": "Dedicated Slack-kanaal",
-        "features_4": "Maandelijks strategiegesprek",
-        "features_5": "Voice Agent & Lead Qualifier",
-        "features_6": "Geavanceerd analytics dashboard",
-        "features_7": "AVG & EU AI Act compliant"
+        "subtitle": "Voor middelgrote bureaus",
+        "price": "4.497",
+        "onboarding": "3.997",
+        "workspaces": "15",
+        "credits": "12.000",
+        "tagline": "15 workspaces. Ruimere caps. Slack-support + monthly strategy call.",
+        "description": "Voor bureaus met 5-15 klanten die serieus draaien op Clyde. Ruimere caps, Slack-access tot Daley, maandelijkse strategie-call.",
+        "features_0": "15 werkruimtes",
+        "features_1": "12.000 credits/maand",
+        "features_2": "Alle 12 skills beschikbaar",
+        "features_3": "Blog Factory: 20/mo",
+        "features_4": "Static ads: 50/mo — Video ads: 20/mo",
+        "features_5": "Reel Builder: 15/mo",
+        "features_6": "Voice Agent: 120 min/mo",
+        "features_7": "ManyChat DM: 1000 DMs/mo",
+        "features_8": "Slack support + monthly strategy call"
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "4.997",
-        "badge": "Volledige Kracht",
-        "description": "Voor gevestigde bureaus die onbeperkte schaal, custom SLA's en een dedicated customer success manager nodig hebben.",
-        "service_count": "Onbeperkte werkruimtes",
-        "credits_included": "20.000",
-        "onboarding": "5.000",
-        "support": "Dedicated CSM + Custom SLA",
-        "features_0": "Alle 11 AI-skills inbegrepen",
-        "features_1": "Onbeperkte klantwerkruimtes",
-        "features_2": "20.000 credits per maand",
-        "features_3": "Dedicated Customer Success Manager",
-        "features_4": "Custom SLA & prioriteitsrespons",
-        "features_5": "Custom integraties & API-toegang",
-        "features_6": "White-label opties",
-        "features_7": "AVG & EU AI Act compliant"
+        "subtitle": "Voor grote bureaus",
+        "price": "7.997",
+        "onboarding": "5.997",
+        "workspaces": "Unlimited",
+        "credits": "30.000",
+        "tagline": "Unlimited workspaces + skills. White-label + API access. Dedicated CSM + SLA.",
+        "description": "Voor bureaus met 15+ klanten die Clyde als core infrastructuur gebruiken. White-label, API-toegang, dedicated customer success manager met SLA.",
+        "features_0": "Unlimited werkruimtes",
+        "features_1": "30.000 credits/maand",
+        "features_2": "Alle 12 skills unlimited (fair use)",
+        "features_3": "White-label optie",
+        "features_4": "API access voor integraties",
+        "features_5": "Dedicated Customer Success Manager",
+        "features_6": "SLA-contract",
+        "features_7": "Priority feature requests"
+      },
+      "founding": {
+        "name": "Founding",
+        "subtitle": "10 plekken — levenslange deal",
+        "price": "997",
+        "onboarding": "0",
+        "workspaces": "Unlimited",
+        "credits": "8.000",
+        "tagline": "10 plekken totaal. Pro-level caps. Levenslange €997. Founder Slack.",
+        "description": "De oprichtende klanten die vóór launch committeerden. Levenslange prijs €997, Pro-level skill-caps, direct Slack-contact met Daley. {taken} van {total} plekken bezet.",
+        "features_0": "Unlimited werkruimtes",
+        "features_1": "8.000 credits/maand",
+        "features_2": "Alle 12 skills (Pro-level caps)",
+        "features_3": "Blog Factory: 12/mo",
+        "features_4": "Static ads: 25/mo — Video ads: 8/mo",
+        "features_5": "Reel Builder: 8/mo",
+        "features_6": "Voice Agent: 60 min/mo",
+        "features_7": "ManyChat DM: 500 DMs/mo",
+        "features_8": "Founder Slack (direct naar Daley)",
+        "features_9": "Levenslange prijsgarantie"
       }
     },
-    "credit_packs": {
-      "title": "Credit Packs",
-      "description": "Meer credits nodig? Voeg een pack toe wanneer je wilt — geen verplichtingen, direct actief.",
+    "matrix": {
+      "title": "Skill-beschikbaarheid per tier",
+      "subtitle": "Welke skill in welk tier — en met welke cap. Eerlijk, transparant, gedocumenteerd.",
+      "skillHeader": "Skill",
+      "fairUse": "Fair use",
+      "unlimited": "Unlimited",
+      "notAvailable": "—",
+      "addOn": "Add-on",
+      "perMonth": "/mo",
+      "legend": "Cijfers zijn monthly caps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme outliers. \"Add-on\" = beschikbaar via skill-pack, niet in basis tier."
+    },
+    "creditPacks": {
+      "title": "Credit packs — top-ups voor swing-months",
+      "description": "Niet genoeg credits in je tier voor deze maand? Top-up met een credit pack. Geen automatische upsell, geen verplichting.",
       "items": {
+        "partnerTopUp": {
+          "name": "Partner Top-Up",
+          "credits": "500",
+          "price": "39"
+        },
         "boost": {
           "name": "Boost",
           "credits": "2.000",
@@ -557,44 +623,72 @@
         }
       }
     },
-    "founding_cta": {
-      "title": "Founding Member — EUR 997/maand (levenslang)",
-      "description": "Professional tier normaal EUR 2.997/maand — je bespaart EUR 2.000/maand. Onbeperkte werkruimtes, 10.000 credits, alle skills. Voor altijd op deze prijs vastgezet.",
-      "spots": "Slechts 10 Bureaus",
-      "button": "Claim Je Plek"
-    },
-    "badges": {
-      "nvidia": "Powered by NVIDIA NemoClaw",
-      "gdpr": "AVG Compliant",
-      "eu_ai_act": "EU AI Act Ready"
-    },
-    "cta": {
-      "title": "Klaar om Je Bureau te Schalen met AI?",
-      "description": "Boek een gratis strategiegesprek en we laten je precies zien welk tier het meeste impact heeft voor jouw bureau.",
-      "primary_button": "Boek een Strategiegesprek",
-      "secondary_button": "Neem Contact Op"
-    },
-    "contact_sales": "Neem Contact Op",
-    "faq": {
-      "title": "Vragen over Prijzen",
+    "skillPacks": {
+      "title": "Skill-specifieke packs — gerichte add-ons",
+      "description": "Eén skill tegen de cap? Koop een skill-pack voor die skill specifiek, in plaats van een volle tier-upgrade.",
       "items": {
-        "q1": {
-          "question": "Kan ik later van tier wisselen?",
-          "answer": "Ja — upgraden of downgraden op elk moment. Wijzigingen gaan in bij de volgende factureringsperiode. Geen boetes, geen lock-in."
+        "partnerStaticAds": {
+          "name": "Partner Static Ads Pack",
+          "quantity": "15 static ads",
+          "price": "97"
         },
-        "q2": {
-          "question": "Wat zijn de onboardingkosten?",
-          "answer": "Elk tier heeft eenmalige onboardingkosten voor setup, configuratie, werkruimte-aanmaak en initiële training van je AI-agents. Growth EUR 1.500, Professional EUR 3.000, Enterprise EUR 5.000."
+        "partnerManychat": {
+          "name": "Partner ManyChat Pack",
+          "quantity": "300 DMs/mo",
+          "price": "47"
         },
-        "q3": {
-          "question": "Wat zijn credits en hoe werken ze?",
-          "answer": "Credits zijn de eenheid van AI-werk. Elke AI-actie (content genereren, lead kwalificeren, analytics draaien) verbruikt credits. Je maandelijkse tegoed wordt elke factureringsperiode hersteld en je kunt credit packs bijkopen als je meer nodig hebt."
+        "voiceMinutes": {
+          "name": "Voice Minutes Pack",
+          "quantity": "100 minuten",
+          "price": "147"
         },
-        "q4": {
-          "question": "Bevatten alle tiers echt alle 11 skills?",
-          "answer": "Ja — elk tier bevat alle 11 AI-skills: Content Creator, Social Media, Blog Factory, Voice Agent, Lead Qualifier, E-mailbeheer, Ad Creator, Reel Builder, ManyChat DM, Analytics en Reporting. Tiers verschillen in werkruimtes, credits en supportniveau."
+        "videoAds": {
+          "name": "Video Ads Pack",
+          "quantity": "10 video ads",
+          "price": "197"
+        },
+        "reels": {
+          "name": "Reels Pack",
+          "quantity": "10 reels",
+          "price": "197"
+        },
+        "blogPower": {
+          "name": "Blog Power Pack",
+          "quantity": "10 artikelen",
+          "price": "197"
         }
       }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over pricing",
+      "items": {
+        "q1": {
+          "question": "Waarom heb ik skill-caps in plaats van \"alle skills unlimited\"?",
+          "answer": "Voice, Video Ad en Reel Builder zijn de duurste skills in credit-verbruik (5-25 cr per actie). Unlimited voor alle tiers zou ofwel tot astronomische prijzen leiden, ofwel tot fair-use throttling achter de schermen. Caps maken kosten voorspelbaar en geven elk tier een natuurlijke upgrade-trigger."
+        },
+        "q2": {
+          "question": "Wat gebeurt er als ik over mijn credits of caps heen ga?",
+          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je monthly allocation. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Partner Top-Up €39 tot Unlimited €697), of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
+        },
+        "q3": {
+          "question": "Kan ik tussen tiers upgraden of downgraden?",
+          "answer": "Upgraden kan op elk moment, prorated facturering. Downgraden kan bij de volgende billing cycle. Van Founding naar lager kan niet — je Founding-prijs is levenslang zolang je actief blijft."
+        },
+        "q4": {
+          "question": "Krijg ik alle 12 skills of een subset?",
+          "answer": "Partner heeft 8 skills included + 2 add-on paden (static ads + ManyChat). Growth / Professional / Enterprise / Founding hebben alle 12 skills beschikbaar, met tier-caps op de duurdere skills. Voice / Video Ad / Reel Builder zijn niet beschikbaar op Partner — daarvoor ga je naar Growth."
+        },
+        "q5": {
+          "question": "Wat houdt de onboarding fee in?",
+          "answer": "De eenmalige onboarding fee dekt 4 weken partnership-setup door Daley: intake brand voice per klant, KPI-definities, skill-configuratie, testruns en approval-workflow setup. Dit is geen setup-fee voor technische installatie — het is investering in een werkende AI-medewerker."
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om de partnership te starten?",
+      "description": "Max 20 bureaus per jaar. Plan een gesprek — we beoordelen samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "primary": "Plan een gesprek",
+      "secondary": "Lees SkinClarity case"
     }
   },
   "how-it-works": {

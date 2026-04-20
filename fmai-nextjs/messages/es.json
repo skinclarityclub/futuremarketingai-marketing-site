@@ -472,74 +472,140 @@
   },
   "pricing": {
     "meta": {
-      "title": "Precios | Agentes de Marketing IA para Agencias | FutureMarketingAI",
-      "description": "Precios premium de agentes IA para agencias de marketing. Growth EUR 1.497/mes, Professional EUR 2.997/mes, Enterprise EUR 4.997/mes. Las 11 habilidades IA incluidas en cada tier."
+      "title": "Pricing — 5 tiers. Transparente. Desde Partner €347 hasta Enterprise €7.997 | FutureMarketingAI",
+      "description": "Partnership IA de marketing premium — 5 tiers con caps de skills, asignación de credits y packs add-on. Sin costes ocultos, sin self-service. Máx. 20 agencias al año."
     },
     "hero": {
-      "title": "Agentes IA Premium. Creados para Agencias.",
-      "description": "Cada tier incluye las 11 habilidades IA. Elija la escala que se ajuste a su agencia y crezca con credit packs flexibles."
+      "title": "Partnerships premium. 5 tiers. Transparente.",
+      "description": "Todos los precios visibles. 5 tiers para cualquier tamaño de portfolio — desde operador solo hasta enterprise. Skill-gating explicado honestamente, sin costes ocultos, sin contact-us-for-pricing.",
+      "counter": "{taken} de {total} plazas Founding ocupadas"
     },
-    "all_skills_badge": "Las 11 habilidades IA incluidas",
-    "onboarding_label": "Onboarding unico",
-    "credits_label": "creditos/mes",
+    "visibility": {
+      "title": "Por qué nuestros precios son visibles",
+      "body": "Con partners IA premium vemos a menudo \"Contact us for pricing\" — eso socava la relación antes de empezar. Preferimos mostrar lo que cuesta Clyde, lo que obtienes y qué caps aplican, para que juzgues si la inversión encaja. Sin baile de ventas."
+    },
+    "onboardingLabel": "Onboarding único",
+    "creditsLabel": "credits/mo",
+    "workspacesLabel": "workspaces",
+    "applyCta": "Reserva una llamada",
     "tiers": {
+      "partner": {
+        "name": "Partner",
+        "subtitle": "Para operadores solos",
+        "price": "347",
+        "onboarding": "497",
+        "workspaces": "1",
+        "credits": "1.000",
+        "tagline": "1 workspace. 8 skills incluidas + 2 vías add-on. Sin Voice/Video/Reel.",
+        "description": "El tier de entrada para operadores de marketing solo que quieren usar Clyde para una práctica propia o un cliente. Entrada baja, uso limitado — perfecto para probar el modelo partnership sin gran compromiso.",
+        "features_0": "1 workspace",
+        "features_1": "1.000 credits/mes",
+        "features_2": "Social Media, Blog Factory, Lead Qualifier",
+        "features_3": "SEO/GEO, Reporting, Research",
+        "features_4": "Clyde AI Employee (orchestrator)",
+        "features_5": "Email Management (5/mo inbox classify)",
+        "features_6": "Static ads vía add-on (€97 → 15/mo)",
+        "features_7": "ManyChat DM vía add-on (€47 → 300/mo)",
+        "features_8": "Soporte por email",
+        "features_9": "Sin Voice Agent, Video Ads ni Reel Builder"
+      },
       "growth": {
         "name": "Growth",
-        "price": "1.497",
-        "description": "Para agencias que comienzan con ejecucion de marketing impulsada por IA para sus primeros clientes.",
-        "service_count": "5 espacios de trabajo",
-        "credits_included": "3.000",
-        "onboarding": "1.500",
-        "support": "Soporte por email",
-        "features_0": "Las 11 habilidades IA incluidas",
-        "features_1": "5 espacios de trabajo de clientes",
-        "features_2": "3.000 creditos por mes",
-        "features_3": "Content Factory y Social Media",
-        "features_4": "Analytics e informes de rendimiento",
-        "features_5": "Soporte por email",
-        "features_6": "RGPD y EU AI Act compliant"
+        "subtitle": "Para agencias pequeñas",
+        "price": "2.497",
+        "onboarding": "1.997",
+        "workspaces": "5",
+        "credits": "4.000",
+        "tagline": "5 workspaces. Las 12 skills. Caps en skills caras.",
+        "description": "Para agencias con 1-5 clientes que quieren usar Clyde como empleado completo de marketing. Las 12 skills disponibles con caps de tier en las más costosas (voz, video, reels).",
+        "features_0": "5 workspaces",
+        "features_1": "4.000 credits/mes",
+        "features_2": "Las 12 skills disponibles",
+        "features_3": "Blog Factory: 8/mo",
+        "features_4": "Static ads: 15/mo — Video ads: 4/mo",
+        "features_5": "Reel Builder: 4/mo",
+        "features_6": "Voice Agent: 30 min/mo",
+        "features_7": "ManyChat DM: 200 DMs/mo",
+        "features_8": "Soporte email + app"
       },
       "professional": {
         "name": "Professional",
-        "price": "2.997",
-        "badge": "Mas Popular",
-        "description": "Para agencias en crecimiento que necesitan mas capacidad, soporte dedicado e integracion IA mas profunda.",
-        "service_count": "15 espacios de trabajo",
-        "credits_included": "8.000",
-        "onboarding": "3.000",
-        "support": "Slack Dedicado + Llamada Mensual",
-        "features_0": "Las 11 habilidades IA incluidas",
-        "features_1": "15 espacios de trabajo de clientes",
-        "features_2": "8.000 creditos por mes",
-        "features_3": "Canal de Slack dedicado",
-        "features_4": "Llamada estrategica mensual",
-        "features_5": "Agente de Voz y Lead Qualifier",
-        "features_6": "Dashboard de analytics avanzado",
-        "features_7": "RGPD y EU AI Act compliant"
+        "subtitle": "Para agencias medianas",
+        "price": "4.497",
+        "onboarding": "3.997",
+        "workspaces": "15",
+        "credits": "12.000",
+        "tagline": "15 workspaces. Caps más amplios. Soporte Slack + strategy call mensual.",
+        "description": "Para agencias con 5-15 clientes que corren seriamente en Clyde. Caps más amplios, acceso Slack a Daley, strategy call mensual.",
+        "features_0": "15 workspaces",
+        "features_1": "12.000 credits/mes",
+        "features_2": "Las 12 skills disponibles",
+        "features_3": "Blog Factory: 20/mo",
+        "features_4": "Static ads: 50/mo — Video ads: 20/mo",
+        "features_5": "Reel Builder: 15/mo",
+        "features_6": "Voice Agent: 120 min/mo",
+        "features_7": "ManyChat DM: 1000 DMs/mo",
+        "features_8": "Soporte Slack + strategy call mensual"
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "4.997",
-        "badge": "Potencia Total",
-        "description": "Para agencias establecidas que necesitan escala ilimitada, SLAs personalizados y un gestor de exito dedicado.",
-        "service_count": "Espacios de trabajo ilimitados",
-        "credits_included": "20.000",
-        "onboarding": "5.000",
-        "support": "CSM Dedicado + SLA Personalizado",
-        "features_0": "Las 11 habilidades IA incluidas",
-        "features_1": "Espacios de trabajo ilimitados",
-        "features_2": "20.000 creditos por mes",
-        "features_3": "Customer Success Manager dedicado",
-        "features_4": "SLA personalizado y respuesta prioritaria",
-        "features_5": "Integraciones personalizadas y acceso API",
-        "features_6": "Opciones de marca blanca",
-        "features_7": "RGPD y EU AI Act compliant"
+        "subtitle": "Para agencias grandes",
+        "price": "7.997",
+        "onboarding": "5.997",
+        "workspaces": "Unlimited",
+        "credits": "30.000",
+        "tagline": "Workspaces + skills unlimited. White-label + API access. CSM dedicado + SLA.",
+        "description": "Para agencias con 15+ clientes que usan Clyde como infraestructura core. White-label, API access, customer success manager dedicado con SLA.",
+        "features_0": "Workspaces unlimited",
+        "features_1": "30.000 credits/mes",
+        "features_2": "Las 12 skills unlimited (fair use)",
+        "features_3": "Opción white-label",
+        "features_4": "API access para integraciones",
+        "features_5": "Customer Success Manager dedicado",
+        "features_6": "Contrato SLA",
+        "features_7": "Feature requests prioritarias"
+      },
+      "founding": {
+        "name": "Founding",
+        "subtitle": "10 plazas — deal de por vida",
+        "price": "997",
+        "onboarding": "0",
+        "workspaces": "Unlimited",
+        "credits": "8.000",
+        "tagline": "10 plazas total. Caps Pro-level. €997 de por vida. Founder Slack.",
+        "description": "Los clientes fundadores que se comprometieron antes del launch. Precio de por vida €997, caps Pro-level, contacto directo Slack con Daley. {taken} de {total} plazas ocupadas.",
+        "features_0": "Workspaces unlimited",
+        "features_1": "8.000 credits/mes",
+        "features_2": "Las 12 skills (caps Pro-level)",
+        "features_3": "Blog Factory: 12/mo",
+        "features_4": "Static ads: 25/mo — Video ads: 8/mo",
+        "features_5": "Reel Builder: 8/mo",
+        "features_6": "Voice Agent: 60 min/mo",
+        "features_7": "ManyChat DM: 500 DMs/mo",
+        "features_8": "Founder Slack (directo a Daley)",
+        "features_9": "Garantía de precio de por vida"
       }
     },
-    "credit_packs": {
-      "title": "Paquetes de Creditos",
-      "description": "Necesita mas creditos? Agregue un paquete en cualquier momento — sin compromiso, activacion instantanea.",
+    "matrix": {
+      "title": "Disponibilidad de skills por tier",
+      "subtitle": "Qué skill en qué tier — y con qué cap. Honesto, transparente, documentado.",
+      "skillHeader": "Skill",
+      "fairUse": "Fair use",
+      "unlimited": "Unlimited",
+      "notAvailable": "—",
+      "addOn": "Add-on",
+      "perMonth": "/mo",
+      "legend": "Los números son caps mensuales por workspace. \"Fair use\" = unlimited con throttle en outliers extremos. \"Add-on\" = disponible vía skill pack, no en el tier base."
+    },
+    "creditPacks": {
+      "title": "Credit packs — top-ups para meses de swing",
+      "description": "¿No hay suficientes credits en tu tier este mes? Top-up con un credit pack. Sin upsell automático, sin obligación.",
       "items": {
+        "partnerTopUp": {
+          "name": "Partner Top-Up",
+          "credits": "500",
+          "price": "39"
+        },
         "boost": {
           "name": "Boost",
           "credits": "2.000",
@@ -557,44 +623,72 @@
         }
       }
     },
-    "founding_cta": {
-      "title": "Miembro Fundador — EUR 997/mes (de por vida)",
-      "description": "Tier Professional normalmente EUR 2.997/mes — ahorra EUR 2.000/mes. Espacios de trabajo ilimitados, 10.000 creditos, todas las habilidades. Precio bloqueado para siempre.",
-      "spots": "Solo 10 Agencias",
-      "button": "Reclame Su Plaza"
-    },
-    "badges": {
-      "nvidia": "Powered by NVIDIA NemoClaw",
-      "gdpr": "RGPD Compliant",
-      "eu_ai_act": "EU AI Act Ready"
-    },
-    "cta": {
-      "title": "Listo para Escalar Su Agencia con IA?",
-      "description": "Reserve una llamada estrategica gratuita y le mostraremos exactamente que tier tendra mas impacto para su agencia.",
-      "primary_button": "Reservar una Llamada",
-      "secondary_button": "Contactenos"
-    },
-    "contact_sales": "Contactar Ventas",
-    "faq": {
-      "title": "Preguntas sobre Precios",
+    "skillPacks": {
+      "title": "Packs por skill — add-ons dirigidos",
+      "description": "¿Una skill contra el cap? Compra un skill pack específico para esa skill, en lugar de upgrade de tier completo.",
       "items": {
-        "q1": {
-          "question": "Puedo cambiar de tier?",
-          "answer": "Si — actualice o reduzca en cualquier momento. Los cambios surten efecto en el siguiente ciclo de facturacion. Sin penalizaciones, sin permanencia."
+        "partnerStaticAds": {
+          "name": "Partner Static Ads Pack",
+          "quantity": "15 static ads",
+          "price": "97"
         },
-        "q2": {
-          "question": "Cual es la tarifa de onboarding?",
-          "answer": "Cada tier tiene una tarifa unica de onboarding que cubre configuracion, creacion de espacios de trabajo y entrenamiento inicial de sus agentes IA. Growth EUR 1.500, Professional EUR 3.000, Enterprise EUR 5.000."
+        "partnerManychat": {
+          "name": "Partner ManyChat Pack",
+          "quantity": "300 DMs/mo",
+          "price": "47"
         },
-        "q3": {
-          "question": "Que son los creditos y como funcionan?",
-          "answer": "Los creditos son la unidad de trabajo IA. Cada accion IA (generar contenido, calificar un lead, ejecutar analytics) consume creditos. Su asignacion mensual se renueva cada ciclo de facturacion y puede comprar paquetes de creditos si necesita mas."
+        "voiceMinutes": {
+          "name": "Voice Minutes Pack",
+          "quantity": "100 minutos",
+          "price": "147"
         },
-        "q4": {
-          "question": "Todos los tiers incluyen las 11 habilidades?",
-          "answer": "Si — cada tier incluye las 11 habilidades IA: Content Creator, Social Media, Blog Factory, Agente de Voz, Lead Qualifier, Gestion de Email, Ad Creator, Reel Builder, ManyChat DM, Analytics y Reporting. Los tiers difieren en espacios de trabajo, creditos y nivel de soporte."
+        "videoAds": {
+          "name": "Video Ads Pack",
+          "quantity": "10 video ads",
+          "price": "197"
+        },
+        "reels": {
+          "name": "Reels Pack",
+          "quantity": "10 reels",
+          "price": "197"
+        },
+        "blogPower": {
+          "name": "Blog Power Pack",
+          "quantity": "10 artículos",
+          "price": "197"
         }
       }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre pricing",
+      "items": {
+        "q1": {
+          "question": "¿Por qué skill caps en lugar de \"todas las skills unlimited\"?",
+          "answer": "Voice, Video Ad y Reel Builder son las skills más caras en uso de credits (5-25 cr por acción). Unlimited en todos los tiers llevaría a precios astronómicos o a throttling de fair-use tras bambalinas. Los caps mantienen los costes predecibles y dan a cada tier un upgrade trigger natural."
+        },
+        "q2": {
+          "question": "¿Qué pasa si supero mis credits o caps?",
+          "answer": "Recibes avisos al 80% y 100% de tu asignación mensual. Luego puedes elegir: esperar al mes siguiente, comprar un credit pack (Partner Top-Up €39 a Unlimited €697), o upgrade a un tier superior. Sin overage automático, sin sorpresa en tu factura."
+        },
+        "q3": {
+          "question": "¿Puedo upgrade o downgrade entre tiers?",
+          "answer": "Upgrade es posible en cualquier momento con facturación prorrateada. Downgrade sucede en el siguiente ciclo de facturación. De Founding a inferior no es posible — tu precio Founding es de por vida mientras te mantengas activo."
+        },
+        "q4": {
+          "question": "¿Obtengo las 12 skills o un subset?",
+          "answer": "Partner tiene 8 skills incluidas + 2 vías add-on (static ads + ManyChat). Growth / Professional / Enterprise / Founding tienen las 12 skills disponibles, con caps de tier en las más costosas. Voice / Video Ad / Reel Builder no están disponibles en Partner — para esos vete a Growth."
+        },
+        "q5": {
+          "question": "¿Qué cubre el onboarding fee?",
+          "answer": "El onboarding fee único cubre 4 semanas de partnership setup por Daley: intake de brand voice por cliente, definiciones KPI, configuración de skills, test runs y setup de approval workflow. Esto no es un fee de instalación técnica — es inversión en un empleado IA funcionando."
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para empezar la partnership?",
+      "description": "Máx. 20 agencias al año. Reserva una llamada — evaluaremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
+      "primary": "Reserva una llamada",
+      "secondary": "Lee el caso SkinClarity"
     }
   },
   "how-it-works": {
