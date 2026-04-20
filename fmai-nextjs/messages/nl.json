@@ -15,36 +15,36 @@
     },
     "services": {
       "title": "Wat Clyde Doet voor Jouw Bureau",
-      "subtitle": "Zes gespecialiseerde skills. Vertel Clyde wat je nodig hebt — hij voert het uit.",
-      "contentCreator": {
-        "number": "01",
-        "title": "Content Creator",
-        "description": "Clyde schrijft dagelijks blogposts, social captions en nieuwsbrieven — afgestemd op de merkstem en doelgroep van elke klant"
-      },
+      "subtitle": "Twaalf gespecialiseerde vaardigheden. Hier een greep uit wat Clyde het vaakst doet.",
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Clyde belt leads, boekt afspraken en handelt inkomende vragen af — in het Nederlands, Engels of Spaans"
+        "description": "Clyde neemt de telefoon op, boekt afspraken en beantwoordt FAQ — 24/7 per klant"
       },
       "leadQualifier": {
         "number": "03",
         "title": "Lead Qualifier",
-        "description": "Clyde scoort elke websitebezoeker met BANT-methodiek en stuurt gekwalificeerde leads door naar je salesteam"
+        "description": "Website chatbot die leads kwalificeert en warme prospects naar CRM stuurt"
       },
       "socialMedia": {
-        "number": "04",
+        "number": "01",
         "title": "Social Media Manager",
-        "description": "Clyde maakt, plant en publiceert posts op Instagram, LinkedIn, Facebook en X voor al je klanten"
+        "description": "Clyde runt captions, scheduling en carrousels per klant — in de juiste brand voice per merk"
       },
       "adCreator": {
-        "number": "05",
+        "number": "04",
         "title": "Ad Creator",
-        "description": "Clyde genereert advertentieteksten en creatieve variaties voor Meta, Google en LinkedIn campagnes — getest en geoptimaliseerd"
+        "description": "Clyde genereert statische en video ads voor Meta — A/B varianten direct publiceerbaar"
       },
       "reporting": {
-        "number": "06",
+        "number": "05",
         "title": "Reporting & Analytics",
-        "description": "Clyde genereert wekelijkse prestatierapporten voor elke klant — cross-platform, met ingebouwde anomalie-alerts"
+        "description": "Wekelijkse performance digests, KPI dashboards en anomaly alerts"
+      },
+      "clyde": {
+        "number": "06",
+        "title": "Clyde AI Employee",
+        "description": "De orchestrator — geef opdrachten in natural language, Clyde routeert naar de juiste vaardigheid"
       }
     },
     "trust": {
@@ -378,7 +378,10 @@
           "cookies": "Cookies",
           "apply": "Plan een gesprek",
           "memory": "Memory System",
-          "caseStudies": "Case Studies"
+          "caseStudies": "Case Studies",
+          "blog_factory": "Blog Factory",
+          "seo_geo": "SEO / GEO",
+          "clyde": "Clyde AI Employee"
         },
         "status_badge": "Alle systemen operationeel",
         "social_aria": {

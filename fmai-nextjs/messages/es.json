@@ -15,36 +15,36 @@
     },
     "services": {
       "title": "Lo Que Clyde Hace por Tu Agencia",
-      "subtitle": "Seis habilidades especializadas. Dile a Clyde lo que necesitas — él lo ejecuta.",
-      "contentCreator": {
-        "number": "01",
-        "title": "Content Creator",
-        "description": "Clyde escribe posts de blog, captions para redes y newsletters a diario — adaptados a la voz de marca y audiencia de cada cliente"
-      },
+      "subtitle": "Doce habilidades especializadas. Una muestra de lo que Clyde hace con más frecuencia.",
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Clyde llama leads, agenda citas y gestiona consultas entrantes — en español, inglés u holandés"
+        "description": "Clyde responde el teléfono, reserva citas y contesta FAQ — 24/7 por cliente"
       },
       "leadQualifier": {
         "number": "03",
         "title": "Lead Qualifier",
-        "description": "Clyde puntua cada visitante web con metodología BANT y envía los leads calificados a tu equipo de ventas"
+        "description": "Chatbot web que califica leads y rutea prospects calientes al CRM"
       },
       "socialMedia": {
-        "number": "04",
+        "number": "01",
         "title": "Social Media Manager",
-        "description": "Clyde crea, programa y publica posts en Instagram, LinkedIn, Facebook y X para todos tus clientes"
+        "description": "Clyde gestiona captions, scheduling y carruseles por cliente — en la brand voice correcta por marca"
       },
       "adCreator": {
-        "number": "05",
+        "number": "04",
         "title": "Ad Creator",
-        "description": "Clyde genera textos publicitarios y variaciones creativas para campañas en Meta, Google y LinkedIn — probados y optimizados"
+        "description": "Clyde genera ads estáticas y video para Meta — variantes A/B listas para publicar"
       },
       "reporting": {
-        "number": "06",
+        "number": "05",
         "title": "Reporting & Analytics",
-        "description": "Clyde genera reportes de rendimiento semanales para cada cliente — multiplataforma, con alertas de anomalías integradas"
+        "description": "Performance digests semanales, KPI dashboards y anomaly alerts"
+      },
+      "clyde": {
+        "number": "06",
+        "title": "Clyde AI Employee",
+        "description": "El orchestrator — da comandos en lenguaje natural, Clyde rutea a la skill correcta"
       }
     },
     "trust": {
@@ -378,7 +378,10 @@
           "cookies": "Cookies",
           "apply": "Reserva llamada",
           "memory": "Memory System",
-          "caseStudies": "Casos de Estudio"
+          "caseStudies": "Casos de Estudio",
+          "blog_factory": "Blog Factory",
+          "seo_geo": "SEO / GEO",
+          "clyde": "Clyde AI Employee"
         },
         "status_badge": "Todos los sistemas operativos",
         "social_aria": {

@@ -2,22 +2,33 @@ import type { PersonaConfig, TopicRouterResult } from './types'
 
 const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/': 'User is on the homepage. Give an overview of capabilities, route to relevant skills.',
-  '/skills/content-creator':
-    'User is on the Content Creator skill page. Offer to write content for their client.',
-  '/skills/voice-agent':
-    'User is on the Voice Agent skill page. Explain how you handle calls or answer questions.',
-  '/skills/chatbot':
-    'User is on the Chatbot skill page. You ARE the demo — point out they are chatting with you right now.',
-  '/skills/lead-qualifier':
-    'User is on the Lead Qualifier skill page. Offer to score a sample lead.',
+  '/memory': 'User is on the Memory System page. Explain the 4-layer memory and per-client isolation.',
+  '/pricing': 'User is on the Pricing page. Help calculate ROI and walk through tiers.',
+  '/apply': 'User is on the Apply page. Answer questions about the partnership process.',
+  '/case-studies/skinclarity-club':
+    'User is on the SkinClarity Club case study. Explain how Clyde runs 3 IG accounts autonomously.',
   '/skills/social-media':
     'User is on the Social Media skill page. Offer to create a content calendar.',
+  '/skills/blog-factory':
+    'User is on the Blog Factory skill page. Offer to plan an SEO blog article.',
   '/skills/ad-creator': 'User is on the Ad Creator skill page. Offer to generate ad variations.',
-  '/skills/email':
-    'User is on the Email skill page. Talk about campaigns, follow-ups, inbox management.',
+  '/skills/reel-builder':
+    'User is on the Reel Builder skill page (coming soon). Explain the roadmap.',
+  '/skills/voice-agent':
+    'User is on the Voice Agent skill page. Explain how you handle calls or answer questions.',
+  '/skills/lead-qualifier':
+    'User is on the Lead Qualifier skill page. You ARE the demo — point out they are chatting with you right now.',
+  '/skills/email-management':
+    'User is on the Email Management skill page. Explain Gmail inbox classification, not campaigns.',
+  '/skills/manychat':
+    'User is on the ManyChat DM skill page (coming soon). Explain Instagram DM automation.',
   '/skills/reporting':
     'User is on the Reporting skill page. Offer to show a weekly performance report.',
-  '/pricing': 'User is on the Pricing page. Help calculate ROI and walk through tiers.',
+  '/skills/seo-geo':
+    'User is on the SEO/GEO skill page. Emphasize AI citation monitoring as a USP.',
+  '/skills/research':
+    'User is on the Research skill page. Offer to run a market research query.',
+  '/skills/clyde': 'User is on the Clyde skill page. You are the orchestrator — demonstrate it.',
   '/about': 'User is on the About page. Share how you work.',
 }
 

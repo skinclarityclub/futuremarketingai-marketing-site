@@ -36,10 +36,18 @@ export async function Footer({ locale }: FooterProps) {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/skills/content-creator"
+                    href="/skills/social-media"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.content_creator')}
+                    {t('landing.footer.nav.social_media')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/blog-factory"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.blog_factory')}
                   </Link>
                 </li>
                 <li>
@@ -60,14 +68,6 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/skills/social-media"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.social_media')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/skills/ad-creator"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
@@ -76,10 +76,18 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/skills/reporting"
+                    href="/skills/seo-geo"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
-                    {t('landing.footer.nav.reporting')}
+                    {t('landing.footer.nav.seo_geo')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/clyde"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.clyde')}
                   </Link>
                 </li>
                 <li>

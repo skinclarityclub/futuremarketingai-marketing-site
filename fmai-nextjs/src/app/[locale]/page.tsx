@@ -32,12 +32,12 @@ export async function generateMetadata({
 }
 
 const SERVICE_CARDS = [
-  { key: 'contentCreator', href: '/skills/content-creator' },
+  { key: 'socialMedia', href: '/skills/social-media' },
   { key: 'voiceAgent', href: '/skills/voice-agent' },
   { key: 'leadQualifier', href: '/skills/lead-qualifier' },
-  { key: 'socialMedia', href: '/skills/social-media' },
   { key: 'adCreator', href: '/skills/ad-creator' },
   { key: 'reporting', href: '/skills/reporting' },
+  { key: 'clyde', href: '/skills/clyde' },
 ] as const
 
 const STAT_KEYS = ['clients', 'content', 'hours', 'languages'] as const
