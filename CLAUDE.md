@@ -1,70 +1,75 @@
-# FutureMarketingAI — Demo Website
+# FutureMarketingAI — Marketing Website (Repo Root)
 
-> Agent Operating Manual — read this before every session
+> Agent Operating Manual — repo root. For code-level work use `fmai-nextjs/CLAUDE.md` (authoritative for the live codebase).
 
-**One-liner**: Interactive B2B demo/showcase website for FutureMarketingAI. Desktop-first React/Vite app demonstrating the Marketing Machine to enterprise clients.
+## One-liner
 
----
+Marketing + application site voor FutureMarketingAI, een high-touch AI marketing partnership platform. Live codebase: **`fmai-nextjs/`** (Next.js 16 + `next-intl`). Productie: `future-marketing.ai`. Content NL/EN/ES (NL authoritative).
+
+## Repo layout
+
+```
+Futuremarketingai/
+├── CLAUDE.md                 — dit bestand (root overview)
+├── README.md
+├── DEPLOYMENT.md
+├── fmai-nextjs/              — LIVE CODEBASE (Next.js 16)
+│   ├── CLAUDE.md             — project-specific operating manual
+│   ├── src/app/[locale]/     — routes
+│   ├── messages/             — i18n (nl.json / en.json / es.json)
+│   └── public/               — assets, screenshots
+└── docs/
+    ├── plans/                — design docs, research, implementation plans
+    └── ...                   — extra project documentation
+```
+
+> **Note**: een oudere `src/` tree op root-level kan bestaan als legacy van een eerdere Vite implementatie. Niet gebruiken — de levende site is `fmai-nextjs/`.
+
+## Stack (live codebase)
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| React | 19 |
+| i18n | next-intl 4.8 (NL / EN / ES) |
+| Styling | Tailwind 4 |
+| Deploy | Vercel |
+
+Voor full stack-info, theme-colors, commands, conventions, pricing SSoT en content upgrade context: zie `fmai-nextjs/CLAUDE.md`.
 
 ## Obsidian Knowledge Vault
 
 **Vault path**: `C:\Users\daley\Desktop\SkinClarity Club\FMai-SKC`
+**This project's vault folder**: `Agency/Website/`
 
-All project documentation is centralized in this Obsidian vault, shared between FMai and SKC projects. Use this vault to:
+LLM Wiki pattern — read `_schema/CLAUDE.md` in de vault voor full conventions.
+Auto-capture is configured globally in `~/.claude/CLAUDE.md`.
 
-- **Read** context from other projects (e.g., FMai strategy, pricing docs)
-- **Write** new documentation in Obsidian format when creating significant docs
-- **Cross-reference** using `[[wikilinks]]` between documents
+### Key vault locations
 
-### Obsidian conventions for all .md files:
-
-- YAML frontmatter: `title`, `tags`, `created`, `source`
-- Internal links: `[[Document Name]]` (wikilinks, not markdown links)
-- Tags: `#tag` format
-- No emoji in headings
-
-### Key vault locations for this project:
-
-- `FMai/Website/` — this project's docs (README, deployment, AI assistant)
-- `FMai/Architectuur/` — design system, SaaS blueprint
-- `FMai/Strategie/` — pricing, pitch guides, business plans
-- `FMai/Roadmaps/` — active roadmaps and requirements
+- `Agency/Website/` — project docs (README, deployment, AI assistant notes)
+- `Agency/Architectuur/` — design system, SaaS blueprint
+- `Agency/Strategie/` — pricing, pitch guides, business plans
+- `Agency/Roadmaps/` — active roadmaps and requirements
 - `Gedeeld/` — shared audits, research, legal docs
+- `wiki/` — LLM-compiled knowledge (concepts, entities, skills, synthesis)
 
-### Related projects:
+## Related Projects
 
-- `C:\Users\daley\Desktop\fma-app` — SaaS command center (Next.js)
-- `C:\Users\daley\Desktop\FMai` — n8n content automation (WAT architecture)
+- `C:\Users\daley\Desktop\fma-app` — Next.js SaaS command center (multi-tenant, Stripe, Supabase). **Pricing SSoT** — `src/lib/skills.ts`.
+- `C:\Users\daley\Desktop\FMai` — n8n content automation (WAT architecture) voor SkinClarity Club
 - `C:\Users\daley\Desktop\skinclarityclub` — SKC member platform
 - `C:\Users\daley\Desktop\skinclarity-shopify` — SKC Shopify webshop
 
----
+## Actieve Werkstroom (2026-04-20)
 
-## Stack
+Volledige content-herpositionering van de website naar high-touch AI partnership model, 12 vaardigheden, nieuw pricing schema (Partner €347 / Growth €2.497 / Pro €4.497 / Ent €7.997 / Founding €997).
 
-| Layer      | Technology                  |
-| ---------- | --------------------------- |
-| Framework  | React 18.3+ with TypeScript |
-| Build Tool | Vite 6.0+                   |
-| Styling    | Tailwind CSS 3.4+           |
-| Animations | Framer Motion 11.0+         |
-| Routing    | React Router 6.22+          |
-| Deployment | Vercel                      |
+**Core docs in `docs/plans/`:**
 
-## Architecture: Desktop-First
+- `2026-04-20-website-content-upgrade-design.md` — approved design (decision log)
+- `2026-04-20-website-content-upgrade-plan.md` — task-by-task implementatie plan (6 phases)
+- `2026-04-20-pricing-final-proposal.md` — pricing synthese
+- `2026-04-19-audit-*` + `audit-capabilities-inventory.md` — onderliggende research
 
-**THIS PROJECT IS DESKTOP-FIRST. MOBILE IS SUPPLEMENTAL.**
-
-- **Primary**: Desktop experience (B2B professionals)
-- **Supplemental**: Mobile variant for discovery/teaser
-- **Critical**: Desktop components NEVER modified for mobile
-- **Approach**: Separate mobile components + conditional rendering
-
-## Theme
-
-- **Dark Background:** #050814
-- **Surface:** #0A0E27
-- **Primary Accent:** #00D4FF (Cyan)
-- **Secondary Accent:** #A855F7 (Purple)
-- **Success:** #00FF88 (Green)
-- **Typography:** Inter (sans), JetBrains Mono (mono)
+**Executie**: via `superpowers:executing-plans` skill, één phase per sessie. Status check altijd via `git log --oneline | head -20`.
