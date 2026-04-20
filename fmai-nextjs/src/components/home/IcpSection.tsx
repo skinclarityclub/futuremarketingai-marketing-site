@@ -47,7 +47,7 @@ export async function IcpSection({ locale }: { locale: string }) {
                 aria-hidden
                 className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-text-muted/15 text-text-muted text-sm"
               >
-                —
+                ×
               </span>
               {t('notFitTitle')}
             </h3>
@@ -55,7 +55,7 @@ export async function IcpSection({ locale }: { locale: string }) {
               {NOT_FIT_KEYS.map((key) => (
                 <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
                   <span aria-hidden className="text-text-muted pt-[2px] shrink-0">
-                    —
+                    ×
                   </span>
                   <span>{t(key)}</span>
                 </li>

@@ -8,13 +8,29 @@ export function PricingJsonLd() {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'AI Marketing Starter',
-        description: 'Growth tier — All 11 AI skills, 5 workspaces, 3,000 credits/month, email support. One-time onboarding EUR 1,500.',
-        price: '1497',
+        name: 'AI Marketing Partner',
+        description:
+          'Partner tier. 8 of 12 skills included, 1 workspace, 1,000 credits/month, email support. One-time onboarding EUR 497.',
+        price: '347',
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '1497',
+          price: '347',
+          priceCurrency: 'EUR',
+          billingDuration: 'P1M',
+        },
+        seller: { '@type': 'Organization', name: 'Future Marketing AI' },
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Marketing Starter',
+        description:
+          'Growth tier. All 12 skills with tier caps, 5 workspaces, 4,000 credits/month, email + app support. One-time onboarding EUR 1,997.',
+        price: '2497',
+        priceCurrency: 'EUR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '2497',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },
@@ -23,12 +39,13 @@ export function PricingJsonLd() {
       {
         '@type': 'Offer',
         name: 'AI Marketing Pro',
-        description: 'Professional tier — All 11 AI skills, 15 workspaces, 8,000 credits/month, dedicated Slack + monthly call. One-time onboarding EUR 3,000.',
-        price: '2997',
+        description:
+          'Professional tier. All 12 skills with wider caps, 15 workspaces, 12,000 credits/month, Slack support + monthly strategy call. One-time onboarding EUR 3,997.',
+        price: '4497',
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '2997',
+          price: '4497',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },
@@ -37,12 +54,28 @@ export function PricingJsonLd() {
       {
         '@type': 'Offer',
         name: 'AI Marketing Suite',
-        description: 'Enterprise tier — All 11 AI skills, unlimited workspaces, 20,000 credits/month, dedicated CSM + custom SLA. One-time onboarding EUR 5,000.',
-        price: '4997',
+        description:
+          'Enterprise tier. All 12 skills unlimited (fair use), unlimited workspaces, 30,000 credits/month, dedicated CSM + SLA. One-time onboarding EUR 5,997.',
+        price: '7997',
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '4997',
+          price: '7997',
+          priceCurrency: 'EUR',
+          billingDuration: 'P1M',
+        },
+        seller: { '@type': 'Organization', name: 'Future Marketing AI' },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Founders Club',
+        description:
+          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, Founder Slack with Daley. No onboarding fee.',
+        price: '997',
+        priceCurrency: 'EUR',
+        priceSpecification: {
+          '@type': 'UnitPriceSpecification',
+          price: '997',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },

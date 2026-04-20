@@ -1,24 +1,24 @@
 import type { TopicDefinition } from '../types'
 
 export const LEADGEN_TOPICS: TopicDefinition[] = [
-  {
-    key: 'content_types',
-    priority: 10,
-    keywords: [
-      'blog',
-      'social',
-      'newsletter',
-      'video',
-      'content type',
-      'post',
-      'article',
-      'LinkedIn',
-      'Instagram',
-      'email',
-      'ad copy',
-      'script',
-    ],
-    content: `## Content Types the AI Marketing Employee Produces
+ {
+ key: 'content_types',
+ priority: 10,
+ keywords: [
+ 'blog',
+ 'social',
+ 'newsletter',
+ 'video',
+ 'content type',
+ 'post',
+ 'article',
+ 'LinkedIn',
+ 'Instagram',
+ 'email',
+ 'ad copy',
+ 'script',
+ ],
+ content: `## Content Types the AI Marketing Employee Produces
 
 **Blog Posts & Articles**
 SEO-optimized long-form content (800-2000 words). Includes meta descriptions, internal linking suggestions, and keyword targeting. Output: 2-4 articles per week per client.
@@ -37,23 +37,23 @@ Short-form video scripts (30-90 seconds) for reels, TikTok, and YouTube Shorts. 
 
 **Ad Copy**
 Google Ads headlines and descriptions, Meta ad primary text and headlines, LinkedIn sponsored content. Includes A/B test variants. Output: ad sets with 3-5 variants.`,
-  },
-  {
-    key: 'content_strategy',
-    priority: 9,
-    keywords: [
-      'strategy',
-      'plan',
-      'calendar',
-      'frequency',
-      'audience',
-      'goals',
-      'KPI',
-      'engagement',
-      'reach',
-      'growth',
-    ],
-    content: `## Content Strategy Framework
+ },
+ {
+ key: 'content_strategy',
+ priority: 9,
+ keywords: [
+ 'strategy',
+ 'plan',
+ 'calendar',
+ 'frequency',
+ 'audience',
+ 'goals',
+ 'KPI',
+ 'engagement',
+ 'reach',
+ 'growth',
+ ],
+ content: `## Content Strategy Framework
 
 **Discovery Phase (What the AI Asks First)**
 1. Client industry and niche
@@ -76,23 +76,23 @@ The AI organizes content around 3-5 pillars per client:
 - Blog: 2-4x/week (consistency matters more than volume)
 - Newsletter: 1-2x/week (Tuesday and Thursday mornings)
 - Ads: Refresh creatives every 2-4 weeks`,
-  },
-  {
-    key: 'seo_basics',
-    priority: 8,
-    keywords: [
-      'SEO',
-      'keywords',
-      'search',
-      'Google',
-      'ranking',
-      'organic',
-      'meta',
-      'title',
-      'description',
-      'backlinks',
-    ],
-    content: `## SEO Content Optimization
+ },
+ {
+ key: 'seo_basics',
+ priority: 8,
+ keywords: [
+ 'SEO',
+ 'keywords',
+ 'search',
+ 'Google',
+ 'ranking',
+ 'organic',
+ 'meta',
+ 'title',
+ 'description',
+ 'backlinks',
+ ],
+ content: `## SEO Content Optimization
 
 **How the AI Optimizes for Search**
 Every blog post and article is created with SEO best practices:
@@ -113,22 +113,22 @@ Every blog post and article is created with SEO best practices:
 - No keyword stuffing or unnatural placement
 - No duplicate content across clients
 - No black-hat SEO techniques
-- SEO recommendations are suggestions — agency has final say`,
-  },
-  {
-    key: 'brand_voice_guidelines',
-    priority: 7,
-    keywords: [
-      'brand voice',
-      'tone',
-      'style',
-      'writing',
-      'adapt',
-      'client voice',
-      'guidelines',
-      'personality',
-    ],
-    content: `## Brand Voice Adaptation
+- SEO recommendations are suggestions. Agency has final say`,
+ },
+ {
+ key: 'brand_voice_guidelines',
+ priority: 7,
+ keywords: [
+ 'brand voice',
+ 'tone',
+ 'style',
+ 'writing',
+ 'adapt',
+ 'client voice',
+ 'guidelines',
+ 'personality',
+ ],
+ content: `## Brand Voice Adaptation
 
 **How the AI Adapts to Each Client's Voice**
 The Content Creator skill maintains a separate brand voice profile per client workspace. Content for a law firm reads completely differently from content for a fitness studio.
@@ -149,22 +149,22 @@ The Content Creator skill maintains a separate brand voice profile per client wo
 **Example Voice Contrasts:**
 - Law firm: "Our team ensures full regulatory compliance for your expansion." (formal, expert, calm)
 - Fitness studio: "Ready to crush your goals this week? Let's go!" (casual, enthusiastic, bold)`,
-  },
-  {
-    key: 'content_calendar',
-    priority: 6,
-    keywords: [
-      'calendar',
-      'schedule',
-      'planning',
-      'week',
-      'month',
-      'upcoming',
-      'queue',
-      'batch',
-      'workflow',
-    ],
-    content: `## Content Calendar Planning
+ },
+ {
+ key: 'content_calendar',
+ priority: 6,
+ keywords: [
+ 'calendar',
+ 'schedule',
+ 'planning',
+ 'week',
+ 'month',
+ 'upcoming',
+ 'queue',
+ 'batch',
+ 'workflow',
+ ],
+ content: `## Content Calendar Planning
 
 **How the AI Plans Content**
 Given a client brief and active content types, the AI generates a weekly content calendar:
@@ -188,5 +188,5 @@ The AI generates content in batches for efficiency. A typical weekly batch for o
 - 5 Instagram captions (with hashtag sets)
 - 1 newsletter (with subject line variants)
 - Ad copy refreshes (if ad skill is active)`,
-  },
+ },
 ]

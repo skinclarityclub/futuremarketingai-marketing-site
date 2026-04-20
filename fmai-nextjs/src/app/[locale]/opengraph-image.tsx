@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { OgImageTemplate } from '@/lib/og-image'
 
-export const alt = 'Future Marketing AI — AI-Powered Marketing Automation'
+export const alt = 'Future Marketing AI: AI-Powered Marketing Automation'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

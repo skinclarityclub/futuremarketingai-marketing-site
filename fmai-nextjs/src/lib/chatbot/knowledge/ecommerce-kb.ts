@@ -1,9 +1,9 @@
 import type { TopicDefinition } from '../types'
 
 export const ECOMMERCE_TOPICS: TopicDefinition[] = [
-  {
-    key: 'onboarding_steps',
-    content: `## Agency Onboarding Steps
+ {
+ key: 'onboarding_steps',
+ content: `## Agency Onboarding Steps
 
 **Step 1: Create Your Agency Workspace**
 Set up your agency profile with company name, logo, and team members. Each team member gets role-based access (Admin, Manager, Viewer).
@@ -22,22 +22,22 @@ Choose which AI skills to enable for this client. Each skill handles a specific 
 
 **Step 6: Launch the Content Calendar**
 Set posting frequency, review workflows (auto-publish or approval queue), and let the AI Marketing Employee start producing content.`,
-    keywords: [
-      'onboarding',
-      'setup',
-      'getting started',
-      'first steps',
-      'how to start',
-      'begin',
-      'workspace',
-      'create account',
-      'sign up',
-    ],
-    priority: 10,
-  },
-  {
-    key: 'skills',
-    content: `## AI Marketing Employee Skills
+ keywords: [
+ 'onboarding',
+ 'setup',
+ 'getting started',
+ 'first steps',
+ 'how to start',
+ 'begin',
+ 'workspace',
+ 'create account',
+ 'sign up',
+ ],
+ priority: 10,
+ },
+ {
+ key: 'skills',
+ content: `## AI Marketing Employee Skills
 
 **Content Creator**
 Produces blog posts, articles, and long-form content optimized for SEO. Adapts to client brand voice. Output: 2-4 blog posts per week per client.
@@ -56,23 +56,23 @@ Scores and qualifies inbound leads from forms, chatbots, and email. Routes hot l
 
 **Reporting Analyst**
 Compiles weekly and monthly performance reports across all channels. Tracks KPIs, identifies trends, and suggests optimizations. Output: automated PDF reports.`,
-    keywords: [
-      'skills',
-      'capabilities',
-      'what can it do',
-      'features',
-      'content creator',
-      'social media',
-      'ad creator',
-      'voice agent',
-      'lead qualifier',
-      'reporting',
-    ],
-    priority: 9,
-  },
-  {
-    key: 'brand_voice',
-    content: `## Brand Voice Setup
+ keywords: [
+ 'skills',
+ 'capabilities',
+ 'what can it do',
+ 'features',
+ 'content creator',
+ 'social media',
+ 'ad creator',
+ 'voice agent',
+ 'lead qualifier',
+ 'reporting',
+ ],
+ priority: 9,
+ },
+ {
+ key: 'brand_voice',
+ content: `## Brand Voice Setup
 
 **Why Brand Voice Matters**
 Every client has a unique tone. The AI Marketing Employee adapts its writing style per client so content sounds authentic, not generic.
@@ -93,20 +93,20 @@ Each client workspace has its own brand voice profile. Content for Client A neve
 - Sentence structure (short and punchy, detailed and thorough)
 - Call-to-action style (direct, suggestive, educational)
 - Industry jargon preferences (use, avoid, or explain)`,
-    keywords: [
-      'brand voice',
-      'tone',
-      'writing style',
-      'content style',
-      'brand guidelines',
-      'client voice',
-      'tone of voice',
-    ],
-    priority: 8,
-  },
-  {
-    key: 'client_management',
-    content: `## Client Workspace Management
+ keywords: [
+ 'brand voice',
+ 'tone',
+ 'writing style',
+ 'content style',
+ 'brand guidelines',
+ 'client voice',
+ 'tone of voice',
+ ],
+ priority: 8,
+ },
+ {
+ key: 'client_management',
+ content: `## Client Workspace Management
 
 **Multi-Client Dashboard**
 View all client workspaces from a single agency dashboard. See content status, upcoming posts, performance metrics, and skill activity per client at a glance.
@@ -127,22 +127,22 @@ Adding a new client takes under 15 minutes: create workspace, configure brand vo
 
 **Client Offboarding**
 Deactivate a client workspace to pause all skills and scheduled content. Data is retained for 90 days. Export all content and analytics before permanent deletion.`,
-    keywords: [
-      'client',
-      'workspace',
-      'manage',
-      'dashboard',
-      'multi-client',
-      'scaling',
-      'team',
-      'collaboration',
-      'approval',
-    ],
-    priority: 7,
-  },
-  {
-    key: 'content_calendar',
-    content: `## Content Calendar Basics
+ keywords: [
+ 'client',
+ 'workspace',
+ 'manage',
+ 'dashboard',
+ 'multi-client',
+ 'scaling',
+ 'team',
+ 'collaboration',
+ 'approval',
+ ],
+ priority: 7,
+ },
+ {
+ key: 'content_calendar',
+ content: `## Content Calendar Basics
 
 **How It Works**
 The AI Marketing Employee generates a content calendar based on the client's industry, audience, and active skills. Content is queued for review or auto-published based on your workflow settings.
@@ -165,17 +165,17 @@ The AI Marketing Employee generates a content calendar based on the client's ind
 1. Auto-publish: AI creates and publishes without human review (fastest)
 2. Single approval: Content goes to one approver before publishing
 3. Agency + Client approval: Agency reviews first, then client approves`,
-    keywords: [
-      'calendar',
-      'schedule',
-      'content plan',
-      'posting',
-      'frequency',
-      'workflow',
-      'approval',
-      'review',
-      'publish',
-    ],
-    priority: 6,
-  },
+ keywords: [
+ 'calendar',
+ 'schedule',
+ 'content plan',
+ 'posting',
+ 'frequency',
+ 'workflow',
+ 'approval',
+ 'review',
+ 'publish',
+ ],
+ priority: 6,
+ },
 ]

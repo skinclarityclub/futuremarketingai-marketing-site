@@ -4,7 +4,7 @@ export const ORG_EMAIL = 'info@futuremarketingai.com'
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
 
 export const ENTITY_DESCRIPTION =
-  'Future Marketing AI provides an AI Marketing Employee for marketing agencies — a persistent AI agent with pluggable skills like content creation, social media, voice agents, lead qualification, ad creation, and reporting.'
+  'Future Marketing AI provides an AI Marketing Employee for marketing agencies: a persistent AI partner named Clyde with 12 skills (social media, blog factory, ad creator, voice agent, lead qualifier, email management, reporting, SEO/GEO, research, ManyChat DM, reel builder, and orchestration) plus long-term client memory.'
 
 export const PAGE_DATES: Record<string, string> = {
   '/': '2026-04-20',

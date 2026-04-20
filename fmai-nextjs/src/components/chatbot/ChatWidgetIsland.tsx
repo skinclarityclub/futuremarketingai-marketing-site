@@ -8,9 +8,9 @@ const WELCOME_MESSAGES: Record<string, string> = {
   '/': "I'm Clyde. Ask me anything about what I can do for your agency.",
   '/skills/social-media': "I'm Clyde. Want me to create a content calendar for one of your clients?",
   '/skills/voice-agent':
-    "I'm Clyde. I can show you how I handle phone calls — or answer any questions.",
+    "I'm Clyde. I can show you how I handle phone calls, or answer any questions.",
   '/skills/lead-qualifier':
-    "I'm Clyde. You're chatting with me right now — this is exactly what your clients would get on their site.",
+    "I'm Clyde. You're chatting with me right now. This is exactly what your clients would get on their site.",
   '/skills/ad-creator': "I'm Clyde. I can generate ad variations from any campaign brief.",
   '/skills/email-management':
     "I'm Clyde. I classify your Gmail inbox and send daily digests of what matters.",

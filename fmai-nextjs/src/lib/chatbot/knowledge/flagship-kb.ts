@@ -11,9 +11,9 @@ import { DEMO_GUIDE_TOPICS } from './demo-guide-kb'
  * all topics does not bloat the prompt -- only matched topics are injected.
  */
 export const FLAGSHIP_TOPICS: TopicDefinition[] = [
-  ...CONCIERGE_TOPICS,
-  ...ECOMMERCE_TOPICS,
-  ...LEADGEN_TOPICS,
-  ...SUPPORT_TOPICS,
-  ...DEMO_GUIDE_TOPICS,
+ ...CONCIERGE_TOPICS,
+ ...ECOMMERCE_TOPICS,
+ ...LEADGEN_TOPICS,
+ ...SUPPORT_TOPICS,
+ ...DEMO_GUIDE_TOPICS,
 ]

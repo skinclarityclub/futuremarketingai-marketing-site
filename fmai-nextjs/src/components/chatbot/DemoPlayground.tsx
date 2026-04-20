@@ -18,20 +18,20 @@ const PERSONA_STARTERS: Record<DemoPersonaId, Record<string, string[]>> = {
 
 const PERSONA_NAMES: Record<DemoPersonaId, string> = {
   ecommerce: 'Onboarding Assistant',
-  leadgen: 'Content Creator',
+  leadgen: 'Lead Qualifier',
   support: 'ROI Calculator',
   concierge: 'Website Concierge',
 }
 
 const PERSONA_WELCOME: Record<DemoPersonaId, string> = {
   ecommerce:
-    "Welcome! I'm an AI assistant — your AI Marketing Employee onboarding guide. Tell me about your client's brand and I'll show you how I learn their voice, audience, and style.",
+    "Welcome! I'm your Clyde onboarding guide. Tell me about your client's brand and I'll show you how I learn their voice, audience, and style.",
   leadgen:
-    "Hi! I'm an AI assistant — the Content Creator skill. Give me a topic and a client brief, and I'll draft an SEO-optimized blog post tailored to their brand voice.",
+    "Hi! I'm Clyde, the Lead Qualifier skill. Ask me a question like a website visitor would, and I'll show you how I qualify, score and route leads to CRM.",
   support:
-    "Hello! I'm an AI assistant — the ROI Calculator. Tell me about your agency — team size, hourly rates, and client count — and I'll estimate your savings with an AI Marketing Employee.",
+    "Hello! I'm Clyde, the ROI Calculator. Tell me about your agency (team size, hourly rates, client count) and I'll estimate your savings with Clyde running your portfolio.",
   concierge:
-    "Hey! I'm an AI assistant — the FutureMarketingAI Concierge. Ask me anything about our services, pricing, or how AI can transform your marketing.",
+    "Hey! I'm Clyde, your FutureMarketingAI Concierge. Ask me anything about the 12 skills, pricing tiers, or how Clyde fits your client portfolio.",
 }
 
 export function DemoPlayground() {

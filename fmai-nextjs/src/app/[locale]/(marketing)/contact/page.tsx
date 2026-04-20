@@ -113,7 +113,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   {t('book_demo.title')}
                 </SectionHeading>
                 <p className="text-text-secondary mb-4">{t('book_demo.description')}</p>
-                <CTAButton href="/contact">{t('book_demo.button')}</CTAButton>
+                <CTAButton href="/apply">{t('book_demo.button')}</CTAButton>
               </GlassCard>
 
               {/* Direct Contact */}
