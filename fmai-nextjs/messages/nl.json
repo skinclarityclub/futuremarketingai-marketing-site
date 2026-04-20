@@ -1872,5 +1872,89 @@
     "footer": {
       "nav": {}
     }
+  },
+  "case_studies": {
+    "skc": {
+      "meta": {
+        "title": "SkinClarity Club — 3 accounts × 4 merken × 1 AI-medewerker | FutureMarketingAI",
+        "description": "Case study: hoe Clyde de volledige social media operatie van SkinClarity Club autonoom runt over 3 Instagram-accounts en 4 merken. Founding partner sinds launch."
+      },
+      "hero": {
+        "eyebrow": "Case study — Founding partner",
+        "title": "3 accounts. 4 merken. Eén AI-medewerker.",
+        "subtitle": "SkinClarity Club is sinds de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere content-types — autonoom, elke dag, zonder dat het team er omkijken naar heeft."
+      },
+      "setup": {
+        "title": "De setup",
+        "subtitle": "SkinClarity Club draait een portfolio aan huidspecialisten en product-merken. Drie Instagram-accounts met elk hun eigen doelgroep en brandstyle.",
+        "account1Label": "@SkinClarityClub",
+        "account1Share": "~50% content-volume",
+        "account1Body": "Hoofdaccount — behandelingen, tips, huidkennis voor consumenten.",
+        "account2Label": "@Sindy_Huidtherapeut",
+        "account2Share": "~30% content-volume",
+        "account2Body": "Persoonlijke autoriteit-account van founder Sindy. Vertrouwen, expertise, personal branding.",
+        "account3Label": "@SkinClarity_Shop",
+        "account3Share": "~20% content-volume",
+        "account3Body": "Product-account voor de webshop — launches, bundels, product-content."
+      },
+      "skills": {
+        "title": "Welke vaardigheden actief zijn",
+        "subtitle": "Van de 12 Clyde-vaardigheden zijn er 6 actief voor SKC. De rest draait op de achtergrond, beschikbaar wanneer de business dat vraagt.",
+        "skill1Name": "Social Media Manager",
+        "skill1Body": "Carrousels, posts, stories op 3 IG-accounts. AI-gegenereerd in de juiste brand voice per account.",
+        "skill2Name": "Blog Factory",
+        "skill2Body": "SEO-blogs voor skinclarityclub.nl — huidthema's, behandelingen, product-deep-dives.",
+        "skill3Name": "SEO / GEO Analyst",
+        "skill3Body": "Technische SEO-audits + keyword tracking + AI citation monitoring (ChatGPT, Perplexity).",
+        "skill4Name": "Reporting & Analytics",
+        "skill4Body": "Wekelijkse performance digest over Instagram + Shopify + SEO data. Anomaly alerts.",
+        "skill5Name": "Research",
+        "skill5Body": "Trend monitoring in huidverzorging, concurrentie-analyse, content-ideeën met bronvermelding.",
+        "skill6Name": "Clyde (orchestrator)",
+        "skill6Body": "Centrale AI-medewerker die de 5 skills aan elkaar knoopt. Geheugen per account + cross-skill learning."
+      },
+      "content": {
+        "title": "Wat Clyde produceert",
+        "subtitle": "Concrete output voor SKC, elke week, autonoom.",
+        "row1Label": "Carrousels",
+        "row1Value": "~21 per week",
+        "row2Label": "Instagram posts",
+        "row2Value": "~15 per week",
+        "row3Label": "Stories",
+        "row3Value": "On-demand",
+        "row4Label": "Blog artikelen",
+        "row4Value": "2-4 per maand",
+        "row5Label": "SEO rapporten",
+        "row5Value": "Wekelijks",
+        "row6Label": "Performance digest",
+        "row6Value": "Maandag 08:00"
+      },
+      "architecture": {
+        "title": "Hoe het werkt",
+        "subtitle": "Eén Clyde, 3 workspace-namespaces (per account), gedeeld portfolio-geheugen. Content-goedkeuring via Sindy voordat publicatie.",
+        "body": "Clyde houdt een apart geheugen bij per Instagram-account. Wat werkt op @SkinClarityClub (educatief, tips) is anders dan op @Sindy_Huidtherapeut (persoonlijk, authoriteit). Cross-account learning vindt plaats op portfolio-niveau — bijvoorbeeld: een succesvol thema op shop kan geadapteerd worden naar het hoofd-account."
+      },
+      "timeline": {
+        "title": "Tijdlijn",
+        "week1Label": "Week 1",
+        "week1Body": "Onboarding: brand voice per account, approval workflow, KPI-definities.",
+        "month1Label": "Maand 1",
+        "month1Body": "Eerste volledige content-week autonoom. Veel feedback, Clyde kalibreert.",
+        "month3Label": "Maand 3",
+        "month3Body": "Approval-tijd per post daalt van 4 min naar 30 sec. Clyde kent de micro-tics.",
+        "nowLabel": "Nu",
+        "nowBody": "Volledig autonoom over 3 accounts, 4 merken. Sindy reviewt, Clyde voert uit."
+      },
+      "testimonial": {
+        "quote": "Clyde beheert onze volledige social content-operatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom in de achtergrond. Ik review, Clyde voert uit.",
+        "author": "Sindy",
+        "role": "Founder, SkinClarity Club"
+      },
+      "cta": {
+        "title": "Wil je dit ook voor jouw portfolio?",
+        "subtitle": "Plan een gesprek — we bespreken hoe Clyde past bij jouw merken en klanten.",
+        "button": "Plan een gesprek"
+      }
+    }
   }
 }

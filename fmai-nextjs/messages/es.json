@@ -1872,5 +1872,90 @@
     "footer": {
       "nav": {}
     }
+  },
+  "case_studies": {
+    "skc": {
+      "meta": {
+        "title": "SkinClarity Club — 3 cuentas × 4 marcas × 1 empleado IA | FutureMarketingAI",
+        "description": "Caso de estudio: cómo Clyde gestiona la operación completa de social media de SkinClarity Club de forma autónoma a través de 3 cuentas de Instagram y 4 marcas. Founding partner desde el launch."
+      },
+      "hero": {
+        "eyebrow": "Caso de estudio — Founding partner",
+        "title": "3 cuentas. 4 marcas. Un empleado IA.",
+        "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y múltiples tipos de contenido — de forma autónoma, cada día, sin que el equipo tenga que mirarlo."
+      },
+      "setup": {
+        "title": "El setup",
+        "subtitle": "SkinClarity Club gestiona un portfolio de especialistas en skincare y marcas de producto. Tres cuentas de Instagram, cada una con su propia audiencia y brand style.",
+        "account1Label": "@SkinClarityClub",
+        "account1Share": "~50% volumen de contenido",
+        "account1Body": "Cuenta principal — tratamientos, tips, conocimiento de skincare para consumidores.",
+        "account2Label": "@Sindy_Huidtherapeut",
+        "account2Share": "~30% volumen de contenido",
+        "account2Body": "Cuenta de autoridad personal de la founder Sindy. Confianza, expertise, personal branding.",
+        "account3Label": "@SkinClarity_Shop",
+        "account3Share": "~20% volumen de contenido",
+        "account3Body": "Cuenta de producto para la webshop — launches, bundles, contenido de producto."
+      },
+      "skills": {
+        "title": "Qué skills están activas",
+        "subtitle": "De las 12 skills de Clyde, 6 están activas para SKC. El resto está listo en background, disponible cuando el business lo pida.",
+        "skill1Name": "Social Media Manager",
+        "skill1Body": "Carruseles, posts, stories en 3 cuentas IG. Generado por IA en la voz de marca correcta por cuenta.",
+        "skill2Name": "Blog Factory",
+        "skill2Body": "Blogs SEO para skinclarityclub.nl — temas de skincare, tratamientos, deep-dives de producto.",
+        "skill3Name": "SEO / GEO Analyst",
+        "skill3Body": "Auditorías SEO técnicas + keyword tracking + AI citation monitoring (ChatGPT, Perplexity).",
+        "skill4Name": "Reporting & Analytics",
+        "skill4Body": "Performance digest semanal sobre Instagram + Shopify + data SEO. Anomaly alerts.",
+        "skill5Name": "Research",
+        "skill5Body": "Trend monitoring en skincare, análisis de competencia, ideas de contenido con citas de fuente.",
+        "skill6Name": "Clyde (orchestrator)",
+        "skill6Body": "Empleado IA central que une las 5 skills. Memoria por cuenta + aprendizaje cross-skill."
+      },
+      "content": {
+        "title": "Qué produce Clyde",
+        "subtitle": "Output concreto para SKC, cada semana, de forma autónoma.",
+        "row1Label": "Carruseles",
+        "row1Value": "~21 por semana",
+        "row2Label": "Posts Instagram",
+        "row2Value": "~15 por semana",
+        "row3Label": "Stories",
+        "row3Value": "On demand",
+        "row4Label": "Artículos blog",
+        "row4Value": "2-4 por mes",
+        "row5Label": "Reportes SEO",
+        "row5Value": "Semanal",
+        "row6Label": "Performance digest",
+        "row6Value": "Lunes 08:00"
+      },
+      "architecture": {
+        "title": "Cómo funciona",
+        "subtitle": "Un Clyde, 3 namespaces de workspace (por cuenta), memoria de portfolio compartida. Aprobación de contenido vía Sindy antes de publicar.",
+        "body": "Clyde mantiene memoria separada por cuenta de Instagram. Lo que funciona en @SkinClarityClub (educativo, tips) difiere de @Sindy_Huidtherapeut (personal, autoridad). El aprendizaje cross-account sucede a nivel portfolio — por ejemplo: un tema que rinde en shop puede adaptarse a la cuenta principal."
+      },
+      "timeline": {
+        "title": "Timeline",
+        "week1Label": "Semana 1",
+        "week1Body": "Onboarding: voz de marca por cuenta, approval workflow, definiciones KPI.",
+        "month1Label": "Mes 1",
+        "month1Body": "Primera semana de contenido completa autónoma. Mucho feedback, Clyde calibra.",
+        "month3Label": "Mes 3",
+        "month3Body": "Tiempo de approval por post baja de 4 min a 30 seg. Clyde conoce los micro-tics.",
+        "nowLabel": "Ahora",
+        "nowBody": "Completamente autónomo en 3 cuentas, 4 marcas. Sindy revisa, Clyde ejecuta."
+      },
+      "testimonial": {
+        "quote": "Clyde beheert onze volledige social content-operatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom in de achtergrond. Ik review, Clyde voert uit.",
+        "quoteTranslated": "Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes tomaba una tarde entera a la semana ahora corre autónomo en background. Yo reviso, Clyde ejecuta.",
+        "author": "Sindy",
+        "role": "Founder, SkinClarity Club"
+      },
+      "cta": {
+        "title": "¿Quieres esto también para tu portfolio?",
+        "subtitle": "Reserva una llamada — discutiremos cómo Clyde encaja con tus marcas y clientes.",
+        "button": "Reserva una llamada"
+      }
+    }
   }
 }
