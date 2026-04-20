@@ -999,492 +999,384 @@
   },
   "skills-voice-agent": {
     "meta": {
-      "title": "Clyde Belt Jouw Leads | AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Clyde handelt 24/7 inkomende en uitgaande gesprekken af. Telefonische leadkwalificatie, afspraken boeken en opvolgingen. Jouw AI-collega mist nooit een telefoontje."
+      "title": "Voice Agent — Inbound + outbound AI-calls | Clyde",
+      "description": "AI-telefoongesprekken, afspraak booking, call-logging, escalatie naar mens. 5 credits per minuut."
     },
     "hero": {
-      "badge": "Voice Agent",
-      "title": "Clyde Belt Jouw Leads",
-      "description": "Een verkoper belt 40 keer per dag. Clyde belt er 400. Hij kwalificeert leads, boekt afspraken en volgt prospects op. De klok rond. Zonder lunchpauze."
+      "eyebrow": "Vaardigheid 02 — Voice Agent",
+      "title": "Clyde neemt de telefoon op.",
+      "subtitle": "Inkomende calls worden beantwoord, FAQ worden afgehandeld, afspraken geboekt. Uitgaande campagnes draaien zonder dat je agent-team belt. Escalatie naar mens wanneer het gesprek daarom vraagt.",
+      "cta": "Plan een gesprek"
     },
     "features": {
-      "heading": "Wat Clyde Doet aan de Telefoon",
-      "items": {
-        "inbound": {
-          "title": "Neemt Elk Gesprek Aan",
-          "description": "Clyde neemt elk inkomend gesprek direct op. Hij handelt veelgestelde vragen af, routeert complexe vragen en zet niemand ooit in de wacht."
-        },
-        "outbound": {
-          "title": "Belt Prospects Proactief",
-          "description": "Clyde voert uitgaande gesprekken voor opvolgingen, afspraakherinneringen en prospect-heractivering. Op schaal."
-        },
-        "qualification": {
-          "title": "Kwalificeert Leads per Telefoon",
-          "description": "BANT-kwalificatie bij elk gesprek. Clyde scoort prospects en geeft alleen warme leads door aan je salesteam."
-        },
-        "booking": {
-          "title": "Boekt Afspraken",
-          "description": "Clyde plant meetings direct in Calendly, Cal.com of Google Calendar tijdens het gesprek. Geen heen-en-weer."
-        }
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Inbound calls + FAQ",
+        "body": "Clyde beantwoordt veelgestelde vragen in natural language, boekt afspraken in de agenda en escaleert alleen wanneer nodig."
+      },
+      "feature2": {
+        "title": "Outbound campaigns",
+        "body": "Lijsten aflopen, intake-calls, follow-ups — Clyde belt een contactlijst en logt de resultaten per call."
+      },
+      "feature3": {
+        "title": "Call logging + transcripties",
+        "body": "Elk gesprek wordt opgenomen, getranscribeerd en doorzoekbaar gemaakt in het klant-geheugen."
+      },
+      "feature4": {
+        "title": "Human escalation",
+        "body": "Duidelijke rules wanneer Clyde doorschakelt naar een mens. Geen gesprek eindigt zonder correcte afhandeling."
       }
     },
-    "how_it_works": {
-      "heading": "Zo Werk Je met Clyde",
-      "steps": {
-        "setup": {
-          "title": "Vertel Clyde het Script",
-          "description": "Stel de stem, toon en persona in voor elke klant. Deel belscripts en kwalificatiecriteria. Clyde past zich direct aan."
-        },
-        "deploy": {
-          "title": "Clyde Gaat Live",
-          "description": "Koppel aan het telefoonsysteem van je klant. Clyde begint direct met gesprekken afhandelen. Geen inwerkperiode."
-        },
-        "optimize": {
-          "title": "Clyde Leert en Verbetert",
-          "description": "Bekijk gesprekstranscripties en analytics. Clyde leert van elk gesprek en wordt elke week beter."
-        }
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Stem + persona setup",
+        "body": "Kies stem, persoonlijkheid en kennisbasis per klant. Upload FAQ en agenda-beschikbaarheid."
+      },
+      "step2": {
+        "title": "Number routing",
+        "body": "Koppel een telefoonnummer (via VAPI). Inbound routes naar Clyde; outbound campaigns worden gepland."
+      },
+      "step3": {
+        "title": "Clyde draait, jij monitort",
+        "body": "Realtime dashboard voor calls, escalaties en resultaten. Clyde leert van gesprekken voor scherpere antwoorden."
       }
     },
-    "use_cases": {
-      "heading": "Wie Werkt met Clyde",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Bied AI-gestuurde telefoonafhandeling aan je klanten. Schaal telefoonoperaties zonder callcenterpersoneel. Clyde doet het allemaal."
-        },
-        "sales": {
-          "title": "Sales Teams",
-          "description": "Clyde kwalificeert honderden leads per dag telefonisch. Je salesteam praat alleen met prospects die klaar zijn om te kopen."
-        }
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Lead Qualifier — calls kwalificeren leads en syncen naar CRM",
+      "integration2": "Reporting — call-metrics (volume, avg duration, escalation-rate) in wekelijkse digest",
+      "integration3": "Clyde orchestrator — gesprek-context meetreizen met andere skills"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Praktijken met receptie-druk",
+        "body": "Klinieken, tandartsen, therapeuten met hoge belvolume. Clyde handelt intake + booking af."
+      },
+      "useCase2": {
+        "title": "Outbound sales-teams",
+        "body": "SDRs ontlasten voor eerste-contact calls. Clyde kwalificeert, plant, escaleert."
       }
     },
-    "task_demo": {
-      "heading": "Bekijk Clyde in Actie",
-      "command": "Bel alle leads van gisteren en plan vervolggesprekken in",
-      "result_title": "Klaar. 47 gesprekken gevoerd, 12 afspraken geboekt.",
-      "result_description": "Ik heb alle 47 leads van gisteren gebeld. 12 gekwalificeerde prospects hebben vervolgafspraken geboekt (staan al in je Calendly). 8 willen meer informatie (opvolg-e-mails verstuurd). 15 hadden geen interesse (gemarkeerd in CRM). 12 voicemails achtergelaten met terugbellinks. Gemiddelde gespreksduur: 3 minuten en 20 seconden."
-    },
-    "pricing": {
-      "heading": "Prijzen",
-      "description": "Clyde's Voice Agent skill is inbegrepen in je agent tier abonnement.",
-      "cta": "Bekijk Prijzen",
-      "cta_link": "/pricing"
-    },
-    "trust": {
-      "heading": "Clyde's Track Record",
-      "metrics": {
-        "response_time": {
-          "value": "<1s",
-          "label": "Responstijd",
-          "description": "Clyde neemt sneller op dan welke mens ook"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Altijd Beschikbaar",
-          "description": "Clyde slaapt nooit, meldt zich nooit ziek"
-        },
-        "resolution": {
-          "value": "85%",
-          "label": "Oplossingspercentage",
-          "description": "Clyde handelt het af zonder menselijke hulp"
-        }
-      }
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Ontmoet Clyde, Jouw Voice Agent",
-      "subtitle": "Hoor Clyde in actie. Eén demogesprek en je begrijpt waarom bureaus hun SDR-teams vervangen.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om telefoonverkeer aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    },
+    "proof": {
+      "title": "Probeer Clyde live",
+      "subtitle": "Interactieve demo — voer zelf een kort gesprek met Clyde om het te ervaren."
     }
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Clyde Kwalificeert Jouw Leads | AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Clyde engageert elke websitebezoeker, scoort leads met BANT en draagt warme prospects over aan sales. 24/7 leadkwalificatie op de automatische piloot."
+      "title": "Lead Qualifier — Website chatbot die leads scort en routeert | Clyde",
+      "description": "AI chatbot op website, lead scoring, CRM routing, conversation analytics. 2 credits per score."
     },
     "hero": {
-      "badge": "Lead Qualifier",
-      "title": "Clyde Kwalificeert Jouw Leads",
-      "description": "Elke bezoeker krijgt Clyde's aandacht. Hij engageert, kwalificeert met BANT-scoring en draagt warme leads over aan sales. Een menselijke verkoper kwalificeert 20 leads per dag. Clyde kwalificeert er 200."
+      "eyebrow": "Vaardigheid 03 — Lead Qualifier",
+      "title": "Clyde kwalificeert je website-leads.",
+      "subtitle": "Embeddable AI-chatbot op de website van elke klant. Voert kwalificatie-gesprek, scoort intent, routeert warme leads naar CRM of sales. Geen lead gaat verloren door gemiste chats.",
+      "cta": "Plan een gesprek"
     },
     "features": {
-      "heading": "Wat Clyde Doet met Leads",
-      "items": {
-        "engage": {
-          "title": "Engageert Elke Bezoeker",
-          "description": "Clyde begroet elke websitebezoeker, beantwoordt vragen en start kwalificatiegesprekken. 24/7, op elke klantsite."
-        },
-        "qualify": {
-          "title": "Scoort met BANT",
-          "description": "Budget, Autoriteit, Behoefte, Timing. Clyde scoort elke lead automatisch zodat je salesteam zich richt op de beste prospects."
-        },
-        "handoff": {
-          "title": "Draagt Over aan Sales",
-          "description": "Clyde routeert gekwalificeerde leads direct naar de juiste salesperson met volledige gesprekscontext en kwalificatiescore."
-        },
-        "nurture": {
-          "title": "Bewerkt de Rest",
-          "description": "Leads die nog niet klaar zijn komen in Clyde's nurture-sequenties. Automatische e-mails en retargeting houden ze betrokken."
-        }
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Embeddable chatbot widget",
+        "body": "Eén script-tag op elke klant-website. Customizable styling, persona en kennisbasis per klant."
+      },
+      "feature2": {
+        "title": "Automatische lead scoring",
+        "body": "Op basis van intent-signalen (budget, tijdlijn, specificiteit) berekent Clyde een lead score — direct zichtbaar in CRM."
+      },
+      "feature3": {
+        "title": "CRM routing",
+        "body": "Warme leads auto-gerouteerd naar HubSpot/Salesforce/Pipedrive met gespreks-samenvatting. Cold leads in nurture-flow."
+      },
+      "feature4": {
+        "title": "Conversation analytics",
+        "body": "Welke vragen komen vaak voor, waar drop-off, welke flows converteren het beste. Continuous optimization."
       }
     },
-    "how_it_works": {
-      "heading": "Zo Werk Je met Clyde",
-      "steps": {
-        "configure": {
-          "title": "Vertel Clyde Wat Gekwalificeerd Betekent",
-          "description": "Definieer wat een gekwalificeerde lead is voor elke klant. Budgetdrempels, bedrijfsgrootte, branche en koopsignalen."
-        },
-        "embed": {
-          "title": "Clyde Komt op de Website",
-          "description": "Eén regel code. Clyde verschijnt op de website van je klant en begint direct bezoekers te kwalificeren."
-        },
-        "convert": {
-          "title": "Clyde Begint Leads te Leveren",
-          "description": "Gekwalificeerde leads stromen in het CRM van je klanten met volledige context. Clyde bewerkt elke bezoeker, elke keer."
-        }
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Kwalificatie-criteria",
+        "body": "Definieer met de klant welke vragen Clyde moet stellen (budget, tijdlijn, probleem, beslisser)."
+      },
+      "step2": {
+        "title": "Widget deployen",
+        "body": "Eén embed-tag op de website. Klaar. Clyde start met praten."
+      },
+      "step3": {
+        "title": "CRM + sales routing",
+        "body": "Configureer drempels: score 80+ gaat direct naar sales-team, score 40-80 naar CRM-nurture, <40 naar info-email."
       }
     },
-    "use_cases": {
-      "heading": "Wie Werkt met Clyde",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Zet Clyde in op alle websites van je klanten. Bewijs ROI met gekwalificeerde lead-aantallen en conversiedata. Geen extra personeel."
-        },
-        "saas": {
-          "title": "SaaS-Bedrijven",
-          "description": "Clyde kwalificeert free trial-aanmeldingen en demo-aanvragen automatisch. Enterprise prospects gaan naar sales. De rest gaat self-serve."
-        }
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Voice Agent — chat leads kunnen worden opgevolgd met calls",
+      "integration2": "Email Management — follow-up emails naar gequalificeerde leads",
+      "integration3": "Reporting — conversion funnel + cost-per-lead per bron"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "B2B lead-gen sites",
+        "body": "SaaS, diensten-bureaus, consultancies. Chat kwalificeert voor sales-team leads filtert."
+      },
+      "useCase2": {
+        "title": "E-commerce support + sales",
+        "body": "Product-vragen afhandelen + warme kopers identificeren voor hoog-marge upsell calls."
       }
     },
-    "task_demo": {
-      "heading": "Bekijk Clyde in Actie",
-      "command": "Scoor alle websitebezoekers van de afgelopen 24 uur met BANT",
-      "result_title": "Klaar. 156 bezoekers gescoord. 23 gekwalificeerde leads geïdentificeerd.",
-      "result_description": "Ik heb 156 unieke bezoekers van de afgelopen 24 uur geanalyseerd. 23 scoorden 8+ op BANT (hot leads, doorgestuurd naar sales met volledige context). 41 scoorden 5-7 (warm, toegevoegd aan nurture-sequentie). 92 scoorden onder de 5 (informatieve bezoekers, getagd voor retargeting). 3 enterprise prospects gemarkeerd voor directe opvolging."
-    },
-    "pricing": {
-      "heading": "Prijzen",
-      "description": "Clyde's Lead Qualifier skill is inbegrepen in je agent tier abonnement.",
-      "cta": "Bekijk Prijzen",
-      "cta_link": "/pricing"
-    },
-    "trust": {
-      "heading": "Clyde's Track Record",
-      "metrics": {
-        "qualified_leads": {
-          "value": "3x",
-          "label": "Meer Gekwalificeerde Leads",
-          "description": "Clyde presteert 3x beter dan contactformulieren"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Altijd Aan het Kwalificeren",
-          "description": "Clyde mist nooit een bezoeker"
-        },
-        "response_time": {
-          "value": "<2s",
-          "label": "Responstijd",
-          "description": "Clyde engageert direct"
-        }
-      }
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Ontmoet Clyde, Jouw Lead Qualifier",
-      "subtitle": "Zie hoe Clyde websitebezoekers omzet in gekwalificeerde leads. Geen formulieren. Geen wachten. Alleen resultaten.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om lead kwalificatie aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    },
+    "proof": {
+      "title": "Live demo",
+      "subtitle": "Multi-platform embedbaar. Probeer hieronder of zie de SKC setup."
     }
   },
   "skills-social-media": {
     "meta": {
-      "title": "Clyde Runt Jouw Social Media | AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Clyde beheert multi-platform social media voor al je klanten. Contentcreatie, planning, analytics en merkmonitoring. Eén AI-collega, onbeperkte accounts."
+      "title": "Social Media Manager — Captions, scheduling, carrousels per klant | Clyde",
+      "description": "Clyde runt social media voor je klanten: AI-captions in brand voice, multi-platform scheduling, carrousels, engagement tracking. 1-2 credits per post."
     },
     "hero": {
-      "badge": "Social Media",
-      "title": "Clyde Runt Jouw Social Media",
-      "description": "Een social media manager beheert 3 klantaccounts. Clyde beheert er 30. Hij maakt content, plant posts, volgt prestaties en monitort merkvermeldingen. Op elk platform."
+      "eyebrow": "Vaardigheid 01 — Social Media Manager",
+      "title": "Clyde runt jouw social media.",
+      "subtitle": "Captions in brand voice, scheduling op optimale tijden, carrousel builder, hashtag research, engagement tracking — per klant, per merk. Eén AI-medewerker voor je hele klantportfolio.",
+      "cta": "Plan een gesprek"
     },
     "features": {
-      "heading": "Wat Clyde Doet op Social",
-      "items": {
-        "scheduling": {
-          "title": "Post op het Perfecte Moment",
-          "description": "Clyde post op AI-geoptimaliseerde tijden op LinkedIn, Instagram, X, Facebook en TikTok. De content van elke klant gaat live op piek-engagement."
-        },
-        "analytics": {
-          "title": "Volgt Alles",
-          "description": "Clyde monitort engagement, bereik, volgersgroei en contentprestaties per klant. Realtime analytics over alle platforms."
-        },
-        "creation": {
-          "title": "Maakt Platformspecifieke Content",
-          "description": "Clyde schrijft captions, genereert hashtags en maakt visuals geoptimaliseerd per netwerk. In de merkstem van elke klant."
-        },
-        "monitoring": {
-          "title": "Volgt het Gesprek",
-          "description": "Clyde monitort merkvermeldingen, concurrentieactiviteit en branchetrends. Hij waarschuwt je direct bij belangrijke gesprekken."
-        }
+      "title": "Wat Clyde voor social media doet",
+      "subtitle": "Vier kernfuncties, naadloos geïntegreerd. Elke output past in de brand voice per klant.",
+      "feature1": {
+        "title": "AI-captions in brand voice",
+        "body": "Clyde genereert posts en captions die klinken als de klant — geleerd uit eerdere goedgekeurde content en brand guidelines. Elke week scherper."
+      },
+      "feature2": {
+        "title": "Multi-platform scheduling",
+        "body": "Instagram, Facebook, LinkedIn met automatische optimale timing per account. Één content-kalender, drag & drop, cross-platform preview."
+      },
+      "feature3": {
+        "title": "Carrousel en story builder",
+        "body": "Educatieve carrousels (3-10 slides) en stories met templates in brand styling. Van idee tot publicatie-klaar in één pipeline."
+      },
+      "feature4": {
+        "title": "Hashtag research + engagement tracking",
+        "body": "Relevante hashtags per post-onderwerp, performance tracking per post (likes/comments/saves/shares) en auto-learning voor volgende content."
       }
     },
-    "how_it_works": {
-      "heading": "Zo Werk Je met Clyde",
-      "steps": {
-        "connect": {
-          "title": "Koppel de Accounts",
-          "description": "Link de social media accounts van je klanten. Clyde krijgt toegang om te posten, monitoren en analyseren op alle platforms."
-        },
-        "plan": {
-          "title": "Clyde Bouwt de Kalender",
-          "description": "Clyde maakt een contentkalender op basis van de strategie, doelgroepdata en trending topics van elke klant."
-        },
-        "publish": {
-          "title": "Clyde Post en Optimaliseert",
-          "description": "Content gaat automatisch live op optimale tijden. Clyde regelt posting, hashtags en cross-platform opmaak."
-        }
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Brand voice intake",
+        "body": "Tijdens onboarding leest Clyde eerdere content, brand guidelines en doelgroep-data. Bouwt een brand-profile per klant."
+      },
+      "step2": {
+        "title": "Content kalender plannen",
+        "body": "Je geeft thema en frequentie op; Clyde stelt de weekkalender samen met postvoorstellen, captions en hashtags."
+      },
+      "step3": {
+        "title": "Approve + publish",
+        "body": "Jij reviewt de kalender (drag & drop). Na approval publiceert Clyde op optimale tijden en trackt performance."
       }
     },
-    "use_cases": {
-      "heading": "Wie Werkt met Clyde",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Beheer social media voor tientallen klanten tegelijk. Clyde vervangt een compleet social media team. Geen extra personeel, geen burn-out."
-        },
-        "brands": {
-          "title": "Merkmanagers",
-          "description": "Consistente merkpresentie op alle platforms. Clyde regelt dagelijkse posting en monitoring zodat jij je richt op strategie."
-        }
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Social media skill deelt context met andere vaardigheden via het gedeelde klant-geheugen.",
+      "integration1": "Blog Factory — social posts afgeleid van blog content",
+      "integration2": "Ad Creator — best-performing organic content wordt ad-testmateriaal",
+      "integration3": "Reporting — social KPIs in wekelijkse performance digest"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Bureaus met 5-30 klanten",
+        "body": "In plaats van 5-30 verschillende social managers: één Clyde met per-klant brand voice en cross-account learning."
+      },
+      "useCase2": {
+        "title": "Multi-brand operators",
+        "body": "SkinClarity Club draait al 3 Instagram-accounts × 4 merken op één Clyde-setup. Zie de case study voor concrete output."
       }
     },
-    "social_proof": {
-      "quote": "Clyde beheert alle 20 social accounts van onze klanten. We hebben niet één extra persoon aangenomen.",
-      "author": "Bureau-eigenaar",
-      "role": "Digitaal Marketing Bureau",
-      "company": "Rotterdam"
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
-    "showcase": {
-      "heading": "Clyde's Social Media Engine",
-      "items": {
-        "smart_scheduling": {
-          "title": "Slimme Planning",
-          "description": "Clyde post op AI-geoptimaliseerde tijden voor maximaal bereik en engagement."
-        },
-        "analytics_dashboard": {
-          "title": "Analytics Dashboard",
-          "description": "Clyde volgt prestaties over alle social kanalen met bruikbare inzichten."
-        },
-        "engagement_automation": {
-          "title": "Engagement Automatisering",
-          "description": "Clyde reageert op comments, DM's en vermeldingen met on-brand, contextbewuste antwoorden."
-        },
-        "content_repurposing": {
-          "title": "Content Hergebruik",
-          "description": "Clyde past content aan per platform. Blog naar carrousel, video naar reel, post naar story."
-        },
-        "trend_monitoring": {
-          "title": "Trend Monitoring",
-          "description": "Clyde detecteert trends vroeg en suggereert content op basis van wat werkt."
-        },
-        "competitor_tracking": {
-          "title": "Concurrent Monitoring",
-          "description": "Clyde monitort concurrentieactiviteit, benchmarkt prestaties en identificeert contentgaten."
-        }
-      }
-    },
-    "task_demo": {
-      "heading": "Bekijk Clyde in Actie",
-      "command": "Maak en plan de posts van volgende week voor alle 3 klantaccounts",
-      "result_title": "Klaar. 45 posts gemaakt en ingepland voor 3 accounts.",
-      "result_description": "Ik heb 15 posts per klantaccount gemaakt (3 LinkedIn, 4 Instagram, 3 X, 2 Facebook, 3 TikTok) in de merkstem van elke klant. Alle posts ingepland op AI-geoptimaliseerde tijden voor maximaal engagement. Carrousel-assets gegenereerd voor Instagram. Hashtag-onderzoek afgerond. Contentkalender bijgewerkt in je dashboard."
-    },
-    "pricing": {
-      "heading": "Prijzen",
-      "description": "Clyde's Social Media skill is inbegrepen in je agent tier abonnement.",
-      "cta": "Bekijk Prijzen",
-      "cta_link": "/pricing"
-    },
-    "trust": {
-      "heading": "Clyde's Track Record",
-      "metrics": {
-        "engagement": {
-          "value": "2x",
-          "label": "Meer Engagement",
-          "description": "Clyde verdubbelt gemiddeld social engagement"
-        },
-        "time_saved": {
-          "value": "15u",
-          "label": "Bespaard Per Week",
-          "description": "Clyde bespaart 15 uur social werk per week"
-        },
-        "platforms": {
-          "value": "6+",
-          "label": "Platforms Beheerd",
-          "description": "Clyde runt ze allemaal vanuit één dashboard"
-        }
-      }
+    "proof": {
+      "title": "SkinClarity Club in actie",
+      "subtitle": "~21 carrousels per week, ~15 posts, 3 IG-accounts autonoom. Zie case study voor screenshots en output-samples."
     },
     "cta": {
-      "title": "Ontmoet Clyde, Jouw Social Media Manager",
-      "subtitle": "Zie hoe Clyde social media beheert voor bureauklanten. Eén demo en je neemt nooit meer een social media coördinator aan.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om social media aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
     }
   },
   "skills-ad-creator": {
     "meta": {
-      "title": "Clyde Maakt Jouw Advertenties | AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Clyde genereert statische en video-advertenties vanuit campagnebriefings, maakt A/B-testvariaties en pusht ze naar advertentieplatforms. Jouw AI-advertentiespecialist."
+      "title": "Ad Creator — Static + video ads voor Meta | Clyde",
+      "description": "Ad copy, visuals, statische en video ads voor Meta. 10 cr static / 20 cr video. Multi-format output."
     },
     "hero": {
-      "badge": "Ad Creator",
-      "title": "Clyde Maakt Jouw Advertenties",
-      "description": "Geef Clyde een campagnebriefing. Hij genereert beeldadvertenties, video-ads, advertentieteksten en A/B-testvariaties. En pusht ze direct naar Meta, Google en LinkedIn. In minuten, niet dagen."
+      "eyebrow": "Vaardigheid 05 — Ad Creator",
+      "title": "Clyde genereert je Meta-ads.",
+      "subtitle": "Statische én video ads. Copy, visuals, multi-format (Feed / Stories / Reels). Publiceert direct naar Meta Ads Manager. A/B test varianten inclusief. Geen freelance-designer in de loop.",
+      "cta": "Plan een gesprek"
     },
     "features": {
-      "heading": "Wat Clyde Doet met Advertenties",
-      "items": {
-        "static": {
-          "title": "Genereert Beeldadvertenties",
-          "description": "Clyde maakt display-ads, social-ads en banners in meerdere formaten en maten. Klaar voor Meta, Google en LinkedIn."
-        },
-        "video": {
-          "title": "Produceert Video-Ads",
-          "description": "Clyde maakt korte video-advertenties voor Reels, Stories, TikTok en YouTube Shorts. Van script tot afgewerkte video in minuten."
-        },
-        "copy": {
-          "title": "Schrijft Advertentieteksten",
-          "description": "Headlines, beschrijvingen en CTA's in de merkstem van elke klant. Clyde genereert meerdere variaties voor testen."
-        },
-        "variants": {
-          "title": "Maakt A/B-Variaties",
-          "description": "Clyde genereert automatisch creatieve varianten voor split testing. Hij optimaliseert op basis van prestatiedata."
-        }
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Static ads (10 cr)",
+        "body": "Beeld + copy generatie in 1080×1080 (Feed) of 1080×1920 (Story/Reel). Orshot templates in brand styling."
+      },
+      "feature2": {
+        "title": "Video ads (20 cr)",
+        "body": "Korte video ads met motion graphics, text-overlays en muziek. Ideal voor Reels en Stories."
+      },
+      "feature3": {
+        "title": "Meta Ad Library research",
+        "body": "Clyde analyseert wat concurrenten adverteren. Output: voorbeelden + gap-analyse."
+      },
+      "feature4": {
+        "title": "A/B test variant generation",
+        "body": "Vraag 3-5 varianten op één ad-concept — verschillende hooks, visuals, CTA's. Test tegelijkertijd."
       }
     },
-    "how_it_works": {
-      "heading": "Zo Werk Je met Clyde",
-      "steps": {
-        "brief": {
-          "title": "Geef Clyde de Briefing",
-          "description": "Deel het campagnedoel, de doelgroep en merkassets. Clyde neemt het vanaf daar over."
-        },
-        "generate": {
-          "title": "Clyde Maakt Variaties",
-          "description": "Meerdere advertentiecreatives gegenereerd in seconden. Afbeeldingen, video, tekst en formaatvariaties voor elk platform."
-        },
-        "launch": {
-          "title": "Clyde Lanceert de Campagne",
-          "description": "Goedgekeurde advertenties worden direct gepusht naar Meta Ads, Google Ads en LinkedIn Campaign Manager. Eén klik."
-        }
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Brief + brand intake",
+        "body": "Product/dienst, doelgroep, USP en budget. Clyde leest brand guidelines voor consistency."
+      },
+      "step2": {
+        "title": "Ads generen",
+        "body": "Kies static/video, aantal varianten, formaat. Clyde levert publicatie-klare output binnen minuten."
+      },
+      "step3": {
+        "title": "Publish naar Meta",
+        "body": "Direct uitrollen naar Ads Manager via connectie. Jij stelt budget en audience in; Clyde levert creatives."
       }
     },
-    "use_cases": {
-      "heading": "Wie Werkt met Clyde",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Clyde produceert advertentiecreatives voor al je klanten op schaal. Geen bottlenecks meer wachten op designers en copywriters."
-        },
-        "performance": {
-          "title": "Performance Marketeers",
-          "description": "Clyde genereert honderden advertentievarianten voor snelle testing. Vind winnende creatives sneller."
-        }
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Social Media — best-performing organic posts worden ad-testmateriaal",
+      "integration2": "Blog Factory — blog-content wordt ad-copy voor performance",
+      "integration3": "Reporting — ad-performance metrics (CTR, CPA, ROAS) in digest"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "E-commerce met veel SKU's",
+        "body": "Per product 3-5 ad varianten. Clyde schaalt ad-volume zonder freelance-designer bottleneck."
+      },
+      "useCase2": {
+        "title": "Service-bureaus met multi-klant ads",
+        "body": "Eén Clyde levert ads voor 10 klanten in parallel, elk in eigen brand styling en doelgroep."
       }
     },
-    "task_demo": {
-      "heading": "Bekijk Clyde in Actie",
-      "command": "Genereer 5 Meta-advertentievariaties voor de lentecampagne",
-      "result_title": "Klaar. 5 advertentievariaties klaar voor beoordeling.",
-      "result_description": "Ik heb 5 Meta-advertentievariaties gemaakt voor de lentecampagne: 3 beeldadvertenties (1080x1080, 1200x628, 9:16 Story) en 2 korte video-ads (15s Reel, 6s Story). Elke variatie heeft 3 headline-opties en 2 CTA-varianten. Merkkleuren en lettertypen toegepast. Geschat bereik bij huidig budget: 45.000-62.000 impressies."
-    },
-    "pricing": {
-      "heading": "Prijzen",
-      "description": "Clyde's Ad Creator skill is inbegrepen in je agent tier abonnement.",
-      "cta": "Bekijk Prijzen",
-      "cta_link": "/pricing"
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Ontmoet Clyde, Jouw Ad Creator",
-      "subtitle": "Zie hoe Clyde advertentiecreatives genereert voor bureauklanten. Eén briefing, onbeperkte variaties, directe lancering.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om ad creatie aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
     }
   },
   "skills-reporting": {
     "meta": {
-      "title": "Clyde Genereert Jouw Rapporten | AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Clyde bouwt realtime dashboards, genereert weekrapporten, detecteert trends en volgt ROI over alle kanalen. Jouw AI-analytics specialist."
+      "title": "Reporting — Dashboards, digests, anomaly detection | Clyde",
+      "description": "Wekelijkse performance digests, KPI dashboards, anomaly detection met alerts. 5 credits per rapport."
     },
     "hero": {
-      "badge": "Reporting & Analytics",
-      "title": "Clyde Genereert Jouw Rapporten",
-      "description": "Een analist besteedt 4 uur per klant per week aan rapportage. Clyde doet het in 4 minuten. Realtime dashboards, weekrapporten, trenddetectie en ROI-tracking voor elke klant."
+      "eyebrow": "Vaardigheid 06 — Reporting & Analytics",
+      "title": "Clyde rapporteert elke week.",
+      "subtitle": "Automatische performance digests, real-time KPI dashboards, anomaly detection met alerts. Maandag 08:00 heb je een overzicht in je inbox. Geen handmatige Notion-updates meer.",
+      "cta": "Plan een gesprek"
     },
     "features": {
-      "heading": "Wat Clyde Doet met Data",
-      "items": {
-        "dashboards": {
-          "title": "Bouwt Live Dashboards",
-          "description": "Clyde maakt realtime dashboards met KPI's over alle kanalen. Deel ze met klanten voor volledige transparantie over prestaties."
-        },
-        "weekly": {
-          "title": "Genereert Weekrapporten",
-          "description": "Clyde schrijft en verstuurt wekelijkse prestatierapporten naar jouw inbox en die van je klanten. Geen handmatig data ophalen."
-        },
-        "trends": {
-          "title": "Detecteert Trends en Anomalieën",
-          "description": "Clyde signaleert prestatieveranderingen, opkomende trends en optimalisatiekansen voordat jij ze ziet."
-        },
-        "roi": {
-          "title": "Volgt ROI en Attributie",
-          "description": "Multi-touch attributie over alle kanalen. Clyde weet precies welke campagnes omzet genereren voor elke klant."
-        }
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Wekelijkse performance digest",
+        "body": "Maandag 08:00 in je inbox: top KPIs, trends, anomalieen, aanbevolen acties. Clyde schrijft de verhaallijn."
+      },
+      "feature2": {
+        "title": "Real-time KPI dashboards",
+        "body": "Cross-platform: social metrics, website traffic, sales/conversie, ad performance — live dashboard, filterbaar per klant/periode."
+      },
+      "feature3": {
+        "title": "Anomaly detection",
+        "body": "Wanneer metrics 2+ stddev afwijken van normaal krijg je een alert. Geen verrassing bij maandrapportage."
+      },
+      "feature4": {
+        "title": "Custom rapportages",
+        "body": "Vraag in natural language: \"Rapport voor klant X over Q3 met focus op Instagram vs LinkedIn.\" Clyde bouwt het."
       }
     },
-    "how_it_works": {
-      "heading": "Zo Werk Je met Clyde",
-      "steps": {
-        "integrate": {
-          "title": "Koppel de Databronnen",
-          "description": "Link Google Analytics, advertentieplatforms, social accounts en CRM. Clyde haalt automatisch data uit alle bronnen."
-        },
-        "analyze": {
-          "title": "Clyde Analyseert Alles",
-          "description": "Clyde verwerkt prestatiedata, identificeert patronen en genereert inzichten. Geen analist nodig."
-        },
-        "report": {
-          "title": "Clyde Levert de Rapporten",
-          "description": "Mooie, gebrandede rapporten wekelijks gegenereerd. Dashboards worden realtime bijgewerkt. Klanten blijven geïnformeerd."
-        }
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Data sources koppelen",
+        "body": "Instagram, Google Analytics, Shopify, Ads Manager, CRM — OAuth-koppeling per klant."
+      },
+      "step2": {
+        "title": "KPI definitions",
+        "body": "Wat is \"succes\" voor deze klant? Definieer top-5 KPIs; Clyde track ze continu."
+      },
+      "step3": {
+        "title": "Schedule + alerts",
+        "body": "Wanneer moet de digest komen (bijv. maandag 08:00)? Welke metrics triggeren alerts? Set-and-forget."
       }
     },
-    "use_cases": {
-      "heading": "Wie Werkt met Clyde",
-      "items": {
-        "agencies": {
-          "title": "Marketingbureaus",
-          "description": "Clyde levert professionele rapportages aan elke klant. Geen uren meer in spreadsheets. Hij doet het datawerk."
-        },
-        "managers": {
-          "title": "Marketing Managers",
-          "description": "Helder beeld van campagneprestaties over alle kanalen. Clyde's inzichten helpen je sneller betere beslissingen te nemen."
-        }
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Alle skills — elke skill voedt data in reporting (social, blog, ads, email, voice)",
+      "integration2": "Research — trend-data verrijkt context in digests",
+      "integration3": "Clyde orchestrator — rapporten kunnen volgende actions triggeren"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Bureaus met maandelijkse client reviews",
+        "body": "In plaats van Notion-marathon een maand voor client-meeting: wekelijks al up-to-date, maandrapport is 1-klik export."
+      },
+      "useCase2": {
+        "title": "Operators die data-driven willen werken",
+        "body": "Welke content werkt, welke campagnes ROI hebben, waar de portfolio-groei zit — transparant en auditeerbaar."
       }
     },
-    "task_demo": {
-      "heading": "Bekijk Clyde in Actie",
-      "command": "Genereer een wekelijks prestatierapport voor alle actieve klanten",
-      "result_title": "Klaar. 8 klantrapporten gegenereerd en verstuurd.",
-      "result_description": "Ik heb prestatiedata verzameld van Google Analytics, Meta Ads, LinkedIn en Instagram voor alle 8 actieve klanten. Elk rapport bevat: verkeersoverzicht, conversiemetrics, campagne-ROI, best presterende content en optimalisatieaanbevelingen. Rapporten gemaild naar klanten en accountmanagers. 3 anomalieën gemarkeerd voor beoordeling."
-    },
-    "pricing": {
-      "heading": "Prijzen",
-      "description": "Clyde's Reporting skill is inbegrepen in je agent tier abonnement.",
-      "cta": "Bekijk Prijzen",
-      "cta_link": "/pricing"
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Ontmoet Clyde, Jouw Reporting Analist",
-      "subtitle": "Zie hoe Clyde analytics afhandelt voor bureauklanten. Professionele rapporten, nul handmatig werk.",
-      "button": "Ontmoet Clyde"
+      "title": "Klaar om rapportages aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
     }
   },
   "founding-member": {
@@ -1955,6 +1847,524 @@
         "subtitle": "Plan een gesprek — we bespreken hoe Clyde past bij jouw merken en klanten.",
         "button": "Plan een gesprek"
       }
+    }
+  },
+  "skills-email-management": {
+    "meta": {
+      "title": "Email Management — Gmail classify + digest | Clyde",
+      "description": "Gmail inbox classificatie, smart labels, dagelijkse digest, suggested replies. 5 cr per actie."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 04 — Email Management (coming_soon)",
+      "title": "Clyde classificeert je Gmail inbox.",
+      "subtitle": "Geen email campaigns. Dit is inbox-classify: Clyde leest binnenkomende emails, voegt smart labels toe (urgent/actie/info), stelt prioriteit en stuurt een dagelijkse digest. Je begint je dag met overzicht, niet met chaos.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "AI classificatie",
+        "body": "Elk binnenkomend bericht in categorie: urgent (directe actie), actie (follow-up nodig), info (kennisname), overig."
+      },
+      "feature2": {
+        "title": "Smart labels",
+        "body": "Auto-labels zoals \"Van klant X\", \"Factuur\", \"Sollicitatie\", \"Sales-lead\" via klant-context."
+      },
+      "feature3": {
+        "title": "Dagelijkse digest",
+        "body": "Elke ochtend een samenvatting: top-3 urgent items, openstaande acties, suggested replies klaar om te sturen."
+      },
+      "feature4": {
+        "title": "Suggested replies",
+        "body": "Voor veel-voorkomende emails stelt Clyde een concept-antwoord voor in jouw brand voice — 1-klik versturen of editen."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Gmail OAuth",
+        "body": "Connect je Gmail (of die van je klant) via OAuth. Alleen read + label permissions, geen send zonder review."
+      },
+      "step2": {
+        "title": "Train de classifier",
+        "body": "Week 1: Clyde classificeert, jij corrigeert. Week 2+: accuracy 95%+ voor jouw specifieke context."
+      },
+      "step3": {
+        "title": "Digest + review",
+        "body": "Dagelijkse digest in dashboard. Reply suggesties 1-klik sturen of editen in Gmail."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Lead Qualifier — sales-emails naar leads via scoring-flow",
+      "integration2": "Clyde orchestrator — email-context deelbaar met andere skills",
+      "integration3": "Reporting — email-volume + response-time metrics"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Inbox-overload bij agency operators",
+        "body": "Wanneer je 15 klanten hebt, krijg je 100+ emails per dag. Clyde sorteert, Sindy reageert op wat echt telt."
+      },
+      "useCase2": {
+        "title": "Klantcommunicatie-triage",
+        "body": "Eén label-systeem per klant-portfolio. Urgent van klant X meteen zichtbaar, niet verstopt tussen nieuwsbrieven."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om email management aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-research": {
+    "meta": {
+      "title": "Research — Marktonderzoek, trend monitoring, concurrentieanalyse | Clyde",
+      "description": "Geautomatiseerd marktonderzoek, trend monitoring, concurrentie-analyse met bronvermelding. 3 credits per query."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 07 — Research",
+      "title": "Clyde doet jouw marktonderzoek.",
+      "subtitle": "Trend monitoring in de niche van elke klant, concurrentie-analyse met benchmarks, content-ideeën met bronvermelding. Elke insight heeft een bron zodat jij het kunt verifiëren. Geen LLM-hallucinaties als research-input.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Trend monitoring per niche",
+        "body": "Continu scannen van nieuwsbronnen, social media en zoekvolumes in de specifieke niche van elke klant."
+      },
+      "feature2": {
+        "title": "Concurrentie-analyse",
+        "body": "Wie zijn de key spelers, wat doen ze, wat zegt hun content-strategie over hun positionering. Gap-analyse voor jouw klant."
+      },
+      "feature3": {
+        "title": "Content-ideeën met bronvermelding",
+        "body": "Actionable content-voorstellen met onderliggende bronnen. Geen \"AI bedacht dit\" — elke bewering is naspeurbaar."
+      },
+      "feature4": {
+        "title": "Actionable insights",
+        "body": "Niet \"de trend is X\" maar \"gezien trend X, jouw klant Y kan action Z doen\". Aanbevelingen met context."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Niche + concurrenten definiëren",
+        "body": "Per klant: welke niche, welke 3-5 key concurrenten, welke keywords en thema's monitor je?"
+      },
+      "step2": {
+        "title": "Monitoring activeren",
+        "body": "Clyde draait continu — nieuws, social, search data. Alerts bij significante veranderingen."
+      },
+      "step3": {
+        "title": "Query op demand",
+        "body": "Vraag in natural language: \"Wat doen concurrenten op thema X?\" — Clyde levert gestructureerd antwoord met bronnen."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Blog Factory — research data voedt blog-topic keuzes",
+      "integration2": "Social Media — trend-insights worden content-voorstellen",
+      "integration3": "Ad Creator — concurrentie ad-analyse verbetert je eigen ads"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Content-strategen zonder tijd voor diepe research",
+        "body": "Geen 3 uur op Google per content-kalender. Clyde levert de achtergrond; jij neemt strategische beslissingen."
+      },
+      "useCase2": {
+        "title": "Nieuwe klant-niches snel begrijpen",
+        "body": "Nieuwe klant in een branche waar je niet thuis bent? Clyde bouwt in een dag een niche-briefing."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om research aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-blog-factory": {
+    "meta": {
+      "title": "Blog Factory — SEO-artikelen van keyword tot publicatie | Clyde",
+      "description": "Keyword research, longform artikelen 1500-3000 woorden, SEO-optimalisatie, auto-publicatie. 15 credits per artikel."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 08 — Blog Factory",
+      "title": "Clyde schrijft je SEO-blogs.",
+      "subtitle": "Keyword research + longform (1500-3000 woorden) + SEO-optimalisatie + auto-publicatie naar de website. Eén pipeline van idee tot live. Onze kwaliteit wordt elke week beter — Blog Factory is live maar in doorontwikkeling.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Keyword research + clustering",
+        "body": "Hoog-volume, laag-concurrentie keywords in de niche. Clustering naar pillar pages en supporting content."
+      },
+      "feature2": {
+        "title": "Longform (1500-3000 woorden)",
+        "body": "Diepgaande artikelen in brand voice. Research-gebaseerd, bronvermelding, scanbare structuur."
+      },
+      "feature3": {
+        "title": "SEO-optimalisatie",
+        "body": "Meta description, heading structuur, internal linking, image alt tags, Core Web Vitals check."
+      },
+      "feature4": {
+        "title": "Auto-publicatie",
+        "body": "WordPress/Webflow/Shopify connectie. Draft → review → publish. Plannen ook mogelijk."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Keyword strategy per klant",
+        "body": "Clyde identificeert 50-100 target keywords per klant, clustered naar content-themas."
+      },
+      "step2": {
+        "title": "Artikelen plannen",
+        "body": "Kies welke keywords aanpakken. Clyde maakt outline + schrijft. Jij reviewt op een Google Doc-achtige interface."
+      },
+      "step3": {
+        "title": "Publish + monitor",
+        "body": "Na approval publiceert Clyde. SEO-rankings worden getracked door SEO/GEO-skill in parallel."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "SEO/GEO Analyst — blog-rankings worden getrackt + CWV gemonitord",
+      "integration2": "Social Media — blog content wordt social posts afgeleid",
+      "integration3": "Research — trend-data voedt topic selectie"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "E-commerce met SEO-focus",
+        "body": "Product-gerelateerde longform blogs die organic traffic opbouwen. SkinClarity Club publiceert zo 2-4 blogs/maand."
+      },
+      "useCase2": {
+        "title": "B2B content-marketing",
+        "body": "Thought leadership blogs in niche — Clyde werkt jouw expertise uit tot artikelen."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om blog productie aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-seo-geo": {
+    "meta": {
+      "title": "SEO / GEO — SEO-audits + AI citation monitoring | Clyde",
+      "description": "Technische SEO audits, keyword tracking, Core Web Vitals, AI citation monitoring (ChatGPT/Perplexity). 5 cr audit / 3 cr rapport."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 09 — SEO / GEO Analyst",
+      "title": "Clyde monitort je SEO én AI-citaties.",
+      "subtitle": "Technische SEO audits + keyword tracking + Core Web Vitals — plus GEO: hoe vaak wordt je merk geciteerd door ChatGPT, Perplexity en Google AI Overviews? De nieuwe search-laag is AI-gedreven. Clyde houdt je daar zichtbaar.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Technische SEO audits",
+        "body": "Periodieke crawl: broken links, ontbrekende meta tags, slow pages, mobile-friendliness, structured data. Prioritized fix-lijst."
+      },
+      "feature2": {
+        "title": "Keyword ranking tracking",
+        "body": "Dagelijks je posities checken op Google voor target keywords. Concurrent-vergelijking. Drop-alerts."
+      },
+      "feature3": {
+        "title": "Core Web Vitals",
+        "body": "LCP, FID, CLS per page. Trend over tijd. Alert bij achteruitgang. Google ranking factor #1."
+      },
+      "feature4": {
+        "title": "AI citation monitoring (GEO)",
+        "body": "Vraagt ChatGPT/Perplexity vragen over je niche — wordt je merk genoemd? Hoe vaak? In welke context? Nieuwe USP."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Site + keywords koppelen",
+        "body": "Clyde crawlt de site, identificeert structure + key pages. Upload keyword-lijst (of laat Clyde er een samenstellen)."
+      },
+      "step2": {
+        "title": "GEO queries opzetten",
+        "body": "Welke vragen in jouw niche zou een klant stellen aan ChatGPT? Clyde stelt ze regelmatig en logt antwoorden."
+      },
+      "step3": {
+        "title": "Wekelijks overzicht",
+        "body": "Rankings, audit-issues, GEO-citations, Core Web Vitals — alles in één dashboard + wekelijkse digest."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Blog Factory — blog artikelen worden getrackt voor ranking performance",
+      "integration2": "Research — concurrent keyword data verrijkt strategy",
+      "integration3": "Reporting — SEO + GEO KPIs in wekelijkse digest"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "E-commerce met organic traffic als groeimotor",
+        "body": "Technische audits en rank tracking zorgen dat blog + product pages blijven presteren."
+      },
+      "useCase2": {
+        "title": "Bureaus die AI-search serieus nemen",
+        "body": "GEO is de nieuwe SEO. Wie nu al citation-share bouwt, heeft straks een voorsprong."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om SEO aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-clyde": {
+    "meta": {
+      "title": "Clyde — De centrale AI-medewerker die alles orkestreert | Clyde",
+      "description": "Natural language opdrachten, orkestratie van alle skills, multi-channel (chat/Slack/Telegram), memory per klant. 1-5 cr per chat."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 10 — Clyde AI Employee",
+      "title": "Ontmoet Clyde — je AI-medewerker.",
+      "subtitle": "De andere 11 vaardigheden zijn losse tools. Clyde is de medewerker die ze orkestreert. Geef opdrachten in natural language; Clyde routeert naar de juiste skill en brengt resultaten terug. Werkt via chat, Slack, Telegram.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Natural language opdrachten",
+        "body": "\"Schrijf 3 Instagram-posts voor klant X over onderwerp Y\" — Clyde begrijpt context + voert uit."
+      },
+      "feature2": {
+        "title": "Orkestratie van alle skills",
+        "body": "Cross-skill workflows: blog schrijven → social posts afleiden → performance tracken. Eén opdracht, meerdere skills."
+      },
+      "feature3": {
+        "title": "Multi-channel",
+        "body": "Chat in dashboard, Slack integratie, Telegram bot. Clyde is waar jij werkt."
+      },
+      "feature4": {
+        "title": "Memory + context per klant",
+        "body": "Onthoudt eerdere gesprekken, voorkeuren, corrections. Elke week scherper per klant."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Channel kiezen",
+        "body": "Dashboard chat, Slack, of Telegram — Clyde werkt op alle drie parallel."
+      },
+      "step2": {
+        "title": "Opdracht geven",
+        "body": "Natural language. \"Rapport voor klant X\" of \"Plan 5 social posts over onderwerp Y\" — Clyde doet de rest."
+      },
+      "step3": {
+        "title": "Review + iterate",
+        "body": "Clyde levert output. Jij reviewt. Corrections landen in memory zodat volgend verzoek scherper is."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Alle andere 11 skills — Clyde is de orchestrator",
+      "integration2": "Memory system — context per klant, per brand, per kanaal",
+      "integration3": "Routines — terugkerende taken (weekly digest, monthly review) automatisch"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Één interface voor je hele portfolio",
+        "body": "In plaats van 12 tools openen: vraag Clyde in chat. Hij weet wie welke klant is en welke skill hij moet aanroepen."
+      },
+      "useCase2": {
+        "title": "Delegeren ipv uitvoeren",
+        "body": "Stop met zelf posts schrijven en rapporten maken. Geef opdrachten. Clyde voert uit, jij neemt beslissingen."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om je AI-medewerker aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-manychat": {
+    "meta": {
+      "title": "ManyChat DM — Instagram keyword triggers + AI replies | Clyde",
+      "description": "Instagram DM keyword triggers, AI-antwoorden, lead capture, CRM routing. 2 cr per 10 DMs."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 11 — ManyChat DM (coming_soon)",
+      "title": "Clyde handelt Instagram DMs af.",
+      "subtitle": "Keyword triggers (\"INFO\", \"PRIJS\") starten AI-flows die kwalificeren, info delen en warme leads naar CRM sturen. Geen gemiste DM. Coming soon.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "Keyword triggers",
+        "body": "Configureer \"INFO\", \"GRATIS\", \"PRIJS\" per post/Reel. Wanneer iemand DMt, start de flow."
+      },
+      "feature2": {
+        "title": "AI-antwoorden in brand voice",
+        "body": "Niet \"auto-responder\" — Clyde praat als de klant. Memory per gebruiker, context-aware."
+      },
+      "feature3": {
+        "title": "Lead capture + CRM routing",
+        "body": "Contactgegevens vragen, kwalificeren, doorsturen naar HubSpot/Salesforce of sales-team."
+      },
+      "feature4": {
+        "title": "Performance analytics per trigger",
+        "body": "Welke keyword performs, welke flow converteert, waar drop-off. Iteratief verbeteren."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Meta + ManyChat connect",
+        "body": "Instagram Business connecten via ManyChat — vereist Meta Business-akkoord."
+      },
+      "step2": {
+        "title": "Keywords + flows",
+        "body": "Per product/campagne: keyword → flow → routing. Clyde stelt flows voor op basis van doelstelling."
+      },
+      "step3": {
+        "title": "Live + monitoren",
+        "body": "Clyde reageert binnen seconden. Dashboard toont live conversaties, conversies, drop-offs."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Social Media — posts triggeren DMs via call-to-DM",
+      "integration2": "Lead Qualifier — DM leads in kwalificatie-flow",
+      "integration3": "Clyde orchestrator — DM context shareable met andere skills"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "E-commerce met Instagram als kanaal",
+        "body": "Reel met \"DM PRIJS voor prijslijst\" — Clyde stuurt + kwalificeert + routeert naar shop."
+      },
+      "useCase2": {
+        "title": "Service-bureaus met Instagram lead-gen",
+        "body": "Posts op LinkedIn gaan naar website; Instagram posts gaan naar DM. Clyde schaalt beide."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om Instagram DMs aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
+    }
+  },
+  "skills-reel-builder": {
+    "meta": {
+      "title": "Reel Builder — Verticale AI-videos met captions + muziek | Clyde",
+      "description": "Korte verticale videos (9:16), AI scripts, auto-captions, muziek, voor Instagram Reels / TikTok / Shorts. 25 cr per reel."
+    },
+    "hero": {
+      "eyebrow": "Vaardigheid 12 — Reel Builder (coming_soon)",
+      "title": "Clyde produceert je Reels.",
+      "subtitle": "Korte verticale videos (9:16) met AI-gegenereerde scripts, auto-captions die synchroon lopen, achtergrondmuziek. Voor Instagram Reels, TikTok, YouTube Shorts. Coming soon.",
+      "cta": "Plan een gesprek"
+    },
+    "features": {
+      "title": "Wat Clyde doet",
+      "subtitle": "Vier kernfuncties van deze vaardigheid.",
+      "feature1": {
+        "title": "AI-gegenereerde scripts",
+        "body": "Korte scripts (15-60s) op basis van onderwerp, hook-style en brand voice."
+      },
+      "feature2": {
+        "title": "Auto-captions in sync",
+        "body": "Captions lopen synchroon met de audio, geanimeerd volgens platform-conventies."
+      },
+      "feature3": {
+        "title": "Muziek + timing",
+        "body": "Passende achtergrondmuziek met beat-sync. Ingebouwde licentie-vrije library."
+      },
+      "feature4": {
+        "title": "Template library",
+        "body": "Talking head / B-roll montage / text-overlay templates — snelle start per format."
+      }
+    },
+    "how": {
+      "title": "Hoe het werkt",
+      "step1": {
+        "title": "Onderwerp + format",
+        "body": "Geef onderwerp en kies format (educatief, product-demo, talking head). Clyde genereert script."
+      },
+      "step2": {
+        "title": "Review + customize",
+        "body": "Script editen, caption-style kiezen, muziek selecteren. Alles preview-baar."
+      },
+      "step3": {
+        "title": "Export + publiceren",
+        "body": "Publicatie-klare MP4 (9:16). Direct uploaden of via Social Media skill schedulen."
+      }
+    },
+    "integrations": {
+      "title": "Werkt samen met",
+      "subtitle": "Via het gedeelde klant-geheugen.",
+      "integration1": "Social Media — Reels worden via scheduling gepubliceerd",
+      "integration2": "Ad Creator — video ads kunnen Reel-format volgen",
+      "integration3": "Blog Factory — blogs kunnen naar 60s Reel-samenvattingen"
+    },
+    "useCases": {
+      "title": "Voor wie",
+      "useCase1": {
+        "title": "Creators die frequent reel-content nodig hebben",
+        "body": "Wekelijks 3-5 reels, zonder eigen videograaf. Template-gedreven productie."
+      },
+      "useCase2": {
+        "title": "E-commerce met product-video",
+        "body": "Per product een korte Reel voor organic + ads. Clyde schaalt output."
+      }
+    },
+    "allocation": {
+      "title": "Credit kost + tier-beschikbaarheid",
+      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    },
+    "cta": {
+      "title": "Klaar om Reels aan Clyde over te dragen?",
+      "subtitle": "Plan een gesprek — we bespreken hoe deze vaardigheid past bij jouw klanten.",
+      "button": "Plan een gesprek"
     }
   }
 }

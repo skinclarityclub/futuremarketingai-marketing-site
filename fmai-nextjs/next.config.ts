@@ -107,9 +107,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Legacy top-level routes → skill pages
       {
         source: '/:locale/chatbots',
-        destination: '/:locale/skills/chatbot',
+        destination: '/:locale/skills/lead-qualifier',
         permanent: true,
       },
       {
@@ -124,7 +125,23 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/:locale/marketing-machine',
-        destination: '/:locale/skills/content-creator',
+        destination: '/:locale/skills/social-media',
+        permanent: true,
+      },
+      // Skill pages removed/renamed in v10 content upgrade
+      {
+        source: '/:locale/skills/chatbot',
+        destination: '/:locale/skills/lead-qualifier',
+        permanent: true,
+      },
+      {
+        source: '/:locale/skills/content-creator',
+        destination: '/:locale/skills/social-media',
+        permanent: true,
+      },
+      {
+        source: '/:locale/skills/email',
+        destination: '/:locale/skills/email-management',
         permanent: true,
       },
     ]
