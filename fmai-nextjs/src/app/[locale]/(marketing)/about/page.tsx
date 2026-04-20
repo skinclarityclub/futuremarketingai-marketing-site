@@ -131,7 +131,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {t('cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton href="/contact" size="lg">
+                <CTAButton href="/apply" size="lg">
                   {t('cta.demo_button')}
                 </CTAButton>
                 <CTAButton href="/contact" variant="secondary" size="lg">

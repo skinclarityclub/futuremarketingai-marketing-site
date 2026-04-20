@@ -375,7 +375,10 @@
           "contact": "Contact",
           "privacy": "Privacy",
           "terms": "Voorwaarden",
-          "cookies": "Cookies"
+          "cookies": "Cookies",
+          "apply": "Plan een gesprek",
+          "memory": "Memory System",
+          "caseStudies": "Case Studies"
         },
         "status_badge": "Alle systemen operationeel",
         "social_aria": {
@@ -1863,6 +1866,11 @@
       "successBody": "Daley leest je applicatie persoonlijk en antwoordt binnen 3 werkdagen. Check je inbox (en spam-folder) voor onze reply.",
       "errorValidation": "Controleer alsjeblieft de velden — sommige zijn niet volledig ingevuld.",
       "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@futuremarketingai.com."
+    }
+  },
+  "landing": {
+    "footer": {
+      "nav": {}
     }
   }
 }

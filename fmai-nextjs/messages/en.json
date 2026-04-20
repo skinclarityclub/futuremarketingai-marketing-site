@@ -375,7 +375,10 @@
           "contact": "Contact",
           "privacy": "Privacy",
           "terms": "Terms",
-          "cookies": "Cookies"
+          "cookies": "Cookies",
+          "apply": "Apply",
+          "memory": "Memory System",
+          "caseStudies": "Case Studies"
         },
         "status_badge": "All systems operational",
         "social_aria": {
@@ -1863,6 +1866,11 @@
       "successBody": "Daley reads your application personally and responds within 3 business days. Check your inbox (and spam folder) for our reply.",
       "errorValidation": "Please check the fields — some are not fully filled in.",
       "errorNetwork": "Something went wrong while sending. Try again or email hello@futuremarketingai.com directly."
+    }
+  },
+  "landing": {
+    "footer": {
+      "nav": {}
     }
   }
 }

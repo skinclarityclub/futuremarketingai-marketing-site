@@ -14,7 +14,6 @@ import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
-import { BookingCTA } from '@/components/booking/BookingCTA'
 import { IcpSection } from '@/components/home/IcpSection'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { Zap, ArrowRight } from 'lucide-react'
@@ -126,16 +125,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               className="flex flex-wrap gap-4"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
-              <BookingCTA size="lg">
+              <CTAButton href="/apply" size="lg">
                 <Zap className="mr-1 h-5 w-5" />
                 {t('hero.cta')}
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </BookingCTA>
+              </CTAButton>
 
-              <BookingCTA variant="secondary" size="lg">
+              <CTAButton href="/skills/clyde" variant="secondary" size="lg">
                 {t('hero.ctaSecondary')}
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </BookingCTA>
+              </CTAButton>
             </div>
           </div>
 

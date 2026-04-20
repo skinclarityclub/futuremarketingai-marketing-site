@@ -177,7 +177,7 @@ export default async function FoundingMemberPage({
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
-            <CTAButton href="/contact" size="lg">
+            <CTAButton href="/apply" size="lg">
               {t('cta.button')}
             </CTAButton>
           </div>

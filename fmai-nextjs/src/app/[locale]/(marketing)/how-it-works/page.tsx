@@ -149,7 +149,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                 {t('cta.description')}
               </p>
-              <CTAButton href="/contact" size="lg">
+              <CTAButton href="/apply" size="lg">
                 {t('cta.button')}
               </CTAButton>
             </GlassCard>

@@ -375,7 +375,10 @@
           "contact": "Contacto",
           "privacy": "Privacidad",
           "terms": "Terminos",
-          "cookies": "Cookies"
+          "cookies": "Cookies",
+          "apply": "Reserva llamada",
+          "memory": "Memory System",
+          "caseStudies": "Casos de Estudio"
         },
         "status_badge": "Todos los sistemas operativos",
         "social_aria": {
@@ -1863,6 +1866,11 @@
       "successBody": "Daley lee tu application personalmente y responde en 3 días laborales. Revisa tu inbox (y carpeta de spam) para nuestra respuesta.",
       "errorValidation": "Por favor revisa los campos — algunos no están completos.",
       "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o envía email directamente a hello@futuremarketingai.com."
+    }
+  },
+  "landing": {
+    "footer": {
+      "nav": {}
     }
   }
 }

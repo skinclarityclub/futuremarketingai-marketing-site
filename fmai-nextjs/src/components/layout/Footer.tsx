@@ -134,6 +134,30 @@ export async function Footer({ locale }: FooterProps) {
               <ul className="space-y-2">
                 <li>
                   <Link
+                    href="/apply"
+                    className="text-sm font-medium text-accent-system hover:opacity-80 transition-opacity"
+                  >
+                    {t('landing.footer.nav.apply')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/memory"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.memory')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/case-studies/skinclarity-club"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.caseStudies')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/blog"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
