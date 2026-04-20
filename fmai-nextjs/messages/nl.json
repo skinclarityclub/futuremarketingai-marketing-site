@@ -1622,5 +1622,81 @@
     "bullet4": "Transparante prijsbespreking",
     "credential": "Daley — Oprichter, FutureMarketingAI",
     "close": "Sluiten"
+  },
+  "memory": {
+    "meta": {
+      "title": "Memory System — Clyde onthoudt alles per klant | FutureMarketingAI",
+      "description": "Clyde heeft persistent geheugen per klant — 4 lagen (HOT/WARM/COLD/CONTEXT), per-client isolation, nightly consolidation. Elke week scherper, niet verwateren."
+    },
+    "hero": {
+      "eyebrow": "Clyde Memory System",
+      "headlineMain": "Clyde onthoudt alles.",
+      "headlineAccent": "Per klant, voor altijd.",
+      "subtitle": "Het verschil tussen een AI-tool en een AI-medewerker is geheugen. Clyde onthoudt merkstem, doelgroep, KPI-doelen en prestatiegeschiedenis — en wordt elke week scherper per klant."
+    },
+    "layers": {
+      "title": "Vier lagen geheugen die samenwerken",
+      "subtitle": "Elk gesprek, elke post, elke campagne landt in de juiste laag. Samen vormen ze het werkgeheugen van je AI-medewerker.",
+      "hot": {
+        "name": "HOT — Werkgeheugen",
+        "window": "Laatste 24 uur",
+        "description": "De lopende conversatie, de huidige campagne, de content die nu in review zit. Direct beschikbaar, zonder ophaal-latentie."
+      },
+      "warm": {
+        "name": "WARM — Recente context",
+        "window": "Laatste 30 dagen",
+        "description": "Recent goedgekeurde posts, KPI-rapporten, feedback-rondes. Beschikbaar voor vergelijking en patroonherkenning binnen de huidige cyclus."
+      },
+      "cold": {
+        "name": "COLD — Langetermijn archief",
+        "window": "Al het oudere materiaal",
+        "description": "Volledige historische archief — brand guidelines, eerdere campagnes, oude rapporten. Semantisch doorzoekbaar via embeddings."
+      },
+      "context": {
+        "name": "CONTEXT — Structurele kennis",
+        "window": "Permanente kernwaarden",
+        "description": "De kern: merkstem, doelgroep-persona, KPI-doelen, brand rules. Verandert alleen bij expliciete updates — niet door een los gesprek."
+      }
+    },
+    "isolation": {
+      "title": "Per-klant isolation — geen bleed tussen merken",
+      "body1": "Clyde beheert meerdere klanten en meerdere merken zonder dat de merkstem van Klant A in Klant B opduikt. Elke klant krijgt een eigen geheugen-namespace die strikt gescheiden is op database-niveau (Supabase RLS) en in de vector store.",
+      "body2": "Wat Clyde leert over een client blijft bij die client. Je operators zien alleen wat ze mogen zien. Bij opzegging: data is in 24 uur exporteerbaar, 30 dagen retentie voor vangnet, daarna schoon verwijderd."
+    },
+    "decay": {
+      "title": "Decay + dream consolidation — geheugen blijft scherp",
+      "decayTitle": "Memory decay",
+      "decayBody": "Niet alle context blijft even relevant. Oude gegevens verliezen langzaam prioriteit volgens een decay-formule — net als menselijk geheugen. Belangrijke patronen blijven, ruis vervaagt. Geen info-overload, geen vervuild werkgeheugen.",
+      "dreamTitle": "Nightly consolidation",
+      "dreamBody": "Elke nacht draait een consolidation-ritueel — de \"dream phase\". Clyde hergroepeert recente leringen, abstraheert patronen, schrijft strategische inzichten naar structureel geheugen. Je wordt wakker met een scherpere AI-medewerker."
+    },
+    "progress": {
+      "title": "Week 1 versus Week 12",
+      "subtitle": "Het verschil tussen een generieke AI-tool en een AI-medewerker die jouw klanten kent, zichtbaar over tijd.",
+      "week1Label": "Week 1 — eerste content",
+      "week1Body": "\"Schrijf een caption voor klant X\" — Clyde volgt brand guidelines, maar nog niet altijd met perfecte microstylering. Veel feedback-rondes. Jij bent nog veel bezig met correctie en fine-tuning.",
+      "week12Label": "Week 12 — full autonomie",
+      "week12Body": "Clyde kent de micro-tics van klant X: welke emoji wel en niet, welke openingszinnen converteren, welke hashtags presteren, welke tijdstippen werken. Eerste drafts zijn bruikbaar. Jij reviewt, Clyde voert uit."
+    },
+    "contrast": {
+      "title": "Waarom dit niet werkt met ChatGPT of Jasper",
+      "chatgpt": {
+        "name": "ChatGPT / Claude",
+        "body": "Geen klant-specifiek geheugen. Elke sessie begint blanco — je moet brand voice, doelgroep en context herhalen bij elke prompt. Werkt niet bij 20 klanten."
+      },
+      "jasper": {
+        "name": "Jasper / Copy.ai",
+        "body": "Wel templates, beperkt geheugen. Kent \"jouw merkstem\" maar niet \"jouw hele portfolio met 20 merken\". Schaalt niet mee met bureau-scope."
+      },
+      "clyde": {
+        "name": "Clyde",
+        "body": "Persistent per klant, 4 lagen, isolatie tussen merken, nightly consolidation. Gebouwd voor bureaus met 10-50 merken. Elke week scherper, nooit verwateren."
+      }
+    },
+    "cta": {
+      "title": "Wil je zien hoe dit werkt voor jouw klanten?",
+      "subtitle": "Plan een gesprek — we laten de memory-laag live zien op de SkinClarity Club setup en bespreken hoe dit past bij jouw portfolio.",
+      "button": "Plan een gesprek"
+    }
   }
 }

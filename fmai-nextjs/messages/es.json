@@ -1622,5 +1622,81 @@
     "bullet4": "Discusión transparente de precios",
     "credential": "Daley — Fundador, FutureMarketingAI",
     "close": "Cerrar"
+  },
+  "memory": {
+    "meta": {
+      "title": "Memory System — Clyde recuerda todo por cliente | FutureMarketingAI",
+      "description": "Clyde tiene memoria persistente por cliente — 4 capas (HOT/WARM/COLD/CONTEXT), aislamiento por cliente, consolidación nocturna. Más afilado cada semana, sin diluirse."
+    },
+    "hero": {
+      "eyebrow": "Clyde Memory System",
+      "headlineMain": "Clyde lo recuerda todo.",
+      "headlineAccent": "Por cliente, para siempre.",
+      "subtitle": "La diferencia entre una herramienta IA y un empleado IA es la memoria. Clyde recuerda la voz de marca, la audiencia, los objetivos KPI y el historial de rendimiento — y se afila cada semana por cliente."
+    },
+    "layers": {
+      "title": "Cuatro capas de memoria que trabajan juntas",
+      "subtitle": "Cada conversación, cada post, cada campaña aterriza en la capa correcta. Juntas forman la memoria de trabajo de tu empleado IA.",
+      "hot": {
+        "name": "HOT — Memoria de trabajo",
+        "window": "Últimas 24 horas",
+        "description": "La conversación en curso, la campaña actual, el contenido en revisión. Directamente disponible, sin latencia de recuperación."
+      },
+      "warm": {
+        "name": "WARM — Contexto reciente",
+        "window": "Últimos 30 días",
+        "description": "Posts aprobados recientemente, reportes KPI, rondas de feedback. Disponible para comparación y reconocimiento de patrones dentro del ciclo actual."
+      },
+      "cold": {
+        "name": "COLD — Archivo a largo plazo",
+        "window": "Todo lo más antiguo",
+        "description": "El archivo histórico completo — brand guidelines, campañas pasadas, reportes antiguos. Búsqueda semántica vía embeddings."
+      },
+      "context": {
+        "name": "CONTEXT — Conocimiento estructural",
+        "window": "Valores fundamentales permanentes",
+        "description": "El núcleo: voz de marca, persona de audiencia, objetivos KPI, brand rules. Solo cambia con actualizaciones explícitas — nunca por una conversación suelta."
+      }
+    },
+    "isolation": {
+      "title": "Aislamiento por cliente — sin bleed entre marcas",
+      "body1": "Clyde gestiona múltiples clientes y múltiples marcas sin que la voz del Cliente A aparezca en el Cliente B. Cada cliente tiene su propio namespace de memoria, estrictamente separado a nivel de base de datos (Supabase RLS) y en el vector store.",
+      "body2": "Lo que Clyde aprende sobre un cliente se queda con ese cliente. Tus operadores solo ven lo que pueden ver. Al cancelar: los datos son exportables en 24 horas, 30 días de retención como red de seguridad, luego eliminación limpia."
+    },
+    "decay": {
+      "title": "Decay + dream consolidation — la memoria se mantiene afilada",
+      "decayTitle": "Memory decay",
+      "decayBody": "No todo el contexto sigue siendo igual de relevante. Los datos antiguos pierden prioridad siguiendo una fórmula de decay — como la memoria humana. Los patrones importantes permanecen, el ruido se desvanece. Sin overload de info, sin memoria contaminada.",
+      "dreamTitle": "Consolidación nocturna",
+      "dreamBody": "Cada noche corre un ritual de consolidación — la \"dream phase\". Clyde reagrupa aprendizajes recientes, abstrae patrones, escribe insights estratégicos a la memoria estructural. Te despiertas con un empleado IA más afilado."
+    },
+    "progress": {
+      "title": "Semana 1 versus Semana 12",
+      "subtitle": "La diferencia entre una herramienta IA genérica y un empleado IA que conoce a tus clientes, visible en el tiempo.",
+      "week1Label": "Semana 1 — primer contenido",
+      "week1Body": "\"Escribe un caption para el cliente X\" — Clyde sigue las brand guidelines pero aún no siempre con micro-styling perfecto. Muchas rondas de feedback. Tú aún dedicas mucho tiempo a correcciones y ajustes.",
+      "week12Label": "Semana 12 — autonomía completa",
+      "week12Body": "Clyde conoce las micro-tics del cliente X: qué emojis sí y no, qué frases de apertura convierten, qué hashtags rinden, qué horarios funcionan. Los primeros drafts son usables. Tú revisas, Clyde ejecuta."
+    },
+    "contrast": {
+      "title": "Por qué esto no funciona con ChatGPT o Jasper",
+      "chatgpt": {
+        "name": "ChatGPT / Claude",
+        "body": "Sin memoria específica por cliente. Cada sesión comienza en blanco — tienes que repetir voz de marca, audiencia y contexto en cada prompt. No funciona con 20 clientes."
+      },
+      "jasper": {
+        "name": "Jasper / Copy.ai",
+        "body": "Templates sí, memoria limitada. Conoce \"tu voz de marca\" pero no \"tu portfolio completo de 20 marcas\". No escala con el alcance de una agencia."
+      },
+      "clyde": {
+        "name": "Clyde",
+        "body": "Persistente por cliente, 4 capas, aislamiento entre marcas, consolidación nocturna. Construido para agencias con 10-50 marcas. Más afilado cada semana, nunca se diluye."
+      }
+    },
+    "cta": {
+      "title": "¿Quieres ver cómo funciona esto para tus clientes?",
+      "subtitle": "Reserva una llamada — mostramos la capa de memoria en vivo en el setup de SkinClarity Club y discutimos cómo encaja con tu portfolio.",
+      "button": "Reserva una llamada"
+    }
   }
 }
