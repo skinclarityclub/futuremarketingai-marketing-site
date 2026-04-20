@@ -1792,5 +1792,77 @@
       "subtitle": "Reserva una llamada — mostramos la capa de memoria en vivo en el setup de SkinClarity Club y discutimos cómo encaja con tu portfolio.",
       "button": "Reserva una llamada"
     }
+  },
+  "apply": {
+    "meta": {
+      "title": "Apply — Reserva una llamada con Daley | FutureMarketingAI",
+      "description": "Application para una llamada de partnership. Máx. 20 agencias al año. Revisamos en 3 días laborales — encaje o no, siempre recibes respuesta."
+    },
+    "hero": {
+      "counter": "{taken} de {total} plazas Founding ocupadas",
+      "title": "Reserva una llamada de partnership",
+      "subtitle": "Sin self-service. Sin sign-up genérico. Revisamos cada application personalmente y respondemos en 3 días laborales — incluso si no es un match."
+    },
+    "expectations": {
+      "title": "Qué pasa después de aplicar",
+      "step1": {
+        "title": "Revisión en 3 días laborales",
+        "body": "Daley lee cada application personalmente. Recibes respuesta en 72 horas — sí, no o \"llamemos primero\"."
+      },
+      "step2": {
+        "title": "Discovery call de 30 min",
+        "body": "Videollamada sobre tu portfolio, los blockers actuales y si Clyde encaja realmente. Sin pitch — entrevista mutua."
+      },
+      "step3": {
+        "title": "Encaje o no-encaje",
+        "body": "Si encaja empezamos con 4 semanas de onboarding partnership. Si no — te referimos a alternativas DIY."
+      },
+      "reassurance": "Las applications que no encajan no son una decepción. Somos deliberadamente selectivos para proteger la calidad para ambas partes."
+    },
+    "form": {
+      "title": "Cuéntanos sobre tu agencia",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "Nombre completo",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@agencia.com",
+      "agencyLabel": "Nombre de la agencia",
+      "roleLabel": "Tu rol",
+      "rolePlaceholder": "Founder / Head of Content / …",
+      "revenueLabel": "Facturación anual",
+      "selectPlaceholder": "Selecciona una opción",
+      "revenueOptions": {
+        "under_300k": "Menos de €300K",
+        "300k_1m": "€300K – €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_10m": "€3M – €10M",
+        "over_10m": "Más de €10M"
+      },
+      "clientCountLabel": "Número de clientes activos",
+      "clientCountOptions": {
+        "solo": "Solo / sin clientes",
+        "1_5": "1 – 5 clientes",
+        "5_15": "5 – 15 clientes",
+        "15_50": "15 – 50 clientes",
+        "over_50": "Más de 50"
+      },
+      "tierLabel": "Qué tier encaja mejor",
+      "tierOptions": {
+        "partner": "Partner (€347/mo) — operador solo",
+        "growth": "Growth (€2.497/mo) — 5 workspaces",
+        "professional": "Professional (€4.497/mo) — 15 workspaces",
+        "enterprise": "Enterprise (€7.997/mo) — unlimited",
+        "founding": "Founding (€997/mo) — 10 plazas",
+        "unsure": "Aún no lo sé"
+      },
+      "problemLabel": "¿Cuál es tu problema más urgente?",
+      "problemPlaceholder": "Ej.: \"Perdemos 2 FTE en producción de contenido para 15 clientes\" o \"Nuestro SEO está estancado y no tenemos bandwidth para blogs.\"",
+      "submit": "Enviar application",
+      "submitting": "Enviando…",
+      "privacyNote": "Usamos estos datos solo para la revisión. Sin marketing automation, sin mailing list, sin reventa.",
+      "successTitle": "Gracias — application recibida",
+      "successBody": "Daley lee tu application personalmente y responde en 3 días laborales. Revisa tu inbox (y carpeta de spam) para nuestra respuesta.",
+      "errorValidation": "Por favor revisa los campos — algunos no están completos.",
+      "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o envía email directamente a hello@futuremarketingai.com."
+    }
   }
 }

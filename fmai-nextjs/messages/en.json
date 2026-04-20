@@ -1792,5 +1792,77 @@
       "subtitle": "Book a call — we show the memory layer live on the SkinClarity Club setup and discuss how it fits your portfolio.",
       "button": "Book a call"
     }
+  },
+  "apply": {
+    "meta": {
+      "title": "Apply — Book a call with Daley | FutureMarketingAI",
+      "description": "Application for a partnership call. Max 20 agencies per year. We review within 3 business days — fit or not, you always get a response."
+    },
+    "hero": {
+      "counter": "{taken} of {total} Founding spots taken",
+      "title": "Book a partnership call",
+      "subtitle": "No self-service. No generic sign-up. We review every application personally and respond within 3 business days — even if it is not a match."
+    },
+    "expectations": {
+      "title": "What happens after you apply",
+      "step1": {
+        "title": "Review within 3 business days",
+        "body": "Daley reads every application personally. You get a reply within 72 hours — yes, no or \"let us call first\"."
+      },
+      "step2": {
+        "title": "30 min discovery call",
+        "body": "Video call about your portfolio, current blockers and whether Clyde realistically fits. No pitch — mutual interview."
+      },
+      "step3": {
+        "title": "Fit or not-fit",
+        "body": "If it fits we start with 4 weeks of onboarding partnership. If not — we refer you to DIY alternatives."
+      },
+      "reassurance": "Non-fit applications are not a disappointment. We are deliberately selective to protect quality for both sides."
+    },
+    "form": {
+      "title": "Tell us about your agency",
+      "nameLabel": "Name",
+      "namePlaceholder": "Full name",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "you@agency.com",
+      "agencyLabel": "Agency name",
+      "roleLabel": "Your role",
+      "rolePlaceholder": "Founder / Head of Content / …",
+      "revenueLabel": "Annual revenue",
+      "selectPlaceholder": "Select an option",
+      "revenueOptions": {
+        "under_300k": "Less than €300K",
+        "300k_1m": "€300K – €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_10m": "€3M – €10M",
+        "over_10m": "More than €10M"
+      },
+      "clientCountLabel": "Number of active clients",
+      "clientCountOptions": {
+        "solo": "Solo / no clients",
+        "1_5": "1 – 5 clients",
+        "5_15": "5 – 15 clients",
+        "15_50": "15 – 50 clients",
+        "over_50": "More than 50"
+      },
+      "tierLabel": "Which tier fits best",
+      "tierOptions": {
+        "partner": "Partner (€347/mo) — solo operator",
+        "growth": "Growth (€2,497/mo) — 5 workspaces",
+        "professional": "Professional (€4,497/mo) — 15 workspaces",
+        "enterprise": "Enterprise (€7,997/mo) — unlimited",
+        "founding": "Founding (€997/mo) — 10 spots",
+        "unsure": "Not sure yet"
+      },
+      "problemLabel": "What is your most urgent problem?",
+      "problemPlaceholder": "E.g.: \"We are losing 2 FTE on content production for 15 clients\" or \"Our SEO has stalled and we have no bandwidth for blogs.\"",
+      "submit": "Send application",
+      "submitting": "Sending…",
+      "privacyNote": "We use this data only for the review. No marketing automation, no mailing list, no reselling.",
+      "successTitle": "Thank you — application received",
+      "successBody": "Daley reads your application personally and responds within 3 business days. Check your inbox (and spam folder) for our reply.",
+      "errorValidation": "Please check the fields — some are not fully filled in.",
+      "errorNetwork": "Something went wrong while sending. Try again or email hello@futuremarketingai.com directly."
+    }
   }
 }

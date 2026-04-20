@@ -1792,5 +1792,77 @@
       "subtitle": "Plan een gesprek — we laten de memory-laag live zien op de SkinClarity Club setup en bespreken hoe dit past bij jouw portfolio.",
       "button": "Plan een gesprek"
     }
+  },
+  "apply": {
+    "meta": {
+      "title": "Apply — Plan een gesprek met Daley | FutureMarketingAI",
+      "description": "Application voor een partnership-call. Max 20 bureaus per jaar. Wij reviewen binnen 3 werkdagen — passend of niet, je krijgt altijd antwoord."
+    },
+    "hero": {
+      "counter": "{taken} van {total} Founding plekken bezet",
+      "title": "Plan een partnership-gesprek",
+      "subtitle": "Geen self-service. Geen generieke sign-up. We reviewen elke applicatie persoonlijk en antwoorden binnen 3 werkdagen — ook als het geen match is."
+    },
+    "expectations": {
+      "title": "Wat er gebeurt na aanmelden",
+      "step1": {
+        "title": "Review binnen 3 werkdagen",
+        "body": "Daley leest elke applicatie persoonlijk. Je krijgt binnen 72 uur antwoord — ja, nee of \"laten we eerst bellen\"."
+      },
+      "step2": {
+        "title": "30 min discovery call",
+        "body": "Videocall over jouw portfolio, de huidige blockers en of Clyde realistisch past. Geen pitch — wederzijds interview."
+      },
+      "step3": {
+        "title": "Passing of niet-passing",
+        "body": "Als het klopt starten we met 4 weken onboarding-partnership. Zo niet — we verwijzen door naar DIY-alternatieven."
+      },
+      "reassurance": "Niet-passende applicaties zijn geen teleurstelling. We zijn bewust selectief om kwaliteit te borgen voor beide kanten."
+    },
+    "form": {
+      "title": "Vertel ons over jouw bureau",
+      "nameLabel": "Naam",
+      "namePlaceholder": "Volledige naam",
+      "emailLabel": "E-mailadres",
+      "emailPlaceholder": "jij@bureau.nl",
+      "agencyLabel": "Bureau-naam",
+      "roleLabel": "Jouw rol",
+      "rolePlaceholder": "Founder / Head of Content / …",
+      "revenueLabel": "Jaarlijkse omzet",
+      "selectPlaceholder": "Maak een keuze",
+      "revenueOptions": {
+        "under_300k": "Minder dan €300K",
+        "300k_1m": "€300K – €1M",
+        "1m_3m": "€1M – €3M",
+        "3m_10m": "€3M – €10M",
+        "over_10m": "Meer dan €10M"
+      },
+      "clientCountLabel": "Aantal actieve klanten",
+      "clientCountOptions": {
+        "solo": "Solo / geen klanten",
+        "1_5": "1 – 5 klanten",
+        "5_15": "5 – 15 klanten",
+        "15_50": "15 – 50 klanten",
+        "over_50": "Meer dan 50"
+      },
+      "tierLabel": "Welke tier past het beste",
+      "tierOptions": {
+        "partner": "Partner (€347/mo) — solo operator",
+        "growth": "Growth (€2.497/mo) — 5 werkruimtes",
+        "professional": "Professional (€4.497/mo) — 15 werkruimtes",
+        "enterprise": "Enterprise (€7.997/mo) — unlimited",
+        "founding": "Founding (€997/mo) — 10 plekken",
+        "unsure": "Weet het nog niet zeker"
+      },
+      "problemLabel": "Wat is jouw urgentste probleem?",
+      "problemPlaceholder": "Bijv.: \"We verliezen 2 FTE aan content-productie voor 15 klanten\" of \"Onze SEO stagneert en we hebben geen bandwidth voor blogs.\"",
+      "submit": "Verstuur aanvraag",
+      "submitting": "Bezig met versturen…",
+      "privacyNote": "We gebruiken deze gegevens alleen voor de review. Geen marketing-automation, geen mailinglijst, geen doorverkoop.",
+      "successTitle": "Dank je — applicatie ontvangen",
+      "successBody": "Daley leest je applicatie persoonlijk en antwoordt binnen 3 werkdagen. Check je inbox (en spam-folder) voor onze reply.",
+      "errorValidation": "Controleer alsjeblieft de velden — sommige zijn niet volledig ingevuld.",
+      "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@futuremarketingai.com."
+    }
   }
 }
