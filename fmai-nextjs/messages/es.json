@@ -95,8 +95,8 @@
       "gdpr": "RGPD-First IA",
       "enterprise": "Infraestructura IA Enterprise",
       "dutch": "Soporte en Holandés Nativo",
-      "uptime": "99,9% Uptime SLA",
-      "integrations": "200+ Integraciones",
+      "uptime": "Infraestructura self-hosted EU",
+      "integrations": "API abierta + integraciones OAuth",
       "noLockIn": "Sin Contratos de Permanencia"
     },
     "cta": {
@@ -1490,7 +1490,7 @@
   "founding-member": {
     "meta": {
       "title": "Miembro Fundador — Empleado de Marketing IA | FutureMarketingAI",
-      "description": "Únase al programa de miembro fundador: nivel Professional a €997/mes — precio bloqueado de por vida. Solo 10 agencias. Las 11 habilidades, 10.000 créditos/mes, espacios ilimitados y acceso directo al fundador."
+      "description": "Únase al programa de miembro fundador: nivel Professional a €997/mes — precio bloqueado de por vida. Solo 10 agencias. Las 11 habilidades, 8.000 créditos/mes, espacios ilimitados y acceso directo al fundador."
     },
     "hero": {
       "badge": "Solo 10 Agencias",
@@ -1504,7 +1504,7 @@
       "period": "/mes",
       "locked": "Precio bloqueado de por vida — nunca aumenta",
       "comparison": "Nivel Professional normalmente €2.997/mes — ahorra €2.000/mes",
-      "includes": "Las 11 habilidades — 10.000 créditos/mes, espacios ilimitados, €0 onboarding"
+      "includes": "Las 11 habilidades — 8.000 créditos/mes, espacios ilimitados, €0 onboarding"
     },
     "benefits": {
       "heading": "Beneficios de Miembro Fundador",
@@ -1540,7 +1540,7 @@
       "items": {
         "q1": {
           "question": "¿Qué incluye el plan de miembro fundador?",
-          "answer": "Obtiene el nivel Professional completo — las 11 habilidades de Clyde: redes sociales, blog factory, ManyChat DM, agente de voz, gestión de email, monitoreo de anuncios y más. Más 10.000 créditos/mes, espacios ilimitados y acceso directo al fundador. Sin cargo de onboarding (€0)."
+          "answer": "Obtiene el nivel Professional completo — las 12 habilidades de Clyde: redes sociales, blog factory, ManyChat DM, agente de voz, gestión de email, monitoreo de anuncios y más. Más 8.000 créditos/mes, espacios ilimitados y acceso directo al fundador. Sin cargo de onboarding (€0)."
         },
         "q2": {
           "question": "¿Por cuánto tiempo está bloqueado el precio?",

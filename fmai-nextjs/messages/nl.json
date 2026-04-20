@@ -95,8 +95,8 @@
       "gdpr": "AVG-First AI",
       "enterprise": "Enterprise AI Backbone",
       "dutch": "Nederlandstalige Support",
-      "uptime": "99,9% Uptime SLA",
-      "integrations": "200+ Integraties",
+      "uptime": "Self-hosted EU infrastructuur",
+      "integrations": "Open API + OAuth integraties",
       "noLockIn": "Geen Lock-in Contracten"
     },
     "cta": {
@@ -1490,7 +1490,7 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member — AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Word founding member: Professional tier voor €997/maand — levenslange prijsgarantie. Slechts 10 bureaus. Alle 11 skills, 10.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter."
+      "description": "Word founding member: Professional tier voor €997/maand — levenslange prijsgarantie. Slechts 10 bureaus. Alle 11 skills, 8.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter."
     },
     "hero": {
       "badge": "Slechts 10 Bureaus",
@@ -1504,7 +1504,7 @@
       "period": "/maand",
       "locked": "Levenslange prijsgarantie — stijgt nooit",
       "comparison": "Professional tier normaal €2.997/maand — je bespaart €2.000/maand",
-      "includes": "Alle 11 skills — 10.000 credits/maand, onbeperkte werkruimtes, €0 onboarding"
+      "includes": "Alle 11 skills — 8.000 credits/maand, onbeperkte werkruimtes, €0 onboarding"
     },
     "benefits": {
       "heading": "Founding Member Voordelen",
@@ -1540,7 +1540,7 @@
       "items": {
         "q1": {
           "question": "Wat is inbegrepen in het founding member plan?",
-          "answer": "Je krijgt de volledige Professional tier — alle 11 skills die Clyde biedt: social media, blog factory, ManyChat DM, voice agent, e-mailbeheer, ad monitoring en meer. Plus 10.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter. Geen onboardingkosten (€0)."
+          "answer": "Je krijgt de volledige Professional tier — alle 12 vaardigheden die Clyde biedt: social media, blog factory, ManyChat DM, voice agent, e-mailbeheer, ad monitoring en meer. Plus 8.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter. Geen onboardingkosten (€0)."
         },
         "q2": {
           "question": "Hoe lang is de prijs vastgelegd?",

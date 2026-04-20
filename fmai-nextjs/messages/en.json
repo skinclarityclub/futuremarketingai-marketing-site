@@ -95,8 +95,8 @@
       "gdpr": "GDPR-First AI",
       "enterprise": "Enterprise AI Backbone",
       "dutch": "Native Dutch Support",
-      "uptime": "99.9% Uptime SLA",
-      "integrations": "200+ Integrations",
+      "uptime": "Self-hosted EU infrastructure",
+      "integrations": "Open API + OAuth integrations",
       "noLockIn": "No Lock-in Contracts"
     },
     "cta": {
@@ -1628,7 +1628,7 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member — AI Marketing Employee | FutureMarketingAI",
-      "description": "Join the founding member program: Professional tier at €997/mo — lifetime price lock. Only 10 agencies. Get all 11 skills, 10,000 credits/mo, unlimited workspaces, and direct founder access."
+      "description": "Join the founding member program: Professional tier at €997/mo — lifetime price lock. Only 10 agencies. Get all 12 skills, 8,000 credits/mo, unlimited workspaces, and direct founder access."
     },
     "hero": {
       "badge": "10 Agencies Only",
@@ -1642,7 +1642,7 @@
       "period": "/month",
       "locked": "Lifetime pricing lock — never increases",
       "comparison": "Professional tier normally €2,997/month — you save €2,000/mo",
-      "includes": "All 11 skills — 10,000 credits/mo, unlimited workspaces, €0 onboarding fee"
+      "includes": "All 11 skills — 8,000 credits/mo, unlimited workspaces, €0 onboarding fee"
     },
     "benefits": {
       "heading": "Founding Member Benefits",
@@ -1678,7 +1678,7 @@
       "items": {
         "q1": {
           "question": "What is included in the founding member plan?",
-          "answer": "You get the full Professional tier — all 11 skills Clyde offers: social media, blog factory, ManyChat DM, voice agent, email management, ad monitoring, and more. Plus 10,000 credits/mo, unlimited workspaces, and direct founder access. No onboarding fee (€0)."
+          "answer": "You get the full Professional tier — all 12 skills Clyde offers: social media, blog factory, ManyChat DM, voice agent, email management, ad monitoring, and more. Plus 8,000 credits/mo, unlimited workspaces, and direct founder access. No onboarding fee (€0)."
         },
         "q2": {
           "question": "How long is the price locked?",
