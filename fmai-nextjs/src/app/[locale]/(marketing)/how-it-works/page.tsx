@@ -29,26 +29,7 @@ export async function generateMetadata({
   })
 }
 
-const STEP_KEYS = ['choose', 'activate', 'connect', 'working'] as const
-
-const HOW_TO_STEPS = [
-  {
-    name: 'Choose Your Plan',
-    text: 'Select the plan that matches your agency — Growth, Professional, or Enterprise — each includes Clyde, your persistent AI Marketing Employee, with all skills and a monthly credit allocation.',
-  },
-  {
-    name: 'Activate Skills',
-    text: 'Pick the skills your AI employee should learn: Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator, or Reporting.',
-  },
-  {
-    name: 'Connect Your Clients',
-    text: 'Create a workspace for each client, upload brand guidelines, connect social accounts, and configure tone of voice.',
-  },
-  {
-    name: 'AI Employee Starts Working',
-    text: 'Your AI Marketing Employee begins executing — creating content, qualifying leads, managing social, running ads, and generating reports 24/7.',
-  },
-]
+const STEP_KEYS = ['apply', 'onboarding', 'configure', 'production', 'improvement'] as const
 
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -72,9 +53,12 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         locale={locale}
       />
       <HowToJsonLd
-        name="How Your AI Marketing Employee Gets Started"
-        description="A 4-step agent onboarding process: choose your tier, activate skills, connect clients, and your AI employee starts working"
-        steps={HOW_TO_STEPS}
+        name={t('jsonLd.name')}
+        description={t('jsonLd.description')}
+        steps={STEP_KEYS.map((key) => ({
+          name: t(`process.steps.${key}.title`),
+          text: t(`process.steps.${key}.description`),
+        }))}
       />
 
       {/* Hero Section */}

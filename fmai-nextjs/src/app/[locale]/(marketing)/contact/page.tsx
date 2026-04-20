@@ -49,13 +49,33 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
             {t('hero.title')}
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             {t('hero.description')}
           </p>
+        </div>
+      </section>
+
+      {/* Apply callout — redirect partnership requests to /apply */}
+      <section className="px-6 lg:px-12 pb-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="border border-accent-system/30 bg-accent-system/5 rounded-[var(--radius-card)] p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex-1">
+              <h2 className="text-lg font-semibold text-text-primary mb-1">
+                {t('applyCallout.title')}
+              </h2>
+              <p className="text-sm text-text-secondary">{t('applyCallout.body')}</p>
+            </div>
+            <a
+              href="/apply"
+              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-accent-system text-bg-deep font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity text-sm"
+            >
+              {t('applyCallout.button')}
+            </a>
+          </div>
         </div>
       </section>
 

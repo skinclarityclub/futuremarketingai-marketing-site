@@ -10,6 +10,8 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL, MAX_PARTNERS_PER_YEAR } from '@/lib/constants'
+import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -25,6 +27,9 @@ export async function generateMetadata({
 }
 
 const ERA_KEYS = ['assisted', 'autonomous', 'standard'] as const
+const FIT_KEYS = ['fit1', 'fit2', 'fit3', 'fit4'] as const
+const NOT_FIT_KEYS = ['notFit1', 'notFit2', 'notFit3', 'notFit4'] as const
+const INFRA_KEYS = ['selfHosted', 'eu', 'openStandards', 'noLockIn'] as const
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -119,6 +124,131 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
+      {/* Hybrid ICP */}
+      <section className="py-16 px-6 lg:px-12" aria-labelledby="about-icp">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <SectionHeading id="about-icp">{t('icp.title')}</SectionHeading>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('icp.subtitle')}</p>
+          </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <GlassCard className="text-left">
+                <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#00FF88]/15 text-[#00FF88] text-sm"
+                  >
+                    ✓
+                  </span>
+                  {t('icp.fitTitle')}
+                </h3>
+                <ul className="space-y-4">
+                  {FIT_KEYS.map((key) => (
+                    <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
+                      <span aria-hidden className="text-[#00FF88] pt-[2px] shrink-0">✓</span>
+                      <span>{t(`icp.${key}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </GlassCard>
+              <GlassCard className="text-left">
+                <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-text-muted/15 text-text-muted text-sm"
+                  >
+                    —
+                  </span>
+                  {t('icp.notFitTitle')}
+                </h3>
+                <ul className="space-y-4">
+                  {NOT_FIT_KEYS.map((key) => (
+                    <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
+                      <span aria-hidden className="text-text-muted pt-[2px] shrink-0">—</span>
+                      <span>{t(`icp.${key}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </GlassCard>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Infrastructure */}
+      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="about-infra">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <SectionHeading id="about-infra">{t('infra.title')}</SectionHeading>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('infra.subtitle')}</p>
+          </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {INFRA_KEYS.map((key) => (
+                <GlassCard key={key} className="text-left">
+                  <h3 className="text-base font-semibold text-text-primary mb-2">
+                    {t(`infra.${key}.title`)}
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {t(`infra.${key}.body`)}
+                  </p>
+                </GlassCard>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Capacity + transparency */}
+      <section className="py-16 px-6 lg:px-12" aria-labelledby="about-capacity">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <SectionHeading id="about-capacity">{t('capacity.title')}</SectionHeading>
+          </div>
+          <ScrollReveal>
+            <GlassCard className="text-left">
+              <p className="text-text-secondary leading-relaxed mb-4">
+                {t('capacity.body', {
+                  taken: FOUNDING_SPOTS_TAKEN,
+                  total: FOUNDING_SPOTS_TOTAL,
+                  maxPerYear: MAX_PARTNERS_PER_YEAR,
+                })}
+              </p>
+              <p className="text-text-secondary leading-relaxed">{t('capacity.reasoning')}</p>
+            </GlassCard>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Founder bio */}
+      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="about-founder">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-8">
+            <SectionHeading id="about-founder">{t('founder.title')}</SectionHeading>
+          </div>
+          <ScrollReveal>
+            <GlassCard className="text-left">
+              <div className="flex items-start gap-4">
+                <div
+                  aria-hidden
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-system to-[#A855F7] flex items-center justify-center text-bg-deep font-bold text-xl shrink-0"
+                >
+                  D
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-text-primary mb-1">
+                    {t('founder.name')}
+                  </h3>
+                  <p className="text-sm text-text-muted mb-4">{t('founder.role')}</p>
+                  <p className="text-text-secondary leading-relaxed">{t('founder.bio')}</p>
+                </div>
+              </div>
+            </GlassCard>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="about-cta">
         <div className="max-w-7xl mx-auto text-center">
@@ -133,6 +263,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <CTAButton href="/apply" size="lg">
                   {t('cta.demo_button')}
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </CTAButton>
                 <CTAButton href="/contact" variant="secondary" size="lg">
                   {t('cta.contact_button')}

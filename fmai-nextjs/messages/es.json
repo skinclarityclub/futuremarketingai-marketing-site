@@ -474,6 +474,51 @@
       "description": "Estamos incorporando nuestras primeras 10 agencias fundadoras a EUR 997/mes. Asegure el precio mas bajo y ayude a dar forma al producto.",
       "demo_button": "Reservar una Llamada",
       "contact_button": "Contactenos"
+    },
+    "icp": {
+      "title": "¿Para qué agencias estamos construyendo a Clyde?",
+      "subtitle": "Mismo ICP híbrido que en home, pero más extenso aquí. Somos deliberadamente selectivos.",
+      "fitTitle": "Para quién es esto",
+      "fit1": "Agencias con 5-30 FTE que sirven a 10-50 marcas y quieren escalar sin añadir personal",
+      "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como estrategia de crecimiento",
+      "fit3": "Founders que buscan un partner, no una herramienta — dispuestos a recalibrar workflows, no solo a ejecutarlos",
+      "fit4": "Agencias NL/EU-first que valoran la residencia de datos y el cumplimiento GDPR/EU AI Act",
+      "notFitTitle": "Probablemente no es el match correcto si",
+      "notFit1": "Facturas menos de €300K al año — el presupuesto no encaja y no queremos frenar tu crecimiento",
+      "notFit2": "Haces puramente branding, identidad o creativo — Clyde entrega contenido de performance, no diseño",
+      "notFit3": "Buscas set-and-forget — Clyde aprende de ti, lo que requiere 4 semanas de onboarding e input continuo",
+      "notFit4": "Diriges una agencia de >30 FTE con equipo propio de IA/tech — construimos para agencias que quieren acelerar, no para enterprises que construyen in-house"
+    },
+    "infra": {
+      "title": "Nuestra infraestructura",
+      "subtitle": "Hechos, no ideología. Dónde vive tu data y quién escribe el código importa.",
+      "selfHosted": {
+        "title": "n8n + Supabase self-hosted",
+        "body": "Orquestación vía n8n en nuestros propios servidores. Data en Supabase EU. No hay SaaS black-box por donde fluya tu data, sino pipelines transparentes que ajustamos juntos."
+      },
+      "eu": {
+        "title": "Servidores EU (Hetzner)",
+        "body": "Servidores físicos en Alemania/Países Bajos. Sin transferencia de data a EE.UU. GDPR + EU AI Act ready — no como checklist, sino como punto de partida."
+      },
+      "openStandards": {
+        "title": "Estándares abiertos",
+        "body": "OpenAPI, JSON, CSV, OAuth estándar. Sin formatos propietarios para encerrar tu data de contenido/cliente."
+      },
+      "noLockIn": {
+        "title": "Zero lock-in",
+        "body": "Tu data es exportable en 24h. 30 días de retención como red de seguridad después de cancelar. Sin penalizaciones, sin exit fees, sin \"our terms\" que te limiten."
+      }
+    },
+    "capacity": {
+      "title": "Capacidad y transparencia",
+      "body": "Máx. {maxPerYear} agencias al año. Actualmente {taken} de {total} plazas Founding ocupadas. No es un truco de marketing — es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente por 4 semanas de setup, lo que limita cuántas agencias podemos recibir a la vez.",
+      "reasoning": "Preferimos calidad sobre volumen. Mejor 20 agencias donde Clyde realmente entregue valor, que 200 a las que no podamos darles suficiente atención. La waitlist escala con la demanda — si estamos llenos, agendamos una llamada contigo para la siguiente cohorte."
+    },
+    "founder": {
+      "title": "Quién está detrás",
+      "name": "Daley",
+      "role": "Founder & operator — FutureMarketingAI",
+      "bio": "Construyo FutureMarketingAI desde la experiencia: como operador en SkinClarity Club vi cómo 12 herramientas sueltas no escalaban con 3 cuentas IG × 4 marcas. Clyde nació como solución a mi propio problema. Cada nuevo cliente que acepto es alguien con quien mantengo contacto personal — sin capa CSM, sin sistema de tickets para decisiones estratégicas."
     }
   },
   "pricing": {
@@ -699,44 +744,53 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Como Funciona | Empleado de Marketing IA | FutureMarketingAI",
-      "description": "Descubra como su Empleado de Marketing IA se incorpora en cuatro pasos."
+      "title": "Cómo funciona — 5 pasos para un empleado IA en tu portfolio | FutureMarketingAI",
+      "description": "De application a producción live en 5 pasos: application + discovery call, onboarding de 4 semanas por Daley, configurar Clyde por cliente, iniciar producción, mejora continua."
     },
     "hero": {
-      "title": "Como Empieza Su Empleado IA?",
-      "description": "Cuatro pasos simples desde el registro hasta que su Empleado de Marketing IA gestione la ejecucion para todos sus clientes."
+      "title": "¿Cómo empieza tu partnership con Clyde?",
+      "description": "Cinco pasos desde la primera llamada hasta operación autónoma. Sin self-service onboarding — Daley guía a cada cliente personalmente por el proceso."
+    },
+    "jsonLd": {
+      "name": "Cómo funciona el onboarding de partnership FutureMarketingAI",
+      "description": "Un onboarding de 5 pasos: application + discovery call, setup de partnership de 4 semanas por Daley, configurar Clyde por cliente, iniciar producción con aprobación, mejora continua."
     },
     "process": {
-      "title": "El Viaje de Incorporacion del Agente",
+      "title": "El journey de onboarding",
       "steps": {
-        "choose": {
+        "apply": {
           "step": "Paso 1",
-          "title": "Elija Su Pack",
-          "description": "Seleccione el plan que se ajuste a su agencia — Growth, Professional o Enterprise. Cada plan incluye a Clyde, su Empleado de Marketing IA persistente, con todas las habilidades y una asignacion mensual de creditos."
+          "title": "Application + discovery call",
+          "description": "Llena el formulario de application. En 3 días laborales nos escuchamos. Videollamada de 30 min donde evaluamos mutuamente si es match. Sin pitch — check honesto."
         },
-        "activate": {
+        "onboarding": {
           "step": "Paso 2",
-          "title": "Active Habilidades",
-          "description": "Elija las habilidades: Creador de Contenido, Agente de Voz, Calificador de Leads, Social Media, Creador de Anuncios o Reportes."
+          "title": "Onboarding partnership de 4 semanas con Daley",
+          "description": "Daley guía personalmente el proceso de onboarding. Intake de brand voice por cliente, definición de objetivos KPI, build-out de matriz de skills, setup de approval workflow. Sin wizard self-service."
         },
-        "connect": {
+        "configure": {
           "step": "Paso 3",
-          "title": "Conecte Sus Clientes",
-          "description": "Cree un espacio de trabajo por cliente. Suba directrices de marca y conecte cuentas sociales."
+          "title": "Configurar Clyde por cliente",
+          "description": "Por cada cliente un workspace con: brand guidelines, audiencia, tone of voice, skills activas, channels, reglas de aprobación. Clyde empieza a formar su memoria por cliente."
         },
-        "working": {
+        "production": {
           "step": "Paso 4",
-          "title": "El Empleado IA Empieza a Trabajar",
-          "description": "Su Empleado de Marketing IA comienza a ejecutar — creando contenido, calificando leads, gestionando social y generando reportes. 24/7."
+          "title": "Producción arranca — cada output vía tu aprobación",
+          "description": "Clyde empieza a trabajar: posts sociales, blogs, llamadas, ads. Tú revisas cada output en la approval queue antes de que vaya live. Semana 1 muchas correcciones, pero Clyde aprende rápido."
+        },
+        "improvement": {
+          "step": "Paso 5",
+          "title": "Mejora continua + reportes semanales",
+          "description": "Más afilado cada semana por cliente. Clyde recuerda correcciones, aprende de data de performance, y construye micro-conocimiento. Performance digest semanal te mantiene en control."
         }
       },
-      "loop_title": "Mejora Continua",
-      "loop_description": "Su empleado IA mejora cada semana. En el mes 3, supera a la mayoria de marketeros junior en velocidad y consistencia."
+      "loop_title": "Mejora continua",
+      "loop_description": "Clyde mejora cada semana por cliente — memoria plus data de performance plus tus correcciones alimentan la siguiente iteración. Después de 12 semanas conoces la diferencia con la semana 1."
     },
     "cta": {
-      "title": "Vealo en Accion",
-      "description": "Reserve una llamada estrategica para un recorrido en vivo.",
-      "button": "Reservar una Llamada"
+      "title": "¿Listo para empezar la partnership?",
+      "description": "Reserva una llamada — discutiremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
+      "button": "Reserva una llamada"
     }
   },
   "contact": {
@@ -745,8 +799,8 @@
       "description": "Contacte a Future Marketing AI. Respondemos en 24 horas."
     },
     "hero": {
-      "title": "Solicite una Consulta IA Gratuita",
-      "description": "Listo para darle a su agencia un Empleado de Marketing IA? Hablemos sobre que habilidades y nivel se ajustan mejor."
+      "title": "¿Preguntas generales o feedback?",
+      "description": "Para applications de partnership: vete a /apply. Para todas las demás preguntas — feedback, prensa, partnerships, info general — usa este formulario. Respuesta en 1-2 días laborales."
     },
     "form": {
       "title": "Envienos un Mensaje",
@@ -773,6 +827,11 @@
       "location_text": "Paises Bajos (Remoto)",
       "response_time_label": "Tiempo de Respuesta",
       "response_time_text": "Dentro de 24 horas"
+    },
+    "applyCallout": {
+      "title": "¿Quieres una llamada de partnership?",
+      "body": "Para clientes potenciales: llena la application. Daley lee cada request personalmente y responde en 3 días laborales.",
+      "button": "Ir a /apply"
     }
   },
   "legal": {
@@ -1265,87 +1324,92 @@
   },
   "founding-member": {
     "meta": {
-      "title": "Miembro Fundador — Empleado de Marketing IA | FutureMarketingAI",
-      "description": "Únase al programa de miembro fundador: nivel Professional a €997/mes — precio bloqueado de por vida. Solo 10 agencias. Las 11 habilidades, 8.000 créditos/mes, espacios ilimitados y acceso directo al fundador."
+      "title": "Founding Member — 10 plazas, €997 de por vida | FutureMarketingAI",
+      "description": "10 plazas founding para agencias que se unen desde el launch. €997/mes de por vida, las 12 skills, caps Pro-level, Slack directo con Daley."
     },
     "hero": {
-      "badge": "Solo 10 Agencias",
-      "title": "Conviértase en Miembro Fundador",
-      "description": "Por menos del coste de un coordinador de marketing junior, obtenga un equipo de IA que trabaja 24/7 en 11 disciplinas. €997/mes bloqueado de por vida — todas las habilidades, espacios ilimitados, acceso directo al fundador."
+      "badge": "{taken} de {total} plazas Founding ocupadas",
+      "title": "Sé un Founding partner — una vez, de por vida",
+      "description": "10 plazas total para agencias que se comprometen desde el launch. €997/mes de por vida — el nuevo tier Growth pasa a €2.497/mo. Las 12 skills, caps Pro-level, acceso Slack directo a Daley."
     },
     "pricing": {
-      "heading": "Precios de Miembro Fundador",
+      "heading": "Tu inversión",
       "currency": "€",
       "price": "997",
-      "period": "/mes",
-      "locked": "Precio bloqueado de por vida — nunca aumenta",
-      "comparison": "Nivel Professional normalmente €2.997/mes — ahorra €2.000/mes",
-      "includes": "Las 11 habilidades — 8.000 créditos/mes, espacios ilimitados, €0 onboarding"
+      "period": "/mo — de por vida",
+      "locked": "Garantía de precio de por vida (sin aumento nunca)",
+      "comparison": "Tier Growth pasa a €2.497/mo. Tú pagas 60% menos — para siempre.",
+      "includes": "Workspaces unlimited, 8.000 credits/mes, las 12 skills con caps Pro-level, Founder Slack, €0 onboarding."
+    },
+    "value": {
+      "heading": "Por qué existen las 10 plazas Founding",
+      "line1": "Los Founding partners son las agencias con quienes moldeamos Clyde. Vuestro feedback determina qué construimos, qué skills tienen prioridad, cómo evoluciona la capa de memoria.",
+      "line2": "A cambio de ese compromiso temprano obtienes el precio €997 de por vida. El nuevo tier Growth empieza en €2.497/mo — incluso si pedimos €3.000 en 2 años, tú te quedas en €997.",
+      "line3": "10 plazas. Sin reapertura. Cuando están llenas, están llenas."
     },
     "benefits": {
-      "heading": "Beneficios de Miembro Fundador",
+      "heading": "Lo que obtienes como Founding partner",
       "items": {
         "price_lock": {
-          "title": "Precio Bloqueado de por Vida a €997/mes",
-          "description": "Precio bloqueado de por vida a €997/mes — nunca aumenta. Las 11 habilidades incluidas. A €997/mes, ahorra €2.000/mes vs Professional — eso son €24.000/año de vuelta en su bolsillo."
+          "title": "Lock de precio de por vida",
+          "description": "€997/mes mientras sigas activo. Sin aumento de precio, sin \"ajuste de inflación\", sin upgrade forzado a un tier superior."
         },
         "priority": {
-          "title": "Solicitudes de Funciones Prioritarias",
-          "description": "Solicitudes de funciones prioritarias e influencia en la hoja de ruta. Las necesidades de su agencia determinan directamente lo que construimos a continuación."
+          "title": "Priority development queue",
+          "description": "Feature requests de Founding partners van primero. Tienes línea directa al roadmap."
         },
         "influence": {
-          "title": "Acceso Directo al Fundador",
-          "description": "Dé forma al producto con acceso directo al fundador. Canal privado de Slack para preguntas, feedback y asesoramiento estratégico sobre el despliegue de Clyde."
+          "title": "Influencia en roadmap",
+          "description": "Founder calls mensuales para discutir qué construimos siguiente. Sin comité, pero con tu input."
         },
         "early_access": {
-          "title": "Primer Acceso a Nuevas Habilidades",
-          "description": "Primer acceso a nuevas habilidades de IA cuando se lancen. Cada nueva capacidad se despliega primero para miembros fundadores."
+          "title": "Early access a nuevas skills",
+          "description": "Reel Builder, Email Management, ManyChat DM van primero a Founding partners. Pruebas antes que el resto tenga acceso."
         },
         "community": {
-          "title": "Club Exclusivo de Fundadores",
-          "description": "Canal exclusivo de Slack del Club de Fundadores. Conéctese con las primeras 10 agencias usando Empleados de Marketing IA — comparta estrategias, resultados y mejores prácticas."
+          "title": "Founder Slack",
+          "description": "Channel Slack directo con Daley y los otros 9 Founding partners. Preguntas, ayuda, best practices — en la misma sala."
         },
         "onboarding": {
-          "title": "Onboarding Gratuito (Valor €3.000)",
-          "description": "Onboarding gratuito — normalmente €3.000 para el nivel Professional. Configuramos juntos sus espacios de trabajo y configuramos Clyde para resultados máximos desde el día uno."
+          "title": "€0 onboarding fee",
+          "description": "Otros tiers pagan €497-€5.997 de onboarding para 4 semanas de partnership setup. Founding partners: €0. El único coste único es gratis."
         }
       }
     },
+    "proof": {
+      "heading": "Nuestro primer Founding partner",
+      "body": "SkinClarity Club es Founding partner desde el día 1. Clyde gestiona 3 cuentas Instagram × 4 marcas de forma autónoma. Sindy (founder) revisa, Clyde ejecuta. Lee el caso completo para ver cómo luce un setup Founding en la práctica.",
+      "caseButton": "Lee el caso SkinClarity"
+    },
     "faq": {
-      "heading": "Preguntas Frecuentes",
+      "heading": "Preguntas frecuentes — Founding",
       "items": {
         "q1": {
-          "question": "¿Qué incluye el plan de miembro fundador?",
-          "answer": "Obtiene el nivel Professional completo — las 12 habilidades de Clyde: redes sociales, blog factory, ManyChat DM, agente de voz, gestión de email, monitoreo de anuncios y más. Más 8.000 créditos/mes, espacios ilimitados y acceso directo al fundador. Sin cargo de onboarding (€0)."
+          "question": "¿Qué pasa cuando las 10 plazas están llenas?",
+          "answer": "Entonces el tier Founding queda cerrado. Sin reapertura, sin excepciones. Nuevas agencias empiezan en el tier Growth regular €2.497/mo. Tú conservas tu €997 de por vida mientras te mantengas activo."
         },
         "q2": {
-          "question": "¿Por cuánto tiempo está bloqueado el precio?",
-          "answer": "Para siempre. Su tarifa de €997/mes está bloqueada de por vida como miembro fundador — nunca aumenta, independientemente de futuros cambios de precios."
+          "question": "¿Puedo upgrade más tarde a Professional o Enterprise?",
+          "answer": "Sí, pro-rated. De Founding a inferior (Growth/Partner) no es posible — tu precio Founding es exclusivo para Founding."
         },
         "q3": {
-          "question": "¿Cuánto pagan las agencias normalmente?",
-          "answer": "El nivel Professional cuesta €2.997/mes con un cargo de onboarding de €3.000. Como miembro fundador, paga €997/mes con €0 de onboarding — ahorrando €2.000/mes (€24.000/año) más el cargo de onboarding."
+          "question": "¿Qué significa exactamente \"caps Pro-level\"?",
+          "answer": "Tienes las 12 skills disponibles con los mismos caps que el tier Professional, pero pagas el precio Founding. Concretamente: Voice Agent 60 min/mo, Video ads 8/mo, Reels 8/mo, ManyChat 500 DMs/mo, Blog 12 artículos/mo. Mejor que Growth, debajo de Enterprise."
         },
         "q4": {
-          "question": "¿Cuántas plazas quedan?",
-          "answer": "Limitamos el programa de miembros fundadores a exactamente 10 agencias. Una vez que se llenen todas las plazas, las nuevas agencias comienzan al precio regular de Professional de €2.997/mes. Consulte esta página para disponibilidad actual."
+          "question": "¿Qué pasa si paro y quiero empezar de nuevo más tarde?",
+          "answer": "Entonces pierdes tu precio Founding. Vuelves como cliente regular en los tiers vigentes. Founding solo es válido mientras te mantengas activo sin interrupción."
         },
         "q5": {
-          "question": "¿Qué ROI puedo esperar?",
-          "answer": "Las agencias que usan Clyde atienden 3-5x más clientes sin personal adicional. A €997/mes — menos que un coordinador de marketing junior — obtiene un equipo de IA que trabaja 24/7 en 11 disciplinas."
+          "question": "¿Por qué sin onboarding fee?",
+          "answer": "Los Founding partners obtienen las 4 semanas de onboarding partnership gratis como agradecimiento por la confianza temprana. Es una excepción única para estas 10 plazas."
         }
       }
     },
     "cta": {
-      "title": "¿Listo para Ser el Primero?",
-      "subtitle": "A €997/mes, ahorra €2.000/mes vs Professional — eso son €24.000/año. Solo 10 plazas de miembro fundador disponibles.",
-      "button": "Solicitar Ahora"
-    },
-    "value": {
-      "heading": "Por Qué Esta Oferta Es Inigualable",
-      "line1": "Por menos del coste de un coordinador de marketing junior, obtenga un equipo de IA que trabaja 24/7 en 11 disciplinas.",
-      "line2": "A €997/mes, ahorra €2.000/mes vs Professional — eso son €24.000/año de vuelta en su presupuesto.",
-      "line3": "Las agencias que usan Clyde atienden 3-5x más clientes sin personal adicional."
+      "title": "Sé uno de los 10",
+      "subtitle": "{taken} de {total} plazas ocupadas. Reserva una llamada — si el fit qualifies y ambos vemos un match, reservamos tu plaza.",
+      "button": "Reserva una llamada"
     }
   },
   "booking": {

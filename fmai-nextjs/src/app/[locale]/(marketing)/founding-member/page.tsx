@@ -9,6 +9,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -66,8 +68,10 @@ export default async function FoundingMemberPage({
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-system/10 border border-accent-system/20 rounded-full mb-6">
-            <span className="text-sm font-medium text-accent-system">{t('hero.badge')}</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5A623]/10 border border-[#F5A623]/30 rounded-full mb-6">
+            <span className="text-sm font-medium text-[#F5A623]">
+              {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            </span>
           </div>
           <h1
             id="hero"
@@ -171,14 +175,33 @@ export default async function FoundingMemberPage({
         </div>
       </section>
 
+      {/* SKC proof */}
+      <section aria-labelledby="proof" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <SectionHeading id="proof">{t('proof.heading')}</SectionHeading>
+            <p className="text-text-secondary leading-relaxed mt-4 mb-6">
+              {t('proof.body')}
+            </p>
+            <CTAButton href="/case-studies/skinclarity-club" variant="secondary">
+              {t('proof.caseButton')}
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </CTAButton>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-            <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
+            <p className="text-lg text-text-secondary mb-8">
+              {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            </p>
             <CTAButton href="/apply" size="lg">
               {t('cta.button')}
+              <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
           </div>
         </ScrollReveal>

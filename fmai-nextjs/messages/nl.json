@@ -474,6 +474,51 @@
       "description": "We onboarden onze eerste 10 founding member bureaus voor EUR 997/maand. Zeker je laagste prijs en help het product vormen.",
       "demo_button": "Boek een Strategiegesprek",
       "contact_button": "Neem Contact Op"
+    },
+    "icp": {
+      "title": "Voor welke bureaus bouwen we Clyde?",
+      "subtitle": "Zelfde hybride ICP als op home, maar hier uitgebreider. We zijn bewust selectief.",
+      "fitTitle": "Voor wie werkt dit?",
+      "fit1": "Bureaus met 5-30 FTE die 10-50 merken bedienen en willen schalen zonder extra personeel",
+      "fit2": "Marketing operators die data-driven werken en content als groeistrategie zien",
+      "fit3": "Founders die een partner zoeken, geen tool — bereid workflows te herijken, niet alleen uit te voeren",
+      "fit4": "NL/EU-first bureaus die waarde hechten aan dataresidentie en AVG/EU AI Act compliance",
+      "notFitTitle": "Waarschijnlijk niet de juiste match als",
+      "notFit1": "Je minder dan €300K jaaromzet hebt — het budget past niet en we willen je groei niet in de weg staan",
+      "notFit2": "Je puur branding, identity of creative doet — Clyde levert performance content, geen design work",
+      "notFit3": "Je op zoek bent naar set-and-forget — Clyde leert van jou, dat vereist 4 weken onboarding en blijvende input",
+      "notFit4": "Je een bureau runt met >30 FTE en een eigen AI/tech-team — wij bouwen voor bureaus die willen versnellen, niet voor enterprises die zelf bouwen"
+    },
+    "infra": {
+      "title": "Onze infrastructuur",
+      "subtitle": "Gefeit, geen ideologie. Waar je data woont en wie de code schrijft is belangrijk.",
+      "selfHosted": {
+        "title": "Self-hosted n8n + Supabase",
+        "body": "Orchestratie via n8n op eigen servers. Data in Supabase EU. Geen black-box SaaS waar je data doorloopt, wel transparante pipelines die we samen tunen."
+      },
+      "eu": {
+        "title": "EU-servers (Hetzner)",
+        "body": "Fysieke servers in Duitsland/Nederland. Geen data-transfer naar de VS. AVG + EU AI Act ready — niet als afvinklijst, maar als uitgangspunt."
+      },
+      "openStandards": {
+        "title": "Open standaarden",
+        "body": "OpenAPI, JSON, CSV, standaard OAuth. Geen proprietary formats om je content/klant-data in vast te houden."
+      },
+      "noLockIn": {
+        "title": "Zero lock-in",
+        "body": "Je data is 24u exporteerbaar. 30 dagen retentie als vangnet na opzegging. Geen boetes, geen exit-fees, geen \"our terms\" die je beperken."
+      }
+    },
+    "capacity": {
+      "title": "Capaciteit & transparantie",
+      "body": "Max {maxPerYear} bureaus per jaar. Momenteel {taken} van {total} Founding plekken bezet. Dit is geen marketing-kunstje — het is een realiteit van high-touch partnership-onboarding. Daley begeleidt elke nieuwe klant persoonlijk door 4 weken setup, waardoor er een bovengrens zit op hoe veel bureaus we tegelijkertijd kunnen verwelkomen.",
+      "reasoning": "We verkiezen kwaliteit boven volume. Liever 20 bureaus waar Clyde echt meerwaarde levert, dan 200 waar we niet genoeg aandacht aan kunnen geven. De wachtlijst schaalt mee met de vraag — als we vol zitten, plannen we met jou een gesprek voor volgende cohort."
+    },
+    "founder": {
+      "title": "Wie staat hier achter",
+      "name": "Daley",
+      "role": "Founder & operator — FutureMarketingAI",
+      "bio": "Ik bouw FutureMarketingAI vanuit ervaring: als operator bij SkinClarity Club zag ik hoe 12 losse tools niet schaalden bij 3 IG-accounts × 4 merken. Clyde werd geboren als oplossing voor mijn eigen probleem. Elke nieuwe klant die ik aanneem is iemand waar ik persoonlijk contact mee houd — geen CSM-laag, geen ticket-systeem voor strategische beslissingen."
     }
   },
   "pricing": {
@@ -699,44 +744,53 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Hoe Het Werkt | AI Marketing Medewerker voor Bureaus | FutureMarketingAI",
-      "description": "Ontdek hoe je AI Marketing Medewerker wordt ongeboardd in vier stappen."
+      "title": "Hoe Het Werkt — 5 stappen naar een AI-medewerker in jouw portfolio | FutureMarketingAI",
+      "description": "Van application tot live production in 5 stappen: application + discovery call, 4-week onboarding door Daley, Clyde configureren per klant, productie starten, continue verbetering."
     },
     "hero": {
-      "title": "Hoe Begint Je AI-Medewerker?",
-      "description": "Vier eenvoudige stappen van aanmelding tot je AI Marketing Medewerker die de uitvoering voor al je klanten regelt."
+      "title": "Hoe begint jouw partnership met Clyde?",
+      "description": "Vijf stappen van eerste gesprek tot autonoom draaien. Geen self-service onboarding — Daley begeleidt elke klant persoonlijk door het traject."
+    },
+    "jsonLd": {
+      "name": "Hoe FutureMarketingAI partnership onboarding werkt",
+      "description": "Een 5-staps onboarding: application + discovery call, 4-week partnership setup door Daley, Clyde configureren per klant, productie starten met goedkeuring, continue verbetering."
     },
     "process": {
-      "title": "De Agent Onboarding Reis",
+      "title": "De onboarding reis",
       "steps": {
-        "choose": {
+        "apply": {
           "step": "Stap 1",
-          "title": "Kies Je Pack",
-          "description": "Selecteer het plan dat bij je bureau past — Growth, Professional of Enterprise. Elk plan bevat Clyde, je persistente AI Marketing Medewerker, met alle skills en een maandelijkse credittoewijzing."
+          "title": "Application + discovery call",
+          "description": "Vul het application-formulier in. Binnen 3 werkdagen horen we van elkaar. 30 min videogesprek waarin we wederzijds beoordelen of het een match is. Geen pitch — eerlijke check."
         },
-        "activate": {
+        "onboarding": {
           "step": "Stap 2",
-          "title": "Activeer Skills",
-          "description": "Kies de skills die je AI-medewerker moet leren: Content Creator, Voice Agent, Lead Qualifier, Social Media, Ad Creator of Reporting."
+          "title": "4-week onboarding-partnership met Daley",
+          "description": "Daley begeleidt persoonlijk het onboarding-traject. Brand voice intake per klant, KPI-doelen definiëren, skill-matrix opbouwen, approval workflows instellen. Geen self-service wizard."
         },
-        "connect": {
+        "configure": {
           "step": "Stap 3",
-          "title": "Koppel Je Klanten",
-          "description": "Maak een werkruimte voor elke klant. Upload merkrichtlijnen, koppel social accounts en configureer tone of voice."
+          "title": "Clyde configureren per klant",
+          "description": "Voor elke klant een workspace met: brand guidelines, doelgroep, tone of voice, actieve skills, kanalen, goedkeuringsregels. Clyde begint zijn geheugen te vormen per klant."
         },
-        "working": {
+        "production": {
           "step": "Stap 4",
-          "title": "AI-Medewerker Begint te Werken",
-          "description": "Je AI Marketing Medewerker begint met uitvoeren — content maken, leads kwalificeren, social beheren, ads draaien en rapporten genereren. 24/7."
+          "title": "Productie start — elke output via jouw goedkeuring",
+          "description": "Clyde gaat aan het werk: social posts, blogs, calls, ads. Jij reviewt elke output in de approval-queue voordat het live gaat. Week 1 veel correcties, maar Clyde leert snel."
+        },
+        "improvement": {
+          "step": "Stap 5",
+          "title": "Continue verbetering + wekelijkse reports",
+          "description": "Elke week scherper per klant. Clyde onthoudt correcties, leert van performance data, en bouwt micro-kennis op. Wekelijkse performance digest houdt je in control."
         }
       },
-      "loop_title": "Continue Verbetering",
-      "loop_description": "Je AI-medewerker wordt elke week beter. Tegen maand 3 presteert het beter dan de meeste junior marketeers qua snelheid en consistentie."
+      "loop_title": "Continu verbetering",
+      "loop_description": "Clyde wordt elke week beter per klant — geheugen plus prestatiedata plus jouw correcties voeden de volgende iteratie. Na 12 weken ken je het verschil met week 1."
     },
     "cta": {
-      "title": "Zie Het In Actie",
-      "description": "Boek een strategiegesprek voor een live walkthrough.",
-      "button": "Boek een Strategiegesprek"
+      "title": "Klaar om de partnership te starten?",
+      "description": "Plan een gesprek — we bespreken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "button": "Plan een gesprek"
     }
   },
   "contact": {
@@ -745,8 +799,8 @@
       "description": "Neem contact op met Future Marketing AI. We reageren binnen 24 uur."
     },
     "hero": {
-      "title": "Vraag een Gratis AI Consultatie Aan",
-      "description": "Klaar om jouw bureau een AI Marketing Medewerker te geven? Laten we bespreken welke skills en tier het best bij jouw bureau passen."
+      "title": "Algemene vragen of feedback?",
+      "description": "Voor partnership-aanvragen: ga naar /apply. Voor alle andere vragen — feedback, pers, partnerships, algemene informatie — gebruik dit formulier. Reactie binnen 1-2 werkdagen."
     },
     "form": {
       "title": "Stuur Ons Een Bericht",
@@ -773,6 +827,11 @@
       "location_text": "Nederland (Remote-First)",
       "response_time_label": "Reactietijd",
       "response_time_text": "Binnen 24 uur"
+    },
+    "applyCallout": {
+      "title": "Wil je een partnership-gesprek?",
+      "body": "Voor potentiële klanten: vul de application in. Daley leest elke aanvraag persoonlijk en antwoordt binnen 3 werkdagen.",
+      "button": "Ga naar /apply"
     }
   },
   "legal": {
@@ -1265,87 +1324,92 @@
   },
   "founding-member": {
     "meta": {
-      "title": "Founding Member — AI Marketing Medewerker | FutureMarketingAI",
-      "description": "Word founding member: Professional tier voor €997/maand — levenslange prijsgarantie. Slechts 10 bureaus. Alle 11 skills, 8.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter."
+      "title": "Founding Member — 10 plekken, €997 levenslang | FutureMarketingAI",
+      "description": "10 founding plekken voor bureaus die vanaf launch meedoen. €997/maand levenslang, alle 12 vaardigheden, Pro-level caps, direct Slack met Daley."
     },
     "hero": {
-      "badge": "Slechts 10 Bureaus",
-      "title": "Word Founding Member",
-      "description": "Voor minder dan de kosten van één junior marketing coördinator krijg je een AI-team dat 24/7 werkt in 11 disciplines. €997/maand levenslang vastgelegd — alle skills, onbeperkte werkruimtes, direct contact met de oprichter."
+      "badge": "{taken} van {total} Founding plekken bezet",
+      "title": "Word Founding partner — één keer, levenslang",
+      "description": "10 plekken totaal voor bureaus die vanaf launch committeren. €997/maand levenslang — de nieuwe Growth tier wordt €2.497/mo. Alle 12 vaardigheden, Pro-level caps, directe Slack-toegang tot Daley."
     },
     "pricing": {
-      "heading": "Founding Member Prijzen",
+      "heading": "Jouw investering",
       "currency": "€",
       "price": "997",
-      "period": "/maand",
-      "locked": "Levenslange prijsgarantie — stijgt nooit",
-      "comparison": "Professional tier normaal €2.997/maand — je bespaart €2.000/maand",
-      "includes": "Alle 11 skills — 8.000 credits/maand, onbeperkte werkruimtes, €0 onboarding"
+      "period": "/mo — levenslang",
+      "locked": "Levenslange prijsgarantie (geen prijsverhoging ooit)",
+      "comparison": "Growth tier wordt €2.497/mo. Jij betaalt 60% minder — voor altijd.",
+      "includes": "Unlimited werkruimtes, 8.000 credits/maand, alle 12 vaardigheden met Pro-level caps, Founder Slack, €0 onboarding."
+    },
+    "value": {
+      "heading": "Waarom de 10 Founding plekken bestaan",
+      "line1": "Founding partners zijn de bureaus waar we Clyde mee vormgeven. Jullie feedback bepaalt wat we bouwen, welke skills prioriteit krijgen, hoe de memory-laag evolueert.",
+      "line2": "In ruil voor dat vroege commitment krijg je levenslang de €997-prijs. De nieuwe Growth tier start op €2.497/mo — zelfs als we over 2 jaar €3.000 vragen, blijf jij op €997.",
+      "line3": "10 plekken. Geen heropening. Als ze vol zijn, zijn ze vol."
     },
     "benefits": {
-      "heading": "Founding Member Voordelen",
+      "heading": "Wat je krijgt als Founding partner",
       "items": {
         "price_lock": {
-          "title": "Levenslange Prijsgarantie op €997/maand",
-          "description": "Levenslange prijsgarantie op €997/maand — stijgt nooit. Alle 11 skills inbegrepen. Je bespaart €2.000/maand ten opzichte van Professional — dat is €24.000/jaar terug in je zak."
+          "title": "Levenslange prijslock",
+          "description": "€997/maand zolang je actief blijft. Geen prijsverhoging, geen \"inflation adjustment\", geen forced upgrade naar een hoger tier."
         },
         "priority": {
-          "title": "Prioriteit op Feature Requests",
-          "description": "Prioriteit op feature requests en invloed op de roadmap. De behoeften van jouw bureau bepalen direct wat we als volgende bouwen."
+          "title": "Priority development queue",
+          "description": "Feature requests van Founding partners gaan voor. Je hebt directe lijn naar de roadmap."
         },
         "influence": {
-          "title": "Direct Contact met de Oprichter",
-          "description": "Vorm het product met direct contact met de oprichter. Privé Slack-kanaal voor vragen, feedback en strategisch advies over het inzetten van Clyde."
+          "title": "Roadmap influence",
+          "description": "Maandelijkse Founder calls om te bespreken wat we volgende bouwen. Geen committee, wel jouw input."
         },
         "early_access": {
-          "title": "Eerste Toegang tot Nieuwe Skills",
-          "description": "Eerste toegang tot nieuwe AI-skills zodra ze lanceren. Elke nieuwe mogelijkheid wordt eerst uitgerold naar founding members."
+          "title": "Early access op nieuwe vaardigheden",
+          "description": "Reel Builder, Email Management, ManyChat DM komen eerst naar Founding partners. Je probeert voordat de rest toegang krijgt."
         },
         "community": {
-          "title": "Exclusieve Founders Club",
-          "description": "Exclusief Founders Club Slack-kanaal. Verbind met de eerste 10 bureaus die AI Marketing Medewerkers gebruiken — deel strategieën, resultaten en best practices."
+          "title": "Founder Slack",
+          "description": "Directe Slack-channel met Daley en de andere 9 Founding partners. Vragen, hulp, best practices — in dezelfde ruimte."
         },
         "onboarding": {
-          "title": "Gratis Onboarding (t.w.v. €3.000)",
-          "description": "Gratis onboarding — normaal €3.000 voor de Professional tier. We richten samen je werkruimtes in en configureren Clyde voor maximaal resultaat vanaf dag één."
+          "title": "€0 onboarding fee",
+          "description": "Andere tiers betalen €497-€5.997 onboarding voor 4 weken partnership setup. Founding partners: €0. Enige eenmalige kost is gratis."
         }
       }
     },
+    "proof": {
+      "heading": "Onze eerste Founding partner",
+      "body": "SkinClarity Club is sinds dag 1 Founding partner. Clyde runt 3 Instagram-accounts × 4 merken autonoom. Sindy (founder) reviewt, Clyde voert uit. Lees de volledige case study om te zien hoe een Founding setup eruitziet in de praktijk.",
+      "caseButton": "Lees SkinClarity case study"
+    },
     "faq": {
-      "heading": "Veelgestelde Vragen",
+      "heading": "Veelgestelde vragen — Founding",
       "items": {
         "q1": {
-          "question": "Wat is inbegrepen in het founding member plan?",
-          "answer": "Je krijgt de volledige Professional tier — alle 12 vaardigheden die Clyde biedt: social media, blog factory, ManyChat DM, voice agent, e-mailbeheer, ad monitoring en meer. Plus 8.000 credits/maand, onbeperkte werkruimtes en direct contact met de oprichter. Geen onboardingkosten (€0)."
+          "question": "Wat gebeurt als de 10 plekken vol zijn?",
+          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de normale Growth tier €2.497/mo. Jij behoudt je €997 levenslang zolang je actief blijft."
         },
         "q2": {
-          "question": "Hoe lang is de prijs vastgelegd?",
-          "answer": "Voor altijd. Je tarief van €997/maand is levenslang vastgelegd als founding member — het stijgt nooit, ongeacht toekomstige prijswijzigingen."
+          "question": "Kan ik later upgraden naar Professional of Enterprise?",
+          "answer": "Ja, pro-rated. Van Founding naar lager (Growth/Partner) kan niet — je Founding-prijs is exclusief voor Founding."
         },
         "q3": {
-          "question": "Wat betalen bureaus normaal?",
-          "answer": "De Professional tier kost €2.997/maand met een onboardingkost van €3.000. Als founding member betaal je €997/maand met €0 onboarding — een besparing van €2.000/maand (€24.000/jaar) plus de onboardingkosten."
+          "question": "Wat is precies \"Pro-level caps\"?",
+          "answer": "Je hebt alle 12 vaardigheden beschikbaar met dezelfde caps als de Professional tier, maar betaalt de Founding-prijs. Concreet: Voice Agent 60 min/mo, Video ads 8/mo, Reels 8/mo, ManyChat 500 DMs/mo, Blog 12 artikelen/mo. Beter dan Growth, onder Enterprise."
         },
         "q4": {
-          "question": "Hoeveel plekken zijn er nog?",
-          "answer": "We beperken het founding member programma tot precies 10 bureaus. Zodra alle plekken gevuld zijn, starten nieuwe bureaus op de reguliere Professional prijs van €2.997/maand. Check deze pagina voor actuele beschikbaarheid."
+          "question": "Wat als ik stop en later weer wil beginnen?",
+          "answer": "Dan verlies je je Founding-prijs. Je komt terug als reguliere klant op de dan-geldende tiers. Founding is enkel geldig zolang je actief blijft zonder onderbreking."
         },
         "q5": {
-          "question": "Welke ROI kan ik verwachten?",
-          "answer": "Bureaus die Clyde gebruiken bedienen 3-5x meer klanten zonder extra personeel. Voor €997/maand — minder dan een junior marketing coördinator — krijg je een AI-team dat 24/7 werkt in 11 disciplines."
+          "question": "Waarom geen onboarding fee?",
+          "answer": "Founding partners krijgen de 4-week onboarding-partnership gratis als dank voor het vroege vertrouwen. Het is een eenmalige uitzondering voor deze 10 plekken."
         }
       }
     },
     "cta": {
-      "title": "Klaar om de Eerste te Zijn?",
-      "subtitle": "Voor €997/maand bespaar je €2.000/maand ten opzichte van Professional — dat is €24.000/jaar. Slechts 10 founding member plekken beschikbaar.",
-      "button": "Nu Aanmelden"
-    },
-    "value": {
-      "heading": "Waarom Deze Deal Ongeëvenaard Is",
-      "line1": "Voor minder dan de kosten van één junior marketing coördinator krijg je een AI-team dat 24/7 werkt in 11 disciplines.",
-      "line2": "Voor €997/maand bespaar je €2.000/maand ten opzichte van Professional — dat is €24.000/jaar terug in je budget.",
-      "line3": "Bureaus die Clyde gebruiken bedienen 3-5x meer klanten zonder extra personeel."
+      "title": "Word een van de 10",
+      "subtitle": "{taken} van {total} plekken bezet. Plan een gesprek — als je fit qualifies en we beide match zien, reserveren we je plek.",
+      "button": "Plan een gesprek"
     }
   },
   "booking": {
