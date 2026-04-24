@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: '2026-03-21T19:17:21.000Z'
+last_updated: '2026-04-24T23:30:00.000Z'
 progress:
-  total_phases: 9
-  completed_phases: 8
-  total_plans: 30
-  completed_plans: 26
+  total_phases: 15
+  completed_phases: 3
+  total_plans: 53
+  completed_plans: 22
 ---
 
 # Project State
@@ -18,16 +18,30 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-20)
 
 **Core value:** Marketing agencies can scale without hiring by deploying an AI Marketing Employee with pluggable skills
-**Current focus:** Phase 1 COMPLETE, Phase 3 COMPLETE, Phase 4 COMPLETE, Phase 6 IN PROGRESS (plans 1+3+4 done, 2 remaining). Next: Phase 6 plan 2, Phase 2 plan 4, Phase 5 plan 3
+**Current focus:** Post-audit hardening — Phases 10 through 15 added from the 2026-04-24 full-site audit. Content upgrade branch has landed (22 commits on feature/content-upgrade: v10 pricing, NL-authoritative copy). Audit surfaced P0 business-integrity gaps (lost apply submissions, stale chatbot pricing, stale llms.txt) plus EAA a11y legal risk. All six post-audit phase plans are being generated in parallel by Opus planners.
 
 ## Current Position
 
-Phase: 9 of 9 (Codebase Cleanup) -- IN PROGRESS
-Plan: 2 of 3 in current phase (2 complete)
-Status: In Progress
-Last activity: 2026-03-21 -- Completed 09-02-PLAN.md (Fix persona crash, delete orphaned pages)
+Phase: 10 of 15 (Production Integrity + Domain SSoT) -- PLANNING
+Plan: 0 of 4 in current phase (phase plans being generated)
+Status: Planning
+Last activity: 2026-04-24 -- Completed 8-agent full-site audit; master action plan written to docs/audits/2026-04-24-full-audit/MASTER-ACTION-PLAN.md; roadmap extended with Phases 10-15
 
-Progress: [█████████░] 93% | Phase 9: [██████░░░░] 2/3
+Progress: [███░░░░░░░░░░░] 22% | Phase 10: [░░░░░░░░░░] 0/4
+
+### Audit context (2026-04-24)
+
+Health scores from 8 parallel audits:
+- Copywriting: 84/100 (strong)
+- Performance: 72/100
+- SEO Technical: 68/100
+- Technical Quality: 66/100
+- Marketing + Conversion: 60/100 (forms not wired, SKC metrics missing)
+- Data Accuracy: 58/100 (chatbot still on v9 pricing, llms.txt stale)
+- UX + Accessibility: 55/100 (EAA risk)
+- GEO + LLM Citation: 42/100 (lowest — schema shallow, llms.txt poisoned)
+
+Domain decision 2026-04-24: `future-marketing.ai` is canonical. Phase 10-01 migrates all 40+ refs away from `futuremarketingai.com`.
 
 ## Performance Metrics
 

@@ -25,6 +25,20 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 - [ ] **Phase 6: Vite Feature Parity** - Port all interactive demos, missing UI sections, and enhanced language switcher from Vite to Next.js
 - [ ] **Phase 7: Website Copy Overhaul** - Introduce Clyde as named AI marketing employee with task-result storytelling across all pages
 - [x] **Phase 8: Clyde Chatbot Personality** - Unified Clyde persona replacing 6 personas, context-aware welcome messages, all 17 tools on every page (completed 2026-03-21)
+- [ ] **Phase 9: Codebase Cleanup** - Delete Vite legacy, fix persona crash, add contact form email + analytics
+
+---
+
+### Post-Audit Hardening (2026-04-24)
+
+Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2026-04-24-full-audit/MASTER-ACTION-PLAN.md`. Six phases, ~66 hours total, solo-executable.
+
+- [ ] **Phase 10: Production Integrity + Domain SSoT** - Wire /api/apply + /api/contact to Resend + Supabase, sync chatbot tools + llms.txt to v10 pricing, migrate domain to `future-marketing.ai`, clear CVEs + deprecation warnings
+- [ ] **Phase 11: EAA Accessibility Compliance** - Skip-link, keyboard-operable mega-menu, WCAG AA contrast, per-field form errors, complete reduced-motion coverage — legal risk per EAA 2025-06-28
+- [ ] **Phase 12: Brand Assets + Copy Polish** - og-image, complete palette migration, localize 16 hardcoded EN labels in skills-data.ts, fix 11 IK/WIJ slips + 8 klanten→merken + Onbeperkt rename, drop orphan chatbots namespace
+- [ ] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle
+- [ ] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+
+- [ ] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion
 
 ## Phase Details
 
@@ -221,6 +235,149 @@ Plans:
 - [ ] 09-02-PLAN.md — Fix DemoPlayground persona crash + delete orphaned personas + handle (services) pages (Wave 1)
 - [ ] 09-03-PLAN.md — Contact form email (Resend) + Google Analytics 4 + header nav i18n (Wave 2)
 
+---
+
+### Phase 10: Production Integrity + Domain SSoT
+
+**Goal**: Every public or LLM-facing surface states correct product data, every form delivers to a real mailbox plus DB row, domain `future-marketing.ai` is canonical across code and schemas, deprecation warnings and high-severity CVEs are cleared.
+**Depends on**: Nothing (foundational, Wave A of audit-remediation arc)
+**Requirements**: AUDIT-BLOCKER-P0-INTEGRITY
+**Success Criteria** (what must be TRUE):
+
+1. `/api/apply` and `/api/contact` deliver to Daley via Resend plus insert a row in Supabase `applications` table, with per-IP rate limit on Upstash Redis (Vercel Fluid Compute compatible), confirmation email back to applicant
+2. Chatbot tools (`leadgen-tools.ts`, `concierge-tools.ts`, `concierge-kb.ts`, `support-kb.ts`) quote v10 pricing (Partner €347 / Growth €2.497 / Professional €4.497 / Enterprise €7.997 / Founding €997), include Partner tier, reference 12 skills (9 live + 3 coming_soon), import tier data from `src/lib/skills-data.ts` as single source
+4. `public/llms.txt` and `public/llms-full.txt` follow llmstxt.org spec and describe only the current product (Clyde, 12 skills, 5 tiers, founding program, SKC case, memory USP, `future-marketing.ai` domain). No references to v9 bundles (chatbots, automations, voice-agents, marketing-machine)
+5. Every domain reference uses `future-marketing.ai` (seo-config, OrganizationJsonLd, sitemap, hreflang, llms.txt, CLAUDE.md); Vercel 301 redirect live from `futuremarketingai.com` to `future-marketing.ai`
+6. `src/middleware.ts` renamed to `src/proxy.ts` per Next.js 16 convention; `/api/vitals` returns 200 (or `@vercel/speed-insights` replaces the beacon); `npm audit --production` reports zero high-severity CVEs; single canonical user-facing email `hello@future-marketing.ai`
+
+**Plans**: 4 plans
+
+Plans:
+
+- [ ] 10-01-PLAN.md — Domain SSoT migration + email unification + Vercel 301 + CLAUDE.md updates (Wave 1)
+- [ ] 10-02-PLAN.md — Forms wiring: Resend + Supabase + Upstash rate-limit for /api/apply + /api/contact (Wave 2, depends on 10-01)
+- [ ] 10-03-PLAN.md — Chatbot v10 sync + llms.txt regeneration + contact-email unification (Wave 2, depends on 10-01)
+- [ ] 10-04-PLAN.md — Next.js hygiene: proxy.ts rename + /api/vitals route + CVE version bumps (Wave 1, independent)
+
+---
+
+### Phase 11: EAA Accessibility Compliance
+
+**Goal**: All five critical-path WCAG 2.2 AA violations from the UX audit are resolved, reducing European Accessibility Act (EAA, in force per 2025-06-28) legal exposure on the marketing site.
+**Depends on**: Nothing (independent, Wave A of audit-remediation arc)
+**Requirements**: AUDIT-BLOCKER-P0-A11Y
+**Success Criteria** (what must be TRUE):
+
+1. Skip-to-content link is first focusable element on every page, jumping to `<main id="main">` (WCAG 2.4.1)
+2. Header Skills mega-menu opens on keyboard `Enter`/`Space`, exposes `aria-expanded`, supports ArrowUp/ArrowDown/Home/End/Escape navigation, and returns focus to the trigger on close (WCAG 2.1.1, 4.1.2); Resources/alt dropdowns follow same pattern
+3. `--color-text-muted` is `#8C98AD` (≥4.5:1 on `#0a0d14`); no design token below WCAG AA normal text ratio remains in `globals.css` (WCAG 1.4.3)
+4. ApplicationForm renders per-field error elements with `id` wired to `aria-describedby`, `aria-invalid` on failed inputs, `autoComplete` tokens on name/email/organization/organization-title/tel, and `inputMode="email"` on email fields (WCAG 3.3.1, 3.3.3, 4.1.2); ContactForm parity maintained
+5. All 17 keyframes in `globals.css` respect `prefers-reduced-motion: reduce` (not just blob animations); global `*:focus-visible` ring renders 2px cyan outline; `html { scroll-padding-top: 5rem; }` respects sticky header on anchor jumps; BookingModal returns focus to trigger on close (WCAG 2.3.3, 2.4.7)
+
+**Plans**: 3 plans
+
+Plans:
+
+- [ ] 11-01-PLAN.md — Skip-link + keyboard mega-menu + focus-visible + scroll-padding + BookingModal focus-return (Wave 1)
+- [ ] 11-02-PLAN.md — Contrast token upgrade + reduced-motion complete coverage (Wave 1, independent)
+- [ ] 11-03-PLAN.md — ApplicationForm per-field error recovery + autoComplete tokens + inputMode + ContactForm i18n strings (Wave 2, after contrast is locked)
+
+---
+
+### Phase 12: Brand Assets + Copy Polish
+
+**Goal**: One palette, one copy voice, one canonical set of assets across all three locales; all tier-matrix labels render in the visitor's language; legacy orphan namespace and stale color tokens are gone.
+**Depends on**: Nothing (independent, Wave B — runs alongside Phases 10/11)
+**Requirements**: AUDIT-BLOCKER-P0-BRAND
+**Success Criteria** (what must be TRUE):
+
+1. `public/og-image.png` (1200×630) exists, logo asset referenced by `OrganizationJsonLd.logo` exists and returns 200, dynamic `@vercel/og` fallback route generates per-locale variants
+2. `src/lib/skills-data.ts` contains no hardcoded English user-facing labels; all `'unlimited'`, `'/mo'`, `'add-on €97'`, `'niet beschikbaar'`, `'Coming soon'` render via i18n keys in `messages/nl.json`, `en.json`, `es.json`; zero em-dashes in any user-facing string
+3. Palette migration complete: no `#050814`, `#00D4FF`, or `#A855F7` refs remain in `.tsx` or `.css` outside of legacy archive; all colors resolve via CSS custom properties; `fmai-nextjs/CLAUDE.md` Theme section matches actual palette (`#0a0d14` / `#00d4aa`)
+4. Hardcoded English strings in `HeaderClient.tsx`, `pricing/page.tsx`, `error.tsx`, `SkillsTierMatrix.tsx`, `ChatWidget.tsx`, apply-success screen are routed through i18n; NL/ES visitors never see English UI strings
+5. Copy glossary enforced: no `klanten` remains on conversion pages (all replaced by `merken`), credit-pack `Onbeperkt` is renamed (`Scale` or `Max`), `Boek een strategiegesprek` normalized to `Plan een gesprek`, 11 IK/WIJ slips on about/contact/founding-member resolved per style guide; orphan `chatbots.*` namespace (nl.json:140-334) removed; `MAX_PARTNERS_PER_YEAR` interpolated via `constants.ts` in 8 message keys instead of hardcoded; legal pages show current `lastUpdated` date
+
+**Plans**: 4 plans
+
+Plans:
+
+- [ ] 12-01-PLAN.md — Brand assets (og-image + logo + dynamic OG route) + palette migration + CLAUDE.md theme alignment (Wave 1)
+- [ ] 12-02-PLAN.md — skills-data.ts i18n refactor + label localization + em-dash removal (Wave 1, independent)
+- [ ] 12-03-PLAN.md — Hardcoded EN strings batch: HeaderClient, pricing, error, SkillsTierMatrix, ChatWidget, apply-success (Wave 1, independent)
+- [ ] 12-04-PLAN.md — Copy glossary cleanup + Onbeperkt rename + IK/WIJ slips + orphan namespace + MAX_PARTNERS_PER_YEAR interpolation + legal dates (Wave 2, depends on 12-03)
+
+---
+
+### Phase 13: Performance + Bundle Cleanup
+
+**Goal**: Shed roughly 70 KB gzipped from initial bundle on non-home routes, eliminate cross-page waste from eagerly mounted client islands, kill dead code, and restore a clean repo root.
+**Depends on**: Nothing (independent, can run in parallel with earlier waves)
+**Requirements**: AUDIT-P1-PERF
+**Success Criteria** (what must be TRUE):
+
+1. `ClientIslands` no longer eagerly mounts the full ChatWidget, CalendlyModal, or BookingModal on every route; a lightweight FloatingChatTrigger (circa 2 KB) replaces them and dynamically imports the full bundles on first interaction
+2. Spline `scene.splinecode` (1.3 MB) and associated `preconnect` hints are emitted only from the homepage, not from the shared `[locale]/layout.tsx`
+3. `next-intl` message delivery is split per segment: `NextIntlClientProvider` receives only the namespaces used in the current route; home no longer ships every namespace on pricing, skills, legal, etc.
+4. Font loading is trimmed to at most two families; `HeaderClient` global `document.click` listener is gated by open-state; CookieConsentBanner lazy-imports and skips its bundle when consent is already granted
+5. Dead code removed: `OrbitVisual.tsx`, `hero-robot.png` + `.webp`, 20-plus debug PNGs at repo root, 4 root-level verify scripts, empty nested `fmai-nextjs/fmai-nextjs/components/`, `@google/stitch-sdk` dep if confirmed unused; `npm run build` chunk report shows measurable before/after reduction; 21 outdated non-breaking deps bumped
+
+**Plans**: 3 plans
+
+Plans:
+
+- [ ] 13-01-PLAN.md — ClientIslands lazy-on-interaction + Spline prefetch home-only + CookieConsent lazy + HeaderClient click listener gate + gradient-blob decision (Wave 1)
+- [ ] 13-02-PLAN.md — Per-segment i18n namespace splitting (Wave 1, independent, largest technical change)
+- [ ] 13-03-PLAN.md — Dead code purge + font trim + dep bumps + RSC demotions + repo-root cleanup (Wave 2, low-risk cleanup)
+
+---
+
+### Phase 14: SEO + GEO Depth Upgrade
+
+**Goal**: Lift GEO (LLM citation) score from 42 to 70-plus, complete schema.org coverage so every entity on the site is structurally machine-readable, and give Daley a Person schema anchor for E-E-A-T signal.
+**Depends on**: Phase 10 (domain and llms.txt must already be on canonical domain before expanding schema that references them)
+**Requirements**: AUDIT-P1-SEO-GEO
+**Success Criteria** (what must be TRUE):
+
+1. `OrganizationJsonLd.sameAs` contains at minimum LinkedIn company, Wikidata entity, Twitter/X handle, Crunchbase (if active), KvK registration URL (if registered), YouTube channel (if active); `@id` stable URI established
+2. `PersonJsonLd` component exists and renders on `/about` for Daley (name, jobTitle, worksFor, sameAs, description, image); separate PersonJsonLd renders for Sindy on `/case-studies/skc` as operator of that case
+3. `ServiceJsonLd` is wired into all 12 skill pages via `SkillPageTemplate`; each skill page also renders a `FaqJsonLd` with 3-5 questions; `FaqJsonLd` also added to `/founding-member` which already has visible FAQ content; `Speakable` schema marks key paragraphs on home hero, `/memory`, and SKC case study
+4. Meta descriptions for home, pricing, apply, founding-member, how-it-works trimmed to ≤160 characters across all three locales; legal pages (privacy/terms/cookies) use the shared metadata helper and receive OG, Twitter, hreflang
+5. `src/app/robots.ts` emits explicit Allow rules for GPTBot, ChatGPT-User, OAI-SearchBot, Google-Extended, Applebot-Extended, ClaudeBot, anthropic-ai, PerplexityBot, CCBot; `OrganizationJsonLd.hasOfferCatalog` no longer lists v9 products (AI Chatbots, Marketing Machine) and instead reflects v10 skills catalog
+
+**Plans**: 4 plans
+
+Plans:
+
+- [ ] 14-01-PLAN.md — Organization sameAs expansion + Wikidata entity creation + Person schema (Daley + Sindy) + hasOfferCatalog v10 refresh (Wave 1, depends on Phase 10)
+- [ ] 14-02-PLAN.md — ServiceJsonLd wiring on 12 skill pages + FaqJsonLd on founding + 12 skill-page FAQ schemas + Speakable on home/memory/case (Wave 2, depends on 14-01)
+- [ ] 14-03-PLAN.md — Meta description trims + legal pages via shared metadata helper + ArticleJsonLd completion (Wave 1, independent after Phase 10)
+- [ ] 14-04-PLAN.md — AI-crawler allowlist in robots.ts + sitemap canonical verification (Wave 1, independent after Phase 10)
+
+---
+
+### Phase 15: Conversion Accelerators
+
+**Goal**: Convert more of the existing traffic by eliminating passive funnel hand-offs, making the SKC case study credible with real numbers, and opening a second conversion path for visitors who are not yet ready to apply.
+**Depends on**: Phase 10 (forms must be wired for Calendly-post-submit to make sense), Phase 11 (form a11y must be solid), Phase 12 (brand assets ready), Phase 14 (schema helpers ready)
+**Requirements**: AUDIT-P1-CONVERSION
+**Success Criteria** (what must be TRUE):
+
+1. ApplicationForm success state replaces the "we respond within 3 days" text with an inline Calendly embed prefilled with the applicant's name and email; ContactForm gets an optional secondary Calendly CTA; fallback text-link if embed fails to load
+2. Home hero secondary CTA (`Leer Clyde kennen`) is demoted to a subtle text-link beneath the primary `Plan een gesprek` button; `StickyMobileCTA` component appears after 50 percent scroll on home, memory, pricing, case-studies/skc, and all 12 skill pages, dismissible, a11y-compliant
+3. `messages/*.json case_studies.skc.*` content contains concrete outcome metrics from a real Sindy interview (time saved per week, post-volume delta, engagement delta, pipeline delta, direct quote); testimonial block displays Sindy's name, role, photo, LinkedIn link; no reference to Daley's SKC co-ownership
+4. `/api/newsletter` route exists and adds opt-ins to a Resend audience with double-opt-in; `LeadMagnetCTA` component is live on home, blog sidebar, pricing sidebar, founding-member; a gated "NL Bureau AI Readiness Checklist" PDF is delivered by email after confirmation; Dutch-first content
+5. Pricing-page FAQ is promoted to appear directly after tier cards (before credit/skill packs); founding counter includes date-stamp (`per 2026-04-24`) and cohort start date; `FaqJsonLd` added (may overlap with Phase 14)
+
+**Plans**: 5 plans
+
+Plans:
+
+- [ ] 15-01-PLAN.md — Hero CTA demote + StickyMobileCTA component + rollout on 15 pages (Wave 1, low dependency)
+- [ ] 15-02-PLAN.md — Post-submit Calendly embed on ApplicationForm + ContactForm + prefill params + fallback (Wave 2, depends on Phase 10)
+- [ ] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion)
+- [ ] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup)
+- [ ] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish)
+
 ## Progress
 
 **Execution Order:**
@@ -241,3 +398,19 @@ Phases execute in parallel waves:
 | 7. Copy Overhaul     | 3/4            | In Progress |            |
 | 8. Clyde Chatbot     | 2/2            | Complete    | 2026-03-21 |
 | 9. Codebase Cleanup  | 0/3            | Not started | -          |
+| 10. Production Integrity | 0/4        | Not started | -          |
+| 11. EAA A11y Compliance  | 0/3        | Not started | -          |
+| 12. Brand + Copy Polish  | 0/4        | Not started | -          |
+| 13. Performance + Bundle | 0/3        | Not started | -          |
+| 14. SEO + GEO Depth      | 0/4        | Not started | -          |
+| 15. Conversion Accel.    | 0/5        | Not started | -          |
+
+---
+
+### Post-Audit Hardening wave ordering
+
+- **Wave D1 (immediate, parallel)**: Phase 10 (integrity) + Phase 11 (a11y) + Phase 12 (brand) + Phase 13 (performance) — zero interdependency
+- **Wave D2 (after Phase 10)**: Phase 14 (SEO/GEO depth, needs canonical domain + fresh llms.txt)
+- **Wave D3 (after Phases 10 + 11 + 12 + 14)**: Phase 15 (conversion — needs wired forms, solid a11y, finished brand, and schema helpers)
+
+Audit source: `docs/audits/2026-04-24-full-audit/MASTER-ACTION-PLAN.md`
