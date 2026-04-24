@@ -24,6 +24,7 @@
     "@splinetool/runtime": "^1.12.70",
     "@tailwindcss/typography": "^0.5.19",
     "@types/mdx": "^2.0.13",
+    "@vercel/speed-insights": "^2.0.0",
     "ai": "^6.0.116",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.577.0",

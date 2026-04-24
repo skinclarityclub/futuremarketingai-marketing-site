@@ -14,6 +14,7 @@ import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitch
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
 import { GradientMesh } from '@/components/hero/GradientMesh'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/app/globals.css'
 
 export const viewport: Viewport = {
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
             <WebVitalsReporter />
           </Providers>
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
