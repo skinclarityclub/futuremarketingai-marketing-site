@@ -76,7 +76,7 @@ export function OgImageTemplate({
             fontWeight: 600,
           }}
         >
-          futuremarketingai.com
+          future-marketing.ai
         </div>
       </div>
     </div>

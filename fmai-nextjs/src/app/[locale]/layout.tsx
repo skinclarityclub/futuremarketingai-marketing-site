@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata = {
-  metadataBase: new URL('https://futuremarketingai.com'),
+  metadataBase: new URL('https://future-marketing.ai'),
 }
 
 export function generateStaticParams() {

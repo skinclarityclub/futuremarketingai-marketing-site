@@ -124,7 +124,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <address className="space-y-4 not-italic">
                   {/* Email */}
                   <a
-                    href="mailto:hello@futuremarketingai.com"
+                    href="mailto:hello@future-marketing.ai"
                     className="flex items-start gap-3 text-text-secondary hover:text-accent-system transition-colors"
                   >
                     <svg

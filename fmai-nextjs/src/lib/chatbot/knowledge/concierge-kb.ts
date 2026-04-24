@@ -217,7 +217,7 @@ Book a free 30-minute Strategy Call to discuss your agency's needs:
 https://calendly.com/futuremarketingai/discovery
 
 **Email:**
-contact@futuremarketingai.com
+hello@future-marketing.ai
 We respond within 24 hours on business days.
 
 **What to Expect:**
