@@ -2,6 +2,8 @@
 
 > Agent Operating Manual — repo root. For code-level work use `fmai-nextjs/CLAUDE.md` (authoritative for the live codebase).
 
+> Canonical domain (2026-04-24 unified): **https://future-marketing.ai**. Any legacy `futuremarketingai.com` in git history is 301-redirected at the Vercel edge. Do not re-introduce the legacy domain in new code.
+
 ## One-liner
 
 Marketing + application site voor FutureMarketingAI, een high-touch AI marketing partnership platform. Live codebase: **`fmai-nextjs/`** (Next.js 16 + `next-intl`). Productie: `future-marketing.ai`. Content NL/EN/ES (NL authoritative).

@@ -144,10 +144,11 @@ Bij variable-interpolatie: `{var}` notation, bijv. `"badge": "{taken} van {total
 - `DemoPlayground` + `MultiPlatformShowcase` — verhuist naar lead-qualifier in Phase 3, niet vergooien
 - Spline 3D robot (`HeroSpline`) — zware asset, gedeeltelijk optimized, niet vervangen zonder design akkoord
 - `messages/nl.json` keys die actief gebruikt worden — altijd verifiëren via grep vóór verwijderen
+- Hardcoded `futuremarketingai.com` anywhere in code or copy — the domain was unified to `future-marketing.ai` on 2026-04-24. Always use the canonical. Customer-facing email is `hello@future-marketing.ai` except on the legal page which keeps `privacy@future-marketing.ai`.
 
 ## Environment
 
-- Productie: Vercel — `future-marketing.ai`
+- Productie: Vercel — canonical `https://future-marketing.ai`. `futuremarketingai.com` 301-redirects (dashboard rule set 2026-04-24). `NEXT_PUBLIC_SITE_URL` in .env.local must match the canonical.
 - Env vars in `.env.example` — Stripe price IDs zijn per tier (`STRIPE_PRICE_PARTNER`, `STRIPE_PRICE_GROWTH`, etc.). Niet comitteren naar git.
 - Apply form POST: email via Resend (voor nu) of Supabase write (TBD)
 
