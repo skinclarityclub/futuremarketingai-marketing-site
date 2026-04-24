@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: '2026-04-24T23:30:00.000Z'
+last_updated: '2026-04-24T23:25:00.000Z'
 progress:
   total_phases: 15
   completed_phases: 3
   total_plans: 53
-  completed_plans: 22
+  completed_plans: 23
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 10 of 15 (Production Integrity + Domain SSoT) -- PLANNING
-Plan: 0 of 4 in current phase (phase plans being generated)
-Status: Planning
-Last activity: 2026-04-24 -- Completed 8-agent full-site audit; master action plan written to docs/audits/2026-04-24-full-audit/MASTER-ACTION-PLAN.md; roadmap extended with Phases 10-15
+Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS
+Plan: 1 of 4 in current phase (10-04 complete; 10-01/10-02/10-03 in progress in parallel)
+Status: Executing
+Last activity: 2026-04-24 -- Completed 10-04 (Next.js 16 hygiene: proxy convention, Speed Insights, 0 CVEs, tighter CSP); 10-01 also landed in parallel (domain canonicalization to future-marketing.ai)
 
-Progress: [███░░░░░░░░░░░] 22% | Phase 10: [░░░░░░░░░░] 0/4
+Progress: [███░░░░░░░░░░░] 23% | Phase 10: [██░░░░░░░░] 1/4
 
 ### Audit context (2026-04-24)
 
@@ -78,6 +78,7 @@ _Updated after each plan completion_
 | Phase 09 P01 | 5min | 2 tasks | 442 files |
 | Phase 09 P02 | 7min | 2 tasks | 17 files |
 | Phase 09 P01 | 4min | 2 tasks | 966 files |
+| Phase 10 P04 | 15min | 6 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -178,6 +179,11 @@ Recent decisions affecting current work:
 - [09-01]: Deleted .github, .husky, .vercel, .cursor, .taskmaster alongside Vite dirs (all old project infrastructure)
 - [09-01]: Simplified .gitignore to only Next.js-relevant patterns
 - [09-01]: Kept DEPLOYMENT.md at root (still relevant for Vercel deployment)
+- [10-04]: Used npm overrides to force postcss >=8.5.10 instead of `npm audit fix --force` (which would have downgraded Next.js to 9.3.3 — major regression). Result: 0 vulnerabilities, Next 16.2.4 retained.
+- [10-04]: Mounted <SpeedInsights /> at locale-layout level, not root layout — [locale]/layout.tsx owns html/body and generateStaticParams, so per-route tracking comes for free.
+- [10-04]: Permissions-Policy uses `microphone=(self)` instead of `microphone=*` — same-origin only because the voice-agent demo runs on our domain; cross-origin embeds remain blocked.
+- [10-04]: Web-vitals dev-only console logger preserved; production vitals delegated to Vercel Speed Insights — no custom /api/vitals route.
+- [10-04]: Task 1 (middleware -> proxy rename) was already shipped in commit 0346709 by parallel Plan 10-01; verified state and proceeded to Task 2 without re-doing the rename.
 
 ### Roadmap Evolution
 
@@ -197,6 +203,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-21
-Stopped at: Completed 09-02-PLAN.md (Fix persona crash, delete orphaned pages)
+Last session: 2026-04-24
+Stopped at: Completed 10-04-PLAN.md (Next.js 16 hygiene: proxy.ts, Speed Insights, 0 CVEs, tighter CSP)
 Resume file: None

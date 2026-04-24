@@ -257,7 +257,7 @@ Plans:
 - [ ] 10-01-PLAN.md — Domain SSoT migration + email unification + Vercel 301 + CLAUDE.md updates (Wave 1)
 - [ ] 10-02-PLAN.md — Forms wiring: Resend + Supabase + Upstash rate-limit for /api/apply + /api/contact (Wave 2, depends on 10-01)
 - [ ] 10-03-PLAN.md — Chatbot v10 sync + llms.txt regeneration + contact-email unification (Wave 2, depends on 10-01)
-- [ ] 10-04-PLAN.md — Next.js hygiene: proxy.ts rename + /api/vitals route + CVE version bumps (Wave 1, independent)
+- [x] 10-04-PLAN.md — Next.js hygiene: proxy.ts rename + Vercel Speed Insights + 7 CVEs closed + tighter CSP (Wave 1, independent)
 
 ---
 
