@@ -1,6 +1,6 @@
-export const SITE_URL = 'https://futuremarketingai.com'
+export const SITE_URL = 'https://future-marketing.ai'
 export const SITE_NAME = 'Future Marketing AI'
-export const ORG_EMAIL = 'info@futuremarketingai.com'
+export const ORG_EMAIL = 'hello@future-marketing.ai'
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
 
 export const ENTITY_DESCRIPTION =
@@ -28,5 +28,5 @@ export const PAGE_DATES: Record<string, string> = {
   '/about': '2026-03-18',
   '/contact': '2026-03-18',
   '/how-it-works': '2026-03-18',
-  '/legal': '2026-03-18',
+  '/legal': '2026-04-24',
 }
