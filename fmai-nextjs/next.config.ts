@@ -18,7 +18,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline' https://assets.calendly.com;
   img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://prod.spline.design;
   font-src 'self' data:;
-  connect-src 'self' https://api.anthropic.com https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
+  connect-src 'self' https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
   frame-src https://calendly.com;
   worker-src 'self' blob:;
   object-src 'none';
@@ -55,9 +55,10 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   // Disable browser features that are not needed
+  // microphone=(self) so the /skills/voice-agent ElevenLabs demo can request mic access on same-origin
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+    value: 'camera=(), microphone=(self), geolocation=(), browsing-topics=()',
   },
   // Explicitly disable XSS Auditor (deprecated; 0 = off is the safest setting)
   {
