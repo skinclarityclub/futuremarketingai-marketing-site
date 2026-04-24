@@ -819,7 +819,7 @@
     "direct_contact": {
       "title": "Direct contact",
       "email_label": "E-mail",
-      "email_address": "hello@futuremarketingai.com",
+      "email_address": "hello@future-marketing.ai",
       "location_label": "Locatie",
       "location_text": "Nederland (remote-first)",
       "response_time_label": "Reactietijd",
@@ -862,7 +862,7 @@
           },
           "data_processing": {
             "title": "5. Gegevensverwerking",
-            "content": "FutureMarketingAI verwerkt gegevens namens het abonnerende bureau conform AVG artikel 28. Gedetailleerde verwerkingsvoorwaarden zijn vastgelegd in de Verwerkersovereenkomst, die een integraal onderdeel vormt van deze voorwaarden. Het bureau is als verwerkingsverantwoordelijke verantwoordelijk voor het waarborgen dat passende rechtsgronden bestaan voor de verwerking van persoonsgegevens via het FutureMarketingAI-platform. Een exemplaar van de Verwerkersovereenkomst is op verzoek beschikbaar via privacy@futuremarketingai.com."
+            "content": "FutureMarketingAI verwerkt gegevens namens het abonnerende bureau conform AVG artikel 28. Gedetailleerde verwerkingsvoorwaarden zijn vastgelegd in de Verwerkersovereenkomst, die een integraal onderdeel vormt van deze voorwaarden. Het bureau is als verwerkingsverantwoordelijke verantwoordelijk voor het waarborgen dat passende rechtsgronden bestaan voor de verwerking van persoonsgegevens via het FutureMarketingAI-platform. Een exemplaar van de Verwerkersovereenkomst is op verzoek beschikbaar via privacy@future-marketing.ai."
           },
           "termination": {
             "title": "6. Beëindiging",
@@ -904,7 +904,7 @@
           },
           "data_subject_rights": {
             "title": "7. Uw rechten",
-            "content": "Op grond van de AVG heeft u het recht op: Inzage in uw persoonsgegevens en het ontvangen van een kopie, rectificatie van onjuiste of onvolledige persoonsgegevens, wissing van uw persoonsgegevens (recht op vergetelheid), beperking van de verwerking van uw persoonsgegevens, gegevensoverdraagbaarheid (ontvangst van uw gegevens in een gestructureerd, machineleesbaar formaat), bezwaar tegen verwerking op basis van gerechtvaardigd belang, en intrekking van toestemming op elk moment voor op toestemming gebaseerde verwerking. Om een van deze rechten uit te oefenen, neem contact met ons op via privacy@futuremarketingai.com. Wij reageren binnen 30 dagen conform de AVG."
+            "content": "Op grond van de AVG heeft u het recht op: Inzage in uw persoonsgegevens en het ontvangen van een kopie, rectificatie van onjuiste of onvolledige persoonsgegevens, wissing van uw persoonsgegevens (recht op vergetelheid), beperking van de verwerking van uw persoonsgegevens, gegevensoverdraagbaarheid (ontvangst van uw gegevens in een gestructureerd, machineleesbaar formaat), bezwaar tegen verwerking op basis van gerechtvaardigd belang, en intrekking van toestemming op elk moment voor op toestemming gebaseerde verwerking. Om een van deze rechten uit te oefenen, neem contact met ons op via privacy@future-marketing.ai. Wij reageren binnen 30 dagen conform de AVG."
           },
           "international_transfers": {
             "title": "8. Internationale gegevensdoorgifte",
@@ -912,7 +912,7 @@
           },
           "contact": {
             "title": "9. Contact en toezichthouder",
-            "content": "Verwerkingsverantwoordelijke: Future Marketing AI, Nederland. Voor privacyvragen, verzoeken van betrokkenen of klachten: privacy@futuremarketingai.com. Indien u van mening bent dat uw gegevensbeschermingsrechten zijn geschonden, heeft u het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP) via autoriteitpersoonsgegevens.nl."
+            "content": "Verwerkingsverantwoordelijke: Future Marketing AI, Nederland. Voor privacyvragen, verzoeken van betrokkenen of klachten: privacy@future-marketing.ai. Indien u van mening bent dat uw gegevensbeschermingsrechten zijn geschonden, heeft u het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP) via autoriteitpersoonsgegevens.nl."
           }
         }
       },
@@ -1566,7 +1566,7 @@
       "successTitle": "Dank je. Aanvraag ontvangen.",
       "successBody": "Daley leest je aanvraag persoonlijk en antwoordt binnen 3 werkdagen. Check je inbox (en de spam-map) voor onze reactie.",
       "errorValidation": "Controleer de velden: niet alle verplichte velden zijn ingevuld.",
-      "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@futuremarketingai.com."
+      "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@future-marketing.ai."
     }
   },
   "landing": {

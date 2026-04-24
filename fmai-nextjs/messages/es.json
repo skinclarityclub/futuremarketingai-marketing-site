@@ -819,7 +819,7 @@
     "direct_contact": {
       "title": "Contacto directo",
       "email_label": "Email",
-      "email_address": "hello@futuremarketingai.com",
+      "email_address": "hello@future-marketing.ai",
       "location_label": "Ubicación",
       "location_text": "Países Bajos (remote-first)",
       "response_time_label": "Tiempo de respuesta",
@@ -862,7 +862,7 @@
           },
           "data_processing": {
             "title": "5. Tratamiento de datos",
-            "content": "FutureMarketingAI trata datos por cuenta de la agencia suscriptora conforme al artículo 28 del RGPD. Las condiciones detalladas de tratamiento figuran en el Acuerdo de Encargo del Tratamiento, que forma parte integrante de estos términos. La agencia, como responsable del tratamiento, es responsable de asegurar que existan bases legales adecuadas para el tratamiento de datos personales a través de la plataforma FutureMarketingAI. Puede obtenerse una copia del Acuerdo de Encargo del Tratamiento previa solicitud en privacy@futuremarketingai.com."
+            "content": "FutureMarketingAI trata datos por cuenta de la agencia suscriptora conforme al artículo 28 del RGPD. Las condiciones detalladas de tratamiento figuran en el Acuerdo de Encargo del Tratamiento, que forma parte integrante de estos términos. La agencia, como responsable del tratamiento, es responsable de asegurar que existan bases legales adecuadas para el tratamiento de datos personales a través de la plataforma FutureMarketingAI. Puede obtenerse una copia del Acuerdo de Encargo del Tratamiento previa solicitud en privacy@future-marketing.ai."
           },
           "termination": {
             "title": "6. Terminación",
@@ -904,7 +904,7 @@
           },
           "data_subject_rights": {
             "title": "7. Sus derechos",
-            "content": "En virtud del RGPD, usted tiene derecho a: acceder a sus datos personales y recibir una copia; rectificar los datos personales inexactos o incompletos; suprimir sus datos personales (derecho al olvido); limitar el tratamiento de sus datos personales; portabilidad de los datos (recibir sus datos en un formato estructurado y legible por máquina); oponerse al tratamiento basado en interés legítimo; y retirar el consentimiento en cualquier momento respecto del tratamiento basado en consentimiento. Para ejercitar cualquiera de estos derechos, póngase en contacto con nosotros en privacy@futuremarketingai.com. Responderemos en un plazo de 30 días, tal y como exige el RGPD."
+            "content": "En virtud del RGPD, usted tiene derecho a: acceder a sus datos personales y recibir una copia; rectificar los datos personales inexactos o incompletos; suprimir sus datos personales (derecho al olvido); limitar el tratamiento de sus datos personales; portabilidad de los datos (recibir sus datos en un formato estructurado y legible por máquina); oponerse al tratamiento basado en interés legítimo; y retirar el consentimiento en cualquier momento respecto del tratamiento basado en consentimiento. Para ejercitar cualquiera de estos derechos, póngase en contacto con nosotros en privacy@future-marketing.ai. Responderemos en un plazo de 30 días, tal y como exige el RGPD."
           },
           "international_transfers": {
             "title": "8. Transferencias internacionales de datos",
@@ -912,7 +912,7 @@
           },
           "contact": {
             "title": "9. Contacto y autoridad de control",
-            "content": "Responsable del tratamiento: Future Marketing AI, Países Bajos. Para consultas de privacidad, solicitudes del interesado o reclamaciones: privacy@futuremarketingai.com. Si considera que sus derechos en materia de protección de datos han sido vulnerados, tiene derecho a presentar una reclamación ante la Autoridad Neerlandesa de Protección de Datos (Autoriteit Persoonsgegevens, AP) en autoriteitpersoonsgegevens.nl."
+            "content": "Responsable del tratamiento: Future Marketing AI, Países Bajos. Para consultas de privacidad, solicitudes del interesado o reclamaciones: privacy@future-marketing.ai. Si considera que sus derechos en materia de protección de datos han sido vulnerados, tiene derecho a presentar una reclamación ante la Autoridad Neerlandesa de Protección de Datos (Autoriteit Persoonsgegevens, AP) en autoriteitpersoonsgegevens.nl."
           }
         }
       },
@@ -1566,7 +1566,7 @@
       "successTitle": "Gracias. Solicitud recibida.",
       "successBody": "Daley lee tu solicitud personalmente y responde en 3 días laborables. Revisa tu bandeja (y la carpeta de spam) para ver nuestra respuesta.",
       "errorValidation": "Revisa los campos: no todos los obligatorios están completos.",
-      "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o escribe directamente a hello@futuremarketingai.com."
+      "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o escribe directamente a hello@future-marketing.ai."
     }
   },
   "landing": {
