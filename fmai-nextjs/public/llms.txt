@@ -1,33 +1,51 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI implementation agency that builds intelligent chatbots, workflow automations, voice agents, and full-stack AI marketing machines for SaaS and e-commerce companies. Founded by Daley, FMai helps B2B companies automate customer interactions, streamline operations, and scale marketing through AI-powered systems built on n8n, Next.js, and Anthropic Claude. Based in the Netherlands, serving clients across Europe and internationally.
+> FMai is a Dutch AI marketing partnership for agencies. Clyde, the AI Marketing Medewerker, runs 12 skills (9 live, 3 coming soon) across up to 50 brand workspaces with per-brand memory isolation. Five tiers from Partner (347 EUR/mo) to Enterprise (7,997 EUR/mo), plus a Founding Member program at 997 EUR/mo lifetime (10 spots, 1 taken). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup.
 
-FMai operates as a premium mid-market AI agency with three gateway service tiers: Starter (EUR 1.497/mo), Growth (EUR 2.497/mo), and Scale (EUR 3.997/mo). The flagship product is the AI Marketing Machine, an automated content creation and distribution system. The company positions approximately 50% below premium agency pricing while delivering enterprise-grade AI implementations.
+FMai is a high-touch AI marketing partnership founded by Daley. It targets performance and growth agencies in the Netherlands and EU managing 10 to 50 brand portfolios. Instead of selling isolated AI tools, FMai provides one persistent AI Marketing Employee named Clyde who learns each brand over time, remembers per-brand voice, operates across 12 skills from social media to voice agents, and is orchestrated by the founder personally. The proof case is SkinClarity Club, where Sindy (founder) runs 4 brands and 3 Instagram accounts autonomously with 6 active skills.
 
-- Brand: FMai (FutureMarketingAI)
-- Domain: futuremarketingai.com
-- Founder: Daley
-- Location: Netherlands (EU), Estonian e-Residency
-- Languages: Dutch, English
-- Tech stack: n8n, Next.js, Anthropic Claude, Vercel, TypeScript
-- Contact: Available via website contact form and Calendly booking
+The product is not a self-serve SaaS. Every engagement starts with an application at https://future-marketing.ai/nl/apply. Daley reviews personally within 48 hours. The max 20 partnerships per year constraint is honored through this gate.
 
-## Services
+Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.ai. Languages: Dutch (source of truth), English, Spanish.
 
-- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Custom AI chatbots for customer support, lead qualification, appointment booking, and sales automation across website, WhatsApp, Slack, and other channels
-- [Workflow Automations](https://futuremarketingai.com/en/automations): End-to-end business process automation using n8n and AI for lead qualification, email sequences, CRM sync, invoice handling, and onboarding
-- [Voice Agents](https://futuremarketingai.com/en/voice-agents): AI-powered voice assistants for inbound support and outbound sales calls, built with specialized voice AI partners
-- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Flagship automated content creation system producing up to 160 posts per month across carousels, reels, ads, and stories
+## Core pages
 
-## Company
+- [Home (NL)](https://future-marketing.ai/nl): Hero "Dit is Clyde" plus 12-skill overview, SKC case, founding counter, FAQ.
+- [Memory system](https://future-marketing.ai/nl/memory): Why Clyde's 4-layer memory (Vandaag / Deze maand / Archief / Wie het merk is) is the USP. Per-brand isolation via Supabase RLS. Nightly dream consolidation.
+- [Pricing](https://future-marketing.ai/nl/pricing): 5 tiers from Partner 347 EUR to Enterprise 7,997 EUR. Founding Member 997 EUR lifetime (10 spots). Skill packs and credit packs for Partner tier add-ons. No annual discount yet.
+- [Founding Member](https://future-marketing.ai/nl/founding-member): 10-spot program, lifetime 997 EUR (circa 60 percent below Growth), grandfathered price, direct founder access. 1 spot taken (SkinClarity Club).
+- [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. 8 fields. Response within 48 hours.
+- [How it works](https://future-marketing.ai/nl/how-it-works): Week-by-week onboarding cadence, first month correction loop, quarterly strategy, annual retrospective.
+- [About](https://future-marketing.ai/nl/about): Solo founder Daley. 20 partnerships per year cap. Why partnership over SaaS.
+- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Sindy, 4 brands, 3 IG accounts, 6 active skills. The proof case.
+- [Contact](https://future-marketing.ai/nl/contact): Simple form. For partnership inquiries use Apply instead.
 
-- [About FMai](https://futuremarketingai.com/en/about): Company background, mission, founder story, and direct founder access guarantee
-- [Pricing](https://futuremarketingai.com/en/pricing): Three service tiers (Starter, Growth, Scale) with transparent pricing and 3-month risk-free trial
-- [How It Works](https://futuremarketingai.com/en/how-it-works): Delivery process from AI audit through build, launch, and ongoing optimization (1-3 weeks typical)
-- [Contact](https://futuremarketingai.com/en/contact): Book a free 30-minute AI audit and discovery call
+## 12 Skills
+
+- [Social Media Manager](https://future-marketing.ai/nl/skills/social-media): Captions, scheduling, carousels and engagement in brand voice. Live.
+- [Blog Factory](https://future-marketing.ai/nl/skills/blog-factory): Longform SEO articles 1500 to 3000 words, keyword to publish. Live.
+- [Ad Creator](https://future-marketing.ai/nl/skills/ad-creator): Static and video ad creatives for Meta Ads and TikTok. Live.
+- [Reel Builder](https://future-marketing.ai/nl/skills/reel-builder): Short video generation from product imagery. Coming soon.
+- [Voice Agent](https://future-marketing.ai/nl/skills/voice-agent): Inbound and outbound calls via ElevenLabs. Live with demo.
+- [Lead Qualifier](https://future-marketing.ai/nl/skills/lead-qualifier): Multi-channel lead scoring and routing. Live.
+- [Email Management](https://future-marketing.ai/nl/skills/email-management): Inbox triage, drafting, categorization. Coming soon.
+- [ManyChat DM](https://future-marketing.ai/nl/skills/manychat): Instagram and Messenger automations. Coming soon.
+- [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): Weekly digests, anomaly alerts, cross-platform KPIs. Live.
+- [SEO / GEO Analyst](https://future-marketing.ai/nl/skills/seo-geo): Technical SEO plus AI citation monitoring. Live.
+- [Research](https://future-marketing.ai/nl/skills/research): Market research, trends, competitor analysis with sources. Live.
+- [Clyde](https://future-marketing.ai/nl/skills/clyde): The orchestrator who routes natural-language instructions to the right skill. Live.
+
+## English and Spanish
+
+- [Home (EN)](https://future-marketing.ai/en): English mirror of NL source.
+- [Home (ES)](https://future-marketing.ai/es): Spanish mirror of NL source.
+- [Pricing (EN)](https://future-marketing.ai/en/pricing): English pricing.
+- [Pricing (ES)](https://future-marketing.ai/es/pricing): Spanish pricing.
 
 ## Optional
 
-- [Blog](https://futuremarketingai.com/en/blog): Articles on AI implementation, automation strategies, and marketing technology
-- [Legal](https://futuremarketingai.com/en/legal): Privacy policy, terms of service, and cookie policy
-- [Full Documentation](https://futuremarketingai.com/llms-full.txt): Comprehensive company and service information for LLMs
+- [Blog](https://future-marketing.ai/nl/blog): Long-form thinking. Currently 1 post, target 10 in Q1.
+- [Legal: Privacy](https://future-marketing.ai/nl/legal/privacy): AVG (GDPR) privacy policy.
+- [Legal: Terms](https://future-marketing.ai/nl/legal/terms): Terms of service including subscription terms.
+- [Legal: Cookies](https://future-marketing.ai/nl/legal/cookies): Cookie disclosures.
+- [Full long-form content for LLMs](https://future-marketing.ai/llms-full.txt): Complete product description with all tiers, skill definitions, case study, memory architecture, AVG stance.
