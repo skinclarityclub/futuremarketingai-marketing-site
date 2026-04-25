@@ -99,6 +99,13 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   message: t('form.message_label'),
                   messagePlaceholder: t('form.message_placeholder'),
                   submit: t('form.submit_button'),
+                  // Phase 11-03: status labels (i18n)
+                  statusSending: t('form.status.sending'),
+                  statusSuccessTitle: t('form.status.successTitle'),
+                  statusSuccessBody: t('form.status.successBody'),
+                  statusSendAnother: t('form.status.sendAnother'),
+                  statusNetworkError: t('form.status.networkError'),
+                  statusGenericError: t('form.status.genericError'),
                 }}
               />
             </GlassCard>

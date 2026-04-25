@@ -812,7 +812,15 @@
       "company_placeholder": "Jouw Bureau B.V.",
       "message_label": "Bericht",
       "message_placeholder": "Vertel ons over je bureau en welke vaardigheden je interesseren…",
-      "submit_button": "Verstuur bericht"
+      "submit_button": "Verstuur bericht",
+      "status": {
+        "sending": "Versturen...",
+        "successTitle": "Bericht verstuurd.",
+        "successBody": "Bedankt voor je bericht. Ik reageer binnen 1 tot 2 werkdagen.",
+        "sendAnother": "Verstuur nog een bericht",
+        "networkError": "Netwerkfout. Controleer je verbinding en probeer het opnieuw.",
+        "genericError": "Er ging iets mis. Probeer het opnieuw."
+      }
     },
     "book_demo": {
       "title": "Boek een strategiegesprek",

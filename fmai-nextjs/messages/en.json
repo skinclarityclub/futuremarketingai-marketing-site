@@ -812,7 +812,15 @@
       "company_placeholder": "Your Agency Ltd.",
       "message_label": "Message",
       "message_placeholder": "Tell us about your agency and which skills interest you…",
-      "submit_button": "Send message"
+      "submit_button": "Send message",
+      "status": {
+        "sending": "Sending...",
+        "successTitle": "Message sent!",
+        "successBody": "Thanks for reaching out. We'll get back to you within 1 to 2 business days.",
+        "sendAnother": "Send another message",
+        "networkError": "Network error. Please check your connection and try again.",
+        "genericError": "Something went wrong. Please try again."
+      }
     },
     "book_demo": {
       "title": "Book a strategy call",

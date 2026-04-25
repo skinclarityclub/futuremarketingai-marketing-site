@@ -16,6 +16,13 @@ interface ContactFormProps {
     message: string
     messagePlaceholder: string
     submit: string
+    // Phase 11-03: status labels (i18n)
+    statusSending: string
+    statusSuccessTitle: string
+    statusSuccessBody: string
+    statusSendAnother: string
+    statusNetworkError: string
+    statusGenericError: string
   }
 }
 
@@ -55,7 +62,7 @@ export function ContactForm({ labels }: ContactFormProps) {
         if (data.fields) {
           setFieldErrors(data.fields)
         }
-        setErrorMessage(data.error || 'Something went wrong. Please try again.')
+        setErrorMessage(data.error || labels.statusGenericError)
         setStatus('error')
         return
       }
@@ -63,14 +70,14 @@ export function ContactForm({ labels }: ContactFormProps) {
       setStatus('success')
       formRef.current?.reset()
     } catch {
-      setErrorMessage('Network error. Please check your connection and try again.')
+      setErrorMessage(labels.statusNetworkError)
       setStatus('error')
     }
   }
 
   if (status === 'success') {
     return (
-      <div className="text-center py-12">
+      <div className="text-center py-12" role="status" aria-live="polite">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#00FF88]/10 flex items-center justify-center">
           <svg
             className="w-8 h-8 text-[#00FF88]"
@@ -78,20 +85,19 @@ export function ContactForm({ labels }: ContactFormProps) {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
+            aria-hidden="true"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-text-primary mb-2">Message sent!</h3>
-        <p className="text-text-secondary mb-6">
-          Thank you for reaching out. We will get back to you within 24 hours.
-        </p>
+        <h3 className="text-xl font-bold text-text-primary mb-2">{labels.statusSuccessTitle}</h3>
+        <p className="text-text-secondary mb-6">{labels.statusSuccessBody}</p>
         <button
           type="button"
           onClick={() => setStatus('idle')}
           className="text-accent-system hover:underline text-sm"
         >
-          Send another message
+          {labels.statusSendAnother}
         </button>
       </div>
     )
@@ -111,13 +117,20 @@ export function ContactForm({ labels }: ContactFormProps) {
           type="text"
           id="contact-name"
           name="name"
+          autoComplete="name"
+          aria-invalid={Boolean(fieldErrors.name)}
+          aria-describedby={fieldErrors.name ? 'contact-name-err' : undefined}
           className={inputClasses}
           placeholder={labels.namePlaceholder}
           required
           minLength={2}
           maxLength={100}
         />
-        {fieldErrors.name && <p className="mt-1 text-sm text-red-400">{fieldErrors.name[0]}</p>}
+        {fieldErrors.name && (
+          <p id="contact-name-err" role="alert" className="mt-1 text-sm text-red-400">
+            {fieldErrors.name[0]}
+          </p>
+        )}
       </div>
 
       {/* Email */}
@@ -129,11 +142,19 @@ export function ContactForm({ labels }: ContactFormProps) {
           type="email"
           id="contact-email"
           name="email"
+          autoComplete="email"
+          inputMode="email"
+          aria-invalid={Boolean(fieldErrors.email)}
+          aria-describedby={fieldErrors.email ? 'contact-email-err' : undefined}
           className={inputClasses}
           placeholder={labels.emailPlaceholder}
           required
         />
-        {fieldErrors.email && <p className="mt-1 text-sm text-red-400">{fieldErrors.email[0]}</p>}
+        {fieldErrors.email && (
+          <p id="contact-email-err" role="alert" className="mt-1 text-sm text-red-400">
+            {fieldErrors.email[0]}
+          </p>
+        )}
       </div>
 
       {/* Company */}
@@ -148,6 +169,7 @@ export function ContactForm({ labels }: ContactFormProps) {
           type="text"
           id="contact-company"
           name="company"
+          autoComplete="organization"
           className={inputClasses}
           placeholder={labels.companyPlaceholder}
           maxLength={100}
@@ -166,6 +188,9 @@ export function ContactForm({ labels }: ContactFormProps) {
           id="contact-message"
           name="message"
           rows={5}
+          autoComplete="off"
+          aria-invalid={Boolean(fieldErrors.message)}
+          aria-describedby={fieldErrors.message ? 'contact-message-err' : undefined}
           className={`${inputClasses} resize-none`}
           placeholder={labels.messagePlaceholder}
           required
@@ -173,21 +198,32 @@ export function ContactForm({ labels }: ContactFormProps) {
           maxLength={5000}
         />
         {fieldErrors.message && (
-          <p className="mt-1 text-sm text-red-400">{fieldErrors.message[0]}</p>
+          <p id="contact-message-err" role="alert" className="mt-1 text-sm text-red-400">
+            {fieldErrors.message[0]}
+          </p>
         )}
       </div>
 
       {/* Error banner */}
       {status === 'error' && errorMessage && (
-        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+        <div
+          role="alert"
+          className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm"
+        >
           {errorMessage}
         </div>
       )}
 
       {/* Submit */}
-      <CTAButton type="submit" disabled={status === 'submitting'} className="w-full justify-center">
-        {status === 'submitting' ? 'Sending...' : labels.submit}
-      </CTAButton>
+      <div aria-live="polite" aria-atomic="true">
+        <CTAButton
+          type="submit"
+          disabled={status === 'submitting'}
+          className="w-full justify-center"
+        >
+          {status === 'submitting' ? labels.statusSending : labels.submit}
+        </CTAButton>
+      </div>
     </form>
   )
 }

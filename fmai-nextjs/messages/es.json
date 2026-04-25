@@ -812,7 +812,15 @@
       "company_placeholder": "Tu Agencia S.L.",
       "message_label": "Mensaje",
       "message_placeholder": "Cuéntanos sobre tu agencia y qué habilidades te interesan…",
-      "submit_button": "Enviar mensaje"
+      "submit_button": "Enviar mensaje",
+      "status": {
+        "sending": "Enviando...",
+        "successTitle": "Mensaje enviado.",
+        "successBody": "Gracias por contactar. Te responderé en 1 a 2 días hábiles.",
+        "sendAnother": "Enviar otro mensaje",
+        "networkError": "Error de red. Verifica tu conexión e intenta de nuevo.",
+        "genericError": "Algo salió mal. Por favor, intenta de nuevo."
+      }
     },
     "book_demo": {
       "title": "Agenda una llamada estratégica",
