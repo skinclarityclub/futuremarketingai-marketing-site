@@ -34,7 +34,7 @@ Transform FutureMarketingAI from a generic AI automation agency into an Agent as
 Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2026-04-24-full-audit/MASTER-ACTION-PLAN.md`. Six phases, ~66 hours total, solo-executable.
 
 - [x] **Phase 10: Production Integrity + Domain SSoT** - Wire /api/apply + /api/contact to Resend + Supabase, sync chatbot tools + llms.txt to v10 pricing, migrate domain to `future-marketing.ai`, clear CVEs + deprecation warnings (completed 2026-04-25)
-- [ ] **Phase 11: EAA Accessibility Compliance** - Skip-link, keyboard-operable mega-menu, WCAG AA contrast, per-field form errors, complete reduced-motion coverage — legal risk per EAA 2025-06-28
+- [x] **Phase 11: EAA Accessibility Compliance** - Skip-link, keyboard-operable mega-menu, WCAG AA contrast, per-field form errors, complete reduced-motion coverage — legal risk per EAA 2025-06-28 (completed 2026-04-25)
 - [ ] **Phase 12: Brand Assets + Copy Polish** - og-image, complete palette migration, localize 16 hardcoded EN labels in skills-data.ts, fix 11 IK/WIJ slips + 8 klanten→merken + Onbeperkt rename, drop orphan chatbots namespace
 - [ ] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle
 - [ ] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+
@@ -399,7 +399,7 @@ Phases execute in parallel waves:
 | 8. Clyde Chatbot     | 2/2            | Complete    | 2026-03-21 |
 | 9. Codebase Cleanup  | 0/3            | Not started | -          |
 | 10. Production Integrity | 4/4 | Complete    | 2026-04-25 |
-| 11. EAA A11y Compliance  | 2/3 | In Progress|  |
+| 11. EAA A11y Compliance  | 3/3 | Complete   | 2026-04-25 |
 | 12. Brand + Copy Polish  | 0/4        | Not started | -          |
 | 13. Performance + Bundle | 0/3        | Not started | -          |
 | 14. SEO + GEO Depth      | 0/4        | Not started | -          |

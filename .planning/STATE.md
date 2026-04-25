@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T02:15:00.000Z"
+last_updated: "2026-04-25T02:18:00.000Z"
 progress:
   total_phases: 15
   completed_phases: 7
   total_plans: 53
-  completed_plans: 32
+  completed_plans: 33
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 11 of 15 (EAA Accessibility Compliance) -- IN PROGRESS (1 of 3 plans complete; 11-01 + 11-03 in flight on parallel agents)
-Plan: 11-02 complete; 11-01 partially landed (skip-link `f53dc4b` + keyboard mega-menu `10a40d9`), 11-03 not started
-Status: Executing
-Last activity: 2026-04-25 -- 11-02 done: --color-text-muted bumped to #8C98AD (6.67:1 on bg-deep, 6.26:1 on bg-surface, both PASS WCAG AA). prefers-reduced-motion block extended via universal selector + !important to cover all 18 keyframes plus 5 inline fadeInUp animations on home hero. Two surgical commits to globals.css only (b5807c2, c584454). npm run build passed. Lighthouse spot-check deferred to verifier (mathematically verified, yolo-mode auto-approve).
+Phase: 11 of 15 (EAA Accessibility Compliance) -- 11-03 COMPLETE (3 of 3 plans complete; ready for Phase 11 verifier)
+Plan: All three plans landed. 11-01 (skip-link `f53dc4b` + keyboard mega-menu `10a40d9` + BookingModal focus-return), 11-02 (contrast + reduced-motion baseline `b5807c2` + `c584454`), 11-03 (form a11y `40551f5` + `f53199e`)
+Status: Phase complete pending verifier (Lighthouse + axe-core + SR walkthrough on /nl/apply, /nl/contact, /nl, /nl/pricing)
+Last activity: 2026-04-25 -- 11-03 done: ApplicationForm gained per-field aria-invalid + aria-describedby + role=alert errors mapped from Zod issues to apply.form.errors.* (9 keys × 3 locales = 27 strings); WHATWG autoComplete tokens + inputMode=email; first failing field auto-focused via requestAnimationFrame; aria-live=polite wraps submit. ContactForm 6 hardcoded EN literals lifted into contact.form.status.* (6 keys × 3 locales = 18 strings); autoComplete + inputMode + aria-live wired the same way. Schema gained .max(5000) on problem so too_big resolves problemMax. Two surgical commits, npm run build clean, npx tsc --noEmit clean, 0 lint issues on touched files. Yolo-mode auto-approve on Task 3 SR walkthrough (deferred to verifier per 11-02 precedent).
 
-Progress: [█████████░░░░░] 60% | Phase 11: [███░░░░░░░] 1/3 plans complete
+Progress: [█████████░░░░░] 62% | Phase 11: [██████████] 3/3 plans complete
 
 ### Audit context (2026-04-24)
 
@@ -47,9 +47,9 @@ Domain decision 2026-04-24: `future-marketing.ai` is canonical. Phase 10-01 migr
 
 **Velocity:**
 
-- Total plans completed: 22
+- Total plans completed: 23
 - Average duration: ~9 min
-- Total execution time: ~2.5 hours
+- Total execution time: ~2.6 hours
 
 **By Phase:**
 
@@ -84,6 +84,8 @@ _Updated after each plan completion_
 | Phase 10 P03 | 16min | 8 tasks | 12 files |
 | Phase 11 P02 | 12min | 3 tasks (Task 3 auto-approved checkpoint) | 1 file | CSS-only contrast + reduced-motion baseline; Lighthouse run deferred to verifier
 | Phase 11 P01 | 10min | 4 tasks | 10 files |
+| Phase 11 P03 | 7min | 3 tasks (Task 3 yolo-mode auto-approve) | 6 files | form a11y on /apply + /contact: per-field aria, autoComplete, inputMode, i18n status copy, aria-live submit
+| Phase 11 P03 | 7 | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -218,6 +220,11 @@ Recent decisions affecting current work:
 - [Phase 11]: FLAT_SKILLS computed at module scope with type-widening cast so flatMap unifies tuple-typed items under TS strict
 - [Phase 11]: BookingModal focus-return: trigger captured in Zustand at openBooking, restored via requestAnimationFrame after AnimatePresence exit, with document.contains guard for unmounted triggers
 - [Phase 11]: a11y i18n namespace placed at top of message files (existing top-level keys are not alphabetical)
+- [Phase 11]: [11-03]: ApplicationForm now maps Zod issues to apply.form.errors.* i18n keys via mapIssueToKey; aria-invalid + aria-describedby + per-field role=alert paragraphs land on every field; first failing field auto-focused via requestAnimationFrame for screen-reader announcement
+- [Phase 11]: [11-03]: ContactForm 6 hardcoded EN literals lifted into contact.form.status.* (sending, successTitle, successBody, sendAnother, networkError, genericError); 3 locales x 6 keys = 18 strings; ContactFormProps.labels extended with statusXxx fields wired via t('form.status.*') from contact/page.tsx
+- [Phase 11]: [11-03]: WHATWG autoComplete tokens by field purpose (name/email/organization/organization-title); selects + textarea + honeypot get explicit autoComplete=off; inputMode=email pairs with type=email for mobile @ keyboard on both forms
+- [Phase 11]: [11-03]: Schema for ApplicationForm gained explicit .max(5000) on problem so Zod too_big code resolves to problemMax i18n key; was unreachable before because schema was min-only
+- [Phase 11]: [11-03]: noValidate added to ApplicationForm <form> so JS validation pipeline runs end-to-end; without it browsers HTML5 tooltip blocks Zod path entirely; ContactForm already had noValidate
 
 ### Roadmap Evolution
 
@@ -238,5 +245,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 11-02 (CSS-only WCAG contrast + reduced-motion baseline, 2 surgical commits to globals.css). Parallel agents: 11-01 landed skip-link `f53dc4b` and keyboard mega-menu `10a40d9` (independent commits, separate scope). 11-03 (form a11y) not yet started. Phase 11 will be complete once 11-03 lands and verifier runs Lighthouse on /nl, /nl/pricing, /nl/apply (target ≥95).
-Resume file: None — 11-02 complete, ready for 11-03 dispatch and Phase 11 verifier run
+Stopped at: Completed 11-03 (form a11y on ApplicationForm + ContactForm, 2 surgical commits 40551f5 + f53199e). Phase 11 implementation complete: 11-01 + 11-02 + 11-03 all landed. Ready for Phase 11 verifier sweep — Lighthouse on /nl, /nl/pricing, /nl/apply, /nl/contact (target ≥95) plus axe-core/cli on /nl/apply + /nl/contact (rules: aria-valid-attr-value, label-content-name-mismatch, autocomplete-valid) plus manual SR walkthrough on NL/EN/ES (deferred from 11-03 Task 3 yolo auto-approve).
+Resume file: None — Phase 11 implementation complete. Next session: dispatch verifier or roll into Phase 12.
