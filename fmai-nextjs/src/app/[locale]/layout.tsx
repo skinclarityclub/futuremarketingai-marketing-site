@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import type { Viewport } from 'next'
 import { notFound } from 'next/navigation'
-import { setRequestLocale, getMessages } from 'next-intl/server'
+import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { dmSans, jetbrainsMono, spaceGrotesk } from '@/lib/fonts'
@@ -47,6 +47,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
 
   const messages = await getMessages()
+  const t = await getTranslations({ locale, namespace: 'a11y' })
 
   return (
     <html
@@ -60,6 +61,12 @@ export default async function LocaleLayout({
         <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
       </head>
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-accent-system focus:text-bg-deep focus:font-semibold focus:shadow-lg focus:outline-2 focus:outline-offset-2 focus:outline-accent-system"
+        >
+          {t('skipToContent')}
+        </a>
         <GradientMesh />
         <NextIntlClientProvider messages={messages}>
           <Providers>

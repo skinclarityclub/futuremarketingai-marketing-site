@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Ir al contenido"
+  },
   "home": {
     "meta": {
       "title": "Este es Clyde. El Empleado AI de Marketing para tu agencia | FutureMarketingAI",

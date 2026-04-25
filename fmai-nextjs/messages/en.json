@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
   "home": {
     "meta": {
       "title": "This is Clyde. The AI Marketing Employee for your agency | FutureMarketingAI",

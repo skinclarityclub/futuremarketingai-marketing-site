@@ -5,5 +5,9 @@ interface PageShellProps {
 }
 
 export function PageShell({ children }: PageShellProps) {
-  return <main className="min-h-screen pt-16">{children}</main>
+  return (
+    <main id="main" tabIndex={-1} className="min-h-screen pt-16 focus:outline-none">
+      {children}
+    </main>
+  )
 }
