@@ -45,7 +45,7 @@ export function BookingCTA({
     <button
       type="button"
       className={twMerge(baseStyles, variantStyles[variant], sizeStyles[size], className)}
-      onClick={openBooking}
+      onClick={(e) => openBooking(e.currentTarget)}
     >
       {children}
     </button>

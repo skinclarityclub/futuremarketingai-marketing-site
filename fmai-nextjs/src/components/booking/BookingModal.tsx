@@ -16,12 +16,12 @@ const InlineWidget = dynamic(
 const BULLETS = ['bullet1', 'bullet2', 'bullet3', 'bullet4'] as const
 
 export function BookingModal() {
-  const { isOpen, closeBooking } = useBookingStore()
+  const { isOpen, closeBooking, triggerEl } = useBookingStore()
   const t = useTranslations('booking')
   const overlayRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
 
-  // Scroll lock
+  // Scroll lock + focus management (WCAG 2.4.3)
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -29,11 +29,17 @@ export function BookingModal() {
       closeRef.current?.focus()
     } else {
       document.body.style.overflow = ''
+      // Return focus to the element that opened the modal. Guard against the
+      // edge case where the trigger unmounted (e.g. after a route change).
+      // requestAnimationFrame waits for AnimatePresence exit to complete.
+      if (triggerEl && document.contains(triggerEl)) {
+        requestAnimationFrame(() => triggerEl.focus())
+      }
     }
     return () => {
       document.body.style.overflow = ''
     }
-  }, [isOpen])
+  }, [isOpen, triggerEl])
 
   // Escape key
   useEffect(() => {
