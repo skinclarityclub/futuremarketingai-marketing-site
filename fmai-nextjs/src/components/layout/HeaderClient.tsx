@@ -9,7 +9,6 @@ import {
   X,
   ChevronDown,
   LogIn,
-  Mic,
   Bot,
   Share2,
   Megaphone,
@@ -30,98 +29,48 @@ interface HeaderClientProps {
   locale: string
 }
 
+// Structural metadata only — copy lives in messages/{locale}.json under header.skills.*
 const SKILL_CATEGORIES = [
   {
-    label: 'Create & Publish',
-    description: 'Content production at scale',
+    key: 'create',
     items: [
+      { key: 'socialMedia', icon: Share2, href: '/skills/social-media' as const },
+      { key: 'blogFactory', icon: BookOpen, href: '/skills/blog-factory' as const },
+      { key: 'adCreator', icon: Megaphone, href: '/skills/ad-creator' as const },
       {
-        icon: Share2,
-        title: 'Social Media',
-        description: 'Captions, scheduling, carousels & stories',
-        href: '/skills/social-media' as const,
-      },
-      {
-        icon: BookOpen,
-        title: 'Blog Factory',
-        description: 'Longform SEO articles 1500-3000 words',
-        href: '/skills/blog-factory' as const,
-      },
-      {
-        icon: Megaphone,
-        title: 'Ad Creator',
-        description: 'Static & video ads for Meta',
-        href: '/skills/ad-creator' as const,
-      },
-      {
+        key: 'reelBuilder',
         icon: Clapperboard,
-        title: 'Reel Builder',
-        description: 'Vertical videos with captions & music',
         href: '/skills/reel-builder' as const,
         comingSoon: true,
       },
     ],
   },
   {
-    label: 'Engage & Convert',
-    description: 'Lead capture and client interaction',
+    key: 'engage',
     items: [
+      { key: 'voiceAgent', icon: Phone, href: '/skills/voice-agent' as const },
+      { key: 'leadQualifier', icon: MessageSquare, href: '/skills/lead-qualifier' as const },
       {
-        icon: Phone,
-        title: 'Voice Agent',
-        description: 'Inbound + outbound AI phone calls',
-        href: '/skills/voice-agent' as const,
-      },
-      {
-        icon: MessageSquare,
-        title: 'Lead Qualifier',
-        description: 'Website chatbot + lead scoring',
-        href: '/skills/lead-qualifier' as const,
-      },
-      {
+        key: 'emailManagement',
         icon: Mail,
-        title: 'Email Management',
-        description: 'Gmail classify + daily digest',
         href: '/skills/email-management' as const,
         comingSoon: true,
       },
       {
+        key: 'manychat',
         icon: MessageCircle,
-        title: 'ManyChat DM',
-        description: 'Instagram DM triggers + AI replies',
         href: '/skills/manychat' as const,
         comingSoon: true,
       },
     ],
   },
   {
-    label: 'Grow & Optimize',
-    description: 'Analytics, research and orchestration',
+    key: 'grow',
     items: [
-      {
-        icon: BarChart3,
-        title: 'Reporting',
-        description: 'Dashboards, digests, anomaly alerts',
-        href: '/skills/reporting' as const,
-      },
-      {
-        icon: Globe,
-        title: 'SEO / GEO Analyst',
-        description: 'SEO audits + AI citation monitoring',
-        href: '/skills/seo-geo' as const,
-      },
-      {
-        icon: Search,
-        title: 'Research',
-        description: 'Market research + trend monitoring',
-        href: '/skills/research' as const,
-      },
-      {
-        icon: Bot,
-        title: 'Clyde AI Employee',
-        description: 'The central orchestrator of all skills',
-        href: '/skills/clyde' as const,
-      },
+      { key: 'reporting', icon: BarChart3, href: '/skills/reporting' as const },
+      { key: 'seoGeo', icon: Globe, href: '/skills/seo-geo' as const },
+      { key: 'research', icon: Search, href: '/skills/research' as const },
+      { key: 'clyde', icon: Bot, href: '/skills/clyde' as const },
     ],
   },
 ] as const
@@ -134,17 +83,21 @@ const FLAT_SKILLS: readonly SkillItem[] = SKILL_CATEGORIES.flatMap(
   (c) => c.items as readonly SkillItem[]
 )
 
+// Structural metadata only — copy lives in messages/{locale}.json under header.nav.*
 const NAV_ITEMS = [
-  { label: 'Skills', href: '/#skills' as const, hasDropdown: true },
-  { label: 'Memory', href: '/memory' as const },
-  { label: 'Case Studies', href: '/case-studies/skinclarity-club' as const },
-  { label: 'Pricing', href: '/pricing' as const },
-  { label: 'About', href: '/about' as const },
-]
+  { key: 'skills', href: '/#skills' as const, hasDropdown: true },
+  { key: 'memory', href: '/memory' as const, hasDropdown: false },
+  { key: 'caseStudies', href: '/case-studies/skinclarity-club' as const, hasDropdown: false },
+  { key: 'pricing', href: '/pricing' as const, hasDropdown: false },
+  { key: 'about', href: '/about' as const, hasDropdown: false },
+] as const
 
-export function HeaderClient({ locale }: HeaderClientProps) {
+export function HeaderClient({ locale: _locale }: HeaderClientProps) {
   const pathname = usePathname()
+  // Existing namespace for login/apply CTAs (top-level `nav.*`)
   const t = useTranslations('nav')
+  // New namespace for header mega-menu (skills + nav links + apply CTA banner)
+  const tHeader = useTranslations('header')
 
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -226,7 +179,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
           {NAV_ITEMS.map((item) => (
-            <div key={item.label} className="relative">
+            <div key={item.key} className="relative">
               {item.hasDropdown ? (
                 <div>
                   <button
@@ -248,7 +201,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                       }
                     }}
                   >
-                    {item.label}
+                    {tHeader(`nav.${item.key}`)}
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-200 ${
                         skillsOpen ? 'rotate-180' : ''
@@ -268,7 +221,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
                         style={{ width: '880px' }}
                         role="menu"
-                        aria-label="Skills"
+                        aria-label={tHeader('nav.skills')}
                         onKeyDown={(e) => {
                           const total = FLAT_SKILLS.length + 1 // +1 for Apply CTA at end
                           const current = skillsItemRefs.current.findIndex(
@@ -304,13 +257,13 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         {/* Three-column category layout */}
                         <div className="grid grid-cols-3 gap-0 divide-x divide-border-primary">
                           {SKILL_CATEGORIES.map((category) => (
-                            <div key={category.label} className="p-4">
+                            <div key={category.key} className="p-4">
                               <div className="px-3 mb-3">
                                 <h3 className="text-[11px] font-semibold uppercase tracking-widest text-accent-system">
-                                  {category.label}
+                                  {tHeader(`skills.${category.key}.label`)}
                                 </h3>
                                 <p className="text-[10px] text-text-muted mt-0.5">
-                                  {category.description}
+                                  {tHeader(`skills.${category.key}.description`)}
                                 </p>
                               </div>
                               <div className="space-y-0.5">
@@ -337,16 +290,20 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                                       <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
                                           <span className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
-                                            {skill.title}
+                                            {tHeader(
+                                              `skills.${category.key}.items.${skill.key}.title`
+                                            )}
                                           </span>
                                           {'comingSoon' in skill && skill.comingSoon && (
                                             <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
-                                              Soon
+                                              {tHeader('skills.comingSoon')}
                                             </span>
                                           )}
                                         </div>
                                         <div className="text-[11px] text-text-muted group-hover/item:text-text-secondary transition-colors duration-200 leading-snug">
-                                          {skill.description}
+                                          {tHeader(
+                                            `skills.${category.key}.items.${skill.key}.description`
+                                          )}
                                         </div>
                                       </div>
                                     </Link>
@@ -375,10 +332,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                               </div>
                               <div>
                                 <span className="text-sm font-semibold text-text-primary">
-                                  Apply
+                                  {tHeader('cta.applyTitle')}
                                 </span>
                                 <span className="text-[11px] text-text-muted ml-2">
-                                  Book a partnership call
+                                  {tHeader('cta.applySubtitle')}
                                 </span>
                               </div>
                             </div>
@@ -394,7 +351,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                   href={item.href}
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5"
                 >
-                  {item.label}
+                  {tHeader(`nav.${item.key}`)}
                 </Link>
               )}
             </div>
@@ -450,7 +407,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
               <div className="space-y-4">
                 {/* Mobile Nav Links */}
                 {NAV_ITEMS.map((item) => (
-                  <div key={item.label}>
+                  <div key={item.key}>
                     {item.hasDropdown ? (
                       <div className="space-y-2">
                         <button
@@ -459,7 +416,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                           aria-controls="mobile-skills-menu"
                           className="flex items-center justify-between w-full text-text-primary font-semibold py-3 px-4 rounded-lg hover:bg-white/5 transition-all"
                         >
-                          {item.label}
+                          {tHeader(`nav.${item.key}`)}
                           <ChevronDown
                             className={`w-4 h-4 transition-transform duration-200 ${
                               mobileSkillsOpen ? 'rotate-180' : ''
@@ -477,10 +434,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                               className="pl-2 space-y-4 overflow-hidden pt-2"
                             >
                               {SKILL_CATEGORIES.map((category) => (
-                                <div key={category.label}>
+                                <div key={category.key}>
                                   <div className="px-3 mb-2">
                                     <span className="text-[10px] font-semibold uppercase tracking-widest text-accent-system">
-                                      {category.label}
+                                      {tHeader(`skills.${category.key}.label`)}
                                     </span>
                                   </div>
                                   <div className="space-y-1">
@@ -494,7 +451,11 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                                         <div className="p-1.5 rounded-md bg-white/5">
                                           <skill.icon className="w-4 h-4 text-accent-system" />
                                         </div>
-                                        <div className="font-medium text-sm">{skill.title}</div>
+                                        <div className="font-medium text-sm">
+                                          {tHeader(
+                                            `skills.${category.key}.items.${skill.key}.title`
+                                          )}
+                                        </div>
                                       </Link>
                                     ))}
                                   </div>
@@ -510,7 +471,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         className="block text-text-secondary hover:text-text-primary font-semibold py-3 px-4 rounded-lg hover:bg-white/5 transition-all"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {item.label}
+                        {tHeader(`nav.${item.key}`)}
                       </Link>
                     )}
                   </div>
