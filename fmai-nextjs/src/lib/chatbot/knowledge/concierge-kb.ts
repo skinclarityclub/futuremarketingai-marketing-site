@@ -3,51 +3,46 @@ import type { TopicDefinition } from '../types'
 export const CONCIERGE_TOPICS: TopicDefinition[] = [
  {
  key: 'services',
- content: `## FutureMarketingAI Services Overview
+ content: `## FutureMarketingAI Skills Overview
 
-FutureMarketingAI delivers Clyde, an AI Marketing Employee for agencies. Clyde handles execution across six core skill areas:
+FutureMarketingAI delivers Clyde, the AI Marketing Medewerker for agencies. Clyde orchestrates 12 skills across client brand portfolios. 9 skills are live today, 3 are coming soon.
 
-**Content Factory & Social Media**
-- Instagram posts, stories, carousels
-- Facebook, LinkedIn, X publishing
-- Auto-generated content tailored to each client's brand voice
-- Content calendar management and scheduling
+**Create and Publish (4 skills)**
+- Social Media Manager (live): captions, scheduling, carousels and engagement in brand voice
+- Blog Factory (live): longform SEO articles 1500 to 3000 words, keyword research to publish
+- Ad Creator (live): static and video ad creatives for Meta Ads and TikTok
+- Reel Builder (coming soon): short vertical videos with captions, music, transitions
 
-**Blog Factory**
-- SEO-optimized blog articles
-- Keyword research and internal linking
-- Published directly to client websites
+**Engage and Convert (4 skills)**
+- Voice Agent (live): inbound and outbound AI phone calls via ElevenLabs
+- Lead Qualifier (live): website chatbot that scores leads and routes to CRM
+- Email Management (coming soon): Gmail inbox classification with smart labels and digest
+- ManyChat DM (coming soon): Instagram DM keyword triggers with AI replies
 
-**Voice Agent**
-- AI-powered phone calls for inbound and outbound
-- Lead qualification, appointment scheduling, FAQ resolution
-- Natural conversation in Dutch, English, and Spanish
+**Grow and Optimize (4 skills)**
+- Reporting and Analytics (live): weekly digests, anomaly detection, KPI dashboards
+- SEO / GEO Analyst (live): technical SEO plus AI citation monitoring across ChatGPT and Perplexity
+- Research (live): market research, trend monitoring, competitor analysis with sources
+- Clyde orchestrator (live): the central AI Medewerker who routes natural-language requests to the right skill
 
-**ManyChat DM Automation**
-- Instagram and Facebook DM flows
-- Lead capture, nurturing, and conversion
-- Automated responses with brand personality
-
-**Email Campaign Management**
-- Newsletter creation and scheduling
-- Drip sequences and lead nurturing
-- Performance tracking and optimization
-
-**Ad Monitoring & Competitor Tracking**
-- Meta ad library monitoring
-- Competitor creative analysis
-- Performance alerts and recommendations`,
+Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (today, this month, archive, brand identity) with nightly dream consolidation.`,
  keywords: [
  'services',
- 'chatbot',
- 'voice agent',
- 'automation',
- 'what do you do',
+ 'skills',
+ 'vaardigheden',
  'capabilities',
  'offerings',
  'solutions',
- 'skills',
  'clyde',
+ 'social media',
+ 'blog',
+ 'voice agent',
+ 'lead qualifier',
+ 'manychat',
+ 'reporting',
+ 'seo',
+ 'geo',
+ 'research',
  ],
  priority: 10,
  },
@@ -55,50 +50,61 @@ FutureMarketingAI delivers Clyde, an AI Marketing Employee for agencies. Clyde h
  key: 'pricing',
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include all 12 AI skills. No feature restrictions. Credits scale with your usage. Heavier skills like video and voice use more credits.
+All plans include access to Clyde, the AI Marketing Employee. Partner tier includes 8 of 12 skills with 2 add-on paths. Growth, Professional, Enterprise, and Founding include all 12 skills. Credits scale with usage.
+
+**Partner. EUR 347/mo**
+- 1 workspace
+- 1,000 credits/mo
+- 8 of 12 skills included (Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde)
+- Add-on paths: Static Ads pack EUR 97, ManyChat pack EUR 47
+- EUR 497 one-time onboarding
 
 **Growth (AI Marketing Starter). EUR 2,497/mo**
 - 5 workspaces
 - 4,000 credits/mo
-- all 12 AI skills included
+- All 12 skills included
 - EUR 1,997 onboarding fee
 
 **Professional (AI Marketing Pro). EUR 4,497/mo**. Most Popular
 - 15 workspaces
 - 12,000 credits/mo
-- all 12 AI skills included
+- All 12 skills included
 - Dedicated Slack channel
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 7,997/mo**
 - Unlimited workspaces
 - 30,000 credits/mo
-- all 12 AI skills included
+- All 12 skills, no caps
 - Dedicated Customer Success Manager
 - EUR 5,997+ onboarding fee
 
-**Founders Club. EUR 997/mo**: 10 spots only
+**Founding Member. EUR 997/mo**: 10 spots only (1 bezet)
 - Unlimited workspaces
 - 8,000 credits/mo
-- all 12 AI skills included
+- All 12 skills with Professional-tier caps
 - Lifetime price lock
 - Direct founder access
+- No onboarding fee
 
 **Credit Packs (top up anytime):**
-Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Unlimited 15,000 credits EUR 697
+Partner Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max (15,000) EUR 697
 
-For less than the cost of one junior marketing coordinator (EUR 4,500/mo), you get an AI team that works 24/7. No direct competitor in Europe offers this combination of capabilities.
+**Skill Packs (for Partner tier):**
+Static Ads EUR 97 | ManyChat DM EUR 47 | Voice Minutes EUR 147 | Video Ads EUR 197 | Reels EUR 197 | Blog Power EUR 197
 
-Every engagement starts with a free Strategy Call. No lock-in contracts. Cancel anytime with 30-day notice.`,
+Every engagement starts with a Strategy Call via the Apply form at https://future-marketing.ai/nl/apply. No self-service signup. Max 20 partnerships per year.`,
  keywords: [
  'pricing',
  'cost',
  'price',
  'tier',
  'pack',
+ 'partner',
  'growth',
  'professional',
  'enterprise',
+ 'founding',
  'founders club',
  'budget',
  'investment',
@@ -109,23 +115,27 @@ Every engagement starts with a free Strategy Call. No lock-in contracts. Cancel 
  },
  {
  key: 'process',
- content: `## FutureMarketingAI Delivery Process
+ content: `## FutureMarketingAI Onboarding Process
 
-Our streamlined 4-step process gets your agency from signup to Clyde executing for your clients:
+Application-gated, no self-service signup. Max 20 partnerships per year.
 
-**1. Strategy Call (30 min)**
-Free consultation to understand your agency, clients, and goals. We assess which pack and skills deliver the most impact.
+**1. Apply (5 min)**
+Submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
 
-**2. Choose Your Pack**
-Select Growth, Professional, or Enterprise. Top up with credit packs as needed.
+**2. Founder Review (within 48 hours)**
+Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.
 
-**3. Onboarding (1 week)**
-We set up your client workspaces together. Upload brand guidelines, connect social accounts, and configure Clyde for each client's brand voice.
+**3. Strategy Call (30 min)**
+Honest assessment of which tier and skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
 
-**4. Clyde Starts Working**
-Your AI Marketing Employee begins executing. Creating content, publishing posts, qualifying leads, managing email, and generating reports. 24/7.
+**4. Onboarding (week 1)**
+We connect brand voice, social accounts, knowledge bases and configure Clyde for each client.
 
-Clyde continuously improves by analyzing performance data and your feedback. By month 3, he outperforms most junior marketers on execution speed and consistency.`,
+**5. Correction Loop (month 1)**
+Clyde calibrates on real feedback. Many corrections in week 1, fewer by week 4. By month 3 the approval time per post drops from 4 minutes to 30 seconds.
+
+**6. Quarterly Strategy + Annual Retrospective**
+Quarterly check-ins on what is working. Annual retrospective with full performance review.`,
  keywords: [
  'process',
  'how it works',
@@ -136,31 +146,41 @@ Clyde continuously improves by analyzing performance data and your feedback. By 
  'launch',
  'how long',
  'get started',
+ 'apply',
+ 'application',
  ],
  priority: 8,
  },
  {
  key: 'case_studies',
- content: `## Case Study: Premium Skincare E-commerce Brand
+ content: `## Case Study: SkinClarity Club
 
-**Client:** A growing direct-to-consumer skincare brand selling online across multiple European markets.
+**Client:** SkinClarity Club, beauty and skincare brand (DTC plus physical clinic) operating across 4 brands and 3 Instagram accounts. Founder and operator: Sindy.
 
 **Challenge:**
-- Customer support overwhelmed by repetitive product questions
-- No 24/7 availability. Losing international customers in different time zones
-- Content creation bottleneck limiting social media and blog output
-- Manual product recommendation process not scalable
+- Single operator capacity cap. Sindy runs everything herself
+- 3 Instagram accounts each with own audience and tone (@SkinClarityClub, @Sindy_Huidtherapeut, @SkinClarity_Shop)
+- 4 brand identities to maintain consistently
+- Wanted to scale organic content without hiring an agency or junior marketer
 
 **Solution Deployed:**
-- **AI Chatbot (Sindy):** Persona-based skincare advisor providing 24/7 product recommendations, routine building, and ingredient education across website and WhatsApp
-- **Content Automation:** Automated content pipeline generating blog posts, social captions, and newsletter content aligned with brand voice
-- **Multi-language Support:** Full EN, NL, and ES coverage for European market expansion
+Clyde, the AI Marketing Medewerker, with 6 of 12 skills active:
+- Social Media Manager (3 IG accounts in distinct brand voices)
+- Blog Factory (SEO blogs for skinclarityclub.nl)
+- SEO / GEO Analyst (technical SEO plus AI citation monitoring)
+- Reporting and Analytics (weekly digest Monday 08:00 across IG, Shopify, SEO)
+- Research (skincare trends and competitor analysis)
+- Clyde orchestrator (per-account memory plus portfolio-level learning)
 
-**Results:**
-- 24/7 product advice without additional staff
-- Automated content pipeline producing 4x more content per month
-- Multi-language customer support at no extra headcount cost
-- Measurable increase in customer engagement and average order value`,
+**Results (autonomous, weekly):**
+- Circa 21 carousels per week across 3 Instagram accounts
+- Circa 15 Instagram posts per week
+- 2 to 4 longform blog articles per month with SEO optimization
+- Weekly SEO rapport
+- Monday 08:00 performance digest
+- Carousel approval time from 4 minutes to 30 seconds
+- Zero added headcount
+- Sindy is Founding Member spot 1 of 10`,
  keywords: [
  'case study',
  'example',
@@ -171,6 +191,8 @@ Clyde continuously improves by analyzing performance data and your feedback. By 
  'reference',
  'proof',
  'skincare',
+ 'skinclarity',
+ 'sindy',
  ],
  priority: 7,
  },
@@ -178,23 +200,23 @@ Clyde continuously improves by analyzing performance data and your feedback. By 
  key: 'about',
  content: `## About FutureMarketingAI
 
-FutureMarketingAI builds Clyde, the AI Marketing Employee for agencies. We do not just advise. We build, deploy, and optimize an AI colleague that handles marketing execution for your clients.
+FutureMarketingAI builds Clyde, the AI Marketing Medewerker for agencies. Solo-founder partnership model: every engagement is reviewed and onboarded by Daley personally. Max 20 partnerships per year.
 
 **Who We Are:**
-- Small team with deep AI and marketing expertise
-- Based in the Netherlands, serving agencies across Europe
-- Founded by builders who use AI daily in production environments
+- Solo founder Daley, native Dutch speaker, technical builder
+- Based in the Netherlands, serving EU agencies
+- Self-hosted EU infrastructure for AVG (GDPR) and EU AI Act compliance
 
 **Our Philosophy:**
 - Clyde is a colleague, not a tool. You assign tasks, he executes
-- Every agency should be able to scale without hiring
-- Speed matters. Agencies are live within 1 week of signing
-- Transparency in pricing, process, and results
+- Quality of partnership over volume of clients (20 per year cap)
+- Application-gated. No self-service signup
+- Lifetime memory: Clyde learns each brand over time, never forgets
 
 **Our Focus:**
-- Marketing agencies (B2B2B model)
-- Agencies managing 3-50 client brands
-- Agencies that want to increase resell margin through AI-powered execution`,
+- Performance and growth agencies in Netherlands and EU
+- Agencies managing 10 to 50 brand portfolios
+- Agencies that want to scale without hiring more marketers`,
  keywords: [
  'about',
  'team',
@@ -205,6 +227,7 @@ FutureMarketingAI builds Clyde, the AI Marketing Employee for agencies. We do no
  'netherlands',
  'mission',
  'philosophy',
+ 'daley',
  ],
  priority: 6,
  },
@@ -212,17 +235,16 @@ FutureMarketingAI builds Clyde, the AI Marketing Employee for agencies. We do no
  key: 'contact',
  content: `## Get in Touch with FutureMarketingAI
 
-**Strategy Call:**
-Book a free 30-minute Strategy Call to discuss your agency's needs:
-https://calendly.com/futuremarketingai/discovery
+**Apply for Partnership:**
+Start at https://future-marketing.ai/nl/apply. Application reviewed by Daley within 48 hours.
 
 **Email:**
 hello@future-marketing.ai
-We respond within 24 hours on business days.
+Response within 24 hours on business days.
 
 **What to Expect:**
 - No sales pressure. We listen first
-- Honest assessment of which pack fits your agency
+- Honest assessment of which tier fits your agency
 - If we are not the right fit, we will tell you`,
  keywords: [
  'contact',
@@ -233,8 +255,8 @@ We respond within 24 hours on business days.
  'reach',
  'talk',
  'meeting',
- 'calendly',
- 'discovery call',
+ 'apply',
+ 'application',
  'strategy call',
  ],
  priority: 5,
