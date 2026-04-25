@@ -83,6 +83,7 @@ _Updated after each plan completion_
 | Phase 10 P02 | 24min | 7 tasks (Tasks 2-7) | 9 files | live smoke green; Task 8 prod-deploy verification deferred
 | Phase 10 P03 | 16min | 8 tasks | 12 files |
 | Phase 11 P02 | 12min | 3 tasks (Task 3 auto-approved checkpoint) | 1 file | CSS-only contrast + reduced-motion baseline; Lighthouse run deferred to verifier
+| Phase 11 P01 | 10min | 4 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -212,6 +213,11 @@ Recent decisions affecting current work:
 - [Phase 11]: [11-02]: .blob-warm/.blob-cool/.blob-mixed/.loader explicitly `animation: none !important` because they have no terminal state — would freeze mid-cycle visually if just sped up to 0.01ms.
 - [Phase 11]: [11-02]: Did NOT touch --color-border-primary (separate audit §1.4.11 non-text contrast, scheduled for later polish phase) or --color-text-secondary/-primary (already PASS AAA). Did NOT touch focus-visible (parallel 11-01 owns it).
 - [Phase 11]: [11-02]: Reverted unstaged HeaderClient.tsx delta from parallel 11-01 agent (FLAT_SKILLS flatMap caused TS error on heterogeneous tuple union); 11-01's clean version landed at 10a40d9 shortly after. Documented as deviation Rule 3.
+- [Phase 11]: Skills mega-menu uses ref-scoped outside-click instead of blanket document listener — fixes onClick conflict
+- [Phase 11]: Hover-to-open dropped from Skills mega-menu; click + keyboard are the supported openers (WCAG 2.1.1 priority over hover convenience)
+- [Phase 11]: FLAT_SKILLS computed at module scope with type-widening cast so flatMap unifies tuple-typed items under TS strict
+- [Phase 11]: BookingModal focus-return: trigger captured in Zustand at openBooking, restored via requestAnimationFrame after AnimatePresence exit, with document.contains guard for unmounted triggers
+- [Phase 11]: a11y i18n namespace placed at top of message files (existing top-level keys are not alphabetical)
 
 ### Roadmap Evolution
 
