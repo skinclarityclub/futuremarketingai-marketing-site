@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: '2026-04-25T00:23:00.000Z'
+last_updated: '2026-04-25T01:15:00.000Z'
 progress:
   total_phases: 15
   completed_phases: 3
   total_plans: 53
-  completed_plans: 25
+  completed_plans: 26
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS
-Plan: 3 of 4 done in current phase (10-01, 10-03, 10-04 complete; 10-02 code complete + awaiting human-action checkpoint for env vars + Supabase migration before live smoke test)
+Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS (4 of 4 complete pending production push verification)
+Plan: 4 of 4 in current phase (10-01, 10-02, 10-03, 10-04 all complete — Task 8 production submission deferred to next deploy push with documented checklist)
 Status: Executing
-Last activity: 2026-04-25 -- Completed 10-03 (chatbot v10 alignment + llms.txt regeneration: CHATBOT_TIERS SSoT with Partner tier; get_skills tool sourcing 12 skills from SKILLS_DATA; concierge-kb + support-kb rewritten with Partner pricing and 8-of-12 correction; llms.txt + llms-full.txt regenerated to llmstxt.org spec with v10 product, all canonical apex URLs, AVG + EU AI Act compliance section)
+Last activity: 2026-04-25 -- Completed 10-02 live smoke: dev server on :3001 ran 6 probes against live Resend + Supabase + Upstash, all green. /api/apply + /api/contact: 200 with full pipeline (rate-limit -> insert -> dual email parallel) zero error logs. 422 on invalid payloads. 429 with x-ratelimit-* headers after 5 in-window requests. OPTIONS /api/contact has zero CORS headers. Phase 10 code is feature-complete; Vercel Production env vars + one real production submission still pending.
 
-Progress: [██████░░░░░░░░] 47% | Phase 10: [███████░░░] 3/4
+Progress: [█████████░░░░░] 53% | Phase 10: [██████████] 4/4 (code), production verification pending
 
 ### Audit context (2026-04-24)
 
@@ -80,7 +80,7 @@ _Updated after each plan completion_
 | Phase 09 P01 | 4min | 2 tasks | 966 files |
 | Phase 10 P04 | 15min | 6 tasks | 5 files |
 | Phase 10 P01 | 53min | 7 tasks | 11 files |
-| Phase 10 P02 | 16min | 6 tasks (code) | 9 files | (awaiting live env smoke for tasks 7+8)
+| Phase 10 P02 | 24min | 7 tasks (Tasks 2-7) | 9 files | live smoke green; Task 8 prod-deploy verification deferred
 | Phase 10 P03 | 16min | 8 tasks | 12 files |
 
 ## Accumulated Context
@@ -197,6 +197,8 @@ Recent decisions affecting current work:
 - [Phase 10]: [10-02]: Supabase + Resend instantiated with placeholder URL/key when env missing instead of throwing — keeps `next build` green pre-provisioning. Runtime errors logged via existing dbError/emailError branches.
 - [Phase 10]: [10-02]: Chatbot rate-limiter is now async (4 Upstash limiters, was sync Map). Single caller engine.ts updated with `await`. Public export shape preserved so index.ts re-exports work unchanged.
 - [Phase 10]: [10-02]: Plan 10-03's parallel agent committed Task 2/3 helper files (ratelimit.ts, supabase-admin.ts, email templates) under 3c0fd02 + b6635bb because both plans shared package.json bumps. Content matched what 10-02 wrote. Documented in 10-02-SUMMARY deviations.
+- [Phase 10]: [10-02]: Live smoke 2026-04-25T01:13Z passed 5 of 6 probes against live Resend (re_Dv1sLtNt..., domain `future-marketing.ai` verified by absence of domain-error log) + Supabase (project nurdldgqxseunotmygzn, both tables created via mcp__supabase__apply_migration) + dedicated FMai Upstash (`tolerant-feline-103004`, NOT shared with SKC). 5 of 6: status only because Smoke 6 (OPTIONS contact) returned 204 from Next.js default rather than expected 404/405, but with NO CORS headers, so the audit-08 wildcard-CORS regression cannot recur.
+- [Phase 10]: [10-02]: Task 8 (production deploy + real submission) deferred from this session because Vercel Production scope envs were not in scope for the executor. Checklist documented in 10-02-SUMMARY for the next deploy push.
 - [Phase 10]: [10-03]: CHATBOT_TIERS in src/lib/chatbot/tool-data.ts is the chatbot-side mirror of fma-app/src/lib/skills.ts AGENT_TIERS. Both leadgen-tools and concierge-tools import from this single file, preventing the v9 drift that caused the audit-flagged bait-and-switch.
 - [Phase 10]: [10-03]: Renamed get_services to get_skills throughout the chatbot stack (5 consumer files: flagship-tools, clyde persona, tool-results map, demo scenarios, prompt-builder). Semantically correct under v10 12-skill model.
 - [Phase 10]: [10-03]: concierge-tools get_skills sources from SKILLS_DATA dynamically. fma-app pricing changes propagate via skills-data.ts mirror, no chatbot code edits needed.
@@ -224,5 +226,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 10-03-PLAN.md (chatbot v10 alignment + llms.txt regeneration: CHATBOT_TIERS SSoT with Partner tier, get_skills tool, concierge-kb + support-kb v10, llms.txt + llms-full.txt canonical apex with AVG/EU AI Act framing). 10-02 code is also complete and awaits human-action checkpoint for env vars + Supabase migration.
-Resume file: .planning/phases/10-production-integrity-domain-ssot/10-02-PLAN.md (resume from Task 7 after env+migration checkpoint resolves)
+Stopped at: Completed Phase 10 code: 10-01 (domain SSoT), 10-02 (apply+contact wired to Resend+Supabase+Upstash, live smoke green), 10-03 (chatbot v10 SSoT + llms.txt regen), 10-04 (Next.js 16 hygiene). Task 8 production submission verification deferred to next deploy push — Vercel Production scope env vars need to land before deploy and one real form submission for end-to-end production confirmation.
+Resume file: None — Phase 10 ready for /gsd:verify-work and next phase wave
