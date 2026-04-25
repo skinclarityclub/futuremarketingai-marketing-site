@@ -677,7 +677,7 @@
           "price": "297"
         },
         "unlimited": {
-          "name": "Ilimitado",
+          "name": "Max",
           "credits": "15.000",
           "price": "697"
         }
@@ -728,7 +728,7 @@
         },
         "q2": {
           "question": "¿Qué pasa si supero mis créditos o caps?",
-          "answer": "Recibes un aviso al 80% y al 100% de tu asignación mensual. Después puedes elegir: esperar al mes siguiente, comprar un credit pack (Partner Top-Up 39 EUR a Ilimitado 697 EUR) o subir a un tier superior. Sin overage automático, sin sorpresas en tu factura."
+          "answer": "Recibes un aviso al 80% y al 100% de tu asignación mensual. Después puedes elegir: esperar al mes siguiente, comprar un credit pack (Partner Top-Up 39 EUR a Max 697 EUR) o subir a un tier superior. Sin overage automático, sin sorpresas en tu factura."
         },
         "q3": {
           "question": "¿Puedo subir o bajar entre tiers?",

@@ -677,7 +677,7 @@
           "price": "297"
         },
         "unlimited": {
-          "name": "Onbeperkt",
+          "name": "Max",
           "credits": "15.000",
           "price": "697"
         }
@@ -728,7 +728,7 @@
         },
         "q2": {
           "question": "Wat gebeurt er als ik over mijn credits of caps heen ga?",
-          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je maandallocatie. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Partner Top-Up €39 tot Onbeperkt €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
+          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je maandallocatie. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Partner Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
         },
         "q3": {
           "question": "Kan ik tussen tiers op- of afschalen?",

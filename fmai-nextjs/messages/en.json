@@ -677,7 +677,7 @@
           "price": "297"
         },
         "unlimited": {
-          "name": "Unlimited",
+          "name": "Max",
           "credits": "15,000",
           "price": "697"
         }
@@ -728,7 +728,7 @@
         },
         "q2": {
           "question": "What happens if I go over my credits or caps?",
-          "answer": "You get a warning at 80% and 100% of your monthly allocation. After that you can choose: wait until next month, buy a credit pack (Partner Top-Up €39 to Unlimited €697), or upgrade to a higher tier. No automatic overage, no surprise on your invoice."
+          "answer": "You get a warning at 80% and 100% of your monthly allocation. After that you can choose: wait until next month, buy a credit pack (Partner Top-Up €39 to Max €697), or upgrade to a higher tier. No automatic overage, no surprise on your invoice."
         },
         "q3": {
           "question": "Can I upgrade or downgrade between tiers?",
