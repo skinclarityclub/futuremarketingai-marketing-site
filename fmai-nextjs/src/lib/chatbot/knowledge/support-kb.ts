@@ -11,7 +11,9 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  'tier',
  'plan',
  'pack',
+ 'partner',
  'founders club',
+ 'founding',
  'growth',
  'professional',
  'enterprise',
@@ -21,39 +23,56 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include all 12 AI skills. No feature restrictions. Credits scale with your usage. Heavier skills like video and voice use more credits.
+All plans include access to Clyde, the AI Marketing Employee. Partner tier includes 8 of 12 skills with 2 add-on paths. Growth, Professional, Enterprise, and Founding include all 12 skills. Credits scale with usage.
+
+**Partner. EUR 347/mo**
+- 1 workspace
+- 1,000 credits/mo
+- 8 of 12 skills included (Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde)
+- Add-on paths: Static Ads pack EUR 97, ManyChat pack EUR 47
+- EUR 497 one-time onboarding
 
 **Growth (AI Marketing Starter). EUR 2,497/mo**
 - 5 workspaces
 - 4,000 credits/mo
-- all 12 AI skills included
+- All 12 skills included
 - EUR 1,997 onboarding fee
 
 **Professional (AI Marketing Pro). EUR 4,497/mo** (Most Popular)
 - 15 workspaces
 - 12,000 credits/mo
-- all 12 AI skills included
+- All 12 skills included
 - Dedicated Slack channel
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 7,997/mo** (All Skills, Unlimited Scale)
 - Unlimited workspaces
 - 30,000 credits/mo
-- all 12 AI skills included
+- All 12 skills, no caps
 - Dedicated Customer Success Manager
 - EUR 5,997+ onboarding fee
 
-**Founders Club. EUR 997/mo** (10 spots only, lifetime price lock)
+**Founding Member. EUR 997/mo** (10 spots only, lifetime price lock, 1 bezet)
 - Unlimited workspaces
 - 8,000 credits/mo
-- all 12 AI skills included
+- All 12 skills with Professional-tier caps
 - Direct founder access
 - Shape the product roadmap
+- No onboarding fee
 
 **Credit Packs (top up anytime):**
+- Partner Top-up: 500 credits. EUR 39
 - Boost: 2,000 credits. EUR 149
 - Scale: 5,000 credits. EUR 297
-- Unlimited: 15,000 credits. EUR 697`,
+- Max: 15,000 credits. EUR 697
+
+**Skill Packs (Partner tier add-ons):**
+- Static Ads: EUR 97/mo
+- ManyChat DM: EUR 47/mo
+- Voice Minutes: EUR 147/mo
+- Video Ads: EUR 197/mo
+- Reels: EUR 197/mo
+- Blog Power: EUR 197/mo`,
  },
  {
  key: 'cost_benchmarks',
@@ -75,7 +94,7 @@ All plans include all 12 AI skills. No feature restrictions. Credits scale with 
  content: `## Cost Benchmarks: Hiring vs. AI Marketing Employee
 
 **Junior Marketing Coordinator (Netherlands)**
-- Gross salary + employer costs: EUR 4,500-6,200/mo
+- Gross salary plus employer costs: EUR 4,500-6,200/mo
 - Capacity: 1 person, 40 hrs/week, handles 2-3 clients max
 - Ramp-up time: 3-6 months to full productivity
 
@@ -98,10 +117,10 @@ All plans include all 12 AI skills. No feature restrictions. Credits scale with 
 - Scales instantly: add a workspace in 15 minutes
 
 **Key Comparison:**
-- Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,997/client
-- FutureMarketingAI Growth for 5 clients: EUR 2,497/mo = EUR 299/client
-- Cost per client drops 80% with FutureMarketingAI
-- Founders Club for unlimited clients: EUR 997/mo. Best value in the market`,
+- Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
+- FutureMarketingAI Growth for 5 clients: EUR 2,497/mo = EUR 499/client
+- FutureMarketingAI Partner for 1 client: EUR 347/mo (entry-level)
+- Founding Member for unlimited clients: EUR 997/mo (lifetime price lock, 10 spots)`,
  },
  {
  key: 'time_benchmarks',
@@ -122,7 +141,7 @@ All plans include all 12 AI skills. No feature restrictions. Credits scale with 
 **Human Content Creation Time (Industry Average)**
 - Blog post (1000 words): 3-4 hours
 - LinkedIn post: 30-45 minutes
-- Instagram caption + hashtags: 20-30 minutes
+- Instagram caption plus hashtags: 20-30 minutes
 - Newsletter: 2-3 hours
 - Ad copy set (5 variants): 1-2 hours
 - Weekly content for 1 client: 15-20 hours
@@ -130,7 +149,7 @@ All plans include all 12 AI skills. No feature restrictions. Credits scale with 
 **AI Marketing Employee Production Time**
 - Blog post (1000 words): 5-10 minutes
 - LinkedIn post: 1-2 minutes
-- Instagram caption + hashtags: 1-2 minutes
+- Instagram caption plus hashtags: 1-2 minutes
 - Newsletter: 10-15 minutes
 - Ad copy set (5 variants): 5 minutes
 - Weekly content for 1 client: 30-60 minutes
@@ -164,32 +183,37 @@ All plans include all 12 AI skills. No feature restrictions. Credits scale with 
 **Basic ROI Formula:**
 Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription) / FutureMarketingAI Subscription x 100%
 
-**Scenario A: Growing Agency (Growth. EUR 2,497/mo)**
-- Current content costs: 1 junior marketer (EUR 4,500/mo) + tools (EUR 2,000/mo) = EUR 6,500/mo
-- FutureMarketingAI cost: EUR 2,497/mo
-- Direct savings: EUR 5,003/mo
-- Additional capacity: 5 workspaces, all 12 AI skills, can take on more clients without hiring
-- ROI: 334%
+**Scenario A: Solo Operator (Partner. EUR 347/mo)**
+- Tier: Partner with 8 of 12 skills, 1 workspace
+- Best for solo founders or single-brand operators
+- Add Static Ads (EUR 97) or ManyChat (EUR 47) packs as needed
 
-**Scenario B: Scaling Agency (Professional. EUR 4,497/mo)**
-- Current costs: 1 junior hire (EUR 5,500/mo) + freelancer overflow (EUR 3,997/mo) + tools (EUR 2,500/mo) = EUR 11,000/mo
+**Scenario B: Growing Agency (Growth. EUR 2,497/mo)**
+- Current content costs: 1 junior marketer (EUR 4,500/mo) plus tools (EUR 2,000/mo) = EUR 6,500/mo
+- FutureMarketingAI cost: EUR 2,497/mo
+- Direct savings: EUR 4,003/mo
+- Additional capacity: 5 workspaces, all 12 skills, can take on more clients without hiring
+- ROI: 160% on direct savings alone
+
+**Scenario C: Scaling Agency (Professional. EUR 4,497/mo)**
+- Current costs: 1 junior hire (EUR 5,500/mo) plus freelancer overflow (EUR 3,997/mo) plus tools (EUR 2,500/mo) = EUR 11,997/mo
 - FutureMarketingAI cost: EUR 4,497/mo
-- Direct savings: EUR 8,003/mo
+- Direct savings: EUR 7,500/mo
 - Additional capacity: 15 workspaces, dedicated Slack support
 - Resell margin: charge clients EUR 500-1,500/mo per client for AI services
-- ROI: 267% on direct savings alone
+- ROI: 167% on direct savings alone
 
-**Scenario C: Full Scale Agency (Enterprise. EUR 7,997/mo)**
-- Current costs: 2 junior hires (EUR 10,000/mo) + tools (EUR 3,400/mo) + agency retainer (EUR 5,997/mo) = EUR 18,400/mo
+**Scenario D: Full Scale Agency (Enterprise. EUR 7,997/mo)**
+- Current costs: 2 junior hires (EUR 10,000/mo) plus tools (EUR 3,400/mo) plus agency retainer (EUR 5,997/mo) = EUR 19,397/mo
 - FutureMarketingAI cost: EUR 7,997/mo
-- Direct savings: EUR 13,403/mo
+- Direct savings: EUR 11,400/mo
 - Unlimited workspaces, dedicated CSM
 - Resell margin on unlimited clients: potentially EUR 10,000-30,000/mo additional revenue
-- ROI: 268% on direct savings alone
+- ROI: 143% on direct savings alone
 
-**Founders Club (EUR 997/mo):** all 12 skills, unlimited workspaces, 8,000 credits. ROI is astronomical. Less than the cost of one junior marketing coordinator.
+**Founding Member (EUR 997/mo):** all 12 skills, unlimited workspaces, 8,000 credits, lifetime price lock. Best value in the market. 10 spots only, 1 already taken.
 
-**Payback Period:** Typically 1 month. Savings exceed subscription from day one.`,
+**Payback Period:** Typically 1 month. Savings exceed subscription from day one for Growth and above.`,
  },
  {
  key: 'founding_member',
@@ -206,20 +230,21 @@ Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription)
  'benefit',
  'exclusive',
  ],
- content: `## Founders Club Program
+ content: `## Founding Member Program
 
 **What Is It?**
-The Founders Club offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. While regular plans start at EUR 2,497/mo.
+The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. While regular plans start at EUR 347/mo (Partner) or EUR 2,497/mo (Growth).
 
 **Benefits:**
 - EUR 997/mo locked for life (vs. EUR 2,497-7,997/mo regular plans)
 - Unlimited workspaces (same as Enterprise at EUR 7,997/mo)
 - 8,000 credits/mo (more than Professional at EUR 4,497/mo)
-- all 12 AI skills included. No feature restrictions
+- All 12 skills with Professional-tier caps. No feature restrictions
 - Direct access to the founder for support and feature requests
 - Priority for new feature rollouts
 - Shape the product roadmap based on your agency's needs
 - Founding Agency Network membership
+- No onboarding fee
 
 **Requirements:**
 - Monthly 30-minute feedback call
@@ -233,6 +258,6 @@ Marketing agencies who want to:
 - Get early access to AI marketing tools before competitors
 - Have direct influence on product development
 
-**Spots Remaining:** Limited to 10 agencies total. First come, first served.`,
+**Spots Remaining:** Limited to 10 agencies total. 1 spot taken (SkinClarity Club). 9 spots available. First come, first served.`,
  },
 ]
