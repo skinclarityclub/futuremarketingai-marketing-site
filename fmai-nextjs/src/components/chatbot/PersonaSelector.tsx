@@ -35,7 +35,7 @@ export function PersonaSelector({ active, onChange }: PersonaSelectorProps) {
             onClick={() => onChange(id)}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors cursor-pointer ${
               isActive
-                ? 'border-[#00D4FF]/50 bg-[#00D4FF]/10 text-white'
+                ? 'border-accent-system/50 bg-accent-system/10 text-white'
                 : 'border-white/10 bg-white/[0.02] text-white/50 hover:border-white/20'
             }`}
           >

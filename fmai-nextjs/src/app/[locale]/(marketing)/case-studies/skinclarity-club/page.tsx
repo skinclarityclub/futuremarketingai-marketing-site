@@ -211,7 +211,7 @@ export default async function SkcCaseStudyPage({
               <footer className="flex items-center gap-3">
                 <div
                   aria-hidden
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-system to-[#A855F7] flex items-center justify-center text-bg-deep font-bold"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-system to-accent-human flex items-center justify-center text-bg-deep font-bold"
                 >
                   S
                 </div>

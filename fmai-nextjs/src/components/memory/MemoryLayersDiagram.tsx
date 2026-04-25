@@ -10,8 +10,8 @@ const LAYERS: Array<{
 }> = [
   { key: 'hot', accent: 'text-[#FF4D4D]', borderAccent: 'border-[#FF4D4D]/40', glyph: '🔥' },
   { key: 'warm', accent: 'text-[#F5A623]', borderAccent: 'border-[#F5A623]/40', glyph: '☀' },
-  { key: 'cold', accent: 'text-[#00D4FF]', borderAccent: 'border-[#00D4FF]/40', glyph: '❄' },
-  { key: 'context', accent: 'text-[#A855F7]', borderAccent: 'border-[#A855F7]/40', glyph: '◆' },
+  { key: 'cold', accent: 'text-accent-system', borderAccent: 'border-accent-system/40', glyph: '❄' },
+  { key: 'context', accent: 'text-accent-human', borderAccent: 'border-accent-human/40', glyph: '◆' },
 ]
 
 export async function MemoryLayersDiagram({ locale }: { locale: string }) {

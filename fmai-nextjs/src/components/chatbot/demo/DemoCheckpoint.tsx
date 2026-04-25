@@ -33,10 +33,10 @@ export function DemoCheckpoint({ prompt, options, onSelect }: DemoCheckpointProp
             onClick={() => onSelect(option.action)}
             className={
               i === 0
-                ? 'cursor-pointer rounded-full border border-[#00D4FF]/40 bg-[#00D4FF]/20 px-3 py-1.5 text-xs font-medium text-[#00D4FF] transition-colors hover:bg-[#00D4FF]/30'
+                ? 'cursor-pointer rounded-full border border-accent-system/40 bg-accent-system/20 px-3 py-1.5 text-xs font-medium text-accent-system transition-colors hover:bg-accent-system/30'
                 : option.action === 'end'
                   ? 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/40 transition-colors hover:text-white/60'
-                  : 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-[#00D4FF]/30 hover:text-white'
+                  : 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-accent-system/30 hover:text-white'
             }
           >
             {option.label}

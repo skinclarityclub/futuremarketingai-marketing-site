@@ -18,14 +18,14 @@ export function OgImageTemplate({
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        background: '#050814',
+        background: '#0a0d14',
         padding: '80px',
       }}
     >
       <div
         style={{
           display: 'flex',
-          color: '#00D4FF',
+          color: '#00d4aa',
           fontSize: 16,
           fontWeight: 600,
           marginBottom: 24,
@@ -71,7 +71,7 @@ export function OgImageTemplate({
         <div
           style={{
             display: 'flex',
-            color: '#00D4FF',
+            color: '#00d4aa',
             fontSize: 18,
             fontWeight: 600,
           }}

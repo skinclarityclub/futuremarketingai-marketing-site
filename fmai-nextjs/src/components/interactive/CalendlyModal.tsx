@@ -51,7 +51,7 @@ export function CalendlyModal({
       aria-modal="true"
       aria-label={t('modal_title')}
     >
-      <div className="relative w-full max-w-3xl mx-4 rounded-xl bg-[#0A0E27] border border-white/10 overflow-hidden">
+      <div className="relative w-full max-w-3xl mx-4 rounded-xl bg-bg-surface border border-white/10 overflow-hidden">
         {/* Close button */}
         <button
           onClick={onClose}

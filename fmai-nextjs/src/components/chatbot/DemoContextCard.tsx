@@ -32,7 +32,7 @@ export function DemoContextCard({ personaId }: DemoContextCardProps) {
       <ul className="space-y-2">
         {capabilities.map((cap) => (
           <li key={cap} className="flex items-start gap-2 text-sm text-white/70">
-            <CheckCircle className="w-4 h-4 text-[#00D4FF] mt-0.5 flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 text-accent-system mt-0.5 flex-shrink-0" />
             <span>{cap}</span>
           </li>
         ))}

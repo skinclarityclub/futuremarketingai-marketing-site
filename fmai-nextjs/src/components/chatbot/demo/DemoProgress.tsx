@@ -20,10 +20,10 @@ export function DemoProgress({ totalSteps, currentStep }: DemoProgressProps) {
             key={i}
             className={`flex h-5 w-5 items-center justify-center rounded-full transition-colors duration-300 ${
               isCompleted
-                ? 'bg-gradient-to-br from-[#00D4FF] to-[#A855F7]'
+                ? 'bg-gradient-to-br from-accent-system to-accent-human'
                 : isCurrent
-                  ? 'border-2 border-[#00D4FF] bg-[#00D4FF]/10'
-                  : 'border border-white/10 bg-[#0A0E27]/50'
+                  ? 'border-2 border-accent-system bg-accent-system/10'
+                  : 'border border-white/10 bg-bg-surface/50'
             }`}
           >
             {isCompleted && (
@@ -37,7 +37,7 @@ export function DemoProgress({ totalSteps, currentStep }: DemoProgressProps) {
             )}
             {isCurrent && (
               <motion.div
-                className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]"
+                className="h-1.5 w-1.5 rounded-full bg-accent-system"
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
               />

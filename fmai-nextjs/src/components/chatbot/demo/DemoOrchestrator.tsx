@@ -178,10 +178,10 @@ export function DemoOrchestrator({
           <button
             type="button"
             onClick={handleContinue}
-            className="flex w-full items-center justify-between rounded-xl border border-[#00D4FF]/20 bg-[#00D4FF]/5 px-4 py-3 text-left transition-colors hover:bg-[#00D4FF]/10 hover:border-[#00D4FF]/40 cursor-pointer group"
+            className="flex w-full items-center justify-between rounded-xl border border-accent-system/20 bg-accent-system/5 px-4 py-3 text-left transition-colors hover:bg-accent-system/10 hover:border-accent-system/40 cursor-pointer group"
           >
             <div className="flex items-center gap-2.5 min-w-0">
-              <Sparkles className="h-4 w-4 shrink-0 text-[#00D4FF]" />
+              <Sparkles className="h-4 w-4 shrink-0 text-accent-system" />
               <div className="min-w-0">
                 <p className="text-xs font-medium text-white truncate">Continue demo</p>
                 <p className="text-[10px] text-white/60 truncate">
@@ -189,7 +189,7 @@ export function DemoOrchestrator({
                 </p>
               </div>
             </div>
-            <ArrowRight className="h-4 w-4 shrink-0 text-[#00D4FF] transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 shrink-0 text-accent-system transition-transform group-hover:translate-x-0.5" />
           </button>
         </motion.div>
       )}

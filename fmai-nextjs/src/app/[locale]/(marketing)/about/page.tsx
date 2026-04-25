@@ -232,7 +232,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="flex items-start gap-4">
                 <div
                   aria-hidden
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-system to-[#A855F7] flex items-center justify-center text-bg-deep font-bold text-xl shrink-0"
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-system to-accent-human flex items-center justify-center text-bg-deep font-bold text-xl shrink-0"
                 >
                   D
                 </div>

@@ -37,11 +37,11 @@ export function DemoScenarioCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.3 }}
       onClick={() => onSelect(id)}
-      className="w-full cursor-pointer rounded-xl border border-white/10 bg-[#0A0E27]/80 p-3 text-left backdrop-blur-md transition-all duration-200 hover:border-[#00D4FF]/40 hover:shadow-lg hover:shadow-[#00D4FF]/5"
+      className="w-full cursor-pointer rounded-xl border border-white/10 bg-bg-surface/80 p-3 text-left backdrop-blur-md transition-all duration-200 hover:border-accent-system/40 hover:shadow-lg hover:shadow-accent-system/5"
     >
       <div className="flex items-start gap-3">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#00D4FF]/20 to-[#A855F7]/10">
-          <Icon className="h-4 w-4 text-[#00D4FF]" />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent-system/20 to-accent-human/10">
+          <Icon className="h-4 w-4 text-accent-system" />
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium text-white">{title}</p>

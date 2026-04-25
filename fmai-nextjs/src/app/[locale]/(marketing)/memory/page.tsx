@@ -66,7 +66,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
             <br />
             <span
               className="relative inline-block bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #A855F7 100%)' }}
+              style={{ backgroundImage: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)' }}
             >
               {t('hero.headlineAccent')}
             </span>
