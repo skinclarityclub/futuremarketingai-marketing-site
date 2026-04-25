@@ -22,12 +22,23 @@ Marketing + application site voor FutureMarketingAI, een high-touch AI marketing
 
 ## Theme (dark-only)
 
-- Background: `#050814`
-- Surface: `#0A0E27`
-- Primary accent: `#00D4FF` (cyan)
-- Secondary accent: `#A855F7` (purple)
-- Success: `#00FF88` (green)
-- Typography: Inter (sans), JetBrains Mono (mono)
+- Background: `#0a0d14` (--color-bg-deep)
+- Surface: `#111520` (--color-bg-surface)
+- Elevated surface: `#1a1f2e` (--color-bg-elevated)
+- Primary accent: `#00d4aa` (--color-accent-system, teal)
+- Secondary accent: `#f5a623` (--color-accent-human, amber)
+- Success / Status active: `#22c55e` (--color-status-active)
+- Error: `#ef4444` (--color-error)
+- Text primary: `#e8ecf4` (--color-text-primary)
+- Text secondary: `#9ba3b5` (--color-text-secondary)
+- Text muted: `#8C98AD` (--color-text-muted, raised in Phase 11-02 from `#5a6378` to PASS WCAG AA contrast on bg-deep + bg-surface)
+- Typography: DM Sans (sans), Space Grotesk (display), JetBrains Mono (mono)
+
+**Deprecated palette** (do NOT use, enforced via `npm run check:palette`):
+- `#050814` old background
+- `#0A0E27` old surface
+- `#00D4FF` old cyan accent
+- `#A855F7` purple (never in design system)
 
 ## Architecture
 
