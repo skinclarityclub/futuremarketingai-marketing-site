@@ -26,7 +26,7 @@ export const DEMO_SCENARIOS: DemoScenario[] = [
     icon: 'Briefcase',
     stepCount: 6,
     steps: [
-      { userMessage: 'What services does FutureMarketingAI offer?', expectTool: 'get_services' },
+      { userMessage: 'What skills does FutureMarketingAI offer?', expectTool: 'get_skills' },
       { userMessage: 'Do you have any case studies?', expectTool: 'get_case_study' },
       {
         userMessage:

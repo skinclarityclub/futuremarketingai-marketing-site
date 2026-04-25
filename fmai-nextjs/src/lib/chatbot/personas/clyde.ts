@@ -37,7 +37,7 @@ export const clydePersona: PersonaConfig = {
   tools: {
     navigate_to_page: true,
     book_call: true,
-    get_services: true,
+    get_skills: true,
     get_case_study: true,
     search_products: true,
     get_product_details: true,

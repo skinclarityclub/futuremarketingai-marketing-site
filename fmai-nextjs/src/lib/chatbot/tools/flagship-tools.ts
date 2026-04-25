@@ -101,7 +101,7 @@ export const flagshipTools: AnyToolRecord = {
   book_call,
 
   // Concierge tools
-  get_services: conciergeTools.get_services,
+  get_skills: conciergeTools.get_skills,
   get_case_study: conciergeTools.get_case_study,
 
   // E-commerce tools
