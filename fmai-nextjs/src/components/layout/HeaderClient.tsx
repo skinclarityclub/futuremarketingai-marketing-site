@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { usePathname, Link } from '@/i18n/navigation'
 import { motion, AnimatePresence } from 'motion/react'
@@ -126,6 +126,8 @@ const SKILL_CATEGORIES = [
   },
 ] as const
 
+const FLAT_SKILLS = SKILL_CATEGORIES.flatMap((c) => c.items)
+
 const NAV_ITEMS = [
   { label: 'Skills', href: '/#skills' as const, hasDropdown: true },
   { label: 'Memory', href: '/memory' as const },
@@ -142,6 +144,10 @@ export function HeaderClient({ locale }: HeaderClientProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [skillsOpen, setSkillsOpen] = useState(false)
   const [mobileSkillsOpen, setMobileSkillsOpen] = useState(false)
+
+  const skillsTriggerRef = useRef<HTMLButtonElement | null>(null)
+  const skillsMenuRef = useRef<HTMLDivElement | null>(null)
+  const skillsItemRefs = useRef<Array<HTMLAnchorElement | null>>([])
 
   // Scroll effect
   useEffect(() => {
@@ -170,14 +176,23 @@ export function HeaderClient({ locale }: HeaderClientProps) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [])
 
-  // Close services dropdown when clicking outside
+  // Close services dropdown when clicking outside (ref-scoped — does not fight onClick)
   useEffect(() => {
-    const handleClick = () => {
-      setSkillsOpen(false)
+    if (!skillsOpen) return
+    const handleOutside = (e: MouseEvent) => {
+      const target = e.target as Node
+      if (
+        skillsMenuRef.current &&
+        !skillsMenuRef.current.contains(target) &&
+        skillsTriggerRef.current &&
+        !skillsTriggerRef.current.contains(target)
+      ) {
+        setSkillsOpen(false)
+      }
     }
-    document.addEventListener('click', handleClick)
-    return () => document.removeEventListener('click', handleClick)
-  }, [])
+    document.addEventListener('mousedown', handleOutside)
+    return () => document.removeEventListener('mousedown', handleOutside)
+  }, [skillsOpen])
 
   return (
     <header
@@ -207,15 +222,25 @@ export function HeaderClient({ locale }: HeaderClientProps) {
           {NAV_ITEMS.map((item) => (
             <div key={item.label} className="relative">
               {item.hasDropdown ? (
-                <div
-                  onMouseEnter={() => setSkillsOpen(true)}
-                  onMouseLeave={() => setSkillsOpen(false)}
-                  onClick={(e) => e.stopPropagation()}
-                >
+                <div>
                   <button
+                    ref={skillsTriggerRef}
+                    type="button"
                     className="flex items-center gap-1 text-sm text-text-secondary hover:text-text-primary transition-colors duration-300 py-2 px-3 rounded-lg hover:bg-white/5"
                     aria-expanded={skillsOpen}
-                    aria-haspopup="true"
+                    aria-controls="skills-menu"
+                    aria-haspopup="menu"
+                    onClick={() => setSkillsOpen((v) => !v)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'ArrowDown') {
+                        e.preventDefault()
+                        setSkillsOpen(true)
+                        requestAnimationFrame(() => skillsItemRefs.current[0]?.focus())
+                      }
+                      if (e.key === 'Escape') {
+                        setSkillsOpen(false)
+                      }
+                    }}
                   >
                     {item.label}
                     <ChevronDown
@@ -228,6 +253,8 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                   <AnimatePresence>
                     {skillsOpen && (
                       <motion.div
+                        id="skills-menu"
+                        ref={skillsMenuRef}
                         initial={{ opacity: 0, y: -8, scale: 0.96 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.96 }}
@@ -235,6 +262,38 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
                         style={{ width: '880px' }}
                         role="menu"
+                        aria-label="Skills"
+                        onKeyDown={(e) => {
+                          const total = FLAT_SKILLS.length + 1 // +1 for Apply CTA at end
+                          const current = skillsItemRefs.current.findIndex(
+                            (el) => el === document.activeElement
+                          )
+                          if (e.key === 'ArrowDown') {
+                            e.preventDefault()
+                            const next = (current + 1 + total) % total
+                            skillsItemRefs.current[next]?.focus()
+                          } else if (e.key === 'ArrowUp') {
+                            e.preventDefault()
+                            const prev = (current - 1 + total) % total
+                            skillsItemRefs.current[prev]?.focus()
+                          } else if (e.key === 'Home') {
+                            e.preventDefault()
+                            skillsItemRefs.current[0]?.focus()
+                          } else if (e.key === 'End') {
+                            e.preventDefault()
+                            skillsItemRefs.current[total - 1]?.focus()
+                          } else if (e.key === 'Escape') {
+                            e.preventDefault()
+                            setSkillsOpen(false)
+                            skillsTriggerRef.current?.focus()
+                          } else if (e.key === 'Tab') {
+                            const atEnd = !e.shiftKey && current === total - 1
+                            const atStart = e.shiftKey && current === 0
+                            if (atEnd || atStart) {
+                              setSkillsOpen(false)
+                            }
+                          }
+                        }}
                       >
                         {/* Three-column category layout */}
                         <div className="grid grid-cols-3 gap-0 divide-x divide-border-primary">
@@ -249,36 +308,44 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                                 </p>
                               </div>
                               <div className="space-y-0.5">
-                                {category.items.map((skill) => (
-                                  <Link
-                                    key={skill.href}
-                                    href={skill.href}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group/item hover:bg-white/5 cursor-pointer"
-                                    role="menuitem"
-                                  >
-                                    <div className="p-1.5 rounded-md bg-white/5 group-hover/item:bg-accent-system/15 transition-all duration-200">
-                                      <skill.icon
-                                        className="w-4 h-4 text-text-muted group-hover/item:text-accent-system transition-colors duration-200"
-                                        aria-hidden="true"
-                                      />
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                      <div className="flex items-center gap-2">
-                                        <span className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
-                                          {skill.title}
-                                        </span>
-                                        {'comingSoon' in skill && skill.comingSoon && (
-                                          <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
-                                            Soon
+                                {category.items.map((skill) => {
+                                  const flatIndex = FLAT_SKILLS.indexOf(skill)
+                                  return (
+                                    <Link
+                                      key={skill.href}
+                                      href={skill.href}
+                                      ref={(el) => {
+                                        skillsItemRefs.current[flatIndex] = el
+                                      }}
+                                      role="menuitem"
+                                      tabIndex={skillsOpen ? 0 : -1}
+                                      onClick={() => setSkillsOpen(false)}
+                                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group/item hover:bg-white/5 cursor-pointer"
+                                    >
+                                      <div className="p-1.5 rounded-md bg-white/5 group-hover/item:bg-accent-system/15 transition-all duration-200">
+                                        <skill.icon
+                                          className="w-4 h-4 text-text-muted group-hover/item:text-accent-system transition-colors duration-200"
+                                          aria-hidden="true"
+                                        />
+                                      </div>
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-medium text-sm text-text-primary group-hover/item:text-white transition-colors duration-200">
+                                            {skill.title}
                                           </span>
-                                        )}
+                                          {'comingSoon' in skill && skill.comingSoon && (
+                                            <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                                              Soon
+                                            </span>
+                                          )}
+                                        </div>
+                                        <div className="text-[11px] text-text-muted group-hover/item:text-text-secondary transition-colors duration-200 leading-snug">
+                                          {skill.description}
+                                        </div>
                                       </div>
-                                      <div className="text-[11px] text-text-muted group-hover/item:text-text-secondary transition-colors duration-200 leading-snug">
-                                        {skill.description}
-                                      </div>
-                                    </div>
-                                  </Link>
-                                ))}
+                                    </Link>
+                                  )
+                                })}
                               </div>
                             </div>
                           ))}
@@ -288,6 +355,11 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         <div className="border-t border-border-primary bg-white/[0.02]">
                           <Link
                             href="/apply"
+                            ref={(el) => {
+                              skillsItemRefs.current[FLAT_SKILLS.length] = el
+                            }}
+                            role="menuitem"
+                            tabIndex={skillsOpen ? 0 : -1}
                             onClick={() => setSkillsOpen(false)}
                             className="flex items-center justify-between w-full px-6 py-3.5 group/cta cursor-pointer hover:bg-white/5 transition-all duration-200"
                           >
@@ -377,6 +449,8 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                       <div className="space-y-2">
                         <button
                           onClick={() => setMobileSkillsOpen(!mobileSkillsOpen)}
+                          aria-expanded={mobileSkillsOpen}
+                          aria-controls="mobile-skills-menu"
                           className="flex items-center justify-between w-full text-text-primary font-semibold py-3 px-4 rounded-lg hover:bg-white/5 transition-all"
                         >
                           {item.label}
@@ -389,6 +463,7 @@ export function HeaderClient({ locale }: HeaderClientProps) {
                         <AnimatePresence>
                           {mobileSkillsOpen && (
                             <motion.div
+                              id="mobile-skills-menu"
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: 'auto' }}
                               exit={{ opacity: 0, height: 0 }}
