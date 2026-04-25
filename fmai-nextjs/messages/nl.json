@@ -443,7 +443,7 @@
       "tagline": "De eerste AI Marketing Medewerker voor bureaus, door een solo founder."
     },
     "mission": {
-      "heading": "Onze missie",
+      "heading": "Mijn missie",
       "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die de uitvoering op zich neemt. Zodat bureauteams zich kunnen richten op strategie, creativiteit en klantrelaties.",
       "why_heading": "Waarom ik dit bouw",
       "why_text": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
@@ -475,7 +475,7 @@
     "cta": {
       "title": "Word Founding Member",
       "description": "We zetten de eerste 10 Founding-bureaus op voor €997 per maand. Vergrendel je laagste prijs en help het product vormgeven.",
-      "demo_button": "Boek een strategiegesprek",
+      "demo_button": "Plan een gesprek",
       "contact_button": "Neem contact op"
     },
     "icp": {
@@ -493,11 +493,11 @@
       "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "infra": {
-      "title": "Onze infrastructuur",
+      "title": "Mijn infrastructuur",
       "subtitle": "Feiten, geen ideologie. Waar je data woont en wie de code schrijft is belangrijk.",
       "selfHosted": {
         "title": "Self-hosted n8n en Supabase",
-        "body": "Orchestratie via n8n op eigen servers. Data in Supabase EU. Geen black-box SaaS waar je data doorheen stroomt: we bouwen transparante pipelines die we samen bijstellen."
+        "body": "Orchestratie via n8n op eigen servers. Data in Supabase EU. Geen black-box SaaS waar je data doorheen stroomt: ik bouw transparante pipelines die we samen bijstellen."
       },
       "eu": {
         "title": "EU-servers (Hetzner)",
@@ -514,8 +514,8 @@
     },
     "capacity": {
       "title": "Capaciteit en transparantie",
-      "body": "Maximaal {maxPerYear} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Daley begeleidt elke nieuwe klant persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus we tegelijk kunnen verwelkomen.",
-      "reasoning": "We kiezen kwaliteit boven volume. Liever 20 bureaus waar Clyde echt meerwaarde levert, dan 200 waar we niet genoeg aandacht aan kunnen geven. De wachtlijst schaalt mee met de vraag. Zitten we vol, dan plannen we een gesprek voor het volgende cohort."
+      "body": "Maximaal {maxPerYear} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
+      "reasoning": "Ik kies kwaliteit boven volume. Liever 20 bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
     },
     "founder": {
       "title": "Wie staat hier achter",
@@ -820,7 +820,7 @@
       "company_label": "Bureau",
       "company_placeholder": "Jouw Bureau B.V.",
       "message_label": "Bericht",
-      "message_placeholder": "Vertel ons over je bureau en welke vaardigheden je interesseren…",
+      "message_placeholder": "Vertel me over je bureau en welke vaardigheden je interesseren…",
       "submit_button": "Verstuur bericht",
       "status": {
         "sending": "Versturen...",
@@ -832,7 +832,7 @@
       }
     },
     "book_demo": {
-      "title": "Boek een strategiegesprek",
+      "title": "Plan een strategiegesprek",
       "description": "Plan een persoonlijke rondleiding en zie jouw AI Marketing Medewerker in actie.",
       "button": "Plan gesprek"
     },
@@ -847,7 +847,7 @@
     },
     "applyCallout": {
       "title": "Wil je een partnership-gesprek?",
-      "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Daley leest elke aanvraag persoonlijk en antwoordt binnen 3 werkdagen.",
+      "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
       "button": "Ga naar aanmelden"
     }
   },
@@ -1362,7 +1362,7 @@
     },
     "value": {
       "heading": "Waarom de 10 Founding plekken bestaan",
-      "line1": "Founding partners zijn de bureaus waarmee we Clyde samen vormgeven. Jullie feedback bepaalt wat we bouwen, welke vaardigheden voorrang krijgen en hoe de geheugenlaag zich ontwikkelt.",
+      "line1": "Founding partners zijn de bureaus waarmee ik Clyde samen vormgeef. Jullie feedback bepaalt wat ik bouw, welke vaardigheden voorrang krijgen en hoe de geheugenlaag zich ontwikkelt.",
       "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang de prijs van €997. De nieuwe Growth tier start op €2.497 per maand. Zelfs als we over 2 jaar €3.000 vragen, blijf jij op €997.",
       "line3": "Tien plekken. Geen heropening. Vol is vol."
     },
@@ -1387,7 +1387,7 @@
         },
         "community": {
           "title": "Founder Slack",
-          "description": "Directe Slack-ruimte met Daley en de andere 9 Founding partners. Vragen, hulp en best practices. In dezelfde ruimte."
+          "description": "Directe Slack-ruimte met mij en de andere 9 Founding partners. Vragen, hulp en best practices. In dezelfde ruimte."
         },
         "onboarding": {
           "title": "€0 onboardingvergoeding",
@@ -1427,7 +1427,7 @@
     },
     "cta": {
       "title": "Word een van de 10",
-      "subtitle": "{taken} van {total} plekken bezet. Plan een gesprek. Als het wederzijds past, reserveren we je plek.",
+      "subtitle": "{taken} van {total} plekken bezet. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
       "button": "Plan een gesprek"
     }
   },
