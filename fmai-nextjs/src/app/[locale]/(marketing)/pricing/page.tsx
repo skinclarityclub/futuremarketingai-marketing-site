@@ -267,9 +267,9 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             {SKILL_PACK_KEYS.map((key) => (
               <ScrollReveal key={key}>
                 <div className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-5 transition-all duration-300 hover:bg-white/[0.04]">
-                  <h4 className="text-base font-semibold text-text-primary mb-1">
+                  <h3 className="text-base font-semibold text-text-primary mb-1">
                     {t(`skillPacks.items.${key}.name`)}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-text-secondary mb-3">
                     {t(`skillPacks.items.${key}.quantity`)}
                   </p>

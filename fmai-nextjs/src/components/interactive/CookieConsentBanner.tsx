@@ -34,6 +34,8 @@ export function CookieConsentBanner() {
       location="bottom"
       buttonText={t('cookie_consent.accept')}
       declineButtonText={t('cookie_consent.decline')}
+      ariaAcceptLabel={t('cookie_consent.accept')}
+      ariaDeclineLabel={t('cookie_consent.decline')}
       enableDeclineButton
       onAccept={handleAccept}
       onDecline={handleDecline}
