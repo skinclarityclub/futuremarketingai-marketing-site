@@ -12,7 +12,7 @@
       "headlineMain": "This is Clyde.",
       "headlineAccent": "Your AI Marketing Employee.",
       "subtitle": "Clyde remembers every brand, learns from every campaign and runs twelve skills autonomously: social, blogs, voice, ads, SEO and analytics. One AI Marketing Employee for your entire brand portfolio.",
-      "trustAnchor": "Built with Dutch agencies in practice. Max 20 partners per year.",
+      "trustAnchor": "Built with Dutch agencies in practice. Max {maxPartners} partners per year.",
       "cta": "Book a call",
       "ctaSecondary": "Meet Clyde"
     },
@@ -55,7 +55,7 @@
       "customBuiltTitle": "Clyde remembers everything",
       "customBuilt": "Persistent memory per brand. Clyde knows the brand voice, audience and performance history. Sharper every week. Strictly isolated per brand.",
       "founderAccessTitle": "AI partner, not a platform",
-      "founderAccess": "Max 20 agencies per year. Personal onboarding by Daley. No self-service. Every client is a partnership.",
+      "founderAccess": "Max {maxPartners} agencies per year. Personal onboarding by Daley. No self-service. Every client is a partnership.",
       "successGuaranteeTitle": "Clyde scales with your portfolio",
       "successGuarantee": "SkinClarity Club runs 3 Instagram accounts, 4 brands and multiple content types autonomously. Whatever your portfolio looks like: Clyde adapts.",
       "trialTitle": "EU-native, no lock-in",
@@ -89,7 +89,7 @@
         "label": "Memory per client"
       },
       "languages": {
-        "value": "Max 20",
+        "value": "Max {maxPartners}",
         "label": "Spots per year"
       }
     },
@@ -104,7 +104,7 @@
     },
     "cta": {
       "title": "Ready to meet Clyde?",
-      "subtitle": "Max 20 agencies per year. {taken} of {total} founding spots taken. Book a call: we will see together whether Clyde fits your portfolio.",
+      "subtitle": "Max {maxPartners} agencies per year. {taken} of {total} founding spots taken. Book a call: we will see together whether Clyde fits your portfolio.",
       "button": "Book a call",
       "buttonSecondary": "Read the SkinClarity case",
       "foundingLabel": "See Founding tier"
@@ -122,7 +122,7 @@
         },
         "q3": {
           "question": "Why an application? Why no self-service?",
-          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. We accept a maximum of 20 new agencies per year. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
+          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. We accept a maximum of {maxPartners} new agencies per year. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
         },
         "q4": {
           "question": "Exactly how many skills do I get?",
@@ -514,8 +514,8 @@
     },
     "capacity": {
       "title": "Capacity and transparency",
-      "body": "Max {maxPerYear} agencies per year. Currently {taken} of {total} Founding spots taken. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
-      "reasoning": "We choose quality over volume. Better 20 agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
+      "body": "Max {maxPartners} agencies per year. Currently {taken} of {total} Founding spots taken. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
+      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
     },
     "founder": {
       "title": "Who is behind this",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Pricing: 5 tiers, transparent. From Partner €347 to Enterprise €7,997 | FutureMarketingAI",
-      "description": "Premium AI marketing partnership in 5 tiers. Caps per skill, credit allocation and add-on packs. No hidden costs, no self-service. Max 20 agencies per year."
+      "description": "Premium AI marketing partnership in 5 tiers. Caps per skill, credit allocation and add-on packs. No hidden costs, no self-service. Max {maxPartners} agencies per year."
     },
     "hero": {
       "title": "Premium partnerships. 5 tiers. Transparent.",
@@ -746,7 +746,7 @@
     },
     "cta": {
       "title": "Ready to start the partnership?",
-      "description": "Max 20 agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
+      "description": "Max {maxPartners} agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "primary": "Book a call",
       "secondary": "Read the SkinClarity case"
     }
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Apply. Book a call with Daley | FutureMarketingAI",
-      "description": "Apply for a partnership call. Max 20 agencies per year. We review within 3 business days. Match or not, you always get a reply."
+      "description": "Apply for a partnership call. Max {maxPartners} agencies per year. We review within 3 business days. Match or not, you always get a reply."
     },
     "hero": {
       "counter": "{taken} of {total} Founding spots taken",

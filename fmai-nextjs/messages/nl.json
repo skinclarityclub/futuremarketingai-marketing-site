@@ -12,7 +12,7 @@
       "headlineMain": "Dit is Clyde.",
       "headlineAccent": "Jouw AI Marketing Medewerker.",
       "subtitle": "Clyde onthoudt elk merk, leert van elke campagne en voert twaalf vaardigheden autonoom uit: social, blogs, voice, ads, SEO en analytics. Eén AI Marketing Medewerker voor je hele klantportfolio.",
-      "trustAnchor": "Gebouwd met Nederlandse bureaus in de praktijk. Maximaal 20 partners per jaar.",
+      "trustAnchor": "Gebouwd met Nederlandse bureaus in de praktijk. Maximaal {maxPartners} partners per jaar.",
       "cta": "Plan een gesprek",
       "ctaSecondary": "Leer Clyde kennen"
     },
@@ -55,7 +55,7 @@
       "customBuiltTitle": "Clyde onthoudt alles",
       "customBuilt": "Persistent geheugen per merk. Clyde kent de merkstem, doelgroep en prestatiegeschiedenis. Elke week scherper. Strikt gescheiden per merk.",
       "founderAccessTitle": "AI-partner, geen platform",
-      "founderAccess": "Maximaal 20 bureaus per jaar. Persoonlijke onboarding door Daley. Geen zelfbediening. Elke klant is een partnership.",
+      "founderAccess": "Maximaal {maxPartners} bureaus per jaar. Persoonlijke onboarding door Daley. Geen zelfbediening. Elke klant is een partnership.",
       "successGuaranteeTitle": "Clyde schaalt mee met je portfolio",
       "successGuarantee": "SkinClarity Club draait inmiddels 3 Instagram-accounts, 4 merken en meerdere contentsoorten autonoom. Hoe je portfolio er ook uitziet: Clyde past zich aan.",
       "trialTitle": "EU-native, geen lock-in",
@@ -89,7 +89,7 @@
         "label": "Geheugen per klant"
       },
       "languages": {
-        "value": "Max 20",
+        "value": "Max {maxPartners}",
         "label": "Plekken per jaar"
       }
     },
@@ -104,7 +104,7 @@
     },
     "cta": {
       "title": "Klaar om Clyde te leren kennen?",
-      "subtitle": "Maximaal 20 bureaus per jaar. {taken} van {total} founding plekken bezet. Plan een gesprek: we kijken samen of Clyde past bij jouw portfolio.",
+      "subtitle": "Maximaal {maxPartners} bureaus per jaar. {taken} van {total} founding plekken bezet. Plan een gesprek: we kijken samen of Clyde past bij jouw portfolio.",
       "button": "Plan een gesprek",
       "buttonSecondary": "Lees SkinClarity case",
       "foundingLabel": "Bekijk Founding tier"
@@ -122,7 +122,7 @@
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
-          "answer": "Clyde is een high-touch AI-partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. We nemen maximaal 20 nieuwe bureaus per jaar aan. De aanmelding is niet om je af te wijzen: we kijken of het een match is voor ons beide. Een generieke sign-up past niet bij wat we leveren."
+          "answer": "Clyde is een high-touch AI-partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. We nemen maximaal {maxPartners} nieuwe bureaus per jaar aan. De aanmelding is niet om je af te wijzen: we kijken of het een match is voor ons beide. Een generieke sign-up past niet bij wat we leveren."
         },
         "q4": {
           "question": "Hoeveel vaardigheden krijg ik precies?",
@@ -514,8 +514,8 @@
     },
     "capacity": {
       "title": "Capaciteit en transparantie",
-      "body": "Maximaal {maxPerYear} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever 20 bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
+      "body": "Maximaal {maxPartners} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
     },
     "founder": {
       "title": "Wie staat hier achter",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Prijzen: 5 tiers, transparant. Van Partner €347 tot Enterprise €7.997 | FutureMarketingAI",
-      "description": "Premium AI marketing partnership in 5 tiers. Caps per vaardigheid, credit-allocatie en add-on packs. Geen verborgen kosten, geen self-service. Maximaal 20 bureaus per jaar."
+      "description": "Premium AI marketing partnership in 5 tiers. Caps per vaardigheid, credit-allocatie en add-on packs. Geen verborgen kosten, geen self-service. Maximaal {maxPartners} bureaus per jaar."
     },
     "hero": {
       "title": "Premium partnerships. 5 tiers. Transparant.",
@@ -746,7 +746,7 @@
     },
     "cta": {
       "title": "Klaar om de partnership te starten?",
-      "description": "Maximaal 20 bureaus per jaar. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "description": "Maximaal {maxPartners} bureaus per jaar. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "primary": "Plan een gesprek",
       "secondary": "Lees SkinClarity case"
     }
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
-      "description": "Aanmelden voor een partnership-gesprek. Maximaal 20 bureaus per jaar. We beoordelen binnen 3 werkdagen. Passend of niet, je krijgt altijd antwoord."
+      "description": "Aanmelden voor een partnership-gesprek. Maximaal {maxPartners} bureaus per jaar. We beoordelen binnen 3 werkdagen. Passend of niet, je krijgt altijd antwoord."
     },
     "hero": {
       "counter": "{taken} van {total} Founding plekken bezet",

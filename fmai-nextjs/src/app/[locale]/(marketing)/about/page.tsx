@@ -10,7 +10,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL, MAX_PARTNERS_PER_YEAR } from '@/lib/constants'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -212,7 +212,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {t('capacity.body', {
                   taken: FOUNDING_SPOTS_TAKEN,
                   total: FOUNDING_SPOTS_TOTAL,
-                  maxPerYear: MAX_PARTNERS_PER_YEAR,
                 })}
               </p>
               <p className="text-text-secondary leading-relaxed">{t('capacity.reasoning')}</p>

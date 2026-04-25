@@ -12,7 +12,7 @@
       "headlineMain": "Este es Clyde.",
       "headlineAccent": "Tu Empleado AI de Marketing.",
       "subtitle": "Clyde recuerda cada marca, aprende de cada campaña y ejecuta doce habilidades de forma autónoma: social, blogs, voz, anuncios, SEO y analítica. Un único Empleado AI de Marketing para todo tu portfolio de marcas.",
-      "trustAnchor": "Construido con agencias neerlandesas en la práctica. Máx. 20 partners al año.",
+      "trustAnchor": "Construido con agencias neerlandesas en la práctica. Máx. {maxPartners} partners al año.",
       "cta": "Agenda una llamada",
       "ctaSecondary": "Conoce a Clyde"
     },
@@ -55,7 +55,7 @@
       "customBuiltTitle": "Clyde lo recuerda todo",
       "customBuilt": "Memoria persistente por marca. Clyde conoce la voz de marca, la audiencia y el historial de rendimiento. Más afilado cada semana. Estrictamente aislado por marca.",
       "founderAccessTitle": "Un partner AI, no una plataforma",
-      "founderAccess": "Máx. 20 agencias al año. Onboarding personal con Daley. Sin self-service. Cada cliente es una partnership.",
+      "founderAccess": "Máx. {maxPartners} agencias al año. Onboarding personal con Daley. Sin self-service. Cada cliente es una partnership.",
       "successGuaranteeTitle": "Clyde escala con tu portfolio",
       "successGuarantee": "SkinClarity Club ya gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido de forma autónoma. Sea como sea tu portfolio, Clyde se adapta.",
       "trialTitle": "EU-native, sin lock-in",
@@ -89,7 +89,7 @@
         "label": "Memoria por cliente"
       },
       "languages": {
-        "value": "Máx. 20",
+        "value": "Máx. {maxPartners}",
         "label": "Plazas por año"
       }
     },
@@ -104,7 +104,7 @@
     },
     "cta": {
       "title": "¿Listo para conocer a Clyde?",
-      "subtitle": "Máx. 20 agencias al año. {taken} de {total} plazas founding ocupadas. Agenda una llamada: vemos juntos si Clyde encaja con tu portfolio.",
+      "subtitle": "Máx. {maxPartners} agencias al año. {taken} de {total} plazas founding ocupadas. Agenda una llamada: vemos juntos si Clyde encaja con tu portfolio.",
       "button": "Agenda una llamada",
       "buttonSecondary": "Lee el caso SkinClarity",
       "foundingLabel": "Ver tier Founding"
@@ -122,7 +122,7 @@
         },
         "q3": {
           "question": "¿Por qué una solicitud? ¿Por qué no self-service?",
-          "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Aceptamos un máximo de 20 nuevas agencias al año. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
+          "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Aceptamos un máximo de {maxPartners} nuevas agencias al año. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
         },
         "q4": {
           "question": "¿Exactamente cuántas habilidades obtengo?",
@@ -514,8 +514,8 @@
     },
     "capacity": {
       "title": "Capacidad y transparencia",
-      "body": "Máx. {maxPerYear} agencias al año. Actualmente {taken} de {total} plazas Founding ocupadas. No es un truco de marketing, es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente durante 4 semanas de setup, y hay un límite en cuántas agencias podemos recibir a la vez.",
-      "reasoning": "Elegimos calidad sobre volumen. Preferimos 20 agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte."
+      "body": "Máx. {maxPartners} agencias al año. Actualmente {taken} de {total} plazas Founding ocupadas. No es un truco de marketing, es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente durante 4 semanas de setup, y hay un límite en cuántas agencias podemos recibir a la vez.",
+      "reasoning": "Elegimos calidad sobre volumen. Preferimos {maxPartners} agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte."
     },
     "founder": {
       "title": "Quién hay detrás",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Precios: 5 tiers, transparente. De Partner 347 EUR a Enterprise 7.997 EUR | FutureMarketingAI",
-      "description": "Partnership AI de marketing premium en 5 tiers. Caps por habilidad, asignación de créditos y packs add-on. Sin costes ocultos, sin self-service. Máx. 20 agencias al año."
+      "description": "Partnership AI de marketing premium en 5 tiers. Caps por habilidad, asignación de créditos y packs add-on. Sin costes ocultos, sin self-service. Máx. {maxPartners} agencias al año."
     },
     "hero": {
       "title": "Partnerships premium. 5 tiers. Transparente.",
@@ -746,7 +746,7 @@
     },
     "cta": {
       "title": "¿Listo para empezar la partnership?",
-      "description": "Máx. 20 agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
+      "description": "Máx. {maxPartners} agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "primary": "Agenda una llamada",
       "secondary": "Lee el caso SkinClarity"
     }
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Solicitar. Agenda una llamada con Daley | FutureMarketingAI",
-      "description": "Solicitud para una llamada de partnership. Máximo 20 agencias al año. Respondemos en 3 días laborables. Haya encaje o no, siempre recibes respuesta."
+      "description": "Solicitud para una llamada de partnership. Máximo {maxPartners} agencias al año. Respondemos en 3 días laborables. Haya encaje o no, siempre recibes respuesta."
     },
     "hero": {
       "counter": "{taken} de {total} plazas Founding ocupadas",
