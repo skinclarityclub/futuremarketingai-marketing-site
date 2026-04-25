@@ -1569,7 +1569,18 @@
       "successTitle": "Gracias. Solicitud recibida.",
       "successBody": "Daley lee tu solicitud personalmente y responde en 3 días laborables. Revisa tu bandeja (y la carpeta de spam) para ver nuestra respuesta.",
       "errorValidation": "Revisa los campos: no todos los obligatorios están completos.",
-      "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o escribe directamente a hello@future-marketing.ai."
+      "errorNetwork": "Algo salió mal al enviar. Inténtalo de nuevo o escribe directamente a hello@future-marketing.ai.",
+      "errors": {
+        "nameMin": "Por favor ingresa tu nombre (mínimo 2 caracteres).",
+        "emailInvalid": "Por favor ingresa un correo válido, incluyendo @.",
+        "agencyMin": "Por favor ingresa el nombre de tu agencia.",
+        "roleMin": "Por favor ingresa tu rol (mínimo 2 caracteres).",
+        "revenueRequired": "Selecciona un rango de ingresos.",
+        "clientCountRequired": "Selecciona el número de marcas en tu portafolio.",
+        "tierRequired": "Selecciona un tier de interés.",
+        "problemMin": "Describe tu problema en al menos 20 caracteres.",
+        "problemMax": "Mantén tu mensaje bajo 5000 caracteres."
+      }
     }
   },
   "landing": {

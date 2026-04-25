@@ -1569,7 +1569,18 @@
       "successTitle": "Thank you. Application received.",
       "successBody": "Daley reads your application personally and replies within 3 business days. Check your inbox (and spam folder) for our reply.",
       "errorValidation": "Please check the fields: not every required field has been filled in.",
-      "errorNetwork": "Something went wrong while sending. Try again or email hello@future-marketing.ai directly."
+      "errorNetwork": "Something went wrong while sending. Try again or email hello@future-marketing.ai directly.",
+      "errors": {
+        "nameMin": "Please enter your name (at least 2 characters).",
+        "emailInvalid": "Please enter a valid email address, including @.",
+        "agencyMin": "Please enter your agency name.",
+        "roleMin": "Please enter your role (at least 2 characters).",
+        "revenueRequired": "Please select a revenue range.",
+        "clientCountRequired": "Please select a portfolio size.",
+        "tierRequired": "Please select a tier of interest.",
+        "problemMin": "Describe your problem in at least 20 characters.",
+        "problemMax": "Keep your message under 5000 characters."
+      }
     }
   },
   "landing": {

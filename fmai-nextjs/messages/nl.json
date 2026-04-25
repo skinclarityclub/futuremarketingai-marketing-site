@@ -1569,7 +1569,18 @@
       "successTitle": "Dank je. Aanvraag ontvangen.",
       "successBody": "Daley leest je aanvraag persoonlijk en antwoordt binnen 3 werkdagen. Check je inbox (en de spam-map) voor onze reactie.",
       "errorValidation": "Controleer de velden: niet alle verplichte velden zijn ingevuld.",
-      "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@future-marketing.ai."
+      "errorNetwork": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail rechtstreeks naar hello@future-marketing.ai.",
+      "errors": {
+        "nameMin": "Vul je naam in (minimaal 2 tekens).",
+        "emailInvalid": "Vul een geldig e-mailadres in, inclusief @.",
+        "agencyMin": "Vul de naam van je bureau in.",
+        "roleMin": "Vul je rol in (minimaal 2 tekens).",
+        "revenueRequired": "Kies een omzetbereik.",
+        "clientCountRequired": "Kies het aantal merken in je portfolio.",
+        "tierRequired": "Kies een interessant tier.",
+        "problemMin": "Beschrijf het probleem in minimaal 20 tekens.",
+        "problemMax": "Hou je verhaal onder 5000 tekens."
+      }
     }
   },
   "landing": {
