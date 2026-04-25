@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useCallback } from 'react'
+import { useTranslations } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
 import { usePersonaChat } from '@/hooks/usePersonaChat'
 import { useChatbotStore } from '@/stores/chatbotStore'
@@ -37,6 +38,7 @@ export function ChatWidget({
   pageContext,
   welcomeMessage,
 }: ChatWidgetProps) {
+  const t = useTranslations('chat.widget')
   const { messages, sendMessage, status, messageCount, isAtLimit } = usePersonaChat(
     personaId,
     pageContext
@@ -104,11 +106,10 @@ export function ChatWidget({
   const limitBanner = isAtLimit && (
     <div className="border-t border-border-primary bg-bg-elevated/80 px-4 py-3 text-center">
       <p className="text-xs text-text-secondary">
-        Demo limit reached.{' '}
+        {t('demoLimitMessage')}{' '}
         <a href="/contact" className="font-medium text-accent-system hover:underline">
-          Book a call
-        </a>{' '}
-        to see the full experience.
+          {t('demoLimitCta')}
+        </a>
       </p>
     </div>
   )
@@ -177,7 +178,7 @@ export function ChatWidget({
                 <ChatInput
                   onSend={handleSend}
                   disabled={isAtLimit}
-                  placeholder={isAtLimit ? 'Demo limit reached' : 'Type a message...'}
+                  placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
                 />
               </div>
             </motion.div>
@@ -227,7 +228,7 @@ export function ChatWidget({
       <ChatInput
         onSend={handleSend}
         disabled={isAtLimit}
-        placeholder={isAtLimit ? 'Demo limit reached' : 'Type a message...'}
+        placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
       />
     </div>
   )
