@@ -618,7 +618,7 @@
         "features_4": "API-toegang voor integraties",
         "features_5": "Eigen Customer Success Manager",
         "features_6": "SLA-contract",
-        "features_7": "Voorrang op feature-requests"
+        "features_7": "Voorrang op verzoeken voor nieuwe vaardigheden"
       },
       "founding": {
         "name": "Founding",
@@ -1375,7 +1375,7 @@
         },
         "priority": {
           "title": "Voorrang in de ontwikkel-queue",
-          "description": "Feature-verzoeken van Founding partners gaan voor. Je hebt een directe lijn naar de roadmap."
+          "description": "Verzoeken voor nieuwe vaardigheden van Founding partners krijgen voorrang. Je hebt een directe lijn naar de roadmap."
         },
         "influence": {
           "title": "Invloed op de roadmap",
@@ -1994,7 +1994,7 @@
     "hero": {
       "eyebrow": "Vaardigheid 10. Clyde AI Marketing Medewerker",
       "title": "Dit is Clyde. Je AI Marketing Medewerker.",
-      "subtitle": "De andere 11 vaardigheden zijn losse tools. Clyde is de medewerker die ze orkestreert. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Werkt via chat, Slack en Telegram.",
+      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de medewerker die ze orkestreert. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Werkt via chat, Slack en Telegram.",
       "cta": "Plan een gesprek"
     },
     "features": {
@@ -2043,7 +2043,7 @@
       "title": "Voor wie",
       "useCase1": {
         "title": "Eén interface voor je hele portfolio",
-        "body": "In plaats van 12 tools openen: vraag Clyde in de chat. Hij weet wie welk merk is en welke vaardigheid hij moet inzetten."
+        "body": "In plaats van 12 schermen openen: vraag Clyde in de chat. Hij weet wie welk merk is en welke vaardigheid hij moet inzetten."
       },
       "useCase2": {
         "title": "Delegeren in plaats van uitvoeren",

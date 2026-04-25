@@ -95,7 +95,7 @@
     },
     "badges": {
       "title": "Construido para agencias europeas",
-      "gdpr": "IA con RGPD primero",
+      "gdpr": "IA con RGPD por defecto",
       "enterprise": "Infraestructura enterprise-grade",
       "dutch": "Soporte en neerlandés",
       "uptime": "Infraestructura self-hosted en la UE",
@@ -122,7 +122,7 @@
         },
         "q3": {
           "question": "¿Por qué una solicitud? ¿Por qué no self-service?",
-          "answer": "Clyde es una partnership AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Aceptamos un máximo de 20 nuevas agencias al año. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
+          "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Aceptamos un máximo de 20 nuevas agencias al año. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
         },
         "q4": {
           "question": "¿Exactamente cuántas habilidades obtengo?",
