@@ -35,17 +35,29 @@ const TIER_ORDER: Array<{ key: TierKey; labelKey: string }> = [
   { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
 ]
 
+type MatrixT = (key: string, values?: Record<string, string | number>) => string
+
 function formatCap(
   skill: SkillData,
   tier: TierKey,
-  labels: { fairUse: string; unlimited: string; notAvailable: string; perMonth: string },
+  t: MatrixT,
+  labels: { fairUse: string; unlimited: string; notAvailable: string },
 ): string {
   if (!skill.tierCaps) return labels.fairUse
   const cap = skill.tierCaps[tier]
   if (!cap) return labels.notAvailable
+  if (cap.labelKey) return t(cap.labelKey)
   if (cap.included === -1) return labels.unlimited
-  if (cap.included === 0) return cap.label ?? labels.notAvailable
-  return cap.label ?? `${cap.included}${labels.perMonth}`
+  if (cap.included === 0) return labels.notAvailable
+  switch (cap.unit ?? 'count') {
+    case 'min':
+      return t('minPerMonth', { count: cap.included })
+    case 'dm':
+      return t('dmsPerMonth', { count: cap.included })
+    case 'count':
+    default:
+      return t('itemsPerMonth', { count: cap.included })
+  }
 }
 
 export async function SkillPageTemplate({
@@ -70,7 +82,6 @@ export async function SkillPageTemplate({
     fairUse: tMatrix('fairUse'),
     unlimited: tMatrix('unlimited'),
     notAvailable: tMatrix('notAvailable'),
-    perMonth: tMatrix('perMonth'),
   }
 
   const featureKeys = Array.from({ length: featureCount }, (_, i) => `feature${i + 1}`)
@@ -268,7 +279,7 @@ export async function SkillPageTemplate({
                           {tTiers(`${labelKey}.name`)}
                         </td>
                         <td className="px-3 py-2 text-right text-text-primary font-medium">
-                          {formatCap(skill, key, matrixLabels)}
+                          {formatCap(skill, key, tMatrix, matrixLabels)}
                         </td>
                       </tr>
                     ))}

@@ -9,10 +9,13 @@ const TIERS: Array<{ key: TierKey; labelKey: string }> = [
   { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
 ]
 
+type MatrixT = (key: string, values?: Record<string, string | number>) => string
+
 function renderCap(
   skill: SkillData,
   tier: TierKey,
-  labels: { fairUse: string; unlimited: string; notAvailable: string; addOn: string; perMonth: string },
+  t: MatrixT,
+  labels: { fairUse: string; unlimited: string; notAvailable: string },
 ): { text: string; tone: 'ok' | 'bad' | 'neutral' | 'strong' } {
   // Group A skills (no tierCaps) = fair use on all tiers
   if (!skill.tierCaps) {
@@ -24,20 +27,36 @@ function renderCap(
     return { text: labels.notAvailable, tone: 'bad' }
   }
 
+  // labelKey takes precedence: special states like Add-on €97, Onbeperkt, ·
+  if (cap.labelKey) {
+    const text = t(cap.labelKey)
+    const tone: 'ok' | 'bad' | 'neutral' | 'strong' =
+      cap.labelKey === 'unlimited'
+        ? 'strong'
+        : cap.labelKey === 'notAvailable'
+          ? 'bad'
+          : 'neutral'
+    return { text, tone }
+  }
+
   if (cap.included === -1) {
     return { text: labels.unlimited, tone: 'strong' }
   }
 
   if (cap.included === 0) {
-    // add-on path has a label like "add-on €97"
-    if (cap.label && cap.label.toLowerCase().includes('add-on')) {
-      return { text: cap.label, tone: 'neutral' }
-    }
     return { text: labels.notAvailable, tone: 'bad' }
   }
 
-  // Use the richer label if set (e.g. "30 min/mo"), otherwise just "N/mo"
-  return { text: cap.label ?? `${cap.included}${labels.perMonth}`, tone: 'ok' }
+  // Numeric cap: dispatch on unit to localized template
+  switch (cap.unit ?? 'count') {
+    case 'min':
+      return { text: t('minPerMonth', { count: cap.included }), tone: 'ok' }
+    case 'dm':
+      return { text: t('dmsPerMonth', { count: cap.included }), tone: 'ok' }
+    case 'count':
+    default:
+      return { text: t('itemsPerMonth', { count: cap.included }), tone: 'ok' }
+  }
 }
 
 const TONE_CLASSES = {
@@ -55,8 +74,6 @@ export async function SkillsTierMatrix({ locale }: { locale: string }) {
     fairUse: t('fairUse'),
     unlimited: t('unlimited'),
     notAvailable: t('notAvailable'),
-    addOn: t('addOn'),
-    perMonth: t('perMonth'),
   }
 
   return (
@@ -88,7 +105,7 @@ export async function SkillsTierMatrix({ locale }: { locale: string }) {
                 </div>
               </td>
               {TIERS.map(({ key }) => {
-                const cell = renderCap(skill, key, labels)
+                const cell = renderCap(skill, key, t, labels)
                 return (
                   <td
                     key={key}
