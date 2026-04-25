@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: '2026-04-25T00:00:40.000Z'
+last_updated: '2026-04-25T00:23:00.000Z'
 progress:
   total_phases: 15
   completed_phases: 3
   total_plans: 53
-  completed_plans: 24
+  completed_plans: 25
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS
-Plan: 2 of 4 in current phase (10-01, 10-04 complete; 10-02 + 10-03 next wave)
+Plan: 3 of 4 in current phase (10-01, 10-02, 10-04 code complete; 10-03 in flight; 10-02 awaiting live env smoke test)
 Status: Executing
-Last activity: 2026-04-25 -- Completed 10-01 (domain SSoT: SITE_URL + ORG_EMAIL canonical on https://future-marketing.ai, apex primary via Vercel API, www 308 to apex, customer email unified to hello@); 10-04 already landed (Next.js 16 hygiene: proxy convention, Speed Insights, 0 CVEs, tighter CSP)
+Last activity: 2026-04-25 -- Completed 10-02 code wiring: /api/apply + /api/contact now persist to Supabase, send dual emails via Resend, rate-limit via Upstash sliding-window. Wildcard CORS removed. Chatbot rate-limiter migrated from Map to Upstash. Build passes; awaiting human checkpoint for env provisioning + Supabase migration before live smoke.
 
-Progress: [████░░░░░░░░░░] 25% | Phase 10: [█████░░░░░] 2/4
+Progress: [██████░░░░░░░░] 47% | Phase 10: [███████░░░] 3/4
 
 ### Audit context (2026-04-24)
 
@@ -80,6 +80,7 @@ _Updated after each plan completion_
 | Phase 09 P01 | 4min | 2 tasks | 966 files |
 | Phase 10 P04 | 15min | 6 tasks | 5 files |
 | Phase 10 P01 | 53min | 7 tasks | 11 files |
+| Phase 10 P02 | 16min | 6 tasks (code) | 9 files | (awaiting live env smoke for tasks 7+8)
 
 ## Accumulated Context
 
@@ -189,6 +190,12 @@ Recent decisions affecting current work:
 - [Phase 10]: [10-01]: Skipped vercel.json infra-as-code redirects; futuremarketingai.com is not registered, redirect rules for unowned hosts are inert
 - [Phase 10]: [10-01]: Customer email unified to hello@future-marketing.ai; privacy@future-marketing.ai retained ONLY on legal page (AVG/GDPR contact obligation); apply@ kept as Resend server-side sender
 - [Phase 10]: [10-01]: src/lib/seo-config.ts (SITE_URL + ORG_EMAIL exports) is the single source of truth for every URL and email rendered by the marketing site
+- [Phase 10]: [10-02]: Sliding window 5 req / 10 min per IP for forms; chatbot keeps original 10/min ip + 100/h global + 15/h session (100/h for flagship persona) — all on Upstash now
+- [Phase 10]: [10-02]: /api/contact ships zero CORS — same-origin fetch only. OPTIONS handler + corsHeaders deleted (audit 08 section 7 flagged the wildcard as a copy-paste mistake)
+- [Phase 10]: [10-02]: Raw IPs never persisted — SHA-256(ip + IP_HASH_SALT) before any Supabase insert (AVG/GDPR data minimization). Same hash function reused in both routes.
+- [Phase 10]: [10-02]: Supabase + Resend instantiated with placeholder URL/key when env missing instead of throwing — keeps `next build` green pre-provisioning. Runtime errors logged via existing dbError/emailError branches.
+- [Phase 10]: [10-02]: Chatbot rate-limiter is now async (4 Upstash limiters, was sync Map). Single caller engine.ts updated with `await`. Public export shape preserved so index.ts re-exports work unchanged.
+- [Phase 10]: [10-02]: Plan 10-03's parallel agent committed Task 2/3 helper files (ratelimit.ts, supabase-admin.ts, email templates) under 3c0fd02 + b6635bb because both plans shared package.json bumps. Content matched what 10-02 wrote. Documented in 10-02-SUMMARY deviations.
 
 ### Roadmap Evolution
 
@@ -209,5 +216,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 10-01-PLAN.md (domain SSoT canonicalized to future-marketing.ai apex)
-Resume file: None
+Stopped at: Completed 10-02-PLAN.md code (Tasks 2-6 + auto-fix) — awaiting human-action checkpoint to paste RESEND_API_KEY + SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY + UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN + IP_HASH_SALT into fmai-nextjs/.env.local AND apply .planning/phases/10-production-integrity-domain-ssot/10-02-MIGRATION.sql in Supabase SQL Editor before Task 7+8 smoke tests.
+Resume file: .planning/phases/10-production-integrity-domain-ssot/10-02-PLAN.md (resume from Task 7)
