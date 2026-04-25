@@ -69,6 +69,7 @@ const TONE_CLASSES = {
 export async function SkillsTierMatrix({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'pricing.matrix' })
   const tTiers = await getTranslations({ locale, namespace: 'pricing.tiers' })
+  const tCommon = await getTranslations({ locale, namespace: 'common' })
 
   const labels = {
     fairUse: t('fairUse'),
@@ -99,7 +100,7 @@ export async function SkillsTierMatrix({ locale }: { locale: string }) {
                   <span className="font-medium text-text-primary">{skill.name}</span>
                   {skill.status === 'coming_soon' && (
                     <span className="text-[10px] uppercase tracking-wide text-[#F5A623] mt-0.5">
-                      Coming soon
+                      {tCommon('comingSoon')}
                     </span>
                   )}
                 </div>

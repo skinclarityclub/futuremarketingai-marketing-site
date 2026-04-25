@@ -124,7 +124,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                         >
                           {config.badge === 'founding'
                             ? t('tiers.founding.subtitle')
-                            : 'Most popular'}
+                            : t('tiers.professional.mostPopular')}
                         </span>
                       </div>
                     )}
