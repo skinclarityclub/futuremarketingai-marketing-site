@@ -1,66 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { Resend } from 'resend'
+import crypto from 'node:crypto'
+import { contactRateLimit } from '@/lib/ratelimit'
+import { supabaseAdmin } from '@/lib/supabase-admin'
+import {
+  adminContactTemplate,
+  contactConfirmationTemplate,
+  type ContactPayload,
+} from '@/lib/email/contact-templates'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
   email: z.string().email('Invalid email address'),
   company: z.string().max(100).optional().default(''),
   message: z.string().min(10, 'Message must be at least 10 characters').max(5000),
+  locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
-// Simple in-memory rate limiter: IP -> { count, resetAt }
-const rateLimit = new Map<string, { count: number; resetAt: number }>()
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-const RATE_LIMIT_MAX = 3
-const RATE_LIMIT_WINDOW_MS = 60_000 // 1 minute
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now()
-  const entry = rateLimit.get(ip)
-
-  if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
-    return false
-  }
-
-  entry.count++
-  if (entry.count > RATE_LIMIT_MAX) {
-    return true
-  }
-
-  return false
-}
-
-// Periodically clean stale entries to prevent memory leak
-setInterval(() => {
-  const now = Date.now()
-  for (const [ip, entry] of rateLimit) {
-    if (now > entry.resetAt) {
-      rateLimit.delete(ip)
-    }
-  }
-}, 60_000)
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-}
-
-export async function OPTIONS() {
-  return new NextResponse(null, { status: 204, headers: corsHeaders })
+function hashIp(ip: string): string {
+  const salt = process.env.IP_HASH_SALT ?? ''
+  return crypto.createHash('sha256').update(ip + salt).digest('hex')
 }
 
 export async function POST(request: NextRequest) {
   const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    request.headers.get('x-real-ip') ??
     'unknown'
 
-  if (isRateLimited(ip)) {
+  const rl = await contactRateLimit.limit(ip)
+  if (!rl.success) {
     return NextResponse.json(
-      { error: 'Too many requests. Please try again in a minute.' },
-      { status: 429, headers: corsHeaders }
+      { error: 'Too many requests. Please try again later.' },
+      {
+        status: 429,
+        headers: {
+          'X-RateLimit-Limit': String(rl.limit),
+          'X-RateLimit-Remaining': String(rl.remaining),
+          'X-RateLimit-Reset': String(rl.reset),
+        },
+      },
     )
   }
 
@@ -68,34 +50,67 @@ export async function POST(request: NextRequest) {
   try {
     body = await request.json()
   } catch {
-    return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400, headers: corsHeaders })
+    return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 })
   }
 
   const result = contactSchema.safeParse(body)
   if (!result.success) {
-    const fieldErrors = result.error.flatten().fieldErrors
     return NextResponse.json(
-      { error: 'Validation failed.', fields: fieldErrors },
-      { status: 422, headers: corsHeaders }
+      { error: 'Validation failed.', fields: result.error.flatten().fieldErrors },
+      { status: 422 },
     )
   }
 
-  const { name, email, company, message } = result.data
+  const payload: ContactPayload = {
+    name: result.data.name,
+    email: result.data.email,
+    company: result.data.company,
+    message: result.data.message,
+    locale: result.data.locale,
+  }
 
-  // Log the submission (replace with email service later)
-  console.log('[Contact Form Submission]', {
-    name,
-    email,
-    company,
-    message: message.substring(0, 100) + (message.length > 100 ? '...' : ''),
-    ip,
-    timestamp: new Date().toISOString(),
+  // 1. Persist in Supabase. Do not fail user submission on DB error.
+  const { error: dbError } = await supabaseAdmin.from('contact_submissions').insert({
+    name: payload.name,
+    email: payload.email,
+    company: payload.company || null,
+    message: payload.message,
+    locale: payload.locale,
+    ip_hash: hashIp(ip),
+    user_agent: request.headers.get('user-agent') ?? null,
   })
+  if (dbError) console.error('[contact][supabase]', dbError)
 
-  // TODO: Send email via Resend, SendGrid, etc.
+  // 2. Send admin + submitter confirmation in parallel.
+  const fromAddr = process.env.CONTACT_EMAIL_FROM ?? 'contact@future-marketing.ai'
+  const toAddr = process.env.CONTACT_EMAIL_TO ?? 'hello@future-marketing.ai'
+
+  const [adminResult, confirmationResult] = await Promise.all([
+    resend.emails.send({
+      from: `FutureMarketingAI <${fromAddr}>`,
+      to: [toAddr],
+      replyTo: payload.email,
+      subject: `[Contact] ${payload.name}${payload.company ? ' (' + payload.company + ')' : ''}`,
+      html: adminContactTemplate(payload),
+    }),
+    resend.emails.send({
+      from: `Daley van FutureMarketingAI <${fromAddr}>`,
+      to: [payload.email],
+      subject:
+        payload.locale === 'en'
+          ? 'Your message has been received'
+          : payload.locale === 'es'
+            ? 'Hemos recibido tu mensaje'
+            : 'Je bericht is ontvangen',
+      html: contactConfirmationTemplate(payload),
+    }),
+  ])
+
+  if (adminResult.error) console.error('[contact][resend:admin]', adminResult.error)
+  if (confirmationResult.error) console.error('[contact][resend:confirm]', confirmationResult.error)
 
   return NextResponse.json(
     { success: true, message: 'Thank you! We will get back to you shortly.' },
-    { status: 200, headers: corsHeaders }
+    { status: 200 },
   )
 }
