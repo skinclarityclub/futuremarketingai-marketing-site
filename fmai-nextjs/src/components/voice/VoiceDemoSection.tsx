@@ -11,11 +11,24 @@ interface VoiceDemoSectionProps {
   id?: string
 }
 
+// Set to a Vapi-provisioned NL DID once procured (e.g. `+31201234567`).
+// While null the phone-display blocks are hidden and the web SDK demo carries the section.
+const PHONE_NUMBER: string | null = null
+
 const features = [
   { icon: Zap, text: 'Responds in <1 second' },
   { icon: Clock, text: 'Available 24/7' },
   { icon: Bot, text: 'Real AI -- not a phone menu' },
 ]
+
+function formatPhoneDisplay(e164: string): string {
+  if (e164.startsWith('+31')) {
+    const rest = e164.slice(3).replace(/\D/g, '')
+    if (rest.length === 9) return `+31 (0)${rest.slice(0, 1)} ${rest.slice(1, 5)} ${rest.slice(5)}`
+    return `+31 ${rest}`
+  }
+  return e164
+}
 
 export function VoiceDemoSection({ id = 'live-demo' }: VoiceDemoSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -56,18 +69,20 @@ export function VoiceDemoSection({ id = 'live-demo' }: VoiceDemoSectionProps) {
               ))}
             </ul>
 
-            <div className="flex items-center gap-3 bg-white/[0.02] border border-border-primary rounded-xl px-5 py-3 w-fit">
-              <Phone className="w-4 h-4 text-accent-system" />
-              <div>
-                <p className="text-xs text-text-muted">Or call directly:</p>
-                <a
-                  href="tel:+15707838236"
-                  className="text-sm font-semibold text-text-primary hover:text-accent-system transition-colors"
-                >
-                  +1 (570) 783-8236
-                </a>
+            {PHONE_NUMBER && (
+              <div className="flex items-center gap-3 bg-white/[0.02] border border-border-primary rounded-xl px-5 py-3 w-fit">
+                <Phone className="w-4 h-4 text-accent-system" />
+                <div>
+                  <p className="text-xs text-text-muted">Or call directly:</p>
+                  <a
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="text-sm font-semibold text-text-primary hover:text-accent-system transition-colors"
+                  >
+                    {formatPhoneDisplay(PHONE_NUMBER)}
+                  </a>
+                </div>
               </div>
-            </div>
+            )}
           </motion.div>
 
           <motion.div
@@ -87,12 +102,21 @@ export function VoiceDemoSection({ id = 'live-demo' }: VoiceDemoSectionProps) {
                 <p className="text-text-secondary text-sm mb-2">
                   Voice demo temporarily unavailable
                 </p>
-                <p className="text-text-muted text-xs">
-                  Call us directly at{' '}
-                  <a href="tel:+15707838236" className="text-accent-system hover:underline">
-                    +1 (570) 783-8236
-                  </a>
-                </p>
+                {PHONE_NUMBER ? (
+                  <p className="text-text-muted text-xs">
+                    Call us directly at{' '}
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-accent-system hover:underline">
+                      {formatPhoneDisplay(PHONE_NUMBER)}
+                    </a>
+                  </p>
+                ) : (
+                  <p className="text-text-muted text-xs">
+                    Email{' '}
+                    <a href="mailto:hello@future-marketing.ai" className="text-accent-system hover:underline">
+                      hello@future-marketing.ai
+                    </a>
+                  </p>
+                )}
               </div>
             )}
           </motion.div>
