@@ -400,7 +400,7 @@ Phases execute in parallel waves:
 | 9. Codebase Cleanup  | 0/3            | Not started | -          |
 | 10. Production Integrity | 4/4 | Complete    | 2026-04-25 |
 | 11. EAA A11y Compliance  | 3/3 | Complete    | 2026-04-25 |
-| 12. Brand + Copy Polish  | 1/4 | In Progress|  |
+| 12. Brand + Copy Polish  | 2/4 | In Progress|  |
 | 13. Performance + Bundle | 0/3        | Not started | -          |
 | 14. SEO + GEO Depth      | 0/4        | Not started | -          |
 | 15. Conversion Accel.    | 0/5        | Not started | -          |

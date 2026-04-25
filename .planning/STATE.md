@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T05:38:32Z"
+last_updated: "2026-04-25T05:42:00Z"
 progress:
   total_phases: 15
   completed_phases: 8
   total_plans: 53
-  completed_plans: 35
+  completed_plans: 36
 ---
 
 # Project State
@@ -87,6 +87,7 @@ _Updated after each plan completion_
 | Phase 11 P03 | 7min | 3 tasks (Task 3 yolo-mode auto-approve) | 6 files | form a11y on /apply + /contact: per-field aria, autoComplete, inputMode, i18n status copy, aria-live submit
 | Phase 11 P03 | 7 | 3 tasks | 6 files |
 | Phase 12 P02 | 16min | 6 tasks | 6 files |
+| Phase 12 P01 | 16min | 9 tasks | 24 files | brand assets via sharp+SVG generator, full src/ palette migration, /api/og dynamic route + check:palette regression gate
 
 ## Accumulated Context
 
@@ -231,6 +232,14 @@ Recent decisions affecting current work:
 - [Phase 12-02]: NL notAvailable em-dash (—) replaced with middle dot (·) matching EN/ES — fixes audit em-dash flag in i18n value
 - [Phase 12-02]: SkillPageTemplate.formatCap mirrored to same labelKey/unit dispatch (Rule 3 deviation) so tsc + build stay green after Task 1 interface change
 - [Phase 12-02]: Visual capture deferred to verifier — both dev ports occupied, NEVER kill terminals; scripts/capture-tier-matrix.mjs committed for clean verifier run
+- [Phase 12-01]: Brand assets generated programmatically via sharp + SVG (scripts/generate-brand-assets.mjs) instead of waiting for Figma export — reproducible, deterministic, re-runnable. og-image 1200x630 47KB, logo 512x512 7.9KB transparent.
+- [Phase 12-01]: CookieConsentBanner inline-style props use var(--color-*) refs because react-cookie-consent does not consume Tailwind utility classes on its style props.
+- [Phase 12-01]: error.tsx hides raw error.message — security/info-leak concern; renamed prop to _error with eslint-disable @typescript-eslint/no-unused-vars at function level.
+- [Phase 12-01]: errors.generic.retryButton + homeButton added as new keys; legacy tryAgain kept for backward compat with any other consumers.
+- [Phase 12-01]: Email templates (apply, contact) and Satori OG (lib/og-image.tsx) keep literal hex (no CSS-var support in those render contexts) but values updated to current palette: #0a0d14 / #00d4aa.
+- [Phase 12-01]: /api/og dynamic edge route ships per-locale taglines (NL/EN/ES) but not yet wired into metadata config — static /og-image.png stays default until visual review.
+- [Phase 12-01]: MemoryLayersDiagram context layer swapped purple #A855F7 to amber accent-human — purple was never in design system (only accent-system teal + accent-human amber).
+- [Phase 12-01]: Rule 3 deviations: full src/ sweep surfaced 13 extra refs in src/lib/email/{apply,contact}-templates.ts + src/lib/og-image.tsx + 2 components (CalendlyModal, QuickAnswerBlock) not listed in plan — all migrated; verify-palette.sh now PASS.
 
 ### Roadmap Evolution
 
@@ -251,5 +260,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 12-02 (skills-data.ts i18n refactor) — 6 atomic commits 58c7908/a4ce35a/e785523/4869c82/2d3b280/5a86015. 16min duration. Phase 12 plan 02 of 4 complete; 12-01 in flight in parallel (visible commits 15eef44/ff29d7c/d0a0781/840660a/d16fe21 — palette + brand assets). Wave 1 disjoint-file boundary held: no merge conflicts.
-Resume file: None — proceed to 12-03 (queued, sequential after 12-02 to avoid JSON conflicts on header.* / common.comingSoon / chat.*) or wait for 12-01 to finish then run Phase 12 verifier. Visual screenshots for tier-matrix in 3 locales deferred to verifier; helper at scripts/capture-tier-matrix.mjs.
+Stopped at: Completed 12-01 (brand assets + palette migration) — 9 atomic commits 2ec8fa6/d590a41/1e5f7a3/d16fe21/840660a/d0a0781/ff29d7c/15eef44/2a79a8b. 16min duration. Phase 12 plans 01 + 02 of 4 complete (Wave 1 parallel run held: 12-01 + 12-02 modified disjoint files, zero merge conflicts). 12-03 queued, 12-04 Wave 2.
+Resume file: None — proceed to 12-03 (HeaderClient SKILL_CATEGORIES + NAV_ITEMS i18n, pricing/page.tsx Most popular, SkillsTierMatrix Coming soon, ChatWidget placeholders) and 12-04 (copy glossary + interpolation + legal dates). Static og-image.png + logo.png ship social cards, /api/og dynamic route available but not yet wired into per-locale metadata (deferred to follow-up). npm run check:palette gate is opt-in, not yet wired to prebuild.
