@@ -125,18 +125,15 @@ async function generate() {
   // Report
   const ogMeta = await sharp(resolve(PUBLIC_DIR, 'og-image.png')).metadata()
   const logoMeta = await sharp(resolve(PUBLIC_DIR, 'logo.png')).metadata()
-  // eslint-disable-next-line no-console
   console.log(
     `og-image.png  ${ogMeta.width}x${ogMeta.height}  ${(ogPng.length / 1024).toFixed(1)} KB`
   )
-  // eslint-disable-next-line no-console
   console.log(
     `logo.png      ${logoMeta.width}x${logoMeta.height}  ${(logoPng.length / 1024).toFixed(1)} KB`
   )
 }
 
 generate().catch((err) => {
-  // eslint-disable-next-line no-console
   console.error(err)
   process.exit(1)
 })

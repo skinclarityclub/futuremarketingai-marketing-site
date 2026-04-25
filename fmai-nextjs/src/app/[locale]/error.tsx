@@ -9,6 +9,7 @@ interface ErrorProps {
   reset: () => void
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function Error({ error: _error, reset }: ErrorProps) {
   const t = useTranslations('errors.generic')
 
