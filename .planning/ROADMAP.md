@@ -35,7 +35,7 @@ Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2
 
 - [x] **Phase 10: Production Integrity + Domain SSoT** - Wire /api/apply + /api/contact to Resend + Supabase, sync chatbot tools + llms.txt to v10 pricing, migrate domain to `future-marketing.ai`, clear CVEs + deprecation warnings (completed 2026-04-25)
 - [x] **Phase 11: EAA Accessibility Compliance** - Skip-link, keyboard-operable mega-menu, WCAG AA contrast, per-field form errors, complete reduced-motion coverage — legal risk per EAA 2025-06-28 (completed 2026-04-25)
-- [ ] **Phase 12: Brand Assets + Copy Polish** - og-image, complete palette migration, localize 16 hardcoded EN labels in skills-data.ts, fix 11 IK/WIJ slips + 8 klanten→merken + Onbeperkt rename, drop orphan chatbots namespace
+- [x] **Phase 12: Brand Assets + Copy Polish** - og-image, complete palette migration, localize 16 hardcoded EN labels in skills-data.ts, fix 11 IK/WIJ slips + 8 klanten→merken + Onbeperkt rename, drop orphan chatbots namespace (completed 2026-04-25)
 - [ ] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle
 - [ ] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+
 - [ ] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion
@@ -400,7 +400,7 @@ Phases execute in parallel waves:
 | 9. Codebase Cleanup  | 0/3            | Not started | -          |
 | 10. Production Integrity | 4/4 | Complete    | 2026-04-25 |
 | 11. EAA A11y Compliance  | 3/3 | Complete    | 2026-04-25 |
-| 12. Brand + Copy Polish  | 3/4 | In Progress|  |
+| 12. Brand + Copy Polish  | 4/4 | Complete   | 2026-04-25 |
 | 13. Performance + Bundle | 0/3        | Not started | -          |
 | 14. SEO + GEO Depth      | 0/4        | Not started | -          |
 | 15. Conversion Accel.    | 0/5        | Not started | -          |

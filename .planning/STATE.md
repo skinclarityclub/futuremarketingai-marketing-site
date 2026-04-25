@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T06:02:00Z"
+last_updated: "2026-04-25T09:30:00Z"
 progress:
   total_phases: 15
-  completed_phases: 8
+  completed_phases: 9
   total_plans: 53
-  completed_plans: 37
+  completed_plans: 38
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 12 of 15 (Brand Assets + Copy Polish) -- 12-01 + 12-02 + 12-03 COMPLETE (3 of 4 plans; 12-04 Wave 2 next)
-Plan: 12-03 landed (hardcoded EN strings → i18n). 5 atomic commits: 64bce9b (header.* + chat.widget.* + common.comingSoon + pricing.tiers.professional.mostPopular keys in NL/EN/ES — 132 new translations), 927cab0 (HeaderClient mega-menu + nav refactored to structural-metadata + tHeader dispatch), 1eefa7e ('Most popular' badge + 'Coming soon' label localized in pricing/page.tsx + SkillsTierMatrix.tsx), 5a7305c (ChatWidget placeholders + demo-limit banner localized — 3 sites + split CTA), 41148b7 (DECISION-PENDING-phone-number.md decision-gate artifact for VoiceDemoSection US number — 3 options, default-after-2-weeks = hide-only).
-Status: 12-01 + 12-02 + 12-03 complete; 12-04 Wave 2 next (copy glossary klanten→merken, MAX_PARTNERS_PER_YEAR interpolation, legal dates → 2026-04-24, Onbeperkt rename).
-Last activity: 2026-04-25 -- 12-03 done in 13min: HeaderClient SKILL_CATEGORIES + NAV_ITEMS restructured to icon/href/key metadata only, all 30+ user-facing strings now route through tHeader('skills.{key}.items.{key}.title') dispatch + tHeader('nav.{key}'); ChatWidget hooked into useTranslations('chat.widget') with demo-limit banner split into message + CTA keys; SkillsTierMatrix gained third translator scoped to 'common' for canonical comingSoon. 3 Rule 1-3 deviations: Apply CTA banner copy was hardcoded EN (Rule 2 — added header.cta.applyTitle/applySubtitle), `as const` on NAV_ITEMS produced non-uniform discriminated union after key/href shape change (Rule 3 — added hasDropdown:false on non-skills items), unused Mic import removed. ContactForm.tsx UNTOUCHED per Phase 11 ownership; VoiceDemoSection.tsx UNCHANGED per task 5 directive — decision artifact instead. npm run build green (87/87 static pages, 6.8s compile).
+Phase: 12 of 15 (Brand Assets + Copy Polish) -- COMPLETE (4 of 4 plans landed)
+Plan: 12-04 landed (copy glossary + MAX_PARTNERS_PER_YEAR interpolation + legal dates). 7 atomic commits: 893b789 (14× klanten→merken in NL — pricing tier descs, apply form, memory.isolation, case-study CTA, email use case, +2 chatbots.* glossary tools→systemen), 3363637 (credit pack Onbeperkt/Unlimited/Ilimitado→Max in 3 locales + DECISION-PENDING-credit-pack-name.md for Stripe-side rename), 109b419 (14 IK/WIJ rewrites op about+contact+founding-member; includes Rule-1 contact.book_demo Boek→Plan glossary fix), 30e91c4 (4 NL glossary cleanups: feature-verzoeken→verzoeken voor nieuwe vaardigheden, skills-clyde losse tools→uitvoerders/schermen + 2 ES mechanical fixes RGPD por defecto/asociación AI + 3 EN contractions), 37e4a5f ({maxPartners} interpolation in 30 message keys via substituteGlobals walker in src/i18n/request.ts — next-intl 4.x removed defaultTranslationValues prop so Rule-3 deviation: load-time substitution replaces v3 prop API), c685f55 (legal.last_updated bumped to 2026-04-24 localized in 3 locales), 1303988 (capture-12-04.mjs Playwright script + build-green evidence).
+Status: PHASE 12 COMPLETE. Phase 13 next per ROADMAP.md.
+Last activity: 2026-04-25 -- 12-04 done in 15min: 53 substantive copy edits across 3 locales (28 NL + 13 EN + 12 ES), src/i18n/request.ts gained substituteGlobals() walker for app-wide constants pattern (next-intl 4.x equivalent for v3 defaultTranslationValues). Auto-fixes: 1 glossary slip (contact.book_demo Boek→Plan), 1 blocking API change (next-intl prop→load-time substitution), 1 SSoT consistency (2 extra cap-references found via grep sweep). Build green (87/87 pages, 5.7s compile, zero TS errors). jq parity verified across NL/EN/ES. Daley owes Stripe Product rename ".planning/phases/12-brand-copy-polish/DECISION-PENDING-credit-pack-name.md" (default-after-2-weeks = Max stays).
 
-Progress: [█████████░░░░░] 67% | Phase 12: [███░░] 3/4 plans complete (12-01 + 12-02 + 12-03)
+Progress: [██████████░░░░] 71% | Phase 12: [████] 4/4 plans complete
 
 ### Audit context (2026-04-24)
 
@@ -89,6 +89,7 @@ _Updated after each plan completion_
 | Phase 12 P02 | 16min | 6 tasks | 6 files |
 | Phase 12 P01 | 16min | 9 tasks | 24 files | brand assets via sharp+SVG generator, full src/ palette migration, /api/og dynamic route + check:palette regression gate
 | Phase 12 P03 | 13min | 6 tasks | 8 files |
+| Phase 12 P04 | 15min | 7 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -247,6 +248,13 @@ Recent decisions affecting current work:
 - [Phase 12-03]: ChatWidget demo-limit banner split into demoLimitMessage + demoLimitCta keys — gives translators control over CTA wording, matches NL/ES sentence inversion
 - [Phase 12-03]: VoiceDemoSection phone +1 (570) 783-8236 flagged via DECISION-PENDING-phone-number.md (3 options, default-after-2-weeks = hide-and-CTA-only); VoiceDemoSection.tsx UNCHANGED
 - [Phase 12-03]: Apply CTA banner copy ('Apply' + 'Book a partnership call') routed through header.cta.applyTitle/applySubtitle — Rule 2 deviation, was hardcoded EN before this plan, not in original task list
+- [Phase 12-04]: next-intl 4.x removed defaultTranslationValues prop (was v3 API). Replaced with substituteGlobals() walker at message-load time in src/i18n/request.ts — same UX (zero call-site changes), modern API. Pattern: GLOBAL_PLACEHOLDERS registry → walker substitutes {key} tokens at config-load. Page-local ICU args ({taken}, {total}, {count}) untouched.
+- [Phase 12-04]: Credit pack rename Onbeperkt/Unlimited/Ilimitado→Max in 3 locales. JSON key (pricing.creditPacks.items.unlimited) UNCHANGED to keep Stripe webhook integration in fma-app stable. DECISION-PENDING-credit-pack-name.md committed for Daley to rename Stripe Product to match (default-after-2-weeks: Max stays).
+- [Phase 12-04]: 8 leftover "Onbeperkt" tier-copy refs preserved (workspaces, features_0, pricing.matrix.unlimited) — different semantic (truly-unlimited workspace count + per-skill tier label), audit scope was credit-pack transparency only.
+- [Phase 12-04]: 10 cap-references interpolated, not 8 from plan: home.stats.languages.value + home.faq.q3.answer found via grep sweep. Rule 3 SSoT consistency — interpolating prevents future drift when MAX_PARTNERS_PER_YEAR changes.
+- [Phase 12-04]: 200 in about.capacity.reasoning kept literal — rhetorical contrast number (rather 20 ... than 200), not the actual cap.
+- [Phase 12-04]: Legal date format = localized long form per RESEARCH §9 ('24 april 2026', 'April 24, 2026', '24 de abril de 2026') — not ISO. Locale-native dates read better in policy text.
+- [Phase 12-04]: contact.book_demo.title 'Boek een strategiegesprek' renamed 'Plan een strategiegesprek' under Rule 1 brand-glossary (not in plan but adjacent IK-context glossary slip).
 
 ### Roadmap Evolution
 
@@ -267,5 +275,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 12-03 (hardcoded EN strings → i18n) — 5 atomic commits 64bce9b/927cab0/1eefa7e/5a7305c/41148b7. 13min duration. Phase 12 plans 01 + 02 + 03 of 4 complete; 12-04 Wave 2 next. Daley owes a decision on VoiceDemoSection phone number (.planning/phases/12-brand-copy-polish/DECISION-PENDING-phone-number.md, default-after-2-weeks = hide-and-CTA-only).
-Resume file: None — proceed to 12-04 (copy glossary klanten→merken, MAX_PARTNERS_PER_YEAR interpolation in 8 message keys, legal dates → 2026-04-24, Onbeperkt credit pack rename, Feature-verzoeken → verzoeken voor nieuwe vaardigheden, IK/WIJ slips on about/contact/founding-member). New i18n namespaces shipped by 12-03 (header.*, chat.widget.*, common.comingSoon, pricing.tiers.professional.mostPopular) are 12-04-clean — do not redefine. ContactForm.tsx remains Phase 11 territory (do not touch).
+Stopped at: Completed 12-04 (copy glossary + MAX_PARTNERS_PER_YEAR interpolation + legal dates) — 7 atomic commits 893b789/3363637/109b419/30e91c4/37e4a5f/c685f55/1303988. 15min duration. **Phase 12 fully complete (4 of 4 plans)**. Daley owes 2 decisions: VoiceDemoSection phone number (12-03, .planning/phases/12-brand-copy-polish/DECISION-PENDING-phone-number.md, default-after-2-weeks = hide-and-CTA-only) + Stripe Product rename to "Max Credit Pack" (12-04, DECISION-PENDING-credit-pack-name.md, default-after-2-weeks = Max stays).
+Resume file: None — proceed to Phase 13 per ROADMAP.md. Phase 12 success criteria all PASS: glossary compliance enforced (merken, merkstem, IK-voice), credit pack renamed Max, MAX_PARTNERS_PER_YEAR interpolated via single-source layer (substituteGlobals walker — modern next-intl 4.x equivalent for v3 defaultTranslationValues), legal dates current, 3 locales jq parity, npm run build green (87/87 pages, 5.7s). Wave 1 keys (header.*, chat.widget.*, common.comingSoon, pricing.tiers.professional.mostPopular, pricing.matrix.*) NOT regressed.
