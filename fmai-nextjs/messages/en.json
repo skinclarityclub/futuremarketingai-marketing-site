@@ -645,7 +645,12 @@
       "unlimited": "Unlimited",
       "notAvailable": "·",
       "addOn": "Add-on",
+      "addOn47": "Add-on €47",
+      "addOn97": "Add-on €97",
       "perMonth": "/mo",
+      "minPerMonth": "{count} min/mo",
+      "dmsPerMonth": "{count} DMs/mo",
+      "itemsPerMonth": "{count}/mo",
       "legend": "Numbers are monthly caps per workspace. \"Fair use\" = unlimited with throttling on extreme outliers. \"Add-on\" = available via pack, not included in the base tier."
     },
     "creditPacks": {

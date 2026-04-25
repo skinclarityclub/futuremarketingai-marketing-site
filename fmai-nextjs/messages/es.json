@@ -645,7 +645,12 @@
       "unlimited": "Ilimitado",
       "notAvailable": "·",
       "addOn": "Add-on",
+      "addOn47": "Add-on €47",
+      "addOn97": "Add-on €97",
       "perMonth": "/mes",
+      "minPerMonth": "{count} min/mes",
+      "dmsPerMonth": "{count} DMs/mes",
+      "itemsPerMonth": "{count}/mes",
       "legend": "Los números son caps mensuales por espacio de trabajo. \"Uso razonable\" = ilimitado con throttle en outliers extremos. \"Add-on\" = disponible mediante pack, no incluido en el tier base."
     },
     "creditPacks": {

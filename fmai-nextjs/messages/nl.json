@@ -643,9 +643,14 @@
       "skillHeader": "Vaardigheid",
       "fairUse": "Fair use",
       "unlimited": "Onbeperkt",
-      "notAvailable": "—",
+      "notAvailable": "·",
       "addOn": "Add-on",
+      "addOn47": "Add-on €47",
+      "addOn97": "Add-on €97",
       "perMonth": "/mnd",
+      "minPerMonth": "{count} min/mnd",
+      "dmsPerMonth": "{count} DM's/mnd",
+      "itemsPerMonth": "{count}/mnd",
       "legend": "Cijfers zijn maandcaps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme uitschieters. \"Add-on\" = beschikbaar via pack, niet in het basis-tier."
     },
     "creditPacks": {
