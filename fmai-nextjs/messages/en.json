@@ -394,6 +394,7 @@
     "actions": {
       "learn_more": "Learn more"
     },
+    "comingSoon": "Coming soon",
     "cookie_consent": {
       "title": "We use cookies",
       "description": "We use cookies to improve your experience and analyze site traffic.",
@@ -584,6 +585,7 @@
       "professional": {
         "name": "Professional",
         "subtitle": "For mid-size agencies",
+        "mostPopular": "Most popular",
         "price": "4,497",
         "onboarding": "3,997",
         "workspaces": "15",
@@ -2208,5 +2210,95 @@
   "nav": {
     "login": "Log in",
     "apply": "Book a call"
+  },
+  "header": {
+    "skills": {
+      "create": {
+        "label": "Create and Publish",
+        "description": "Content production at scale",
+        "items": {
+          "socialMedia": {
+            "title": "Social Media",
+            "description": "Captions, scheduling, carousels and stories"
+          },
+          "blogFactory": {
+            "title": "Blog Factory",
+            "description": "Longform SEO articles 1,500 to 3,000 words"
+          },
+          "adCreator": {
+            "title": "Ad Creator",
+            "description": "Static and video ads for Meta"
+          },
+          "reelBuilder": {
+            "title": "Reel Builder",
+            "description": "Vertical videos with captions and music"
+          }
+        }
+      },
+      "engage": {
+        "label": "Engage and Convert",
+        "description": "Lead capture and client interaction",
+        "items": {
+          "voiceAgent": {
+            "title": "Voice Agent",
+            "description": "Inbound and outbound AI phone calls"
+          },
+          "leadQualifier": {
+            "title": "Lead Qualifier",
+            "description": "Website chatbot with lead scoring"
+          },
+          "emailManagement": {
+            "title": "Email Management",
+            "description": "Gmail classification with daily digest"
+          },
+          "manychat": {
+            "title": "ManyChat DM",
+            "description": "Instagram DM triggers with AI replies"
+          }
+        }
+      },
+      "grow": {
+        "label": "Grow and Optimize",
+        "description": "Analytics, research and orchestration",
+        "items": {
+          "reporting": {
+            "title": "Reporting",
+            "description": "Dashboards, digests and anomaly alerts"
+          },
+          "seoGeo": {
+            "title": "SEO / GEO Analyst",
+            "description": "SEO audits and AI citation monitoring"
+          },
+          "research": {
+            "title": "Research",
+            "description": "Market research and trend monitoring"
+          },
+          "clyde": {
+            "title": "Clyde AI Employee",
+            "description": "The central orchestrator of all skills"
+          }
+        }
+      },
+      "comingSoon": "Coming soon"
+    },
+    "nav": {
+      "skills": "Skills",
+      "memory": "Memory",
+      "caseStudies": "Case Studies",
+      "pricing": "Pricing",
+      "about": "About"
+    },
+    "cta": {
+      "applyTitle": "Apply",
+      "applySubtitle": "Book a partnership call"
+    }
+  },
+  "chat": {
+    "widget": {
+      "typeMessage": "Type a message...",
+      "demoLimitReached": "Demo limit reached",
+      "demoLimitMessage": "You've reached the demo limit.",
+      "demoLimitCta": "Book a call to continue the conversation."
+    }
   }
 }

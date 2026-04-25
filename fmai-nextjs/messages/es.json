@@ -394,6 +394,7 @@
     "actions": {
       "learn_more": "Saber más"
     },
+    "comingSoon": "Próximamente",
     "cookie_consent": {
       "title": "Usamos cookies",
       "description": "Usamos cookies para mejorar tu experiencia y analizar el tráfico del sitio.",
@@ -584,6 +585,7 @@
       "professional": {
         "name": "Professional",
         "subtitle": "Para agencias medianas",
+        "mostPopular": "Más elegido",
         "price": "4.497",
         "onboarding": "3.997",
         "workspaces": "15",
@@ -2208,5 +2210,95 @@
   "nav": {
     "login": "Iniciar sesión",
     "apply": "Agenda una llamada"
+  },
+  "header": {
+    "skills": {
+      "create": {
+        "label": "Crea y Publica",
+        "description": "Producción de contenido a escala",
+        "items": {
+          "socialMedia": {
+            "title": "Social Media",
+            "description": "Subtítulos, programación, carruseles y stories"
+          },
+          "blogFactory": {
+            "title": "Blog Factory",
+            "description": "Artículos SEO largos de 1.500 a 3.000 palabras"
+          },
+          "adCreator": {
+            "title": "Ad Creator",
+            "description": "Anuncios estáticos y de vídeo para Meta"
+          },
+          "reelBuilder": {
+            "title": "Reel Builder",
+            "description": "Vídeos verticales con subtítulos y música"
+          }
+        }
+      },
+      "engage": {
+        "label": "Capta y Convierte",
+        "description": "Captura de leads e interacción con clientes",
+        "items": {
+          "voiceAgent": {
+            "title": "Voice Agent",
+            "description": "Llamadas AI entrantes y salientes"
+          },
+          "leadQualifier": {
+            "title": "Lead Qualifier",
+            "description": "Chatbot web con puntuación de leads"
+          },
+          "emailManagement": {
+            "title": "Email Management",
+            "description": "Clasificación Gmail con resumen diario"
+          },
+          "manychat": {
+            "title": "ManyChat DM",
+            "description": "Triggers Instagram DM con respuestas AI"
+          }
+        }
+      },
+      "grow": {
+        "label": "Crece y Optimiza",
+        "description": "Análisis, investigación y orquestación",
+        "items": {
+          "reporting": {
+            "title": "Reporting",
+            "description": "Paneles, resúmenes y alertas de anomalías"
+          },
+          "seoGeo": {
+            "title": "SEO / GEO Analyst",
+            "description": "Auditorías SEO y monitoreo de citas AI"
+          },
+          "research": {
+            "title": "Research",
+            "description": "Investigación de mercado y monitoreo de tendencias"
+          },
+          "clyde": {
+            "title": "Clyde AI Employee",
+            "description": "El orquestador central de todas las habilidades"
+          }
+        }
+      },
+      "comingSoon": "Próximamente"
+    },
+    "nav": {
+      "skills": "Habilidades",
+      "memory": "Memoria",
+      "caseStudies": "Casos",
+      "pricing": "Precios",
+      "about": "Sobre nosotros"
+    },
+    "cta": {
+      "applyTitle": "Apply",
+      "applySubtitle": "Agenda una llamada de partnership"
+    }
+  },
+  "chat": {
+    "widget": {
+      "typeMessage": "Escribe un mensaje...",
+      "demoLimitReached": "Límite de demo alcanzado",
+      "demoLimitMessage": "Has alcanzado el límite de la demo.",
+      "demoLimitCta": "Agenda una llamada para continuar."
+    }
   }
 }

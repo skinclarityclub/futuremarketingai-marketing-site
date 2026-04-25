@@ -394,6 +394,7 @@
     "actions": {
       "learn_more": "Lees meer"
     },
+    "comingSoon": "Binnenkort",
     "cookie_consent": {
       "title": "We gebruiken cookies",
       "description": "We gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
@@ -584,6 +585,7 @@
       "professional": {
         "name": "Professional",
         "subtitle": "Voor middelgrote bureaus",
+        "mostPopular": "Meest gekozen",
         "price": "4.497",
         "onboarding": "3.997",
         "workspaces": "15",
@@ -2209,5 +2211,95 @@
   "nav": {
     "login": "Inloggen",
     "apply": "Plan een gesprek"
+  },
+  "header": {
+    "skills": {
+      "create": {
+        "label": "Maak en Publiceer",
+        "description": "Contentproductie op schaal",
+        "items": {
+          "socialMedia": {
+            "title": "Social Media",
+            "description": "Captions, inplanning, carrousels en stories"
+          },
+          "blogFactory": {
+            "title": "Blog Factory",
+            "description": "Longform SEO-artikelen van 1.500 tot 3.000 woorden"
+          },
+          "adCreator": {
+            "title": "Ad Creator",
+            "description": "Statische ads en video-ads voor Meta"
+          },
+          "reelBuilder": {
+            "title": "Reel Builder",
+            "description": "Verticale video's met captions en muziek"
+          }
+        }
+      },
+      "engage": {
+        "label": "Engage en Converteer",
+        "description": "Leadcapture en klantinteractie",
+        "items": {
+          "voiceAgent": {
+            "title": "Voice Agent",
+            "description": "Inkomende en uitgaande AI-telefoongesprekken"
+          },
+          "leadQualifier": {
+            "title": "Lead Qualifier",
+            "description": "Website-chatbot met leadscoring"
+          },
+          "emailManagement": {
+            "title": "Email Management",
+            "description": "Gmail-classificatie met dagelijkse digest"
+          },
+          "manychat": {
+            "title": "ManyChat DM",
+            "description": "Instagram DM-triggers met AI-antwoorden"
+          }
+        }
+      },
+      "grow": {
+        "label": "Groei en Optimaliseer",
+        "description": "Analyse, onderzoek en orkestratie",
+        "items": {
+          "reporting": {
+            "title": "Reporting",
+            "description": "Dashboards, digests en anomaliewaarschuwingen"
+          },
+          "seoGeo": {
+            "title": "SEO / GEO Analyst",
+            "description": "SEO-audits en AI-citatiemonitoring"
+          },
+          "research": {
+            "title": "Research",
+            "description": "Marktonderzoek en trendmonitoring"
+          },
+          "clyde": {
+            "title": "Clyde AI Employee",
+            "description": "De centrale orkestrator van alle vaardigheden"
+          }
+        }
+      },
+      "comingSoon": "Binnenkort"
+    },
+    "nav": {
+      "skills": "Vaardigheden",
+      "memory": "Geheugen",
+      "caseStudies": "Cases",
+      "pricing": "Prijzen",
+      "about": "Over"
+    },
+    "cta": {
+      "applyTitle": "Apply",
+      "applySubtitle": "Plan een partnership-gesprek"
+    }
+  },
+  "chat": {
+    "widget": {
+      "typeMessage": "Typ een bericht...",
+      "demoLimitReached": "Demolimiet bereikt",
+      "demoLimitMessage": "Je hebt de demolimiet bereikt.",
+      "demoLimitCta": "Plan een gesprek om verder te praten."
+    }
   }
 }
