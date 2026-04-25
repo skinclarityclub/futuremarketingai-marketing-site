@@ -43,9 +43,9 @@ export function CookieConsentBanner() {
       expires={365}
       overlay={false}
       style={{
-        background: '#050814',
-        borderTop: '1px solid rgba(0, 212, 255, 0.2)',
-        color: '#E8ECF4',
+        background: 'var(--color-bg-deep)',
+        borderTop: '1px solid var(--color-border-accent)',
+        color: 'var(--color-text-primary)',
         padding: '20px',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -53,8 +53,8 @@ export function CookieConsentBanner() {
         zIndex: 9999,
       }}
       buttonStyle={{
-        background: '#00D4FF',
-        color: '#050814',
+        background: 'var(--color-accent-system)',
+        color: 'var(--color-bg-deep)',
         fontSize: '14px',
         fontWeight: '600',
         padding: '12px 24px',
@@ -65,7 +65,7 @@ export function CookieConsentBanner() {
       }}
       declineButtonStyle={{
         background: 'transparent',
-        color: '#9BA3B5',
+        color: 'var(--color-text-secondary)',
         fontSize: '14px',
         fontWeight: '500',
         padding: '12px 24px',
@@ -79,14 +79,14 @@ export function CookieConsentBanner() {
         margin: '0',
         fontSize: '14px',
         lineHeight: '1.6',
-        color: '#E8ECF4',
+        color: 'var(--color-text-primary)',
       }}
     >
       <div className="flex flex-col gap-2">
-        <p className="font-semibold text-base" style={{ color: '#E8ECF4' }}>
+        <p className="font-semibold text-base" style={{ color: 'var(--color-text-primary)' }}>
           {t('cookie_consent.title')}
         </p>
-        <p className="text-sm" style={{ color: '#9BA3B5' }}>
+        <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
           {t('cookie_consent.description')}
         </p>
       </div>
