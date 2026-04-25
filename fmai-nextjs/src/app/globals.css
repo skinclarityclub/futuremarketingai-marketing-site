@@ -306,10 +306,31 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /*
+   * WCAG 2.3.3 Animation from Interactions (AAA) + 2.3.1 Three Flashes (A).
+   * Universal selector with !important overrides inline `style="animation: fadeInUp ..."`
+   * on src/app/[locale]/page.tsx:87,96,110,118,126 and any other inline animation.
+   * The 0.01ms duration preserves `animationend` events for JS listeners while
+   * visually halting motion. fill-mode: both lands animations at terminal state
+   * so content does not blank.
+   */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Explicit halt for purely decorative class-based animations (no terminal state) */
   .blob-warm,
   .blob-cool,
-  .blob-mixed {
-    animation: none;
+  .blob-mixed,
+  .loader {
+    animation: none !important;
   }
 }
 
