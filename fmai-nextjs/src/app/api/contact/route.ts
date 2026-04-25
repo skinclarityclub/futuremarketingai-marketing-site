@@ -18,7 +18,10 @@ const contactSchema = z.object({
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Resend's constructor throws when the API key is undefined, which breaks
+// `next build` page-data collection. Pass a placeholder when missing; the
+// actual send call will surface a real error in the route handler.
+const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder')
 
 function hashIp(ip: string): string {
   const salt = process.env.IP_HASH_SALT ?? ''
