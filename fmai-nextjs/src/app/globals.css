@@ -380,3 +380,36 @@
 svg[style*="animation-play-state: paused"] * {
   animation-play-state: paused !important;
 }
+
+/* ==========================================================================
+   Global accessibility: focus-visible ring and sticky-header scroll padding
+   Phase 11-01 — WCAG 2.4.7 + 2.4.11
+   ========================================================================== */
+
+/* Respect the 64px (h-16) sticky header when jumping to in-page anchors */
+html {
+  scroll-padding-top: 5rem; /* 80px, 16px safety above 64px header */
+}
+
+/* Global focus-visible ring — applies to every interactive element unless overridden */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-system);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Inputs already shift border on focus; keep a subtle ring there too.
+   Input has padding = outline-offset 2px won't clip content. */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-accent-system);
+  outline-offset: 2px;
+}
+
+/* PageShell <main> uses tabIndex={-1} so it can be programmatically focused
+   by the skip-link; it should not render a ring in that case. */
+main:focus,
+main:focus-visible {
+  outline: none;
+}
