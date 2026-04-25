@@ -89,7 +89,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // 6. Check rate limits
     const ip = getClientIp(request)
-    const rateCheck = checkAllRateLimits(sessionId, ip, personaId)
+    const rateCheck = await checkAllRateLimits(sessionId, ip, personaId)
     if (!rateCheck.allowed) {
       return Response.json(
         {
