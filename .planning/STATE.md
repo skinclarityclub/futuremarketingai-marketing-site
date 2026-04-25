@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T05:42:00Z"
+last_updated: "2026-04-25T06:02:00Z"
 progress:
   total_phases: 15
   completed_phases: 8
   total_plans: 53
-  completed_plans: 36
+  completed_plans: 37
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 12 of 15 (Brand Assets + Copy Polish) -- 12-01 + 12-02 COMPLETE (2 of 4 plans in Wave 1; 12-03 queued, 12-04 Wave 2)
-Plan: 12-01 landed (brand assets + palette migration). 9 atomic commits: 2ec8fa6 (og-image.png + logo.png + sharp generator), d590a41 (OrganizationJsonLd logo path fix), 1e5f7a3 (CookieConsentBanner CSS-vars), d16fe21 (not-found.tsx tokens), 840660a (error.tsx i18n + purple removal), d0a0781 (full src sweep — chatbot demo + memory + about + case-studies + email + Satori), ff29d7c (verify-palette.sh + npm run check:palette), 15eef44 (CLAUDE.md Theme rewrite), 2a79a8b (/api/og dynamic route + lint cleanup).
-Status: 12-01 + 12-02 complete; 12-03 queued (HeaderClient + pricing/SkillsTierMatrix + ChatWidget i18n); 12-04 Wave 2 (copy glossary + interpolation + legal dates).
-Last activity: 2026-04-25 -- 12-01 done: ~30 stale hex refs purged across 17 files (#050814/#00D4FF/#A855F7/#0A0E27 → tokens). og-image.png 1200x630 47.4KB + logo.png 512x512 7.9KB shipped via sharp+SVG generator (reproducible, deterministic). error.tsx fully localized in NL/EN/ES with retryButton + homeButton keys added; raw error.message no longer leaks to user. CLAUDE.md Theme section now mirrors globals.css line-for-line (Inter → DM Sans, deprecated palette block points at npm gate). /api/og edge route ships per-locale taglines but not yet wired into metadata. npm run build green, check:palette PASS, lint clean for files this plan owns. 4 Rule 1-3 deviations documented: stale hex in src/lib/email + src/lib/og-image + CalendlyModal + QuickAnswerBlock found by full src/ sweep, all migrated; pre-existing lint hits in DemoOrchestrator/CalendlyModal/CookieConsentBanner left out of scope (not introduced by this plan).
+Phase: 12 of 15 (Brand Assets + Copy Polish) -- 12-01 + 12-02 + 12-03 COMPLETE (3 of 4 plans; 12-04 Wave 2 next)
+Plan: 12-03 landed (hardcoded EN strings → i18n). 5 atomic commits: 64bce9b (header.* + chat.widget.* + common.comingSoon + pricing.tiers.professional.mostPopular keys in NL/EN/ES — 132 new translations), 927cab0 (HeaderClient mega-menu + nav refactored to structural-metadata + tHeader dispatch), 1eefa7e ('Most popular' badge + 'Coming soon' label localized in pricing/page.tsx + SkillsTierMatrix.tsx), 5a7305c (ChatWidget placeholders + demo-limit banner localized — 3 sites + split CTA), 41148b7 (DECISION-PENDING-phone-number.md decision-gate artifact for VoiceDemoSection US number — 3 options, default-after-2-weeks = hide-only).
+Status: 12-01 + 12-02 + 12-03 complete; 12-04 Wave 2 next (copy glossary klanten→merken, MAX_PARTNERS_PER_YEAR interpolation, legal dates → 2026-04-24, Onbeperkt rename).
+Last activity: 2026-04-25 -- 12-03 done in 13min: HeaderClient SKILL_CATEGORIES + NAV_ITEMS restructured to icon/href/key metadata only, all 30+ user-facing strings now route through tHeader('skills.{key}.items.{key}.title') dispatch + tHeader('nav.{key}'); ChatWidget hooked into useTranslations('chat.widget') with demo-limit banner split into message + CTA keys; SkillsTierMatrix gained third translator scoped to 'common' for canonical comingSoon. 3 Rule 1-3 deviations: Apply CTA banner copy was hardcoded EN (Rule 2 — added header.cta.applyTitle/applySubtitle), `as const` on NAV_ITEMS produced non-uniform discriminated union after key/href shape change (Rule 3 — added hasDropdown:false on non-skills items), unused Mic import removed. ContactForm.tsx UNTOUCHED per Phase 11 ownership; VoiceDemoSection.tsx UNCHANGED per task 5 directive — decision artifact instead. npm run build green (87/87 static pages, 6.8s compile).
 
-Progress: [█████████░░░░░] 65% | Phase 12: [██░░░] 2/4 plans complete (12-01 + 12-02)
+Progress: [█████████░░░░░] 67% | Phase 12: [███░░] 3/4 plans complete (12-01 + 12-02 + 12-03)
 
 ### Audit context (2026-04-24)
 
@@ -88,6 +88,7 @@ _Updated after each plan completion_
 | Phase 11 P03 | 7 | 3 tasks | 6 files |
 | Phase 12 P02 | 16min | 6 tasks | 6 files |
 | Phase 12 P01 | 16min | 9 tasks | 24 files | brand assets via sharp+SVG generator, full src/ palette migration, /api/og dynamic route + check:palette regression gate
+| Phase 12 P03 | 13min | 6 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -240,6 +241,12 @@ Recent decisions affecting current work:
 - [Phase 12-01]: /api/og dynamic edge route ships per-locale taglines (NL/EN/ES) but not yet wired into metadata config — static /og-image.png stays default until visual review.
 - [Phase 12-01]: MemoryLayersDiagram context layer swapped purple #A855F7 to amber accent-human — purple was never in design system (only accent-system teal + accent-human amber).
 - [Phase 12-01]: Rule 3 deviations: full src/ sweep surfaced 13 extra refs in src/lib/email/{apply,contact}-templates.ts + src/lib/og-image.tsx + 2 components (CalendlyModal, QuickAnswerBlock) not listed in plan — all migrated; verify-palette.sh now PASS.
+- [Phase 12-03]: [12-03] header.* placed as top-level namespace (not merged into common.nav) — common.nav is footer-shaped, header.nav is megabar-shaped; semantic split keeps both clean
+- [Phase 12-03]: Top-level nav.{login,apply} kept untouched: HeaderClient right-side login/apply CTAs use legacy useTranslations('nav') — merging would break sibling consumers
+- [Phase 12-03]: common.comingSoon canonical for non-header use (SkillsTierMatrix); header.skills.comingSoon kept as header-local convenience key — same value, different scope
+- [Phase 12-03]: ChatWidget demo-limit banner split into demoLimitMessage + demoLimitCta keys — gives translators control over CTA wording, matches NL/ES sentence inversion
+- [Phase 12-03]: VoiceDemoSection phone +1 (570) 783-8236 flagged via DECISION-PENDING-phone-number.md (3 options, default-after-2-weeks = hide-and-CTA-only); VoiceDemoSection.tsx UNCHANGED
+- [Phase 12-03]: Apply CTA banner copy ('Apply' + 'Book a partnership call') routed through header.cta.applyTitle/applySubtitle — Rule 2 deviation, was hardcoded EN before this plan, not in original task list
 
 ### Roadmap Evolution
 
@@ -260,5 +267,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 12-01 (brand assets + palette migration) — 9 atomic commits 2ec8fa6/d590a41/1e5f7a3/d16fe21/840660a/d0a0781/ff29d7c/15eef44/2a79a8b. 16min duration. Phase 12 plans 01 + 02 of 4 complete (Wave 1 parallel run held: 12-01 + 12-02 modified disjoint files, zero merge conflicts). 12-03 queued, 12-04 Wave 2.
-Resume file: None — proceed to 12-03 (HeaderClient SKILL_CATEGORIES + NAV_ITEMS i18n, pricing/page.tsx Most popular, SkillsTierMatrix Coming soon, ChatWidget placeholders) and 12-04 (copy glossary + interpolation + legal dates). Static og-image.png + logo.png ship social cards, /api/og dynamic route available but not yet wired into per-locale metadata (deferred to follow-up). npm run check:palette gate is opt-in, not yet wired to prebuild.
+Stopped at: Completed 12-03 (hardcoded EN strings → i18n) — 5 atomic commits 64bce9b/927cab0/1eefa7e/5a7305c/41148b7. 13min duration. Phase 12 plans 01 + 02 + 03 of 4 complete; 12-04 Wave 2 next. Daley owes a decision on VoiceDemoSection phone number (.planning/phases/12-brand-copy-polish/DECISION-PENDING-phone-number.md, default-after-2-weeks = hide-and-CTA-only).
+Resume file: None — proceed to 12-04 (copy glossary klanten→merken, MAX_PARTNERS_PER_YEAR interpolation in 8 message keys, legal dates → 2026-04-24, Onbeperkt credit pack rename, Feature-verzoeken → verzoeken voor nieuwe vaardigheden, IK/WIJ slips on about/contact/founding-member). New i18n namespaces shipped by 12-03 (header.*, chat.widget.*, common.comingSoon, pricing.tiers.professional.mostPopular) are 12-04-clean — do not redefine. ContactForm.tsx remains Phase 11 territory (do not touch).
