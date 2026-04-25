@@ -279,7 +279,7 @@ Plans:
 Plans:
 
 - [ ] 11-01-PLAN.md — Skip-link + keyboard mega-menu + focus-visible + scroll-padding + BookingModal focus-return (Wave 1)
-- [ ] 11-02-PLAN.md — Contrast token upgrade + reduced-motion complete coverage (Wave 1, independent)
+- [x] 11-02-PLAN.md — Contrast token upgrade + reduced-motion complete coverage (Wave 1, independent)
 - [ ] 11-03-PLAN.md — ApplicationForm per-field error recovery + autoComplete tokens + inputMode + ContactForm i18n strings (Wave 2, after contrast is locked)
 
 ---

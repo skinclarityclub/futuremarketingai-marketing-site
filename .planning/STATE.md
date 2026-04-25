@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T01:30:39.927Z"
+last_updated: "2026-04-25T02:15:00.000Z"
 progress:
   total_phases: 15
   completed_phases: 7
   total_plans: 53
-  completed_plans: 31
+  completed_plans: 32
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS (4 of 4 complete pending production push verification)
-Plan: 4 of 4 in current phase (10-01, 10-02, 10-03, 10-04 all complete — Task 8 production submission deferred to next deploy push with documented checklist)
+Phase: 11 of 15 (EAA Accessibility Compliance) -- IN PROGRESS (1 of 3 plans complete; 11-01 + 11-03 in flight on parallel agents)
+Plan: 11-02 complete; 11-01 partially landed (skip-link `f53dc4b` + keyboard mega-menu `10a40d9`), 11-03 not started
 Status: Executing
-Last activity: 2026-04-25 -- Completed 10-02 live smoke: dev server on :3001 ran 6 probes against live Resend + Supabase + Upstash, all green. /api/apply + /api/contact: 200 with full pipeline (rate-limit -> insert -> dual email parallel) zero error logs. 422 on invalid payloads. 429 with x-ratelimit-* headers after 5 in-window requests. OPTIONS /api/contact has zero CORS headers. Phase 10 code is feature-complete; Vercel Production env vars + one real production submission still pending.
+Last activity: 2026-04-25 -- 11-02 done: --color-text-muted bumped to #8C98AD (6.67:1 on bg-deep, 6.26:1 on bg-surface, both PASS WCAG AA). prefers-reduced-motion block extended via universal selector + !important to cover all 18 keyframes plus 5 inline fadeInUp animations on home hero. Two surgical commits to globals.css only (b5807c2, c584454). npm run build passed. Lighthouse spot-check deferred to verifier (mathematically verified, yolo-mode auto-approve).
 
-Progress: [█████████░░░░░] 53% | Phase 10: [██████████] 4/4 (code), production verification pending
+Progress: [█████████░░░░░] 60% | Phase 11: [███░░░░░░░] 1/3 plans complete
 
 ### Audit context (2026-04-24)
 
@@ -82,6 +82,7 @@ _Updated after each plan completion_
 | Phase 10 P01 | 53min | 7 tasks | 11 files |
 | Phase 10 P02 | 24min | 7 tasks (Tasks 2-7) | 9 files | live smoke green; Task 8 prod-deploy verification deferred
 | Phase 10 P03 | 16min | 8 tasks | 12 files |
+| Phase 11 P02 | 12min | 3 tasks (Task 3 auto-approved checkpoint) | 1 file | CSS-only contrast + reduced-motion baseline; Lighthouse run deferred to verifier
 
 ## Accumulated Context
 
@@ -206,6 +207,11 @@ Recent decisions affecting current work:
 - [Phase 10]: [10-03]: book_call execute path swapped from Calendly URL to /apply. Matches CLAUDE.md application-gated rule, no self-service signup.
 - [Phase 10]: [10-03]: llms.txt rebuilt per llmstxt.org spec with H1 + blockquote + H2 link sections. All 32 URLs canonical apex (https://future-marketing.ai). AVG + EU AI Act framing in opening blockquote for GEO/AI citation strength.
 - [Phase 10]: [10-03]: llms-full.txt rebuilt as ~2500-word v10 long-form with skills deep-dive, 4-layer memory architecture, SKC case study with truthful metrics from messages/nl.json, full compliance section.
+- [Phase 11]: [11-02]: --color-text-muted raised from #5a6378 (3.23:1 FAIL) to #8C98AD (6.67:1 on bg-deep, 6.26:1 on bg-surface, PASS AA). Tailwind 4 @theme means the change propagates automatically to 269+ usage sites across 48 files; no component code touched.
+- [Phase 11]: [11-02]: Universal-selector + !important reduced-motion pattern (W3C / Andy Bell canonical) covers all 18 @keyframes plus the 5 inline `style={{ animation: 'fadeInUp ...' }}` on src/app/[locale]/page.tsx. 0.01ms (not 0ms) preserves animationend events; fill-mode: both lands animations at terminal state so no content blanking.
+- [Phase 11]: [11-02]: .blob-warm/.blob-cool/.blob-mixed/.loader explicitly `animation: none !important` because they have no terminal state — would freeze mid-cycle visually if just sped up to 0.01ms.
+- [Phase 11]: [11-02]: Did NOT touch --color-border-primary (separate audit §1.4.11 non-text contrast, scheduled for later polish phase) or --color-text-secondary/-primary (already PASS AAA). Did NOT touch focus-visible (parallel 11-01 owns it).
+- [Phase 11]: [11-02]: Reverted unstaged HeaderClient.tsx delta from parallel 11-01 agent (FLAT_SKILLS flatMap caused TS error on heterogeneous tuple union); 11-01's clean version landed at 10a40d9 shortly after. Documented as deviation Rule 3.
 
 ### Roadmap Evolution
 
@@ -226,5 +232,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed Phase 10 code: 10-01 (domain SSoT), 10-02 (apply+contact wired to Resend+Supabase+Upstash, live smoke green), 10-03 (chatbot v10 SSoT + llms.txt regen), 10-04 (Next.js 16 hygiene). Task 8 production submission verification deferred to next deploy push — Vercel Production scope env vars need to land before deploy and one real form submission for end-to-end production confirmation.
-Resume file: None — Phase 10 ready for /gsd:verify-work and next phase wave
+Stopped at: Completed 11-02 (CSS-only WCAG contrast + reduced-motion baseline, 2 surgical commits to globals.css). Parallel agents: 11-01 landed skip-link `f53dc4b` and keyboard mega-menu `10a40d9` (independent commits, separate scope). 11-03 (form a11y) not yet started. Phase 11 will be complete once 11-03 lands and verifier runs Lighthouse on /nl, /nl/pricing, /nl/apply (target ≥95).
+Resume file: None — 11-02 complete, ready for 11-03 dispatch and Phase 11 verifier run

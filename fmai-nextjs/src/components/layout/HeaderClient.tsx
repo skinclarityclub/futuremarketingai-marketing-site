@@ -126,7 +126,13 @@ const SKILL_CATEGORIES = [
   },
 ] as const
 
-const FLAT_SKILLS = SKILL_CATEGORIES.flatMap((c) => c.items)
+// Type-widening cast: SKILL_CATEGORIES is `as const` which gives each category
+// a tuple type that flatMap cannot unify into a single union. We only need a
+// flat ordered list for keyboard index lookup, so widen to the inner item union.
+type SkillItem = (typeof SKILL_CATEGORIES)[number]['items'][number]
+const FLAT_SKILLS: readonly SkillItem[] = SKILL_CATEGORIES.flatMap(
+  (c) => c.items as readonly SkillItem[]
+)
 
 const NAV_ITEMS = [
   { label: 'Skills', href: '/#skills' as const, hasDropdown: true },
