@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T04:45:18.238Z"
+last_updated: "2026-04-25T05:38:32Z"
 progress:
   total_phases: 15
   completed_phases: 8
   total_plans: 53
-  completed_plans: 34
+  completed_plans: 35
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 11 of 15 (EAA Accessibility Compliance) -- 11-03 COMPLETE (3 of 3 plans complete; ready for Phase 11 verifier)
-Plan: All three plans landed. 11-01 (skip-link `f53dc4b` + keyboard mega-menu `10a40d9` + BookingModal focus-return), 11-02 (contrast + reduced-motion baseline `b5807c2` + `c584454`), 11-03 (form a11y `40551f5` + `f53199e`)
-Status: Phase complete pending verifier (Lighthouse + axe-core + SR walkthrough on /nl/apply, /nl/contact, /nl, /nl/pricing)
-Last activity: 2026-04-25 -- 11-03 done: ApplicationForm gained per-field aria-invalid + aria-describedby + role=alert errors mapped from Zod issues to apply.form.errors.* (9 keys × 3 locales = 27 strings); WHATWG autoComplete tokens + inputMode=email; first failing field auto-focused via requestAnimationFrame; aria-live=polite wraps submit. ContactForm 6 hardcoded EN literals lifted into contact.form.status.* (6 keys × 3 locales = 18 strings); autoComplete + inputMode + aria-live wired the same way. Schema gained .max(5000) on problem so too_big resolves problemMax. Two surgical commits, npm run build clean, npx tsc --noEmit clean, 0 lint issues on touched files. Yolo-mode auto-approve on Task 3 SR walkthrough (deferred to verifier per 11-02 precedent).
+Phase: 12 of 15 (Brand Assets + Copy Polish) -- 12-01 + 12-02 COMPLETE (2 of 4 plans in Wave 1; 12-03 queued, 12-04 Wave 2)
+Plan: 12-01 landed (brand assets + palette migration). 9 atomic commits: 2ec8fa6 (og-image.png + logo.png + sharp generator), d590a41 (OrganizationJsonLd logo path fix), 1e5f7a3 (CookieConsentBanner CSS-vars), d16fe21 (not-found.tsx tokens), 840660a (error.tsx i18n + purple removal), d0a0781 (full src sweep — chatbot demo + memory + about + case-studies + email + Satori), ff29d7c (verify-palette.sh + npm run check:palette), 15eef44 (CLAUDE.md Theme rewrite), 2a79a8b (/api/og dynamic route + lint cleanup).
+Status: 12-01 + 12-02 complete; 12-03 queued (HeaderClient + pricing/SkillsTierMatrix + ChatWidget i18n); 12-04 Wave 2 (copy glossary + interpolation + legal dates).
+Last activity: 2026-04-25 -- 12-01 done: ~30 stale hex refs purged across 17 files (#050814/#00D4FF/#A855F7/#0A0E27 → tokens). og-image.png 1200x630 47.4KB + logo.png 512x512 7.9KB shipped via sharp+SVG generator (reproducible, deterministic). error.tsx fully localized in NL/EN/ES with retryButton + homeButton keys added; raw error.message no longer leaks to user. CLAUDE.md Theme section now mirrors globals.css line-for-line (Inter → DM Sans, deprecated palette block points at npm gate). /api/og edge route ships per-locale taglines but not yet wired into metadata. npm run build green, check:palette PASS, lint clean for files this plan owns. 4 Rule 1-3 deviations documented: stale hex in src/lib/email + src/lib/og-image + CalendlyModal + QuickAnswerBlock found by full src/ sweep, all migrated; pre-existing lint hits in DemoOrchestrator/CalendlyModal/CookieConsentBanner left out of scope (not introduced by this plan).
 
-Progress: [█████████░░░░░] 62% | Phase 11: [██████████] 3/3 plans complete
+Progress: [█████████░░░░░] 65% | Phase 12: [██░░░] 2/4 plans complete (12-01 + 12-02)
 
 ### Audit context (2026-04-24)
 
@@ -86,6 +86,7 @@ _Updated after each plan completion_
 | Phase 11 P01 | 10min | 4 tasks | 10 files |
 | Phase 11 P03 | 7min | 3 tasks (Task 3 yolo-mode auto-approve) | 6 files | form a11y on /apply + /contact: per-field aria, autoComplete, inputMode, i18n status copy, aria-live submit
 | Phase 11 P03 | 7 | 3 tasks | 6 files |
+| Phase 12 P02 | 16min | 6 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -225,6 +226,11 @@ Recent decisions affecting current work:
 - [Phase 11]: [11-03]: WHATWG autoComplete tokens by field purpose (name/email/organization/organization-title); selects + textarea + honeypot get explicit autoComplete=off; inputMode=email pairs with type=email for mobile @ keyboard on both forms
 - [Phase 11]: [11-03]: Schema for ApplicationForm gained explicit .max(5000) on problem so Zod too_big code resolves to problemMax i18n key; was unreachable before because schema was min-only
 - [Phase 11]: [11-03]: noValidate added to ApplicationForm <form> so JS validation pipeline runs end-to-end; without it browsers HTML5 tooltip blocks Zod path entirely; ContactForm already had noValidate
+- [Phase 12-02]: labelKey enum literal type ('addOn47' | 'addOn97' | 'notAvailable' | 'unlimited') for typo-safe i18n key references in SkillTierCap shape
+- [Phase 12-02]: addOn47/addOn97 as dedicated keys (not interpolated price arg) — only 2 skills use them; simpler than template + arg
+- [Phase 12-02]: NL notAvailable em-dash (—) replaced with middle dot (·) matching EN/ES — fixes audit em-dash flag in i18n value
+- [Phase 12-02]: SkillPageTemplate.formatCap mirrored to same labelKey/unit dispatch (Rule 3 deviation) so tsc + build stay green after Task 1 interface change
+- [Phase 12-02]: Visual capture deferred to verifier — both dev ports occupied, NEVER kill terminals; scripts/capture-tier-matrix.mjs committed for clean verifier run
 
 ### Roadmap Evolution
 
@@ -245,5 +251,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 11-03 (form a11y on ApplicationForm + ContactForm, 2 surgical commits 40551f5 + f53199e). Phase 11 implementation complete: 11-01 + 11-02 + 11-03 all landed. Ready for Phase 11 verifier sweep — Lighthouse on /nl, /nl/pricing, /nl/apply, /nl/contact (target ≥95) plus axe-core/cli on /nl/apply + /nl/contact (rules: aria-valid-attr-value, label-content-name-mismatch, autocomplete-valid) plus manual SR walkthrough on NL/EN/ES (deferred from 11-03 Task 3 yolo auto-approve).
-Resume file: None — Phase 11 implementation complete. Next session: dispatch verifier or roll into Phase 12.
+Stopped at: Completed 12-02 (skills-data.ts i18n refactor) — 6 atomic commits 58c7908/a4ce35a/e785523/4869c82/2d3b280/5a86015. 16min duration. Phase 12 plan 02 of 4 complete; 12-01 in flight in parallel (visible commits 15eef44/ff29d7c/d0a0781/840660a/d16fe21 — palette + brand assets). Wave 1 disjoint-file boundary held: no merge conflicts.
+Resume file: None — proceed to 12-03 (queued, sequential after 12-02 to avoid JSON conflicts on header.* / common.comingSoon / chat.*) or wait for 12-01 to finish then run Phase 12 verifier. Visual screenshots for tier-matrix in 3 locales deferred to verifier; helper at scripts/capture-tier-matrix.mjs.
