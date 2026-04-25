@@ -257,7 +257,7 @@
     },
     "related": {
       "automations_title": "AI-automations",
-      "automations_description": "Automatisering op maat die jouw tools en processen aan elkaar verbindt.",
+      "automations_description": "Automatisering op maat die jouw systemen en processen aan elkaar verbindt.",
       "voice_agents_title": "Voice Agents",
       "voice_agents_description": "AI-gespreksagenten die inkomende en uitgaande gesprekken op schaal afhandelen.",
       "marketing_machine_title": "Marketing Machine",
@@ -268,7 +268,7 @@
       "steps": {
         "discovery": {
           "title": "Ontdekken",
-          "description": "We brengen je use case in kaart en plannen de koppeling met je bestaande tools."
+          "description": "We brengen je use case in kaart en plannen de koppeling met je bestaande systemen."
         },
         "build": {
           "title": "Bouwen",
@@ -571,7 +571,7 @@
         "workspaces": "5",
         "credits": "4.000",
         "tagline": "5 werkruimtes. Alle 12 vaardigheden. Caps op de duurste vaardigheden.",
-        "description": "Voor bureaus met 1 tot 5 klanten die Clyde als volledige marketing-medewerker willen inzetten. Alle 12 vaardigheden beschikbaar met tier-caps op de duurdere (voice, video, reels).",
+        "description": "Voor bureaus met 1 tot 5 merken in hun portfolio die Clyde als volledige marketing-medewerker willen inzetten. Alle 12 vaardigheden beschikbaar met tier-caps op de duurdere (voice, video, reels).",
         "features_0": "5 werkruimtes",
         "features_1": "4.000 credits per maand",
         "features_2": "Alle 12 vaardigheden beschikbaar",
@@ -591,7 +591,7 @@
         "workspaces": "15",
         "credits": "12.000",
         "tagline": "15 werkruimtes. Ruimere caps. Slack-support plus maandelijkse strategiecall.",
-        "description": "Voor bureaus met 5 tot 15 klanten die serieus op Clyde draaien. Ruimere caps, directe Slack-toegang tot Daley, maandelijkse strategiecall.",
+        "description": "Voor bureaus met 5 tot 15 merken in hun portfolio die serieus op Clyde draaien. Ruimere caps, directe Slack-toegang tot Daley, maandelijkse strategiecall.",
         "features_0": "15 werkruimtes",
         "features_1": "12.000 credits per maand",
         "features_2": "Alle 12 vaardigheden beschikbaar",
@@ -610,7 +610,7 @@
         "workspaces": "Onbeperkt",
         "credits": "30.000",
         "tagline": "Onbeperkte werkruimtes en vaardigheden. White-label en API-toegang. Eigen CSM met SLA.",
-        "description": "Voor bureaus met 15 of meer klanten die Clyde als kern-infrastructuur gebruiken. White-label, API-toegang, eigen customer success manager met SLA.",
+        "description": "Voor bureaus met 15 of meer merken die Clyde als kern-infrastructuur gebruiken. White-label, API-toegang, eigen customer success manager met SLA.",
         "features_0": "Onbeperkt aantal werkruimtes",
         "features_1": "30.000 credits per maand",
         "features_2": "Alle 12 vaardigheden zonder caps (fair use)",
@@ -1478,7 +1478,7 @@
     },
     "isolation": {
       "title": "Strikt gescheiden per merk",
-      "body1": "Clyde werkt voor meerdere klanten en meerdere merken tegelijk zonder dat ze elkaar raken. Wat hij leert over Merk A komt nooit terecht bij Merk B. Geen merkstem die overspringt, geen data die uitlekt, geen voorbeelden die per ongeluk over en weer gaan.",
+      "body1": "Clyde werkt voor meerdere bureaus en meerdere merken tegelijk zonder dat ze elkaar raken. Wat hij leert over Merk A komt nooit terecht bij Merk B. Geen merkstem die overspringt, geen data die uitlekt, geen voorbeelden die per ongeluk over en weer gaan.",
       "body2": "Technisch is dat geregeld met een eigen geheugenruimte per klant, strikt gescheiden op databaseniveau (Supabase RLS) en in de zoekindex. Menselijk gezien: wat bij jouw klant hoort, blijft bij jouw klant. Bij opzegging is je data binnen 24 uur exporteerbaar en wordt na 30 dagen volledig verwijderd."
     },
     "decay": {
@@ -1561,12 +1561,12 @@
         "3m_10m": "€3M tot €10M",
         "over_10m": "Meer dan €10M"
       },
-      "clientCountLabel": "Aantal actieve klanten",
+      "clientCountLabel": "Aantal actieve merken in je portfolio",
       "clientCountOptions": {
-        "solo": "Solo, geen klanten",
-        "1_5": "1 tot 5 klanten",
-        "5_15": "5 tot 15 klanten",
-        "15_50": "15 tot 50 klanten",
+        "solo": "Solo, geen merken",
+        "1_5": "1 tot 5 merken",
+        "5_15": "5 tot 15 merken",
+        "15_50": "15 tot 50 merken",
         "over_50": "Meer dan 50"
       },
       "tierLabel": "Welke tier past het best?",
@@ -1579,7 +1579,7 @@
         "unsure": "Weet het nog niet zeker"
       },
       "problemLabel": "Wat is jouw meest urgente probleem?",
-      "problemPlaceholder": "Bijvoorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 klanten\" of \"Onze SEO stagneert en we hebben geen ruimte voor blogs.\"",
+      "problemPlaceholder": "Bijvoorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 merken\" of \"Onze SEO stagneert en we hebben geen ruimte voor blogs.\"",
       "submit": "Verstuur aanvraag",
       "submitting": "Bezig met versturen…",
       "privacyNote": "We gebruiken deze gegevens alleen voor de beoordeling. Geen marketing-automatisering, geen mailinglijst, geen doorverkoop.",
@@ -1685,7 +1685,7 @@
       },
       "cta": {
         "title": "Wil je dit ook voor jouw portfolio?",
-        "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw merken en klanten.",
+        "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
         "button": "Plan een gesprek"
       }
     }
@@ -1747,7 +1747,7 @@
       "title": "Voor wie",
       "useCase1": {
         "title": "Inbox-overload bij bureau-operators",
-        "body": "Met 15 klanten krijg je al snel 100+ mails per dag. Clyde sorteert, jij reageert op wat écht telt."
+        "body": "Met 15 merken in beheer krijg je al snel 100+ mails per dag. Clyde sorteert, jij reageert op wat écht telt."
       },
       "useCase2": {
         "title": "Triage van klantcommunicatie",
