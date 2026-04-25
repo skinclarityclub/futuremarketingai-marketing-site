@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 10 of 15 (Production Integrity + Domain SSoT) -- IN PROGRESS
-Plan: 3 of 4 in current phase (10-01, 10-02, 10-04 code complete; 10-03 in flight; 10-02 awaiting live env smoke test)
+Plan: 3 of 4 done in current phase (10-01, 10-03, 10-04 complete; 10-02 code complete + awaiting human-action checkpoint for env vars + Supabase migration before live smoke test)
 Status: Executing
-Last activity: 2026-04-25 -- Completed 10-02 code wiring: /api/apply + /api/contact now persist to Supabase, send dual emails via Resend, rate-limit via Upstash sliding-window. Wildcard CORS removed. Chatbot rate-limiter migrated from Map to Upstash. Build passes; awaiting human checkpoint for env provisioning + Supabase migration before live smoke.
+Last activity: 2026-04-25 -- Completed 10-03 (chatbot v10 alignment + llms.txt regeneration: CHATBOT_TIERS SSoT with Partner tier; get_skills tool sourcing 12 skills from SKILLS_DATA; concierge-kb + support-kb rewritten with Partner pricing and 8-of-12 correction; llms.txt + llms-full.txt regenerated to llmstxt.org spec with v10 product, all canonical apex URLs, AVG + EU AI Act compliance section)
 
 Progress: [██████░░░░░░░░] 47% | Phase 10: [███████░░░] 3/4
 
@@ -81,6 +81,7 @@ _Updated after each plan completion_
 | Phase 10 P04 | 15min | 6 tasks | 5 files |
 | Phase 10 P01 | 53min | 7 tasks | 11 files |
 | Phase 10 P02 | 16min | 6 tasks (code) | 9 files | (awaiting live env smoke for tasks 7+8)
+| Phase 10 P03 | 16min | 8 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -196,6 +197,13 @@ Recent decisions affecting current work:
 - [Phase 10]: [10-02]: Supabase + Resend instantiated with placeholder URL/key when env missing instead of throwing — keeps `next build` green pre-provisioning. Runtime errors logged via existing dbError/emailError branches.
 - [Phase 10]: [10-02]: Chatbot rate-limiter is now async (4 Upstash limiters, was sync Map). Single caller engine.ts updated with `await`. Public export shape preserved so index.ts re-exports work unchanged.
 - [Phase 10]: [10-02]: Plan 10-03's parallel agent committed Task 2/3 helper files (ratelimit.ts, supabase-admin.ts, email templates) under 3c0fd02 + b6635bb because both plans shared package.json bumps. Content matched what 10-02 wrote. Documented in 10-02-SUMMARY deviations.
+- [Phase 10]: [10-03]: CHATBOT_TIERS in src/lib/chatbot/tool-data.ts is the chatbot-side mirror of fma-app/src/lib/skills.ts AGENT_TIERS. Both leadgen-tools and concierge-tools import from this single file, preventing the v9 drift that caused the audit-flagged bait-and-switch.
+- [Phase 10]: [10-03]: Renamed get_services to get_skills throughout the chatbot stack (5 consumer files: flagship-tools, clyde persona, tool-results map, demo scenarios, prompt-builder). Semantically correct under v10 12-skill model.
+- [Phase 10]: [10-03]: concierge-tools get_skills sources from SKILLS_DATA dynamically. fma-app pricing changes propagate via skills-data.ts mirror, no chatbot code edits needed.
+- [Phase 10]: [10-03]: Partner tier added to chatbot enum (was completely absent) plus "8 of 12 skills" correction in both KBs. Stops over-promising on entry tier.
+- [Phase 10]: [10-03]: book_call execute path swapped from Calendly URL to /apply. Matches CLAUDE.md application-gated rule, no self-service signup.
+- [Phase 10]: [10-03]: llms.txt rebuilt per llmstxt.org spec with H1 + blockquote + H2 link sections. All 32 URLs canonical apex (https://future-marketing.ai). AVG + EU AI Act framing in opening blockquote for GEO/AI citation strength.
+- [Phase 10]: [10-03]: llms-full.txt rebuilt as ~2500-word v10 long-form with skills deep-dive, 4-layer memory architecture, SKC case study with truthful metrics from messages/nl.json, full compliance section.
 
 ### Roadmap Evolution
 
@@ -216,5 +224,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-25
-Stopped at: Completed 10-02-PLAN.md code (Tasks 2-6 + auto-fix) — awaiting human-action checkpoint to paste RESEND_API_KEY + SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY + UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN + IP_HASH_SALT into fmai-nextjs/.env.local AND apply .planning/phases/10-production-integrity-domain-ssot/10-02-MIGRATION.sql in Supabase SQL Editor before Task 7+8 smoke tests.
-Resume file: .planning/phases/10-production-integrity-domain-ssot/10-02-PLAN.md (resume from Task 7)
+Stopped at: Completed 10-03-PLAN.md (chatbot v10 alignment + llms.txt regeneration: CHATBOT_TIERS SSoT with Partner tier, get_skills tool, concierge-kb + support-kb v10, llms.txt + llms-full.txt canonical apex with AVG/EU AI Act framing). 10-02 code is also complete and awaits human-action checkpoint for env vars + Supabase migration.
+Resume file: .planning/phases/10-production-integrity-domain-ssot/10-02-PLAN.md (resume from Task 7 after env+migration checkpoint resolves)
