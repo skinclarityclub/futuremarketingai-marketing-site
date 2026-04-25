@@ -1,5 +1,5 @@
 /**
- * Skills data — website mirror of fma-app/src/lib/skills.ts.
+ * Skills data, website mirror of fma-app/src/lib/skills.ts.
  *
  * WHY: de marketing site moet dezelfde 12 skills tonen als de SaaS,
  * maar zonder een harde dependency op fma-app. Bij wijzigingen in
@@ -48,9 +48,9 @@ export interface SkillData {
   features: readonly string[]
   category: SkillCategory
   status: SkillStatus
-  /** Credit cost per action — display label like "2 cr / post" */
+  /** Credit cost per action, display label like "2 cr / post" */
   creditCostLabel: string
-  /** Per-tier availability — null = fair use on all tiers */
+  /** Per-tier availability, null = fair use on all tiers */
   tierCaps?: Record<TierKey, SkillTierCap>
 }
 
@@ -60,11 +60,11 @@ export const SKILLS_DATA: readonly SkillData[] = [
     name: 'Social Media Manager',
     slug: 'social-media',
     route: '/skills/social-media',
-    shortDescription: 'Captions, scheduling, carousels en engagement — per klant in de juiste brand voice.',
+    shortDescription: 'Captions, inplanning, carrousels en engagement, per merk in de juiste merkstem.',
     longDescription:
-      'De Social Media Manager beheert het volledige contentproces van idee tot publicatie. AI analyseert trending topics, genereert captions in de juiste brand voice, plant posts op optimale tijdstippen en volgt engagement metrics. Geschikt voor Instagram, Facebook en LinkedIn.',
+      'De Social Media Manager beheert het volledige contentproces van idee tot publicatie. AI analyseert trending topics, genereert captions in de juiste merkstem, plant posts op optimale tijdstippen en volgt engagement metrics. Geschikt voor Instagram, Facebook en LinkedIn.',
     features: [
-      'AI-gegenereerde captions in brand voice',
+      'AI-gegenereerde captions in de merkstem',
       'Multi-platform scheduling met optimale timing',
       'Content kalender met drag & drop',
       'Engagement tracking per post',
@@ -82,13 +82,13 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/blog-factory',
     shortDescription: 'Longform SEO-artikelen van keyword research tot automatische publicatie.',
     longDescription:
-      'Blog Factory produceert SEO-geoptimaliseerde longform artikelen van onderzoek tot publicatie. Keyword research, schrijven in brand voice, meta descriptions, heading structuur, internal linking — alles automatisch. Output: 1.500-3.000 woorden publicatie-klaar.',
+      'Blog Factory produceert SEO-geoptimaliseerde longform artikelen van onderzoek tot publicatie. Keyword research, schrijven in de merkstem, meta descriptions, heading structuur, interne links: alles automatisch. Output 1.500 tot 3.000 woorden, publicatieklaar.',
     features: [
       'Keyword research en topic clustering',
       'Longform artikelen (1500-3000 woorden)',
       'SEO-optimalisatie (meta, headings, internal links)',
       'Automatische publicatie naar website',
-      'Brand voice consistentie',
+      'Consistentie in merkstem',
     ],
     category: 'create',
     status: 'live',
@@ -106,9 +106,9 @@ export const SKILLS_DATA: readonly SkillData[] = [
     name: 'Ad Creator',
     slug: 'ad-creator',
     route: '/skills/ad-creator',
-    shortDescription: 'Statische en video ads voor Meta — A/B varianten direct publiceerbaar.',
+    shortDescription: 'Statische ads en video-ads voor Meta. Publiceer A/B-varianten direct.',
     longDescription:
-      'Ad Creator genereert complete advertenties — van copy tot visuals. AI maakt statische en video ads, optimaliseert voor verschillende formaten (Stories, Feed, Reels) en publiceert direct naar Meta Ads Manager. A/B test varianten inclusief.',
+      'Ad Creator genereert complete advertenties: van copy tot visuals. AI maakt statische en video ads, optimaliseert voor verschillende formaten (Stories, Feed, Reels) en publiceert direct naar Meta Ads Manager. A/B test varianten inclusief.',
     features: [
       'AI-gegenereerde ad copy en visuals',
       'Statische en video ad creatie',
@@ -133,9 +133,9 @@ export const SKILLS_DATA: readonly SkillData[] = [
     name: 'Reel Builder',
     slug: 'reel-builder',
     route: '/skills/reel-builder',
-    shortDescription: 'Korte verticale videos — captions, muziek, transitions voor Reels/TikTok/Shorts.',
+    shortDescription: "Korte verticale video's met captions, muziek en transities voor Reels, TikTok en Shorts.",
     longDescription:
-      'Reel Builder creëert korte verticale videos (9:16) met AI — inclusief captions, muziek en transitions. Ideaal voor Instagram Reels, TikTok en YouTube Shorts. Van script tot publicatie-klare video.',
+      "Reel Builder creëert korte verticale video's (9:16) met AI: inclusief captions, muziek en transities. Ideaal voor Instagram Reels, TikTok en YouTube Shorts. Van script tot publicatie-klare video.",
     features: [
       'AI-gegenereerde video scripts',
       'Automatische caption generatie',
@@ -159,9 +159,9 @@ export const SKILLS_DATA: readonly SkillData[] = [
     name: 'Voice Agent',
     slug: 'voice-agent',
     route: '/skills/voice-agent',
-    shortDescription: 'Inkomende en uitgaande AI-telefoongesprekken — afspraken, FAQ, escalatie.',
+    shortDescription: 'Inkomende en uitgaande AI-gesprekken: afspraken, FAQ, escalatie.',
     longDescription:
-      'De Voice Agent handelt telefoonverkeer af met AI — inkomend en uitgaand. Boekt afspraken, beantwoordt FAQ, logt gesprekken en escaleert naar een mens wanneer nodig. Volledig aanpasbaar per klant (stem, persoonlijkheid, kennisbasis).',
+      'De Voice Agent handelt telefoonverkeer af met AI, zowel inkomend als uitgaand. Boekt afspraken, beantwoordt FAQ, logt gesprekken en escaleert naar een mens wanneer nodig. Volledig aanpasbaar per klant (stem, persoonlijkheid, kennisbasis).',
     features: [
       'Inbound en outbound AI telefoongesprekken',
       'Automatische afspraak booking',
@@ -236,7 +236,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'ManyChat DM Automation reageert automatisch op Instagram DMs met AI-gegenereerde antwoorden. Stel keyword triggers in, vang leads op en routeer warme prospects naar je CRM of salesteam.',
     features: [
       'Keyword-based DM triggers',
-      'AI-gegenereerde antwoorden in brand voice',
+      'AI-gegenereerde antwoorden in de merkstem',
       'Lead capture en CRM routing',
       'Conversation flows met branching',
       'Performance analytics per trigger',
@@ -298,7 +298,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/research',
     shortDescription: 'Marktonderzoek + trend monitoring + concurrentieanalyse met bronvermelding.',
     longDescription:
-      'De Research skill voert continu marktonderzoek uit, monitort trends in jouw niche en analyseert concurrenten. AI doorzoekt bronnen, vat inzichten samen en levert actionable recommendations direct in je dashboard — met bronvermelding bij elk inzicht.',
+      'De Research skill voert continu marktonderzoek uit, monitort trends in jouw niche en analyseert concurrenten. AI doorzoekt bronnen, vat inzichten samen en levert bruikbare aanbevelingen direct in je dashboard, met bronvermelding bij elk inzicht.',
     features: [
       'Geautomatiseerd marktonderzoek',
       'Trend monitoring in jouw niche',
