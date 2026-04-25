@@ -1,5 +1,6 @@
 import { tool } from 'ai'
 import { z } from 'zod'
+import { CHATBOT_TIERS, type ChatbotTierKey } from '@/lib/chatbot/tool-data'
 
 const qualify_lead = tool({
   description:
@@ -84,78 +85,18 @@ const qualify_lead = tool({
 
 const get_pricing_info = tool({
   description:
-    'Retrieve pricing information for a specific pack or all packs of the AI Marketing Employee platform.',
+    'Retrieve pricing information for a specific tier or all tiers of the FutureMarketingAI platform. 5 tiers available: Partner (347 EUR), Growth (2497 EUR), Professional (4497 EUR), Enterprise (7997 EUR), and Founding Member (997 EUR lifetime, 10 spots only).',
   inputSchema: z.object({
     tier: z
-      .enum(['growth', 'professional', 'enterprise', 'founding', 'all'])
+      .enum(['partner', 'growth', 'professional', 'enterprise', 'founding', 'all'])
       .default('all')
-      .describe('Which pricing plan to retrieve'),
+      .describe('Which tier to retrieve. Use "all" for overview.'),
   }),
   execute: async ({ tier }) => {
-    const tiers = {
-      growth: {
-        name: 'Growth (AI Marketing Starter)',
-        monthlyPrice: 1497,
-        workspaces: 5,
-        credits: 3000,
-        onboardingFee: 1500,
-        features: [
-          'All 11 AI skills included',
-          '5 workspaces',
-          '3,000 credits/mo',
-          'EUR 1,500 onboarding fee',
-        ],
-      },
-      professional: {
-        name: 'Professional (AI Marketing Pro)',
-        monthlyPrice: 2997,
-        workspaces: 15,
-        credits: 8000,
-        onboardingFee: 3000,
-        features: [
-          'All 11 AI skills included',
-          '15 workspaces',
-          '8,000 credits/mo',
-          'Dedicated Slack channel',
-          'EUR 3,000 onboarding fee',
-        ],
-      },
-      enterprise: {
-        name: 'Enterprise (AI Marketing Suite)',
-        monthlyPrice: 4997,
-        workspaces: -1, // unlimited
-        credits: 20000,
-        onboardingFee: 5000,
-        features: [
-          'All 11 AI skills included',
-          'Unlimited workspaces',
-          '20,000 credits/mo',
-          'Dedicated Customer Success Manager',
-          'EUR 5,000+ onboarding fee',
-        ],
-      },
-      founding: {
-        name: 'Founders Club',
-        monthlyPrice: 997,
-        workspaces: -1, // unlimited
-        credits: 10000,
-        spotsTotal: 10,
-        features: [
-          'All 11 AI skills included',
-          'Unlimited workspaces',
-          '10,000 credits/mo',
-          'Lifetime price lock',
-          'Direct founder access',
-          'Shape the product roadmap',
-        ],
-      },
-    }
-
     if (tier === 'all') {
-      return { tiers }
+      return { tiers: CHATBOT_TIERS }
     }
-
-    return { tier: tiers[tier] }
+    return { tier: CHATBOT_TIERS[tier as ChatbotTierKey] }
   },
 })
 
@@ -189,7 +130,10 @@ const get_roi_estimate = tool({
       .number()
       .default(50)
       .describe('Average hourly rate of team members in EUR'),
-    monthlySubscription: z.number().default(1497).describe('Monthly subscription cost in EUR'),
+    monthlySubscription: z
+      .number()
+      .default(2497)
+      .describe('Monthly subscription cost in EUR (default: Growth tier at 2497)'),
   }),
   execute: async ({
     teamSize,
