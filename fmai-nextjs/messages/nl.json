@@ -126,7 +126,7 @@
         },
         "q4": {
           "question": "Hoeveel vaardigheden krijg ik precies?",
-          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 coming soon (Reel Builder, Email Management, ManyChat DM). De beschikbaarheid verschilt per tier. Partner heeft 8 vaardigheden plus 2 add-on paden. Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
+          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 binnenkort beschikbaar (Reel Builder, Email Management, ManyChat DM). De beschikbaarheid verschilt per tier. Partner heeft 8 vaardigheden plus 2 add-on paden. Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
@@ -1696,7 +1696,7 @@
       "description": "Gmail-inbox classificeren, slimme labels, dagelijkse digest en conceptantwoorden. 5 credits per actie."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 04. Email Management (coming soon)",
+      "eyebrow": "Vaardigheid 04. Email Management (binnenkort)",
       "title": "Clyde classificeert je Gmail-inbox.",
       "subtitle": "Geen mailcampagnes: dit is inbox-classificatie. Clyde leest inkomende mails, plaatst slimme labels (urgent, actie, info), bepaalt prioriteit en stuurt een dagelijkse digest. Je begint je dag met overzicht in plaats van chaos.",
       "cta": "Plan een gesprek"
@@ -2066,9 +2066,9 @@
       "description": "Instagram-DM-keywordtriggers, AI-antwoorden, lead capture en CRM-routering. 2 credits per 10 DM's."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 11. ManyChat DM (coming soon)",
+      "eyebrow": "Vaardigheid 11. ManyChat DM (binnenkort)",
       "title": "Clyde handelt Instagram-DM's af.",
-      "subtitle": "Keywordtriggers (\"INFO\", \"PRIJS\") starten AI-flows die kwalificeren, informatie delen en warme leads naar het CRM sturen. Geen gemiste DM. Coming soon.",
+      "subtitle": "Keywordtriggers (\"INFO\", \"PRIJS\") starten AI-flows die kwalificeren, informatie delen en warme leads naar het CRM sturen. Geen gemiste DM. Binnenkort beschikbaar.",
       "cta": "Plan een gesprek"
     },
     "features": {
@@ -2140,9 +2140,9 @@
       "description": "Korte verticale video's (9:16), AI-scripts, automatische captions en muziek voor Instagram Reels, TikTok en Shorts. 25 credits per Reel."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 12. Reel Builder (coming soon)",
+      "eyebrow": "Vaardigheid 12. Reel Builder (binnenkort)",
       "title": "Clyde produceert je Reels.",
-      "subtitle": "Korte verticale video's (9:16) met AI-scripts, automatische captions die synchroon lopen en achtergrondmuziek. Voor Instagram Reels, TikTok en YouTube Shorts. Coming soon.",
+      "subtitle": "Korte verticale video's (9:16) met AI-scripts, automatische captions die synchroon lopen en achtergrondmuziek. Voor Instagram Reels, TikTok en YouTube Shorts. Binnenkort beschikbaar.",
       "cta": "Plan een gesprek"
     },
     "features": {
