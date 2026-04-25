@@ -17,11 +17,24 @@ export type SkillStatus = 'live' | 'coming_soon'
 // (AGENT_TIERS keys + SKILL_CAPS). Pricing SSoT = fma-app.
 export type TierKey = 'PARTNER' | 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE' | 'FOUNDING_MEMBER'
 
+/**
+ * Unit for rendering the included count in the tier matrix.
+ * The matrix component looks up `pricing.matrix.{unit}PerMonth` to format.
+ * e.g. unit: 'min' → "30 min/mnd" in NL, "30 min/mo" in EN.
+ */
+export type SkillCapUnit = 'count' | 'min' | 'dm'
+
 export interface SkillTierCap {
   /** -1 = unlimited / fair use, 0 = not available, n = monthly cap */
   included: number
-  /** Label tag for display: "fair use", "unlimited", "add-on only" */
-  label?: string
+  /** Unit for rendering: 'count' → "12/mnd", 'min' → "30 min/mnd", 'dm' → "500 DMs/mnd". Default 'count'. */
+  unit?: SkillCapUnit
+  /**
+   * i18n key (in `pricing.matrix.*`) to render instead of the numeric cap.
+   * Used for special states like "Add-on €97" or "Niet beschikbaar".
+   * If set, takes precedence over `included` + `unit`.
+   */
+  labelKey?: 'addOn47' | 'addOn97' | 'notAvailable' | 'unlimited'
 }
 
 export interface SkillData {
