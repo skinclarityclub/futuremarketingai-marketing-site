@@ -424,9 +424,11 @@
       "backHome": "Back to home"
     },
     "generic": {
-      "title": "Something went wrong",
-      "description": "An unexpected error occurred.",
-      "tryAgain": "Try again"
+      "title": "Something went wrong.",
+      "description": "An unexpected error occurred. Please try again or return to the homepage.",
+      "tryAgain": "Try again",
+      "retryButton": "Try again",
+      "homeButton": "Back to home"
     }
   },
   "about": {

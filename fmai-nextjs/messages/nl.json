@@ -424,9 +424,11 @@
       "backHome": "Terug naar home"
     },
     "generic": {
-      "title": "Er ging iets mis",
-      "description": "Er is een onverwachte fout opgetreden.",
-      "tryAgain": "Probeer opnieuw"
+      "title": "Er ging iets mis.",
+      "description": "Een onverwachte fout trad op. Probeer het opnieuw of keer terug naar de homepage.",
+      "tryAgain": "Probeer opnieuw",
+      "retryButton": "Probeer opnieuw",
+      "homeButton": "Terug naar home"
     }
   },
   "about": {

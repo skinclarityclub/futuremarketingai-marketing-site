@@ -424,9 +424,11 @@
       "backHome": "Volver al inicio"
     },
     "generic": {
-      "title": "Algo salió mal",
-      "description": "Ha ocurrido un error inesperado.",
-      "tryAgain": "Intentar de nuevo"
+      "title": "Algo salió mal.",
+      "description": "Ha ocurrido un error inesperado. Inténtalo de nuevo o vuelve a la página de inicio.",
+      "tryAgain": "Intentar de nuevo",
+      "retryButton": "Intentar de nuevo",
+      "homeButton": "Volver al inicio"
     }
   },
   "about": {
