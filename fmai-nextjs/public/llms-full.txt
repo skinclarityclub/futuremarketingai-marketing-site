@@ -1,302 +1,355 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI implementation agency that builds intelligent chatbots, workflow automations, voice agents, and full-stack AI marketing machines for SaaS and e-commerce companies. Founded by Daley, FMai helps B2B companies automate customer interactions, streamline operations, and scale marketing through AI-powered systems. Based in the Netherlands with an Estonian e-Residency structure, serving clients across Europe and internationally. The company positions at approximately 50% below premium agency pricing while delivering enterprise-grade AI implementations with direct founder access on every project.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills across client brand portfolios with per-brand memory isolation. Five tiers from 347 EUR to 7,997 EUR plus a 997 EUR Founding Member lifetime program (10 spots, 1 taken). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish.
 
----
+## Company
 
-## Company Overview
+FutureMarketingAI (FMai) is a solo-founder AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Headquartered in the Netherlands, serving EU agencies. EU AI Act compliant ahead of the August 2026 deadline.
 
-FMai (brand name for FutureMarketingAI) is a solo-founder AI agency and product company. The founder, Daley, is a technical builder who personally architects and implements every AI system. This means clients get direct access to the person building their solution, not a sales team or project manager layer.
+Unlike a self-serve SaaS, FMai operates on a 20-partnerships-per-year cap with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
-The company operates on a gateway-to-flagship model: clients typically start with one or two standalone AI services (chatbots, automations, or voice agents) and can scale up to the full AI Marketing Machine as their needs grow. Research shows 25-35% of gateway clients convert to the flagship product within the first year.
+The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with 6 of Clyde's 12 skills active. Sindy is the first Founding Member (spot 1 of 10).
 
-FMai serves primarily B2B growth-stage companies, SaaS platforms, and e-commerce brands that have existing marketing operations but want to automate and scale them with AI. The ideal client has a working product/market fit but is bottlenecked by manual marketing processes.
-
-### Key Facts
+Key facts:
 
 - Brand: FMai (FutureMarketingAI)
-- Website: https://futuremarketingai.com
+- Canonical website: https://future-marketing.ai
 - Founder: Daley
-- Location: Netherlands (EU), Estonian e-Residency entity
-- Languages: Dutch, English
-- Founded: 2026
-- Company type: Solo AI agency and product company
-- Target market: B2B SaaS, e-commerce, growth-stage companies
-- Positioning: Premium mid-market (approximately 50% below top-tier agencies)
+- Location: Netherlands (EU)
+- Languages: Dutch (source of truth), English, Spanish
+- Company type: Solo founder AI marketing partnership
+- Target market: Performance and growth agencies in NL and EU managing 10 to 50 brand portfolios
+- Compliance: AVG (GDPR) by design, EU AI Act ready, self-hosted EU infrastructure
 
----
+## Product: Clyde, the AI Marketing Medewerker
 
-## Services
+Clyde is a persistent AI employee, not a chatbot. Key characteristics:
 
-### AI Chatbots
+- Named identity across every touchpoint (website, Slack, dashboard, email).
+- Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
+- Operates 12 skills: Social Media, Blog Factory, Ad Creator, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
+- Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
+- Self-hosted EU infrastructure for AVG and EU AI Act compliance.
+- Controlled via natural language through chat, Slack, Telegram, or direct dashboard commands.
 
-FMai builds custom AI chatbots that handle customer service, qualify leads, and book appointments around the clock. Each chatbot is configured with a brand persona and trained on the client's knowledge base, product documentation, and FAQs.
+## The 12 Skills
 
-Key capabilities:
-- 24/7 customer support with brand-consistent responses
-- Lead qualification with intelligent routing to sales teams
-- Appointment booking integrated with calendar systems
-- Multi-platform deployment: website widget, WhatsApp, Slack, Microsoft Teams, and other channels
-- Knowledge base training on company-specific documentation
-- Handoff to human agents when needed with full conversation context
-- Analytics dashboard for conversation insights and optimization
-- Interactive demo available on the FMai website for prospects to test before buying
+### Social Media Manager (Live)
 
-Technology: Built on Anthropic Claude for natural language understanding, with n8n for workflow orchestration and integration with existing CRM and support systems.
+The Social Media Manager runs the full content process from idea to publication. AI analyzes trending topics, generates captions in the right brand voice, schedules posts at optimal times and tracks engagement metrics. Suitable for Instagram, Facebook and LinkedIn.
 
-Typical delivery: 1-2 weeks from kickoff to live deployment.
+Capabilities:
+- AI-generated captions in brand voice
+- Multi-platform scheduling with optimal timing
+- Content calendar with drag and drop
+- Engagement tracking per post
+- Carousel and story builder
+- Hashtag research and optimization
 
-Page: https://futuremarketingai.com/en/chatbots
+Credit cost: 1 to 2 credits per post.
 
-### Workflow Automations
+### Blog Factory (Live)
 
-FMai replaces manual marketing and operations workflows with AI-driven automation. These are end-to-end systems that connect existing tools and add intelligence at every decision point.
+Blog Factory produces SEO-optimized longform articles from research to publish. Keyword research, writing in brand voice, meta descriptions, heading structure, internal linking, all automatic. Output: 1,500 to 3,000 words ready to publish.
 
-Common automation use cases:
-- Lead qualification and scoring with AI analysis
-- Email sequence automation with personalized content
-- Social media publishing and scheduling
-- Invoice handling and payment follow-ups
-- Client onboarding workflows
-- CRM data synchronization across platforms
-- Content approval workflows
-- Reporting and analytics automation
+Capabilities:
+- Keyword research and topic clustering
+- Longform articles (1,500-3,000 words)
+- SEO optimization (meta tags, headings, internal links)
+- Automatic publication to website
+- Brand voice consistency
 
-Supported integrations include HubSpot, Salesforce, ActiveCampaign, Mailchimp, Stripe, Google Workspace, Slack, Notion, Airtable, and any platform with a REST API.
+Credit cost: 15 credits per article. Tier caps: Partner 2/mo, Growth 8/mo, Professional 20/mo, Enterprise unlimited, Founding Member 12/mo.
 
-Technology: Built primarily on n8n (self-hosted workflow automation) with AI nodes powered by Anthropic Claude. Custom API integrations where needed.
+### Ad Creator (Live)
 
-Typical delivery: 1-2 weeks for standard automations, 2-4 weeks for complex multi-system workflows.
+Ad Creator generates complete advertisements from copy to visuals. AI builds static and video ads, optimizes for different formats (Stories, Feed, Reels) and publishes directly to Meta Ads Manager. A/B test variants included.
 
-Page: https://futuremarketingai.com/en/automations
+Capabilities:
+- AI-generated ad copy and visuals
+- Static and video ad creation
+- Multi-format output (Stories, Feed, Reels)
+- Competitor ad library research
+- Direct publishing to Meta Ads
+- A/B test variant generation
 
-### AI Voice Agents
+Credit cost: 10 credits per static ad, 20 credits per video ad. Tier caps: Partner add-on only (EUR 97 pack), Growth 15/mo, Professional 50/mo, Enterprise unlimited, Founding Member 25/mo.
 
-FMai deploys AI voice agents that handle phone-based customer interactions at scale. Voice agents can make outbound calls to prospects, handle inbound support calls, qualify leads by phone, and book appointments directly into calendar systems.
+### Reel Builder (Coming soon)
 
-Key capabilities:
-- Outbound sales calls with natural conversation flow
-- Inbound customer support with intelligent routing
-- Lead qualification via phone with CRM integration
-- Appointment booking with calendar synchronization
-- Multi-language support (Dutch, English, and other European languages)
-- Call recording and transcription for quality assurance
-- Seamless handoff to human agents for complex issues
+Reel Builder creates short vertical videos (9:16 aspect) with AI, including captions, music and transitions. Ideal for Instagram Reels, TikTok and YouTube Shorts. From script to publish-ready video.
 
-Built in partnership with specialized voice AI technology providers for maximum audio quality and natural-sounding conversations. FMai handles the strategy, integration, and workflow design while leveraging best-in-class voice synthesis and recognition technology.
+Capabilities:
+- AI-generated video scripts
+- Automatic caption generation
+- Music selection and timing
+- Vertical format (9:16) optimization
+- Template library for fast creation
 
-Typical delivery: 2-3 weeks including voice persona design, integration setup, and testing.
+Credit cost: 25 credits per reel. Status: coming soon.
 
-Page: https://futuremarketingai.com/en/voice-agents
+### Voice Agent (Live)
 
-### AI Marketing Machine (Flagship Product)
+The Voice Agent handles phone traffic with AI, both inbound and outbound. Books appointments, answers FAQs, logs conversations and escalates to a human when needed. Fully customizable per client (voice, personality, knowledge base). Built on ElevenLabs voice technology.
 
-The AI Marketing Machine is FMai's flagship product: six integrated AI modules working 24/7 to create, optimize, and distribute marketing content with zero manual work.
+Capabilities:
+- Inbound and outbound AI phone calls
+- Automatic appointment booking
+- FAQ answering in natural language
+- Conversation logging and transcripts
+- Escalation to human agent
+- Campaign management for outbound calls
 
-The six modules:
-1. Content Creation Engine: Generates branded content across formats (carousels, reels, ads, stories, blog posts)
-2. SEO Optimization Module: Keyword research, on-page optimization, and content planning driven by AI
-3. Social Distribution System: Automated publishing and scheduling across all social platforms
-4. Ad Management Module: AI-driven ad creation, A/B testing, and budget optimization
-5. Analytics and Reporting: Real-time performance dashboards with AI-generated insights
-6. Pipeline Automation: Lead capture, nurturing sequences, and sales handoff automation
+Credit cost: 5 credits per minute. Tier caps: Partner not available, Growth 30 min/mo, Professional 120 min/mo, Enterprise unlimited, Founding Member 60 min/mo.
 
-Output capacity: Up to 160 posts per month across all channels with consistent brand voice and visual identity.
+### Lead Qualifier (Live)
 
-The Marketing Machine is designed for founding teams and growth-stage companies that want full-stack marketing capability without hiring a marketing department. It effectively replaces 3-5 marketing hires with an AI system that runs continuously.
+The Lead Qualifier places an AI chatbot on your website that qualifies visitors, scores them based on intent and behavior, and automatically routes warm leads to your CRM or sales team.
 
-Currently in active development with a live pilot running on SkinClarity Club (SKC), an e-commerce brand in the skincare space. Carousel automation is fully operational, with ad builder and reel builder in final stages. The full system is expected to be complete by mid-April 2026, with comprehensive case study data available by mid-2026.
+Capabilities:
+- Embeddable AI chatbot for websites
+- Automatic lead scoring
+- CRM routing based on qualification
+- Conversation analytics
+- Custom qualification criteria per client
 
-Available as a founding member beta program for early adopters who want to be among the first to deploy the full system at preferential terms.
+Credit cost: 2 credits per scored conversation.
 
-Page: https://futuremarketingai.com/en/marketing-machine
+### Email Management (Coming soon)
 
----
+Email Management automatically classifies your Gmail inbox with AI, adds smart labels and generates a daily digest of important messages. Save hours per week on email management. Note: this is inbox classify, not email campaigns.
 
-## Pricing
+Capabilities:
+- AI inbox classification (urgent, action, info)
+- Smart labels and auto-categorization
+- Daily email digest
+- Priority ranking of messages
+- Suggested replies
 
-FMai offers three gateway service tiers for its standalone AI services, plus the flagship Marketing Machine as a separate offering.
+Credit cost: 5 credits per action. Status: coming soon.
 
-### Starter Plan - EUR 1.497 per month
+### ManyChat DM (Coming soon)
 
-- Setup fee: EUR 2.500 (one-time)
-- Includes: 1 AI service (choose from chatbots, automations, or voice agents)
-- Direct founder access for strategy and implementation
-- Monthly optimization and performance review
-- Best for: Companies wanting to test AI with a single high-impact use case
+ManyChat DM Automation responds automatically to Instagram DMs with AI-generated answers. Set keyword triggers, capture leads and route warm prospects to your CRM or sales team.
 
-### Growth Plan - EUR 2.497 per month
+Capabilities:
+- Keyword-based DM triggers
+- AI-generated replies in brand voice
+- Lead capture and CRM routing
+- Conversation flows with branching
+- Performance analytics per trigger
 
-- Setup fee: EUR 4.500 (one-time)
-- Includes: 2 AI services (any combination of chatbots, automations, and voice agents)
-- Direct founder access for strategy and implementation
-- Monthly optimization and performance review
-- Cross-service integration between the two chosen services
-- Best for: Companies ready to automate multiple customer touchpoints
+Credit cost: 2 credits per 10 DMs. Status: coming soon.
 
-### Scale Plan - EUR 3.997 per month
+### Reporting and Analytics (Live)
 
-- Setup fee: EUR 7.500 (one-time)
-- Includes: All 3 AI services (chatbots, automations, and voice agents)
-- Direct founder access for strategy and implementation
-- Monthly optimization and performance review
-- Full integration across all services for unified customer experience
-- Priority support and faster iteration cycles
-- Best for: Companies committed to comprehensive AI-driven operations
+Reporting and Analytics delivers automatic dashboards, weekly digests and real-time KPI tracking. The system detects anomalies in your data and proactively alerts you when metrics deviate.
 
-### AI Marketing Machine (Flagship)
+Capabilities:
+- Automatic weekly performance digests
+- Real-time KPI dashboards
+- Anomaly detection with alerts
+- Cross-platform analytics (social, web, sales)
+- Custom report generation
 
-- Pricing available on request for founding member beta participants
-- Full pricing to be published after pilot completion (expected mid-2026)
-- Includes all six AI modules with continuous content production
-- Gateway service clients receive preferential upgrade pricing
+Credit cost: 5 credits per report.
 
-### Pricing Philosophy
+### SEO / GEO Analyst (Live)
 
-All prices are in EUR. FMai positions at approximately 50% below premium AI agencies (which typically charge EUR 5.000-15.000/mo for similar services) while maintaining enterprise-grade quality through the founder's direct involvement in every project.
+The SEO/GEO Analyst runs automatic SEO audits, tracks keyword rankings, monitors Core Web Vitals and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Google AI Overviews). Actionable fixes prioritized.
 
-3-month risk-free trial commitment: clients can exit within the first 3 months if results do not meet agreed-upon KPIs.
+Capabilities:
+- Automatic technical SEO audits
+- Keyword ranking tracking
+- Core Web Vitals monitoring
+- AI citation monitoring (GEO)
+- Competitor keyword analysis
+- Prioritized fix recommendations
 
-Page: https://futuremarketingai.com/en/pricing
+Credit cost: 5 credits per audit, 3 credits per report.
 
----
+### Research (Live)
 
-## Technology Stack
+The Research skill runs continuous market research, monitors trends in your niche and analyzes competitors. AI searches sources, synthesizes insights and delivers actionable recommendations directly in your dashboard, with source citations on every insight.
 
-FMai builds on a modern, production-grade technology stack:
+Capabilities:
+- Automated market research
+- Trend monitoring in your niche
+- Competitor analysis with benchmarks
+- Actionable insights and recommendations
+- Source citations on every insight
 
-### Core Technologies
+Credit cost: 3 credits per query.
 
-- **n8n**: Self-hosted workflow automation platform. All automations, integrations, and AI workflows are built on n8n for maximum flexibility, reliability, and data sovereignty. FMai uses a custom architecture called WAT (Workflow Automation Templates) for rapid deployment.
-- **Next.js**: React-based framework for web applications, dashboards, and client-facing interfaces. Used for both the FMai website and custom client portals.
-- **Anthropic Claude**: Primary large language model for all AI-powered features including chatbots, content generation, lead qualification, and data analysis. Chosen for superior reasoning, safety, and multilingual capabilities.
-- **Vercel**: Deployment platform for all web applications. Provides edge computing, automatic scaling, and global CDN.
-- **TypeScript**: All code is written in TypeScript for type safety and maintainability.
+### Clyde Orchestrator (Live)
 
-### Supporting Technologies
+Clyde is the central AI employee who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works through chat, Slack, Telegram and other channels. Has memory per client and remembers earlier conversations, preferences and context.
 
-- **React 18+**: Frontend framework with server components where applicable
-- **Tailwind CSS**: Utility-first CSS framework for consistent design systems
-- **Framer Motion**: Animation library for interactive UI experiences
-- **Supabase**: Database and authentication for client applications
-- **PostgreSQL**: Primary database for data-intensive applications
+Capabilities:
+- Natural language commands
+- Orchestration of all other skills
+- Multi-channel (chat, Slack, Telegram)
+- Memory and context per client
+- Knowledge base with search
+- Routines and recurring tasks
 
-### Integration Partners
+Credit cost: 1 to 5 credits per chat.
 
-FMai integrates with the major platforms in each client's existing stack:
+## Tiers and Pricing
 
-- CRM: HubSpot, Salesforce, Pipedrive, ActiveCampaign
-- Email: Mailchimp, SendGrid, Resend
-- Payments: Stripe, Mollie
-- Communication: Slack, Microsoft Teams, WhatsApp Business API
-- Social Media: Meta (Facebook, Instagram), LinkedIn, X (Twitter), TikTok
-- E-commerce: Shopify, WooCommerce
-- Productivity: Google Workspace, Notion, Airtable
-- Any platform with a REST API or webhook support
+All prices in EUR per month excluding VAT unless stated.
 
----
+### Partner, 347 EUR/mo
 
-## Delivery Process
+- 1 workspace (1 brand)
+- 1,000 credits per month
+- 8 of 12 skills included: Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde
+- Not included by default: Ad Creator, Reel Builder, Voice Agent, ManyChat DM
+- Add-on paths: Static Ads pack 97 EUR, ManyChat pack 47 EUR
+- 497 EUR one-time onboarding
 
-### Step 1: AI Audit (Free, 30 minutes)
+### Growth, 2,497 EUR/mo
 
-Every engagement starts with a free 30-minute AI audit call. The founder personally reviews the client's current marketing and operations stack, identifies the highest-impact automation opportunities, and proposes a concrete implementation plan.
+- 5 workspaces
+- 4,000 credits per month
+- All 12 skills included
+- 1,997 EUR one-time onboarding
 
-### Step 2: Strategy and Scoping (Week 1)
+### Professional, 4,497 EUR/mo (Most popular)
 
-After the audit, FMai delivers a detailed scope document outlining exactly which systems will be built, which integrations are needed, expected timelines, and measurable KPIs. No work begins until the client approves the scope.
+- 15 workspaces
+- 12,000 credits per month
+- All 12 skills included
+- Dedicated Slack channel
+- 3,997 EUR one-time onboarding
 
-### Step 3: Build and Integration (Weeks 1-3)
+### Enterprise, 7,997 EUR/mo
 
-The founder builds and integrates all AI systems. Clients receive regular progress updates and can test systems before they go live. Most standalone services (single chatbot, automation, or voice agent) are delivered within 1-2 weeks. Multi-service packages take 2-3 weeks.
+- Unlimited workspaces
+- 30,000 credits per month
+- All 12 skills, no caps
+- Dedicated Customer Success Manager
+- 5,997+ EUR one-time onboarding
 
-### Step 4: Launch and Testing
+### Founding Member, 997 EUR/mo (lifetime price lock)
 
-Systems go live with close monitoring during the first week. The founder personally reviews all outputs and performance metrics to ensure quality meets standards.
+- 10 spots total, 1 currently taken (SkinClarity Club)
+- Unlimited workspaces
+- 8,000 credits per month
+- All 12 skills with Professional-tier caps
+- Direct founder access plus roadmap influence
+- No onboarding fee
+- Lifetime price lock (pricing never raises for founding members)
+- Approximately 60 percent below Growth tier
 
-### Step 5: Ongoing Optimization
+### Credit packs (all tiers)
 
-Monthly performance reviews with the founder. AI systems are continuously optimized based on real usage data, conversation logs, and performance metrics. Clients receive monthly reports with insights and recommendations.
+- Partner Top-up: 500 credits, 39 EUR
+- Boost: 2,000 credits, 149 EUR
+- Scale: 5,000 credits, 297 EUR
+- Max: 15,000 credits, 697 EUR
 
----
+### Skill packs (Partner tier add-ons)
 
-## Frequently Asked Questions
+- Static Ads: 97 EUR/mo
+- ManyChat DM: 47 EUR/mo
+- Voice Minutes: 147 EUR/mo
+- Video Ads: 197 EUR/mo
+- Reels: 197 EUR/mo
+- Blog Power: 197 EUR/mo
 
-### What makes FMai different from other AI agencies?
+## Case Study: SkinClarity Club
 
-Three things: (1) Direct founder access on every project, meaning the person who builds your system is the same person who strategizes with you. (2) Technical depth combined with business understanding, so solutions actually solve business problems rather than being technology demonstrations. (3) Mid-market pricing with enterprise quality, positioned at approximately 50% below premium agencies.
+Client: SkinClarity Club, a Dutch beauty and skincare operation (DTC plus physical clinic). Founder and operator: Sindy.
 
-### What industries does FMai serve?
+Setup: SkinClarity Club runs a portfolio of 4 brand identities across 3 Instagram accounts, each with its own audience and house style.
+- @SkinClarityClub: main account, treatments, tips and skin knowledge for consumers (circa 50 percent of content volume).
+- @Sindy_Huidtherapeut: personal authority account of founder Sindy, trust, expertise, personal branding (circa 30 percent of content volume).
+- @SkinClarity_Shop: product account for the webshop, launches, bundles and product content (circa 20 percent of content volume).
 
-Primarily B2B SaaS companies, e-commerce brands, and growth-stage companies with existing products and revenue. FMai works best with companies that have product-market fit but are bottlenecked by manual marketing and operations processes.
+Active skills: 6 of Clyde's 12 skills active for SKC.
+- Social Media Manager: carousels, posts and stories for 3 Instagram accounts. AI-generated in the right brand voice per account.
+- Blog Factory: SEO blogs for skinclarityclub.nl. Skin themes, treatments and product deep dives.
+- SEO / GEO Analyst: technical SEO audits, position tracking and citation monitoring in ChatGPT and Perplexity.
+- Reporting and Analytics: weekly performance digest across Instagram, Shopify and SEO data. Anomaly alerts.
+- Research: trend monitoring in skincare, competitor analysis and content ideas with source citations.
+- Clyde orchestrator: the central AI Marketing Medewerker that ties the 5 skills together. Memory per account plus learning across skills.
 
-### How long does implementation take?
+Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
 
-Most standalone services go live in 1-2 weeks. Multi-service packages take 2-3 weeks. The AI Marketing Machine takes 4-6 weeks for full deployment. All timelines are measured from scope approval, not initial contact.
+Output (autonomous, weekly):
+- Carousels: circa 21 per week
+- Instagram posts: circa 15 per week
+- Stories: on demand
+- Blog articles: 2 to 4 per month
+- SEO reports: weekly
+- Performance digest: Monday 08:00
 
-### What is the minimum commitment?
+Timeline:
+- Week 1: onboarding (brand voice per account, approval workflow, KPI definitions).
+- Month 1: first full week autonomous, lots of feedback, Clyde calibrates.
+- Month 3: approval time per post drops from 4 minutes to 30 seconds. Clyde knows the small preferences.
+- Now: fully autonomous across 3 accounts and 4 brands. Sindy reviews, Clyde executes.
 
-FMai offers a 3-month risk-free trial period. Clients can exit within the first 3 months if results do not meet agreed-upon KPIs. After the trial period, services continue on a month-to-month basis.
+Testimonial: "Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit." Sindy, founder SkinClarity Club.
 
-### Does FMai work with companies outside the Netherlands?
+## Memory Architecture
 
-Yes. FMai serves clients across Europe and internationally. All services are delivered remotely. The founder speaks Dutch and English fluently. AI systems can be configured for any language.
+Clyde's 4-layer memory is the USP that separates a partnership from generic AI tools. Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
 
-### What happens if something breaks?
+Layer 1, Today (hot cache): every interaction within the current 24-hour window, immediately addressable. Used for "the post we just discussed" or "remember the angle from this morning."
 
-FMai provides support for all deployed systems. Critical issues are addressed within 24 hours. The founder monitors all systems proactively and often identifies and resolves issues before clients notice them.
+Layer 2, This month (working memory): rolling 30-day context. Recent campaigns, recent feedback, recent performance signals. The texture of "how things are going right now."
 
-### Can FMai integrate with our existing tools?
+Layer 3, Archive (history): every prior interaction, indexed and searchable but not always loaded. Pulled in when relevance is high or when the user asks about something old.
 
-Almost certainly. FMai integrates with all major CRM, email, payment, communication, and productivity platforms. Any tool with a REST API or webhook support can be connected. During the AI audit, the founder reviews your existing stack and confirms integration feasibility.
+Layer 4, Who the brand is (identity): consolidated brand essence. Voice rules, audience persona, what works and what does not. Distilled overnight via the dream process from the layers above. This is what makes Clyde act like a brand insider rather than a generic tool.
 
-### What is the AI Marketing Machine?
+Dream consolidation: nightly, Clyde re-reads the working memory and the latest archive entries and updates the identity layer. Connections that survive multiple nights become part of "who the brand is." Stale or contradicted entries fade.
 
-The AI Marketing Machine is FMai's flagship product: an integrated system of six AI modules that handles content creation, SEO, social distribution, ad management, analytics, and pipeline automation. It produces up to 160 pieces of content per month and is designed to replace 3-5 marketing hires. Currently available as a founding member beta program.
+Data export and deletion: 24-hour SLA on full export or full deletion on request. AVG (GDPR) compliant by design.
 
----
+## How it Works
 
-## Competitive Differentiators
+Application-gated, no self-service signup. Max 20 partnerships per year.
 
-1. **Founder-led delivery**: Every project gets direct access to the technical founder. No account managers, no project managers, no communication layers.
+Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
 
-2. **Speed to value**: Most implementations go live in 1-3 weeks, compared to 2-3 months at traditional agencies.
+Step 2, Founder Review (within 48 hours): Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.
 
-3. **Mid-market pricing**: Enterprise-grade AI at approximately 50% below premium agency pricing.
+Step 3, Strategy Call (30 min): honest assessment of which tier and skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
 
-4. **Full-stack capability**: From chatbots to voice agents to complete marketing automation, all under one roof with unified architecture.
+Step 4, Onboarding (week 1): we connect brand voice, social accounts, knowledge bases and configure Clyde for each client.
 
-5. **Modern AI-native stack**: Built on Anthropic Claude, n8n, and Next.js rather than legacy marketing tools with AI bolted on.
+Step 5, Correction Loop (month 1): Clyde calibrates on real feedback. Many corrections in week 1, fewer by week 4. By month 3 the approval time per post drops from 4 minutes to 30 seconds.
 
-6. **Risk-free trial**: 3-month commitment with exit option if KPIs are not met.
+Step 6, Quarterly Strategy plus Annual Retrospective: quarterly check-ins on what is working. Annual retrospective with full performance review.
 
-7. **Data sovereignty**: All automation workflows run on self-hosted n8n instances, giving clients full control over their data.
+## Founder
 
-8. **Continuous optimization**: Not a build-and-forget agency. Monthly reviews and ongoing optimization are included in every plan.
+Daley is the solo founder of FutureMarketingAI. Native Dutch speaker, based in the Netherlands. Technical builder who personally architects every system. Every partnership is reviewed by Daley directly. Contact: hello@future-marketing.ai. LinkedIn: https://www.linkedin.com/company/futuremarketingai.
 
----
+## Compliance and Trust
+
+- AVG (GDPR) compliant by design. Per-brand data isolation via Supabase Row Level Security.
+- EU AI Act transparency obligations met (chatbot identifies as AI, voice agent greeting identifies as AI).
+- Self-hosted EU infrastructure (Hetzner Amsterdam region).
+- 24-hour data export and deletion SLA.
+- No data leaves the EU for training or inference.
+- DPA (Data Processing Agreement) available on request.
+- DPIA (Data Protection Impact Assessment) covers all 6 active skill categories.
+
+## Apply
+
+Start at https://future-marketing.ai/nl/apply. 8-field application form (name, email, agency, role, revenue band, client count, preferred tier, problem statement). Review within 48 hours by Daley personally. If accepted, Daley schedules a 30-minute strategy call. Then 4-week onboarding to connect brand voice, accounts, and skills.
 
 ## Contact
 
-- Website: https://futuremarketingai.com
-- Contact page: https://futuremarketingai.com/en/contact
-- Book an AI audit: Available via Calendly through the contact page
-- Founder: Daley (direct access on all projects)
-- Location: Netherlands, EU
-- Languages: Dutch, English
+- Customer-facing: hello@future-marketing.ai
+- Privacy inquiries: privacy@future-marketing.ai (legal page only)
+- LinkedIn: https://www.linkedin.com/company/futuremarketingai
+- Canonical URL: https://future-marketing.ai
 
----
+## Languages
 
-## Pages
-
-- [Homepage](https://futuremarketingai.com): Main landing page with company overview and service highlights
-- [AI Chatbots](https://futuremarketingai.com/en/chatbots): Chatbot service details and interactive demo
-- [Workflow Automations](https://futuremarketingai.com/en/automations): Automation service details and use cases
-- [Voice Agents](https://futuremarketingai.com/en/voice-agents): Voice agent service details and capabilities
-- [AI Marketing Machine](https://futuremarketingai.com/en/marketing-machine): Flagship product details and founding member program
-- [About](https://futuremarketingai.com/en/about): Company story, mission, and founder background
-- [How It Works](https://futuremarketingai.com/en/how-it-works): Step-by-step delivery process
-- [Pricing](https://futuremarketingai.com/en/pricing): Service tiers, pricing, and comparison
-- [Blog](https://futuremarketingai.com/en/blog): Articles on AI implementation and marketing automation
-- [Contact](https://futuremarketingai.com/en/contact): Book a discovery call or send a message
-- [Legal](https://futuremarketingai.com/en/legal): Privacy policy and terms of service
+Content is authored in Dutch and translated to English and Spanish by native or senior-native translators. NL is the source of truth.
