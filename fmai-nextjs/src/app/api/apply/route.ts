@@ -1,16 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { Resend } from 'resend'
+import crypto from 'node:crypto'
+import { applyRateLimit } from '@/lib/ratelimit'
+import { supabaseAdmin } from '@/lib/supabase-admin'
+import {
+  adminApplyTemplate,
+  applicantConfirmationTemplate,
+  type ApplyPayload,
+} from '@/lib/email/apply-templates'
 
-const REVENUE_ENUM = [
-  'under_300k',
-  '300k_1m',
-  '1m_3m',
-  '3m_10m',
-  'over_10m',
-] as const
-
+const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
-
 const TIER_ENUM = ['partner', 'growth', 'professional', 'enterprise', 'founding', 'unsure'] as const
 
 const applicationSchema = z.object({
@@ -22,42 +23,37 @@ const applicationSchema = z.object({
   clientCount: z.enum(CLIENT_COUNT_ENUM),
   tier: z.enum(TIER_ENUM),
   problem: z.string().min(20).max(5000),
-  // honeypot — bots fill this, humans do not
+  // Honeypot: bots fill, humans do not.
   website: z.string().max(0).optional().default(''),
+  // Optional client-attached locale, fallback nl.
+  locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
-const rateLimit = new Map<string, { count: number; resetAt: number }>()
-const RATE_LIMIT_MAX = 3
-const RATE_LIMIT_WINDOW_MS = 60_000
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now()
-  const entry = rateLimit.get(ip)
-  if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
-    return false
-  }
-  entry.count++
-  return entry.count > RATE_LIMIT_MAX
+function hashIp(ip: string): string {
+  const salt = process.env.IP_HASH_SALT ?? ''
+  return crypto.createHash('sha256').update(ip + salt).digest('hex')
 }
-
-setInterval(() => {
-  const now = Date.now()
-  for (const [ip, entry] of rateLimit) {
-    if (now > entry.resetAt) rateLimit.delete(ip)
-  }
-}, 60_000)
 
 export async function POST(request: NextRequest) {
   const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    request.headers.get('x-real-ip') ??
     'unknown'
 
-  if (isRateLimited(ip)) {
+  const rl = await applyRateLimit.limit(ip)
+  if (!rl.success) {
     return NextResponse.json(
-      { error: 'Too many requests. Please try again in a minute.' },
-      { status: 429 },
+      { error: 'Too many requests. Please try again later.' },
+      {
+        status: 429,
+        headers: {
+          'X-RateLimit-Limit': String(rl.limit),
+          'X-RateLimit-Remaining': String(rl.remaining),
+          'X-RateLimit-Reset': String(rl.reset),
+        },
+      },
     )
   }
 
@@ -76,19 +72,68 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // Honeypot filled = silently accept (return success to avoid tipping off bots)
+  // Honeypot silently accepted: respond 200 so bots cannot tell they were caught.
   if (parsed.data.website && parsed.data.website.length > 0) {
     return NextResponse.json({ success: true }, { status: 200 })
   }
 
-  // TODO: wire to Resend/SMTP for real email delivery. For now, log + store.
-  // When RESEND_API_KEY is set, we can add a real send step here.
-  console.log('[Application Submission]', {
-    ...parsed.data,
-    problem: parsed.data.problem.substring(0, 200) + (parsed.data.problem.length > 200 ? '...' : ''),
-    ip,
-    timestamp: new Date().toISOString(),
+  const payload: ApplyPayload = {
+    name: parsed.data.name,
+    email: parsed.data.email,
+    agency: parsed.data.agency,
+    role: parsed.data.role,
+    revenue: parsed.data.revenue,
+    clientCount: parsed.data.clientCount,
+    tier: parsed.data.tier,
+    problem: parsed.data.problem,
+    locale: parsed.data.locale,
+  }
+
+  // 1. Persist in Supabase. Do not fail user submission on DB error.
+  const { error: dbError } = await supabaseAdmin.from('applications').insert({
+    name: payload.name,
+    email: payload.email,
+    agency: payload.agency,
+    role: payload.role,
+    revenue: payload.revenue,
+    client_count: payload.clientCount,
+    tier: payload.tier,
+    problem: payload.problem,
+    locale: payload.locale,
+    ip_hash: hashIp(ip),
+    user_agent: request.headers.get('user-agent') ?? null,
   })
+  if (dbError) {
+    console.error('[apply][supabase]', dbError)
+  }
+
+  // 2. Send admin + applicant confirmation in parallel.
+  const fromAddr = process.env.APPLY_EMAIL_FROM ?? 'apply@future-marketing.ai'
+  const toAddr = process.env.APPLY_EMAIL_TO ?? 'hello@future-marketing.ai'
+
+  const [adminResult, confirmationResult] = await Promise.all([
+    resend.emails.send({
+      from: `FutureMarketingAI <${fromAddr}>`,
+      to: [toAddr],
+      replyTo: payload.email,
+      subject: `[Apply] ${payload.agency} (${payload.tier})`,
+      html: adminApplyTemplate(payload),
+    }),
+    resend.emails.send({
+      from: `Daley van FutureMarketingAI <${fromAddr}>`,
+      to: [payload.email],
+      subject:
+        payload.locale === 'en'
+          ? 'Your application has been received'
+          : payload.locale === 'es'
+            ? 'Hemos recibido tu solicitud'
+            : 'Je aanvraag is ontvangen',
+      html: applicantConfirmationTemplate(payload),
+    }),
+  ])
+
+  if (adminResult.error) console.error('[apply][resend:admin]', adminResult.error)
+  if (confirmationResult.error) console.error('[apply][resend:confirm]', confirmationResult.error)
 
   return NextResponse.json({ success: true }, { status: 200 })
 }
