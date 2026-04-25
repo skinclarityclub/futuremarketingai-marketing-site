@@ -7,7 +7,7 @@ export function OrganizationJsonLd() {
     '@type': ['Organization', 'ProfessionalService'],
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/og-image.png`,
+    logo: `${SITE_URL}/logo.png`,
     email: ORG_EMAIL,
     description: ENTITY_DESCRIPTION,
     foundingDate: '2025',
