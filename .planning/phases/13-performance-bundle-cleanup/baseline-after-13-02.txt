@@ -1,0 +1,51 @@
+=== Build summary ===
+78 prerendered HTML files (vs ~78 baseline)
+
+=== Prerendered HTML sizes (after 13-02), top 25 ===
+179952 .next/server/app/es/pricing.html
+179077 .next/server/app/nl/pricing.html
+177421 .next/server/app/en/pricing.html
+163938 .next/server/app/es/skills/lead-qualifier.html
+159887 .next/server/app/nl/skills/lead-qualifier.html
+157683 .next/server/app/en/skills/lead-qualifier.html
+137960 .next/server/app/es/skills/voice-agent.html
+134172 .next/server/app/nl/skills/voice-agent.html
+133564 .next/server/app/es/skills/social-media.html
+132795 .next/server/app/es/skills/seo-geo.html
+132457 .next/server/app/es/skills/research.html
+132355 .next/server/app/es/skills/blog-factory.html
+132289 .next/server/app/es/skills/ad-creator.html
+132175 .next/server/app/es/skills/reporting.html
+132035 .next/server/app/es/skills/clyde.html
+131657 .next/server/app/en/skills/voice-agent.html
+130588 .next/server/app/es/skills/email-management.html
+130169 .next/server/app/es/skills/manychat.html
+129843 .next/server/app/es/skills/reel-builder.html
+129283 .next/server/app/nl/skills/social-media.html
+128602 .next/server/app/nl/skills/seo-geo.html
+128410 .next/server/app/nl/skills/clyde.html
+128314 .next/server/app/nl/skills/blog-factory.html
+128278 .next/server/app/nl/skills/research.html
+128209 .next/server/app/nl/skills/ad-creator.html
+
+=== Top 20 chunks gz ===
+raw=  1987547 gz=   727020 188rn_o-j3w84.js
+raw=  2012636 gz=   560996 0plockefo2ivk.js
+raw=   360929 gz=    94845 0f030-gfqg.gt.js
+raw=   227314 gz=    70891 14twbv~x5-78j.js
+raw=   270998 gz=    63380 0dw9gp0__~mea.js
+raw=   167565 gz=    47819 0isl07qsj0wqb.js
+raw=   133817 gz=    43868 0tcihyyk0f38i.js
+raw=   112594 gz=    39496 03~yq9q893hmn.js
+raw=   136649 gz=    37099 0o59ac8426icc.js
+raw=    91209 gz=    28098 0hr7u.2mj9hrh.js
+raw=    80926 gz=    22737 03a62c~ebsxkk.js
+raw=    66385 gz=    22156 03qtonq.bm-y-.js
+raw=    55434 gz=    18919 07fug2ek0t.s6.js
+raw=    47382 gz=    17162 0hnr94or_m6ue.js
+raw=    49034 gz=    16645 0t.s~6b9b_0w4.js
+raw=    54646 gz=    12836 0d3shmwh5_nmn.js
+raw=    40906 gz=    12099 0a51q.65l43cu.js
+raw=    55005 gz=    10673 17r54t3l4937z.js
+raw=    43946 gz=     9188 07uz2g0_38qia.js
+raw=    31864 gz=     9024 02y~ng0_0lc1j.js

@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 13 of 15 (Performance + Bundle Cleanup) -- IN PROGRESS (1 of 3 plans landed; 13-02 also landed in parallel during this session; 13-03 next)
-Plan: 13-01 landed (interaction-gated heavy islands + home-only Spline + lighter blobs). 9 atomic commits: 0503e64 (baseline capture), 64c29c9 (Spline preconnect+prefetch relocated layout→home page), e02602e (FloatingChatTrigger + CalendlyTrigger + BookingTrigger), 241524b (ClientIslands rewritten to mount only triggers), 463f10f (eager Zustand rehydrate removed from StoreProvider), 6c36281 (CookieConsentBanner now lazy + needsConsent gate so returning visitors never download react-cookie-consent chunk), 60c6b19 (GradientMesh home-only + blur 100→60px + sizes →400² + animations gated behind prefers-reduced-motion: no-preference + blobs hidden <1024px), 24c8c55 (HeaderClient Escape keydown listener now gated on skillsOpen||mobileOpen), d27a781 (Rule-3 cross-plan fix: setRequestLocale + generateStaticParams in (skills) layout to restore SSG for 12 skill routes after 13-02 regression).
-Status: 13-01 COMPLETE. 13-02 also COMPLETE (landed in parallel: pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT + scoped (skills) NextIntlClientProvider). 13-03 (orphan cleanup) next.
-Last activity: 2026-04-27 -- 13-01 done in ~30min: 3 new trigger components, 9 modified files, 9 atomic commits + 1 cross-plan fix. HTML sizes dropped 28-55% per route (most from 13-02's i18n subset, but Spline-link removal verified 0/0 on all 86 non-home routes). Build green (88/88 static pages, 12 skill routes restored to SSG ●). Auto-fixes: 1 cross-plan SSG regression (13-02's (skills) async layout missing setRequestLocale -- fixed under Rule 3 because 13-01 must_haves require all 87 prerendered pages), 1 UX correctness (FloatingChatTrigger now sets isOpen=true before mounting ChatWidget so one click both loads and opens, not two). Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
+Phase: 13 of 15 (Performance + Bundle Cleanup) -- IN PROGRESS (2 of 3 plans landed; 13-03 next)
+Plan: 13-01 landed in parallel session (interaction-gated heavy islands + home-only Spline + lighter blobs, 9 atomic commits). 13-02 landed (i18n NextIntlClientProvider scoping): 6 commits ddb07a0/74c96bb/6c36281/05e8a0a/d27a781/4904326 — pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT (8 namespaces ship to client) + scoped (skills) NextIntlClientProvider with chatbots + 12 skills-* keys + setRequestLocale/generateStaticParams to keep skills SSG. HTML drops: en/pricing 273KB→177KB (-96 KB raw, ~35%), en/about 184KB→88KB (-52%), en/legal/privacy 170KB→74KB (-56%), nl/legal/privacy 176KB→76KB (-57%), en/skills/voice-agent 184KB→131KB (-28%). Far exceeds plan's 20 KB target.
+Status: 13-01 + 13-02 COMPLETE. 13-03 (orphan cleanup) next.
+Last activity: 2026-04-27 -- 13-02 done in ~25min: 5 files created (i18n-pick.ts, i18n-namespaces.ts, (skills)/layout.tsx, 2 audit docs), 1 modified (root layout.tsx). Build green (88/88 static pages, 78 prerendered HTML, 12 skill routes ● SSG, zero MISSING_MESSAGE). substituteGlobals() walker preserved (Phase 12-04 invariant — runs at message-load BEFORE pick() so {maxPartners}=20 substitution lands in client HTML). Auto-fixes: Rule-1 cookie_consent typo (plan said cookie_consent, code uses common); Rule-2 5 missing client namespaces (header, chat, booking, calendly, errors, apply — plan only listed common+nav+cookie_consent, would have crashed Header/ChatWidget/BookingModal/CalendlyModal/error.tsx/not-found.tsx/ApplicationForm); Rule-3 (skills) layout missing setRequestLocale → first build dropped 12 skills to ƒ Dynamic, fixed by adding setRequestLocale + generateStaticParams. Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
 
-Progress: [███████████░░░] 75% | Phase 13: [█░░] 1/3 plans complete (13-01 landed; 13-02 also landed; 13-03 next)
+Progress: [███████████░░░] 75% | Phase 13: [██░] 2/3 plans complete (13-01 + 13-02 landed; 13-03 next)
 
 ### Audit context (2026-04-24)
 
@@ -91,6 +91,7 @@ _Updated after each plan completion_
 | Phase 12 P03 | 13min | 6 tasks | 8 files |
 | Phase 12 P04 | 15min | 7 tasks | 8 files |
 | Phase 13 P01 | 30min | 9 tasks | 12 files |
+| Phase 13 P02 | 25min | 6 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -263,6 +264,10 @@ Recent decisions affecting current work:
 - [Phase 13]: [13-01]: GradientMesh blobs hidden via display:none under 1024px -- mid-range mobiles were the largest INP contributor per audit doc 01-performance.md; zero composite layers is the cleanest fix versus shrink+de-blur
 - [Phase 13]: [13-01]: Per-page Spline resource hints emitted as inline <link> JSX in [locale]/page.tsx; Next.js 16 App Router hoists bare <link> elements into the document <head>. Removes blanket <head> from [locale]/layout.tsx that was leaking to all 86 non-home routes
 - [Phase 13]: [13-01]: Rule-3 cross-plan fix: 13-02's new (skills) async layout was calling getMessages() without setRequestLocale(), opting 12 skill routes out of SSG. Fixed in 13-01 because 13-01 must_haves require all 87 prerendered pages to keep building
+- [Phase 13]: [13-02]: Root NextIntlClientProvider scoped via pick(messages, GLOBAL_CLIENT_NAMESPACES) — 8 namespaces ship to client, 13 server-only stay server. ~96 KB raw drop on /pricing, /about, /legal/privacy HTML.
+- [Phase 13]: [13-02]: (skills) route group has its own scoped NextIntlClientProvider with chatbots + 12 skills-* namespaces; nested provider replaces parent subset so re-includes GLOBAL_CLIENT_NAMESPACES.
+- [Phase 13]: [13-02]: setRequestLocale + generateStaticParams REQUIRED in (skills)/layout.tsx — getMessages() in async layout opts subtree out of SSG without them. Caught at first build.
+- [Phase 13]: [13-02]: substituteGlobals() walker in src/i18n/request.ts preserved untouched — runs at message-load time BEFORE pick(), so {maxPartners}=20 substitution lands in client HTML correctly. Phase 12-04 invariant intact.
 
 ### Roadmap Evolution
 
