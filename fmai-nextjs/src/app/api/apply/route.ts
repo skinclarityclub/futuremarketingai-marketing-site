@@ -135,8 +135,20 @@ export async function POST(request: NextRequest) {
     }),
   ])
 
-  if (adminResult.error) console.error('[apply][resend:admin]', adminResult.error)
-  if (confirmationResult.error) console.error('[apply][resend:confirm]', confirmationResult.error)
+  if (adminResult.error) {
+    console.error('[CRITICAL][apply][resend:admin]', {
+      to: toAddr,
+      from: fromAddr,
+      error: adminResult.error,
+    })
+  }
+  if (confirmationResult.error) {
+    console.error('[CRITICAL][apply][resend:confirm]', {
+      to: payload.email,
+      from: fromAddr,
+      error: confirmationResult.error,
+    })
+  }
 
   return NextResponse.json({ success: true }, { status: 200 })
 }
