@@ -9,7 +9,7 @@ import {
   applicantConfirmationTemplate,
   type ApplyPayload,
 } from '@/lib/email/apply-templates'
-import { sendCriticalAlert } from '@/lib/telegram-alert'
+import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
 
 const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
@@ -133,6 +133,17 @@ export async function POST(request: NextRequest) {
             ? 'Hemos recibido tu solicitud'
             : 'Je aanvraag is ontvangen',
       html: applicantConfirmationTemplate(payload),
+    }),
+    sendLeadAlert(`Nieuwe apply: ${payload.agency} (${payload.tier})`, {
+      name: payload.name,
+      email: payload.email,
+      agency: payload.agency,
+      role: payload.role,
+      tier: payload.tier,
+      revenue: payload.revenue,
+      clients: payload.clientCount,
+      locale: payload.locale,
+      problem: payload.problem.length > 300 ? payload.problem.slice(0, 300) + '…' : payload.problem,
     }),
   ])
 

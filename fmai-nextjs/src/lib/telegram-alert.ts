@@ -1,4 +1,4 @@
-// Critical alert notifier — Telegram fan-out for [CRITICAL] log events.
+// Telegram fan-out for admin notifications.
 // Graceful no-op when env vars missing so dev/preview don't error.
 
 const ENDPOINT = (token: string) =>
@@ -21,7 +21,8 @@ function fmtValue(v: unknown): string {
   return escapeMarkdownV2(String(v))
 }
 
-export async function sendCriticalAlert(
+async function send(
+  emoji: string,
   title: string,
   fields: Record<string, unknown>,
 ): Promise<void> {
@@ -32,7 +33,7 @@ export async function sendCriticalAlert(
     return
   }
 
-  const lines: string[] = [`🚨 *${escapeMarkdownV2(title)}*`, '']
+  const lines: string[] = [`${emoji} *${escapeMarkdownV2(title)}*`, '']
   for (const [k, v] of Object.entries(fields)) {
     lines.push(`*${escapeMarkdownV2(k)}*: ${fmtValue(v)}`)
   }
@@ -57,3 +58,9 @@ export async function sendCriticalAlert(
     console.error('[telegram-alert] send threw', err)
   }
 }
+
+export const sendCriticalAlert = (title: string, fields: Record<string, unknown>): Promise<void> =>
+  send('🚨', title, fields)
+
+export const sendLeadAlert = (title: string, fields: Record<string, unknown>): Promise<void> =>
+  send('🎉', title, fields)

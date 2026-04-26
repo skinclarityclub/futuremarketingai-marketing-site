@@ -9,7 +9,7 @@ import {
   contactConfirmationTemplate,
   type ContactPayload,
 } from '@/lib/email/contact-templates'
-import { sendCriticalAlert } from '@/lib/telegram-alert'
+import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -107,6 +107,13 @@ export async function POST(request: NextRequest) {
             ? 'Hemos recibido tu mensaje'
             : 'Je bericht is ontvangen',
       html: contactConfirmationTemplate(payload),
+    }),
+    sendLeadAlert(`Nieuw contactbericht: ${payload.name}${payload.company ? ' (' + payload.company + ')' : ''}`, {
+      name: payload.name,
+      email: payload.email,
+      company: payload.company || null,
+      locale: payload.locale,
+      message: payload.message.length > 400 ? payload.message.slice(0, 400) + '…' : payload.message,
     }),
   ])
 
