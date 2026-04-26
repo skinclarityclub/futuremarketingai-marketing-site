@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-25T20:20:31.533Z"
+last_updated: "2026-04-26T18:18:17Z"
 progress:
   total_phases: 15
-  completed_phases: 9
+  completed_phases: 10
   total_plans: 53
-  completed_plans: 38
+  completed_plans: 39
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 13 of 15 (Performance + Bundle Cleanup) -- IN PROGRESS (2 of 3 plans landed; 13-03 next)
-Plan: 13-01 landed in parallel session (interaction-gated heavy islands + home-only Spline + lighter blobs, 9 atomic commits). 13-02 landed (i18n NextIntlClientProvider scoping): 6 commits ddb07a0/74c96bb/6c36281/05e8a0a/d27a781/4904326 — pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT (8 namespaces ship to client) + scoped (skills) NextIntlClientProvider with chatbots + 12 skills-* keys + setRequestLocale/generateStaticParams to keep skills SSG. HTML drops: en/pricing 273KB→177KB (-96 KB raw, ~35%), en/about 184KB→88KB (-52%), en/legal/privacy 170KB→74KB (-56%), nl/legal/privacy 176KB→76KB (-57%), en/skills/voice-agent 184KB→131KB (-28%). Far exceeds plan's 20 KB target.
-Status: 13-01 + 13-02 COMPLETE. 13-03 (orphan cleanup) next.
-Last activity: 2026-04-27 -- 13-02 done in ~25min: 5 files created (i18n-pick.ts, i18n-namespaces.ts, (skills)/layout.tsx, 2 audit docs), 1 modified (root layout.tsx). Build green (88/88 static pages, 78 prerendered HTML, 12 skill routes ● SSG, zero MISSING_MESSAGE). substituteGlobals() walker preserved (Phase 12-04 invariant — runs at message-load BEFORE pick() so {maxPartners}=20 substitution lands in client HTML). Auto-fixes: Rule-1 cookie_consent typo (plan said cookie_consent, code uses common); Rule-2 5 missing client namespaces (header, chat, booking, calendly, errors, apply — plan only listed common+nav+cookie_consent, would have crashed Header/ChatWidget/BookingModal/CalendlyModal/error.tsx/not-found.tsx/ApplicationForm); Rule-3 (skills) layout missing setRequestLocale → first build dropped 12 skills to ƒ Dynamic, fixed by adding setRequestLocale + generateStaticParams. Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
+Phase: 13 of 15 (Performance + Bundle Cleanup) -- COMPLETE (3 of 3 plans landed)
+Plan: 13-03 landed -- hygiene cleanup wave 2: 9 atomic commits (7f13ac7/07f2885/1b05d7f/1583cce/466d120/0a9fc0f/f43d451/1ac266a/0043afd) -- OrbitVisual.tsx deleted (290 LOC dead code), 21 debug PNGs untracked + .screenshots/ gitignored, hero-robot.png/webp removed, 4 Vite-era verify scripts deleted (auto-resolves 2 audit-08 lint errors), empty fmai-nextjs/fmai-nextjs/ scaffold removed, @google/stitch-sdk relocated to devDependencies + script moved to scripts/dev/, Space Grotesk dropped (3→2 fonts, font-display falls back to DM Sans), 11 deps bumped within safe semver bounds (ai-sdk family +52 patches, react/react-dom 19.2.5, tailwind 4.2.4, splinetool 1.12.88, playwright 1.59.1), prebuild lint gate (soft mode, _fixme_prebuild_strict for Phase 11), 16 hardcoded <a href> migrated to next-intl <Link> across ChatWidget + ProgressiveCTA + 3 tool-result cards + (marketing)/contact/page.tsx applyCallout. Build green 88/88 SSG pages, 0 no-html-link-for-pages errors. Phase 13 cumulative: HTML drops 35-57% on hot routes, 1.3 MB Spline scene fetch removed from 86 non-home routes, ~242 KB unused hero assets gone, 16 audit-08 lint errors resolved.
+Status: PHASE 13 COMPLETE (3/3 plans). Next: Phase 14 (a11y) per ROADMAP.md.
+Last activity: 2026-04-26 -- 13-03 done in ~24min: 12 files modified, 6 source files + 21 untracked PNGs deleted, 9 atomic commits + metadata. Phase-level 13-VERIFICATION.md written aggregating 13-01 + 13-02 + 13-03 deltas. Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
 
-Progress: [███████████░░░] 75% | Phase 13: [██░] 2/3 plans complete (13-01 + 13-02 landed; 13-03 next)
+Progress: [████████████░░] 80% | Phase 13: [███] 3/3 plans complete (13-01 + 13-02 + 13-03 all landed)
 
 ### Audit context (2026-04-24)
 
@@ -92,6 +92,7 @@ _Updated after each plan completion_
 | Phase 12 P04 | 15min | 7 tasks | 8 files |
 | Phase 13 P01 | 30min | 9 tasks | 12 files |
 | Phase 13 P02 | 25min | 6 tasks | 5 files |
+| Phase 13 P03 | 24min | 11 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -268,6 +269,13 @@ Recent decisions affecting current work:
 - [Phase 13]: [13-02]: (skills) route group has its own scoped NextIntlClientProvider with chatbots + 12 skills-* namespaces; nested provider replaces parent subset so re-includes GLOBAL_CLIENT_NAMESPACES.
 - [Phase 13]: [13-02]: setRequestLocale + generateStaticParams REQUIRED in (skills)/layout.tsx — getMessages() in async layout opts subtree out of SSG without them. Caught at first build.
 - [Phase 13]: [13-02]: substituteGlobals() walker in src/i18n/request.ts preserved untouched — runs at message-load time BEFORE pick(), so {maxPartners}=20 substitution lands in client HTML correctly. Phase 12-04 invariant intact.
+- [Phase 13]: [13-03]: Plan claimed 21 outdated deps but npm registry only had patch versions for 11 on day-of. Bumped 11 within safe semver bounds; majors deferred (lucide 0.x→1.x, schema-dts, typescript, eslint, @types/node) all need breaking-change reviews. `next` family stays on Phase 10 ownership.
+- [Phase 13]: [13-03]: stitch-review.mjs moved to scripts/dev/ AND @google/stitch-sdk relocated to devDependencies — script kept (Daley uses it for design refresh) but no longer pulled by `npm install --omit=dev`.
+- [Phase 13]: [13-03]: Space Grotesk dropped, NOT JetBrains Mono — `font-mono` is used 36 times in chatbot tool-result cards + pricing/about numerics; losing JetBrains would have downgraded code/numeric blocks to system mono. font-display now falls back to DM Sans 700.
+- [Phase 13]: [13-03]: Soft prebuild lint gate (`npm run lint || true`) added — surfaces audit-08 React Compiler errors at every build without blocking until Phase 11 fixes them. _fixme_prebuild_strict comment in package.json marks the strict-mode flip.
+- [Phase 13]: [13-03]: 16 hardcoded `<a href>` migrated to next-intl Link, NOT 14 from plan — extra 2 in (marketing)/contact/page.tsx applyCallout button. NL/ES users clicking from chatbot LeadScoreCard CTA → contact → apply would otherwise lose locale on the second hop. Folded under Rule 3 in-scope adjacent fix.
+- [Phase 13]: [13-03]: 21 debug screenshots at fmai-nextjs/ root untracked from git (kept on disk in fmai-nextjs/.screenshots/, gitignored). Repo working tree no longer ships chatbots-scroll*, hero-*, mega-menu-final, nextjs-3001, verify-*, vite-*, voice-scroll* PNGs.
+- [Phase 13]: [13-03]: Empty fmai-nextjs/fmai-nextjs/ nested scaffold deleted via rm -rf (no git diff because no tracked files inside) — folded into Task 6 commit. Future agents no longer see a ghost directory.
 
 ### Roadmap Evolution
 
@@ -287,6 +295,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-27
-Stopped at: Completed 13-01-PLAN.md (interaction-gated heavy islands + home-only Spline + lighter GradientMesh + lazy CookieConsentBanner + gated HeaderClient listeners + deferred Zustand rehydrate). 9 atomic commits 0503e64/64c29c9/e02602e/241524b/463f10f/6c36281/60c6b19/24c8c55/d27a781. 30min. Build green 88/88 pages, 12 skill routes restored to SSG after Rule-3 cross-plan fix to 13-02's (skills) layout. Plan 13-02 also landed in parallel during this session (commits ddb07a0/74c96bb/05e8a0a: pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT + scoped (skills) NextIntlClientProvider).
-Resume file: None — proceed to plan 13-03 (orphan cleanup) per ROADMAP.md. 13-01 success criteria all PASS: 3 trigger components created, ChatWidget/CalendlyModal/BookingModal/react-cookie-consent now interaction-gated, Spline preconnect+prefetch home-only verified by grep (count=0 on 86 non-home routes), GradientMesh home-only with reduced blob cost, HeaderClient listeners gated on open-state, Zustand rehydrate deferred to first chat click, build green 88/88 (29min compile). Daley still owes 2 decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04).
+Last session: 2026-04-26
+Stopped at: Completed 13-03-PLAN.md (hygiene cleanup wave 2 — dead code + asset deletion, dep bumps, font trim, soft prebuild lint gate, 16 hardcoded a-href → next-intl Link migration). 9 atomic commits 7f13ac7/07f2885/1b05d7f/1583cce/466d120/0a9fc0f/f43d451/1ac266a/0043afd. 24min. Build green 88/88 pages, all 12 skill routes still ● SSG, 78 prerendered HTML files, 0 no-html-link-for-pages errors. Phase 13 COMPLETE (3/3 plans). Phase-level 13-VERIFICATION.md aggregates cumulative deltas across 13-01 + 13-02 + 13-03.
+Resume file: None — proceed to Phase 14 (a11y) per ROADMAP.md. Phase 13 success criteria all PASS: HTML drops 35-57% on hot routes, 1.3 MB Spline removed from 86 non-home routes, 16 audit-08 lint errors resolved (14 i18n-link + 2 require-imports), repo hygiene baseline restored (no loose root PNGs, no Vite-era scripts, no nested scaffold ghost, no orphaned hero assets). Daley still owes 2 decisions from Phase 12 (unrelated to 13): VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Phase 13 ready to PR.

@@ -1,0 +1,70 @@
+=== Final chunk sizes (raw) — top 30 by size ===
+2016110 16fed.t4sprhd.js
+1987547 188rn_o-j3w84.js
+368011 0qu80.3v_bgqi.js
+270998 0dw9gp0__~mea.js
+227314 14twbv~x5-78j.js
+167565 0isl07qsj0wqb.js
+144834 01-03.s-1_6~w.js
+133817 0tcihyyk0f38i.js
+112594 03~yq9q893hmn.js
+89694 0ps7d-9hp7iiu.js
+80926 03a62c~ebsxkk.js
+58110 0mf1jwmt5m0q-.js
+55005 17r54t3l4937z.js
+54646 0d3shmwh5_nmn.js
+49034 0c1s5r5iac-6y.js
+47398 0f4i1rfyxjyv3.js
+46592 0m_9ba.b.ypxq.js
+43946 07uz2g0_38qia.js
+40906 0a51q.65l43cu.js
+29152 02oh~d.15f9ht.js
+26842 0z0e6j.21c1e5.js
+26101 12kc1ac5zh03o.js
+25523 02xb8vm4u8q1v.js
+25081 01ec70sj2d7d4.js
+23473 0duj2aogor~ia.js
+20944 0527o15ui9v1b.js
+12812 0c1-ig_59rt2e.js
+11949 0ud81t5m407n..js
+10580 turbopack-11gh9~hb.twqb.js
+9015 0mino5otk-86n.js
+
+=== Final prerendered HTML sizes (top 25 by size) ===
+179527 .next/server/app/es/pricing.html
+178652 .next/server/app/nl/pricing.html
+176996 .next/server/app/en/pricing.html
+163513 .next/server/app/es/skills/lead-qualifier.html
+159462 .next/server/app/nl/skills/lead-qualifier.html
+157258 .next/server/app/en/skills/lead-qualifier.html
+137535 .next/server/app/es/skills/voice-agent.html
+133747 .next/server/app/nl/skills/voice-agent.html
+133139 .next/server/app/es/skills/social-media.html
+132370 .next/server/app/es/skills/seo-geo.html
+132032 .next/server/app/es/skills/research.html
+131930 .next/server/app/es/skills/blog-factory.html
+131864 .next/server/app/es/skills/ad-creator.html
+131750 .next/server/app/es/skills/reporting.html
+131610 .next/server/app/es/skills/clyde.html
+131232 .next/server/app/en/skills/voice-agent.html
+130163 .next/server/app/es/skills/email-management.html
+129744 .next/server/app/es/skills/manychat.html
+129418 .next/server/app/es/skills/reel-builder.html
+128858 .next/server/app/nl/skills/social-media.html
+128177 .next/server/app/nl/skills/seo-geo.html
+127985 .next/server/app/nl/skills/clyde.html
+127889 .next/server/app/nl/skills/blog-factory.html
+127853 .next/server/app/nl/skills/research.html
+127784 .next/server/app/nl/skills/ad-creator.html
+
+=== npm audit production ===
+  Depends on vulnerable versions of uuid
+  node_modules/svix
+    resend  >=6.2.0-canary.0
+    Depends on vulnerable versions of svix
+    node_modules/resend
+
+3 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
