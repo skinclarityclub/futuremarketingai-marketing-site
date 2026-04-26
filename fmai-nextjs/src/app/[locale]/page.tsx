@@ -54,6 +54,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <PageShell>
+      {/*
+        Spline hero hints — home page only (Next.js 16 App Router hoists
+        bare <link> elements into the document <head>). Lives here, not
+        in [locale]/layout.tsx, to avoid 1.3 MB bandwidth on 86 non-home
+        prerendered routes. See 13-01-PLAN.md Task 2.
+      */}
+      <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
+      <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
+
       {/* JSON-LD Structured Data */}
       <WebSiteJsonLd />
       <WebPageJsonLd
