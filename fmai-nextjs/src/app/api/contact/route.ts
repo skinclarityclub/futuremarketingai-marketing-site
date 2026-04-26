@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
 
   // 2. Send admin + submitter confirmation in parallel.
   const fromAddr = process.env.CONTACT_EMAIL_FROM ?? 'contact@future-marketing.ai'
-  const toAddr = process.env.CONTACT_EMAIL_TO ?? 'hello@future-marketing.ai'
+  const toAddr = process.env.CONTACT_EMAIL_TO ?? 'info@future-marketing.ai'
 
   const [adminResult, confirmationResult] = await Promise.all([
     resend.emails.send({
