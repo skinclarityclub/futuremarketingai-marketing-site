@@ -123,8 +123,11 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
     setMobileSkillsOpen(false)
   }, [pathname])
 
-  // Close dropdowns on Escape
+  // Close dropdowns on Escape -- only attached while a menu is actually open
+  // (was previously unconditional, paying always-hot keydown listener cost on
+  // every route). See 13-01-PLAN.md Task 8.
   useEffect(() => {
+    if (!skillsOpen && !mobileOpen) return
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setSkillsOpen(false)
@@ -133,9 +136,11 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
     }
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [skillsOpen, mobileOpen])
 
-  // Close services dropdown when clicking outside (ref-scoped — does not fight onClick)
+  // Close services dropdown when clicking outside (ref-scoped -- does not
+  // fight onClick). Gated on skillsOpen so no listener is attached the
+  // 99% of user-time the dropdown is closed.
   useEffect(() => {
     if (!skillsOpen) return
     const handleOutside = (e: MouseEvent) => {
