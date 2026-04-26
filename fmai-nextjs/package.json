@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "_fixme_prebuild_strict": "Phase 13-03 ships 'npm run lint || true' so the lint output prints at every build without blocking. Switch to bare 'npm run lint' (strict) after Phase 11 fixes the ~36 React Compiler lint errors. See docs/audits/2026-04-24-full-audit/08-technical-quality.md section 2.",
+    "prebuild": "npm run lint || true",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
