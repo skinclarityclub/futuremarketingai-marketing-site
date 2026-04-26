@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 12 of 15 (Brand Assets + Copy Polish) -- COMPLETE (4 of 4 plans landed)
-Plan: 12-04 landed (copy glossary + MAX_PARTNERS_PER_YEAR interpolation + legal dates). 7 atomic commits: 893b789 (14× klanten→merken in NL — pricing tier descs, apply form, memory.isolation, case-study CTA, email use case, +2 chatbots.* glossary tools→systemen), 3363637 (credit pack Onbeperkt/Unlimited/Ilimitado→Max in 3 locales + DECISION-PENDING-credit-pack-name.md for Stripe-side rename), 109b419 (14 IK/WIJ rewrites op about+contact+founding-member; includes Rule-1 contact.book_demo Boek→Plan glossary fix), 30e91c4 (4 NL glossary cleanups: feature-verzoeken→verzoeken voor nieuwe vaardigheden, skills-clyde losse tools→uitvoerders/schermen + 2 ES mechanical fixes RGPD por defecto/asociación AI + 3 EN contractions), 37e4a5f ({maxPartners} interpolation in 30 message keys via substituteGlobals walker in src/i18n/request.ts — next-intl 4.x removed defaultTranslationValues prop so Rule-3 deviation: load-time substitution replaces v3 prop API), c685f55 (legal.last_updated bumped to 2026-04-24 localized in 3 locales), 1303988 (capture-12-04.mjs Playwright script + build-green evidence).
-Status: PHASE 12 COMPLETE. Phase 13 next per ROADMAP.md.
-Last activity: 2026-04-25 -- 12-04 done in 15min: 53 substantive copy edits across 3 locales (28 NL + 13 EN + 12 ES), src/i18n/request.ts gained substituteGlobals() walker for app-wide constants pattern (next-intl 4.x equivalent for v3 defaultTranslationValues). Auto-fixes: 1 glossary slip (contact.book_demo Boek→Plan), 1 blocking API change (next-intl prop→load-time substitution), 1 SSoT consistency (2 extra cap-references found via grep sweep). Build green (87/87 pages, 5.7s compile, zero TS errors). jq parity verified across NL/EN/ES. Daley owes Stripe Product rename ".planning/phases/12-brand-copy-polish/DECISION-PENDING-credit-pack-name.md" (default-after-2-weeks = Max stays).
+Phase: 13 of 15 (Performance + Bundle Cleanup) -- IN PROGRESS (1 of 3 plans landed; 13-02 also landed in parallel during this session; 13-03 next)
+Plan: 13-01 landed (interaction-gated heavy islands + home-only Spline + lighter blobs). 9 atomic commits: 0503e64 (baseline capture), 64c29c9 (Spline preconnect+prefetch relocated layout→home page), e02602e (FloatingChatTrigger + CalendlyTrigger + BookingTrigger), 241524b (ClientIslands rewritten to mount only triggers), 463f10f (eager Zustand rehydrate removed from StoreProvider), 6c36281 (CookieConsentBanner now lazy + needsConsent gate so returning visitors never download react-cookie-consent chunk), 60c6b19 (GradientMesh home-only + blur 100→60px + sizes →400² + animations gated behind prefers-reduced-motion: no-preference + blobs hidden <1024px), 24c8c55 (HeaderClient Escape keydown listener now gated on skillsOpen||mobileOpen), d27a781 (Rule-3 cross-plan fix: setRequestLocale + generateStaticParams in (skills) layout to restore SSG for 12 skill routes after 13-02 regression).
+Status: 13-01 COMPLETE. 13-02 also COMPLETE (landed in parallel: pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT + scoped (skills) NextIntlClientProvider). 13-03 (orphan cleanup) next.
+Last activity: 2026-04-27 -- 13-01 done in ~30min: 3 new trigger components, 9 modified files, 9 atomic commits + 1 cross-plan fix. HTML sizes dropped 28-55% per route (most from 13-02's i18n subset, but Spline-link removal verified 0/0 on all 86 non-home routes). Build green (88/88 static pages, 12 skill routes restored to SSG ●). Auto-fixes: 1 cross-plan SSG regression (13-02's (skills) async layout missing setRequestLocale -- fixed under Rule 3 because 13-01 must_haves require all 87 prerendered pages), 1 UX correctness (FloatingChatTrigger now sets isOpen=true before mounting ChatWidget so one click both loads and opens, not two). Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
 
-Progress: [██████████░░░░] 71% | Phase 12: [████] 4/4 plans complete
+Progress: [███████████░░░] 75% | Phase 13: [█░░] 1/3 plans complete (13-01 landed; 13-02 also landed; 13-03 next)
 
 ### Audit context (2026-04-24)
 
@@ -90,6 +90,7 @@ _Updated after each plan completion_
 | Phase 12 P01 | 16min | 9 tasks | 24 files | brand assets via sharp+SVG generator, full src/ palette migration, /api/og dynamic route + check:palette regression gate
 | Phase 12 P03 | 13min | 6 tasks | 8 files |
 | Phase 12 P04 | 15min | 7 tasks | 8 files |
+| Phase 13 P01 | 30min | 9 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -255,6 +256,13 @@ Recent decisions affecting current work:
 - [Phase 12-04]: 200 in about.capacity.reasoning kept literal — rhetorical contrast number (rather 20 ... than 200), not the actual cap.
 - [Phase 12-04]: Legal date format = localized long form per RESEARCH §9 ('24 april 2026', 'April 24, 2026', '24 de abril de 2026') — not ISO. Locale-native dates read better in policy text.
 - [Phase 12-04]: contact.book_demo.title 'Boek een strategiegesprek' renamed 'Plan een strategiegesprek' under Rule 1 brand-glossary (not in plan but adjacent IK-context glossary slip).
+- [Phase 13]: [13-01]: FloatingChatTrigger sets isOpen=true in store BEFORE mounting ChatWidget so user's one click both loads the chunk AND opens the panel; ChatWidget reads isOpen on first render and shows panel directly (avoids two-click UX regression)
+- [Phase 13]: [13-01]: Reused existing ChatWidgetIsland inside the lazy dynamic import in FloatingChatTrigger -- preserves the per-pathname welcome message + suggested prompts mapping centralised in one place; the trigger only adds the loading boundary
+- [Phase 13]: [13-01]: CookieConsentBanner double-gated -- needsConsent state in ClientIslands prevents the dynamic chunk from being requested AND the component itself short-circuits if cookie present (defense-in-depth, prevents listener attach on chunk race)
+- [Phase 13]: [13-01]: GradientMesh blob animations switched to positive-default media (prefers-reduced-motion: no-preference) instead of relying on the existing reduce-override block; cleaner reasoning + decoupled from global override
+- [Phase 13]: [13-01]: GradientMesh blobs hidden via display:none under 1024px -- mid-range mobiles were the largest INP contributor per audit doc 01-performance.md; zero composite layers is the cleanest fix versus shrink+de-blur
+- [Phase 13]: [13-01]: Per-page Spline resource hints emitted as inline <link> JSX in [locale]/page.tsx; Next.js 16 App Router hoists bare <link> elements into the document <head>. Removes blanket <head> from [locale]/layout.tsx that was leaking to all 86 non-home routes
+- [Phase 13]: [13-01]: Rule-3 cross-plan fix: 13-02's new (skills) async layout was calling getMessages() without setRequestLocale(), opting 12 skill routes out of SSG. Fixed in 13-01 because 13-01 must_haves require all 87 prerendered pages to keep building
 
 ### Roadmap Evolution
 
@@ -274,6 +282,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-25
-Stopped at: Completed 12-04 (copy glossary + MAX_PARTNERS_PER_YEAR interpolation + legal dates) — 7 atomic commits 893b789/3363637/109b419/30e91c4/37e4a5f/c685f55/1303988. 15min duration. **Phase 12 fully complete (4 of 4 plans)**. Daley owes 2 decisions: VoiceDemoSection phone number (12-03, .planning/phases/12-brand-copy-polish/DECISION-PENDING-phone-number.md, default-after-2-weeks = hide-and-CTA-only) + Stripe Product rename to "Max Credit Pack" (12-04, DECISION-PENDING-credit-pack-name.md, default-after-2-weeks = Max stays).
-Resume file: None — proceed to Phase 13 per ROADMAP.md. Phase 12 success criteria all PASS: glossary compliance enforced (merken, merkstem, IK-voice), credit pack renamed Max, MAX_PARTNERS_PER_YEAR interpolated via single-source layer (substituteGlobals walker — modern next-intl 4.x equivalent for v3 defaultTranslationValues), legal dates current, 3 locales jq parity, npm run build green (87/87 pages, 5.7s). Wave 1 keys (header.*, chat.widget.*, common.comingSoon, pricing.tiers.professional.mostPopular, pricing.matrix.*) NOT regressed.
+Last session: 2026-04-27
+Stopped at: Completed 13-01-PLAN.md (interaction-gated heavy islands + home-only Spline + lighter GradientMesh + lazy CookieConsentBanner + gated HeaderClient listeners + deferred Zustand rehydrate). 9 atomic commits 0503e64/64c29c9/e02602e/241524b/463f10f/6c36281/60c6b19/24c8c55/d27a781. 30min. Build green 88/88 pages, 12 skill routes restored to SSG after Rule-3 cross-plan fix to 13-02's (skills) layout. Plan 13-02 also landed in parallel during this session (commits ddb07a0/74c96bb/05e8a0a: pick() helper + GLOBAL_CLIENT_NAMESPACES SSoT + scoped (skills) NextIntlClientProvider).
+Resume file: None — proceed to plan 13-03 (orphan cleanup) per ROADMAP.md. 13-01 success criteria all PASS: 3 trigger components created, ChatWidget/CalendlyModal/BookingModal/react-cookie-consent now interaction-gated, Spline preconnect+prefetch home-only verified by grep (count=0 on 86 non-home routes), GradientMesh home-only with reduced blob cost, HeaderClient listeners gated on open-state, Zustand rehydrate deferred to first chat click, build green 88/88 (29min compile). Daley still owes 2 decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04).
