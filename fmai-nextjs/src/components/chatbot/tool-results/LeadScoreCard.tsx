@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 export interface LeadScoreData {
   score: number
@@ -182,12 +183,12 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
             </ul>
           </div>
         )}
-        <a
+        <Link
           href="/contact"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
           Get your personalized ROI analysis
-        </a>
+        </Link>
       </motion.div>
     )
   }
@@ -284,12 +285,12 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
           )}
         </div>
       )}
-      <a
+      <Link
         href="/contact"
         className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
       >
         Book a discovery call
-      </a>
+      </Link>
     </motion.div>
   )
 }

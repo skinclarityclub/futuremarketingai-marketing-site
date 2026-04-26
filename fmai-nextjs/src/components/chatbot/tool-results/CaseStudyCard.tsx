@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { Building2, AlertTriangle, Lightbulb, TrendingUp } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 export interface CaseStudyData {
   caseStudy: {
@@ -75,12 +76,12 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
           ))}
         </ul>
       </div>
-      <a
+      <Link
         href="/contact"
         className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
       >
         Want similar results? Book a call
-      </a>
+      </Link>
     </motion.div>
   )
 }

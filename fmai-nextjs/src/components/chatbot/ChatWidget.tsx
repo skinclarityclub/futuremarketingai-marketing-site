@@ -3,6 +3,7 @@
 import { useEffect, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
+import { Link } from '@/i18n/navigation'
 import { usePersonaChat } from '@/hooks/usePersonaChat'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { FloatingButton } from './FloatingButton'
@@ -107,9 +108,9 @@ export function ChatWidget({
     <div className="border-t border-border-primary bg-bg-elevated/80 px-4 py-3 text-center">
       <p className="text-xs text-text-secondary">
         {t('demoLimitMessage')}{' '}
-        <a href="/contact" className="font-medium text-accent-system hover:underline">
+        <Link href="/contact" className="font-medium text-accent-system hover:underline">
           {t('demoLimitCta')}
-        </a>
+        </Link>
       </p>
     </div>
   )

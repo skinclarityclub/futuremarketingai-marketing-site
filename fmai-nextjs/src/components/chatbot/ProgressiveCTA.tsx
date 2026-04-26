@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'motion/react'
+import { Link } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
 
 interface ProgressiveCTAProps {
@@ -81,12 +82,12 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
     >
       <p className="text-sm text-text-secondary">
         Enjoying the demo?
-        <a
+        <Link
           href="/contact"
           className="ml-1 text-accent-system hover:underline font-medium cursor-pointer"
         >
           Learn more about our chatbot solutions
-        </a>
+        </Link>
       </p>
     </motion.div>
   )

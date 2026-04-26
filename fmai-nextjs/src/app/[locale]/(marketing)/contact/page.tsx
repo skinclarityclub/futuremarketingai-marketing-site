@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
@@ -69,12 +70,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </h2>
               <p className="text-sm text-text-secondary">{t('applyCallout.body')}</p>
             </div>
-            <a
+            <Link
               href="/apply"
               className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-accent-system text-bg-deep font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity text-sm"
             >
               {t('applyCallout.button')}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

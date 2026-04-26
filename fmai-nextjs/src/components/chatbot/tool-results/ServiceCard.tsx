@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { Check, ArrowRight, Zap, Bot, BarChart3, Megaphone } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 export interface ServiceCardData {
   name: string
@@ -168,12 +169,12 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
         {normalizedTiers.map((tier, i) => (
           <PricingTier key={tier.name} tier={tier} index={i} />
         ))}
-        <a
+        <Link
           href="/contact"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
           Get a custom quote
-        </a>
+        </Link>
       </div>
     )
   }
@@ -273,12 +274,12 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
         {normalizedServices.map((service, i) => (
           <SingleServiceCard key={service.name || i} data={service} index={i} />
         ))}
-        <a
+        <Link
           href="/contact"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
           Book a discovery call
-        </a>
+        </Link>
       </div>
     )
   }
