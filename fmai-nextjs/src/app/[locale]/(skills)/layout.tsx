@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { pick } from '@/lib/i18n-pick'
 import { GLOBAL_CLIENT_NAMESPACES } from '@/lib/i18n-namespaces'
+import { routing } from '@/i18n/routing'
 
 /**
  * Scoped NextIntlClientProvider for the (skills) route group.
@@ -33,7 +34,24 @@ function getSkillsNamespaces(messages: Record<string, unknown>): string[] {
   return Object.keys(messages).filter((k) => k.startsWith('skills-'))
 }
 
-export default async function SkillsLayout({ children }: { children: ReactNode }) {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export default async function SkillsLayout({
+  children,
+  params,
+}: {
+  children: ReactNode
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  // Required for static generation -- without this, getMessages() below
+  // opts the entire (skills) subtree out of SSG and the 12 skill routes
+  // become server-rendered on demand. See 13-01-PLAN.md Task 9 deviation
+  // (Rule 3 cross-plan fix for 13-02 regression).
+  setRequestLocale(locale)
+
   const messages = await getMessages()
   const skillsNamespaces = getSkillsNamespaces(messages)
 
