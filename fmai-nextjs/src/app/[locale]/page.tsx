@@ -14,6 +14,7 @@ import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
+import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { Zap, ArrowRight } from 'lucide-react'
@@ -62,6 +63,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       */}
       <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
       <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
+
+      {/*
+        GradientMesh -- 3 blurred animated blobs behind the home hero.
+        Home-only (was previously in [locale]/layout.tsx). Position is
+        fixed inset-0 so it covers the home viewport like before.
+        See 13-01-PLAN.md Task 7.
+      */}
+      <GradientMesh />
 
       {/* JSON-LD Structured Data */}
       <WebSiteJsonLd />

@@ -271,30 +271,31 @@
   background: linear-gradient(135deg, #00d4aa 0%, #f5a623 100%);
 }
 
-/* Blob mesh background */
+/* Blob mesh background -- only rendered on the home page now (Phase 13-01). */
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  /* blur reduced 100px -> 60px to cut composite cost. The mesh stays soft
+     enough to read as ambient light because the 0.12 opacity dominates. */
+  filter: blur(60px);
   opacity: 0.12;
   will-change: transform;
   contain: layout style paint;
 }
 .blob-warm {
-  width: 600px;
-  height: 600px;
+  /* size reduced 600x600 -> 400x400 (-55% paint area) */
+  width: 400px;
+  height: 400px;
   background: #f5a623;
   top: -10%;
   right: -5%;
-  animation: blobFloat1 25s ease-in-out infinite;
 }
 .blob-cool {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   background: #0abab5;
   bottom: -10%;
   left: -10%;
-  animation: blobFloat2 30s ease-in-out infinite;
 }
 .blob-mixed {
   width: 400px;
@@ -302,7 +303,25 @@
   background: linear-gradient(135deg, #f5a623, #0abab5);
   top: 40%;
   left: 30%;
-  animation: blobFloat3 20s ease-in-out infinite;
+}
+
+/* Animations only run when the user has not requested reduced motion AND
+   the viewport is wide enough to show the mesh (we hide blobs below lg
+   in the rule below). Saves continuous GPU compositing on small screens
+   and accessibility-conscious users. */
+@media (prefers-reduced-motion: no-preference) {
+  .blob-warm  { animation: blobFloat1 28s ease-in-out infinite; }
+  .blob-cool  { animation: blobFloat2 32s ease-in-out infinite; }
+  .blob-mixed { animation: blobFloat3 30s ease-in-out infinite; }
+}
+
+/* Mid-range mobile + tablet: skip the mesh entirely. Three 400px blurred
+   composite layers were the largest contributor to INP on these devices
+   per audit doc 01-performance.md. */
+@media (max-width: 1023px) {
+  .blob {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

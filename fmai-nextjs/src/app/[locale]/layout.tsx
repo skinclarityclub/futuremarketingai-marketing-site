@@ -14,7 +14,6 @@ import { Providers } from '@/components/providers/Providers'
 import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
-import { GradientMesh } from '@/components/hero/GradientMesh'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/app/globals.css'
 
@@ -67,7 +66,11 @@ export default async function LocaleLayout({
         >
           {t('skipToContent')}
         </a>
-        <GradientMesh />
+        {/*
+          GradientMesh now renders only on the home page
+          (src/app/[locale]/page.tsx) to avoid 3 blurred animated blobs
+          running on every route. See 13-01-PLAN.md Task 7.
+        */}
         {/*
           Ship only the namespaces consumed by client components mounted
           everywhere (header, footer chrome via 'common', cookie banner,
