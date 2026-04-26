@@ -1,39 +1,28 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { FloatingChatTrigger } from '@/components/chatbot/FloatingChatTrigger'
+import { CalendlyTrigger } from '@/components/interactive/CalendlyTrigger'
+import { BookingTrigger } from '@/components/booking/BookingTrigger'
 
 /**
- * ClientIslands -- Lazy-loaded client islands for heavy third-party components.
+ * ClientIslands -- mounts interaction-driven lightweight triggers on
+ * every page. Heavy chunks (ChatWidget, CalendlyModal, BookingModal)
+ * are now lazy-loaded only when the corresponding open-state flips
+ * true:
+ *   - FloatingChatTrigger -> ChatWidget on first click
+ *   - CalendlyTrigger     -> CalendlyModal when chatbotStore.calendlyOpen
+ *   - BookingTrigger      -> BookingModal when bookingStore.isOpen
  *
- * ChatWidgetIsland (~20 client files + AI SDK + Zustand) and CalendlyIsland
- * (react-calendly) are dynamically imported with ssr:false to keep them out
- * of the initial page bundle, improving LCP and reducing First Load JS.
- *
- * This wrapper exists because next/dynamic with ssr:false is only allowed
- * in Client Components (not Server Components like layout.tsx).
+ * See 13-01-PLAN.md Tasks 3 + 4. Replaces the previous eager-dynamic
+ * ChatWidgetIsland + CalendlyIsland + BookingModal pattern that paid
+ * ~71 KB gz on every pageload regardless of interaction.
  */
-
-const ChatWidgetIsland = dynamic(
-  () => import('@/components/chatbot/ChatWidgetIsland').then((mod) => mod.ChatWidgetIsland),
-  { ssr: false }
-)
-
-const CalendlyIsland = dynamic(
-  () => import('@/components/interactive/CalendlyIsland').then((mod) => mod.CalendlyIsland),
-  { ssr: false }
-)
-
-const BookingModal = dynamic(
-  () => import('@/components/booking/BookingModal').then((mod) => mod.BookingModal),
-  { ssr: false }
-)
-
 export function ClientIslands() {
   return (
     <>
-      <ChatWidgetIsland />
-      <CalendlyIsland />
-      <BookingModal />
+      <FloatingChatTrigger />
+      <CalendlyTrigger />
+      <BookingTrigger />
     </>
   )
 }
