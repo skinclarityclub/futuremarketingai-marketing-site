@@ -9,6 +9,7 @@ import {
   contactConfirmationTemplate,
   type ContactPayload,
 } from '@/lib/email/contact-templates'
+import { sendCriticalAlert } from '@/lib/telegram-alert'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -110,18 +111,14 @@ export async function POST(request: NextRequest) {
   ])
 
   if (adminResult.error) {
-    console.error('[CRITICAL][contact][resend:admin]', {
-      to: toAddr,
-      from: fromAddr,
-      error: adminResult.error,
-    })
+    const ctx = { route: '/api/contact', to: toAddr, from: fromAddr, error: adminResult.error }
+    console.error('[CRITICAL][contact][resend:admin]', ctx)
+    await sendCriticalAlert('Contact admin mail failed', ctx)
   }
   if (confirmationResult.error) {
-    console.error('[CRITICAL][contact][resend:confirm]', {
-      to: payload.email,
-      from: fromAddr,
-      error: confirmationResult.error,
-    })
+    const ctx = { route: '/api/contact', to: payload.email, from: fromAddr, error: confirmationResult.error }
+    console.error('[CRITICAL][contact][resend:confirm]', ctx)
+    await sendCriticalAlert('Contact confirmation mail failed', ctx)
   }
 
   return NextResponse.json(

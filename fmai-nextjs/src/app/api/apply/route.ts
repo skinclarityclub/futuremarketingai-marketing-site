@@ -9,6 +9,7 @@ import {
   applicantConfirmationTemplate,
   type ApplyPayload,
 } from '@/lib/email/apply-templates'
+import { sendCriticalAlert } from '@/lib/telegram-alert'
 
 const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
@@ -136,18 +137,14 @@ export async function POST(request: NextRequest) {
   ])
 
   if (adminResult.error) {
-    console.error('[CRITICAL][apply][resend:admin]', {
-      to: toAddr,
-      from: fromAddr,
-      error: adminResult.error,
-    })
+    const ctx = { route: '/api/apply', to: toAddr, from: fromAddr, error: adminResult.error }
+    console.error('[CRITICAL][apply][resend:admin]', ctx)
+    await sendCriticalAlert('Apply admin mail failed', ctx)
   }
   if (confirmationResult.error) {
-    console.error('[CRITICAL][apply][resend:confirm]', {
-      to: payload.email,
-      from: fromAddr,
-      error: confirmationResult.error,
-    })
+    const ctx = { route: '/api/apply', to: payload.email, from: fromAddr, error: confirmationResult.error }
+    console.error('[CRITICAL][apply][resend:confirm]', ctx)
+    await sendCriticalAlert('Apply confirmation mail failed', ctx)
   }
 
   return NextResponse.json({ success: true }, { status: 200 })

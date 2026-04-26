@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'node:crypto'
+import { sendCriticalAlert } from '@/lib/telegram-alert'
 
 // Resend uses Svix for webhook signing.
 // Headers: svix-id, svix-timestamp, svix-signature ("v1,<base64>" — multiple versions space-separated)
@@ -89,7 +90,8 @@ export async function POST(request: NextRequest) {
 
   if (CRITICAL_EVENTS.has(type)) {
     const data = event.data ?? {}
-    console.error(`[CRITICAL][resend:webhook][${type}]`, {
+    const fields = {
+      event: type,
       email_id: data.email_id,
       to: data.to,
       from: data.from,
@@ -97,7 +99,9 @@ export async function POST(request: NextRequest) {
       bounce: data.bounce,
       reason: data.reason,
       created_at: event.created_at,
-    })
+    }
+    console.error(`[CRITICAL][resend:webhook][${type}]`, fields)
+    await sendCriticalAlert(`Resend webhook: ${type}`, fields)
   }
 
   return NextResponse.json({ received: true }, { status: 200 })
