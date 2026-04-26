@@ -114,3 +114,28 @@ Weighted blended expectation: `+25-45%` overall application submission volume an
 Alle open questions voor deze phase zijn vastgelegd in `.planning/phases/DECISIONS-2026-04-24.md`.
 
 Execute agents: lees dat document vóór elke `plan-XX` die een decision-gate heeft. De decisions zijn bindend voor deze wave, reversible via commit als later blijkt dat een keuze herziening vereist.
+
+---
+
+## Carried over from Phase 12 (pre-go-live housekeeping)
+
+Two items deferred from Phase 12 closure (2026-04-25). They do not block any 15-XX plan, but should be cleared before or alongside the live launch push that this phase enables.
+
+### CARRY-12-A: Stripe live-mode product creation
+
+- **What**: Recreate `prod_UDRFwUyrvMZgVC` ("FMai Max Credit Pack", 15.000 credits, €697) and the rest of the FMai catalog in **live mode**. Sandbox rename (acct_1TF0EORvwQiATJHm, livemode=false) is already correct as of 2026-04-25.
+- **Why**: Memory `project_pricing_handover.md` notes "Stripe products still pending" for live mode. Until live products exist, the marketing site advertises pricing it cannot transact on. Phase 15 ships post-submit Calendly booking + lead magnets that funnel toward conversion — invoicing must be functional before that funnel is opened to real prospects.
+- **How**: `stripe products create --name="FMai Max Credit Pack" ...` against the live key. Mirror the sandbox catalog in `fma-app/src/lib/skills.ts` AGENT_TIERS + creditPacks. Verify `prod_*` IDs land in `STRIPE_PRICE_*` envs on `fma-app` Vercel project (live env scope).
+- **Verify**: `stripe products list --live --limit 100` matches `fma-app/src/lib/skills.ts` 1:1, no naming drift.
+- **Tracking**: include in Phase 15 final verification checklist alongside post-submit Calendly testing.
+
+### CARRY-12-B: LinkedIn + Facebook share-cache flush
+
+- **What**: After Phase 15 lands on production, force re-crawl of `https://future-marketing.ai` on LinkedIn Post Inspector and Facebook Sharing Debugger so cached previews from earlier (pre-Phase 12) snapshots are invalidated.
+- **Why**: Phase 12 shipped a new og-image.png + fresh OG meta tags + locale-specific og:locale. Old social-share cards on shares posted before 2026-04-25 may still render the previous (or empty) preview. Phase 15 promotes lead-magnet sharing; outdated previews would undercut conversions on day one.
+- **How**:
+  1. LinkedIn Post Inspector: `https://www.linkedin.com/post-inspector/inspect/https://future-marketing.ai` (logged in) → "Inspect again" forces re-crawl. Repeat for `/nl`, `/en`, `/es`.
+  2. Facebook Sharing Debugger: `https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Ffuture-marketing.ai` → "Scrape Again".
+  3. X/Twitter: card validator deprecated; first organic share triggers fresh crawl.
+- **Verify**: each tool shows og-image.png 1200×630 PNG, og:title "This is Clyde…", og:description matching messages/{locale}.json `metadata.description`.
+- **Tracking**: 5-minute manual job for Daley after the Phase 15 promotion goes out; not a code task.
