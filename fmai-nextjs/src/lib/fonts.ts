@@ -1,4 +1,4 @@
-import { DM_Sans, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
+import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 
 export const dmSans = DM_Sans({
   variable: '--font-dm-sans',
@@ -17,11 +17,6 @@ export const jetbrainsMono = JetBrains_Mono({
   adjustFontFallback: true,
 })
 
-export const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-})
+// Space Grotesk removed in Phase 13-03. The --font-display token in
+// globals.css now falls back to DM Sans directly. One fewer Google Fonts
+// woof2 preload + handshake per HTML page across all 88 routes.

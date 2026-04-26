@@ -6,7 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { pick } from '@/lib/i18n-pick'
 import { GLOBAL_CLIENT_NAMESPACES } from '@/lib/i18n-namespaces'
-import { dmSans, jetbrainsMono, spaceGrotesk } from '@/lib/fonts'
+import { dmSans, jetbrainsMono } from '@/lib/fonts'
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -52,7 +52,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${dmSans.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
+      className={`${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       {/*
         Spline preconnect + scene prefetch live on the home page only
