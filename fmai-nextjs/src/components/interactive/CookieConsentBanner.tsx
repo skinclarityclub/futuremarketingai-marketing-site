@@ -10,16 +10,27 @@ import CookieConsent from 'react-cookie-consent'
  * Renders a bottom-fixed banner with accept/decline buttons.
  * Guarded with mounted state to prevent SSR hydration mismatch.
  * Analytics initialization deferred to Phase 6.
+ *
+ * Defense-in-depth: ClientIslands already gates the dynamic import on
+ * needsConsent (Task 6 Part A). This component additionally
+ * short-circuits if the cookie is present, so even if the lazy chunk
+ * fetches due to a race or stale ClientIslands state, the
+ * react-cookie-consent runtime never initialises and no listeners
+ * are attached. See 13-01-PLAN.md Task 6 Part B.
  */
 export function CookieConsentBanner() {
   const t = useTranslations('common')
   const [mounted, setMounted] = useState(false)
+  const [hasConsent, setHasConsent] = useState<boolean | null>(null)
 
   useEffect(() => {
     setMounted(true)
+    const cookies = typeof document !== 'undefined' ? document.cookie : ''
+    setHasConsent(cookies.includes('futuremarketingai-cookie-consent='))
   }, [])
 
   if (!mounted) return null
+  if (hasConsent) return null
 
   const handleAccept = () => {
     // Analytics initialization deferred to Phase 6

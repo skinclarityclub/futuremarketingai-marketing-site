@@ -4,12 +4,13 @@ import { notFound } from 'next/navigation'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
+import { pick } from '@/lib/i18n-pick'
+import { GLOBAL_CLIENT_NAMESPACES } from '@/lib/i18n-namespaces'
 import { dmSans, jetbrainsMono, spaceGrotesk } from '@/lib/fonts'
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
-import { CookieConsentBanner } from '@/components/interactive/CookieConsentBanner'
 import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
@@ -67,14 +68,29 @@ export default async function LocaleLayout({
           {t('skipToContent')}
         </a>
         <GradientMesh />
-        <NextIntlClientProvider messages={messages}>
+        {/*
+          Ship only the namespaces consumed by client components mounted
+          everywhere (header, footer chrome via 'common', cookie banner,
+          chat/booking/calendly islands, error boundary, apply form).
+          Server components under this layout still read the full message
+          tree via getTranslations(). See 13-02-PLAN.md.
+        */}
+        <NextIntlClientProvider
+          locale={locale}
+          messages={pick(messages, GLOBAL_CLIENT_NAMESPACES)}
+        >
           <Providers>
             <OrganizationJsonLd />
             <Header locale={locale} />
             <FloatingLocaleSwitcher />
             {children}
             <Footer locale={locale} />
-            <CookieConsentBanner />
+            {/*
+              CookieConsentBanner moved into ClientIslands so it can be
+              lazy-loaded with a needsConsent guard. Returning visitors
+              with the cookie already set never download the
+              react-cookie-consent chunk. See 13-01-PLAN.md Task 6.
+            */}
             <ClientIslands />
             <WebVitalsReporter />
           </Providers>
