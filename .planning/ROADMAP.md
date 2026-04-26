@@ -401,7 +401,7 @@ Phases execute in parallel waves:
 | 10. Production Integrity | 4/4 | Complete    | 2026-04-25 |
 | 11. EAA A11y Compliance  | 3/3 | Complete    | 2026-04-25 |
 | 12. Brand + Copy Polish  | 4/4 | Complete    | 2026-04-25 |
-| 13. Performance + Bundle | 3/3 | Complete   | 2026-04-26 |
+| 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
 | 14. SEO + GEO Depth      | 0/4        | Not started | -          |
 | 15. Conversion Accel.    | 0/5        | Not started | -          |
 
