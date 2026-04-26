@@ -1,0 +1,91 @@
+=== Build summary ===
+✓ Compiled successfully in 8.9s
+
+=== Top-level chunks/*.js raw + gz sizes (sorted by gz desc) ===
+turbopack-0umbq-4tte.cx.js                                   raw=    10613 gz=     4200
+188rn_o-j3w84.js                                             raw=  1987547 gz=   727020
+17r54t3l4937z.js                                             raw=    55005 gz=    10673
+14twbv~x5-78j.js                                             raw=   227314 gz=    70891
+12kc1ac5zh03o.js                                             raw=    26101 gz=     8192
+11xuyle62rqw9.js                                             raw=     4820 gz=     2167
+0z5izc8l5-a2_.js                                             raw=     1873 gz=      927
+0z0e6j.21c1e5.js                                             raw=    26842 gz=     7930
+0yb2wil16uz6h.js                                             raw=     5587 gz=     2023
+0ud81t5m407n..js                                             raw=    11949 gz=     3662
+0tcihyyk0f38i.js                                             raw=   133817 gz=    43868
+0plockefo2ivk.js                                             raw=  2012636 gz=   560996
+0o59ac8426icc.js                                             raw=   136649 gz=    37099
+0mino5otk-86n.js                                             raw=     9015 gz=     2262
+0lvoz1ntleuo..js                                             raw=    20944 gz=     7592
+0isl07qsj0wqb.js                                             raw=   167565 gz=    47819
+0i-0aur-gvg_t.js                                             raw=    23473 gz=     7436
+0hr7u.2mj9hrh.js                                             raw=    91209 gz=    28098
+0hnr94or_m6ue.js                                             raw=    47382 gz=    17162
+0g6~yge2nbmxn.js                                             raw=     1199 gz=      616
+0fbbdsbllcism.js                                             raw=     6970 gz=     2632
+0f1cs9_zc03zw.js                                             raw=    55845 gz=    18958
+0f030-gfqg.gt.js                                             raw=   360929 gz=    94845
+0dw9gp0__~mea.js                                             raw=   270998 gz=    63380
+0d3shmwh5_nmn.js                                             raw=    54646 gz=    12836
+0c1-ig_59rt2e.js                                             raw=    12812 gz=     4643
+0a51q.65l43cu.js                                             raw=    40906 gz=    12099
+08.bgmjwac.7q.js                                             raw=     2148 gz=     1184
+07uz2g0_38qia.js                                             raw=    43946 gz=     9188
+07fug2ek0t.s6.js                                             raw=    55434 gz=    18919
+03qtonq.bm-y-.js                                             raw=    66385 gz=    22156
+03a62c~ebsxkk.js                                             raw=    80926 gz=    22737
+03~yq9q893hmn.js                                             raw=   112594 gz=    39496
+02y~ng0_0lc1j.js                                             raw=    31864 gz=     9024
+02xb8vm4u8q1v.js                                             raw=    25523 gz=     8512
+02ht_891g5q.o.js                                             raw=      851 gz=      501
+01xlw8hd842-c.js                                             raw=     3377 gz=     1473
+01ec70sj2d7d4.js                                             raw=    25081 gz=     8245
+
+=== Per-route chunks (chunks/[locale]/...) sorted by gz desc, top 40 ===
+turbopack-0umbq-4tte.cx.js                                                                           raw=    10613 gz=     4200
+188rn_o-j3w84.js                                                                                     raw=  1987547 gz=   727020
+14twbv~x5-78j.js                                                                                     raw=   227314 gz=    70891
+0z5izc8l5-a2_.js                                                                                     raw=     1873 gz=      927
+0z0e6j.21c1e5.js                                                                                     raw=    26842 gz=     7930
+0ud81t5m407n..js                                                                                     raw=    11949 gz=     3662
+0lvoz1ntleuo..js                                                                                     raw=    20944 gz=     7592
+0i-0aur-gvg_t.js                                                                                     raw=    23473 gz=     7436
+0hr7u.2mj9hrh.js                                                                                     raw=    91209 gz=    28098
+0hnr94or_m6ue.js                                                                                     raw=    47382 gz=    17162
+0g6~yge2nbmxn.js                                                                                     raw=     1199 gz=      616
+0f1cs9_zc03zw.js                                                                                     raw=    55845 gz=    18958
+0f030-gfqg.gt.js                                                                                     raw=   360929 gz=    94845
+0dw9gp0__~mea.js                                                                                     raw=   270998 gz=    63380
+0d3shmwh5_nmn.js                                                                                     raw=    54646 gz=    12836
+0c1-ig_59rt2e.js                                                                                     raw=    12812 gz=     4643
+0a51q.65l43cu.js                                                                                     raw=    40906 gz=    12099
+08.bgmjwac.7q.js                                                                                     raw=     2148 gz=     1184
+07uz2g0_38qia.js                                                                                     raw=    43946 gz=     9188
+07fug2ek0t.s6.js                                                                                     raw=    55434 gz=    18919
+03qtonq.bm-y-.js                                                                                     raw=    66385 gz=    22156
+03a62c~ebsxkk.js                                                                                     raw=    80926 gz=    22737
+03~yq9q893hmn.js                                                                                     raw=   112594 gz=    39496
+02y~ng0_0lc1j.js                                                                                     raw=    31864 gz=     9024
+02ht_891g5q.o.js                                                                                     raw=      851 gz=      501
+
+=== Prerendered HTML sizes (key routes) ===
+    205095 bytes  .next/server/app/en.html
+    210052 bytes  .next/server/app/nl.html
+    273636 bytes  .next/server/app/en/pricing.html
+    279371 bytes  .next/server/app/nl/pricing.html
+    184455 bytes  .next/server/app/en/about.html
+    184180 bytes  .next/server/app/en/skills/voice-agent.html
+    170816 bytes  .next/server/app/en/legal/privacy.html
+    176481 bytes  .next/server/app/nl/legal/privacy.html
+
+=== Spline prefetch presence per HTML route ===
+.next/server/app/en.html                                     splinecode=2   unpkg=2  
+.next/server/app/nl.html                                     splinecode=2   unpkg=2  
+.next/server/app/en/pricing.html                             splinecode=1   unpkg=1  
+.next/server/app/en/about.html                               splinecode=1   unpkg=1  
+.next/server/app/en/legal/privacy.html                       splinecode=1   unpkg=1  
+.next/server/app/en/skills/voice-agent.html                  splinecode=1   unpkg=1  
+.next/server/app/nl/legal/privacy.html                       splinecode=1   unpkg=1  
+
+=== Total static chunks dir size ===
+6364648	.next/static/chunks
