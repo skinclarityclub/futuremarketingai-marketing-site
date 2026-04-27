@@ -1,31 +1,28 @@
-'use client'
-
 /**
  * SkcTestimonialBlock — Sindy testimonial render for /case-studies/skinclarity-club.
  *
- * Reads from `case_studies.skc.testimonial.*` i18n namespace:
+ * Server component (no client interactivity needed). Reads from
+ * `case_studies.skc.testimonial.*` i18n namespace via getTranslations:
  * - quote: 1-2 sentence verbatim quote from Sindy
  * - authorName: 'Sindy'
  * - authorRole: 'Founder, SkinClarity Club'
- * - photoSrc: '/case-studies/skc/sindy-headshot.jpg' (asset path, file delivered post-interview)
+ * - photoSrc: '/case-studies/skc/sindy-headshot.jpg'
  * - photoAlt: alt text for screen readers
  * - linkedinUrl: Sindy's LinkedIn profile (also rendered into PersonJsonLd sameAs[])
  * - linkedinLabel: link label, locale-specific
  *
- * Wiring guard: this component is NOT wired into the case-study page until the
- * Sindy interview lands the photo file at the expected public path. Until then,
- * the existing inline testimonial render in page.tsx stays. See 15-03-PLAN.md
- * Task 2 unlock criteria.
- *
- * Phase 14-02 already shipped PersonJsonLd emission for Sindy on the same page,
- * so this component handles ONLY the visible testimonial UI.
+ * Server-component path keeps the case_studies namespace out of
+ * GLOBAL_CLIENT_NAMESPACES (Phase 13-02 invariant), preserving the bundle
+ * payload budget on every page. Phase 14-02 already shipped PersonJsonLd
+ * emission for Sindy on the same page, so this component handles ONLY the
+ * visible testimonial UI.
  */
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Linkedin } from 'lucide-react'
 
-export function SkcTestimonialBlock() {
-  const t = useTranslations('case_studies.skc.testimonial')
+export async function SkcTestimonialBlock() {
+  const t = await getTranslations('case_studies.skc.testimonial')
 
   const photoSrc = t('photoSrc')
   const linkedinUrl = t('linkedinUrl')

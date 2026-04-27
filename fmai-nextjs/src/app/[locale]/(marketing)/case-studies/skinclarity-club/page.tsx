@@ -12,6 +12,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { SkcTestimonialBlock } from '@/components/case-studies/SkcTestimonialBlock'
 import { ArrowRight, Instagram } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -33,7 +34,14 @@ export async function generateMetadata({
 
 const ACCOUNT_KEYS = ['account1', 'account2', 'account3'] as const
 const SKILL_KEYS = ['skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6'] as const
-const CONTENT_ROWS = ['row1', 'row2', 'row3', 'row4', 'row5', 'row6'] as const
+const OUTCOME_KEYS = [
+  'hoursSaved',
+  'approvalTime',
+  'outputVolume',
+  'reachDelta',
+  'monthlySavings',
+  'engagementRate',
+] as const
 const TIMELINE_KEYS = ['week1', 'month1', 'month3', 'now'] as const
 
 export default async function SkcCaseStudyPage({
@@ -153,30 +161,38 @@ export default async function SkcCaseStudyPage({
         </div>
       </section>
 
-      {/* Content output table */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="content-heading">
-        <div className="max-w-4xl mx-auto">
+      {/* Outcomes — 6 quantified metric cards (sourced from Sindy interview) */}
+      <section className="py-16 px-6 lg:px-12" aria-labelledby="outcomes-heading">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <SectionHeading id="content-heading">{t('content.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary">{t('content.subtitle')}</p>
+            <SectionHeading id="outcomes-heading">{t('outcomes.title')}</SectionHeading>
+            <p className="mt-4 text-text-secondary max-w-3xl mx-auto">
+              {t('outcomes.subtitle')}
+            </p>
           </div>
           <ScrollReveal>
-            <GlassCard className="text-left">
-              <dl className="divide-y divide-border-primary/50">
-                {CONTENT_ROWS.map((key) => (
-                  <div
-                    key={key}
-                    className="grid grid-cols-2 gap-4 py-3 first:pt-0 last:pb-0"
-                  >
-                    <dt className="text-text-secondary">{t(`content.${key}Label`)}</dt>
-                    <dd className="text-text-primary font-medium text-right">
-                      {t(`content.${key}Value`)}
-                    </dd>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {OUTCOME_KEYS.map((key) => (
+                <GlassCard key={key} className="speakable-skc-outcome text-left">
+                  <div className="text-xs uppercase tracking-wide text-text-muted mb-2">
+                    {t(`outcomes.metrics.${key}.label`)}
                   </div>
-                ))}
-              </dl>
-            </GlassCard>
+                  <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-3">
+                    {t(`outcomes.metrics.${key}.value`)}
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                    {t(`outcomes.metrics.${key}.detail`)}
+                  </p>
+                  <p className="text-xs text-text-muted italic">
+                    {t(`outcomes.metrics.${key}.sourceNote`)}
+                  </p>
+                </GlassCard>
+              ))}
+            </div>
           </ScrollReveal>
+          <p className="mt-8 text-xs text-text-muted italic text-center max-w-3xl mx-auto">
+            {t('outcomes.disclaimer')}
+          </p>
         </div>
       </section>
 
@@ -226,27 +242,14 @@ export default async function SkcCaseStudyPage({
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Testimonial — Sindy block (photo + quote + LinkedIn link) */}
       <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="testimonial">
+        <h2 id="testimonial" className="sr-only">
+          {t('testimonial.authorName')}
+        </h2>
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <GlassCard highlighted className="text-left p-10">
-              <blockquote className="text-xl lg:text-2xl text-text-primary leading-relaxed italic mb-6">
-                &ldquo;{t('testimonial.quote')}&rdquo;
-              </blockquote>
-              <footer className="flex items-center gap-3">
-                <div
-                  aria-hidden
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-system to-accent-human flex items-center justify-center text-bg-deep font-bold"
-                >
-                  S
-                </div>
-                <div>
-                  <div className="font-semibold text-text-primary">{t('testimonial.authorName')}</div>
-                  <div className="text-sm text-text-muted">{t('testimonial.authorRole')}</div>
-                </div>
-              </footer>
-            </GlassCard>
+            <SkcTestimonialBlock />
           </ScrollReveal>
         </div>
       </section>
