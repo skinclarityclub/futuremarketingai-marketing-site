@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react'
 import { z } from 'zod'
 import { useTranslations } from 'next-intl'
+import { ApplyCalendlyInline } from '@/components/interactive/ApplyCalendlyInline'
 
 const schema = z.object({
   name: z.string().min(2),
@@ -38,9 +39,15 @@ function mapIssueToKey(field: string, code: string): string {
 
 export function ApplicationForm() {
   const t = useTranslations('apply.form')
+  const tCal = useTranslations('apply.calendly')
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+  // Phase 15-02: keep submitted name + email so the post-submit Calendly embed
+  // can prefill them. Stored separately from the form so success state survives
+  // any later form reset.
+  const [submittedName, setSubmittedName] = useState<string | undefined>()
+  const [submittedEmail, setSubmittedEmail] = useState<string | undefined>()
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -90,6 +97,9 @@ export function ApplicationForm() {
         throw new Error(payload.error ?? t('errorNetwork'))
       }
 
+      // Capture prefill data for the post-submit Calendly embed (Phase 15-02).
+      setSubmittedName(parsed.data.name)
+      setSubmittedEmail(parsed.data.email)
       setStatus('success')
     } catch (error) {
       setStatus('error')
@@ -99,14 +109,16 @@ export function ApplicationForm() {
 
   if (status === 'success') {
     return (
-      <div
-        className="rounded-[var(--radius-card)] border border-[#00FF88]/40 bg-[#00FF88]/5 p-8 text-center"
-        role="status"
-        aria-live="polite"
-      >
-        <h3 className="text-2xl font-semibold text-text-primary mb-3">{t('successTitle')}</h3>
-        <p className="text-text-secondary leading-relaxed">{t('successBody')}</p>
-      </div>
+      <section aria-live="polite" role="status" className="space-y-6">
+        <header className="rounded-[var(--radius-card)] border border-[#00FF88]/40 bg-[#00FF88]/5 p-6 text-center">
+          <h3 className="text-2xl font-semibold text-text-primary mb-2">{tCal('title')}</h3>
+          <p className="text-text-secondary leading-relaxed">{tCal('subtitle')}</p>
+        </header>
+
+        <ApplyCalendlyInline name={submittedName} email={submittedEmail} />
+
+        <p className="text-sm text-text-muted text-center">{tCal('reassurance')}</p>
+      </section>
     )
   }
 

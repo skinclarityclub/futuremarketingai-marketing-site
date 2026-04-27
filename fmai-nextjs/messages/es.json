@@ -1742,6 +1742,13 @@
         "problemMin": "Describe tu problema en al menos 20 caracteres.",
         "problemMax": "Mantén tu mensaje bajo 5000 caracteres."
       }
+    },
+    "calendly": {
+      "title": "Solicitud recibida. Reserva un hueco directamente.",
+      "subtitle": "La agenda de Daley está abierta. Escoge un momento, ya tendrá el contexto de tu formulario.",
+      "fallbackIntro": "La agenda no cargó. Puedes abrirla directamente con el botón.",
+      "fallbackCta": "Abrir la agenda de Daley",
+      "reassurance": "¿Prefieres una respuesta personal primero? Daley lee cada solicitud y responde en 3 días laborables."
     }
   },
   "landing": {

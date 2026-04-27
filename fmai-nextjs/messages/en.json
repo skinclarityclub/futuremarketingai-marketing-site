@@ -1742,6 +1742,13 @@
         "problemMin": "Describe your problem in at least 20 characters.",
         "problemMax": "Keep your message under 5000 characters."
       }
+    },
+    "calendly": {
+      "title": "Application received. Want to move faster? Book a slot.",
+      "subtitle": "Daley's calendar is open. Pick a moment that fits, he'll already have your form context.",
+      "fallbackIntro": "The calendar did not load. You can open it directly with the button below.",
+      "fallbackCta": "Open Daley's calendar",
+      "reassurance": "Prefer a personal reply first? Daley reads each application and responds within 3 business days."
     }
   },
   "landing": {

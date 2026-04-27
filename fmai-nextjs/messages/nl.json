@@ -1742,6 +1742,13 @@
         "problemMin": "Beschrijf het probleem in minimaal 20 tekens.",
         "problemMax": "Hou je verhaal onder 5000 tekens."
       }
+    },
+    "calendly": {
+      "title": "Aanvraag binnen. Sneller verder? Plan direct een slot.",
+      "subtitle": "Daley's agenda staat open. Kies een moment dat past, we hebben dan al je context uit het formulier.",
+      "fallbackIntro": "De agenda laadt niet. Je kunt direct plannen via de onderstaande knop.",
+      "fallbackCta": "Open Daley's agenda",
+      "reassurance": "Liever wachten op een persoonlijk bericht? Daley leest je aanvraag en antwoordt binnen 3 werkdagen."
     }
   },
   "landing": {
