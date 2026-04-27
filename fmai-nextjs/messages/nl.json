@@ -862,6 +862,10 @@
     "sections": {
       "terms": {
         "title": "Servicevoorwaarden",
+        "meta": {
+          "title": "Servicevoorwaarden | Future Marketing AI",
+          "description": "Servicevoorwaarden voor het Future Marketing AI platform. Abonnementen, AI-output disclaimer, gegevensverwerking, beëindiging. Nederlands recht."
+        },
         "content": "Deze servicevoorwaarden zijn van toepassing op uw gebruik van het Future Marketing AI (FutureMarketingAI) platform en de AI Marketing Medewerker-diensten. Door u te abonneren op of gebruik te maken van onze diensten, gaat u akkoord met deze voorwaarden. FutureMarketingAI werkt als Agent as a Service (AaaS)-aanbieder en levert persistente AI-agenten met instelbare marketingvaardigheden aan marketingbureaus. Lees deze voorwaarden zorgvuldig door voordat u ons platform gebruikt.",
         "subsections": {
           "service_description": {
@@ -896,6 +900,10 @@
       },
       "privacy": {
         "title": "Privacybeleid",
+        "meta": {
+          "title": "Privacybeleid | Future Marketing AI",
+          "description": "Privacybeleid van Future Marketing AI. Hoe we persoonsgegevens verzamelen, gebruiken en beschermen conform AVG. Sub-verwerkers, bewaartermijnen, rechten."
+        },
         "content": "Dit privacybeleid beschrijft hoe Future Marketing AI (FutureMarketingAI) persoonsgegevens verzamelt, gebruikt, opslaat en beschermt in verband met ons AI Marketing Medewerker-platform. FutureMarketingAI zet zich in voor de bescherming van de privacy van onze abonnees, hun klanten en eindgebruikers, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) en de toepasselijke Nederlandse wetgeving inzake gegevensbescherming. Dit beleid is van toepassing op alle gegevens die via ons platform en onze website worden verwerkt.",
         "subsections": {
           "data_collected": {
@@ -938,6 +946,10 @@
       },
       "cookies": {
         "title": "Cookiebeleid",
+        "meta": {
+          "title": "Cookiebeleid | Future Marketing AI",
+          "description": "Cookiebeleid van Future Marketing AI. Essentiële cookies en optionele analytics. Beheer je voorkeuren via je browser of de cookie-banner."
+        },
         "content": "Onze website gebruikt essentiële cookies en optionele analytische cookies. U kunt uw cookievoorkeuren beheren via uw browserinstellingen."
       },
       "disclaimer": {

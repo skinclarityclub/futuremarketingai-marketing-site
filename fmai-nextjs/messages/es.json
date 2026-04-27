@@ -862,6 +862,10 @@
     "sections": {
       "terms": {
         "title": "Términos del servicio",
+        "meta": {
+          "title": "Términos del servicio | Future Marketing AI",
+          "description": "Términos del servicio de la plataforma Future Marketing AI. Suscripciones, descargo de IA, tratamiento de datos, terminación. Ley neerlandesa."
+        },
         "content": "Los presentes términos del servicio rigen el uso que usted haga de la plataforma Future Marketing AI (FutureMarketingAI) y de los servicios del Empleado AI de Marketing. Al suscribirse o utilizar nuestros servicios, usted acepta estos términos. FutureMarketingAI opera como proveedor de Agent as a Service (AaaS), prestando agentes de IA persistentes con habilidades de marketing configurables a agencias de marketing. Le rogamos lea estos términos detenidamente antes de utilizar nuestra plataforma.",
         "subsections": {
           "service_description": {
@@ -896,6 +900,10 @@
       },
       "privacy": {
         "title": "Política de privacidad",
+        "meta": {
+          "title": "Política de privacidad | Future Marketing AI",
+          "description": "Política de privacidad de Future Marketing AI. Cómo recopilamos, usamos y protegemos datos personales según RGPD. Sub-procesadores, plazos, derechos."
+        },
         "content": "La presente política de privacidad describe cómo Future Marketing AI (FutureMarketingAI) recopila, utiliza, almacena y protege los datos personales en relación con nuestra plataforma de Empleado AI de Marketing. FutureMarketingAI se compromete a proteger la privacidad de nuestros suscriptores, sus clientes y los usuarios finales, de conformidad con el Reglamento General de Protección de Datos (RGPD) y la normativa aplicable de protección de datos de los Países Bajos. Esta política se aplica a todos los datos tratados a través de nuestra plataforma y de nuestro sitio web.",
         "subsections": {
           "data_collected": {
@@ -938,6 +946,10 @@
       },
       "cookies": {
         "title": "Política de cookies",
+        "meta": {
+          "title": "Política de cookies | Future Marketing AI",
+          "description": "Política de cookies de Future Marketing AI. Cookies esenciales y analíticas opcionales. Gestiona preferencias en tu navegador o el banner."
+        },
         "content": "Nuestro sitio web utiliza cookies esenciales y cookies analíticas opcionales. Usted puede gestionar sus preferencias de cookies desde la configuración de su navegador."
       },
       "disclaimer": {

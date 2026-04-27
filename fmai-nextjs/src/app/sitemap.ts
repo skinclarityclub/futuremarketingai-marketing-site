@@ -24,8 +24,11 @@ const pages = [
   { path: '/founding-member', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/how-it-works', changeFrequency: 'monthly' as const, priority: 0.6 },
-  { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.6 },
+  { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/legal', changeFrequency: 'monthly' as const, priority: 0.6 },
+  { path: '/legal/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/legal/cookies', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.7 },
 ]
 

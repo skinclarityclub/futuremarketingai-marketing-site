@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { setRequestLocale, getTranslations } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
-import { SITE_URL } from '@/lib/seo-config'
+import { generatePageMetadata } from '@/lib/metadata'
 import { LegalSectionPage } from '@/components/legal/LegalSectionPage'
 
 export function generateStaticParams() {
@@ -14,12 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'legal.sections.terms' })
-  return {
-    title: t('title'),
-    description: t('content').slice(0, 160),
-    alternates: { canonical: `${SITE_URL}/${locale}/legal/terms` },
-  }
+  return generatePageMetadata({
+    locale,
+    namespace: 'legal.sections.terms',
+    path: '/legal/terms',
+  })
 }
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
