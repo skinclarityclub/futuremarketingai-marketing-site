@@ -374,7 +374,7 @@ Plans:
 
 - [ ] 15-01-PLAN.md — Hero CTA demote + StickyMobileCTA component + rollout on 15 pages (Wave 1, low dependency)
 - [ ] 15-02-PLAN.md — Post-submit Calendly embed on ApplicationForm + ContactForm + prefill params + fallback (Wave 2, depends on Phase 10)
-- [ ] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion)
+- [x] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion) (completed 2026-04-27)
 - [x] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup) (completed 2026-04-25)
 - [ ] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish)
 
@@ -402,7 +402,7 @@ Phases execute in parallel waves:
 | 11. EAA A11y Compliance  | 3/3 | Complete    | 2026-04-25 |
 | 12. Brand + Copy Polish  | 4/4 | Complete    | 2026-04-25 |
 | 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
-| 14. SEO + GEO Depth      | 4/4 | Complete   | 2026-04-27 |
+| 14. SEO + GEO Depth      | 4/4 | Complete    | 2026-04-27 |
 | 15. Conversion Accel.    | 0/5        | Not started | -          |
 
 ---
