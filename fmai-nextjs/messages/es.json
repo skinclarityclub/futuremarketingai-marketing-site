@@ -2640,5 +2640,43 @@
       "demoLimitMessage": "Has alcanzado el límite de la demo.",
       "demoLimitCta": "Agenda una llamada para continuar."
     }
+  },
+  "leadMagnet": {
+    "eyebrow": "Descarga gratuita",
+    "title": "Checklist de AI Readiness para agencias NL",
+    "subtitle": "20 preguntas, 4 categorías, 3 guías de acción. Descubre en 10 minutos qué pasos de AI puede dar tu agencia hoy.",
+    "bullet1": "Hoja de puntuación por categoría",
+    "bullet2": "Plan de acción en 3 niveles: Explorer, Builder, Operator",
+    "bullet3": "Escrito para agencias holandesas, no traducido",
+    "emailLabel": "Email de trabajo",
+    "emailPlaceholder": "daley@tuagencia.com",
+    "consentLabel": "Sí, envíame la checklist y los insights mensuales. Puedo cancelar la suscripción en cualquier momento.",
+    "privacyLink": "Política de privacidad",
+    "submit": "Envíame la checklist",
+    "submittingLabel": "Enviando...",
+    "successTitle": "Casi listo.",
+    "successBody": "Te hemos enviado un email de confirmación. Haz clic en el enlace para recibir la checklist.",
+    "errorTitle": "Algo salió mal.",
+    "errorBody": "Inténtalo de nuevo o escríbenos a hello@future-marketing.ai."
+  },
+  "newsletter": {
+    "confirm": {
+      "pendingTitle": "Confirmando...",
+      "pendingBody": "Un momento, estamos validando tu token.",
+      "okTitle": "Suscripción confirmada.",
+      "okBody": "Tu Checklist de AI Readiness va camino a tu bandeja de entrada.",
+      "alreadyTitle": "Tu suscripción ya estaba confirmada.",
+      "alreadyBody": "Te enviamos la checklist antes. Revisa tu bandeja de entrada o la carpeta de spam.",
+      "errorTitle": "La confirmación falló.",
+      "errorBody": "El token no es válido o ha caducado. Vuelve a suscribirte desde la web.",
+      "backHome": "Volver al inicio"
+    }
+  },
+  "founding": {
+    "counter": {
+      "badge": "{taken} de {total} plazas founding ocupadas",
+      "lastUpdated": "A fecha de {date}",
+      "cohortStart": "El cohort empieza el {date}"
+    }
   }
 }

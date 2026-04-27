@@ -2640,5 +2640,43 @@
       "demoLimitMessage": "You've reached the demo limit.",
       "demoLimitCta": "Book a call to continue the conversation."
     }
+  },
+  "leadMagnet": {
+    "eyebrow": "Free download",
+    "title": "NL Agency AI Readiness Checklist",
+    "subtitle": "20 questions, 4 categories, 3 action guides. Find out in 10 minutes which AI moves your agency can make today.",
+    "bullet1": "Scoring sheet per category",
+    "bullet2": "Three-tier action plan: Explorer, Builder, Operator",
+    "bullet3": "Written for Dutch agencies, not translated",
+    "emailLabel": "Work email",
+    "emailPlaceholder": "daley@youragency.com",
+    "consentLabel": "Yes, send me the checklist plus monthly insights. I can unsubscribe at any time.",
+    "privacyLink": "Privacy policy",
+    "submit": "Send the checklist",
+    "submittingLabel": "Sending...",
+    "successTitle": "Almost there.",
+    "successBody": "We sent you a confirmation email. Click the link to receive the checklist.",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "Please try again or email us at hello@future-marketing.ai."
+  },
+  "newsletter": {
+    "confirm": {
+      "pendingTitle": "Confirming...",
+      "pendingBody": "One moment, we are validating your token.",
+      "okTitle": "You are subscribed.",
+      "okBody": "Your AI Readiness Checklist is on its way to your inbox.",
+      "alreadyTitle": "Your subscription was already confirmed.",
+      "alreadyBody": "We sent the checklist earlier. Check your inbox or spam folder.",
+      "errorTitle": "Confirmation failed.",
+      "errorBody": "The token is invalid or expired. Sign up again from the site.",
+      "backHome": "Back to home"
+    }
+  },
+  "founding": {
+    "counter": {
+      "badge": "{taken} of {total} founding spots taken",
+      "lastUpdated": "As of {date}",
+      "cohortStart": "Cohort starts {date}"
+    }
   }
 }

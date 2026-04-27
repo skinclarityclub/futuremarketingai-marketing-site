@@ -12,6 +12,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
+import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
@@ -90,9 +91,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-6">
             {t('hero.description')}
           </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5A623]/10 border border-[#F5A623]/20 rounded-full text-sm font-medium text-[#F5A623]">
-            {t('hero.counter', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
-          </div>
+          <FoundingCounter />
         </div>
       </section>
 

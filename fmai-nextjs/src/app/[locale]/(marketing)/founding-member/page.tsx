@@ -10,6 +10,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
@@ -75,10 +76,8 @@ export default async function FoundingMemberPage({
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5A623]/10 border border-[#F5A623]/30 rounded-full mb-6">
-            <span className="text-sm font-medium text-[#F5A623]">
-              {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
-            </span>
+          <div className="mb-6">
+            <FoundingCounter />
           </div>
           <h1
             id="hero"

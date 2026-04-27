@@ -1822,8 +1822,7 @@
       "timeline": {
         "title": "Tijdlijn",
         "week1Label": "Week 1",
-        "week1Body": "Onboarding: merkstem per account, goedkeuringsworkflow en KPI-definities."
-        ,
+        "week1Body": "Onboarding: merkstem per account, goedkeuringsworkflow en KPI-definities.",
         "month1Label": "Maand 1",
         "month1Body": "Eerste volledige contentweek autonoom. Veel feedback, Clyde kalibreert.",
         "month3Label": "Maand 3",
@@ -2640,6 +2639,44 @@
       "demoLimitReached": "Demolimiet bereikt",
       "demoLimitMessage": "Je hebt de demolimiet bereikt.",
       "demoLimitCta": "Plan een gesprek om verder te praten."
+    }
+  },
+  "leadMagnet": {
+    "eyebrow": "Gratis download",
+    "title": "NL Bureau AI Readiness Checklist",
+    "subtitle": "20 vragen, 4 categorieen, 3 actiegidsen. Ontdek in 10 minuten welke AI-stappen jouw bureau vandaag kan zetten.",
+    "bullet1": "Scoring-sheet per categorie",
+    "bullet2": "Actieplan op 3 niveaus: Explorer, Builder, Operator",
+    "bullet3": "Geschreven voor NL bureaus, niet vertaald",
+    "emailLabel": "Werk-email",
+    "emailPlaceholder": "daley@jouwbureau.nl",
+    "consentLabel": "Ja, stuur me de checklist plus maandelijkse inzichten. Ik kan me op elk moment uitschrijven.",
+    "privacyLink": "Privacybeleid",
+    "submit": "Stuur de checklist",
+    "submittingLabel": "Verzenden...",
+    "successTitle": "Bijna klaar.",
+    "successBody": "We hebben je een bevestigingsmail gestuurd. Klik op de link om de checklist te ontvangen.",
+    "errorTitle": "Er ging iets mis.",
+    "errorBody": "Probeer het opnieuw of mail ons op hello@future-marketing.ai."
+  },
+  "newsletter": {
+    "confirm": {
+      "pendingTitle": "Bevestigen...",
+      "pendingBody": "Een moment, we controleren je token.",
+      "okTitle": "Je bent aangemeld.",
+      "okBody": "Je AI Readiness Checklist is onderweg naar je inbox.",
+      "alreadyTitle": "Je aanmelding stond al bevestigd.",
+      "alreadyBody": "De checklist hebben we eerder al verzonden. Check je inbox of spam.",
+      "errorTitle": "Bevestigen ging mis.",
+      "errorBody": "De token is ongeldig of verlopen. Meld je opnieuw aan vanaf de site.",
+      "backHome": "Terug naar home"
+    }
+  },
+  "founding": {
+    "counter": {
+      "badge": "{taken} van {total} founding plekken vergeven",
+      "lastUpdated": "Stand van {date}",
+      "cohortStart": "Cohort start {date}"
     }
   }
 }
