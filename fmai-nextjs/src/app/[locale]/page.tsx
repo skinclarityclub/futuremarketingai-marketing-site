@@ -16,6 +16,7 @@ import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
+import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { Zap, ArrowRight } from 'lucide-react'
 
@@ -164,6 +165,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="flex-1 hidden lg:block" />
         </div>
       </section>
+
+      {/* Lead magnet — Phase 15-04 mid-funnel capture below hero */}
+      <LazySection minHeight="280px">
+        <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto">
+            <LeadMagnetCTA source="home" />
+          </div>
+        </section>
+      </LazySection>
 
       {/* Stats / Metrics Bar */}
       <LazySection minHeight="150px">

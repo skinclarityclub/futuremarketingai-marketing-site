@@ -5,6 +5,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, BLOG_CATEGORIES } from '@/lib/blog'
 import { BlogPostCard } from '@/components/blog/BlogPostCard'
 import { CategoryFilter } from '@/components/blog/CategoryFilter'
+import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 
@@ -97,19 +98,26 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         locale={locale}
       />
 
-      {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.map((post) => (
-            <BlogPostCard key={post.slug} post={post} locale={locale} />
-          ))}
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_320px]">
+        <div>
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {filteredPosts.map((post) => (
+                <BlogPostCard key={post.slug} post={post} locale={locale} />
+              ))}
+            </div>
+          ) : (
+            <div className="py-20 text-center">
+              <p className="text-lg text-text-muted">
+                {activeCategory ? t('noPostsInCategory') : t('noPosts')}
+              </p>
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="py-20 text-center">
-          <p className="text-lg text-text-muted">
-            {activeCategory ? t('noPostsInCategory') : t('noPosts')}
-          </p>
-        </div>
-      )}
+        <aside className="lg:sticky lg:top-32 lg:self-start">
+          <LeadMagnetCTA source="blog" variant="sidebar" />
+        </aside>
+      </div>
     </main>
   )
 }

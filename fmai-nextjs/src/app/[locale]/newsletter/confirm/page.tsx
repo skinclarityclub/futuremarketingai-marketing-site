@@ -11,15 +11,18 @@
  * Client component because state transition happens on first effect after
  * hydration. The API route does the actual heavy lifting (DB flip, Resend
  * audience add, PDF mail).
+ *
+ * Wrapped in Suspense because useSearchParams() bails out of static
+ * prerendering otherwise (Next.js 16 requirement).
  */
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
 type ConfirmState = 'pending' | 'ok' | 'already' | 'error'
 
-export default function NewsletterConfirmPage() {
+function NewsletterConfirmInner() {
   const t = useTranslations('newsletter.confirm')
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
@@ -67,5 +70,19 @@ export default function NewsletterConfirmPage() {
         {t('backHome')}
       </Link>
     </main>
+  )
+}
+
+export default function NewsletterConfirmPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="max-w-xl mx-auto px-6 py-24 text-center">
+          <p className="text-text-secondary">…</p>
+        </main>
+      }
+    >
+      <NewsletterConfirmInner />
+    </Suspense>
   )
 }

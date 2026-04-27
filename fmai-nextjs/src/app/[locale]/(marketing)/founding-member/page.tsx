@@ -11,6 +11,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
+import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
@@ -157,6 +158,13 @@ export default async function FoundingMemberPage({
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Lead magnet — Phase 15-04 mid-funnel capture */}
+      <section className="py-12 px-6 lg:px-12" aria-label="AI Readiness Checklist download">
+        <div className="max-w-md mx-auto">
+          <LeadMagnetCTA source="founding" variant="sidebar" />
         </div>
       </section>
 
