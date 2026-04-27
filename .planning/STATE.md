@@ -102,6 +102,7 @@ _Updated after each plan completion_
 | Phase 15 P02 | 14min | 3 tasks tasks | 7 files files |
 | Phase 15 P03 | 14min | 3 of 6 tasks (PARTIAL: scaffolding only; 3 transcript-blocked tasks emit human-action checkpoint) | 3 created + 3 modified |
 | Phase 15-conversion-accelerators P04 | 18min | 4 tasks | 13 files |
+| Phase 15 P05 | 16min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -332,6 +333,12 @@ Recent decisions affecting current work:
 - [Phase 15]: [15-04]: Privacy link routes to /[locale]/legal/privacy not /[locale]/privacy — matches actual (legal)/legal/privacy route group
 - [Phase 15]: [15-04]: Suspense wrap on /[locale]/newsletter/confirm — Next.js 16 useSearchParams() bails prerender otherwise (Rule 1 build fix)
 - [Phase 15]: [15-04]: Provenance noise — parallel 15-05 agent's git add captured my Task 3 + Task 4-pricing-wire edits into commits 363ddf2 + ef0ce35; functional impact zero
+- [Phase 15]: [15-05]: founding namespace top-level (NOT merged into founding-member) keeps FoundingCounter context-free reusable across pricing/founding-member/about/home
+- [Phase 15]: [15-05]: FoundingCounter is server-only via next-intl/server; consuming pages SSG so zero client bundle cost; new founding namespace skips GLOBAL_CLIENT_NAMESPACES (Phase 13-02 invariant intact)
+- [Phase 15]: [15-05]: Hard-coded locale-tag map (nl=>nl-NL/en=>en-GB/es=>es-ES) for Intl.DateTimeFormat — deterministic across Vercel edge + local dev, matches DECISIONS-2026-04-24 Q2 long-form date format
+- [Phase 15]: [15-05]: q8 repurposed from per-tier-caps (overlap with q1) to data ownership/export — closes audit 03 objection-matrix line 125 lock-in/exit gap with concrete commitments (14-day signed-S3 export, 30-day GDPR deletion)
+- [Phase 15]: [15-05]: FAQ position is 4-of-8 not 4-of-7 because the actual page has a 'Why prices visible' transparency block audit 03 didn't count separately; FAQ now sits BEFORE that block, fully satisfying audit-03-leak-#14 intent (FAQ ABOVE credit packs)
+- [Phase 15]: [15-05]: FAQ_KEYS const tuple drives both visible <dl> render AND FaqJsonLd schema entities — single source of truth, eliminates the schema/visible-content drift class of bugs Google penalizes
 
 ### Roadmap Evolution
 

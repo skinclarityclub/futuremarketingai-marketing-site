@@ -38,7 +38,7 @@ Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2
 - [x] **Phase 12: Brand Assets + Copy Polish** - og-image, complete palette migration, localize 16 hardcoded EN labels in skills-data.ts, fix 11 IK/WIJ slips + 8 klanten→merken + Onbeperkt rename, drop orphan chatbots namespace (completed 2026-04-25)
 - [x] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle (completed 2026-04-26)
 - [x] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+ (completed 2026-04-27)
-- [ ] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion
+- [x] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion (completed 2026-04-27)
 
 ## Phase Details
 
@@ -375,8 +375,8 @@ Plans:
 - [x] 15-01-PLAN.md — Hero CTA demote + StickyMobileCTA component + rollout on 15 pages (Wave 1, low dependency) (completed 2026-04-27)
 - [x] 15-02-PLAN.md — Post-submit Calendly embed on ApplicationForm + ContactForm + prefill params + fallback (Wave 2, depends on Phase 10) (completed 2026-04-27)
 - [~] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion) (PARTIAL 2026-04-27 — scaffolding shipped: brief + SkcTestimonialBlock component + i18n keys + photo-dir gate + Sindy Maat surname leak fixed. Tasks 3 + 4-final-wiring + 6 blocked on Sindy interview transcript + headshot.jpg + LinkedIn slug + akkoord email)
-- [ ] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup)
-- [ ] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish)
+- [x] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup) (completed 2026-04-27 code-side; Resend Audience ID + PDF asset + Supabase migration apply blocked on Daley external setup, see 15-04-SUMMARY)
+- [x] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish) (completed 2026-04-27)
 
 ## Progress
 
@@ -403,7 +403,7 @@ Phases execute in parallel waves:
 | 12. Brand + Copy Polish  | 4/4 | Complete    | 2026-04-25 |
 | 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
 | 14. SEO + GEO Depth      | 4/4 | Complete    | 2026-04-27 |
-| 15. Conversion Accel.    | 4/5 | In Progress|  |
+| 15. Conversion Accel.    | 5/5 | Complete   | 2026-04-27 |
 
 ---
 
