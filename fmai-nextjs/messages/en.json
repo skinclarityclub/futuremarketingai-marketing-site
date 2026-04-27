@@ -2680,7 +2680,7 @@
       "alreadyTitle": "Your subscription was already confirmed.",
       "alreadyBody": "We sent the checklist earlier. Check your inbox or spam folder.",
       "errorTitle": "Confirmation failed.",
-      "errorBody": "The token is invalid or expired. Sign up again from the site.",
+      "errorBody": "The token is invalid or expired. Subscribe again from the site.",
       "backHome": "Back to home"
     }
   },

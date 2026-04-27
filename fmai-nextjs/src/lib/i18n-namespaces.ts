@@ -23,8 +23,12 @@ export const GLOBAL_CLIENT_NAMESPACES = [
   'calendly', // CalendlyModal
   // App-router client pages
   'errors', // app/[locale]/error.tsx + not-found.tsx
+  'newsletter', // app/[locale]/newsletter/confirm/page.tsx (Phase 15-04)
   // ApplicationForm — cheap to ship globally rather than scope per-route
   'apply',
+  // Phase 15 conversion-accelerator client islands
+  'stickyCta', // StickyMobileCTA (mobile-only, all 15 routes via PageShell)
+  'leadMagnet', // LeadMagnetCTA (home + pricing + founding-member + blog)
 ] as const
 
 export type GlobalClientNamespace = (typeof GLOBAL_CLIENT_NAMESPACES)[number]

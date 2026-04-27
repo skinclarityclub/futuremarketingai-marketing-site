@@ -26,13 +26,10 @@ function NewsletterConfirmInner() {
   const t = useTranslations('newsletter.confirm')
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
-  const [state, setState] = useState<ConfirmState>('pending')
+  const [state, setState] = useState<ConfirmState>(() => (token ? 'pending' : 'error'))
 
   useEffect(() => {
-    if (!token) {
-      setState('error')
-      return
-    }
+    if (!token) return
     fetch('/api/newsletter/confirm', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
