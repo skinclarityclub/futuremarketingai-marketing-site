@@ -20,22 +20,23 @@ const SCROLL_TRIGGER_PERCENT = 0.5
  * - Respects prefers-reduced-motion via motion-safe: prefix.
  * - Uses locale-aware Link from @/i18n/navigation so href stays prefixed.
  */
+function readInitialDismissed(): boolean {
+  if (typeof window === 'undefined') return false
+  try {
+    return window.sessionStorage.getItem(SESSION_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
 export function StickyMobileCTA({ href = '/apply' }: { href?: string }) {
   const t = useTranslations('stickyCta')
   const [visible, setVisible] = useState(false)
-  const [dismissed, setDismissed] = useState(false)
+  // Lazy initializer reads sessionStorage once on first client render — avoids
+  // the cascading-render warning from React Compiler that a setState-in-effect
+  // pattern triggers. SSR returns false; first client render rehydrates.
+  const [dismissed, setDismissed] = useState<boolean>(readInitialDismissed)
   const [inputFocused, setInputFocused] = useState(false)
-
-  // Rehydrate dismiss state from sessionStorage on mount.
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    try {
-      const stored = window.sessionStorage.getItem(SESSION_KEY)
-      if (stored === '1') setDismissed(true)
-    } catch {
-      // sessionStorage unavailable (private mode, etc.) — leave dismissed=false
-    }
-  }, [])
 
   // Scroll listener — throttled via requestAnimationFrame so we never block paint.
   useEffect(() => {
