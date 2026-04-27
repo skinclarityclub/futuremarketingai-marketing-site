@@ -748,6 +748,18 @@
         "q5": {
           "question": "Wat zit er in de onboardingvergoeding?",
           "answer": "De eenmalige onboardingvergoeding dekt 4 weken partnership-setup door Daley: intake van de merkstem per merk, KPI-definities, vaardigheden inregelen, testruns en goedkeuringsworkflow opzetten. Het is geen technische installatievergoeding: het is een investering in een werkende AI Marketing Medewerker."
+        },
+        "q6": {
+          "question": "Kan ik tussentijds stoppen of pauzeren?",
+          "answer": "Elke tier heeft maandelijks opzegrecht: je beëindigt per de volgende factureringsronde, geen boete, geen ophalen van data via een formulier. Pauzeren tot drie maanden is mogelijk bij een goede reden, sabbatical of zware herstructurering, met behoud van je tier-prijs. Founding-leden kunnen niet pauzeren zonder hun levenslange prijs te verliezen: dat is de aard van het Founding-contract."
+        },
+        "q7": {
+          "question": "Wat gebeurt er precies als ik downgrade?",
+          "answer": "Downgraden gaat in per de volgende factureringsronde. Je merkstem-data en workflows blijven 90 dagen bewaard op het oude tier-niveau zodat je kunt terugschalen zonder verlies. Vaardigheden die in het lagere tier niet beschikbaar zijn, Voice Agent, Video Ads en Reel Builder onder Growth, worden uitgezet, niet gewist. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
+        },
+        "q8": {
+          "question": "Van wie is de data en kan ik die exporteren?",
+          "answer": "Alle data, merkstem-profielen, content-archief, knowledge-base en logs, blijft van jou. Bij opzegging krijg je binnen 14 dagen een volledige export, JSON plus media-bestanden, via een ondertekende S3-link. Daarna wordt de data binnen 30 dagen verwijderd uit alle systemen, conform AVG. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
         }
       }
     },

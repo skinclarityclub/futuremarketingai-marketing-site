@@ -13,6 +13,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
+import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
@@ -51,7 +52,7 @@ const SKILL_PACK_KEYS = [
   'reels',
   'blogPower',
 ] as const
-const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
+const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'] as const
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -220,11 +221,41 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
+      {/* FAQ — promoted directly after the decision surface (tier cards + matrix) */}
+      <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading id="pricing-faq" className="text-center mb-10">
+            {t('faq.title')}
+          </SectionHeading>
+          <ScrollReveal>
+            <dl className="space-y-6">
+              {FAQ_KEYS.map((key) => (
+                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                  <dt className="text-lg font-semibold text-text-primary mb-2">
+                    {t(`faq.items.${key}.question`)}
+                  </dt>
+                  <dd className="text-text-secondary leading-relaxed">
+                    {t(`faq.items.${key}.answer`)}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Why prices visible */}
       <section className="py-12 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="visibility">
         <div className="max-w-3xl mx-auto text-center">
           <SectionHeading id="visibility">{t('visibility.title')}</SectionHeading>
           <p className="mt-4 text-text-secondary leading-relaxed">{t('visibility.body')}</p>
+        </div>
+      </section>
+
+      {/* Lead magnet — Phase 15-04 mid-funnel capture */}
+      <section className="py-12 px-6 lg:px-12" aria-label="AI Readiness Checklist download">
+        <div className="max-w-md mx-auto">
+          <LeadMagnetCTA source="pricing" variant="sidebar" />
         </div>
       </section>
 
@@ -279,29 +310,6 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading id="pricing-faq" className="text-center mb-10">
-            {t('faq.title')}
-          </SectionHeading>
-          <ScrollReveal>
-            <dl className="space-y-6">
-              {FAQ_KEYS.map((key) => (
-                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
-                  <dt className="text-lg font-semibold text-text-primary mb-2">
-                    {t(`faq.items.${key}.question`)}
-                  </dt>
-                  <dd className="text-text-secondary leading-relaxed">
-                    {t(`faq.items.${key}.answer`)}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </ScrollReveal>
         </div>
       </section>
 

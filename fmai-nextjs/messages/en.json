@@ -748,6 +748,18 @@
         "q5": {
           "question": "What is included in the onboarding fee?",
           "answer": "The one-time onboarding fee covers 4 weeks of partnership setup by Daley: brand voice intake per brand, KPI definitions, skill configuration, test runs and approval workflow setup. It is not a technical installation fee: it is an investment in a working AI Marketing Employee."
+        },
+        "q6": {
+          "question": "Can I cancel or pause mid-term?",
+          "answer": "Every tier has monthly cancellation rights: you end at the next billing cycle, no fee, no hoops. Pausing for up to three months is possible with a valid reason such as sabbatical or major restructuring, with your tier price preserved. Founding members cannot pause without losing their lifetime price: that is the nature of the Founding contract."
+        },
+        "q7": {
+          "question": "What exactly happens when I downgrade?",
+          "answer": "Downgrading takes effect at the next billing cycle. Your brand voice data and workflows are kept for 90 days at the old tier level so you can scale back up without loss. Skills not available on the lower tier, Voice Agent, Video Ads and Reel Builder under Growth, are turned off, not deleted. You cannot downgrade from Founding: doing so permanently forfeits the lifetime price."
+        },
+        "q8": {
+          "question": "Who owns the data and can I export it?",
+          "answer": "All data, brand voice profiles, content archive, knowledge base and logs, stays yours. On cancellation you receive a full export within 14 days, JSON plus media files, via a signed S3 link. After that the data is deleted from all systems within 30 days, per GDPR. No lock-in, no renegotiation, no hidden exit fees."
         }
       }
     },

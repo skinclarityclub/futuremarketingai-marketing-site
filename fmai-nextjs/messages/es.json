@@ -748,6 +748,18 @@
         "q5": {
           "question": "¿Qué incluye la tarifa de onboarding?",
           "answer": "La tarifa única de onboarding cubre 4 semanas de partnership setup por Daley: intake de la voz de marca por marca, definiciones de KPI, configuración de habilidades, pruebas y setup del flujo de aprobación. No es una tarifa de instalación técnica: es una inversión en un Empleado AI de Marketing que funciona."
+        },
+        "q6": {
+          "question": "¿Puedo cancelar o pausar a mitad del contrato?",
+          "answer": "Cada tier tiene derecho de cancelación mensual: terminas en el siguiente ciclo de facturación, sin penalización, sin trámites. Pausar hasta tres meses es posible por una buena razón, sabbatical o reestructuración importante, manteniendo tu precio de tier. Los miembros Founding no pueden pausar sin perder su precio vitalicio: esa es la naturaleza del contrato Founding."
+        },
+        "q7": {
+          "question": "¿Qué pasa exactamente cuando bajo de tier?",
+          "answer": "Bajar de tier se aplica en el siguiente ciclo de facturación. Tus datos de voz de marca y workflows se conservan 90 días en el nivel del tier anterior para que puedas volver a subir sin pérdida. Las habilidades no disponibles en el tier inferior, Voice Agent, Video Ads y Reel Builder por debajo de Growth, se desactivan, no se borran. No puedes bajar desde Founding: hacerlo elimina el precio vitalicio de forma definitiva."
+        },
+        "q8": {
+          "question": "¿De quién son los datos y puedo exportarlos?",
+          "answer": "Todos los datos, perfiles de voz de marca, archivo de contenido, base de conocimiento y logs, son tuyos. Al cancelar recibes una exportación completa en 14 días, JSON más archivos de media, vía un enlace S3 firmado. Después los datos se eliminan de todos los sistemas en un plazo de 30 días, conforme a RGPD. Sin lock-in, sin renegociación, sin tarifas de salida ocultas."
         }
       }
     },
