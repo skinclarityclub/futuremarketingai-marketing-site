@@ -1817,8 +1817,16 @@
       },
       "testimonial": {
         "quote": "Clyde manages our full social content operation across 3 Instagram accounts and 4 brands. What used to take a full afternoon per week now runs autonomously in the background. I review, Clyde executes.",
-        "author": "Sindy",
-        "role": "Founder, SkinClarity Club"
+        "authorName": "Sindy",
+        "authorRole": "Founder, SkinClarity Club",
+        "author": {
+          "name": "Sindy Maat",
+          "role": "Founder and operator, SkinClarity Club",
+          "bio": "Sindy runs 4 brands under SkinClarity Club and uses Clyde as her AI Marketing Employee across 3 Instagram accounts, autonomous content, and per-brand memory isolation. Founding partner since launch."
+        }
+      },
+      "client": {
+        "description": "Dutch skincare portfolio. 4 brands, 3 Instagram accounts, full content operation."
       },
       "cta": {
         "title": "Want this for your portfolio too?",

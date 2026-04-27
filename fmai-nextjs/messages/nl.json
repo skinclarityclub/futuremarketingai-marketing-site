@@ -1818,8 +1818,16 @@
       },
       "testimonial": {
         "quote": "Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit.",
-        "author": "Sindy",
-        "role": "Founder, SkinClarity Club"
+        "authorName": "Sindy",
+        "authorRole": "Founder, SkinClarity Club",
+        "author": {
+          "name": "Sindy Maat",
+          "role": "Founder en operator, SkinClarity Club",
+          "bio": "Sindy runt 4 merken onder SkinClarity Club en gebruikt Clyde als AI Marketing Medewerker over 3 Instagram-accounts, autonome content en merk-gescheiden geheugen. Founding partner sinds launch."
+        }
+      },
+      "client": {
+        "description": "Nederlandse skincare-portefeuille. 4 merken, 3 Instagram-accounts, volledige content-operatie."
       },
       "cta": {
         "title": "Wil je dit ook voor jouw portfolio?",

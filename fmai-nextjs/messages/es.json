@@ -1817,8 +1817,16 @@
       },
       "testimonial": {
         "quote": "Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba una tarde entera a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta.",
-        "author": "Sindy",
-        "role": "Founder, SkinClarity Club"
+        "authorName": "Sindy",
+        "authorRole": "Founder, SkinClarity Club",
+        "author": {
+          "name": "Sindy Maat",
+          "role": "Founder y operadora, SkinClarity Club",
+          "bio": "Sindy gestiona 4 marcas bajo SkinClarity Club y utiliza Clyde como su Empleado IA de Marketing en 3 cuentas de Instagram, con contenido autónomo y memoria aislada por marca. Founding partner desde el lanzamiento."
+        }
+      },
+      "client": {
+        "description": "Cartera neerlandesa de skincare. 4 marcas, 3 cuentas de Instagram, operación completa de contenido."
       },
       "cta": {
         "title": "¿Quieres esto también para tu cartera?",

@@ -4,6 +4,9 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { SINDY_PERSON_ID, LINKEDIN_SINDY_URL, SITE_URL } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -59,6 +62,26 @@ export default async function SkcCaseStudyPage({
           { name: 'SkinClarity Club', path: '/case-studies/skinclarity-club' },
         ]}
         locale={locale}
+      />
+      {/* SKC Organization — separate from FMai org so Sindy.worksFor @id resolves */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          '@id': `${SITE_URL}/case-studies/skinclarity-club/#organization-skc`,
+          name: 'SkinClarity Club',
+          url: 'https://skinclarityclub.nl',
+          description: t('client.description'),
+        }}
+      />
+      {/* Sindy Person — operator + founder of SkinClarity Club */}
+      <PersonJsonLd
+        id={SINDY_PERSON_ID}
+        name={t('testimonial.author.name')}
+        jobTitle={t('testimonial.author.role')}
+        description={t('testimonial.author.bio')}
+        sameAs={[LINKEDIN_SINDY_URL]}
+        worksForId={`${SITE_URL}/case-studies/skinclarity-club/#organization-skc`}
       />
 
       {/* Hero */}
@@ -219,8 +242,8 @@ export default async function SkcCaseStudyPage({
                   S
                 </div>
                 <div>
-                  <div className="font-semibold text-text-primary">{t('testimonial.author')}</div>
-                  <div className="text-sm text-text-muted">{t('testimonial.role')}</div>
+                  <div className="font-semibold text-text-primary">{t('testimonial.authorName')}</div>
+                  <div className="text-sm text-text-muted">{t('testimonial.authorRole')}</div>
                 </div>
               </footer>
             </GlassCard>
