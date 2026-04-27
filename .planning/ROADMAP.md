@@ -403,7 +403,7 @@ Phases execute in parallel waves:
 | 12. Brand + Copy Polish  | 4/4 | Complete    | 2026-04-25 |
 | 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
 | 14. SEO + GEO Depth      | 4/4 | Complete    | 2026-04-27 |
-| 15. Conversion Accel.    | 0/5        | Not started | -          |
+| 15. Conversion Accel.    | 1/5 | In Progress|  |
 
 ---
 
