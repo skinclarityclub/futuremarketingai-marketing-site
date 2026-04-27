@@ -139,9 +139,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {t('hero.trustAnchor')}
             </p>
 
-            {/* CTA Buttons — left-aligned */}
+            {/* CTA Buttons — left-aligned, single dominant primary + subtle text link */}
             <div
-              className="flex flex-wrap gap-4"
+              className="flex flex-col items-start gap-3"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
             >
               <CTAButton href="/apply" size="lg">
@@ -150,10 +150,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <ArrowRight className="ml-1 h-4 w-4" />
               </CTAButton>
 
-              <CTAButton href="/skills/clyde" variant="secondary" size="lg">
+              <Link
+                href="/skills/clyde"
+                className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text-primary transition-colors underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
+              >
                 {t('hero.ctaSecondary')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
 
