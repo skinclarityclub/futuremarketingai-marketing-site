@@ -74,8 +74,8 @@ Parent acceptance: GEO score lifts from 42/100 to 70+, all rich-result-eligible 
 
 Sub-IDs (canonical decomposition for plan traceability):
 
-- [ ] **SEO-GEO-01**: Organization JSON-LD has stable `@id`, `sameAs` includes LinkedIn (always) + Wikidata (when QID survives 48h check) with null-filter for the rest, 12-skill `hasOfferCatalog`, 10-topic `knowsAbout`, correct `foundingDate`, `founder` as `@id` reference. Crunchbase intentionally absent per DECISIONS-2026-04-24.md Q4 (Phase 14-01)
-- [ ] **SEO-GEO-02**: PersonJsonLd component exists and renders for Daley on `/about` and Sindy on `/case-studies/skinclarity-club` across NL/EN/ES, with `worksFor`/`@id` cross-references (Phase 14-01 + 14-02)
+- [x] **SEO-GEO-01**: Organization JSON-LD has stable `@id`, `sameAs` includes LinkedIn (always) + Wikidata (when QID survives 48h check) with null-filter for the rest, 12-skill `hasOfferCatalog`, 10-topic `knowsAbout`, correct `foundingDate`, `founder` as `@id` reference. Crunchbase intentionally absent per DECISIONS-2026-04-24.md Q4 (Phase 14-01)
+- [x] **SEO-GEO-02**: PersonJsonLd component exists and renders for Daley on `/about` and Sindy on `/case-studies/skinclarity-club` across NL/EN/ES, with `worksFor`/`@id` cross-references (Phase 14-01 + 14-02)
 - [ ] **SEO-GEO-03**: ServiceJsonLd renders on all 12 `/skills/*` pages with `@id`, `provider` referencing Organization `@id`, and `serviceType` (Phase 14-02)
 - [ ] **SEO-GEO-04**: FaqJsonLd renders on `/founding-member` + 12 skill pages with visible-FAQ word-for-word parity, NL authoritative + EN/ES translated (Phase 14-02)
 - [ ] **SEO-GEO-05**: Speakable schema marks citation-target paragraphs on `/`, `/memory`, and `/case-studies/skinclarity-club` (Phase 14-02)
@@ -167,8 +167,8 @@ Deferred to after founding member validation.
 | GTM-03      | Phase 5: Go-to-Market      | Pending  |
 | GTM-04      | Phase 5: Go-to-Market      | Pending  |
 | GTM-05      | Phase 5: Go-to-Market      | Pending  |
-| SEO-GEO-01  | Phase 14: SEO + GEO Depth  | Pending  |
-| SEO-GEO-02  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-01  | Phase 14: SEO + GEO Depth  | Complete |
+| SEO-GEO-02  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-03  | Phase 14: SEO + GEO Depth  | Pending  |
 | SEO-GEO-04  | Phase 14: SEO + GEO Depth  | Pending  |
 | SEO-GEO-05  | Phase 14: SEO + GEO Depth  | Pending  |

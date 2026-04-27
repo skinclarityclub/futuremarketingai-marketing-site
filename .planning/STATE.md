@@ -95,6 +95,7 @@ _Updated after each plan completion_
 | Phase 13 P03 | 24min | 11 tasks | 12 files |
 | Phase 14-seo-geo-depth-upgrade P04 | 16min | 3 tasks | 2 files |
 | Phase 14 P03 | 22min | 4 tasks | 8 files |
+| Phase 14 P01 | 24min | 6 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -287,6 +288,11 @@ Recent decisions affecting current work:
 - [Phase 14]: [14-03]: Added meta.title+meta.description sub-keys to legal.sections.{privacy,terms,cookies} instead of using metaKeyPrefix override; keeps every page on the same default convention (meta.* under namespace root)
 - [Phase 14]: [14-03]: Dropped schema-dts WithContext<Article> annotation on ArticleJsonLd data const because schema-dts ImageObject.width type rejects plain int; aligned with OrganizationJsonLd pattern (no annotation)
 - [Phase 14]: [14-03]: ArticleJsonLd image is optional with /og-image.png default; future MDX-frontmatter cover-image override path stays open without prop-signature break
+- [Phase 14]: [14-01]: Stable @id pattern `${SITE_URL}/path/#fragment` (e.g. https://future-marketing.ai/about/#daley) — locale-agnostic, stable across redeploys
+- [Phase 14]: [14-01]: buildSameAs() filters null-default external profile URLs (LinkedIn always; Wikidata/Twitter/KvK/YouTube/Instagram add when constants flip) — Crunchbase intentionally absent per DECISIONS Q4
+- [Phase 14]: [14-01]: PersonJsonLd component built but unrendered — Wave-2 plan 14-02 owns rendering + i18n keys (single messages/*.json owner per wave per checker B4)
+- [Phase 14]: [14-01]: ArticleJsonLd author@id matches both 'Daley Maat' and 'Daley' (formal + short-form) — handle merged into 14-03 commit 25c3fd3 per wave-1 disjoint-hunk collision rule
+- [Phase 14]: [14-01]: WIKIDATA_URL ships null until Daley's Task 1 UI work + 48h speedy-delete survival check passes — schema graph stays valid via buildSameAs() filter at every step
 
 ### Roadmap Evolution
 
@@ -307,5 +313,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-27
-Stopped at: Completed 14-04-PLAN.md (robots.ts explicit AI-crawler allowlist + canonical Host: line). 2 atomic commits 1defd5e (robots.ts: 17 UA blocks = 1 wildcard + 16 AI crawlers, SHARED_ALLOW/DISALLOW DRY refactor) + aa60f8c (post-deploy GEO probe checklist). 16min. Build green; 17 User-Agent blocks confirmed via curl on dev server (port 3002, port 3000 was occupied — no taskkill per CLAUDE.md). Sitemap verification: 27 LOCs all on future-marketing.ai, zero legacy-domain leakage. llms.txt v10 confirmed (Clyde + 347 EUR + 997 EUR + 7,997 EUR present). Wave-1 collision-free: 14-01 landed seo-config + OrganizationJsonLd in parallel (190756c, 1cc5a44), 14-03 landed legal-page metadata (61629cd) — all clean. 14-04 strictly owned only robots.ts; sitemap.ts read-only verification only.
-Resume file: None — Phase 14 Wave 1 complete (3/4). Next: 14-02 (Wave 2) PersonJsonLd rendering on /about (Daley) + /case-studies/skinclarity-club (Sindy) + 216 FAQ i18n keys + about.founder.* + case_studies.skc.testimonial.author.*. Hard dep on 14-01's PersonJsonLd component (shipped today in 1cc5a44 stack). Daley still owes 2 unrelated decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Post-deploy: re-run third-party GEO probes per .planning/phases/14-seo-geo-depth-upgrade/14-04-audit-tool-scores.md (Otterly + DarkVisitors + Perplexity baseline).
+Stopped at: Completed 14-01-PLAN.md (SEO + GEO entity foundation: stable @id constants + filtered sameAs + 12-skill OfferCatalog cross-referenced via skillServiceId + reusable PersonJsonLd component + ArticleJsonLd author@id + Wikidata + Perplexity baseline scaffolds). 6 atomic commits: 7fbd0c6 (Task 1 deferred → 14-01-NOTES.md), 190756c (seo-config.ts: 15 new exports + 2 helpers), 1cc5a44 (OrganizationJsonLd rewrite), 8138edb (PersonJsonLd new component), 25c3fd3 (Task 5 author@id hunk merged into 14-03's ArticleJsonLd completion commit per wave-1 disjoint-hunk collision rule), c26f552 (BASELINE-perplexity-probe doc). 24min. Verification gates all pass: Q_PLACEHOLDER=0, CRUNCHBASE_URL=0 in seo-config.ts AND OrganizationJsonLd.tsx, "Marketing Machine"=0, "AI Chatbots"=0, sameAs in OrgJsonLd≥1, build 88/88 SSG pages. Wave-1 collision rule honored: zero messages/*.json files modified by 14-01 commits. Phase 14 Wave 1 fully complete (14-01 + 14-03 + 14-04). Daley action items from 14-01 captured in 14-01-NOTES.md (Wikidata FMai item + KvK URL confirmation + LinkedIn slug confirmations).
+Resume file: None — Phase 14 Wave 1 complete (3/4). Next: 14-02 (Wave 2) PersonJsonLd rendering on /about (Daley) + /case-studies/skinclarity-club (Sindy) + 216 FAQ i18n keys + about.founder.* + case_studies.skc.testimonial.author.*. Hard dep on 14-01's PersonJsonLd component (shipped today in 8138edb) + Organization @id (1cc5a44) + skillServiceId helper (190756c — already cross-referenced from OrganizationJsonLd's OfferCatalog so 14-02's per-skill ServiceJsonLd just emits the same @id). Daley still owes 2 unrelated decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Post-deploy: re-run third-party GEO probes per .planning/phases/14-seo-geo-depth-upgrade/14-04-audit-tool-scores.md + Perplexity baseline (5 probes scaffolded in BASELINE-perplexity-probe-2026-04-24.md awaiting MCP-enabled agent OR Daley pre-deploy).
