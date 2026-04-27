@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<title>NL Bureau AI Readiness Checklist — FutureMarketingAI</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "DM Sans", sans-serif;
+    color: #0a0d14;
+    background: #ffffff;
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm;
+    page-break-after: always;
+    position: relative;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+  .header-band {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6mm;
+    background: linear-gradient(90deg, #00d4aa 0%, #f5a623 100%);
+  }
+  .footer {
+    position: absolute;
+    bottom: 12mm;
+    left: 20mm;
+    right: 20mm;
+    font-size: 9pt;
+    color: #6b7280;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 5mm;
+  }
+  h1 {
+    font-size: 32pt;
+    font-weight: 700;
+    color: #0a0d14;
+    line-height: 1.15;
+    margin-bottom: 8mm;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 18pt;
+    font-weight: 600;
+    color: #0a0d14;
+    margin-bottom: 6mm;
+    margin-top: 8mm;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #0a7c66;
+    margin-bottom: 4mm;
+    margin-top: 6mm;
+  }
+  p {
+    margin-bottom: 4mm;
+  }
+  .lede {
+    font-size: 13pt;
+    color: #1a1f2e;
+    line-height: 1.5;
+    margin-bottom: 6mm;
+  }
+  .accent {
+    color: #0a7c66;
+    font-weight: 600;
+  }
+  .label {
+    display: inline-block;
+    background: #00d4aa;
+    color: #0a0d14;
+    padding: 2mm 4mm;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2mm;
+    margin-bottom: 6mm;
+  }
+  .meta-row {
+    display: flex;
+    gap: 6mm;
+    font-size: 10pt;
+    color: #6b7280;
+    margin-bottom: 14mm;
+  }
+  .questions {
+    counter-reset: qno;
+  }
+  .question {
+    border-left: 3px solid #00d4aa;
+    padding: 3mm 0 3mm 5mm;
+    margin-bottom: 4mm;
+    counter-increment: qno;
+  }
+  .question::before {
+    content: counter(qno) ". ";
+    font-weight: 600;
+    color: #0a7c66;
+  }
+  .scoring-row {
+    display: flex;
+    gap: 3mm;
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+  }
+  .scoring-row span {
+    width: 7mm;
+    height: 7mm;
+    border: 1px solid #d1d5db;
+    border-radius: 1mm;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    color: #9ca3af;
+  }
+  .tier {
+    border: 1px solid #e5e7eb;
+    border-radius: 3mm;
+    padding: 6mm;
+    margin-bottom: 5mm;
+  }
+  .tier h3 {
+    margin-top: 0;
+  }
+  .tier-band {
+    display: inline-block;
+    padding: 1mm 3mm;
+    border-radius: 1mm;
+    font-size: 9pt;
+    font-weight: 600;
+    margin-bottom: 3mm;
+  }
+  .tier-explorer { background: #fef3c7; color: #92400e; }
+  .tier-builder { background: #dbeafe; color: #1e40af; }
+  .tier-operator { background: #d1fae5; color: #065f46; }
+  ul.actions {
+    list-style: none;
+    padding: 0;
+  }
+  ul.actions li {
+    position: relative;
+    padding-left: 6mm;
+    margin-bottom: 2mm;
+  }
+  ul.actions li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #00d4aa;
+    font-weight: 600;
+  }
+  .cta-block {
+    background: linear-gradient(135deg, #0a0d14 0%, #1a1f2e 100%);
+    color: #e8ecf4;
+    padding: 14mm 12mm;
+    border-radius: 4mm;
+    text-align: center;
+    margin-top: 10mm;
+  }
+  .cta-block h2 {
+    color: #e8ecf4;
+    margin-top: 0;
+  }
+  .cta-block .button {
+    display: inline-block;
+    background: #00d4aa;
+    color: #0a0d14;
+    padding: 4mm 8mm;
+    border-radius: 2mm;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5mm;
+  }
+  .placeholder-stamp {
+    position: fixed;
+    top: 50mm;
+    right: -10mm;
+    transform: rotate(35deg);
+    background: #f5a623;
+    color: #0a0d14;
+    padding: 2mm 14mm;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 99;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER + INTRO -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <div class="label">FutureMarketingAI · NL Bureau-editie</div>
+  <h1>AI Readiness Checklist voor Nederlandse marketingbureaus</h1>
+  <p class="lede">
+    Twintig vragen, vier categorieën, een score van 0 tot 100. Daarna een
+    drie-tier actieplan dat past bij waar je nu staat. Geen sales-pitch in
+    deze pages: dit is het werk dat je morgen kan doen.
+  </p>
+  <div class="meta-row">
+    <span>Versie 1.0</span>
+    <span>·</span>
+    <span>Voltooi in circa 12 minuten</span>
+    <span>·</span>
+    <span>Pagina 1 van 7</span>
+  </div>
+
+  <h2>Hoe deze checklist werkt</h2>
+  <p>
+    Score elke vraag van 0 tot 5, waarbij 0 betekent "we doen dit niet" en 5
+    betekent "we doen dit consequent en gemeten". Tel je punten per categorie,
+    plus een totaalscore. Op pagina 4 zie je waar je staat. Op pagina 5 en 6
+    krijg je drie of vier concrete acties die passen bij je niveau.
+  </p>
+
+  <h2>Wat je hierna kan doen</h2>
+  <p>
+    Mail je score naar <span class="accent">hello@future-marketing.ai</span> als
+    je een vrijblijvend gesprek wil over wat een AI-medewerker concreet voor
+    jouw merken-portfolio kan doen. Of plan direct een 30-min sessie via de
+    link op pagina 7.
+  </p>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>1 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — CATEGORIES 1 + 2 -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <h2>Categorie 1: Data-hygiëne</h2>
+  <div class="questions">
+    <div class="question">
+      Onze klant-data zit in één centrale plek (CRM, geen losse spreadsheets per medewerker).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij weten per merk welke content goed werkt: er is data per kanaal, niet alleen onderbuik.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze brand-voice is gedocumenteerd in tekst, niet alleen in iemands hoofd.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij hebben een herkenbaar archief van eerdere campagnes en hun resultaten.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij wisselen klant-data niet uit via WhatsApp of losse mailbestanden.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+  </div>
+
+  <h2>Categorie 2: Operationele gereedheid</h2>
+  <div class="questions">
+    <div class="question">
+      Wij hebben een vaste publicatie-cyclus per merk (bijv. 5 posts per week, vast plan).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze goedkeuringsstroom is voorspelbaar en geen flessenhals (één persoon, dagelijks).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij meten output per merk, niet alleen per medewerker.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij hebben een proces om snel een nieuw merk in onze pijplijn te starten (onboarding-template).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze tooling-stack is in kaart gebracht en niet versnipperd over 12 abonnementen.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>2 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — CATEGORIES 3 + 4 -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <h2>Categorie 3: Team AI-vaardigheid</h2>
+  <div class="questions">
+    <div class="question">
+      Tenminste één persoon in het team kan een goede prompt schrijven voor een tekst-AI.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij weten waar AI-output faalt voor onze klanten: hallucinaties, tone-mismatches, brand-leak.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij delen leereffecten over AI-tooling intern (Slack-channel, weekly demo, kennisdoc).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze klanten weten dat wij met AI werken, en hebben dat schriftelijk geaccepteerd.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij hebben een no-go-lijst voor AI: wat doe je nooit, ook al kan het.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+  </div>
+
+  <h2>Categorie 4: Commercieel model</h2>
+  <div class="questions">
+    <div class="question">
+      Wij rekenen niet langer per uur op werk dat AI in seconden doet.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze marge per merk is bekend en stuurbaar (geen black box).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij hebben minstens één klant op een outcome-fee of retainer-fee in plaats van uurtarief.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Onze pricing-pagina (intern of extern) reflecteert wat we nu echt leveren, niet wat in 2022 normaal was.
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+    <div class="question">
+      Wij weten welk werk we vandaag al verlies-makend uitvoeren (en plannen om het te killen of te automatiseren).
+      <div class="scoring-row"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>3 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 4 — SCORING -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <h1 style="font-size: 26pt; margin-bottom: 6mm;">Jouw score</h1>
+  <p class="lede">
+    Tel je punten per categorie. Maximum is 25 per categorie, totaal 100.
+    Schrijf hier je scores in:
+  </p>
+
+  <div style="margin: 8mm 0;">
+    <div style="display: grid; grid-template-columns: 1fr 30mm; gap: 4mm; margin-bottom: 3mm; padding: 3mm 0; border-bottom: 1px solid #e5e7eb;">
+      <span><strong>Data-hygiëne</strong> (vraag 1 t/m 5)</span>
+      <span style="text-align: right;">_____ / 25</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 30mm; gap: 4mm; margin-bottom: 3mm; padding: 3mm 0; border-bottom: 1px solid #e5e7eb;">
+      <span><strong>Operationele gereedheid</strong> (vraag 6 t/m 10)</span>
+      <span style="text-align: right;">_____ / 25</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 30mm; gap: 4mm; margin-bottom: 3mm; padding: 3mm 0; border-bottom: 1px solid #e5e7eb;">
+      <span><strong>Team AI-vaardigheid</strong> (vraag 11 t/m 15)</span>
+      <span style="text-align: right;">_____ / 25</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 30mm; gap: 4mm; margin-bottom: 3mm; padding: 3mm 0; border-bottom: 1px solid #e5e7eb;">
+      <span><strong>Commercieel model</strong> (vraag 16 t/m 20)</span>
+      <span style="text-align: right;">_____ / 25</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 30mm; gap: 4mm; margin-bottom: 3mm; padding: 4mm 0; border-top: 2px solid #0a0d14; font-weight: 600;">
+      <span>Totaal</span>
+      <span style="text-align: right;">_____ / 100</span>
+    </div>
+  </div>
+
+  <h2>Drie tiers, één score-bracket per tier</h2>
+  <p>
+    <span class="tier-band tier-explorer">0 — 30 EXPLORER</span>
+    AI is nog losstaande experimenten, niet ingebed in operatie.
+  </p>
+  <p>
+    <span class="tier-band tier-builder">31 — 60 BUILDER</span>
+    Eerste workflows lopen; data en proces zijn deels op orde.
+  </p>
+  <p>
+    <span class="tier-band tier-operator">61 — 100 OPERATOR</span>
+    AI is geintegreerd in de operatie; volgende stap is schaal en commercieel model.
+  </p>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>4 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 5 — TIER ACTION GUIDES (1/2) -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <h1 style="font-size: 26pt; margin-bottom: 8mm;">Je actieplan</h1>
+
+  <div class="tier">
+    <span class="tier-band tier-explorer">0 — 30 EXPLORER</span>
+    <h3>Drie acties voor de komende 30 dagen</h3>
+    <ul class="actions">
+      <li>Documenteer de brand-voice van je drie grootste merken in tekst (1 pagina per merk, geen Notion-marathon).</li>
+      <li>Verzamel content-output per merk per week in één spreadsheet, vier weken lang. Geen tooling, gewoon meten.</li>
+      <li>Probeer één AI-tool met één klant (bijv. brainstorm-prompt voor reels). Time-box op 4 uur. Doel is leren, niet schalen.</li>
+    </ul>
+  </div>
+
+  <div class="tier">
+    <span class="tier-band tier-builder">31 — 60 BUILDER</span>
+    <h3>Vier acties voor de komende 60 dagen</h3>
+    <ul class="actions">
+      <li>Standaardiseer de goedkeuringsstroom: één persoon per merk, dagelijkse checkpoint, max 24u doorlooptijd.</li>
+      <li>Bouw een memory-laag voor minimaal één merk: brand-voice + verboden zinnen + concurrent-context. Document, niet alleen prompt.</li>
+      <li>Schrap één tool uit je stack. Welke kan je vervangen door een AI-medewerker plus een goedkope publicatie-tool?</li>
+      <li>Test één klant op een retainer-fee in plaats van uurtarief, zes maanden. Meet marge.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>5 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 6 — TIER ACTION GUIDES (2/2) -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <div class="tier">
+    <span class="tier-band tier-operator">61 — 100 OPERATOR</span>
+    <h3>Vier acties voor de komende 90 dagen</h3>
+    <ul class="actions">
+      <li>Audit waar handwerk nog dominant is in jouw operatie. Welke 3 taken vragen meer dan 10 uur per week en zijn AI-geschikt?</li>
+      <li>Definieer een outcome-fee model voor minstens twee klanten. Cijfer op kost-per-merk per maand, niet op uren.</li>
+      <li>Schrijf een interne AI-no-go-lijst. Wat doe je nooit, ook al kan het. Deel met klanten als E-E-A-T-signaal.</li>
+      <li>Kijk naar je commercieel model. Welk omzet-deel zit op werk dat in 2027 niet meer 100 EUR per uur waard is?</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top: 14mm;">Wat we hier wel zeggen</h2>
+  <p>
+    Dit document zit niet vol marketing-fluff. Wat hier staat is wat we dagelijks
+    bij Nederlandse bureaus zien werken. We zijn zelf een bureau, geen tooling-bedrijf:
+    de checklist is gebouwd vanuit operationele praktijk, niet vanuit een
+    productdemo.
+  </p>
+
+  <h2>Wat we hier niet zeggen</h2>
+  <p>
+    We zeggen niet dat AI alles oplost. We zeggen niet dat een tool de tone-of-voice
+    van je merken vanzelf kent. We zeggen niet dat je morgen je freelancers kan
+    laten gaan. Wat we wel zeggen: er valt minimaal vijf uur per week per merk
+    te besparen aan repetitief werk, en die tijd kan je verkopen of in strategie
+    stoppen.
+  </p>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai</span>
+    <span>6 / 7</span>
+  </div>
+</div>
+
+<!-- PAGE 7 — CTA -->
+<div class="page">
+  <div class="header-band"></div>
+  <div class="placeholder-stamp">PLACEHOLDER · v1 MOCKUP</div>
+  <h1 style="font-size: 26pt;">Volgende stap</h1>
+  <p class="lede">
+    Heb je je score? Wil je een tweede paar ogen op je actieplan, of een
+    vrijblijvend gesprek over hoe Clyde, onze AI-medewerker, jouw operatie
+    zou versterken?
+  </p>
+
+  <div class="cta-block">
+    <h2 style="font-size: 22pt;">Plan een gesprek</h2>
+    <p style="margin-bottom: 5mm; color: #9ba3b5;">
+      30 minuten, geen pitch, geen hard sell. Daley luistert, kijkt naar
+      je score, en komt met concrete next steps.
+    </p>
+    <a href="https://future-marketing.ai/apply" class="button">future-marketing.ai/apply</a>
+  </div>
+
+  <h2 style="margin-top: 14mm;">Founding Partner programma</h2>
+  <p>
+    Tien partners worden Founding Partner van FutureMarketingAI: één-tijds
+    EUR 997 voor levenslange Founding-tier toegang. Eén plek bezet, negen
+    open. Voorwaarden en details op
+    <span class="accent">future-marketing.ai/founding-member</span>.
+  </p>
+
+  <h2>Vragen?</h2>
+  <p>
+    Mail naar <span class="accent">hello@future-marketing.ai</span> of plan
+    direct via de bovenstaande knop. We antwoorden binnen één werkdag.
+  </p>
+
+  <div class="footer">
+    <span>FutureMarketingAI · future-marketing.ai · hello@future-marketing.ai</span>
+    <span>7 / 7</span>
+  </div>
+</div>
+
+</body>
+</html>
