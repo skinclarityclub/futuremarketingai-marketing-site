@@ -835,7 +835,9 @@
         "successBody": "Gracias por contactar. Te responderé en 1 a 2 días hábiles.",
         "sendAnother": "Enviar otro mensaje",
         "networkError": "Error de red. Verifica tu conexión e intenta de nuevo.",
-        "genericError": "Algo salió mal. Por favor, intenta de nuevo."
+        "genericError": "Algo salió mal. Por favor, intenta de nuevo.",
+        "calendlyOffer": "Si encaja una llamada de partnership, reserva directamente.",
+        "calendlyCta": "Abrir la agenda de Daley"
       }
     },
     "book_demo": {
@@ -1832,8 +1834,12 @@
         "quote": "Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba una tarde entera a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta.",
         "authorName": "Sindy",
         "authorRole": "Founder, SkinClarity Club",
+        "photoSrc": "/case-studies/skc/sindy-headshot.jpg",
+        "photoAlt": "Retrato de Sindy, founder de SkinClarity Club",
+        "linkedinUrl": "https://www.linkedin.com/in/sindy-skinclarity",
+        "linkedinLabel": "Ver a Sindy en LinkedIn",
         "author": {
-          "name": "Sindy Maat",
+          "name": "Sindy",
           "role": "Founder y operadora, SkinClarity Club",
           "bio": "Sindy gestiona 4 marcas bajo SkinClarity Club y utiliza Clyde como su Empleado IA de Marketing en 3 cuentas de Instagram, con contenido autónomo y memoria aislada por marca. Founding partner desde el lanzamiento."
         }

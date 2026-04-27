@@ -107,6 +107,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   statusSendAnother: t('form.status.sendAnother'),
                   statusNetworkError: t('form.status.networkError'),
                   statusGenericError: t('form.status.genericError'),
+                  // Phase 15-02: optional Calendly soft CTA on success.
+                  statusCalendlyOffer: t('form.status.calendlyOffer'),
+                  statusCalendlyCta: t('form.status.calendlyCta'),
                 }}
               />
             </GlassCard>

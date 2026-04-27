@@ -5,6 +5,8 @@ import { CTAButton } from '@/components/ui/CTAButton'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
+const DEFAULT_CALENDLY_URL = 'https://calendly.com/futureai/strategy-call'
+
 interface ContactFormProps {
   labels: {
     name: string
@@ -23,6 +25,9 @@ interface ContactFormProps {
     statusSendAnother: string
     statusNetworkError: string
     statusGenericError: string
+    // Phase 15-02: optional Calendly soft CTA in success state.
+    statusCalendlyOffer: string
+    statusCalendlyCta: string
   }
 }
 
@@ -76,6 +81,8 @@ export function ContactForm({ labels }: ContactFormProps) {
   }
 
   if (status === 'success') {
+    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_APPLY_URL ?? DEFAULT_CALENDLY_URL
+
     return (
       <div className="text-center py-12" role="status" aria-live="polite">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#00FF88]/10 flex items-center justify-center">
@@ -99,6 +106,27 @@ export function ContactForm({ labels }: ContactFormProps) {
         >
           {labels.statusSendAnother}
         </button>
+
+        {/* Phase 15-02: optional soft Calendly CTA. NOT inline-embedded — contact
+            intent is lower than apply, an embed would feel pushy. */}
+        <div className="mt-6 mx-auto max-w-md rounded-xl border border-border-primary bg-white/[0.02] p-5 text-sm text-text-secondary">
+          <p className="mb-3">{labels.statusCalendlyOffer}</p>
+          <a
+            href={calendlyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-accent-system/60 px-4 py-2 text-sm font-medium text-accent-system hover:bg-accent-system/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
+            onClick={() => {
+              if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+                window.gtag('event', 'calendly_link_click', {
+                  location: 'contact_success',
+                })
+              }
+            }}
+          >
+            {labels.statusCalendlyCta}
+          </a>
+        </div>
       </div>
     )
   }
