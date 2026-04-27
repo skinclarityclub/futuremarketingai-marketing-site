@@ -47,7 +47,7 @@ export default async function SkcCaseStudyPage({
   const t = await getTranslations({ locale, namespace: 'case_studies.skc' })
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}

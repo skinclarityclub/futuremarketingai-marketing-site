@@ -34,7 +34,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
   const t = await getTranslations({ locale, namespace: 'memory' })
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}

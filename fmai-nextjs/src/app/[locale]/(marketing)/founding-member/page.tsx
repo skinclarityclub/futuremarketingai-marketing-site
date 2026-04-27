@@ -51,7 +51,7 @@ export default async function FoundingMemberPage({
   const t = await getTranslations({ locale, namespace: 'founding-member' })
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}

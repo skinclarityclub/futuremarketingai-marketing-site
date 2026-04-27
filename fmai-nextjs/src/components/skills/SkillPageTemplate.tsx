@@ -100,7 +100,7 @@ export async function SkillPageTemplate({
   }))
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}

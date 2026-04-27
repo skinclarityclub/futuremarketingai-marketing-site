@@ -54,7 +54,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'home' })
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       {/*
         Spline hero hints — home page only (Next.js 16 App Router hoists
         bare <link> elements into the document <head>). Lives here, not

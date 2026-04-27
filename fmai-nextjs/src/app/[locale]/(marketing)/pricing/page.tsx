@@ -59,7 +59,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: 'pricing' })
 
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}
