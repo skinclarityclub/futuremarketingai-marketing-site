@@ -76,9 +76,9 @@ Sub-IDs (canonical decomposition for plan traceability):
 
 - [x] **SEO-GEO-01**: Organization JSON-LD has stable `@id`, `sameAs` includes LinkedIn (always) + Wikidata (when QID survives 48h check) with null-filter for the rest, 12-skill `hasOfferCatalog`, 10-topic `knowsAbout`, correct `foundingDate`, `founder` as `@id` reference. Crunchbase intentionally absent per DECISIONS-2026-04-24.md Q4 (Phase 14-01)
 - [x] **SEO-GEO-02**: PersonJsonLd component exists and renders for Daley on `/about` and Sindy on `/case-studies/skinclarity-club` across NL/EN/ES, with `worksFor`/`@id` cross-references (Phase 14-01 + 14-02)
-- [ ] **SEO-GEO-03**: ServiceJsonLd renders on all 12 `/skills/*` pages with `@id`, `provider` referencing Organization `@id`, and `serviceType` (Phase 14-02)
-- [ ] **SEO-GEO-04**: FaqJsonLd renders on `/founding-member` + 12 skill pages with visible-FAQ word-for-word parity, NL authoritative + EN/ES translated (Phase 14-02)
-- [ ] **SEO-GEO-05**: Speakable schema marks citation-target paragraphs on `/`, `/memory`, and `/case-studies/skinclarity-club` (Phase 14-02)
+- [x] **SEO-GEO-03**: ServiceJsonLd renders on all 12 `/skills/*` pages with `@id`, `provider` referencing Organization `@id`, and `serviceType` (Phase 14-02)
+- [x] **SEO-GEO-04**: FaqJsonLd renders on `/founding-member` + 12 skill pages with visible-FAQ word-for-word parity, NL authoritative + EN/ES translated (Phase 14-02)
+- [x] **SEO-GEO-05**: Speakable schema marks citation-target paragraphs on `/`, `/memory`, and `/case-studies/skinclarity-club` (Phase 14-02)
 - [x] **SEO-GEO-06**: ArticleJsonLd emits `image` (ImageObject + dimensions), `publisher.logo` (ImageObject + dimensions), `mainEntityOfPage`, and stable `@id` — all 4 Article rich-result requirements satisfied (Phase 14-03)
 - [x] **SEO-GEO-07**: `robots.ts` declares explicit `Allow` rules for ≥15 AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, Meta-ExternalAgent, Meta-ExternalFetcher) plus wildcard fallback (Phase 14-04)
 - [x] **SEO-GEO-08**: `sitemap.xml` and `robots.txt` `Host` line use the Phase-10 canonical domain (`future-marketing.ai`); `llms.txt` reflects v10 Clyde + 12-skill + 5-tier content (Phase 14-04)
@@ -169,9 +169,9 @@ Deferred to after founding member validation.
 | GTM-05      | Phase 5: Go-to-Market      | Pending  |
 | SEO-GEO-01  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-02  | Phase 14: SEO + GEO Depth  | Complete |
-| SEO-GEO-03  | Phase 14: SEO + GEO Depth  | Pending  |
-| SEO-GEO-04  | Phase 14: SEO + GEO Depth  | Pending  |
-| SEO-GEO-05  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-03  | Phase 14: SEO + GEO Depth  | Complete |
+| SEO-GEO-04  | Phase 14: SEO + GEO Depth  | Complete |
+| SEO-GEO-05  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-06  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-07  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-08  | Phase 14: SEO + GEO Depth  | Complete |

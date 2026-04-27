@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-27T09:14:01Z"
+last_updated: "2026-04-27T10:04:23Z"
 progress:
   total_phases: 15
-  completed_phases: 10
+  completed_phases: 11
   total_plans: 53
-  completed_plans: 42
+  completed_plans: 43
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 14 of 15 (SEO + GEO Depth Upgrade) -- IN PROGRESS (Wave 1 = 14-01 + 14-03 + 14-04 landed parallel; Wave 2 = 14-02 pending)
-Plan: 14-04 landed -- robots.ts explicit AI-crawler allowlist + canonical Host. Single-rule wildcard config replaced with 17 User-Agent blocks (1 wildcard + 16 explicit AI crawlers: GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, Meta-ExternalAgent, Meta-ExternalFetcher, Diffbot). Host: https://future-marketing.ai + Sitemap: https://future-marketing.ai/sitemap.xml emit canonical post-Phase-10 domain. SHARED_ALLOW/SHARED_DISALLOW const refactor (DRY). 2 atomic commits: 1defd5e (robots.ts) + aa60f8c (post-deploy GEO probe checklist). Sitemap canonical-host verification passed (27 LOCs, all on future-marketing.ai, zero legacy-domain leakage). llms.txt v10 confirmed (Clyde + 347 EUR + 997 EUR present). Wave-1 file ownership held: zero touches to seo-config.ts (14-01 owns) or messages/*.json or sitemap.ts. Build green; pre-existing audit-08 lint errors surface via soft prebuild gate (Phase 11 work, not 14-04).
-Status: PHASE 14 IN PROGRESS. Wave 1 (14-01, 14-03, 14-04) complete. Wave 2 (14-02 PersonJsonLd rendering + 216 FAQ keys + about.founder + sindy testimonial) ready to start (depends on 14-01's PersonJsonLd component + Organization @id which both shipped today).
-Last activity: 2026-04-27 -- 14-04 done in 16min: 1 source file modified (robots.ts), 1 doc created (audit-tool-scores.md), 2 atomic commits + this metadata commit pending. Dev server left running on port 3002 (port 3000 was occupied; per CLAUDE.md no taskkill). Phase 14 progress: 3/4 plans landed.
+Phase: 14 of 15 (SEO + GEO Depth Upgrade) -- COMPLETE (Wave 1 = 14-01 + 14-03 + 14-04 landed; Wave 2 = 14-02 just landed). Phase 15 ready to start.
+Plan: 14-02 landed -- ServiceJsonLd wired on 12 skill pages (closes Org.hasOfferCatalog graph loop), 12 × 5 × 3 = 180 FAQ Q/A pairs added across NL/EN/ES (+ 12 titles per locale + 297 total new i18n entries), FaqJsonLd on /founding-member matches existing visible FAQ word-for-word, Speakable schema on home + /memory + /case-studies/skinclarity-club (9 instances), PersonJsonLd renders for Daley on /about (3 locales) + Sindy on SKC case (3 locales) with inline SKC Organization for graph-local worksFor resolution. WebPageJsonLd extended with @id (pageWebPageId) + isPartOf @id ref + optional speakableSelectors prop. ServiceJsonLd rewritten with @id (skillServiceId) + provider@id ref to ORG_ID + areaServed array + availableLanguage. SkillData interface gained serviceType field with 12 Google-classified service categories. 8 atomic task commits (983e335 through a9deef5). Build green: 88/88 SSG, zero MISSING_MESSAGE errors. All 93 new schema blocks confirmed in built HTML output via grep. Wave-2 messages-file ownership rule honored: 297 new i18n entries all owned by 14-02, zero collision with 14-01 or 14-03.
+Status: PHASE 14 COMPLETE. All 4 plans landed in 14-seo-geo-depth-upgrade. Phase 15 (Conversion Accelerators) ready to start.
+Last activity: 2026-04-27 -- 14-02 done in 31min: 11 files modified (4 SEO components + 4 page wirings + 3 messages files), 8 atomic commits + this metadata commit. Build green. Schema rendering count: 36 ServiceJsonLd + 39 FaqJsonLd + 6 PersonJsonLd + 3 SKC Organization + 9 Speakable + 36 WebPage @id refs = 129 schema blocks across 88 prerendered pages.
 
-Progress: [████████████▌░] 82% | Phase 14: [███░] 3/4 plans complete (14-01 + 14-03 + 14-04 in Wave 1, 14-02 pending in Wave 2)
+Progress: [█████████████░] 87% | Phase 14: [████] 4/4 plans complete (14-01 + 14-03 + 14-04 Wave 1; 14-02 Wave 2)
 
 ### Audit context (2026-04-24)
 
@@ -96,6 +96,8 @@ _Updated after each plan completion_
 | Phase 14-seo-geo-depth-upgrade P04 | 16min | 3 tasks | 2 files |
 | Phase 14 P03 | 22min | 4 tasks | 8 files |
 | Phase 14 P01 | 24min | 6 tasks | 6 files |
+| Phase 14 P02 | 31min | 9 tasks | 11 files | ServiceJsonLd on 12 skill pages + 180 FAQ Q/A in 3 locales + Speakable + Person rendering Daley/Sindy + SKC org schema |
+| Phase 14-seo-geo-depth-upgrade P02 | 31min | 9 tasks tasks | 11 files files |
 
 ## Accumulated Context
 
@@ -293,6 +295,16 @@ Recent decisions affecting current work:
 - [Phase 14]: [14-01]: PersonJsonLd component built but unrendered — Wave-2 plan 14-02 owns rendering + i18n keys (single messages/*.json owner per wave per checker B4)
 - [Phase 14]: [14-01]: ArticleJsonLd author@id matches both 'Daley Maat' and 'Daley' (formal + short-form) — handle merged into 14-03 commit 25c3fd3 per wave-1 disjoint-hunk collision rule
 - [Phase 14]: [14-01]: WIKIDATA_URL ships null until Daley's Task 1 UI work + 48h speedy-delete survival check passes — schema graph stays valid via buildSameAs() filter at every step
+- [Phase 14]: [14-02]: ServiceJsonLd @id pattern (skillServiceId(slug)) closes Org.hasOfferCatalog graph loop from 14-01 — 12 services match 12 catalog items exactly, single source of truth (skillServiceId helper)
+- [Phase 14]: [14-02]: serviceType taxonomy = human-readable category strings ('Social Media Content Service' etc.) NOT schema.org enum URIs — Google rich-result prefers human-readable, future swap to canonical IDs is one-line change per skill
+- [Phase 14]: [14-02]: FAQ schema-content parity by single-array pattern: faqItems built once, passed to both visible <dl> and FaqJsonLd — eliminates the drift class of bugs Google penalizes
+- [Phase 14]: [14-02]: Visible FAQ uses h3-in-dt semantic (audit 05 Top-15 #6) — same visual, better LLM h3 weight
+- [Phase 14]: [14-02]: Sindy positioning = founder + operator of SKC only, zero mention of Daley's co-ownership per i18n quality bar (CLAUDE.md rule)
+- [Phase 14]: [14-02]: SKC Organization @id is page-local (#organization-skc) not a global #org-skc — keeps FMai graph clean, lets Sindy.worksFor resolve graph-locally on SKC case study
+- [Phase 14]: [14-02]: i18n flat-to-nested restructure for testimonial — flat author/role renamed to authorName/authorRole (visible code), new nested author={name,role,bio} added for schema. Zero visible content change
+- [Phase 14]: [14-02]: about.founder.fullName ('Daley Maat') added alongside existing about.founder.name ('Daley') — separate keys for separate purposes (visible card unchanged, Person schema gets formal full name)
+- [Phase 14]: [14-02]: Speakable type extension via `& { speakable?: ... }` pattern (schema-dts SpeakableSpecification is pending class) — same as ServiceJsonLd availableLanguage extension. No @ts-expect-error, types stay strict
+- [Phase 14]: [14-02]: Wave-2 messages-file ownership absolute: 297 new i18n entries (180 FAQ + 36 titles + 81 misc) all in 14-02 commits, zero collision with 14-01 (code-only) or 14-03 (only trims existing meta-descriptions)
 
 ### Roadmap Evolution
 
@@ -313,5 +325,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-27
-Stopped at: Completed 14-01-PLAN.md (SEO + GEO entity foundation: stable @id constants + filtered sameAs + 12-skill OfferCatalog cross-referenced via skillServiceId + reusable PersonJsonLd component + ArticleJsonLd author@id + Wikidata + Perplexity baseline scaffolds). 6 atomic commits: 7fbd0c6 (Task 1 deferred → 14-01-NOTES.md), 190756c (seo-config.ts: 15 new exports + 2 helpers), 1cc5a44 (OrganizationJsonLd rewrite), 8138edb (PersonJsonLd new component), 25c3fd3 (Task 5 author@id hunk merged into 14-03's ArticleJsonLd completion commit per wave-1 disjoint-hunk collision rule), c26f552 (BASELINE-perplexity-probe doc). 24min. Verification gates all pass: Q_PLACEHOLDER=0, CRUNCHBASE_URL=0 in seo-config.ts AND OrganizationJsonLd.tsx, "Marketing Machine"=0, "AI Chatbots"=0, sameAs in OrgJsonLd≥1, build 88/88 SSG pages. Wave-1 collision rule honored: zero messages/*.json files modified by 14-01 commits. Phase 14 Wave 1 fully complete (14-01 + 14-03 + 14-04). Daley action items from 14-01 captured in 14-01-NOTES.md (Wikidata FMai item + KvK URL confirmation + LinkedIn slug confirmations).
-Resume file: None — Phase 14 Wave 1 complete (3/4). Next: 14-02 (Wave 2) PersonJsonLd rendering on /about (Daley) + /case-studies/skinclarity-club (Sindy) + 216 FAQ i18n keys + about.founder.* + case_studies.skc.testimonial.author.*. Hard dep on 14-01's PersonJsonLd component (shipped today in 8138edb) + Organization @id (1cc5a44) + skillServiceId helper (190756c — already cross-referenced from OrganizationJsonLd's OfferCatalog so 14-02's per-skill ServiceJsonLd just emits the same @id). Daley still owes 2 unrelated decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Post-deploy: re-run third-party GEO probes per .planning/phases/14-seo-geo-depth-upgrade/14-04-audit-tool-scores.md + Perplexity baseline (5 probes scaffolded in BASELINE-perplexity-probe-2026-04-24.md awaiting MCP-enabled agent OR Daley pre-deploy).
+Stopped at: Completed 14-02-PLAN.md (Phase 14 Wave 2 + Phase 14 closure). 31min, 9 tasks, 11 files modified, 8 atomic task commits + plan-metadata commit. Wired ServiceJsonLd onto 12 skill pages via SkillPageTemplate (provider@id → ORG_ID, @id via skillServiceId(slug) closing the Org.hasOfferCatalog graph loop from 14-01), added 5-Q FAQ blocks for 12 skills × 3 locales = 180 substantive Q/A pairs (+ 36 titles + 81 misc i18n = 297 total entries). Emitted FaqJsonLd on /founding-member matching the existing visible FAQ word-for-word. Extended WebPageJsonLd with @id (pageWebPageId helper) + isPartOf @id ref + optional speakableSelectors prop. Added Speakable schema to home + /memory + /case-studies/skinclarity-club (CSS classes speakable-{section}-{purpose}, zero visual impact). Rendered PersonJsonLd for Daley on /about (DALEY_PERSON_ID + 6 knowsAbout topics + null-filtered sameAs covering Wikidata-may-be-null) and Sindy on SKC case study (SINDY_PERSON_ID + worksForId override pointing to inline SKC Organization at #organization-skc). Restructured testimonial i18n: flat author/role → authorName/authorRole (visible code), new nested author={name,role,bio} reserved for schema. Added about.founder.fullName ('Daley Maat') alongside existing about.founder.name ('Daley'). Build green: 88/88 SSG pages, zero MISSING_MESSAGE errors. Verification grep on built HTML confirms 36 Service + 36 FAQ on skills + 3 FAQ on founding-member + 6 Person + 3 SKC Org + 9 Speakable = 93 new schema blocks across 88 pages.
+Resume file: None — Phase 14 fully complete (4/4). Next: Phase 15 (Conversion Accelerators) ready to start. Phase 15 prep includes: Sindy interview + consent flow per DECISIONS Q1 (replace testimonial.author.bio placeholder with real metrics-driven content); MDX-frontmatter cover-image pipeline for ArticleJsonLd image override (per-post OG visuals); PDF design via Canva for "NL Bureau AI Readiness Checklist" lead magnet; Calendly prefill setup; new Resend Audience for newsletter. Daley still owes from 14-01 + Phase 12: Wikidata FMai item creation + KvK URL confirmation + LinkedIn slug confirmations (LINKEDIN_DALEY_URL, LINKEDIN_SINDY_URL); VoiceDemoSection phone hide (12-03); Stripe Product rename to "Max Credit Pack" (12-04). Post-deploy re-runs: third-party GEO probes per .planning/phases/14-seo-geo-depth-upgrade/14-04-audit-tool-scores.md + Perplexity baseline + Google Rich Results test on 5 representative URLs (skill page, founding-member, home, /about, SKC case) + Schema.org validator on same 5 URLs.
