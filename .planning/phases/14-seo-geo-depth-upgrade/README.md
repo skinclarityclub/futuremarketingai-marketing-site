@@ -16,11 +16,19 @@ related_research:
 waves:
   - wave: 1
     plans: [14-01, 14-03, 14-04]
-    note: 14-01 depends on Phase 10 domain SSoT. 14-03 and 14-04 independent of each other but also require Phase 10 for canonical URLs.
+    note: |
+      14-01, 14-03, 14-04 all depend on Phase 10 domain SSoT.
+      Wave-1 messages-file ownership: 14-01 is code-only (no messages/*.json writes).
+      14-03 only TRIMS existing meta-description values in messages/*.
+      All NEW i18n key additions (founder, sindy, FAQ) are consolidated in 14-02 (Wave 2).
+      Per checker feedback B4 — eliminates parallel-write collision risk.
   - wave: 2
     plans: [14-02]
-    note: 14-02 depends on 14-01 Organization @id + Person schema patterns
-estimated_effort: 10 hours total (4 + 4 + 1 + 1)
+    note: |
+      14-02 owns ALL new messages/*.json additions in Phase 14 (216 FAQ keys + about.founder.* + case_studies.skc.testimonial.author.*).
+      Also wires PersonJsonLd (built in 14-01) onto /about + /case-studies/skinclarity-club.
+      Depends on 14-01 Organization @id + PersonJsonLd component.
+estimated_effort: 10 hours total (3 + 5 + 1 + 1)
 ---
 
 # Phase 14 — SEO + GEO Depth Upgrade
@@ -106,17 +114,22 @@ Already completed in Phase 10:
 
 | Plan | Wave | Scope | Effort | Depends on |
 |---|---|---|---|---|
-| [14-01-PLAN.md](./14-01-PLAN.md) | 1 | Organization sameAs expansion + Wikidata entity + PersonJsonLd (Daley + Sindy) + hasOfferCatalog v10 + knowsAbout expansion | 4h | Phase 10 |
-| [14-02-PLAN.md](./14-02-PLAN.md) | 2 | ServiceJsonLd wiring (12 skill pages) + FaqJsonLd on founding-member + 12 skill-page FAQ schemas + Speakable on home/memory/SKC | 4h | 14-01 (Organization @id stable + Person @id stable) |
-| [14-03-PLAN.md](./14-03-PLAN.md) | 1 | Meta description trims (5 pages × 3 locales) + legal page metadata via shared helper + ArticleJsonLd completion | 1h | Phase 10 (messages files in sync) |
-| [14-04-PLAN.md](./14-04-PLAN.md) | 1 | Robots.ts explicit AI-crawler allowlist + sitemap canonical verification + host line | 1h | Phase 10 (SITE_URL stable) |
+| [14-01-PLAN.md](./14-01-PLAN.md) | 1 | Organization sameAs (filtered, Crunchbase skipped, Twitter null-default) + Wikidata entity + PersonJsonLd component + hasOfferCatalog v10 + knowsAbout expansion + ArticleJsonLd author@id | 3h | Phase 10 |
+| [14-02-PLAN.md](./14-02-PLAN.md) | 2 | ServiceJsonLd wiring (12 skill pages) + FaqJsonLd on founding-member + 12 skill-page FAQ schemas + Speakable on home/memory/SKC + PersonJsonLd RENDERING (Daley on /about, Sindy on SKC case) + i18n key additions (216 FAQ + founder + sindy) | 5h | 14-01 (Organization @id stable + PersonJsonLd component) |
+| [14-03-PLAN.md](./14-03-PLAN.md) | 1 | Meta description trims (5 pages × 3 locales = 15 strings, ≤155 chars) + legal page metadata via shared helper + legal sitemap routes + ArticleJsonLd completion | 1h | Phase 10 (messages files in sync) |
+| [14-04-PLAN.md](./14-04-PLAN.md) | 1 | Robots.ts explicit AI-crawler allowlist + sitemap canonical-host verification (legal-route presence is owned by 14-03 per B5) | 1h | Phase 10 (SITE_URL stable) |
 
 Wave-1 plans (14-01, 14-03, 14-04) can execute in parallel after Phase 10 merges.
-Wave-2 (14-02) executes after 14-01 to reuse the stable Organization + Person `@id` references.
+- 14-01 modifies code only (seo-config.ts + 2 SEO components + ArticleJsonLd patch). Zero messages/*.json writes.
+- 14-03 only TRIMS existing meta-description values in messages/* + edits sitemap.ts (legal routes).
+- 14-04 modifies robots.ts only. Sitemap is read-only here (verifies, does not modify).
+- File-ownership disjoint = safe parallel execution.
+
+Wave-2 (14-02) executes after 14-01 to reuse the PersonJsonLd component + stable Organization/Person `@id` references. 14-02 owns ALL new i18n key additions in Phase 14.
 
 ## Deliverables
 
-- `src/lib/seo-config.ts` — add `ORG_ID`, `WIKIDATA_URL`, `DALEY_PERSON_ID`, `SINDY_PERSON_ID`, `TWITTER_URL`, `CRUNCHBASE_URL`, `KVK_URL`, `YOUTUBE_URL` constants (env vars where dynamic)
+- `src/lib/seo-config.ts` — add `ORG_ID`, `WIKIDATA_URL`, `DALEY_PERSON_ID`, `SINDY_PERSON_ID`, `TWITTER_URL` (null-default per DECISIONS Q5), `KVK_URL`, `YOUTUBE_URL` constants (env vars where dynamic). `CRUNCHBASE_URL` is intentionally NOT added per DECISIONS-2026-04-24.md Q4.
 - `src/components/seo/PersonJsonLd.tsx` — new component
 - `src/components/seo/OrganizationJsonLd.tsx` — rewritten (sameAs, @id, hasOfferCatalog v10, knowsAbout, foundingDate)
 - `src/components/seo/ServiceJsonLd.tsx` — unchanged but now actually imported
@@ -127,7 +140,7 @@ Wave-2 (14-02) executes after 14-01 to reuse the stable Organization + Person `@
 - `src/app/[locale]/(marketing)/about/page.tsx` — emit `<PersonJsonLd>` for Daley
 - `src/app/[locale]/(marketing)/case-studies/skinclarity-club/page.tsx` — emit `<PersonJsonLd>` for Sindy
 - `src/app/[locale]/(legal)/legal/privacy/page.tsx` + terms + cookies — switch to `generatePageMetadata`
-- `messages/nl.json` + `en.json` + `es.json` — meta description trims (5 pages) + 12 × FAQ blocks (6 Qs per skill × 3 locales = 216 Q/A strings)
+- `messages/nl.json` + `en.json` + `es.json` — meta description trims (5 pages × 3 locales, owned by 14-03) + 12 × FAQ blocks (5 Qs per skill × 3 locales = 180 Q/A pairs ≈ 216 string entries with titles, owned by 14-02) + `about.founder.{fullName,role,bio}` (owned by 14-02) + `case_studies.skc.testimonial.author.{name,role,bio}` (owned by 14-02)
 - `src/app/robots.ts` — explicit AI-crawler `Allow` rules
 - `src/app/sitemap.ts` — add legal subpaths + raise /contact priority
 - Obsidian vault entry (via `obsidian-capture` skill): `Agency/Website/seo-geo/2026-04-24-phase-14-schema-depth-decisions.md` — log decisions for Wikidata QID, foundingDate, x-default policy, Bytespider policy

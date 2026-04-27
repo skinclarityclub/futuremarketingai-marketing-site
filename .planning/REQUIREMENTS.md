@@ -64,6 +64,27 @@ Requirements for AaaS launch. Each maps to roadmap phases.
 - [ ] **GTM-04**: Founding member outreach sequence (LinkedIn engagement → DM → call → close)
 - [ ] **GTM-05**: 3-5 founding members signed (EUR 997/mo, 6-month commitment)
 
+### Post-Audit Hardening (2026-04-24)
+
+Requirements added from the 2026-04-24 full-site audit. Decomposed parent IDs map to roadmap phases 10-15.
+
+#### AUDIT-P1-SEO-GEO (Phase 14) — SEO + GEO Depth Upgrade
+
+Parent acceptance: GEO score lifts from 42/100 to 70+, all rich-result-eligible JSON-LD entities pass Google Rich Results test, meta descriptions fit SERP, AI-crawler allowlist explicit.
+
+Sub-IDs (canonical decomposition for plan traceability):
+
+- [ ] **SEO-GEO-01**: Organization JSON-LD has stable `@id`, `sameAs` includes LinkedIn (always) + Wikidata (when QID survives 48h check) with null-filter for the rest, 12-skill `hasOfferCatalog`, 10-topic `knowsAbout`, correct `foundingDate`, `founder` as `@id` reference. Crunchbase intentionally absent per DECISIONS-2026-04-24.md Q4 (Phase 14-01)
+- [ ] **SEO-GEO-02**: PersonJsonLd component exists and renders for Daley on `/about` and Sindy on `/case-studies/skinclarity-club` across NL/EN/ES, with `worksFor`/`@id` cross-references (Phase 14-01 + 14-02)
+- [ ] **SEO-GEO-03**: ServiceJsonLd renders on all 12 `/skills/*` pages with `@id`, `provider` referencing Organization `@id`, and `serviceType` (Phase 14-02)
+- [ ] **SEO-GEO-04**: FaqJsonLd renders on `/founding-member` + 12 skill pages with visible-FAQ word-for-word parity, NL authoritative + EN/ES translated (Phase 14-02)
+- [ ] **SEO-GEO-05**: Speakable schema marks citation-target paragraphs on `/`, `/memory`, and `/case-studies/skinclarity-club` (Phase 14-02)
+- [ ] **SEO-GEO-06**: ArticleJsonLd emits `image` (ImageObject + dimensions), `publisher.logo` (ImageObject + dimensions), `mainEntityOfPage`, and stable `@id` — all 4 Article rich-result requirements satisfied (Phase 14-03)
+- [ ] **SEO-GEO-07**: `robots.ts` declares explicit `Allow` rules for ≥15 AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, Meta-ExternalAgent, Meta-ExternalFetcher) plus wildcard fallback (Phase 14-04)
+- [ ] **SEO-GEO-08**: `sitemap.xml` and `robots.txt` `Host` line use the Phase-10 canonical domain (`future-marketing.ai`); `llms.txt` reflects v10 Clyde + 12-skill + 5-tier content (Phase 14-04)
+- [ ] **SEO-META-01**: All 5 audited meta descriptions (home, pricing, apply, founding-member, how-it-works) ≤155 chars across NL/EN/ES with primary keyword in first 100 chars — eliminates SERP truncation (Phase 14-03)
+- [ ] **SEO-META-02**: Legal pages (privacy, terms, cookies) route through `generatePageMetadata` so they emit OG image + Twitter card + hreflang alternates and appear in `sitemap.xml` (Phase 14-03)
+
 ## v2 Requirements
 
 Deferred to after founding member validation.
@@ -146,14 +167,25 @@ Deferred to after founding member validation.
 | GTM-03      | Phase 5: Go-to-Market      | Pending  |
 | GTM-04      | Phase 5: Go-to-Market      | Pending  |
 | GTM-05      | Phase 5: Go-to-Market      | Pending  |
+| SEO-GEO-01  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-02  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-03  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-04  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-05  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-06  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-07  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-08  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-META-01 | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-META-02 | Phase 14: SEO + GEO Depth  | Pending  |
 
 **Coverage:**
 
 - v1 requirements: 42 total
-- Mapped to phases: 42
+- Post-audit P1 requirements: 10 (parent: AUDIT-P1-SEO-GEO)
+- Mapped to phases: 52
 - Unmapped: 0
 
 ---
 
 _Requirements defined: 2026-03-20_
-_Last updated: 2026-03-20 after roadmap creation_
+_Last updated: 2026-04-27 — Phase 14 sub-IDs added per AUDIT-P1-SEO-GEO decomposition_
