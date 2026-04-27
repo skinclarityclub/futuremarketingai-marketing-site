@@ -372,10 +372,10 @@ Plans:
 
 Plans:
 
-- [ ] 15-01-PLAN.md — Hero CTA demote + StickyMobileCTA component + rollout on 15 pages (Wave 1, low dependency)
-- [ ] 15-02-PLAN.md — Post-submit Calendly embed on ApplicationForm + ContactForm + prefill params + fallback (Wave 2, depends on Phase 10)
-- [x] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion) (completed 2026-04-27)
-- [x] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup) (completed 2026-04-25)
+- [x] 15-01-PLAN.md — Hero CTA demote + StickyMobileCTA component + rollout on 15 pages (Wave 1, low dependency) (completed 2026-04-27)
+- [x] 15-02-PLAN.md — Post-submit Calendly embed on ApplicationForm + ContactForm + prefill params + fallback (Wave 2, depends on Phase 10) (completed 2026-04-27)
+- [~] 15-03-PLAN.md — SKC interview brief + content rewrite + testimonial block + Sindy PersonJsonLd (Wave 2, depends on Phase 14 and Sindy interview completion) (PARTIAL 2026-04-27 — scaffolding shipped: brief + SkcTestimonialBlock component + i18n keys + photo-dir gate + Sindy Maat surname leak fixed. Tasks 3 + 4-final-wiring + 6 blocked on Sindy interview transcript + headshot.jpg + LinkedIn slug + akkoord email)
+- [ ] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup)
 - [ ] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish)
 
 ## Progress
