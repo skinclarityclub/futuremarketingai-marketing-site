@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import { getTranslations } from 'next-intl/server'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -25,6 +27,8 @@ interface SkillPageTemplateProps {
   stepCount?: number
   useCaseCount?: number
   integrationCount?: number
+  /** How many FAQ Qs exist in the i18n namespace under .faq.items (q1..qN). Default 5. */
+  faqCount?: number
 }
 
 const TIER_ORDER: Array<{ key: TierKey; labelKey: string }> = [
@@ -70,6 +74,7 @@ export async function SkillPageTemplate({
   stepCount = 3,
   useCaseCount = 2,
   integrationCount = 3,
+  faqCount = 5,
 }: SkillPageTemplateProps) {
   const t = await getTranslations({ locale, namespace })
   const tTiers = await getTranslations({ locale, namespace: 'pricing.tiers' })
@@ -88,6 +93,11 @@ export async function SkillPageTemplate({
   const stepKeys = Array.from({ length: stepCount }, (_, i) => `step${i + 1}`)
   const useCaseKeys = Array.from({ length: useCaseCount }, (_, i) => `useCase${i + 1}`)
   const integrationKeys = Array.from({ length: integrationCount }, (_, i) => `integration${i + 1}`)
+  const faqKeys = Array.from({ length: faqCount }, (_, i) => `q${i + 1}`)
+  const faqItems = faqKeys.map((key) => ({
+    question: t(`faq.items.${key}.question`),
+    answer: t(`faq.items.${key}.answer`),
+  }))
 
   return (
     <PageShell>
@@ -105,6 +115,16 @@ export async function SkillPageTemplate({
         ]}
         locale={locale}
       />
+      {skill && (
+        <ServiceJsonLd
+          name={skill.name}
+          description={t('hero.subtitle')}
+          serviceType={skill.serviceType}
+          slug={slug}
+          locale={locale}
+        />
+      )}
+      <FaqJsonLd items={faqItems} />
 
       {/* Hero */}
       {customHero ?? (
@@ -308,6 +328,30 @@ export async function SkillPageTemplate({
           </div>
         </section>
       )}
+
+      {/* FAQ — citation-bait, schema-content parity with FaqJsonLd above */}
+      <section
+        className="py-16 px-6 lg:px-12 bg-bg-surface/30"
+        aria-labelledby="skill-faq-heading"
+      >
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <SectionHeading id="skill-faq-heading">{t('faq.title')}</SectionHeading>
+          </div>
+          <dl className="space-y-6">
+            {faqItems.map((item, index) => (
+              <div key={faqKeys[index]} className="bg-bg-surface/50 rounded-lg p-6">
+                <dt>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                    {item.question}
+                  </h3>
+                </dt>
+                <dd className="text-text-secondary leading-relaxed">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="py-20 px-6 lg:px-12" aria-labelledby="skill-cta">

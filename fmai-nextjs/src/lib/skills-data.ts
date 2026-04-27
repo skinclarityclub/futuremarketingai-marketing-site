@@ -52,6 +52,8 @@ export interface SkillData {
   creditCostLabel: string
   /** Per-tier availability, null = fair use on all tiers */
   tierCaps?: Record<TierKey, SkillTierCap>
+  /** Schema.org Service.serviceType — Google-classified category for rich results (Phase 14-02) */
+  serviceType: string
 }
 
 export const SKILLS_DATA: readonly SkillData[] = [
@@ -74,6 +76,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'create',
     status: 'live',
     creditCostLabel: '1-2 cr / post',
+    serviceType: 'Social Media Content Service',
   },
   {
     id: 'blog-factory',
@@ -100,6 +103,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 12 },
     },
+    serviceType: 'AI Content Writing Service',
   },
   {
     id: 'ad-creator',
@@ -127,6 +131,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 25 },
     },
+    serviceType: 'Digital Advertising Creation Service',
   },
   {
     id: 'reel-builder',
@@ -153,6 +158,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 8 },
     },
+    serviceType: 'Short-Form Video Production Service',
   },
   {
     id: 'voice-agent',
@@ -180,6 +186,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 60, unit: 'min' },
     },
+    serviceType: 'AI Phone Answering Service',
   },
   {
     id: 'lead-qualifier',
@@ -199,6 +206,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'engage',
     status: 'live',
     creditCostLabel: '2 cr / score',
+    serviceType: 'Chatbot Lead Qualification Service',
   },
   {
     id: 'email-management',
@@ -225,6 +233,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 40 },
     },
+    serviceType: 'Email Inbox Classification Service',
   },
   {
     id: 'manychat',
@@ -251,6 +260,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
       FOUNDING_MEMBER: { included: 500, unit: 'dm' },
     },
+    serviceType: 'Instagram DM Automation Service',
   },
   {
     id: 'reporting',
@@ -270,6 +280,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'grow',
     status: 'live',
     creditCostLabel: '5 cr / rapport',
+    serviceType: 'Marketing Analytics Reporting Service',
   },
   {
     id: 'seo-geo',
@@ -290,6 +301,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'grow',
     status: 'live',
     creditCostLabel: '5 cr audit / 3 cr rapport',
+    serviceType: 'SEO and Generative Engine Optimization Service',
   },
   {
     id: 'research',
@@ -309,6 +321,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'grow',
     status: 'live',
     creditCostLabel: '3 cr / query',
+    serviceType: 'Market Research Service',
   },
   {
     id: 'clyde',
@@ -329,6 +342,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'grow',
     status: 'live',
     creditCostLabel: '1-5 cr / chat',
+    serviceType: 'AI Marketing Orchestration Service',
   },
 ] as const
 
