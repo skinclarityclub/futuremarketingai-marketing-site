@@ -39,6 +39,7 @@ interface ServiceJsonLdProps {
 type ServiceWithExtras = WithContext<Service> & {
   dateModified?: string
   '@id'?: string
+  availableLanguage?: string[]
 }
 
 export function ServiceJsonLd({

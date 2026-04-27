@@ -1047,6 +1047,31 @@
     "proof": {
       "title": "Try Clyde live",
       "subtitle": "Interactive demo. Have a short conversation with Clyde yourself to experience it."
+    },
+    "faq": {
+      "title": "Frequently asked questions about Voice Agent",
+      "items": {
+        "q1": {
+          "question": "What does the Voice Agent skill do exactly?",
+          "answer": "Clyde handles inbound and outbound phone calls with an AI voice: books appointments in your calendar, answers FAQ from the knowledge base, logs calls, transcribes automatically, and escalates to a human when a conversation gets complex or the caller asks for one."
+        },
+        "q2": {
+          "question": "Which telephony provider does Voice Agent use?",
+          "answer": "Under the hood it runs on ElevenLabs (voice) plus Twilio or Telnyx (phone number). You get a dedicated NL mobile or landline number as endpoint. SIP trunking porting of an existing number is supported from the Professional tier."
+        },
+        "q3": {
+          "question": "On which tiers is Voice Agent available?",
+          "answer": "Not on Partner tier. Growth includes 30 call minutes per month, Professional 120 minutes, Enterprise no cap. Founding Member receives 60 minutes monthly for life. Extra minutes can be purchased through credit packs."
+        },
+        "q4": {
+          "question": "How long does Voice Agent onboarding take?",
+          "answer": "Three to four weeks. Week 1 connects the number and builds the knowledge base. Week 2 Clyde shadow-listens to real calls. Week 3 runs first live calls with human fallback. From week 4 the skill operates autonomously with sample review."
+        },
+        "q5": {
+          "question": "How does this differ from Vapi or Bland?",
+          "answer": "Vapi and Bland are developer API platforms. Clyde adds the management, knowledge-base maintenance, and CRM integration on top. No in-house Voice engineer required. Calls feed back into Lead Qualifier and Reporting without extra wiring."
+        }
+      }
     }
   },
   "skills-lead-qualifier": {
@@ -1125,6 +1150,31 @@
     "proof": {
       "title": "Live demo",
       "subtitle": "Embeddable on every channel. Try it below, or take a look at the SKC setup."
+    },
+    "faq": {
+      "title": "Frequently asked questions about Lead Qualifier",
+      "items": {
+        "q1": {
+          "question": "What does the Lead Qualifier skill do exactly?",
+          "answer": "Clyde places an AI chatbot on your website that greets visitors, asks qualifying questions, assigns scores based on intent and behavior, and routes warm leads automatically to your CRM, Slack, or sales team. Every interaction is stored in the brand memory."
+        },
+        "q2": {
+          "question": "Which CRMs and channels does Lead Qualifier support?",
+          "answer": "Native integrations with HubSpot, Pipedrive, Salesforce, and Notion. Webhooks for custom CRMs. Deployable on any website (script snippet) and as a WhatsApp or Telegram flow from the Growth tier."
+        },
+        "q3": {
+          "question": "On which tiers is Lead Qualifier available?",
+          "answer": "Included on all 5 tiers, with fair-use on conversation volume. Costs 2 credits per qualification score. Professional and Enterprise add dynamic routing on score thresholds and automatic email follow-up sequences."
+        },
+        "q4": {
+          "question": "How long does Lead Qualifier onboarding take?",
+          "answer": "Two weeks. Week 1 installs the script, defines qualification criteria (BANT or MEDDIC), and connects the CRM. Week 2 the bot goes live with manual sample review. After that Clyde runs autonomously with weekly score-threshold calibration."
+        },
+        "q5": {
+          "question": "How does this differ from Intercom or Drift?",
+          "answer": "Intercom and Drift offer chat with human agents and rule-based bots. Clyde combines qualification, scoring, and CRM routing in a single AI skill that learns the brand voice per brand. Cheaper than a Sales Development Rep, faster than a traditional chatbot, with memory across sessions."
+        }
+      }
     }
   },
   "skills-social-media": {
@@ -1203,6 +1253,31 @@
       "title": "Ready to hand social media over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Social Media Manager",
+      "items": {
+        "q1": {
+          "question": "What does the Social Media Manager skill do exactly?",
+          "answer": "Clyde manages the full social process for Instagram, Facebook, and LinkedIn: AI-generated captions in the brand voice, multi-platform scheduling at optimal times, carousel and story builder, hashtag research, and per-post engagement tracking. One AI Marketing Employee runs multiple brands in parallel without tone bleed."
+        },
+        "q2": {
+          "question": "Which platforms and tools does Social Media Manager support?",
+          "answer": "Native publishing to Instagram, Facebook, and LinkedIn via the Meta and LinkedIn APIs. Inbound data is enriched with insights from Reporting and Research. Carousels are formatted with templates in your house style. Scheduled posts can flow through an approval workflow before publishing."
+        },
+        "q3": {
+          "question": "On which tiers is Social Media Manager available?",
+          "answer": "Available on all 5 tiers: Partner 347 EUR, Growth 2,497 EUR, Professional 4,497 EUR, Enterprise 7,997 EUR, and Founding Member 997 EUR for life. Volume per tier varies based on monthly credits. Carousels and posts cost 1 to 2 credits each."
+        },
+        "q4": {
+          "question": "How long does Social Media Manager onboarding take?",
+          "answer": "Four weeks. Week 1 Clyde reads previous content, brand guidelines, and audience data. Week 2 produces the first content calendar with per-post approval. Week 3 calibrates on feedback. From week 4 the skill runs autonomously with shorter approval cycles."
+        },
+        "q5": {
+          "question": "How does this differ from Buffer or Later?",
+          "answer": "Buffer and Later are schedulers, not content creators. You or a copywriter still write every caption and visual. Clyde combines creation, scheduling, and publishing in one pipeline with a brand-voice model trained per brand. No more separate tools for copy, visuals, and scheduling."
+        }
+      }
     }
   },
   "skills-ad-creator": {
@@ -1277,6 +1352,31 @@
       "title": "Ready to hand ad creation over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Ad Creator",
+      "items": {
+        "q1": {
+          "question": "What does the Ad Creator skill do exactly?",
+          "answer": "Clyde produces complete Meta ads: copy, visuals, static ads (1080x1080 or 1080x1920), and short video ads with motion graphics. Researches competitors in the Meta Ad Library, delivers A/B variants, and publishes directly to Ads Manager. No freelance designer or editor needed."
+        },
+        "q2": {
+          "question": "Which platforms does Ad Creator support?",
+          "answer": "Meta Ads (Instagram and Facebook): Feed, Stories, and Reels formats. Output via the Meta Marketing API. TikTok, LinkedIn, and Google Ads export are on the product roadmap. Clients with budget on those channels can manually export PNG and MP4 for now."
+        },
+        "q3": {
+          "question": "On which tiers is Ad Creator available?",
+          "answer": "Included on Growth (15 ads per month), Professional (50), and Enterprise (no cap). On Partner tier via 97 EUR add-on for 15 static ads. Founding Member receives 25 ads monthly for life at 997 EUR."
+        },
+        "q4": {
+          "question": "How long does Ad Creator onboarding take?",
+          "answer": "Two to three weeks. Week 1 connects Ads Manager and Clyde reads previous campaigns. Week 2 delivers first variants with manual per-ad approval. After that the skill runs autonomously with calibration on CTR, CPA, and ROAS data from Reporting."
+        },
+        "q5": {
+          "question": "How does this differ from AdCreative or Pencil?",
+          "answer": "AdCreative and Pencil generate stand-alone banners from prompts. Clyde respects the brand voice per brand, knows the tone of previous successful posts via shared memory with Social Media Manager, and publishes directly. No manual cut-and-paste between tools."
+        }
+      }
     }
   },
   "skills-reporting": {
@@ -1351,6 +1451,31 @@
       "title": "Ready to hand reporting over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Reporting and Analytics",
+      "items": {
+        "q1": {
+          "question": "What does the Reporting skill do exactly?",
+          "answer": "Clyde delivers weekly performance digests, real-time KPI dashboards, and cross-platform analytics across social, web, and sales. Detects anomalies (for example, a sudden CTR drop) and sends proactive alerts via email or Slack. Custom reports on demand."
+        },
+        "q2": {
+          "question": "Which data sources does Reporting support?",
+          "answer": "Native integrations with Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive, and Stripe. Custom CSV or API sources via webhooks. Data is refreshed hourly and consolidated in a Supabase warehouse on EU servers."
+        },
+        "q3": {
+          "question": "On which tiers is Reporting available?",
+          "answer": "Included on all 5 tiers, with fair-use on generated reports. 5 credits per report. Professional adds anomaly alerts, Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
+        },
+        "q4": {
+          "question": "How long does Reporting onboarding take?",
+          "answer": "One week. Day 1 connects data sources via OAuth. Days 2 through 4 Clyde establishes a KPI baseline and anomaly thresholds from historical data. From day 5 the weekly digest runs autonomously (Monday morning 08:00 in your inbox)."
+        },
+        "q5": {
+          "question": "How does this differ from Looker Studio or Whatagraph?",
+          "answer": "Looker Studio builds dashboards that you interpret weekly. Whatagraph delivers PDFs. Clyde delivers interpreted insights: not just 'CTR dropped 12 percent' but also 'cause: new creative test for brand X, recommendation: pause'. Saves the weekly interpretation hour."
+        }
+      }
     }
   },
   "founding-member": {
@@ -1773,6 +1898,31 @@
       "title": "Ready to hand inbox classification over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Email Management",
+      "items": {
+        "q1": {
+          "question": "What does the Email Management skill do exactly?",
+          "answer": "Clyde reads incoming emails in Gmail and applies smart labels (urgent, action, info, other) based on content and context. Generates a daily digest of top-3 urgent items with draft replies ready to send. This is inbox classification, not email campaigns."
+        },
+        "q2": {
+          "question": "Which email providers does Email Management support?",
+          "answer": "Currently Gmail only (Google Workspace and free accounts) via OAuth. Outlook and custom IMAP are on the roadmap for Q3. Connection refreshes hourly, no email content is stored outside EU servers."
+        },
+        "q3": {
+          "question": "On which tiers is Email Management available?",
+          "answer": "Included on all tiers: Partner gets 5 classifications per month, Growth 20, Professional 60, Enterprise no cap. Founding Member receives 40 actions per month. An action is a classification or a generated draft reply."
+        },
+        "q4": {
+          "question": "How long does Email Management onboarding take?",
+          "answer": "One week. Day 1 OAuth connection with Gmail. Days 2 through 4 Clyde learns your label patterns by analyzing previous emails (label categories only, no content storage). Day 5 the digest goes live with a manual correction loop. From week 2 classification stabilizes."
+        },
+        "q5": {
+          "question": "How does this differ from SaneBox or Superhuman?",
+          "answer": "SaneBox sorts into folders by sender. Superhuman is a fast email client. Clyde reads content, classifies on intent (lead, invoice, sales question), and generates draft replies in your writing style. Saves the daily scan-and-type hours."
+        }
+      }
     }
   },
   "skills-research": {
@@ -1847,6 +1997,31 @@
       "title": "Ready to hand research over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Research",
+      "items": {
+        "q1": {
+          "question": "What does the Research skill do exactly?",
+          "answer": "Clyde runs continuous market research, monitors trends in your niche, analyzes competitors, and delivers actionable insights with source citations. Answers targeted questions (for example, 'what did competitor X launch in the last 30 days') or runs weekly trend scans in the background."
+        },
+        "q2": {
+          "question": "Which sources does Research use?",
+          "answer": "Web (via Perplexity, Tavily, and Exa APIs), news aggregators, social platforms (Instagram, LinkedIn, TikTok), Meta Ad Library, Google Trends, and custom RSS feeds you add. Every output shows the exact source, date, and relevance score."
+        },
+        "q3": {
+          "question": "On which tiers is Research available?",
+          "answer": "Included on all 5 tiers with fair-use on number of queries. 3 credits per query. Professional adds scheduled weekly trend reports, Enterprise adds custom report cadences and specific competitor watchlists. Founding Member receives lifetime access at 997 EUR."
+        },
+        "q4": {
+          "question": "How long does Research onboarding take?",
+          "answer": "Three to five days. Day 1 you specify the niche, audience, and competitors. Days 2 through 3 Clyde establishes a baseline trend profile. Day 4 delivers the first weekly report with manual feedback. From day 5 it runs autonomously with a weekly review."
+        },
+        "q5": {
+          "question": "How does this differ from Perplexity Pro or Brandwatch?",
+          "answer": "Perplexity Pro answers stand-alone questions without memory. Brandwatch is enterprise social listening. Clyde combines deep web search and social listening with brand-level memory: a trend that was relevant last week is not pulled again, and competitor moves are linked to your earlier analyses."
+        }
+      }
     }
   },
   "skills-blog-factory": {
@@ -1921,6 +2096,31 @@
       "title": "Ready to hand blog production over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Blog Factory",
+      "items": {
+        "q1": {
+          "question": "What does the Blog Factory skill do exactly?",
+          "answer": "Clyde produces SEO-optimized longreads from keyword research to publication. Each article runs 1,500 to 3,000 words, gets an automatic meta description, heading structure, internal links, and is published to your CMS. Writing happens in the brand voice learned from previously approved content."
+        },
+        "q2": {
+          "question": "Which CMSes does Blog Factory support?",
+          "answer": "Native publishing to WordPress (REST API), Webflow, Shopify blog, Ghost, Sanity, and Notion. Custom CMSes via webhooks or MDX export. Images are added via Unsplash or DALLE APIs. Schema.org Article markup is built in automatically."
+        },
+        "q3": {
+          "question": "On which tiers is Blog Factory available?",
+          "answer": "Partner gets 2 articles per month, Growth 8, Professional 20, Enterprise no cap. Founding Member receives 12 articles per month for life. Each article costs 15 credits. Extra articles available through credit packs."
+        },
+        "q4": {
+          "question": "How long does Blog Factory onboarding take?",
+          "answer": "Two weeks. Week 1 Clyde reads 5 to 10 previous blog posts for brand-voice modeling. Week 2 delivers the first 2 articles for manual approval with a feedback loop. From week 3 the skill runs autonomously with sample review every 5 articles."
+        },
+        "q5": {
+          "question": "How does this differ from Jasper or SurferSEO?",
+          "answer": "Jasper is a prompt tool, you build the structure every time. SurferSEO checks SEO quality. Clyde delivers the full article: keyword clustering, writing, optimizing, publishing, with memory of your style and prior topics. No more manual cut-and-paste between 3 tools."
+        }
+      }
     }
   },
   "skills-seo-geo": {
@@ -1995,6 +2195,31 @@
       "title": "Ready to hand SEO over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about SEO and GEO Analyst",
+      "items": {
+        "q1": {
+          "question": "What does the SEO/GEO skill do exactly?",
+          "answer": "Clyde runs technical SEO audits, tracks keyword rankings in Google, monitors Core Web Vitals, and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Google AI Overviews, Claude). Delivers prioritized fix recommendations ranked by impact and effort."
+        },
+        "q2": {
+          "question": "Which tools and APIs are used?",
+          "answer": "Lighthouse and PageSpeed Insights for Core Web Vitals, Ahrefs or Semrush for keyword tracking (your existing seat), schema validators for structured-data audits, and direct Perplexity and Otterly probes for AI citation monitoring. Output consolidates into a weekly report."
+        },
+        "q3": {
+          "question": "On which tiers is SEO/GEO available?",
+          "answer": "Included on all tiers with fair-use on number of audits. 5 credits per audit, 3 credits per short report. Professional adds automatic monthly audits, Enterprise adds custom alert thresholds and SERP snapshot tracking. Founding Member receives lifetime full access."
+        },
+        "q4": {
+          "question": "How long does SEO/GEO onboarding take?",
+          "answer": "One week. Day 1 connects Search Console, Ahrefs or Semrush, and Google Analytics. Days 2 through 4 Clyde runs the baseline audit and GEO citation probe. Day 5 delivers the first action plan with top-10 fixes. From week 2 monitoring runs autonomously with weekly digest."
+        },
+        "q5": {
+          "question": "How does this differ from Ahrefs or Semrush?",
+          "answer": "Ahrefs and Semrush are data tools, you interpret. Clyde combines SEO and GEO (AI citations), interprets the data, and recommends by urgency. Example: 'your Service schema is missing on skill page X, fix this within 1 hour, 12 percent chance of rich-result lift'."
+        }
+      }
     }
   },
   "skills-clyde": {
@@ -2069,6 +2294,31 @@
       "title": "Ready to put Clyde to work as your AI Marketing Employee?",
       "subtitle": "Book a call. We will discuss how Clyde fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Clyde",
+      "items": {
+        "q1": {
+          "question": "What is Clyde exactly?",
+          "answer": "Clyde is the central AI Marketing Employee that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works via chat, Slack, Telegram, or WhatsApp."
+        },
+        "q2": {
+          "question": "Which channels does Clyde support?",
+          "answer": "Native chat panel on your dashboard, Slack app for agency teams, Telegram bot for 1-on-1, WhatsApp Business via a connected number, and email (forwarded messages). Clyde retains memory across channels: a Slack conversation continues on WhatsApp."
+        },
+        "q3": {
+          "question": "On which tiers is Clyde available?",
+          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Partner gets chat with basic orchestration, Growth and up get Slack and multi-channel. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
+        },
+        "q4": {
+          "question": "How long does Clyde onboarding take?",
+          "answer": "Four weeks of full platform onboarding. Week 1 connections and knowledge base. Week 2 brand-voice modeling and approval workflows. Week 3 first autonomous runs with manual sample review. Week 4 calibration. After that: continuous learning via dream cycles and Sindy-style portfolio learning."
+        },
+        "q5": {
+          "question": "How does Clyde differ from ChatGPT or Claude?",
+          "answer": "ChatGPT and Claude are stand-alone models without working memory, integrations, or brand-voice training. Clyde is a persistent AI employee with 4-layer per-brand memory, native CMS and CRM integrations, autonomous workflows, and consistent brand voice. No need to re-explain context every session."
+        }
+      }
     }
   },
   "skills-manychat": {
@@ -2143,6 +2393,31 @@
       "title": "Ready to hand Instagram DMs over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about ManyChat DM",
+      "items": {
+        "q1": {
+          "question": "What does the ManyChat DM skill do exactly?",
+          "answer": "Clyde responds automatically to Instagram DMs with AI-generated answers in the brand voice. You set keyword triggers (for example, 'price' or 'rate'), Clyde responds instantly, captures leads, qualifies intent, and routes warm prospects to your CRM or sales team."
+        },
+        "q2": {
+          "question": "Which platforms does ManyChat DM support?",
+          "answer": "Currently Instagram DMs only via the official Meta Messenger Platform API and the ManyChat connector. Facebook Messenger and WhatsApp Business are on the roadmap for Q3. Triggers work on exact keywords plus AI intent detection as fallback."
+        },
+        "q3": {
+          "question": "On which tiers is ManyChat DM available?",
+          "answer": "Not on Partner tier (47 EUR add-on for 300 DMs per month). Growth includes 200 DMs, Professional 1,000, Enterprise no cap. Founding Member receives 500 DMs monthly for life. Costs 2 credits per 10 DMs."
+        },
+        "q4": {
+          "question": "How long does ManyChat DM onboarding take?",
+          "answer": "One week. Day 1 OAuth connection with Instagram Business account and ManyChat. Days 2 through 4 you set keyword triggers and qualification flows. Day 5 goes live with manual approval per new flow path. From week 2 it runs autonomously."
+        },
+        "q5": {
+          "question": "How does this differ from standard ManyChat?",
+          "answer": "Standard ManyChat runs on static flow builders, you write every variant. Clyde adds AI replies in the brand voice per brand plus qualification scoring and automatic CRM routing. Saves the weekly flow-maintenance hour and captures leads ChatGPT bots miss."
+        }
+      }
     }
   },
   "skills-reel-builder": {
@@ -2217,6 +2492,31 @@
       "title": "Ready to hand Reels over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
+    },
+    "faq": {
+      "title": "Frequently asked questions about Reel Builder",
+      "items": {
+        "q1": {
+          "question": "What does the Reel Builder skill do exactly?",
+          "answer": "Clyde produces short vertical videos (9:16) for Instagram Reels, TikTok, and YouTube Shorts. Generates the AI script in the brand voice, automatically adds captions, picks fitting music, and adjusts timing. Output is publication-ready with brand overlays and typography in your house style."
+        },
+        "q2": {
+          "question": "Which video stack and platforms does Reel Builder support?",
+          "answer": "Under the hood: Runway and Pika for scene generation, ElevenLabs for voice-overs, FFMPEG for compositing. Output to Instagram Reels, TikTok, YouTube Shorts, and LinkedIn Video. Videos are auto-delivered in 9:16 1080x1920 with Reels-safe margins for captions."
+        },
+        "q3": {
+          "question": "On which tiers is Reel Builder available?",
+          "answer": "Not on Partner tier (add-on coming soon). Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Status: coming soon for early access in Q2."
+        },
+        "q4": {
+          "question": "How long does Reel Builder onboarding take?",
+          "answer": "Two weeks. Week 1 Clyde establishes house style from previous videos and design guidelines (typography, color, beat). Week 2 produces the first 2 Reels with manual per-scene approval. From week 3 the skill runs autonomously with sample review."
+        },
+        "q5": {
+          "question": "How does this differ from CapCut or Opus Clip?",
+          "answer": "CapCut is a manual editor. Opus Clip cuts longer videos into Shorts. Clyde builds the Reel from scratch: script, scenes, voice-over, captions, music, in the brand voice and visual identity. No more manual editing, in batches of 4 or more per week."
+        }
+      }
     }
   },
   "nav": {

@@ -1047,6 +1047,31 @@
     "proof": {
       "title": "Probeer Clyde live",
       "subtitle": "Interactieve demo. Voer zelf een kort gesprek met Clyde om het te ervaren."
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Voice Agent",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Voice Agent-vaardigheid precies?",
+          "answer": "Clyde handelt inkomende en uitgaande telefoongesprekken af met een AI-stem: boekt afspraken in jouw agenda, beantwoordt FAQ uit de kennisbasis, logt gesprekken, transcribeert automatisch en escaleert naar een mens wanneer een gesprek complex wordt of de klant erom vraagt."
+        },
+        "q2": {
+          "question": "Welke telefoonprovider gebruikt de Voice Agent?",
+          "answer": "Onder de motorkap loopt het via ElevenLabs (stem) en Twilio of Telnyx (telefonienummer). Je krijgt een eigen NL-mobiel of vast nummer als endpoint. Bestaande nummerporting via SIP-trunking is mogelijk vanaf de Professional-tier."
+        },
+        "q3": {
+          "question": "Op welke tiers is de Voice Agent beschikbaar?",
+          "answer": "Niet op Partner-tier. Growth bevat 30 minuten gespreksminuten per maand, Professional 120 minuten, Enterprise zonder plafond. Founding Member krijgt 60 minuten levenslang. Extra minuten kunnen via creditpacks bijgekocht worden."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Voice Agent?",
+          "answer": "Drie tot vier weken. Week 1 koppelt het nummer en bouwt de kennisbasis. Week 2 schaduwluistert Clyde echte gesprekken. Week 3 voert eerste live calls met menselijke fallback. Vanaf week 4 draait de skill autonoom met sample-review."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Vapi of Bland?",
+          "answer": "Vapi en Bland zijn API-platforms voor ontwikkelaars. Clyde levert het beheer, de kennisbasis-onderhouding en de integratie met je CRM erbij. Geen eigen Voice-engineer nodig. Gesprekken worden teruggekoppeld naar Lead Qualifier en Rapportage zonder extra werk."
+        }
+      }
     }
   },
   "skills-lead-qualifier": {
@@ -1125,6 +1150,31 @@
     "proof": {
       "title": "Live demo",
       "subtitle": "Insluitbaar op elk kanaal. Probeer hieronder, of bekijk de SKC-opzet."
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Lead Qualifier",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Lead Qualifier-vaardigheid precies?",
+          "answer": "Clyde plaatst een AI-chatbot op je website die bezoekers begroet, kwalificerende vragen stelt, scores toekent op basis van intent en gedrag, en warme leads automatisch routeert naar je CRM, Slack of het salesteam. Iedere interactie wordt opgeslagen in het merkgeheugen."
+        },
+        "q2": {
+          "question": "Welke CRM's en kanalen ondersteunt Lead Qualifier?",
+          "answer": "Native koppelingen met HubSpot, Pipedrive, Salesforce en Notion. Webhooks voor maatwerk-CRM's. Inzetbaar op elke website (script-snippet) en als WhatsApp- of Telegram-flow vanaf de Growth-tier."
+        },
+        "q3": {
+          "question": "Op welke tiers is Lead Qualifier beschikbaar?",
+          "answer": "Inbegrepen op alle 5 tiers, met fair-use op gespreksvolume. 2 credits per kwalificatie-score. Professional en Enterprise krijgen extra: dynamische routing op basis van score-drempels en automatische opvolging via e-mail."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Lead Qualifier?",
+          "answer": "Twee weken. Week 1 plaatst het script, definieert de kwalificatiecriteria (BANT of MEDDIC) en koppelt het CRM. Week 2 wordt de bot live gezet met handmatige sample-review. Daarna draait Clyde autonoom met wekelijkse kalibratie van score-drempels."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Intercom of Drift?",
+          "answer": "Intercom en Drift bieden chat met menselijke agents en losse bots. Clyde combineert kwalificatie, scoring én CRM-routing in één AI-vaardigheid die de merkstem leert per merk. Goedkoper dan een Sales Development Rep, sneller dan een traditionele chatbot, met geheugen tussen sessies."
+        }
+      }
     }
   },
   "skills-social-media": {
@@ -1203,6 +1253,31 @@
       "title": "Klaar om social media aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Social Media Manager",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Social Media Manager-vaardigheid precies?",
+          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook en LinkedIn: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén AI Marketing Medewerker beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
+        },
+        "q2": {
+          "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
+          "answer": "Native publicatie naar Instagram, Facebook en LinkedIn via de Meta- en LinkedIn-API's. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
+        },
+        "q3": {
+          "question": "Op welke tiers is de Social Media Manager beschikbaar?",
+          "answer": "Beschikbaar op alle 5 tiers: Partner 347 EUR, Growth 2.497 EUR, Professional 4.497 EUR, Enterprise 7.997 EUR en Founding Member 997 EUR levenslang. Volume per tier verschilt op basis van credits per maand. Carrousels en posts kosten 1 tot 2 credits per stuk."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Social Media Manager?",
+          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de skill autonoom met kortere goedkeuringscycli."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Buffer of Later?",
+          "answer": "Buffer en Later zijn schedulers, geen content-creators. Jij of een copywriter blijft elke caption en visual schrijven. Clyde combineert creatie, planning en publicatie in één pipeline met een merkstem-model dat per merk getraind blijft. Geen losse tools voor copy, visual en planning meer."
+        }
+      }
     }
   },
   "skills-ad-creator": {
@@ -1277,6 +1352,31 @@
       "title": "Klaar om advertentiecreatie aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Ad Creator",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Ad Creator-vaardigheid precies?",
+          "answer": "Clyde maakt complete Meta-advertenties: copy, visuals, statische ads (1080x1080 of 1080x1920) en korte video-ads met motion graphics. Onderzoekt concurrenten in de Meta Ad Library, levert A/B-varianten en publiceert direct in Ads Manager. Geen freelance-designer of editor nodig."
+        },
+        "q2": {
+          "question": "Welke platforms ondersteunt Ad Creator?",
+          "answer": "Meta Ads (Instagram en Facebook): Feed, Stories en Reels-formaten. Output via de Meta-Marketing-API. TikTok-, LinkedIn- en Google-Ads-export staan op de productroadmap. Klanten met budget op die kanalen kunnen voor nu handmatig exporteren via PNG en MP4."
+        },
+        "q3": {
+          "question": "Op welke tiers is Ad Creator beschikbaar?",
+          "answer": "Inbegrepen op Growth (15 ads per maand), Professional (50) en Enterprise (zonder plafond). Op Partner-tier via add-on van 97 EUR voor 15 statische ads. Founding Member krijgt 25 ads per maand levenslang voor 997 EUR."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Ad Creator?",
+          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de skill autonoom met kalibratie op CTR-, CPA- en ROAS-data uit Rapportage."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van AdCreative of Pencil?",
+          "answer": "AdCreative en Pencil leveren losse banners op basis van prompts. Clyde houdt rekening met de merkstem per merk, kent de tone-of-voice van eerdere succesvolle posts via gedeeld geheugen met Social Media Manager, en publiceert direct. Geen handmatige knip-en-plakronde tussen tools."
+        }
+      }
     }
   },
   "skills-reporting": {
@@ -1351,6 +1451,31 @@
       "title": "Klaar om rapportages aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Rapportage en Analytics",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Rapportage-vaardigheid precies?",
+          "answer": "Clyde levert wekelijkse prestatie-digests, real-time KPI-dashboards en cross-platform analytics over social, web en sales. Detecteert anomalieen (bijvoorbeeld plotse CTR-daling) en stuurt proactieve waarschuwingen via e-mail of Slack. Custom rapporten op verzoek."
+        },
+        "q2": {
+          "question": "Welke databronnen ondersteunt Rapportage?",
+          "answer": "Native koppelingen met Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive en Stripe. Custom CSV- of API-bronnen via webhooks. Data wordt elk uur ververst en geconsolideerd in een Supabase-warehouse op EU-servers."
+        },
+        "q3": {
+          "question": "Op welke tiers is Rapportage beschikbaar?",
+          "answer": "Inbegrepen op alle 5 tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Professional krijgt anomalie-alerts, Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Rapportage?",
+          "answer": "Een week. Dag 1 koppelt de databronnen via OAuth. Dag 2 tot 4 baseert Clyde KPI-baseline en anomalie-drempels op historische data. Vanaf dag 5 draait de wekelijkse digest autonoom (maandagochtend 08:00 in jouw inbox)."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Looker Studio of Whatagraph?",
+          "answer": "Looker Studio bouwt dashboards die jij elke week interpreteert. Whatagraph levert PDF's. Clyde levert geinterpreteerde inzichten: niet alleen 'CTR daalde 12 procent', maar ook 'oorzaak: nieuwe creative-test voor merk X, advies: pauzeren'. Bespaart de wekelijkse interpretatie-uur."
+        }
+      }
     }
   },
   "founding-member": {
@@ -1774,6 +1899,31 @@
       "title": "Klaar om inbox-classificatie aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Email Management",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Email Management-vaardigheid precies?",
+          "answer": "Clyde leest binnenkomende e-mails in Gmail en plaatst slimme labels (urgent, actie, info, overig) op basis van inhoud en context. Genereert een dagelijkse digest van top-3 urgente items met conceptantwoorden klaar om te versturen. Dit is inbox-classificatie, geen mailcampagnes."
+        },
+        "q2": {
+          "question": "Welke mailproviders ondersteunt Email Management?",
+          "answer": "Op dit moment uitsluitend Gmail (Google Workspace en gratis accounts) via OAuth. Outlook en custom IMAP staan op de roadmap voor Q3. Verbinding wordt elk uur ververst, geen e-mails worden buiten EU-servers opgeslagen."
+        },
+        "q3": {
+          "question": "Op welke tiers is Email Management beschikbaar?",
+          "answer": "Inbegrepen op alle tiers: Partner krijgt 5 classificaties per maand, Growth 20, Professional 60, Enterprise zonder plafond. Founding Member krijgt 40 acties per maand. Een actie is een classificatie of een gegenereerd conceptantwoord."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Email Management?",
+          "answer": "Een week. Dag 1 OAuth-koppeling met Gmail. Dag 2 tot 4 leert Clyde jouw labelpatronen door eerdere e-mails te analyseren (alleen rubriek-labels, geen inhoud). Dag 5 gaat de digest live met handmatige correctie-loop. Vanaf week 2 stabiliseert de classificatie."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van SaneBox of Superhuman?",
+          "answer": "SaneBox sorteert in mappen op basis van afzender. Superhuman is een snelle client. Clyde leest de inhoud, classificeert op intent (lead, factuur, sales-vraag) en genereert conceptantwoorden in jouw schrijfstijl. Bespaart de scan-en-typ-uren per dag."
+        }
+      }
     }
   },
   "skills-research": {
@@ -1848,6 +1998,31 @@
       "title": "Klaar om research aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Research",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Research-vaardigheid precies?",
+          "answer": "Clyde voert continu marktonderzoek, monitort trends in jouw niche, analyseert concurrenten en levert bruikbare inzichten met bronvermelding. Antwoordt op gerichte vragen (bijvoorbeeld 'wat lanceerde concurrent X de afgelopen 30 dagen') of draait wekelijkse trendscans op de achtergrond."
+        },
+        "q2": {
+          "question": "Welke bronnen gebruikt Research?",
+          "answer": "Web (via Perplexity-, Tavily- en Exa-API's), nieuws-aggregators, sociale platforms (Instagram, LinkedIn, TikTok), Meta Ad Library, Google Trends en custom RSS-feeds die jij toevoegt. Iedere uitkomst toont de exacte bron, datum en relevantiescore."
+        },
+        "q3": {
+          "question": "Op welke tiers is Research beschikbaar?",
+          "answer": "Inbegrepen op alle 5 tiers met fair-use op aantal vragen. 3 credits per query. Professional krijgt geplande wekelijkse trendrapporten, Enterprise krijgt aangepaste rapportcadences en specifieke concurrent-watchlists. Founding Member krijgt levenslang dezelfde toegang voor 997 EUR."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Research?",
+          "answer": "Drie tot vijf dagen. Dag 1 specificeer je niche, doelgroep en concurrenten. Dag 2 tot 3 baseert Clyde een baseline-trendprofiel. Dag 4 levert het eerste wekelijkse rapport met handmatige feedback. Vanaf dag 5 draait het autonoom met wekelijkse review."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Perplexity Pro of Brandwatch?",
+          "answer": "Perplexity Pro beantwoordt losse vragen zonder geheugen. Brandwatch is enterprise social listening. Clyde combineert deep web search en social listening met geheugen per merk: een trend die vorige week relevant was wordt niet opnieuw opgehaald, en concurrent-bewegingen worden gekoppeld aan jouw eerdere analyses."
+        }
+      }
     }
   },
   "skills-blog-factory": {
@@ -1922,6 +2097,31 @@
       "title": "Klaar om blogproductie aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Blog Factory",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Blog Factory-vaardigheid precies?",
+          "answer": "Clyde produceert SEO-geoptimaliseerde longreads van zoekwoord-onderzoek tot publicatie. Elk artikel telt 1.500 tot 3.000 woorden, krijgt automatisch een meta-description, koppen-structuur, interne links en wordt gepubliceerd naar je CMS. Schrijven gebeurt in de merkstem zoals geleerd uit eerdere goedgekeurde content."
+        },
+        "q2": {
+          "question": "Welke CMS'en ondersteunt Blog Factory?",
+          "answer": "Native publicatie naar WordPress (REST-API), Webflow, Shopify-blog, Ghost, Sanity en Notion. Custom CMS'en via webhooks of MDX-export. Beelden worden via Unsplash- of DALLE-API toegevoegd. Schema.org-Article-markup wordt automatisch ingebouwd."
+        },
+        "q3": {
+          "question": "Op welke tiers is Blog Factory beschikbaar?",
+          "answer": "Partner krijgt 2 artikelen per maand, Growth 8, Professional 20, Enterprise zonder plafond. Founding Member krijgt 12 artikelen per maand levenslang. Per artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Blog Factory?",
+          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de skill autonoom met sample-review per 5 artikelen."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Jasper of SurferSEO?",
+          "answer": "Jasper is een prompt-tool, jij bouwt elke keer de structuur. SurferSEO controleert SEO-kwaliteit. Clyde levert het volledige artikel: keyword-clustering, schrijven, optimaliseren, publiceren, met geheugen voor jouw stijl en eerdere onderwerpen. Geen handmatig knippen-plakken tussen 3 tools."
+        }
+      }
     }
   },
   "skills-seo-geo": {
@@ -1996,6 +2196,31 @@
       "title": "Klaar om SEO aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over SEO en GEO Analyst",
+      "items": {
+        "q1": {
+          "question": "Wat doet de SEO/GEO-vaardigheid precies?",
+          "answer": "Clyde voert technische SEO-audits uit, trackt keyword-rankings in Google, monitort Core Web Vitals en houdt bij hoe vaak jouw merk geciteerd wordt door AI-zoekmachines (ChatGPT, Perplexity, Google AI Overviews, Claude). Levert geprioriteerde fix-aanbevelingen per niveau van impact en moeite."
+        },
+        "q2": {
+          "question": "Welke tools en API's worden gebruikt?",
+          "answer": "Lighthouse en PageSpeed Insights voor Core Web Vitals, Ahrefs of Semrush voor keyword-tracking (jouw bestaande seat), schema-validatoren voor structured-data audits en directe Perplexity- en Otterly-probes voor AI-citatie-monitoring. Output wordt geconsolideerd in een wekelijks rapport."
+        },
+        "q3": {
+          "question": "Op welke tiers is SEO/GEO beschikbaar?",
+          "answer": "Inbegrepen op alle tiers met fair-use op aantal audits. 5 credits per audit, 3 credits per kort rapport. Professional krijgt automatische maandelijkse audits, Enterprise krijgt aangepaste alert-drempels en SERP-snapshot-tracking. Founding Member krijgt levenslang volledige toegang."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van SEO/GEO?",
+          "answer": "Een week. Dag 1 koppelt Search Console, Ahrefs of Semrush en Google Analytics. Dag 2 tot 4 voert Clyde de baseline-audit en GEO-citatieprobe uit. Dag 5 levert het eerste actieplan met top-10 fixes. Vanaf week 2 draait monitoring autonoom met wekelijkse digest."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van Ahrefs of Semrush?",
+          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op skill-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
+        }
+      }
     }
   },
   "skills-clyde": {
@@ -2070,6 +2295,31 @@
       "title": "Klaar om Clyde als AI Marketing Medewerker in te zetten?",
       "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Clyde",
+      "items": {
+        "q1": {
+          "question": "Wat is Clyde precies?",
+          "answer": "Clyde is de centrale AI Marketing Medewerker die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt via chat, Slack, Telegram of WhatsApp."
+        },
+        "q2": {
+          "question": "Welke kanalen ondersteunt Clyde?",
+          "answer": "Native chatpanel op je dashboard, Slack-app voor agencyteams, Telegram-bot voor 1-op-1, WhatsApp Business via een gekoppeld nummer en e-mail (geforwarde berichten). Clyde behoudt geheugen tussen kanalen: een Slack-gesprek wordt voortgezet in WhatsApp."
+        },
+        "q3": {
+          "question": "Op welke tiers is Clyde beschikbaar?",
+          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Op Partner krijg je chat met basis-orchestratie, Growth en hoger krijgen Slack en multi-channel. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Clyde?",
+          "answer": "Vier weken volledige onboarding van het hele platform. Week 1 connectie en kennisbasis. Week 2 merkstem-modellering en goedkeuringsworkflows. Week 3 eerste autonome runs met handmatige sample-review. Week 4 kalibratie. Daarna: doorlopend leereffect via dream-cycli en Sindy-stijl portfolio-leren."
+        },
+        "q5": {
+          "question": "Hoe verschilt Clyde van ChatGPT of Claude?",
+          "answer": "ChatGPT en Claude zijn losse modellen zonder werkgeheugen, integraties of merkstem-trainings. Clyde is een persistente AI-medewerker met 4-laags geheugen per merk, native CMS- en CRM-koppelingen, autonome workflows en consistente merkstem. Geen herhaal-uitleg per sessie nodig."
+        }
+      }
     }
   },
   "skills-manychat": {
@@ -2144,6 +2394,31 @@
       "title": "Klaar om Instagram-DM's aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over ManyChat DM",
+      "items": {
+        "q1": {
+          "question": "Wat doet de ManyChat DM-vaardigheid precies?",
+          "answer": "Clyde reageert automatisch op Instagram-DM's met AI-gegenereerde antwoorden in de merkstem. Je stelt keyword-triggers in (bijvoorbeeld 'prijs' of 'tarief'), Clyde reageert direct, vangt leads, kwalificeert intent en routeert warme prospects naar je CRM of salesteam."
+        },
+        "q2": {
+          "question": "Welke platforms ondersteunt ManyChat DM?",
+          "answer": "Op dit moment uitsluitend Instagram-DM's via de officiele Meta Messenger Platform-API en de ManyChat-koppeling. Facebook Messenger en WhatsApp Business staan op de roadmap voor Q3. Triggers werken op exacte keywords plus AI-intent-detectie als fallback."
+        },
+        "q3": {
+          "question": "Op welke tiers is ManyChat DM beschikbaar?",
+          "answer": "Niet op Partner-tier (add-on van 47 EUR voor 300 DM's per maand). Growth bevat 200 DM's, Professional 1.000, Enterprise zonder plafond. Founding Member krijgt 500 DM's per maand levenslang. Kost 2 credits per 10 DM's."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van ManyChat DM?",
+          "answer": "Een week. Dag 1 OAuth-koppeling met Instagram Business-account en ManyChat. Dag 2 tot 4 stel je keyword-triggers en kwalificatie-flows in. Dag 5 gaat live met een handmatige goedkeuring per nieuw flow-pad. Vanaf week 2 draait het autonoom."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van standaard ManyChat?",
+          "answer": "Standaard ManyChat draait op statische flow-builders, jij schrijft elke variant. Clyde voegt AI-antwoorden toe in de merkstem per merk plus kwalificatie-scoring en automatische CRM-routering. Bespaart de wekelijkse flow-onderhoud-uur en levert leads die ChatGPT-bots missen."
+        }
+      }
     }
   },
   "skills-reel-builder": {
@@ -2218,6 +2493,31 @@
       "title": "Klaar om Reels aan Clyde over te dragen?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
+    },
+    "faq": {
+      "title": "Veelgestelde vragen over Reel Builder",
+      "items": {
+        "q1": {
+          "question": "Wat doet de Reel Builder-vaardigheid precies?",
+          "answer": "Clyde maakt korte verticale video's (9:16) voor Instagram Reels, TikTok en YouTube Shorts. Genereert het AI-script in de merkstem, voegt automatisch captions toe, kiest passende muziek en past timing aan. Output is publicatieklaar met merk-overlays en typografie in jouw huisstijl."
+        },
+        "q2": {
+          "question": "Welke video-stack en platforms ondersteunt Reel Builder?",
+          "answer": "Onder de motorkap: Runway en Pika voor scene-creatie, ElevenLabs voor voice-overs, FFMPEG voor compositie. Output naar Instagram Reels, TikTok, YouTube Shorts en LinkedIn Video. Video's worden automatisch in 9:16 1080x1920 geleverd met Reels-veilige veiligheidsmarges voor captions."
+        },
+        "q3": {
+          "question": "Op welke tiers is Reel Builder beschikbaar?",
+          "answer": "Niet op Partner-tier (binnenkort als add-on). Growth bevat 4 Reels per maand, Professional 15, Enterprise zonder plafond. Founding Member krijgt 8 Reels per maand levenslang. Per Reel kost 25 credits. Status: binnenkort beschikbaar voor early access in Q2."
+        },
+        "q4": {
+          "question": "Hoelang duurt de onboarding van Reel Builder?",
+          "answer": "Twee weken. Week 1 baseert Clyde de huisstijl op eerdere video's en design-richtlijnen (typo, kleur, beat). Week 2 produceert de eerste 2 Reels met handmatige goedkeuring per scene. Vanaf week 3 draait de skill autonoom met sample-review."
+        },
+        "q5": {
+          "question": "Hoe verschilt dit van CapCut of Opus Clip?",
+          "answer": "CapCut is een handmatige editor. Opus Clip knipt langere video's tot Shorts. Clyde maakt vanaf nul de Reel: script, scenes, voice-over, captions, muziek, in de merkstem en visuele identiteit. Geen handmatig editen meer, in een batch van 4 of meer per week."
+        }
+      }
     }
   },
   "nav": {

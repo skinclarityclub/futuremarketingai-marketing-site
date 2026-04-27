@@ -1047,6 +1047,31 @@
     "proof": {
       "title": "Prueba Clyde en vivo",
       "subtitle": "Demo interactiva. Mantén tú mismo una breve conversación con Clyde para experimentarlo."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Voice Agent",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Voice Agent?",
+          "answer": "Clyde gestiona llamadas entrantes y salientes con voz IA: agenda citas en tu calendario, responde preguntas frecuentes desde la base de conocimiento, registra llamadas, transcribe automáticamente y escala a un humano cuando una conversación se vuelve compleja o el cliente lo pide."
+        },
+        "q2": {
+          "question": "¿Qué proveedor telefónico usa Voice Agent?",
+          "answer": "Por debajo funciona con ElevenLabs (voz) más Twilio o Telnyx (número de teléfono). Recibes un número fijo o móvil NL dedicado como endpoint. La portabilidad SIP de un número existente está soportada desde el tier Professional."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Voice Agent?",
+          "answer": "No en el tier Partner. Growth incluye 30 minutos de llamada al mes, Professional 120 minutos, Enterprise sin límite. Founding Member recibe 60 minutos al mes de por vida. Minutos extra disponibles via packs de créditos."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Voice Agent?",
+          "answer": "De tres a cuatro semanas. Semana 1 conecta el número y construye la base de conocimiento. Semana 2 Clyde escucha llamadas reales en modo sombra. Semana 3 ejecuta primeras llamadas en vivo con humano de respaldo. Desde la semana 4 la habilidad opera autónoma con revisión de muestras."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Vapi o Bland?",
+          "answer": "Vapi y Bland son plataformas API para desarrolladores. Clyde añade la gestión, el mantenimiento de la base de conocimiento y la integración con tu CRM. Sin necesidad de un Voice engineer interno. Las llamadas alimentan Lead Qualifier y Reporting sin trabajo extra."
+        }
+      }
     }
   },
   "skills-lead-qualifier": {
@@ -1125,6 +1150,31 @@
     "proof": {
       "title": "Demo en vivo",
       "subtitle": "Integrable en cualquier canal. Pruébala abajo o mira la configuración de SKC."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Lead Qualifier",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Lead Qualifier?",
+          "answer": "Clyde coloca un chatbot IA en tu sitio web que saluda a los visitantes, hace preguntas calificadoras, asigna puntajes según intención y comportamiento, y enruta automáticamente leads cálidos a tu CRM, Slack o equipo de ventas. Cada interacción se almacena en la memoria de marca."
+        },
+        "q2": {
+          "question": "¿Qué CRMs y canales soporta Lead Qualifier?",
+          "answer": "Integraciones nativas con HubSpot, Pipedrive, Salesforce y Notion. Webhooks para CRMs personalizados. Implementable en cualquier sitio web (snippet de script) y como flujo WhatsApp o Telegram desde el tier Growth."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Lead Qualifier?",
+          "answer": "Incluido en los 5 tiers, con uso justo en volumen de conversaciones. Cuesta 2 créditos por puntuación de calificación. Professional y Enterprise añaden enrutado dinámico según umbrales de score y secuencias de seguimiento por email automatizadas."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Lead Qualifier?",
+          "answer": "Dos semanas. Semana 1 instala el script, define los criterios de calificación (BANT o MEDDIC) y conecta el CRM. Semana 2 el bot va en vivo con revisión manual de muestras. Después Clyde opera autónomo con calibración semanal de umbrales de score."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Intercom o Drift?",
+          "answer": "Intercom y Drift ofrecen chat con agentes humanos y bots por reglas. Clyde combina calificación, scoring y enrutado al CRM en una sola habilidad IA que aprende la voz de cada marca. Más barato que un Sales Development Rep, más rápido que un chatbot tradicional, con memoria entre sesiones."
+        }
+      }
     }
   },
   "skills-social-media": {
@@ -1203,6 +1253,31 @@
       "title": "¿Listo para ceder las redes sociales a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Social Media Manager",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Social Media Manager?",
+          "answer": "Clyde gestiona el proceso social completo para Instagram, Facebook y LinkedIn: copys IA en la voz de marca, programación multi-plataforma en horarios óptimos, constructor de carruseles y stories, investigación de hashtags y seguimiento de engagement por post. Un solo Empleado IA de Marketing gestiona varias marcas en paralelo sin mezclar tonos."
+        },
+        "q2": {
+          "question": "¿Qué plataformas y herramientas soporta Social Media Manager?",
+          "answer": "Publicación nativa en Instagram, Facebook y LinkedIn vía las APIs de Meta y LinkedIn. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se formatean con plantillas en tu estilo de casa. Los posts programados pueden pasar por un flujo de aprobación antes de publicar."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Social Media Manager?",
+          "answer": "Disponible en los 5 tiers: Partner 347 EUR, Growth 2.497 EUR, Professional 4.497 EUR, Enterprise 7.997 EUR y Founding Member 997 EUR de por vida. El volumen por tier varía según los créditos mensuales. Carruseles y posts cuestan 1 a 2 créditos cada uno."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Social Media Manager?",
+          "answer": "Cuatro semanas. Semana 1 Clyde lee contenido previo, guías de marca y datos de audiencia. Semana 2 produce el primer calendario de contenido con aprobación por post. Semana 3 calibra con feedback. Desde la semana 4 la habilidad opera autónoma con ciclos de aprobación más cortos."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Buffer o Later?",
+          "answer": "Buffer y Later son programadores, no creadores de contenido. Tú o un copywriter siguen escribiendo cada copy y visual. Clyde combina creación, programación y publicación en un solo pipeline con un modelo de voz de marca entrenado por marca. No más herramientas separadas para copy, visuales y programación."
+        }
+      }
     }
   },
   "skills-ad-creator": {
@@ -1277,6 +1352,31 @@
       "title": "¿Listo para ceder la creación de anuncios a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Ad Creator",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Ad Creator?",
+          "answer": "Clyde produce anuncios Meta completos: copy, visuales, anuncios estáticos (1080x1080 o 1080x1920) y video-anuncios cortos con motion graphics. Investiga competidores en la Meta Ad Library, genera variantes A/B y publica directamente en Ads Manager. Sin diseñador o editor freelance."
+        },
+        "q2": {
+          "question": "¿Qué plataformas soporta Ad Creator?",
+          "answer": "Meta Ads (Instagram y Facebook): formatos Feed, Stories y Reels. Salida via la API Meta Marketing. La exportación a TikTok, LinkedIn y Google Ads está en la hoja de ruta del producto. Clientes con presupuesto en esos canales pueden exportar manualmente PNG y MP4 por ahora."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Ad Creator?",
+          "answer": "Incluido en Growth (15 anuncios al mes), Professional (50) y Enterprise (sin límite). En el tier Partner via add-on de 97 EUR para 15 anuncios estáticos. Founding Member recibe 25 anuncios al mes de por vida a 997 EUR."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Ad Creator?",
+          "answer": "De dos a tres semanas. Semana 1 conecta Ads Manager y Clyde lee campañas previas. Semana 2 entrega primeras variantes con aprobación manual por anuncio. Después la habilidad opera autónoma con calibración sobre datos de CTR, CPA y ROAS de Reporting."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de AdCreative o Pencil?",
+          "answer": "AdCreative y Pencil generan banners aislados a partir de prompts. Clyde respeta la voz de marca por marca, conoce el tono de posts exitosos previos via memoria compartida con Social Media Manager, y publica directamente. Sin copia-pegado manual entre herramientas."
+        }
+      }
     }
   },
   "skills-reporting": {
@@ -1351,6 +1451,31 @@
       "title": "¿Listo para ceder los informes a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Reporting y Analytics",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Reporting?",
+          "answer": "Clyde entrega digests semanales de rendimiento, dashboards KPI en tiempo real y analítica multi-plataforma sobre social, web y ventas. Detecta anomalías (por ejemplo, una caída repentina del CTR) y envía alertas proactivas via email o Slack. Informes personalizados a demanda."
+        },
+        "q2": {
+          "question": "¿Qué fuentes de datos soporta Reporting?",
+          "answer": "Integraciones nativas con Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive y Stripe. Fuentes CSV o API personalizadas via webhooks. Los datos se actualizan cada hora y se consolidan en un warehouse Supabase en servidores europeos."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Reporting?",
+          "answer": "Incluido en los 5 tiers, con uso justo sobre informes generados. 5 créditos por informe. Professional añade alertas de anomalía, Enterprise añade fórmulas KPI personalizadas. Founding Member recibe acceso de por vida a 997 EUR al mes."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Reporting?",
+          "answer": "Una semana. Día 1 conecta fuentes de datos via OAuth. Días 2 a 4 Clyde establece una línea base KPI y umbrales de anomalía a partir de datos históricos. Desde el día 5 el digest semanal opera autónomo (lunes 08:00 en tu inbox)."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Looker Studio o Whatagraph?",
+          "answer": "Looker Studio construye dashboards que tú interpretas semanalmente. Whatagraph entrega PDFs. Clyde entrega insights interpretados: no solo 'CTR cayó 12 por ciento' sino también 'causa: nuevo test creativo para marca X, recomendación: pausar'. Ahorra la hora semanal de interpretación."
+        }
+      }
     }
   },
   "founding-member": {
@@ -1773,6 +1898,31 @@
       "title": "¿Listo para ceder la clasificación de la bandeja a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Email Management",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Email Management?",
+          "answer": "Clyde lee emails entrantes en Gmail y aplica etiquetas inteligentes (urgente, acción, info, otros) según contenido y contexto. Genera un digest diario de los 3 ítems más urgentes con borradores de respuesta listos para enviar. Esto es clasificación de bandeja, no campañas de email."
+        },
+        "q2": {
+          "question": "¿Qué proveedores de email soporta Email Management?",
+          "answer": "Por ahora solo Gmail (Google Workspace y cuentas gratuitas) via OAuth. Outlook e IMAP personalizado están en la hoja de ruta para Q3. La conexión se actualiza cada hora, ningún contenido de email se almacena fuera de servidores europeos."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Email Management?",
+          "answer": "Incluido en todos los tiers: Partner recibe 5 clasificaciones al mes, Growth 20, Professional 60, Enterprise sin límite. Founding Member recibe 40 acciones al mes. Una acción es una clasificación o un borrador de respuesta generado."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Email Management?",
+          "answer": "Una semana. Día 1 conexión OAuth con Gmail. Días 2 a 4 Clyde aprende tus patrones de etiqueta analizando emails previos (solo categorías de etiqueta, sin almacenar contenido). Día 5 el digest va en vivo con un loop de corrección manual. Desde la semana 2 la clasificación se estabiliza."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de SaneBox o Superhuman?",
+          "answer": "SaneBox ordena en carpetas por remitente. Superhuman es un cliente de email rápido. Clyde lee contenido, clasifica por intención (lead, factura, pregunta de ventas) y genera borradores de respuesta en tu estilo de escritura. Ahorra las horas diarias de escanear y escribir."
+        }
+      }
     }
   },
   "skills-research": {
@@ -1847,6 +1997,31 @@
       "title": "¿Listo para ceder la investigación a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Research",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Research?",
+          "answer": "Clyde realiza investigación de mercado continua, monitoriza tendencias en tu nicho, analiza competidores y entrega insights accionables con citas de fuente. Responde a preguntas concretas (por ejemplo, 'qué lanzó el competidor X en los últimos 30 días') o ejecuta escaneos de tendencias semanales en segundo plano."
+        },
+        "q2": {
+          "question": "¿Qué fuentes utiliza Research?",
+          "answer": "Web (via APIs de Perplexity, Tavily y Exa), agregadores de noticias, plataformas sociales (Instagram, LinkedIn, TikTok), Meta Ad Library, Google Trends y feeds RSS personalizados que añadas. Cada salida muestra la fuente exacta, la fecha y la puntuación de relevancia."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Research?",
+          "answer": "Incluido en los 5 tiers con uso justo sobre número de queries. 3 créditos por consulta. Professional añade informes de tendencias semanales programados, Enterprise añade cadencias de informe personalizadas y watchlists de competidores específicos. Founding Member recibe acceso de por vida a 997 EUR."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Research?",
+          "answer": "De tres a cinco días. Día 1 especificas el nicho, audiencia y competidores. Días 2 a 3 Clyde establece un perfil de tendencia base. Día 4 entrega el primer informe semanal con feedback manual. Desde el día 5 opera autónomo con revisión semanal."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Perplexity Pro o Brandwatch?",
+          "answer": "Perplexity Pro responde preguntas aisladas sin memoria. Brandwatch es social listening empresarial. Clyde combina búsqueda web profunda y social listening con memoria a nivel de marca: una tendencia que fue relevante la semana pasada no se vuelve a recuperar, y los movimientos de competidores se enlazan con tus análisis previos."
+        }
+      }
     }
   },
   "skills-blog-factory": {
@@ -1921,6 +2096,31 @@
       "title": "¿Listo para ceder la producción de blogs a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Blog Factory",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Blog Factory?",
+          "answer": "Clyde produce artículos largos optimizados para SEO desde la investigación de palabras clave hasta la publicación. Cada artículo tiene 1.500 a 3.000 palabras, recibe meta-description automática, estructura de encabezados, enlaces internos y se publica en tu CMS. La escritura sucede en la voz de marca aprendida del contenido aprobado previamente."
+        },
+        "q2": {
+          "question": "¿Qué CMSs soporta Blog Factory?",
+          "answer": "Publicación nativa en WordPress (REST API), Webflow, blog Shopify, Ghost, Sanity y Notion. CMSs personalizados via webhooks o exportación MDX. Las imágenes se añaden via APIs de Unsplash o DALLE. El markup Schema.org Article se incluye automáticamente."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Blog Factory?",
+          "answer": "Partner recibe 2 artículos al mes, Growth 8, Professional 20, Enterprise sin límite. Founding Member recibe 12 artículos al mes de por vida. Cada artículo cuesta 15 créditos. Artículos extra disponibles via packs de créditos."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Blog Factory?",
+          "answer": "Dos semanas. Semana 1 Clyde lee 5 a 10 entradas previas para modelar la voz de marca. Semana 2 entrega los 2 primeros artículos con aprobación manual y bucle de feedback. Desde la semana 3 la habilidad opera autónoma con revisión por muestra cada 5 artículos."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Jasper o SurferSEO?",
+          "answer": "Jasper es una herramienta de prompts, tú construyes la estructura cada vez. SurferSEO comprueba la calidad SEO. Clyde entrega el artículo completo: clustering de keywords, escritura, optimización, publicación, con memoria de tu estilo y temas previos. Sin copia-pegado manual entre 3 herramientas."
+        }
+      }
     }
   },
   "skills-seo-geo": {
@@ -1995,6 +2195,31 @@
       "title": "¿Listo para ceder el SEO a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre SEO y GEO Analyst",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad SEO/GEO?",
+          "answer": "Clyde ejecuta auditorías técnicas SEO, sigue rankings de palabras clave en Google, monitoriza Core Web Vitals y registra cuántas veces tu marca es citada por motores de búsqueda IA (ChatGPT, Perplexity, Google AI Overviews, Claude). Entrega recomendaciones priorizadas según impacto y esfuerzo."
+        },
+        "q2": {
+          "question": "¿Qué herramientas y APIs se usan?",
+          "answer": "Lighthouse y PageSpeed Insights para Core Web Vitals, Ahrefs o Semrush para tracking de keywords (tu seat existente), validadores de schema para auditorías de structured data y sondeos directos a Perplexity y Otterly para monitorización de citas IA. La salida se consolida en un informe semanal."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible SEO/GEO?",
+          "answer": "Incluido en todos los tiers con uso justo sobre número de auditorías. 5 créditos por auditoría, 3 créditos por informe corto. Professional añade auditorías mensuales automáticas, Enterprise añade umbrales de alerta personalizados y tracking de snapshots SERP. Founding Member recibe acceso completo de por vida."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de SEO/GEO?",
+          "answer": "Una semana. Día 1 conecta Search Console, Ahrefs o Semrush y Google Analytics. Días 2 a 4 Clyde ejecuta la auditoría base y la sonda GEO de citaciones. Día 5 entrega el primer plan de acción con top-10 fixes. Desde la semana 2 la monitorización opera autónoma con digest semanal."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de Ahrefs o Semrush?",
+          "answer": "Ahrefs y Semrush son herramientas de datos, tú interpretas. Clyde combina SEO y GEO (citas IA), interpreta los datos y recomienda por urgencia. Ejemplo: 'falta tu schema Service en la página de habilidad X, arregla esto en 1 hora, 12 por ciento de probabilidad de lift en rich-result'."
+        }
+      }
     }
   },
   "skills-clyde": {
@@ -2069,6 +2294,31 @@
       "title": "¿Listo para contar con Clyde como Empleado AI de Marketing?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja Clyde con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Clyde",
+      "items": {
+        "q1": {
+          "question": "¿Qué es Clyde exactamente?",
+          "answer": "Clyde es el Empleado IA de Marketing central que orquesta las otras 11 habilidades. Da instrucciones en lenguaje natural (español, neerlandés o inglés) y Clyde enruta a la habilidad correcta: escribe un blog, programa posts sociales, crea un Reel, ejecuta una auditoría SEO. Funciona via chat, Slack, Telegram o WhatsApp."
+        },
+        "q2": {
+          "question": "¿Qué canales soporta Clyde?",
+          "answer": "Panel de chat nativo en tu dashboard, app Slack para equipos de agencia, bot Telegram para 1-a-1, WhatsApp Business via número conectado y email (mensajes reenviados). Clyde mantiene memoria entre canales: una conversación en Slack continúa en WhatsApp."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Clyde?",
+          "answer": "Clyde está incluido en cada tier, no es una habilidad separada sino la capa base. Partner recibe chat con orquestación básica, Growth y superiores reciben Slack y multi-canal. Enterprise añade ajustes de persona personalizada y fine-tuning de voz de marca. Cuesta 1 a 5 créditos por conversación."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Clyde?",
+          "answer": "Cuatro semanas de onboarding completo de plataforma. Semana 1 conexiones y base de conocimiento. Semana 2 modelado de voz de marca y flujos de aprobación. Semana 3 primeras ejecuciones autónomas con revisión manual de muestras. Semana 4 calibración. Después: aprendizaje continuo via ciclos dream y aprendizaje portfolio estilo Sindy."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia Clyde de ChatGPT o Claude?",
+          "answer": "ChatGPT y Claude son modelos aislados sin memoria de trabajo, integraciones ni entrenamiento de voz de marca. Clyde es un empleado IA persistente con memoria de 4 capas por marca, integraciones nativas con CMS y CRM, flujos autónomos y voz de marca consistente. Sin necesidad de re-explicar contexto cada sesión."
+        }
+      }
     }
   },
   "skills-manychat": {
@@ -2143,6 +2393,31 @@
       "title": "¿Listo para ceder los DMs de Instagram a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre ManyChat DM",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad ManyChat DM?",
+          "answer": "Clyde responde automáticamente a DMs de Instagram con respuestas IA en la voz de marca. Configuras triggers de palabra clave (por ejemplo, 'precio' o 'tarifa'), Clyde responde al instante, captura leads, califica intención y enruta prospects cálidos a tu CRM o equipo de ventas."
+        },
+        "q2": {
+          "question": "¿Qué plataformas soporta ManyChat DM?",
+          "answer": "Por ahora solo DMs de Instagram via la API oficial Meta Messenger Platform y el conector ManyChat. Facebook Messenger y WhatsApp Business están en la hoja de ruta para Q3. Los triggers funcionan con palabras clave exactas más detección IA de intención como fallback."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible ManyChat DM?",
+          "answer": "No en el tier Partner (add-on de 47 EUR para 300 DMs al mes). Growth incluye 200 DMs, Professional 1.000, Enterprise sin límite. Founding Member recibe 500 DMs al mes de por vida. Cuesta 2 créditos por 10 DMs."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de ManyChat DM?",
+          "answer": "Una semana. Día 1 conexión OAuth con cuenta Instagram Business y ManyChat. Días 2 a 4 configuras triggers de palabra clave y flujos de calificación. Día 5 va en vivo con aprobación manual por cada nuevo camino de flujo. Desde la semana 2 opera autónomo."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de ManyChat estándar?",
+          "answer": "ManyChat estándar funciona con flow builders estáticos, tú escribes cada variante. Clyde añade respuestas IA en la voz de marca por marca más scoring de calificación y enrutado automático al CRM. Ahorra la hora semanal de mantenimiento de flujos y captura leads que los bots ChatGPT pierden."
+        }
+      }
     }
   },
   "skills-reel-builder": {
@@ -2217,6 +2492,31 @@
       "title": "¿Listo para ceder los Reels a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre Reel Builder",
+      "items": {
+        "q1": {
+          "question": "¿Qué hace exactamente la habilidad Reel Builder?",
+          "answer": "Clyde produce vídeos verticales cortos (9:16) para Instagram Reels, TikTok y YouTube Shorts. Genera el script IA en la voz de marca, añade subtítulos automáticos, elige música acorde y ajusta el timing. La salida está lista para publicar con overlays de marca y tipografía en tu estilo de casa."
+        },
+        "q2": {
+          "question": "¿Qué stack de vídeo y plataformas soporta Reel Builder?",
+          "answer": "Por debajo: Runway y Pika para generación de escenas, ElevenLabs para voz en off, FFMPEG para composición. Salida a Instagram Reels, TikTok, YouTube Shorts y LinkedIn Video. Los vídeos se entregan en 9:16 1080x1920 con márgenes seguros para subtítulos en Reels."
+        },
+        "q3": {
+          "question": "¿En qué tiers está disponible Reel Builder?",
+          "answer": "No en el tier Partner (add-on próximamente). Growth incluye 4 Reels al mes, Professional 15, Enterprise sin límite. Founding Member recibe 8 Reels al mes de por vida. Cada Reel cuesta 25 créditos. Estado: próximamente para acceso anticipado en Q2."
+        },
+        "q4": {
+          "question": "¿Cuánto dura el onboarding de Reel Builder?",
+          "answer": "Dos semanas. Semana 1 Clyde establece el estilo de casa a partir de vídeos previos y guías de diseño (tipografía, color, beat). Semana 2 produce los 2 primeros Reels con aprobación manual por escena. Desde la semana 3 la habilidad opera autónoma con revisión de muestras."
+        },
+        "q5": {
+          "question": "¿En qué se diferencia de CapCut o Opus Clip?",
+          "answer": "CapCut es un editor manual. Opus Clip recorta vídeos largos en Shorts. Clyde construye el Reel desde cero: script, escenas, voz en off, subtítulos, música, en la voz de marca y la identidad visual. Sin más edición manual, en lotes de 4 o más por semana."
+        }
+      }
     }
   },
   "nav": {
