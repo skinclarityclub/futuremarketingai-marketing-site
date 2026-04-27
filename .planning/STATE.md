@@ -94,6 +94,7 @@ _Updated after each plan completion_
 | Phase 13 P02 | 25min | 6 tasks | 5 files |
 | Phase 13 P03 | 24min | 11 tasks | 12 files |
 | Phase 14-seo-geo-depth-upgrade P04 | 16min | 3 tasks | 2 files |
+| Phase 14 P03 | 22min | 4 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -282,6 +283,10 @@ Recent decisions affecting current work:
 - [Phase 14-seo-geo-depth-upgrade]: [14-04] Diffbot added to AI_CRAWLERS list (knowledge-graph aggregator behind enterprise B2B AI integrations) — 16 explicit bots vs plan's stated 15-16; same-shape rule, zero added risk
 - [Phase 14-seo-geo-depth-upgrade]: [14-04] Task 3 third-party GEO probes (Otterly, DarkVisitors) deferred to post-deploy because SaaS scanners fetch the live URL not localhost — full probe checklist captured in 14-04-audit-tool-scores.md for re-run after Vercel deploy
 - [Phase 14-seo-geo-depth-upgrade]: [14-04] SHARED_ALLOW + SHARED_DISALLOW const refactor in robots.ts (Rule 3 quality) — wildcard + per-bot rules now reference same single source for allow/disallow paths, prevents future drift
+- [Phase 14]: [14-03]: Tightened meta-description trim target to <=155 chars (5-char buffer below Google 160-char SERP cap) to absorb mobile glyph-width drift on NL/ES diacritics
+- [Phase 14]: [14-03]: Added meta.title+meta.description sub-keys to legal.sections.{privacy,terms,cookies} instead of using metaKeyPrefix override; keeps every page on the same default convention (meta.* under namespace root)
+- [Phase 14]: [14-03]: Dropped schema-dts WithContext<Article> annotation on ArticleJsonLd data const because schema-dts ImageObject.width type rejects plain int; aligned with OrganizationJsonLd pattern (no annotation)
+- [Phase 14]: [14-03]: ArticleJsonLd image is optional with /og-image.png default; future MDX-frontmatter cover-image override path stays open without prop-signature break
 
 ### Roadmap Evolution
 

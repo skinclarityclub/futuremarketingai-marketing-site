@@ -79,11 +79,11 @@ Sub-IDs (canonical decomposition for plan traceability):
 - [ ] **SEO-GEO-03**: ServiceJsonLd renders on all 12 `/skills/*` pages with `@id`, `provider` referencing Organization `@id`, and `serviceType` (Phase 14-02)
 - [ ] **SEO-GEO-04**: FaqJsonLd renders on `/founding-member` + 12 skill pages with visible-FAQ word-for-word parity, NL authoritative + EN/ES translated (Phase 14-02)
 - [ ] **SEO-GEO-05**: Speakable schema marks citation-target paragraphs on `/`, `/memory`, and `/case-studies/skinclarity-club` (Phase 14-02)
-- [ ] **SEO-GEO-06**: ArticleJsonLd emits `image` (ImageObject + dimensions), `publisher.logo` (ImageObject + dimensions), `mainEntityOfPage`, and stable `@id` — all 4 Article rich-result requirements satisfied (Phase 14-03)
+- [x] **SEO-GEO-06**: ArticleJsonLd emits `image` (ImageObject + dimensions), `publisher.logo` (ImageObject + dimensions), `mainEntityOfPage`, and stable `@id` — all 4 Article rich-result requirements satisfied (Phase 14-03)
 - [x] **SEO-GEO-07**: `robots.ts` declares explicit `Allow` rules for ≥15 AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, Meta-ExternalAgent, Meta-ExternalFetcher) plus wildcard fallback (Phase 14-04)
 - [x] **SEO-GEO-08**: `sitemap.xml` and `robots.txt` `Host` line use the Phase-10 canonical domain (`future-marketing.ai`); `llms.txt` reflects v10 Clyde + 12-skill + 5-tier content (Phase 14-04)
-- [ ] **SEO-META-01**: All 5 audited meta descriptions (home, pricing, apply, founding-member, how-it-works) ≤155 chars across NL/EN/ES with primary keyword in first 100 chars — eliminates SERP truncation (Phase 14-03)
-- [ ] **SEO-META-02**: Legal pages (privacy, terms, cookies) route through `generatePageMetadata` so they emit OG image + Twitter card + hreflang alternates and appear in `sitemap.xml` (Phase 14-03)
+- [x] **SEO-META-01**: All 5 audited meta descriptions (home, pricing, apply, founding-member, how-it-works) ≤155 chars across NL/EN/ES with primary keyword in first 100 chars — eliminates SERP truncation (Phase 14-03)
+- [x] **SEO-META-02**: Legal pages (privacy, terms, cookies) route through `generatePageMetadata` so they emit OG image + Twitter card + hreflang alternates and appear in `sitemap.xml` (Phase 14-03)
 
 ## v2 Requirements
 
@@ -172,11 +172,11 @@ Deferred to after founding member validation.
 | SEO-GEO-03  | Phase 14: SEO + GEO Depth  | Pending  |
 | SEO-GEO-04  | Phase 14: SEO + GEO Depth  | Pending  |
 | SEO-GEO-05  | Phase 14: SEO + GEO Depth  | Pending  |
-| SEO-GEO-06  | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-GEO-06  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-07  | Phase 14: SEO + GEO Depth  | Complete |
 | SEO-GEO-08  | Phase 14: SEO + GEO Depth  | Complete |
-| SEO-META-01 | Phase 14: SEO + GEO Depth  | Pending  |
-| SEO-META-02 | Phase 14: SEO + GEO Depth  | Pending  |
+| SEO-META-01 | Phase 14: SEO + GEO Depth  | Complete |
+| SEO-META-02 | Phase 14: SEO + GEO Depth  | Complete |
 
 **Coverage:**
 
