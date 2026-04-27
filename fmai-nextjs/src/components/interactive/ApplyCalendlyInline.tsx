@@ -1,6 +1,6 @@
 'use client'
 
-import { Component, useEffect, useState, type ReactNode } from 'react'
+import { Component, useEffect, useRef, useState, type ReactNode } from 'react'
 import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
 
@@ -37,21 +37,24 @@ export interface ApplyCalendlyInlineProps {
  */
 export function ApplyCalendlyInline({ name, email }: ApplyCalendlyInlineProps) {
   const t = useTranslations('apply.calendly')
-  const [mounted, setMounted] = useState(false)
   const [failed, setFailed] = useState(false)
+  // useRef instead of state — flipping a ref does not trigger re-render and the
+  // effect needs to fire once-per-mount, not once-per-render. Mirrors the
+  // StickyMobileCTA Phase 15-01 fix for the same react-hooks/set-state-in-effect
+  // lint rule.
+  const loadEventFired = useRef(false)
 
   const rawUrl = process.env.NEXT_PUBLIC_CALENDLY_APPLY_URL ?? DEFAULT_URL
 
+  // Fire GA4 calendly_load once after the embed mounts on the client. Effects
+  // run only on the client, so the typeof window guard is belt-and-braces.
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!mounted || failed) return
+    if (failed || loadEventFired.current) return
+    loadEventFired.current = true
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'calendly_load', { location: 'apply_success' })
     }
-  }, [mounted, failed])
+  }, [failed])
 
   // Guard against malformed env var (e.g. missing scheme).
   let urlIsValid = true
@@ -82,13 +85,7 @@ export function ApplyCalendlyInline({ name, email }: ApplyCalendlyInlineProps) {
   return (
     <div className="rounded-xl overflow-hidden border border-white/10">
       <ErrorBoundary onError={() => setFailed(true)}>
-        {mounted ? (
-          <InlineWidget
-            url={rawUrl}
-            prefill={{ name, email }}
-            styles={{ height: '720px' }}
-          />
-        ) : null}
+        <InlineWidget url={rawUrl} prefill={{ name, email }} styles={{ height: '720px' }} />
       </ErrorBoundary>
     </div>
   )
