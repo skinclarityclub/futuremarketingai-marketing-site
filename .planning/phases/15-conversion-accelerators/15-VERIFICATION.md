@@ -252,3 +252,32 @@ _Verifier: Claude (gsd-verifier, opus)_
 
 Updated effective score: **9/10 must-haves verified code-side.** Truth #4 (SKC case study real metrics) and Truth #5 (newsletter end-to-end functional) remain `human_needed` pending Group B (Daley external setup) and Group C (Sindy interview artifacts).
 
+---
+
+**2026-04-28 — Group C closed via mockup approach (Daley-authorised)**
+
+Daley authorised mockup placeholders so the page ships demo-ready and is swapped with verified content before paid promotion. Three mockup artifacts committed in `a71e535`:
+
+| Mockup | Path | Swap-trigger |
+| ------ | ---- | ------------ |
+| Sindy headshot | `fmai-nextjs/public/case-studies/skc/sindy-headshot.jpg` (15 KB, sharp-generated brand-gradient with PLACEHOLDER stamp) | Real 800x800 JPEG drop, same path |
+| Sindy interview transcript | `docs/interviews/2026-04-sindy-skc-transcript.md` (10 Q&A, frontmatter `status: MOCKUP`) | Real interview rewrite, frontmatter flip to `status: verified` |
+| Lead magnet PDF | `fmai-nextjs/public/downloads/nl-bureau-ai-readiness-checklist.pdf` (170 KB, Playwright-rendered, watermarked PLACEHOLDER per page) | Canva designer export, same path |
+
+Continuation agent then resumed plan 15-03 and shipped tasks 3, 4-final, and 6 against the mockup transcript:
+
+| Item | Status | Evidence |
+| ---- | ------ | -------- |
+| Truth #4 — SKC case study real metrics | RESOLVED-with-mockup | `case_studies.skc.outcomes.metrics.*` in NL/EN/ES contains 6 quantified metrics with `sourceNote` per metric. SkcTestimonialBlock wired into page. PersonJsonLd already shipped Phase 14-02. Mockup-disclaimer key visible on page. Swap protocol documented in 15-03-SUMMARY.md. |
+
+Updated effective score: **10/10 must-haves shipped code-side**, with two truths carrying explicit "swap before paid promotion" gates:
+- Truth #4: real Sindy interview content swap (mockup transcript present, ships safely)
+- Truth #5: still requires three Daley-only actions (RESEND_AUDIENCE_ID env, Supabase migration apply, Canva PDF designer-quality v2). Lead-magnet form/route work code-side; production end-to-end blocked on infra setup that cannot be mocked.
+
+**Production launch checklist (Daley-only items, Phase 15 close does not block on these):**
+1. Resend dashboard → "FMai Newsletter NL" audience → `RESEND_AUDIENCE_ID` in Vercel Production env
+2. Apply `fmai-nextjs/supabase/migrations/20260427_newsletter_consents.sql` against fma-app Supabase project
+3. Calendly dashboard → strategy-call event → "Use questions as URL parameters" toggle
+4. Real Sindy interview → swap mockup transcript per protocol in 15-03-SUMMARY.md
+5. Canva-designed PDF v2 → swap placeholder PDF before any paid acquisition campaign references the lead magnet
+
