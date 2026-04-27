@@ -5,7 +5,7 @@
   "home": {
     "meta": {
       "title": "Dit is Clyde. De AI Marketing Medewerker voor jouw bureau | FutureMarketingAI",
-      "description": "Clyde is de AI Marketing Medewerker van jouw bureau. Hij schrijft content, belt leads, beheert social media, maakt advertenties en rapporteert over prestaties. 24/7, voor elk merk in je portfolio. Gebouwd door FutureMarketingAI."
+      "description": "Clyde is de AI Marketing Medewerker voor marketingbureaus. Schrijft content, belt leads, onthoudt elk merk. Max 20 partners per jaar."
     },
     "hero": {
       "badge": "Jouw AI Marketing Medewerker met langetermijngeheugen. {taken} van {total} founding plekken bezet",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Prijzen: 5 tiers, transparant. Van Partner €347 tot Enterprise €7.997 | FutureMarketingAI",
-      "description": "Premium AI marketing partnership in 5 tiers. Caps per vaardigheid, credit-allocatie en add-on packs. Geen verborgen kosten, geen self-service. Maximaal {maxPartners} bureaus per jaar."
+      "description": "5 tiers, transparant: Partner €347 tot Enterprise €7.997. Lifetime Founding €997 voor 10 plekken. Geen verborgen kosten, geen lock-in."
     },
     "hero": {
       "title": "Premium partnerships. 5 tiers. Transparant.",
@@ -754,7 +754,7 @@
   "how-it-works": {
     "meta": {
       "title": "Hoe het werkt: 5 stappen naar een AI-medewerker in jouw portfolio | FutureMarketingAI",
-      "description": "Van application tot live production in 5 stappen: application + discovery call, 4-week onboarding door Daley, Clyde configureren per klant, productie starten, continue verbetering."
+      "description": "Zo bouw je een AI-medewerker in jouw bureau: 5 stappen van gesprek tot live. Van weken, niet maanden. Geen ontwikkelteam nodig."
     },
     "hero": {
       "title": "Hoe begint jouw partnership met Clyde?",
@@ -1344,7 +1344,7 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 plekken, €997 levenslang | FutureMarketingAI",
-      "description": "10 Founding plekken voor bureaus die vanaf launch meedoen. €997 per maand levenslang, alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley."
+      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. 60% korting vs Growth, prijs-lock voor altijd. 1/10 plekken bezet."
     },
     "hero": {
       "badge": "{taken} van {total} Founding plekken bezet",
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
-      "description": "Aanmelden voor een partnership-gesprek. Maximaal {maxPartners} bureaus per jaar. We beoordelen binnen 3 werkdagen. Passend of niet, je krijgt altijd antwoord."
+      "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor bureaus met 5+ merken. Max 20 plekken per jaar."
     },
     "hero": {
       "counter": "{taken} van {total} Founding plekken bezet",
