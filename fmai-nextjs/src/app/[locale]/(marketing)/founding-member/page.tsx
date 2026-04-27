@@ -4,6 +4,7 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -63,6 +64,12 @@ export default async function FoundingMemberPage({
           { name: 'Founding Member', path: '/founding-member' },
         ]}
         locale={locale}
+      />
+      <FaqJsonLd
+        items={FAQ_KEYS.map((key) => ({
+          question: t(`faq.items.${key}.question`),
+          answer: t(`faq.items.${key}.answer`),
+        }))}
       />
 
       {/* Hero */}
