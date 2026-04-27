@@ -2,6 +2,12 @@
   "a11y": {
     "skipToContent": "Ir al contenido"
   },
+  "stickyCta": {
+    "label": "Reserva una llamada",
+    "subLabel": "30 min con Daley",
+    "dismiss": "Cerrar barra CTA móvil",
+    "srLandmark": "Acción rápida"
+  },
   "home": {
     "meta": {
       "title": "Este es Clyde. El Empleado AI de Marketing para tu agencia | FutureMarketingAI",

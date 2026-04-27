@@ -2,6 +2,12 @@
   "a11y": {
     "skipToContent": "Ga direct naar inhoud"
   },
+  "stickyCta": {
+    "label": "Plan een gesprek",
+    "subLabel": "30 min met Daley",
+    "dismiss": "Sluit mobiele CTA-balk",
+    "srLandmark": "Snelle actie"
+  },
   "home": {
     "meta": {
       "title": "Dit is Clyde. De AI Marketing Medewerker voor jouw bureau | FutureMarketingAI",

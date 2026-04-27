@@ -2,6 +2,12 @@
   "a11y": {
     "skipToContent": "Skip to content"
   },
+  "stickyCta": {
+    "label": "Book a call",
+    "subLabel": "30 min with Daley",
+    "dismiss": "Close mobile CTA bar",
+    "srLandmark": "Quick action"
+  },
   "home": {
     "meta": {
       "title": "This is Clyde. The AI Marketing Employee for your agency | FutureMarketingAI",
