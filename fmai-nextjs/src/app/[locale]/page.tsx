@@ -79,6 +79,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         description={t('meta.description')}
         path="/"
         locale={locale}
+        speakableSelectors={['.speakable-hero', '.speakable-tldr']}
       />
       <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }]} locale={locale} />
       <FaqJsonLd
@@ -124,7 +125,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Description */}
             <p
-              className="text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
+              className="speakable-hero text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
             >
               {t('hero.subtitle')}
@@ -132,7 +133,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Trust anchor */}
             <p
-              className="text-sm text-text-muted mb-6 lg:mb-10"
+              className="speakable-tldr text-sm text-text-muted mb-6 lg:mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
             >
               {t('hero.trustAnchor')}

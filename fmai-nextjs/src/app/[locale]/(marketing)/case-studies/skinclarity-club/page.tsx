@@ -50,6 +50,7 @@ export default async function SkcCaseStudyPage({
         description={t('meta.description')}
         path="/case-studies/skinclarity-club"
         locale={locale}
+        speakableSelectors={['.speakable-skc-summary', '.speakable-skc-outcome']}
       />
       <BreadcrumbJsonLd
         items={[
@@ -69,7 +70,7 @@ export default async function SkcCaseStudyPage({
           <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
             {t('hero.title')}
           </h1>
-          <p className="text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
+          <p className="speakable-skc-summary text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>
         </div>
@@ -167,7 +168,9 @@ export default async function SkcCaseStudyPage({
           </div>
           <ScrollReveal>
             <GlassCard className="text-left">
-              <p className="text-text-secondary leading-relaxed">{t('architecture.body')}</p>
+              <p className="speakable-skc-outcome text-text-secondary leading-relaxed">
+                {t('architecture.body')}
+              </p>
             </GlassCard>
           </ScrollReveal>
         </div>

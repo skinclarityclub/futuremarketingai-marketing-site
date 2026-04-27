@@ -40,6 +40,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         description={t('meta.description')}
         path="/memory"
         locale={locale}
+        speakableSelectors={['.speakable-memory-def', '.speakable-memory-layers']}
       />
       <BreadcrumbJsonLd
         items={[
@@ -71,7 +72,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
               {t('hero.headlineAccent')}
             </span>
           </h1>
-          <p className="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="speakable-memory-def text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
         </div>
@@ -82,7 +83,9 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <SectionHeading id="layers-heading">{t('layers.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('layers.subtitle')}</p>
+            <p className="speakable-memory-layers mt-4 text-text-secondary max-w-2xl mx-auto">
+              {t('layers.subtitle')}
+            </p>
           </div>
           <ScrollReveal>
             <MemoryLayersDiagram locale={locale} />
