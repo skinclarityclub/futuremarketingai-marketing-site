@@ -1810,21 +1810,48 @@
         "skill6Name": "Clyde (orquestador)",
         "skill6Body": "El Empleado AI de Marketing central que conecta las 5 habilidades. Memoria por cuenta y aprendizaje entre habilidades."
       },
-      "content": {
+      "outcomes": {
         "title": "Qué entrega Clyde",
-        "subtitle": "Resultados concretos para SKC, cada semana, de forma autónoma.",
-        "row1Label": "Carruseles",
-        "row1Value": "Alrededor de 21 por semana",
-        "row2Label": "Posts de Instagram",
-        "row2Value": "Alrededor de 15 por semana",
-        "row3Label": "Stories",
-        "row3Value": "A petición",
-        "row4Label": "Artículos de blog",
-        "row4Value": "2 a 4 al mes",
-        "row5Label": "Informes SEO",
-        "row5Value": "Semanal",
-        "row6Label": "Informe de rendimiento",
-        "row6Value": "Lunes a las 08:00"
+        "subtitle": "Resultados de SkinClarity Club medidos en el Q1-2026 frente al Q1-2025. Cifras extraídas de una entrevista operativa con Sindy.",
+        "metrics": {
+          "hoursSaved": {
+            "label": "Tiempo ahorrado",
+            "value": "5 horas por semana",
+            "detail": "De 12 a 14 horas por semana antes de que Clyde entrara en producción, a 7 u 8 horas por semana ahora, dedicadas sobre todo a estrategia en lugar de ejecución.",
+            "sourceNote": "Fuente: registro de tiempo de Sindy, Q1-2026 comparado con Q1-2025."
+          },
+          "approvalTime": {
+            "label": "Tiempo de aprobación por post",
+            "value": "30 seg por post",
+            "detail": "De 4 minutos a 30 segundos, medido por lotes. La capa de memoria conoce la voz de marca y las reglas de revisión.",
+            "sourceNote": "Fuente: medición de Sindy a lo largo de cuatro lotes en la semana 14 de 2026."
+          },
+          "outputVolume": {
+            "label": "Volumen de contenido autónomo",
+            "value": "21 carruseles + 15 posts por semana",
+            "detail": "Además de 35 a 50 stories por semana y de 2 a 4 blogs al mes. Repartido entre 3 cuentas de Instagram y 4 marcas.",
+            "sourceNote": "Fuente: exportación de contenido programado de Buffer y Hootsuite, semanas 12 a 16 de 2026."
+          },
+          "reachDelta": {
+            "label": "Aumento de alcance",
+            "value": "+30% por post",
+            "detail": "Atribución conservadora: medición bruta del +42 por ciento, ajustada por el efecto del lanzamiento de producto de abril de 2025.",
+            "sourceNote": "Fuente: Instagram Business Insights, Q1-2025 comparado con Q1-2026."
+          },
+          "monthlySavings": {
+            "label": "Ahorro mensual",
+            "value": "Alrededor de EUR 3.000",
+            "detail": "EUR 1.300 en tiempo más EUR 1.800 en coste de freelance que ya no se necesita semanalmente para el flujo de carruseles.",
+            "sourceNote": "Fuente: Moneybird de Sindy, Q1-2026 comparado con Q1-2025."
+          },
+          "engagementRate": {
+            "label": "Tasa de engagement",
+            "value": "3,1% a 4,3%",
+            "detail": "Medido en @SkinClarityClub, la cuenta principal. Las otras dos cuentas muestran cifras absolutas menores con la misma tendencia.",
+            "sourceNote": "Fuente: Instagram Business Insights, Q1-2025 comparado con Q1-2026."
+          }
+        },
+        "disclaimer": "Cifras extraídas de una entrevista operativa con Sindy. Notas de fuente por métrica. Las cifras se recalibran periódicamente."
       },
       "architecture": {
         "title": "Cómo funciona",

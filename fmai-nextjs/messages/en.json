@@ -1810,21 +1810,48 @@
         "skill6Name": "Clyde (orchestrator)",
         "skill6Body": "The central AI Marketing Employee that ties the 5 skills together. Memory per account plus cross-skill learning."
       },
-      "content": {
+      "outcomes": {
         "title": "What Clyde delivers",
-        "subtitle": "Concrete output for SKC, every week, autonomously.",
-        "row1Label": "Carousels",
-        "row1Value": "Around 21 per week",
-        "row2Label": "Instagram posts",
-        "row2Value": "Around 15 per week",
-        "row3Label": "Stories",
-        "row3Value": "On demand",
-        "row4Label": "Blog articles",
-        "row4Value": "2 to 4 per month",
-        "row5Label": "SEO reports",
-        "row5Value": "Weekly",
-        "row6Label": "Performance digest",
-        "row6Value": "Monday 08:00"
+        "subtitle": "Outcomes for SkinClarity Club measured over Q1-2026 compared to Q1-2025. Numbers sourced from an operational interview with Sindy.",
+        "metrics": {
+          "hoursSaved": {
+            "label": "Time saved",
+            "value": "5 hours per week",
+            "detail": "From 12 to 14 hours per week before Clyde went live, down to 7 to 8 hours per week now, mostly spent on strategy instead of execution.",
+            "sourceNote": "Source: Sindy's own time tracking, Q1-2026 compared with Q1-2025."
+          },
+          "approvalTime": {
+            "label": "Approval time per post",
+            "value": "30 sec per post",
+            "detail": "From 4 minutes to 30 seconds, measured across batches. The memory layer knows the brand voice and review rules.",
+            "sourceNote": "Source: Sindy's time measurement across four batches in week 14, 2026."
+          },
+          "outputVolume": {
+            "label": "Autonomous content volume",
+            "value": "21 carousels + 15 posts per week",
+            "detail": "Plus 35 to 50 stories per week and 2 to 4 blogs per month. Spread across 3 Instagram accounts and 4 brands.",
+            "sourceNote": "Source: Buffer and Hootsuite scheduled-content export, weeks 12 to 16, 2026."
+          },
+          "reachDelta": {
+            "label": "Reach uplift",
+            "value": "+30% per post",
+            "detail": "Conservative attribution: raw measurement +42 percent, corrected for the April 2025 product launch effect.",
+            "sourceNote": "Source: Instagram Business Insights, Q1-2025 compared with Q1-2026."
+          },
+          "monthlySavings": {
+            "label": "Monthly savings",
+            "value": "Around EUR 3,000",
+            "detail": "EUR 1,300 in time plus EUR 1,800 in freelancer cost that is no longer needed for the weekly carousel stream.",
+            "sourceNote": "Source: Sindy's Moneybird Q1-2026 compared with Q1-2025."
+          },
+          "engagementRate": {
+            "label": "Engagement rate",
+            "value": "3.1% to 4.3%",
+            "detail": "Measured on @SkinClarityClub, the main account. The two other accounts show smaller absolutes in the same direction.",
+            "sourceNote": "Source: Instagram Business Insights, Q1-2025 compared with Q1-2026."
+          }
+        },
+        "disclaimer": "Numbers sourced from an operational interview with Sindy. Source notes per metric. Figures are recalibrated periodically."
       },
       "architecture": {
         "title": "How it works",

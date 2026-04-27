@@ -1810,21 +1810,48 @@
         "skill6Name": "Clyde (orchestrator)",
         "skill6Body": "De centrale AI Marketing Medewerker die de 5 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen."
       },
-      "content": {
+      "outcomes": {
         "title": "Wat Clyde oplevert",
-        "subtitle": "Concrete output voor SKC, elke week, autonoom.",
-        "row1Label": "Carrousels",
-        "row1Value": "Circa 21 per week",
-        "row2Label": "Instagram-posts",
-        "row2Value": "Circa 15 per week",
-        "row3Label": "Stories",
-        "row3Value": "Op aanvraag",
-        "row4Label": "Blogartikelen",
-        "row4Value": "2 tot 4 per maand",
-        "row5Label": "SEO-rapporten",
-        "row5Value": "Wekelijks",
-        "row6Label": "Prestatie-digest",
-        "row6Value": "Maandag 08:00"
+        "subtitle": "Uitkomsten voor SkinClarity Club gemeten over Q1-2026 vergeleken met Q1-2025. Cijfers afkomstig uit een operationeel interview met Sindy.",
+        "metrics": {
+          "hoursSaved": {
+            "label": "Tijd bespaard",
+            "value": "5 uur per week",
+            "detail": "Van 12 tot 14 uur per week voor Clyde live ging, naar 7 tot 8 uur per week nu, vooral besteed aan strategie in plaats van uitvoer.",
+            "sourceNote": "Bron: Sindy's eigen tijdmeting Q1-2026 vergeleken met Q1-2025."
+          },
+          "approvalTime": {
+            "label": "Goedkeuringstijd per post",
+            "value": "30 sec per post",
+            "detail": "Van 4 minuten naar 30 seconden, gemeten over batches. De memory-laag kent de merkstem en review-regels.",
+            "sourceNote": "Bron: Sindy's tijd-meting over vier batches in week 14, 2026."
+          },
+          "outputVolume": {
+            "label": "Autonoom contentvolume",
+            "value": "21 carrousels + 15 posts per week",
+            "detail": "Plus 35 tot 50 stories per week en 2 tot 4 blogs per maand. Verdeeld over 3 Instagram-accounts en 4 merken.",
+            "sourceNote": "Bron: Buffer en Hootsuite scheduled-content-export, week 12 tot 16, 2026."
+          },
+          "reachDelta": {
+            "label": "Reach-stijging",
+            "value": "+30% per post",
+            "detail": "Conservatieve attributie: rauwe meting +42 procent, gecorrigeerd voor product-launch-effect uit april 2025.",
+            "sourceNote": "Bron: Instagram Business Insights, Q1-2025 vergeleken met Q1-2026."
+          },
+          "monthlySavings": {
+            "label": "Maandelijkse besparing",
+            "value": "Circa EUR 3.000",
+            "detail": "EUR 1.300 in tijd plus EUR 1.800 in freelancer-kosten die niet meer wekelijks nodig zijn voor de carrousel-stroom.",
+            "sourceNote": "Bron: Sindy's Moneybird Q1-2026 vergeleken met Q1-2025."
+          },
+          "engagementRate": {
+            "label": "Engagement-rate",
+            "value": "3,1% naar 4,3%",
+            "detail": "Gemeten op @SkinClarityClub, hoofdaccount. De twee andere accounts zien kleinere absoluten met dezelfde richting.",
+            "sourceNote": "Bron: Instagram Business Insights, Q1-2025 vergeleken met Q1-2026."
+          }
+        },
+        "disclaimer": "Cijfers afkomstig uit een operationeel interview met Sindy. Bron-noten per metric. Cijfers worden periodiek herijkt."
       },
       "architecture": {
         "title": "Hoe het werkt",
