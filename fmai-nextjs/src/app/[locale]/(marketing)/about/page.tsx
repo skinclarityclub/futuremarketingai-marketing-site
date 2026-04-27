@@ -5,6 +5,13 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
+import {
+  DALEY_PERSON_ID,
+  LINKEDIN_DALEY_URL,
+  WIKIDATA_DALEY_URL,
+  TWITTER_URL,
+} from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -51,6 +58,21 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           { name: t('hero.title'), path: '/about' },
         ]}
         locale={locale}
+      />
+      <PersonJsonLd
+        id={DALEY_PERSON_ID}
+        name={t('founder.fullName')}
+        jobTitle={t('founder.role')}
+        description={t('founder.bio')}
+        sameAs={[LINKEDIN_DALEY_URL, WIKIDATA_DALEY_URL, TWITTER_URL]}
+        knowsAbout={[
+          'AI Marketing Automation',
+          'LLM Orchestration',
+          'n8n workflow automation',
+          'Brand Voice Modeling',
+          'B2B Marketing Strategy',
+          'EU AI Act Compliance',
+        ]}
       />
 
       {/* Hero Section */}
