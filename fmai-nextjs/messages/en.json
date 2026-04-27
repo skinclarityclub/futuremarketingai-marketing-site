@@ -5,7 +5,7 @@
   "home": {
     "meta": {
       "title": "This is Clyde. The AI Marketing Employee for your agency | FutureMarketingAI",
-      "description": "Clyde is your agency's AI Marketing Employee. He writes content, takes calls, runs social media, creates ads and reports on performance. 24/7, for every brand in your portfolio. Built by FutureMarketingAI."
+      "description": "Clyde is the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 20 partners per year."
     },
     "hero": {
       "badge": "Your AI Marketing Employee with long-term memory. {taken} of {total} founding spots taken",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Pricing: 5 tiers, transparent. From Partner €347 to Enterprise €7,997 | FutureMarketingAI",
-      "description": "Premium AI marketing partnership in 5 tiers. Caps per skill, credit allocation and add-on packs. No hidden costs, no self-service. Max {maxPartners} agencies per year."
+      "description": "Five tiers, transparent: Partner at €347 to Enterprise €7,997. Lifetime Founding at €997 for 10 seats. No hidden fees, no lock-in."
     },
     "hero": {
       "title": "Premium partnerships. 5 tiers. Transparent.",
@@ -754,7 +754,7 @@
   "how-it-works": {
     "meta": {
       "title": "How it works: 5 steps to an AI employee in your portfolio | FutureMarketingAI",
-      "description": "From application to live production in 5 steps: application plus discovery call, 4-week onboarding by Daley, configure Clyde per client, start production, continuous improvement."
+      "description": "How to put an AI employee inside your agency: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
     },
     "hero": {
       "title": "How does your partnership with Clyde start?",
@@ -1344,7 +1344,7 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 spots, €997 for life | FutureMarketingAI",
-      "description": "10 Founding spots for agencies that join from launch. €997 per month for life, all 12 skills, Pro-level caps and a direct Slack line with Daley."
+      "description": "Founding Member: €997/month for life, first 10 agencies only. 60% off vs Growth, price locked forever. 1 of 10 seats taken."
     },
     "hero": {
       "badge": "{taken} of {total} Founding spots taken",
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Apply. Book a call with Daley | FutureMarketingAI",
-      "description": "Apply for a partnership call. Max {maxPartners} agencies per year. We review within 3 business days. Match or not, you always get a reply."
+      "description": "Apply for a conversation about FutureMarketingAI. Partnership with Clyde for agencies with 5+ brands. Max 20 seats per year."
     },
     "hero": {
       "counter": "{taken} of {total} Founding spots taken",

@@ -5,7 +5,7 @@
   "home": {
     "meta": {
       "title": "Este es Clyde. El Empleado AI de Marketing para tu agencia | FutureMarketingAI",
-      "description": "Clyde es el Empleado AI de Marketing de tu agencia. Escribe contenido, atiende llamadas, gestiona redes sociales, crea anuncios y reporta resultados. 24/7, para cada marca de tu portfolio. Creado por FutureMarketingAI."
+      "description": "Clyde es el Empleado de Marketing AI para agencias de marketing. Escribe contenido, llama leads, recuerda cada marca. Máx 20 socios por año."
     },
     "hero": {
       "badge": "Tu Empleado AI de Marketing con memoria a largo plazo. {taken} de {total} plazas founding ocupadas",
@@ -527,7 +527,7 @@
   "pricing": {
     "meta": {
       "title": "Precios: 5 tiers, transparente. De Partner 347 EUR a Enterprise 7.997 EUR | FutureMarketingAI",
-      "description": "Partnership AI de marketing premium en 5 tiers. Caps por habilidad, asignación de créditos y packs add-on. Sin costes ocultos, sin self-service. Máx. {maxPartners} agencias al año."
+      "description": "Cinco tiers, transparente: Partner a €347 hasta Enterprise €7.997. Founding de por vida a €997 para 10 plazas. Sin costos ocultos."
     },
     "hero": {
       "title": "Partnerships premium. 5 tiers. Transparente.",
@@ -754,7 +754,7 @@
   "how-it-works": {
     "meta": {
       "title": "Cómo funciona: 5 pasos hacia un Empleado AI en tu portfolio | FutureMarketingAI",
-      "description": "De la solicitud a producción en vivo en 5 pasos: solicitud y discovery call, onboarding de 4 semanas con Daley, configurar a Clyde por cliente, arrancar producción, mejora continua."
+      "description": "Cómo poner un empleado AI en tu agencia: 5 pasos de la conversación a en vivo. Semanas, no meses. Sin equipo de ingeniería."
     },
     "hero": {
       "title": "¿Cómo empieza tu partnership con Clyde?",
@@ -1344,7 +1344,7 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 plazas, 997 € de por vida | FutureMarketingAI",
-      "description": "10 plazas Founding para agencias que se suman desde el lanzamiento. 997 € al mes de por vida, las 12 habilidades, topes Pro y línea directa de Slack con Daley."
+      "description": "Founding Member: €997/mes de por vida, solo primeras 10 agencias. 60% descuento vs Growth, precio fijo para siempre. 1/10 plazas."
     },
     "hero": {
       "badge": "{taken} de {total} plazas Founding ocupadas",
@@ -1520,7 +1520,7 @@
   "apply": {
     "meta": {
       "title": "Solicitar. Agenda una llamada con Daley | FutureMarketingAI",
-      "description": "Solicitud para una llamada de partnership. Máximo {maxPartners} agencias al año. Respondemos en 3 días laborables. Haya encaje o no, siempre recibes respuesta."
+      "description": "Solicita una conversación sobre FutureMarketingAI. Alianza con Clyde para agencias con 5+ marcas. Máx 20 plazas por año."
     },
     "hero": {
       "counter": "{taken} de {total} plazas Founding ocupadas",
