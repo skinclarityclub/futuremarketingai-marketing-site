@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-04-26T18:49:54.599Z"
+last_updated: "2026-04-27T09:14:01Z"
 progress:
   total_phases: 15
   completed_phases: 10
   total_plans: 53
-  completed_plans: 41
+  completed_plans: 42
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 13 of 15 (Performance + Bundle Cleanup) -- COMPLETE (3 of 3 plans landed)
-Plan: 13-03 landed -- hygiene cleanup wave 2: 9 atomic commits (7f13ac7/07f2885/1b05d7f/1583cce/466d120/0a9fc0f/f43d451/1ac266a/0043afd) -- OrbitVisual.tsx deleted (290 LOC dead code), 21 debug PNGs untracked + .screenshots/ gitignored, hero-robot.png/webp removed, 4 Vite-era verify scripts deleted (auto-resolves 2 audit-08 lint errors), empty fmai-nextjs/fmai-nextjs/ scaffold removed, @google/stitch-sdk relocated to devDependencies + script moved to scripts/dev/, Space Grotesk dropped (3→2 fonts, font-display falls back to DM Sans), 11 deps bumped within safe semver bounds (ai-sdk family +52 patches, react/react-dom 19.2.5, tailwind 4.2.4, splinetool 1.12.88, playwright 1.59.1), prebuild lint gate (soft mode, _fixme_prebuild_strict for Phase 11), 16 hardcoded <a href> migrated to next-intl <Link> across ChatWidget + ProgressiveCTA + 3 tool-result cards + (marketing)/contact/page.tsx applyCallout. Build green 88/88 SSG pages, 0 no-html-link-for-pages errors. Phase 13 cumulative: HTML drops 35-57% on hot routes, 1.3 MB Spline scene fetch removed from 86 non-home routes, ~242 KB unused hero assets gone, 16 audit-08 lint errors resolved.
-Status: PHASE 13 COMPLETE (3/3 plans). Next: Phase 14 (a11y) per ROADMAP.md.
-Last activity: 2026-04-26 -- 13-03 done in ~24min: 12 files modified, 6 source files + 21 untracked PNGs deleted, 9 atomic commits + metadata. Phase-level 13-VERIFICATION.md written aggregating 13-01 + 13-02 + 13-03 deltas. Daley still owes Stripe Product rename + VoiceDemoSection phone decision (Phase 12 deferred items, unchanged).
+Phase: 14 of 15 (SEO + GEO Depth Upgrade) -- IN PROGRESS (Wave 1 = 14-01 + 14-03 + 14-04 landed parallel; Wave 2 = 14-02 pending)
+Plan: 14-04 landed -- robots.ts explicit AI-crawler allowlist + canonical Host. Single-rule wildcard config replaced with 17 User-Agent blocks (1 wildcard + 16 explicit AI crawlers: GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, CCBot, Bytespider, Amazonbot, Meta-ExternalAgent, Meta-ExternalFetcher, Diffbot). Host: https://future-marketing.ai + Sitemap: https://future-marketing.ai/sitemap.xml emit canonical post-Phase-10 domain. SHARED_ALLOW/SHARED_DISALLOW const refactor (DRY). 2 atomic commits: 1defd5e (robots.ts) + aa60f8c (post-deploy GEO probe checklist). Sitemap canonical-host verification passed (27 LOCs, all on future-marketing.ai, zero legacy-domain leakage). llms.txt v10 confirmed (Clyde + 347 EUR + 997 EUR present). Wave-1 file ownership held: zero touches to seo-config.ts (14-01 owns) or messages/*.json or sitemap.ts. Build green; pre-existing audit-08 lint errors surface via soft prebuild gate (Phase 11 work, not 14-04).
+Status: PHASE 14 IN PROGRESS. Wave 1 (14-01, 14-03, 14-04) complete. Wave 2 (14-02 PersonJsonLd rendering + 216 FAQ keys + about.founder + sindy testimonial) ready to start (depends on 14-01's PersonJsonLd component + Organization @id which both shipped today).
+Last activity: 2026-04-27 -- 14-04 done in 16min: 1 source file modified (robots.ts), 1 doc created (audit-tool-scores.md), 2 atomic commits + this metadata commit pending. Dev server left running on port 3002 (port 3000 was occupied; per CLAUDE.md no taskkill). Phase 14 progress: 3/4 plans landed.
 
-Progress: [████████████░░] 80% | Phase 13: [███] 3/3 plans complete (13-01 + 13-02 + 13-03 all landed)
+Progress: [████████████▌░] 82% | Phase 14: [███░] 3/4 plans complete (14-01 + 14-03 + 14-04 in Wave 1, 14-02 pending in Wave 2)
 
 ### Audit context (2026-04-24)
 
@@ -93,6 +93,7 @@ _Updated after each plan completion_
 | Phase 13 P01 | 30min | 9 tasks | 12 files |
 | Phase 13 P02 | 25min | 6 tasks | 5 files |
 | Phase 13 P03 | 24min | 11 tasks | 12 files |
+| Phase 14-seo-geo-depth-upgrade P04 | 16min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -276,6 +277,11 @@ Recent decisions affecting current work:
 - [Phase 13]: [13-03]: 16 hardcoded `<a href>` migrated to next-intl Link, NOT 14 from plan — extra 2 in (marketing)/contact/page.tsx applyCallout button. NL/ES users clicking from chatbot LeadScoreCard CTA → contact → apply would otherwise lose locale on the second hop. Folded under Rule 3 in-scope adjacent fix.
 - [Phase 13]: [13-03]: 21 debug screenshots at fmai-nextjs/ root untracked from git (kept on disk in fmai-nextjs/.screenshots/, gitignored). Repo working tree no longer ships chatbots-scroll*, hero-*, mega-menu-final, nextjs-3001, verify-*, vite-*, voice-scroll* PNGs.
 - [Phase 13]: [13-03]: Empty fmai-nextjs/fmai-nextjs/ nested scaffold deleted via rm -rf (no git diff because no tracked files inside) — folded into Task 6 commit. Future agents no longer see a ghost directory.
+- [Phase 14-seo-geo-depth-upgrade]: [14-04] robots.ts: 16 explicit AI-crawler Allow rules + canonical Host: line — lifts implicit-allow GEO score (40/100) to explicit-allowlist signal that survives any later CDN/WAF
+- [Phase 14-seo-geo-depth-upgrade]: [14-04] Bytespider + Meta-ExternalAgent + Meta-ExternalFetcher = Allow per DECISIONS-2026-04-24 Phase 14 Q6 (TikTok search index + WhatsApp/IG link previews are reach wins on a public marketing site)
+- [Phase 14-seo-geo-depth-upgrade]: [14-04] Diffbot added to AI_CRAWLERS list (knowledge-graph aggregator behind enterprise B2B AI integrations) — 16 explicit bots vs plan's stated 15-16; same-shape rule, zero added risk
+- [Phase 14-seo-geo-depth-upgrade]: [14-04] Task 3 third-party GEO probes (Otterly, DarkVisitors) deferred to post-deploy because SaaS scanners fetch the live URL not localhost — full probe checklist captured in 14-04-audit-tool-scores.md for re-run after Vercel deploy
+- [Phase 14-seo-geo-depth-upgrade]: [14-04] SHARED_ALLOW + SHARED_DISALLOW const refactor in robots.ts (Rule 3 quality) — wildcard + per-bot rules now reference same single source for allow/disallow paths, prevents future drift
 
 ### Roadmap Evolution
 
@@ -295,6 +301,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26
-Stopped at: Completed 13-03-PLAN.md (hygiene cleanup wave 2 — dead code + asset deletion, dep bumps, font trim, soft prebuild lint gate, 16 hardcoded a-href → next-intl Link migration). 9 atomic commits 7f13ac7/07f2885/1b05d7f/1583cce/466d120/0a9fc0f/f43d451/1ac266a/0043afd. 24min. Build green 88/88 pages, all 12 skill routes still ● SSG, 78 prerendered HTML files, 0 no-html-link-for-pages errors. Phase 13 COMPLETE (3/3 plans). Phase-level 13-VERIFICATION.md aggregates cumulative deltas across 13-01 + 13-02 + 13-03.
-Resume file: None — proceed to Phase 14 (a11y) per ROADMAP.md. Phase 13 success criteria all PASS: HTML drops 35-57% on hot routes, 1.3 MB Spline removed from 86 non-home routes, 16 audit-08 lint errors resolved (14 i18n-link + 2 require-imports), repo hygiene baseline restored (no loose root PNGs, no Vite-era scripts, no nested scaffold ghost, no orphaned hero assets). Daley still owes 2 decisions from Phase 12 (unrelated to 13): VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Phase 13 ready to PR.
+Last session: 2026-04-27
+Stopped at: Completed 14-04-PLAN.md (robots.ts explicit AI-crawler allowlist + canonical Host: line). 2 atomic commits 1defd5e (robots.ts: 17 UA blocks = 1 wildcard + 16 AI crawlers, SHARED_ALLOW/DISALLOW DRY refactor) + aa60f8c (post-deploy GEO probe checklist). 16min. Build green; 17 User-Agent blocks confirmed via curl on dev server (port 3002, port 3000 was occupied — no taskkill per CLAUDE.md). Sitemap verification: 27 LOCs all on future-marketing.ai, zero legacy-domain leakage. llms.txt v10 confirmed (Clyde + 347 EUR + 997 EUR + 7,997 EUR present). Wave-1 collision-free: 14-01 landed seo-config + OrganizationJsonLd in parallel (190756c, 1cc5a44), 14-03 landed legal-page metadata (61629cd) — all clean. 14-04 strictly owned only robots.ts; sitemap.ts read-only verification only.
+Resume file: None — Phase 14 Wave 1 complete (3/4). Next: 14-02 (Wave 2) PersonJsonLd rendering on /about (Daley) + /case-studies/skinclarity-club (Sindy) + 216 FAQ i18n keys + about.founder.* + case_studies.skc.testimonial.author.*. Hard dep on 14-01's PersonJsonLd component (shipped today in 1cc5a44 stack). Daley still owes 2 unrelated decisions from Phase 12: VoiceDemoSection phone number (12-03) + Stripe Product rename to "Max Credit Pack" (12-04). Post-deploy: re-run third-party GEO probes per .planning/phases/14-seo-geo-depth-upgrade/14-04-audit-tool-scores.md (Otterly + DarkVisitors + Perplexity baseline).
