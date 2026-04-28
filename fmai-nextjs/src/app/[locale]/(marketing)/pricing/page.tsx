@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import { setRequestLocale, getTranslations } from 'next-intl/server'
+import { setRequestLocale, getTranslations, getMessages } from 'next-intl/server'
+import { NextIntlClientProvider } from 'next-intl'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
+import { pick } from '@/lib/i18n-pick'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
@@ -12,6 +14,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
+import { TierPricingCard } from '@/components/pricing/TierPricingCard'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
@@ -30,9 +33,11 @@ export async function generateMetadata({
   return generatePageMetadata({ locale, namespace: 'pricing', path: '/pricing' })
 }
 
-// Founding-first ordering. Strategic call 2026-04-28: while Founding plekken
-// open zijn, is dat de enige verkoopstand. Growth/Pro/Ent staan secundair en
-// tonen "Beschikbaar zodra Founding vol is" totdat de teller op 10/10 staat.
+// Founding-first ordering. Founding stays anchored at €997 lifetime; Growth /
+// Pro / Enterprise are workspace-priced (live slider in the card itself).
+// Per 2026-04-28 the "lockedUntilFoundingFull" gating callout was retired:
+// workspace-pricing gives Founding a clean math advantage for portfolios of
+// 3+ brands (€997 fixed vs €499×3 = €1,497), so the routing is implicit.
 const TIER_KEYS = ['founding', 'growth', 'professional', 'enterprise'] as const
 
 const TIER_CONFIG: Record<
@@ -40,9 +45,9 @@ const TIER_CONFIG: Record<
   { featureCount: number; highlighted: boolean; badge?: 'founding' }
 > = {
   founding: { featureCount: 10, highlighted: true, badge: 'founding' },
-  growth: { featureCount: 9, highlighted: false },
-  professional: { featureCount: 9, highlighted: false },
-  enterprise: { featureCount: 8, highlighted: false },
+  growth: { featureCount: 8, highlighted: false },
+  professional: { featureCount: 8, highlighted: false },
+  enterprise: { featureCount: 7, highlighted: false },
 }
 
 const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const
@@ -54,6 +59,14 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'pricing' })
+
+  // TierPricingCard is a Client Component (it owns the workspace slider state)
+  // and reads the pricing namespace via useTranslations(). The root locale
+  // layout's NextIntlClientProvider only ships GLOBAL_CLIENT_NAMESPACES, so we
+  // scope an extra provider here to hand the pricing namespace to that subtree
+  // without enlarging the global client payload.
+  const messages = await getMessages()
+  const pricingMessages = pick(messages, ['pricing'] as const)
 
   return (
     <PageShell showStickyCta>
@@ -91,117 +104,38 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* Tier Cards — Founding first, others gated until Founding fills */}
+      {/* Tier Cards — Founding fixed, others workspace-sliders */}
       <section className="py-12 px-6 lg:px-12" aria-labelledby="pricing-tiers">
         <div className="max-w-7xl mx-auto">
           <h2 id="pricing-tiers" className="sr-only">
             Pricing tiers
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {TIER_KEYS.map((tier, index) => {
-              const config = TIER_CONFIG[tier]
-              const isFounding = tier === 'founding'
-              const foundingHasSlots = FOUNDING_SPOTS_TAKEN < FOUNDING_SPOTS_TOTAL
-              const showLockedNote = !isFounding && foundingHasSlots
-
-              return (
-                <ScrollReveal key={tier} delay={index * 0.05}>
-                  <GlassCard
-                    highlighted={config.highlighted}
-                    className="relative flex flex-col h-full"
-                  >
-                    {config.badge && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <span className="px-3 py-1 text-xs font-semibold rounded-full whitespace-nowrap bg-[#F5A623] text-bg-deep">
-                          {t('tiers.founding.subtitle')}
-                        </span>
-                      </div>
-                    )}
-
-                    <h3 className="text-xl font-bold font-display text-text-primary mb-1 mt-2">
-                      {t(`tiers.${tier}.name`)}
-                    </h3>
-                    <p className="text-xs text-text-muted mb-4">{t(`tiers.${tier}.subtitle`)}</p>
-
-                    <div className="mb-2">
-                      <span className="font-mono text-3xl font-bold text-text-primary">
-                        &euro;{t(`tiers.${tier}.price`)}
-                      </span>
-                      <span className="text-text-muted text-sm">/mo</span>
-                    </div>
-
-                    <div className="flex flex-col gap-0.5 mb-2">
-                      <p className="text-accent-system font-medium text-sm">
-                        {t(`tiers.${tier}.workspaces`)} {t('workspacesLabel')}
-                      </p>
-                      <p className="text-text-secondary text-sm">
-                        {t(`tiers.${tier}.credits`)} {t('creditsLabel')}
-                      </p>
-                    </div>
-
-                    <p className="text-text-muted text-xs mb-4">
-                      {t('onboardingLabel')}: &euro;{t(`tiers.${tier}.onboarding`)}
-                    </p>
-
-                    <p className="text-text-secondary text-sm mb-4 leading-relaxed">
-                      {isFounding
-                        ? t('tiers.founding.description', {
-                            taken: FOUNDING_SPOTS_TAKEN,
-                            total: FOUNDING_SPOTS_TOTAL,
-                          })
-                        : t(`tiers.${tier}.description`)}
-                    </p>
-
-                    {showLockedNote && (
-                      <div className="rounded-md border border-[#F5A623]/30 bg-[#F5A623]/10 px-3 py-2 mb-4">
-                        <p className="text-xs text-[#F5A623] leading-relaxed">
-                          {t('tiers.lockedUntilFoundingFull', {
-                            taken: FOUNDING_SPOTS_TAKEN,
-                            total: FOUNDING_SPOTS_TOTAL,
-                          })}
-                        </p>
-                      </div>
-                    )}
-
-                    <div className="border-t border-border-primary mb-4" />
-
-                    <ul className="space-y-2 mb-6 flex-1">
-                      {Array.from({ length: config.featureCount }).map((_, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-text-secondary"
-                        >
-                          <svg
-                            className="w-4 h-4 text-accent-system flex-shrink-0 mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            aria-hidden="true"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span>{t(`tiers.${tier}.features_${i}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <CTAButton
-                      href="/apply"
-                      variant={config.highlighted ? 'primary' : 'secondary'}
-                      className="w-full justify-center"
-                    >
-                      {t('applyCta')}
-                    </CTAButton>
-                  </GlassCard>
-                </ScrollReveal>
-              )
-            })}
-          </div>
+          <NextIntlClientProvider locale={locale} messages={pricingMessages}>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {TIER_KEYS.map((tier, index) => {
+                const config = TIER_CONFIG[tier]
+                return (
+                  <ScrollReveal key={tier} delay={index * 0.05}>
+                    <TierPricingCard
+                      tierLabel={tier}
+                      highlighted={config.highlighted}
+                      badge={config.badge}
+                      featureCount={config.featureCount}
+                      locale={locale}
+                      foundingCounter={
+                        tier === 'founding'
+                          ? { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL }
+                          : undefined
+                      }
+                    />
+                  </ScrollReveal>
+                )
+              })}
+            </div>
+          </NextIntlClientProvider>
+          <p className="mt-6 max-w-3xl mx-auto text-xs text-text-muted text-center leading-relaxed">
+            {t('tiers.rateDisclosure')}
+          </p>
         </div>
       </section>
 

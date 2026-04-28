@@ -13,6 +13,14 @@ const schema = z.object({
   revenue: z.string().min(1),
   clientCount: z.string().min(1),
   tier: z.string().min(1),
+  // Coerced because <input type="number"> values arrive as strings via
+  // FormData entries. Optional — Founding and "unsure" don't require it.
+  // Preprocess collapses empty-string (disabled or untouched input) to
+  // undefined so the optional() chain accepts it without coercion to NaN.
+  workspaces: z.preprocess(
+    (v) => (v === '' || v == null ? undefined : v),
+    z.coerce.number().int().min(1).max(200).optional(),
+  ),
   problem: z.string().min(20).max(5000),
   website: z.string().max(0).optional(),
 })
@@ -20,6 +28,9 @@ const schema = z.object({
 const REVENUE_OPTIONS = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_OPTIONS = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
 const TIER_OPTIONS = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
+
+// Tiers that bill per-workspace; show the workspaces input for these.
+const WORKSPACE_TIERS = new Set(['growth', 'professional', 'enterprise'])
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -43,6 +54,8 @@ export function ApplicationForm() {
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+  const [tier, setTier] = useState<string>('')
+  const showWorkspaces = WORKSPACE_TIERS.has(tier)
   // Phase 15-02: keep submitted name + email so the post-submit Calendly embed
   // can prefill them. Stored separately from the form so success state survives
   // any later form reset.
@@ -292,34 +305,67 @@ export function ApplicationForm() {
         </div>
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="tier">
-          {t('tierLabel')}
-        </label>
-        <select
-          id="tier"
-          name="tier"
-          required
-          defaultValue=""
-          autoComplete="off"
-          aria-invalid={Boolean(fieldErrors.tier)}
-          aria-describedby={fieldErrors.tier ? 'tier-err' : undefined}
-          className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
-        >
-          <option value="" disabled>
-            {t('selectPlaceholder')}
-          </option>
-          {TIER_OPTIONS.map((value) => (
-            <option key={value} value={value}>
-              {t(`tierOptions.${value}`)}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="tier">
+            {t('tierLabel')}
+          </label>
+          <select
+            id="tier"
+            name="tier"
+            required
+            value={tier}
+            onChange={(e) => setTier(e.target.value)}
+            autoComplete="off"
+            aria-invalid={Boolean(fieldErrors.tier)}
+            aria-describedby={fieldErrors.tier ? 'tier-err' : undefined}
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
+          >
+            <option value="" disabled>
+              {t('selectPlaceholder')}
             </option>
-          ))}
-        </select>
-        {fieldErrors.tier && (
-          <p id="tier-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-            {fieldErrors.tier}
+            {TIER_OPTIONS.map((value) => (
+              <option key={value} value={value}>
+                {t(`tierOptions.${value}`)}
+              </option>
+            ))}
+          </select>
+          {fieldErrors.tier && (
+            <p id="tier-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
+              {fieldErrors.tier}
+            </p>
+          )}
+        </div>
+        <div className={showWorkspaces ? '' : 'opacity-50'}>
+          <label
+            className="block text-sm font-medium text-text-secondary mb-1"
+            htmlFor="workspaces"
+          >
+            {t('workspacesLabel')}
+          </label>
+          <input
+            id="workspaces"
+            name="workspaces"
+            type="number"
+            min={1}
+            max={200}
+            inputMode="numeric"
+            disabled={!showWorkspaces}
+            autoComplete="off"
+            aria-invalid={Boolean(fieldErrors.workspaces)}
+            aria-describedby="workspaces-help"
+            placeholder={t('workspacesPlaceholder')}
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors disabled:cursor-not-allowed"
+          />
+          <p id="workspaces-help" className="mt-1 text-xs text-text-muted leading-relaxed">
+            {t('workspacesHelp')}
           </p>
-        )}
+          {fieldErrors.workspaces && (
+            <p role="alert" className="mt-1 text-sm text-[#FF4D4D]">
+              {fieldErrors.workspaces}
+            </p>
+          )}
+        </div>
       </div>
 
       <div>

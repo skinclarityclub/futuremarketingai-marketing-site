@@ -50,9 +50,9 @@ Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (
  key: 'pricing',
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier.
+All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
-**Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters; only tier currently open to new clients.
+**Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters and the cheapest path for portfolios of 3 or more brands.
 - Unlimited workspaces
 - 8,000 credits/mo
 - All 12 skills with Professional-tier caps
@@ -60,25 +60,24 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 - Direct founder access via Slack
 - No onboarding fee
 
-**Growth (AI Marketing Starter). EUR 2,497/mo**. Available once all 10 Founding spots are filled.
-- 5 workspaces
-- 4,000 credits/mo
-- All 12 skills with Growth caps
+**Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands**. Linear pricing: EUR 998 to EUR 1,996 per month total.
+- 800 credits per workspace (1,600 to 3,200 total per month)
+- All 12 skills with Growth-tier caps
+- Email + app support
 - EUR 1,997 onboarding fee
 
-**Professional (AI Marketing Pro). EUR 4,497/mo**. Available once all 10 Founding spots are filled.
-- 15 workspaces
-- 12,000 credits/mo
-- All 12 skills with Professional caps
-- Dedicated Slack channel
+**Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands**. Linear pricing: EUR 1,995 to EUR 5,586 per month total.
+- 800 credits per workspace (4,000 to 11,200 total per month)
+- All 12 skills with wider caps
+- Slack support and monthly strategy call
 - EUR 3,997 onboarding fee
 
-**Enterprise (AI Marketing Suite). EUR 7,997/mo**. Available once all 10 Founding spots are filled.
-- Unlimited workspaces
-- 30,000 credits/mo
-- All 12 skills, no caps
-- Dedicated Customer Success Manager
-- EUR 5,997+ onboarding fee
+**Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands**. Linear pricing: from EUR 4,485 per month upward.
+- 800 credits per workspace (12,000+ total per month)
+- All 12 skills, no caps (fair use)
+- White-label and API access
+- Dedicated Customer Success Manager and SLA
+- EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**
 Mini Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max 15,000 credits EUR 697
@@ -112,7 +111,7 @@ Every engagement starts with a Strategy Call via the Apply form at https://futur
 Application-gated, no self-service signup. Max 20 partnerships per year.
 
 **1. Apply (5 min)**
-Submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
+Submit the Apply form at https://future-marketing.ai/nl/apply. 9 fields: name, email, agency, role, revenue band, client count, preferred tier, expected workspaces (Growth/Pro/Enterprise only), problem statement.
 
 **2. Founder Review (within 48 hours)**
 Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.

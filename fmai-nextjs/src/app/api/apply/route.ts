@@ -23,6 +23,14 @@ const applicationSchema = z.object({
   revenue: z.enum(REVENUE_ENUM),
   clientCount: z.enum(CLIENT_COUNT_ENUM),
   tier: z.enum(TIER_ENUM),
+  // Workspace-priced tiers (growth/professional/enterprise) need an estimate.
+  // Coerced because <input type="number"> values arrive as strings via JSON
+  // when the form serialises them. Preprocess collapses empty/null to
+  // undefined so optional() accepts a not-applicable field cleanly.
+  workspaces: z.preprocess(
+    (v) => (v === '' || v == null ? undefined : v),
+    z.coerce.number().int().min(1).max(200).optional(),
+  ),
   problem: z.string().min(20).max(5000),
   // Honeypot: bots fill, humans do not.
   website: z.string().max(0).optional().default(''),
@@ -89,6 +97,7 @@ export async function POST(request: NextRequest) {
     revenue: parsed.data.revenue,
     clientCount: parsed.data.clientCount,
     tier: parsed.data.tier,
+    workspaces: parsed.data.workspaces,
     problem: parsed.data.problem,
     locale: parsed.data.locale,
   }
@@ -134,17 +143,23 @@ export async function POST(request: NextRequest) {
             : 'Je aanvraag is ontvangen',
       html: applicantConfirmationTemplate(payload),
     }),
-    sendLeadAlert(`Nieuwe apply: ${payload.agency} (${payload.tier})`, {
-      name: payload.name,
-      email: payload.email,
-      agency: payload.agency,
-      role: payload.role,
-      tier: payload.tier,
-      revenue: payload.revenue,
-      clients: payload.clientCount,
-      locale: payload.locale,
-      problem: payload.problem.length > 300 ? payload.problem.slice(0, 300) + '…' : payload.problem,
-    }),
+    sendLeadAlert(
+      `Nieuwe apply: ${payload.agency} (${payload.tier}${
+        typeof payload.workspaces === 'number' ? `, ~${payload.workspaces} ws` : ''
+      })`,
+      {
+        name: payload.name,
+        email: payload.email,
+        agency: payload.agency,
+        role: payload.role,
+        tier: payload.tier,
+        ...(typeof payload.workspaces === 'number' ? { workspaces: payload.workspaces } : {}),
+        revenue: payload.revenue,
+        clients: payload.clientCount,
+        locale: payload.locale,
+        problem: payload.problem.length > 300 ? payload.problem.slice(0, 300) + '…' : payload.problem,
+      },
+    ),
   ])
 
   if (adminResult.error) {

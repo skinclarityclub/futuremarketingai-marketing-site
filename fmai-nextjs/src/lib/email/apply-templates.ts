@@ -17,6 +17,8 @@ export interface ApplyPayload {
   revenue: string
   clientCount: string
   tier: string
+  /** Optional. Only meaningful for workspace-priced tiers (growth/professional/enterprise). */
+  workspaces?: number
   problem: string
   locale: string
 }
@@ -39,9 +41,9 @@ const CLIENT_COUNT_LABELS: Record<string, string> = {
 
 const TIER_LABELS: Record<string, string> = {
   founding: 'Founding Member (997 EUR levenslang)',
-  growth: 'Growth (2.497 EUR)',
-  professional: 'Professional (4.497 EUR)',
-  enterprise: 'Enterprise (7.997 EUR)',
+  growth: 'Growth (499 EUR per werkruimte, 2 tot 4 merken)',
+  professional: 'Professional (399 EUR per werkruimte, 5 tot 14 merken)',
+  enterprise: 'Enterprise (299 EUR per werkruimte, 15+ merken)',
   unsure: 'Nog onduidelijk',
 }
 
@@ -65,7 +67,11 @@ export function adminApplyTemplate(p: ApplyPayload): string {
     <table width="100%" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; padding:24px;">
       <tr><td>
         <h2 style="color:#0a0d14; margin:0 0 16px;">Nieuwe aanvraag van ${safe(p.agency)}</h2>
-        <p style="color:#444; margin:0 0 16px;">Tier gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong></p>
+        <p style="color:#444; margin:0 0 16px;">Service-niveau gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong>${
+          typeof p.workspaces === 'number' && p.workspaces > 0
+            ? ` &middot; Geschatte werkruimtes: <strong>${p.workspaces}</strong>`
+            : ''
+        }</p>
         <hr style="border:none; border-top:1px solid #eee; margin:16px 0;">
         <h3 style="color:#0a0d14; margin:0 0 8px;">Contact</h3>
         <p style="margin:4px 0;"><strong>Naam:</strong> ${safe(p.name)}</p>

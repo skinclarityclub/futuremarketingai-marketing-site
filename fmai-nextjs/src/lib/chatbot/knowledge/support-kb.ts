@@ -22,7 +22,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier. Founding is the only tier currently open to new clients; the others activate once all 10 Founding spots are filled.
+All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
 
 **Founding Member. EUR 997/mo lifetime** (recommended for early adopters; 10 spots only, 1 taken)
 - Unlimited workspaces
@@ -32,25 +32,24 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 - Direct founder access via Slack
 - No onboarding fee
 
-**Growth (AI Marketing Starter). EUR 2,497/mo** (available once Founding fills)
-- 5 workspaces
-- 4,000 credits/mo
-- All 12 skills with Growth caps
+**Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands** (EUR 998 to EUR 1,996 / mo total)
+- 800 credits per workspace (1,600 to 3,200 total / mo)
+- All 12 skills with Growth-tier caps
+- Email + app support
 - EUR 1,997 onboarding fee
 
-**Professional (AI Marketing Pro). EUR 4,497/mo** (available once Founding fills)
-- 15 workspaces
-- 12,000 credits/mo
-- All 12 skills with Professional caps
-- Dedicated Slack channel
+**Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands** (EUR 1,995 to EUR 5,586 / mo total)
+- 800 credits per workspace (4,000 to 11,200 total / mo)
+- All 12 skills with wider caps
+- Slack support and monthly strategy call
 - EUR 3,997 onboarding fee
 
-**Enterprise (AI Marketing Suite). EUR 7,997/mo** (available once Founding fills)
-- Unlimited workspaces
-- 30,000 credits/mo
-- All 12 skills, no caps
-- Dedicated Customer Success Manager
-- EUR 5,997+ onboarding fee
+**Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands** (from EUR 4,485 / mo upward)
+- 800 credits per workspace (12,000+ total / mo)
+- All 12 skills, no caps (fair use)
+- White-label and API access
+- Dedicated Customer Success Manager and SLA
+- EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**
 - Mini Top-up: 500 credits. EUR 39
