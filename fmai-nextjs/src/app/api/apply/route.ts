@@ -13,7 +13,7 @@ import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
 
 const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
-const TIER_ENUM = ['partner', 'growth', 'professional', 'enterprise', 'founding', 'unsure'] as const
+const TIER_ENUM = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
 
 const applicationSchema = z.object({
   name: z.string().min(2).max(100),

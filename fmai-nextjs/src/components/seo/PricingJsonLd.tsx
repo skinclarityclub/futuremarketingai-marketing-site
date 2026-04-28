@@ -8,14 +8,14 @@ export function PricingJsonLd() {
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'AI Marketing Partner',
+        name: 'Founders Club',
         description:
-          'Partner tier. 8 of 12 skills included, 1 workspace, 1,000 credits/month, email support. One-time onboarding EUR 497.',
-        price: '347',
+          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, Founder Slack with Daley. No onboarding fee. Recommended for early adopters.',
+        price: '997',
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '347',
+          price: '997',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },
@@ -61,21 +61,6 @@ export function PricingJsonLd() {
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
           price: '7997',
-          priceCurrency: 'EUR',
-          billingDuration: 'P1M',
-        },
-        seller: { '@type': 'Organization', name: 'Future Marketing AI' },
-      },
-      {
-        '@type': 'Offer',
-        name: 'Founders Club',
-        description:
-          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, Founder Slack with Daley. No onboarding fee.',
-        price: '997',
-        priceCurrency: 'EUR',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: '997',
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
         },

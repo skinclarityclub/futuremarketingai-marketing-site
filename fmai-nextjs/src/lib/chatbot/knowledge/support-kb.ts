@@ -11,7 +11,6 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  'tier',
  'plan',
  'pack',
- 'partner',
  'founders club',
  'founding',
  'growth',
@@ -23,52 +22,43 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee. Partner tier includes 8 of 12 skills with 2 add-on paths. Growth, Professional, Enterprise, and Founding include all 12 skills. Credits scale with usage.
+All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier. Founding is the only tier currently open to new clients; the others activate once all 10 Founding spots are filled.
 
-**Partner. EUR 347/mo**
-- 1 workspace
-- 1,000 credits/mo
-- 8 of 12 skills included (Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde)
-- Add-on paths: Static Ads pack EUR 97, ManyChat pack EUR 47
-- EUR 497 one-time onboarding
+**Founding Member. EUR 997/mo lifetime** (recommended for early adopters; 10 spots only, 1 taken)
+- Unlimited workspaces
+- 8,000 credits/mo
+- All 12 skills with Professional-tier caps
+- Lifetime price lock
+- Direct founder access via Slack
+- No onboarding fee
 
-**Growth (AI Marketing Starter). EUR 2,497/mo**
+**Growth (AI Marketing Starter). EUR 2,497/mo** (available once Founding fills)
 - 5 workspaces
 - 4,000 credits/mo
-- All 12 skills included
+- All 12 skills with Growth caps
 - EUR 1,997 onboarding fee
 
-**Professional (AI Marketing Pro). EUR 4,497/mo** (Most Popular)
+**Professional (AI Marketing Pro). EUR 4,497/mo** (available once Founding fills)
 - 15 workspaces
 - 12,000 credits/mo
-- All 12 skills included
+- All 12 skills with Professional caps
 - Dedicated Slack channel
 - EUR 3,997 onboarding fee
 
-**Enterprise (AI Marketing Suite). EUR 7,997/mo** (All Skills, Unlimited Scale)
+**Enterprise (AI Marketing Suite). EUR 7,997/mo** (available once Founding fills)
 - Unlimited workspaces
 - 30,000 credits/mo
 - All 12 skills, no caps
 - Dedicated Customer Success Manager
 - EUR 5,997+ onboarding fee
 
-**Founding Member. EUR 997/mo** (10 spots only, lifetime price lock, 1 bezet)
-- Unlimited workspaces
-- 8,000 credits/mo
-- All 12 skills with Professional-tier caps
-- Direct founder access
-- Shape the product roadmap
-- No onboarding fee
-
 **Credit Packs (top up anytime):**
-- Partner Top-up: 500 credits. EUR 39
+- Mini Top-up: 500 credits. EUR 39
 - Boost: 2,000 credits. EUR 149
 - Scale: 5,000 credits. EUR 297
 - Max: 15,000 credits. EUR 697
 
-**Skill Packs (Partner tier add-ons):**
-- Static Ads: EUR 97/mo
-- ManyChat DM: EUR 47/mo
+**Skill Packs (single-skill top-up):**
 - Voice Minutes: EUR 147/mo
 - Video Ads: EUR 197/mo
 - Reels: EUR 197/mo
@@ -118,9 +108,8 @@ All plans include access to Clyde, the AI Marketing Employee. Partner tier inclu
 
 **Key Comparison:**
 - Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
-- FutureMarketingAI Growth for 5 clients: EUR 2,497/mo = EUR 499/client
-- FutureMarketingAI Partner for 1 client: EUR 347/mo (entry-level)
-- Founding Member for unlimited clients: EUR 997/mo (lifetime price lock, 10 spots)`,
+- FutureMarketingAI Founding Member: EUR 997/mo lifetime, unlimited workspaces (10 spots, recommended for early adopters)
+- FutureMarketingAI Growth for 5 clients: EUR 2,497/mo = EUR 499/client (available once Founding fills)`,
  },
  {
  key: 'time_benchmarks',
@@ -183,12 +172,12 @@ All plans include access to Clyde, the AI Marketing Employee. Partner tier inclu
 **Basic ROI Formula:**
 Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription) / FutureMarketingAI Subscription x 100%
 
-**Scenario A: Solo Operator (Partner. EUR 347/mo)**
-- Tier: Partner with 8 of 12 skills, 1 workspace
-- Best for solo founders or single-brand operators
-- Add Static Ads (EUR 97) or ManyChat (EUR 47) packs as needed
+**Scenario A: Founding Member (EUR 997/mo lifetime — recommended entry while spots open)**
+- Tier: Founding with all 12 skills at Professional-tier caps, unlimited workspaces
+- Best for ambitious agencies that want the lifetime price lock
+- Direct founder access via Slack, no onboarding fee, 10 spots only
 
-**Scenario B: Growing Agency (Growth. EUR 2,497/mo)**
+**Scenario B: Growing Agency (Growth. EUR 2,497/mo, available once Founding fills)**
 - Current content costs: 1 junior marketer (EUR 4,500/mo) plus tools (EUR 2,000/mo) = EUR 6,500/mo
 - FutureMarketingAI cost: EUR 2,497/mo
 - Direct savings: EUR 4,003/mo
@@ -233,7 +222,7 @@ Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription)
  content: `## Founding Member Program
 
 **What Is It?**
-The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. While regular plans start at EUR 347/mo (Partner) or EUR 2,497/mo (Growth).
+The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. Founding is currently the only tier open to new clients; Growth (EUR 2,497/mo) and up activate once all 10 spots fill.
 
 **Benefits:**
 - EUR 997/mo locked for life (vs. EUR 2,497-7,997/mo regular plans)

@@ -38,11 +38,10 @@ const CLIENT_COUNT_LABELS: Record<string, string> = {
 }
 
 const TIER_LABELS: Record<string, string> = {
-  partner: 'Partner (347 EUR)',
+  founding: 'Founding Member (997 EUR levenslang)',
   growth: 'Growth (2.497 EUR)',
   professional: 'Professional (4.497 EUR)',
   enterprise: 'Enterprise (7.997 EUR)',
-  founding: 'Founding Member (997 EUR)',
   unsure: 'Nog onduidelijk',
 }
 

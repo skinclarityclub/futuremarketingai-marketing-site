@@ -85,10 +85,10 @@ const qualify_lead = tool({
 
 const get_pricing_info = tool({
   description:
-    'Retrieve pricing information for a specific tier or all tiers of the FutureMarketingAI platform. 5 tiers available: Partner (347 EUR), Growth (2497 EUR), Professional (4497 EUR), Enterprise (7997 EUR), and Founding Member (997 EUR lifetime, 10 spots only).',
+    'Retrieve pricing information for a specific tier or all tiers of the FutureMarketingAI platform. 4 tiers available: Founding Member (997 EUR lifetime, 10 spots only — open now), Growth (2497 EUR), Professional (4497 EUR), and Enterprise (7997 EUR).',
   inputSchema: z.object({
     tier: z
-      .enum(['partner', 'growth', 'professional', 'enterprise', 'founding', 'all'])
+      .enum(['founding', 'growth', 'professional', 'enterprise', 'all'])
       .default('all')
       .describe('Which tier to retrieve. Use "all" for overview.'),
   }),

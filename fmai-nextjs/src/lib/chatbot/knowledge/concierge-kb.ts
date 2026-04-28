@@ -50,48 +50,41 @@ Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (
  key: 'pricing',
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee. Partner tier includes 8 of 12 skills with 2 add-on paths. Growth, Professional, Enterprise, and Founding include all 12 skills. Credits scale with usage.
+All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier.
 
-**Partner. EUR 347/mo**
-- 1 workspace
-- 1,000 credits/mo
-- 8 of 12 skills included (Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde)
-- Add-on paths: Static Ads pack EUR 97, ManyChat pack EUR 47
-- EUR 497 one-time onboarding
+**Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters; only tier currently open to new clients.
+- Unlimited workspaces
+- 8,000 credits/mo
+- All 12 skills with Professional-tier caps
+- Lifetime price lock
+- Direct founder access via Slack
+- No onboarding fee
 
-**Growth (AI Marketing Starter). EUR 2,497/mo**
+**Growth (AI Marketing Starter). EUR 2,497/mo**. Available once all 10 Founding spots are filled.
 - 5 workspaces
 - 4,000 credits/mo
-- All 12 skills included
+- All 12 skills with Growth caps
 - EUR 1,997 onboarding fee
 
-**Professional (AI Marketing Pro). EUR 4,497/mo**. Most Popular
+**Professional (AI Marketing Pro). EUR 4,497/mo**. Available once all 10 Founding spots are filled.
 - 15 workspaces
 - 12,000 credits/mo
-- All 12 skills included
+- All 12 skills with Professional caps
 - Dedicated Slack channel
 - EUR 3,997 onboarding fee
 
-**Enterprise (AI Marketing Suite). EUR 7,997/mo**
+**Enterprise (AI Marketing Suite). EUR 7,997/mo**. Available once all 10 Founding spots are filled.
 - Unlimited workspaces
 - 30,000 credits/mo
 - All 12 skills, no caps
 - Dedicated Customer Success Manager
 - EUR 5,997+ onboarding fee
 
-**Founding Member. EUR 997/mo**: 10 spots only (1 bezet)
-- Unlimited workspaces
-- 8,000 credits/mo
-- All 12 skills with Professional-tier caps
-- Lifetime price lock
-- Direct founder access
-- No onboarding fee
-
 **Credit Packs (top up anytime):**
-Partner Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max (15,000) EUR 697
+Mini Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max 15,000 credits EUR 697
 
-**Skill Packs (for Partner tier):**
-Static Ads EUR 97 | ManyChat DM EUR 47 | Voice Minutes EUR 147 | Video Ads EUR 197 | Reels EUR 197 | Blog Power EUR 197
+**Skill Packs (top up a single skill):**
+Voice Minutes EUR 147 | Video Ads EUR 197 | Reels EUR 197 | Blog Power EUR 197
 
 Every engagement starts with a Strategy Call via the Apply form at https://future-marketing.ai/nl/apply. No self-service signup. Max 20 partnerships per year.`,
  keywords: [
@@ -100,7 +93,6 @@ Every engagement starts with a Strategy Call via the Apply form at https://futur
  'price',
  'tier',
  'pack',
- 'partner',
  'growth',
  'professional',
  'enterprise',

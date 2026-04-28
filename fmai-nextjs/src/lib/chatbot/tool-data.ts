@@ -11,20 +11,23 @@
  */
 
 export const CHATBOT_TIERS = {
-  partner: {
-    name: 'Partner',
-    monthlyPrice: 347,
-    onboardingFee: 497,
-    workspaces: 1,
-    credits: 1000,
-    skillsIncluded: 8,
+  founding: {
+    name: 'Founding Member',
+    monthlyPrice: 997,
+    onboardingFee: 0,
+    workspaces: -1,
+    credits: 8000,
+    spotsTotal: 10,
+    skillsIncluded: 12,
     skillsTotal: 12,
     features: [
-      '8 of 12 skills included (Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde)',
-      'Add-on paths: Static Ads pack 97 EUR, ManyChat pack 47 EUR',
-      '1 workspace',
-      '1,000 credits per month',
-      '497 EUR one-time onboarding',
+      'All 12 skills with Professional-tier caps',
+      'Unlimited workspaces',
+      '8,000 credits per month',
+      'Lifetime price lock',
+      'Direct founder access',
+      'Shape the product roadmap',
+      '10 spots total, no onboarding fee',
     ],
   },
   growth: {
@@ -72,25 +75,6 @@ export const CHATBOT_TIERS = {
       '30,000 credits per month',
       'Dedicated Customer Success Manager',
       '5,997 EUR one-time onboarding',
-    ],
-  },
-  founding: {
-    name: 'Founding Member',
-    monthlyPrice: 997,
-    onboardingFee: 0,
-    workspaces: -1,
-    credits: 8000,
-    spotsTotal: 10,
-    skillsIncluded: 12,
-    skillsTotal: 12,
-    features: [
-      'All 12 skills with Professional-tier caps',
-      'Unlimited workspaces',
-      '8,000 credits per month',
-      'Lifetime price lock',
-      'Direct founder access',
-      'Shape the product roadmap',
-      '10 spots total, no onboarding fee',
     ],
   },
 } as const

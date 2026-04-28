@@ -19,7 +19,7 @@ const schema = z.object({
 
 const REVENUE_OPTIONS = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_OPTIONS = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
-const TIER_OPTIONS = ['partner', 'growth', 'professional', 'enterprise', 'founding', 'unsure'] as const
+const TIER_OPTIONS = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
