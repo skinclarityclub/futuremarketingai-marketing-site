@@ -30,28 +30,23 @@ export async function generateMetadata({
   return generatePageMetadata({ locale, namespace: 'pricing', path: '/pricing' })
 }
 
-const TIER_KEYS = ['partner', 'growth', 'professional', 'enterprise', 'founding'] as const
+// Founding-first ordering. Strategic call 2026-04-28: while Founding plekken
+// open zijn, is dat de enige verkoopstand. Growth/Pro/Ent staan secundair en
+// tonen "Beschikbaar zodra Founding vol is" totdat de teller op 10/10 staat.
+const TIER_KEYS = ['founding', 'growth', 'professional', 'enterprise'] as const
 
 const TIER_CONFIG: Record<
   (typeof TIER_KEYS)[number],
-  { featureCount: number; highlighted: boolean; badge?: 'popular' | 'founding' }
+  { featureCount: number; highlighted: boolean; badge?: 'founding' }
 > = {
-  partner: { featureCount: 10, highlighted: false },
-  growth: { featureCount: 9, highlighted: false },
-  professional: { featureCount: 9, highlighted: true, badge: 'popular' },
-  enterprise: { featureCount: 8, highlighted: false },
   founding: { featureCount: 10, highlighted: true, badge: 'founding' },
+  growth: { featureCount: 9, highlighted: false },
+  professional: { featureCount: 9, highlighted: false },
+  enterprise: { featureCount: 8, highlighted: false },
 }
 
-const CREDIT_PACK_KEYS = ['partnerTopUp', 'boost', 'scale', 'unlimited'] as const
-const SKILL_PACK_KEYS = [
-  'partnerStaticAds',
-  'partnerManychat',
-  'voiceMinutes',
-  'videoAds',
-  'reels',
-  'blogPower',
-] as const
+const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const
+const SKILL_PACK_KEYS = ['voiceMinutes', 'videoAds', 'reels', 'blogPower'] as const
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'] as const
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -96,16 +91,18 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* 5 Tier Cards */}
+      {/* Tier Cards — Founding first, others gated until Founding fills */}
       <section className="py-12 px-6 lg:px-12" aria-labelledby="pricing-tiers">
         <div className="max-w-7xl mx-auto">
           <h2 id="pricing-tiers" className="sr-only">
             Pricing tiers
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {TIER_KEYS.map((tier, index) => {
               const config = TIER_CONFIG[tier]
               const isFounding = tier === 'founding'
+              const foundingHasSlots = FOUNDING_SPOTS_TAKEN < FOUNDING_SPOTS_TOTAL
+              const showLockedNote = !isFounding && foundingHasSlots
 
               return (
                 <ScrollReveal key={tier} delay={index * 0.05}>
@@ -115,16 +112,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                   >
                     {config.badge && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <span
-                          className={`px-3 py-1 text-xs font-semibold rounded-full whitespace-nowrap ${
-                            config.badge === 'founding'
-                              ? 'bg-[#F5A623] text-bg-deep'
-                              : 'bg-accent-system text-bg-deep'
-                          }`}
-                        >
-                          {config.badge === 'founding'
-                            ? t('tiers.founding.subtitle')
-                            : t('tiers.professional.mostPopular')}
+                        <span className="px-3 py-1 text-xs font-semibold rounded-full whitespace-nowrap bg-[#F5A623] text-bg-deep">
+                          {t('tiers.founding.subtitle')}
                         </span>
                       </div>
                     )}
@@ -162,6 +151,17 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                           })
                         : t(`tiers.${tier}.description`)}
                     </p>
+
+                    {showLockedNote && (
+                      <div className="rounded-md border border-[#F5A623]/30 bg-[#F5A623]/10 px-3 py-2 mb-4">
+                        <p className="text-xs text-[#F5A623] leading-relaxed">
+                          {t('tiers.lockedUntilFoundingFull', {
+                            taken: FOUNDING_SPOTS_TAKEN,
+                            total: FOUNDING_SPOTS_TOTAL,
+                          })}
+                        </p>
+                      </div>
+                    )}
 
                     <div className="border-t border-border-primary mb-4" />
 

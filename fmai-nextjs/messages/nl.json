@@ -132,7 +132,7 @@
         },
         "q4": {
           "question": "Hoeveel vaardigheden krijg ik precies?",
-          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 binnenkort beschikbaar (Reel Builder, Email Management, ManyChat DM). De beschikbaarheid verschilt per tier. Partner heeft 8 vaardigheden plus 2 add-on paden. Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
+          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 binnenkort beschikbaar (Reel Builder, Email Management, ManyChat DM). Founding, Growth, Professional en Enterprise hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
@@ -533,12 +533,12 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen: 5 tiers, transparant. Van Partner €347 tot Enterprise €7.997 | FutureMarketingAI",
-      "description": "5 tiers, transparant: Partner €347 tot Enterprise €7.997. Lifetime Founding €997 voor 10 plekken. Geen verborgen kosten, geen lock-in."
+      "title": "Prijzen: levenslang Founding €997. 4 tiers transparant tot Enterprise €7.997 | FutureMarketingAI",
+      "description": "Founding-tier €997 levenslang voor de eerste 10 bureaus. Daarna Growth €2.497, Professional €4.497, Enterprise €7.997. Geen verborgen kosten, geen lock-in."
     },
     "hero": {
-      "title": "Premium partnerships. 5 tiers. Transparant.",
-      "description": "Alle prijzen staan zichtbaar. 5 tiers voor elke portfoliomaat: van solo-operator tot enterprise. Caps per vaardigheid eerlijk uitgelegd, geen verborgen kosten, geen \"neem contact op voor prijs\".",
+      "title": "Premium partnerships. Founding €997 levenslang.",
+      "description": "Alle prijzen staan zichtbaar. Founding €997 levenslang voor de eerste 10 bureaus. Daarna Growth, Professional en Enterprise. Caps per vaardigheid eerlijk uitgelegd, geen verborgen kosten, geen \"neem contact op voor prijs\".",
       "counter": "{taken} van {total} Founding plekken bezet"
     },
     "visibility": {
@@ -550,26 +550,7 @@
     "workspacesLabel": "werkruimtes",
     "applyCta": "Plan een gesprek",
     "tiers": {
-      "partner": {
-        "name": "Partner",
-        "subtitle": "Voor solo-operators",
-        "price": "347",
-        "onboarding": "497",
-        "workspaces": "1",
-        "credits": "1.000",
-        "tagline": "1 werkruimte. 8 vaardigheden inbegrepen, plus 2 add-on paden. Geen Voice, Video of Reels.",
-        "description": "Het instap-tier voor solo marketing-operators die Clyde willen inzetten voor één eigen praktijk of één klant. Lage instap, beperkte caps. Perfect om het partnership-model te proeven zonder groot commitment.",
-        "features_0": "1 werkruimte",
-        "features_1": "1.000 credits per maand",
-        "features_2": "Social Media, Blog Factory, Lead Qualifier",
-        "features_3": "SEO/GEO, Rapportage, Research",
-        "features_4": "Clyde AI Marketing Medewerker (orchestrator)",
-        "features_5": "Email Management (5 inbox-classificaties per maand)",
-        "features_6": "Statische ads via add-on (€97 voor 15 per maand)",
-        "features_7": "ManyChat DM via add-on (€47 voor 300 per maand)",
-        "features_8": "E-mailsupport",
-        "features_9": "Geen Voice Agent, Video ads of Reel Builder"
-      },
+      "lockedUntilFoundingFull": "Beschikbaar zodra alle 10 Founding-plekken vergeven zijn. Op dit moment {taken} van {total} bezet.",
       "growth": {
         "name": "Growth",
         "subtitle": "Voor kleine bureaus",
@@ -592,7 +573,6 @@
       "professional": {
         "name": "Professional",
         "subtitle": "Voor middelgrote bureaus",
-        "mostPopular": "Meest gekozen",
         "price": "4.497",
         "onboarding": "3.997",
         "workspaces": "15",
@@ -629,7 +609,7 @@
       },
       "founding": {
         "name": "Founding",
-        "subtitle": "10 plekken, levenslange deal",
+        "subtitle": "Aanbevolen voor early adopters",
         "price": "997",
         "onboarding": "0",
         "workspaces": "Onbeperkt",
@@ -668,8 +648,8 @@
       "title": "Credit packs. Top-ups voor swing-months",
       "description": "Niet genoeg credits in je tier voor deze maand? Top-up met een credit pack. Geen automatische upsell, geen verplichting.",
       "items": {
-        "partnerTopUp": {
-          "name": "Partner Top-Up",
+        "miniTopUp": {
+          "name": "Mini Top-Up",
           "credits": "500",
           "price": "39"
         },
@@ -694,16 +674,6 @@
       "title": "Packs per vaardigheid, gericht bijkopen",
       "description": "Eén vaardigheid tegen de cap? Koop een gerichte add-on voor die ene vaardigheid in plaats van een hele tier-upgrade.",
       "items": {
-        "partnerStaticAds": {
-          "name": "Partner Static Ads Pack",
-          "quantity": "15 static ads",
-          "price": "97"
-        },
-        "partnerManychat": {
-          "name": "Partner ManyChat Pack",
-          "quantity": "300 DMs/mnd",
-          "price": "47"
-        },
         "voiceMinutes": {
           "name": "Voice Minutes Pack",
           "quantity": "100 minuten",
@@ -735,7 +705,7 @@
         },
         "q2": {
           "question": "Wat gebeurt er als ik over mijn credits of caps heen ga?",
-          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je maandallocatie. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Partner Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
+          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je maandallocatie. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Mini Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
         },
         "q3": {
           "question": "Kan ik tussen tiers op- of afschalen?",
@@ -743,7 +713,7 @@
         },
         "q4": {
           "question": "Krijg ik alle 12 vaardigheden of een deel?",
-          "answer": "Partner heeft 8 vaardigheden inbegrepen plus 2 add-on paden (statische ads en ManyChat). Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met caps op de duurdere. Voice Agent, Video ads en Reel Builder zijn niet beschikbaar op Partner: daarvoor ga je naar Growth."
+          "answer": "Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met tier-caps op de duurdere (Voice, Video, Reel Builder). Founding krijgt Pro-caps voor levenslange €997. Caps schalen op naar Pro en Enterprise voor grotere portfolio's."
         },
         "q5": {
           "question": "Wat zit er in de onboardingvergoeding?",
@@ -895,7 +865,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vijf tiers: Partner (EUR 347/mnd), Growth (EUR 2.497/mnd), Professional (EUR 4.497/mnd), Enterprise (EUR 7.997/mnd) en Founding (EUR 997/mnd, 10 plekken levenslang). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per tier op voice, video en reels. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier tiers: Founding (EUR 997/mnd levenslang, 10 plekken), Growth (EUR 2.497/mnd), Professional (EUR 4.497/mnd) en Enterprise (EUR 7.997/mnd). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per tier op voice, video en reels. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -1082,7 +1052,7 @@
         },
         "q3": {
           "question": "Op welke tiers is de Voice Agent beschikbaar?",
-          "answer": "Niet op Partner-tier. Growth bevat 30 minuten gespreksminuten per maand, Professional 120 minuten, Enterprise zonder plafond. Founding Member krijgt 60 minuten levenslang. Extra minuten kunnen via creditpacks bijgekocht worden."
+          "answer": "Growth bevat 30 minuten gespreksminuten per maand, Professional 120 minuten, Enterprise zonder plafond. Founding Member krijgt 60 minuten levenslang. Extra minuten kunnen via creditpacks bijgekocht worden."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Voice Agent?",
@@ -1185,7 +1155,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Lead Qualifier beschikbaar?",
-          "answer": "Inbegrepen op alle 5 tiers, met fair-use op gespreksvolume. 2 credits per kwalificatie-score. Professional en Enterprise krijgen extra: dynamische routing op basis van score-drempels en automatische opvolging via e-mail."
+          "answer": "Inbegrepen op alle tiers, met fair-use op gespreksvolume. 2 credits per kwalificatie-score. Professional en Enterprise krijgen extra: dynamische routing op basis van score-drempels en automatische opvolging via e-mail."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Lead Qualifier?",
@@ -1288,7 +1258,7 @@
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
-          "answer": "Beschikbaar op alle 5 tiers: Partner 347 EUR, Growth 2.497 EUR, Professional 4.497 EUR, Enterprise 7.997 EUR en Founding Member 997 EUR levenslang. Volume per tier verschilt op basis van credits per maand. Carrousels en posts kosten 1 tot 2 credits per stuk."
+          "answer": "Beschikbaar op alle tiers: Founding Member 997 EUR levenslang, Growth 2.497 EUR, Professional 4.497 EUR en Enterprise 7.997 EUR. Volume per tier verschilt op basis van credits per maand. Carrousels en posts kosten 1 tot 2 credits per stuk."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Social Media Manager?",
@@ -1387,7 +1357,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Ad Creator beschikbaar?",
-          "answer": "Inbegrepen op Growth (15 ads per maand), Professional (50) en Enterprise (zonder plafond). Op Partner-tier via add-on van 97 EUR voor 15 statische ads. Founding Member krijgt 25 ads per maand levenslang voor 997 EUR."
+          "answer": "Inbegrepen op Growth (15 ads per maand), Professional (50) en Enterprise (zonder plafond). Founding Member krijgt 25 ads per maand levenslang voor 997 EUR."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Ad Creator?",
@@ -1486,7 +1456,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Rapportage beschikbaar?",
-          "answer": "Inbegrepen op alle 5 tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Professional krijgt anomalie-alerts, Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
+          "answer": "Inbegrepen op alle tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Professional krijgt anomalie-alerts, Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Rapportage?",
@@ -1567,7 +1537,7 @@
         },
         "q2": {
           "question": "Kan ik later doorschalen naar Professional of Enterprise?",
-          "answer": "Ja, naar rato gefactureerd. Afschalen van Founding naar Growth of Partner kan niet. Je Founding-prijs is exclusief voor Founding."
+          "answer": "Ja, naar rato gefactureerd. Afschalen van Founding naar Growth kan niet: je Founding-prijs is exclusief voor Founding."
         },
         "q3": {
           "question": "Wat zijn \"Pro-caps\" precies?",
@@ -1729,11 +1699,10 @@
       },
       "tierLabel": "Welke tier past het best?",
       "tierOptions": {
-        "partner": "Partner (€347/mnd): solo-operator",
+        "founding": "Founding (€997/mnd levenslang): 10 plekken, voorrang nu open",
         "growth": "Growth (€2.497/mnd): 5 werkruimtes",
         "professional": "Professional (€4.497/mnd): 15 werkruimtes",
         "enterprise": "Enterprise (€7.997/mnd): onbeperkt",
-        "founding": "Founding (€997/mnd): 10 plekken",
         "unsure": "Weet het nog niet zeker"
       },
       "problemLabel": "Wat is jouw meest urgente probleem?",
@@ -1979,7 +1948,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Email Management beschikbaar?",
-          "answer": "Inbegrepen op alle tiers: Partner krijgt 5 classificaties per maand, Growth 20, Professional 60, Enterprise zonder plafond. Founding Member krijgt 40 acties per maand. Een actie is een classificatie of een gegenereerd conceptantwoord."
+          "answer": "Inbegrepen op alle tiers: Growth 20 classificaties per maand, Professional 60, Enterprise zonder plafond. Founding Member krijgt 40 acties per maand levenslang. Een actie is een classificatie of een gegenereerd conceptantwoord."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Email Management?",
@@ -2078,7 +2047,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Research beschikbaar?",
-          "answer": "Inbegrepen op alle 5 tiers met fair-use op aantal vragen. 3 credits per query. Professional krijgt geplande wekelijkse trendrapporten, Enterprise krijgt aangepaste rapportcadences en specifieke concurrent-watchlists. Founding Member krijgt levenslang dezelfde toegang voor 997 EUR."
+          "answer": "Inbegrepen op alle tiers met fair-use op aantal vragen. 3 credits per query. Professional krijgt geplande wekelijkse trendrapporten, Enterprise krijgt aangepaste rapportcadences en specifieke concurrent-watchlists. Founding Member krijgt levenslang dezelfde toegang voor 997 EUR."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Research?",
@@ -2177,7 +2146,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Blog Factory beschikbaar?",
-          "answer": "Partner krijgt 2 artikelen per maand, Growth 8, Professional 20, Enterprise zonder plafond. Founding Member krijgt 12 artikelen per maand levenslang. Per artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
+          "answer": "Growth 8 artikelen per maand, Professional 20, Enterprise zonder plafond. Founding Member krijgt 12 artikelen per maand levenslang. Per artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Blog Factory?",
@@ -2375,7 +2344,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Clyde beschikbaar?",
-          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Op Partner krijg je chat met basis-orchestratie, Growth en hoger krijgen Slack en multi-channel. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
+          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Growth en hoger krijgen Slack en multi-channel. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Clyde?",
@@ -2474,7 +2443,7 @@
         },
         "q3": {
           "question": "Op welke tiers is ManyChat DM beschikbaar?",
-          "answer": "Niet op Partner-tier (add-on van 47 EUR voor 300 DM's per maand). Growth bevat 200 DM's, Professional 1.000, Enterprise zonder plafond. Founding Member krijgt 500 DM's per maand levenslang. Kost 2 credits per 10 DM's."
+          "answer": "Growth bevat 200 DM's per maand, Professional 1.000, Enterprise zonder plafond. Founding Member krijgt 500 DM's per maand levenslang. Kost 2 credits per 10 DM's."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van ManyChat DM?",
@@ -2573,7 +2542,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Reel Builder beschikbaar?",
-          "answer": "Niet op Partner-tier (binnenkort als add-on). Growth bevat 4 Reels per maand, Professional 15, Enterprise zonder plafond. Founding Member krijgt 8 Reels per maand levenslang. Per Reel kost 25 credits. Status: binnenkort beschikbaar voor early access in Q2."
+          "answer": "Growth bevat 4 Reels per maand, Professional 15, Enterprise zonder plafond. Founding Member krijgt 8 Reels per maand levenslang. Per Reel kost 25 credits. Status: binnenkort beschikbaar voor early access in Q2."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Reel Builder?",

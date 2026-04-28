@@ -132,7 +132,7 @@
         },
         "q4": {
           "question": "Exactly how many skills do I get?",
-          "answer": "Twelve in total: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde orchestrator) and 3 coming soon (Reel Builder, Email Management, ManyChat DM). Availability varies per tier. Partner has 8 skills plus 2 add-on paths. Growth, Professional, Enterprise and Founding have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
+          "answer": "Twelve in total: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde orchestrator) and 3 coming soon (Reel Builder, Email Management, ManyChat DM). Founding, Growth, Professional and Enterprise have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
         },
         "q5": {
           "question": "Why does this work better for agencies than separate tools?",
@@ -533,8 +533,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing: 5 tiers, transparent. From Partner €347 to Enterprise €7,997 | FutureMarketingAI",
-      "description": "Five tiers, transparent: Partner at €347 to Enterprise €7,997. Lifetime Founding at €997 for 10 seats. No hidden fees, no lock-in."
+      "title": "Pricing: lifetime Founding €997. 4 tiers transparent up to Enterprise €7,997 | FutureMarketingAI",
+      "description": "Founding tier €997 for life for the first 10 agencies. After that Growth €2,497, Professional €4,497, Enterprise €7,997. No hidden fees, no lock-in."
     },
     "hero": {
       "title": "Premium partnerships. 5 tiers. Transparent.",
@@ -550,26 +550,7 @@
     "workspacesLabel": "workspaces",
     "applyCta": "Book a call",
     "tiers": {
-      "partner": {
-        "name": "Partner",
-        "subtitle": "For solo operators",
-        "price": "347",
-        "onboarding": "497",
-        "workspaces": "1",
-        "credits": "1,000",
-        "tagline": "1 workspace. 8 skills included, plus 2 add-on paths. No Voice, Video or Reels.",
-        "description": "The entry tier for solo marketing operators who want to use Clyde for one own practice or one client. Low entry, limited caps. Perfect to taste the partnership model without a big commitment.",
-        "features_0": "1 workspace",
-        "features_1": "1,000 credits per month",
-        "features_2": "Social Media, Blog Factory, Lead Qualifier",
-        "features_3": "SEO/GEO, Reporting, Research",
-        "features_4": "Clyde AI Marketing Employee (orchestrator)",
-        "features_5": "Email Management (5 inbox classifications per month)",
-        "features_6": "Static ads via add-on (€97 for 15 per month)",
-        "features_7": "ManyChat DM via add-on (€47 for 300 per month)",
-        "features_8": "Email support",
-        "features_9": "No Voice Agent, Video Ads or Reel Builder"
-      },
+      "lockedUntilFoundingFull": "Available once all 10 Founding spots are filled. Currently {taken} of {total} taken.",
       "growth": {
         "name": "Growth",
         "subtitle": "For small agencies",
@@ -592,7 +573,6 @@
       "professional": {
         "name": "Professional",
         "subtitle": "For mid-size agencies",
-        "mostPopular": "Most popular",
         "price": "4,497",
         "onboarding": "3,997",
         "workspaces": "15",
@@ -629,7 +609,7 @@
       },
       "founding": {
         "name": "Founding",
-        "subtitle": "10 spots, lifetime deal",
+        "subtitle": "Recommended for early adopters",
         "price": "997",
         "onboarding": "0",
         "workspaces": "Unlimited",
@@ -668,8 +648,8 @@
       "title": "Credit packs. Top-ups for swing months",
       "description": "Not enough credits in your tier this month? Top up with a credit pack. No automatic upsell, no obligation.",
       "items": {
-        "partnerTopUp": {
-          "name": "Partner Top-Up",
+        "miniTopUp": {
+          "name": "Mini Top-Up",
           "credits": "500",
           "price": "39"
         },
@@ -694,16 +674,6 @@
       "title": "Skill packs, targeted top-ups",
       "description": "One skill running against the cap? Buy a targeted add-on for that specific skill, instead of a full tier upgrade.",
       "items": {
-        "partnerStaticAds": {
-          "name": "Partner Static Ads Pack",
-          "quantity": "15 static ads",
-          "price": "97"
-        },
-        "partnerManychat": {
-          "name": "Partner ManyChat Pack",
-          "quantity": "300 DMs/mo",
-          "price": "47"
-        },
         "voiceMinutes": {
           "name": "Voice Minutes Pack",
           "quantity": "100 minutes",
@@ -735,7 +705,7 @@
         },
         "q2": {
           "question": "What happens if I go over my credits or caps?",
-          "answer": "You get a warning at 80% and 100% of your monthly allocation. After that you can choose: wait until next month, buy a credit pack (Partner Top-Up €39 to Max €697), or upgrade to a higher tier. No automatic overage, no surprise on your invoice."
+          "answer": "You get a warning at 80% and 100% of your monthly allocation. After that you can choose: wait until next month, buy a credit pack (Mini Top-Up €39 to Max €697), or upgrade to a higher tier. No automatic overage, no surprise on your invoice."
         },
         "q3": {
           "question": "Can I upgrade or downgrade between tiers?",
@@ -743,7 +713,7 @@
         },
         "q4": {
           "question": "Do I get all 12 skills or a subset?",
-          "answer": "Partner has 8 skills included plus 2 add-on paths (static ads and ManyChat). Growth, Professional, Enterprise and Founding have all 12 skills, with caps on the more expensive ones. Voice Agent, Video Ads and Reel Builder are not available on Partner: for those you move up to Growth."
+          "answer": "Growth, Professional, Enterprise and Founding all include all 12 skills, with tier caps on the most expensive (Voice, Video, Reel Builder). Founding gets Pro caps for €997 lifetime. Caps step up on Pro and Enterprise for larger portfolios."
         },
         "q5": {
           "question": "What is included in the onboarding fee?",
@@ -895,7 +865,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis across five tiers: Partner (EUR 347/mo), Growth (EUR 2,497/mo), Professional (EUR 4,497/mo), Enterprise (EUR 7,997/mo) and Founding (EUR 997/mo, 10 lifetime spots). All plans include all 12 AI skills, with per-tier caps on voice, video and reels. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
+            "content": "Services are offered on a monthly subscription basis across four tiers: Founding (EUR 997/mo for life, 10 spots), Growth (EUR 2,497/mo), Professional (EUR 4,497/mo) and Enterprise (EUR 7,997/mo). All plans include all 12 AI skills, with per-tier caps on voice, video and reels. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
@@ -1082,7 +1052,7 @@
         },
         "q3": {
           "question": "On which tiers is Voice Agent available?",
-          "answer": "Not on Partner tier. Growth includes 30 call minutes per month, Professional 120 minutes, Enterprise no cap. Founding Member receives 60 minutes monthly for life. Extra minutes can be purchased through credit packs."
+          "answer": "Growth includes 30 call minutes per month, Professional 120 minutes, Enterprise no cap. Founding Member receives 60 minutes monthly for life. Extra minutes can be purchased through credit packs."
         },
         "q4": {
           "question": "How long does Voice Agent onboarding take?",
@@ -1288,7 +1258,7 @@
         },
         "q3": {
           "question": "On which tiers is Social Media Manager available?",
-          "answer": "Available on all 5 tiers: Partner 347 EUR, Growth 2,497 EUR, Professional 4,497 EUR, Enterprise 7,997 EUR, and Founding Member 997 EUR for life. Volume per tier varies based on monthly credits. Carousels and posts cost 1 to 2 credits each."
+          "answer": "Available on all tiers: Founding Member 997 EUR for life, Growth 2,497 EUR, Professional 4,497 EUR and Enterprise 7,997 EUR. Volume per tier varies based on monthly credits. Carousels and posts cost 1 to 2 credits each."
         },
         "q4": {
           "question": "How long does Social Media Manager onboarding take?",
@@ -1387,7 +1357,7 @@
         },
         "q3": {
           "question": "On which tiers is Ad Creator available?",
-          "answer": "Included on Growth (15 ads per month), Professional (50), and Enterprise (no cap). On Partner tier via 97 EUR add-on for 15 static ads. Founding Member receives 25 ads monthly for life at 997 EUR."
+          "answer": "Included on Growth (15 ads per month), Professional (50), and Enterprise (no cap). Founding Member receives 25 ads monthly for life at 997 EUR."
         },
         "q4": {
           "question": "How long does Ad Creator onboarding take?",
@@ -1567,7 +1537,7 @@
         },
         "q2": {
           "question": "Can I upgrade later to Professional or Enterprise?",
-          "answer": "Yes, prorated. You cannot downgrade from Founding to Growth or Partner. Your Founding price is exclusive to Founding."
+          "answer": "Yes, prorated. You cannot downgrade from Founding to Growth: your Founding price is exclusive to Founding."
         },
         "q3": {
           "question": "What exactly are \"Pro-level caps\"?",
@@ -1729,11 +1699,10 @@
       },
       "tierLabel": "Which tier fits best?",
       "tierOptions": {
-        "partner": "Partner (€347/mo): solo operator",
+        "founding": "Founding (€997/mo lifetime): 10 spots, priority while open",
         "growth": "Growth (€2,497/mo): 5 workspaces",
         "professional": "Professional (€4,497/mo): 15 workspaces",
         "enterprise": "Enterprise (€7,997/mo): unlimited",
-        "founding": "Founding (€997/mo): 10 spots",
         "unsure": "Not sure yet"
       },
       "problemLabel": "What is your most urgent problem?",
@@ -1979,7 +1948,7 @@
         },
         "q3": {
           "question": "On which tiers is Email Management available?",
-          "answer": "Included on all tiers: Partner gets 5 classifications per month, Growth 20, Professional 60, Enterprise no cap. Founding Member receives 40 actions per month. An action is a classification or a generated draft reply."
+          "answer": "Included on all tiers: Growth 20 classifications per month, Professional 60, Enterprise no cap. Founding Member receives 40 actions per month for life. An action is a classification or a generated draft reply."
         },
         "q4": {
           "question": "How long does Email Management onboarding take?",
@@ -2177,7 +2146,7 @@
         },
         "q3": {
           "question": "On which tiers is Blog Factory available?",
-          "answer": "Partner gets 2 articles per month, Growth 8, Professional 20, Enterprise no cap. Founding Member receives 12 articles per month for life. Each article costs 15 credits. Extra articles available through credit packs."
+          "answer": "Growth 8 articles per month, Professional 20, Enterprise no cap. Founding Member receives 12 articles per month for life. Each article costs 15 credits. Extra articles available through credit packs."
         },
         "q4": {
           "question": "How long does Blog Factory onboarding take?",
@@ -2375,7 +2344,7 @@
         },
         "q3": {
           "question": "On which tiers is Clyde available?",
-          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Partner gets chat with basic orchestration, Growth and up get Slack and multi-channel. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
+          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Growth and up get Slack and multi-channel. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
         },
         "q4": {
           "question": "How long does Clyde onboarding take?",
@@ -2474,7 +2443,7 @@
         },
         "q3": {
           "question": "On which tiers is ManyChat DM available?",
-          "answer": "Not on Partner tier (47 EUR add-on for 300 DMs per month). Growth includes 200 DMs, Professional 1,000, Enterprise no cap. Founding Member receives 500 DMs monthly for life. Costs 2 credits per 10 DMs."
+          "answer": "Growth includes 200 DMs per month, Professional 1,000, Enterprise no cap. Founding Member receives 500 DMs monthly for life. Costs 2 credits per 10 DMs."
         },
         "q4": {
           "question": "How long does ManyChat DM onboarding take?",
@@ -2573,7 +2542,7 @@
         },
         "q3": {
           "question": "On which tiers is Reel Builder available?",
-          "answer": "Not on Partner tier (add-on coming soon). Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Status: coming soon for early access in Q2."
+          "answer": "Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Status: coming soon for early access in Q2."
         },
         "q4": {
           "question": "How long does Reel Builder onboarding take?",
