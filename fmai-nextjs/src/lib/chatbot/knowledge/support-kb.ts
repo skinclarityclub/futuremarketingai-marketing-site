@@ -100,7 +100,7 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 - No European focus, no multi-skill integration
 
 **FutureMarketingAI Growth Plan**
-- Cost: EUR 2,497/mo for 5 workspaces and all 12 AI skills
+- Cost: EUR 499 per workspace (2 to 4 brands), all 12 AI skills, 800 credits per workspace
 - Available 24/7, no sick days, no vacation
 - Consistent quality across all clients
 - Scales instantly: add a workspace in 15 minutes
@@ -108,7 +108,7 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 **Key Comparison:**
 - Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
 - FutureMarketingAI Founding Member: EUR 997/mo lifetime, unlimited workspaces (10 spots, recommended for early adopters)
-- FutureMarketingAI Growth for 5 clients: EUR 2,497/mo = EUR 499/client (available once Founding fills)`,
+- FutureMarketingAI Growth for 3 clients: EUR 1,497/mo = EUR 499/client (linear per-workspace pricing)`,
  },
  {
  key: 'time_benchmarks',
@@ -171,37 +171,37 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 **Basic ROI Formula:**
 Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription) / FutureMarketingAI Subscription x 100%
 
-**Scenario A: Founding Member (EUR 997/mo lifetime — recommended entry while spots open)**
-- Tier: Founding with all 12 skills at Professional-tier caps, unlimited workspaces
-- Best for ambitious agencies that want the lifetime price lock
+**Scenario A: Founding Member (EUR 997/mo lifetime — best value while spots are open)**
+- Tier: Founding with all 12 skills at Professional-tier caps, unlimited workspaces, 8,000 credits
+- Cheapest path for any portfolio of 3+ brands (vs. Growth at 3×499 = EUR 1,497)
 - Direct founder access via Slack, no onboarding fee, 10 spots only
 
-**Scenario B: Growing Agency (Growth. EUR 2,497/mo, available once Founding fills)**
+**Scenario B: Growing Agency (Growth. EUR 499 per workspace, 2 to 4 brands)**
 - Current content costs: 1 junior marketer (EUR 4,500/mo) plus tools (EUR 2,000/mo) = EUR 6,500/mo
-- FutureMarketingAI cost: EUR 2,497/mo
-- Direct savings: EUR 4,003/mo
-- Additional capacity: 5 workspaces, all 12 skills, can take on more clients without hiring
-- ROI: 160% on direct savings alone
+- FutureMarketingAI cost at 3 brands: 3 × EUR 499 = EUR 1,497/mo
+- Direct savings: EUR 5,003/mo
+- All 12 skills, 800 credits per workspace, can scale linearly to 4 brands without retier
+- ROI: 334% on direct savings alone
 
-**Scenario C: Scaling Agency (Professional. EUR 4,497/mo)**
+**Scenario C: Scaling Agency (Professional. EUR 399 per workspace, 5 to 14 brands)**
 - Current costs: 1 junior hire (EUR 5,500/mo) plus freelancer overflow (EUR 3,997/mo) plus tools (EUR 2,500/mo) = EUR 11,997/mo
-- FutureMarketingAI cost: EUR 4,497/mo
-- Direct savings: EUR 7,500/mo
-- Additional capacity: 15 workspaces, dedicated Slack support
+- FutureMarketingAI cost at 8 brands: 8 × EUR 399 = EUR 3,192/mo
+- Direct savings: EUR 8,805/mo
+- 800 credits per workspace, wider caps, dedicated Slack support and monthly strategy call
 - Resell margin: charge clients EUR 500-1,500/mo per client for AI services
-- ROI: 167% on direct savings alone
+- ROI: 276% on direct savings alone
 
-**Scenario D: Full Scale Agency (Enterprise. EUR 7,997/mo)**
+**Scenario D: Full Scale Agency (Enterprise. EUR 299 per workspace, 15+ brands)**
 - Current costs: 2 junior hires (EUR 10,000/mo) plus tools (EUR 3,400/mo) plus agency retainer (EUR 5,997/mo) = EUR 19,397/mo
-- FutureMarketingAI cost: EUR 7,997/mo
-- Direct savings: EUR 11,400/mo
-- Unlimited workspaces, dedicated CSM
+- FutureMarketingAI cost at 20 brands: 20 × EUR 299 = EUR 5,980/mo
+- Direct savings: EUR 13,417/mo
+- All 12 skills with no caps (fair use), 800 credits per workspace, dedicated CSM, white-label and API access
 - Resell margin on unlimited clients: potentially EUR 10,000-30,000/mo additional revenue
-- ROI: 143% on direct savings alone
+- ROI: 224% on direct savings alone
 
 **Founding Member (EUR 997/mo):** all 12 skills, unlimited workspaces, 8,000 credits, lifetime price lock. Best value in the market. 10 spots only, 1 already taken.
 
-**Payback Period:** Typically 1 month. Savings exceed subscription from day one for Growth and above.`,
+**Payback Period:** Typically under 1 month. Savings exceed subscription from day one across every tier.`,
  },
  {
  key: 'founding_member',
@@ -221,12 +221,12 @@ Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription)
  content: `## Founding Member Program
 
 **What Is It?**
-The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. Founding is currently the only tier open to new clients; Growth (EUR 2,497/mo) and up activate once all 10 spots fill.
+The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. Once all 10 spots fill, new agencies start on the regular workspace-priced tiers (Growth EUR 499 per workspace, Professional EUR 399, Enterprise EUR 299).
 
 **Benefits:**
-- EUR 997/mo locked for life (vs. EUR 2,497-7,997/mo regular plans)
-- Unlimited workspaces (same as Enterprise at EUR 7,997/mo)
-- 8,000 credits/mo (more than Professional at EUR 4,497/mo)
+- EUR 997/mo locked for life (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
+- Unlimited workspaces (cheapest path for any portfolio of 3+ brands)
+- 8,000 credits/mo (vs. 800 per workspace on the other tiers — equivalent to a 10-workspace allocation)
 - All 12 skills with Professional-tier caps. No feature restrictions
 - Direct access to the founder for support and feature requests
 - Priority for new feature rollouts

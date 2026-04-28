@@ -852,7 +852,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier tiers: Founding (EUR 997/mnd levenslang, 10 plekken), Growth (EUR 2.497/mnd), Professional (EUR 4.497/mnd) en Enterprise (EUR 7.997/mnd). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per tier op voice, video en reels. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd levenslang voor onbeperkt aantal werkruimtes, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per niveau op voice, video en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -1245,7 +1245,7 @@
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
-          "answer": "Beschikbaar op alle tiers: Founding Member 997 EUR levenslang, Growth 2.497 EUR, Professional 4.497 EUR en Enterprise 7.997 EUR. Volume per tier verschilt op basis van credits per maand. Carrousels en posts kosten 1 tot 2 credits per stuk."
+          "answer": "Beschikbaar op alle tiers: Founding Member €997 levenslang voor onbeperkt aantal werkruimtes, of de workspace-priced tiers Growth €499 per werkruimte (2-4 merken), Professional €399 (5-14 merken) en Enterprise €299 (15+ merken). Volume schaalt mee met je credits: 800 per werkruimte op de workspace-tiers, 8.000 op Founding. Carrousels en posts kosten 1 tot 2 credits per stuk."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Social Media Manager?",
@@ -1459,12 +1459,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 plekken, €997 levenslang | FutureMarketingAI",
-      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. 60% korting vs Growth, prijs-lock voor altijd. 1/10 plekken bezet."
+      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. Onbeperkt aantal werkruimtes, prijs-lock voor altijd. 1/10 plekken bezet."
     },
     "hero": {
       "badge": "{taken} van {total} Founding plekken bezet",
       "title": "Word Founding partner. Eén keer, levenslang.",
-      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang. De nieuwe Growth tier wordt €2.497 per maand. Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley."
+      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang, voor onbeperkt aantal werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley."
     },
     "pricing": {
       "heading": "Jouw investering",
@@ -1472,13 +1472,13 @@
       "price": "997",
       "period": "/mnd, levenslang",
       "locked": "Levenslange prijsgarantie. Geen prijsverhoging, ooit.",
-      "comparison": "Growth tier wordt €2.497 per maand. Jij betaalt 60% minder. Voor altijd.",
+      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor onbeperkt. Vanaf 3 merken bespaar je structureel.",
       "includes": "Onbeperkt aantal werkruimtes, 8.000 credits per maand, alle 12 vaardigheden met Pro-caps, Founder Slack en €0 onboarding."
     },
     "value": {
       "heading": "Waarom de 10 Founding plekken bestaan",
       "line1": "Founding partners zijn de bureaus waarmee ik Clyde samen vormgeef. Jullie feedback bepaalt wat ik bouw, welke vaardigheden voorrang krijgen en hoe de geheugenlaag zich ontwikkelt.",
-      "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang de prijs van €997. De nieuwe Growth tier start op €2.497 per maand. Zelfs als we over 2 jaar €3.000 vragen, blijf jij op €997.",
+      "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang €997, ongeacht hoeveel werkruimtes je gebruikt. De andere tiers schalen lineair per werkruimte: bij 5 merken op Professional betaal je €1.995 per maand, bij 14 merken €5.586. Zelfs als we het tarief over een jaar herijken, blijf jij op €997.",
       "line3": "Tien plekken. Geen heropening. Vol is vol."
     },
     "benefits": {
@@ -1506,7 +1506,7 @@
         },
         "onboarding": {
           "title": "€0 onboardingvergoeding",
-          "description": "Andere tiers betalen tussen €497 en €5.997 voor 4 weken partnership-setup. Founding partners: €0. De enige eenmalige kosten die jij niet hebt."
+          "description": "Andere tiers betalen tussen €1.997 en €5.997 voor 4 weken partnership-setup. Founding partners: €0. De enige eenmalige kosten die jij niet hebt."
         }
       }
     },
@@ -1520,7 +1520,7 @@
       "items": {
         "q1": {
           "question": "Wat gebeurt er als de 10 plekken vol zijn?",
-          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere Growth tier van €2.497 per maand. Jij behoudt je €997 levenslang, zolang je actief blijft."
+          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor onbeperkt aantal werkruimtes, levenslang, zolang je actief blijft."
         },
         "q2": {
           "question": "Kan ik later doorschalen naar Professional of Enterprise?",

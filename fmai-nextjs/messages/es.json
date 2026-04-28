@@ -852,7 +852,7 @@
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
-            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles: Founding (997 EUR al mes de por vida, 10 plazas), Growth (2.497 EUR al mes), Professional (4.497 EUR al mes) y Enterprise (7.997 EUR al mes). Todos los planes incluyen las 12 habilidades de IA, con caps por nivel en voz, vídeo y reels. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
+            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles de servicio: Founding (997 EUR al mes de por vida con espacios de trabajo ilimitados, 10 plazas) y los niveles facturados por espacio Growth (499 EUR por espacio, 2-4 marcas), Professional (399 EUR por espacio, 5-14 marcas) y Enterprise (299 EUR por espacio, a partir de 15 marcas). Todos los planes incluyen las 12 habilidades de IA, con caps por nivel en voz, vídeo y reels. Las tarifas por espacio se recalibran cada seis meses según el uso real de créditos; los contratos existentes no se ajustan con efecto retroactivo. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
           },
           "ai_output_disclaimer": {
             "title": "3. Exención de responsabilidad sobre la salida de IA",
@@ -1245,7 +1245,7 @@
         },
         "q3": {
           "question": "¿En qué tiers está disponible Social Media Manager?",
-          "answer": "Disponible en todos los tiers: Founding Member 997 EUR de por vida, Growth 2.497 EUR, Professional 4.497 EUR y Enterprise 7.997 EUR. El volumen por tier varía según los créditos mensuales. Carruseles y posts cuestan 1 a 2 créditos cada uno."
+          "answer": "Disponible en todos los niveles: Founding Member 997 € de por vida con espacios ilimitados, o los niveles facturados por espacio Growth 499 € por espacio (2-4 marcas), Professional 399 € (5-14 marcas) y Enterprise 299 € (15+ marcas). El volumen escala con los créditos: 800 por espacio en los niveles facturados por espacio, 8.000 en Founding. Carruseles y posts cuestan 1 a 2 créditos cada uno."
         },
         "q4": {
           "question": "¿Cuánto dura el onboarding de Social Media Manager?",
@@ -1459,12 +1459,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 plazas, 997 € de por vida | FutureMarketingAI",
-      "description": "Founding Member: €997/mes de por vida, solo primeras 10 agencias. 60% descuento vs Growth, precio fijo para siempre. 1/10 plazas."
+      "description": "Founding Member: €997/mes de por vida, solo primeras 10 agencias. Espacios de trabajo ilimitados, precio fijo para siempre. 1/10 plazas."
     },
     "hero": {
       "badge": "{taken} de {total} plazas Founding ocupadas",
       "title": "Conviértete en Founding partner. Una vez, de por vida.",
-      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, de por vida. El nuevo nivel Growth pasa a 2.497 € al mes. Las 12 habilidades, topes Pro y línea directa de Slack con Daley."
+      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, de por vida, para espacios de trabajo ilimitados. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Las 12 habilidades, topes Pro y línea directa de Slack con Daley."
     },
     "pricing": {
       "heading": "Tu inversión",
@@ -1472,13 +1472,13 @@
       "price": "997",
       "period": "/mes, de por vida",
       "locked": "Garantía de precio de por vida. Sin subidas, nunca.",
-      "comparison": "El nivel Growth pasa a 2.497 € al mes. Tú pagas un 60% menos. Para siempre.",
+      "comparison": "Growth empieza en 998 € al mes para 2 espacios y escala contigo. Tú pagas 997 € por ilimitado. A partir de 3 marcas ahorras de forma estructural.",
       "includes": "Espacios de trabajo ilimitados, 8.000 créditos al mes, las 12 habilidades con topes Pro, Founder Slack y 0 € de onboarding."
     },
     "value": {
       "heading": "Por qué existen las 10 plazas Founding",
       "line1": "Los Founding partners son las agencias con las que damos forma a Clyde. Vuestro feedback decide qué construimos, qué habilidades tienen prioridad y cómo evoluciona la capa de memoria.",
-      "line2": "A cambio de esa confianza temprana obtienes el precio de 997 € de por vida. El nuevo nivel Growth empieza en 2.497 € al mes. Aunque dentro de 2 años pidamos 3.000 €, tú te quedas en 997 €.",
+      "line2": "A cambio de esa confianza temprana obtienes 997 € de por vida, sin importar cuántos espacios de trabajo uses. Los demás niveles escalan de forma lineal por espacio: con 5 marcas en Professional pagas 1.995 € al mes, con 14 marcas 5.586 €. Aunque recalibremos la tarifa el año que viene, tú te quedas en 997 €.",
       "line3": "Diez plazas. Sin reapertura. Cuando están llenas, están llenas."
     },
     "benefits": {
@@ -1506,7 +1506,7 @@
         },
         "onboarding": {
           "title": "0 € de onboarding",
-          "description": "Los demás niveles pagan entre 497 € y 5.997 € por las 4 semanas de setup del partnership. Founding partners: 0 €. El único coste único que no tienes."
+          "description": "Los demás niveles pagan entre 1.997 € y 5.997 € por las 4 semanas de setup del partnership. Founding partners: 0 €. El único coste único que no tienes."
         }
       }
     },
@@ -1520,7 +1520,7 @@
       "items": {
         "q1": {
           "question": "¿Qué pasa cuando las 10 plazas están llenas?",
-          "answer": "El nivel Founding queda cerrado. Sin reapertura, sin excepciones. Las nuevas agencias empiezan en el nivel Growth regular de 2.497 € al mes. Tú conservas tus 997 € de por vida mientras te mantengas activo."
+          "answer": "El nivel Founding queda cerrado. Sin reapertura, sin excepciones. Las nuevas agencias empiezan en los niveles regulares facturados por espacio (Growth 499 € por espacio, Professional 399 €, Enterprise 299 €). Tú conservas tus 997 € por espacios ilimitados, de por vida, mientras te mantengas activo."
         },
         "q2": {
           "question": "¿Puedo escalar más adelante a Professional o Enterprise?",

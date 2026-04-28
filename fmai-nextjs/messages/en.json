@@ -852,7 +852,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis across four tiers: Founding (EUR 997/mo for life, 10 spots), Growth (EUR 2,497/mo), Professional (EUR 4,497/mo) and Enterprise (EUR 7,997/mo). All plans include all 12 AI skills, with per-tier caps on voice, video and reels. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
+            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo for life with unlimited workspaces, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, with per-level caps on voice, video and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
@@ -1245,7 +1245,7 @@
         },
         "q3": {
           "question": "On which tiers is Social Media Manager available?",
-          "answer": "Available on all tiers: Founding Member 997 EUR for life, Growth 2,497 EUR, Professional 4,497 EUR and Enterprise 7,997 EUR. Volume per tier varies based on monthly credits. Carousels and posts cost 1 to 2 credits each."
+          "answer": "Available on all tiers: Founding Member €997 for life with unlimited workspaces, or the workspace-priced tiers Growth €499 per workspace (2-4 brands), Professional €399 (5-14 brands) and Enterprise €299 (15+ brands). Volume scales with credits: 800 per workspace on the workspace-priced tiers, 8,000 on Founding. Carousels and posts cost 1 to 2 credits each."
         },
         "q4": {
           "question": "How long does Social Media Manager onboarding take?",
@@ -1459,12 +1459,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 spots, €997 for life | FutureMarketingAI",
-      "description": "Founding Member: €997/month for life, first 10 agencies only. 60% off vs Growth, price locked forever. 1 of 10 seats taken."
+      "description": "Founding Member: €997/month for life, first 10 agencies only. Unlimited workspaces, price locked forever. 1 of 10 seats taken."
     },
     "hero": {
       "badge": "{taken} of {total} Founding spots taken",
       "title": "Become a Founding partner. Once, for life.",
-      "description": "Ten total spots for agencies that commit from launch. €997 per month, for life. The new Growth tier will be €2,497 per month. All 12 skills, Pro-level caps and a direct Slack line with Daley."
+      "description": "Ten total spots for agencies that commit from launch. €997 per month, for life, for unlimited workspaces. The other tiers scale linearly per workspace (€499 / €399 / €299). All 12 skills, Pro-level caps and a direct Slack line with Daley."
     },
     "pricing": {
       "heading": "Your investment",
@@ -1472,13 +1472,13 @@
       "price": "997",
       "period": "/mo, for life",
       "locked": "Lifetime price guarantee. No price increase, ever.",
-      "comparison": "Growth tier will be €2,497 per month. You pay 60% less. Forever.",
+      "comparison": "Growth starts at €998 per month for 2 workspaces and scales with you. You pay €997 for unlimited. From 3 brands onward you save consistently.",
       "includes": "Unlimited workspaces, 8,000 credits per month, all 12 skills with Pro-level caps, Founder Slack and €0 onboarding."
     },
     "value": {
       "heading": "Why the 10 Founding spots exist",
       "line1": "Founding partners are the agencies we shape Clyde with. Your feedback determines what we build, which skills get priority and how the memory layer evolves.",
-      "line2": "In return for that early trust you get €997 for life. The new Growth tier starts at €2,497 per month. Even if we ask €3,000 in two years, you stay at €997.",
+      "line2": "In return for that early trust you get €997 for life, regardless of how many workspaces you use. The other tiers scale linearly per workspace: at 5 brands on Professional you pay €1,995 per month, at 14 brands €5,586. Even if we recalibrate the rate next year, you stay at €997.",
       "line3": "Ten spots. No reopening. Full is full."
     },
     "benefits": {
@@ -1506,7 +1506,7 @@
         },
         "onboarding": {
           "title": "€0 onboarding fee",
-          "description": "Other tiers pay between €497 and €5,997 for 4 weeks of partnership setup. Founding partners: €0. The only one-time cost you do not have."
+          "description": "Other tiers pay between €1,997 and €5,997 for 4 weeks of partnership setup. Founding partners: €0. The only one-time cost you do not have."
         }
       }
     },
@@ -1520,7 +1520,7 @@
       "items": {
         "q1": {
           "question": "What happens when the 10 spots are full?",
-          "answer": "Then the Founding tier closes. No reopening, no exceptions. New agencies then start on the regular Growth tier at €2,497 per month. You keep your €997 for life as long as you stay active."
+          "answer": "Then the Founding tier closes. No reopening, no exceptions. New agencies then start on the regular workspace-priced tiers (Growth €499 per workspace, Professional €399, Enterprise €299). You keep your €997 for unlimited workspaces, for life, as long as you stay active."
         },
         "q2": {
           "question": "Can I upgrade later to Professional or Enterprise?",
