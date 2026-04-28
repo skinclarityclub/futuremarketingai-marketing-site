@@ -538,7 +538,7 @@
     },
     "hero": {
       "title": "Partnerships premium. Founding €997 de por vida.",
-      "description": "Todos los precios visibles. 5 tiers para cualquier tamaño de portfolio: desde operador solo hasta enterprise. Caps por habilidad explicados con claridad, sin costes ocultos, sin \"contáctanos para precios\".",
+      "description": "Todos los precios visibles. Founding €997 de por vida para las primeras 10 agencias. Después Growth, Professional y Enterprise. Caps por habilidad explicados con claridad, sin costes ocultos, sin \"contáctanos para precios\".",
       "counter": "{taken} de {total} plazas Founding ocupadas"
     },
     "visibility": {
@@ -1155,7 +1155,7 @@
         },
         "q3": {
           "question": "¿En qué tiers está disponible Lead Qualifier?",
-          "answer": "Incluido en los 5 tiers, con uso justo en volumen de conversaciones. Cuesta 2 créditos por puntuación de calificación. Professional y Enterprise añaden enrutado dinámico según umbrales de score y secuencias de seguimiento por email automatizadas."
+          "answer": "Incluido en todos los tiers, con uso justo en volumen de conversaciones. Cuesta 2 créditos por puntuación de calificación. Professional y Enterprise añaden enrutado dinámico según umbrales de score y secuencias de seguimiento por email automatizadas."
         },
         "q4": {
           "question": "¿Cuánto dura el onboarding de Lead Qualifier?",
@@ -1456,7 +1456,7 @@
         },
         "q3": {
           "question": "¿En qué tiers está disponible Reporting?",
-          "answer": "Incluido en los 5 tiers, con uso justo sobre informes generados. 5 créditos por informe. Professional añade alertas de anomalía, Enterprise añade fórmulas KPI personalizadas. Founding Member recibe acceso de por vida a 997 EUR al mes."
+          "answer": "Incluido en todos los tiers, con uso justo sobre informes generados. 5 créditos por informe. Professional añade alertas de anomalía, Enterprise añade fórmulas KPI personalizadas. Founding Member recibe acceso de por vida a 997 EUR al mes."
         },
         "q4": {
           "question": "¿Cuánto dura el onboarding de Reporting?",
@@ -2047,7 +2047,7 @@
         },
         "q3": {
           "question": "¿En qué tiers está disponible Research?",
-          "answer": "Incluido en los 5 tiers con uso justo sobre número de queries. 3 créditos por consulta. Professional añade informes de tendencias semanales programados, Enterprise añade cadencias de informe personalizadas y watchlists de competidores específicos. Founding Member recibe acceso de por vida a 997 EUR."
+          "answer": "Incluido en todos los tiers con uso justo sobre número de queries. 3 créditos por consulta. Professional añade informes de tendencias semanales programados, Enterprise añade cadencias de informe personalizadas y watchlists de competidores específicos. Founding Member recibe acceso de por vida a 997 EUR."
         },
         "q4": {
           "question": "¿Cuánto dura el onboarding de Research?",

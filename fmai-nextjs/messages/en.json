@@ -537,8 +537,8 @@
       "description": "Founding tier €997 for life for the first 10 agencies. After that Growth €2,497, Professional €4,497, Enterprise €7,997. No hidden fees, no lock-in."
     },
     "hero": {
-      "title": "Premium partnerships. 5 tiers. Transparent.",
-      "description": "All prices are visible. 5 tiers for every portfolio size: from solo operator to enterprise. Caps per skill explained honestly, no hidden costs, no \"contact us for pricing\".",
+      "title": "Premium partnerships. Founding €997 lifetime.",
+      "description": "All prices are visible. Founding €997 lifetime for the first 10 agencies. Then Growth, Professional and Enterprise. Caps per skill explained honestly, no hidden costs, no \"contact us for pricing\".",
       "counter": "{taken} of {total} Founding spots taken"
     },
     "visibility": {
@@ -1155,7 +1155,7 @@
         },
         "q3": {
           "question": "On which tiers is Lead Qualifier available?",
-          "answer": "Included on all 5 tiers, with fair-use on conversation volume. Costs 2 credits per qualification score. Professional and Enterprise add dynamic routing on score thresholds and automatic email follow-up sequences."
+          "answer": "Included on all tiers, with fair-use on conversation volume. Costs 2 credits per qualification score. Professional and Enterprise add dynamic routing on score thresholds and automatic email follow-up sequences."
         },
         "q4": {
           "question": "How long does Lead Qualifier onboarding take?",
@@ -1456,7 +1456,7 @@
         },
         "q3": {
           "question": "On which tiers is Reporting available?",
-          "answer": "Included on all 5 tiers, with fair-use on generated reports. 5 credits per report. Professional adds anomaly alerts, Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
+          "answer": "Included on all tiers, with fair-use on generated reports. 5 credits per report. Professional adds anomaly alerts, Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
         },
         "q4": {
           "question": "How long does Reporting onboarding take?",
@@ -2047,7 +2047,7 @@
         },
         "q3": {
           "question": "On which tiers is Research available?",
-          "answer": "Included on all 5 tiers with fair-use on number of queries. 3 credits per query. Professional adds scheduled weekly trend reports, Enterprise adds custom report cadences and specific competitor watchlists. Founding Member receives lifetime access at 997 EUR."
+          "answer": "Included on all tiers with fair-use on number of queries. 3 credits per query. Professional adds scheduled weekly trend reports, Enterprise adds custom report cadences and specific competitor watchlists. Founding Member receives lifetime access at 997 EUR."
         },
         "q4": {
           "question": "How long does Research onboarding take?",
