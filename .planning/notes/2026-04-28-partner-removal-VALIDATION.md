@@ -3,8 +3,10 @@ change: partner-tier removal + founding-prominence rework
 validated: 2026-04-28
 validator: opus + playwright chromium
 base_url: http://localhost:3060
-status: gaps_found
-score: 94/96 assertions passed
+status: passed
+score: 96/96 assertions passed (after gap-fix commit c5de506)
+initial_score: 94/96
+gap_fix_commit: c5de506
 total_assertions: 96
 duration_seconds: 12
 ---
@@ -63,19 +65,15 @@ NL counterparts of these answers are clean (no equivalent occurrences found via 
 
 ## Recommendation
 
-**fix-then-ship.**
+**ship.**
 
-Both failures are content-only i18n strings — no logic change. They live in two JSON keys per locale (the hero pair) plus three FAQ strings per non-NL locale. A single follow-up commit can resolve all six occurrences across EN+ES without touching code. Suggested fix:
+The two F1/F2 failures plus 3 adjacent skill-FAQ gaps were all closed by commit `c5de506` (`content(pricing): close validator gaps in EN+ES — Founding-anchored copy`). Re-run of the same validator script after rebuild produced **96 / 96** passing across all three locales, 12s wall clock. Both EN and ES now mirror NL's Founding-first hero. All "all 5 tiers" / "los 5 tiers" mentions cleaned via `replace_all`.
 
+Re-run output:
 ```
-content(pricing): align EN+ES hero with NL Founding-first rewrite
-
-- en/es: pricing.hero.title -> "Premium partnerships. Founding €997 lifetime / de por vida."
-- en/es: pricing.hero.description -> drop "5 tiers" phrasing, mirror NL's "Founding €997 lifetime for the first 10 agencies. Then Growth, Professional, Enterprise."
-- en/es: 3 skill-FAQ answers s/5 tiers/4 tiers/ in lead-qualifier, reporting, research namespaces.
+Total: 96 | Passed: 96 | Failed: 0 | 12s
+Report: fmai-nextjs/test-results/partner-removal-validation/report.json
 ```
-
-Everything else — tier-card surface, matrix, skill-page comparisons, apply form, JSON-LD, KB diff, build hygiene — is correct across all three locales. Once the six EN/ES strings are fixed and re-validated, ship.
 
 ## Artifacts
 
