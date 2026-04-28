@@ -32,11 +32,10 @@ interface SkillPageTemplateProps {
 }
 
 const TIER_ORDER: Array<{ key: TierKey; labelKey: string }> = [
-  { key: 'PARTNER', labelKey: 'partner' },
+  { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
   { key: 'GROWTH', labelKey: 'growth' },
   { key: 'PROFESSIONAL', labelKey: 'professional' },
   { key: 'ENTERPRISE', labelKey: 'enterprise' },
-  { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
 ]
 
 type MatrixT = (key: string, values?: Record<string, string | number>) => string

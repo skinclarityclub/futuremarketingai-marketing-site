@@ -15,7 +15,9 @@ export type SkillStatus = 'live' | 'coming_soon'
 
 // Keep TierKey and per-skill tierCaps in sync with fma-app/src/lib/skills.ts
 // (AGENT_TIERS keys + SKILL_CAPS). Pricing SSoT = fma-app.
-export type TierKey = 'PARTNER' | 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE' | 'FOUNDING_MEMBER'
+// Partner tier removed 2026-04-28 (consolidated into Founding-only entry; see
+// fma-app commit 297949d7).
+export type TierKey = 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE' | 'FOUNDING_MEMBER'
 
 /**
  * Unit for rendering the included count in the tier matrix.
@@ -31,10 +33,10 @@ export interface SkillTierCap {
   unit?: SkillCapUnit
   /**
    * i18n key (in `pricing.matrix.*`) to render instead of the numeric cap.
-   * Used for special states like "Add-on €97" or "Niet beschikbaar".
+   * Used for special states like "Niet beschikbaar" or "Onbeperkt".
    * If set, takes precedence over `included` + `unit`.
    */
-  labelKey?: 'addOn47' | 'addOn97' | 'notAvailable' | 'unlimited'
+  labelKey?: 'notAvailable' | 'unlimited'
 }
 
 export interface SkillData {
@@ -97,7 +99,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'live',
     creditCostLabel: '15 cr / artikel',
     tierCaps: {
-      PARTNER: { included: 2 },
       GROWTH: { included: 8 },
       PROFESSIONAL: { included: 20 },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
@@ -125,7 +126,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'live',
     creditCostLabel: '10 cr static / 20 cr video',
     tierCaps: {
-      PARTNER: { included: 0, labelKey: 'addOn97' },
       GROWTH: { included: 15 },
       PROFESSIONAL: { included: 50 },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
@@ -152,7 +152,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'coming_soon',
     creditCostLabel: '25 cr / reel',
     tierCaps: {
-      PARTNER: { included: 0, labelKey: 'notAvailable' },
       GROWTH: { included: 4 },
       PROFESSIONAL: { included: 15 },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
@@ -180,7 +179,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'live',
     creditCostLabel: '5 cr / minuut',
     tierCaps: {
-      PARTNER: { included: 0, labelKey: 'notAvailable' },
       GROWTH: { included: 30, unit: 'min' },
       PROFESSIONAL: { included: 120, unit: 'min' },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
@@ -227,7 +225,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'coming_soon',
     creditCostLabel: '5 cr / actie',
     tierCaps: {
-      PARTNER: { included: 5, unit: 'count' },
       GROWTH: { included: 20 },
       PROFESSIONAL: { included: 60 },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },
@@ -254,7 +251,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     status: 'coming_soon',
     creditCostLabel: '2 cr / 10 DMs',
     tierCaps: {
-      PARTNER: { included: 0, labelKey: 'addOn47' },
       GROWTH: { included: 200, unit: 'dm' },
       PROFESSIONAL: { included: 1000, unit: 'dm' },
       ENTERPRISE: { included: -1, labelKey: 'unlimited' },

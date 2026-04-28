@@ -2,11 +2,10 @@ import { getTranslations } from 'next-intl/server'
 import { SKILLS_DATA, type SkillData, type TierKey } from '@/lib/skills-data'
 
 const TIERS: Array<{ key: TierKey; labelKey: string }> = [
-  { key: 'PARTNER', labelKey: 'partner' },
+  { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
   { key: 'GROWTH', labelKey: 'growth' },
   { key: 'PROFESSIONAL', labelKey: 'professional' },
   { key: 'ENTERPRISE', labelKey: 'enterprise' },
-  { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
 ]
 
 type MatrixT = (key: string, values?: Record<string, string | number>) => string
