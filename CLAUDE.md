@@ -65,7 +65,7 @@ Auto-capture is configured globally in `~/.claude/CLAUDE.md`.
 
 ## Actieve Werkstroom (2026-04-20)
 
-Volledige content-herpositionering van de website naar high-touch AI partnership model, 12 vaardigheden, nieuw pricing schema (Partner €347 / Growth €2.497 / Pro €4.497 / Ent €7.997 / Founding €997).
+Volledige content-herpositionering van de website naar high-touch AI partnership model, 12 vaardigheden. Pricing-schema sinds 2026-04-28 op workspace-priced model: Founding €997 levenslang (fixed anchor) plus Growth €499 / Professional €399 / Enterprise €299 per werkruimte (lineair, herijkt elk halfjaar). Partner-tier verwijderd. Live SSoT in `fma-app/src/lib/skills.ts`, mirror in `fmai-nextjs/src/lib/pricing-data.ts`.
 
 **Core docs in `docs/plans/`:**
 

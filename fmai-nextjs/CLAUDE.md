@@ -68,7 +68,7 @@ npm run lint      # ESLint 9
 
 **KRITIEK**: alle prijzen, credit packs, skill allocations en tier caps worden gesynchroniseerd met `C:\Users\daley\Desktop\fma-app\src\lib\skills.ts`.
 
-Dit is het SaaS command center codebase dat Stripe subscriptions beheert. De marketing site toont deze data — mismatches zijn business-kritiek (klant ziet €2.497 op site, krijgt €1.497 op invoice). Bij prijsaanpassingen altijd **eerst** `fma-app/src/lib/skills.ts` updaten, **dan** site, **dan** Stripe price IDs in env.
+Dit is het SaaS command center codebase dat Stripe subscriptions beheert. De marketing site toont deze data — mismatches zijn business-kritiek. Bij prijsaanpassingen altijd **eerst** `fma-app/src/lib/skills.ts` updaten, **dan** site (`fmai-nextjs/src/lib/pricing-data.ts` mirror + i18n copy), **dan** Stripe price IDs in env. Sinds 2026-04-28 is het model **workspace-priced**: Growth/Pro/Ent zijn `pricingModel: 'workspace'` met `pricePerWorkspace` × `workspaces`, recalibrated elk halfjaar.
 
 De site heeft een local mirror in `src/lib/skills-data.ts` (gegenereerd/bijgehouden parallel) voor snellere renders zonder fma-app dependency.
 
@@ -104,7 +104,7 @@ Import overal — niet hardcoden.
 ### Sleutelbeslissingen (uit design doc decisions log)
 
 - **12 skills** totaal (9 live + 3 coming_soon) — consistent overal
-- **5 tiers**: Partner €347 / Growth €2.497 / Professional €4.497 / Enterprise €7.997 / Founding €997 (10 plekken levenslang)
+- **4 service-niveaus** sinds 2026-04-28: Founding €997 levenslang fixed (10 plekken) + workspace-priced Growth €499/ws (2-4 merken), Professional €399/ws (5-14 merken), Enterprise €299/ws (15+ merken). Partner-tier verwijderd, legacy DB-rows redirecten naar Founding
 - **Counter**: `1/10 founding plekken bezet` — SSoT via constants
 - **Hero**: "Maak kennis met Clyde / Jouw AI Marketing Medewerker" — behoud bestaande framing
 - **CTAs**: allemaal `/apply` (application-gated), geen self-service signup

@@ -111,6 +111,7 @@ export async function POST(request: NextRequest) {
     revenue: payload.revenue,
     client_count: payload.clientCount,
     tier: payload.tier,
+    workspaces: payload.workspaces ?? null,
     problem: payload.problem,
     locale: payload.locale,
     ip_hash: hashIp(ip),

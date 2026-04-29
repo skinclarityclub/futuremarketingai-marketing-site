@@ -1,5 +1,19 @@
 # FMai Pricing Final Proposal — 2026-04-20
 
+> **⚠ SUPERSEDED — 2026-04-29**
+>
+> Het 5-tier model in dit document (Partner €347 / Growth €2.497 / Pro €4.497 / Ent €7.997 / Founding €997) is op **2026-04-28** vervangen door een workspace-priced model:
+>
+> - **Partner verwijderd** (legacy DB-rows redirecten naar Founding).
+> - **Growth / Professional / Enterprise** zijn nu **lineair per werkruimte**: €499 / €399 / €299 (recalibrated elke 6 maanden op werkelijk credit-verbruik).
+> - **Founding €997 levenslang** blijft de fixed anchor — wint mathematisch voor portfolios van 3+ merken.
+>
+> Live SSoT: `fma-app/src/lib/skills.ts` (`AGENT_TIERS`, `priceForTier`, `creditsForTier`).
+> Marketing-site mirror: `fmai-nextjs/src/lib/pricing-data.ts`.
+> Migratie-commit: `2edc715` — `feat(pricing): workspace-priced tiers with live slider`.
+>
+> Dit document blijft staan als historisch artefact dat de overweging vastlegt waarom we van fixed-tier naar workspace-pricing zijn gegaan: de €2.497 → €4.497 stap (+80% voor één workspace meer) was zelf een transparantie-falen dat het lineaire model oplost.
+
 > Synthese van drie parallel research documenten:
 > - `2026-04-19-pricing-solo-research.md` — Ronde 1 solo tier research
 > - `2026-04-20-pricing-value-analysis.md` — Zijn agency tiers te laag? (Agent 1)
