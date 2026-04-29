@@ -155,11 +155,11 @@ Of beter: herformuleren met werkwoord/voorzetsel.
 
 ## 6. Numeriek en valuta
 
-- Valuta: `€347` (geen spatie tussen € en bedrag, NL-conventie)
+- Valuta: `€499` (geen spatie tussen € en bedrag, NL-conventie)
 - Maand-abonnement: `/mnd`
 - Jaar-abonnement: `/jr`
-- Komma als decimaalscheider: `€2.497` (niet `$2,497`)
-- Punt als duizend-scheider: `€2.497,50`
+- Komma als decimaalscheider: `€1.997,50` (niet `$1,997.50`)
+- Punt als duizend-scheider: `€1.997`
 - Percentages: `20%` (geen spatie)
 
 ## 7. Checklist voor elke nieuwe/gewijzigde string
