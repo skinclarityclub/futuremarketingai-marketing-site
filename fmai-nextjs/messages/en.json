@@ -2870,7 +2870,24 @@
       },
       "skillsHeading": "Three skills that move the needle",
       "skillsHint": "Full breakdown and 4-week roadmap in your inbox",
+      "share": {
+        "heading": "Share your result",
+        "subline": "Others see your persona and scores on a dedicated page. The link contains no email or answers.",
+        "linkedin": "Share on LinkedIn",
+        "copy": "Copy link",
+        "copied": "Copied"
+      },
       "footerHint": "Request the full report for detailed scores, weeks 2-4 and the explanation per skill."
+    },
+    "resultShared": {
+      "eyebrow": "AI Readiness Scan",
+      "scoresHeading": "Score per category",
+      "focusLabel": "Focus",
+      "ctaHeadline": "Take the free 5-minute scan and see your own persona.",
+      "ctaButton": "Start the scan",
+      "ctaHint": "5 minutes, free, no account needed",
+      "metaTitle": "{persona} — {total}/100 on the AI Readiness Scan",
+      "metaDescription": "Persona and category scores from someone who took the 5-minute scan. Take it yourself at future-marketing.ai."
     },
     "emailGate": {
       "eyebrow": "Free report in your inbox",

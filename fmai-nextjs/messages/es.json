@@ -2870,7 +2870,24 @@
       },
       "skillsHeading": "Tres habilidades que marcan la diferencia",
       "skillsHint": "Explicación completa y roadmap de 4 semanas en tu inbox",
+      "share": {
+        "heading": "Comparte tu resultado",
+        "subline": "Otros verán tu persona y puntuaciones en una página propia. El enlace no contiene tu correo ni respuestas.",
+        "linkedin": "Compartir en LinkedIn",
+        "copy": "Copiar enlace",
+        "copied": "Copiado"
+      },
       "footerHint": "Solicita el informe completo para puntuaciones detalladas, semanas 2-4 y la explicación por habilidad."
+    },
+    "resultShared": {
+      "eyebrow": "AI Readiness Scan",
+      "scoresHeading": "Puntuación por categoría",
+      "focusLabel": "Foco",
+      "ctaHeadline": "Haz tú mismo el scan gratuito de 5 minutos y descubre tu persona.",
+      "ctaButton": "Iniciar el scan",
+      "ctaHint": "5 minutos, gratis, sin cuenta",
+      "metaTitle": "{persona} — {total}/100 en el AI Readiness Scan",
+      "metaDescription": "Persona y puntuaciones por categoría de alguien que hizo el scan de 5 minutos. Hazlo tú en future-marketing.ai."
     },
     "emailGate": {
       "eyebrow": "Informe gratis en tu bandeja",

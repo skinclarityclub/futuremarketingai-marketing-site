@@ -1,15 +1,18 @@
 'use client'
 
-import type { ReactNode } from 'react'
-import { useTranslations } from 'next-intl'
+import { useState, type ReactNode } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'motion/react'
 import {
   ArrowRight,
   BarChart3,
   Bot,
   BookOpen,
+  Check,
   Clapperboard,
   Globe,
+  Linkedin,
+  Link as LinkIcon,
   Mail,
   Megaphone,
   MessageCircle,
@@ -62,10 +65,50 @@ const CATEGORY_ORDER: readonly AssessmentCategory[] = [
   'team',
 ] as const
 
+const PERSONA_CODE: Record<AssessmentPersona, 'e' | 'b' | 'o'> = {
+  explorer: 'e',
+  builder: 'b',
+  operator: 'o',
+}
+
 export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRevealProps) {
   const t = useTranslations('assessment.result')
+  const tShare = useTranslations('assessment.result.share')
   const tCats = useTranslations('assessment.categories')
+  const locale = useLocale()
   const { persona, perCategory, lowestCategory, total } = result
+  const [copied, setCopied] = useState(false)
+
+  const shareParams = new URLSearchParams({
+    p: PERSONA_CODE[persona],
+    t: String(total),
+    s: String(perCategory.strategy),
+    d: String(perCategory.data),
+    tl: String(perCategory.tools),
+    tm: String(perCategory.team),
+  })
+  const shareUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/${locale}/assessment/result?${shareParams.toString()}`
+      : `/assessment/result?${shareParams.toString()}`
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+
+  async function handleCopy() {
+    if (typeof navigator === 'undefined' || !navigator.clipboard) return
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* clipboard unavailable — silent */
+    }
+  }
+
+  function handleLinkedInClick() {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'assessment_share_click', { network: 'linkedin', persona })
+    }
+  }
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -222,11 +265,49 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
         </div>
       </motion.section>
 
+      {/* Share row — LinkedIn + copy-link */}
+      <motion.section
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.15, duration: 0.5 }}
+        className="mb-10 rounded-2xl border border-border-primary bg-white/[0.02] p-5 md:p-6"
+        aria-labelledby="share-heading"
+      >
+        <div className="mb-3 flex items-center gap-2">
+          <Share2 className="h-4 w-4 text-accent-system" />
+          <h2 id="share-heading" className="text-sm font-semibold text-text-primary">
+            {tShare('heading')}
+          </h2>
+        </div>
+        <p className="mb-4 text-xs leading-relaxed text-text-secondary">{tShare('subline')}</p>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <a
+            href={linkedInUrl}
+            onClick={handleLinkedInClick}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#0a66c2] px-4 py-2.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a66c2]"
+          >
+            <Linkedin className="h-4 w-4" />
+            {tShare('linkedin')}
+          </a>
+          <button
+            type="button"
+            onClick={handleCopy}
+            aria-live="polite"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border-primary bg-white/[0.02] px-4 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          >
+            {copied ? <Check className="h-4 w-4 text-accent-system" /> : <LinkIcon className="h-4 w-4" />}
+            {copied ? tShare('copied') : tShare('copy')}
+          </button>
+        </div>
+      </motion.section>
+
       {/* Email gate */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
+        transition={{ delay: 1.25, duration: 0.5 }}
       >
         <p className="mb-3 text-center text-xs text-text-muted">
           <ArrowRight className="inline h-3 w-3 -translate-y-px" /> {t('footerHint')}

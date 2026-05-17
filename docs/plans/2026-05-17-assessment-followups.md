@@ -46,16 +46,6 @@ Quick recap so the new chat has context without scrolling git:
 
 **Decision needed**: requires user to (a) create GTM container in their Google account, (b) set `NEXT_PUBLIC_GTM_ID` env var in Vercel + .env.local.
 
-### P2-B — LinkedIn share button on result page
-
-**Why**: viral loop. Builder gets a result they want to brag about → 1-click LinkedIn share with persona + scores embedded as image or text.
-
-**Files**:
-- `fmai-nextjs/src/components/assessment/ResultReveal.tsx`
-- Likely a new `/api/og/assessment-result` route for the share-card image
-
-**Concrete fix**: add `<a>` to LinkedIn share-with-text URL. For the OG-image, generate dynamically at /api/og with `persona`, `total`, `scores` query params (next/og). Effort: 2 hours.
-
 ### P2-C — Anonymous benchmark "you scored higher than X%"
 
 **Why**: increases curiosity + share-likelihood. Requires real data + cron-aggregated percentile.

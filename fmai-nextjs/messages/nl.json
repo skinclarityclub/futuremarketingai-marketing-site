@@ -2870,7 +2870,24 @@
       },
       "skillsHeading": "Drie vaardigheden die het verschil maken",
       "skillsHint": "Volledige uitleg en 4-week roadmap in je inbox",
+      "share": {
+        "heading": "Deel je resultaat",
+        "subline": "Anderen krijgen jouw persona en scores te zien op een eigen pagina. De link bevat geen e-mail of antwoorden.",
+        "linkedin": "Deel op LinkedIn",
+        "copy": "Kopieer link",
+        "copied": "Gekopieerd"
+      },
       "footerHint": "Vraag het volledige rapport aan voor scores in detail, weken 2-4 en uitleg per vaardigheid."
+    },
+    "resultShared": {
+      "eyebrow": "AI Readiness Scan",
+      "scoresHeading": "Score per categorie",
+      "focusLabel": "Focus",
+      "ctaHeadline": "Doe zelf de gratis 5-minutenscan en zie jouw persona.",
+      "ctaButton": "Start de scan",
+      "ctaHint": "5 minuten, gratis, geen account nodig",
+      "metaTitle": "{persona} — {total}/100 op de AI Readiness Scan",
+      "metaDescription": "Persona en categoriescores van iemand die de 5-minutenscan deed. Doe zelf de scan op future-marketing.ai."
     },
     "emailGate": {
       "eyebrow": "Gratis rapport in je inbox",
