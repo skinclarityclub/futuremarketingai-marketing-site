@@ -25,23 +25,6 @@ Quick recap so the new chat has context without scrolling git:
 
 ## Backlog (P1 first, then P2)
 
-### P1-D — Question UX consistency call
-
-**Why**: single-select auto-advances after 350ms; Likert requires explicit "Volgende". This inconsistency was identified in the holistic review as polish-perception cost.
-
-**Decision needed from user**: pick one of:
-- **Auto-advance for both** (Likert too) — feels snappy, risk of fat-finger errors
-- **Volgende button for both** — cleaner, slightly slower
-- **Keep mixed** — explicit fast lane for confident single-select picks, deliberate confirm for nuanced Likert
-
-**Recommended**: present this as an A/B test option in the new chat rather than picking blindly.
-
-**Files** if implementing button-for-all:
-- `fmai-nextjs/src/components/assessment/QuestionCard.tsx` lines 50-65 (remove auto-advance timer)
-- `fmai-nextjs/src/components/assessment/OptionButton.tsx` (no change)
-
-Effort: 30 min once decided.
-
 ### P1-F — ES copy native-speaker pass
 
 **Why**: holistic review flagged that ES translations are literal NL→ES, missing idiomatic phrasing ("sistematízalo" feels stiff). Native LATAM/Spain speaker would prefer "estandariza" or "automatiza".
@@ -120,7 +103,7 @@ Three obvious experiments from the holistic review:
 If you want focused chats with clear deliverables:
 
 - **Chat 1 — Conversion polish**: ~~P1-A (trust anchors) + P1-B (badge) + P1-G (privacy page)~~ — DONE 2026-05-17.
-- **Chat 2 — UX consistency call**: ~~P1-E (mobile progress)~~ — DONE 2026-05-18. P1-D still pending (needs design call: auto-advance vs button vs keep-mixed).
+- **Chat 2 — UX consistency call**: ~~P1-D (Volgende-button for both) + P1-E (mobile progress)~~ — DONE 2026-05-18.
 - **Chat 3 — Confirm-page hardening**: ~~P1-C~~ — DONE 2026-05-18 (commit `bd2c9ff`). LeadMagnetCTA badges also extended to the sidebar variant in `9a96132`.
 - **Chat 4 — Tracking infrastructure**: P2-A (GTM loader). Cross-cutting infra change touching layout + consent banner; deserves its own session.
 - **Chat 5 — ES quality pass**: P1-F alone. Native-speaker / LLM rewrite of all ES strings.

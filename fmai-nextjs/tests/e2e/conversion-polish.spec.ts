@@ -115,6 +115,31 @@ test.describe('Conversion polish — P1-C newsletter confirm retry', () => {
   })
 })
 
+test.describe('Conversion polish — P1-D question-flow consistency', () => {
+  // After P1-D, single-select no longer auto-advances; both single and Likert
+  // require an explicit "Volgende" click. The "Volgende" button is disabled
+  // until a value is picked.
+  test('single-select Q1: stays on same question after pick, advances only on Volgende click', async ({ page }) => {
+    await page.goto('/nl/assessment', { waitUntil: 'domcontentloaded' })
+    await page.getByRole('button', { name: 'Start de scan' }).click()
+    const next = page.getByRole('button', { name: /Volgende/ })
+    await expect(next).toBeDisabled()
+
+    // Pick the first option (A) — OptionButton exposes aria-pressed.
+    await page.locator('button[aria-pressed]').first().click()
+    await expect(next).toBeEnabled()
+
+    // Wait longer than the legacy 350ms auto-advance window — counter must
+    // still show 1/16, proving auto-advance is gone.
+    await page.waitForTimeout(600)
+    await expect(page.getByText('1 / 16')).toBeVisible()
+
+    // Now click Volgende → counter ticks to 2/16.
+    await next.click()
+    await expect(page.getByText('2 / 16')).toBeVisible()
+  })
+})
+
 test.describe('Conversion polish — P1-E progress bar position', () => {
   // Progress bar is only rendered while a question is active, not on the intro.
   // We start the scan, pick the first option, then assert the bar's position.

@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'motion/react'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
@@ -38,20 +37,9 @@ export function QuestionCard({
   const t = useTranslations('assessment')
   const tQ = useTranslations(`assessment.questions.${question.id}`)
   const tCat = useTranslations('assessment.categories')
-  const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  useEffect(() => {
-    return () => {
-      if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current)
-    }
-  }, [])
 
   function handleSingleSelect(key: SingleSelectQuestion['options'][number]['key']) {
     onAnswer(key)
-    if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current)
-    autoAdvanceTimer.current = setTimeout(() => {
-      onNext()
-    }, 350)
   }
 
   function handleLikert(v: 1 | 2 | 3 | 4 | 5) {
@@ -116,19 +104,15 @@ export function QuestionCard({
           {t('back')}
         </button>
 
-        {question.type === 'likert' ? (
-          <button
-            type="button"
-            onClick={onNext}
-            disabled={!hasAnswer}
-            className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep transition-[filter] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-          >
-            {isLast ? t('finish') : t('next')}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        ) : (
-          <span className="text-xs text-text-muted">{t('autoAdvanceHint')}</span>
-        )}
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={!hasAnswer}
+          className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep transition-[filter] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+        >
+          {isLast ? t('finish') : t('next')}
+          <ArrowRight className="h-4 w-4" />
+        </button>
       </div>
     </motion.div>
   )
