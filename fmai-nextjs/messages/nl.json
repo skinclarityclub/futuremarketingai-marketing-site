@@ -132,7 +132,7 @@
         },
         "q4": {
           "question": "Hoeveel vaardigheden krijg ik precies?",
-          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 binnenkort beschikbaar (Reel Builder, Email Management, ManyChat DM). Founding, Growth, Professional en Enterprise hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
+          "answer": "Twaalf in totaal: 9 live (Social Media, Blog Factory, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 3 binnenkort beschikbaar (Voice Agent, Ad Creator, Reel Builder). Founding, Growth, Professional en Enterprise hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
@@ -401,6 +401,7 @@
       "learn_more": "Lees meer"
     },
     "comingSoon": "Binnenkort",
+    "viewRoadmap": "Bekijk de roadmap",
     "cookie_consent": {
       "title": "We gebruiken cookies",
       "description": "We gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
@@ -955,9 +956,9 @@
       "description": "AI-telefoongesprekken, afspraken boeken, gespreksregistratie, escalatie naar mens. 5 credits per minuut."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 02. Voice Agent",
+      "eyebrow": "Vaardigheid 02. Voice Agent (binnenkort)",
       "title": "Clyde neemt de telefoon op.",
-      "subtitle": "Inkomende gesprekken worden beantwoord, veelgestelde vragen afgehandeld, afspraken geboekt. Uitgaande campagnes draaien zonder dat je team hoeft te bellen. Escalatie naar een mens wanneer het gesprek daarom vraagt.",
+      "subtitle": "Inkomende gesprekken worden beantwoord, veelgestelde vragen afgehandeld, afspraken geboekt. Uitgaande campagnes draaien zonder dat je team hoeft te bellen. Escalatie naar een mens wanneer het gesprek daarom vraagt. Binnenkort beschikbaar.",
       "cta": "Plan een gesprek"
     },
     "features": {
@@ -1264,9 +1265,9 @@
       "description": "Advertentie-copy, visuals, statische ads en video-ads voor Meta. 10 credits statisch, 20 credits video. Output in meerdere formaten."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 05. Ad Creator",
+      "eyebrow": "Vaardigheid 05. Ad Creator (binnenkort)",
       "title": "Clyde maakt je Meta-ads.",
-      "subtitle": "Statische ads én video-ads. Copy, visuals en meerdere formaten (Feed, Stories, Reels). Publiceert direct in Meta Ads Manager. A/B-varianten inbegrepen. Geen freelance-designer nodig.",
+      "subtitle": "Statische ads én video-ads. Copy, visuals en meerdere formaten (Feed, Stories, Reels). Publiceert direct in Meta Ads Manager. A/B-varianten inbegrepen. Geen freelance-designer nodig. Binnenkort beschikbaar.",
       "cta": "Plan een gesprek"
     },
     "features": {
@@ -1632,6 +1633,41 @@
       "button": "Plan een gesprek"
     }
   },
+  "roadmap": {
+    "meta": {
+      "title": "Roadmap. Wat Clyde binnenkort kan | FutureMarketingAI",
+      "description": "De drie vaardigheden die momenteel in ontwikkeling en testing zijn: Voice Agent, Ad Creator en Reel Builder. Founding-leden krijgen als eerste toegang."
+    },
+    "hero": {
+      "eyebrow": "Roadmap",
+      "title": "Wat Clyde binnenkort kan.",
+      "subtitle": "Negen vaardigheden draaien live in productie. Drie staan op de roadmap, in actieve ontwikkeling en testing. Founding-leden krijgen als eerste toegang zodra ze live gaan."
+    },
+    "skills": {
+      "title": "In ontwikkeling",
+      "subtitle": "Drie vaardigheden waar we nu aan bouwen. Geen harde launch-data, wel een vaste volgorde van waarde."
+    },
+    "voiceAgent": {
+      "name": "Voice Agent",
+      "phase": "In testing",
+      "description": "Inkomende en uitgaande AI-telefoongesprekken. Afspraken boeken, FAQ afhandelen, escalatie naar mens. De interactieve demo werkt al; de productie-integratie met VAPI en agenda-systemen is in pilot."
+    },
+    "adCreator": {
+      "name": "Ad Creator",
+      "phase": "In ontwikkeling",
+      "description": "Statische en video-advertenties voor Meta, inclusief A/B-varianten en directe publicatie naar Meta Ads Manager. De creatieve pipeline draait intern; de integratie met Meta Ads Manager en de approval-flow worden afgerond."
+    },
+    "reelBuilder": {
+      "name": "Reel Builder",
+      "phase": "In ontwikkeling",
+      "description": "Korte verticale video's (9:16) met AI-scripts, automatische captions die synchroon lopen en achtergrondmuziek. Voor Instagram Reels, TikTok en YouTube Shorts. Template-bibliotheek wordt opgebouwd."
+    },
+    "cta": {
+      "title": "Wil je als eerste meedraaien?",
+      "subtitle": "Founding-leden krijgen early access op alle drie zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
+      "button": "Plan een gesprek"
+    }
+  },
   "apply": {
     "meta": {
       "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
@@ -1859,7 +1895,7 @@
       "description": "Gmail-inbox classificeren, slimme labels, dagelijkse digest en conceptantwoorden. 5 credits per actie."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 04. Email Management (binnenkort)",
+      "eyebrow": "Vaardigheid 04. Email Management",
       "title": "Clyde classificeert je Gmail-inbox.",
       "subtitle": "Geen mailcampagnes: dit is inbox-classificatie. Clyde leest inkomende mails, plaatst slimme labels (urgent, actie, info), bepaalt prioriteit en stuurt een dagelijkse digest. Je begint je dag met overzicht in plaats van chaos.",
       "cta": "Plan een gesprek"
@@ -2354,9 +2390,9 @@
       "description": "Instagram-DM-keywordtriggers, AI-antwoorden, lead capture en CRM-routering. 2 credits per 10 DM's."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 11. ManyChat DM (binnenkort)",
+      "eyebrow": "Vaardigheid 11. ManyChat DM",
       "title": "Clyde handelt Instagram-DM's af.",
-      "subtitle": "Keywordtriggers (\"INFO\", \"PRIJS\") starten AI-flows die kwalificeren, informatie delen en warme leads naar het CRM sturen. Geen gemiste DM. Binnenkort beschikbaar.",
+      "subtitle": "Keywordtriggers (\"INFO\", \"PRIJS\") starten AI-flows die kwalificeren, informatie delen en warme leads naar het CRM sturen. Geen gemiste DM.",
       "cta": "Plan een gesprek"
     },
     "features": {
@@ -2533,7 +2569,7 @@
         },
         "q3": {
           "question": "Op welke tiers is Reel Builder beschikbaar?",
-          "answer": "Growth bevat 4 Reels per maand, Professional 15, Enterprise zonder plafond. Founding Member krijgt 8 Reels per maand levenslang. Per Reel kost 25 credits. Status: binnenkort beschikbaar voor early access in Q2."
+          "answer": "Growth bevat 4 Reels per maand, Professional 15, Enterprise zonder plafond. Founding Member krijgt 8 Reels per maand levenslang. Per Reel kost 25 credits. Reel Builder staat momenteel op de roadmap; founding-leden krijgen als eerste toegang."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Reel Builder?",

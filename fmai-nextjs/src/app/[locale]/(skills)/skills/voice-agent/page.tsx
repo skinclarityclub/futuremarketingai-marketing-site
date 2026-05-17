@@ -5,6 +5,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { SkillPageTemplate } from '@/components/skills/SkillPageTemplate'
 import { VoiceDemoSection } from '@/components/voice/VoiceDemoSection'
 import { VoiceDemoFAB } from '@/components/voice/VoiceDemoFAB'
+import { getSkillBySlug } from '@/lib/skills-data'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -31,12 +32,14 @@ export default async function SkillPage({
   const { locale } = await params
   setRequestLocale(locale)
 
+  const isComingSoon = getSkillBySlug('voice-agent')?.status === 'coming_soon'
+
   return (
     <SkillPageTemplate
       namespace="skills-voice-agent"
       slug="voice-agent"
       locale={locale}
-      customProof={<><VoiceDemoSection /><VoiceDemoFAB /></>}
+      customProof={isComingSoon ? undefined : <><VoiceDemoSection /><VoiceDemoFAB /></>}
     />
   )
 }

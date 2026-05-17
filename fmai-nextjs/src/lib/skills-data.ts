@@ -123,7 +123,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'A/B test varianten generatie',
     ],
     category: 'create',
-    status: 'live',
+    status: 'coming_soon',
     creditCostLabel: '10 cr static / 20 cr video',
     tierCaps: {
       GROWTH: { included: 15 },
@@ -176,7 +176,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'Campaign management voor outbound calls',
     ],
     category: 'engage',
-    status: 'live',
+    status: 'coming_soon',
     creditCostLabel: '5 cr / minuut',
     tierCaps: {
       GROWTH: { included: 30, unit: 'min' },
@@ -222,7 +222,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'Suggested replies',
     ],
     category: 'engage',
-    status: 'coming_soon',
+    status: 'live',
     creditCostLabel: '5 cr / actie',
     tierCaps: {
       GROWTH: { included: 20 },
@@ -248,7 +248,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'Performance analytics per trigger',
     ],
     category: 'engage',
-    status: 'coming_soon',
+    status: 'live',
     creditCostLabel: '2 cr / 10 DMs',
     tierCaps: {
       GROWTH: { included: 200, unit: 'dm' },

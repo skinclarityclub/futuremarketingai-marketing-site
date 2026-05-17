@@ -78,6 +78,7 @@ export async function SkillPageTemplate({
   const t = await getTranslations({ locale, namespace })
   const tTiers = await getTranslations({ locale, namespace: 'pricing.tiers' })
   const tMatrix = await getTranslations({ locale, namespace: 'pricing.matrix' })
+  const tCommon = await getTranslations({ locale, namespace: 'common' })
 
   const skill = getSkillBySlug(slug)
   const isComingSoon = skill?.status === 'coming_soon'
@@ -144,14 +145,19 @@ export async function SkillPageTemplate({
             <p className="text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
               {t('hero.subtitle')}
             </p>
-            {!isComingSoon && (
-              <div className="mt-8">
+            <div className="mt-8">
+              {isComingSoon ? (
+                <CTAButton href="/roadmap" size="lg">
+                  {tCommon('viewRoadmap')}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </CTAButton>
+              ) : (
                 <CTAButton href="/apply" size="lg">
                   {t('hero.cta')}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </CTAButton>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </section>
       )}

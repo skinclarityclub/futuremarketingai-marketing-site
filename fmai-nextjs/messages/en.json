@@ -132,7 +132,7 @@
         },
         "q4": {
           "question": "Exactly how many skills do I get?",
-          "answer": "Twelve in total: 9 live (Social Media, Blog Factory, Ad Creator, Voice Agent, Lead Qualifier, Reporting, SEO/GEO, Research, Clyde orchestrator) and 3 coming soon (Reel Builder, Email Management, ManyChat DM). Founding, Growth, Professional and Enterprise have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
+          "answer": "Twelve in total: 9 live (Social Media, Blog Factory, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orchestrator) and 3 coming soon (Voice Agent, Ad Creator, Reel Builder). Founding, Growth, Professional and Enterprise have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
         },
         "q5": {
           "question": "Why does this work better for agencies than separate tools?",
@@ -401,6 +401,7 @@
       "learn_more": "Learn more"
     },
     "comingSoon": "Coming soon",
+    "viewRoadmap": "View the roadmap",
     "cookie_consent": {
       "title": "We use cookies",
       "description": "We use cookies to improve your experience and analyze site traffic.",
@@ -955,9 +956,9 @@
       "description": "AI phone calls, appointment booking, call logging, escalation to human. 5 credits per minute."
     },
     "hero": {
-      "eyebrow": "Skill 02. Voice Agent",
+      "eyebrow": "Skill 02. Voice Agent (coming soon)",
       "title": "Clyde picks up the phone.",
-      "subtitle": "Inbound calls are answered, FAQs handled, appointments booked. Outbound campaigns run without your team having to dial. Escalation to a human when the conversation calls for it.",
+      "subtitle": "Inbound calls are answered, FAQs handled, appointments booked. Outbound campaigns run without your team having to dial. Escalation to a human when the conversation calls for it. Coming soon.",
       "cta": "Book a call"
     },
     "features": {
@@ -1264,9 +1265,9 @@
       "description": "Ad copy, visuals, static ads and video ads for Meta. 10 credits static, 20 credits video. Output in multiple formats."
     },
     "hero": {
-      "eyebrow": "Skill 05. Ad Creator",
+      "eyebrow": "Skill 05. Ad Creator (coming soon)",
       "title": "Clyde creates your Meta ads.",
-      "subtitle": "Static ads and video ads. Copy, visuals and multiple formats (Feed, Stories, Reels). Publishes directly to Meta Ads Manager. A/B variants included. No freelance designer needed.",
+      "subtitle": "Static ads and video ads. Copy, visuals and multiple formats (Feed, Stories, Reels). Publishes directly to Meta Ads Manager. A/B variants included. No freelance designer needed. Coming soon.",
       "cta": "Book a call"
     },
     "features": {
@@ -1632,6 +1633,41 @@
       "button": "Book a call"
     }
   },
+  "roadmap": {
+    "meta": {
+      "title": "Roadmap. What Clyde will do next | FutureMarketingAI",
+      "description": "The three skills currently in development and testing: Voice Agent, Ad Creator and Reel Builder. Founding members get access first."
+    },
+    "hero": {
+      "eyebrow": "Roadmap",
+      "title": "What Clyde will do next.",
+      "subtitle": "Nine skills run live in production. Three are on the roadmap, in active development and testing. Founding members get access first as they go live."
+    },
+    "skills": {
+      "title": "In development",
+      "subtitle": "Three skills we are building now. No hard launch dates, but a clear order of value."
+    },
+    "voiceAgent": {
+      "name": "Voice Agent",
+      "phase": "In testing",
+      "description": "Inbound and outbound AI phone calls. Booking appointments, handling FAQs, escalating to a human. The interactive demo already works; the production integration with VAPI and calendar systems is in pilot."
+    },
+    "adCreator": {
+      "name": "Ad Creator",
+      "phase": "In development",
+      "description": "Static and video ads for Meta, including A/B variants and direct publishing to Meta Ads Manager. The creative pipeline runs internally; the Meta Ads Manager integration and approval flow are being finalised."
+    },
+    "reelBuilder": {
+      "name": "Reel Builder",
+      "phase": "In development",
+      "description": "Short vertical videos (9:16) with AI scripts, automatic captions that run in sync and background music. For Instagram Reels, TikTok and YouTube Shorts. Template library is being built."
+    },
+    "cta": {
+      "title": "Want to be first in line?",
+      "subtitle": "Founding members get early access to all three as they go live, plus a say in what we build next.",
+      "button": "Book a call"
+    }
+  },
   "apply": {
     "meta": {
       "title": "Apply. Book a call with Daley | FutureMarketingAI",
@@ -1859,7 +1895,7 @@
       "description": "Gmail inbox classification, smart labels, daily digest and draft replies. 5 credits per action."
     },
     "hero": {
-      "eyebrow": "Skill 04. Email Management (coming soon)",
+      "eyebrow": "Skill 04. Email Management",
       "title": "Clyde classifies your Gmail inbox.",
       "subtitle": "Not email campaigns: this is inbox classification. Clyde reads incoming emails, applies smart labels (urgent, action, info), sets priority and sends a daily digest. You start the day with an overview instead of chaos.",
       "cta": "Book a call"
@@ -2354,9 +2390,9 @@
       "description": "Instagram DM keyword triggers, AI replies, lead capture and CRM routing. 2 credits per 10 DMs."
     },
     "hero": {
-      "eyebrow": "Skill 11. ManyChat DM (coming soon)",
+      "eyebrow": "Skill 11. ManyChat DM",
       "title": "Clyde handles Instagram DMs.",
-      "subtitle": "Keyword triggers (\"INFO\", \"PRICE\") start AI flows that qualify, share information and route warm leads to the CRM. No missed DMs. Coming soon.",
+      "subtitle": "Keyword triggers (\"INFO\", \"PRICE\") start AI flows that qualify, share information and route warm leads to the CRM. No missed DMs.",
       "cta": "Book a call"
     },
     "features": {
@@ -2533,7 +2569,7 @@
         },
         "q3": {
           "question": "On which tiers is Reel Builder available?",
-          "answer": "Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Status: coming soon for early access in Q2."
+          "answer": "Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Reel Builder is currently on the roadmap; founding members get access first."
         },
         "q4": {
           "question": "How long does Reel Builder onboarding take?",
