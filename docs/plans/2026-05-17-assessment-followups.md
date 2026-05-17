@@ -67,14 +67,6 @@ Quick recap so the new chat has context without scrolling git:
 
 **Concrete fix**: wait for N>=50 completes; build a Supabase materialized view that calculates the percentile distribution of `assessment_scores->>'total'` per persona. Cron refreshes nightly. ResultReveal renders "You scored higher than 62% of agencies in this cohort". Effort: 4 hours including the data-pipeline work.
 
-### P2-D — Resend webhook for bounce/complaint tagging
-
-**Why**: `/api/webhooks/resend` already logs critical events but doesn't act on them. Bounced or complained emails should mark `newsletter_consents.status` so we don't keep trying to resend.
-
-**File**: `fmai-nextjs/src/app/api/webhooks/resend/route.ts`
-
-**Concrete fix**: on `email.bounced` or `email.complained` events, UPDATE newsletter_consents SET status='unsubscribed' WHERE email = event.data.to (lower-cased). Effort: 45 min.
-
 ### P2-E — Admin dashboard
 
 **Why**: Daley currently inspects assessments via Supabase Studio. A simple admin view would surface completion rate, persona distribution, recent submissions.

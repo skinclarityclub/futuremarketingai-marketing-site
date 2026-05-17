@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'node:crypto'
 import { sendCriticalAlert } from '@/lib/telegram-alert'
+import { supabaseAdmin } from '@/lib/supabase-admin'
 
 // Resend uses Svix for webhook signing.
 // Headers: svix-id, svix-timestamp, svix-signature ("v1,<base64>" — multiple versions space-separated)
@@ -50,6 +51,37 @@ const CRITICAL_EVENTS = new Set([
   'email.delivery_delayed',
   'email.failed',
 ])
+
+// Events that should remove the recipient from the newsletter audience.
+// delivery_delayed and failed are transient (retry later) — only hard bounces
+// and explicit complaints (AVG art. 7(3)) flip newsletter_consents.status.
+const UNSUBSCRIBE_EVENTS = new Set(['email.bounced', 'email.complained'])
+
+function extractRecipientEmails(to: unknown): string[] {
+  if (typeof to === 'string') return [to.toLowerCase()]
+  if (Array.isArray(to)) {
+    return to
+      .filter((entry): entry is string => typeof entry === 'string')
+      .map((entry) => entry.toLowerCase())
+  }
+  return []
+}
+
+async function markRecipientsUnsubscribed(emails: string[], reason: string): Promise<void> {
+  if (emails.length === 0) return
+  const { error } = await supabaseAdmin
+    .from('newsletter_consents')
+    .update({ status: 'unsubscribed', unsubscribed_at: new Date().toISOString() })
+    .in('email', emails)
+    .neq('status', 'unsubscribed')
+  if (error) {
+    console.error('[resend:webhook] failed to flip newsletter_consents status', {
+      emails,
+      reason,
+      error: error.message,
+    })
+  }
+}
 
 export async function POST(request: NextRequest) {
   const secret = process.env.RESEND_WEBHOOK_SECRET
@@ -102,6 +134,11 @@ export async function POST(request: NextRequest) {
     }
     console.error(`[CRITICAL][resend:webhook][${type}]`, fields)
     await sendCriticalAlert(`Resend webhook: ${type}`, fields)
+
+    if (UNSUBSCRIBE_EVENTS.has(type)) {
+      const recipients = extractRecipientEmails(data.to)
+      await markRecipientsUnsubscribed(recipients, type)
+    }
   }
 
   return NextResponse.json({ received: true }, { status: 200 })
