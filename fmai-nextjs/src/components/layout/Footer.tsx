@@ -53,9 +53,12 @@ export async function Footer({ locale }: FooterProps) {
                 <li>
                   <Link
                     href="/skills/voice-agent"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
                   >
-                    {t('landing.footer.nav.voice_agent')}
+                    <span>{t('landing.footer.nav.voice_agent')}</span>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                      {t('comingSoon')}
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -69,9 +72,12 @@ export async function Footer({ locale }: FooterProps) {
                 <li>
                   <Link
                     href="/skills/ad-creator"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
                   >
-                    {t('landing.footer.nav.ad_creator')}
+                    <span>{t('landing.footer.nav.ad_creator')}</span>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                      {t('comingSoon')}
+                    </span>
                   </Link>
                 </li>
                 <li>
