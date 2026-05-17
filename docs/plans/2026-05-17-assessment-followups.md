@@ -25,16 +25,6 @@ Quick recap so the new chat has context without scrolling git:
 
 ## Backlog (P1 first, then P2)
 
-### P1-C — Newsletter/confirm page with retry flow
-
-**Why**: current `/api/newsletter/confirm` is a POST endpoint with no client-facing page that handles token-fail, Resend-bounce, or expired-link states gracefully. Users who click a stale link see a blank page.
-
-**Files** to create:
-- `fmai-nextjs/src/app/[locale]/newsletter/confirm/page.tsx` (already exists but needs review)
-- Possibly new client component for the retry form
-
-**Concrete fix**: walk through the actual page state today (`grep -r "newsletter/confirm" fmai-nextjs/src/app/`) and ensure: loading → success → error variants render. Add a "request a new link" form to the error variant that POSTs to a new `/api/newsletter/resend-confirm` endpoint (rate-limit 3/hour/IP). Effort: 2 hours.
-
 ### P1-D — Question UX consistency call
 
 **Why**: single-select auto-advances after 350ms; Likert requires explicit "Volgende". This inconsistency was identified in the holistic review as polish-perception cost.
@@ -51,14 +41,6 @@ Quick recap so the new chat has context without scrolling git:
 - `fmai-nextjs/src/components/assessment/OptionButton.tsx` (no change)
 
 Effort: 30 min once decided.
-
-### P1-E — Mobile progress-bar positioning
-
-**Why**: holistic review noted that the bottom-fixed progress bar may be hidden behind the cookie-banner on mobile. Move to top on `<lg` breakpoint.
-
-**File**: `fmai-nextjs/src/components/assessment/AssessmentProgress.tsx`
-
-**Concrete fix**: split into two media-query variants — bottom-fixed on desktop, top-fixed (below nav) on mobile. Or: pin to top globally, since it works well on both. Effort: 20 min.
 
 ### P1-F — ES copy native-speaker pass
 
@@ -138,8 +120,8 @@ Three obvious experiments from the holistic review:
 If you want focused chats with clear deliverables:
 
 - **Chat 1 — Conversion polish**: ~~P1-A (trust anchors) + P1-B (badge) + P1-G (privacy page)~~ — DONE 2026-05-17.
-- **Chat 2 — UX consistency call**: P1-D (auto-advance vs button) + P1-E (mobile progress) — wants a design call, then implementation.
-- **Chat 3 — Confirm-page hardening**: P1-C alone. Isolated, error-handling-focused, end-to-end test.
+- **Chat 2 — UX consistency call**: ~~P1-E (mobile progress)~~ — DONE 2026-05-18. P1-D still pending (needs design call: auto-advance vs button vs keep-mixed).
+- **Chat 3 — Confirm-page hardening**: ~~P1-C~~ — DONE 2026-05-18 (commit `bd2c9ff`). LeadMagnetCTA badges also extended to the sidebar variant in `9a96132`.
 - **Chat 4 — Tracking infrastructure**: P2-A (GTM loader). Cross-cutting infra change touching layout + consent banner; deserves its own session.
 - **Chat 5 — ES quality pass**: P1-F alone. Native-speaker / LLM rewrite of all ES strings.
 - **Anything else**: parked until data + volume justifies.
