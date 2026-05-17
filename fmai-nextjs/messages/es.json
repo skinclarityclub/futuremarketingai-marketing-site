@@ -28,7 +28,7 @@
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Clyde contesta el teléfono, agenda citas y responde preguntas frecuentes. 24/7, por marca."
+        "description": "Próximamente: Clyde contestará el teléfono, agendará citas y responderá preguntas frecuentes. 24/7, por marca."
       },
       "leadQualifier": {
         "number": "03",
@@ -43,7 +43,7 @@
       "adCreator": {
         "number": "04",
         "title": "Ad Creator",
-        "description": "Clyde crea anuncios estáticos y en vídeo para Meta. Variantes A/B listas para publicar."
+        "description": "Próximamente: Clyde creará anuncios estáticos y en vídeo para Meta. Variantes A/B listas para publicar."
       },
       "reporting": {
         "number": "05",
@@ -2825,7 +2825,7 @@
       "q14": {
         "text": "¿Quién decide qué datos de cliente pueden entrar en las herramientas AI?",
         "options": {
-          "a": "Nadie explícitamente — los empleados deciden por su cuenta",
+          "a": "Nadie explícitamente; los empleados deciden por su cuenta",
           "b": "El project lead decide caso por caso",
           "c": "Una persona (founder o lead) aprueba por adelantado",
           "d": "Flujo de aprobación documentado con audit trail por cliente"
@@ -2838,7 +2838,7 @@
       "q16": {
         "text": "¿Con qué frecuencia formas al equipo en nuevas habilidades AI?",
         "options": {
-          "a": "Nunca — la gente aprende por su cuenta",
+          "a": "Nunca; la gente aprende por su cuenta",
           "b": "Ad hoc, cuando aparece algo nuevo",
           "c": "Formación mensual o sesión brown-bag",
           "d": "Currículo estructurado más AI literacy para todo el equipo"
@@ -2886,7 +2886,7 @@
       "ctaHeadline": "Haz tú mismo el scan gratuito de 5 minutos y descubre tu persona.",
       "ctaButton": "Iniciar el scan",
       "ctaHint": "5 minutos, gratis, sin cuenta",
-      "metaTitle": "{persona} — {total}/100 en el AI Readiness Scan",
+      "metaTitle": "{persona}: {total}/100 en el AI Readiness Scan",
       "metaDescription": "Persona y puntuaciones por categoría de alguien que hizo el scan de 5 minutos. Hazlo tú en future-marketing.ai."
     },
     "emailGate": {

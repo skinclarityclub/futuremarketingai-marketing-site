@@ -18,6 +18,7 @@ import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { getSkillBySlug } from '@/lib/skills-data'
 import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -53,6 +54,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'home' })
+  const tHeader = await getTranslations({ locale, namespace: 'header' })
 
   return (
     <PageShell showStickyCta>
@@ -219,7 +221,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {SERVICE_CARDS.map((card) => (
+            {SERVICE_CARDS.map((card) => {
+              const slug = card.href.replace('/skills/', '')
+              const isComingSoon = getSkillBySlug(slug)?.status === 'coming_soon'
+              return (
               <Link
                 key={card.key}
                 href={card.href}
@@ -230,10 +235,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {t(`services.${card.key}.number`)}
                 </span>
 
-                {/* Title */}
-                <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight mb-3.5">
-                  {t(`services.${card.key}.title`)}
-                </h3>
+                {/* Title row with optional coming-soon marker */}
+                <div className="flex items-center gap-2 mb-3.5">
+                  <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight">
+                    {t(`services.${card.key}.title`)}
+                  </h3>
+                  {isComingSoon && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1.5 py-0.5">
+                      {tHeader('skills.comingSoon')}
+                    </span>
+                  )}
+                </div>
 
                 {/* Description */}
                 <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
@@ -253,7 +265,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </svg>
                 </div>
               </Link>
-            ))}
+              )
+            })}
           </div>
 
           {/* Final CTA after service cards */}

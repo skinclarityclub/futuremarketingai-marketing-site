@@ -28,7 +28,7 @@
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Clyde picks up the phone, books appointments and answers FAQs. 24/7, per brand."
+        "description": "Coming soon: Clyde will pick up the phone, book appointments and answer FAQs. 24/7, per brand."
       },
       "leadQualifier": {
         "number": "03",
@@ -43,7 +43,7 @@
       "adCreator": {
         "number": "04",
         "title": "Ad Creator",
-        "description": "Clyde makes static and video ads for Meta. A/B variants are publish-ready."
+        "description": "Coming soon: Clyde will make static and video ads for Meta. A/B variants publish-ready."
       },
       "reporting": {
         "number": "05",
@@ -2825,7 +2825,7 @@
       "q14": {
         "text": "Who decides which client data is allowed into AI tools?",
         "options": {
-          "a": "No one explicitly — employees decide on their own",
+          "a": "No one explicitly; employees decide on their own",
           "b": "The project lead decides case by case",
           "c": "One person (founder or lead) approves upfront",
           "d": "Documented approval flow with audit trail per client"
@@ -2838,7 +2838,7 @@
       "q16": {
         "text": "How often do you train the team on new AI skills?",
         "options": {
-          "a": "Never — people learn on their own",
+          "a": "Never; people learn on their own",
           "b": "Ad hoc, when something new appears",
           "c": "Monthly training or brown-bag session",
           "d": "Structured curriculum plus AI literacy for the whole team"
@@ -2886,7 +2886,7 @@
       "ctaHeadline": "Take the free 5-minute scan and see your own persona.",
       "ctaButton": "Start the scan",
       "ctaHint": "5 minutes, free, no account needed",
-      "metaTitle": "{persona} — {total}/100 on the AI Readiness Scan",
+      "metaTitle": "{persona}: {total}/100 on the AI Readiness Scan",
       "metaDescription": "Persona and category scores from someone who took the 5-minute scan. Take it yourself at future-marketing.ai."
     },
     "emailGate": {
