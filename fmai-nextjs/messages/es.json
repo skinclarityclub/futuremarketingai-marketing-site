@@ -2726,16 +2726,16 @@
         }
       },
       "q3": {
-        "text": "¿Qué resultados medibles vinculas al uso de AI?",
+        "text": "¿Cómo mides el impacto de la AI en los márgenes de tu propia agencia?",
         "options": {
-          "a": "Ninguno, no lo medimos",
-          "b": "Sentimos productividad pero no la contamos",
-          "c": "Por equipo medimos tiempo ahorrado o volumen de output",
-          "d": "La contribución de AI está en nuestro P&L y en reportes al cliente"
+          "a": "No lo medimos",
+          "b": "Notamos margen extra, pero no lo contamos",
+          "c": "Por proyecto o cliente calculamos el tiempo ahorrado con AI",
+          "d": "La contribución de AI está en nuestra estrategia de pricing y reportes de margen"
         }
       },
       "q4": {
-        "text": "Tenemos una política de AI escrita, alineada con el EU AI Act y el RGPD para nuestras marcas cliente.",
+        "text": "Hemos definido qué herramientas AI son seguras para datos de cliente y nuestra responsabilidad de IP.",
         "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
       },
       "q5": {
@@ -2797,8 +2797,13 @@
         }
       },
       "q12": {
-        "text": "Podemos integrar un nuevo modelo o herramienta AI en nuestro workflow de producción en una semana.",
-        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+        "text": "¿Qué tan rápido podéis poner una nueva herramienta AI en producción?",
+        "options": {
+          "a": "Meses, si llega a salir",
+          "b": "Semanas, con integración manual",
+          "c": "Días, vía nuestro workflow estándar",
+          "d": "Directo vía API en nuestro stack actual"
+        }
       },
       "q13": {
         "text": "¿Cuántos empleados usan AI al menos semanalmente para trabajo?",
@@ -2810,25 +2815,25 @@
         }
       },
       "q14": {
-        "text": "¿Tienen una política AI escrita (qué herramientas, qué datos, qué disclosure a clientes)?",
+        "text": "¿Quién decide qué datos de cliente pueden entrar en las herramientas AI?",
         "options": {
-          "a": "No, no existe",
-          "b": "Acuerdos verbales, nada por escrito",
-          "c": "Sí, redactada y aprobada por el equipo o comité",
-          "d": "Sí, actualizada cada trimestre con audit trail"
+          "a": "Nadie explícitamente — los empleados deciden por su cuenta",
+          "b": "El project lead decide caso por caso",
+          "c": "Una persona (founder o lead) aprueba por adelantado",
+          "d": "Flujo de aprobación documentado con audit trail por cliente"
         }
       },
       "q15": {
-        "text": "Nuestros clientes saben qué partes de su campaña son AI-driven (transparencia EU AI Act art. 50).",
+        "text": "Nuestros clientes saben qué partes de su campaña son AI-driven.",
         "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
       },
       "q16": {
         "text": "¿Con qué frecuencia formas al equipo en nuevas habilidades AI?",
         "options": {
-          "a": "Nunca, la gente aprende por su cuenta",
+          "a": "Nunca — la gente aprende por su cuenta",
           "b": "Ad hoc, cuando aparece algo nuevo",
           "c": "Formación mensual o sesión brown-bag",
-          "d": "Currículo estructurado más AI literacy según EU AI Act art. 4"
+          "d": "Currículo estructurado más AI literacy para todo el equipo"
         }
       }
     },
@@ -2846,7 +2851,18 @@
       "operator": {
         "name": "Operator",
         "summary": "AI corre autónomamente en tu operación. El siguiente salto es producción creativa a escala y formatos cutting-edge que tus competidores no tienen."
-      }
+      },
+      "scoresHeading": "Tus puntuaciones por categoría",
+      "lowestHint": "Tu mayor salto está aquí",
+      "week1Heading": "Primer paso esta semana",
+      "week1": {
+        "explorer": "Deja de usar herramientas AI públicas dispersas por empleado y elige un punto central. Empieza con un workflow (por ejemplo, posts sociales) y sistematízalo.",
+        "builder": "Revisa tus pipelines: ¿dónde viven los datos, dónde se pierden los handoffs? Identifica qué compartición cross-skill puedes activar hoy.",
+        "operator": "Revisa la dependencia de vendors. Lista las 3 herramientas principales, comprueba el hosting EU y documenta las cláusulas de salida por proveedor."
+      },
+      "skillsHeading": "Tres habilidades que marcan la diferencia",
+      "skillsHint": "Explicación completa y roadmap de 4 semanas en tu inbox",
+      "footerHint": "Solicita el informe completo para puntuaciones detalladas, semanas 2-4 y la explicación por habilidad."
     },
     "emailGate": {
       "eyebrow": "Informe gratis en tu bandeja",
@@ -2857,7 +2873,7 @@
       "bullet3": "Roadmap semana a semana para tu persona",
       "emailLabel": "Email de trabajo",
       "emailPlaceholder": "daley@tuagencia.com",
-      "consent": "Sí, envíame el informe más insights mensuales. Puedo darme de baja en cualquier momento.",
+      "consent": "Sí, envíame el informe y los insights mensuales. Mis respuestas se conservan 12 meses para sustentar las recomendaciones. Puedo darme de baja en cualquier momento.",
       "privacyLink": "Política de privacidad",
       "submit": "Enviar mi plan de acción",
       "submitting": "Enviando...",

@@ -2726,16 +2726,16 @@
         }
       },
       "q3": {
-        "text": "Which measurable outcomes do you tie to AI deployment?",
+        "text": "How do you measure the impact of AI on your own agency margins?",
         "options": {
-          "a": "None, we don't track it",
-          "b": "We feel productivity gains but don't count them",
-          "c": "Per team we measure time saved or output volume",
-          "d": "AI contribution lives in our P&L and client reports"
+          "a": "We do not measure this",
+          "b": "We feel a margin lift but do not count it",
+          "c": "Per project or client we calculate AI time saved",
+          "d": "AI contribution sits in our pricing strategy and margin reports"
         }
       },
       "q4": {
-        "text": "We have a written AI policy aligned with the EU AI Act and GDPR for our client brands.",
+        "text": "We have established which AI tools are safe for client data and our IP liability.",
         "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
       },
       "q5": {
@@ -2797,8 +2797,13 @@
         }
       },
       "q12": {
-        "text": "We can integrate a new AI model or tool into our production workflow within a week.",
-        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+        "text": "How fast can you get a new AI tool live in production?",
+        "options": {
+          "a": "Months, if it ships at all",
+          "b": "Weeks, with manual integration work",
+          "c": "Days, through our standard workflow",
+          "d": "Directly via API in our existing stack"
+        }
       },
       "q13": {
         "text": "How many employees use AI at least weekly for work?",
@@ -2810,25 +2815,25 @@
         }
       },
       "q14": {
-        "text": "Do you have a written AI policy (which tools, which data, which disclosure to clients)?",
+        "text": "Who decides which client data is allowed into AI tools?",
         "options": {
-          "a": "No, not in place",
-          "b": "Verbal agreements, nothing on paper",
-          "c": "Yes, drafted and signed off by the team or works council",
-          "d": "Yes, updated quarterly with an audit trail"
+          "a": "No one explicitly — employees decide on their own",
+          "b": "The project lead decides case by case",
+          "c": "One person (founder or lead) approves upfront",
+          "d": "Documented approval flow with audit trail per client"
         }
       },
       "q15": {
-        "text": "Our clients know which parts of their campaign are AI-driven (EU AI Act art. 50 transparency).",
+        "text": "Our clients know which parts of their campaign are AI-driven.",
         "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
       },
       "q16": {
         "text": "How often do you train the team on new AI skills?",
         "options": {
-          "a": "Never, people learn by themselves",
+          "a": "Never — people learn on their own",
           "b": "Ad hoc, when something new appears",
           "c": "Monthly training or brown-bag session",
-          "d": "Structured curriculum plus AI literacy per EU AI Act art. 4"
+          "d": "Structured curriculum plus AI literacy for the whole team"
         }
       }
     },
@@ -2846,7 +2851,18 @@
       "operator": {
         "name": "Operator",
         "summary": "AI runs autonomously in your operation. The next leap is creative production at scale and cutting-edge formats your competitors don't have."
-      }
+      },
+      "scoresHeading": "Your scores per category",
+      "lowestHint": "Your biggest leap is here",
+      "week1Heading": "First step this week",
+      "week1": {
+        "explorer": "Stop using fragmented public AI tools per employee and pick one central starting point. Start with one workflow (e.g. social posts) and systematise it.",
+        "builder": "Audit your pipelines: where does data live, where do handoffs leak? Map the cross-skill data sharing you can activate today.",
+        "operator": "Audit vendor dependency. List your 3 top tools, check EU hosting and document exit clauses per vendor."
+      },
+      "skillsHeading": "Three skills that move the needle",
+      "skillsHint": "Full breakdown and 4-week roadmap in your inbox",
+      "footerHint": "Request the full report for detailed scores, weeks 2-4 and the explanation per skill."
     },
     "emailGate": {
       "eyebrow": "Free report in your inbox",
@@ -2857,7 +2873,7 @@
       "bullet3": "Week-by-week roadmap for your persona",
       "emailLabel": "Work email",
       "emailPlaceholder": "daley@youragency.com",
-      "consent": "Yes, send me the report plus monthly insights. I can unsubscribe at any time.",
+      "consent": "Yes, send me the report and monthly insights. My answers are retained for 12 months to support the recommendations. I can unsubscribe at any time.",
       "privacyLink": "Privacy policy",
       "submit": "Send my action plan",
       "submitting": "Sending...",

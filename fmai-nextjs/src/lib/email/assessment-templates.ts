@@ -154,62 +154,62 @@ const PERSONA_SUMMARY: Record<Locale, Record<AssessmentPersona, string>> = {
 const ROADMAP_STEPS: Record<Locale, Record<AssessmentPersona, [string, string, string, string]>> = {
   nl: {
     explorer: [
-      'Stop met losse public-AI-tools per medewerker; kies één centraal startpunt',
-      'Centraliseer brand voice, doelgroep en KPI\'s per merk in één kennisbank',
-      'Pak één workflow (bijv. social posts) en maak hem systematisch met Clyde',
-      'Meet één KPI per merk (tijdsbesparing of output-volume) en deel wekelijks',
+      'Inventariseer welke AI-tools nu gebruikt worden en door wie. Documenteer 1 centrale plek waar alle tools en hun toegang staan.',
+      'Schrijf voor 1 merk de brand voice, doelgroep en 3 KPI\'s op één pagina. Maak dit doc leesbaar voor je AI-stack.',
+      'Pak één workflow (bijvoorbeeld social posts voor merk X) en systematiseer hem volledig met Clyde.',
+      'Meet 1 KPI per merk (uren bespaard of output-volume) en deel met je team in een wekelijkse digest.',
     ],
     builder: [
-      'Audit bestaande pipelines: waar leeft data, waar lekken handoffs?',
-      'Voeg cross-skill datadeling toe (wat Clyde leert over X gebruikt hij bij Y)',
-      'Schaal naar 2 extra merken op dezelfde infrastructuur',
-      'Activeer wekelijkse performance-digest naar elke klant',
+      'Lijst je 5 belangrijkste pipelines. Per pipeline: identificeer 1 handoff waar context verloren gaat.',
+      'Activeer cross-skill datadeling: zorg dat brand voice + persona-doc uit research direct in social en blog beschikbaar zijn.',
+      'Schaal 1 succesvolle workflow naar 2 extra merken zonder aparte setup-tijd per merk.',
+      'Lever 1 klant deze maand een wekelijkse performance-digest met AI-bijdrage benoemd.',
     ],
     operator: [
-      'Audit vendor-afhankelijkheid; check EU-hosting en exit-pad per tool',
-      'Introduceer 1 nieuw cutting-edge format (Voice Agent, Reel Builder, Ad Creator)',
-      'Implementeer transparantie-disclosure naar klanten conform EU AI Act art. 50',
-      'Meet AI-toegerekende omzet-uplift per klant en rapporteer maandelijks',
+      'Audit vendor-afhankelijkheid: lijst je top-3 AI-tools, check EU-hosting en documenteer exit-clausules per leverancier.',
+      'Test 1 cutting-edge format (Voice Agent, Reel Builder of Ad Creator) bij 1 willekeurige klant en meet 1 KPI.',
+      'Communiceer per klant welke onderdelen van hun campagne AI-gestuurd zijn (gewoon zichtbaar in de rapportage).',
+      'Rapporteer AI-toegerekende omzet-uplift per klant aan je leadership. Maak hier je nieuwe pricing-argument van.',
     ],
   },
   en: {
     explorer: [
-      'Stop using disjointed public AI tools per employee; pick one central starting point',
-      'Centralise brand voice, audience and KPIs per brand in one knowledge base',
-      'Take one workflow (e.g. social posts) and systematise it with Clyde',
-      'Measure one KPI per brand (time saved or output volume) and share weekly',
+      'Inventory which AI tools are used today and by whom. Document one central location for all tools and their access.',
+      'For one brand, write the brand voice, audience and 3 KPIs on a single page. Make this doc readable to your AI stack.',
+      'Take one workflow (e.g. social posts for brand X) and systematise it end-to-end with Clyde.',
+      'Measure one KPI per brand (hours saved or output volume) and share with your team in a weekly digest.',
     ],
     builder: [
-      'Audit existing pipelines: where does data live, where do handoffs leak?',
-      'Add cross-skill data sharing (what Clyde learns about X he uses at Y)',
-      'Scale to 2 additional brands on the same infrastructure',
-      'Activate the weekly performance digest to every client',
+      'List your 5 most important pipelines. Per pipeline, identify one handoff where context leaks today.',
+      'Activate cross-skill data sharing: ensure brand voice + persona docs from research land directly in social and blog.',
+      'Scale one successful workflow to 2 additional brands without extra setup time per brand.',
+      'Deliver one client this month a weekly performance digest that calls out AI contribution explicitly.',
     ],
     operator: [
-      'Audit vendor dependency; check EU hosting and exit path per tool',
-      'Introduce one new cutting-edge format (Voice Agent, Reel Builder, Ad Creator)',
-      'Implement transparency disclosure to clients per EU AI Act art. 50',
-      'Measure AI-attributed revenue uplift per client and report monthly',
+      'Audit vendor dependency: list your top-3 AI tools, check EU hosting and document exit clauses per vendor.',
+      'Test one cutting-edge format (Voice Agent, Reel Builder or Ad Creator) with one client and measure one KPI.',
+      'Communicate per client which parts of their campaign are AI-driven (visible right in the report).',
+      'Report AI-attributed revenue uplift per client to your leadership. Turn this into your new pricing argument.',
     ],
   },
   es: {
     explorer: [
-      'Deja de usar herramientas AI públicas dispersas por empleado; elige un punto central',
-      'Centraliza brand voice, audiencia y KPIs por marca en una base de conocimiento',
-      'Toma un workflow (por ejemplo, posts sociales) y sistematízalo con Clyde',
-      'Mide un KPI por marca (tiempo ahorrado o volumen de output) y compártelo semanalmente',
+      'Inventaria qué herramientas AI se usan hoy y por quién. Documenta un lugar central con todas las herramientas y sus accesos.',
+      'Para una marca, escribe brand voice, audiencia y 3 KPIs en una sola página. Hazlo legible para tu stack AI.',
+      'Coge un workflow (por ejemplo posts sociales de la marca X) y sistematízalo end-to-end con Clyde.',
+      'Mide un KPI por marca (horas ahorradas o volumen de output) y compártelo en un digest semanal con el equipo.',
     ],
     builder: [
-      'Audita pipelines existentes: ¿dónde viven los datos, dónde se pierden los handoffs?',
-      'Añade compartición cross-skill de datos (lo que Clyde aprende en X lo usa en Y)',
-      'Escala a 2 marcas adicionales sobre la misma infraestructura',
-      'Activa el digest semanal de rendimiento a cada cliente',
+      'Lista tus 5 pipelines más importantes. Por pipeline, identifica un handoff donde el contexto se pierde hoy.',
+      'Activa la compartición de datos cross-skill: brand voice + docs de persona del research deben aterrizar directo en social y blog.',
+      'Escala un workflow exitoso a 2 marcas adicionales sin tiempo de setup extra por marca.',
+      'Entrega a un cliente este mes un digest semanal de rendimiento que destaque explícitamente la contribución AI.',
     ],
     operator: [
-      'Audita dependencia de vendors; revisa hosting EU y vía de salida por herramienta',
-      'Introduce un nuevo formato cutting-edge (Voice Agent, Reel Builder, Ad Creator)',
-      'Implementa disclosure de transparencia a clientes según EU AI Act art. 50',
-      'Mide el uplift de ingresos atribuible a AI por cliente y reporta mensualmente',
+      'Revisa dependencia de vendors: lista tus top-3 herramientas AI, comprueba hosting EU y documenta cláusulas de salida por proveedor.',
+      'Prueba un formato cutting-edge (Voice Agent, Reel Builder o Ad Creator) con un cliente y mide un KPI.',
+      'Comunica por cliente qué partes de su campaña son AI-driven (visible directamente en el reporte).',
+      'Reporta a tu leadership el uplift de ingresos atribuible a AI por cliente. Conviértelo en tu nuevo argumento de pricing.',
     ],
   },
 }
@@ -219,7 +219,6 @@ const LABELS: Record<Locale, {
   roadmapHeading: string
   skillsHeading: string
   weekLabel: (n: number) => string
-  cta: string
   totalLabel: string
   footnote: string
 }> = {
@@ -228,7 +227,6 @@ const LABELS: Record<Locale, {
     roadmapHeading: 'Je 4-week roadmap',
     skillsHeading: 'Drie Clyde-vaardigheden die de grootste sprong leveren',
     weekLabel: (n) => `Week ${n}`,
-    cta: 'Plan een gesprek',
     totalLabel: 'Totaal',
     footnote: 'Vragen? Reply rechtstreeks op deze mail.',
   },
@@ -237,7 +235,6 @@ const LABELS: Record<Locale, {
     roadmapHeading: 'Your 4-week roadmap',
     skillsHeading: 'Three Clyde skills that move the needle most',
     weekLabel: (n) => `Week ${n}`,
-    cta: 'Book a call',
     totalLabel: 'Total',
     footnote: 'Questions? Reply directly to this email.',
   },
@@ -246,9 +243,26 @@ const LABELS: Record<Locale, {
     roadmapHeading: 'Tu roadmap de 4 semanas',
     skillsHeading: 'Tres habilidades Clyde que marcan la diferencia',
     weekLabel: (n) => `Semana ${n}`,
-    cta: 'Agenda una llamada',
     totalLabel: 'Total',
     footnote: '¿Preguntas? Responde directamente a este correo.',
+  },
+}
+
+const PERSONA_CTA: Record<Locale, Record<AssessmentPersona, string>> = {
+  nl: {
+    explorer: 'Bouw je centraal brein — Plan een gesprek',
+    builder: 'Schaal mee — Plan een gesprek',
+    operator: 'Ga cutting-edge — Plan een gesprek',
+  },
+  en: {
+    explorer: 'Build your central brain — Book a call',
+    builder: 'Scale up — Book a call',
+    operator: 'Go cutting-edge — Book a call',
+  },
+  es: {
+    explorer: 'Construye tu cerebro central — Agenda una llamada',
+    builder: 'Escala con nosotros — Agenda una llamada',
+    operator: 'Avanza al siguiente nivel — Agenda una llamada',
   },
 }
 
@@ -282,7 +296,8 @@ export function assessmentResultEmail(args: {
   const summary = PERSONA_SUMMARY[locale][persona]
   const roadmap = ROADMAP_STEPS[locale][persona]
   const skills = getRecommendedSkills(persona, lowestCategory)
-  const applyUrl = `${siteUrl}/${locale}/apply?utm_source=assessment&utm_medium=email&utm_content=${persona}`
+  const applyUrl = `${siteUrl}/${locale}/apply?utm_source=assessment&utm_medium=email&utm_content=${persona}_${lowestCategory}`
+  const personaCta = PERSONA_CTA[locale][persona]
 
   const personaName = persona.charAt(0).toUpperCase() + persona.slice(1)
 
@@ -342,7 +357,7 @@ export function assessmentResultEmail(args: {
     </td></tr>
 
     <tr><td style="padding:32px;background:#111520;border:1px solid #1a1f2e;border-top:none;border-radius:0 0 16px 16px;text-align:center;">
-      <a href="${escape(applyUrl)}" style="display:inline-block;padding:14px 28px;background:#00d4aa;color:#0a0d14;text-decoration:none;border-radius:10px;font-weight:600;font-size:15px;">${escape(lab.cta)}</a>
+      <a href="${escape(applyUrl)}" style="display:inline-block;padding:14px 28px;background:#00d4aa;color:#0a0d14;text-decoration:none;border-radius:10px;font-weight:600;font-size:15px;">${escape(personaCta)}</a>
       <p style="margin:20px 0 0;font-size:12px;color:#8C98AD;">${escape(lab.footnote)}</p>
     </td></tr>
   </table>

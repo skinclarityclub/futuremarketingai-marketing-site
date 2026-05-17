@@ -2726,16 +2726,16 @@
         }
       },
       "q3": {
-        "text": "Welke meetbare uitkomsten verbind je aan AI-inzet?",
+        "text": "Hoe meet je AI-impact op jullie eigen marges?",
         "options": {
-          "a": "Geen, we tracken het niet",
-          "b": "We voelen productiviteitswinst, maar tellen het niet",
-          "c": "Per team meten we tijdsbesparing of output-volume",
-          "d": "AI-bijdrage zit in onze P&L en in klant-rapportages"
+          "a": "We meten dit niet",
+          "b": "We voelen marge-winst, maar tellen het niet",
+          "c": "Per project of klant berekenen we AI-tijdsbesparing",
+          "d": "AI-bijdrage zit in onze pricing-strategie en marge-rapportages"
         }
       },
       "q4": {
-        "text": "Wij hebben een geschreven AI-beleid dat in lijn is met de EU AI Act en de AVG voor onze klant-merken.",
+        "text": "Wij hebben vastgesteld welke AI-tools veilig zijn voor klantdata en onze IP-aansprakelijkheid.",
         "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
       },
       "q5": {
@@ -2797,8 +2797,13 @@
         }
       },
       "q12": {
-        "text": "Wij kunnen binnen een week een nieuw AI-model of -tool in onze productie-workflow integreren.",
-        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+        "text": "Hoe snel kunnen jullie een nieuwe AI-tool live krijgen in productie?",
+        "options": {
+          "a": "Maanden, als het al lukt",
+          "b": "Weken, met handmatig integratiewerk",
+          "c": "Dagen, via onze vaste workflow",
+          "d": "Direct via API in onze bestaande stack"
+        }
       },
       "q13": {
         "text": "Hoeveel medewerkers gebruiken AI minstens wekelijks voor werk?",
@@ -2810,16 +2815,16 @@
         }
       },
       "q14": {
-        "text": "Hebben jullie een geschreven AI-beleid (welke tools, welke data, welke disclosure naar klanten)?",
+        "text": "Wie bepaalt welke klantdata in AI-tools mag?",
         "options": {
-          "a": "Nee, niet aanwezig",
-          "b": "Mondelinge afspraken, niets op papier",
-          "c": "Ja, opgesteld en geaccordeerd door team of OR",
-          "d": "Ja, elk kwartaal geüpdatet met audit-trail"
+          "a": "Niemand expliciet, medewerkers beslissen zelf",
+          "b": "De projectlead beslist case-by-case",
+          "c": "Eén persoon (founder of lead) keurt vooraf goed",
+          "d": "Gedocumenteerde approval-flow met audit-trail per klant"
         }
       },
       "q15": {
-        "text": "Onze klanten weten welke onderdelen van hun campagne AI-gestuurd zijn (transparantie EU AI Act art. 50).",
+        "text": "Onze klanten weten welke onderdelen van hun campagne AI-gestuurd zijn.",
         "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
       },
       "q16": {
@@ -2828,7 +2833,7 @@
           "a": "Nooit, mensen leren zelf",
           "b": "Ad hoc, als er iets nieuws langskomt",
           "c": "Maandelijkse training of brown-bag-sessie",
-          "d": "Structureel curriculum plus AI-literacy per EU AI Act art. 4"
+          "d": "Structureel curriculum plus AI-literacy voor het hele team"
         }
       }
     },
@@ -2846,7 +2851,18 @@
       "operator": {
         "name": "Operator",
         "summary": "AI draait autonoom in je operatie. De volgende sprong zit in creatieve productie op schaal en cutting-edge formats die concurrenten niet hebben."
-      }
+      },
+      "scoresHeading": "Je scores per categorie",
+      "lowestHint": "Je grootste sprong zit hier",
+      "week1Heading": "Eerste stap deze week",
+      "week1": {
+        "explorer": "Stop met losse public-AI-tools per medewerker en kies één centraal startpunt. Begin met één workflow (bijvoorbeeld social posts) en maak hem systematisch.",
+        "builder": "Audit je pipelines: waar leeft data, waar lekken handoffs? Inventariseer welke cross-skill datadeling je vandaag al kunt activeren.",
+        "operator": "Audit vendor-afhankelijkheid. Lijst de 3 belangrijkste tools, check EU-hosting en documenteer exit-clausules per leverancier."
+      },
+      "skillsHeading": "Drie vaardigheden die het verschil maken",
+      "skillsHint": "Volledige uitleg en 4-week roadmap in je inbox",
+      "footerHint": "Vraag het volledige rapport aan voor scores in detail, weken 2-4 en uitleg per vaardigheid."
     },
     "emailGate": {
       "eyebrow": "Gratis rapport in je inbox",
@@ -2857,7 +2873,7 @@
       "bullet3": "Week-voor-week roadmap voor jouw persona",
       "emailLabel": "Werk-email",
       "emailPlaceholder": "daley@jouwbureau.nl",
-      "consent": "Ja, stuur me het rapport plus maandelijkse inzichten. Ik kan me op elk moment uitschrijven.",
+      "consent": "Ja, stuur me het rapport en maandelijkse inzichten. Mijn antwoorden worden 12 maanden bewaard om mijn aanbevelingen te onderbouwen. Ik kan me op elk moment uitschrijven.",
       "privacyLink": "Privacybeleid",
       "submit": "Stuur mijn actieplan",
       "submitting": "Verzenden...",

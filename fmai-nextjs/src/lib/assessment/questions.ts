@@ -27,7 +27,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -39,7 +39,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -51,7 +51,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -70,7 +70,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -82,7 +82,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -100,7 +100,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -113,7 +113,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -125,7 +125,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -137,7 +137,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -145,8 +145,14 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
   {
     id: 'q12',
     category: 'tools',
-    type: 'likert',
+    type: 'single',
     weight: 1,
+    options: [
+      { key: 'a', points: 0 },
+      { key: 'b', points: 2 },
+      { key: 'c', points: 3 },
+      { key: 'd', points: 4 },
+    ],
   },
   // ── Team & Governance ──────────────────────────────────────────────
   {
@@ -156,7 +162,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -168,7 +174,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],
@@ -186,7 +192,7 @@ export const ASSESSMENT_QUESTIONS: readonly AssessmentQuestion[] = [
     weight: 1,
     options: [
       { key: 'a', points: 0 },
-      { key: 'b', points: 1 },
+      { key: 'b', points: 2 },
       { key: 'c', points: 3 },
       { key: 'd', points: 4 },
     ],

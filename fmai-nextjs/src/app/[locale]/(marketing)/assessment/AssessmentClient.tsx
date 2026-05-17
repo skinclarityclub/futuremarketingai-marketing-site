@@ -10,6 +10,7 @@ import { ResultReveal } from '@/components/assessment/ResultReveal'
 import { AssessmentEmailGate } from '@/components/assessment/AssessmentEmailGate'
 import { AssessmentSuccess } from '@/components/assessment/AssessmentSuccess'
 import { ASSESSMENT_QUESTIONS, TOTAL_QUESTIONS } from '@/lib/assessment/questions'
+import { getRecommendedSkills } from '@/lib/assessment/skill-routing'
 import { useAssessment } from '@/lib/assessment/store'
 import type { AnswerValue } from '@/lib/assessment/types'
 
@@ -73,7 +74,8 @@ export function AssessmentClient() {
           {step === 'result' && result && (
             <ResultReveal
               key="result"
-              persona={result.persona}
+              result={result}
+              recommendedSkills={getRecommendedSkills(result.persona, result.lowestCategory)}
               emailGate={
                 <AssessmentEmailGate
                   persona={result.persona}
