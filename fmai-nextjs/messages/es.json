@@ -2869,22 +2869,14 @@
     }
   },
   "leadMagnet": {
-    "eyebrow": "Descarga gratuita",
-    "title": "Checklist de AI Readiness para agencias NL",
-    "subtitle": "20 preguntas, 4 categorías, 3 guías de acción. Descubre en 10 minutos qué pasos de AI puede dar tu agencia hoy.",
-    "bullet1": "Hoja de puntuación por categoría",
-    "bullet2": "Plan de acción en 3 niveles: Explorer, Builder, Operator",
-    "bullet3": "Escrito para agencias holandesas, no traducido",
-    "emailLabel": "Email de trabajo",
-    "emailPlaceholder": "daley@tuagencia.com",
-    "consentLabel": "Sí, envíame la checklist y los insights mensuales. Puedo cancelar la suscripción en cualquier momento.",
-    "privacyLink": "Política de privacidad",
-    "submit": "Envíame la checklist",
-    "submittingLabel": "Enviando...",
-    "successTitle": "Casi listo.",
-    "successBody": "Te hemos enviado un email de confirmación. Haz clic en el enlace para recibir la checklist.",
-    "errorTitle": "Algo salió mal.",
-    "errorBody": "Inténtalo de nuevo o escríbenos a hello@future-marketing.ai."
+    "eyebrow": "AI Readiness Scan gratis",
+    "title": "¿Qué tan madura en AI es tu agencia?",
+    "subtitle": "Haz el scan interactivo de 5 minutos. Descubre si eres Explorer, Builder u Operator y qué tres habilidades Clyde marcan la diferencia.",
+    "bullet1": "16 preguntas en 4 categorías",
+    "bullet2": "Persona resultante más puntuación por categoría",
+    "bullet3": "Tres habilidades Clyde recomendadas y roadmap de 4 semanas",
+    "cta": "Iniciar el scan",
+    "duration": "5 minutos, gratis, sin cuenta"
   },
   "newsletter": {
     "confirm": {

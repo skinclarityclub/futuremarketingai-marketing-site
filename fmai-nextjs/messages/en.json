@@ -2869,22 +2869,14 @@
     }
   },
   "leadMagnet": {
-    "eyebrow": "Free download",
-    "title": "NL Agency AI Readiness Checklist",
-    "subtitle": "20 questions, 4 categories, 3 action guides. Find out in 10 minutes which AI moves your agency can make today.",
-    "bullet1": "Scoring sheet per category",
-    "bullet2": "Three-tier action plan: Explorer, Builder, Operator",
-    "bullet3": "Written for Dutch agencies, not translated",
-    "emailLabel": "Work email",
-    "emailPlaceholder": "daley@youragency.com",
-    "consentLabel": "Yes, send me the checklist plus monthly insights. I can unsubscribe at any time.",
-    "privacyLink": "Privacy policy",
-    "submit": "Send the checklist",
-    "submittingLabel": "Sending...",
-    "successTitle": "Almost there.",
-    "successBody": "We sent you a confirmation email. Click the link to receive the checklist.",
-    "errorTitle": "Something went wrong.",
-    "errorBody": "Please try again or email us at hello@future-marketing.ai."
+    "eyebrow": "Free AI Readiness Scan",
+    "title": "How AI-mature is your agency?",
+    "subtitle": "Take the interactive 5-minute scan. Find out whether you are an Explorer, Builder or Operator and which three Clyde skills move the needle.",
+    "bullet1": "16 questions across 4 categories",
+    "bullet2": "Persona outcome plus score per category",
+    "bullet3": "Three recommended Clyde skills and a 4-week roadmap",
+    "cta": "Start the scan",
+    "duration": "5 minutes, free, no account needed"
   },
   "newsletter": {
     "confirm": {

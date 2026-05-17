@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence } from 'motion/react'
 import { AssessmentIntro } from '@/components/assessment/AssessmentIntro'
@@ -28,11 +29,32 @@ export function AssessmentClient() {
   const question = ASSESSMENT_QUESTIONS[currentIndex]
   const progressLabel = t('progress', { current: currentIndex + 1, total: TOTAL_QUESTIONS })
 
+  // Fire assessment_completed exactly once when result first appears.
+  const completedFired = useRef(false)
+  useEffect(() => {
+    if (step !== 'result' || !result || completedFired.current) return
+    completedFired.current = true
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'assessment_completed', {
+        persona: result.persona,
+        total_score: result.total,
+        lowest_category: result.lowestCategory,
+      })
+    }
+  }, [step, result])
+
+  function handleStart() {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'assessment_start')
+    }
+    start()
+  }
+
   return (
     <>
       <section className="px-6 py-16 pt-24 lg:px-12 lg:pt-[120px]">
         <AnimatePresence mode="wait">
-          {step === 'intro' && <AssessmentIntro key="intro" onStart={start} />}
+          {step === 'intro' && <AssessmentIntro key="intro" onStart={handleStart} />}
 
           {step === 'questions' && question && (
             <QuestionCard

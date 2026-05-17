@@ -2869,22 +2869,14 @@
     }
   },
   "leadMagnet": {
-    "eyebrow": "Gratis download",
-    "title": "NL Bureau AI Readiness Checklist",
-    "subtitle": "20 vragen, 4 categorieen, 3 actiegidsen. Ontdek in 10 minuten welke AI-stappen jouw bureau vandaag kan zetten.",
-    "bullet1": "Scoring-sheet per categorie",
-    "bullet2": "Actieplan op 3 niveaus: Explorer, Builder, Operator",
-    "bullet3": "Geschreven voor NL bureaus, niet vertaald",
-    "emailLabel": "Werk-email",
-    "emailPlaceholder": "daley@jouwbureau.nl",
-    "consentLabel": "Ja, stuur me de checklist plus maandelijkse inzichten. Ik kan me op elk moment uitschrijven.",
-    "privacyLink": "Privacybeleid",
-    "submit": "Stuur de checklist",
-    "submittingLabel": "Verzenden...",
-    "successTitle": "Bijna klaar.",
-    "successBody": "We hebben je een bevestigingsmail gestuurd. Klik op de link om de checklist te ontvangen.",
-    "errorTitle": "Er ging iets mis.",
-    "errorBody": "Probeer het opnieuw of mail ons op hello@future-marketing.ai."
+    "eyebrow": "Gratis AI Readiness Scan",
+    "title": "Hoe AI-volwassen is jouw bureau?",
+    "subtitle": "Doe de interactieve 5-minutenscan. Ontdek of je een Explorer, Builder of Operator bent en welke drie Clyde-vaardigheden het verschil maken.",
+    "bullet1": "16 vragen verspreid over 4 categorieen",
+    "bullet2": "Persona-uitkomst plus score per categorie",
+    "bullet3": "Drie aanbevolen Clyde-vaardigheden en 4-week roadmap",
+    "cta": "Start de scan",
+    "duration": "5 minuten, gratis, geen account nodig"
   },
   "newsletter": {
     "confirm": {
