@@ -19,7 +19,7 @@ export function AssessmentProgress({ current, total, label }: AssessmentProgress
       aria-valuemax={total}
       aria-valuenow={current}
       aria-label={label}
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-30 border-t border-border-primary/60 bg-bg-deep/85 px-6 py-3 backdrop-blur-md lg:px-12"
+      className="pointer-events-none fixed inset-x-0 top-16 z-30 border-b border-border-primary/60 bg-bg-deep/85 px-6 py-3 backdrop-blur-md lg:top-auto lg:bottom-[env(safe-area-inset-bottom,0px)] lg:border-b-0 lg:border-t lg:px-12"
     >
       <div className="mx-auto flex max-w-3xl items-center gap-4">
         <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/[0.04]">

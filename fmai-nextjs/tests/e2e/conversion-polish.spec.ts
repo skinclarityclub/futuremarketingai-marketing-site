@@ -26,9 +26,7 @@ test.describe('Conversion polish — P1-A trust anchors', () => {
 })
 
 test.describe('Conversion polish — P1-B LeadMagnetCTA badges', () => {
-  // The inline variant is only rendered on the homepage (/) — pricing,
-  // founding-member and blog all use variant="sidebar" which has no badges.
-  test('NL / inline LeadMagnetCTA shows free/5min/no-account badges on desktop', async ({ page }) => {
+  test('NL / inline LeadMagnetCTA shows all 3 badges on desktop', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/nl', { waitUntil: 'domcontentloaded' })
     const card = page.locator('aside').filter({ hasText: 'Gratis AI Readiness Scan' }).first()
@@ -44,6 +42,59 @@ test.describe('Conversion polish — P1-B LeadMagnetCTA badges', () => {
     const card = page.locator('aside').filter({ hasText: 'Free AI Readiness Scan' }).first()
     await expect(card.getByText('Free', { exact: true })).toBeVisible()
     await expect(card.getByText('No account', { exact: true })).toBeVisible()
+  })
+
+  // Sidebar variant on /pricing shows 2 pills only (free + fast), NO noAccount.
+  test('NL /pricing sidebar LeadMagnetCTA shows 2 badges, hides noAccount', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.goto('/nl/pricing', { waitUntil: 'domcontentloaded' })
+    const card = page.locator('aside').filter({ hasText: 'Gratis AI Readiness Scan' }).first()
+    await expect(card).toBeVisible()
+    await expect(card.getByText('Gratis', { exact: true })).toBeVisible()
+    await expect(card.getByText('5 min', { exact: true })).toBeVisible()
+    // Critical: noAccount pill is intentionally hidden on sidebar variant
+    await expect(card.getByText('Geen account', { exact: true })).toHaveCount(0)
+  })
+
+  test('EN /founding-member sidebar variant shows 2 badges only', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.goto('/en/founding-member', { waitUntil: 'domcontentloaded' })
+    const card = page.locator('aside').filter({ hasText: 'Free AI Readiness Scan' }).first()
+    await expect(card.getByText('Free', { exact: true })).toBeVisible()
+    await expect(card.getByText('5 min', { exact: true })).toBeVisible()
+    await expect(card.getByText('No account', { exact: true })).toHaveCount(0)
+  })
+})
+
+test.describe('Conversion polish — P1-E progress bar position', () => {
+  // Progress bar is only rendered while a question is active, not on the intro.
+  // We start the scan, pick the first option, then assert the bar's position.
+  async function startScan(page: import('@playwright/test').Page) {
+    await page.goto('/nl/assessment', { waitUntil: 'domcontentloaded' })
+    await page.getByRole('button', { name: 'Start de scan' }).click()
+    // Wait for the progressbar to appear (i.e. we're now in question mode)
+    await page.getByRole('progressbar').waitFor({ state: 'visible', timeout: 10000 })
+  }
+
+  test('mobile viewport (375px): progress bar fixed at top below header', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await startScan(page)
+    const bar = page.getByRole('progressbar')
+    const box = await bar.boundingBox()
+    expect(box, 'progress bar must have a bounding box').not.toBeNull()
+    // Under a 64px (h-16) site header — allow tolerance for backdrop blur padding
+    expect(box!.y).toBeGreaterThanOrEqual(60)
+    expect(box!.y).toBeLessThanOrEqual(90)
+  })
+
+  test('desktop viewport (1280px): progress bar stays at the bottom of the page', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await startScan(page)
+    const bar = page.getByRole('progressbar')
+    const box = await bar.boundingBox()
+    expect(box).not.toBeNull()
+    // Bottom-fixed: y should be in the lower half of the 800px viewport
+    expect(box!.y).toBeGreaterThan(600)
   })
 })
 
