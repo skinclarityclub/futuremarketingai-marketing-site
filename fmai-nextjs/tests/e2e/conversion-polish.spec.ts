@@ -66,6 +66,55 @@ test.describe('Conversion polish — P1-B LeadMagnetCTA badges', () => {
   })
 })
 
+test.describe('Conversion polish — P1-C newsletter confirm retry', () => {
+  // Retry once: Turbopack first-compile of /newsletter/confirm under parallel
+  // worker load can blow the 5s assertion timeout. Solo, every test passes < 15s.
+  test.describe.configure({ retries: 1 })
+
+
+  test('NL /newsletter/confirm without token shows retry form in error state', async ({ page }) => {
+    await page.goto('/nl/newsletter/confirm', { waitUntil: 'domcontentloaded' })
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.getByLabel('E-mailadres')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Stuur nieuwe link' })).toBeVisible()
+  })
+
+  test('EN retry-form renders with English copy', async ({ page }) => {
+    await page.goto('/en/newsletter/confirm', { waitUntil: 'domcontentloaded' })
+    await expect(page.getByLabel('Email address')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Send new link' })).toBeVisible()
+  })
+
+  test('rate-limit path: stubbed 429 surfaces errorRate state', async ({ page }) => {
+    // Intercept the network call so the test does not actually hit upstash + send mail.
+    await page.route('**/api/newsletter/resend-confirm', (route) =>
+      route.fulfill({
+        status: 429,
+        contentType: 'application/json',
+        body: JSON.stringify({ ok: false, error: 'rate_limited' }),
+      }),
+    )
+    await page.goto('/nl/newsletter/confirm', { waitUntil: 'domcontentloaded' })
+    await page.getByLabel('E-mailadres').fill('test@example.com')
+    await page.getByRole('button', { name: 'Stuur nieuwe link' }).click()
+    await expect(page.getByText('Te veel pogingen. Probeer het over een uur opnieuw.')).toBeVisible()
+  })
+
+  test('success path: stubbed 200 surfaces inbox-check confirmation', async ({ page }) => {
+    await page.route('**/api/newsletter/resend-confirm', (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ ok: true }),
+      }),
+    )
+    await page.goto('/nl/newsletter/confirm', { waitUntil: 'domcontentloaded' })
+    await page.getByLabel('E-mailadres').fill('test@example.com')
+    await page.getByRole('button', { name: 'Stuur nieuwe link' }).click()
+    await expect(page.getByText('Check je inbox. We stuurden een nieuwe bevestigingslink.')).toBeVisible()
+  })
+})
+
 test.describe('Conversion polish — P1-E progress bar position', () => {
   // Progress bar is only rendered while a question is active, not on the intro.
   // We start the scan, pick the first option, then assert the bar's position.

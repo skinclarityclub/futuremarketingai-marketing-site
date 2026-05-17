@@ -2916,9 +2916,21 @@
       "okBody": "Your AI Readiness Checklist is on its way to your inbox.",
       "alreadyTitle": "Your subscription was already confirmed.",
       "alreadyBody": "We sent the checklist earlier. Check your inbox or spam folder.",
-      "errorTitle": "Confirmation failed.",
-      "errorBody": "The token is invalid or expired. Subscribe again from the site.",
-      "backHome": "Back to home"
+      "errorTitle": "Link expired or invalid",
+      "errorBody": "This confirmation link no longer works. Enter your email to receive a fresh link.",
+      "backHome": "Back to home",
+      "error": {
+        "title": "Link expired or invalid",
+        "body": "This confirmation link no longer works. Enter your email to receive a fresh link."
+      },
+      "retry": {
+        "label": "Email address",
+        "placeholder": "you@agency.com",
+        "submit": "Send new link",
+        "success": "Check your inbox. We sent a new confirmation link.",
+        "errorRate": "Too many attempts. Try again in an hour.",
+        "errorGeneric": "Sending failed. Try again later or email hello@future-marketing.ai."
+      }
     }
   },
   "founding": {

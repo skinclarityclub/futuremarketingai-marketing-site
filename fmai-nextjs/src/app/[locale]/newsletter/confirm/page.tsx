@@ -17,19 +17,24 @@
  */
 import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { ConfirmRetryForm } from '@/components/newsletter/ConfirmRetryForm'
 
 type ConfirmState = 'pending' | 'ok' | 'already' | 'error'
 
 function NewsletterConfirmInner() {
   const t = useTranslations('newsletter.confirm')
+  const localeRaw = useLocale()
+  const locale: 'nl' | 'en' | 'es' =
+    localeRaw === 'en' || localeRaw === 'es' ? localeRaw : 'nl'
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
   const [state, setState] = useState<ConfirmState>(() => (token ? 'pending' : 'error'))
 
   useEffect(() => {
     if (!token) return
+    let cancelled = false
     fetch('/api/newsletter/confirm', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -37,15 +42,23 @@ function NewsletterConfirmInner() {
     })
       .then(async (res) => {
         const data = (await res.json().catch(() => ({}))) as { alreadyConfirmed?: boolean }
+        if (cancelled) return
         if (res.ok) {
           setState(data.alreadyConfirmed ? 'already' : 'ok')
         } else {
           setState('error')
         }
       })
-      .catch(() => setState('error'))
+      .catch(() => {
+        if (!cancelled) setState('error')
+      })
+    return () => {
+      cancelled = true
+    }
   }, [token])
 
+  // Error variant gets the retry form; success/already/pending get the home CTA.
+  // Pending state uses aria-live so screen readers announce the transition.
   return (
     <main className="max-w-xl mx-auto px-6 py-24 text-center">
       <h1 className="text-3xl font-semibold text-text-primary mb-4">
@@ -54,18 +67,33 @@ function NewsletterConfirmInner() {
         {state === 'already' && t('alreadyTitle')}
         {state === 'error' && t('errorTitle')}
       </h1>
-      <p className="text-text-secondary leading-relaxed mb-8">
+      <p
+        className="text-text-secondary leading-relaxed mb-8"
+        aria-live={state === 'pending' ? 'polite' : undefined}
+      >
         {state === 'pending' && t('pendingBody')}
         {state === 'ok' && t('okBody')}
         {state === 'already' && t('alreadyBody')}
         {state === 'error' && t('errorBody')}
       </p>
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-      >
-        {t('backHome')}
-      </Link>
+      {state === 'error' ? (
+        <div className="flex flex-col items-center gap-6">
+          <ConfirmRetryForm locale={locale} />
+          <Link
+            href="/"
+            className="text-sm text-text-muted underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          >
+            {t('backHome')}
+          </Link>
+        </div>
+      ) : (
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+        >
+          {t('backHome')}
+        </Link>
+      )}
     </main>
   )
 }

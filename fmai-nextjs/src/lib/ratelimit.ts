@@ -23,3 +23,16 @@ function createRateLimiter(prefix: string): Ratelimit {
 
 export const applyRateLimit: Ratelimit = createRateLimiter('apply')
 export const contactRateLimit: Ratelimit = createRateLimiter('contact')
+
+/**
+ * Newsletter resend-confirm has its own window: 3 requests per hour per IP.
+ * Tighter than the standard apply/contact 5-per-10-min because resending
+ * triggers an outbound Resend email (cost + bounce risk). Identifier is
+ * `sha256(ip + 'resend-confirm')` — see route.ts for the call site.
+ */
+export const newsletterResendRateLimit: Ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(3, '1 h'),
+  analytics: true,
+  prefix: 'fmai:ratelimit:newsletter-resend',
+})

@@ -2916,9 +2916,21 @@
       "okBody": "Tu Checklist de AI Readiness va camino a tu bandeja de entrada.",
       "alreadyTitle": "Tu suscripción ya estaba confirmada.",
       "alreadyBody": "Te enviamos la checklist antes. Revisa tu bandeja de entrada o la carpeta de spam.",
-      "errorTitle": "La confirmación falló.",
-      "errorBody": "El token no es válido o ha caducado. Vuelve a suscribirte desde la web.",
-      "backHome": "Volver al inicio"
+      "errorTitle": "Enlace caducado o no válido",
+      "errorBody": "Este enlace de confirmación ya no funciona. Introduce tu email para recibir uno nuevo.",
+      "backHome": "Volver al inicio",
+      "error": {
+        "title": "Enlace caducado o no válido",
+        "body": "Este enlace de confirmación ya no funciona. Introduce tu email para recibir uno nuevo."
+      },
+      "retry": {
+        "label": "Correo electrónico",
+        "placeholder": "tu@agencia.com",
+        "submit": "Enviar nuevo enlace",
+        "success": "Revisa tu bandeja de entrada. Te enviamos un nuevo enlace de confirmación.",
+        "errorRate": "Demasiados intentos. Inténtalo de nuevo en una hora.",
+        "errorGeneric": "No se pudo enviar. Inténtalo más tarde o escribe a hello@future-marketing.ai."
+      }
     }
   },
   "founding": {

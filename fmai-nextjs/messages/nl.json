@@ -2916,9 +2916,21 @@
       "okBody": "Je AI Readiness Checklist is onderweg naar je inbox.",
       "alreadyTitle": "Je aanmelding stond al bevestigd.",
       "alreadyBody": "De checklist hebben we eerder al verzonden. Check je inbox of spam.",
-      "errorTitle": "Bevestigen ging mis.",
-      "errorBody": "De token is ongeldig of verlopen. Meld je opnieuw aan vanaf de site.",
-      "backHome": "Terug naar home"
+      "errorTitle": "Link verlopen of ongeldig",
+      "errorBody": "Deze bevestigingslink werkt niet meer. Vul je e-mailadres in om een nieuwe link te ontvangen.",
+      "backHome": "Terug naar home",
+      "error": {
+        "title": "Link verlopen of ongeldig",
+        "body": "Deze bevestigingslink werkt niet meer. Vul je e-mailadres in om een nieuwe link te ontvangen."
+      },
+      "retry": {
+        "label": "E-mailadres",
+        "placeholder": "jij@bureau.nl",
+        "submit": "Stuur nieuwe link",
+        "success": "Check je inbox. We stuurden een nieuwe bevestigingslink.",
+        "errorRate": "Te veel pogingen. Probeer het over een uur opnieuw.",
+        "errorGeneric": "Versturen lukte niet. Probeer het straks opnieuw of mail hello@future-marketing.ai."
+      }
     }
   },
   "founding": {
