@@ -2849,7 +2849,23 @@
       }
     },
     "emailGate": {
-      "placeholder": "Wave 3 plaatst hier het email-capture-formulier voor het volledige actieplan."
+      "eyebrow": "Gratis rapport in je inbox",
+      "title": "Krijg je volledige actieplan",
+      "subtitle": "Per categorie scores, drie aanbevolen Clyde-vaardigheden en je 4-week roadmap. Direct in je inbox.",
+      "bullet1": "Score per categorie (Strategie, Data, Tools, Team)",
+      "bullet2": "Drie aanbevolen Clyde-vaardigheden voor jouw zwakste categorie",
+      "bullet3": "Week-voor-week roadmap voor jouw persona",
+      "emailLabel": "Werk-email",
+      "emailPlaceholder": "daley@jouwbureau.nl",
+      "consent": "Ja, stuur me het rapport plus maandelijkse inzichten. Ik kan me op elk moment uitschrijven.",
+      "privacyLink": "Privacybeleid",
+      "submit": "Stuur mijn actieplan",
+      "submitting": "Verzenden...",
+      "error": "Er ging iets mis. Probeer het opnieuw of mail ons op hello@future-marketing.ai."
+    },
+    "success": {
+      "title": "Bijna klaar.",
+      "body": "We hebben je een bevestigingsmail gestuurd. Klik op de link in die mail en je volledige actieplan komt direct binnen."
     }
   },
   "leadMagnet": {

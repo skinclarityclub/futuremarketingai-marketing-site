@@ -18,6 +18,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { supabaseAdmin } from '@/lib/supabase-admin'
+import { assessmentResultEmail } from '@/lib/email/assessment-templates'
+import { ASSESSMENT_CATEGORIES, ASSESSMENT_PERSONAS } from '@/lib/assessment/types'
+import type {
+  AssessmentCategory,
+  AssessmentPersona,
+  CategoryScores,
+} from '@/lib/assessment/types'
 
 const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder')
 
@@ -50,7 +57,9 @@ export async function POST(request: NextRequest) {
 
   const { data: row, error: selectError } = await supabaseAdmin
     .from('newsletter_consents')
-    .select('id, email, status, locale')
+    .select(
+      'id, email, status, locale, assessment_persona, assessment_scores, assessment_completed_at',
+    )
     .eq('token', token)
     .maybeSingle()
 
@@ -94,9 +103,58 @@ export async function POST(request: NextRequest) {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://future-marketing.ai'
-  const pdfUrl = `${siteUrl}/downloads/nl-bureau-ai-readiness-checklist.pdf`
   const fromAddr = process.env.APPLY_EMAIL_FROM ?? 'apply@future-marketing.ai'
 
+  // Branch: assessment confirmations get the personalised result mail
+  // (persona-card + 4 score-bars + 3 recommended skills + 4-week roadmap).
+  // Plain newsletter signups (no assessment data) get the legacy PDF link.
+  const hasAssessment =
+    row.assessment_persona !== null &&
+    row.assessment_persona !== undefined &&
+    row.assessment_scores !== null &&
+    row.assessment_scores !== undefined
+
+  if (hasAssessment) {
+    const persona = row.assessment_persona as AssessmentPersona
+    if (!ASSESSMENT_PERSONAS.includes(persona)) {
+      console.error('[newsletter/confirm] invalid persona on row', row.id, persona)
+      return NextResponse.json({ ok: true })
+    }
+    const scores = row.assessment_scores as CategoryScores & { total: number }
+    const lowestCategory = ASSESSMENT_CATEGORIES.reduce<AssessmentCategory>(
+      (acc, cat) => (scores[cat] < scores[acc] ? cat : acc),
+      ASSESSMENT_CATEGORIES[0],
+    )
+    const mail = assessmentResultEmail({
+      locale: row.locale as 'nl' | 'en' | 'es',
+      persona,
+      scores: {
+        strategy: scores.strategy,
+        data: scores.data,
+        tools: scores.tools,
+        team: scores.team,
+      },
+      total: scores.total,
+      lowestCategory,
+      siteUrl,
+    })
+    try {
+      const result = await resend.emails.send({
+        from: `FutureMarketingAI <${fromAddr}>`,
+        to: [row.email],
+        subject: mail.subject,
+        html: mail.html,
+      })
+      if (result.error) {
+        console.error('[newsletter/confirm] result mail returned error', result.error)
+      }
+    } catch (err) {
+      console.error('[newsletter/confirm] result mail threw', err)
+    }
+    return NextResponse.json({ ok: true })
+  }
+
+  const pdfUrl = `${siteUrl}/downloads/nl-bureau-ai-readiness-checklist.pdf`
   try {
     const result = await resend.emails.send({
       from: `FutureMarketingAI <${fromAddr}>`,

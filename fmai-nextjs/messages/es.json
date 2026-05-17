@@ -2849,7 +2849,23 @@
       }
     },
     "emailGate": {
-      "placeholder": "Wave 3 colocará aquí el formulario de captura de email para el plan de acción completo."
+      "eyebrow": "Informe gratis en tu bandeja",
+      "title": "Recibe tu plan de acción completo",
+      "subtitle": "Puntuación por categoría, tres habilidades Clyde recomendadas y tu roadmap de 4 semanas. Directo a tu bandeja.",
+      "bullet1": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
+      "bullet2": "Tres habilidades Clyde recomendadas para tu categoría más débil",
+      "bullet3": "Roadmap semana a semana para tu persona",
+      "emailLabel": "Email de trabajo",
+      "emailPlaceholder": "daley@tuagencia.com",
+      "consent": "Sí, envíame el informe más insights mensuales. Puedo darme de baja en cualquier momento.",
+      "privacyLink": "Política de privacidad",
+      "submit": "Enviar mi plan de acción",
+      "submitting": "Enviando...",
+      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos a hello@future-marketing.ai."
+    },
+    "success": {
+      "title": "Casi listo.",
+      "body": "Te hemos enviado un correo de confirmación. Haz clic en el enlace y tu plan de acción completo llega a tu bandeja."
     }
   },
   "leadMagnet": {

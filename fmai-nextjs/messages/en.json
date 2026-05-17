@@ -2849,7 +2849,23 @@
       }
     },
     "emailGate": {
-      "placeholder": "Wave 3 places the email-capture form for the full action plan here."
+      "eyebrow": "Free report in your inbox",
+      "title": "Get your full action plan",
+      "subtitle": "Score per category, three recommended Clyde skills and your 4-week roadmap. Straight to your inbox.",
+      "bullet1": "Score per category (Strategy, Data, Tools, Team)",
+      "bullet2": "Three recommended Clyde skills for your weakest category",
+      "bullet3": "Week-by-week roadmap for your persona",
+      "emailLabel": "Work email",
+      "emailPlaceholder": "daley@youragency.com",
+      "consent": "Yes, send me the report plus monthly insights. I can unsubscribe at any time.",
+      "privacyLink": "Privacy policy",
+      "submit": "Send my action plan",
+      "submitting": "Sending...",
+      "error": "Something went wrong. Try again or email us at hello@future-marketing.ai."
+    },
+    "success": {
+      "title": "Almost there.",
+      "body": "We've sent you a confirmation email. Click the link in that email and your full action plan lands in your inbox."
     }
   },
   "leadMagnet": {
