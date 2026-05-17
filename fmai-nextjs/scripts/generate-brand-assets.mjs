@@ -31,6 +31,39 @@ const COLORS = {
   textSecondary: '#9ba3b5',
 }
 
+// Synapse mark — shared between OG image + logo. Static (no animations).
+// Mirrors src/app/icon.svg + LogoSynapse component.
+//
+// Geometry uses a 32-unit grid; pass scale + offset to position it.
+function synapseGroup(scale = 1, ox = 0, oy = 0) {
+  // 32-grid points
+  const A = { x: 8, y: 8 } // top-left teal node
+  const B = { x: 16, y: 16 } // center hub
+  const C = { x: 24, y: 8 } // firing amber node
+  const D = { x: 22, y: 26 } // bottom-right teal node
+
+  const px = (p) => ox + p.x * scale
+  const py = (p) => oy + p.y * scale
+  const nr = 2.4 * scale
+  const haloR = 3.2 * scale
+  const lineW = 1 * scale
+  const fireW = 1.2 * scale
+
+  return `
+    <g stroke="${COLORS.accentSystem}" stroke-width="${lineW}" stroke-linecap="round" opacity="0.55">
+      <line x1="${px(A)}" y1="${py(A)}" x2="${px(B)}" y2="${py(B)}"/>
+      <line x1="${px(B)}" y1="${py(B)}" x2="${px(C)}" y2="${py(C)}"/>
+      <line x1="${px(B)}" y1="${py(B)}" x2="${px(D)}" y2="${py(D)}"/>
+    </g>
+    <line x1="${px(B)}" y1="${py(B)}" x2="${px(C)}" y2="${py(C)}"
+          stroke="${COLORS.accentHuman}" stroke-width="${fireW}" stroke-linecap="round"/>
+    <circle cx="${px(A)}" cy="${py(A)}" r="${nr}" fill="${COLORS.accentSystem}"/>
+    <circle cx="${px(B)}" cy="${py(B)}" r="${nr}" fill="${COLORS.accentSystem}"/>
+    <circle cx="${px(D)}" cy="${py(D)}" r="${nr}" fill="${COLORS.accentSystem}"/>
+    <circle cx="${px(C)}" cy="${py(C)}" r="${haloR}" fill="${COLORS.accentHuman}" opacity="0.32"/>
+    <circle cx="${px(C)}" cy="${py(C)}" r="${nr}" fill="${COLORS.accentHuman}"/>`
+}
+
 // ---------- og-image.png (1200x630) ----------
 
 const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -50,8 +83,11 @@ const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect width="1200" height="630" fill="${COLORS.bgDeep}" />
   <rect width="1200" height="630" fill="url(#glow)" />
 
-  <!-- Top-left wordmark -->
-  <text x="64" y="98"
+  <!-- Synapse mark top-left (scale 2.6 → ~83px viewport at 32-grid) -->
+  ${synapseGroup(2.6, 50, 50)}
+
+  <!-- Wordmark next to mark -->
+  <text x="180" y="103"
         font-family="JetBrains Mono, Menlo, Consolas, monospace"
         font-size="32"
         font-weight="500"
@@ -87,26 +123,12 @@ const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>`
 
 // ---------- logo.png (512x512) ----------
+// Large Synapse on transparent background — matches header + favicon.
+// 32-grid scaled by 14 → 448px content, centered with 32px padding all sides.
 
 const logoSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Transparent background, FMai mark in accent-system teal -->
-  <!-- Rounded square frame -->
-  <rect x="32" y="32" width="448" height="448" rx="80" ry="80"
-        fill="none"
-        stroke="${COLORS.accentSystem}"
-        stroke-width="12" />
-  <!-- "F" wordmark (geometric) -->
-  <g fill="${COLORS.accentSystem}">
-    <!-- Vertical bar -->
-    <rect x="156" y="128" width="48" height="256" />
-    <!-- Top horizontal bar -->
-    <rect x="156" y="128" width="200" height="48" />
-    <!-- Middle horizontal bar -->
-    <rect x="156" y="232" width="160" height="44" />
-  </g>
-  <!-- "M" mark counter-balance dot -->
-  <circle cx="376" cy="384" r="16" fill="${COLORS.accentSystem}" />
+  ${synapseGroup(14, 32, 32)}
 </svg>`
 
 async function generate() {

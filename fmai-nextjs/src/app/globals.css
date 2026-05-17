@@ -432,3 +432,211 @@ main:focus,
 main:focus-visible {
   outline: none;
 }
+
+/* ==========================================================================
+   Logo — wordmark shimmer + AI breathe + Living Orb (header + favicon)
+   Reduced-motion is already handled by the global rule above (line ~327).
+   ========================================================================== */
+
+/* Header wordmark — slow shimmer sweep across the silver part */
+@keyframes logo-shimmer-bg {
+  0%, 100% { background-position: 200% 50%; }
+  50%      { background-position: -100% 50%; }
+}
+.logo-shimmer-text {
+  background-image: linear-gradient(
+    90deg,
+    #e8ecf4 0%,
+    #e8ecf4 35%,
+    #ffffff 50%,
+    #e8ecf4 65%,
+    #e8ecf4 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: logo-shimmer-bg 6s ease-in-out infinite;
+}
+
+/* "AI" breathing glow (used in header text + SVG variant via tspan class) */
+@keyframes logo-ai-breathe {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 6px rgba(0, 212, 170, 0.55))
+      drop-shadow(0 0 14px rgba(0, 212, 170, 0.25));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 14px rgba(0, 212, 170, 0.95))
+      drop-shadow(0 0 30px rgba(0, 212, 170, 0.55));
+  }
+}
+.logo-ai-glow {
+  background-image: linear-gradient(135deg, #5eead4 0%, #00d4aa 50%, #0a8d72 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: logo-ai-breathe 5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* === Logo variant: F-mark (geometric F + glowing AI dot) =============== */
+@keyframes logo-fmark-dot-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.92; }
+  50%      { transform: scale(1.18); opacity: 1;    }
+}
+.logo-fmark-dot,
+.logo-fmark-dot-halo {
+  transform-origin: 24px 25px;
+  transform-box: view-box;
+  animation: logo-fmark-dot-pulse 2.4s ease-in-out infinite;
+}
+
+/* === Logo variant: Knot (figure-8 partnership) ========================= */
+@keyframes logo-knot-flow {
+  to { stroke-dashoffset: -160; }
+}
+.logo-knot-stroke {
+  stroke-dasharray: 80 160;
+  animation: logo-knot-flow 8s linear infinite;
+}
+@keyframes logo-knot-center {
+  0%, 100% { opacity: 0.55; transform: scale(1);   }
+  50%      { opacity: 1;    transform: scale(1.4); }
+}
+.logo-knot-center {
+  transform-origin: 20px 16px;
+  transform-box: view-box;
+  animation: logo-knot-center 3.2s ease-in-out infinite;
+}
+
+/* === Logo variant: Memory Stack (layered breathing) ==================== */
+@keyframes logo-mem-layer-breathe {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1;    }
+}
+.logo-mem-layer-1 {
+  animation: logo-mem-layer-breathe 3.6s ease-in-out infinite;
+}
+.logo-mem-layer-2 {
+  animation: logo-mem-layer-breathe 3.6s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+.logo-mem-layer-3 {
+  animation: logo-mem-layer-breathe 3.6s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+/* === V2 variants ======================================================= */
+
+/* Atlas — only the amber AI-cell breathes, all teal cells static. */
+@keyframes logo-atlas-accent {
+  0%, 100% { opacity: 0.92; }
+  50%      { opacity: 1;    }
+}
+.logo-atlas-accent {
+  animation: logo-atlas-accent 3s ease-in-out infinite;
+}
+
+/* Bracket — amber dot in negative space + soft halo. */
+@keyframes logo-bracket-dot {
+  0%, 100% { transform: scale(1);    opacity: 0.92; }
+  50%      { transform: scale(1.18); opacity: 1;    }
+}
+@keyframes logo-bracket-halo {
+  0%, 100% { transform: scale(1);   opacity: 0.28; }
+  50%      { transform: scale(1.4); opacity: 0.5;  }
+}
+.logo-bracket-dot {
+  transform-origin: 20px 26px;
+  transform-box: view-box;
+  animation: logo-bracket-dot 2.8s ease-in-out infinite;
+}
+.logo-bracket-halo {
+  transform-origin: 20px 26px;
+  transform-box: view-box;
+  animation: logo-bracket-halo 2.8s ease-in-out infinite;
+}
+
+/* Echo — top + bottom crescents shift 1px toward/away from each other. */
+@keyframes logo-echo-top {
+  0%, 100% { transform: translateY(0);   }
+  50%      { transform: translateY(0.8px); }
+}
+@keyframes logo-echo-bottom {
+  0%, 100% { transform: translateY(0);    }
+  50%      { transform: translateY(-0.8px); }
+}
+.logo-echo-top {
+  animation: logo-echo-top 4s ease-in-out infinite;
+}
+.logo-echo-bottom {
+  animation: logo-echo-bottom 4s ease-in-out infinite;
+}
+
+/* === V3 brain-suggestion variants ====================================== */
+
+/* Bicore — hemispheres breathe slightly apart and back together (4s). */
+@keyframes logo-bicore-left {
+  0%, 100% { transform: translateX(0);    }
+  50%      { transform: translateX(-0.4px); }
+}
+@keyframes logo-bicore-right {
+  0%, 100% { transform: translateX(0);   }
+  50%      { transform: translateX(0.4px); }
+}
+.logo-bicore-left {
+  animation: logo-bicore-left 4.5s ease-in-out infinite;
+}
+.logo-bicore-right {
+  animation: logo-bicore-right 4.5s ease-in-out infinite;
+}
+
+/* Synapse — firing line dashes + amber node + halo pulse together. */
+@keyframes logo-synapse-fire {
+  to { stroke-dashoffset: -32; }
+}
+.logo-synapse-fire {
+  stroke-dasharray: 4 16;
+  animation: logo-synapse-fire 1.8s linear infinite;
+}
+@keyframes logo-synapse-node {
+  0%, 100% { transform: scale(1);    opacity: 0.92; }
+  50%      { transform: scale(1.18); opacity: 1;    }
+}
+@keyframes logo-synapse-halo {
+  0%, 100% { transform: scale(1);   opacity: 0.28; }
+  50%      { transform: scale(1.4); opacity: 0.5;  }
+}
+.logo-synapse-node {
+  transform-origin: 24px 8px;
+  transform-box: view-box;
+  animation: logo-synapse-node 2.6s ease-in-out infinite;
+}
+.logo-synapse-halo {
+  transform-origin: 24px 8px;
+  transform-box: view-box;
+  animation: logo-synapse-halo 2.6s ease-in-out infinite;
+}
+
+/* Fold — dot breathes inside its basin enclosure. */
+@keyframes logo-fold-dot {
+  0%, 100% { transform: scale(1);    opacity: 0.92; }
+  50%      { transform: scale(1.15); opacity: 1;    }
+}
+@keyframes logo-fold-halo {
+  0%, 100% { transform: scale(1);   opacity: 0.28; }
+  50%      { transform: scale(1.35); opacity: 0.5;  }
+}
+.logo-fold-dot {
+  transform-origin: 14px 18px;
+  transform-box: view-box;
+  animation: logo-fold-dot 3s ease-in-out infinite;
+}
+.logo-fold-halo {
+  transform-origin: 14px 18px;
+  transform-box: view-box;
+  animation: logo-fold-halo 3s ease-in-out infinite;
+}
+

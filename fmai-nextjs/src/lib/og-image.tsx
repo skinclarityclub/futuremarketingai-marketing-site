@@ -4,6 +4,14 @@ export interface OgImageProps {
   label?: string
 }
 
+/*
+ * Dynamic OG template — per-locale styled text card.
+ * The Synapse mark lives in the static public/og-image.png (generated via
+ * scripts/generate-brand-assets.mjs) which metadata.ts uses as DEFAULT_OG_IMAGE.
+ * Inline SVG in Satori (next/og) is too brittle for line+circle primitives —
+ * "failed to pipe response" on non-trivial SVG children. We keep this route
+ * text-only and let the static asset carry brand identity.
+ */
 export function OgImageTemplate({
   title,
   description,

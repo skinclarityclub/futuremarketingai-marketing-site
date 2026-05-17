@@ -24,6 +24,7 @@ import {
   ArrowRight,
   Sparkles,
 } from 'lucide-react'
+import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface HeaderClientProps {
   locale: string
@@ -170,89 +171,20 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
         className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between"
         aria-label="Main navigation"
       >
-        {/* Logo — wordmark flanked by brain-circuit (left) and pulsing trace (right).
-            Pure SVG decorations + CSS keyframes; same brand language as the
-            full /brand strip on the homepage. */}
+        {/* Synapse logo — four nodes, one firing connection.
+            Brain reduced to a single firing fragment. Pure colors,
+            1px hairlines, designer-level neural minimum. */}
         <Link
           href="/"
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-2.5 group"
           aria-label="FutureMarketingAI home"
         >
-          {/* Brain-circuit mini (left) */}
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 28 28"
-            aria-hidden="true"
-            className="shrink-0 text-accent-system logo-header-brain"
-          >
-            <defs>
-              <filter id="hdr-brain-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="0.8" />
-              </filter>
-            </defs>
-            <g
-              stroke="currentColor"
-              strokeWidth="1.4"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              filter="url(#hdr-brain-glow)"
-            >
-              {/* Two brain halves */}
-              <path d="M 14 4 Q 6 4 4 11 Q 1 16 5 20 Q 7 25 14 23 L 14 4 Z" />
-              <path d="M 14 4 Q 22 4 24 11 Q 27 16 23 20 Q 21 25 14 23 L 14 4 Z" />
-              {/* Gyri folds (energy flows through these) */}
-              <path d="M 5 11 Q 8 9 11 11" stroke="#5eead4" className="logo-svg-brain-flow" />
-              <path d="M 17 11 Q 20 9 23 11" stroke="#5eead4" className="logo-svg-brain-flow-2" />
-              <path d="M 5 17 Q 8 15 11 17" stroke="#5eead4" className="logo-svg-brain-flow-3" />
-              <path d="M 17 17 Q 20 15 23 17" stroke="#5eead4" className="logo-svg-brain-flow" />
-              {/* Central fissure */}
-              <line x1="14" y1="4" x2="14" y2="23" strokeOpacity="0.55" />
-            </g>
-            {/* Synapse dot at top */}
-            <circle cx="14" cy="4" r="1.4" fill="#5eead4" className="logo-svg-spark" />
-            <circle cx="14" cy="14" r="1.2" fill="#5eead4" className="logo-svg-spark logo-svg-spark-2" />
-          </svg>
+          <LogoSynapse size={30} />
 
-          {/* Wordmark */}
           <span className="font-display font-bold text-xl tracking-tight whitespace-nowrap">
             <span className="logo-shimmer-text">FutureMarketing</span>
             <span className="logo-ai-glow">AI</span>
           </span>
-
-          {/* Circuit accent (right) — small trace ending in a pulsing/sparking node */}
-          <svg
-            width="34"
-            height="22"
-            viewBox="0 0 34 22"
-            aria-hidden="true"
-            className="shrink-0 hidden sm:block"
-          >
-            <defs>
-              <filter id="hdr-trace-glow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="1.2" />
-              </filter>
-            </defs>
-            <g stroke="#00d4aa" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.55">
-              <path d="M 0 11 H 14 L 18 5 H 30" />
-              <path d="M 0 11 H 14 L 18 17 H 30" />
-            </g>
-            {/* Energy pulse traveling along upper trace */}
-            <path
-              d="M 0 11 H 14 L 18 5 H 30"
-              stroke="#5eead4"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              fill="none"
-              filter="url(#hdr-trace-glow)"
-              className="logo-header-circuit"
-            />
-            {/* Sparking end-nodes */}
-            <circle cx="30" cy="5" r="2.2" fill="#00d4aa" className="logo-svg-spark" filter="url(#hdr-trace-glow)" />
-            <circle cx="30" cy="17" r="2.2" fill="#00d4aa" className="logo-svg-spark logo-svg-spark-3" filter="url(#hdr-trace-glow)" />
-            <circle cx="18" cy="11" r="1.4" fill="#5eead4" className="logo-svg-spark logo-svg-spark-2" />
-          </svg>
         </Link>
 
         {/* Desktop Navigation */}
