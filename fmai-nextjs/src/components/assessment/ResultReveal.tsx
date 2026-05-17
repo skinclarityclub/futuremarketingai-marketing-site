@@ -40,7 +40,7 @@ interface ResultRevealProps {
 const PERSONA_GRADIENT: Record<AssessmentPersona, string> = {
   explorer: 'linear-gradient(135deg, #60a5fa 0%, #00d4aa 100%)',
   builder: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)',
-  operator: 'linear-gradient(135deg, #f5a623 0%, #ef4444 60%, #a855f7 100%)',
+  operator: 'linear-gradient(135deg, #f5a623 0%, #ef4444 100%)',
 }
 
 const SKILL_ICONS: Record<string, LucideIcon> = {

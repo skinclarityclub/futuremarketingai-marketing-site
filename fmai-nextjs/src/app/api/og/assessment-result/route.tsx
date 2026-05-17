@@ -33,7 +33,7 @@ const PERSONA_NAMES: Record<'e' | 'b' | 'o', string> = {
 const PERSONA_GRADIENTS: Record<'e' | 'b' | 'o', string> = {
   e: 'linear-gradient(135deg, #60a5fa 0%, #00d4aa 100%)',
   b: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)',
-  o: 'linear-gradient(135deg, #f5a623 0%, #ef4444 60%, #a855f7 100%)',
+  o: 'linear-gradient(135deg, #f5a623 0%, #ef4444 100%)',
 }
 
 const CATEGORY_LABELS = [
