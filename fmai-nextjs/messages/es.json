@@ -2676,6 +2676,182 @@
       "demoLimitCta": "Agenda una llamada para continuar."
     }
   },
+  "assessment": {
+    "meta": {
+      "title": "AI Readiness Scan para agencias | FutureMarketingAI",
+      "description": "16 preguntas, 5 minutos. Descubre si tu agencia es Explorer, Builder u Operator y qué 3 habilidades de Clyde marcan la diferencia."
+    },
+    "breadcrumb": "Scan",
+    "intro": {
+      "eyebrow": "AI Readiness Scan",
+      "titleLead": "¿Qué tan madura en AI es",
+      "titleAccent": "tu agencia?",
+      "subtitle": "Dieciséis preguntas, cinco minutos. Termina con tu roadmap personal como Explorer, Builder u Operator.",
+      "bullets": {
+        "persona": "Tu persona en tres niveles",
+        "scores": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
+        "skills": "Tres habilidades Clyde recomendadas"
+      },
+      "start": "Iniciar el scan",
+      "duration": "5 minutos"
+    },
+    "categories": {
+      "strategy": "Estrategia y Visión",
+      "data": "Datos e Insights",
+      "tools": "Herramientas y Workflows",
+      "team": "Equipo y Governance"
+    },
+    "progress": "Pregunta {current} de {total}",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "finish": "Mostrar mi persona",
+    "autoAdvanceHint": "Haz clic para continuar",
+    "questions": {
+      "q1": {
+        "text": "¿Tienes una estrategia de AI escrita para tu agencia?",
+        "options": {
+          "a": "No, experimentamos ad hoc por empleado",
+          "b": "Planes verbales, nada por escrito",
+          "c": "Un plan escrito de 6 a 12 meses con responsables",
+          "d": "AI está integrada en nuestra estrategia con KPIs medibles"
+        }
+      },
+      "q2": {
+        "text": "¿Qué tan involucrado está el liderazgo en las decisiones de AI?",
+        "options": {
+          "a": "El liderazgo no sabe bien qué hacemos con AI",
+          "b": "Aprueban el presupuesto, por lo demás hands-off",
+          "c": "El liderazgo marca la dirección, los equipos ejecutan",
+          "d": "El liderazgo dirige activamente y lo posiciona públicamente"
+        }
+      },
+      "q3": {
+        "text": "¿Qué resultados medibles vinculas al uso de AI?",
+        "options": {
+          "a": "Ninguno, no lo medimos",
+          "b": "Sentimos productividad pero no la contamos",
+          "c": "Por equipo medimos tiempo ahorrado o volumen de output",
+          "d": "La contribución de AI está en nuestro P&L y en reportes al cliente"
+        }
+      },
+      "q4": {
+        "text": "Tenemos una política de AI escrita, alineada con el EU AI Act y el RGPD para nuestras marcas cliente.",
+        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+      },
+      "q5": {
+        "text": "¿Qué tan organizados están los datos de cliente y marca (activos, brand voice, KPIs)?",
+        "options": {
+          "a": "Dispersos en Drive, Notion y cabezas",
+          "b": "Una carpeta por cliente, llenada de forma inconsistente",
+          "c": "Centralizado en DAM o CMS, pero las herramientas AI no acceden directamente",
+          "d": "Por marca, una base de conocimiento que las herramientas AI leen directamente"
+        }
+      },
+      "q6": {
+        "text": "¿Cómo mides el rendimiento de contenido y campañas por cliente?",
+        "options": {
+          "a": "Reportes sueltos por plataforma, compilados manualmente",
+          "b": "Dashboard central con métricas básicas, updates manuales",
+          "c": "Dashboards automatizados más digest semanal",
+          "d": "Atribución cross-channel en tiempo real con alertas de anomalías"
+        }
+      },
+      "q7": {
+        "text": "Nuestros clientes reciben reportes donde los resultados AI y humanos son distinguibles.",
+        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+      },
+      "q8": {
+        "text": "¿Qué datos 1st-party usas estructuralmente como input para AI?",
+        "options": {
+          "a": "Ninguno, funcionamos con inspiración de contenido genérica",
+          "b": "Briefings de cliente, a veces un doc de marca",
+          "c": "Brand voice más docs de persona estructuralmente como input",
+          "d": "Datos de cliente, marca y rendimiento fluyen continuamente en pipelines"
+        }
+      },
+      "q9": {
+        "text": "¿Qué herramientas AI corren sistemáticamente en tu workflow?",
+        "options": {
+          "a": "Sobre todo ChatGPT, uso individual por empleado",
+          "b": "ChatGPT más 1 o 2 herramientas fijas, compartidas por el equipo",
+          "c": "Stack de 5+ herramientas AI, interconectadas",
+          "d": "Orquestador AI dirige varias herramientas por workflow autónomamente"
+        }
+      },
+      "q10": {
+        "text": "¿Qué tan profunda es la automatización en tu operación de contenido?",
+        "options": {
+          "a": "Manual, con ayuda AI en tareas sueltas",
+          "b": "Algunos flows de Zapier o Make corriendo",
+          "c": "Pipelines de briefing a publicación mayormente automáticos",
+          "d": "Content factory end-to-end corre autónomamente por marca"
+        }
+      },
+      "q11": {
+        "text": "¿Qué tan dependiente eres de un solo vendor de AI?",
+        "options": {
+          "a": "Totalmente, si ese vendor cae estamos parados",
+          "b": "90% un vendor con un backup",
+          "c": "Multi-vendor vía gateway, cambiar lleva días",
+          "d": "Stack vendor-agnostic, hosting EU, datos nuestros"
+        }
+      },
+      "q12": {
+        "text": "Podemos integrar un nuevo modelo o herramienta AI en nuestro workflow de producción en una semana.",
+        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+      },
+      "q13": {
+        "text": "¿Cuántos empleados usan AI al menos semanalmente para trabajo?",
+        "options": {
+          "a": "Unos pocos entusiastas",
+          "b": "Aproximadamente un cuarto del equipo",
+          "c": "Aproximadamente tres cuartos del equipo",
+          "d": "Todos, AI es parte estándar del workflow"
+        }
+      },
+      "q14": {
+        "text": "¿Tienen una política AI escrita (qué herramientas, qué datos, qué disclosure a clientes)?",
+        "options": {
+          "a": "No, no existe",
+          "b": "Acuerdos verbales, nada por escrito",
+          "c": "Sí, redactada y aprobada por el equipo o comité",
+          "d": "Sí, actualizada cada trimestre con audit trail"
+        }
+      },
+      "q15": {
+        "text": "Nuestros clientes saben qué partes de su campaña son AI-driven (transparencia EU AI Act art. 50).",
+        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+      },
+      "q16": {
+        "text": "¿Con qué frecuencia formas al equipo en nuevas habilidades AI?",
+        "options": {
+          "a": "Nunca, la gente aprende por su cuenta",
+          "b": "Ad hoc, cuando aparece algo nuevo",
+          "c": "Formación mensual o sesión brown-bag",
+          "d": "Currículo estructurado más AI literacy según EU AI Act art. 4"
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Tu resultado",
+      "preTitle": "Eres un",
+      "explorer": {
+        "name": "Explorer",
+        "summary": "Experimentas con AI, pero falta un sistema. El mayor salto está en un cerebro central que conoce cada marca y orquesta cada habilidad."
+      },
+      "builder": {
+        "name": "Builder",
+        "summary": "Workflows funcionando, listos para escalar. El mayor salto está en más marcas en la misma infraestructura con medición más profunda."
+      },
+      "operator": {
+        "name": "Operator",
+        "summary": "AI corre autónomamente en tu operación. El siguiente salto es producción creativa a escala y formatos cutting-edge que tus competidores no tienen."
+      }
+    },
+    "emailGate": {
+      "placeholder": "Wave 3 colocará aquí el formulario de captura de email para el plan de acción completo."
+    }
+  },
   "leadMagnet": {
     "eyebrow": "Descarga gratuita",
     "title": "Checklist de AI Readiness para agencias NL",

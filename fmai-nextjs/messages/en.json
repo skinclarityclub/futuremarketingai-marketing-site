@@ -2676,6 +2676,182 @@
       "demoLimitCta": "Book a call to continue the conversation."
     }
   },
+  "assessment": {
+    "meta": {
+      "title": "AI Readiness Scan for agencies | FutureMarketingAI",
+      "description": "16 questions, 5 minutes. Find out whether your agency is an Explorer, Builder or Operator and which 3 Clyde skills move the needle."
+    },
+    "breadcrumb": "Scan",
+    "intro": {
+      "eyebrow": "AI Readiness Scan",
+      "titleLead": "How AI-mature is",
+      "titleAccent": "your agency?",
+      "subtitle": "Sixteen questions, five minutes. Ends with your personal roadmap as Explorer, Builder or Operator.",
+      "bullets": {
+        "persona": "Your persona across three levels",
+        "scores": "Score per category (Strategy, Data, Tools, Team)",
+        "skills": "Three recommended Clyde skills"
+      },
+      "start": "Start the scan",
+      "duration": "5 minutes"
+    },
+    "categories": {
+      "strategy": "Strategy & Vision",
+      "data": "Data & Insights",
+      "tools": "Tools & Workflows",
+      "team": "Team & Governance"
+    },
+    "progress": "Question {current} of {total}",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Show my persona",
+    "autoAdvanceHint": "Click to continue",
+    "questions": {
+      "q1": {
+        "text": "Have you written down an AI strategy for your agency?",
+        "options": {
+          "a": "No, we experiment ad hoc per employee",
+          "b": "Verbal plans, nothing on paper yet",
+          "c": "A written 6 to 12 month plan with owners",
+          "d": "AI is part of our agency strategy with measurable KPIs"
+        }
+      },
+      "q2": {
+        "text": "How involved is leadership in AI decisions?",
+        "options": {
+          "a": "Leadership doesn't quite know what we do with AI",
+          "b": "Budget is approved, otherwise hands-off",
+          "c": "Leadership sets direction, teams execute",
+          "d": "Leadership actively steers and positions this publicly"
+        }
+      },
+      "q3": {
+        "text": "Which measurable outcomes do you tie to AI deployment?",
+        "options": {
+          "a": "None, we don't track it",
+          "b": "We feel productivity gains but don't count them",
+          "c": "Per team we measure time saved or output volume",
+          "d": "AI contribution lives in our P&L and client reports"
+        }
+      },
+      "q4": {
+        "text": "We have a written AI policy aligned with the EU AI Act and GDPR for our client brands.",
+        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+      },
+      "q5": {
+        "text": "How well organised is your client and brand data (assets, brand voice, KPIs)?",
+        "options": {
+          "a": "Scattered across Drive, Notion and people's heads",
+          "b": "One folder per client, inconsistently filled",
+          "c": "Centralised in DAM or CMS, but AI tools can't access it directly",
+          "d": "Per brand, a knowledge base that AI tools read directly"
+        }
+      },
+      "q6": {
+        "text": "How do you measure content and campaign performance per client?",
+        "options": {
+          "a": "Per-platform reports, manually compiled",
+          "b": "Central dashboard with basic metrics, manual updates",
+          "c": "Automated dashboards plus weekly digest",
+          "d": "Real-time cross-channel attribution with anomaly alerts"
+        }
+      },
+      "q7": {
+        "text": "Our clients receive reports where AI-driven and human-driven outcomes are clearly distinguishable.",
+        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+      },
+      "q8": {
+        "text": "Which 1st-party data do you structurally feed into AI as input?",
+        "options": {
+          "a": "None, we run on generic content inspiration",
+          "b": "Client briefings, sometimes a brand doc",
+          "c": "Brand voice plus persona docs structurally as input",
+          "d": "Client data, brand and performance data flow continuously into pipelines"
+        }
+      },
+      "q9": {
+        "text": "Which AI tools run systematically in your workflow?",
+        "options": {
+          "a": "Mostly ChatGPT, individual use per employee",
+          "b": "ChatGPT plus 1 or 2 fixed tools, shared team-wide",
+          "c": "Stack of 5+ AI tools, interconnected",
+          "d": "AI orchestrator drives multiple tools per workflow autonomously"
+        }
+      },
+      "q10": {
+        "text": "How deep is automation in your content operation?",
+        "options": {
+          "a": "Manual, with AI help on isolated tasks",
+          "b": "A few Zapier or Make flows running",
+          "c": "Pipelines from brief to publish largely automated",
+          "d": "End-to-end content factory runs autonomously per brand"
+        }
+      },
+      "q11": {
+        "text": "How dependent are you on a single AI vendor?",
+        "options": {
+          "a": "Fully, if that vendor is down we're stuck",
+          "b": "90% one vendor with one backup",
+          "c": "Multi-vendor through a gateway, switching is days",
+          "d": "Vendor-agnostic stack, EU hosting, our own data"
+        }
+      },
+      "q12": {
+        "text": "We can integrate a new AI model or tool into our production workflow within a week.",
+        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+      },
+      "q13": {
+        "text": "How many employees use AI at least weekly for work?",
+        "options": {
+          "a": "A few enthusiasts",
+          "b": "About a quarter of the team",
+          "c": "About three-quarters of the team",
+          "d": "Everyone, AI is a standard part of the workflow"
+        }
+      },
+      "q14": {
+        "text": "Do you have a written AI policy (which tools, which data, which disclosure to clients)?",
+        "options": {
+          "a": "No, not in place",
+          "b": "Verbal agreements, nothing on paper",
+          "c": "Yes, drafted and signed off by the team or works council",
+          "d": "Yes, updated quarterly with an audit trail"
+        }
+      },
+      "q15": {
+        "text": "Our clients know which parts of their campaign are AI-driven (EU AI Act art. 50 transparency).",
+        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+      },
+      "q16": {
+        "text": "How often do you train the team on new AI skills?",
+        "options": {
+          "a": "Never, people learn by themselves",
+          "b": "Ad hoc, when something new appears",
+          "c": "Monthly training or brown-bag session",
+          "d": "Structured curriculum plus AI literacy per EU AI Act art. 4"
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Your result",
+      "preTitle": "You are an",
+      "explorer": {
+        "name": "Explorer",
+        "summary": "You experiment with AI, but a system is missing. The biggest leap is one central brain that knows every brand and orchestrates every skill."
+      },
+      "builder": {
+        "name": "Builder",
+        "summary": "Working workflows, ready to scale. The biggest leap is more brands on the same infrastructure with deeper measurement."
+      },
+      "operator": {
+        "name": "Operator",
+        "summary": "AI runs autonomously in your operation. The next leap is creative production at scale and cutting-edge formats your competitors don't have."
+      }
+    },
+    "emailGate": {
+      "placeholder": "Wave 3 places the email-capture form for the full action plan here."
+    }
+  },
   "leadMagnet": {
     "eyebrow": "Free download",
     "title": "NL Agency AI Readiness Checklist",

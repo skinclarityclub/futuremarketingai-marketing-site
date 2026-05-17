@@ -2676,6 +2676,182 @@
       "demoLimitCta": "Plan een gesprek om verder te praten."
     }
   },
+  "assessment": {
+    "meta": {
+      "title": "AI Readiness Scan voor bureaus | FutureMarketingAI",
+      "description": "16 vragen, 5 minuten. Ontdek of je bureau Explorer, Builder of Operator is en welke 3 Clyde-vaardigheden het verschil maken."
+    },
+    "breadcrumb": "Scan",
+    "intro": {
+      "eyebrow": "AI Readiness Scan",
+      "titleLead": "Hoe AI-volwassen is",
+      "titleAccent": "jouw bureau?",
+      "subtitle": "Zestien vragen, vijf minuten. Eindigt met je persoonlijke roadmap als Explorer, Builder of Operator.",
+      "bullets": {
+        "persona": "Je persona uit drie niveaus",
+        "scores": "Score per categorie (Strategie, Data, Tools, Team)",
+        "skills": "Drie aanbevolen Clyde-vaardigheden"
+      },
+      "start": "Start de scan",
+      "duration": "5 minuten"
+    },
+    "categories": {
+      "strategy": "Strategie & Visie",
+      "data": "Data & Inzichten",
+      "tools": "Tools & Workflows",
+      "team": "Team & Governance"
+    },
+    "progress": "Vraag {current} van {total}",
+    "back": "Vorige",
+    "next": "Volgende",
+    "finish": "Toon mijn persona",
+    "autoAdvanceHint": "Klik om door te gaan",
+    "questions": {
+      "q1": {
+        "text": "Heb je een AI-strategie vastgelegd voor je bureau?",
+        "options": {
+          "a": "Nee, we experimenteren ad hoc per medewerker",
+          "b": "Mondelinge plannen, nog niets op papier",
+          "c": "Een geschreven 6- tot 12-maands plan met owners",
+          "d": "AI zit in onze bureau-strategie met meetbare KPI's"
+        }
+      },
+      "q2": {
+        "text": "Hoe betrokken is jullie leadership bij AI-beslissingen?",
+        "options": {
+          "a": "Leadership weet niet precies wat we doen met AI",
+          "b": "Budget wordt goedgekeurd, verder hands-off",
+          "c": "Leadership stelt richting, teams voeren uit",
+          "d": "Leadership stuurt actief en positioneert dit publiek"
+        }
+      },
+      "q3": {
+        "text": "Welke meetbare uitkomsten verbind je aan AI-inzet?",
+        "options": {
+          "a": "Geen, we tracken het niet",
+          "b": "We voelen productiviteitswinst, maar tellen het niet",
+          "c": "Per team meten we tijdsbesparing of output-volume",
+          "d": "AI-bijdrage zit in onze P&L en in klant-rapportages"
+        }
+      },
+      "q4": {
+        "text": "Wij hebben een geschreven AI-beleid dat in lijn is met de EU AI Act en de AVG voor onze klant-merken.",
+        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+      },
+      "q5": {
+        "text": "Hoe goed georganiseerd zijn jullie klant- en merk-data (assets, brand voice, KPI's)?",
+        "options": {
+          "a": "Versnipperd over Drive, Notion en hoofden",
+          "b": "Per klant een map, inconsistent gevuld",
+          "c": "Centraal in DAM of CMS, maar AI-tools kunnen er niet direct bij",
+          "d": "Per merk een kennisbank die AI-tools direct lezen"
+        }
+      },
+      "q6": {
+        "text": "Hoe meet je content- en campagne-prestaties per klant?",
+        "options": {
+          "a": "Losse rapportages per platform, handmatig samengesteld",
+          "b": "Centraal dashboard met basis-metrics, manuele updates",
+          "c": "Geautomatiseerde dashboards plus wekelijkse digest",
+          "d": "Real-time cross-channel attributie met anomaly alerts"
+        }
+      },
+      "q7": {
+        "text": "Onze klanten ontvangen rapportages waarin AI-uitkomsten en menselijke uitkomsten herkenbaar van elkaar zijn.",
+        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+      },
+      "q8": {
+        "text": "Welke 1st-party data verwerk je structureel als AI-input?",
+        "options": {
+          "a": "Geen, we draaien op generieke content-inspiratie",
+          "b": "Klant-briefings, soms een merk-doc",
+          "c": "Brand voice plus persona-docs structureel als input",
+          "d": "Klantdata, brand en performance-data continu in pipelines"
+        }
+      },
+      "q9": {
+        "text": "Welke AI-tools draaien systematisch in jullie workflow?",
+        "options": {
+          "a": "Vooral ChatGPT, individueel gebruik per medewerker",
+          "b": "ChatGPT plus 1 tot 2 vaste tools, teambreed gedeeld",
+          "c": "Stack van 5+ AI-tools, onderling gekoppeld",
+          "d": "AI-orchestrator stuurt meerdere tools per workflow autonoom"
+        }
+      },
+      "q10": {
+        "text": "Hoe diep is automatisering in jullie content-operatie?",
+        "options": {
+          "a": "Handmatig, met AI-hulp op losse taken",
+          "b": "Een paar Zapier of Make flows draaien",
+          "c": "Pipelines van briefing tot publicatie grotendeels automatisch",
+          "d": "End-to-end content factory draait autonoom per merk"
+        }
+      },
+      "q11": {
+        "text": "Hoe afhankelijk zijn jullie van één AI-vendor?",
+        "options": {
+          "a": "Volledig, als die vendor down is staan we stil",
+          "b": "90% één vendor met één backup",
+          "c": "Multi-vendor via gateway, switchen kan in dagen",
+          "d": "Vendor-agnostische stack, EU-hosting, data van ons"
+        }
+      },
+      "q12": {
+        "text": "Wij kunnen binnen een week een nieuw AI-model of -tool in onze productie-workflow integreren.",
+        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+      },
+      "q13": {
+        "text": "Hoeveel medewerkers gebruiken AI minstens wekelijks voor werk?",
+        "options": {
+          "a": "Een paar enthousiastelingen",
+          "b": "Ongeveer een kwart van het team",
+          "c": "Driekwart van het team",
+          "d": "Iedereen, AI is standaard onderdeel van de workflow"
+        }
+      },
+      "q14": {
+        "text": "Hebben jullie een geschreven AI-beleid (welke tools, welke data, welke disclosure naar klanten)?",
+        "options": {
+          "a": "Nee, niet aanwezig",
+          "b": "Mondelinge afspraken, niets op papier",
+          "c": "Ja, opgesteld en geaccordeerd door team of OR",
+          "d": "Ja, elk kwartaal geüpdatet met audit-trail"
+        }
+      },
+      "q15": {
+        "text": "Onze klanten weten welke onderdelen van hun campagne AI-gestuurd zijn (transparantie EU AI Act art. 50).",
+        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+      },
+      "q16": {
+        "text": "Hoe vaak train je het team op nieuwe AI-vaardigheden?",
+        "options": {
+          "a": "Nooit, mensen leren zelf",
+          "b": "Ad hoc, als er iets nieuws langskomt",
+          "c": "Maandelijkse training of brown-bag-sessie",
+          "d": "Structureel curriculum plus AI-literacy per EU AI Act art. 4"
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Je resultaat",
+      "preTitle": "Je bent een",
+      "explorer": {
+        "name": "Explorer",
+        "summary": "Je experimenteert met AI, maar mist nog een systeem. De grootste sprong zit in één centraal brein dat alle merken kent en alle skills aanstuurt."
+      },
+      "builder": {
+        "name": "Builder",
+        "summary": "Werkende workflows, klaar voor opschaling. De grootste sprong zit in meer merken op dezelfde infrastructuur, met diepere meting."
+      },
+      "operator": {
+        "name": "Operator",
+        "summary": "AI draait autonoom in je operatie. De volgende sprong zit in creatieve productie op schaal en cutting-edge formats die concurrenten niet hebben."
+      }
+    },
+    "emailGate": {
+      "placeholder": "Wave 3 plaatst hier het email-capture-formulier voor het volledige actieplan."
+    }
+  },
   "leadMagnet": {
     "eyebrow": "Gratis download",
     "title": "NL Bureau AI Readiness Checklist",

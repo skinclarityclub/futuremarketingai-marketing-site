@@ -29,6 +29,7 @@ export const GLOBAL_CLIENT_NAMESPACES = [
   // Phase 15 conversion-accelerator client islands
   'stickyCta', // StickyMobileCTA (mobile-only, all 15 routes via PageShell)
   'leadMagnet', // LeadMagnetCTA (home + pricing + founding-member + blog)
+  'assessment', // AssessmentClient (single route /assessment, but big payload — kept here vs route-scoped for simplicity)
 ] as const
 
 export type GlobalClientNamespace = (typeof GLOBAL_CLIENT_NAMESPACES)[number]
