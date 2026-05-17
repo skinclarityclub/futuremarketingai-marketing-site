@@ -22,6 +22,8 @@ const pages = [
   { path: '/skills/research', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills/clyde', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/founding-member', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/assessment', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/roadmap', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/how-it-works', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
