@@ -43,10 +43,26 @@ export function LeadMagnetCTA({ source, variant = 'inline' }: LeadMagnetCTAProps
   const container =
     variant === 'sidebar'
       ? 'rounded-xl border border-border-primary bg-white/[0.02] p-5'
-      : 'rounded-2xl border border-accent-system/30 bg-gradient-to-br from-white/[0.03] to-accent-system/[0.05] p-6 md:p-8'
+      : 'relative rounded-2xl border border-accent-system/30 bg-gradient-to-br from-white/[0.03] to-accent-system/[0.05] p-6 md:p-8'
 
   return (
     <aside className={container}>
+      {variant === 'inline' && (
+        <div
+          aria-hidden="true"
+          className="absolute right-3 top-3 hidden gap-1.5 sm:flex"
+        >
+          <span className="rounded-full border border-accent-system/30 bg-accent-system/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-system">
+            {t('badges.free')}
+          </span>
+          <span className="rounded-full border border-border-primary bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
+            {t('badges.fast')}
+          </span>
+          <span className="rounded-full border border-border-primary bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-text-secondary">
+            {t('badges.noAccount')}
+          </span>
+        </div>
+      )}
       <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-accent-system mb-2">
         <Sparkles className="h-4 w-4" />
         <span>{t('eyebrow')}</span>

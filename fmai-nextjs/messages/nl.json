@@ -917,8 +917,12 @@
             "title": "8. Internationale gegevensdoorgifte",
             "content": "Enkele van onze sub-verwerkers zijn gevestigd buiten de EU/EER, voornamelijk in de Verenigde Staten. Voor deze doorgiftes hanteren wij de volgende waarborgen: het EU-VS Data Privacy Framework (DPF) voor gecertificeerde Amerikaanse bedrijven (OpenAI, Anthropic, Vercel, Stripe), en Standard Contractual Clauses (SCC's) zoals goedgekeurd door de Europese Commissie waar DPF-certificering niet beschikbaar is. Waar mogelijk gebruiken wij EU-datacenterregio's om internationale doorgiftes te beperken. Wij volgen juridische ontwikkelingen rond internationale doorgiftes op de voet, inclusief eventuele uitdagingen van het DPF."
           },
+          "ai_readiness_assessment": {
+            "title": "9. AI Readiness Assessment",
+            "content": "Onze AI Readiness Scan op /assessment is een interactieve vragenlijst die uitmondt in een persona, scores en een aanbevolen roadmap. Wat wij verzamelen: e-mailadres (bij bevestigde aanmelding), je antwoorden op de zestien vragen, berekende scores en persona-toewijzing, een gehashte IP en user-agent voor rate-limiting en misbruikpreventie, en een tijdstempel van je consent. Doel: het rapport aan jou leveren, het scan-product verbeteren en (alleen bij expliciete opt-in) een nieuwsbrief over AI marketing sturen. Rechtsgrond: jouw toestemming (AVG art. 6 lid 1 sub a), vastgelegd via dubbele-opt-in. Bewaartermijn: antwoorden, scores en consent-records worden 12 maanden bewaard en daarna automatisch verwijderd. Verwerkers: Supabase (EU-regio) voor opslag, Resend voor e-mailbezorging, Vercel voor hosting. Jouw rechten: je kunt op elk moment intrekken, inzage of verwijdering verzoeken via privacy@future-marketing.ai. Wij reageren binnen 30 dagen."
+          },
           "contact": {
-            "title": "9. Contact en toezichthouder",
+            "title": "10. Contact en toezichthouder",
             "content": "Verwerkingsverantwoordelijke: Future Marketing AI, Nederland. Voor privacyvragen, verzoeken van betrokkenen of klachten: privacy@future-marketing.ai. Indien u van mening bent dat uw gegevensbeschermingsrechten zijn geschonden, heeft u het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens (AP) via autoriteitpersoonsgegevens.nl."
           }
         }
@@ -2692,6 +2696,11 @@
         "scores": "Score per categorie (Strategie, Data, Tools, Team)",
         "skills": "Drie aanbevolen Clyde-vaardigheden"
       },
+      "trust": {
+        "privacy": "Privacy-first, EU-gehost, geen tracking-cookies",
+        "validated": "Persona gevalideerd tegen 1 betalende klant",
+        "retention": "Antwoorden 12 maanden bewaard, dan verwijderd"
+      },
       "start": "Start de scan",
       "duration": "5 minuten"
     },
@@ -2892,7 +2901,12 @@
     "bullet2": "Persona-uitkomst plus score per categorie",
     "bullet3": "Drie aanbevolen Clyde-vaardigheden en 4-week roadmap",
     "cta": "Start de scan",
-    "duration": "5 minuten, gratis, geen account nodig"
+    "duration": "5 minuten, gratis, geen account nodig",
+    "badges": {
+      "free": "Gratis",
+      "fast": "5 min",
+      "noAccount": "Geen account"
+    }
   },
   "newsletter": {
     "confirm": {

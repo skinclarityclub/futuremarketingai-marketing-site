@@ -2,13 +2,19 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'motion/react'
-import { ArrowRight, Clock, Sparkles } from 'lucide-react'
+import { ArrowRight, Clock, Shield, Sparkles, UserCheck } from 'lucide-react'
 
 interface AssessmentIntroProps {
   onStart: () => void
 }
 
 const BULLET_KEYS = ['persona', 'scores', 'skills'] as const
+
+const TRUST_KEYS = [
+  { key: 'privacy', Icon: Shield },
+  { key: 'validated', Icon: UserCheck },
+  { key: 'retention', Icon: Clock },
+] as const
 
 export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
   const t = useTranslations('assessment.intro')
@@ -39,7 +45,7 @@ export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
         {t('subtitle')}
       </p>
 
-      <ul className="mx-auto mb-10 grid max-w-xl gap-3 text-left sm:grid-cols-3">
+      <ul className="mx-auto mb-8 grid max-w-xl gap-3 text-left sm:grid-cols-3">
         {BULLET_KEYS.map((key, i) => (
           <motion.li
             key={key}
@@ -55,6 +61,20 @@ export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
           </motion.li>
         ))}
       </ul>
+
+      <motion.ul
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.4 }}
+        className="mx-auto mb-10 flex max-w-2xl flex-col items-center justify-center gap-x-6 gap-y-2 text-xs text-text-muted sm:flex-row sm:flex-wrap"
+      >
+        {TRUST_KEYS.map(({ key, Icon }) => (
+          <li key={key} className="inline-flex items-center gap-1.5">
+            <Icon className="h-3.5 w-3.5 text-accent-system/70" aria-hidden="true" />
+            <span>{t(`trust.${key}`)}</span>
+          </li>
+        ))}
+      </motion.ul>
 
       <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <button

@@ -25,34 +25,6 @@ Quick recap so the new chat has context without scrolling git:
 
 ## Backlog (P1 first, then P2)
 
-### P1-A — Trust anchors on intro page
-
-**Why**: skeptical agency owner needs reassurance before committing 5 min. Currently the intro has hero + 3 deliverable bullets + start button — no social proof or trust signal.
-
-**Files**:
-- `fmai-nextjs/src/components/assessment/AssessmentIntro.tsx`
-- `fmai-nextjs/messages/{nl,en,es}.json` under `assessment.intro.trust.*`
-
-**Concrete fix**: below the 3 bullet cards (line ~52-67), before the start button, add a small row with 3 micro-trust-anchors:
-- "Privacy-first · EU-hosted · geen tracking-cookies"
-- "Persona gevalideerd tegen 1 betalende klant" (don't fake social proof; reflect actual state until you have more clients)
-- "Antwoorden 12 maanden bewaard, dan verwijderd"
-
-Style: small text-text-muted icons + label, no card chrome. Effort: 30 min.
-
-### P1-B — LeadMagnetCTA "Free / 5 min / no account" badge
-
-**Why**: holistic review flagged that the card competes too aggressively with the apply-CTA next to it on /pricing. A "free / fast / no commitment" badge would visually segment intent (low-friction try vs. high-touch apply).
-
-**File**: `fmai-nextjs/src/components/conversion/LeadMagnetCTA.tsx`
-
-**Concrete fix**: add a top-right corner badge to the inline variant (`variant === 'inline'`). Three small pills horizontal:
-- "Gratis" (accent-system tint)
-- "5 min"
-- "Geen account"
-
-Position: absolute top-3 right-3 inside the card. Effort: 15 min.
-
 ### P1-C — Newsletter/confirm page with retry flow
 
 **Why**: current `/api/newsletter/confirm` is a POST endpoint with no client-facing page that handles token-fail, Resend-bounce, or expired-link states gracefully. Users who click a stale link see a blank page.
@@ -95,14 +67,6 @@ Effort: 30 min once decided.
 **Files**: all `*.es.json` strings under `assessment.*`, `leadMagnet.*`, plus inline strings in `src/lib/email/assessment-templates.ts` PERSONA_SUMMARY/ROADMAP_STEPS/etc. for `es` locale.
 
 **Concrete fix**: outsource to a native speaker, OR re-run via an LLM with the prompt "Rewrite for LATAM agency vernacular, avoid gerunds where imperative is clearer, prefer 'descubre' over 'encuentra'." Effort: 1 hour with LLM pass + 30 min review.
-
-### P1-G — Privacy policy section update
-
-**Why**: consent text now explicitly mentions 12-month retention. The `/legal/privacy` page should have a corresponding "Assessment data lifecycle" section so a user clicking the privacy link actually finds the matching info.
-
-**File**: `fmai-nextjs/src/app/[locale]/(legal)/privacy/...` (verify path) and matching i18n.
-
-**Concrete fix**: add a section "AI Readiness Assessment" covering: what's collected (email, answers, ip-hash, user-agent), retention (12 months for answers + scores; consent record per AVG art. 7), shared with whom (Resend for email delivery, Supabase for storage), right to delete on request. Effort: 1.5 hours including i18n.
 
 ### P2-A — GTM-loader install + cookie-consent wiring
 
@@ -173,7 +137,7 @@ Three obvious experiments from the holistic review:
 
 If you want focused chats with clear deliverables:
 
-- **Chat 1 — Conversion polish**: P1-A (trust anchors) + P1-B (badge) + P1-G (privacy page). 3 hours total, all copy-driven, no decisions needed. Ships visible conversion lifts.
+- **Chat 1 — Conversion polish**: ~~P1-A (trust anchors) + P1-B (badge) + P1-G (privacy page)~~ — DONE 2026-05-17.
 - **Chat 2 — UX consistency call**: P1-D (auto-advance vs button) + P1-E (mobile progress) — wants a design call, then implementation.
 - **Chat 3 — Confirm-page hardening**: P1-C alone. Isolated, error-handling-focused, end-to-end test.
 - **Chat 4 — Tracking infrastructure**: P2-A (GTM loader). Cross-cutting infra change touching layout + consent banner; deserves its own session.

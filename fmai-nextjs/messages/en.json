@@ -917,8 +917,12 @@
             "title": "8. International data transfers",
             "content": "Some of our sub-processors are located outside the EU/EEA, mainly in the United States. For these transfers we rely on the following safeguards: the EU-US Data Privacy Framework (DPF) for certified US companies (OpenAI, Anthropic, Vercel, Stripe) and Standard Contractual Clauses (SCCs) approved by the European Commission where DPF certification is not available. Where possible we use EU data center regions to minimize international transfers. We closely follow legal developments around international transfers, including any challenges to the DPF."
           },
+          "ai_readiness_assessment": {
+            "title": "9. AI Readiness Assessment",
+            "content": "Our AI Readiness Scan at /assessment is an interactive questionnaire that produces a persona, scores and a recommended roadmap. What we collect: email address (upon confirmed sign-up), your answers to the sixteen questions, calculated scores and persona assignment, a hashed IP and user agent for rate limiting and abuse prevention, and a timestamp of your consent. Purpose: to deliver the report to you, improve the scan product and (only with explicit opt-in) send a newsletter about AI marketing. Legal basis: your consent (GDPR art. 6(1)(a)), captured via double opt-in. Retention: answers, scores and consent records are kept for 12 months and then automatically deleted. Processors: Supabase (EU region) for storage, Resend for email delivery, Vercel for hosting. Your rights: you can withdraw, request access or deletion at any time via privacy@future-marketing.ai. We respond within 30 days."
+          },
           "contact": {
-            "title": "9. Contact and supervisory authority",
+            "title": "10. Contact and supervisory authority",
             "content": "Data controller: Future Marketing AI, the Netherlands. For privacy inquiries, data subject requests or complaints: privacy@future-marketing.ai. If you believe your data protection rights have been violated, you have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens, AP) at autoriteitpersoonsgegevens.nl."
           }
         }
@@ -2692,6 +2696,11 @@
         "scores": "Score per category (Strategy, Data, Tools, Team)",
         "skills": "Three recommended Clyde skills"
       },
+      "trust": {
+        "privacy": "Privacy-first, EU-hosted, no tracking cookies",
+        "validated": "Persona validated against 1 paying client",
+        "retention": "Answers stored for 12 months, then deleted"
+      },
       "start": "Start the scan",
       "duration": "5 minutes"
     },
@@ -2892,7 +2901,12 @@
     "bullet2": "Persona outcome plus score per category",
     "bullet3": "Three recommended Clyde skills and a 4-week roadmap",
     "cta": "Start the scan",
-    "duration": "5 minutes, free, no account needed"
+    "duration": "5 minutes, free, no account needed",
+    "badges": {
+      "free": "Free",
+      "fast": "5 min",
+      "noAccount": "No account"
+    }
   },
   "newsletter": {
     "confirm": {

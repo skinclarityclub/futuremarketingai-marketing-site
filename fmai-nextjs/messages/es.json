@@ -917,8 +917,12 @@
             "title": "8. Transferencias internacionales de datos",
             "content": "Algunos de nuestros sub-encargados se encuentran ubicados fuera de la UE/EEE, principalmente en Estados Unidos. Para estas transferencias aplicamos las siguientes garantías: el Marco de Privacidad de Datos UE-EE. UU. (DPF) para empresas estadounidenses certificadas (OpenAI, Anthropic, Vercel, Stripe) y Cláusulas Contractuales Tipo (CCT) aprobadas por la Comisión Europea cuando no exista certificación DPF. Siempre que es posible, utilizamos regiones de centros de datos de la UE para reducir las transferencias internacionales. Seguimos de cerca la evolución legal en materia de transferencias internacionales, incluidas las posibles impugnaciones al DPF."
           },
+          "ai_readiness_assessment": {
+            "title": "9. AI Readiness Assessment",
+            "content": "Nuestro AI Readiness Scan en /assessment es un cuestionario interactivo que devuelve una persona, puntuaciones y un roadmap recomendado. Qué recopilamos: dirección de correo (tras la confirmación), tus respuestas a las dieciséis preguntas, las puntuaciones calculadas y la persona asignada, una IP y user-agent hasheados para limitar uso y prevenir abusos, y la marca temporal de tu consentimiento. Finalidad: entregarte el informe, mejorar el scan y (solo con opt-in explícito) enviarte un boletín sobre AI marketing. Base jurídica: tu consentimiento (RGPD art. 6.1.a), recogido mediante doble opt-in. Plazo de conservación: las respuestas, puntuaciones y registros de consentimiento se conservan 12 meses y luego se eliminan automáticamente. Encargados: Supabase (región UE) para almacenamiento, Resend para envío de correo y Vercel para hosting. Tus derechos: puedes retirar el consentimiento, solicitar acceso o supresión en cualquier momento en privacy@future-marketing.ai. Respondemos en un plazo de 30 días."
+          },
           "contact": {
-            "title": "9. Contacto y autoridad de control",
+            "title": "10. Contacto y autoridad de control",
             "content": "Responsable del tratamiento: Future Marketing AI, Países Bajos. Para consultas de privacidad, solicitudes del interesado o reclamaciones: privacy@future-marketing.ai. Si considera que sus derechos en materia de protección de datos han sido vulnerados, tiene derecho a presentar una reclamación ante la Autoridad Neerlandesa de Protección de Datos (Autoriteit Persoonsgegevens, AP) en autoriteitpersoonsgegevens.nl."
           }
         }
@@ -2692,6 +2696,11 @@
         "scores": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
         "skills": "Tres habilidades Clyde recomendadas"
       },
+      "trust": {
+        "privacy": "Privacidad primero, alojado en la UE, sin cookies de seguimiento",
+        "validated": "Persona validada con 1 cliente de pago",
+        "retention": "Respuestas guardadas 12 meses, luego eliminadas"
+      },
       "start": "Iniciar el scan",
       "duration": "5 minutos"
     },
@@ -2892,7 +2901,12 @@
     "bullet2": "Persona resultante más puntuación por categoría",
     "bullet3": "Tres habilidades Clyde recomendadas y roadmap de 4 semanas",
     "cta": "Iniciar el scan",
-    "duration": "5 minutos, gratis, sin cuenta"
+    "duration": "5 minutos, gratis, sin cuenta",
+    "badges": {
+      "free": "Gratis",
+      "fast": "5 min",
+      "noAccount": "Sin cuenta"
+    }
   },
   "newsletter": {
     "confirm": {
