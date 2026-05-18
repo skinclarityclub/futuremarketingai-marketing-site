@@ -28,7 +28,7 @@
       "voiceAgent": {
         "number": "02",
         "title": "Voice Agent",
-        "description": "Clyde neemt de telefoon op, boekt afspraken en beantwoordt veelgestelde vragen. 24/7, per merk."
+        "description": "Binnenkort: Clyde gaat de telefoon opnemen, afspraken boeken en veelgestelde vragen beantwoorden. 24/7, per merk."
       },
       "leadQualifier": {
         "number": "03",
@@ -43,7 +43,7 @@
       "adCreator": {
         "number": "04",
         "title": "Ad Creator",
-        "description": "Clyde maakt statische ads en video-ads voor Meta. A/B-varianten zijn direct publicatieklaar."
+        "description": "Binnenkort: Clyde gaat statische ads en video-ads voor Meta maken. A/B-varianten direct publicatieklaar."
       },
       "reporting": {
         "number": "05",
@@ -2886,7 +2886,7 @@
       "ctaHeadline": "Doe zelf de gratis 5-minutenscan en zie jouw persona.",
       "ctaButton": "Start de scan",
       "ctaHint": "5 minuten, gratis, geen account nodig",
-      "metaTitle": "{persona} — {total}/100 op de AI Readiness Scan",
+      "metaTitle": "{persona}: {total}/100 op de AI Readiness Scan",
       "metaDescription": "Persona en categoriescores van iemand die de 5-minutenscan deed. Doe zelf de scan op future-marketing.ai."
     },
     "emailGate": {
