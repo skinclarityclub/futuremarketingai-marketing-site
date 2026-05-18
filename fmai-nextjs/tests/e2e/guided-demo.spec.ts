@@ -7,9 +7,11 @@ import { test, expect, type Page } from '@playwright/test'
  * Tests demo entry points, scenario selection, orchestrator state, and UI.
  */
 
-// Helper: wait for the floating chat button (lazy-loaded)
+// Helper: wait for the floating chat button (lazy-loaded).
+// Placeholder uses "Open chat met Clyde"; hydrated widget uses "Open chat".
+// Prefix match covers both.
 async function waitForChatButton(page: Page) {
-  const btn = page.locator('button[aria-label="Open chat"]')
+  const btn = page.locator('button[aria-label^="Open chat"]').first()
   await expect(btn).toBeVisible({ timeout: 20000 })
   return btn
 }
@@ -218,7 +220,7 @@ test.describe('Guided Demo — End Demo Flow', () => {
     await expect(panel).not.toBeVisible({ timeout: 3000 })
 
     // Reopen — demo state should be preserved
-    const openBtn = page.locator('button[aria-label="Open chat"]')
+    const openBtn = page.locator('button[aria-label^="Open chat"]').first()
     await openBtn.click({ force: true })
     await expect(panel).toBeVisible({ timeout: 5000 })
 
