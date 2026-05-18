@@ -2,22 +2,22 @@
 phase: 16-design-seo-audit-v2-sota
 created: 2026-05-18
 last_updated: 2026-05-18
-status: pending
+status: in_progress
 total_plans: 16
-completed_plans: 0
+completed_plans: 1
 ---
 
 # Phase 16 State
 
 ## Current position
 
-Pending — wait for `/gsd:plan-phase 16 --prd .planning/phases/16-design-seo-audit-v2-sota/PRD.md --skip-research` to generate plan-XX-PLAN.md files, then `/gsd:execute-phase 16` to run autonomously.
+Wave 0 complete. Plan 16-01 (pre-audit intelligence) landed with 3 Gemini grounded calls plus 3 firecrawl-scrapes plus competitive-intel.md (2994 words, 7 sections, 25 SOTA markers, 10 open questions, 7 named competitors, 3 SOTA-reference sites). Next: Wave 1 plan 16-02 (setup plus capture infra) on a new `audit/2026-05-18-v2-sota` branch.
 
 ## Plans
 
 | Plan | Status | Wave | Started | Finished | Commit |
 |---|---|---|---|---|---|
-| 16-01 Pre-audit intelligence | pending | 1 | — | — | — |
+| 16-01 Pre-audit intelligence | completed | 1 | 2026-05-18T12:30:00Z | 2026-05-18T12:40:00Z | PENDING_COMMIT_SHA |
 | 16-02 Setup + capture infra | pending | 1 | — | — | — |
 | 16-03 Team 01 Visual Design | pending | 2 | — | — | — |
 | 16-04 Team 02 Brand/Narrative/IA | pending | 2 | — | — | — |
@@ -36,11 +36,11 @@ Pending — wait for `/gsd:plan-phase 16 --prd .planning/phases/16-design-seo-au
 
 ## Budget consumed
 
-- Gemini grounded calls: 0 / 100 (gratis tier 250 RPD)
-- Firecrawl calls: 0 / 80
+- Gemini grounded calls: 3 / 100 (gratis tier 250 RPD)
+- Firecrawl calls: 3 / 80
 - WebFetch calls: 0 / 50
-- Artifact disk: 0 GB / 3 GB
-- Wall-clock: 0h / 6h soft cap
+- Artifact disk: ~0.1 MB / 3 GB (tmp/ raw JSON plus 3 scraped MD)
+- Wall-clock: ~10min / 6h soft cap
 
 ## Skipped plans
 

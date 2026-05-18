@@ -1,0 +1,6 @@
+2026-05-18T12:31:10Z gemini-flash-grounded call 1 of 100 (query: "Top AI marketing agencies and AI agent-as-a-service platforms for Dutch and EU B2B SMBs in 2026...")
+2026-05-18T12:32:14Z gemini-flash-grounded call 2 of 100 (query: "Best-in-class SaaS marketing websites 2026 — landing page design patterns, conversion optimization...")
+2026-05-18T12:32:15Z gemini-flash-grounded call 3 of 100 (query: "Current state of GEO and LLMEO best practices 2026 — schemas, llms.txt patterns, AI-citation tactics...")
+2026-05-18T12:33:32Z firecrawl-scrape call 1 of 80 (url: https://stripe.com)
+2026-05-18T12:33:33Z firecrawl-scrape call 2 of 80 (url: https://linear.app)
+2026-05-18T12:33:34Z firecrawl-scrape call 3 of 80 (url: https://vercel.com)
