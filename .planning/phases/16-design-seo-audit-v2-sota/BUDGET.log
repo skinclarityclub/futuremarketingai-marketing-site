@@ -19,3 +19,5 @@
 2026-05-19T00:23:00Z lighthouse-skip: playwright-lighthouse calls chalk.yellow.italic() removed in chalk@5; all 60 lighthouse tests SKIP-logged (Rule 2). Wave 2 16-09 will use WebFetch PageSpeed Insights API.
 2026-05-19T00:23:00Z disk_usage test-results/audit-v2 = 791 MB
 2026-05-19T00:24:00Z gallery generated: 834 thumbnails in test-results/audit-v2/screenshots/index.html (target was 432, exceeded)
+2026-05-19T00:31:00Z wave-2 batch 2A start (3 parallel gsd-executor agents, plans 16-03 16-04 16-05)
+2026-05-19T01:03:00Z wave-2 batch 2A end (3/3 plans completed, commits c9d025e 84222a2 8c6302e, max wall-clock 33 min)

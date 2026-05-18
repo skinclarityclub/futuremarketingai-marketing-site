@@ -4,14 +4,14 @@ created: 2026-05-18
 last_updated: 2026-05-19
 status: in_progress
 total_plans: 16
-completed_plans: 2
+completed_plans: 5
 ---
 
 # Phase 16 State
 
 ## Current position
 
-Wave 1 complete. 16-01 landed competitive-intel.md (2994 words, 25 SOTA markers). 16-02 landed the capture infrastructure: branch `audit/2026-05-18-v2-sota`, 7 Playwright specs, dev-deps `@axe-core/playwright` + `playwright-lighthouse`, baseline snapshot doc (now 11 out-of-scope items), and the consolidated capture run produced 465 chromium PNGs, 183 webkit, 186 firefox, 93 axe JSONs, 93 HAR, 93 DOM, 0 lighthouse (chalk-v5 incompat with playwright-lighthouse; documented as item 9, Wave 2 16-09 uses PageSpeed Insights API per Rule 2). Gallery index lists 834 thumbnails. Next: Wave 2 (12 parallel audit teams 16-03..16-14).
+Wave 2 batch 2A complete (16-03, 16-04, 16-05). 16-03 visual-design (c9d025e): 27 findings P0=2 P1=9 P2=9 P3=7, headline finding is ScrollReveal+LazySection motion-wrapper pair leaving below-fold content invisible across 8 routes × 3 locales × 5 viewports. 16-04 brand+narrative+IA (84222a2): 28 findings P0=4 P1=7 P2=8 P3=9, P0s are 4 orphan vaardigheid pages, universal breadcrumb absence, `/skills/social-media` CTA glossary violation, home H2 hierarchy. 16-05 interactions (8c6302e): 27 findings P0=0 P1=8, real validation bug found in `ApplicationForm.tsx:38-49` (workspaces-field error fallthrough renders nameMin message). Next: Wave 2 batch 2B (16-06 SEO Technical, 16-07 GEO/LLMEO, 16-08 Accessibility).
 
 ## Plans
 
@@ -19,9 +19,9 @@ Wave 1 complete. 16-01 landed competitive-intel.md (2994 words, 25 SOTA markers)
 |---|---|---|---|---|---|
 | 16-01 Pre-audit intelligence | completed | 1 | 2026-05-18T12:30:00Z | 2026-05-18T12:40:00Z | a4d6b82 |
 | 16-02 Setup + capture infra | completed | 1 | 2026-05-18T18:30:00Z | 2026-05-19T00:23:00Z | 5a8af29 |
-| 16-03 Team 01 Visual Design | pending | 2 | — | — | — |
-| 16-04 Team 02 Brand/Narrative/IA | pending | 2 | — | — | — |
-| 16-05 Team 03 Interactions | pending | 2 | — | — | — |
+| 16-03 Team 01 Visual Design | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T00:49:00Z | c9d025e |
+| 16-04 Team 02 Brand/Narrative/IA | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T01:03:00Z | 84222a2 |
+| 16-05 Team 03 Interactions | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T00:59:00Z | 8c6302e |
 | 16-06 Team 04 SEO Technical | pending | 2 | — | — | — |
 | 16-07 Team 05 GEO/LLMEO | pending | 2 | — | — | — |
 | 16-08 Team 06 Accessibility | pending | 2 | — | — | — |
