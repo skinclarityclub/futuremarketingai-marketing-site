@@ -1106,7 +1106,7 @@
     "integrations": {
       "title": "Works together with",
       "subtitle": "Via the shared memory per brand.",
-      "integration1": "Voice Agent: chat leads can be followed up with a phone call.",
+      "integration1": "Voice Agent (coming soon): chat leads can be followed up with a phone call.",
       "integration2": "Email Management: follow-up emails to qualified leads.",
       "integration3": "Reporting: conversion funnel and cost-per-lead per source."
     },
@@ -1210,7 +1210,7 @@
       "title": "Works together with",
       "subtitle": "The Social Media skill shares context with other skills via the shared memory per brand.",
       "integration1": "Blog Factory: social posts derived from blog content.",
-      "integration2": "Ad Creator: the best-performing organic content becomes ad test material.",
+      "integration2": "Ad Creator (coming soon): the best-performing organic content becomes ad test material.",
       "integration3": "Reporting: social KPIs in the weekly performance digest."
     },
     "useCases": {
@@ -2043,7 +2043,7 @@
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Blog Factory: research data feeds the choice of blog topics.",
       "integration2": "Social Media: trend insights become content proposals.",
-      "integration3": "Ad Creator: competitor analysis improves your own ads."
+      "integration3": "Ad Creator (coming soon): competitor analysis improves your own ads."
     },
     "useCases": {
       "title": "Who this is for",
@@ -2537,7 +2537,7 @@
       "title": "Works together with",
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Social Media: Reels are published via the scheduler.",
-      "integration2": "Ad Creator: video ads can follow the Reel format.",
+      "integration2": "Ad Creator (coming soon): video ads can follow the Reel format.",
       "integration3": "Blog Factory: blogs can be summarized into a 60-second Reel."
     },
     "useCases": {

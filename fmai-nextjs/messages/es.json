@@ -1106,7 +1106,7 @@
     "integrations": {
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por marca.",
-      "integration1": "Voice Agent: los leads del chat se pueden seguir con una llamada.",
+      "integration1": "Voice Agent (próximamente): los leads del chat se pueden seguir con una llamada.",
       "integration2": "Email Management: correos de seguimiento a leads calificados.",
       "integration3": "Reporting: embudo de conversión y coste por lead por fuente."
     },
@@ -1210,7 +1210,7 @@
       "title": "Trabaja con",
       "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por marca.",
       "integration1": "Blog Factory: posts sociales derivados del contenido del blog.",
-      "integration2": "Ad Creator: el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
+      "integration2": "Ad Creator (próximamente): el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
       "integration3": "Reporting: KPIs sociales en el informe semanal de rendimiento."
     },
     "useCases": {
@@ -2043,7 +2043,7 @@
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Blog Factory: los datos de investigación alimentan la elección de temas de blog.",
       "integration2": "Social Media: los insights de tendencias se convierten en propuestas de contenido.",
-      "integration3": "Ad Creator: el análisis de competencia mejora tus propios anuncios."
+      "integration3": "Ad Creator (próximamente): el análisis de competencia mejora tus propios anuncios."
     },
     "useCases": {
       "title": "Para quién",
@@ -2537,7 +2537,7 @@
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Social Media: los Reels se publican vía programación.",
-      "integration2": "Ad Creator: los anuncios de video pueden seguir el formato Reel.",
+      "integration2": "Ad Creator (próximamente): los anuncios de video pueden seguir el formato Reel.",
       "integration3": "Blog Factory: los blogs se pueden resumir en un Reel de 60 segundos."
     },
     "useCases": {

@@ -1106,7 +1106,7 @@
     "integrations": {
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per merk.",
-      "integration1": "Voice Agent: chat-leads kunnen worden opgevolgd met een telefoongesprek.",
+      "integration1": "Voice Agent (binnenkort): chat-leads kunnen worden opgevolgd met een telefoongesprek.",
       "integration2": "Email Management: opvolgmails naar gekwalificeerde leads.",
       "integration3": "Rapportage: conversietrechter en kost-per-lead per bron."
     },
@@ -1210,7 +1210,7 @@
       "title": "Werkt samen met",
       "subtitle": "De Social Media-vaardigheid deelt context met andere vaardigheden via het gedeelde geheugen per merk.",
       "integration1": "Blog Factory: social posts afgeleid van blogcontent.",
-      "integration2": "Ad Creator: de best presterende organische content wordt advertentietestmateriaal.",
+      "integration2": "Ad Creator (binnenkort): de best presterende organische content wordt advertentietestmateriaal.",
       "integration3": "Rapportage: social-KPI's in de wekelijkse prestatie-digest."
     },
     "useCases": {
@@ -2043,7 +2043,7 @@
       "subtitle": "Via het gedeelde geheugen per merk.",
       "integration1": "Blog Factory: onderzoeksdata voedt de keuze van blogonderwerpen.",
       "integration2": "Social Media: trendinzichten worden contentvoorstellen.",
-      "integration3": "Ad Creator: concurrentie-analyse verbetert je eigen advertenties."
+      "integration3": "Ad Creator (binnenkort): concurrentie-analyse verbetert je eigen advertenties."
     },
     "useCases": {
       "title": "Voor wie",
@@ -2537,7 +2537,7 @@
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per merk.",
       "integration1": "Social Media: Reels worden via de inplanning gepubliceerd.",
-      "integration2": "Ad Creator: video-ads kunnen het Reel-formaat volgen.",
+      "integration2": "Ad Creator (binnenkort): video-ads kunnen het Reel-formaat volgen.",
       "integration3": "Blog Factory: blogs kunnen samengevat worden in een Reel van 60 seconden."
     },
     "useCases": {
