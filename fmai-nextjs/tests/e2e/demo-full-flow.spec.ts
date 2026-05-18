@@ -9,7 +9,15 @@ import { test, expect, type Page } from '@playwright/test'
  *
  * AI responses are non-deterministic, so tests include 1 retry.
  */
-test.describe.configure({ retries: 1 })
+// Skipped unless ANTHROPIC_API_KEY is set — these tests exercise the live
+// guided-demo with real AI streaming and are intentionally excluded from
+// local + CI default runs. To re-enable: ANTHROPIC_API_KEY=... npx playwright
+// test demo-full-flow.spec.ts
+test.describe.configure({ retries: 1, mode: 'serial' })
+test.skip(
+  !process.env.ANTHROPIC_API_KEY,
+  'demo-full-flow requires ANTHROPIC_API_KEY for real AI streaming',
+)
 
 const AI_RESPONSE_TIMEOUT = 60_000
 const STEP_TIMEOUT = 90_000
@@ -28,7 +36,7 @@ async function dismissCookieConsent(page: Page) {
 // Helper: open chat panel
 async function openChat(page: Page) {
   await dismissCookieConsent(page)
-  const btn = page.locator('button[aria-label="Open chat"]')
+  const btn = page.locator('button[aria-label^="Open chat"]').first()
   await expect(btn).toBeVisible({ timeout: 20_000 })
   await btn.click({ force: true })
   const panel = page.locator('[role="dialog"]')
