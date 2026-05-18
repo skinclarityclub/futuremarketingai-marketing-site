@@ -136,7 +136,7 @@
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
-          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Cross-skill learning is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
+          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
         }
       }
     },
@@ -1049,7 +1049,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Voice Agent?",
-          "answer": "Drie tot vier weken. Week 1 koppelt het nummer en bouwt de kennisbasis. Week 2 schaduwluistert Clyde echte gesprekken. Week 3 voert eerste live calls met menselijke fallback. Vanaf week 4 draait de skill autonoom met sample-review."
+          "answer": "Drie tot vier weken. Week 1 koppelt het nummer en bouwt de kennisbasis. Week 2 schaduwluistert Clyde echte gesprekken. Week 3 voert eerste live calls met menselijke fallback. Vanaf week 4 draait de vaardigheid autonoom met sample-review."
         },
         "q5": {
           "question": "Hoe verschilt dit van Vapi of Bland?",
@@ -1255,7 +1255,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Social Media Manager?",
-          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de skill autonoom met kortere goedkeuringscycli."
+          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de vaardigheid autonoom met kortere goedkeuringscycli."
         },
         "q5": {
           "question": "Hoe verschilt dit van Buffer of Later?",
@@ -1354,7 +1354,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Ad Creator?",
-          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de skill autonoom met kalibratie op CTR-, CPA- en ROAS-data uit Rapportage."
+          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de vaardigheid autonoom met kalibratie op CTR-, CPA- en ROAS-data uit Rapportage."
         },
         "q5": {
           "question": "Hoe verschilt dit van AdCreative of Pencil?",
@@ -2182,7 +2182,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Blog Factory?",
-          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de skill autonoom met sample-review per 5 artikelen."
+          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de vaardigheid autonoom met sample-review per 5 artikelen."
         },
         "q5": {
           "question": "Hoe verschilt dit van Jasper of SurferSEO?",
@@ -2285,7 +2285,7 @@
         },
         "q5": {
           "question": "Hoe verschilt dit van Ahrefs of Semrush?",
-          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op skill-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
+          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op vaardigheid-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
         }
       }
     }
@@ -2578,7 +2578,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Reel Builder?",
-          "answer": "Twee weken. Week 1 baseert Clyde de huisstijl op eerdere video's en design-richtlijnen (typo, kleur, beat). Week 2 produceert de eerste 2 Reels met handmatige goedkeuring per scene. Vanaf week 3 draait de skill autonoom met sample-review."
+          "answer": "Twee weken. Week 1 baseert Clyde de huisstijl op eerdere video's en design-richtlijnen (typo, kleur, beat). Week 2 produceert de eerste 2 Reels met handmatige goedkeuring per scene. Vanaf week 3 draait de vaardigheid autonoom met sample-review."
         },
         "q5": {
           "question": "Hoe verschilt dit van CapCut of Opus Clip?",
@@ -2866,7 +2866,7 @@
       "week1Heading": "Eerste stap deze week",
       "week1": {
         "explorer": "Stop met losse public-AI-tools per medewerker en kies één centraal startpunt. Begin met één workflow (bijvoorbeeld social posts) en maak hem systematisch.",
-        "builder": "Audit je pipelines: waar leeft data, waar lekken handoffs? Inventariseer welke cross-skill datadeling je vandaag al kunt activeren.",
+        "builder": "Audit je pipelines: waar leeft data, waar lekken handoffs? Inventariseer welke datadeling tussen vaardigheden je vandaag al kunt activeren.",
         "operator": "Audit vendor-afhankelijkheid. Lijst de 3 belangrijkste tools, check EU-hosting en documenteer exit-clausules per leverancier."
       },
       "skillsHeading": "Drie vaardigheden die het verschil maken",
@@ -2914,7 +2914,7 @@
     "eyebrow": "Gratis AI Readiness Scan",
     "title": "Hoe AI-volwassen is jouw bureau?",
     "subtitle": "Doe de interactieve 5-minutenscan. Ontdek of je een Explorer, Builder of Operator bent en welke drie Clyde-vaardigheden het verschil maken.",
-    "bullet1": "16 vragen verspreid over 4 categorieen",
+    "bullet1": "16 vragen verspreid over 4 categorieën",
     "bullet2": "Persona-uitkomst plus score per categorie",
     "bullet3": "Drie aanbevolen Clyde-vaardigheden en 4-week roadmap",
     "cta": "Start de scan",
