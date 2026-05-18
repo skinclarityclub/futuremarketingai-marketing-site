@@ -2,16 +2,16 @@
 phase: 16-design-seo-audit-v2-sota
 created: 2026-05-18
 last_updated: 2026-05-19
-status: in_progress
+status: complete
 total_plans: 16
-completed_plans: 14
+completed_plans: 16
 ---
 
 # Phase 16 State
 
 ## Current position
 
-Wave 2 complete (14/16 plans — Wave 1 + all 12 teams). All 4 batches landed. Newest headlines from batch 2D: 16-12 CRO (8a691ea) 27 findings P0=0 P1=9, expected +25-45% lift on /apply if P1s land; 16-13 security (8510a8f) 25 findings, CSP grade C, 3 npm vulns (next 16.1.7 high, next-intl moderate, icu-minify low), Phase 10/11/12 invariants hold; 16-14 competitive+cross-stack (95f9183) 25 findings P0=8 — biggest is chatbot/tool-data.ts CHATBOT_TIERS still carrying v9 flat pricing (2497/4497/7997) while SSoT moved to v10 workspace-priced 2026-04-28. Next: Wave 3 (16-15 cross-cutting synthesis) reads all 12 team docs and aggregates meta-findings; Wave 4 (16-16) triages to top-50 + builds 12-week roadmap.
+**PHASE 16 COMPLETE** (16/16 plans). All 4 waves landed. Wave 1: 16-01 competitive intel (a4d6b82) + 16-02 capture infra (5a8af29). Wave 2: 12 audit teams (c9d025e 84222a2 8c6302e d5fc048 afb3f23 071439f 9f24bf5 b95d62a b07cc16 8a691ea 8510a8f 95f9183). Wave 3: 16-15 synthesis (4c95d21) — 12 meta-findings + 12 theme clusters + 6 trade-off resolutions + 6 fix-plan phases A-F. Wave 4: 16-16 roadmap + exec summary (5aae4d3) — 299 findings synthesized, top-50 triaged, Phase B is the leverage move (~2h work resolves 15 of 22 P0s). Deliverables ready for Phase 17 execution: `docs/plans/2026-05-18-design-seo-audit-v2-fix-plan.md` + `docs/plans/2026-05-18-design-seo-roadmap-q3.md` + `docs/audits/2026-05-18-v2/00-executive-summary.md`. Gallery annotations deferred (P3 success criterion miss, gallery exists at `fmai-nextjs/test-results/audit-v2/screenshots/index.html`). Next: phase verification + ROADMAP.md update.
 
 ## Plans
 
@@ -31,8 +31,8 @@ Wave 2 complete (14/16 plans — Wave 1 + all 12 teams). All 4 batches landed. N
 | 16-12 Team 10 CRO/Psychology | completed | 2 | 2026-05-19T03:10:00Z | 2026-05-19T03:40:00Z | 8a691ea |
 | 16-13 Team 11 Security/Privacy | completed | 2 | 2026-05-19T03:10:00Z | 2026-05-19T03:37:00Z | 8510a8f |
 | 16-14 Team 12 Competitive/Stack | completed | 2 | 2026-05-19T03:10:00Z | 2026-05-19T03:40:00Z | 95f9183 |
-| 16-15 Cross-cutting synthesis | pending | 3 | — | — | — |
-| 16-16 Roadmap + bundling | pending | 4 | — | — | — |
+| 16-15 Cross-cutting synthesis | completed | 3 | 2026-05-19T03:45:00Z | 2026-05-19T04:21:00Z | 4c95d21 |
+| 16-16 Roadmap + bundling | completed | 4 | 2026-05-19T04:25:00Z | 2026-05-19T04:50:00Z | 5aae4d3 |
 
 ## Budget consumed
 
