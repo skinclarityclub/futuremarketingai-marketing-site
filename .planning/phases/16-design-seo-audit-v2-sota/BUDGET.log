@@ -43,3 +43,4 @@
 2026-05-19T19:47:00Z crux-api attempted 1 call with GEMINI_API_KEY (project 34000241058); HTTP 403 API_KEY_SERVICE_BLOCKED for chromeuxreport.googleapis.com. Pre-condition: project lacks api enablement. Documented in audit doc as Finding 2.
 2026-05-19T19:48:00Z har-inspection top-10 routes nl + home en + es (resource-count topology, 30 har files read)
 2026-05-19T19:55:00Z 16-09 perf audit doc written (~14500 words, 25 findings, CWV scorecard + LCP + bundle + third-party + image + KPI baseline)
+2026-05-19T19:58:00Z gemini-flash-grounded call 11 of 100 (query: 16-11 ES CTA cultural-fit verb check Reserva vs Agenda una llamada)
