@@ -39,7 +39,7 @@ Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2
 - [x] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle (completed 2026-04-26)
 - [x] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+ (completed 2026-04-27)
 - [x] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion (completed 2026-04-27)
-- [ ] **Phase 16: Design + SEO/GEO SOTA Audit v2** - Research-only autonomous audit on SOTA-level: 12 parallel teams (visual design, brand/IA, interactions, SEO, GEO/LLMEO, a11y, perf, cross-browser, content, CRO, security, competitive), 32 routes x 3 locales x 5 viewports x 3 engines, multi-LLM citation matrix, 12-week roadmap deliverable. Output: executive summary + 14 detailed findings docs + visual gallery + fix-plan + roadmap. NO code changes.
+- [x] **Phase 16: Design + SEO/GEO SOTA Audit v2** - Research-only autonomous audit on SOTA-level: 12 parallel teams (visual design, brand/IA, interactions, SEO, GEO/LLMEO, a11y, perf, cross-browser, content, CRO, security, competitive), 32 routes x 3 locales x 5 viewports x 3 engines, multi-LLM citation matrix, 12-week roadmap deliverable. Output: executive summary + 14 detailed findings docs + visual gallery + fix-plan + roadmap. NO code changes. (completed 2026-05-18)
 
 ## Phase Details
 
@@ -450,7 +450,7 @@ Phases execute in parallel waves:
 | 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
 | 14. SEO + GEO Depth      | 4/4 | Complete    | 2026-04-27 |
 | 15. Conversion Accel.    | 5/5 | Complete    | 2026-04-27 |
-| 16. SOTA Audit v2 (research-only) | 0/16 | Planned | - |
+| 16. SOTA Audit v2 (research-only) | 0/16 | Complete    | 2026-05-18 |
 
 ---
 
