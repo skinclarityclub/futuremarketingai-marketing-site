@@ -32,3 +32,5 @@
 2026-05-19T18:13:41Z webfetch bing-serp call 1 of 50 to call 7 of 50 (7 queries via fetch, blocked or consent-walled; result_count=0 for all)
 2026-05-19T18:13:41Z webfetch google-serp call 8 of 50 to call 14 of 50 (7 queries via fetch, blocked or consent-walled; only "feedback" link surfaced per row)
 2026-05-19T18:13:41Z 16-07 measure-llm-citations.mjs run end (matrix written to docs/audits/2026-05-18-v2/06-geo-llmeo-matrix.json, gemini total=10/100)
+2026-05-19T01:10:00Z wave-2 batch 2B start (3 parallel gsd-executor agents, plans 16-06 16-07 16-08)
+2026-05-19T02:20:00Z wave-2 batch 2B end (3/3 plans completed, commits d5fc048 afb3f23 071439f, max wall-clock 70 min on 16-06 SEO)

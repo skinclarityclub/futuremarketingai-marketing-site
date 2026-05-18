@@ -4,14 +4,14 @@ created: 2026-05-18
 last_updated: 2026-05-19
 status: in_progress
 total_plans: 16
-completed_plans: 5
+completed_plans: 8
 ---
 
 # Phase 16 State
 
 ## Current position
 
-Wave 2 batch 2A complete (16-03, 16-04, 16-05). 16-03 visual-design (c9d025e): 27 findings P0=2 P1=9 P2=9 P3=7, headline finding is ScrollReveal+LazySection motion-wrapper pair leaving below-fold content invisible across 8 routes × 3 locales × 5 viewports. 16-04 brand+narrative+IA (84222a2): 28 findings P0=4 P1=7 P2=8 P3=9, P0s are 4 orphan vaardigheid pages, universal breadcrumb absence, `/skills/social-media` CTA glossary violation, home H2 hierarchy. 16-05 interactions (8c6302e): 27 findings P0=0 P1=8, real validation bug found in `ApplicationForm.tsx:38-49` (workspaces-field error fallthrough renders nameMin message). Next: Wave 2 batch 2B (16-06 SEO Technical, 16-07 GEO/LLMEO, 16-08 Accessibility).
+Wave 2 batches 2A + 2B complete (8/16 plans). 2A: 16-03 visual-design (c9d025e), 16-04 brand+IA (84222a2), 16-05 interactions (8c6302e). 2B: 16-06 SEO (d5fc048), 16-07 GEO/LLMEO (afb3f23), 16-08 a11y (071439f). Headline findings so far: ScrollReveal+LazySection motion-wrapper invisibility (16-03), 4 orphan vaardigheid pages (16-04), ApplicationForm workspaces-field error fallthrough bug (16-05), stale llms.txt pricing + Speakable selectors absent from DOM (16-06), 0/7 Gemini grounded queries cite FMai (16-07), 84/93 axe pass-rate with lead-qualifier carousel contrast cluster (16-08). Next: Wave 2 batch 2C (16-09 Performance, 16-10 Cross-browser, 16-11 Content/Copy/i18n).
 
 ## Plans
 
@@ -22,9 +22,9 @@ Wave 2 batch 2A complete (16-03, 16-04, 16-05). 16-03 visual-design (c9d025e): 2
 | 16-03 Team 01 Visual Design | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T00:49:00Z | c9d025e |
 | 16-04 Team 02 Brand/Narrative/IA | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T01:03:00Z | 84222a2 |
 | 16-05 Team 03 Interactions | completed | 2 | 2026-05-19T00:31:00Z | 2026-05-19T00:59:00Z | 8c6302e |
-| 16-06 Team 04 SEO Technical | pending | 2 | — | — | — |
-| 16-07 Team 05 GEO/LLMEO | pending | 2 | — | — | — |
-| 16-08 Team 06 Accessibility | pending | 2 | — | — | — |
+| 16-06 Team 04 SEO Technical | completed | 2 | 2026-05-19T01:10:00Z | 2026-05-19T02:20:00Z | d5fc048 |
+| 16-07 Team 05 GEO/LLMEO | completed | 2 | 2026-05-19T01:10:00Z | 2026-05-19T01:33:00Z | afb3f23 |
+| 16-08 Team 06 Accessibility | completed | 2 | 2026-05-19T01:10:00Z | 2026-05-19T01:45:00Z | 071439f |
 | 16-09 Team 07 Performance | pending | 2 | — | — | — |
 | 16-10 Team 08 Cross-browser | pending | 2 | — | — | — |
 | 16-11 Team 09 Content/Copy/i18n | pending | 2 | — | — | — |
@@ -36,11 +36,11 @@ Wave 2 batch 2A complete (16-03, 16-04, 16-05). 16-03 visual-design (c9d025e): 2
 
 ## Budget consumed
 
-- Gemini grounded calls: 3 / 100 (gratis tier 250 RPD)
+- Gemini grounded calls: 10 / 100 (16-01 used 3, 16-07 used 7)
 - Firecrawl calls: 3 / 80
-- WebFetch calls: 0 / 50
-- Artifact disk: ~791 MB / 3 GB (test-results/audit-v2/ post-capture)
-- Wall-clock: ~3h elapsed / 6h soft cap (16-01 ~10min, 16-02 ~2h50 incl. recovery from orphan-dev-server + lighthouse-chalk discovery + consolidated re-run 25 min)
+- WebFetch calls: 14 / 50 (16-07 SERP probes blocked by consent walls, all documented)
+- Artifact disk: ~791 MB / 3 GB
+- Wall-clock: ~4h45 elapsed / 6h soft cap (16-01 10min, 16-02 2h50, batch-2A 33min, batch-2B 70min)
 
 ## Skipped plans
 
