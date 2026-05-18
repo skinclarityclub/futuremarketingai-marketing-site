@@ -46,3 +46,4 @@
 2026-05-19T19:58:00Z gemini-flash-grounded call 11 of 100 (query: 16-11 ES CTA cultural-fit verb check Reserva vs Agenda una llamada)
 2026-05-19T02:25:00Z wave-2 batch 2C start (3 parallel gsd-executor agents, plans 16-09 16-10 16-11)
 2026-05-19T03:05:00Z wave-2 batch 2C end (3/3 plans completed: 16-09 commit 9f24bf5, 16-10 commit b95d62a (orchestrator-authored after 2 agents bailed), 16-11 commit b07cc16; max wall-clock 40 min)
+2026-05-18T19:16:48Z gemini-flash-grounded call 12 of 100 (query: 16-12 SOTA CRO patterns B2B SaaS 2026 pricing transparency, friction reduction, trust signals, dark-mode, NL EU-native)
