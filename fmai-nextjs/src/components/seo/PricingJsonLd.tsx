@@ -64,17 +64,17 @@ export function PricingJsonLd() {
       },
       workspaceOffer(
         'AI Marketing Starter (Growth)',
-        'Growth tier — linear per-workspace rate (€499/workspace) for portfolios of 2 to 4 brands. All 12 skills with tier caps, 800 credits per workspace per month, email + app support. One-time onboarding €1,997.',
+        `Growth tier — linear per-workspace rate (€${(TIER_PRICING.GROWTH.pricingModel === 'workspace' ? TIER_PRICING.GROWTH.pricePerWorkspace : 0)}/workspace) for portfolios of 2 to 4 brands. All 12 skills with tier caps, 800 credits per workspace per month, email + app support. One-time onboarding €${TIER_PRICING.GROWTH.onboardingFee.toLocaleString('en-US')}.`,
         'GROWTH',
       ),
       workspaceOffer(
         'AI Marketing Pro (Professional)',
-        'Professional tier — linear per-workspace rate (€399/workspace) for portfolios of 5 to 14 brands. All 12 skills with wider caps, 800 credits per workspace per month, Slack support + monthly strategy call. One-time onboarding €3,997.',
+        `Professional tier — linear per-workspace rate (€${(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0)}/workspace) for portfolios of 5 to 14 brands. All 12 skills with wider caps, 800 credits per workspace per month, Slack support + monthly strategy call. One-time onboarding €${TIER_PRICING.PROFESSIONAL.onboardingFee.toLocaleString('en-US')}.`,
         'PROFESSIONAL',
       ),
       workspaceOffer(
         'AI Marketing Suite (Enterprise)',
-        'Enterprise tier — linear per-workspace rate (€299/workspace) from 15 brands upward. All 12 skills uncapped (fair use), 800 credits per workspace per month, dedicated CSM + SLA, white-label and API access. One-time onboarding €5,997.',
+        `Enterprise tier — linear per-workspace rate (€${(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0)}/workspace) from 15 brands upward. All 12 skills uncapped (fair use), 800 credits per workspace per month, dedicated CSM + SLA, white-label and API access. One-time onboarding €${TIER_PRICING.ENTERPRISE.onboardingFee.toLocaleString('en-US')}.`,
         'ENTERPRISE',
       ),
     ],
