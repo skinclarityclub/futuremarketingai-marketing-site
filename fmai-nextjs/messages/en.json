@@ -970,11 +970,11 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Inbound calls plus FAQ",
-        "body": "Clyde answers frequent questions in natural language, books appointments in the calendar and escalates only when needed."
+        "body": "Clyde will answer frequent questions in natural language, book appointments in the calendar and escalate only when needed."
       },
       "feature2": {
         "title": "Outbound campaigns",
-        "body": "Working through lists, intake calls, follow-ups. Clyde dials the contact list and logs the result per call."
+        "body": "Working through lists, intake calls, follow-ups. Clyde will dial the contact list and log the result per call."
       },
       "feature3": {
         "title": "Call logging and transcripts",
@@ -996,8 +996,8 @@
         "body": "Connect a phone number via VAPI. Inbound routes to Clyde; outbound campaigns are scheduled."
       },
       "step3": {
-        "title": "Clyde runs, you monitor",
-        "body": "Real-time dashboard for calls, escalations and results. Clyde learns from every conversation for sharper answers."
+        "title": "Clyde will run, you monitor",
+        "body": "Real-time dashboard for calls, escalations and results. Clyde will learn from every conversation for sharper answers."
       }
     },
     "integrations": {
@@ -1287,7 +1287,7 @@
       },
       "feature3": {
         "title": "Meta Ad Library research",
-        "body": "Clyde analyzes what competitors are advertising. Delivers examples and a gap analysis."
+        "body": "Clyde will analyze what competitors are advertising and deliver examples plus a gap analysis."
       },
       "feature4": {
         "title": "Generate A/B variants",
@@ -1298,15 +1298,15 @@
       "title": "How it works",
       "step1": {
         "title": "Brief and brand intake",
-        "body": "Product or service, audience, USP and budget. Clyde reads the brand guidelines to stay consistent."
+        "body": "Product or service, audience, USP and budget. Clyde will read the brand guidelines to stay consistent."
       },
       "step2": {
         "title": "Generate ads",
-        "body": "Choose static or video, number of variants and format. Clyde delivers publish-ready output within minutes."
+        "body": "Choose static or video, number of variants and format. Clyde will deliver publish-ready output within minutes."
       },
       "step3": {
         "title": "Publish to Meta",
-        "body": "Roll out directly to Ads Manager via the connection. You set budget and audience; Clyde delivers the creative."
+        "body": "Roll out directly to Ads Manager via the connection. You set budget and audience; Clyde will deliver the creative."
       }
     },
     "integrations": {
@@ -2522,7 +2522,7 @@
       "title": "How it works",
       "step1": {
         "title": "Topic and format",
-        "body": "Give the topic and pick a format (educational, product demo, talking head). Clyde writes the script."
+        "body": "Give the topic and pick a format (educational, product demo, talking head). Clyde will write the script."
       },
       "step2": {
         "title": "Review and adjust",

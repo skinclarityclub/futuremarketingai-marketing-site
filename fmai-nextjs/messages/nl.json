@@ -970,11 +970,11 @@
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
         "title": "Inkomende gesprekken plus FAQ",
-        "body": "Clyde beantwoordt veelgestelde vragen in gewone taal, boekt afspraken in de agenda en escaleert alleen wanneer nodig."
+        "body": "Clyde gaat veelgestelde vragen in gewone taal beantwoorden, afspraken boeken in de agenda en alleen escaleren wanneer nodig."
       },
       "feature2": {
         "title": "Uitgaande campagnes",
-        "body": "Lijsten aflopen, intakegesprekken, opvolgingen. Clyde belt de contactlijst en registreert per gesprek het resultaat."
+        "body": "Lijsten aflopen, intakegesprekken, opvolgingen. Clyde gaat de contactlijst bellen en per gesprek het resultaat registreren."
       },
       "feature3": {
         "title": "Gespreksregistratie en transcripties",
@@ -996,8 +996,8 @@
         "body": "Koppel een telefoonnummer via VAPI. Inkomend gaat naar Clyde; uitgaande campagnes worden ingepland."
       },
       "step3": {
-        "title": "Clyde draait, jij monitort",
-        "body": "Realtime dashboard voor gesprekken, escalaties en resultaten. Clyde leert van elk gesprek voor scherpere antwoorden."
+        "title": "Clyde gaat draaien, jij monitort",
+        "body": "Realtime dashboard voor gesprekken, escalaties en resultaten. Clyde gaat van elk gesprek leren voor scherpere antwoorden."
       }
     },
     "integrations": {
@@ -1287,7 +1287,7 @@
       },
       "feature3": {
         "title": "Onderzoek in de Meta Ad Library",
-        "body": "Clyde analyseert wat concurrenten adverteren. Levert voorbeelden en een gap-analyse."
+        "body": "Clyde gaat analyseren wat concurrenten adverteren en levert voorbeelden plus een gap-analyse."
       },
       "feature4": {
         "title": "A/B-varianten genereren",
@@ -1298,15 +1298,15 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Briefing en merkintake",
-        "body": "Product of dienst, doelgroep, USP en budget. Clyde leest de merkrichtlijnen om consistent te blijven."
+        "body": "Product of dienst, doelgroep, USP en budget. Clyde gaat de merkrichtlijnen lezen om consistent te blijven."
       },
       "step2": {
         "title": "Ads genereren",
-        "body": "Kies statisch of video, aantal varianten en formaat. Clyde levert publicatieklare output binnen minuten."
+        "body": "Kies statisch of video, aantal varianten en formaat. Clyde gaat publicatieklare output binnen minuten leveren."
       },
       "step3": {
         "title": "Publiceren naar Meta",
-        "body": "Direct uitrollen naar Ads Manager via de koppeling. Jij stelt budget en doelgroep in; Clyde levert de creatives."
+        "body": "Direct uitrollen naar Ads Manager via de koppeling. Jij stelt budget en doelgroep in; Clyde gaat de creatives leveren."
       }
     },
     "integrations": {
@@ -2522,7 +2522,7 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Onderwerp en formaat",
-        "body": "Geef het onderwerp en kies een formaat (educatief, productdemo, talking head). Clyde schrijft het script."
+        "body": "Geef het onderwerp en kies een formaat (educatief, productdemo, talking head). Clyde gaat het script schrijven."
       },
       "step2": {
         "title": "Beoordelen en aanpassen",
