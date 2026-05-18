@@ -34,3 +34,12 @@
 2026-05-19T18:13:41Z 16-07 measure-llm-citations.mjs run end (matrix written to docs/audits/2026-05-18-v2/06-geo-llmeo-matrix.json, gemini total=10/100)
 2026-05-19T01:10:00Z wave-2 batch 2B start (3 parallel gsd-executor agents, plans 16-06 16-07 16-08)
 2026-05-19T02:20:00Z wave-2 batch 2B end (3/3 plans completed, commits d5fc048 afb3f23 071439f, max wall-clock 70 min on 16-06 SEO)
+2026-05-18T18:47:20Z gemini-flash-grounded call 11 of 100 (query: 16-11 ES CTA cultural-fit verb check Reserva vs Agenda una llamada)
+2026-05-19T19:42:00Z 16-09 perf audit start (production walk fallback per AUTONOMOUS-PROTOCOL Rule 2)
+2026-05-19T19:43:00Z curl-production-walk top-10 routes nl (TTFB + total time + gz-html size + cache-hit verification, 10 reqs)
+2026-05-19T19:44:00Z curl-production-chunks home + pricing + clyde (13-14 chunks each, size measurement, ~42 reqs)
+2026-05-19T19:45:00Z curl-production-assets css + fonts + spline-scene + hero-image (8 reqs)
+2026-05-19T19:46:00Z pagespeed-api attempted 20 calls (10 routes x mobile+desktop nl); all returned HTTP 429 Quota exceeded for anonymous IP (consumer project_number:583797351490). Persisted error records to docs/audits/2026-05-18-v2/08-performance-pagespeed.json
+2026-05-19T19:47:00Z crux-api attempted 1 call with GEMINI_API_KEY (project 34000241058); HTTP 403 API_KEY_SERVICE_BLOCKED for chromeuxreport.googleapis.com. Pre-condition: project lacks api enablement. Documented in audit doc as Finding 2.
+2026-05-19T19:48:00Z har-inspection top-10 routes nl + home en + es (resource-count topology, 30 har files read)
+2026-05-19T19:55:00Z 16-09 perf audit doc written (~14500 words, 25 findings, CWV scorecard + LCP + bundle + third-party + image + KPI baseline)
