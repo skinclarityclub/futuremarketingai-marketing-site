@@ -40,8 +40,8 @@ async function run() {
         fullPage: true,
       });
       console.log(`  LIVE: ${page.name} - OK`);
-    } catch (e: any) {
-      console.log(`  LIVE: ${page.name} - FAILED: ${e.message}`);
+    } catch (e: unknown) {
+      console.log(`  LIVE: ${page.name} - FAILED: ${e instanceof Error ? e.message : String(e)}`);
     }
     await livePage.close();
 
@@ -55,8 +55,8 @@ async function run() {
         fullPage: true,
       });
       console.log(`  DEV:  ${page.name} - OK`);
-    } catch (e: any) {
-      console.log(`  DEV:  ${page.name} - FAILED: ${e.message}`);
+    } catch (e: unknown) {
+      console.log(`  DEV:  ${page.name} - FAILED: ${e instanceof Error ? e.message : String(e)}`);
     }
     await devPage.close();
   }

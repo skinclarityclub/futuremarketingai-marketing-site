@@ -256,14 +256,19 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
     if (Array.isArray(data.services)) {
       normalizedServices = data.services
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     else if (typeof data.services === 'object') {
-      normalizedServices = Object.values(data.services).map((svc: any) => ({
-        name: svc.name || 'Service',
-        description: svc.description,
-        features: svc.features || svc.highlights || [],
-        price: svc.price || svc.starting_price,
-      }))
+      normalizedServices = Object.values(data.services as Record<string, unknown>).map((raw) => {
+        const svc = raw as Record<string, unknown>
+        return {
+          name: (svc.name as string) || 'Service',
+          description: svc.description as string | undefined,
+          features: (svc.features as string[] | undefined) ||
+            (svc.highlights as string[] | undefined) ||
+            [],
+          price: (svc.price as string | undefined) ||
+            (svc.starting_price as string | undefined),
+        }
+      })
     }
   }
 
