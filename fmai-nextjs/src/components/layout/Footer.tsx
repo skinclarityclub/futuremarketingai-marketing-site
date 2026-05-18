@@ -82,6 +82,17 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
+                    href="/skills/reel-builder"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>{t('landing.footer.nav.reel_builder')}</span>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                      {t('comingSoon')}
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/skills/seo-geo"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
