@@ -4,3 +4,18 @@
 2026-05-18T12:33:32Z firecrawl-scrape call 1 of 80 (url: https://stripe.com)
 2026-05-18T12:33:33Z firecrawl-scrape call 2 of 80 (url: https://linear.app)
 2026-05-18T12:33:34Z firecrawl-scrape call 3 of 80 (url: https://vercel.com)
+2026-05-18T13:18:42Z playwright capture-suite chromium run start
+2026-05-18T14:11:59Z playwright capture-suite chromium run end (screenshots=465 har=93 dom=93 axe=90/93)
+2026-05-18T14:11:59Z playwright capture-suite webkit+firefox run start
+2026-05-18T14:14:59Z playwright lighthouse run start (production URL, 60 tests)
+2026-05-18T19:18:42Z playwright capture-suite chromium run start (1st attempt, separate-invocation, output wiped on subsequent runs - see baseline doc item 11)
+2026-05-18T20:11:59Z playwright capture-suite chromium run end (screenshots=465 har=93 dom=93 axe=90/93 -- artefacts subsequently wiped by playwright cleanup)
+2026-05-18T20:11:59Z playwright capture-suite webkit+firefox run start
+2026-05-18T20:14:59Z playwright lighthouse run start (production URL, 60 tests) -- did not complete, agent socket dropped
+2026-05-19T00:09:00Z playwright.config.ts edited: outputDir=./playwright-output, preserveOutput=always (to keep test-results/audit-v2 across reruns)
+2026-05-19T00:09:30Z dev-server port 3100 selected to avoid orphan dev-server lock on port 3000
+2026-05-19T00:11:56Z playwright capture-suite recovery run start (--project=chromium, all 7 specs, single invocation)
+2026-05-19T00:23:00Z playwright capture-suite recovery run end (chromium=465 webkit=183 firefox=186 axe=93 har=93 dom=93 lighthouse=0)
+2026-05-19T00:23:00Z lighthouse-skip: playwright-lighthouse calls chalk.yellow.italic() removed in chalk@5; all 60 lighthouse tests SKIP-logged (Rule 2). Wave 2 16-09 will use WebFetch PageSpeed Insights API.
+2026-05-19T00:23:00Z disk_usage test-results/audit-v2 = 791 MB
+2026-05-19T00:24:00Z gallery generated: 834 thumbnails in test-results/audit-v2/screenshots/index.html (target was 432, exceeded)

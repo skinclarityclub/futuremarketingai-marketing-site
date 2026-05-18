@@ -1,24 +1,24 @@
 ---
 phase: 16-design-seo-audit-v2-sota
 created: 2026-05-18
-last_updated: 2026-05-18
+last_updated: 2026-05-19
 status: in_progress
 total_plans: 16
-completed_plans: 1
+completed_plans: 2
 ---
 
 # Phase 16 State
 
 ## Current position
 
-Wave 0 complete. Plan 16-01 (pre-audit intelligence) landed with 3 Gemini grounded calls plus 3 firecrawl-scrapes plus competitive-intel.md (2994 words, 7 sections, 25 SOTA markers, 10 open questions, 7 named competitors, 3 SOTA-reference sites). Next: Wave 1 plan 16-02 (setup plus capture infra) on a new `audit/2026-05-18-v2-sota` branch.
+Wave 1 complete. 16-01 landed competitive-intel.md (2994 words, 25 SOTA markers). 16-02 landed the capture infrastructure: branch `audit/2026-05-18-v2-sota`, 7 Playwright specs, dev-deps `@axe-core/playwright` + `playwright-lighthouse`, baseline snapshot doc (now 11 out-of-scope items), and the consolidated capture run produced 465 chromium PNGs, 183 webkit, 186 firefox, 93 axe JSONs, 93 HAR, 93 DOM, 0 lighthouse (chalk-v5 incompat with playwright-lighthouse; documented as item 9, Wave 2 16-09 uses PageSpeed Insights API per Rule 2). Gallery index lists 834 thumbnails. Next: Wave 2 (12 parallel audit teams 16-03..16-14).
 
 ## Plans
 
 | Plan | Status | Wave | Started | Finished | Commit |
 |---|---|---|---|---|---|
-| 16-01 Pre-audit intelligence | completed | 1 | 2026-05-18T12:30:00Z | 2026-05-18T12:40:00Z | PENDING_COMMIT_SHA |
-| 16-02 Setup + capture infra | pending | 1 | — | — | — |
+| 16-01 Pre-audit intelligence | completed | 1 | 2026-05-18T12:30:00Z | 2026-05-18T12:40:00Z | a4d6b82 |
+| 16-02 Setup + capture infra | completed | 1 | 2026-05-18T18:30:00Z | 2026-05-19T00:23:00Z | TBD |
 | 16-03 Team 01 Visual Design | pending | 2 | — | — | — |
 | 16-04 Team 02 Brand/Narrative/IA | pending | 2 | — | — | — |
 | 16-05 Team 03 Interactions | pending | 2 | — | — | — |
@@ -39,8 +39,8 @@ Wave 0 complete. Plan 16-01 (pre-audit intelligence) landed with 3 Gemini ground
 - Gemini grounded calls: 3 / 100 (gratis tier 250 RPD)
 - Firecrawl calls: 3 / 80
 - WebFetch calls: 0 / 50
-- Artifact disk: ~0.1 MB / 3 GB (tmp/ raw JSON plus 3 scraped MD)
-- Wall-clock: ~10min / 6h soft cap
+- Artifact disk: ~791 MB / 3 GB (test-results/audit-v2/ post-capture)
+- Wall-clock: ~3h elapsed / 6h soft cap (16-01 ~10min, 16-02 ~2h50 incl. recovery from orphan-dev-server + lighthouse-chalk discovery + consolidated re-run 25 min)
 
 ## Skipped plans
 

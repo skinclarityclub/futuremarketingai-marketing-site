@@ -45,3 +45,14 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Phase 16 audit artefacts (heavy binaries, raw outputs)
+test-results/audit-v2/**/*.png
+test-results/audit-v2/**/*.har
+test-results/audit-v2/dom/**/*.html
+test-results/audit-v2/axe/**/*.json
+test-results/audit-v2/lighthouse/**/*.json
+!test-results/audit-v2/screenshots/index.html
+
+# Playwright's own managed dir (separated from test-results/ so audit-v2/ survives reruns)
+/playwright-output/
