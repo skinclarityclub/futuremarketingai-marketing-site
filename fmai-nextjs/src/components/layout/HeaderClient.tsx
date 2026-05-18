@@ -106,7 +106,9 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
 
   // Close mobile menu on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- legitimate sync: external pathname change must close the open mobile menu
     setMobileOpen(false)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- legitimate sync: external pathname change must collapse skills submenu
     setMobileSkillsOpen(false)
   }, [pathname])
 

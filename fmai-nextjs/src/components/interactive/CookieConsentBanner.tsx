@@ -24,8 +24,10 @@ export function CookieConsentBanner() {
   const [hasConsent, setHasConsent] = useState<boolean | null>(null)
 
   useEffect(() => {
-    setMounted(true)
     const cookies = typeof document !== 'undefined' ? document.cookie : ''
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- mount guard + external (cookie) state sync to avoid hydration mismatch
+    setMounted(true)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-shot sync of cookie state into React
     setHasConsent(cookies.includes('futuremarketingai-cookie-consent='))
   }, [])
 

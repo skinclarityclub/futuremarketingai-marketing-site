@@ -39,6 +39,7 @@ export function CalendlyModal({
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- mount guard prevents SSR hydration mismatch for portal-rendered modal
     setMounted(true)
   }, [])
 

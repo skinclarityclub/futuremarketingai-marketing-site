@@ -207,6 +207,7 @@ export function DemoOrchestrator({
       {demoStatus === 'completed' && scenario && (
         <DemoCompletionCard
           scenarioTitle={scenario.title}
+          // eslint-disable-next-line react-hooks/purity -- Date.now() captures the completion-render timestamp once per status transition; safe for a one-shot display metric
           durationSeconds={demoStartedAt ? Math.round((Date.now() - demoStartedAt) / 1000) : 0}
           onTryAnother={() => {
             hasSentRef.current = false
