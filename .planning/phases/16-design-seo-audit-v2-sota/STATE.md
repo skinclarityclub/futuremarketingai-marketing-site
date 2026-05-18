@@ -18,7 +18,7 @@ Wave 1 complete. 16-01 landed competitive-intel.md (2994 words, 25 SOTA markers)
 | Plan | Status | Wave | Started | Finished | Commit |
 |---|---|---|---|---|---|
 | 16-01 Pre-audit intelligence | completed | 1 | 2026-05-18T12:30:00Z | 2026-05-18T12:40:00Z | a4d6b82 |
-| 16-02 Setup + capture infra | completed | 1 | 2026-05-18T18:30:00Z | 2026-05-19T00:23:00Z | TBD |
+| 16-02 Setup + capture infra | completed | 1 | 2026-05-18T18:30:00Z | 2026-05-19T00:23:00Z | 5a8af29 |
 | 16-03 Team 01 Visual Design | pending | 2 | — | — | — |
 | 16-04 Team 02 Brand/Narrative/IA | pending | 2 | — | — | — |
 | 16-05 Team 03 Interactions | pending | 2 | — | — | — |
