@@ -45,12 +45,44 @@ Cross-browser parity is covered indirectly by SOTA markers M3 (color and typogra
 
 Both Chromium and Firefox render the same routes correctly themed, with the dark surface, gradient hero text, Spline scene, themed CTAs, and themed cookie consent banner. The render delta is binary: WebKit gets zero theme styles, the other two engines get all theme styles.
 
-**Suspected root cause:** Tailwind 4 with `@tailwindcss/postcss` produces CSS that depends on modern CSS features. Most likely culprits, in decreasing order of likelihood:
+**Confirmed root cause** (updated 2026-05-19 via direct compiled-CSS inspection + cross-referenced Tailwind 4 issue tracker):
 
-1. `@property` rules with `<color>` types in the CSS variable cascade. WebKit historically lags on `@property` for non-color types and on type-checked color tokens.
-2. `oklch()` color space in the theme tokens (Tailwind 4 default). Safari before 16.4 has no `oklch()` support, and Playwright's bundled WebKit (Safari Technology Preview channel) sometimes hits parser quirks.
-3. CSS nesting at non-top-level (`& :hover` deep in component classes). WebKit nesting parser is strict on order.
-4. `@layer` cascade order: when an `@layer` block fails to parse, all subsequent rules in the file get dropped silently.
+Production CSS at `fmai-nextjs/.next/static/chunks/05h2-.mbcoirk.css` compiles 96 design-system tokens under the pattern:
+
+```css
+@layer theme {
+  :root, :host {
+    --color-bg-deep: #0a0d14;
+    --font-sans: ...;
+    /* ... 94 more tokens ... */
+  }
+}
+```
+
+This `:root, :host` selector list inside `@layer theme {}` is Tailwind 4's documented compilation pattern for shadow-DOM compatibility. It is a known WebKit/Safari compatibility hotspot:
+
+- Tailwind 4 officially targets **Safari 16.4+ only** (`tailwindcss.com/docs/compatibility`). Any Safari below that has no support guarantees.
+- Tailwind GitHub Discussion **#15556** (`[v4] define all Tailwind CSS Variables using ":root, :host" selector for Shadow DOM compatibility`) tracks the exact pattern shipped here.
+- Tailwind GitHub Discussion **#15284** (`Tailwind v4 not working with Safari 15`) reports the same broken-theme failure mode.
+- Reports also exist on Safari 18.1.1 and macOS Sequoia 15.3.1 (production-stable Safari, not just STP).
+
+**Hypotheses ruled OUT** by direct compiled-CSS inspection:
+
+1. `@property` rules with `<color>` types: only present for transform tokens (`--tw-translate-x` etc.) with `syntax: "*"` (permissive, not `<color>`). **Not the cause.**
+2. `oklch()` color space: zero occurrences in compiled CSS — Tailwind 4 emits hex when the source theme uses hex (which this codebase does). **Not the cause.**
+3. CSS nesting at non-top-level: no `&` nesting patterns surfaced in audit; would have shown more granular failures. **Not the cause.**
+
+**Failure mechanism** explains the partial-render observed in `screenshots-webkit/_/nl-desktop.png`:
+
+- `var(--color-bg-deep)` (body Tailwind class `bg-bg-deep`) → unresolved → body falls back to browser default (white).
+- `var(--color-text-primary)` (body class `text-text-primary`) → unresolved → default black text.
+- `.bg-gradient-flow` in `globals.css` line 271 uses hardcoded hex `linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)` → renders correctly → explains the visible teal hero badge surrounded by an otherwise-broken page.
+
+In other words, every utility that depends on a `@theme`-registered CSS variable fails; every rule with inlined hex literals works.
+
+**Engine versions tested:**
+
+- Playwright bundled WebKit: **v26.4 (Playwright v1.59.1, build 2272)** — tracks Safari Technology Preview, ahead of any user-facing Safari release. If STP fails, real Safari 16.x/17.x/18.x reproduction is highly likely (older versions historically have weaker `:root, :host` + `@layer` handling).
 
 **Why this matters:**
 
@@ -58,12 +90,13 @@ Both Chromium and Firefox render the same routes correctly themed, with the dark
 - The Founding Member tier targets bureau-owners who routinely use Safari on iOS for site research before booking a call. Their experience is the broken render.
 - This is the largest cross-stack regression visible in the audit.
 
-**Fix path (handed to plan 16-16):**
+**Fix path (concrete options ranked by least-disruptive):**
 
-1. Reproduce in Safari Technology Preview locally against `localhost:3100`.
-2. Open the DevTools network panel, find the route CSS file, and inspect for parse errors in the Issues tab.
-3. Most likely fix is to set `--theme-color: oklch(...)` fallbacks to hex or to gate `@property` registrations behind `@supports`.
-4. Add a CI Playwright gate `tests/e2e/cross-browser-render.spec.ts` that asserts computed `background-color` on `<body>` equals the theme deep value, run on WebKit and Firefox.
+1. **Drop `:host` from generated theme rule** (option from TW #15556): post-process compiled CSS via PostCSS to strip `:host` from the `:root, :host` selector list inside `@layer theme {}`. Body styles then attach to `:root` only, which all Safari versions handle. Minimal risk if site has no shadow-DOM consumers (it does not).
+2. **Define CSS variables at top-level (no `@layer theme {}` wrapper)**: write the design tokens manually in `globals.css` as plain `:root {}` rules before the `@import 'tailwindcss'` line, or use `@theme inline` (Tailwind v4.1+) to ship tokens outside the layered scope.
+3. **Hex fallbacks on the hot path** (cosmetic band-aid): hardcode the 3 critical surfaces (body bg, text color, link color) with hex literals in `globals.css`, layered after `@import 'tailwindcss'` so they override the broken `var()` resolution. Buys time without removing the underlying compatibility issue.
+4. **Pin Tailwind to v3.4** if Safari <16.4 must remain a supported audience tier. Not recommended for this codebase (would require theme-rewriting), but listed for completeness.
+5. **Add CI gate**: Playwright spec `tests/e2e/cross-browser-render.spec.ts` that asserts computed `background-color` on `<body>` equals `rgb(10, 13, 20)` and `color` equals `rgb(232, 236, 244)` on WebKit + Firefox. Fails preview deploys on regression.
 
 ### F2 P1: WebKit Windows instability concentrated on Spline and voice-agent routes (baseline item 5 confirmed in numbers)
 

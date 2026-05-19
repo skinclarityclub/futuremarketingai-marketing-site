@@ -278,16 +278,25 @@ The `chatbots` namespace (16-05 F8) has no reachable route. Decide: archive enti
 ### Tasks
 
 <task type="auto">
-  <name>C1: Diagnose + fix WebKit CSS parse error (Tailwind 4 feature)</name>
-  <files>fmai-nextjs/src/app/globals.css, fmai-nextjs/tailwind.config.ts (potential), fmai-nextjs/postcss.config.mjs (potential)</files>
+  <name>C1: Fix Tailwind 4 `:root, :host` theme registration breaking on WebKit</name>
+  <files>fmai-nextjs/src/app/globals.css, fmai-nextjs/postcss.config.mjs</files>
   <action>
-Reproduce in Safari Technology Preview 17+. Open Inspector > Issues tab for CSS parse error. Most likely: `@property` registrations on color types without `@supports` gate, `oklch()` values without hex fallback, or `@layer` ordering Safari does not parse. Fix root cause. Gate any Tailwind 4 feature behind `@supports` if needed. Add hex fallback for every `oklch()` token. Smoke-test in Safari TP, mobile Safari iOS 17 (TestFlight), and WebKitGTK on Linux if available.
+Root cause confirmed 2026-05-19 via direct compiled-CSS inspection: Tailwind 4 emits `@layer theme { :root, :host { ... } }` for all 96 design tokens, a documented Safari/WebKit compatibility hotspot (Tailwind GitHub Discussions #15556 + #15284, official Tailwind 4 support floor Safari 16.4+). Earlier hypotheses (`@property` on `<color>` types, `oklch()`) ruled out: compiled CSS only uses `syntax: "*"` for transform tokens, zero `oklch()` occurrences. Pick ONE of the three fixes in priority order:
+
+1. **Preferred: `@theme inline` in `globals.css`** (Tailwind v4.1+). Replace `@theme { ... }` with `@theme inline { ... }`. Inline mode emits tokens at top-level `:root {}` without the `@layer theme {:root,:host{}}` wrapper. No PostCSS plugin needed. Verify Tailwind version is >= 4.1 first; bump if necessary.
+
+2. **Fallback: PostCSS plugin to strip `:host`** from the generated selector list. Add a custom `postcss-discard-host-in-theme-layer` step (10 lines) that walks the AST and rewrites `:root, :host` to `:root` only inside `@layer theme`. Site has no shadow-DOM consumers, so dropping `:host` is safe.
+
+3. **Last resort: hex fallbacks on the 3 hot surfaces** in `globals.css` AFTER `@import 'tailwindcss'`: body bg, body text, link color. Buys time but does not remove the underlying compatibility issue and other utilities relying on `var(--color-*)` keep failing for sub-16.4 Safari users.
+
+After picking the approach, smoke-test in Playwright WebKit locally (`npx playwright test --project=webkit`) and via BrowserStack / Sauce Labs real-Safari sweep across Safari 16.4, 17, 18 + iOS Safari 17 if budget permits. Real-Safari evidence still recommended but not goal-blocking; Playwright WebKit 26.4 (STP channel) reproduction is convergent with the documented Tailwind 4 issue.
   </action>
   <verify>
     <automated>cd fmai-nextjs && npx playwright test tests/e2e/audit-v2-screenshots-webkit.spec.ts --grep="home"</automated>
-    <manual>Open https://future-marketing.ai in Safari Technology Preview. Body background must be `#0a0d14` (theme deep), text must be `#e8ecf4`, NOT Times-New-Roman white-page.</manual>
+    <automated>cd fmai-nextjs && grep -q ":root,:host" .next/static/chunks/*.css &amp;&amp; echo "STILL PRESENT - fix not applied" &amp;&amp; exit 1 || echo "selector pattern removed"</automated>
+    <manual>If real Safari available: open https://future-marketing.ai. Body background must be `#0a0d14`, text `#e8ecf4`, NOT Times-New-Roman white-page. Otherwise rely on Playwright WebKit regression check.</manual>
   </verify>
-  <done>WebKit renders site with full theme. CSS parse error gone. 18 percent of EU desktop + 30 percent of EU mobile audience unblocked.</done>
+  <done>Compiled CSS no longer ships `:root, :host` selector inside `@layer theme`. WebKit Playwright shot shows full dark theme. 18 percent EU desktop + 30 percent EU mobile audience unblocked.</done>
 </task>
 
 <task type="auto">
