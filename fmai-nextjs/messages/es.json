@@ -20,7 +20,11 @@
       "subtitle": "Clyde recuerda cada marca, aprende de cada campaña y ejecuta doce habilidades de forma autónoma: social, blogs, voz, anuncios, SEO y analítica. Un único Empleado AI de Marketing para todo tu portfolio de marcas.",
       "trustAnchor": "Construido con agencias neerlandesas en la práctica. Máx. {maxPartners} partners al año.",
       "cta": "Agenda una llamada",
-      "ctaSecondary": "Conoce a Clyde"
+      "ctaSecondary": "Conoce a Clyde",
+      "trustCluster": {
+        "founding": "{taken} de {total} plazas founding",
+        "avgLabel": "Cumple con el RGPD"
+      }
     },
     "services": {
       "title": "Lo que Clyde hace por tu agencia",
@@ -1831,6 +1835,9 @@
       "hero": {
         "eyebrow": "Caso de estudio, Founding partner",
         "title": "3 cuentas. 4 marcas. Un Empleado AI de Marketing.",
+        "chip1": "3 cuentas incorporadas",
+        "chip2": "4 marcas en vivo en 7 dias",
+        "chip3": "12 habilidades activas",
         "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. De forma autónoma, cada día, sin que el equipo tenga que estar encima."
       },
       "setup": {

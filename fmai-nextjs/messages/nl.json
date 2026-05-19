@@ -20,7 +20,11 @@
       "subtitle": "Clyde onthoudt elk merk, leert van elke campagne en voert twaalf vaardigheden autonoom uit: social, blogs, voice, ads, SEO en analytics. Eén AI Marketing Medewerker voor je hele klantportfolio.",
       "trustAnchor": "Gebouwd met Nederlandse bureaus in de praktijk. Maximaal {maxPartners} partners per jaar.",
       "cta": "Plan een gesprek",
-      "ctaSecondary": "Leer Clyde kennen"
+      "ctaSecondary": "Leer Clyde kennen",
+      "trustCluster": {
+        "founding": "{taken} van {total} founding plekken",
+        "avgLabel": "AVG-compliant"
+      }
     },
     "services": {
       "title": "Wat Clyde doet voor jouw bureau",
@@ -1831,6 +1835,9 @@
       "hero": {
         "eyebrow": "Case study, Founding partner",
         "title": "3 accounts. 4 merken. Eén AI Marketing Medewerker.",
+        "chip1": "3 accounts onboarded",
+        "chip2": "4 merken live in 7 dagen",
+        "chip3": "12 vaardigheden actief",
         "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Autonoom, elke dag, zonder dat het team er omkijken naar heeft."
       },
       "setup": {

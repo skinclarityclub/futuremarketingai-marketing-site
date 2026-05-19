@@ -143,9 +143,20 @@ export default async function SkcCaseStudyPage({
           <div className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-6 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system">
             {t('hero.eyebrow')}
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-4">
             {t('hero.title')}
           </h1>
+          {/* Metric chips — quantified outcome above-fold (E5, closes 16-03 F24) */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {(['chip1', 'chip2', 'chip3'] as const).map((key) => (
+              <span
+                key={key}
+                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-bg-elevated text-accent-system border border-accent-system/20"
+              >
+                {t(`hero.${key}`)}
+              </span>
+            ))}
+          </div>
           <p className="speakable-skc-summary text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             {t('hero.subtitle')}
           </p>

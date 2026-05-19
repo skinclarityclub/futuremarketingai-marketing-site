@@ -341,3 +341,63 @@ Start at https://future-marketing.ai/nl/apply. 8-field application form (name, e
 ## Languages
 
 Content is authored in Dutch and translated to English and Spanish by native or senior-native translators. NL is the source of truth.
+
+## HowTo: Start met FutureMarketingAI
+
+Type: HowTo
+Name: Hoe start ik met FutureMarketingAI?
+Description: Stap-voor-stap handleiding om als marketingbureau of brand-operator van aanvraag tot volledig autonoom werkende AI Marketing Medewerker te komen.
+TotalTime: PT4W
+
+Step 1 - Dien je aanvraag in (5 minuten)
+Ga naar https://future-marketing.ai/nl/apply en vul het aanvraagformulier in. Je hebt alleen je naam, e-mailadres en eventueel je bedrijfsnaam nodig. Extra context over je portfolio en doelen is welkom maar niet verplicht.
+
+Step 2 - Persoonlijke beoordeling door Daley (binnen 48 uur)
+Daley beoordeelt elke aanvraag persoonlijk. Als er een goede match is, plant hij direct een Strategy Call in. Geen automatische afwijzingen, geen verkoopscript.
+
+Step 3 - Strategy Call (30 minuten)
+Een eerlijk gesprek over welk tier en welke vaardigheden het meeste impact hebben voor jouw portfolio. We kiezen de juiste startopzet samen.
+
+Step 4 - Onboarding (week 1)
+We koppelen merkstem, social-accounts, kennisbases en configureren Clyde voor elk klantmerk. Geen technische kennis vereist van jouw kant.
+
+Step 5 - Correctielus (maand 1)
+Clyde calibreert op echte feedback. In week 1 veel correcties, in week 4 bijna geen meer. Tegen maand 3 daalt de goedkeuringstijd per post van 4 minuten naar 30 seconden.
+
+Step 6 - Kwartaalcheck en jaarlijkse retrospective
+Elk kwartaal een strategisch gesprek over wat werkt. Jaarlijks een volledige performance review met roadmap-update.
+
+## FAQPage: Veelgestelde vragen over FutureMarketingAI
+
+Type: FAQPage
+URL: https://future-marketing.ai
+
+Q: Wat kost FutureMarketingAI?
+A: Founding Member kost 997 euro eenmalig en is voor altijd actief (10 plekken, 1 bezet). Growth kost 499 euro per workspace per maand (2 tot 4 merken). Professional kost 399 euro per workspace per maand (5 tot 14 merken). Enterprise kost 299 euro per workspace per maand (15 of meer merken). Prijzen worden halfjaarlijks herzien. Geen verborgen kosten, geen opzetkosten voor Founding.
+
+Q: Kan ik stoppen wanneer ik wil?
+A: Ja. Growth, Professional en Enterprise zijn maandelijks opzegbaar. Founding is een eenmalige levenslange investering zonder abonnement.
+
+Q: Voor welke bureaus is FutureMarketingAI geschikt?
+A: Voor performance- en groeibureaus in Nederland en de EU die 2 tot 50 klantmerken beheren. Het model is ontworpen voor operators die kwaliteit belangrijker vinden dan schaal en die bereid zijn Clyde te laten leren in maand 1.
+
+Q: Hoelang duurt de onboarding?
+A: Week 1 is technische onboarding (koppeling accounts, merkstem, kennisbases). Maand 1 is de correctielus. Volledig autonoom werken begint meestal in maand 2.
+
+Q: Is mijn data veilig?
+A: Ja. Per-merk data-isolatie via Supabase Row Level Security. Geen cross-brand lekkage. Zelfgehoste EU-infrastructuur (Hetzner Amsterdam). Voldoet aan AVG en EU AI Act. Exporteer of verwijder al je data binnen 24 uur op verzoek.
+
+Q: Kan Clyde meerdere merken tegelijk beheren?
+A: Ja. Clyde is ontworpen voor multi-brand portfolios. Elk merk krijgt zijn eigen workspace met aparte merkstem, memory en goedkeuringsflow. De merken weten niets van elkaar.
+
+Q: Welke platformen ondersteunt Clyde?
+A: Instagram, Facebook, LinkedIn (social), WordPress en Webflow (blog), Google Ads en Meta Ads (ads), Calendly (lead qualifier), Twilio (voice agent), ManyChat (DM automation), en alle gangbare rapportagetools via API.
+
+Q: Hoe werkt de goedkeuringsflow?
+A: Clyde genereert content autonoom. Jij of je klant reviewt via het dashboard, Slack of Telegram. Goedkeuren of afwijzen met commentaar. Clyde leert van elke review en past de volgende batch aan.
+
+Q: Wat is het verschil tussen Founding en Growth?
+A: Founding is een eenmalige investering van 997 euro zonder maandelijkse kosten, maximaal 10 plekken, directe toegang tot Daley via Slack, en prioriteit bij nieuwe vaardigheden. Growth is een maandelijks abonnement van 499 euro per workspace voor bureaus die flexibiliteit willen.
+
+Q: Kan ik FutureMarketingAI eerst uitproberen?
+A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

@@ -73,6 +73,8 @@ export default async function FoundingMemberPage({
           question: t(`faq.items.${key}.question`),
           answer: t(`faq.items.${key}.answer`),
         }))}
+        path="/founding-member"
+        locale={locale}
       />
       <Breadcrumbs path="/founding-member" locale={locale} />
 

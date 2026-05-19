@@ -20,7 +20,11 @@
       "subtitle": "Clyde remembers every brand, learns from every campaign and runs twelve skills autonomously: social, blogs, voice, ads, SEO and analytics. One AI Marketing Employee for your entire brand portfolio.",
       "trustAnchor": "Built with Dutch agencies in practice. Max {maxPartners} partners per year.",
       "cta": "Book a call",
-      "ctaSecondary": "Meet Clyde"
+      "ctaSecondary": "Meet Clyde",
+      "trustCluster": {
+        "founding": "{taken} of {total} founding spots",
+        "avgLabel": "GDPR-compliant"
+      }
     },
     "services": {
       "title": "What Clyde does for your agency",
@@ -1831,6 +1835,9 @@
       "hero": {
         "eyebrow": "Case study, Founding partner",
         "title": "3 accounts. 4 brands. One AI Marketing Employee.",
+        "chip1": "3 accounts onboarded",
+        "chip2": "4 brands live in 7 days",
+        "chip3": "12 skills active",
         "subtitle": "SkinClarity Club has been a Founding client from week one. Clyde manages 3 Instagram accounts, 4 brands and multiple content types. Autonomously, every day, without the team having to look over its shoulder."
       },
       "setup": {
