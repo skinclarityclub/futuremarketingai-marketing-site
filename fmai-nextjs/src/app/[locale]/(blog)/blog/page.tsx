@@ -8,6 +8,7 @@ import { CategoryFilter } from '@/components/blog/CategoryFilter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 
 export const revalidate = 3600
 
@@ -89,6 +90,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/blog" locale={locale} />
       <h1 className="mb-2 text-4xl font-bold tracking-tight text-text-primary">{t('title')}</h1>
       <p className="mb-10 text-lg text-text-secondary">{t('subtitle')}</p>
 

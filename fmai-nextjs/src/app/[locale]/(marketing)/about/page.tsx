@@ -5,6 +5,7 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
 import {
   DALEY_PERSON_ID,
@@ -59,6 +60,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/about" locale={locale} />
       <PersonJsonLd
         id={DALEY_PERSON_ID}
         name={t('founder.fullName')}

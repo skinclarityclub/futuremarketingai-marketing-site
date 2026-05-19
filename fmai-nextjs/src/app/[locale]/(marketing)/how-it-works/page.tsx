@@ -7,6 +7,7 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { HowToJsonLd } from '@/components/seo/HowToJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -60,6 +61,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           text: t(`process.steps.${key}.description`),
         }))}
       />
+      <Breadcrumbs path="/how-it-works" locale={locale} />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">

@@ -6,6 +6,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
 export function generateStaticParams() {
@@ -69,6 +70,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/legal" locale={locale} />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">

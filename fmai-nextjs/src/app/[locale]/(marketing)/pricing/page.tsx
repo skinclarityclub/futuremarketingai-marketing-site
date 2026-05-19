@@ -9,6 +9,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PricingJsonLd } from '@/components/seo/PricingJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -90,6 +91,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         }))}
       />
       <PricingJsonLd />
+      <Breadcrumbs path="/pricing" locale={locale} />
 
       {/* Hero */}
       <section className="relative pt-24 pb-12 px-6 lg:px-12">

@@ -5,6 +5,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ApplicationForm } from '@/components/apply/ApplicationForm'
@@ -46,6 +47,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/apply" locale={locale} />
 
       <section className="pt-24 pb-12 px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">

@@ -6,6 +6,7 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -73,6 +74,7 @@ export default async function FoundingMemberPage({
           answer: t(`faq.items.${key}.answer`),
         }))}
       />
+      <Breadcrumbs path="/founding-member" locale={locale} />
 
       {/* Hero */}
       <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
