@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Link } from '@/i18n/navigation'
 
@@ -61,6 +62,7 @@ export async function LegalSectionPage({
         ]}
         locale={locale}
       />
+      <Breadcrumbs path={path} locale={locale} />
 
       <section className="relative pt-16 pb-8 px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">

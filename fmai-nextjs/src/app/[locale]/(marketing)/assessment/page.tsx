@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { AssessmentClient } from './AssessmentClient'
@@ -45,6 +46,7 @@ export default async function AssessmentPage({
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/assessment" locale={locale} />
       <AssessmentClient />
     </PageShell>
   )

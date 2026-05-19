@@ -8,6 +8,7 @@ import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SINDY_PERSON_ID, LINKEDIN_SINDY_URL, SITE_URL, ORG_ID } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -66,11 +67,11 @@ export default async function SkcCaseStudyPage({
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Case Studies', path: '/case-studies/skinclarity-club' },
           { name: 'SkinClarity Club', path: '/case-studies/skinclarity-club' },
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/case-studies/skinclarity-club" locale={locale} />
       {/* SKC Organization — separate from FMai org so Sindy.worksFor @id resolves */}
       <JsonLd
         data={{

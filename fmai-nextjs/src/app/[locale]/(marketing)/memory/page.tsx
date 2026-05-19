@@ -5,6 +5,7 @@ import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -49,6 +50,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         ]}
         locale={locale}
       />
+      <Breadcrumbs path="/memory" locale={locale} />
 
       {/* Hero */}
       <section

@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { ServiceJsonLd } from '@/components/seo/ServiceJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -110,7 +111,7 @@ export async function SkillPageTemplate({
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Skills', path: `/skills/${slug}` },
+          { name: 'Skills', path: '/skills' },
           { name: skill?.name ?? slug, path: `/skills/${slug}` },
         ]}
         locale={locale}
@@ -125,6 +126,7 @@ export async function SkillPageTemplate({
         />
       )}
       <FaqJsonLd items={faqItems} />
+      <Breadcrumbs path={`/skills/${slug}`} locale={locale} />
 
       {/* Hero */}
       {customHero ?? (
