@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -45,7 +46,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           { name: t('hero.title'), path: '/contact' },
         ]}
         locale={locale}
+        path="/contact"
       />
+      <Breadcrumbs path="/contact" locale={locale} />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">

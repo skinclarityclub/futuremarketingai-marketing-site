@@ -208,20 +208,29 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                     />
                   </button>
 
-                  <AnimatePresence>
-                    {skillsOpen && (
-                      <motion.div
-                        id="skills-menu"
-                        ref={skillsMenuRef}
-                        initial={{ opacity: 0, y: -8, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -8, scale: 0.96 }}
-                        transition={{ duration: 0.2, ease: 'easeOut' }}
-                        className="absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden"
-                        style={{ width: '880px' }}
-                        role="menu"
-                        aria-label={tHeader('nav.skills')}
-                        onKeyDown={(e) => {
+                  {/* Mega-menu: always rendered in SSR DOM for crawler/AI-agent
+                      discovery of all 12 skill hrefs (audit MF-08 + 16-04 F8).
+                      Visibility is CSS-toggled via the `hidden` class so the
+                      element occupies no layout space when closed (absolute
+                      positioning means no CLS in either state). */}
+                  <motion.div
+                    id="skills-menu"
+                    ref={skillsMenuRef}
+                    initial={false}
+                    animate={
+                      skillsOpen
+                        ? { opacity: 1, y: 0, scale: 1 }
+                        : { opacity: 0, y: -8, scale: 0.96 }
+                    }
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    className={`absolute top-full -left-4 mt-1 bg-bg-deep/98 backdrop-blur-md border border-border-primary rounded-xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden ${
+                      skillsOpen ? 'block' : 'hidden'
+                    }`}
+                    style={{ width: '880px' }}
+                    role="menu"
+                    aria-label={tHeader('nav.skills')}
+                    aria-hidden={!skillsOpen}
+                    onKeyDown={(e) => {
                           const total = FLAT_SKILLS.length + 1 // +1 for Apply CTA at end
                           const current = skillsItemRefs.current.findIndex(
                             (el) => el === document.activeElement
@@ -344,8 +353,6 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                           </Link>
                         </div>
                       </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               ) : (
                 <Link

@@ -374,6 +374,9 @@
           "ad_creator": "Ad Creator",
           "reel_builder": "Reel Builder",
           "reporting": "Reporting",
+          "email_management": "Email Management",
+          "manychat": "ManyChat DM",
+          "research": "Research",
           "pricing": "Precios",
           "about": "Sobre nosotros",
           "how_it_works": "Cómo funciona",
@@ -403,6 +406,37 @@
     },
     "comingSoon": "Próximamente",
     "viewRoadmap": "Ver la roadmap",
+    "breadcrumbs": {
+      "home": "Inicio",
+      "about": "Sobre nosotros",
+      "how_it_works": "Cómo funciona",
+      "pricing": "Precios",
+      "founding_member": "Founding Member",
+      "contact": "Contacto",
+      "memory": "Memoria",
+      "apply": "Solicitud",
+      "assessment": "Assessment",
+      "roadmap": "Roadmap",
+      "case_studies_skc": "SkinClarity Club",
+      "skills_index": "Habilidades",
+      "skill_social_media": "Social Media",
+      "skill_blog_factory": "Blog Factory",
+      "skill_voice_agent": "Voice Agent",
+      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_ad_creator": "Ad Creator",
+      "skill_reel_builder": "Reel Builder",
+      "skill_email_management": "Email Management",
+      "skill_manychat": "ManyChat DM",
+      "skill_reporting": "Reporting",
+      "skill_seo_geo": "SEO / GEO",
+      "skill_research": "Research",
+      "skill_clyde": "Clyde",
+      "blog": "Blog",
+      "legal": "Aviso legal",
+      "legal_privacy": "Privacidad",
+      "legal_terms": "Términos",
+      "legal_cookies": "Cookies"
+    },
     "cookie_consent": {
       "title": "Usamos cookies",
       "description": "Usamos cookies para mejorar tu experiencia y analizar el tráfico del sitio.",
@@ -2086,6 +2120,20 @@
         }
       }
     }
+  },
+  "skills-index": {
+    "meta": {
+      "title": "Habilidades: las 12 capacidades de Clyde | FutureMarketingAI",
+      "description": "Las 12 habilidades de Clyde: social, blogs, anuncios, voz, leads, email, SEO/GEO y más. 9 en producción, 3 próximamente."
+    },
+    "hero": {
+      "title": "Las 12 habilidades de Clyde",
+      "subtitle": "Un Empleado AI de Marketing, doce habilidades, una memoria compartida por marca. Nueve en producción, tres próximamente."
+    },
+    "status": {
+      "live": "Live"
+    },
+    "grid_aria_label": "Lista de habilidades"
   },
   "skills-blog-factory": {
     "meta": {

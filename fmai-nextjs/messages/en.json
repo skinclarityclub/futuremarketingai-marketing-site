@@ -374,6 +374,9 @@
           "ad_creator": "Ad Creator",
           "reel_builder": "Reel Builder",
           "reporting": "Reporting",
+          "email_management": "Email Management",
+          "manychat": "ManyChat DM",
+          "research": "Research",
           "pricing": "Pricing",
           "about": "About",
           "how_it_works": "How it works",
@@ -403,6 +406,37 @@
     },
     "comingSoon": "Coming soon",
     "viewRoadmap": "View the roadmap",
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "About",
+      "how_it_works": "How it works",
+      "pricing": "Pricing",
+      "founding_member": "Founding Member",
+      "contact": "Contact",
+      "memory": "Memory",
+      "apply": "Apply",
+      "assessment": "Assessment",
+      "roadmap": "Roadmap",
+      "case_studies_skc": "SkinClarity Club",
+      "skills_index": "Skills",
+      "skill_social_media": "Social Media",
+      "skill_blog_factory": "Blog Factory",
+      "skill_voice_agent": "Voice Agent",
+      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_ad_creator": "Ad Creator",
+      "skill_reel_builder": "Reel Builder",
+      "skill_email_management": "Email Management",
+      "skill_manychat": "ManyChat DM",
+      "skill_reporting": "Reporting",
+      "skill_seo_geo": "SEO / GEO",
+      "skill_research": "Research",
+      "skill_clyde": "Clyde",
+      "blog": "Blog",
+      "legal": "Legal",
+      "legal_privacy": "Privacy",
+      "legal_terms": "Terms",
+      "legal_cookies": "Cookies"
+    },
     "cookie_consent": {
       "title": "We use cookies",
       "description": "We use cookies to improve your experience and analyze site traffic.",
@@ -2086,6 +2120,20 @@
         }
       }
     }
+  },
+  "skills-index": {
+    "meta": {
+      "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
+      "description": "Browse Clyde's 12 skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 9 live, 3 coming soon."
+    },
+    "hero": {
+      "title": "Clyde's 12 skills",
+      "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Nine are live in production, three are coming soon."
+    },
+    "status": {
+      "live": "Live"
+    },
+    "grid_aria_label": "Skills list"
   },
   "skills-blog-factory": {
     "meta": {

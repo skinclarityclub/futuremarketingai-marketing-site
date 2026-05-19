@@ -1,56 +1,31 @@
-'use client'
-
-import { useRef, type ReactNode } from 'react'
-import { motion, useReducedMotion, useInView } from 'motion/react'
+import { type ReactNode } from 'react'
 
 interface ScrollRevealProps {
   children: ReactNode
+  /** Accepted but unused — kept for backward-compat with 18 routes. */
   delay?: number
+  /** Accepted but unused — kept for backward-compat with 18 routes. */
   direction?: 'up' | 'left' | 'right' | 'none'
   className?: string
 }
 
-const getAnimation = (direction: ScrollRevealProps['direction']) => {
-  switch (direction) {
-    case 'left':
-      return { hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }
-    case 'right':
-      return { hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }
-    case 'none':
-      return { hidden: { opacity: 0 }, visible: { opacity: 1 } }
-    case 'up':
-    default:
-      return { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }
-  }
-}
-
-export function ScrollReveal({
-  children,
-  delay = 0,
-  direction = 'up',
-  className,
-}: ScrollRevealProps) {
-  const prefersReducedMotion = useReducedMotion()
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-50px' })
-
-  if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>
-  }
-
-  const { hidden, visible } = getAnimation(direction)
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={hidden}
-      animate={isInView ? visible : hidden}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
+/**
+ * ScrollReveal — SSR-safe wrapper.
+ *
+ * Previously rendered a `motion.div` with `initial={hidden}` and animated to
+ * visible only when `useInView` reported an intersection. That gated all
+ * below-fold content behind JavaScript + IntersectionObserver: crawlers,
+ * AI agents, and JS-disabled visitors saw blank sections across 18 routes
+ * (audit MF-01 / 2026-05-18 v2 cross-cutting synthesis).
+ *
+ * Now: plain pass-through that always renders children visible on SSR.
+ * The directional reveal animation is intentionally removed in favor of
+ * content-first rendering. Re-introduce as a post-hydration enhancement
+ * via Motion `whileInView` + `initial={false}` only if a future design
+ * pass justifies it. Callers keep the same prop signature.
+ */
+export function ScrollReveal({ children, className }: ScrollRevealProps) {
+  return <div className={className}>{children}</div>
 }
 
 export default ScrollReveal
