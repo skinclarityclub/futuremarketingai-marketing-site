@@ -2970,6 +2970,10 @@
   },
   "newsletter": {
     "confirm": {
+      "meta": {
+        "title": "Confirm subscription | Future Marketing AI",
+        "description": "Confirm your subscription to the AI Readiness Checklist."
+      },
       "pendingTitle": "Confirming...",
       "pendingBody": "One moment, we are validating your token.",
       "okTitle": "You are subscribed.",

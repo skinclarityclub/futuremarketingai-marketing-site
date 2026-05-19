@@ -2970,6 +2970,10 @@
   },
   "newsletter": {
     "confirm": {
+      "meta": {
+        "title": "Aanmelding bevestigen | Future Marketing AI",
+        "description": "Bevestig je aanmelding voor de AI Readiness Checklist."
+      },
       "pendingTitle": "Bevestigen...",
       "pendingBody": "Een moment, we controleren je token.",
       "okTitle": "Je bent aangemeld.",
