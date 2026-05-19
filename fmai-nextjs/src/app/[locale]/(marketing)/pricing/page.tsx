@@ -89,6 +89,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           question: t(`faq.items.${key}.question`),
           answer: t(`faq.items.${key}.answer`),
         }))}
+        path="/pricing"
+        locale={locale}
       />
       <PricingJsonLd />
       <Breadcrumbs path="/pricing" locale={locale} />

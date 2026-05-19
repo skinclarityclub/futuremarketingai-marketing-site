@@ -125,7 +125,7 @@ export async function SkillPageTemplate({
           locale={locale}
         />
       )}
-      <FaqJsonLd items={faqItems} />
+      <FaqJsonLd items={faqItems} path={`/skills/${slug}`} locale={locale} />
       <Breadcrumbs path={`/skills/${slug}`} locale={locale} />
 
       {/* Hero */}

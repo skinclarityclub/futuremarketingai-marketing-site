@@ -17,6 +17,7 @@ import { HeroSpline } from '@/components/hero/HeroSpline'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
+import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getSkillBySlug } from '@/lib/skills-data'
 import { Zap, ArrowRight } from 'lucide-react'
@@ -90,6 +91,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           question: t(`faq.items.${key}.question`),
           answer: t(`faq.items.${key}.answer`),
         }))}
+        path="/"
+        locale={locale}
       />
 
       {/* Hero Section — Immersive layout with Spline 3D */}
@@ -141,6 +144,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             >
               {t('hero.trustAnchor')}
             </p>
+
+            {/* Trust cluster — client proof + founding scarcity + AVG badge */}
+            <TrustClusterHero
+              foundingLabel={t('hero.trustCluster.founding', {
+                taken: FOUNDING_SPOTS_TAKEN,
+                total: FOUNDING_SPOTS_TOTAL,
+              })}
+              avgLabel={t('hero.trustCluster.avgLabel')}
+            />
 
             {/* CTA Buttons — left-aligned, single dominant primary + subtle text link */}
             <div
