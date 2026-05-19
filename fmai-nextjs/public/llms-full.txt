@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills across client brand portfolios with per-brand memory isolation. Five tiers from 347 EUR to 7,997 EUR plus a 997 EUR Founding Member lifetime program (10 spots, 1 taken). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR lifetime fixed (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -59,9 +59,9 @@ Capabilities:
 - Automatic publication to website
 - Brand voice consistency
 
-Credit cost: 15 credits per article. Tier caps: Partner 2/mo, Growth 8/mo, Professional 20/mo, Enterprise unlimited, Founding Member 12/mo.
+Credit cost: 15 credits per article. Each workspace receives 800 credits per month (Founding Member: 8000 credits total).
 
-### Ad Creator (Live)
+### Ad Creator (Coming soon)
 
 Ad Creator generates complete advertisements from copy to visuals. AI builds static and video ads, optimizes for different formats (Stories, Feed, Reels) and publishes directly to Meta Ads Manager. A/B test variants included.
 
@@ -73,7 +73,7 @@ Capabilities:
 - Direct publishing to Meta Ads
 - A/B test variant generation
 
-Credit cost: 10 credits per static ad, 20 credits per video ad. Tier caps: Partner add-on only (EUR 97 pack), Growth 15/mo, Professional 50/mo, Enterprise unlimited, Founding Member 25/mo.
+Credit cost: 10 credits per static ad, 20 credits per video ad. Status: coming soon.
 
 ### Reel Builder (Coming soon)
 
@@ -88,7 +88,7 @@ Capabilities:
 
 Credit cost: 25 credits per reel. Status: coming soon.
 
-### Voice Agent (Live)
+### Voice Agent (Coming soon)
 
 The Voice Agent handles phone traffic with AI, both inbound and outbound. Books appointments, answers FAQs, logs conversations and escalates to a human when needed. Fully customizable per client (voice, personality, knowledge base). Built on ElevenLabs voice technology.
 
@@ -100,7 +100,7 @@ Capabilities:
 - Escalation to human agent
 - Campaign management for outbound calls
 
-Credit cost: 5 credits per minute. Tier caps: Partner not available, Growth 30 min/mo, Professional 120 min/mo, Enterprise unlimited, Founding Member 60 min/mo.
+Credit cost: 5 credits per minute. Status: coming soon.
 
 ### Lead Qualifier (Live)
 
@@ -115,20 +115,22 @@ Capabilities:
 
 Credit cost: 2 credits per scored conversation.
 
-### Email Management (Coming soon)
+### Email Management (Live)
 
-Email Management automatically classifies your Gmail inbox with AI, adds smart labels and generates a daily digest of important messages. Save hours per week on email management. Note: this is inbox classify, not email campaigns.
+Email Management connects to Gmail and Outlook (Microsoft 365) via OAuth. AI classifies inboxes into 6 categories (lead, urgent client, invoice, newsletter, internal, other), auto-provisions FMai labels and folders, and generates AI-reply drafts for your approval before sending. Saves hours per week on inbox management. Dual-write organization keeps both Outlook (category plus folder) and Gmail (nested label) mailboxes tidy.
 
 Capabilities:
-- AI inbox classification (urgent, action, info)
-- Smart labels and auto-categorization
-- Daily email digest
-- Priority ranking of messages
-- Suggested replies
+- Gmail and Outlook (Microsoft 365) OAuth integration
+- AI inbox classification (lead, urgent, invoice, newsletter, internal)
+- Auto-provisioning of FMai labels and folders
+- AI reply drafts with approval queue
+- Brand-voice per client
+- Round-trip send via mailbox-native API
+- Approval audit log
 
-Credit cost: 5 credits per action. Status: coming soon.
+Credit cost: 5 credits per action. Brand-voice learns from your corrections per client.
 
-### ManyChat DM (Coming soon)
+### ManyChat DM (Live)
 
 ManyChat DM Automation responds automatically to Instagram DMs with AI-generated answers. Set keyword triggers, capture leads and route warm prospects to your CRM or sales team.
 
@@ -139,7 +141,7 @@ Capabilities:
 - Conversation flows with branching
 - Performance analytics per trigger
 
-Credit cost: 2 credits per 10 DMs. Status: coming soon.
+Credit cost: 2 credits per 10 DMs.
 
 ### Reporting and Analytics (Live)
 
@@ -197,66 +199,52 @@ Credit cost: 1 to 5 credits per chat.
 
 ## Tiers and Pricing
 
-All prices in EUR per month excluding VAT unless stated.
+All prices in EUR per month excluding VAT unless stated. Workspace-priced model since 2026-04-28. Pricing canon: `fma-app/src/lib/skills.ts`. Workspace tariffs are recalibrated every 6 months based on observed credit usage. Existing contracts are not retroactively adjusted.
 
-### Partner, 347 EUR/mo
+Two pricing models:
+- Fixed: Founding Member only. Single monthly price, single credit allocation.
+- Workspace: monthly price equals pricePerWorkspace times workspaces. Credits scale with workspaces (creditsPerWorkspace times workspaces).
 
-- 1 workspace (1 brand)
-- 1,000 credits per month
-- 8 of 12 skills included: Social Media, Blog Factory, Lead Qualifier, Email Management, Reporting, SEO/GEO, Research, Clyde
-- Not included by default: Ad Creator, Reel Builder, Voice Agent, ManyChat DM
-- Add-on paths: Static Ads pack 97 EUR, ManyChat pack 47 EUR
-- 497 EUR one-time onboarding
-
-### Growth, 2,497 EUR/mo
-
-- 5 workspaces
-- 4,000 credits per month
-- All 12 skills included
-- 1,997 EUR one-time onboarding
-
-### Professional, 4,497 EUR/mo (Most popular)
-
-- 15 workspaces
-- 12,000 credits per month
-- All 12 skills included
-- Dedicated Slack channel
-- 3,997 EUR one-time onboarding
-
-### Enterprise, 7,997 EUR/mo
-
-- Unlimited workspaces
-- 30,000 credits per month
-- All 12 skills, no caps
-- Dedicated Customer Success Manager
-- 5,997+ EUR one-time onboarding
-
-### Founding Member, 997 EUR/mo (lifetime price lock)
+### Founding Member, 997 EUR lifetime fixed
 
 - 10 spots total, 1 currently taken (SkinClarity Club)
-- Unlimited workspaces
+- Unlimited workspaces (no cap)
 - 8,000 credits per month
-- All 12 skills with Professional-tier caps
+- All 12 skills included (9 live, 3 coming soon)
 - Direct founder access plus roadmap influence
 - No onboarding fee
-- Lifetime price lock (pricing never raises for founding members)
-- Approximately 60 percent below Growth tier
+- Lifetime price lock: never raises for founding members
+- Mathematical advantage over workspace pricing kicks in from 3 brands (997 fixed vs 1497 at Growth 499 times 3)
+
+### Growth, 499 EUR per workspace
+
+- 2 to 4 brand workspaces
+- 800 credits per workspace per month (1600 to 3200 total)
+- All 12 skills included
+- 1,997 EUR one-time onboarding
+- Email support
+
+### Professional, 399 EUR per workspace
+
+- 5 to 14 brand workspaces
+- 800 credits per workspace per month (4000 to 11200 total)
+- All 12 skills included
+- 3,997 EUR one-time onboarding
+- Dedicated Slack channel
+
+### Enterprise, 299 EUR per workspace
+
+- 15 plus brand workspaces (no upper cap)
+- 800 credits per workspace per month (12000 plus total)
+- All 12 skills included
+- 5,997 EUR one-time onboarding
+- Dedicated Customer Success Manager
 
 ### Credit packs (all tiers)
 
-- Partner Top-up: 500 credits, 39 EUR
 - Boost: 2,000 credits, 149 EUR
 - Scale: 5,000 credits, 297 EUR
 - Max: 15,000 credits, 697 EUR
-
-### Skill packs (Partner tier add-ons)
-
-- Static Ads: 97 EUR/mo
-- ManyChat DM: 47 EUR/mo
-- Voice Minutes: 147 EUR/mo
-- Video Ads: 197 EUR/mo
-- Reels: 197 EUR/mo
-- Blog Power: 197 EUR/mo
 
 ## Case Study: SkinClarity Club
 

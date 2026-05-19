@@ -14,7 +14,8 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
     "test:e2e:report": "playwright show-report",
-    "check:palette": "bash scripts/verify-palette.sh"
+    "check:palette": "bash scripts/verify-palette.sh",
+    "check:i18n-orphans": "node scripts/check-orphan-i18n.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "~3.0.71",
