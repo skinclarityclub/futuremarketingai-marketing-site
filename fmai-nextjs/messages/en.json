@@ -1748,6 +1748,8 @@
     },
     "form": {
       "title": "Tell us about your agency",
+      "requiredNote": "Fields marked * are required.",
+      "optionalSuffix": "(optional)",
       "nameLabel": "Name",
       "namePlaceholder": "Full name",
       "emailLabel": "Email address",

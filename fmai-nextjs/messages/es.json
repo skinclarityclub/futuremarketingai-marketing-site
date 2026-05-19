@@ -1748,6 +1748,8 @@
     },
     "form": {
       "title": "Cuéntanos sobre tu agencia",
+      "requiredNote": "Los campos marcados con * son obligatorios.",
+      "optionalSuffix": "(opcional)",
       "nameLabel": "Nombre",
       "namePlaceholder": "Nombre completo",
       "emailLabel": "Correo electrónico",

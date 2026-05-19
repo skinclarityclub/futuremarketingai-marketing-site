@@ -9,17 +9,22 @@
  */
 import { SITE_URL } from '@/lib/seo-config'
 
+/**
+ * Phase 17-D D4 simplified the apply form to name + email + agency. All
+ * other fields are kept here as optional for backward compatibility with
+ * historic submissions and future intake forms; templates render only
+ * the fields that arrive.
+ */
 export interface ApplyPayload {
   name: string
   email: string
-  agency: string
-  role: string
-  revenue: string
-  clientCount: string
-  tier: string
-  /** Optional. Only meaningful for workspace-priced tiers (growth/professional/enterprise). */
+  agency?: string
+  role?: string
+  revenue?: string
+  clientCount?: string
+  tier?: string
   workspaces?: number
-  problem: string
+  problem?: string
   locale: string
 }
 
@@ -60,30 +65,42 @@ function escape(value: string): string {
 
 export function adminApplyTemplate(p: ApplyPayload): string {
   const safe = escape
+  const agencyHeading = p.agency ? `Nieuwe aanvraag van ${safe(p.agency)}` : 'Nieuwe aanvraag'
+  const tierLine = p.tier
+    ? `<p style="color:#444; margin:0 0 16px;">Service-niveau gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong>${
+        typeof p.workspaces === 'number' && p.workspaces > 0
+          ? ` &middot; Geschatte werkruimtes: <strong>${p.workspaces}</strong>`
+          : ''
+      }</p>`
+    : '<p style="color:#444; margin:0 0 16px;">Service-niveau wordt tijdens de call afgestemd.</p>'
+  const qualificationBlock =
+    p.revenue || p.clientCount
+      ? `
+        <h3 style="color:#0a0d14; margin:16px 0 8px;">Qualificatie</h3>
+        ${p.revenue ? `<p style="margin:4px 0;"><strong>Omzet:</strong> ${safe(REVENUE_LABELS[p.revenue] ?? p.revenue)}</p>` : ''}
+        ${p.clientCount ? `<p style="margin:4px 0;"><strong>Klantportfolio:</strong> ${safe(CLIENT_COUNT_LABELS[p.clientCount] ?? p.clientCount)}</p>` : ''}`
+      : ''
+  const problemBlock = p.problem
+    ? `<h3 style="color:#0a0d14; margin:16px 0 8px;">Context</h3>
+       <pre style="white-space:pre-wrap; background:#f8f9fa; padding:12px; border-radius:4px; font-family:inherit; color:#222;">${safe(p.problem)}</pre>`
+    : ''
   return `
 <!doctype html>
 <html>
   <body style="font-family: -apple-system, Segoe UI, sans-serif; background:#f5f5f5; padding:24px;">
     <table width="100%" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; padding:24px;">
       <tr><td>
-        <h2 style="color:#0a0d14; margin:0 0 16px;">Nieuwe aanvraag van ${safe(p.agency)}</h2>
-        <p style="color:#444; margin:0 0 16px;">Service-niveau gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong>${
-          typeof p.workspaces === 'number' && p.workspaces > 0
-            ? ` &middot; Geschatte werkruimtes: <strong>${p.workspaces}</strong>`
-            : ''
-        }</p>
+        <h2 style="color:#0a0d14; margin:0 0 16px;">${agencyHeading}</h2>
+        ${tierLine}
         <hr style="border:none; border-top:1px solid #eee; margin:16px 0;">
         <h3 style="color:#0a0d14; margin:0 0 8px;">Contact</h3>
         <p style="margin:4px 0;"><strong>Naam:</strong> ${safe(p.name)}</p>
-        <p style="margin:4px 0;"><strong>Rol:</strong> ${safe(p.role)}</p>
+        ${p.role ? `<p style="margin:4px 0;"><strong>Rol:</strong> ${safe(p.role)}</p>` : ''}
         <p style="margin:4px 0;"><strong>Email:</strong> <a href="mailto:${safe(p.email)}">${safe(p.email)}</a></p>
-        <p style="margin:4px 0;"><strong>Bureau:</strong> ${safe(p.agency)}</p>
-        <h3 style="color:#0a0d14; margin:16px 0 8px;">Qualificatie</h3>
-        <p style="margin:4px 0;"><strong>Omzet:</strong> ${safe(REVENUE_LABELS[p.revenue] ?? p.revenue)}</p>
-        <p style="margin:4px 0;"><strong>Klantportfolio:</strong> ${safe(CLIENT_COUNT_LABELS[p.clientCount] ?? p.clientCount)}</p>
+        ${p.agency ? `<p style="margin:4px 0;"><strong>Bureau:</strong> ${safe(p.agency)}</p>` : ''}
         <p style="margin:4px 0;"><strong>Locale:</strong> ${safe(p.locale)}</p>
-        <h3 style="color:#0a0d14; margin:16px 0 8px;">Probleem</h3>
-        <pre style="white-space:pre-wrap; background:#f8f9fa; padding:12px; border-radius:4px; font-family:inherit; color:#222;">${safe(p.problem)}</pre>
+        ${qualificationBlock}
+        ${problemBlock}
         <hr style="border:none; border-top:1px solid #eee; margin:24px 0 16px;">
         <p style="font-size:12px; color:#888;">Verstuurd via ${SITE_URL}/apply.</p>
       </td></tr>
@@ -100,12 +117,19 @@ export function applicantConfirmationTemplate(p: ApplyPayload): string {
       : p.locale === 'es'
         ? `Hola ${safe(p.name)}`
         : `Hoi ${safe(p.name)}`
+  const orgRef = p.agency ? safe(p.agency) : null
   const body =
     p.locale === 'en'
-      ? `Thanks for applying. I have received your application for ${safe(p.agency)} and will review it within 48 hours. You will hear back from me personally, not from a sales team.`
+      ? orgRef
+        ? `Thanks for applying. I have received your application for ${orgRef} and will review it within 48 hours. You will hear back from me personally, not from a sales team.`
+        : `Thanks for applying. I have received your application and will review it within 48 hours. You will hear back from me personally, not from a sales team.`
       : p.locale === 'es'
-        ? `Gracias por tu solicitud. He recibido tu aplicacion para ${safe(p.agency)} y la revisare en 48 horas. Te respondere yo personalmente, no un equipo comercial.`
-        : `Bedankt voor je aanvraag. Ik heb je aanvraag voor ${safe(p.agency)} ontvangen en neem binnen 48 uur persoonlijk contact op. Geen sales-team, maar ik zelf.`
+        ? orgRef
+          ? `Gracias por tu solicitud. He recibido tu aplicacion para ${orgRef} y la revisare en 48 horas. Te respondere yo personalmente, no un equipo comercial.`
+          : `Gracias por tu solicitud. He recibido tu aplicacion y la revisare en 48 horas. Te respondere yo personalmente, no un equipo comercial.`
+        : orgRef
+          ? `Bedankt voor je aanvraag. Ik heb je aanvraag voor ${orgRef} ontvangen en neem binnen 48 uur persoonlijk contact op. Geen sales-team, maar ik zelf.`
+          : `Bedankt voor je aanvraag. Ik heb je aanvraag ontvangen en neem binnen 48 uur persoonlijk contact op. Geen sales-team, maar ik zelf.`
   const signoff = p.locale === 'en' ? 'Best, Daley' : 'Groet, Daley'
   return `
 <!doctype html>

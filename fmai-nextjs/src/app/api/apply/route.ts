@@ -15,26 +15,28 @@ const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
 const TIER_ENUM = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
 
+/**
+ * Phase 17-D D4 simplified the form to 3 fields: name + email + optional
+ * company. Tier discovery, revenue, client-count, problem statement all
+ * shift to the Calendly call. The Zod schema keeps those fields known
+ * but optional so historical inbound payloads and any future intake
+ * variations still validate without a schema migration.
+ */
 const applicationSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email(),
-  agency: z.string().min(2).max(150),
-  role: z.string().min(2).max(100),
-  revenue: z.enum(REVENUE_ENUM),
-  clientCount: z.enum(CLIENT_COUNT_ENUM),
-  tier: z.enum(TIER_ENUM),
-  // Workspace-priced tiers (growth/professional/enterprise) need an estimate.
-  // Coerced because <input type="number"> values arrive as strings via JSON
-  // when the form serialises them. Preprocess collapses empty/null to
-  // undefined so optional() accepts a not-applicable field cleanly.
+  agency: z.string().min(2).max(150).optional(),
+  role: z.string().min(2).max(100).optional(),
+  revenue: z.enum(REVENUE_ENUM).optional(),
+  clientCount: z.enum(CLIENT_COUNT_ENUM).optional(),
+  tier: z.enum(TIER_ENUM).optional(),
   workspaces: z.preprocess(
     (v) => (v === '' || v == null ? undefined : v),
     z.coerce.number().int().min(1).max(200).optional(),
   ),
-  problem: z.string().min(20).max(5000),
+  problem: z.string().min(20).max(5000).optional(),
   // Honeypot: bots fill, humans do not.
   website: z.string().max(0).optional().default(''),
-  // Optional client-attached locale, fallback nl.
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
@@ -125,12 +127,23 @@ export async function POST(request: NextRequest) {
   const fromAddr = process.env.APPLY_EMAIL_FROM ?? 'apply@future-marketing.ai'
   const toAddr = process.env.APPLY_EMAIL_TO ?? 'info@future-marketing.ai'
 
+  const subjectAgency = payload.agency ? ` ${payload.agency}` : ''
+  const subjectTier = payload.tier ? ` (${payload.tier})` : ''
+  const leadHeadline = `Nieuwe apply:${subjectAgency}${subjectTier}${
+    typeof payload.workspaces === 'number' ? `, ~${payload.workspaces} ws` : ''
+  }`
+  const problemSnippet = payload.problem
+    ? payload.problem.length > 300
+      ? payload.problem.slice(0, 300) + '…'
+      : payload.problem
+    : undefined
+
   const [adminResult, confirmationResult] = await Promise.all([
     resend.emails.send({
       from: `FutureMarketingAI <${fromAddr}>`,
       to: [toAddr],
       replyTo: payload.email,
-      subject: `[Apply] ${payload.agency} (${payload.tier})`,
+      subject: `[Apply]${subjectAgency}${subjectTier}`,
       html: adminApplyTemplate(payload),
     }),
     resend.emails.send({
@@ -144,23 +157,18 @@ export async function POST(request: NextRequest) {
             : 'Je aanvraag is ontvangen',
       html: applicantConfirmationTemplate(payload),
     }),
-    sendLeadAlert(
-      `Nieuwe apply: ${payload.agency} (${payload.tier}${
-        typeof payload.workspaces === 'number' ? `, ~${payload.workspaces} ws` : ''
-      })`,
-      {
-        name: payload.name,
-        email: payload.email,
-        agency: payload.agency,
-        role: payload.role,
-        tier: payload.tier,
-        ...(typeof payload.workspaces === 'number' ? { workspaces: payload.workspaces } : {}),
-        revenue: payload.revenue,
-        clients: payload.clientCount,
-        locale: payload.locale,
-        problem: payload.problem.length > 300 ? payload.problem.slice(0, 300) + '…' : payload.problem,
-      },
-    ),
+    sendLeadAlert(leadHeadline, {
+      name: payload.name,
+      email: payload.email,
+      ...(payload.agency ? { agency: payload.agency } : {}),
+      ...(payload.role ? { role: payload.role } : {}),
+      ...(payload.tier ? { tier: payload.tier } : {}),
+      ...(typeof payload.workspaces === 'number' ? { workspaces: payload.workspaces } : {}),
+      ...(payload.revenue ? { revenue: payload.revenue } : {}),
+      ...(payload.clientCount ? { clients: payload.clientCount } : {}),
+      locale: payload.locale,
+      ...(problemSnippet ? { problem: problemSnippet } : {}),
+    }),
   ])
 
   if (adminResult.error) {

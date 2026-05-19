@@ -1748,6 +1748,8 @@
     },
     "form": {
       "title": "Vertel ons over jouw bureau",
+      "requiredNote": "Velden met * zijn verplicht.",
+      "optionalSuffix": "(optioneel)",
       "nameLabel": "Naam",
       "namePlaceholder": "Volledige naam",
       "emailLabel": "E-mailadres",
