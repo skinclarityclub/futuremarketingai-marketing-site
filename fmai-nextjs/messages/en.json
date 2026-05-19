@@ -439,9 +439,27 @@
     },
     "cookie_consent": {
       "title": "We use cookies",
-      "description": "We use cookies to improve your experience and analyze site traffic.",
-      "accept": "Accept",
-      "decline": "Decline"
+      "description": "Essential cookies keep the site running. We ask permission before any analytics or marketing cookies.",
+      "accept": "Accept all",
+      "decline": "Reject all",
+      "customise": "Customise",
+      "saveSelection": "Save selection",
+      "readMore": "More about our cookie policy",
+      "reopenLink": "Change cookie settings",
+      "categories": {
+        "functional": {
+          "name": "Essential",
+          "description": "Required for login, session, and core features. Always on."
+        },
+        "analytics": {
+          "name": "Analytics",
+          "description": "Anonymous visitor statistics to improve the site."
+        },
+        "marketing": {
+          "name": "Marketing",
+          "description": "Helps us show relevant content and offers."
+        }
+      }
     },
     "errors": {
       "notFound": {

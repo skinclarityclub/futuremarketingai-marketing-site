@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { Sparkles, Linkedin, Twitter } from 'lucide-react'
+import { CookieReopenButton } from './CookieReopenButton'
 
 interface FooterProps {
   locale: string
@@ -265,6 +266,7 @@ export async function Footer({ locale }: FooterProps) {
                 >
                   {t('landing.footer.nav.cookies')}
                 </Link>
+                <CookieReopenButton />
               </div>
             </div>
 

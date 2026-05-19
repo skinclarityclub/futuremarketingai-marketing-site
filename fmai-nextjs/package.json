@@ -40,7 +40,6 @@
     "next-intl": "^4.9.1",
     "react": "^19.2.5",
     "react-calendly": "^4.4.0",
-    "react-cookie-consent": "^10.0.1",
     "react-dom": "^19.2.5",
     "react-markdown": "^10.1.0",
     "rehype-slug": "^6.0.0",
