@@ -1,7 +1,14 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
-@theme {
+/**
+ * `@theme inline` (Tailwind 4.1+) emits design tokens directly at `:root`
+ * without the `@layer theme { :root, :host { ... } }` wrapper. The wrapped
+ * form is a documented Safari/WebKit compatibility hotspot (Tailwind
+ * Discussions #15556 + #15284) that broke the dark theme on Safari < 16.4
+ * — body fell back to Times-New-Roman white-page (MF-06).
+ */
+@theme inline {
   /* Colors */
   --color-bg-deep: #0a0d14;
   --color-bg-surface: #111520;
