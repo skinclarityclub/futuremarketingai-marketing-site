@@ -843,6 +843,8 @@
     },
     "form": {
       "title": "Send us a message",
+      "required_note": "Fields marked * are required.",
+      "optional_suffix": "(optional)",
       "name_label": "Your name",
       "name_placeholder": "Jane Doe",
       "email_label": "Email address",
@@ -1748,6 +1750,8 @@
     },
     "form": {
       "title": "Tell us about your agency",
+      "requiredNote": "Fields marked * are required.",
+      "optionalSuffix": "(optional)",
       "nameLabel": "Name",
       "namePlaceholder": "Full name",
       "emailLabel": "Email address",

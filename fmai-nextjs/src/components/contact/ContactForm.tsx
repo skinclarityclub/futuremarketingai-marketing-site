@@ -2,6 +2,7 @@
 
 import { useState, useRef, type FormEvent } from 'react'
 import { CTAButton } from '@/components/ui/CTAButton'
+import { Label } from '@/components/ui/Label'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -28,6 +29,9 @@ interface ContactFormProps {
     // Phase 15-02: optional Calendly soft CTA in success state.
     statusCalendlyOffer: string
     statusCalendlyCta: string
+    // Phase 17-D D5: required marker + optional suffix.
+    requiredNote: string
+    optionalSuffix: string
   }
 }
 
@@ -136,16 +140,19 @@ export function ContactForm({ labels }: ContactFormProps) {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
+      <p className="text-xs text-text-muted">{labels.requiredNote}</p>
+
       {/* Name */}
       <div>
-        <label htmlFor="contact-name" className="block text-sm font-medium text-text-primary mb-2">
+        <Label htmlFor="contact-name" required className="block text-sm font-medium text-text-primary mb-2">
           {labels.name}
-        </label>
+        </Label>
         <input
           type="text"
           id="contact-name"
           name="name"
           autoComplete="name"
+          aria-required="true"
           aria-invalid={Boolean(fieldErrors.name)}
           aria-describedby={fieldErrors.name ? 'contact-name-err' : undefined}
           className={inputClasses}
@@ -163,15 +170,16 @@ export function ContactForm({ labels }: ContactFormProps) {
 
       {/* Email */}
       <div>
-        <label htmlFor="contact-email" className="block text-sm font-medium text-text-primary mb-2">
+        <Label htmlFor="contact-email" required className="block text-sm font-medium text-text-primary mb-2">
           {labels.email}
-        </label>
+        </Label>
         <input
           type="email"
           id="contact-email"
           name="email"
           autoComplete="email"
           inputMode="email"
+          aria-required="true"
           aria-invalid={Boolean(fieldErrors.email)}
           aria-describedby={fieldErrors.email ? 'contact-email-err' : undefined}
           className={inputClasses}
@@ -187,12 +195,14 @@ export function ContactForm({ labels }: ContactFormProps) {
 
       {/* Company */}
       <div>
-        <label
+        <Label
           htmlFor="contact-company"
+          showOptional
+          optionalLabel={labels.optionalSuffix}
           className="block text-sm font-medium text-text-primary mb-2"
         >
           {labels.company}
-        </label>
+        </Label>
         <input
           type="text"
           id="contact-company"
@@ -206,17 +216,19 @@ export function ContactForm({ labels }: ContactFormProps) {
 
       {/* Message */}
       <div>
-        <label
+        <Label
           htmlFor="contact-message"
+          required
           className="block text-sm font-medium text-text-primary mb-2"
         >
           {labels.message}
-        </label>
+        </Label>
         <textarea
           id="contact-message"
           name="message"
           rows={5}
           autoComplete="off"
+          aria-required="true"
           aria-invalid={Boolean(fieldErrors.message)}
           aria-describedby={fieldErrors.message ? 'contact-message-err' : undefined}
           className={`${inputClasses} resize-none`}

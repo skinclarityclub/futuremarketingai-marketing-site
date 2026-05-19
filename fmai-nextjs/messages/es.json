@@ -843,6 +843,8 @@
     },
     "form": {
       "title": "Envíanos un mensaje",
+      "required_note": "Los campos marcados con * son obligatorios.",
+      "optional_suffix": "(opcional)",
       "name_label": "Tu nombre",
       "name_placeholder": "Juan Pérez",
       "email_label": "Dirección de email",
@@ -1748,6 +1750,8 @@
     },
     "form": {
       "title": "Cuéntanos sobre tu agencia",
+      "requiredNote": "Los campos marcados con * son obligatorios.",
+      "optionalSuffix": "(opcional)",
       "nameLabel": "Nombre",
       "namePlaceholder": "Nombre completo",
       "emailLabel": "Correo electrónico",

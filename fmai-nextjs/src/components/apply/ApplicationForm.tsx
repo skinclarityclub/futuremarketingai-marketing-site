@@ -5,46 +5,38 @@ import { z } from 'zod'
 import { useTranslations } from 'next-intl'
 import { ApplyCalendlyInline } from '@/components/interactive/ApplyCalendlyInline'
 
+/**
+ * Apply form — Phase 17-D D4 simplified to 3 fields above the fold.
+ *
+ * Old form collected name + email + agency + role + revenue + clientCount
+ * + tier + workspaces + problem. Eight required fields produced measurable
+ * conversion friction (MF-09). The new flow:
+ *   Step 1 (this form): name + email + optional company.
+ *   Step 2 (Calendly inline post-submit): tier, workspaces, problem,
+ *     revenue/client-count all collected during the actual call.
+ *
+ * The API contract still accepts the historic fields as optional so any
+ * other intake variation (n8n form, partner-form, etc.) can keep posting
+ * the full shape.
+ */
+
 const schema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
-  agency: z.string().min(2),
-  role: z.string().min(2),
-  revenue: z.string().min(1),
-  clientCount: z.string().min(1),
-  tier: z.string().min(1),
-  // Coerced because <input type="number"> values arrive as strings via
-  // FormData entries. Optional — Founding and "unsure" don't require it.
-  // Preprocess collapses empty-string (disabled or untouched input) to
-  // undefined so the optional() chain accepts it without coercion to NaN.
-  workspaces: z.preprocess(
-    (v) => (v === '' || v == null ? undefined : v),
-    z.coerce.number().int().min(1).max(200).optional(),
+  agency: z.preprocess(
+    (v) => (typeof v === 'string' && v.trim().length === 0 ? undefined : v),
+    z.string().min(2).max(150).optional(),
   ),
-  problem: z.string().min(20).max(5000),
+  // Honeypot — bots fill, humans do not.
   website: z.string().max(0).optional(),
 })
 
-const REVENUE_OPTIONS = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
-const CLIENT_COUNT_OPTIONS = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
-const TIER_OPTIONS = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
-
-// Tiers that bill per-workspace; show the workspaces input for these.
-const WORKSPACE_TIERS = new Set(['growth', 'professional', 'enterprise'])
-
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-// Map a Zod issue field + code to an errors.* i18n key
 function mapIssueToKey(field: string, code: string): string {
   if (field === 'email') return 'emailInvalid'
-  if (field === 'problem' && code === 'too_big') return 'problemMax'
-  if (field === 'problem') return 'problemMin'
   if (field === 'name') return 'nameMin'
   if (field === 'agency') return 'agencyMin'
-  if (field === 'role') return 'roleMin'
-  if (field === 'revenue') return 'revenueRequired'
-  if (field === 'clientCount') return 'clientCountRequired'
-  if (field === 'tier') return 'tierRequired'
   return 'nameMin'
 }
 
@@ -54,11 +46,6 @@ export function ApplicationForm() {
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
-  const [tier, setTier] = useState<string>('')
-  const showWorkspaces = WORKSPACE_TIERS.has(tier)
-  // Phase 15-02: keep submitted name + email so the post-submit Calendly embed
-  // can prefill them. Stored separately from the form so success state survives
-  // any later form reset.
   const [submittedName, setSubmittedName] = useState<string | undefined>()
   const [submittedEmail, setSubmittedEmail] = useState<string | undefined>()
 
@@ -83,7 +70,6 @@ export function ApplicationForm() {
       setFieldErrors(errors)
       setStatus('error')
       setErrorMessage(t('errorValidation'))
-      // Focus first failing field for screen readers
       const firstField = Object.keys(errors)[0]
       if (firstField) {
         requestAnimationFrame(() => {
@@ -103,14 +89,12 @@ export function ApplicationForm() {
 
       if (!response.ok) {
         const payload = await response.json().catch(() => ({}))
-        // Server may return per-field errors
         if (payload?.fields && typeof payload.fields === 'object') {
           setFieldErrors(payload.fields as Record<string, string>)
         }
         throw new Error(payload.error ?? t('errorNetwork'))
       }
 
-      // Capture prefill data for the post-submit Calendly embed (Phase 15-02).
       setSubmittedName(parsed.data.name)
       setSubmittedEmail(parsed.data.email)
       setStatus('success')
@@ -135,8 +119,13 @@ export function ApplicationForm() {
     )
   }
 
+  const inputClasses =
+    'w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors'
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      <p className="text-xs text-text-muted">{t('requiredNote')}</p>
+
       {/* Honeypot — hidden from humans, tempting to bots */}
       <div aria-hidden="true" className="hidden">
         <label>
@@ -145,249 +134,72 @@ export function ApplicationForm() {
         </label>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="name">
-            {t('nameLabel')}
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            minLength={2}
-            maxLength={100}
-            autoComplete="name"
-            aria-invalid={Boolean(fieldErrors.name)}
-            aria-describedby={fieldErrors.name ? 'name-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-            placeholder={t('namePlaceholder')}
-          />
-          {fieldErrors.name && (
-            <p id="name-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.name}
-            </p>
-          )}
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="email">
-            {t('emailLabel')}
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            inputMode="email"
-            aria-invalid={Boolean(fieldErrors.email)}
-            aria-describedby={fieldErrors.email ? 'email-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-            placeholder={t('emailPlaceholder')}
-          />
-          {fieldErrors.email && (
-            <p id="email-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.email}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="agency">
-            {t('agencyLabel')}
-          </label>
-          <input
-            id="agency"
-            name="agency"
-            type="text"
-            required
-            minLength={2}
-            maxLength={150}
-            autoComplete="organization"
-            aria-invalid={Boolean(fieldErrors.agency)}
-            aria-describedby={fieldErrors.agency ? 'agency-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-          />
-          {fieldErrors.agency && (
-            <p id="agency-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.agency}
-            </p>
-          )}
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="role">
-            {t('roleLabel')}
-          </label>
-          <input
-            id="role"
-            name="role"
-            type="text"
-            required
-            minLength={2}
-            maxLength={100}
-            autoComplete="organization-title"
-            aria-invalid={Boolean(fieldErrors.role)}
-            aria-describedby={fieldErrors.role ? 'role-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-            placeholder={t('rolePlaceholder')}
-          />
-          {fieldErrors.role && (
-            <p id="role-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.role}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="revenue">
-            {t('revenueLabel')}
-          </label>
-          <select
-            id="revenue"
-            name="revenue"
-            required
-            defaultValue=""
-            autoComplete="off"
-            aria-invalid={Boolean(fieldErrors.revenue)}
-            aria-describedby={fieldErrors.revenue ? 'revenue-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-          >
-            <option value="" disabled>
-              {t('selectPlaceholder')}
-            </option>
-            {REVENUE_OPTIONS.map((value) => (
-              <option key={value} value={value}>
-                {t(`revenueOptions.${value}`)}
-              </option>
-            ))}
-          </select>
-          {fieldErrors.revenue && (
-            <p id="revenue-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.revenue}
-            </p>
-          )}
-        </div>
-        <div>
-          <label
-            className="block text-sm font-medium text-text-secondary mb-1"
-            htmlFor="clientCount"
-          >
-            {t('clientCountLabel')}
-          </label>
-          <select
-            id="clientCount"
-            name="clientCount"
-            required
-            defaultValue=""
-            autoComplete="off"
-            aria-invalid={Boolean(fieldErrors.clientCount)}
-            aria-describedby={fieldErrors.clientCount ? 'clientCount-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-          >
-            <option value="" disabled>
-              {t('selectPlaceholder')}
-            </option>
-            {CLIENT_COUNT_OPTIONS.map((value) => (
-              <option key={value} value={value}>
-                {t(`clientCountOptions.${value}`)}
-              </option>
-            ))}
-          </select>
-          {fieldErrors.clientCount && (
-            <p id="clientCount-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.clientCount}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="tier">
-            {t('tierLabel')}
-          </label>
-          <select
-            id="tier"
-            name="tier"
-            required
-            value={tier}
-            onChange={(e) => setTier(e.target.value)}
-            autoComplete="off"
-            aria-invalid={Boolean(fieldErrors.tier)}
-            aria-describedby={fieldErrors.tier ? 'tier-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
-          >
-            <option value="" disabled>
-              {t('selectPlaceholder')}
-            </option>
-            {TIER_OPTIONS.map((value) => (
-              <option key={value} value={value}>
-                {t(`tierOptions.${value}`)}
-              </option>
-            ))}
-          </select>
-          {fieldErrors.tier && (
-            <p id="tier-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.tier}
-            </p>
-          )}
-        </div>
-        <div className={showWorkspaces ? '' : 'opacity-50'}>
-          <label
-            className="block text-sm font-medium text-text-secondary mb-1"
-            htmlFor="workspaces"
-          >
-            {t('workspacesLabel')}
-          </label>
-          <input
-            id="workspaces"
-            name="workspaces"
-            type="number"
-            min={1}
-            max={200}
-            inputMode="numeric"
-            disabled={!showWorkspaces}
-            autoComplete="off"
-            aria-invalid={Boolean(fieldErrors.workspaces)}
-            aria-describedby="workspaces-help"
-            placeholder={t('workspacesPlaceholder')}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors disabled:cursor-not-allowed"
-          />
-          <p id="workspaces-help" className="mt-1 text-xs text-text-muted leading-relaxed">
-            {t('workspacesHelp')}
+      <div>
+        <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="name">
+          {t('nameLabel')} <span aria-hidden="true" className="text-[#FF4D4D]">*</span>
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          aria-required="true"
+          minLength={2}
+          maxLength={100}
+          autoComplete="name"
+          aria-invalid={Boolean(fieldErrors.name)}
+          aria-describedby={fieldErrors.name ? 'name-err' : undefined}
+          className={inputClasses}
+          placeholder={t('namePlaceholder')}
+        />
+        {fieldErrors.name && (
+          <p id="name-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
+            {fieldErrors.name}
           </p>
-          {fieldErrors.workspaces && (
-            <p role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-              {fieldErrors.workspaces}
-            </p>
-          )}
-        </div>
+        )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="problem">
-          {t('problemLabel')}
+        <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="email">
+          {t('emailLabel')} <span aria-hidden="true" className="text-[#FF4D4D]">*</span>
         </label>
-        <textarea
-          id="problem"
-          name="problem"
+        <input
+          id="email"
+          name="email"
+          type="email"
           required
-          minLength={20}
-          maxLength={5000}
-          rows={5}
-          autoComplete="off"
-          aria-invalid={Boolean(fieldErrors.problem)}
-          aria-describedby={fieldErrors.problem ? 'problem-err' : undefined}
-          className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors resize-y"
-          placeholder={t('problemPlaceholder')}
+          aria-required="true"
+          autoComplete="email"
+          inputMode="email"
+          aria-invalid={Boolean(fieldErrors.email)}
+          aria-describedby={fieldErrors.email ? 'email-err' : undefined}
+          className={inputClasses}
+          placeholder={t('emailPlaceholder')}
         />
-        {fieldErrors.problem && (
-          <p id="problem-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
-            {fieldErrors.problem}
+        {fieldErrors.email && (
+          <p id="email-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
+            {fieldErrors.email}
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-text-secondary mb-1" htmlFor="agency">
+          {t('agencyLabel')} <span className="text-text-muted text-xs">{t('optionalSuffix')}</span>
+        </label>
+        <input
+          id="agency"
+          name="agency"
+          type="text"
+          maxLength={150}
+          autoComplete="organization"
+          aria-invalid={Boolean(fieldErrors.agency)}
+          aria-describedby={fieldErrors.agency ? 'agency-err' : undefined}
+          className={inputClasses}
+        />
+        {fieldErrors.agency && (
+          <p id="agency-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
+            {fieldErrors.agency}
           </p>
         )}
       </div>
@@ -402,7 +214,7 @@ export function ApplicationForm() {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="w-full px-6 py-4 rounded-lg bg-accent-system text-bg-deep font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+          className="w-full px-6 py-4 rounded-lg bg-accent-system text-bg-deep font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
         >
           {status === 'submitting' ? t('submitting') : t('submit')}
         </button>

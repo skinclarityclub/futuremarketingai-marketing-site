@@ -112,6 +112,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   // Phase 15-02: optional Calendly soft CTA on success.
                   statusCalendlyOffer: t('form.status.calendlyOffer'),
                   statusCalendlyCta: t('form.status.calendlyCta'),
+                  // Phase 17-D D5: required marker UX.
+                  requiredNote: t('form.required_note'),
+                  optionalSuffix: t('form.optional_suffix'),
                 }}
               />
             </GlassCard>
