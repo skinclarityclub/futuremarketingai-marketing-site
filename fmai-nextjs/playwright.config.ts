@@ -8,6 +8,8 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
   testDir: './tests/e2e',
+  outputDir: './playwright-output',
+  preserveOutput: 'always',
 
   fullyParallel: true,
   forbidOnly: !!process.env.CI,

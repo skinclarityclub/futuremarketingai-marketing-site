@@ -39,6 +39,7 @@ Added after the 8-agent full-site audit. Remediates findings from `docs/audits/2
 - [x] **Phase 13: Performance + Bundle Cleanup** - Lazy-mount ClientIslands on interaction, gate Spline prefetch to home, per-segment i18n, font trim, dead code purge — target 70 KB gz off non-home initial bundle (completed 2026-04-26)
 - [x] **Phase 14: SEO + GEO Depth Upgrade** - Organization sameAs expansion + Wikidata + Person schema for Daley + Sindy, wire ServiceJsonLd on 12 skill pages, FaqJsonLd on founding, Speakable, meta trims, AI-crawler allowlist — lift GEO 42 → 70+ (completed 2026-04-27)
 - [x] **Phase 15: Conversion Accelerators** - Post-submit Calendly embed, demote home secondary CTA + sticky mobile CTA, SKC case-study metric rewrite (Sindy interview), lead magnet programme (NL Bureau AI Readiness PDF), pricing FAQ promotion (completed 2026-04-27)
+- [x] **Phase 16: Design + SEO/GEO SOTA Audit v2** - Research-only autonomous audit on SOTA-level: 12 parallel teams (visual design, brand/IA, interactions, SEO, GEO/LLMEO, a11y, perf, cross-browser, content, CRO, security, competitive), 32 routes x 3 locales x 5 viewports x 3 engines, multi-LLM citation matrix, 12-week roadmap deliverable. Output: executive summary + 14 detailed findings docs + visual gallery + fix-plan + roadmap. NO code changes. (completed 2026-05-18)
 
 ## Phase Details
 
@@ -378,6 +379,51 @@ Plans:
 - [x] 15-04-PLAN.md — Lead magnet: PDF content + /api/newsletter + LeadMagnetCTA + Resend audience (Wave 3, depends on Phase 10 Resend setup) (completed 2026-04-27 code-side; Resend Audience ID + PDF asset + Supabase migration apply blocked on Daley external setup, see 15-04-SUMMARY)
 - [x] 15-05-PLAN.md — Pricing FAQ promotion + founding counter credibility + FaqJsonLd (Wave 3, low-risk polish) (completed 2026-04-27)
 
+---
+
+### Phase 16: Design + SEO/GEO SOTA Audit v2 (Research-only)
+
+**Goal**: Volledige doorlichting van de marketingsite op SOTA-niveau. 12 parallelle audit-teams over 32 routes x 3 locales x 5 viewports x 3 browser-engines, multi-LLM citation matrix, en 12-weekse strategische roadmap als deliverable. Geen code-changes; alleen audit-docs + test-scripts.
+**Depends on**: Nothing (independent, post-milestone-v1.0 audit)
+**Requirements**: AUDIT-V2-SOTA
+**Mode**: research-only, autonomous
+**Branch**: `audit/2026-05-18-v2-sota` off `fix/audit-2026-05-18-followup`
+**Budget caps**: 6h wall-clock, 100 Gemini grounded calls (gratis tier 250 RPD), 80 Firecrawl calls, 50 WebFetch calls, 3GB artefacten
+**Research provider**: Google Search grounding via Gemini 2.5 Flash uitsluitend (`~/.claude/scripts/gemini-research.mjs`). Geen Perplexity in deze phase.
+**Success Criteria** (what must be TRUE):
+
+1. 16 audit-docs onder `docs/audits/2026-05-18-v2/` (executive summary + competitive intel + baseline + 12 team-findings + cross-cutting synthesis), elk severity-tagged
+2. Screenshot-galerij `test-results/audit-v2/screenshots/index.html` met minimaal 432 primary thumbnails (32 routes x 3 locales x >=4.5 viewports avg) + cross-browser shots + HAR + DOM snapshots
+3. Cross-LLM citation baseline matrix: 7 queries x >=3 LLM-providers, gedocumenteerd in `06-geo-llmeo.md` met reproduceerbaar meet-script `scripts/audit/measure-llm-citations.mjs`
+4. Executable fix-plan `docs/plans/2026-05-18-design-seo-audit-v2-fix-plan.md` (Phases A-F) compatibel met `superpowers:executing-plans`
+5. 12-weekse roadmap `docs/plans/2026-05-18-design-seo-roadmap-q3.md` met weekly milestones + KPI baseline+targets
+6. Eén commit op `audit/2026-05-18-v2-sota` met alle docs + tests/e2e/audit-v2-*.spec.ts + scripts/audit/*.mjs
+7. Geen productie-code changes (`git diff main -- 'fmai-nextjs/src/' 'fmai-nextjs/messages/'` returns empty)
+8. Budget compliance: per AUTONOMOUS-PROTOCOL.md tracked in BUDGET.log
+9. Autonomous decisions per AUTONOMOUS-PROTOCOL.md — geen human-in-the-loop tijdens Waves 0-5
+10. Resume-protocol functioneert: STATE.md per phase, crash-recovery zonder duplicate work
+
+**Plans**: 16 plans
+
+Plans:
+
+- [ ] 16-01-PLAN.md — Wave 0 Pre-audit Intelligence: competitor matrix + SOTA markers (Wave 1 solo)
+- [ ] 16-02-PLAN.md — Wave 1 Setup + Playwright multi-engine capture infrastructure (Wave 1 solo, after 16-01)
+- [ ] 16-03-PLAN.md — Team 01 Visual Design + Style Catalog Evaluation (Wave 2 parallel)
+- [ ] 16-04-PLAN.md — Team 02 Brand, Narrative & Information Architecture (Wave 2 parallel)
+- [ ] 16-05-PLAN.md — Team 03 Interactions, Forms & Microcopy (Wave 2 parallel)
+- [ ] 16-06-PLAN.md — Team 04 SEO Technical & Schema.org Validation (Wave 2 parallel)
+- [ ] 16-07-PLAN.md — Team 05 GEO/LLMEO Cross-LLM Citation Audit (Gemini Google-grounded primary + Bing/Claude/ChatGPT WebFetch) (Wave 2 parallel)
+- [ ] 16-08-PLAN.md — Team 06 Accessibility Deep-dive WCAG 2.2 AA (Wave 2 parallel)
+- [ ] 16-09-PLAN.md — Team 07 Performance + CWV + Bundle Analysis (Wave 2 parallel)
+- [ ] 16-10-PLAN.md — Team 08 Cross-browser & Device Compatibility (Wave 2 parallel)
+- [ ] 16-11-PLAN.md — Team 09 Content, Copy & i18n Cultural Adaptation (Wave 2 parallel)
+- [ ] 16-12-PLAN.md — Team 10 Conversion Psychology, CRO & Trust Signals (Wave 2 parallel)
+- [ ] 16-13-PLAN.md — Team 11 Security Headers, Privacy & GDPR Compliance (Wave 2 parallel)
+- [ ] 16-14-PLAN.md — Team 12 Competitive Benchmark + Cross-stack Consistency (Wave 2 parallel)
+- [ ] 16-15-PLAN.md — Wave 3 Cross-cutting Synthesis: pattern detection, conflict resolution, heatmap (Wave 3 solo)
+- [ ] 16-16-PLAN.md — Wave 4+5 Strategic Synthesis + 12-week Roadmap + Deliverable Bundling (Wave 4 solo)
+
 ## Progress
 
 **Execution Order:**
@@ -404,6 +450,7 @@ Phases execute in parallel waves:
 | 13. Performance + Bundle | 3/3 | Complete    | 2026-04-26 |
 | 14. SEO + GEO Depth      | 4/4 | Complete    | 2026-04-27 |
 | 15. Conversion Accel.    | 5/5 | Complete    | 2026-04-27 |
+| 16. SOTA Audit v2 (research-only) | 0/16 | Complete    | 2026-05-18 |
 
 ---
 

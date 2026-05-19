@@ -1,0 +1,205 @@
+{
+  "_summary": {
+    "started_at": "2026-05-18T18:12:30.918Z",
+    "queries": 7,
+    "providers": [
+      "gemini_grounded",
+      "bing_serp",
+      "google_serp",
+      "claude_search"
+    ],
+    "notes": "Gemini grounded is the only true LLM citation API used here. Bing and Google serve as Copilot/ChatGPT-search citation proxies. Claude has no public search endpoint and is marked provider_unavailable across all rows.",
+    "finished_at": "2026-05-18T18:13:41.487Z"
+  },
+  "matrix": {
+    "Wat is FutureMarketingAI?": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 1,
+        "answer_excerpt": "FutureMarketingAI is een Nederlands bedrijf dat \"persistente AI Marketing Medewerkers\" ontwikkelt voor marketingbureaus, voornamelijk in Nederland en Europa. Het doel is om marketingbureaus toegang te geven tot een AI Marketing Medewerker die de uitvoering van taken afhandelt, zodat de teams van het bureau zich kunnen richten op strategie, creativiteit en klantrelaties.\n\nHet bedrijf richt zich op bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen en willen opschalen zonder extra personeel. Z"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "Welke AI marketing agency platforms zijn er voor Nederlandse bureaus in 2026?": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 15,
+        "answer_excerpt": "In 2026 zijn er diverse AI marketing agency platforms en tools beschikbaar voor Nederlandse bureaus, die uiteenlopen van algemene contentcreatie en SEO-optimalisatie tot gespecialiseerde marketingautomatisering en data-analyse. Deze platforms helpen bureaus om efficiënter te werken, campagnes te personaliseren en betere resultaten te behalen voor hun klanten.\n\n**Algemene AI Marketing Platforms en Tools voor Bureaus in 2026:**\n\nEen aantal prominente AI-tools die breed inzetbaar zijn voor marketin"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "Hoe werkt agent-as-a-service voor content marketing?": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 15,
+        "answer_excerpt": "Agent-as-a-Service (AaaS) voor contentmarketing is een model waarbij intelligente, vaak AI-gestuurde, \"agents\" worden ingezet om autonome taken uit te voeren en workflows te beheren, specifiek gericht op contentcreatie en -distributie. In tegenstelling tot traditionele AI-tools die vaak reageren op losse prompts, werken AaaS-agents met vaste workflows, contextgeheugen en de mogelijkheid om te leren van interacties en prestaties.\n\n**Hoe werkt het?**\n\n1.  **Definiëren van de taak en het doel:** Be"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "Wat is Clyde van FutureMarketingAI?": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 2,
+        "answer_excerpt": "Clyde is een AI Marketing Employee ontwikkeld door FutureMarketingAI, specifiek ontworpen voor marketingbureaus. Het fungeert als een autonome AI-medewerker die content schrijft, leads belt en alle merken onthoudt.\n\nDe belangrijkste kenmerken en vaardigheden van Clyde zijn:\n*   **Autonome werking** Clyde kan twaalf vaardigheden autonoom uitvoeren, waaronder social media, blogs, voice, advertenties, SEO en analytics.\n*   **Merkgeheugen** Het systeem onthoudt elk merk en leert van elke campagne, w"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "Pricing AI marketing agency platforms EU 2026": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 8,
+        "answer_excerpt": "Pricing for AI marketing agency platforms in the EU for 2026 varies significantly based on the platform's capabilities, the scope of services, and the chosen pricing model. A mix of subscription, tiered, hybrid, and usage-based models are common in the market.\n\n**Common Pricing Models and Ranges:**\n\n*   **Basic Automation & SaaS-style Offerings:** These typically range from $99 to $500 per month for services like email triggers, chatbots, and fundamental marketing automation. Platforms such as H"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "Memory system AI marketing platform - wat houdt het in?": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 10,
+        "answer_excerpt": "Een \"Memory system AI marketing platform\" is een geavanceerd kunstmatige intelligentie (AI) systeem dat is ontworpen om informatie over eerdere interacties en ervaringen op te slaan, op te roepen en te gebruiken om marketingbeslissingen, perceptie en algehele prestaties te verbeteren. Het stelt AI in staat om context te behouden, patronen te herkennen en zich aan te passen op basis van eerdere interacties, in plaats van elke taak afzonderlijk te verwerken.\n\nDe kern van zo'n platform is het vermo"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    },
+    "SkinClarity Club case study AI marketing": {
+      "gemini_grounded": {
+        "cited": false,
+        "urls": null,
+        "citation_count": 9,
+        "answer_excerpt": "While a specific case study for \"SkinClarity Club AI marketing\" is not readily available, the broader skincare and beauty industry offers numerous examples of how artificial intelligence (AI) is revolutionizing marketing strategies, which a brand like SkinClarity Club could effectively implement. These applications focus on hyper-personalization, enhanced customer experience, and data-driven insights to boost engagement and conversions.\n\n**Leveraging AI for Personalized Skincare Solutions**\n\nMan"
+      },
+      "bing_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [],
+        "result_count": 0
+      },
+      "google_serp": {
+        "cited": false,
+        "urls": null,
+        "top_titles": [
+          "feedback"
+        ],
+        "result_count": 1
+      },
+      "claude_search": {
+        "cited": null,
+        "reason": "provider_unavailable",
+        "note": "Claude.ai search has no public REST endpoint. Manual re-run via Claude web app would be the next step for Phase 17 verification."
+      }
+    }
+  }
+}

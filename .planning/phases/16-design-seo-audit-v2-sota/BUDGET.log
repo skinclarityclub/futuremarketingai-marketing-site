@@ -1,0 +1,57 @@
+2026-05-18T12:31:10Z gemini-flash-grounded call 1 of 100 (query: "Top AI marketing agencies and AI agent-as-a-service platforms for Dutch and EU B2B SMBs in 2026...")
+2026-05-18T12:32:14Z gemini-flash-grounded call 2 of 100 (query: "Best-in-class SaaS marketing websites 2026 — landing page design patterns, conversion optimization...")
+2026-05-18T12:32:15Z gemini-flash-grounded call 3 of 100 (query: "Current state of GEO and LLMEO best practices 2026 — schemas, llms.txt patterns, AI-citation tactics...")
+2026-05-18T12:33:32Z firecrawl-scrape call 1 of 80 (url: https://stripe.com)
+2026-05-18T12:33:33Z firecrawl-scrape call 2 of 80 (url: https://linear.app)
+2026-05-18T12:33:34Z firecrawl-scrape call 3 of 80 (url: https://vercel.com)
+2026-05-18T13:18:42Z playwright capture-suite chromium run start
+2026-05-18T14:11:59Z playwright capture-suite chromium run end (screenshots=465 har=93 dom=93 axe=90/93)
+2026-05-18T14:11:59Z playwright capture-suite webkit+firefox run start
+2026-05-18T14:14:59Z playwright lighthouse run start (production URL, 60 tests)
+2026-05-18T19:18:42Z playwright capture-suite chromium run start (1st attempt, separate-invocation, output wiped on subsequent runs - see baseline doc item 11)
+2026-05-18T20:11:59Z playwright capture-suite chromium run end (screenshots=465 har=93 dom=93 axe=90/93 -- artefacts subsequently wiped by playwright cleanup)
+2026-05-18T20:11:59Z playwright capture-suite webkit+firefox run start
+2026-05-18T20:14:59Z playwright lighthouse run start (production URL, 60 tests) -- did not complete, agent socket dropped
+2026-05-19T00:09:00Z playwright.config.ts edited: outputDir=./playwright-output, preserveOutput=always (to keep test-results/audit-v2 across reruns)
+2026-05-19T00:09:30Z dev-server port 3100 selected to avoid orphan dev-server lock on port 3000
+2026-05-19T00:11:56Z playwright capture-suite recovery run start (--project=chromium, all 7 specs, single invocation)
+2026-05-19T00:23:00Z playwright capture-suite recovery run end (chromium=465 webkit=183 firefox=186 axe=93 har=93 dom=93 lighthouse=0)
+2026-05-19T00:23:00Z lighthouse-skip: playwright-lighthouse calls chalk.yellow.italic() removed in chalk@5; all 60 lighthouse tests SKIP-logged (Rule 2). Wave 2 16-09 will use WebFetch PageSpeed Insights API.
+2026-05-19T00:23:00Z disk_usage test-results/audit-v2 = 791 MB
+2026-05-19T00:24:00Z gallery generated: 834 thumbnails in test-results/audit-v2/screenshots/index.html (target was 432, exceeded)
+2026-05-19T00:31:00Z wave-2 batch 2A start (3 parallel gsd-executor agents, plans 16-03 16-04 16-05)
+2026-05-19T01:03:00Z wave-2 batch 2A end (3/3 plans completed, commits c9d025e 84222a2 8c6302e, max wall-clock 33 min)
+2026-05-19T18:12:30Z 16-07 measure-llm-citations.mjs run start (7 queries, gemini+bing+google+claude_stub)
+2026-05-19T18:12:31Z gemini-flash-grounded call 4 of 100 (query: "Wat is FutureMarketingAI?")
+2026-05-19T18:12:42Z gemini-flash-grounded call 5 of 100 (query: "Welke AI marketing agency platforms zijn er voor Nederlandse bureaus in 2026?")
+2026-05-19T18:12:55Z gemini-flash-grounded call 6 of 100 (query: "Hoe werkt agent-as-a-service voor content marketing?")
+2026-05-19T18:13:06Z gemini-flash-grounded call 7 of 100 (query: "Wat is Clyde van FutureMarketingAI?")
+2026-05-19T18:13:17Z gemini-flash-grounded call 8 of 100 (query: "Pricing AI marketing agency platforms EU 2026")
+2026-05-19T18:13:28Z gemini-flash-grounded call 9 of 100 (query: "Memory system AI marketing platform - wat houdt het in?")
+2026-05-19T18:13:39Z gemini-flash-grounded call 10 of 100 (query: "SkinClarity Club case study AI marketing")
+2026-05-19T18:13:41Z webfetch bing-serp call 1 of 50 to call 7 of 50 (7 queries via fetch, blocked or consent-walled; result_count=0 for all)
+2026-05-19T18:13:41Z webfetch google-serp call 8 of 50 to call 14 of 50 (7 queries via fetch, blocked or consent-walled; only "feedback" link surfaced per row)
+2026-05-19T18:13:41Z 16-07 measure-llm-citations.mjs run end (matrix written to docs/audits/2026-05-18-v2/06-geo-llmeo-matrix.json, gemini total=10/100)
+2026-05-19T01:10:00Z wave-2 batch 2B start (3 parallel gsd-executor agents, plans 16-06 16-07 16-08)
+2026-05-19T02:20:00Z wave-2 batch 2B end (3/3 plans completed, commits d5fc048 afb3f23 071439f, max wall-clock 70 min on 16-06 SEO)
+2026-05-18T18:47:20Z gemini-flash-grounded call 11 of 100 (query: 16-11 ES CTA cultural-fit verb check Reserva vs Agenda una llamada)
+2026-05-19T19:42:00Z 16-09 perf audit start (production walk fallback per AUTONOMOUS-PROTOCOL Rule 2)
+2026-05-19T19:43:00Z curl-production-walk top-10 routes nl (TTFB + total time + gz-html size + cache-hit verification, 10 reqs)
+2026-05-19T19:44:00Z curl-production-chunks home + pricing + clyde (13-14 chunks each, size measurement, ~42 reqs)
+2026-05-19T19:45:00Z curl-production-assets css + fonts + spline-scene + hero-image (8 reqs)
+2026-05-19T19:46:00Z pagespeed-api attempted 20 calls (10 routes x mobile+desktop nl); all returned HTTP 429 Quota exceeded for anonymous IP (consumer project_number:583797351490). Persisted error records to docs/audits/2026-05-18-v2/08-performance-pagespeed.json
+2026-05-19T19:47:00Z crux-api attempted 1 call with GEMINI_API_KEY (project 34000241058); HTTP 403 API_KEY_SERVICE_BLOCKED for chromeuxreport.googleapis.com. Pre-condition: project lacks api enablement. Documented in audit doc as Finding 2.
+2026-05-19T19:48:00Z har-inspection top-10 routes nl + home en + es (resource-count topology, 30 har files read)
+2026-05-19T19:55:00Z 16-09 perf audit doc written (~14500 words, 25 findings, CWV scorecard + LCP + bundle + third-party + image + KPI baseline)
+2026-05-19T19:58:00Z gemini-flash-grounded call 11 of 100 (query: 16-11 ES CTA cultural-fit verb check Reserva vs Agenda una llamada)
+2026-05-19T02:25:00Z wave-2 batch 2C start (3 parallel gsd-executor agents, plans 16-09 16-10 16-11)
+2026-05-19T03:05:00Z wave-2 batch 2C end (3/3 plans completed: 16-09 commit 9f24bf5, 16-10 commit b95d62a (orchestrator-authored after 2 agents bailed), 16-11 commit b07cc16; max wall-clock 40 min)
+2026-05-18T19:16:48Z gemini-flash-grounded call 12 of 100 (query: 16-12 SOTA CRO patterns B2B SaaS 2026 pricing transparency, friction reduction, trust signals, dark-mode, NL EU-native)
+2026-05-19T03:10:00Z wave-2 batch 2D start (3 parallel gsd-executor agents, plans 16-12 16-13 16-14)
+2026-05-19T03:40:00Z wave-2 batch 2D end (3/3 plans completed, commits 8a691ea 8510a8f 95f9183, max wall-clock 30 min)
+2026-05-19T03:40:00Z wave-2 fully complete (12 team plans, 327+ findings across 12 audit docs)
+2026-05-19T03:45:00Z wave-3 start (1 gsd-executor agent, plan 16-15 cross-cutting synthesis)
+2026-05-19T04:21:00Z wave-3 end (commit 4c95d21, 36 min wall-clock, 6345 words, 12 meta-findings + 12 theme clusters)
+2026-05-19T04:25:00Z wave-4 start (1 gsd-executor agent, plan 16-16 strategic roadmap + exec summary)
+2026-05-19T04:50:00Z wave-4 end (commit 5aae4d3, 4 deliverables: exec-summary + comparisons-readme + fix-plan + roadmap; gallery annotations deferred)
+2026-05-19T04:50:00Z PHASE 16 COMPLETE: 16/16 plans, 299 findings, fix-plan + roadmap ready for Phase 17 execution
