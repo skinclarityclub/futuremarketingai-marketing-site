@@ -33,10 +33,14 @@ const LH_BASE_URL = process.env.AUDIT_LIGHTHOUSE_BASE_URL || PRODUCTION_URL
 const OUT = join(__dirname, '../../test-results/audit-v2/lighthouse')
 
 // Use Playwright's Chromium binary so no system Chrome install is required.
-// The path is stable within a given ms-playwright version; update when upgrading Playwright.
+// Use chrome-headless-shell (the official headless binary) — NOT the regular chrome.exe.
+// Playwright's chrome.exe causes ERR_ABORTED on Next.js App Router pages because its
+// renderer process handles history.replaceState() differently in Lighthouse's CDP context.
+// chrome-headless-shell does not exhibit this bug and is the correct binary for automated audits.
+// Update the revision (1223) when upgrading Playwright.
 const CHROMIUM_PATH =
   process.env.PW_CHROMIUM_PATH ??
-  'C:\\Users\\daley\\AppData\\Local\\ms-playwright\\chromium-1217\\chrome-win64\\chrome.exe'
+  'C:\\Users\\daley\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1223\\chrome-headless-shell-win64\\chrome-headless-shell.exe'
 
 type FormFactor = 'mobile' | 'desktop'
 const FORM_FACTORS: FormFactor[] = ['mobile', 'desktop']
@@ -83,7 +87,7 @@ const mobileConfig = {
 for (const route of LIGHTHOUSE_ROUTES) {
   for (const locale of LOCALES) {
     for (const formFactor of FORM_FACTORS) {
-      test(`lh ${formFactor} ${locale}${route}`, async () => {
+      test(`lh ${formFactor} ${locale}${route}`, { timeout: 90_000 }, async () => {
         const url = localizedUrl(LH_BASE_URL, locale, route)
         const lhConfig = formFactor === 'desktop' ? desktopConfig : mobileConfig
 
@@ -91,7 +95,13 @@ for (const route of LIGHTHOUSE_ROUTES) {
         try {
           chrome = await chromeLaunch({
             chromePath: CHROMIUM_PATH,
-            chromeFlags: ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check'],
+            chromeFlags: [
+              '--disable-gpu',
+              '--no-first-run',
+              '--no-default-browser-check',
+              '--allow-insecure-localhost',
+              '--ignore-certificate-errors',
+            ],
           })
 
           const result = await lighthouse(
