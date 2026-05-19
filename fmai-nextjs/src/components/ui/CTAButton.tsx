@@ -24,7 +24,7 @@ export function CTAButton({
   disabled = false,
 }: CTAButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-btn)] transition-all'
+    'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-btn)] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system'
 
   const variantStyles = {
     primary:
