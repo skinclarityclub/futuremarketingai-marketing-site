@@ -48,7 +48,7 @@ const lighthouseTest = base.extend<
   { lhPort: number; lhBrowser: Browser }
 >({
   lhPort: [
-    async (_fixtures, use, workerInfo) => {
+    async ({}, use, workerInfo) => {
       await use(9222 + workerInfo.workerIndex)
     },
     { scope: 'worker' },
@@ -121,6 +121,10 @@ for (const route of LIGHTHOUSE_ROUTES) {
               config: lhConfig,
               ignoreError: true,
               disableLogs: true,
+              // Minimum thresholds so playAudit skips the chalk.yellow.italic warning
+              // (disableLogs proxy bug: .italic is undefined on the returned fn).
+              // All 0 = accept any score; this spec captures baselines, not enforces them.
+              thresholds: { performance: 0, accessibility: 0, 'best-practices': 0, seo: 0 },
             })
             if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true })
             const file = `${safeRouteKey(route)}-${locale}-${formFactor}.json`
