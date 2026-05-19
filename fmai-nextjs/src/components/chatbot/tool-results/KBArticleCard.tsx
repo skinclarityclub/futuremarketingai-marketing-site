@@ -63,8 +63,8 @@ function SingleArticle({ data, index }: { data: KBArticleData; index?: number })
         <div className="flex items-center gap-3">
           {data.source && (
             <div className="flex items-center gap-1">
-              <BookOpen className="h-3 w-3 text-text-secondary/60" />
-              <span className="font-mono text-[10px] text-text-secondary/60">{data.source}</span>
+              <BookOpen className="h-3 w-3 text-text-quiet" />
+              <span className="font-mono text-[10px] text-text-quiet">{data.source}</span>
             </div>
           )}
           {data.relevance !== undefined && <RelevanceBadge relevance={data.relevance} />}

@@ -22,16 +22,16 @@ export function DemoContextCard({ personaId }: DemoContextCardProps) {
       <h3 className="text-lg font-semibold text-white mb-2">
         {t(`demo.tabs.${personaId}.scenario_title`)}
       </h3>
-      <p className="text-sm text-white/70 mb-6 leading-relaxed">
+      <p className="text-sm text-text-quiet mb-6 leading-relaxed">
         {t(`demo.tabs.${personaId}.scenario`)}
       </p>
 
-      <h4 className="text-xs font-medium text-white/40 uppercase tracking-wider mb-3">
+      <h4 className="text-xs font-medium text-text-faint uppercase tracking-wider mb-3">
         {t('demo.capabilities_label')}
       </h4>
       <ul className="space-y-2">
         {capabilities.map((cap) => (
-          <li key={cap} className="flex items-start gap-2 text-sm text-white/70">
+          <li key={cap} className="flex items-start gap-2 text-sm text-text-quiet">
             <CheckCircle className="w-4 h-4 text-accent-system mt-0.5 flex-shrink-0" />
             <span>{cap}</span>
           </li>

@@ -50,7 +50,7 @@ export function ChatHeader({
           </span>
         )}
         <span className="font-sans text-sm font-medium text-text-primary">{personaName}</span>
-        <span className="text-[10px] text-text-muted/60 uppercase tracking-wider">
+        <span className="text-[10px] text-text-faint uppercase tracking-wider">
           AI Marketing Employee
         </span>
         {badge && (

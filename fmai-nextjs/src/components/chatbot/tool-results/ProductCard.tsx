@@ -51,7 +51,7 @@ function SingleProduct({ data }: { data: ProductCardData }) {
           {Array.from({ length: 5 }, (_, i) => (
             <Star
               key={i}
-              className={`h-3.5 w-3.5 ${i < Math.round(data.rating!) ? 'fill-accent-human text-accent-human' : 'text-text-secondary/30'}`}
+              className={`h-3.5 w-3.5 ${i < Math.round(data.rating!) ? 'fill-accent-human text-accent-human' : 'text-text-faint'}`}
             />
           ))}
         </div>

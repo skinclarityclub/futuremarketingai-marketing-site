@@ -160,7 +160,7 @@ export function ApplicationForm() {
             autoComplete="name"
             aria-invalid={Boolean(fieldErrors.name)}
             aria-describedby={fieldErrors.name ? 'name-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
             placeholder={t('namePlaceholder')}
           />
           {fieldErrors.name && (
@@ -182,7 +182,7 @@ export function ApplicationForm() {
             inputMode="email"
             aria-invalid={Boolean(fieldErrors.email)}
             aria-describedby={fieldErrors.email ? 'email-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
             placeholder={t('emailPlaceholder')}
           />
           {fieldErrors.email && (
@@ -208,7 +208,7 @@ export function ApplicationForm() {
             autoComplete="organization"
             aria-invalid={Boolean(fieldErrors.agency)}
             aria-describedby={fieldErrors.agency ? 'agency-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
           />
           {fieldErrors.agency && (
             <p id="agency-err" role="alert" className="mt-1 text-sm text-[#FF4D4D]">
@@ -230,7 +230,7 @@ export function ApplicationForm() {
             autoComplete="organization-title"
             aria-invalid={Boolean(fieldErrors.role)}
             aria-describedby={fieldErrors.role ? 'role-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
             placeholder={t('rolePlaceholder')}
           />
           {fieldErrors.role && (
@@ -254,7 +254,7 @@ export function ApplicationForm() {
             autoComplete="off"
             aria-invalid={Boolean(fieldErrors.revenue)}
             aria-describedby={fieldErrors.revenue ? 'revenue-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
           >
             <option value="" disabled>
               {t('selectPlaceholder')}
@@ -286,7 +286,7 @@ export function ApplicationForm() {
             autoComplete="off"
             aria-invalid={Boolean(fieldErrors.clientCount)}
             aria-describedby={fieldErrors.clientCount ? 'clientCount-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
           >
             <option value="" disabled>
               {t('selectPlaceholder')}
@@ -319,7 +319,7 @@ export function ApplicationForm() {
             autoComplete="off"
             aria-invalid={Boolean(fieldErrors.tier)}
             aria-describedby={fieldErrors.tier ? 'tier-err' : undefined}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:outline-none focus:border-accent-system transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors"
           >
             <option value="" disabled>
               {t('selectPlaceholder')}
@@ -355,7 +355,7 @@ export function ApplicationForm() {
             aria-invalid={Boolean(fieldErrors.workspaces)}
             aria-describedby="workspaces-help"
             placeholder={t('workspacesPlaceholder')}
-            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors disabled:cursor-not-allowed"
+            className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors disabled:cursor-not-allowed"
           />
           <p id="workspaces-help" className="mt-1 text-xs text-text-muted leading-relaxed">
             {t('workspacesHelp')}
@@ -382,7 +382,7 @@ export function ApplicationForm() {
           autoComplete="off"
           aria-invalid={Boolean(fieldErrors.problem)}
           aria-describedby={fieldErrors.problem ? 'problem-err' : undefined}
-          className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-system transition-colors resize-y"
+          className="w-full px-4 py-3 rounded-lg bg-white/[0.02] border border-border-primary text-text-primary placeholder:text-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-colors resize-y"
           placeholder={t('problemPlaceholder')}
         />
         {fieldErrors.problem && (

@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 // Dynamic import with SSR disabled — prevents server-side WebGL errors
 // and splits the 638KB Spline runtime into a separate chunk
@@ -36,6 +37,9 @@ interface SplineSceneProps {
 export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) {
   const [phase, setPhase] = useState<'preview' | 'loading' | 'ready'>('preview')
   const mountedRef = useRef(false)
+  // Returns null on first SSR pass, boolean after hydration. We treat null as
+  // "no preference yet" so the 3D path is only skipped after a confirmed read.
+  const reducedMotion = useReducedMotion()
 
   const onLoad = useCallback(() => {
     // GPU needs a few frames to stabilize after shader compilation
@@ -53,6 +57,15 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
     // Pause blur-blobs during the entire loading process
     document.documentElement.classList.add('spline-loading')
 
+    // Reduced-motion: stay on the static preview indefinitely. Skips the
+    // 638KB Spline runtime download + shader compilation, in line with WCAG
+    // 2.3.3 Animation from Interactions. Preview WebP already gives the user
+    // the brand image; the 3D interactivity is the motion-bearing feature.
+    if (reducedMotion) {
+      document.documentElement.classList.remove('spline-loading')
+      return
+    }
+
     // Wait 3 seconds for page to be fully rendered and interactive
     // This ensures hero text animations, navbar, and CSS play first
     const timer = setTimeout(() => {
@@ -63,7 +76,7 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
     }, 3000)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [reducedMotion])
 
   return (
     <div className={className} style={{ contain: 'layout paint', position: 'relative' }}>

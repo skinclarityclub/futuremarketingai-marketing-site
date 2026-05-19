@@ -21,7 +21,7 @@ export function DemoCheckpoint({ prompt, options, onSelect }: DemoCheckpointProp
       transition={{ delay: 0.8, duration: 0.3 }}
       className="space-y-2 px-1 py-2"
     >
-      <p className="text-xs text-white/60">{prompt}</p>
+      <p className="text-xs text-text-quiet">{prompt}</p>
       <div className="flex flex-wrap gap-2">
         {options.map((option, i) => (
           <motion.button
@@ -35,8 +35,8 @@ export function DemoCheckpoint({ prompt, options, onSelect }: DemoCheckpointProp
               i === 0
                 ? 'cursor-pointer rounded-full border border-accent-system/40 bg-accent-system/20 px-3 py-1.5 text-xs font-medium text-accent-system transition-colors hover:bg-accent-system/30'
                 : option.action === 'end'
-                  ? 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/40 transition-colors hover:text-white/60'
-                  : 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-accent-system/30 hover:text-white'
+                  ? 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-text-faint transition-colors hover:text-text-quiet'
+                  : 'cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-text-quiet transition-colors hover:border-accent-system/30 hover:text-white'
             }
           >
             {option.label}

@@ -132,7 +132,7 @@ export function ContactForm({ labels }: ContactFormProps) {
   }
 
   const inputClasses =
-    'w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-system transition-all'
+    'w-full px-4 py-3 bg-white/[0.04] border border-border-primary rounded-[var(--radius-btn)] text-text-primary placeholder-text-muted focus:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-all'
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>

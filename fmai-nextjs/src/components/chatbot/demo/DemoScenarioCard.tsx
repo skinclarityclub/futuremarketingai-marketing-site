@@ -45,8 +45,8 @@ export function DemoScenarioCard({
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium text-white">{title}</p>
-          <p className="mt-0.5 text-xs text-white/60">{subtitle}</p>
-          <p className="mt-1.5 font-mono text-[10px] text-white/40">{stepCount} steps</p>
+          <p className="mt-0.5 text-xs text-text-quiet">{subtitle}</p>
+          <p className="mt-1.5 font-mono text-[10px] text-text-faint">{stepCount} steps</p>
         </div>
       </div>
     </motion.button>

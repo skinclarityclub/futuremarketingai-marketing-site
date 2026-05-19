@@ -439,9 +439,27 @@
     },
     "cookie_consent": {
       "title": "We gebruiken cookies",
-      "description": "We gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
-      "accept": "Accepteren",
-      "decline": "Weigeren"
+      "description": "Noodzakelijke cookies houden de site draaiend. Voor analyses en marketing vragen we vooraf toestemming.",
+      "accept": "Alles accepteren",
+      "decline": "Alles weigeren",
+      "customise": "Aanpassen",
+      "saveSelection": "Selectie opslaan",
+      "readMore": "Meer over ons cookiebeleid",
+      "reopenLink": "Cookie-instellingen wijzigen",
+      "categories": {
+        "functional": {
+          "name": "Noodzakelijk",
+          "description": "Vereist voor login, sessie en kernfuncties. Altijd actief."
+        },
+        "analytics": {
+          "name": "Analyses",
+          "description": "Geanonimiseerde bezoekersstatistieken om de site te verbeteren."
+        },
+        "marketing": {
+          "name": "Marketing",
+          "description": "Helpt ons relevante content en aanbiedingen te tonen."
+        }
+      }
     },
     "errors": {
       "notFound": {
@@ -2970,6 +2988,10 @@
   },
   "newsletter": {
     "confirm": {
+      "meta": {
+        "title": "Aanmelding bevestigen | Future Marketing AI",
+        "description": "Bevestig je aanmelding voor de AI Readiness Checklist."
+      },
       "pendingTitle": "Bevestigen...",
       "pendingBody": "Een moment, we controleren je token.",
       "okTitle": "Je bent aangemeld.",

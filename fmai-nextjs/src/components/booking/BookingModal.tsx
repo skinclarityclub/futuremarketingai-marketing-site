@@ -116,7 +116,7 @@ export function BookingModal() {
             <button
               ref={closeRef}
               onClick={closeBooking}
-              className="absolute top-4 right-4 z-10 p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+              className="absolute top-4 right-4 z-10 p-2 rounded-lg text-text-quiet hover:text-white hover:bg-white/10 transition-colors"
               aria-label={t('close')}
             >
               <X className="w-5 h-5" />

@@ -151,7 +151,7 @@ export function DemoOrchestrator({
       {/* Scenario selection */}
       {demoStatus === 'choosing' && (
         <div className="space-y-2 px-1 py-2">
-          <p className="text-xs text-white/60">Choose a scenario to explore:</p>
+          <p className="text-xs text-text-quiet">Choose a scenario to explore:</p>
           {DEMO_SCENARIOS.map((s, i) => (
             <DemoScenarioCard
               key={s.id}
@@ -184,7 +184,7 @@ export function DemoOrchestrator({
               <Sparkles className="h-4 w-4 shrink-0 text-accent-system" />
               <div className="min-w-0">
                 <p className="text-xs font-medium text-white truncate">Continue demo</p>
-                <p className="text-[10px] text-white/60 truncate">
+                <p className="text-[10px] text-text-quiet truncate">
                   Step {demoStepIndex + 2} of {scenario?.stepCount}
                 </p>
               </div>
