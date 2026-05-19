@@ -68,7 +68,7 @@ test.describe('Synapse logo — in-context visual review', () => {
   })
 
   test('Favicon SVG response', async ({ request }) => {
-    const res = await request.get('http://localhost:3005/icon.svg')
+    const res = await request.get('/icon.svg')
     expect(res.status()).toBe(200)
     const body = await res.text()
     // Sanity check: contains Synapse fingerprints
@@ -79,9 +79,7 @@ test.describe('Synapse logo — in-context visual review', () => {
   })
 
   test('OG image renders without error', async ({ page }) => {
-    const res = await page.goto('http://localhost:3005/nl/opengraph-image', {
-      waitUntil: 'load',
-    })
+    const res = await page.goto('/nl/opengraph-image', { waitUntil: 'load' })
     expect(res?.status()).toBe(200)
     expect(res?.headers()['content-type']).toContain('image')
   })

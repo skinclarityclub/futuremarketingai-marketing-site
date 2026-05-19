@@ -33,15 +33,15 @@ test.describe('Meta Tags', () => {
     await expect(ogType).toHaveAttribute('content', /.+/)
   })
 
-  test('service pages should have unique meta tags', async ({ page }) => {
-    await page.goto('/en/chatbots')
-    const chatbotsTitle = await page.title()
+  test('skill pages should have unique meta tags', async ({ page }) => {
+    await page.goto('/en/skills/clyde')
+    const clydeTitle = await page.title()
 
-    await page.goto('/en/automations')
-    const automationsTitle = await page.title()
+    await page.goto('/en/skills/social-media')
+    const socialTitle = await page.title()
 
-    // Each service page should have unique titles
-    expect(chatbotsTitle).not.toBe(automationsTitle)
+    // Each skill page should have unique titles
+    expect(clydeTitle).not.toBe(socialTitle)
   })
 })
 

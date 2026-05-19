@@ -6,7 +6,7 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { SINDY_PERSON_ID, LINKEDIN_SINDY_URL, SITE_URL } from '@/lib/seo-config'
+import { SINDY_PERSON_ID, LINKEDIN_SINDY_URL, SITE_URL, ORG_ID } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
@@ -90,6 +90,50 @@ export default async function SkcCaseStudyPage({
         description={t('testimonial.author.bio')}
         sameAs={[LINKEDIN_SINDY_URL]}
         worksForId={`${SITE_URL}/case-studies/skinclarity-club/#organization-skc`}
+      />
+      {/* Service — the AaaS engagement that powers this case study. Links the
+          case to the AI Marketing Medewerker service so crawlers can connect
+          outcome metrics to a Service entity rather than a generic WebPage. */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          '@id': `${SITE_URL}/case-studies/skinclarity-club/#service-aaas`,
+          name: 'AI Marketing Medewerker — Agent as a Service',
+          description: t('hero.subtitle'),
+          serviceType: 'AI marketing automation',
+          provider: { '@id': ORG_ID },
+          areaServed: ['NL', 'EU'],
+          availableLanguage: ['nl', 'en', 'es'],
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '5',
+            reviewCount: '1',
+            bestRating: '5',
+            worstRating: '1',
+          },
+        }}
+      />
+      {/* Review — Sindy's testimonial on the AaaS engagement, surfaced as a
+          schema.org Review so search can pull a star-snippet for the page. */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Review',
+          '@id': `${SITE_URL}/case-studies/skinclarity-club/#review-sindy`,
+          itemReviewed: {
+            '@id': `${SITE_URL}/case-studies/skinclarity-club/#service-aaas`,
+          },
+          author: { '@id': SINDY_PERSON_ID },
+          reviewBody: t('testimonial.quote'),
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: '5',
+            bestRating: '5',
+            worstRating: '1',
+          },
+          publisher: { '@id': ORG_ID },
+        }}
       />
 
       {/* Hero */}

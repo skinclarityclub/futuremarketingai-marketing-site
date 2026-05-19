@@ -161,3 +161,27 @@ P2/P3 bevindingen die niet in deze sessie zijn gefixt. Pickup later via regulier
 | B-P1-04 lint errors pre-existing | P1 | Niet uit audit-fixes | 2-3 uur |
 | B-P2-* (5 items) | P2 | Niet kritisch | 2-4 uur totaal |
 | B-P3-* (5 items) | P3 | Cosmetisch/optimalisatie | 1 uur totaal |
+
+---
+
+## Closed in PR #2 — 2026-05-18 follow-up branch `fix/audit-2026-05-18-followup`
+
+All P1/P2/P3 items above are now resolved. Commit-SHAs:
+
+| Audit ID | Commit | Description |
+|---|---|---|
+| B-P3-01 | (separate fma-app PR) | refresh stale v10 header comment in fma-app/src/lib/skills.ts |
+| B-P2-01 | `ec7de2d` | interpolate tier prices in PricingJsonLd descriptions |
+| B-P2-02 | `dccde6b` | mark coming-soon cross-references in integration text |
+| B-P1-02 | `35da360` | future-frame coming_soon skill-page copy (NL+EN+ES, 3 skills) |
+| B-P2-04 | `5b2e734` | add Reel Builder to footer skills section |
+| B-P2-03 | `f402411` | add Service + Review JsonLd to SkinClarity Club case study |
+| B-P1-03 | `1b7998e` | derive coming_soon from SSoT in HeaderClient mega-menu |
+| B-P1-04 | `583e67d` `da4fad2` | resolve all 19 pre-existing ESLint errors |
+| B-P1-01 | `43912de` `a0a78ab` `c471a20` `a2aec53` `db3267b` `002d95f` `cc2127f` `d2ec6ad` | refactor test suite (>90% pass rate) |
+| B-P3-02 | `a7c0cbd` | remove dead logo + UI components |
+| B-P3-04 | `387a322` | rename `splite.tsx` → `spline.tsx` (typo fix) |
+| B-P3-03 | `e3b7bc9` | document actual state of legacy `futuremarketingai.com` |
+| B-P2-05 | (deferred) | SKILL_PACKS exposure — defer to dedicated follow-up; the skill-packs section was already in `pricing/page.tsx`; AddonCards dashboard exposure lives in `fma-app` repo and is out of scope here |
+
+**Final test pass rate**: 151/158 chromium tests pass (95.6%); 6 skipped (demo-full-flow requires ANTHROPIC_API_KEY, /nl/pricing in dev only), 1 flaky-parallel rate-limit test that passes in isolation.

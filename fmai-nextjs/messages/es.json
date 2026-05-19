@@ -372,6 +372,7 @@
           "lead_qualifier": "Lead Qualifier",
           "social_media": "Social Media",
           "ad_creator": "Ad Creator",
+          "reel_builder": "Reel Builder",
           "reporting": "Reporting",
           "pricing": "Precios",
           "about": "Sobre nosotros",
@@ -970,11 +971,11 @@
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
         "title": "Llamadas entrantes y FAQ",
-        "body": "Clyde responde preguntas frecuentes en lenguaje natural, reserva citas en la agenda y solo escala cuando es necesario."
+        "body": "Clyde responderá preguntas frecuentes en lenguaje natural, reservará citas en la agenda y solo escalará cuando sea necesario."
       },
       "feature2": {
         "title": "Campañas salientes",
-        "body": "Recorrer listas, llamadas de intake, seguimientos. Clyde llama a la lista de contactos y registra el resultado de cada conversación."
+        "body": "Recorrer listas, llamadas de intake, seguimientos. Clyde llamará a la lista de contactos y registrará el resultado de cada conversación."
       },
       "feature3": {
         "title": "Registro de llamadas y transcripciones",
@@ -996,8 +997,8 @@
         "body": "Conecta un número de teléfono vía VAPI. Las llamadas entrantes van a Clyde; las campañas salientes se programan."
       },
       "step3": {
-        "title": "Clyde trabaja, tú monitorizas",
-        "body": "Panel en tiempo real para llamadas, escalados y resultados. Clyde aprende de cada conversación para respuestas más precisas."
+        "title": "Clyde trabajará, tú monitorizas",
+        "body": "Panel en tiempo real para llamadas, escalados y resultados. Clyde aprenderá de cada conversación para respuestas más precisas."
       }
     },
     "integrations": {
@@ -1106,7 +1107,7 @@
     "integrations": {
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por marca.",
-      "integration1": "Voice Agent: los leads del chat se pueden seguir con una llamada.",
+      "integration1": "Voice Agent (próximamente): los leads del chat se pueden seguir con una llamada.",
       "integration2": "Email Management: correos de seguimiento a leads calificados.",
       "integration3": "Reporting: embudo de conversión y coste por lead por fuente."
     },
@@ -1210,7 +1211,7 @@
       "title": "Trabaja con",
       "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por marca.",
       "integration1": "Blog Factory: posts sociales derivados del contenido del blog.",
-      "integration2": "Ad Creator: el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
+      "integration2": "Ad Creator (próximamente): el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
       "integration3": "Reporting: KPIs sociales en el informe semanal de rendimiento."
     },
     "useCases": {
@@ -1287,7 +1288,7 @@
       },
       "feature3": {
         "title": "Investigación en la Meta Ad Library",
-        "body": "Clyde analiza qué anuncian los competidores. Entrega ejemplos y un análisis de brechas."
+        "body": "Clyde analizará qué anuncian los competidores y entregará ejemplos más un análisis de brechas."
       },
       "feature4": {
         "title": "Generación de variantes A/B",
@@ -1298,15 +1299,15 @@
       "title": "Cómo funciona",
       "step1": {
         "title": "Briefing y entrevista de marca",
-        "body": "Producto o servicio, público, USP y presupuesto. Clyde lee las directrices de marca para mantener la consistencia."
+        "body": "Producto o servicio, público, USP y presupuesto. Clyde leerá las directrices de marca para mantener la consistencia."
       },
       "step2": {
         "title": "Generar los anuncios",
-        "body": "Elige estático o video, número de variantes y formato. Clyde entrega salidas listas para publicar en minutos."
+        "body": "Elige estático o video, número de variantes y formato. Clyde entregará salidas listas para publicar en minutos."
       },
       "step3": {
         "title": "Publicar en Meta",
-        "body": "Despliegue directo a Ads Manager a través de la conexión. Tú defines presupuesto y audiencia; Clyde aporta las creatividades."
+        "body": "Despliegue directo a Ads Manager a través de la conexión. Tú defines presupuesto y audiencia; Clyde aportará las creatividades."
       }
     },
     "integrations": {
@@ -2043,7 +2044,7 @@
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Blog Factory: los datos de investigación alimentan la elección de temas de blog.",
       "integration2": "Social Media: los insights de tendencias se convierten en propuestas de contenido.",
-      "integration3": "Ad Creator: el análisis de competencia mejora tus propios anuncios."
+      "integration3": "Ad Creator (próximamente): el análisis de competencia mejora tus propios anuncios."
     },
     "useCases": {
       "title": "Para quién",
@@ -2522,7 +2523,7 @@
       "title": "Cómo funciona",
       "step1": {
         "title": "Tema y formato",
-        "body": "Indica el tema y elige un formato (educativo, demo de producto, talking head). Clyde escribe el guion."
+        "body": "Indica el tema y elige un formato (educativo, demo de producto, talking head). Clyde escribirá el guion."
       },
       "step2": {
         "title": "Revisar y ajustar",
@@ -2537,7 +2538,7 @@
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Social Media: los Reels se publican vía programación.",
-      "integration2": "Ad Creator: los anuncios de video pueden seguir el formato Reel.",
+      "integration2": "Ad Creator (próximamente): los anuncios de video pueden seguir el formato Reel.",
       "integration3": "Blog Factory: los blogs se pueden resumir en un Reel de 60 segundos."
     },
     "useCases": {

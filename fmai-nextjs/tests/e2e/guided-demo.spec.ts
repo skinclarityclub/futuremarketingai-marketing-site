@@ -7,9 +7,11 @@ import { test, expect, type Page } from '@playwright/test'
  * Tests demo entry points, scenario selection, orchestrator state, and UI.
  */
 
-// Helper: wait for the floating chat button (lazy-loaded)
+// Helper: wait for the floating chat button (lazy-loaded).
+// Placeholder uses "Open chat met Clyde"; hydrated widget uses "Open chat".
+// Prefix match covers both.
 async function waitForChatButton(page: Page) {
-  const btn = page.locator('button[aria-label="Open chat"]')
+  const btn = page.locator('button[aria-label^="Open chat"]').first()
   await expect(btn).toBeVisible({ timeout: 20000 })
   return btn
 }
@@ -63,7 +65,7 @@ test.describe('Chat Panel — Open/Close Basics', () => {
     await page.goto('/en')
     await openChat(page)
 
-    const welcomeText = page.locator('[data-chatwidget-panel]').getByText(/I can help you explore/i)
+    const welcomeText = page.locator('[data-chatwidget-panel]').getByText(/I'm Clyde/i)
     await expect(welcomeText).toBeVisible({ timeout: 5000 })
   })
 })
@@ -94,13 +96,17 @@ test.describe('Guided Demo — Entry Points', () => {
     await expect(page.getByText('Client Support Experience')).toBeVisible()
   })
 
-  test('"Start guided demo" suggested prompt triggers demo mode', async ({ page }) => {
+  test('"Take a guided tour" welcome-message button is the canonical demo entry', async ({ page }) => {
+    // Post content-upgrade the suggested prompts on / are ["What skills do you
+    // have?", "Show me a demo", ...] — none of them trigger the orchestrator
+    // directly. The only entry to demo mode is the "Take a guided tour" button
+    // inside the welcome message. Confirm that button starts the demo.
     await page.goto('/en')
     await openChat(page)
 
-    const demoPrompt = page.getByRole('button', { name: /Start guided demo/i })
-    await expect(demoPrompt).toBeVisible({ timeout: 5000 })
-    await demoPrompt.click()
+    const tourButton = page.getByRole('button', { name: /Take a guided tour/i })
+    await expect(tourButton).toBeVisible({ timeout: 5000 })
+    await tourButton.click()
 
     const chooserText = page.getByText('Choose a scenario to explore:')
     await expect(chooserText).toBeVisible({ timeout: 5000 })
@@ -192,14 +198,15 @@ test.describe('Guided Demo — Orchestrator State', () => {
     await page.goto('/en')
     await openChat(page)
 
-    const demoPrompt = page.getByRole('button', { name: /Start guided demo/i })
-    await expect(demoPrompt).toBeVisible({ timeout: 5000 })
+    // Suggested prompts include "Show me a demo" on the homepage
+    const showMeDemoPrompt = page.getByRole('button', { name: /Show me a demo/i })
+    await expect(showMeDemoPrompt).toBeVisible({ timeout: 5000 })
 
     const tourButton = page.getByRole('button', { name: /Take a guided tour/i })
     await tourButton.click()
 
     // Suggested prompts should be hidden
-    await expect(demoPrompt).not.toBeVisible({ timeout: 3000 })
+    await expect(showMeDemoPrompt).not.toBeVisible({ timeout: 3000 })
   })
 })
 
@@ -218,7 +225,7 @@ test.describe('Guided Demo — End Demo Flow', () => {
     await expect(panel).not.toBeVisible({ timeout: 3000 })
 
     // Reopen — demo state should be preserved
-    const openBtn = page.locator('button[aria-label="Open chat"]')
+    const openBtn = page.locator('button[aria-label^="Open chat"]').first()
     await openBtn.click({ force: true })
     await expect(panel).toBeVisible({ timeout: 5000 })
 

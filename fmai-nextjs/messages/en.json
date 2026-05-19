@@ -372,6 +372,7 @@
           "lead_qualifier": "Lead Qualifier",
           "social_media": "Social Media",
           "ad_creator": "Ad Creator",
+          "reel_builder": "Reel Builder",
           "reporting": "Reporting",
           "pricing": "Pricing",
           "about": "About",
@@ -970,11 +971,11 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Inbound calls plus FAQ",
-        "body": "Clyde answers frequent questions in natural language, books appointments in the calendar and escalates only when needed."
+        "body": "Clyde will answer frequent questions in natural language, book appointments in the calendar and escalate only when needed."
       },
       "feature2": {
         "title": "Outbound campaigns",
-        "body": "Working through lists, intake calls, follow-ups. Clyde dials the contact list and logs the result per call."
+        "body": "Working through lists, intake calls, follow-ups. Clyde will dial the contact list and log the result per call."
       },
       "feature3": {
         "title": "Call logging and transcripts",
@@ -996,8 +997,8 @@
         "body": "Connect a phone number via VAPI. Inbound routes to Clyde; outbound campaigns are scheduled."
       },
       "step3": {
-        "title": "Clyde runs, you monitor",
-        "body": "Real-time dashboard for calls, escalations and results. Clyde learns from every conversation for sharper answers."
+        "title": "Clyde will run, you monitor",
+        "body": "Real-time dashboard for calls, escalations and results. Clyde will learn from every conversation for sharper answers."
       }
     },
     "integrations": {
@@ -1106,7 +1107,7 @@
     "integrations": {
       "title": "Works together with",
       "subtitle": "Via the shared memory per brand.",
-      "integration1": "Voice Agent: chat leads can be followed up with a phone call.",
+      "integration1": "Voice Agent (coming soon): chat leads can be followed up with a phone call.",
       "integration2": "Email Management: follow-up emails to qualified leads.",
       "integration3": "Reporting: conversion funnel and cost-per-lead per source."
     },
@@ -1210,7 +1211,7 @@
       "title": "Works together with",
       "subtitle": "The Social Media skill shares context with other skills via the shared memory per brand.",
       "integration1": "Blog Factory: social posts derived from blog content.",
-      "integration2": "Ad Creator: the best-performing organic content becomes ad test material.",
+      "integration2": "Ad Creator (coming soon): the best-performing organic content becomes ad test material.",
       "integration3": "Reporting: social KPIs in the weekly performance digest."
     },
     "useCases": {
@@ -1287,7 +1288,7 @@
       },
       "feature3": {
         "title": "Meta Ad Library research",
-        "body": "Clyde analyzes what competitors are advertising. Delivers examples and a gap analysis."
+        "body": "Clyde will analyze what competitors are advertising and deliver examples plus a gap analysis."
       },
       "feature4": {
         "title": "Generate A/B variants",
@@ -1298,15 +1299,15 @@
       "title": "How it works",
       "step1": {
         "title": "Brief and brand intake",
-        "body": "Product or service, audience, USP and budget. Clyde reads the brand guidelines to stay consistent."
+        "body": "Product or service, audience, USP and budget. Clyde will read the brand guidelines to stay consistent."
       },
       "step2": {
         "title": "Generate ads",
-        "body": "Choose static or video, number of variants and format. Clyde delivers publish-ready output within minutes."
+        "body": "Choose static or video, number of variants and format. Clyde will deliver publish-ready output within minutes."
       },
       "step3": {
         "title": "Publish to Meta",
-        "body": "Roll out directly to Ads Manager via the connection. You set budget and audience; Clyde delivers the creative."
+        "body": "Roll out directly to Ads Manager via the connection. You set budget and audience; Clyde will deliver the creative."
       }
     },
     "integrations": {
@@ -2043,7 +2044,7 @@
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Blog Factory: research data feeds the choice of blog topics.",
       "integration2": "Social Media: trend insights become content proposals.",
-      "integration3": "Ad Creator: competitor analysis improves your own ads."
+      "integration3": "Ad Creator (coming soon): competitor analysis improves your own ads."
     },
     "useCases": {
       "title": "Who this is for",
@@ -2522,7 +2523,7 @@
       "title": "How it works",
       "step1": {
         "title": "Topic and format",
-        "body": "Give the topic and pick a format (educational, product demo, talking head). Clyde writes the script."
+        "body": "Give the topic and pick a format (educational, product demo, talking head). Clyde will write the script."
       },
       "step2": {
         "title": "Review and adjust",
@@ -2537,7 +2538,7 @@
       "title": "Works together with",
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Social Media: Reels are published via the scheduler.",
-      "integration2": "Ad Creator: video ads can follow the Reel format.",
+      "integration2": "Ad Creator (coming soon): video ads can follow the Reel format.",
       "integration3": "Blog Factory: blogs can be summarized into a 60-second Reel."
     },
     "useCases": {

@@ -16,11 +16,13 @@ De marketing site `future-marketing.ai` is structureel solide na de recente cont
 4. **P1** — 4 files in de assessment-result flow gebruikten `#a855f7` (deprecated purple). **GEFIXT** in commit `c8270c7`.
 5. **P1** — 7 em-dashes (U+2014) in user-facing i18n copy. **GEFIXT** als onderdeel van commit `4f965d6`.
 
-### Niet gefixt in deze sessie (P1, doorgeschoven)
+### Niet gefixt in deze sessie (P1, doorgeschoven) — **all closed in follow-up PR**
 
-- **P1** — Coming_soon skill-pages (voice-agent, ad-creator, reel-builder) gebruiken present-tense in features+how-secties. **Reden**: copy-rewrite over 3 locales × ~9 keys per skill is een aparte content-pass.
-- **P1** — `tests/e2e/conversion-polish.spec.ts` + 132 andere tests falen. **Reden**: tests refereren naar pre-upgrade routes (`/chatbots`, `/automations`, `/voice-agents`, `/marketing-machine`) en oude homepage 4-cards layout. Reset van baselines is een dedicated phase.
-- **P1** — `HeaderClient.tsx` hardcoded `comingSoon: true` ipv. derive uit SSoT. **Reden**: pre-existing brand-werk op `main` (logo, OG, HeaderClient mods) heeft hetzelfde bestand al gemodificeerd; refactor conflicteert.
+- ~~**P1** — Coming_soon skill-pages (voice-agent, ad-creator, reel-builder) gebruiken present-tense in features+how-secties.~~ **CLOSED** in `35da360` op `fix/audit-2026-05-18-followup`.
+- ~~**P1** — `tests/e2e/conversion-polish.spec.ts` + 132 andere tests falen.~~ **CLOSED** in 8 commits op `fix/audit-2026-05-18-followup` — final pass rate 151/158 (95.6%).
+- ~~**P1** — `HeaderClient.tsx` hardcoded `comingSoon: true` ipv. derive uit SSoT.~~ **CLOSED** in `1b7998e`.
+
+All P1/P2/P3 items from this audit are now resolved on branch `fix/audit-2026-05-18-followup`. See [`2026-05-18-website-full-audit-backlog.md`](./2026-05-18-website-full-audit-backlog.md#closed-in-pr-2--2026-05-18-follow-up-branch-fixaudit-2026-05-18-followup) for the full commit-SHA mapping.
 
 ## Methode
 

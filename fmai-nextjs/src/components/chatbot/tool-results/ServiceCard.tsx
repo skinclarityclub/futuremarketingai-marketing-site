@@ -31,27 +31,44 @@ export interface ServiceCardData {
   metrics?: { label: string; value: string }[]
 }
 
-const SERVICE_ICONS: Record<string, typeof Zap> = {
-  chatbot: Bot,
-  'ai chatbot': Bot,
-  voice: Megaphone,
-  'voice agent': Megaphone,
-  automation: Zap,
-  marketing: BarChart3,
-  'marketing machine': BarChart3,
+type ServiceIconKind = 'bot' | 'voice' | 'automation' | 'marketing' | 'default'
+
+const ICON_MATCHERS: ReadonlyArray<{ key: string; kind: ServiceIconKind }> = [
+  { key: 'chatbot', kind: 'bot' },
+  { key: 'ai chatbot', kind: 'bot' },
+  { key: 'voice agent', kind: 'voice' },
+  { key: 'voice', kind: 'voice' },
+  { key: 'marketing machine', kind: 'marketing' },
+  { key: 'marketing', kind: 'marketing' },
+  { key: 'automation', kind: 'automation' },
+]
+
+function getServiceIconKind(name?: string): ServiceIconKind {
+  if (!name) return 'default'
+  const lower = name.toLowerCase()
+  for (const match of ICON_MATCHERS) {
+    if (lower.includes(match.key)) return match.kind
+  }
+  return 'default'
 }
 
-function getServiceIcon(name?: string) {
-  if (!name) return Zap
-  const lower = name.toLowerCase()
-  for (const [key, Icon] of Object.entries(SERVICE_ICONS)) {
-    if (lower.includes(key)) return Icon
+function ServiceIcon({ kind, className }: { kind: ServiceIconKind; className?: string }) {
+  switch (kind) {
+    case 'bot':
+      return <Bot className={className} />
+    case 'voice':
+      return <Megaphone className={className} />
+    case 'automation':
+      return <Zap className={className} />
+    case 'marketing':
+      return <BarChart3 className={className} />
+    default:
+      return <Zap className={className} />
   }
-  return Zap
 }
 
 function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
-  const Icon = getServiceIcon(data.name)
+  const iconKind = getServiceIconKind(data.name)
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -61,7 +78,7 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
     >
       <div className="flex items-start gap-3">
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-system/15">
-          <Icon className="h-4 w-4 text-accent-system" />
+          <ServiceIcon kind={iconKind} className="h-4 w-4 text-accent-system" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="font-sans text-sm font-semibold text-text-primary">
@@ -256,14 +273,19 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
     if (Array.isArray(data.services)) {
       normalizedServices = data.services
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     else if (typeof data.services === 'object') {
-      normalizedServices = Object.values(data.services).map((svc: any) => ({
-        name: svc.name || 'Service',
-        description: svc.description,
-        features: svc.features || svc.highlights || [],
-        price: svc.price || svc.starting_price,
-      }))
+      normalizedServices = Object.values(data.services as Record<string, unknown>).map((raw) => {
+        const svc = raw as Record<string, unknown>
+        return {
+          name: (svc.name as string) || 'Service',
+          description: svc.description as string | undefined,
+          features: (svc.features as string[] | undefined) ||
+            (svc.highlights as string[] | undefined) ||
+            [],
+          price: (svc.price as string | undefined) ||
+            (svc.starting_price as string | undefined),
+        }
+      })
     }
   }
 

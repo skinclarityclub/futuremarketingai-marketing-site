@@ -2,7 +2,9 @@
 
 > Agent Operating Manual — repo root. For code-level work use `fmai-nextjs/CLAUDE.md` (authoritative for the live codebase).
 
-> Canonical domain (2026-04-24 unified): **https://future-marketing.ai**. Any legacy `futuremarketingai.com` in git history is 301-redirected at the Vercel edge. Do not re-introduce the legacy domain in new code.
+> Canonical domain (2026-04-24 unified): **https://future-marketing.ai**.
+>
+> **Legacy domain `futuremarketingai.com` (2026-05-18 audit)**: still registered (IONOS, NS `ns*.ui-dns.*`) and resolves to `74.208.236.168`, but DNS does NOT point at Vercel, so the previously-promised Vercel-edge 301 is currently inactive (HTTPS handshake fails). Restoring the redirect requires moving the apex A record to Vercel and adding a 301 rule in the Vercel dashboard, OR retiring the domain at renewal. Until then: do not re-introduce the legacy domain in new code or copy.
 
 ## One-liner
 

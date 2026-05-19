@@ -181,7 +181,7 @@ export default function LogoLabPage() {
             Zes varianten — drie met brein, drie zonder
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed">
-            Eerste drie (V3-A/B/C) interpreteren "brein" op designer-niveau:
+            Eerste drie (V3-A/B/C) interpreteren &quot;brein&quot; op designer-niveau:
             geabstraheerd, geen anatomische gyri. Laatste drie (V2-A/B/C) blijven
             niet-brein-georiënteerd ter vergelijking. Alle zes volgen dezelfde vijf
             principes: pure kleuren (géén gradients), geometrische constructie,

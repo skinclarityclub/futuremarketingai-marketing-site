@@ -40,6 +40,7 @@ export function ClientIslands() {
       typeof document !== 'undefined' &&
       !document.cookie.includes('futuremarketingai-cookie-consent=')
     ) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-shot mount-time cookie probe; legitimate sync of external (cookie) state into React
       setNeedsConsent(true)
     }
   }, [])

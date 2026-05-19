@@ -92,16 +92,25 @@ function ToolErrorCard() {
   )
 }
 
+// Part shape comes from the AI SDK's UIMessage tool parts and is too dynamic
+// to type narrowly here; we treat it as a structural object and narrow per
+// state. unknown forces explicit checks at use-sites.
 interface ToolResultRendererProps {
-  part: any
-} // eslint-disable-line @typescript-eslint/no-explicit-any
+  part: {
+    state?: string
+    toolName?: string
+    output?: unknown
+    [key: string]: unknown
+  }
+}
 
 export function ToolResultRenderer({ part }: ToolResultRendererProps) {
+  const toolName = part.toolName ?? 'unknown'
   if (part.state === 'input-streaming' || part.state === 'input-available')
-    return <ToolLoadingCard toolName={part.toolName} />
+    return <ToolLoadingCard toolName={toolName} />
   if (part.state === 'output-error') return <ToolErrorCard />
   if (part.state === 'output-available') {
-    if (part.toolName === 'navigate_to_page' && part.output) {
+    if (toolName === 'navigate_to_page' && part.output) {
       const { url, label, description } = part.output as {
         url?: string
         label?: string
@@ -114,7 +123,7 @@ export function ToolResultRenderer({ part }: ToolResultRendererProps) {
         </div>
       )
     }
-    const Card = TOOL_CARD_MAP[part.toolName]
+    const Card = TOOL_CARD_MAP[toolName]
     if (!Card)
       return (
         <pre className="my-1 overflow-x-auto rounded-lg bg-bg-elevated/50 p-2 font-mono text-xs text-text-secondary">

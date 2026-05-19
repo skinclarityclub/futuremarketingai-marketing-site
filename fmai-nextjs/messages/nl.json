@@ -136,7 +136,7 @@
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
-          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Cross-skill learning is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
+          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
         }
       }
     },
@@ -372,6 +372,7 @@
           "lead_qualifier": "Lead Qualifier",
           "social_media": "Social Media",
           "ad_creator": "Ad Creator",
+          "reel_builder": "Reel Builder",
           "reporting": "Rapportage",
           "pricing": "Prijzen",
           "about": "Over ons",
@@ -970,11 +971,11 @@
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
         "title": "Inkomende gesprekken plus FAQ",
-        "body": "Clyde beantwoordt veelgestelde vragen in gewone taal, boekt afspraken in de agenda en escaleert alleen wanneer nodig."
+        "body": "Clyde gaat veelgestelde vragen in gewone taal beantwoorden, afspraken boeken in de agenda en alleen escaleren wanneer nodig."
       },
       "feature2": {
         "title": "Uitgaande campagnes",
-        "body": "Lijsten aflopen, intakegesprekken, opvolgingen. Clyde belt de contactlijst en registreert per gesprek het resultaat."
+        "body": "Lijsten aflopen, intakegesprekken, opvolgingen. Clyde gaat de contactlijst bellen en per gesprek het resultaat registreren."
       },
       "feature3": {
         "title": "Gespreksregistratie en transcripties",
@@ -996,8 +997,8 @@
         "body": "Koppel een telefoonnummer via VAPI. Inkomend gaat naar Clyde; uitgaande campagnes worden ingepland."
       },
       "step3": {
-        "title": "Clyde draait, jij monitort",
-        "body": "Realtime dashboard voor gesprekken, escalaties en resultaten. Clyde leert van elk gesprek voor scherpere antwoorden."
+        "title": "Clyde gaat draaien, jij monitort",
+        "body": "Realtime dashboard voor gesprekken, escalaties en resultaten. Clyde gaat van elk gesprek leren voor scherpere antwoorden."
       }
     },
     "integrations": {
@@ -1048,7 +1049,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Voice Agent?",
-          "answer": "Drie tot vier weken. Week 1 koppelt het nummer en bouwt de kennisbasis. Week 2 schaduwluistert Clyde echte gesprekken. Week 3 voert eerste live calls met menselijke fallback. Vanaf week 4 draait de skill autonoom met sample-review."
+          "answer": "Drie tot vier weken. Week 1 koppelt het nummer en bouwt de kennisbasis. Week 2 schaduwluistert Clyde echte gesprekken. Week 3 voert eerste live calls met menselijke fallback. Vanaf week 4 draait de vaardigheid autonoom met sample-review."
         },
         "q5": {
           "question": "Hoe verschilt dit van Vapi of Bland?",
@@ -1106,7 +1107,7 @@
     "integrations": {
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per merk.",
-      "integration1": "Voice Agent: chat-leads kunnen worden opgevolgd met een telefoongesprek.",
+      "integration1": "Voice Agent (binnenkort): chat-leads kunnen worden opgevolgd met een telefoongesprek.",
       "integration2": "Email Management: opvolgmails naar gekwalificeerde leads.",
       "integration3": "Rapportage: conversietrechter en kost-per-lead per bron."
     },
@@ -1210,7 +1211,7 @@
       "title": "Werkt samen met",
       "subtitle": "De Social Media-vaardigheid deelt context met andere vaardigheden via het gedeelde geheugen per merk.",
       "integration1": "Blog Factory: social posts afgeleid van blogcontent.",
-      "integration2": "Ad Creator: de best presterende organische content wordt advertentietestmateriaal.",
+      "integration2": "Ad Creator (binnenkort): de best presterende organische content wordt advertentietestmateriaal.",
       "integration3": "Rapportage: social-KPI's in de wekelijkse prestatie-digest."
     },
     "useCases": {
@@ -1254,7 +1255,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Social Media Manager?",
-          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de skill autonoom met kortere goedkeuringscycli."
+          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de vaardigheid autonoom met kortere goedkeuringscycli."
         },
         "q5": {
           "question": "Hoe verschilt dit van Buffer of Later?",
@@ -1287,7 +1288,7 @@
       },
       "feature3": {
         "title": "Onderzoek in de Meta Ad Library",
-        "body": "Clyde analyseert wat concurrenten adverteren. Levert voorbeelden en een gap-analyse."
+        "body": "Clyde gaat analyseren wat concurrenten adverteren en levert voorbeelden plus een gap-analyse."
       },
       "feature4": {
         "title": "A/B-varianten genereren",
@@ -1298,15 +1299,15 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Briefing en merkintake",
-        "body": "Product of dienst, doelgroep, USP en budget. Clyde leest de merkrichtlijnen om consistent te blijven."
+        "body": "Product of dienst, doelgroep, USP en budget. Clyde gaat de merkrichtlijnen lezen om consistent te blijven."
       },
       "step2": {
         "title": "Ads genereren",
-        "body": "Kies statisch of video, aantal varianten en formaat. Clyde levert publicatieklare output binnen minuten."
+        "body": "Kies statisch of video, aantal varianten en formaat. Clyde gaat publicatieklare output binnen minuten leveren."
       },
       "step3": {
         "title": "Publiceren naar Meta",
-        "body": "Direct uitrollen naar Ads Manager via de koppeling. Jij stelt budget en doelgroep in; Clyde levert de creatives."
+        "body": "Direct uitrollen naar Ads Manager via de koppeling. Jij stelt budget en doelgroep in; Clyde gaat de creatives leveren."
       }
     },
     "integrations": {
@@ -1353,7 +1354,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Ad Creator?",
-          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de skill autonoom met kalibratie op CTR-, CPA- en ROAS-data uit Rapportage."
+          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de vaardigheid autonoom met kalibratie op CTR-, CPA- en ROAS-data uit Rapportage."
         },
         "q5": {
           "question": "Hoe verschilt dit van AdCreative of Pencil?",
@@ -2043,7 +2044,7 @@
       "subtitle": "Via het gedeelde geheugen per merk.",
       "integration1": "Blog Factory: onderzoeksdata voedt de keuze van blogonderwerpen.",
       "integration2": "Social Media: trendinzichten worden contentvoorstellen.",
-      "integration3": "Ad Creator: concurrentie-analyse verbetert je eigen advertenties."
+      "integration3": "Ad Creator (binnenkort): concurrentie-analyse verbetert je eigen advertenties."
     },
     "useCases": {
       "title": "Voor wie",
@@ -2181,7 +2182,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Blog Factory?",
-          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de skill autonoom met sample-review per 5 artikelen."
+          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de vaardigheid autonoom met sample-review per 5 artikelen."
         },
         "q5": {
           "question": "Hoe verschilt dit van Jasper of SurferSEO?",
@@ -2284,7 +2285,7 @@
         },
         "q5": {
           "question": "Hoe verschilt dit van Ahrefs of Semrush?",
-          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op skill-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
+          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op vaardigheid-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
         }
       }
     }
@@ -2522,7 +2523,7 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Onderwerp en formaat",
-        "body": "Geef het onderwerp en kies een formaat (educatief, productdemo, talking head). Clyde schrijft het script."
+        "body": "Geef het onderwerp en kies een formaat (educatief, productdemo, talking head). Clyde gaat het script schrijven."
       },
       "step2": {
         "title": "Beoordelen en aanpassen",
@@ -2537,7 +2538,7 @@
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per merk.",
       "integration1": "Social Media: Reels worden via de inplanning gepubliceerd.",
-      "integration2": "Ad Creator: video-ads kunnen het Reel-formaat volgen.",
+      "integration2": "Ad Creator (binnenkort): video-ads kunnen het Reel-formaat volgen.",
       "integration3": "Blog Factory: blogs kunnen samengevat worden in een Reel van 60 seconden."
     },
     "useCases": {
@@ -2577,7 +2578,7 @@
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Reel Builder?",
-          "answer": "Twee weken. Week 1 baseert Clyde de huisstijl op eerdere video's en design-richtlijnen (typo, kleur, beat). Week 2 produceert de eerste 2 Reels met handmatige goedkeuring per scene. Vanaf week 3 draait de skill autonoom met sample-review."
+          "answer": "Twee weken. Week 1 baseert Clyde de huisstijl op eerdere video's en design-richtlijnen (typo, kleur, beat). Week 2 produceert de eerste 2 Reels met handmatige goedkeuring per scene. Vanaf week 3 draait de vaardigheid autonoom met sample-review."
         },
         "q5": {
           "question": "Hoe verschilt dit van CapCut of Opus Clip?",
@@ -2865,7 +2866,7 @@
       "week1Heading": "Eerste stap deze week",
       "week1": {
         "explorer": "Stop met losse public-AI-tools per medewerker en kies één centraal startpunt. Begin met één workflow (bijvoorbeeld social posts) en maak hem systematisch.",
-        "builder": "Audit je pipelines: waar leeft data, waar lekken handoffs? Inventariseer welke cross-skill datadeling je vandaag al kunt activeren.",
+        "builder": "Audit je pipelines: waar leeft data, waar lekken handoffs? Inventariseer welke datadeling tussen vaardigheden je vandaag al kunt activeren.",
         "operator": "Audit vendor-afhankelijkheid. Lijst de 3 belangrijkste tools, check EU-hosting en documenteer exit-clausules per leverancier."
       },
       "skillsHeading": "Drie vaardigheden die het verschil maken",
@@ -2913,7 +2914,7 @@
     "eyebrow": "Gratis AI Readiness Scan",
     "title": "Hoe AI-volwassen is jouw bureau?",
     "subtitle": "Doe de interactieve 5-minutenscan. Ontdek of je een Explorer, Builder of Operator bent en welke drie Clyde-vaardigheden het verschil maken.",
-    "bullet1": "16 vragen verspreid over 4 categorieen",
+    "bullet1": "16 vragen verspreid over 4 categorieën",
     "bullet2": "Persona-uitkomst plus score per categorie",
     "bullet3": "Drie aanbevolen Clyde-vaardigheden en 4-week roadmap",
     "cta": "Start de scan",

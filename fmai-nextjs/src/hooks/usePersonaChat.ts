@@ -13,7 +13,12 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
 
   const messageCount = messageCounts[personaId] || 0
 
-  // Memoize transport to prevent re-creation on every render
+  // Memoize transport to prevent re-creation on every render. React 19
+  // compiler infers a broader `pageContext` dependency, but we deliberately
+  // narrow to `pageContext?.pathname` because only the pathname affects the
+  // chatbot request body; reconstructing transport for unrelated pageContext
+  // mutations would tear active streams.
+  /* eslint-disable react-hooks/preserve-manual-memoization, react-hooks/exhaustive-deps -- intentional narrow dep set; see comment above */
   const transport = useMemo(
     () =>
       new DefaultChatTransport({
@@ -30,6 +35,7 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
       }),
     [personaId, sessionId, pageContext?.pathname, demoMode]
   )
+  /* eslint-enable react-hooks/preserve-manual-memoization, react-hooks/exhaustive-deps */
 
   const chat = useChat({
     id: `chat-${personaId}`,

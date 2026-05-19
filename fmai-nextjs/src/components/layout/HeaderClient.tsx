@@ -25,6 +25,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
+import { getSkillBySlug } from '@/lib/skills-data'
 
 interface HeaderClientProps {
   locale: string
@@ -37,29 +38,14 @@ const SKILL_CATEGORIES = [
     items: [
       { key: 'socialMedia', icon: Share2, href: '/skills/social-media' as const },
       { key: 'blogFactory', icon: BookOpen, href: '/skills/blog-factory' as const },
-      {
-        key: 'adCreator',
-        icon: Megaphone,
-        href: '/skills/ad-creator' as const,
-        comingSoon: true,
-      },
-      {
-        key: 'reelBuilder',
-        icon: Clapperboard,
-        href: '/skills/reel-builder' as const,
-        comingSoon: true,
-      },
+      { key: 'adCreator', icon: Megaphone, href: '/skills/ad-creator' as const },
+      { key: 'reelBuilder', icon: Clapperboard, href: '/skills/reel-builder' as const },
     ],
   },
   {
     key: 'engage',
     items: [
-      {
-        key: 'voiceAgent',
-        icon: Phone,
-        href: '/skills/voice-agent' as const,
-        comingSoon: true,
-      },
+      { key: 'voiceAgent', icon: Phone, href: '/skills/voice-agent' as const },
       { key: 'leadQualifier', icon: MessageSquare, href: '/skills/lead-qualifier' as const },
       { key: 'emailManagement', icon: Mail, href: '/skills/email-management' as const },
       { key: 'manychat', icon: MessageCircle, href: '/skills/manychat' as const },
@@ -120,7 +106,9 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
 
   // Close mobile menu on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- legitimate sync: external pathname change must close the open mobile menu
     setMobileOpen(false)
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- legitimate sync: external pathname change must collapse skills submenu
     setMobileSkillsOpen(false)
   }, [pathname])
 
@@ -305,7 +293,9 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                                               `skills.${category.key}.items.${skill.key}.title`
                                             )}
                                           </span>
-                                          {'comingSoon' in skill && skill.comingSoon && (
+                                          {getSkillBySlug(
+                                            skill.href.replace('/skills/', '')
+                                          )?.status === 'coming_soon' && (
                                             <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
                                               {tHeader('skills.comingSoon')}
                                             </span>

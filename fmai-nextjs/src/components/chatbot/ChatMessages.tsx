@@ -103,6 +103,7 @@ export function ChatMessages({
     if (shouldAutoScroll.current) messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages.length, status])
 
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- compiler can't unify the per-part as-any cast inside the loop; manual memoization stays correct because messages/flagship deps are sufficient
   const lastSidePanelTool = useMemo(() => {
     if (!flagship) return null
     for (let i = messages.length - 1; i >= 0; i--) {
