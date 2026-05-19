@@ -12,6 +12,7 @@
     "test:e2e": "playwright test",
     "test:e2e:cross-browser": "playwright test tests/e2e/cross-browser-render.spec.ts --project=webkit --project=firefox --project=chromium",
     "audit:lighthouse": "playwright test tests/e2e/audit-v2-lighthouse.spec.ts --project=chromium",
+    "audit:crux": "node scripts/measure-crux.mjs",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:debug": "playwright test --debug",
