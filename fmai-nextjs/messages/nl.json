@@ -374,6 +374,9 @@
           "ad_creator": "Ad Creator",
           "reel_builder": "Reel Builder",
           "reporting": "Rapportage",
+          "email_management": "Email Management",
+          "manychat": "ManyChat DM",
+          "research": "Research",
           "pricing": "Prijzen",
           "about": "Over ons",
           "how_it_works": "Hoe het werkt",
@@ -403,6 +406,37 @@
     },
     "comingSoon": "Binnenkort",
     "viewRoadmap": "Bekijk de roadmap",
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "Over ons",
+      "how_it_works": "Hoe het werkt",
+      "pricing": "Prijzen",
+      "founding_member": "Founding Member",
+      "contact": "Contact",
+      "memory": "Geheugen",
+      "apply": "Aanmelden",
+      "assessment": "Assessment",
+      "roadmap": "Roadmap",
+      "case_studies_skc": "SkinClarity Club",
+      "skills_index": "Vaardigheden",
+      "skill_social_media": "Social Media",
+      "skill_blog_factory": "Blog Factory",
+      "skill_voice_agent": "Voice Agent",
+      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_ad_creator": "Ad Creator",
+      "skill_reel_builder": "Reel Builder",
+      "skill_email_management": "Email Management",
+      "skill_manychat": "ManyChat DM",
+      "skill_reporting": "Rapportage",
+      "skill_seo_geo": "SEO / GEO",
+      "skill_research": "Research",
+      "skill_clyde": "Clyde",
+      "blog": "Blog",
+      "legal": "Juridisch",
+      "legal_privacy": "Privacy",
+      "legal_terms": "Voorwaarden",
+      "legal_cookies": "Cookies"
+    },
     "cookie_consent": {
       "title": "We gebruiken cookies",
       "description": "We gebruiken cookies om je ervaring te verbeteren en het siteverkeer te analyseren.",
@@ -2086,6 +2120,20 @@
         }
       }
     }
+  },
+  "skills-index": {
+    "meta": {
+      "title": "Vaardigheden: 12 vaardigheden van Clyde | FutureMarketingAI",
+      "description": "Bekijk de 12 vaardigheden die Clyde uitvoert: social, blogs, ads, voice, leads, e-mail, SEO/GEO en meer. 9 live, 3 binnenkort."
+    },
+    "hero": {
+      "title": "De 12 vaardigheden van Clyde",
+      "subtitle": "Eén AI Marketing Medewerker, twaalf vaardigheden, één gedeeld geheugen per merk. Negen leveren al productie, drie zijn binnenkort live."
+    },
+    "status": {
+      "live": "Live"
+    },
+    "grid_aria_label": "Lijst met vaardigheden"
   },
   "skills-blog-factory": {
     "meta": {

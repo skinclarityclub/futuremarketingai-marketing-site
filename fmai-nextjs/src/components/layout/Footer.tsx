@@ -93,6 +93,38 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
+                    href="/skills/email-management"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.email_management')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/manychat"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.manychat')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/reporting"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.reporting')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/skills/research"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.research')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/skills/seo-geo"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
