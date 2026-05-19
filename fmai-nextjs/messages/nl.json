@@ -843,6 +843,8 @@
     },
     "form": {
       "title": "Stuur ons een bericht",
+      "required_note": "Velden met * zijn verplicht.",
+      "optional_suffix": "(optioneel)",
       "name_label": "Jouw naam",
       "name_placeholder": "Jan Janssen",
       "email_label": "E-mailadres",

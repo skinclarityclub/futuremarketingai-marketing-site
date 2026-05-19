@@ -843,6 +843,8 @@
     },
     "form": {
       "title": "Send us a message",
+      "required_note": "Fields marked * are required.",
+      "optional_suffix": "(optional)",
       "name_label": "Your name",
       "name_placeholder": "Jane Doe",
       "email_label": "Email address",

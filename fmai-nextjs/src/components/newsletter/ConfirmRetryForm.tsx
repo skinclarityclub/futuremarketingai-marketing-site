@@ -14,6 +14,7 @@
  */
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { Label } from '@/components/ui/Label'
 
 type Status = 'idle' | 'submitting' | 'success' | 'errorRate' | 'errorGeneric'
 
@@ -64,14 +65,15 @@ export function ConfirmRetryForm({ locale }: { locale: 'nl' | 'en' | 'es' }) {
       className="mx-auto flex w-full max-w-md flex-col gap-3 text-left"
       noValidate
     >
-      <label htmlFor="resend-confirm-email" className="text-sm font-medium text-text-primary">
+      <Label htmlFor="resend-confirm-email" required className="text-sm font-medium text-text-primary">
         {t('label')}
-      </label>
+      </Label>
       <input
         id="resend-confirm-email"
         name="email"
         type="email"
         required
+        aria-required="true"
         autoComplete="email"
         inputMode="email"
         value={email}
