@@ -72,7 +72,7 @@ Result: PASS with zero output. The TypeScript strict configuration in
 `tsconfig.json` reports no errors on the current `src/` tree. This is the
 expected state after Phase 15 closure; any new type errors that appear during
 Wave 2 audit work indicate a regression introduced by an audit-plan touching
-code (which the audit-invariant explicitly forbids — see commit-invariants in
+code (which the audit-invariant explicitly forbids; see commit-invariants in
 the plan).
 
 ## Lint baseline
@@ -111,7 +111,7 @@ Test and tooling code (15 warnings, none affect production bundles):
 
 One warning is auto-fixable via `npm run lint -- --fix` (`12 warnings
 potentially fixable`). Lint warnings are tagged out-of-scope baseline noise for
-Phase 16 — Wave 2 teams do not need to fix them.
+Phase 16. Wave 2 teams do not need to fix them.
 
 ## Palette baseline
 
@@ -239,49 +239,49 @@ The following pre-existing issues are EXPLICITLY excluded from Phase 16 audit
 scope. They are real findings but they do not block Wave 2 team plans, and
 Wave 2 teams must not spend cycles trying to fix them inside the audit.
 
-1. **Playwright legacy-suite failure** — `conversion-polish.spec.ts: es inbox
+1. **Playwright legacy-suite failure**: `conversion-polish.spec.ts: es inbox
    check confirmation` fails in Resend test-mode timing. Documented in Phase 15
    close-out. Rationale: not an SOTA audit concern, owned by the post-launch
    Resend instrumentation work.
 
-2. **Next.js `middleware` deprecation warning** — `proxy` convention rename
+2. **Next.js `middleware` deprecation warning**: `proxy` convention rename
    was started in Phase 10-04 but not finished. Cosmetic deprecation notice
    only, zero runtime impact. Rationale: tracked under post-phase carry-overs.
 
-3. **24 lint warnings** — all unused-vars or unused-eslint-disable directives,
+3. **24 lint warnings**: all unused-vars or unused-eslint-disable directives,
    no errors, no production behavioural impact. Rationale: cleanup work, no
    audit-finding value.
 
-4. **`prebuild` lint-soft gate** (`npm run lint || true`) — Phase 13-03
+4. **`prebuild` lint-soft gate** (`npm run lint || true`): Phase 13-03
    shipped this as a temporary measure pending React Compiler error-fix work
    in a future phase. Rationale: known design decision documented in
    `package.json` `_fixme_prebuild_strict` key.
 
-5. **WebKit-on-Windows Playwright instability** — historical pattern from
+5. **WebKit-on-Windows Playwright instability**: historical pattern from
    Phase 09 visual-regression work; WebKit occasionally segfaults on Windows
    during heavy-asset routes (`/skills/voice-agent`, `/[locale]` Spline hero).
    Wave 2 plan 16-10 (Cross-browser) treats per-route WebKit crash as
    SKIP-with-note rather than a hard failure, per AUTONOMOUS-PROTOCOL Rule 2.
    Rationale: platform-quirk, not an FMai-code defect.
 
-6. **Lighthouse perf score for localhost dev** — dev-mode bundles are
+6. **Lighthouse perf score for localhost dev**: dev-mode bundles are
    unminified and skew Lighthouse below realistic numbers. Rationale: 16-09
    runs Lighthouse against the production URL `https://future-marketing.ai`
    to get representative scores.
 
-7. **Pre-existing test-results clutter** — `fmai-nextjs/test-results/` already
+7. **Pre-existing test-results clutter**: `fmai-nextjs/test-results/` already
    contains failed-run artefacts from prior phases (logo-visual,
    nl-audit-screenshots, conversion-polish). These are gitignored. Rationale:
    leave alone, do not rebuild.
 
-8. **Existing chatbot React-hooks warnings** — `HeaderClient.tsx` and
+8. **Existing chatbot React-hooks warnings**: `HeaderClient.tsx` and
    `CookieConsentBanner.tsx` and `WaveformVisualizer.tsx` carry
    `react-hooks/set-state-in-effect` eslint-disable directives that the linter
    now reports as unused. Rationale: React Compiler emits the underlying lint
    rule conditionally; the disable comments stay as documentation of intent
    until the next React Compiler bump.
 
-9. **`playwright-lighthouse` chalk incompatibility** — the
+9. **`playwright-lighthouse` chalk incompatibility**: the
    `playwright-lighthouse@^4.x` library calls `chalk.yellow.italic(...)` which
    was removed in `chalk@5` (currently installed via transitive). All 60
    Lighthouse tests SKIP-logged with `chalk.yellow.italic is not a function`
@@ -290,7 +290,7 @@ Wave 2 teams must not spend cycles trying to fix them inside the audit.
    Performance plan uses the WebFetch PageSpeed Insights API as the documented
    fallback (Rule 2). Library-fix scope is post-phase carry-over.
 
-10. **Capture-suite port shift** — initial agent attempt left an orphan dev
+10. **Capture-suite port shift**: initial agent attempt left an orphan dev
     server holding port 3000 plus a `.next/dev/lock` file, blocking subsequent
     dev servers per Next.js 16 single-server-per-directory guard. Recovery
     used port 3100 (`PLAYWRIGHT_BASE_URL=http://localhost:3100`,
@@ -298,7 +298,7 @@ Wave 2 teams must not spend cycles trying to fix them inside the audit.
     taken against `localhost:3100`. Wave 2 teams should NOT treat the port
     shift as an audit finding. Rationale: tooling artefact, not site behaviour.
 
-11. **Capture-suite consolidated re-run** — the first recovery agent invoked
+11. **Capture-suite consolidated re-run**: the first recovery agent invoked
     `npx playwright test` three separate times (chromium, then webkit+firefox,
     then lighthouse), and Playwright's default `outputDir = test-results/`
     cleanup wiped the chromium and axe and HAR and DOM and lighthouse outputs

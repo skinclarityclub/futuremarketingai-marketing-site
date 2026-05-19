@@ -33,7 +33,7 @@ Cross-browser parity is covered indirectly by SOTA markers M3 (color and typogra
 
 ## Findings
 
-### F1 P0 — WebKit-wide unstyled render across every route
+### F1 P0: WebKit-wide unstyled render across every route
 
 **Evidence:** Direct image read of `test-results/audit-v2/screenshots-webkit/_/nl-desktop.png` (home), confirmed by the prior agent on `/pricing` and `/about`. WebKit renders:
 
@@ -47,10 +47,10 @@ Both Chromium and Firefox render the same routes correctly themed, with the dark
 
 **Suspected root cause:** Tailwind 4 with `@tailwindcss/postcss` produces CSS that depends on modern CSS features. Most likely culprits, in decreasing order of likelihood:
 
-1. `@property` rules with `<color>` types in the CSS variable cascade — WebKit historically lags on `@property` for non-color types and on type-checked color tokens.
-2. `oklch()` color space in the theme tokens (Tailwind 4 default) — Safari before 16.4 has no `oklch()` support, and Playwright's bundled WebKit (Safari Technology Preview channel) sometimes hits parser quirks.
-3. CSS nesting at non-top-level (`& :hover` deep in component classes) — WebKit nesting parser is strict on order.
-4. `@layer` cascade order — when an `@layer` block fails to parse, all subsequent rules in the file get dropped silently.
+1. `@property` rules with `<color>` types in the CSS variable cascade. WebKit historically lags on `@property` for non-color types and on type-checked color tokens.
+2. `oklch()` color space in the theme tokens (Tailwind 4 default). Safari before 16.4 has no `oklch()` support, and Playwright's bundled WebKit (Safari Technology Preview channel) sometimes hits parser quirks.
+3. CSS nesting at non-top-level (`& :hover` deep in component classes). WebKit nesting parser is strict on order.
+4. `@layer` cascade order: when an `@layer` block fails to parse, all subsequent rules in the file get dropped silently.
 
 **Why this matters:**
 
@@ -65,19 +65,19 @@ Both Chromium and Firefox render the same routes correctly themed, with the dark
 3. Most likely fix is to set `--theme-color: oklch(...)` fallbacks to hex or to gate `@property` registrations behind `@supports`.
 4. Add a CI Playwright gate `tests/e2e/cross-browser-render.spec.ts` that asserts computed `background-color` on `<body>` equals the theme deep value, run on WebKit and Firefox.
 
-### F2 P1 — WebKit Windows instability concentrated on Spline and voice-agent routes (baseline item 5 confirmed in numbers)
+### F2 P1: WebKit Windows instability concentrated on Spline and voice-agent routes (baseline item 5 confirmed in numbers)
 
 **Evidence:** WebKit captured 183 of 186 expected PNGs. The 3 missing are concentrated on home (`/`) and voice-agent routes per the capture log timeline. This matches the documented baseline item 5 pattern (WebKit on Windows segfaults on heavy-asset routes).
 
 **Severity reasoning:** P1 not P0 because this is platform-quirk plus baseline-acknowledged. F1 above turns this into a moot concern since the WebKit render is broken anyway on the routes that did capture.
 
-### F3 P2 — Firefox render parity with Chromium is excellent
+### F3 P2: Firefox render parity with Chromium is excellent
 
 **Evidence:** Direct image read of `screenshots-firefox/_/nl-desktop.png` shows the same dark theme, same Spline robot, same gradient hero, same themed CTAs and cookie banner as the Chromium baseline. No detected differences on the home page.
 
 **Why log this:** positive finding for the 16-15 synthesis and 16-16 roadmap. Firefox is not a regression risk for this codebase. Energy spent on cross-browser fixes should land on WebKit / Safari.
 
-### F4 P2 — Both Chromium and Firefox shots show the ScrollReveal motion-wrapper void below the fold
+### F4 P2: Both Chromium and Firefox shots show the ScrollReveal motion-wrapper void below the fold
 
 **Evidence:** Both `screenshots/_/nl-desktop.png` (Chromium) and `screenshots-firefox/_/nl-desktop.png` (Firefox) show a large empty dark region in the middle of the page where below-fold content should render.
 
@@ -85,7 +85,7 @@ Both Chromium and Firefox render the same routes correctly themed, with the dark
 
 **Severity reasoning:** P2 here because 16-03 already owns this finding at P0 in its scope. We log it here only to establish that cross-browser scope cannot fix it; the fix lives in the motion-wrapper code.
 
-### F5 P3 — Tablet, mobile-s, and desktop-w viewports not captured on WebKit or Firefox
+### F5 P3: Tablet, mobile-s, and desktop-w viewports not captured on WebKit or Firefox
 
 **Evidence:** Capture-suite reduced WebKit and Firefox to mobile-l + desktop only to stay within budget. Tablet and the small mobile and the wide desktop viewports are Chromium-only.
 
