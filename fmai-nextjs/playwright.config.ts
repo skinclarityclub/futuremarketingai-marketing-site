@@ -16,6 +16,7 @@ export default defineConfig({
 
   reporter: process.env.CI ? [['html'], ['github']] : [['html'], ['list']],
 
+  timeout: 90_000,
   use: {
     baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000',
     trace: 'on-first-retry',

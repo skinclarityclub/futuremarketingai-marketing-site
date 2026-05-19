@@ -12,6 +12,13 @@ const withAnalyze = withBundleAnalyzer({
 // ---------------------------------------------------------------------------
 // Security Headers
 // ---------------------------------------------------------------------------
+// LIGHTHOUSE_TEST=true strips HSTS + upgrade-insecure-requests so `next start`
+// on localhost works with Lighthouse (headless Chrome stores HSTS from the warmup
+// navigation and then ERR_ABORTs the main navigation trying to use HTTPS).
+const isProduction = process.env.NODE_ENV === 'production'
+const isLighthouseTest = process.env.LIGHTHOUSE_TEST === 'true'
+const includeHttpsUpgrades = isProduction && !isLighthouseTest
+
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com https://unpkg.com;
@@ -25,7 +32,7 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  upgrade-insecure-requests;
+  ${includeHttpsUpgrades ? 'upgrade-insecure-requests;' : ''}
 `
 
 const securityHeaders = [
@@ -34,11 +41,12 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
-  // HSTS — force HTTPS for 2 years, include subdomains, allow preload list
-  {
+  // HSTS — excluded when LIGHTHOUSE_TEST=true: headless Chrome stores HSTS from
+  // the warmup navigation and then ERR_ABORTs the second navigation on localhost.
+  ...(includeHttpsUpgrades ? [{
     key: 'Strict-Transport-Security',
     value: 'max-age=63072000; includeSubDomains; preload',
-  },
+  }] : []),
   // Prevent MIME-type sniffing
   {
     key: 'X-Content-Type-Options',
