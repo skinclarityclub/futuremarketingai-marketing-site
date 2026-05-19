@@ -61,17 +61,16 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "chalk": "^4.1.2",
+    "chrome-launcher": "^1.2.1",
     "eslint": "^9",
     "eslint-config-next": "^16.2.4",
-    "playwright-lighthouse": "^4.0.0",
+    "lighthouse": "^13.3.0",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.2.4",
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "^8.5.10",
-    "chalk": "4.1.2"
+    "postcss": "^8.5.10"
   },
   "engines": {
     "node": ">=22.0.0"
