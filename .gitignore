@@ -24,6 +24,8 @@ npm-debug.log*
 # Temporary files
 *.tmp
 .cache
+tmp/
+.planning/phases/*/tmp/
 
 # Next.js (inside fmai-nextjs/)
 .next/
