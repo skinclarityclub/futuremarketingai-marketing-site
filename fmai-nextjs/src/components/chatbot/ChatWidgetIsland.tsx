@@ -23,7 +23,7 @@ const WELCOME_MESSAGES: Record<string, string> = {
 
 /** Context-aware suggested prompts per page path */
 const SUGGESTED_PROMPTS: Record<string, string[]> = {
-  '/': ['What skills do you have?', 'Show me a demo', 'Calculate my ROI', 'Book a partnership call'],
+  '/': ['What skills do you have?', 'Show me a demo', 'Calculate my ROI', 'Book a call'],
   '/skills/social-media': [
     'Plan next week\'s content',
     'Create social posts for a skincare brand',
@@ -44,7 +44,7 @@ const SUGGESTED_PROMPTS: Record<string, string[]> = {
     'What skills do you have?',
     'Show me a demo',
     'Calculate my ROI',
-    'Book a partnership call',
+    'Book a call',
   ],
 }
 

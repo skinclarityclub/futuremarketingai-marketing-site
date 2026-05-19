@@ -10,7 +10,7 @@
   },
   "home": {
     "meta": {
-      "title": "Dit is Clyde. De AI Marketing Medewerker voor jouw bureau | FutureMarketingAI",
+      "title": "Dit is Clyde. De AI Marketing Medewerker | FutureMarketingAI",
       "description": "Clyde is de AI Marketing Medewerker voor marketingbureaus. Schrijft content, belt leads, onthoudt elk merk. Max 20 partners per jaar."
     },
     "hero": {
@@ -423,7 +423,7 @@
     }
   },
   "calendly": {
-    "modal_title": "Plan een strategiegesprek",
+    "modal_title": "Plan een gesprek",
     "close": "Sluiten"
   },
   "errors": {
@@ -535,8 +535,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen: Founding €997 levenslang. Lineair €499/€399/€299 per werkruimte | FutureMarketingAI",
-      "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna lineair per werkruimte: Growth €499, Professional €399, Enterprise €299. Geen verborgen kosten, geen lock-in."
+      "title": "Prijzen: Founding €997 levenslang + per werkruimte | FutureMarketingAI",
+      "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna per werkruimte: Growth €499, Pro €399, Enterprise €299. Geen lock-in."
     },
     "hero": {
       "title": "Premium partnerships. Founding €997 levenslang.",
@@ -731,7 +731,7 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Hoe het werkt: 5 stappen naar een AI-medewerker in jouw portfolio | FutureMarketingAI",
+      "title": "Hoe het werkt: onboarding in 5 stappen | FutureMarketingAI",
       "description": "Zo bouw je een AI-medewerker in jouw bureau: 5 stappen van gesprek tot live. Van weken, niet maanden. Geen ontwikkelteam nodig."
     },
     "hero": {
@@ -811,11 +811,6 @@
         "calendlyCta": "Open Daley's agenda"
       }
     },
-    "book_demo": {
-      "title": "Plan een strategiegesprek",
-      "description": "Plan een persoonlijke rondleiding en zie jouw AI Marketing Medewerker in actie.",
-      "button": "Plan gesprek"
-    },
     "direct_contact": {
       "title": "Direct contact",
       "email_label": "E-mail",
@@ -826,9 +821,9 @@
       "response_time_text": "Binnen 24 uur"
     },
     "applyCallout": {
-      "title": "Wil je een partnership-gesprek?",
+      "title": "Wil je een gesprek?",
       "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
-      "button": "Ga naar aanmelden"
+      "button": "Plan een gesprek"
     }
   },
   "legal": {
@@ -1163,8 +1158,8 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager. Captions, inplanning en carrousels per merk | Clyde",
-      "description": "Clyde verzorgt social media voor je merken: AI-captions in de merkstem, multi-platform inplanning, carrousels, engagement-tracking. 1 tot 2 credits per post."
+      "title": "Social Media Manager: captions en carrousels per merk | Clyde",
+      "description": "Clyde verzorgt social media per merk: AI-captions in de merkstem, inplanning, carrousels. 1 tot 2 credits per post."
     },
     "hero": {
       "eyebrow": "Vaardigheid 01. Social Media Manager",
@@ -1553,7 +1548,7 @@
     }
   },
   "booking": {
-    "title": "Plan een strategiegesprek",
+    "title": "Plan een gesprek",
     "subtitle": "Ontdek hoe Clyde je marketing kan versnellen.",
     "bullet1": "Gratis audit van je huidige marketing",
     "bullet2": "Live Clyde-demo met jouw merk",
@@ -1680,7 +1675,7 @@
     },
     "hero": {
       "counter": "{taken} van {total} Founding plekken bezet",
-      "title": "Plan een partnership-gesprek",
+      "title": "Plan een gesprek",
       "subtitle": "Geen zelfbediening. Geen generieke aanmelding. We beoordelen elke aanvraag persoonlijk en antwoorden binnen 3 werkdagen. Ook als het geen match is."
     },
     "expectations": {
@@ -1774,8 +1769,8 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 accounts × 4 merken × 1 AI-medewerker | FutureMarketingAI",
-        "description": "Case study: hoe Clyde de volledige social media operatie van SkinClarity Club autonoom runt over 3 Instagram-accounts en 4 merken. Founding partner sinds launch."
+        "title": "SkinClarity Club: 3 accounts, 4 merken, 1 Clyde | FutureMarketingAI",
+        "description": "Hoe Clyde de volledige social-operatie van SkinClarity Club autonoom runt: 3 Instagram-accounts, 4 merken, founding partner."
       },
       "hero": {
         "eyebrow": "Case study, Founding partner",
@@ -1995,7 +1990,7 @@
   },
   "skills-research": {
     "meta": {
-      "title": "Research. Marktonderzoek, trendmonitoring, concurrentie-analyse | Clyde",
+      "title": "Research: marktonderzoek, trends en concurrentie | Clyde",
       "description": "Geautomatiseerd marktonderzoek, trendmonitoring en concurrentie-analyse met bronvermelding. 3 credits per vraag."
     },
     "hero": {
@@ -2292,7 +2287,7 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde. De centrale AI Marketing Medewerker die alles orkestreert | Clyde",
+      "title": "Clyde: de centrale AI Marketing Medewerker | Clyde",
       "description": "Opdrachten in gewone taal, orkestratie van alle vaardigheden, multi-channel (chat, Slack, Telegram), geheugen per merk. 1 tot 5 credits per gesprek."
     },
     "hero": {
@@ -2670,7 +2665,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Plan een partnership-gesprek"
+      "applySubtitle": "Plan een gesprek"
     }
   },
   "chat": {

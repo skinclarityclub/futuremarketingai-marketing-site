@@ -10,7 +10,7 @@
   },
   "home": {
     "meta": {
-      "title": "This is Clyde. The AI Marketing Employee for your agency | FutureMarketingAI",
+      "title": "This is Clyde. The AI Marketing Employee | FutureMarketingAI",
       "description": "Clyde is the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 20 partners per year."
     },
     "hero": {
@@ -423,7 +423,7 @@
     }
   },
   "calendly": {
-    "modal_title": "Book a strategy call",
+    "modal_title": "Book a call",
     "close": "Close"
   },
   "errors": {
@@ -483,7 +483,7 @@
     "cta": {
       "title": "Become a Founding Member",
       "description": "We are onboarding the first 10 Founding agencies at €997 per month. Lock in your lowest price and help shape the product.",
-      "demo_button": "Book a strategy call",
+      "demo_button": "Book a call",
       "contact_button": "Get in touch"
     },
     "icp": {
@@ -535,8 +535,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Pricing: Founding €997 lifetime. Linear €499/€399/€299 per workspace | FutureMarketingAI",
-      "description": "Founding €997 for life for the first 10 agencies. After that linear per workspace: Growth €499, Professional €399, Enterprise €299. No hidden fees, no lock-in."
+      "title": "Pricing: Founding €997 lifetime and per workspace | FutureMarketingAI",
+      "description": "Founding €997 lifetime for the first 10 agencies. Then per workspace: Growth €499, Pro €399, Enterprise €299. No lock-in, no hidden fees."
     },
     "hero": {
       "title": "Premium partnerships. Founding €997 lifetime.",
@@ -731,7 +731,7 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "How it works: 5 steps to an AI employee in your portfolio | FutureMarketingAI",
+      "title": "How it works: onboarding in 5 steps | FutureMarketingAI",
       "description": "How to put an AI employee inside your agency: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
     },
     "hero": {
@@ -811,11 +811,6 @@
         "calendlyCta": "Open Daley's calendar"
       }
     },
-    "book_demo": {
-      "title": "Book a strategy call",
-      "description": "Book a personal walkthrough and see your AI Marketing Employee in action.",
-      "button": "Book call"
-    },
     "direct_contact": {
       "title": "Direct contact",
       "email_label": "Email",
@@ -826,9 +821,9 @@
       "response_time_text": "Within 24 hours"
     },
     "applyCallout": {
-      "title": "Want a partnership call?",
+      "title": "Want a call?",
       "body": "Are you a potential client? Fill in the application. Daley reads every request personally and replies within 3 business days.",
-      "button": "Go to the application"
+      "button": "Book a call"
     }
   },
   "legal": {
@@ -1163,8 +1158,8 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager. Captions, scheduling and carousels per brand | Clyde",
-      "description": "Clyde runs social media for your brands: AI captions in the brand voice, multi-platform scheduling, carousels, engagement tracking. 1 to 2 credits per post."
+      "title": "Social Media Manager: captions and carousels per brand | Clyde",
+      "description": "Clyde runs social media per brand: AI captions in the brand voice, scheduling, carousels. 1 to 2 credits per post."
     },
     "hero": {
       "eyebrow": "Skill 01. Social Media Manager",
@@ -1553,7 +1548,7 @@
     }
   },
   "booking": {
-    "title": "Book a strategy call",
+    "title": "Book a call",
     "subtitle": "Discover how Clyde can accelerate your marketing.",
     "bullet1": "Free audit of your current marketing",
     "bullet2": "Live Clyde demo with your brand",
@@ -1680,7 +1675,7 @@
     },
     "hero": {
       "counter": "{taken} of {total} Founding spots taken",
-      "title": "Book a partnership call",
+      "title": "Book a call",
       "subtitle": "No self-service. No generic application. We review every request personally and reply within 3 business days. Even if it is not a match."
     },
     "expectations": {
@@ -1774,8 +1769,8 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 accounts × 4 brands × 1 AI employee | FutureMarketingAI",
-        "description": "Case study: how Clyde runs the full social media operation of SkinClarity Club autonomously across 3 Instagram accounts and 4 brands. Founding partner since launch."
+        "title": "SkinClarity Club: 3 accounts, 4 brands, 1 Clyde | FutureMarketingAI",
+        "description": "How Clyde autonomously runs the full social operation of SkinClarity Club: 3 Instagram accounts, 4 brands, founding partner."
       },
       "hero": {
         "eyebrow": "Case study, Founding partner",
@@ -1995,7 +1990,7 @@
   },
   "skills-research": {
     "meta": {
-      "title": "Research. Market research, trend monitoring, competitor analysis | Clyde",
+      "title": "Research: market research, trends and competitor analysis | Clyde",
       "description": "Automated market research, trend monitoring and competitor analysis with source citation. 3 credits per question."
     },
     "hero": {
@@ -2292,7 +2287,7 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde. The central AI Marketing Employee that orchestrates everything | Clyde",
+      "title": "Clyde: the central AI Marketing Employee | Clyde",
       "description": "Commands in natural language, orchestration of all skills, multi-channel (chat, Slack, Telegram), memory per brand. 1 to 5 credits per conversation."
     },
     "hero": {
@@ -2670,7 +2665,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Book a partnership call"
+      "applySubtitle": "Book a call"
     }
   },
   "chat": {

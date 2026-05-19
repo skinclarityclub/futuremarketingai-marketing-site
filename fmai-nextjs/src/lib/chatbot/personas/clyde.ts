@@ -70,17 +70,17 @@ export const clydePersona: PersonaConfig = {
 registerPersona(clydePersona)
 
 export const CLYDE_STARTERS: Record<string, string[]> = {
-  en: ['What skills do you have?', 'Show me a demo', 'Calculate my ROI', 'Book a strategy call'],
+  en: ['What skills do you have?', 'Show me a demo', 'Calculate my ROI', 'Book a call'],
   nl: [
     'Welke skills heb je?',
     'Laat me een demo zien',
     'Bereken mijn ROI',
-    'Plan een strategiegesprek',
+    'Plan een gesprek',
   ],
   es: [
     'Que habilidades tienes?',
     'Muestra una demo',
     'Calcula mi ROI',
-    'Reservar una llamada estrategica',
+    'Agenda una llamada',
   ],
 }

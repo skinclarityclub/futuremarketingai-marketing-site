@@ -8,7 +8,6 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ContactForm } from '@/components/contact/ContactForm'
@@ -118,15 +117,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           {/* Contact Info & CTAs */}
           <ScrollReveal delay={0.1}>
             <div className="space-y-6">
-              {/* Book a Demo */}
-              <GlassCard highlighted className="text-center">
-                <SectionHeading id="book-demo" className="text-2xl mb-3">
-                  {t('book_demo.title')}
-                </SectionHeading>
-                <p className="text-text-secondary mb-4">{t('book_demo.description')}</p>
-                <CTAButton href="/apply">{t('book_demo.button')}</CTAButton>
-              </GlassCard>
-
               {/* Direct Contact */}
               <GlassCard>
                 <h3 className="text-xl font-bold font-display text-text-primary mb-4">

@@ -10,8 +10,8 @@
   },
   "home": {
     "meta": {
-      "title": "Este es Clyde. El Empleado AI de Marketing para tu agencia | FutureMarketingAI",
-      "description": "Clyde es el Empleado de Marketing AI para agencias de marketing. Escribe contenido, llama leads, recuerda cada marca. Máx 20 socios por año."
+      "title": "Clyde, el Empleado AI de Marketing | FutureMarketingAI",
+      "description": "Clyde es el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máx 20 socios por año."
     },
     "hero": {
       "badge": "Tu Empleado AI de Marketing con memoria a largo plazo. {taken} de {total} plazas founding ocupadas",
@@ -423,7 +423,7 @@
     }
   },
   "calendly": {
-    "modal_title": "Agenda una llamada estratégica",
+    "modal_title": "Agenda una llamada",
     "close": "Cerrar"
   },
   "errors": {
@@ -483,7 +483,7 @@
     "cta": {
       "title": "Sé Founding Member",
       "description": "Estamos incorporando a las primeras 10 agencias Founding por 997 EUR al mes. Fija tu precio más bajo y ayuda a dar forma al producto.",
-      "demo_button": "Agenda una llamada estratégica",
+      "demo_button": "Agenda una llamada",
       "contact_button": "Ponte en contacto"
     },
     "icp": {
@@ -535,8 +535,8 @@
   },
   "pricing": {
     "meta": {
-      "title": "Precios: Founding €997 de por vida. Lineal €499/€399/€299 por espacio | FutureMarketingAI",
-      "description": "Founding €997 de por vida para las primeras 10 agencias. Después lineal por espacio de trabajo: Growth €499, Professional €399, Enterprise €299. Sin costos ocultos, sin lock-in."
+      "title": "Precios: Founding €997 lifetime y por espacio | FutureMarketingAI",
+      "description": "Founding €997 de por vida (10 plazas). Después por espacio: Growth €499, Professional €399, Enterprise €299. Sin lock-in, sin costes ocultos."
     },
     "hero": {
       "title": "Partnerships premium. Founding €997 de por vida.",
@@ -731,7 +731,7 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Cómo funciona: 5 pasos hacia un Empleado AI en tu portfolio | FutureMarketingAI",
+      "title": "Cómo funciona: onboarding en 5 pasos | FutureMarketingAI",
       "description": "Cómo poner un empleado AI en tu agencia: 5 pasos de la conversación a en vivo. Semanas, no meses. Sin equipo de ingeniería."
     },
     "hero": {
@@ -811,11 +811,6 @@
         "calendlyCta": "Abrir la agenda de Daley"
       }
     },
-    "book_demo": {
-      "title": "Agenda una llamada estratégica",
-      "description": "Agenda un recorrido personalizado y ve a tu Empleado AI de Marketing en acción.",
-      "button": "Agenda llamada"
-    },
     "direct_contact": {
       "title": "Contacto directo",
       "email_label": "Email",
@@ -826,14 +821,14 @@
       "response_time_text": "En 24 horas"
     },
     "applyCallout": {
-      "title": "¿Quieres una llamada de partnership?",
+      "title": "¿Quieres una llamada?",
       "body": "¿Eres un cliente potencial? Rellena el formulario de solicitud. Daley lee cada solicitud personalmente y responde en 3 días laborables.",
-      "button": "Ir al formulario de solicitud"
+      "button": "Agenda una llamada"
     }
   },
   "legal": {
     "meta": {
-      "title": "Legal | Future Marketing AI",
+      "title": "Aviso legal | Future Marketing AI",
       "description": "Información legal de Future Marketing AI."
     },
     "hero": {
@@ -1163,8 +1158,8 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager. Copys, programación y carruseles por marca | Clyde",
-      "description": "Clyde se encarga de las redes sociales de tus marcas: copys AI en la voz de marca, programación multiplataforma, carruseles, seguimiento de engagement. 1 o 2 créditos por post."
+      "title": "Social Media Manager: copys y carruseles por marca | Clyde",
+      "description": "Clyde gestiona redes sociales por marca: copys AI en la voz de marca, programación multiplataforma, carruseles. 1 o 2 créditos por post."
     },
     "hero": {
       "eyebrow": "Habilidad 01. Social Media Manager",
@@ -1553,7 +1548,7 @@
     }
   },
   "booking": {
-    "title": "Agenda una llamada estratégica",
+    "title": "Agenda una llamada",
     "subtitle": "Descubre cómo Clyde puede acelerar tu marketing.",
     "bullet1": "Auditoría gratuita de tu marketing actual",
     "bullet2": "Demo en vivo de Clyde con tu marca",
@@ -1565,7 +1560,7 @@
   "memory": {
     "meta": {
       "title": "Memoria. Clyde recuerda cada marca, para siempre | FutureMarketingAI",
-      "description": "Clyde recuerda cada marca por separado: voz de marca, audiencia, KPIs y lo que funcionó en el pasado. Estrictamente separado por cliente y más afinado cada semana."
+      "description": "Clyde recuerda cada marca por separado: voz de marca, audiencia, KPIs y lo que funcionó antes. Aislamiento por cliente, mejor cada semana."
     },
     "hero": {
       "eyebrow": "Memoria por marca",
@@ -1680,7 +1675,7 @@
     },
     "hero": {
       "counter": "{taken} de {total} plazas Founding ocupadas",
-      "title": "Agenda una llamada de partnership",
+      "title": "Agenda una llamada",
       "subtitle": "Sin autoservicio. Sin registro genérico. Revisamos cada solicitud personalmente y respondemos en 3 días laborables. Incluso si no hay encaje."
     },
     "expectations": {
@@ -1774,8 +1769,8 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 cuentas × 4 marcas × 1 empleado AI | FutureMarketingAI",
-        "description": "Caso de estudio: cómo Clyde gestiona de forma autónoma toda la operación de redes sociales de SkinClarity Club a través de 3 cuentas de Instagram y 4 marcas. Founding partner desde el lanzamiento."
+        "title": "SkinClarity Club: 3 cuentas, 4 marcas, 1 Clyde | FutureMarketingAI",
+        "description": "Cómo Clyde gestiona de forma autónoma toda la operación social de SkinClarity Club: 3 cuentas de Instagram, 4 marcas, founding partner."
       },
       "hero": {
         "eyebrow": "Caso de estudio, Founding partner",
@@ -2094,7 +2089,7 @@
   },
   "skills-blog-factory": {
     "meta": {
-      "title": "Blog Factory. Artículos SEO de la palabra clave a la publicación | Clyde",
+      "title": "Blog Factory: artículos SEO de keyword a publicar | Clyde",
       "description": "Investigación de palabras clave, artículos largos de 1500 a 3000 palabras, optimización SEO y publicación automática. 15 créditos por artículo."
     },
     "hero": {
@@ -2194,7 +2189,7 @@
   "skills-seo-geo": {
     "meta": {
       "title": "SEO / GEO. Auditorías SEO y monitorización de citaciones AI | Clyde",
-      "description": "Auditorías técnicas SEO, seguimiento de posiciones, Core Web Vitals y monitorización de citaciones AI en ChatGPT y Perplexity. 5 créditos auditoría, 3 créditos informe."
+      "description": "Auditorías SEO, posiciones, Core Web Vitals y citaciones AI en ChatGPT y Perplexity. 5 créditos auditoría, 3 créditos informe."
     },
     "hero": {
       "eyebrow": "Habilidad 09. SEO / GEO Analyst",
@@ -2293,7 +2288,7 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde. El Empleado AI de Marketing que orquesta todo | Clyde",
-      "description": "Órdenes en lenguaje natural, orquestación de todas las habilidades, multicanal (chat, Slack, Telegram) y memoria por marca. 1 a 5 créditos por conversación."
+      "description": "Órdenes en lenguaje natural, orquestación de habilidades, multicanal (chat, Slack, Telegram), memoria por marca. 1 a 5 créditos."
     },
     "hero": {
       "eyebrow": "Habilidad 10. Clyde Empleado AI de Marketing",
@@ -2391,7 +2386,7 @@
   },
   "skills-manychat": {
     "meta": {
-      "title": "ManyChat DM. Triggers por palabra clave en Instagram con respuestas AI | Clyde",
+      "title": "ManyChat DM: triggers de palabra clave con respuestas AI | Clyde",
       "description": "Triggers de palabra clave en DM de Instagram, respuestas AI, captura de leads y enrutado al CRM. 2 créditos por cada 10 DMs."
     },
     "hero": {
@@ -2670,7 +2665,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Agenda una llamada de partnership"
+      "applySubtitle": "Agenda una llamada"
     }
   },
   "chat": {
