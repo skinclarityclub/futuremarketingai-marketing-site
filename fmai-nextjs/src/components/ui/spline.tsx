@@ -66,16 +66,54 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
       return
     }
 
-    // Wait 3 seconds for page to be fully rendered and interactive
-    // This ensures hero text animations, navbar, and CSS play first
-    const timer = setTimeout(() => {
+    // Save-data hint: visitors on metered or restricted connections (mobile
+    // data saver, Lite Mode, etc.) get the static preview only. Same payload
+    // savings as reduced-motion — 638KB Spline runtime never downloads.
+    const nav = navigator as Navigator & {
+      connection?: { saveData?: boolean }
+    }
+    if (nav.connection?.saveData) {
+      document.documentElement.classList.remove('spline-loading')
+      return
+    }
+
+    // Idle-defer the upgrade so hero text + LCP image paint first, the
+    // navbar hydrates, and any above-fold interactions finish. Falls back
+    // to a 3-second setTimeout on Safari, which still lacks
+    // requestIdleCallback in stable as of 2026-05-19. The `timeout: 4000`
+    // option guarantees the callback fires within 4s even on a busy main
+    // thread, so the Spline upgrade does not get starved forever.
+    type IdleHandle = number
+    type IdleWindow = Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => IdleHandle
+      cancelIdleCallback?: (handle: IdleHandle) => void
+    }
+    const w = window as IdleWindow
+
+    let idleHandle: IdleHandle | null = null
+    let timerHandle: ReturnType<typeof setTimeout> | null = null
+
+    const upgrade = () => {
       if (!mountedRef.current) {
         mountedRef.current = true
         setPhase('loading')
       }
-    }, 3000)
+    }
 
-    return () => clearTimeout(timer)
+    if (typeof w.requestIdleCallback === 'function') {
+      idleHandle = w.requestIdleCallback(upgrade, { timeout: 4000 })
+    } else {
+      timerHandle = setTimeout(upgrade, 3000)
+    }
+
+    return () => {
+      if (idleHandle !== null && typeof w.cancelIdleCallback === 'function') {
+        w.cancelIdleCallback(idleHandle)
+      }
+      if (timerHandle !== null) {
+        clearTimeout(timerHandle)
+      }
+    }
   }, [reducedMotion])
 
   return (
