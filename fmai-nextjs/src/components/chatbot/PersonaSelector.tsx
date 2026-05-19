@@ -36,7 +36,7 @@ export function PersonaSelector({ active, onChange }: PersonaSelectorProps) {
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors cursor-pointer ${
               isActive
                 ? 'border-accent-system/50 bg-accent-system/10 text-white'
-                : 'border-white/10 bg-white/[0.02] text-white/50 hover:border-white/20'
+                : 'border-white/10 bg-white/[0.02] text-text-faint hover:border-white/20'
             }`}
           >
             <Icon className="w-4 h-4" />

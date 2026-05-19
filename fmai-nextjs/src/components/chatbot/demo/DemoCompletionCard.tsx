@@ -33,7 +33,7 @@ export function DemoCompletionCard({
         </div>
         <div className="flex-1">
           <p className="text-sm font-semibold text-white">Demo Complete</p>
-          <p className="mt-0.5 text-xs text-white/60">
+          <p className="mt-0.5 text-xs text-text-quiet">
             {scenarioTitle} -- {durationMin} min
           </p>
           <p className="mt-2 text-[11px] text-accent-system/70">
@@ -53,14 +53,14 @@ export function DemoCompletionCard({
         <button
           type="button"
           onClick={onTryAnother}
-          className="flex cursor-pointer items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:text-white"
+          className="flex cursor-pointer items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-xs text-text-quiet transition-colors hover:text-white"
         >
           <RotateCcw className="h-3 w-3" /> Try another
         </button>
         <button
           type="button"
           onClick={onEndDemo}
-          className="cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/40 transition-colors hover:text-white/60"
+          className="cursor-pointer rounded-full border border-white/10 px-3 py-1.5 text-xs text-text-faint transition-colors hover:text-text-quiet"
         >
           End demo
         </button>

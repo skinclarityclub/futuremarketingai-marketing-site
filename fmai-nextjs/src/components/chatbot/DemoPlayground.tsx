@@ -44,7 +44,7 @@ export function DemoPlayground() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-3">{t('demo.title')}</h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">{t('demo.subtitle')}</p>
+          <p className="text-text-quiet text-lg max-w-2xl mx-auto">{t('demo.subtitle')}</p>
         </div>
 
         <PersonaSelector active={activeTab} onChange={setActiveTab} />

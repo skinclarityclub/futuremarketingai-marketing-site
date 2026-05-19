@@ -23,6 +23,20 @@
   --color-text-primary: #e8ecf4;
   --color-text-secondary: #9ba3b5;
   --color-text-muted: #8C98AD;
+  /*
+   * Discrete text tokens that replace opacity-modifier approximations
+   * (`text-white/40`, `text-text-secondary/60`, etc.). All four verified
+   * AA on bg-deep (#0a0d14), bg-surface (#111520), bg-elevated (#1a1f2e):
+   *
+   * --color-text-quiet       8.18:1 on bg-deep — body weight, subdued
+   * --color-text-faint       4.91:1 on bg-deep — borderline AA, prefer for >= 14pt
+   * --color-text-on-elevated 8.26:1 on bg-elevated — explicit pairing
+   * --color-text-help        7.00:1 on bg-surface — help/hint, semantically distinct
+   */
+  --color-text-quiet: #a1aabd;
+  --color-text-faint: #7a8294;
+  --color-text-on-elevated: #b4bccc;
+  --color-text-help: #9ba3b5;
   --color-border-primary: rgba(255, 255, 255, 0.06);
   --color-border-accent: rgba(0, 212, 170, 0.3);
   --color-divider: rgba(255, 255, 255, 0.04);
