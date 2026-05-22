@@ -22,7 +22,7 @@ export function FloatingButton({
       role="button"
       onClick={onClick}
       aria-label={isOpen ? 'Close chat' : 'Open chat'}
-      className={`fixed z-[61] right-6 bottom-6 lg:right-8 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2
+      className={`fixed z-[61] right-6 bottom-24 lg:right-8 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2
         flex h-14 w-14 items-center justify-center rounded-full
         bg-accent-system text-bg-deep
         shadow-lg shadow-accent-system/20
