@@ -19,11 +19,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { supabaseAdmin } from '@/lib/supabase-admin'
 import { assessmentResultEmail } from '@/lib/email/assessment-templates'
-import { ASSESSMENT_CATEGORIES, ASSESSMENT_PERSONAS } from '@/lib/assessment/types'
+import { ASSESSMENT_CATEGORIES, ASSESSMENT_ARCHETYPES } from '@/lib/assessment/types'
 import type {
+  Archetype,
   AssessmentCategory,
-  AssessmentPersona,
   CategoryScores,
+  Stage,
 } from '@/lib/assessment/types'
 
 const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder')
@@ -58,7 +59,7 @@ export async function POST(request: NextRequest) {
   const { data: row, error: selectError } = await supabaseAdmin
     .from('newsletter_consents')
     .select(
-      'id, email, status, locale, assessment_persona, assessment_scores, assessment_completed_at',
+      'id, email, status, locale, assessment_persona, assessment_archetype, assessment_stage, assessment_scores, assessment_completed_at',
     )
     .eq('token', token)
     .maybeSingle()
@@ -115,9 +116,10 @@ export async function POST(request: NextRequest) {
     row.assessment_scores !== undefined
 
   if (hasAssessment) {
-    const persona = row.assessment_persona as AssessmentPersona
-    if (!ASSESSMENT_PERSONAS.includes(persona)) {
-      console.error('[newsletter/confirm] invalid persona on row', row.id, persona)
+    const archetype = (row.assessment_archetype ?? 'balanced') as Archetype
+    const stage = (row.assessment_stage ?? 'emerging') as Stage
+    if (!ASSESSMENT_ARCHETYPES.includes(archetype)) {
+      console.error('[newsletter/confirm] invalid archetype on row', row.id, archetype)
       return NextResponse.json({ ok: true })
     }
     const scores = row.assessment_scores as CategoryScores & { total: number }
@@ -127,7 +129,8 @@ export async function POST(request: NextRequest) {
     )
     const mail = assessmentResultEmail({
       locale: row.locale as 'nl' | 'en' | 'es',
-      persona,
+      archetype,
+      stage,
       scores: {
         strategy: scores.strategy,
         data: scores.data,

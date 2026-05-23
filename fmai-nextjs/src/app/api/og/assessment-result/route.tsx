@@ -1,39 +1,40 @@
 import { ImageResponse } from 'next/og'
 import { OG_THEME } from '@/lib/og-theme'
+import { pickArchetype, pickStage, ARCHETYPE_GRADIENT } from '@/lib/assessment/persona-presentation'
 
 export const runtime = 'edge'
 
 /**
  * GET /api/og/assessment-result
  *
- * Dynamic OG image for shared AI Readiness Scan results, baked at the time
- * the recipient unrolls the link (LinkedIn fetches once and caches). The
- * page at /[locale]/assessment/result reads the same query params and
- * references this image in its metadata.
+ * Dynamic OG image for shared AI Readiness Scan results. The page at
+ * /[locale]/assessment/result reads the same query params and references
+ * this image in its metadata.
  *
- * Query params (all integers 0..100 except p):
- *   p   = 'e' | 'b' | 'o'  — persona (explorer/builder/operator)
+ * Query params:
+ *   a   = archetype code: sl | dl | wl | pl | ba  (default: ba)
+ *   st  = stage code: em | sc | le                (default: em)
  *   t   = total (0..100)
- *   s   = strategy score
- *   d   = data score
- *   tl  = tools score
- *   tm  = team score
+ *   s, d, tl, tm = category scores (0..100)
  *
- * The category with the lowest score is highlighted in accent-human (amber)
- * to mirror the inline result reveal. Missing or out-of-range params fall
- * back to zero so we always render a valid card rather than 500.
+ * Legacy: p = e|b|o still accepted via LEGACY_PERSONA_FALLBACK.
+ *
+ * Missing or out-of-range params fall back gracefully so we always render
+ * a valid card rather than 500.
  */
 
-const PERSONA_NAMES: Record<'e' | 'b' | 'o', string> = {
-  e: 'Explorer',
-  b: 'Builder',
-  o: 'Operator',
+const ARCHETYPE_NAMES_OG: Record<string, string> = {
+  'strategy-led': 'Strategy Agency',
+  'data-led': 'Data Agency',
+  'tooling-led': 'Workflow Agency',
+  'team-led': 'People Agency',
+  balanced: 'Generalist Agency',
 }
 
-const PERSONA_GRADIENTS: Record<'e' | 'b' | 'o', string> = {
-  e: 'linear-gradient(135deg, #60a5fa 0%, #00d4aa 100%)',
-  b: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)',
-  o: 'linear-gradient(135deg, #f5a623 0%, #ef4444 100%)',
+const STAGE_NAMES_OG: Record<string, string> = {
+  emerging: 'Emerging',
+  scaling: 'Scaling',
+  leading: 'Leading',
 }
 
 const CATEGORY_LABELS = [
@@ -43,20 +44,30 @@ const CATEGORY_LABELS = [
   { key: 'tm', label: 'Team' },
 ] as const
 
+const LEGACY_MAP: Record<string, { a: string; st: string }> = {
+  e: { a: 'ba', st: 'em' },
+  b: { a: 'ba', st: 'sc' },
+  o: { a: 'ba', st: 'le' },
+}
+
 function clampScore(raw: string | null): number {
   const n = Number.parseInt(raw ?? '', 10)
   if (!Number.isFinite(n)) return 0
   return Math.max(0, Math.min(100, n))
 }
 
-function pickPersona(raw: string | null): 'e' | 'b' | 'o' {
-  if (raw === 'e' || raw === 'b' || raw === 'o') return raw
-  return 'b'
-}
-
 export async function GET(request: Request): Promise<Response> {
   const { searchParams } = new URL(request.url)
-  const persona = pickPersona(searchParams.get('p'))
+
+  // Resolve archetype + stage with legacy p= shim
+  const legacyP = searchParams.get('p')
+  const legacy = legacyP ? LEGACY_MAP[legacyP] : undefined
+  const archetypeCode = legacy ? legacy.a : (searchParams.get('a') ?? 'ba')
+  const stageCode = legacy ? legacy.st : (searchParams.get('st') ?? 'em')
+
+  const archetype = pickArchetype(archetypeCode)
+  const stage = pickStage(stageCode)
+
   const total = clampScore(searchParams.get('t'))
   const scores: Record<'s' | 'd' | 'tl' | 'tm', number> = {
     s: clampScore(searchParams.get('s')),
@@ -68,6 +79,10 @@ export async function GET(request: Request): Promise<Response> {
   const lowestKey = (Object.keys(scores) as Array<'s' | 'd' | 'tl' | 'tm'>).reduce((acc, k) =>
     scores[k] < scores[acc] ? k : acc,
   )
+
+  const archetypeName = ARCHETYPE_NAMES_OG[archetype] ?? 'Generalist Agency'
+  const stageName = STAGE_NAMES_OG[stage] ?? 'Emerging'
+  const gradient = ARCHETYPE_GRADIENT[archetype]
 
   return new ImageResponse(
     (
@@ -101,7 +116,7 @@ export async function GET(request: Request): Promise<Response> {
           <span>future-marketing.ai</span>
         </div>
 
-        {/* Persona + total */}
+        {/* Archetype name + stage */}
         <div
           style={{
             display: 'flex',
@@ -112,29 +127,51 @@ export async function GET(request: Request): Promise<Response> {
           <div
             style={{
               display: 'flex',
-              fontSize: 132,
+              fontSize: 100,
               fontWeight: 800,
               lineHeight: 1,
               letterSpacing: -2,
-              backgroundImage: PERSONA_GRADIENTS[persona],
+              backgroundImage: gradient,
               backgroundClip: 'text',
               color: 'transparent',
             }}
           >
-            {PERSONA_NAMES[persona]}
+            {archetypeName}
           </div>
           <div
             style={{
               display: 'flex',
-              fontSize: 56,
-              fontWeight: 700,
-              color: OG_THEME.textPrimary,
-              marginTop: 12,
-              fontFamily: 'monospace',
+              alignItems: 'center',
+              gap: 16,
+              marginTop: 16,
             }}
           >
-            {total}
-            <span style={{ color: OG_THEME.textSecondary, fontWeight: 500 }}>/100</span>
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 48,
+                fontWeight: 700,
+                color: OG_THEME.textPrimary,
+                fontFamily: 'monospace',
+              }}
+            >
+              {total}
+              <span style={{ color: OG_THEME.textSecondary, fontWeight: 500 }}>/100</span>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                padding: '6px 18px',
+                background: 'rgba(255,255,255,0.06)',
+                borderRadius: 999,
+                fontSize: 22,
+                color: OG_THEME.textSecondary,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+              }}
+            >
+              {stageName}
+            </div>
           </div>
         </div>
 
@@ -143,8 +180,8 @@ export async function GET(request: Request): Promise<Response> {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 18,
-            marginTop: 40,
+            gap: 14,
+            marginTop: 36,
             width: '100%',
           }}
         >
@@ -165,8 +202,8 @@ export async function GET(request: Request): Promise<Response> {
                   style={{
                     display: 'flex',
                     justifyContent: 'space-between',
-                    fontSize: 22,
-                    marginBottom: 6,
+                    fontSize: 20,
+                    marginBottom: 5,
                   }}
                 >
                   <span style={{ color: isLowest ? OG_THEME.accentHuman : OG_THEME.textPrimary }}>
@@ -175,7 +212,7 @@ export async function GET(request: Request): Promise<Response> {
                       <span
                         style={{
                           marginLeft: 12,
-                          fontSize: 16,
+                          fontSize: 15,
                           color: OG_THEME.accentHuman,
                           textTransform: 'uppercase',
                           letterSpacing: 1.5,
@@ -198,7 +235,7 @@ export async function GET(request: Request): Promise<Response> {
                   style={{
                     display: 'flex',
                     width: '100%',
-                    height: 8,
+                    height: 7,
                     background: 'rgba(255,255,255,0.06)',
                     borderRadius: 999,
                     overflow: 'hidden',
@@ -223,11 +260,11 @@ export async function GET(request: Request): Promise<Response> {
           style={{
             display: 'flex',
             marginTop: 'auto',
-            fontSize: 22,
+            fontSize: 20,
             color: OG_THEME.textSecondary,
           }}
         >
-          Doe de gratis 5-min scan op future-marketing.ai/assessment
+          Take the free 5-min scan at future-marketing.ai/assessment
         </div>
       </div>
     ),

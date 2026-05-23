@@ -174,8 +174,9 @@ test.describe('Conversion polish — P1-E progress bar position', () => {
 
 test.describe('Conversion polish — P2-B share-card + result page', () => {
   test('OG image endpoint returns image/png for valid params', async ({ request }) => {
+    // a=wl = tooling-led (Workflow Agency), st=sc = scaling
     const res = await request.get(
-      '/api/og/assessment-result?p=b&t=62&s=75&d=55&tl=70&tm=45',
+      '/api/og/assessment-result?a=wl&st=sc&t=62&s=75&d=55&tl=70&tm=45',
     )
     expect(res.status()).toBe(200)
     expect(res.headers()['content-type']).toContain('image/png')
@@ -189,12 +190,13 @@ test.describe('Conversion polish — P2-B share-card + result page', () => {
     expect(res.headers()['content-type']).toContain('image/png')
   })
 
-  test('NL /assessment/result renders persona, total and category bars', async ({ page }) => {
+  test('NL /assessment/result renders archetype, total and category bars', async ({ page }) => {
+    // a=wl = tooling-led (Workflow-bureau), st=sc = scaling, lowest: team (tm=45)
     await page.goto(
-      '/nl/assessment/result?p=b&t=62&s=75&d=55&tl=70&tm=45',
+      '/nl/assessment/result?a=wl&st=sc&t=62&s=75&d=55&tl=70&tm=45',
       { waitUntil: 'domcontentloaded' },
     )
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Builder')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Workflow-bureau')
     await expect(page.getByText('62', { exact: false })).toBeVisible()
     await expect(page.getByText('Strategie', { exact: false })).toBeVisible()
     await expect(page.getByText('Team', { exact: false })).toBeVisible()
@@ -203,19 +205,29 @@ test.describe('Conversion polish — P2-B share-card + result page', () => {
     await expect(page.getByRole('link', { name: /Start de scan/ })).toBeVisible()
   })
 
+  test('NL /assessment/result backwards-compat with legacy p= param', async ({ page }) => {
+    // Old p=b URLs map to balanced archetype + scaling stage
+    await page.goto(
+      '/nl/assessment/result?p=b&t=62&s=75&d=55&tl=70&tm=45',
+      { waitUntil: 'domcontentloaded' },
+    )
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Allround-bureau')
+    await expect(page.getByText('62', { exact: false })).toBeVisible()
+  })
+
   test('result page metadata references the dynamic OG image', async ({ page }) => {
     await page.goto(
-      '/en/assessment/result?p=e&t=33&s=20&d=40&tl=50&tm=22',
+      '/en/assessment/result?a=sl&st=em&t=33&s=20&d=40&tl=50&tm=22',
       { waitUntil: 'domcontentloaded' },
     )
     const ogImage = await page.locator('meta[property="og:image"]').getAttribute('content')
     expect(ogImage).toContain('/api/og/assessment-result')
-    expect(ogImage).toContain('p=e')
+    expect(ogImage).toContain('a=')
     expect(ogImage).toContain('t=33')
   })
 
   test('result page is robots noindex (shareable but not crawled)', async ({ page }) => {
-    await page.goto('/en/assessment/result?p=b&t=50', { waitUntil: 'domcontentloaded' })
+    await page.goto('/en/assessment/result?a=ba&st=sc&t=50', { waitUntil: 'domcontentloaded' })
     const robots = await page.locator('meta[name="robots"]').getAttribute('content')
     expect(robots).toContain('noindex')
   })

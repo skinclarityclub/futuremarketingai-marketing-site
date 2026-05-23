@@ -24,23 +24,18 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import type {
+  Archetype,
   AssessmentCategory,
-  AssessmentPersona,
   AssessmentResult,
 } from '@/lib/assessment/types'
 import type { SkillData } from '@/lib/skills-data'
+import { ARCHETYPE_GRADIENT, ARCHETYPE_CODE, STAGE_CODE } from '@/lib/assessment/persona-presentation'
 
 interface ResultRevealProps {
   result: AssessmentResult
   recommendedSkills: SkillData[]
   /** Email-capture form rendered at the end of the reveal. */
   emailGate: ReactNode
-}
-
-const PERSONA_GRADIENT: Record<AssessmentPersona, string> = {
-  explorer: 'linear-gradient(135deg, #60a5fa 0%, #00d4aa 100%)',
-  builder: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)',
-  operator: 'linear-gradient(135deg, #f5a623 0%, #ef4444 100%)',
 }
 
 const SKILL_ICONS: Record<string, LucideIcon> = {
@@ -65,22 +60,17 @@ const CATEGORY_ORDER: readonly AssessmentCategory[] = [
   'team',
 ] as const
 
-const PERSONA_CODE: Record<AssessmentPersona, 'e' | 'b' | 'o'> = {
-  explorer: 'e',
-  builder: 'b',
-  operator: 'o',
-}
-
 export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRevealProps) {
   const t = useTranslations('assessment.result')
   const tShare = useTranslations('assessment.result.share')
   const tCats = useTranslations('assessment.categories')
   const locale = useLocale()
-  const { persona, perCategory, lowestCategory, total } = result
+  const { archetype, stage, perCategory, lowestCategory, total } = result
   const [copied, setCopied] = useState(false)
 
   const shareParams = new URLSearchParams({
-    p: PERSONA_CODE[persona],
+    a: ARCHETYPE_CODE[archetype],
+    st: STAGE_CODE[stage],
     t: String(total),
     s: String(perCategory.strategy),
     d: String(perCategory.data),
@@ -106,13 +96,13 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
 
   function handleLinkedInClick() {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'assessment_share_click', { network: 'linkedin', persona })
+      window.gtag('event', 'assessment_share_click', { network: 'linkedin', archetype, stage })
     }
   }
 
   return (
     <div className="mx-auto max-w-3xl">
-      {/* Persona reveal */}
+      {/* Archetype reveal */}
       <div className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,23 +128,45 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
           initial={{ opacity: 0, scale: 0.92, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.3, type: 'spring', stiffness: 160, damping: 22 }}
-          className="mb-6 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl md:text-8xl"
+          className="mb-3 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl md:text-8xl"
         >
           <span
             className="bg-clip-text text-transparent"
-            style={{ backgroundImage: PERSONA_GRADIENT[persona] }}
+            style={{ backgroundImage: ARCHETYPE_GRADIENT[archetype] }}
           >
-            {t(`${persona}.name`)}
+            {t(`archetypes.${archetype}.name`)}
           </span>
         </motion.h1>
+
+        {/* Stage badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.4 }}
+          className="mb-5 flex items-center justify-center gap-2"
+        >
+          <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-text-secondary">
+            {t('stagePrefix')} {t(`stages.${stage}.label`)}
+          </span>
+        </motion.div>
+
+        {/* Validation hook — italic, resonates before the summary */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.4 }}
+          className="mx-auto mb-4 max-w-xl text-base italic leading-relaxed text-text-secondary"
+        >
+          {t(`archetypes.${archetype}.validationHook`)}
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55, duration: 0.5 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
           className="mx-auto mb-12 max-w-xl text-lg leading-relaxed text-text-primary"
         >
-          {t(`${persona}.summary`)}
+          {t(`archetypes.${archetype}.summary`)}
         </motion.p>
       </div>
 
@@ -229,7 +241,7 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
           {t('week1Heading')}
         </h2>
         <p className="text-sm leading-relaxed text-text-secondary md:text-base">
-          {t(`week1.${persona}`)}
+          {t(`archetypes.${archetype}.week1`)}
         </p>
       </motion.section>
 

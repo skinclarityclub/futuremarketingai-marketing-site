@@ -5,22 +5,27 @@ import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
 import { Link } from '@/i18n/navigation'
 import { ArrowRight } from 'lucide-react'
+import {
+  pickArchetype,
+  pickStage,
+  ARCHETYPE_GRADIENT,
+  LEGACY_PERSONA_FALLBACK,
+} from '@/lib/assessment/persona-presentation'
 
 /**
  * Public, shareable result page for the AI Readiness Scan.
  *
- * Driven entirely by URL query params so it works without a database row —
- * the user who took the scan shares a link to /[locale]/assessment/result
- * with their result baked in. The dynamic OG image at /api/og/assessment-result
- * receives the same params and renders the social-share card.
- *
- * Params (all short to keep shared URLs compact):
- *   p   = 'e' | 'b' | 'o'  (explorer/builder/operator)
+ * Params (short to keep shared URLs compact):
+ *   a   = archetype code: sl | dl | wl | pl | ba
+ *   st  = stage code: em | sc | le
  *   t   = total (0..100)
- *   s   = strategy   (0..100)
- *   d   = data       (0..100)
- *   tl  = tools      (0..100)
- *   tm  = team       (0..100)
+ *   s   = strategy (0..100)
+ *   d   = data (0..100)
+ *   tl  = tools (0..100)
+ *   tm  = team (0..100)
+ *
+ * Legacy backwards-compat: if only `p` (e|b|o) is present, maps to balanced
+ * archetype + matching stage so old shared links still render.
  */
 
 export function generateStaticParams() {
@@ -28,18 +33,6 @@ export function generateStaticParams() {
 }
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>
-
-const PERSONA_KEYS: Record<'e' | 'b' | 'o', 'explorer' | 'builder' | 'operator'> = {
-  e: 'explorer',
-  b: 'builder',
-  o: 'operator',
-}
-
-const PERSONA_GRADIENTS: Record<'e' | 'b' | 'o', string> = {
-  e: 'linear-gradient(135deg, #60a5fa 0%, #00d4aa 100%)',
-  b: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)',
-  o: 'linear-gradient(135deg, #f5a623 0%, #ef4444 100%)',
-}
 
 const CATEGORY_KEYS = ['s', 'd', 'tl', 'tm'] as const
 type CategoryKey = (typeof CATEGORY_KEYS)[number]
@@ -51,17 +44,15 @@ const CATEGORY_I18N: Record<CategoryKey, string> = {
   tm: 'team',
 }
 
-function pickPersona(raw: string | string[] | undefined): 'e' | 'b' | 'o' {
-  const v = Array.isArray(raw) ? raw[0] : raw
-  if (v === 'e' || v === 'b' || v === 'o') return v
-  return 'b'
-}
-
 function clampScore(raw: string | string[] | undefined): number {
   const v = Array.isArray(raw) ? raw[0] : raw
   const n = Number.parseInt(v ?? '', 10)
   if (!Number.isFinite(n)) return 0
   return Math.max(0, Math.min(100, n))
+}
+
+function str(raw: string | string[] | undefined): string | undefined {
+  return Array.isArray(raw) ? raw[0] : raw
 }
 
 function buildOgUrl(params: URLSearchParams): string {
@@ -78,22 +69,29 @@ export async function generateMetadata({
   const { locale } = await params
   const sp = await searchParams
   const t = await getTranslations({ locale, namespace: 'assessment.resultShared' })
-  const tPersona = await getTranslations({ locale, namespace: 'assessment.result' })
+  const tResult = await getTranslations({ locale, namespace: 'assessment.result' })
 
-  const persona = pickPersona(sp.p)
-  const personaName = tPersona(`${PERSONA_KEYS[persona]}.name`)
+  // Resolve archetype + stage (legacy p= shim)
+  const legacyP = str(sp.p)
+  const legacyFallback = legacyP ? LEGACY_PERSONA_FALLBACK[legacyP] : undefined
+  const archetype = legacyFallback ? legacyFallback.archetype : pickArchetype(str(sp.a))
+  const stage = legacyFallback ? legacyFallback.stage : pickStage(str(sp.st))
+
+  const archetypeName = tResult(`archetypes.${archetype}.name`)
+  const stageName = tResult(`stages.${stage}.label`)
   const total = clampScore(sp.t)
 
   const og = new URLSearchParams()
-  og.set('p', persona)
+  og.set('a', archetype)
+  og.set('st', stage)
   og.set('t', String(total))
   og.set('s', String(clampScore(sp.s)))
   og.set('d', String(clampScore(sp.d)))
   og.set('tl', String(clampScore(sp.tl)))
   og.set('tm', String(clampScore(sp.tm)))
 
-  const title = t('metaTitle', { persona: personaName, total })
-  const description = t('metaDescription', { persona: personaName, total })
+  const title = t('metaTitle', { persona: `${archetypeName} (${stageName})`, total })
+  const description = t('metaDescription', { persona: archetypeName, total })
   const url = `${SITE_URL}/${locale}/assessment/result?${og.toString()}`
 
   return {
@@ -129,7 +127,12 @@ export default async function AssessmentResultPage({
   setRequestLocale(locale)
   const sp = await searchParams
 
-  const persona = pickPersona(sp.p)
+  // Resolve archetype + stage (legacy p= shim)
+  const legacyP = str(sp.p)
+  const legacyFallback = legacyP ? LEGACY_PERSONA_FALLBACK[legacyP] : undefined
+  const archetype = legacyFallback ? legacyFallback.archetype : pickArchetype(str(sp.a))
+  const stage = legacyFallback ? legacyFallback.stage : pickStage(str(sp.st))
+
   const total = clampScore(sp.t)
   const scores: Record<CategoryKey, number> = {
     s: clampScore(sp.s),
@@ -140,7 +143,7 @@ export default async function AssessmentResultPage({
   const lowest = CATEGORY_KEYS.reduce((acc, k) => (scores[k] < scores[acc] ? k : acc))
 
   const t = await getTranslations({ locale, namespace: 'assessment.resultShared' })
-  const tPersona = await getTranslations({ locale, namespace: 'assessment.result' })
+  const tResult = await getTranslations({ locale, namespace: 'assessment.result' })
   const tCats = await getTranslations({ locale, namespace: 'assessment.categories' })
 
   return (
@@ -150,15 +153,21 @@ export default async function AssessmentResultPage({
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-accent-system">
             {t('eyebrow')}
           </p>
-          <p className="mb-2 text-lg text-text-secondary">{tPersona('preTitle')}</p>
-          <h1 className="mb-6 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl">
+          <p className="mb-2 text-lg text-text-secondary">{tResult('preTitle')}</p>
+          <h1 className="mb-4 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl">
             <span
               className="bg-clip-text text-transparent"
-              style={{ backgroundImage: PERSONA_GRADIENTS[persona] }}
+              style={{ backgroundImage: ARCHETYPE_GRADIENT[archetype] }}
             >
-              {tPersona(`${PERSONA_KEYS[persona]}.name`)}
+              {tResult(`archetypes.${archetype}.name`)}
             </span>
           </h1>
+          {/* Stage badge */}
+          <div className="mb-4 flex items-center justify-center">
+            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-text-secondary">
+              {tResult('stagePrefix')} {tResult(`stages.${stage}.label`)}
+            </span>
+          </div>
           <p className="mb-10 font-mono text-2xl text-text-primary">
             {total}
             <span className="text-text-secondary">/100</span>

@@ -24,7 +24,7 @@ import crypto from 'node:crypto'
 import { supabaseAdmin } from '@/lib/supabase-admin'
 import { scoreAssessment } from '@/lib/assessment/scoring'
 import { assessmentConfirmEmail } from '@/lib/email/assessment-templates'
-import { ASSESSMENT_PERSONAS, type AssessmentAnswers } from '@/lib/assessment/types'
+import { ASSESSMENT_ARCHETYPES, type AssessmentAnswers } from '@/lib/assessment/types'
 
 const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder')
 
@@ -82,11 +82,11 @@ export async function POST(request: NextRequest) {
   // the range, so cast back to AnswerValue for the scoring function.
   const answers = parsed.data.answers as AssessmentAnswers
 
-  // Re-score on the server: the persisted persona must reflect the actual
+  // Re-score on the server: the persisted archetype must reflect the actual
   // answers, not whatever the client posted.
   const result = scoreAssessment(answers)
-  if (!ASSESSMENT_PERSONAS.includes(result.persona)) {
-    return NextResponse.json({ error: 'invalid_persona' }, { status: 500 })
+  if (!ASSESSMENT_ARCHETYPES.includes(result.archetype)) {
+    return NextResponse.json({ error: 'invalid_archetype' }, { status: 500 })
   }
 
   const ip =
@@ -111,6 +111,8 @@ export async function POST(request: NextRequest) {
     assessment_answers: answers,
     assessment_scores: { ...result.perCategory, total: result.total },
     assessment_persona: result.persona,
+    assessment_archetype: result.archetype,
+    assessment_stage: result.stage,
     assessment_started_at: startedAt ?? null,
     assessment_completed_at: completedAt,
   })
@@ -125,7 +127,7 @@ export async function POST(request: NextRequest) {
   const fromAddr = process.env.APPLY_EMAIL_FROM ?? 'apply@future-marketing.ai'
 
   try {
-    const mail = assessmentConfirmEmail({ locale, persona: result.persona, confirmUrl })
+    const mail = assessmentConfirmEmail({ locale, archetype: result.archetype, confirmUrl })
     const send = await resend.emails.send({
       from: `FutureMarketingAI <${fromAddr}>`,
       to: [email],
@@ -141,5 +143,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'email_failed' }, { status: 502 })
   }
 
-  return NextResponse.json({ ok: true, persona: result.persona })
+  return NextResponse.json({ ok: true, archetype: result.archetype, stage: result.stage, persona: result.persona })
 }
