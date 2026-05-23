@@ -200,8 +200,8 @@ test.describe('Conversion polish — P2-B share-card + result page', () => {
     await expect(page.getByText('62', { exact: false })).toBeVisible()
     await expect(page.getByText('Strategie', { exact: false })).toBeVisible()
     await expect(page.getByText('Team', { exact: false })).toBeVisible()
-    // Lowest category (team = 45) gets the focus pill
-    await expect(page.getByText('Focus', { exact: true })).toBeVisible()
+    // Lowest category (team = 45) gets the focus pill (NL: focusLabel = 'Groeikans')
+    await expect(page.getByText('Groeikans', { exact: true })).toBeVisible()
     await expect(page.getByRole('link', { name: /Start de scan/ })).toBeVisible()
   })
 
