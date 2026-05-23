@@ -1,8 +1,8 @@
 /**
- * AI Readiness Assessment — pure scoring + persona derivation.
+ * AI Readiness Assessment — pure scoring, archetype classification, stage derivation.
  *
  * No side effects, no IO. Given the answer map, produces per-category
- * percentages, a total, the derived persona, and the lowest-scoring
+ * percentages, a total, the derived archetype + stage, and the lowest-scoring
  * category (which drives skill recommendations).
  *
  * Math:
@@ -15,26 +15,36 @@
  *     validates completeness).
  *   - Total = mean of the four category scores, rounded.
  *
- * Persona thresholds (from domain research, calibrate after ~50 completes):
- *   total <  40 → explorer
- *   40 ≤ total < 70 → builder
- *   total ≥ 70 → operator
+ * Stage thresholds (calibrate after ~50 completes):
+ *   total <  40 → emerging
+ *   40 ≤ total < 70 → scaling
+ *   total ≥ 70 → leading
+ *
+ * Archetype classification:
+ *   Spread (max category − min category) ≤ 12 → balanced
+ *   Otherwise → dominant category (strategy > data > tools > team tie-break)
  */
 
 import { ASSESSMENT_QUESTIONS, CATEGORY_MAX_POINTS } from './questions'
 import {
   ASSESSMENT_CATEGORIES,
   type AnswerValue,
+  type Archetype,
   type AssessmentAnswers,
   type AssessmentCategory,
   type AssessmentPersona,
-  type AssessmentResult,
   type AssessmentQuestion,
+  type AssessmentResult,
   type CategoryScores,
+  type Stage,
 } from './types'
 
-const EXPLORER_MAX = 39
-const BUILDER_MAX = 69
+const STAGE_EMERGING_MAX = 39
+const STAGE_SCALING_MAX = 69
+
+// Minimum spread between highest and lowest category for an archetype to be
+// considered dominant. Below this the bureau is Balanced. Calibrate after 50+.
+const ARCHETYPE_SPREAD_THRESHOLD = 12
 
 function pointsForQuestion(
   question: AssessmentQuestion,
@@ -67,10 +77,43 @@ function categoryScore(
   return Math.round((sum / max) * 100)
 }
 
-function derivePersona(total: number): AssessmentPersona {
-  if (total <= EXPLORER_MAX) return 'explorer'
-  if (total <= BUILDER_MAX) return 'builder'
+function deriveStage(total: number): Stage {
+  if (total <= STAGE_EMERGING_MAX) return 'emerging'
+  if (total <= STAGE_SCALING_MAX) return 'scaling'
+  return 'leading'
+}
+
+/** @deprecated Maps stage to old persona key for DB/analytics backwards-compat. */
+function derivePersona(stage: Stage): AssessmentPersona {
+  if (stage === 'emerging') return 'explorer'
+  if (stage === 'scaling') return 'builder'
   return 'operator'
+}
+
+/**
+ * Classifies the bureau's archetype from their category score profile.
+ * Tie-break order: strategy > data > tools > team (matches narrative arc).
+ */
+function classify(scores: CategoryScores): Archetype {
+  const values = ASSESSMENT_CATEGORIES.map((c) => scores[c])
+  const max = Math.max(...values)
+  const min = Math.min(...values)
+
+  if (max - min <= ARCHETYPE_SPREAD_THRESHOLD) return 'balanced'
+
+  const map: Record<AssessmentCategory, Archetype> = {
+    strategy: 'strategy-led',
+    data: 'data-led',
+    tools: 'tooling-led',
+    team: 'team-led',
+  }
+
+  // ASSESSMENT_CATEGORIES is in canonical tie-break order (strategy first)
+  for (const cat of ASSESSMENT_CATEGORIES) {
+    if (scores[cat] === max) return map[cat]
+  }
+
+  return 'balanced'
 }
 
 /**
@@ -95,10 +138,13 @@ export function scoreAssessment(answers: AssessmentAnswers): AssessmentResult {
   const total = Math.round(
     (perCategory.strategy + perCategory.data + perCategory.tools + perCategory.team) / 4,
   )
+  const stage = deriveStage(total)
   return {
     perCategory,
     total,
-    persona: derivePersona(total),
+    archetype: classify(perCategory),
+    stage,
     lowestCategory: findLowestCategory(perCategory),
+    persona: derivePersona(stage),
   }
 }

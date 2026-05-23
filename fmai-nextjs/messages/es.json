@@ -2754,23 +2754,23 @@
   },
   "assessment": {
     "meta": {
-      "title": "AI Readiness Scan para agencias | FutureMarketingAI",
-      "description": "16 preguntas, 5 minutos. Descubre si tu agencia es Explorer, Builder u Operator y qué 3 habilidades de Clyde marcan la diferencia."
+      "title": "AI Agency Scan | FutureMarketingAI",
+      "description": "16 preguntas, 5 minutos. Descubre qué tipo de agencia de IA eres y qué 3 habilidades de Clyde marcan más la diferencia para tu perfil."
     },
     "breadcrumb": "Scan",
     "intro": {
-      "eyebrow": "AI Readiness Scan",
-      "titleLead": "¿Qué tan madura en AI es",
-      "titleAccent": "tu agencia?",
-      "subtitle": "Dieciséis preguntas, cinco minutos. Termina con tu roadmap personal como Explorer, Builder u Operator.",
+      "eyebrow": "AI Agency Scan",
+      "titleLead": "¿Qué tipo de agencia de IA",
+      "titleAccent": "eres tú?",
+      "subtitle": "Dieciséis preguntas, cinco minutos. Termina con tu arquetipo de agencia, puntuación por categoría y tres habilidades de Clyde recomendadas.",
       "bullets": {
-        "persona": "Tu persona en tres niveles",
+        "persona": "Tu arquetipo de agencia entre cinco perfiles",
         "scores": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
-        "skills": "Tres habilidades Clyde recomendadas"
+        "skills": "Tres habilidades de Clyde recomendadas para tu perfil"
       },
       "trust": {
         "privacy": "Privacidad primero, alojado en la UE, sin cookies de seguimiento",
-        "validated": "Persona validada con 1 cliente de pago",
+        "validated": "Resultados validados con agencias en la práctica",
         "retention": "Respuestas guardadas 12 meses, luego eliminadas"
       },
       "start": "Iniciar el scan",
@@ -2785,7 +2785,7 @@
     "progress": "Pregunta {current} de {total}",
     "back": "Atrás",
     "next": "Siguiente",
-    "finish": "Mostrar mi persona",
+    "finish": "Mostrar mi perfil",
     "questions": {
       "q1": {
         "text": "¿Tienes una estrategia de AI escrita para tu agencia?",
@@ -2919,47 +2919,97 @@
     },
     "result": {
       "eyebrow": "Tu resultado",
-      "preTitle": "Eres un",
-      "explorer": {
-        "name": "Explorer",
-        "summary": "Experimentas con AI, pero falta un sistema. El mayor salto está en un cerebro central que conoce cada marca y orquesta cada habilidad."
+      "preTitle": "Tu agencia es una",
+      "stagePrefix": "nivel:",
+      "archetypes": {
+        "strategy-led": {
+          "name": "Agencia de Estrategia",
+          "identity": "el pensador que quiere ejecutar más rápido",
+          "validationHook": "Sabes exactamente lo que los clientes necesitan — pero la ejecución siempre va por detrás",
+          "summary": "Tu agencia tiene la visión más nítida de la sala. Lo que falta es un motor de producción que convierta tus ideas en campañas en vivo sin pasar por manos manualmente cada semana.",
+          "week1": "Elige un cliente y haz que su brief sea automáticamente reutilizable en un flujo de IA. El conocimiento estratégico solo necesita introducirse una vez."
+        },
+        "data-led": {
+          "name": "Agencia de Datos",
+          "identity": "el medidor que quiere convertir insights en acción",
+          "validationHook": "Tus dashboards son impresionantes — las campañas que les siguen no siempre lo son",
+          "summary": "Tu agencia habla en cifras, atribución y retorno. El siguiente paso es conectar directamente esos datos a tu producción de contenido para que los insights dirijan automáticamente lo que se crea.",
+          "week1": "Elige una fuente de datos y conéctala directamente al briefing del próximo mes. Sin más copiar y pegar."
+        },
+        "tooling-led": {
+          "name": "Agencia de Workflows",
+          "identity": "el constructor con demasiadas herramientas sueltas y muy poco cerebro central",
+          "validationHook": "Alguien en tu equipo construyó una automatización el mes pasado de la que el resto aún está recuperándose",
+          "summary": "Tu agencia funciona con flujos de trabajo de IA y automatizaciones — más que la mayoría de los competidores. El salto que puedes dar ahora es de flujos desconectados a un sistema central que conoce todas las marcas y orquesta todas las habilidades de Clyde.",
+          "week1": "Cancela una nueva suscripción de IA. Conecta una herramienta existente más profundamente al expediente de marca de un cliente. La profundidad supera a la amplitud."
+        },
+        "team-led": {
+          "name": "Agencia de Personas",
+          "identity": "el hub de talento al que los clientes vuelven por las personas",
+          "validationHook": "Los clientes piden a tus empleados por nombre — y escalar solo funciona contratando más de ellos",
+          "summary": "Tu agencia tiene el oficio humano más fuerte de los cinco perfiles. La oportunidad está en usar la IA como multiplicador de fuerza para tus seniors: menos trabajo operativo, más dirección creativa.",
+          "week1": "Identifica una tarea que le cueste a tu mejor empleado al menos dos horas cada semana. Ese es tu primer objetivo de automatización."
+        },
+        "balanced": {
+          "name": "Agencia Generalista",
+          "identity": "la agencia sin punto débil — pero también sin un perfil diferenciador claro",
+          "validationHook": "Puntúas razonablemente en todo — pero cuando los clientes preguntan por qué elegirte, la respuesta tarda un momento",
+          "summary": "Tu agencia tiene conocimiento de IA distribuido entre estrategia, datos, herramientas y equipo — una base rara y sólida. El siguiente paso es elegir un perfil claro: las agencias con una especialización reconocible atraen mejores clientes.",
+          "week1": "Pregunta a tus tres mejores clientes qué problema resuelves mejor que nadie. Esa respuesta te dice qué perfil ya tienes."
+        }
       },
-      "builder": {
-        "name": "Builder",
-        "summary": "Workflows funcionando, listos para escalar. El mayor salto está en más marcas en la misma infraestructura con medición más profunda."
+      "stages": {
+        "emerging": {
+          "label": "Emergente",
+          "description": "Estás poniendo los cimientos — cada paso cuenta el doble"
+        },
+        "scaling": {
+          "label": "Creciendo",
+          "description": "Estás construyendo impulso — la consistencia es ahora el cuello de botella"
+        },
+        "leading": {
+          "label": "Referente",
+          "description": "Operas a escala — el siguiente nivel es producción creativa en volumen"
+        }
       },
-      "operator": {
-        "name": "Operator",
-        "summary": "AI corre autónomamente en tu operación. El siguiente salto es producción creativa a escala y formatos cutting-edge que tus competidores no tienen."
+      "_deprecated_personas": {
+        "_note": "Kept for DB/analytics backwards-compat. No longer shown in UI.",
+        "explorer": {
+          "name": "Explorer",
+          "summary": "Estás experimentando con IA pero todavía te falta un sistema. El mayor salto está en un cerebro central que conozca todas las marcas y orqueste todas las habilidades."
+        },
+        "builder": {
+          "name": "Builder",
+          "summary": "Flujos de trabajo funcionales, listos para escalar. El mayor salto está en más marcas en la misma infraestructura con mayor medición."
+        },
+        "operator": {
+          "name": "Operator",
+          "summary": "La IA funciona de forma autónoma en tu operación. El siguiente salto está en la producción creativa a escala y formatos de vanguardia que los competidores no tienen."
+        }
       },
       "scoresHeading": "Tus puntuaciones por categoría",
-      "lowestHint": "Tu mayor salto está aquí",
+      "lowestHint": "Mayor oportunidad de crecimiento",
       "week1Heading": "Primer paso esta semana",
-      "week1": {
-        "explorer": "Deja de usar herramientas AI públicas dispersas por empleado y elige un punto central. Empieza con un workflow (por ejemplo, posts sociales) y sistematízalo.",
-        "builder": "Revisa tus pipelines: ¿dónde viven los datos, dónde se pierden los handoffs? Identifica qué compartición cross-skill puedes activar hoy.",
-        "operator": "Revisa la dependencia de vendors. Lista las 3 herramientas principales, comprueba el hosting EU y documenta las cláusulas de salida por proveedor."
-      },
-      "skillsHeading": "Tres habilidades que marcan la diferencia",
-      "skillsHint": "Explicación completa y roadmap de 4 semanas en tu inbox",
+      "skillsHeading": "Tres habilidades de Clyde que marcan la diferencia",
+      "skillsHint": "Explicación completa y hoja de ruta de 4 semanas en tu bandeja de entrada",
       "share": {
-        "heading": "Comparte tu resultado",
-        "subline": "Otros verán tu persona y puntuaciones en una página propia. El enlace no contiene tu correo ni respuestas.",
+        "heading": "Comparte tu perfil",
+        "subline": "Otros verán tu arquetipo de agencia y puntuaciones en su propia página. El enlace no contiene email ni respuestas.",
         "linkedin": "Compartir en LinkedIn",
         "copy": "Copiar enlace",
         "copied": "Copiado"
       },
-      "footerHint": "Solicita el informe completo para puntuaciones detalladas, semanas 2-4 y la explicación por habilidad."
+      "footerHint": "Solicita el informe completo para tu hoja de ruta de 4 semanas y desglose por habilidad."
     },
     "resultShared": {
-      "eyebrow": "AI Readiness Scan",
+      "eyebrow": "AI Agency Scan",
       "scoresHeading": "Puntuación por categoría",
-      "focusLabel": "Foco",
-      "ctaHeadline": "Haz tú mismo el scan gratuito de 5 minutos y descubre tu persona.",
+      "focusLabel": "Oportunidad de crecimiento",
+      "ctaHeadline": "Haz tú mismo el scan gratuito de 5 minutos y descubre qué tipo de agencia de IA eres.",
       "ctaButton": "Iniciar el scan",
       "ctaHint": "5 minutos, gratis, sin cuenta",
-      "metaTitle": "{persona}: {total}/100 en el AI Readiness Scan",
-      "metaDescription": "Persona y puntuaciones por categoría de alguien que hizo el scan de 5 minutos. Hazlo tú en future-marketing.ai."
+      "metaTitle": "{archetype} ({stage}): {total}/100 en el AI Agency Scan",
+      "metaDescription": "Arquetipo de agencia y puntuaciones por categoría de alguien que hizo el scan de 5 minutos. Haz el scan tú mismo en future-marketing.ai."
     },
     "emailGate": {
       "eyebrow": "Informe gratis en tu bandeja",
@@ -2967,7 +3017,7 @@
       "subtitle": "Puntuación por categoría, tres habilidades Clyde recomendadas y tu roadmap de 4 semanas. Directo a tu bandeja.",
       "bullet1": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
       "bullet2": "Tres habilidades Clyde recomendadas para tu categoría más débil",
-      "bullet3": "Roadmap semana a semana para tu persona",
+      "bullet3": "Hoja de ruta semana a semana para tu perfil de agencia",
       "emailLabel": "Email de trabajo",
       "emailPlaceholder": "daley@tuagencia.com",
       "consent": "Sí, envíame el informe y los insights mensuales. Mis respuestas se conservan 12 meses para sustentar las recomendaciones. Puedo darme de baja en cualquier momento.",
@@ -2982,11 +3032,11 @@
     }
   },
   "leadMagnet": {
-    "eyebrow": "AI Readiness Scan gratis",
-    "title": "¿Qué tan madura en AI es tu agencia?",
-    "subtitle": "Haz el scan interactivo de 5 minutos. Descubre si eres Explorer, Builder u Operator y qué tres habilidades Clyde marcan la diferencia.",
+    "eyebrow": "AI Agency Scan gratuito",
+    "title": "¿Qué tipo de agencia de IA eres tú?",
+    "subtitle": "Haz el scan interactivo de 5 minutos. Descubre tu arquetipo de agencia y qué tres habilidades de Clyde marcan más la diferencia para tu perfil.",
     "bullet1": "16 preguntas en 4 categorías",
-    "bullet2": "Persona resultante más puntuación por categoría",
+    "bullet2": "Arquetipo de agencia entre cinco perfiles más puntuación por categoría",
     "bullet3": "Tres habilidades Clyde recomendadas y roadmap de 4 semanas",
     "cta": "Iniciar el scan",
     "duration": "5 minutos, gratis, sin cuenta",

@@ -2754,23 +2754,23 @@
   },
   "assessment": {
     "meta": {
-      "title": "AI Readiness Scan for agencies | FutureMarketingAI",
-      "description": "16 questions, 5 minutes. Find out whether your agency is an Explorer, Builder or Operator and which 3 Clyde skills move the needle."
+      "title": "AI Agency Scan | FutureMarketingAI",
+      "description": "16 questions, 5 minutes. Discover what type of AI agency you are and which 3 Clyde skills make the most difference for your profile."
     },
     "breadcrumb": "Scan",
     "intro": {
-      "eyebrow": "AI Readiness Scan",
-      "titleLead": "How AI-mature is",
-      "titleAccent": "your agency?",
-      "subtitle": "Sixteen questions, five minutes. Ends with your personal roadmap as Explorer, Builder or Operator.",
+      "eyebrow": "AI Agency Scan",
+      "titleLead": "What kind of AI agency",
+      "titleAccent": "are you?",
+      "subtitle": "Sixteen questions, five minutes. Ends with your agency archetype, category scores and three recommended Clyde skills.",
       "bullets": {
-        "persona": "Your persona across three levels",
+        "persona": "Your agency archetype from five profiles",
         "scores": "Score per category (Strategy, Data, Tools, Team)",
-        "skills": "Three recommended Clyde skills"
+        "skills": "Three recommended Clyde skills for your profile"
       },
       "trust": {
         "privacy": "Privacy-first, EU-hosted, no tracking cookies",
-        "validated": "Persona validated against 1 paying client",
+        "validated": "Results validated with agencies in practice",
         "retention": "Answers stored for 12 months, then deleted"
       },
       "start": "Start the scan",
@@ -2785,7 +2785,7 @@
     "progress": "Question {current} of {total}",
     "back": "Back",
     "next": "Next",
-    "finish": "Show my persona",
+    "finish": "Show my profile",
     "questions": {
       "q1": {
         "text": "Have you written down an AI strategy for your agency?",
@@ -2919,47 +2919,97 @@
     },
     "result": {
       "eyebrow": "Your result",
-      "preTitle": "You are an",
-      "explorer": {
-        "name": "Explorer",
-        "summary": "You experiment with AI, but a system is missing. The biggest leap is one central brain that knows every brand and orchestrates every skill."
+      "preTitle": "Your agency is a",
+      "stagePrefix": "level:",
+      "archetypes": {
+        "strategy-led": {
+          "name": "Strategy Agency",
+          "identity": "the thinker that wants to act faster",
+          "validationHook": "You know exactly what clients need — but execution always lags behind",
+          "summary": "Your agency has the sharpest vision in the room. What's missing is a production engine that turns your ideas into live campaigns without weekly manual handoffs.",
+          "week1": "Pick one client and make their brief automatically reusable in one AI workflow. Strategic knowledge only needs to be entered once."
+        },
+        "data-led": {
+          "name": "Data Agency",
+          "identity": "the measurer that wants to turn insights into action",
+          "validationHook": "Your dashboards are impressive — the campaigns that follow them not always",
+          "summary": "Your agency speaks in numbers, attribution and return. The next step is directly connecting that data to your content production so insights automatically steer what gets made.",
+          "week1": "Pick one data source and connect it directly to next month's briefing. No more copy-paste."
+        },
+        "tooling-led": {
+          "name": "Workflow Agency",
+          "identity": "the builder with too many disconnected tools and too little central brain",
+          "validationHook": "Someone on your team built an automation last month that the rest are still catching up to",
+          "summary": "Your agency runs on AI workflows and automations — more than most competitors. The leap you can make now is from disconnected flows to one central system that knows all brands and orchestrates all Clyde skills.",
+          "week1": "Stop a new AI subscription. Connect one existing tool deeper to one client's brand file. Depth beats breadth."
+        },
+        "team-led": {
+          "name": "People Agency",
+          "identity": "the talent hub clients return to for the people",
+          "validationHook": "Clients ask for your team members by name — and scaling only works by hiring more of them",
+          "summary": "Your agency has the strongest human craft of the five profiles. The opportunity is AI as a force multiplier for your seniors: less operational work, more creative direction.",
+          "week1": "Identify one task that costs your best team member at least two hours every week. That's your first automation target."
+        },
+        "balanced": {
+          "name": "Generalist Agency",
+          "identity": "the agency without a weak link — but also without a sharp distinguishing profile",
+          "validationHook": "You score reasonably everywhere — but when clients ask why they should choose you, the answer takes a moment",
+          "summary": "Your agency has AI knowledge spread across strategy, data, tools and team — a rare and strong foundation. The next step is picking a clear profile: agencies with a recognizable specialization attract better clients.",
+          "week1": "Ask your three best clients what problem you solve better than anyone else. That answer tells you which profile you already have."
+        }
       },
-      "builder": {
-        "name": "Builder",
-        "summary": "Working workflows, ready to scale. The biggest leap is more brands on the same infrastructure with deeper measurement."
+      "stages": {
+        "emerging": {
+          "label": "Emerging",
+          "description": "You're laying the foundation — every step counts double"
+        },
+        "scaling": {
+          "label": "Scaling",
+          "description": "You're building momentum — consistency is now the bottleneck"
+        },
+        "leading": {
+          "label": "Leading",
+          "description": "You're operating at scale — the next level is creative production at volume"
+        }
       },
-      "operator": {
-        "name": "Operator",
-        "summary": "AI runs autonomously in your operation. The next leap is creative production at scale and cutting-edge formats your competitors don't have."
+      "_deprecated_personas": {
+        "_note": "Kept for DB/analytics backwards-compat. No longer shown in UI.",
+        "explorer": {
+          "name": "Explorer",
+          "summary": "You're experimenting with AI but still lack a system. The biggest leap is one central brain that knows all brands and orchestrates all skills."
+        },
+        "builder": {
+          "name": "Builder",
+          "summary": "Working workflows, ready to scale. The biggest leap is more brands on the same infrastructure with deeper measurement."
+        },
+        "operator": {
+          "name": "Operator",
+          "summary": "AI runs autonomously in your operation. The next leap is creative production at scale and cutting-edge formats competitors don't have."
+        }
       },
       "scoresHeading": "Your scores per category",
-      "lowestHint": "Your biggest leap is here",
+      "lowestHint": "Biggest growth opportunity",
       "week1Heading": "First step this week",
-      "week1": {
-        "explorer": "Stop using fragmented public AI tools per employee and pick one central starting point. Start with one workflow (e.g. social posts) and systematise it.",
-        "builder": "Audit your pipelines: where does data live, where do handoffs leak? Map the cross-skill data sharing you can activate today.",
-        "operator": "Audit vendor dependency. List your 3 top tools, check EU hosting and document exit clauses per vendor."
-      },
-      "skillsHeading": "Three skills that move the needle",
+      "skillsHeading": "Three Clyde skills that make the difference",
       "skillsHint": "Full breakdown and 4-week roadmap in your inbox",
       "share": {
-        "heading": "Share your result",
-        "subline": "Others see your persona and scores on a dedicated page. The link contains no email or answers.",
+        "heading": "Share your profile",
+        "subline": "Others see your agency archetype and scores on their own page. The link contains no email or answers.",
         "linkedin": "Share on LinkedIn",
         "copy": "Copy link",
         "copied": "Copied"
       },
-      "footerHint": "Request the full report for detailed scores, weeks 2-4 and the explanation per skill."
+      "footerHint": "Request the full report for your 4-week roadmap and skill breakdown."
     },
     "resultShared": {
-      "eyebrow": "AI Readiness Scan",
+      "eyebrow": "AI Agency Scan",
       "scoresHeading": "Score per category",
-      "focusLabel": "Focus",
-      "ctaHeadline": "Take the free 5-minute scan and see your own persona.",
+      "focusLabel": "Growth opportunity",
+      "ctaHeadline": "Take the free 5-minute scan yourself and discover what type of AI agency you are.",
       "ctaButton": "Start the scan",
       "ctaHint": "5 minutes, free, no account needed",
-      "metaTitle": "{persona}: {total}/100 on the AI Readiness Scan",
-      "metaDescription": "Persona and category scores from someone who took the 5-minute scan. Take it yourself at future-marketing.ai."
+      "metaTitle": "{archetype} ({stage}): {total}/100 on the AI Agency Scan",
+      "metaDescription": "Agency archetype and category scores from someone who took the 5-minute scan. Take the scan yourself at future-marketing.ai."
     },
     "emailGate": {
       "eyebrow": "Free report in your inbox",
@@ -2967,7 +3017,7 @@
       "subtitle": "Score per category, three recommended Clyde skills and your 4-week roadmap. Straight to your inbox.",
       "bullet1": "Score per category (Strategy, Data, Tools, Team)",
       "bullet2": "Three recommended Clyde skills for your weakest category",
-      "bullet3": "Week-by-week roadmap for your persona",
+      "bullet3": "Week-by-week roadmap for your agency profile",
       "emailLabel": "Work email",
       "emailPlaceholder": "daley@youragency.com",
       "consent": "Yes, send me the report and monthly insights. My answers are retained for 12 months to support the recommendations. I can unsubscribe at any time.",
@@ -2982,11 +3032,11 @@
     }
   },
   "leadMagnet": {
-    "eyebrow": "Free AI Readiness Scan",
-    "title": "How AI-mature is your agency?",
-    "subtitle": "Take the interactive 5-minute scan. Find out whether you are an Explorer, Builder or Operator and which three Clyde skills move the needle.",
+    "eyebrow": "Free AI Agency Scan",
+    "title": "What kind of AI agency are you?",
+    "subtitle": "Take the interactive 5-minute scan. Discover your agency archetype and which three Clyde skills make the most difference for your profile.",
     "bullet1": "16 questions across 4 categories",
-    "bullet2": "Persona outcome plus score per category",
+    "bullet2": "Agency archetype from five profiles plus score per category",
     "bullet3": "Three recommended Clyde skills and a 4-week roadmap",
     "cta": "Start the scan",
     "duration": "5 minutes, free, no account needed",

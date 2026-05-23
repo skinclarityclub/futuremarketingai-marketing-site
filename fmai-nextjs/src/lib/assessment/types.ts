@@ -3,8 +3,8 @@
  *
  * Used by:
  * - questions.ts        — the 16-question SSoT
- * - scoring.ts          — pure scoring + persona derivation
- * - skill-routing.ts    — persona × lowestCategory → recommended skills
+ * - scoring.ts          — pure scoring + archetype/stage derivation
+ * - skill-routing.ts    — archetype × lowestCategory → recommended skills
  * - store.ts            — Zustand client state during the scan
  * - /api/assessment     — request body validation + persistence
  * - email-templates     — result-mail payload shape
@@ -19,13 +19,55 @@ export const ASSESSMENT_CATEGORIES: readonly AssessmentCategory[] = [
   'team',
 ] as const
 
+// ---------------------------------------------------------------------------
+// Archetype — what kind of bureau (determined by dominant category score)
+// ---------------------------------------------------------------------------
+
+export type Archetype =
+  | 'strategy-led'
+  | 'data-led'
+  | 'tooling-led'
+  | 'team-led'
+  | 'balanced'
+
+export const ASSESSMENT_ARCHETYPES: readonly Archetype[] = [
+  'strategy-led',
+  'data-led',
+  'tooling-led',
+  'team-led',
+  'balanced',
+] as const
+
+// ---------------------------------------------------------------------------
+// Stage — how far along (determined by total score)
+// ---------------------------------------------------------------------------
+
+export type Stage = 'emerging' | 'scaling' | 'leading'
+
+export const ASSESSMENT_STAGES: readonly Stage[] = [
+  'emerging',
+  'scaling',
+  'leading',
+] as const
+
+// ---------------------------------------------------------------------------
+// Backwards-compat aliases — kept for existing DB rows + analytics events
+// @deprecated Use Stage / Archetype instead
+// ---------------------------------------------------------------------------
+
+/** @deprecated Use `Stage` instead. Kept for DB/analytics backwards-compat. */
 export type AssessmentPersona = 'explorer' | 'builder' | 'operator'
 
+/** @deprecated Use `ASSESSMENT_STAGES` instead. */
 export const ASSESSMENT_PERSONAS: readonly AssessmentPersona[] = [
   'explorer',
   'builder',
   'operator',
 ] as const
+
+// ---------------------------------------------------------------------------
+// Questions
+// ---------------------------------------------------------------------------
 
 export type QuestionId =
   | 'q1' | 'q2' | 'q3' | 'q4'
@@ -81,9 +123,17 @@ export interface AssessmentResult {
   perCategory: CategoryScores
   /** Average of the four categories, 0..100. */
   total: number
-  persona: AssessmentPersona
+  /** The bureau's operating archetype — determined by dominant category score. */
+  archetype: Archetype
+  /** How far along the bureau is — determined by total score. */
+  stage: Stage
   /** Category with the lowest score — drives skill recommendations. */
   lowestCategory: AssessmentCategory
+  /**
+   * @deprecated Use `stage` instead. Kept for DB/analytics backwards-compat.
+   * Mapped from stage: emerging=explorer, scaling=builder, leading=operator.
+   */
+  persona: AssessmentPersona
 }
 
 /** Payload posted to /api/assessment from the email-gate component. */
@@ -99,5 +149,8 @@ export interface AssessmentSubmission {
   answers: AssessmentAnswers
   scores: CategoryScores
   total: number
+  archetype: Archetype
+  stage: Stage
+  /** @deprecated Use `stage` instead. */
   persona: AssessmentPersona
 }
