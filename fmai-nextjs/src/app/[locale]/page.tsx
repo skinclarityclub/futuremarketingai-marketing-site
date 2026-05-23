@@ -20,8 +20,8 @@ import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { getSkillBySlug } from '@/lib/skills-data'
-import { Zap, ArrowRight } from 'lucide-react'
+import { Zap, ArrowRight, Megaphone, UserCheck, Inbox, BarChart3, Search, Bot } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -36,14 +36,14 @@ export async function generateMetadata({
   return generatePageMetadata({ locale, namespace: 'home', path: '/' })
 }
 
-const SERVICE_CARDS = [
-  { key: 'socialMedia', href: '/skills/social-media' },
-  { key: 'voiceAgent', href: '/skills/voice-agent' },
-  { key: 'leadQualifier', href: '/skills/lead-qualifier' },
-  { key: 'adCreator', href: '/skills/ad-creator' },
-  { key: 'reporting', href: '/skills/reporting' },
-  { key: 'clyde', href: '/skills/clyde' },
-] as const
+const SERVICE_CARDS: { key: string; href: string; Icon: LucideIcon }[] = [
+  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Megaphone },
+  { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck },
+  { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox     },
+  { key: 'reporting',       href: '/skills/reporting',        Icon: BarChart3 },
+  { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search    },
+  { key: 'clyde',           href: '/skills/clyde',            Icon: Bot       },
+]
 
 const BADGE_KEYS = ['gdpr', 'enterprise', 'dutch', 'uptime', 'integrations', 'noLockIn'] as const
 
@@ -54,7 +54,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'home' })
-  const tHeader = await getTranslations({ locale, namespace: 'header' })
 
   return (
     <PageShell showStickyCta>
@@ -245,39 +244,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {SERVICE_CARDS.map((card) => {
-              const slug = card.href.replace('/skills/', '')
-              const isComingSoon = getSkillBySlug(slug)?.status === 'coming_soon'
-              return (
+            {SERVICE_CARDS.map(({ key, href, Icon }) => (
               <Link
-                key={card.key}
-                href={card.href}
-                className="relative card-gradient-border card-tilt rounded-[var(--radius-card)] bg-white/[0.02] border border-border-primary p-11 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
+                key={key}
+                href={href}
+                className="relative card-gradient-border card-tilt rounded-[var(--radius-card)] bg-white/[0.02] border border-border-primary p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
               >
-                {/* Service number */}
-                <span className="font-display text-xs font-semibold text-text-muted tracking-[2px] mb-5 block">
-                  {t(`services.${card.key}.number`)}
-                </span>
+                {/* Skill icon */}
+                <Icon className="w-6 h-6 text-accent-system mb-5 shrink-0" aria-hidden />
 
-                {/* Title row with optional coming-soon marker */}
-                <div className="flex items-center gap-2 mb-3.5">
-                  <h3 className="font-display text-2xl font-bold text-text-primary tracking-tight">
-                    {t(`services.${card.key}.title`)}
-                  </h3>
-                  {isComingSoon && (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1.5 py-0.5">
-                      {tHeader('skills.comingSoon')}
-                    </span>
-                  )}
-                </div>
+                {/* Title */}
+                <h3 className="font-display text-xl font-bold text-text-primary tracking-tight mb-3">
+                  {t(`services.${key}.title`)}
+                </h3>
 
                 {/* Description */}
                 <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
-                  {t(`services.${card.key}.description`)}
+                  {t(`services.${key}.description`)}
                 </p>
 
                 {/* Arrow circle — bottom-right */}
-                <div className="absolute bottom-9 right-9 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-[#F5A623] group-hover:border-[#F5A623]">
+                <div className="absolute bottom-7 right-7 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-[#F5A623] group-hover:border-[#F5A623]">
                   <svg
                     className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
                     viewBox="0 0 16 16"
@@ -289,8 +276,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </svg>
                 </div>
               </Link>
-              )
-            })}
+            ))}
           </div>
 
           {/* Final CTA after service cards */}

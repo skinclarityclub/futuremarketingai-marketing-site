@@ -28,34 +28,28 @@
     },
     "services": {
       "title": "What Clyde does for your agency",
-      "subtitle": "Twelve specialized skills. A sample of what Clyde handles most often.",
-      "voiceAgent": {
-        "number": "02",
-        "title": "Voice Agent",
-        "description": "Coming soon: Clyde will pick up the phone, book appointments and answer FAQs. 24/7, per brand."
-      },
-      "leadQualifier": {
-        "number": "03",
-        "title": "Lead Qualifier",
-        "description": "Website chatbot that qualifies leads and routes warm prospects to your CRM."
-      },
+      "subtitle": "Nine skills live, ready to deploy for your agency.",
       "socialMedia": {
-        "number": "01",
         "title": "Social Media Manager",
         "description": "Clyde handles captions, scheduling and carousels per brand. In the right brand voice, every time."
       },
-      "adCreator": {
-        "number": "04",
-        "title": "Ad Creator",
-        "description": "Coming soon: Clyde will make static and video ads for Meta. A/B variants publish-ready."
+      "leadQualifier": {
+        "title": "Lead Qualifier",
+        "description": "Website chatbot that qualifies leads and routes warm prospects to your CRM."
+      },
+      "emailManagement": {
+        "title": "Email Management",
+        "description": "Inbox classification, smart labels and a daily digest. Clyde keeps the mailbox organised per client."
       },
       "reporting": {
-        "number": "05",
         "title": "Reporting & Analytics",
         "description": "Weekly performance digests, KPI dashboards and alerts on anomalous metrics."
       },
+      "seoGeo": {
+        "title": "SEO & GEO Analyst",
+        "description": "SEO audits, keyword tracking and AI citation monitoring. Clyde tracks how often your brand is cited by AI search engines."
+      },
       "clyde": {
-        "number": "06",
         "title": "Clyde AI Marketing Employee",
         "description": "The orchestrator. Give commands in natural language, Clyde routes to the right skill."
       }

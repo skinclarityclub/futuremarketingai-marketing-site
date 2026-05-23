@@ -28,34 +28,28 @@
     },
     "services": {
       "title": "Lo que Clyde hace por tu agencia",
-      "subtitle": "Doce habilidades especializadas. Una muestra de lo que Clyde gestiona con más frecuencia.",
-      "voiceAgent": {
-        "number": "02",
-        "title": "Voice Agent",
-        "description": "Próximamente: Clyde contestará el teléfono, agendará citas y responderá preguntas frecuentes. 24/7, por marca."
-      },
-      "leadQualifier": {
-        "number": "03",
-        "title": "Lead Qualifier",
-        "description": "Chatbot web que califica leads y enruta prospectos cálidos a tu CRM."
-      },
+      "subtitle": "Nueve habilidades disponibles, listas para tu agencia.",
       "socialMedia": {
-        "number": "01",
         "title": "Social Media Manager",
         "description": "Clyde gestiona captions, planificación y carruseles por marca. En la voz de marca correcta, cada vez."
       },
-      "adCreator": {
-        "number": "04",
-        "title": "Ad Creator",
-        "description": "Próximamente: Clyde creará anuncios estáticos y en vídeo para Meta. Variantes A/B listas para publicar."
+      "leadQualifier": {
+        "title": "Lead Qualifier",
+        "description": "Chatbot web que califica leads y enruta prospectos cálidos a tu CRM."
+      },
+      "emailManagement": {
+        "title": "Gestión de Email",
+        "description": "Clasificación de bandeja, etiquetas inteligentes y resumen diario. Clyde mantiene el correo organizado por cliente."
       },
       "reporting": {
-        "number": "05",
         "title": "Reporting & Analytics",
         "description": "Resúmenes semanales de rendimiento, dashboards KPI y alertas ante métricas anómalas."
       },
+      "seoGeo": {
+        "title": "Analista SEO y GEO",
+        "description": "Auditorías SEO, seguimiento de palabras clave y monitoreo de citas de IA. Clyde rastrea con qué frecuencia las IA citan tu marca."
+      },
       "clyde": {
-        "number": "06",
         "title": "Clyde Empleado AI de Marketing",
         "description": "El orquestador. Da instrucciones en lenguaje natural y Clyde activa la habilidad correcta."
       }

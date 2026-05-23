@@ -28,34 +28,28 @@
     },
     "services": {
       "title": "Wat Clyde doet voor jouw bureau",
-      "subtitle": "Twaalf gespecialiseerde vaardigheden. Een greep uit wat Clyde het vaakst oppakt.",
-      "voiceAgent": {
-        "number": "02",
-        "title": "Voice Agent",
-        "description": "Binnenkort: Clyde gaat de telefoon opnemen, afspraken boeken en veelgestelde vragen beantwoorden. 24/7, per merk."
-      },
-      "leadQualifier": {
-        "number": "03",
-        "title": "Lead Qualifier",
-        "description": "Chatbot op de website die leads kwalificeert en warme prospects doorzet naar het CRM."
-      },
+      "subtitle": "Negen vaardigheden live, direct inzetbaar voor jouw bureau.",
       "socialMedia": {
-        "number": "01",
         "title": "Social Media Manager",
         "description": "Clyde verzorgt captions, inplanning en carrousels per merk. In de juiste merkstem, elke keer."
       },
-      "adCreator": {
-        "number": "04",
-        "title": "Ad Creator",
-        "description": "Binnenkort: Clyde gaat statische ads en video-ads voor Meta maken. A/B-varianten direct publicatieklaar."
+      "leadQualifier": {
+        "title": "Lead Qualifier",
+        "description": "Chatbot op de website die leads kwalificeert en warme prospects doorzet naar het CRM."
+      },
+      "emailManagement": {
+        "title": "Email Management",
+        "description": "Inbox classificatie, smart labels en dagelijkse digest. Clyde houdt de mailbox overzichtelijk per klant."
       },
       "reporting": {
-        "number": "05",
         "title": "Rapportage & Analytics",
         "description": "Wekelijkse prestatie-digests, KPI-dashboards en alerts bij afwijkende metrics."
       },
+      "seoGeo": {
+        "title": "SEO en GEO Analyst",
+        "description": "SEO audits, keyword tracking en AI-citatiemonitoring. Clyde volgt hoe vaak jouw merk door AI-zoekmachines geciteerd wordt."
+      },
       "clyde": {
-        "number": "06",
         "title": "Clyde AI Marketing Medewerker",
         "description": "De orchestrator. Geef opdrachten in gewone taal, Clyde zet de juiste vaardigheid in."
       }
