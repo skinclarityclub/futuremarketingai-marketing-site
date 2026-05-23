@@ -86,21 +86,26 @@
       "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "stats": {
-      "clients": {
-        "value": "3 × 4 merken",
-        "label": "SkinClarity Club autonoom"
+      "heading": "Belangrijke cijfers",
+      "caseStudy": {
+        "value": "3 merken live",
+        "label": "SkinClarity Club autonoom",
+        "linkText": "Bekijk de case"
       },
-      "content": {
-        "value": "12",
-        "label": "Gespecialiseerde vaardigheden"
+      "skills": {
+        "value": "9 van 12 live",
+        "label": "Gespecialiseerde vaardigheden",
+        "linkText": "Alle skills"
       },
-      "hours": {
-        "value": "Persistent",
-        "label": "Geheugen per klant"
+      "founding": {
+        "value": "{taken} van {total}",
+        "label": "Founding plekken bezet",
+        "linkText": "Word founding partner"
       },
-      "languages": {
-        "value": "Max {maxPartners}",
-        "label": "Plekken per jaar"
+      "sovereignty": {
+        "value": "NL en EU",
+        "label": "Native data-residency",
+        "linkText": "Hoe wij data behandelen"
       }
     },
     "badges": {

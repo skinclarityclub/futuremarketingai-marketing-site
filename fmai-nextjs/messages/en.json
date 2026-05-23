@@ -86,21 +86,26 @@
       "notFit4": "You run an agency with more than 30 FTE and have your own AI or tech team. We accelerate agencies that do not build that in-house."
     },
     "stats": {
-      "clients": {
-        "value": "3 × 4 brands",
-        "label": "SkinClarity Club autonomous"
+      "heading": "Key metrics",
+      "caseStudy": {
+        "value": "3 brands live",
+        "label": "SkinClarity Club autonomous",
+        "linkText": "Read the case"
       },
-      "content": {
-        "value": "12",
-        "label": "Specialized skills"
+      "skills": {
+        "value": "9 of 12 live",
+        "label": "Specialised skills",
+        "linkText": "All skills"
       },
-      "hours": {
-        "value": "Persistent",
-        "label": "Memory per client"
+      "founding": {
+        "value": "{taken} of {total}",
+        "label": "Founding seats taken",
+        "linkText": "Become founding partner"
       },
-      "languages": {
-        "value": "Max {maxPartners}",
-        "label": "Spots per year"
+      "sovereignty": {
+        "value": "NL and EU",
+        "label": "Native data residency",
+        "linkText": "How we handle data"
       }
     },
     "badges": {

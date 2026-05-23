@@ -86,21 +86,26 @@
       "notFit4": "Diriges una agencia con más de 30 FTE y equipo propio de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
     },
     "stats": {
-      "clients": {
-        "value": "3 × 4 marcas",
-        "label": "SkinClarity Club autónomo"
+      "heading": "Métricas clave",
+      "caseStudy": {
+        "value": "3 marcas en vivo",
+        "label": "SkinClarity Club autónomo",
+        "linkText": "Ver el caso"
       },
-      "content": {
-        "value": "12",
-        "label": "Habilidades especializadas"
+      "skills": {
+        "value": "9 de 12 en vivo",
+        "label": "Habilidades especializadas",
+        "linkText": "Todas las habilidades"
       },
-      "hours": {
-        "value": "Persistente",
-        "label": "Memoria por cliente"
+      "founding": {
+        "value": "{taken} de {total}",
+        "label": "Plazas fundadoras ocupadas",
+        "linkText": "Únete como fundador"
       },
-      "languages": {
-        "value": "Máx. {maxPartners}",
-        "label": "Plazas por año"
+      "sovereignty": {
+        "value": "NL y UE",
+        "label": "Residencia de datos nativa",
+        "linkText": "Cómo tratamos los datos"
       }
     },
     "badges": {

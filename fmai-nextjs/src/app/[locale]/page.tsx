@@ -18,6 +18,7 @@ import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
+import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getSkillBySlug } from '@/lib/skills-data'
 import { Zap, ArrowRight } from 'lucide-react'
@@ -43,8 +44,6 @@ const SERVICE_CARDS = [
   { key: 'reporting', href: '/skills/reporting' },
   { key: 'clyde', href: '/skills/clyde' },
 ] as const
-
-const STAT_KEYS = ['clients', 'content', 'hours', 'languages'] as const
 
 const BADGE_KEYS = ['gdpr', 'enterprise', 'dutch', 'uptime', 'integrations', 'noLockIn'] as const
 
@@ -189,25 +188,38 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
       </LazySection>
 
-      {/* Stats / Metrics Bar */}
-      <LazySection minHeight="150px">
-        <section aria-label="Key metrics" className="py-12 px-6 lg:px-12">
+      {/* Trust Signals Grid */}
+      <LazySection minHeight="200px">
+        <section aria-labelledby="key-metrics" className="py-12 px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
-            <ScrollReveal>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {STAT_KEYS.map((key) => (
-                  <div
-                    key={key}
-                    className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-2xl p-6 text-center"
-                  >
-                    <span className="block text-3xl font-bold text-accent-system mb-1">
-                      {t(`stats.${key}.value`)}
-                    </span>
-                    <span className="text-sm text-text-secondary">{t(`stats.${key}.label`)}</span>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
+            <h2 id="key-metrics" className="sr-only">{t('stats.heading')}</h2>
+            <TrustSignalsGrid
+              signals={{
+                caseStudy: {
+                  value: t('stats.caseStudy.value'),
+                  label: t('stats.caseStudy.label'),
+                  linkText: t('stats.caseStudy.linkText'),
+                },
+                skills: {
+                  value: t('stats.skills.value'),
+                  label: t('stats.skills.label'),
+                  linkText: t('stats.skills.linkText'),
+                },
+                founding: {
+                  value: t('stats.founding.value', {
+                    taken: FOUNDING_SPOTS_TAKEN,
+                    total: FOUNDING_SPOTS_TOTAL,
+                  }),
+                  label: t('stats.founding.label'),
+                  linkText: t('stats.founding.linkText'),
+                },
+                sovereignty: {
+                  value: t('stats.sovereignty.value'),
+                  label: t('stats.sovereignty.label'),
+                  linkText: t('stats.sovereignty.linkText'),
+                },
+              }}
+            />
           </div>
         </section>
       </LazySection>
