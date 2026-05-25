@@ -58,88 +58,8 @@
   --shadow-glow-active: 0 0 20px rgba(34, 197, 94, 0.3);
   --shadow-inner-glow: inset 0 0 20px rgba(0, 212, 170, 0.15);
 
-  /* Animations */
-  --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
-  --animate-float: float 3s ease-in-out infinite;
-  --animate-slide-up: slide-up 0.5s ease-out;
-  --animate-slide-down: slide-down 0.5s ease-out;
-  --animate-fade-in: fade-in 0.5s ease-out;
-  --animate-status-pulse: status-pulse 2s ease-in-out infinite;
-  --animate-data-flow: data-flow 2s linear infinite;
-  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
-
   /* Gradients */
   --bg-gradient-flow: linear-gradient(135deg, #00d4aa 0%, #f5a623 100%);
-}
-
-@keyframes glow-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes slide-up {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-down {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes status-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
-  }
-}
-
-@keyframes data-flow {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
 }
 
 @keyframes fadeInUp {
@@ -250,48 +170,6 @@
   }
 }
 
-@keyframes orbit-pulse {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes orbit-core-breathe {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.15);
-    opacity: 1;
-  }
-}
-
-@keyframes orbit-particle-float {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-  20% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.8;
-    transform: translate(var(--dx), var(--dy));
-  }
-}
-
 @keyframes chatDotBounce {
   0%,
   100% {
@@ -299,17 +177,6 @@
   }
   50% {
     transform: translateY(-4px);
-  }
-}
-
-@keyframes spotlight {
-  0% {
-    opacity: 0;
-    transform: translate(-72%, -62%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -40%) scale(1);
   }
 }
 
