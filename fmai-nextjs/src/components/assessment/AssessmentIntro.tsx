@@ -33,12 +33,7 @@ export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
 
       <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-text-primary sm:text-5xl md:text-6xl">
         {t('titleLead')}{' '}
-        <span
-          className="bg-clip-text text-transparent"
-          style={{ backgroundImage: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)' }}
-        >
-          {t('titleAccent')}
-        </span>
+        <span className="text-accent-system">{t('titleAccent')}</span>
       </h1>
 
       <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-text-secondary">
@@ -80,10 +75,13 @@ export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
         <button
           type="button"
           onClick={onStart}
-          className="group inline-flex items-center gap-2 rounded-lg bg-accent-system px-7 py-3.5 text-base font-semibold text-bg-deep transition-[filter,transform] hover:brightness-110 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          className="group inline-flex items-center gap-2.5 rounded-lg bg-accent-system px-7 py-3.5 text-base font-semibold text-bg-deep transition-all duration-500 hover:brightness-110 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}
         >
           {t('start')}
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-bg-deep/20 transition-transform duration-300 group-hover:translate-x-0.5">
+            <ArrowRight className="h-3 w-3" />
+          </span>
         </button>
         <span className="inline-flex items-center gap-1.5 text-sm text-text-muted">
           <Clock className="h-4 w-4" />

@@ -2760,11 +2760,11 @@
     "breadcrumb": "Scan",
     "intro": {
       "eyebrow": "AI Agency Scan",
-      "titleLead": "¿Qué tipo de agencia de IA",
-      "titleAccent": "eres tú?",
-      "subtitle": "Dieciséis preguntas, cinco minutos. Termina con tu arquetipo de agencia, puntuación por categoría y tres habilidades de Clyde recomendadas.",
+      "titleLead": "¿Qué tan lista está",
+      "titleAccent": "tu agencia para la IA?",
+      "subtitle": "Dieciséis preguntas, cinco minutos. Termina con el ADN de tu agencia, puntuación por categoría y tres habilidades de Clyde recomendadas.",
       "bullets": {
-        "persona": "Tu arquetipo de agencia entre cinco perfiles",
+        "persona": "El ADN de tu agencia entre cinco perfiles",
         "scores": "Puntuación por categoría (Estrategia, Datos, Herramientas, Equipo)",
         "skills": "Tres habilidades de Clyde recomendadas para tu perfil"
       },
@@ -2816,7 +2816,10 @@
       },
       "q4": {
         "text": "Hemos definido qué herramientas AI son seguras para datos de cliente y nuestra responsabilidad de IP.",
-        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+        "likert": {
+          "min": "Totalmente en desacuerdo",
+          "max": "Totalmente de acuerdo"
+        }
       },
       "q5": {
         "text": "¿Qué tan organizados están los datos de cliente y marca (activos, brand voice, KPIs)?",
@@ -2838,7 +2841,10 @@
       },
       "q7": {
         "text": "Nuestros clientes reciben reportes donde los resultados AI y humanos son distinguibles.",
-        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+        "likert": {
+          "min": "Totalmente en desacuerdo",
+          "max": "Totalmente de acuerdo"
+        }
       },
       "q8": {
         "text": "¿Qué datos 1st-party usas estructuralmente como input para AI?",
@@ -2905,7 +2911,10 @@
       },
       "q15": {
         "text": "Nuestros clientes saben qué partes de su campaña son AI-driven.",
-        "likert": { "min": "Totalmente en desacuerdo", "max": "Totalmente de acuerdo" }
+        "likert": {
+          "min": "Totalmente en desacuerdo",
+          "max": "Totalmente de acuerdo"
+        }
       },
       "q16": {
         "text": "¿Con qué frecuencia formas al equipo en nuevas habilidades AI?",
@@ -3033,10 +3042,10 @@
   },
   "leadMagnet": {
     "eyebrow": "AI Agency Scan gratuito",
-    "title": "¿Qué tipo de agencia de IA eres tú?",
-    "subtitle": "Haz el scan interactivo de 5 minutos. Descubre tu arquetipo de agencia y qué tres habilidades de Clyde marcan más la diferencia para tu perfil.",
+    "title": "¿Qué tan lista está tu agencia para la IA?",
+    "subtitle": "Haz el scan interactivo de 5 minutos. Descubre el ADN de tu agencia y qué tres habilidades de Clyde marcan más la diferencia para tu perfil.",
     "bullet1": "16 preguntas en 4 categorías",
-    "bullet2": "Arquetipo de agencia entre cinco perfiles más puntuación por categoría",
+    "bullet2": "ADN de agencia entre cinco perfiles más puntuación por categoría",
     "bullet3": "Tres habilidades Clyde recomendadas y roadmap de 4 semanas",
     "cta": "Iniciar el scan",
     "duration": "5 minutos, gratis, sin cuenta",

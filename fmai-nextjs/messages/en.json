@@ -2760,11 +2760,11 @@
     "breadcrumb": "Scan",
     "intro": {
       "eyebrow": "AI Agency Scan",
-      "titleLead": "What kind of AI agency",
-      "titleAccent": "are you?",
-      "subtitle": "Sixteen questions, five minutes. Ends with your agency archetype, category scores and three recommended Clyde skills.",
+      "titleLead": "How ready is",
+      "titleAccent": "your agency for AI?",
+      "subtitle": "Sixteen questions, five minutes. Ends with your agency DNA, category scores and three recommended Clyde skills.",
       "bullets": {
-        "persona": "Your agency archetype from five profiles",
+        "persona": "Your agency DNA from five profiles",
         "scores": "Score per category (Strategy, Data, Tools, Team)",
         "skills": "Three recommended Clyde skills for your profile"
       },
@@ -2816,7 +2816,10 @@
       },
       "q4": {
         "text": "We have established which AI tools are safe for client data and our IP liability.",
-        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+        "likert": {
+          "min": "Strongly disagree",
+          "max": "Strongly agree"
+        }
       },
       "q5": {
         "text": "How well organised is your client and brand data (assets, brand voice, KPIs)?",
@@ -2838,7 +2841,10 @@
       },
       "q7": {
         "text": "Our clients receive reports where AI-driven and human-driven outcomes are clearly distinguishable.",
-        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+        "likert": {
+          "min": "Strongly disagree",
+          "max": "Strongly agree"
+        }
       },
       "q8": {
         "text": "Which 1st-party data do you structurally feed into AI as input?",
@@ -2905,7 +2911,10 @@
       },
       "q15": {
         "text": "Our clients know which parts of their campaign are AI-driven.",
-        "likert": { "min": "Strongly disagree", "max": "Strongly agree" }
+        "likert": {
+          "min": "Strongly disagree",
+          "max": "Strongly agree"
+        }
       },
       "q16": {
         "text": "How often do you train the team on new AI skills?",
@@ -3033,10 +3042,10 @@
   },
   "leadMagnet": {
     "eyebrow": "Free AI Agency Scan",
-    "title": "What kind of AI agency are you?",
-    "subtitle": "Take the interactive 5-minute scan. Discover your agency archetype and which three Clyde skills make the most difference for your profile.",
+    "title": "How ready is your agency for AI?",
+    "subtitle": "Take the interactive 5-minute scan. Discover your agency DNA and which three Clyde skills make the most difference for your profile.",
     "bullet1": "16 questions across 4 categories",
-    "bullet2": "Agency archetype from five profiles plus score per category",
+    "bullet2": "Agency DNA from five profiles plus score per category",
     "bullet3": "Three recommended Clyde skills and a 4-week roadmap",
     "cta": "Start the scan",
     "duration": "5 minutes, free, no account needed",

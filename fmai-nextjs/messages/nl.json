@@ -2760,11 +2760,11 @@
     "breadcrumb": "Scan",
     "intro": {
       "eyebrow": "AI Bureau Scan",
-      "titleLead": "Wat voor AI-bureau",
-      "titleAccent": "ben jij?",
-      "subtitle": "Zestien vragen, vijf minuten. Eindigt met je bureau-archetype, score per categorie en drie aanbevolen Clyde-vaardigheden.",
+      "titleLead": "Hoe klaar is",
+      "titleAccent": "jouw bureau voor AI?",
+      "subtitle": "Zestien vragen, vijf minuten. Eindigt met je bureau-DNA, score per categorie en drie aanbevolen Clyde-vaardigheden.",
       "bullets": {
-        "persona": "Je bureau-archetype uit vijf profielen",
+        "persona": "Je bureau-DNA uit vijf profielen",
         "scores": "Score per categorie (Strategie, Data, Tools, Team)",
         "skills": "Drie aanbevolen Clyde-vaardigheden voor jouw profiel"
       },
@@ -2816,7 +2816,10 @@
       },
       "q4": {
         "text": "Wij hebben vastgesteld welke AI-tools veilig zijn voor klantdata en onze IP-aansprakelijkheid.",
-        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+        "likert": {
+          "min": "Helemaal mee oneens",
+          "max": "Helemaal mee eens"
+        }
       },
       "q5": {
         "text": "Hoe goed georganiseerd zijn jullie klant- en merk-data (assets, brand voice, KPI's)?",
@@ -2838,7 +2841,10 @@
       },
       "q7": {
         "text": "Onze klanten ontvangen rapportages waarin AI-uitkomsten en menselijke uitkomsten herkenbaar van elkaar zijn.",
-        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+        "likert": {
+          "min": "Helemaal mee oneens",
+          "max": "Helemaal mee eens"
+        }
       },
       "q8": {
         "text": "Welke 1st-party data verwerk je structureel als AI-input?",
@@ -2905,7 +2911,10 @@
       },
       "q15": {
         "text": "Onze klanten weten welke onderdelen van hun campagne AI-gestuurd zijn.",
-        "likert": { "min": "Helemaal mee oneens", "max": "Helemaal mee eens" }
+        "likert": {
+          "min": "Helemaal mee oneens",
+          "max": "Helemaal mee eens"
+        }
       },
       "q16": {
         "text": "Hoe vaak train je het team op nieuwe AI-vaardigheden?",
@@ -3033,10 +3042,10 @@
   },
   "leadMagnet": {
     "eyebrow": "Gratis AI Bureau Scan",
-    "title": "Wat voor AI-bureau ben jij?",
-    "subtitle": "Doe de interactieve 5-minutenscan. Ontdek je bureau-archetype en welke drie Clyde-vaardigheden het meeste verschil maken voor jouw profiel.",
+    "title": "Hoe klaar is jouw bureau voor AI?",
+    "subtitle": "Doe de interactieve 5-minutenscan. Ontdek je bureau-DNA en welke drie Clyde-vaardigheden het meeste verschil maken voor jouw profiel.",
     "bullet1": "16 vragen verspreid over 4 categorieën",
-    "bullet2": "Bureau-archetype uit vijf profielen plus score per categorie",
+    "bullet2": "Bureau-DNA uit vijf profielen plus score per categorie",
     "bullet3": "Drie aanbevolen Clyde-vaardigheden en 4-week roadmap",
     "cta": "Start de scan",
     "duration": "5 minuten, gratis, geen account nodig",
