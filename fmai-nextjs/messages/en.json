@@ -299,14 +299,25 @@
       },
       "ctaLink": "Full pricing page"
     },
-    "badges": {
+    "pillars": {
       "title": "Built for European agencies",
-      "gdpr": "GDPR-first AI",
-      "enterprise": "Enterprise-grade backbone",
-      "dutch": "Dutch-language support",
-      "uptime": "Self-hosted EU infrastructure",
-      "integrations": "Open API and OAuth integrations",
-      "noLockIn": "No lock-in contracts"
+      "compliance": {
+        "label": "Security and compliance",
+        "heading": "GDPR · EU AI Act",
+        "body": "GDPR-first and EU AI Act ready. Self-hosted on European servers, your data never reaches US clouds. Audit trail for every Clyde action."
+      },
+      "infrastructure": {
+        "label": "Infrastructure",
+        "stat": "24h",
+        "statLabel": "Data-export SLA",
+        "body": "Open API, JSON and CSV export within 24 hours. Self-hosted EU infrastructure, no vendor lock-in on data or workspaces."
+      },
+      "partnership": {
+        "label": "Partnership",
+        "stat": "1:1",
+        "statLabel": "With Daley",
+        "body": "Personal onboarding by Daley. No CSM layer, no ticketing for strategic decisions."
+      }
     },
     "cta": {
       "title": "Ready to meet Clyde?",

@@ -299,14 +299,25 @@
       },
       "ctaLink": "Página de precios completa"
     },
-    "badges": {
+    "pillars": {
       "title": "Construido para agencias europeas",
-      "gdpr": "IA con RGPD por defecto",
-      "enterprise": "Infraestructura enterprise-grade",
-      "dutch": "Soporte en neerlandés",
-      "uptime": "Infraestructura self-hosted en la UE",
-      "integrations": "API abierta e integraciones OAuth",
-      "noLockIn": "Sin contratos de permanencia"
+      "compliance": {
+        "label": "Seguridad y compliance",
+        "heading": "RGPD · EU AI Act",
+        "body": "RGPD-first y EU AI Act listos. Self-hosted en servidores europeos, tus datos no llegan a clouds de EE. UU. Audit trail por cada acción de Clyde."
+      },
+      "infrastructure": {
+        "label": "Infraestructura",
+        "stat": "24h",
+        "statLabel": "SLA de exportación",
+        "body": "API abierta, exportación JSON y CSV en 24 horas. Infraestructura self-hosted en la UE, sin lock-in en datos ni workspaces."
+      },
+      "partnership": {
+        "label": "Partnership",
+        "stat": "1:1",
+        "statLabel": "Con Daley",
+        "body": "Onboarding personal con Daley. Sin capa de CSM, sin ticketing para decisiones estratégicas."
+      }
     },
     "cta": {
       "title": "¿Listo para conocer a Clyde?",

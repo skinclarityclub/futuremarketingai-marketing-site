@@ -299,14 +299,25 @@
       },
       "ctaLink": "Volledige prijspagina"
     },
-    "badges": {
+    "pillars": {
       "title": "Gebouwd voor Europese bureaus",
-      "gdpr": "AVG-first AI",
-      "enterprise": "Enterprise-grade backbone",
-      "dutch": "Nederlandstalige support",
-      "uptime": "Self-hosted EU-infrastructuur",
-      "integrations": "Open API en OAuth-integraties",
-      "noLockIn": "Geen lock-in contracten"
+      "compliance": {
+        "label": "Veiligheid en compliance",
+        "heading": "GDPR · EU AI Act",
+        "body": "AVG-first en EU AI Act ready. Self-hosted op Europese servers, data nooit naar US-clouds. Audit-trail per actie van Clyde."
+      },
+      "infrastructure": {
+        "label": "Infrastructuur",
+        "stat": "24u",
+        "statLabel": "Data-export SLA",
+        "body": "Open API, JSON en CSV export binnen 24 uur. Self-hosted EU-infrastructuur, geen vendor lock-in op data of werkruimtes."
+      },
+      "partnership": {
+        "label": "Samenwerking",
+        "stat": "1:1",
+        "statLabel": "Met Daley",
+        "body": "Persoonlijke onboarding door Daley. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen."
+      }
     },
     "cta": {
       "title": "Klaar om Clyde te leren kennen?",

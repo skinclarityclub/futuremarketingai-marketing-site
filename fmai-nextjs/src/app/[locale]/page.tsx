@@ -28,7 +28,7 @@ import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { Zap, ArrowRight } from 'lucide-react'
+import { Zap, ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -42,8 +42,6 @@ export async function generateMetadata({
   const { locale } = await params
   return generatePageMetadata({ locale, namespace: 'home', path: '/' })
 }
-
-const BADGE_KEYS = ['gdpr', 'enterprise', 'dutch', 'uptime', 'integrations', 'noLockIn'] as const
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
 
@@ -295,38 +293,65 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 11 — Pillars (W3 vervangt door bento, was: 6 checkmarks)
-          TODO W3: rename aria-labelledby="badges" → "pillars", 6 checkmarks → 3 bento pillars.
-          Mirror update in tests/e2e/homepage.spec.ts lines 62-63.
+          Sectie 11 — Pillars bento (3 inhoudelijke tiles, was: 6 checkmarks)
           ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="200px">
-        <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto text-center">
-            <SectionHeading id="badges">{t('badges.title')}</SectionHeading>
+      <LazySection minHeight="280px">
+        <section aria-labelledby="pillars" className="py-20 px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeading id="pillars" className="text-center">{t('pillars.title')}</SectionHeading>
             <ScrollReveal>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-                {BADGE_KEYS.map((key) => (
-                  <div
-                    key={key}
-                    className="flex items-center justify-center gap-2 border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-4"
-                  >
-                    <svg
-                      className="w-5 h-5 text-accent-system shrink-0"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span className="text-sm font-medium text-text-secondary">
-                      {t(`badges.${key}`)}
-                    </span>
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-5 auto-rows-fr">
+                {/* Tile A — Compliance, spans 2 cols on desktop, typographic */}
+                <div className="md:col-span-2 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-7 lg:p-9 flex flex-col justify-between min-h-[220px]">
+                  <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
+                    <ShieldCheck className="w-4 h-4" aria-hidden />
+                    {t('pillars.compliance.label')}
                   </div>
-                ))}
+                  <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary tracking-tight my-6 leading-[1.05]">
+                    {t('pillars.compliance.heading')}
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed max-w-md">
+                    {t('pillars.compliance.body')}
+                  </p>
+                </div>
+
+                {/* Tile B — Infrastructure, single col, numeric */}
+                <div className="md:col-span-1 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 flex flex-col justify-between min-h-[220px]">
+                  <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
+                    <ServerCog className="w-4 h-4" aria-hidden />
+                    {t('pillars.infrastructure.label')}
+                  </div>
+                  <div className="my-4">
+                    <p className="font-display text-5xl lg:text-6xl font-bold text-accent-system leading-none">
+                      {t('pillars.infrastructure.stat')}
+                    </p>
+                    <p className="mt-2 text-xs font-mono uppercase tracking-[0.14em] text-text-muted">
+                      {t('pillars.infrastructure.statLabel')}
+                    </p>
+                  </div>
+                  <p className="text-xs text-text-secondary leading-relaxed">
+                    {t('pillars.infrastructure.body')}
+                  </p>
+                </div>
+
+                {/* Tile C — Partnership, single col, numeric */}
+                <div className="md:col-span-1 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 flex flex-col justify-between min-h-[220px]">
+                  <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
+                    <Handshake className="w-4 h-4" aria-hidden />
+                    {t('pillars.partnership.label')}
+                  </div>
+                  <div className="my-4">
+                    <p className="font-display text-5xl lg:text-6xl font-bold text-accent-system leading-none">
+                      {t('pillars.partnership.stat')}
+                    </p>
+                    <p className="mt-2 text-xs font-mono uppercase tracking-[0.14em] text-text-muted">
+                      {t('pillars.partnership.statLabel')}
+                    </p>
+                  </div>
+                  <p className="text-xs text-text-secondary leading-relaxed">
+                    {t('pillars.partnership.body')}
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           </div>

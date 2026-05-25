@@ -61,12 +61,10 @@ test.describe('Homepage Sections', () => {
     await expect(serviceCards).toHaveCount(12)
   })
 
-  // TODO W3: badges section renamed to pillars (6 checkmarks → 3 bento pillars).
-  // Update aria-labelledby selector + rename test name when W3 lands.
-  test('should render Trust Badges section', async ({ page }) => {
-    await scrollUntilVisible(page,'section[aria-labelledby="badges"]')
-    const badgesSection = page.locator('section[aria-labelledby="badges"]')
-    await expect(badgesSection).toBeVisible()
+  test('should render Pillars bento section', async ({ page }) => {
+    await scrollUntilVisible(page,'section[aria-labelledby="pillars"]')
+    const pillarsSection = page.locator('section[aria-labelledby="pillars"]')
+    await expect(pillarsSection).toBeVisible()
   })
 
   test('should render Trust/Why Teams section', async ({ page }) => {
