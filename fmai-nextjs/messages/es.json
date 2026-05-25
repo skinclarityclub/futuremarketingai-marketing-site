@@ -2416,11 +2416,19 @@
       "description": "Las 12 habilidades de Clyde: social, blogs, anuncios, voz, leads, email, SEO/GEO y más. 9 en producción, 3 próximamente."
     },
     "hero": {
+      "eyebrow": "12 habilidades, una sola mente",
       "title": "Las 12 habilidades de Clyde",
       "subtitle": "Un Empleado AI de Marketing, doce habilidades, una memoria compartida por marca. Nueve en producción, tres próximamente."
     },
     "status": {
       "live": "Live"
+    },
+    "clyde": {
+      "title": "Empleado AI de Marketing Clyde",
+      "description": "Un único punto de contacto para todo el portafolio. Pídelo en lenguaje natural y Clyde elige la habilidad adecuada.",
+      "statusLabel": "Activo",
+      "promptIntro": "Pídele, por ejemplo:",
+      "openLink": "Abre la habilidad Clyde"
     },
     "grid_aria_label": "Lista de habilidades"
   },

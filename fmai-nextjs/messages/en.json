@@ -2416,11 +2416,19 @@
       "description": "Browse Clyde's 12 skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 9 live, 3 coming soon."
     },
     "hero": {
+      "eyebrow": "12 skills, one mind",
       "title": "Clyde's 12 skills",
       "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Nine are live in production, three are coming soon."
     },
     "status": {
       "live": "Live"
+    },
+    "clyde": {
+      "title": "Clyde AI Marketing Employee",
+      "description": "One point of contact for your entire portfolio. Ask in plain language and Clyde routes to the right skill.",
+      "statusLabel": "Active",
+      "promptIntro": "Ask something like:",
+      "openLink": "Open the Clyde skill"
     },
     "grid_aria_label": "Skills list"
   },

@@ -2416,11 +2416,19 @@
       "description": "Bekijk de 12 vaardigheden die Clyde uitvoert: social, blogs, ads, voice, leads, e-mail, SEO/GEO en meer. 9 live, 3 binnenkort."
     },
     "hero": {
+      "eyebrow": "12 vaardigheden, één brein",
       "title": "De 12 vaardigheden van Clyde",
       "subtitle": "Eén AI Marketing Medewerker, twaalf vaardigheden, één gedeeld geheugen per merk. Negen leveren al productie, drie zijn binnenkort live."
     },
     "status": {
       "live": "Live"
+    },
+    "clyde": {
+      "title": "Clyde AI Marketing Medewerker",
+      "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
+      "statusLabel": "Actief",
+      "promptIntro": "Vraag bijvoorbeeld:",
+      "openLink": "Open de Clyde-skill"
     },
     "grid_aria_label": "Lijst met vaardigheden"
   },
