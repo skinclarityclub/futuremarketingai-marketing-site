@@ -107,7 +107,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 2 — CaseStudyCard (SKC proof anchor)
+          Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
+          Verplaatst van positie 14 naar 2: interactive engagement direct
+          na hero. Visitor scoort zichzelf voordat-ie de rest leest.
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="280px">
+        <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto">
+            <LeadMagnetCTA source="home" />
+          </div>
+        </section>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 3 — CaseStudyCard (SKC proof anchor)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="380px">
         <ScrollReveal>
@@ -116,7 +129,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 3 — ServicesBento (12 skills incl. featured Clyde)
+          Sectie 4 — ServicesBento (12 skills incl. featured Clyde)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="500px">
         <ScrollReveal>
@@ -125,7 +138,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 4 — MemoryUSPTeaser (4-layer geheugen, W5.7 sequential reveal)
+          Sectie 5 — MemoryUSPTeaser (4-layer geheugen, W5.7 sequential reveal)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
@@ -145,7 +158,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 5 — ComparisonTable (DIY / Bureau / Clyde)
+          Sectie 6 — ComparisonTable (DIY / Bureau / Clyde)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="500px">
         <ScrollReveal>
@@ -154,7 +167,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 6 — ProcessTimeline (W5.4 pin-stack scrub desktop)
+          Sectie 7 — ProcessTimeline (W5.4 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
@@ -173,7 +186,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 7 — FounderSection (Daley intro)
+          Sectie 8 — FounderSection (Daley intro)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="320px">
         <ScrollReveal>
@@ -182,7 +195,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 8 — TestimonialBlock (Sindy operator-stem)
+          Sectie 9 — TestimonialBlock (Sindy operator-stem)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="280px">
         <ScrollReveal>
@@ -191,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 9 — TrustSignalsGrid (numerieke trust)
+          Sectie 10 — TrustSignalsGrid (numerieke trust)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="200px">
         <section aria-labelledby="key-metrics" className="py-12 px-6 lg:px-12">
@@ -229,7 +242,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 10 — PricingTeaser (4 tiers, W5.8 stagger reveal)
+          Sectie 11 — PricingTeaser (4 tiers, W5.8 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="420px">
         <ScrollReveal>
@@ -258,7 +271,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 11 — Pillars bento (3 inhoudelijke tiles, was: 6 checkmarks)
+          Sectie 12 — Pillars bento (3 inhoudelijke tiles, was: 6 checkmarks)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="280px">
         <section aria-labelledby="pillars" className="py-20 px-6 lg:px-12">
@@ -324,7 +337,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 12 — Trust numerieke tiles (01-04, was: 4 checkmark GlassCards)
+          Sectie 13 — Trust numerieke tiles (01-04, was: 4 checkmark GlassCards)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="300px">
         <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
@@ -364,23 +377,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 13 — Hybrid ICP (who is this for / not for)
+          Sectie 14 — Hybrid ICP (who is this for / not for)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
           <IcpSection locale={locale} />
         </ScrollReveal>
-      </LazySection>
-
-      {/* ─────────────────────────────────────────────────────────────
-          Sectie 14 — LeadMagnetCTA (mid-funnel capture, verplaatst van top)
-          ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="280px">
-        <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto">
-            <LeadMagnetCTA source="home" />
-          </div>
-        </section>
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────

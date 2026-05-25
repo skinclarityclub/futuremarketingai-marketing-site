@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 import { ArrowRight, Brain, Layers, History, SlidersHorizontal } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import type { LucideIcon } from 'lucide-react'
-import { EASE_OUT, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
+import { EASE_OUT } from '@/lib/motion/easings'
 
 type LayerKey = 'context' | 'merken' | 'historie' | 'voorkeuren'
 
@@ -15,21 +15,28 @@ const LAYERS: { key: LayerKey; index: string; Icon: LucideIcon }[] = [
   { key: 'voorkeuren', index: '04', Icon: SlidersHorizontal  },
 ]
 
+// Premium cinematic reveal: 4 layers cascaden sequentieel maar smooth, met
+// een filter-blur + opacity + x-translate ease-out. Trigger margin 0px zodat
+// alle 4 layers volledig spelen zodra de container in beeld komt, niet pas
+// halverwege. Stagger 0.18s + per-layer 0.7s = ~1.24s totale cascade.
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.18, delayChildren: 0.15 },
   },
 }
 
 const layerVariants = {
-  hidden: { opacity: 0, x: -40 },
+  hidden: { opacity: 0, x: -32, filter: 'blur(8px)' },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5, ease: EASE_OUT },
+    filter: 'blur(0px)',
+    transition: { duration: 0.7, ease: EASE_OUT },
   },
 }
+
+const MEMORY_VIEWPORT = { once: true, margin: '0px' } as const
 
 interface MemoryUSPTeaserProps {
   eyebrow: string
@@ -72,7 +79,7 @@ export function MemoryUSPTeaser(props: MemoryUSPTeaserProps) {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={VIEWPORT_DEFAULT}
+          viewport={MEMORY_VIEWPORT}
         >
           {LAYERS.map(({ key, index, Icon }, i) => (
             <motion.div
