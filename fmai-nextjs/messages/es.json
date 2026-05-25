@@ -122,6 +122,62 @@
       "portraitAlt": "Retrato de Daley, founder de FutureMarketingAI",
       "ctaLink": "Más sobre Daley y el enfoque"
     },
+    "comparison": {
+      "eyebrow": "Comparativa",
+      "title": "Por qué un AI Marketing Team Member, no aún más herramientas",
+      "subtitle": "¿Qué cambia frente a un stack DIY o una agencia tradicional? Seis puntos que importan para tu portfolio de clientes.",
+      "headers": {
+        "topic": "Tema",
+        "diy": "Stack DIY",
+        "diyHint": "ChatGPT, Jasper, Buffer",
+        "bureau": "Agencia tradicional",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "geheugen": {
+          "label": "Memoria entre sesiones",
+          "diy": "Se reinicia con cada prompt",
+          "bureau": "El account manager conoce tus marcas",
+          "clyde": "Memoria persistente en cuatro capas por marca"
+        },
+        "schaalbaar": {
+          "label": "Escala con más marcas",
+          "diy": "Rehacer manualmente cada marca",
+          "bureau": "Más horas lineales, más coste",
+          "clyde": "Coste marginal por marca extra"
+        },
+        "sovereignty": {
+          "label": "Soberanía de datos en la UE",
+          "diy": "Enviado a cloud de EE. UU.",
+          "bureau": "Depende de las herramientas de la agencia",
+          "clyde": "Servidores self-hosted en la UE"
+        },
+        "setup": {
+          "label": "Tiempo de setup hasta producción",
+          "diy": "2 a 3 semanas de trabajo propio",
+          "bureau": "4 a 8 semanas de onboarding",
+          "clyde": "4 semanas de onboarding guiado"
+        },
+        "prijs": {
+          "label": "Coste mensual para 4 marcas",
+          "diy": "€250 a €400 más tu tiempo",
+          "bureau": "€4.000 a €12.000",
+          "clyde": "€1.196 a €1.996"
+        },
+        "lockin": {
+          "label": "Lock-in y exportación de datos",
+          "diy": "Varía según la herramienta",
+          "bureau": "Los datos suelen quedarse en la agencia",
+          "clyde": "Exportación en 24 h, API abierta"
+        }
+      },
+      "strengthLabels": {
+        "weak": "Débil",
+        "mixed": "Mixto",
+        "strong": "Fuerte"
+      },
+      "ctaLink": "Comparativa y enfoque completos"
+    },
     "memoryUsp": {
       "eyebrow": "Memoria, no sesiones",
       "title": "Otras IA reinician cada prompt. Clyde recuerda tus marcas.",

@@ -122,6 +122,62 @@
       "portraitAlt": "Portret van Daley, founder van FutureMarketingAI",
       "ctaLink": "Meer over Daley en de aanpak"
     },
+    "comparison": {
+      "eyebrow": "Vergelijking",
+      "title": "Waarom een AI Marketing Medewerker, niet nog meer tools",
+      "subtitle": "Wat is het verschil met een DIY-stack of een traditioneel bureau? Op zes punten die er voor jouw klantportfolio toe doen.",
+      "headers": {
+        "topic": "Onderwerp",
+        "diy": "DIY-stack",
+        "diyHint": "ChatGPT, Jasper, Buffer",
+        "bureau": "Traditioneel bureau",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "geheugen": {
+          "label": "Geheugen tussen sessies",
+          "diy": "Reset bij elke prompt",
+          "bureau": "Account-manager kent jouw merken",
+          "clyde": "Vier lagen persistent geheugen per merk"
+        },
+        "schaalbaar": {
+          "label": "Schaalbaar bij meer merken",
+          "diy": "Handmatig per merk opnieuw inrichten",
+          "bureau": "Lineair meer uren, hogere kosten",
+          "clyde": "Marginale kosten per extra merk"
+        },
+        "sovereignty": {
+          "label": "EU-data sovereignty",
+          "diy": "US-cloud verzonden",
+          "bureau": "Afhankelijk van bureau-tools",
+          "clyde": "Self-hosted EU-servers"
+        },
+        "setup": {
+          "label": "Setup-tijd tot productie",
+          "diy": "2 tot 3 weken eigen werk",
+          "bureau": "4 tot 8 weken inrichting",
+          "clyde": "4 weken begeleide onboarding"
+        },
+        "prijs": {
+          "label": "Prijs per maand voor 4 merken",
+          "diy": "250 tot 400 euro plus jouw tijd",
+          "bureau": "4.000 tot 12.000 euro",
+          "clyde": "1.196 tot 1.996 euro"
+        },
+        "lockin": {
+          "label": "Lock-in en data-export",
+          "diy": "Per tool verschillend",
+          "bureau": "Data vaak bij bureau",
+          "clyde": "Export binnen 24u, open API"
+        }
+      },
+      "strengthLabels": {
+        "weak": "Zwak",
+        "mixed": "Gemengd",
+        "strong": "Sterk"
+      },
+      "ctaLink": "Volledige vergelijking en aanpak"
+    },
     "memoryUsp": {
       "eyebrow": "Geheugen, geen sessies",
       "title": "Andere AI begint elke prompt opnieuw. Clyde onthoudt jouw merken.",

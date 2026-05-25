@@ -122,6 +122,62 @@
       "portraitAlt": "Portrait of Daley, founder of FutureMarketingAI",
       "ctaLink": "More about Daley and the approach"
     },
+    "comparison": {
+      "eyebrow": "Comparison",
+      "title": "Why an AI Marketing Team Member, not yet more tools",
+      "subtitle": "What is different from a DIY stack or a traditional agency? Six points that matter for your client portfolio.",
+      "headers": {
+        "topic": "Topic",
+        "diy": "DIY stack",
+        "diyHint": "ChatGPT, Jasper, Buffer",
+        "bureau": "Traditional agency",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "geheugen": {
+          "label": "Memory across sessions",
+          "diy": "Resets at every prompt",
+          "bureau": "Account manager knows your brands",
+          "clyde": "Four-layer persistent memory per brand"
+        },
+        "schaalbaar": {
+          "label": "Scales with more brands",
+          "diy": "Manually rebuild for every brand",
+          "bureau": "Linear hours up, costs up",
+          "clyde": "Marginal cost per extra brand"
+        },
+        "sovereignty": {
+          "label": "EU data sovereignty",
+          "diy": "Sent to US cloud",
+          "bureau": "Depends on agency tooling",
+          "clyde": "Self-hosted EU servers"
+        },
+        "setup": {
+          "label": "Setup time to production",
+          "diy": "2 to 3 weeks of your own work",
+          "bureau": "4 to 8 weeks of onboarding",
+          "clyde": "4 weeks of guided onboarding"
+        },
+        "prijs": {
+          "label": "Monthly cost for 4 brands",
+          "diy": "€250 to €400 plus your time",
+          "bureau": "€4,000 to €12,000",
+          "clyde": "€1,196 to €1,996"
+        },
+        "lockin": {
+          "label": "Lock-in and data export",
+          "diy": "Varies per tool",
+          "bureau": "Data often stays with the agency",
+          "clyde": "Export within 24h, open API"
+        }
+      },
+      "strengthLabels": {
+        "weak": "Weak",
+        "mixed": "Mixed",
+        "strong": "Strong"
+      },
+      "ctaLink": "Full comparison and approach"
+    },
     "memoryUsp": {
       "eyebrow": "Memory, not sessions",
       "title": "Other AI restarts every prompt. Clyde remembers your brands.",
