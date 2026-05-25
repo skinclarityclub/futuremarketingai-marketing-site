@@ -25,7 +25,11 @@ const PREVIEW_BARS = [
   { label: 'Team', value: 71 },
 ] as const
 
-const PREVIEW_SKILLS = ['Blog Factory', 'Reporting', 'Research'] as const
+const PREVIEW_SKILLS = [
+  { name: 'Blog Factory', desc: 'Meer content, zelfde team' },
+  { name: 'Reporting', desc: 'Automatische rapportage' },
+  { name: 'Research', desc: 'Marktinzicht op aanvraag' },
+] as const
 
 // Score ring geometry
 const RING_R = 34
@@ -86,7 +90,7 @@ function ResultPreview() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1], delay: 0.1 }}
-      className="relative flex h-full flex-col gap-5 p-6"
+      className="relative flex h-full flex-col gap-4 p-6"
     >
       {/* Ambient glow behind ring */}
       <div
@@ -137,17 +141,81 @@ function ResultPreview() {
         ))}
       </div>
 
-      {/* Recommended skills */}
-      <div className="mt-auto flex flex-wrap gap-1.5">
-        {PREVIEW_SKILLS.map((skill) => (
-          <span
-            key={skill}
-            className="rounded-full border border-accent-system/20 bg-accent-system/[0.08] px-2.5 py-0.5 text-[10px] font-medium text-accent-system/80"
-          >
-            {skill}
+      {/* Divider */}
+      <div className="h-px bg-white/[0.06]" />
+
+      {/* Key insight — biggest growth opportunity */}
+      <motion.div
+        initial={{ opacity: 0, y: 4 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 1.0, ease: [0.32, 0.72, 0, 1] }}
+        className="rounded-lg border border-[#f5a623]/15 bg-[#f5a623]/[0.06] px-3 py-2.5"
+      >
+        <div className="mb-1.5 flex items-center gap-1.5">
+          <span className="relative flex h-2 w-2 shrink-0">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f5a623] opacity-40" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f5a623]/70" />
           </span>
-        ))}
-      </div>
+          <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#f5a623]/60">
+            Meeste winst hier
+          </span>
+        </div>
+        <p className="text-[11px] font-medium leading-relaxed text-[#f5a623]/85">
+          Content, rapportage en research: jouw drie grootste tijdvreters
+        </p>
+      </motion.div>
+
+      {/* Recommended skills with section header + descriptors */}
+      <motion.div
+        initial={{ opacity: 0, y: 4 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, delay: 1.2, ease: [0.32, 0.72, 0, 1] }}
+        className="flex flex-col gap-2"
+      >
+        <div className="flex items-center gap-2">
+          <span className="shrink-0 text-[9px] font-bold uppercase tracking-[0.14em] text-text-muted/60">
+            AI-skills voor jouw profiel
+          </span>
+          <div className="h-px flex-1 bg-white/[0.06]" />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          {PREVIEW_SKILLS.map(({ name, desc }, i) => (
+            <motion.div
+              key={name}
+              initial={{ opacity: 0, x: -4 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.4, delay: 1.3 + i * 0.09, ease: [0.32, 0.72, 0, 1] }}
+              className="flex items-center gap-2"
+            >
+              <span className="shrink-0 rounded-full border border-accent-system/20 bg-accent-system/[0.08] px-2.5 py-0.5 text-[10px] font-medium text-accent-system/80">
+                {name}
+              </span>
+              <span className="min-w-0 truncate text-[10px] text-text-muted">
+                {desc}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Footer — implies more depth beyond this preview */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, delay: 1.55, ease: [0.32, 0.72, 0, 1] }}
+        className="mt-auto flex items-center gap-2 pt-1"
+      >
+        <div className="h-px flex-1 bg-white/[0.04]" />
+        <span className="text-[9px] text-text-muted/40">
+          + 4 andere inzichten in jouw rapport
+        </span>
+        <ArrowRight className="h-2.5 w-2.5 shrink-0 text-text-muted/35" />
+      </motion.div>
     </motion.div>
   )
 }
