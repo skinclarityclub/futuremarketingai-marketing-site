@@ -608,6 +608,24 @@
         "social_aria": {
           "linkedin": "Follow us on LinkedIn",
           "twitter": "Follow us on X"
+        },
+        "eyebrow": {
+          "brand": "Agency",
+          "skills": "Skills",
+          "company": "Company",
+          "resources": "Resources"
+        },
+        "newsletter": {
+          "label": "Email address",
+          "placeholder": "you@agency.com",
+          "cta": "Subscribe",
+          "consent": "I want monthly updates about Clyde and can unsubscribe at any time.",
+          "success": "Check your inbox for the confirmation email.",
+          "error": "Subscription failed. Please try again later."
+        },
+        "labels": {
+          "live": "Live",
+          "comingSoon": "Coming soon"
         }
       }
     },

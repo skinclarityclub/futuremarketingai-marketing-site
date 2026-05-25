@@ -1,161 +1,115 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import { Sparkles, Linkedin, Twitter } from 'lucide-react'
+import { Linkedin, Twitter } from 'lucide-react'
+import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { CookieReopenButton } from './CookieReopenButton'
+import { FooterNewsletter } from './FooterNewsletter'
 
 interface FooterProps {
   locale: string
 }
+
+type SkillHref =
+  | '/skills/social-media'
+  | '/skills/blog-factory'
+  | '/skills/voice-agent'
+  | '/skills/lead-qualifier'
+  | '/skills/ad-creator'
+  | '/skills/reel-builder'
+  | '/skills/email-management'
+  | '/skills/manychat'
+  | '/skills/reporting'
+  | '/skills/research'
+  | '/skills/seo-geo'
+  | '/skills/clyde'
+
+interface FooterSkill {
+  href: SkillHref
+  navKey: string
+  comingSoon?: boolean
+}
+
+const FOOTER_SKILLS: readonly FooterSkill[] = [
+  { href: '/skills/clyde', navKey: 'clyde' },
+  { href: '/skills/social-media', navKey: 'social_media' },
+  { href: '/skills/blog-factory', navKey: 'blog_factory' },
+  { href: '/skills/voice-agent', navKey: 'voice_agent', comingSoon: true },
+  { href: '/skills/lead-qualifier', navKey: 'lead_qualifier' },
+  { href: '/skills/email-management', navKey: 'email_management' },
+  { href: '/skills/manychat', navKey: 'manychat' },
+  { href: '/skills/ad-creator', navKey: 'ad_creator', comingSoon: true },
+  { href: '/skills/reel-builder', navKey: 'reel_builder', comingSoon: true },
+  { href: '/skills/reporting', navKey: 'reporting' },
+  { href: '/skills/research', navKey: 'research' },
+  { href: '/skills/seo-geo', navKey: 'seo_geo' },
+]
 
 export async function Footer({ locale }: FooterProps) {
   const t = await getTranslations({ locale, namespace: 'common' })
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative mt-16 border-t border-border-primary bg-bg-deep">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Top Section: Brand + Navigation */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-8">
-          {/* Brand Column */}
-          <div className="flex flex-col gap-3">
-            <Link href="/" className="flex items-center gap-2 group w-fit">
-              <Sparkles className="w-5 h-5 text-accent-system transition-transform group-hover:rotate-12" />
-              <span className="font-bold text-base text-text-primary">
-                {t('landing.footer.brand_name')}
-              </span>
-            </Link>
-            <p className="text-sm text-text-muted max-w-xs">{t('landing.footer.tagline')}</p>
-          </div>
+    <footer className="relative mt-16 bg-bg-deep">
+      {/* Decorative top accent line — subtle accent-system gradient scanline */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-system/40 to-transparent"
+      />
+      <div className="border-t border-border-primary/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          {/* 4-column bento: Brand+Newsletter | Skills | Company | Resources */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-10">
+            {/* Brand + Newsletter (4 cols on lg) */}
+            <div className="lg:col-span-4 flex flex-col gap-4">
+              <Link href="/" className="flex items-center gap-2.5 group w-fit">
+                <LogoSynapse size={26} />
+                <span className="font-display font-bold text-base text-text-primary tracking-tight">
+                  {t('landing.footer.brand_name')}
+                </span>
+              </Link>
+              <p className="text-sm text-text-muted max-w-xs leading-relaxed">
+                {t('landing.footer.tagline')}
+              </p>
+              <div className="pt-2">
+                <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-2.5">
+                  {t('landing.footer.eyebrow.brand')}
+                </p>
+                <FooterNewsletter />
+              </div>
+            </div>
 
-          {/* Navigation Grid: Services | Company | Resources */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
-            {/* Skills */}
-            <nav aria-label="Skills">
-              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
-                {t('landing.footer.sections.skills')}
-              </h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/skills/social-media"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.social_media')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/blog-factory"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.blog_factory')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/voice-agent"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
-                  >
-                    <span>{t('landing.footer.nav.voice_agent')}</span>
-                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
-                      {t('comingSoon')}
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/lead-qualifier"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.lead_qualifier')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/ad-creator"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
-                  >
-                    <span>{t('landing.footer.nav.ad_creator')}</span>
-                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
-                      {t('comingSoon')}
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/reel-builder"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5"
-                  >
-                    <span>{t('landing.footer.nav.reel_builder')}</span>
-                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
-                      {t('comingSoon')}
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/email-management"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.email_management')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/manychat"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.manychat')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/reporting"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.reporting')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/research"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.research')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/seo-geo"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.seo_geo')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/skills/clyde"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.clyde')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.pricing')}
-                  </Link>
-                </li>
+            {/* Skills column (4 cols on lg, 2-col internal grid) */}
+            <nav aria-label={t('landing.footer.sections.skills')} className="lg:col-span-4">
+              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
+                {t('landing.footer.eyebrow.skills')}
+              </p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+                {FOOTER_SKILLS.map((skill) => (
+                  <li key={skill.navKey}>
+                    <Link
+                      href={skill.href}
+                      className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5 group/skill"
+                    >
+                      <span
+                        aria-hidden
+                        className={`inline-block w-1.5 h-1.5 rounded-full transition-all ${
+                          skill.comingSoon
+                            ? 'bg-[#F5A623]/60 group-hover/skill:bg-[#F5A623]'
+                            : 'bg-status-active/70 group-hover/skill:bg-status-active'
+                        }`}
+                      />
+                      <span className="truncate">{t(`landing.footer.nav.${skill.navKey}`)}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
 
-            {/* Company */}
-            <nav aria-label="Company">
-              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
-                {t('landing.footer.sections.company')}
-              </h3>
+            {/* Company column (2 cols on lg) */}
+            <nav aria-label={t('landing.footer.sections.company')} className="lg:col-span-2">
+              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
+                {t('landing.footer.eyebrow.company')}
+              </p>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -175,20 +129,36 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
+                    href="/pricing"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.pricing')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/founding-member"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.founding_member')}
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/case-studies/skinclarity-club"
+                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.caseStudies')}
+                  </Link>
+                </li>
               </ul>
             </nav>
 
-            {/* Resources */}
-            <nav aria-label="Resources">
-              <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">
-                {t('landing.footer.sections.resources')}
-              </h3>
+            {/* Resources column (2 cols on lg) */}
+            <nav aria-label={t('landing.footer.sections.resources')} className="lg:col-span-2">
+              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
+                {t('landing.footer.eyebrow.resources')}
+              </p>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -204,14 +174,6 @@ export async function Footer({ locale }: FooterProps) {
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.memory')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/case-studies/skinclarity-club"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.caseStudies')}
                   </Link>
                 </li>
                 <li>
@@ -233,63 +195,66 @@ export async function Footer({ locale }: FooterProps) {
               </ul>
             </nav>
           </div>
-        </div>
 
-        {/* Bottom Section: Copyright + Legal + Social */}
-        <div className="pt-8 border-t border-border-primary">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* Left: Copyright + Status + Legal links */}
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <p className="text-xs text-text-muted">{t('landing.footer.copyright', { year })}</p>
-              <div className="flex items-center gap-2 px-3 py-1 bg-accent-system/10 border border-accent-system/20 rounded-sm">
-                <div className="w-1.5 h-1.5 bg-accent-system rounded-full animate-pulse" />
-                <span className="text-xs text-text-secondary">
-                  {t('landing.footer.status_badge')}
-                </span>
+          {/* Bottom strip: copyright + status + legal + social + cookie-reopen */}
+          <div className="pt-6 border-t border-border-primary/60">
+            <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p className="text-xs text-text-muted">
+                  {t('landing.footer.copyright', { year })}
+                </p>
+                <div className="flex items-center gap-1.5 px-2 py-0.5 bg-accent-system/10 border border-accent-system/20 rounded-full">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-system opacity-40" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-system" />
+                  </span>
+                  <span className="text-[10px] font-medium text-text-secondary">
+                    {t('landing.footer.status_badge')}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/legal/privacy"
+                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.privacy')}
+                  </Link>
+                  <Link
+                    href="/legal/terms"
+                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.terms')}
+                  </Link>
+                  <Link
+                    href="/legal/cookies"
+                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.cookies')}
+                  </Link>
+                  <CookieReopenButton />
+                </div>
               </div>
+
               <div className="flex items-center gap-3">
-                <Link
-                  href="/legal/privacy"
-                  className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                <a
+                  href="https://www.linkedin.com/company/futuremarketingai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-md text-text-muted hover:text-accent-system hover:bg-white/5 transition-all"
+                  aria-label={t('landing.footer.social_aria.linkedin')}
                 >
-                  {t('landing.footer.nav.privacy')}
-                </Link>
-                <Link
-                  href="/legal/terms"
-                  className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://twitter.com/FutureMarketAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-md text-text-muted hover:text-accent-system hover:bg-white/5 transition-all"
+                  aria-label={t('landing.footer.social_aria.twitter')}
                 >
-                  {t('landing.footer.nav.terms')}
-                </Link>
-                <Link
-                  href="/legal/cookies"
-                  className="text-xs text-text-muted hover:text-text-primary transition-colors"
-                >
-                  {t('landing.footer.nav.cookies')}
-                </Link>
-                <CookieReopenButton />
+                  <Twitter className="w-4 h-4" />
+                </a>
               </div>
-            </div>
-
-            {/* Right: Social Links */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://www.linkedin.com/company/futuremarketingai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-accent-system transition-colors"
-                aria-label={t('landing.footer.social_aria.linkedin')}
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="https://twitter.com/FutureMarketAI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-accent-system transition-colors"
-                aria-label={t('landing.footer.social_aria.twitter')}
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>

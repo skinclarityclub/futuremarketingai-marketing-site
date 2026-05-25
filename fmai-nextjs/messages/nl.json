@@ -608,6 +608,24 @@
         "social_aria": {
           "linkedin": "Volg ons op LinkedIn",
           "twitter": "Volg ons op X"
+        },
+        "eyebrow": {
+          "brand": "Bureau",
+          "skills": "Vaardigheden",
+          "company": "Bedrijf",
+          "resources": "Bronnen"
+        },
+        "newsletter": {
+          "label": "E-mailadres",
+          "placeholder": "jij@bureau.nl",
+          "cta": "Aanmelden",
+          "consent": "Ik wil maandelijkse updates over Clyde en mag me altijd uitschrijven.",
+          "success": "Check je inbox voor de bevestigingsmail.",
+          "error": "Aanmelden lukte niet. Probeer het later opnieuw."
+        },
+        "labels": {
+          "live": "Live",
+          "comingSoon": "Binnenkort"
         }
       }
     },
