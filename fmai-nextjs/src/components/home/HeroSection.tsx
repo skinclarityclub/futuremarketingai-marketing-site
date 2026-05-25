@@ -54,8 +54,7 @@ export function HeroSection(props: HeroSectionProps) {
             {badge}
           </motion.div>
 
-          {/* Headline — kinetic word-by-word reveal (W5.6) */}
-          {/* TODO W3: remove gradient accent on headlineAccent — impeccable ban, switch to solid teal */}
+          {/* Headline — kinetic word-by-word reveal (W5.6) with solid teal accent */}
           <h1
             id="hero"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
@@ -67,8 +66,7 @@ export function HeroSection(props: HeroSectionProps) {
             />
             <KineticHeadline
               text={headlineAccent}
-              className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
-              style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
+              className="block text-accent-system"
               baseDelay={0.35}
             />
           </h1>

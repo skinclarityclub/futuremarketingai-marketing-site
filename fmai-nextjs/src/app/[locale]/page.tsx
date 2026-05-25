@@ -12,7 +12,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
-import { PaperShaderMesh } from '@/components/hero/PaperShaderMesh'
+import { HeroBackdrop } from '@/components/hero/HeroBackdrop'
 import { HeroSection } from '@/components/home/HeroSection'
 import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
@@ -63,11 +63,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
 
       {/*
-        Hero background — Paper Shaders WebGL MeshGradient (W5.2).
-        Home-only. Dynamic-imported client-only; reduced-motion users fall
-        back to the static GradientMesh blobs.
+        Hero background — statische subtle radial + grid overlay.
+        Vervangt PaperShaderMesh (W5.2 reverted): user feedback animated
+        WebGL mesh was te dominant. Server-rendered, geen JS, geen WebGL.
       */}
-      <PaperShaderMesh />
+      <HeroBackdrop />
 
       {/* JSON-LD Structured Data */}
       <WebSiteJsonLd />

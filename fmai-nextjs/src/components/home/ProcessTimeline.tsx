@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { useReducedMotion } from 'motion/react'
+import { motion } from 'motion/react'
+import { EASE_OUT, STAGGER_NORMAL, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
 
 const WEEKS = ['1', '2', '3', '4'] as const
 
@@ -12,72 +12,33 @@ interface ProcessTimelineProps {
   weeks: Record<'1' | '2' | '3' | '4', { label: string; heading: string; body: string }>
 }
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: STAGGER_NORMAL, delayChildren: 0.1 },
+  },
+}
+
+const weekVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: EASE_OUT },
+  },
+}
+
+/**
+ * 4-week onboarding timeline. Horizontal desktop, vertical mobile.
+ *
+ * W5.4 revision (2026-05-25): de oorspronkelijke pin-stack scrub (300vh
+ * pinned scroll) gaf een dead-zone scroll-gevoel tussen Onboarding en
+ * FounderSection. Vervangen door whileInView stagger reveal — consistent
+ * met MemoryUSP / Pricing. Reduced-motion: MotionConfig stript de y-translate.
+ */
 export function ProcessTimeline({ eyebrow, title, subtitle, weeks }: ProcessTimelineProps) {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const pinRef = useRef<HTMLDivElement>(null)
-  const reduced = useReducedMotion()
-
-  // W5.4 — GSAP pin-stack scrub on desktop only. Mobile + reduced-motion get
-  // the static 4-step grid. Dynamic-imports gsap so the bundle never lands
-  // on reduced-motion users or in SSR.
-  useEffect(() => {
-    if (reduced || !sectionRef.current || !pinRef.current) return
-    if (typeof window === 'undefined' || window.innerWidth < 1024) return
-
-    let cleanup: (() => void) | undefined
-    let cancelled = false
-
-    ;(async () => {
-      const { gsap } = await import('gsap')
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-      if (cancelled) return
-
-      gsap.registerPlugin(ScrollTrigger)
-
-      const ctx = gsap.context(() => {
-        // Pin the timeline visualisation for ~300vh of scroll.
-        ScrollTrigger.create({
-          trigger: pinRef.current,
-          start: 'top top+=80',
-          end: '+=300%',
-          pin: true,
-          pinSpacing: true,
-          scrub: 1,
-        })
-
-        // Per-week reveal as the user scrolls through the pinned window.
-        const weekEls = pinRef.current!.querySelectorAll<HTMLLIElement>('[data-week]')
-        weekEls.forEach((el, i) => {
-          gsap.fromTo(
-            el,
-            { opacity: 0.2, y: 24 },
-            {
-              opacity: 1,
-              y: 0,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: pinRef.current,
-                start: `top top+=${80 - (i + 0.5) * 50}`,
-                end: `+=${75}%`,
-                scrub: 1,
-              },
-            }
-          )
-        })
-      }, sectionRef)
-
-      cleanup = () => ctx.revert()
-    })()
-
-    return () => {
-      cancelled = true
-      cleanup?.()
-    }
-  }, [reduced])
-
   return (
     <section
-      ref={sectionRef}
       aria-labelledby="process-timeline"
       className="py-20 px-6 lg:px-12"
     >
@@ -97,18 +58,24 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks }: ProcessTime
           </p>
         </div>
 
-        <div ref={pinRef} className="relative">
+        <div className="relative">
           {/* Horizontal connector — desktop only */}
           <span
             aria-hidden
             className="hidden lg:block absolute top-[14px] left-[8px] right-[8px] h-px bg-gradient-to-r from-accent-system/60 via-accent-system/30 to-transparent"
           />
 
-          <ol className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-5 relative">
+          <motion.ol
+            className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-5 relative"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT_DEFAULT}
+          >
             {WEEKS.map((week, i) => (
-              <li
+              <motion.li
                 key={week}
-                data-week={week}
+                variants={weekVariants}
                 className="relative flex lg:flex-col gap-4 lg:gap-0"
               >
                 {/* Vertical connector — mobile only */}
@@ -140,9 +107,9 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks }: ProcessTime
                     {weeks[week].body}
                   </p>
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ol>
+          </motion.ol>
         </div>
       </div>
     </section>
