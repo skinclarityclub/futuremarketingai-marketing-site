@@ -3,14 +3,16 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
-import { Link } from '@/i18n/navigation'
-import { ArrowRight } from 'lucide-react'
 import {
   pickArchetype,
   pickStage,
   ARCHETYPE_GRADIENT,
   LEGACY_PERSONA_FALLBACK,
 } from '@/lib/assessment/persona-presentation'
+import {
+  SharedResultReveal,
+  type SharedResultScore,
+} from '@/components/assessment/SharedResultReveal'
 
 /**
  * Public, shareable result page for the AI Readiness Scan.
@@ -134,102 +136,42 @@ export default async function AssessmentResultPage({
   const stage = legacyFallback ? legacyFallback.stage : pickStage(str(sp.st))
 
   const total = clampScore(sp.t)
-  const scores: Record<CategoryKey, number> = {
+  const scoresMap: Record<CategoryKey, number> = {
     s: clampScore(sp.s),
     d: clampScore(sp.d),
     tl: clampScore(sp.tl),
     tm: clampScore(sp.tm),
   }
-  const lowest = CATEGORY_KEYS.reduce((acc, k) => (scores[k] < scores[acc] ? k : acc))
+  const lowest = CATEGORY_KEYS.reduce((acc, k) => (scoresMap[k] < scoresMap[acc] ? k : acc))
 
   const t = await getTranslations({ locale, namespace: 'assessment.resultShared' })
   const tResult = await getTranslations({ locale, namespace: 'assessment.result' })
   const tCats = await getTranslations({ locale, namespace: 'assessment.categories' })
 
+  const scores: readonly SharedResultScore[] = CATEGORY_KEYS.map((k) => ({
+    key: k,
+    label: tCats(CATEGORY_I18N[k]),
+    score: scoresMap[k],
+    isLowest: k === lowest,
+  }))
+
   return (
     <PageShell>
-      <main className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-        <div className="text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-accent-system">
-            {t('eyebrow')}
-          </p>
-          <p className="mb-2 text-lg text-text-secondary">{tResult('preTitle')}</p>
-          <h1 className="mb-4 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl">
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: ARCHETYPE_GRADIENT[archetype] }}
-            >
-              {tResult(`archetypes.${archetype}.name`)}
-            </span>
-          </h1>
-          {/* Stage badge */}
-          <div className="mb-4 flex items-center justify-center">
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-text-secondary">
-              {tResult('stagePrefix')} {tResult(`stages.${stage}.label`)}
-            </span>
-          </div>
-          <p className="mb-10 font-mono text-2xl text-text-primary">
-            {total}
-            <span className="text-text-secondary">/100</span>
-          </p>
-        </div>
-
-        <section
-          className="mb-10 rounded-2xl border border-border-primary bg-white/[0.02] p-6 md:p-8"
-          aria-labelledby="shared-scores"
-        >
-          <h2 id="shared-scores" className="mb-5 text-base font-semibold text-text-primary">
-            {t('scoresHeading')}
-          </h2>
-          <div className="space-y-3.5">
-            {CATEGORY_KEYS.map((k) => {
-              const score = scores[k]
-              const isLowest = k === lowest
-              return (
-                <div key={k}>
-                  <div className="mb-1.5 flex items-center justify-between text-sm">
-                    <span className={isLowest ? 'text-accent-human' : 'text-text-primary'}>
-                      {tCats(CATEGORY_I18N[k])}
-                      {isLowest && (
-                        <span className="ml-2 inline-flex items-center rounded-full border border-accent-human/30 bg-accent-human/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-human">
-                          {t('focusLabel')}
-                        </span>
-                      )}
-                    </span>
-                    <span
-                      className={`font-mono text-xs ${
-                        isLowest ? 'text-accent-human' : 'text-text-secondary'
-                      }`}
-                    >
-                      {score}/100
-                    </span>
-                  </div>
-                  <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.04]">
-                    <div
-                      className={`h-full rounded-full ${
-                        isLowest ? 'bg-accent-human' : 'bg-accent-system'
-                      }`}
-                      style={{ width: `${score}%` }}
-                    />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </section>
-
-        <div className="rounded-2xl border border-accent-system/30 bg-gradient-to-br from-white/[0.02] to-accent-system/[0.04] p-6 text-center md:p-8">
-          <p className="mb-5 text-base text-text-primary md:text-lg">{t('ctaHeadline')}</p>
-          <Link
-            href="/assessment"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-6 py-3 text-sm font-semibold text-bg-deep transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-          >
-            {t('ctaButton')}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <p className="mt-3 text-xs text-text-muted">{t('ctaHint')}</p>
-        </div>
-      </main>
+      <SharedResultReveal
+        eyebrow={t('eyebrow')}
+        preTitle={tResult('preTitle')}
+        archetypeName={tResult(`archetypes.${archetype}.name`)}
+        archetypeGradient={ARCHETYPE_GRADIENT[archetype]}
+        stagePrefix={tResult('stagePrefix')}
+        stageLabel={tResult(`stages.${stage}.label`)}
+        total={total}
+        scoresHeading={t('scoresHeading')}
+        focusLabel={t('focusLabel')}
+        scores={scores}
+        ctaHeadline={t('ctaHeadline')}
+        ctaButton={t('ctaButton')}
+        ctaHint={t('ctaHint')}
+      />
     </PageShell>
   )
 }
