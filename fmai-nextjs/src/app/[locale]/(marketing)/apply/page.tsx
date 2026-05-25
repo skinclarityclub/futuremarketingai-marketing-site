@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -103,7 +104,9 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
               <SectionHeading id="apply-form" className="mb-6 text-2xl">
                 {t('form.title')}
               </SectionHeading>
-              <ApplicationForm />
+              <Suspense fallback={null}>
+                <ApplicationForm />
+              </Suspense>
             </GlassCard>
           </div>
         </div>

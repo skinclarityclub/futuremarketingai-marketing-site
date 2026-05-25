@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { z } from 'zod'
 import { useTranslations } from 'next-intl'
 import { ApplyCalendlyInline } from '@/components/interactive/ApplyCalendlyInline'
@@ -43,6 +44,9 @@ function mapIssueToKey(field: string, code: string): string {
 export function ApplicationForm() {
   const t = useTranslations('apply.form')
   const tCal = useTranslations('apply.calendly')
+  const searchParams = useSearchParams()
+  const prefillEmail = searchParams?.get('email') ?? ''
+  const prefillAgency = searchParams?.get('agency') ?? ''
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
@@ -171,6 +175,7 @@ export function ApplicationForm() {
           aria-required="true"
           autoComplete="email"
           inputMode="email"
+          defaultValue={prefillEmail}
           aria-invalid={Boolean(fieldErrors.email)}
           aria-describedby={fieldErrors.email ? 'email-err' : undefined}
           className={inputClasses}
@@ -193,6 +198,7 @@ export function ApplicationForm() {
           type="text"
           maxLength={150}
           autoComplete="organization"
+          defaultValue={prefillAgency}
           aria-invalid={Boolean(fieldErrors.agency)}
           aria-describedby={fieldErrors.agency ? 'agency-err' : undefined}
           className={inputClasses}
