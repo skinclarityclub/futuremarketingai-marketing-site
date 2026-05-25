@@ -14,8 +14,9 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
-import { TierPricingCard } from '@/components/pricing/TierPricingCard'
+import { PricingExperience } from '@/components/pricing/PricingExperience'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
@@ -36,25 +37,21 @@ export async function generateMetadata({
 }
 
 // Founding-first ordering. Founding stays anchored at €997 lifetime; Growth /
-// Pro / Enterprise are workspace-priced (live slider in the card itself).
-// Per 2026-04-28 the "lockedUntilFoundingFull" gating callout was retired:
-// workspace-pricing gives Founding a clean math advantage for portfolios of
-// 3+ brands (€997 fixed vs €499×3 = €1,497), so the routing is implicit.
-const TIER_KEYS = ['founding', 'growth', 'professional', 'enterprise'] as const
-
-const TIER_CONFIG: Record<
-  (typeof TIER_KEYS)[number],
-  { featureCount: number; highlighted: boolean; badge?: 'founding' }
-> = {
-  founding: { featureCount: 10, highlighted: true, badge: 'founding' },
-  growth: { featureCount: 8, highlighted: false },
-  professional: { featureCount: 8, highlighted: false },
-  enterprise: { featureCount: 7, highlighted: false },
-}
+// Pro / Enterprise are workspace-priced (live shared slider above the grid).
+const TIER_FEATURE_COUNTS = {
+  founding: 10,
+  growth: 8,
+  professional: 8,
+  enterprise: 7,
+} as const
 
 const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const
 const SKILL_PACK_KEYS = ['voiceMinutes', 'videoAds', 'reels', 'blogPower'] as const
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'] as const
+
+// Mid-range slider start: 5 workspaces = top of Growth / bottom of Pro,
+// shows tier-transition mechanic on first load without needing a drag.
+const INITIAL_WORKSPACES = 5
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -62,11 +59,9 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
 
   const t = await getTranslations({ locale, namespace: 'pricing' })
 
-  // TierPricingCard is a Client Component (it owns the workspace slider state)
-  // and reads the pricing namespace via useTranslations(). The root locale
-  // layout's NextIntlClientProvider only ships GLOBAL_CLIENT_NAMESPACES, so we
-  // scope an extra provider here to hand the pricing namespace to that subtree
-  // without enlarging the global client payload.
+  // PricingExperience + its slider live as a single subtree that consumes
+  // the pricing namespace via useTranslations(). Global client payload only
+  // ships GLOBAL_CLIENT_NAMESPACES, so we scope a local provider here.
   const messages = await getMessages()
   const pricingMessages = pick(messages, ['pricing'] as const)
 
@@ -97,46 +92,43 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       <Breadcrumbs path="/pricing" locale={locale} />
 
       {/* Hero */}
-      <section className="relative pt-24 pb-12 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+      <section className="relative pt-24 pb-12 px-6 lg:px-12" aria-labelledby="pricing-hero">
+        <div className="max-w-5xl mx-auto text-center space-y-5">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <h1
+            id="pricing-hero"
+            className="text-4xl md:text-6xl font-bold font-display text-text-primary"
+          >
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-6">
+          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             {t('hero.description')}
           </p>
           <FoundingCounter />
         </div>
       </section>
 
-      {/* Tier Cards — Founding fixed, others workspace-sliders */}
+      {/* Tier Cards — shared workspace-slider drives all four cards */}
       <section className="py-12 px-6 lg:px-12" aria-labelledby="pricing-tiers">
-        <div className="max-w-7xl mx-auto">
-          <h2 id="pricing-tiers" className="sr-only">
-            Pricing tiers
-          </h2>
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="text-center space-y-3">
+            <EyebrowLabel>{t('tiers.eyebrow')}</EyebrowLabel>
+            <h2
+              id="pricing-tiers"
+              className="text-3xl md:text-4xl font-bold font-display text-text-primary"
+            >
+              {t('tiers.title')}
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">{t('tiers.subtitle')}</p>
+          </div>
+
           <NextIntlClientProvider locale={locale} messages={pricingMessages}>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-              {TIER_KEYS.map((tier, index) => {
-                const config = TIER_CONFIG[tier]
-                return (
-                  <ScrollReveal key={tier} delay={index * 0.05}>
-                    <TierPricingCard
-                      tierLabel={tier}
-                      highlighted={config.highlighted}
-                      badge={config.badge}
-                      featureCount={config.featureCount}
-                      locale={locale}
-                      foundingCounter={
-                        tier === 'founding'
-                          ? { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL }
-                          : undefined
-                      }
-                    />
-                  </ScrollReveal>
-                )
-              })}
-            </div>
+            <PricingExperience
+              locale={locale}
+              initialWorkspaces={INITIAL_WORKSPACES}
+              foundingCounter={{ taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL }}
+              tierFeatureCounts={TIER_FEATURE_COUNTS}
+            />
           </NextIntlClientProvider>
           <p className="mt-6 max-w-3xl mx-auto text-xs text-text-muted text-center leading-relaxed">
             {t('tiers.rateDisclosure')}
@@ -147,9 +139,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {/* Skills × Tier Matrix */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="pricing-matrix">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('matrix.eyebrow')}</EyebrowLabel>
             <SectionHeading id="pricing-matrix">{t('matrix.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('matrix.subtitle')}</p>
+            <p className="text-text-secondary max-w-2xl mx-auto">{t('matrix.subtitle')}</p>
           </div>
           <ScrollReveal>
             <SkillsTierMatrix locale={locale} />
@@ -163,9 +156,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {/* FAQ — promoted directly after the decision surface (tier cards + matrix) */}
       <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading id="pricing-faq" className="text-center mb-10">
-            {t('faq.title')}
-          </SectionHeading>
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('faq.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="pricing-faq">{t('faq.title')}</SectionHeading>
+          </div>
           <ScrollReveal>
             <FaqAccordion
               items={FAQ_KEYS.map((key) => ({
@@ -180,9 +174,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
 
       {/* Why prices visible */}
       <section className="py-12 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="visibility">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center space-y-3">
+          <EyebrowLabel>{t('visibility.eyebrow')}</EyebrowLabel>
           <SectionHeading id="visibility">{t('visibility.title')}</SectionHeading>
-          <p className="mt-4 text-text-secondary leading-relaxed">{t('visibility.body')}</p>
+          <p className="text-text-secondary leading-relaxed">{t('visibility.body')}</p>
         </div>
       </section>
 
@@ -196,9 +191,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {/* Credit Packs */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="credit-packs">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('creditPacks.eyebrow')}</EyebrowLabel>
             <SectionHeading id="credit-packs">{t('creditPacks.title')}</SectionHeading>
-            <p className="text-text-secondary mt-4">{t('creditPacks.description')}</p>
+            <p className="text-text-secondary">{t('creditPacks.description')}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {CREDIT_PACK_KEYS.map((key) => (
@@ -223,9 +219,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {/* Skill-specific Packs */}
       <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="skill-packs">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('skillPacks.eyebrow')}</EyebrowLabel>
             <SectionHeading id="skill-packs">{t('skillPacks.title')}</SectionHeading>
-            <p className="text-text-secondary mt-4">{t('skillPacks.description')}</p>
+            <p className="text-text-secondary">{t('skillPacks.description')}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {SKILL_PACK_KEYS.map((key) => (
@@ -252,6 +249,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <GlassCard className="p-12">
+              <EyebrowLabel className="mb-3">{t('cta.eyebrow')}</EyebrowLabel>
               <SectionHeading id="pricing-cta" className="mb-4">
                 {t('cta.title')}
               </SectionHeading>

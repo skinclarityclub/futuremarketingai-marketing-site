@@ -820,11 +820,13 @@
       "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna per werkruimte: Growth €499, Pro €399, Enterprise €299. Geen lock-in."
     },
     "hero": {
+      "eyebrow": "Tarieven & vaardigheden",
       "title": "Premium partnerships. Founding €997 levenslang.",
       "description": "Alle prijzen staan zichtbaar. Founding €997 levenslang voor de eerste 10 bureaus. Daarna een lineair tarief per werkruimte: Growth €499, Professional €399, Enterprise €299. Caps per vaardigheid eerlijk uitgelegd, geen verborgen kosten, geen \"neem contact op voor prijs\".",
       "counter": "{taken} van {total} Founding plekken bezet"
     },
     "visibility": {
+      "eyebrow": "Filosofie",
       "title": "Waarom onze prijzen zichtbaar zijn",
       "body": "Bij premium AI-partners zien we vaak \"neem contact op voor prijs\". Dat ondermijnt de relatie voordat die begint. Wij laten liever zien wat Clyde kost, wat je krijgt en welke caps er zijn. Zo kun je zelf inschatten of de investering past. Geen salesdans nodig."
     },
@@ -832,12 +834,27 @@
     "creditsLabel": "credits/mnd",
     "workspacesLabel": "werkruimtes",
     "applyCta": "Plan een gesprek",
+    "slider": {
+      "eyebrow": "Live calculator",
+      "label": "Aantal werkruimtes",
+      "unitLabel": "{count, plural, one {werkruimte} other {werkruimtes}}",
+      "activeTierLabel": "Beste tier",
+      "foundingWinsBadge": "Founding goedkoper",
+      "totalLabel": "Maandtotaal",
+      "creditsSuffix": "credits per maand"
+    },
     "tiers": {
+      "eyebrow": "Tier-overzicht",
+      "title": "Schuif door je portfolio. Zie je tarief.",
+      "subtitle": "Sleep aan de regelaar voor jouw aantal werkruimtes. We matchen het juiste tier en laten je live zien wat je betaalt — Founding blijft anker op €997 levenslang.",
       "rateDisclosure": "Tarief per werkruimte. Herijking elk halfjaar op basis van werkelijk credit-verbruik. Founding (€997 levenslang) blijft uitgezonderd.",
       "perWorkspaceLabel": "per werkruimte",
       "fromLabel": "vanaf",
       "totalLabel": "Totaal voor {workspaces} werkruimtes",
       "workspacesPickerLabel": "Aantal werkruimtes",
+      "workspaceRange": "{min}-{max} werkruimtes",
+      "creditsTileLabel": "Credits",
+      "onboardingTileLabel": "Onboarding",
       "creditsTotalLabel": "{credits} credits per maand",
       "lifetimeBadge": "levenslang",
       "growth": {
@@ -899,6 +916,7 @@
       }
     },
     "matrix": {
+      "eyebrow": "Vergelijken",
       "title": "Beschikbaarheid per tier",
       "subtitle": "Welke vaardigheid in welk tier, en met welke cap. Eerlijk, transparant, gedocumenteerd.",
       "skillHeader": "Vaardigheid",
@@ -915,6 +933,7 @@
       "legend": "Cijfers zijn maandcaps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme uitschieters. \"Add-on\" = beschikbaar via pack, niet in het basis-tier."
     },
     "creditPacks": {
+      "eyebrow": "Top-ups",
       "title": "Credit packs. Top-ups voor swing-months",
       "description": "Niet genoeg credits in je tier voor deze maand? Top-up met een credit pack. Geen automatische upsell, geen verplichting.",
       "items": {
@@ -941,6 +960,7 @@
       }
     },
     "skillPacks": {
+      "eyebrow": "Vaardigheid-specifiek",
       "title": "Packs per vaardigheid, gericht bijkopen",
       "description": "Eén vaardigheid tegen de cap? Koop een gerichte add-on voor die ene vaardigheid in plaats van een hele tier-upgrade.",
       "items": {
@@ -967,6 +987,7 @@
       }
     },
     "faq": {
+      "eyebrow": "Veelgestelde vragen",
       "title": "Veelgestelde vragen over pricing",
       "items": {
         "q1": {
@@ -1004,6 +1025,7 @@
       }
     },
     "cta": {
+      "eyebrow": "Klaar?",
       "title": "Klaar om de partnership te starten?",
       "description": "Maximaal {maxPartners} bureaus per jaar. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "primary": "Plan een gesprek",

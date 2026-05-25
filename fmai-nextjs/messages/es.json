@@ -820,11 +820,13 @@
       "description": "Founding €997 de por vida (10 plazas). Después por espacio: Growth €499, Professional €399, Enterprise €299. Sin lock-in, sin costes ocultos."
     },
     "hero": {
+      "eyebrow": "Precios y habilidades",
       "title": "Partnerships premium. Founding €997 de por vida.",
       "description": "Todos los precios visibles. Founding €997 de por vida para las primeras 10 agencias. Después una tarifa lineal por espacio de trabajo: Growth €499, Professional €399, Enterprise €299. Caps por habilidad explicados con claridad, sin costes ocultos, sin \"contáctanos para precios\".",
       "counter": "{taken} de {total} plazas Founding ocupadas"
     },
     "visibility": {
+      "eyebrow": "Filosofía",
       "title": "Por qué nuestros precios son visibles",
       "body": "Con partners AI premium vemos a menudo \"contáctanos para precios\". Eso mina la relación antes de empezar. Preferimos mostrar lo que cuesta Clyde, lo que obtienes y qué caps aplican. Así puedes juzgar tú mismo si la inversión encaja. Sin baile de ventas."
     },
@@ -832,12 +834,27 @@
     "creditsLabel": "créditos/mes",
     "workspacesLabel": "espacios de trabajo",
     "applyCta": "Agenda una llamada",
+    "slider": {
+      "eyebrow": "Calculadora en vivo",
+      "label": "Número de espacios de trabajo",
+      "unitLabel": "{count, plural, one {espacio} other {espacios}}",
+      "activeTierLabel": "Mejor tier",
+      "foundingWinsBadge": "Founding más barato",
+      "totalLabel": "Total mensual",
+      "creditsSuffix": "créditos al mes"
+    },
     "tiers": {
+      "eyebrow": "Resumen de tiers",
+      "title": "Desliza por tu portfolio. Mira tu tarifa.",
+      "subtitle": "Arrastra el control para fijar tu número de espacios. Hacemos match con el tier correcto y te mostramos en vivo cuánto pagas, con Founding anclado en 997 EUR de por vida.",
       "rateDisclosure": "Tarifa por espacio de trabajo. Recalibrada cada 6 meses según el consumo real de créditos. Founding (€997 de por vida) queda exenta.",
       "perWorkspaceLabel": "por espacio",
       "fromLabel": "desde",
       "totalLabel": "Total para {workspaces} espacios",
       "workspacesPickerLabel": "Número de espacios de trabajo",
+      "workspaceRange": "{min}-{max} espacios",
+      "creditsTileLabel": "Créditos",
+      "onboardingTileLabel": "Onboarding",
       "creditsTotalLabel": "{credits} créditos al mes",
       "lifetimeBadge": "de por vida",
       "growth": {
@@ -899,6 +916,7 @@
       }
     },
     "matrix": {
+      "eyebrow": "Comparar",
       "title": "Disponibilidad por tier",
       "subtitle": "Qué habilidad en qué tier, y con qué cap. Honesto, transparente, documentado.",
       "skillHeader": "Habilidad",
@@ -915,6 +933,7 @@
       "legend": "Los números son caps mensuales por espacio de trabajo. \"Uso razonable\" = ilimitado con throttle en outliers extremos. \"Add-on\" = disponible mediante pack, no incluido en el tier base."
     },
     "creditPacks": {
+      "eyebrow": "Top-ups",
       "title": "Credit packs. Top-ups para meses de pico",
       "description": "¿No llegas con los créditos de tu tier este mes? Haz top-up con un credit pack. Sin upsell automático, sin obligación.",
       "items": {
@@ -941,6 +960,7 @@
       }
     },
     "skillPacks": {
+      "eyebrow": "Por habilidad",
       "title": "Packs por habilidad, add-ons dirigidos",
       "description": "¿Una habilidad contra el cap? Compra un add-on dirigido a esa habilidad concreta, en lugar de un upgrade de tier completo.",
       "items": {
@@ -967,6 +987,7 @@
       }
     },
     "faq": {
+      "eyebrow": "Preguntas frecuentes",
       "title": "Preguntas frecuentes sobre precios",
       "items": {
         "q1": {
@@ -1004,6 +1025,7 @@
       }
     },
     "cta": {
+      "eyebrow": "¿Listo?",
       "title": "¿Listo para empezar la partnership?",
       "description": "Máx. {maxPartners} agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "primary": "Agenda una llamada",

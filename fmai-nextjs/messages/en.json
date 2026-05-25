@@ -820,11 +820,13 @@
       "description": "Founding €997 lifetime for the first 10 agencies. Then per workspace: Growth €499, Pro €399, Enterprise €299. No lock-in, no hidden fees."
     },
     "hero": {
+      "eyebrow": "Pricing and skills",
       "title": "Premium partnerships. Founding €997 lifetime.",
       "description": "All prices are visible. Founding €997 lifetime for the first 10 agencies. After that a linear per-workspace rate: Growth €499, Professional €399, Enterprise €299. Caps per skill explained honestly, no hidden costs, no \"contact us for pricing\".",
       "counter": "{taken} of {total} Founding spots taken"
     },
     "visibility": {
+      "eyebrow": "Philosophy",
       "title": "Why our prices are visible",
       "body": "With premium AI partners we often see \"contact us for pricing\". That undermines the relationship before it starts. We prefer to show what Clyde costs, what you get and which caps apply. So you can judge for yourself whether the investment fits. No sales dance needed."
     },
@@ -832,12 +834,27 @@
     "creditsLabel": "credits/mo",
     "workspacesLabel": "workspaces",
     "applyCta": "Book a call",
+    "slider": {
+      "eyebrow": "Live calculator",
+      "label": "Number of workspaces",
+      "unitLabel": "{count, plural, one {workspace} other {workspaces}}",
+      "activeTierLabel": "Best tier",
+      "foundingWinsBadge": "Founding cheaper",
+      "totalLabel": "Monthly total",
+      "creditsSuffix": "credits per month"
+    },
     "tiers": {
+      "eyebrow": "Tier overview",
+      "title": "Slide through your portfolio. See your rate.",
+      "subtitle": "Drag the dial to set your workspace count. We match the right tier and show you live what you pay, with Founding anchored at €997 for life.",
       "rateDisclosure": "Per-workspace rate. Recalibrated every 6 months based on actual credit usage. Founding (€997 for life) stays exempt.",
       "perWorkspaceLabel": "per workspace",
       "fromLabel": "from",
       "totalLabel": "Total for {workspaces} workspaces",
       "workspacesPickerLabel": "Number of workspaces",
+      "workspaceRange": "{min}-{max} workspaces",
+      "creditsTileLabel": "Credits",
+      "onboardingTileLabel": "Onboarding",
       "creditsTotalLabel": "{credits} credits per month",
       "lifetimeBadge": "for life",
       "growth": {
@@ -899,6 +916,7 @@
       }
     },
     "matrix": {
+      "eyebrow": "Compare",
       "title": "Availability per tier",
       "subtitle": "Which skill in which tier, and with what cap. Honest, transparent, documented.",
       "skillHeader": "Skill",
@@ -915,6 +933,7 @@
       "legend": "Numbers are monthly caps per workspace. \"Fair use\" = unlimited with throttling on extreme outliers. \"Add-on\" = available via pack, not included in the base tier."
     },
     "creditPacks": {
+      "eyebrow": "Top-ups",
       "title": "Credit packs. Top-ups for swing months",
       "description": "Not enough credits in your tier this month? Top up with a credit pack. No automatic upsell, no obligation.",
       "items": {
@@ -941,6 +960,7 @@
       }
     },
     "skillPacks": {
+      "eyebrow": "Skill-specific",
       "title": "Skill packs, targeted top-ups",
       "description": "One skill running against the cap? Buy a targeted add-on for that specific skill, instead of a full tier upgrade.",
       "items": {
@@ -967,6 +987,7 @@
       }
     },
     "faq": {
+      "eyebrow": "Frequently asked",
       "title": "Frequently asked questions about pricing",
       "items": {
         "q1": {
@@ -1004,6 +1025,7 @@
       }
     },
     "cta": {
+      "eyebrow": "Ready?",
       "title": "Ready to start the partnership?",
       "description": "Max {maxPartners} agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "primary": "Book a call",
