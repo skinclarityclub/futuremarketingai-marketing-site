@@ -50,16 +50,12 @@ export function CountUp({
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
   const reduced = useReducedMotion()
-  const [value, setValue] = useState(reduced ? to : 0)
-  const valueRef = useRef(value)
-  valueRef.current = value
+  const [animatedValue, setAnimatedValue] = useState(0)
+  const valueRef = useRef(0)
   const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
-    if (reduced) {
-      setValue(to)
-      return
-    }
+    if (reduced) return
     if (!inView) return
     const useSmooth = smoothUpdates && hasAnimatedRef.current
     const from = useSmooth ? valueRef.current : 0
@@ -68,16 +64,23 @@ export function CountUp({
     const controls = animate(from, to, {
       duration: dur,
       ease: EASE_OUT,
-      onUpdate: (latest) => setValue(latest),
+      onUpdate: (latest) => {
+        valueRef.current = latest
+        setAnimatedValue(latest)
+      },
     })
     return () => controls.stop()
   }, [inView, to, duration, reduced, smoothUpdates, smoothUpdateDuration])
 
+  // Reduced-motion renders the target value statically without entering the
+  // animate path. Pre-inView render uses 0 so the static SSR markup matches
+  // the first client paint; the in-view effect then animates from 0 → to.
+  const displayValue = reduced ? to : animatedValue
   const formatted = format
-    ? format(value)
+    ? format(displayValue)
     : new Intl.NumberFormat(locale ?? 'nl-NL', {
         maximumFractionDigits: 0,
-      }).format(Math.round(value))
+      }).format(Math.round(displayValue))
 
   return (
     <span ref={ref} className={className}>

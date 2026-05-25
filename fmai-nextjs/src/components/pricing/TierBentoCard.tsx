@@ -10,7 +10,6 @@ import {
   TIER_PRICING,
   priceForTier,
   creditsForTier,
-  priceRangeForTier,
   isTierActiveForWorkspaces,
   isFoundingBetterValueAt,
   formatEur,
