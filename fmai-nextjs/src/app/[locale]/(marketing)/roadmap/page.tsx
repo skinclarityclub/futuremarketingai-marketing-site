@@ -10,7 +10,8 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -63,13 +64,11 @@ export default async function RoadmapPage({
         aria-labelledby="roadmap-hero"
         className="relative min-h-[50vh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-12"
       >
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F5A623]/10 border border-[#F5A623]/30 rounded-full text-xs font-semibold text-[#F5A623] uppercase tracking-wide mb-4">
-            {t('hero.eyebrow')}
-          </div>
+        <div className="max-w-5xl mx-auto text-center space-y-5">
+          <EyebrowLabel className="inline-block">{t('hero.eyebrow')}</EyebrowLabel>
           <h1
             id="roadmap-hero"
-            className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-text-primary mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold font-display text-text-primary leading-tight"
           >
             {t('hero.title')}
           </h1>
@@ -82,14 +81,15 @@ export default async function RoadmapPage({
       {/* Skill cards */}
       <section aria-labelledby="roadmap-skills" className="py-16 px-6 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('skills.eyebrow')}</EyebrowLabel>
             <SectionHeading id="roadmap-skills">{t('skills.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('skills.subtitle')}</p>
+            <p className="text-text-secondary max-w-2xl mx-auto">{t('skills.subtitle')}</p>
           </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {ROADMAP_SKILLS.map(({ key, icon: Icon }) => (
-                <GlassCard key={key} className="text-left">
+          <RevealContainer className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {ROADMAP_SKILLS.map(({ key, icon: Icon }) => (
+              <RevealItem key={key}>
+                <GlassCard className="text-left h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-bg-elevated">
                       <Icon className="w-5 h-5 text-accent-system" aria-hidden />
@@ -105,24 +105,25 @@ export default async function RoadmapPage({
                     {t(`${key}.description`)}
                   </p>
                 </GlassCard>
-              ))}
-            </div>
-          </ScrollReveal>
+              </RevealItem>
+            ))}
+          </RevealContainer>
         </div>
       </section>
 
       {/* CTA */}
       <section aria-labelledby="roadmap-cta" className="py-20 px-6 lg:px-12">
-        <ScrollReveal>
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading id="roadmap-cta">{t('cta.title')}</SectionHeading>
-            <p className="text-lg text-text-secondary mb-8 mt-4">{t('cta.subtitle')}</p>
+        <div className="max-w-3xl mx-auto text-center space-y-4">
+          <EyebrowLabel>{t('cta.eyebrow')}</EyebrowLabel>
+          <SectionHeading id="roadmap-cta">{t('cta.title')}</SectionHeading>
+          <p className="text-lg text-text-secondary">{t('cta.subtitle')}</p>
+          <div className="pt-2">
             <CTAButton size="lg" href="/apply">
               {t('cta.button')}
               <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
     </PageShell>
   )

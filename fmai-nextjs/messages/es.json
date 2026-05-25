@@ -2107,6 +2107,7 @@
       "subtitle": "Nueve habilidades funcionan en vivo en producción. Tres están en la roadmap, en desarrollo y testing activos. Los founding members obtienen acceso primero a medida que entran en vivo."
     },
     "skills": {
+      "eyebrow": "En la pipeline",
       "title": "En desarrollo",
       "subtitle": "Tres habilidades que estamos construyendo. Sin fechas duras de lanzamiento, pero con un orden claro de valor."
     },
@@ -2126,6 +2127,7 @@
       "description": "Videos verticales cortos (9:16) con guiones AI, subtítulos automáticos sincronizados y música de fondo. Para Instagram Reels, TikTok y YouTube Shorts. Biblioteca de plantillas en construcción."
     },
     "cta": {
+      "eyebrow": "Acceso anticipado",
       "title": "¿Quieres ser el primero?",
       "subtitle": "Los founding members obtienen acceso anticipado a las tres a medida que entran en vivo, además de voz en lo que construimos a continuación.",
       "button": "Agenda una llamada"

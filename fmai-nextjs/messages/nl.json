@@ -2107,6 +2107,7 @@
       "subtitle": "Negen vaardigheden draaien live in productie. Drie staan op de roadmap, in actieve ontwikkeling en testing. Founding-leden krijgen als eerste toegang zodra ze live gaan."
     },
     "skills": {
+      "eyebrow": "In de pijplijn",
       "title": "In ontwikkeling",
       "subtitle": "Drie vaardigheden waar we nu aan bouwen. Geen harde launch-data, wel een vaste volgorde van waarde."
     },
@@ -2126,6 +2127,7 @@
       "description": "Korte verticale video's (9:16) met AI-scripts, automatische captions die synchroon lopen en achtergrondmuziek. Voor Instagram Reels, TikTok en YouTube Shorts. Template-bibliotheek wordt opgebouwd."
     },
     "cta": {
+      "eyebrow": "Vroege toegang",
       "title": "Wil je als eerste meedraaien?",
       "subtitle": "Founding-leden krijgen early access op alle drie zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
       "button": "Plan een gesprek"

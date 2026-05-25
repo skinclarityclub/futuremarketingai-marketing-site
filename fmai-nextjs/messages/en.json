@@ -2107,6 +2107,7 @@
       "subtitle": "Nine skills run live in production. Three are on the roadmap, in active development and testing. Founding members get access first as they go live."
     },
     "skills": {
+      "eyebrow": "In the pipeline",
       "title": "In development",
       "subtitle": "Three skills we are building now. No hard launch dates, but a clear order of value."
     },
@@ -2126,6 +2127,7 @@
       "description": "Short vertical videos (9:16) with AI scripts, automatic captions that run in sync and background music. For Instagram Reels, TikTok and YouTube Shorts. Template library is being built."
     },
     "cta": {
+      "eyebrow": "Early access",
       "title": "Want to be first in line?",
       "subtitle": "Founding members get early access to all three as they go live, plus a say in what we build next.",
       "button": "Book a call"
