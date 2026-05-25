@@ -10,7 +10,9 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { MemoryLayersDiagram } from '@/components/memory/MemoryLayersDiagram'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { LayerCube } from '@/components/memory/LayerCube'
+import { MemoryComparison } from '@/components/memory/MemoryComparison'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -27,12 +29,31 @@ export async function generateMetadata({
 }
 
 const CONTRAST_KEYS = ['chatgpt', 'jasper', 'clyde'] as const
+const LAYER_KEYS = ['hot', 'warm', 'cold', 'context'] as const
+type LayerKey = (typeof LAYER_KEYS)[number]
 
 export default async function MemoryPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'memory' })
+
+  const layers = LAYER_KEYS.reduce(
+    (acc, key) => {
+      acc[key] = {
+        name: t(`layers.${key}.name`),
+        window: t(`layers.${key}.window`),
+        description: t(`layers.${key}.description`),
+        prompt: t(`layers.${key}.prompt`),
+        clydeAnswer: t(`layers.${key}.clydeAnswer`),
+        codeLine: t(`layers.${key}.codeLine`),
+      }
+      return acc
+    },
+    {} as Record<LayerKey, { name: string; window: string; description: string; prompt: string; clydeAnswer: string; codeLine: string }>
+  )
+
+  const turns = (t.raw('comparison.turns') as { user: string; diy: string; clyde: string }[]) ?? []
 
   return (
     <PageShell showStickyCta>
@@ -58,21 +79,14 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         className="relative min-h-[60vh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-16"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-6 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system">
-            {t('hero.eyebrow')}
-          </div>
+          <EyebrowLabel className="mb-6 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
           <h1
             id="memory-hero"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-text-primary"
           >
             {t('hero.headlineMain')}
             <br />
-            <span
-              className="relative inline-block bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, #00d4aa 0%, #f5a623 100%)' }}
-            >
-              {t('hero.headlineAccent')}
-            </span>
+            <span className="text-accent-system">{t('hero.headlineAccent')}</span>
           </h1>
           <p className="speakable-memory-def text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
@@ -80,27 +94,33 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      {/* 4-layer diagram */}
-      <section aria-labelledby="layers-heading" className="py-16 px-6 lg:px-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
+      {/* Signature experiment: layered memory cube */}
+      <section aria-labelledby="layers-heading" className="py-20 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
             <SectionHeading id="layers-heading">{t('layers.title')}</SectionHeading>
-            <p className="speakable-memory-layers mt-4 text-text-secondary max-w-2xl mx-auto">
+            <p className="speakable-memory-layers mt-4 text-text-secondary text-lg leading-relaxed">
               {t('layers.subtitle')}
             </p>
           </div>
-          <ScrollReveal>
-            <MemoryLayersDiagram locale={locale} />
-          </ScrollReveal>
+          <LayerCube
+            layers={layers}
+            scrollLabel={t('layers.scrollLabel')}
+            promptLabel={t('layers.promptLabel')}
+            clydeLabel={t('layers.clydeLabel')}
+            codeLabel={t('layers.codeLabel')}
+          />
         </div>
       </section>
 
       {/* Per-client isolation */}
       <section aria-labelledby="isolation-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading id="isolation-heading" className="text-center mb-8">
-            {t('isolation.title')}
-          </SectionHeading>
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="isolation-heading">{t('isolation.title')}</SectionHeading>
+          </div>
           <ScrollReveal>
             <GlassCard className="text-left">
               <p className="text-text-secondary leading-relaxed mb-4">{t('isolation.body1')}</p>
@@ -113,9 +133,10 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
       {/* Decay + dream consolidation */}
       <section aria-labelledby="decay-heading" className="py-16 px-6 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading id="decay-heading" className="text-center mb-8">
-            {t('decay.title')}
-          </SectionHeading>
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="decay-heading">{t('decay.title')}</SectionHeading>
+          </div>
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <GlassCard className="text-left">
@@ -135,12 +156,37 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
+      {/* DIY vs Clyde comparison demo */}
+      <section
+        aria-labelledby="comparison-heading"
+        className="py-20 px-6 lg:px-12 bg-bg-surface/30"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 id="comparison-heading" className="sr-only">
+            {t('comparison.title')}
+          </h2>
+          <MemoryComparison
+            eyebrow={t('comparison.eyebrow')}
+            title={t('comparison.title')}
+            intro={t('comparison.intro')}
+            turns={turns}
+            diyLabel={t('comparison.diyLabel')}
+            diyNote={t('comparison.diyNote')}
+            clydeLabel={t('comparison.clydeLabel')}
+            clydeNote={t('comparison.clydeNote')}
+            userLabel={t('comparison.userLabel')}
+            replayLabel={t('comparison.replayLabel')}
+          />
+        </div>
+      </section>
+
       {/* Week 1 vs Week 12 comparison */}
-      <section aria-labelledby="progress-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
+      <section aria-labelledby="progress-heading" className="py-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="progress-heading" className="text-center mb-8">
-            {t('progress.title')}
-          </SectionHeading>
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="progress-heading">{t('progress.title')}</SectionHeading>
+          </div>
           <p className="text-center text-text-secondary max-w-2xl mx-auto mb-10">
             {t('progress.subtitle')}
           </p>
@@ -164,11 +210,12 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
       </section>
 
       {/* Contrast with ChatGPT/Jasper */}
-      <section aria-labelledby="contrast-heading" className="py-16 px-6 lg:px-12">
+      <section aria-labelledby="contrast-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
-          <SectionHeading id="contrast-heading" className="text-center mb-8">
-            {t('contrast.title')}
-          </SectionHeading>
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="contrast-heading">{t('contrast.title')}</SectionHeading>
+          </div>
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {CONTRAST_KEYS.map((key) => (
@@ -190,11 +237,11 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
       <section aria-labelledby="memory-cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
+            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
             <SectionHeading id="memory-cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8 mt-4">{t('cta.subtitle')}</p>
-            <CTAButton size="lg" href="/apply">
+            <CTAButton size="lg" href="/apply" icon={<ArrowRight className="h-4 w-4" />}>
               {t('cta.button')}
-              <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
           </div>
         </ScrollReveal>
