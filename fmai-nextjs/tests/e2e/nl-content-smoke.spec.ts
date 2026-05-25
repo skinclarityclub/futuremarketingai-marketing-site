@@ -48,6 +48,10 @@ const IGNORED_CONSOLE_ERROR_PATTERNS = [
   /va\.vercel-scripts\.com/, // speed-insights debug script (dev only)
   /Content Security Policy directive/,
   /Failed to load resource.*speed-insights/,
+  /_vercel\/speed-insights/, // production-only Vercel-served script, absent in `next start`
+  /Refused to execute script.*speed-insights/, // strict MIME-check rejecting 404-as-HTML response
+  /Failed to load resource.*404 \(Not Found\)/, // generic 404 from speed-insights or other Vercel-only endpoints
+  /SSL connect error/, // webkit-specific HTTPS upgrade vs http localhost (environmental, not regression)
   /Hydration failed because/, // React 19 dev hydration warnings
   /server rendered HTML didn't match/,
   /caret-color/, // dev-only style injection on textareas
