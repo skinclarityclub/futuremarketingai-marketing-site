@@ -58,10 +58,7 @@ export function CapacityBar({
 
   useEffect(() => {
     if (!inView) return
-    if (reduced) {
-      setAnimatedAvailable(available)
-      return
-    }
+    if (reduced) return
     const start = performance.now()
     const duration = 900
     let raf = 0
@@ -75,6 +72,10 @@ export function CapacityBar({
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [inView, available, reduced])
+
+  // Reduced-motion renders the final value statically — bypass the animate
+  // path entirely so we never call setState inside the effect for that case.
+  const displayAvailable = reduced ? available : animatedAvailable
 
   const segments = Array.from({ length: totalPerYear }, (_, idx) => {
     const isTaken = idx < taken

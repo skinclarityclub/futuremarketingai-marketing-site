@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
+import { ArrowRight, Check, Quote, X } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
@@ -16,10 +17,17 @@ import {
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { SectionHeading } from '@/components/ui/SectionHeading'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { SectionShell } from '@/components/sections/SectionShell'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { ArrowRight } from 'lucide-react'
+import { MissionTimeline, type TimelineMilestone } from '@/components/about/MissionTimeline'
+import { CapacityBar } from '@/components/about/CapacityBar'
+import {
+  FOUNDING_SPOTS_TAKEN,
+  FOUNDING_SPOTS_TOTAL,
+  MAX_PARTNERS_PER_YEAR,
+} from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -38,12 +46,20 @@ const ERA_KEYS = ['assisted', 'autonomous', 'standard'] as const
 const FIT_KEYS = ['fit1', 'fit2', 'fit3', 'fit4'] as const
 const NOT_FIT_KEYS = ['notFit1', 'notFit2', 'notFit3', 'notFit4'] as const
 const INFRA_KEYS = ['selfHosted', 'eu', 'openStandards', 'noLockIn'] as const
+const JOURNEY_KEYS = ['spark', 'prototype', 'founding', 'scale'] as const
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'about' })
+
+  const journeyMilestones: readonly TimelineMilestone[] = JOURNEY_KEYS.map((key) => ({
+    period: t(`journey.milestones.${key}.period`),
+    title: t(`journey.milestones.${key}.title`),
+    body: t(`journey.milestones.${key}.body`),
+    current: key === 'founding',
+  }))
 
   return (
     <PageShell>
@@ -78,12 +94,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-12 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full mb-6 text-sm font-medium text-text-secondary">
+      <section className="relative pt-16 pb-12 px-6 lg:px-12" aria-labelledby="about-hero">
+        <div className="max-w-4xl mx-auto text-center space-y-5">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full text-sm font-medium text-text-secondary">
             {t('hero.badge')}
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+          <h1
+            id="about-hero"
+            className="text-4xl md:text-6xl font-bold font-display text-text-primary"
+          >
             {t('hero.title')}
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
@@ -93,209 +113,268 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Mission Section */}
-      <section className="py-12 px-6 lg:px-12" aria-labelledby="mission">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <GlassCard>
-              <SectionHeading id="mission">{t('mission.heading')}</SectionHeading>
-              <p className="text-lg text-text-secondary leading-relaxed mt-4 mb-6">
-                {t('mission.text')}
-              </p>
-              <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-                {t('mission.why_heading')}
-              </h3>
-              <p className="text-lg text-text-secondary leading-relaxed">{t('mission.why_text')}</p>
-            </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-12 px-6 lg:px-12" aria-labelledby="timeline">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeading id="timeline" className="text-center mb-12">
-            {t('timeline.title')}
-          </SectionHeading>
-
-          <div className="space-y-6">
-            {ERA_KEYS.map((era, index) => (
-              <ScrollReveal key={era} delay={index * 0.1}>
-                <GlassCard
-                  highlighted={era === 'autonomous'}
-                  className="relative border-l-4 border-l-accent-system pl-8"
-                >
-                  <div className="text-sm font-semibold font-mono text-accent-system mb-2">
-                    {t(`timeline.eras.${era}.year`)}
-                  </div>
-                  <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-                    {t(`timeline.eras.${era}.title`)}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {t(`timeline.eras.${era}.description`)}
-                  </p>
-                </GlassCard>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Key Message */}
-          <div className="mt-8 bg-accent-system/5 border border-accent-system/20 rounded-[var(--radius-card)] p-8 text-center">
-            <p className="text-xl font-semibold text-text-primary mb-2">
-              {t('timeline.key_message.title')}
+      <SectionShell
+        id="about-mission"
+        eyebrow={t('mission.eyebrow')}
+        heading={t('mission.heading')}
+        intro={t('mission.text')}
+        align="left"
+        containerClassName="max-w-5xl mx-auto"
+        className="py-16 px-6 lg:px-12"
+      >
+        <ScrollReveal>
+          <GlassCard className="text-left">
+            <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+              {t('mission.why_heading')}
+            </h3>
+            <p className="text-lg text-text-secondary leading-relaxed">
+              {t('mission.why_text')}
             </p>
-            <p className="text-text-secondary">{t('timeline.key_message.description')}</p>
-          </div>
-        </div>
-      </section>
+          </GlassCard>
+        </ScrollReveal>
+      </SectionShell>
 
-      {/* Hybrid ICP */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="about-icp">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="about-icp">{t('icp.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('icp.subtitle')}</p>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <GlassCard className="text-left">
-                <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#00FF88]/15 text-[#00FF88] text-sm"
-                  >
-                    ✓
-                  </span>
-                  {t('icp.fitTitle')}
+      {/* Build Journey — Signature Experiment */}
+      <SectionShell
+        id="about-journey"
+        eyebrow={t('journey.eyebrow')}
+        heading={t('journey.title')}
+        intro={t('journey.subtitle')}
+        align="center"
+        containerClassName="max-w-5xl mx-auto"
+        className="py-16 px-6 lg:px-12 bg-bg-surface/30"
+      >
+        <MissionTimeline
+          milestones={journeyMilestones}
+          ariaLabel={t('journey.ariaLabel')}
+        />
+      </SectionShell>
+
+      {/* Market Timeline */}
+      <SectionShell
+        id="about-timeline"
+        eyebrow={t('timeline.eyebrow')}
+        heading={t('timeline.title')}
+        align="center"
+        containerClassName="max-w-6xl mx-auto"
+        className="py-16 px-6 lg:px-12"
+      >
+        <RevealContainer className="space-y-6">
+          {ERA_KEYS.map((era) => (
+            <RevealItem key={era}>
+              <GlassCard
+                highlighted={era === 'autonomous'}
+                className="relative border-l-4 border-l-accent-system pl-8"
+              >
+                <div className="text-sm font-semibold font-mono text-accent-system mb-2">
+                  {t(`timeline.eras.${era}.year`)}
+                </div>
+                <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                  {t(`timeline.eras.${era}.title`)}
                 </h3>
-                <ul className="space-y-4">
-                  {FIT_KEYS.map((key) => (
-                    <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
-                      <span aria-hidden className="text-[#00FF88] pt-[2px] shrink-0">✓</span>
-                      <span>{t(`icp.${key}`)}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-text-secondary leading-relaxed">
+                  {t(`timeline.eras.${era}.description`)}
+                </p>
               </GlassCard>
-              <GlassCard className="text-left">
-                <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-text-muted/15 text-text-muted text-sm"
-                  >
-                    ×
-                  </span>
-                  {t('icp.notFitTitle')}
-                </h3>
-                <ul className="space-y-4">
-                  {NOT_FIT_KEYS.map((key) => (
-                    <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
-                      <span aria-hidden className="text-text-muted pt-[2px] shrink-0">×</span>
-                      <span>{t(`icp.${key}`)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </GlassCard>
-            </div>
-          </ScrollReveal>
+            </RevealItem>
+          ))}
+        </RevealContainer>
+
+        <div className="mt-8 bg-accent-system/5 border border-accent-system/20 rounded-[var(--radius-card)] p-8 text-center">
+          <p className="text-xl font-semibold text-text-primary mb-2">
+            {t('timeline.key_message.title')}
+          </p>
+          <p className="text-text-secondary">{t('timeline.key_message.description')}</p>
         </div>
-      </section>
+      </SectionShell>
+
+      {/* Hybrid ICP — anti-slop: Lucide icons */}
+      <SectionShell
+        id="about-icp"
+        eyebrow={t('icp.eyebrow')}
+        heading={t('icp.title')}
+        intro={t('icp.subtitle')}
+        align="center"
+        containerClassName="max-w-6xl mx-auto"
+        className="py-16 px-6 lg:px-12"
+      >
+        <RevealContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <RevealItem>
+            <GlassCard className="text-left h-full">
+              <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
+                <span
+                  aria-hidden
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-status-active/15 text-status-active"
+                >
+                  <Check className="w-4 h-4" />
+                </span>
+                {t('icp.fitTitle')}
+              </h3>
+              <ul className="space-y-4">
+                {FIT_KEYS.map((key) => (
+                  <li
+                    key={key}
+                    className="flex gap-3 text-text-secondary leading-relaxed"
+                  >
+                    <Check
+                      aria-hidden
+                      className="w-4 h-4 text-status-active mt-[5px] shrink-0"
+                    />
+                    <span>{t(`icp.${key}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </GlassCard>
+          </RevealItem>
+          <RevealItem>
+            <GlassCard className="text-left h-full">
+              <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
+                <span
+                  aria-hidden
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-text-muted/15 text-text-muted"
+                >
+                  <X className="w-4 h-4" />
+                </span>
+                {t('icp.notFitTitle')}
+              </h3>
+              <ul className="space-y-4">
+                {NOT_FIT_KEYS.map((key) => (
+                  <li
+                    key={key}
+                    className="flex gap-3 text-text-secondary leading-relaxed"
+                  >
+                    <X
+                      aria-hidden
+                      className="w-4 h-4 text-text-muted mt-[5px] shrink-0"
+                    />
+                    <span>{t(`icp.${key}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </GlassCard>
+          </RevealItem>
+        </RevealContainer>
+      </SectionShell>
 
       {/* Infrastructure */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="about-infra">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="about-infra">{t('infra.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('infra.subtitle')}</p>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {INFRA_KEYS.map((key) => (
-                <GlassCard key={key} className="text-left">
-                  <h3 className="text-base font-semibold text-text-primary mb-2">
-                    {t(`infra.${key}.title`)}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {t(`infra.${key}.body`)}
-                  </p>
-                </GlassCard>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SectionShell
+        id="about-infra"
+        eyebrow={t('infra.eyebrow')}
+        heading={t('infra.title')}
+        intro={t('infra.subtitle')}
+        align="center"
+        containerClassName="max-w-5xl mx-auto"
+        className="py-16 px-6 lg:px-12 bg-bg-surface/30"
+      >
+        <RevealContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {INFRA_KEYS.map((key) => (
+            <RevealItem key={key}>
+              <GlassCard className="text-left h-full">
+                <h3 className="text-base font-semibold text-text-primary mb-2">
+                  {t(`infra.${key}.title`)}
+                </h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {t(`infra.${key}.body`)}
+                </p>
+              </GlassCard>
+            </RevealItem>
+          ))}
+        </RevealContainer>
+      </SectionShell>
 
-      {/* Capacity + transparency */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="about-capacity">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <SectionHeading id="about-capacity">{t('capacity.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
+      {/* Capacity */}
+      <SectionShell
+        id="about-capacity"
+        eyebrow={t('capacity.eyebrow')}
+        heading={t('capacity.title')}
+        align="center"
+        containerClassName="max-w-4xl mx-auto"
+        className="py-16 px-6 lg:px-12"
+      >
+        <ScrollReveal>
+          <div className="space-y-6">
+            <CapacityBar
+              totalPerYear={MAX_PARTNERS_PER_YEAR}
+              taken={FOUNDING_SPOTS_TAKEN}
+              takenLabel={t('capacity.barTakenLabel')}
+              availableLabel={t('capacity.barAvailableLabel')}
+              legendLabel={t('capacity.barLegend')}
+            />
             <GlassCard className="text-left">
               <p className="text-text-secondary leading-relaxed mb-4">
                 {t('capacity.body', {
                   taken: FOUNDING_SPOTS_TAKEN,
                   total: FOUNDING_SPOTS_TOTAL,
+                  maxPartners: MAX_PARTNERS_PER_YEAR,
                 })}
               </p>
-              <p className="text-text-secondary leading-relaxed">{t('capacity.reasoning')}</p>
+              <p className="text-text-secondary leading-relaxed">
+                {t('capacity.reasoning', { maxPartners: MAX_PARTNERS_PER_YEAR })}
+              </p>
             </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
+          </div>
+        </ScrollReveal>
+      </SectionShell>
 
       {/* Founder bio */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="about-founder">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <SectionHeading id="about-founder">{t('founder.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
-            <GlassCard className="text-left">
-              <div className="flex items-start gap-4">
-                <div
-                  aria-hidden
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-system to-accent-human flex items-center justify-center text-bg-deep font-bold text-xl shrink-0"
-                >
-                  D
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-text-primary mb-1">
-                    {t('founder.name')}
-                  </h3>
-                  <p className="text-sm text-text-muted mb-4">{t('founder.role')}</p>
-                  <p className="text-text-secondary leading-relaxed">{t('founder.bio')}</p>
-                </div>
+      <SectionShell
+        id="about-founder"
+        eyebrow={t('founder.eyebrow')}
+        heading={t('founder.title')}
+        align="center"
+        containerClassName="max-w-4xl mx-auto"
+        className="py-16 px-6 lg:px-12 bg-bg-surface/30"
+      >
+        <ScrollReveal>
+          <GlassCard className="text-left">
+            <div className="flex flex-col sm:flex-row items-start gap-6">
+              {/*
+                TODO: Daley portret — vervang placeholder door echte foto.
+                Pad-suggestie: /public/images/daley-portrait.webp (512x512 min).
+              */}
+              <div
+                aria-hidden
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-bg-elevated via-bg-surface to-bg-deep border border-border-primary grid place-items-center font-display font-bold text-4xl text-accent-system/80 shrink-0"
+              >
+                D
               </div>
-            </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-text-primary mb-1">
+                  {t('founder.name')}
+                </h3>
+                <p className="text-sm text-text-muted mb-4">{t('founder.role')}</p>
+                <blockquote className="relative pl-6">
+                  <Quote
+                    aria-hidden
+                    className="absolute left-0 top-1 w-4 h-4 text-accent-system/60"
+                  />
+                  <p className="text-text-secondary leading-relaxed">{t('founder.bio')}</p>
+                </blockquote>
+              </div>
+            </div>
+          </GlassCard>
+        </ScrollReveal>
+      </SectionShell>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="about-cta">
-        <div className="max-w-7xl mx-auto text-center">
-          <ScrollReveal>
-            <GlassCard className="p-12">
-              <SectionHeading id="about-cta" className="mb-4">
-                {t('cta.title')}
-              </SectionHeading>
-              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-                {t('cta.description')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton href="/apply" size="lg">
-                  {t('cta.demo_button')}
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </CTAButton>
-                <CTAButton href="/contact" variant="secondary" size="lg">
-                  {t('cta.contact_button')}
-                </CTAButton>
-              </div>
-            </GlassCard>
-          </ScrollReveal>
+      <SectionShell
+        id="about-cta"
+        eyebrow={t('cta.eyebrow')}
+        heading={t('cta.title')}
+        intro={t('cta.description')}
+        align="center"
+        containerClassName="max-w-4xl mx-auto"
+        className="py-20 px-6 lg:px-12"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <CTAButton href="/apply" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+            {t('cta.demo_button')}
+          </CTAButton>
+          <CTAButton href="/contact" variant="secondary" size="lg">
+            {t('cta.contact_button')}
+          </CTAButton>
         </div>
-      </section>
+      </SectionShell>
     </PageShell>
   )
 }
