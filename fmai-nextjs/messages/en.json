@@ -2265,6 +2265,160 @@
         "title": "Want this for your portfolio too?",
         "subtitle": "Book a call. We will discuss how Clyde fits your brands and clients.",
         "button": "Book a call"
+      },
+      "rail": {
+        "title": "The journey",
+        "chapter1": "Challenge",
+        "chapter2": "Approach",
+        "chapter3": "Outcomes",
+        "chapter4": "Operator",
+        "chapter5": "Next step"
+      },
+      "chapter1": {
+        "eyebrow": "Chapter 01, Challenge",
+        "title": "Three accounts, four brands, one team",
+        "intro": "Before Clyde went live, Sindy ran the social operation herself, often on a day off, with a freelancer covering the carousels. The portfolio held 3 Instagram accounts and 4 brands, each with its own house style and voice."
+      },
+      "chapter2": {
+        "eyebrow": "Chapter 02, Approach",
+        "title": "One Clyde, three workspaces, shared memory",
+        "intro": "Six of Clyde's skills are active for SkinClarity Club. The portfolio memory learns across accounts. Sindy reviews, Clyde executes."
+      },
+      "chapter3": {
+        "eyebrow": "Chapter 03, Outcomes",
+        "title": "What the operation delivers now",
+        "intro": "Numbers measured over Q1 2026 compared with Q1 2025. Source notes per metric, recalibrated periodically."
+      },
+      "chapter4": {
+        "eyebrow": "Chapter 04, Operator perspective",
+        "title": "Sindy in her own words",
+        "intro": "Founder, operator, and first Founding partner of FutureMarketingAI. Below, her own words on working with Clyde every day."
+      },
+      "chapter5": {
+        "eyebrow": "Chapter 05, Next step",
+        "title": "Want this for your portfolio too?",
+        "intro": "In a first call we discuss how Clyde fits your agency, which skills go live immediately, and how the Founding track works."
+      },
+      "heroMetrics": {
+        "title": "What this delivers, in numbers",
+        "subtitle": "Four metrics the operation now scores on by default.",
+        "metric1": {
+          "prefix": "",
+          "amount": "5",
+          "suffix": " hours per week",
+          "label": "Time saved"
+        },
+        "metric2": {
+          "prefix": "",
+          "amount": "30",
+          "suffix": " sec",
+          "label": "Approval per post"
+        },
+        "metric3": {
+          "prefix": "+",
+          "amount": "30",
+          "suffix": "%",
+          "label": "Reach per post"
+        },
+        "metric4": {
+          "prefix": "€ ",
+          "amount": "3000",
+          "suffix": "",
+          "label": "Saved per month"
+        }
+      },
+      "before": {
+        "title": "Before Clyde",
+        "intro": "Manual carousel flow with a freelancer in the loop and per-brand review rounds.",
+        "step1": {
+          "label": "Briefing and research",
+          "body": "Sindy noted themes per brand in a spreadsheet, gathered research from scattered sources.",
+          "duration": "60 min"
+        },
+        "step2": {
+          "label": "Carousel design",
+          "body": "Freelancer built 1 carousel per brand in Canva, delivered via Drive links.",
+          "duration": "45 min per post"
+        },
+        "step3": {
+          "label": "Caption and hashtags",
+          "body": "Caption per brand written by hand, hashtags from a personal list.",
+          "duration": "15 min per post"
+        },
+        "step4": {
+          "label": "Review rounds",
+          "body": "Back and forth on WhatsApp, on average 2 rounds per post.",
+          "duration": "4 min per post"
+        },
+        "step5": {
+          "label": "Scheduling and publishing",
+          "body": "Each account scheduled separately in Buffer, phone reminders for stories.",
+          "duration": "30 min"
+        }
+      },
+      "after": {
+        "title": "With Clyde",
+        "intro": "Autonomous content volume; Sindy is only operator and reviewer now.",
+        "step1": {
+          "label": "Clyde pulls research",
+          "body": "The research skill scans trends per brand and consolidates into one brief per week.",
+          "duration": "Autonomous"
+        },
+        "step2": {
+          "label": "Carousels in brand voice",
+          "body": "The Social Media Manager renders 21 carousels per week in the right voice per account.",
+          "duration": "Autonomous"
+        },
+        "step3": {
+          "label": "Captions and hashtags inline",
+          "body": "Written inline in the same flow, tested against the portfolio memory.",
+          "duration": "Autonomous"
+        },
+        "step4": {
+          "label": "Approve in 30 sec",
+          "body": "Sindy approves batches in the Clyde inbox; the memory layer remembers every correction.",
+          "duration": "30 sec per post"
+        },
+        "step5": {
+          "label": "Publish via scheduler",
+          "body": "Scheduled publishing through the Buffer integration; stories triggered from the dashboard.",
+          "duration": "Autonomous"
+        }
+      },
+      "gallery": {
+        "title": "What ships per brand",
+        "subtitle": "A cross-section of the content Clyde renders autonomously each week. Final thumbnails will be added later; the current cards show volume and type per brand.",
+        "brand1": {
+          "name": "SkinClarity Club",
+          "role": "Main account, educational",
+          "output": "10 carousels, 7 posts, and 20+ stories per week. Treatments, tips, and skin knowledge."
+        },
+        "brand2": {
+          "name": "Sindy Huidtherapeut",
+          "role": "Personal authority account",
+          "output": "6 carousels and 5 posts per week. Trust, expertise, personal branding."
+        },
+        "brand3": {
+          "name": "SkinClarity Shop",
+          "role": "Product account for the webshop",
+          "output": "5 carousels and 3 posts per week. Launches, bundles, and product content."
+        },
+        "brand4": {
+          "name": "Treatment brand portfolio",
+          "role": "4 brands in rotation",
+          "output": "2 to 4 blogs per month plus themed carousels per brand in the rotation."
+        }
+      },
+      "operatorQuotes": {
+        "title": "More from Sindy",
+        "quote1": {
+          "body": "The difference is in review time. Four minutes per post became 30 seconds. That sounds small, but it adds up to 30 hours per quarter that I now invest in strategy.",
+          "attribution": "Sindy, on approval time"
+        },
+        "quote2": {
+          "body": "Clyde does not produce content I need to clean up. He produces content I publish. That is the real difference from the older AI tools.",
+          "attribution": "Sindy, on output quality"
+        }
       }
     }
   },

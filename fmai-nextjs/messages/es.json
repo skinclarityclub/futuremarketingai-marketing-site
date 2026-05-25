@@ -2265,6 +2265,160 @@
         "title": "¿Quieres esto también para tu cartera?",
         "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja Clyde con tus marcas y clientes.",
         "button": "Agenda una llamada"
+      },
+      "rail": {
+        "title": "El recorrido",
+        "chapter1": "Reto",
+        "chapter2": "Enfoque",
+        "chapter3": "Resultados",
+        "chapter4": "Operadora",
+        "chapter5": "Siguiente paso"
+      },
+      "chapter1": {
+        "eyebrow": "Capítulo 01, Reto",
+        "title": "Tres cuentas, cuatro marcas, un equipo",
+        "intro": "Antes de Clyde, Sindy llevaba la operación social por su cuenta, a menudo en un día libre, con una freelancer encargada de los carruseles. La cartera tenía 3 cuentas de Instagram y 4 marcas, cada una con su estilo y su voz."
+      },
+      "chapter2": {
+        "eyebrow": "Capítulo 02, Enfoque",
+        "title": "Un Clyde, tres workspaces, memoria compartida",
+        "intro": "Seis habilidades de Clyde están activas para SkinClarity Club. La memoria de cartera aprende entre cuentas. Sindy revisa, Clyde ejecuta."
+      },
+      "chapter3": {
+        "eyebrow": "Capítulo 03, Resultados",
+        "title": "Lo que la operación entrega ahora",
+        "intro": "Cifras medidas en Q1 2026 comparadas con Q1 2025. Notas de fuente por métrica, recalibradas periódicamente."
+      },
+      "chapter4": {
+        "eyebrow": "Capítulo 04, Perspectiva de la operadora",
+        "title": "Sindy en sus propias palabras",
+        "intro": "Founder, operadora y primera Founding partner de FutureMarketingAI. A continuación, sus propias palabras sobre trabajar con Clyde día a día."
+      },
+      "chapter5": {
+        "eyebrow": "Capítulo 05, Siguiente paso",
+        "title": "¿Quieres esto también para tu cartera?",
+        "intro": "En una primera llamada hablamos sobre cómo encaja Clyde con tu agencia, qué habilidades se activan de inmediato y cómo es el recorrido Founding."
+      },
+      "heroMetrics": {
+        "title": "Lo que esto entrega, en cifras",
+        "subtitle": "Cuatro métricas en las que la operación marca por defecto.",
+        "metric1": {
+          "prefix": "",
+          "amount": "5",
+          "suffix": " horas por semana",
+          "label": "Tiempo ahorrado"
+        },
+        "metric2": {
+          "prefix": "",
+          "amount": "30",
+          "suffix": " s",
+          "label": "Aprobación por post"
+        },
+        "metric3": {
+          "prefix": "+",
+          "amount": "30",
+          "suffix": "%",
+          "label": "Alcance por post"
+        },
+        "metric4": {
+          "prefix": "€ ",
+          "amount": "3000",
+          "suffix": "",
+          "label": "Ahorro mensual"
+        }
+      },
+      "before": {
+        "title": "Antes de Clyde",
+        "intro": "Flujo manual de carruseles con freelancer en la cadena y rondas de revisión por marca.",
+        "step1": {
+          "label": "Briefing y research",
+          "body": "Sindy anotaba los temas por marca en una hoja, juntaba research desde fuentes sueltas.",
+          "duration": "60 min"
+        },
+        "step2": {
+          "label": "Diseño del carrusel",
+          "body": "La freelancer creaba 1 carrusel por marca en Canva, entregaba por enlaces de Drive.",
+          "duration": "45 min por post"
+        },
+        "step3": {
+          "label": "Caption y hashtags",
+          "body": "Caption por marca escrito a mano, hashtags desde su lista personal.",
+          "duration": "15 min por post"
+        },
+        "step4": {
+          "label": "Rondas de revisión",
+          "body": "Idas y vueltas en WhatsApp, una media de 2 rondas por post.",
+          "duration": "4 min por post"
+        },
+        "step5": {
+          "label": "Programar y publicar",
+          "body": "Programación separada por cuenta en Buffer, recordatorios en el móvil para stories.",
+          "duration": "30 min"
+        }
+      },
+      "after": {
+        "title": "Con Clyde",
+        "intro": "Volumen de contenido autónomo; Sindy ya solo es operadora y revisora.",
+        "step1": {
+          "label": "Clyde hace el research",
+          "body": "La habilidad de research escanea tendencias por marca y consolida un brief semanal.",
+          "duration": "Autónomo"
+        },
+        "step2": {
+          "label": "Carruseles en la voz de marca",
+          "body": "El Social Media Manager renderiza 21 carruseles por semana en la voz adecuada por cuenta.",
+          "duration": "Autónomo"
+        },
+        "step3": {
+          "label": "Caption y hashtags inline",
+          "body": "Se escriben en el mismo flujo y se prueban contra la memoria de cartera.",
+          "duration": "Autónomo"
+        },
+        "step4": {
+          "label": "Aprobar en 30 s",
+          "body": "Sindy aprueba lotes en la bandeja de Clyde; la capa de memoria recuerda cada corrección.",
+          "duration": "30 s por post"
+        },
+        "step5": {
+          "label": "Publicar vía programación",
+          "body": "Publicación programada vía la integración de Buffer; stories disparadas desde el dashboard.",
+          "duration": "Autónomo"
+        }
+      },
+      "gallery": {
+        "title": "Lo que sale por marca",
+        "subtitle": "Un corte transversal del contenido que Clyde renderiza autónomamente cada semana. Las miniaturas finales se añadirán después; las tarjetas actuales muestran volumen y tipo por marca.",
+        "brand1": {
+          "name": "SkinClarity Club",
+          "role": "Cuenta principal, educativo",
+          "output": "10 carruseles, 7 posts y más de 20 stories por semana. Tratamientos, consejos y conocimiento de la piel."
+        },
+        "brand2": {
+          "name": "Sindy Huidtherapeut",
+          "role": "Cuenta personal de autoridad",
+          "output": "6 carruseles y 5 posts por semana. Confianza, experiencia, marca personal."
+        },
+        "brand3": {
+          "name": "SkinClarity Shop",
+          "role": "Cuenta de producto para la tienda",
+          "output": "5 carruseles y 3 posts por semana. Lanzamientos, packs y contenido de producto."
+        },
+        "brand4": {
+          "name": "Cartera de marcas de tratamiento",
+          "role": "4 marcas en rotación",
+          "output": "De 2 a 4 blogs por mes más carruseles temáticos por marca en la rotación."
+        }
+      },
+      "operatorQuotes": {
+        "title": "Más de Sindy",
+        "quote1": {
+          "body": "La diferencia está en el tiempo de revisión. Cuatro minutos por post se volvieron 30 segundos. Suena pequeño, pero son 30 horas por trimestre que ahora dedico a estrategia.",
+          "attribution": "Sindy, sobre el tiempo de aprobación"
+        },
+        "quote2": {
+          "body": "Clyde no produce contenido que tenga que limpiar. Produce contenido que publico. Esa es la diferencia real con las viejas herramientas de IA.",
+          "attribution": "Sindy, sobre la calidad del output"
+        }
       }
     }
   },

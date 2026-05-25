@@ -2265,6 +2265,160 @@
         "title": "Wil je dit ook voor jouw portfolio?",
         "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
         "button": "Plan een gesprek"
+      },
+      "rail": {
+        "title": "De reis",
+        "chapter1": "Uitdaging",
+        "chapter2": "Aanpak",
+        "chapter3": "Resultaten",
+        "chapter4": "Operator",
+        "chapter5": "Vervolg"
+      },
+      "chapter1": {
+        "eyebrow": "Hoofdstuk 01, Uitdaging",
+        "title": "Drie accounts, vier merken, één team",
+        "intro": "Voor Clyde live ging draaide Sindy de social-operatie zelf, vaak op een vrije middag, geholpen door een freelancer voor de carrousels. De portfolio bestond uit 3 Instagram-accounts en 4 merken, elk met een eigen huisstijl en stem."
+      },
+      "chapter2": {
+        "eyebrow": "Hoofdstuk 02, Aanpak",
+        "title": "Eén Clyde, drie werkruimtes, gedeeld geheugen",
+        "intro": "Zes vaardigheden van Clyde staan aan voor SkinClarity Club. Het portfolio-geheugen leert over accounts heen. Sindy beoordeelt, Clyde voert uit."
+      },
+      "chapter3": {
+        "eyebrow": "Hoofdstuk 03, Resultaten",
+        "title": "Wat de operatie nu oplevert",
+        "intro": "Cijfers gemeten over Q1-2026 vergeleken met Q1-2025. Bron-noten per metric, periodiek herijkt."
+      },
+      "chapter4": {
+        "eyebrow": "Hoofdstuk 04, Operator-perspectief",
+        "title": "Sindy aan het woord",
+        "intro": "Founder, operator en eerste Founding partner van FutureMarketingAI. Hieronder haar eigen woorden over het dagelijks werken met Clyde."
+      },
+      "chapter5": {
+        "eyebrow": "Hoofdstuk 05, Vervolg",
+        "title": "Wil je dit ook voor jouw portfolio?",
+        "intro": "We bespreken in een eerste gesprek hoe Clyde past bij jouw bureau, welke vaardigheden meteen aanstaan en hoe het Founding traject verloopt."
+      },
+      "heroMetrics": {
+        "title": "Wat dit oplevert in cijfers",
+        "subtitle": "Vier metrics waarop de operatie nu standaard scoort.",
+        "metric1": {
+          "prefix": "",
+          "amount": "5",
+          "suffix": " uur per week",
+          "label": "Tijd bespaard"
+        },
+        "metric2": {
+          "prefix": "",
+          "amount": "30",
+          "suffix": " sec",
+          "label": "Goedkeuring per post"
+        },
+        "metric3": {
+          "prefix": "+",
+          "amount": "30",
+          "suffix": "%",
+          "label": "Reach per post"
+        },
+        "metric4": {
+          "prefix": "€ ",
+          "amount": "3000",
+          "suffix": "",
+          "label": "Besparing per maand"
+        }
+      },
+      "before": {
+        "title": "Voor Clyde",
+        "intro": "Handmatige carrousel-flow met freelancer in de keten en review-rondes per merk.",
+        "step1": {
+          "label": "Briefing en research",
+          "body": "Sindy noteert thema's per merk in een spreadsheet, verzamelt research uit losse bronnen.",
+          "duration": "60 min"
+        },
+        "step2": {
+          "label": "Carrousel-design",
+          "body": "Freelancer maakt 1 carrousel per merk in Canva, levert per Drive-link.",
+          "duration": "45 min per post"
+        },
+        "step3": {
+          "label": "Caption en hashtags",
+          "body": "Caption per merk handmatig geschreven, hashtags uit eigen lijstje.",
+          "duration": "15 min per post"
+        },
+        "step4": {
+          "label": "Review-rondes",
+          "body": "Heen en weer in WhatsApp, gemiddeld 2 ronden per post.",
+          "duration": "4 min per post"
+        },
+        "step5": {
+          "label": "Inplannen en publiceren",
+          "body": "Per account los inplannen in Buffer, telefoonherinneringen voor stories.",
+          "duration": "30 min"
+        }
+      },
+      "after": {
+        "title": "Met Clyde",
+        "intro": "Autonoom contentvolume, Sindy is alleen nog operator en reviewer.",
+        "step1": {
+          "label": "Clyde haalt research op",
+          "body": "Research-vaardigheid scant trends per merk en consolideert in 1 brief per week.",
+          "duration": "Autonoom"
+        },
+        "step2": {
+          "label": "Carrousels in merkstem",
+          "body": "Social Media Manager rendert 21 carrousels per week, in de juiste stem per account.",
+          "duration": "Autonoom"
+        },
+        "step3": {
+          "label": "Caption en hashtags inline",
+          "body": "Inline geschreven in dezelfde flow, getest tegen het portfolio-geheugen.",
+          "duration": "Autonoom"
+        },
+        "step4": {
+          "label": "Goedkeuren in 30 sec",
+          "body": "Sindy keurt batches goed in de Clyde-inbox, memory-laag onthoudt elke correctie.",
+          "duration": "30 sec per post"
+        },
+        "step5": {
+          "label": "Publiceren via planning",
+          "body": "Geplande publicatie via Buffer-integratie, stories gestart vanuit dashboard.",
+          "duration": "Autonoom"
+        }
+      },
+      "gallery": {
+        "title": "Wat er per merk de deur uit gaat",
+        "subtitle": "Een doorsnede van de content die Clyde wekelijks autonoom rendert. Definitieve thumbnails worden later toegevoegd; de huidige cards tonen volume en type per merk.",
+        "brand1": {
+          "name": "SkinClarity Club",
+          "role": "Hoofdaccount, educatief",
+          "output": "10 carrousels, 7 posts en 20+ stories per week. Behandelingen, tips en huidkennis."
+        },
+        "brand2": {
+          "name": "Sindy Huidtherapeut",
+          "role": "Persoonlijk autoriteits-account",
+          "output": "6 carrousels en 5 posts per week. Vertrouwen, expertise, persoonlijke branding."
+        },
+        "brand3": {
+          "name": "SkinClarity Shop",
+          "role": "Product-account voor de webshop",
+          "output": "5 carrousels en 3 posts per week. Lanceringen, bundels en productcontent."
+        },
+        "brand4": {
+          "name": "Behandelmerken portfolio",
+          "role": "4 merken in beheer",
+          "output": "2 tot 4 blogs per maand plus thematische carrousels per merk in de rotatie."
+        }
+      },
+      "operatorQuotes": {
+        "title": "Wat Sindy nog meer zegt",
+        "quote1": {
+          "body": "Het verschil zit in de review-tijd. Vier minuten per post werd 30 seconden. Dat klinkt klein, maar dat zijn 30 uur op kwartaalbasis die ik nu in strategie stop.",
+          "attribution": "Sindy, over de goedkeuringstijd"
+        },
+        "quote2": {
+          "body": "Clyde maakt geen content die ik op moet ruimen. Hij maakt content die ik publiceer. Dat is het echte verschil met de oude AI-tools.",
+          "attribution": "Sindy, over output-kwaliteit"
+        }
       }
     }
   },

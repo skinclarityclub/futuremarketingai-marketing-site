@@ -6,15 +6,20 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PersonJsonLd } from '@/components/seo/PersonJsonLd'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { CaseStudyJsonLd } from '@/components/seo/CaseStudyJsonLd'
 import { SINDY_PERSON_ID, LINKEDIN_SINDY_URL, SITE_URL, ORG_ID } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { CountUp } from '@/components/motion/CountUp'
 import { SkcTestimonialBlock } from '@/components/case-studies/SkcTestimonialBlock'
-import { ArrowRight, Instagram } from 'lucide-react'
+import { ChapterSection } from '@/components/case-study/ChapterSection'
+import { ScrollProgressRail } from '@/components/case-study/ScrollProgressRail'
+import { BeforeAfterTimeline } from '@/components/case-study/BeforeAfterTimeline'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { ArrowRight, Instagram, Quote, Boxes } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -44,6 +49,19 @@ const OUTCOME_KEYS = [
   'engagementRate',
 ] as const
 const TIMELINE_KEYS = ['week1', 'month1', 'month3', 'now'] as const
+const HERO_METRIC_KEYS = ['metric1', 'metric2', 'metric3', 'metric4'] as const
+const BEFORE_AFTER_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const
+const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3', 'brand4'] as const
+
+const CHAPTERS = [
+  { id: 'chapter-uitdaging', railKey: 'chapter1', index: '01' },
+  { id: 'chapter-aanpak', railKey: 'chapter2', index: '02' },
+  { id: 'chapter-resultaten', railKey: 'chapter3', index: '03' },
+  { id: 'chapter-operator', railKey: 'chapter4', index: '04' },
+  { id: 'chapter-vervolg', railKey: 'chapter5', index: '05' },
+] as const
+
+const CHAPTER_TOTAL = String(CHAPTERS.length).padStart(2, '0')
 
 export default async function SkcCaseStudyPage({
   params,
@@ -54,6 +72,24 @@ export default async function SkcCaseStudyPage({
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'case_studies.skc' })
+
+  const railChapters = CHAPTERS.map((c) => ({
+    id: c.id,
+    label: t(`rail.${c.railKey}`),
+    index: c.index,
+  }))
+
+  const beforeSteps = BEFORE_AFTER_STEPS.map((s) => ({
+    label: t(`before.${s}.label`),
+    body: t(`before.${s}.body`),
+    duration: t(`before.${s}.duration`),
+  }))
+
+  const afterSteps = BEFORE_AFTER_STEPS.map((s) => ({
+    label: t(`after.${s}.label`),
+    body: t(`after.${s}.body`),
+    duration: t(`after.${s}.duration`),
+  }))
 
   return (
     <PageShell showStickyCta>
@@ -72,7 +108,6 @@ export default async function SkcCaseStudyPage({
         locale={locale}
       />
       <Breadcrumbs path="/case-studies/skinclarity-club" locale={locale} />
-      {/* SKC Organization — separate from FMai org so Sindy.worksFor @id resolves */}
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -83,7 +118,6 @@ export default async function SkcCaseStudyPage({
           description: t('client.description'),
         }}
       />
-      {/* Sindy Person — operator + founder of SkinClarity Club */}
       <PersonJsonLd
         id={SINDY_PERSON_ID}
         name={t('testimonial.author.name')}
@@ -92,9 +126,6 @@ export default async function SkcCaseStudyPage({
         sameAs={[LINKEDIN_SINDY_URL]}
         worksForId={`${SITE_URL}/case-studies/skinclarity-club/#organization-skc`}
       />
-      {/* Service — the AaaS engagement that powers this case study. Links the
-          case to the AI Marketing Medewerker service so crawlers can connect
-          outcome metrics to a Service entity rather than a generic WebPage. */}
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -115,8 +146,6 @@ export default async function SkcCaseStudyPage({
           },
         }}
       />
-      {/* Review — Sindy's testimonial on the AaaS engagement, surfaced as a
-          schema.org Review so search can pull a star-snippet for the page. */}
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -136,17 +165,29 @@ export default async function SkcCaseStudyPage({
           publisher: { '@id': ORG_ID },
         }}
       />
+      <CaseStudyJsonLd
+        path="/case-studies/skinclarity-club"
+        locale={locale}
+        headline={t('meta.title')}
+        description={t('meta.description')}
+        authorId={SINDY_PERSON_ID}
+        aboutOrgId={`${SITE_URL}/case-studies/skinclarity-club/#organization-skc`}
+        serviceId={`${SITE_URL}/case-studies/skinclarity-club/#service-aaas`}
+        datePublished="2026-03-15"
+        dateModified="2026-05-26"
+        claims={OUTCOME_KEYS.map((key) => ({
+          name: t(`outcomes.metrics.${key}.label`),
+          value: t(`outcomes.metrics.${key}.value`),
+        }))}
+      />
 
       {/* Hero */}
       <section className="relative pt-24 pb-12 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-6 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system">
-            {t('hero.eyebrow')}
-          </div>
+          <EyebrowLabel className="inline-block mb-6">{t('hero.eyebrow')}</EyebrowLabel>
           <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-4">
             {t('hero.title')}
           </h1>
-          {/* Metric chips — quantified outcome above-fold (E5, closes 16-03 F24) */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             {(['chip1', 'chip2', 'chip3'] as const).map((key) => (
               <span
@@ -163,166 +204,298 @@ export default async function SkcCaseStudyPage({
         </div>
       </section>
 
-      {/* Setup — 3 IG accounts */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="setup-heading">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="setup-heading">{t('setup.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('setup.subtitle')}</p>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {ACCOUNT_KEYS.map((key) => (
-                <GlassCard key={key} className="text-left">
-                  <div className="flex items-center gap-2 mb-3 text-accent-system">
-                    <Instagram className="w-5 h-5" aria-hidden />
-                    <span className="font-mono text-sm font-semibold">
-                      {t(`setup.${key}Label`)}
-                    </span>
+      {/* Body — chapter rail + chapters */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 lg:flex lg:gap-12 lg:items-start">
+        <ScrollProgressRail title={t('rail.title')} chapters={railChapters} />
+        <div className="flex-1 min-w-0">
+          {/* Chapter 01 — Uitdaging */}
+          <ChapterSection
+            index="01"
+            total={CHAPTER_TOTAL}
+            id={CHAPTERS[0].id}
+            eyebrow={t('chapter1.eyebrow')}
+            title={t('chapter1.title')}
+            intro={t('chapter1.intro')}
+            railLabel={t('rail.chapter1')}
+          >
+            <ScrollReveal>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {ACCOUNT_KEYS.map((key) => (
+                  <GlassCard key={key} className="text-left">
+                    <div className="flex items-center gap-2 mb-3 text-accent-system">
+                      <Instagram className="w-5 h-5" aria-hidden />
+                      <span className="font-mono text-sm font-semibold">
+                        {t(`setup.${key}Label`)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-text-muted mb-3 uppercase tracking-wide">
+                      {t(`setup.${key}Share`)}
+                    </p>
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {t(`setup.${key}Body`)}
+                    </p>
+                  </GlassCard>
+                ))}
+              </div>
+            </ScrollReveal>
+          </ChapterSection>
+
+          {/* Chapter 02 — Aanpak */}
+          <ChapterSection
+            index="02"
+            total={CHAPTER_TOTAL}
+            id={CHAPTERS[1].id}
+            eyebrow={t('chapter2.eyebrow')}
+            title={t('chapter2.title')}
+            intro={t('chapter2.intro')}
+            bgVariant="surface"
+            railLabel={t('rail.chapter2')}
+          >
+            <div className="space-y-12">
+              {/* Skills active */}
+              <div>
+                <EyebrowLabel className="mb-3">{t('skills.title')}</EyebrowLabel>
+                <p className="text-text-secondary mb-6 max-w-3xl">{t('skills.subtitle')}</p>
+                <ScrollReveal>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {SKILL_KEYS.map((key) => (
+                      <GlassCard key={key} className="text-left">
+                        <h3 className="text-base font-semibold text-text-primary mb-2">
+                          {t(`skills.${key}Name`)}
+                        </h3>
+                        <p className="text-sm text-text-secondary leading-relaxed">
+                          {t(`skills.${key}Body`)}
+                        </p>
+                      </GlassCard>
+                    ))}
                   </div>
-                  <p className="text-xs text-text-muted mb-3 uppercase tracking-wide">
-                    {t(`setup.${key}Share`)}
-                  </p>
-                  <p className="text-text-secondary text-sm leading-relaxed">
-                    {t(`setup.${key}Body`)}
-                  </p>
-                </GlassCard>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+                </ScrollReveal>
+              </div>
 
-      {/* Active skills */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="skills-heading">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="skills-heading">{t('skills.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('skills.subtitle')}</p>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {SKILL_KEYS.map((key) => (
-                <GlassCard key={key} className="text-left">
-                  <h3 className="text-base font-semibold text-text-primary mb-2">
-                    {t(`skills.${key}Name`)}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    {t(`skills.${key}Body`)}
-                  </p>
-                </GlassCard>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+              {/* Architecture */}
+              <div>
+                <EyebrowLabel className="mb-3">{t('architecture.title')}</EyebrowLabel>
+                <p className="text-text-secondary mb-6 max-w-3xl">{t('architecture.subtitle')}</p>
+                <ScrollReveal>
+                  <GlassCard className="text-left">
+                    <p className="speakable-skc-outcome text-text-secondary leading-relaxed">
+                      {t('architecture.body')}
+                    </p>
+                  </GlassCard>
+                </ScrollReveal>
+              </div>
 
-      {/* Outcomes — 6 quantified metric cards (sourced from Sindy interview) */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="outcomes-heading">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="outcomes-heading">{t('outcomes.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-3xl mx-auto">
-              {t('outcomes.subtitle')}
-            </p>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {OUTCOME_KEYS.map((key) => (
-                <GlassCard key={key} className="speakable-skc-outcome text-left">
-                  <div className="text-xs uppercase tracking-wide text-text-muted mb-2">
-                    {t(`outcomes.metrics.${key}.label`)}
+              {/* Before vs After */}
+              <div>
+                <EyebrowLabel className="mb-3">
+                  {t('before.title')} {String.fromCharCode(8594)} {t('after.title')}
+                </EyebrowLabel>
+                <BeforeAfterTimeline
+                  beforeTitle={t('before.title')}
+                  beforeIntro={t('before.intro')}
+                  beforeSteps={beforeSteps}
+                  afterTitle={t('after.title')}
+                  afterIntro={t('after.intro')}
+                  afterSteps={afterSteps}
+                  ariaLabel={`${t('before.title')} versus ${t('after.title')}`}
+                />
+              </div>
+            </div>
+          </ChapterSection>
+
+          {/* Chapter 03 — Resultaten */}
+          <ChapterSection
+            index="03"
+            total={CHAPTER_TOTAL}
+            id={CHAPTERS[2].id}
+            eyebrow={t('chapter3.eyebrow')}
+            title={t('chapter3.title')}
+            intro={t('chapter3.intro')}
+            railLabel={t('rail.chapter3')}
+          >
+            <div className="space-y-14">
+              {/* Hero metrics — CountUp strip */}
+              <div>
+                <EyebrowLabel className="mb-3">{t('heroMetrics.title')}</EyebrowLabel>
+                <p className="text-text-secondary mb-6 max-w-3xl">
+                  {t('heroMetrics.subtitle')}
+                </p>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  {HERO_METRIC_KEYS.map((key) => {
+                    const amount = parseFloat(t(`heroMetrics.${key}.amount`))
+                    const prefix = t(`heroMetrics.${key}.prefix`)
+                    const suffix = t(`heroMetrics.${key}.suffix`)
+                    const label = t(`heroMetrics.${key}.label`)
+                    return (
+                      <div
+                        key={key}
+                        className="rounded-2xl border border-border-primary bg-bg-surface/40 p-5 lg:p-6"
+                      >
+                        <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-2">
+                          <CountUp
+                            to={amount}
+                            prefix={prefix || undefined}
+                            suffix={suffix || undefined}
+                            locale={locale === 'en' ? 'en-US' : locale === 'es' ? 'es-ES' : 'nl-NL'}
+                          />
+                        </div>
+                        <p className="text-xs uppercase tracking-wide text-text-muted">{label}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Full 6-metric outcome grid */}
+              <div>
+                <EyebrowLabel className="mb-3">{t('outcomes.title')}</EyebrowLabel>
+                <p className="text-text-secondary mb-6 max-w-3xl">{t('outcomes.subtitle')}</p>
+                <ScrollReveal>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {OUTCOME_KEYS.map((key) => (
+                      <GlassCard key={key} className="speakable-skc-outcome text-left">
+                        <div className="text-xs uppercase tracking-wide text-text-muted mb-2">
+                          {t(`outcomes.metrics.${key}.label`)}
+                        </div>
+                        <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-3">
+                          {t(`outcomes.metrics.${key}.value`)}
+                        </div>
+                        <p className="text-sm text-text-secondary leading-relaxed mb-3">
+                          {t(`outcomes.metrics.${key}.detail`)}
+                        </p>
+                        <p className="text-xs text-text-muted italic">
+                          {t(`outcomes.metrics.${key}.sourceNote`)}
+                        </p>
+                      </GlassCard>
+                    ))}
                   </div>
-                  <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-3">
-                    {t(`outcomes.metrics.${key}.value`)}
-                  </div>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3">
-                    {t(`outcomes.metrics.${key}.detail`)}
-                  </p>
-                  <p className="text-xs text-text-muted italic">
-                    {t(`outcomes.metrics.${key}.sourceNote`)}
-                  </p>
-                </GlassCard>
-              ))}
+                </ScrollReveal>
+                <p className="mt-6 text-xs text-text-muted italic max-w-3xl">
+                  {t('outcomes.disclaimer')}
+                </p>
+              </div>
+
+              {/* Photo gallery — placeholder cards per brand */}
+              <div>
+                <EyebrowLabel className="mb-3">{t('gallery.title')}</EyebrowLabel>
+                <p className="text-text-secondary mb-6 max-w-3xl">{t('gallery.subtitle')}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {GALLERY_BRAND_KEYS.map((key) => (
+                    <div
+                      key={key}
+                      className="rounded-2xl border border-border-primary bg-bg-surface/40 overflow-hidden"
+                    >
+                      <div
+                        aria-hidden
+                        className="aspect-square bg-gradient-to-br from-accent-system/15 via-bg-elevated to-bg-deep flex items-center justify-center"
+                      >
+                        <Boxes className="h-10 w-10 text-accent-system/60" />
+                      </div>
+                      <div className="p-4">
+                        <p className="text-sm font-semibold text-text-primary">
+                          {t(`gallery.${key}.name`)}
+                        </p>
+                        <p className="font-mono text-[10px] uppercase tracking-wide text-text-muted mt-1">
+                          {t(`gallery.${key}.role`)}
+                        </p>
+                        <p className="text-xs text-text-secondary mt-2 leading-relaxed">
+                          {t(`gallery.${key}.output`)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Timeline — 4 phases */}
+              <div>
+                <EyebrowLabel className="mb-6">{t('timeline.title')}</EyebrowLabel>
+                <ScrollReveal>
+                  <ol className="relative border-l border-border-primary ml-4 space-y-8">
+                    {TIMELINE_KEYS.map((key) => (
+                      <li key={key} className="ml-6">
+                        <span
+                          aria-hidden
+                          className="absolute -left-[9px] flex items-center justify-center w-4 h-4 rounded-full bg-accent-system/20 border border-accent-system"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-system" />
+                        </span>
+                        <h3 className="text-sm font-semibold text-accent-system uppercase tracking-wide mb-1">
+                          {t(`timeline.${key}Label`)}
+                        </h3>
+                        <p className="text-text-secondary leading-relaxed">
+                          {t(`timeline.${key}Body`)}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                </ScrollReveal>
+              </div>
             </div>
-          </ScrollReveal>
-          <p className="mt-8 text-xs text-text-muted italic text-center max-w-3xl mx-auto">
-            {t('outcomes.disclaimer')}
-          </p>
-        </div>
-      </section>
+          </ChapterSection>
 
-      {/* Architecture */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="arch-heading">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="arch-heading">{t('architecture.title')}</SectionHeading>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              {t('architecture.subtitle')}
-            </p>
-          </div>
-          <ScrollReveal>
-            <GlassCard className="text-left">
-              <p className="speakable-skc-outcome text-text-secondary leading-relaxed">
-                {t('architecture.body')}
-              </p>
-            </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
+          {/* Chapter 04 — Operator */}
+          <ChapterSection
+            index="04"
+            total={CHAPTER_TOTAL}
+            id={CHAPTERS[3].id}
+            eyebrow={t('chapter4.eyebrow')}
+            title={t('chapter4.title')}
+            intro={t('chapter4.intro')}
+            bgVariant="surface"
+            railLabel={t('rail.chapter4')}
+          >
+            <div className="space-y-10">
+              <ScrollReveal>
+                <SkcTestimonialBlock />
+              </ScrollReveal>
 
-      {/* Timeline */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="timeline-heading">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <SectionHeading id="timeline-heading">{t('timeline.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
-            <ol className="relative border-l border-border-primary ml-4 space-y-8">
-              {TIMELINE_KEYS.map((key, index) => (
-                <li key={key} className="ml-6">
-                  <span
-                    aria-hidden
-                    className="absolute -left-[9px] flex items-center justify-center w-4 h-4 rounded-full bg-accent-system/20 border border-accent-system"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-system" />
-                  </span>
-                  <h3 className="text-sm font-semibold text-accent-system uppercase tracking-wide mb-1">
-                    {t(`timeline.${key}Label`)}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">{t(`timeline.${key}Body`)}</p>
-                </li>
-              ))}
-            </ol>
-          </ScrollReveal>
-        </div>
-      </section>
+              <div>
+                <EyebrowLabel className="mb-4">{t('operatorQuotes.title')}</EyebrowLabel>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {(['quote1', 'quote2'] as const).map((key) => (
+                    <figure
+                      key={key}
+                      className="relative rounded-2xl border border-border-primary bg-bg-surface/40 p-6"
+                    >
+                      <Quote
+                        className="absolute -top-3 -left-3 h-6 w-6 text-accent-system/70"
+                        aria-hidden
+                      />
+                      <blockquote className="text-text-primary leading-relaxed">
+                        {t(`operatorQuotes.${key}.body`)}
+                      </blockquote>
+                      <figcaption className="mt-3 text-xs font-mono uppercase tracking-wide text-text-muted">
+                        {t(`operatorQuotes.${key}.attribution`)}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </ChapterSection>
 
-      {/* Testimonial — Sindy block (photo + quote + LinkedIn link) */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="testimonial">
-        <h2 id="testimonial" className="sr-only">
-          {t('testimonial.authorName')}
-        </h2>
-        <div className="max-w-3xl mx-auto">
-          <ScrollReveal>
-            <SkcTestimonialBlock />
-          </ScrollReveal>
+          {/* Chapter 05 — Vervolg / CTA */}
+          <ChapterSection
+            index="05"
+            total={CHAPTER_TOTAL}
+            id={CHAPTERS[4].id}
+            eyebrow={t('chapter5.eyebrow')}
+            title={t('chapter5.title')}
+            intro={t('chapter5.intro')}
+            railLabel={t('rail.chapter5')}
+          >
+            <ScrollReveal>
+              <div className="text-center mt-2">
+                <CTAButton href="/apply" size="lg">
+                  {t('cta.button')}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </CTAButton>
+              </div>
+            </ScrollReveal>
+          </ChapterSection>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-6 lg:px-12" aria-labelledby="skc-cta">
-        <ScrollReveal>
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading id="skc-cta">{t('cta.title')}</SectionHeading>
-            <p className="text-lg text-text-secondary mb-8 mt-4">{t('cta.subtitle')}</p>
-            <CTAButton href="/apply" size="lg">
-              {t('cta.button')}
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </CTAButton>
-          </div>
-        </ScrollReveal>
-      </section>
+      </div>
     </PageShell>
   )
 }
