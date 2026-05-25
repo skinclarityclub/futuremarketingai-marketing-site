@@ -57,6 +57,13 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
 export async function ServicesBento({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'home' })
   const tServices = await getTranslations({ locale, namespace: 'home.services' })
+  const tClyde = await getTranslations({ locale, namespace: 'home.services.clyde' })
+
+  const clydePrompts: readonly [string, string, string] = [
+    tClyde('prompt1'),
+    tClyde('prompt2'),
+    tClyde('prompt3'),
+  ]
 
   return (
     <section
@@ -84,7 +91,14 @@ export async function ServicesBento({ locale }: { locale: string }) {
         */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4 lg:gap-5">
           <div className="sm:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[260px]">
-            <ClydeFeaturedTile locale={locale} />
+            <ClydeFeaturedTile
+              title={tClyde('title')}
+              description={tClyde('description')}
+              statusLabel={tClyde('statusLabel')}
+              promptIntro={tClyde('promptIntro')}
+              prompts={clydePrompts}
+              openLink={tClyde('openLink')}
+            />
           </div>
 
           {SECONDARY_SERVICES.map(({ key, href, Icon, status }) => (
