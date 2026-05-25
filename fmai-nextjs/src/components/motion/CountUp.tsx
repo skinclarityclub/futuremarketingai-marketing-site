@@ -18,13 +18,23 @@ interface CountUpProps {
   /** Locale used for thousands separators when no formatter is supplied. */
   locale?: string
   className?: string
+  /**
+   * When true, subsequent `to` changes animate from the current displayed
+   * value (instead of restarting from 0). Use for slider-driven counters
+   * where the value transitions smoothly between stops.
+   */
+  smoothUpdates?: boolean
+  /** Shorter duration used for smooth-update transitions (default 0.45s). */
+  smoothUpdateDuration?: number
 }
 
 /**
  * Animates a number from 0 → `to` once the element scrolls into view.
  * Respects prefers-reduced-motion: renders the final value statically.
  *
- * Plan v2.1 W4 D7 + W5.5.
+ * With `smoothUpdates`, subsequent `to` changes animate from the current
+ * displayed value rather than restarting at 0 — feels native for slider
+ * driven price/credit counters.
  */
 export function CountUp({
   to,
@@ -34,22 +44,34 @@ export function CountUp({
   format,
   locale,
   className,
+  smoothUpdates = false,
+  smoothUpdateDuration = 0.45,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
   const reduced = useReducedMotion()
   const [value, setValue] = useState(reduced ? to : 0)
+  const valueRef = useRef(value)
+  valueRef.current = value
+  const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
-    if (!inView || reduced) return
-    // Snap to 0 before animating so the counter starts fresh on viewport entry.
-    const controls = animate(0, to, {
-      duration,
+    if (reduced) {
+      setValue(to)
+      return
+    }
+    if (!inView) return
+    const useSmooth = smoothUpdates && hasAnimatedRef.current
+    const from = useSmooth ? valueRef.current : 0
+    const dur = useSmooth ? smoothUpdateDuration : duration
+    hasAnimatedRef.current = true
+    const controls = animate(from, to, {
+      duration: dur,
       ease: EASE_OUT,
       onUpdate: (latest) => setValue(latest),
     })
     return () => controls.stop()
-  }, [inView, to, duration, reduced])
+  }, [inView, to, duration, reduced, smoothUpdates, smoothUpdateDuration])
 
   const formatted = format
     ? format(value)

@@ -33,6 +33,14 @@ yarn-error.log*
 # debug screenshots (moved from root in Phase 13-03)
 .screenshots/
 
+# playwright artifacts (HTML report + per-test failure dumps)
+playwright-output/
+test-results/
+playwright-report/
+
+# overnight orchestration helper (local-only)
+run-overnight.ps1
+
 # env files (can opt-in for committing if needed)
 .env*
 
