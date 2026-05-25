@@ -122,6 +122,33 @@
       "portraitAlt": "Portret van Daley, founder van FutureMarketingAI",
       "ctaLink": "Meer over Daley en de aanpak"
     },
+    "processTimeline": {
+      "eyebrow": "Onboarding",
+      "title": "Van eerste gesprek naar autonome content in 4 weken",
+      "subtitle": "Geen lange RFP, geen onboarding-PDF. Eén werksessie en daarna gefaseerd live. Hieronder elke week, eerlijk uitgesplitst.",
+      "weeks": {
+        "1": {
+          "label": "Week 1",
+          "heading": "Intake en discovery",
+          "body": "Wij leren jouw bureau en jouw klantportfolio kennen. Eén werksessie, geen formulier-marathon. Resultaat: gedeeld beeld van merken, kanalen en vaste deadlines."
+        },
+        "2": {
+          "label": "Week 2",
+          "heading": "Setup en integratie",
+          "body": "Clyde krijgt toegang tot jouw kanalen, tools en data. Wij configureren memory-layers per merk en zetten de review-flow op."
+        },
+        "3": {
+          "label": "Week 3",
+          "heading": "Training en tuning",
+          "body": "Eerste content rondes met begeleide review. Clyde leert jouw tone of voice per merk tot het natuurlijk voelt."
+        },
+        "4": {
+          "label": "Week 4",
+          "heading": "Live en autonoom",
+          "body": "Vanaf hier loopt Clyde zelfstandig. Jij houdt regie en goedkeuring, Daley blijft persoonlijk aanspreekpunt."
+        }
+      }
+    },
     "comparison": {
       "eyebrow": "Vergelijking",
       "title": "Waarom een AI Marketing Medewerker, niet nog meer tools",

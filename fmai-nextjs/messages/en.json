@@ -122,6 +122,33 @@
       "portraitAlt": "Portrait of Daley, founder of FutureMarketingAI",
       "ctaLink": "More about Daley and the approach"
     },
+    "processTimeline": {
+      "eyebrow": "Onboarding",
+      "title": "From first call to autonomous content in 4 weeks",
+      "subtitle": "No long RFP, no onboarding PDF. One working session, then live in phases. Each week, broken down honestly below.",
+      "weeks": {
+        "1": {
+          "label": "Week 1",
+          "heading": "Intake and discovery",
+          "body": "We learn your agency and your client portfolio. One working session, no form marathon. Outcome: a shared picture of brands, channels and fixed deadlines."
+        },
+        "2": {
+          "label": "Week 2",
+          "heading": "Setup and integration",
+          "body": "Clyde gets access to your channels, tools and data. We configure memory layers per brand and set up the review flow."
+        },
+        "3": {
+          "label": "Week 3",
+          "heading": "Training and tuning",
+          "body": "First content rounds with guided review. Clyde learns your tone of voice per brand until it feels natural."
+        },
+        "4": {
+          "label": "Week 4",
+          "heading": "Live and autonomous",
+          "body": "From here Clyde runs on his own. You keep direction and approvals, Daley remains your personal contact."
+        }
+      }
+    },
     "comparison": {
       "eyebrow": "Comparison",
       "title": "Why an AI Marketing Team Member, not yet more tools",
