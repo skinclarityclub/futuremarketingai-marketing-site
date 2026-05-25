@@ -226,6 +226,30 @@
   }
 }
 
+/* Founding-member SpotScarcityGrid pulse halo for open spots */
+@keyframes spot-pulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.18);
+  }
+}
+
+.animate-spot-pulse {
+  animation: spot-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spot-pulse {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
+
 @keyframes orbit-pulse {
   0%,
   100% {
