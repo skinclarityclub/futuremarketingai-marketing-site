@@ -358,6 +358,21 @@ export function getSkillBySlug(slug: string): SkillData | undefined {
   return SKILLS_DATA.find((s) => s.slug === slug)
 }
 
+/**
+ * Pick related skills for a given slug — same category first, then a fill-in from
+ * the cross-category live set so the related grid is never sparse.
+ * Excludes coming_soon and the slug itself. Capped at `limit` items (default 3).
+ */
+export function getRelatedSkills(slug: string, limit = 3): SkillData[] {
+  const base = getSkillBySlug(slug)
+  if (!base) return []
+  const liveOthers = SKILLS_DATA.filter((s) => s.slug !== slug && s.status === 'live')
+  const sameCategory = liveOthers.filter((s) => s.category === base.category)
+  const otherCategory = liveOthers.filter((s) => s.category !== base.category)
+  const merged = [...sameCategory, ...otherCategory]
+  return merged.slice(0, limit)
+}
+
 export const CATEGORY_LABELS: Record<SkillCategory, { nl: string; en: string; es: string }> = {
   create: { nl: 'Maak & Publiceer', en: 'Create & Publish', es: 'Crea y Publica' },
   engage: { nl: 'Engage & Converteer', en: 'Engage & Convert', es: 'Participa y Convierte' },
