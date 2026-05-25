@@ -11,6 +11,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ArrowRight } from 'lucide-react'
+import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { getSkillBySlug, type SkillData, type TierKey } from '@/lib/skills-data'
 
 interface SkillPageTemplateProps {
@@ -98,6 +99,11 @@ export async function SkillPageTemplate({
   const faqItems = faqKeys.map((key) => ({
     question: t(`faq.items.${key}.question`),
     answer: t(`faq.items.${key}.answer`),
+  }))
+  const faqAccordionItems = faqItems.map((item, index) => ({
+    key: faqKeys[index],
+    question: item.question,
+    answer: item.answer,
   }))
 
   return (
@@ -345,18 +351,7 @@ export async function SkillPageTemplate({
           <div className="text-center mb-10">
             <SectionHeading id="skill-faq-heading">{t('faq.title')}</SectionHeading>
           </div>
-          <dl className="space-y-6">
-            {faqItems.map((item, index) => (
-              <div key={faqKeys[index]} className="bg-bg-surface/50 rounded-lg p-6">
-                <dt>
-                  <h3 className="text-lg font-semibold text-text-primary mb-2">
-                    {item.question}
-                  </h3>
-                </dt>
-                <dd className="text-text-secondary leading-relaxed">{item.answer}</dd>
-              </div>
-            ))}
-          </dl>
+          <FaqAccordion items={faqAccordionItems} />
         </div>
       </section>
 

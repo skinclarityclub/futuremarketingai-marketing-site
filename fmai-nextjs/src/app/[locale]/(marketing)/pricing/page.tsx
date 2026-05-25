@@ -18,6 +18,7 @@ import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
 import { TierPricingCard } from '@/components/pricing/TierPricingCard'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
+import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
@@ -166,18 +167,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             {t('faq.title')}
           </SectionHeading>
           <ScrollReveal>
-            <dl className="space-y-6">
-              {FAQ_KEYS.map((key) => (
-                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
-                  <dt className="text-lg font-semibold text-text-primary mb-2">
-                    {t(`faq.items.${key}.question`)}
-                  </dt>
-                  <dd className="text-text-secondary leading-relaxed">
-                    {t(`faq.items.${key}.answer`)}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <FaqAccordion
+              items={FAQ_KEYS.map((key) => ({
+                key,
+                question: t(`faq.items.${key}.question`),
+                answer: t(`faq.items.${key}.answer`),
+              }))}
+            />
           </ScrollReveal>
         </div>
       </section>
