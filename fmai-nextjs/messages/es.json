@@ -114,6 +114,14 @@
       "attribution": "Sindy, SKC",
       "ctaLink": "Lee el caso completo"
     },
+    "founder": {
+      "eyebrow": "Quién construye Clyde",
+      "name": "Daley",
+      "role": "Founder y lead engineer, FutureMarketingAI",
+      "quote": "Las agencias contratan IA como producto. Yo la construyo como un compañero de trabajo. Sin capa de helpdesk, sin ticketing. Mi número está en tu WhatsApp.",
+      "portraitAlt": "Retrato de Daley, founder de FutureMarketingAI",
+      "ctaLink": "Más sobre Daley y el enfoque"
+    },
     "badges": {
       "title": "Construido para agencias europeas",
       "gdpr": "IA con RGPD por defecto",

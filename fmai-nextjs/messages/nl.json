@@ -114,6 +114,14 @@
       "attribution": "Sindy, SKC",
       "ctaLink": "Lees de volledige case"
     },
+    "founder": {
+      "eyebrow": "Wie bouwt Clyde",
+      "name": "Daley",
+      "role": "Founder en lead engineer, FutureMarketingAI",
+      "quote": "Bureaus huren AI als een product. Ik bouw het als een collega. Geen helpdesklaag, geen ticketing. Mijn nummer staat in jouw WhatsApp.",
+      "portraitAlt": "Portret van Daley, founder van FutureMarketingAI",
+      "ctaLink": "Meer over Daley en de aanpak"
+    },
     "badges": {
       "title": "Gebouwd voor Europese bureaus",
       "gdpr": "AVG-first AI",

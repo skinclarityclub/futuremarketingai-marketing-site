@@ -114,6 +114,14 @@
       "attribution": "Sindy, SKC",
       "ctaLink": "Read the full case"
     },
+    "founder": {
+      "eyebrow": "Who builds Clyde",
+      "name": "Daley",
+      "role": "Founder and lead engineer, FutureMarketingAI",
+      "quote": "Agencies rent AI as a product. I build it as a colleague. No helpdesk layer, no ticketing. My phone number sits in your WhatsApp.",
+      "portraitAlt": "Portrait of Daley, founder of FutureMarketingAI",
+      "ctaLink": "More about Daley and the approach"
+    },
     "badges": {
       "title": "Built for European agencies",
       "gdpr": "GDPR-first AI",
