@@ -57,8 +57,9 @@ function ScoreRing() {
           strokeLinecap="round"
           strokeDasharray={RING_CIRCUMFERENCE}
           initial={{ strokeDashoffset: RING_CIRCUMFERENCE }}
-          animate={{ strokeDashoffset: SCORE_OFFSET }}
-          transition={{ duration: 1.4, delay: 0.5, ease: [0.32, 0.72, 0, 1] }}
+          whileInView={{ strokeDashoffset: SCORE_OFFSET }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 1.4, delay: 0.3, ease: [0.32, 0.72, 0, 1] }}
         />
       </svg>
       {/* Score number in center */}
@@ -66,7 +67,8 @@ function ScoreRing() {
         <motion.span
           className="font-mono text-xl font-bold leading-none tabular-nums text-text-primary"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.4, delay: 1.0 }}
         >
           {SCORE}
@@ -81,8 +83,9 @@ function ResultPreview() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1], delay: 0.15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1], delay: 0.1 }}
       className="relative flex h-full flex-col gap-5 p-6"
     >
       {/* Ambient glow behind ring */}
@@ -119,10 +122,11 @@ function ResultPreview() {
             <div className="h-[5px] overflow-hidden rounded-full bg-white/[0.08]">
               <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: `${value}%` }}
+                whileInView={{ width: `${value}%` }}
+                viewport={{ once: true, margin: '-80px' }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.6 + i * 0.1,
+                  delay: 0.5 + i * 0.1,
                   ease: [0.32, 0.72, 0, 1],
                 }}
                 className="h-full rounded-full bg-accent-system"
