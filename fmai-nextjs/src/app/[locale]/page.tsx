@@ -23,6 +23,7 @@ import { ProcessTimeline } from '@/components/home/ProcessTimeline'
 import { FounderSection } from '@/components/home/FounderSection'
 import { TestimonialBlock } from '@/components/home/TestimonialBlock'
 import { PricingTeaser } from '@/components/home/PricingTeaser'
+import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
@@ -418,28 +419,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 15 — FAQ (W3 vervangt door Radix Accordion)
-          TODO W3: replace <dl> by FaqAccordion (Radix UI single-collapsible).
+          Sectie 15 — FAQ (Radix Accordion, type=single collapsible)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <SectionHeading id="faq" className="text-center mb-10">
               {t('faq.title')}
             </SectionHeading>
             <ScrollReveal>
-              <dl className="space-y-6">
-                {FAQ_KEYS.map((key) => (
-                  <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
-                    <dt className="text-lg font-semibold text-text-primary mb-2">
-                      {t(`faq.items.${key}.question`)}
-                    </dt>
-                    <dd className="text-text-secondary leading-relaxed">
-                      {t(`faq.items.${key}.answer`)}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <FaqAccordion
+                items={FAQ_KEYS.map((key) => ({
+                  key,
+                  question: t(`faq.items.${key}.question`),
+                  answer: t(`faq.items.${key}.answer`),
+                }))}
+              />
             </ScrollReveal>
           </div>
         </section>
