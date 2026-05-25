@@ -727,17 +727,49 @@
       "description": "FutureMarketingAI builds persistent AI Marketing Employees for marketing agencies. Made in the Netherlands, for European agencies."
     },
     "hero": {
+      "eyebrow": "About FutureMarketingAI",
       "badge": "Founding members are being onboarded now",
       "title": "About FutureMarketingAI",
       "tagline": "The first AI Marketing Employee for agencies, by a solo founder."
     },
     "mission": {
+      "eyebrow": "Why this exists",
       "heading": "Our mission",
       "text": "To give every marketing agency access to an AI Marketing Employee that handles execution. So agency teams can focus on strategy, creativity and client relationships.",
       "why_heading": "Why I build this",
       "why_text": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the AI Marketing Employee I wanted to have."
     },
+    "journey": {
+      "eyebrow": "Build journey",
+      "title": "My build journey so far",
+      "subtitle": "From the first pain point at SkinClarity Club to a live AI Marketing Employee. No pitch deck, just a log of what was true then and what is running now.",
+      "ariaLabel": "Timeline of FutureMarketingAI milestones",
+      "milestones": {
+        "spark": {
+          "period": "Q3 2025",
+          "title": "First pain point visible",
+          "body": "At SkinClarity Club I noticed that 12 separate marketing tools do not scale across 3 Instagram accounts and 4 brands. The trigger for what later became FMai."
+        },
+        "prototype": {
+          "period": "Q4 2025",
+          "title": "First Clyde prototype",
+          "body": "n8n + Supabase as the base, first brand-memory layer live. A handful of skills ran autonomously for a single brand inside SKC."
+        },
+        "founding": {
+          "period": "Q1 2026",
+          "title": "Founding cohort opens",
+          "body": "First 10 founding spots announced. SKC is officially client 1. Workspace-priced model designed against real usage data.",
+          "current": true
+        },
+        "scale": {
+          "period": "H2 2026",
+          "title": "Cohort 2 + Marketplace app",
+          "body": "Next 9 founding agencies onboarded. SaaS command center publicly live for self-serve per-agency workspaces."
+        }
+      }
+    },
     "timeline": {
+      "eyebrow": "Market context",
       "title": "The evolution of agency operations",
       "eras": {
         "assisted": {
@@ -762,12 +794,14 @@
       }
     },
     "cta": {
+      "eyebrow": "Next step",
       "title": "Become a Founding Member",
       "description": "We are onboarding the first 10 Founding agencies at €997 per month. Lock in your lowest price and help shape the product.",
       "demo_button": "Book a call",
       "contact_button": "Get in touch"
     },
     "icp": {
+      "eyebrow": "Hybrid ICP",
       "title": "Which agencies am I building Clyde for?",
       "subtitle": "The same hybrid ICP as on home, in more detail here. We are deliberately selective.",
       "fitTitle": "Who this is for",
@@ -782,6 +816,7 @@
       "notFit4": "You run an agency with more than 30 FTE and have your own AI or tech team. We accelerate agencies that do not build that in-house."
     },
     "infra": {
+      "eyebrow": "Infrastructure",
       "title": "Our infrastructure",
       "subtitle": "Facts, not ideology. Where your data lives and who writes the code matters.",
       "selfHosted": {
@@ -802,11 +837,16 @@
       }
     },
     "capacity": {
+      "eyebrow": "Capacity",
       "title": "Capacity and transparency",
       "body": "Max {maxPartners} agencies per year. Currently {taken} of {total} Founding spots taken. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
-      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
+      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort.",
+      "barLegend": "Founding spots taken",
+      "barTakenLabel": "Taken",
+      "barAvailableLabel": "Available"
     },
     "founder": {
+      "eyebrow": "Founder",
       "title": "Who is behind this",
       "name": "Daley",
       "fullName": "Daley Maat",

@@ -727,17 +727,49 @@
       "description": "FutureMarketingAI bouwt persistente AI Marketing Medewerkers voor marketingbureaus. Gemaakt in Nederland, voor Europese bureaus."
     },
     "hero": {
+      "eyebrow": "Over FutureMarketingAI",
       "badge": "Founding members worden nu onboard gezet",
       "title": "Over FutureMarketingAI",
       "tagline": "De eerste AI Marketing Medewerker voor bureaus, door een solo founder."
     },
     "mission": {
+      "eyebrow": "Waarom dit bestaat",
       "heading": "Mijn missie",
       "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die de uitvoering op zich neemt. Zodat bureauteams zich kunnen richten op strategie, creativiteit en klantrelaties.",
       "why_heading": "Waarom ik dit bouw",
       "why_text": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
     },
+    "journey": {
+      "eyebrow": "Bouwreis",
+      "title": "Mijn bouwreis tot nu",
+      "subtitle": "Van eerste pijnpunt bij SkinClarity Club naar live AI Marketing Medewerker. Geen pitch deck, wel een logboek van wat er stond toen, en wat er nu draait.",
+      "ariaLabel": "Tijdslijn van FutureMarketingAI mijlpalen",
+      "milestones": {
+        "spark": {
+          "period": "Q3 2025",
+          "title": "Eerste pijnpunt zichtbaar",
+          "body": "Bij SkinClarity Club merkte ik dat 12 losse marketing-tools niet meeschalen bij 3 Instagram-accounts en 4 merken. De aanleiding voor wat later FMai werd."
+        },
+        "prototype": {
+          "period": "Q4 2025",
+          "title": "Eerste Clyde-prototype",
+          "body": "n8n + Supabase als basis, eerste merk-geheugen-laag live. Een handvol vaardigheden draaide autonoom voor één merk binnen SKC."
+        },
+        "founding": {
+          "period": "Q1 2026",
+          "title": "Founding-cohort opengesteld",
+          "body": "Eerste 10 founding plekken ge-announced. SKC is officieel klant 1. Workspace-priced model uitgewerkt op basis van echte usage-data.",
+          "current": true
+        },
+        "scale": {
+          "period": "H2 2026",
+          "title": "Cohort 2 + Marketplace-app",
+          "body": "Volgende 9 founding bureaus onboarden. SaaS command center publiek live voor self-serve werkruimtes per bureau."
+        }
+      }
+    },
     "timeline": {
+      "eyebrow": "Marktcontext",
       "title": "De evolutie van bureau-operaties",
       "eras": {
         "assisted": {
@@ -762,12 +794,14 @@
       }
     },
     "cta": {
+      "eyebrow": "Volgende stap",
       "title": "Word Founding Member",
       "description": "We zetten de eerste 10 Founding-bureaus op voor €997 per maand. Vergrendel je laagste prijs en help het product vormgeven.",
       "demo_button": "Plan een gesprek",
       "contact_button": "Neem contact op"
     },
     "icp": {
+      "eyebrow": "Hybride ICP",
       "title": "Voor welke bureaus bouw ik Clyde?",
       "subtitle": "Dezelfde hybride ICP als op home, hier uitgebreider. We zijn bewust selectief.",
       "fitTitle": "Voor wie werkt dit?",
@@ -782,6 +816,7 @@
       "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "infra": {
+      "eyebrow": "Infrastructuur",
       "title": "Mijn infrastructuur",
       "subtitle": "Feiten, geen ideologie. Waar je data woont en wie de code schrijft is belangrijk.",
       "selfHosted": {
@@ -802,11 +837,16 @@
       }
     },
     "capacity": {
+      "eyebrow": "Capaciteit",
       "title": "Capaciteit en transparantie",
       "body": "Maximaal {maxPartners} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort.",
+      "barLegend": "Founding plekken bezet",
+      "barTakenLabel": "Bezet",
+      "barAvailableLabel": "Beschikbaar"
     },
     "founder": {
+      "eyebrow": "Founder",
       "title": "Wie staat hier achter",
       "name": "Daley",
       "fullName": "Daley Maat",

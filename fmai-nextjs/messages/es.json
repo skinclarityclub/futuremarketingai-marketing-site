@@ -727,17 +727,49 @@
       "description": "FutureMarketingAI construye Empleados AI de Marketing persistentes para agencias de marketing. Hecho en los Países Bajos, para agencias europeas."
     },
     "hero": {
+      "eyebrow": "Sobre FutureMarketingAI",
       "badge": "Ahora estamos incorporando Founding members",
       "title": "Sobre FutureMarketingAI",
       "tagline": "El primer Empleado AI de Marketing para agencias, creado por un founder en solitario."
     },
     "mission": {
+      "eyebrow": "Por qué existe esto",
       "heading": "Nuestra misión",
       "text": "Dar a cada agencia de marketing acceso a un Empleado AI de Marketing que se encargue de la ejecución. Para que los equipos de agencia puedan centrarse en estrategia, creatividad y relación con el cliente.",
       "why_heading": "Por qué construyo esto",
       "why_text": "Yo mismo dirigí operaciones de marketing y vi el mismo problema que tiene toda agencia: demasiadas marcas, demasiado trabajo repetitivo, demasiado pocas horas. Así que construí el Empleado AI de Marketing que yo quería tener."
     },
+    "journey": {
+      "eyebrow": "Recorrido",
+      "title": "Mi recorrido hasta ahora",
+      "subtitle": "Del primer dolor en SkinClarity Club hasta un Empleado AI de Marketing en vivo. Sin pitch deck, solo un registro de lo que era cierto entonces y lo que funciona ahora.",
+      "ariaLabel": "Línea temporal de hitos de FutureMarketingAI",
+      "milestones": {
+        "spark": {
+          "period": "Q3 2025",
+          "title": "Primer dolor visible",
+          "body": "En SkinClarity Club noté que 12 herramientas de marketing separadas no escalan con 3 cuentas de Instagram y 4 marcas. El detonante de lo que después fue FMai."
+        },
+        "prototype": {
+          "period": "Q4 2025",
+          "title": "Primer prototipo de Clyde",
+          "body": "n8n + Supabase como base, primera capa de memoria de marca en vivo. Un puñado de habilidades funcionaba de forma autónoma para una sola marca dentro de SKC."
+        },
+        "founding": {
+          "period": "Q1 2026",
+          "title": "Apertura del cohorte Founding",
+          "body": "Anunciadas las primeras 10 plazas founding. SKC es oficialmente cliente 1. Modelo workspace-priced diseñado con datos reales de uso.",
+          "current": true
+        },
+        "scale": {
+          "period": "H2 2026",
+          "title": "Cohorte 2 + app Marketplace",
+          "body": "Onboarding de las siguientes 9 agencias founding. SaaS command center público en vivo para workspaces self-serve por agencia."
+        }
+      }
+    },
     "timeline": {
+      "eyebrow": "Contexto de mercado",
       "title": "La evolución de las operaciones de agencia",
       "eras": {
         "assisted": {
@@ -762,12 +794,14 @@
       }
     },
     "cta": {
+      "eyebrow": "Siguiente paso",
       "title": "Sé Founding Member",
       "description": "Estamos incorporando a las primeras 10 agencias Founding por 997 EUR al mes. Fija tu precio más bajo y ayuda a dar forma al producto.",
       "demo_button": "Agenda una llamada",
       "contact_button": "Ponte en contacto"
     },
     "icp": {
+      "eyebrow": "ICP híbrido",
       "title": "¿Para qué agencias construyo a Clyde?",
       "subtitle": "El mismo ICP híbrido que en la home, aquí con más detalle. Somos deliberadamente selectivos.",
       "fitTitle": "Para quién es esto",
@@ -782,6 +816,7 @@
       "notFit4": "Diriges una agencia con más de 30 FTE y equipo propio de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
     },
     "infra": {
+      "eyebrow": "Infraestructura",
       "title": "Nuestra infraestructura",
       "subtitle": "Hechos, no ideología. Dónde viven tus datos y quién escribe el código importa.",
       "selfHosted": {
@@ -802,11 +837,16 @@
       }
     },
     "capacity": {
+      "eyebrow": "Capacidad",
       "title": "Capacidad y transparencia",
       "body": "Máx. {maxPartners} agencias al año. Actualmente {taken} de {total} plazas Founding ocupadas. No es un truco de marketing, es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente durante 4 semanas de setup, y hay un límite en cuántas agencias podemos recibir a la vez.",
-      "reasoning": "Elegimos calidad sobre volumen. Preferimos {maxPartners} agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte."
+      "reasoning": "Elegimos calidad sobre volumen. Preferimos {maxPartners} agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte.",
+      "barLegend": "Plazas Founding ocupadas",
+      "barTakenLabel": "Ocupadas",
+      "barAvailableLabel": "Disponibles"
     },
     "founder": {
+      "eyebrow": "Founder",
       "title": "Quién hay detrás",
       "name": "Daley",
       "fullName": "Daley Maat",
