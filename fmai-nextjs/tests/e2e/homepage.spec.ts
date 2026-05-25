@@ -31,7 +31,9 @@ test.describe('Homepage Sections', () => {
     selector: string
   ) {
     const locator = page.locator(selector)
-    for (let i = 0; i < 20; i++) {
+    // 50×500 = 25 000 px scroll budget — W2 homepage has 17 sections,
+    // total height ≈ 7000-9000 px depending on viewport.
+    for (let i = 0; i < 50; i++) {
       if ((await locator.count()) > 0) break
       await page.evaluate(() => window.scrollBy(0, 500))
       await page.waitForTimeout(150)
@@ -41,8 +43,8 @@ test.describe('Homepage Sections', () => {
   }
 
   test('should render Stats/Metrics bar', async ({ page }) => {
-    await scrollUntilVisible(page,'section[aria-label="Key metrics"]')
-    const statsSection = page.locator('section[aria-label="Key metrics"]')
+    await scrollUntilVisible(page,'section[aria-labelledby="key-metrics"]')
+    const statsSection = page.locator('section[aria-labelledby="key-metrics"]')
     await expect(statsSection).toBeVisible()
   })
 
@@ -92,7 +94,15 @@ test.describe('Homepage Sections', () => {
   })
 
   test('should render Footer with brand and links', async ({ page }) => {
-    const footer = page.locator('footer')
+    // W2 reorder: page is much longer (17 sections), so scroll to bottom to
+    // trigger any LazySection between hero and footer before asserting.
+    // Use role=contentinfo to target the site footer specifically — several
+    // card components (CaseStudyCard, ClydeFeaturedTile, etc.) legitimately
+    // use <footer> inside <article>, which makes a plain 'footer' selector
+    // ambiguous in strict mode.
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+    const footer = page.getByRole('contentinfo')
+    await footer.scrollIntoViewIfNeeded()
     await expect(footer).toBeVisible()
 
     const brand = footer.locator('a').first()
@@ -128,7 +138,7 @@ test.describe('Homepage Interactions', () => {
     await page.locator('#services').waitFor({ state: 'visible', timeout: 5000 })
 
     const serviceLinks = page.locator('#services .grid a[href*="/skills/"]')
-    await expect(serviceLinks).toHaveCount(6)
+    await expect(serviceLinks).toHaveCount(12)
 
     const count = await serviceLinks.count()
     for (let i = 0; i < count; i++) {
