@@ -51,7 +51,13 @@
       },
       "clyde": {
         "title": "Clyde Empleado AI de Marketing",
-        "description": "Un único punto de contacto para todo tu portfolio. Pídelo en lenguaje natural, Clyde elige la habilidad correcta."
+        "description": "Un único punto de contacto para todo tu portfolio. Pídelo en lenguaje natural, Clyde elige la habilidad correcta.",
+        "statusLabel": "Activo",
+        "promptIntro": "Pídele por ejemplo:",
+        "prompt1": "Planifica contenido de Instagram para todas las marcas SKC esta semana",
+        "prompt2": "Crea un informe semanal de rendimiento para la marca X",
+        "prompt3": "Analiza qué tipos de contenido funcionaron mejor en Q4",
+        "openLink": "Abrir la skill Clyde"
       }
     },
     "trust": {

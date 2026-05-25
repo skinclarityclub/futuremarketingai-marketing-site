@@ -51,7 +51,13 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Employee",
-        "description": "One point of contact for your entire portfolio. Ask in plain language, Clyde picks the right skill."
+        "description": "One point of contact for your entire portfolio. Ask in plain language, Clyde picks the right skill.",
+        "statusLabel": "Active",
+        "promptIntro": "Ask for example:",
+        "prompt1": "Plan Instagram content for all SKC brands this week",
+        "prompt2": "Build a weekly performance report for brand X",
+        "prompt3": "Analyse which content types performed best in Q4",
+        "openLink": "Open the Clyde skill"
       }
     },
     "trust": {

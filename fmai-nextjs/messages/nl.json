@@ -51,7 +51,13 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Medewerker",
-        "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid."
+        "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
+        "statusLabel": "Actief",
+        "promptIntro": "Vraag bijvoorbeeld:",
+        "prompt1": "Plan Instagram-content voor alle SKC-merken deze week",
+        "prompt2": "Maak een wekelijks performance-rapport voor merk X",
+        "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
+        "openLink": "Open de Clyde-skill"
       }
     },
     "trust": {
