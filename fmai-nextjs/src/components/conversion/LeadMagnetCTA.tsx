@@ -55,8 +55,13 @@ function ResultPreview() {
           </span>
         </div>
         <div className="shrink-0 text-right">
-          <span className="font-mono text-2xl font-bold text-text-primary">68</span>
-          <span className="ml-0.5 text-xs text-text-muted">/ 100</span>
+          <div>
+            <span className="font-mono text-3xl font-bold text-text-primary">74</span>
+            <span className="ml-0.5 text-xs text-text-muted">/ 100</span>
+          </div>
+          <div className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-[#f5a623]/80">
+            Bovengemiddeld
+          </div>
         </div>
       </div>
 
@@ -67,7 +72,7 @@ function ResultPreview() {
               <span className="text-[10px] text-text-muted">{label}</span>
               <span className="tabular-nums text-[10px] text-text-secondary">{value}%</span>
             </div>
-            <div className="h-1 overflow-hidden rounded-full bg-white/[0.06]">
+            <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.10]">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${value}%` }}
@@ -77,7 +82,7 @@ function ResultPreview() {
                   ease: [0.32, 0.72, 0, 1],
                 }}
                 className="h-full rounded-full bg-accent-system"
-                style={{ opacity: 0.35 + (value / 100) * 0.65 }}
+                style={{ opacity: 0.6 + (value / 100) * 0.4 }}
               />
             </div>
           </div>
