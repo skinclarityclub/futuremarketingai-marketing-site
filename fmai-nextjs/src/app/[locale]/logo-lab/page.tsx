@@ -5,6 +5,7 @@ import { LogoEcho } from '@/components/brand/logos/LogoEcho'
 import { LogoBicore } from '@/components/brand/logos/LogoBicore'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { LogoFold } from '@/components/brand/logos/LogoFold'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 
 export const metadata: Metadata = {
   title: 'Logo Lab — FutureMarketingAI',
@@ -173,12 +174,10 @@ export default function LogoLabPage() {
   return (
     <main className="min-h-screen bg-bg-deep px-6 lg:px-12 py-16">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-12 max-w-3xl">
-          <p className="text-sm font-mono text-accent-system mb-3 tracking-widest uppercase">
-            Logo Lab — V3 iteration · brein erbij
-          </p>
-          <h1 className="font-display font-bold text-4xl lg:text-5xl text-text-primary mb-4">
-            Zes varianten — drie met brein, drie zonder
+        <header className="mb-12 max-w-3xl space-y-4">
+          <EyebrowLabel>Logo Lab. V3 iteration. brein erbij</EyebrowLabel>
+          <h1 className="font-display font-bold text-4xl lg:text-5xl text-text-primary leading-tight">
+            Zes varianten. drie met brein, drie zonder
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed">
             Eerste drie (V3-A/B/C) interpreteren &quot;brein&quot; op designer-niveau:
