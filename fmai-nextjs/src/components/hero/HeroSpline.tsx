@@ -1,12 +1,63 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+import { useReducedMotion } from 'motion/react'
 import { SplineScene } from '@/components/ui/spline'
 
 export function HeroSpline() {
+  const sceneRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const reduced = useReducedMotion()
+
+  // W5.3 — GSAP ScrollTrigger scrub on the Spline wrapper. Imports are
+  // dynamic so the 85 kB gsap bundle never lands on reduced-motion users
+  // or in SSR. The Spline runtime API isn't reliably exposed here, so we
+  // animate the wrapper transform (rotate + scale + opacity) instead —
+  // visually the robot zooms / spins as the user scrolls past the hero.
+  useEffect(() => {
+    if (reduced || !sceneRef.current || !containerRef.current) return
+
+    let cleanup: (() => void) | undefined
+    let cancelled = false
+
+    ;(async () => {
+      const { gsap } = await import('gsap')
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
+      if (cancelled) return
+
+      gsap.registerPlugin(ScrollTrigger)
+
+      const ctx = gsap.context(() => {
+        gsap.to(sceneRef.current, {
+          rotateZ: 15,
+          scale: 0.78,
+          opacity: 0.55,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        })
+      }, containerRef)
+
+      cleanup = () => ctx.revert()
+    })()
+
+    return () => {
+      cancelled = true
+      cleanup?.()
+    }
+  }, [reduced])
+
   return (
     <>
       {/* Desktop — interactive 3D Spline scene */}
-      <div className="absolute inset-0 hidden lg:block pointer-events-none">
+      <div
+        ref={containerRef}
+        className="absolute inset-0 hidden lg:block pointer-events-none"
+      >
         {/* Ambient glow — radiates from the robot's position (reduced blur for performance) */}
         <div
           className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-20"
@@ -20,7 +71,8 @@ export function HeroSpline() {
 
         {/* Spline scene — masked with CSS mask for seamless edges */}
         <div
-          className="absolute top-0 right-[-5%] w-[60%] h-full pointer-events-auto"
+          ref={sceneRef}
+          className="absolute top-0 right-[-5%] w-[60%] h-full pointer-events-auto will-change-transform"
           style={{
             maskImage:
               'linear-gradient(to right, transparent 0%, black 30%, black 85%, transparent 100%), linear-gradient(to bottom, black 0%, black 80%, transparent 100%)',
