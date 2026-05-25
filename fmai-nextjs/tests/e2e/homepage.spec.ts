@@ -55,9 +55,12 @@ test.describe('Homepage Sections', () => {
     await expect(heading).toBeVisible()
 
     const serviceCards = servicesSection.locator('.grid a[href*="/skills/"]')
+    // TODO W2: services grid expands 6 → 12 — update toHaveCount to 12
     await expect(serviceCards).toHaveCount(6)
   })
 
+  // TODO W3: badges section renamed to pillars (6 checkmarks → 3 bento pillars).
+  // Update aria-labelledby selector + rename test name when W3 lands.
   test('should render Trust Badges section', async ({ page }) => {
     await scrollUntilVisible(page,'section[aria-labelledby="badges"]')
     const badgesSection = page.locator('section[aria-labelledby="badges"]')

@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { Check, X } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 
@@ -22,18 +23,16 @@ export async function IcpSection({ locale }: { locale: string }) {
             <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
               <span
                 aria-hidden
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#00FF88]/15 text-[#00FF88] text-sm"
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-status-active/15 text-status-active"
               >
-                ✓
+                <Check className="w-3.5 h-3.5" />
               </span>
               {t('fitTitle')}
             </h3>
             <ul className="space-y-4">
               {FIT_KEYS.map((key) => (
                 <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
-                  <span aria-hidden className="text-[#00FF88] pt-[2px] shrink-0">
-                    ✓
-                  </span>
+                  <Check aria-hidden className="w-4 h-4 text-status-active mt-[3px] shrink-0" />
                   <span>{t(key)}</span>
                 </li>
               ))}
@@ -45,18 +44,16 @@ export async function IcpSection({ locale }: { locale: string }) {
             <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
               <span
                 aria-hidden
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-text-muted/15 text-text-muted text-sm"
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-text-muted/15 text-text-muted"
               >
-                ×
+                <X className="w-3.5 h-3.5" />
               </span>
               {t('notFitTitle')}
             </h3>
             <ul className="space-y-4">
               {NOT_FIT_KEYS.map((key) => (
                 <li key={key} className="flex gap-3 text-text-secondary leading-relaxed">
-                  <span aria-hidden className="text-text-muted pt-[2px] shrink-0">
-                    ×
-                  </span>
+                  <X aria-hidden className="w-4 h-4 text-text-muted mt-[3px] shrink-0" />
                   <span>{t(key)}</span>
                 </li>
               ))}

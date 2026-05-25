@@ -16,7 +16,7 @@ const SIGNALS = [
   { key: 'caseStudy' as const,   Icon: Sparkles,    href: '/case-studies/skinclarity-club', accent: 'text-accent-system' },
   { key: 'skills' as const,      Icon: Layers,      href: '/skills',                        accent: 'text-accent-system' },
   { key: 'founding' as const,    Icon: Crown,       href: '/founding-member',               accent: 'text-accent-human' },
-  { key: 'sovereignty' as const, Icon: ShieldCheck, href: '/memory',                        accent: 'text-accent-system' },
+  { key: 'sovereignty' as const, Icon: ShieldCheck, href: '/privacy',                       accent: 'text-accent-system' },
 ]
 
 export function TrustSignalsGrid({ signals }: Props) {

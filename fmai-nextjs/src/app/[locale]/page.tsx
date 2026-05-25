@@ -96,7 +96,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero Section — Immersive layout with Spline 3D */}
       <section
         aria-labelledby="hero"
-        className="relative min-h-[85vh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
+        className="relative min-h-[85dvh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
       >
         {/* 3D Robot — absolute, bleeds across full hero */}
         <HeroSpline />
@@ -105,6 +105,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {/* Left content */}
           <div className="relative z-10 flex-1 max-w-[720px]">
             {/* Eyebrow badge */}
+            {/* TODO W4: replace inline animation with motion (CSS keyframe fires on mount, not viewport-gated, not interruptible) */}
             <div
               className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 lg:mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
               style={{ animation: 'fadeIn 0.8s ease-out' }}
@@ -113,6 +114,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
 
             {/* Headline with gradient accent */}
+            {/* TODO W4: replace inline animation with motion + word-by-word kinetic stagger (W5.6) */}
+            {/* TODO W3: remove gradient accent on headlineAccent — impeccable ban, switch to solid teal */}
             <h1
               id="hero"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
@@ -128,6 +131,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </h1>
 
             {/* Description */}
+            {/* TODO W4: replace inline animation with motion */}
             <p
               className="speakable-hero text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
@@ -136,6 +140,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </p>
 
             {/* Trust anchor */}
+            {/* TODO W4: replace inline animation with motion */}
             <p
               className="speakable-tldr text-sm text-text-muted mb-6 lg:mb-10"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
@@ -153,6 +158,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             />
 
             {/* CTA Buttons — left-aligned, single dominant primary + subtle text link */}
+            {/* TODO W4: replace inline animation with motion */}
             <div
               className="flex flex-col items-start gap-3"
               style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
@@ -298,6 +304,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* Trust Badges / Social Proof */}
+      {/* TODO W3: rename aria-labelledby="badges" → "pillars" (also: 6 checkmarks → 3 bento pillars). Mirror update in tests/e2e/homepage.spec.ts lines 62-63 */}
       <LazySection minHeight="200px">
       <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
