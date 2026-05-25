@@ -9,6 +9,8 @@ import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 
 export const revalidate = 3600
 
@@ -91,8 +93,13 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         locale={locale}
       />
       <Breadcrumbs path="/blog" locale={locale} />
-      <h1 className="mb-2 text-4xl font-bold tracking-tight text-text-primary">{t('title')}</h1>
-      <p className="mb-10 text-lg text-text-secondary">{t('subtitle')}</p>
+      <header className="mb-10 max-w-3xl space-y-3">
+        <EyebrowLabel>{t('eyebrow')}</EyebrowLabel>
+        <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
+          {t('title')}
+        </h1>
+        <p className="text-lg leading-relaxed text-text-secondary">{t('subtitle')}</p>
+      </header>
 
       <CategoryFilter
         categories={BLOG_CATEGORIES}
@@ -103,11 +110,13 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_320px]">
         <div>
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <RevealContainer className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {filteredPosts.map((post) => (
-                <BlogPostCard key={post.slug} post={post} locale={locale} />
+                <RevealItem key={post.slug}>
+                  <BlogPostCard post={post} locale={locale} />
+                </RevealItem>
               ))}
-            </div>
+            </RevealContainer>
           ) : (
             <div className="py-20 text-center">
               <p className="text-lg text-text-muted">

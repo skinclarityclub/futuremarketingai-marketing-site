@@ -1297,10 +1297,14 @@
     }
   },
   "blog": {
+    "eyebrow": "Bibliotheek",
     "title": "Inzichten over AI-marketing en automatisering",
     "subtitle": "Inzichten over AI-marketingautomatisering, chatbots en groeistrategieën voor bureaus.",
     "noPosts": "Geen artikelen gevonden.",
-    "noPostsInCategory": "Geen artikelen in deze categorie."
+    "noPostsInCategory": "Geen artikelen in deze categorie.",
+    "post": {
+      "eyebrow": "Artikel"
+    }
   },
   "skills-voice-agent": {
     "meta": {
@@ -3664,6 +3668,7 @@
   },
   "newsletter": {
     "confirm": {
+      "eyebrow": "Bevestiging",
       "meta": {
         "title": "Aanmelding bevestigen | Future Marketing AI",
         "description": "Bevestig je aanmelding voor de AI Readiness Checklist."

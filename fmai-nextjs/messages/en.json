@@ -1297,10 +1297,14 @@
     }
   },
   "blog": {
+    "eyebrow": "Library",
     "title": "Insights on AI marketing and automation",
     "subtitle": "Insights on AI marketing automation, chatbots and growth strategies for agencies.",
     "noPosts": "No articles found.",
-    "noPostsInCategory": "No articles in this category."
+    "noPostsInCategory": "No articles in this category.",
+    "post": {
+      "eyebrow": "Article"
+    }
   },
   "skills-voice-agent": {
     "meta": {
@@ -3664,6 +3668,7 @@
   },
   "newsletter": {
     "confirm": {
+      "eyebrow": "Confirmation",
       "meta": {
         "title": "Confirm subscription | Future Marketing AI",
         "description": "Confirm your subscription to the AI Readiness Checklist."

@@ -1297,10 +1297,14 @@
     }
   },
   "blog": {
+    "eyebrow": "Biblioteca",
     "title": "Ideas sobre marketing con AI y automatización",
     "subtitle": "Ideas sobre automatización de marketing con AI, chatbots y estrategias de crecimiento para agencias.",
     "noPosts": "No se han encontrado artículos.",
-    "noPostsInCategory": "No hay artículos en esta categoría."
+    "noPostsInCategory": "No hay artículos en esta categoría.",
+    "post": {
+      "eyebrow": "Artículo"
+    }
   },
   "skills-voice-agent": {
     "meta": {
@@ -3664,6 +3668,7 @@
   },
   "newsletter": {
     "confirm": {
+      "eyebrow": "Confirmación",
       "meta": {
         "title": "Confirmar suscripción | Future Marketing AI",
         "description": "Confirma tu suscripción a la Checklist de AI Readiness."
