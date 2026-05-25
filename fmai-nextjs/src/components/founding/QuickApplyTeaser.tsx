@@ -2,10 +2,25 @@
 
 import { useRouter } from 'next/navigation'
 import { useState, type FormEvent } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
 import { ArrowRight } from 'lucide-react'
 
+export interface QuickApplyTeaserCopy {
+  eyebrow: string
+  heading: string
+  subheading: string
+  emailLabel: string
+  emailPlaceholder: string
+  agencyLabel: string
+  agencyPlaceholder: string
+  cta: string
+  emailInvalid: string
+  reassurance: string
+  ariaLabel: string
+}
+
 interface QuickApplyTeaserProps {
+  locale: string
+  copy: QuickApplyTeaserCopy
   /** Optional override of the destination path. */
   destination?: string
 }
@@ -17,15 +32,15 @@ interface QuickApplyTeaserProps {
  * email shape client-side, then pushes the user to /apply with the values
  * prefilled via URL search params. ApplicationForm reads them on mount.
  *
- * Why prefill instead of POSTing here: the full apply intake collects more
- * fields and then routes to Calendly. Splitting the path would create two
- * write surfaces for the same intent. The teaser exists to remove the cold
- * landing onto /apply: the user arrives with their context already typed.
+ * Copy is injected as props from the server-rendered page to keep the
+ * founding-member namespace out of the global client message payload.
  */
-export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserProps) {
+export function QuickApplyTeaser({
+  locale,
+  copy,
+  destination = '/apply',
+}: QuickApplyTeaserProps) {
   const router = useRouter()
-  const locale = useLocale()
-  const t = useTranslations('founding-member.quickApply')
   const [email, setEmail] = useState('')
   const [agency, setAgency] = useState('')
   const [error, setError] = useState<string | null>(null)
@@ -34,7 +49,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
     event.preventDefault()
     const trimmedEmail = email.trim()
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      setError(t('emailInvalid'))
+      setError(copy.emailInvalid)
       return
     }
     setError(null)
@@ -53,23 +68,23 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
     <form
       onSubmit={handleSubmit}
       noValidate
-      aria-label={t('ariaLabel')}
+      aria-label={copy.ariaLabel}
       className="rounded-2xl border border-[#F5A623]/30 bg-gradient-to-br from-[#F5A623]/10 via-bg-surface/40 to-bg-surface/10 p-6 sm:p-8 backdrop-blur"
     >
       <div className="mb-5 text-center sm:text-left">
         <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-human mb-2">
-          {t('eyebrow')}
+          {copy.eyebrow}
         </p>
         <h3 className="text-xl sm:text-2xl font-display font-bold text-text-primary">
-          {t('heading')}
+          {copy.heading}
         </h3>
-        <p className="text-sm text-text-secondary mt-2">{t('subheading')}</p>
+        <p className="text-sm text-text-secondary mt-2">{copy.subheading}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-[1.4fr_1fr_auto] gap-3">
         <div>
           <label htmlFor="quick-apply-email" className="sr-only">
-            {t('emailLabel')}
+            {copy.emailLabel}
           </label>
           <input
             id="quick-apply-email"
@@ -80,7 +95,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
             inputMode="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={t('emailPlaceholder')}
+            placeholder={copy.emailPlaceholder}
             className={inputClasses}
             aria-invalid={error ? 'true' : 'false'}
             aria-describedby={error ? 'quick-apply-error' : undefined}
@@ -88,7 +103,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
         </div>
         <div>
           <label htmlFor="quick-apply-agency" className="sr-only">
-            {t('agencyLabel')}
+            {copy.agencyLabel}
           </label>
           <input
             id="quick-apply-agency"
@@ -97,7 +112,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
             autoComplete="organization"
             value={agency}
             onChange={(e) => setAgency(e.target.value)}
-            placeholder={t('agencyPlaceholder')}
+            placeholder={copy.agencyPlaceholder}
             className={inputClasses}
           />
         </div>
@@ -105,7 +120,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
           type="submit"
           className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#F5A623] to-[#E08D00] text-bg-deep font-semibold text-sm sm:text-base shadow-[0_8px_24px_-12px_rgba(245,166,35,0.6)] hover:shadow-[0_12px_28px_-10px_rgba(245,166,35,0.7)] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-human"
         >
-          {t('cta')}
+          {copy.cta}
           <ArrowRight className="h-4 w-4" aria-hidden />
         </button>
       </div>
@@ -116,7 +131,7 @@ export function QuickApplyTeaser({ destination = '/apply' }: QuickApplyTeaserPro
         </p>
       )}
 
-      <p className="text-xs text-text-muted mt-4">{t('reassurance')}</p>
+      <p className="text-xs text-text-muted mt-4">{copy.reassurance}</p>
     </form>
   )
 }
