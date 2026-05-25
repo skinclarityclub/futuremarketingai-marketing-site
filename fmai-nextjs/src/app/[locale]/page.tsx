@@ -23,6 +23,7 @@ import { ProcessTimeline } from '@/components/home/ProcessTimeline'
 import { FounderSection } from '@/components/home/FounderSection'
 import { TestimonialBlock } from '@/components/home/TestimonialBlock'
 import { PricingTeaser } from '@/components/home/PricingTeaser'
+import { TIER_PRICING, formatEur } from '@/lib/pricing-data'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
@@ -228,11 +229,31 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 10 — PricingTeaser (4 tiers)
+          Sectie 10 — PricingTeaser (4 tiers, W5.8 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="420px">
         <ScrollReveal>
-          <PricingTeaser locale={locale} />
+          <PricingTeaser
+            eyebrow={t('pricingTeaser.eyebrow')}
+            title={t('pricingTeaser.title')}
+            subtitle={t('pricingTeaser.subtitle')}
+            ctaLink={t('pricingTeaser.ctaLink')}
+            spotsTaken={t('pricingTeaser.spotsTaken', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            perMonth={t('pricingTeaser.perMonth')}
+            perWorkspace={t('pricingTeaser.perWorkspace')}
+            tiers={[
+              { key: 'founding',     price: formatEur(TIER_PRICING.FOUNDING_MEMBER.pricingModel === 'fixed' ? TIER_PRICING.FOUNDING_MEMBER.price : 0, locale),                       unit: 'perMonth',     highlighted: true  },
+              { key: 'growth',       price: formatEur(TIER_PRICING.GROWTH.pricingModel === 'workspace' ? TIER_PRICING.GROWTH.pricePerWorkspace : 0, locale),                          unit: 'perWorkspace', highlighted: false },
+              { key: 'professional', price: formatEur(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0, locale),              unit: 'perWorkspace', highlighted: false },
+              { key: 'enterprise',   price: formatEur(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0, locale),                  unit: 'perWorkspace', highlighted: false },
+            ]}
+            tierCopy={{
+              founding:     { label: t('pricingTeaser.tiers.founding.label'),     tagline: t('pricingTeaser.tiers.founding.tagline'),     desc: t('pricingTeaser.tiers.founding.desc')     },
+              growth:       { label: t('pricingTeaser.tiers.growth.label'),       tagline: t('pricingTeaser.tiers.growth.tagline'),       desc: t('pricingTeaser.tiers.growth.desc')       },
+              professional: { label: t('pricingTeaser.tiers.professional.label'), tagline: t('pricingTeaser.tiers.professional.tagline'), desc: t('pricingTeaser.tiers.professional.desc') },
+              enterprise:   { label: t('pricingTeaser.tiers.enterprise.label'),   tagline: t('pricingTeaser.tiers.enterprise.tagline'),   desc: t('pricingTeaser.tiers.enterprise.desc')   },
+            }}
+          />
         </ScrollReveal>
       </LazySection>
 
