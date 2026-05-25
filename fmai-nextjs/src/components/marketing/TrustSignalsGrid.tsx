@@ -1,5 +1,9 @@
+'use client'
+
 import { Sparkles, Layers, Crown, ShieldCheck, ArrowRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
+import { EASE_OUT, STAGGER_FAST, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
 
 type SignalContent = { value: string; label: string; linkText: string }
 
@@ -19,16 +23,38 @@ const SIGNALS = [
   { key: 'sovereignty' as const, Icon: ShieldCheck, href: '/privacy',                       accent: 'text-accent-system' },
 ]
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: STAGGER_FAST },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: EASE_OUT },
+  },
+}
+
 export function TrustSignalsGrid({ signals }: Props) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      {SIGNALS.map(({ key, Icon, href, accent }, i) => {
+    <motion.div
+      className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT_DEFAULT}
+    >
+      {SIGNALS.map(({ key, Icon, href, accent }) => {
         const { value, label, linkText } = signals[key]
         return (
-          <div
+          <motion.div
             key={key}
+            variants={itemVariants}
             className="flex flex-col border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-2xl p-5 md:p-6 min-h-[180px] md:min-h-[200px] transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5"
-            style={{ animation: `fadeInUp 0.6s ease-out ${i * 0.08}s both` }}
           >
             <Icon className={`w-5 h-5 shrink-0 mb-3 ${accent}`} aria-hidden />
             <span className="text-2xl md:text-3xl font-bold leading-tight text-accent-system">
@@ -43,9 +69,9 @@ export function TrustSignalsGrid({ signals }: Props) {
               {linkText}
               <ArrowRight className="w-3 h-3 shrink-0" aria-hidden />
             </Link>
-          </div>
+          </motion.div>
         )
       })}
-    </div>
+    </motion.div>
   )
 }
