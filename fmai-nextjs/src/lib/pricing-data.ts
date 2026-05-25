@@ -104,6 +104,55 @@ export function defaultWorkspaces(tier: TierKey): number {
   return Math.floor((cfg.minWorkspaces + cfg.maxWorkspaces) / 2)
 }
 
+/** Tier keys that participate in the shared workspace slider (excludes Founding). */
+export const WORKSPACE_TIER_KEYS = ['GROWTH', 'PROFESSIONAL', 'ENTERPRISE'] as const
+export type WorkspaceTierKey = (typeof WORKSPACE_TIER_KEYS)[number]
+
+/**
+ * Detect which workspace-priced tier a given workspace count falls into.
+ * Growth: 2-4, Professional: 5-14, Enterprise: 15+. For workspaces=1
+ * returns Growth (the lowest applicable tier) so the slider has a sensible
+ * "below minimum" fallback rather than rendering nothing active.
+ */
+export function detectWorkspaceTier(workspaces: number): WorkspaceTierKey {
+  for (const tier of WORKSPACE_TIER_KEYS) {
+    const cfg = TIER_PRICING[tier] as WorkspaceTierPricing
+    const max = cfg.maxWorkspaces === -1 ? Infinity : cfg.maxWorkspaces
+    if (workspaces >= cfg.minWorkspaces && workspaces <= max) return tier
+  }
+  // Workspaces below Growth.minWorkspaces (e.g. 1) → Growth as starting point.
+  return 'GROWTH'
+}
+
+/**
+ * Returns whether a tier is "active" for the given workspace count — used
+ * to glow / scale the matching tier card on the shared slider.
+ */
+export function isTierActiveForWorkspaces(tier: WorkspaceTierKey, workspaces: number): boolean {
+  return detectWorkspaceTier(workspaces) === tier
+}
+
+/**
+ * Returns whether Founding (fixed €997) is cheaper than the workspace-priced
+ * tier at the current slider value. When true, the Founding tile shows a
+ * "better deal for your portfolio" glow next to the slider's active tier.
+ */
+export function isFoundingBetterValueAt(workspaces: number): boolean {
+  if (workspaces < 1) return true
+  const founding = TIER_PRICING.FOUNDING_MEMBER
+  if (founding.pricingModel !== 'fixed') return false
+  const tier = detectWorkspaceTier(workspaces)
+  const workspacePrice = priceForTier(tier, workspaces)
+  return workspacePrice >= founding.price
+}
+
+/** Shared-slider bounds. Lower-bound 1 (sub-Growth) for transparency about
+ * what 1-workspace would cost; upper-bound 30 covers full Enterprise range
+ * without pretending Enterprise has a hard cap.
+ */
+export const SHARED_SLIDER_MIN = 1
+export const SHARED_SLIDER_MAX = 30
+
 /** EUR thousands-separator formatter. Use for tier prices. */
 export function formatEur(amount: number, locale: string): string {
   return new Intl.NumberFormat(locale === 'en' ? 'en-IE' : locale === 'es' ? 'es-ES' : 'nl-NL', {
