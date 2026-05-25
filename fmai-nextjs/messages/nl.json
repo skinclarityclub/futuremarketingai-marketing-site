@@ -2950,6 +2950,11 @@
     "cta": {
       "applyTitle": "Apply",
       "applySubtitle": "Plan een gesprek"
+    },
+    "megaMenu": {
+      "tagline": "12 vaardigheden, 1 brein",
+      "previewCta": "Bekijk de vaardigheid",
+      "viewAll": "Alle vaardigheden"
     }
   },
   "chat": {

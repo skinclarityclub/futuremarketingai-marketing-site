@@ -2950,6 +2950,11 @@
     "cta": {
       "applyTitle": "Apply",
       "applySubtitle": "Agenda una llamada"
+    },
+    "megaMenu": {
+      "tagline": "12 habilidades, 1 cerebro",
+      "previewCta": "Ver habilidad",
+      "viewAll": "Todas las habilidades"
     }
   },
   "chat": {
