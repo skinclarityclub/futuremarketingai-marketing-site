@@ -8,10 +8,13 @@
  * `useSearchParams()` opts out of static prerendering in Next.js 16.
  */
 import { Suspense, useEffect, useState } from 'react'
+import { motion } from 'motion/react'
 import { useSearchParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { ConfirmRetryForm } from '@/components/newsletter/ConfirmRetryForm'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { EASE_OUT } from '@/lib/motion/easings'
 
 type ConfirmState = 'pending' | 'ok' | 'already' | 'error'
 
@@ -51,39 +54,49 @@ function NewsletterConfirmInner() {
 
   return (
     <main className="max-w-xl mx-auto px-6 py-24 text-center">
-      <h1 className="text-3xl font-semibold text-text-primary mb-4">
-        {state === 'pending' && t('pendingTitle')}
-        {state === 'ok' && t('okTitle')}
-        {state === 'already' && t('alreadyTitle')}
-        {state === 'error' && t('errorTitle')}
-      </h1>
-      <p
-        className="text-text-secondary leading-relaxed mb-8"
-        aria-live={state === 'pending' ? 'polite' : undefined}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: EASE_OUT }}
+        className="space-y-6"
       >
-        {state === 'pending' && t('pendingBody')}
-        {state === 'ok' && t('okBody')}
-        {state === 'already' && t('alreadyBody')}
-        {state === 'error' && t('errorBody')}
-      </p>
-      {state === 'error' ? (
-        <div className="flex flex-col items-center gap-6">
-          <ConfirmRetryForm locale={locale} />
+        <div className="space-y-3">
+          <EyebrowLabel className="inline-block">{t('eyebrow')}</EyebrowLabel>
+          <h1 className="font-display text-3xl md:text-4xl font-semibold text-text-primary leading-tight">
+            {state === 'pending' && t('pendingTitle')}
+            {state === 'ok' && t('okTitle')}
+            {state === 'already' && t('alreadyTitle')}
+            {state === 'error' && t('errorTitle')}
+          </h1>
+        </div>
+        <p
+          className="text-text-secondary leading-relaxed"
+          aria-live={state === 'pending' ? 'polite' : undefined}
+        >
+          {state === 'pending' && t('pendingBody')}
+          {state === 'ok' && t('okBody')}
+          {state === 'already' && t('alreadyBody')}
+          {state === 'error' && t('errorBody')}
+        </p>
+        {state === 'error' ? (
+          <div className="flex flex-col items-center gap-6 pt-2">
+            <ConfirmRetryForm locale={locale} />
+            <Link
+              href="/"
+              className="text-sm text-text-muted underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+            >
+              {t('backHome')}
+            </Link>
+          </div>
+        ) : (
           <Link
             href="/"
-            className="text-sm text-text-muted underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
           >
             {t('backHome')}
           </Link>
-        </div>
-      ) : (
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-lg bg-accent-system px-5 py-2.5 text-sm font-semibold text-bg-deep hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-        >
-          {t('backHome')}
-        </Link>
-      )}
+        )}
+      </motion.div>
     </main>
   )
 }
