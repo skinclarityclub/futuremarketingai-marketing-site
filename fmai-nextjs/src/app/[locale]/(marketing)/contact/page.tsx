@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
+import { Mail, MapPin, Clock, ArrowRight } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -9,8 +10,9 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { PageShell } from '@/components/layout/PageShell'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { SectionHeading } from '@/components/ui/SectionHeading'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ContactForm } from '@/components/contact/ContactForm'
 
 export function generateStaticParams() {
@@ -51,9 +53,13 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <Breadcrumbs path="/contact" locale={locale} />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-12 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+      <section className="relative pt-16 pb-12 px-6 lg:px-12" aria-labelledby="contact-hero">
+        <div className="max-w-4xl mx-auto text-center space-y-5">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <h1
+            id="contact-hero"
+            className="text-4xl md:text-6xl font-bold font-display text-text-primary"
+          >
             {t('hero.title')}
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
@@ -65,32 +71,42 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       {/* Apply callout — redirect partnership requests to /apply */}
       <section className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
-          <div className="border border-accent-system/30 bg-accent-system/5 rounded-[var(--radius-card)] p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <div className="flex-1">
-              <h2 className="text-lg font-semibold text-text-primary mb-1">
-                {t('applyCallout.title')}
-              </h2>
-              <p className="text-sm text-text-secondary">{t('applyCallout.body')}</p>
+          <ScrollReveal>
+            <div className="border border-accent-system/30 bg-gradient-to-br from-accent-system/10 via-accent-system/5 to-transparent rounded-[var(--radius-card)] p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="flex-1 space-y-2">
+                <EyebrowLabel>{t('applyCallout.eyebrow')}</EyebrowLabel>
+                <h2 className="text-lg font-semibold text-text-primary">
+                  {t('applyCallout.title')}
+                </h2>
+                <p className="text-sm text-text-secondary">{t('applyCallout.body')}</p>
+              </div>
+              <Link
+                href="/apply"
+                className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-accent-system text-bg-deep font-semibold rounded-[var(--radius-btn)] hover:brightness-110 transition-[filter] text-sm"
+              >
+                {t('applyCallout.button')}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
-            <Link
-              href="/apply"
-              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-accent-system text-bg-deep font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity text-sm"
-            >
-              {t('applyCallout.button')}
-            </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Contact Grid */}
-      <section className="py-12 px-6 lg:px-12" aria-labelledby="contact-form">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+      <section className="py-12 px-6 lg:px-12" aria-labelledby="contact-form-heading">
+        <RevealContainer className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <ScrollReveal>
-            <GlassCard>
-              <SectionHeading id="contact-form" className="text-2xl mb-6">
-                {t('form.title')}
-              </SectionHeading>
+          <RevealItem>
+            <GlassCard className="space-y-6">
+              <div className="space-y-2">
+                <EyebrowLabel>{t('form.eyebrow')}</EyebrowLabel>
+                <h2
+                  id="contact-form-heading"
+                  className="text-2xl font-bold font-display text-text-primary"
+                >
+                  {t('form.title')}
+                </h2>
+              </div>
               <ContactForm
                 labels={{
                   name: t('form.name_label'),
@@ -102,114 +118,79 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   message: t('form.message_label'),
                   messagePlaceholder: t('form.message_placeholder'),
                   submit: t('form.submit_button'),
-                  // Phase 11-03: status labels (i18n)
                   statusSending: t('form.status.sending'),
                   statusSuccessTitle: t('form.status.successTitle'),
                   statusSuccessBody: t('form.status.successBody'),
                   statusSendAnother: t('form.status.sendAnother'),
                   statusNetworkError: t('form.status.networkError'),
                   statusGenericError: t('form.status.genericError'),
-                  // Phase 15-02: optional Calendly soft CTA on success.
                   statusCalendlyOffer: t('form.status.calendlyOffer'),
                   statusCalendlyCta: t('form.status.calendlyCta'),
-                  // Phase 17-D D5: required marker UX.
                   requiredNote: t('form.required_note'),
                   optionalSuffix: t('form.optional_suffix'),
                 }}
               />
             </GlassCard>
-          </ScrollReveal>
+          </RevealItem>
 
           {/* Contact Info & CTAs */}
-          <ScrollReveal delay={0.1}>
-            <div className="space-y-6">
-              {/* Direct Contact */}
-              <GlassCard>
-                <h3 className="text-xl font-bold font-display text-text-primary mb-4">
+          <RevealItem>
+            <GlassCard className="space-y-6">
+              <div className="space-y-2">
+                <EyebrowLabel>{t('direct_contact.eyebrow')}</EyebrowLabel>
+                <h3 className="text-xl font-bold font-display text-text-primary">
                   {t('direct_contact.title')}
                 </h3>
-                <address className="space-y-4 not-italic">
-                  {/* Email */}
-                  <a
-                    href="mailto:hello@future-marketing.ai"
-                    className="flex items-start gap-3 text-text-secondary hover:text-accent-system transition-colors"
-                  >
-                    <svg
-                      className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <div>
-                      <div className="text-sm text-text-muted mb-1">
-                        {t('direct_contact.email_label')}
-                      </div>
-                      <div className="font-semibold">{t('direct_contact.email_address')}</div>
+              </div>
+              <address className="space-y-4 not-italic">
+                {/* Email */}
+                <a
+                  href="mailto:hello@future-marketing.ai"
+                  className="flex items-start gap-3 text-text-secondary hover:text-accent-system transition-colors group"
+                >
+                  <Mail
+                    className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0 transition-transform group-hover:scale-110"
+                    aria-hidden
+                  />
+                  <div>
+                    <div className="text-sm text-text-muted mb-1">
+                      {t('direct_contact.email_label')}
                     </div>
-                  </a>
-
-                  {/* Location */}
-                  <div className="flex items-start gap-3 text-text-secondary">
-                    <svg
-                      className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <div>
-                      <div className="text-sm text-text-muted mb-1">
-                        {t('direct_contact.location_label')}
-                      </div>
-                      <div className="font-semibold">{t('direct_contact.location_text')}</div>
-                    </div>
+                    <div className="font-semibold">{t('direct_contact.email_address')}</div>
                   </div>
+                </a>
 
-                  {/* Response Time */}
-                  <div className="flex items-start gap-3 text-text-secondary">
-                    <svg
-                      className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <div>
-                      <div className="text-sm text-text-muted mb-1">
-                        {t('direct_contact.response_time_label')}
-                      </div>
-                      <div className="font-semibold">{t('direct_contact.response_time_text')}</div>
+                {/* Location */}
+                <div className="flex items-start gap-3 text-text-secondary">
+                  <MapPin
+                    className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0"
+                    aria-hidden
+                  />
+                  <div>
+                    <div className="text-sm text-text-muted mb-1">
+                      {t('direct_contact.location_label')}
                     </div>
+                    <div className="font-semibold">{t('direct_contact.location_text')}</div>
                   </div>
-                </address>
-              </GlassCard>
-            </div>
-          </ScrollReveal>
-        </div>
+                </div>
+
+                {/* Response Time */}
+                <div className="flex items-start gap-3 text-text-secondary">
+                  <Clock
+                    className="w-5 h-5 mt-0.5 text-accent-system flex-shrink-0"
+                    aria-hidden
+                  />
+                  <div>
+                    <div className="text-sm text-text-muted mb-1">
+                      {t('direct_contact.response_time_label')}
+                    </div>
+                    <div className="font-semibold">{t('direct_contact.response_time_text')}</div>
+                  </div>
+                </div>
+              </address>
+            </GlassCard>
+          </RevealItem>
+        </RevealContainer>
       </section>
     </PageShell>
   )
