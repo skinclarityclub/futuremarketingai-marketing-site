@@ -8,7 +8,6 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
@@ -359,41 +358,39 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 12 — Trust cards (W3 vervangt door numerieke 01-04 tiles)
-          TODO W3: 4 GlassCards met &#10003; → 4 numerieke tiles (01-04).
+          Sectie 12 — Trust numerieke tiles (01-04, was: 4 checkmark GlassCards)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="300px">
         <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-          <div className="max-w-4xl mx-auto text-center">
-            <SectionHeading id="trust">{t('trust.title')}</SectionHeading>
+          <div className="max-w-5xl mx-auto">
+            <SectionHeading id="trust" className="text-center">{t('trust.title')}</SectionHeading>
             <ScrollReveal>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-                <GlassCard className="text-left">
-                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                  <p className="text-text-primary font-semibold mb-1">
-                    {t('trust.customBuiltTitle')}
-                  </p>
-                  <p className="text-text-secondary text-sm">{t('trust.customBuilt')}</p>
-                </GlassCard>
-                <GlassCard className="text-left">
-                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                  <p className="text-text-primary font-semibold mb-1">
-                    {t('trust.founderAccessTitle')}
-                  </p>
-                  <p className="text-text-secondary text-sm">{t('trust.founderAccess')}</p>
-                </GlassCard>
-                <GlassCard className="text-left">
-                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                  <p className="text-text-primary font-semibold mb-1">
-                    {t('trust.successGuaranteeTitle')}
-                  </p>
-                  <p className="text-text-secondary text-sm">{t('trust.successGuarantee')}</p>
-                </GlassCard>
-                <GlassCard className="text-left">
-                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                  <p className="text-text-primary font-semibold mb-1">{t('trust.trialTitle')}</p>
-                  <p className="text-text-secondary text-sm">{t('trust.trialCommitment')}</p>
-                </GlassCard>
+              <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+                {[
+                  { num: '01', titleKey: 'customBuiltTitle', bodyKey: 'customBuilt'       },
+                  { num: '02', titleKey: 'founderAccessTitle', bodyKey: 'founderAccess'   },
+                  { num: '03', titleKey: 'successGuaranteeTitle', bodyKey: 'successGuarantee' },
+                  { num: '04', titleKey: 'trialTitle', bodyKey: 'trialCommitment'         },
+                ].map(({ num, titleKey, bodyKey }) => (
+                  <div
+                    key={num}
+                    className="flex flex-col"
+                  >
+                    <span
+                      aria-hidden
+                      className="font-display text-6xl lg:text-7xl font-bold text-accent-system leading-none mb-4"
+                    >
+                      {num}
+                    </span>
+                    <span className="block w-10 h-px bg-accent-system/40 mb-4" aria-hidden />
+                    <p className="font-display text-lg font-bold text-text-primary mb-2">
+                      {t(`trust.${titleKey}`)}
+                    </p>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {t(`trust.${bodyKey}`)}
+                    </p>
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
