@@ -1078,6 +1078,7 @@
       "description": "Zo bouw je een AI-medewerker in jouw bureau: 5 stappen van gesprek tot live. Van weken, niet maanden. Geen ontwikkelteam nodig."
     },
     "hero": {
+      "eyebrow": "Onboarding",
       "title": "Hoe begint jouw partnership met Clyde?",
       "description": "Vijf stappen van eerste gesprek tot autonoom draaien. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject."
     },
@@ -1086,6 +1087,7 @@
       "description": "Onboarding in 5 stappen: aanmelden plus kennismakingscall, 4 weken partnership-setup door Daley, Clyde inregelen per merk, productie starten met goedkeuring, continue verbetering."
     },
     "process": {
+      "eyebrow": "5 stappen",
       "title": "De onboardingreis",
       "steps": {
         "apply": {
@@ -1118,6 +1120,7 @@
       "loop_description": "Clyde wordt elke week beter per merk. Geheugen, prestatiedata en jouw correcties voeden de volgende iteratie. Na 12 weken zie je het verschil met week 1."
     },
     "cta": {
+      "eyebrow": "Volgende stap",
       "title": "Klaar om de partnership te starten?",
       "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "button": "Plan een gesprek"
@@ -1129,10 +1132,12 @@
       "description": "Neem contact op met Future Marketing AI. We reageren binnen 24 uur."
     },
     "hero": {
+      "eyebrow": "Contact",
       "title": "Algemene vragen of feedback?",
       "description": "Voor een partnership-aanvraag ga je naar /apply. Voor alle andere vragen (feedback, pers, partnerships, algemene informatie) gebruik je dit formulier. Reactie binnen 1 tot 2 werkdagen."
     },
     "form": {
+      "eyebrow": "Bericht versturen",
       "title": "Stuur ons een bericht",
       "required_note": "Velden met * zijn verplicht.",
       "optional_suffix": "(optioneel)",
@@ -1157,6 +1162,7 @@
       }
     },
     "direct_contact": {
+      "eyebrow": "Directe lijnen",
       "title": "Direct contact",
       "email_label": "E-mail",
       "email_address": "hello@future-marketing.ai",
@@ -1166,6 +1172,7 @@
       "response_time_text": "Binnen 24 uur"
     },
     "applyCallout": {
+      "eyebrow": "Voor partnerships",
       "title": "Wil je een gesprek?",
       "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
       "button": "Plan een gesprek"
@@ -2126,11 +2133,13 @@
       "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor bureaus met 5+ merken. Max 20 plekken per jaar."
     },
     "hero": {
+      "eyebrow": "Aanvraag",
       "counter": "{taken} van {total} Founding plekken bezet",
       "title": "Plan een gesprek",
       "subtitle": "Geen zelfbediening. Geen generieke aanmelding. We beoordelen elke aanvraag persoonlijk en antwoorden binnen 3 werkdagen. Ook als het geen match is."
     },
     "expectations": {
+      "eyebrow": "Wat je krijgt",
       "title": "Wat er gebeurt na aanmelden",
       "step1": {
         "title": "Beoordeling binnen 3 werkdagen",
@@ -2147,6 +2156,7 @@
       "reassurance": "Een \"geen match\" is geen teleurstelling. We zijn bewust selectief om de kwaliteit voor beide kanten te borgen."
     },
     "form": {
+      "eyebrow": "Aanmelden",
       "title": "Vertel ons over jouw bureau",
       "requiredNote": "Velden met * zijn verplicht.",
       "optionalSuffix": "(optioneel)",

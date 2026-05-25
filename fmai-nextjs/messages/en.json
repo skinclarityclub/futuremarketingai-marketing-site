@@ -1078,6 +1078,7 @@
       "description": "How to put an AI employee inside your agency: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
     },
     "hero": {
+      "eyebrow": "Onboarding",
       "title": "How does your partnership with Clyde start?",
       "description": "Five steps from first call to running autonomously. No self-service. Daley personally guides every client through the process."
     },
@@ -1086,6 +1087,7 @@
       "description": "Onboarding in 5 steps: application plus discovery call, 4 weeks of partnership setup by Daley, configure Clyde per brand, start production with approval, continuous improvement."
     },
     "process": {
+      "eyebrow": "5 steps",
       "title": "The onboarding journey",
       "steps": {
         "apply": {
@@ -1118,6 +1120,7 @@
       "loop_description": "Clyde gets better every week per brand. Memory, performance data and your corrections feed the next iteration. After 12 weeks you see the difference from week 1."
     },
     "cta": {
+      "eyebrow": "Next step",
       "title": "Ready to start the partnership?",
       "description": "Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "button": "Book a call"
@@ -1129,10 +1132,12 @@
       "description": "Get in touch with Future Marketing AI. We respond within 24 hours."
     },
     "hero": {
+      "eyebrow": "Contact",
       "title": "General questions or feedback?",
       "description": "For a partnership application go to /apply. For all other questions (feedback, press, partnerships, general information) use this form. Reply within 1 to 2 business days."
     },
     "form": {
+      "eyebrow": "Send a message",
       "title": "Send us a message",
       "required_note": "Fields marked * are required.",
       "optional_suffix": "(optional)",
@@ -1157,6 +1162,7 @@
       }
     },
     "direct_contact": {
+      "eyebrow": "Direct lines",
       "title": "Direct contact",
       "email_label": "Email",
       "email_address": "hello@future-marketing.ai",
@@ -1166,6 +1172,7 @@
       "response_time_text": "Within 24 hours"
     },
     "applyCallout": {
+      "eyebrow": "For partnerships",
       "title": "Want a call?",
       "body": "Are you a potential client? Fill in the application. Daley reads every request personally and replies within 3 business days.",
       "button": "Book a call"
@@ -2126,11 +2133,13 @@
       "description": "Apply for a conversation about FutureMarketingAI. Partnership with Clyde for agencies with 5+ brands. Max 20 seats per year."
     },
     "hero": {
+      "eyebrow": "Application",
       "counter": "{taken} of {total} Founding spots taken",
       "title": "Book a call",
       "subtitle": "No self-service. No generic application. We review every request personally and reply within 3 business days. Even if it is not a match."
     },
     "expectations": {
+      "eyebrow": "What to expect",
       "title": "What happens after you apply",
       "step1": {
         "title": "Review within 3 business days",
@@ -2147,6 +2156,7 @@
       "reassurance": "A \"no match\" is not a disappointment. We are deliberately selective to protect quality for both sides."
     },
     "form": {
+      "eyebrow": "Application",
       "title": "Tell us about your agency",
       "requiredNote": "Fields marked * are required.",
       "optionalSuffix": "(optional)",

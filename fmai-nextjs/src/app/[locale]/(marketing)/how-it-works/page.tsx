@@ -10,7 +10,9 @@ import { PageShell } from '@/components/layout/PageShell'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { SectionHeading } from '@/components/ui/SectionHeading'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { SectionShell } from '@/components/sections/SectionShell'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
 export function generateStaticParams() {
@@ -64,9 +66,13 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       <Breadcrumbs path="/how-it-works" locale={locale} />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-12 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+      <section className="relative pt-16 pb-12 px-6 lg:px-12" aria-labelledby="hiw-hero">
+        <div className="max-w-4xl mx-auto text-center space-y-5">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <h1
+            id="hiw-hero"
+            className="text-4xl md:text-6xl font-bold font-display text-text-primary"
+          >
             {t('hero.title')}
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
@@ -76,68 +82,74 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       </section>
 
       {/* Process Steps */}
-      <section className="py-12 px-6 lg:px-12" aria-labelledby="process">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeading id="process" className="text-center mb-12">
-            {t('process.title')}
-          </SectionHeading>
+      <SectionShell
+        id="hiw-process"
+        eyebrow={t('process.eyebrow')}
+        heading={t('process.title')}
+        align="center"
+        className="py-12"
+      >
+        <RevealContainer as="ol" className="space-y-6">
+          {STEP_KEYS.map((stepKey, index) => (
+            <RevealItem key={stepKey} as="li">
+              <GlassCard className="flex flex-col md:flex-row gap-6 items-start">
+                {/* Step Number */}
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-accent-system/20 border border-accent-system/30 rounded-[var(--radius-card)] flex items-center justify-center">
+                    <span className="text-2xl font-bold font-mono text-accent-system">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                </div>
 
-          <ol className="space-y-6">
-            {STEP_KEYS.map((stepKey, index) => (
-              <li key={stepKey}>
-                <ScrollReveal delay={index * 0.1}>
-                  <GlassCard className="flex flex-col md:flex-row gap-6 items-start">
-                    {/* Step Number */}
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-accent-system/20 border border-accent-system/30 rounded-[var(--radius-card)] flex items-center justify-center">
-                        <span className="text-2xl font-bold font-mono text-accent-system">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                    </div>
+                {/* Content */}
+                <div className="flex-grow">
+                  <div className="text-sm font-semibold font-mono text-accent-human mb-2">
+                    {t(`process.steps.${stepKey}.step`)}
+                  </div>
+                  <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                    {t(`process.steps.${stepKey}.title`)}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {t(`process.steps.${stepKey}.description`)}
+                  </p>
+                </div>
+              </GlassCard>
+            </RevealItem>
+          ))}
+        </RevealContainer>
 
-                    {/* Content */}
-                    <div className="flex-grow">
-                      <div className="text-sm font-semibold font-mono text-accent-human mb-2">
-                        {t(`process.steps.${stepKey}.step`)}
-                      </div>
-                      <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-                        {t(`process.steps.${stepKey}.title`)}
-                      </h3>
-                      <p className="text-text-secondary leading-relaxed">
-                        {t(`process.steps.${stepKey}.description`)}
-                      </p>
-                    </div>
-                  </GlassCard>
-                </ScrollReveal>
-              </li>
-            ))}
-          </ol>
-
-          {/* Loop Indicator */}
-          <div className="mt-8 bg-accent-system/5 border border-accent-system/20 rounded-[var(--radius-card)] p-6 text-center">
+        {/* Loop Indicator */}
+        <ScrollReveal>
+          <div className="mt-10 bg-gradient-to-br from-accent-system/10 via-accent-system/5 to-transparent border border-accent-system/20 rounded-[var(--radius-card)] p-6 text-center">
             <p className="text-text-secondary">
               <strong className="text-text-primary">{t('process.loop_title')}:</strong>{' '}
               {t('process.loop_description')}
             </p>
           </div>
-        </div>
-      </section>
+        </ScrollReveal>
+      </SectionShell>
 
       {/* CTA Section */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="hiw-cta">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <GlassCard className="p-12">
-              <SectionHeading id="hiw-cta" className="mb-4">
+            <GlassCard className="p-12 text-center space-y-5">
+              <EyebrowLabel className="block">{t('cta.eyebrow')}</EyebrowLabel>
+              <h2
+                id="hiw-cta"
+                className="text-3xl md:text-4xl font-bold font-display text-text-primary"
+              >
                 {t('cta.title')}
-              </SectionHeading>
-              <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+              </h2>
+              <p className="text-lg text-text-secondary max-w-2xl mx-auto">
                 {t('cta.description')}
               </p>
-              <CTAButton href="/apply" size="lg">
-                {t('cta.button')}
-              </CTAButton>
+              <div className="pt-2">
+                <CTAButton href="/apply" size="lg">
+                  {t('cta.button')}
+                </CTAButton>
+              </div>
             </GlassCard>
           </ScrollReveal>
         </div>
