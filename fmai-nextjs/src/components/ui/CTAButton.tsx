@@ -11,6 +11,10 @@ interface CTAButtonProps {
   className?: string
   type?: 'button' | 'submit'
   disabled?: boolean
+  /** Optional right-aligned icon (e.g. ArrowRight). Hidden from a11y tree. */
+  icon?: ReactNode
+  /** Optional left-aligned icon. */
+  iconLeft?: ReactNode
 }
 
 export function CTAButton({
@@ -22,6 +26,8 @@ export function CTAButton({
   className,
   type = 'button',
   disabled = false,
+  icon,
+  iconLeft,
 }: CTAButtonProps) {
   const baseStyles =
     'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-btn)] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system'
@@ -48,24 +54,40 @@ export function CTAButton({
     className
   )
 
+  const content = (
+    <>
+      {iconLeft && (
+        <span className="shrink-0" aria-hidden>
+          {iconLeft}
+        </span>
+      )}
+      {children}
+      {icon && (
+        <span className="shrink-0" aria-hidden>
+          {icon}
+        </span>
+      )}
+    </>
+  )
+
   if (href && !disabled && !onClick) {
     if (href.startsWith('http')) {
       return (
         <a href={href} className={styles} target="_blank" rel="noopener noreferrer">
-          {children}
+          {content}
         </a>
       )
     }
     return (
       <Link href={href} className={styles}>
-        {children}
+        {content}
       </Link>
     )
   }
 
   return (
     <button type={type} className={styles} disabled={disabled} onClick={onClick}>
-      {children}
+      {content}
     </button>
   )
 }
