@@ -122,6 +122,30 @@
       "portraitAlt": "Portret van Daley, founder van FutureMarketingAI",
       "ctaLink": "Meer over Daley en de aanpak"
     },
+    "memoryUsp": {
+      "eyebrow": "Geheugen, geen sessies",
+      "title": "Andere AI begint elke prompt opnieuw. Clyde onthoudt jouw merken.",
+      "intro": "Net zoals een vaste medewerker dat doet, en dat in vier lagen.",
+      "layers": {
+        "context": {
+          "label": "Context",
+          "body": "Wat speelt er nu in jouw bureau-portfolio: lopende campagnes, deadlines, recent klantcontact."
+        },
+        "merken": {
+          "label": "Merken",
+          "body": "Tone of voice, do's en don'ts, doelgroep en positionering per merk in jouw klantportfolio."
+        },
+        "historie": {
+          "label": "Historie",
+          "body": "Wat Clyde eerder deed, welke content presteerde, welke prompts werkten en welke niet."
+        },
+        "voorkeuren": {
+          "label": "Voorkeuren",
+          "body": "Review-stijl, kanalen, vaste deadlines en goedkeuringsflow per merk."
+        }
+      },
+      "ctaLink": "Hoe Clyde's geheugen werkt"
+    },
     "testimonial": {
       "eyebrow": "Operator-perspectief",
       "quote": "Wat ik niet had verwacht, is dat ik Clyde miste op vakantie. Niet de tool. De medewerker.",

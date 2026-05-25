@@ -122,6 +122,30 @@
       "portraitAlt": "Retrato de Daley, founder de FutureMarketingAI",
       "ctaLink": "Más sobre Daley y el enfoque"
     },
+    "memoryUsp": {
+      "eyebrow": "Memoria, no sesiones",
+      "title": "Otras IA reinician cada prompt. Clyde recuerda tus marcas.",
+      "intro": "Como lo haría un compañero fijo, repartido en cuatro capas de memoria.",
+      "layers": {
+        "context": {
+          "label": "Contexto",
+          "body": "Lo que pasa ahora en tu portfolio de agencia: campañas en marcha, deadlines y contacto reciente con clientes."
+        },
+        "merken": {
+          "label": "Marcas",
+          "body": "Tono de voz, do's y don'ts, audiencia y posicionamiento por cada marca de tu portfolio."
+        },
+        "historie": {
+          "label": "Historial",
+          "body": "Lo que Clyde hizo antes, qué contenido funcionó, qué prompts sirvieron y cuáles no."
+        },
+        "voorkeuren": {
+          "label": "Preferencias",
+          "body": "Estilo de revisión, canales, deadlines fijos y flow de aprobación por marca."
+        }
+      },
+      "ctaLink": "Cómo funciona la memoria de Clyde"
+    },
     "testimonial": {
       "eyebrow": "Perspectiva de operadora",
       "quote": "Lo que no esperaba: eché de menos a Clyde durante mis vacaciones. No la herramienta. El compañero.",

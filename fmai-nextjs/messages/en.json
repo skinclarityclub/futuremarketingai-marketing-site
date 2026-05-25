@@ -122,6 +122,30 @@
       "portraitAlt": "Portrait of Daley, founder of FutureMarketingAI",
       "ctaLink": "More about Daley and the approach"
     },
+    "memoryUsp": {
+      "eyebrow": "Memory, not sessions",
+      "title": "Other AI restarts every prompt. Clyde remembers your brands.",
+      "intro": "Like a full-time team member would, across four memory layers.",
+      "layers": {
+        "context": {
+          "label": "Context",
+          "body": "What is happening across your agency portfolio right now: live campaigns, deadlines, recent client touchpoints."
+        },
+        "merken": {
+          "label": "Brands",
+          "body": "Tone of voice, do's and don'ts, audience and positioning for each brand in your client portfolio."
+        },
+        "historie": {
+          "label": "History",
+          "body": "What Clyde did before, which content performed, which prompts worked and which did not."
+        },
+        "voorkeuren": {
+          "label": "Preferences",
+          "body": "Review style, channels, fixed deadlines and approval flow per brand."
+        }
+      },
+      "ctaLink": "How Clyde's memory works"
+    },
     "testimonial": {
       "eyebrow": "Operator perspective",
       "quote": "What I did not expect: I missed Clyde during my holiday. Not the tool. The team member.",
