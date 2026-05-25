@@ -122,6 +122,37 @@
       "portraitAlt": "Portret van Daley, founder van FutureMarketingAI",
       "ctaLink": "Meer over Daley en de aanpak"
     },
+    "pricingTeaser": {
+      "eyebrow": "Prijzen",
+      "title": "Transparante prijzen, geen verborgen credits",
+      "subtitle": "Founding is een eenmalige levenslange instap. De andere tiers schalen lineair per werkruimte. Volledige uitsplitsing inclusief caps op de prijspagina.",
+      "perWorkspace": "per werkruimte",
+      "perMonth": "per maand",
+      "spotsTaken": "{taken} van {total} plekken bezet",
+      "tiers": {
+        "founding": {
+          "label": "Founding",
+          "tagline": "Levenslang vast",
+          "desc": "Eenmalige founding-tarief voor de eerste 10 bureaus. Volledige toegang, geen herijking."
+        },
+        "growth": {
+          "label": "Growth",
+          "tagline": "2 tot 4 merken",
+          "desc": "Voor bureaus met een kleine vaste klantportfolio. Prijs schaalt lineair per werkruimte."
+        },
+        "professional": {
+          "label": "Professional",
+          "tagline": "5 tot 14 merken",
+          "desc": "Voor groeiende bureaus met meerdere parallelle teams. Caps op zwaardere vaardigheden."
+        },
+        "enterprise": {
+          "label": "Enterprise",
+          "tagline": "15+ merken",
+          "desc": "Voor grote bureaus. Aangepaste SLA, dedicated capaciteit en uitbreidbare caps."
+        }
+      },
+      "ctaLink": "Volledige prijspagina"
+    },
     "badges": {
       "title": "Gebouwd voor Europese bureaus",
       "gdpr": "AVG-first AI",

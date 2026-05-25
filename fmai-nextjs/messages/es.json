@@ -122,6 +122,37 @@
       "portraitAlt": "Retrato de Daley, founder de FutureMarketingAI",
       "ctaLink": "Más sobre Daley y el enfoque"
     },
+    "pricingTeaser": {
+      "eyebrow": "Precios",
+      "title": "Precios transparentes, sin créditos ocultos",
+      "subtitle": "Founding es una entrada vitalicia única. Los demás niveles escalan linealmente por workspace. Desglose completo con caps en la página de precios.",
+      "perWorkspace": "por workspace",
+      "perMonth": "por mes",
+      "spotsTaken": "{taken} de {total} plazas ocupadas",
+      "tiers": {
+        "founding": {
+          "label": "Founding",
+          "tagline": "Precio vitalicio fijo",
+          "desc": "Tarifa founding única para las primeras 10 agencias. Acceso completo, sin recalibrar."
+        },
+        "growth": {
+          "label": "Growth",
+          "tagline": "De 2 a 4 marcas",
+          "desc": "Para agencias con un portfolio pequeño y estable. El precio escala lineal por workspace."
+        },
+        "professional": {
+          "label": "Professional",
+          "tagline": "De 5 a 14 marcas",
+          "desc": "Para agencias en crecimiento con varios equipos en paralelo. Caps en las habilidades más pesadas."
+        },
+        "enterprise": {
+          "label": "Enterprise",
+          "tagline": "15+ marcas",
+          "desc": "Para grandes agencias. SLA a medida, capacidad dedicada y caps ampliables."
+        }
+      },
+      "ctaLink": "Página de precios completa"
+    },
     "badges": {
       "title": "Construido para agencias europeas",
       "gdpr": "IA con RGPD por defecto",

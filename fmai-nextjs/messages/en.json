@@ -122,6 +122,37 @@
       "portraitAlt": "Portrait of Daley, founder of FutureMarketingAI",
       "ctaLink": "More about Daley and the approach"
     },
+    "pricingTeaser": {
+      "eyebrow": "Pricing",
+      "title": "Transparent pricing, no hidden credits",
+      "subtitle": "Founding is a one-time lifetime entry. The other tiers scale linearly per workspace. Full breakdown including caps on the pricing page.",
+      "perWorkspace": "per workspace",
+      "perMonth": "per month",
+      "spotsTaken": "{taken} of {total} seats taken",
+      "tiers": {
+        "founding": {
+          "label": "Founding",
+          "tagline": "Locked for life",
+          "desc": "One-time founding rate for the first 10 agencies. Full access, no recalibration."
+        },
+        "growth": {
+          "label": "Growth",
+          "tagline": "2 to 4 brands",
+          "desc": "For agencies with a small fixed brand portfolio. Price scales linearly per workspace."
+        },
+        "professional": {
+          "label": "Professional",
+          "tagline": "5 to 14 brands",
+          "desc": "For growing agencies with several parallel teams. Caps on the heavier skills."
+        },
+        "enterprise": {
+          "label": "Enterprise",
+          "tagline": "15+ brands",
+          "desc": "For large agencies. Custom SLA, dedicated capacity and expandable caps."
+        }
+      },
+      "ctaLink": "Full pricing page"
+    },
     "badges": {
       "title": "Built for European agencies",
       "gdpr": "GDPR-first AI",
