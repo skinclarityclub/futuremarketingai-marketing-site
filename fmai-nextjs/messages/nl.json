@@ -102,6 +102,18 @@
         "linkText": "Hoe wij data behandelen"
       }
     },
+    "caseStudyCard": {
+      "eyebrow": "Bewijs",
+      "companyName": "SkinClarity Club",
+      "subtitle": "Founding partner sinds Q4 2025",
+      "logoAlt": "SkinClarity Club logo",
+      "metric1": "4 huismerken",
+      "metric2": "3 Instagram-accounts",
+      "metric3": "wekelijkse output",
+      "quote": "Clyde is geen tool die ik aan moet zetten. Hij plant, schrijft en analyseert alsof er een vaste medewerker is. Het verschil voel je in hoeveel tijd ik niet meer kwijt ben.",
+      "attribution": "Sindy, SKC",
+      "ctaLink": "Lees de volledige case"
+    },
     "badges": {
       "title": "Gebouwd voor Europese bureaus",
       "gdpr": "AVG-first AI",

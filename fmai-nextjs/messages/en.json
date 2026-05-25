@@ -102,6 +102,18 @@
         "linkText": "How we handle data"
       }
     },
+    "caseStudyCard": {
+      "eyebrow": "Proof",
+      "companyName": "SkinClarity Club",
+      "subtitle": "Founding partner since Q4 2025",
+      "logoAlt": "SkinClarity Club logo",
+      "metric1": "4 in-house brands",
+      "metric2": "3 Instagram accounts",
+      "metric3": "weekly output",
+      "quote": "Clyde is not a tool I switch on. He plans, writes and analyses as if a full-time team member is on shift. The difference shows in all the hours I no longer spend.",
+      "attribution": "Sindy, SKC",
+      "ctaLink": "Read the full case"
+    },
     "badges": {
       "title": "Built for European agencies",
       "gdpr": "GDPR-first AI",

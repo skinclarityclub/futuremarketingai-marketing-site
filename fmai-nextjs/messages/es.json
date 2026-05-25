@@ -102,6 +102,18 @@
         "linkText": "Cómo tratamos los datos"
       }
     },
+    "caseStudyCard": {
+      "eyebrow": "Prueba",
+      "companyName": "SkinClarity Club",
+      "subtitle": "Founding partner desde Q4 2025",
+      "logoAlt": "Logo de SkinClarity Club",
+      "metric1": "4 marcas propias",
+      "metric2": "3 cuentas de Instagram",
+      "metric3": "publicación semanal",
+      "quote": "Clyde no es una herramienta que tenga que encender. Planifica, escribe y analiza como si hubiera un compañero fijo en el equipo. La diferencia se nota en las horas que ya no pierdo.",
+      "attribution": "Sindy, SKC",
+      "ctaLink": "Lee el caso completo"
+    },
     "badges": {
       "title": "Construido para agencias europeas",
       "gdpr": "IA con RGPD por defecto",
