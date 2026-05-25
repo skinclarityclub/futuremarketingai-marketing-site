@@ -12,8 +12,8 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
-import { HeroSpline } from '@/components/hero/HeroSpline'
 import { GradientMesh } from '@/components/hero/GradientMesh'
+import { HeroSection } from '@/components/home/HeroSection'
 import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
@@ -25,10 +25,9 @@ import { TestimonialBlock } from '@/components/home/TestimonialBlock'
 import { PricingTeaser } from '@/components/home/PricingTeaser'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
-import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { Zap, ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
+import { ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -90,97 +89,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 1 — Hero + TrustCluster
+          Sectie 1 — Hero + TrustCluster (W4 motion migration)
           ──────────────────────────────────────────────────────────── */}
-      <section
-        aria-labelledby="hero"
-        className="relative min-h-[85dvh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
-      >
-        {/* 3D Robot — absolute, bleeds across full hero */}
-        <HeroSpline />
-
-        <div className="flex flex-col lg:flex-row items-center w-full gap-8">
-          {/* Left content */}
-          <div className="relative z-10 flex-1 max-w-[720px]">
-            {/* Eyebrow badge */}
-            {/* TODO W4: replace inline animation with motion (CSS keyframe fires on mount, not viewport-gated, not interruptible) */}
-            <div
-              className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 lg:mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
-              style={{ animation: 'fadeIn 0.8s ease-out' }}
-            >
-              {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
-            </div>
-
-            {/* Headline with gradient accent */}
-            {/* TODO W4: replace inline animation with motion + word-by-word kinetic stagger (W5.6) */}
-            {/* TODO W3: remove gradient accent on headlineAccent — impeccable ban, switch to solid teal */}
-            <h1
-              id="hero"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
-              style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}
-            >
-              <span className="block text-text-primary">{t('hero.headlineMain')}</span>
-              <span
-                className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
-                style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
-              >
-                {t('hero.headlineAccent')}
-              </span>
-            </h1>
-
-            {/* Description */}
-            {/* TODO W4: replace inline animation with motion */}
-            <p
-              className="speakable-hero text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
-              style={{ animation: 'fadeInUp 0.8s ease-out 0.4s both' }}
-            >
-              {t('hero.subtitle')}
-            </p>
-
-            {/* Trust anchor */}
-            {/* TODO W4: replace inline animation with motion */}
-            <p
-              className="speakable-tldr text-sm text-text-muted mb-6 lg:mb-10"
-              style={{ animation: 'fadeInUp 0.8s ease-out 0.5s both' }}
-            >
-              {t('hero.trustAnchor')}
-            </p>
-
-            {/* Trust cluster — client proof + founding scarcity + AVG badge */}
-            <TrustClusterHero
-              foundingLabel={t('hero.trustCluster.founding', {
-                taken: FOUNDING_SPOTS_TAKEN,
-                total: FOUNDING_SPOTS_TOTAL,
-              })}
-              avgLabel={t('hero.trustCluster.avgLabel')}
-            />
-
-            {/* CTA Buttons — left-aligned, single dominant primary + subtle text link */}
-            {/* TODO W4: replace inline animation with motion */}
-            <div
-              className="flex flex-col items-start gap-3"
-              style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}
-            >
-              <CTAButton href="/apply" size="lg">
-                <Zap className="mr-1 h-5 w-5" />
-                {t('hero.cta')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
-
-              <Link
-                href="/skills/clyde"
-                className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text-primary transition-colors underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
-              >
-                {t('hero.ctaSecondary')}
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Right spacer — reserves space for the absolute-positioned 3D scene */}
-          <div className="flex-1 hidden lg:block" />
-        </div>
-      </section>
+      <HeroSection
+        badge={t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+        headlineMain={t('hero.headlineMain')}
+        headlineAccent={t('hero.headlineAccent')}
+        subtitle={t('hero.subtitle')}
+        trustAnchor={t('hero.trustAnchor')}
+        ctaPrimary={t('hero.cta')}
+        ctaSecondary={t('hero.ctaSecondary')}
+        trustClusterFounding={t('hero.trustCluster.founding', {
+          taken: FOUNDING_SPOTS_TAKEN,
+          total: FOUNDING_SPOTS_TOTAL,
+        })}
+        trustClusterAvg={t('hero.trustCluster.avgLabel')}
+      />
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — CaseStudyCard (SKC proof anchor)
