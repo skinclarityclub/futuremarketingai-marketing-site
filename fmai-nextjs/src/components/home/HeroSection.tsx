@@ -54,24 +54,24 @@ export function HeroSection(props: HeroSectionProps) {
             {badge}
           </motion.div>
 
-          {/* Headline with gradient accent */}
+          {/* Headline — kinetic word-by-word reveal (W5.6) */}
           {/* TODO W3: remove gradient accent on headlineAccent — impeccable ban, switch to solid teal */}
-          {/* TODO W5.6: split into per-word motion.span for kinetic typography */}
-          <motion.h1
+          <h1
             id="hero"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
-            initial={{ y: 12, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
-            <span className="block text-text-primary">{headlineMain}</span>
-            <span
+            <KineticHeadline
+              text={headlineMain}
+              className="block text-text-primary"
+              baseDelay={0.15}
+            />
+            <KineticHeadline
+              text={headlineAccent}
               className="relative inline-block bg-clip-text text-transparent after:content-[''] after:absolute after:bottom-[2px] after:left-0 after:w-full after:h-[3px] after:bg-gradient-to-r after:from-[#F5A623] after:to-transparent after:rounded-sm"
               style={{ backgroundImage: 'linear-gradient(135deg, #00D4AA 0%, #F5A623 100%)' }}
-            >
-              {headlineAccent}
-            </span>
-          </motion.h1>
+              baseDelay={0.35}
+            />
+          </h1>
 
           {/* Description */}
           <motion.p
@@ -126,5 +126,47 @@ export function HeroSection(props: HeroSectionProps) {
         <div className="flex-1 hidden lg:block" />
       </div>
     </section>
+  )
+}
+
+interface KineticHeadlineProps {
+  text: string
+  className?: string
+  style?: React.CSSProperties
+  /** Delay before the first word animates in (seconds). */
+  baseDelay?: number
+}
+
+/**
+ * Word-by-word blur-stagger headline reveal. Caps total stagger duration so
+ * long headlines don't drag — when there are more than 8 words, the per-word
+ * delay shrinks to keep the full reveal under ~0.6s.
+ *
+ * MotionConfig reducedMotion="user" strips the blur + y-translate so the
+ * fallback is a pure opacity fade.
+ */
+function KineticHeadline({ text, className, style, baseDelay = 0 }: KineticHeadlineProps) {
+  const words = text.split(' ')
+  const MAX_TOTAL_STAGGER = 0.6
+  const PER_WORD_DELAY = Math.min(0.08, MAX_TOTAL_STAGGER / Math.max(words.length, 1))
+
+  return (
+    <span className={className} style={style}>
+      {words.map((word, i) => (
+        <motion.span
+          key={`${word}-${i}`}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 8 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{
+            delay: baseDelay + i * PER_WORD_DELAY,
+            duration: 0.4,
+            ease: EASE_OUT,
+          }}
+          className="inline-block mr-[0.25em] last:mr-0"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
   )
 }
