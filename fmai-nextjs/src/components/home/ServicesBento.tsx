@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { ClydeFeaturedTile } from './ClydeFeaturedTile'
-import { SpotlightCard } from './SpotlightCard'
+import { SpotlightCard } from '@/components/ui/SpotlightCard'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { CTAButton } from '@/components/ui/CTAButton'
 
