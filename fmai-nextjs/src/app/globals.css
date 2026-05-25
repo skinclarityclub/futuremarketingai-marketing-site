@@ -162,6 +162,36 @@
   }
 }
 
+/*
+  Spotlight cards — Linear-style cursor-follow radial highlight.
+  Driven by --mx / --my CSS vars updated via onMouseMove on the card itself.
+  Pure CSS, no JS animation loop. Reduced-motion safe (no transform/scale).
+*/
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 212, 170, 0.10),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
 /* Radix Accordion expand/collapse — driven by data-state via CSS animations */
 @keyframes accordion-down {
   from {

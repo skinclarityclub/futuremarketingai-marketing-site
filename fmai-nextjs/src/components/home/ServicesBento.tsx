@@ -1,5 +1,4 @@
 import { getTranslations } from 'next-intl/server'
-import { Link } from '@/i18n/navigation'
 import {
   Megaphone,
   UserCheck,
@@ -15,6 +14,7 @@ import {
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { ClydeFeaturedTile } from './ClydeFeaturedTile'
+import { SpotlightCard } from './SpotlightCard'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { CTAButton } from '@/components/ui/CTAButton'
 
@@ -102,10 +102,10 @@ export async function ServicesBento({ locale }: { locale: string }) {
           </div>
 
           {SECONDARY_SERVICES.map(({ key, href, Icon, status }) => (
-            <Link
+            <SpotlightCard
               key={key}
               href={href}
-              className="group relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-5 lg:p-6 flex flex-col transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+              className="spotlight-card group relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-5 lg:p-6 flex flex-col transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
             >
               <header className="flex items-start justify-between gap-3 mb-4">
                 <Icon className="w-5 h-5 text-accent-system shrink-0" aria-hidden />
@@ -129,7 +129,7 @@ export async function ServicesBento({ locale }: { locale: string }) {
               >
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>
-            </Link>
+            </SpotlightCard>
           ))}
         </div>
 
