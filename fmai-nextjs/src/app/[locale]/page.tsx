@@ -153,11 +153,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 6 — ProcessTimeline (4 weken onboarding)
+          Sectie 6 — ProcessTimeline (W5.4 pin-stack scrub desktop)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
-          <ProcessTimeline locale={locale} />
+          <ProcessTimeline
+            eyebrow={t('processTimeline.eyebrow')}
+            title={t('processTimeline.title')}
+            subtitle={t('processTimeline.subtitle')}
+            weeks={{
+              '1': { label: t('processTimeline.weeks.1.label'), heading: t('processTimeline.weeks.1.heading'), body: t('processTimeline.weeks.1.body') },
+              '2': { label: t('processTimeline.weeks.2.label'), heading: t('processTimeline.weeks.2.heading'), body: t('processTimeline.weeks.2.body') },
+              '3': { label: t('processTimeline.weeks.3.label'), heading: t('processTimeline.weeks.3.heading'), body: t('processTimeline.weeks.3.body') },
+              '4': { label: t('processTimeline.weeks.4.label'), heading: t('processTimeline.weeks.4.heading'), body: t('processTimeline.weeks.4.body') },
+            }}
+          />
         </ScrollReveal>
       </LazySection>
 

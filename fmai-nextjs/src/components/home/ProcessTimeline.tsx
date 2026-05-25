@@ -1,36 +1,103 @@
-import { getTranslations } from 'next-intl/server'
+'use client'
+
+import { useEffect, useRef } from 'react'
+import { useReducedMotion } from 'motion/react'
 
 const WEEKS = ['1', '2', '3', '4'] as const
 
-export async function ProcessTimeline({ locale }: { locale: string }) {
-  const t = await getTranslations({ locale, namespace: 'home.processTimeline' })
+interface ProcessTimelineProps {
+  eyebrow: string
+  title: string
+  subtitle: string
+  weeks: Record<'1' | '2' | '3' | '4', { label: string; heading: string; body: string }>
+}
+
+export function ProcessTimeline({ eyebrow, title, subtitle, weeks }: ProcessTimelineProps) {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const pinRef = useRef<HTMLDivElement>(null)
+  const reduced = useReducedMotion()
+
+  // W5.4 — GSAP pin-stack scrub on desktop only. Mobile + reduced-motion get
+  // the static 4-step grid. Dynamic-imports gsap so the bundle never lands
+  // on reduced-motion users or in SSR.
+  useEffect(() => {
+    if (reduced || !sectionRef.current || !pinRef.current) return
+    if (typeof window === 'undefined' || window.innerWidth < 1024) return
+
+    let cleanup: (() => void) | undefined
+    let cancelled = false
+
+    ;(async () => {
+      const { gsap } = await import('gsap')
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
+      if (cancelled) return
+
+      gsap.registerPlugin(ScrollTrigger)
+
+      const ctx = gsap.context(() => {
+        // Pin the timeline visualisation for ~300vh of scroll.
+        ScrollTrigger.create({
+          trigger: pinRef.current,
+          start: 'top top+=80',
+          end: '+=300%',
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+        })
+
+        // Per-week reveal as the user scrolls through the pinned window.
+        const weekEls = pinRef.current!.querySelectorAll<HTMLLIElement>('[data-week]')
+        weekEls.forEach((el, i) => {
+          gsap.fromTo(
+            el,
+            { opacity: 0.2, y: 24 },
+            {
+              opacity: 1,
+              y: 0,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: pinRef.current,
+                start: `top top+=${80 - (i + 0.5) * 50}`,
+                end: `+=${75}%`,
+                scrub: 1,
+              },
+            }
+          )
+        })
+      }, sectionRef)
+
+      cleanup = () => ctx.revert()
+    })()
+
+    return () => {
+      cancelled = true
+      cleanup?.()
+    }
+  }, [reduced])
 
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="process-timeline"
       className="py-20 px-6 lg:px-12"
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 lg:mb-16 max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-accent-system mb-3">
-            {t('eyebrow')}
+            {eyebrow}
           </p>
           <h2
             id="process-timeline"
             className="font-display text-3xl md:text-4xl font-bold text-text-primary"
           >
-            {t('title')}
+            {title}
           </h2>
           <p className="mt-4 text-base lg:text-lg text-text-secondary">
-            {t('subtitle')}
+            {subtitle}
           </p>
         </div>
 
-        {/*
-          Horizontal timeline desktop, vertical timeline mobile.
-          Static in W2 — W5.4 promotes to GSAP pin-stack scroll.
-        */}
-        <div className="relative">
+        <div ref={pinRef} className="relative">
           {/* Horizontal connector — desktop only */}
           <span
             aria-hidden
@@ -41,6 +108,7 @@ export async function ProcessTimeline({ locale }: { locale: string }) {
             {WEEKS.map((week, i) => (
               <li
                 key={week}
+                data-week={week}
                 className="relative flex lg:flex-col gap-4 lg:gap-0"
               >
                 {/* Vertical connector — mobile only */}
@@ -60,16 +128,16 @@ export async function ProcessTimeline({ locale }: { locale: string }) {
                     <span className="block w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-accent-system" />
                   </span>
                   <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-system lg:flex-1">
-                    {t(`weeks.${week}.label`)}
+                    {weeks[week].label}
                   </span>
                 </div>
 
                 <div className="flex-1">
                   <h3 className="font-display text-lg lg:text-xl font-bold text-text-primary mb-2">
-                    {t(`weeks.${week}.heading`)}
+                    {weeks[week].heading}
                   </h3>
                   <p className="text-sm lg:text-base text-text-secondary leading-relaxed max-w-md">
-                    {t(`weeks.${week}.body`)}
+                    {weeks[week].body}
                   </p>
                 </div>
               </li>
