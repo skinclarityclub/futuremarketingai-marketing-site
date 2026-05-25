@@ -30,6 +30,7 @@ import type {
 } from '@/lib/assessment/types'
 import type { SkillData } from '@/lib/skills-data'
 import { ARCHETYPE_GRADIENT, ARCHETYPE_CODE, STAGE_CODE } from '@/lib/assessment/persona-presentation'
+import { CountUp } from '@/components/motion/CountUp'
 
 interface ResultRevealProps {
   result: AssessmentResult
@@ -182,8 +183,8 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
           <h2 id="scores-heading" className="text-base font-semibold text-text-primary md:text-lg">
             {t('scoresHeading')}
           </h2>
-          <span className="text-xs font-medium uppercase tracking-wider text-text-muted">
-            {total}/100
+          <span className="text-xs font-medium uppercase tracking-wider text-text-muted tabular-nums">
+            <CountUp to={total} duration={1.0} />/100
           </span>
         </div>
         <div className="space-y-3.5">
@@ -204,9 +205,9 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
                     )}
                   </span>
                   <span
-                    className={`text-xs font-semibold ${isLowest ? 'text-accent-human' : 'text-text-secondary'}`}
+                    className={`text-xs font-semibold tabular-nums ${isLowest ? 'text-accent-human' : 'text-text-secondary'}`}
                   >
-                    {score}/100
+                    <CountUp to={score} duration={0.9} />/100
                   </span>
                 </div>
                 <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.04]">
