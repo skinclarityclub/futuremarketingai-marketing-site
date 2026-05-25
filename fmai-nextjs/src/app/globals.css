@@ -292,45 +292,6 @@
   }
 }
 
-@keyframes blobFloat1 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.05);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
-
-@keyframes blobFloat2 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-40px, 30px) scale(1.05);
-  }
-  66% {
-    transform: translate(30px, -20px) scale(0.95);
-  }
-}
-
-@keyframes blobFloat3 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(20px, 40px) scale(1.03);
-  }
-  66% {
-    transform: translate(-30px, -30px) scale(0.97);
-  }
-}
-
 @keyframes chatDotBounce {
   0%,
   100% {
@@ -380,59 +341,6 @@
   background: linear-gradient(135deg, #00d4aa 0%, #f5a623 100%);
 }
 
-/* Blob mesh background -- only rendered on the home page now (Phase 13-01). */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  /* blur reduced 100px -> 60px to cut composite cost. The mesh stays soft
-     enough to read as ambient light because the 0.12 opacity dominates. */
-  filter: blur(60px);
-  opacity: 0.12;
-  will-change: transform;
-  contain: layout style paint;
-}
-.blob-warm {
-  /* size reduced 600x600 -> 400x400 (-55% paint area) */
-  width: 400px;
-  height: 400px;
-  background: #f5a623;
-  top: -10%;
-  right: -5%;
-}
-.blob-cool {
-  width: 400px;
-  height: 400px;
-  background: #0abab5;
-  bottom: -10%;
-  left: -10%;
-}
-.blob-mixed {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, #f5a623, #0abab5);
-  top: 40%;
-  left: 30%;
-}
-
-/* Animations only run when the user has not requested reduced motion AND
-   the viewport is wide enough to show the mesh (we hide blobs below lg
-   in the rule below). Saves continuous GPU compositing on small screens
-   and accessibility-conscious users. */
-@media (prefers-reduced-motion: no-preference) {
-  .blob-warm  { animation: blobFloat1 28s ease-in-out infinite; }
-  .blob-cool  { animation: blobFloat2 32s ease-in-out infinite; }
-  .blob-mixed { animation: blobFloat3 30s ease-in-out infinite; }
-}
-
-/* Mid-range mobile + tablet: skip the mesh entirely. Three 400px blurred
-   composite layers were the largest contributor to INP on these devices
-   per audit doc 01-performance.md. */
-@media (max-width: 1023px) {
-  .blob {
-    display: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   /*
    * WCAG 2.3.3 Animation from Interactions (AAA) + 2.3.1 Three Flashes (A).
@@ -454,20 +362,9 @@
   }
 
   /* Explicit halt for purely decorative class-based animations (no terminal state) */
-  .blob-warm,
-  .blob-cool,
-  .blob-mixed,
   .loader {
     animation: none !important;
   }
-}
-
-/* Pause heavy blur-blob animations while Spline WebGL initializes.
-   The .spline-loading class is toggled by SplineScene component. */
-.spline-loading .blob-warm,
-.spline-loading .blob-cool,
-.spline-loading .blob-mixed {
-  animation-play-state: paused;
 }
 
 /* Card gradient border -- hover-activated gradient outline */

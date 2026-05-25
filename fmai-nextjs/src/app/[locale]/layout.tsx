@@ -68,11 +68,6 @@ export default async function LocaleLayout({
           {t('skipToContent')}
         </a>
         {/*
-          GradientMesh now renders only on the home page
-          (src/app/[locale]/page.tsx) to avoid 3 blurred animated blobs
-          running on every route. See 13-01-PLAN.md Task 7.
-        */}
-        {/*
           Ship only the namespaces consumed by client components mounted
           everywhere (header, footer chrome via 'common', cookie banner,
           chat/booking/calendly islands, error boundary, apply form).
