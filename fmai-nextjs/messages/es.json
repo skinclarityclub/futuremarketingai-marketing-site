@@ -1875,6 +1875,44 @@
       "title": "Conviértete en uno de los 10",
       "subtitle": "{taken} de {total} plazas ocupadas. Agenda una llamada. Si hay encaje mutuo, reservamos tu plaza.",
       "button": "Agenda una llamada"
+    },
+    "eyebrows": {
+      "pricing": "Precio",
+      "value": "Por qué Founding",
+      "scarcity": "10 plazas, completo es completo",
+      "benefits": "Lo que recibes",
+      "quickApply": "Inicio rápido",
+      "proof": "Primer partner",
+      "faq": "Preguntas",
+      "cta": "Reserva tu plaza"
+    },
+    "scarcity": {
+      "heading": "Así está la situación",
+      "intro": "Diez plazas Founding en total. Una ocupada por SkinClarity Club. Nueve disponibles. Pasa el cursor por una plaza para ver el contexto.",
+      "ariaLabel": "Estado de las plazas Founding",
+      "open": {
+        "heading": "Plaza Founding disponible",
+        "body": "Esta plaza puede ser para tu agencia. Agenda una llamada para reservarla."
+      },
+      "takenSpots": {
+        "skc": {
+          "name": "SkinClarity Club",
+          "since": "Founding partner desde Q4 2025"
+        }
+      }
+    },
+    "quickApply": {
+      "eyebrow": "Inicio rápido",
+      "heading": "Agenda una llamada en 1 paso",
+      "subheading": "Introduce tu email y el nombre de la agencia. Te llevamos al formulario completo con tus datos ya rellenados.",
+      "emailLabel": "Email de trabajo",
+      "emailPlaceholder": "tu@agencia.com",
+      "agencyLabel": "Nombre de la agencia",
+      "agencyPlaceholder": "Nombre de la agencia (opcional)",
+      "cta": "Continuar a la solicitud",
+      "emailInvalid": "Introduce una dirección de correo electrónico válida.",
+      "reassurance": "Sin cuenta, sin tarjeta. Una llamada decide si hay encaje mutuo.",
+      "ariaLabel": "Solicitud Founding rápida"
     }
   },
   "booking": {

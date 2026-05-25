@@ -1875,6 +1875,44 @@
       "title": "Become one of the 10",
       "subtitle": "{taken} of {total} spots taken. Book a call. If it is a mutual fit, we reserve your spot.",
       "button": "Book a call"
+    },
+    "eyebrows": {
+      "pricing": "Pricing",
+      "value": "Why Founding",
+      "scarcity": "10 spots, full is full",
+      "benefits": "What you get",
+      "quickApply": "Quick start",
+      "proof": "First partner",
+      "faq": "Questions",
+      "cta": "Reserve your spot"
+    },
+    "scarcity": {
+      "heading": "Here is where we stand",
+      "intro": "Ten Founding spots in total. One is taken by SkinClarity Club. Nine are open. Hover a spot for context.",
+      "ariaLabel": "Founding spots status",
+      "open": {
+        "heading": "Founding spot available",
+        "body": "This spot could be yours. Book a call to reserve it."
+      },
+      "takenSpots": {
+        "skc": {
+          "name": "SkinClarity Club",
+          "since": "Founding partner since Q4 2025"
+        }
+      }
+    },
+    "quickApply": {
+      "eyebrow": "Quick start",
+      "heading": "Book a call in 1 step",
+      "subheading": "Drop your email and agency name. We will take you to the full application with your details prefilled.",
+      "emailLabel": "Work email",
+      "emailPlaceholder": "you@agency.com",
+      "agencyLabel": "Agency name",
+      "agencyPlaceholder": "Agency name (optional)",
+      "cta": "Continue to application",
+      "emailInvalid": "Please enter a valid email address.",
+      "reassurance": "No account, no credit card. One call decides if it is a mutual fit.",
+      "ariaLabel": "Quick Founding application"
     }
   },
   "booking": {

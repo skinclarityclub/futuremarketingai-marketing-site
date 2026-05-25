@@ -1875,6 +1875,44 @@
       "title": "Word een van de 10",
       "subtitle": "{taken} van {total} plekken bezet. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
       "button": "Plan een gesprek"
+    },
+    "eyebrows": {
+      "pricing": "Prijs",
+      "value": "Waarom Founding",
+      "scarcity": "10 plekken, vol is vol",
+      "benefits": "Wat je krijgt",
+      "quickApply": "Snel starten",
+      "proof": "Eerste partner",
+      "faq": "Vragen",
+      "cta": "Plek reserveren"
+    },
+    "scarcity": {
+      "heading": "Zo staat het ervoor",
+      "intro": "Tien Founding plekken in totaal. Eén is bezet door SkinClarity Club. Negen liggen open. Hover op een plek voor context.",
+      "ariaLabel": "Founding plekken status",
+      "open": {
+        "heading": "Founding plek beschikbaar",
+        "body": "Deze plek kan voor jouw bureau zijn. Plan een gesprek om hem te reserveren."
+      },
+      "takenSpots": {
+        "skc": {
+          "name": "SkinClarity Club",
+          "since": "Founding partner sinds Q4 2025"
+        }
+      }
+    },
+    "quickApply": {
+      "eyebrow": "Snelle start",
+      "heading": "Plan een gesprek in 1 stap",
+      "subheading": "Vul je e-mail en bureau-naam in. We brengen je naar het volledige aanvraagformulier met je gegevens al ingevuld.",
+      "emailLabel": "Werk e-mail",
+      "emailPlaceholder": "jij@bureau.nl",
+      "agencyLabel": "Bureau-naam",
+      "agencyPlaceholder": "Bureau-naam (optioneel)",
+      "cta": "Doorgaan naar aanvraag",
+      "emailInvalid": "Vul een geldig e-mailadres in.",
+      "reassurance": "Geen account, geen creditcard. Eén gesprek bepaalt of het wederzijds past.",
+      "ariaLabel": "Snelle Founding aanvraag"
     }
   },
   "booking": {
