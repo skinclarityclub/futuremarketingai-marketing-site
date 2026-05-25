@@ -16,12 +16,19 @@ import { LazySection } from '@/components/motion/LazySection'
 import { HeroSpline } from '@/components/hero/HeroSpline'
 import { GradientMesh } from '@/components/hero/GradientMesh'
 import { IcpSection } from '@/components/home/IcpSection'
+import { CaseStudyCard } from '@/components/home/CaseStudyCard'
+import { ServicesBento } from '@/components/home/ServicesBento'
+import { MemoryUSPTeaser } from '@/components/home/MemoryUSPTeaser'
+import { ComparisonTable } from '@/components/home/ComparisonTable'
+import { ProcessTimeline } from '@/components/home/ProcessTimeline'
+import { FounderSection } from '@/components/home/FounderSection'
+import { TestimonialBlock } from '@/components/home/TestimonialBlock'
+import { PricingTeaser } from '@/components/home/PricingTeaser'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { Zap, ArrowRight, Megaphone, UserCheck, Inbox, BarChart3, Search, Bot } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+import { Zap, ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -35,15 +42,6 @@ export async function generateMetadata({
   const { locale } = await params
   return generatePageMetadata({ locale, namespace: 'home', path: '/' })
 }
-
-const SERVICE_CARDS: { key: string; href: string; Icon: LucideIcon }[] = [
-  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Megaphone },
-  { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck },
-  { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox     },
-  { key: 'reporting',       href: '/skills/reporting',        Icon: BarChart3 },
-  { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search    },
-  { key: 'clyde',           href: '/skills/clyde',            Icon: Bot       },
-]
 
 const BADGE_KEYS = ['gdpr', 'enterprise', 'dutch', 'uptime', 'integrations', 'noLockIn'] as const
 
@@ -67,10 +65,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
 
       {/*
-        GradientMesh -- 3 blurred animated blobs behind the home hero.
+        GradientMesh — 3 blurred animated blobs behind the home hero.
         Home-only (was previously in [locale]/layout.tsx). Position is
         fixed inset-0 so it covers the home viewport like before.
-        See 13-01-PLAN.md Task 7.
+        W5.2 replaces this with PaperShaderMesh + reduced-motion fallback.
       */}
       <GradientMesh />
 
@@ -93,7 +91,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         locale={locale}
       />
 
-      {/* Hero Section — Immersive layout with Spline 3D */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 1 — Hero + TrustCluster
+          ──────────────────────────────────────────────────────────── */}
       <section
         aria-labelledby="hero"
         className="relative min-h-[85dvh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
@@ -184,16 +184,72 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Lead magnet — Phase 15-04 mid-funnel capture below hero */}
-      <LazySection minHeight="280px">
-        <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto">
-            <LeadMagnetCTA source="home" />
-          </div>
-        </section>
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 2 — CaseStudyCard (SKC proof anchor)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="380px">
+        <ScrollReveal>
+          <CaseStudyCard locale={locale} />
+        </ScrollReveal>
       </LazySection>
 
-      {/* Trust Signals Grid */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 3 — ServicesBento (12 skills incl. featured Clyde)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="500px">
+        <ScrollReveal>
+          <ServicesBento locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 4 — MemoryUSPTeaser (4-layer geheugen)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="400px">
+        <ScrollReveal>
+          <MemoryUSPTeaser locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 5 — ComparisonTable (DIY / Bureau / Clyde)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="500px">
+        <ScrollReveal>
+          <ComparisonTable locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 6 — ProcessTimeline (4 weken onboarding)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="400px">
+        <ScrollReveal>
+          <ProcessTimeline locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 7 — FounderSection (Daley intro)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="320px">
+        <ScrollReveal>
+          <FounderSection locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 8 — TestimonialBlock (Sindy operator-stem)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="280px">
+        <ScrollReveal>
+          <TestimonialBlock locale={locale} />
+        </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 9 — TrustSignalsGrid (numerieke trust)
+          ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="200px">
         <section aria-labelledby="key-metrics" className="py-12 px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
@@ -229,225 +285,186 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
       </LazySection>
 
-      {/* Services — Numbered 2x2 Cards */}
-      <LazySection minHeight="400px">
-      <ScrollReveal>
-        <section
-          id="services"
-          aria-labelledby="services-heading"
-          className="relative z-10 px-6 lg:px-12 pb-20"
-        >
-          <div className="text-center mb-12">
-            <h2
-              id="services-heading"
-              className="text-3xl md:text-4xl font-bold font-display text-text-primary mb-4"
-            >
-              {t('services.title')}
-            </h2>
-            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              {t('services.subtitle')}
-            </p>
-          </div>
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 10 — PricingTeaser (4 tiers)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="420px">
+        <ScrollReveal>
+          <PricingTeaser locale={locale} />
+        </ScrollReveal>
+      </LazySection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {SERVICE_CARDS.map(({ key, href, Icon }) => (
-              <Link
-                key={key}
-                href={href}
-                className="relative card-gradient-border card-tilt rounded-[var(--radius-card)] bg-white/[0.02] border border-border-primary p-8 transition-all duration-500 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer block group"
-              >
-                {/* Skill icon */}
-                <Icon className="w-6 h-6 text-accent-system mb-5 shrink-0" aria-hidden />
-
-                {/* Title */}
-                <h3 className="font-display text-xl font-bold text-text-primary tracking-tight mb-3">
-                  {t(`services.${key}.title`)}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-text-secondary leading-relaxed max-w-[380px]">
-                  {t(`services.${key}.description`)}
-                </p>
-
-                {/* Arrow circle — bottom-right */}
-                <div className="absolute bottom-7 right-7 w-10 h-10 rounded-full border border-border-primary flex items-center justify-center transition-all duration-300 group-hover:bg-[#F5A623] group-hover:border-[#F5A623]">
-                  <svg
-                    className="w-4 h-4 text-text-muted transition-all duration-300 group-hover:text-bg-deep group-hover:translate-x-0.5"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 11 — Pillars (W3 vervangt door bento, was: 6 checkmarks)
+          TODO W3: rename aria-labelledby="badges" → "pillars", 6 checkmarks → 3 bento pillars.
+          Mirror update in tests/e2e/homepage.spec.ts lines 62-63.
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="200px">
+        <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto text-center">
+            <SectionHeading id="badges">{t('badges.title')}</SectionHeading>
+            <ScrollReveal>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+                {BADGE_KEYS.map((key) => (
+                  <div
+                    key={key}
+                    className="flex items-center justify-center gap-2 border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-4"
                   >
-                    <path d="M4 12L12 4M12 4H6M12 4V10" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Final CTA after service cards */}
-          <div className="text-center mt-12">
-            <p className="text-text-secondary mb-6">{t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton size="lg" href="/skills/clyde">
-                {t('hero.ctaSecondary')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
-              <CTAButton variant="secondary" size="lg" href="/founding-member">
-                {t('cta.foundingLabel')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
-            </div>
+                    <svg
+                      className="w-5 h-5 text-accent-system shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-sm font-medium text-text-secondary">
+                      {t(`badges.${key}`)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
-      </ScrollReveal>
       </LazySection>
 
-      {/* Trust Badges / Social Proof */}
-      {/* TODO W3: rename aria-labelledby="badges" → "pillars" (also: 6 checkmarks → 3 bento pillars). Mirror update in tests/e2e/homepage.spec.ts lines 62-63 */}
-      <LazySection minHeight="200px">
-      <section aria-labelledby="badges" className="py-16 px-6 lg:px-12">
-        <div className="max-w-5xl mx-auto text-center">
-          <SectionHeading id="badges">{t('badges.title')}</SectionHeading>
-          <ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-              {BADGE_KEYS.map((key) => (
-                <div
-                  key={key}
-                  className="flex items-center justify-center gap-2 border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-4"
-                >
-                  <svg
-                    className="w-5 h-5 text-accent-system shrink-0"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-sm font-medium text-text-secondary">
-                    {t(`badges.${key}`)}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-      </LazySection>
-
-      {/* Why Teams Choose Us */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 12 — Trust cards (W3 vervangt door numerieke 01-04 tiles)
+          TODO W3: 4 GlassCards met &#10003; → 4 numerieke tiles (01-04).
+          ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="300px">
-      <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <SectionHeading id="trust">{t('trust.title')}</SectionHeading>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-              <GlassCard className="text-left">
-                <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">
-                  {t('trust.customBuiltTitle')}
-                </p>
-                <p className="text-text-secondary text-sm">{t('trust.customBuilt')}</p>
-              </GlassCard>
-              <GlassCard className="text-left">
-                <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">
-                  {t('trust.founderAccessTitle')}
-                </p>
-                <p className="text-text-secondary text-sm">{t('trust.founderAccess')}</p>
-              </GlassCard>
-              <GlassCard className="text-left">
-                <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">
-                  {t('trust.successGuaranteeTitle')}
-                </p>
-                <p className="text-text-secondary text-sm">{t('trust.successGuarantee')}</p>
-              </GlassCard>
-              <GlassCard className="text-left">
-                <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
-                <p className="text-text-primary font-semibold mb-1">{t('trust.trialTitle')}</p>
-                <p className="text-text-secondary text-sm">{t('trust.trialCommitment')}</p>
-              </GlassCard>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+        <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <SectionHeading id="trust">{t('trust.title')}</SectionHeading>
+            <ScrollReveal>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+                <GlassCard className="text-left">
+                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
+                  <p className="text-text-primary font-semibold mb-1">
+                    {t('trust.customBuiltTitle')}
+                  </p>
+                  <p className="text-text-secondary text-sm">{t('trust.customBuilt')}</p>
+                </GlassCard>
+                <GlassCard className="text-left">
+                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
+                  <p className="text-text-primary font-semibold mb-1">
+                    {t('trust.founderAccessTitle')}
+                  </p>
+                  <p className="text-text-secondary text-sm">{t('trust.founderAccess')}</p>
+                </GlassCard>
+                <GlassCard className="text-left">
+                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
+                  <p className="text-text-primary font-semibold mb-1">
+                    {t('trust.successGuaranteeTitle')}
+                  </p>
+                  <p className="text-text-secondary text-sm">{t('trust.successGuarantee')}</p>
+                </GlassCard>
+                <GlassCard className="text-left">
+                  <span className="text-accent-system text-lg font-bold block mb-2">&#10003;</span>
+                  <p className="text-text-primary font-semibold mb-1">{t('trust.trialTitle')}</p>
+                  <p className="text-text-secondary text-sm">{t('trust.trialCommitment')}</p>
+                </GlassCard>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
       </LazySection>
 
-      {/* Hybrid ICP — who is this for / not for */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 13 — Hybrid ICP (who is this for / not for)
+          ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
           <IcpSection locale={locale} />
         </ScrollReveal>
       </LazySection>
 
-      {/* FAQ Section */}
-      <LazySection minHeight="400px">
-      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading id="faq" className="text-center mb-10">
-            {t('faq.title')}
-          </SectionHeading>
-          <ScrollReveal>
-            <dl className="space-y-6">
-              {FAQ_KEYS.map((key) => (
-                <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
-                  <dt className="text-lg font-semibold text-text-primary mb-2">
-                    {t(`faq.items.${key}.question`)}
-                  </dt>
-                  <dd className="text-text-secondary leading-relaxed">
-                    {t(`faq.items.${key}.answer`)}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </ScrollReveal>
-        </div>
-      </section>
-      </LazySection>
-
-      {/* Final CTA */}
-      <LazySection minHeight="200px">
-      <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
-        <ScrollReveal>
-          <div className="max-w-3xl mx-auto text-center">
-            <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-            <p className="text-lg text-text-secondary mb-8">
-              {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton size="lg" href="/apply">
-                {t('cta.button')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
-              <CTAButton variant="secondary" size="lg" href="/case-studies/skinclarity-club">
-                {t('cta.buttonSecondary')}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </CTAButton>
-            </div>
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 14 — LeadMagnetCTA (mid-funnel capture, verplaatst van top)
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="280px">
+        <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto">
+            <LeadMagnetCTA source="home" />
           </div>
-        </ScrollReveal>
-      </section>
+        </section>
       </LazySection>
 
-      {/* Trust strip — SKC proof anchor */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 15 — FAQ (W3 vervangt door Radix Accordion)
+          TODO W3: replace <dl> by FaqAccordion (Radix UI single-collapsible).
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="400px">
+        <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeading id="faq" className="text-center mb-10">
+              {t('faq.title')}
+            </SectionHeading>
+            <ScrollReveal>
+              <dl className="space-y-6">
+                {FAQ_KEYS.map((key) => (
+                  <div key={key} className="bg-bg-surface/30 rounded-lg p-6">
+                    <dt className="text-lg font-semibold text-text-primary mb-2">
+                      {t(`faq.items.${key}.question`)}
+                    </dt>
+                    <dd className="text-text-secondary leading-relaxed">
+                      {t(`faq.items.${key}.answer`)}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </ScrollReveal>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 16 — Final CTA + scarcity
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="200px">
+        <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
+              <p className="text-lg text-text-secondary mb-8">
+                {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <CTAButton size="lg" href="/apply">
+                  {t('cta.button')}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </CTAButton>
+                <CTAButton variant="secondary" size="lg" href="/case-studies/skinclarity-club">
+                  {t('cta.buttonSecondary')}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </CTAButton>
+              </div>
+            </div>
+          </ScrollReveal>
+        </section>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 17 — TrustStrip (SKC eerlijke claim, compact close)
+          ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="120px">
-      <section aria-label="Trust strip" className="py-12 px-6 lg:px-12 border-t border-border-primary">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-text-primary font-medium mb-1">{t('trustStrip.title')}</p>
-          <p className="text-sm text-text-secondary mb-3">{t('trustStrip.subtitle')}</p>
-          <Link
-            href="/case-studies/skinclarity-club"
-            className="text-sm text-accent-system hover:underline"
-          >
-            {t('trustStrip.caseLink')} →
-          </Link>
-        </div>
-      </section>
+        <section aria-label="Trust strip" className="py-12 px-6 lg:px-12 border-t border-border-primary">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-text-primary font-medium mb-1">{t('trustStrip.title')}</p>
+            <p className="text-sm text-text-secondary mb-3">{t('trustStrip.subtitle')}</p>
+            <Link
+              href="/case-studies/skinclarity-club"
+              className="text-sm text-accent-system hover:underline"
+            >
+              {t('trustStrip.caseLink')} →
+            </Link>
+          </div>
+        </section>
       </LazySection>
     </PageShell>
   )

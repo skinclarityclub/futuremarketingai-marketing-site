@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test'
 /**
  * E2E Tests: Homepage Sections
  *
- * Verifies homepage sections render with current post-content-upgrade
- * structure (6 service cards from SERVICE_CARDS in [locale]/page.tsx).
+ * Verifies homepage sections render with the W2 ServicesBento structure
+ * (12 service cards: featured Clyde tile + 11 secondary services).
  */
 
 test.describe('Homepage Sections', () => {
@@ -46,7 +46,7 @@ test.describe('Homepage Sections', () => {
     await expect(statsSection).toBeVisible()
   })
 
-  test('should render Services section with 6 cards', async ({ page }) => {
+  test('should render Services section with 12 cards', async ({ page }) => {
     await scrollUntilVisible(page,'#services')
     const servicesSection = page.locator('#services')
     await expect(servicesSection).toBeVisible()
@@ -55,8 +55,8 @@ test.describe('Homepage Sections', () => {
     await expect(heading).toBeVisible()
 
     const serviceCards = servicesSection.locator('.grid a[href*="/skills/"]')
-    // TODO W2: services grid expands 6 → 12 — update toHaveCount to 12
-    await expect(serviceCards).toHaveCount(6)
+    // ServicesBento: 1 featured Clyde tile + 11 secondary services = 12 total
+    await expect(serviceCards).toHaveCount(12)
   })
 
   // TODO W3: badges section renamed to pillars (6 checkmarks → 3 bento pillars).
