@@ -12,7 +12,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { LazySection } from '@/components/motion/LazySection'
-import { GradientMesh } from '@/components/hero/GradientMesh'
+import { PaperShaderMesh } from '@/components/hero/PaperShaderMesh'
 import { HeroSection } from '@/components/home/HeroSection'
 import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
@@ -62,12 +62,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
 
       {/*
-        GradientMesh — 3 blurred animated blobs behind the home hero.
-        Home-only (was previously in [locale]/layout.tsx). Position is
-        fixed inset-0 so it covers the home viewport like before.
-        W5.2 replaces this with PaperShaderMesh + reduced-motion fallback.
+        Hero background — Paper Shaders WebGL MeshGradient (W5.2).
+        Home-only. Dynamic-imported client-only; reduced-motion users fall
+        back to the static GradientMesh blobs.
       */}
-      <GradientMesh />
+      <PaperShaderMesh />
 
       {/* JSON-LD Structured Data */}
       <WebSiteJsonLd />
