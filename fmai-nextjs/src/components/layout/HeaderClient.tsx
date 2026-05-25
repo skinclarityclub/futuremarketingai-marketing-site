@@ -377,12 +377,14 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
             {t('login')}
           </a>
 
-          {/* Primary CTA */}
+          {/* Primary CTA — matched met hero CTAButton primary variant
+              (single-hue amber gradient + arrow + hover lift + glow). */}
           <Link
             href="/apply"
-            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#F5A623] to-[#0ABAB5] text-bg-deep font-semibold text-sm px-4 py-2 rounded-[var(--radius-btn)] hover:opacity-90 transition-all"
+            className="hidden md:inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-[var(--radius-btn)] bg-gradient-to-br from-[#F5A623] to-[#E8941A] text-bg-deep transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(245,166,35,0.3)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
           >
             {t('apply')}
+            <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
           </Link>
 
           {/* Mobile Menu Button */}
