@@ -31,7 +31,7 @@
       "subtitle": "Negen vaardigheden live, direct inzetbaar voor jouw bureau.",
       "socialMedia": {
         "title": "Social Media Manager",
-        "description": "Clyde verzorgt captions, inplanning en carrousels per merk. In de juiste merkstem, elke keer."
+        "description": "Captions, planning en carrousels per merk. Klaar voordat jij maandag start."
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
@@ -39,11 +39,11 @@
       },
       "emailManagement": {
         "title": "Email Management",
-        "description": "Inbox classificatie, smart labels en dagelijkse digest. Clyde houdt de mailbox overzichtelijk per klant."
+        "description": "Jij ziet alleen wat aandacht nodig heeft. De rest is al weg."
       },
       "reporting": {
         "title": "Rapportage & Analytics",
-        "description": "Wekelijkse prestatie-digests, KPI-dashboards en alerts bij afwijkende metrics."
+        "description": "Wekelijks rapport in je inbox. Bij afwijkende metrics hoor je het voordat de klant belt."
       },
       "seoGeo": {
         "title": "SEO en GEO Analyst",
@@ -51,7 +51,7 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Medewerker",
-        "description": "De orchestrator. Geef opdrachten in gewone taal, Clyde zet de juiste vaardigheid in."
+        "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid."
       }
     },
     "trust": {
@@ -87,8 +87,8 @@
         "linkText": "Bekijk de case"
       },
       "skills": {
-        "value": "9 van 12 live",
-        "label": "Gespecialiseerde vaardigheden",
+        "value": "9 vaardigheden live",
+        "label": "Direct inzetbaar voor jouw bureau",
         "linkText": "Alle skills"
       },
       "founding": {
@@ -113,7 +113,7 @@
     },
     "cta": {
       "title": "Klaar om Clyde te leren kennen?",
-      "subtitle": "Maximaal {maxPartners} bureaus per jaar. {taken} van {total} founding plekken bezet. Plan een gesprek: we kijken samen of Clyde past bij jouw portfolio.",
+      "subtitle": "Tien founding plekken. {taken} bezet. Jouw bureau krijgt persoonlijke onboarding van Daley en lifetime founding-tarief. Plan een gesprek van 30 minuten.",
       "button": "Plan een gesprek",
       "buttonSecondary": "Lees SkinClarity case",
       "foundingLabel": "Bekijk Founding tier"
@@ -145,7 +145,7 @@
     },
     "trustStrip": {
       "title": "Gebouwd met en voor Nederlandse bureaus en merken",
-      "subtitle": "SkinClarity Club, onze eerste Founding partner, draait al maanden volledig autonoom op Clyde.",
+      "subtitle": "SkinClarity Club voert volledig autonoom de content-operatie voor hun 4 huismerken. 3 Instagram-accounts, wekelijkse output, minimale review.",
       "caseLink": "Bekijk de SKC case study"
     }
   },
@@ -2934,14 +2934,14 @@
         "strategy-led": {
           "name": "Strategie-bureau",
           "identity": "de denker die sneller wil schakelen",
-          "validationHook": "Je weet precies wat klanten nodig hebben — maar de uitvoer loopt er altijd achteraan",
+          "validationHook": "Je weet precies wat klanten nodig hebben,maar de uitvoer loopt er altijd achteraan",
           "summary": "Jouw bureau heeft de scherpste visie in de kamer. Wat je mist is een productiemotor die je ideeën omzet in live campagnes, zonder wekelijks handmatig doorsturen.",
           "week1": "Kies één klant en maak hun brief automatisch herbruikbaar in één AI-workflow. Strategie-kennis hoeft maar één keer ingevoerd te worden."
         },
         "data-led": {
           "name": "Data-bureau",
           "identity": "de meter die inzicht wil omzetten in actie",
-          "validationHook": "Je dashboards zijn indrukwekkend — de campagnes die erop volgen nog niet altijd",
+          "validationHook": "Je dashboards zijn indrukwekkend,de campagnes die erop volgen nog niet altijd",
           "summary": "Jouw bureau spreekt in cijfers, attributie en rendement. De volgende stap is de directe koppeling van die data aan je contentproductie, zodat inzicht automatisch stuurt wat er gemaakt wordt.",
           "week1": "Kies één databron en verbind hem direct aan de briefing van volgende maand. Geen kopieer-plakwerk meer."
         },
@@ -2949,36 +2949,36 @@
           "name": "Workflow-bureau",
           "identity": "de bouwer met te veel losse tools en te weinig centraal brein",
           "validationHook": "Iemand op jullie team bouwde vorige maand een automatisering waar de rest nog van aan het bijkomen is",
-          "summary": "Je bureau draait op AI-workflows en automatiseringen — meer dan de meeste concurrenten. De sprong die je nu kunt maken is van losse flows naar één centraal systeem dat alle merken kent en alle Clyde-vaardigheden aanstuurt.",
+          "summary": "Je bureau draait op AI-workflows en automatiseringen,meer dan de meeste concurrenten. De sprong die je nu kunt maken is van losse flows naar één centraal systeem dat alle merken kent en alle Clyde-vaardigheden aanstuurt.",
           "week1": "Stop een nieuw AI-abonnement. Verbind één bestaande tool dieper aan één klant-merkdossier. Diepte werkt beter dan breedte."
         },
         "team-led": {
           "name": "People-bureau",
           "identity": "de talent-hub waar klanten terugkomen voor de mensen",
-          "validationHook": "Klanten vragen specifiek naar jouw medewerkers bij naam — en schalen lukt alleen door meer van die mensen aan te nemen",
+          "validationHook": "Klanten vragen specifiek naar jouw medewerkers bij naam,en schalen lukt alleen door meer van die mensen aan te nemen",
           "summary": "Jouw bureau heeft het sterkste menselijke vakmanschap van de vijf profielen. De kans zit in AI als krachtversterker voor je seniors: minder operationeel werk, meer creatieve sturing.",
           "week1": "Identificeer één taak die je beste medewerker elke week minimaal twee uur kost. Dat is je eerste automatiseringstarget."
         },
         "balanced": {
           "name": "Allround-bureau",
-          "identity": "het bureau zonder zwakke schakel — maar ook zonder scherp onderscheidend profiel",
-          "validationHook": "Je scoort overal redelijk — maar als klanten vragen waarom zij voor jullie kiezen, kost het antwoord even nadenken",
-          "summary": "Je bureau heeft AI-kennis verspreid over strategie, data, tools en team — een zeldzame en sterke basis. De volgende stap is een helder profiel kiezen: bureaus met een herkenbare specialisatie trekken betere klanten aan.",
+          "identity": "het bureau zonder zwakke schakel,maar ook zonder scherp onderscheidend profiel",
+          "validationHook": "Je scoort overal redelijk,maar als klanten vragen waarom zij voor jullie kiezen, kost het antwoord even nadenken",
+          "summary": "Je bureau heeft AI-kennis verspreid over strategie, data, tools en team,een zeldzame en sterke basis. De volgende stap is een helder profiel kiezen: bureaus met een herkenbare specialisatie trekken betere klanten aan.",
           "week1": "Vraag je drie beste klanten welk probleem jij beter oplost dan anderen. Dat antwoord vertelt je welk profiel je al hebt."
         }
       },
       "stages": {
         "emerging": {
           "label": "Ontluikend",
-          "description": "Je legt de basis — elke stap telt dubbel"
+          "description": "Je legt de basis,elke stap telt dubbel"
         },
         "scaling": {
           "label": "Groeiend",
-          "description": "Je bouwt momentum — consistentie is nu de bottleneck"
+          "description": "Je bouwt momentum,consistentie is nu de bottleneck"
         },
         "leading": {
           "label": "Maatgevend",
-          "description": "Je draait op schaal — het volgende niveau is creatieve productie op volume"
+          "description": "Je draait op schaal,het volgende niveau is creatieve productie op volume"
         }
       },
       "_deprecated_personas": {

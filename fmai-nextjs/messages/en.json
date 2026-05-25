@@ -31,7 +31,7 @@
       "subtitle": "Nine skills live, ready to deploy for your agency.",
       "socialMedia": {
         "title": "Social Media Manager",
-        "description": "Clyde handles captions, scheduling and carousels per brand. In the right brand voice, every time."
+        "description": "Captions, scheduling and carousels per brand. Ready before you start on Monday."
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
@@ -39,11 +39,11 @@
       },
       "emailManagement": {
         "title": "Email Management",
-        "description": "Inbox classification, smart labels and a daily digest. Clyde keeps the mailbox organised per client."
+        "description": "You only see what needs attention. The rest is already handled."
       },
       "reporting": {
         "title": "Reporting & Analytics",
-        "description": "Weekly performance digests, KPI dashboards and alerts on anomalous metrics."
+        "description": "Weekly report in your inbox. When metrics deviate, you hear it before the client calls."
       },
       "seoGeo": {
         "title": "SEO & GEO Analyst",
@@ -51,7 +51,7 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Employee",
-        "description": "The orchestrator. Give commands in natural language, Clyde routes to the right skill."
+        "description": "One point of contact for your entire portfolio. Ask in plain language, Clyde picks the right skill."
       }
     },
     "trust": {
@@ -87,8 +87,8 @@
         "linkText": "Read the case"
       },
       "skills": {
-        "value": "9 of 12 live",
-        "label": "Specialised skills",
+        "value": "9 skills live",
+        "label": "Ready to deploy for your agency",
         "linkText": "All skills"
       },
       "founding": {
@@ -113,7 +113,7 @@
     },
     "cta": {
       "title": "Ready to meet Clyde?",
-      "subtitle": "Max {maxPartners} agencies per year. {taken} of {total} founding spots taken. Book a call: we will see together whether Clyde fits your portfolio.",
+      "subtitle": "Ten founding seats. {taken} taken. Your agency gets personal onboarding by Daley and a lifetime founding rate. Book a 30-minute call.",
       "button": "Book a call",
       "buttonSecondary": "Read the SkinClarity case",
       "foundingLabel": "See Founding tier"
@@ -145,7 +145,7 @@
     },
     "trustStrip": {
       "title": "Built with and for Dutch agencies and brands",
-      "subtitle": "SkinClarity Club, our first Founding partner, has been running fully autonomously on Clyde for months.",
+      "subtitle": "SkinClarity Club runs the content operation for their 4 in-house brands fully autonomously. 3 Instagram accounts, weekly output, minimal review.",
       "caseLink": "Read the SKC case study"
     }
   },
@@ -2934,14 +2934,14 @@
         "strategy-led": {
           "name": "Strategy Agency",
           "identity": "the thinker that wants to act faster",
-          "validationHook": "You know exactly what clients need — but execution always lags behind",
+          "validationHook": "You know exactly what clients need,but execution always lags behind",
           "summary": "Your agency has the sharpest vision in the room. What's missing is a production engine that turns your ideas into live campaigns without weekly manual handoffs.",
           "week1": "Pick one client and make their brief automatically reusable in one AI workflow. Strategic knowledge only needs to be entered once."
         },
         "data-led": {
           "name": "Data Agency",
           "identity": "the measurer that wants to turn insights into action",
-          "validationHook": "Your dashboards are impressive — the campaigns that follow them not always",
+          "validationHook": "Your dashboards are impressive,the campaigns that follow them not always",
           "summary": "Your agency speaks in numbers, attribution and return. The next step is directly connecting that data to your content production so insights automatically steer what gets made.",
           "week1": "Pick one data source and connect it directly to next month's briefing. No more copy-paste."
         },
@@ -2949,36 +2949,36 @@
           "name": "Workflow Agency",
           "identity": "the builder with too many disconnected tools and too little central brain",
           "validationHook": "Someone on your team built an automation last month that the rest are still catching up to",
-          "summary": "Your agency runs on AI workflows and automations — more than most competitors. The leap you can make now is from disconnected flows to one central system that knows all brands and orchestrates all Clyde skills.",
+          "summary": "Your agency runs on AI workflows and automations,more than most competitors. The leap you can make now is from disconnected flows to one central system that knows all brands and orchestrates all Clyde skills.",
           "week1": "Stop a new AI subscription. Connect one existing tool deeper to one client's brand file. Depth beats breadth."
         },
         "team-led": {
           "name": "People Agency",
           "identity": "the talent hub clients return to for the people",
-          "validationHook": "Clients ask for your team members by name — and scaling only works by hiring more of them",
+          "validationHook": "Clients ask for your team members by name,and scaling only works by hiring more of them",
           "summary": "Your agency has the strongest human craft of the five profiles. The opportunity is AI as a force multiplier for your seniors: less operational work, more creative direction.",
           "week1": "Identify one task that costs your best team member at least two hours every week. That's your first automation target."
         },
         "balanced": {
           "name": "Generalist Agency",
-          "identity": "the agency without a weak link — but also without a sharp distinguishing profile",
-          "validationHook": "You score reasonably everywhere — but when clients ask why they should choose you, the answer takes a moment",
-          "summary": "Your agency has AI knowledge spread across strategy, data, tools and team — a rare and strong foundation. The next step is picking a clear profile: agencies with a recognizable specialization attract better clients.",
+          "identity": "the agency without a weak link,but also without a sharp distinguishing profile",
+          "validationHook": "You score reasonably everywhere,but when clients ask why they should choose you, the answer takes a moment",
+          "summary": "Your agency has AI knowledge spread across strategy, data, tools and team,a rare and strong foundation. The next step is picking a clear profile: agencies with a recognizable specialization attract better clients.",
           "week1": "Ask your three best clients what problem you solve better than anyone else. That answer tells you which profile you already have."
         }
       },
       "stages": {
         "emerging": {
           "label": "Emerging",
-          "description": "You're laying the foundation — every step counts double"
+          "description": "You're laying the foundation,every step counts double"
         },
         "scaling": {
           "label": "Scaling",
-          "description": "You're building momentum — consistency is now the bottleneck"
+          "description": "You're building momentum,consistency is now the bottleneck"
         },
         "leading": {
           "label": "Leading",
-          "description": "You're operating at scale — the next level is creative production at volume"
+          "description": "You're operating at scale,the next level is creative production at volume"
         }
       },
       "_deprecated_personas": {

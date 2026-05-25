@@ -31,7 +31,7 @@
       "subtitle": "Nueve habilidades disponibles, listas para tu agencia.",
       "socialMedia": {
         "title": "Social Media Manager",
-        "description": "Clyde gestiona captions, planificación y carruseles por marca. En la voz de marca correcta, cada vez."
+        "description": "Captions, planificación y carruseles por marca. Listos antes de que empieces el lunes."
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
@@ -39,11 +39,11 @@
       },
       "emailManagement": {
         "title": "Gestión de Email",
-        "description": "Clasificación de bandeja, etiquetas inteligentes y resumen diario. Clyde mantiene el correo organizado por cliente."
+        "description": "Solo ves lo que necesita tu atención. El resto ya está resuelto."
       },
       "reporting": {
         "title": "Reporting & Analytics",
-        "description": "Resúmenes semanales de rendimiento, dashboards KPI y alertas ante métricas anómalas."
+        "description": "Informe semanal en tu bandeja. Cuando las métricas se desvían, lo sabes antes de que llame el cliente."
       },
       "seoGeo": {
         "title": "Analista SEO y GEO",
@@ -51,7 +51,7 @@
       },
       "clyde": {
         "title": "Clyde Empleado AI de Marketing",
-        "description": "El orquestador. Da instrucciones en lenguaje natural y Clyde activa la habilidad correcta."
+        "description": "Un único punto de contacto para todo tu portfolio. Pídelo en lenguaje natural, Clyde elige la habilidad correcta."
       }
     },
     "trust": {
@@ -87,8 +87,8 @@
         "linkText": "Ver el caso"
       },
       "skills": {
-        "value": "9 de 12 en vivo",
-        "label": "Habilidades especializadas",
+        "value": "9 habilidades en vivo",
+        "label": "Listas para tu agencia",
         "linkText": "Todas las habilidades"
       },
       "founding": {
@@ -113,7 +113,7 @@
     },
     "cta": {
       "title": "¿Listo para conocer a Clyde?",
-      "subtitle": "Máx. {maxPartners} agencias al año. {taken} de {total} plazas founding ocupadas. Agenda una llamada: vemos juntos si Clyde encaja con tu portfolio.",
+      "subtitle": "Diez plazas founding. {taken} ocupada. Tu agencia recibe onboarding personal con Daley y la tarifa founding de por vida. Agenda una llamada de 30 minutos.",
       "button": "Agenda una llamada",
       "buttonSecondary": "Lee el caso SkinClarity",
       "foundingLabel": "Ver tier Founding"
@@ -145,7 +145,7 @@
     },
     "trustStrip": {
       "title": "Construido con y para agencias y marcas neerlandesas",
-      "subtitle": "SkinClarity Club, nuestro primer partner Founding, lleva meses funcionando de forma totalmente autónoma con Clyde.",
+      "subtitle": "SkinClarity Club gestiona la operación de contenido de sus 4 marcas propias de forma totalmente autónoma. 3 cuentas de Instagram, salida semanal, revisión mínima.",
       "caseLink": "Lee el caso SKC"
     }
   },
@@ -2934,14 +2934,14 @@
         "strategy-led": {
           "name": "Agencia de Estrategia",
           "identity": "el pensador que quiere ejecutar más rápido",
-          "validationHook": "Sabes exactamente lo que los clientes necesitan — pero la ejecución siempre va por detrás",
+          "validationHook": "Sabes exactamente lo que los clientes necesitan,pero la ejecución siempre va por detrás",
           "summary": "Tu agencia tiene la visión más nítida de la sala. Lo que falta es un motor de producción que convierta tus ideas en campañas en vivo sin pasar por manos manualmente cada semana.",
           "week1": "Elige un cliente y haz que su brief sea automáticamente reutilizable en un flujo de IA. El conocimiento estratégico solo necesita introducirse una vez."
         },
         "data-led": {
           "name": "Agencia de Datos",
           "identity": "el medidor que quiere convertir insights en acción",
-          "validationHook": "Tus dashboards son impresionantes — las campañas que les siguen no siempre lo son",
+          "validationHook": "Tus dashboards son impresionantes,las campañas que les siguen no siempre lo son",
           "summary": "Tu agencia habla en cifras, atribución y retorno. El siguiente paso es conectar directamente esos datos a tu producción de contenido para que los insights dirijan automáticamente lo que se crea.",
           "week1": "Elige una fuente de datos y conéctala directamente al briefing del próximo mes. Sin más copiar y pegar."
         },
@@ -2949,36 +2949,36 @@
           "name": "Agencia de Workflows",
           "identity": "el constructor con demasiadas herramientas sueltas y muy poco cerebro central",
           "validationHook": "Alguien en tu equipo construyó una automatización el mes pasado de la que el resto aún está recuperándose",
-          "summary": "Tu agencia funciona con flujos de trabajo de IA y automatizaciones — más que la mayoría de los competidores. El salto que puedes dar ahora es de flujos desconectados a un sistema central que conoce todas las marcas y orquesta todas las habilidades de Clyde.",
+          "summary": "Tu agencia funciona con flujos de trabajo de IA y automatizaciones,más que la mayoría de los competidores. El salto que puedes dar ahora es de flujos desconectados a un sistema central que conoce todas las marcas y orquesta todas las habilidades de Clyde.",
           "week1": "Cancela una nueva suscripción de IA. Conecta una herramienta existente más profundamente al expediente de marca de un cliente. La profundidad supera a la amplitud."
         },
         "team-led": {
           "name": "Agencia de Personas",
           "identity": "el hub de talento al que los clientes vuelven por las personas",
-          "validationHook": "Los clientes piden a tus empleados por nombre — y escalar solo funciona contratando más de ellos",
+          "validationHook": "Los clientes piden a tus empleados por nombre,y escalar solo funciona contratando más de ellos",
           "summary": "Tu agencia tiene el oficio humano más fuerte de los cinco perfiles. La oportunidad está en usar la IA como multiplicador de fuerza para tus seniors: menos trabajo operativo, más dirección creativa.",
           "week1": "Identifica una tarea que le cueste a tu mejor empleado al menos dos horas cada semana. Ese es tu primer objetivo de automatización."
         },
         "balanced": {
           "name": "Agencia Generalista",
-          "identity": "la agencia sin punto débil — pero también sin un perfil diferenciador claro",
-          "validationHook": "Puntúas razonablemente en todo — pero cuando los clientes preguntan por qué elegirte, la respuesta tarda un momento",
-          "summary": "Tu agencia tiene conocimiento de IA distribuido entre estrategia, datos, herramientas y equipo — una base rara y sólida. El siguiente paso es elegir un perfil claro: las agencias con una especialización reconocible atraen mejores clientes.",
+          "identity": "la agencia sin punto débil,pero también sin un perfil diferenciador claro",
+          "validationHook": "Puntúas razonablemente en todo,pero cuando los clientes preguntan por qué elegirte, la respuesta tarda un momento",
+          "summary": "Tu agencia tiene conocimiento de IA distribuido entre estrategia, datos, herramientas y equipo,una base rara y sólida. El siguiente paso es elegir un perfil claro: las agencias con una especialización reconocible atraen mejores clientes.",
           "week1": "Pregunta a tus tres mejores clientes qué problema resuelves mejor que nadie. Esa respuesta te dice qué perfil ya tienes."
         }
       },
       "stages": {
         "emerging": {
           "label": "Emergente",
-          "description": "Estás poniendo los cimientos — cada paso cuenta el doble"
+          "description": "Estás poniendo los cimientos,cada paso cuenta el doble"
         },
         "scaling": {
           "label": "Creciendo",
-          "description": "Estás construyendo impulso — la consistencia es ahora el cuello de botella"
+          "description": "Estás construyendo impulso,la consistencia es ahora el cuello de botella"
         },
         "leading": {
           "label": "Referente",
-          "description": "Operas a escala — el siguiente nivel es producción creativa en volumen"
+          "description": "Operas a escala,el siguiente nivel es producción creativa en volumen"
         }
       },
       "_deprecated_personas": {
