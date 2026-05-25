@@ -125,11 +125,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 4 — MemoryUSPTeaser (4-layer geheugen)
+          Sectie 4 — MemoryUSPTeaser (4-layer geheugen, W5.7 sequential reveal)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">
         <ScrollReveal>
-          <MemoryUSPTeaser locale={locale} />
+          <MemoryUSPTeaser
+            eyebrow={t('memoryUsp.eyebrow')}
+            title={t('memoryUsp.title')}
+            intro={t('memoryUsp.intro')}
+            ctaLink={t('memoryUsp.ctaLink')}
+            layers={{
+              context:    { label: t('memoryUsp.layers.context.label'),    body: t('memoryUsp.layers.context.body')    },
+              merken:     { label: t('memoryUsp.layers.merken.label'),     body: t('memoryUsp.layers.merken.body')     },
+              historie:   { label: t('memoryUsp.layers.historie.label'),   body: t('memoryUsp.layers.historie.body')   },
+              voorkeuren: { label: t('memoryUsp.layers.voorkeuren.label'), body: t('memoryUsp.layers.voorkeuren.body') },
+            }}
+          />
         </ScrollReveal>
       </LazySection>
 
