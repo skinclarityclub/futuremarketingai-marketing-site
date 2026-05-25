@@ -11,6 +11,7 @@ import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
+import { MotionRoot } from '@/components/motion/MotionRoot'
 import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
@@ -82,21 +83,23 @@ export default async function LocaleLayout({
           locale={locale}
           messages={pick(messages, GLOBAL_CLIENT_NAMESPACES)}
         >
-          <Providers>
-            <OrganizationJsonLd />
-            <Header locale={locale} />
-            <FloatingLocaleSwitcher />
-            {children}
-            <Footer locale={locale} />
-            {/*
-              CookieConsentBanner moved into ClientIslands so it can be
-              lazy-loaded with a needsConsent guard. Returning visitors
-              with the cookie already set never download the
-              react-cookie-consent chunk. See 13-01-PLAN.md Task 6.
-            */}
-            <ClientIslands />
-            <WebVitalsReporter />
-          </Providers>
+          <MotionRoot>
+            <Providers>
+              <OrganizationJsonLd />
+              <Header locale={locale} />
+              <FloatingLocaleSwitcher />
+              {children}
+              <Footer locale={locale} />
+              {/*
+                CookieConsentBanner moved into ClientIslands so it can be
+                lazy-loaded with a needsConsent guard. Returning visitors
+                with the cookie already set never download the
+                react-cookie-consent chunk. See 13-01-PLAN.md Task 6.
+              */}
+              <ClientIslands />
+              <WebVitalsReporter />
+            </Providers>
+          </MotionRoot>
         </NextIntlClientProvider>
         <SpeedInsights />
       </body>
