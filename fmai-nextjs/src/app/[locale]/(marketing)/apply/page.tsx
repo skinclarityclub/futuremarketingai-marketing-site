@@ -8,7 +8,9 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { SectionHeading } from '@/components/ui/SectionHeading'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
+import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ApplicationForm } from '@/components/apply/ApplicationForm'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
@@ -50,12 +52,16 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
       />
       <Breadcrumbs path="/apply" locale={locale} />
 
-      <section className="pt-24 pb-12 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F5A623]/10 border border-[#F5A623]/20 rounded-full text-sm font-medium text-[#F5A623] mb-6">
+      <section className="pt-24 pb-12 px-6 lg:px-12" aria-labelledby="apply-hero">
+        <div className="max-w-3xl mx-auto text-center space-y-5">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full text-sm font-medium text-accent-human">
             {t('hero.counter', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
+          <h1
+            id="apply-hero"
+            className="text-4xl md:text-6xl font-bold font-display text-text-primary"
+          >
             {t('hero.title')}
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
@@ -65,21 +71,24 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
       </section>
 
       <section className="pb-20 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8">
+        <RevealContainer className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8">
           {/* Expectations panel */}
-          <div>
-            <GlassCard className="p-6 sticky top-24">
-              <h2 className="text-lg font-semibold text-text-primary mb-4">
-                {t('expectations.title')}
-              </h2>
+          <RevealItem>
+            <GlassCard className="p-6 sticky top-24 space-y-5">
+              <div className="space-y-2">
+                <EyebrowLabel>{t('expectations.eyebrow')}</EyebrowLabel>
+                <h2 className="text-lg font-semibold text-text-primary">
+                  {t('expectations.title')}
+                </h2>
+              </div>
               <ol className="space-y-4">
                 {EXPECTATIONS_KEYS.map((key, index) => (
                   <li key={key} className="flex gap-3">
                     <span
                       aria-hidden
-                      className="flex-shrink-0 w-7 h-7 rounded-full bg-accent-system/10 text-accent-system font-semibold text-sm flex items-center justify-center"
+                      className="flex-shrink-0 w-7 h-7 rounded-full bg-accent-system/15 text-accent-system font-mono font-semibold text-sm flex items-center justify-center"
                     >
-                      {index + 1}
+                      {String(index + 1).padStart(2, '0')}
                     </span>
                     <div>
                       <p className="text-text-primary text-sm font-medium">
@@ -92,24 +101,32 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
                   </li>
                 ))}
               </ol>
-              <div className="mt-6 pt-6 border-t border-border-primary">
-                <p className="text-xs text-text-muted leading-relaxed">{t('expectations.reassurance')}</p>
+              <div className="pt-5 border-t border-border-primary">
+                <p className="text-xs text-text-muted leading-relaxed">
+                  {t('expectations.reassurance')}
+                </p>
               </div>
             </GlassCard>
-          </div>
+          </RevealItem>
 
           {/* Form */}
-          <div>
-            <GlassCard className="p-8">
-              <SectionHeading id="apply-form" className="mb-6 text-2xl">
-                {t('form.title')}
-              </SectionHeading>
+          <RevealItem>
+            <div className="rounded-[var(--radius-card)] bg-gradient-to-br from-bg-surface to-bg-deep border border-border-primary p-8 space-y-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <div className="space-y-2">
+                <EyebrowLabel>{t('form.eyebrow')}</EyebrowLabel>
+                <h2
+                  id="apply-form"
+                  className="text-2xl font-bold font-display text-text-primary"
+                >
+                  {t('form.title')}
+                </h2>
+              </div>
               <Suspense fallback={null}>
                 <ApplicationForm />
               </Suspense>
-            </GlassCard>
-          </div>
-        </div>
+            </div>
+          </RevealItem>
+        </RevealContainer>
       </section>
     </PageShell>
   )
