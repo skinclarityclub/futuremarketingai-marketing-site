@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales } from '@/lib/blog'
 import { ArticleJsonLd } from '@/components/seo/ArticleJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { BlogContent } from '@/components/blog/BlogContent'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 
 export const revalidate = 3600
 export const dynamicParams = false
@@ -86,6 +88,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  const t = await getTranslations({ locale, namespace: 'blog' })
+
   const publishedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -125,15 +129,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </nav>
 
       <article>
-        <header className="mb-10">
-          <div className="mb-4 flex items-center gap-3">
+        <header className="mb-10 space-y-4">
+          <EyebrowLabel>{t('post.eyebrow')}</EyebrowLabel>
+          <div className="flex items-center gap-3">
             <span className="rounded-full bg-accent-system/10 px-3 py-1 text-xs font-medium text-accent-system">
               {post.category.replace('-', ' ')}
             </span>
           </div>
-          <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-text-primary">
+          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
             {post.title}
           </h1>
+          <p className="text-lg leading-relaxed text-text-secondary">{post.description}</p>
           <div className="flex items-center gap-4 text-sm text-text-muted">
             <span>{post.author}</span>
             <span aria-hidden="true">&middot;</span>
