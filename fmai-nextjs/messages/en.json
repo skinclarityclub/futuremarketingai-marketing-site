@@ -1242,7 +1242,12 @@
       "eyebrow": "Skill 02. Voice Agent (coming soon)",
       "title": "Clyde picks up the phone.",
       "subtitle": "Inbound calls are answered, FAQs handled, appointments booked. Outbound campaigns run without your team having to dial. Escalation to a human when the conversation calls for it. Coming soon.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Call the waitlist and book appointments for next week",
+        "prompt2": "Answer inbound questions about delivery times",
+        "prompt3": "Follow up with customers who missed their appointment"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -1345,7 +1350,12 @@
       "eyebrow": "Skill 03. Lead Qualifier",
       "title": "Clyde qualifies your website leads.",
       "subtitle": "An embeddable AI chatbot on every brand's website. Runs the qualification conversation, scores intent and routes warm leads to the CRM or sales. No lead lost through missed chats.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Qualify the leads from the past 24 hours",
+        "prompt2": "Route all hot leads straight to the sales inbox",
+        "prompt3": "Show me a sample of ten freshly arrived chats"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -1448,7 +1458,12 @@
       "eyebrow": "Skill 01. Social Media Manager",
       "title": "Clyde runs your social media.",
       "subtitle": "Captions in the brand voice, scheduling at optimal times, carousel builder, hashtag research and engagement tracking. Per account, per brand. One AI Marketing Employee for your entire brand portfolio.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Plan the Instagram content for all SKC brands this week",
+        "prompt2": "Draft 5 carousel posts about the winter routine",
+        "prompt3": "Which captions perform best on LinkedIn for B2B?"
+      }
     },
     "features": {
       "title": "What Clyde does for social media",
@@ -1551,7 +1566,12 @@
       "eyebrow": "Skill 05. Ad Creator (coming soon)",
       "title": "Clyde creates your Meta ads.",
       "subtitle": "Static ads and video ads. Copy, visuals and multiple formats (Feed, Stories, Reels). Publishes directly to Meta Ads Manager. A/B variants included. No freelance designer needed. Coming soon.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Create 3 ad variants for the winter campaign",
+        "prompt2": "Write a video ad script for the glow serum launch",
+        "prompt3": "A/B test 2 creative variants for next week’s promo"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -1650,7 +1670,12 @@
       "eyebrow": "Skill 06. Reporting and Analytics",
       "title": "Clyde reports every week.",
       "subtitle": "Automatic performance digests, live KPI dashboards and anomaly detection with alerts. By Monday 08:00 you have an overview in your inbox. No more manual Notion updates.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Generate the weekly performance digest for every brand",
+        "prompt2": "Which metrics drifted more than 20% this week?",
+        "prompt3": "Compare SkinClarity’s Q4 numbers against Q3"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2186,7 +2211,12 @@
       "eyebrow": "Skill 04. Email Management",
       "title": "Clyde classifies your Gmail inbox.",
       "subtitle": "Not email campaigns: this is inbox classification. Clyde reads incoming emails, applies smart labels (urgent, action, info), sets priority and sends a daily digest. You start the day with an overview instead of chaos.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Summarize today’s most important emails",
+        "prompt2": "Label every invoice and route them to bookkeeping",
+        "prompt3": "Which three inbox actions matter today?"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2285,7 +2315,12 @@
       "eyebrow": "Skill 07. Research",
       "title": "Clyde does your market research.",
       "subtitle": "Trend monitoring in each brand's niche, competitor analysis with benchmarks and content ideas with source citation. Every insight has a source, so you can verify it. No LLM hallucinations as input to your research.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Research the top-5 competitors in the hydration market",
+        "prompt2": "What are this month’s trending topics in skincare?",
+        "prompt3": "Summarize the latest industry reports on EU cosmetics"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2398,7 +2433,12 @@
       "eyebrow": "Skill 08. Blog Factory",
       "title": "Clyde writes your SEO blogs.",
       "subtitle": "Keyword research, longreads (1,500 to 3,000 words), SEO optimization and automatic publishing to the website. One pipeline from idea to live. Quality gets better every week. Blog Factory is live, and still under active development.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Write an SEO article on serum for sensitive skin",
+        "prompt2": "Build a topic cluster around hydration routines",
+        "prompt3": "Refresh meta descriptions for our ten top blogs"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2497,7 +2537,12 @@
       "eyebrow": "Skill 09. SEO / GEO Analyst",
       "title": "Clyde monitors your SEO and AI citations.",
       "subtitle": "Technical SEO audits, position tracking and Core Web Vitals. Plus GEO: how often is your brand cited by ChatGPT, Perplexity and Google AI Overviews? The new search layer runs on AI. Clyde keeps you visible there.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Run a technical SEO audit on the main domains",
+        "prompt2": "Track how often our brand is cited by ChatGPT and Perplexity",
+        "prompt3": "Which keywords dropped in ranking this week?"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2596,7 +2641,12 @@
       "eyebrow": "Skill 10. Clyde AI Marketing Employee",
       "title": "This is Clyde. Your AI Marketing Employee.",
       "subtitle": "The other 11 skills are separate tools. Clyde is the employee who orchestrates them. Give commands in natural language; Clyde routes to the right skill and brings the results back. Works via chat, Slack and Telegram.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Plan this week for all SKC brands, Reels included",
+        "prompt2": "Build a weekly report on the top performing posts",
+        "prompt3": "Which skill is running which campaign this sprint?"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2695,7 +2745,12 @@
       "eyebrow": "Skill 11. ManyChat DM",
       "title": "Clyde handles Instagram DMs.",
       "subtitle": "Keyword triggers (\"INFO\", \"PRICE\") start AI flows that qualify, share information and route warm leads to the CRM. No missed DMs.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Auto-answer DMs containing the keyword delivery time",
+        "prompt2": "Forward warm DM leads to our sales page",
+        "prompt3": "Set up a Story trigger for the new product launch"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -2794,7 +2849,12 @@
       "eyebrow": "Skill 12. Reel Builder (coming soon)",
       "title": "Clyde produces your Reels.",
       "subtitle": "Short vertical videos (9:16) with AI scripts, automatic captions that run in sync and background music. For Instagram Reels, TikTok and YouTube Shorts. Coming soon.",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "prompts": {
+        "prompt1": "Build a 30-second Reel about the morning ritual",
+        "prompt2": "Generate a TikTok script for the product launch",
+        "prompt3": "Spin 5 hook variants for our top-performing Reel"
+      }
     },
     "features": {
       "title": "What Clyde does",
@@ -3320,6 +3380,38 @@
       "badge": "{taken} of {total} founding spots taken",
       "lastUpdated": "As of {date}",
       "cohortStart": "Cohort starts {date}"
+    }
+  },
+  "skills-template": {
+    "eyebrows": {
+      "features": "Features",
+      "how": "How it works",
+      "integrations": "Integrations",
+      "useCases": "Use cases",
+      "allocation": "Per-tier allocation",
+      "proof": "Proof",
+      "related": "Pairs with",
+      "faq": "FAQ",
+      "cta": "Get started"
+    },
+    "related": {
+      "title": "Pairs with",
+      "subtitle": "Other skills that work alongside in the same per-brand memory."
+    },
+    "toc": {
+      "title": "On this page",
+      "features": "Features",
+      "how": "How it works",
+      "integrations": "Integrations",
+      "useCases": "Use cases",
+      "allocation": "Per-tier allocation",
+      "proof": "Proof",
+      "related": "Pairs with",
+      "faq": "FAQ",
+      "cta": "Book a call"
+    },
+    "promptHero": {
+      "intro": "Ask Clyde something like:"
     }
   }
 }
