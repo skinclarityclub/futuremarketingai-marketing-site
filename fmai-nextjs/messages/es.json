@@ -1879,25 +1879,41 @@
     "layers": {
       "title": "Así recuerda Clyde",
       "subtitle": "Como un buen empleado, Clyde tiene cuatro tipos de memoria que trabajan en conjunto. Tú no tienes que saber nada de esto: simplemente funciona.",
+      "scrollLabel": "Recorre las capas",
+      "promptLabel": "Le preguntas a Clyde",
+      "clydeLabel": "Clyde responde",
+      "codeLabel": "Lo que ocurre en la memoria",
       "hot": {
         "name": "Hoy",
         "window": "Últimas 24 horas",
-        "description": "En lo que Clyde está trabajando ahora: la conversación en curso, la campaña del día, el contenido pendiente de aprobación. Siempre a mano."
+        "description": "En lo que Clyde está trabajando ahora: la conversación en curso, la campaña del día, el contenido pendiente de aprobación. Siempre a mano.",
+        "prompt": "¿Qué posts aprobé hoy para la marca Skin?",
+        "clydeAnswer": "Tres posts: post de la mañana sobre la rutina de limpieza, post del mediodía con una reseña UGC, carrusel de fin del día sobre los ingredientes. El carrusel está programado para las 19:00.",
+        "codeLine": "since: '24h', brand: 'skin', status: 'approved'"
       },
       "warm": {
         "name": "Este mes",
         "window": "Últimos 30 días",
-        "description": "Posts aprobados recientemente, informes de KPIs y feedback. Así Clyde puede comparar qué funcionó mejor esta semana que la anterior."
+        "description": "Posts aprobados recientemente, informes de KPIs y feedback. Así Clyde puede comparar qué funcionó mejor esta semana que la anterior.",
+        "prompt": "¿Qué rindió mejor este mes para la marca Skin?",
+        "clydeAnswer": "Los carruseles con citas UGC: en promedio 2,4 veces más engagement que los posts de producto sueltos. Los reels de menos de 15 segundos convirtieron por encima de la media. Los posts estáticos después de las 21:00 perdieron alcance.",
+        "codeLine": "range: '30d', brand: 'skin', metric: 'engagement_rate'"
       },
       "cold": {
         "name": "Archivo",
         "window": "Todo el material más antiguo",
-        "description": "El archivo completo: directrices de marca, campañas antiguas e informes previos. Buscable por significado, no solo por palabra clave."
+        "description": "El archivo completo: directrices de marca, campañas antiguas e informes previos. Buscable por significado, no solo por palabra clave.",
+        "prompt": "¿Qué publicamos el otoño pasado sobre piel seca de invierno?",
+        "clydeAnswer": "Tres carruseles en octubre y noviembre. El de mejor rendimiento abría con 'primero reparar, luego hidratar'. Combinado con una rutina de producto, compartido 312 veces y guardado por 1.804 seguidores.",
+        "codeLine": "search: 'piel_invierno', brand: 'skin', semantic: true"
       },
       "context": {
         "name": "Quién es la marca",
         "window": "Conocimiento permanente",
-        "description": "El núcleo que siempre va con Clyde: voz de marca, persona del público, objetivos de KPIs y lo que sí o no se permite. Solo cambia cuando tú lo pides explícitamente."
+        "description": "El núcleo que siempre va con Clyde: voz de marca, persona del público, objetivos de KPIs y lo que sí o no se permite. Solo cambia cuando tú lo pides explícitamente.",
+        "prompt": "Escribe un copy para la nueva crema de noche.",
+        "clydeAnswer": "Tono: cálido, directo, sin Tú con mayúscula. Audiencia: mujeres 28-44 que valoran los rituales. Sin claims, los resultados se expresan en semanas concretas. El copy abre con la rutina nocturna y cierra con una pregunta en vez de una CTA.",
+        "codeLine": "brand: 'skin', persona: 'core', voice: 'core_v3'"
       }
     },
     "isolation": {
@@ -1934,6 +1950,34 @@
         "name": "Clyde",
         "body": "Memoria persistente por marca, cuatro capas, estrictamente separada y consolidada cada noche. Construida para agencias con entre 10 y 50 marcas. Cada semana más afinada, nunca diluida."
       }
+    },
+    "comparison": {
+      "eyebrow": "La memoria en acción",
+      "title": "Tres conversaciones, una marca, una semana.",
+      "intro": "La misma conversación con una AI sin memoria frente a Clyde. No es hipotético: así es un día real en SkinClarity Club.",
+      "diyLabel": "Otra AI",
+      "diyNote": "olvida todo al cerrar la sesión",
+      "clydeLabel": "Clyde",
+      "clydeNote": "recuerda el contexto y construye sobre él",
+      "userLabel": "Tú",
+      "replayLabel": "Reproducir de nuevo",
+      "turns": [
+        {
+          "user": "Escribe un copy para la nueva crema de noche de Skin.",
+          "diy": "¿Cuál es el tono de la marca? ¿Tienes una audiencia, USPs y directrices?",
+          "clyde": "Copy listo. Abre con la rutina nocturna, cierra con una pregunta en vez de una CTA. Tono alineado con la voz de marca v3, longitud de 187 caracteres."
+        },
+        {
+          "user": "Haz dos variantes.",
+          "diy": "¿Dos variantes de qué? ¿Quieres que empiece de cero con las directrices de marca?",
+          "clyde": "Variante A: más personal, en primera persona del singular. Variante B: promesa más firme sobre el resultado de sueño. Las dos respetan la regla sin claims que fijamos el mes pasado."
+        },
+        {
+          "user": "¿Cuál funcionó mejor el mes pasado en esta categoría?",
+          "diy": "No tengo acceso a los datos históricos de tu cuenta.",
+          "clyde": "La variante con la rutina nocturna y la pregunta de guardar fue la que mejor rindió en octubre: 2,1 veces más guardados que la media mensual. La Variante A se acerca más a ese tono, empieza por ahí."
+        }
+      ]
     },
     "cta": {
       "title": "¿Quieres ver cómo funciona para tus marcas?",

@@ -1879,25 +1879,41 @@
     "layers": {
       "title": "How Clyde remembers",
       "subtitle": "Like a good employee, Clyde has four kinds of memory that work together. You do not need to know any of the details: it just works.",
+      "scrollLabel": "Scroll through the layers",
+      "promptLabel": "You ask Clyde",
+      "clydeLabel": "Clyde answers",
+      "codeLabel": "What happens inside memory",
       "hot": {
         "name": "Today",
         "window": "Last 24 hours",
-        "description": "What Clyde is working on right now: the ongoing conversation, today's campaign, content in the approval queue. Instantly at hand."
+        "description": "What Clyde is working on right now: the ongoing conversation, today's campaign, content in the approval queue. Instantly at hand.",
+        "prompt": "Which posts did I approve for brand Skin today?",
+        "clydeAnswer": "Three posts: morning post on the cleanser routine, midday post with a UGC review, end-of-day carousel about the ingredients. The carousel is scheduled for 19:00.",
+        "codeLine": "since: '24h', brand: 'skin', status: 'approved'"
       },
       "warm": {
         "name": "This month",
         "window": "Last 30 days",
-        "description": "Recently approved posts, KPI reports and feedback. So Clyde can compare what worked better this week than last."
+        "description": "Recently approved posts, KPI reports and feedback. So Clyde can compare what worked better this week than last.",
+        "prompt": "What performed best this month for brand Skin?",
+        "clydeAnswer": "Carousels with UGC quotes: on average 2.4x more engagement than standalone product posts. Reels under 15 seconds converted above average. Static posts after 21:00 lost reach.",
+        "codeLine": "range: '30d', brand: 'skin', metric: 'engagement_rate'"
       },
       "cold": {
         "name": "Archive",
         "window": "Everything older",
-        "description": "The full archive: brand guidelines, past campaigns, older reports. Searchable by meaning, not only by keyword."
+        "description": "The full archive: brand guidelines, past campaigns, older reports. Searchable by meaning, not only by keyword.",
+        "prompt": "What did we write last autumn about dry winter skin?",
+        "clydeAnswer": "Three carousels in October and November. The best performer opened with 'first repair, then hydrate'. Combined with a product routine, shared 312 times and saved by 1,804 followers.",
+        "codeLine": "search: 'winter_skin', brand: 'skin', semantic: true"
       },
       "context": {
         "name": "Who the brand is",
         "window": "Permanent knowledge",
-        "description": "The core that always travels along: brand voice, audience persona, KPI targets, what is allowed and what is not. Only adjusted when you explicitly ask."
+        "description": "The core that always travels along: brand voice, audience persona, KPI targets, what is allowed and what is not. Only adjusted when you explicitly ask.",
+        "prompt": "Write a caption for the new night cream.",
+        "clydeAnswer": "Tone: warm, direct, no capitalized You. Audience: women 28-44 who value rituals. No claims, results expressed in concrete weeks. Caption opens with the evening routine, ends with a question instead of a CTA.",
+        "codeLine": "brand: 'skin', persona: 'core', voice: 'core_v3'"
       }
     },
     "isolation": {
@@ -1934,6 +1950,34 @@
         "name": "Clyde",
         "body": "Persistent memory per brand, four layers, strictly isolated and consolidated every night. Built for agencies with 10 to 50 brands. Sharper every week, never diluted."
       }
+    },
+    "comparison": {
+      "eyebrow": "Memory in action",
+      "title": "Three conversations, one brand, one week.",
+      "intro": "The same conversation with a memoryless AI versus with Clyde. Not hypothetical: this is what a day at SkinClarity Club actually looks like.",
+      "diyLabel": "Other AI",
+      "diyNote": "forgets everything after session ends",
+      "clydeLabel": "Clyde",
+      "clydeNote": "remembers context and builds on it",
+      "userLabel": "You",
+      "replayLabel": "Replay",
+      "turns": [
+        {
+          "user": "Write a caption for the new night cream for Skin.",
+          "diy": "What is the brand tone? Do you have an audience, USPs and guidelines?",
+          "clyde": "Caption ready. Opens with the evening routine, ends with a question instead of a CTA. Tone matches brand voice v3, length set at 187 characters."
+        },
+        {
+          "user": "Make two variants of that.",
+          "diy": "Two variants of what? Do you want me to restart from the brand guidelines?",
+          "clyde": "Variant A: more personal, first person singular. Variant B: stronger promise on sleep result. Both stay inside the no-claims rule we set last month."
+        },
+        {
+          "user": "Which one worked best last month in this category?",
+          "diy": "I do not have access to historical data about your account.",
+          "clyde": "The variant with the evening routine and a save-it question performed best in October: 2.1x more saves than the monthly average. Variant A is closest to that tone, start there."
+        }
+      ]
     },
     "cta": {
       "title": "Want to see how this works for your brands?",
