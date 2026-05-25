@@ -58,7 +58,33 @@
         "prompt2": "Build a weekly performance report for brand X",
         "prompt3": "Analyse which content types performed best in Q4",
         "openLink": "Open the Clyde skill"
-      }
+      },
+      "research": {
+        "title": "Research",
+        "description": "Market research, competitor analysis and trend signals per brand, dropped into your briefing docs."
+      },
+      "blogFactory": {
+        "title": "Blog Factory",
+        "description": "Full blog articles, optimised for SEO and GEO, ready to publish."
+      },
+      "adCreator": {
+        "title": "Ad Creator",
+        "description": "Ad variants for Meta, Google and TikTok. Includes copy, hooks and visual direction."
+      },
+      "manychat": {
+        "title": "ManyChat DM",
+        "description": "Conversational flows for Instagram and WhatsApp, connected to your funnels."
+      },
+      "voiceAgent": {
+        "title": "Voice Agent",
+        "description": "Inbound and outbound calls handled in your brand voice. Hands off to a human where needed."
+      },
+      "reelBuilder": {
+        "title": "Reel Builder",
+        "description": "Reels and short-form videos from briefing to final cut, ready to publish."
+      },
+      "statusLive": "Live",
+      "statusComingSoon": "Soon"
     },
     "trust": {
       "title": "Why agencies work with Clyde",

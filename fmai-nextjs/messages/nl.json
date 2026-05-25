@@ -58,7 +58,33 @@
         "prompt2": "Maak een wekelijks performance-rapport voor merk X",
         "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
         "openLink": "Open de Clyde-skill"
-      }
+      },
+      "research": {
+        "title": "Research",
+        "description": "Marktonderzoek, concurrentie-analyse en trendsignalen per merk, in jouw briefingdocs."
+      },
+      "blogFactory": {
+        "title": "Blog Factory",
+        "description": "Volledige blog-artikelen, geoptimaliseerd voor SEO en GEO, klaar voor publicatie."
+      },
+      "adCreator": {
+        "title": "Ad Creator",
+        "description": "Ad-varianten voor Meta, Google en TikTok. Inclusief copy, hooks en visuele richting."
+      },
+      "manychat": {
+        "title": "ManyChat DM",
+        "description": "Conversational flows voor Instagram en WhatsApp, gekoppeld aan jouw funnels."
+      },
+      "voiceAgent": {
+        "title": "Voice Agent",
+        "description": "Inbound en outbound calls afgehandeld in jouw merkstem. Routing naar mens waar nodig."
+      },
+      "reelBuilder": {
+        "title": "Reel Builder",
+        "description": "Reels en short-form video's van briefing tot finale cut, klaar voor publicatie."
+      },
+      "statusLive": "Live",
+      "statusComingSoon": "Binnenkort"
     },
     "trust": {
       "title": "Waarom bureaus met Clyde werken",

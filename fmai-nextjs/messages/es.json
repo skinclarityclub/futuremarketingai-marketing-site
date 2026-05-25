@@ -58,7 +58,33 @@
         "prompt2": "Crea un informe semanal de rendimiento para la marca X",
         "prompt3": "Analiza qué tipos de contenido funcionaron mejor en Q4",
         "openLink": "Abrir la skill Clyde"
-      }
+      },
+      "research": {
+        "title": "Research",
+        "description": "Investigación de mercado, análisis de competencia y señales de tendencia por marca, dentro de tus briefings."
+      },
+      "blogFactory": {
+        "title": "Blog Factory",
+        "description": "Artículos de blog completos, optimizados para SEO y GEO, listos para publicar."
+      },
+      "adCreator": {
+        "title": "Ad Creator",
+        "description": "Variantes de anuncio para Meta, Google y TikTok. Incluye copy, hooks y dirección visual."
+      },
+      "manychat": {
+        "title": "ManyChat DM",
+        "description": "Flujos conversacionales para Instagram y WhatsApp, conectados a tus embudos."
+      },
+      "voiceAgent": {
+        "title": "Voice Agent",
+        "description": "Llamadas inbound y outbound en tu tono de marca. Pasa a humano cuando es necesario."
+      },
+      "reelBuilder": {
+        "title": "Reel Builder",
+        "description": "Reels y videos cortos del briefing al corte final, listos para publicar."
+      },
+      "statusLive": "Live",
+      "statusComingSoon": "Próximamente"
     },
     "trust": {
       "title": "Por qué las agencias trabajan con Clyde",
