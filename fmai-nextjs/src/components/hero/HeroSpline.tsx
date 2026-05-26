@@ -58,12 +58,14 @@ export function HeroSpline() {
         ref={containerRef}
         className="absolute inset-0 hidden lg:block pointer-events-none"
       >
-        {/* Ambient glow — radiates from the robot's position (reduced blur for performance) */}
+        {/* Ambient glow — radiates from the robot's position (reduced blur for performance).
+            Teal (system) core fading to amber (human) edge: brand-color narrative,
+            not the deprecated cyan/purple. */}
         <div
-          className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-20"
+          className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-25"
           style={{
             background:
-              'radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(168,85,247,0.1) 40%, transparent 65%)',
+              'radial-gradient(circle, rgba(0,212,170,0.35) 0%, rgba(245,166,35,0.10) 45%, transparent 70%)',
             filter: 'blur(80px)',
             willChange: 'auto',
           }}
@@ -98,8 +100,8 @@ export function HeroSpline() {
           className="absolute bottom-0 left-0 right-0 h-[55%]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0,212,255,0.06) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0,212,255,0.06) 1px, transparent 1px)
+              linear-gradient(rgba(0,212,170,0.06) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,212,170,0.06) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
             transform: 'perspective(500px) rotateX(60deg)',
@@ -114,17 +116,17 @@ export function HeroSpline() {
           className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full blur-[80px]"
           style={{
             background:
-              'radial-gradient(ellipse, rgba(0,212,255,0.18) 0%, rgba(168,85,247,0.08) 40%, transparent 70%)',
+              'radial-gradient(ellipse, rgba(0,212,170,0.20) 0%, rgba(245,166,35,0.08) 45%, transparent 70%)',
             animation: 'heroGridGlow 4s ease-in-out infinite',
           }}
         />
 
-        {/* Horizon accent line */}
+        {/* Horizon accent line — teal-to-amber sweep mirrors brand duet */}
         <div
           className="absolute top-[52%] left-[8%] right-[8%] h-px"
           style={{
             background:
-              'linear-gradient(90deg, transparent, rgba(0,212,255,0.25) 30%, rgba(168,85,247,0.25) 70%, transparent)',
+              'linear-gradient(90deg, transparent, rgba(0,212,170,0.28) 30%, rgba(245,166,35,0.22) 70%, transparent)',
           }}
         />
       </div>
