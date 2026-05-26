@@ -160,8 +160,10 @@
       "eyebrow": "Quién construye Clyde",
       "name": "Daley van Diest",
       "role": "Founder y lead engineer, FutureMarketingAI",
-      "quote": "Sin capa de helpdesk, sin ticketing. Con cada partner, mi número está en su WhatsApp.",
-      "proof": "Builds dirigidos por el founder. Sin account manager entre tú y el código.",
+      "quote1": "Yo escribo el código de Clyde.",
+      "quote2": "Le enseño tus marcas.",
+      "quote3": "Estoy en nuestro Slack cuando lo necesitas.",
+      "proof": "Builds dirigidos por el founder. Sin account manager entre tú y cómo Clyde trabaja para tus marcas.",
       "chips": {
         "engineer": "Ingeniero senior",
         "stack": "Stack n8n + LLM",

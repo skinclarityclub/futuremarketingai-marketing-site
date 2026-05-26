@@ -30,10 +30,17 @@ export async function FounderSection({ locale }: { locale: string }) {
             aria-hidden
             className="mx-auto mb-5 w-7 h-7 text-accent-system/70"
           />
-          <p className="font-display text-2xl md:text-3xl lg:text-[2.25rem] font-medium leading-[1.25] text-text-primary">
-            {t('quote')}
-          </p>
-          <p className="mt-5 text-sm md:text-base text-accent-system/85 font-medium">
+          <div className="space-y-1 md:space-y-2">
+            {(['quote1', 'quote2', 'quote3'] as const).map((key) => (
+              <p
+                key={key}
+                className="font-display text-2xl md:text-3xl lg:text-[2.25rem] font-medium leading-[1.25] text-text-primary"
+              >
+                {t(key)}
+              </p>
+            ))}
+          </div>
+          <p className="mt-6 text-sm md:text-base text-accent-system/85 font-medium">
             {t('proof')}
           </p>
         </blockquote>
