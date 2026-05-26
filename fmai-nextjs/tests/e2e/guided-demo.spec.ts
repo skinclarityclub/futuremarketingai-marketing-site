@@ -16,11 +16,13 @@ async function waitForChatButton(page: Page) {
   return btn
 }
 
-// Helper: open the chat panel
+// Helper: open the chat panel.
+// Use data-attribute to disambiguate from cookie-consent dialog which also
+// carries role="dialog" but with aria-label "We use cookies".
 async function openChat(page: Page) {
   const btn = await waitForChatButton(page)
   await btn.click({ force: true })
-  const panel = page.locator('[role="dialog"]')
+  const panel = page.locator('[data-chatwidget-panel]')
   await expect(panel).toBeVisible({ timeout: 5000 })
   return panel
 }
@@ -28,7 +30,7 @@ async function openChat(page: Page) {
 // Helper: close chat via Escape
 async function closeChat(page: Page) {
   await page.keyboard.press('Escape')
-  const panel = page.locator('[role="dialog"]')
+  const panel = page.locator('[data-chatwidget-panel]')
   await expect(panel).not.toBeVisible({ timeout: 3000 })
 }
 
@@ -57,7 +59,7 @@ test.describe('Chat Panel — Open/Close Basics', () => {
     await page.goto('/en')
     await openChat(page)
 
-    const closeBtn = page.locator('[role="dialog"] button[aria-label="Close chat"]')
+    const closeBtn = page.locator('[data-chatwidget-panel] button[aria-label="Close chat"]')
     await expect(closeBtn).toBeVisible({ timeout: 10_000 })
   })
 
@@ -221,7 +223,7 @@ test.describe('Guided Demo — End Demo Flow', () => {
 
     // Close chat
     await page.keyboard.press('Escape')
-    const panel = page.locator('[role="dialog"]')
+    const panel = page.locator('[data-chatwidget-panel]')
     await expect(panel).not.toBeVisible({ timeout: 3000 })
 
     // Reopen — demo state should be preserved
