@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { ArrowRight, Quote } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
@@ -18,28 +19,20 @@ export async function CaseStudyCard({ locale }: { locale: string }) {
         </p>
 
         <article className="relative overflow-hidden rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] backdrop-blur-sm p-8 lg:p-12">
-          {/* Top row: logo + identity */}
-          <header className="flex items-center gap-5 mb-8">
-            {/*
-              TODO: SKC logo asset — vervang placeholder door echte SVG/PNG
-              wanneer brand-asset binnen is. Pad-suggestie: /public/brand/skc-logo.svg
-            */}
-            <div
-              aria-label={t('logoAlt')}
-              role="img"
-              className="shrink-0 grid place-items-center w-16 h-16 lg:w-20 lg:h-20 rounded-2xl border border-border-primary bg-bg-elevated/60 font-display font-bold text-2xl lg:text-3xl text-accent-system"
-            >
-              SKC
-            </div>
-            <div>
-              <h3
-                id="case-study-skc"
-                className="font-display text-2xl lg:text-3xl font-bold text-text-primary"
-              >
-                {t('companyName')}
-              </h3>
-              <p className="text-sm text-text-secondary mt-1">{t('subtitle')}</p>
-            </div>
+          {/* Brand identity — full SKC lockup als primaire customer-proof */}
+          <header className="mb-8">
+            <Image
+              src="/brand/skc-logo.png"
+              alt={t('logoAlt')}
+              width={1794}
+              height={638}
+              className="h-12 lg:h-14 w-auto mb-3"
+            />
+            {/* Bedrijfsnaam visueel-verborgen — logo is de visuele identity, h3 voor SEO/SR */}
+            <h3 id="case-study-skc" className="sr-only">
+              {t('companyName')}
+            </h3>
+            <p className="text-sm text-text-secondary">{t('subtitle')}</p>
           </header>
 
           {/* Metrics row */}
