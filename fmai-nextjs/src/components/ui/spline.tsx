@@ -146,6 +146,7 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
             fill
             className="object-contain object-center"
             priority
+            fetchPriority="high"
             sizes="60vw"
           />
         </div>

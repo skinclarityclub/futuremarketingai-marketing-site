@@ -80,12 +80,18 @@ export function HeroSection(props: HeroSectionProps) {
             {tagline}
           </motion.p>
 
-          {/* Description */}
+          {/*
+            Description — the mobile LCP element. Keep it SSR-visible
+            (no `opacity: 0` initial) so LCP fires at FCP instead of
+            waiting on the framer-motion animation. Subtle y-translate
+            still happens because the element starts 12px below position
+            and animates upward, but it's painted from the first frame.
+          */}
           <motion.p
             className="speakable-hero text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
-            initial={{ y: 12, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1.5, duration: DEFAULT_DURATION, ease: EASE_OUT }}
+            initial={{ y: 12 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.3, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
             {subtitle}
           </motion.p>
