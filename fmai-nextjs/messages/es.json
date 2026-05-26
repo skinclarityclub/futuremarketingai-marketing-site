@@ -3656,6 +3656,27 @@
       "free": "Gratis",
       "fast": "5 min",
       "noAccount": "Sin cuenta"
+    },
+    "preview": {
+      "heading": "Resultado de muestra",
+      "profile": "Impulsado por estrategia",
+      "profileStatus": "En crecimiento",
+      "profileRange": "Por encima del promedio",
+      "insightLabel": "Mayor ganancia aquí",
+      "insightBody": "Contenido, reportes y research: tus tres mayores devoradores de tiempo",
+      "skillsHeading": "Habilidades AI para tu perfil",
+      "footer": "+ 4 datos más en tu informe",
+      "bars": {
+        "strategy": "Estrategia",
+        "data": "Datos",
+        "tools": "Herramientas",
+        "team": "Equipo"
+      },
+      "skills": {
+        "blogFactory": "Más contenido, mismo equipo",
+        "reporting": "Reportes automáticos",
+        "research": "Insights de mercado bajo demanda"
+      }
     }
   },
   "newsletter": {

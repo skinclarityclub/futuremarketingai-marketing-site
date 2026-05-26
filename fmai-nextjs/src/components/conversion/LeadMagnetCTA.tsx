@@ -19,16 +19,16 @@ export interface LeadMagnetCTAProps {
 }
 
 const PREVIEW_BARS = [
-  { label: 'Strategie', value: 82 },
-  { label: 'Data', value: 64 },
-  { label: 'Tools', value: 49 },
-  { label: 'Team', value: 71 },
+  { key: 'strategy', value: 82 },
+  { key: 'data', value: 64 },
+  { key: 'tools', value: 49 },
+  { key: 'team', value: 71 },
 ] as const
 
 const PREVIEW_SKILLS = [
-  { name: 'Blog Factory', desc: 'Meer content, zelfde team' },
-  { name: 'Reporting', desc: 'Automatische rapportage' },
-  { name: 'Research', desc: 'Marktinzicht op aanvraag' },
+  { name: 'Blog Factory', descKey: 'blogFactory' },
+  { name: 'Reporting', descKey: 'reporting' },
+  { name: 'Research', descKey: 'research' },
 ] as const
 
 // Score ring geometry
@@ -84,6 +84,8 @@ function ScoreRing() {
 }
 
 function ResultPreview() {
+  const t = useTranslations('leadMagnet.preview')
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -100,27 +102,27 @@ function ResultPreview() {
       />
 
       <div className="select-none text-[10px] font-medium uppercase tracking-[0.15em] text-text-muted">
-        Voorbeeld resultaat
+        {t('heading')}
       </div>
 
       {/* Score ring + profile info */}
       <div className="flex items-center gap-4">
         <ScoreRing />
         <div className="flex min-w-0 flex-col gap-1">
-          <div className="text-sm font-semibold text-accent-system">Strategie-gedreven</div>
+          <div className="text-sm font-semibold text-accent-system">{t('profile')}</div>
           <span className="self-start rounded-full border border-[#f5a623]/25 bg-[#f5a623]/10 px-2 py-0.5 text-[10px] font-medium text-[#f5a623]">
-            Groeiend
+            {t('profileStatus')}
           </span>
-          <span className="text-[10px] text-[#f5a623]/60">Bovengemiddeld</span>
+          <span className="text-[10px] text-[#f5a623]/60">{t('profileRange')}</span>
         </div>
       </div>
 
       {/* Category breakdown bars */}
       <div className="flex flex-col gap-2.5">
-        {PREVIEW_BARS.map(({ label, value }, i) => (
-          <div key={label}>
+        {PREVIEW_BARS.map(({ key, value }, i) => (
+          <div key={key}>
             <div className="mb-1 flex items-center justify-between">
-              <span className="text-[11px] text-text-secondary">{label}</span>
+              <span className="text-[11px] text-text-secondary">{t(`bars.${key}`)}</span>
               <span className="tabular-nums text-[11px] font-medium text-text-secondary">{value}%</span>
             </div>
             <div className="h-[5px] overflow-hidden rounded-full bg-white/[0.08]">
@@ -158,11 +160,11 @@ function ResultPreview() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f5a623]/70" />
           </span>
           <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#f5a623]/60">
-            Meeste winst hier
+            {t('insightLabel')}
           </span>
         </div>
         <p className="text-[11px] font-medium leading-relaxed text-[#f5a623]/85">
-          Content, rapportage en research: jouw drie grootste tijdvreters
+          {t('insightBody')}
         </p>
       </motion.div>
 
@@ -176,13 +178,13 @@ function ResultPreview() {
       >
         <div className="flex items-center gap-2">
           <span className="shrink-0 text-[9px] font-bold uppercase tracking-[0.14em] text-text-muted/60">
-            AI-skills voor jouw profiel
+            {t('skillsHeading')}
           </span>
           <div className="h-px flex-1 bg-white/[0.06]" />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          {PREVIEW_SKILLS.map(({ name, desc }, i) => (
+          {PREVIEW_SKILLS.map(({ name, descKey }, i) => (
             <motion.div
               key={name}
               initial={{ opacity: 0, x: -4 }}
@@ -195,7 +197,7 @@ function ResultPreview() {
                 {name}
               </span>
               <span className="min-w-0 truncate text-[10px] text-text-muted">
-                {desc}
+                {t(`skills.${descKey}`)}
               </span>
             </motion.div>
           ))}
@@ -212,7 +214,7 @@ function ResultPreview() {
       >
         <div className="h-px flex-1 bg-white/[0.04]" />
         <span className="text-[9px] text-text-muted/40">
-          + 4 andere inzichten in jouw rapport
+          {t('footer')}
         </span>
         <ArrowRight className="h-2.5 w-2.5 shrink-0 text-text-muted/35" />
       </motion.div>

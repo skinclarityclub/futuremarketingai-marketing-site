@@ -3656,6 +3656,27 @@
       "free": "Gratis",
       "fast": "5 min",
       "noAccount": "Geen account"
+    },
+    "preview": {
+      "heading": "Voorbeeld resultaat",
+      "profile": "Strategie-gedreven",
+      "profileStatus": "Groeiend",
+      "profileRange": "Bovengemiddeld",
+      "insightLabel": "Meeste winst hier",
+      "insightBody": "Content, rapportage en research: jouw drie grootste tijdvreters",
+      "skillsHeading": "AI-skills voor jouw profiel",
+      "footer": "+ 4 andere inzichten in jouw rapport",
+      "bars": {
+        "strategy": "Strategie",
+        "data": "Data",
+        "tools": "Tools",
+        "team": "Team"
+      },
+      "skills": {
+        "blogFactory": "Meer content, zelfde team",
+        "reporting": "Automatische rapportage",
+        "research": "Marktinzicht op aanvraag"
+      }
     }
   },
   "newsletter": {

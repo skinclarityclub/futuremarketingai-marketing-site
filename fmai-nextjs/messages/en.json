@@ -3656,6 +3656,27 @@
       "free": "Free",
       "fast": "5 min",
       "noAccount": "No account"
+    },
+    "preview": {
+      "heading": "Sample result",
+      "profile": "Strategy-driven",
+      "profileStatus": "Growing",
+      "profileRange": "Above average",
+      "insightLabel": "Biggest win here",
+      "insightBody": "Content, reporting and research: your three biggest time-sinks",
+      "skillsHeading": "AI skills for your profile",
+      "footer": "+ 4 more insights in your report",
+      "bars": {
+        "strategy": "Strategy",
+        "data": "Data",
+        "tools": "Tools",
+        "team": "Team"
+      },
+      "skills": {
+        "blogFactory": "More content, same team",
+        "reporting": "Automated reporting",
+        "research": "Market insight on demand"
+      }
     }
   },
   "newsletter": {
