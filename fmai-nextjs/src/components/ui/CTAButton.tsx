@@ -15,6 +15,13 @@ interface CTAButtonProps {
   icon?: ReactNode
   /** Optional left-aligned icon. */
   iconLeft?: ReactNode
+  /**
+   * Forwarded to next/link. Set `false` on above-the-fold CTAs where the
+   * prefetched chunks (Zod from /apply, ChatSimulation from /skills/clyde,
+   * etc.) would otherwise compete with hero LCP — Next.js still warm-fetches
+   * on hover so the click penalty is ~50 ms.
+   */
+  prefetch?: boolean
 }
 
 export function CTAButton({
@@ -28,6 +35,7 @@ export function CTAButton({
   disabled = false,
   icon,
   iconLeft,
+  prefetch,
 }: CTAButtonProps) {
   const baseStyles =
     'inline-flex items-center justify-center gap-2 font-semibold rounded-[var(--radius-btn)] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system'
@@ -79,7 +87,7 @@ export function CTAButton({
       )
     }
     return (
-      <Link href={href} className={styles}>
+      <Link href={href} className={styles} prefetch={prefetch}>
         {content}
       </Link>
     )

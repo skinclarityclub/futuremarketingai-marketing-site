@@ -120,7 +120,14 @@ export function HeroSection(props: HeroSectionProps) {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.9, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
-            <CTAButton href="/apply" size="lg">
+            {/*
+              prefetch={false} on both above-the-fold CTAs — the default
+              auto-prefetch pulls /apply (Zod + ApplicationForm chunks) and
+              /skills/clyde (ChatSimulation chunk) at idle, competing with
+              hero LCP. Next.js still warm-fetches on hover, so the click
+              penalty is ~50 ms vs. 1-2 s of contended bandwidth.
+            */}
+            <CTAButton href="/apply" size="lg" prefetch={false}>
               <Zap className="mr-1 h-5 w-5" />
               {ctaPrimary}
               <ArrowRight className="ml-1 h-4 w-4" />
@@ -128,6 +135,7 @@ export function HeroSection(props: HeroSectionProps) {
 
             <Link
               href="/skills/clyde"
+              prefetch={false}
               className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-text-primary transition-colors underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
             >
               {ctaSecondary}
