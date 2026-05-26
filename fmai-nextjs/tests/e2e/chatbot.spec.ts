@@ -18,7 +18,9 @@ async function waitForChatButton(page: import('@playwright/test').Page) {
 async function openChat(page: import('@playwright/test').Page) {
   const btn = await waitForChatButton(page)
   await btn.click({ force: true })
-  const panel = page.locator('[role="dialog"]')
+  // Use data-attribute to disambiguate from cookie-consent dialog which also
+  // carries role="dialog" but with aria-label "We use cookies".
+  const panel = page.locator('[data-chatwidget-panel]')
   await expect(panel).toBeVisible()
   return panel
 }
@@ -63,7 +65,7 @@ test.describe('Floating ChatWidget', () => {
     const closeFab = page.locator('button[aria-label="Close chat"]').first()
     await closeFab.click({ force: true })
 
-    const panel = page.locator('[role="dialog"]')
+    const panel = page.locator('[data-chatwidget-panel]')
     await expect(panel).not.toBeVisible()
   })
 

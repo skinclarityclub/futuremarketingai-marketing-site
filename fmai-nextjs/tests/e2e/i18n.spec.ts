@@ -77,9 +77,9 @@ test.describe('Locale Content', () => {
 
   test('footer renders for each locale', async ({ page }) => {
     await page.goto('/en')
-    await expect(page.locator('footer')).toBeVisible()
+    await expect(page.getByRole('contentinfo')).toBeVisible()
 
     await page.goto('/nl')
-    await expect(page.locator('footer')).toBeVisible()
+    await expect(page.getByRole('contentinfo')).toBeVisible()
   })
 })
