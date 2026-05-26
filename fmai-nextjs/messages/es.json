@@ -171,30 +171,30 @@
       "weeks": {
         "1": {
           "label": "Semana 1",
-          "heading": "Intake y discovery",
-          "body": "Conocemos tu agencia y tu portfolio de clientes. Una sesión de trabajo, sin maratón de formularios. Resultado: imagen compartida de marcas, canales y deadlines fijos.",
-          "deliverable": "Vision compartida de marcas, canales y plazos",
+          "heading": "Intake y brand-scan",
+          "body": "Una sesion de trabajo con Daley. Brand-scan extrae ADN de marca por cliente: colores, fuentes, tono y USPs. Analisis de IG lee tus patrones de contenido.",
+          "deliverable": "ADN de marca por cliente + baseline de IG + cuentas configuradas",
           "clientHours": "2 horas de tu tiempo"
         },
         "2": {
           "label": "Semana 2",
-          "heading": "Setup e integración",
-          "body": "Clyde recibe acceso a tus canales, herramientas y datos. Configuramos las capas de memoria por marca y montamos el flujo de revisión.",
-          "deliverable": "Integracion funcionando + memoria por marca",
+          "heading": "Setup y pilares",
+          "body": "Pilares de contenido auto-generados desde el ADN de marca. Plantillas de diseno por marca via Stitch. Canales (IG, LinkedIn) y mapeo de CTA activados.",
+          "deliverable": "De 4 a 6 pilares de contenido, plantillas y canales en vivo",
           "clientHours": "1 hora de tu tiempo"
         },
         "3": {
           "label": "Semana 3",
-          "heading": "Training y tuning",
-          "body": "Primeras rondas de contenido con revisión guiada. Clyde aprende tu tono de voz por marca hasta que suene natural.",
-          "deliverable": "Voz de marca afinada por marca, flujo de revision listo",
+          "heading": "Ajuste de voz de marca",
+          "body": "Primer lote de contenido con revision guiada. Iteraciones de voz hasta que Clyde acierta tu voz de forma natural. Maximo tres iteraciones por marca.",
+          "deliverable": "Voz de marca afinada por marca, flujo de revision calibrado",
           "clientHours": "3 horas de tu tiempo"
         },
         "4": {
           "label": "Semana 4",
-          "heading": "En vivo y autónomo",
-          "body": "A partir de aquí Clyde funciona solo. Tú mantienes dirección y aprobaciones, Daley sigue siendo tu contacto personal.",
-          "deliverable": "Motor de contenido autonomo en vivo, tu revisas y diriges",
+          "heading": "Kickoff y activacion",
+          "body": "Sesion de kickoff con Daley. Clyde planifica y publica de forma autonoma segun tu calendario de marca. Linea directa de Slack para escaladas.",
+          "deliverable": "Motor de contenido autonomo en vivo, Founder Slack activo",
           "clientHours": "1 hora por semana, continuo"
         }
       },

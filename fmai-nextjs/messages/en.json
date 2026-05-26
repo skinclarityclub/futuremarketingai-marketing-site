@@ -171,30 +171,30 @@
       "weeks": {
         "1": {
           "label": "Week 1",
-          "heading": "Intake and discovery",
-          "body": "We learn your agency and your client portfolio. One working session, no form marathon. Outcome: a shared picture of brands, channels and fixed deadlines.",
-          "deliverable": "Shared view of brands, channels and deadlines",
+          "heading": "Intake and brand scan",
+          "body": "One working session with Daley. Brand scan extracts brand DNA per client: colors, fonts, tone and USPs. IG analysis reads your content patterns.",
+          "deliverable": "Brand DNA per client + IG baseline + accounts configured",
           "clientHours": "2 hours of your time"
         },
         "2": {
           "label": "Week 2",
-          "heading": "Setup and integration",
-          "body": "Clyde gets access to your channels, tools and data. We configure memory layers per brand and set up the review flow.",
-          "deliverable": "Working integration + memory per brand",
+          "heading": "Setup and pillars",
+          "body": "Content pillars auto-generated from brand DNA. Design templates per brand via Stitch. Channels (IG, LinkedIn) plus CTA mapping activated.",
+          "deliverable": "4 to 6 content pillars, design templates and channels live",
           "clientHours": "1 hour of your time"
         },
         "3": {
           "label": "Week 3",
-          "heading": "Training and tuning",
-          "body": "First content rounds with guided review. Clyde learns your tone of voice per brand until it feels natural.",
-          "deliverable": "Brand voice matched per brand, review flow set up",
+          "heading": "Brand voice tuning",
+          "body": "First content batch with guided review. Brand voice iterations until Clyde hits your voice naturally. Maximum three iterations per brand.",
+          "deliverable": "Brand voice locked per brand, review flow calibrated",
           "clientHours": "3 hours of your time"
         },
         "4": {
           "label": "Week 4",
-          "heading": "Live and autonomous",
-          "body": "From here Clyde runs on his own. You keep direction and approvals, Daley remains your personal contact.",
-          "deliverable": "Autonomous content engine live, you review and steer",
+          "heading": "Kickoff and activation",
+          "body": "Kickoff session with Daley. Clyde schedules and publishes autonomously per your brand schedule. Direct Slack line for escalations.",
+          "deliverable": "Autonomous content engine live, Founder Slack active",
           "clientHours": "1 hour per week, ongoing"
         }
       },

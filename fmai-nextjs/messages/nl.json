@@ -171,30 +171,30 @@
       "weeks": {
         "1": {
           "label": "Week 1",
-          "heading": "Intake en discovery",
-          "body": "Wij leren jouw bureau en jouw klantportfolio kennen. Eén werksessie, geen formulier-marathon. Resultaat: gedeeld beeld van merken, kanalen en vaste deadlines.",
-          "deliverable": "Gedeeld beeld van merken, kanalen en deadlines",
+          "heading": "Intake en brand-scan",
+          "body": "Een werksessie met Daley. Brand-scan leest merk-DNA per klant: kleuren, fonts, tone en USPs. IG-analyse haalt jouw contentpatronen op.",
+          "deliverable": "Merk-DNA per klant + IG-baseline + accounts geconfigureerd",
           "clientHours": "2 uur jouw tijd"
         },
         "2": {
           "label": "Week 2",
-          "heading": "Setup en integratie",
-          "body": "Clyde krijgt toegang tot jouw kanalen, tools en data. Wij configureren memory-layers per merk en zetten de review-flow op.",
-          "deliverable": "Werkende integratie + memory per merk",
+          "heading": "Setup en pijlers",
+          "body": "Content-pijlers automatisch gegenereerd uit brand-DNA. Design-templates per merk via Stitch. Channels (IG, LinkedIn) plus CTA-mapping geactiveerd.",
+          "deliverable": "4 tot 6 content-pijlers, design-templates en channels live",
           "clientHours": "1 uur jouw tijd"
         },
         "3": {
           "label": "Week 3",
-          "heading": "Training en tuning",
-          "body": "Eerste content rondes met begeleide review. Clyde leert jouw tone of voice per merk tot het natuurlijk voelt.",
-          "deliverable": "Brand-stem matched per merk, review-flow ingericht",
+          "heading": "Brand-voice tuning",
+          "body": "Eerste contentbatch met begeleide review. Brand-voice iteraties tot Clyde jouw stem natuurlijk treft. Maximaal drie iteraties per merk.",
+          "deliverable": "Brand-voice gelocked per merk, review-flow gekalibreerd",
           "clientHours": "3 uur jouw tijd"
         },
         "4": {
           "label": "Week 4",
-          "heading": "Live en autonoom",
-          "body": "Vanaf hier loopt Clyde zelfstandig. Jij houdt regie en goedkeuring, Daley blijft persoonlijk aanspreekpunt.",
-          "deliverable": "Autonome contentmotor live, jij reviewt en stuurt bij",
+          "heading": "Kickoff en activatie",
+          "body": "Kickoff sessie met Daley. Clyde plant en publiceert autonoom volgens jouw merk-schema. Directe Slack-lijn voor escalaties.",
+          "deliverable": "Autonome contentmotor live, Founder Slack actief",
           "clientHours": "1 uur per week, doorlopend"
         }
       },
