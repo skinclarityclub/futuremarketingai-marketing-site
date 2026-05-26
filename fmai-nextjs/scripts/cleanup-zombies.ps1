@@ -38,7 +38,7 @@
 param(
   [int]$KeepClaudePID = 0,
   [int]$KeepPort = 3000,
-  [int[]]$PortRange = @(3001..3030),
+  [int[]]$PortRange = @(3001..3099),
   [int]$ClaudeAgeHours = 6,
   [switch]$DryRun
 )
