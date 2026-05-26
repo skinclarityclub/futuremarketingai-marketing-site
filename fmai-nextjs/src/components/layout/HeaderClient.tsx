@@ -289,11 +289,11 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                       initial={false}
                       animate={
                         skillsOpen
-                          ? { opacity: 1, y: 0, scale: 1 }
-                          : { opacity: 0, y: -8, scale: 0.97 }
+                          ? { opacity: 1, y: 0, scale: 1, x: '-50%' }
+                          : { opacity: 0, y: -8, scale: 0.97, x: '-50%' }
                       }
                       transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
-                      className={`absolute top-full -left-4 mt-2 bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-2xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden ${
+                      className={`fixed left-1/2 top-[72px] bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-2xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden ${
                         skillsOpen ? 'block' : 'hidden'
                       }`}
                       style={{ width: 'min(1240px, calc(100vw - 48px))' }}
