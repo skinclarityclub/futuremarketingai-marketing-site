@@ -72,14 +72,14 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, cta
         </div>
 
         <div className="relative">
-          {/* Horizontal connector — desktop only */}
+          {/* Horizontal connector — desktop only, sits behind cards */}
           <span
             aria-hidden
-            className="hidden lg:block absolute top-[14px] left-[8px] right-[8px] h-px bg-gradient-to-r from-accent-system/60 via-accent-system/30 to-transparent"
+            className="hidden lg:block absolute top-[28px] left-[8px] right-[8px] h-px bg-gradient-to-r from-accent-system/60 via-accent-system/30 to-transparent z-0"
           />
 
           <motion.ol
-            className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-5 relative"
+            className="grid grid-cols-1 lg:grid-cols-4 gap-5 relative z-10 items-stretch"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -89,53 +89,54 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, cta
               <motion.li
                 key={week}
                 variants={weekVariants}
-                className="relative flex lg:flex-col gap-4 lg:gap-0"
+                className="relative h-full"
               >
                 {/* Vertical connector — mobile only */}
                 {i < WEEKS.length - 1 && (
                   <span
                     aria-hidden
-                    className="lg:hidden absolute left-[7px] top-7 bottom-[-1.5rem] w-px bg-accent-system/30"
+                    className="lg:hidden absolute left-[7px] top-7 bottom-[-1.25rem] w-px bg-accent-system/30"
                   />
                 )}
 
-                {/* Node + index — desktop sits on horizontal line */}
-                <div className="flex lg:items-center gap-3 lg:mb-5 shrink-0">
-                  <span
-                    aria-hidden
-                    className="relative grid place-items-center w-4 h-4 lg:w-7 lg:h-7 rounded-full bg-bg-deep border border-accent-system"
-                  >
-                    <span className="block w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-accent-system" />
-                  </span>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-system lg:flex-1">
-                    {weeks[week].label}
-                  </span>
-                </div>
+                <article className="relative h-full flex flex-col rounded-[var(--radius-card)] border border-border-primary bg-bg-surface/30 p-5 lg:p-6">
+                  {/* Node + label header */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <span
+                      aria-hidden
+                      className="relative grid place-items-center w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-bg-deep border border-accent-system shrink-0"
+                    >
+                      <span className="block w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-accent-system" />
+                    </span>
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-system">
+                      {weeks[week].label}
+                    </span>
+                  </div>
 
-                <div className="flex-1 flex flex-col gap-3">
-                  {/* Tijd-investering chip — busy-owner check direct above heading */}
-                  <span className="inline-flex items-center gap-1.5 self-start rounded-full border border-border-primary bg-bg-surface/40 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-[0.12em] text-text-muted">
+                  {/* Tijd-investering chip — vaste positie onder label */}
+                  <span className="inline-flex items-center gap-1.5 self-start rounded-full border border-border-primary bg-bg-deep/40 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-[0.12em] text-text-muted mb-4">
                     <Clock className="w-3 h-3" aria-hidden />
                     {weeks[week].clientHours}
                   </span>
 
-                  <div>
-                    <h3 className="font-display text-lg lg:text-xl font-bold text-text-primary mb-2">
+                  {/* Body — neemt resterende ruimte tot deliverable footer */}
+                  <div className="flex-1 mb-5">
+                    <h3 className="font-display text-lg lg:text-xl font-bold text-text-primary mb-2 leading-tight">
                       {weeks[week].heading}
                     </h3>
-                    <p className="text-sm lg:text-base text-text-secondary leading-relaxed max-w-md">
+                    <p className="text-sm text-text-secondary leading-relaxed">
                       {weeks[week].body}
                     </p>
                   </div>
 
-                  {/* Deliverable — concreet resultaat na deze week */}
-                  <div className="flex items-start gap-2 mt-1 pt-3 border-t border-border-primary/50 max-w-md">
+                  {/* Deliverable footer — altijd onderaan, mt-auto via flex-col h-full */}
+                  <div className="flex items-start gap-2 pt-4 border-t border-border-primary/50 mt-auto">
                     <Check className="w-3.5 h-3.5 mt-0.5 shrink-0 text-status-active" aria-hidden />
-                    <span className="text-xs lg:text-sm text-text-secondary leading-relaxed">
+                    <span className="text-xs text-text-secondary leading-relaxed">
                       {weeks[week].deliverable}
                     </span>
                   </div>
-                </div>
+                </article>
               </motion.li>
             ))}
           </motion.ol>
