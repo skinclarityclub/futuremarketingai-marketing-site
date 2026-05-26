@@ -92,8 +92,8 @@ export async function generateMetadata({
   og.set('tl', String(clampScore(sp.tl)))
   og.set('tm', String(clampScore(sp.tm)))
 
-  const title = t('metaTitle', { persona: `${archetypeName} (${stageName})`, total })
-  const description = t('metaDescription', { persona: archetypeName, total })
+  const title = t('metaTitle', { archetype: archetypeName, stage: stageName, total })
+  const description = t('metaDescription')
   const url = `${SITE_URL}/${locale}/assessment/result?${og.toString()}`
 
   return {
