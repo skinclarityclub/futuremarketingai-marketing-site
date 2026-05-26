@@ -3,12 +3,20 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import { Check, X } from 'lucide-react'
 
-const THINKING_MS = 1100
-const WORD_REVEAL_MS = 55
+const THINKING_MS = 1000
+const WORD_REVEAL_MS = 58
 const VERDICT_DELAY_MS = 350
-const HOLD_AFTER_MS = 6500
+const VERDICT_HOLD_MS = 1500
+const FINAL_HOLD_MS = 4500
 
-type Stage = 'thinking' | 'typing' | 'verdict' | 'hold'
+type Stage =
+  | 'thinkingOther'
+  | 'typingOther'
+  | 'verdictOther'
+  | 'thinkingClyde'
+  | 'typingClyde'
+  | 'verdictClyde'
+  | 'finalHold'
 
 function subscribePrefersReducedMotion(callback: () => void): () => void {
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -49,18 +57,17 @@ export interface MemoryLiveComparisonProps {
 
 export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
   const reduced = usePrefersReducedMotion()
-  const [stage, setStage] = useState<Stage>('thinking')
+  const [stage, setStage] = useState<Stage>('thinkingOther')
   const [otherWordCount, setOtherWordCount] = useState(0)
   const [clydeWordCount, setClydeWordCount] = useState(0)
   const [cycle, setCycle] = useState(0)
 
   const otherWords = props.otherResponse.split(' ')
   const clydeWords = props.clydeResponse.split(' ')
-  const longestCount = Math.max(otherWords.length, clydeWords.length)
 
   useEffect(() => {
     if (reduced) {
-      setStage('verdict')
+      setStage('finalHold')
       setOtherWordCount(otherWords.length)
       setClydeWordCount(clydeWords.length)
       return
@@ -75,36 +82,69 @@ export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
       timers.push(t)
     }
 
-    // Reset + start
-    setStage('thinking')
+    // Reset
+    setStage('thinkingOther')
     setOtherWordCount(0)
     setClydeWordCount(0)
 
-    wait(() => {
-      setStage('typing')
-      // Reveal both responses word-by-word in parallel
-      otherWords.forEach((_, i) => {
-        wait(() => setOtherWordCount(i + 1), i * WORD_REVEAL_MS)
-      })
-      clydeWords.forEach((_, i) => {
-        wait(() => setClydeWordCount(i + 1), i * WORD_REVEAL_MS)
-      })
-    }, THINKING_MS)
+    // Phase A — Andere AI: thinking -> typing -> verdict
+    wait(() => setStage('typingOther'), THINKING_MS)
+    otherWords.forEach((_, i) => {
+      wait(() => setOtherWordCount(i + 1), THINKING_MS + i * WORD_REVEAL_MS)
+    })
+    const otherTypingEnd = THINKING_MS + otherWords.length * WORD_REVEAL_MS
+    wait(() => setStage('verdictOther'), otherTypingEnd + VERDICT_DELAY_MS)
 
-    const typingDuration = (longestCount - 1) * WORD_REVEAL_MS
-    wait(() => setStage('verdict'), THINKING_MS + typingDuration + VERDICT_DELAY_MS)
-    wait(
-      () => setCycle((c) => c + 1),
-      THINKING_MS + typingDuration + HOLD_AFTER_MS
-    )
+    // Phase B — Clyde: thinking -> typing -> verdict
+    const phaseBStart = otherTypingEnd + VERDICT_DELAY_MS + VERDICT_HOLD_MS
+    wait(() => setStage('thinkingClyde'), phaseBStart)
+    wait(() => setStage('typingClyde'), phaseBStart + THINKING_MS)
+    clydeWords.forEach((_, i) => {
+      wait(
+        () => setClydeWordCount(i + 1),
+        phaseBStart + THINKING_MS + i * WORD_REVEAL_MS
+      )
+    })
+    const clydeTypingEnd = phaseBStart + THINKING_MS + clydeWords.length * WORD_REVEAL_MS
+    wait(() => setStage('verdictClyde'), clydeTypingEnd + VERDICT_DELAY_MS)
+
+    // Final hold both, then loop
+    wait(() => setStage('finalHold'), clydeTypingEnd + VERDICT_DELAY_MS + 200)
+    wait(() => setCycle((c) => c + 1), clydeTypingEnd + VERDICT_DELAY_MS + FINAL_HOLD_MS)
 
     return () => {
       cancelled = true
       timers.forEach(clearTimeout)
     }
-  }, [cycle, reduced, otherWords.length, clydeWords.length, longestCount])
+  }, [cycle, reduced, otherWords.length, clydeWords.length])
 
-  const showVerdict = stage === 'verdict' || stage === 'hold' || reduced
+  // Stage helpers per card
+  const otherActive = stage === 'thinkingOther' || stage === 'typingOther'
+  const otherShowVerdict =
+    stage === 'verdictOther' ||
+    stage === 'thinkingClyde' ||
+    stage === 'typingClyde' ||
+    stage === 'verdictClyde' ||
+    stage === 'finalHold' ||
+    reduced
+  const otherShowResponse =
+    stage === 'typingOther' ||
+    stage === 'verdictOther' ||
+    stage === 'thinkingClyde' ||
+    stage === 'typingClyde' ||
+    stage === 'verdictClyde' ||
+    stage === 'finalHold' ||
+    reduced
+  const otherShowThinking = stage === 'thinkingOther'
+
+  const clydeActive = stage === 'thinkingClyde' || stage === 'typingClyde'
+  const clydeShowVerdict = stage === 'verdictClyde' || stage === 'finalHold' || reduced
+  const clydeShowResponse = stage === 'typingClyde' || stage === 'verdictClyde' || stage === 'finalHold' || reduced
+  const clydeShowThinking = stage === 'thinkingClyde'
+
+  // Dimming: inactive card dims until both are revealed
+  const otherDimmed = stage === 'thinkingClyde' || stage === 'typingClyde'
+  const clydeDimmed = stage === 'thinkingOther' || stage === 'typingOther' || stage === 'verdictOther'
 
   return (
     <div>
@@ -114,27 +154,35 @@ export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
         <ResponseCard
           tone="muted"
+          active={otherActive}
+          dimmed={otherDimmed}
           label={props.otherLabel}
           tag={props.otherTag}
           promptLabel={props.promptLabel}
           prompt={props.prompt}
           responseLabel={props.responseLabel}
+          showThinking={otherShowThinking}
+          showResponse={otherShowResponse}
           revealedResponse={otherWords.slice(0, otherWordCount).join(' ')}
-          stage={stage}
-          showVerdict={showVerdict}
+          showCaret={stage === 'typingOther'}
+          showVerdict={otherShowVerdict}
           verdict={props.otherWarning}
           verdictIcon="x"
         />
         <ResponseCard
           tone="accent"
+          active={clydeActive}
+          dimmed={clydeDimmed}
           label={props.clydeLabel}
           tag={props.clydeTag}
           promptLabel={props.promptLabel}
           prompt={props.prompt}
           responseLabel={props.responseLabel}
+          showThinking={clydeShowThinking}
+          showResponse={clydeShowResponse}
           revealedResponse={clydeWords.slice(0, clydeWordCount).join(' ')}
-          stage={stage}
-          showVerdict={showVerdict}
+          showCaret={stage === 'typingClyde'}
+          showVerdict={clydeShowVerdict}
           verdict={props.clydeProof}
           verdictIcon="check"
         />
@@ -145,13 +193,17 @@ export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
 
 interface ResponseCardProps {
   tone: 'muted' | 'accent'
+  active: boolean
+  dimmed: boolean
   label: string
   tag: string
   promptLabel: string
   prompt: string
   responseLabel: string
+  showThinking: boolean
+  showResponse: boolean
   revealedResponse: string
-  stage: Stage
+  showCaret: boolean
   showVerdict: boolean
   verdict: string
   verdictIcon: 'x' | 'check'
@@ -161,15 +213,25 @@ function ResponseCard(props: ResponseCardProps) {
   const isAccent = props.tone === 'accent'
   const VerdictIcon = props.verdictIcon === 'check' ? Check : X
 
+  const baseClasses =
+    'rounded-[var(--radius-card)] p-5 lg:p-6 flex flex-col gap-3 min-h-[280px] transition-all duration-500'
+
+  const toneClasses = isAccent
+    ? 'border bg-accent-system/[0.04] '
+    : 'border bg-bg-surface/40 '
+
+  const borderClasses = props.active
+    ? isAccent
+      ? 'border-accent-system/60 shadow-[0_0_40px_rgba(0,212,170,0.18)]'
+      : 'border-text-muted/40 shadow-[0_0_28px_rgba(255,255,255,0.04)]'
+    : isAccent
+      ? 'border-accent-system/30 shadow-[0_0_24px_rgba(0,212,170,0.06)]'
+      : 'border-border-primary shadow-none'
+
+  const dimClass = props.dimmed ? 'opacity-50' : 'opacity-100'
+
   return (
-    <div
-      className={
-        'rounded-[var(--radius-card)] p-5 lg:p-6 flex flex-col gap-3 min-h-[280px] ' +
-        (isAccent
-          ? 'border border-accent-system/40 bg-accent-system/[0.04] shadow-[0_0_32px_rgba(0,212,170,0.10)]'
-          : 'border border-border-primary bg-bg-surface/40')
-      }
-    >
+    <div className={`${baseClasses} ${toneClasses} ${borderClasses} ${dimClass}`}>
       {/* Card header — label + tag */}
       <div className="flex items-baseline gap-2 flex-wrap">
         <span
@@ -181,6 +243,31 @@ function ResponseCard(props: ResponseCardProps) {
           {props.label}
         </span>
         <span className="text-[10px] font-mono text-text-muted/60">{props.tag}</span>
+        {props.active && (
+          <span
+            aria-hidden
+            className={
+              'ml-auto inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.16em] ' +
+              (isAccent ? 'text-accent-system' : 'text-text-muted')
+            }
+          >
+            <span className="relative inline-flex w-1.5 h-1.5">
+              <span
+                className={
+                  'absolute inset-0 rounded-full animate-ping opacity-75 ' +
+                  (isAccent ? 'bg-accent-system' : 'bg-text-muted')
+                }
+              />
+              <span
+                className={
+                  'relative inline-block w-1.5 h-1.5 rounded-full ' +
+                  (isAccent ? 'bg-accent-system' : 'bg-text-muted')
+                }
+              />
+            </span>
+            Live
+          </span>
+        )}
       </div>
 
       {/* Prompt */}
@@ -191,7 +278,7 @@ function ResponseCard(props: ResponseCardProps) {
         <p className="text-xs lg:text-sm text-text-secondary leading-relaxed">{props.prompt}</p>
       </div>
 
-      {/* Response area — thinking dots OR typing reveal */}
+      {/* Response area — thinking dots OR typing reveal OR empty placeholder */}
       <div className="flex-1">
         <p
           className={
@@ -201,9 +288,9 @@ function ResponseCard(props: ResponseCardProps) {
         >
           {props.responseLabel}
         </p>
-        {props.stage === 'thinking' ? (
+        {props.showThinking ? (
           <TypingDots tone={props.tone} />
-        ) : (
+        ) : props.showResponse ? (
           <p
             className={
               'text-xs lg:text-sm leading-relaxed font-mono ' +
@@ -211,7 +298,7 @@ function ResponseCard(props: ResponseCardProps) {
             }
           >
             {props.revealedResponse}
-            {props.stage === 'typing' && (
+            {props.showCaret && (
               <span
                 aria-hidden
                 className={
@@ -221,6 +308,8 @@ function ResponseCard(props: ResponseCardProps) {
               />
             )}
           </p>
+        ) : (
+          <p className="text-xs text-text-muted/40 italic font-mono">…</p>
         )}
       </div>
 
