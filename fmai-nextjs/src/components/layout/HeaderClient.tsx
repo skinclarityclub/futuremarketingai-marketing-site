@@ -296,7 +296,7 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                       className={`absolute top-full -left-4 mt-2 bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-2xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden ${
                         skillsOpen ? 'block' : 'hidden'
                       }`}
-                      style={{ width: '880px' }}
+                      style={{ width: 'min(1240px, calc(100vw - 48px))' }}
                       role="menu"
                       aria-label={tHeader('nav.skills')}
                       aria-hidden={!skillsOpen}
@@ -390,7 +390,7 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                                           )}
                                         </span>
                                         {isComingSoon && (
-                                          <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5 shrink-0">
+                                          <span className="text-[9px] font-semibold uppercase text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5 shrink-0">
                                             {tHeader('skills.comingSoon')}
                                           </span>
                                         )}
