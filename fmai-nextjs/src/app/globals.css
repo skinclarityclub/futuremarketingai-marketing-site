@@ -73,6 +73,40 @@
   }
 }
 
+/*
+  Mobile-only hero reveal animations. Pure CSS so the LCP-element (subtitle)
+  paints without waiting for motion-react hydration. Desktop hero keeps
+  motion-react (see HeroSectionDesktop). Four sequenced anims — one per
+  semantic block, not per-word — to avoid the v8/v9 regression that ran
+  8+ parallel animations with blur filters on throttled mobile GPUs.
+  `fill-mode: both` so element holds final state once anim ends.
+*/
+@keyframes hero-mobile-fade-up-sm {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-mobile-slide-up-sm {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mobile-anim {
+    animation: none !important;
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
