@@ -1290,12 +1290,6 @@
     },
     "last_updated": "Last updated: April 24, 2026"
   },
-  "chatbot": {
-    "disclosure": {
-      "badge": "AI assistant",
-      "notice": "I am an AI assistant"
-    }
-  },
   "blog": {
     "eyebrow": "Library",
     "title": "Insights on AI marketing and automation",
@@ -2229,11 +2223,6 @@
       "fallbackIntro": "The calendar did not load. You can open it directly with the button below.",
       "fallbackCta": "Open Daley's calendar",
       "reassurance": "Prefer a personal reply first? Daley reads each application and responds within 3 business days."
-    }
-  },
-  "landing": {
-    "footer": {
-      "nav": {}
     }
   },
   "case_studies": {

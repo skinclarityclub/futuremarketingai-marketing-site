@@ -1290,12 +1290,6 @@
     },
     "last_updated": "Última actualización: 24 de abril de 2026"
   },
-  "chatbot": {
-    "disclosure": {
-      "badge": "Asistente AI",
-      "notice": "Soy un asistente AI"
-    }
-  },
   "blog": {
     "eyebrow": "Biblioteca",
     "title": "Ideas sobre marketing con AI y automatización",
@@ -2229,11 +2223,6 @@
       "fallbackIntro": "La agenda no cargó. Puedes abrirla directamente con el botón.",
       "fallbackCta": "Abrir la agenda de Daley",
       "reassurance": "¿Prefieres una respuesta personal primero? Daley lee cada solicitud y responde en 3 días laborables."
-    }
-  },
-  "landing": {
-    "footer": {
-      "nav": {}
     }
   },
   "case_studies": {

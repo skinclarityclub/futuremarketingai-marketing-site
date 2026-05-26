@@ -1290,12 +1290,6 @@
     },
     "last_updated": "Laatst bijgewerkt: 24 april 2026"
   },
-  "chatbot": {
-    "disclosure": {
-      "badge": "AI-assistent",
-      "notice": "Ik ben een AI-assistent"
-    }
-  },
   "blog": {
     "eyebrow": "Bibliotheek",
     "title": "Inzichten over AI-marketing en automatisering",
@@ -2229,11 +2223,6 @@
       "fallbackIntro": "De agenda laadt niet. Je kunt direct plannen via de onderstaande knop.",
       "fallbackCta": "Open Daley's agenda",
       "reassurance": "Liever wachten op een persoonlijk bericht? Daley leest je aanvraag en antwoordt binnen 3 werkdagen."
-    }
-  },
-  "landing": {
-    "footer": {
-      "nav": {}
     }
   },
   "case_studies": {

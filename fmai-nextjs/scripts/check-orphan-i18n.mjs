@@ -32,14 +32,6 @@ const ALLOW_NO_CLIENT_GREP = new Set([
   // skills-* namespaces are consumed by generatePageMetadata + SkillPageTemplate
   // through a dynamic namespace parameter. Already covered by the prefix
   // allowance below — listed here for documentation.
-
-  // TODO(phase-17-followup): truly orphan namespaces flagged by this script
-  // at first-run. Deferred from B6 to keep that task content-only:
-  //   - `chatbot` (singular, contains `disclosure` only, zero consumers)
-  //   - `landing` (top-level duplicate of `common.landing` used by Footer)
-  // Schedule a follow-up content PR to remove these from messages/*.json.
-  'chatbot',
-  'landing',
 ])
 
 const ALLOW_PREFIXES = ['skills-']
