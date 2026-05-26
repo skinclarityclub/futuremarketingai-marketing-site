@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
@@ -17,16 +18,32 @@ import { HeroSection } from '@/components/home/HeroSection'
 import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
-import { MemoryUSPTeaser } from '@/components/home/MemoryUSPTeaser'
+// Below-the-fold client components — split out of the main chunk so the
+// hero LCP doesn't have to wait for their JS to parse. Each still SSRs
+// (ssr: true) so SEO + crawlers see real content. The browser fetches
+// each chunk in parallel after the main chunk finishes downloading.
+const MemoryUSPTeaser = dynamic(() =>
+  import('@/components/home/MemoryUSPTeaser').then((m) => ({ default: m.MemoryUSPTeaser }))
+)
 import { ComparisonTable } from '@/components/home/ComparisonTable'
-import { ProcessTimeline } from '@/components/home/ProcessTimeline'
+const ProcessTimeline = dynamic(() =>
+  import('@/components/home/ProcessTimeline').then((m) => ({ default: m.ProcessTimeline }))
+)
 import { FounderSection } from '@/components/home/FounderSection'
 import { TestimonialBlock } from '@/components/home/TestimonialBlock'
-import { PricingTeaser } from '@/components/home/PricingTeaser'
+const PricingTeaser = dynamic(() =>
+  import('@/components/home/PricingTeaser').then((m) => ({ default: m.PricingTeaser }))
+)
 import { TIER_PRICING, formatEur } from '@/lib/pricing-data'
-import { FaqAccordion } from '@/components/home/FaqAccordion'
-import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
-import { TrustSignalsGrid } from '@/components/marketing/TrustSignalsGrid'
+const FaqAccordion = dynamic(() =>
+  import('@/components/home/FaqAccordion').then((m) => ({ default: m.FaqAccordion }))
+)
+const LeadMagnetCTA = dynamic(() =>
+  import('@/components/conversion/LeadMagnetCTA').then((m) => ({ default: m.LeadMagnetCTA }))
+)
+const TrustSignalsGrid = dynamic(() =>
+  import('@/components/marketing/TrustSignalsGrid').then((m) => ({ default: m.TrustSignalsGrid }))
+)
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
 
