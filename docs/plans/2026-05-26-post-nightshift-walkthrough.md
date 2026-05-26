@@ -142,7 +142,9 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 
 ### Sectie 8 — FounderSection (Daley intro) ✅ VOLTOOID 2026-05-27
 
-**Commit**: `00db443` type-first centered layout + eerlijke naam + credentials
+**Commits**:
+- `00db443` type-first centered layout + eerlijke naam + credentials
+- `b95e55f` manifest-stijl drievoudige ik-actie + correcte delivery-taal (quote-revisie)
 
 **Wijzigingen**:
 - Layout: van links-portret/rechts-tekst → type-first centrum (grote pull-quote, proof-laag, kleine avatar onderaan)
@@ -155,6 +157,18 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - Avatar kleiner (w-20 lg:w-24) ipv groot (w-40 lg:w-56) — past bij type-first hiërarchie
 
 **TODO voor user**: foto droppen op `/public/images/daley-portrait.webp` (min 192×192, vierkant, transparent of gradient bg). `HAS_PORTRAIT` flipt automatisch true bij volgende build.
+
+**Quote-revisie 2026-05-27 (b95e55f)**:
+- User-diagnose: vorige quote ("Geen helpdesklaag, geen ticketing. Bij elke partner staat mijn nummer in de WhatsApp.") sloot niet aan bij Clyde / AI-medewerker frame
+- 2 parallel agents geraadpleegd: premium AI/dev founders (Anthropic, Linear, Cursor, Resend, Posthog, Marc Lou, Levels) + B2B AI agencies (Acuity AI sterkste pattern-match)
+- Critical fact-check: Clyde is **hosted SaaS** (bureaus loggen in op Daley's dashboard), GEEN on-site install. Werkwoorden gecorrigeerd naar trainen/leren ipv installeren — opgeslagen in memory `project_clyde_delivery_model.md`
+- Gekozen archetype: Acuity-pattern "person you meet is person who delivers" → drievoudige ik-actie
+- Nieuwe quote (3 zinnen, manifest-stack):
+  - "Ik schrijf Clyde's code."
+  - "Ik leer hem jouw merken kennen."
+  - "Ik blijf in onze Slack als je iets nodig hebt."
+- Proof-laag uitgebreid: "Founder-led builds. Geen account-manager tussen jou en hoe Clyde voor jouw merken werkt."
+- i18n: 3 keys (quote1/2/3) voor visuele controle, elke zin krijgt eigen `<p>` met `space-y-1 md:space-y-2`
 
 ---
 
@@ -221,10 +235,10 @@ Conventies:
 - Branch: `main` synced met origin
 - Sessie commits (chronologisch): zie issue log per sectie hierboven
 - Laatste commits:
+  - `b95e55f` content(founder): manifest-stijl drievoudige ik-actie + correcte delivery-taal
   - `00db443` content(founder): type-first centered layout, eerlijke naam + credentials
   - `721279c` perf(hero): split into server-mobile + client-desktop variants
   - `0c8d4e9` style(process-timeline): verwijder horizontal connector line
-  - `01a263c` fix(process-timeline): realistic hours + perfect alignment + card design
 - Dev server: niet draaiend
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
@@ -239,6 +253,7 @@ Conventies:
   - `home.processTimeline.weeks.*.deliverable` + `clientHours`, plus `ctaLabel` + `ctaHint`
   - `leadMagnet.preview.*` (17 keys: heading, profile, bars, skills, etc.)
   - `home.founder.proof` + `home.founder.chips.engineer/stack/infra` + `home.founder.name` (Daley → Daley van Diest)
+  - `home.founder.quote` → split into `quote1/quote2/quote3` (3 zinnen manifest-stack)
   - `about.founder.fullName` (Daley Maat → Daley van Diest — was foutief)
 
 **Belangrijke ontdekkingen tijdens sessie:**
@@ -248,6 +263,8 @@ Conventies:
 - SKC logo-map ligt op `C:\Users\daley\Desktop\Logo\` met "icon with text" + "icon without text" subfolders
 - ManyChat DM is **LIVE** maar stond per ongeluk als coming_soon in ServicesBento.tsx (skills-data.ts had wel `live`)
 - fma-app heeft 2 echte onboarding-wizards (agency 4-step + client 10-step) met concrete features (brand-scan, IG-analyse, pijlers, Stitch design-system, brand-voice iteraties max 3) — gebruikt voor ProcessTimeline concretisering
+- **Clyde is hosted SaaS** (bureaus loggen in op Daley's dashboard), GEEN on-site install. Marketing copy moet "trainen/leren" gebruiken, niet "installeren". Opgeslagen in memory `project_clyde_delivery_model.md`
+- Daley's volledige naam = **Daley van Diest** (eerdere /about copy had foutief "Daley Maat")
 
 **Convention reminders:**
 
