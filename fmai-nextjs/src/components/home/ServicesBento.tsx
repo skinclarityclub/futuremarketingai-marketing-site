@@ -45,7 +45,7 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
   { key: 'blogFactory',     href: '/skills/blog-factory',     Icon: FileText,        status: 'live'         },
   { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck,       status: 'live'         },
   { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox,           status: 'live'         },
-  { key: 'manychat',        href: '/skills/manychat',         Icon: MessageSquare,   status: 'coming_soon'  },
+  { key: 'manychat',        href: '/skills/manychat',         Icon: MessageSquare,   status: 'live'         },
   { key: 'reporting',       href: '/skills/reporting',        Icon: BarChart3,       status: 'live'         },
   { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search,          status: 'live'         },
   { key: 'research',        href: '/skills/research',         Icon: Target,          status: 'live'         },
@@ -59,11 +59,11 @@ export async function ServicesBento({ locale }: { locale: string }) {
   const tServices = await getTranslations({ locale, namespace: 'home.services' })
   const tClyde = await getTranslations({ locale, namespace: 'home.services.clyde' })
 
-  const clydePrompts: readonly [string, string, string] = [
-    tClyde('prompt1'),
-    tClyde('prompt2'),
-    tClyde('prompt3'),
-  ]
+  const clydePairs = [
+    { user: tClyde('prompt1'), clyde: tClyde('response1') },
+    { user: tClyde('prompt2'), clyde: tClyde('response2') },
+    { user: tClyde('prompt3'), clyde: tClyde('response3') },
+  ] as const
 
   return (
     <section
@@ -96,7 +96,9 @@ export async function ServicesBento({ locale }: { locale: string }) {
               description={tClyde('description')}
               statusLabel={tClyde('statusLabel')}
               promptIntro={tClyde('promptIntro')}
-              prompts={clydePrompts}
+              pairs={clydePairs}
+              userLabel={tClyde('userLabel')}
+              clydeLabel={tClyde('clydeLabel')}
               openLink={tClyde('openLink')}
             />
           </div>

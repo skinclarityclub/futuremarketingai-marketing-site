@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from 'react'
 import { ArrowRight, Bot } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
-import { Typewriter } from '@/components/motion/Typewriter'
+import { ChatSimulation, type ChatPair } from '@/components/motion/ChatSimulation'
 
 function subscribePrefersReducedMotion(callback: () => void): () => void {
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -32,12 +32,14 @@ interface ClydeFeaturedTileProps {
   description: string
   statusLabel: string
   promptIntro: string
-  prompts: readonly [string, string, string]
+  pairs: readonly [ChatPair, ChatPair, ChatPair]
+  userLabel: string
+  clydeLabel: string
   openLink: string
 }
 
 export function ClydeFeaturedTile(props: ClydeFeaturedTileProps) {
-  const { title, description, statusLabel, promptIntro, prompts, openLink } = props
+  const { title, description, statusLabel, promptIntro, pairs, userLabel, clydeLabel, openLink } = props
   const reduced = usePrefersReducedMotion()
 
   return (
@@ -81,12 +83,12 @@ export function ClydeFeaturedTile(props: ClydeFeaturedTileProps) {
         {description}
       </p>
 
-      {/* Rotating typewriter prompt */}
-      <div className="mt-auto rounded-xl border border-border-primary/70 bg-bg-deep/40 px-4 py-3 min-h-[78px]">
-        <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-text-muted mb-1.5">
+      {/* Chat simulatie — user prompt, Clyde typing, response, loop */}
+      <div className="mt-auto rounded-xl border border-border-primary/70 bg-bg-deep/40 px-4 py-3.5 min-h-[140px]">
+        <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-text-muted mb-2.5">
           {promptIntro}
         </p>
-        <Typewriter prompts={prompts} />
+        <ChatSimulation pairs={pairs} userLabel={userLabel} clydeLabel={clydeLabel} />
       </div>
 
       {/* Open link footer */}

@@ -58,7 +58,12 @@
         "prompt1": "Plan Instagram content for all SKC brands this week",
         "prompt2": "Build a weekly performance report for brand X",
         "prompt3": "Analyse which content types performed best in Q4",
-        "openLink": "Open the Clyde skill"
+        "openLink": "Open the Clyde skill",
+        "response1": "Done. 21 carousels + 15 posts scheduled across 3 accounts, ready for your review.",
+        "response2": "Report ready. Engagement +18%, top-post: Skincare Routine Guide.",
+        "response3": "Q4 analysis complete. Carousels +34% reach vs static, reels topped the charts.",
+        "userLabel": "You",
+        "clydeLabel": "Clyde"
       },
       "research": {
         "title": "Research",

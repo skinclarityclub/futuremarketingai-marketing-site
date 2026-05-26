@@ -58,7 +58,12 @@
         "prompt1": "Plan Instagram-content voor alle SKC-merken deze week",
         "prompt2": "Maak een wekelijks performance-rapport voor merk X",
         "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
-        "openLink": "Open de Clyde-vaardigheid"
+        "openLink": "Open de Clyde-vaardigheid",
+        "response1": "Gedaan. 21 carrousels + 15 posts gepland over 3 accounts, klaar voor jouw review.",
+        "response2": "Rapport staat klaar. Engagement +18%, top-post: Skincare Routine Guide.",
+        "response3": "Q4-analyse compleet. Carrousels +34% reach vs static, reels topscorer.",
+        "userLabel": "Jij",
+        "clydeLabel": "Clyde"
       },
       "research": {
         "title": "Research",
