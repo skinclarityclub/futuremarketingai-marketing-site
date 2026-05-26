@@ -269,7 +269,7 @@
           "body": "Sindy reviewt op vrijdag. Geen uitroeptekens. Posten doorgaans 19:00. Clyde houdt zich eraan."
         }
       },
-      "ctaLink": "Open de live geheugen-demo",
+      "ctaLink": "Bekijk de 4-laagse geheugen-visualisatie",
       "compare": {
         "eyebrow": "Zelfde prompt, twee uitkomsten",
         "prompt": "Schrijf een blog over rosacea voor SkinClarity Club",
@@ -279,8 +279,10 @@
         "otherWarning": "Jij moet brand-context en producten bij elke prompt opnieuw aanleveren.",
         "clydeLabel": "Clyde",
         "clydeTag": "met 4-laags geheugen",
-        "clydeResponse": "Rosacea bij Sindy's klantengroep: focus op kalmerende routine. Verwijs naar Eminence Calm Skin Chamomile Cleanser uit de SKC-shop, en link aan @sindy_huidtherapeut's eerdere post over barriere-herstel.",
-        "clydeProof": "Klopt direct op brand-stem, producten en eerdere content. Geen rebrief nodig."
+        "clydeResponse": "Rosacea bij Sindy's klantengroep: kalmerende toon, sluit aan op @sindy_huidtherapeut's eerdere barriere-herstel post, vermijdt sales-jargon en uitroeptekens.",
+        "clydeProof": "Klopt direct op brand-stem, producten en eerdere content. Geen rebrief nodig.",
+        "promptLabel": "Prompt",
+        "responseLabel": "Response"
       }
     },
     "testimonial": {

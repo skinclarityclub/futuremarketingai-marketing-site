@@ -269,7 +269,7 @@
           "body": "Sindy revisa los viernes. Sin signos de exclamación. Publicaciones alrededor de las 19:00. Clyde lo respeta."
         }
       },
-      "ctaLink": "Abrir la demo de memoria en vivo",
+      "ctaLink": "Ver la visualización de memoria de 4 capas",
       "compare": {
         "eyebrow": "Mismo prompt, dos resultados",
         "prompt": "Escribe un blog sobre rosácea para SkinClarity Club",
@@ -279,8 +279,10 @@
         "otherWarning": "Vuelves a proporcionar contexto de marca y productos en cada prompt.",
         "clydeLabel": "Clyde",
         "clydeTag": "con memoria de 4 capas",
-        "clydeResponse": "Rosácea para el público de Sindy: enfoque en rutina calmante. Referencia el Eminence Calm Skin Chamomile Cleanser de la tienda SKC, y enlaza al post anterior de @sindy_huidtherapeut sobre reparación de barrera.",
-        "clydeProof": "Acierta voz de marca, productos y contenido previo de inmediato. Sin rebrief."
+        "clydeResponse": "Rosácea para el público de Sindy: tono calmante, continúa el post anterior de @sindy_huidtherapeut sobre reparación de barrera, evita jerga de ventas y signos de exclamación.",
+        "clydeProof": "Acierta voz de marca, productos y contenido previo de inmediato. Sin rebrief.",
+        "promptLabel": "Prompt",
+        "responseLabel": "Respuesta"
       }
     },
     "testimonial": {

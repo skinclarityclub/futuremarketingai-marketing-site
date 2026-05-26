@@ -269,7 +269,7 @@
           "body": "Sindy reviews on Friday. No exclamation marks. Posting around 19:00. Clyde sticks to it."
         }
       },
-      "ctaLink": "Open the live memory demo",
+      "ctaLink": "View the 4-layer memory visualization",
       "compare": {
         "eyebrow": "Same prompt, two outcomes",
         "prompt": "Write a blog about rosacea for SkinClarity Club",
@@ -279,8 +279,10 @@
         "otherWarning": "You re-supply brand context and product info with every prompt.",
         "clydeLabel": "Clyde",
         "clydeTag": "with 4-layer memory",
-        "clydeResponse": "Rosacea for Sindy's audience: focus on calming routine. Reference Eminence Calm Skin Chamomile Cleanser from the SKC shop, and link to @sindy_huidtherapeut's earlier post on barrier repair.",
-        "clydeProof": "Hits brand voice, products and prior content immediately. No rebrief needed."
+        "clydeResponse": "Rosacea for Sindy's audience: calming tone, builds on @sindy_huidtherapeut's earlier barrier-repair post, avoids sales jargon and exclamation marks.",
+        "clydeProof": "Hits brand voice, products and prior content immediately. No rebrief needed.",
+        "promptLabel": "Prompt",
+        "responseLabel": "Response"
       }
     },
     "testimonial": {
