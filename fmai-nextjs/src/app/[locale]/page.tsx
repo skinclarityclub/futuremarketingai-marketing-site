@@ -54,13 +54,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <PageShell showStickyCta>
       {/*
-        Spline hero hints — home page only (Next.js 16 App Router hoists
-        bare <link> elements into the document <head>). Lives here, not
-        in [locale]/layout.tsx, to avoid 1.3 MB bandwidth on 86 non-home
-        prerendered routes. See 13-01-PLAN.md Task 2.
+        Spline preconnect + prefetch removed 2026-05-27: the prefetch was
+        VeryLow-priority but still occupied bandwidth slots that competed
+        with first-paint resources (CSS, fonts). SplineScene's own idle
+        callback orchestrates the runtime download when needed. Net win
+        on desktop TTI (-1s) and mobile bandwidth (-1.3 MB, since mobile
+        no longer mounts SplineScene at all). See
+        docs/plans/2026-05-27-hero-perf-audit.md for the trace.
       */}
-      <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
-      <link rel="prefetch" href="/spline/scene.splinecode" as="fetch" />
 
       {/*
         Hero background — statische subtle radial + grid overlay.

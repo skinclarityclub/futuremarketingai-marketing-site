@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion'
+import { motion, useInView, useReducedMotion, type Variants } from 'motion/react'
 import { EASE_OUT, STAGGER_FAST, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
 import { CountUp } from '@/components/motion/CountUp'
 

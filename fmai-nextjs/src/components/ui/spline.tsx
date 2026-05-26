@@ -54,6 +54,18 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
   }, [])
 
   useEffect(() => {
+    // Mobile viewport: the parent Spline wrapper is `hidden lg:block`, so the
+    // canvas is never painted on mobile. But React still mounts the component
+    // tree, meaning without an early-exit here the 1.5 MB Spline runtime +
+    // 1.3 MB scene + 186 KB Rapier WASM would download on every mobile visit.
+    // Gate by matchMedia at the lg breakpoint (1024px) — mobile pays only the
+    // 26 KB preview WebP, which is hidden via CSS but still SSR'd so desktop
+    // keeps its 0.6 s LCP.
+    if (!window.matchMedia('(min-width: 1024px)').matches) {
+      document.documentElement.classList.remove('spline-loading')
+      return
+    }
+
     // Pause blur-blobs during the entire loading process
     document.documentElement.classList.add('spline-loading')
 

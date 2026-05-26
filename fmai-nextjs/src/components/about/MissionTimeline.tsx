@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'framer-motion'
+import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'motion/react'
 import { EASE_OUT, STAGGER_NORMAL, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
 
 export interface TimelineMilestone {

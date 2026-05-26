@@ -3,11 +3,17 @@
 import { useEffect, useRef } from 'react'
 import { useReducedMotion } from 'motion/react'
 import { SplineScene } from '@/components/ui/spline'
+import { useIsDesktop } from '@/hooks/useIsDesktop'
 
 export function HeroSpline() {
   const sceneRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const reduced = useReducedMotion()
+  // Gates the GSAP ScrollTrigger setup below so it never wires up on mobile
+  // (mobile uses the perspective grid instead). The Spline runtime gate lives
+  // inside <SplineScene> so the preview Image still SSRs into the desktop
+  // wrapper — moving that gate up here regressed desktop LCP from 0.6s → 5.9s.
+  const isDesktop = useIsDesktop()
 
   // W5.3 — GSAP ScrollTrigger scrub on the Spline wrapper. Imports are
   // dynamic so the 85 kB gsap bundle never lands on reduced-motion users
@@ -15,7 +21,7 @@ export function HeroSpline() {
   // animate the wrapper transform (rotate + scale + opacity) instead —
   // visually the robot zooms / spins as the user scrolls past the hero.
   useEffect(() => {
-    if (reduced || !sceneRef.current || !containerRef.current) return
+    if (reduced || !isDesktop || !sceneRef.current || !containerRef.current) return
 
     let cleanup: (() => void) | undefined
     let cancelled = false
@@ -49,11 +55,14 @@ export function HeroSpline() {
       cancelled = true
       cleanup?.()
     }
-  }, [reduced])
+  }, [reduced, isDesktop])
 
   return (
     <>
-      {/* Desktop — interactive 3D Spline scene */}
+      {/* Desktop — interactive 3D Spline scene. SSR-rendered so the preview
+          WebP is the LCP candidate. The actual 1.5 MB runtime/scene/WASM
+          download is gated by a matchMedia check inside <SplineScene>'s
+          useEffect — mobile pays only the 26 KB preview image, not Spline. */}
       <div
         ref={containerRef}
         className="absolute inset-0 hidden lg:block pointer-events-none"
