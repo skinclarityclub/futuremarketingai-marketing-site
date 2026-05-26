@@ -136,20 +136,20 @@
       }
     },
     "caseStudyCard": {
-      "eyebrow": "Caso founding · SkinClarity Club",
+      "eyebrow": "Entrevista operacional · SkinClarity Club",
       "companyName": "SkinClarity Club",
       "subtitle": "Marca skincare, 4 marcas propias, 3 cuentas de Instagram. Founding partner desde Q4 2025.",
       "logoAlt": "Logo de SkinClarity Club",
       "outcomeHeadline": "Cómo Clyde publica 36 posts por semana de forma autónoma",
       "metric1Value": "Totalmente autónomo",
-      "metric1Label": "Sindy se centra en estrategia y entrenamiento de Clyde",
+      "metric1Label": "Sindy revisa, Clyde ejecuta",
       "metric2Value": "€5.000/mes ahorrado",
       "metric2Label": "Tiempo y freelancers liberados",
       "metric3Value": "36 posts/semana",
       "metric3Label": "21 carruseles + 15 posts, ejecutado de forma autónoma",
-      "quote": "Clyde no es una herramienta que enciendo. Planifica, escribe y analiza como un empleado fijo.",
-      "attribution": "Sindy van der Wal, fundadora de SkinClarity Club",
-      "ctaLink": "Lee la historia completa"
+      "quote": "Clyde no es una herramienta que enciendo. Trabaja como un empleado fijo, recuerda cada marca por separado y planifica en tres cuentas.",
+      "attribution": "Sindy Kienstra, fundadora de SkinClarity Club",
+      "ctaLink": "Ver el informe operacional con fuentes"
     },
     "founder": {
       "eyebrow": "Quién construye Clyde",
