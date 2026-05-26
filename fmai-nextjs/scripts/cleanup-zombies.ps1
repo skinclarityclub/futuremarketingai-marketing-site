@@ -107,10 +107,13 @@ if ($KeepClaudePID -eq 0) {
   }
 }
 
-# -- Category 4: Orphan shells (parent dood) --
-Write-Host "`n== [4/4] Orphan shells (parent dood) ==" -ForegroundColor Cyan
-$shells = Get-CimInstance Win32_Process -Filter "Name='powershell.exe' OR Name='pwsh.exe' OR Name='cmd.exe' OR Name='bash.exe' OR Name='conhost.exe'" -ErrorAction SilentlyContinue
-foreach ($s in $shells) {
+# -- Category 4: Orphan shells + long-running orphan scripts (parent dood) --
+Write-Host "`n== [4/4] Orphan shells + scripts (parent dood) ==" -ForegroundColor Cyan
+# Includes python.exe — found 8 graphify orphans burning 296 CPU-hours over 3 days.
+# Generic rule: parent dead = zombie. Apply to anything that shouldn't survive
+# its launcher.
+$candidates = Get-CimInstance Win32_Process -Filter "Name='powershell.exe' OR Name='pwsh.exe' OR Name='cmd.exe' OR Name='bash.exe' OR Name='conhost.exe' OR Name='python.exe' OR Name='pythonw.exe'" -ErrorAction SilentlyContinue
+foreach ($s in $candidates) {
   $parent = Get-CimInstance Win32_Process -Filter "ProcessId=$($s.ParentProcessId)" -ErrorAction SilentlyContinue
   if (-not $parent) {
     Stop-OneProcess -Pid_ $s.ProcessId -Reason "orphan ($($s.Name), parent dead)" -Bucket $killed -BucketKey 'Orphans'
