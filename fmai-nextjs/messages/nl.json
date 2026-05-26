@@ -193,12 +193,12 @@
     },
     "comparison": {
       "eyebrow": "Vergelijking",
-      "title": "Waarom een AI Marketing Medewerker, niet nog meer tools",
+      "title": "Drie modellen, een keuze die schaalt",
       "subtitle": "Wat is het verschil met een DIY-stack of een traditioneel bureau? Op zes punten die er voor jouw klantportfolio toe doen.",
       "headers": {
         "topic": "Onderwerp",
         "diy": "DIY-stack",
-        "diyHint": "ChatGPT, Jasper, Buffer",
+        "diyHint": "ChatGPT, Claude, Buffer",
         "bureau": "Traditioneel bureau",
         "clyde": "Clyde"
       },
@@ -225,13 +225,13 @@
           "label": "Setup-tijd tot productie",
           "diy": "2 tot 3 weken eigen werk",
           "bureau": "4 tot 8 weken inrichting",
-          "clyde": "4 weken begeleide onboarding"
+          "clyde": "Begeleide onboarding, 4 weken"
         },
         "prijs": {
           "label": "Prijs per maand voor 4 merken",
           "diy": "250 tot 400 euro plus jouw tijd",
           "bureau": "4.000 tot 12.000 euro",
-          "clyde": "1.196 tot 1.996 euro"
+          "clyde": "997 tot 1.996 euro"
         },
         "lockin": {
           "label": "Lock-in en data-export",
@@ -245,7 +245,13 @@
         "mixed": "Gemengd",
         "strong": "Sterk"
       },
-      "ctaLink": "Volledige vergelijking en aanpak"
+      "ctaLink": "Volledige vergelijking en aanpak",
+      "recap": {
+        "label": "Resultaat",
+        "diy": "Veel handwerk, geen schaal",
+        "bureau": "Lineaire kosten, vaste lock-in",
+        "clyde": "Schaalt mee, geen lock-in"
+      }
     },
     "memoryUsp": {
       "eyebrow": "Geheugen, geen sessies",

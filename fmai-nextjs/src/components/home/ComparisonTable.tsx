@@ -10,7 +10,7 @@ const ROWS: { key: RowKey; diy: Strength; bureau: Strength; clyde: Strength }[] 
   { key: 'geheugen',     diy: 'weak',  bureau: 'mixed', clyde: 'strong' },
   { key: 'schaalbaar',   diy: 'weak',  bureau: 'weak',  clyde: 'strong' },
   { key: 'sovereignty',  diy: 'weak',  bureau: 'mixed', clyde: 'strong' },
-  { key: 'setup',        diy: 'mixed', bureau: 'weak',  clyde: 'strong' },
+  { key: 'setup',        diy: 'mixed', bureau: 'weak',  clyde: 'mixed'  },
   { key: 'prijs',        diy: 'mixed', bureau: 'weak',  clyde: 'strong' },
   { key: 'lockin',       diy: 'weak',  bureau: 'weak',  clyde: 'strong' },
 ]
@@ -93,51 +93,63 @@ export async function ComparisonTable({ locale }: { locale: string }) {
             </thead>
 
             <tbody>
-              {ROWS.map((row, i) => {
-                const isLast = i === ROWS.length - 1
-                return (
-                  <tr key={row.key}>
-                    <th
-                      scope="row"
-                      className={
-                        'font-semibold text-text-primary px-4 lg:px-5 py-4 align-top' +
-                        (i === 0 ? ' border-t border-border-primary' : '') +
-                        ' border-b border-border-primary/70'
-                      }
-                    >
-                      {t(`rows.${row.key}.label`)}
-                    </th>
+              {ROWS.map((row, i) => (
+                <tr key={row.key}>
+                  <th
+                    scope="row"
+                    className={
+                      'font-semibold text-text-primary px-4 lg:px-5 py-4 align-top' +
+                      (i === 0 ? ' border-t border-border-primary' : '') +
+                      ' border-b border-border-primary/70'
+                    }
+                  >
+                    {t(`rows.${row.key}.label`)}
+                  </th>
 
-                    <ComparisonCell
-                      strength={row.diy}
-                      text={t(`rows.${row.key}.diy`)}
-                      strengthLabel={t(`strengthLabels.${row.diy}`)}
-                      borderTop={i === 0}
+                  <ComparisonCell
+                    strength={row.diy}
+                    text={t(`rows.${row.key}.diy`)}
+                    strengthLabel={t(`strengthLabels.${row.diy}`)}
+                    borderTop={i === 0}
+                  />
+
+                  <ComparisonCell
+                    strength={row.bureau}
+                    text={t(`rows.${row.key}.bureau`)}
+                    strengthLabel={t(`strengthLabels.${row.bureau}`)}
+                    borderTop={i === 0}
+                  />
+
+                  <td className="px-4 lg:px-5 py-4 align-top bg-accent-system/[0.06] border-x border-b border-accent-system/20">
+                    <CellInner
+                      strength={row.clyde}
+                      text={t(`rows.${row.key}.clyde`)}
+                      strengthLabel={t(`strengthLabels.${row.clyde}`)}
                     />
-
-                    <ComparisonCell
-                      strength={row.bureau}
-                      text={t(`rows.${row.key}.bureau`)}
-                      strengthLabel={t(`strengthLabels.${row.bureau}`)}
-                      borderTop={i === 0}
-                    />
-
-                    <td
-                      className={
-                        'px-4 lg:px-5 py-4 align-top bg-accent-system/[0.06] border-x border-accent-system/30' +
-                        (isLast ? ' rounded-b-xl border-b' : ' border-b border-accent-system/20')
-                      }
-                    >
-                      <CellInner
-                        strength={row.clyde}
-                        text={t(`rows.${row.key}.clyde`)}
-                        strengthLabel={t(`strengthLabels.${row.clyde}`)}
-                      />
-                    </td>
-                  </tr>
-                )
-              })}
+                  </td>
+                </tr>
+              ))}
             </tbody>
+
+            <tfoot>
+              <tr>
+                <th
+                  scope="row"
+                  className="font-mono uppercase text-[11px] tracking-[0.16em] text-text-muted px-4 lg:px-5 pt-6 pb-3 align-top"
+                >
+                  {t('recap.label')}
+                </th>
+                <td className="px-4 lg:px-5 pt-6 pb-3 align-top text-sm text-text-secondary leading-relaxed">
+                  {t('recap.diy')}
+                </td>
+                <td className="px-4 lg:px-5 pt-6 pb-3 align-top text-sm text-text-secondary leading-relaxed">
+                  {t('recap.bureau')}
+                </td>
+                <td className="px-4 lg:px-5 pt-6 pb-5 align-top text-sm font-semibold text-accent-system leading-relaxed bg-accent-system/[0.06] border-x border-b border-accent-system/30 rounded-b-xl">
+                  {t('recap.clyde')}
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
 

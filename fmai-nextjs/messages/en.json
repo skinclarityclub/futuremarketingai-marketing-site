@@ -193,12 +193,12 @@
     },
     "comparison": {
       "eyebrow": "Comparison",
-      "title": "Why an AI Marketing Team Member, not yet more tools",
+      "title": "Three models, one choice that scales",
       "subtitle": "What is different from a DIY stack or a traditional agency? Six points that matter for your client portfolio.",
       "headers": {
         "topic": "Topic",
         "diy": "DIY stack",
-        "diyHint": "ChatGPT, Jasper, Buffer",
+        "diyHint": "ChatGPT, Claude, Buffer",
         "bureau": "Traditional agency",
         "clyde": "Clyde"
       },
@@ -225,13 +225,13 @@
           "label": "Setup time to production",
           "diy": "2 to 3 weeks of your own work",
           "bureau": "4 to 8 weeks of onboarding",
-          "clyde": "4 weeks of guided onboarding"
+          "clyde": "Guided onboarding, 4 weeks"
         },
         "prijs": {
           "label": "Monthly cost for 4 brands",
           "diy": "€250 to €400 plus your time",
           "bureau": "€4,000 to €12,000",
-          "clyde": "€1,196 to €1,996"
+          "clyde": "997 to 1,996 euro"
         },
         "lockin": {
           "label": "Lock-in and data export",
@@ -245,7 +245,13 @@
         "mixed": "Mixed",
         "strong": "Strong"
       },
-      "ctaLink": "Full comparison and approach"
+      "ctaLink": "Full comparison and approach",
+      "recap": {
+        "label": "Bottom line",
+        "diy": "Lots of manual work, no scale",
+        "bureau": "Linear costs, vendor lock-in",
+        "clyde": "Scales with you, no lock-in"
+      }
     },
     "memoryUsp": {
       "eyebrow": "Memory, not sessions",
