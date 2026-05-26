@@ -2,7 +2,7 @@
 
 **Datum start**: 2026-05-26 13:59
 **Laatste sessie**: 2026-05-27 (huidige handover)
-**Status**: in progress — homepage sectie 1-7 voltooid, sectie 8+ open
+**Status**: in progress — homepage sectie 1-8 voltooid, sectie 9+ open
 
 ---
 
@@ -140,14 +140,29 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 8 — FounderSection (Daley intro) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `00db443` type-first centered layout + eerlijke naam + credentials
+
+**Wijzigingen**:
+- Layout: van links-portret/rechts-tekst → type-first centrum (grote pull-quote, proof-laag, kleine avatar onderaan)
+- Quote ingekort: 4 zinnen → 2 hero-zinnen ("Geen helpdesklaag, geen ticketing. Bij elke partner staat mijn nummer in de WhatsApp.")
+- Proof-laag onder quote: "Founder-led builds. Geen account-manager tussen jou en de code."
+- Volledige naam: `home.founder.name` Daley → **Daley van Diest** (+ /about `fullName` was foutief "Daley Maat" → fixed naar Daley van Diest in NL/EN/ES, PersonJsonLd nu correct)
+- 3 credential-chips onder role: SENIOR ENGINEER · N8N + LLM STACK · EU-NATIVE INFRA
+- CTA actie-gericht: "Bekijk mijn werkwijze →" (was vaag "Meer over Daley en de aanpak")
+- Portret: `HAS_PORTRAIT` flag detecteert `/public/images/daley-portrait.webp` automatisch via `fs.existsSync` — placeholder "D" tot user foto dropt
+- Avatar kleiner (w-20 lg:w-24) ipv groot (w-40 lg:w-56) — past bij type-first hiërarchie
+
+**TODO voor user**: foto droppen op `/public/images/daley-portrait.webp` (min 192×192, vierkant, transparent of gradient bg). `HAS_PORTRAIT` flipt automatisch true bij volgende build.
+
 ---
 
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-7 (zie issue log)
-- [ ] **Sectie 8 — FounderSection (Daley intro)** ← HIER VERDER
-- [ ] Sectie 9 — TestimonialBlock (Sindy operator-stem)
+- [x] Sectie 1-8 (zie issue log)
+- [ ] **Sectie 9 — TestimonialBlock (Sindy operator-stem)** ← HIER VERDER
 - [ ] Sectie 10 — TrustSignalsGrid (4 numerieke tiles)
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
@@ -179,8 +194,8 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-7 voltooid.
-Volgende: sectie 8 FounderSection (Daley intro).
+We doen een interactieve walkthrough van de homepage. Sectie 1-8 voltooid.
+Volgende: sectie 9 TestimonialBlock (Sindy operator-stem).
 
 Procedure per sectie:
 1. Lees component + i18n + screenshot
@@ -206,10 +221,10 @@ Conventies:
 - Branch: `main` synced met origin
 - Sessie commits (chronologisch): zie issue log per sectie hierboven
 - Laatste commits:
+  - `00db443` content(founder): type-first centered layout, eerlijke naam + credentials
   - `721279c` perf(hero): split into server-mobile + client-desktop variants
   - `0c8d4e9` style(process-timeline): verwijder horizontal connector line
   - `01a263c` fix(process-timeline): realistic hours + perfect alignment + card design
-  - `29cb96d` content(process-timeline): koppel weken aan echte product-features
 - Dev server: niet draaiend
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
@@ -223,6 +238,8 @@ Conventies:
   - `home.comparison.recap.*` (label, diy, bureau, clyde)
   - `home.processTimeline.weeks.*.deliverable` + `clientHours`, plus `ctaLabel` + `ctaHint`
   - `leadMagnet.preview.*` (17 keys: heading, profile, bars, skills, etc.)
+  - `home.founder.proof` + `home.founder.chips.engineer/stack/infra` + `home.founder.name` (Daley → Daley van Diest)
+  - `about.founder.fullName` (Daley Maat → Daley van Diest — was foutief)
 
 **Belangrijke ontdekkingen tijdens sessie:**
 
