@@ -49,7 +49,7 @@ test.describe('Navigation', () => {
 
   test('should have footer with navigation links', async ({ page }) => {
     await page.goto('/en')
-    const footer = page.locator('footer')
+    const footer = page.getByRole('contentinfo')
     await expect(footer).toBeVisible()
     const footerLinks = footer.locator('a')
     const count = await footerLinks.count()

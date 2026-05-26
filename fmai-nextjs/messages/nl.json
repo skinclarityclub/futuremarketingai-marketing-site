@@ -57,7 +57,7 @@
         "prompt1": "Plan Instagram-content voor alle SKC-merken deze week",
         "prompt2": "Maak een wekelijks performance-rapport voor merk X",
         "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
-        "openLink": "Open de Clyde-skill"
+        "openLink": "Open de Clyde-vaardigheid"
       },
       "research": {
         "title": "Research",
@@ -2731,7 +2731,7 @@
       "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
       "statusLabel": "Actief",
       "promptIntro": "Vraag bijvoorbeeld:",
-      "openLink": "Open de Clyde-skill"
+      "openLink": "Open de Clyde-vaardigheid"
     },
     "grid_aria_label": "Lijst met vaardigheden"
   },
@@ -2956,7 +2956,7 @@
       "prompts": {
         "prompt1": "Plan deze week voor alle SKC-merken inclusief Reels",
         "prompt2": "Maak een wekelijks rapport over de top presterende posts",
-        "prompt3": "Welke skill werkt aan welke campagne deze sprint?"
+        "prompt3": "Welke vaardigheid werkt aan welke campagne deze sprint?"
       }
     },
     "features": {

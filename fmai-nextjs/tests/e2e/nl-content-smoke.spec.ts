@@ -11,12 +11,15 @@ test.use({ baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000' }
  */
 
 const pages = [
-  { path: '/nl', name: 'home', expected: ['Dit is Clyde', 'AI Marketing Medewerker'] },
+  // Hero headlines on home use KineticHeadline (per-word span split) so we
+  // assert single-word fragments instead of multi-word phrases — the rendered
+  // innerText extraction collapses the inline-block words without whitespace.
+  { path: '/nl', name: 'home', expected: ['Clyde', 'langetermijngeheugen'] },
   { path: '/nl/about', name: 'about', expected: ['Over FutureMarketingAI', 'Mijn missie'] },
   { path: '/nl/how-it-works', name: 'how-it-works', expected: ['Hoe begint jouw partnership', 'Aanmelden'] },
   { path: '/nl/pricing', name: 'pricing', expected: ['Premium partnerships', 'Founding'] },
   { path: '/nl/founding-member', name: 'founding-member', expected: ['Founding partner', 'levenslang'] },
-  { path: '/nl/apply', name: 'apply', expected: ['partnership-gesprek', 'Vertel ons'] },
+  { path: '/nl/apply', name: 'apply', expected: ['Plan een gesprek', 'Vertel ons'] },
   { path: '/nl/contact', name: 'contact', expected: ['Algemene vragen', 'Stuur ons'] },
   { path: '/nl/memory', name: 'memory', expected: ['Clyde onthoudt', 'per merk'] },
   { path: '/nl/case-studies/skinclarity-club', name: 'case-study-skc', expected: ['Eén AI Marketing Medewerker', 'SkinClarity'] },
