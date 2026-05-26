@@ -158,11 +158,17 @@
     },
     "founder": {
       "eyebrow": "Quién construye Clyde",
-      "name": "Daley",
+      "name": "Daley van Diest",
       "role": "Founder y lead engineer, FutureMarketingAI",
-      "quote": "Las agencias contratan IA como producto. Yo la construyo como un compañero de trabajo. Sin capa de helpdesk, sin ticketing. Mi número está en tu WhatsApp.",
-      "portraitAlt": "Retrato de Daley, founder de FutureMarketingAI",
-      "ctaLink": "Más sobre Daley y el enfoque"
+      "quote": "Sin capa de helpdesk, sin ticketing. Con cada partner, mi número está en su WhatsApp.",
+      "proof": "Builds dirigidos por el founder. Sin account manager entre tú y el código.",
+      "chips": {
+        "engineer": "Ingeniero senior",
+        "stack": "Stack n8n + LLM",
+        "infra": "Infra EU-nativa"
+      },
+      "portraitAlt": "Retrato de Daley van Diest, founder de FutureMarketingAI",
+      "ctaLink": "Mira cómo trabajo"
     },
     "processTimeline": {
       "eyebrow": "Onboarding",
@@ -889,7 +895,7 @@
       "eyebrow": "Founder",
       "title": "Quién hay detrás",
       "name": "Daley",
-      "fullName": "Daley Maat",
+      "fullName": "Daley van Diest",
       "role": "Founder y operator, FutureMarketingAI",
       "bio": "Construyo FutureMarketingAI desde la experiencia: como operador en SkinClarity Club vi cómo 12 herramientas separadas no escalan con 3 cuentas de Instagram y 4 marcas. Clyde nació de ese problema, como solución a mi propio trabajo. Cada nuevo cliente que acepto tiene contacto personal conmigo. Sin capa CSM, sin sistema de tickets para decisiones estratégicas."
     }
