@@ -136,16 +136,20 @@
       }
     },
     "caseStudyCard": {
-      "eyebrow": "Proof",
+      "eyebrow": "Founding case · SkinClarity Club",
       "companyName": "SkinClarity Club",
-      "subtitle": "Founding partner since Q4 2025",
+      "subtitle": "Skincare brand, 4 in-house labels, 3 Instagram accounts. Founding partner since Q4 2025.",
       "logoAlt": "SkinClarity Club logo",
-      "metric1": "4 in-house brands",
-      "metric2": "3 Instagram accounts",
-      "metric3": "weekly output",
-      "quote": "Clyde is not a tool I switch on. He plans, writes and analyses as if a full-time team member is on shift. The difference shows in all the hours I no longer spend.",
-      "attribution": "Sindy, SKC",
-      "ctaLink": "Read the full case"
+      "outcomeHeadline": "How Clyde publishes 36 posts per week autonomously",
+      "metric1Value": "Fully autonomous",
+      "metric1Label": "Sindy focuses on strategy and Clyde training",
+      "metric2Value": "€5,000/month saved",
+      "metric2Label": "Time and freelancers freed up",
+      "metric3Value": "36 posts/week",
+      "metric3Label": "21 carousels + 15 posts, executed autonomously",
+      "quote": "Clyde isn't a tool I switch on. He plans, writes and analyses as if a permanent hire is on shift.",
+      "attribution": "Sindy van der Wal, founder SkinClarity Club",
+      "ctaLink": "Read the full story"
     },
     "founder": {
       "eyebrow": "Who builds Clyde",
@@ -2299,9 +2303,9 @@
           },
           "monthlySavings": {
             "label": "Monthly savings",
-            "value": "Around EUR 3,000",
-            "detail": "EUR 1,300 in time plus EUR 1,800 in freelancer cost that is no longer needed for the weekly carousel stream.",
-            "sourceNote": "Source: Sindy's Moneybird Q1-2026 compared with Q1-2025."
+            "value": "Around EUR 5,000",
+            "detail": "Combination of Sindy's time no longer spent on content execution (15+ hours per week) plus freelancer costs for social and content that are no longer needed weekly.",
+            "sourceNote": "Source: Sindy's time tracking and Moneybird overview Q1-2026 compared with Q1-2025."
           },
           "engagementRate": {
             "label": "Engagement rate",

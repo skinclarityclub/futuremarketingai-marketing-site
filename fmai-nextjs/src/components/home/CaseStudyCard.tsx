@@ -6,56 +6,68 @@ import { Link } from '@/i18n/navigation'
 export async function CaseStudyCard({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'home.caseStudyCard' })
 
-  const metrics = [t('metric1'), t('metric2'), t('metric3')] as const
-
   return (
     <section
       aria-labelledby="case-study-skc"
       className="py-20 px-6 lg:px-12"
     >
       <div className="max-w-5xl mx-auto">
-        <p className="text-xs font-mono uppercase tracking-[0.18em] text-accent-system mb-6">
-          {t('eyebrow')}
-        </p>
-
         <article className="relative overflow-hidden rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] backdrop-blur-sm p-8 lg:p-12">
-          {/* Brand identity — heart-emblem in ronde SKC-groen badge + naam ernaast */}
-          <header className="flex items-center gap-5 mb-8">
-            <div className="shrink-0 grid place-items-center w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#127059] p-3 lg:p-3.5 shadow-[0_0_32px_rgba(18,112,89,0.22)]">
-              <Image
-                src="/brand/skc-emblem.png"
-                alt={t('logoAlt')}
-                width={746}
-                height={684}
-                className="w-full h-auto"
-              />
+          {/* Outcome-headline pattern (Notion-style) — compact identity + dominant narrative title */}
+          <header className="mb-10">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="shrink-0 grid place-items-center w-11 h-11 rounded-full bg-[#127059] p-2 shadow-[0_0_24px_rgba(18,112,89,0.22)]">
+                <Image
+                  src="/brand/skc-emblem.png"
+                  alt={t('logoAlt')}
+                  width={746}
+                  height={684}
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-xs font-mono uppercase tracking-[0.18em] text-accent-system">
+                {t('eyebrow')}
+              </p>
             </div>
-            <div>
-              <h3
-                id="case-study-skc"
-                className="font-display text-2xl lg:text-3xl font-bold text-text-primary"
-              >
-                {t('companyName')}
-              </h3>
-              <p className="text-sm text-text-secondary mt-1">{t('subtitle')}</p>
-            </div>
+
+            <h3
+              id="case-study-skc"
+              className="font-display text-2xl lg:text-4xl font-bold text-text-primary leading-tight max-w-3xl"
+            >
+              {t('outcomeHeadline')}
+            </h3>
+            <span className="sr-only">{t('companyName')}</span>
+            <p className="text-sm text-text-secondary mt-3 max-w-2xl">{t('subtitle')}</p>
           </header>
 
-          {/* Metrics row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 mb-10">
-            {metrics.map((value, i) => (
-              <div
-                key={i}
-                className="flex flex-col rounded-xl border border-border-primary/60 bg-bg-deep/40 px-5 py-4"
-              >
-                <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-text-muted">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="mt-1 font-display text-lg lg:text-xl font-semibold text-text-primary leading-tight">
-                  {value}
-                </span>
-              </div>
-            ))}
+          {/* Metrics — value (big) + label (mute), middentile dominant met accent treatment */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5 mb-10">
+            <div className="flex flex-col rounded-xl border border-border-primary/60 bg-bg-deep/40 px-5 py-5">
+              <span className="font-display text-xl lg:text-2xl font-bold text-text-primary leading-tight">
+                {t('metric1Value')}
+              </span>
+              <span className="mt-2 text-xs text-text-muted leading-relaxed">
+                {t('metric1Label')}
+              </span>
+            </div>
+
+            <div className="flex flex-col rounded-xl border border-accent-system/30 bg-accent-system/[0.04] px-5 py-6 shadow-[0_0_32px_rgba(0,212,170,0.10)]">
+              <span className="font-display text-xl lg:text-3xl font-bold text-accent-system leading-tight">
+                {t('metric2Value')}
+              </span>
+              <span className="mt-2 text-xs text-text-muted leading-relaxed">
+                {t('metric2Label')}
+              </span>
+            </div>
+
+            <div className="flex flex-col rounded-xl border border-border-primary/60 bg-bg-deep/40 px-5 py-5">
+              <span className="font-display text-xl lg:text-2xl font-bold text-text-primary leading-tight">
+                {t('metric3Value')}
+              </span>
+              <span className="mt-2 text-xs text-text-muted leading-relaxed">
+                {t('metric3Label')}
+              </span>
+            </div>
           </div>
 
           {/* Quote */}

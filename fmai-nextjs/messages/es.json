@@ -136,16 +136,20 @@
       }
     },
     "caseStudyCard": {
-      "eyebrow": "Prueba",
+      "eyebrow": "Caso founding · SkinClarity Club",
       "companyName": "SkinClarity Club",
-      "subtitle": "Founding partner desde Q4 2025",
+      "subtitle": "Marca skincare, 4 marcas propias, 3 cuentas de Instagram. Founding partner desde Q4 2025.",
       "logoAlt": "Logo de SkinClarity Club",
-      "metric1": "4 marcas propias",
-      "metric2": "3 cuentas de Instagram",
-      "metric3": "publicación semanal",
-      "quote": "Clyde no es una herramienta que tenga que encender. Planifica, escribe y analiza como si hubiera un compañero fijo en el equipo. La diferencia se nota en las horas que ya no pierdo.",
-      "attribution": "Sindy, SKC",
-      "ctaLink": "Lee el caso completo"
+      "outcomeHeadline": "Cómo Clyde publica 36 posts por semana de forma autónoma",
+      "metric1Value": "Totalmente autónomo",
+      "metric1Label": "Sindy se centra en estrategia y entrenamiento de Clyde",
+      "metric2Value": "€5.000/mes ahorrado",
+      "metric2Label": "Tiempo y freelancers liberados",
+      "metric3Value": "36 posts/semana",
+      "metric3Label": "21 carruseles + 15 posts, ejecutado de forma autónoma",
+      "quote": "Clyde no es una herramienta que enciendo. Planifica, escribe y analiza como un empleado fijo.",
+      "attribution": "Sindy van der Wal, fundadora de SkinClarity Club",
+      "ctaLink": "Lee la historia completa"
     },
     "founder": {
       "eyebrow": "Quién construye Clyde",
@@ -2299,9 +2303,9 @@
           },
           "monthlySavings": {
             "label": "Ahorro mensual",
-            "value": "Alrededor de EUR 3.000",
-            "detail": "EUR 1.300 en tiempo más EUR 1.800 en coste de freelance que ya no se necesita semanalmente para el flujo de carruseles.",
-            "sourceNote": "Fuente: Moneybird de Sindy, Q1-2026 comparado con Q1-2025."
+            "value": "Alrededor de EUR 5.000",
+            "detail": "Combinación del tiempo de Sindy que ya no se dedica a ejecución de contenido (más de 15 horas por semana) más los costes de freelancers para social y contenido que ya no son necesarios semanalmente.",
+            "sourceNote": "Fuente: el registro de tiempo de Sindy y resumen Moneybird Q1-2026 comparado con Q1-2025."
           },
           "engagementRate": {
             "label": "Tasa de engagement",

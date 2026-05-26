@@ -136,16 +136,20 @@
       }
     },
     "caseStudyCard": {
-      "eyebrow": "Bewijs",
+      "eyebrow": "Founding case · SkinClarity Club",
       "companyName": "SkinClarity Club",
-      "subtitle": "Founding partner sinds Q4 2025",
+      "subtitle": "Skincare-merk, 4 huismerken, 3 Instagram-accounts. Founding partner sinds Q4 2025.",
       "logoAlt": "SkinClarity Club logo",
-      "metric1": "4 huismerken",
-      "metric2": "3 Instagram-accounts",
-      "metric3": "wekelijkse output",
-      "quote": "Clyde is geen tool die ik aan moet zetten. Hij plant, schrijft en analyseert alsof er een vaste medewerker is. Het verschil voel je in hoeveel tijd ik niet meer kwijt ben.",
-      "attribution": "Sindy, SKC",
-      "ctaLink": "Lees de volledige case"
+      "outcomeHeadline": "Hoe Clyde 36 posts per week autonoom publiceert",
+      "metric1Value": "Volledig autonoom",
+      "metric1Label": "Sindy focust op strategie en Clyde-training",
+      "metric2Value": "€5.000/maand bespaard",
+      "metric2Label": "Tijd en freelancers vervallen",
+      "metric3Value": "36 posts/week",
+      "metric3Label": "21 carrousels + 15 posts, autonoom uitgevoerd",
+      "quote": "Clyde is geen tool die ik aanzet. Hij plant, schrijft en analyseert alsof er een vaste medewerker zit.",
+      "attribution": "Sindy van der Wal, oprichter SkinClarity Club",
+      "ctaLink": "Lees het volledige verhaal"
     },
     "founder": {
       "eyebrow": "Wie bouwt Clyde",
@@ -2299,9 +2303,9 @@
           },
           "monthlySavings": {
             "label": "Maandelijkse besparing",
-            "value": "Circa EUR 3.000",
-            "detail": "EUR 1.300 in tijd plus EUR 1.800 in freelancer-kosten die niet meer wekelijks nodig zijn voor de carrousel-stroom.",
-            "sourceNote": "Bron: Sindy's Moneybird Q1-2026 vergeleken met Q1-2025."
+            "value": "Circa EUR 5.000",
+            "detail": "Combinatie van Sindy's tijd die niet meer naar contentuitvoering gaat (15+ uur per week) plus freelancer-kosten voor social en content die niet meer wekelijks nodig zijn.",
+            "sourceNote": "Bron: Sindy's tijdmeting en Moneybird-overzicht Q1-2026 vergeleken met Q1-2025."
           },
           "engagementRate": {
             "label": "Engagement-rate",
