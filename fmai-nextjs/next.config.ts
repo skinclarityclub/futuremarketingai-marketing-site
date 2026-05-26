@@ -97,6 +97,8 @@ const nextConfig: NextConfig = {
       'react-markdown',
       'zustand',
     ],
+    // optimizeCss is Pages-Router only in Next 16 — ignored for App Router.
+    // We do the inlining via a postbuild script (scripts/inline-critical-css.mjs).
   },
   webpack: (config) => {
     config.optimization = {
