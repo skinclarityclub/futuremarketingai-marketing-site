@@ -227,11 +227,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             title={t('processTimeline.title')}
             subtitle={t('processTimeline.subtitle')}
             weeks={{
-              '1': { label: t('processTimeline.weeks.1.label'), heading: t('processTimeline.weeks.1.heading'), body: t('processTimeline.weeks.1.body') },
-              '2': { label: t('processTimeline.weeks.2.label'), heading: t('processTimeline.weeks.2.heading'), body: t('processTimeline.weeks.2.body') },
-              '3': { label: t('processTimeline.weeks.3.label'), heading: t('processTimeline.weeks.3.heading'), body: t('processTimeline.weeks.3.body') },
-              '4': { label: t('processTimeline.weeks.4.label'), heading: t('processTimeline.weeks.4.heading'), body: t('processTimeline.weeks.4.body') },
+              '1': { label: t('processTimeline.weeks.1.label'), heading: t('processTimeline.weeks.1.heading'), body: t('processTimeline.weeks.1.body'), deliverable: t('processTimeline.weeks.1.deliverable'), clientHours: t('processTimeline.weeks.1.clientHours') },
+              '2': { label: t('processTimeline.weeks.2.label'), heading: t('processTimeline.weeks.2.heading'), body: t('processTimeline.weeks.2.body'), deliverable: t('processTimeline.weeks.2.deliverable'), clientHours: t('processTimeline.weeks.2.clientHours') },
+              '3': { label: t('processTimeline.weeks.3.label'), heading: t('processTimeline.weeks.3.heading'), body: t('processTimeline.weeks.3.body'), deliverable: t('processTimeline.weeks.3.deliverable'), clientHours: t('processTimeline.weeks.3.clientHours') },
+              '4': { label: t('processTimeline.weeks.4.label'), heading: t('processTimeline.weeks.4.heading'), body: t('processTimeline.weeks.4.body'), deliverable: t('processTimeline.weeks.4.deliverable'), clientHours: t('processTimeline.weeks.4.clientHours') },
             }}
+            ctaLabel={t('processTimeline.ctaLabel')}
+            ctaHint={t('processTimeline.ctaHint')}
           />
         </ScrollReveal>
       </LazySection>

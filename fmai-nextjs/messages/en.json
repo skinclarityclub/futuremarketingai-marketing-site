@@ -166,30 +166,40 @@
     },
     "processTimeline": {
       "eyebrow": "Onboarding",
-      "title": "From first call to autonomous content in 4 weeks",
-      "subtitle": "No long RFP, no onboarding PDF. One working session, then live in phases. Each week, broken down honestly below.",
+      "title": "In 4 weeks: from first call to autonomous content",
+      "subtitle": "One working session, then phased live. Each week honestly broken down, your time investment included.",
       "weeks": {
         "1": {
           "label": "Week 1",
           "heading": "Intake and discovery",
-          "body": "We learn your agency and your client portfolio. One working session, no form marathon. Outcome: a shared picture of brands, channels and fixed deadlines."
+          "body": "We learn your agency and your client portfolio. One working session, no form marathon. Outcome: a shared picture of brands, channels and fixed deadlines.",
+          "deliverable": "Shared view of brands, channels and deadlines",
+          "clientHours": "2 hours of your time"
         },
         "2": {
           "label": "Week 2",
           "heading": "Setup and integration",
-          "body": "Clyde gets access to your channels, tools and data. We configure memory layers per brand and set up the review flow."
+          "body": "Clyde gets access to your channels, tools and data. We configure memory layers per brand and set up the review flow.",
+          "deliverable": "Working integration + memory per brand",
+          "clientHours": "1 hour of your time"
         },
         "3": {
           "label": "Week 3",
           "heading": "Training and tuning",
-          "body": "First content rounds with guided review. Clyde learns your tone of voice per brand until it feels natural."
+          "body": "First content rounds with guided review. Clyde learns your tone of voice per brand until it feels natural.",
+          "deliverable": "Brand voice matched per brand, review flow set up",
+          "clientHours": "3 hours of your time"
         },
         "4": {
           "label": "Week 4",
           "heading": "Live and autonomous",
-          "body": "From here Clyde runs on his own. You keep direction and approvals, Daley remains your personal contact."
+          "body": "From here Clyde runs on his own. You keep direction and approvals, Daley remains your personal contact.",
+          "deliverable": "Autonomous content engine live, you review and steer",
+          "clientHours": "1 hour per week, ongoing"
         }
-      }
+      },
+      "ctaLabel": "Book a call",
+      "ctaHint": "Available onboarding slots: 2 per month"
     },
     "comparison": {
       "eyebrow": "Comparison",

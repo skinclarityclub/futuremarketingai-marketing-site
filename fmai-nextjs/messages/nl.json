@@ -166,30 +166,40 @@
     },
     "processTimeline": {
       "eyebrow": "Onboarding",
-      "title": "Van eerste gesprek naar autonome content in 4 weken",
-      "subtitle": "Geen lange RFP, geen onboarding-PDF. Eén werksessie en daarna gefaseerd live. Hieronder elke week, eerlijk uitgesplitst.",
+      "title": "In 4 weken: van eerste gesprek naar autonome content",
+      "subtitle": "Een werksessie, dan gefaseerd live. Elke week eerlijk uitgesplitst, jouw tijdsinvestering inbegrepen.",
       "weeks": {
         "1": {
           "label": "Week 1",
           "heading": "Intake en discovery",
-          "body": "Wij leren jouw bureau en jouw klantportfolio kennen. Eén werksessie, geen formulier-marathon. Resultaat: gedeeld beeld van merken, kanalen en vaste deadlines."
+          "body": "Wij leren jouw bureau en jouw klantportfolio kennen. Eén werksessie, geen formulier-marathon. Resultaat: gedeeld beeld van merken, kanalen en vaste deadlines.",
+          "deliverable": "Gedeeld beeld van merken, kanalen en deadlines",
+          "clientHours": "2 uur jouw tijd"
         },
         "2": {
           "label": "Week 2",
           "heading": "Setup en integratie",
-          "body": "Clyde krijgt toegang tot jouw kanalen, tools en data. Wij configureren memory-layers per merk en zetten de review-flow op."
+          "body": "Clyde krijgt toegang tot jouw kanalen, tools en data. Wij configureren memory-layers per merk en zetten de review-flow op.",
+          "deliverable": "Werkende integratie + memory per merk",
+          "clientHours": "1 uur jouw tijd"
         },
         "3": {
           "label": "Week 3",
           "heading": "Training en tuning",
-          "body": "Eerste content rondes met begeleide review. Clyde leert jouw tone of voice per merk tot het natuurlijk voelt."
+          "body": "Eerste content rondes met begeleide review. Clyde leert jouw tone of voice per merk tot het natuurlijk voelt.",
+          "deliverable": "Brand-stem matched per merk, review-flow ingericht",
+          "clientHours": "3 uur jouw tijd"
         },
         "4": {
           "label": "Week 4",
           "heading": "Live en autonoom",
-          "body": "Vanaf hier loopt Clyde zelfstandig. Jij houdt regie en goedkeuring, Daley blijft persoonlijk aanspreekpunt."
+          "body": "Vanaf hier loopt Clyde zelfstandig. Jij houdt regie en goedkeuring, Daley blijft persoonlijk aanspreekpunt.",
+          "deliverable": "Autonome contentmotor live, jij reviewt en stuurt bij",
+          "clientHours": "1 uur per week, doorlopend"
         }
-      }
+      },
+      "ctaLabel": "Plan een gesprek",
+      "ctaHint": "Beschikbare onboarding-slots: 2 per maand"
     },
     "comparison": {
       "eyebrow": "Vergelijking",

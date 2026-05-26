@@ -166,30 +166,40 @@
     },
     "processTimeline": {
       "eyebrow": "Onboarding",
-      "title": "De la primera llamada al contenido autónomo en 4 semanas",
-      "subtitle": "Sin RFP eternos ni PDF de onboarding. Una sesión de trabajo y luego activación por fases. Cada semana, desglosada con honestidad.",
+      "title": "En 4 semanas: de la primera llamada al contenido autonomo",
+      "subtitle": "Una sesion de trabajo, luego en vivo por fases. Cada semana desglosada con honestidad, incluyendo tu inversion de tiempo.",
       "weeks": {
         "1": {
           "label": "Semana 1",
           "heading": "Intake y discovery",
-          "body": "Conocemos tu agencia y tu portfolio de clientes. Una sesión de trabajo, sin maratón de formularios. Resultado: imagen compartida de marcas, canales y deadlines fijos."
+          "body": "Conocemos tu agencia y tu portfolio de clientes. Una sesión de trabajo, sin maratón de formularios. Resultado: imagen compartida de marcas, canales y deadlines fijos.",
+          "deliverable": "Vision compartida de marcas, canales y plazos",
+          "clientHours": "2 horas de tu tiempo"
         },
         "2": {
           "label": "Semana 2",
           "heading": "Setup e integración",
-          "body": "Clyde recibe acceso a tus canales, herramientas y datos. Configuramos las capas de memoria por marca y montamos el flujo de revisión."
+          "body": "Clyde recibe acceso a tus canales, herramientas y datos. Configuramos las capas de memoria por marca y montamos el flujo de revisión.",
+          "deliverable": "Integracion funcionando + memoria por marca",
+          "clientHours": "1 hora de tu tiempo"
         },
         "3": {
           "label": "Semana 3",
           "heading": "Training y tuning",
-          "body": "Primeras rondas de contenido con revisión guiada. Clyde aprende tu tono de voz por marca hasta que suene natural."
+          "body": "Primeras rondas de contenido con revisión guiada. Clyde aprende tu tono de voz por marca hasta que suene natural.",
+          "deliverable": "Voz de marca afinada por marca, flujo de revision listo",
+          "clientHours": "3 horas de tu tiempo"
         },
         "4": {
           "label": "Semana 4",
           "heading": "En vivo y autónomo",
-          "body": "A partir de aquí Clyde funciona solo. Tú mantienes dirección y aprobaciones, Daley sigue siendo tu contacto personal."
+          "body": "A partir de aquí Clyde funciona solo. Tú mantienes dirección y aprobaciones, Daley sigue siendo tu contacto personal.",
+          "deliverable": "Motor de contenido autonomo en vivo, tu revisas y diriges",
+          "clientHours": "1 hora por semana, continuo"
         }
-      }
+      },
+      "ctaLabel": "Agenda una llamada",
+      "ctaHint": "Slots de onboarding disponibles: 2 por mes"
     },
     "comparison": {
       "eyebrow": "Comparativa",
