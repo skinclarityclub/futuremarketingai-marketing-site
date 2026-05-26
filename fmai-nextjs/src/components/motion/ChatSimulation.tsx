@@ -48,18 +48,21 @@ export function ChatSimulation({ pairs, userLabel, clydeLabel }: ChatSimulationP
   const reduced = usePrefersReducedMotion()
   const [pairIdx, setPairIdx] = useState(0)
   const [stage, setStage] = useState<Stage>('typingUser')
-  const [userText, setUserText] = useState('')
-  const [clydeWords, setClydeWords] = useState(0)
+  const [animatedUserText, setUserText] = useState('')
+  const [animatedClydeWords, setClydeWords] = useState(0)
 
   const current = pairs[pairIdx] ?? pairs[0]
   const clydeWordList = current.clyde.split(' ')
 
+  // Derive visible state in render so reduced-motion users never hit a
+  // setState-in-effect (React 19 react-hooks/set-state-in-effect rule).
+  // When reduced motion is on we just show the full pair immediately;
+  // the animation effect below early-returns and no state is touched.
+  const userText = reduced ? current.user : animatedUserText
+  const clydeWords = reduced ? clydeWordList.length : animatedClydeWords
+
   useEffect(() => {
-    if (reduced) {
-      setUserText(current.user)
-      setClydeWords(clydeWordList.length)
-      return
-    }
+    if (reduced) return
 
     let cancelled = false
     let timer: ReturnType<typeof setTimeout> | null = null

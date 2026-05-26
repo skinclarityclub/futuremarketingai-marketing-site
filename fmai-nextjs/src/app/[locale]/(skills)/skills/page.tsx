@@ -71,7 +71,10 @@ export default async function SkillsIndexPage({
   const t = await getTranslations({ locale, namespace: 'skills-index' })
   const tCommon = await getTranslations({ locale, namespace: 'common' })
   const tBreadcrumbs = await getTranslations({ locale, namespace: 'common.breadcrumbs' })
-  const tClydePrompts = await getTranslations({ locale, namespace: 'skills-clyde' })
+  // Reuse the home Clyde-bento chat pairs so the featured tile on /skills shows
+  // the same demo conversation as the landing page — ClydeFeaturedTile expects
+  // { user, clyde } pairs after the 4e9dd8b refactor.
+  const tHomeClyde = await getTranslations({ locale, namespace: 'home.services.clyde' })
 
   // ItemList JSON-LD enumerating all 12 skills for graph-cohesion + AI citation.
   const itemListId = `${pageWebPageId(locale, '/skills')}#itemlist`
@@ -92,11 +95,11 @@ export default async function SkillsIndexPage({
   const clydeSkill = getSkillBySlug('clyde')
   const secondarySkills = SKILLS_DATA.filter((s) => s.slug !== 'clyde')
 
-  const clydePrompts: readonly [string, string, string] = [
-    tClydePrompts('hero.prompts.prompt1'),
-    tClydePrompts('hero.prompts.prompt2'),
-    tClydePrompts('hero.prompts.prompt3'),
-  ]
+  const clydePairs = [
+    { user: tHomeClyde('prompt1'), clyde: tHomeClyde('response1') },
+    { user: tHomeClyde('prompt2'), clyde: tHomeClyde('response2') },
+    { user: tHomeClyde('prompt3'), clyde: tHomeClyde('response3') },
+  ] as const
 
   return (
     <PageShell>
@@ -149,7 +152,9 @@ export default async function SkillsIndexPage({
                   description={t('clyde.description')}
                   statusLabel={t('clyde.statusLabel')}
                   promptIntro={t('clyde.promptIntro')}
-                  prompts={clydePrompts}
+                  pairs={clydePairs}
+                  userLabel={tHomeClyde('userLabel')}
+                  clydeLabel={tHomeClyde('clydeLabel')}
                   openLink={t('clyde.openLink')}
                 />
               </RevealItem>
