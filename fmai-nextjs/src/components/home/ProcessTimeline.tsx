@@ -72,14 +72,8 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, cta
         </div>
 
         <div className="relative">
-          {/* Horizontal connector — desktop only, sits behind cards */}
-          <span
-            aria-hidden
-            className="hidden lg:block absolute top-[28px] left-[8px] right-[8px] h-px bg-gradient-to-r from-accent-system/60 via-accent-system/30 to-transparent z-0"
-          />
-
           <motion.ol
-            className="grid grid-cols-1 lg:grid-cols-4 gap-5 relative z-10 items-stretch"
+            className="grid grid-cols-1 lg:grid-cols-4 gap-5 relative items-stretch"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
