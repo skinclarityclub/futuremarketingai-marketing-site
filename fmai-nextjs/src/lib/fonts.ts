@@ -13,7 +13,11 @@ export const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin'],
   display: 'swap',
-  preload: true,
+  // No preload — JetBrains Mono is only used for code/tabular text
+  // (chatbot, ChatSimulation, code blocks). Above-the-fold hero is
+  // pure DM Sans. Preloading mono cost 37 KB on the critical path
+  // and competed with the hero preview WebP for mobile bandwidth.
+  preload: false,
   adjustFontFallback: true,
 })
 
