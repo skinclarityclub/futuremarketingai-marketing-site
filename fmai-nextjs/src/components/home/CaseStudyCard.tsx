@@ -19,22 +19,26 @@ export async function CaseStudyCard({ locale }: { locale: string }) {
         </p>
 
         <article className="relative overflow-hidden rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] backdrop-blur-sm p-8 lg:p-12">
-          {/* Brand identity — SKC lockup op brand-groen (#127059) badge */}
-          <header className="mb-8">
-            <div className="inline-flex items-center rounded-xl bg-[#127059] px-5 py-3 mb-4 shadow-[0_0_32px_rgba(18,112,89,0.20)]">
+          {/* Brand identity — heart-emblem in ronde SKC-groen badge + naam ernaast */}
+          <header className="flex items-center gap-5 mb-8">
+            <div className="shrink-0 grid place-items-center w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#127059] p-3 lg:p-3.5 shadow-[0_0_32px_rgba(18,112,89,0.22)]">
               <Image
-                src="/brand/skc-logo.png"
+                src="/brand/skc-emblem.png"
                 alt={t('logoAlt')}
-                width={1794}
-                height={638}
-                className="h-10 lg:h-12 w-auto"
+                width={746}
+                height={684}
+                className="w-full h-auto"
               />
             </div>
-            {/* Bedrijfsnaam visueel-verborgen — logo is de visuele identity, h3 voor SEO/SR */}
-            <h3 id="case-study-skc" className="sr-only">
-              {t('companyName')}
-            </h3>
-            <p className="text-sm text-text-secondary">{t('subtitle')}</p>
+            <div>
+              <h3
+                id="case-study-skc"
+                className="font-display text-2xl lg:text-3xl font-bold text-text-primary"
+              >
+                {t('companyName')}
+              </h3>
+              <p className="text-sm text-text-secondary mt-1">{t('subtitle')}</p>
+            </div>
           </header>
 
           {/* Metrics row */}
