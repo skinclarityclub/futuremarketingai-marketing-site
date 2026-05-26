@@ -14,14 +14,15 @@
       "description": "Clyde es el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máx 20 socios por año."
     },
     "hero": {
-      "badge": "Tu Empleado AI de Marketing con memoria a largo plazo. {taken} de {total} plazas founding ocupadas",
+      "badge": "{taken} de {total} plazas founding ocupadas",
       "headlineMain": "Este es Clyde.",
-      "headlineAccent": "Tu Empleado AI de Marketing.",
-      "subtitle": "Clyde recuerda cada marca, aprende de cada campaña y ejecuta doce habilidades de forma autónoma: social, blogs, voz, anuncios, SEO y analítica. Un único Empleado AI de Marketing para todo tu portfolio de marcas.",
-      "trustAnchor": "Construido con agencias neerlandesas en la práctica. Máx. {maxPartners} partners al año.",
+      "tagline": "Tu <accent>empleado AI de marketing</accent>.",
+      "subtitle": "Recuerda cada marca. Doce habilidades para todo tu portfolio: social, blogs, email, calificación de leads, SEO, analítica. Ejecutado de forma autónoma, con memoria que sobrevive a las campañas.",
+      "trustAnchor": "En producción desde 2025. Máx. {maxPartners} partners al año.",
       "cta": "Agenda una llamada",
       "ctaSecondary": "Conoce a Clyde",
       "trustCluster": {
+        "target": "Hecho para agencias",
         "founding": "{taken} de {total} plazas founding",
         "avgLabel": "Cumple con el RGPD"
       }
@@ -331,7 +332,7 @@
       "items": {
         "q1": {
           "question": "¿En qué se diferencia Clyde de ChatGPT o Jasper?",
-          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar contexto en cada prompt. Clyde tiene memoria persistente por marca: voz de marca, audiencia, historial de rendimiento y preferencias se conservan. Además, Clyde orquesta 12 habilidades especializadas (social, blogs, voz, anuncios, SEO, analítica), no solo texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
+          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar contexto en cada prompt. Clyde tiene memoria persistente por marca: voz de marca, audiencia, historial de rendimiento y preferencias se conservan. Además, Clyde orquesta nueve habilidades en producción más tres próximamente (social, blogs, email, calificación de leads, SEO, analítica y más), no solo texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
         },
         "q2": {
           "question": "¿Y si quiero cancelar?",
@@ -570,7 +571,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "El Empleado AI de Marketing para tu agencia. Contenido, voz, anuncios, social, leads y reportes en un sistema siempre activo.",
+        "tagline": "El Empleado AI de Marketing para tu agencia. Nueve habilidades en producción, tres próximamente, un sistema siempre activo.",
         "copyright": "© {year} Future Marketing AI. Todos los derechos reservados.",
         "sections": {
           "skills": "Habilidades",
@@ -2236,7 +2237,7 @@
         "title": "3 cuentas. 4 marcas. Un Empleado AI de Marketing.",
         "chip1": "3 cuentas incorporadas",
         "chip2": "4 marcas en vivo en 7 dias",
-        "chip3": "12 habilidades activas",
+        "chip3": "9 habilidades activas",
         "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. De forma autónoma, cada día, sin que el equipo tenga que estar encima."
       },
       "setup": {
@@ -3341,7 +3342,7 @@
       "applySubtitle": "Agenda una llamada"
     },
     "megaMenu": {
-      "tagline": "12 habilidades, 1 cerebro",
+      "tagline": "9 en vivo, 3 próximamente",
       "previewCta": "Ver habilidad",
       "viewAll": "Todas las habilidades"
     }

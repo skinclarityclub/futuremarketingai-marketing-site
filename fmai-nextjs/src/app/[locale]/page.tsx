@@ -94,11 +94,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <HeroSection
         badge={t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
         headlineMain={t('hero.headlineMain')}
-        headlineAccent={t('hero.headlineAccent')}
+        tagline={t.rich('hero.tagline', {
+          accent: (chunks) => <span>{chunks}</span>,
+        })}
         subtitle={t('hero.subtitle')}
         trustAnchor={t('hero.trustAnchor')}
         ctaPrimary={t('hero.cta')}
         ctaSecondary={t('hero.ctaSecondary')}
+        trustClusterTarget={t('hero.trustCluster.target')}
         trustClusterFounding={t('hero.trustCluster.founding', {
           taken: FOUNDING_SPOTS_TAKEN,
           total: FOUNDING_SPOTS_TOTAL,

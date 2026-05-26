@@ -11,11 +11,12 @@ import { EASE_OUT, DEFAULT_DURATION } from '@/lib/motion/easings'
 interface HeroSectionProps {
   badge: string
   headlineMain: string
-  headlineAccent: string
+  tagline: React.ReactNode
   subtitle: string
   trustAnchor: string
   ctaPrimary: string
   ctaSecondary: string
+  trustClusterTarget: string
   trustClusterFounding: string
   trustClusterAvg: string
 }
@@ -24,11 +25,12 @@ export function HeroSection(props: HeroSectionProps) {
   const {
     badge,
     headlineMain,
-    headlineAccent,
+    tagline,
     subtitle,
     trustAnchor,
     ctaPrimary,
     ctaSecondary,
+    trustClusterTarget,
     trustClusterFounding,
     trustClusterAvg,
   } = props
@@ -54,29 +56,36 @@ export function HeroSection(props: HeroSectionProps) {
             {badge}
           </motion.div>
 
-          {/* Headline — kinetic word-by-word reveal (W5.6) with solid teal accent */}
+          {/* Headline — kinetic word-by-word reveal on H1, plain tagline below.
+              Premium 2-tier hierarchy (Anthropic/Cursor pattern) — single
+              dominant display line + secondary tagline with accent fragment. */}
           <h1
             id="hero"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary mb-3"
           >
             <KineticHeadline
               text={headlineMain}
-              className="block text-text-primary"
-              baseDelay={0.15}
-            />
-            <KineticHeadline
-              text={headlineAccent}
-              className="block text-accent-system"
-              baseDelay={0.35}
+              className="block"
+              baseDelay={0.25}
             />
           </h1>
+
+          {/* Tagline — secondary display line, fades in after H1 reveal */}
+          <motion.p
+            className="text-xl sm:text-2xl lg:text-3xl font-normal text-text-secondary mb-6 lg:mb-8 [&_span]:text-accent-system [&_span]:font-medium"
+            initial={{ y: 8, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.05, duration: DEFAULT_DURATION, ease: EASE_OUT }}
+          >
+            {tagline}
+          </motion.p>
 
           {/* Description */}
           <motion.p
             className="speakable-hero text-base lg:text-xl text-text-secondary max-w-xl mb-4 lg:mb-6 leading-relaxed"
             initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: DEFAULT_DURATION, ease: EASE_OUT }}
+            transition={{ delay: 1.5, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
             {subtitle}
           </motion.p>
@@ -86,13 +95,14 @@ export function HeroSection(props: HeroSectionProps) {
             className="speakable-tldr text-sm text-text-muted mb-6 lg:mb-10"
             initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: DEFAULT_DURATION, ease: EASE_OUT }}
+            transition={{ delay: 1.7, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
             {trustAnchor}
           </motion.p>
 
           {/* Trust cluster — client proof + founding scarcity + AVG badge */}
           <TrustClusterHero
+            targetLabel={trustClusterTarget}
             foundingLabel={trustClusterFounding}
             avgLabel={trustClusterAvg}
           />
@@ -102,7 +112,7 @@ export function HeroSection(props: HeroSectionProps) {
             className="flex flex-col items-start gap-3"
             initial={{ y: 12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: DEFAULT_DURATION, ease: EASE_OUT }}
+            transition={{ delay: 1.9, duration: DEFAULT_DURATION, ease: EASE_OUT }}
           >
             <CTAButton href="/apply" size="lg">
               <Zap className="mr-1 h-5 w-5" />
@@ -145,8 +155,8 @@ interface KineticHeadlineProps {
  */
 function KineticHeadline({ text, className, style, baseDelay = 0 }: KineticHeadlineProps) {
   const words = text.split(' ')
-  const MAX_TOTAL_STAGGER = 0.6
-  const PER_WORD_DELAY = Math.min(0.08, MAX_TOTAL_STAGGER / Math.max(words.length, 1))
+  const MAX_TOTAL_STAGGER = 1.1
+  const PER_WORD_DELAY = Math.min(0.18, MAX_TOTAL_STAGGER / Math.max(words.length, 1))
 
   return (
     <span className={className} style={style}>
@@ -157,7 +167,7 @@ function KineticHeadline({ text, className, style, baseDelay = 0 }: KineticHeadl
           animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{
             delay: baseDelay + i * PER_WORD_DELAY,
-            duration: 0.4,
+            duration: 0.55,
             ease: EASE_OUT,
           }}
           className="inline-block mr-[0.25em] last:mr-0"

@@ -14,14 +14,15 @@
       "description": "Clyde is the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 20 partners per year."
     },
     "hero": {
-      "badge": "Your AI Marketing Employee with long-term memory. {taken} of {total} founding spots taken",
+      "badge": "{taken} of {total} founding spots taken",
       "headlineMain": "This is Clyde.",
-      "headlineAccent": "Your AI Marketing Employee.",
-      "subtitle": "Clyde remembers every brand, learns from every campaign and runs twelve skills autonomously: social, blogs, voice, ads, SEO and analytics. One AI Marketing Employee for your entire brand portfolio.",
-      "trustAnchor": "Built with Dutch agencies in practice. Max {maxPartners} partners per year.",
+      "tagline": "Your <accent>AI marketing employee</accent>.",
+      "subtitle": "Remembers every brand. Twelve skills for your whole portfolio: social, blogs, email, lead qualification, SEO, analytics. Run autonomously, with memory that outlives campaigns.",
+      "trustAnchor": "Live in production since 2025. Max {maxPartners} partners per year.",
       "cta": "Book a call",
       "ctaSecondary": "Meet Clyde",
       "trustCluster": {
+        "target": "Built for agencies",
         "founding": "{taken} of {total} founding spots",
         "avgLabel": "GDPR-compliant"
       }
@@ -331,7 +332,7 @@
       "items": {
         "q1": {
           "question": "How is Clyde different from ChatGPT or Jasper?",
-          "answer": "ChatGPT and Jasper are generic tools without memory. You have to supply context with every prompt. Clyde has persistent memory per brand: brand voice, audience, performance history and preferences stay retained. On top of that, Clyde orchestrates 12 specialized skills (social, blogs, voice, ads, SEO, analytics), not just text. One brain with shared memory, not a separate tool per task."
+          "answer": "ChatGPT and Jasper are generic tools without memory. You have to supply context with every prompt. Clyde has persistent memory per brand: brand voice, audience, performance history and preferences stay retained. On top of that, Clyde orchestrates nine live skills plus three coming soon (social, blogs, email, lead qualification, SEO, analytics and more), not just text. One brain with shared memory, not a separate tool per task."
         },
         "q2": {
           "question": "What if I want to cancel?",
@@ -570,7 +571,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "The AI Marketing Employee for your agency. Content, voice, ads, social, leads and reporting in one always-on system.",
+        "tagline": "The AI Marketing Employee for your agency. Nine skills live, three coming soon, one always-on system.",
         "copyright": "© {year} Future Marketing AI. All rights reserved.",
         "sections": {
           "skills": "Skills",
@@ -2236,7 +2237,7 @@
         "title": "3 accounts. 4 brands. One AI Marketing Employee.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 brands live in 7 days",
-        "chip3": "12 skills active",
+        "chip3": "9 skills active",
         "subtitle": "SkinClarity Club has been a Founding client from week one. Clyde manages 3 Instagram accounts, 4 brands and multiple content types. Autonomously, every day, without the team having to look over its shoulder."
       },
       "setup": {
@@ -3341,7 +3342,7 @@
       "applySubtitle": "Book a call"
     },
     "megaMenu": {
-      "tagline": "12 skills, 1 brain",
+      "tagline": "9 live, 3 coming soon",
       "previewCta": "View skill",
       "viewAll": "All skills"
     }
