@@ -38,10 +38,11 @@ type ServiceCard = {
   href: string
   Icon: LucideIcon
   status: SkillStatus
+  featured?: boolean
 }
 
 const SECONDARY_SERVICES: readonly ServiceCard[] = [
-  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Megaphone,       status: 'live'         },
+  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Megaphone,       status: 'live',         featured: true },
   { key: 'blogFactory',     href: '/skills/blog-factory',     Icon: FileText,        status: 'live'         },
   { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck,       status: 'live'         },
   { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox,           status: 'live'         },
@@ -103,14 +104,14 @@ export async function ServicesBento({ locale }: { locale: string }) {
             />
           </div>
 
-          {SECONDARY_SERVICES.map(({ key, href, Icon, status }) => (
+          {SECONDARY_SERVICES.map(({ key, href, Icon, status, featured }) => (
             <SpotlightCard
               key={key}
               href={href}
-              className="spotlight-card group relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-5 lg:p-6 flex flex-col transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+              className={`spotlight-card group relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-5 lg:p-6 flex flex-col transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system ${featured ? 'sm:col-span-2' : ''}`}
             >
               <header className="flex items-start justify-between gap-3 mb-4">
-                <Icon className="w-5 h-5 text-accent-system shrink-0" aria-hidden />
+                <Icon className={`${featured ? 'w-6 h-6' : 'w-5 h-5'} text-accent-system shrink-0`} aria-hidden />
                 <StatusBadge
                   status={status}
                   liveLabel={tServices('statusLive')}
@@ -118,10 +119,10 @@ export async function ServicesBento({ locale }: { locale: string }) {
                 />
               </header>
 
-              <h3 className="font-display text-base lg:text-lg font-bold text-text-primary mb-1.5 leading-tight">
+              <h3 className={`font-display ${featured ? 'text-lg lg:text-xl' : 'text-base lg:text-lg'} font-bold text-text-primary mb-1.5 leading-tight`}>
                 {tServices(`${key}.title`)}
               </h3>
-              <p className="text-xs lg:text-sm text-text-secondary leading-relaxed flex-1">
+              <p className={`${featured ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'} text-text-secondary leading-relaxed flex-1`}>
                 {tServices(`${key}.description`)}
               </p>
 
