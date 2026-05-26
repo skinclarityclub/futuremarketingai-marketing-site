@@ -157,6 +157,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               historie:   { label: t('memoryUsp.layers.historie.label'),   body: t('memoryUsp.layers.historie.body')   },
               voorkeuren: { label: t('memoryUsp.layers.voorkeuren.label'), body: t('memoryUsp.layers.voorkeuren.body') },
             }}
+            compare={{
+              eyebrow:       t('memoryUsp.compare.eyebrow'),
+              prompt:        t('memoryUsp.compare.prompt'),
+              otherLabel:    t('memoryUsp.compare.otherLabel'),
+              otherTag:      t('memoryUsp.compare.otherTag'),
+              otherResponse: t('memoryUsp.compare.otherResponse'),
+              otherWarning:  t('memoryUsp.compare.otherWarning'),
+              clydeLabel:    t('memoryUsp.compare.clydeLabel'),
+              clydeTag:      t('memoryUsp.compare.clydeTag'),
+              clydeResponse: t('memoryUsp.compare.clydeResponse'),
+              clydeProof:    t('memoryUsp.compare.clydeProof'),
+            }}
           />
         </ScrollReveal>
       </LazySection>

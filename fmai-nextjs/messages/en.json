@@ -254,22 +254,34 @@
       "layers": {
         "context": {
           "label": "Context",
-          "body": "What is happening across your agency portfolio right now: live campaigns, deadlines, recent client touchpoints."
+          "body": "Current campaigns, deadlines, recent client touchpoints. Clyde knows the winter campaign peaks this week."
         },
         "merken": {
           "label": "Brands",
-          "body": "Tone of voice, do's and don'ts, audience and positioning for each brand in your client portfolio."
+          "body": "Voice and do's per brand. @sindy_huidtherapeut intimate, @SkinClarity_Shop product-energetic, @SkinClarityClub educational."
         },
         "historie": {
           "label": "History",
-          "body": "What Clyde did before, which content performed, which prompts worked and which did not."
+          "body": "What worked before. The Sindy Tips carousel hit +18% engagement, Clyde iterates on that."
         },
         "voorkeuren": {
           "label": "Preferences",
-          "body": "Review style, channels, fixed deadlines and approval flow per brand."
+          "body": "Sindy reviews on Friday. No exclamation marks. Posting around 19:00. Clyde sticks to it."
         }
       },
-      "ctaLink": "How Clyde's memory works"
+      "ctaLink": "Open the live memory demo",
+      "compare": {
+        "eyebrow": "Same prompt, two outcomes",
+        "prompt": "Write a blog about rosacea for SkinClarity Club",
+        "otherLabel": "Other AI",
+        "otherTag": "session-based",
+        "otherResponse": "Rosacea is a chronic skin condition causing redness and visible blood vessels. Treatments: topical medication, laser, diet adjustments...",
+        "otherWarning": "You re-supply brand context and product info with every prompt.",
+        "clydeLabel": "Clyde",
+        "clydeTag": "with 4-layer memory",
+        "clydeResponse": "Rosacea for Sindy's audience: focus on calming routine. Reference Eminence Calm Skin Chamomile Cleanser from the SKC shop, and link to @sindy_huidtherapeut's earlier post on barrier repair.",
+        "clydeProof": "Hits brand voice, products and prior content immediately. No rebrief needed."
+      }
     },
     "testimonial": {
       "eyebrow": "Operator perspective",

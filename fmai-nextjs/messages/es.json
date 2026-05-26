@@ -254,22 +254,34 @@
       "layers": {
         "context": {
           "label": "Contexto",
-          "body": "Lo que pasa ahora en tu portfolio de agencia: campañas en marcha, deadlines y contacto reciente con clientes."
+          "body": "Campañas en curso, plazos, contactos recientes. Clyde sabe que la campaña de invierno alcanza su pico esta semana."
         },
         "merken": {
           "label": "Marcas",
-          "body": "Tono de voz, do's y don'ts, audiencia y posicionamiento por cada marca de tu portfolio."
+          "body": "Voz y reglas por marca. @sindy_huidtherapeut íntima, @SkinClarity_Shop producto-energética, @SkinClarityClub educativa."
         },
         "historie": {
           "label": "Historial",
-          "body": "Lo que Clyde hizo antes, qué contenido funcionó, qué prompts sirvieron y cuáles no."
+          "body": "Lo que funcionó antes. El carrusel Sindy Tips logró +18% de engagement, Clyde itera sobre eso."
         },
         "voorkeuren": {
           "label": "Preferencias",
-          "body": "Estilo de revisión, canales, deadlines fijos y flow de aprobación por marca."
+          "body": "Sindy revisa los viernes. Sin signos de exclamación. Publicaciones alrededor de las 19:00. Clyde lo respeta."
         }
       },
-      "ctaLink": "Cómo funciona la memoria de Clyde"
+      "ctaLink": "Abrir la demo de memoria en vivo",
+      "compare": {
+        "eyebrow": "Mismo prompt, dos resultados",
+        "prompt": "Escribe un blog sobre rosácea para SkinClarity Club",
+        "otherLabel": "Otra IA",
+        "otherTag": "basada en sesiones",
+        "otherResponse": "La rosácea es una afección crónica con enrojecimiento y vasos sanguíneos visibles. Tratamientos: medicación tópica, láser, ajustes dietéticos...",
+        "otherWarning": "Vuelves a proporcionar contexto de marca y productos en cada prompt.",
+        "clydeLabel": "Clyde",
+        "clydeTag": "con memoria de 4 capas",
+        "clydeResponse": "Rosácea para el público de Sindy: enfoque en rutina calmante. Referencia el Eminence Calm Skin Chamomile Cleanser de la tienda SKC, y enlaza al post anterior de @sindy_huidtherapeut sobre reparación de barrera.",
+        "clydeProof": "Acierta voz de marca, productos y contenido previo de inmediato. Sin rebrief."
+      }
     },
     "testimonial": {
       "eyebrow": "Perspectiva de operadora",

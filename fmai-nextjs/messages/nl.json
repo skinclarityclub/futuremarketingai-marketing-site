@@ -254,22 +254,34 @@
       "layers": {
         "context": {
           "label": "Context",
-          "body": "Wat speelt er nu in jouw bureau-portfolio: lopende campagnes, deadlines, recent klantcontact."
+          "body": "Lopende campagnes, deadlines, recent klantcontact. Clyde weet dat de winter-campagne deze week piekt."
         },
         "merken": {
           "label": "Merken",
-          "body": "Tone of voice, do's en don'ts, doelgroep en positionering per merk in jouw klantportfolio."
+          "body": "Stem en do's per merk. @sindy_huidtherapeut intiem, @SkinClarity_Shop product-energetic, @SkinClarityClub educatief."
         },
         "historie": {
           "label": "Historie",
-          "body": "Wat Clyde eerder deed, welke content presteerde, welke prompts werkten en welke niet."
+          "body": "Wat eerder werkte. De Sindy Tips-carrousel had +18% engagement, Clyde itereert daarop voort."
         },
         "voorkeuren": {
           "label": "Voorkeuren",
-          "body": "Review-stijl, kanalen, vaste deadlines en goedkeuringsflow per merk."
+          "body": "Sindy reviewt op vrijdag. Geen uitroeptekens. Posten doorgaans 19:00. Clyde houdt zich eraan."
         }
       },
-      "ctaLink": "Hoe Clyde's geheugen werkt"
+      "ctaLink": "Open de live geheugen-demo",
+      "compare": {
+        "eyebrow": "Zelfde prompt, twee uitkomsten",
+        "prompt": "Schrijf een blog over rosacea voor SkinClarity Club",
+        "otherLabel": "Andere AI",
+        "otherTag": "sessie-based",
+        "otherResponse": "Rosacea is een chronische huidaandoening met roodheid en zichtbare bloedvaten. Behandelingen: topical medicatie, laser, dieet-aanpassingen...",
+        "otherWarning": "Jij moet brand-context en producten bij elke prompt opnieuw aanleveren.",
+        "clydeLabel": "Clyde",
+        "clydeTag": "met 4-laags geheugen",
+        "clydeResponse": "Rosacea bij Sindy's klantengroep: focus op kalmerende routine. Verwijs naar Eminence Calm Skin Chamomile Cleanser uit de SKC-shop, en link aan @sindy_huidtherapeut's eerdere post over barriere-herstel.",
+        "clydeProof": "Klopt direct op brand-stem, producten en eerdere content. Geen rebrief nodig."
+      }
     },
     "testimonial": {
       "eyebrow": "Operator-perspectief",
