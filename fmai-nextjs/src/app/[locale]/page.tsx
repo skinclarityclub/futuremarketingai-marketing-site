@@ -494,23 +494,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
       </LazySection>
 
-      {/* ─────────────────────────────────────────────────────────────
-          Sectie 17 — TrustStrip (SKC eerlijke claim, compact close)
-          ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="120px">
-        <section aria-label="Trust strip" className="py-12 px-6 lg:px-12 border-t border-border-primary">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-text-primary font-medium mb-1">{t('trustStrip.title')}</p>
-            <p className="text-sm text-text-secondary mb-3">{t('trustStrip.subtitle')}</p>
-            <Link
-              href="/case-studies/skinclarity-club"
-              className="text-sm text-accent-system hover:underline"
-            >
-              {t('trustStrip.caseLink')} →
-            </Link>
-          </div>
-        </section>
-      </LazySection>
     </PageShell>
   )
 }
