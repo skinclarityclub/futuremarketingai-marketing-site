@@ -357,23 +357,28 @@
       "ctaLink": "Plan een gesprek"
     },
     "pillars": {
-      "title": "Gebouwd voor Europese bureaus",
+      "title": "Drie ankers die geen US-tool kan matchen",
+      "subtitle": "EU-native compliance, EU-native infra en directe partnership. Geen CSM-laag, geen US-clouds, geen vendor lock-in.",
       "compliance": {
         "label": "Veiligheid en compliance",
-        "heading": "GDPR · EU AI Act",
-        "body": "AVG-first en EU AI Act ready. Self-hosted op Europese servers, data nooit naar US-clouds. Audit-trail per actie van Clyde."
+        "headingLine1": "GDPR-first.",
+        "headingLine2": "EU AI Act ready.",
+        "body": "AVG-first en EU AI Act ready. Self-hosted op Europese servers, data nooit naar US-clouds. Audit-trail per actie van Clyde.",
+        "linkText": "Hoe wij data behandelen"
       },
       "infrastructure": {
         "label": "Infrastructuur",
         "stat": "24u",
         "statLabel": "Data-export SLA",
-        "body": "Open API, JSON en CSV export binnen 24 uur. Self-hosted EU-infrastructuur, geen vendor lock-in op data of werkruimtes."
+        "body": "Open API, JSON en CSV export binnen 24 uur. Self-hosted EU-infrastructuur, geen vendor lock-in op data of werkruimtes.",
+        "linkText": "Bekijk de geheugenlaag"
       },
       "partnership": {
         "label": "Samenwerking",
         "stat": "1:1",
         "statLabel": "Met Daley",
-        "body": "Persoonlijke onboarding door Daley. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen."
+        "body": "Persoonlijke onboarding door Daley. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen.",
+        "linkText": "Lees meer over Daley"
       }
     },
     "cta": {

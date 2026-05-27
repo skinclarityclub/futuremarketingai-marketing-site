@@ -357,23 +357,28 @@
       "ctaLink": "Book a call"
     },
     "pillars": {
-      "title": "Built for European agencies",
+      "title": "Three anchors no US tool can match",
+      "subtitle": "EU-native compliance, EU-native infrastructure and direct partnership. No CSM layer, no US clouds, no vendor lock-in.",
       "compliance": {
         "label": "Security and compliance",
-        "heading": "GDPR · EU AI Act",
-        "body": "GDPR-first and EU AI Act ready. Self-hosted on European servers, your data never reaches US clouds. Audit trail for every Clyde action."
+        "headingLine1": "GDPR-first.",
+        "headingLine2": "EU AI Act ready.",
+        "body": "GDPR-first and EU AI Act ready. Self-hosted on European servers, your data never reaches US clouds. Audit trail for every Clyde action.",
+        "linkText": "How we handle data"
       },
       "infrastructure": {
         "label": "Infrastructure",
         "stat": "24h",
         "statLabel": "Data-export SLA",
-        "body": "Open API, JSON and CSV export within 24 hours. Self-hosted EU infrastructure, no vendor lock-in on data or workspaces."
+        "body": "Open API, JSON and CSV export within 24 hours. Self-hosted EU infrastructure, no vendor lock-in on data or workspaces.",
+        "linkText": "See the memory layer"
       },
       "partnership": {
         "label": "Partnership",
         "stat": "1:1",
         "statLabel": "With Daley",
-        "body": "Personal onboarding by Daley. No CSM layer, no ticketing for strategic decisions."
+        "body": "Personal onboarding by Daley. No CSM layer, no ticketing for strategic decisions.",
+        "linkText": "Read more about Daley"
       }
     },
     "cta": {

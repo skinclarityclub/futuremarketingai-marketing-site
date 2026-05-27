@@ -335,21 +335,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <LazySection minHeight="280px">
         <section aria-labelledby="pillars" className="py-20 px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
-            <SectionHeading id="pillars" className="text-center">{t('pillars.title')}</SectionHeading>
+            <div className="text-center max-w-2xl mx-auto">
+              <SectionHeading id="pillars">{t('pillars.title')}</SectionHeading>
+              <p className="mt-4 text-base lg:text-lg text-text-secondary leading-relaxed">
+                {t('pillars.subtitle')}
+              </p>
+            </div>
             <ScrollReveal>
               <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-5 auto-rows-fr">
-                {/* Tile A — Compliance, spans 2 cols on desktop, typographic */}
+                {/* Tile A — Compliance, spans 2 cols on desktop, typographic 2-line */}
                 <div className="md:col-span-2 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-7 lg:p-9 flex flex-col justify-between min-h-[220px]">
                   <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
                     <ShieldCheck className="w-4 h-4" aria-hidden />
                     {t('pillars.compliance.label')}
                   </div>
-                  <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary tracking-tight my-6 leading-[1.05]">
-                    {t('pillars.compliance.heading')}
+                  <h3 className="font-display text-4xl md:text-5xl font-bold text-text-primary tracking-tight my-6 leading-[1.05]">
+                    <span className="block">{t('pillars.compliance.headingLine1')}</span>
+                    <span className="block">{t('pillars.compliance.headingLine2')}</span>
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed max-w-md">
                     {t('pillars.compliance.body')}
                   </p>
+                  <Link
+                    href="/privacy"
+                    className="mt-5 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
+                  >
+                    {t('pillars.compliance.linkText')}
+                    <ArrowRight className="w-3 h-3 shrink-0" aria-hidden />
+                  </Link>
                 </div>
 
                 {/* Tile B — Infrastructure, single col, numeric */}
@@ -369,6 +382,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <p className="text-xs text-text-secondary leading-relaxed">
                     {t('pillars.infrastructure.body')}
                   </p>
+                  <Link
+                    href="/memory"
+                    className="mt-4 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
+                  >
+                    {t('pillars.infrastructure.linkText')}
+                    <ArrowRight className="w-3 h-3 shrink-0" aria-hidden />
+                  </Link>
                 </div>
 
                 {/* Tile C — Partnership, single col, numeric */}
@@ -388,6 +408,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <p className="text-xs text-text-secondary leading-relaxed">
                     {t('pillars.partnership.body')}
                   </p>
+                  <Link
+                    href="/about"
+                    className="mt-4 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
+                  >
+                    {t('pillars.partnership.linkText')}
+                    <ArrowRight className="w-3 h-3 shrink-0" aria-hidden />
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>

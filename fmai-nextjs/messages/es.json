@@ -357,23 +357,28 @@
       "ctaLink": "Agenda una llamada"
     },
     "pillars": {
-      "title": "Construido para agencias europeas",
+      "title": "Tres anclas que ninguna herramienta de EE. UU. iguala",
+      "subtitle": "Compliance EU-native, infraestructura EU-native y partnership directo. Sin capa de CSM, sin clouds de EE. UU., sin lock-in.",
       "compliance": {
         "label": "Seguridad y compliance",
-        "heading": "RGPD · EU AI Act",
-        "body": "RGPD-first y EU AI Act listos. Self-hosted en servidores europeos, tus datos no llegan a clouds de EE. UU. Audit trail por cada acción de Clyde."
+        "headingLine1": "RGPD-first.",
+        "headingLine2": "EU AI Act listo.",
+        "body": "RGPD-first y EU AI Act listos. Self-hosted en servidores europeos, tus datos no llegan a clouds de EE. UU. Audit trail por cada acción de Clyde.",
+        "linkText": "Cómo tratamos los datos"
       },
       "infrastructure": {
         "label": "Infraestructura",
         "stat": "24h",
         "statLabel": "SLA de exportación",
-        "body": "API abierta, exportación JSON y CSV en 24 horas. Infraestructura self-hosted en la UE, sin lock-in en datos ni workspaces."
+        "body": "API abierta, exportación JSON y CSV en 24 horas. Infraestructura self-hosted en la UE, sin lock-in en datos ni workspaces.",
+        "linkText": "Ver la capa de memoria"
       },
       "partnership": {
         "label": "Partnership",
         "stat": "1:1",
         "statLabel": "Con Daley",
-        "body": "Onboarding personal con Daley. Sin capa de CSM, sin ticketing para decisiones estratégicas."
+        "body": "Onboarding personal con Daley. Sin capa de CSM, sin ticketing para decisiones estratégicas.",
+        "linkText": "Lee más sobre Daley"
       }
     },
     "cta": {
