@@ -140,6 +140,26 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 14 — IcpSection (who-is-this-for / not-for) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `eed4792` light polish + symmetric headings + closing CTA
+
+**Diagnose huidige staat (v1)**:
+- 2-col GlassCard fit/not-fit layout was al genre-standard sterk
+- Subtitle "Geen marketingpraatje. Eerlijk gezegd: we werken liever niet met iedereen." al uitstekend
+- Title was vraag ("Voor welke bureaus bouwen we Clyde?") — minder confident dan statement
+- Headings asymmetrisch ("Voor wie werkt dit?" vraag vs "Waarschijnlijk geen match als" conditional)
+- Geen closing CTA — user die zich in fit-column herkende had geen next-action
+
+**Wijzigingen**:
+- **Title**: "Voor welke bureaus bouwen we Clyde?" → "Voor wie dit werkt (en voor wie niet)" (statement met honest parenthetical)
+- **Headings symmetrisch**: "Voor wie werkt dit?" → "Voor wie dit werkt", "Waarschijnlijk geen match als" → "Voor wie dit niet werkt" (parallel structure)
+- **Closing CTA-row** toegevoegd: `flex-col sm:flex-row centered` met "Herken je jezelf links?" prompt + amber CTAButton "Plan een gesprek" → /apply
+- i18n NL/EN/ES: title + fitTitle + notFitTitle herschreven + 2 nieuwe keys (`closingPrompt`, `closingCta`)
+- `about.icp` namespace (andere page) intact gelaten
+
+**Validatie**: NL/EN/ES alle 200, screenshot toont symmetrische headings + closing CTA visible centered onder de 2 kaarten.
+
 ### Sectie 13 — Trust 01-04 grid ❌ VERWIJDERD 2026-05-27
 
 **Commit**: `5b2d941` verwijder sectie 13 — alle 4 claims dupliceerden andere secties
@@ -303,9 +323,9 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-12 (zie issue log)
+- [x] Sectie 1-12, 14 (zie issue log)
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
-- [ ] **Sectie 14 — IcpSection (who-is-this-for / not-for)** ← HIER VERDER
+- [ ] **Sectie 15 — FAQ accordion (5 vragen)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -336,9 +356,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-12 voltooid + sectie 13 verwijderd wegens overlap (commit 5b2d941).
+We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14 voltooid (sectie 13 verwijderd). Laatste sessie: IcpSection polish + closing CTA, commit eed4792.
 
-Volgende: sectie 14 IcpSection (who-is-this-for / not-for).
+Volgende: sectie 15 FAQ accordion (5 vragen).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -385,7 +405,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 14 — IcpSection (who-is-this-for / not-for)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 15 — FAQ accordion (5 vragen)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
