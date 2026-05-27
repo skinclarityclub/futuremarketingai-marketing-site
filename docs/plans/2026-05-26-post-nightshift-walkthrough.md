@@ -140,6 +140,28 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 9 — TestimonialBlock (Sindy operator-stem) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `2c413c7` editorial pull-quote layout + brand-voice angle + verified attribution
+
+**Wijzigingen**:
+- Layout: van centered minimal stack (eyebrow + tiny avatar + quote-icon + 1-regel quote) naar **asymmetric portrait-left + editorial quote-right** (md+), met thin border-top separator naar attribution-rij
+- `HAS_PORTRAIT` flag voor `/public/images/sindy-portrait.webp` (mirror van FounderSection-pattern, fallback `SK`-initials in accent-human gradient)
+- Portrait verhoogd van w-24 h-24 (placeholder S) naar w-32 lg:w-36 (premium B2B testimonial scale)
+- **Volledige naam Sindy Kienstra** (was: alleen "Sindy") — consistent met sectie 3 + case-study page
+- **Nieuwe quote-angle (brand-voice)** breekt echo met sectie 3 ("vaste medewerker"). Quote ligt nu op brand-voice memory feature (max 3 voice-iteraties → 4 huismerken):
+  - "Ik herken onze merken in elke caption die online gaat. Vier huismerken, vier stemmen, niet één keer generieke AI-toon. Dat had ik niet verwacht."
+- Eyebrow "Het moment waarop het klikte" (was: "Operator-perspectief" — overlapte met sectie 3 "Operator interview · SkinClarity Club")
+- Eyebrow kleur: **accent-human (amber)** — differentieert van sectie 3 + sectie 8 (beide accent-system teal)
+- LinkedIn-link (case-study URL `https://www.linkedin.com/in/sindy-skinclarity`) + CTA `/case-studies/skinclarity-club` ("Lees het volledige interview") in attribution-rij
+- Display-typografie 2xl md:3xl lg:[2.25rem] geeft sectie de weight die past bij sectie 8 manifest-stack
+- Quote-icon verwijderd (typografie draagt het sentiment al)
+- i18n in NL/EN/ES: 3 nieuwe keys (`linkedinUrl`, `linkedinLabel`, `ctaLabel`)
+
+**TODO voor user**: foto van Sindy droppen op `/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flipt automatisch true bij volgende build. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is). Optie: later beide paden naar 1 SSoT mergen.
+
+**Strategische lens**: sectie 3 (CaseStudyCard) = business-proof (metrics + autonomie), sectie 9 (TestimonialBlock) = human/emotional-proof (brand-voice moment van herkenning). Twee Sindy-quotes zijn nu complementair ipv redundant.
+
 ### Sectie 8 — FounderSection (Daley intro) ✅ VOLTOOID 2026-05-27
 
 **Commits**:
@@ -175,9 +197,8 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-8 (zie issue log)
-- [ ] **Sectie 9 — TestimonialBlock (Sindy operator-stem)** ← HIER VERDER
-- [ ] Sectie 10 — TrustSignalsGrid (4 numerieke tiles)
+- [x] Sectie 1-9 (zie issue log)
+- [ ] **Sectie 10 — TrustSignalsGrid (4 numerieke tiles)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -208,9 +229,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-8 voltooid (laatste sessie: founder-quote revisie naar manifest-stack, commits b95e55f + 710d5bd).
+We doen een interactieve walkthrough van de homepage. Sectie 1-9 voltooid (laatste sessie: TestimonialBlock editorial pull-quote + brand-voice quote-angle, commit 2c413c7).
 
-Volgende: sectie 9 TestimonialBlock (Sindy operator-stem).
+Volgende: sectie 10 TrustSignalsGrid (4 numerieke tiles).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -256,8 +277,9 @@ Conventies:
 **Open TODO's bij hand-off:**
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
-2. **Sectie 9 — TestimonialBlock (Sindy operator-stem)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
-3. Walkthrough doc is single source of truth — update na elke sectie.
+2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
+3. **Sectie 10 — TrustSignalsGrid (4 numerieke tiles)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
   - `src/components/home/MemoryLiveComparison.tsx` (gebruikt door MemoryUSPTeaser)
