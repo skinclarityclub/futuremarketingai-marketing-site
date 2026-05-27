@@ -507,6 +507,23 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 **Validatie**: NL/EN/ES alle 200, mobile e2e 18/18 (3 locales × 6 sections), 0 JS errors. €5.000 metric4 gevalideerd op mobile, gallery iconography zichtbaar per merk.
 
+### /about ✅ VOLTOOID 2026-05-28
+
+**Commit**: `21e2a59` narrative restructure + polish + HAS_PORTRAIT pattern
+
+**Route gekozen**: D (major restructure)
+
+**Wijzigingen**:
+- Final CTA dual-button → single primary (homepage section 16 pattern al toegepast op /pricing + /founding-member, /about was achter). Secondary 'Neem contact op' uit page.tsx + i18n alle 3 locales weg.
+- Hero pt-16 → pt-24 (consistency met andere pages).
+- Hero badge 'Founding members worden nu onboard gezet' (passive) → scarcity 'Founding open · 1/10 bezet' met constants interpolation + mono-uppercase amber styling.
+- ICP title 'Voor welke bureaus bouw ik Clyde?' (vraag) → 'Voor wie dit werkt (en voor wie niet)' statement-form. fitTitle/notFitTitle symmetric ('Voor wie dit werkt' / 'Voor wie dit niet werkt') — align met homepage section 14.
+- Mission consolidation: why_heading + why_text → mission.personal (single key, no sub-heading). Card rendert nu als quote-callout. Section intro = WHAT, card = WHY origin story.
+- Market timeline visual differentiation: vertical stacked cards + border-l-4 → horizontal lg:grid-cols-3 strip. Compact cards (text-xl) ipv text-2xl. Voorkomt visuele dupe met Build journey vertical-timeline erboven.
+- Daley portret HAS_PORTRAIT fs.existsSync pattern (mirror FounderSection): existsSync check + Image fill ring-2 als true, anders 'D' gradient placeholder. Auto-flip bij volgende build wanneer foto dropt.
+
+**Validatie**: NL/EN/ES alle 200, mobile e2e 30/30 (3 locales × 10 sections), 0 JS errors. Scarcity badge, horizontal market eras, single CTA-button alle gevalideerd op mobile.
+
 ---
 
 ## Resterende secties (volgende sessies)
@@ -520,6 +537,7 @@ Volgorde, agent niet vooruitlopen:
 - [x] **Wave 1 page 2: /pricing** ✅ (47b58a7 + da9fe04)
 - [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8 + 104a3db nav-discoverability)
 - [x] **Wave 1 page 4: /case-studies/skinclarity-club** ✅ (a7652c1)
+- [x] **Wave 1 page 5: /about** ✅ (21e2a59)
 - [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
 - [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
 - [ ] Wave 1 page 6: /how-it-works (5-stappen onboardingreis)
