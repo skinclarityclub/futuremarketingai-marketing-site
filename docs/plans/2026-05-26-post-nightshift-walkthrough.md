@@ -399,6 +399,64 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 ## Wave 1 — Marketing depth
 
+### /how-it-works ✅ VOLTOOID 2026-05-28
+
+**Commits**:
+- `7a45819` content(how-it-works) — timeline restructure + deliverable chips + loop cycle visual
+- `08d3b9d` feat(nav) — /how-it-works discovery: header nav-item + homepage ProcessTimeline link
+
+**Route gekozen**: D (MAJOR RESTRUCTURE) — A polish + C timeline + deliverable chips + animated loop visual
+
+**Diagnose huidige staat (v1)**:
+- Geen hero scarcity-anchor (alle Wave 1 pages hebben dit, /about pattern: `Founding open · 1/10 bezet` amber-mono)
+- Final CTA geen scarcity-eyebrow (homepage sectie 16 pattern niet doorgevoerd)
+- 5 stappen visueel UNIFORM glass-cards = AI-tell (zelfde issue als oude sectie 10 trust-grid)
+- Step 4 title 2 zinnen in 1 h3 ('Productie start. Elke output gaat via jouw goedkeuring') — leest druk
+- Loop indicator = single muted tile, geen visuele cyclus
+- Hero `pt-16` ipv `pt-24` (consistency met /about + andere pages)
+- '12 weken zie je het verschil' in loop_description botst met homepage sectie 7 = 4 weken onboarding scope
+- Geen inline hero CTA voor skim-readers
+
+**Wijzigingen `7a45819` (page upgrade)**:
+- **Hero**: pt-24 + scarcity-badge 'Founding open · 1/10 bezet' (constants interpolation) + inline `CTAButton href="/apply"`
+- **Timeline pattern**: 5 cards in vertical timeline met absolute-positioned connecting gradient line (`from-accent-system/40 via-border-primary to-accent-human/40`) + node-circles (`w-14 h-14 md:w-[72px] md:h-[72px]`) met ring-8 accent-glow
+- **Featured tiles**: step 2 'onboarding' (system-teal accent) + step 5 'improvement' (human-amber accent) — `border-accent-{color}/50 bg-accent-{color}/[0.04]`
+- **Time-stamps inline**: 'Stap 1 · Pre-onboarding', 'Stap 2 · Week 1 tot 4', 'Stap 3 · Week 4', 'Stap 4 · Vanaf week 5', 'Stap 5 · Doorlopend'
+- **3 deliverable-chips per stap** (15 totaal): brand-scan, goedkeurings-queue, wekelijkse-digest, etc. Mono-uppercase pill-style `rounded-full border bg-bg-deep/60`
+- **Step 4 title gesplitst**: 'Productie start met jouw goedkeuring' (was 2 zinnen)
+- **Nieuwe `ImprovementLoopCycle` component** (`src/components/how-it-works/ImprovementLoopCycle.tsx`):
+  - 4 stage-tiles (Productie → Goedkeuring → Geheugen → Verbetering) met `ArrowRight` connectors (verborgen na laatste tile voor cleaner visual)
+  - Sequential pulse-animation via inline `<style>` keyframes (4.8s cycle, 1.2s delay per tile) — server-component compatible
+  - Gradient-bg accent-system border + radial-blur top-center
+  - `RefreshCw` icon in eyebrow + cycle-footer 'Productie → Goedkeuring → Geheugen → Verbetering ↻'
+  - `prefers-reduced-motion` aware
+- **Final CTA**: scarcity-eyebrow `Founding open · {taken}/{total} bezet` vervangt 'Volgende stap'
+- **Loop description**: '12 weken' → 'na een paar maanden' (alignment met homepage sectie 7 4-weken scope)
+- i18n: 25 nieuwe keys per locale (NL/EN/ES synchroon) — hero.badge, hero.cta, 5x timeStamp, 15x deliverableN, loop_eyebrow, 4x loop_stageN, cta.eyebrow scarcity
+
+**Wijzigingen `08d3b9d` (discovery fix)**:
+- **Gemini research first** (3 parallel queries): Baymard 2025, NN Group, Linear/Stripe/Vercel/Anthropic/Acuity-AI/Bain/McKinsey benchmarks
+  - Bevinding: 'How it works' pages horen NIET footer-only voor high-touch B2B sales
+  - Hidden-in-dropdown cuts discoverability ~50%
+  - Premium B2B header optimum = 4-7 items (Miller's law), median = 5
+  - Direct top-level nav-item is conversion-optimal voor process-pages
+- **Header NAV_ITEMS**: 5e entry `howItWorks` tussen pricing en foundingMember
+  - i18n `nav.howItWorks` NL/EN/ES: 'Werkwijze' / 'How it works' / 'Cómo funciona'
+  - 7 items totaal — binnen Miller's-law upper bound
+- **Homepage ProcessTimeline (sectie 7) link**: ProcessTimelineProps krijgt `fullJourneyLink` prop, onder bestaande CTA-row een `mt-6` accent-link 'Bekijk de volledige 5-stappen onboardingreis →' naar /how-it-works
+  - i18n `home.processTimeline.fullJourneyLink` in NL/EN/ES
+- **Conversion-flow**: korte 4-weken homepage versie → volledige 5-stappen reis als progressive disclosure
+
+**Validatie**:
+- 3 Gemini research queries (premium-B2B IA + AI-marketing-agency placement + leaf-vs-dropdown UX)
+- NL/EN/ES alle 200 op /how-it-works + homepage + header
+- Mobile e2e 12/12 screenshots, 0 JS errors
+- Desktop v3 toont clean loop cycle (geen trailing arrow), featured-tile differentiation, deliverable-chips inline
+- Header nav screenshot toont 'Werkwijze' op 5e positie
+- Homepage ProcessTimeline screenshot toont accent-link onder green CTA-button
+
+**Open TODO**: ImprovementLoopCycle SVG-cycle als pure-SVG-loop met curved arrows kan later als visuele upgrade (huidige is row-based met arrows). 4-stage cycle was scope-keuze om pulse-animation simpel te houden.
+
 ### /memory ✅ VOLTOOID 2026-05-27
 
 **Commit**: `c4f91e5` SOTA upgrade — narrative reorder + scarcity CTA + drop tech jargon
@@ -538,7 +596,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8 + 104a3db nav-discoverability)
 - [x] **Wave 1 page 4: /case-studies/skinclarity-club** ✅ (a7652c1)
 - [x] **Wave 1 page 5: /about** ✅ (21e2a59 + b73bfe6 MAX_PARTNERS_PER_YEAR fix)
-- [ ] Wave 1 page 6: /how-it-works (POLISH — hero + 5-step onboardingreis + loop indicator + final CTA)
+- [x] **Wave 1 page 6: /how-it-works** ✅ (7a45819 + 08d3b9d nav-discoverability)
+- [x] **WAVE 1 VOLLEDIG VOLTOOID** 🎉 (6/6 pages)
 - [ ] Wave 2 — Skills (SkillPageTemplate + /skills index + 12 detail pages)
 - [ ] Wave 3 — Conversion (/contact, /apply, /assessment, /assessment/result)
 - [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
@@ -559,21 +618,19 @@ Volgorde, agent niet vooruitlopen:
 | 3 | `/founding-member` | 464c0f8 + 104a3db | C — SpotScarcityGrid SKC-emblem + section reorder + nav-discoverability fix (header nav + tier-card link) |
 | 4 | `/case-studies/skinclarity-club` | a7652c1 | C — fact-fixes + operator trim + architecture body split + gallery iconography per merk |
 | 5 | `/about` | 21e2a59 + b73bfe6 | D — narrative restructure + Daley HAS_PORTRAIT + MAX_PARTNERS_PER_YEAR 20→10 |
+| 6 | `/how-it-works` | 7a45819 + 08d3b9d | D — timeline + deliverable chips + ImprovementLoopCycle + header nav-discovery + homepage link |
 
-**Branch state**: main synced met origin, HEAD = `b73bfe6` (of latest). Uncommitted: alleen screenshot-PNGs + .mobile-test/ folder + playwright-report/index.html (allemaal orphan, niet committen).
+**WAVE 1 VOLLEDIG VOLTOOID** 🎉 (6/6 pages)
 
-### Volgende: Wave 1 page 6 = `/how-it-works` (POLISH)
+**Branch state**: main synced met origin, HEAD = `08d3b9d` (of latest). Uncommitted: alleen screenshot-PNGs + .mobile-test/ folder + playwright-report/index.html (allemaal orphan, niet committen).
 
-**Path**: `src/app/[locale]/(marketing)/how-it-works/page.tsx`
-**i18n namespace**: `how-it-works`
-**Structuur**: Hero + 5-step list (01-05) + loop indicator + final CTA
+### Volgende: Wave 2 — Skills (SkillPageTemplate + /skills index + 12 detail pages)
 
-**Red flags uit plan** (`C:\Users\daley\.claude\plans\yes-we-gaan-door-vast-kahn.md`):
-- Geen ScrollProgressRail (consistent met /case-studies pattern zou kunnen toegevoegd worden)
-- Loop-indicator alleen text, geen visual cycle
-- 5-step lijst — check of er een visuele upgrade nodig is (numbered-circles, timeline, accordion?)
+**Path**: `src/components/skills/SkillPageTemplate.tsx` + `src/app/[locale]/(skills)/skills/{slug}/page.tsx`
+**12 skills**: social-media, voice-agent, lead-qualifier, email-management, ad-creator, reporting, research, blog-factory, seo-geo, clyde, manychat, reel-builder
+**Skills-index**: `src/app/[locale]/(skills)/skills/page.tsx`
 
-**Bestaande copy aanwezig in `messages/nl.json` onder `how-it-works.process.steps.*`** (apply / onboarding / configure / production / improvement) — copy is al sterk, focus op visual polish.
+**Aanpak**: één template-edit beïnvloedt alle 12 detail-pages (zoals Fase 2 nightshift al deed). Plus skills-index aparte bento layout. Tijd-investering geschat: 2-3 sessies.
 
 ### Resume-prompt voor nieuwe sessie
 
