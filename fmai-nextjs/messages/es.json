@@ -941,6 +941,7 @@
       "rateDisclosure": "Tarifa por espacio de trabajo. Recalibrada cada 6 meses según el consumo real de créditos. Founding (€997 de por vida) queda exenta.",
       "perWorkspaceLabel": "por espacio",
       "fromLabel": "desde",
+      "foundingDetailLink": "Más sobre Founding",
       "totalLabel": "Total para {workspaces} espacios",
       "workspacesPickerLabel": "Número de espacios de trabajo",
       "workspaceRange": "{min}-{max} espacios",
@@ -3387,6 +3388,7 @@
       "memory": "Memoria",
       "caseStudies": "Casos",
       "pricing": "Precios",
+      "foundingMember": "Founding",
       "about": "Sobre nosotros"
     },
     "cta": {

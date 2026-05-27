@@ -941,6 +941,7 @@
       "rateDisclosure": "Tarief per werkruimte. Herijking elk halfjaar op basis van werkelijk credit-verbruik. Founding (€997 levenslang) blijft uitgezonderd.",
       "perWorkspaceLabel": "per werkruimte",
       "fromLabel": "vanaf",
+      "foundingDetailLink": "Lees meer over Founding",
       "totalLabel": "Totaal voor {workspaces} werkruimtes",
       "workspacesPickerLabel": "Aantal werkruimtes",
       "workspaceRange": "{min}-{max} werkruimtes",
@@ -3387,6 +3388,7 @@
       "memory": "Geheugen",
       "caseStudies": "Cases",
       "pricing": "Prijzen",
+      "foundingMember": "Founding",
       "about": "Over"
     },
     "cta": {

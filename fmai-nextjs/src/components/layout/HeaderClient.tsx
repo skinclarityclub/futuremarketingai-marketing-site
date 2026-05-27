@@ -83,6 +83,12 @@ const NAV_ITEMS = [
     matchPaths: ['/case-studies'],
   },
   { key: 'pricing', href: '/pricing' as const, hasDropdown: false, matchPaths: ['/pricing'] },
+  {
+    key: 'foundingMember',
+    href: '/founding-member' as const,
+    hasDropdown: false,
+    matchPaths: ['/founding-member'],
+  },
   { key: 'about', href: '/about' as const, hasDropdown: false, matchPaths: ['/about'] },
 ] as const
 

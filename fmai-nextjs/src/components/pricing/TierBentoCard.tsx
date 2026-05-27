@@ -6,6 +6,7 @@ import { useMemo } from 'react'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
 import { CountUp } from '@/components/motion/CountUp'
+import { Link } from '@/i18n/navigation'
 import {
   TIER_PRICING,
   priceForTier,
@@ -226,6 +227,14 @@ export function TierBentoCard({
         >
           {t('applyCta')}
         </CTAButton>
+        {tierLabel === 'founding' && (
+          <Link
+            href="/founding-member"
+            className="mt-3 inline-flex items-center justify-center text-xs text-text-muted hover:text-accent-human transition-colors duration-200 font-mono uppercase tracking-[0.14em]"
+          >
+            {t('tiers.foundingDetailLink')}
+          </Link>
+        )}
       </SpotlightCard>
     </motion.div>
   )
