@@ -1889,11 +1889,12 @@
     },
     "hero": {
       "badge": "{taken} de {total} plazas Founding ocupadas",
-      "title": "Conviértete en Founding partner. Una vez, de por vida.",
-      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, de por vida, para espacios de trabajo ilimitados. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Las 12 habilidades, topes Pro y línea directa de Slack con Daley."
+      "title": "Conviértete en Founding partner. Una elección, fijo de por vida.",
+      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, para espacios de trabajo ilimitados. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Las 12 habilidades, topes Pro y línea directa de Slack con Daley.",
+      "cta": "Reserva tu plaza"
     },
     "pricing": {
-      "heading": "Tu inversión",
+      "heading": "El precio Founding",
       "currency": "€",
       "price": "997",
       "period": "/mes, de por vida",

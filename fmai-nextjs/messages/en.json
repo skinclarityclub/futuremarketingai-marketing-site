@@ -1889,11 +1889,12 @@
     },
     "hero": {
       "badge": "{taken} of {total} Founding spots taken",
-      "title": "Become a Founding partner. Once, for life.",
-      "description": "Ten total spots for agencies that commit from launch. €997 per month, for life, for unlimited workspaces. The other tiers scale linearly per workspace (€499 / €399 / €299). All 12 skills, Pro-level caps and a direct Slack line with Daley."
+      "title": "Become a Founding partner. One choice, locked for life.",
+      "description": "Ten total spots for agencies that commit from launch. €997 per month, locked for life, for unlimited workspaces. The other tiers scale linearly per workspace (€499 / €399 / €299). All 12 skills, Pro-level caps and a direct Slack line with Daley.",
+      "cta": "Reserve your seat"
     },
     "pricing": {
-      "heading": "Your investment",
+      "heading": "The Founding price",
       "currency": "€",
       "price": "997",
       "period": "/mo, for life",

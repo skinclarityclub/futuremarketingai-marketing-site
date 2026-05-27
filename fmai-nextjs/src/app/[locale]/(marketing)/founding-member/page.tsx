@@ -72,6 +72,7 @@ export default async function FoundingMemberPage({
       position: 1,
       name: t('scarcity.takenSpots.skc.name'),
       since: t('scarcity.takenSpots.skc.since'),
+      emblem: '/brand/skc-emblem.png',
     },
   ]
 
@@ -100,8 +101,8 @@ export default async function FoundingMemberPage({
       />
       <Breadcrumbs path="/founding-member" locale={locale} />
 
-      {/* Hero */}
-      <section aria-labelledby="hero" className="relative pt-20 pb-16 px-6 lg:px-12">
+      {/* Hero — counter, title, inline CTA */}
+      <section aria-labelledby="hero" className="relative pt-24 pb-16 px-6 lg:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <div className="mb-6">
             <FoundingCounter />
@@ -112,9 +113,12 @@ export default async function FoundingMemberPage({
           >
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-8">
             {t('hero.description')}
           </p>
+          <CTAButton href="/apply" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+            {t('hero.cta')}
+          </CTAButton>
         </div>
       </section>
 
@@ -256,8 +260,50 @@ export default async function FoundingMemberPage({
         </div>
       </section>
 
-      {/* Quick apply teaser */}
-      <section aria-labelledby="quick-apply" className="py-16 px-6 lg:px-12">
+      {/* SKC proof — moved up: trust-anchor before objection-handling */}
+      <section aria-labelledby="proof" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <EyebrowLabel className="mb-3 inline-block">
+              {t('eyebrows.proof')}
+            </EyebrowLabel>
+            <h2 id="proof" className="text-2xl md:text-3xl font-bold font-display text-text-primary mb-4">
+              {t('proof.heading')}
+            </h2>
+            <p className="text-text-secondary leading-relaxed mt-4 mb-6">
+              {t('proof.body')}
+            </p>
+            <CTAButton href="/case-studies/skinclarity-club" variant="secondary">
+              {t('proof.caseButton')}
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </CTAButton>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ — objection-handling */}
+      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <EyebrowLabel className="mb-3 inline-block">
+              {t('eyebrows.faq')}
+            </EyebrowLabel>
+            <h2 id="faq" className="text-2xl md:text-3xl font-bold font-display text-text-primary">
+              {t('faq.heading')}
+            </h2>
+          </div>
+          <FaqAccordion
+            items={FAQ_KEYS.map((key) => ({
+              key,
+              question: t(`faq.items.${key}.question`),
+              answer: t(`faq.items.${key}.answer`),
+            }))}
+          />
+        </div>
+      </section>
+
+      {/* Quick apply teaser — moved down: friction-reducer right at close */}
+      <section aria-labelledby="quick-apply" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-6">
@@ -288,49 +334,7 @@ export default async function FoundingMemberPage({
         </div>
       </section>
 
-      {/* FAQ */}
-      <section aria-labelledby="faq" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <EyebrowLabel className="mb-3 inline-block">
-              {t('eyebrows.faq')}
-            </EyebrowLabel>
-            <h2 id="faq" className="text-2xl md:text-3xl font-bold font-display text-text-primary">
-              {t('faq.heading')}
-            </h2>
-          </div>
-          <FaqAccordion
-            items={FAQ_KEYS.map((key) => ({
-              key,
-              question: t(`faq.items.${key}.question`),
-              answer: t(`faq.items.${key}.answer`),
-            }))}
-          />
-        </div>
-      </section>
-
-      {/* SKC proof */}
-      <section aria-labelledby="proof" className="py-16 px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <ScrollReveal>
-            <EyebrowLabel className="mb-3 inline-block">
-              {t('eyebrows.proof')}
-            </EyebrowLabel>
-            <h2 id="proof" className="text-2xl md:text-3xl font-bold font-display text-text-primary mb-4">
-              {t('proof.heading')}
-            </h2>
-            <p className="text-text-secondary leading-relaxed mt-4 mb-6">
-              {t('proof.body')}
-            </p>
-            <CTAButton href="/case-studies/skinclarity-club" variant="secondary">
-              {t('proof.caseButton')}
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </CTAButton>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Final CTA */}
       <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">

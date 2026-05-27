@@ -1889,11 +1889,12 @@
     },
     "hero": {
       "badge": "{taken} van {total} Founding plekken bezet",
-      "title": "Word Founding partner. Eén keer, levenslang.",
-      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang, voor onbeperkt aantal werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley."
+      "title": "Word Founding partner. Eén keuze, levenslang vast.",
+      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, voor onbeperkt aantal werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley.",
+      "cta": "Reserveer je plek"
     },
     "pricing": {
-      "heading": "Jouw investering",
+      "heading": "De Founding-prijs",
       "currency": "€",
       "price": "997",
       "period": "/mnd, levenslang",

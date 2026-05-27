@@ -1,7 +1,7 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, type Variants } from 'motion/react'
-import { Check } from 'lucide-react'
 import {
   EASE_OUT,
   STAGGER_FAST,
@@ -15,6 +15,8 @@ export interface TakenSpot {
   name: string
   /** Secondary line in tooltip (e.g. "Founding partner sinds Q4 2025"). */
   since: string
+  /** Optional brand emblem path (e.g. "/brand/skc-emblem.png"). */
+  emblem?: string
 }
 
 interface SpotScarcityGridProps {
@@ -43,16 +45,12 @@ const spotVariants: Variants = {
 }
 
 /**
- * SpotScarcityGrid — Fase 6 signature experiment for /founding-member.
+ * SpotScarcityGrid — /founding-member signature experiment.
  *
- * Renders the 10 founding plekken as a 5x2 grid of circular buttons. Filled
- * spots show a check + glow + claimant name on hover. Empty spots have a
- * gentle pulse halo (disabled under reduced-motion via global MotionConfig)
- * and reveal a "claim this" tooltip on hover/focus.
- *
- * The tooltip uses pure CSS visibility tied to hover/focus state — no JS
- * popover lib, zero extra bundle. Keyboard: each spot is a focusable
- * button so the tooltip appears on Tab focus too.
+ * 5x2 grid of rounded-2xl tiles representing the 10 founding plekken.
+ * Filled tiles display the partner's brand emblem on a brand-accent backdrop;
+ * open tiles show a prominent position number with a pulse halo. Tooltip on
+ * hover/focus reveals partner-name + since-line (or claim-this prompt).
  */
 export function SpotScarcityGrid({
   total,
@@ -75,7 +73,7 @@ export function SpotScarcityGrid({
     <motion.ul
       aria-label={ariaLabel}
       role="list"
-      className="grid grid-cols-5 gap-4 sm:gap-5 md:gap-6 max-w-2xl mx-auto"
+      className="grid grid-cols-5 gap-3 sm:gap-4 md:gap-5 max-w-2xl mx-auto"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -85,7 +83,7 @@ export function SpotScarcityGrid({
         <motion.li
           key={position}
           variants={spotVariants}
-          className="relative flex justify-center group"
+          className="relative group"
         >
           <button
             type="button"
@@ -97,20 +95,33 @@ export function SpotScarcityGrid({
             aria-describedby={`spot-${position}-tip`}
             className={
               taken
-                ? 'spot spot--taken relative h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-accent-human text-bg-deep ring-2 ring-accent-human/40 ring-offset-2 ring-offset-bg-deep transition-transform duration-300 ease-out hover:scale-110 focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-human cursor-default flex items-center justify-center font-semibold text-sm'
-                : 'spot spot--open relative h-14 w-14 sm:h-16 sm:w-16 rounded-full border-2 border-border-primary bg-bg-surface/40 text-text-muted transition-all duration-300 ease-out hover:border-accent-system/60 hover:bg-accent-system/5 hover:text-accent-system hover:scale-110 focus-visible:scale-110 focus-visible:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system flex items-center justify-center font-mono text-xs'
+                ? 'relative aspect-square w-full rounded-2xl bg-[#127059] ring-2 ring-[#127059]/40 ring-offset-2 ring-offset-bg-deep transition-transform duration-300 ease-out hover:scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-human cursor-default flex items-center justify-center overflow-hidden'
+                : 'relative aspect-square w-full rounded-2xl border-2 border-border-primary bg-bg-surface/40 text-text-muted transition-all duration-300 ease-out hover:border-accent-system/60 hover:bg-accent-system/5 hover:text-accent-system hover:scale-105 focus-visible:scale-105 focus-visible:border-accent-system focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system flex items-center justify-center font-mono text-sm sm:text-base font-semibold'
             }
             tabIndex={0}
           >
             {taken ? (
-              <Check className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
+              taken.emblem ? (
+                <Image
+                  src={taken.emblem}
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="h-3/5 w-3/5 object-contain"
+                  aria-hidden
+                />
+              ) : (
+                <span className="text-white font-bold text-lg" aria-hidden>
+                  {taken.name.charAt(0)}
+                </span>
+              )
             ) : (
               <span aria-hidden>{String(position).padStart(2, '0')}</span>
             )}
             {!taken && (
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-accent-system/40 opacity-0 animate-spot-pulse"
+                className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-accent-system/40 opacity-0 animate-spot-pulse"
               />
             )}
           </button>
