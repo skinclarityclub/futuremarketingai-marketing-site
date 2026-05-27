@@ -437,9 +437,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <LazySection minHeight="400px">
         <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
           <div className="max-w-3xl mx-auto">
-            <SectionHeading id="faq" className="text-center mb-10">
-              {t('faq.title')}
-            </SectionHeading>
+            <div className="text-center mb-10">
+              <SectionHeading id="faq">{t('faq.title')}</SectionHeading>
+              <p className="mt-4 text-base lg:text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto">
+                {t('faq.subtitle')}
+              </p>
+            </div>
             <ScrollReveal>
               <FaqAccordion
                 items={FAQ_KEYS.map((key) => ({

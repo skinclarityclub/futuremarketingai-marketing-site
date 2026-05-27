@@ -382,7 +382,8 @@
       "foundingLabel": "See Founding tier"
     },
     "faq": {
-      "title": "Frequently asked questions",
+      "title": "Questions that come up in every first conversation",
+      "subtitle": "Five answers so our 30-minute call can focus on your situation.",
       "items": {
         "q1": {
           "question": "How is Clyde different from ChatGPT or Jasper?",

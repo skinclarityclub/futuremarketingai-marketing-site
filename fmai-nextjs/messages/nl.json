@@ -382,7 +382,8 @@
       "foundingLabel": "Bekijk Founding tier"
     },
     "faq": {
-      "title": "Veelgestelde vragen",
+      "title": "Vragen die in elk eerste gesprek terugkomen",
+      "subtitle": "Vijf antwoorden zodat ons 30-minuten gesprek over jouw situatie kan gaan.",
       "items": {
         "q1": {
           "question": "Hoe verschilt Clyde van ChatGPT of Jasper?",
