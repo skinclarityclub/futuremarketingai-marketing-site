@@ -2041,9 +2041,9 @@
       "clydeLabel": "Clyde answers",
       "activeLabel": "Active",
       "hot": {
-        "name": "Today",
+        "name": "Live now",
         "window": "Last 24 hours",
-        "description": "What Clyde is working on right now: the ongoing conversation, today's campaign, content in the approval queue. Instantly at hand.",
+        "description": "The ongoing conversation, today's campaign, content waiting for approval. Instantly at hand.",
         "prompt": "Which posts did I approve for brand Skin today?",
         "clydeAnswer": "Three posts: morning post on the cleanser routine, midday post with a UGC review, end-of-day carousel about the ingredients. The carousel is scheduled for 19:00."
       },

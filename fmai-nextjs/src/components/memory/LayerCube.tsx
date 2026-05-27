@@ -118,7 +118,7 @@ export function LayerCube({
               const meta = META[key]
               const isActive = i === active
               const baseZ = (ORDER.length - 1 - i) * -60
-              const activeShift = isActive ? 100 : 0
+              const activeShift = isActive ? 220 : 0
               const fade = isActive ? 1 : 0.08
               return (
                 <motion.div
@@ -163,7 +163,7 @@ export function LayerCube({
                       </motion.span>
                     )}
                   </div>
-                  <h3 className="mt-4 text-2xl font-display font-bold text-text-primary">
+                  <h3 className={`mt-5 text-3xl font-display font-bold ${meta.accent}`}>
                     {layers[key].name}
                   </h3>
                   <p className="mt-3 text-sm text-text-primary/90 leading-relaxed">

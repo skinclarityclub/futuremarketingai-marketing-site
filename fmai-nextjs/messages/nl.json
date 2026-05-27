@@ -2041,9 +2041,9 @@
       "clydeLabel": "Clyde antwoordt",
       "activeLabel": "Actief",
       "hot": {
-        "name": "Vandaag",
+        "name": "Nu live",
         "window": "Laatste 24 uur",
-        "description": "Waar Clyde nu mee bezig is: het lopende gesprek, de campagne van vandaag, content die in de goedkeuringslijst staat. Direct paraat.",
+        "description": "Het lopende gesprek, de campagne van vandaag, content die wacht op goedkeuring. Direct paraat.",
         "prompt": "Welke posts heb ik vandaag goedgekeurd voor merk Skin?",
         "clydeAnswer": "Drie posts: ochtendpost over de cleanser-routine, middagpost met UGC-review, einde-dag carrousel over de ingrediënten. De carrousel staat ingepland voor 19:00."
       },

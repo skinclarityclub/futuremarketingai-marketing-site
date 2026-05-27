@@ -2041,9 +2041,9 @@
       "clydeLabel": "Clyde responde",
       "activeLabel": "Activo",
       "hot": {
-        "name": "Hoy",
+        "name": "En vivo",
         "window": "Últimas 24 horas",
-        "description": "En lo que Clyde está trabajando ahora: la conversación en curso, la campaña del día, el contenido pendiente de aprobación. Siempre a mano.",
+        "description": "La conversación en curso, la campaña del día, el contenido pendiente de aprobación. Siempre a mano.",
         "prompt": "¿Qué posts aprobé hoy para la marca Skin?",
         "clydeAnswer": "Tres posts: post de la mañana sobre la rutina de limpieza, post del mediodía con una reseña UGC, carrusel de fin del día sobre los ingredientes. El carrusel está programado para las 19:00."
       },
