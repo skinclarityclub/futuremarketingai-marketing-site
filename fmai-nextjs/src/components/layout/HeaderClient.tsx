@@ -221,13 +221,13 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
       }`}
     >
       <nav
-        className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between"
+        className="max-w-[1440px] mx-auto px-6 lg:px-12 h-16 grid grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-8"
         aria-label="Main navigation"
       >
-        {/* Logo (unchanged per plan) */}
+        {/* Logo — edge-flush left (grid col 1) */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2.5 group justify-self-start"
           aria-label="FutureMarketingAI home"
         >
           <LogoSynapse size={30} />
@@ -238,8 +238,8 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop Navigation — centered (grid col 2) */}
+        <div className="hidden md:flex items-center gap-1 justify-self-center">
           {NAV_ITEMS.map((item) => {
             const active = isActiveRoute(item.matchPaths)
             return (
@@ -488,8 +488,8 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
           })}
         </div>
 
-        {/* Right side: Login + CTA + Mobile Menu */}
-        <div className="flex items-center gap-3">
+        {/* Right side: Login + CTA + Mobile Menu — edge-flush right (grid col 3) */}
+        <div className="flex items-center gap-3 justify-self-end">
           <a
             href="https://app.future-marketing.ai/login"
             className="hidden md:flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors px-3 py-1.5 rounded-lg"
