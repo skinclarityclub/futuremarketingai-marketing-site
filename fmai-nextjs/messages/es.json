@@ -378,7 +378,8 @@
       "eyebrow": "Founding abierto · {taken}/{total} ocupadas",
       "title": "Diez plazas abiertas. Después founding cierra.",
       "subtitle": "€997 al mes, tarifa vitalicia. Una llamada de 30 minutos nos dice si encaja.",
-      "button": "Agenda una llamada"
+      "button": "Agenda una llamada",
+      "foundingLabel": "Ver tier Founding"
     },
     "faq": {
       "title": "Preguntas que aparecen en cada primera conversación",

@@ -378,7 +378,8 @@
       "eyebrow": "Founding open · {taken}/{total} taken",
       "title": "Ten seats open. Then founding closes.",
       "subtitle": "€997 per month, locked for life. A 30-minute call tells us if it fits.",
-      "button": "Book a call"
+      "button": "Book a call",
+      "foundingLabel": "View Founding tier"
     },
     "faq": {
       "title": "Questions that come up in every first conversation",
