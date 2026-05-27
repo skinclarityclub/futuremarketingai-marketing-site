@@ -324,16 +324,19 @@
     },
     "pricingTeaser": {
       "eyebrow": "Precios",
-      "title": "Precios transparentes, sin créditos ocultos",
-      "subtitle": "Founding es una entrada vitalicia única. Los demás niveles escalan linealmente por workspace. Desglose completo con caps en la página de precios.",
+      "title": "Tarifa founding bloqueada de por vida. Por workspace después.",
+      "subtitle": "Todos los que entran ahora se convierten en socios founding: €997 al mes, con una tarifa que nunca se recalibra. Los demás niveles se recalibran cada seis meses, founding sigue siendo €997. Abajo: los niveles que se activan cuando las diez plazas founding estén ocupadas.",
       "perWorkspace": "por workspace",
       "perMonth": "por mes",
+      "futurePhaseEyebrow": "Tras la fase founding",
+      "futureAvailability": "Disponible tras la fase founding",
+      "foundingCtaLabel": "Únete como socio founding",
       "spotsTaken": "{taken} de {total} plazas ocupadas",
       "tiers": {
         "founding": {
           "label": "Founding",
           "tagline": "Precio vitalicio fijo",
-          "desc": "Tarifa founding única para las primeras 10 agencias. Acceso completo, sin recalibrar."
+          "desc": "Para las primeras 10 agencias. Acceso completo a las 12 habilidades, workspaces ilimitados, acceso al Slack del founder y una tarifa mensual de €997 que nunca se recalibra."
         },
         "growth": {
           "label": "Growth",
@@ -351,7 +354,7 @@
           "desc": "Para grandes agencias. SLA a medida, capacidad dedicada y caps ampliables."
         }
       },
-      "ctaLink": "Página de precios completa"
+      "ctaLink": "Agenda una llamada"
     },
     "pillars": {
       "title": "Construido para agencias europeas",

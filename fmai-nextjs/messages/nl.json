@@ -324,16 +324,19 @@
     },
     "pricingTeaser": {
       "eyebrow": "Prijzen",
-      "title": "Transparante prijzen, geen verborgen credits",
-      "subtitle": "Founding is een eenmalige levenslange instap. De andere tiers schalen lineair per werkruimte. Volledige uitsplitsing inclusief caps op de prijspagina.",
+      "title": "Founding-tarief levenslang gelockt. Daarna per werkruimte.",
+      "subtitle": "Iedereen die nu instapt wordt founding partner: €997 per maand, met een tarief dat nooit wordt herijkt. De andere tiers recalibreren elk halfjaar, founding blijft €997. Hieronder de tiers die actief worden zodra de tien founding-plekken bezet zijn.",
       "perWorkspace": "per werkruimte",
       "perMonth": "per maand",
+      "futurePhaseEyebrow": "Na de founding-fase",
+      "futureAvailability": "Beschikbaar na founding-fase",
+      "foundingCtaLabel": "Word founding partner",
       "spotsTaken": "{taken} van {total} plekken bezet",
       "tiers": {
         "founding": {
           "label": "Founding",
           "tagline": "Levenslang vast",
-          "desc": "Eenmalige founding-tarief voor de eerste 10 bureaus. Volledige toegang, geen herijking."
+          "desc": "Voor de eerste 10 bureaus. Volledige toegang tot alle 12 vaardigheden, onbeperkt aantal werkruimtes, Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
         },
         "growth": {
           "label": "Growth",
@@ -351,7 +354,7 @@
           "desc": "Voor grote bureaus. Aangepaste SLA, dedicated capaciteit en uitbreidbare caps."
         }
       },
-      "ctaLink": "Volledige prijspagina"
+      "ctaLink": "Plan een gesprek"
     },
     "pillars": {
       "title": "Gebouwd voor Europese bureaus",

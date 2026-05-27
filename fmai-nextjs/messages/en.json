@@ -324,16 +324,19 @@
     },
     "pricingTeaser": {
       "eyebrow": "Pricing",
-      "title": "Transparent pricing, no hidden credits",
-      "subtitle": "Founding is a one-time lifetime entry. The other tiers scale linearly per workspace. Full breakdown including caps on the pricing page.",
+      "title": "Founding rate locked for life. Per-workspace after that.",
+      "subtitle": "Everyone joining today becomes a founding partner: €997 per month, with a rate that never recalibrates. The other tiers recalibrate every six months, founding stays €997. Below: the tiers that activate once all ten founding seats are taken.",
       "perWorkspace": "per workspace",
       "perMonth": "per month",
+      "futurePhaseEyebrow": "After the founding phase",
+      "futureAvailability": "Available after founding phase",
+      "foundingCtaLabel": "Become a founding partner",
       "spotsTaken": "{taken} of {total} seats taken",
       "tiers": {
         "founding": {
           "label": "Founding",
           "tagline": "Locked for life",
-          "desc": "One-time founding rate for the first 10 agencies. Full access, no recalibration."
+          "desc": "For the first 10 agencies. Full access to all 12 skills, unlimited workspaces, Founder Slack access and a €997 monthly rate that never recalibrates."
         },
         "growth": {
           "label": "Growth",
@@ -351,7 +354,7 @@
           "desc": "For large agencies. Custom SLA, dedicated capacity and expandable caps."
         }
       },
-      "ctaLink": "Full pricing page"
+      "ctaLink": "Book a call"
     },
     "pillars": {
       "title": "Built for European agencies",

@@ -310,6 +310,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             spotsTaken={t('pricingTeaser.spotsTaken', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
             perMonth={t('pricingTeaser.perMonth')}
             perWorkspace={t('pricingTeaser.perWorkspace')}
+            futurePhaseEyebrow={t('pricingTeaser.futurePhaseEyebrow')}
+            futureAvailability={t('pricingTeaser.futureAvailability')}
+            foundingCtaLabel={t('pricingTeaser.foundingCtaLabel')}
             tiers={[
               { key: 'founding',     price: formatEur(TIER_PRICING.FOUNDING_MEMBER.pricingModel === 'fixed' ? TIER_PRICING.FOUNDING_MEMBER.price : 0, locale),                       unit: 'perMonth',     highlighted: true  },
               { key: 'growth',       price: formatEur(TIER_PRICING.GROWTH.pricingModel === 'workspace' ? TIER_PRICING.GROWTH.pricePerWorkspace : 0, locale),                          unit: 'perWorkspace', highlighted: false },
