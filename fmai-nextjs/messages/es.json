@@ -11,7 +11,7 @@
   "home": {
     "meta": {
       "title": "Clyde, el Empleado AI de Marketing | FutureMarketingAI",
-      "description": "Clyde es el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máx 20 socios por año."
+      "description": "Clyde es el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máx 10 socios por año."
     },
     "hero": {
       "badge": "{taken} de {total} plazas founding ocupadas",
@@ -2182,7 +2182,7 @@
   "apply": {
     "meta": {
       "title": "Solicitar. Agenda una llamada con Daley | FutureMarketingAI",
-      "description": "Solicita una conversación sobre FutureMarketingAI. Alianza con Clyde para agencias con 5+ marcas. Máx 20 plazas por año."
+      "description": "Solicita una conversación sobre FutureMarketingAI. Alianza con Clyde para agencias con 5+ marcas. Máx 10 plazas por año."
     },
     "hero": {
       "eyebrow": "Solicitud",

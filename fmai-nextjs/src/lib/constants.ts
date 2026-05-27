@@ -9,7 +9,7 @@
 
 export const FOUNDING_SPOTS_TAKEN = 1
 export const FOUNDING_SPOTS_TOTAL = 10
-export const MAX_PARTNERS_PER_YEAR = 20
+export const MAX_PARTNERS_PER_YEAR = 10
 
 // ISO 8601 date strings. Update FOUNDING_LAST_UPDATED whenever a founding
 // spot is taken. FOUNDING_COHORT_START is fixed by the partnership program.
