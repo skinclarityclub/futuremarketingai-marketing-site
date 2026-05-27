@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion, AnimatePresence } from 'motion/react'
 import { Brain, RotateCcw, User } from 'lucide-react'
 import { EASE_OUT } from '@/lib/motion/easings'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 
 type Turn = {
   user: string
@@ -77,9 +78,7 @@ export function MemoryComparison(props: MemoryComparisonProps) {
   return (
     <div ref={sectionRef} className="relative">
       <div className="mb-10 max-w-3xl mx-auto text-center">
-        <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-system">
-          {eyebrow}
-        </p>
+        <EyebrowLabel className="inline-block">{eyebrow}</EyebrowLabel>
         <h3 className="mt-3 text-3xl md:text-4xl font-display font-bold text-text-primary">
           {title}
         </h3>

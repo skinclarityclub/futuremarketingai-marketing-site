@@ -2030,54 +2030,53 @@
       "eyebrow": "Geheugen per merk",
       "headlineMain": "Clyde onthoudt alles.",
       "headlineAccent": "Per merk, voor altijd.",
-      "subtitle": "Dit is het verschil tussen een AI-tool en een AI Marketing Medewerker: geheugen. Clyde onthoudt je merkstem, doelgroep, doelen en wat eerder werkte. Elke week kent hij jouw merken beter."
+      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een AI Marketing Medewerker: geheugen. Clyde onthoudt je merkstem, doelgroep, doelen en wat eerder werkte. Elke week kent hij jouw merken beter."
     },
     "layers": {
+      "eyebrow": "Architectuur",
       "title": "Zo onthoudt Clyde",
       "subtitle": "Net als een goede medewerker heeft Clyde vier soorten geheugen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
       "scrollLabel": "Scroll door de lagen",
       "promptLabel": "Vraag aan Clyde",
       "clydeLabel": "Clyde antwoordt",
-      "codeLabel": "Wat er in het geheugen gebeurt",
+      "activeLabel": "Actief",
       "hot": {
         "name": "Vandaag",
         "window": "Laatste 24 uur",
         "description": "Waar Clyde nu mee bezig is: het lopende gesprek, de campagne van vandaag, content die in de goedkeuringslijst staat. Direct paraat.",
         "prompt": "Welke posts heb ik vandaag goedgekeurd voor merk Skin?",
-        "clydeAnswer": "Drie posts: ochtendpost over de cleanser-routine, middagpost met UGC-review, einde-dag carrousel over de ingrediënten. De carrousel staat ingepland voor 19:00.",
-        "codeLine": "since: '24h', brand: 'skin', status: 'approved'"
+        "clydeAnswer": "Drie posts: ochtendpost over de cleanser-routine, middagpost met UGC-review, einde-dag carrousel over de ingrediënten. De carrousel staat ingepland voor 19:00."
       },
       "warm": {
         "name": "Deze maand",
         "window": "Laatste 30 dagen",
         "description": "Recent goedgekeurde posts, KPI-rapporten en feedback. Zo kan Clyde vergelijken wat deze week beter werkte dan vorige week.",
         "prompt": "Wat presteerde deze maand het best bij merk Skin?",
-        "clydeAnswer": "Carrousels met UGC-citaten: gemiddeld 2,4x meer engagement dan losse productposts. Reels onder 15 seconden converteerden bovengemiddeld. Statische posts na 21:00 verloren reach.",
-        "codeLine": "range: '30d', brand: 'skin', metric: 'engagement_rate'"
+        "clydeAnswer": "Carrousels met UGC-citaten: gemiddeld 2,4x meer engagement dan losse productposts. Reels onder 15 seconden converteerden bovengemiddeld. Statische posts na 21:00 verloren reach."
       },
       "cold": {
         "name": "Archief",
         "window": "Al het oudere materiaal",
         "description": "Het volledige archief: merkrichtlijnen, oude campagnes, eerdere rapporten. Doorzoekbaar op betekenis, niet alleen op trefwoord.",
         "prompt": "Wat schreven we vorig najaar over droge winterhuid?",
-        "clydeAnswer": "Drie carrousels in oktober en november. De best presterende opende met 'eerst herstellen, dan hydrateren'. Combineerde met productroute, gedeeld 312 keer en bewaard door 1.804 volgers.",
-        "codeLine": "search: 'winterhuid', brand: 'skin', semantic: true"
+        "clydeAnswer": "Drie carrousels in oktober en november. De best presterende opende met 'eerst herstellen, dan hydrateren'. Combineerde met productroute, gedeeld 312 keer en bewaard door 1.804 volgers."
       },
       "context": {
         "name": "Wie het merk ís",
         "window": "Permanente kennis",
         "description": "De kern die altijd meegaat: merkstem, doelgroep-persona, KPI-doelen, wat wél en niet mag. Past zich alleen aan als je dat expliciet vraagt.",
         "prompt": "Schrijf een caption voor de nieuwe nachtcrème.",
-        "clydeAnswer": "Toon: warm, direct, geen jij-met-hoofdletter. Doelgroep: vrouwen 28-44 die rituelen waarderen. Geen claims, wel resultaten in concrete weken. Caption opent met de avondroutine, sluit met een vraag in plaats van een CTA.",
-        "codeLine": "brand: 'skin', persona: 'core', voice: 'core_v3'"
+        "clydeAnswer": "Toon: warm, direct, geen jij-met-hoofdletter. Doelgroep: vrouwen 28-44 die rituelen waarderen. Geen claims, wel resultaten in concrete weken. Caption opent met de avondroutine, sluit met een vraag in plaats van een CTA."
       }
     },
     "isolation": {
+      "eyebrow": "Isolatie per merk",
       "title": "Strikt gescheiden per merk",
       "body1": "Clyde werkt voor meerdere bureaus en meerdere merken tegelijk zonder dat ze elkaar raken. Wat hij leert over Merk A komt nooit terecht bij Merk B. Geen merkstem die overspringt, geen data die uitlekt, geen voorbeelden die per ongeluk over en weer gaan.",
-      "body2": "Technisch is dat geregeld met een eigen geheugenruimte per klant, strikt gescheiden op databaseniveau (Supabase RLS) en in de zoekindex. Menselijk gezien: wat bij jouw klant hoort, blijft bij jouw klant. Bij opzegging is je data binnen 24 uur exporteerbaar en wordt na 30 dagen volledig verwijderd."
+      "body2": "Technisch is dat geregeld met een eigen geheugenruimte per klant, strikt gescheiden op databaseniveau en in de zoekindex. Menselijk gezien: wat bij jouw klant hoort, blijft bij jouw klant. Bij opzegging is je data binnen 24 uur exporteerbaar en wordt na 30 dagen volledig verwijderd."
     },
     "decay": {
+      "eyebrow": "Dag en nacht",
       "title": "Elke dag scherper, nooit verstopt",
       "decayTitle": "Wat onbelangrijk wordt, vervaagt",
       "decayBody": "Niet alles uit het verleden blijft even relevant. Oude details verliezen langzaam gewicht, zodat Clyde niet verstopt raakt onder data van een half jaar geleden. Belangrijke patronen blijven, ruis zakt weg. Net als bij mensen.",
@@ -2085,21 +2084,23 @@
       "dreamBody": "'s Nachts doet Clyde wat wij in onze slaap doen: hij legt verbanden, abstraheert patronen en schrijft belangrijke inzichten weg naar zijn vaste kennis. Jij wordt wakker met een slimmere AI Marketing Medewerker dan die je gisteren achterliet."
     },
     "progress": {
-      "title": "Week 1 versus week 12",
+      "eyebrow": "Tijdcurve",
+      "title": "Maand 1 versus maand 3",
       "subtitle": "Het verschil tussen een generieke AI en een AI Marketing Medewerker die jouw merken écht kent, wordt zichtbaar in weken.",
-      "week1Label": "Week 1: eerste content",
+      "week1Label": "Maand 1: eerste content",
       "week1Body": "\"Schrijf een caption voor merk X.\" Clyde volgt de merkrichtlijnen, maar nog niet met perfecte nuance. Veel feedback-rondes. Jij bent nog veel bezig met corrigeren en bijslijpen.",
-      "week12Label": "Week 12: volledige autonomie",
+      "week12Label": "Maand 3: volledige autonomie",
       "week12Body": "Clyde kent de kleine hebbelijkheden van merk X: welke emoji wel en niet, welke openingszin converteert, welke hashtags presteren, welke tijdstippen werken. De eerste versie is meteen bruikbaar. Jij beoordeelt, Clyde voert uit."
     },
     "contrast": {
-      "title": "Waarom dit niet werkt met ChatGPT of Jasper",
+      "eyebrow": "Vergelijking",
+      "title": "Waarom generieke AI hier vastloopt",
       "chatgpt": {
-        "name": "ChatGPT / Claude",
+        "name": "Chat-AI (generiek)",
         "body": "Geen geheugen per merk. Elke sessie begint blanco. Je moet merkstem, doelgroep en context bij elke prompt opnieuw aanleveren. Werkt niet als je 20 merken bedient."
       },
       "jasper": {
-        "name": "Jasper / Copy.ai",
+        "name": "Copy-tools",
         "body": "Templates en beperkt geheugen. Kent \"jouw merkstem\" maar niet \"jouw hele portfolio van 20 merken\". Schaalt niet mee met de scope van een bureau."
       },
       "clyde": {
@@ -2110,7 +2111,7 @@
     "comparison": {
       "eyebrow": "Geheugen in actie",
       "title": "Drie gesprekken, één merk, één week.",
-      "intro": "Hetzelfde gesprek met een AI zonder geheugen versus met Clyde. Niet hypothetisch: dit is hoe een dag er bij SkinClarity Club uitziet.",
+      "intro": "Hetzelfde gesprek met een AI zonder geheugen versus met Clyde. Dit patroon zien we elke werkweek terug bij SkinClarity Club.",
       "diyLabel": "Andere AI",
       "diyNote": "vergeet alles na sessie-eind",
       "clydeLabel": "Clyde",
@@ -2136,8 +2137,9 @@
       ]
     },
     "cta": {
-      "title": "Wil je zien hoe dit werkt voor jouw merken?",
-      "subtitle": "Plan een gesprek. We laten het geheugen live zien op de SkinClarity Club-opzet en bespreken hoe dit past bij jouw portfolio.",
+      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "title": "Klaar voor een AI die je merken kent?",
+      "subtitle": "Een gesprek van 30 minuten op de SkinClarity Club-opzet. Daarna weet je of het past bij jouw portfolio.",
       "button": "Plan een gesprek"
     }
   },

@@ -13,6 +13,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { LayerCube } from '@/components/memory/LayerCube'
 import { MemoryComparison } from '@/components/memory/MemoryComparison'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -46,11 +47,10 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         description: t(`layers.${key}.description`),
         prompt: t(`layers.${key}.prompt`),
         clydeAnswer: t(`layers.${key}.clydeAnswer`),
-        codeLine: t(`layers.${key}.codeLine`),
       }
       return acc
     },
-    {} as Record<LayerKey, { name: string; window: string; description: string; prompt: string; clydeAnswer: string; codeLine: string }>
+    {} as Record<LayerKey, { name: string; window: string; description: string; prompt: string; clydeAnswer: string }>
   )
 
   const turns = (t.raw('comparison.turns') as { user: string; diy: string; clyde: string }[]) ?? []
@@ -98,7 +98,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
       <section aria-labelledby="layers-heading" className="py-20 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 max-w-3xl mx-auto">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <EyebrowLabel className="mb-3 inline-block">{t('layers.eyebrow')}</EyebrowLabel>
             <SectionHeading id="layers-heading">{t('layers.title')}</SectionHeading>
             <p className="speakable-memory-layers mt-4 text-text-secondary text-lg leading-relaxed">
               {t('layers.subtitle')}
@@ -109,82 +109,16 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
             scrollLabel={t('layers.scrollLabel')}
             promptLabel={t('layers.promptLabel')}
             clydeLabel={t('layers.clydeLabel')}
-            codeLabel={t('layers.codeLabel')}
+            activeLabel={t('layers.activeLabel')}
           />
         </div>
       </section>
 
-      {/* Per-client isolation */}
-      <section aria-labelledby="isolation-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
-            <SectionHeading id="isolation-heading">{t('isolation.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
-            <GlassCard className="text-left">
-              <p className="text-text-secondary leading-relaxed mb-4">{t('isolation.body1')}</p>
-              <p className="text-text-secondary leading-relaxed">{t('isolation.body2')}</p>
-            </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Decay + dream consolidation */}
-      <section aria-labelledby="decay-heading" className="py-16 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
-            <SectionHeading id="decay-heading">{t('decay.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <GlassCard className="text-left">
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {t('decay.decayTitle')}
-                </h3>
-                <p className="text-text-secondary leading-relaxed">{t('decay.decayBody')}</p>
-              </GlassCard>
-              <GlassCard className="text-left">
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {t('decay.dreamTitle')}
-                </h3>
-                <p className="text-text-secondary leading-relaxed">{t('decay.dreamBody')}</p>
-              </GlassCard>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* DIY vs Clyde comparison demo */}
-      <section
-        aria-labelledby="comparison-heading"
-        className="py-20 px-6 lg:px-12 bg-bg-surface/30"
-      >
-        <div className="max-w-6xl mx-auto">
-          <h2 id="comparison-heading" className="sr-only">
-            {t('comparison.title')}
-          </h2>
-          <MemoryComparison
-            eyebrow={t('comparison.eyebrow')}
-            title={t('comparison.title')}
-            intro={t('comparison.intro')}
-            turns={turns}
-            diyLabel={t('comparison.diyLabel')}
-            diyNote={t('comparison.diyNote')}
-            clydeLabel={t('comparison.clydeLabel')}
-            clydeNote={t('comparison.clydeNote')}
-            userLabel={t('comparison.userLabel')}
-            replayLabel={t('comparison.replayLabel')}
-          />
-        </div>
-      </section>
-
-      {/* Week 1 vs Week 12 comparison */}
-      <section aria-labelledby="progress-heading" className="py-16 px-6 lg:px-12">
+      {/* Month 1 vs Month 3: when the difference becomes visible */}
+      <section aria-labelledby="progress-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <EyebrowLabel className="mb-3 inline-block">{t('progress.eyebrow')}</EyebrowLabel>
             <SectionHeading id="progress-heading">{t('progress.title')}</SectionHeading>
           </div>
           <p className="text-center text-text-secondary max-w-2xl mx-auto mb-10">
@@ -209,11 +143,77 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      {/* Contrast with ChatGPT/Jasper */}
+      {/* Per-client isolation */}
+      <section aria-labelledby="isolation-heading" className="py-16 px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('isolation.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="isolation-heading">{t('isolation.title')}</SectionHeading>
+          </div>
+          <ScrollReveal>
+            <GlassCard className="text-left">
+              <p className="text-text-secondary leading-relaxed mb-4">{t('isolation.body1')}</p>
+              <p className="text-text-secondary leading-relaxed">{t('isolation.body2')}</p>
+            </GlassCard>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Decay + dream consolidation */}
+      <section aria-labelledby="decay-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <EyebrowLabel className="mb-3 inline-block">{t('decay.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="decay-heading">{t('decay.title')}</SectionHeading>
+          </div>
+          <ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <GlassCard className="text-left">
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  {t('decay.decayTitle')}
+                </h3>
+                <p className="text-text-secondary leading-relaxed">{t('decay.decayBody')}</p>
+              </GlassCard>
+              <GlassCard className="text-left">
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  {t('decay.dreamTitle')}
+                </h3>
+                <p className="text-text-secondary leading-relaxed">{t('decay.dreamBody')}</p>
+              </GlassCard>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* DIY vs Clyde comparison demo */}
+      <section
+        aria-labelledby="comparison-heading"
+        className="py-20 px-6 lg:px-12"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 id="comparison-heading" className="sr-only">
+            {t('comparison.title')}
+          </h2>
+          <MemoryComparison
+            eyebrow={t('comparison.eyebrow')}
+            title={t('comparison.title')}
+            intro={t('comparison.intro')}
+            turns={turns}
+            diyLabel={t('comparison.diyLabel')}
+            diyNote={t('comparison.diyNote')}
+            clydeLabel={t('comparison.clydeLabel')}
+            clydeNote={t('comparison.clydeNote')}
+            userLabel={t('comparison.userLabel')}
+            replayLabel={t('comparison.replayLabel')}
+          />
+        </div>
+      </section>
+
+      {/* Contrast with generic chat AI / copy tools */}
       <section aria-labelledby="contrast-heading" className="py-16 px-6 lg:px-12 bg-bg-surface/30">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <EyebrowLabel className="mb-3 inline-block">{t('contrast.eyebrow')}</EyebrowLabel>
             <SectionHeading id="contrast-heading">{t('contrast.title')}</SectionHeading>
           </div>
           <ScrollReveal>
@@ -233,11 +233,16 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA with founding-scarcity anchor */}
       <section aria-labelledby="memory-cta" className="py-20 px-6 lg:px-12">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
-            <EyebrowLabel className="mb-3 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
+            <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-human mb-3">
+              {t('cta.eyebrow', {
+                taken: FOUNDING_SPOTS_TAKEN,
+                total: FOUNDING_SPOTS_TOTAL,
+              })}
+            </p>
             <SectionHeading id="memory-cta">{t('cta.title')}</SectionHeading>
             <p className="text-lg text-text-secondary mb-8 mt-4">{t('cta.subtitle')}</p>
             <CTAButton size="lg" href="/apply" icon={<ArrowRight className="h-4 w-4" />}>

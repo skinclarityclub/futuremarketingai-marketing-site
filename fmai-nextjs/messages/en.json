@@ -2030,54 +2030,53 @@
       "eyebrow": "Memory per brand",
       "headlineMain": "Clyde remembers everything.",
       "headlineAccent": "Per brand, forever.",
-      "subtitle": "This is the difference between an AI tool and an AI Marketing Employee: memory. Clyde remembers your brand voice, audience, goals and what worked before. Every week he knows your brands better."
+      "subtitle": "This is the difference between a generic AI prompt and an AI Marketing Employee: memory. Clyde remembers your brand voice, audience, goals and what worked before. Every week he knows your brands better."
     },
     "layers": {
+      "eyebrow": "Architecture",
       "title": "How Clyde remembers",
       "subtitle": "Like a good employee, Clyde has four kinds of memory that work together. You do not need to know any of the details: it just works.",
       "scrollLabel": "Scroll through the layers",
       "promptLabel": "You ask Clyde",
       "clydeLabel": "Clyde answers",
-      "codeLabel": "What happens inside memory",
+      "activeLabel": "Active",
       "hot": {
         "name": "Today",
         "window": "Last 24 hours",
         "description": "What Clyde is working on right now: the ongoing conversation, today's campaign, content in the approval queue. Instantly at hand.",
         "prompt": "Which posts did I approve for brand Skin today?",
-        "clydeAnswer": "Three posts: morning post on the cleanser routine, midday post with a UGC review, end-of-day carousel about the ingredients. The carousel is scheduled for 19:00.",
-        "codeLine": "since: '24h', brand: 'skin', status: 'approved'"
+        "clydeAnswer": "Three posts: morning post on the cleanser routine, midday post with a UGC review, end-of-day carousel about the ingredients. The carousel is scheduled for 19:00."
       },
       "warm": {
         "name": "This month",
         "window": "Last 30 days",
         "description": "Recently approved posts, KPI reports and feedback. So Clyde can compare what worked better this week than last.",
         "prompt": "What performed best this month for brand Skin?",
-        "clydeAnswer": "Carousels with UGC quotes: on average 2.4x more engagement than standalone product posts. Reels under 15 seconds converted above average. Static posts after 21:00 lost reach.",
-        "codeLine": "range: '30d', brand: 'skin', metric: 'engagement_rate'"
+        "clydeAnswer": "Carousels with UGC quotes: on average 2.4x more engagement than standalone product posts. Reels under 15 seconds converted above average. Static posts after 21:00 lost reach."
       },
       "cold": {
         "name": "Archive",
         "window": "Everything older",
         "description": "The full archive: brand guidelines, past campaigns, older reports. Searchable by meaning, not only by keyword.",
         "prompt": "What did we write last autumn about dry winter skin?",
-        "clydeAnswer": "Three carousels in October and November. The best performer opened with 'first repair, then hydrate'. Combined with a product routine, shared 312 times and saved by 1,804 followers.",
-        "codeLine": "search: 'winter_skin', brand: 'skin', semantic: true"
+        "clydeAnswer": "Three carousels in October and November. The best performer opened with 'first repair, then hydrate'. Combined with a product routine, shared 312 times and saved by 1,804 followers."
       },
       "context": {
         "name": "Who the brand is",
         "window": "Permanent knowledge",
         "description": "The core that always travels along: brand voice, audience persona, KPI targets, what is allowed and what is not. Only adjusted when you explicitly ask.",
         "prompt": "Write a caption for the new night cream.",
-        "clydeAnswer": "Tone: warm, direct, no capitalized You. Audience: women 28-44 who value rituals. No claims, results expressed in concrete weeks. Caption opens with the evening routine, ends with a question instead of a CTA.",
-        "codeLine": "brand: 'skin', persona: 'core', voice: 'core_v3'"
+        "clydeAnswer": "Tone: warm, direct, no capitalized You. Audience: women 28-44 who value rituals. No claims, results expressed in concrete weeks. Caption opens with the evening routine, ends with a question instead of a CTA."
       }
     },
     "isolation": {
+      "eyebrow": "Per-brand isolation",
       "title": "Strictly separated per brand",
       "body1": "Clyde works for multiple clients and multiple brands at the same time without them touching. What he learns about Brand A never ends up with Brand B. No brand voice bleeding over, no data leaking, no examples accidentally crossing over.",
-      "body2": "Technically, that is handled with a dedicated memory space per client, strictly separated at the database level (Supabase RLS) and in the search index. In human terms: what belongs to your client stays with your client. On cancellation, your data is exportable within 24 hours and fully deleted after 30 days."
+      "body2": "Technically, that is handled with a dedicated memory space per client, strictly separated at the database level and in the search index. In human terms: what belongs to your client stays with your client. On cancellation, your data is exportable within 24 hours and fully deleted after 30 days."
     },
     "decay": {
+      "eyebrow": "Day and night",
       "title": "Sharper every day, never cluttered",
       "decayTitle": "What becomes less important fades",
       "decayBody": "Not everything from the past stays equally relevant. Old details slowly lose weight, so Clyde does not get clogged up with data from six months ago. Important patterns stay, noise recedes. Just like with humans.",
@@ -2085,21 +2084,23 @@
       "dreamBody": "At night Clyde does what we do in our sleep: he connects the dots, abstracts patterns and writes important insights into his permanent knowledge. You wake up with a smarter AI Marketing Employee than the one you left behind yesterday."
     },
     "progress": {
-      "title": "Week 1 versus week 12",
+      "eyebrow": "Time curve",
+      "title": "Month 1 versus month 3",
       "subtitle": "The difference between a generic AI and an AI Marketing Employee that truly knows your brands becomes visible in weeks.",
-      "week1Label": "Week 1: first content",
+      "week1Label": "Month 1: first content",
       "week1Body": "\"Write a caption for brand X.\" Clyde follows the brand guidelines, but not yet with perfect nuance. A lot of feedback rounds. You are still busy with corrections and fine-tuning.",
-      "week12Label": "Week 12: full autonomy",
+      "week12Label": "Month 3: full autonomy",
       "week12Body": "Clyde knows the small quirks of brand X: which emojis yes and no, which opening line converts, which hashtags perform, which times work. The first version is immediately usable. You review, Clyde executes."
     },
     "contrast": {
-      "title": "Why this does not work with ChatGPT or Jasper",
+      "eyebrow": "Comparison",
+      "title": "Why generic AI hits a wall here",
       "chatgpt": {
-        "name": "ChatGPT / Claude",
+        "name": "Generic chat AI",
         "body": "No memory per brand. Every session starts blank. You have to supply brand voice, audience and context with every prompt. Does not work when you serve 20 brands."
       },
       "jasper": {
-        "name": "Jasper / Copy.ai",
+        "name": "Copy tools",
         "body": "Templates and limited memory. Knows \"your brand voice\" but not \"your entire portfolio of 20 brands\". Does not scale with the scope of an agency."
       },
       "clyde": {
@@ -2110,7 +2111,7 @@
     "comparison": {
       "eyebrow": "Memory in action",
       "title": "Three conversations, one brand, one week.",
-      "intro": "The same conversation with a memoryless AI versus with Clyde. Not hypothetical: this is what a day at SkinClarity Club actually looks like.",
+      "intro": "The same conversation with a memoryless AI versus with Clyde. This pattern shows up every workweek at SkinClarity Club.",
       "diyLabel": "Other AI",
       "diyNote": "forgets everything after session ends",
       "clydeLabel": "Clyde",
@@ -2136,8 +2137,9 @@
       ]
     },
     "cta": {
-      "title": "Want to see how this works for your brands?",
-      "subtitle": "Book a call. We show the memory live on the SkinClarity Club setup and discuss how it fits your portfolio.",
+      "eyebrow": "Founding open · {taken}/{total} taken",
+      "title": "Ready for an AI that knows your brands?",
+      "subtitle": "A 30-minute call on the SkinClarity Club setup. After that you know if it fits your portfolio.",
       "button": "Book a call"
     }
   },

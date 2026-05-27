@@ -13,7 +13,6 @@ interface LayerCopy {
   description: string
   prompt: string
   clydeAnswer: string
-  codeLine: string
 }
 
 interface LayerCubeProps {
@@ -21,7 +20,7 @@ interface LayerCubeProps {
   scrollLabel: string
   promptLabel: string
   clydeLabel: string
-  codeLabel: string
+  activeLabel: string
 }
 
 const ORDER: LayerKey[] = ['hot', 'warm', 'cold', 'context']
@@ -33,29 +32,29 @@ const META: Record<
   hot: {
     Icon: Brain,
     tint: 'from-[#FF4D4D]/20 via-bg-surface to-bg-deep',
-    ring: 'ring-[#FF4D4D]/50',
-    glow: 'shadow-[0_30px_120px_-30px_rgba(255,77,77,0.45)]',
+    ring: 'ring-[#FF4D4D]/60',
+    glow: 'shadow-[0_30px_120px_-30px_rgba(255,77,77,0.55)]',
     accent: 'text-[#FF8A8A]',
   },
   warm: {
     Icon: History,
     tint: 'from-[#F5A623]/20 via-bg-surface to-bg-deep',
-    ring: 'ring-[#F5A623]/50',
-    glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.45)]',
+    ring: 'ring-[#F5A623]/60',
+    glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.55)]',
     accent: 'text-[#F5A623]',
   },
   cold: {
     Icon: Layers,
     tint: 'from-accent-system/20 via-bg-surface to-bg-deep',
-    ring: 'ring-accent-system/50',
-    glow: 'shadow-[0_30px_120px_-30px_rgba(0,212,170,0.45)]',
+    ring: 'ring-accent-system/60',
+    glow: 'shadow-[0_30px_120px_-30px_rgba(0,212,170,0.55)]',
     accent: 'text-accent-system',
   },
   context: {
     Icon: SlidersHorizontal,
     tint: 'from-accent-human/20 via-bg-surface to-bg-deep',
-    ring: 'ring-accent-human/50',
-    glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.4)]',
+    ring: 'ring-accent-human/60',
+    glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.5)]',
     accent: 'text-accent-human',
   },
 }
@@ -65,7 +64,7 @@ export function LayerCube({
   scrollLabel,
   promptLabel,
   clydeLabel,
-  codeLabel,
+  activeLabel,
 }: LayerCubeProps) {
   const [active, setActive] = useState<number>(0)
   const triggerRefs = useRef<Array<HTMLElement | null>>([])
@@ -119,8 +118,8 @@ export function LayerCube({
               const meta = META[key]
               const isActive = i === active
               const baseZ = (ORDER.length - 1 - i) * -60
-              const activeShift = isActive ? 80 : 0
-              const fade = isActive ? 1 : 0.35
+              const activeShift = isActive ? 100 : 0
+              const fade = isActive ? 1 : 0.18
               return (
                 <motion.div
                   key={key}
@@ -135,6 +134,7 @@ export function LayerCube({
                           opacity: fade,
                           z: baseZ + activeShift,
                           y: i * 10,
+                          scale: isActive ? 1.02 : 1,
                         }
                   }
                   transition={{ duration: 0.55, ease: EASE_OUT }}
@@ -151,6 +151,17 @@ export function LayerCube({
                         {String(i + 1).padStart(2, '0')} / {layers[key].window}
                       </span>
                     </div>
+                    {isActive && (
+                      <motion.span
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, ease: EASE_OUT }}
+                        className={`inline-flex items-center gap-1.5 font-mono uppercase tracking-[0.16em] text-[9px] ${meta.accent}`}
+                      >
+                        <span className={`w-1.5 h-1.5 rounded-full bg-current animate-pulse`} aria-hidden />
+                        {activeLabel}
+                      </motion.span>
+                    )}
                   </div>
                   <h3 className="mt-4 text-2xl font-display font-bold text-text-primary">
                     {layers[key].name}
@@ -158,10 +169,6 @@ export function LayerCube({
                   <p className="mt-3 text-sm text-text-secondary leading-relaxed">
                     {layers[key].description}
                   </p>
-                  <div className="mt-5 rounded-md border border-white/5 bg-bg-deep/70 p-3 font-mono text-[11px] text-text-muted leading-relaxed">
-                    <span className={meta.accent}>{'> '}</span>
-                    {layers[key].codeLine}
-                  </div>
                 </motion.div>
               )
             })}
@@ -224,7 +231,7 @@ export function LayerCube({
                   </p>
                   <p className="text-text-primary leading-relaxed">{layers[key].prompt}</p>
                 </div>
-                <div className="px-5 py-4 border-b border-white/5">
+                <div className="px-5 py-4">
                   <p
                     className={`font-mono uppercase tracking-[0.16em] text-[10px] ${meta.accent} mb-1`}
                   >
@@ -233,17 +240,6 @@ export function LayerCube({
                   <p className="text-text-secondary leading-relaxed">
                     {layers[key].clydeAnswer}
                   </p>
-                </div>
-                <div className="px-5 py-3 bg-bg-deep/60">
-                  <p className="font-mono uppercase tracking-[0.16em] text-[10px] text-text-muted mb-1">
-                    {codeLabel}
-                  </p>
-                  <pre className="font-mono text-[12px] text-text-secondary leading-relaxed whitespace-pre-wrap">
-                    <span className={meta.accent}>memory.</span>
-                    <span className="text-text-primary">{key}</span>
-                    <span className={meta.accent}>.recall</span>
-                    <span className="text-text-muted">({layers[key].codeLine})</span>
-                  </pre>
                 </div>
               </div>
             </article>
