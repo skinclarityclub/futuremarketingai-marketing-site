@@ -208,38 +208,56 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-8 voltooid.
+We doen een interactieve walkthrough van de homepage. Sectie 1-8 voltooid (laatste sessie: founder-quote revisie naar manifest-stack, commits b95e55f + 710d5bd).
+
 Volgende: sectie 9 TestimonialBlock (Sindy operator-stem).
 
 Procedure per sectie:
-1. Lees component + i18n + screenshot
-2. Kritische eval met severity-tabel + 3-5 concrete voorstellen
-3. Spawn 2-3 agents voor kritische secties (design-critic + copy-research + strategist)
-4. AskUserQuestion welke fixes te implementeren
-5. Implementeer + visueel verify + atomic commit + push
+1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
+2. Screenshot via fmai-nextjs/scripts/screenshot-founder.mjs als template (kopieer + pas selector aan)
+3. Kritische eval met severity-tabel + 3-5 concrete voorstellen
+4. Spawn 2-3 parallel agents voor zware secties (design-critic + copy-research + strategist) — alleen wanneer warranted
+5. AskUserQuestion welke fixes te implementeren — bij stuck, vraag eerst diagnose (welke laag faalt) voordat je opties presenteert
+6. Implementeer + visueel verify (screenshot v2) + atomic commit + push
+7. Update walkthrough doc met commit-SHA en wijzigingen onder issue-log
 
-Dev server: ik start `npm run dev` zelf in fmai-nextjs/. Tools beschikbaar:
-- agent-browser CLI voor screenshots
-- node scripts/memory-search.mjs voor cross-project lookup
-- Agent tool voor parallel research
+Pre-flight check vóór sectie 9:
+- `git status --short` (main moet clean zijn, alleen playwright-report/screenshots als orphan)
+- `git pull origin main` (user kan tussendoor scripts hebben gecommit)
+- Dev server: `npm run dev` in fmai-nextjs/
 
 Conventies:
-- Geen scope-creep — alleen wat user akkoord geeft
+- Clyde = hosted SaaS, geen on-site install (zie memory project_clyde_delivery_model.md). Werkwoorden: trainen/leren, NIET installeren/deployen
+- Geen em-dashes (—) in user-facing copy
+- Sindy = Kienstra (volledige naam Sindy Kienstra). Geen SKC co-eigendom claim voor Daley
 - Atomic commits + push naar main per fix
-- Update walkthrough doc na elke sectie
 - Bij design-keuze: 2-3 sentence advies + tradeoff, dan user beslist
+- Geen scope-creep — alleen wat user akkoord geeft
+- i18n ALTIJD in alle 3 talen (NL primary, EN+ES vertaald)
 ```
 
 **Status bij hand-off (2026-05-27 einde sessie):**
 
 - Branch: `main` synced met origin
 - Sessie commits (chronologisch): zie issue log per sectie hierboven
-- Laatste commits:
-  - `b95e55f` content(founder): manifest-stijl drievoudige ik-actie + correcte delivery-taal
-  - `00db443` content(founder): type-first centered layout, eerlijke naam + credentials
-  - `721279c` perf(hero): split into server-mobile + client-desktop variants
-  - `0c8d4e9` style(process-timeline): verwijder horizontal connector line
-- Dev server: niet draaiend
+- Main HEAD chronologisch (meest recent eerst):
+  - `22b9f42` perf(critical-css): inline above-the-fold CSS via postbuild Beasties (door user, niet walkthrough)
+  - `4fbcc86` chore(scripts): health-check.ps1 — one-glance PC status (door user)
+  - `bb3b974` chore(cleanup): include python in orphan detection (door user)
+  - `4f74256` chore(scripts): hourly auto-cleanup task + wider default port range (door user)
+  - `710d5bd` docs(walkthrough): quote-revisie sectie 8 + clyde-delivery model captured ← walkthrough
+  - `b95e55f` content(founder): manifest-stijl drievoudige ik-actie + correcte delivery-taal ← walkthrough
+  - `354c189` chore(scripts): cleanup zombies + port-guarded start + EBUSY-fixed lighthouse (door user)
+  - `cd4d4d0` docs(walkthrough): handover na sectie 8 FounderSection voltooid ← walkthrough
+  - `00db443` content(founder): type-first centered layout, eerlijke naam + credentials ← walkthrough
+- Dev server: niet draaiend bij hand-off
+- Uncommitted: `playwright-report/index.html` (gewijzigd, niet commit-waardig) + screenshot-PNGs in working dir (founder-section-v*.png) + nieuwe agent-genoteerde plan-docs in `../docs/plans/2026-05-27-*` (door user gemaakt, niet door walkthrough — leave alone)
+
+**Open TODO's bij hand-off:**
+
+1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
+2. **Sectie 9 — TestimonialBlock (Sindy operator-stem)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
   - `src/components/home/MemoryLiveComparison.tsx` (gebruikt door MemoryUSPTeaser)
