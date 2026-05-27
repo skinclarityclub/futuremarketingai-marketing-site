@@ -547,3 +547,109 @@ main:focus-visible {
   animation: logo-fold-halo 3s ease-in-out infinite;
 }
 
+/*
+ * Custom scrollbar — matcht dark theme + teal accent.
+ * Targets html/body expliciet zodat Windows Chrome/Edge "fluent scrollbars"
+ * gerespecteerd worden, plus universele fallback voor inner overflow containers.
+ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00d4aa #111520;
+  scrollbar-gutter: stable;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: #111520;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4aa 0%, #00a888 100%);
+  border: 2px solid #111520;
+  border-radius: 8px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1ae5bc 0%, #00d4aa 100%);
+  box-shadow: inset 0 0 6px rgba(0, 212, 170, 0.6);
+}
+
+html::-webkit-scrollbar-thumb:active,
+body::-webkit-scrollbar-thumb:active,
+*::-webkit-scrollbar-thumb:active {
+  background: #f5a623;
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner {
+  background: #111520;
+}
+
+/*
+ * Clyde concierge entry-point — horizontal name-pill with sparkle mark
+ * + "Clyde" wordmark. Reads as a colleague's name tag, not a chatbot.
+ *   - Default: "✦ Clyde"
+ *   - On hover: pill expands to "✦ Clyde · nu online"
+ *   - On 20s scroll-idle (data-stage="whispering"): expands with a
+ *     page-aware whisper instead of the generic status
+ * All motion gated behind prefers-reduced-motion: no-preference; the
+ * static fallback shows status text inline at all times.
+ */
+@keyframes clyde-fab-breathe {
+  0%   { box-shadow: var(--shadow-glow); }
+  100% { box-shadow: var(--shadow-glow-lg), 0 0 24px rgba(0, 212, 170, 0.35); }
+}
+
+/* Status text -- collapsed by default, expands on hover or while whispering */
+.clyde-status {
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 320ms ease-out, opacity 220ms ease-out 60ms;
+}
+.clyde-fab:hover .clyde-status[data-visible='hover'],
+.clyde-fab:focus-visible .clyde-status[data-visible='hover'],
+.clyde-fab[data-stage='whispering'] .clyde-status {
+  max-width: 240px;
+  opacity: 1;
+}
+
+/* Reduced-motion: status text is always visible so the pill never
+   silently changes width during interaction. */
+@media (prefers-reduced-motion: reduce) {
+  .clyde-status {
+    max-width: 240px;
+    opacity: 1;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .clyde-fab {
+    animation: clyde-fab-breathe 4.2s ease-in-out infinite alternate;
+  }
+}
+
+/* Pill hover lift */
+.clyde-fab {
+  transition: transform 220ms ease-out, box-shadow 220ms ease-out,
+    background-color 220ms ease-out, border-color 220ms ease-out;
+}
+.clyde-fab:hover,
+.clyde-fab:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 170, 0.7);
+  box-shadow: var(--shadow-glow-lg), 0 0 28px rgba(0, 212, 170, 0.45);
+}
+

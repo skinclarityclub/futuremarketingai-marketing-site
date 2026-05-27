@@ -44,7 +44,7 @@ export function VoiceDemoFAB({ targetId = 'live-demo' }: VoiceDemoFABProps) {
           exit={{ opacity: 0, y: 20 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           onClick={scrollToDemo}
-          className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-accent-system flex items-center justify-center shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] transition-shadow duration-300"
+          className="fixed bottom-24 right-6 lg:bottom-6 lg:left-6 lg:right-auto z-40 w-14 h-14 rounded-full bg-accent-system flex items-center justify-center shadow-[0_0_20px_rgba(0,212,170,0.3)] hover:shadow-[0_0_30px_rgba(0,212,170,0.5)] transition-shadow duration-300"
           aria-label="Scroll to voice demo"
         >
           <Phone className="w-5 h-5 text-bg-deep" />
