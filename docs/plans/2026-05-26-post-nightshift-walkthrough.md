@@ -430,6 +430,34 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 **Validatie**: NL/EN/ES alle 200, screenshot toont clean cube zonder technical code, 6 unieke eyebrows per sectie, amber scarcity-eyebrow op CTA, Maand 1/3 framing.
 
+**Vervolg-iteraties same session**:
+- `21f1dd5` fix(memory/layer-cube) — leesbaarheid Hot + Warm lagen. Gradient `via-bg-surface` -> `via-bg-deep`, tint /20 -> /15, body `text-text-secondary` -> `text-text-primary/90`, inactive opacity 0.18 -> 0.08.
+- `ca236ec` fix(memory/layer-cube) — slide 1 duidelijker + z-ordering fix. Title 'Vandaag' -> 'Nu live' / 'Live now' / 'En vivo' (3 locales). Cube card title text-2xl -> text-3xl + meta.accent (per-layer kleur), mt-4 -> mt-5. Body shortened 27 -> 16 woorden, concreet-eerst. Z-ordering bug: activeShift 100 -> 220 (max baseZ delta was 180), active card nu altijd voorgrond, geen ghost-text meer.
+- `0ab8c5a` test(memory) — mobile e2e script 8 sections × 3 locales. Per nieuwe feedback_mobile_test_per_page memory.
+
+### /pricing ✅ VOLTOOID 2026-05-27
+
+**Commit**: `47b58a7` restructure — bug-fixes + narrative reorder + progressive disclosure
+
+**Route gekozen**: D (major restructure) + Lead Magnet naar onder hero
+
+**Diagnose huidige staat (v1)**:
+- Bug: `cta.description` bevatte `{maxPartners}` placeholder maar `t('cta.description')` werd zonder interpolation params aangeroepen, rendered LITERAAL als tekst in productie
+- Dual-CTA: primary 'Plan een gesprek' + secondary 'Lees SkinClarity case' competeerden op moment-of-decision (homepage section 16 pattern al weggehaald)
+- Lead Magnet CTA stond mid-page (tussen Visibility en Credit Packs), non-sequitur in flow
+- FAQ vóór Visibility — trust-frame hoort vóór objection-handling
+- Founding tier subtitle 'Aanbevolen voor early adopters' weak voor 10-plekken scarcity
+- Skill Packs + Credit Packs = 2 vrij identieke 4-grids achter elkaar
+
+**Wijzigingen**:
+- **Bug-fix**: `t('cta.description', { maxPartners: MAX_PARTNERS_PER_YEAR })` interpolation. Mobile validation toont '20' rendered.
+- **Single-button CTA**: secondary 'Lees SkinClarity case' verwijderd uit page.tsx + i18n cta.secondary key uit alle 3 locales (NL/EN/ES).
+- **Founding subtitle**: 'Aanbevolen voor early adopters' / 'Recommended for early adopters' / 'Recomendado para early adopters' -> '10 plekken · levenslang anker' / '10 seats · lifetime anchor' / '10 plazas · ancla de por vida'.
+- **Section reorder** (nu: hero -> lead-magnet -> tiers -> visibility -> matrix -> credit -> skill -> FAQ -> CTA). Visibility moet trust-frame zijn voor matrix; FAQ moet objection-handling vlak voor CTA zijn; Lead Magnet als top-funnel optie ipv mid-funnel interrupt.
+- **Skill Packs progressive disclosure**: wrapped in `<details>` element met custom summary (eyebrow + title + chevron). Default-collapsed. Matrix blijft visible (trust-anchor die Visibility belooft).
+
+**Validatie**: NL/EN/ES alle 200, mobile e2e 30/30 (3 locales × 10 sections), 0 JS errors van pricing zelf, `{maxPartners}` rendert '20', single-button CTA, Skill Packs collapse-state werkt.
+
 ---
 
 ## Resterende secties (volgende sessies)
@@ -439,8 +467,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
 - [x] Sectie 17 — TrustStrip (VERWIJDERD wegens overlap + anti-climactic)
 - [x] **HOMEPAGE VOLLEDIG VOLTOOID** 🎉
-- [x] **Wave 1 page 1: /memory** ✅ (c4f91e5)
-- [ ] Wave 1 page 2: /pricing (PricingExperience slider, SkillsTierMatrix, FAQ)
+- [x] **Wave 1 page 1: /memory** ✅ (c4f91e5 + 21f1dd5 + ca236ec + 0ab8c5a)
+- [x] **Wave 1 page 2: /pricing** ✅ (47b58a7)
 - [ ] Wave 1 page 3: /founding-member (SpotScarcityGrid, QuickApplyTeaser)
 - [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
 - [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
