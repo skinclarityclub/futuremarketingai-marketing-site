@@ -1,7 +1,8 @@
 import { getTranslations } from 'next-intl/server'
-import { Check, X } from 'lucide-react'
+import { Check, X, ArrowRight } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { CTAButton } from '@/components/ui/CTAButton'
 
 const FIT_KEYS = ['fit1', 'fit2', 'fit3', 'fit4'] as const
 const NOT_FIT_KEYS = ['notFit1', 'notFit2', 'notFit3', 'notFit4'] as const
@@ -59,6 +60,19 @@ export async function IcpSection({ locale }: { locale: string }) {
               ))}
             </ul>
           </GlassCard>
+        </div>
+
+        {/* Closing CTA row */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+          <p className="text-text-secondary">{t('closingPrompt')}</p>
+          <CTAButton
+            href="/apply"
+            variant="primary"
+            size="md"
+            icon={<ArrowRight className="w-4 h-4" />}
+          >
+            {t('closingCta')}
+          </CTAButton>
         </div>
       </div>
     </section>
