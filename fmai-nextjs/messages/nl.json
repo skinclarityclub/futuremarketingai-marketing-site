@@ -3832,6 +3832,7 @@
     },
     "promptHero": {
       "intro": "Vraag Clyde bijvoorbeeld:"
-    }
+    },
+    "scarcityBadge": "Founding open · {taken}/{total} bezet"
   }
 }

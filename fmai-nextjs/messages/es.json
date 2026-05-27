@@ -3832,6 +3832,7 @@
     },
     "promptHero": {
       "intro": "Pídele a Clyde, por ejemplo:"
-    }
+    },
+    "scarcityBadge": "Founding abierto · {taken}/{total} reservadas"
   }
 }

@@ -22,6 +22,7 @@ import {
   type SkillData,
   type TierKey,
 } from '@/lib/skills-data'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { SkillStickyToc } from './SkillStickyToc'
 
 interface SkillPageTemplateProps {
@@ -181,8 +182,16 @@ export async function SkillPageTemplate({
                 {t('hero.eyebrow')}
               </div>
             ) : (
-              <div className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system">
-                {t('hero.eyebrow')}
+              <div className="flex flex-col items-center gap-3 mb-5">
+                <div className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system">
+                  {t('hero.eyebrow')}
+                </div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
+                  {tTemplate('scarcityBadge', {
+                    taken: FOUNDING_SPOTS_TAKEN,
+                    total: FOUNDING_SPOTS_TOTAL,
+                  })}
+                </span>
               </div>
             )}
             <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary mb-6">
@@ -470,11 +479,20 @@ export async function SkillPageTemplate({
               </div>
             </section>
 
-            {/* Final CTA */}
+            {/* Final CTA — scarcity-anchored close-block (only voor live skills) */}
             <section id="cta" className="py-20" aria-labelledby="skill-cta">
               <ScrollReveal>
                 <div className="max-w-3xl mx-auto text-center space-y-3">
-                  <EyebrowLabel>{tTemplate('eyebrows.cta')}</EyebrowLabel>
+                  {isComingSoon ? (
+                    <EyebrowLabel>{tTemplate('eyebrows.cta')}</EyebrowLabel>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
+                      {tTemplate('scarcityBadge', {
+                        taken: FOUNDING_SPOTS_TAKEN,
+                        total: FOUNDING_SPOTS_TOTAL,
+                      })}
+                    </span>
+                  )}
                   <SectionHeading id="skill-cta">{t('cta.title')}</SectionHeading>
                   <p className="text-lg text-text-secondary mb-8">{t('cta.subtitle')}</p>
                   <CTAButton href="/apply" size="lg">

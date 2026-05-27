@@ -3832,6 +3832,7 @@
     },
     "promptHero": {
       "intro": "Ask Clyde something like:"
-    }
+    },
+    "scarcityBadge": "Founding open · {taken}/{total} reserved"
   }
 }
