@@ -140,6 +140,40 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Footer ✅ VOLTOOID 2026-05-27
+
+**Commit**: `e363ff3` fix Clyde label overflow + scherpere eyebrows + cookie-link
+
+**Diagnose**:
+- Skill-label "Clyde AI Marketing Medewerker" overflowt in 2-col grid (truncate werkt niet door Tailwind flex `min-w-0` gotcha)
+- Newsletter eyebrow "BUREAU" verwarrend boven email-input
+- "Cookie-instellingen wijzigen" lang label
+
+**Wijzigingen**:
+- Footer.tsx skill-Link: `min-w-0 max-w-full` + `shrink-0` op status-dot
+- i18n NL/EN/ES `nav.clyde`: lange labels → unified "Clyde Orchestrator" (cross-locale, product-naam-anchor)
+- i18n `eyebrow.brand`: "Bureau"/"Agency"/"Agencia" → "Nieuwsbrief"/"Newsletter"/"Boletín"
+- i18n `cookies.reopenLink`: shorter "Cookies aanpassen"/"Cookie settings"/"Ajustes de cookies"
+
+**Open TODO**: meer socials toevoegen wanneer beschikbaar (nu LinkedIn + X).
+
+### Sectie 17 — TrustStrip ❌ VERWIJDERD 2026-05-27
+
+**Commit**: `f511086` verwijder sectie 17 — anti-climactic + content-overlap
+
+**Diagnose**:
+- Anti-climactic plaatsing direct na sectie 16 Final CTA (massive amber close-block)
+- Content overlap: SKC autonomy claims al gezegd in sectie 3 + sectie 10
+- Sales-after-sale pattern: premium close-flow = Final CTA → Footer direct
+
+**Verwijderd**: inline JSX + home.trustStrip namespace uit NL/EN/ES.
+
+### Fix tussendoor: cta.foundingLabel restored
+
+**Commit**: `2cc983d` herstel home.cta.foundingLabel — nog door ServicesBento gebruikt
+
+Per ongeluk verwijderd in commit ad0144f (Final CTA simplification). Key wordt ook door sectie 4 ServicesBento bottom-CTA gebruikt voor secondary button "Bekijk Founding tier" → /founding-member.
+
 ### Sectie 16 — Final CTA + scarcity ✅ VOLTOOID 2026-05-27
 
 **Commit**: `ad0144f` definitive close-block + scarcity eyebrow + fix 'lifetime' jargon
@@ -366,9 +400,11 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-12, 14-16 (zie issue log)
+- [x] Sectie 1-12, 14-16 + Footer (zie issue log)
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
-- [ ] **Sectie 17 — TrustStrip (compact close)** ← HIER VERDER
+- [x] Sectie 17 — TrustStrip (VERWIJDERD wegens overlap + anti-climactic)
+- [x] **HOMEPAGE VOLLEDIG VOLTOOID** 🎉
+- [ ] Volgende: andere pagina's (/memory, /pricing, /founding-member, /case-studies/skinclarity-club, /about, /how-it-works, etc — zie lijst onder)
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -399,9 +435,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14-16 voltooid (sectie 13 verwijderd). Laatste sessie: Final CTA definitive close + scarcity eyebrow, commit ad0144f.
+Homepage walkthrough VOLLEDIG VOLTOOID (sectie 1-12, 14-16 + Footer, sectie 13 + 17 verwijderd). Laatste sessie: Footer polish (Clyde label overflow fix + eyebrow polish + cookie-link), commit e363ff3.
 
-Volgende: sectie 17 TrustStrip (compact close, laatste sectie homepage).
+Volgende fase: andere pagina's in volgorde — /memory, /pricing, /founding-member, /case-studies/skinclarity-club, /about, /how-it-works, /skills (index + 12 skill pages), /contact, /apply, /assessment, /blog, /roadmap, /logo-lab, /newsletter/confirm, /legal/{cookies,privacy,terms}.
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -448,7 +484,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 17 — TrustStrip (compact close)** is HIER VERDER. Laatste sectie homepage. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **HOMEPAGE VOLTOOID** 🎉. Volgende fase: andere pagina's in volgorde. Begin met /memory (LayerCube 3D + comparison demo).
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
