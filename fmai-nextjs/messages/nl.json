@@ -375,11 +375,10 @@
       }
     },
     "cta": {
-      "title": "Klaar om Clyde te leren kennen?",
-      "subtitle": "Tien founding plekken. {taken} bezet. Jouw bureau krijgt persoonlijke onboarding van Daley en lifetime founding-tarief. Plan een gesprek van 30 minuten.",
-      "button": "Plan een gesprek",
-      "buttonSecondary": "Lees SkinClarity case",
-      "foundingLabel": "Bekijk Founding tier"
+      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "title": "Tien plekken open. Daarna sluit founding.",
+      "subtitle": "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past.",
+      "button": "Plan een gesprek"
     },
     "faq": {
       "title": "Vragen die in elk eerste gesprek terugkomen",

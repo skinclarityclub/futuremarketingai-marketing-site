@@ -459,22 +459,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 16 — Final CTA + scarcity
           ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="200px">
-        <section aria-labelledby="cta" className="py-20 px-6 lg:px-12">
+      <LazySection minHeight="280px">
+        <section aria-labelledby="cta" className="py-20 lg:py-28 px-6 lg:px-12">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto text-center">
-              <SectionHeading id="cta">{t('cta.title')}</SectionHeading>
-              <p className="text-lg text-text-secondary mb-8">
-                {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton size="lg" href="/apply">
+            <div className="relative max-w-4xl mx-auto rounded-3xl border border-accent-human/30 bg-gradient-to-br from-accent-human/[0.08] via-bg-surface/30 to-transparent p-8 md:p-12 lg:p-16 text-center overflow-hidden">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-accent-human/[0.08] blur-3xl"
+              />
+              <div className="relative">
+                <p className="text-xs font-mono uppercase tracking-[0.18em] text-accent-human mb-5">
+                  {t('cta.eyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+                </p>
+                <h2
+                  id="cta"
+                  className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.05] mb-6"
+                >
+                  {t('cta.title')}
+                </h2>
+                <p className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed">
+                  {t('cta.subtitle')}
+                </p>
+                <CTAButton
+                  size="lg"
+                  href="/apply"
+                  variant="primary"
+                  icon={<ArrowRight className="w-4 h-4" />}
+                >
                   {t('cta.button')}
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </CTAButton>
-                <CTAButton variant="secondary" size="lg" href="/case-studies/skinclarity-club">
-                  {t('cta.buttonSecondary')}
-                  <ArrowRight className="ml-1 h-4 w-4" />
                 </CTAButton>
               </div>
             </div>

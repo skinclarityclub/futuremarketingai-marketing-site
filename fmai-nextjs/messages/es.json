@@ -375,11 +375,10 @@
       }
     },
     "cta": {
-      "title": "¿Listo para conocer a Clyde?",
-      "subtitle": "Diez plazas founding. {taken} ocupada. Tu agencia recibe onboarding personal con Daley y la tarifa founding de por vida. Agenda una llamada de 30 minutos.",
-      "button": "Agenda una llamada",
-      "buttonSecondary": "Lee el caso SkinClarity",
-      "foundingLabel": "Ver tier Founding"
+      "eyebrow": "Founding abierto · {taken}/{total} ocupadas",
+      "title": "Diez plazas abiertas. Después founding cierra.",
+      "subtitle": "€997 al mes, tarifa vitalicia. Una llamada de 30 minutos nos dice si encaja.",
+      "button": "Agenda una llamada"
     },
     "faq": {
       "title": "Preguntas que aparecen en cada primera conversación",

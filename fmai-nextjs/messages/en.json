@@ -375,11 +375,10 @@
       }
     },
     "cta": {
-      "title": "Ready to meet Clyde?",
-      "subtitle": "Ten founding seats. {taken} taken. Your agency gets personal onboarding by Daley and a lifetime founding rate. Book a 30-minute call.",
-      "button": "Book a call",
-      "buttonSecondary": "Read the SkinClarity case",
-      "foundingLabel": "See Founding tier"
+      "eyebrow": "Founding open · {taken}/{total} taken",
+      "title": "Ten seats open. Then founding closes.",
+      "subtitle": "€997 per month, locked for life. A 30-minute call tells us if it fits.",
+      "button": "Book a call"
     },
     "faq": {
       "title": "Questions that come up in every first conversation",
