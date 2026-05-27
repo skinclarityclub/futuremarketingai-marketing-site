@@ -7,14 +7,13 @@ mkdirSync(OUT_DIR, { recursive: true })
 
 const SECTIONS = [
   { name: '01-hero', selector: '[aria-labelledby="pricing-hero"]' },
-  { name: '02-lead-magnet', selector: '[aria-label="AI Readiness Checklist download"]' },
-  { name: '03-tiers', selector: '[aria-labelledby="pricing-tiers"]' },
-  { name: '04-visibility', selector: '[aria-labelledby="visibility"]' },
-  { name: '05-matrix', selector: '[aria-labelledby="pricing-matrix"]' },
-  { name: '06-credit-packs', selector: '[aria-labelledby="credit-packs"]' },
-  { name: '07-skill-packs', selector: '[aria-labelledby="skill-packs"]' },
-  { name: '08-faq', selector: '[aria-labelledby="pricing-faq"]' },
-  { name: '09-cta', selector: '[aria-labelledby="pricing-cta"]' },
+  { name: '02-tiers', selector: '[aria-labelledby="pricing-tiers"]' },
+  { name: '03-visibility', selector: '[aria-labelledby="visibility"]' },
+  { name: '04-matrix', selector: '[aria-labelledby="pricing-matrix"]' },
+  { name: '05-credit-packs', selector: '[aria-labelledby="credit-packs"]' },
+  { name: '06-skill-packs', selector: '[aria-labelledby="skill-packs"]' },
+  { name: '07-faq', selector: '[aria-labelledby="pricing-faq"]' },
+  { name: '08-cta', selector: '[aria-labelledby="pricing-cta"]' },
 ]
 
 const LOCALES = ['nl', 'en', 'es']

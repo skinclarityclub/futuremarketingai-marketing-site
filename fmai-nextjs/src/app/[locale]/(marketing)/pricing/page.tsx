@@ -18,7 +18,6 @@ import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
 import { PricingExperience } from '@/components/pricing/PricingExperience'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
-import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
 import {
   FOUNDING_SPOTS_TAKEN,
@@ -109,13 +108,6 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             {t('hero.description')}
           </p>
           <FoundingCounter />
-        </div>
-      </section>
-
-      {/* Lead magnet — top-funnel option for visitors not ready to pick a tier */}
-      <section className="py-8 px-6 lg:px-12" aria-label="AI Readiness Checklist download">
-        <div className="max-w-md mx-auto">
-          <LeadMagnetCTA source="pricing" variant="sidebar" />
         </div>
       </section>
 
