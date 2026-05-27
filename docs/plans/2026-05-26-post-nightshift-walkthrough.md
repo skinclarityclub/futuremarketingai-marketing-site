@@ -140,6 +140,30 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 16 — Final CTA + scarcity ✅ VOLTOOID 2026-05-27
+
+**Commit**: `ad0144f` definitive close-block + scarcity eyebrow + fix 'lifetime' jargon
+
+**Diagnose huidige staat (v1)**:
+- Title was vraag "Klaar om Clyde te leren kennen?" (zacht voor moment-of-decision)
+- "lifetime founding-tarief" Engels jargon in NL-zin + ambigu (one-time payment risico)
+- Dense subtitle (4 zinnen in 1 paragraph)
+- Secondary CTA "Lees SKC case" competeerde met primary
+- Geen visual weight als moment-of-decision
+- Heavy dupe met sectie 14 closing-block (na vorige upgrade)
+
+**Wijzigingen**:
+- **Eyebrow** (nieuw): "Founding open · {taken}/{total} bezet" mono-amber scarcity-anchor met constants interpolatie
+- **Title**: "Klaar om Clyde te leren kennen?" → "Tien plekken open. Daarna sluit founding." (5xl-6xl display, 2-line statement, scarcity-driven)
+- **Subtitle**: "Tien founding plekken. 1 bezet. ... lifetime founding-tarief. Plan een gesprek van 30 minuten." → "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past." (factual, 2 short zinnen)
+- **Verwijderd**: secondary CTA "Lees SKC case" + i18n keys buttonSecondary + foundingLabel (orphan)
+- **Visual**: rounded-3xl amber-bordered card met `from-accent-human/[0.08] gradient bg` + radial blur top-center (echoes sectie 14 closing-block, maar BIGGER + premium "decision moment" weight)
+- i18n NL/EN/ES: title, subtitle, button herschreven. Nieuwe eyebrow key. Orphan keys weg.
+
+**Funnel-flow nu**: sectie 14 closing-block (qualifying "Klopt het verhaal?") → sectie 15 FAQ (objection-handling) → sectie 16 definitive close (scarcity + decision)
+
+**Validatie**: NL/EN/ES alle 200, screenshot toont huge title + amber bg + single CTA als visuele closing-statement.
+
 ### Sectie 15 — FAQ accordion (5 vragen) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `304c980` sharper title + subtitle ipv generieke 'Veelgestelde vragen'
@@ -342,9 +366,9 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-12, 14-15 (zie issue log)
+- [x] Sectie 1-12, 14-16 (zie issue log)
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
-- [ ] **Sectie 16 — Final CTA + scarcity** ← HIER VERDER
+- [ ] **Sectie 17 — TrustStrip (compact close)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -375,9 +399,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14-15 voltooid (sectie 13 verwijderd). Laatste sessie: FAQ sharper title + subtitle, commit 304c980.
+We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14-16 voltooid (sectie 13 verwijderd). Laatste sessie: Final CTA definitive close + scarcity eyebrow, commit ad0144f.
 
-Volgende: sectie 16 Final CTA + scarcity.
+Volgende: sectie 17 TrustStrip (compact close, laatste sectie homepage).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -424,7 +448,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 16 — Final CTA + scarcity** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 17 — TrustStrip (compact close)** is HIER VERDER. Laatste sectie homepage. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
