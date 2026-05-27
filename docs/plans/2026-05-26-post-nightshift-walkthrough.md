@@ -482,6 +482,31 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 **Validatie**: NL/EN/ES alle 200, mobile e2e 30/30 (3 locales × 10 sections), 0 JS errors, SKC heart-emblem tile rendert correct op alle 3 locales, hero inline CTA + scherpere title bevestigd.
 
+**Vervolg-iteratie same session**:
+- `104a3db` feat(nav) — /founding-member discoverability. User-feedback: hoe komen mensen op /founding-member, links niet gezien. Diagnose: footer + homepage section 4 + section 10 + chatbot, NIET in header nav. Fix: NAV_ITEMS krijgt 6e item 'foundingMember' tussen pricing+about (NL/EN/ES). Plus TierBentoCard founding-only 'Lees meer over Founding' link onder CTA.
+
+### /case-studies/skinclarity-club ✅ VOLTOOID 2026-05-28
+
+**Commit**: `a7652c1` fact-fixes + operator trim + architecture split + gallery iconography
+
+**Route gekozen**: C (B + gallery iconography per merk)
+
+**Diagnose huidige staat (v1)**:
+- heroMetrics.metric4 €3.000 vs outcomes.monthlySavings €5.000 — interne contradictie in 1 page (sectie 3 homepage walkthrough fixte al naar €5k, case-study was achter)
+- hero.chip3 '9 vaardigheden actief' vs skills.subtitle '6 vaardigheden aan voor SKC' — interne claim-mismatch
+- outcomes.monthlySavings.detail '15+ uur per week' vs hoursSaved.detail 5-6u saved — math-conflict tussen 2 outcome-cards
+- Operator chapter: SkcTestimonialBlock + 2 hardcoded operatorQuotes = triple-Sindy stack
+- Architecture.body 1 lange dichte paragraaf
+- Gallery cards met placeholder `<Boxes />` icon (geen brand-recognition)
+
+**Wijzigingen**:
+- **Fact-fixes**: metric4 3000→5000, chip3 9→6, monthlySavings.detail '15+ uur' → '5 tot 7 uur'. Alle 3 locales synchroon.
+- **Operator trim**: remove operatorQuotes.quote1 (approvalTime-quote redundant met outcomes.approvalTime metric). Behoud quote2 (uniek output-quality angle). Grid 2-up → single figure max-w-2xl.
+- **Architecture body split**: body → body1 (per-account memory) + body2 (cross-account learning). Beter scannable.
+- **Gallery iconography**: per-merk Lucide-icon mapping: brand1 Instagram (accent-system, hoofdaccount educatief) · brand2 Sparkles (accent-human, Sindy persoonlijk) · brand3 ShoppingBag (accent-system, webshop) · brand4 Layers (accent-human, portfolio). Subtle accent-tint per gradient. Tot er echte thumbnails komen.
+
+**Validatie**: NL/EN/ES alle 200, mobile e2e 18/18 (3 locales × 6 sections), 0 JS errors. €5.000 metric4 gevalideerd op mobile, gallery iconography zichtbaar per merk.
+
 ---
 
 ## Resterende secties (volgende sessies)
@@ -493,7 +518,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] **HOMEPAGE VOLLEDIG VOLTOOID** 🎉
 - [x] **Wave 1 page 1: /memory** ✅ (c4f91e5 + 21f1dd5 + ca236ec + 0ab8c5a)
 - [x] **Wave 1 page 2: /pricing** ✅ (47b58a7 + da9fe04)
-- [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8)
+- [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8 + 104a3db nav-discoverability)
+- [x] **Wave 1 page 4: /case-studies/skinclarity-club** ✅ (a7652c1)
 - [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
 - [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
 - [ ] Wave 1 page 6: /how-it-works (5-stappen onboardingreis)
