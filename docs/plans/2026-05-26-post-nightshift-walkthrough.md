@@ -537,10 +537,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] **Wave 1 page 2: /pricing** ✅ (47b58a7 + da9fe04)
 - [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8 + 104a3db nav-discoverability)
 - [x] **Wave 1 page 4: /case-studies/skinclarity-club** ✅ (a7652c1)
-- [x] **Wave 1 page 5: /about** ✅ (21e2a59)
-- [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
-- [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
-- [ ] Wave 1 page 6: /how-it-works (5-stappen onboardingreis)
+- [x] **Wave 1 page 5: /about** ✅ (21e2a59 + b73bfe6 MAX_PARTNERS_PER_YEAR fix)
+- [ ] Wave 1 page 6: /how-it-works (POLISH — hero + 5-step onboardingreis + loop indicator + final CTA)
 - [ ] Wave 2 — Skills (SkillPageTemplate + /skills index + 12 detail pages)
 - [ ] Wave 3 — Conversion (/contact, /apply, /assessment, /assessment/result)
 - [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
@@ -550,43 +548,117 @@ Volgorde, agent niet vooruitlopen:
 
 ## Hoe te resumeren bij context-reset
 
-**Prompt voor nieuwe sessie:**
+### Status snapshot (2026-05-28 einde sessie)
+
+**HOMEPAGE volledig voltooid** + **Wave 1 page 1-5 voltooid**:
+
+| # | Page | Commits | Route |
+|---|---|---|---|
+| 1 | `/memory` | c4f91e5 + 21f1dd5 + ca236ec + 0ab8c5a | C+D — narrative reorder + LayerCube cleanup + slide 1 duidelijker |
+| 2 | `/pricing` | 47b58a7 + da9fe04 | D — restructure + Lead Magnet weg + Skill Packs progressive disclosure |
+| 3 | `/founding-member` | 464c0f8 + 104a3db | C — SpotScarcityGrid SKC-emblem + section reorder + nav-discoverability fix (header nav + tier-card link) |
+| 4 | `/case-studies/skinclarity-club` | a7652c1 | C — fact-fixes + operator trim + architecture body split + gallery iconography per merk |
+| 5 | `/about` | 21e2a59 + b73bfe6 | D — narrative restructure + Daley HAS_PORTRAIT + MAX_PARTNERS_PER_YEAR 20→10 |
+
+**Branch state**: main synced met origin, HEAD = `b73bfe6` (of latest). Uncommitted: alleen screenshot-PNGs + .mobile-test/ folder + playwright-report/index.html (allemaal orphan, niet committen).
+
+### Volgende: Wave 1 page 6 = `/how-it-works` (POLISH)
+
+**Path**: `src/app/[locale]/(marketing)/how-it-works/page.tsx`
+**i18n namespace**: `how-it-works`
+**Structuur**: Hero + 5-step list (01-05) + loop indicator + final CTA
+
+**Red flags uit plan** (`C:\Users\daley\.claude\plans\yes-we-gaan-door-vast-kahn.md`):
+- Geen ScrollProgressRail (consistent met /case-studies pattern zou kunnen toegevoegd worden)
+- Loop-indicator alleen text, geen visual cycle
+- 5-step lijst — check of er een visuele upgrade nodig is (numbered-circles, timeline, accordion?)
+
+**Bestaande copy aanwezig in `messages/nl.json` onder `how-it-works.process.steps.*`** (apply / onboarding / configure / production / improvement) — copy is al sterk, focus op visual polish.
+
+### Resume-prompt voor nieuwe sessie
 
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-Homepage walkthrough VOLLEDIG VOLTOOID. Wave 1 page 1-3 voltooid 2026-05-27:
-- /memory (c4f91e5 + 3 iteraties) — narrative reorder, drop tech blocks, slide 1 duidelijker, z-ordering fix
-- /pricing (47b58a7 + da9fe04) — bug-fixes, section reorder, progressive disclosure, Lead Magnet weg
-- /founding-member (464c0f8) — hero polish, section reorder, SpotScarcityGrid upgrade (SKC heart-emblem op brand-green tile)
+HOMEPAGE volledig voltooid. Wave 1 page 1-5 voltooid (status snapshot tabel in doc):
+/memory + /pricing + /founding-member + /case-studies/skinclarity-club + /about.
 
-Volgende: Wave 1 page 4 = /case-studies/skinclarity-club (DEEP — ScrollProgressRail, BeforeAfterTimeline, CountUp, 5 hoofdstukken). Path: `src/app/[locale]/(marketing)/case-studies/skinclarity-club/page.tsx`. i18n: `case_studies.skc` (41+ keys). Red flags: gallery section heeft placeholder `<Boxes />` icons (geen echte assets), BeforeAfterTimeline no length-validation, operator section duplicates SkcTestimonialBlock + 2 hardcoded quotes.
+Volgende: Wave 1 page 6 = /how-it-works (POLISH).
+Path: src/app/[locale]/(marketing)/how-it-works/page.tsx
+i18n: how-it-works namespace
 
-Daarna: /about, /how-it-works (Wave 1 rest), dan Wave 2 (Skills), Wave 3 (Conversion), Wave 4 (Utility), Wave 5 (final consistency scan).
+Pre-flight (verplicht):
+1. cd C:/Users/daley/Desktop/Futuremarketingai/fmai-nextjs
+2. git status --short (main moet clean — screenshot-PNGs en .mobile-test/ folder zijn orphan, niet committen)
+3. git pull origin main (zorg dat je laatst hebt)
+4. node scripts/dev.mjs (start dev server background — port-aware parallel-safe)
 
-Procedure per sectie:
-1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
-2. Screenshot via fmai-nextjs/scripts/screenshot-founder.mjs als template (kopieer + pas selector aan)
-3. Kritische eval met severity-tabel + 3-5 concrete voorstellen
-4. Spawn 2-3 parallel agents voor zware secties (design-critic + copy-research + strategist) — alleen wanneer warranted
-5. AskUserQuestion welke fixes te implementeren — bij stuck, vraag eerst diagnose (welke laag faalt) voordat je opties presenteert
-6. Implementeer + visueel verify (screenshot v2) + atomic commit + push
-7. Update walkthrough doc met commit-SHA en wijzigingen onder issue-log
+Procedure per page (mirror van walkthrough Wave 1):
+1. Read component + i18n (NL/EN/ES)
+2. Schrijf scripts/screenshot-{page}.mjs (kopieer screenshot-about.mjs template, pas URL aan, met scroll-trigger voor RevealContainer animaties)
+3. Run screenshot, inspect
+4. Kritische eval (HIGH/MEDIUM/LOW severity tabel + 'Wat al GOED is' + fact-check tegen constants/SSoT)
+5. AskUserQuestion 3-4 strategische routes (A polish / B reorder / C visual upgrade / D major restructure)
+6. Implement gekozen route
+7. Re-screenshot desktop (v2)
+8. Schrijf scripts/e2e-mobile-{page}.mjs (kopieer e2e-mobile-about.mjs template, pas SECTIONS aan), run, check 0 JS errors
+9. Atomic commit + push naar main
+10. Update walkthrough doc met commit-SHA + wijzigingen onder issue-log
 
-Pre-flight check vóór sectie 9:
-- `git status --short` (main moet clean zijn, alleen playwright-report/screenshots als orphan)
-- `git pull origin main` (user kan tussendoor scripts hebben gecommit)
-- Dev server: `npm run dev` in fmai-nextjs/
+Conventies (kritisch!):
+- Geen em-dashes (—) in user-facing copy. Komma/punt/dubbele punt.
+- Clyde = hosted SaaS (trainen/leren, NIET installeren/deployen) — zie memory project_clyde_delivery_model.
+- Founding €997 = MAANDPRIJS met levenslang gelockt tarief, NIET eenmalige betaling — zie memory project_pricing_founding_lifetime_lock.
+- i18n ALTIJD synchroon in alle 3 talen (NL primary, EN+ES vertaald). JSON validate na elke change.
+- Atomic commits per logische change, één per fix. Push naar main na elke commit.
+- Single CTA-button op final CTAs (homepage section 16 pattern). Geen dual primary+secondary op moment-of-decision.
+- Mobile-test verplicht na elke page (zie memory feedback_mobile_test_per_page) vóór user-review.
+- Geen scope-creep — alleen pakken wat user akkoord geeft via AskUserQuestion.
 
-Conventies:
-- Clyde = hosted SaaS, geen on-site install (zie memory project_clyde_delivery_model.md). Werkwoorden: trainen/leren, NIET installeren/deployen
-- Geen em-dashes (—) in user-facing copy
-- Sindy = Kienstra (volledige naam Sindy Kienstra). Geen SKC co-eigendom claim voor Daley
-- Atomic commits + push naar main per fix
-- Bij design-keuze: 2-3 sentence advies + tradeoff, dan user beslist
-- Geen scope-creep — alleen wat user akkoord geeft
-- i18n ALTIJD in alle 3 talen (NL primary, EN+ES vertaald)
+Constants SSoT (src/lib/constants.ts):
+- FOUNDING_SPOTS_TAKEN = 1
+- FOUNDING_SPOTS_TOTAL = 10
+- MAX_PARTNERS_PER_YEAR = 10 (was 20, gecorrigeerd 2026-05-28 — gebruik FOUNDING_SPOTS_TOTAL framing waar mogelijk)
+
+Patterns die al staan (gebruik consistent op nieuwe pages):
+- HAS_PORTRAIT fs.existsSync pattern (FounderSection.tsx + /about page.tsx) voor Daley/Sindy portretten
+- EyebrowLabel primitive (src/components/sections/EyebrowLabel.tsx) — site-wide mono-uppercase accent
+- SectionShell + RevealContainer + RevealItem (Fase 0 primitives) — section wrappers met motion
+- CapacityBar + FoundingCounter + SpotScarcityGrid (founding/ folder) — scarcity-visuals
+- ScrollProgressRail + ChapterSection (case-study/ folder) — long-form page navigation
+- Single-button CTA (CTAButton size="lg" href="/apply") + amber scarcity-eyebrow met constants interpolation
+
+Open TODOs voor user (Daley dropt assets):
+1. Daley portret -> public/images/daley-portrait.webp (192x192 min). HAS_PORTRAIT in /about + FounderSection auto-flipt naar Image bij volgende build.
+2. Sindy portret -> public/images/sindy-portrait.webp (288x288 min). HAS_PORTRAIT in TestimonialBlock op homepage auto-flipt.
+3. SKC case-study gallery thumbnails -> /public/case-studies/skc/gallery/*.jpg. /case-studies page.tsx GALLERY_BRAND_META gebruikt tot dan placeholder per-merk Lucide icons.
+
+Scripts beschikbaar (kopieer als template):
+- scripts/screenshot-{page}.mjs templates per page
+- scripts/e2e-mobile-{page}.mjs templates per page (SECTIONS lijst aanpassen)
+- scripts/dev.mjs — port-aware npm run dev wrapper (parallel-safe)
+- scripts/cleanup-zombies.ps1 + health-check.ps1 (PC hygiene)
+
+Bij design-keuze: 2-3 sentence advies + tradeoff, dan user beslist via AskUserQuestion.
+
+Verwacht: user reageert per AskUserQuestion met route-keuze. Geen mid-flow goedkeuringen vragen, gewoon doorgaan met implementatie + commit + push.
 ```
+
+### Open TODOs hand-off
+
+1. **Daley portret** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (192x192+). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) + `/about` [page.tsx](../fmai-nextjs/src/app/[locale]/(marketing)/about/page.tsx) auto-flipt naar `Image` bij volgende build. Geen code-edit nodig.
+2. **Sindy portret** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (288x288+). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) auto-flipt. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is, separate path).
+3. **SKC case-study gallery thumbnails** → drop in `public/case-studies/skc/gallery/`. Tot dan placeholder per-merk Lucide icons in GALLERY_BRAND_META map (Instagram/Sparkles/ShoppingBag/Layers met accent-color).
+4. **Stripe price IDs voor workspace-priced tiers** (Growth/Pro/Ent) — niet walkthrough-scope, blijft TODO uit project_pricing_handover memory.
+
+### Conventie-updates ontwikkeld tijdens Wave 1
+
+- **Mobile-test verplicht na elke page** (memory `feedback_mobile_test_per_page`): voor user-review altijd `node scripts/e2e-mobile-{page}.mjs` draaien op 390x844 iPhone viewport × 3 locales. 0 JS errors filter (pre-existing CSP voor `va.vercel-scripts.com` skippen).
+- **Single CTA op final** (homepage section 16 pattern). Verwijder secondary "Lees X case" / "Neem contact op" / "Read SkinClarity case" patterns op alle decision-pages.
+- **Scarcity-eyebrow op page-final-CTA**: `Founding open · {taken}/{total} bezet` met `FOUNDING_SPOTS_TAKEN/TOTAL` interpolation + amber styling.
+- **MAX_PARTNERS_PER_YEAR = 10** (was 20). Eén scarcity-anchor consistent op alle pages.
+- **HAS_PORTRAIT pattern** voor founder/persona portretten — fs.existsSync check op build-time, conditional Image vs gradient placeholder.
+- **Progressive disclosure via `<details>`** voor add-on / secondary info (Skill Packs op /pricing). Native HTML, no extra JS bundle.
 
 **Status bij hand-off (2026-05-27 einde sessie):**
 
