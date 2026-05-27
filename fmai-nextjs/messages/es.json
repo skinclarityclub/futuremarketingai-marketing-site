@@ -779,7 +779,7 @@
     },
     "hero": {
       "eyebrow": "Sobre FutureMarketingAI",
-      "badge": "Ahora estamos incorporando Founding members",
+      "badge": "Founding abierto · {taken}/{total} ocupado",
       "title": "Sobre FutureMarketingAI",
       "tagline": "El primer Empleado AI de Marketing para agencias, creado por un founder en solitario."
     },
@@ -787,8 +787,7 @@
       "eyebrow": "Por qué existe esto",
       "heading": "Nuestra misión",
       "text": "Dar a cada agencia de marketing acceso a un Empleado AI de Marketing que se encargue de la ejecución. Para que los equipos de agencia puedan centrarse en estrategia, creatividad y relación con el cliente.",
-      "why_heading": "Por qué construyo esto",
-      "why_text": "Yo mismo dirigí operaciones de marketing y vi el mismo problema que tiene toda agencia: demasiadas marcas, demasiado trabajo repetitivo, demasiado pocas horas. Así que construí el Empleado AI de Marketing que yo quería tener."
+      "personal": "Yo mismo dirigí operaciones de marketing y vi el mismo problema que tiene toda agencia: demasiadas marcas, demasiado trabajo repetitivo, demasiado pocas horas. Así que construí el Empleado AI de Marketing que yo quería tener."
     },
     "journey": {
       "eyebrow": "Recorrido",
@@ -848,19 +847,18 @@
       "eyebrow": "Siguiente paso",
       "title": "Sé Founding Member",
       "description": "Estamos incorporando a las primeras 10 agencias Founding por 997 EUR al mes. Fija tu precio más bajo y ayuda a dar forma al producto.",
-      "demo_button": "Agenda una llamada",
-      "contact_button": "Ponte en contacto"
+      "demo_button": "Agenda una llamada"
     },
     "icp": {
       "eyebrow": "ICP híbrido",
-      "title": "¿Para qué agencias construyo a Clyde?",
+      "title": "Para quién funciona (y para quién no)",
       "subtitle": "El mismo ICP híbrido que en la home, aquí con más detalle. Somos deliberadamente selectivos.",
-      "fitTitle": "Para quién es esto",
+      "fitTitle": "Para quién funciona",
       "fit1": "Agencias con 5 a 30 FTE que atienden entre 10 y 50 marcas y quieren escalar sin contratar más personal.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo a ejecutarlos.",
       "fit4": "Agencias NL y EU-first que valoran la residencia de datos y el cumplimiento de RGPD y EU AI Act.",
-      "notFitTitle": "Probablemente no es el encaje correcto si",
+      "notFitTitle": "Para quién no funciona",
       "notFit1": "Tu facturación anual es inferior a 300K EUR. El presupuesto no encaja y no queremos frenar tu crecimiento.",
       "notFit2": "Te dedicas solo a branding, identidad o creatividad pura. Clyde entrega contenido de performance, no diseño.",
       "notFit3": "Buscas una solución totalmente automatizada. Clyde aprende de ti, lo que requiere 4 semanas de onboarding e input continuo.",

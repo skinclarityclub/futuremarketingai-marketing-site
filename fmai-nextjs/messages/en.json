@@ -779,7 +779,7 @@
     },
     "hero": {
       "eyebrow": "About FutureMarketingAI",
-      "badge": "Founding members are being onboarded now",
+      "badge": "Founding open · {taken}/{total} taken",
       "title": "About FutureMarketingAI",
       "tagline": "The first AI Marketing Employee for agencies, by a solo founder."
     },
@@ -787,8 +787,7 @@
       "eyebrow": "Why this exists",
       "heading": "Our mission",
       "text": "To give every marketing agency access to an AI Marketing Employee that handles execution. So agency teams can focus on strategy, creativity and client relationships.",
-      "why_heading": "Why I build this",
-      "why_text": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the AI Marketing Employee I wanted to have."
+      "personal": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the AI Marketing Employee I wanted to have."
     },
     "journey": {
       "eyebrow": "Build journey",
@@ -848,19 +847,18 @@
       "eyebrow": "Next step",
       "title": "Become a Founding Member",
       "description": "We are onboarding the first 10 Founding agencies at €997 per month. Lock in your lowest price and help shape the product.",
-      "demo_button": "Book a call",
-      "contact_button": "Get in touch"
+      "demo_button": "Book a call"
     },
     "icp": {
       "eyebrow": "Hybrid ICP",
-      "title": "Which agencies am I building Clyde for?",
+      "title": "Who this is for (and who it is not)",
       "subtitle": "The same hybrid ICP as on home, in more detail here. We are deliberately selective.",
       "fitTitle": "Who this is for",
       "fit1": "Agencies with 5 to 30 FTE serving 10 to 50 brands, looking to scale without extra headcount.",
       "fit2": "Marketing operators who work data-driven and treat content as a growth engine.",
       "fit3": "Founders looking for a partner, not a tool. Willing to recalibrate workflows together, not only execute.",
       "fit4": "NL and EU-first agencies that value data residency and GDPR and EU AI Act compliance.",
-      "notFitTitle": "Probably not a match if",
+      "notFitTitle": "Who this is not for",
       "notFit1": "Your annual revenue is under €300K. The budget doesn't fit, and we don't want to slow your growth.",
       "notFit2": "You do pure branding, identity or creative. Clyde delivers performance content, not design work.",
       "notFit3": "You are looking for a fully automated solution. Clyde learns from you, which takes 4 weeks of onboarding plus ongoing input.",

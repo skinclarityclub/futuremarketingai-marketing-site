@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { existsSync } from 'node:fs'
+import path from 'node:path'
+import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { ArrowRight, Check, Quote, X } from 'lucide-react'
@@ -28,6 +31,11 @@ import {
   FOUNDING_SPOTS_TOTAL,
   MAX_PARTNERS_PER_YEAR,
 } from '@/lib/constants'
+
+const PORTRAIT_SRC = '/images/daley-portrait.webp'
+const HAS_PORTRAIT = existsSync(
+  path.join(process.cwd(), 'public', 'images', 'daley-portrait.webp'),
+)
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -94,11 +102,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       />
 
       {/* Hero Section */}
-      <section className="relative pt-16 pb-12 px-6 lg:px-12" aria-labelledby="about-hero">
+      <section className="relative pt-24 pb-12 px-6 lg:px-12" aria-labelledby="about-hero">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/20 rounded-full text-sm font-medium text-text-secondary">
-            {t('hero.badge')}
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
+            {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
           </span>
           <h1
             id="about-hero"
@@ -112,7 +120,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Mission — consolidated: intro = WHAT, callout = personal WHY origin */}
       <SectionShell
         id="about-mission"
         eyebrow={t('mission.eyebrow')}
@@ -124,12 +132,15 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       >
         <ScrollReveal>
           <GlassCard className="text-left">
-            <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
-              {t('mission.why_heading')}
-            </h3>
-            <p className="text-lg text-text-secondary leading-relaxed">
-              {t('mission.why_text')}
-            </p>
+            <blockquote className="relative pl-6">
+              <Quote
+                aria-hidden
+                className="absolute left-0 top-1 w-4 h-4 text-accent-system/60"
+              />
+              <p className="text-lg text-text-secondary leading-relaxed">
+                {t('mission.personal')}
+              </p>
+            </blockquote>
           </GlassCard>
         </ScrollReveal>
       </SectionShell>
@@ -150,7 +161,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         />
       </SectionShell>
 
-      {/* Market Timeline */}
+      {/* Market context — horizontal 3-era strip (visual differentiation from vertical journey) */}
       <SectionShell
         id="about-timeline"
         eyebrow={t('timeline.eyebrow')}
@@ -159,20 +170,22 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         containerClassName="max-w-6xl mx-auto"
         className="py-16 px-6 lg:px-12"
       >
-        <RevealContainer className="space-y-6">
+        <RevealContainer className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
           {ERA_KEYS.map((era) => (
             <RevealItem key={era}>
               <GlassCard
                 highlighted={era === 'autonomous'}
-                className="relative border-l-4 border-l-accent-system pl-8"
+                className={`h-full text-left ${
+                  era === 'autonomous' ? 'border-accent-system/40' : ''
+                }`}
               >
-                <div className="text-sm font-semibold font-mono text-accent-system mb-2">
+                <div className="text-xs font-semibold font-mono uppercase tracking-[0.16em] text-accent-system mb-2">
                   {t(`timeline.eras.${era}.year`)}
                 </div>
-                <h3 className="text-2xl font-bold font-display text-text-primary mb-3">
+                <h3 className="text-xl font-bold font-display text-text-primary mb-3">
                   {t(`timeline.eras.${era}.title`)}
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-sm text-text-secondary leading-relaxed">
                   {t(`timeline.eras.${era}.description`)}
                 </p>
               </GlassCard>
@@ -316,7 +329,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </ScrollReveal>
       </SectionShell>
 
-      {/* Founder bio */}
+      {/* Founder bio — HAS_PORTRAIT fs.existsSync auto-flip pattern */}
       <SectionShell
         id="about-founder"
         eyebrow={t('founder.eyebrow')}
@@ -328,16 +341,24 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <ScrollReveal>
           <GlassCard className="text-left">
             <div className="flex flex-col sm:flex-row items-start gap-6">
-              {/*
-                TODO: Daley portret — vervang placeholder door echte foto.
-                Pad-suggestie: /public/images/daley-portrait.webp (512x512 min).
-              */}
-              <div
-                aria-hidden
-                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-bg-elevated via-bg-surface to-bg-deep border border-border-primary grid place-items-center font-display font-bold text-4xl text-accent-system/80 shrink-0"
-              >
-                D
-              </div>
+              {HAS_PORTRAIT ? (
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-2 ring-accent-system/40 shrink-0">
+                  <Image
+                    src={PORTRAIT_SRC}
+                    alt={t('founder.fullName')}
+                    fill
+                    sizes="(min-width: 640px) 112px, 96px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div
+                  aria-hidden
+                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-bg-elevated via-bg-surface to-bg-deep border border-border-primary grid place-items-center font-display font-bold text-4xl text-accent-system/80 shrink-0"
+                >
+                  D
+                </div>
+              )}
               <div className="flex-1">
                 <h3 className="text-xl font-semibold text-text-primary mb-1">
                   {t('founder.name')}
@@ -356,7 +377,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </ScrollReveal>
       </SectionShell>
 
-      {/* CTA Section */}
+      {/* CTA — single primary button (dual-CTA pattern removed per homepage walkthrough) */}
       <SectionShell
         id="about-cta"
         eyebrow={t('cta.eyebrow')}
@@ -366,12 +387,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         containerClassName="max-w-4xl mx-auto"
         className="py-20 px-6 lg:px-12"
       >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <CTAButton href="/apply" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
             {t('cta.demo_button')}
-          </CTAButton>
-          <CTAButton href="/contact" variant="secondary" size="lg">
-            {t('cta.contact_button')}
           </CTAButton>
         </div>
       </SectionShell>

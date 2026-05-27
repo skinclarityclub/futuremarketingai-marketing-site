@@ -779,7 +779,7 @@
     },
     "hero": {
       "eyebrow": "Over FutureMarketingAI",
-      "badge": "Founding members worden nu onboard gezet",
+      "badge": "Founding open · {taken}/{total} bezet",
       "title": "Over FutureMarketingAI",
       "tagline": "De eerste AI Marketing Medewerker voor bureaus, door een solo founder."
     },
@@ -787,8 +787,7 @@
       "eyebrow": "Waarom dit bestaat",
       "heading": "Mijn missie",
       "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die de uitvoering op zich neemt. Zodat bureauteams zich kunnen richten op strategie, creativiteit en klantrelaties.",
-      "why_heading": "Waarom ik dit bouw",
-      "why_text": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
+      "personal": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
     },
     "journey": {
       "eyebrow": "Bouwreis",
@@ -848,19 +847,18 @@
       "eyebrow": "Volgende stap",
       "title": "Word Founding Member",
       "description": "We zetten de eerste 10 Founding-bureaus op voor €997 per maand. Vergrendel je laagste prijs en help het product vormgeven.",
-      "demo_button": "Plan een gesprek",
-      "contact_button": "Neem contact op"
+      "demo_button": "Plan een gesprek"
     },
     "icp": {
       "eyebrow": "Hybride ICP",
-      "title": "Voor welke bureaus bouw ik Clyde?",
+      "title": "Voor wie dit werkt (en voor wie niet)",
       "subtitle": "Dezelfde hybride ICP als op home, hier uitgebreider. We zijn bewust selectief.",
-      "fitTitle": "Voor wie werkt dit?",
+      "fitTitle": "Voor wie dit werkt",
       "fit1": "Bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen en willen opschalen zonder extra personeel.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
       "fit4": "NL- en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
-      "notFitTitle": "Waarschijnlijk geen match als",
+      "notFitTitle": "Voor wie dit niet werkt",
       "notFit1": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan.",
       "notFit2": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
       "notFit3": "Je zoekt naar een volautomatische oplossing. Clyde leert van jou, en dat vraagt 4 weken onboarding plus blijvende input.",
