@@ -458,6 +458,30 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 **Validatie**: NL/EN/ES alle 200, mobile e2e 30/30 (3 locales × 10 sections), 0 JS errors van pricing zelf, `{maxPartners}` rendert '20', single-button CTA, Skill Packs collapse-state werkt.
 
+**Vervolg-iteratie same session**:
+- `da9fe04` fix(pricing) — verwijder Lead Magnet. User-feedback: page laadde traag tussen scan en tier overzicht. Scan is top-funnel-capture, /pricing bezoekers zijn al in decision-mode. Lead Magnet blijft op homepage + footer waar exploration-context past.
+
+### /founding-member ✅ VOLTOOID 2026-05-27
+
+**Commit**: `464c0f8` hero polish + section reorder + SpotScarcityGrid upgrade
+
+**Route gekozen**: C (B + SpotScarcityGrid visueel upgraden)
+
+**Diagnose huidige staat (v1)**:
+- Hero title 'Eén keer, levenslang' / 'Once, for life' / 'Una vez, de por vida' — 'Eén keer' / 'Once' is ambigu (one-time payment misinterpretation risk per memory project_pricing_founding_lifetime_lock)
+- Hero geen inline CTA — skim-readers moeten naar pricing-section scrollen voor eerste klikbare actie
+- Pricing heading 'Jouw investering' / 'Your investment' / 'Tu inversión' generiek
+- SKC proof onderaan tussen FAQ en final CTA — trust-anchor hoort vóór objection-handling, niet erna
+- Quick Apply mid-page (na benefits) — friction-reducer past beter near-close dan mid-funnel
+- SpotScarcityGrid was 5×2 rounded-full circles met generieke Check icon op bezet-tile — visueel licht, geen brand-recognition
+
+**Wijzigingen**:
+- **Hero polish**: 'Eén keer' → 'Eén keuze' + 'levenslang' → 'levenslang vast'/'gelockt' (vermijd one-time payment misinterpretation). Pricing card heading → 'De Founding-prijs'/'The Founding price'/'El precio Founding'. Nieuwe `hero.cta` i18n key 'Reserveer je plek'/'Reserve your seat'/'Reserva tu plaza' + amber CTAButton in hero.
+- **Section reorder**: SKC proof verplaatst van bottom naar na benefits (trust-anchor positie). Quick Apply verplaatst van mid-page naar voor final CTA (near-close friction-reducer). Nieuwe order: hero → pricing → value → scarcity → benefits → proof → FAQ → quick-apply → CTA.
+- **SpotScarcityGrid visual upgrade**: rounded-full circles → rounded-2xl tiles. Bezet-tile bg-[#127059] (SKC brand-green) + Image van `/brand/skc-emblem.png` heart-emblem ipv Check icon (consistent met homepage CaseStudyCard SKC badge pattern). Interface TakenSpot krijgt optionele `emblem` prop. Tile size: h-14/h-16 fixed → aspect-square w-full (responsive).
+
+**Validatie**: NL/EN/ES alle 200, mobile e2e 30/30 (3 locales × 10 sections), 0 JS errors, SKC heart-emblem tile rendert correct op alle 3 locales, hero inline CTA + scherpere title bevestigd.
+
 ---
 
 ## Resterende secties (volgende sessies)
@@ -468,8 +492,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] Sectie 17 — TrustStrip (VERWIJDERD wegens overlap + anti-climactic)
 - [x] **HOMEPAGE VOLLEDIG VOLTOOID** 🎉
 - [x] **Wave 1 page 1: /memory** ✅ (c4f91e5 + 21f1dd5 + ca236ec + 0ab8c5a)
-- [x] **Wave 1 page 2: /pricing** ✅ (47b58a7)
-- [ ] Wave 1 page 3: /founding-member (SpotScarcityGrid, QuickApplyTeaser)
+- [x] **Wave 1 page 2: /pricing** ✅ (47b58a7 + da9fe04)
+- [x] **Wave 1 page 3: /founding-member** ✅ (464c0f8)
 - [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
 - [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
 - [ ] Wave 1 page 6: /how-it-works (5-stappen onboardingreis)
@@ -487,11 +511,14 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-Homepage walkthrough VOLLEDIG VOLTOOID. Wave 1 page 1 (/memory) VOLTOOID 2026-05-27 (c4f91e5): route C+D + drop technical "geheugen-call" blocks, narrative-arc reorder (hero -> layers -> progress -> isolation -> decay -> comparison -> contrast -> CTA), Maand 1/3 framing, Chat-AI generiek, founding-scarcity CTA-eyebrow.
+Homepage walkthrough VOLLEDIG VOLTOOID. Wave 1 page 1-3 voltooid 2026-05-27:
+- /memory (c4f91e5 + 3 iteraties) — narrative reorder, drop tech blocks, slide 1 duidelijker, z-ordering fix
+- /pricing (47b58a7 + da9fe04) — bug-fixes, section reorder, progressive disclosure, Lead Magnet weg
+- /founding-member (464c0f8) — hero polish, section reorder, SpotScarcityGrid upgrade (SKC heart-emblem op brand-green tile)
 
-Volgende: Wave 1 page 2 = /pricing (PricingExperience workspace slider, SkillsTierMatrix, 8-item FAQ, LeadMagnetCTA sidebar). Path: `src/app/[locale]/(marketing)/pricing/page.tsx`. i18n: `pricing` namespace. Critical: pricing copy moet aligned blijven met sectie 11 PricingTeaser (founding 997/maand levenslang, andere tiers workspace-priced).
+Volgende: Wave 1 page 4 = /case-studies/skinclarity-club (DEEP — ScrollProgressRail, BeforeAfterTimeline, CountUp, 5 hoofdstukken). Path: `src/app/[locale]/(marketing)/case-studies/skinclarity-club/page.tsx`. i18n: `case_studies.skc` (41+ keys). Red flags: gallery section heeft placeholder `<Boxes />` icons (geen echte assets), BeforeAfterTimeline no length-validation, operator section duplicates SkcTestimonialBlock + 2 hardcoded quotes.
 
-Daarna: /founding-member, /case-studies/skinclarity-club, /about, /how-it-works (Wave 1 rest), dan Wave 2 (Skills), Wave 3 (Conversion), Wave 4 (Utility), Wave 5 (final consistency scan).
+Daarna: /about, /how-it-works (Wave 1 rest), dan Wave 2 (Skills), Wave 3 (Conversion), Wave 4 (Utility), Wave 5 (final consistency scan).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
