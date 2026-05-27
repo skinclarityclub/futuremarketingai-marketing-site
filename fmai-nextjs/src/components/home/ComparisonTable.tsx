@@ -57,9 +57,10 @@ export async function ComparisonTable({ locale }: { locale: string }) {
           </p>
         </div>
 
-        {/* Mobile: horizontal scroll. Desktop: full grid. */}
-        <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
-          <table className="min-w-[760px] lg:min-w-full w-full border-separate border-spacing-0 text-left">
+        {/* Mobile: horizontal scroll with right-edge gradient hint. Desktop: full grid. */}
+        <div className="relative">
+          <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
+            <table className="min-w-[760px] lg:min-w-full w-full border-separate border-spacing-0 text-left">
             <thead>
               <tr>
                 <th
@@ -151,6 +152,12 @@ export async function ComparisonTable({ locale }: { locale: string }) {
               </tr>
             </tfoot>
           </table>
+          </div>
+          {/* Mobile-only right-edge scroll hint — fades into bg to signal more columns */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-bg-deep via-bg-deep/80 to-transparent lg:hidden"
+          />
         </div>
 
         <div className="mt-8">
