@@ -1128,8 +1128,10 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
+      "badge": "Founding open · {taken}/{total} bezet",
       "title": "Hoe begint jouw partnership met Clyde?",
-      "description": "Vijf stappen van eerste gesprek tot autonoom draaien. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject."
+      "description": "Vijf stappen van eerste gesprek tot autonoom draaien. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
+      "cta": "Plan een gesprek"
     },
     "jsonLd": {
       "name": "Hoe de FutureMarketingAI-partnership start",
@@ -1141,35 +1143,60 @@
       "steps": {
         "apply": {
           "step": "Stap 1",
+          "timeStamp": "Pre-onboarding",
           "title": "Aanmelden plus kennismakingscall",
-          "description": "Vul het aanmeldformulier in. Binnen 3 werkdagen horen we van elkaar. Vervolgens een videogesprek van 30 minuten waarin we wederzijds beoordelen of het een match is. Geen pitch, wel een eerlijke check."
+          "description": "Vul het aanmeldformulier in. Binnen 3 werkdagen horen we van elkaar. Vervolgens een videogesprek van 30 minuten waarin we wederzijds beoordelen of het een match is. Geen pitch, wel een eerlijke check.",
+          "deliverable1": "Aanmeldformulier",
+          "deliverable2": "3 werkdagen reactie",
+          "deliverable3": "30-min video-call"
         },
         "onboarding": {
           "step": "Stap 2",
+          "timeStamp": "Week 1 tot 4",
           "title": "4 weken partnership-setup met Daley",
-          "description": "Daley begeleidt het traject persoonlijk. Intake van de merkstem per merk, KPI-doelen vastleggen, vaardigheden-matrix opbouwen en goedkeuringsworkflows inregelen. Geen self-service wizard."
+          "description": "Daley begeleidt het traject persoonlijk. Intake van de merkstem per merk, KPI-doelen vastleggen, vaardigheden-matrix opbouwen en goedkeuringsworkflows inregelen. Geen self-service wizard.",
+          "deliverable1": "Brand-scan per merk",
+          "deliverable2": "Brand-voice training",
+          "deliverable3": "Goedkeuringsworkflows"
         },
         "configure": {
           "step": "Stap 3",
+          "timeStamp": "Week 4",
           "title": "Clyde inregelen per merk",
-          "description": "Voor elk merk een werkruimte met: merkrichtlijnen, doelgroep, tone of voice, actieve vaardigheden, kanalen en goedkeuringsregels. Clyde begint zijn geheugen per merk op te bouwen."
+          "description": "Voor elk merk een werkruimte met: merkrichtlijnen, doelgroep, tone of voice, actieve vaardigheden, kanalen en goedkeuringsregels. Clyde begint zijn geheugen per merk op te bouwen.",
+          "deliverable1": "Werkruimte per merk",
+          "deliverable2": "Vaardigheden actief",
+          "deliverable3": "Kanalen gekoppeld"
         },
         "production": {
           "step": "Stap 4",
-          "title": "Productie start. Elke output gaat via jouw goedkeuring",
-          "description": "Clyde gaat aan het werk: social posts, blogs, calls, ads. Jij beoordeelt elke output in de goedkeuringslijst voordat het live gaat. Week 1 veel correcties, maar Clyde leert snel."
+          "timeStamp": "Vanaf week 5",
+          "title": "Productie start met jouw goedkeuring",
+          "description": "Clyde gaat aan het werk: social posts, blogs, calls, ads. Jij beoordeelt elke output in de goedkeuringslijst voordat het live gaat. Week 1 veel correcties, maar Clyde leert snel.",
+          "deliverable1": "Social posts live",
+          "deliverable2": "Goedkeurings-queue",
+          "deliverable3": "Week-1 iteraties"
         },
         "improvement": {
           "step": "Stap 5",
+          "timeStamp": "Doorlopend",
           "title": "Continu verbeteren plus wekelijkse rapportages",
-          "description": "Elke week scherper per merk. Clyde onthoudt correcties, leert van prestatiedata en bouwt micro-kennis op. De wekelijkse prestatie-digest houdt je in control."
+          "description": "Elke week scherper per merk. Clyde onthoudt correcties, leert van prestatiedata en bouwt micro-kennis op. De wekelijkse prestatie-digest houdt je in control.",
+          "deliverable1": "Wekelijkse digest",
+          "deliverable2": "Memory-correcties",
+          "deliverable3": "Prestatie-feedback"
         }
       },
+      "loop_eyebrow": "De ritmische cyclus",
       "loop_title": "Continu verbeteren",
-      "loop_description": "Clyde wordt elke week beter per merk. Geheugen, prestatiedata en jouw correcties voeden de volgende iteratie. Na 12 weken zie je het verschil met week 1."
+      "loop_description": "Clyde wordt elke week beter per merk. Geheugen, prestatiedata en jouw correcties voeden de volgende iteratie. Na een paar maanden zie je het verschil met week 1.",
+      "loop_stage1": "Productie",
+      "loop_stage2": "Goedkeuring",
+      "loop_stage3": "Geheugen",
+      "loop_stage4": "Verbetering"
     },
     "cta": {
-      "eyebrow": "Volgende stap",
+      "eyebrow": "Founding open · {taken}/{total} bezet",
       "title": "Klaar om de partnership te starten?",
       "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "button": "Plan een gesprek"

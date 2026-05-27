@@ -1128,8 +1128,10 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
+      "badge": "Founding abierto · {taken}/{total} reservadas",
       "title": "¿Cómo empieza tu partnership con Clyde?",
-      "description": "Cinco pasos desde la primera conversación hasta operar de forma autónoma. Sin self-service. Daley guía personalmente a cada cliente por el proceso."
+      "description": "Cinco pasos desde la primera conversación hasta operar de forma autónoma. Sin self-service. Daley guía personalmente a cada cliente por el proceso.",
+      "cta": "Agenda una llamada"
     },
     "jsonLd": {
       "name": "Cómo empieza la partnership con FutureMarketingAI",
@@ -1141,35 +1143,60 @@
       "steps": {
         "apply": {
           "step": "Paso 1",
+          "timeStamp": "Pre-onboarding",
           "title": "Solicitud y discovery call",
-          "description": "Rellena el formulario de solicitud. En un plazo de 3 días laborables nos escuchamos. Después, una videollamada de 30 minutos en la que revisamos mutuamente si es un encaje. Sin pitch, un check honesto."
+          "description": "Rellena el formulario de solicitud. En un plazo de 3 días laborables nos escuchamos. Después, una videollamada de 30 minutos en la que revisamos mutuamente si es un encaje. Sin pitch, un check honesto.",
+          "deliverable1": "Formulario de solicitud",
+          "deliverable2": "Respuesta en 3 días",
+          "deliverable3": "Videollamada de 30 min"
         },
         "onboarding": {
           "step": "Paso 2",
+          "timeStamp": "Semana 1 a 4",
           "title": "4 semanas de partnership setup con Daley",
-          "description": "Daley guía el proceso personalmente. Intake de la voz de marca por marca, definición de objetivos KPI, construcción de la matriz de habilidades y configuración de los flujos de aprobación. Sin asistente self-service."
+          "description": "Daley guía el proceso personalmente. Intake de la voz de marca por marca, definición de objetivos KPI, construcción de la matriz de habilidades y configuración de los flujos de aprobación. Sin asistente self-service.",
+          "deliverable1": "Brand scan por marca",
+          "deliverable2": "Entrenamiento de voz",
+          "deliverable3": "Flujos de aprobación"
         },
         "configure": {
           "step": "Paso 3",
+          "timeStamp": "Semana 4",
           "title": "Configurar a Clyde por marca",
-          "description": "Por cada marca, un espacio de trabajo con: directrices de marca, audiencia, tono de voz, habilidades activas, canales y reglas de aprobación. Clyde empieza a construir su memoria por marca."
+          "description": "Por cada marca, un espacio de trabajo con: directrices de marca, audiencia, tono de voz, habilidades activas, canales y reglas de aprobación. Clyde empieza a construir su memoria por marca.",
+          "deliverable1": "Espacio por marca",
+          "deliverable2": "Habilidades activas",
+          "deliverable3": "Canales conectados"
         },
         "production": {
           "step": "Paso 4",
-          "title": "Arranca la producción. Cada output pasa por tu aprobación",
-          "description": "Clyde se pone a trabajar: posts sociales, blogs, llamadas, anuncios. Tú revisas cada output en la cola de aprobación antes de que salga en vivo. La semana 1 hay muchas correcciones, pero Clyde aprende rápido."
+          "timeStamp": "Desde semana 5",
+          "title": "Arranca la producción con tu aprobación",
+          "description": "Clyde se pone a trabajar: posts sociales, blogs, llamadas, anuncios. Tú revisas cada output en la cola de aprobación antes de que salga en vivo. La semana 1 hay muchas correcciones, pero Clyde aprende rápido.",
+          "deliverable1": "Posts sociales en vivo",
+          "deliverable2": "Cola de aprobación",
+          "deliverable3": "Iteraciones semana 1"
         },
         "improvement": {
           "step": "Paso 5",
+          "timeStamp": "Continuo",
           "title": "Mejora continua y reportes semanales",
-          "description": "Más afilado cada semana por marca. Clyde recuerda correcciones, aprende de los datos de rendimiento y construye micro-conocimiento. El resumen semanal de rendimiento te mantiene al mando."
+          "description": "Más afilado cada semana por marca. Clyde recuerda correcciones, aprende de los datos de rendimiento y construye micro-conocimiento. El resumen semanal de rendimiento te mantiene al mando.",
+          "deliverable1": "Resumen semanal",
+          "deliverable2": "Correcciones de memoria",
+          "deliverable3": "Feedback de rendimiento"
         }
       },
+      "loop_eyebrow": "El ciclo rítmico",
       "loop_title": "Mejora continua",
-      "loop_description": "Clyde mejora cada semana por marca. Memoria, datos de rendimiento y tus correcciones alimentan la siguiente iteración. Después de 12 semanas notarás la diferencia con la semana 1."
+      "loop_description": "Clyde mejora cada semana por marca. Memoria, datos de rendimiento y tus correcciones alimentan la siguiente iteración. Después de unos meses notarás la diferencia con la semana 1.",
+      "loop_stage1": "Producción",
+      "loop_stage2": "Aprobación",
+      "loop_stage3": "Memoria",
+      "loop_stage4": "Mejora"
     },
     "cta": {
-      "eyebrow": "Siguiente paso",
+      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
       "title": "¿Listo para empezar la partnership?",
       "description": "Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "button": "Agenda una llamada"

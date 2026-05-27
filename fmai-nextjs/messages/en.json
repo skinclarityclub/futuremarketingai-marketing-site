@@ -1128,8 +1128,10 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
+      "badge": "Founding open · {taken}/{total} reserved",
       "title": "How does your partnership with Clyde start?",
-      "description": "Five steps from first call to running autonomously. No self-service. Daley personally guides every client through the process."
+      "description": "Five steps from first call to running autonomously. No self-service. Daley personally guides every client through the process.",
+      "cta": "Book a call"
     },
     "jsonLd": {
       "name": "How the FutureMarketingAI partnership starts",
@@ -1141,35 +1143,60 @@
       "steps": {
         "apply": {
           "step": "Step 1",
+          "timeStamp": "Pre-onboarding",
           "title": "Application plus discovery call",
-          "description": "Fill in the application form. We get back to each other within 3 business days. Then a 30-minute video call where we mutually review whether it is a match. No pitch, an honest check."
+          "description": "Fill in the application form. We get back to each other within 3 business days. Then a 30-minute video call where we mutually review whether it is a match. No pitch, an honest check.",
+          "deliverable1": "Application form",
+          "deliverable2": "3-business-day response",
+          "deliverable3": "30-min video call"
         },
         "onboarding": {
           "step": "Step 2",
+          "timeStamp": "Week 1 to 4",
           "title": "4 weeks of partnership setup with Daley",
-          "description": "Daley guides the process personally. Brand voice intake per brand, KPI targets defined, skills matrix built and approval workflows set up. No self-service wizard."
+          "description": "Daley guides the process personally. Brand voice intake per brand, KPI targets defined, skills matrix built and approval workflows set up. No self-service wizard.",
+          "deliverable1": "Brand scan per brand",
+          "deliverable2": "Brand-voice training",
+          "deliverable3": "Approval workflows"
         },
         "configure": {
           "step": "Step 3",
+          "timeStamp": "Week 4",
           "title": "Configure Clyde per brand",
-          "description": "For every brand a workspace with: brand guidelines, audience, tone of voice, active skills, channels and approval rules. Clyde starts building his memory per brand."
+          "description": "For every brand a workspace with: brand guidelines, audience, tone of voice, active skills, channels and approval rules. Clyde starts building his memory per brand.",
+          "deliverable1": "Workspace per brand",
+          "deliverable2": "Skills active",
+          "deliverable3": "Channels connected"
         },
         "production": {
           "step": "Step 4",
-          "title": "Production starts. Every output passes through your approval",
-          "description": "Clyde gets to work: social posts, blogs, calls, ads. You review every output in the approval queue before it goes live. Week 1 has lots of corrections, but Clyde learns fast."
+          "timeStamp": "From week 5",
+          "title": "Production starts with your approval",
+          "description": "Clyde gets to work: social posts, blogs, calls, ads. You review every output in the approval queue before it goes live. Week 1 has lots of corrections, but Clyde learns fast.",
+          "deliverable1": "Social posts live",
+          "deliverable2": "Approval queue",
+          "deliverable3": "Week-1 iterations"
         },
         "improvement": {
           "step": "Step 5",
+          "timeStamp": "Ongoing",
           "title": "Continuous improvement plus weekly reports",
-          "description": "Sharper every week per brand. Clyde remembers corrections, learns from performance data and builds micro-knowledge. The weekly performance digest keeps you in control."
+          "description": "Sharper every week per brand. Clyde remembers corrections, learns from performance data and builds micro-knowledge. The weekly performance digest keeps you in control.",
+          "deliverable1": "Weekly digest",
+          "deliverable2": "Memory corrections",
+          "deliverable3": "Performance feedback"
         }
       },
+      "loop_eyebrow": "The rhythmic cycle",
       "loop_title": "Continuous improvement",
-      "loop_description": "Clyde gets better every week per brand. Memory, performance data and your corrections feed the next iteration. After 12 weeks you see the difference from week 1."
+      "loop_description": "Clyde gets better every week per brand. Memory, performance data and your corrections feed the next iteration. After a few months you see the difference from week 1.",
+      "loop_stage1": "Production",
+      "loop_stage2": "Approval",
+      "loop_stage3": "Memory",
+      "loop_stage4": "Improvement"
     },
     "cta": {
-      "eyebrow": "Next step",
+      "eyebrow": "Founding open · {taken}/{total} reserved",
       "title": "Ready to start the partnership?",
       "description": "Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "button": "Book a call"
