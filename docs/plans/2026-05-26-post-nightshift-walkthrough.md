@@ -397,6 +397,70 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 ---
 
+## Wave 2 — Skills
+
+### Header SOTA edge-flush grid ✅ VOLTOOID 2026-05-28 (tussendoor)
+
+**Commit**: `b771c04` feat(header) — SOTA edge-flush 3-segment grid layout
+
+**Diagnose**: Met 7 nav-items (Werkwijze toegevoegd in 08d3b9d) werd `flex justify-between max-w-7xl` strakker. ~100px ademruimte per gap op 1440px.
+
+**Gemini research** (1 query): Premium B2B 2025-2026 pattern = edge-flush logo+CTA met centered nav-cluster (Stripe/Vercel/PostHog). Max-width 1140-1440px optimal range.
+
+**Wijzigingen**:
+- `max-w-7xl` (1280) → `max-w-[1440px]`: +160px container-breedte op 1440+ viewports
+- `flex justify-between` → `grid grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-8`
+- Logo: `justify-self-start` (grid col 1, flush left)
+- Desktop nav: `justify-self-center` (grid col 2, pure viewport-centered ANTI-DRIFT)
+- Right cluster (login+CTA+mobile-menu): `justify-self-end` (grid col 3, flush right)
+- Mobile: hamburger via right-cluster onveranderd
+
+**Resultaat**: nav-cluster zit ALTIJD in viewport-midden ongeacht logo- of CTA-breedte. Logo + CTA krijgen +80-160px meer ademruimte op 1440+ viewports.
+
+### /skills index ✅ VOLTOOID 2026-05-28
+
+**Commit**: `376bcf4` feat(skills/index) — scarcity hero + final CTA-card + /how-it-works link
+
+**Route gekozen**: A (focus sub-wave 2A)
+
+**Diagnose huidige staat (v1)**:
+- Geen hero scarcity-anchor (alle Wave 1 pages hebben dit pattern al)
+- **Page eindigde abrupt** bij bento-grid bottom (geen final close-block)
+- Geen funnel-anchored CTA naar /apply of /how-it-works
+
+**Wijzigingen**:
+- **Hero scarcity-badge**: 'Founding open · 1/10 bezet' amber-mono met `FOUNDING_SPOTS_TAKEN/TOTAL` interpolation
+- **Final CTA-section**: GlassCard met scarcity-eyebrow + title 'Eén AI medewerker, alle vaardigheden bij elkaar' + body + primary CTAButton → /apply + secondary text-link → /how-it-works
+- i18n nieuwe keys NL/EN/ES synchroon: `skills-index.hero.badge` + `skills-index.cta.{eyebrow,title,description,button,secondaryLink}`
+
+**Validatie**: NL/EN/ES alle 200, mobile e2e 3/3 locales 0 JS errors.
+
+### SkillPageTemplate → 12 detail-pages ✅ VOLTOOID 2026-05-28
+
+**Commit**: `bcc282f` feat(skills/template) — hero + final-CTA scarcity-badge → 12 detail-pages
+
+**Aanpak**: Sub-wave 2B systematic — één template-edit beïnvloedt alle 12 skill-detail-pages (mirror van Fase 2 nightshift pattern).
+
+**Wijzigingen SkillPageTemplate.tsx**:
+- **Live-hero** (niet coming_soon) krijgt scarcity-badge onder de eyebrow: `Founding open · {taken}/{total} bezet` amber-mono. Layout: `flex flex-col items-center gap-3` (eyebrow boven, badge onder).
+- **Final CTA section**: live skills krijgen scarcity-badge ipv generieke 'Aan de slag' eyebrow. Coming-soon skills behouden generieke eyebrow (geen founding-context).
+- Import `FOUNDING_SPOTS_TAKEN/TOTAL` uit `@/lib/constants`
+
+**i18n** `skills-template.scarcityBadge` in NL/EN/ES:
+- NL: 'Founding open · {taken}/{total} bezet'
+- EN: 'Founding open · {taken}/{total} reserved'
+- ES: 'Founding abierto · {taken}/{total} reservadas'
+
+**Per-skill audit (2C)**:
+- Geen `customHero` overrides bestaan in alle 12 page.tsx files
+- `/voice-agent` gebruikt `customProof` voor VoiceDemoSection + VoiceDemoFAB (niet hero)
+- Scarcity-badge dus universeel toegepast op alle 12 pages zonder per-skill code-changes
+- 2C effectief no-op (template edit dekt alles)
+
+**Validatie**: Mobile e2e 9/9 (3 sample slugs: clyde + social-media + voice-agent × 3 locales), 0 JS errors.
+
+---
+
 ## Wave 1 — Marketing depth
 
 ### /how-it-works ✅ VOLTOOID 2026-05-28
@@ -598,7 +662,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] **Wave 1 page 5: /about** ✅ (21e2a59 + b73bfe6 MAX_PARTNERS_PER_YEAR fix)
 - [x] **Wave 1 page 6: /how-it-works** ✅ (7a45819 + 08d3b9d nav-discoverability)
 - [x] **WAVE 1 VOLLEDIG VOLTOOID** 🎉 (6/6 pages)
-- [ ] Wave 2 — Skills (SkillPageTemplate + /skills index + 12 detail pages)
+- [x] **Wave 2 — Skills**: /skills index (376bcf4) + SkillPageTemplate -> 12 detail-pages (bcc282f)
+- [x] Header SOTA edge-flush 3-segment grid (b771c04)
 - [ ] Wave 3 — Conversion (/contact, /apply, /assessment, /assessment/result)
 - [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
 - [ ] Wave 5 — Final cross-page consistency scan
