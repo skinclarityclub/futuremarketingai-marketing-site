@@ -214,6 +214,18 @@
   }
 }
 
+/* Clyde welcome-state stagger entry (premium ease-out curve) */
+@keyframes clyde-welcome-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Mobile hero grid glow pulse */
 @keyframes heroGridGlow {
   0%,

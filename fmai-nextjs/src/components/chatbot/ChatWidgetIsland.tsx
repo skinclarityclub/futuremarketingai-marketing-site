@@ -1,50 +1,77 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/i18n/navigation'
 import { ChatWidget } from './ChatWidget'
 
-/** Context-aware welcome messages per page path */
+/**
+ * Page-aware welcome messages. The pathname returned by next-intl's
+ * usePathname is the locale-stripped path (e.g. "/skills/voice-agent"
+ * on both /nl/skills/voice-agent and /en/skills/voice-agent), so the
+ * same keys cover all locales. NL is the source of truth for tone;
+ * Clyde reads as a Dutch senior colleague.
+ */
 const WELCOME_MESSAGES: Record<string, string> = {
-  '/': "I'm Clyde. Ask me anything about what I can do for your agency.",
-  '/skills/social-media': "I'm Clyde. Want me to create a content calendar for one of your clients?",
+  '/': 'Hoi, ik ben Clyde. Vertel waar ik aan kan werken.',
+  '/skills/social-media':
+    'Hoi, ik ben Clyde. Wil je dat ik een content-kalender opzet voor een van je merken?',
   '/skills/voice-agent':
-    "I'm Clyde. I can show you how I handle phone calls, or answer any questions.",
+    'Hoi, ik ben Clyde. Ik kan laten zien hoe ik telefoons opneem of een vraag beantwoorden.',
   '/skills/lead-qualifier':
-    "I'm Clyde. You're chatting with me right now. This is exactly what your clients would get on their site.",
-  '/skills/ad-creator': "I'm Clyde. I can generate ad variations from any campaign brief.",
+    'Hoi, ik ben Clyde. Dit is precies wat je klanten op hun site zouden krijgen.',
+  '/skills/ad-creator':
+    'Hoi, ik ben Clyde. Geef me een briefing en ik draai er varianten uit.',
   '/skills/email-management':
-    "I'm Clyde. I classify your Gmail inbox and send daily digests of what matters.",
-  '/skills/reporting': "I'm Clyde. I can show you what a weekly performance report looks like.",
-  '/pricing': "I'm Clyde. I can calculate your ROI or walk you through the tiers.",
-  '/apply': "I'm Clyde. Any questions before you fill in the application?",
-  '/about': "I'm Clyde. Want to know more about how I work?",
-  default: "I'm Clyde, your AI marketing employee. What do you need?",
+    'Hoi, ik ben Clyde. Ik filter je Gmail en stuur dagelijks een digest van wat ertoe doet.',
+  '/skills/reporting':
+    'Hoi, ik ben Clyde. Ik laat zien hoe een weekrapport eruitziet.',
+  '/pricing':
+    'Hoi, ik ben Clyde. Ik kan je ROI berekenen of de tiers doorlopen.',
+  '/apply':
+    'Hoi, ik ben Clyde. Vragen voordat je je aanmeldt? Stel ze gerust.',
+  '/about': 'Hoi, ik ben Clyde. Wil je weten hoe ik werk?',
+  default: 'Hoi, ik ben Clyde, je AI marketing medewerker. Wat heb je nodig?',
 }
 
-/** Context-aware suggested prompts per page path */
+/**
+ * Context-aware suggested prompts per page path. Keep to 4 prompts max
+ * so the empty-state can render them as a 2x2 grid.
+ */
 const SUGGESTED_PROMPTS: Record<string, string[]> = {
-  '/': ['What skills do you have?', 'Show me a demo', 'Calculate my ROI', 'Book a call'],
+  '/': [
+    'Welke vaardigheden heb je?',
+    'Laat me een demo zien',
+    'Bereken mijn ROI',
+    'Plan een gesprek',
+  ],
   '/skills/social-media': [
-    'Plan next week\'s content',
-    'Create social posts for a skincare brand',
-    'What platforms do you cover?',
+    'Plan content voor volgende week',
+    'Maak posts voor een skincare-merk',
+    'Welke platforms dek je?',
+    'Plan een gesprek',
   ],
   '/skills/voice-agent': [
-    'How do you handle calls?',
-    'Show me a call script',
-    'What languages do you support?',
+    'Hoe neem je telefoons op?',
+    'Laat een gespreksflow zien',
+    'Welke talen ondersteun je?',
+    'Plan een gesprek',
   ],
   '/skills/lead-qualifier': [
-    'Score a sample lead',
-    'How does qualification scoring work?',
-    'Show qualification criteria',
+    'Score een voorbeeld-lead',
+    'Hoe werkt kwalificatie?',
+    'Toon scoring-criteria',
+    'Plan een gesprek',
   ],
-  '/pricing': ['Calculate ROI for my agency', 'Compare tiers', 'What is included in Growth?'],
+  '/pricing': [
+    'Bereken ROI voor mijn bureau',
+    'Vergelijk de tiers',
+    'Wat zit er in Growth?',
+    'Plan een gesprek',
+  ],
   default: [
-    'What skills do you have?',
-    'Show me a demo',
-    'Calculate my ROI',
-    'Book a call',
+    'Welke vaardigheden heb je?',
+    'Laat me een demo zien',
+    'Bereken mijn ROI',
+    'Plan een gesprek',
   ],
 }
 

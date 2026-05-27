@@ -397,6 +397,33 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 ---
 
+## Wave 3 — Conversion pages
+
+### /contact + /assessment ✅ VOLTOOID 2026-05-28
+
+**Commit**: `4c9c817` feat(conversion) — /contact + /assessment final CTA-card scarcity-anchor
+
+**Route gekozen**: A (polish 2 priority pages, /apply + /assessment/result skip)
+
+**Diagnose huidige staat (v1)**:
+- `/contact`: solide hero + applyCallout + 2-col form/info. Eindigt bij submit-button, **geen final close-block**
+- `/apply`: al compleet, scarcity-badge `1 van 10 founding plekken bezet` aanwezig, 3-step explainer
+- `/assessment`: gradient title + 3 preview-cards + trust signals + Start-CTA. Eindigt abrupt na CTA, **geen final close-block**
+- `/assessment/result`: functional empty-state met "Doe zelf de scan" CTA-card. Geen polish nodig
+
+**Wijzigingen**:
+- `/contact` + `/assessment`: identiek pattern, GlassCard close-block met:
+  - Scarcity-eyebrow `Founding open · {taken}/{total} bezet` amber-mono met constants interpolation
+  - Title (different per page): /contact "Liever direct naar de aanmelding?" / /assessment "Liever direct praten?"
+  - Body legt uit waarom dit alternative path bestaat (geen vragen / scan optioneel)
+  - Primary `CTAButton href="/apply"` "Plan een gesprek"
+- i18n NL/EN/ES synchroon: `contact.finalCta` + `assessment.finalCta` met 4 keys per namespace (eyebrow, title, description, button)
+- Imports: `GlassCard` + `CTAButton` + `ScrollReveal` + `FOUNDING_SPOTS_TAKEN/TOTAL`
+
+**Validatie**: Mobile e2e 6/6 (2 pages × 3 locales), 0 JS errors. Beide pages tonen close-block consistent met Wave 1 pattern (homepage section 16, /memory CTA, /pricing, /founding-member).
+
+---
+
 ## Wave 2 — Skills
 
 ### Header SOTA edge-flush grid ✅ VOLTOOID 2026-05-28 (tussendoor)
@@ -662,9 +689,11 @@ Volgorde, agent niet vooruitlopen:
 - [x] **Wave 1 page 5: /about** ✅ (21e2a59 + b73bfe6 MAX_PARTNERS_PER_YEAR fix)
 - [x] **Wave 1 page 6: /how-it-works** ✅ (7a45819 + 08d3b9d nav-discoverability)
 - [x] **WAVE 1 VOLLEDIG VOLTOOID** 🎉 (6/6 pages)
-- [x] **Wave 2 — Skills**: /skills index (376bcf4) + SkillPageTemplate -> 12 detail-pages (bcc282f)
+- [x] **Wave 2 — Skills**: /skills index (376bcf4) + SkillPageTemplate -> 12 detail-pages (bcc282f) + testing-playbook 36/36 200 0 errors
 - [x] Header SOTA edge-flush 3-segment grid (b771c04)
-- [ ] Wave 3 — Conversion (/contact, /apply, /assessment, /assessment/result)
+- [x] Custom scrollbar + VoiceDemoFAB cyan->teal (add6364)
+- [x] **Wave 3 — Conversion**: /contact + /assessment final CTA-card (4c9c817). /apply al solid + /assessment/result empty-state ok
+- [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
 - [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
 - [ ] Wave 5 — Final cross-page consistency scan
 
