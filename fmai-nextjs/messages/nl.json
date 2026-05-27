@@ -118,25 +118,28 @@
       "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "stats": {
+      "eyebrow": "Het bewijs in cijfers",
       "heading": "Belangrijke cijfers",
-      "caseStudy": {
-        "value": "4 huismerken",
-        "label": "SkinClarity Club autonoom",
-        "linkText": "Bekijk de case"
+      "hero": {
+        "valueLead": "36",
+        "valueTrail": "per week",
+        "label": "Posts autonoom uitgevoerd voor SkinClarity Club",
+        "detail": "21 carrousels en 15 posts, verdeeld over 3 Instagram-accounts. Sinds Q4 2025 zonder onderbreking live.",
+        "linkText": "Bekijk de operationele case"
       },
       "skills": {
-        "value": "9 vaardigheden live",
-        "label": "Direct inzetbaar voor jouw bureau",
+        "value": "9 / 12",
+        "label": "Vaardigheden direct inzetbaar",
         "linkText": "Alle skills"
       },
       "founding": {
-        "value": "{taken} van {total}",
+        "value": "{taken} / {total}",
         "label": "Founding plekken bezet",
         "linkText": "Word founding partner"
       },
       "sovereignty": {
-        "value": "NL en EU",
-        "label": "Native data-residency",
+        "value": "100% EU",
+        "label": "Data-residency en infra",
         "linkText": "Hoe wij data behandelen"
       }
     },

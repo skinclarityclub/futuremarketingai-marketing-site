@@ -118,25 +118,28 @@
       "notFit4": "You run an agency with more than 30 FTE and have your own AI or tech team. We accelerate agencies that do not build that in-house."
     },
     "stats": {
+      "eyebrow": "The proof, in numbers",
       "heading": "Key metrics",
-      "caseStudy": {
-        "value": "4 in-house brands",
-        "label": "SkinClarity Club autonomous",
-        "linkText": "Read the case"
+      "hero": {
+        "valueLead": "36",
+        "valueTrail": "per week",
+        "label": "Posts shipped autonomously for SkinClarity Club",
+        "detail": "21 carousels and 15 posts across 3 Instagram accounts. Live without interruption since Q4 2025.",
+        "linkText": "Read the operational case"
       },
       "skills": {
-        "value": "9 skills live",
-        "label": "Ready to deploy for your agency",
+        "value": "9 / 12",
+        "label": "Skills ready to deploy today",
         "linkText": "All skills"
       },
       "founding": {
-        "value": "{taken} of {total}",
+        "value": "{taken} / {total}",
         "label": "Founding seats taken",
         "linkText": "Become founding partner"
       },
       "sovereignty": {
-        "value": "NL and EU",
-        "label": "Native data residency",
+        "value": "100% EU",
+        "label": "Data residency and infrastructure",
         "linkText": "How we handle data"
       }
     },

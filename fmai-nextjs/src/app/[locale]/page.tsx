@@ -259,17 +259,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 10 — TrustSignalsGrid (numerieke trust)
           ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="200px">
-        <section aria-labelledby="key-metrics" className="py-12 px-6 lg:px-12">
-          <div className="max-w-5xl mx-auto">
+      <LazySection minHeight="280px">
+        <section aria-labelledby="key-metrics" className="py-16 lg:py-20 px-6 lg:px-12">
+          <div className="max-w-6xl mx-auto">
             <h2 id="key-metrics" className="sr-only">{t('stats.heading')}</h2>
             <TrustSignalsGrid
+              eyebrow={t('stats.eyebrow')}
+              hero={{
+                valueLead: t('stats.hero.valueLead'),
+                valueTrail: t('stats.hero.valueTrail'),
+                label: t('stats.hero.label'),
+                detail: t('stats.hero.detail'),
+                linkText: t('stats.hero.linkText'),
+              }}
               signals={{
-                caseStudy: {
-                  value: t('stats.caseStudy.value'),
-                  label: t('stats.caseStudy.label'),
-                  linkText: t('stats.caseStudy.linkText'),
-                },
                 skills: {
                   value: t('stats.skills.value'),
                   label: t('stats.skills.label'),

@@ -118,25 +118,28 @@
       "notFit4": "Diriges una agencia con más de 30 FTE y equipo propio de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
     },
     "stats": {
+      "eyebrow": "La prueba, en cifras",
       "heading": "Métricas clave",
-      "caseStudy": {
-        "value": "4 marcas propias",
-        "label": "SkinClarity Club autónomo",
-        "linkText": "Ver el caso"
+      "hero": {
+        "valueLead": "36",
+        "valueTrail": "por semana",
+        "label": "Publicaciones autónomas para SkinClarity Club",
+        "detail": "21 carruseles y 15 posts en 3 cuentas de Instagram. Activo sin interrupción desde Q4 2025.",
+        "linkText": "Ver el caso operacional"
       },
       "skills": {
-        "value": "9 habilidades en vivo",
-        "label": "Listas para tu agencia",
+        "value": "9 / 12",
+        "label": "Habilidades listas para activar",
         "linkText": "Todas las habilidades"
       },
       "founding": {
-        "value": "{taken} de {total}",
+        "value": "{taken} / {total}",
         "label": "Plazas fundadoras ocupadas",
         "linkText": "Únete como fundador"
       },
       "sovereignty": {
-        "value": "NL y UE",
-        "label": "Residencia de datos nativa",
+        "value": "100% UE",
+        "label": "Residencia de datos e infraestructura",
         "linkText": "Cómo tratamos los datos"
       }
     },
