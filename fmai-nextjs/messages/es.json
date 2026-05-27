@@ -1253,6 +1253,12 @@
       "title": "¿Quieres una llamada?",
       "body": "¿Eres un cliente potencial? Rellena el formulario de solicitud. Daley lee cada solicitud personalmente y responde en 3 días laborables.",
       "button": "Agenda una llamada"
+    },
+    "finalCta": {
+      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "title": "¿Saltar el formulario y aplicar directamente?",
+      "description": "Sin preguntas, ¿pero listo para una conversación sobre partnership? Salta este formulario y ve directo a la solicitud.",
+      "button": "Agenda una llamada"
     }
   },
   "legal": {
@@ -3727,6 +3733,12 @@
     "success": {
       "title": "Casi listo.",
       "body": "Te hemos enviado un correo de confirmación. Haz clic en el enlace y tu plan de acción completo llega a tu bandeja."
+    },
+    "finalCta": {
+      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "title": "¿Prefieres saltar el scan?",
+      "description": "No todos quieren un scan primero. Sáltalo y agenda una llamada de 30 minutos con Daley.",
+      "button": "Agenda una llamada"
     }
   },
   "leadMagnet": {

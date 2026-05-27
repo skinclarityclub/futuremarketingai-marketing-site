@@ -1253,6 +1253,12 @@
       "title": "Wil je een gesprek?",
       "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
       "button": "Plan een gesprek"
+    },
+    "finalCta": {
+      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "title": "Liever direct naar de aanmelding?",
+      "description": "Geen vragen, maar wel klaar voor een gesprek over partnership? Sla het bericht over en ga direct naar de aanmelding.",
+      "button": "Plan een gesprek"
     }
   },
   "legal": {
@@ -3727,6 +3733,12 @@
     "success": {
       "title": "Bijna klaar.",
       "body": "We hebben je een bevestigingsmail gestuurd. Klik op de link in die mail en je volledige actieplan komt direct binnen."
+    },
+    "finalCta": {
+      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "title": "Liever direct praten?",
+      "description": "Niet iedereen wil eerst een scan. Sla 'm over en plan een gesprek van 30 minuten met Daley.",
+      "button": "Plan een gesprek"
     }
   },
   "leadMagnet": {

@@ -1253,6 +1253,12 @@
       "title": "Want a call?",
       "body": "Are you a potential client? Fill in the application. Daley reads every request personally and replies within 3 business days.",
       "button": "Book a call"
+    },
+    "finalCta": {
+      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "title": "Skip the form and apply directly?",
+      "description": "No questions, but ready for a partnership conversation? Skip this contact form and go straight to the application.",
+      "button": "Book a call"
     }
   },
   "legal": {
@@ -3727,6 +3733,12 @@
     "success": {
       "title": "Almost there.",
       "body": "We've sent you a confirmation email. Click the link in that email and your full action plan lands in your inbox."
+    },
+    "finalCta": {
+      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "title": "Rather skip the scan?",
+      "description": "Not everyone wants a scan first. Skip it and book a 30-minute call with Daley.",
+      "button": "Book a call"
     }
   },
   "leadMagnet": {
