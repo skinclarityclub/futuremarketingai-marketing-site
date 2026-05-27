@@ -2290,7 +2290,7 @@
         "title": "3 accounts. 4 merken. Eén AI Marketing Medewerker.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 merken live in 7 dagen",
-        "chip3": "9 vaardigheden actief",
+        "chip3": "6 vaardigheden actief",
         "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Autonoom, elke dag, zonder dat het team er omkijken naar heeft."
       },
       "setup": {
@@ -2353,7 +2353,7 @@
           "monthlySavings": {
             "label": "Maandelijkse besparing",
             "value": "Circa EUR 5.000",
-            "detail": "Combinatie van Sindy's tijd die niet meer naar contentuitvoering gaat (15+ uur per week) plus freelancer-kosten voor social en content die niet meer wekelijks nodig zijn.",
+            "detail": "Combinatie van Sindy's bespaarde tijd (5 tot 7 uur per week) plus freelancer-kosten voor social en content die niet meer wekelijks nodig zijn. Op maandbasis circa EUR 5.000.",
             "sourceNote": "Bron: Sindy's tijdmeting en Moneybird-overzicht Q1-2026 vergeleken met Q1-2025."
           },
           "engagementRate": {
@@ -2368,7 +2368,8 @@
       "architecture": {
         "title": "Hoe het werkt",
         "subtitle": "Eén Clyde, 3 werkruimtes (per account), gedeeld portfolio-geheugen. Content wordt eerst door Sindy goedgekeurd voordat het gepubliceerd wordt.",
-        "body": "Clyde houdt een apart geheugen bij per Instagram-account. Wat werkt op @SkinClarityClub (educatief, tips) is anders dan op @Sindy_Huidtherapeut (persoonlijk, autoriteit). Op portfolio-niveau gebeurt het leren over accounts heen. Bijvoorbeeld: een succesvol thema op de shop kan vertaald worden naar het hoofdaccount."
+        "body1": "Clyde houdt een apart geheugen bij per Instagram-account. Wat werkt op @SkinClarityClub (educatief, tips) is anders dan op @Sindy_Huidtherapeut (persoonlijk, autoriteit).",
+        "body2": "Op portfolio-niveau gebeurt het leren over accounts heen. Een succesvol thema op de shop kan bijvoorbeeld vertaald worden naar het hoofdaccount."
       },
       "timeline": {
         "title": "Tijdlijn",
@@ -2459,7 +2460,7 @@
         },
         "metric4": {
           "prefix": "€ ",
-          "amount": "3000",
+          "amount": "5000",
           "suffix": "",
           "label": "Besparing per maand"
         }
@@ -2548,10 +2549,6 @@
       },
       "operatorQuotes": {
         "title": "Wat Sindy nog meer zegt",
-        "quote1": {
-          "body": "Het verschil zit in de review-tijd. Vier minuten per post werd 30 seconden. Dat klinkt klein, maar dat zijn 30 uur op kwartaalbasis die ik nu in strategie stop.",
-          "attribution": "Sindy, over de goedkeuringstijd"
-        },
         "quote2": {
           "body": "Clyde maakt geen content die ik op moet ruimen. Hij maakt content die ik publiceer. Dat is het echte verschil met de oude AI-tools.",
           "attribution": "Sindy, over output-kwaliteit"

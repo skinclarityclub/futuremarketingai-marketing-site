@@ -19,7 +19,7 @@ import { ChapterSection } from '@/components/case-study/ChapterSection'
 import { ScrollProgressRail } from '@/components/case-study/ScrollProgressRail'
 import { BeforeAfterTimeline } from '@/components/case-study/BeforeAfterTimeline'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
-import { ArrowRight, Instagram, Quote, Boxes } from 'lucide-react'
+import { ArrowRight, Instagram, Quote, ShoppingBag, Sparkles, Layers, type LucideIcon } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -52,6 +52,17 @@ const TIMELINE_KEYS = ['week1', 'month1', 'month3', 'now'] as const
 const HERO_METRIC_KEYS = ['metric1', 'metric2', 'metric3', 'metric4'] as const
 const BEFORE_AFTER_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const
 const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3', 'brand4'] as const
+
+// Per-brand iconography (placeholder until real gallery assets land)
+const GALLERY_BRAND_META: Record<
+  (typeof GALLERY_BRAND_KEYS)[number],
+  { Icon: LucideIcon; accent: 'system' | 'human' }
+> = {
+  brand1: { Icon: Instagram, accent: 'system' }, // main account (educational)
+  brand2: { Icon: Sparkles, accent: 'human' }, // personal authority
+  brand3: { Icon: ShoppingBag, accent: 'system' }, // shop
+  brand4: { Icon: Layers, accent: 'human' }, // portfolio
+}
 
 const CHAPTERS = [
   { id: 'chapter-uitdaging', railKey: 'chapter1', index: '01' },
@@ -277,9 +288,12 @@ export default async function SkcCaseStudyPage({
                 <EyebrowLabel className="mb-3">{t('architecture.title')}</EyebrowLabel>
                 <p className="text-text-secondary mb-6 max-w-3xl">{t('architecture.subtitle')}</p>
                 <ScrollReveal>
-                  <GlassCard className="text-left">
+                  <GlassCard className="text-left space-y-4">
                     <p className="speakable-skc-outcome text-text-secondary leading-relaxed">
-                      {t('architecture.body')}
+                      {t('architecture.body1')}
+                    </p>
+                    <p className="text-text-secondary leading-relaxed">
+                      {t('architecture.body2')}
                     </p>
                   </GlassCard>
                 </ScrollReveal>
@@ -380,30 +394,39 @@ export default async function SkcCaseStudyPage({
                 <EyebrowLabel className="mb-3">{t('gallery.title')}</EyebrowLabel>
                 <p className="text-text-secondary mb-6 max-w-3xl">{t('gallery.subtitle')}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {GALLERY_BRAND_KEYS.map((key) => (
-                    <div
-                      key={key}
-                      className="rounded-2xl border border-border-primary bg-bg-surface/40 overflow-hidden"
-                    >
+                  {GALLERY_BRAND_KEYS.map((key) => {
+                    const { Icon, accent } = GALLERY_BRAND_META[key]
+                    const accentTint =
+                      accent === 'human'
+                        ? 'from-accent-human/20 via-bg-elevated to-bg-deep'
+                        : 'from-accent-system/20 via-bg-elevated to-bg-deep'
+                    const iconColor =
+                      accent === 'human' ? 'text-accent-human' : 'text-accent-system'
+                    return (
                       <div
-                        aria-hidden
-                        className="aspect-square bg-gradient-to-br from-accent-system/15 via-bg-elevated to-bg-deep flex items-center justify-center"
+                        key={key}
+                        className="rounded-2xl border border-border-primary bg-bg-surface/40 overflow-hidden"
                       >
-                        <Boxes className="h-10 w-10 text-accent-system/60" />
+                        <div
+                          aria-hidden
+                          className={`aspect-square bg-gradient-to-br ${accentTint} flex items-center justify-center`}
+                        >
+                          <Icon className={`h-12 w-12 ${iconColor}/80`} />
+                        </div>
+                        <div className="p-4">
+                          <p className="text-sm font-semibold text-text-primary">
+                            {t(`gallery.${key}.name`)}
+                          </p>
+                          <p className="font-mono text-[10px] uppercase tracking-wide text-text-muted mt-1">
+                            {t(`gallery.${key}.role`)}
+                          </p>
+                          <p className="text-xs text-text-secondary mt-2 leading-relaxed">
+                            {t(`gallery.${key}.output`)}
+                          </p>
+                        </div>
                       </div>
-                      <div className="p-4">
-                        <p className="text-sm font-semibold text-text-primary">
-                          {t(`gallery.${key}.name`)}
-                        </p>
-                        <p className="font-mono text-[10px] uppercase tracking-wide text-text-muted mt-1">
-                          {t(`gallery.${key}.role`)}
-                        </p>
-                        <p className="text-xs text-text-secondary mt-2 leading-relaxed">
-                          {t(`gallery.${key}.output`)}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
 
@@ -452,25 +475,18 @@ export default async function SkcCaseStudyPage({
 
               <div>
                 <EyebrowLabel className="mb-4">{t('operatorQuotes.title')}</EyebrowLabel>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {(['quote1', 'quote2'] as const).map((key) => (
-                    <figure
-                      key={key}
-                      className="relative rounded-2xl border border-border-primary bg-bg-surface/40 p-6"
-                    >
-                      <Quote
-                        className="absolute -top-3 -left-3 h-6 w-6 text-accent-system/70"
-                        aria-hidden
-                      />
-                      <blockquote className="text-text-primary leading-relaxed">
-                        {t(`operatorQuotes.${key}.body`)}
-                      </blockquote>
-                      <figcaption className="mt-3 text-xs font-mono uppercase tracking-wide text-text-muted">
-                        {t(`operatorQuotes.${key}.attribution`)}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
+                <figure className="relative max-w-2xl rounded-2xl border border-border-primary bg-bg-surface/40 p-6">
+                  <Quote
+                    className="absolute -top-3 -left-3 h-6 w-6 text-accent-system/70"
+                    aria-hidden
+                  />
+                  <blockquote className="text-text-primary leading-relaxed">
+                    {t('operatorQuotes.quote2.body')}
+                  </blockquote>
+                  <figcaption className="mt-3 text-xs font-mono uppercase tracking-wide text-text-muted">
+                    {t('operatorQuotes.quote2.attribution')}
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </ChapterSection>

@@ -2290,7 +2290,7 @@
         "title": "3 accounts. 4 brands. One AI Marketing Employee.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 brands live in 7 days",
-        "chip3": "9 skills active",
+        "chip3": "6 skills active",
         "subtitle": "SkinClarity Club has been a Founding client from week one. Clyde manages 3 Instagram accounts, 4 brands and multiple content types. Autonomously, every day, without the team having to look over its shoulder."
       },
       "setup": {
@@ -2353,7 +2353,7 @@
           "monthlySavings": {
             "label": "Monthly savings",
             "value": "Around EUR 5,000",
-            "detail": "Combination of Sindy's time no longer spent on content execution (15+ hours per week) plus freelancer costs for social and content that are no longer needed weekly.",
+            "detail": "Combination of Sindy's saved hours (5 to 7 per week) plus freelancer costs for social and content that are no longer needed weekly. Roughly EUR 5,000 per month.",
             "sourceNote": "Source: Sindy's time tracking and Moneybird overview Q1-2026 compared with Q1-2025."
           },
           "engagementRate": {
@@ -2368,7 +2368,8 @@
       "architecture": {
         "title": "How it works",
         "subtitle": "One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is first approved by Sindy before it is published.",
-        "body": "Clyde keeps a separate memory per Instagram account. What works on @SkinClarityClub (educational, tips) is different from @Sindy_Huidtherapeut (personal, authority). At portfolio level learning happens across accounts. For example: a successful theme on the shop account can be translated to the main account."
+        "body1": "Clyde keeps a separate memory per Instagram account. What works on @SkinClarityClub (educational, tips) is different from @Sindy_Huidtherapeut (personal, authority).",
+        "body2": "At portfolio level, learning happens across accounts. A successful theme on the shop account, for example, can be translated to the main account."
       },
       "timeline": {
         "title": "Timeline",
@@ -2459,7 +2460,7 @@
         },
         "metric4": {
           "prefix": "€ ",
-          "amount": "3000",
+          "amount": "5000",
           "suffix": "",
           "label": "Saved per month"
         }
@@ -2548,10 +2549,6 @@
       },
       "operatorQuotes": {
         "title": "More from Sindy",
-        "quote1": {
-          "body": "The difference is in review time. Four minutes per post became 30 seconds. That sounds small, but it adds up to 30 hours per quarter that I now invest in strategy.",
-          "attribution": "Sindy, on approval time"
-        },
         "quote2": {
           "body": "Clyde does not produce content I need to clean up. He produces content I publish. That is the real difference from the older AI tools.",
           "attribution": "Sindy, on output quality"

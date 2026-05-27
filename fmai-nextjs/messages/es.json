@@ -2290,7 +2290,7 @@
         "title": "3 cuentas. 4 marcas. Un Empleado AI de Marketing.",
         "chip1": "3 cuentas incorporadas",
         "chip2": "4 marcas en vivo en 7 dias",
-        "chip3": "9 habilidades activas",
+        "chip3": "6 habilidades activas",
         "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. De forma autónoma, cada día, sin que el equipo tenga que estar encima."
       },
       "setup": {
@@ -2353,7 +2353,7 @@
           "monthlySavings": {
             "label": "Ahorro mensual",
             "value": "Alrededor de EUR 5.000",
-            "detail": "Combinación del tiempo de Sindy que ya no se dedica a ejecución de contenido (más de 15 horas por semana) más los costes de freelancers para social y contenido que ya no son necesarios semanalmente.",
+            "detail": "Combinación del tiempo ahorrado de Sindy (5 a 7 horas por semana) más los costes de freelancers para social y contenido que ya no son necesarios semanalmente. Aproximadamente EUR 5.000 al mes.",
             "sourceNote": "Fuente: el registro de tiempo de Sindy y resumen Moneybird Q1-2026 comparado con Q1-2025."
           },
           "engagementRate": {
@@ -2368,7 +2368,8 @@
       "architecture": {
         "title": "Cómo funciona",
         "subtitle": "Un único Clyde, 3 espacios de trabajo (uno por cuenta), memoria compartida de cartera. Sindy aprueba el contenido antes de publicarlo.",
-        "body": "Clyde mantiene una memoria separada para cada cuenta de Instagram. Lo que funciona en @SkinClarityClub (educativo, consejos) no es lo mismo que en @Sindy_Huidtherapeut (personal, autoridad). El aprendizaje entre cuentas ocurre a nivel de cartera. Por ejemplo, un tema que funciona en la tienda puede adaptarse a la cuenta principal."
+        "body1": "Clyde mantiene una memoria separada para cada cuenta de Instagram. Lo que funciona en @SkinClarityClub (educativo, consejos) no es lo mismo que en @Sindy_Huidtherapeut (personal, autoridad).",
+        "body2": "El aprendizaje entre cuentas ocurre a nivel de cartera. Un tema que funciona en la tienda puede, por ejemplo, adaptarse a la cuenta principal."
       },
       "timeline": {
         "title": "Cronología",
@@ -2459,7 +2460,7 @@
         },
         "metric4": {
           "prefix": "€ ",
-          "amount": "3000",
+          "amount": "5000",
           "suffix": "",
           "label": "Ahorro mensual"
         }
@@ -2548,10 +2549,6 @@
       },
       "operatorQuotes": {
         "title": "Más de Sindy",
-        "quote1": {
-          "body": "La diferencia está en el tiempo de revisión. Cuatro minutos por post se volvieron 30 segundos. Suena pequeño, pero son 30 horas por trimestre que ahora dedico a estrategia.",
-          "attribution": "Sindy, sobre el tiempo de aprobación"
-        },
         "quote2": {
           "body": "Clyde no produce contenido que tenga que limpiar. Produce contenido que publico. Esa es la diferencia real con las viejas herramientas de IA.",
           "attribution": "Sindy, sobre la calidad del output"
