@@ -357,8 +357,8 @@
       "ctaLink": "Agenda una llamada"
     },
     "pillars": {
-      "title": "Tres anclas que ninguna herramienta de EE. UU. iguala",
-      "subtitle": "Compliance EU-native, infraestructura EU-native y partnership directo. Sin capa de CSM, sin clouds de EE. UU., sin lock-in.",
+      "title": "Tres pilares que ninguna herramienta de EE. UU. iguala",
+      "subtitle": "Compliance EU-native, infraestructura EU-native y colaboración directa. Sin intermediarios, sin clouds de EE. UU., sin lock-in.",
       "compliance": {
         "label": "Seguridad y compliance",
         "headingLine1": "RGPD-first.",
@@ -377,7 +377,7 @@
         "label": "Partnership",
         "stat": "1:1",
         "statLabel": "Con Daley",
-        "body": "Onboarding personal con Daley. Sin capa de CSM, sin ticketing para decisiones estratégicas.",
+        "body": "Onboarding personal con Daley. Sin gestor de cuenta como intermediario, sin ticketing para decisiones estratégicas.",
         "linkText": "Lee más sobre Daley"
       }
     },

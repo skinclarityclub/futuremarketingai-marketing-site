@@ -357,8 +357,8 @@
       "ctaLink": "Book a call"
     },
     "pillars": {
-      "title": "Three anchors no US tool can match",
-      "subtitle": "EU-native compliance, EU-native infrastructure and direct partnership. No CSM layer, no US clouds, no vendor lock-in.",
+      "title": "Three pillars no US tool can match",
+      "subtitle": "EU-native compliance, EU-native infrastructure and direct collaboration. No middleman, no US clouds, no vendor lock-in.",
       "compliance": {
         "label": "Security and compliance",
         "headingLine1": "GDPR-first.",
@@ -377,7 +377,7 @@
         "label": "Partnership",
         "stat": "1:1",
         "statLabel": "With Daley",
-        "body": "Personal onboarding by Daley. No CSM layer, no ticketing for strategic decisions.",
+        "body": "Personal onboarding by Daley. No account manager as middleman, no ticketing for strategic decisions.",
         "linkText": "Read more about Daley"
       }
     },

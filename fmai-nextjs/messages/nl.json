@@ -357,8 +357,8 @@
       "ctaLink": "Plan een gesprek"
     },
     "pillars": {
-      "title": "Drie ankers die geen US-tool kan matchen",
-      "subtitle": "EU-native compliance, EU-native infra en directe partnership. Geen CSM-laag, geen US-clouds, geen vendor lock-in.",
+      "title": "Drie pijlers die geen US-tool kan matchen",
+      "subtitle": "EU-native compliance, EU-native infra en directe samenwerking. Geen tussenlaag, geen US-clouds, geen vendor lock-in.",
       "compliance": {
         "label": "Veiligheid en compliance",
         "headingLine1": "GDPR-first.",
@@ -377,7 +377,7 @@
         "label": "Samenwerking",
         "stat": "1:1",
         "statLabel": "Met Daley",
-        "body": "Persoonlijke onboarding door Daley. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen.",
+        "body": "Persoonlijke onboarding door Daley. Geen accountmanager als tussenpersoon, geen ticketsysteem voor strategische beslissingen.",
         "linkText": "Lees meer over Daley"
       }
     },
