@@ -2797,6 +2797,7 @@
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
+      "badge": "Founding open · {taken}/{total} reserved",
       "title": "Clyde's 12 skills",
       "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Nine are live in production, three are coming soon."
     },
@@ -2810,7 +2811,14 @@
       "promptIntro": "Ask something like:",
       "openLink": "Open the Clyde skill"
     },
-    "grid_aria_label": "Skills list"
+    "grid_aria_label": "Skills list",
+    "cta": {
+      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "title": "One AI employee, all skills under one roof",
+      "description": "No separate tools, no ticketing per skill. One workspace per brand, one 30-minute call to see whether it fits.",
+      "button": "Book a call",
+      "secondaryLink": "See the full onboarding journey"
+    }
   },
   "skills-blog-factory": {
     "meta": {

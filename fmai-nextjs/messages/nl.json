@@ -2797,6 +2797,7 @@
     },
     "hero": {
       "eyebrow": "12 vaardigheden, één brein",
+      "badge": "Founding open · {taken}/{total} bezet",
       "title": "De 12 vaardigheden van Clyde",
       "subtitle": "Eén AI Marketing Medewerker, twaalf vaardigheden, één gedeeld geheugen per merk. Negen leveren al productie, drie zijn binnenkort live."
     },
@@ -2810,7 +2811,14 @@
       "promptIntro": "Vraag bijvoorbeeld:",
       "openLink": "Open de Clyde-vaardigheid"
     },
-    "grid_aria_label": "Lijst met vaardigheden"
+    "grid_aria_label": "Lijst met vaardigheden",
+    "cta": {
+      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "title": "Eén AI medewerker, alle vaardigheden bij elkaar",
+      "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per merk, één gesprek van 30 minuten om te kijken of het past.",
+      "button": "Plan een gesprek",
+      "secondaryLink": "Bekijk de volledige onboardingreis"
+    }
   },
   "skills-blog-factory": {
     "meta": {

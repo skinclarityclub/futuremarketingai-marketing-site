@@ -2797,6 +2797,7 @@
     },
     "hero": {
       "eyebrow": "12 habilidades, una sola mente",
+      "badge": "Founding abierto · {taken}/{total} reservadas",
       "title": "Las 12 habilidades de Clyde",
       "subtitle": "Un Empleado AI de Marketing, doce habilidades, una memoria compartida por marca. Nueve en producción, tres próximamente."
     },
@@ -2810,7 +2811,14 @@
       "promptIntro": "Pídele, por ejemplo:",
       "openLink": "Abre la habilidad Clyde"
     },
-    "grid_aria_label": "Lista de habilidades"
+    "grid_aria_label": "Lista de habilidades",
+    "cta": {
+      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "title": "Un empleado AI, todas las habilidades en un solo lugar",
+      "description": "Sin herramientas sueltas, sin ticketing por habilidad. Un espacio por marca, una llamada de 30 minutos para ver si encaja.",
+      "button": "Agenda una llamada",
+      "secondaryLink": "Ver el recorrido completo de onboarding"
+    }
   },
   "skills-blog-factory": {
     "meta": {
