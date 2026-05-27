@@ -95,18 +95,20 @@
     "icp": {
       "title": "Para quién funciona (y para quién no)",
       "subtitle": "Sin discurso de marketing. Sinceramente, preferimos no trabajar con cualquiera.",
-      "closingPrompt": "¿Te reconoces en la columna izquierda?",
+      "scarcityCallout": "{taken}/{total} plazas founding ocupadas · Máx. {maxPerYear} partners al año",
+      "closingHeadline": "¿Te reconoces en la columna izquierda?",
+      "closingSubtext": "En 30 minutos te digo si encajamos con tu portfolio.",
       "closingCta": "Agenda una llamada",
       "fitTitle": "Para quién funciona",
-      "fit1": "Agencias con 5 a 30 FTE que atienden entre 10 y 50 marcas y quieren escalar sin contratar más personal.",
+      "fit1": "Agencias con 5 a 30 FTE que atienden entre 10 y 50 marcas. Listas para escalar sin contratar más personal.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo ejecutarlos.",
-      "fit4": "Agencias NL y EU-first que valoran la residencia de datos y el cumplimiento de RGPD y EU AI Act.",
+      "fit4": "Agencias neerlandesas y EU-first que valoran la residencia de datos y el cumplimiento de RGPD y EU AI Act.",
       "notFitTitle": "Para quién no funciona",
       "notFit1": "Tu facturación anual es inferior a 300K EUR. El presupuesto no encaja y no queremos frenar tu crecimiento.",
       "notFit2": "Te dedicas solo a branding, identidad o creatividad pura. Clyde entrega contenido de performance, no diseño.",
       "notFit3": "Buscas una solución totalmente automatizada. Clyde aprende de ti, lo que requiere 4 semanas de onboarding e input continuo.",
-      "notFit4": "Diriges una agencia con más de 30 FTE y equipo propio de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
+      "notFit4": "Tienes tanto más de 30 FTE como tu propio equipo de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
     },
     "stats": {
       "eyebrow": "La prueba, en cifras",

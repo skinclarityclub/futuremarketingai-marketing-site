@@ -95,18 +95,20 @@
     "icp": {
       "title": "Voor wie dit werkt (en voor wie niet)",
       "subtitle": "Geen marketingpraatje. Eerlijk gezegd: we werken liever niet met iedereen.",
-      "closingPrompt": "Herken je jezelf links?",
+      "scarcityCallout": "{taken}/{total} founding plekken bezet · Max {maxPerYear} partners per jaar",
+      "closingHeadline": "Klopt het verhaal links?",
+      "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
       "closingCta": "Plan een gesprek",
       "fitTitle": "Voor wie dit werkt",
-      "fit1": "Bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen en willen opschalen zonder extra personeel aan te nemen.",
+      "fit1": "Bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen. Klaar om op te schalen zonder extra personeel.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
-      "fit4": "NL- en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
+      "fit4": "Nederlandse en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
       "notFitTitle": "Voor wie dit niet werkt",
       "notFit1": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan.",
       "notFit2": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
       "notFit3": "Je zoekt naar een volautomatische oplossing. Clyde leert van jou, en dat vraagt 4 weken onboarding plus blijvende input.",
-      "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
+      "notFit4": "Je zowel meer dan 30 FTE als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "stats": {
       "eyebrow": "Het bewijs in cijfers",

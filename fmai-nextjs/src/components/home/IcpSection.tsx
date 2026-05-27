@@ -3,6 +3,11 @@ import { Check, X, ArrowRight } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTAButton } from '@/components/ui/CTAButton'
+import {
+  FOUNDING_SPOTS_TAKEN,
+  FOUNDING_SPOTS_TOTAL,
+  MAX_PARTNERS_PER_YEAR,
+} from '@/lib/constants'
 
 const FIT_KEYS = ['fit1', 'fit2', 'fit3', 'fit4'] as const
 const NOT_FIT_KEYS = ['notFit1', 'notFit2', 'notFit3', 'notFit4'] as const
@@ -18,9 +23,9 @@ export async function IcpSection({ locale }: { locale: string }) {
           <p className="mt-4 text-text-secondary max-w-2xl mx-auto">{t('subtitle')}</p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Positive fit */}
-          <GlassCard className="text-left">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          {/* Positive fit — subtle dominant via accent-system border */}
+          <GlassCard className="text-left border-accent-system/30">
             <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
               <span
                 aria-hidden
@@ -40,7 +45,7 @@ export async function IcpSection({ locale }: { locale: string }) {
             </ul>
           </GlassCard>
 
-          {/* Anti-fit */}
+          {/* Anti-fit — neutral */}
           <GlassCard className="text-left">
             <h3 className="text-xl font-semibold text-text-primary mb-6 flex items-center gap-3">
               <span
@@ -62,13 +67,23 @@ export async function IcpSection({ locale }: { locale: string }) {
           </GlassCard>
         </div>
 
-        {/* Closing CTA row */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <p className="text-text-secondary">{t('closingPrompt')}</p>
+        {/* Closing block — scarcity callout + stronger CTA */}
+        <div className="mt-12 rounded-2xl border border-accent-human/30 bg-gradient-to-br from-accent-human/[0.05] via-transparent to-transparent p-6 md:p-8 lg:p-10 text-center">
+          <p className="text-xs font-mono uppercase tracking-[0.14em] text-accent-human mb-4">
+            {t('scarcityCallout', {
+              taken: FOUNDING_SPOTS_TAKEN,
+              total: FOUNDING_SPOTS_TOTAL,
+              maxPerYear: MAX_PARTNERS_PER_YEAR,
+            })}
+          </p>
+          <h3 className="font-display text-2xl md:text-3xl font-semibold text-text-primary mb-2">
+            {t('closingHeadline')}
+          </h3>
+          <p className="text-text-secondary mb-6 max-w-xl mx-auto">{t('closingSubtext')}</p>
           <CTAButton
             href="/apply"
             variant="primary"
-            size="md"
+            size="lg"
             icon={<ArrowRight className="w-4 h-4" />}
           >
             {t('closingCta')}
