@@ -140,6 +140,36 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 11 — PricingTeaser (founding-now + future preview) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `b1e35b0` founding-now hero + future-preview strip + lifetime-lock copy
+
+**Diagnose huidige staat (v1)**:
+- 1x4 uniform tier-grid (zelfde AI-pattern issue als oude sectie 10)
+- **CRITICAL bug**: founding tile rendered "€997 per maand" naast Crown badge "LEVENSLANG VAST" en desc "Eenmalige founding-tarief" — driedubbele contradictie
+- Geen per-tier CTA-buttons, alleen 1 tekst-link onder voor alle 4
+- Title "geen verborgen credits" defensief
+- 3 future tiers visueel gelijk aan founding terwijl alleen founding nu actionable is
+
+**Belangrijke pricing-context (gemist in v1)**:
+Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked for life, never recalibrated). De andere tiers Growth/Pro/Ent recalibreren elk halfjaar, founding blijft €997. Niet "eenmalig" / one-time payment. Bewaard in `project_pricing_founding_lifetime_lock.md`.
+
+**User-correctie tijdens implementatie**:
+"Maar de founding prijs is wel een maandprijs he niet eenmalig 997, dit is per maand" — eerste versie had ik per ongeluk als one-time/lifetime payment gerenderd. Revert + herschrijf copy om "maandtarief, levenslang gelockt" precies te zeggen.
+
+**Wijzigingen**:
+- Layout: van 1x4 uniform-grid naar founding-dominant hero + 3 future-tier preview-strip
+- **Founding hero** (full-width amber-bordered tile met radial bg-accent): Crown tagline-badge "Levenslang vast", label, big €997 met "per maand" unit, desc verwijst naar levenslang gelockt maandtarief, spotsTaken counter, amber CTAButton "Word founding partner" (primary variant, lg) → /apply
+- **Eyebrow-divider** "Na de founding-fase" met horizontale line: visuele scheiding tussen actief-nu en preview-later
+- **3 future tiers** compact 3-col strip (Growth/Pro/Enterprise): standaard card-pattern, geen CTA-buttons (niet actionable nu), "Beschikbaar na founding-fase" mono-footer voor preview-state-signaal
+- Section-CTA reroute van /pricing → /apply met label "Plan een gesprek"
+- Title: "Founding-tarief levenslang gelockt. Daarna per werkruimte." (was defensief "Transparante prijzen, geen verborgen credits")
+- Subtitle: founding = €997 per maand nooit herijkt, andere tiers recalibreren elk halfjaar, founding blijft €997, hieronder preview
+- Component-API toegevoegd: `futurePhaseEyebrow`, `futureAvailability`, `foundingCtaLabel`
+- i18n NL/EN/ES title, subtitle, ctaLink, founding.desc herschreven. Em-dashes vervangen door komma per feedback_no_em_dashes
+
+**Validatie**: NL/EN/ES alle 200, desktop screenshot toont founding-hero dominant met correct "€997 per maand" + Crown "Levenslang vast", 3 future-tiers preview-strip met "Beschikbaar na founding-fase" footer.
+
 ### Sectie 10 — TrustSignalsGrid (4 numerieke tiles) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `b4db912` asymmetric bento layout + scherpere cijfers + visible eyebrow
@@ -228,8 +258,8 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-10 (zie issue log)
-- [ ] **Sectie 11 — PricingTeaser (4 tiers, founding dominant)** ← HIER VERDER
+- [x] Sectie 1-11 (zie issue log)
+- [ ] **Sectie 12 — Pillars bento (3 inhoudelijke tiles)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -260,9 +290,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-10 voltooid (laatste sessie: TrustSignalsGrid asymmetric bento layout, commit b4db912).
+We doen een interactieve walkthrough van de homepage. Sectie 1-11 voltooid (laatste sessie: PricingTeaser founding-hero + future preview-strip + lifetime-lock copy-fix, commit b1e35b0).
 
-Volgende: sectie 11 PricingTeaser (4 tiers, founding dominant).
+Volgende: sectie 12 Pillars bento (3 inhoudelijke tiles).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -309,7 +339,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 11 — PricingTeaser (4 tiers, founding dominant)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 12 — Pillars bento (3 inhoudelijke tiles)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
