@@ -991,7 +991,7 @@
       },
       "founding": {
         "name": "Founding",
-        "subtitle": "Recomendado para early adopters",
+        "subtitle": "10 plazas · ancla de por vida",
         "tagline": "10 plazas en total. Caps Pro-level. 997 EUR de por vida. Founder Slack.",
         "description": "Los clientes fundadores que se comprometieron antes del lanzamiento. Precio de por vida de 997 EUR, caps Pro-level en todas las habilidades, línea directa con Daley por Slack. {taken} de {total} plazas ocupadas.",
         "features_0": "Espacios de trabajo ilimitados",
@@ -1119,8 +1119,7 @@
       "eyebrow": "¿Listo?",
       "title": "¿Listo para empezar la partnership?",
       "description": "Máx. {maxPartners} agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
-      "primary": "Agenda una llamada",
-      "secondary": "Lee el caso SkinClarity"
+      "primary": "Agenda una llamada"
     }
   },
   "how-it-works": {

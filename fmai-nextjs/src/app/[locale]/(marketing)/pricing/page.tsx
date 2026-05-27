@@ -20,8 +20,12 @@ import { PricingExperience } from '@/components/pricing/PricingExperience'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { ArrowRight } from 'lucide-react'
+import {
+  FOUNDING_SPOTS_TAKEN,
+  FOUNDING_SPOTS_TOTAL,
+  MAX_PARTNERS_PER_YEAR,
+} from '@/lib/constants'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -108,6 +112,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
+      {/* Lead magnet — top-funnel option for visitors not ready to pick a tier */}
+      <section className="py-8 px-6 lg:px-12" aria-label="AI Readiness Checklist download">
+        <div className="max-w-md mx-auto">
+          <LeadMagnetCTA source="pricing" variant="sidebar" />
+        </div>
+      </section>
+
       {/* Tier Cards — shared workspace-slider drives all four cards */}
       <section className="py-12 px-6 lg:px-12" aria-labelledby="pricing-tiers">
         <div className="max-w-7xl mx-auto space-y-6">
@@ -136,7 +147,16 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* Skills × Tier Matrix */}
+      {/* Visibility — trust-frame placed BEFORE matrix & FAQ */}
+      <section className="py-12 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="visibility">
+        <div className="max-w-3xl mx-auto text-center space-y-3">
+          <EyebrowLabel>{t('visibility.eyebrow')}</EyebrowLabel>
+          <SectionHeading id="visibility">{t('visibility.title')}</SectionHeading>
+          <p className="text-text-secondary leading-relaxed">{t('visibility.body')}</p>
+        </div>
+      </section>
+
+      {/* Skills × Tier Matrix — kept visible (trust-anchor that Visibility promises) */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="pricing-matrix">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 space-y-3">
@@ -153,43 +173,8 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* FAQ — promoted directly after the decision surface (tier cards + matrix) */}
-      <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10 space-y-3">
-            <EyebrowLabel>{t('faq.eyebrow')}</EyebrowLabel>
-            <SectionHeading id="pricing-faq">{t('faq.title')}</SectionHeading>
-          </div>
-          <ScrollReveal>
-            <FaqAccordion
-              items={FAQ_KEYS.map((key) => ({
-                key,
-                question: t(`faq.items.${key}.question`),
-                answer: t(`faq.items.${key}.answer`),
-              }))}
-            />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Why prices visible */}
-      <section className="py-12 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="visibility">
-        <div className="max-w-3xl mx-auto text-center space-y-3">
-          <EyebrowLabel>{t('visibility.eyebrow')}</EyebrowLabel>
-          <SectionHeading id="visibility">{t('visibility.title')}</SectionHeading>
-          <p className="text-text-secondary leading-relaxed">{t('visibility.body')}</p>
-        </div>
-      </section>
-
-      {/* Lead magnet — Phase 15-04 mid-funnel capture */}
-      <section className="py-12 px-6 lg:px-12" aria-label="AI Readiness Checklist download">
-        <div className="max-w-md mx-auto">
-          <LeadMagnetCTA source="pricing" variant="sidebar" />
-        </div>
-      </section>
-
       {/* Credit Packs */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="credit-packs">
+      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="credit-packs">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 space-y-3">
             <EyebrowLabel>{t('creditPacks.eyebrow')}</EyebrowLabel>
@@ -216,35 +201,68 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* Skill-specific Packs */}
-      <section className="py-16 px-6 lg:px-12 bg-bg-surface/30" aria-labelledby="skill-packs">
+      {/* Skill-specific Packs — progressive disclosure (add-ons, not core decision data) */}
+      <section className="py-16 px-6 lg:px-12" aria-labelledby="skill-packs">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10 space-y-3">
-            <EyebrowLabel>{t('skillPacks.eyebrow')}</EyebrowLabel>
-            <SectionHeading id="skill-packs">{t('skillPacks.title')}</SectionHeading>
-            <p className="text-text-secondary">{t('skillPacks.description')}</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SKILL_PACK_KEYS.map((key) => (
-              <ScrollReveal key={key}>
-                <div className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-5 transition-all duration-300 hover:bg-white/[0.04]">
-                  <h3 className="text-base font-semibold text-text-primary mb-1">
-                    {t(`skillPacks.items.${key}.name`)}
-                  </h3>
-                  <p className="text-sm text-text-secondary mb-3">
-                    {t(`skillPacks.items.${key}.quantity`)}
-                  </p>
-                  <span className="font-mono text-lg font-bold text-accent-system">
-                    &euro;{t(`skillPacks.items.${key}.price`)}
-                  </span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <details className="group rounded-2xl border border-border-primary bg-white/[0.02] backdrop-blur-sm">
+            <summary className="flex items-center justify-between cursor-pointer list-none px-6 py-5 transition-colors hover:bg-white/[0.03] rounded-2xl">
+              <div className="text-left space-y-1">
+                <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-system">
+                  {t('skillPacks.eyebrow')}
+                </p>
+                <h2 id="skill-packs" className="text-2xl md:text-3xl font-display font-bold text-text-primary">
+                  {t('skillPacks.title')}
+                </h2>
+              </div>
+              <ChevronDown
+                className="w-5 h-5 text-text-muted transition-transform duration-300 group-open:rotate-180 shrink-0 ml-4"
+                aria-hidden
+              />
+            </summary>
+            <div className="px-6 pb-6 pt-2">
+              <p className="text-text-secondary mb-6 max-w-2xl">{t('skillPacks.description')}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {SKILL_PACK_KEYS.map((key) => (
+                  <ScrollReveal key={key}>
+                    <div className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-5 transition-all duration-300 hover:bg-white/[0.04]">
+                      <h3 className="text-base font-semibold text-text-primary mb-1">
+                        {t(`skillPacks.items.${key}.name`)}
+                      </h3>
+                      <p className="text-sm text-text-secondary mb-3">
+                        {t(`skillPacks.items.${key}.quantity`)}
+                      </p>
+                      <span className="font-mono text-lg font-bold text-accent-system">
+                        &euro;{t(`skillPacks.items.${key}.price`)}
+                      </span>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </details>
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* FAQ — objection-handling op moment-of-decision, vlak voor final CTA */}
+      <section aria-labelledby="pricing-faq" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 space-y-3">
+            <EyebrowLabel>{t('faq.eyebrow')}</EyebrowLabel>
+            <SectionHeading id="pricing-faq">{t('faq.title')}</SectionHeading>
+          </div>
+          <ScrollReveal>
+            <FaqAccordion
+              items={FAQ_KEYS.map((key) => ({
+                key,
+                question: t(`faq.items.${key}.question`),
+                answer: t(`faq.items.${key}.answer`),
+              }))}
+            />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Final CTA — single primary button (dual-CTA pattern removed per homepage walkthrough) */}
       <section className="py-16 px-6 lg:px-12" aria-labelledby="pricing-cta">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
@@ -253,21 +271,13 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <SectionHeading id="pricing-cta" className="mb-4">
                 {t('cta.title')}
               </SectionHeading>
-              <p className="text-lg text-text-secondary mb-8">{t('cta.description')}</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <CTAButton href="/apply" size="lg">
-                  {t('cta.primary')}
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </CTAButton>
-                <CTAButton
-                  href="/case-studies/skinclarity-club"
-                  variant="secondary"
-                  size="lg"
-                >
-                  {t('cta.secondary')}
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </CTAButton>
-              </div>
+              <p className="text-lg text-text-secondary mb-8">
+                {t('cta.description', { maxPartners: MAX_PARTNERS_PER_YEAR })}
+              </p>
+              <CTAButton href="/apply" size="lg">
+                {t('cta.primary')}
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </CTAButton>
             </GlassCard>
           </ScrollReveal>
         </div>

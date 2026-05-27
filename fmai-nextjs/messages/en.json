@@ -991,7 +991,7 @@
       },
       "founding": {
         "name": "Founding",
-        "subtitle": "Recommended for early adopters",
+        "subtitle": "10 seats · lifetime anchor",
         "tagline": "10 total spots. Pro-level caps. €997 for life. Founder Slack.",
         "description": "The founding clients who committed before launch. Lifetime price of €997, Pro-level caps on every skill, direct Slack line with Daley. {taken} of {total} spots taken.",
         "features_0": "Unlimited workspaces",
@@ -1119,8 +1119,7 @@
       "eyebrow": "Ready?",
       "title": "Ready to start the partnership?",
       "description": "Max {maxPartners} agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
-      "primary": "Book a call",
-      "secondary": "Read the SkinClarity case"
+      "primary": "Book a call"
     }
   },
   "how-it-works": {

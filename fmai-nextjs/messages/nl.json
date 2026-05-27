@@ -991,7 +991,7 @@
       },
       "founding": {
         "name": "Founding",
-        "subtitle": "Aanbevolen voor early adopters",
+        "subtitle": "10 plekken · levenslang anker",
         "tagline": "10 plekken totaal. Pro-caps. Levenslang €997. Founder Slack.",
         "description": "De oprichtende klanten die vóór launch committeerden. Levenslange prijs van €997, Pro-caps op elke vaardigheid, directe Slack-lijn met Daley. {taken} van {total} plekken bezet.",
         "features_0": "Onbeperkt aantal werkruimtes",
@@ -1119,8 +1119,7 @@
       "eyebrow": "Klaar?",
       "title": "Klaar om de partnership te starten?",
       "description": "Maximaal {maxPartners} bureaus per jaar. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "primary": "Plan een gesprek",
-      "secondary": "Lees SkinClarity case"
+      "primary": "Plan een gesprek"
     }
   },
   "how-it-works": {
