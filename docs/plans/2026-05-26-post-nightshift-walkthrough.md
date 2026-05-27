@@ -140,6 +140,25 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 15 — FAQ accordion (5 vragen) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `304c980` sharper title + subtitle ipv generieke 'Veelgestelde vragen'
+
+**Diagnose huidige staat (v1)**:
+- Radix Accordion was technisch al strong (a11y-correct, single-collapsible, hover/open states)
+- 5 vragen correct fact-checked tegen pricing + skills-data + ProcessTimeline + constants — geen feitelijke fouten
+- Title "Veelgestelde vragen" generiek (zegt nieks)
+- Geen subtitle/context
+
+**Wijzigingen**:
+- Title NL: "Veelgestelde vragen" → "Vragen die in elk eerste gesprek terugkomen" (confident, positioneert FAQ als social-proof + hint op high-touch nature)
+- Title EN: → "Questions that come up in every first conversation"
+- Title ES: → "Preguntas que aparecen en cada primera conversación"
+- Subtitle toegevoegd: "Vijf antwoorden zodat ons 30-minuten gesprek over jouw situatie kan gaan." (legt FAQ-purpose uit, sluit aan op /apply Calendly 30 min)
+- page.tsx wrapper aangepast: text-center mb-10 verplaatst naar div-container om subtitle te accommoderen
+
+**Validatie**: NL/EN/ES alle 200, screenshot toont title + subtitle clean rendered boven 5 accordion items.
+
 ### Sectie 14 — IcpSection (who-is-this-for / not-for) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `eed4792` light polish + symmetric headings + closing CTA
@@ -323,9 +342,9 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-12, 14 (zie issue log)
+- [x] Sectie 1-12, 14-15 (zie issue log)
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
-- [ ] **Sectie 15 — FAQ accordion (5 vragen)** ← HIER VERDER
+- [ ] **Sectie 16 — Final CTA + scarcity** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -356,9 +375,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14 voltooid (sectie 13 verwijderd). Laatste sessie: IcpSection polish + closing CTA, commit eed4792.
+We doen een interactieve walkthrough van de homepage. Sectie 1-12 + 14-15 voltooid (sectie 13 verwijderd). Laatste sessie: FAQ sharper title + subtitle, commit 304c980.
 
-Volgende: sectie 15 FAQ accordion (5 vragen).
+Volgende: sectie 16 Final CTA + scarcity.
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -405,7 +424,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 15 — FAQ accordion (5 vragen)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 16 — Final CTA + scarcity** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
