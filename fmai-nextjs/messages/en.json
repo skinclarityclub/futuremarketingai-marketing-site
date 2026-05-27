@@ -203,7 +203,8 @@
         }
       },
       "ctaLabel": "Book a call",
-      "ctaHint": "Available onboarding slots: 2 per month"
+      "ctaHint": "Available onboarding slots: 2 per month",
+      "fullJourneyLink": "See the full 5-step onboarding journey"
     },
     "comparison": {
       "eyebrow": "Comparison",
@@ -3410,6 +3411,7 @@
       "memory": "Memory",
       "caseStudies": "Case Studies",
       "pricing": "Pricing",
+      "howItWorks": "How it works",
       "foundingMember": "Founding",
       "about": "About"
     },

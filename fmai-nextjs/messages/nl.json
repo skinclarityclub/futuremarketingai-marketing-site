@@ -203,7 +203,8 @@
         }
       },
       "ctaLabel": "Plan een gesprek",
-      "ctaHint": "Beschikbare onboarding-slots: 2 per maand"
+      "ctaHint": "Beschikbare onboarding-slots: 2 per maand",
+      "fullJourneyLink": "Bekijk de volledige 5-stappen onboardingreis"
     },
     "comparison": {
       "eyebrow": "Vergelijking",
@@ -3410,6 +3411,7 @@
       "memory": "Geheugen",
       "caseStudies": "Cases",
       "pricing": "Prijzen",
+      "howItWorks": "Werkwijze",
       "foundingMember": "Founding",
       "about": "Over"
     },

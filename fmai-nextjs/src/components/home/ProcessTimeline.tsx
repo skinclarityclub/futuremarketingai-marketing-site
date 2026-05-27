@@ -23,6 +23,7 @@ interface ProcessTimelineProps {
   >
   ctaLabel: string
   ctaHint: string
+  fullJourneyLink: string
 }
 
 const containerVariants = {
@@ -49,7 +50,7 @@ const weekVariants = {
  * FounderSection. Vervangen door whileInView stagger reveal — consistent
  * met MemoryUSP / Pricing. Reduced-motion: MotionConfig stript de y-translate.
  */
-export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, ctaHint }: ProcessTimelineProps) {
+export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, ctaHint, fullJourneyLink }: ProcessTimelineProps) {
   return (
     <section
       aria-labelledby="process-timeline"
@@ -146,6 +147,17 @@ export function ProcessTimeline({ eyebrow, title, subtitle, weeks, ctaLabel, cta
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
           </Link>
           <span className="text-xs text-text-muted">{ctaHint}</span>
+        </div>
+
+        {/* Doorklik naar /how-it-works — volledige 5-stappen reis */}
+        <div className="mt-6">
+          <Link
+            href="/how-it-works"
+            className="group inline-flex items-center gap-1.5 text-sm text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
+          >
+            {fullJourneyLink}
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+          </Link>
         </div>
       </div>
     </section>

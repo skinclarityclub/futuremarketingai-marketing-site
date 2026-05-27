@@ -203,7 +203,8 @@
         }
       },
       "ctaLabel": "Agenda una llamada",
-      "ctaHint": "Slots de onboarding disponibles: 2 por mes"
+      "ctaHint": "Slots de onboarding disponibles: 2 por mes",
+      "fullJourneyLink": "Ver el recorrido completo de onboarding en 5 pasos"
     },
     "comparison": {
       "eyebrow": "Comparativa",
@@ -3410,6 +3411,7 @@
       "memory": "Memoria",
       "caseStudies": "Casos",
       "pricing": "Precios",
+      "howItWorks": "Cómo funciona",
       "foundingMember": "Founding",
       "about": "Sobre nosotros"
     },

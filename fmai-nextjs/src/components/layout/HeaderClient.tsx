@@ -84,6 +84,12 @@ const NAV_ITEMS = [
   },
   { key: 'pricing', href: '/pricing' as const, hasDropdown: false, matchPaths: ['/pricing'] },
   {
+    key: 'howItWorks',
+    href: '/how-it-works' as const,
+    hasDropdown: false,
+    matchPaths: ['/how-it-works'],
+  },
+  {
     key: 'foundingMember',
     href: '/founding-member' as const,
     hasDropdown: false,

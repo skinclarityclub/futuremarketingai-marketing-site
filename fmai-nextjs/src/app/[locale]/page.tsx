@@ -234,6 +234,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             }}
             ctaLabel={t('processTimeline.ctaLabel')}
             ctaHint={t('processTimeline.ctaHint')}
+            fullJourneyLink={t('processTimeline.fullJourneyLink')}
           />
         </ScrollReveal>
       </LazySection>
