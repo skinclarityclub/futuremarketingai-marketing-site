@@ -82,6 +82,10 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // scripts/dev.mjs sets NEXT_DIST_DIR when starting a parallel dev server on
+  // a non-default port, so each instance writes to its own .next-{port}/ and
+  // avoids turbopack-persistence panics caused by sharing .next/dev/.
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   compress: true,
   productionBrowserSourceMaps: false,
   images: {
