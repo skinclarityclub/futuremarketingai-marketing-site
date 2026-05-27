@@ -397,6 +397,41 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 ---
 
+## Wave 1 — Marketing depth
+
+### /memory ✅ VOLTOOID 2026-05-27
+
+**Commit**: `c4f91e5` SOTA upgrade — narrative reorder + scarcity CTA + drop tech jargon
+
+**Route gekozen**: C + D + drop technical "geheugen-call" blocks (user-feedback: niet interessant voor bezoekers)
+
+**Diagnose huidige staat (v1)**:
+- 6× duplicate `hero.eyebrow` ("Geheugen per merk") in 6 verschillende sectie-headings + CTA — klassieke AI-tell
+- "ChatGPT / Claude" in contrast-tile self-attack — Clyde wordt gebouwd op Claude API zelf
+- Comparison.intro overcommit: "Niet hypothetisch: dit is hoe een dag eruit ziet" claimt dat demo-turns echte transcripts zijn
+- "Week 1 vs week 12" mismatch met homepage 4-weken processTimeline ramp
+- CTA mist homepage scarcity-pattern (geen `1/10` anchor, geen amber decision-energy)
+- LayerCube cube + right-column hebben technische `memory.recall(...)` code-blocks die niet interesteren voor bureau-eigenaars
+- MemoryComparison gebruikt inline mono-p ipv EyebrowLabel primitive (Fase 0 consistency)
+- "Supabase RLS" technische jargon in isolation.body2
+
+**Wijzigingen**:
+- **6 unieke eyebrows** per sectie: Architectuur · Tijdcurve · Isolatie per merk · Dag en nacht · Geheugen in actie · Vergelijking · Founding scarcity. Hero behoudt "Geheugen per merk" als section-1 anchor.
+- **Narrative-arc reorder**: hero → layers → progress → isolation → decay → comparison → contrast → CTA (wat → hoe → wanneer-merkbaar → trust → ritme → bewijs → vs → next)
+- **Maand 1 versus maand 3** (was: Week 1 versus week 12) — natuurlijk maand-ritme, aligned met month-3 ramp-tijd post 4-weken onboarding
+- **"Chat-AI (generiek)"** (was: "ChatGPT / Claude") — geen Claude self-attack, generieker = breder van toepassing
+- **Comparison.intro softer**: "Dit patroon zien we elke werkweek terug bij SkinClarity Club" (was: "Niet hypothetisch: dit is hoe een dag eruit ziet")
+- **CTA scarcity-pattern**: amber eyebrow "Founding open · 1/10 bezet" (via `FOUNDING_SPOTS_TAKEN/TOTAL` constants interpolation), invitational title "Klaar voor een AI die je merken kent?", 30-min subtitle aligned met homepage CTA
+- **LayerCube**: drop `codeLabel` + per-layer `codeLine` props/keys (cube + right-column code-pre blocks). Active-state sterker: scale 1.02, ACTIEF/ACTIVE/ACTIVO pulse-badge, inactive opacity 0.35→0.18 voor sharper contrast, ring-opacity 50→60.
+- **MemoryComparison**: EyebrowLabel primitive ipv inline mono-p
+- **Drop Supabase RLS** jargon in isolation.body2 (technical detail niet user-facing)
+- **Hero "AI-tool"** → "generieke AI-prompt" (CLAUDE.md glossary compliance)
+- i18n: nieuw `activeLabel` key + 6 nieuwe section-eyebrows + reframe keys voor 3 locales
+
+**Validatie**: NL/EN/ES alle 200, screenshot toont clean cube zonder technical code, 6 unieke eyebrows per sectie, amber scarcity-eyebrow op CTA, Maand 1/3 framing.
+
+---
+
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
@@ -404,27 +439,16 @@ Volgorde, agent niet vooruitlopen:
 - [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
 - [x] Sectie 17 — TrustStrip (VERWIJDERD wegens overlap + anti-climactic)
 - [x] **HOMEPAGE VOLLEDIG VOLTOOID** 🎉
-- [ ] Volgende: andere pagina's (/memory, /pricing, /founding-member, /case-studies/skinclarity-club, /about, /how-it-works, etc — zie lijst onder)
-- [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
-- [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
-- [ ] Sectie 13 — Trust 01-04 grid
-- [ ] Sectie 14 — IcpSection (who-is-this-for/not-for)
-- [ ] Sectie 15 — FAQ accordion (5 vragen)
-- [ ] Sectie 16 — Final CTA + scarcity
-- [ ] Sectie 17 — TrustStrip (compact close)
-- [ ] **Andere pagina's** in volgorde:
-  - /memory (LayerCube 3D, comparison demo)
-  - /pricing (WorkspaceSlider, tier bento, FAQ)
-  - /founding-member (SpotScarcityGrid, QuickApplyTeaser)
-  - /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
-  - /about (MissionTimeline, CapacityBar)
-  - /how-it-works (5-stappen onboardingreis)
-  - /skills (index bento + Clyde featured tile)
-  - /skills/{12 skills} (template parts)
-  - /contact, /apply, /assessment + /assessment/result
-  - /blog (index + post), /roadmap, /logo-lab, /newsletter/confirm
-  - /legal (cookies/privacy/terms)
-  - Footer
+- [x] **Wave 1 page 1: /memory** ✅ (c4f91e5)
+- [ ] Wave 1 page 2: /pricing (PricingExperience slider, SkillsTierMatrix, FAQ)
+- [ ] Wave 1 page 3: /founding-member (SpotScarcityGrid, QuickApplyTeaser)
+- [ ] Wave 1 page 4: /case-studies/skinclarity-club (ScrollProgressRail, BeforeAfterTimeline)
+- [ ] Wave 1 page 5: /about (MissionTimeline, CapacityBar)
+- [ ] Wave 1 page 6: /how-it-works (5-stappen onboardingreis)
+- [ ] Wave 2 — Skills (SkillPageTemplate + /skills index + 12 detail pages)
+- [ ] Wave 3 — Conversion (/contact, /apply, /assessment, /assessment/result)
+- [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
+- [ ] Wave 5 — Final cross-page consistency scan
 
 ---
 
@@ -435,9 +459,11 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-Homepage walkthrough VOLLEDIG VOLTOOID (sectie 1-12, 14-16 + Footer, sectie 13 + 17 verwijderd). Laatste sessie: Footer polish (Clyde label overflow fix + eyebrow polish + cookie-link), commit e363ff3.
+Homepage walkthrough VOLLEDIG VOLTOOID. Wave 1 page 1 (/memory) VOLTOOID 2026-05-27 (c4f91e5): route C+D + drop technical "geheugen-call" blocks, narrative-arc reorder (hero -> layers -> progress -> isolation -> decay -> comparison -> contrast -> CTA), Maand 1/3 framing, Chat-AI generiek, founding-scarcity CTA-eyebrow.
 
-Volgende fase: andere pagina's in volgorde — /memory, /pricing, /founding-member, /case-studies/skinclarity-club, /about, /how-it-works, /skills (index + 12 skill pages), /contact, /apply, /assessment, /blog, /roadmap, /logo-lab, /newsletter/confirm, /legal/{cookies,privacy,terms}.
+Volgende: Wave 1 page 2 = /pricing (PricingExperience workspace slider, SkillsTierMatrix, 8-item FAQ, LeadMagnetCTA sidebar). Path: `src/app/[locale]/(marketing)/pricing/page.tsx`. i18n: `pricing` namespace. Critical: pricing copy moet aligned blijven met sectie 11 PricingTeaser (founding 997/maand levenslang, andere tiers workspace-priced).
+
+Daarna: /founding-member, /case-studies/skinclarity-club, /about, /how-it-works (Wave 1 rest), dan Wave 2 (Skills), Wave 3 (Conversion), Wave 4 (Utility), Wave 5 (final consistency scan).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
