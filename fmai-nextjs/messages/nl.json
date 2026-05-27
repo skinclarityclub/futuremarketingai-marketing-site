@@ -92,17 +92,6 @@
       "statusLive": "Live",
       "statusComingSoon": "Binnenkort"
     },
-    "trust": {
-      "title": "Waarom bureaus met Clyde werken",
-      "customBuiltTitle": "Clyde onthoudt alles",
-      "customBuilt": "Persistent geheugen per merk. Clyde kent de merkstem, doelgroep en prestatiegeschiedenis. Elke week scherper. Strikt gescheiden per merk.",
-      "founderAccessTitle": "AI-partner, geen platform",
-      "founderAccess": "Maximaal {maxPartners} bureaus per jaar. Persoonlijke onboarding door Daley. Geen zelfbediening. Elke klant is een partnership.",
-      "successGuaranteeTitle": "Clyde schaalt mee met je portfolio",
-      "successGuarantee": "SkinClarity Club draait inmiddels 3 Instagram-accounts, 4 merken en meerdere contentsoorten autonoom. Hoe je portfolio er ook uitziet: Clyde past zich aan.",
-      "trialTitle": "EU-native, geen lock-in",
-      "trialCommitment": "Self-hosted infrastructuur op Europese servers. AVG en EU AI Act ready. Jouw data blijft van jou."
-    },
     "icp": {
       "title": "Voor welke bureaus bouwen we Clyde?",
       "subtitle": "Geen marketingpraatje. Eerlijk gezegd: we werken liever niet met iedereen.",

@@ -92,17 +92,6 @@
       "statusLive": "Live",
       "statusComingSoon": "Soon"
     },
-    "trust": {
-      "title": "Why agencies work with Clyde",
-      "customBuiltTitle": "Clyde remembers everything",
-      "customBuilt": "Persistent memory per brand. Clyde knows the brand voice, audience and performance history. Sharper every week. Strictly isolated per brand.",
-      "founderAccessTitle": "AI partner, not a platform",
-      "founderAccess": "Max {maxPartners} agencies per year. Personal onboarding by Daley. No self-service. Every client is a partnership.",
-      "successGuaranteeTitle": "Clyde scales with your portfolio",
-      "successGuarantee": "SkinClarity Club runs 3 Instagram accounts, 4 brands and multiple content types autonomously. Whatever your portfolio looks like: Clyde adapts.",
-      "trialTitle": "EU-native, no lock-in",
-      "trialCommitment": "Self-hosted infrastructure on European servers. GDPR and EU AI Act ready. Your data stays yours."
-    },
     "icp": {
       "title": "Which agencies are we building Clyde for?",
       "subtitle": "No marketing pitch. Honestly, we'd rather not work with everyone.",

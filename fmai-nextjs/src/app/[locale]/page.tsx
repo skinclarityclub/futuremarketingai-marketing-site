@@ -423,46 +423,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 13 — Trust numerieke tiles (01-04, was: 4 checkmark GlassCards)
-          ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="300px">
-        <section aria-labelledby="trust" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-          <div className="max-w-5xl mx-auto">
-            <SectionHeading id="trust" className="text-center">{t('trust.title')}</SectionHeading>
-            <ScrollReveal>
-              <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-                {[
-                  { num: '01', titleKey: 'customBuiltTitle', bodyKey: 'customBuilt'       },
-                  { num: '02', titleKey: 'founderAccessTitle', bodyKey: 'founderAccess'   },
-                  { num: '03', titleKey: 'successGuaranteeTitle', bodyKey: 'successGuarantee' },
-                  { num: '04', titleKey: 'trialTitle', bodyKey: 'trialCommitment'         },
-                ].map(({ num, titleKey, bodyKey }) => (
-                  <div
-                    key={num}
-                    className="flex flex-col"
-                  >
-                    <span
-                      aria-hidden
-                      className="font-display text-6xl lg:text-7xl font-bold text-accent-system leading-none mb-4"
-                    >
-                      {num}
-                    </span>
-                    <span className="block w-10 h-px bg-accent-system/40 mb-4" aria-hidden />
-                    <p className="font-display text-lg font-bold text-text-primary mb-2">
-                      {t(`trust.${titleKey}`)}
-                    </p>
-                    <p className="text-sm text-text-secondary leading-relaxed">
-                      {t(`trust.${bodyKey}`)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
-      </LazySection>
-
-      {/* ─────────────────────────────────────────────────────────────
           Sectie 14 — Hybrid ICP (who is this for / not for)
           ──────────────────────────────────────────────────────────── */}
       <LazySection minHeight="400px">

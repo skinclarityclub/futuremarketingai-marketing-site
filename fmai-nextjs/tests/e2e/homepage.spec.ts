@@ -67,12 +67,6 @@ test.describe('Homepage Sections', () => {
     await expect(pillarsSection).toBeVisible()
   })
 
-  test('should render Trust/Why Teams section', async ({ page }) => {
-    await scrollUntilVisible(page,'section[aria-labelledby="trust"]')
-    const trustSection = page.locator('section[aria-labelledby="trust"]')
-    await expect(trustSection).toBeVisible()
-  })
-
   test('should render Final CTA section', async ({ page }) => {
     await scrollUntilVisible(page,'section[aria-labelledby="cta"]')
     const ctaSection = page.locator('section[aria-labelledby="cta"]').first()
