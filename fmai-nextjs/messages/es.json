@@ -310,11 +310,14 @@
       }
     },
     "testimonial": {
-      "eyebrow": "Perspectiva de operadora",
-      "quote": "Lo que no esperaba: eché de menos a Clyde durante mis vacaciones. No la herramienta. El compañero.",
-      "name": "Sindy",
+      "eyebrow": "El momento en que hizo clic",
+      "quote": "Reconozco nuestras marcas en cada caption que se publica. Cuatro marcas, cuatro voces, ni una vez con tono genérico de IA. Eso me sorprendió.",
+      "name": "Sindy Kienstra",
       "role": "Founder y operadora, SkinClarity Club",
-      "portraitAlt": "Retrato de Sindy, founder de SkinClarity Club"
+      "portraitAlt": "Retrato de Sindy Kienstra, founder de SkinClarity Club",
+      "linkedinUrl": "https://www.linkedin.com/in/sindy-skinclarity",
+      "linkedinLabel": "Ver a Sindy Kienstra en LinkedIn",
+      "ctaLabel": "Leer la entrevista completa"
     },
     "pricingTeaser": {
       "eyebrow": "Precios",
