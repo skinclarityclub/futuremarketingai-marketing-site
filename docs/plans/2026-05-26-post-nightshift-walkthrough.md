@@ -140,6 +140,28 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 13 — Trust 01-04 grid ❌ VERWIJDERD 2026-05-27
+
+**Commit**: `5b2d941` verwijder sectie 13 — alle 4 claims dupliceerden andere secties
+
+**Diagnose**:
+Sectie 13 (4 numbered tiles in 1x4 editorial pattern) had massieve content-overlap met andere homepage secties:
+- 01 "Clyde onthoudt alles" = sectie 5 MemoryUSPTeaser dupe
+- 02 "AI-partner, max 20/jaar, Daley-onboarding" = sectie 12 Partnership pillar dupe
+- 03 "SKC 3 IG, 4 merken" = sectie 3 CaseStudyCard + sectie 10 hero dupe
+- 04 "EU-native, geen lock-in" = sectie 12 Compliance pillar dupe
+
+Title "Waarom bureaus met Clyde werken" was variant van sectie 12 "Drie pijlers die geen US-tool kan matchen".
+
+**Verwijderd**:
+- Inline JSX block uit `src/app/[locale]/page.tsx`
+- `home.trust` namespace uit `messages/nl.json`, `en.json`, `es.json`
+- E2e test "should render Trust/Why Teams section" uit `tests/e2e/homepage.spec.ts`
+
+**Resultaat**: pagina-flow wordt sectie 12 Pillars → sectie 14 IcpSection. Schoner, sterker, minder herhaling. Sectie-nummering blijft (13 is gewoon overgeslagen).
+
+**Validatie**: NL/EN/ES alle 200, geen render-errors door missing translation-keys.
+
 ### Sectie 12 — Pillars bento (3 inhoudelijke tiles) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `ae0238b` polish-pass + subtitle + per-tile CTAs + fix heading-wrap
@@ -282,7 +304,8 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 Volgorde, agent niet vooruitlopen:
 - [x] Sectie 1-12 (zie issue log)
-- [ ] **Sectie 13 — Trust 01-04 grid** ← HIER VERDER
+- [x] Sectie 13 — Trust 01-04 grid (VERWIJDERD wegens overlap)
+- [ ] **Sectie 14 — IcpSection (who-is-this-for / not-for)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -313,9 +336,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-12 voltooid (laatste sessie: Pillars polish + subtitle + per-tile CTAs + heading-wrap fix, commit ae0238b).
+We doen een interactieve walkthrough van de homepage. Sectie 1-12 voltooid + sectie 13 verwijderd wegens overlap (commit 5b2d941).
 
-Volgende: sectie 13 Trust 01-04 grid.
+Volgende: sectie 14 IcpSection (who-is-this-for / not-for).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -362,7 +385,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 13 — Trust 01-04 grid** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 14 — IcpSection (who-is-this-for / not-for)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
