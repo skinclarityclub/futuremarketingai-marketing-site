@@ -140,6 +140,29 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 12 — Pillars bento (3 inhoudelijke tiles) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `ae0238b` polish-pass + subtitle + per-tile CTAs + fix heading-wrap
+
+**Diagnose huidige staat (v1)**:
+- Layout an sich was al SOTA (asymmetric bento, niet 1x4) — compliance col-span-2 + 2 stat-tiles
+- **Compliance heading wraps lelijk**: "GDPR · EU AI Act" bij text-6xl breekt naar "GDPR · EU AI" / "Act" — middle-dot · op regel-eind
+- Geen subtitle (sectie 10 + 11 hadden wel context)
+- Geen CTA-links per tile (dood-end na proof-claims)
+- Title "Gebouwd voor Europese bureaus" generiek/defensief
+
+**Wijzigingen**:
+- **Title**: "Gebouwd voor Europese bureaus" → "Drie ankers die geen US-tool kan matchen" (confident, EU-vs-US positioning)
+- **Subtitle** toegevoegd: "EU-native compliance, EU-native infra en directe partnership. Geen CSM-laag, geen US-clouds, geen vendor lock-in."
+- **Compliance heading** gesplitst van single-line "GDPR · EU AI Act" naar designed 2-line "GDPR-first." / "EU AI Act ready." (block-displayed spans). Font van text-4xl/5xl/6xl naar text-4xl/5xl (geen lg:6xl). i18n `compliance.heading` vervangen door `headingLine1` + `headingLine2`
+- **Per-tile CTA-links** toegevoegd voor funnel-anchoring:
+  - Compliance → /privacy ("Hoe wij data behandelen")
+  - Infrastructure → /memory ("Bekijk de geheugenlaag")
+  - Partnership → /about ("Lees meer over Daley")
+- i18n NL/EN/ES: nieuwe `subtitle` + 3 `linkText` keys + headingLine split
+
+**Validatie**: NL/EN/ES alle 200, screenshot toont 2-line compliance heading clean rendered, 3 tile-CTAs visible onderaan elk tile.
+
 ### Sectie 11 — PricingTeaser (founding-now + future preview) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `b1e35b0` founding-now hero + future-preview strip + lifetime-lock copy
@@ -258,8 +281,8 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-11 (zie issue log)
-- [ ] **Sectie 12 — Pillars bento (3 inhoudelijke tiles)** ← HIER VERDER
+- [x] Sectie 1-12 (zie issue log)
+- [ ] **Sectie 13 — Trust 01-04 grid** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -290,9 +313,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-11 voltooid (laatste sessie: PricingTeaser founding-hero + future preview-strip + lifetime-lock copy-fix, commit b1e35b0).
+We doen een interactieve walkthrough van de homepage. Sectie 1-12 voltooid (laatste sessie: Pillars polish + subtitle + per-tile CTAs + heading-wrap fix, commit ae0238b).
 
-Volgende: sectie 12 Pillars bento (3 inhoudelijke tiles).
+Volgende: sectie 13 Trust 01-04 grid.
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -339,7 +362,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 12 — Pillars bento (3 inhoudelijke tiles)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 13 — Trust 01-04 grid** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
