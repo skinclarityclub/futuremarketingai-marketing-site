@@ -88,11 +88,11 @@ export async function Footer({ locale }: FooterProps) {
                   <li key={skill.navKey}>
                     <Link
                       href={skill.href}
-                      className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5 group/skill"
+                      className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5 min-w-0 max-w-full group/skill"
                     >
                       <span
                         aria-hidden
-                        className={`inline-block w-1.5 h-1.5 rounded-full transition-all ${
+                        className={`inline-block w-1.5 h-1.5 shrink-0 rounded-full transition-all ${
                           skill.comingSoon
                             ? 'bg-[#F5A623]/60 group-hover/skill:bg-[#F5A623]'
                             : 'bg-status-active/70 group-hover/skill:bg-status-active'

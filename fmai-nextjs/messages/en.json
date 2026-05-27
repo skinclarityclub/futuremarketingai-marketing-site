@@ -653,7 +653,7 @@
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde AI Marketing Employee"
+          "clyde": "Clyde Orchestrator"
         },
         "status_badge": "All systems operational",
         "social_aria": {
@@ -661,7 +661,7 @@
           "twitter": "Follow us on X"
         },
         "eyebrow": {
-          "brand": "Agency",
+          "brand": "Newsletter",
           "skills": "Skills",
           "company": "Company",
           "resources": "Resources"
@@ -725,7 +725,7 @@
       "customise": "Customise",
       "saveSelection": "Save selection",
       "readMore": "More about our cookie policy",
-      "reopenLink": "Change cookie settings",
+      "reopenLink": "Cookie settings",
       "categories": {
         "functional": {
           "name": "Essential",

@@ -653,7 +653,7 @@
           "caseStudies": "Casos de estudio",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Empleado AI de Marketing"
+          "clyde": "Clyde Orchestrator"
         },
         "status_badge": "Todos los sistemas operativos",
         "social_aria": {
@@ -661,7 +661,7 @@
           "twitter": "Síguenos en X"
         },
         "eyebrow": {
-          "brand": "Agencia",
+          "brand": "Boletín",
           "skills": "Habilidades",
           "company": "Empresa",
           "resources": "Recursos"
@@ -725,7 +725,7 @@
       "customise": "Personalizar",
       "saveSelection": "Guardar selección",
       "readMore": "Más sobre nuestra política de cookies",
-      "reopenLink": "Cambiar preferencias de cookies",
+      "reopenLink": "Ajustes de cookies",
       "categories": {
         "functional": {
           "name": "Esencial",

@@ -653,7 +653,7 @@
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde AI Marketing Medewerker"
+          "clyde": "Clyde Orchestrator"
         },
         "status_badge": "Alle systemen draaien",
         "social_aria": {
@@ -661,7 +661,7 @@
           "twitter": "Volg ons op X"
         },
         "eyebrow": {
-          "brand": "Bureau",
+          "brand": "Nieuwsbrief",
           "skills": "Vaardigheden",
           "company": "Bedrijf",
           "resources": "Bronnen"
@@ -725,7 +725,7 @@
       "customise": "Aanpassen",
       "saveSelection": "Selectie opslaan",
       "readMore": "Meer over ons cookiebeleid",
-      "reopenLink": "Cookie-instellingen wijzigen",
+      "reopenLink": "Cookies aanpassen",
       "categories": {
         "functional": {
           "name": "Noodzakelijk",
