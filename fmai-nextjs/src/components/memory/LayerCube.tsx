@@ -31,28 +31,28 @@ const META: Record<
 > = {
   hot: {
     Icon: Brain,
-    tint: 'from-[#FF4D4D]/20 via-bg-surface to-bg-deep',
+    tint: 'from-[#FF4D4D]/15 via-bg-deep to-bg-deep',
     ring: 'ring-[#FF4D4D]/60',
     glow: 'shadow-[0_30px_120px_-30px_rgba(255,77,77,0.55)]',
     accent: 'text-[#FF8A8A]',
   },
   warm: {
     Icon: History,
-    tint: 'from-[#F5A623]/20 via-bg-surface to-bg-deep',
+    tint: 'from-[#F5A623]/15 via-bg-deep to-bg-deep',
     ring: 'ring-[#F5A623]/60',
     glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.55)]',
     accent: 'text-[#F5A623]',
   },
   cold: {
     Icon: Layers,
-    tint: 'from-accent-system/20 via-bg-surface to-bg-deep',
+    tint: 'from-accent-system/15 via-bg-deep to-bg-deep',
     ring: 'ring-accent-system/60',
     glow: 'shadow-[0_30px_120px_-30px_rgba(0,212,170,0.55)]',
     accent: 'text-accent-system',
   },
   context: {
     Icon: SlidersHorizontal,
-    tint: 'from-accent-human/20 via-bg-surface to-bg-deep',
+    tint: 'from-accent-human/15 via-bg-deep to-bg-deep',
     ring: 'ring-accent-human/60',
     glow: 'shadow-[0_30px_120px_-30px_rgba(245,166,35,0.5)]',
     accent: 'text-accent-human',
@@ -119,7 +119,7 @@ export function LayerCube({
               const isActive = i === active
               const baseZ = (ORDER.length - 1 - i) * -60
               const activeShift = isActive ? 100 : 0
-              const fade = isActive ? 1 : 0.18
+              const fade = isActive ? 1 : 0.08
               return (
                 <motion.div
                   key={key}
@@ -166,7 +166,7 @@ export function LayerCube({
                   <h3 className="mt-4 text-2xl font-display font-bold text-text-primary">
                     {layers[key].name}
                   </h3>
-                  <p className="mt-3 text-sm text-text-secondary leading-relaxed">
+                  <p className="mt-3 text-sm text-text-primary/90 leading-relaxed">
                     {layers[key].description}
                   </p>
                 </motion.div>
