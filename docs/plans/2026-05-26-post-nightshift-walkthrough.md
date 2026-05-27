@@ -140,6 +140,37 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 - CTA: "Plan een gesprek" + slot-hint "Beschikbare onboarding-slots: 2 per maand"
 - Horizontal gradient-line verwijderd (was scheef + niet uitgelijnd met cards)
 
+### Sectie 10 — TrustSignalsGrid (4 numerieke tiles) ✅ VOLTOOID 2026-05-27
+
+**Commit**: `b4db912` asymmetric bento layout + scherpere cijfers + visible eyebrow
+
+**Diagnose huidige staat (v1)**:
+- 1x4 uniform grid (= AI-tell volgens premium B2B design-research)
+- Heading `sr-only` (geen visuele anchor wat dit "is")
+- Values inconsistent: mix van cijfers ("9 vaardigheden live", "1 van 10") en kwalitatieve facts ("NL en EU")
+- "9 vaardigheden live" dupliceert sectie 4 ServicesBento subtitle
+- "4 huismerken" abstract (leest als FMai-fact ipv SKC-fact)
+- Tiles min-h 200px = veel lege witruimte, voelt onafgemaakt
+
+**2 parallel agents geraadpleegd**:
+1. **Explore** — homepage design-DNA inventory: card-pattern (`rounded-2xl border-border-primary bg-white/[0.02] hover:bg-white/[0.04] -translate-y-0.5`), typography-hiërarchie, sectie 4 ServicesBento doet asymmetric featured-tile (Clyde col-span-2), sectie 11 PricingTeaser doet featured-styling op founding (amber border+bg). Anti-patterns geïdentificeerd in v1 grid.
+2. **General-purpose (Gemini Flash fallback, Perplexity quota op)** — externe research Stripe/Plausible/Vercel/Cursor "by-the-numbers" patterns. Conclusie: 70% premium sites = asymmetric of stat-strip, NIET 1x4. Numbers als hero (5xl-7xl), count-up alleen op echte cijfers, mixed value-types via visual differentiatie.
+
+**Wijzigingen**:
+- Visible eyebrow "Het bewijs in cijfers" (was `sr-only` heading "Belangrijke cijfers")
+- Component-API herzien: `hero` + `signals` (3 secondaries) ipv `signals` (4 equal)
+- **Hero tile** (full-width col-span-3 op md+): "36 per week" als 6xl-7xl display-font, narrative label "Posts autonoom uitgevoerd voor SkinClarity Club", sub-detail "21 carrousels + 15 posts, 3 IG-accounts, sinds Q4 2025", link rechtsonder, subtle radial bg-accent in top-right corner
+- **3 secondary tiles** in 3-col strip (md+) of stacked (mobile):
+  - skills: "9 / 12" + "Vaardigheden direct inzetbaar" (fraction-framing vermijdt echo met sectie 4)
+  - founding: "1 / 10" + amber border `accent-human/40` + bg-gradient `from-accent-human/[0.06]` + "Schaarste"-eyebrow rechtsboven (visuele scarcity-differentiatie)
+  - sovereignty: "100% EU" + "Data-residency en infra" (was "NL en EU" — harder cijfer)
+- LazySection min-h 200px → 280px (past bij nieuwe density)
+- Section padding `py-12` → `py-16 lg:py-20` (premium breathing room)
+- Container max-w-5xl → max-w-6xl
+- Hover-pattern voegt `border-accent-system/35` (resp `border-accent-human/60` voor founding) toe naast bestaande `bg-white/[0.04] -translate-y-0.5`
+
+**Validatie**: NL/EN/ES alle 200, desktop + mobile screenshots OK. Hero "36 per week" dominant zichtbaar, founding amber-tile duidelijk visueel onderscheiden van skills/sovereignty.
+
 ### Sectie 9 — TestimonialBlock (Sindy operator-stem) ✅ VOLTOOID 2026-05-27
 
 **Commit**: `2c413c7` editorial pull-quote layout + brand-voice angle + verified attribution
@@ -197,8 +228,8 @@ Aanpak per sectie: lezen → screenshot → eerlijke kritiek → user kiest verb
 ## Resterende secties (volgende sessies)
 
 Volgorde, agent niet vooruitlopen:
-- [x] Sectie 1-9 (zie issue log)
-- [ ] **Sectie 10 — TrustSignalsGrid (4 numerieke tiles)** ← HIER VERDER
+- [x] Sectie 1-10 (zie issue log)
+- [ ] **Sectie 11 — PricingTeaser (4 tiers, founding dominant)** ← HIER VERDER
 - [ ] Sectie 11 — PricingTeaser (4 tiers, founding dominant)
 - [ ] Sectie 12 — Pillars bento (3 inhoudelijke tiles)
 - [ ] Sectie 13 — Trust 01-04 grid
@@ -229,9 +260,9 @@ Volgorde, agent niet vooruitlopen:
 ```
 Lees C:\Users\daley\Desktop\Futuremarketingai\docs\plans\2026-05-26-post-nightshift-walkthrough.md
 
-We doen een interactieve walkthrough van de homepage. Sectie 1-9 voltooid (laatste sessie: TestimonialBlock editorial pull-quote + brand-voice quote-angle, commit 2c413c7).
+We doen een interactieve walkthrough van de homepage. Sectie 1-10 voltooid (laatste sessie: TrustSignalsGrid asymmetric bento layout, commit b4db912).
 
-Volgende: sectie 10 TrustSignalsGrid (4 numerieke tiles).
+Volgende: sectie 11 PricingTeaser (4 tiers, founding dominant).
 
 Procedure per sectie:
 1. Lokaliseer component (Glob/Grep) + lees component + i18n (alle 3 talen)
@@ -278,7 +309,7 @@ Conventies:
 
 1. **Daley levert portretfoto** → drop in `fmai-nextjs/public/images/daley-portrait.webp` (min 192×192, vierkant). `HAS_PORTRAIT` flag in [FounderSection.tsx](../fmai-nextjs/src/components/home/FounderSection.tsx) flipt automatisch via `fs.existsSync`. Geen code-edit nodig — volgende build pakt 'm op.
 2. **Sindy levert portretfoto** → drop in `fmai-nextjs/public/images/sindy-portrait.webp` (min 288×288, vierkant). `HAS_PORTRAIT` flag in [TestimonialBlock.tsx](../fmai-nextjs/src/components/home/TestimonialBlock.tsx) flipt automatisch via `fs.existsSync`. Aparte file van case-study `sindy-headshot.jpg` (die ook nog placeholder is).
-3. **Sectie 10 — TrustSignalsGrid (4 numerieke tiles)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
+3. **Sectie 11 — PricingTeaser (4 tiers, founding dominant)** is HIER VERDER. Lees component + i18n, screenshot, kritische eval, AskUserQuestion, atomic commit.
 4. Walkthrough doc is single source of truth — update na elke sectie.
 - Nieuwe componenten in deze sessie:
   - `src/components/motion/ChatSimulation.tsx` (gebruikt door ClydeFeaturedTile)
