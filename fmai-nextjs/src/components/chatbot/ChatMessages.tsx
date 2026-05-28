@@ -215,10 +215,17 @@ export function ChatMessages({
     for (let i = messages.length - 1; i >= 0; i--) {
       const msg = messages[i]
       if (msg.role !== 'assistant') continue
+      // DEBUG: log last assistant message parts
+      if (typeof window !== 'undefined') {
+        console.debug('[SidePanel debug] last assistant msg parts:', msg.parts.map((p: any) => ({ type: p.type, state: p.state, toolName: p.toolName })))
+      }
       for (let j = msg.parts.length - 1; j >= 0; j--) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
+        if (typeof window !== 'undefined') {
+          console.debug('[SidePanel debug] part:', { type: part.type, tn, state: part.state, inSet: tn ? shouldUseSidePanel(tn) : false })
+        }
         if (tn && part.state === 'output-available' && shouldUseSidePanel(tn))
           return { toolName: tn, data: part.output }
       }
@@ -228,6 +235,9 @@ export function ChatMessages({
   }, [flagship, messages])
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.debug('[SidePanel debug] lastSidePanelTool:', lastSidePanelTool)
+    }
     if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
   }, [lastSidePanelTool, openSidePanel])
 
