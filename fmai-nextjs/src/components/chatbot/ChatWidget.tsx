@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
@@ -10,7 +10,6 @@ import { FloatingButton } from './FloatingButton'
 import { ChatHeader } from './ChatHeader'
 import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
-import { SuggestedPrompts } from './SuggestedPrompts'
 import { SidePanel } from './SidePanel'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
@@ -40,10 +39,17 @@ export function ChatWidget({
   welcomeMessage,
 }: ChatWidgetProps) {
   const t = useTranslations('chat.widget')
-  const { messages, sendMessage, status, messageCount, isAtLimit } = usePersonaChat(
-    personaId,
-    pageContext
-  )
+  const {
+    messages,
+    sendMessage,
+    status,
+    messageCount,
+    isAtLimit,
+    stop,
+    regenerate,
+    setMessages,
+  } = usePersonaChat(personaId, pageContext)
+  const [editText, setEditText] = useState<string | undefined>(undefined)
   const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
@@ -73,6 +79,29 @@ export function ChatWidget({
       handleSend(text)
     },
     [handleSend, startDemo]
+  )
+
+  /**
+   * Edit-flow: restore the user's original text into the input and
+   * trim every message from that user-turn onward (including any AI
+   * reply we already streamed). User can then tweak and re-send.
+   */
+  const handleEditMessage = useCallback(
+    (messageId: string, text: string) => {
+      const idx = messages.findIndex((m) => m.id === messageId)
+      if (idx === -1) return
+      // Stop any in-flight response so the trim is clean.
+      stop?.()
+      setMessages?.(messages.slice(0, idx))
+      // Tag the text with a timestamp suffix in a wrapper state so the
+      // child useEffect always fires, even if user re-edits the exact
+      // same string twice in a row.
+      setEditText(text)
+      // Clear the marker on next tick so the input is a normal
+      // controlled component again.
+      setTimeout(() => setEditText(undefined), 0)
+    },
+    [messages, setMessages, stop]
   )
 
   useEffect(() => {
@@ -123,13 +152,18 @@ export function ChatWidget({
           {isOpen && !isMinimized && (
             <motion.div
               data-chatwidget-panel
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6 flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)] overflow-hidden rounded-2xl border border-border-primary shadow-2xl shadow-black/40 bg-bg-surface/95 backdrop-blur-md"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.22, ease: [0.32, 0.72, 0, 1] }}
+              style={{
+                boxShadow:
+                  '0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 8px 24px -8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
+                transformOrigin: 'bottom right',
+              }}
+              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6 flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)] overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-surface/85 backdrop-blur-2xl"
               role="dialog"
-              aria-label={`Chat with ${personaName || 'assistant'}`}
+              aria-label={`Chat met ${personaName || 'Clyde'}`}
               aria-modal="true"
             >
               {isFlagship && (
@@ -162,24 +196,24 @@ export function ChatWidget({
                   welcomeMessage={welcomeMessage}
                   flagship={isFlagship}
                   onStartDemo={demoMode ? undefined : startDemo}
+                  suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
+                  onPromptSelect={handlePromptSelect}
+                  onRegenerate={regenerate ? () => regenerate() : undefined}
+                  onEditMessage={handleEditMessage}
                 />
                 <DemoOrchestrator
                   chatStatus={status}
                   messageCount={messages.length}
                   onSendMessage={handleSend}
                 />
-                {showPrompts && (
-                  <SuggestedPrompts
-                    prompts={suggestedPrompts}
-                    onSelect={handlePromptSelect}
-                    disabled={isAtLimit}
-                  />
-                )}
                 {limitBanner}
                 <ChatInput
                   onSend={handleSend}
+                  onStop={stop}
                   disabled={isAtLimit}
+                  isLoading={status === 'submitted' || status === 'streaming'}
                   placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+                  initialText={editText}
                 />
               </div>
             </motion.div>
@@ -212,24 +246,24 @@ export function ChatWidget({
         status={status}
         welcomeMessage={welcomeMessage}
         onStartDemo={demoMode ? undefined : startDemo}
+        suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
+        onPromptSelect={handlePromptSelect}
+        onRegenerate={regenerate ? () => regenerate() : undefined}
+        onEditMessage={handleEditMessage}
       />
       <DemoOrchestrator
         chatStatus={status}
         messageCount={messages.length}
         onSendMessage={handleSend}
       />
-      {showPrompts && (
-        <SuggestedPrompts
-          prompts={suggestedPrompts}
-          onSelect={handlePromptSelect}
-          disabled={isAtLimit}
-        />
-      )}
       {limitBanner}
       <ChatInput
         onSend={handleSend}
+        onStop={stop}
         disabled={isAtLimit}
+        isLoading={status === 'submitted' || status === 'streaming'}
         placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+        initialText={editText}
       />
     </div>
   )

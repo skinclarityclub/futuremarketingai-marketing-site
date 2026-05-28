@@ -12,6 +12,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -111,10 +112,12 @@ export default async function RoadmapPage({
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — scarcity-anchored close-block (consistent met Wave 1-3 pattern) */}
       <section aria-labelledby="roadmap-cta" className="py-20 px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <EyebrowLabel>{t('cta.eyebrow')}</EyebrowLabel>
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
+            {t('cta.scarcityEyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+          </span>
           <SectionHeading id="roadmap-cta">{t('cta.title')}</SectionHeading>
           <p className="text-lg text-text-secondary">{t('cta.subtitle')}</p>
           <div className="pt-2">

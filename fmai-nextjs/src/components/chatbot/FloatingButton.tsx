@@ -1,7 +1,7 @@
 'use client'
 
 import { X } from 'lucide-react'
-import { useReducedMotion } from 'motion/react'
+import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface FloatingButtonProps {
   onClick: () => void
@@ -9,51 +9,56 @@ interface FloatingButtonProps {
   isOpen?: boolean
 }
 
+/**
+ * Post-mount Clyde trigger rendered inside ChatWidget when the chat is
+ * minimized. Matches ClydePresence so the identity stays consistent
+ * before and after first interaction: same sparkle mark + "Clyde"
+ * wordmark in a pill, expanding to "Clyde · nu online" on hover.
+ *
+ * When `isOpen` is true (chat panel is up) we shrink to a circular
+ * close button so it doesn't compete with the panel's chrome.
+ */
 export function FloatingButton({
   onClick,
   hasUnread = false,
   isOpen = false,
 }: FloatingButtonProps) {
-  const shouldReduceMotion = useReducedMotion()
+  if (isOpen) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label="Sluit chat met Clyde"
+        className="fixed right-6 bottom-6 lg:bottom-8 z-[61] flex h-11 w-11 items-center justify-center rounded-full border border-accent-system/40 bg-bg-elevated text-text-primary outline-none transition-shadow duration-200 hover:shadow-[var(--shadow-glow-lg)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+      >
+        <X className="h-5 w-5 text-accent-system" />
+      </button>
+    )
+  }
 
   return (
     <button
       type="button"
-      role="button"
       onClick={onClick}
-      aria-label={isOpen ? 'Close chat' : 'Open chat'}
-      className={`fixed z-[61] right-6 bottom-24 lg:right-8 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2
-        flex h-14 w-14 items-center justify-center rounded-full
-        bg-accent-system text-bg-deep
-        shadow-lg shadow-accent-system/20
-        hover:shadow-xl hover:shadow-accent-system/30 hover:scale-105
-        transition-all duration-200
-        focus:outline-none focus:ring-2 focus:ring-accent-system/50 focus:ring-offset-2 focus:ring-offset-bg-deep
-        ${!isOpen && !shouldReduceMotion ? 'animate-breathe' : ''}`}
+      aria-label="Open chat met Clyde"
+      className="clyde-fab group fixed right-6 bottom-6 lg:bottom-8 z-[61] inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md outline-none transition-[box-shadow,transform] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system"
+      style={{ boxShadow: 'var(--shadow-glow)' }}
     >
-      {isOpen ? (
-        <X className="h-6 w-6" />
-      ) : (
-        // Inline speech-bubble SVG matches FloatingChatTrigger placeholder so
-        // the icon stays identical before and after ChatWidget hydration.
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      <LogoSynapse size={22} ariaLabel="" />
+      <span className="font-display text-sm font-semibold tracking-tight">Clyde</span>
+      <span className="clyde-status overflow-hidden whitespace-nowrap text-sm text-text-secondary" data-visible="hover">
+        <span className="clyde-status-inner">
+          <span className="mx-1.5 text-text-faint">·</span>
+          nu online
+        </span>
+      </span>
+      {hasUnread && (
+        <span
           aria-hidden="true"
+          className="relative ml-1 flex h-2 w-2 items-center justify-center rounded-full bg-error"
         >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        </svg>
-      )}
-
-      {/* Unread badge */}
-      {hasUnread && !isOpen && (
-        <span className="absolute -top-0.5 -right-0.5 h-3 w-3 animate-pulse rounded-full bg-red-500" />
+          <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-error opacity-60" />
+        </span>
       )}
     </button>
   )

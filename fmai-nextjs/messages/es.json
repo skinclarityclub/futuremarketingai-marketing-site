@@ -2208,6 +2208,7 @@
     },
     "cta": {
       "eyebrow": "Acceso anticipado",
+      "scarcityEyebrow": "Founding abierto · {taken}/{total} reservadas",
       "title": "¿Quieres ser el primero?",
       "subtitle": "Los founding members obtienen acceso anticipado a las tres a medida que entran en vivo, además de voz en lo que construimos a continuación.",
       "button": "Agenda una llamada"
