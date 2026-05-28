@@ -2208,6 +2208,7 @@
     },
     "cta": {
       "eyebrow": "Early access",
+      "scarcityEyebrow": "Founding open · {taken}/{total} reserved",
       "title": "Want to be first in line?",
       "subtitle": "Founding members get early access to all three as they go live, plus a say in what we build next.",
       "button": "Book a call"

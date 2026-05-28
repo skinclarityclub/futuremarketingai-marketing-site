@@ -2208,6 +2208,7 @@
     },
     "cta": {
       "eyebrow": "Vroege toegang",
+      "scarcityEyebrow": "Founding open · {taken}/{total} bezet",
       "title": "Wil je als eerste meedraaien?",
       "subtitle": "Founding-leden krijgen early access op alle drie zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
       "button": "Plan een gesprek"
