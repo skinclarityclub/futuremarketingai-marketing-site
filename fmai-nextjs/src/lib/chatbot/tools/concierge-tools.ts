@@ -73,33 +73,25 @@ export const conciergeTools = {
     }),
     execute: async ({ skillId }) => {
       if (skillId === 'all') {
+        const liveCount = SKILLS_DATA.filter((s) => s.status === 'live').length
+        const comingSoonCount = SKILLS_DATA.filter((s) => s.status === 'coming_soon').length
         return {
-          totalSkills: SKILLS_DATA.length,
-          liveSkills: SKILLS_DATA.filter((s) => s.status === 'live').length,
-          comingSoonSkills: SKILLS_DATA.filter((s) => s.status === 'coming_soon').length,
-          skills: SKILLS_DATA.map((s) => ({
-            id: s.id,
+          name: 'Alle vaardigheden',
+          description: `${liveCount} live · ${comingSoonCount} binnenkort beschikbaar`,
+          services: SKILLS_DATA.map((s) => ({
             name: s.name,
-            route: s.route,
-            shortDescription: s.shortDescription,
-            status: s.status,
-            category: s.category,
-            creditCostLabel: s.creditCostLabel,
+            description: s.shortDescription,
+            url: s.route,
           })),
         }
       }
       const skill = SKILLS_DATA.find((s) => s.id === skillId)
       if (!skill) return { error: `Unknown skill: ${skillId}` }
       return {
-        skill: {
-          id: skill.id,
-          name: skill.name,
-          route: skill.route,
-          description: skill.longDescription,
-          features: skill.features,
-          status: skill.status,
-          creditCostLabel: skill.creditCostLabel,
-        },
+        name: skill.name,
+        description: skill.longDescription,
+        features: skill.features || [],
+        url: skill.route,
       }
     },
   }),

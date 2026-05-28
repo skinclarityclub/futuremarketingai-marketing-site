@@ -96,7 +96,12 @@ const get_pricing_info = tool({
     if (tier === 'all') {
       return { tiers: CHATBOT_TIERS }
     }
-    return { tier: CHATBOT_TIERS[tier as ChatbotTierKey] }
+    const t = CHATBOT_TIERS[tier as ChatbotTierKey]
+    return {
+      name: t.name,
+      description: `€${t.monthlyPrice}/maand`,
+      features: [...t.features],
+    }
   },
 })
 
