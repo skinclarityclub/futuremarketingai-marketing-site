@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useCallback, useState, useRef } from 'react'
+import type { UIMessage } from 'ai'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
@@ -25,6 +26,8 @@ interface ChatWidgetProps {
   messageLimit?: number
   pageContext?: { pathname: string }
   welcomeMessage?: string
+  /** Message Clyde sends proactively after 2 min of silence in an active conversation. */
+  proactiveFollowupMessage?: string
 }
 
 export function ChatWidget({
@@ -37,6 +40,7 @@ export function ChatWidget({
   messageLimit = 15,
   pageContext,
   welcomeMessage,
+  proactiveFollowupMessage,
 }: ChatWidgetProps) {
   const t = useTranslations('chat.widget')
   const {
@@ -109,6 +113,43 @@ export function ChatWidget({
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend
 
+  // Auto-greet: inject Clyde's welcome as a real chat bubble when chat first opens
+  const hasGreeted = useRef(false)
+  useEffect(() => {
+    if (mode !== 'floating' || !isFlagship || !isOpen || messages.length > 0 || hasGreeted.current || !welcomeMessage || demoMode) return
+    hasGreeted.current = true
+    const timer = setTimeout(() => {
+      setMessages?.([{
+        id: 'clyde-welcome',
+        role: 'assistant',
+        content: welcomeMessage,
+        parts: [{ type: 'text', text: welcomeMessage }],
+      } as UIMessage])
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [isOpen, messages.length, welcomeMessage, setMessages, mode, isFlagship, demoMode])
+
+  // Proactive follow-up: Clyde sends a message after 2 min of silence in active chat
+  const hasSentFollowup = useRef(false)
+  useEffect(() => {
+    if (!proactiveFollowupMessage || !isOpen || messages.length === 0 || hasSentFollowup.current) return
+    const lastMsg = messages[messages.length - 1]
+    if (lastMsg.role === 'user' || status === 'streaming' || status === 'submitted') return
+    const timer = setTimeout(() => {
+      hasSentFollowup.current = true
+      setMessages?.([
+        ...messages,
+        {
+          id: `clyde-followup-${Date.now()}`,
+          role: 'assistant',
+          content: proactiveFollowupMessage,
+          parts: [{ type: 'text', text: proactiveFollowupMessage }],
+        } as UIMessage,
+      ])
+    }, 120_000)
+    return () => clearTimeout(timer)
+  }, [messages, status, isOpen, proactiveFollowupMessage, setMessages])
+
   useEffect(() => {
     if (!pendingChatMessage || isAtLimit) return
     clearPendingMessage()
@@ -139,6 +180,17 @@ export function ChatWidget({
 
   const showPrompts =
     messages.length === 0 &&
+    suggestedPrompts &&
+    suggestedPrompts.length > 0 &&
+    !isAtLimit &&
+    !demoMode
+
+  // Show prompts inline below auto-greet bubble (only while it's the sole message)
+  const showInlinePrompts =
+    mode === 'floating' &&
+    isFlagship &&
+    messages.length === 1 &&
+    messages[0]?.role === 'assistant' &&
     suggestedPrompts &&
     suggestedPrompts.length > 0 &&
     !isAtLimit &&
@@ -211,6 +263,8 @@ export function ChatWidget({
                   onPromptSelect={handlePromptSelect}
                   onRegenerate={regenerate ? () => regenerate() : undefined}
                   onEditMessage={handleEditMessage}
+                  inlinePrompts={showInlinePrompts ? suggestedPrompts : undefined}
+                  onInlinePromptSelect={handlePromptSelect}
                 />
                 <DemoOrchestrator
                   chatStatus={status}

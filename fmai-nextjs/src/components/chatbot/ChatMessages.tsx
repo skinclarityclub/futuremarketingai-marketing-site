@@ -33,6 +33,10 @@ interface ChatMessagesProps {
   /** Restores the text of a user message into the input + trims the
    *  conversation back to that point. */
   onEditMessage?: (messageId: string, text: string) => void
+  /** Prompts shown inline below the first assistant message (auto-greet state). */
+  inlinePrompts?: string[]
+  /** Triggered when user clicks an inline prompt chip. */
+  onInlinePromptSelect?: (prompt: string) => void
 }
 
 function extractText(msg: UIMessage): string {
@@ -247,6 +251,8 @@ export function ChatMessages({
   onPromptSelect,
   onRegenerate,
   onEditMessage,
+  inlinePrompts,
+  onInlinePromptSelect,
 }: ChatMessagesProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -367,6 +373,25 @@ export function ChatMessages({
               </div>
               {!isUser && isLastAssistant && lastFollowUpChips && (
                 <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
+              )}
+              {!isUser && idx === 0 && messages.length === 1 && !isStreaming && inlinePrompts && inlinePrompts.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {inlinePrompts.slice(0, 4).map((prompt, pi) => {
+                    const Icon = iconForPrompt(prompt)
+                    return (
+                      <button
+                        key={prompt}
+                        type="button"
+                        onClick={() => onInlinePromptSelect?.(prompt)}
+                        style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
+                        className="group/ip flex items-center gap-1.5 rounded-xl border border-white/[0.06] bg-bg-elevated/60 px-3 py-2 text-xs font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
+                      >
+                        <Icon className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
+                        {prompt}
+                      </button>
+                    )
+                  })}
+                </div>
               )}
               {!isUser && messageText.length > 0 && (
                 <CopyButton text={messageText} />

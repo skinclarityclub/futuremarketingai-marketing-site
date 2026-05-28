@@ -98,6 +98,27 @@ const PROACTIVE_PROMPTS: Record<string, string> = {
   '/about': 'Hoe werkt het platform precies?',
 }
 
+/**
+ * Proactive in-chat follow-up messages. Sent by Clyde after 2 min of
+ * silence in an active conversation — makes the chat feel alive.
+ */
+const PROACTIVE_FOLLOWUPS: Record<string, string> = {
+  '/': 'Wil je dat ik een korte rondleiding geef door mijn vaardigheden?',
+  '/skills/social-media': 'Zal ik een content-kalender voor een testmerk opzetten?',
+  '/skills/voice-agent': 'Zal ik laten zien hoe ik een inkomend gesprek afhandel?',
+  '/skills/lead-qualifier': 'Wil je dat ik een echte lead voor je kwalificeer?',
+  '/skills/ad-creator': 'Zal ik 3 ad-varianten genereren voor een testproduct?',
+  '/skills/email-management': 'Wil je zien hoe ik jouw inbox zou indelen?',
+  '/skills/reporting': 'Zal ik een voorbeeld weekrapport genereren?',
+  '/skills/blog-factory': 'Wil je dat ik een SEO-artikel plan voor een testmerk?',
+  '/skills/clyde': 'Zal ik laten zien hoe ik meerdere vaardigheden tegelijk orkestreer?',
+  '/skills/research': 'Wil je dat ik een marktonderzoek doe voor jouw niche?',
+  '/skills/seo-geo': 'Zal ik AI-citaties voor jouw domein checken?',
+  '/pricing': 'Wil je dat ik een ROI-berekening maak voor jouw bureaugrootte?',
+  '/about': 'Kan ik laten zien hoe ik in de praktijk werk?',
+  default: 'Is er iets specifieks waar ik je mee kan helpen?',
+}
+
 const NUDGE_DELAY_MS = 40_000
 
 export function ChatWidgetIsland() {
@@ -109,6 +130,7 @@ export function ChatWidgetIsland() {
 
   const [nudgeVisible, setNudgeVisible] = useState(false)
   const nudgePrompt = PROACTIVE_PROMPTS[pathname]
+  const followupMessage = PROACTIVE_FOLLOWUPS[pathname] ?? PROACTIVE_FOLLOWUPS.default
 
   // Reset nudge on page navigation
   useEffect(() => {
@@ -128,6 +150,21 @@ export function ChatWidgetIsland() {
     const timer = setTimeout(() => setNudgeVisible(true), NUDGE_DELAY_MS)
     return () => clearTimeout(timer)
   }, [nudgePrompt, messageCounts, isOpen, pathname])
+
+  // Scroll-trigger nudge: also fire at 72% scroll depth
+  useEffect(() => {
+    if (!nudgePrompt) return
+    const handleScroll = () => {
+      const el = document.documentElement
+      const fraction = el.scrollTop / Math.max(1, el.scrollHeight - el.clientHeight)
+      if (fraction > 0.72) {
+        const total = Object.values(messageCounts).reduce((a, b) => a + b, 0)
+        if (total === 0 && !isOpen && !nudgeVisible) setNudgeVisible(true)
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [nudgePrompt, isOpen, nudgeVisible, messageCounts])
 
   const handleNudgeAccept = useCallback(() => {
     setNudgeVisible(false)
@@ -182,6 +219,7 @@ export function ChatWidgetIsland() {
         pageContext={{ pathname }}
         suggestedPrompts={SUGGESTED_PROMPTS[pathname] ?? SUGGESTED_PROMPTS.default}
         welcomeMessage={WELCOME_MESSAGES[pathname] ?? WELCOME_MESSAGES.default}
+        proactiveFollowupMessage={followupMessage}
       />
     </>
   )
