@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback, useState } from 'react'
+import { useEffect, useCallback, useState, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
@@ -54,6 +54,8 @@ export function ChatWidget({
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const pendingChatMessage = useChatbotStore((s) => s.pendingChatMessage)
+  const clearPendingMessage = useChatbotStore((s) => s.clearPendingMessage)
   const demoMode = useChatbotStore((s) => s.demoMode)
   const demoScenarioId = useChatbotStore((s) => s.demoScenarioId)
   const demoStepIndex = useChatbotStore((s) => s.demoStepIndex)
@@ -103,6 +105,15 @@ export function ChatWidget({
     },
     [messages, setMessages, stop]
   )
+
+  const handleSendRef = useRef(handleSend)
+  handleSendRef.current = handleSend
+
+  useEffect(() => {
+    if (!pendingChatMessage || isAtLimit) return
+    clearPendingMessage()
+    handleSendRef.current(pendingChatMessage)
+  }, [pendingChatMessage, isAtLimit, clearPendingMessage])
 
   useEffect(() => {
     if (isOpen) markRead()

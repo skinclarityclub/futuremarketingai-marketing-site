@@ -43,6 +43,8 @@ interface ChatbotState {
   calendlyOpen: boolean
   /** Calendly prefill data */
   calendlyPrefill: { name?: string; email?: string } | undefined
+  /** Message queued from sidebar skill-card click — consumed by ChatWidget */
+  pendingChatMessage: string | null
 
   // Actions
   setPersona: (id: string) => void
@@ -62,6 +64,8 @@ interface ChatbotState {
   closeSidePanel: () => void
   openCalendly: (prefill?: { name?: string; email?: string }) => void
   closeCalendly: () => void
+  sendChatMessage: (text: string) => void
+  clearPendingMessage: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -83,6 +87,7 @@ export const useChatbotStore = create<ChatbotState>()(
       sidePanelContent: null,
       calendlyOpen: false,
       calendlyPrefill: undefined,
+      pendingChatMessage: null,
 
       // Actions
       setPersona: (id: string) => set({ personaId: id }),
@@ -159,6 +164,8 @@ export const useChatbotStore = create<ChatbotState>()(
           calendlyOpen: false,
           calendlyPrefill: undefined,
         }),
+      sendChatMessage: (text: string) => set({ pendingChatMessage: text }),
+      clearPendingMessage: () => set({ pendingChatMessage: null }),
     }),
     {
       name: 'chatbot-store',

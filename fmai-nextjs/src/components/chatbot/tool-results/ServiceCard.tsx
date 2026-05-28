@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import { Check, ArrowRight, Zap, Bot, BarChart3, Megaphone } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { useChatbotStore } from '@/stores/chatbotStore'
 
 export interface ServiceCardData {
   name: string
@@ -68,13 +69,24 @@ function ServiceIcon({ kind, className }: { kind: ServiceIconKind; className?: s
 }
 
 function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
+  const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
+  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const iconKind = getServiceIconKind(data.name)
+
+  const handleCardClick = data.url
+    ? () => {
+        closeSidePanel()
+        sendChatMessage(`Vertel me meer over ${data.name}`)
+      }
+    : undefined
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (index ?? 0) * 0.08, duration: 0.25 }}
-      className="rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md transition-colors duration-200 hover:border-accent-system/30"
+      onClick={handleCardClick}
+      className={`group rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md transition-all duration-200 hover:border-accent-system/30${data.url ? ' cursor-pointer hover:bg-bg-elevated' : ''}`}
     >
       <div className="flex items-start gap-3">
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-system/15">
@@ -99,20 +111,23 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
           ))}
         </ul>
       )}
-      {data.price && (
+      {data.url && (
         <div className="mt-3 flex items-center justify-between">
-          <p className="font-mono text-sm font-bold text-accent-human">{data.price}</p>
-          {data.url && (
-            <a
-              href={data.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-accent-system hover:underline"
-            >
-              Learn more <ArrowRight className="h-3 w-3" />
-            </a>
+          {data.price && (
+            <p className="font-mono text-sm font-bold text-accent-human">{data.price}</p>
           )}
+          <Link
+            href={data.url}
+            onClick={(e) => e.stopPropagation()}
+            className="ml-auto inline-flex items-center gap-1 text-xs font-medium text-accent-system hover:underline"
+          >
+            Bekijk vaardigheid
+            <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
+          </Link>
         </div>
+      )}
+      {!data.url && data.price && (
+        <p className="mt-3 font-mono text-sm font-bold text-accent-human">{data.price}</p>
       )}
     </motion.div>
   )
@@ -284,6 +299,7 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
             [],
           price: (svc.price as string | undefined) ||
             (svc.starting_price as string | undefined),
+          url: svc.url as string | undefined,
         }
       })
     }
