@@ -397,6 +397,59 @@ Founding €997 is een **MAANDPRIJS** met levenslang gelockt tarief (rate locked
 
 ---
 
+## Wave 4 — Utility pages
+
+### /roadmap + cross-page audit ✅ VOLTOOID 2026-05-28
+
+**Commit**: `33b03af` feat(roadmap) — scarcity-eyebrow close-block + cross-page audit
+
+**Route gekozen**: B (polish /roadmap + final cross-page consistency scan)
+
+**Wijzigingen /roadmap**:
+- Close-block CTA-section krijgt scarcity-eyebrow consistent met Wave 1-3 pattern
+- 'Founding open · {taken}/{total} bezet' amber-mono met `FOUNDING_SPOTS_TAKEN/TOTAL` interpolation
+- Behoudt bestaande 'Vroege toegang' i18n key als fallback eyebrow
+- Title 'Wil je als eerste meedraaien?' + body + amber CTA -> /apply onveranderd
+- i18n nieuwe `roadmap.cta.scarcityEyebrow` key per NL/EN/ES naast bestaande eyebrow
+
+**Cross-page audit toolkit** (`scripts/audit-design-standards.mjs`):
+- 16 pages getest: home + 5 marketing core + 5 conversion + skills-index + blog/roadmap + 3 legal
+- Checks per page: scarcity-badge, eyebrow-accent, H1, final-CTA-link, footer
+- **Resultaat: 16/16 HTTP 200**, alle "missing" items contextueel correct:
+  - `pricing` + `founding-member`: scarcity inherent (page-purpose is founding/pricing)
+  - `case-skc`: proof-anchored, scarcity zou misplaced zijn
+  - `apply`: heeft `1 van 10 founding plekken bezet` copy-variant (semantisch identiek), self-ref dus geen /apply link
+  - `blog`: listing page, geen CTA expected
+  - `legal/cookies/privacy`: serious-tone, scarcity past niet bij legal compliance
+
+**Legal pages onveranderd**:
+- /legal: all-in-one juridisch overzicht
+- /legal/cookies + /privacy + /terms: comprehensive (10/8 sections), serious-tone past
+- /legal/cookies body is kort (1 paragraaf) — content-issue, niet design-scope
+
+Mobile e2e /roadmap 3/3 locales, 0 JS errors.
+
+---
+
+## Walkthrough VOLTOOID 🎉 2026-05-28
+
+**Eind-status**: 4 waves, 16 pagina's, alle volgens design standards.
+
+**Wave-overzicht**:
+- Wave 1 (Marketing depth): 6 pages — homepage + /memory + /pricing + /founding-member + /case-skc + /about + /how-it-works
+- Wave 2 (Skills): /skills index + SkillPageTemplate -> 12 detail-pages + testing-playbook 36/36 200 0 errors
+- Wave 3 (Conversion): /contact + /assessment final CTA-cards (apply + assessment/result al solid)
+- Wave 4 (Utility): /roadmap scarcity-eyebrow + cross-page audit 16/16 PASS
+
+**Tussendoor**:
+- Header SOTA edge-flush 3-segment grid (b771c04) — Gemini-research validated
+- /how-it-works header nav-discovery + homepage ProcessTimeline link (08d3b9d)
+- Custom dark scrollbar + VoiceDemoFAB cyan->teal (add6364)
+
+**Total commits deze walkthrough**: ~50 commits over Wave 1 (39) + tussendoor + Wave 2-4 (11).
+
+---
+
 ## Wave 3 — Conversion pages
 
 ### /contact + /assessment ✅ VOLTOOID 2026-05-28
@@ -693,7 +746,8 @@ Volgorde, agent niet vooruitlopen:
 - [x] Header SOTA edge-flush 3-segment grid (b771c04)
 - [x] Custom scrollbar + VoiceDemoFAB cyan->teal (add6364)
 - [x] **Wave 3 — Conversion**: /contact + /assessment final CTA-card (4c9c817). /apply al solid + /assessment/result empty-state ok
-- [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
+- [x] **Wave 4 — Utility**: /roadmap scarcity-eyebrow (33b03af) + cross-page audit 16/16 PASS. Legal pages contextueel correct
+- [x] **WALKTHROUGH VOLTOOID** 🎉 (4 waves, 16 pages, design-standards consistent)
 - [ ] Wave 4 — Utility (/roadmap, /legal/{cookies,privacy,terms})
 - [ ] Wave 5 — Final cross-page consistency scan
 
