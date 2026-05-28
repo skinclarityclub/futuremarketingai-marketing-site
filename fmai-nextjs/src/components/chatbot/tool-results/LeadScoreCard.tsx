@@ -96,22 +96,22 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
     if (!data.metrics && (data.hoursSavedPerMonth || data.totalMonthlySavings)) {
       autoMetrics = [
         ...(data.hoursSavedPerMonth !== null && data.hoursSavedPerMonth !== undefined
-          ? [{ label: 'Hours Saved/mo', value: String(data.hoursSavedPerMonth) }]
+          ? [{ label: 'Uren bespaard/mnd', value: String(data.hoursSavedPerMonth) }]
           : []),
         ...(data.totalMonthlySavings !== null && data.totalMonthlySavings !== undefined
-          ? [{ label: 'Monthly Savings', value: formatMoney(data.totalMonthlySavings) || '' }]
+          ? [{ label: 'Maandelijkse besparing', value: formatMoney(data.totalMonthlySavings) || '' }]
           : []),
         ...(data.annualSavings !== null && data.annualSavings !== undefined
-          ? [{ label: 'Annual Savings', value: formatMoney(data.annualSavings) || '' }]
+          ? [{ label: 'Jaarlijkse besparing', value: formatMoney(data.annualSavings) || '' }]
           : []),
         ...(data.laborSavingsPerMonth !== null && data.laborSavingsPerMonth !== undefined
-          ? [{ label: 'Labor Savings/mo', value: formatMoney(data.laborSavingsPerMonth) || '' }]
+          ? [{ label: 'Loonbesparing/mnd', value: formatMoney(data.laborSavingsPerMonth) || '' }]
           : []),
         ...(data.toolSavingsPerMonth !== null && data.toolSavingsPerMonth !== undefined
-          ? [{ label: 'Tool Savings/mo', value: formatMoney(data.toolSavingsPerMonth) || '' }]
+          ? [{ label: 'Toolbesparing/mnd', value: formatMoney(data.toolSavingsPerMonth) || '' }]
           : []),
         ...(data.implementationTime
-          ? [{ label: 'Implementation', value: data.implementationTime }]
+          ? [{ label: 'Implementatietijd', value: data.implementationTime }]
           : []),
       ]
     }
@@ -119,15 +119,15 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
     const metricsToShow = data.metrics ||
       autoMetrics || [
         ...(monthlySavings
-          ? [{ label: 'Monthly Savings', value: formatMoney(monthlySavings) || '' }]
+          ? [{ label: 'Maandelijkse besparing', value: formatMoney(monthlySavings) || '' }]
           : []),
         ...(annualSavings
-          ? [{ label: 'Annual Savings', value: formatMoney(annualSavings) || '' }]
+          ? [{ label: 'Jaarlijkse besparing', value: formatMoney(annualSavings) || '' }]
           : []),
-        ...(hoursReclaimed ? [{ label: 'Hours Reclaimed/mo', value: String(hoursReclaimed) }] : []),
+        ...(hoursReclaimed ? [{ label: 'Uren terug/mnd', value: String(hoursReclaimed) }] : []),
         ...(roi ? [{ label: 'ROI', value: roi }] : []),
-        ...(paybackPeriod ? [{ label: 'Payback Period', value: paybackPeriod }] : []),
-        ...(data.teamSize ? [{ label: 'Team Size', value: String(data.teamSize) }] : []),
+        ...(paybackPeriod ? [{ label: 'Terugverdientijd', value: paybackPeriod }] : []),
+        ...(data.teamSize ? [{ label: 'Teamgrootte', value: String(data.teamSize) }] : []),
       ]
 
     return (
@@ -140,7 +140,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
         <div className="rounded-xl bg-gradient-to-br from-accent-success/15 to-accent-system/10 border border-accent-success/20 p-4">
           <div className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-accent-success" />
-            <p className="font-sans text-sm font-semibold text-text-primary">ROI Projection</p>
+            <p className="font-sans text-sm font-semibold text-text-primary">ROI Berekening</p>
           </div>
           {data.recommendation && (
             <p className="mt-1.5 text-xs leading-relaxed text-text-secondary">
@@ -171,7 +171,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
         {factors && factors.length > 0 && (
           <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-3">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary mb-2">
-              Key Factors
+              Sleutelfactoren
             </p>
             <ul className="space-y-1">
               {factors.map((factor, i) => (
@@ -184,10 +184,10 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
           </div>
         )}
         <Link
-          href="/contact"
+          href="/apply"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Get your personalized ROI analysis
+          Ontvang jouw ROI analyse — plan een gesprek
         </Link>
       </motion.div>
     )
@@ -236,14 +236,14 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
       </div>
       {data.recommendation && (
         <div className="rounded-xl border border-accent-system/20 bg-accent-system/5 p-3">
-          <p className="text-xs font-semibold text-accent-system mb-1">Recommendation</p>
+          <p className="text-xs font-semibold text-accent-system mb-1">Aanbeveling</p>
           <p className="text-xs leading-relaxed text-text-secondary">{data.recommendation}</p>
         </div>
       )}
       {factors && factors.length > 0 && (
         <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-3">
           <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary mb-2">
-            Assessment Factors
+            Beoordelingsfactoren
           </p>
           <ul className="space-y-1.5">
             {factors.map((factor, i) => (
@@ -269,7 +269,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
                 {formatMoney(monthlySavings)}
               </p>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                Monthly Savings
+                Maandelijkse besparing
               </p>
             </div>
           )}
@@ -279,17 +279,17 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
                 {formatMoney(annualSavings)}
               </p>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                Annual Savings
+                Jaarlijkse besparing
               </p>
             </div>
           )}
         </div>
       )}
       <Link
-        href="/contact"
+        href="/apply"
         className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
       >
-        Book a discovery call
+        Plan een gesprek
       </Link>
     </motion.div>
   )

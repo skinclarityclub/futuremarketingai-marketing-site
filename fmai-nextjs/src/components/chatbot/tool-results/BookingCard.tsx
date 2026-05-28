@@ -1,10 +1,8 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Calendar, ExternalLink } from 'lucide-react'
-import { useState } from 'react'
-
-const CALENDLY_URL = 'https://calendly.com/futuremarketingai/discovery'
+import { Calendar, ArrowRight, Clock, MessageCircle, ShieldCheck } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 export interface BookingCardData {
   action: string
@@ -12,56 +10,56 @@ export interface BookingCardData {
   reason?: string
 }
 
-export function BookingCard({ data }: { data: BookingCardData }) {
-  const [iframeLoaded, setIframeLoaded] = useState(false)
-  const [iframeError, setIframeError] = useState(false)
-  const calendlyUrl = data?.url || CALENDLY_URL
+const TRUST_SIGNALS = [
+  { icon: MessageCircle, label: 'Persoonlijk gesprek' },
+  { icon: Clock, label: 'Reactie binnen 24u' },
+  { icon: ShieldCheck, label: 'Geen verplichtingen' },
+]
 
+export function BookingCard({ data }: { data: BookingCardData }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="w-full space-y-3"
+      className="w-full space-y-4"
     >
-      <div className="flex items-center gap-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-system/20">
-          <Calendar className="h-4 w-4 text-accent-system" />
+      <div className="rounded-xl bg-gradient-to-br from-accent-system/15 to-accent-secondary/10 border border-accent-system/20 p-4">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-system/20">
+            <Calendar className="h-5 w-5 text-accent-system" />
+          </div>
+          <div>
+            <p className="font-sans text-sm font-semibold text-text-primary">Plan een gesprek</p>
+            <p className="text-xs text-text-secondary">Samen kijken of het past</p>
+          </div>
         </div>
-        <div>
-          <p className="font-sans text-sm font-semibold text-text-primary">Schedule Your Call</p>
-          {data?.reason && <p className="text-xs text-text-secondary">{data.reason}</p>}
-        </div>
+        {data?.reason && (
+          <p className="mt-3 text-xs leading-relaxed text-text-secondary border-t border-accent-system/15 pt-3">
+            {data.reason}
+          </p>
+        )}
       </div>
-      {!iframeError ? (
-        <div className="relative overflow-hidden rounded-xl border border-border-primary">
-          {!iframeLoaded && (
-            <div className="flex h-[420px] items-center justify-center bg-bg-elevated/50">
-              <div className="animate-pulse text-xs text-text-secondary">Loading calendar...</div>
-            </div>
-          )}
-          <iframe
-            src={`${calendlyUrl}?hide_gdpr_banner=1&background_color=0a0e27&text_color=e0e0e0&primary_color=00d4ff`}
-            width="100%"
-            height="420"
-            frameBorder="0"
-            title="Book a discovery call"
-            className={iframeLoaded ? 'block' : 'hidden'}
-            onLoad={() => setIframeLoaded(true)}
-            onError={() => setIframeError(true)}
-          />
-        </div>
-      ) : (
-        <a
-          href={calendlyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-        >
-          <ExternalLink className="h-4 w-4" />
-          Open Calendar
-        </a>
-      )}
+
+      <div className="grid grid-cols-3 gap-2">
+        {TRUST_SIGNALS.map(({ icon: Icon, label }) => (
+          <div
+            key={label}
+            className="flex flex-col items-center gap-1.5 rounded-xl border border-border-primary bg-bg-elevated/60 p-3 text-center"
+          >
+            <Icon className="h-3.5 w-3.5 text-accent-system/70" />
+            <span className="text-[10px] leading-tight text-text-secondary">{label}</span>
+          </div>
+        ))}
+      </div>
+
+      <Link
+        href="/apply"
+        className="group flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-system/20 transition-all duration-200 hover:shadow-accent-system/30 hover:opacity-95"
+      >
+        Plan een gesprek
+        <ArrowRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
+      </Link>
     </motion.div>
   )
 }

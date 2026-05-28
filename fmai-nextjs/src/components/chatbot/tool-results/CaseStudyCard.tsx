@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Building2, AlertTriangle, Lightbulb, TrendingUp } from 'lucide-react'
+import { Building2, AlertTriangle, Lightbulb, TrendingUp, Quote, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
 export interface CaseStudyData {
@@ -11,6 +11,8 @@ export interface CaseStudyData {
     challenge: string
     solution: string
     results: string[]
+    testimonial?: string
+    url?: string
   }
 }
 
@@ -36,29 +38,32 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
           </div>
         </div>
       </div>
+
       <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-4">
         <div className="mb-2 flex items-center gap-2">
           <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
           <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
-            Challenge
+            Uitdaging
           </span>
         </div>
         <p className="text-xs leading-relaxed text-text-secondary">{study.challenge}</p>
       </div>
+
       <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-4">
         <div className="mb-2 flex items-center gap-2">
           <Lightbulb className="h-3.5 w-3.5 text-accent-system" />
           <span className="text-xs font-medium uppercase tracking-wider text-accent-system">
-            Solution
+            Oplossing
           </span>
         </div>
         <p className="text-xs leading-relaxed text-text-secondary">{study.solution}</p>
       </div>
+
       <div className="rounded-xl border border-accent-success/20 bg-accent-success/5 p-4">
         <div className="mb-3 flex items-center gap-2">
           <TrendingUp className="h-3.5 w-3.5 text-accent-success" />
           <span className="text-xs font-medium uppercase tracking-wider text-accent-success">
-            Results
+            Resultaten
           </span>
         </div>
         <ul className="space-y-2">
@@ -67,7 +72,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
               key={i}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * i, duration: 0.2 }}
+              transition={{ delay: 0.08 * i, duration: 0.2 }}
               className="flex items-start gap-2 text-xs text-text-secondary"
             >
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-success" />
@@ -76,12 +81,36 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
           ))}
         </ul>
       </div>
-      <Link
-        href="/contact"
-        className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
-      >
-        Want similar results? Book a call
-      </Link>
+
+      {study.testimonial && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
+          className="rounded-xl border border-accent-system/15 bg-accent-system/5 p-4"
+        >
+          <Quote className="h-4 w-4 text-accent-system/50 mb-2" />
+          <p className="text-xs leading-relaxed text-text-secondary italic">{study.testimonial}</p>
+        </motion.div>
+      )}
+
+      <div className="space-y-2">
+        {study.url && (
+          <Link
+            href="/case-studies/skinclarity-club"
+            className="group flex items-center justify-center gap-2 rounded-xl border border-accent-system/30 bg-accent-system/10 px-4 py-3 text-xs font-medium text-accent-system transition-all duration-200 hover:bg-accent-system/15"
+          >
+            Lees de volledige case study
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
+          </Link>
+        )}
+        <Link
+          href="/apply"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+        >
+          Vergelijkbare resultaten behalen? Plan een gesprek
+        </Link>
+      </div>
     </motion.div>
   )
 }

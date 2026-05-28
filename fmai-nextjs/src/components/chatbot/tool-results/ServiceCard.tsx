@@ -197,15 +197,15 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
   if (normalizedTiers && normalizedTiers.length > 0) {
     return (
       <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">Pricing Plans</p>
+        <p className="font-sans text-sm font-semibold text-text-primary">Tarieven</p>
         {normalizedTiers.map((tier, i) => (
           <PricingTier key={tier.name} tier={tier} index={i} />
         ))}
         <Link
-          href="/contact"
+          href="/apply"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Get a custom quote
+          Plan een gesprek
         </Link>
       </div>
     )
@@ -308,15 +308,15 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
   if (normalizedServices && normalizedServices.length > 0) {
     return (
       <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">Our Services</p>
+        <p className="font-sans text-sm font-semibold text-text-primary">Onze vaardigheden</p>
         {normalizedServices.map((service, i) => (
           <SingleServiceCard key={service.name || i} data={service} index={i} />
         ))}
         <Link
-          href="/contact"
+          href="/apply"
           className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Book a discovery call
+          Plan een gesprek
         </Link>
       </div>
     )
