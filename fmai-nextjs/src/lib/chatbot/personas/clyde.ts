@@ -63,7 +63,7 @@ export const clydePersona: PersonaConfig = {
     'integration',
     'technical details',
   ],
-  maxTokens: 300,
+  maxTokens: 500,
   temperature: 0.7,
 }
 

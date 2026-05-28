@@ -52,31 +52,31 @@ const qualify_lead = tool({
     if (score >= 86) {
       qualification = 'qualified'
       recommendation =
-        'This lead is fully qualified. Recommend immediate sales handoff and demo booking.'
-      nextSteps.push('Schedule a personalized demo')
-      nextSteps.push('Prepare custom ROI analysis')
-      nextSteps.push('Connect with account executive')
+        'Uitstekende match. Dit bureau past precies binnen het ICP van FutureMarketingAI.'
+      nextSteps.push('Dien een aanvraag in via future-marketing.ai/apply')
+      nextSteps.push('Daley beoordeelt elke aanvraag persoonlijk binnen 48 uur')
+      nextSteps.push('Na goedkeuring: 30 min Strategy Call om de juiste setup te bepalen')
     } else if (score >= 61) {
       qualification = 'hot'
       recommendation =
-        'Strong lead with high potential. Gather remaining qualification data and move to demo.'
-      nextSteps.push('Complete qualification questions')
-      nextSteps.push('Share relevant case studies')
-      nextSteps.push('Offer ROI estimate')
+        'Sterke match. Plan een gesprek om de juiste tier en skills voor jouw portfolio te bepalen.'
+      nextSteps.push('Bekijk de SkinClarity Club case study voor concrete resultaten')
+      nextSteps.push('Bereken jouw ROI op basis van jouw teamgrootte')
+      nextSteps.push('Dien een aanvraag in via future-marketing.ai/apply')
     } else if (score >= 31) {
       qualification = 'warm'
       recommendation =
-        'Interested prospect but needs nurturing. Focus on education and value demonstration.'
-      nextSteps.push('Share product overview materials')
-      nextSteps.push('Invite to upcoming webinar')
-      nextSteps.push('Follow up in 1-2 weeks')
+        'Interessante lead. Meer context nodig over portfolio en doelstellingen.'
+      nextSteps.push('Bekijk hoe het onboardingproces werkt op de How it Works pagina')
+      nextSteps.push('Lees de SkinClarity Club case study')
+      nextSteps.push('Stel Clyde een vraag over jouw specifieke situatie')
     } else {
       qualification = 'cold'
       recommendation =
-        'Early-stage or poor fit. Provide general information and add to nurture sequence.'
-      nextSteps.push('Add to email nurture sequence')
-      nextSteps.push('Share educational content')
-      nextSteps.push('Revisit in 30 days')
+        'Vroeg stadium. Leer eerst meer over wat Clyde doet voor agencies.'
+      nextSteps.push('Bekijk alle 12 vaardigheden van Clyde')
+      nextSteps.push('Lees de case study van SkinClarity Club')
+      nextSteps.push('Stel een vraag als je meer wilt weten')
     }
 
     return { score, qualification, recommendation, nextSteps }
@@ -85,7 +85,7 @@ const qualify_lead = tool({
 
 const get_pricing_info = tool({
   description:
-    'Retrieve pricing information for a specific tier or all tiers of the FutureMarketingAI platform. 4 tiers available: Founding Member (997 EUR lifetime, 10 spots only — open now), Growth (2497 EUR), Professional (4497 EUR), and Enterprise (7997 EUR).',
+    'Retrieve pricing information for a specific tier or all tiers of the FutureMarketingAI platform. 4 tiers: Founding Member (997 EUR/mo lifetime, 10 spots, 1 taken), Growth (499 EUR per workspace, 2-4 brands), Professional (399 EUR per workspace, 5-14 brands), Enterprise (299 EUR per workspace, 15+ brands). All workspace-priced tiers have a one-time onboarding fee.',
   inputSchema: z.object({
     tier: z
       .enum(['founding', 'growth', 'professional', 'enterprise', 'all'])
@@ -137,8 +137,8 @@ const get_roi_estimate = tool({
       .describe('Average hourly rate of team members in EUR'),
     monthlySubscription: z
       .number()
-      .default(2497)
-      .describe('Monthly subscription cost in EUR (default: Growth tier at 2497)'),
+      .default(998)
+      .describe('Monthly subscription cost in EUR (default: Growth starter at 998 = 2 workspaces × 499)'),
   }),
   execute: async ({
     teamSize,

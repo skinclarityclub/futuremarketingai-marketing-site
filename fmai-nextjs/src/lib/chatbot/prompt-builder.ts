@@ -69,7 +69,7 @@ export function buildSystemMessages(
   // Part 3: Request context (only if provided)
   // NO cacheControl
   if (context) {
-    let contextContent = `## Context:\n- Language: ${context.language ?? 'en'}\n- Current page: ${context.currentPage ?? 'unknown'}`
+    let contextContent = `## Context:\n- Language: ${context.language ?? 'nl'}\n- Current page: ${context.currentPage ?? 'unknown'}`
 
     const pageHint = context.currentPage ? PAGE_CONTEXT_HINTS[context.currentPage] : undefined
     if (pageHint) {
