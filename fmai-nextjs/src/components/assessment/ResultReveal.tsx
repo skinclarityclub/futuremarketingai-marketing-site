@@ -31,6 +31,7 @@ import type {
 import type { SkillData } from '@/lib/skills-data'
 import { ARCHETYPE_GRADIENT, ARCHETYPE_CODE, STAGE_CODE } from '@/lib/assessment/persona-presentation'
 import { CountUp } from '@/components/motion/CountUp'
+import { Link } from '@/i18n/navigation'
 
 interface ResultRevealProps {
   result: AssessmentResult
@@ -275,6 +276,42 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
               </div>
             )
           })}
+        </div>
+      </motion.section>
+
+      {/* Apply CTA — direct handoff naar /apply met scan-context */}
+      <motion.section
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.1, duration: 0.5 }}
+        className="mb-10 rounded-2xl border border-accent-human/30 bg-gradient-to-br from-accent-human/[0.08] via-accent-human/[0.03] to-transparent p-6 md:p-7"
+        aria-labelledby="apply-cta-heading"
+      >
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex-1">
+            <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent-human">
+              {t('applyCta.eyebrow')}
+            </p>
+            <h2 id="apply-cta-heading" className="text-base font-semibold text-text-primary md:text-lg">
+              {t('applyCta.title')}
+            </h2>
+            <p className="mt-1 text-xs text-text-secondary">{t('applyCta.body')}</p>
+          </div>
+          <Link
+            href={{
+              pathname: '/apply',
+              query: {
+                from: 'assessment',
+                a: archetype,
+                st: stage,
+                lc: lowestCategory,
+              },
+            }}
+            className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent-human px-5 py-2.5 text-sm font-semibold text-bg-deep transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-human"
+          >
+            {t('applyCta.button')}
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </motion.section>
 

@@ -26,6 +26,20 @@ export interface ApplyPayload {
   workspaces?: number
   problem?: string
   locale: string
+  /** Wizard-flow only: qualification score + branch. */
+  score?: number
+  maxScore?: number
+  branch?: 'qualified' | 'review'
+  /** Wizard-flow only: AI Bureau Scan handoff. */
+  assessment?: {
+    archetype: string
+    stage: string
+    lowestCategory: string
+  }
+  /** Wizard-flow only: per-question urgency answer. */
+  urgency?: string
+  /** Wizard-flow only: AI maturity likert score 1-5. */
+  maturity?: number
 }
 
 const REVENUE_LABELS: Record<string, string> = {
@@ -66,6 +80,27 @@ function escape(value: string): string {
 export function adminApplyTemplate(p: ApplyPayload): string {
   const safe = escape
   const agencyHeading = p.agency ? `Nieuwe aanvraag van ${safe(p.agency)}` : 'Nieuwe aanvraag'
+
+  // Score + branch banner (wizard-flow only)
+  const branchBanner =
+    p.score !== undefined && p.branch
+      ? `<div style="margin:0 0 16px; padding:12px 14px; border-radius:6px; background:${
+          p.branch === 'qualified' ? '#e6faf4' : '#fff8e6'
+        }; border-left:4px solid ${p.branch === 'qualified' ? '#00d4aa' : '#f5a623'};">
+        <p style="margin:0 0 4px; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#666; font-weight:600;">${
+          p.branch === 'qualified' ? 'QUALIFIED — Calendly geserveerd' : 'REVIEW — Daley reviewt persoonlijk'
+        }</p>
+        <p style="margin:0; font-size:18px; color:#0a0d14; font-weight:700;">Score: ${p.score} / ${p.maxScore ?? '?'}</p>
+      </div>`
+      : ''
+
+  const assessmentBlock = p.assessment
+    ? `<h3 style="color:#0a0d14; margin:16px 0 8px;">AI Bureau Scan handoff</h3>
+       <p style="margin:4px 0;"><strong>Archetype:</strong> ${safe(p.assessment.archetype)}</p>
+       <p style="margin:4px 0;"><strong>Stage:</strong> ${safe(p.assessment.stage)}</p>
+       <p style="margin:4px 0;"><strong>Zwakste categorie:</strong> ${safe(p.assessment.lowestCategory)}</p>`
+    : ''
+
   const tierLine = p.tier
     ? `<p style="color:#444; margin:0 0 16px;">Service-niveau gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong>${
         typeof p.workspaces === 'number' && p.workspaces > 0
@@ -91,6 +126,7 @@ export function adminApplyTemplate(p: ApplyPayload): string {
     <table width="100%" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; padding:24px;">
       <tr><td>
         <h2 style="color:#0a0d14; margin:0 0 16px;">${agencyHeading}</h2>
+        ${branchBanner}
         ${tierLine}
         <hr style="border:none; border-top:1px solid #eee; margin:16px 0;">
         <h3 style="color:#0a0d14; margin:0 0 8px;">Contact</h3>
@@ -99,7 +135,10 @@ export function adminApplyTemplate(p: ApplyPayload): string {
         <p style="margin:4px 0;"><strong>Email:</strong> <a href="mailto:${safe(p.email)}">${safe(p.email)}</a></p>
         ${p.agency ? `<p style="margin:4px 0;"><strong>Bureau:</strong> ${safe(p.agency)}</p>` : ''}
         <p style="margin:4px 0;"><strong>Locale:</strong> ${safe(p.locale)}</p>
+        ${assessmentBlock}
         ${qualificationBlock}
+        ${p.urgency ? `<p style="margin:4px 0;"><strong>Urgentie:</strong> ${safe(p.urgency)}</p>` : ''}
+        ${typeof p.maturity === 'number' ? `<p style="margin:4px 0;"><strong>AI maturiteit (1-5):</strong> ${p.maturity}</p>` : ''}
         ${problemBlock}
         <hr style="border:none; border-top:1px solid #eee; margin:24px 0 16px;">
         <p style="font-size:12px; color:#888;">Verstuurd via ${SITE_URL}/apply.</p>
@@ -118,18 +157,30 @@ export function applicantConfirmationTemplate(p: ApplyPayload): string {
         ? `Hola ${safe(p.name)}`
         : `Hoi ${safe(p.name)}`
   const orgRef = p.agency ? safe(p.agency) : null
-  const body =
-    p.locale === 'en'
+
+  // Branch-aware body: qualified = calendly waiting; review = "I review personally"
+  const body = (() => {
+    if (p.branch === 'qualified') {
+      return p.locale === 'en'
+        ? `Thanks for applying. Based on your context this looks like a strong fit — I've sent you to my calendar to book a 30-min call. See you soon.`
+        : p.locale === 'es'
+          ? `Gracias por tu solicitud. Según tu contexto, esto encaja bien — te he enviado a mi agenda para reservar una llamada de 30 min. Hasta pronto.`
+          : `Bedankt voor je aanvraag. Op basis van je context past dit goed — ik heb je naar mijn agenda gestuurd voor een gesprek van 30 minuten. Tot snel.`
+    }
+    // Default + review branch
+    return p.locale === 'en'
       ? orgRef
-        ? `Thanks for applying. I have received your application for ${orgRef} and will review it within 48 hours. You will hear back from me personally, not from a sales team.`
-        : `Thanks for applying. I have received your application and will review it within 48 hours. You will hear back from me personally, not from a sales team.`
+        ? `Thanks for applying. I have received your application for ${orgRef} and will review it personally within 3 business days. You will hear back from me, not from a sales team.`
+        : `Thanks for applying. I have received your application and will review it personally within 3 business days. You will hear back from me, not from a sales team.`
       : p.locale === 'es'
         ? orgRef
-          ? `Gracias por tu solicitud. He recibido tu aplicacion para ${orgRef} y la revisare en 48 horas. Te respondere yo personalmente, no un equipo comercial.`
-          : `Gracias por tu solicitud. He recibido tu aplicacion y la revisare en 48 horas. Te respondere yo personalmente, no un equipo comercial.`
+          ? `Gracias por tu solicitud. He recibido tu aplicación para ${orgRef} y la revisaré personalmente en 3 días laborables. Te responderé yo, no un equipo comercial.`
+          : `Gracias por tu solicitud. He recibido tu aplicación y la revisaré personalmente en 3 días laborables. Te responderé yo, no un equipo comercial.`
         : orgRef
-          ? `Bedankt voor je aanvraag. Ik heb je aanvraag voor ${orgRef} ontvangen en neem binnen 48 uur persoonlijk contact op. Geen sales-team, maar ik zelf.`
-          : `Bedankt voor je aanvraag. Ik heb je aanvraag ontvangen en neem binnen 48 uur persoonlijk contact op. Geen sales-team, maar ik zelf.`
+          ? `Bedankt voor je aanvraag. Ik heb je aanvraag voor ${orgRef} ontvangen en review die persoonlijk binnen 3 werkdagen. Geen sales-team, maar ik zelf.`
+          : `Bedankt voor je aanvraag. Ik heb je aanvraag ontvangen en review die persoonlijk binnen 3 werkdagen. Geen sales-team, maar ik zelf.`
+  })()
+
   const signoff = p.locale === 'en' ? 'Best, Daley' : 'Groet, Daley'
   return `
 <!doctype html>

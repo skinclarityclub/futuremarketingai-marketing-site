@@ -10,19 +10,23 @@ import {
   type ApplyPayload,
 } from '@/lib/email/apply-templates'
 import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
+import { scoreApplication, formatScorePrefix } from '@/lib/apply/scoring'
+import {
+  ASSESSMENT_ARCHETYPES,
+  ASSESSMENT_STAGES,
+  ASSESSMENT_CATEGORIES,
+} from '@/lib/assessment/types'
 
 const REVENUE_ENUM = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m'] as const
 const CLIENT_COUNT_ENUM = ['solo', '1_5', '5_15', '15_50', 'over_50'] as const
 const TIER_ENUM = ['founding', 'growth', 'professional', 'enterprise', 'unsure'] as const
+const URGENCY_ENUM = ['30days', 'quarter', 'explore', 'unknown'] as const
 
 /**
- * Phase 17-D D4 simplified the form to 3 fields: name + email + optional
- * company. Tier discovery, revenue, client-count, problem statement all
- * shift to the Calendly call. The Zod schema keeps those fields known
- * but optional so historical inbound payloads and any future intake
- * variations still validate without a schema migration.
+ * Legacy flat shape — kept for backwards-compat with old ApplicationForm
+ * (still embedded on `/apply` Calendly success-page-fallback if any).
  */
-const applicationSchema = z.object({
+const legacyApplicationSchema = z.object({
   name: z.string().min(2).max(100),
   email: z.string().email(),
   agency: z.string().min(2).max(150).optional(),
@@ -35,14 +39,45 @@ const applicationSchema = z.object({
     z.coerce.number().int().min(1).max(200).optional(),
   ),
   problem: z.string().min(20).max(5000).optional(),
-  // Honeypot: bots fill, humans do not.
   website: z.string().max(0).optional().default(''),
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
-// Resend's constructor throws when the API key is undefined, which breaks
-// `next build` page-data collection. Pass a placeholder when missing; the
-// actual send call will surface a real error in the route handler.
+/**
+ * New wizard-flow shape — nested identity + qualification + optional
+ * assessment-handoff. Backwards-compat: server normalises to legacy
+ * flat shape before persisting (no DB migration needed).
+ */
+const wizardSchema = z.object({
+  identity: z.object({
+    name: z.string().min(2).max(100),
+    email: z.string().email(),
+    agency: z.string().min(2).max(150),
+    role: z.string().min(2).max(100),
+  }),
+  qualification: z
+    .object({
+      q1: z.enum(TIER_ENUM).optional(),
+      q2: z.enum(REVENUE_ENUM).optional(),
+      q3: z.enum(CLIENT_COUNT_ENUM).optional(),
+      q4: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]).optional(),
+      q5: z.enum(URGENCY_ENUM).optional(),
+    })
+    .optional(),
+  assessment: z
+    .object({
+      archetype: z.enum(ASSESSMENT_ARCHETYPES as readonly [string, ...string[]]),
+      stage: z.enum(ASSESSMENT_STAGES as readonly [string, ...string[]]),
+      lowestCategory: z.enum(ASSESSMENT_CATEGORIES as readonly [string, ...string[]]),
+      source: z.enum(['url', 'session']).optional(),
+    })
+    .optional(),
+  problem: z.string().max(2000).optional(),
+  locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
+  website: z.string().max(0).optional().default(''),
+})
+
+// Resend constructor throws when API key is undefined — placeholder for next build.
 const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder')
 
 function hashIp(ip: string): string {
@@ -78,30 +113,104 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 })
   }
 
-  const parsed = applicationSchema.safeParse(body)
-  if (!parsed.success) {
-    return NextResponse.json(
-      { error: 'Validation failed.', fields: parsed.error.flatten().fieldErrors },
-      { status: 422 },
+  // Discriminate wizard vs legacy by presence of `identity` field
+  const isWizardPayload =
+    typeof body === 'object' && body !== null && 'identity' in body
+
+  let payload: ApplyPayload
+  let scoreResult: ReturnType<typeof scoreApplication> | null = null
+  let honeypotTriggered = false
+
+  if (isWizardPayload) {
+    const parsed = wizardSchema.safeParse(body)
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Validation failed.', fields: parsed.error.flatten().fieldErrors },
+        { status: 422 },
+      )
+    }
+    if (parsed.data.website && parsed.data.website.length > 0) {
+      honeypotTriggered = true
+    }
+
+    // Server-side rescore — trust nothing the client says about the math
+    scoreResult = scoreApplication({
+      qualification: parsed.data.qualification,
+      assessment: parsed.data.assessment as
+        | NonNullable<Parameters<typeof scoreApplication>[0]['assessment']>
+        | undefined,
+      problem: parsed.data.problem,
+    })
+
+    const scorePrefix = formatScorePrefix(
+      scoreResult,
+      parsed.data.assessment as
+        | NonNullable<Parameters<typeof formatScorePrefix>[1]>
+        | undefined,
     )
+    const problemWithPrefix = parsed.data.problem
+      ? `${scorePrefix}\n\n${parsed.data.problem}`
+      : scorePrefix
+
+    payload = {
+      name: parsed.data.identity.name,
+      email: parsed.data.identity.email,
+      agency: parsed.data.identity.agency,
+      role: parsed.data.identity.role,
+      tier: parsed.data.qualification?.q1,
+      revenue: parsed.data.qualification?.q2,
+      clientCount: parsed.data.qualification?.q3,
+      maturity: parsed.data.qualification?.q4,
+      urgency: parsed.data.qualification?.q5,
+      problem: problemWithPrefix,
+      locale: parsed.data.locale,
+      score: scoreResult.total,
+      maxScore: scoreResult.max,
+      branch: scoreResult.branch,
+      assessment: parsed.data.assessment
+        ? {
+            archetype: parsed.data.assessment.archetype,
+            stage: parsed.data.assessment.stage,
+            lowestCategory: parsed.data.assessment.lowestCategory,
+          }
+        : undefined,
+    }
+  } else {
+    const parsed = legacyApplicationSchema.safeParse(body)
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Validation failed.', fields: parsed.error.flatten().fieldErrors },
+        { status: 422 },
+      )
+    }
+    if (parsed.data.website && parsed.data.website.length > 0) {
+      honeypotTriggered = true
+    }
+    payload = {
+      name: parsed.data.name,
+      email: parsed.data.email,
+      agency: parsed.data.agency,
+      role: parsed.data.role,
+      revenue: parsed.data.revenue,
+      clientCount: parsed.data.clientCount,
+      tier: parsed.data.tier,
+      workspaces: parsed.data.workspaces,
+      problem: parsed.data.problem,
+      locale: parsed.data.locale,
+    }
   }
 
-  // Honeypot silently accepted: respond 200 so bots cannot tell they were caught.
-  if (parsed.data.website && parsed.data.website.length > 0) {
-    return NextResponse.json({ success: true }, { status: 200 })
-  }
-
-  const payload: ApplyPayload = {
-    name: parsed.data.name,
-    email: parsed.data.email,
-    agency: parsed.data.agency,
-    role: parsed.data.role,
-    revenue: parsed.data.revenue,
-    clientCount: parsed.data.clientCount,
-    tier: parsed.data.tier,
-    workspaces: parsed.data.workspaces,
-    problem: parsed.data.problem,
-    locale: parsed.data.locale,
+  // Honeypot silently accepted: 200 so bots cannot tell
+  if (honeypotTriggered) {
+    return NextResponse.json(
+      {
+        success: true,
+        branch: scoreResult?.branch ?? 'review',
+        score: scoreResult?.total ?? 0,
+        maxScore: scoreResult?.max ?? 0,
+      },
+      { status: 200 },
+    )
   }
 
   // 1. Persist in Supabase. Do not fail user submission on DB error.
@@ -129,9 +238,10 @@ export async function POST(request: NextRequest) {
 
   const subjectAgency = payload.agency ? ` ${payload.agency}` : ''
   const subjectTier = payload.tier ? ` (${payload.tier})` : ''
-  const leadHeadline = `Nieuwe apply:${subjectAgency}${subjectTier}${
-    typeof payload.workspaces === 'number' ? `, ~${payload.workspaces} ws` : ''
-  }`
+  const subjectBranch = payload.branch ? ` [${payload.branch.toUpperCase()}]` : ''
+  const scoreLine = payload.score !== undefined ? ` score:${payload.score}/${payload.maxScore}` : ''
+  const leadHeadline = `Nieuwe apply:${subjectAgency}${subjectTier}${subjectBranch}${scoreLine}`
+
   const problemSnippet = payload.problem
     ? payload.problem.length > 300
       ? payload.problem.slice(0, 300) + '…'
@@ -143,7 +253,7 @@ export async function POST(request: NextRequest) {
       from: `FutureMarketingAI <${fromAddr}>`,
       to: [toAddr],
       replyTo: payload.email,
-      subject: `[Apply]${subjectAgency}${subjectTier}`,
+      subject: `[Apply${subjectBranch}]${subjectAgency}${subjectTier}`,
       html: adminApplyTemplate(payload),
     }),
     resend.emails.send({
@@ -166,6 +276,10 @@ export async function POST(request: NextRequest) {
       ...(typeof payload.workspaces === 'number' ? { workspaces: payload.workspaces } : {}),
       ...(payload.revenue ? { revenue: payload.revenue } : {}),
       ...(payload.clientCount ? { clients: payload.clientCount } : {}),
+      ...(payload.urgency ? { urgency: payload.urgency } : {}),
+      ...(typeof payload.maturity === 'number' ? { maturity: payload.maturity } : {}),
+      ...(payload.score !== undefined ? { score: `${payload.score}/${payload.maxScore}` } : {}),
+      ...(payload.branch ? { branch: payload.branch } : {}),
       locale: payload.locale,
       ...(problemSnippet ? { problem: problemSnippet } : {}),
     }),
@@ -182,5 +296,16 @@ export async function POST(request: NextRequest) {
     await sendCriticalAlert('Apply confirmation mail failed', ctx)
   }
 
-  return NextResponse.json({ success: true }, { status: 200 })
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_APPLY_URL ?? 'https://calendly.com/futureai/strategy-call'
+
+  return NextResponse.json(
+    {
+      success: true,
+      branch: scoreResult?.branch ?? (payload.branch ?? 'review'),
+      score: scoreResult?.total ?? (payload.score ?? 0),
+      maxScore: scoreResult?.max ?? (payload.maxScore ?? 0),
+      ...(scoreResult?.branch === 'qualified' ? { calendlyUrl } : {}),
+    },
+    { status: 200 },
+  )
 }

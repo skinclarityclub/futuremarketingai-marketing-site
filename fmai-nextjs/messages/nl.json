@@ -2310,6 +2310,106 @@
       "fallbackIntro": "De agenda laadt niet. Je kunt direct plannen via de onderstaande knop.",
       "fallbackCta": "Open Daley's agenda",
       "reassurance": "Liever wachten op een persoonlijk bericht? Daley leest je aanvraag en antwoordt binnen 3 werkdagen."
+    },
+    "wizard": {
+      "progress": {
+        "stepNumber": "Stap {current} van {total}",
+        "stepIdentity": "Wie ben je",
+        "stepScanCheck": "Scan-check",
+        "stepQualification": "Bureau context",
+        "stepScanSummary": "Scan resultaat",
+        "stepProblem": "Jouw probleem",
+        "previous": "Vorige",
+        "next": "Volgende",
+        "submit": "Verstuur aanvraag"
+      },
+      "identity": {
+        "eyebrow": "Begin hier",
+        "title": "Wie ben je?",
+        "subtitle": "We beginnen met de basics. Dit duurt 30 seconden."
+      },
+      "scanCheck": {
+        "eyebrow": "Context",
+        "title": "Heb je de AI Bureau Scan al gedaan?",
+        "subtitle": "Met scan-data slaan we 5 vragen over.",
+        "yesLabel": "Ja, gebruik mijn scan",
+        "yesBody": "We laden je resultaat in.",
+        "noLabel": "Nee, korte vragenlijst",
+        "noBody": "5 vragen, max 2 minuten.",
+        "detectedTitle": "Scan-resultaat gevonden",
+        "detectedBody": "We hebben je AI Bureau Scan in deze sessie gedetecteerd. We kunnen die direct gebruiken.",
+        "rescanLink": "Liever opnieuw scannen? Doe de scan",
+        "missingDataPrompt": "We konden geen scan-data vinden. Doe alsnog de scan of vul de korte vragenlijst in."
+      },
+      "qualification": {
+        "eyebrow": "Bureau context",
+        "title": "5 vragen over je bureau",
+        "subtitle": "Geen jurybeoordeling, wel zodat we het gesprek voorbereid kunnen voeren.",
+        "q1Title": "Welk tier denk je aan?",
+        "q1Help": "Dit is geen contract. We bespreken de keuze in het gesprek.",
+        "q2Title": "Hoeveel jaaromzet doet je bureau?",
+        "q3Title": "Aantal actieve merken in je portfolio?",
+        "q4Title": "Hoe ver zijn jullie met AI en automation?",
+        "q4Anchors": {
+          "low": "We doen nog niets",
+          "high": "Diep ingericht"
+        },
+        "q5Title": "Wanneer wil je beginnen?",
+        "q5Options": {
+          "30days": "Binnen 30 dagen",
+          "quarter": "Komend kwartaal",
+          "explore": "We verkennen pas",
+          "unknown": "Weet ik nog niet"
+        }
+      },
+      "scanSummary": {
+        "eyebrow": "Scan resultaat",
+        "title": "We gebruiken jouw Bureau Scan",
+        "subtitle": "Dit is wat we van je weten:",
+        "stageLabel": "Fase",
+        "archetypeLabel": "Archetype",
+        "lowestLabel": "Zwakste",
+        "confirmLabel": "Klopt, ga door",
+        "rescanLabel": "Opnieuw scannen"
+      },
+      "problem": {
+        "eyebrow": "Het probleem",
+        "title": "Wat probeer je op te lossen?",
+        "subtitle": "1 tot 2 zinnen. Geen pitch, gewoon de echte blokkade.",
+        "placeholder": "Voorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 merken\" of \"SEO stagneert en we hebben geen ruimte voor blogs.\"",
+        "help": "Optioneel maar aanbevolen. Helpt Daley het gesprek voor te bereiden.",
+        "counter": "{count} tekens"
+      },
+      "result": {
+        "qualified": {
+          "eyebrow": "Match",
+          "title": "Geweldig. Hier is mijn agenda.",
+          "subtitle": "Op basis van je context past dit goed. Plan een slot dat werkt.",
+          "calendlyFallbackCta": "Open Daley's agenda",
+          "reassurance": "We hebben je context al ontvangen. Het gesprek wordt voorbereid."
+        },
+        "review": {
+          "eyebrow": "Ontvangen",
+          "title": "Bedankt. Daley reviewt je aanvraag persoonlijk.",
+          "subtitle": "Binnen 3 werkdagen hoor je een persoonlijke reactie. Geen automatische e-mails, geen ghosting.",
+          "nextLabel": "Wat gebeurt nu",
+          "nextStep1": "Daley leest je aanvraag binnen 72 uur",
+          "nextStep2": "Je krijgt een persoonlijk antwoord per e-mail",
+          "nextStep3": "Als het past, plannen we het gesprek"
+        }
+      },
+      "errors": {
+        "nameRequired": "Naam is verplicht.",
+        "emailRequired": "Geldig e-mailadres is verplicht.",
+        "agencyRequired": "Bureau-naam is verplicht.",
+        "roleRequired": "Rol is verplicht.",
+        "q1Required": "Kies een tier.",
+        "q2Required": "Kies een omzet-range.",
+        "q3Required": "Kies een aantal merken.",
+        "q4Required": "Geef een score 1 tot 5.",
+        "q5Required": "Kies een tijdshorizon.",
+        "submitFailed": "Er ging iets mis. Probeer het opnieuw of mail hello@future-marketing.ai."
+      }
     }
   },
   "case_studies": {
@@ -3703,6 +3803,12 @@
         "linkedin": "Deel op LinkedIn",
         "copy": "Kopieer link",
         "copied": "Gekopieerd"
+      },
+      "applyCta": {
+        "eyebrow": "Aanvragen met deze scan",
+        "title": "Aanvragen op basis van deze scan?",
+        "body": "We slaan 5 vragen over en gebruiken je profiel direct.",
+        "button": "Plan een gesprek"
       },
       "footerHint": "Vraag het volledige rapport aan voor je 4-week roadmap en uitleg per vaardigheid."
     },

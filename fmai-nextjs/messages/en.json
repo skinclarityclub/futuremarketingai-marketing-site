@@ -2310,6 +2310,106 @@
       "fallbackIntro": "The calendar did not load. You can open it directly with the button below.",
       "fallbackCta": "Open Daley's calendar",
       "reassurance": "Prefer a personal reply first? Daley reads each application and responds within 3 business days."
+    },
+    "wizard": {
+      "progress": {
+        "stepNumber": "Step {current} of {total}",
+        "stepIdentity": "Who you are",
+        "stepScanCheck": "Scan check",
+        "stepQualification": "Agency context",
+        "stepScanSummary": "Scan result",
+        "stepProblem": "Your problem",
+        "previous": "Previous",
+        "next": "Next",
+        "submit": "Submit application"
+      },
+      "identity": {
+        "eyebrow": "Start here",
+        "title": "Who are you?",
+        "subtitle": "We start with the basics. Takes 30 seconds."
+      },
+      "scanCheck": {
+        "eyebrow": "Context",
+        "title": "Have you done the AI Agency Scan?",
+        "subtitle": "With scan data we skip 5 questions.",
+        "yesLabel": "Yes, use my scan",
+        "yesBody": "We load your result.",
+        "noLabel": "No, quick questionnaire",
+        "noBody": "5 questions, 2 minutes max.",
+        "detectedTitle": "Scan result found",
+        "detectedBody": "We detected your AI Agency Scan in this session. We can use it directly.",
+        "rescanLink": "Rather rescan? Take the scan",
+        "missingDataPrompt": "We couldn't find scan data. Take the scan or fill in the quick questionnaire."
+      },
+      "qualification": {
+        "eyebrow": "Agency context",
+        "title": "5 questions about your agency",
+        "subtitle": "No jury verdict — just so we can prepare the conversation.",
+        "q1Title": "Which tier are you considering?",
+        "q1Help": "Not a contract. We discuss the choice in the conversation.",
+        "q2Title": "What's your agency's annual revenue?",
+        "q3Title": "Active brands in your portfolio?",
+        "q4Title": "How mature is your AI/automation today?",
+        "q4Anchors": {
+          "low": "Nothing yet",
+          "high": "Deep in our stack"
+        },
+        "q5Title": "When do you want to start?",
+        "q5Options": {
+          "30days": "Within 30 days",
+          "quarter": "Next quarter",
+          "explore": "Just exploring",
+          "unknown": "Not sure yet"
+        }
+      },
+      "scanSummary": {
+        "eyebrow": "Scan result",
+        "title": "We're using your Agency Scan",
+        "subtitle": "Here's what we know about you:",
+        "stageLabel": "Stage",
+        "archetypeLabel": "Archetype",
+        "lowestLabel": "Weakest",
+        "confirmLabel": "Correct, continue",
+        "rescanLabel": "Rescan"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "title": "What are you trying to solve?",
+        "subtitle": "1 or 2 sentences. No pitch — just the real blocker.",
+        "placeholder": "Example: \"We lose 2 FTE on content production for 15 brands\" or \"SEO stagnates and we have no room for blogs.\"",
+        "help": "Optional but recommended. Helps Daley prepare the conversation.",
+        "counter": "{count} characters"
+      },
+      "result": {
+        "qualified": {
+          "eyebrow": "Match",
+          "title": "Great. Here's my calendar.",
+          "subtitle": "Based on your context this fits well. Book a slot that works.",
+          "calendlyFallbackCta": "Open Daley's calendar",
+          "reassurance": "We already have your context. The conversation will be prepared."
+        },
+        "review": {
+          "eyebrow": "Received",
+          "title": "Thanks. Daley reviews your application personally.",
+          "subtitle": "Within 3 business days you'll get a personal reply. No auto-emails, no ghosting.",
+          "nextLabel": "What happens now",
+          "nextStep1": "Daley reads your application within 72 hours",
+          "nextStep2": "You get a personal answer by email",
+          "nextStep3": "If it fits, we book the conversation"
+        }
+      },
+      "errors": {
+        "nameRequired": "Name is required.",
+        "emailRequired": "Valid email is required.",
+        "agencyRequired": "Agency name is required.",
+        "roleRequired": "Role is required.",
+        "q1Required": "Pick a tier.",
+        "q2Required": "Pick a revenue range.",
+        "q3Required": "Pick a brand count.",
+        "q4Required": "Pick a score 1 to 5.",
+        "q5Required": "Pick a timeline.",
+        "submitFailed": "Something went wrong. Try again or email hello@future-marketing.ai."
+      }
     }
   },
   "case_studies": {
@@ -3703,6 +3803,12 @@
         "linkedin": "Share on LinkedIn",
         "copy": "Copy link",
         "copied": "Copied"
+      },
+      "applyCta": {
+        "eyebrow": "Apply with this scan",
+        "title": "Apply based on this scan?",
+        "body": "We skip 5 questions and use your profile directly.",
+        "button": "Book a call"
       },
       "footerHint": "Request the full report for your 4-week roadmap and skill breakdown."
     },

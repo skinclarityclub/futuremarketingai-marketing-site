@@ -2310,6 +2310,106 @@
       "fallbackIntro": "La agenda no cargó. Puedes abrirla directamente con el botón.",
       "fallbackCta": "Abrir la agenda de Daley",
       "reassurance": "¿Prefieres una respuesta personal primero? Daley lee cada solicitud y responde en 3 días laborables."
+    },
+    "wizard": {
+      "progress": {
+        "stepNumber": "Paso {current} de {total}",
+        "stepIdentity": "Quién eres",
+        "stepScanCheck": "Verificar scan",
+        "stepQualification": "Contexto de la agencia",
+        "stepScanSummary": "Resultado del scan",
+        "stepProblem": "Tu problema",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "submit": "Enviar solicitud"
+      },
+      "identity": {
+        "eyebrow": "Empieza aquí",
+        "title": "¿Quién eres?",
+        "subtitle": "Empezamos por lo básico. 30 segundos."
+      },
+      "scanCheck": {
+        "eyebrow": "Contexto",
+        "title": "¿Hiciste el AI Agency Scan?",
+        "subtitle": "Con datos del scan saltamos 5 preguntas.",
+        "yesLabel": "Sí, usa mi scan",
+        "yesBody": "Cargamos tu resultado.",
+        "noLabel": "No, cuestionario rápido",
+        "noBody": "5 preguntas, máx. 2 minutos.",
+        "detectedTitle": "Resultado del scan encontrado",
+        "detectedBody": "Detectamos tu AI Agency Scan en esta sesión. Podemos usarlo directamente.",
+        "rescanLink": "¿Prefieres rehacer el scan? Hazlo",
+        "missingDataPrompt": "No encontramos datos del scan. Hazlo o completa el cuestionario rápido."
+      },
+      "qualification": {
+        "eyebrow": "Contexto de la agencia",
+        "title": "5 preguntas sobre tu agencia",
+        "subtitle": "Sin juicio, solo para preparar la conversación.",
+        "q1Title": "¿Qué tier consideras?",
+        "q1Help": "No es un contrato. Discutimos la elección en la conversación.",
+        "q2Title": "¿Cuál es la facturación anual de tu agencia?",
+        "q3Title": "¿Marcas activas en tu portafolio?",
+        "q4Title": "¿Qué tan madura es tu IA/automatización hoy?",
+        "q4Anchors": {
+          "low": "Nada aún",
+          "high": "Profundamente integrada"
+        },
+        "q5Title": "¿Cuándo quieres empezar?",
+        "q5Options": {
+          "30days": "En 30 días",
+          "quarter": "Próximo trimestre",
+          "explore": "Solo exploramos",
+          "unknown": "No lo sé aún"
+        }
+      },
+      "scanSummary": {
+        "eyebrow": "Resultado del scan",
+        "title": "Usaremos tu Agency Scan",
+        "subtitle": "Esto es lo que sabemos de ti:",
+        "stageLabel": "Etapa",
+        "archetypeLabel": "Arquetipo",
+        "lowestLabel": "Más débil",
+        "confirmLabel": "Correcto, continuar",
+        "rescanLabel": "Rehacer scan"
+      },
+      "problem": {
+        "eyebrow": "El problema",
+        "title": "¿Qué intentas resolver?",
+        "subtitle": "1 o 2 frases. Sin pitch, solo el bloqueador real.",
+        "placeholder": "Ejemplo: \"Perdemos 2 FTE en producción de contenido para 15 marcas\" o \"SEO estancado y sin espacio para blogs.\"",
+        "help": "Opcional pero recomendado. Ayuda a Daley a preparar la conversación.",
+        "counter": "{count} caracteres"
+      },
+      "result": {
+        "qualified": {
+          "eyebrow": "Encaje",
+          "title": "Genial. Aquí está mi agenda.",
+          "subtitle": "Según tu contexto, esto encaja bien. Reserva un hueco.",
+          "calendlyFallbackCta": "Abrir la agenda de Daley",
+          "reassurance": "Ya tenemos tu contexto. La conversación será preparada."
+        },
+        "review": {
+          "eyebrow": "Recibido",
+          "title": "Gracias. Daley revisa tu solicitud personalmente.",
+          "subtitle": "En 3 días laborables recibirás una respuesta personal. Sin auto-emails, sin ghosting.",
+          "nextLabel": "Qué pasa ahora",
+          "nextStep1": "Daley lee tu solicitud en 72 horas",
+          "nextStep2": "Recibes una respuesta personal por email",
+          "nextStep3": "Si encaja, reservamos la conversación"
+        }
+      },
+      "errors": {
+        "nameRequired": "El nombre es obligatorio.",
+        "emailRequired": "Email válido obligatorio.",
+        "agencyRequired": "Nombre de la agencia obligatorio.",
+        "roleRequired": "Rol obligatorio.",
+        "q1Required": "Elige un tier.",
+        "q2Required": "Elige un rango de facturación.",
+        "q3Required": "Elige un número de marcas.",
+        "q4Required": "Elige una puntuación 1 a 5.",
+        "q5Required": "Elige un plazo.",
+        "submitFailed": "Algo salió mal. Inténtalo de nuevo o escribe a hello@future-marketing.ai."
+      }
     }
   },
   "case_studies": {
@@ -3703,6 +3803,12 @@
         "linkedin": "Compartir en LinkedIn",
         "copy": "Copiar enlace",
         "copied": "Copiado"
+      },
+      "applyCta": {
+        "eyebrow": "Aplicar con este scan",
+        "title": "¿Aplicar basado en este scan?",
+        "body": "Saltamos 5 preguntas y usamos tu perfil directamente.",
+        "button": "Agenda una llamada"
       },
       "footerHint": "Solicita el informe completo para tu hoja de ruta de 4 semanas y desglose por habilidad."
     },
