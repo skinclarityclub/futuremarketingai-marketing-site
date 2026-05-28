@@ -1,7 +1,10 @@
 'use client'
 
+import { useState, useEffect, useCallback } from 'react'
 import { usePathname } from '@/i18n/navigation'
 import { ChatWidget } from './ChatWidget'
+import { ProactiveNudge } from './ProactiveNudge'
+import { useChatbotStore } from '@/stores/chatbotStore'
 
 /**
  * Page-aware welcome messages. The pathname returned by next-intl's
@@ -75,18 +78,112 @@ const SUGGESTED_PROMPTS: Record<string, string[]> = {
   ],
 }
 
+/**
+ * Proactive nudge prompts — shown as a bubble above the FAB after 40s
+ * of inactivity on pages where Clyde has something specific to offer.
+ * These are action-oriented: clicking sends the message to Clyde.
+ */
+const PROACTIVE_PROMPTS: Record<string, string> = {
+  '/skills/voice-agent': 'Hoe neem je precies een telefoon op?',
+  '/skills/social-media': 'Maak een content-plan voor mijn merk',
+  '/skills/lead-qualifier': 'Score een voorbeeld-lead voor mij',
+  '/skills/ad-creator': 'Genereer 3 ad-varianten voor mij',
+  '/skills/email-management': 'Hoe filter je mijn inbox?',
+  '/skills/reporting': 'Laat een weekrapport zien',
+  '/skills/blog-factory': 'Plan een SEO-artikel voor mij',
+  '/skills/clyde': 'Hoe werk je als orchestrator?',
+  '/skills/research': 'Doe een marktonderzoek voor mij',
+  '/skills/seo-geo': 'Hoe monitor je AI-citaties?',
+  '/pricing': 'Bereken mijn ROI',
+  '/about': 'Hoe werkt het platform precies?',
+}
+
+const NUDGE_DELAY_MS = 40_000
+
 export function ChatWidgetIsland() {
   const pathname = usePathname()
+  const isOpen = useChatbotStore((s) => s.isOpen)
+  const toggle = useChatbotStore((s) => s.toggle)
+  const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
+  const messageCounts = useChatbotStore((s) => s.messageCounts)
+
+  const [nudgeVisible, setNudgeVisible] = useState(false)
+  const nudgePrompt = PROACTIVE_PROMPTS[pathname]
+
+  // Reset nudge on page navigation
+  useEffect(() => {
+    setNudgeVisible(false)
+  }, [pathname])
+
+  // Hide nudge when chat opens
+  useEffect(() => {
+    if (isOpen) setNudgeVisible(false)
+  }, [isOpen])
+
+  // Proactive nudge: fire after NUDGE_DELAY_MS if user hasn't engaged
+  useEffect(() => {
+    if (!nudgePrompt) return
+    const totalMessages = Object.values(messageCounts).reduce((a, b) => a + b, 0)
+    if (totalMessages > 0 || isOpen) return
+    const timer = setTimeout(() => setNudgeVisible(true), NUDGE_DELAY_MS)
+    return () => clearTimeout(timer)
+  }, [nudgePrompt, messageCounts, isOpen, pathname])
+
+  const handleNudgeAccept = useCallback(() => {
+    setNudgeVisible(false)
+    if (!isOpen) toggle()
+    if (nudgePrompt) sendChatMessage(nudgePrompt)
+  }, [isOpen, toggle, sendChatMessage, nudgePrompt])
+
+  const handleNudgeDismiss = useCallback(() => {
+    setNudgeVisible(false)
+  }, [])
+
+  // Keyboard shortcut: Ctrl+K / Cmd+K → open chat and focus input
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        const active = document.activeElement
+        // Don't hijack if user is typing in an unrelated input
+        if (
+          active instanceof HTMLInputElement ||
+          active instanceof HTMLTextAreaElement ||
+          (active instanceof HTMLElement && active.isContentEditable)
+        ) {
+          return
+        }
+        e.preventDefault()
+        if (!isOpen) {
+          toggle()
+        } else {
+          const textarea = document.querySelector<HTMLTextAreaElement>(
+            '[data-chatwidget-panel] textarea'
+          )
+          textarea?.focus()
+        }
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, toggle])
 
   return (
-    <ChatWidget
-      mode="floating"
-      personaId="clyde"
-      personaName="Clyde"
-      pageContext={{ pathname }}
-      suggestedPrompts={SUGGESTED_PROMPTS[pathname] ?? SUGGESTED_PROMPTS.default}
-      welcomeMessage={WELCOME_MESSAGES[pathname] ?? WELCOME_MESSAGES.default}
-    />
+    <>
+      <ProactiveNudge
+        message={nudgePrompt ?? ''}
+        visible={nudgeVisible}
+        onAccept={handleNudgeAccept}
+        onDismiss={handleNudgeDismiss}
+      />
+      <ChatWidget
+        mode="floating"
+        personaId="clyde"
+        personaName="Clyde"
+        pageContext={{ pathname }}
+        suggestedPrompts={SUGGESTED_PROMPTS[pathname] ?? SUGGESTED_PROMPTS.default}
+        welcomeMessage={WELCOME_MESSAGES[pathname] ?? WELCOME_MESSAGES.default}
+      />
+    </>
   )
 }
 

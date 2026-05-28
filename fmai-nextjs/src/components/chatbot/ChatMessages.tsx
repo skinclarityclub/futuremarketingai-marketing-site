@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useCallback, useMemo } from 'react'
+import { useEffect, useRef, useCallback, useMemo, useState } from 'react'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import {
@@ -11,6 +11,8 @@ import {
   Calendar,
   Pencil,
   RotateCw,
+  Copy,
+  Check,
 } from 'lucide-react'
 import { ToolResultRenderer, shouldUseSidePanel, TOOL_FOLLOWUPS } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
@@ -190,18 +192,48 @@ function FollowUpChips({
   onSelect: (chip: string) => void
 }) {
   return (
-    <div className="mt-2 ml-1 flex flex-wrap gap-1.5">
-      {chips.map((chip) => (
-        <button
-          key={chip}
-          type="button"
-          onClick={() => onSelect(chip)}
-          className="rounded-full border border-accent-system/30 bg-bg-elevated/60 px-3 py-1 text-xs text-accent-system transition-colors hover:border-accent-system/60 hover:bg-accent-system/10"
-        >
-          {chip}
-        </button>
-      ))}
+    <div className="mt-2 ml-1 space-y-1.5">
+      <p className="text-[10px] font-medium uppercase tracking-wider text-text-faint">
+        Vraag verder
+      </p>
+      <div className="flex flex-wrap gap-1.5">
+        {chips.map((chip, i) => (
+          <button
+            key={chip}
+            type="button"
+            onClick={() => onSelect(chip)}
+            style={{ animation: `fadeIn 0.25s ease-out ${i * 70}ms both` }}
+            className="rounded-full border border-accent-system/30 bg-bg-elevated/60 px-3 py-1 text-xs text-accent-system transition-colors hover:border-accent-system/60 hover:bg-accent-system/10"
+          >
+            {chip}
+          </button>
+        ))}
+      </div>
     </div>
+  )
+}
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // clipboard not available
+    }
+  }, [text])
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label="Kopieer bericht"
+      className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
+    >
+      {copied ? <Check className="h-3 w-3 text-accent-system" /> : <Copy className="h-3 w-3" />}
+      {copied ? 'Gekopieerd' : 'Kopieer'}
+    </button>
   )
 }
 
@@ -335,6 +367,9 @@ export function ChatMessages({
               </div>
               {!isUser && isLastAssistant && lastFollowUpChips && (
                 <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
+              )}
+              {!isUser && messageText.length > 0 && (
+                <CopyButton text={messageText} />
               )}
               {isUser && onEditMessage && messageText.length > 0 && (
                 <button
