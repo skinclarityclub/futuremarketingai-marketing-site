@@ -12,7 +12,7 @@ import {
   Pencil,
   RotateCw,
 } from 'lucide-react'
-import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
+import { ToolResultRenderer, shouldUseSidePanel, TOOL_FOLLOWUPS } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
@@ -182,6 +182,29 @@ function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: Welcom
   )
 }
 
+function FollowUpChips({
+  chips,
+  onSelect,
+}: {
+  chips: string[]
+  onSelect: (chip: string) => void
+}) {
+  return (
+    <div className="mt-2 ml-1 flex flex-wrap gap-1.5">
+      {chips.map((chip) => (
+        <button
+          key={chip}
+          type="button"
+          onClick={() => onSelect(chip)}
+          className="rounded-full border border-accent-system/30 bg-bg-elevated/60 px-3 py-1 text-xs text-accent-system transition-colors hover:border-accent-system/60 hover:bg-accent-system/10"
+        >
+          {chip}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export function ChatMessages({
   messages,
   status,
@@ -197,6 +220,8 @@ export function ChatMessages({
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
   const openSidePanel = useChatbotStore((s) => s.openSidePanel)
+  const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
+  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current
@@ -230,6 +255,20 @@ export function ChatMessages({
   useEffect(() => {
     if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
   }, [lastSidePanelTool, openSidePanel])
+
+  const lastFollowUpChips = useMemo(() => {
+    if (!flagship || !lastSidePanelTool) return null
+    if (status === 'submitted' || status === 'streaming') return null
+    return TOOL_FOLLOWUPS[lastSidePanelTool.toolName] ?? null
+  }, [flagship, lastSidePanelTool, status])
+
+  const handleFollowUp = useCallback(
+    (chip: string) => {
+      closeSidePanel()
+      sendChatMessage(chip)
+    },
+    [closeSidePanel, sendChatMessage]
+  )
 
   const isEmpty = messages.length === 0
 
@@ -294,6 +333,9 @@ export function ChatMessages({
                   return null
                 })}
               </div>
+              {!isUser && isLastAssistant && lastFollowUpChips && (
+                <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
+              )}
               {isUser && onEditMessage && messageText.length > 0 && (
                 <button
                   type="button"

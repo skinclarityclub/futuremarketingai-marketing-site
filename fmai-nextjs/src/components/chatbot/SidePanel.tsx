@@ -3,7 +3,7 @@
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, X } from 'lucide-react'
-import { ToolResultRenderer } from './tool-results'
+import { ToolResultRenderer, TOOL_PANEL_TITLES } from './tool-results'
 
 interface SidePanelProps {
   isOpen: boolean
@@ -60,7 +60,7 @@ export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
                         <ArrowLeft className="h-4 w-4" />
                       </button>
                       <span className="font-sans text-sm font-medium text-text-primary">
-                        Details
+                        {TOOL_PANEL_TITLES[content.toolName] ?? 'Details'}
                       </span>
                     </div>
                     <button

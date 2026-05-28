@@ -52,6 +52,34 @@ export function shouldUseSidePanel(toolName: string): boolean {
 }
 export { SIDE_PANEL_TOOLS, INLINE_TOOLS }
 
+export const TOOL_PANEL_TITLES: Record<string, string> = {
+  get_skills: 'Onze vaardigheden',
+  get_pricing_info: 'Tarieven',
+  get_case_study: 'Case study',
+  book_call: 'Plan een gesprek',
+  qualify_lead: 'ROI berekening',
+  get_roi_estimate: 'ROI berekening',
+  get_roi_info: 'ROI berekening',
+  search_products: 'Producten',
+  get_product_details: 'Productdetails',
+  build_routine: 'Routine',
+  search_knowledge_base: 'Kennisbank',
+  create_ticket: 'Aanvraag',
+  check_status: 'Status',
+  explain_module: 'Module',
+}
+
+export const TOOL_FOLLOWUPS: Record<string, string[]> = {
+  get_skills: ['Wat kost dit?', 'Laat de case study zien', 'Plan een gesprek'],
+  get_pricing_info: ['Welke vaardigheden zijn beschikbaar?', 'Bereken mijn ROI', 'Plan een gesprek'],
+  get_case_study: ['Wat zijn de tarieven?', 'Hoe werkt het precies?', 'Plan een gesprek'],
+  book_call: ['Welke vaardigheden zijn beschikbaar?', 'Laat de case study zien'],
+  qualify_lead: ['Wat kost dit?', 'Plan een gesprek', 'Welke vaardigheden zijn beschikbaar?'],
+  get_roi_estimate: ['Wat kost dit?', 'Plan een gesprek', 'Welke vaardigheden zijn beschikbaar?'],
+  get_roi_info: ['Wat kost dit?', 'Plan een gesprek'],
+  explain_module: ['Wat kost dit?', 'Welke vaardigheden zijn beschikbaar?', 'Plan een gesprek'],
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   search_products: ProductCard,
