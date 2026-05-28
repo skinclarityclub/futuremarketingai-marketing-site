@@ -39,7 +39,8 @@ const legacyApplicationSchema = z.object({
     z.coerce.number().int().min(1).max(200).optional(),
   ),
   problem: z.string().min(20).max(5000).optional(),
-  website: z.string().max(0).optional().default(''),
+  // Honeypot: accept any string so the honeypot check below can fire (max(0) would 422 before check)
+  website: z.string().optional().default(''),
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
 })
 
@@ -74,7 +75,8 @@ const wizardSchema = z.object({
     .optional(),
   problem: z.string().max(2000).optional(),
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
-  website: z.string().max(0).optional().default(''),
+  // Honeypot: accept any string so the honeypot check below can fire
+  website: z.string().optional().default(''),
 })
 
 // Resend constructor throws when API key is undefined — placeholder for next build.
@@ -91,7 +93,11 @@ export async function POST(request: NextRequest) {
     request.headers.get('x-real-ip') ??
     'unknown'
 
-  const rl = await applyRateLimit.limit(ip)
+  // Skip rate-limiting outside production (Playwright tests share the same IP)
+  const rl =
+    process.env.NODE_ENV !== 'production'
+      ? { success: true, limit: 5, remaining: 5, reset: 0 }
+      : await applyRateLimit.limit(ip)
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Too many requests. Please try again later.' },

@@ -3,7 +3,6 @@
 import { useTranslations } from 'next-intl'
 import { Sparkles } from 'lucide-react'
 import { useApplyWizard } from '@/lib/apply/store'
-import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { ApplyCalendlyInline } from '@/components/interactive/ApplyCalendlyInline'
 
 /**

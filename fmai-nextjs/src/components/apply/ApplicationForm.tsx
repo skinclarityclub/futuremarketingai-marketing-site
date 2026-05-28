@@ -34,7 +34,7 @@ const schema = z.object({
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-function mapIssueToKey(field: string, code: string): string {
+function mapIssueToKey(field: string): string {
   if (field === 'email') return 'emailInvalid'
   if (field === 'name') return 'nameMin'
   if (field === 'agency') return 'agencyMin'
@@ -68,7 +68,7 @@ export function ApplicationForm() {
       for (const issue of parsed.error.issues) {
         const field = issue.path[0] as string
         if (errors[field]) continue
-        const key = mapIssueToKey(field, issue.code)
+        const key = mapIssueToKey(field)
         errors[field] = t(`errors.${key}` as Parameters<typeof t>[0])
       }
       setFieldErrors(errors)
