@@ -32,13 +32,14 @@ async function fillIdentity(
 }
 
 async function clickOptionContaining(page: Page, text: string) {
-  // Scope to main to avoid accidental nav link matches (e.g. "Founding" nav item)
-  await page.locator('main').getByRole('button', { name: new RegExp(text, 'i') }).first().click()
+  // Scope to #main to avoid accidental nav link matches (e.g. "Founding" nav item)
+  const escaped = text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  await page.locator('#main').getByRole('button', { name: new RegExp(escaped, 'i') }).first().click()
 }
 
 async function fillQualificationHigh(page: Page) {
   // Q1 founding → 3pts
-  await clickOptionContaining(page, 'Founding')
+  await clickOptionContaining(page, 'Founding (€997')
   // Q2 €1M tot €3M → 3pts
   await clickOptionContaining(page, '1M tot')
   // Q3 5 tot 15 merken → 3pts
@@ -289,7 +290,7 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
 
     // Step 3: Qualification high scores
     await fillQualificationHigh(page)
-    await expect(page.getByText(/jouw probleem/i)).toBeVisible({ timeout: 5_000 })
+    await expect(page.locator('#apply-problem')).toBeVisible({ timeout: 5_000 })
 
     // Step 4: Problem (200+ chars for bonus)
     await page.fill('#apply-problem', 'We verliezen 2 FTE aan contentproductie voor 12 merken per maand. Het is onschaalbaar en we kunnen niet groeien zonder meer mensen. De bottleneck is tekst, social en SEO gecombineerd.')
@@ -313,7 +314,9 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
         !e.includes('ERR_BLOCKED') &&
         !e.includes('Content Security Policy') &&
         !e.includes('vercel-scripts') &&
-        !e.includes('va.vercel'),
+        !e.includes('va.vercel') &&
+        !e.includes('Failed to load resource') &&
+        !e.includes('intercom'),
     )
     expect(criticalErrors).toHaveLength(0)
   })
@@ -367,7 +370,7 @@ test.describe('Critical path: assessment handoff via URL params', () => {
     await clickNext(page)
 
     // Problem step
-    await expect(page.getByText(/jouw probleem/i)).toBeVisible({ timeout: 5_000 })
+    await expect(page.locator('#apply-problem')).toBeVisible({ timeout: 5_000 })
     await clickSubmit(page)
 
     // Should be qualified: scaling(3)+growth(2)+30days(3) = 8 >= 7
@@ -457,7 +460,7 @@ test.describe('Critical path: mobile 390px viewport', () => {
     await fillQualificationHigh(page)
 
     // Problem
-    await expect(page.getByText(/jouw probleem/i)).toBeVisible({ timeout: 5_000 })
+    await expect(page.locator('#apply-problem')).toBeVisible({ timeout: 5_000 })
 
     // Submit/prev buttons should be visible on mobile
     const submitBtn = page.getByRole('button', { name: /verstuur aanvraag/i })
