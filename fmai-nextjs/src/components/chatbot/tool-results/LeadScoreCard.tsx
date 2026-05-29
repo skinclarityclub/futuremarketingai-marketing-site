@@ -96,22 +96,22 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
     if (!data.metrics && (data.hoursSavedPerMonth || data.totalMonthlySavings)) {
       autoMetrics = [
         ...(data.hoursSavedPerMonth !== null && data.hoursSavedPerMonth !== undefined
-          ? [{ label: 'Uren bespaard/mnd', value: String(data.hoursSavedPerMonth) }]
+          ? [{ label: t.hoursSavedPerMonth, value: String(data.hoursSavedPerMonth) }]
           : []),
         ...(data.totalMonthlySavings !== null && data.totalMonthlySavings !== undefined
-          ? [{ label: 'Maandelijkse besparing', value: money(data.totalMonthlySavings) || '' }]
+          ? [{ label: t.monthlySavings, value: money(data.totalMonthlySavings) || '' }]
           : []),
         ...(data.annualSavings !== null && data.annualSavings !== undefined
-          ? [{ label: 'Jaarlijkse besparing', value: money(data.annualSavings) || '' }]
+          ? [{ label: t.annualSavings, value: money(data.annualSavings) || '' }]
           : []),
         ...(data.laborSavingsPerMonth !== null && data.laborSavingsPerMonth !== undefined
-          ? [{ label: 'Loonbesparing/mnd', value: money(data.laborSavingsPerMonth) || '' }]
+          ? [{ label: t.laborSavings, value: money(data.laborSavingsPerMonth) || '' }]
           : []),
         ...(data.toolSavingsPerMonth !== null && data.toolSavingsPerMonth !== undefined
-          ? [{ label: 'Toolbesparing/mnd', value: money(data.toolSavingsPerMonth) || '' }]
+          ? [{ label: t.toolSavings, value: money(data.toolSavingsPerMonth) || '' }]
           : []),
         ...(data.implementationTime
-          ? [{ label: 'Implementatietijd', value: data.implementationTime }]
+          ? [{ label: t.implementationTime, value: data.implementationTime }]
           : []),
       ]
     }
@@ -119,15 +119,15 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
     const metricsToShow = data.metrics ||
       autoMetrics || [
         ...(monthlySavings
-          ? [{ label: 'Maandelijkse besparing', value: money(monthlySavings) || '' }]
+          ? [{ label: t.monthlySavings, value: money(monthlySavings) || '' }]
           : []),
         ...(annualSavings
-          ? [{ label: 'Jaarlijkse besparing', value: money(annualSavings) || '' }]
+          ? [{ label: t.annualSavings, value: money(annualSavings) || '' }]
           : []),
-        ...(hoursReclaimed ? [{ label: 'Uren terug/mnd', value: String(hoursReclaimed) }] : []),
-        ...(roi ? [{ label: 'ROI', value: roi }] : []),
-        ...(paybackPeriod ? [{ label: 'Terugverdientijd', value: paybackPeriod }] : []),
-        ...(data.teamSize ? [{ label: 'Teamgrootte', value: String(data.teamSize) }] : []),
+        ...(hoursReclaimed ? [{ label: t.hoursBack, value: String(hoursReclaimed) }] : []),
+        ...(roi ? [{ label: t.roi, value: roi }] : []),
+        ...(paybackPeriod ? [{ label: t.payback, value: paybackPeriod }] : []),
+        ...(data.teamSize ? [{ label: t.teamSize, value: String(data.teamSize) }] : []),
       ]
 
     return (
@@ -269,7 +269,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
                 {money(monthlySavings)}
               </p>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                Maandelijkse besparing
+                {t.monthlySavings}
               </p>
             </div>
           )}
@@ -279,7 +279,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
                 {money(annualSavings)}
               </p>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                Jaarlijkse besparing
+                {t.annualSavings}
               </p>
             </div>
           )}

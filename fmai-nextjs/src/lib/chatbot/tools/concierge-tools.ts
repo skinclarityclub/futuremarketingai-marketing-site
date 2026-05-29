@@ -1,6 +1,6 @@
 import { tool } from 'ai'
 import { z } from 'zod'
-import { SKILLS_DATA } from '@/lib/skills-data'
+import { getChatbotSkills, getChatbotSkill, getSkillsOverviewCopy } from '@/lib/chatbot/skill-i18n'
 import type { ChatbotLocale } from '@/lib/chatbot/tool-data'
 
 interface CaseStudy {
@@ -122,13 +122,15 @@ export function buildConciergeTools(locale: ChatbotLocale) {
           .describe('Which skill to get details about'),
       }),
       execute: async ({ skillId }) => {
+        const skills = getChatbotSkills(locale)
         if (skillId === 'all') {
-          const liveCount = SKILLS_DATA.filter((s) => s.status === 'live').length
-          const comingSoonCount = SKILLS_DATA.filter((s) => s.status === 'coming_soon').length
+          const liveCount = skills.filter((s) => s.status === 'live').length
+          const comingSoonCount = skills.filter((s) => s.status === 'coming_soon').length
+          const overview = getSkillsOverviewCopy(locale)
           return {
-            name: 'Alle vaardigheden',
-            description: `${liveCount} live · ${comingSoonCount} binnenkort beschikbaar`,
-            services: SKILLS_DATA.map((s) => ({
+            name: overview.name,
+            description: overview.summary(liveCount, comingSoonCount),
+            services: skills.map((s) => ({
               name: s.name,
               description: s.shortDescription,
               url: s.route,
@@ -136,13 +138,14 @@ export function buildConciergeTools(locale: ChatbotLocale) {
             })),
           }
         }
-        const skill = SKILLS_DATA.find((s) => s.id === skillId)
+        const skill = getChatbotSkill(locale, skillId)
         if (!skill) return { error: `Unknown skill: ${skillId}` }
         return {
           name: skill.name,
           description: skill.longDescription,
-          features: skill.features || [],
+          features: skill.features,
           url: skill.route,
+          status: skill.status,
         }
       },
     }),

@@ -14,6 +14,7 @@ export interface ServiceCardData {
   price?: string
   starting_price?: string
   url?: string
+  status?: 'live' | 'coming_soon'
   services?: ServiceCardData[] | Record<string, ServiceCardData>
   tiers?:
     | { name: string; price: string; features: string[]; highlighted?: boolean }[]
@@ -78,7 +79,7 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
   const handleCardClick = data.url
     ? () => {
         closeSidePanel()
-        sendChatMessage(`Vertel me meer over ${data.name}`)
+        sendChatMessage(`${t.tellMeMorePrefix} ${data.name}`)
       }
     : undefined
 
@@ -95,9 +96,16 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
           <ServiceIcon kind={iconKind} className="h-4 w-4 text-accent-system" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-sans text-sm font-semibold text-text-primary">
-            {data.name || 'Service'}
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="font-sans text-sm font-semibold text-text-primary">
+              {data.name || 'Service'}
+            </p>
+            {data.status === 'coming_soon' && (
+              <span className="shrink-0 rounded-full bg-accent-human/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-human">
+                {t.comingSoon}
+              </span>
+            )}
+          </div>
           {data.description && (
             <p className="mt-0.5 text-xs leading-relaxed text-text-secondary">{data.description}</p>
           )}
@@ -304,6 +312,7 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
           price: (svc.price as string | undefined) ||
             (svc.starting_price as string | undefined),
           url: svc.url as string | undefined,
+          status: svc.status as 'live' | 'coming_soon' | undefined,
         }
       })
     }

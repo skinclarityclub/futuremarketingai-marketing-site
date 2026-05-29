@@ -34,10 +34,15 @@ interface CardCopy {
   monthlySavings: string
   annualSavings: string
   hoursBack: string
+  hoursSavedPerMonth: string
+  laborSavings: string
+  toolSavings: string
+  implementationTime: string
   roi: string
   payback: string
   teamSize: string
   roiCta: string
+  tellMeMorePrefix: string
   caseChallenge: string
   caseSolution: string
   caseResults: string
@@ -66,10 +71,15 @@ const COPY: Record<CardLocale, CardCopy> = {
     monthlySavings: 'Maandelijkse besparing',
     annualSavings: 'Jaarlijkse besparing',
     hoursBack: 'Uren terug/mnd',
+    hoursSavedPerMonth: 'Uren bespaard/mnd',
+    laborSavings: 'Loonbesparing/mnd',
+    toolSavings: 'Toolbesparing/mnd',
+    implementationTime: 'Implementatietijd',
     roi: 'ROI',
     payback: 'Terugverdientijd',
     teamSize: 'Teamgrootte',
     roiCta: 'Ontvang jouw ROI-analyse, plan een gesprek',
+    tellMeMorePrefix: 'Vertel me meer over',
     caseChallenge: 'Uitdaging',
     caseSolution: 'Oplossing',
     caseResults: 'Resultaten',
@@ -96,10 +106,15 @@ const COPY: Record<CardLocale, CardCopy> = {
     monthlySavings: 'Monthly savings',
     annualSavings: 'Annual savings',
     hoursBack: 'Hours saved/mo',
+    hoursSavedPerMonth: 'Hours saved/mo',
+    laborSavings: 'Labour savings/mo',
+    toolSavings: 'Tool savings/mo',
+    implementationTime: 'Implementation time',
     roi: 'ROI',
     payback: 'Payback',
     teamSize: 'Team size',
     roiCta: 'Get your ROI analysis, book a call',
+    tellMeMorePrefix: 'Tell me more about',
     caseChallenge: 'Challenge',
     caseSolution: 'Solution',
     caseResults: 'Results',
@@ -126,10 +141,15 @@ const COPY: Record<CardLocale, CardCopy> = {
     monthlySavings: 'Ahorro mensual',
     annualSavings: 'Ahorro anual',
     hoursBack: 'Horas/mes',
+    hoursSavedPerMonth: 'Horas ahorradas/mes',
+    laborSavings: 'Ahorro salarial/mes',
+    toolSavings: 'Ahorro en herramientas/mes',
+    implementationTime: 'Tiempo de implementación',
     roi: 'ROI',
     payback: 'Amortización',
     teamSize: 'Tamaño del equipo',
     roiCta: 'Recibe tu análisis de ROI, agenda una llamada',
+    tellMeMorePrefix: 'Cuéntame más sobre',
     caseChallenge: 'Desafío',
     caseSolution: 'Solución',
     caseResults: 'Resultados',
