@@ -34,18 +34,38 @@ const COMPLEX_KEYWORDS = [
 const LONG_MESSAGE_THRESHOLD = 200
 const DEEP_CONVERSATION_THRESHOLD = 8
 
-export function detectComplexity(
+/** Why a complexity level was chosen — surfaced for cost/latency monitoring. */
+export type ComplexityTrigger =
+  | 'persona-keyword'
+  | 'complex-keyword'
+  | 'long-message'
+  | 'deep-conversation'
+  | 'default-haiku'
+
+export interface ComplexityResult {
+  level: ComplexityLevel
+  trigger: ComplexityTrigger
+  /** The specific keyword that forced escalation, when trigger is keyword-based. */
+  matched?: string
+}
+
+/**
+ * Like {@link detectComplexity} but also reports WHY the level was chosen, so the
+ * engine can log every model decision. Sonnet escalations cost/latency multiples of
+ * haiku, so we want to size how often (and why) they fire in production.
+ */
+export function explainComplexity(
   message: string,
   conversationDepth: number,
   personaKeywords?: string[]
-): ComplexityLevel {
+): ComplexityResult {
   const lowerMessage = message.toLowerCase()
 
   // Check persona-specific keywords first
   if (personaKeywords) {
     for (const keyword of personaKeywords) {
       if (lowerMessage.includes(keyword.toLowerCase())) {
-        return 'sonnet'
+        return { level: 'sonnet', trigger: 'persona-keyword', matched: keyword }
       }
     }
   }
@@ -53,21 +73,29 @@ export function detectComplexity(
   // Check general complexity keywords
   for (const keyword of COMPLEX_KEYWORDS) {
     if (lowerMessage.includes(keyword)) {
-      return 'sonnet'
+      return { level: 'sonnet', trigger: 'complex-keyword', matched: keyword }
     }
   }
 
   // Long messages suggest complex queries
   if (message.length > LONG_MESSAGE_THRESHOLD) {
-    return 'sonnet'
+    return { level: 'sonnet', trigger: 'long-message' }
   }
 
   // Deep conversations need more reasoning
   if (conversationDepth > DEEP_CONVERSATION_THRESHOLD) {
-    return 'sonnet'
+    return { level: 'sonnet', trigger: 'deep-conversation' }
   }
 
-  return 'haiku'
+  return { level: 'haiku', trigger: 'default-haiku' }
+}
+
+export function detectComplexity(
+  message: string,
+  conversationDepth: number,
+  personaKeywords?: string[]
+): ComplexityLevel {
+  return explainComplexity(message, conversationDepth, personaKeywords).level
 }
 
 export const MODEL_IDS = {

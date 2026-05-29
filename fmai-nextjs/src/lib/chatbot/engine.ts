@@ -7,7 +7,7 @@ import { getPersona } from './persona-router'
 import './personas'
 import { routeToKnowledge } from './topic-router'
 import { buildSystemMessages } from './prompt-builder'
-import { detectComplexity, MODEL_IDS } from './complexity-detector'
+import { explainComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
 import { normalizeChatbotLocale } from './tool-data'
 import type { ChatRequest } from './types'
@@ -119,12 +119,32 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // 10. Detect complexity for model routing
     const historyLength = isUseChatMode ? messages.length : (conversationHistory?.length ?? 0)
-    const complexity = detectComplexity(userMessageText, historyLength, persona.complexityKeywords)
-    const modelId = MODEL_IDS[complexity]
+    const complexity = explainComplexity(userMessageText, historyLength, persona.complexityKeywords)
+    const modelId = MODEL_IDS[complexity.level]
 
     // 11. Create persona tools (locale-aware so cards render in the visitor's
     // language; context-aware filtering for flagship below).
     const locale = normalizeChatbotLocale(context?.language)
+
+    // Cost/latency monitoring: sonnet escalations run multiples of haiku's cost +
+    // latency, so log every model decision (model + why + cheap signals). No message
+    // text is logged — privacy + log-size safe. Grep Vercel logs for [clyde-model]
+    // to size the sonnet share and which trigger drives it.
+    console.log(
+      '[clyde-model]',
+      JSON.stringify({
+        persona: persona.id,
+        model: complexity.level,
+        escalated: complexity.level === 'sonnet',
+        trigger: complexity.trigger,
+        matched: complexity.matched,
+        msgLen: userMessageText.length,
+        depth: historyLength,
+        locale,
+        demo: !!context?.demoMode,
+      })
+    )
+
     let tools = createPersonaTools(persona, locale)
     if (persona.id === 'clyde' || persona.id === 'flagship') {
       // Strip e-commerce/support/legacy tools inherited from the SkinClarity
