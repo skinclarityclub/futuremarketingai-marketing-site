@@ -1,3 +1,5 @@
+import type { MemoryProfile } from './memory'
+
 export type ComplexityLevel = 'haiku' | 'sonnet'
 
 export interface ChatRequest {
@@ -13,6 +15,7 @@ export interface ChatRequest {
     language?: string
     currentPage?: string
     demoMode?: boolean
+    memoryProfile?: MemoryProfile
   }
 }
 

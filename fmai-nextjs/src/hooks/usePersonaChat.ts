@@ -11,7 +11,14 @@ const FLAGSHIP_PERSONA_ID = 'flagship'
 
 export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
   const { sessionId, messageCounts, incrementMessageCount, demoMode } = useChatbotStore()
+  const memoryProfile = useChatbotStore((s) => s.memoryProfile)
   const locale = useLocale()
+
+  // Only send memory when there is something to recall, so fresh visitors keep a
+  // stable (memory-less) transport body. The ref identity changes only when the
+  // profile content changes, so this drives at most one transport rebuild per
+  // capture (and once on hydration, before the visitor sends their first message).
+  const hasMemory = Object.keys(memoryProfile).length > 0
 
   const messageCount = messageCounts[personaId] || 0
 
@@ -32,10 +39,11 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
             language: locale,
             ...(pageContext ? { currentPage: pageContext.pathname } : {}),
             ...(demoMode ? { demoMode: true } : {}),
+            ...(hasMemory ? { memoryProfile } : {}),
           },
         },
       }),
-    [personaId, sessionId, pageContext?.pathname, demoMode, locale]
+    [personaId, sessionId, pageContext?.pathname, demoMode, locale, hasMemory, memoryProfile]
   )
   /* eslint-enable react-hooks/preserve-manual-memoization, react-hooks/exhaustive-deps */
 
