@@ -3,6 +3,8 @@
 import React from 'react'
 import { motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
+import { useChatbotStore } from '@/stores/chatbotStore'
+import { ApplyCtaButton } from './ApplyCtaButton'
 
 interface ProgressiveCTAProps {
   messageCount: number
@@ -18,9 +20,12 @@ interface ProgressiveCTAProps {
  * - 15+ messages: Gate banner — demo limit reached
  *
  * All CTAs route to the application-gated /apply page (no Calendly, no /contact),
- * per the partnership model. NL is the source of truth.
+ * per the partnership model, via the shared ApplyCtaButton so they match the
+ * site-wide CTA and close the chat on click. NL is the source of truth.
  */
 export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) => {
+  const close = useChatbotStore((s) => s.close)
+
   if (messageCount < 5) {
     return null
   }
@@ -38,12 +43,7 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
         <p className="text-sm text-text-secondary mb-4">
           Plan een gesprek, dan bespreken we wat Clyde voor jouw bureau kan doen.
         </p>
-        <Link
-          href="/apply"
-          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-        >
-          Plan een gesprek
-        </Link>
+        <ApplyCtaButton>Plan een gesprek</ApplyCtaButton>
       </motion.div>
     )
   }
@@ -58,12 +58,7 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
         <p className="text-sm text-text-primary font-medium mb-3">
           Klaar om te zien wat dit voor jouw bureau kan doen?
         </p>
-        <Link
-          href="/apply"
-          className="inline-block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90"
-        >
-          Plan een gesprek
-        </Link>
+        <ApplyCtaButton size="sm">Plan een gesprek</ApplyCtaButton>
       </motion.div>
     )
   }
@@ -78,6 +73,7 @@ export const ProgressiveCTA: React.FC<ProgressiveCTAProps> = ({ messageCount }) 
         Bevalt de demo?
         <Link
           href="/apply"
+          onClick={() => close()}
           className="ml-1 text-accent-system hover:underline font-medium"
         >
           Leer meer over een samenwerking

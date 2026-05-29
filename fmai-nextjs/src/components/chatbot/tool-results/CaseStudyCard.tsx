@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { Building2, AlertTriangle, Lightbulb, TrendingUp, Quote, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { useCardCopy } from './cardI18n'
+import { ApplyCtaButton } from '../ApplyCtaButton'
 
 export interface CaseStudyData {
   caseStudy: {
@@ -106,12 +107,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
           </Link>
         )}
-        <Link
-          href="/apply"
-          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
-        >
-          {t.similarResults}
-        </Link>
+        <ApplyCtaButton size="sm">{t.similarResults}</ApplyCtaButton>
       </div>
     </motion.div>
   )

@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Calendar, ArrowRight, Clock, MessageCircle, ShieldCheck } from 'lucide-react'
-import { Link } from '@/i18n/navigation'
+import { Calendar, Clock, MessageCircle, ShieldCheck } from 'lucide-react'
 import { useCardCopy } from './cardI18n'
+import { ApplyCtaButton } from '../ApplyCtaButton'
 
 export interface BookingCardData {
   action: string
@@ -55,13 +55,7 @@ export function BookingCard({ data }: { data: BookingCardData }) {
         ))}
       </div>
 
-      <Link
-        href="/apply"
-        className="group flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-system/20 transition-all duration-200 hover:shadow-accent-system/30 hover:opacity-95"
-      >
-        {t.bookCall}
-        <ArrowRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
-      </Link>
+      <ApplyCtaButton>{t.bookCall}</ApplyCtaButton>
     </motion.div>
   )
 }

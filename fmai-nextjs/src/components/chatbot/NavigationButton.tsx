@@ -1,8 +1,7 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { ArrowRight } from 'lucide-react'
-import { useChatbotStore } from '@/stores/chatbotStore'
+import { useRouter } from '@/i18n/navigation'
 
 interface NavigationButtonProps {
   url: string
@@ -11,10 +10,10 @@ interface NavigationButtonProps {
 
 export function NavigationButton({ url, label }: NavigationButtonProps) {
   const router = useRouter()
-  const close = useChatbotStore((s) => s.close)
 
+  // The chat closes itself on route change (ChatWidgetIsland), which also lets
+  // Clyde follow up on the destination page — so just navigate here.
   const handleClick = () => {
-    close()
     router.push(url)
   }
 
