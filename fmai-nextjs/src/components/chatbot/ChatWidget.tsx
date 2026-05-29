@@ -124,12 +124,19 @@ export function ChatWidget({
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend
 
-  // Auto-greet: inject Clyde's welcome as a real chat bubble when chat first opens
+  // Auto-greet: inject Clyde's welcome as a real chat bubble when chat first opens.
+  // The hasGreeted flag flips INSIDE the timer, not before scheduling it. In dev,
+  // React StrictMode runs effects mount -> cleanup -> remount; the cleanup clears
+  // the pending timer, so flipping the flag up-front would make the remount hit the
+  // hasGreeted guard and drop the greet for good (the observed "first bubble is the
+  // user question" bug). Flipping inside the timer lets the remount — or any
+  // dep-identity churn within the 400ms window — reschedule cleanly. Only one timer
+  // is ever live (cleanup clears the previous), so the greet fires exactly once.
   const hasGreeted = useRef(false)
   useEffect(() => {
     if (mode !== 'floating' || !isFlagship || !isOpen || messages.length > 0 || hasGreeted.current || !welcomeMessage || demoMode) return
-    hasGreeted.current = true
     const timer = setTimeout(() => {
+      hasGreeted.current = true
       setMessages?.([{
         id: 'clyde-welcome',
         role: 'assistant',
