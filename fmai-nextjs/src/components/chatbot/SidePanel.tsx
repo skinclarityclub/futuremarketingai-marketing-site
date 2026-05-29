@@ -3,7 +3,8 @@
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, X } from 'lucide-react'
-import { ToolResultRenderer, TOOL_PANEL_TITLES } from './tool-results'
+import { ToolResultRenderer } from './tool-results'
+import { useChatChrome } from './useChatChrome'
 
 interface SidePanelProps {
   isOpen: boolean
@@ -26,6 +27,7 @@ function SidePanelToolCard({ content }: { content: { toolName: string; data: unk
 }
 
 export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
+  const chrome = useChatChrome()
   return (
     <>
       {/* Mobile: portal to body to escape backdrop-filter containing block */}
@@ -60,7 +62,7 @@ export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
                         <ArrowLeft className="h-4 w-4" />
                       </button>
                       <span className="font-sans text-sm font-medium text-text-primary">
-                        {TOOL_PANEL_TITLES[content.toolName] ?? 'Details'}
+                        {chrome.panelTitle(content.toolName)}
                       </span>
                     </div>
                     <button
@@ -102,7 +104,9 @@ export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
                 >
                   <ArrowLeft className="h-4 w-4" />
                 </button>
-                <span className="font-sans text-sm font-medium text-text-primary">Details</span>
+                <span className="font-sans text-sm font-medium text-text-primary">
+                  {chrome.panelTitle(content.toolName)}
+                </span>
               </div>
             </div>
             <div className="flex-1 overflow-y-auto p-4">

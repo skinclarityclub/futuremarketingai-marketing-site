@@ -1,12 +1,18 @@
 'use client'
 
+import { useLocale } from 'next-intl'
 import { motion } from 'motion/react'
-import { Briefcase, ShoppingBag, Headphones } from 'lucide-react'
+import { Briefcase, TrendingUp, type LucideIcon } from 'lucide-react'
 
-const ICON_MAP: Record<string, typeof Briefcase> = {
+const ICON_MAP: Record<string, LucideIcon> = {
   Briefcase,
-  ShoppingBag,
-  Headphones,
+  TrendingUp,
+}
+
+const STEPS_LABEL: Record<string, (n: number) => string> = {
+  nl: (n) => `${n} stappen`,
+  en: (n) => `${n} steps`,
+  es: (n) => `${n} pasos`,
 }
 
 interface DemoScenarioCardProps {
@@ -29,6 +35,8 @@ export function DemoScenarioCard({
   onSelect,
 }: DemoScenarioCardProps) {
   const Icon = ICON_MAP[icon] || Briefcase
+  const locale = useLocale()
+  const stepsLabel = (STEPS_LABEL[locale] ?? STEPS_LABEL.nl)(stepCount)
 
   return (
     <motion.button
@@ -46,7 +54,7 @@ export function DemoScenarioCard({
         <div className="min-w-0 flex-1">
           <p className="text-sm font-medium text-white">{title}</p>
           <p className="mt-0.5 text-xs text-text-quiet">{subtitle}</p>
-          <p className="mt-1.5 font-mono text-[10px] text-text-faint">{stepCount} steps</p>
+          <p className="mt-1.5 font-mono text-[10px] text-text-faint">{stepsLabel}</p>
         </div>
       </div>
     </motion.button>

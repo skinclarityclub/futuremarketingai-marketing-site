@@ -36,41 +36,6 @@ Set posting frequency, review workflows (auto-publish or approval queue), and le
  priority: 10,
  },
  {
- key: 'skills',
- content: `## AI Marketing Employee Skills
-
-**Content Creator**
-Produces blog posts, articles, and long-form content optimized for SEO. Adapts to client brand voice. Output: 2-4 blog posts per week per client.
-
-**Social Media Manager**
-Creates platform-specific social posts (LinkedIn, Instagram, Facebook, X). Handles scheduling, hashtag strategy, and engagement prompts. Output: 5-15 posts per week per client.
-
-**Ad Creator**
-Generates ad copy and creative briefs for Google Ads, Meta Ads, and LinkedIn Ads. A/B test variants included. Output: ad sets with 3-5 variants each.
-
-**Voice Agent**
-Handles inbound calls, appointment scheduling, and lead qualification by phone. Speaks naturally in Dutch and English. Available 24/7.
-
-**Lead Qualifier**
-Scores and qualifies inbound leads from forms, chatbots, and email. Routes hot leads to the agency's sales process. Reduces response time to under 5 minutes.
-
-**Reporting Analyst**
-Compiles weekly and monthly performance reports across all channels. Tracks KPIs, identifies trends, and suggests optimizations. Output: automated PDF reports.`,
- keywords: [
- 'skills',
- 'capabilities',
- 'what can it do',
- 'features',
- 'content creator',
- 'social media',
- 'ad creator',
- 'voice agent',
- 'lead qualifier',
- 'reporting',
- ],
- priority: 9,
- },
- {
  key: 'brand_voice',
  content: `## Brand Voice Setup
 

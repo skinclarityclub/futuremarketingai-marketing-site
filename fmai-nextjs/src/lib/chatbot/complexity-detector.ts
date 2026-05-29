@@ -72,5 +72,8 @@ export function detectComplexity(
 
 export const MODEL_IDS = {
   haiku: 'claude-haiku-4-5-20251001',
-  sonnet: 'claude-haiku-4-5-20251001',
+  // Real Sonnet escalation for complex/long/deep queries (was wired to haiku,
+  // making detectComplexity a no-op). Improves reasoning + Dutch quality where
+  // it matters; cost/latency only rises for the minority of complex turns.
+  sonnet: 'claude-sonnet-4-6',
 } as const

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { ArrowUp, Square } from 'lucide-react'
+import { useChatChrome } from './useChatChrome'
 
 interface ChatInputProps {
   onSend: (text: string) => void
@@ -38,6 +39,7 @@ export function ChatInput({
 }: ChatInputProps) {
   const [input, setInput] = useState(initialText ?? '')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const { inputSend, inputNewline } = useChatChrome()
 
   // External edit-flow can push a value into the input. Replace the
   // current text (we don't merge -- the consumer owns the intent) and
@@ -137,8 +139,8 @@ export function ChatInput({
       </div>
       <div className="mt-1.5 flex items-center justify-between px-2 text-[10px] text-text-faint">
         <span>
-          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Enter</kbd> versturen ·{' '}
-          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Shift+Enter</kbd> nieuwe regel
+          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Enter</kbd> {inputSend} ·{' '}
+          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Shift+Enter</kbd> {inputNewline}
         </span>
       </div>
     </div>

@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useCallback } from 'react'
+import { useLocale } from 'next-intl'
 import { motion } from 'motion/react'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { useChatbotStore } from '@/stores/chatbotStore'
-import { DEMO_SCENARIOS, BOOKING_STEP } from './scenarios'
+import { getDemoScenarios, getBookingStep } from './scenarios'
 import { DemoScenarioCard } from './DemoScenarioCard'
 import { DemoCheckpoint } from './DemoCheckpoint'
 import { DemoCompletionCard } from './DemoCompletionCard'
@@ -13,6 +14,18 @@ interface DemoOrchestratorProps {
   chatStatus: string
   messageCount: number
   onSendMessage: (text: string) => void
+}
+
+type OrchLocale = 'nl' | 'en' | 'es'
+
+const ORCH_COPY: Record<OrchLocale, { choose: string; continueDemo: string; stepOf: (n: number, total: number) => string }> = {
+  nl: { choose: 'Kies een scenario om te verkennen:', continueDemo: 'Vervolg de demo', stepOf: (n, total) => `Stap ${n} van ${total}` },
+  en: { choose: 'Choose a scenario to explore:', continueDemo: 'Continue demo', stepOf: (n, total) => `Step ${n} of ${total}` },
+  es: { choose: 'Elige un escenario para explorar:', continueDemo: 'Continuar demo', stepOf: (n, total) => `Paso ${n} de ${total}` },
+}
+
+function orchCopy(locale: string) {
+  return ORCH_COPY[(locale === 'en' || locale === 'es' ? locale : 'nl') as OrchLocale]
 }
 
 // Short delay before sending the scripted message (simulates typing)
@@ -37,9 +50,12 @@ export function DemoOrchestrator({
     openCalendly,
   } = useChatbotStore()
 
+  const locale = useLocale()
+  const copy = orchCopy(locale)
+  const scenarios = getDemoScenarios(locale)
   const hasSentRef = useRef(false)
   const messageCountAtSendRef = useRef(0)
-  const scenario = DEMO_SCENARIOS.find((s) => s.id === demoScenarioId)
+  const scenario = scenarios.find((s) => s.id === demoScenarioId)
   const currentStep = scenario?.steps[demoStepIndex]
 
   // Chat is considered "idle" when ready or after error (AI finished or failed)
@@ -121,7 +137,7 @@ export function DemoOrchestrator({
           advanceStep()
           break
         case 'skip-to-booking':
-          onSendMessage(BOOKING_STEP.userMessage)
+          onSendMessage(getBookingStep(locale).userMessage)
           setDemoStatus('completed')
           break
         case 'next-scenario':
@@ -132,7 +148,7 @@ export function DemoOrchestrator({
           break
       }
     },
-    [advanceStep, onSendMessage, setDemoStatus, endDemo, closeSidePanel]
+    [advanceStep, onSendMessage, setDemoStatus, endDemo, closeSidePanel, locale]
   )
 
   const handleCompletionBookCall = useCallback(() => {
@@ -151,8 +167,8 @@ export function DemoOrchestrator({
       {/* Scenario selection */}
       {demoStatus === 'choosing' && (
         <div className="space-y-2 px-1 py-2">
-          <p className="text-xs text-text-quiet">Choose a scenario to explore:</p>
-          {DEMO_SCENARIOS.map((s, i) => (
+          <p className="text-xs text-text-quiet">{copy.choose}</p>
+          {scenarios.map((s, i) => (
             <DemoScenarioCard
               key={s.id}
               id={s.id}
@@ -183,9 +199,9 @@ export function DemoOrchestrator({
             <div className="flex items-center gap-2.5 min-w-0">
               <Sparkles className="h-4 w-4 shrink-0 text-accent-system" />
               <div className="min-w-0">
-                <p className="text-xs font-medium text-white truncate">Continue demo</p>
+                <p className="text-xs font-medium text-white truncate">{copy.continueDemo}</p>
                 <p className="text-[10px] text-text-quiet truncate">
-                  Step {demoStepIndex + 2} of {scenario?.stepCount}
+                  {copy.stepOf(demoStepIndex + 2, scenario?.stepCount ?? 0)}
                 </p>
               </div>
             </div>

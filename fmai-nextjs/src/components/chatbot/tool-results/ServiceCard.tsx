@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { Check, ArrowRight, Zap, Bot, BarChart3, Megaphone } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { useCardCopy } from './cardI18n'
 
 export interface ServiceCardData {
   name: string
@@ -13,6 +14,7 @@ export interface ServiceCardData {
   price?: string
   starting_price?: string
   url?: string
+  status?: 'live' | 'coming_soon'
   services?: ServiceCardData[] | Record<string, ServiceCardData>
   tiers?:
     | { name: string; price: string; features: string[]; highlighted?: boolean }[]
@@ -69,6 +71,7 @@ function ServiceIcon({ kind, className }: { kind: ServiceIconKind; className?: s
 }
 
 function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
+  const { t } = useCardCopy()
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const iconKind = getServiceIconKind(data.name)
@@ -76,7 +79,7 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
   const handleCardClick = data.url
     ? () => {
         closeSidePanel()
-        sendChatMessage(`Vertel me meer over ${data.name}`)
+        sendChatMessage(`${t.tellMeMorePrefix} ${data.name}`)
       }
     : undefined
 
@@ -93,9 +96,16 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
           <ServiceIcon kind={iconKind} className="h-4 w-4 text-accent-system" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-sans text-sm font-semibold text-text-primary">
-            {data.name || 'Service'}
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="font-sans text-sm font-semibold text-text-primary">
+              {data.name || 'Service'}
+            </p>
+            {data.status === 'coming_soon' && (
+              <span className="shrink-0 rounded-full bg-accent-human/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-human">
+                {t.comingSoon}
+              </span>
+            )}
+          </div>
           {data.description && (
             <p className="mt-0.5 text-xs leading-relaxed text-text-secondary">{data.description}</p>
           )}
@@ -121,7 +131,7 @@ function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: num
             onClick={(e) => e.stopPropagation()}
             className="ml-auto inline-flex items-center gap-1 text-xs font-medium text-accent-system hover:underline"
           >
-            Bekijk vaardigheid
+            {t.viewSkill}
             <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -140,6 +150,7 @@ function PricingTier({
   tier: { name: string; price: string; features: string[]; highlighted?: boolean }
   index: number
 }) {
+  const { t } = useCardCopy()
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -151,7 +162,7 @@ function PricingTier({
         <p className="font-sans text-sm font-semibold text-text-primary">{tier.name}</p>
         {tier.highlighted && (
           <span className="rounded-full bg-accent-system/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-system">
-            Popular
+            {t.popular}
           </span>
         )}
       </div>
@@ -169,6 +180,7 @@ function PricingTier({
 }
 
 export function ServiceCard({ data }: { data: ServiceCardData }) {
+  const { t } = useCardCopy()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let normalizedTiers:
     | { name: string; price: string; features: string[]; highlighted?: boolean }[]
@@ -197,15 +209,15 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
   if (normalizedTiers && normalizedTiers.length > 0) {
     return (
       <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">Tarieven</p>
+        <p className="font-sans text-sm font-semibold text-text-primary">{t.pricingHeader}</p>
         {normalizedTiers.map((tier, i) => (
           <PricingTier key={tier.name} tier={tier} index={i} />
         ))}
         <Link
           href="/apply"
-          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Plan een gesprek
+          {t.bookCall}
         </Link>
       </div>
     )
@@ -300,6 +312,7 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
           price: (svc.price as string | undefined) ||
             (svc.starting_price as string | undefined),
           url: svc.url as string | undefined,
+          status: svc.status as 'live' | 'coming_soon' | undefined,
         }
       })
     }
@@ -308,15 +321,15 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
   if (normalizedServices && normalizedServices.length > 0) {
     return (
       <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">Onze vaardigheden</p>
+        <p className="font-sans text-sm font-semibold text-text-primary">{t.skillsHeader}</p>
         {normalizedServices.map((service, i) => (
           <SingleServiceCard key={service.name || i} data={service} index={i} />
         ))}
         <Link
           href="/apply"
-          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Plan een gesprek
+          {t.bookCall}
         </Link>
       </div>
     )

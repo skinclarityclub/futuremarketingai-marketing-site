@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import { Building2, AlertTriangle, Lightbulb, TrendingUp, Quote, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { useCardCopy } from './cardI18n'
 
 export interface CaseStudyData {
   caseStudy: {
@@ -17,6 +18,7 @@ export interface CaseStudyData {
 }
 
 export function CaseStudyCard({ data }: { data: CaseStudyData }) {
+  const { t } = useCardCopy()
   const study = data.caseStudy
   if (!study) return null
 
@@ -27,7 +29,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
       transition={{ duration: 0.3 }}
       className="w-full space-y-4"
     >
-      <div className="rounded-xl bg-gradient-to-br from-accent-system/20 to-accent-secondary/10 border border-accent-system/20 p-4">
+      <div className="rounded-xl bg-gradient-to-br from-accent-system/20 to-accent-human/10 border border-accent-system/20 p-4">
         <div className="flex items-start gap-3">
           <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-system/20">
             <Building2 className="h-4 w-4 text-accent-system" />
@@ -43,7 +45,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
         <div className="mb-2 flex items-center gap-2">
           <AlertTriangle className="h-3.5 w-3.5 text-amber-400" />
           <span className="text-xs font-medium uppercase tracking-wider text-amber-400">
-            Uitdaging
+            {t.caseChallenge}
           </span>
         </div>
         <p className="text-xs leading-relaxed text-text-secondary">{study.challenge}</p>
@@ -53,7 +55,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
         <div className="mb-2 flex items-center gap-2">
           <Lightbulb className="h-3.5 w-3.5 text-accent-system" />
           <span className="text-xs font-medium uppercase tracking-wider text-accent-system">
-            Oplossing
+            {t.caseSolution}
           </span>
         </div>
         <p className="text-xs leading-relaxed text-text-secondary">{study.solution}</p>
@@ -63,7 +65,7 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
         <div className="mb-3 flex items-center gap-2">
           <TrendingUp className="h-3.5 w-3.5 text-accent-success" />
           <span className="text-xs font-medium uppercase tracking-wider text-accent-success">
-            Resultaten
+            {t.caseResults}
           </span>
         </div>
         <ul className="space-y-2">
@@ -100,15 +102,15 @@ export function CaseStudyCard({ data }: { data: CaseStudyData }) {
             href="/case-studies/skinclarity-club"
             className="group flex items-center justify-center gap-2 rounded-xl border border-accent-system/30 bg-accent-system/10 px-4 py-3 text-xs font-medium text-accent-system transition-all duration-200 hover:bg-accent-system/15"
           >
-            Lees de volledige case study
+            {t.readCase}
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
           </Link>
         )}
         <Link
           href="/apply"
-          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-secondary px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
+          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
         >
-          Vergelijkbare resultaten behalen? Plan een gesprek
+          {t.similarResults}
         </Link>
       </div>
     </motion.div>

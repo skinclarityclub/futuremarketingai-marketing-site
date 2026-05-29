@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useCallback, useMemo, useState } from 'react'
+import { useLocale } from 'next-intl'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import {
@@ -14,8 +15,9 @@ import {
   Copy,
   Check,
 } from 'lucide-react'
-import { ToolResultRenderer, shouldUseSidePanel, TOOL_FOLLOWUPS } from './tool-results'
+import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { useChatChrome } from './useChatChrome'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface ChatMessagesProps {
@@ -54,6 +56,20 @@ function parseChipsFromText(text: string): string[] {
   return match[1].split('|').map((c) => c.trim()).filter(Boolean)
 }
 
+/** Strip the machine-readable `CHIPS:` line (and anything after it) so copied
+ *  text matches what the user actually sees in the bubble. */
+function stripChipsLine(text: string): string {
+  return text.replace(/\n*CHIPS:[\s\S]*$/, '').trimEnd()
+}
+
+/** Hard guarantee against em-dashes in Clyde's user-facing text. The persona
+ *  prompt discourages them, but haiku still emits them in lists; this render-
+ *  layer normalization replaces every em-dash (and its surrounding spaces) with
+ *  a comma so the bubble — and copied text — never shows one. */
+function normalizeDashes(text: string): string {
+  return text.replace(/\s*—\s*/g, ', ')
+}
+
 function MarkdownContent({ text }: { text: string }) {
   return (
     <div className="text-sm leading-relaxed [&_a]:text-accent-system [&_a]:hover:underline [&_ol]:list-decimal [&_ol]:pl-4 [&_ul]:list-disc [&_ul]:pl-4">
@@ -71,7 +87,7 @@ function MarkdownContent({ text }: { text: string }) {
           },
         }}
       >
-        {text}
+        {normalizeDashes(text)}
       </ReactMarkdown>
     </div>
   )
@@ -79,7 +95,7 @@ function MarkdownContent({ text }: { text: string }) {
 
 function TypingIndicator() {
   return (
-    <div className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
+    <div data-typing className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
       <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-md border border-border-primary bg-bg-elevated/80 px-4 py-3 backdrop-blur-md">
         <span
           className="h-1.5 w-1.5 rounded-full bg-accent-system"
@@ -100,6 +116,7 @@ function TypingIndicator() {
 
 function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
   const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
+  const { viewDetails } = useChatChrome()
   return (
     <button
       type="button"
@@ -107,7 +124,7 @@ function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown 
       className="my-1 inline-flex items-center gap-1.5 text-xs text-accent-system hover:underline cursor-pointer"
     >
       <ExternalLink className="h-3 w-3" />
-      Bekijk details
+      {viewDetails}
     </button>
   )
 }
@@ -145,7 +162,15 @@ interface WelcomeStateProps {
   onStartDemo?: () => void
 }
 
+const TOUR_LABEL: Record<string, string> = {
+  nl: 'Of start een rondleiding →',
+  en: 'Or take a guided tour →',
+  es: 'O haz un recorrido guiado →',
+}
+
 function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: WelcomeStateProps) {
+  const locale = useLocale()
+  const tourLabel = TOUR_LABEL[locale] ?? TOUR_LABEL.nl
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-6 px-4 py-6 text-center">
       <span
@@ -170,7 +195,7 @@ function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: Welcom
             onClick={onStartDemo}
             className="text-sm text-accent-system underline-offset-4 transition-colors hover:underline"
           >
-            Of start een rondleiding →
+            {tourLabel}
           </button>
         )}
       </div>
@@ -206,10 +231,11 @@ function FollowUpChips({
   chips: string[]
   onSelect: (chip: string) => void
 }) {
+  const { askFurther } = useChatChrome()
   return (
     <div className="mt-2 ml-1 space-y-1.5">
       <p className="text-[10px] font-medium uppercase tracking-wider text-text-faint">
-        Vraag verder
+        {askFurther}
       </p>
       <div className="flex flex-wrap gap-1.5">
         {chips.map((chip, i) => (
@@ -230,6 +256,7 @@ function FollowUpChips({
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
+  const { copy, copied: copiedLabel, copyAria } = useChatChrome()
   const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(text)
@@ -243,11 +270,11 @@ function CopyButton({ text }: { text: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      aria-label="Kopieer bericht"
+      aria-label={copyAria}
       className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
     >
       {copied ? <Check className="h-3 w-3 text-accent-system" /> : <Copy className="h-3 w-3" />}
-      {copied ? 'Gekopieerd' : 'Kopieer'}
+      {copied ? copiedLabel : copy}
     </button>
   )
 }
@@ -271,6 +298,7 @@ export function ChatMessages({
   const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const chrome = useChatChrome()
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current
@@ -309,13 +337,13 @@ export function ChatMessages({
     if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
     // Tool-based chips take priority
-    if (lastSidePanelTool) return TOOL_FOLLOWUPS[lastSidePanelTool.toolName] ?? null
+    if (lastSidePanelTool) return chrome.followups(lastSidePanelTool.toolName)
     // Text-based chips fallback: parse CHIPS: line from last assistant message
     const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant')
     if (!lastAssistant) return null
     const chips = parseChipsFromText(extractText(lastAssistant))
     return chips.length > 0 ? chips : null
-  }, [flagship, lastSidePanelTool, status, messages])
+  }, [flagship, lastSidePanelTool, status, messages, chrome])
 
   const handleFollowUp = useCallback(
     (chip: string) => {
@@ -411,28 +439,28 @@ export function ChatMessages({
                 </div>
               )}
               {!isUser && messageText.length > 0 && (
-                <CopyButton text={messageText} />
+                <CopyButton text={normalizeDashes(stripChipsLine(messageText))} />
               )}
               {isUser && onEditMessage && messageText.length > 0 && (
                 <button
                   type="button"
                   onClick={() => onEditMessage(message.id, messageText)}
-                  aria-label="Bewerk dit bericht"
+                  aria-label={chrome.editAria}
                   className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <Pencil className="h-3 w-3" />
-                  Bewerk
+                  {chrome.edit}
                 </button>
               )}
               {!isUser && isLastAssistant && onRegenerate && !isStreaming && (
                 <button
                   type="button"
                   onClick={onRegenerate}
-                  aria-label="Opnieuw genereren"
+                  aria-label={chrome.regenerateAria}
                   className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <RotateCw className="h-3 w-3" />
-                  Opnieuw genereren
+                  {chrome.regenerate}
                 </button>
               )}
             </div>

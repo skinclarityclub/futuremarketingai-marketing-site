@@ -9,6 +9,7 @@ import { routeToKnowledge } from './topic-router'
 import { buildSystemMessages } from './prompt-builder'
 import { detectComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
+import { normalizeChatbotLocale } from './tool-data'
 import type { ChatRequest } from './types'
 
 function getClientIp(request: Request): string {
@@ -121,17 +122,39 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     const complexity = detectComplexity(userMessageText, historyLength, persona.complexityKeywords)
     const modelId = MODEL_IDS[complexity]
 
-    // 11. Create persona tools (with context-aware filtering for flagship)
-    // During demo mode, all tools are needed regardless of page context
-    let tools = createPersonaTools(persona)
-    // For Clyde: all tools always available (no page-based filtering)
-    // For demo mode: exclude navigate_to_page (catches too many queries)
+    // 11. Create persona tools (locale-aware so cards render in the visitor's
+    // language; context-aware filtering for flagship below).
+    const locale = normalizeChatbotLocale(context?.language)
+    let tools = createPersonaTools(persona, locale)
     if (persona.id === 'clyde' || persona.id === 'flagship') {
+      // Strip e-commerce/support/legacy tools inherited from the SkinClarity
+      // personas in BOTH normal and demo chat. They fire on plausible prompts
+      // and render off-context cards (skincare products, fake support tickets,
+      // the deprecated "Marketing Machine" module) — wrong for a B2B agency
+      // prospect. The guided demo now scripts only the real agency tools, so the
+      // strip never breaks a scenario.
+      const OFF_CONTEXT_TOOLS = new Set([
+        'search_products',
+        'get_product_details',
+        'build_routine',
+        'add_to_cart_suggestion',
+        'search_knowledge_base',
+        'create_ticket',
+        'check_status',
+        'escalate_to_human',
+        'explain_module',
+        'get_roi_info',
+      ])
+      tools = Object.fromEntries(
+        Object.entries(tools).filter(([name]) => !OFF_CONTEXT_TOOLS.has(name))
+      )
+      // Demo mode also drops navigate_to_page: under toolChoice:'required' it
+      // over-triggers and hijacks scripted steps.
       if (context?.demoMode) {
-        const { navigate_to_page: _, ...demoTools } = tools
-        tools = demoTools
+        tools = Object.fromEntries(
+          Object.entries(tools).filter(([name]) => name !== 'navigate_to_page')
+        )
       }
-      // No else -- Clyde gets all tools on every page
     }
 
     // 12. Build messages for streamText

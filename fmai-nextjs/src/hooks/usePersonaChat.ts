@@ -3,6 +3,7 @@
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 import { useMemo } from 'react'
+import { useLocale } from 'next-intl'
 import { useChatbotStore } from '@/stores/chatbotStore'
 
 const DEMO_MESSAGE_LIMIT = 15
@@ -10,6 +11,7 @@ const FLAGSHIP_PERSONA_ID = 'flagship'
 
 export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
   const { sessionId, messageCounts, incrementMessageCount, demoMode } = useChatbotStore()
+  const locale = useLocale()
 
   const messageCount = messageCounts[personaId] || 0
 
@@ -26,14 +28,14 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
         body: {
           personaId,
           sessionId,
-          context: pageContext
-            ? { currentPage: pageContext.pathname, demoMode: demoMode || undefined }
-            : demoMode
-              ? { demoMode: true }
-              : undefined,
+          context: {
+            language: locale,
+            ...(pageContext ? { currentPage: pageContext.pathname } : {}),
+            ...(demoMode ? { demoMode: true } : {}),
+          },
         },
       }),
-    [personaId, sessionId, pageContext?.pathname, demoMode]
+    [personaId, sessionId, pageContext?.pathname, demoMode, locale]
   )
   /* eslint-enable react-hooks/preserve-manual-memoization, react-hooks/exhaustive-deps */
 
