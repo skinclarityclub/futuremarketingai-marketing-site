@@ -60,6 +60,7 @@ export function ChatWidget({
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const resetMessageCount = useChatbotStore((s) => s.resetMessageCount)
+  const resetMemory = useChatbotStore((s) => s.resetMemory)
   const pendingChatMessage = useChatbotStore((s) => s.pendingChatMessage)
   const clearPendingMessage = useChatbotStore((s) => s.clearPendingMessage)
   const demoMode = useChatbotStore((s) => s.demoMode)
@@ -117,9 +118,10 @@ export function ChatWidget({
     setMessages?.([])
     closeSidePanel()
     resetMessageCount(personaId)
+    resetMemory()
     hasGreeted.current = false
     hasSentFollowup.current = false
-  }, [stop, setMessages, closeSidePanel, resetMessageCount, personaId])
+  }, [stop, setMessages, closeSidePanel, resetMessageCount, personaId, resetMemory])
 
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend

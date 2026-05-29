@@ -2,6 +2,7 @@
 
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import type { MemoryProfile } from '@/lib/chatbot/memory'
 
 function generateSessionId(): string {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
@@ -45,6 +46,8 @@ interface ChatbotState {
   calendlyPrefill: { name?: string; email?: string } | undefined
   /** Message queued from sidebar skill-card click — consumed by ChatWidget */
   pendingChatMessage: string | null
+  /** Within-session accumulated facts Clyde has captured about the visitor. */
+  memoryProfile: MemoryProfile
 
   // Actions
   setPersona: (id: string) => void
@@ -67,6 +70,8 @@ interface ChatbotState {
   sendChatMessage: (text: string) => void
   clearPendingMessage: () => void
   resetMessageCount: (personaId: string) => void
+  setMemoryProfile: (profile: MemoryProfile) => void
+  resetMemory: () => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -89,6 +94,7 @@ export const useChatbotStore = create<ChatbotState>()(
       calendlyOpen: false,
       calendlyPrefill: undefined,
       pendingChatMessage: null,
+      memoryProfile: {},
 
       // Actions
       setPersona: (id: string) => set({ personaId: id }),
@@ -171,6 +177,8 @@ export const useChatbotStore = create<ChatbotState>()(
         set((state) => ({
           messageCounts: { ...state.messageCounts, [personaId]: 0 },
         })),
+      setMemoryProfile: (profile: MemoryProfile) => set({ memoryProfile: profile }),
+      resetMemory: () => set({ memoryProfile: {} }),
     }),
     {
       name: 'chatbot-store',
