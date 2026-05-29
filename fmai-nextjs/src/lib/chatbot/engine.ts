@@ -171,8 +171,11 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       // Demo mode also drops navigate_to_page: under toolChoice:'required' it
       // over-triggers and hijacks scripted steps.
       if (context?.demoMode) {
+        // navigate_to_page + remember_context over-trigger under toolChoice:'required'
+        // and would hijack scripted demo steps.
+        const DEMO_STRIP = new Set(['navigate_to_page', 'remember_context'])
         tools = Object.fromEntries(
-          Object.entries(tools).filter(([name]) => name !== 'navigate_to_page')
+          Object.entries(tools).filter(([name]) => !DEMO_STRIP.has(name))
         )
       }
     }
