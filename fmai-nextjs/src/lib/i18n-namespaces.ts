@@ -14,6 +14,7 @@
  */
 export const GLOBAL_CLIENT_NAMESPACES = [
   // Layout chrome on every page
+  'a11y', // BackToTop (back-to-top FAB in ClientIslands) -- tiny payload
   'common', // CookieConsentBanner
   'nav', // HeaderClient mega-menu top nav
   'header', // HeaderClient mega-menu skill labels
