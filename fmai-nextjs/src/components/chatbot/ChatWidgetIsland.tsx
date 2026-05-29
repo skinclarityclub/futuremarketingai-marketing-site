@@ -7,6 +7,7 @@ import { ChatWidget } from './ChatWidget'
 import { ProactiveNudge } from './ProactiveNudge'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { loadMemory, saveMemory } from '@/lib/chatbot/memory-persistence'
+import { welcomeBackMessage } from './welcome-back'
 import type { ChatLocale } from './useChatChrome'
 
 function normalizeLocale(value: string): ChatLocale {
@@ -348,6 +349,11 @@ export function ChatWidgetIsland() {
   const nudgedThisPage = useRef(false)
   const nudgePrompt = PROACTIVE_PROMPTS[locale][pathname]
   const followupMessage = PROACTIVE_FOLLOWUPS[locale][pathname] ?? PROACTIVE_FOLLOWUPS[locale].default
+  // Returning visitor with a remembered agency gets a personalized greeting; everyone
+  // else falls back to the page-aware welcome.
+  const welcomeMessage =
+    welcomeBackMessage(locale, memoryProfile) ??
+    (WELCOME_MESSAGES[locale][pathname] ?? WELCOME_MESSAGES[locale].default)
 
   // Hydrate persisted memory once on mount (client-only, consent-gated). Lets Clyde
   // recall an agency across sessions; no-op on the server / without cookie consent.
@@ -488,7 +494,7 @@ export function ChatWidgetIsland() {
         personaName="Clyde"
         pageContext={{ pathname }}
         suggestedPrompts={SUGGESTED_PROMPTS[locale][pathname] ?? SUGGESTED_PROMPTS[locale].default}
-        welcomeMessage={WELCOME_MESSAGES[locale][pathname] ?? WELCOME_MESSAGES[locale].default}
+        welcomeMessage={welcomeMessage}
         proactiveFollowupMessage={followupMessage}
       />
     </>
