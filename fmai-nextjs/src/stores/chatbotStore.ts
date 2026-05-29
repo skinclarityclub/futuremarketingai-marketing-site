@@ -66,6 +66,7 @@ interface ChatbotState {
   closeCalendly: () => void
   sendChatMessage: (text: string) => void
   clearPendingMessage: () => void
+  resetMessageCount: (personaId: string) => void
 }
 
 export const useChatbotStore = create<ChatbotState>()(
@@ -166,6 +167,10 @@ export const useChatbotStore = create<ChatbotState>()(
         }),
       sendChatMessage: (text: string) => set({ pendingChatMessage: text }),
       clearPendingMessage: () => set({ pendingChatMessage: null }),
+      resetMessageCount: (personaId: string) =>
+        set((state) => ({
+          messageCounts: { ...state.messageCounts, [personaId]: 0 },
+        })),
     }),
     {
       name: 'chatbot-store',

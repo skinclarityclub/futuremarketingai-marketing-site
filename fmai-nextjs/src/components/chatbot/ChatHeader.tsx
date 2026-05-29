@@ -1,6 +1,6 @@
 'use client'
 
-import { Minus, X } from 'lucide-react'
+import { Minus, SquarePen, X } from 'lucide-react'
 import { useCallback, useRef } from 'react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
@@ -12,8 +12,10 @@ interface ChatHeaderProps {
   messageLimit?: number
   onMinimize?: () => void
   onClose?: () => void
+  onNewChat?: () => void
   badge?: string
   showLimit?: boolean
+  hasMessages?: boolean
 }
 
 /**
@@ -36,8 +38,10 @@ export function ChatHeader({
   messageLimit,
   onMinimize,
   onClose,
+  onNewChat,
   badge,
   showLimit = true,
+  hasMessages = false,
 }: ChatHeaderProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
 
@@ -95,6 +99,16 @@ export function ChatHeader({
       <div className="flex items-center gap-1">
         {mode === 'floating' && (
           <>
+            {hasMessages && onNewChat && (
+              <button
+                type="button"
+                onClick={onNewChat}
+                aria-label="Nieuwe chat starten"
+                className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
+              >
+                <SquarePen className="h-4 w-4" />
+              </button>
+            )}
             <button
               type="button"
               onClick={onMinimize}

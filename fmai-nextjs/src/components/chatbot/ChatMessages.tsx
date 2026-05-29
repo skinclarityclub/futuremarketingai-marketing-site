@@ -48,6 +48,12 @@ function extractText(msg: UIMessage): string {
     .join('\n')
 }
 
+function parseChipsFromText(text: string): string[] {
+  const match = text.match(/\n*CHIPS:\s*(.+)$/m)
+  if (!match) return []
+  return match[1].split('|').map((c) => c.trim()).filter(Boolean)
+}
+
 function MarkdownContent({ text }: { text: string }) {
   return (
     <div className="text-sm leading-relaxed [&_a]:text-accent-system [&_a]:hover:underline [&_ol]:list-decimal [&_ol]:pl-4 [&_ul]:list-disc [&_ul]:pl-4">
@@ -58,6 +64,11 @@ function MarkdownContent({ text }: { text: string }) {
               {children}
             </a>
           ),
+          p: ({ children, ...props }) => {
+            const text = Array.isArray(children) ? children.join('') : String(children ?? '')
+            if (text.startsWith('CHIPS:')) return null
+            return <p {...props}>{children}</p>
+          },
         }}
       >
         {text}
@@ -295,10 +306,16 @@ export function ChatMessages({
   }, [lastSidePanelTool, openSidePanel])
 
   const lastFollowUpChips = useMemo(() => {
-    if (!flagship || !lastSidePanelTool) return null
+    if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
-    return TOOL_FOLLOWUPS[lastSidePanelTool.toolName] ?? null
-  }, [flagship, lastSidePanelTool, status])
+    // Tool-based chips take priority
+    if (lastSidePanelTool) return TOOL_FOLLOWUPS[lastSidePanelTool.toolName] ?? null
+    // Text-based chips fallback: parse CHIPS: line from last assistant message
+    const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant')
+    if (!lastAssistant) return null
+    const chips = parseChipsFromText(extractText(lastAssistant))
+    return chips.length > 0 ? chips : null
+  }, [flagship, lastSidePanelTool, status, messages])
 
   const handleFollowUp = useCallback(
     (chip: string) => {

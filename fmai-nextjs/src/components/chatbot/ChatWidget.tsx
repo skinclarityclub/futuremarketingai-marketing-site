@@ -58,6 +58,7 @@ export function ChatWidget({
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const resetMessageCount = useChatbotStore((s) => s.resetMessageCount)
   const pendingChatMessage = useChatbotStore((s) => s.pendingChatMessage)
   const clearPendingMessage = useChatbotStore((s) => s.clearPendingMessage)
   const demoMode = useChatbotStore((s) => s.demoMode)
@@ -109,6 +110,15 @@ export function ChatWidget({
     },
     [messages, setMessages, stop]
   )
+
+  const handleNewChat = useCallback(() => {
+    stop?.()
+    setMessages?.([])
+    closeSidePanel()
+    resetMessageCount(personaId)
+    hasGreeted.current = false
+    hasSentFollowup.current = false
+  }, [stop, setMessages, closeSidePanel, resetMessageCount, personaId])
 
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend
@@ -245,6 +255,8 @@ export function ChatWidget({
                   messageLimit={messageLimit}
                   onMinimize={minimize}
                   onClose={close}
+                  onNewChat={handleNewChat}
+                  hasMessages={messages.length > 0}
                   badge={demoMode ? 'Demo' : isFlagship ? 'Concierge' : undefined}
                   showLimit={!isFlagship}
                 />

@@ -146,7 +146,7 @@ export const conciergeTools = {
   }),
 
   get_case_study: tool({
-    description: 'Get the SkinClarity Club case study showing FMai results with a real client.',
+    description: 'Get the SkinClarity Club case study showing FMai results with a real client. Use when user asks for proof, evidence, real results, case study, testimonial, bewijs, concrete resultaten, heeft het gewerkt, echt gebruik, referentie, or wants to see a real example before deciding.',
     inputSchema: z.object({
       studyId: z.enum(['skc']).default('skc').describe('The case study identifier'),
     }),

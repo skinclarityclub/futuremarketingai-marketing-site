@@ -2,6 +2,46 @@ import type { TopicDefinition } from '../types'
 
 export const LEADGEN_TOPICS: TopicDefinition[] = [
  {
+ key: 'honest_fit',
+ priority: 11,
+ keywords: [
+ 'niet geschikt',
+ 'niet voor',
+ 'nadelen',
+ 'beperkingen',
+ 'zwakke punten',
+ 'voor wie niet',
+ 'werkt niet',
+ 'eerlijk',
+ 'limitations',
+ 'not a fit',
+ 'downside',
+ 'disadvantage',
+ 'slecht',
+ 'minder',
+ ],
+ content: `## Voor wie Clyde WEL en NIET werkt
+
+**Werkt uitstekend voor:**
+- Marketing bureaus met 3+ klantmerken actief
+- Solo operators die meerdere Instagram-accounts beheren (zie SkinClarity Club: 3 accounts, 1 persoon)
+- Teams die 10+ uur/week kwijt zijn aan repetitieve content, email, of rapportage
+- Bureaus die willen schalen zonder lineair meer mensen aan te nemen
+
+**Werkt NIET goed voor:**
+- Solo freelancers met 1 enkel merk — de investering weegt niet op tegen de schaal
+- Teams die elke post 100% handmatig willen goedkeuren en aanpassen vóór publicatie (Clyde drafts, jij approves — maar als je alles herschrijft is er geen winst)
+- Bedrijven met ultra-custom workflows die compleet afwijken van standaard marketing (bijv. alleen offline events, geen digitale content)
+- Bedrijven die < 3 actieve klantmerken hebben en geen plan om te groeien
+- Mensen die op zoek zijn naar een goedkoop AI-tool zonder begeleiding — Clyde is een managed partnership, niet een zelfbedieningsplatform
+
+**Eerlijke verwachtingen:**
+- Setup duurt 4 weken — er is geen instant resultaat op dag 1
+- Clyde vervangt strategisch denken niet — je hebt nog steeds een menselijke strateeg nodig
+- Tijdsbesparing is 15-20 uur/week, niet 40 — de complexe werk blijft bij jou
+- Eerste maand is onboarding en tuning, content schaalt op in maand 2-3`,
+ },
+ {
  key: 'content_types',
  priority: 10,
  keywords: [
