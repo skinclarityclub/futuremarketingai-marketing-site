@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
@@ -298,6 +299,7 @@ export function ChatMessages({
   const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
 
   const handleScroll = useCallback(() => {
@@ -317,14 +319,23 @@ export function ChatMessages({
     for (let i = messages.length - 1; i >= 0; i--) {
       const msg = messages[i]
       if (msg.role !== 'assistant') continue
+      // Prefer a conversion card (pricing/qualify/case/booking/...) over the memory
+      // panel when both fire in one turn, so capturing a fact never steals the side
+      // panel (or its follow-up chips) from a higher-intent card. Memory only takes
+      // the panel when it is the sole side-panel tool of the turn.
+      let memoryCandidate: { toolName: string; data: unknown } | null = null
       for (let j = msg.parts.length - 1; j >= 0; j--) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
-        if (tn && part.state === 'output-available' && shouldUseSidePanel(tn))
-          return { toolName: tn, data: part.output }
+        if (!tn || part.state !== 'output-available' || !shouldUseSidePanel(tn)) continue
+        if (tn === 'remember_context') {
+          if (!memoryCandidate) memoryCandidate = { toolName: tn, data: part.output }
+          continue
+        }
+        return { toolName: tn, data: part.output }
       }
-      break
+      return memoryCandidate
     }
     return null
   }, [flagship, messages])
@@ -332,6 +343,36 @@ export function ChatMessages({
   useEffect(() => {
     if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
   }, [lastSidePanelTool, openSidePanel])
+
+  // Accumulate every remember_context capture across the whole conversation into the
+  // store so the MemoryCard can show the full known profile (not just the last call).
+  const accumulatedMemory = useMemo<MemoryProfile | null>(() => {
+    if (!flagship) return null
+    let acc: MemoryProfile = {}
+    for (const msg of messages) {
+      if (msg.role !== 'assistant') continue
+      for (const part of msg.parts as unknown[]) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const p = part as any
+        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
+          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
+          if (remembered) acc = mergeMemory(acc, remembered)
+        }
+      }
+    }
+    return acc
+  }, [flagship, messages])
+
+  // Only push to the store when the captured content actually changes, so streaming
+  // token updates (which churn the messages array each tick) don't re-set the store.
+  const lastAppliedMemory = useRef('')
+  useEffect(() => {
+    if (!accumulatedMemory) return
+    const key = JSON.stringify(accumulatedMemory)
+    if (key === lastAppliedMemory.current) return
+    lastAppliedMemory.current = key
+    setMemoryProfile(accumulatedMemory)
+  }, [accumulatedMemory, setMemoryProfile])
 
   const lastFollowUpChips = useMemo(() => {
     if (!flagship) return null

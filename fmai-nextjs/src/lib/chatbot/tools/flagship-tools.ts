@@ -77,6 +77,28 @@ const navigate_to_page = tool({
 })
 
 /**
+ * Capture tool: records concrete facts the prospect reveals about their agency so
+ * Clyde remembers them across the conversation and the memory panel can show them.
+ * Locale-neutral — it echoes its input; the card localizes labels and reads the
+ * accumulated profile from the store.
+ */
+const remember_context = tool({
+  description:
+    'Record a concrete fact the visitor just revealed about their agency so you remember it for the rest of the conversation: agency name, niche/vertical, number of brands or clients they manage, team size, their main pain point, or their goal. Call this whenever the visitor shares a NEW such fact, passing only the fields you just learned. Then refer back to what you remember in later replies.',
+  inputSchema: z.object({
+    agencyName: z.string().optional().describe('Name of the prospect agency'),
+    niche: z.string().optional().describe('Their niche/vertical, e.g. skincare, SaaS, hospitality'),
+    brandCount: z.number().optional().describe('How many brands or clients they manage'),
+    teamSize: z.number().optional().describe('Number of people on their team'),
+    painPoint: z.string().optional().describe('Their main pain or bottleneck'),
+    goal: z.string().optional().describe('What they want to achieve'),
+  }),
+  execute: async ({ agencyName, niche, brandCount, teamSize, painPoint, goal }) => ({
+    remembered: { agencyName, niche, brandCount, teamSize, painPoint, goal },
+  }),
+})
+
+/**
  * Flagship tool set for Clyde, built per request so card-producing tools render
  * in the visitor's locale.
  *
@@ -92,6 +114,7 @@ export function buildFlagshipTools(locale: ChatbotLocale): AnyToolRecord {
   const leadgen = buildLeadgenTools(locale)
   return {
     navigate_to_page,
+    remember_context,
     book_call: concierge.book_call,
 
     get_skills: concierge.get_skills,

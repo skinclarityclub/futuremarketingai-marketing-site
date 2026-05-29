@@ -25,7 +25,7 @@ export {
 } from './rate-limiter'
 
 // Complexity detection
-export { detectComplexity, MODEL_IDS } from './complexity-detector'
+export { detectComplexity, explainComplexity, MODEL_IDS } from './complexity-detector'
 
 // Topic routing
 export { routeToKnowledge } from './topic-router'

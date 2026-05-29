@@ -9,6 +9,7 @@ import { TicketCard } from './TicketCard'
 import { ServiceCard } from './ServiceCard'
 import { CaseStudyCard } from './CaseStudyCard'
 import { BookingCard } from './BookingCard'
+import { MemoryCard } from './MemoryCard'
 import { NavigationButton } from '../NavigationButton'
 import { useChatChrome } from '../useChatChrome'
 
@@ -20,6 +21,7 @@ export {
   ServiceCard,
   CaseStudyCard,
   BookingCard,
+  MemoryCard,
 }
 export type { ProductCardData } from './ProductCard'
 export type { LeadScoreData } from './LeadScoreCard'
@@ -28,6 +30,7 @@ export type { TicketData } from './TicketCard'
 export type { ServiceCardData } from './ServiceCard'
 export type { CaseStudyData } from './CaseStudyCard'
 export type { BookingCardData } from './BookingCard'
+export type { MemoryCardData } from './MemoryCard'
 
 const SIDE_PANEL_TOOLS = new Set([
   'search_products',
@@ -43,6 +46,7 @@ const SIDE_PANEL_TOOLS = new Set([
   'create_ticket',
   'check_status',
   'escalate_to_human',
+  'remember_context',
 ])
 const INLINE_TOOLS = new Set(['navigate_to_page'])
 
@@ -70,6 +74,7 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   get_skills: ServiceCard,
   get_case_study: CaseStudyCard,
   book_call: BookingCard,
+  remember_context: MemoryCard,
 }
 
 function ToolLoadingCard() {

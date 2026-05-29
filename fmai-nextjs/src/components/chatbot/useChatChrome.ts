@@ -36,6 +36,7 @@ const PANEL_TITLES: Record<ChatLocale, Record<string, string>> = {
     search_knowledge_base: 'Kennisbank',
     create_ticket: 'Aanvraag',
     check_status: 'Status',
+    remember_context: 'Wat Clyde onthoudt',
   },
   en: {
     get_skills: 'Our skills',
@@ -50,6 +51,7 @@ const PANEL_TITLES: Record<ChatLocale, Record<string, string>> = {
     search_knowledge_base: 'Knowledge base',
     create_ticket: 'Request',
     check_status: 'Status',
+    remember_context: 'What Clyde remembers',
   },
   es: {
     get_skills: 'Nuestras habilidades',
@@ -64,6 +66,7 @@ const PANEL_TITLES: Record<ChatLocale, Record<string, string>> = {
     search_knowledge_base: 'Base de conocimiento',
     create_ticket: 'Solicitud',
     check_status: 'Estado',
+    remember_context: 'Lo que Clyde recuerda',
   },
 }
 
