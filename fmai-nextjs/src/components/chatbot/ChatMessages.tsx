@@ -319,14 +319,23 @@ export function ChatMessages({
     for (let i = messages.length - 1; i >= 0; i--) {
       const msg = messages[i]
       if (msg.role !== 'assistant') continue
+      // Prefer a conversion card (pricing/qualify/case/booking/...) over the memory
+      // panel when both fire in one turn, so capturing a fact never steals the side
+      // panel (or its follow-up chips) from a higher-intent card. Memory only takes
+      // the panel when it is the sole side-panel tool of the turn.
+      let memoryCandidate: { toolName: string; data: unknown } | null = null
       for (let j = msg.parts.length - 1; j >= 0; j--) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
-        if (tn && part.state === 'output-available' && shouldUseSidePanel(tn))
-          return { toolName: tn, data: part.output }
+        if (!tn || part.state !== 'output-available' || !shouldUseSidePanel(tn)) continue
+        if (tn === 'remember_context') {
+          if (!memoryCandidate) memoryCandidate = { toolName: tn, data: part.output }
+          continue
+        }
+        return { toolName: tn, data: part.output }
       }
-      break
+      return memoryCandidate
     }
     return null
   }, [flagship, messages])
@@ -337,7 +346,6 @@ export function ChatMessages({
 
   // Accumulate every remember_context capture across the whole conversation into the
   // store so the MemoryCard can show the full known profile (not just the last call).
-  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- per-part as-any cast inside the loop blocks the compiler; messages/flagship deps are sufficient
   const accumulatedMemory = useMemo<MemoryProfile | null>(() => {
     if (!flagship) return null
     let acc: MemoryProfile = {}
@@ -355,8 +363,15 @@ export function ChatMessages({
     return acc
   }, [flagship, messages])
 
+  // Only push to the store when the captured content actually changes, so streaming
+  // token updates (which churn the messages array each tick) don't re-set the store.
+  const lastAppliedMemory = useRef('')
   useEffect(() => {
-    if (accumulatedMemory) setMemoryProfile(accumulatedMemory)
+    if (!accumulatedMemory) return
+    const key = JSON.stringify(accumulatedMemory)
+    if (key === lastAppliedMemory.current) return
+    lastAppliedMemory.current = key
+    setMemoryProfile(accumulatedMemory)
   }, [accumulatedMemory, setMemoryProfile])
 
   const lastFollowUpChips = useMemo(() => {

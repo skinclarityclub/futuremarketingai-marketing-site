@@ -48,7 +48,7 @@ export interface MemoryCardData {
   remembered?: Partial<MemoryProfile>
 }
 
-export function MemoryCard(_props: { data: MemoryCardData }) {
+export function MemoryCard() {
   const l = loc(useLocale())
   const profile = useChatbotStore((s) => s.memoryProfile)
   const labels = FIELD_LABELS[l]
