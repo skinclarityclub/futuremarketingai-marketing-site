@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
@@ -298,6 +299,7 @@ export function ChatMessages({
   const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
 
   const handleScroll = useCallback(() => {
@@ -332,6 +334,30 @@ export function ChatMessages({
   useEffect(() => {
     if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
   }, [lastSidePanelTool, openSidePanel])
+
+  // Accumulate every remember_context capture across the whole conversation into the
+  // store so the MemoryCard can show the full known profile (not just the last call).
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization -- per-part as-any cast inside the loop blocks the compiler; messages/flagship deps are sufficient
+  const accumulatedMemory = useMemo<MemoryProfile | null>(() => {
+    if (!flagship) return null
+    let acc: MemoryProfile = {}
+    for (const msg of messages) {
+      if (msg.role !== 'assistant') continue
+      for (const part of msg.parts as unknown[]) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const p = part as any
+        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
+          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
+          if (remembered) acc = mergeMemory(acc, remembered)
+        }
+      }
+    }
+    return acc
+  }, [flagship, messages])
+
+  useEffect(() => {
+    if (accumulatedMemory) setMemoryProfile(accumulatedMemory)
+  }, [accumulatedMemory, setMemoryProfile])
 
   const lastFollowUpChips = useMemo(() => {
     if (!flagship) return null
