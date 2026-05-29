@@ -7,7 +7,9 @@
 > - **WS3**: guided demo (bereikbaar vanuit hoofd-FAB op élke pagina) herschreven NL/agency — skincare+support scenario's weg, 2 agency-scenario's met alleen echte tools; demo-chrome locale-aware; off-context tools in BEIDE modi gestript; Marketing Machine volledig weg (tools `explain_module`/`get_roi_info` + KB `DEMO_GUIDE_TOPICS` + 6-skill ecommerce-topic; `demo-guide-tools.ts`/`demo-guide-kb.ts` verwijderd). `guided-demo.spec.ts` herschreven naar /nl (17/17 groen).
 > - **WS2**: live sweep nl/en/es (desktop+mobile, chromium) → badge ✓, data ✓; **bevinding+fix**: chat-CHROME hardcoded NL op en/es (sidebar-titel "Onze vaardigheden" boven Engelse kaart; chips NL én als bericht verstuurd). Nieuw centraal `useChatChrome()` (nl/en/es) — sidebar-titels, chips, knop-/aria-labels, "Nu online", loading/error, input-hint. Live bewezen /en "Our skills" + chips 3/3, /es "Nuestras habilidades" + chips 3/3.
 >
-> build groen, tsc clean (m.u.v. pre-existing lighthouse-spec). **Open nu:** cookie-banner-FAB UX op desktop (ClydePresence heeft lift-logica — verifieer of `lg:bottom-24` genoeg klaart); em-dashes in model-output; firefox/webkit live sweep; branch pushen/mergen.
+> - **Cookie-banner-FAB UX (GEFIXT, `aa84b3f`)**: bevestigd dat de banner (z-9999, ~154px) de FAB-klik op desktop onderschepte; `ClydePresence` lift naar `lg:bottom-44` + `z-[10000]`. Regressie `tests/e2e/cookie-fab.spec.ts` (3 viewports). Eerste-keer-bezoekers kunnen Clyde nu openen.
+>
+> **GEPUSHT** naar PR #12 (5 commits). build groen, tsc clean (m.u.v. pre-existing lighthouse-spec). **Open nu:** em-dashes in model-output; firefox/webkit live sweep (chromium gedaan); PR #12 mergen.
 
 ## 0. TL;DR
 
