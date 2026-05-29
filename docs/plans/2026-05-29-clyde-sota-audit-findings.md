@@ -26,7 +26,28 @@ Daarnaast een blokkerende UX-bug die het testen aanvankelijk onmogelijk maakte (
 
 > **Belangrijke code-ontdekking** (relevant voor toekomstige fixes): `createPersonaTools()` retourneert hard `flagshipTools` (ALLE tools) en negeert de `persona.tools{}`-whitelist in `clyde.ts` volledig. Die whitelist wordt enkel door de ongebruikte `executeToolCall`-backup gelezen. Tools wijzigen voor de live chat moet dus via `flagship-tools.ts` of (zoals F3) de engine-filter.
 
-## 2. Open — KRITIEK (client ziet dit in eerste 60s op `/nl`)
+## 1b. Vervolgsessie — "alles opgepakt" (i18n + overige fixes, bewezen)
+
+Alle resterende open punten zijn in een vervolgronde opgepakt op dezelfde branch. 22/22 regressie groen, tsc clean (m.u.v. de pre-existing lighthouse-spec). De secties §2-§4 hieronder beschrijven de oorspronkelijke bevindingen; onderstaande zijn nu gefixt.
+
+**Locale-architectuur (de #1 follow-up):** locale loopt nu van `usePersonaChat` (useLocale) naar request-context naar `engine` naar een per-request **tool-factory** `buildFlagshipTools(locale)`. Card-DATA is locale-gekeyd (nl/en/es):
+- **Pricing** (`tool-data.ts`): tiers met gelokaliseerde price-label + features. /nl toont nu "€499 per werkruimte/mnd", "Alle 12 vaardigheden inbegrepen" (geen `€998/mo` of Engels meer). en/es API-geverifieerd.
+- **Case study** (`concierge-tools.ts`): challenge/solution/results/testimonial in nl/en/es. /nl volledig NL, /en Engels (API-geverifieerd).
+- **Qualify** recommendations + nextSteps in nl/en/es. **book_call** url locale-aware.
+
+**Card-render (`cardI18n.ts` helper + 4 cards):**
+- Chrome-labels (headers, CTA's, trust-signals, "Populair") locale-aware in ServiceCard/LeadScoreCard/CaseStudyCard/BookingCard.
+- ROI-card: NL-getalformaat (€6.202 i.p.v. €6,202), "1 maand" i.p.v. "1 month", em-dash uit CTA, maand-uren i.p.v. week-uren onder /mnd-label. ROI tool: guard tegen deel-door-nul.
+- **`accent-secondary` → `accent-human`**: die token was nergens gedefinieerd; alle card-CTA-gradients renderden teal-only. Nu correct teal-naar-amber.
+
+**Overige:**
+- ProgressiveCTA: Engels naar NL, Calendly/`/contact` naar `/apply`.
+- Loading/error-fallback in de cards: NL.
+- complexity-detector: de `sonnet`-tier was aan haiku gewired (dead routing); nu echte `claude-sonnet-4-6` voor complexe/lange/diepe queries. **Kostennotitie:** verhoogt kosten/latency licht voor de minderheid complexe beurten; bewust gekozen voor conversatiekwaliteit (haiku maakte NL-vervoegingsfouten). Terugdraaien = sonnet weer op haiku-id.
+
+**Resteert (bewust gedeferd, lage prioriteit):** get_skills skill-beschrijvingen zijn NL op en/es; een paar ROI metric-labels NL op en/es; live/coming-soon-badge op de skills-card; em-dashes in model-output (prompt-regel mitigeert, geen harde render-strip); auto-greet vuurde niet in Playwright (verifieer in echte browser); TicketCard-token (removed-tool card); Calendly-restant in dode demo-guide `book_demo`.
+
+## 2. Open — KRITIEK (oorspronkelijke bevinding; pricing + case nu gefixt, zie §1b)
 
 | Bevinding | Bestand:regel | Bewijs / fix |
 |---|---|---|
