@@ -15,8 +15,9 @@ import {
   Copy,
   Check,
 } from 'lucide-react'
-import { ToolResultRenderer, shouldUseSidePanel, TOOL_FOLLOWUPS } from './tool-results'
+import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { useChatChrome } from './useChatChrome'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface ChatMessagesProps {
@@ -107,6 +108,7 @@ function TypingIndicator() {
 
 function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
   const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
+  const { viewDetails } = useChatChrome()
   return (
     <button
       type="button"
@@ -114,7 +116,7 @@ function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown 
       className="my-1 inline-flex items-center gap-1.5 text-xs text-accent-system hover:underline cursor-pointer"
     >
       <ExternalLink className="h-3 w-3" />
-      Bekijk details
+      {viewDetails}
     </button>
   )
 }
@@ -221,10 +223,11 @@ function FollowUpChips({
   chips: string[]
   onSelect: (chip: string) => void
 }) {
+  const { askFurther } = useChatChrome()
   return (
     <div className="mt-2 ml-1 space-y-1.5">
       <p className="text-[10px] font-medium uppercase tracking-wider text-text-faint">
-        Vraag verder
+        {askFurther}
       </p>
       <div className="flex flex-wrap gap-1.5">
         {chips.map((chip, i) => (
@@ -245,6 +248,7 @@ function FollowUpChips({
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
+  const { copy, copied: copiedLabel, copyAria } = useChatChrome()
   const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(text)
@@ -258,11 +262,11 @@ function CopyButton({ text }: { text: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      aria-label="Kopieer bericht"
+      aria-label={copyAria}
       className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
     >
       {copied ? <Check className="h-3 w-3 text-accent-system" /> : <Copy className="h-3 w-3" />}
-      {copied ? 'Gekopieerd' : 'Kopieer'}
+      {copied ? copiedLabel : copy}
     </button>
   )
 }
@@ -286,6 +290,7 @@ export function ChatMessages({
   const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
+  const chrome = useChatChrome()
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current
@@ -324,13 +329,13 @@ export function ChatMessages({
     if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
     // Tool-based chips take priority
-    if (lastSidePanelTool) return TOOL_FOLLOWUPS[lastSidePanelTool.toolName] ?? null
+    if (lastSidePanelTool) return chrome.followups(lastSidePanelTool.toolName)
     // Text-based chips fallback: parse CHIPS: line from last assistant message
     const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant')
     if (!lastAssistant) return null
     const chips = parseChipsFromText(extractText(lastAssistant))
     return chips.length > 0 ? chips : null
-  }, [flagship, lastSidePanelTool, status, messages])
+  }, [flagship, lastSidePanelTool, status, messages, chrome])
 
   const handleFollowUp = useCallback(
     (chip: string) => {
@@ -432,22 +437,22 @@ export function ChatMessages({
                 <button
                   type="button"
                   onClick={() => onEditMessage(message.id, messageText)}
-                  aria-label="Bewerk dit bericht"
+                  aria-label={chrome.editAria}
                   className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <Pencil className="h-3 w-3" />
-                  Bewerk
+                  {chrome.edit}
                 </button>
               )}
               {!isUser && isLastAssistant && onRegenerate && !isStreaming && (
                 <button
                   type="button"
                   onClick={onRegenerate}
-                  aria-label="Opnieuw genereren"
+                  aria-label={chrome.regenerateAria}
                   className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <RotateCw className="h-3 w-3" />
-                  Opnieuw genereren
+                  {chrome.regenerate}
                 </button>
               )}
             </div>

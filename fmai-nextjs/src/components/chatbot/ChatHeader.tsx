@@ -3,6 +3,7 @@
 import { Minus, SquarePen, X } from 'lucide-react'
 import { useCallback, useRef } from 'react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
+import { useChatChrome } from './useChatChrome'
 
 interface ChatHeaderProps {
   personaName: string
@@ -44,6 +45,7 @@ export function ChatHeader({
   hasMessages = false,
 }: ChatHeaderProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
+  const chrome = useChatChrome()
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Escape' && closeRef.current) {
@@ -84,7 +86,7 @@ export function ChatHeader({
             {personaName}
           </span>
           <span className="text-xs text-text-secondary">
-            Nu online
+            {chrome.online}
             {badge ? <span className="text-text-faint"> · {badge.toLowerCase()}</span> : null}
           </span>
         </div>
@@ -103,7 +105,7 @@ export function ChatHeader({
               <button
                 type="button"
                 onClick={onNewChat}
-                aria-label="Nieuwe chat starten"
+                aria-label={chrome.newChatAria}
                 className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
               >
                 <SquarePen className="h-4 w-4" />
@@ -112,7 +114,7 @@ export function ChatHeader({
             <button
               type="button"
               onClick={onMinimize}
-              aria-label="Minimaliseer chat"
+              aria-label={chrome.minimizeAria}
               className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
             >
               <Minus className="h-4 w-4" />
@@ -121,7 +123,7 @@ export function ChatHeader({
               ref={closeRef}
               type="button"
               onClick={onClose}
-              aria-label="Sluit chat"
+              aria-label={chrome.closeAria}
               className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
             >
               <X className="h-4 w-4" />
