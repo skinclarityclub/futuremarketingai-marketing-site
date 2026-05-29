@@ -25,6 +25,22 @@ async function openChat(page: import('@playwright/test').Page) {
   return panel
 }
 
+// The cookie-consent banner (fixed bottom-0, z-9999) overlays the Clyde FAB
+// (z-40, lg:bottom-24) and intercepts the open click. Pre-seed consent so the
+// banner never renders and the FAB is reachable.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    try {
+      window.localStorage.setItem(
+        'cookieConsent',
+        JSON.stringify({ functional: true, analytics: true, marketing: true })
+      )
+    } catch {
+      /* storage disabled */
+    }
+  })
+})
+
 test.describe('Floating ChatWidget', () => {
   test('should show floating chat button on homepage', async ({ page }) => {
     await page.goto('/en')
@@ -44,7 +60,7 @@ test.describe('Floating ChatWidget', () => {
     await page.goto('/en')
     const panel = await openChat(page)
 
-    const closeFab = page.locator('button[aria-label="Close chat"]').first()
+    const closeFab = page.locator('button[aria-label^="Sluit chat"]').first()
     await expect(closeFab).toBeVisible()
     await expect(panel).toBeVisible()
   })
@@ -62,7 +78,7 @@ test.describe('Floating ChatWidget', () => {
     await page.goto('/en')
     await openChat(page)
 
-    const closeFab = page.locator('button[aria-label="Close chat"]').first()
+    const closeFab = page.locator('button[aria-label^="Sluit chat"]').first()
     await closeFab.click({ force: true })
 
     const panel = page.locator('[data-chatwidget-panel]')
@@ -77,7 +93,7 @@ test.describe('Floating ChatWidget', () => {
 
     const ariaLabel = await panel.getAttribute('aria-label')
     expect(ariaLabel).toBeTruthy()
-    expect(ariaLabel).toContain('Chat with')
+    expect(ariaLabel).toContain('Chat met')
   })
 
   test('should have message input inside chat panel', async ({ page }) => {
