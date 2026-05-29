@@ -68,10 +68,16 @@ export function ClydePresence({
   const isWhispering = idleStage === 'whispering' && whisper.length > 0
   const ariaLabel = `Open chat met Clyde${isWhispering ? ` — ${whisper}` : ''}`
 
-  // Lift above cookie banner on mobile until consent is recorded.
+  // Lift clear of the cookie banner until consent is recorded. The banner is
+  // fixed bottom-0 z-[9999] and ~154px tall on desktop, so the old lg:bottom-24
+  // (96px) left the FAB *inside* the banner — the banner intercepted the open
+  // click and a first-time desktop visitor could not open Clyde. Lift to
+  // lg:bottom-44 (176px) to clear the collapsed banner, and raise the FAB above
+  // the banner's z-index as a safety net for the taller expanded banner.
   const bottomClass = cookieBannerVisible
-    ? 'bottom-80 lg:bottom-24'
+    ? 'bottom-80 lg:bottom-44'
     : 'bottom-6 lg:bottom-8'
+  const zClass = cookieBannerVisible ? 'z-[10000]' : 'z-40'
 
   return (
     <button
@@ -80,7 +86,7 @@ export function ClydePresence({
       aria-label={ariaLabel}
       data-hidden={keyboardOpen}
       data-stage={idleStage}
-      className={`clyde-fab group fixed right-6 ${bottomClass} z-40 inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md transition-[bottom,box-shadow,transform] duration-300 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system data-[hidden=true]:pointer-events-none data-[hidden=true]:opacity-0`}
+      className={`clyde-fab group fixed right-6 ${bottomClass} ${zClass} inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md transition-[bottom,box-shadow,transform] duration-300 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system data-[hidden=true]:pointer-events-none data-[hidden=true]:opacity-0`}
       style={{ boxShadow: 'var(--shadow-glow)' }}
     >
       <LogoSynapse size={22} ariaLabel="" />
