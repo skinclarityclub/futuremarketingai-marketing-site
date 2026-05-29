@@ -1,6 +1,6 @@
 # Clyde Live Memory Panel — Design (v1, within-session)
 
-> Status: **approved** 2026-05-29. Brainstormed with Daley. Next step: implementation plan via `writing-plans`. No code until the plan exists.
+> Status: **implemented** 2026-05-29 (v1 within-session). Branch `feature/clyde-i18n-greet-observability`, commits `7c15207`..`199f462`. Live capture+recall e2e passing. Plan: `2026-05-29-clyde-memory-panel.md`.
 
 ## Why
 
