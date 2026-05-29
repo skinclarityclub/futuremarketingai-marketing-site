@@ -1,6 +1,13 @@
 # Clyde — Handover voor volgende sessie ("we gaan door met Clyde")
 
-> Status na 2026-05-29: SOTA-audit uitgevoerd, criticals + i18n + overige fixes gedaan, bewezen (22/22 regressie groen), gecommit + gepusht. **PR #12** open op `main`. Deze sessie kan direct verder met polish/features op Clyde.
+> Status na 2026-05-29: SOTA-audit uitgevoerd, criticals + i18n + overige fixes gedaan, bewezen (22/22 regressie groen), gecommit. **PR #12** open op `main`. Deze sessie kan direct verder met polish/features op Clyde.
+
+> **Sessie 3 update (2026-05-29 vervolg):** §4.1+4.2 (i18n/data + coming-soon badge), §4.5 (demo cleanup) en §4.4 (live sweep) opgepakt + bewezen. 3 extra commits op de branch (`048b32b` WS1, `dc40736` WS3, `1d693c2` WS2), nog NIET gepusht. Kort:
+> - **WS1**: nieuw `src/lib/chatbot/skill-i18n.ts` → `get_skills` nl/en/es; coming-soon-badge rendert in `ServiceCard`; ROI-labels via `cardI18n`. Live geverifieerd 3 locales.
+> - **WS3**: guided demo (bereikbaar vanuit hoofd-FAB op élke pagina) herschreven NL/agency — skincare+support scenario's weg, 2 agency-scenario's met alleen echte tools; demo-chrome locale-aware; off-context tools in BEIDE modi gestript; Marketing Machine volledig weg (tools `explain_module`/`get_roi_info` + KB `DEMO_GUIDE_TOPICS` + 6-skill ecommerce-topic; `demo-guide-tools.ts`/`demo-guide-kb.ts` verwijderd). `guided-demo.spec.ts` herschreven naar /nl (17/17 groen).
+> - **WS2**: live sweep nl/en/es (desktop+mobile, chromium) → badge ✓, data ✓; **bevinding+fix**: chat-CHROME hardcoded NL op en/es (sidebar-titel "Onze vaardigheden" boven Engelse kaart; chips NL én als bericht verstuurd). Nieuw centraal `useChatChrome()` (nl/en/es) — sidebar-titels, chips, knop-/aria-labels, "Nu online", loading/error, input-hint. Live bewezen /en "Our skills" + chips 3/3, /es "Nuestras habilidades" + chips 3/3.
+>
+> build groen, tsc clean (m.u.v. pre-existing lighthouse-spec). **Open nu:** cookie-banner-FAB UX op desktop (ClydePresence heeft lift-logica — verifieer of `lg:bottom-24` genoeg klaart); em-dashes in model-output; firefox/webkit live sweep; branch pushen/mergen.
 
 ## 0. TL;DR
 

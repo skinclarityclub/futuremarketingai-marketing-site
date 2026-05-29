@@ -47,6 +47,17 @@ Alle resterende open punten zijn in een vervolgronde opgepakt op dezelfde branch
 
 **Resteert (bewust gedeferd, lage prioriteit):** get_skills skill-beschrijvingen zijn NL op en/es; een paar ROI metric-labels NL op en/es; live/coming-soon-badge op de skills-card; em-dashes in model-output (prompt-regel mitigeert, geen harde render-strip); auto-greet vuurde niet in Playwright (verifieer in echte browser); TicketCard-token (removed-tool card); Calendly-restant in dode demo-guide `book_demo`.
 
+## 1c. Sessie 3 — i18n-data + demo-cleanup + chrome-i18n (bewezen)
+
+Vervolg op §1b. Drie van de gedeferde punten zijn alsnog opgepakt + bewezen, 3 commits op de branch (`048b32b`, `dc40736`, `1d693c2`):
+
+- **get_skills nl/en/es** (`skill-i18n.ts`): overview + single-skill beschrijvingen + features locale-aware (en/es overlay, NL uit SKILLS_DATA). API-geverifieerd 3 locales.
+- **Coming-soon-badge**: `ServiceCard` rendert `status==='coming_soon'` als "Binnenkort/Coming soon/Próximamente" (live bevestigd op /en + /es). ROI metric-labels via `cardI18n`.
+- **Guided demo NL/agency**: skincare + support scenario's verwijderd, 2 agency-scenario's met alleen echte tools; demo-chrome + entry-knop locale-aware; off-context tools in BEIDE modi gestript. **Marketing Machine volledig weg** — `explain_module`+`get_roi_info` uit flagship-tools, `DEMO_GUIDE_TOPICS` uit flagship-kb (dit lekte het 7-modulen-product in Clyde's tekst, ook zonder de tool), 6-skill topic uit ecommerce-kb, `demo-guide-tools.ts`+`demo-guide-kb.ts` verwijderd. `guided-demo.spec.ts` herschreven naar /nl (17/17 groen).
+- **Chat-chrome i18n** (`useChatChrome.ts`, sweep-bevinding): sidebar-titel + follow-up-chips + knop-/aria-labels waren hardcoded NL op en/es (titel "Onze vaardigheden" boven Engelse kaart; chips NL én als bericht verstuurd). Nu nl/en/es. Live bewezen /en "Our skills" + chips 3/3, /es "Nuestras habilidades" + chips 3/3.
+
+Resteert: cookie-banner-FAB op desktop (lift-logica bestaat, visueel verifiëren), em-dashes in output, firefox/webkit live sweep, branch push/merge. Zie `2026-05-29-clyde-next-session-handover.md`.
+
 ## 2. Open — KRITIEK (oorspronkelijke bevinding; pricing + case nu gefixt, zie §1b)
 
 | Bevinding | Bestand:regel | Bewijs / fix |
