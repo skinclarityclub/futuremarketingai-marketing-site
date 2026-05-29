@@ -9,6 +9,7 @@ import { routeToKnowledge } from './topic-router'
 import { buildSystemMessages } from './prompt-builder'
 import { detectComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
+import { normalizeChatbotLocale } from './tool-data'
 import type { ChatRequest } from './types'
 
 function getClientIp(request: Request): string {
@@ -121,9 +122,10 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     const complexity = detectComplexity(userMessageText, historyLength, persona.complexityKeywords)
     const modelId = MODEL_IDS[complexity]
 
-    // 11. Create persona tools (with context-aware filtering for flagship)
-    // During demo mode, all tools are needed regardless of page context
-    let tools = createPersonaTools(persona)
+    // 11. Create persona tools (locale-aware so cards render in the visitor's
+    // language; context-aware filtering for flagship below).
+    const locale = normalizeChatbotLocale(context?.language)
+    let tools = createPersonaTools(persona, locale)
     // For Clyde: all tools always available (no page-based filtering)
     // For demo mode: exclude navigate_to_page (catches too many queries)
     if (persona.id === 'clyde' || persona.id === 'flagship') {

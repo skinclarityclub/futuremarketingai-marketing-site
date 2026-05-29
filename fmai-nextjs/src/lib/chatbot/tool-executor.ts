@@ -3,26 +3,24 @@ import type { Tool } from 'ai'
 import { tool } from 'ai'
 import { z } from 'zod'
 import { getPersona } from './persona-router'
-import { flagshipTools } from './tools/flagship-tools'
+import { buildFlagshipTools } from './tools/flagship-tools'
+import type { ChatbotLocale } from './tool-data'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyToolRecord = Record<string, Tool<any, any>>
 
-/**
- * Maps persona ID to its AI SDK tool definitions.
- * Clyde uses the flagship tool set (all 17 tools).
- * 'flagship' kept as alias for backward compatibility with persisted store.
- */
-const PERSONA_TOOLS: Record<string, AnyToolRecord> = {
-  clyde: flagshipTools,
-  flagship: flagshipTools,
-}
+const FLAGSHIP_PERSONA_IDS = new Set(['clyde', 'flagship'])
 
 /**
- * Factory that takes a PersonaConfig and returns AI SDK tool() wrapped versions.
+ * Returns AI SDK tool() definitions for a persona, built for the given locale so
+ * card-producing tools render in the visitor's language. Clyde uses the flagship
+ * tool set; 'flagship' is kept as an alias for the persisted store.
  */
-export function createPersonaTools(persona: PersonaConfig): AnyToolRecord {
-  return PERSONA_TOOLS[persona.id] ?? {}
+export function createPersonaTools(
+  persona: PersonaConfig,
+  locale: ChatbotLocale = 'nl'
+): AnyToolRecord {
+  return FLAGSHIP_PERSONA_IDS.has(persona.id) ? buildFlagshipTools(locale) : {}
 }
 
 /**
@@ -40,7 +38,7 @@ export async function executeToolCall(
     throw new Error(`Tool ${toolName} not available for persona ${personaId}`)
   }
 
-  const tools = PERSONA_TOOLS[personaId]
+  const tools = FLAGSHIP_PERSONA_IDS.has(personaId) ? buildFlagshipTools('nl') : undefined
   if (!tools || !(toolName in tools)) {
     return { error: `Tool ${toolName} not implemented for persona ${personaId}` }
   }
