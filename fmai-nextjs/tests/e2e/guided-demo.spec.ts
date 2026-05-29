@@ -34,11 +34,13 @@ async function waitForChatButton(page: Page) {
 }
 
 // Helper: open the chat panel.
+// Panel timeout is generous (10s): the widget lazy-imports ChatWidgetIsland on
+// click and webkit on Windows is slow to render that chunk.
 async function openChat(page: Page) {
   const btn = await waitForChatButton(page)
   await btn.click({ force: true })
   const panel = page.locator('[data-chatwidget-panel]')
-  await expect(panel).toBeVisible({ timeout: 5000 })
+  await expect(panel).toBeVisible({ timeout: 10000 })
   return panel
 }
 
@@ -222,7 +224,7 @@ test.describe('Guided Demo — End Demo Flow', () => {
     // Reopen — demo state should be preserved
     const openBtn = page.locator('button[aria-label^="Open chat"]').first()
     await openBtn.click({ force: true })
-    await expect(panel).toBeVisible({ timeout: 5000 })
+    await expect(panel).toBeVisible({ timeout: 10000 })
 
     // Demo should still be in choosing mode
     await expect(page.getByText('Kies een scenario om te verkennen:')).toBeVisible({ timeout: 5000 })

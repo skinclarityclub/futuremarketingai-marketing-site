@@ -45,8 +45,9 @@ for (const vp of VIEWPORTS) {
 
     expect(await fabReceivesClick(page)).toBe(true)
 
-    // A real (non-forced) click must open the panel.
+    // A real (non-forced) click must open the panel (generous timeout: the
+    // widget lazy-imports ChatWidgetIsland and webkit is slow to render it).
     await fab.click()
-    await expect(page.locator('[data-chatwidget-panel]')).toBeVisible({ timeout: 5000 })
+    await expect(page.locator('[data-chatwidget-panel]')).toBeVisible({ timeout: 10000 })
   })
 }
