@@ -54,10 +54,17 @@ export function loadMemory(): MemoryProfile {
   }
 }
 
-/** Persist the profile (consent-gated, storage-safe). No-op without consent. */
+/** Persist the profile (consent-gated, storage-safe). No-op without consent.
+ *  An empty profile removes the key instead of writing an empty record, so the
+ *  persist-on-change effect that fires right after "Wis geheugen" leaves no trace
+ *  (clearMemory + saveMemory({}) are idempotent). */
 export function saveMemory(profile: MemoryProfile): void {
   if (typeof window === 'undefined' || !hasMemoryConsent()) return
   try {
+    if (Object.keys(profile).length === 0) {
+      window.localStorage.removeItem(MEMORY_STORAGE_KEY)
+      return
+    }
     window.localStorage.setItem(MEMORY_STORAGE_KEY, serializeMemory(profile))
   } catch {
     /* quota / private mode: silently skip */
