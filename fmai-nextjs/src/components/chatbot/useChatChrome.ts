@@ -114,6 +114,7 @@ interface ChatChromeLabels {
   regenerate: string
   regenerateAria: string
   online: string
+  memoryAria: string
   newChatAria: string
   minimizeAria: string
   closeAria: string
@@ -135,6 +136,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Opnieuw genereren',
     regenerateAria: 'Opnieuw genereren',
     online: 'Nu online',
+    memoryAria: 'Bekijk wat Clyde onthoudt',
     newChatAria: 'Nieuwe chat starten',
     minimizeAria: 'Minimaliseer chat',
     closeAria: 'Sluit chat',
@@ -154,6 +156,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Regenerate',
     regenerateAria: 'Regenerate',
     online: 'Online now',
+    memoryAria: 'View what Clyde remembers',
     newChatAria: 'Start new chat',
     minimizeAria: 'Minimize chat',
     closeAria: 'Close chat',
@@ -173,6 +176,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Regenerar',
     regenerateAria: 'Regenerar',
     online: 'En línea',
+    memoryAria: 'Ver lo que Clyde recuerda',
     newChatAria: 'Iniciar nuevo chat',
     minimizeAria: 'Minimizar chat',
     closeAria: 'Cerrar chat',
