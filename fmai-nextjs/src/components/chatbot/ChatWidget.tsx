@@ -2,7 +2,7 @@
 
 import { useEffect, useCallback, useState, useRef } from 'react'
 import type { UIMessage } from 'ai'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
 import { usePersonaChat } from '@/hooks/usePersonaChat'
@@ -14,7 +14,7 @@ import { ChatInput } from './ChatInput'
 import { SidePanel } from './SidePanel'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
-import { DEMO_SCENARIOS } from './demo/scenarios'
+import { getDemoScenarios } from './demo/scenarios'
 
 interface ChatWidgetProps {
   mode: 'floating' | 'embedded'
@@ -43,6 +43,7 @@ export function ChatWidget({
   proactiveFollowupMessage,
 }: ChatWidgetProps) {
   const t = useTranslations('chat.widget')
+  const locale = useLocale()
   const {
     messages,
     sendMessage,
@@ -67,7 +68,7 @@ export function ChatWidget({
   const startDemo = useChatbotStore((s) => s.startDemo)
 
   const isFlagship = personaId === 'clyde' || personaId === 'flagship'
-  const demoScenario = DEMO_SCENARIOS.find((s) => s.id === demoScenarioId)
+  const demoScenario = getDemoScenarios(locale).find((s) => s.id === demoScenarioId)
 
   const handleSend = useCallback(
     (text: string) => {

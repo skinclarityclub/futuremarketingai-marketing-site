@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useCallback, useMemo, useState } from 'react'
+import { useLocale } from 'next-intl'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import {
@@ -151,7 +152,15 @@ interface WelcomeStateProps {
   onStartDemo?: () => void
 }
 
+const TOUR_LABEL: Record<string, string> = {
+  nl: 'Of start een rondleiding →',
+  en: 'Or take a guided tour →',
+  es: 'O haz un recorrido guiado →',
+}
+
 function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: WelcomeStateProps) {
+  const locale = useLocale()
+  const tourLabel = TOUR_LABEL[locale] ?? TOUR_LABEL.nl
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-6 px-4 py-6 text-center">
       <span
@@ -176,7 +185,7 @@ function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: Welcom
             onClick={onStartDemo}
             className="text-sm text-accent-system underline-offset-4 transition-colors hover:underline"
           >
-            Of start een rondleiding →
+            {tourLabel}
           </button>
         )}
       </div>

@@ -5,7 +5,6 @@ import { buildConciergeTools } from './concierge-tools'
 import { ecommerceTools } from './ecommerce-tools'
 import { buildLeadgenTools } from './leadgen-tools'
 import { supportTools } from './support-tools'
-import { demoGuideTools } from './demo-guide-tools'
 import type { ChatbotLocale } from '@/lib/chatbot/tool-data'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -79,8 +78,14 @@ const navigate_to_page = tool({
 
 /**
  * Flagship tool set for Clyde, built per request so card-producing tools render
- * in the visitor's locale. The e-commerce/support/demo-guide tools remain in the
- * set for guided-demo mode; engine.ts strips them in normal agency chat.
+ * in the visitor's locale.
+ *
+ * The legacy "Marketing Machine" tools (explain_module, get_roi_info) were
+ * removed entirely — they described a non-existent 7-module product. The
+ * e-commerce/support tools stay defined here but engine.ts strips them in BOTH
+ * normal and demo chat: this is a B2B agency product, so skincare ProductCards
+ * and support tickets are always off-context. The guided demo uses only the real
+ * agency tools below.
  */
 export function buildFlagshipTools(locale: ChatbotLocale): AnyToolRecord {
   const concierge = buildConciergeTools(locale)
@@ -105,9 +110,6 @@ export function buildFlagshipTools(locale: ChatbotLocale): AnyToolRecord {
     create_ticket: supportTools.create_ticket,
     check_status: supportTools.check_status,
     escalate_to_human: supportTools.escalate_to_human,
-
-    explain_module: demoGuideTools.explain_module,
-    get_roi_info: demoGuideTools.get_roi_info,
   }
 }
 

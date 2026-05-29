@@ -3,16 +3,13 @@ import { test, expect, type Page } from '@playwright/test'
 /**
  * Full-Flow E2E Tests: Guided Demo Mode — Next.js site
  *
- * Ported from Vite site demo-full-flow.spec.ts.
- * Tests each demo scenario end-to-end with real AI responses.
- * Requires ANTHROPIC_API_KEY in environment.
+ * Exercises each rewritten agency scenario end-to-end with real AI responses.
+ * Two scenarios remain: "The New Client Journey" (6 steps) and "Scaling Your
+ * Portfolio" (4 steps). Both use only the real agency tools.
  *
- * AI responses are non-deterministic, so tests include 1 retry.
+ * Requires ANTHROPIC_API_KEY in environment. AI responses are non-deterministic,
+ * so tests include 1 retry.
  */
-// Skipped unless ANTHROPIC_API_KEY is set — these tests exercise the live
-// guided-demo with real AI streaming and are intentionally excluded from
-// local + CI default runs. To re-enable: ANTHROPIC_API_KEY=... npx playwright
-// test demo-full-flow.spec.ts
 test.describe.configure({ retries: 1, mode: 'serial' })
 test.skip(
   !process.env.ANTHROPIC_API_KEY,
@@ -48,7 +45,7 @@ async function openChat(page: Page) {
 async function startDemoAndSelectScenario(page: Page, scenarioText: string) {
   const panel = await openChat(page)
 
-  const tourBtn = page.getByRole('button', { name: /Take a guided tour/i })
+  const tourBtn = page.getByRole('button', { name: /take a guided tour/i })
   await expect(tourBtn).toBeVisible({ timeout: 5_000 })
   await tourBtn.click()
 
@@ -68,7 +65,7 @@ async function waitForDemoStepComplete(page: Page) {
     .locator('[data-chatwidget-panel]')
     .locator('button')
     .filter({
-      hasText: /(Show|Book|Check|End|Try)/i,
+      hasText: /(Show|Book|Assess|Skip|End|Try)/i,
     })
     .first()
 
@@ -116,8 +113,8 @@ test.describe('Full Flow: New Client Journey', () => {
 
     await startDemoAndSelectScenario(page, 'The New Client Journey')
 
-    // Step 1: "What services does FutureMarketingAI offer?" → get_services
-    await expect(page.getByText(/What services does FutureMarketingAI offer/i)).toBeVisible({
+    // Step 1: "What skills does FutureMarketingAI offer?" → get_skills
+    await expect(page.getByText(/What skills does FutureMarketingAI offer/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
@@ -127,8 +124,8 @@ test.describe('Full Flow: New Client Journey', () => {
     }
     await clickContinueDemo(page)
 
-    // Step 2: "Do you have any case studies?" → get_case_study
-    await expect(page.getByText(/case studies/i).last()).toBeVisible({
+    // Step 2: "Do you have a case study?" → get_case_study
+    await expect(page.getByText(/case study/i).last()).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
@@ -149,14 +146,14 @@ test.describe('Full Flow: New Client Journey', () => {
     await clickContinueDemo(page)
 
     // Step 5: Lead qualification → qualify_lead + CHECKPOINT
-    await expect(page.getByText(/evaluate our needs/i)).toBeVisible({
+    await expect(page.getByText(/evaluate our fit/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
     await handleCheckpoint(page, 'Book a call')
 
-    // Step 6: "I'd like to book a discovery call" → book_call
-    await expect(page.getByText(/book a discovery call/i).last()).toBeVisible({
+    // Step 6: "I'd like to book an intro call" → book_call
+    await expect(page.getByText(/book an intro call/i).last()).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
 
@@ -167,97 +164,40 @@ test.describe('Full Flow: New Client Journey', () => {
 })
 
 // ---------------------------------------------------------------------------
-// SCENARIO 2: E-commerce Brand in Action (6 steps)
+// SCENARIO 2: Scaling Your Portfolio (4 steps)
 // ---------------------------------------------------------------------------
-test.describe('Full Flow: E-commerce Brand', () => {
-  test.use({ viewport: { width: 1440, height: 900 } })
-
-  test('complete scenario end-to-end through all 6 steps', async ({ page }) => {
-    test.setTimeout(STEP_TIMEOUT * 8)
-    await page.goto('/en')
-
-    await startDemoAndSelectScenario(page, 'E-commerce Brand in Action')
-
-    // Step 1: skincare products → search_products
-    await expect(page.getByText(/skincare products/i)).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-    await waitForDemoStepComplete(page)
-    await clickContinueDemo(page)
-
-    // Step 2: morning/evening routine → build_routine + CHECKPOINT
-    await expect(page.getByText(/morning and evening routine/i)).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-    await waitForDemoStepComplete(page)
-    await handleCheckpoint(page, 'Show Marketing Machine')
-
-    // Step 3: Marketing Machine modules → explain_module
-    await expect(page.getByText(/Marketing Machine modules/i)).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-    await waitForDemoStepComplete(page)
-    await clickContinueDemo(page)
-
-    // Step 4: ROI → get_roi_info + CHECKPOINT
-    await expect(page.getByText(/Calculate the ROI/i)).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-    await waitForDemoStepComplete(page)
-    await handleCheckpoint(page, 'Show case study')
-
-    // Step 5: case study → get_case_study
-    await expect(page.getByText(/case study client/i)).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-    await waitForDemoStepComplete(page)
-    await clickContinueDemo(page)
-
-    // Step 6: booking → book_call
-    await expect(page.getByText(/Book a demo/i).last()).toBeVisible({
-      timeout: MESSAGE_APPEAR_TIMEOUT,
-    })
-
-    const completionCard = page.getByText(/Demo Complete/i)
-    await expect(completionCard).toBeVisible({ timeout: AI_RESPONSE_TIMEOUT })
-  })
-})
-
-// ---------------------------------------------------------------------------
-// SCENARIO 3: Client Support Experience (4 steps)
-// ---------------------------------------------------------------------------
-test.describe('Full Flow: Client Support', () => {
+test.describe('Full Flow: Scaling Your Portfolio', () => {
   test.use({ viewport: { width: 1440, height: 900 } })
 
   test('complete scenario end-to-end through all 4 steps', async ({ page }) => {
     test.setTimeout(STEP_TIMEOUT * 6)
     await page.goto('/en')
 
-    await startDemoAndSelectScenario(page, 'Client Support Experience')
+    await startDemoAndSelectScenario(page, 'Scaling Your Portfolio')
 
-    // Step 1: billing → search_knowledge_base
-    await expect(page.getByText(/help with my billing/i)).toBeVisible({
+    // Step 1: brand-voice separation → get_skills
+    await expect(page.getByText(/keep each brand voice separate/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
     await clickContinueDemo(page)
 
-    // Step 2: support ticket → create_ticket + CHECKPOINT
-    await expect(page.getByText(/create a support ticket/i)).toBeVisible({
+    // Step 2: ROI → get_roi_estimate + CHECKPOINT
+    await expect(page.getByText(/save in time for a team of 5/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
-    await handleCheckpoint(page, 'Check ticket status')
+    await handleCheckpoint(page, 'Assess my fit')
 
-    // Step 3: ticket status → check_status
-    await expect(page.getByText(/check the status/i)).toBeVisible({
+    // Step 3: qualify → qualify_lead + CHECKPOINT
+    await expect(page.getByText(/Evaluate our fit/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
-    await clickContinueDemo(page)
+    await handleCheckpoint(page, 'Book a call')
 
-    // Step 4: escalation → escalate_to_human
-    await expect(page.getByText(/speak to someone/i)).toBeVisible({
+    // Step 4: booking → book_call
+    await expect(page.getByText(/I want to book a call/i).last()).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
 
@@ -269,24 +209,24 @@ test.describe('Full Flow: Client Support', () => {
 // ---------------------------------------------------------------------------
 // CROSS-SCENARIO TESTS
 // ---------------------------------------------------------------------------
-test.describe('Demo Flow — Skip to Booking', () => {
+test.describe('Demo Flow — End at Checkpoint', () => {
   test.use({ viewport: { width: 1440, height: 900 } })
 
-  test('skip-to-booking at first checkpoint ends demo', async ({ page }) => {
+  test('"End demo" at a checkpoint ends the demo', async ({ page }) => {
     test.setTimeout(STEP_TIMEOUT * 4)
     await page.goto('/en')
 
-    await startDemoAndSelectScenario(page, 'Client Support Experience')
+    await startDemoAndSelectScenario(page, 'Scaling Your Portfolio')
 
-    // Step 1
-    await expect(page.getByText(/help with my billing/i)).toBeVisible({
+    // Step 1 (no checkpoint)
+    await expect(page.getByText(/keep each brand voice separate/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
     await clickContinueDemo(page)
 
     // Step 2 with checkpoint
-    await expect(page.getByText(/create a support ticket/i)).toBeVisible({
+    await expect(page.getByText(/save in time for a team of 5/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
@@ -311,34 +251,34 @@ test.describe('Demo Flow — Completion Card Actions', () => {
     test.setTimeout(STEP_TIMEOUT * 6)
     await page.goto('/en')
 
-    await startDemoAndSelectScenario(page, 'Client Support Experience')
+    await startDemoAndSelectScenario(page, 'Scaling Your Portfolio')
 
     // Run through all 4 steps
-    await expect(page.getByText(/help with my billing/i)).toBeVisible({
+    await expect(page.getByText(/keep each brand voice separate/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
     await clickContinueDemo(page)
 
-    await expect(page.getByText(/create a support ticket/i)).toBeVisible({
+    await expect(page.getByText(/save in time for a team of 5/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
-    await handleCheckpoint(page, 'Check ticket status')
+    await handleCheckpoint(page, 'Assess my fit')
 
-    await expect(page.getByText(/check the status/i)).toBeVisible({
+    await expect(page.getByText(/Evaluate our fit/i)).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
     await waitForDemoStepComplete(page)
-    await clickContinueDemo(page)
+    await handleCheckpoint(page, 'Book a call')
 
-    await expect(page.getByText(/speak to someone/i)).toBeVisible({
+    await expect(page.getByText(/I want to book a call/i).last()).toBeVisible({
       timeout: MESSAGE_APPEAR_TIMEOUT,
     })
 
     // Completion card should show
     await expect(page.getByText(/Demo Complete/i)).toBeVisible({ timeout: AI_RESPONSE_TIMEOUT })
-    await expect(page.getByText(/Client Support Experience/i).last()).toBeVisible()
+    await expect(page.getByText(/Scaling Your Portfolio/i).last()).toBeVisible()
 
     // Action buttons
     await expect(page.getByRole('button', { name: /Try another/i })).toBeVisible()
