@@ -62,6 +62,14 @@ function stripChipsLine(text: string): string {
   return text.replace(/\n*CHIPS:[\s\S]*$/, '').trimEnd()
 }
 
+/** Hard guarantee against em-dashes in Clyde's user-facing text. The persona
+ *  prompt discourages them, but haiku still emits them in lists; this render-
+ *  layer normalization replaces every em-dash (and its surrounding spaces) with
+ *  a comma so the bubble — and copied text — never shows one. */
+function normalizeDashes(text: string): string {
+  return text.replace(/\s*—\s*/g, ', ')
+}
+
 function MarkdownContent({ text }: { text: string }) {
   return (
     <div className="text-sm leading-relaxed [&_a]:text-accent-system [&_a]:hover:underline [&_ol]:list-decimal [&_ol]:pl-4 [&_ul]:list-disc [&_ul]:pl-4">
@@ -79,7 +87,7 @@ function MarkdownContent({ text }: { text: string }) {
           },
         }}
       >
-        {text}
+        {normalizeDashes(text)}
       </ReactMarkdown>
     </div>
   )
@@ -431,7 +439,7 @@ export function ChatMessages({
                 </div>
               )}
               {!isUser && messageText.length > 0 && (
-                <CopyButton text={stripChipsLine(messageText)} />
+                <CopyButton text={normalizeDashes(stripChipsLine(messageText))} />
               )}
               {isUser && onEditMessage && messageText.length > 0 && (
                 <button
