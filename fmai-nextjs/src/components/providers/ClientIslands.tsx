@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import { FloatingChatTrigger } from '@/components/chatbot/FloatingChatTrigger'
 import { CalendlyTrigger } from '@/components/interactive/CalendlyTrigger'
 import { BookingTrigger } from '@/components/booking/BookingTrigger'
+import { BackToTop } from '@/components/common/BackToTop'
 
 /**
  * ClientIslands -- mounts interaction-driven lightweight triggers on
@@ -63,6 +64,7 @@ export function ClientIslands() {
       <FloatingChatTrigger />
       <CalendlyTrigger />
       <BookingTrigger />
+      <BackToTop />
       {needsConsent && <CookieConsentBannerLazy />}
     </>
   )

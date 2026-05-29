@@ -1,6 +1,7 @@
 {
   "a11y": {
-    "skipToContent": "Ga direct naar inhoud"
+    "skipToContent": "Ga direct naar inhoud",
+    "backToTop": "Terug naar boven"
   },
   "stickyCta": {
     "label": "Plan een gesprek",

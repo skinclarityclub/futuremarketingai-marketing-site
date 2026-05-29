@@ -1,6 +1,7 @@
 {
   "a11y": {
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "backToTop": "Back to top"
   },
   "stickyCta": {
     "label": "Book a call",

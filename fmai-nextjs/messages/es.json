@@ -1,6 +1,7 @@
 {
   "a11y": {
-    "skipToContent": "Ir al contenido"
+    "skipToContent": "Ir al contenido",
+    "backToTop": "Volver arriba"
   },
   "stickyCta": {
     "label": "Reserva una llamada",
