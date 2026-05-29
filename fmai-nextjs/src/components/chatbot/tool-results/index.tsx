@@ -105,7 +105,7 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
 function ToolLoadingCard({ toolName }: { toolName: string }) {
   return (
     <div className="my-2 w-full rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md">
-      <p className="animate-pulse font-mono text-xs text-text-secondary">Loading {toolName}...</p>
+      <p className="animate-pulse font-mono text-xs text-text-secondary">Laden...</p>
       <div className="mt-2 h-16 animate-pulse rounded-lg bg-bg-elevated/50" />
     </div>
   )
@@ -115,7 +115,7 @@ function ToolErrorCard() {
   return (
     <div className="my-2 flex items-center gap-2 rounded-xl border border-red-500/20 bg-red-500/10 p-3">
       <AlertCircle className="h-4 w-4 shrink-0 text-red-400" />
-      <span className="text-xs text-red-400">Something went wrong</span>
+      <span className="text-xs text-red-400">Er ging iets mis</span>
     </div>
   )
 }
