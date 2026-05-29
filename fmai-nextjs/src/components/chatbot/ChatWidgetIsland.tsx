@@ -6,6 +6,7 @@ import { usePathname } from '@/i18n/navigation'
 import { ChatWidget } from './ChatWidget'
 import { ProactiveNudge } from './ProactiveNudge'
 import { useChatbotStore } from '@/stores/chatbotStore'
+import { loadMemory, saveMemory } from '@/lib/chatbot/memory-persistence'
 import type { ChatLocale } from './useChatChrome'
 
 function normalizeLocale(value: string): ChatLocale {
@@ -335,6 +336,8 @@ export function ChatWidgetIsland() {
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const messageCounts = useChatbotStore((s) => s.messageCounts)
+  const memoryProfile = useChatbotStore((s) => s.memoryProfile)
+  const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
 
   const [nudgeVisible, setNudgeVisible] = useState(false)
   // Set when a navigation started from an open chat, so Clyde follows up on the
@@ -345,6 +348,24 @@ export function ChatWidgetIsland() {
   const nudgedThisPage = useRef(false)
   const nudgePrompt = PROACTIVE_PROMPTS[locale][pathname]
   const followupMessage = PROACTIVE_FOLLOWUPS[locale][pathname] ?? PROACTIVE_FOLLOWUPS[locale].default
+
+  // Hydrate persisted memory once on mount (client-only, consent-gated). Lets Clyde
+  // recall an agency across sessions; no-op on the server / without cookie consent.
+  const hydratedMemory = useRef(false)
+  useEffect(() => {
+    if (hydratedMemory.current) return
+    hydratedMemory.current = true
+    const stored = loadMemory()
+    if (Object.keys(stored).length > 0) setMemoryProfile(stored)
+  }, [setMemoryProfile])
+
+  // Persist memory whenever it changes (no-op without consent / in private mode).
+  // Guarded by hydratedMemory so we never overwrite a stored profile with the empty
+  // initial state before hydration has run.
+  useEffect(() => {
+    if (!hydratedMemory.current) return
+    saveMemory(memoryProfile)
+  }, [memoryProfile])
 
   // On any route change: close the chat so the visitor can read the new page,
   // and remember whether they came from an open chat so Clyde can follow up.
