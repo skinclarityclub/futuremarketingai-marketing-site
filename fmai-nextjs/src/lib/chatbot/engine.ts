@@ -130,8 +130,28 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       if (context?.demoMode) {
         const { navigate_to_page: _, ...demoTools } = tools
         tools = demoTools
+      } else {
+        // Normal agency chat: strip e-commerce/support/legacy tools inherited
+        // from the SkinClarity personas. They fire on plausible prompts and
+        // render off-context cards (skincare products, fake support tickets,
+        // the deprecated "Marketing Machine" module) — wrong for a B2B agency
+        // prospect. They stay available ONLY in the scripted guided demo.
+        const OFF_CONTEXT_TOOLS = new Set([
+          'search_products',
+          'get_product_details',
+          'build_routine',
+          'add_to_cart_suggestion',
+          'search_knowledge_base',
+          'create_ticket',
+          'check_status',
+          'escalate_to_human',
+          'explain_module',
+          'get_roi_info',
+        ])
+        tools = Object.fromEntries(
+          Object.entries(tools).filter(([name]) => !OFF_CONTEXT_TOOLS.has(name))
+        )
       }
-      // No else -- Clyde gets all tools on every page
     }
 
     // 12. Build messages for streamText

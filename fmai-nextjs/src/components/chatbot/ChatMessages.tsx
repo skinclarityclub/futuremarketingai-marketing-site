@@ -54,6 +54,12 @@ function parseChipsFromText(text: string): string[] {
   return match[1].split('|').map((c) => c.trim()).filter(Boolean)
 }
 
+/** Strip the machine-readable `CHIPS:` line (and anything after it) so copied
+ *  text matches what the user actually sees in the bubble. */
+function stripChipsLine(text: string): string {
+  return text.replace(/\n*CHIPS:[\s\S]*$/, '').trimEnd()
+}
+
 function MarkdownContent({ text }: { text: string }) {
   return (
     <div className="text-sm leading-relaxed [&_a]:text-accent-system [&_a]:hover:underline [&_ol]:list-decimal [&_ol]:pl-4 [&_ul]:list-disc [&_ul]:pl-4">
@@ -79,7 +85,7 @@ function MarkdownContent({ text }: { text: string }) {
 
 function TypingIndicator() {
   return (
-    <div className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
+    <div data-typing className="flex justify-start" style={{ animation: 'fadeIn 0.3s ease-in' }}>
       <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-md border border-border-primary bg-bg-elevated/80 px-4 py-3 backdrop-blur-md">
         <span
           className="h-1.5 w-1.5 rounded-full bg-accent-system"
@@ -411,7 +417,7 @@ export function ChatMessages({
                 </div>
               )}
               {!isUser && messageText.length > 0 && (
-                <CopyButton text={messageText} />
+                <CopyButton text={stripChipsLine(messageText)} />
               )}
               {isUser && onEditMessage && messageText.length > 0 && (
                 <button

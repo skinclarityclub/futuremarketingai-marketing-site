@@ -102,7 +102,9 @@ export function SidePanel({ isOpen, content, onClose }: SidePanelProps) {
                 >
                   <ArrowLeft className="h-4 w-4" />
                 </button>
-                <span className="font-sans text-sm font-medium text-text-primary">Details</span>
+                <span className="font-sans text-sm font-medium text-text-primary">
+                  {TOOL_PANEL_TITLES[content.toolName] ?? 'Details'}
+                </span>
               </div>
             </div>
             <div className="flex-1 overflow-y-auto p-4">

@@ -57,7 +57,7 @@ export const TOOL_PANEL_TITLES: Record<string, string> = {
   get_pricing_info: 'Tarieven',
   get_case_study: 'Case study',
   book_call: 'Plan een gesprek',
-  qualify_lead: 'ROI berekening',
+  qualify_lead: 'Jouw match',
   get_roi_estimate: 'ROI berekening',
   get_roi_info: 'ROI berekening',
   search_products: 'Producten',
