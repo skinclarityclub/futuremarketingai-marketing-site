@@ -9,7 +9,10 @@
 >
 > - **Cookie-banner-FAB UX (GEFIXT, `aa84b3f`)**: bevestigd dat de banner (z-9999, ~154px) de FAB-klik op desktop onderschepte; `ClydePresence` lift naar `lg:bottom-44` + `z-[10000]`. Regressie `tests/e2e/cookie-fab.spec.ts` (3 viewports). Eerste-keer-bezoekers kunnen Clyde nu openen.
 >
-> **GEPUSHT** naar PR #12 (5 commits). build groen, tsc clean (m.u.v. pre-existing lighthouse-spec). **Open nu:** em-dashes in model-output; firefox/webkit live sweep (chromium gedaan); PR #12 mergen.
+> - **Em-dash hard-strip (GEFIXT, `8e9fd7b`)**: `normalizeDashes()` in `ChatMessages.tsx` (render + copy) → geen em-dashes meer in Clyde's tekst, ondanks haiku.
+> - **Cross-browser (`dacccb2`)**: structurele specs op firefox 20/20 ✓ + webkit groen-op-retry (timing-flaky op lazy panel-open onder machine-load, geen product-bug; panel-timeout 5s→10s). Volledige chromium-regressie 41 passed + 1 flaky (T9, retry-groen).
+>
+> **GEPUSHT** naar PR #12 (8 commits). build groen, tsc clean (m.u.v. pre-existing lighthouse-spec). **Open nu:** PR #12 mergen wanneer tevreden; optioneel volledige LIVE capture-sweep op firefox/webkit (nu structureel cross-browser + chromium live).
 
 ## 0. TL;DR
 
