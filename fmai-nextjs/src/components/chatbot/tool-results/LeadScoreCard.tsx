@@ -2,8 +2,8 @@
 
 import { motion } from 'motion/react'
 import { TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
-import { Link } from '@/i18n/navigation'
 import { useCardCopy } from './cardI18n'
+import { ApplyCtaButton } from '../ApplyCtaButton'
 
 export interface LeadScoreData {
   score: number
@@ -183,12 +183,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
             </ul>
           </div>
         )}
-        <Link
-          href="/apply"
-          className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
-        >
-          {t.roiCta}
-        </Link>
+        <ApplyCtaButton size="sm">{t.roiCta}</ApplyCtaButton>
       </motion.div>
     )
   }
@@ -285,12 +280,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
           )}
         </div>
       )}
-      <Link
-        href="/apply"
-        className="block rounded-xl bg-gradient-to-r from-accent-system to-accent-human px-4 py-3 text-center text-xs font-medium text-white transition-opacity hover:opacity-90"
-      >
-        {t.bookCall}
-      </Link>
+      <ApplyCtaButton size="sm">{t.bookCall}</ApplyCtaButton>
     </motion.div>
   )
 }

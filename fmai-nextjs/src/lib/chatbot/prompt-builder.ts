@@ -1,4 +1,22 @@
 import type { PersonaConfig, TopicRouterResult } from './types'
+import type { MemoryProfile } from './memory'
+
+/** One short system line describing what Clyde already knows about the visitor,
+ *  or '' when nothing is known. Only non-empty fields are included. A returning
+ *  visitor starts a fresh session with no chat history, so this line is how Clyde
+ *  recalls the agency without re-asking. */
+export function buildMemoryContextLine(profile: MemoryProfile | undefined): string {
+  if (!profile) return ''
+  const parts: string[] = []
+  if (profile.agencyName) parts.push(`agency "${profile.agencyName}"`)
+  if (profile.niche) parts.push(`niche ${profile.niche}`)
+  if (profile.brandCount != null) parts.push(`${profile.brandCount} brands`)
+  if (profile.teamSize != null) parts.push(`team of ${profile.teamSize}`)
+  if (profile.painPoint) parts.push(`pain point: ${profile.painPoint}`)
+  if (profile.goal) parts.push(`goal: ${profile.goal}`)
+  if (parts.length === 0) return ''
+  return `You already know this about the visitor from earlier: ${parts.join(', ')}. Refer to it naturally and do not ask again for what you already know.`
+}
 
 const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/': 'User is on the homepage. Give an overview of capabilities, route to relevant skills.',
@@ -43,7 +61,12 @@ interface SystemMessage {
 export function buildSystemMessages(
   persona: PersonaConfig,
   topicResult: TopicRouterResult,
-  context?: { language?: string; currentPage?: string; demoMode?: boolean }
+  context?: {
+    language?: string
+    currentPage?: string
+    demoMode?: boolean
+    memoryProfile?: MemoryProfile
+  }
 ): SystemMessage[] {
   const messages: SystemMessage[] = []
 
@@ -91,6 +114,14 @@ You are in a guided demo showcasing FutureMarketingAI capabilities. The user is 
       role: 'system',
       content: contextContent,
     })
+  }
+
+  // Part 4: Cross-session memory recall (only if a profile was sent).
+  // NO cacheControl — varies per visitor. Kept out of the static prefix so the
+  // byte-for-byte cache key is unaffected.
+  const memoryLine = buildMemoryContextLine(context?.memoryProfile)
+  if (memoryLine) {
+    messages.push({ role: 'system', content: memoryLine })
   }
 
   return messages

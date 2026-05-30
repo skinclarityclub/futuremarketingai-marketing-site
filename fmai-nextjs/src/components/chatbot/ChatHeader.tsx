@@ -1,8 +1,10 @@
 'use client'
 
-import { Minus, SquarePen, X } from 'lucide-react'
+import { Brain, Minus, SquarePen, X } from 'lucide-react'
 import { useCallback, useRef } from 'react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
+import { useChatbotStore } from '@/stores/chatbotStore'
+import { MEMORY_FIELD_ORDER } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 
 interface ChatHeaderProps {
@@ -46,6 +48,13 @@ export function ChatHeader({
 }: ChatHeaderProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
   const chrome = useChatChrome()
+  const memoryProfile = useChatbotStore((s) => s.memoryProfile)
+  const openSidePanel = useChatbotStore((s) => s.openSidePanel)
+  // How many facts Clyde currently remembers; drives whether the badge shows + its count.
+  const memoryCount = MEMORY_FIELD_ORDER.filter((k) => {
+    const v = memoryProfile[k]
+    return v !== undefined && v !== null && String(v).trim() !== ''
+  }).length
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Escape' && closeRef.current) {
@@ -101,6 +110,22 @@ export function ChatHeader({
       <div className="flex items-center gap-1">
         {mode === 'floating' && (
           <>
+            {memoryCount > 0 && (
+              <button
+                type="button"
+                aria-label={chrome.memoryAriaCount(memoryCount)}
+                onClick={() => openSidePanel('remember_context', { remembered: memoryProfile })}
+                className="relative rounded p-1.5 text-accent-system transition-colors hover:text-accent-system/80"
+              >
+                <Brain className="h-4 w-4" />
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-0.5 -top-0.5 flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-accent-system px-1 text-[9px] font-bold text-bg-deep"
+                >
+                  {memoryCount}
+                </span>
+              </button>
+            )}
             {hasMessages && onNewChat && (
               <button
                 type="button"

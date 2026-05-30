@@ -3,6 +3,8 @@
 import { useEffect, useId, useState, type Dispatch, type SetStateAction } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { useChatbotStore } from '@/stores/chatbotStore'
+import { clearMemory } from '@/lib/chatbot/memory-persistence'
 
 /**
  * CookieConsentBanner — first-party AVG/GDPR consent UI.
@@ -66,6 +68,7 @@ export function CookieConsentBanner() {
   const [expanded, setExpanded] = useState(false)
   const [analytics, setAnalytics] = useState(false)
   const [marketing, setMarketing] = useState(false)
+  const resetMemory = useChatbotStore((s) => s.resetMemory)
   const titleId = useId()
   const descId = useId()
 
@@ -113,6 +116,12 @@ export function CookieConsentBanner() {
   }
   const rejectAll = () => {
     writeConsent({ functional: true, analytics: false, marketing: false })
+    // The visitor rejected non-essential storage, so also forget what Clyde
+    // remembered. resetMemory() empties the store (the persist-on-change effect then
+    // removes the clyde:memory key); clearMemory() covers the case where the chat
+    // island has not mounted yet so that effect would not fire.
+    resetMemory()
+    clearMemory()
     setAnalytics(false)
     setMarketing(false)
     setOpen(false)

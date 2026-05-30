@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl'
 import { Brain } from 'lucide-react'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { MEMORY_FIELD_ORDER, type MemoryProfile } from '@/lib/chatbot/memory'
+import { clearMemory } from '@/lib/chatbot/memory-persistence'
 
 type Loc = 'nl' | 'en' | 'es'
 function loc(value: string): Loc {
@@ -44,6 +45,18 @@ const EMPTY_HINT: Record<Loc, string> = {
   es: 'Clyde anota aquí lo que aprende sobre ti mientras hablan.',
 }
 
+const PERSIST_NOTE: Record<Loc, string> = {
+  nl: 'Clyde onthoudt dit lokaal in je browser voor je volgende bezoek.',
+  en: 'Clyde keeps this locally in your browser for your next visit.',
+  es: 'Clyde guarda esto localmente en tu navegador para tu próxima visita.',
+}
+
+const CLEAR_LABEL: Record<Loc, string> = {
+  nl: 'Wis geheugen',
+  en: 'Clear memory',
+  es: 'Borrar memoria',
+}
+
 export interface MemoryCardData {
   remembered?: Partial<MemoryProfile>
 }
@@ -51,6 +64,8 @@ export interface MemoryCardData {
 export function MemoryCard() {
   const l = loc(useLocale())
   const profile = useChatbotStore((s) => s.memoryProfile)
+  const resetMemory = useChatbotStore((s) => s.resetMemory)
+  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const labels = FIELD_LABELS[l]
   const rows = MEMORY_FIELD_ORDER.filter((k) => {
     const v = profile[k]
@@ -86,6 +101,20 @@ export function MemoryCard() {
           </div>
         </motion.div>
       ))}
+      <div className="mt-3 space-y-2 border-t border-border-primary pt-3">
+        <p className="text-[11px] leading-relaxed text-text-secondary">{PERSIST_NOTE[l]}</p>
+        <button
+          type="button"
+          onClick={() => {
+            resetMemory()
+            clearMemory()
+            closeSidePanel()
+          }}
+          className="text-xs font-medium text-text-secondary underline-offset-2 transition-colors hover:text-text-primary hover:underline"
+        >
+          {CLEAR_LABEL[l]}
+        </button>
+      </div>
     </div>
   )
 }

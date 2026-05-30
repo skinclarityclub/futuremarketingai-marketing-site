@@ -114,6 +114,7 @@ interface ChatChromeLabels {
   regenerate: string
   regenerateAria: string
   online: string
+  memoryAria: string
   newChatAria: string
   minimizeAria: string
   closeAria: string
@@ -135,6 +136,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Opnieuw genereren',
     regenerateAria: 'Opnieuw genereren',
     online: 'Nu online',
+    memoryAria: 'Bekijk wat Clyde onthoudt',
     newChatAria: 'Nieuwe chat starten',
     minimizeAria: 'Minimaliseer chat',
     closeAria: 'Sluit chat',
@@ -154,6 +156,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Regenerate',
     regenerateAria: 'Regenerate',
     online: 'Online now',
+    memoryAria: 'View what Clyde remembers',
     newChatAria: 'Start new chat',
     minimizeAria: 'Minimize chat',
     closeAria: 'Close chat',
@@ -173,6 +176,7 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     regenerate: 'Regenerar',
     regenerateAria: 'Regenerar',
     online: 'En línea',
+    memoryAria: 'Ver lo que Clyde recuerda',
     newChatAria: 'Iniciar nuevo chat',
     minimizeAria: 'Minimizar chat',
     closeAria: 'Cerrar chat',
@@ -183,10 +187,20 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
   },
 }
 
+// Count-aware memory badge label: an explicit aria-label overrides the visible
+// number in the badge, so the count must be spoken here or screen-reader users
+// lose the at-a-glance "how much Clyde remembers" signal.
+const MEMORY_ARIA_COUNT: Record<ChatLocale, (n: number) => string> = {
+  nl: (n) => `Bekijk wat Clyde onthoudt (${n} ${n === 1 ? 'feit' : 'feiten'})`,
+  en: (n) => `View what Clyde remembers (${n} ${n === 1 ? 'fact' : 'facts'})`,
+  es: (n) => `Ver lo que Clyde recuerda (${n} ${n === 1 ? 'dato' : 'datos'})`,
+}
+
 export interface ChatChrome extends ChatChromeLabels {
   locale: ChatLocale
   panelTitle: (toolName: string) => string
   followups: (toolName: string) => string[] | null
+  memoryAriaCount: (count: number) => string
 }
 
 export function chatChromeFor(locale: ChatLocale): ChatChrome {
@@ -195,6 +209,7 @@ export function chatChromeFor(locale: ChatLocale): ChatChrome {
     ...LABELS[locale],
     panelTitle: (toolName) => PANEL_TITLES[locale][toolName] ?? PANEL_TITLE_FALLBACK[locale],
     followups: (toolName) => FOLLOWUPS[locale][toolName] ?? null,
+    memoryAriaCount: (count) => MEMORY_ARIA_COUNT[locale](count),
   }
 }
 
