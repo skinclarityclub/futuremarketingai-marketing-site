@@ -653,15 +653,51 @@ body::-webkit-scrollbar-corner {
   }
 }
 
-/* Pill hover lift */
+/* Pill hover lift. `bottom` is in the transition so the FAB glides up/down in
+   lockstep with the sticky-CTA lift (see `.fab-rest` below) instead of snapping. */
 .clyde-fab {
   transition: transform 220ms ease-out, box-shadow 220ms ease-out,
-    background-color 220ms ease-out, border-color 220ms ease-out;
+    background-color 220ms ease-out, border-color 220ms ease-out,
+    bottom 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .clyde-fab:hover,
 .clyde-fab:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(0, 212, 170, 0.7);
   box-shadow: var(--shadow-glow-lg), 0 0 28px rgba(0, 212, 170, 0.45);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * Floating action-button stack — coordinated lift above the mobile sticky CTA
+ *
+ * Why: on mobile, StickyMobileCTA is a full-width bar pinned to bottom-0. The
+ * Clyde FAB and the BackToTop control live in the bottom-right corner and would
+ * otherwise sit on top of that bar — the FAB literally clipped through the CTA
+ * button. StickyMobileCTA publishes its own rendered height (+ a 12px breathing
+ * gap) as `--fab-safe-bottom` while it is on screen, and 0px otherwise. The FAB
+ * stack reads that one variable, so the whole column lifts as a single piece and
+ * settles back when the bar dismisses. One source of truth, spatial consistency.
+ *
+ * `--fab-safe-bottom` stays 0 on desktop (the bar is `md:hidden`, so its measured
+ * height is 0), which collapses these rests to their base offsets there. The
+ * `max()` guarantees the controls never drop *below* their base resting spot.
+ * ──────────────────────────────────────────────────────────────────────── */
+:root {
+  --fab-safe-bottom: 0px;
+}
+
+/* Clyde FAB + post-mount trigger resting position (mobile base 1.5rem / desktop 2rem). */
+.fab-rest {
+  bottom: max(1.5rem, var(--fab-safe-bottom, 0px));
+}
+@media (min-width: 1024px) {
+  .fab-rest {
+    bottom: 2rem;
+  }
+}
+
+/* BackToTop rests one Clyde-pill-height (4.5rem) above the FAB and lifts with it. */
+.fab-rest-stacked {
+  bottom: max(6rem, calc(var(--fab-safe-bottom, 0px) + 4.5rem));
 }
 

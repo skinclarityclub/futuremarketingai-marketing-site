@@ -41,7 +41,7 @@ export function FloatingButton({
       type="button"
       onClick={onClick}
       aria-label="Open chat met Clyde"
-      className="clyde-fab group fixed right-6 bottom-6 lg:bottom-8 z-[61] inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md outline-none transition-[box-shadow,transform] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system"
+      className="clyde-fab group fixed right-6 fab-rest z-[61] inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md outline-none transition-[box-shadow,transform,bottom] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system"
       style={{ boxShadow: 'var(--shadow-glow)' }}
     >
       <LogoSynapse size={22} ariaLabel="" />

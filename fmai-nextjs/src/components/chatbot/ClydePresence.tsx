@@ -74,9 +74,9 @@ export function ClydePresence({
   // click and a first-time desktop visitor could not open Clyde. Lift to
   // lg:bottom-44 (176px) to clear the collapsed banner, and raise the FAB above
   // the banner's z-index as a safety net for the taller expanded banner.
-  const bottomClass = cookieBannerVisible
-    ? 'bottom-80 lg:bottom-44'
-    : 'bottom-6 lg:bottom-8'
+  // Resting position lifts above the mobile sticky-CTA bar via `.fab-rest`
+  // (reads --fab-safe-bottom; collapses to bottom-6/lg:bottom-8 when no bar).
+  const bottomClass = cookieBannerVisible ? 'bottom-80 lg:bottom-44' : 'fab-rest'
   const zClass = cookieBannerVisible ? 'z-[10000]' : 'z-40'
 
   return (

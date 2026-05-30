@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { ArrowRight, X } from 'lucide-react'
@@ -31,6 +31,7 @@ function readInitialDismissed(): boolean {
 
 export function StickyMobileCTA({ href = '/apply' }: { href?: string }) {
   const t = useTranslations('stickyCta')
+  const asideRef = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(false)
   // Lazy initializer reads sessionStorage once on first client render — avoids
   // the cascading-render warning from React Compiler that a setState-in-effect
@@ -79,6 +80,39 @@ export function StickyMobileCTA({ href = '/apply' }: { href?: string }) {
     }
   }, [])
 
+  // Publish our footprint so the bottom-right FAB stack (Clyde + BackToTop) can
+  // lift clear of this bar instead of clipping through it. We expose the bar's
+  // measured height plus a 12px gap as `--fab-safe-bottom`, and reset it to 0px
+  // whenever the bar is not on screen. On desktop the bar is `md:hidden`, so its
+  // offsetHeight is 0 and we publish 0px — the FABs keep their base positions.
+  const active = !dismissed && visible && !inputFocused
+  useEffect(() => {
+    const root = document.documentElement
+    const clear = () => root.style.setProperty('--fab-safe-bottom', '0px')
+    if (!active) {
+      clear()
+      return
+    }
+    const el = asideRef.current
+    if (!el) {
+      clear()
+      return
+    }
+    const publish = () => {
+      const h = el.offsetHeight
+      root.style.setProperty('--fab-safe-bottom', h > 0 ? `${h + 12}px` : '0px')
+    }
+    publish()
+    const ro = new ResizeObserver(publish)
+    ro.observe(el)
+    window.addEventListener('resize', publish)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', publish)
+      clear()
+    }
+  }, [active])
+
   const handleDismiss = useCallback(() => {
     setDismissed(true)
     try {
@@ -97,13 +131,14 @@ export function StickyMobileCTA({ href = '/apply' }: { href?: string }) {
     }
   }, [href])
 
-  if (dismissed || !visible || inputFocused) return null
+  if (!active) return null
 
   return (
     <aside
+      ref={asideRef}
       role="complementary"
       aria-label={t('srLandmark')}
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 border-t border-border-primary bg-bg-deep/95 backdrop-blur-md shadow-[0_-4px_24px_rgba(0,0,0,0.35)] motion-safe:animate-[fadeInUp_0.3s_ease-out]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 border-t border-border-primary bg-bg-deep/95 backdrop-blur-md shadow-[0_-4px_24px_rgba(0,0,0,0.35)] motion-safe:animate-[fadeInUp_0.3s_ease-out] [padding-bottom:max(0px,env(safe-area-inset-bottom))]"
     >
       <div className="flex items-center gap-2 px-4 py-3">
         <Link
