@@ -686,9 +686,14 @@ body::-webkit-scrollbar-corner {
   --fab-safe-bottom: 0px;
 }
 
-/* Clyde FAB + post-mount trigger resting position (mobile base 1.5rem / desktop 2rem). */
+/* Clyde FAB + post-mount trigger resting position.
+ * Mobile base 5rem (80px) is a hard floor that clears the ~65px sticky CTA bar
+ * even when --fab-safe-bottom is still 0px (JS effect hasn't fired yet on slow
+ * devices, or bar just appeared). When StickyMobileCTA does set the variable
+ * (e.g. 77px for Android, 111px+ for iPhone with safe-area), max() picks the
+ * larger value for precise alignment. Desktop overrides to a fixed 2rem. */
 .fab-rest {
-  bottom: max(1.5rem, var(--fab-safe-bottom, 0px));
+  bottom: max(5rem, var(--fab-safe-bottom, 0px));
 }
 @media (min-width: 1024px) {
   .fab-rest {
@@ -696,8 +701,9 @@ body::-webkit-scrollbar-corner {
   }
 }
 
-/* BackToTop rests one Clyde-pill-height (4.5rem) above the FAB and lifts with it. */
+/* BackToTop rests one Clyde-pill-height (4.5rem ≈ 72px) above the FAB.
+ * Base lifted to 9.5rem to match the new Clyde floor (5rem + 4.5rem). */
 .fab-rest-stacked {
-  bottom: max(6rem, calc(var(--fab-safe-bottom, 0px) + 4.5rem));
+  bottom: max(9.5rem, calc(var(--fab-safe-bottom, 0px) + 4.5rem));
 }
 

@@ -34,8 +34,8 @@ import { useTranslations } from 'next-intl'
 
 // Mirror of ClydePresence's bottom offsets, raised by the Clyde pill height
 // (~42px) plus a ~20px gap so this rests cleanly ABOVE Clyde in both states.
-// Clyde rests via `.fab-rest`   -> we rest via `.fab-rest-stacked` (lifts with
-//   the sticky-CTA bar through the shared --fab-safe-bottom variable).
+// Clyde rests via `.fab-rest` (floor 5rem/80px) -> we rest via `.fab-rest-stacked`
+//   (floor 9.5rem = 5rem + 4.5rem gap, lifts with --fab-safe-bottom).
 // Clyde lifts to bottom-80 / lg:bottom-44 (cookie banner) -> we lift to bottom-96 / lg:bottom-60.
 const REST_BOTTOM = 'fab-rest-stacked'
 const LIFTED_BOTTOM = 'bottom-96 lg:bottom-60'
