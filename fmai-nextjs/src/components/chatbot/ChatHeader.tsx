@@ -113,12 +113,15 @@ export function ChatHeader({
             {memoryCount > 0 && (
               <button
                 type="button"
-                aria-label={chrome.memoryAria}
+                aria-label={chrome.memoryAriaCount(memoryCount)}
                 onClick={() => openSidePanel('remember_context', { remembered: memoryProfile })}
                 className="relative rounded p-1.5 text-accent-system transition-colors hover:text-accent-system/80"
               >
                 <Brain className="h-4 w-4" />
-                <span className="absolute -right-0.5 -top-0.5 flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-accent-system px-1 text-[9px] font-bold text-bg-deep">
+                <span
+                  aria-hidden="true"
+                  className="absolute -right-0.5 -top-0.5 flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-accent-system px-1 text-[9px] font-bold text-bg-deep"
+                >
                   {memoryCount}
                 </span>
               </button>

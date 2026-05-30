@@ -2,8 +2,9 @@
  * Within-session memory profile for Clyde. Holds the salient facts a prospect
  * reveals about their agency so Clyde can show them in the memory panel and refer
  * back to them. Pure + framework-free so it is unit-testable and importable on both
- * client and server. Not persisted (see chatbotStore partialize) — resets on reload
- * and on "new chat".
+ * client and server. The zustand store does not persist this (see chatbotStore
+ * partialize); cross-session persistence is handled separately and consent-gated in
+ * memory-persistence.ts, so a returning visitor with cookie consent is rehydrated.
  */
 export interface MemoryProfile {
   agencyName?: string

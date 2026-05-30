@@ -24,6 +24,19 @@ test.describe('memory-persistence (pure)', () => {
     expect(parseMemory(raw)).toEqual({ agencyName: 'X' })
   })
 
+  test('parse drops fields whose type does not match the schema', () => {
+    const raw = JSON.stringify({
+      v: 1,
+      profile: {
+        agencyName: 'Duinrust', // valid string -> kept
+        niche: ['not', 'a', 'string'], // wrong type -> dropped
+        brandCount: { nested: 1 }, // wrong type -> dropped
+        teamSize: 4, // valid number -> kept
+      },
+    })
+    expect(parseMemory(raw)).toEqual({ agencyName: 'Duinrust', teamSize: 4 })
+  })
+
   test('storage key is stable', () => {
     expect(MEMORY_STORAGE_KEY).toBe('clyde:memory')
   })

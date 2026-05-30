@@ -10,13 +10,19 @@ import { MEMORY_FIELD_ORDER, type MemoryProfile } from './memory'
 export const MEMORY_STORAGE_KEY = 'clyde:memory'
 const MEMORY_VERSION = 1
 
+/** Fields stored as finite numbers; every other MEMORY_FIELD_ORDER key is a string. */
+const NUMERIC_FIELDS = new Set<keyof MemoryProfile>(['brandCount', 'teamSize'])
+
 /** Serialize a profile to a versioned JSON payload. */
 export function serializeMemory(profile: MemoryProfile): string {
   return JSON.stringify({ v: MEMORY_VERSION, profile })
 }
 
 /** Parse a stored payload back to a profile. Returns {} for null/garbage/version
- *  mismatch, and keeps only known fields (no prototype pollution / schema drift). */
+ *  mismatch. Keeps only known fields (no prototype pollution / schema drift) AND
+ *  only when the value matches the field's expected type, so a hand-edited entry
+ *  (e.g. brandCount as an object) can never leak a malformed value into the UI or
+ *  the system prompt. */
 export function parseMemory(raw: string | null): MemoryProfile {
   if (!raw) return {}
   try {
@@ -25,7 +31,12 @@ export function parseMemory(raw: string | null): MemoryProfile {
     const out: MemoryProfile = {}
     for (const key of MEMORY_FIELD_ORDER) {
       const v = data.profile[key]
-      if (v !== undefined && v !== null) (out as Record<string, unknown>)[key] = v
+      if (v === undefined || v === null) continue
+      if (NUMERIC_FIELDS.has(key)) {
+        if (typeof v === 'number' && Number.isFinite(v)) (out as Record<string, unknown>)[key] = v
+      } else if (typeof v === 'string') {
+        ;(out as Record<string, unknown>)[key] = v
+      }
     }
     return out
   } catch {

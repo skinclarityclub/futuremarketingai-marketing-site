@@ -411,6 +411,9 @@ export function ChatMessages({
     <div
       ref={scrollRef}
       onScroll={handleScroll}
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions"
       className="flex-1 space-y-4 overflow-y-auto px-4 py-4"
     >
       {(() => {
