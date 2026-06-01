@@ -21,12 +21,12 @@ const includeHttpsUpgrades = isProduction && !isLighthouseTest
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com https://unpkg.com;
-  style-src 'self' 'unsafe-inline' https://assets.calendly.com;
-  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://prod.spline.design;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://unpkg.com;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com https://prod.spline.design;
   font-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
-  frame-src https://calendly.com;
+  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
+  frame-src https://app.cal.com https://cal.com;
   worker-src 'self' blob:;
   object-src 'none';
   base-uri 'self';

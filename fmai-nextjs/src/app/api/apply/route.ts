@@ -10,6 +10,7 @@ import {
   type ApplyPayload,
 } from '@/lib/email/apply-templates'
 import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
+import { calHostedUrl } from '@/config/calConfig'
 import { scoreApplication, formatScorePrefix } from '@/lib/apply/scoring'
 import {
   ASSESSMENT_ARCHETYPES,
@@ -302,7 +303,9 @@ export async function POST(request: NextRequest) {
     await sendCriticalAlert('Apply confirmation mail failed', ctx)
   }
 
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_APPLY_URL ?? 'https://calendly.com/futureai/strategy-call'
+  // Field name kept as `calendlyUrl` for response/store contract stability; the
+  // value is a Cal.com hosted booking link since the 2026-06 scheduling migration.
+  const calendlyUrl = calHostedUrl({ name: payload.name, email: payload.email })
 
   return NextResponse.json(
     {

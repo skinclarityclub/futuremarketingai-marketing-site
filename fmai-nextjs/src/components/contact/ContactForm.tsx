@@ -3,10 +3,9 @@
 import { useState, useRef, type FormEvent } from 'react'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Label } from '@/components/ui/Label'
+import { calHostedUrl } from '@/config/calConfig'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
-
-const DEFAULT_CALENDLY_URL = 'https://calendly.com/futureai/strategy-call'
 
 interface ContactFormProps {
   labels: {
@@ -85,7 +84,7 @@ export function ContactForm({ labels }: ContactFormProps) {
   }
 
   if (status === 'success') {
-    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_APPLY_URL ?? DEFAULT_CALENDLY_URL
+    const calendlyUrl = calHostedUrl()
 
     return (
       <div className="text-center py-12" role="status" aria-live="polite">

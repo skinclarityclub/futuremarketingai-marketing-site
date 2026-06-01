@@ -300,9 +300,9 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
     await waitForResult(page)
     await expect(page.getByText(/geweldig/i)).toBeVisible({ timeout: 15_000 })
 
-    // Calendly container should be present (even if widget doesn't fully load in test)
-    const calendlyContainer = page.locator('[data-url*="calendly"], .calendly-inline-widget, iframe[src*="calendly"]')
-    const fallbackLink = page.getByRole('link', { name: /agenda|calendly/i })
+    // Cal.com embed container should be present (even if iframe doesn't fully load in test)
+    const calendlyContainer = page.locator('cal-inline, [data-cal-namespace], iframe[src*="cal.com"]')
+    const fallbackLink = page.getByRole('link', { name: /agenda|plan/i })
     const hasCalendly = await calendlyContainer.count() > 0 || await fallbackLink.count() > 0
     expect(hasCalendly).toBe(true)
 
@@ -311,6 +311,7 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
       (e) =>
         !e.includes('Calendly') &&
         !e.includes('calendly') &&
+        !e.includes('cal.com') &&
         !e.includes('ERR_BLOCKED') &&
         !e.includes('Content Security Policy') &&
         !e.includes('vercel-scripts') &&
@@ -338,8 +339,8 @@ test.describe('Critical path: cold-start low-fit (Branch B)', () => {
     await waitForResult(page)
     await expect(page.getByText(/bedankt/i).or(page.getByText(/daley reviewt/i))).toBeVisible({ timeout: 15_000 })
 
-    // No Calendly
-    const calendlyWidget = page.locator('.calendly-inline-widget, iframe[src*="calendly"]')
+    // No scheduler embed on Branch B
+    const calendlyWidget = page.locator('cal-inline, iframe[src*="cal.com"]')
     expect(await calendlyWidget.count()).toBe(0)
   })
 })
@@ -494,6 +495,7 @@ test.describe('i18n locales', () => {
           !e.includes('ERR_BLOCKED') &&
           !e.includes('Calendly') &&
           !e.includes('calendly') &&
+          !e.includes('cal.com') &&
           !e.includes('Content Security Policy') &&
           !e.includes('vercel-scripts') &&
           !e.includes('va.vercel'),
@@ -522,8 +524,8 @@ test.describe('ResultBranchA Calendly fallback', () => {
     await waitForResult(page)
     await expect(page.getByText(/geweldig/i)).toBeVisible({ timeout: 15_000 })
 
-    // Either inline widget OR fallback link must be present
-    const widgetOrLink = page.locator('[data-url*="calendly"], .calendly-inline-widget, iframe[src*="calendly"]')
+    // Either inline embed OR fallback link must be present
+    const widgetOrLink = page.locator('cal-inline, [data-cal-namespace], iframe[src*="cal.com"]')
       .or(page.getByRole('link', { name: /agenda/i }))
     const count = await widgetOrLink.count()
     expect(count).toBeGreaterThan(0)

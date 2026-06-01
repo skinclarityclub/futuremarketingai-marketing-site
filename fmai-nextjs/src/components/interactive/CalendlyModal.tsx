@@ -1,15 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import { useTranslations } from 'next-intl'
-
-const InlineWidget = dynamic(() => import('react-calendly').then((mod) => mod.InlineWidget), {
-  ssr: false,
-})
-
-const DEFAULT_CALENDLY_URL =
-  'https://calendly.com/futureai/strategy-call?background_color=111520&text_color=e8ecf4&primary_color=00D4FF'
+import { CalInlineEmbed } from './CalInlineEmbed'
 
 interface CalendlyPrefill {
   name?: string
@@ -19,22 +12,17 @@ interface CalendlyPrefill {
 export interface CalendlyModalProps {
   isOpen: boolean
   onClose: () => void
-  url?: string
   prefill?: CalendlyPrefill
 }
 
 /**
- * CalendlyModal -- Modal overlay with dynamically loaded Calendly widget.
+ * CalendlyModal -- Modal overlay hosting the Cal.com inline embed.
  *
- * Uses next/dynamic with ssr: false to prevent SSR issues with react-calendly.
- * Guarded with mounted state to prevent hydration mismatch.
+ * Name kept for call-site stability (chatbot store + ClientIslands wiring);
+ * backed by Cal.com since the 2026-06 scheduling migration. Mount-guarded to
+ * prevent SSR hydration mismatch for this portal-rendered modal.
  */
-export function CalendlyModal({
-  isOpen,
-  onClose,
-  url = DEFAULT_CALENDLY_URL,
-  prefill,
-}: CalendlyModalProps) {
+export function CalendlyModal({ isOpen, onClose, prefill }: CalendlyModalProps) {
   const t = useTranslations('calendly')
   const [mounted, setMounted] = useState(false)
 
@@ -75,9 +63,9 @@ export function CalendlyModal({
           </svg>
         </button>
 
-        {/* Loading skeleton */}
+        {/* Cal.com inline embed */}
         <div className="min-h-[650px]">
-          <InlineWidget url={url} prefill={prefill} styles={{ height: '650px' }} />
+          <CalInlineEmbed prefill={prefill} height={650} />
         </div>
       </div>
     </div>
