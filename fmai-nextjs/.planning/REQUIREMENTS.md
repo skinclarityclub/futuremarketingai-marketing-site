@@ -11,7 +11,7 @@
 - [x] **KB-02**: MDX-componentmap (Callout, ComparisonTable, KeyTakeaways, TableOfContents, CtaBlock, Citations, BlogFaq) beschikbaar in elke MDX-body — *geshipt*
 - [x] **KB-03**: Blog-renderer rendert TOC/takeaways/FAQ/citations, emit FaqJsonLd, hero in OG, BlogPosting/Article schemaType — *geshipt*
 - [ ] **KB-04**: Kennisbank-hub route (`/resources`) ontsluit pillars → clusters → glossary, i18n NL/EN/ES
-- [ ] **KB-05**: GEO/agency-taxonomie + glossary-sectie (GEO, AI Marketing Medewerker, citation monitoring, tier caps)
+- [x] **KB-05**: GEO/agency-taxonomie + glossary-sectie (GEO, AI Marketing Medewerker, citation monitoring, tier caps) — *data + component + DefinedTermSet JSON-LD + NL/EN/ES i18n geshipt (01-01); rendert op /resources via Plan 03*
 
 ### Cornerstone-content (CONT)
 
@@ -80,7 +80,7 @@
 | KB-02 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
 | KB-03 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
 | KB-04 | Phase 1 | Pending |
-| KB-05 | Phase 1 | Pending |
+| KB-05 | Phase 1 | Complete (01-01) |
 | PILR-01 | Phase 2 | Pending |
 | CONT-01 | Phase 3 | Pending |
 | CONT-02 | Phase 3 | Pending |
