@@ -10,7 +10,7 @@
 - [x] **KB-01**: SKC-grade frontmatter-schema (heroImage/readTime/keyTakeaways/faqs/citations/tableOfContents/pillar/clusterOf/relatedSlugs/schemaType) in `src/lib/blog.ts` — *geshipt*
 - [x] **KB-02**: MDX-componentmap (Callout, ComparisonTable, KeyTakeaways, TableOfContents, CtaBlock, Citations, BlogFaq) beschikbaar in elke MDX-body — *geshipt*
 - [x] **KB-03**: Blog-renderer rendert TOC/takeaways/FAQ/citations, emit FaqJsonLd, hero in OG, BlogPosting/Article schemaType — *geshipt*
-- [ ] **KB-04**: Kennisbank-hub route (`/resources`) ontsluit pillars → clusters → glossary, i18n NL/EN/ES
+- [x] **KB-04**: Kennisbank-hub route (`/resources`) ontsluit pillars → clusters → glossary, i18n NL/EN/ES — *geshipt (01-03): hub-page + PillarHubCard (graceful empty state), WebPage/DefinedTermSet/Breadcrumb JSON-LD, sitemap-hreflang nl/en/es*
 - [x] **KB-05**: GEO/agency-taxonomie + glossary-sectie (GEO, AI Marketing Medewerker, citation monitoring, tier caps) — *data + component + DefinedTermSet JSON-LD + NL/EN/ES i18n geshipt (01-01); rendert op /resources via Plan 03*
 
 ### Cornerstone-content (CONT)
@@ -79,7 +79,7 @@
 | KB-01 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
 | KB-02 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
 | KB-03 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
-| KB-04 | Phase 1 | Pending |
+| KB-04 | Phase 1 | Complete (01-03) |
 | KB-05 | Phase 1 | Complete (01-01) |
 | PILR-01 | Phase 2 | Pending |
 | CONT-01 | Phase 3 | Pending |

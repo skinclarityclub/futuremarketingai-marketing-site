@@ -12,7 +12,7 @@ Het programma bouwt FutureMarketingAI van "verkoopt SEO/GEO maar is zelf onvindb
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Kennisbank-infrastructuur afronden** - MDX-fundament geshipt; resteert kennisbank-hub `/resources` + GEO/agency-taxonomie & glossary
+- [x] **Phase 1: Kennisbank-infrastructuur afronden** - MDX-fundament + `/resources` hub (pillars → clusters → glossary, hreflang) + GEO/agency-glossary geshipt; alle 5 requirements (KB-01..05) compleet
 - [ ] **Phase 2: Content-pillar spine** - FMai-pillars als `fma_content_pillars`-rijen, de gedeelde strategie-spine voor blog + social
 - [ ] **Phase 3: Cornerstone-content (flagship)** - 4-6 handgeschreven SKC-grade pillar/cluster/comparison-pagina's op de non-branded keywords
 - [ ] **Phase 4: Multi-tenant publishing-upgrade** - `fma-app` publiceren client-aware; cross-publishing dichtgetimmerd; FMai als client geregistreerd
@@ -36,7 +36,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md — GEO/agency glossary: data + component + DefinedTermSet JSON-LD + i18n (KB-05)
 - [x] 01-02-PLAN.md — SKC-grade GEO pillar demo-artikel; verifieert rich renderer + Article/FAQPage JSON-LD (KB-01/02/03)
-- [ ] 01-03-PLAN.md — /resources hub: pillars + clusters + glossary, sitemap-hreflang + breadcrumb (KB-04)
+- [x] 01-03-PLAN.md — /resources hub: pillars + clusters + glossary, sitemap-hreflang + breadcrumb (KB-04)
 
 ### Phase 2: Content-pillar spine
 **Goal**: FutureMarketingAI's content-strategie bestaat één keer als bron-van-waarheid in `fma_content_pillars`, zodat zowel de cornerstone-blog als de social-pipeline straks uit dezelfde pillars genereren. Dit is de strategie-spine die het hele programma verbindt; vroeg gelegd zodat cornerstone-content er direct op kan mappen.
@@ -109,7 +109,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Kennisbank-infrastructuur afronden | 2/3 | In progress (KB-01/02/03 geshipt + end-to-end bewezen; KB-05 done) | - |
+| 1. Kennisbank-infrastructuur afronden | 3/3 | Complete (KB-01/02/03/04/05 geshipt; /resources hub live in nl/en/es, hreflang in sitemap; op branch feature/seo-geo-kennisbank) | - |
 | 2. Content-pillar spine | 0/TBD | Not started | - |
 | 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
