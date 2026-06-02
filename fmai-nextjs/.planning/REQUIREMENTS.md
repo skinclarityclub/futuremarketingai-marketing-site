@@ -22,7 +22,7 @@
 - [x] **CONT-05**: "AI marketing automation voor bureaus" pillar-gids gepubliceerd
 - [x] **CONT-06**: "Wat is een AI Marketing Medewerker (Clyde)" cluster gepubliceerd
 - [x] **CONT-07**: Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" gepubliceerd
-- [ ] **CONT-08**: Interne links pillar↔cluster consistent + elke cornerstone heeft één /apply-CTA
+- [x] **CONT-08**: Interne links pillar↔cluster consistent + elke cornerstone heeft één /apply-CTA
 
 ### Content-pillar spine (PILR)
 
@@ -89,7 +89,7 @@
 | CONT-05 | Phase 3 | Complete |
 | CONT-06 | Phase 3 | Complete |
 | CONT-07 | Phase 3 | Complete |
-| CONT-08 | Phase 3 | Pending |
+| CONT-08 | Phase 3 | Complete |
 | PUB-01 | Phase 4 | Pending |
 | PUB-02 | Phase 4 | Pending |
 | PUB-03 | Phase 4 | Pending |

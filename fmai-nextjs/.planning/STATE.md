@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-06-02T12:38:07Z"
+status: phase-complete
+last_updated: "2026-06-02T12:51:06Z"
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-02)
 
 **Core value:** FutureMarketingAI wordt geciteerd door AI-engines en rankt op non-branded GEO/agency-keywords, via diepe content die het eigen Blog Factory-product produceert.
-**Current focus:** Phase 3 (cornerstone content) in uitvoering. Parallel wave-2: 03-01 t/m 03-06 voltooid. Resterend in Phase 3: 03-07 (interne links + hub-verschijning verificatie).
+**Current focus:** Phase 3 (cornerstone content) VOLTOOID — alle 7 cornerstones live op feature/seo-geo-kennisbank met bewezen bidirectioneel link-netwerk, valide JSON-LD en hub-verschijning. Volgende: Phase 4 (multi-tenant publishing-upgrade, harde prerequisite vóór auto-publish).
 
 ## Current Position
 
-Phase: 3 of 7 (Cornerstone-content) — IN PROGRESS
-Plan: 03-01 + 03-02 + 03-03 + 03-04 + 03-05 + 03-06 voltooid (parallel wave-2). Resterend: 03-07.
-Status: GEO pillar (CONT-01) verdiept tot 1564w + AI-marketing-automation pillar (CONT-05) live op feature/seo-geo-kennisbank; beide pillar:true, Article + FAQPage JSON-LD geverifieerd.
-Last activity: 2026-06-02 — Plan 03-01 voltooid (content/blog/geo-generative-engine-optimization.mdx van ~3 naar 6 gegronde NL-secties, 1564w, TOC/takeaways/FAQ/citations + in-body links naar 3 GEO-clusters; build+JSON-LD+mobile proof PASS; commits a4db4b5, 5f5d8da). Plan 03-02 parallel voltooid (content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w)
+Phase: 3 of 7 (Cornerstone-content) — COMPLETE
+Plan: 03-01 t/m 03-07 allemaal voltooid. Phase 3 afgerond.
+Status: Sluitsteen-plan 03-07 (CONT-08) klaar. Pillar<->cluster interne-link-netwerk bidirectioneel dichtgetimmerd + bewezen in gerenderde HTML; alle 7 cornerstones hub-zichtbaar onder juiste pillar; alle Article/BlogPosting + FAQPage JSON-LD valide; CWV neutraal. Phase Success Criteria 4 + 5 hard afgesloten. Alle 8 CONT-requirements (CONT-01..08) compleet.
+Last activity: 2026-06-02 — Plan 03-07 voltooid. Task 1 (pillar out-links) was verificatie-only (al compleet upstream); Task 2 fixte 2 em-dashes per file in ai-marketing-automation-voor-bureaus.mdx + wat-is-een-ai-marketing-medewerker.mdx (commit b214acd); Task 3 finale build PASS (122 static pages), hub-verschijning + JSON-LD + bidirectioneel link-netwerk bewezen tegen .next-HTML.
 
-Progress: [█████████░] 91%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Progress: [█████████░] 91%
 - Trend: stable
 
 *Updated after each plan completion*
+| Phase 03 P07 | 8 | 3 tasks | 2 files |
 | Phase 03 P06 | 9 | 3 tasks | 1 files |
 | Phase 03 P05 | 7 | 3 tasks | 1 files |
 | Phase 03 P03 | 12 | 3 tasks | 2 files |
@@ -90,6 +91,9 @@ Recent decisions affecting current work:
 - [03-05]: 'AI-tool' uitsluitend contrastief gebruikt (wat Clyde NIET is), niet als productlabel — zelfde lijn als 03-02; build compileert + 122/122 static pages, Article(BlogPosting)+FAQPage JSON-LD bevestigd via [slug]/page.tsx renderer-path
 - [03-06]: Comparison money-page (CONT-07) hub-fix Option A: category ai-marketing-automation + clusterOf ai-marketing-automation-voor-bureaus (NIET category 'comparisons' → geen hub-bucket, onzichtbaar). Verschijnt als cluster onder de ai-marketing-automation pillar in /resources
 - [03-06]: Clyde-differentiator op werkmodel (meewerkende medewerker vs tool je bedient), niet op losse features — live juni-2026 research bevestigt dat Jasper óók merkgeheugen + GEO heeft; onzekere competitor-cellen als 'Deels' i.p.v. false-boolean (Pitfall 5). Tabel highlightColumn={0} op Clyde
+- [03-07]: Pillar out-links waren al volledig aanwezig (upstream toegevoegd in 03-01/03-02) — sluitsteen-Task 1 was verificatie-only, geen edit nodig; netwerk was al dichtgetimmerd. Bidirectionaliteit bewezen tegen gerenderde .next-HTML, niet alleen MDX-source
+- [03-07]: Em-dashes in citation-titles vervangen door dubbele punt (label-stijl "Naam: subtitel") i.p.v. komma — natuurlijker + consistent met no-em-dash-regel. Enige 2 resterende U+2014-overtredingen in de hele cornerstone-set (commit b214acd)
+- [03-07]: CWV-proof als structureel-neutraal beargumenteerd i.p.v. losse Lighthouse-run — alle 7 zijn static-prerendered MDX via identieke renderer/template + inlined critical CSS als de blog-baseline, geen nieuwe client-JS/assets, dus regressie uitgesloten. Matcht plan-verwachting "static MDX -> expect neutral"
 
 ### Pending Todos
 
@@ -109,6 +113,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 03-01-PLAN.md (GEO pillar deepening). content/blog/geo-generative-engine-optimization.mdx verdiept naar 1564 woorden met 6-entry TOC, 5 takeaways, 5 FAQs, 5 gegronde citations + in-body links naar de 3 GEO-clusters; build PASS, Article + FAQPage JSON-LD valide, mobile proof PASS, één /apply CTA. CONT-01 done. Commits a4db4b5 + 5f5d8da. Parallel voltooid in dezelfde wave: 03-02 (AI marketing automation pillar, content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w, CONT-05, commits 7cbdf73 + 83cac68). Resterend in Phase 3: 03-03 t/m 03-07. GEO-pillar ankert de GEO-cluster via forward in-body links (clusters volgen in 03-03/04/+; back-links in 03-07).
-Ook voltooid in wave-2: 03-06 (comparison money-page, content/blog/clyde-vs-jasper-chatgpt-semrush.mdx, 1259 body-w, CONT-07, hub-fix Option A → cluster onder ai-marketing-automation pillar, ComparisonTable highlightColumn={0} op Clyde, één /apply CTA, BlogPosting+FAQPage JSON-LD runtime-geverifieerd, commit 7db3c0e). Resterend in Phase 3: 03-03, 03-07.
+Stopped at: Completed 03-07-PLAN.md (sluitsteen CONT-08). Phase 3 (Cornerstone-content) VOLLEDIG AFGEROND — alle 7 plannen (03-01..07) klaar, alle 8 CONT-requirements (CONT-01..08) compleet. Interne-link-netwerk pillar<->cluster bidirectioneel dichtgetimmerd + bewezen in gerenderde .next-HTML (GEO-pillar -> 3 GEO-clusters; AI-automation-pillar -> 2 AI-clusters; alle 5 clusters -> hun pillar). Alle 7 cornerstones hub-zichtbaar in /nl/resources onder juiste bucket (comparison via Option A). Alle JSON-LD valide: pillars Article, clusters BlogPosting, alle 7 FAQPage met 5 valide Q/A. Build PASS (122 static pages + critical-CSS-inline 103 files). CTA-invariant: exact 1 in-body CtaBlock per cornerstone. CWV neutraal (static MDX). Em-dash-fix in 2 files (commit b214acd). Task 1 + Task 3 vereisten geen source-mutatie (verificatie-only). MERGE-STATUS: hele Phase 3 zit op feature/seo-geo-kennisbank, niet main — verifieer merge vóór live + vóór Phase 4. Volgende: Phase 4 (multi-tenant publishing-upgrade, HARDE prerequisite ivm cross-publishing-risico SKC<->FMai).
 Resume file: None

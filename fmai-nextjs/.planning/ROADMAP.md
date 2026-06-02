@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Kennisbank-infrastructuur afronden** - MDX-fundament + `/resources` hub (pillars → clusters → glossary, hreflang) + GEO/agency-glossary geshipt; alle 5 requirements (KB-01..05) compleet
 - [x] **Phase 2: Content-pillar spine** - FMai-pillars als `fma_content_pillars`-rijen, de gedeelde strategie-spine voor blog + social
-- [ ] **Phase 3: Cornerstone-content (flagship)** - 4-6 handgeschreven SKC-grade pillar/cluster/comparison-pagina's op de non-branded keywords
+- [x] **Phase 3: Cornerstone-content (flagship)** - 4-6 handgeschreven SKC-grade pillar/cluster/comparison-pagina's op de non-branded keywords; alle 8 CONT-requirements (CONT-01..08) compleet
 - [ ] **Phase 4: Multi-tenant publishing-upgrade** - `fma-app` publiceren client-aware; cross-publishing dichtgetimmerd; FMai als client geregistreerd
 - [ ] **Phase 5: FMai auto-publish bedrading** - client-gefilterde publish-script-fork + GitHub Actions workflow naar `fmai-nextjs`
 - [ ] **Phase 6: Engine operationeel + pillar-gekoppeld** - WF7 OAuth-fix, per-client config-load, blog↔pillar via `pillar_id`, end-to-end dogfood bewezen
@@ -64,13 +64,13 @@ Plans:
 **Plans**: 7 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Verdiep bestaande GEO pillar-gids naar 1500-3000w + volledige TOC/takeaways/FAQ/citations (CONT-01)
-- [ ] 03-02-PLAN.md — Verse NL pillar "AI marketing automation voor bureaus" (CONT-05)
+- [x] 03-01-PLAN.md — Verdiep bestaande GEO pillar-gids naar 1500-3000w + volledige TOC/takeaways/FAQ/citations (CONT-01)
+- [x] 03-02-PLAN.md — Verse NL pillar "AI marketing automation voor bureaus" (CONT-05)
 - [x] 03-03-PLAN.md — GEO-clusters "GEO vs SEO 2026" + "Meten in AI Overviews" (CONT-02, CONT-03)
 - [x] 03-04-PLAN.md — GEO-cluster "GEO monitoring tools" met ComparisonTable (CONT-04)
-- [ ] 03-05-PLAN.md — Cluster "Wat is een AI Marketing Medewerker (Clyde)" (CONT-06)
-- [ ] 03-06-PLAN.md — Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" + hub-fix Option A (CONT-07)
-- [ ] 03-07-PLAN.md — Interne-link-integratie + cross-page proof-sweep (CONT-08)
+- [x] 03-05-PLAN.md — Cluster "Wat is een AI Marketing Medewerker (Clyde)" (CONT-06)
+- [x] 03-06-PLAN.md — Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" + hub-fix Option A (CONT-07)
+- [x] 03-07-PLAN.md — Interne-link-integratie + cross-page proof-sweep (CONT-08)
 
 ### Phase 4: Multi-tenant publishing-upgrade — PREREQUISITE
 **Goal**: Publiceren in `fma-app` wordt client-aware zodat FMai als publicerende client erbij kan zónder SKC te breken. Dit dicht meteen de latente cross-publishing-bug. Harde prerequisite: FMai mag NIET als publicerende client live voordat de client-scoped filter bewezen is.
@@ -123,7 +123,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 |-------|----------------|--------|-----------|
 | 1. Kennisbank-infrastructuur afronden | 3/3 | Complete (KB-01/02/03/04/05 geshipt; /resources hub live in nl/en/es, hreflang in sitemap; op branch feature/seo-geo-kennisbank) | - |
 | 2. Content-pillar spine | 1/1 | Complete (4 FMai pillars live in shared fma-app Supabase; seed script committed in fma-app 1b0a2dab/b7623bd4; 7 legacy placeholders deactivated; PILR-01 done) | 2026-06-02 |
-| 3. Cornerstone-content (flagship) | 6/7 | In progress | - |
+| 3. Cornerstone-content (flagship) | 7/7 | Complete (alle 7 cornerstones live op feature/seo-geo-kennisbank; bidirectioneel pillar↔cluster link-netwerk bewezen, alle 7 hub-zichtbaar, Article/BlogPosting + FAQPage JSON-LD valide, CWV neutraal; CONT-01..08 done) | 2026-06-02 |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
 | 6. Engine operationeel + pillar-gekoppeld | 0/TBD | Not started | - |
