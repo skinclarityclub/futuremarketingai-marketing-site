@@ -20,7 +20,7 @@
 - [ ] **CONT-03**: "Hoe meet je zichtbaarheid in AI Overviews" cluster gepubliceerd
 - [x] **CONT-04**: "GEO monitoring tools voor ChatGPT en Perplexity" cluster gepubliceerd
 - [x] **CONT-05**: "AI marketing automation voor bureaus" pillar-gids gepubliceerd
-- [ ] **CONT-06**: "Wat is een AI Marketing Medewerker (Clyde)" cluster gepubliceerd
+- [x] **CONT-06**: "Wat is een AI Marketing Medewerker (Clyde)" cluster gepubliceerd
 - [ ] **CONT-07**: Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" gepubliceerd
 - [ ] **CONT-08**: Interne links pillar↔cluster consistent + elke cornerstone heeft één /apply-CTA
 
@@ -87,7 +87,7 @@
 | CONT-03 | Phase 3 | Pending |
 | CONT-04 | Phase 3 | Complete |
 | CONT-05 | Phase 3 | Complete |
-| CONT-06 | Phase 3 | Pending |
+| CONT-06 | Phase 3 | Complete |
 | CONT-07 | Phase 3 | Pending |
 | CONT-08 | Phase 3 | Pending |
 | PUB-01 | Phase 4 | Pending |

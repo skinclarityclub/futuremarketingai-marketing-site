@@ -23,7 +23,7 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 3 of 7 (Cornerstone-content) — IN PROGRESS
-Plan: 03-01 + 03-02 + 03-04 voltooid (parallel wave-2). Resterend: 03-03, 03-05, 03-06, 03-07.
+Plan: 03-01 + 03-02 + 03-04 + 03-05 voltooid (parallel wave-2). Resterend: 03-03, 03-06, 03-07.
 Status: GEO pillar (CONT-01) verdiept tot 1564w + AI-marketing-automation pillar (CONT-05) live op feature/seo-geo-kennisbank; beide pillar:true, Article + FAQPage JSON-LD geverifieerd.
 Last activity: 2026-06-02 — Plan 03-01 voltooid (content/blog/geo-generative-engine-optimization.mdx van ~3 naar 6 gegronde NL-secties, 1564w, TOC/takeaways/FAQ/citations + in-body links naar 3 GEO-clusters; build+JSON-LD+mobile proof PASS; commits a4db4b5, 5f5d8da). Plan 03-02 parallel voltooid (content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w)
 
@@ -49,6 +49,7 @@ Progress: [████░░░░░░] 42%
 - Trend: stable
 
 *Updated after each plan completion*
+| Phase 03 P05 | 7 | 3 tasks | 1 files |
 | Phase 03 P04 | 5 | 3 tasks | 1 files |
 | Phase 03 P02 | 7 | 3 tasks | 1 files |
 | Phase 03 P01 | 14 | 3 tasks | 1 files |
@@ -81,6 +82,8 @@ Recent decisions affecting current work:
 - [Phase 03-02]: Forbidden glossary-term 'AI-tool' alleen contrastief gebruiken (wat Clyde NIET is), conform de glossary-definitie zelf — niet als productlabel
 - [03-04]: GEO-monitoring-tools-cluster (CONT-04) als vendor-neutrale ComparisonTable (geen highlightColumn) — Clyde is geen GEO-monitoring-tool, dus de tabel blijft een neutraal landschapsoverzicht
 - [03-04]: ComparisonTable-cellen gebruiken string 'Deels' i.p.v. een onbewijsbare false-boolean waar 03-RESEARCH §3 geen harde capaciteit bevestigt (defensible-claims, Pitfall 5); kolommen Profound/Peec AI/Otterly/Semrush dekken de drie tool-categorieen
+- [03-05]: Clyde-positionerings-cluster (CONT-06) spiegelt de glossary.ai-marketing-medewerker definitie letterlijk in de answer-first eerste zin — citeerbare definitie-pagina, consistente categorie-framing site-wide; in-body back-link naar de ai-marketing-automation pillar + forward naar de clyde-vs-vergelijking
+- [03-05]: 'AI-tool' uitsluitend contrastief gebruikt (wat Clyde NIET is), niet als productlabel — zelfde lijn als 03-02; build compileert + 122/122 static pages, Article(BlogPosting)+FAQPage JSON-LD bevestigd via [slug]/page.tsx renderer-path
 
 ### Pending Todos
 
