@@ -29,9 +29,14 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Success Criteria** (what must be TRUE):
   1. Een bezoeker op `/resources` ziet de kennisbank-hub die pillars, hun clusters en de glossary toont, werkend in NL/EN/ES
   2. De glossary-sectie definieert de GEO/agency-termen (GEO, AI Marketing Medewerker, citation monitoring, tier caps) en is per-term linkbaar
-  3. Een MDX-artikel rendert TOC, key takeaways, FAQ en citations, en emit valide Article + FAQPage JSON-LD (Rich Results Test groen)
+  3. Een MDX-artikel rendert TOC, key takeaways, FAQ en citations, en emit valide Article + FAQPage JSON-LD (Article via Rich Results Test, FAQPage via Schema Markup Validator; FAQ rich result is in 2026 gedeprecieerd)
   4. `npm run build` slaagt en de hub + nieuwe URLs staan met hreflang in `sitemap.xml`
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — GEO/agency glossary: data + component + DefinedTermSet JSON-LD + i18n (KB-05)
+- [ ] 01-02-PLAN.md — SKC-grade GEO pillar demo-artikel; verifieert rich renderer + Article/FAQPage JSON-LD (KB-01/02/03)
+- [ ] 01-03-PLAN.md — /resources hub: pillars + clusters + glossary, sitemap-hreflang + breadcrumb (KB-04)
 
 ### Phase 2: Content-pillar spine
 **Goal**: FutureMarketingAI's content-strategie bestaat één keer als bron-van-waarheid in `fma_content_pillars`, zodat zowel de cornerstone-blog als de social-pipeline straks uit dezelfde pillars genereren. Dit is de strategie-spine die het hele programma verbindt; vroeg gelegd zodat cornerstone-content er direct op kan mappen.
@@ -104,7 +109,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Kennisbank-infrastructuur afronden | 0/TBD | Not started (KB-01/02/03 geshipt) | - |
+| 1. Kennisbank-infrastructuur afronden | 0/3 | Planned (KB-01/02/03 geshipt) | - |
 | 2. Content-pillar spine | 0/TBD | Not started | - |
 | 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
