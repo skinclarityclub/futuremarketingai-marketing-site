@@ -76,12 +76,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const pillars = getPillarPosts(locale)
   const geoPillar = pillars.find((p) => p.category === 'geo')
   const aiPillar = pillars.find((p) => p.category === 'ai-marketing-automation')
+  const agencyPillar = pillars.find((p) => p.category === 'agency-ops')
+  const productPillar = pillars.find((p) => p.category === 'product-clyde')
   const comparison = getClusterPosts('ai-marketing-automation-voor-bureaus', locale).find(
     (p) => p.slug === 'clyde-vs-jasper-chatgpt-semrush'
   )
   const kennisbankItems: KennisbankCard[] = [
     geoPillar && { ...geoPillar, kind: 'pillar' as const },
     aiPillar && { ...aiPillar, kind: 'pillar' as const },
+    agencyPillar && { ...agencyPillar, kind: 'pillar' as const },
+    productPillar && { ...productPillar, kind: 'pillar' as const },
     comparison && { ...comparison, kind: 'comparison' as const },
   ]
     .filter((p): p is NonNullable<typeof p> => Boolean(p))
