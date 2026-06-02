@@ -128,7 +128,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
 | 6. Engine operationeel + pillar-gekoppeld | 0/TBD | Not started | - |
 | 7. Off-site autoriteit-playbook | 0/TBD | Not started | - |
-| 8. Cornerstone-content batch 2 (agency-ops + product/Clyde) | 0/7 | Planned (7 plans, 4 waves; CONT-09..16) | - |
+| 8. Cornerstone-content batch 2 (agency-ops + product/Clyde) | 7/7 | Complete (CONT-09..16; bidirectioneel netwerk dichtgetimmerd) | 2026-06-02 |
 
 ### Phase 8: Cornerstone-content batch 2 (agency-ops + product/Clyde pillars + clusters)
 
@@ -144,12 +144,12 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 **Plans:** 7 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Wiring sluitsteen-infra: product-clyde hub-bucket + i18n (nl/en/es) + homepage-teaser-add van beide pillars (CONT-16)
-- [ ] 08-02-PLAN.md — Agency-ops pillargids "marketingbureau schalen met AI" 1500-3000w (CONT-09)
-- [ ] 08-03-PLAN.md — Product/Clyde pillargids "AI Marketing Medewerker" 1500-3000w, geen CONT-06-kannibalisatie (CONT-13)
-- [ ] 08-04-PLAN.md — Agency-ops clusters: AI-efficiëntie + meetbare-resultaten ROI-framework (CONT-10, CONT-11)
-- [ ] 08-05-PLAN.md — Agency-ops proof-cluster (Sindy-as-operator, kwalitatief) (CONT-12)
-- [ ] 08-06-PLAN.md — Product/Clyde clusters: agent-vs-tool + geheugen-en-leren (CONT-14, CONT-15)
-- [ ] 08-07-PLAN.md — Sluitsteen: bidirectioneel link-netwerk + cross-page proof-sweep (hub/teaser/JSON-LD/em-dash/build) (CONT-16)
+- [x] 08-01-PLAN.md — Wiring sluitsteen-infra: product-clyde hub-bucket + i18n (nl/en/es) + homepage-teaser-add van beide pillars (CONT-16)
+- [x] 08-02-PLAN.md — Agency-ops pillargids "marketingbureau schalen met AI" 1500-3000w (CONT-09)
+- [x] 08-03-PLAN.md — Product/Clyde pillargids "AI Marketing Medewerker" 1500-3000w, geen CONT-06-kannibalisatie (CONT-13)
+- [x] 08-04-PLAN.md — Agency-ops clusters: AI-efficiëntie + meetbare-resultaten ROI-framework (CONT-10, CONT-11)
+- [x] 08-05-PLAN.md — Agency-ops proof-cluster (Sindy-as-operator, kwalitatief) (CONT-12)
+- [x] 08-06-PLAN.md — Product/Clyde clusters: agent-vs-tool + geheugen-en-leren (CONT-14, CONT-15)
+- [x] 08-07-PLAN.md — Sluitsteen: bidirectioneel link-netwerk + cross-page proof-sweep (hub/teaser/JSON-LD/em-dash/build) (CONT-16)
 
 > **Deferred — batch 3 (eigen vervolgfase, NIET deze):** 12 skills-artikelen (let op: /skills/* pagina's bestaan al — beslis verdiepen vs nieuwe blog-artikelen) + thematische thought-leadership stukken (man vs machine, toekomst van AI). Toevoegen via /gsd:add-phase zodra batch 2 staat.

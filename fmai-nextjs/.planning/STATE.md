@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-06-02T16:09:52.394Z"
+last_updated: "2026-06-02T16:22:55.373Z"
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 18
-  completed_plans: 17
+  completed_plans: 18
 ---
 
 # Project State
@@ -18,18 +18,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-02)
 
 **Core value:** FutureMarketingAI wordt geciteerd door AI-engines en rankt op non-branded GEO/agency-keywords, via diepe content die het eigen Blog Factory-product produceert.
-**Current focus:** Phase 8 (Cornerstone-content batch 2) — agency-ops pillar (CONT-09) + clusters live op feature/seo-geo-kennisbank. 08-05 (CONT-12 proof-case) voltooid. Volgende: resterende clusters + product/Clyde pillar + sluitsteen 08-07.
+**Current focus:** Phase 8 (Cornerstone-content batch 2) VOLTOOID — beide pillars (agency-ops CONT-09, product/Clyde CONT-13) + 5 clusters live op feature/seo-geo-kennisbank, bidirectioneel netwerk dichtgetimmerd via sluitsteen 08-07. Volgende: merge feature/seo-geo-kennisbank → main + eventueel batch 3 (deferred).
 
 ## Current Position
 
-Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
-Plan: 08-03 (CONT-13 product/Clyde pillar) + 08-04 (CONT-10/11 efficiency + ROI-framework clusters) + 08-05 (CONT-12 agency-proof case) + 08-06 (CONT-14/15 product/Clyde clusters) voltooid. Volgende: sluitsteen 08-07 (CONT-16 content-helft).
+Phase: 8 (Cornerstone-content batch 2) — COMPLETE (7/7 plans)
+Plan: 08-07 (CONT-16 sluitsteen) voltooid — laatste plan van Phase 8. Alle 7 batch-2 cornerstones live met bidirectioneel pillar↔cluster netwerk; Phase 8 closed.
+Status (08-07 sluitsteen): Verificatie-only keystone (mirror van 03-07). Beide pillars OUT-linken al hun clusters en elke cluster BACK-linkt zijn pillar — bewezen tegen gerenderde .next/server/app/nl/blog/<slug>.html (niet alleen MDX-source). Cross-page proof-sweep over alle 7: exact 1 <CtaBlock> + 1 /apply per file, 0 U+2014 em-dash, canoniek future-marketing.ai, geen wees-cluster (elke clusterOf resolved naar bestaande pillar:true slug in hub-bucket category). npm run build exit 0, 129 static pages (122+7), geen MISSING_MESSAGE; check:palette PASS. Hub /nl/resources rendert alle 7 onder juiste bucket (agency-ops: pillar+3 clusters; product-clyde: pillar+2 clusters+CONT-06 down-link); homepage /nl rendert beide nieuwe pillars in KennisbankTeaser; Article(pillar)/BlogPosting(cluster)+FAQPage JSON-LD bevestigd in gerenderde HTML voor alle 7. CWV structureel-neutraal beargumenteerd (static MDX, identieke renderer, geen nieuwe client-JS). Geen MDX-edits nodig (out-/back-links al upstream geschreven). Geen per-task code-commits (verificatie-only). CONT-09..16 afgevinkt; REQUIREMENTS-traceability-tabel gesynct. Pre-existing ESLint-errors (ts-ignore, React-19 effect-rules in unrelated files) out-of-scope: build compileert + prerendert 129/129.
 Status: 08-06 twee product/Clyde clusters onder pillar ai-marketing-medewerker (CONT-13). CONT-14 `content/blog/ai-agent-vs-ai-tool-marketing.mdx` (1017w, 5 <h2 id>, defensible-claims ComparisonTable highlightColumn={1} op medewerker-kolom, dated caption juni 2026) trekt agent-vs-tool grens op 4 eigenschappen (autonomie+geheugen+leren+beslissingen). CONT-15 `content/blog/ai-marketing-agent-geheugen-en-leren.mdx` (1149w, 5 <h2 id>, 1 Callout) legt geheugen+leren per merk uit als Clyde USP, deeplinkt naar /nl/memory. Beide BlogPosting, category product-clyde, clusterOf ai-marketing-medewerker, ≥5 FAQs, exact 1 /apply CtaBlock, geen em-dash, AI-tool alleen contrastief, bidirectioneel verbonden met pillar + sibling. Build PASS (129 static pages, +2 t.o.v. 08-05's 127). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML voor beide. check:palette PASS. Commits c5f4b77 (CONT-14) + 69009e1 (CONT-15); Task 3 verificatie-only. Eén auto-fix (Rule 1): ComparisonTable kolom/highlight-mapping gecorrigeerd vóór commit. CONT-14 + CONT-15 afgevinkt.
 Status (08-05): 08-05 agency-proof case-cluster `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 <h2 id>); Sindy-as-operator narratief als werkend voorbeeld; KWALITATIEF-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; geen Daley SKC-mede-eigendom (regex-audit op MDX+gerenderde HTML clean). 1 in-body CtaBlock -> /apply; back-link naar pillar + forward-link CONT-11 + /nl/pricing deeplink. BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Build PASS (127 static pages, +4 t.o.v. 08-02's 123), check:palette PASS. Commit 71cc0a1 (Tasks 1+2 als één file-write); Task 3 verificatie-only. CONT-12 afgevinkt.
 Last activity: 2026-06-02 — Plan 08-06 voltooid (CONT-14 ai-agent-vs-ai-tool-marketing 1017w + CONT-15 ai-marketing-agent-geheugen-en-leren 1149w, beide BlogPosting+FAQPage JSON-LD valide in .next-HTML, product-clyde clusters onder pillar ai-marketing-medewerker, commits c5f4b77 + 69009e1). Build 129 static pages, palette PASS.
 Plan 08-03 voltooid (parallel wave-2): product/Clyde pillargids `content/blog/ai-marketing-medewerker.mdx` (CONT-13, pillar:true, category product-clyde, schemaType Article, 1817w, 6 <h2 id>). Definieert de AI Marketing Medewerker als PRODUCTCATEGORIE (autonomie + langetermijngeheugen + vaardigheden), Clyde = FMai-implementatie. Anti-cannibalisatie vs CONT-06: distinct H1 + answer-first + down-link naar /nl/blog/wat-is-een-ai-marketing-medewerker; forward-links CONT-14/15 + /nl/memory; 1 in-body CtaBlock -> /apply; geen em-dashes; AI-tool alleen contrastief. Build PASS (127 static pages), Article + FAQPage JSON-LD valide in .next-HTML, alle 6 TOC-anchors resolven, pillar verschijnt in product-clyde hub-bucket op /resources (geen MISSING_MESSAGE), check:palette PASS. Commit 6adce32 (Tasks 1+2 één file-write); Task 3 verificatie-only. CONT-13 afgevinkt.
 
-Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exacte plan-count)
+Progress: Phase 8 [███████] COMPLETE (7/7 plans) — alle 4 hub-buckets gevuld, bidirectioneel netwerk dichtgetimmerd
 
 ## Performance Metrics
 
@@ -64,6 +65,7 @@ Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exac
 | Phase 08 P04 | 8 | 3 tasks | 2 files |
 | Phase 08 P03 | 9 | 3 tasks | 1 files |
 | Phase 08 P06 | 14 | 3 tasks | 2 files |
+| Phase 08 P07 | 7 | 3 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -113,6 +115,7 @@ Recent decisions affecting current work:
 - [Phase 08-03]: Clyde expliciet als IMPLEMENTATIE van de categorie gepositioneerd (categorie != merk) via Callout: de categorie definieren, niet bezitten; claim het ontbreken van een vaste NL-definitie als de GEO/SEO-winst
 - [Phase 08-06]: CONT-14 ComparisonTable: 2 waardekolommen + impliciete row.label-kolom, highlightColumn={1} op de medewerker-kolom (component rendert label als 1e cel, columns mappen op values)
 - [Phase 08-06]: Beide product/Clyde clusters: AI-tool alleen contrastief; CONT-15 verankert geheugen+leren per merk als Clyde USP met /nl/memory deeplink i.p.v. het meerlaagse model te dupliceren
+- [Phase 08-07]: Keystone (CONT-16) was verificatie-only: out-/back-links al volledig upstream geschreven (08-02/03 + 08-04/05/06), geen MDX-edits — identiek aan 03-07. Bidirectionaliteit bewezen tegen gerenderde .next-HTML, niet alleen MDX-source. CWV structureel-neutraal beargumenteerd.
 
 ### Roadmap Evolution
 
@@ -137,5 +140,8 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 08-06-PLAN.md (CONT-14/15 product/Clyde clusters). Geschreven: `content/blog/ai-agent-vs-ai-tool-marketing.mdx` (CONT-14, 1017w, 5 <h2 id>, defensible-claims ComparisonTable tool-vs-medewerker met highlightColumn={1} + dated caption juni 2026, agent-vs-tool grens op 4 eigenschappen) + `content/blog/ai-marketing-agent-geheugen-en-leren.mdx` (CONT-15, 1149w, 5 <h2 id>, 1 Callout, geheugen+leren per merk = Clyde USP, /nl/memory deeplink). Beide: category product-clyde, clusterOf ai-marketing-medewerker, schemaType BlogPosting, ≥5 FAQs, exact 1 /apply CtaBlock, geen em-dash, AI-tool alleen contrastief, bidirectioneel verbonden met pillar (08-03 forward-linkt al, deze clusters back-linken nu) + sibling. Build PASS (129 static pages, +2 t.o.v. 08-05's 127). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML voor beide. check:palette PASS. Auto-fix (Rule 1): ComparisonTable kolom/highlight-mapping gecorrigeerd vóór commit (component rendert row.label als 1e cel, columns mappen op values). Commits c5f4b77 (CONT-14) + 69009e1 (CONT-15); Task 3 verificatie-only. CONT-14 + CONT-15 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. Volgende: sluitsteen 08-07 (CONT-16) — verifieert beide clusters in product-clyde bucket op /resources + bidirectionele back-links.
+Stopped at: Completed 08-07-PLAN.md (CONT-16 sluitsteen) — laatste plan van Phase 8, Phase 8 COMPLETE (7/7). Verificatie-only keystone (mirror van 03-07): beide pillars (marketingbureau-schalen-met-ai, ai-marketing-medewerker) OUT-linken al hun clusters en elke cluster BACK-linkt zijn pillar — bewezen tegen gerenderde .next/server/app/nl/blog/<slug>.html, niet alleen MDX. Cross-page sweep over alle 7 nieuwe cornerstones: exact 1 CtaBlock + 1 /apply per file, 0 U+2014 em-dash, canoniek future-marketing.ai, geen wees-cluster. npm run build exit 0 (129 static pages = 122+7, geen MISSING_MESSAGE); check:palette PASS. Hub /nl/resources rendert alle 7 onder juiste bucket (agency-ops: pillar+3 clusters; product-clyde: pillar+2 clusters+CONT-06 down-link); homepage /nl rendert beide nieuwe pillars in KennisbankTeaser; Article/BlogPosting+FAQPage JSON-LD bevestigd in gerenderde HTML voor alle 7. Geen MDX-edits (out-/back-links al upstream geschreven), dus geen per-task code-commits (verificatie-only). CONT-09..16 afgevinkt + REQUIREMENTS-traceability-tabel gesynct. Pre-existing ESLint-errors (ts-ignore/React-19 effect-rules, unrelated files) out-of-scope. MERGE-STATUS: hele Phase 8 zit op feature/seo-geo-kennisbank, niet main — verifieer merge vóór live. Volgende: merge naar main + eventueel batch 3 (deferred: 12 skills-artikelen + thematische stukken).
+
+--- VORIGE SESSIE ---
+Stopped at (08-06): Completed 08-06-PLAN.md (CONT-14/15 product/Clyde clusters). Geschreven: `content/blog/ai-agent-vs-ai-tool-marketing.mdx` (CONT-14, 1017w, 5 <h2 id>, defensible-claims ComparisonTable tool-vs-medewerker met highlightColumn={1} + dated caption juni 2026, agent-vs-tool grens op 4 eigenschappen) + `content/blog/ai-marketing-agent-geheugen-en-leren.mdx` (CONT-15, 1149w, 5 <h2 id>, 1 Callout, geheugen+leren per merk = Clyde USP, /nl/memory deeplink). Beide: category product-clyde, clusterOf ai-marketing-medewerker, schemaType BlogPosting, ≥5 FAQs, exact 1 /apply CtaBlock, geen em-dash, AI-tool alleen contrastief, bidirectioneel verbonden met pillar (08-03 forward-linkt al, deze clusters back-linken nu) + sibling. Build PASS (129 static pages, +2 t.o.v. 08-05's 127). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML voor beide. check:palette PASS. Auto-fix (Rule 1): ComparisonTable kolom/highlight-mapping gecorrigeerd vóór commit (component rendert row.label als 1e cel, columns mappen op values). Commits c5f4b77 (CONT-14) + 69009e1 (CONT-15); Task 3 verificatie-only. CONT-14 + CONT-15 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. Volgende: sluitsteen 08-07 (CONT-16) — verifieert beide clusters in product-clyde bucket op /resources + bidirectionele back-links.
 Resume file: None
