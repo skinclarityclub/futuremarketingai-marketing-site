@@ -106,8 +106,8 @@
 | CONT-11 | Phase 8 | Planned |
 | CONT-12 | Phase 8 | Planned |
 | CONT-13 | Phase 8 | Planned |
-| CONT-14 | Phase 8 | Planned |
-| CONT-15 | Phase 8 | Planned |
+| CONT-14 | Phase 8 | Complete |
+| CONT-15 | Phase 8 | Complete |
 | CONT-16 | Phase 8 | Planned |
 | PUB-01 | Phase 4 | Pending |
 | PUB-02 | Phase 4 | Pending |
