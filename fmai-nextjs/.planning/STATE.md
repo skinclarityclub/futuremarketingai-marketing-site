@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-06-02T15:45:05.630Z"
+last_updated: "2026-06-02T15:56:01.438Z"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 18
-  completed_plans: 12
+  completed_plans: 14
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-02)
 
 **Core value:** FutureMarketingAI wordt geciteerd door AI-engines en rankt op non-branded GEO/agency-keywords, via diepe content die het eigen Blog Factory-product produceert.
-**Current focus:** Phase 8 (Cornerstone-content batch 2) GESTART — agency-ops pillargids (CONT-09) live op feature/seo-geo-kennisbank. Vult samen met de product/Clyde pillar de 2 lege hub-buckets. Volgende: agency-ops clusters (CONT-10/11/12).
+**Current focus:** Phase 8 (Cornerstone-content batch 2) — agency-ops pillar (CONT-09) + clusters live op feature/seo-geo-kennisbank. 08-05 (CONT-12 proof-case) voltooid. Volgende: resterende clusters + product/Clyde pillar + sluitsteen 08-07.
 
 ## Current Position
 
 Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
-Plan: 08-01 (CONT-16 infra) + 08-02 (CONT-09) voltooid. 2 van 7 plannen klaar. Volgende: 08-03/04/05 (agency-ops + product/Clyde clusters), sluitsteen 08-07 (CONT-16 content-helft).
-Status: 08-01 wiring-infra — /resources heeft 4 hub-buckets incl product-clyde (i18n in nl/en/es, geen MISSING_MESSAGE); homepage Kennisbank-teaser bedraad op agency-ops + product/Clyde pillars zodat cornerstones automatisch oppoppen zodra hun MDX bestaat (commits 9cff6a5 + 598c09a). 08-02 agency-ops pillargids `content/blog/marketingbureau-schalen-met-ai.mdx` (pillar:true, category agency-ops, Article, 1895w, 6 <h2 id>); AI-first framing; Article + FAQPage (5 Q&A) JSON-LD valide; 1 in-body CtaBlock -> /apply; forward-links naar CONT-10/11/12 + sibling automation-pillar; hub-verschijning onder agency-ops bevestigd (commit 6503be9, surfacet via de 08-01 wiring). Build PASS (123 static pages), check:palette PASS. Phase 3 (CONT-01..08) bleef compleet.
-Last activity: 2026-06-02 — Plan 08-01 voltooid: Task 1 PILLAR_BUCKETS 3->4 + product-clyde i18n-key alle 3 locales (9cff6a5); Task 2 agencyPillar+productPillar in kennisbankItems (598c09a); Task 3 build+palette proof, geen source-mutatie. CONT-16 afgevinkt in REQUIREMENTS.md.
+Plan: 08-05 (CONT-12 agency-proof case) voltooid. Volgende: resterende wave-2 clusters (08-03/04), product/Clyde pillar+clusters (08-06), sluitsteen 08-07 (CONT-16 content-helft).
+Status: 08-05 agency-proof case-cluster `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 <h2 id>); Sindy-as-operator narratief als werkend voorbeeld; KWALITATIEF-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; geen Daley SKC-mede-eigendom (regex-audit op MDX+gerenderde HTML clean). 1 in-body CtaBlock -> /apply; back-link naar pillar + forward-link CONT-11 + /nl/pricing deeplink. BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Build PASS (127 static pages, +4 t.o.v. 08-02's 123), check:palette PASS. Commit 71cc0a1 (Tasks 1+2 als één file-write); Task 3 verificatie-only. CONT-12 afgevinkt.
+Last activity: 2026-06-02 — Plan 08-05 voltooid: case-cluster CONT-12 geschreven en geverifieerd (build 127 pages, JSON-LD valide, proof-rule audit clean, palette PASS).
 
-Progress: Phase 8 [██░░░░░] 2/7 plannen
+Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exacte plan-count)
 
 ## Performance Metrics
 
@@ -58,6 +58,7 @@ Progress: Phase 8 [██░░░░░] 2/7 plannen
 | Phase 03 P01 | 14 | 3 tasks | 1 files |
 | Phase 08 P02 | 7 | 3 tasks | 1 files |
 | Phase 08 P01 | 12 | 3 tasks | 5 files |
+| Phase 08 P05 | 5 | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -100,6 +101,7 @@ Recent decisions affecting current work:
 - [Phase 08]: [08-01]: product-clyde als 4e top-level hub-bucket (Open Q1 Option B locked), niet gevouwen in ai-marketing-automation
 - [Phase 08]: [08-01]: teaser-feed blijft expliciete per-pillar .find()-calls (hardcoded-add, Open Q2 locked); && guard + .filter(Boolean) laat cards self-omitten tot MDX bestaat
 - [Phase 08]: [08-01]: i18n-key product-clyde in alle 3 locales tegelijk (next-intl strict throwt MISSING_MESSAGE per locale)
+- [Phase 08-05]: Case-cluster CONT-12 kwalitatief-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; Sindy-as-operator, geen Daley-eigendom
 
 ### Roadmap Evolution
 
@@ -124,5 +126,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 08-02-PLAN.md (CONT-09 agency-ops pillargids). Phase 8 (Cornerstone-content batch 2) gestart, 1/7 plannen klaar. Geschreven: `content/blog/marketingbureau-schalen-met-ai.mdx` (pillar:true, category agency-ops, schemaType Article, 1895w, 6 <h2 id>-secties matchend aan tableOfContents). AI-first operating-model framing per 08-RESEARCH (lineaire omzet-headcount-relatie breken, human-in-the-loop). Build PASS (123 static pages, +1 t.o.v. Phase 3's 122). Article + FAQPage (5 valide Q&A) JSON-LD bevestigd in gerenderde .next-HTML, geen parse-errors. Exact 1 in-body CtaBlock -> /nl/apply. Forward-links naar 3 agency-ops clusters (CONT-10/11/12) + sibling automation-pillar present in HTML. Hub-verschijning onder agency-ops bucket bevestigd in resources.html. Geen em-dashes, glossary gerespecteerd, marktstats (~72% adoptie, ~54% kennisbarriere) zacht-geciteerd als marktcontext, SKC via Sindy als operator (geen eigen cijfers). Commit 6503be9 (Tasks 1+2 in één file-write); Task 3 verificatie-only. CONT-09 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. Volgende: agency-ops clusters CONT-10/11/12 (08-03/04/05), daarna product/Clyde pillar+clusters, sluitsteen 08-07 (CONT-16).
+Stopped at: Completed 08-05-PLAN.md (CONT-12 agency-proof case-cluster). Geschreven: `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 question-based <h2 id>-secties matchend aan tableOfContents, 5 FAQs). Sindy-as-operator narratief als werkend voorbeeld. PROOF-RULE audit clean: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd ("in de markt wordt gerapporteerd..."), geen Daley SKC-mede-eigendom (regex op MDX+gerenderde HTML). Build PASS (127 static pages, +4 t.o.v. 08-02's 123). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Exact 1 in-body CtaBlock -> /apply; back-link pillar + forward-link CONT-11 (resolveert zodra 08-04 shipt) + /nl/pricing deeplink. Geen em-dashes, glossary gerespecteerd. check:palette PASS. Commit 71cc0a1 (Tasks 1+2 in één file-write); Task 3 verificatie-only. CONT-12 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. LET OP: 08-03/04/06 zijn parallelle wave-plannen — verifieer hun status via ROADMAP/SUMMARY-bestanden. Volgende: resterende clusters + product/Clyde pillar (08-06), sluitsteen 08-07 (CONT-16).
 Resume file: None
