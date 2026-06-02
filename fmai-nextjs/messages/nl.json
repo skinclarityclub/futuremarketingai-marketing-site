@@ -3954,5 +3954,25 @@
       "intro": "Vraag Clyde bijvoorbeeld:"
     },
     "scarcityBadge": "Founding open · {taken}/{total} bezet"
+  },
+  "glossary": {
+    "heading": "GEO & AI marketing woordenlijst",
+    "intro": "De kernbegrippen achter generative engine optimization en AI marketing automation voor bureaus.",
+    "geo": {
+      "name": "GEO (Generative Engine Optimization)",
+      "definition": "Het optimaliseren van content zodat AI-engines zoals ChatGPT, Perplexity en Google AI Overviews jouw merk citeren als bron. Waar SEO mikt op blauwe links, mikt GEO op vermelding in het gegenereerde antwoord."
+    },
+    "ai-marketing-medewerker": {
+      "name": "AI Marketing Medewerker (Clyde)",
+      "definition": "Een persistente AI-partner met langetermijngeheugen die als digitale collega marketingvaardigheden uitvoert voor bureaus. Geen losse tool, maar een meewerkende medewerker die het merk en de klantportfolio onthoudt."
+    },
+    "citation-monitoring": {
+      "name": "Citation monitoring",
+      "definition": "Het structureel meten of, en hoe vaak, AI-engines een merk noemen of citeren in hun gegenereerde antwoorden. De GEO-tegenhanger van klassieke rank tracking."
+    },
+    "tier-caps": {
+      "name": "Tier caps",
+      "definition": "De grenzen per abonnementsniveau aan het aantal merken of werkruimtes dat een bureau onder een plan beheert. Bepaalt welke vaardigheden en welk volume binnen een tier vallen."
+    }
   }
 }

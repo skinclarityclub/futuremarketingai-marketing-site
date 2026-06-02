@@ -3954,5 +3954,25 @@
       "intro": "Ask Clyde something like:"
     },
     "scarcityBadge": "Founding open · {taken}/{total} reserved"
+  },
+  "glossary": {
+    "heading": "GEO & AI marketing glossary",
+    "intro": "The core concepts behind generative engine optimization and AI marketing automation for agencies.",
+    "geo": {
+      "name": "GEO (Generative Engine Optimization)",
+      "definition": "Optimizing content so AI engines like ChatGPT, Perplexity and Google AI Overviews cite your brand as a source. Where SEO targets blue links, GEO targets a mention inside the generated answer."
+    },
+    "ai-marketing-medewerker": {
+      "name": "AI Marketing Employee (Clyde)",
+      "definition": "A persistent AI partner with long-term memory that performs marketing skills for agencies as a digital colleague. Not a standalone tool, but a collaborating employee that remembers the brand and the client portfolio."
+    },
+    "citation-monitoring": {
+      "name": "Citation monitoring",
+      "definition": "Structurally measuring whether, and how often, AI engines mention or cite a brand in their generated answers. The GEO counterpart of classic rank tracking."
+    },
+    "tier-caps": {
+      "name": "Tier caps",
+      "definition": "The per-plan limits on the number of brands or workspaces an agency manages under a single subscription. Determines which skills and what volume fall within a tier."
+    }
   }
 }

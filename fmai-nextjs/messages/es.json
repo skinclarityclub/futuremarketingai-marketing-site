@@ -3954,5 +3954,25 @@
       "intro": "Pídele a Clyde, por ejemplo:"
     },
     "scarcityBadge": "Founding abierto · {taken}/{total} reservadas"
+  },
+  "glossary": {
+    "heading": "Glosario de GEO y marketing con IA",
+    "intro": "Los conceptos clave detrás de la generative engine optimization y la automatización de marketing con IA para agencias.",
+    "geo": {
+      "name": "GEO (Generative Engine Optimization)",
+      "definition": "Optimizar el contenido para que los motores de IA como ChatGPT, Perplexity y Google AI Overviews citen tu marca como fuente. Donde el SEO apunta a los enlaces azules, el GEO apunta a una mención dentro de la respuesta generada."
+    },
+    "ai-marketing-medewerker": {
+      "name": "Empleado de Marketing con IA (Clyde)",
+      "definition": "Un socio de IA persistente con memoria a largo plazo que ejecuta habilidades de marketing para agencias como un colega digital. No es una herramienta aislada, sino un empleado colaborador que recuerda la marca y la cartera de clientes."
+    },
+    "citation-monitoring": {
+      "name": "Monitorización de citas",
+      "definition": "Medir de forma estructurada si, y con qué frecuencia, los motores de IA mencionan o citan una marca en sus respuestas generadas. El equivalente en GEO del clásico seguimiento de posiciones."
+    },
+    "tier-caps": {
+      "name": "Límites de plan (tier caps)",
+      "definition": "Los límites por nivel de suscripción sobre el número de marcas o espacios de trabajo que una agencia gestiona bajo un mismo plan. Determina qué habilidades y qué volumen entran dentro de un nivel."
+    }
   }
 }
