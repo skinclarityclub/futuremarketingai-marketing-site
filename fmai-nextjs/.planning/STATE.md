@@ -95,6 +95,11 @@ Recent decisions affecting current work:
 - [03-07]: Em-dashes in citation-titles vervangen door dubbele punt (label-stijl "Naam: subtitel") i.p.v. komma — natuurlijker + consistent met no-em-dash-regel. Enige 2 resterende U+2014-overtredingen in de hele cornerstone-set (commit b214acd)
 - [03-07]: CWV-proof als structureel-neutraal beargumenteerd i.p.v. losse Lighthouse-run — alle 7 zijn static-prerendered MDX via identieke renderer/template + inlined critical CSS als de blog-baseline, geen nieuwe client-JS/assets, dus regressie uitgesloten. Matcht plan-verwachting "static MDX -> expect neutral"
 
+### Roadmap Evolution
+
+- Phase 8 added (2026-06-02): Cornerstone-content batch 2 (agency-ops + product/Clyde pillars + clusters) — vult de 2 lege hub-buckets. Batch 3 (12 skills-artikelen + thematische stukken man-vs-machine/toekomst-AI) genoteerd als deferred vervolgfase.
+- Post-Phase-3 (2026-06-02): KennisbankTeaser homepage-blok + header-nav "Kennisbank" + footer-link naar /resources geshipt (commit a8f6c0f op feature/seo-geo-kennisbank) — surfacet de cornerstones, was eerder wees-hub.
+
 ### Pending Todos
 
 [From .planning/todos/pending/ — ideas captured during sessions]

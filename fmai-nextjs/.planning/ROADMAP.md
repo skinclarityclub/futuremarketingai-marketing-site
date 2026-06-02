@@ -128,3 +128,22 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
 | 6. Engine operationeel + pillar-gekoppeld | 0/TBD | Not started | - |
 | 7. Off-site autoriteit-playbook | 0/TBD | Not started | - |
+| 8. Cornerstone-content batch 2 (agency-ops + product/Clyde) | 0/TBD | Not planned | - |
+
+### Phase 8: Cornerstone-content batch 2 (agency-ops + product/Clyde pillars + clusters)
+
+**Goal**: De twee nog lege pillar-buckets (agency-ops/proof, product/Clyde) krijgen SKC-grade NL-authoritative cornerstones, zodat alle 4 geseedde `fma_content_pillars` content dragen en de hele /resources-hub gevuld is. Zelfde directe topical-authority + AI-citatie-doel als Phase 3, nu voor de resterende pillars.
+**Depends on**: Phase 1 (hub + renderer), Phase 2 (pillar-spine), Phase 3 (cornerstone-pattern + link/CTA-conventies + KennisbankTeaser-homepageblok)
+**Requirements**: TBD (CONT-09+ — gedefinieerd tijdens plan-phase na grounded keyword-research)
+**Success Criteria** (what must be TRUE):
+  1. Een agency-ops/proof pillar-gids (1500-3000w) + 2-3 clusters (900-1500w) staan live, mappend op de `agency-ops` pillar-rij
+  2. Een product/Clyde pillar-gids (1500-3000w) + 2-3 clusters (900-1500w) staan live, mappend op de `product-clyde` pillar-rij
+  3. Alle nieuwe cornerstones: bidirectioneel pillar↔cluster gelinkt, exact één /apply-CTA, valide Article/BlogPosting + FAQPage JSON-LD, geen em-dash, canoniek domein, glossary-conform
+  4. Elke nieuwe cornerstone verschijnt in de /resources-hub onder de juiste bucket en automatisch in het homepage KennisbankTeaser-blok (geen wees-clusters)
+  5. Keywords grounded geresearcht (Gemini grounded voor FMai, niet uit training); mobiel getest; JSON-LD valideert; CWV niet geregresseerd
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 8 to break down)
+
+> **Deferred — batch 3 (eigen vervolgfase, NIET deze):** 12 skills-artikelen (let op: /skills/* pagina's bestaan al — beslis verdiepen vs nieuwe blog-artikelen) + thematische thought-leadership stukken (man vs machine, toekomst van AI). Toevoegen via /gsd:add-phase zodra batch 2 staat.
