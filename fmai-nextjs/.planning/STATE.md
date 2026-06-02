@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-06-02T13:46:05.323Z"
+last_updated: "2026-06-02T15:45:05.630Z"
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 18
+  completed_plans: 12
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-02)
 
 **Core value:** FutureMarketingAI wordt geciteerd door AI-engines en rankt op non-branded GEO/agency-keywords, via diepe content die het eigen Blog Factory-product produceert.
-**Current focus:** Phase 3 (cornerstone content) VOLTOOID — alle 7 cornerstones live op feature/seo-geo-kennisbank met bewezen bidirectioneel link-netwerk, valide JSON-LD en hub-verschijning. Volgende: Phase 4 (multi-tenant publishing-upgrade, harde prerequisite vóór auto-publish).
+**Current focus:** Phase 8 (Cornerstone-content batch 2) GESTART — agency-ops pillargids (CONT-09) live op feature/seo-geo-kennisbank. Vult samen met de product/Clyde pillar de 2 lege hub-buckets. Volgende: agency-ops clusters (CONT-10/11/12).
 
 ## Current Position
 
-Phase: 3 of 7 (Cornerstone-content) — COMPLETE
-Plan: 03-01 t/m 03-07 allemaal voltooid. Phase 3 afgerond.
-Status: Sluitsteen-plan 03-07 (CONT-08) klaar. Pillar<->cluster interne-link-netwerk bidirectioneel dichtgetimmerd + bewezen in gerenderde HTML; alle 7 cornerstones hub-zichtbaar onder juiste pillar; alle Article/BlogPosting + FAQPage JSON-LD valide; CWV neutraal. Phase Success Criteria 4 + 5 hard afgesloten. Alle 8 CONT-requirements (CONT-01..08) compleet.
-Last activity: 2026-06-02 — Plan 03-07 voltooid. Task 1 (pillar out-links) was verificatie-only (al compleet upstream); Task 2 fixte 2 em-dashes per file in ai-marketing-automation-voor-bureaus.mdx + wat-is-een-ai-marketing-medewerker.mdx (commit b214acd); Task 3 finale build PASS (122 static pages), hub-verschijning + JSON-LD + bidirectioneel link-netwerk bewezen tegen .next-HTML.
+Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
+Plan: 08-02 (CONT-09) voltooid. 1 van 7 plannen klaar. Volgende: 08-03/04/05 (agency-ops + product/Clyde clusters), sluitsteen 08-07 (CONT-16).
+Status: Agency-ops pillargids `content/blog/marketingbureau-schalen-met-ai.mdx` geschreven (pillar:true, category agency-ops, schemaType Article, 1895w, 6 <h2 id>-secties). AI-first operating-model framing. Build PASS (123 static pages, +1). Article + FAQPage (5 Q&A) JSON-LD valide in .next-HTML. Exact 1 in-body CtaBlock -> /apply. Forward-links naar de 3 agency-ops clusters (CONT-10/11/12) + sibling automation-pillar present in gerenderde HTML. Hub-verschijning onder agency-ops bucket bevestigd. Geen em-dashes, marktstats zacht-geciteerd, SKC via Sindy als operator.
+Last activity: 2026-06-02 — Plan 08-02 voltooid. Tasks 1+2 (frontmatter + body) in één file-write, gecommit als 6503be9; Task 3 build+JSON-LD+proof was verificatie-only. CONT-09 afgevinkt in REQUIREMENTS.md.
 
-Progress: [██████████] 100%
+Progress: Phase 8 [█░░░░░░] 1/7 plannen
 
 ## Performance Metrics
 
@@ -56,6 +56,8 @@ Progress: [██████████] 100%
 | Phase 03 P04 | 5 | 3 tasks | 1 files |
 | Phase 03 P02 | 7 | 3 tasks | 1 files |
 | Phase 03 P01 | 14 | 3 tasks | 1 files |
+| Phase 08 P02 | 7 | 3 tasks | 1 files |
+| Phase 08 P01 | 12 | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -94,6 +96,10 @@ Recent decisions affecting current work:
 - [03-07]: Pillar out-links waren al volledig aanwezig (upstream toegevoegd in 03-01/03-02) — sluitsteen-Task 1 was verificatie-only, geen edit nodig; netwerk was al dichtgetimmerd. Bidirectionaliteit bewezen tegen gerenderde .next-HTML, niet alleen MDX-source
 - [03-07]: Em-dashes in citation-titles vervangen door dubbele punt (label-stijl "Naam: subtitel") i.p.v. komma — natuurlijker + consistent met no-em-dash-regel. Enige 2 resterende U+2014-overtredingen in de hele cornerstone-set (commit b214acd)
 - [03-07]: CWV-proof als structureel-neutraal beargumenteerd i.p.v. losse Lighthouse-run — alle 7 zijn static-prerendered MDX via identieke renderer/template + inlined critical CSS als de blog-baseline, geen nieuwe client-JS/assets, dus regressie uitgesloten. Matcht plan-verwachting "static MDX -> expect neutral"
+- [Phase 08-02]: Agency-ops pillargids (CONT-09) gemodelleerd op de ai-marketing-automation pillar shape; AI-first operating-model framing i.p.v. tool-lijst; marktstats zacht-geciteerd als context, nooit als FMai/SKC eigen resultaat; SKC via Sindy als operator; werkruimte-geprijsd + /nl/pricing deeplink i.p.v. hardcoded tarieven
+- [Phase 08]: [08-01]: product-clyde als 4e top-level hub-bucket (Open Q1 Option B locked), niet gevouwen in ai-marketing-automation
+- [Phase 08]: [08-01]: teaser-feed blijft expliciete per-pillar .find()-calls (hardcoded-add, Open Q2 locked); && guard + .filter(Boolean) laat cards self-omitten tot MDX bestaat
+- [Phase 08]: [08-01]: i18n-key product-clyde in alle 3 locales tegelijk (next-intl strict throwt MISSING_MESSAGE per locale)
 
 ### Roadmap Evolution
 
@@ -118,5 +124,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 03-07-PLAN.md (sluitsteen CONT-08). Phase 3 (Cornerstone-content) VOLLEDIG AFGEROND — alle 7 plannen (03-01..07) klaar, alle 8 CONT-requirements (CONT-01..08) compleet. Interne-link-netwerk pillar<->cluster bidirectioneel dichtgetimmerd + bewezen in gerenderde .next-HTML (GEO-pillar -> 3 GEO-clusters; AI-automation-pillar -> 2 AI-clusters; alle 5 clusters -> hun pillar). Alle 7 cornerstones hub-zichtbaar in /nl/resources onder juiste bucket (comparison via Option A). Alle JSON-LD valide: pillars Article, clusters BlogPosting, alle 7 FAQPage met 5 valide Q/A. Build PASS (122 static pages + critical-CSS-inline 103 files). CTA-invariant: exact 1 in-body CtaBlock per cornerstone. CWV neutraal (static MDX). Em-dash-fix in 2 files (commit b214acd). Task 1 + Task 3 vereisten geen source-mutatie (verificatie-only). MERGE-STATUS: hele Phase 3 zit op feature/seo-geo-kennisbank, niet main — verifieer merge vóór live + vóór Phase 4. Volgende: Phase 4 (multi-tenant publishing-upgrade, HARDE prerequisite ivm cross-publishing-risico SKC<->FMai).
+Stopped at: Completed 08-02-PLAN.md (CONT-09 agency-ops pillargids). Phase 8 (Cornerstone-content batch 2) gestart, 1/7 plannen klaar. Geschreven: `content/blog/marketingbureau-schalen-met-ai.mdx` (pillar:true, category agency-ops, schemaType Article, 1895w, 6 <h2 id>-secties matchend aan tableOfContents). AI-first operating-model framing per 08-RESEARCH (lineaire omzet-headcount-relatie breken, human-in-the-loop). Build PASS (123 static pages, +1 t.o.v. Phase 3's 122). Article + FAQPage (5 valide Q&A) JSON-LD bevestigd in gerenderde .next-HTML, geen parse-errors. Exact 1 in-body CtaBlock -> /nl/apply. Forward-links naar 3 agency-ops clusters (CONT-10/11/12) + sibling automation-pillar present in HTML. Hub-verschijning onder agency-ops bucket bevestigd in resources.html. Geen em-dashes, glossary gerespecteerd, marktstats (~72% adoptie, ~54% kennisbarriere) zacht-geciteerd als marktcontext, SKC via Sindy als operator (geen eigen cijfers). Commit 6503be9 (Tasks 1+2 in één file-write); Task 3 verificatie-only. CONT-09 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. Volgende: agency-ops clusters CONT-10/11/12 (08-03/04/05), daarna product/Clyde pillar+clusters, sluitsteen 08-07 (CONT-16).
 Resume file: None
