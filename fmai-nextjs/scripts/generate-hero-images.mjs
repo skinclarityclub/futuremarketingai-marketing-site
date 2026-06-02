@@ -40,27 +40,34 @@ function loadKey() {
 }
 
 // ---- brand prompt (the reusable FMai visual contract) ----
-const ACCENTS = {
-  teal: 'Luminous teal-green light blooms in color #00d4aa, flowing as a smooth volumetric gradient mesh that dissolves into the darkness',
-  amber: 'Warm amber-gold light blooms in color #f5a623, flowing as a smooth volumetric gradient mesh that dissolves into the darkness',
-  duotone: 'Teal-green (#00d4aa) and warm amber-gold (#f5a623) light blooms flow toward one another as a smooth volumetric gradient mesh, meeting and blending in the darkness',
+// Each of the 4 hub buckets gets a DISTINCT, recognizable signature = palette + motif,
+// so a reader can tell the category at a glance on the index thumbnails. Per-article
+// micro-variation keeps posts within a bucket from looking identical. Brand-only colors
+// (teal #00d4aa, amber #f5a623); purple/cyan-off-brand never introduced.
+const CATEGORY_STYLE = {
+  geo: {
+    palette: 'Cool luminous teal-green light (#00d4aa) on a near-black background, no warm tones at all',
+    motif: 'concentric circular signal waves rippling outward from a single bright point low in the frame, like a discovery pulse spreading across space',
+  },
+  'ai-marketing-automation': {
+    palette: 'Teal-green light (#00d4aa) with cooler cyan highlights and a single faint warm amber thread for contrast, on near-black',
+    motif: 'several evenly spaced parallel horizontal streams of light flowing across the frame from left to right, like an orchestration pipeline in motion',
+  },
+  'agency-ops': {
+    palette: 'Warm amber-gold light (#f5a623) on a near-black background, no cool or teal tones at all',
+    motif: 'ascending diagonal bands of light stepping upward from the lower-left to the upper-right, conveying growth and scale',
+  },
+  'product-clyde': {
+    palette: 'Balanced teal-green (#00d4aa) and warm amber-gold (#f5a623) light of roughly equal strength',
+    motif: 'two tall vertical columns of light, one teal and one amber, rising from the base and curving inward to converge toward the center',
+  },
 }
 
-const CATEGORY_ACCENT = {
-  geo: 'teal',
-  'ai-marketing-automation': 'teal',
-  'agency-ops': 'amber',
-  'product-clyde': 'duotone',
-}
-
-const COMPOSITIONS = [
-  'Energy flows diagonally from the lower-left toward the upper-right',
-  'A soft radial bloom emanates from the center-right',
-  'Horizontal layered bands of light recede into depth',
-  'Gentle swirling currents converge toward the center',
-  'Ascending vertical columns of light rise through the frame',
-  'A wide sweeping arc of light curves across the lower third',
-  'Concentric ripples expand outward from the lower-left',
+const VARIATIONS = [
+  'rendered tighter and more focused',
+  'rendered wider and more expansive',
+  'rendered softer and more diffuse',
+  'rendered with crisper, brighter cores',
 ]
 
 const MOODS = {
@@ -83,17 +90,16 @@ const MOODS = {
 const DEFAULT_SLUGS = Object.keys(MOODS)
 
 export function buildHeroPrompt({ slug, category, index = 0 }) {
-  const accentKey = CATEGORY_ACCENT[category] || 'teal'
-  const accent = ACCENTS[accentKey]
-  const comp = COMPOSITIONS[index % COMPOSITIONS.length]
+  const style = CATEGORY_STYLE[category] || CATEGORY_STYLE.geo
+  const variation = VARIATIONS[index % VARIATIONS.length]
   const mood = MOODS[slug] || 'intelligent, premium and forward-looking'
   return [
     'A premium abstract background image for a B2B AI-marketing knowledge article.',
     'Absolutely no text, no letters, no words, no numbers, no logos, no UI elements, no human figures, and no recognizable physical objects.',
     'Deep near-black background, color #0a0d14.',
-    accent + '.',
+    style.palette + '.',
+    'Composition: ' + style.motif + ', ' + variation + '.',
     'Fine subtle grid lines and a faint particle and bokeh field, soft volumetric glow, cinematic depth of field, premium editorial dark-tech aesthetic, high contrast, generous negative space, wide cinematic 3:2 composition.',
-    comp + '.',
     'Mood: ' + mood + '.',
   ].join(' ')
 }
