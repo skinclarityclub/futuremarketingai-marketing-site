@@ -165,7 +165,12 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [],
+    // Strip the leading YAML frontmatter block so it is NOT rendered as visible
+    // body text. @next/mdx does not handle frontmatter by default; without this
+    // the `---...---` block leaks into the page (metadata itself is read separately
+    // via gray-matter in src/lib/blog.ts). String form is required for Turbopack
+    // serialization — function refs are not allowed.
+    remarkPlugins: [['remark-frontmatter', ['yaml']]],
     rehypePlugins: [],
   },
 })
