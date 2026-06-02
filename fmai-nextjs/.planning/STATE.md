@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 3 of 7 (Cornerstone-content) — IN PROGRESS
-Plan: 03-02 voltooid (1 van 7 plannen in deze fase). Let op: 03-01 nog niet uitgevoerd; plannen worden niet strikt op volgorde gedraaid.
-Status: NL pillar "AI marketing automation voor bureaus" live op feature/seo-geo-kennisbank, pillar:true onder ai-marketing-automation hub, Article + FAQPage JSON-LD geverifieerd. CONT-05 done.
-Last activity: 2026-06-02 — Plan 03-02 voltooid (content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893 woorden, verse NL-pillar op exact keyword; build PASS, statisch gegenereerd voor nl, JSON-LD valide, één /apply CTA)
+Plan: 03-01 + 03-02 voltooid (2 van 7 plannen in deze fase, parallel wave). Resterend: 03-03 t/m 03-07.
+Status: GEO pillar (CONT-01) verdiept tot 1564w + AI-marketing-automation pillar (CONT-05) live op feature/seo-geo-kennisbank; beide pillar:true, Article + FAQPage JSON-LD geverifieerd.
+Last activity: 2026-06-02 — Plan 03-01 voltooid (content/blog/geo-generative-engine-optimization.mdx van ~3 naar 6 gegronde NL-secties, 1564w, TOC/takeaways/FAQ/citations + in-body links naar 3 GEO-clusters; build+JSON-LD+mobile proof PASS; commits a4db4b5, 5f5d8da). Plan 03-02 parallel voltooid (content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w)
 
 Progress: [████░░░░░░] 42%
 
@@ -50,6 +50,7 @@ Progress: [████░░░░░░] 42%
 
 *Updated after each plan completion*
 | Phase 03 P02 | 7 | 3 tasks | 1 files |
+| Phase 03 P01 | 14 | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,8 @@ Recent decisions affecting current work:
 - [02-01]: 7 stale 2026-04-15 placeholder pillars (snake_case slugs, lege topics) gedeactiveerd (is_active=false, reversibel, geen delete) i.p.v. verwijderd, zodat de FMai-client exact de 4-pillar spine draagt die beide readers (is_active=true) consumeren
 - [02-01]: account_weights = {} per pillar; FMai account_keys niet bevestigd en beide readers vallen terug op top-level weight, dus leeg is de veilige correcte default
 - [02-01]: product-clyde pillar gebruikt de bestaande `comparisons` blog-categorie voor zijn cornerstone (pillar-slug != blog-categorie by design) — alle 3 andere slugs == BLOG_CATEGORIES ids, geen orphan cluster
+- [03-01]: GEO pillar (CONT-01) in-place verdiept i.p.v. herschreven — slug/identiteit stabiel; van ~3 secties naar 6 gegronde NL-secties, 1564 woorden (binnen 1500-3000 bar). Open Q2 resolved als "deepen".
+- [03-01]: GEO pillar fungeert als cluster-hub: in-body links (locale-prefixed /nl/blog/<slug>) wijzen vooruit naar de 3 nog-te-schrijven GEO-clusters (03-02 geo-vs-seo is feitelijk ai-marketing; de GEO-clusters zijn 03-03/04/+). Forward-links resolven zodra clusters shippen; back-links in 03-07.
 - [Phase 03-02]: Verse NL-pillar op exact keyword i.p.v. oud EN ai-marketing-automation-guide.mdx hergebruiken — voorkomt duplicate-intent (03-RESEARCH Pitfall 3)
 - [Phase 03-02]: Pricing in pillars conceptueel benoemen (werkruimte-geprijsd) met deeplink naar /nl/pricing i.p.v. tarieven hardcoden (pricing-data.ts SSoT)
 - [Phase 03-02]: Forbidden glossary-term 'AI-tool' alleen contrastief gebruiken (wat Clyde NIET is), conform de glossary-definitie zelf — niet als productlabel
@@ -94,5 +97,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 03-02-PLAN.md (AI marketing automation pillar). content/blog/ai-marketing-automation-voor-bureaus.mdx — verse NL-pillar, 1893 woorden, pillar:true category ai-marketing-automation, Article + FAQPage JSON-LD geverifieerd, één /apply CTA. Commits 7cbdf73 + 83cac68 op feature/seo-geo-kennisbank. CONT-05 done. Resterend in Phase 3: 03-01, 03-03 t/m 03-07. De pillar-slug ankert al de CONT-06 Clyde-cluster + CONT-07 comparison via in-body links.
+Stopped at: Completed 03-01-PLAN.md (GEO pillar deepening). content/blog/geo-generative-engine-optimization.mdx verdiept naar 1564 woorden met 6-entry TOC, 5 takeaways, 5 FAQs, 5 gegronde citations + in-body links naar de 3 GEO-clusters; build PASS, Article + FAQPage JSON-LD valide, mobile proof PASS, één /apply CTA. CONT-01 done. Commits a4db4b5 + 5f5d8da. Parallel voltooid in dezelfde wave: 03-02 (AI marketing automation pillar, content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w, CONT-05, commits 7cbdf73 + 83cac68). Resterend in Phase 3: 03-03 t/m 03-07. GEO-pillar ankert de GEO-cluster via forward in-body links (clusters volgen in 03-03/04/+; back-links in 03-07).
 Resume file: None
