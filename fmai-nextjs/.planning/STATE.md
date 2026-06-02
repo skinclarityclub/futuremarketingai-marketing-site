@@ -23,7 +23,7 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 3 of 7 (Cornerstone-content) — IN PROGRESS
-Plan: 03-01 + 03-02 + 03-04 + 03-05 voltooid (parallel wave-2). Resterend: 03-03, 03-06, 03-07.
+Plan: 03-01 + 03-02 + 03-04 + 03-05 + 03-06 voltooid (parallel wave-2). Resterend: 03-03, 03-07.
 Status: GEO pillar (CONT-01) verdiept tot 1564w + AI-marketing-automation pillar (CONT-05) live op feature/seo-geo-kennisbank; beide pillar:true, Article + FAQPage JSON-LD geverifieerd.
 Last activity: 2026-06-02 — Plan 03-01 voltooid (content/blog/geo-generative-engine-optimization.mdx van ~3 naar 6 gegronde NL-secties, 1564w, TOC/takeaways/FAQ/citations + in-body links naar 3 GEO-clusters; build+JSON-LD+mobile proof PASS; commits a4db4b5, 5f5d8da). Plan 03-02 parallel voltooid (content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w)
 
@@ -49,6 +49,7 @@ Progress: [████░░░░░░] 42%
 - Trend: stable
 
 *Updated after each plan completion*
+| Phase 03 P06 | 9 | 3 tasks | 1 files |
 | Phase 03 P05 | 7 | 3 tasks | 1 files |
 | Phase 03 P04 | 5 | 3 tasks | 1 files |
 | Phase 03 P02 | 7 | 3 tasks | 1 files |
@@ -84,6 +85,8 @@ Recent decisions affecting current work:
 - [03-04]: ComparisonTable-cellen gebruiken string 'Deels' i.p.v. een onbewijsbare false-boolean waar 03-RESEARCH §3 geen harde capaciteit bevestigt (defensible-claims, Pitfall 5); kolommen Profound/Peec AI/Otterly/Semrush dekken de drie tool-categorieen
 - [03-05]: Clyde-positionerings-cluster (CONT-06) spiegelt de glossary.ai-marketing-medewerker definitie letterlijk in de answer-first eerste zin — citeerbare definitie-pagina, consistente categorie-framing site-wide; in-body back-link naar de ai-marketing-automation pillar + forward naar de clyde-vs-vergelijking
 - [03-05]: 'AI-tool' uitsluitend contrastief gebruikt (wat Clyde NIET is), niet als productlabel — zelfde lijn als 03-02; build compileert + 122/122 static pages, Article(BlogPosting)+FAQPage JSON-LD bevestigd via [slug]/page.tsx renderer-path
+- [03-06]: Comparison money-page (CONT-07) hub-fix Option A: category ai-marketing-automation + clusterOf ai-marketing-automation-voor-bureaus (NIET category 'comparisons' → geen hub-bucket, onzichtbaar). Verschijnt als cluster onder de ai-marketing-automation pillar in /resources
+- [03-06]: Clyde-differentiator op werkmodel (meewerkende medewerker vs tool je bedient), niet op losse features — live juni-2026 research bevestigt dat Jasper óók merkgeheugen + GEO heeft; onzekere competitor-cellen als 'Deels' i.p.v. false-boolean (Pitfall 5). Tabel highlightColumn={0} op Clyde
 
 ### Pending Todos
 
@@ -104,4 +107,5 @@ None yet.
 
 Last session: 2026-06-02
 Stopped at: Completed 03-01-PLAN.md (GEO pillar deepening). content/blog/geo-generative-engine-optimization.mdx verdiept naar 1564 woorden met 6-entry TOC, 5 takeaways, 5 FAQs, 5 gegronde citations + in-body links naar de 3 GEO-clusters; build PASS, Article + FAQPage JSON-LD valide, mobile proof PASS, één /apply CTA. CONT-01 done. Commits a4db4b5 + 5f5d8da. Parallel voltooid in dezelfde wave: 03-02 (AI marketing automation pillar, content/blog/ai-marketing-automation-voor-bureaus.mdx, 1893w, CONT-05, commits 7cbdf73 + 83cac68). Resterend in Phase 3: 03-03 t/m 03-07. GEO-pillar ankert de GEO-cluster via forward in-body links (clusters volgen in 03-03/04/+; back-links in 03-07).
+Ook voltooid in wave-2: 03-06 (comparison money-page, content/blog/clyde-vs-jasper-chatgpt-semrush.mdx, 1259 body-w, CONT-07, hub-fix Option A → cluster onder ai-marketing-automation pillar, ComparisonTable highlightColumn={0} op Clyde, één /apply CTA, BlogPosting+FAQPage JSON-LD runtime-geverifieerd, commit 7db3c0e). Resterend in Phase 3: 03-03, 03-07.
 Resume file: None
