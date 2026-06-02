@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
-Plan: 08-02 (CONT-09) voltooid. 1 van 7 plannen klaar. Volgende: 08-03/04/05 (agency-ops + product/Clyde clusters), sluitsteen 08-07 (CONT-16).
-Status: Agency-ops pillargids `content/blog/marketingbureau-schalen-met-ai.mdx` geschreven (pillar:true, category agency-ops, schemaType Article, 1895w, 6 <h2 id>-secties). AI-first operating-model framing. Build PASS (123 static pages, +1). Article + FAQPage (5 Q&A) JSON-LD valide in .next-HTML. Exact 1 in-body CtaBlock -> /apply. Forward-links naar de 3 agency-ops clusters (CONT-10/11/12) + sibling automation-pillar present in gerenderde HTML. Hub-verschijning onder agency-ops bucket bevestigd. Geen em-dashes, marktstats zacht-geciteerd, SKC via Sindy als operator.
-Last activity: 2026-06-02 — Plan 08-02 voltooid. Tasks 1+2 (frontmatter + body) in één file-write, gecommit als 6503be9; Task 3 build+JSON-LD+proof was verificatie-only. CONT-09 afgevinkt in REQUIREMENTS.md.
+Plan: 08-01 (CONT-16 infra) + 08-02 (CONT-09) voltooid. 2 van 7 plannen klaar. Volgende: 08-03/04/05 (agency-ops + product/Clyde clusters), sluitsteen 08-07 (CONT-16 content-helft).
+Status: 08-01 wiring-infra — /resources heeft 4 hub-buckets incl product-clyde (i18n in nl/en/es, geen MISSING_MESSAGE); homepage Kennisbank-teaser bedraad op agency-ops + product/Clyde pillars zodat cornerstones automatisch oppoppen zodra hun MDX bestaat (commits 9cff6a5 + 598c09a). 08-02 agency-ops pillargids `content/blog/marketingbureau-schalen-met-ai.mdx` (pillar:true, category agency-ops, Article, 1895w, 6 <h2 id>); AI-first framing; Article + FAQPage (5 Q&A) JSON-LD valide; 1 in-body CtaBlock -> /apply; forward-links naar CONT-10/11/12 + sibling automation-pillar; hub-verschijning onder agency-ops bevestigd (commit 6503be9, surfacet via de 08-01 wiring). Build PASS (123 static pages), check:palette PASS. Phase 3 (CONT-01..08) bleef compleet.
+Last activity: 2026-06-02 — Plan 08-01 voltooid: Task 1 PILLAR_BUCKETS 3->4 + product-clyde i18n-key alle 3 locales (9cff6a5); Task 2 agencyPillar+productPillar in kennisbankItems (598c09a); Task 3 build+palette proof, geen source-mutatie. CONT-16 afgevinkt in REQUIREMENTS.md.
 
-Progress: Phase 8 [█░░░░░░] 1/7 plannen
+Progress: Phase 8 [██░░░░░] 2/7 plannen
 
 ## Performance Metrics
 
