@@ -16,8 +16,8 @@
 ### Cornerstone-content (CONT)
 
 - [x] **CONT-01**: GEO pillar-gids ("wat is GEO / generative engine optimization") gepubliceerd, SKC-grade, NL authoritative
-- [ ] **CONT-02**: "GEO vs SEO: waar investeren in 2026" cluster gepubliceerd
-- [ ] **CONT-03**: "Hoe meet je zichtbaarheid in AI Overviews" cluster gepubliceerd
+- [x] **CONT-02**: "GEO vs SEO: waar investeren in 2026" cluster gepubliceerd
+- [x] **CONT-03**: "Hoe meet je zichtbaarheid in AI Overviews" cluster gepubliceerd
 - [x] **CONT-04**: "GEO monitoring tools voor ChatGPT en Perplexity" cluster gepubliceerd
 - [x] **CONT-05**: "AI marketing automation voor bureaus" pillar-gids gepubliceerd
 - [x] **CONT-06**: "Wat is een AI Marketing Medewerker (Clyde)" cluster gepubliceerd
@@ -83,8 +83,8 @@
 | KB-05 | Phase 1 | Complete (01-01) |
 | PILR-01 | Phase 2 | Complete |
 | CONT-01 | Phase 3 | Complete |
-| CONT-02 | Phase 3 | Pending |
-| CONT-03 | Phase 3 | Pending |
+| CONT-02 | Phase 3 | Done |
+| CONT-03 | Phase 3 | Done |
 | CONT-04 | Phase 3 | Complete |
 | CONT-05 | Phase 3 | Complete |
 | CONT-06 | Phase 3 | Complete |
