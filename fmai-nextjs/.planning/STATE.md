@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 1 of 7 (Kennisbank-infrastructuur afronden)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-06-02 — Plan 01-01 voltooid (GEO/agency glossary: data + i18n + component + DefinedTermSet JSON-LD, KB-05)
+Last activity: 2026-06-02 — Plan 01-02 voltooid (SKC-grade GEO pillar article: full frontmatter, rich render + Article/FAQPage JSON-LD bewezen, KB-01/02/03 end-to-end)
 
-Progress: [░░░░░░░░░░] 5%
+Progress: [█░░░░░░░░░] 9%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 4 min
-- Total execution time: 0.1 hours
+- Total plans completed: 2
+- Average duration: 12 min
+- Total execution time: 0.4 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1. Kennisbank-infrastructuur afronden | 1 | 4 min | 4 min |
+| 1. Kennisbank-infrastructuur afronden | 2 | 24 min | 12 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4 min)
+- Last 5 plans: 01-01 (4 min), 01-02 (~20 min)
 - Trend: -
 
 *Updated after each plan completion*
@@ -48,6 +48,8 @@ Recent decisions affecting current work:
 - [Programma]: Multi-tenant publishing-upgrade (Phase 4) als harde prerequisite — voorkomt cross-publishing-bug
 - [01-01]: Glossary blijft een pure prop-driven component (page resolveert copy via getTranslations) i.p.v. zelf vertalend — herbruikbaar voor de /resources-hub (Plan 03) zonder translation-dependency
 - [01-01]: DefinedTerm @ids zijn locale-scoped (`${SITE_URL}/${locale}/resources#${id}`) en matchen de gerenderde anchor-ids; term-ids blijven stabiel over locales, alleen de display-name vertaalt
+- [01-02]: Pillar-artikel headings als expliciete `<h2 id>` geschreven (geen rehype-slug in next.config) zodat TOC-anchors resolven zonder renderer/config te wijzigen
+- [01-02]: Frontmatter object-arrays in dit repo gebruiken block-YAML, nooit inline flow-mapping — `@next/mdx` mist remark-frontmatter en parseert inline `{ }` als JSX-expressie (build-breaker)
 
 ### Pending Todos
 
@@ -67,5 +69,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 01-01-PLAN.md (KB-05 glossary). Deferred: pre-existing tsc error in tests/e2e/audit-v2-lighthouse.spec.ts (see phase deferred-items.md)
+Stopped at: Completed 01-02-PLAN.md (KB-01/02/03 GEO pillar infra-proof, human-verify checkpoint PASS). Next: 01-03 (/resources hub).
 Resume file: None

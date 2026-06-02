@@ -76,9 +76,9 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| KB-01 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
-| KB-02 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
-| KB-03 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
+| KB-01 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
+| KB-02 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
+| KB-03 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
 | KB-04 | Phase 1 | Pending |
 | KB-05 | Phase 1 | Complete (01-01) |
 | PILR-01 | Phase 2 | Pending |

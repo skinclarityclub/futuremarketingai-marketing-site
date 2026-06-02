@@ -35,7 +35,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — GEO/agency glossary: data + component + DefinedTermSet JSON-LD + i18n (KB-05)
-- [ ] 01-02-PLAN.md — SKC-grade GEO pillar demo-artikel; verifieert rich renderer + Article/FAQPage JSON-LD (KB-01/02/03)
+- [x] 01-02-PLAN.md — SKC-grade GEO pillar demo-artikel; verifieert rich renderer + Article/FAQPage JSON-LD (KB-01/02/03)
 - [ ] 01-03-PLAN.md — /resources hub: pillars + clusters + glossary, sitemap-hreflang + breadcrumb (KB-04)
 
 ### Phase 2: Content-pillar spine
@@ -109,7 +109,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Kennisbank-infrastructuur afronden | 1/3 | In progress (KB-01/02/03 geshipt; KB-05 done) | - |
+| 1. Kennisbank-infrastructuur afronden | 2/3 | In progress (KB-01/02/03 geshipt + end-to-end bewezen; KB-05 done) | - |
 | 2. Content-pillar spine | 0/TBD | Not started | - |
 | 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
