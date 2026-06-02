@@ -26,7 +26,7 @@
 
 ### Content-pillar spine (PILR)
 
-- [ ] **PILR-01**: FMai content-pillars gedefinieerd in `fma_content_pillars` (GEO, AI marketing automation voor bureaus, agency-ops/proof, product/Clyde) als gedeelde strategie-spine
+- [x] **PILR-01**: FMai content-pillars gedefinieerd in `fma_content_pillars` (GEO, AI marketing automation voor bureaus, agency-ops/proof, product/Clyde) als gedeelde strategie-spine
 
 ### Multi-tenant publishing (PUB)
 
@@ -81,7 +81,7 @@
 | KB-03 | Phase 1 | Complete (geshipt + end-to-end bewezen via 01-02 pillar-artikel) |
 | KB-04 | Phase 1 | Complete (01-03) |
 | KB-05 | Phase 1 | Complete (01-01) |
-| PILR-01 | Phase 2 | Pending |
+| PILR-01 | Phase 2 | Complete |
 | CONT-01 | Phase 3 | Pending |
 | CONT-02 | Phase 3 | Pending |
 | CONT-03 | Phase 3 | Pending |

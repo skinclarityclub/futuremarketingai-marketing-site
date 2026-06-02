@@ -13,7 +13,7 @@ Het programma bouwt FutureMarketingAI van "verkoopt SEO/GEO maar is zelf onvindb
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Kennisbank-infrastructuur afronden** - MDX-fundament + `/resources` hub (pillars → clusters → glossary, hreflang) + GEO/agency-glossary geshipt; alle 5 requirements (KB-01..05) compleet
-- [ ] **Phase 2: Content-pillar spine** - FMai-pillars als `fma_content_pillars`-rijen, de gedeelde strategie-spine voor blog + social
+- [x] **Phase 2: Content-pillar spine** - FMai-pillars als `fma_content_pillars`-rijen, de gedeelde strategie-spine voor blog + social
 - [ ] **Phase 3: Cornerstone-content (flagship)** - 4-6 handgeschreven SKC-grade pillar/cluster/comparison-pagina's op de non-branded keywords
 - [ ] **Phase 4: Multi-tenant publishing-upgrade** - `fma-app` publiceren client-aware; cross-publishing dichtgetimmerd; FMai als client geregistreerd
 - [ ] **Phase 5: FMai auto-publish bedrading** - client-gefilterde publish-script-fork + GitHub Actions workflow naar `fmai-nextjs`
@@ -49,7 +49,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Seed 4 FMai content-pillars in `fma_content_pillars` (cross-repo: idempotent service-role script in fma-app + read-back verify) (PILR-01)
+- [x] 02-01-PLAN.md — Seed 4 FMai content-pillars in `fma_content_pillars` (cross-repo: idempotent service-role script in fma-app + read-back verify) (PILR-01)
 
 ### Phase 3: Cornerstone-content (flagship) — PRIORITEIT
 **Goal**: 4-6 diepe, autoritatieve cornerstone-pagina's staan live op exact de non-branded doel-keywords uit de audit, NL authoritative, SKC-grade. Dit levert directe topical authority + AI-citatie-kandidaten zonder op de engine of publishing te wachten — de door de user gekozen prioriteit.
@@ -113,7 +113,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Kennisbank-infrastructuur afronden | 3/3 | Complete (KB-01/02/03/04/05 geshipt; /resources hub live in nl/en/es, hreflang in sitemap; op branch feature/seo-geo-kennisbank) | - |
-| 2. Content-pillar spine | 0/1 | Planned (02-01 seed-script cross-repo in fma-app) | - |
+| 2. Content-pillar spine | 1/1 | Complete (4 FMai pillars live in shared fma-app Supabase; seed script committed in fma-app 1b0a2dab/b7623bd4; 7 legacy placeholders deactivated; PILR-01 done) | 2026-06-02 |
 | 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
