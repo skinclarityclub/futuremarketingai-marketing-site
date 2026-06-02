@@ -2,7 +2,7 @@
  * DefinedTermSet / DefinedTerm JSON-LD emitter (KB-05).
  *
  * Emits a single DefinedTermSet whose members are the glossary terms. Each
- * DefinedTerm gets a locale-scoped @id pointing at its `/resources#<id>` anchor,
+ * DefinedTerm gets a locale-scoped @id pointing at its `/kennisbank#<id>` anchor,
  * matching the anchor ids rendered by <Glossary />. This is a high-leverage,
  * low-cost AI/LLM-citation signal: it tells generative engines that the page
  * is an authoritative definition source for the program's core entities.
@@ -20,7 +20,7 @@ interface DefinedTermSetJsonLdProps {
 }
 
 export function DefinedTermSetJsonLd({ locale, terms }: DefinedTermSetJsonLdProps) {
-  const setId = `${SITE_URL}/${locale}/resources#glossary`
+  const setId = `${SITE_URL}/${locale}/kennisbank#glossary`
 
   const data: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -29,7 +29,7 @@ export function DefinedTermSetJsonLd({ locale, terms }: DefinedTermSetJsonLdProp
     name: 'GEO & AI marketing glossary',
     hasDefinedTerm: terms.map((term) => ({
       '@type': 'DefinedTerm',
-      '@id': `${SITE_URL}/${locale}/resources#${term.id}`,
+      '@id': `${SITE_URL}/${locale}/kennisbank#${term.id}`,
       name: term.name,
       description: term.definition,
       inDefinedTermSet: setId,

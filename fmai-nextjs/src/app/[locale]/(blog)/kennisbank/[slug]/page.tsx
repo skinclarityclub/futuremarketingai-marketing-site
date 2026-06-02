@@ -19,7 +19,7 @@ export const dynamicParams = false
 
 export function generateStaticParams() {
   // Only generate routes for the locale each post is written in.
-  // This prevents /nl/blog/english-post from being generated.
+  // This prevents /nl/kennisbank/english-post from being generated.
   return getPostSlugsWithLocales().map(({ slug, locale }) => ({ locale, slug }))
 }
 
@@ -35,13 +35,13 @@ export async function generateMetadata({
     return { title: 'Post Not Found' }
   }
 
-  const url = `${SITE_URL}/${locale}/blog/${slug}`
+  const url = `${SITE_URL}/${locale}/kennisbank/${slug}`
 
   // Only include hreflang alternates for locales that actually have this post
   const allVersions = getAllPostsAllLocales().filter((p) => p.slug === slug)
   const alternates: Record<string, string> = {}
   for (const version of allVersions) {
-    alternates[version.locale] = `${SITE_URL}/${version.locale}/blog/${slug}`
+    alternates[version.locale] = `${SITE_URL}/${version.locale}/kennisbank/${slug}`
   }
   if (alternates['en']) {
     alternates['x-default'] = alternates['en']
@@ -131,20 +131,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
-          { name: post.title, path: `/blog/${slug}` },
+          { name: 'Kennisbank', path: '/kennisbank' },
+          { name: post.title, path: `/kennisbank/${slug}` },
         ]}
         locale={locale}
       />
       {post.faqs && post.faqs.length > 0 && (
-        <FaqJsonLd items={post.faqs} path={`/blog/${slug}`} locale={locale} />
+        <FaqJsonLd items={post.faqs} path={`/kennisbank/${slug}`} locale={locale} />
       )}
 
       <nav aria-label="Breadcrumb" className="mb-8">
         <ol className="flex items-center gap-2 text-sm text-text-muted">
           <li>
-            <Link href={`/${locale}/blog`} className="transition-colors hover:text-accent-system">
-              Blog
+            <Link href={`/${locale}/kennisbank`} className="transition-colors hover:text-accent-system">
+              Kennisbank
             </Link>
           </li>
           <li aria-hidden="true">/</li>

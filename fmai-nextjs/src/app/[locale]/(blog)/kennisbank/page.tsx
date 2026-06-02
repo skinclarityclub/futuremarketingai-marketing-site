@@ -16,7 +16,7 @@ import { GLOSSARY_TERMS } from '@/lib/glossary'
 import { getPillarPosts, getClusterPosts } from '@/lib/blog'
 
 /**
- * /resources — the knowledge-base hub (KB-04).
+ * /kennisbank — the knowledge-base hub (KB-04).
  *
  * Exposes the program's content structure: three strategic pillar buckets
  * (each bundling its pillar + cluster pages) and the GEO/AI-marketing glossary.
@@ -38,7 +38,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  return generatePageMetadata({ locale, namespace: 'resources', path: '/resources' })
+  return generatePageMetadata({ locale, namespace: 'resources', path: '/kennisbank' })
 }
 
 export default async function ResourcesPage({
@@ -83,18 +83,18 @@ export default async function ResourcesPage({
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}
-        path="/resources"
+        path="/kennisbank"
         locale={locale}
       />
       <DefinedTermSetJsonLd locale={locale} terms={glossaryTerms} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: t('hero.heading'), path: '/resources' },
+          { name: t('hero.heading'), path: '/kennisbank' },
         ]}
         locale={locale}
       />
-      <Breadcrumbs path="/resources" locale={locale} />
+      <Breadcrumbs path="/kennisbank" locale={locale} />
 
       {/* Hero */}
       <section

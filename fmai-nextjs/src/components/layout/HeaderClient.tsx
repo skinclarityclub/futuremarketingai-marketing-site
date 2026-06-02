@@ -23,9 +23,14 @@ import {
   Globe,
   ArrowRight,
   Sparkles,
+  Tag,
+  Crown,
+  Gauge,
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { getSkillBySlug } from '@/lib/skills-data'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 interface HeaderClientProps {
   locale: string
@@ -73,36 +78,38 @@ const FLAT_SKILLS: readonly SkillItemWithCategory[] = SKILL_CATEGORIES.flatMap((
 )
 
 // Structural metadata only — copy lives in messages/{locale}.json under header.nav.*
+// `kind` discriminates the three render paths: 'mega' = skills mega-menu,
+// 'dropdown' = small 2-item dropdown (pricing), 'link' = plain top-level link.
+// IA reduced to 5 top-level items (2026-06-03): How it works + About demoted to
+// footer-only (they already live there); Founding folded under the Pricing
+// dropdown. Keeps Memory + Cases prominent per product decision.
 const NAV_ITEMS = [
-  { key: 'skills', href: '/#skills' as const, hasDropdown: true, matchPaths: ['/skills'] },
-  { key: 'memory', href: '/memory' as const, hasDropdown: false, matchPaths: ['/memory'] },
+  { key: 'skills', kind: 'mega', href: '/#skills', matchPaths: ['/skills'] },
+  { key: 'memory', kind: 'link', href: '/memory', matchPaths: ['/memory'] },
   {
     key: 'caseStudies',
-    href: '/case-studies/skinclarity-club' as const,
-    hasDropdown: false,
+    kind: 'link',
+    href: '/case-studies/skinclarity-club',
     matchPaths: ['/case-studies'],
   },
   {
     key: 'kennisbank',
-    href: '/resources' as const,
-    hasDropdown: false,
-    matchPaths: ['/resources', '/blog'],
-  },
-  { key: 'pricing', href: '/pricing' as const, hasDropdown: false, matchPaths: ['/pricing'] },
-  {
-    key: 'howItWorks',
-    href: '/how-it-works' as const,
-    hasDropdown: false,
-    matchPaths: ['/how-it-works'],
+    kind: 'link',
+    href: '/kennisbank',
+    matchPaths: ['/kennisbank'],
   },
   {
-    key: 'foundingMember',
-    href: '/founding-member' as const,
-    hasDropdown: false,
-    matchPaths: ['/founding-member'],
+    key: 'pricing',
+    kind: 'dropdown',
+    matchPaths: ['/pricing', '/founding-member'],
+    children: [
+      { key: 'pricing', href: '/pricing', icon: Tag },
+      { key: 'foundingMember', href: '/founding-member', icon: Crown, accent: true },
+    ],
   },
-  { key: 'about', href: '/about' as const, hasDropdown: false, matchPaths: ['/about'] },
 ] as const
+
+type NavDropdownItem = Extract<(typeof NAV_ITEMS)[number], { kind: 'dropdown' }>
 
 const HOVER_OPEN_DELAY_MS = 120
 const HOVER_CLOSE_DELAY_MS = 180
@@ -248,14 +255,19 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
         <div className="hidden md:flex items-center gap-1 justify-self-center">
           {NAV_ITEMS.map((item) => {
             const active = isActiveRoute(item.matchPaths)
+
+            if (item.kind === 'dropdown') {
+              return <NavDropdown key={item.key} item={item} active={active} />
+            }
+
             return (
               <div
                 key={item.key}
                 className="relative"
-                onMouseEnter={item.hasDropdown ? handleSkillsHoverOpen : undefined}
-                onMouseLeave={item.hasDropdown ? handleSkillsHoverClose : undefined}
+                onMouseEnter={item.kind === 'mega' ? handleSkillsHoverOpen : undefined}
+                onMouseLeave={item.kind === 'mega' ? handleSkillsHoverClose : undefined}
               >
-                {item.hasDropdown ? (
+                {item.kind === 'mega' ? (
                   <div>
                     <button
                       ref={skillsTriggerRef}
@@ -496,13 +508,26 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
 
         {/* Right side: Login + CTA + Mobile Menu — edge-flush right (grid col 3) */}
         <div className="flex items-center gap-3 justify-self-end">
+          {/* Login: quiet icon-only button. Existing customers know to look for
+              it; keeping it tertiary lets the two CTAs carry the visual weight. */}
           <a
             href="https://app.future-marketing.ai/login"
-            className="hidden md:flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors px-3 py-1.5 rounded-lg"
+            className="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-[var(--radius-btn)] text-text-secondary hover:text-text-primary hover:bg-white/5 border border-transparent hover:border-white/10 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+            aria-label={t('login')}
+            title={t('login')}
           >
             <LogIn className="w-4 h-4" aria-hidden />
-            {t('login')}
           </a>
+
+          {/* Secondary CTA: AI-Scan (lead-gen tool). Subordinate to the primary
+              orange CTA: teal outline, and hidden below lg so md stays uncluttered. */}
+          <Link
+            href="/assessment"
+            className="hidden lg:inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold rounded-[var(--radius-btn)] border border-accent-system/30 text-accent-system transition-all hover:bg-accent-system/10 hover:border-accent-system/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          >
+            <Gauge className="w-4 h-4 shrink-0" aria-hidden />
+            {t('assessment')}
+          </Link>
 
           <Link
             href="/apply"
@@ -543,7 +568,7 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                   const active = isActiveRoute(item.matchPaths)
                   return (
                     <div key={item.key}>
-                      {item.hasDropdown ? (
+                      {item.kind === 'mega' ? (
                         <div className="space-y-2">
                           <button
                             onClick={() => setMobileSkillsOpen(!mobileSkillsOpen)}
@@ -604,6 +629,26 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                             )}
                           </AnimatePresence>
                         </div>
+                      ) : item.kind === 'dropdown' ? (
+                        <div className="space-y-1">
+                          {item.children.map((child) => {
+                            const childActive = isActiveRoute([child.href])
+                            return (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                className={`block font-semibold py-3 px-4 rounded-lg transition-all ${
+                                  childActive
+                                    ? 'text-text-primary bg-accent-system/5 border-l-2 border-accent-system'
+                                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
+                                }`}
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {tHeader(`nav.${child.key}`)}
+                              </Link>
+                            )
+                          })}
+                        </div>
                       ) : (
                         <Link
                           href={item.href}
@@ -622,6 +667,22 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                 })}
 
                 <div className="space-y-3 pt-4 border-t border-white/10">
+                  <Link
+                    href="/apply"
+                    className="flex items-center justify-center gap-2 p-4 rounded-lg font-semibold bg-gradient-to-br from-[#F5A623] to-[#E8941A] text-bg-deep transition-all hover:shadow-[0_8px_24px_rgba(245,166,35,0.3)]"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {t('apply')}
+                    <ArrowRight className="w-5 h-5 shrink-0" aria-hidden />
+                  </Link>
+                  <Link
+                    href="/assessment"
+                    className="flex items-center justify-center gap-2 p-4 rounded-lg font-semibold border border-accent-system/30 text-accent-system hover:bg-accent-system/10 transition-all"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <Gauge className="w-5 h-5 shrink-0" aria-hidden />
+                    {t('assessment')}
+                  </Link>
                   <a
                     href="https://app.future-marketing.ai/login"
                     className="flex items-center justify-center gap-3 p-4 bg-white/10 text-text-primary rounded-lg font-medium border border-white/20 hover:bg-white/20 transition-all"
@@ -637,6 +698,183 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
         )}
       </AnimatePresence>
     </header>
+  )
+}
+
+// Lightweight 2-item dropdown (pricing) — sits next to the skills mega-menu.
+// Self-contained: own open state + hover-intent, mirrors the skills trigger
+// styling (teal underline, rotating chevron) for visual consistency.
+function NavDropdown({ item, active }: { item: NavDropdownItem; active: boolean }) {
+  const tHeader = useTranslations('header')
+  const [open, setOpen] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+  const itemRefs = useRef<Array<HTMLAnchorElement | null>>([])
+  const openTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleHoverOpen = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+    if (open) return
+    openTimerRef.current = setTimeout(() => setOpen(true), HOVER_OPEN_DELAY_MS)
+  }
+
+  const handleHoverClose = () => {
+    if (openTimerRef.current) {
+      clearTimeout(openTimerRef.current)
+      openTimerRef.current = null
+    }
+    closeTimerRef.current = setTimeout(() => setOpen(false), HOVER_CLOSE_DELAY_MS)
+  }
+
+  // Clear pending hover timers on unmount
+  useEffect(() => {
+    return () => {
+      if (openTimerRef.current) clearTimeout(openTimerRef.current)
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    }
+  }, [])
+
+  // Click-outside close
+  useEffect(() => {
+    if (!open) return
+    const handleOutside = (e: MouseEvent) => {
+      const target = e.target as Node
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(target) &&
+        triggerRef.current &&
+        !triggerRef.current.contains(target)
+      ) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleOutside)
+    return () => document.removeEventListener('mousedown', handleOutside)
+  }, [open])
+
+  return (
+    <div className="relative" onMouseEnter={handleHoverOpen} onMouseLeave={handleHoverClose}>
+      <button
+        ref={triggerRef}
+        type="button"
+        className={`relative flex items-center gap-1 text-sm font-medium transition-colors duration-300 py-2 px-3 rounded-lg group/nav ${
+          active || open ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'
+        }`}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((v) => !v)}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault()
+            setOpen(true)
+            requestAnimationFrame(() => itemRefs.current[0]?.focus())
+          }
+          if (e.key === 'Escape') {
+            setOpen(false)
+          }
+        }}
+      >
+        <span className="relative">
+          {tHeader(`nav.${item.key}`)}
+          <span
+            className={`pointer-events-none absolute left-0 right-0 -bottom-1 h-px origin-left bg-accent-system transition-transform duration-300 ${
+              active || open ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'
+            }`}
+            aria-hidden
+          />
+        </span>
+        <ChevronDown
+          className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      <motion.div
+        ref={menuRef}
+        initial={false}
+        animate={open ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: -8, scale: 0.97 }}
+        transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
+        className={`absolute right-0 top-[calc(100%+12px)] w-[280px] bg-bg-deep/98 backdrop-blur-xl border border-border-primary rounded-2xl shadow-2xl shadow-accent-system/10 z-50 overflow-hidden p-2 ${
+          open ? 'block' : 'hidden'
+        }`}
+        role="menu"
+        aria-label={tHeader(`nav.${item.key}`)}
+        aria-hidden={!open}
+        onKeyDown={(e) => {
+          const total = item.children.length
+          const current = itemRefs.current.findIndex((el) => el === document.activeElement)
+          if (e.key === 'ArrowDown') {
+            e.preventDefault()
+            itemRefs.current[(current + 1 + total) % total]?.focus()
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault()
+            itemRefs.current[(current - 1 + total) % total]?.focus()
+          } else if (e.key === 'Escape') {
+            e.preventDefault()
+            setOpen(false)
+            triggerRef.current?.focus()
+          } else if (e.key === 'Tab') {
+            const atEnd = !e.shiftKey && current === total - 1
+            const atStart = e.shiftKey && current === 0
+            if (atEnd || atStart) setOpen(false)
+          }
+        }}
+      >
+        {item.children.map((child, index) => {
+          const Icon: LucideIcon = child.icon
+          const accent = 'accent' in child && child.accent
+          return (
+            <Link
+              key={child.href}
+              href={child.href}
+              ref={(el) => {
+                itemRefs.current[index] = el
+              }}
+              role="menuitem"
+              tabIndex={open ? 0 : -1}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 hover:bg-white/[0.06] group/item"
+            >
+              <div
+                className={`p-1.5 rounded-md transition-colors duration-200 ${
+                  accent
+                    ? 'bg-[#F5A623]/15'
+                    : 'bg-white/5 group-hover/item:bg-accent-system/15'
+                }`}
+              >
+                <Icon
+                  className={`w-4 h-4 transition-colors duration-200 ${
+                    accent ? 'text-[#F5A623]' : 'text-text-muted group-hover/item:text-accent-system'
+                  }`}
+                  aria-hidden
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-sm text-text-primary">
+                    {tHeader(`nav.${child.key}`)}
+                  </span>
+                  {accent && (
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
+                      {tHeader('priceMenu.spots', {
+                        taken: FOUNDING_SPOTS_TAKEN,
+                        total: FOUNDING_SPOTS_TOTAL,
+                      })}
+                    </span>
+                  )}
+                </div>
+                <span className="block text-xs text-text-secondary mt-0.5">
+                  {tHeader(`priceMenu.${child.key}.subtitle`)}
+                </span>
+              </div>
+            </Link>
+          )
+        })}
+      </motion.div>
+    </div>
   )
 }
 

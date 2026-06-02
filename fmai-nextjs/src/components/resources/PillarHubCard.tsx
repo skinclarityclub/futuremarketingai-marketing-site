@@ -1,5 +1,5 @@
 /**
- * PillarHubCard — one strategic pillar bucket on the /resources hub.
+ * PillarHubCard — one strategic pillar bucket on the /kennisbank hub.
  *
  * Pure Server Component. Bundles a pillar's headline + description with the
  * pillar pages and their cluster pages that exist in this bucket. Degrades
@@ -51,7 +51,7 @@ export function PillarHubCard({
           {posts.map((post) => (
             <li key={post.slug}>
               <Link
-                href={`/blog/${post.slug}`}
+                href={`/kennisbank/${post.slug}`}
                 className="text-accent-system transition-colors hover:text-text-primary"
               >
                 {post.title}

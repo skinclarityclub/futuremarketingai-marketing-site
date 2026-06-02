@@ -178,7 +178,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/resources"
+                    href="/kennisbank"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.kennisbank')}
@@ -186,7 +186,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/blog"
+                    href="/kennisbank"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.blog')}

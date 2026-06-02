@@ -4,7 +4,7 @@
  * Receives already-resolved copy as props so the owning page handles i18n
  * (getTranslations) and this component stays a pure, copy-free renderer.
  * Each term gets an `id` anchor + `scroll-mt-28` so a deep link such as
- * `/resources#geo` lands below the sticky header instead of hiding under it.
+ * `/kennisbank#geo` lands below the sticky header instead of hiding under it.
  */
 
 interface GlossaryTerm {

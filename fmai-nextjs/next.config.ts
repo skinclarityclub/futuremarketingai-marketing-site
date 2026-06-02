@@ -159,6 +159,17 @@ const nextConfig: NextConfig = {
         destination: '/:locale/skills/email-management',
         permanent: true,
       },
+      // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank
+      {
+        source: '/:locale/resources',
+        destination: '/:locale/kennisbank',
+        permanent: true,
+      },
+      {
+        source: '/:locale/blog/:slug*',
+        destination: '/:locale/kennisbank/:slug*',
+        permanent: true,
+      },
     ]
   },
 }

@@ -32,7 +32,7 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/founding-member': { labelKey: 'founding_member', parent: '/' },
   '/contact': { labelKey: 'contact', parent: '/' },
   '/memory': { labelKey: 'memory', parent: '/' },
-  '/resources': { labelKey: 'resources', parent: '/' },
+  '/kennisbank': { labelKey: 'resources', parent: '/' },
   '/apply': { labelKey: 'apply', parent: '/' },
   '/assessment': { labelKey: 'assessment', parent: '/' },
   '/roadmap': { labelKey: 'roadmap', parent: '/' },
@@ -59,7 +59,6 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/skills/clyde': { labelKey: 'skill_clyde', parent: '/skills' },
 
   // Blog
-  '/blog': { labelKey: 'blog', parent: '/' },
 
   // Legal
   '/legal': { labelKey: 'legal', parent: '/' },

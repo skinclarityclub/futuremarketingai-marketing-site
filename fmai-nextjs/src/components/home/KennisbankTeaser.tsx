@@ -1,5 +1,5 @@
 /**
- * KennisbankTeaser — homepage section that surfaces the /resources knowledge
+ * KennisbankTeaser — homepage section that surfaces the /kennisbank knowledge
  * base with strong internal links to the cornerstone pillars + a featured
  * comparison page.
  *
@@ -10,7 +10,7 @@
  * degradation — NL has cornerstone content now, EN/ES light up once translated).
  *
  * Visual idiom mirrors the existing homepage sections (mono eyebrow +
- * SectionHeading + border-card grid), not the /resources GlassCard idiom, so
+ * SectionHeading + border-card grid), not the /kennisbank GlassCard idiom, so
  * the block blends into the already-polished homepage.
  */
 import { Link } from '@/i18n/navigation'
@@ -107,7 +107,7 @@ export function KennisbankTeaser({
 
         <div className="mt-10 text-center">
           <CTAButton
-            href="/resources"
+            href="/kennisbank"
             variant="secondary"
             size="md"
             icon={<ArrowRight className="w-4 h-4" />}

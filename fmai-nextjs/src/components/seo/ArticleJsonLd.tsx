@@ -26,7 +26,7 @@ export function ArticleJsonLd({
   image,
   type = 'Article',
 }: ArticleJsonLdProps) {
-  const url = `${SITE_URL}/${locale}/blog/${slug}`
+  const url = `${SITE_URL}/${locale}/kennisbank/${slug}`
   const articleId = `${url}#article`
   const imageUrl = image ?? `${SITE_URL}/og-image.png`
 

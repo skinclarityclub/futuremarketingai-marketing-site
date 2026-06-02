@@ -56,7 +56,7 @@ export default function GlobalNotFound() {
             Naar de homepage
           </a>
           <a
-            href="/nl/resources"
+            href="/nl/kennisbank"
             style={{
               padding: '0.625rem 1.25rem',
               borderRadius: '0.5rem',

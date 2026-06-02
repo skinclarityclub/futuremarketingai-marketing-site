@@ -16,7 +16,7 @@ export function BlogPostCard({ post, locale }: BlogPostCardProps) {
 
   return (
     <Link
-      href={`/${locale}/blog/${post.slug}`}
+      href={`/${locale}/kennisbank/${post.slug}`}
       className="group block cursor-pointer overflow-hidden rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-accent-system/30 hover:bg-white/[0.04] hover:shadow-glow-sm"
     >
       {post.heroImage && (
