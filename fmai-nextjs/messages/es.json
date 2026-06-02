@@ -376,6 +376,16 @@
         "linkText": "Lee más sobre Daley"
       }
     },
+    "kennisbank": {
+      "eyebrow": "Base de conocimiento",
+      "title": "Profundiza en GEO y automatización de marketing con IA",
+      "intro": "Guías profundas y con fuentes sobre motores generativos y automatización de marketing con IA para agencias. Escritas para ayudarte, no para venderte algo.",
+      "ctaLabel": "Explora la base de conocimiento",
+      "badgePillar": "Guía pillar",
+      "badgeComparison": "Comparativa",
+      "readLabel": "Leer más",
+      "readTimeLabel": "min de lectura"
+    },
     "cta": {
       "eyebrow": "Founding abierto · {taken}/{total} ocupadas",
       "title": "Diez plazas abiertas. Después founding cierra.",
@@ -646,6 +656,7 @@
           "how_it_works": "Cómo funciona",
           "founding_member": "Founding Member",
           "blog": "Blog",
+          "kennisbank": "Recursos",
           "contact": "Contacto",
           "privacy": "Privacidad",
           "terms": "Términos",
@@ -3527,6 +3538,7 @@
       "skills": "Habilidades",
       "memory": "Memoria",
       "caseStudies": "Casos",
+      "kennisbank": "Recursos",
       "pricing": "Precios",
       "howItWorks": "Cómo funciona",
       "foundingMember": "Founding",

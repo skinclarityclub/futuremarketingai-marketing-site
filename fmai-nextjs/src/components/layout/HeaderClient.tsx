@@ -82,6 +82,12 @@ const NAV_ITEMS = [
     hasDropdown: false,
     matchPaths: ['/case-studies'],
   },
+  {
+    key: 'kennisbank',
+    href: '/resources' as const,
+    hasDropdown: false,
+    matchPaths: ['/resources', '/blog'],
+  },
   { key: 'pricing', href: '/pricing' as const, hasDropdown: false, matchPaths: ['/pricing'] },
   {
     key: 'howItWorks',
