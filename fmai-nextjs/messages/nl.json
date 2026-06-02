@@ -714,6 +714,7 @@
       "skill_research": "Research",
       "skill_clyde": "Clyde",
       "blog": "Blog",
+      "resources": "Kennisbank",
       "legal": "Juridisch",
       "legal_privacy": "Privacy",
       "legal_terms": "Voorwaarden",
@@ -3974,5 +3975,33 @@
       "name": "Tier caps",
       "definition": "De grenzen per abonnementsniveau aan het aantal merken of werkruimtes dat een bureau onder een plan beheert. Bepaalt welke vaardigheden en welk volume binnen een tier vallen."
     }
+  },
+  "resources": {
+    "meta": {
+      "title": "Kennisbank: GEO en AI marketing voor bureaus",
+      "description": "De FutureMarketingAI kennisbank. Pillars, clusters en een woordenlijst over generative engine optimization en AI marketing automation voor bureaus."
+    },
+    "hero": {
+      "eyebrow": "Kennisbank",
+      "heading": "Alles over GEO en AI marketing voor bureaus",
+      "intro": "Diepe gidsen, vergelijkingen en definities. Gestructureerd zodat zowel jij als AI-engines de samenhang zien."
+    },
+    "pillars": {
+      "geo": {
+        "title": "Generative Engine Optimization",
+        "description": "Hoe je merk geciteerd wordt door AI-engines."
+      },
+      "ai-marketing-automation": {
+        "title": "AI marketing automation voor bureaus",
+        "description": "Marketingvaardigheden die Clyde als AI Marketing Medewerker uitvoert."
+      },
+      "agency-ops": {
+        "title": "Agency operations en proof",
+        "description": "Hoe bureaus meer merken bedienen met dezelfde bezetting."
+      }
+    },
+    "emptyCluster": "Diepe content voor deze pillar verschijnt binnenkort.",
+    "glossaryHeading": "Woordenlijst",
+    "glossaryIntro": "De kernbegrippen achter GEO en AI marketing automation."
   }
 }

@@ -33,6 +33,7 @@ const pages = [
   { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/legal/cookies', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.7 },
+  { path: '/resources', changeFrequency: 'weekly' as const, priority: 0.8 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -714,6 +714,7 @@
       "skill_research": "Research",
       "skill_clyde": "Clyde",
       "blog": "Blog",
+      "resources": "Recursos",
       "legal": "Aviso legal",
       "legal_privacy": "Privacidad",
       "legal_terms": "Términos",
@@ -3974,5 +3975,33 @@
       "name": "Límites de plan (tier caps)",
       "definition": "Los límites por nivel de suscripción sobre el número de marcas o espacios de trabajo que una agencia gestiona bajo un mismo plan. Determina qué habilidades y qué volumen entran dentro de un nivel."
     }
+  },
+  "resources": {
+    "meta": {
+      "title": "Base de conocimiento: GEO y marketing con IA para agencias",
+      "description": "La base de conocimiento de FutureMarketingAI. Pillars, clusters y un glosario sobre generative engine optimization y automatización de marketing con IA para agencias."
+    },
+    "hero": {
+      "eyebrow": "Base de conocimiento",
+      "heading": "Todo sobre GEO y marketing con IA para agencias",
+      "intro": "Guías en profundidad, comparativas y definiciones. Estructurado para que tanto tú como los motores de IA veáis cómo encaja todo."
+    },
+    "pillars": {
+      "geo": {
+        "title": "Generative Engine Optimization",
+        "description": "Cómo los motores de IA citan tu marca."
+      },
+      "ai-marketing-automation": {
+        "title": "Automatización de marketing con IA para agencias",
+        "description": "Las habilidades de marketing que Clyde ejecuta como tu Empleado de Marketing con IA."
+      },
+      "agency-ops": {
+        "title": "Operaciones de agencia y pruebas",
+        "description": "Cómo las agencias atienden más marcas con el mismo equipo."
+      }
+    },
+    "emptyCluster": "El contenido en profundidad para este pillar llegará pronto.",
+    "glossaryHeading": "Glosario",
+    "glossaryIntro": "Los conceptos clave detrás de GEO y la automatización de marketing con IA."
   }
 }
