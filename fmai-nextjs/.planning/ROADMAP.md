@@ -67,7 +67,7 @@ Plans:
 - [ ] 03-01-PLAN.md — Verdiep bestaande GEO pillar-gids naar 1500-3000w + volledige TOC/takeaways/FAQ/citations (CONT-01)
 - [ ] 03-02-PLAN.md — Verse NL pillar "AI marketing automation voor bureaus" (CONT-05)
 - [ ] 03-03-PLAN.md — GEO-clusters "GEO vs SEO 2026" + "Meten in AI Overviews" (CONT-02, CONT-03)
-- [ ] 03-04-PLAN.md — GEO-cluster "GEO monitoring tools" met ComparisonTable (CONT-04)
+- [x] 03-04-PLAN.md — GEO-cluster "GEO monitoring tools" met ComparisonTable (CONT-04)
 - [ ] 03-05-PLAN.md — Cluster "Wat is een AI Marketing Medewerker (Clyde)" (CONT-06)
 - [ ] 03-06-PLAN.md — Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" + hub-fix Option A (CONT-07)
 - [ ] 03-07-PLAN.md — Interne-link-integratie + cross-page proof-sweep (CONT-08)
@@ -123,7 +123,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 |-------|----------------|--------|-----------|
 | 1. Kennisbank-infrastructuur afronden | 3/3 | Complete (KB-01/02/03/04/05 geshipt; /resources hub live in nl/en/es, hreflang in sitemap; op branch feature/seo-geo-kennisbank) | - |
 | 2. Content-pillar spine | 1/1 | Complete (4 FMai pillars live in shared fma-app Supabase; seed script committed in fma-app 1b0a2dab/b7623bd4; 7 legacy placeholders deactivated; PILR-01 done) | 2026-06-02 |
-| 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
+| 3. Cornerstone-content (flagship) | 3/7 | In progress | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
 | 6. Engine operationeel + pillar-gekoppeld | 0/TBD | Not started | - |

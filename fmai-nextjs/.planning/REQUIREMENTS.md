@@ -18,7 +18,7 @@
 - [x] **CONT-01**: GEO pillar-gids ("wat is GEO / generative engine optimization") gepubliceerd, SKC-grade, NL authoritative
 - [ ] **CONT-02**: "GEO vs SEO: waar investeren in 2026" cluster gepubliceerd
 - [ ] **CONT-03**: "Hoe meet je zichtbaarheid in AI Overviews" cluster gepubliceerd
-- [ ] **CONT-04**: "GEO monitoring tools voor ChatGPT en Perplexity" cluster gepubliceerd
+- [x] **CONT-04**: "GEO monitoring tools voor ChatGPT en Perplexity" cluster gepubliceerd
 - [x] **CONT-05**: "AI marketing automation voor bureaus" pillar-gids gepubliceerd
 - [ ] **CONT-06**: "Wat is een AI Marketing Medewerker (Clyde)" cluster gepubliceerd
 - [ ] **CONT-07**: Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" gepubliceerd
@@ -85,7 +85,7 @@
 | CONT-01 | Phase 3 | Complete |
 | CONT-02 | Phase 3 | Pending |
 | CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 3 | Pending |
+| CONT-04 | Phase 3 | Complete |
 | CONT-05 | Phase 3 | Complete |
 | CONT-06 | Phase 3 | Pending |
 | CONT-07 | Phase 3 | Pending |
