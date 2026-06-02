@@ -3462,7 +3462,8 @@
   },
   "nav": {
     "login": "Inloggen",
-    "apply": "Plan een gesprek"
+    "apply": "Plan een gesprek",
+    "assessment": "Doe de AI-Scan"
   },
   "header": {
     "skills": {
@@ -3552,6 +3553,15 @@
       "tagline": "9 live, 3 binnenkort",
       "previewCta": "Bekijk de vaardigheid",
       "viewAll": "Alle vaardigheden"
+    },
+    "priceMenu": {
+      "pricing": {
+        "subtitle": "Alle abonnementen en tiers"
+      },
+      "foundingMember": {
+        "subtitle": "Levenslang vast tarief"
+      },
+      "spots": "{taken}/{total} plekken"
     }
   },
   "chat": {

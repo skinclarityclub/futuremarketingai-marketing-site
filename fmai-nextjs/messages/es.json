@@ -3462,7 +3462,8 @@
   },
   "nav": {
     "login": "Iniciar sesión",
-    "apply": "Agenda una llamada"
+    "apply": "Agenda una llamada",
+    "assessment": "Haz el AI-Scan"
   },
   "header": {
     "skills": {
@@ -3552,6 +3553,15 @@
       "tagline": "9 en vivo, 3 próximamente",
       "previewCta": "Ver habilidad",
       "viewAll": "Todas las habilidades"
+    },
+    "priceMenu": {
+      "pricing": {
+        "subtitle": "Todos los planes y niveles"
+      },
+      "foundingMember": {
+        "subtitle": "Tarifa fija de por vida"
+      },
+      "spots": "{taken}/{total} plazas"
     }
   },
   "chat": {
