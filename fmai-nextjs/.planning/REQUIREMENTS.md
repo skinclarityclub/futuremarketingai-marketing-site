@@ -74,13 +74,40 @@
 
 ## Traceability
 
-Wordt ingevuld tijdens roadmap-creatie. Verwachte fase-groepering: KB → Fase A, CONT/PILR → Fase B, PUB → Fase C, APUB → Fase D, ENG → Fase E, OFF → Fase F. Comprehensive depth kan fasen verder opsplitsen.
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| KB-01 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
+| KB-02 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
+| KB-03 | Phase 1 | Complete (geshipt op `feature/seo-geo-kennisbank`) |
+| KB-04 | Phase 1 | Pending |
+| KB-05 | Phase 1 | Pending |
+| PILR-01 | Phase 2 | Pending |
+| CONT-01 | Phase 3 | Pending |
+| CONT-02 | Phase 3 | Pending |
+| CONT-03 | Phase 3 | Pending |
+| CONT-04 | Phase 3 | Pending |
+| CONT-05 | Phase 3 | Pending |
+| CONT-06 | Phase 3 | Pending |
+| CONT-07 | Phase 3 | Pending |
+| CONT-08 | Phase 3 | Pending |
+| PUB-01 | Phase 4 | Pending |
+| PUB-02 | Phase 4 | Pending |
+| PUB-03 | Phase 4 | Pending |
+| PUB-04 | Phase 4 | Pending |
+| PUB-05 | Phase 4 | Pending |
+| APUB-01 | Phase 5 | Pending |
+| APUB-02 | Phase 5 | Pending |
+| ENG-01 | Phase 6 | Pending |
+| ENG-02 | Phase 6 | Pending |
+| ENG-03 | Phase 6 | Pending |
+| ENG-04 | Phase 6 | Pending |
+| OFF-01 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 25 totaal (3 al geshipt)
-- Mapped to phases: in te vullen door roadmapper
-- Unmapped: in te vullen door roadmapper
+- v1 requirements: 25 totaal (3 al geshipt: KB-01/02/03)
+- Mapped to phases: 25/25 ✓ (geen wezen, geen duplicaten)
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-02 after initialization*
+*Last updated: 2026-06-02 after roadmap creation*
