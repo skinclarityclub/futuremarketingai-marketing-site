@@ -61,7 +61,16 @@ Plans:
   3. De comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" staat live met ComparisonTable en één `/apply`-CTA
   4. Elke cornerstone heeft precies één `/apply`-CTA, valide FAQPage-schema, en verschijnt in de `/resources`-hub onder de juiste pillar
   5. Mobiel getest per page (testing-playbook); JSON-LD valideert; Lighthouse/CWV niet geregresseerd
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Verdiep bestaande GEO pillar-gids naar 1500-3000w + volledige TOC/takeaways/FAQ/citations (CONT-01)
+- [ ] 03-02-PLAN.md — Verse NL pillar "AI marketing automation voor bureaus" (CONT-05)
+- [ ] 03-03-PLAN.md — GEO-clusters "GEO vs SEO 2026" + "Meten in AI Overviews" (CONT-02, CONT-03)
+- [ ] 03-04-PLAN.md — GEO-cluster "GEO monitoring tools" met ComparisonTable (CONT-04)
+- [ ] 03-05-PLAN.md — Cluster "Wat is een AI Marketing Medewerker (Clyde)" (CONT-06)
+- [ ] 03-06-PLAN.md — Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" + hub-fix Option A (CONT-07)
+- [ ] 03-07-PLAN.md — Interne-link-integratie + cross-page proof-sweep (CONT-08)
 
 ### Phase 4: Multi-tenant publishing-upgrade — PREREQUISITE
 **Goal**: Publiceren in `fma-app` wordt client-aware zodat FMai als publicerende client erbij kan zónder SKC te breken. Dit dicht meteen de latente cross-publishing-bug. Harde prerequisite: FMai mag NIET als publicerende client live voordat de client-scoped filter bewezen is.
