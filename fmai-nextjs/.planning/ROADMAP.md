@@ -46,7 +46,10 @@ Plans:
   1. FMai's pillars (GEO, AI marketing automation voor bureaus, agency-ops/proof, product/Clyde) bestaan als `fma_content_pillars`-rijen onder FMai's `client_id`
   2. Elke pillar-rij heeft een ingevuld `prompt_context` (topics, funnel_stage, weight) dat later door WF7 geladen kan worden
   3. De pillar/cluster-map van de cornerstone-content (Phase 3) mapt 1-op-1 op deze pillar-rijen (geen wees-cluster zonder pillar)
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Seed 4 FMai content-pillars in `fma_content_pillars` (cross-repo: idempotent service-role script in fma-app + read-back verify) (PILR-01)
 
 ### Phase 3: Cornerstone-content (flagship) — PRIORITEIT
 **Goal**: 4-6 diepe, autoritatieve cornerstone-pagina's staan live op exact de non-branded doel-keywords uit de audit, NL authoritative, SKC-grade. Dit levert directe topical authority + AI-citatie-kandidaten zonder op de engine of publishing te wachten — de door de user gekozen prioriteit.
@@ -110,7 +113,7 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Kennisbank-infrastructuur afronden | 3/3 | Complete (KB-01/02/03/04/05 geshipt; /resources hub live in nl/en/es, hreflang in sitemap; op branch feature/seo-geo-kennisbank) | - |
-| 2. Content-pillar spine | 0/TBD | Not started | - |
+| 2. Content-pillar spine | 0/1 | Planned (02-01 seed-script cross-repo in fma-app) | - |
 | 3. Cornerstone-content (flagship) | 0/TBD | Not started | - |
 | 4. Multi-tenant publishing-upgrade | 0/TBD | Not started | - |
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
