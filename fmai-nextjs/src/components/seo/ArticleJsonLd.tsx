@@ -11,6 +11,8 @@ interface ArticleJsonLdProps {
   locale: string
   /** Optional absolute image URL. Falls back to og-image.png. 1200x630 recommended. */
   image?: string
+  /** Schema.org type. Cluster blog posts can use 'BlogPosting'; pillars stay 'Article'. */
+  type?: 'Article' | 'BlogPosting'
 }
 
 export function ArticleJsonLd({
@@ -22,6 +24,7 @@ export function ArticleJsonLd({
   slug,
   locale,
   image,
+  type = 'Article',
 }: ArticleJsonLdProps) {
   const url = `${SITE_URL}/${locale}/blog/${slug}`
   const articleId = `${url}#article`
@@ -29,7 +32,7 @@ export function ArticleJsonLd({
 
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': type,
     '@id': articleId,
     headline: title,
     description,

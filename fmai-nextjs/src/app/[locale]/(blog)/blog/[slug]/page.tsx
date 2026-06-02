@@ -3,10 +3,15 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
-import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales } from '@/lib/blog'
+import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales, getCategoryLabel } from '@/lib/blog'
 import { ArticleJsonLd } from '@/components/seo/ArticleJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
 import { BlogContent } from '@/components/blog/BlogContent'
+import { TableOfContents } from '@/components/blog/TableOfContents'
+import { KeyTakeaways } from '@/components/blog/KeyTakeaways'
+import { BlogFaq } from '@/components/blog/BlogFaq'
+import { Citations } from '@/components/blog/Citations'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 
 export const revalidate = 3600
@@ -42,6 +47,12 @@ export async function generateMetadata({
     alternates['x-default'] = alternates['en']
   }
 
+  const ogImage = post.heroImage
+    ? post.heroImage.startsWith('http')
+      ? post.heroImage
+      : `${SITE_URL}${post.heroImage}`
+    : undefined
+
   return {
     title: `${post.title} | ${SITE_NAME}`,
     description: post.description,
@@ -59,11 +70,13 @@ export async function generateMetadata({
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   }
 }
@@ -96,6 +109,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     day: 'numeric',
   })
 
+  const heroAbsolute = post.heroImage
+    ? post.heroImage.startsWith('http')
+      ? post.heroImage
+      : `${SITE_URL}${post.heroImage}`
+    : undefined
+
   return (
     <main className="mx-auto max-w-3xl px-4 pb-20 pt-32">
       <ArticleJsonLd
@@ -106,6 +125,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         dateModified={post.updatedAt}
         slug={slug}
         locale={locale}
+        image={heroAbsolute}
+        type={post.schemaType ?? (post.pillar ? 'Article' : 'BlogPosting')}
       />
       <BreadcrumbJsonLd
         items={[
@@ -115,6 +136,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         ]}
         locale={locale}
       />
+      {post.faqs && post.faqs.length > 0 && (
+        <FaqJsonLd items={post.faqs} path={`/blog/${slug}`} locale={locale} />
+      )}
 
       <nav aria-label="Breadcrumb" className="mb-8">
         <ol className="flex items-center gap-2 text-sm text-text-muted">
@@ -133,7 +157,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <EyebrowLabel>{t('post.eyebrow')}</EyebrowLabel>
           <div className="flex items-center gap-3">
             <span className="rounded-full bg-accent-system/10 px-3 py-1 text-xs font-medium text-accent-system">
-              {post.category.replace('-', ' ')}
+              {getCategoryLabel(post.category)}
             </span>
           </div>
           <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
@@ -144,12 +168,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span>{post.author}</span>
             <span aria-hidden="true">&middot;</span>
             <time dateTime={post.publishedAt}>{publishedDate}</time>
+            {post.readTime ? (
+              <>
+                <span aria-hidden="true">&middot;</span>
+                <span>{post.readTime} min read</span>
+              </>
+            ) : null}
           </div>
         </header>
+
+        {post.tableOfContents && post.tableOfContents.length > 0 && (
+          <TableOfContents items={post.tableOfContents} />
+        )}
+        {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+          <KeyTakeaways items={post.keyTakeaways} />
+        )}
 
         <BlogContent>
           <Post />
         </BlogContent>
+
+        {post.faqs && post.faqs.length > 0 && <BlogFaq items={post.faqs} />}
+        {post.citations && post.citations.length > 0 && <Citations items={post.citations} />}
       </article>
     </main>
   )
