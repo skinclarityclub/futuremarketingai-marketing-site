@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-06-02T15:59:45.941Z"
+last_updated: "2026-06-02T16:09:52.394Z"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 18
-  completed_plans: 16
+  completed_plans: 17
 ---
 
 # Project State
@@ -23,9 +23,10 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
-Plan: 08-03 (CONT-13 product/Clyde pillar) + 08-04 (CONT-10/11 efficiency + ROI-framework clusters) + 08-05 (CONT-12 agency-proof case) voltooid. Volgende: product/Clyde clusters (08-06), sluitsteen 08-07 (CONT-16 content-helft).
-Status: 08-05 agency-proof case-cluster `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 <h2 id>); Sindy-as-operator narratief als werkend voorbeeld; KWALITATIEF-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; geen Daley SKC-mede-eigendom (regex-audit op MDX+gerenderde HTML clean). 1 in-body CtaBlock -> /apply; back-link naar pillar + forward-link CONT-11 + /nl/pricing deeplink. BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Build PASS (127 static pages, +4 t.o.v. 08-02's 123), check:palette PASS. Commit 71cc0a1 (Tasks 1+2 als één file-write); Task 3 verificatie-only. CONT-12 afgevinkt.
-Last activity: 2026-06-02 — Plan 08-04 voltooid (CONT-10 ai-efficientie-marketingbureau 1293w + CONT-11 meetbare-ai-marketing-resultaten 1317w, BlogPosting+FAQPage JSON-LD valide, hub agency-ops bucket bevestigd, commits bb95bae + 4f5f4a4) parallel met Plan 08-05 (CONT-12 case-cluster, commit 71cc0a1). Build 127 pages, palette PASS.
+Plan: 08-03 (CONT-13 product/Clyde pillar) + 08-04 (CONT-10/11 efficiency + ROI-framework clusters) + 08-05 (CONT-12 agency-proof case) + 08-06 (CONT-14/15 product/Clyde clusters) voltooid. Volgende: sluitsteen 08-07 (CONT-16 content-helft).
+Status: 08-06 twee product/Clyde clusters onder pillar ai-marketing-medewerker (CONT-13). CONT-14 `content/blog/ai-agent-vs-ai-tool-marketing.mdx` (1017w, 5 <h2 id>, defensible-claims ComparisonTable highlightColumn={1} op medewerker-kolom, dated caption juni 2026) trekt agent-vs-tool grens op 4 eigenschappen (autonomie+geheugen+leren+beslissingen). CONT-15 `content/blog/ai-marketing-agent-geheugen-en-leren.mdx` (1149w, 5 <h2 id>, 1 Callout) legt geheugen+leren per merk uit als Clyde USP, deeplinkt naar /nl/memory. Beide BlogPosting, category product-clyde, clusterOf ai-marketing-medewerker, ≥5 FAQs, exact 1 /apply CtaBlock, geen em-dash, AI-tool alleen contrastief, bidirectioneel verbonden met pillar + sibling. Build PASS (129 static pages, +2 t.o.v. 08-05's 127). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML voor beide. check:palette PASS. Commits c5f4b77 (CONT-14) + 69009e1 (CONT-15); Task 3 verificatie-only. Eén auto-fix (Rule 1): ComparisonTable kolom/highlight-mapping gecorrigeerd vóór commit. CONT-14 + CONT-15 afgevinkt.
+Status (08-05): 08-05 agency-proof case-cluster `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 <h2 id>); Sindy-as-operator narratief als werkend voorbeeld; KWALITATIEF-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; geen Daley SKC-mede-eigendom (regex-audit op MDX+gerenderde HTML clean). 1 in-body CtaBlock -> /apply; back-link naar pillar + forward-link CONT-11 + /nl/pricing deeplink. BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Build PASS (127 static pages, +4 t.o.v. 08-02's 123), check:palette PASS. Commit 71cc0a1 (Tasks 1+2 als één file-write); Task 3 verificatie-only. CONT-12 afgevinkt.
+Last activity: 2026-06-02 — Plan 08-06 voltooid (CONT-14 ai-agent-vs-ai-tool-marketing 1017w + CONT-15 ai-marketing-agent-geheugen-en-leren 1149w, beide BlogPosting+FAQPage JSON-LD valide in .next-HTML, product-clyde clusters onder pillar ai-marketing-medewerker, commits c5f4b77 + 69009e1). Build 129 static pages, palette PASS.
 Plan 08-03 voltooid (parallel wave-2): product/Clyde pillargids `content/blog/ai-marketing-medewerker.mdx` (CONT-13, pillar:true, category product-clyde, schemaType Article, 1817w, 6 <h2 id>). Definieert de AI Marketing Medewerker als PRODUCTCATEGORIE (autonomie + langetermijngeheugen + vaardigheden), Clyde = FMai-implementatie. Anti-cannibalisatie vs CONT-06: distinct H1 + answer-first + down-link naar /nl/blog/wat-is-een-ai-marketing-medewerker; forward-links CONT-14/15 + /nl/memory; 1 in-body CtaBlock -> /apply; geen em-dashes; AI-tool alleen contrastief. Build PASS (127 static pages), Article + FAQPage JSON-LD valide in .next-HTML, alle 6 TOC-anchors resolven, pillar verschijnt in product-clyde hub-bucket op /resources (geen MISSING_MESSAGE), check:palette PASS. Commit 6adce32 (Tasks 1+2 één file-write); Task 3 verificatie-only. CONT-13 afgevinkt.
 
 Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exacte plan-count)
@@ -62,6 +63,7 @@ Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exac
 | Phase 08 P05 | 5 | 3 tasks | 1 files |
 | Phase 08 P04 | 8 | 3 tasks | 2 files |
 | Phase 08 P03 | 9 | 3 tasks | 1 files |
+| Phase 08 P06 | 14 | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -109,6 +111,8 @@ Recent decisions affecting current work:
 - [Phase 08-04]: CONT-11 leert een 6-indicator ROI-framework + nulmeting/before-after en belooft geen cijfer; marktcijfers expliciet als marktcontext, nooit als belofte/FMai-resultaat
 - [Phase 08-03]: Product/Clyde pillar (CONT-13) framet de AI Marketing Medewerker als PRODUCTCATEGORIE via 3 eigenschappen (autonomie, langetermijngeheugen, vaardigheden), laat de kale definitie bij CONT-06 en linkt DOWN — anti-cannibalisatie per 08-RESEARCH Pitfall 4
 - [Phase 08-03]: Clyde expliciet als IMPLEMENTATIE van de categorie gepositioneerd (categorie != merk) via Callout: de categorie definieren, niet bezitten; claim het ontbreken van een vaste NL-definitie als de GEO/SEO-winst
+- [Phase 08-06]: CONT-14 ComparisonTable: 2 waardekolommen + impliciete row.label-kolom, highlightColumn={1} op de medewerker-kolom (component rendert label als 1e cel, columns mappen op values)
+- [Phase 08-06]: Beide product/Clyde clusters: AI-tool alleen contrastief; CONT-15 verankert geheugen+leren per merk als Clyde USP met /nl/memory deeplink i.p.v. het meerlaagse model te dupliceren
 
 ### Roadmap Evolution
 
@@ -133,5 +137,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-02
-Stopped at: Completed 08-05-PLAN.md (CONT-12 agency-proof case-cluster). Geschreven: `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 question-based <h2 id>-secties matchend aan tableOfContents, 5 FAQs). Sindy-as-operator narratief als werkend voorbeeld. PROOF-RULE audit clean: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd ("in de markt wordt gerapporteerd..."), geen Daley SKC-mede-eigendom (regex op MDX+gerenderde HTML). Build PASS (127 static pages, +4 t.o.v. 08-02's 123). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Exact 1 in-body CtaBlock -> /apply; back-link pillar + forward-link CONT-11 (resolveert zodra 08-04 shipt) + /nl/pricing deeplink. Geen em-dashes, glossary gerespecteerd. check:palette PASS. Commit 71cc0a1 (Tasks 1+2 in één file-write); Task 3 verificatie-only. CONT-12 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. LET OP: 08-03/04/06 zijn parallelle wave-plannen — verifieer hun status via ROADMAP/SUMMARY-bestanden. Volgende: resterende clusters + product/Clyde pillar (08-06), sluitsteen 08-07 (CONT-16).
+Stopped at: Completed 08-06-PLAN.md (CONT-14/15 product/Clyde clusters). Geschreven: `content/blog/ai-agent-vs-ai-tool-marketing.mdx` (CONT-14, 1017w, 5 <h2 id>, defensible-claims ComparisonTable tool-vs-medewerker met highlightColumn={1} + dated caption juni 2026, agent-vs-tool grens op 4 eigenschappen) + `content/blog/ai-marketing-agent-geheugen-en-leren.mdx` (CONT-15, 1149w, 5 <h2 id>, 1 Callout, geheugen+leren per merk = Clyde USP, /nl/memory deeplink). Beide: category product-clyde, clusterOf ai-marketing-medewerker, schemaType BlogPosting, ≥5 FAQs, exact 1 /apply CtaBlock, geen em-dash, AI-tool alleen contrastief, bidirectioneel verbonden met pillar (08-03 forward-linkt al, deze clusters back-linken nu) + sibling. Build PASS (129 static pages, +2 t.o.v. 08-05's 127). BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML voor beide. check:palette PASS. Auto-fix (Rule 1): ComparisonTable kolom/highlight-mapping gecorrigeerd vóór commit (component rendert row.label als 1e cel, columns mappen op values). Commits c5f4b77 (CONT-14) + 69009e1 (CONT-15); Task 3 verificatie-only. CONT-14 + CONT-15 afgevinkt. MERGE-STATUS: Phase 8 zit op feature/seo-geo-kennisbank, niet main. Volgende: sluitsteen 08-07 (CONT-16) — verifieert beide clusters in product-clyde bucket op /resources + bidirectionele back-links.
 Resume file: None
