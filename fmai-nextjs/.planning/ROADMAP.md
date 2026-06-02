@@ -128,22 +128,28 @@ Phases execute in numeric order. Phase 2 en Phase 7 zijn parallelliseerbaar (gee
 | 5. FMai auto-publish bedrading | 0/TBD | Not started | - |
 | 6. Engine operationeel + pillar-gekoppeld | 0/TBD | Not started | - |
 | 7. Off-site autoriteit-playbook | 0/TBD | Not started | - |
-| 8. Cornerstone-content batch 2 (agency-ops + product/Clyde) | 0/TBD | Not planned | - |
+| 8. Cornerstone-content batch 2 (agency-ops + product/Clyde) | 0/7 | Planned (7 plans, 4 waves; CONT-09..16) | - |
 
 ### Phase 8: Cornerstone-content batch 2 (agency-ops + product/Clyde pillars + clusters)
 
 **Goal**: De twee nog lege pillar-buckets (agency-ops/proof, product/Clyde) krijgen SKC-grade NL-authoritative cornerstones, zodat alle 4 geseedde `fma_content_pillars` content dragen en de hele /resources-hub gevuld is. Zelfde directe topical-authority + AI-citatie-doel als Phase 3, nu voor de resterende pillars.
 **Depends on**: Phase 1 (hub + renderer), Phase 2 (pillar-spine), Phase 3 (cornerstone-pattern + link/CTA-conventies + KennisbankTeaser-homepageblok)
-**Requirements**: TBD (CONT-09+ — gedefinieerd tijdens plan-phase na grounded keyword-research)
+**Requirements**: CONT-09, CONT-10, CONT-11, CONT-12, CONT-13, CONT-14, CONT-15, CONT-16
 **Success Criteria** (what must be TRUE):
   1. Een agency-ops/proof pillar-gids (1500-3000w) + 2-3 clusters (900-1500w) staan live, mappend op de `agency-ops` pillar-rij
   2. Een product/Clyde pillar-gids (1500-3000w) + 2-3 clusters (900-1500w) staan live, mappend op de `product-clyde` pillar-rij
   3. Alle nieuwe cornerstones: bidirectioneel pillar↔cluster gelinkt, exact één /apply-CTA, valide Article/BlogPosting + FAQPage JSON-LD, geen em-dash, canoniek domein, glossary-conform
   4. Elke nieuwe cornerstone verschijnt in de /resources-hub onder de juiste bucket en automatisch in het homepage KennisbankTeaser-blok (geen wees-clusters)
   5. Keywords grounded geresearcht (Gemini grounded voor FMai, niet uit training); mobiel getest; JSON-LD valideert; CWV niet geregresseerd
-**Plans:** 0 plans
+**Plans:** 7 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 8 to break down)
+- [ ] 08-01-PLAN.md — Wiring sluitsteen-infra: product-clyde hub-bucket + i18n (nl/en/es) + homepage-teaser-add van beide pillars (CONT-16)
+- [ ] 08-02-PLAN.md — Agency-ops pillargids "marketingbureau schalen met AI" 1500-3000w (CONT-09)
+- [ ] 08-03-PLAN.md — Product/Clyde pillargids "AI Marketing Medewerker" 1500-3000w, geen CONT-06-kannibalisatie (CONT-13)
+- [ ] 08-04-PLAN.md — Agency-ops clusters: AI-efficiëntie + meetbare-resultaten ROI-framework (CONT-10, CONT-11)
+- [ ] 08-05-PLAN.md — Agency-ops proof-cluster (Sindy-as-operator, kwalitatief) (CONT-12)
+- [ ] 08-06-PLAN.md — Product/Clyde clusters: agent-vs-tool + geheugen-en-leren (CONT-14, CONT-15)
+- [ ] 08-07-PLAN.md — Sluitsteen: bidirectioneel link-netwerk + cross-page proof-sweep (hub/teaser/JSON-LD/em-dash/build) (CONT-16)
 
 > **Deferred — batch 3 (eigen vervolgfase, NIET deze):** 12 skills-artikelen (let op: /skills/* pagina's bestaan al — beslis verdiepen vs nieuwe blog-artikelen) + thematische thought-leadership stukken (man vs machine, toekomst van AI). Toevoegen via /gsd:add-phase zodra batch 2 staat.

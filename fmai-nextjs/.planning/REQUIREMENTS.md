@@ -24,6 +24,17 @@
 - [x] **CONT-07**: Comparison money-page "Clyde vs Jasper vs ChatGPT vs Semrush" gepubliceerd
 - [x] **CONT-08**: Interne links pillar↔cluster consistent + elke cornerstone heeft één /apply-CTA
 
+### Cornerstone-content batch 2 (CONT-09..CONT-16, Phase 8)
+
+- [ ] **CONT-09**: Agency-ops pillargids "marketingbureau schalen met AI" (operating-model framing) gepubliceerd, SKC-grade, NL authoritative — *slug `marketingbureau-schalen-met-ai`, category agency-ops, pillar*
+- [ ] **CONT-10**: Cluster "AI efficiëntie marketingbureau" (welk werk AI overneemt, human-in-the-loop, AVG) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
+- [ ] **CONT-11**: Cluster "meetbare AI marketing resultaten" (ROI-meet-framework, geen beloofd cijfer) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
+- [ ] **CONT-12**: Cluster "AI marketing resultaat in de praktijk" (proof/case via Sindy als operator, geen verzonnen cijfers, geen Daley-mede-eigendom) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
+- [ ] **CONT-13**: Product/Clyde pillargids "AI Marketing Medewerker" (productcategorie: autonomie + geheugen + vaardigheden, Clyde als implementatie) gepubliceerd, kannibaliseert CONT-06 niet — *slug `ai-marketing-medewerker`, category product-clyde, pillar*
+- [ ] **CONT-14**: Cluster "AI agent vs AI tool marketing" (categorie-distinctie, werkmodel niet features) gepubliceerd — *clusterOf ai-marketing-medewerker*
+- [ ] **CONT-15**: Cluster "AI marketing agent geheugen en leren" (per-merk geheugen + leren, link naar /memory) gepubliceerd — *clusterOf ai-marketing-medewerker*
+- [ ] **CONT-16**: Hub + homepage-teaser wiring (4e bucket product-clyde + i18n nl/en/es; teaser-add van beide pillars) + bidirectioneel pillar↔cluster link-netwerk + één /apply-CTA per page + geen wees-cluster
+
 ### Content-pillar spine (PILR)
 
 - [x] **PILR-01**: FMai content-pillars gedefinieerd in `fma_content_pillars` (GEO, AI marketing automation voor bureaus, agency-ops/proof, product/Clyde) als gedeelde strategie-spine
@@ -90,6 +101,14 @@
 | CONT-06 | Phase 3 | Complete |
 | CONT-07 | Phase 3 | Complete |
 | CONT-08 | Phase 3 | Complete |
+| CONT-09 | Phase 8 | Planned |
+| CONT-10 | Phase 8 | Planned |
+| CONT-11 | Phase 8 | Planned |
+| CONT-12 | Phase 8 | Planned |
+| CONT-13 | Phase 8 | Planned |
+| CONT-14 | Phase 8 | Planned |
+| CONT-15 | Phase 8 | Planned |
+| CONT-16 | Phase 8 | Planned |
 | PUB-01 | Phase 4 | Pending |
 | PUB-02 | Phase 4 | Pending |
 | PUB-03 | Phase 4 | Pending |
@@ -104,8 +123,8 @@
 | OFF-01 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 25 totaal (3 al geshipt: KB-01/02/03)
-- Mapped to phases: 25/25 ✓ (geen wezen, geen duplicaten)
+- v1 requirements: 33 totaal (3 al geshipt: KB-01/02/03; +8 CONT-09..16 toegevoegd voor Phase 8 op 2026-06-02)
+- Mapped to phases: 33/33 ✓ (geen wezen, geen duplicaten)
 - Unmapped: 0
 
 ---
