@@ -26,7 +26,7 @@ import { getPillarPosts, getClusterPosts } from '@/lib/blog'
  */
 
 /** The strategic pillar buckets, by BLOG_CATEGORIES id. Order is intentional. */
-const PILLAR_BUCKETS = ['geo', 'ai-marketing-automation', 'agency-ops'] as const
+const PILLAR_BUCKETS = ['geo', 'ai-marketing-automation', 'agency-ops', 'product-clyde'] as const
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
