@@ -27,8 +27,8 @@
 ### Cornerstone-content batch 2 (CONT-09..CONT-16, Phase 8)
 
 - [x] **CONT-09**: Agency-ops pillargids "marketingbureau schalen met AI" (operating-model framing) gepubliceerd, SKC-grade, NL authoritative — *slug `marketingbureau-schalen-met-ai`, category agency-ops, pillar*
-- [ ] **CONT-10**: Cluster "AI efficiëntie marketingbureau" (welk werk AI overneemt, human-in-the-loop, AVG) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
-- [ ] **CONT-11**: Cluster "meetbare AI marketing resultaten" (ROI-meet-framework, geen beloofd cijfer) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
+- [x] **CONT-10**: Cluster "AI efficiëntie marketingbureau" (welk werk AI overneemt, human-in-the-loop, AVG) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
+- [x] **CONT-11**: Cluster "meetbare AI marketing resultaten" (ROI-meet-framework, geen beloofd cijfer) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
 - [x] **CONT-12**: Cluster "AI marketing resultaat in de praktijk" (proof/case via Sindy als operator, geen verzonnen cijfers, geen Daley-mede-eigendom) gepubliceerd — *clusterOf marketingbureau-schalen-met-ai*
 - [ ] **CONT-13**: Product/Clyde pillargids "AI Marketing Medewerker" (productcategorie: autonomie + geheugen + vaardigheden, Clyde als implementatie) gepubliceerd, kannibaliseert CONT-06 niet — *slug `ai-marketing-medewerker`, category product-clyde, pillar*
 - [ ] **CONT-14**: Cluster "AI agent vs AI tool marketing" (categorie-distinctie, werkmodel niet features) gepubliceerd — *clusterOf ai-marketing-medewerker*

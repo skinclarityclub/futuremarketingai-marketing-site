@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-06-02T15:56:01.438Z"
+last_updated: "2026-06-02T15:59:45.941Z"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 18
-  completed_plans: 14
+  completed_plans: 16
 ---
 
 # Project State
@@ -23,9 +23,10 @@ See: .planning/PROJECT.md (updated 2026-06-02)
 ## Current Position
 
 Phase: 8 (Cornerstone-content batch 2) — IN PROGRESS
-Plan: 08-05 (CONT-12 agency-proof case) voltooid. Volgende: resterende wave-2 clusters (08-03/04), product/Clyde pillar+clusters (08-06), sluitsteen 08-07 (CONT-16 content-helft).
+Plan: 08-03 (CONT-13 product/Clyde pillar) + 08-04 (CONT-10/11 efficiency + ROI-framework clusters) + 08-05 (CONT-12 agency-proof case) voltooid. Volgende: product/Clyde clusters (08-06), sluitsteen 08-07 (CONT-16 content-helft).
 Status: 08-05 agency-proof case-cluster `content/blog/ai-marketing-resultaat-in-de-praktijk.mdx` (category agency-ops, clusterOf marketingbureau-schalen-met-ai, schemaType BlogPosting, 1240w, 5 <h2 id>); Sindy-as-operator narratief als werkend voorbeeld; KWALITATIEF-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; geen Daley SKC-mede-eigendom (regex-audit op MDX+gerenderde HTML clean). 1 in-body CtaBlock -> /apply; back-link naar pillar + forward-link CONT-11 + /nl/pricing deeplink. BlogPosting + FAQPage JSON-LD bevestigd in gerenderde .next-HTML. Build PASS (127 static pages, +4 t.o.v. 08-02's 123), check:palette PASS. Commit 71cc0a1 (Tasks 1+2 als één file-write); Task 3 verificatie-only. CONT-12 afgevinkt.
-Last activity: 2026-06-02 — Plan 08-05 voltooid: case-cluster CONT-12 geschreven en geverifieerd (build 127 pages, JSON-LD valide, proof-rule audit clean, palette PASS).
+Last activity: 2026-06-02 — Plan 08-04 voltooid (CONT-10 ai-efficientie-marketingbureau 1293w + CONT-11 meetbare-ai-marketing-resultaten 1317w, BlogPosting+FAQPage JSON-LD valide, hub agency-ops bucket bevestigd, commits bb95bae + 4f5f4a4) parallel met Plan 08-05 (CONT-12 case-cluster, commit 71cc0a1). Build 127 pages, palette PASS.
+Plan 08-03 voltooid (parallel wave-2): product/Clyde pillargids `content/blog/ai-marketing-medewerker.mdx` (CONT-13, pillar:true, category product-clyde, schemaType Article, 1817w, 6 <h2 id>). Definieert de AI Marketing Medewerker als PRODUCTCATEGORIE (autonomie + langetermijngeheugen + vaardigheden), Clyde = FMai-implementatie. Anti-cannibalisatie vs CONT-06: distinct H1 + answer-first + down-link naar /nl/blog/wat-is-een-ai-marketing-medewerker; forward-links CONT-14/15 + /nl/memory; 1 in-body CtaBlock -> /apply; geen em-dashes; AI-tool alleen contrastief. Build PASS (127 static pages), Article + FAQPage JSON-LD valide in .next-HTML, alle 6 TOC-anchors resolven, pillar verschijnt in product-clyde hub-bucket op /resources (geen MISSING_MESSAGE), check:palette PASS. Commit 6adce32 (Tasks 1+2 één file-write); Task 3 verificatie-only. CONT-13 afgevinkt.
 
 Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exacte plan-count)
 
@@ -59,6 +60,8 @@ Progress: Phase 8 [████░░░] clusters lopend (zie ROADMAP voor exac
 | Phase 08 P02 | 7 | 3 tasks | 1 files |
 | Phase 08 P01 | 12 | 3 tasks | 5 files |
 | Phase 08 P05 | 5 | 3 tasks | 1 files |
+| Phase 08 P04 | 8 | 3 tasks | 2 files |
+| Phase 08 P03 | 9 | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -102,6 +105,10 @@ Recent decisions affecting current work:
 - [Phase 08]: [08-01]: teaser-feed blijft expliciete per-pillar .find()-calls (hardcoded-add, Open Q2 locked); && guard + .filter(Boolean) laat cards self-omitten tot MDX bestaat
 - [Phase 08]: [08-01]: i18n-key product-clyde in alle 3 locales tegelijk (next-intl strict throwt MISSING_MESSAGE per locale)
 - [Phase 08-05]: Case-cluster CONT-12 kwalitatief-only: 0 percentage-figuren in body, founding-counter (1/10) als enige harde feit, industrie-benchmarks alleen in citations + zacht geciteerd; Sindy-as-operator, geen Daley-eigendom
+- [Phase 08-04]: CONT-10 winnende invalshoek = selectie+integratieframework (3-assen volume/oordeel/meetbaarheid), geen tool-lijst, AVG als ontwerpkeuze
+- [Phase 08-04]: CONT-11 leert een 6-indicator ROI-framework + nulmeting/before-after en belooft geen cijfer; marktcijfers expliciet als marktcontext, nooit als belofte/FMai-resultaat
+- [Phase 08-03]: Product/Clyde pillar (CONT-13) framet de AI Marketing Medewerker als PRODUCTCATEGORIE via 3 eigenschappen (autonomie, langetermijngeheugen, vaardigheden), laat de kale definitie bij CONT-06 en linkt DOWN — anti-cannibalisatie per 08-RESEARCH Pitfall 4
+- [Phase 08-03]: Clyde expliciet als IMPLEMENTATIE van de categorie gepositioneerd (categorie != merk) via Callout: de categorie definieren, niet bezitten; claim het ontbreken van een vaste NL-definitie als de GEO/SEO-winst
 
 ### Roadmap Evolution
 
