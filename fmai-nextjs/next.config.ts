@@ -159,16 +159,25 @@ const nextConfig: NextConfig = {
         destination: '/:locale/skills/email-management',
         permanent: true,
       },
-      // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank
+      // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank.
+      // Hard 301 (Moved Permanently) instead of Next's permanent:true (which emits
+      // 308) so every search + AI crawler transfers ranking and updates its index
+      // without ambiguity. The bare /blog index gets its own rule so it never relies
+      // on the catch-all's empty-slug edge case.
       {
         source: '/:locale/resources',
         destination: '/:locale/kennisbank',
-        permanent: true,
+        statusCode: 301,
+      },
+      {
+        source: '/:locale/blog',
+        destination: '/:locale/kennisbank',
+        statusCode: 301,
       },
       {
         source: '/:locale/blog/:slug*',
         destination: '/:locale/kennisbank/:slug*',
-        permanent: true,
+        statusCode: 301,
       },
     ]
   },

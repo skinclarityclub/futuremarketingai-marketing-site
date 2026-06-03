@@ -462,7 +462,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 14b — KennisbankTeaser (cornerstone hub → /resources)
+          Sectie 14b — KennisbankTeaser (cornerstone hub → /kennisbank)
           Internal links naar de 2 pillars + comparison money-page. Self-hides
           wanneer er geen cornerstone-content voor de locale is (EN/ES voorlopig).
           ──────────────────────────────────────────────────────────── */}

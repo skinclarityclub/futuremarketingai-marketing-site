@@ -8,7 +8,7 @@
  * structure stays visible before cornerstone content lands in Phase 3.
  *
  * All copy arrives via props (page owns i18n). Links use the locale-aware
- * next-intl Link, so hrefs stay locale-relative (`/blog/<slug>`).
+ * next-intl Link, so hrefs stay locale-relative (`/kennisbank/<slug>`).
  */
 import { Link } from '@/i18n/navigation'
 import { GlassCard } from '@/components/ui/GlassCard'

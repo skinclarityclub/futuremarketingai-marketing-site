@@ -73,7 +73,7 @@ export function KennisbankTeaser({
             return (
               <Link
                 key={card.slug}
-                href={`/blog/${card.slug}`}
+                href={`/kennisbank/${card.slug}`}
                 className="group relative flex flex-col rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 transition-all hover:border-accent-system/40 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
               >
                 <div className="flex items-center justify-between gap-3">
