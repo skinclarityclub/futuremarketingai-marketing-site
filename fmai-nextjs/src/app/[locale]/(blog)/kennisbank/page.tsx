@@ -10,6 +10,7 @@ import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { DefinedTermSetJsonLd } from '@/components/seo/DefinedTermSetJsonLd'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
+import { PageShell } from '@/components/layout/PageShell'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { Glossary } from '@/components/resources/Glossary'
@@ -72,7 +73,7 @@ export default async function KennisbankPage({ params, searchParams }: Kennisban
   }))
 
   return (
-    <main className="mx-auto max-w-6xl px-6 pb-20 pt-32">
+    <PageShell>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}
@@ -89,54 +90,56 @@ export default async function KennisbankPage({ params, searchParams }: Kennisban
       />
       <Breadcrumbs path="/kennisbank" locale={locale} />
 
-      <header className="mb-10 max-w-3xl space-y-3">
-        <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
-        <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
-          {t('hero.heading')}
-        </h1>
-        <p className="text-lg leading-relaxed text-text-secondary">{t('hero.intro')}</p>
-      </header>
+      <div className="mx-auto max-w-6xl px-6 pb-20 pt-8">
+        <header className="mb-10 max-w-3xl space-y-3">
+          <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
+          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
+            {t('hero.heading')}
+          </h1>
+          <p className="text-lg leading-relaxed text-text-secondary">{t('hero.intro')}</p>
+        </header>
 
-      <CategoryFilter
-        categories={usedCategories}
-        activeCategory={activeCategory}
-        locale={locale}
-      />
-
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_320px]">
-        <div>
-          {filteredPosts.length > 0 ? (
-            <RevealContainer className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              {filteredPosts.map((post) => (
-                <RevealItem key={post.slug}>
-                  <BlogPostCard post={post} locale={locale} />
-                </RevealItem>
-              ))}
-            </RevealContainer>
-          ) : (
-            <div className="py-20 text-center">
-              <p className="text-lg text-text-muted">
-                {activeCategory ? bt('noPostsInCategory') : bt('noPosts')}
-              </p>
-            </div>
-          )}
-        </div>
-        <aside className="lg:sticky lg:top-32 lg:self-start">
-          <LeadMagnetCTA source="blog" variant="sidebar" />
-        </aside>
-      </div>
-
-      {/* Glossary — preserved for GEO / DefinedTerm citation value. */}
-      <section
-        aria-labelledby="glossary-heading"
-        className="mt-20 border-t border-border-primary pt-16"
-      >
-        <Glossary
-          terms={glossaryTerms}
-          heading={t('glossaryHeading')}
-          intro={t('glossaryIntro')}
+        <CategoryFilter
+          categories={usedCategories}
+          activeCategory={activeCategory}
+          locale={locale}
         />
-      </section>
-    </main>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_320px]">
+          <div>
+            {filteredPosts.length > 0 ? (
+              <RevealContainer className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {filteredPosts.map((post) => (
+                  <RevealItem key={post.slug}>
+                    <BlogPostCard post={post} locale={locale} />
+                  </RevealItem>
+                ))}
+              </RevealContainer>
+            ) : (
+              <div className="py-20 text-center">
+                <p className="text-lg text-text-muted">
+                  {activeCategory ? bt('noPostsInCategory') : bt('noPosts')}
+                </p>
+              </div>
+            )}
+          </div>
+          <aside className="lg:sticky lg:top-32 lg:self-start">
+            <LeadMagnetCTA source="blog" variant="sidebar" />
+          </aside>
+        </div>
+
+        {/* Glossary — preserved for GEO / DefinedTerm citation value. */}
+        <section
+          aria-labelledby="glossary-heading"
+          className="mt-20 border-t border-border-primary pt-16"
+        >
+          <Glossary
+            terms={glossaryTerms}
+            heading={t('glossaryHeading')}
+            intro={t('glossaryIntro')}
+          />
+        </section>
+      </div>
+    </PageShell>
   )
 }
