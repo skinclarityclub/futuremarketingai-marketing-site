@@ -1,16 +1,28 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
-import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
+import { generatePageMetadata } from '@/lib/metadata'
 import { getAllPosts, BLOG_CATEGORIES } from '@/lib/blog'
 import { BlogPostCard } from '@/components/blog/BlogPostCard'
 import { CategoryFilter } from '@/components/blog/CategoryFilter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
+import { DefinedTermSetJsonLd } from '@/components/seo/DefinedTermSetJsonLd'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
+import { Glossary } from '@/components/resources/Glossary'
+import { GLOSSARY_TERMS } from '@/lib/glossary'
+
+/**
+ * /kennisbank — the knowledge base.
+ *
+ * The card-grid index of every cornerstone (filterable by category, each card
+ * carries its branded hero thumbnail) is the landing. The GEO/AI-marketing
+ * glossary (DefinedTermSet JSON-LD) is preserved below the grid for entity
+ * citation value. NL hero copy comes from the `resources` namespace.
+ */
 
 export const revalidate = 3600
 
@@ -24,52 +36,22 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-
-  const title = 'Blog | Future Marketing AI'
-  const description =
-    'Insights on AI marketing automation, chatbots, voice agents, and growth strategies for B2B companies.'
-  const url = `${SITE_URL}/${locale}/blog`
-
-  const alternates: Record<string, string> = {}
-  for (const loc of routing.locales) {
-    alternates[loc] = `${SITE_URL}/${loc}/blog`
-  }
-  alternates['x-default'] = `${SITE_URL}/en/blog`
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: url,
-      languages: alternates,
-    },
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: SITE_NAME,
-      locale,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-    },
-  }
+  return generatePageMetadata({ locale, namespace: 'resources', path: '/kennisbank' })
 }
 
-interface BlogPageProps {
+interface KennisbankPageProps {
   params: Promise<{ locale: string }>
   searchParams: Promise<{ category?: string }>
 }
 
-export default async function BlogPage({ params, searchParams }: BlogPageProps) {
+export default async function KennisbankPage({ params, searchParams }: KennisbankPageProps) {
   const { locale } = await params
   const { category } = await searchParams
   setRequestLocale(locale)
 
-  const t = await getTranslations({ locale, namespace: 'blog' })
+  const t = await getTranslations({ locale, namespace: 'resources' })
+  const bt = await getTranslations({ locale, namespace: 'blog' })
+  const gt = await getTranslations({ locale, namespace: 'glossary' })
 
   const allPosts = getAllPosts(locale)
   const activeCategory = category ?? null
@@ -77,32 +59,46 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
     ? allPosts.filter((post) => post.category === activeCategory)
     : allPosts
 
+  // Only show filter chips for categories that actually have posts in this locale
+  // (hides empty legacy buckets like chatbots/voice-agents).
+  const usedCategories = BLOG_CATEGORIES.filter((c) =>
+    allPosts.some((post) => post.category === c.id)
+  )
+
+  const glossaryTerms = GLOSSARY_TERMS.map((term) => ({
+    id: term.id,
+    name: gt(`${term.id}.name`),
+    definition: gt(`${term.id}.definition`),
+  }))
+
   return (
     <main className="mx-auto max-w-6xl px-6 pb-20 pt-32">
       <WebPageJsonLd
-        name="Blog | Future Marketing AI"
-        description="Insights on AI marketing automation, chatbots, voice agents, and growth strategies for B2B companies."
-        path="/blog"
+        name={t('meta.title')}
+        description={t('meta.description')}
+        path="/kennisbank"
         locale={locale}
       />
+      <DefinedTermSetJsonLd locale={locale} terms={glossaryTerms} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
+          { name: t('hero.heading'), path: '/kennisbank' },
         ]}
         locale={locale}
       />
-      <Breadcrumbs path="/blog" locale={locale} />
+      <Breadcrumbs path="/kennisbank" locale={locale} />
+
       <header className="mb-10 max-w-3xl space-y-3">
-        <EyebrowLabel>{t('eyebrow')}</EyebrowLabel>
+        <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
         <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
-          {t('title')}
+          {t('hero.heading')}
         </h1>
-        <p className="text-lg leading-relaxed text-text-secondary">{t('subtitle')}</p>
+        <p className="text-lg leading-relaxed text-text-secondary">{t('hero.intro')}</p>
       </header>
 
       <CategoryFilter
-        categories={BLOG_CATEGORIES}
+        categories={usedCategories}
         activeCategory={activeCategory}
         locale={locale}
       />
@@ -120,7 +116,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
           ) : (
             <div className="py-20 text-center">
               <p className="text-lg text-text-muted">
-                {activeCategory ? t('noPostsInCategory') : t('noPosts')}
+                {activeCategory ? bt('noPostsInCategory') : bt('noPosts')}
               </p>
             </div>
           )}
@@ -129,6 +125,18 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
           <LeadMagnetCTA source="blog" variant="sidebar" />
         </aside>
       </div>
+
+      {/* Glossary — preserved for GEO / DefinedTerm citation value. */}
+      <section
+        aria-labelledby="glossary-heading"
+        className="mt-20 border-t border-border-primary pt-16"
+      >
+        <Glossary
+          terms={glossaryTerms}
+          heading={t('glossaryHeading')}
+          intro={t('glossaryIntro')}
+        />
+      </section>
     </main>
   )
 }

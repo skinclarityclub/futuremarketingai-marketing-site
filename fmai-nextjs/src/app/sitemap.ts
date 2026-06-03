@@ -32,7 +32,7 @@ const pages = [
   { path: '/legal/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/legal/cookies', changeFrequency: 'yearly' as const, priority: 0.3 },
-  { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.7 },
+  { path: '/kennisbank', changeFrequency: 'weekly' as const, priority: 0.8 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -69,12 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages: Record<string, string> | undefined =
       versions.length > 1
         ? Object.fromEntries(
-            versions.map((v) => [v.locale, `${SITE_URL}/${v.locale}/blog/${slug}`])
+            versions.map((v) => [v.locale, `${SITE_URL}/${v.locale}/kennisbank/${slug}`])
           )
         : undefined
 
     return versions.map((post) => ({
-      url: `${SITE_URL}/${post.locale}/blog/${post.slug}`,
+      url: `${SITE_URL}/${post.locale}/kennisbank/${post.slug}`,
       lastModified: new Date(post.updatedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.7,

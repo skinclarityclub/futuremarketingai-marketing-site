@@ -45,6 +45,8 @@ const TrustSignalsGrid = dynamic(() =>
   import('@/components/marketing/TrustSignalsGrid').then((m) => ({ default: m.TrustSignalsGrid }))
 )
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { getPillarPosts, getClusterPosts } from '@/lib/blog'
+import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
 import { ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -67,6 +69,33 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'home' })
+
+  // Featured cornerstone cards for the Kennisbank teaser. Pulled from real MDX
+  // frontmatter so titles/snippets never drift. NL has content now; EN/ES stay
+  // empty (section self-hides) until the cornerstones are translated.
+  const pillars = getPillarPosts(locale)
+  const geoPillar = pillars.find((p) => p.category === 'geo')
+  const aiPillar = pillars.find((p) => p.category === 'ai-marketing-automation')
+  const agencyPillar = pillars.find((p) => p.category === 'agency-ops')
+  const productPillar = pillars.find((p) => p.category === 'product-clyde')
+  const comparison = getClusterPosts('ai-marketing-automation-voor-bureaus', locale).find(
+    (p) => p.slug === 'clyde-vs-jasper-chatgpt-semrush'
+  )
+  const kennisbankItems: KennisbankCard[] = [
+    geoPillar && { ...geoPillar, kind: 'pillar' as const },
+    aiPillar && { ...aiPillar, kind: 'pillar' as const },
+    agencyPillar && { ...agencyPillar, kind: 'pillar' as const },
+    productPillar && { ...productPillar, kind: 'pillar' as const },
+    comparison && { ...comparison, kind: 'comparison' as const },
+  ]
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      description: p.description,
+      readTime: p.readTime ?? 1,
+      kind: p.kind,
+    }))
 
   return (
     <PageShell showStickyCta>
@@ -431,6 +460,29 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <IcpSection locale={locale} />
         </ScrollReveal>
       </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 14b — KennisbankTeaser (cornerstone hub → /kennisbank)
+          Internal links naar de 2 pillars + comparison money-page. Self-hides
+          wanneer er geen cornerstone-content voor de locale is (EN/ES voorlopig).
+          ──────────────────────────────────────────────────────────── */}
+      {kennisbankItems.length > 0 && (
+        <LazySection minHeight="360px">
+          <ScrollReveal>
+            <KennisbankTeaser
+              eyebrow={t('kennisbank.eyebrow')}
+              title={t('kennisbank.title')}
+              intro={t('kennisbank.intro')}
+              ctaLabel={t('kennisbank.ctaLabel')}
+              badgePillar={t('kennisbank.badgePillar')}
+              badgeComparison={t('kennisbank.badgeComparison')}
+              readLabel={t('kennisbank.readLabel')}
+              readTimeLabel={t('kennisbank.readTimeLabel')}
+              items={kennisbankItems}
+            />
+          </ScrollReveal>
+        </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 15 — FAQ (Radix Accordion, type=single collapsible)

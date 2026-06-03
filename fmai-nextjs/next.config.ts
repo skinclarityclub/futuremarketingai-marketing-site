@@ -21,12 +21,12 @@ const includeHttpsUpgrades = isProduction && !isLighthouseTest
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://assets.calendly.com https://unpkg.com;
-  style-src 'self' 'unsafe-inline' https://assets.calendly.com;
-  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://assets.calendly.com https://prod.spline.design;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://unpkg.com;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com https://prod.spline.design;
   font-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com https://calendly.com https://assets.calendly.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
-  frame-src https://calendly.com;
+  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
+  frame-src https://app.cal.com https://cal.com;
   worker-src 'self' blob:;
   object-src 'none';
   base-uri 'self';
@@ -159,13 +159,38 @@ const nextConfig: NextConfig = {
         destination: '/:locale/skills/email-management',
         permanent: true,
       },
+      // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank.
+      // Hard 301 (Moved Permanently) instead of Next's permanent:true (which emits
+      // 308) so every search + AI crawler transfers ranking and updates its index
+      // without ambiguity. The bare /blog index gets its own rule so it never relies
+      // on the catch-all's empty-slug edge case.
+      {
+        source: '/:locale/resources',
+        destination: '/:locale/kennisbank',
+        statusCode: 301,
+      },
+      {
+        source: '/:locale/blog',
+        destination: '/:locale/kennisbank',
+        statusCode: 301,
+      },
+      {
+        source: '/:locale/blog/:slug*',
+        destination: '/:locale/kennisbank/:slug*',
+        statusCode: 301,
+      },
     ]
   },
 }
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [],
+    // Strip the leading YAML frontmatter block so it is NOT rendered as visible
+    // body text. @next/mdx does not handle frontmatter by default; without this
+    // the `---...---` block leaks into the page (metadata itself is read separately
+    // via gray-matter in src/lib/blog.ts). String form is required for Turbopack
+    // serialization — function refs are not allowed.
+    remarkPlugins: [['remark-frontmatter', ['yaml']]],
     rehypePlugins: [],
   },
 })

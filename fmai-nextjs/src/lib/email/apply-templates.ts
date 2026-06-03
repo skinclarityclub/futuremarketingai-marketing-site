@@ -1,13 +1,39 @@
 /**
  * HTML email templates for /api/apply.
  *
- * WHY: plain-text Resend emails look unprofessional. Inline HTML with minimal
- * CSS is the safest path (no react-email dep) and every client renders it.
+ * WHY: plain-text Resend emails look unprofessional. These templates render
+ * table-based, inline-styled HTML (the only layout primitives every mail client
+ * supports) in a clean LIGHT shell. Light is deliberate and non-negotiable for
+ * deliverability: Outlook's dark-mode colour adjustment turns a dark background
+ * into a muddy grey, so the whole transactional family stays light (the Stripe /
+ * Linear / GitHub standard). There is no grey frame: the email is white
+ * edge-to-edge, brand identity comes from the colour logo, teal/amber accents
+ * and typography, not from a coloured canvas.
  *
- * Canonical URL is imported from seo-config, not hardcoded, so the domain
- * migration in plan 10-01 cascades automatically.
+ * Canonical URL + brand assets come from seo-config / calConfig so the domain
+ * migration and the Cal.com scheduling migration cascade automatically.
  */
 import { SITE_URL } from '@/lib/seo-config'
+import { calHostedUrl } from '@/config/calConfig'
+
+const LOGO_URL = `${SITE_URL}/logo.png`
+
+// Light palette. Neutrals are warm-tinted (never pure #000/#fff). Accent text
+// colours are darkened from the brand teal/amber so they pass contrast on white.
+const PAPER = '#fdfdfc' // outer + body background (warm near-white)
+const INK = '#161b24' // headings
+const BODY = '#39414f' // body copy
+const MUTED = '#717885' // labels
+const DIM = '#9aa0ad' // footer / meta
+const HAIRLINE = '#eceef2' // 1px rules + row dividers
+const TEAL = '#00d4aa' // brand teal (decorative only)
+const TEAL_TEXT = '#00866b' // legible teal on white
+const AMBER = '#f5a623' // brand amber (CTA bg + decorative)
+const AMBER_TEXT = '#b06f08' // legible amber on white
+
+const FONT =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+const MONO = "ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace"
 
 /**
  * Phase 17-D D4 simplified the apply form to name + email + agency. All
@@ -77,102 +103,200 @@ function escape(value: string): string {
   return String(value).replace(/[&<>"']/g, (c) => map[c] ?? c)
 }
 
-export function adminApplyTemplate(p: ApplyPayload): string {
-  const safe = escape
-  const agencyHeading = p.agency ? `Nieuwe aanvraag van ${safe(p.agency)}` : 'Nieuwe aanvraag'
+/** Mono uppercase section eyebrow, echoing the site's labels. */
+function eyebrow(text: string): string {
+  return `<p style="margin:30px 0 12px; font-family:${MONO}; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:${TEAL_TEXT};">${text}</p>`
+}
 
-  // Score + branch banner (wizard-flow only)
-  const branchBanner =
-    p.score !== undefined && p.branch
-      ? `<div style="margin:0 0 16px; padding:12px 14px; border-radius:6px; background:${
-          p.branch === 'qualified' ? '#e6faf4' : '#fff8e6'
-        }; border-left:4px solid ${p.branch === 'qualified' ? '#00d4aa' : '#f5a623'};">
-        <p style="margin:0 0 4px; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:#666; font-weight:600;">${
-          p.branch === 'qualified' ? 'QUALIFIED — Calendly geserveerd' : 'REVIEW — Daley reviewt persoonlijk'
-        }</p>
-        <p style="margin:0; font-size:18px; color:#0a0d14; font-weight:700;">Score: ${p.score} / ${p.maxScore ?? '?'}</p>
-      </div>`
-      : ''
-
-  const assessmentBlock = p.assessment
-    ? `<h3 style="color:#0a0d14; margin:16px 0 8px;">AI Bureau Scan handoff</h3>
-       <p style="margin:4px 0;"><strong>Archetype:</strong> ${safe(p.assessment.archetype)}</p>
-       <p style="margin:4px 0;"><strong>Stage:</strong> ${safe(p.assessment.stage)}</p>
-       <p style="margin:4px 0;"><strong>Zwakste categorie:</strong> ${safe(p.assessment.lowestCategory)}</p>`
-    : ''
-
-  const tierLine = p.tier
-    ? `<p style="color:#444; margin:0 0 16px;">Service-niveau gekozen: <strong>${safe(TIER_LABELS[p.tier] ?? p.tier)}</strong>${
-        typeof p.workspaces === 'number' && p.workspaces > 0
-          ? ` &middot; Geschatte werkruimtes: <strong>${p.workspaces}</strong>`
-          : ''
-      }</p>`
-    : '<p style="color:#444; margin:0 0 16px;">Service-niveau wordt tijdens de call afgestemd.</p>'
-  const qualificationBlock =
-    p.revenue || p.clientCount
-      ? `
-        <h3 style="color:#0a0d14; margin:16px 0 8px;">Qualificatie</h3>
-        ${p.revenue ? `<p style="margin:4px 0;"><strong>Omzet:</strong> ${safe(REVENUE_LABELS[p.revenue] ?? p.revenue)}</p>` : ''}
-        ${p.clientCount ? `<p style="margin:4px 0;"><strong>Klantportfolio:</strong> ${safe(CLIENT_COUNT_LABELS[p.clientCount] ?? p.clientCount)}</p>` : ''}`
-      : ''
-  const problemBlock = p.problem
-    ? `<h3 style="color:#0a0d14; margin:16px 0 8px;">Context</h3>
-       <pre style="white-space:pre-wrap; background:#f8f9fa; padding:12px; border-radius:4px; font-family:inherit; color:#222;">${safe(p.problem)}</pre>`
-    : ''
-  return `
-<!doctype html>
-<html>
-  <body style="font-family: -apple-system, Segoe UI, sans-serif; background:#f5f5f5; padding:24px;">
-    <table width="100%" style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:8px; padding:24px;">
-      <tr><td>
-        <h2 style="color:#0a0d14; margin:0 0 16px;">${agencyHeading}</h2>
-        ${branchBanner}
-        ${tierLine}
-        <hr style="border:none; border-top:1px solid #eee; margin:16px 0;">
-        <h3 style="color:#0a0d14; margin:0 0 8px;">Contact</h3>
-        <p style="margin:4px 0;"><strong>Naam:</strong> ${safe(p.name)}</p>
-        ${p.role ? `<p style="margin:4px 0;"><strong>Rol:</strong> ${safe(p.role)}</p>` : ''}
-        <p style="margin:4px 0;"><strong>Email:</strong> <a href="mailto:${safe(p.email)}">${safe(p.email)}</a></p>
-        ${p.agency ? `<p style="margin:4px 0;"><strong>Bureau:</strong> ${safe(p.agency)}</p>` : ''}
-        <p style="margin:4px 0;"><strong>Locale:</strong> ${safe(p.locale)}</p>
-        ${assessmentBlock}
-        ${qualificationBlock}
-        ${p.urgency ? `<p style="margin:4px 0;"><strong>Urgentie:</strong> ${safe(p.urgency)}</p>` : ''}
-        ${typeof p.maturity === 'number' ? `<p style="margin:4px 0;"><strong>AI maturiteit (1-5):</strong> ${p.maturity}</p>` : ''}
-        ${problemBlock}
-        <hr style="border:none; border-top:1px solid #eee; margin:24px 0 16px;">
-        <p style="font-size:12px; color:#888;">Verstuurd via ${SITE_URL}/apply.</p>
-      </td></tr>
+/**
+ * Shared light shell. `inner` is trusted HTML produced by the callers below
+ * (all user data inside it is already escaped). `preheader` is the hidden inbox
+ * preview line. No card fill, no grey frame: white edge-to-edge, sections
+ * separated by hairline rules.
+ */
+function wrapEmail({ preheader, inner }: { preheader: string; inner: string }): string {
+  return `<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>FutureMarketingAI</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:${PAPER}; -webkit-font-smoothing:antialiased;">
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; color:${PAPER}; font-size:1px; line-height:1px;">${escape(
+      preheader
+    )}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${PAPER}" style="background-color:${PAPER};">
+      <tr>
+        <td align="center" style="padding:36px 12px;">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="${PAPER}" style="width:600px; max-width:600px; background-color:${PAPER};">
+            <!-- Header -->
+            <tr>
+              <td align="center" style="padding:8px 24px 26px; border-bottom:1px solid ${HAIRLINE};">
+                <img src="${LOGO_URL}" width="46" height="46" alt="FutureMarketingAI" style="display:block; margin:0 auto 12px; border:0;">
+                <div style="font-family:${FONT}; font-size:20px; font-weight:700; color:${INK}; letter-spacing:-0.02em;">FutureMarketing<span style="color:${TEAL_TEXT};">AI</span></div>
+                <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:16px auto 0;">
+                  <tr>
+                    <td width="30" height="3" bgcolor="${TEAL}" style="background-color:${TEAL}; border-radius:2px 0 0 2px; font-size:0; line-height:0;">&nbsp;</td>
+                    <td width="20" height="3" bgcolor="${AMBER}" style="background-color:${AMBER}; border-radius:0 2px 2px 0; font-size:0; line-height:0;">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Body -->
+            <tr>
+              <td style="padding:32px 40px 36px;">
+                ${inner}
+              </td>
+            </tr>
+            <!-- Footer -->
+            <tr>
+              <td style="padding:22px 40px; border-top:1px solid ${HAIRLINE};">
+                <p style="margin:0; font-family:${FONT}; font-size:12px; line-height:1.7; color:${DIM};">
+                  FutureMarketingAI &middot; <a href="${SITE_URL}" style="color:${MUTED}; text-decoration:none;">future-marketing.ai</a><br>
+                  Jouw AI Marketing Medewerker. EU-native, zonder lock-in.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
     </table>
   </body>
 </html>`
 }
 
+/** Bulletproof amber CTA button matching the site's primary CTA. */
+function ctaButton(href: string, label: string): string {
+  return `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:10px 0 6px;">
+    <tr>
+      <td bgcolor="${AMBER}" style="background-color:${AMBER}; border-radius:10px;">
+        <a href="${href}" target="_blank" rel="noreferrer" style="display:inline-block; padding:15px 32px; font-family:${FONT}; font-size:15px; font-weight:700; color:${INK}; text-decoration:none; border-radius:10px;">${label} &rarr;</a>
+      </td>
+    </tr>
+  </table>`
+}
+
+export function adminApplyTemplate(p: ApplyPayload): string {
+  const safe = escape
+  const agencyHeading = p.agency
+    ? `Nieuwe aanvraag van ${safe(p.agency)}`
+    : 'Nieuwe aanvraag'
+
+  const isQualified = p.branch === 'qualified'
+
+  // Full-bordered status box with a leading status dot (no side-stripe banner).
+  const statusBox =
+    p.score !== undefined && p.branch
+      ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 8px;">
+          <tr>
+            <td bgcolor="${isQualified ? '#eefaf5' : '#fff7e9'}" style="background-color:${
+              isQualified ? '#eefaf5' : '#fff7e9'
+            }; border:1px solid ${isQualified ? '#c4ebdf' : '#f1dcb0'}; border-radius:12px; padding:16px 18px;">
+              <p style="margin:0 0 6px; font-family:${MONO}; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:${
+                isQualified ? TEAL_TEXT : AMBER_TEXT
+              };">&#9679;&nbsp; ${
+                isQualified ? 'Qualified &middot; agenda geserveerd (Cal.com)' : 'Review &middot; Daley reviewt persoonlijk'
+              }</p>
+              <p style="margin:0; font-family:${FONT}; font-size:20px; font-weight:700; color:${INK};">Score ${p.score} <span style="color:${DIM}; font-weight:600;">/ ${p.maxScore ?? '?'}</span></p>
+            </td>
+          </tr>
+        </table>`
+      : ''
+
+  const tierLine = p.tier
+    ? `<p style="margin:18px 0 0; font-family:${FONT}; font-size:14px; line-height:1.6; color:${MUTED};">Service-niveau: <strong style="color:${INK}; font-weight:600;">${safe(
+        TIER_LABELS[p.tier] ?? p.tier
+      )}</strong>${
+        typeof p.workspaces === 'number' && p.workspaces > 0
+          ? ` &middot; Werkruimtes: <strong style="color:${INK}; font-weight:600;">${p.workspaces}</strong>`
+          : ''
+      }</p>`
+    : `<p style="margin:18px 0 0; font-family:${FONT}; font-size:14px; line-height:1.6; color:${MUTED};">Service-niveau wordt tijdens de call afgestemd.</p>`
+
+  const row = (label: string, value: string) =>
+    `<tr>
+      <td style="padding:11px 0; border-bottom:1px solid ${HAIRLINE}; font-family:${FONT}; font-size:14px; color:${MUTED}; width:150px; vertical-align:top;">${label}</td>
+      <td style="padding:11px 0; border-bottom:1px solid ${HAIRLINE}; font-family:${FONT}; font-size:14px; color:${INK}; font-weight:600;">${value}</td>
+    </tr>`
+
+  const dataTable = (rows: string) =>
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table>`
+
+  const assessmentBlock = p.assessment
+    ? eyebrow('AI Bureau Scan handoff') +
+      dataTable(
+        row('Archetype', safe(p.assessment.archetype)) +
+          row('Stage', safe(p.assessment.stage)) +
+          row('Zwakste categorie', safe(p.assessment.lowestCategory))
+      )
+    : ''
+
+  const qualificationBlock =
+    p.revenue || p.clientCount || p.urgency || typeof p.maturity === 'number'
+      ? eyebrow('Kwalificatie') +
+        dataTable(
+          (p.revenue ? row('Omzet', safe(REVENUE_LABELS[p.revenue] ?? p.revenue)) : '') +
+            (p.clientCount ? row('Klantportfolio', safe(CLIENT_COUNT_LABELS[p.clientCount] ?? p.clientCount)) : '') +
+            (p.urgency ? row('Urgentie', safe(p.urgency)) : '') +
+            (typeof p.maturity === 'number' ? row('AI maturiteit (1-5)', String(p.maturity)) : '')
+        )
+      : ''
+
+  const problemBlock = p.problem
+    ? eyebrow('Context') +
+      `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td bgcolor="#f8f9fb" style="background-color:#f8f9fb; border:1px solid ${HAIRLINE}; border-radius:12px; padding:16px 18px; font-family:${FONT}; font-size:14px; line-height:1.65; color:${BODY}; white-space:pre-wrap;">${safe(
+          p.problem
+        )}</td></tr>
+      </table>`
+    : ''
+
+  const inner = `
+    <h1 style="margin:0 0 20px; font-family:${FONT}; font-size:22px; font-weight:700; color:${INK}; letter-spacing:-0.01em;">${agencyHeading}</h1>
+    ${statusBox}
+    ${tierLine}
+    ${eyebrow('Contact')}
+    ${dataTable(
+      row('Naam', safe(p.name)) +
+        (p.role ? row('Rol', safe(p.role)) : '') +
+        row('E-mail', `<a href="mailto:${safe(p.email)}" style="color:${TEAL_TEXT}; text-decoration:none;">${safe(p.email)}</a>`) +
+        (p.agency ? row('Bureau', safe(p.agency)) : '') +
+        row('Locale', safe(p.locale))
+    )}
+    ${assessmentBlock}
+    ${qualificationBlock}
+    ${problemBlock}`
+
+  return wrapEmail({
+    preheader: `${agencyHeading}${p.score !== undefined ? ` — score ${p.score}/${p.maxScore ?? '?'}` : ''}`,
+    inner,
+  })
+}
+
 export function applicantConfirmationTemplate(p: ApplyPayload): string {
   const safe = escape
-  const greeting =
-    p.locale === 'en'
-      ? `Hi ${safe(p.name)}`
-      : p.locale === 'es'
-        ? `Hola ${safe(p.name)}`
-        : `Hoi ${safe(p.name)}`
+  const isEn = p.locale === 'en'
+  const isEs = p.locale === 'es'
+  const greeting = isEn ? `Hi ${safe(p.name)}` : isEs ? `Hola ${safe(p.name)}` : `Hoi ${safe(p.name)}`
   const orgRef = p.agency ? safe(p.agency) : null
+  const isQualified = p.branch === 'qualified'
 
-  // Branch-aware body: qualified = calendly waiting; review = "I review personally"
   const body = (() => {
-    if (p.branch === 'qualified') {
-      return p.locale === 'en'
-        ? `Thanks for applying. Based on your context this looks like a strong fit — I've sent you to my calendar to book a 30-min call. See you soon.`
-        : p.locale === 'es'
-          ? `Gracias por tu solicitud. Según tu contexto, esto encaja bien — te he enviado a mi agenda para reservar una llamada de 30 min. Hasta pronto.`
-          : `Bedankt voor je aanvraag. Op basis van je context past dit goed — ik heb je naar mijn agenda gestuurd voor een gesprek van 30 minuten. Tot snel.`
+    if (isQualified) {
+      return isEn
+        ? `Thanks for applying. Based on your context this looks like a strong fit. Pick a 30-minute slot in my calendar below and we'll talk soon.`
+        : isEs
+          ? `Gracias por tu solicitud. Según tu contexto, esto encaja muy bien. Elige un hueco de 30 minutos en mi agenda abajo y hablamos pronto.`
+          : `Bedankt voor je aanvraag. Op basis van je context past dit goed. Kies hieronder een slot van 30 minuten in mijn agenda, dan spreken we elkaar snel.`
     }
-    // Default + review branch
-    return p.locale === 'en'
+    return isEn
       ? orgRef
         ? `Thanks for applying. I have received your application for ${orgRef} and will review it personally within 3 business days. You will hear back from me, not from a sales team.`
         : `Thanks for applying. I have received your application and will review it personally within 3 business days. You will hear back from me, not from a sales team.`
-      : p.locale === 'es'
+      : isEs
         ? orgRef
           ? `Gracias por tu solicitud. He recibido tu aplicación para ${orgRef} y la revisaré personalmente en 3 días laborables. Te responderé yo, no un equipo comercial.`
           : `Gracias por tu solicitud. He recibido tu aplicación y la revisaré personalmente en 3 días laborables. Te responderé yo, no un equipo comercial.`
@@ -181,19 +305,34 @@ export function applicantConfirmationTemplate(p: ApplyPayload): string {
           : `Bedankt voor je aanvraag. Ik heb je aanvraag ontvangen en review die persoonlijk binnen 3 werkdagen. Geen sales-team, maar ik zelf.`
   })()
 
-  const signoff = p.locale === 'en' ? 'Best, Daley' : 'Groet, Daley'
-  return `
-<!doctype html>
-<html>
-  <body style="font-family: -apple-system, Segoe UI, sans-serif; background:#f5f5f5; padding:24px;">
-    <table width="100%" style="max-width:560px; margin:0 auto; background:#ffffff; border-radius:8px; padding:24px;">
-      <tr><td>
-        <p style="color:#0a0d14; margin:0 0 16px; font-size:18px;">${greeting},</p>
-        <p style="color:#333; line-height:1.6;">${body}</p>
-        <p style="color:#333;"><a href="${SITE_URL}/${safe(p.locale)}" style="color:#00d4aa;">future-marketing.ai</a></p>
-        <p style="color:#333; margin-top:32px;">${signoff}</p>
+  const ctaLabel = isEn ? 'Book your call' : isEs ? 'Reserva tu llamada' : 'Plan je gesprek'
+  const cta = isQualified ? ctaButton(calHostedUrl({ name: p.name, email: p.email }), ctaLabel) : ''
+
+  const signoff = isEn ? 'Best,' : isEs ? 'Un saludo,' : 'Groet,'
+  const roleLine = isEn ? 'Founder, FutureMarketingAI' : isEs ? 'Fundador, FutureMarketingAI' : 'Oprichter, FutureMarketingAI'
+  const preheader = isQualified
+    ? isEn
+      ? 'Pick a slot in my calendar'
+      : isEs
+        ? 'Elige un hueco en mi agenda'
+        : 'Kies een slot in mijn agenda'
+    : isEn
+      ? 'I review every application personally'
+      : isEs
+        ? 'Reviso cada solicitud personalmente'
+        : 'Ik review elke aanvraag persoonlijk'
+
+  const inner = `
+    <p style="margin:0 0 20px; font-family:${FONT}; font-size:21px; font-weight:700; color:${INK}; letter-spacing:-0.01em;">${greeting},</p>
+    <p style="margin:0 0 24px; font-family:${FONT}; font-size:16px; line-height:1.65; color:${BODY};">${body}</p>
+    ${cta}
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:30px;">
+      <tr><td style="border-top:1px solid ${HAIRLINE}; padding-top:22px;">
+        <p style="margin:0 0 2px; font-family:${FONT}; font-size:15px; color:${MUTED};">${signoff}</p>
+        <p style="margin:0; font-family:${FONT}; font-size:16px; font-weight:700; color:${INK};">Daley van Diest</p>
+        <p style="margin:3px 0 0; font-family:${MONO}; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:${DIM};">${roleLine}</p>
       </td></tr>
-    </table>
-  </body>
-</html>`
+    </table>`
+
+  return wrapEmail({ preheader, inner })
 }

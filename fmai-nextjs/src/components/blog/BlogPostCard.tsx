@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { BlogPostMeta } from '@/lib/blog'
 
 interface BlogPostCardProps {
@@ -15,9 +16,21 @@ export function BlogPostCard({ post, locale }: BlogPostCardProps) {
 
   return (
     <Link
-      href={`/${locale}/blog/${post.slug}`}
-      className="group block cursor-pointer rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent-system/30 hover:bg-white/[0.04] hover:shadow-glow-sm"
+      href={`/${locale}/kennisbank/${post.slug}`}
+      className="group block cursor-pointer overflow-hidden rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-accent-system/30 hover:bg-white/[0.04] hover:shadow-glow-sm"
     >
+      {post.heroImage && (
+        <div className="relative aspect-[3/2] w-full overflow-hidden border-b border-border-primary">
+          <Image
+            src={post.heroImage}
+            alt={post.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 384px"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
+      <div className="p-6">
       <span className="mb-3 inline-block rounded-full bg-accent-system/10 px-3 py-1 text-xs font-medium text-accent-system">
         {post.category}
       </span>
@@ -30,6 +43,7 @@ export function BlogPostCard({ post, locale }: BlogPostCardProps) {
       <div className="flex items-center justify-between text-xs text-text-muted">
         <span>{post.author}</span>
         <time dateTime={post.publishedAt}>{formattedDate}</time>
+      </div>
       </div>
     </Link>
   )

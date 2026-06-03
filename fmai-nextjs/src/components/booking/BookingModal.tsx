@@ -1,17 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useCallback } from 'react'
-import dynamic from 'next/dynamic'
 import { motion, AnimatePresence } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { X, CheckCircle } from 'lucide-react'
 import { useBookingStore } from '@/stores/bookingStore'
-import { calendlyConfig } from '@/config/calendlyConfig'
-
-const InlineWidget = dynamic(
-  () => import('react-calendly').then((mod) => mod.InlineWidget),
-  { ssr: false }
-)
+import { CalInlineEmbed } from '@/components/interactive/CalInlineEmbed'
 
 const BULLETS = ['bullet1', 'bullet2', 'bullet3', 'bullet4'] as const
 
@@ -164,25 +158,9 @@ export function BookingModal() {
               {/* Divider */}
               <div className="hidden lg:block w-px bg-white/[0.06]" />
 
-              {/* RIGHT: Calendly embed */}
+              {/* RIGHT: Cal.com embed */}
               <div className="lg:w-[58%] bg-[#111520] min-h-[500px] lg:min-h-0">
-                <InlineWidget
-                  url={calendlyConfig.url}
-                  styles={{ height: '100%', minHeight: '650px' }}
-                  pageSettings={{
-                    backgroundColor: '111520',
-                    textColor: 'e8ecf4',
-                    primaryColor: '00d4aa',
-                    hideLandingPageDetails: true,
-                    hideEventTypeDetails: false,
-                    hideGdprBanner: true,
-                  }}
-                  utm={{
-                    utmSource: 'website',
-                    utmMedium: 'booking-modal',
-                    utmCampaign: 'strategy-call',
-                  }}
-                />
+                <CalInlineEmbed height="100%" minHeight={650} />
               </div>
             </div>
           </motion.div>

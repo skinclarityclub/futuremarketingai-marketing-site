@@ -376,6 +376,16 @@
         "linkText": "Lee más sobre Daley"
       }
     },
+    "kennisbank": {
+      "eyebrow": "Base de conocimiento",
+      "title": "Profundiza en GEO y automatización de marketing con IA",
+      "intro": "Guías profundas y con fuentes sobre motores generativos y automatización de marketing con IA para agencias. Escritas para ayudarte, no para venderte algo.",
+      "ctaLabel": "Explora la base de conocimiento",
+      "badgePillar": "Guía pillar",
+      "badgeComparison": "Comparativa",
+      "readLabel": "Leer más",
+      "readTimeLabel": "min de lectura"
+    },
     "cta": {
       "eyebrow": "Founding abierto · {taken}/{total} ocupadas",
       "title": "Diez plazas abiertas. Después founding cierra.",
@@ -646,6 +656,7 @@
           "how_it_works": "Cómo funciona",
           "founding_member": "Founding Member",
           "blog": "Blog",
+          "kennisbank": "Recursos",
           "contact": "Contacto",
           "privacy": "Privacidad",
           "terms": "Términos",
@@ -714,6 +725,7 @@
       "skill_research": "Research",
       "skill_clyde": "Clyde",
       "blog": "Blog",
+      "resources": "Recursos",
       "legal": "Aviso legal",
       "legal_privacy": "Privacidad",
       "legal_terms": "Términos",
@@ -3450,7 +3462,8 @@
   },
   "nav": {
     "login": "Iniciar sesión",
-    "apply": "Agenda una llamada"
+    "apply": "Agenda una llamada",
+    "assessment": "Haz el AI-Scan"
   },
   "header": {
     "skills": {
@@ -3526,6 +3539,7 @@
       "skills": "Habilidades",
       "memory": "Memoria",
       "caseStudies": "Casos",
+      "kennisbank": "Recursos",
       "pricing": "Precios",
       "howItWorks": "Cómo funciona",
       "foundingMember": "Founding",
@@ -3539,6 +3553,15 @@
       "tagline": "9 en vivo, 3 próximamente",
       "previewCta": "Ver habilidad",
       "viewAll": "Todas las habilidades"
+    },
+    "priceMenu": {
+      "pricing": {
+        "subtitle": "Todos los planes y niveles"
+      },
+      "foundingMember": {
+        "subtitle": "Tarifa fija de por vida"
+      },
+      "spots": "{taken}/{total} plazas"
     }
   },
   "chat": {
@@ -3954,5 +3977,57 @@
       "intro": "Pídele a Clyde, por ejemplo:"
     },
     "scarcityBadge": "Founding abierto · {taken}/{total} reservadas"
+  },
+  "glossary": {
+    "heading": "Glosario de GEO y marketing con IA",
+    "intro": "Los conceptos clave detrás de la generative engine optimization y la automatización de marketing con IA para agencias.",
+    "geo": {
+      "name": "GEO (Generative Engine Optimization)",
+      "definition": "Optimizar el contenido para que los motores de IA como ChatGPT, Perplexity y Google AI Overviews citen tu marca como fuente. Donde el SEO apunta a los enlaces azules, el GEO apunta a una mención dentro de la respuesta generada."
+    },
+    "ai-marketing-medewerker": {
+      "name": "Empleado de Marketing con IA (Clyde)",
+      "definition": "Un socio de IA persistente con memoria a largo plazo que ejecuta habilidades de marketing para agencias como un colega digital. No es una herramienta aislada, sino un empleado colaborador que recuerda la marca y la cartera de clientes."
+    },
+    "citation-monitoring": {
+      "name": "Monitorización de citas",
+      "definition": "Medir de forma estructurada si, y con qué frecuencia, los motores de IA mencionan o citan una marca en sus respuestas generadas. El equivalente en GEO del clásico seguimiento de posiciones."
+    },
+    "tier-caps": {
+      "name": "Límites de plan (tier caps)",
+      "definition": "Los límites por nivel de suscripción sobre el número de marcas o espacios de trabajo que una agencia gestiona bajo un mismo plan. Determina qué habilidades y qué volumen entran dentro de un nivel."
+    }
+  },
+  "resources": {
+    "meta": {
+      "title": "Base de conocimiento: GEO y marketing con IA para agencias",
+      "description": "La base de conocimiento de FutureMarketingAI. Pillars, clusters y un glosario sobre generative engine optimization y automatización de marketing con IA para agencias."
+    },
+    "hero": {
+      "eyebrow": "Base de conocimiento",
+      "heading": "Todo sobre GEO y marketing con IA para agencias",
+      "intro": "Guías en profundidad, comparativas y definiciones. Estructurado para que tanto tú como los motores de IA veáis cómo encaja todo."
+    },
+    "pillars": {
+      "geo": {
+        "title": "Generative Engine Optimization",
+        "description": "Cómo los motores de IA citan tu marca."
+      },
+      "ai-marketing-automation": {
+        "title": "Automatización de marketing con IA para agencias",
+        "description": "Las habilidades de marketing que Clyde ejecuta como tu Empleado de Marketing con IA."
+      },
+      "agency-ops": {
+        "title": "Operaciones de agencia y pruebas",
+        "description": "Cómo las agencias atienden más marcas con el mismo equipo."
+      },
+      "product-clyde": {
+        "title": "Empleado de Marketing con IA y Clyde",
+        "description": "Qué es un Empleado de Marketing con IA y cómo Clyde trabaja por marca."
+      }
+    },
+    "emptyCluster": "El contenido en profundidad para este pillar llegará pronto.",
+    "glossaryHeading": "Glosario",
+    "glossaryIntro": "Los conceptos clave detrás de GEO y la automatización de marketing con IA."
   }
 }

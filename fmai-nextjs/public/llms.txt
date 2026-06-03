@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for agencies. Clyde, the AI Marketing Medewerker, runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR lifetime fixed (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup.
+> FMai is a Dutch AI marketing partnership for agencies. Clyde, the AI Marketing Medewerker, runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup.
 
 FMai is a high-touch AI marketing partnership founded by Daley. It targets performance and growth agencies in the Netherlands and EU managing portfolios of brand workspaces. Instead of selling isolated AI tools, FMai provides one persistent AI Marketing Employee named Clyde who learns each brand over time, remembers per-brand voice, operates across 12 skills from social media to voice agents, and is orchestrated by the founder personally. The proof case is SkinClarity Club, where Sindy (founder) runs 4 brands and 3 Instagram accounts autonomously with 6 active skills.
 
@@ -14,8 +14,8 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 
 - [Home (NL)](https://future-marketing.ai/nl): Hero "Dit is Clyde" plus 12-skill overview, SKC case, founding counter, FAQ.
 - [Memory system](https://future-marketing.ai/nl/memory): Why Clyde's 4-layer memory (Vandaag / Deze maand / Archief / Wie het merk is) is the USP. Per-brand isolation via Supabase RLS. Nightly dream consolidation.
-- [Pricing](https://future-marketing.ai/nl/pricing): Workspace-priced model. Founding Member 997 EUR lifetime fixed (10 spots, 1 taken). Growth 499 EUR per workspace (2 to 4 brands, onboarding 1997 EUR). Professional 399 EUR per workspace (5 to 14 brands, onboarding 3997 EUR). Enterprise 299 EUR per workspace (15 plus brands, onboarding 5997 EUR). All workspace tiers include 800 credits per workspace per month. Tarif recalibrated every 6 months.
-- [Founding Member](https://future-marketing.ai/nl/founding-member): 10-spot program. Lifetime 997 EUR fixed, includes 8000 credits per month and unlimited workspaces. Mathematical advantage over workspace pricing kicks in from 3 brands (997 fixed vs 1497 at Growth 499 times 3). 1 spot taken (SkinClarity Club).
+- [Pricing](https://future-marketing.ai/nl/pricing): Workspace-priced model. Founding Member 997 EUR per month, lifetime rate lock, monthly cancellable (10 spots, 1 taken). Growth 499 EUR per workspace (2 to 4 brands, onboarding 1997 EUR). Professional 399 EUR per workspace (5 to 14 brands, onboarding 3997 EUR). Enterprise 299 EUR per workspace (15 plus brands, onboarding 5997 EUR). All workspace tiers include 800 credits per workspace per month. Tariff recalibrated every 6 months.
+- [Founding Member](https://future-marketing.ai/nl/founding-member): 10-spot program. 997 EUR per month, lifetime rate lock, monthly cancellable. Includes 8000 credits per month and unlimited workspaces. Mathematical advantage over workspace pricing kicks in from 3 brands (997 vs 1497 at Growth 499 times 3). 1 spot taken (SkinClarity Club).
 - [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. 8 fields. Response within 48 hours.
 - [How it works](https://future-marketing.ai/nl/how-it-works): Week-by-week onboarding cadence, first month correction loop, quarterly strategy, annual retrospective.
 - [About](https://future-marketing.ai/nl/about): Solo founder Daley. 20 partnerships per year cap. Why partnership over SaaS.
@@ -44,9 +44,13 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Pricing (EN)](https://future-marketing.ai/en/pricing): English pricing.
 - [Pricing (ES)](https://future-marketing.ai/es/pricing): Spanish pricing.
 
+## Kennisbank / Resources
+
+- Kennisbank / Resources hub (NL): https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, agency-ops en product-Clyde cornerstones (15 artikelen, juni 2026).
+
 ## Optional
 
-- [Blog](https://future-marketing.ai/nl/blog): Long-form thinking. Currently 1 post, target 10 in Q1.
+- [Blog](https://future-marketing.ai/nl/kennisbank): Long-form thinking.
 - [Legal: Privacy](https://future-marketing.ai/nl/legal/privacy): AVG (GDPR) privacy policy.
 - [Legal: Terms](https://future-marketing.ai/nl/legal/terms): Terms of service including subscription terms.
 - [Legal: Cookies](https://future-marketing.ai/nl/legal/cookies): Cookie disclosures.

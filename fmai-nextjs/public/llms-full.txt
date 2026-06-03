@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR lifetime fixed (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -205,7 +205,7 @@ Two pricing models:
 - Fixed: Founding Member only. Single monthly price, single credit allocation.
 - Workspace: monthly price equals pricePerWorkspace times workspaces. Credits scale with workspaces (creditsPerWorkspace times workspaces).
 
-### Founding Member, 997 EUR lifetime fixed
+### Founding Member, 997 EUR per month, lifetime rate lock
 
 - 10 spots total, 1 currently taken (SkinClarity Club)
 - Unlimited workspaces (no cap)
@@ -213,8 +213,8 @@ Two pricing models:
 - All 12 skills included (9 live, 3 coming soon)
 - Direct founder access plus roadmap influence
 - No onboarding fee
-- Lifetime price lock: never raises for founding members
-- Mathematical advantage over workspace pricing kicks in from 3 brands (997 fixed vs 1497 at Growth 499 times 3)
+- Monthly cancellable; rate locked for life (never raises for founding members)
+- Mathematical advantage over workspace pricing kicks in from 3 brands (997 vs 1497 at Growth 499 times 3)
 
 ### Growth, 499 EUR per workspace
 
@@ -327,6 +327,30 @@ Daley is the solo founder of FutureMarketingAI. Native Dutch speaker, based in t
 - DPA (Data Processing Agreement) available on request.
 - DPIA (Data Protection Impact Assessment) covers all 6 active skill categories.
 
+## Kennisbank / Resources
+
+Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, agency-ops en product-Clyde cornerstones (15 artikelen, juni 2026).
+
+### Pillars
+
+- https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- Wat is GEO? Generative Engine Optimization uitgelegd: hoe AI-engines zoals ChatGPT, Perplexity en Google AI Overviews jouw merk citeren en hoe je begint.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: de complete gids over hoe een AI Marketing Medewerker bureaus laat schalen over meerdere merken zonder evenredige headcount-groei.
+- https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Marketingbureau schalen met AI: het operating model dat de lineaire relatie tussen omzet en headcount doorbreekt.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- AI Marketing Medewerker als productcategorie: autonomie, merkgeheugen en vaardigheden in een digitale collega, met Clyde als implementatie.
+
+### Clusters
+
+- https://future-marketing.ai/nl/kennisbank/geo-vs-seo-waar-investeren-2026 -- GEO vs SEO in 2026: waarin de twee strategieen verschillen, waarom GEO SEO uitbreidt en niet vervangt, en hoe je budget verstandig te verdelen.
+- https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- Hoe je zichtbaarheid in AI Overviews meet: citatiegraad, AI share of voice, merkvermeldingen versus citaties en AI-verwezen verkeer per engine.
+- https://future-marketing.ai/nl/kennisbank/geo-monitoring-tools-chatgpt-perplexity -- GEO monitoring tools voor ChatGPT en Perplexity: een gegronde vergelijking van het GEO-monitoring-landschap voor 2026.
+- https://future-marketing.ai/nl/kennisbank/wat-is-een-ai-marketing-medewerker -- Wat is een AI Marketing Medewerker? Clyde uitgelegd: een persistente AI-partner met langetermijngeheugen die marketingvaardigheden uitvoert als digitale collega voor bureaus.
+- https://future-marketing.ai/nl/kennisbank/clyde-vs-jasper-chatgpt-semrush -- Clyde vs Jasper vs ChatGPT vs Semrush: welke te kiezen als bureau dat marketing wil schalen over meerdere merken.
+- https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficientie voor bureaus: welk werk AI als eerste overneemt en hoe een AI Marketing Medewerker met merkgeheugen het volume draagt.
+- https://future-marketing.ai/nl/kennisbank/meetbare-ai-marketing-resultaten -- Meetbare AI marketing ROI: een framework met nulmeting en zes KPI-indicatoren voor bureaus die resultaat willen verdedigen tegenover hun merken.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- AI marketing in de praktijk: een werkend voorbeeld van hoe een AI Marketing Medewerker per merk werk levert terwijl de operator regie houdt.
+- https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- AI agent vs AI tool in marketing: het echte verschil in werkmodel, autonomie en geheugen, en wanneer je welke nodig hebt.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-agent-geheugen-en-leren -- Geheugen en leren van een AI marketing agent: hoe per-merk langetermijngeheugen per-merk-personalisatie mogelijk maakt en de kern-USP van Clyde is.
+
 ## Apply
 
 Start at https://future-marketing.ai/nl/apply. 8-field application form (name, email, agency, role, revenue band, client count, preferred tier, problem statement). Review within 48 hours by Daley personally. If accepted, Daley schedules a 30-minute strategy call. Then 4-week onboarding to connect brand voice, accounts, and skills.
@@ -373,10 +397,10 @@ Type: FAQPage
 URL: https://future-marketing.ai
 
 Q: Wat kost FutureMarketingAI?
-A: Founding Member kost 997 euro eenmalig en is voor altijd actief (10 plekken, 1 bezet). Growth kost 499 euro per workspace per maand (2 tot 4 merken). Professional kost 399 euro per workspace per maand (5 tot 14 merken). Enterprise kost 299 euro per workspace per maand (15 of meer merken). Prijzen worden halfjaarlijks herzien. Geen verborgen kosten, geen opzetkosten voor Founding.
+A: Founding Member kost 997 EUR per maand, levenslang vast tarief (rate lock for life), maandelijks opzegbaar (10 plekken, 1 bezet). Growth kost 499 euro per workspace per maand (2 tot 4 merken). Professional kost 399 euro per workspace per maand (5 tot 14 merken). Enterprise kost 299 euro per workspace per maand (15 of meer merken). Prijzen worden halfjaarlijks herzien. Geen verborgen kosten, geen opzetkosten voor Founding.
 
 Q: Kan ik stoppen wanneer ik wil?
-A: Ja. Growth, Professional en Enterprise zijn maandelijks opzegbaar. Founding is een eenmalige levenslange investering zonder abonnement.
+A: Ja. Alle tiers, inclusief Founding, zijn maandelijks opzegbaar. Founding is geen eenmalige betaling maar een maandelijks abonnement met een levenslang vast tarief: je betaalt altijd 997 EUR per maand, het tarief stijgt nooit.
 
 Q: Voor welke bureaus is FutureMarketingAI geschikt?
 A: Voor performance- en groeibureaus in Nederland en de EU die 2 tot 50 klantmerken beheren. Het model is ontworpen voor operators die kwaliteit belangrijker vinden dan schaal en die bereid zijn Clyde te laten leren in maand 1.
@@ -397,7 +421,7 @@ Q: Hoe werkt de goedkeuringsflow?
 A: Clyde genereert content autonoom. Jij of je klant reviewt via het dashboard, Slack of Telegram. Goedkeuren of afwijzen met commentaar. Clyde leert van elke review en past de volgende batch aan.
 
 Q: Wat is het verschil tussen Founding en Growth?
-A: Founding is een eenmalige investering van 997 euro zonder maandelijkse kosten, maximaal 10 plekken, directe toegang tot Daley via Slack, en prioriteit bij nieuwe vaardigheden. Growth is een maandelijks abonnement van 499 euro per workspace voor bureaus die flexibiliteit willen.
+A: Founding kost 997 EUR per maand met een levenslang vast tarief (rate lock for life), maximaal 10 plekken, directe toegang tot Daley via Slack, en prioriteit bij nieuwe vaardigheden. Growth is 499 euro per workspace per maand voor bureaus die flexibiliteit willen zonder rate lock. Beide zijn maandelijks opzegbaar.
 
 Q: Kan ik FutureMarketingAI eerst uitproberen?
 A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

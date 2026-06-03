@@ -26,7 +26,7 @@ export function CategoryFilter({ categories, activeCategory, locale }: CategoryF
       } else {
         params.delete('category')
       }
-      router.push(`/${locale}/blog?${params.toString()}`)
+      router.push(`/${locale}/kennisbank?${params.toString()}`)
     },
     [router, searchParams, locale]
   )

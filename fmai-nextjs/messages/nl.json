@@ -376,6 +376,16 @@
         "linkText": "Lees meer over Daley"
       }
     },
+    "kennisbank": {
+      "eyebrow": "Kennisbank",
+      "title": "Verdiep je in GEO en AI marketing automation",
+      "intro": "Diepe, bronvermelde gidsen over generatieve zoekmachines en AI marketing automation voor bureaus. Geschreven om je verder te helpen, niet om je iets te verkopen.",
+      "ctaLabel": "Bekijk de kennisbank",
+      "badgePillar": "Pillar-gids",
+      "badgeComparison": "Vergelijking",
+      "readLabel": "Lees verder",
+      "readTimeLabel": "min lezen"
+    },
     "cta": {
       "eyebrow": "Founding open · {taken}/{total} bezet",
       "title": "Tien plekken open. Daarna sluit founding.",
@@ -646,6 +656,7 @@
           "how_it_works": "Hoe het werkt",
           "founding_member": "Founding Member",
           "blog": "Blog",
+          "kennisbank": "Kennisbank",
           "contact": "Contact",
           "privacy": "Privacy",
           "terms": "Voorwaarden",
@@ -714,6 +725,7 @@
       "skill_research": "Research",
       "skill_clyde": "Clyde",
       "blog": "Blog",
+      "resources": "Kennisbank",
       "legal": "Juridisch",
       "legal_privacy": "Privacy",
       "legal_terms": "Voorwaarden",
@@ -3450,7 +3462,8 @@
   },
   "nav": {
     "login": "Inloggen",
-    "apply": "Plan een gesprek"
+    "apply": "Plan een gesprek",
+    "assessment": "Doe de AI-Scan"
   },
   "header": {
     "skills": {
@@ -3526,6 +3539,7 @@
       "skills": "Vaardigheden",
       "memory": "Geheugen",
       "caseStudies": "Cases",
+      "kennisbank": "Kennisbank",
       "pricing": "Prijzen",
       "howItWorks": "Werkwijze",
       "foundingMember": "Founding",
@@ -3539,6 +3553,15 @@
       "tagline": "9 live, 3 binnenkort",
       "previewCta": "Bekijk de vaardigheid",
       "viewAll": "Alle vaardigheden"
+    },
+    "priceMenu": {
+      "pricing": {
+        "subtitle": "Alle abonnementen en tiers"
+      },
+      "foundingMember": {
+        "subtitle": "Levenslang vast tarief"
+      },
+      "spots": "{taken}/{total} plekken"
     }
   },
   "chat": {
@@ -3954,5 +3977,57 @@
       "intro": "Vraag Clyde bijvoorbeeld:"
     },
     "scarcityBadge": "Founding open · {taken}/{total} bezet"
+  },
+  "glossary": {
+    "heading": "GEO & AI marketing woordenlijst",
+    "intro": "De kernbegrippen achter generative engine optimization en AI marketing automation voor bureaus.",
+    "geo": {
+      "name": "GEO (Generative Engine Optimization)",
+      "definition": "Het optimaliseren van content zodat AI-engines zoals ChatGPT, Perplexity en Google AI Overviews jouw merk citeren als bron. Waar SEO mikt op blauwe links, mikt GEO op vermelding in het gegenereerde antwoord."
+    },
+    "ai-marketing-medewerker": {
+      "name": "AI Marketing Medewerker (Clyde)",
+      "definition": "Een persistente AI-partner met langetermijngeheugen die als digitale collega marketingvaardigheden uitvoert voor bureaus. Geen losse tool, maar een meewerkende medewerker die het merk en de klantportfolio onthoudt."
+    },
+    "citation-monitoring": {
+      "name": "Citation monitoring",
+      "definition": "Het structureel meten of, en hoe vaak, AI-engines een merk noemen of citeren in hun gegenereerde antwoorden. De GEO-tegenhanger van klassieke rank tracking."
+    },
+    "tier-caps": {
+      "name": "Tier caps",
+      "definition": "De grenzen per abonnementsniveau aan het aantal merken of werkruimtes dat een bureau onder een plan beheert. Bepaalt welke vaardigheden en welk volume binnen een tier vallen."
+    }
+  },
+  "resources": {
+    "meta": {
+      "title": "Kennisbank: GEO en AI marketing voor bureaus",
+      "description": "De FutureMarketingAI kennisbank. Pillars, clusters en een woordenlijst over generative engine optimization en AI marketing automation voor bureaus."
+    },
+    "hero": {
+      "eyebrow": "Kennisbank",
+      "heading": "Alles over GEO en AI marketing voor bureaus",
+      "intro": "Diepe gidsen, vergelijkingen en definities. Gestructureerd zodat zowel jij als AI-engines de samenhang zien."
+    },
+    "pillars": {
+      "geo": {
+        "title": "Generative Engine Optimization",
+        "description": "Hoe je merk geciteerd wordt door AI-engines."
+      },
+      "ai-marketing-automation": {
+        "title": "AI marketing automation voor bureaus",
+        "description": "Marketingvaardigheden die Clyde als AI Marketing Medewerker uitvoert."
+      },
+      "agency-ops": {
+        "title": "Agency operations en proof",
+        "description": "Hoe bureaus meer merken bedienen met dezelfde bezetting."
+      },
+      "product-clyde": {
+        "title": "AI Marketing Medewerker en Clyde",
+        "description": "Wat een AI Marketing Medewerker is en hoe Clyde per merk werkt."
+      }
+    },
+    "emptyCluster": "Diepe content voor deze pillar verschijnt binnenkort.",
+    "glossaryHeading": "Woordenlijst",
+    "glossaryIntro": "De kernbegrippen achter GEO en AI marketing automation."
   }
 }
