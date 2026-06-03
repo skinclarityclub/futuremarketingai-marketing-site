@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
 import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales, getCategoryLabel } from '@/lib/blog'
@@ -13,6 +12,8 @@ import { KeyTakeaways } from '@/components/blog/KeyTakeaways'
 import { BlogFaq } from '@/components/blog/BlogFaq'
 import { Citations } from '@/components/blog/Citations'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
+import { PageShell } from '@/components/layout/PageShell'
 
 export const revalidate = 3600
 export const dynamicParams = false
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : undefined
 
   return (
-    <main className="mx-auto max-w-3xl px-4 pb-20 pt-32">
+    <PageShell>
       <ArticleJsonLd
         title={post.title}
         description={post.description}
@@ -140,19 +141,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <FaqJsonLd items={post.faqs} path={`/kennisbank/${slug}`} locale={locale} />
       )}
 
-      <nav aria-label="Breadcrumb" className="mb-8">
-        <ol className="flex items-center gap-2 text-sm text-text-muted">
-          <li>
-            <Link href={`/${locale}/kennisbank`} className="transition-colors hover:text-accent-system">
-              Kennisbank
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li className="text-text-secondary">{post.title}</li>
-        </ol>
-      </nav>
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Kennisbank', href: '/kennisbank' },
+          { label: post.title },
+        ]}
+      />
 
-      <article>
+      <article className="mx-auto max-w-3xl px-4 pb-20 pt-8">
         <header className="mb-10 space-y-4">
           <EyebrowLabel>{t('post.eyebrow')}</EyebrowLabel>
           <div className="flex items-center gap-3">
@@ -191,6 +189,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {post.faqs && post.faqs.length > 0 && <BlogFaq items={post.faqs} />}
         {post.citations && post.citations.length > 0 && <Citations items={post.citations} />}
       </article>
-    </main>
+    </PageShell>
   )
 }
