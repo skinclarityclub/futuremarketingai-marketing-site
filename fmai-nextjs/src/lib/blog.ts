@@ -56,6 +56,7 @@ export const BLOG_CATEGORIES = [
   { id: 'geo', label: 'GEO' },
   { id: 'ai-marketing-automation', label: 'AI Marketing Automation' },
   { id: 'agency-ops', label: 'Agency Ops' },
+  { id: 'product-clyde', label: 'Product / Clyde' },
   { id: 'comparisons', label: 'Comparisons' },
   { id: 'guides', label: 'Guides' },
   // Legacy categories — kept so existing posts keep resolving a label.
