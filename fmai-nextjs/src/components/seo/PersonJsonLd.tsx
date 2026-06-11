@@ -31,7 +31,7 @@ import { SITE_URL, ORG_ID } from '@/lib/seo-config'
 interface PersonJsonLdProps {
   /** Stable @id for this person — e.g. DALEY_PERSON_ID */
   id: string
-  /** Display name — e.g. "Daley Maat" */
+  /** Display name — e.g. "Daley van Diest" */
   name: string
   /** Role/title — e.g. "Founder & CEO of FutureMarketingAI" */
   jobTitle: string
