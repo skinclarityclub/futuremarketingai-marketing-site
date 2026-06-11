@@ -42,8 +42,9 @@ export function ArticleJsonLd({
     // the Daley Person @id so search engines + LLMs unify the author identity
     // across /about (Person rendered by 14-02) and blog posts. Future authors
     // fall through to the inline Person path until they get their own @id.
+    // Canonical author name is "Daley van Diest" (short form "Daley").
     author:
-      author === 'Daley Maat' || author === 'Daley'
+      author === 'Daley van Diest' || author === 'Daley'
         ? { '@id': DALEY_PERSON_ID }
         : {
             '@type': 'Person',
