@@ -16,6 +16,7 @@ import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitch
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import Script from 'next/script'
 import '@/app/globals.css'
 
 export const viewport: Viewport = {
@@ -97,6 +98,18 @@ export default async function LocaleLayout({
           </MotionRoot>
         </NextIntlClientProvider>
         <SpeedInsights />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-08FEWKC77B"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-08FEWKC77B');
+          `}
+        </Script>
       </body>
     </html>
   )
