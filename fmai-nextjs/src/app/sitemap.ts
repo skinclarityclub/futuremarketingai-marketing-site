@@ -36,23 +36,31 @@ const pages = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticEntries = pages.map(({ path, changeFrequency, priority }) => {
+  // Emit one <url> entry PER LOCALE for every static page so each indexable
+  // language variant (/en, /nl, /es) has its OWN <loc> — not hreflang-only.
+  // URLs known to Google only via hreflang get crawled/indexed slower
+  // ("Discovered – currently not indexed"); a real <loc> per locale fixes that.
+  // Each variant carries the IDENTICAL reciprocal hreflang map: every locale +
+  // a self-reference (Next.js does NOT auto-add it) + x-default pointing at the
+  // default-locale URL, matching the on-page hreflang exactly.
+  const staticEntries = pages.flatMap(({ path, changeFrequency, priority }) => {
     const pathSuffix = path === '/' ? '' : path
 
     const languages: Record<string, string> = {}
     for (const locale of routing.locales) {
       languages[locale] = `${SITE_URL}/${locale}${pathSuffix}`
     }
+    languages['x-default'] = `${SITE_URL}/${routing.defaultLocale}${pathSuffix}`
 
-    return {
-      url: `${SITE_URL}/en${pathSuffix}`,
-      lastModified: PAGE_DATES[path] ? new Date(PAGE_DATES[path]) : new Date(),
+    const lastModified = PAGE_DATES[path] ? new Date(PAGE_DATES[path]) : new Date()
+
+    return routing.locales.map((locale) => ({
+      url: `${SITE_URL}/${locale}${pathSuffix}`,
+      lastModified,
       changeFrequency,
       priority,
-      alternates: {
-        languages,
-      },
-    }
+      alternates: { languages },
+    }))
   })
 
   // Group posts by slug to find which locales each post exists in
@@ -65,13 +73,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   const blogEntries = Array.from(postsBySlug.entries()).flatMap(([slug, versions]) => {
-    // Only add hreflang alternates if the post exists in multiple locales
-    const languages: Record<string, string> | undefined =
-      versions.length > 1
-        ? Object.fromEntries(
-            versions.map((v) => [v.locale, `${SITE_URL}/${v.locale}/kennisbank/${slug}`])
-          )
-        : undefined
+    // Posts already get one <loc> per existing locale. Add hreflang only when a
+    // post exists in multiple locales, and add x-default -> the default-locale
+    // version ONLY if that version actually exists (never point x-default at a 404).
+    let languages: Record<string, string> | undefined
+    if (versions.length > 1) {
+      languages = Object.fromEntries(
+        versions.map((v) => [v.locale, `${SITE_URL}/${v.locale}/kennisbank/${slug}`])
+      )
+      if (versions.some((v) => v.locale === routing.defaultLocale)) {
+        languages['x-default'] = `${SITE_URL}/${routing.defaultLocale}/kennisbank/${slug}`
+      }
+    }
 
     return versions.map((post) => ({
       url: `${SITE_URL}/${post.locale}/kennisbank/${post.slug}`,
