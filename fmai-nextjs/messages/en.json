@@ -11,8 +11,8 @@
   },
   "home": {
     "meta": {
-      "title": "This is Clyde. The AI Marketing Employee | FutureMarketingAI",
-      "description": "Clyde is the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 10 partners per year."
+      "title": "FutureMarketingAI (fmai): Clyde, your AI Marketing Employee",
+      "description": "FutureMarketingAI (Future Marketing AI, fmai) builds Clyde AI: the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 10 partners per year."
     },
     "hero": {
       "badge": "{taken} of {total} founding spots taken",
@@ -788,8 +788,8 @@
   },
   "about": {
     "meta": {
-      "title": "About FutureMarketingAI | AI Marketing Employee for agencies",
-      "description": "FutureMarketingAI builds persistent AI Marketing Employees for marketing agencies. Made in the Netherlands, for European agencies."
+      "title": "About FutureMarketingAI (fmai): the team behind Clyde AI",
+      "description": "About FutureMarketingAI (Future Marketing AI, fmai): we build Clyde, the AI Marketing Employee for marketing agencies. Made in the Netherlands, for European agencies."
     },
     "hero": {
       "eyebrow": "About FutureMarketingAI",
