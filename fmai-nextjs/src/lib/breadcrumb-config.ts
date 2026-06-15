@@ -49,7 +49,7 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/skills/blog-factory': { labelKey: 'skill_blog_factory', parent: '/skills' },
   '/skills/voice-agent': { labelKey: 'skill_voice_agent', parent: '/skills' },
   '/skills/lead-qualifier': { labelKey: 'skill_lead_qualifier', parent: '/skills' },
-  '/skills/ad-creator': { labelKey: 'skill_ad_creator', parent: '/skills' },
+  '/skills/ad-manager': { labelKey: 'skill_ad_manager', parent: '/skills' },
   '/skills/reel-builder': { labelKey: 'skill_reel_builder', parent: '/skills' },
   '/skills/email-management': { labelKey: 'skill_email_management', parent: '/skills' },
   '/skills/manychat': { labelKey: 'skill_manychat', parent: '/skills' },

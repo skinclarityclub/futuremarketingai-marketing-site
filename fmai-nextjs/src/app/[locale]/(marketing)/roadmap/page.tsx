@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
-import { ArrowRight, Clapperboard, Megaphone, Phone } from 'lucide-react'
+import { ArrowRight, Clapperboard, Phone } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
@@ -29,7 +29,6 @@ export async function generateMetadata({
 
 const ROADMAP_SKILLS = [
   { key: 'voiceAgent', icon: Phone, href: '/skills/voice-agent' as const },
-  { key: 'adCreator', icon: Megaphone, href: '/skills/ad-creator' as const },
   { key: 'reelBuilder', icon: Clapperboard, href: '/skills/reel-builder' as const },
 ] as const
 

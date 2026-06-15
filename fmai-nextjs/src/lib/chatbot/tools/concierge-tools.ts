@@ -77,7 +77,7 @@ const PAGE_LABELS: Record<string, string> = {
   '/': 'Home',
   '/skills/social-media': 'Social Media Manager',
   '/skills/blog-factory': 'Blog Factory',
-  '/skills/ad-creator': 'Ad Creator',
+  '/skills/ad-manager': 'Ad Manager',
   '/skills/reel-builder': 'Reel Builder',
   '/skills/voice-agent': 'Voice Agent',
   '/skills/lead-qualifier': 'Lead Qualifier',
@@ -101,14 +101,14 @@ export function buildConciergeTools(locale: ChatbotLocale) {
   return {
     get_skills: tool({
       description:
-        'Get information about FutureMarketingAI skills. Use "all" for an overview of all 12 skills (9 live and 3 coming_soon), or pick a specific skill id. Skills are the core product: Clyde orchestrates these 12 skills across client brands.',
+        'Get information about FutureMarketingAI skills. Use "all" for an overview of all 12 skills (10 live and 2 coming_soon), or pick a specific skill id. Skills are the core product: Clyde orchestrates these 12 skills across client brands.',
       inputSchema: z.object({
         skillId: z
           .enum([
             'all',
             'social-media',
             'blog-factory',
-            'ad-creator',
+            'ad-manager',
             'reel-builder',
             'voice-agent',
             'lead-qualifier',
@@ -176,7 +176,7 @@ export function buildConciergeTools(locale: ChatbotLocale) {
             '/case-studies/skinclarity-club',
             '/skills/social-media',
             '/skills/blog-factory',
-            '/skills/ad-creator',
+            '/skills/ad-manager',
             '/skills/reel-builder',
             '/skills/voice-agent',
             '/skills/lead-qualifier',

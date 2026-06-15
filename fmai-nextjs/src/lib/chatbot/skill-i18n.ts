@@ -61,17 +61,17 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Consistency in brand voice',
       ],
     },
-    'ad-creator': {
-      shortDescription: 'Static and video ads for Meta. Publish A/B variants directly.',
+    'ad-manager': {
+      shortDescription: 'Create ads and steer them: publish to Meta and track leads, cost per lead and ad fatigue per ad.',
       longDescription:
-        'Ad Creator generates complete ads: from copy to visuals. AI produces static and video ads, optimises for different formats (Stories, Feed, Reels) and publishes straight to Meta Ads Manager. A/B test variants included.',
+        'Ad Manager builds complete ads (copy, static visuals and video) and publishes them straight to Meta Ads Manager. From there Clyde steers on results: per-ad performance, leads and cost per lead, ranking and ad-fatigue signals, plus A/B variants. All in plain language, even if you are not an ads expert.',
       features: [
-        'AI-generated ad copy and visuals',
-        'Static and video ad creation',
-        'Multi-format output (Stories, Feed, Reels)',
-        'Competitor ad library research',
-        'Publish directly to Meta Ads',
-        'A/B test variant generation',
+        'AI-generated ad copy, static visuals and video ads',
+        'Publish directly to Meta Ads Manager',
+        'Per-ad performance: leads, cost per lead and ROAS',
+        'Ad-fatigue and ranking signals with plain-language recommendations',
+        'Generate and compare A/B variants',
+        'Competitor research in the Meta Ad Library',
       ],
     },
     'reel-builder': {
@@ -215,17 +215,17 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Consistencia en la voz de marca',
       ],
     },
-    'ad-creator': {
-      shortDescription: 'Anuncios estáticos y de vídeo para Meta. Publica variantes A/B directamente.',
+    'ad-manager': {
+      shortDescription: 'Crea anuncios y gestiónalos: publica en Meta y sigue leads, coste por lead y fatiga por anuncio.',
       longDescription:
-        'Ad Creator genera anuncios completos: del copy a los visuales. La IA crea anuncios estáticos y de vídeo, optimiza para distintos formatos (Stories, Feed, Reels) y publica directamente en Meta Ads Manager. Variantes de test A/B incluidas.',
+        'Ad Manager crea anuncios completos (copy, visuales estáticos y vídeo) y los publica directamente en Meta Ads Manager. A partir de ahí Clyde dirige por resultados: rendimiento por anuncio, leads y coste por lead, señales de ranking y fatiga publicitaria, además de variantes A/B. Todo en lenguaje claro, también para quien no es experto en anuncios.',
       features: [
-        'Copy y visuales de anuncios generados por IA',
-        'Creación de anuncios estáticos y de vídeo',
-        'Salida multiformato (Stories, Feed, Reels)',
-        'Investigación de la biblioteca de anuncios de la competencia',
-        'Publicación directa en Meta Ads',
-        'Generación de variantes de test A/B',
+        'Copy, visuales estáticos y anuncios de vídeo generados por IA',
+        'Publicación directa en Meta Ads Manager',
+        'Rendimiento por anuncio: leads, coste por lead y ROAS',
+        'Señales de fatiga y ranking con recomendaciones en lenguaje claro',
+        'Generar y comparar variantes A/B',
+        'Investigación de competencia en la Meta Ad Library',
       ],
     },
     'reel-builder': {

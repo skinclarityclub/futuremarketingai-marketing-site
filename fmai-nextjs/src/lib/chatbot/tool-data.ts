@@ -86,7 +86,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     founding: {
       priceLabel: '€997/mnd',
       features: [
-        'Alle 12 vaardigheden inbegrepen (9 live, 3 binnenkort)',
+        'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
         'Onbeperkt aantal werkruimtes',
         '8.000 credits per maand',
         'Levenslang vast tarief van €997 (wordt nooit herijkt voor founding members)',
@@ -133,7 +133,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     founding: {
       priceLabel: '€997/mo',
       features: [
-        'All 12 skills included (9 live, 3 coming soon)',
+        'All 12 skills included (10 live, 2 coming soon)',
         'Unlimited workspaces',
         '8,000 credits per month',
         'Lifetime price lock at €997 (never raises for founding members)',
@@ -180,7 +180,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     founding: {
       priceLabel: '€997/mes',
       features: [
-        'Las 12 habilidades incluidas (9 activas, 3 próximamente)',
+        'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
         'Espacios de trabajo ilimitados',
         '8.000 créditos al mes',
         'Precio fijo de por vida de €997 (nunca sube para los miembros founding)',
