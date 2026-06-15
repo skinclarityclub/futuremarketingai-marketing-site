@@ -50,10 +50,11 @@ const SKILL_CATEGORIES = [
   {
     key: 'engage',
     items: [
-      { key: 'voiceAgent', icon: Phone, href: '/skills/voice-agent' as const },
       { key: 'leadQualifier', icon: MessageSquare, href: '/skills/lead-qualifier' as const },
       { key: 'emailManagement', icon: Mail, href: '/skills/email-management' as const },
       { key: 'manychat', icon: MessageCircle, href: '/skills/manychat' as const },
+      // Voice Agent staat coming_soon → onderaan zodat live skills eerst komen
+      { key: 'voiceAgent', icon: Phone, href: '/skills/voice-agent' as const },
     ],
   },
   {
