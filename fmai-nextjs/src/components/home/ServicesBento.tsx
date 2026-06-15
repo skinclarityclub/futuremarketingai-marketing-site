@@ -51,7 +51,7 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
   { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search,          status: 'live'         },
   { key: 'research',        href: '/skills/research',         Icon: Target,          status: 'live'         },
   { key: 'voiceAgent',      href: '/skills/voice-agent',      Icon: Mic,             status: 'coming_soon'  },
-  { key: 'adCreator',       href: '/skills/ad-creator',       Icon: Megaphone,       status: 'coming_soon'  },
+  { key: 'adCreator',       href: '/skills/ad-manager',       Icon: Megaphone,       status: 'live'         },
   { key: 'reelBuilder',     href: '/skills/reel-builder',     Icon: Video,           status: 'coming_soon'  },
 ] as const
 

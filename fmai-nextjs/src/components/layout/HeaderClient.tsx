@@ -43,7 +43,7 @@ const SKILL_CATEGORIES = [
     items: [
       { key: 'socialMedia', icon: Share2, href: '/skills/social-media' as const },
       { key: 'blogFactory', icon: BookOpen, href: '/skills/blog-factory' as const },
-      { key: 'adCreator', icon: Megaphone, href: '/skills/ad-creator' as const },
+      { key: 'adCreator', icon: Megaphone, href: '/skills/ad-manager' as const },
       { key: 'reelBuilder', icon: Clapperboard, href: '/skills/reel-builder' as const },
     ],
   },

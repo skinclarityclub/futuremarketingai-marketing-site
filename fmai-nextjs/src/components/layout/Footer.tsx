@@ -14,7 +14,7 @@ type SkillHref =
   | '/skills/blog-factory'
   | '/skills/voice-agent'
   | '/skills/lead-qualifier'
-  | '/skills/ad-creator'
+  | '/skills/ad-manager'
   | '/skills/reel-builder'
   | '/skills/email-management'
   | '/skills/manychat'
@@ -37,7 +37,7 @@ const FOOTER_SKILLS: readonly FooterSkill[] = [
   { href: '/skills/lead-qualifier', navKey: 'lead_qualifier' },
   { href: '/skills/email-management', navKey: 'email_management' },
   { href: '/skills/manychat', navKey: 'manychat' },
-  { href: '/skills/ad-creator', navKey: 'ad_creator', comingSoon: true },
+  { href: '/skills/ad-manager', navKey: 'ad_creator' },
   { href: '/skills/reel-builder', navKey: 'reel_builder', comingSoon: true },
   { href: '/skills/reporting', navKey: 'reporting' },
   { href: '/skills/research', navKey: 'research' },

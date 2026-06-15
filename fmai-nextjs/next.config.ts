@@ -130,7 +130,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/:locale/automations',
-        destination: '/:locale/skills/ad-creator',
+        destination: '/:locale/skills/ad-manager',
         permanent: true,
       },
       {
@@ -158,6 +158,14 @@ const nextConfig: NextConfig = {
         source: '/:locale/skills/email',
         destination: '/:locale/skills/email-management',
         permanent: true,
+      },
+      // Ad Creator → Ad Manager rename (2026-06-15): skill went live + broadened
+      // to create + manage + per-ad performance. Hard 301 so search + AI crawlers
+      // transfer the old slug's ranking to the new URL without ambiguity.
+      {
+        source: '/:locale/skills/ad-creator',
+        destination: '/:locale/skills/ad-manager',
+        statusCode: 301,
       },
       // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank.
       // Hard 301 (Moved Permanently) instead of Next's permanent:true (which emits

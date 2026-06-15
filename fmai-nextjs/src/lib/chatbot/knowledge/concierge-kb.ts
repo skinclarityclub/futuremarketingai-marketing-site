@@ -5,19 +5,19 @@ export const CONCIERGE_TOPICS: TopicDefinition[] = [
  key: 'services',
  content: `## FutureMarketingAI Skills Overview
 
-FutureMarketingAI delivers Clyde, the AI Marketing Medewerker for agencies. Clyde orchestrates 12 skills across client brand portfolios. 9 skills are live today, 3 are coming soon.
+FutureMarketingAI delivers Clyde, the AI Marketing Medewerker for agencies. Clyde orchestrates 12 skills across client brand portfolios. 10 skills are live today, 2 are coming soon.
 
 **Create and Publish (4 skills)**
 - Social Media Manager (live): captions, scheduling, carousels and engagement in brand voice
 - Blog Factory (live): longform SEO articles 1500 to 3000 words, keyword research to publish
-- Ad Creator (live): static and video ad creatives for Meta Ads and TikTok
+- Ad Manager (live): create static and video ads for Meta and publish to Ads Manager, plus per-ad performance, leads, cost per lead and ad-fatigue signals in plain language
 - Reel Builder (coming soon): short vertical videos with captions, music, transitions
 
 **Engage and Convert (4 skills)**
-- Voice Agent (live): inbound and outbound AI phone calls via ElevenLabs
+- Voice Agent (coming soon): inbound and outbound AI phone calls via ElevenLabs
 - Lead Qualifier (live): website chatbot that scores leads and routes to CRM
-- Email Management (coming soon): Gmail inbox classification with smart labels and digest
-- ManyChat DM (coming soon): Instagram DM keyword triggers with AI replies
+- Email Management (live): Gmail inbox classification with smart labels and digest
+- ManyChat DM (live): Instagram DM keyword triggers with AI replies
 
 **Grow and Optimize (4 skills)**
 - Reporting and Analytics (live): weekly digests, anomaly detection, KPI dashboards

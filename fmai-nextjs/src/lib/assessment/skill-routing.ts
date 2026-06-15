@@ -5,7 +5,7 @@
  * three skills that — given the bureau's archetype and current gap — deliver
  * the highest leverage. Different archetypes with the same gap get different
  * recommendations: a data-led bureau weak on tools needs production capacity
- * (ad-creator, social-media), while a tooling-led bureau weak on tools is an
+ * (ad-manager, social-media), while a tooling-led bureau weak on tools is an
  * edge-case fallback (central orchestration focus).
  *
  * 20 cells = 5 archetypes × 4 categories. Order within each cell is the
@@ -25,7 +25,7 @@ import type {
 type SkillSlug =
   | 'social-media'
   | 'blog-factory'
-  | 'ad-creator'
+  | 'ad-manager'
   | 'reel-builder'
   | 'voice-agent'
   | 'lead-qualifier'
@@ -53,7 +53,7 @@ const ARCHETYPE_ROUTING_MATRIX: ArchetypeRoutingMatrix = {
     // Rich insights; needs to translate data into action and production
     strategy: ['clyde', 'research', 'reporting'],
     data: ['research', 'reporting', 'seo-geo'],
-    tools: ['ad-creator', 'social-media', 'blog-factory'],
+    tools: ['ad-manager', 'social-media', 'blog-factory'],
     team: ['reporting', 'clyde', 'email-management'],
   },
   'tooling-led': {

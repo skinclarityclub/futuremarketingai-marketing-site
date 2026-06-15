@@ -43,7 +43,7 @@ interface ResultRevealProps {
 const SKILL_ICONS: Record<string, LucideIcon> = {
   'social-media': Share2,
   'blog-factory': BookOpen,
-  'ad-creator': Megaphone,
+  'ad-manager': Megaphone,
   'reel-builder': Clapperboard,
   'voice-agent': Phone,
   'lead-qualifier': MessageSquare,

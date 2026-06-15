@@ -16,8 +16,8 @@ export async function generateMetadata({
   const { locale } = await params
   return generatePageMetadata({
     locale,
-    namespace: 'skills-ad-creator',
-    path: '/skills/ad-creator',
+    namespace: 'skills-ad-manager',
+    path: '/skills/ad-manager',
   })
 }
 
@@ -31,8 +31,8 @@ export default async function SkillPage({
 
   return (
     <SkillPageTemplate
-      namespace="skills-ad-creator"
-      slug="ad-creator"
+      namespace="skills-ad-manager"
+      slug="ad-manager"
       locale={locale}
       customProof={undefined}
     />

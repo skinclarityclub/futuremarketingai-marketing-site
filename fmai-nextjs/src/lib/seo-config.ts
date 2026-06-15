@@ -69,7 +69,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/case-studies/skinclarity-club': '2026-04-20',
   '/skills/social-media': '2026-04-20',
   '/skills/blog-factory': '2026-04-20',
-  '/skills/ad-creator': '2026-04-20',
+  '/skills/ad-manager': '2026-06-15',
   '/skills/reel-builder': '2026-04-20',
   '/skills/voice-agent': '2026-04-20',
   '/skills/lead-qualifier': '2026-04-20',

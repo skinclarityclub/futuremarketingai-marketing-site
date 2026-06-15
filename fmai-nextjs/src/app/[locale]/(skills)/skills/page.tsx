@@ -61,7 +61,7 @@ const SKILL_ICONS: Record<string, LucideIcon> = {
   'seo-geo': Search,
   research: Target,
   'voice-agent': Mic,
-  'ad-creator': Megaphone,
+  'ad-manager': Megaphone,
   'reel-builder': Video,
 }
 

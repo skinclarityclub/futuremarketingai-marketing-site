@@ -12,7 +12,7 @@ const pages = [
   { path: '/skills', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/skills/social-media', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills/blog-factory', changeFrequency: 'monthly' as const, priority: 0.8 },
-  { path: '/skills/ad-creator', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/skills/ad-manager', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills/reel-builder', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/skills/voice-agent', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills/lead-qualifier', changeFrequency: 'monthly' as const, priority: 0.8 },

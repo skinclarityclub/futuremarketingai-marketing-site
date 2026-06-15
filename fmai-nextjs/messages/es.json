@@ -18,7 +18,7 @@
       "badge": "{taken} de {total} plazas founding ocupadas",
       "headlineMain": "Este es Clyde.",
       "tagline": "Tu <accent>empleado AI de marketing</accent>.",
-      "subtitle": "Recuerda cada marca. Doce habilidades para todo tu portfolio: social, blogs, email, calificación de leads, SEO, analítica. Ejecutado de forma autónoma, con memoria que sobrevive a las campañas.",
+      "subtitle": "Recuerda cada marca. Diez habilidades hoy, dos próximamente: social, blogs, anuncios, email, calificación de leads, SEO, analítica. Ejecutado de forma autónoma, con memoria que sobrevive a las campañas.",
       "trustAnchor": "En producción desde 2025. Máx. {maxPartners} partners al año.",
       "cta": "Agenda una llamada",
       "ctaSecondary": "Conoce a Clyde",
@@ -30,7 +30,7 @@
     },
     "services": {
       "title": "Lo que Clyde hace por tu agencia",
-      "subtitle": "Doce habilidades, nueve listas para desplegar hoy.",
+      "subtitle": "Doce habilidades, diez listas para desplegar hoy.",
       "socialMedia": {
         "title": "Social Media Manager",
         "description": "Captions, planificación y carruseles por marca. Listos antes de que empieces el lunes."
@@ -75,8 +75,8 @@
         "description": "Artículos de blog completos, optimizados para SEO y GEO, listos para publicar."
       },
       "adCreator": {
-        "title": "Ad Creator",
-        "description": "Variantes de anuncio para Meta, Google y TikTok. Incluye copy, hooks y dirección visual."
+        "title": "Ad Manager",
+        "description": "Crear y dirigir anuncios: copy, visuales y vídeo para Meta, además de leads, coste por lead y fatiga publicitaria por anuncio."
       },
       "manychat": {
         "title": "ManyChat DM",
@@ -122,7 +122,7 @@
         "linkText": "Ver el caso operacional"
       },
       "skills": {
-        "value": "9 / 12",
+        "value": "10 / 12",
         "label": "Habilidades listas para activar",
         "linkText": "Todas las habilidades"
       },
@@ -399,7 +399,7 @@
       "items": {
         "q1": {
           "question": "¿En qué se diferencia Clyde de ChatGPT o Jasper?",
-          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar contexto en cada prompt. Clyde tiene memoria persistente por marca: voz de marca, audiencia, historial de rendimiento y preferencias se conservan. Además, Clyde orquesta nueve habilidades en producción más tres próximamente (social, blogs, email, calificación de leads, SEO, analítica y más), no solo texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
+          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar contexto en cada prompt. Clyde tiene memoria persistente por marca: voz de marca, audiencia, historial de rendimiento y preferencias se conservan. Además, Clyde orquesta diez habilidades en producción más dos próximamente (social, blogs, anuncios, email, calificación de leads, SEO, analítica y más), no solo texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
         },
         "q2": {
           "question": "¿Y si quiero cancelar?",
@@ -411,7 +411,7 @@
         },
         "q4": {
           "question": "¿Exactamente cuántas habilidades obtengo?",
-          "answer": "Doce en total: 9 en vivo (Social Media, Blog Factory, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orquestador) y 3 próximamente (Voice Agent, Ad Creator, Reel Builder). Founding, Growth, Professional y Enterprise tienen las 12 habilidades, con caps en las más costosas (voz, vídeo, reels)."
+          "answer": "Doce en total: 10 en vivo (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orquestador) y 2 próximamente (Voice Agent, Reel Builder). Founding, Growth, Professional y Enterprise tienen las 12 habilidades, con caps en las más costosas (voz, vídeo, reels)."
         },
         "q5": {
           "question": "¿Por qué funciona mejor para agencias que herramientas separadas?",
@@ -633,7 +633,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "El Empleado AI de Marketing para tu agencia. Nueve habilidades en producción, tres próximamente, un sistema siempre activo.",
+        "tagline": "El Empleado AI de Marketing para tu agencia. Diez habilidades en producción, dos próximamente, un sistema siempre activo.",
         "copyright": "© {year} Future Marketing AI. Todos los derechos reservados.",
         "sections": {
           "skills": "Habilidades",
@@ -645,7 +645,7 @@
           "voice_agent": "Voice Agent",
           "lead_qualifier": "Lead Qualifier",
           "social_media": "Social Media",
-          "ad_creator": "Ad Creator",
+          "ad_creator": "Ad Manager",
           "reel_builder": "Reel Builder",
           "reporting": "Reporting",
           "email_management": "Email Management",
@@ -716,7 +716,7 @@
       "skill_blog_factory": "Blog Factory",
       "skill_voice_agent": "Voice Agent",
       "skill_lead_qualifier": "Lead Qualifier",
-      "skill_ad_creator": "Ad Creator",
+      "skill_ad_manager": "Ad Manager",
       "skill_reel_builder": "Reel Builder",
       "skill_email_management": "Email Management",
       "skill_manychat": "ManyChat DM",
@@ -1293,7 +1293,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Descripción del servicio",
-            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta servicios de Empleado AI de Marketing con habilidades configurables. Las habilidades disponibles incluyen: Content Creator (artículos de blog, contenido social, boletines), Voice Agent (llamadas entrantes y salientes, reserva de citas), Lead Qualifier (chatbot, puntuación de leads, enrutamiento), Social Media Manager (programación multiplataforma, seguimiento de engagement), Ad Creator (anuncios estáticos y en vídeo generados por IA) y Reporting & Analytics (dashboards multiplataforma, informes semanales, detección de anomalías). Las habilidades se activan por nivel de suscripción y pueden añadirse o retirarse en cualquier momento."
+            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta servicios de Empleado AI de Marketing con habilidades configurables. Las habilidades disponibles incluyen: Content Creator (artículos de blog, contenido social, boletines), Voice Agent (llamadas entrantes y salientes, reserva de citas), Lead Qualifier (chatbot, puntuación de leads, enrutamiento), Social Media Manager (programación multiplataforma, seguimiento de engagement), Ad Manager (anuncios estáticos y en vídeo generados por IA más gestión de rendimiento por anuncio) y Reporting & Analytics (dashboards multiplataforma, informes semanales, detección de anomalías). Las habilidades se activan por nivel de suscripción y pueden añadirse o retirarse en cualquier momento."
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
@@ -1667,7 +1667,7 @@
       "title": "Trabaja con",
       "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por marca.",
       "integration1": "Blog Factory: posts sociales derivados del contenido del blog.",
-      "integration2": "Ad Creator (próximamente): el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
+      "integration2": "Ad Manager: el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
       "integration3": "Reporting: KPIs sociales en el informe semanal de rendimiento."
     },
     "useCases": {
@@ -1720,55 +1720,55 @@
       }
     }
   },
-  "skills-ad-creator": {
+  "skills-ad-manager": {
     "meta": {
-      "title": "Ad Creator. Anuncios estáticos y de video para Meta | Clyde",
-      "description": "Copy publicitario, creatividades, anuncios estáticos y de video para Meta. 10 créditos estático, 20 créditos video. Salida en varios formatos."
+      "title": "Ad Manager. Crear y dirigir anuncios por leads y CPL | Clyde",
+      "description": "Crea anuncios estáticos y de vídeo, publícalos en Meta y dirígelos por anuncio según leads, coste por lead y fatiga publicitaria. 10 créditos estático, 20 créditos vídeo."
     },
     "hero": {
-      "eyebrow": "Habilidad 05. Ad Creator (próximamente)",
-      "title": "Clyde crea tus anuncios de Meta.",
-      "subtitle": "Anuncios estáticos y de video. Copy, creatividades y varios formatos (Feed, Stories, Reels). Publica directamente en Meta Ads Manager. Variantes A/B incluidas. Sin necesidad de un diseñador freelance. Próximamente.",
+      "eyebrow": "Habilidad 05. Ad Manager",
+      "title": "Clyde crea y dirige tus anuncios de Meta.",
+      "subtitle": "Anuncios estáticos y de vídeo: copy, visuales y varios formatos (Feed, Stories, Reels), publicados directamente en Meta Ads Manager. Después Clyde los dirige por resultado: leads, coste por lead y fatiga publicitaria por anuncio, en lenguaje claro.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Crea 3 variantes de anuncio para la campaña de invierno",
-        "prompt2": "Escribe un guion de video-anuncio para el lanzamiento del serum",
-        "prompt3": "Prueba A/B con 2 visuales para la promoción de la próxima semana"
+        "prompt2": "¿Qué anuncio tiene el menor coste por lead?",
+        "prompt3": "Muestra las señales de fatiga publicitaria de mi campaña activa"
       }
     },
     "features": {
       "title": "Qué hace Clyde",
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
-        "title": "Anuncios estáticos (10 créditos)",
-        "body": "Imagen y copy en 1080×1080 (Feed) o 1080×1920 (Story o Reel). Plantillas Orshot en tu identidad visual."
+        "title": "Crear anuncios (10/20 créditos)",
+        "body": "Copy, visuales estáticos en 1080×1080 (Feed) o 1080×1920 (Story o Reel) y vídeo-anuncios cortos con motion graphics. En tu identidad visual, listos para publicar."
       },
       "feature2": {
-        "title": "Anuncios de video (20 créditos)",
-        "body": "Videos publicitarios cortos con motion graphics, superposiciones de texto y música. Ideales para Reels y Stories."
+        "title": "Publicación directa en Meta",
+        "body": "Despliegue a Ads Manager a través de la conexión. Tú defines presupuesto y audiencia; Clyde aporta las creatividades y las deja listas."
       },
       "feature3": {
-        "title": "Investigación en la Meta Ad Library",
-        "body": "Clyde analizará qué anuncian los competidores y entregará ejemplos más un análisis de brechas."
+        "title": "Rendimiento por anuncio",
+        "body": "Leads, coste por lead y ROAS por cada anuncio, no solo por campaña. Estado vacío honesto mientras todavía no hay resultados."
       },
       "feature4": {
-        "title": "Generación de variantes A/B",
-        "body": "Pide entre 3 y 5 variantes de un mismo concepto publicitario: distintos ganchos, creatividades y CTAs. Listas para probarse en paralelo."
+        "title": "Fatiga publicitaria y recomendaciones",
+        "body": "Señales de ranking y fatiga (frecuencia, evolución del CTR) traducidas a 'qué mejoramos ahora', en lenguaje claro. Además de variantes A/B para probar."
       }
     },
     "how": {
       "title": "Cómo funciona",
       "step1": {
-        "title": "Briefing y entrevista de marca",
-        "body": "Producto o servicio, público, USP y presupuesto. Clyde leerá las directrices de marca para mantener la consistencia."
+        "title": "Briefing e intake de marca",
+        "body": "Producto o servicio, público, USP y presupuesto. Clyde lee las directrices de marca para mantener la consistencia."
       },
       "step2": {
-        "title": "Generar los anuncios",
-        "body": "Elige estático o video, número de variantes y formato. Clyde entregará salidas listas para publicar en minutos."
+        "title": "Crear y publicar",
+        "body": "Elige estático o vídeo, número de variantes y formato. Clyde entrega salidas listas para publicar y las deja preparadas en Ads Manager."
       },
       "step3": {
-        "title": "Publicar en Meta",
-        "body": "Despliegue directo a Ads Manager a través de la conexión. Tú defines presupuesto y audiencia; Clyde aportará las creatividades."
+        "title": "Dirigir por resultado",
+        "body": "Clyde sigue cada anuncio: leads, coste por lead, ranking y fatiga. Ves en lenguaje claro qué funciona y qué ajustamos."
       }
     },
     "integrations": {
@@ -1776,17 +1776,17 @@
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Social Media: los posts orgánicos con mejor rendimiento se convierten en material de test publicitario.",
       "integration2": "Blog Factory: el contenido del blog se transforma en copy publicitario para campañas de rendimiento.",
-      "integration3": "Reporting: métricas publicitarias (CTR, CPA, ROAS) en el informe."
+      "integration3": "Reporting: las métricas publicitarias (leads, CPL, CTR, ROAS) se reúnen en el digest."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
         "title": "E-commerce con muchas SKUs",
-        "body": "Entre 3 y 5 variantes de anuncio por producto. Clyde escala el volumen publicitario sin el cuello de botella de un diseñador freelance."
+        "body": "Entre 3 y 5 variantes de anuncio por producto, y luego dirigir a las ganadoras según el coste por lead. Escalar sin el cuello de botella de un diseñador freelance."
       },
       "useCase2": {
-        "title": "Agencias de servicios con anuncios para varias marcas",
-        "body": "Un único Clyde entrega anuncios para 10 marcas en paralelo, cada una con su identidad visual y su público."
+        "title": "Agencias que gestionan anuncios de varias marcas",
+        "body": "Un único Clyde crea y monitoriza anuncios para 10 marcas en paralelo, cada una con su identidad visual, con el rendimiento por anuncio visible por marca."
       }
     },
     "allocation": {
@@ -1794,32 +1794,32 @@
       "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
     },
     "cta": {
-      "title": "¿Listo para ceder la creación de anuncios a Clyde?",
+      "title": "¿Listo para ceder tus anuncios a Clyde?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Ad Creator",
+      "title": "Preguntas frecuentes sobre Ad Manager",
       "items": {
         "q1": {
-          "question": "¿Qué hace exactamente la habilidad Ad Creator?",
-          "answer": "Clyde produce anuncios Meta completos: copy, visuales, anuncios estáticos (1080x1080 o 1080x1920) y video-anuncios cortos con motion graphics. Investiga competidores en la Meta Ad Library, genera variantes A/B y publica directamente en Ads Manager. Sin diseñador o editor freelance."
+          "question": "¿Qué hace exactamente la habilidad Ad Manager?",
+          "answer": "Clyde crea anuncios de Meta completos (copy, visuales estáticos y vídeo-anuncios cortos) y luego los dirige por resultado: rendimiento, leads y coste por lead por anuncio, señales de ranking y fatiga publicitaria y variantes A/B. Publica directamente en Ads Manager. Sin diseñador freelance ni herramienta de reporting aparte."
         },
         "q2": {
-          "question": "¿Qué plataformas soporta Ad Creator?",
-          "answer": "Meta Ads (Instagram y Facebook): formatos Feed, Stories y Reels. Salida via la API Meta Marketing. La exportación a TikTok, LinkedIn y Google Ads está en la hoja de ruta del producto. Clientes con presupuesto en esos canales pueden exportar manualmente PNG y MP4 por ahora."
+          "question": "¿Qué plataformas soporta Ad Manager?",
+          "answer": "Meta Ads (Instagram y Facebook): Feed, Stories y Reels, más rendimiento por anuncio vía la API Meta Marketing. TikTok, LinkedIn y Google Ads están en la hoja de ruta del producto. Los clientes con presupuesto en esos canales pueden exportar manualmente PNG y MP4 por ahora."
         },
         "q3": {
-          "question": "¿En qué tiers está disponible Ad Creator?",
-          "answer": "Incluido en Growth (15 anuncios al mes), Professional (50) y Enterprise (sin límite). Founding Member recibe 25 anuncios al mes de por vida a 997 EUR."
+          "question": "¿En qué niveles está disponible Ad Manager?",
+          "answer": "Incluido en Growth (15 anuncios al mes), Professional (50) y Enterprise (sin límite). Founding Member recibe 25 anuncios al mes de por vida a 997 EUR. El rendimiento por anuncio está en todos los niveles."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Ad Creator?",
-          "answer": "De dos a tres semanas. Semana 1 conecta Ads Manager y Clyde lee campañas previas. Semana 2 entrega primeras variantes con aprobación manual por anuncio. Después la habilidad opera autónoma con calibración sobre datos de CTR, CPA y ROAS de Reporting."
+          "question": "¿Cuánto dura el onboarding de Ad Manager?",
+          "answer": "De dos a tres semanas. La semana 1 conecta Ads Manager y Clyde lee campañas previas. La semana 2 entrega primeras variantes con aprobación manual por anuncio. Después la habilidad opera autónoma y calibra sobre leads, CPL, CTR y ROAS de Reporting."
         },
         "q5": {
           "question": "¿En qué se diferencia de AdCreative o Pencil?",
-          "answer": "AdCreative y Pencil generan banners aislados a partir de prompts. Clyde respeta la voz de marca por marca, conoce el tono de posts exitosos previos via memoria compartida con Social Media Manager, y publica directamente. Sin copia-pegado manual entre herramientas."
+          "answer": "AdCreative y Pencil entregan banners sueltos a partir de prompts, sin dirección posterior. Clyde mantiene la voz de marca por marca vía memoria compartida, publica directamente y luego sigue cada anuncio por leads y coste por lead. Crear y gestionar en uno, sin copia-pegado entre herramientas."
         }
       }
     }
@@ -2192,27 +2192,22 @@
   "roadmap": {
     "meta": {
       "title": "Roadmap. Lo próximo que hará Clyde | FutureMarketingAI",
-      "description": "Las tres habilidades actualmente en desarrollo y testing: Voice Agent, Ad Creator y Reel Builder. Los founding members obtienen acceso primero."
+      "description": "Las dos habilidades actualmente en desarrollo y testing: Voice Agent y Reel Builder. Los founding members obtienen acceso primero."
     },
     "hero": {
       "eyebrow": "Roadmap",
       "title": "Lo próximo que hará Clyde.",
-      "subtitle": "Nueve habilidades funcionan en vivo en producción. Tres están en la roadmap, en desarrollo y testing activos. Los founding members obtienen acceso primero a medida que entran en vivo."
+      "subtitle": "Diez habilidades funcionan en vivo en producción. Dos están en la roadmap, en desarrollo y testing activos. Los founding members obtienen acceso primero a medida que entran en vivo."
     },
     "skills": {
       "eyebrow": "En la pipeline",
       "title": "En desarrollo",
-      "subtitle": "Tres habilidades que estamos construyendo. Sin fechas duras de lanzamiento, pero con un orden claro de valor."
+      "subtitle": "Dos habilidades que estamos construyendo. Sin fechas duras de lanzamiento, pero con un orden claro de valor."
     },
     "voiceAgent": {
       "name": "Voice Agent",
       "phase": "En testing",
       "description": "Llamadas AI entrantes y salientes. Reserva de citas, atención de preguntas frecuentes, escalado a una persona. La demo interactiva ya funciona; la integración de producción con VAPI y sistemas de agenda está en piloto."
-    },
-    "adCreator": {
-      "name": "Ad Creator",
-      "phase": "En desarrollo",
-      "description": "Anuncios estáticos y de video para Meta, incluyendo variantes A/B y publicación directa en Meta Ads Manager. La pipeline creativa funciona internamente; la integración con Meta Ads Manager y el flujo de aprobación se están terminando."
     },
     "reelBuilder": {
       "name": "Reel Builder",
@@ -2223,7 +2218,7 @@
       "eyebrow": "Acceso anticipado",
       "scarcityEyebrow": "Founding abierto · {taken}/{total} reservadas",
       "title": "¿Quieres ser el primero?",
-      "subtitle": "Los founding members obtienen acceso anticipado a las tres a medida que entran en vivo, además de voz en lo que construimos a continuación.",
+      "subtitle": "Los founding members obtienen acceso anticipado a ambas a medida que entran en vivo, además de voz en lo que construimos a continuación.",
       "button": "Agenda una llamada"
     }
   },
@@ -2862,7 +2857,7 @@
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Blog Factory: los datos de investigación alimentan la elección de temas de blog.",
       "integration2": "Social Media: los insights de tendencias se convierten en propuestas de contenido.",
-      "integration3": "Ad Creator (próximamente): el análisis de competencia mejora tus propios anuncios."
+      "integration3": "Ad Manager: el análisis de competencia mejora tus propios anuncios."
     },
     "useCases": {
       "title": "Para quién",
@@ -2913,13 +2908,13 @@
   "skills-index": {
     "meta": {
       "title": "Habilidades: las 12 capacidades de Clyde | FutureMarketingAI",
-      "description": "Las 12 habilidades de Clyde: social, blogs, anuncios, voz, leads, email, SEO/GEO y más. 9 en producción, 3 próximamente."
+      "description": "Las 12 habilidades de Clyde: social, blogs, anuncios, voz, leads, email, SEO/GEO y más. 10 en producción, 2 próximamente."
     },
     "hero": {
       "eyebrow": "12 habilidades, una sola mente",
       "badge": "Founding abierto · {taken}/{total} reservadas",
       "title": "Las 12 habilidades de Clyde",
-      "subtitle": "Un Empleado AI de Marketing, doce habilidades, una memoria compartida por marca. Nueve en producción, tres próximamente."
+      "subtitle": "Un Empleado AI de Marketing, doce habilidades, una memoria compartida por marca. Diez en producción, dos próximamente."
     },
     "status": {
       "live": "Live"
@@ -3411,7 +3406,7 @@
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por marca.",
       "integration1": "Social Media: los Reels se publican vía programación.",
-      "integration2": "Ad Creator (próximamente): los anuncios de video pueden seguir el formato Reel.",
+      "integration2": "Ad Manager: los anuncios de video pueden seguir el formato Reel.",
       "integration3": "Blog Factory: los blogs se pueden resumir en un Reel de 60 segundos."
     },
     "useCases": {
@@ -3480,8 +3475,8 @@
             "description": "Artículos SEO largos de 1.500 a 3.000 palabras"
           },
           "adCreator": {
-            "title": "Ad Creator",
-            "description": "Anuncios estáticos y de vídeo para Meta"
+            "title": "Ad Manager",
+            "description": "Crear y dirigir anuncios por leads y CPL para Meta"
           },
           "reelBuilder": {
             "title": "Reel Builder",
@@ -3550,7 +3545,7 @@
       "applySubtitle": "Agenda una llamada"
     },
     "megaMenu": {
-      "tagline": "9 en vivo, 3 próximamente",
+      "tagline": "10 en vivo, 2 próximamente",
       "previewCta": "Ver habilidad",
       "viewAll": "Todas las habilidades"
     },

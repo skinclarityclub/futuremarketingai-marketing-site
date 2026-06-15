@@ -39,7 +39,7 @@ const WHISPERS: Record<string, string> = {
   '/skills/voice-agent': 'Telefoon? Ik laat het zien.',
   '/skills/social-media': 'Content-kalender nodig?',
   '/skills/lead-qualifier': 'Dit is wat je klanten krijgen.',
-  '/skills/ad-creator': 'Brief? Ik maak varianten.',
+  '/skills/ad-manager': 'Brief? Ik maak varianten.',
   '/skills/email-management': 'Inbox-classificatie tonen?',
   '/skills/reporting': 'Een weekrapport laten zien?',
   '/pricing': 'ROI berekenen.',

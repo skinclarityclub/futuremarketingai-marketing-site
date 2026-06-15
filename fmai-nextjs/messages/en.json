@@ -18,7 +18,7 @@
       "badge": "{taken} of {total} founding spots taken",
       "headlineMain": "This is Clyde.",
       "tagline": "Your <accent>AI marketing employee</accent>.",
-      "subtitle": "Remembers every brand. Twelve skills for your whole portfolio: social, blogs, email, lead qualification, SEO, analytics. Run autonomously, with memory that outlives campaigns.",
+      "subtitle": "Remembers every brand. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics. Run autonomously, with memory that outlives campaigns.",
       "trustAnchor": "Live in production since 2025. Max {maxPartners} partners per year.",
       "cta": "Book a call",
       "ctaSecondary": "Meet Clyde",
@@ -30,7 +30,7 @@
     },
     "services": {
       "title": "What Clyde does for your agency",
-      "subtitle": "Twelve skills, nine ready to deploy today.",
+      "subtitle": "Twelve skills, ten ready to deploy today.",
       "socialMedia": {
         "title": "Social Media Manager",
         "description": "Captions, scheduling and carousels per brand. Ready before you start on Monday."
@@ -75,8 +75,8 @@
         "description": "Full blog articles, optimised for SEO and GEO, ready to publish."
       },
       "adCreator": {
-        "title": "Ad Creator",
-        "description": "Ad variants for Meta, Google and TikTok. Includes copy, hooks and visual direction."
+        "title": "Ad Manager",
+        "description": "Create and steer ads: copy, visuals and video for Meta, plus leads, cost per lead and ad fatigue per ad."
       },
       "manychat": {
         "title": "ManyChat DM",
@@ -122,7 +122,7 @@
         "linkText": "Read the operational case"
       },
       "skills": {
-        "value": "9 / 12",
+        "value": "10 / 12",
         "label": "Skills ready to deploy today",
         "linkText": "All skills"
       },
@@ -399,7 +399,7 @@
       "items": {
         "q1": {
           "question": "How is Clyde different from ChatGPT or Jasper?",
-          "answer": "ChatGPT and Jasper are generic tools without memory. You have to supply context with every prompt. Clyde has persistent memory per brand: brand voice, audience, performance history and preferences stay retained. On top of that, Clyde orchestrates nine live skills plus three coming soon (social, blogs, email, lead qualification, SEO, analytics and more), not just text. One brain with shared memory, not a separate tool per task."
+          "answer": "ChatGPT and Jasper are generic tools without memory. You have to supply context with every prompt. Clyde has persistent memory per brand: brand voice, audience, performance history and preferences stay retained. On top of that, Clyde orchestrates ten live skills plus two coming soon (social, blogs, ads, email, lead qualification, SEO, analytics and more), not just text. One brain with shared memory, not a separate tool per task."
         },
         "q2": {
           "question": "What if I want to cancel?",
@@ -411,7 +411,7 @@
         },
         "q4": {
           "question": "Exactly how many skills do I get?",
-          "answer": "Twelve in total: 9 live (Social Media, Blog Factory, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orchestrator) and 3 coming soon (Voice Agent, Ad Creator, Reel Builder). Founding, Growth, Professional and Enterprise have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
+          "answer": "Twelve in total: 10 live (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orchestrator) and 2 coming soon (Voice Agent, Reel Builder). Founding, Growth, Professional and Enterprise have all 12 skills, with caps on the more expensive ones (voice, video, reels)."
         },
         "q5": {
           "question": "Why does this work better for agencies than separate tools?",
@@ -633,7 +633,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "The AI Marketing Employee for your agency. Nine skills live, three coming soon, one always-on system.",
+        "tagline": "The AI Marketing Employee for your agency. Ten skills live, two coming soon, one always-on system.",
         "copyright": "© {year} Future Marketing AI. All rights reserved.",
         "sections": {
           "skills": "Skills",
@@ -645,7 +645,7 @@
           "voice_agent": "Voice Agent",
           "lead_qualifier": "Lead Qualifier",
           "social_media": "Social Media",
-          "ad_creator": "Ad Creator",
+          "ad_creator": "Ad Manager",
           "reel_builder": "Reel Builder",
           "reporting": "Reporting",
           "email_management": "Email Management",
@@ -716,7 +716,7 @@
       "skill_blog_factory": "Blog Factory",
       "skill_voice_agent": "Voice Agent",
       "skill_lead_qualifier": "Lead Qualifier",
-      "skill_ad_creator": "Ad Creator",
+      "skill_ad_manager": "Ad Manager",
       "skill_reel_builder": "Reel Builder",
       "skill_email_management": "Email Management",
       "skill_manychat": "ManyChat DM",
@@ -1293,7 +1293,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Service description",
-            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers AI Marketing Employee services with configurable skills. Available skills include: Content Creator (blog articles, social content, newsletters), Voice Agent (inbound and outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Creator (AI-generated static and video ads) and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
+            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers AI Marketing Employee services with configurable skills. Available skills include: Content Creator (blog articles, social content, newsletters), Voice Agent (inbound and outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Manager (AI-generated static and video ads plus per-ad performance management) and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
@@ -1667,7 +1667,7 @@
       "title": "Works together with",
       "subtitle": "The Social Media skill shares context with other skills via the shared memory per brand.",
       "integration1": "Blog Factory: social posts derived from blog content.",
-      "integration2": "Ad Creator (coming soon): the best-performing organic content becomes ad test material.",
+      "integration2": "Ad Manager: the best-performing organic content becomes ad test material.",
       "integration3": "Reporting: social KPIs in the weekly performance digest."
     },
     "useCases": {
@@ -1720,55 +1720,55 @@
       }
     }
   },
-  "skills-ad-creator": {
+  "skills-ad-manager": {
     "meta": {
-      "title": "Ad Creator. Static and video ads for Meta | Clyde",
-      "description": "Ad copy, visuals, static ads and video ads for Meta. 10 credits static, 20 credits video. Output in multiple formats."
+      "title": "Ad Manager. Create and steer ads on leads and CPL | Clyde",
+      "description": "Create static and video ads, publish to Meta and steer per ad on leads, cost per lead and ad fatigue. 10 credits static, 20 credits video."
     },
     "hero": {
-      "eyebrow": "Skill 05. Ad Creator (coming soon)",
-      "title": "Clyde creates your Meta ads.",
-      "subtitle": "Static ads and video ads. Copy, visuals and multiple formats (Feed, Stories, Reels). Publishes directly to Meta Ads Manager. A/B variants included. No freelance designer needed. Coming soon.",
+      "eyebrow": "Skill 05. Ad Manager",
+      "title": "Clyde creates and steers your Meta ads.",
+      "subtitle": "Static ads and video ads: copy, visuals and multiple formats (Feed, Stories, Reels), published straight to Meta Ads Manager. After that Clyde steers on results: leads, cost per lead and ad fatigue per ad, in plain language.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Create 3 ad variants for the winter campaign",
-        "prompt2": "Write a video ad script for the glow serum launch",
-        "prompt3": "A/B test 2 creative variants for next week’s promo"
+        "prompt2": "Which ad has the lowest cost per lead?",
+        "prompt3": "Show the ad-fatigue signals of my running campaign"
       }
     },
     "features": {
       "title": "What Clyde does",
       "subtitle": "Four core functions of this skill.",
       "feature1": {
-        "title": "Static ads (10 credits)",
-        "body": "Image and copy in 1080×1080 (Feed) or 1080×1920 (Story or Reel). Orshot templates in your visual identity."
+        "title": "Create ads (10/20 credits)",
+        "body": "Copy, static visuals in 1080×1080 (Feed) or 1080×1920 (Story or Reel) and short video ads with motion graphics. In your visual identity, ready to publish."
       },
       "feature2": {
-        "title": "Video ads (20 credits)",
-        "body": "Short video ads with motion graphics, text overlays and music. Ideal for Reels and Stories."
+        "title": "Publish directly to Meta",
+        "body": "Roll out to Ads Manager via the connection. You set budget and audience, Clyde delivers the creative and queues it up."
       },
       "feature3": {
-        "title": "Meta Ad Library research",
-        "body": "Clyde will analyze what competitors are advertising and deliver examples plus a gap analysis."
+        "title": "Performance per ad",
+        "body": "Leads, cost per lead and ROAS per individual ad, not just per campaign. An honest empty state while there are no results yet."
       },
       "feature4": {
-        "title": "Generate A/B variants",
-        "body": "Request 3 to 5 variants on one ad concept: different hooks, visuals and CTAs. Ready to test in parallel."
+        "title": "Ad fatigue and recommendations",
+        "body": "Ranking and fatigue signals (frequency, CTR decline) translated into 'what do we improve now', in plain language. Plus A/B variants to test."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
         "title": "Brief and brand intake",
-        "body": "Product or service, audience, USP and budget. Clyde will read the brand guidelines to stay consistent."
+        "body": "Product or service, audience, USP and budget. Clyde reads the brand guidelines to stay consistent."
       },
       "step2": {
-        "title": "Generate ads",
-        "body": "Choose static or video, number of variants and format. Clyde will deliver publish-ready output within minutes."
+        "title": "Create and publish",
+        "body": "Choose static or video, number of variants and format. Clyde delivers publish-ready output and queues it in Ads Manager."
       },
       "step3": {
-        "title": "Publish to Meta",
-        "body": "Roll out directly to Ads Manager via the connection. You set budget and audience; Clyde will deliver the creative."
+        "title": "Steer on results",
+        "body": "Clyde tracks every ad: leads, cost per lead, ranking and fatigue. You see in plain language what works and what we adjust."
       }
     },
     "integrations": {
@@ -1776,17 +1776,17 @@
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Social Media: the best-performing organic posts become ad test material.",
       "integration2": "Blog Factory: blog content becomes ad copy for performance campaigns.",
-      "integration3": "Reporting: ad metrics (CTR, CPA, ROAS) in the digest."
+      "integration3": "Reporting: ad metrics (leads, CPL, CTR, ROAS) come together in the digest."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "E-commerce with many SKUs",
-        "body": "Per product 3 to 5 ad variants. Clyde scales ad volume without the bottleneck of a freelance designer."
+        "body": "Per product 3 to 5 ad variants, then steer on the winners based on cost per lead. Scale without the bottleneck of a freelance designer."
       },
       "useCase2": {
-        "title": "Service agencies running ads for multiple brands",
-        "body": "One Clyde delivers ads for 10 brands in parallel, each in its own visual identity and for its own audience."
+        "title": "Agencies managing ads for multiple brands",
+        "body": "One Clyde creates and monitors ads for 10 brands in parallel, each in its own visual identity, with performance per ad visible per brand."
       }
     },
     "allocation": {
@@ -1794,32 +1794,32 @@
       "subtitle": "What this skill costs per action, and how much is included in each tier."
     },
     "cta": {
-      "title": "Ready to hand ad creation over to Clyde?",
+      "title": "Ready to hand your ads over to Clyde?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
     },
     "faq": {
-      "title": "Frequently asked questions about Ad Creator",
+      "title": "Frequently asked questions about Ad Manager",
       "items": {
         "q1": {
-          "question": "What does the Ad Creator skill do exactly?",
-          "answer": "Clyde produces complete Meta ads: copy, visuals, static ads (1080x1080 or 1080x1920), and short video ads with motion graphics. Researches competitors in the Meta Ad Library, delivers A/B variants, and publishes directly to Ads Manager. No freelance designer or editor needed."
+          "question": "What does the Ad Manager skill do exactly?",
+          "answer": "Clyde creates complete Meta ads (copy, static visuals and short video ads) and then steers them on results: performance, leads and cost per lead per ad, ranking and ad-fatigue signals and A/B variants. Publishes directly to Ads Manager. No freelance designer or separate reporting tool needed."
         },
         "q2": {
-          "question": "Which platforms does Ad Creator support?",
-          "answer": "Meta Ads (Instagram and Facebook): Feed, Stories, and Reels formats. Output via the Meta Marketing API. TikTok, LinkedIn, and Google Ads export are on the product roadmap. Clients with budget on those channels can manually export PNG and MP4 for now."
+          "question": "Which platforms does Ad Manager support?",
+          "answer": "Meta Ads (Instagram and Facebook): Feed, Stories and Reels, plus per-ad performance via the Meta Marketing API. TikTok, LinkedIn and Google Ads are on the product roadmap. Clients with budget on those channels can export PNG and MP4 manually for now."
         },
         "q3": {
-          "question": "On which tiers is Ad Creator available?",
-          "answer": "Included on Growth (15 ads per month), Professional (50), and Enterprise (no cap). Founding Member receives 25 ads monthly for life at 997 EUR."
+          "question": "On which tiers is Ad Manager available?",
+          "answer": "Included on Growth (15 ads per month), Professional (50) and Enterprise (no cap). Founding Member receives 25 ads per month for life at 997 EUR. Performance per ad is included in all tiers."
         },
         "q4": {
-          "question": "How long does Ad Creator onboarding take?",
-          "answer": "Two to three weeks. Week 1 connects Ads Manager and Clyde reads previous campaigns. Week 2 delivers first variants with manual per-ad approval. After that the skill runs autonomously with calibration on CTR, CPA, and ROAS data from Reporting."
+          "question": "How long does Ad Manager onboarding take?",
+          "answer": "Two to three weeks. Week 1 connects Ads Manager and Clyde reads previous campaigns. Week 2 delivers first variants with manual per-ad approval. After that the skill runs autonomously and calibrates on leads, CPL, CTR and ROAS from Reporting."
         },
         "q5": {
           "question": "How does this differ from AdCreative or Pencil?",
-          "answer": "AdCreative and Pencil generate stand-alone banners from prompts. Clyde respects the brand voice per brand, knows the tone of previous successful posts via shared memory with Social Media Manager, and publishes directly. No manual cut-and-paste between tools."
+          "answer": "AdCreative and Pencil deliver stand-alone banners from prompts, with no steering afterwards. Clyde holds the brand voice per brand via shared memory, publishes directly and then tracks every ad on leads and cost per lead. Create and manage in one, no cut-and-paste between tools."
         }
       }
     }
@@ -2192,27 +2192,22 @@
   "roadmap": {
     "meta": {
       "title": "Roadmap. What Clyde will do next | FutureMarketingAI",
-      "description": "The three skills currently in development and testing: Voice Agent, Ad Creator and Reel Builder. Founding members get access first."
+      "description": "The two skills currently in development and testing: Voice Agent and Reel Builder. Founding members get access first."
     },
     "hero": {
       "eyebrow": "Roadmap",
       "title": "What Clyde will do next.",
-      "subtitle": "Nine skills run live in production. Three are on the roadmap, in active development and testing. Founding members get access first as they go live."
+      "subtitle": "Ten skills run live in production. Two are on the roadmap, in active development and testing. Founding members get access first as they go live."
     },
     "skills": {
       "eyebrow": "In the pipeline",
       "title": "In development",
-      "subtitle": "Three skills we are building now. No hard launch dates, but a clear order of value."
+      "subtitle": "Two skills we are building now. No hard launch dates, but a clear order of value."
     },
     "voiceAgent": {
       "name": "Voice Agent",
       "phase": "In testing",
       "description": "Inbound and outbound AI phone calls. Booking appointments, handling FAQs, escalating to a human. The interactive demo already works; the production integration with VAPI and calendar systems is in pilot."
-    },
-    "adCreator": {
-      "name": "Ad Creator",
-      "phase": "In development",
-      "description": "Static and video ads for Meta, including A/B variants and direct publishing to Meta Ads Manager. The creative pipeline runs internally; the Meta Ads Manager integration and approval flow are being finalised."
     },
     "reelBuilder": {
       "name": "Reel Builder",
@@ -2223,7 +2218,7 @@
       "eyebrow": "Early access",
       "scarcityEyebrow": "Founding open · {taken}/{total} reserved",
       "title": "Want to be first in line?",
-      "subtitle": "Founding members get early access to all three as they go live, plus a say in what we build next.",
+      "subtitle": "Founding members get early access to both as they go live, plus a say in what we build next.",
       "button": "Book a call"
     }
   },
@@ -2862,7 +2857,7 @@
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Blog Factory: research data feeds the choice of blog topics.",
       "integration2": "Social Media: trend insights become content proposals.",
-      "integration3": "Ad Creator (coming soon): competitor analysis improves your own ads."
+      "integration3": "Ad Manager: competitor analysis improves your own ads."
     },
     "useCases": {
       "title": "Who this is for",
@@ -2913,13 +2908,13 @@
   "skills-index": {
     "meta": {
       "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
-      "description": "Browse Clyde's 12 skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 9 live, 3 coming soon."
+      "description": "Browse Clyde's 12 skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 live, 2 coming soon."
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
       "badge": "Founding open · {taken}/{total} reserved",
       "title": "Clyde's 12 skills",
-      "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Nine are live in production, three are coming soon."
+      "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Ten are live in production, two are coming soon."
     },
     "status": {
       "live": "Live"
@@ -3411,7 +3406,7 @@
       "title": "Works together with",
       "subtitle": "Via the shared memory per brand.",
       "integration1": "Social Media: Reels are published via the scheduler.",
-      "integration2": "Ad Creator (coming soon): video ads can follow the Reel format.",
+      "integration2": "Ad Manager: video ads can follow the Reel format.",
       "integration3": "Blog Factory: blogs can be summarized into a 60-second Reel."
     },
     "useCases": {
@@ -3480,8 +3475,8 @@
             "description": "Longform SEO articles 1,500 to 3,000 words"
           },
           "adCreator": {
-            "title": "Ad Creator",
-            "description": "Static and video ads for Meta"
+            "title": "Ad Manager",
+            "description": "Create and steer ads on leads and CPL for Meta"
           },
           "reelBuilder": {
             "title": "Reel Builder",
@@ -3550,7 +3545,7 @@
       "applySubtitle": "Book a call"
     },
     "megaMenu": {
-      "tagline": "9 live, 3 coming soon",
+      "tagline": "10 live, 2 coming soon",
       "previewCta": "View skill",
       "viewAll": "All skills"
     },

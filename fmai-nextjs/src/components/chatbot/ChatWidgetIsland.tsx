@@ -31,7 +31,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hoi, ik ben Clyde. Ik kan laten zien hoe ik telefoons opneem of een vraag beantwoorden.',
     '/skills/lead-qualifier':
       'Hoi, ik ben Clyde. Dit is precies wat je klanten op hun site zouden krijgen.',
-    '/skills/ad-creator':
+    '/skills/ad-manager':
       'Hoi, ik ben Clyde. Geef me een briefing en ik draai er varianten uit.',
     '/skills/email-management':
       'Hoi, ik ben Clyde. Ik filter je Gmail en stuur dagelijks een digest van wat ertoe doet.',
@@ -52,7 +52,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hi, I am Clyde. I can show you how I answer calls, or just answer a question.',
     '/skills/lead-qualifier':
       'Hi, I am Clyde. This is exactly what your clients would get on their site.',
-    '/skills/ad-creator':
+    '/skills/ad-manager':
       'Hi, I am Clyde. Give me a brief and I will spin up variants.',
     '/skills/email-management':
       'Hi, I am Clyde. I filter your Gmail and send a daily digest of what matters.',
@@ -73,7 +73,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hola, soy Clyde. Puedo mostrarte cómo atiendo llamadas, o responder una pregunta.',
     '/skills/lead-qualifier':
       'Hola, soy Clyde. Esto es exactamente lo que recibirían tus clientes en su web.',
-    '/skills/ad-creator':
+    '/skills/ad-manager':
       'Hola, soy Clyde. Dame un briefing y te saco variantes.',
     '/skills/email-management':
       'Hola, soy Clyde. Filtro tu Gmail y envío un resumen diario de lo que importa.',
@@ -228,7 +228,7 @@ const PROACTIVE_PROMPTS: Record<ChatLocale, Partial<Record<string, string>>> = {
     '/skills/voice-agent': 'Hoe neem je precies een telefoon op?',
     '/skills/social-media': 'Maak een content-plan voor mijn merk',
     '/skills/lead-qualifier': 'Score een voorbeeld-lead voor mij',
-    '/skills/ad-creator': 'Genereer 3 ad-varianten voor mij',
+    '/skills/ad-manager': 'Genereer 3 ad-varianten voor mij',
     '/skills/email-management': 'Hoe filter je mijn inbox?',
     '/skills/reporting': 'Laat een weekrapport zien',
     '/skills/blog-factory': 'Plan een SEO-artikel voor mij',
@@ -242,7 +242,7 @@ const PROACTIVE_PROMPTS: Record<ChatLocale, Partial<Record<string, string>>> = {
     '/skills/voice-agent': 'How exactly do you answer a call?',
     '/skills/social-media': 'Make a content plan for my brand',
     '/skills/lead-qualifier': 'Score a sample lead for me',
-    '/skills/ad-creator': 'Generate 3 ad variants for me',
+    '/skills/ad-manager': 'Generate 3 ad variants for me',
     '/skills/email-management': 'How do you filter my inbox?',
     '/skills/reporting': 'Show me a weekly report',
     '/skills/blog-factory': 'Plan an SEO article for me',
@@ -256,7 +256,7 @@ const PROACTIVE_PROMPTS: Record<ChatLocale, Partial<Record<string, string>>> = {
     '/skills/voice-agent': '¿Cómo atiendes exactamente una llamada?',
     '/skills/social-media': 'Crea un plan de contenido para mi marca',
     '/skills/lead-qualifier': 'Puntúa un lead de ejemplo para mí',
-    '/skills/ad-creator': 'Genera 3 variantes de anuncio para mí',
+    '/skills/ad-manager': 'Genera 3 variantes de anuncio para mí',
     '/skills/email-management': '¿Cómo filtras mi bandeja de entrada?',
     '/skills/reporting': 'Muéstrame un informe semanal',
     '/skills/blog-factory': 'Planifica un artículo SEO para mí',
@@ -279,7 +279,7 @@ const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
     '/skills/social-media': 'Zal ik een content-kalender voor een testmerk opzetten?',
     '/skills/voice-agent': 'Zal ik laten zien hoe ik een inkomend gesprek afhandel?',
     '/skills/lead-qualifier': 'Wil je dat ik een echte lead voor je kwalificeer?',
-    '/skills/ad-creator': 'Zal ik 3 ad-varianten genereren voor een testproduct?',
+    '/skills/ad-manager': 'Zal ik 3 ad-varianten genereren voor een testproduct?',
     '/skills/email-management': 'Wil je zien hoe ik jouw inbox zou indelen?',
     '/skills/reporting': 'Zal ik een voorbeeld weekrapport genereren?',
     '/skills/blog-factory': 'Wil je dat ik een SEO-artikel plan voor een testmerk?',
@@ -295,7 +295,7 @@ const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
     '/skills/social-media': 'Shall I set up a content calendar for a test brand?',
     '/skills/voice-agent': 'Shall I show you how I handle an incoming call?',
     '/skills/lead-qualifier': 'Want me to qualify a real lead for you?',
-    '/skills/ad-creator': 'Shall I generate 3 ad variants for a test product?',
+    '/skills/ad-manager': 'Shall I generate 3 ad variants for a test product?',
     '/skills/email-management': 'Want to see how I would organize your inbox?',
     '/skills/reporting': 'Shall I generate a sample weekly report?',
     '/skills/blog-factory': 'Want me to plan an SEO article for a test brand?',
@@ -311,7 +311,7 @@ const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
     '/skills/social-media': '¿Preparo un calendario de contenido para una marca de prueba?',
     '/skills/voice-agent': '¿Te muestro cómo gestiono una llamada entrante?',
     '/skills/lead-qualifier': '¿Quieres que cualifique un lead real para ti?',
-    '/skills/ad-creator': '¿Genero 3 variantes de anuncio para un producto de prueba?',
+    '/skills/ad-manager': '¿Genero 3 variantes de anuncio para un producto de prueba?',
     '/skills/email-management': '¿Quieres ver cómo organizaría tu bandeja de entrada?',
     '/skills/reporting': '¿Genero un informe semanal de ejemplo?',
     '/skills/blog-factory': '¿Quieres que planifique un artículo SEO para una marca de prueba?',

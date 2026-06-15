@@ -29,7 +29,7 @@ const PAGE_CONTEXT_HINTS: Record<string, string> = {
     'User is on the Social Media skill page. Offer to create a content calendar.',
   '/skills/blog-factory':
     'User is on the Blog Factory skill page. Offer to plan an SEO blog article.',
-  '/skills/ad-creator': 'User is on the Ad Creator skill page. Offer to generate ad variations.',
+  '/skills/ad-manager': 'User is on the Ad Manager skill page. Offer to generate ad variants or explain per-ad performance, leads and cost per lead.',
   '/skills/reel-builder':
     'User is on the Reel Builder skill page (coming soon). Explain the roadmap.',
   '/skills/voice-agent':
