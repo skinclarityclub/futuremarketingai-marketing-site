@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import {
   Megaphone,
+  Share2,
   UserCheck,
   Inbox,
   BarChart3,
@@ -42,8 +43,9 @@ type ServiceCard = {
 }
 
 const SECONDARY_SERVICES: readonly ServiceCard[] = [
-  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Megaphone,       status: 'live',         featured: true },
+  { key: 'socialMedia',     href: '/skills/social-media',     Icon: Share2,          status: 'live',         featured: true },
   { key: 'blogFactory',     href: '/skills/blog-factory',     Icon: FileText,        status: 'live'         },
+  { key: 'adCreator',       href: '/skills/ad-manager',       Icon: Megaphone,       status: 'live'         },
   { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck,       status: 'live'         },
   { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox,           status: 'live'         },
   { key: 'manychat',        href: '/skills/manychat',         Icon: MessageSquare,   status: 'live'         },
@@ -51,7 +53,6 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
   { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search,          status: 'live'         },
   { key: 'research',        href: '/skills/research',         Icon: Target,          status: 'live'         },
   { key: 'voiceAgent',      href: '/skills/voice-agent',      Icon: Mic,             status: 'coming_soon'  },
-  { key: 'adCreator',       href: '/skills/ad-manager',       Icon: Megaphone,       status: 'live'         },
   { key: 'reelBuilder',     href: '/skills/reel-builder',     Icon: Video,           status: 'coming_soon'  },
 ] as const
 
