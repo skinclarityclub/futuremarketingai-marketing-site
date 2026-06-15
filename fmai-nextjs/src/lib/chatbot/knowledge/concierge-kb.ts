@@ -155,12 +155,16 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
 - Wanted to scale organic content without hiring an agency or junior marketer
 
 **Solution Deployed:**
-Clyde, the AI Marketing Medewerker, with 6 of 12 skills active:
+Clyde, the AI Marketing Medewerker, with all 10 live skills active:
 - Social Media Manager (3 IG accounts in distinct brand voices)
 - Blog Factory (SEO blogs for skinclarityclub.nl)
+- Ad Manager (Meta ads for the webshop: create, publish, steer on leads and cost per lead)
 - SEO / GEO Analyst (technical SEO plus AI citation monitoring)
 - Reporting and Analytics (weekly digest Monday 08:00 across IG, Shopify, SEO)
 - Research (skincare trends and competitor analysis)
+- Lead Qualifier (website chatbot that qualifies visitors and routes warm leads)
+- Email Management (Gmail classification with a daily digest)
+- ManyChat DM (Instagram DM automation with keyword triggers and AI replies)
 - Clyde orchestrator (per-account memory plus portfolio-level learning)
 
 **Results (autonomous, weekly):**

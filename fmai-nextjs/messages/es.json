@@ -2431,7 +2431,7 @@
         "title": "3 cuentas. 4 marcas. Un Empleado AI de Marketing.",
         "chip1": "3 cuentas incorporadas",
         "chip2": "4 marcas en vivo en 7 dias",
-        "chip3": "6 habilidades activas",
+        "chip3": "10 habilidades activas",
         "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. De forma autónoma, cada día, sin que el equipo tenga que estar encima."
       },
       "setup": {
@@ -2449,7 +2449,7 @@
       },
       "skills": {
         "title": "Qué habilidades están activas",
-        "subtitle": "De las 12 habilidades de Clyde, 6 están activas para SKC. El resto está disponible en segundo plano, listo cuando el negocio lo pida.",
+        "subtitle": "De las 12 habilidades de Clyde, las 10 activas funcionan para SKC. Las dos restantes (Voice Agent y Reel Builder) llegan en cuanto estén disponibles.",
         "skill1Name": "Social Media Manager",
         "skill1Body": "Carruseles, posts y stories para 3 cuentas de Instagram. Generado con AI en la voz de marca correcta por cuenta.",
         "skill2Name": "Blog Factory",
@@ -2461,7 +2461,15 @@
         "skill5Name": "Research",
         "skill5Body": "Monitorización de tendencias en el cuidado de la piel, análisis de competencia e ideas de contenido con citas.",
         "skill6Name": "Clyde (orquestador)",
-        "skill6Body": "El Empleado AI de Marketing central que conecta las 5 habilidades. Memoria por cuenta y aprendizaje entre habilidades."
+        "skill6Body": "El Empleado AI de Marketing central que conecta las 9 habilidades. Memoria por cuenta y aprendizaje entre habilidades.",
+        "skill7Name": "Ad Manager",
+        "skill7Body": "Anuncios de Meta para la tienda: crear anuncios estáticos y de vídeo, publicarlos y dirigir por leads y coste por lead.",
+        "skill8Name": "Lead Qualifier",
+        "skill8Body": "Chatbot web que cualifica a los visitantes y enruta los leads cálidos a ventas.",
+        "skill9Name": "Email Management",
+        "skill9Body": "Clasificación de Gmail con un resumen diario: solo aflora lo que necesita atención.",
+        "skill10Name": "ManyChat DM",
+        "skill10Body": "Automatización de DM de Instagram con disparadores por palabra clave y respuestas IA en la voz de marca, además de captura de leads."
       },
       "outcomes": {
         "title": "Qué entrega Clyde",

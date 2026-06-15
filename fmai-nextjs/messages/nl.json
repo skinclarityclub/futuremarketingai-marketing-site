@@ -2431,7 +2431,7 @@
         "title": "3 accounts. 4 merken. Eén AI Marketing Medewerker.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 merken live in 7 dagen",
-        "chip3": "6 vaardigheden actief",
+        "chip3": "10 vaardigheden actief",
         "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Autonoom, elke dag, zonder dat het team er omkijken naar heeft."
       },
       "setup": {
@@ -2449,7 +2449,7 @@
       },
       "skills": {
         "title": "Welke vaardigheden actief zijn",
-        "subtitle": "Van de 12 vaardigheden van Clyde staan er 6 aan voor SKC. De rest draait op de achtergrond en is beschikbaar zodra de business daarom vraagt.",
+        "subtitle": "Van de 12 vaardigheden van Clyde staan alle 10 live skills aan voor SKC. De laatste twee (Voice Agent en Reel Builder) komen erbij zodra ze live gaan.",
         "skill1Name": "Social Media Manager",
         "skill1Body": "Carrousels, posts en stories voor 3 Instagram-accounts. AI-gegenereerd in de juiste merkstem per account.",
         "skill2Name": "Blog Factory",
@@ -2461,7 +2461,15 @@
         "skill5Name": "Research",
         "skill5Body": "Trendmonitoring in huidverzorging, concurrentie-analyse en content-ideeën met bronvermelding.",
         "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "De centrale AI Marketing Medewerker die de 5 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen."
+        "skill6Body": "De centrale AI Marketing Medewerker die de 9 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen.",
+        "skill7Name": "Ad Manager",
+        "skill7Body": "Meta-advertenties voor de webshop: statische en video-ads maken, publiceren en sturen op leads en kosten per lead.",
+        "skill8Name": "Lead Qualifier",
+        "skill8Body": "Website-chatbot die bezoekers kwalificeert en warme leads doorzet naar sales.",
+        "skill9Name": "Email Management",
+        "skill9Body": "Gmail-classificatie met een dagelijkse digest: alleen wat aandacht nodig heeft komt bovendrijven.",
+        "skill10Name": "ManyChat DM",
+        "skill10Body": "Instagram DM-automatisering met keyword-triggers en AI-antwoorden in de merkstem, plus lead-capture."
       },
       "outcomes": {
         "title": "Wat Clyde oplevert",

@@ -2431,7 +2431,7 @@
         "title": "3 accounts. 4 brands. One AI Marketing Employee.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 brands live in 7 days",
-        "chip3": "6 skills active",
+        "chip3": "10 skills active",
         "subtitle": "SkinClarity Club has been a Founding client from week one. Clyde manages 3 Instagram accounts, 4 brands and multiple content types. Autonomously, every day, without the team having to look over its shoulder."
       },
       "setup": {
@@ -2449,7 +2449,7 @@
       },
       "skills": {
         "title": "Which skills are active",
-        "subtitle": "Of Clyde's 12 skills, 6 are active for SKC. The rest runs in the background and is available as soon as the business asks for it.",
+        "subtitle": "Of Clyde's 12 skills, all 10 live ones are active for SKC. The last two (Voice Agent and Reel Builder) arrive as they go live.",
         "skill1Name": "Social Media Manager",
         "skill1Body": "Carousels, posts and stories for 3 Instagram accounts. AI-generated in the right brand voice per account.",
         "skill2Name": "Blog Factory",
@@ -2461,7 +2461,15 @@
         "skill5Name": "Research",
         "skill5Body": "Trend monitoring in skincare, competitor analysis and content ideas with source citation.",
         "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "The central AI Marketing Employee that ties the 5 skills together. Memory per account plus cross-skill learning."
+        "skill6Body": "The central AI Marketing Employee that ties the 9 skills together. Memory per account plus cross-skill learning.",
+        "skill7Name": "Ad Manager",
+        "skill7Body": "Meta ads for the webshop: create static and video ads, publish them, and steer on leads and cost per lead.",
+        "skill8Name": "Lead Qualifier",
+        "skill8Body": "Website chatbot that qualifies visitors and routes warm leads to sales.",
+        "skill9Name": "Email Management",
+        "skill9Body": "Gmail classification with a daily digest: only what needs attention surfaces.",
+        "skill10Name": "ManyChat DM",
+        "skill10Body": "Instagram DM automation with keyword triggers and AI replies in the brand voice, plus lead capture."
       },
       "outcomes": {
         "title": "What Clyde delivers",
