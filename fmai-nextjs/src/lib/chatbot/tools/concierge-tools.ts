@@ -20,7 +20,7 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'Sindy runt SkinClarity Club over 4 merken en 3 Instagram-accounts. Als solo-operator zat ze aan haar capaciteitsplafond. Ze wilde organische content opschalen zonder een bureau of junior marketeer in te huren.',
     solution:
-      'Clyde (de AI Marketing Medewerker) ingezet met 6 van de 12 vaardigheden: Social Media, Blog Factory, Rapportage, SEO/GEO, Research en de Clyde-orchestrator. Geheugen per account gescheiden. Wekelijkse performance-digest op maandag 08:00. Nachtelijke geheugenconsolidatie.',
+      'Clyde (de AI Marketing Medewerker) ingezet met 10 van de 12 vaardigheden: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Rapportage, SEO/GEO, Research en de Clyde-orchestrator. Geheugen per account gescheiden. Wekelijkse performance-digest op maandag 08:00. Nachtelijke geheugenconsolidatie.',
     results: [
       'Circa 21 carrousels per week over 3 Instagram-accounts',
       'Circa 15 Instagram-posts per week',
@@ -39,7 +39,7 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'Sindy runs SkinClarity Club across 4 brands and 3 Instagram accounts. As a single operator she hit her capacity ceiling. She wanted to scale organic content without hiring an agency or a junior marketer.',
     solution:
-      'Deployed Clyde (the AI Marketing Employee) with 6 of 12 skills active: Social Media, Blog Factory, Reporting, SEO/GEO, Research and the Clyde orchestrator. Per-account memory isolation. Weekly performance digest at Monday 08:00. Overnight memory consolidation.',
+      'Deployed Clyde (the AI Marketing Employee) with 10 of 12 skills active: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research and the Clyde orchestrator. Per-account memory isolation. Weekly performance digest at Monday 08:00. Overnight memory consolidation.',
     results: [
       'About 21 carousels per week across 3 Instagram accounts',
       'About 15 Instagram posts per week',
@@ -58,7 +58,7 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'Sindy gestiona SkinClarity Club en 4 marcas y 3 cuentas de Instagram. Como operadora en solitario llegó a su límite de capacidad. Quería escalar el contenido orgánico sin contratar una agencia ni un marketero junior.',
     solution:
-      'Se desplegó Clyde (el Empleado de Marketing IA) con 6 de las 12 habilidades: Social Media, Blog Factory, Reporting, SEO/GEO, Research y el orquestador Clyde. Memoria aislada por cuenta. Resumen de rendimiento semanal los lunes a las 08:00. Consolidación de memoria nocturna.',
+      'Se desplegó Clyde (el Empleado de Marketing IA) con 10 de las 12 habilidades: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research y el orquestador Clyde. Memoria aislada por cuenta. Resumen de rendimiento semanal los lunes a las 08:00. Consolidación de memoria nocturna.',
     results: [
       'Cerca de 21 carruseles por semana en 3 cuentas de Instagram',
       'Cerca de 15 publicaciones de Instagram por semana',

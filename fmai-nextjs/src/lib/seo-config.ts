@@ -34,7 +34,7 @@ export const TWITTER_URL: string | null = null
 // Do NOT export a Crunchbase profile URL constant. Do NOT include in buildSameAs().
 
 // Personal profiles — confirm slugs in DECISIONS doc before commit.
-export const LINKEDIN_DALEY_URL = 'https://www.linkedin.com/in/daleymaat' // TODO: confirm slug
+export const LINKEDIN_DALEY_URL = 'https://www.linkedin.com/in/daley-van-diest' // confirmed 2026-06-16
 export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-skinclarity' // TODO: confirm slug with Sindy
 
 // Per DECISIONS Q2: KvK = added once Daley confirms registration via kvk.nl/zoeken. null until then.
