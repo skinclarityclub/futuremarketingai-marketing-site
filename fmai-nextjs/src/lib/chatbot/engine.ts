@@ -11,6 +11,7 @@ import { explainComplexity, MODEL_IDS } from './complexity-detector'
 import { createPersonaTools } from './tool-executor'
 import { normalizeChatbotLocale } from './tool-data'
 import type { ChatRequest } from './types'
+import { forwardTurnToInbox } from '../fma-inbox-forwarder'
 
 function getClientIp(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for')
@@ -87,6 +88,17 @@ export async function handleChatRequest(request: Request): Promise<Response> {
     if (!validation.valid) {
       return Response.json({ error: validation.reason }, { status: 400 })
     }
+
+    // Fire-and-forget: stuur user-turn naar inbox (dormant als env vars ontbreken)
+    // Volgorde-garantie: user arriveert in DB VOOR assistant turn (onFinish)
+    void forwardTurnToInbox({
+      account_key: 'fmai_website',
+      vendor: 'own-bot',
+      external_session_id: sessionId,
+      external_message_id: crypto.randomUUID(),
+      role: 'user',
+      content: userMessageText,
+    });
 
     // 6. Check rate limits
     const ip = getClientIp(request)
@@ -204,6 +216,20 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       stopWhen: stepCountIs(context?.demoMode ? 2 : 3),
       maxOutputTokens: persona.maxTokens,
       temperature: persona.temperature,
+      onFinish: ({ text }: { text: string }) => {
+        // Fire-and-forget: stuur assistant-turn naar inbox na stream-voltooiing
+        // text is de complete gestreamde tekst — nooit leeg bij normale flow
+        if (text.trim().length > 0) {
+          void forwardTurnToInbox({
+            account_key: 'fmai_website',
+            vendor: 'own-bot',
+            external_session_id: sessionId,
+            external_message_id: crypto.randomUUID(),
+            role: 'assistant',
+            content: text,
+          });
+        }
+      },
     })
 
     return result.toUIMessageStreamResponse()
