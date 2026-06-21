@@ -919,7 +919,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen: Founding €997 levenslang + per werkruimte | FutureMarketingAI",
+      "title": "Prijzen: Founding €997 per werkruimte | FutureMarketingAI",
       "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna per werkruimte: Growth €499, Pro €399, Enterprise €299. Geen lock-in."
     },
     "hero": {
@@ -1506,7 +1506,7 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Website-chatbot die leads scoort en routeert | Clyde",
+      "title": "Lead Qualifier. Chatbot die leads scoort en routeert | Clyde",
       "description": "AI-chatbot op de website, lead scoring, CRM-routering, gespreksanalyse. 2 credits per score."
     },
     "hero": {
@@ -1614,7 +1614,7 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager: captions en carrousels per merk | Clyde",
+      "title": "Social Media Manager: captions en carrousels | Clyde",
       "description": "Clyde verzorgt social media per merk: AI-captions in de merkstem, inplanning, carrousels. 1 tot 2 credits per post."
     },
     "hero": {
@@ -1930,7 +1930,7 @@
   },
   "founding-member": {
     "meta": {
-      "title": "Founding Member: 10 plekken, €997 levenslang | FutureMarketingAI",
+      "title": "Founding Member: €997 levenslang | FutureMarketingAI",
       "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. Onbeperkt aantal werkruimtes, prijs-lock voor altijd. 1/10 plekken bezet."
     },
     "hero": {
@@ -2069,7 +2069,7 @@
   },
   "memory": {
     "meta": {
-      "title": "Geheugen. Clyde onthoudt elk merk, voor altijd | FutureMarketingAI",
+      "title": "Geheugen. Clyde onthoudt elk merk | FutureMarketingAI",
       "description": "Clyde onthoudt elk merk apart: merkstem, doelgroep, KPI's en wat werkte in het verleden. Strikt gescheiden per klant, elke week scherper."
     },
     "hero": {
@@ -2423,7 +2423,7 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 accounts, 4 merken, 1 Clyde | FutureMarketingAI",
+        "title": "SkinClarity Club: 3 accounts, 4 merken | FutureMarketingAI",
         "description": "Hoe Clyde de volledige social-operatie van SkinClarity Club autonoom runt: 3 Instagram-accounts, 4 merken, founding partner."
       },
       "hero": {
@@ -2707,7 +2707,7 @@
   },
   "skills-email-management": {
     "meta": {
-      "title": "Email Management. Gmail-inbox classificeren en digest | Clyde",
+      "title": "Email Management. Gmail-inbox classificeren | Clyde",
       "description": "Gmail-inbox classificeren, slimme labels, dagelijkse digest en conceptantwoorden. 5 credits per actie."
     },
     "hero": {
@@ -2945,7 +2945,7 @@
   },
   "skills-blog-factory": {
     "meta": {
-      "title": "Blog Factory. SEO-artikelen van zoekwoord tot publicatie | Clyde",
+      "title": "Blog Factory. SEO-artikelen zoekwoord tot publicatie | Clyde",
       "description": "Zoekwoord-onderzoek, longreads van 1500 tot 3000 woorden, SEO-optimalisatie en automatische publicatie. 15 credits per artikel."
     },
     "hero": {
@@ -3257,7 +3257,7 @@
   },
   "skills-manychat": {
     "meta": {
-      "title": "ManyChat DM. Instagram-keywordtriggers met AI-antwoorden | Clyde",
+      "title": "ManyChat DM. Instagram-triggers met AI-antwoorden | Clyde",
       "description": "Instagram-DM-keywordtriggers, AI-antwoorden, lead capture en CRM-routering. 2 credits per 10 DM's."
     },
     "hero": {
@@ -3361,7 +3361,7 @@
   },
   "skills-reel-builder": {
     "meta": {
-      "title": "Reel Builder. Verticale AI-video's met captions en muziek | Clyde",
+      "title": "Reel Builder. Verticale AI-video's met muziek | Clyde",
       "description": "Korte verticale video's (9:16), AI-scripts, automatische captions en muziek voor Instagram Reels, TikTok en Shorts. 25 credits per Reel."
     },
     "hero": {

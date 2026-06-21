@@ -919,7 +919,7 @@
   },
   "pricing": {
     "meta": {
-      "title": "Precios: Founding €997 lifetime y por espacio | FutureMarketingAI",
+      "title": "Precios: Founding €997 por espacio | FutureMarketingAI",
       "description": "Founding €997 de por vida (10 plazas). Después por espacio: Growth €499, Professional €399, Enterprise €299. Sin lock-in, sin costes ocultos."
     },
     "hero": {
@@ -1506,7 +1506,7 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot web que puntúa y enruta leads | Clyde",
+      "title": "Lead Qualifier. Chatbot que puntúa y enruta leads | Clyde",
       "description": "Chatbot AI en la web, scoring de leads, enrutado al CRM, análisis de conversación. 2 créditos por score."
     },
     "hero": {
@@ -1826,7 +1826,7 @@
   },
   "skills-reporting": {
     "meta": {
-      "title": "Reporting. Paneles, informes y detección de anomalías | Clyde",
+      "title": "Reporting. Paneles, informes y anomalías | Clyde",
       "description": "Informes semanales de rendimiento, paneles de KPIs y detección de anomalías con alertas. 5 créditos por informe."
     },
     "hero": {
@@ -1930,7 +1930,7 @@
   },
   "founding-member": {
     "meta": {
-      "title": "Founding Member: 10 plazas, 997 € de por vida | FutureMarketingAI",
+      "title": "Founding Member: 997 € de por vida | FutureMarketingAI",
       "description": "Founding Member: €997/mes de por vida, solo primeras 10 agencias. Espacios de trabajo ilimitados, precio fijo para siempre. 1/10 plazas."
     },
     "hero": {
@@ -2069,7 +2069,7 @@
   },
   "memory": {
     "meta": {
-      "title": "Memoria. Clyde recuerda cada marca, para siempre | FutureMarketingAI",
+      "title": "Memoria. Clyde recuerda cada marca | FutureMarketingAI",
       "description": "Clyde recuerda cada marca por separado: voz de marca, audiencia, KPIs y lo que funcionó antes. Aislamiento por cliente, mejor cada semana."
     },
     "hero": {
@@ -2423,7 +2423,7 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 cuentas, 4 marcas, 1 Clyde | FutureMarketingAI",
+        "title": "SkinClarity Club: 3 cuentas, 4 marcas | FutureMarketingAI",
         "description": "Cómo Clyde gestiona de forma autónoma toda la operación social de SkinClarity Club: 3 cuentas de Instagram, 4 marcas, founding partner."
       },
       "hero": {
@@ -2707,7 +2707,7 @@
   },
   "skills-email-management": {
     "meta": {
-      "title": "Email Management. Clasificar la bandeja de Gmail e informe | Clyde",
+      "title": "Email Management. Clasificar la bandeja de Gmail | Clyde",
       "description": "Clasificación de la bandeja de Gmail, etiquetas inteligentes, informe diario y borradores de respuesta. 5 créditos por acción."
     },
     "hero": {
@@ -2811,7 +2811,7 @@
   },
   "skills-research": {
     "meta": {
-      "title": "Research. Estudio de mercado, tendencias y competencia | Clyde",
+      "title": "Research. Estudio de mercado y competencia | Clyde",
       "description": "Investigación de mercado automatizada, seguimiento de tendencias y análisis de competencia con citación de fuentes. 3 créditos por consulta."
     },
     "hero": {
@@ -3049,7 +3049,7 @@
   },
   "skills-seo-geo": {
     "meta": {
-      "title": "SEO / GEO. Auditorías SEO y monitorización de citaciones AI | Clyde",
+      "title": "SEO / GEO. Auditorías SEO y monitorización AI | Clyde",
       "description": "Auditorías SEO, posiciones, Core Web Vitals y citaciones AI en ChatGPT y Perplexity. 5 créditos auditoría, 3 créditos informe."
     },
     "hero": {
@@ -3257,7 +3257,7 @@
   },
   "skills-manychat": {
     "meta": {
-      "title": "ManyChat DM: triggers de palabra clave con respuestas AI | Clyde",
+      "title": "ManyChat DM: triggers de palabra clave con AI | Clyde",
       "description": "Triggers de palabra clave en DM de Instagram, respuestas AI, captura de leads y enrutado al CRM. 2 créditos por cada 10 DMs."
     },
     "hero": {
@@ -3361,7 +3361,7 @@
   },
   "skills-reel-builder": {
     "meta": {
-      "title": "Reel Builder. Videos AI verticales con subtítulos y música | Clyde",
+      "title": "Reel Builder. Videos AI verticales con música | Clyde",
       "description": "Videos verticales cortos (9:16), guiones AI, subtítulos automáticos y música para Instagram Reels, TikTok y Shorts. 25 créditos por Reel."
     },
     "hero": {
