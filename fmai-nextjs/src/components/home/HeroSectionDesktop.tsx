@@ -45,9 +45,19 @@ export function HeroSectionDesktop(props: HeroSectionProps) {
         {badge}
       </motion.div>
 
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary mb-3">
+      {/*
+        role="heading" aria-level={1} instead of a real <h1>: the mobile
+        variant (HeroSectionMobile) owns the single <h1> tag so the SSR HTML
+        has exactly one h1 (avoids the H1_MULTIPLE crawler finding). This stays
+        a semantic level-1 heading for screen readers on desktop.
+      */}
+      <div
+        role="heading"
+        aria-level={1}
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary mb-3"
+      >
         <KineticHeadline text={headlineMain} className="block" baseDelay={0.25} />
-      </h1>
+      </div>
 
       <motion.p
         className="text-xl sm:text-2xl lg:text-3xl font-normal text-text-secondary mb-6 lg:mb-8 [&_span]:text-accent-system [&_span]:font-medium"

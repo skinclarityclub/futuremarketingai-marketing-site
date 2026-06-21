@@ -23,8 +23,11 @@ interface HeroSectionProps {
   the full motion-react experience untouched.
 
   Both variants are SSR'd in HTML and gated by CSS (`lg:hidden` /
-  `hidden lg:flex`). Two H1s exist in the DOM, but only one is visible
-  per viewport, so they're not in screen-reader conflict in practice.
+  `hidden lg:flex`). To keep exactly one <h1> TAG in the SSR HTML (the
+  crawler counts tags, not visible elements), the mobile variant owns the
+  real <h1> and the desktop variant renders the same headline as
+  role="heading" aria-level={1}. Only one is visible per viewport, so
+  there's no screen-reader conflict.
 */
 export function HeroSection(props: HeroSectionProps) {
   return (
