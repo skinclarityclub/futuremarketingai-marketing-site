@@ -55,7 +55,13 @@ export async function generateMetadata({
     : undefined
 
   return {
-    title: `${post.title} | ${SITE_NAME}`,
+    // Keep the brand suffix only when the full title still fits <=60 chars; otherwise render the
+    // (already <=60) article title alone. `absolute` bypasses any root title template so the brand
+    // is never appended a second time (the kennisbank article titles are descriptive + long).
+    title: {
+      absolute:
+        `${post.title} | ${SITE_NAME}`.length <= 60 ? `${post.title} | ${SITE_NAME}` : post.title,
+    },
     description: post.description,
     alternates: {
       canonical: url,
