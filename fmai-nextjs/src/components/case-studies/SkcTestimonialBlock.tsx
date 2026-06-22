@@ -32,12 +32,16 @@ export async function SkcTestimonialBlock() {
       <div className="flex flex-col md:flex-row gap-6 items-start">
         <div className="shrink-0">
           <div className="relative h-20 w-20 overflow-hidden rounded-full ring-2 ring-accent-system/40">
+            {/* Sole/first <img> on /case-studies/skinclarity-club. priority
+                removes loading="lazy" (LCP_LAZY_LOADING) on the page's first
+                image — single small image, so eager is perf-safe. */}
             <Image
               src={photoSrc}
               alt={t('photoAlt')}
               fill
               sizes="80px"
               className="object-cover"
+              priority
             />
           </div>
         </div>

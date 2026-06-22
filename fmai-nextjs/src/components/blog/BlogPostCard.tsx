@@ -5,9 +5,17 @@ import type { BlogPostMeta } from '@/lib/blog'
 interface BlogPostCardProps {
   post: BlogPostMeta
   locale: string
+  /**
+   * Mark the first card's thumbnail as the LCP image. The crawler flags the
+   * first <img> in DOM order with loading="lazy" (LCP_LAZY_LOADING). On the
+   * /kennisbank grid the first card's hero thumbnail is the above-the-fold
+   * LCP candidate, so only that one card sets priority — the rest stay lazy
+   * to avoid eager-loading every thumbnail.
+   */
+  priority?: boolean
 }
 
-export function BlogPostCard({ post, locale }: BlogPostCardProps) {
+export function BlogPostCard({ post, locale, priority = false }: BlogPostCardProps) {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -27,6 +35,7 @@ export function BlogPostCard({ post, locale }: BlogPostCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, 384px"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            priority={priority}
           />
         </div>
       )}

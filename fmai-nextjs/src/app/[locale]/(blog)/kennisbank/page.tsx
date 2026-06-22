@@ -109,9 +109,11 @@ export default async function KennisbankPage({ params, searchParams }: Kennisban
           <div>
             {filteredPosts.length > 0 ? (
               <RevealContainer className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {filteredPosts.map((post) => (
+                {filteredPosts.map((post, index) => (
                   <RevealItem key={post.slug}>
-                    <BlogPostCard post={post} locale={locale} />
+                    {/* First card's thumbnail is the above-the-fold LCP — eager-load
+                        it (priority) so it isn't loading="lazy" (LCP_LAZY_LOADING). */}
+                    <BlogPostCard post={post} locale={locale} priority={index === 0} />
                   </RevealItem>
                 ))}
               </RevealContainer>
