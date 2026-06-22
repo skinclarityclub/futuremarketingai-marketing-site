@@ -5,7 +5,12 @@ import { useReducedMotion } from 'motion/react'
 import { SplineScene } from '@/components/ui/spline'
 import { useIsDesktop } from '@/hooks/useIsDesktop'
 
-export function HeroSpline() {
+interface HeroSplineProps {
+  /** Localized alt text for the static hero preview image (LCP candidate). */
+  imageAlt?: string
+}
+
+export function HeroSpline({ imageAlt = '' }: HeroSplineProps) {
   const sceneRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const reduced = useReducedMotion()
@@ -98,6 +103,7 @@ export function HeroSpline() {
             scene="/spline/scene.splinecode"
             className="w-full h-full"
             previewSrc="/images/hero-robot-preview.webp"
+            previewAlt={imageAlt}
           />
         </div>
       </div>

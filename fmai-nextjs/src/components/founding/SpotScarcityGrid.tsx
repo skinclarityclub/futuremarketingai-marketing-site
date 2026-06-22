@@ -104,14 +104,17 @@ export function SpotScarcityGrid({
               taken.emblem ? (
                 <Image
                   src={taken.emblem}
-                  alt=""
+                  alt={`${taken.name} logo`}
                   width={48}
                   height={48}
                   className="h-3/5 w-3/5 object-contain"
-                  aria-hidden
                   // Sole/first <img> on /founding-member. priority removes the
                   // default loading="lazy" so the page's first image is eager
                   // (LCP_LAZY_LOADING). Single small emblem — perf-safe.
+                  // Descriptive alt (partner name) instead of decorative ""
+                  // so crawlers don't flag ALT_MISSING; the wrapping <button>'s
+                  // aria-label still owns the SR accessible name (aria-label
+                  // overrides nested alt), so no double-announce.
                   priority
                 />
               ) : (

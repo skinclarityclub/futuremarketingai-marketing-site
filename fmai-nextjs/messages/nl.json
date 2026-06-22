@@ -17,6 +17,7 @@
     "hero": {
       "badge": "{taken} van {total} founding plekken bezet",
       "headlineMain": "Dit is Clyde.",
+      "imageAlt": "Clyde, de AI marketing medewerker van FutureMarketingAI, als 3D-robot",
       "tagline": "Jouw <accent>AI marketing medewerker</accent>.",
       "subtitle": "Onthoudt elk merk. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics. Autonoom uitgevoerd, met geheugen dat campagnes overleeft.",
       "trustAnchor": "Live in productie sinds 2025. Maximaal {maxPartners} partners per jaar.",
@@ -1218,7 +1219,7 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact | Future Marketing AI",
+      "title": "Contact Future Marketing AI | AI Marketing Bureau",
       "description": "Neem contact op met Future Marketing AI. We reageren binnen 24 uur."
     },
     "hero": {

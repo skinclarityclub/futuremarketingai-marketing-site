@@ -13,6 +13,8 @@ interface HeroSectionProps {
   trustClusterTarget: string
   trustClusterFounding: string
   trustClusterAvg: string
+  /** Localized alt for the hero preview image (homepage LCP candidate). */
+  imageAlt: string
 }
 
 /*
@@ -29,14 +31,14 @@ interface HeroSectionProps {
   role="heading" aria-level={1}. Only one is visible per viewport, so
   there's no screen-reader conflict.
 */
-export function HeroSection(props: HeroSectionProps) {
+export function HeroSection({ imageAlt, ...props }: HeroSectionProps) {
   return (
     <section
       aria-label="Hero"
       className="relative min-h-[85dvh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
     >
       {/* 3D Robot — internally gates desktop scene vs mobile preview */}
-      <HeroSpline />
+      <HeroSpline imageAlt={imageAlt} />
 
       {/* Mobile (server, CSS animations) */}
       <div className="lg:hidden w-full">
