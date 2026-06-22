@@ -12,7 +12,7 @@
   "home": {
     "meta": {
       "title": "FutureMarketingAI: Clyde, your AI Marketing Employee",
-      "description": "FutureMarketingAI (Future Marketing AI, fmai) builds Clyde AI: the AI Marketing Employee for marketing agencies. Writes content, calls leads, remembers every brand. Max 10 partners per year."
+      "description": "FutureMarketingAI builds Clyde: the AI Marketing Employee for agencies. He writes content, calls leads and remembers every brand. Max 10 partners per year."
     },
     "hero": {
       "badge": "{taken} of {total} founding spots taken",
@@ -424,7 +424,7 @@
   "chatbots": {
     "meta": {
       "title": "AI chatbot solutions | Future Marketing AI",
-      "description": "Custom-built AI chatbots that handle customer service, qualify leads and book appointments. 24/7."
+      "description": "Custom-built AI chatbots that handle customer service, qualify leads and book appointments 24/7. Trained on your own data and brand voice."
     },
     "hero": {
       "badge": "Interactive demo",
@@ -790,7 +790,7 @@
   "about": {
     "meta": {
       "title": "About FutureMarketingAI: the team behind Clyde AI",
-      "description": "About FutureMarketingAI (Future Marketing AI, fmai): we build Clyde, the AI Marketing Employee for marketing agencies. Made in the Netherlands, for European agencies."
+      "description": "About FutureMarketingAI: we build Clyde, the AI Marketing Employee for agencies. Made in the Netherlands, for European marketing agencies that want to scale."
     },
     "hero": {
       "eyebrow": "About FutureMarketingAI",
@@ -1220,7 +1220,7 @@
   "contact": {
     "meta": {
       "title": "Contact Future Marketing AI | AI Marketing Agency",
-      "description": "Get in touch with Future Marketing AI. We respond within 24 hours."
+      "description": "Get in touch with Future Marketing AI about Clyde, your AI Marketing Employee. Questions on partnerships or the skills? We respond within 24 hours."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -1278,7 +1278,7 @@
   "legal": {
     "meta": {
       "title": "Terms, Privacy & Legal | Future Marketing AI",
-      "description": "Legal information for Future Marketing AI."
+      "description": "Legal information for Future Marketing AI: terms of service, privacy policy and cookie policy for Clyde and our AI marketing services for agencies."
     },
     "hero": {
       "title": "Legal"
@@ -1400,7 +1400,7 @@
   "skills-voice-agent": {
     "meta": {
       "title": "Voice Agent. Inbound and outbound AI calls | Clyde",
-      "description": "AI phone calls, appointment booking, call logging, escalation to human. 5 credits per minute."
+      "description": "Clyde makes AI phone calls, books appointments, logs every conversation and escalates to a human when needed. 5 credits per minute, in your brand voice."
     },
     "hero": {
       "eyebrow": "Skill 02. Voice Agent (coming soon)",
@@ -1508,7 +1508,7 @@
   "skills-lead-qualifier": {
     "meta": {
       "title": "Lead Qualifier. Chatbot that scores and routes leads | Clyde",
-      "description": "AI chatbot on the website, lead scoring, CRM routing, conversation analytics. 2 credits per score."
+      "description": "Clyde qualifies leads with an AI chatbot on your website: lead scoring, CRM routing and conversation analytics per brand. 2 credits per scored lead."
     },
     "hero": {
       "eyebrow": "Skill 03. Lead Qualifier",
@@ -1616,7 +1616,7 @@
   "skills-social-media": {
     "meta": {
       "title": "Social Media Manager: captions and carousels | Clyde",
-      "description": "Clyde runs social media per brand: AI captions in the brand voice, scheduling, carousels. 1 to 2 credits per post."
+      "description": "Clyde runs social media per brand: AI captions in the brand voice, scheduling and carousels, ready to publish. 1 to 2 credits per post."
     },
     "hero": {
       "eyebrow": "Skill 01. Social Media Manager",
@@ -1828,7 +1828,7 @@
   "skills-reporting": {
     "meta": {
       "title": "Reporting. Dashboards, digests and anomaly detection | Clyde",
-      "description": "Weekly performance digests, KPI dashboards and anomaly detection with alerts. 5 credits per report."
+      "description": "Clyde delivers weekly performance digests, KPI dashboards and anomaly detection with alerts, so you know before your client calls. 5 credits per report."
     },
     "hero": {
       "eyebrow": "Skill 06. Reporting and Analytics",
@@ -2193,7 +2193,7 @@
   "roadmap": {
     "meta": {
       "title": "Roadmap. What Clyde will do next | FutureMarketingAI",
-      "description": "The two skills currently in development and testing: Voice Agent and Reel Builder. Founding members get access first."
+      "description": "See what Clyde does next: the two skills in development and testing, Voice Agent and Reel Builder. Founding members get early access first."
     },
     "hero": {
       "eyebrow": "Roadmap",
@@ -2709,7 +2709,7 @@
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Gmail inbox classification | Clyde",
-      "description": "Gmail inbox classification, smart labels, daily digest and draft replies. 5 credits per action."
+      "description": "Clyde classifies your Gmail inbox, applies smart labels, sends a daily digest and drafts replies per brand. 5 credits per action, all in your voice."
     },
     "hero": {
       "eyebrow": "Skill 04. Email Management",
@@ -2813,7 +2813,7 @@
   "skills-research": {
     "meta": {
       "title": "Research: market research, trends and competitors | Clyde",
-      "description": "Automated market research, trend monitoring and competitor analysis with source citation. 3 credits per question."
+      "description": "Clyde runs automated market research, trend monitoring and competitor analysis with source citation, right inside your briefings. 3 credits per question."
     },
     "hero": {
       "eyebrow": "Skill 07. Research",
@@ -2917,7 +2917,7 @@
   "skills-index": {
     "meta": {
       "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
-      "description": "Browse Clyde's 12 skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 live, 2 coming soon."
+      "description": "Browse Clyde's 12 marketing skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 are live, 2 coming soon, all in one AI employee."
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
@@ -3259,7 +3259,7 @@
   "skills-manychat": {
     "meta": {
       "title": "ManyChat DM. Instagram triggers with AI replies | Clyde",
-      "description": "Instagram DM keyword triggers, AI replies, lead capture and CRM routing. 2 credits per 10 DMs."
+      "description": "Clyde manages Instagram DMs with keyword triggers, AI replies, lead capture and CRM routing per brand. 2 credits per 10 DMs, day and night."
     },
     "hero": {
       "eyebrow": "Skill 11. ManyChat DM",
@@ -3917,7 +3917,7 @@
       "eyebrow": "Confirmation",
       "meta": {
         "title": "Confirm subscription | Future Marketing AI",
-        "description": "Confirm your subscription to the AI Readiness Checklist."
+        "description": "Confirm your subscription to the Future Marketing AI Readiness Checklist and discover how ready your agency is for Clyde, your AI Marketing Employee."
       },
       "pendingTitle": "Confirming...",
       "pendingBody": "One moment, we are validating your token.",

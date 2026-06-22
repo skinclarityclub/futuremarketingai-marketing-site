@@ -12,7 +12,7 @@
   "home": {
     "meta": {
       "title": "FutureMarketingAI: Clyde, je AI-marketingmedewerker",
-      "description": "FutureMarketingAI (Future Marketing AI, fmai) bouwt Clyde AI: de AI-marketingmedewerker voor marketingbureaus. Schrijft content, belt leads, onthoudt elk merk. Max 10 partners per jaar."
+      "description": "FutureMarketingAI bouwt Clyde: de AI-marketingmedewerker voor bureaus. Schrijft content, belt leads en onthoudt elk merk. Max 10 partners per jaar."
     },
     "hero": {
       "badge": "{taken} van {total} founding plekken bezet",
@@ -424,7 +424,7 @@
   "chatbots": {
     "meta": {
       "title": "AI-chatbot oplossingen | Future Marketing AI",
-      "description": "Op maat gebouwde AI-chatbots die klantenservice afhandelen, leads kwalificeren en afspraken boeken. 24/7."
+      "description": "Op maat gebouwde AI-chatbots die 24/7 je klantenservice afhandelen, leads kwalificeren en afspraken boeken. Getraind op jouw data en merkstem."
     },
     "hero": {
       "badge": "Interactieve demo",
@@ -790,7 +790,7 @@
   "about": {
     "meta": {
       "title": "Over FutureMarketingAI: het team achter Clyde AI",
-      "description": "Over FutureMarketingAI (Future Marketing AI, fmai): wij bouwen Clyde, de AI-marketingmedewerker voor marketingbureaus. Gemaakt in Nederland, voor Europese bureaus."
+      "description": "Over FutureMarketingAI: wij bouwen Clyde, de AI-marketingmedewerker voor bureaus. Gemaakt in Nederland, voor Europese marketingbureaus die willen schalen."
     },
     "hero": {
       "eyebrow": "Over FutureMarketingAI",
@@ -1220,7 +1220,7 @@
   "contact": {
     "meta": {
       "title": "Contact Future Marketing AI | AI Marketing Bureau",
-      "description": "Neem contact op met Future Marketing AI. We reageren binnen 24 uur."
+      "description": "Neem contact op met Future Marketing AI over Clyde, je AI-marketingmedewerker. Vragen over partnerships of de skills? We reageren binnen 24 uur."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -1278,7 +1278,7 @@
   "legal": {
     "meta": {
       "title": "Juridisch | Future Marketing AI",
-      "description": "Juridische informatie voor Future Marketing AI."
+      "description": "Juridische informatie voor Future Marketing AI: algemene voorwaarden, privacybeleid en cookiebeleid voor Clyde en onze AI-marketingdiensten."
     },
     "hero": {
       "title": "Juridisch"
@@ -1400,7 +1400,7 @@
   "skills-voice-agent": {
     "meta": {
       "title": "Voice Agent. Inkomende en uitgaande AI-gesprekken | Clyde",
-      "description": "AI-telefoongesprekken, afspraken boeken, gespreksregistratie, escalatie naar mens. 5 credits per minuut."
+      "description": "Clyde voert AI-telefoongesprekken, boekt afspraken, legt elk gesprek vast en escaleert naar een mens waar nodig. 5 credits per minuut, in jouw merkstem."
     },
     "hero": {
       "eyebrow": "Vaardigheid 02. Voice Agent (binnenkort)",
@@ -1508,7 +1508,7 @@
   "skills-lead-qualifier": {
     "meta": {
       "title": "Lead Qualifier. Chatbot die leads scoort en routeert | Clyde",
-      "description": "AI-chatbot op de website, lead scoring, CRM-routering, gespreksanalyse. 2 credits per score."
+      "description": "Clyde kwalificeert leads met een AI-chatbot op je website: lead scoring, CRM-routering en gespreksanalyse per merk. 2 credits per gescoorde lead."
     },
     "hero": {
       "eyebrow": "Vaardigheid 03. Lead Qualifier",
@@ -1616,7 +1616,7 @@
   "skills-social-media": {
     "meta": {
       "title": "Social Media Manager: captions en carrousels | Clyde",
-      "description": "Clyde verzorgt social media per merk: AI-captions in de merkstem, inplanning, carrousels. 1 tot 2 credits per post."
+      "description": "Clyde verzorgt social media per merk: AI-captions in de merkstem, inplanning en carrousels, klaar voor publicatie. 1 tot 2 credits per post."
     },
     "hero": {
       "eyebrow": "Vaardigheid 01. Social Media Manager",
@@ -1828,7 +1828,7 @@
   "skills-reporting": {
     "meta": {
       "title": "Rapportage. Dashboards, digests en anomalie-detectie | Clyde",
-      "description": "Wekelijkse prestatie-digests, KPI-dashboards en anomalie-detectie met alerts. 5 credits per rapport."
+      "description": "Clyde levert wekelijkse prestatie-digests, KPI-dashboards en anomalie-detectie met alerts, zodat je het weet vóór je klant belt. 5 credits per rapport."
     },
     "hero": {
       "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
@@ -2709,7 +2709,7 @@
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Gmail-inbox classificeren | Clyde",
-      "description": "Gmail-inbox classificeren, slimme labels, dagelijkse digest en conceptantwoorden. 5 credits per actie."
+      "description": "Clyde classificeert je Gmail-inbox, zet slimme labels, stuurt een dagelijkse digest en schrijft conceptantwoorden per merk. 5 credits per actie."
     },
     "hero": {
       "eyebrow": "Vaardigheid 04. Email Management",
@@ -2813,7 +2813,7 @@
   "skills-research": {
     "meta": {
       "title": "Research: marktonderzoek, trends en concurrentie | Clyde",
-      "description": "Geautomatiseerd marktonderzoek, trendmonitoring en concurrentie-analyse met bronvermelding. 3 credits per vraag."
+      "description": "Clyde doet geautomatiseerd marktonderzoek, trendmonitoring en concurrentie-analyse met bronvermelding, direct in je briefings. 3 credits per vraag."
     },
     "hero": {
       "eyebrow": "Vaardigheid 07. Research",
@@ -3259,7 +3259,7 @@
   "skills-manychat": {
     "meta": {
       "title": "ManyChat DM. Instagram-triggers met AI-antwoorden | Clyde",
-      "description": "Instagram-DM-keywordtriggers, AI-antwoorden, lead capture en CRM-routering. 2 credits per 10 DM's."
+      "description": "Clyde beheert Instagram-DM's met keywordtriggers, AI-antwoorden, lead capture en CRM-routering per merk. 2 credits per 10 DM's, dag en nacht."
     },
     "hero": {
       "eyebrow": "Vaardigheid 11. ManyChat DM",
@@ -3917,7 +3917,7 @@
       "eyebrow": "Bevestiging",
       "meta": {
         "title": "Aanmelding bevestigen | Future Marketing AI",
-        "description": "Bevestig je aanmelding voor de AI Readiness Checklist."
+        "description": "Bevestig je aanmelding voor de AI Readiness Checklist van Future Marketing AI en ontdek hoe klaar je bureau is voor Clyde, je AI-marketingmedewerker."
       },
       "pendingTitle": "Bevestigen...",
       "pendingBody": "Een moment, we controleren je token.",
