@@ -17,6 +17,7 @@
     "hero": {
       "badge": "{taken} de {total} plazas founding ocupadas",
       "headlineMain": "Este es Clyde.",
+      "imageAlt": "Clyde, el empleado AI de marketing de FutureMarketingAI, como robot 3D",
       "tagline": "Tu <accent>empleado AI de marketing</accent>.",
       "subtitle": "Recuerda cada marca. Diez habilidades hoy, dos próximamente: social, blogs, anuncios, email, calificación de leads, SEO, analítica. Ejecutado de forma autónoma, con memoria que sobrevive a las campañas.",
       "trustAnchor": "En producción desde 2025. Máx. {maxPartners} partners al año.",

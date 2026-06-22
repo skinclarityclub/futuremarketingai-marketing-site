@@ -17,6 +17,7 @@
     "hero": {
       "badge": "{taken} of {total} founding spots taken",
       "headlineMain": "This is Clyde.",
+      "imageAlt": "Clyde, the FutureMarketingAI AI marketing employee, as a 3D robot",
       "tagline": "Your <accent>AI marketing employee</accent>.",
       "subtitle": "Remembers every brand. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics. Run autonomously, with memory that outlives campaigns.",
       "trustAnchor": "Live in production since 2025. Max {maxPartners} partners per year.",
@@ -1218,7 +1219,7 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact | Future Marketing AI",
+      "title": "Contact Future Marketing AI | AI Marketing Agency",
       "description": "Get in touch with Future Marketing AI. We respond within 24 hours."
     },
     "hero": {
@@ -1276,7 +1277,7 @@
   },
   "legal": {
     "meta": {
-      "title": "Legal | Future Marketing AI",
+      "title": "Terms, Privacy & Legal | Future Marketing AI",
       "description": "Legal information for Future Marketing AI."
     },
     "hero": {

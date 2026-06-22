@@ -17,6 +17,12 @@ interface SplineSceneProps {
   className?: string
   /** Static preview image shown instantly while 3D loads */
   previewSrc?: string
+  /**
+   * Alt text for the static preview image. Defaults to '' (decorative) for
+   * generic uses, but the hero passes a descriptive, localized string so the
+   * homepage's LCP image isn't flagged ALT_MISSING by SEO crawlers.
+   */
+  previewAlt?: string
 }
 
 /**
@@ -34,7 +40,7 @@ interface SplineSceneProps {
  *
  * The user never notices the block because the preview covers it.
  */
-export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) {
+export function SplineScene({ scene, className, previewSrc, previewAlt = '' }: SplineSceneProps) {
   const [phase, setPhase] = useState<'preview' | 'loading' | 'ready'>('preview')
   const mountedRef = useRef(false)
   // Returns null on first SSR pass, boolean after hydration. We treat null as
@@ -142,7 +148,7 @@ export function SplineScene({ scene, className, previewSrc }: SplineSceneProps) 
         >
           <Image
             src={previewSrc}
-            alt=""
+            alt={previewAlt}
             fill
             className="object-contain object-center"
             priority

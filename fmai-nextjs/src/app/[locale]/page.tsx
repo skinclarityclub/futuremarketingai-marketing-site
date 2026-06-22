@@ -170,6 +170,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           total: FOUNDING_SPOTS_TOTAL,
         })}
         trustClusterAvg={t('hero.trustCluster.avgLabel')}
+        imageAlt={t('hero.imageAlt')}
       />
 
       {/* ─────────────────────────────────────────────────────────────
