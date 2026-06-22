@@ -12,7 +12,7 @@
   "home": {
     "meta": {
       "title": "FutureMarketingAI: Clyde, tu Empleado AI de Marketing",
-      "description": "FutureMarketingAI (Future Marketing AI, fmai) crea Clyde AI: el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máx 10 socios por año."
+      "description": "FutureMarketingAI crea Clyde: el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máximo 10 socios por año."
     },
     "hero": {
       "badge": "{taken} de {total} plazas founding ocupadas",
@@ -424,7 +424,7 @@
   "chatbots": {
     "meta": {
       "title": "Soluciones de chatbot AI | Future Marketing AI",
-      "description": "Chatbots AI a medida que gestionan atención al cliente, califican leads y agendan citas. 24/7."
+      "description": "Chatbots AI a medida que gestionan la atención al cliente, califican leads y agendan citas 24/7. Entrenados con tus datos y tu tono de marca."
     },
     "hero": {
       "badge": "Demo interactiva",
@@ -790,7 +790,7 @@
   "about": {
     "meta": {
       "title": "Sobre FutureMarketingAI: el equipo tras Clyde AI",
-      "description": "Sobre FutureMarketingAI (Future Marketing AI, fmai): creamos Clyde, el Empleado AI de Marketing para agencias. Hecho en los Países Bajos, para agencias europeas."
+      "description": "Sobre FutureMarketingAI: creamos Clyde, el Empleado AI de Marketing para agencias. Hecho en los Países Bajos, para agencias europeas que quieren escalar."
     },
     "hero": {
       "eyebrow": "Sobre FutureMarketingAI",
@@ -1220,7 +1220,7 @@
   "contact": {
     "meta": {
       "title": "Contacto | Future Marketing AI",
-      "description": "Ponte en contacto con Future Marketing AI. Respondemos en 24 horas."
+      "description": "Ponte en contacto con Future Marketing AI sobre Clyde, tu Empleado AI de Marketing. ¿Dudas sobre partnerships o las skills? Respondemos en 24 horas."
     },
     "hero": {
       "eyebrow": "Contacto",
@@ -1278,7 +1278,7 @@
   "legal": {
     "meta": {
       "title": "Aviso legal | Future Marketing AI",
-      "description": "Información legal de Future Marketing AI."
+      "description": "Información legal de Future Marketing AI: términos del servicio, política de privacidad y política de cookies de Clyde y nuestros servicios de marketing con IA."
     },
     "hero": {
       "title": "Legal"
@@ -1400,7 +1400,7 @@
   "skills-voice-agent": {
     "meta": {
       "title": "Voice Agent. Llamadas AI entrantes y salientes | Clyde",
-      "description": "Llamadas telefónicas AI, reserva de citas, registro de llamadas, escalado a humano. 5 créditos por minuto."
+      "description": "Clyde hace llamadas telefónicas AI, reserva citas, registra cada conversación y escala a un humano cuando hace falta. 5 créditos por minuto, en tu tono."
     },
     "hero": {
       "eyebrow": "Habilidad 02. Voice Agent (próximamente)",
@@ -1508,7 +1508,7 @@
   "skills-lead-qualifier": {
     "meta": {
       "title": "Lead Qualifier. Chatbot que puntúa y enruta leads | Clyde",
-      "description": "Chatbot AI en la web, scoring de leads, enrutado al CRM, análisis de conversación. 2 créditos por score."
+      "description": "Clyde califica leads con un chatbot AI en tu web: scoring de leads, enrutado al CRM y análisis de conversación por marca. 2 créditos por lead puntuado."
     },
     "hero": {
       "eyebrow": "Habilidad 03. Lead Qualifier",
@@ -1724,7 +1724,7 @@
   "skills-ad-manager": {
     "meta": {
       "title": "Ad Manager. Crear y dirigir anuncios por leads y CPL | Clyde",
-      "description": "Crea anuncios estáticos y de vídeo, publícalos en Meta y dirígelos por anuncio según leads, coste por lead y fatiga publicitaria. 10 créditos estático, 20 créditos vídeo."
+      "description": "Clyde crea anuncios estáticos y de vídeo, los publica en Meta y los dirige según leads, coste por lead y fatiga. 10 créditos estático, 20 vídeo."
     },
     "hero": {
       "eyebrow": "Habilidad 05. Ad Manager",
@@ -1828,7 +1828,7 @@
   "skills-reporting": {
     "meta": {
       "title": "Reporting. Paneles, informes y anomalías | Clyde",
-      "description": "Informes semanales de rendimiento, paneles de KPIs y detección de anomalías con alertas. 5 créditos por informe."
+      "description": "Clyde entrega informes semanales de rendimiento, paneles de KPIs y detección de anomalías con alertas, antes de que llame tu cliente. 5 créditos por informe."
     },
     "hero": {
       "eyebrow": "Habilidad 06. Reporting y Analytics",
@@ -3917,7 +3917,7 @@
       "eyebrow": "Confirmación",
       "meta": {
         "title": "Confirmar suscripción | Future Marketing AI",
-        "description": "Confirma tu suscripción a la Checklist de AI Readiness."
+        "description": "Confirma tu suscripción a la Checklist de AI Readiness de Future Marketing AI y descubre cómo de preparada está tu agencia para Clyde, tu Empleado AI."
       },
       "pendingTitle": "Confirmando...",
       "pendingBody": "Un momento, estamos validando tu token.",
@@ -4005,7 +4005,7 @@
   "resources": {
     "meta": {
       "title": "Base de conocimiento: GEO y marketing con IA para agencias",
-      "description": "La base de conocimiento de FutureMarketingAI. Pillars, clusters y un glosario sobre generative engine optimization y automatización de marketing con IA para agencias."
+      "description": "La base de conocimiento de FutureMarketingAI: pillars, clusters y un glosario sobre generative engine optimization y marketing con IA para agencias."
     },
     "hero": {
       "eyebrow": "Base de conocimiento",
