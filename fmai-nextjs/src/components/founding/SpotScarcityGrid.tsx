@@ -109,6 +109,10 @@ export function SpotScarcityGrid({
                   height={48}
                   className="h-3/5 w-3/5 object-contain"
                   aria-hidden
+                  // Sole/first <img> on /founding-member. priority removes the
+                  // default loading="lazy" so the page's first image is eager
+                  // (LCP_LAZY_LOADING). Single small emblem — perf-safe.
+                  priority
                 />
               ) : (
                 <span className="text-white font-bold text-lg" aria-hidden>

@@ -343,12 +343,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div className="flex flex-col sm:flex-row items-start gap-6">
               {HAS_PORTRAIT ? (
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-2 ring-accent-system/40 shrink-0">
+                  {/* Sole/first <img> on /about. priority removes the default
+                      loading="lazy" so the page's first image is eager
+                      (LCP_LAZY_LOADING). Single portrait — perf-safe. */}
                   <Image
                     src={PORTRAIT_SRC}
                     alt={t('founder.fullName')}
                     fill
                     sizes="(min-width: 640px) 112px, 96px"
                     className="object-cover"
+                    priority
                   />
                 </div>
               ) : (
