@@ -67,8 +67,21 @@ export const ORG_KNOWS_ABOUT = [
 // Per DECISIONS Q1: 2024 (FMai existed as agency entity before AaaS pivot).
 export const ORG_FOUNDING_DATE = '2024-01-01'
 
+/**
+ * Fallback <lastmod> for a path missing from PAGE_DATES.
+ *
+ * Deliberately old. The previous fallback was `new Date()`, so any forgotten
+ * path announced itself as freshly modified on EVERY deploy — six paths were
+ * doing exactly that across three locales. A sitemap that cries fresh without
+ * changing teaches Google to distrust its lastmod site-wide, which is the
+ * opposite of what the field is for. Under-claiming is harmless; over-claiming
+ * costs us the one signal we have to pull a crawl.
+ */
+export const FALLBACK_PAGE_DATE = '2026-03-18'
+
 export const PAGE_DATES: Record<string, string> = {
-  '/': '2026-04-20',
+  // Brand-entity fix (one-word SITE_NAME + visible hero kicker) shipped today.
+  '/': '2026-08-11',
   '/memory': '2026-04-20',
   '/apply': '2026-04-20',
   '/case-studies/skinclarity-club': '2026-04-20',
@@ -91,4 +104,12 @@ export const PAGE_DATES: Record<string, string> = {
   '/how-it-works': '2026-03-18',
   '/legal': '2026-04-24',
   '/kennisbank': '2026-06-02',
+  // Dates below come from `git log -1` on each page's own source file, not
+  // from a guess — these six were missing and hit the old `new Date()` path.
+  '/skills': '2026-06-15',
+  '/assessment': '2026-05-28',
+  '/roadmap': '2026-06-15',
+  '/legal/privacy': '2026-04-27',
+  '/legal/terms': '2026-04-27',
+  '/legal/cookies': '2026-04-27',
 }

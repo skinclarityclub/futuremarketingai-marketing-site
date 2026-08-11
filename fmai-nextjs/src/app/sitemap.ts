@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { routing } from '@/i18n/routing'
-import { SITE_URL, PAGE_DATES } from '@/lib/seo-config'
+import { SITE_URL, PAGE_DATES, FALLBACK_PAGE_DATE } from '@/lib/seo-config'
 import { getAllPostsAllLocales } from '@/lib/blog'
 
 const pages = [
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     languages['x-default'] = `${SITE_URL}/${routing.defaultLocale}${pathSuffix}`
 
-    const lastModified = PAGE_DATES[path] ? new Date(PAGE_DATES[path]) : new Date()
+    const lastModified = new Date(PAGE_DATES[path] ?? FALLBACK_PAGE_DATE)
 
     return routing.locales.map((locale) => ({
       url: `${SITE_URL}/${locale}${pathSuffix}`,
