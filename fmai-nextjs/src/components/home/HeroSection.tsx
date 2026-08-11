@@ -3,6 +3,8 @@ import { HeroSectionDesktop } from './HeroSectionDesktop'
 import { HeroSectionMobile } from './HeroSectionMobile'
 
 interface HeroSectionProps {
+  /** One-word brand name shown as an eyebrow above the badge (entity SEO signal). */
+  brandKicker: string
   badge: string
   headlineMain: string
   tagline: React.ReactNode

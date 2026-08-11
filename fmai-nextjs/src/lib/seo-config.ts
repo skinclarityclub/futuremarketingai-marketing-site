@@ -1,5 +1,10 @@
 export const SITE_URL = 'https://future-marketing.ai'
-export const SITE_NAME = 'Future Marketing AI'
+// Canonical brand name = one word, matches the domain + <title>. Google reads the
+// spaced "Future Marketing AI" as a generic term (collides with an existing agency),
+// so we make the one-word string primary and register the variants as alternateName
+// to bind them to a single entity in the Knowledge Graph.
+export const SITE_NAME = 'FutureMarketingAI'
+export const SITE_ALTERNATE_NAME = ['Future Marketing AI', 'Future Marketing AI - Clyde']
 export const ORG_EMAIL = 'hello@future-marketing.ai'
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
 

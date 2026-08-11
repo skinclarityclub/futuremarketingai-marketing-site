@@ -15,6 +15,7 @@
       "description": "FutureMarketingAI bouwt Clyde: de AI-marketingmedewerker voor bureaus. Schrijft content, belt leads en onthoudt elk merk. Max 10 partners per jaar."
     },
     "hero": {
+      "brandKicker": "FutureMarketingAI",
       "badge": "{taken} van {total} founding plekken bezet",
       "headlineMain": "Dit is Clyde.",
       "imageAlt": "Clyde, de AI marketing medewerker van FutureMarketingAI, als 3D-robot",

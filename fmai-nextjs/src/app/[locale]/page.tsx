@@ -155,6 +155,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           Sectie 1 — Hero + TrustCluster (W4 motion migration)
           ──────────────────────────────────────────────────────────── */}
       <HeroSection
+        brandKicker={t('hero.brandKicker')}
         badge={t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
         headlineMain={t('hero.headlineMain')}
         tagline={t.rich('hero.tagline', {

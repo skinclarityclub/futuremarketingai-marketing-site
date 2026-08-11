@@ -15,6 +15,7 @@
       "description": "FutureMarketingAI crea Clyde: el Empleado AI de Marketing para agencias. Escribe contenido, llama a leads y recuerda cada marca. Máximo 10 socios por año."
     },
     "hero": {
+      "brandKicker": "FutureMarketingAI",
       "badge": "{taken} de {total} plazas founding ocupadas",
       "headlineMain": "Este es Clyde.",
       "imageAlt": "Clyde, el empleado AI de marketing de FutureMarketingAI, como robot 3D",

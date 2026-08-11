@@ -24,6 +24,7 @@ import { JsonLd } from './JsonLd'
 import {
   SITE_URL,
   SITE_NAME,
+  SITE_ALTERNATE_NAME,
   ORG_EMAIL,
   ORG_ID,
   DALEY_PERSON_ID,
@@ -72,12 +73,16 @@ export function OrganizationJsonLd() {
     '@type': ['Organization', 'ProfessionalService'],
     '@id': ORG_ID,
     name: SITE_NAME,
+    alternateName: SITE_ALTERNATE_NAME,
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: `${SITE_URL}/og-image.png`,
-      width: 1200,
-      height: 630,
+      // Square 512×512 brand mark (not the 1200×630 OG share image). Google's
+      // Knowledge Panel / logo rich-result wants a real square-ish logo with
+      // dimensions matching the asset — the OG image is the wrong shape for this.
+      url: `${SITE_URL}/logo.png`,
+      width: 512,
+      height: 512,
     },
     email: ORG_EMAIL,
     description: ENTITY_DESCRIPTION,

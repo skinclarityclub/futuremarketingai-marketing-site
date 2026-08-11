@@ -8,6 +8,7 @@ import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 import { EASE_OUT, DEFAULT_DURATION } from '@/lib/motion/easings'
 
 interface HeroSectionProps {
+  brandKicker: string
   badge: string
   headlineMain: string
   tagline: React.ReactNode
@@ -22,6 +23,7 @@ interface HeroSectionProps {
 
 export function HeroSectionDesktop(props: HeroSectionProps) {
   const {
+    brandKicker,
     badge,
     headlineMain,
     tagline,
@@ -36,6 +38,17 @@ export function HeroSectionDesktop(props: HeroSectionProps) {
 
   return (
     <>
+      {/* Brand eyebrow — visible one-word brand name so the exact "FutureMarketingAI"
+          string is on-page above the fold (entity-SEO signal). Not an <h1>. */}
+      <motion.p
+        className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted mb-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: EASE_OUT }}
+      >
+        {brandKicker}
+      </motion.p>
+
       <motion.div
         className="inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 lg:mb-8 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
         initial={{ opacity: 0 }}
