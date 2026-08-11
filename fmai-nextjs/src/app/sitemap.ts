@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { routing } from '@/i18n/routing'
+import { routing, INDEXABLE_LOCALES, isIndexableLocale } from '@/i18n/routing'
 import { SITE_URL, PAGE_DATES, FALLBACK_PAGE_DATE } from '@/lib/seo-config'
 import { getAllPostsAllLocales } from '@/lib/blog'
 
@@ -47,14 +47,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const pathSuffix = path === '/' ? '' : path
 
     const languages: Record<string, string> = {}
-    for (const locale of routing.locales) {
+    for (const locale of INDEXABLE_LOCALES) {
       languages[locale] = `${SITE_URL}/${locale}${pathSuffix}`
     }
     languages['x-default'] = `${SITE_URL}/${routing.defaultLocale}${pathSuffix}`
 
     const lastModified = new Date(PAGE_DATES[path] ?? FALLBACK_PAGE_DATE)
 
-    return routing.locales.map((locale) => ({
+    // Indexable locales only — a sitemap is a list of pages we want indexed, so
+    // a noindex locale in it asks Google to crawl what we just told it to drop.
+    return INDEXABLE_LOCALES.map((locale) => ({
       url: `${SITE_URL}/${locale}${pathSuffix}`,
       lastModified,
       changeFrequency,
@@ -64,7 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
 
   // Group posts by slug to find which locales each post exists in
-  const allPosts = getAllPostsAllLocales()
+  const allPosts = getAllPostsAllLocales().filter((p) => isIndexableLocale(p.locale))
   const postsBySlug = new Map<string, typeof allPosts>()
   for (const post of allPosts) {
     const existing = postsBySlug.get(post.slug) ?? []

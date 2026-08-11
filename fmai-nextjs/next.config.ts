@@ -187,6 +187,22 @@ const nextConfig: NextConfig = {
         destination: '/:locale/kennisbank/:slug*',
         statusCode: 301,
       },
+      // Unprefixed legacy links. `/:locale/blog/:slug*` needs two segments, so
+      // /blog/geo-generative-engine-optimization never matched it: the locale
+      // middleware sent it to /en/blog/<slug>, that hit the rule above, and the
+      // article only exists in nl with dynamicParams=false — a 307 → 301 → 404
+      // chain that killed every inbound link to a Dutch article. These two rules
+      // sit last so they only catch what the locale-prefixed rules did not.
+      {
+        source: '/blog',
+        destination: '/nl/kennisbank',
+        statusCode: 301,
+      },
+      {
+        source: '/blog/:slug*',
+        destination: '/nl/kennisbank/:slug*',
+        statusCode: 301,
+      },
     ]
   },
 }

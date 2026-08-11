@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { routing } from '@/i18n/routing'
+import { routing, INDEXABLE_LOCALES, isIndexableLocale } from '@/i18n/routing'
 import { SITE_URL, SITE_NAME } from './seo-config'
 
 export interface PageMetadataOptions {
@@ -33,17 +33,23 @@ export async function generatePageMetadata({
   const canonicalPath = path === '/' ? '' : path
   const url = `${SITE_URL}/${locale}${canonicalPath}`
 
+  // hreflang lists indexable locales only. A noindex page is not a valid
+  // alternate — announcing one contradicts the noindex and asks Google to
+  // resolve a conflict we created ourselves.
   const alternates: Record<string, string> = {}
-  for (const loc of routing.locales) {
+  for (const loc of INDEXABLE_LOCALES) {
     alternates[loc] = `${SITE_URL}/${loc}${canonicalPath}`
   }
-  alternates['x-default'] = `${SITE_URL}/en${canonicalPath}`
+  alternates['x-default'] = `${SITE_URL}/${routing.defaultLocale}${canonicalPath}`
 
   const ogLocale = OG_LOCALE_MAP[locale] ?? locale
 
   return {
     title,
     description,
+    // follow, not nofollow: a non-indexable locale should still pass link
+    // signal on to the pages it points at.
+    ...(isIndexableLocale(locale) ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: url,
       languages: alternates,
