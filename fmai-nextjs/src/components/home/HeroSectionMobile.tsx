@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation'
 import { TrustClusterHero } from '@/components/marketing/TrustClusterHero'
 
 interface HeroSectionMobileProps {
+  brandKicker: string
   badge: string
   headlineMain: string
   tagline: React.ReactNode
@@ -30,6 +31,7 @@ interface HeroSectionMobileProps {
 */
 export function HeroSectionMobile(props: HeroSectionMobileProps) {
   const {
+    brandKicker,
     badge,
     headlineMain,
     tagline,
@@ -46,9 +48,17 @@ export function HeroSectionMobile(props: HeroSectionMobileProps) {
 
   return (
     <>
+      {/* Brand eyebrow — see HeroSectionDesktop. Not an <h1>. */}
+      <p
+        className="hero-mobile-anim text-xs font-semibold uppercase tracking-[0.2em] text-text-muted mb-3"
+        style={{ animation: `hero-mobile-fade-up-sm 0.6s ${ease} 0s both` }}
+      >
+        {brandKicker}
+      </p>
+
       <p
         className="hero-mobile-anim inline-flex items-center gap-2.5 text-[13px] font-medium text-accent-system tracking-wide mb-4 before:content-[''] before:block before:w-6 before:h-px before:bg-accent-system"
-        style={{ animation: `hero-mobile-fade-up-sm 0.6s ${ease} 0s both` }}
+        style={{ animation: `hero-mobile-fade-up-sm 0.6s ${ease} 0.1s both` }}
       >
         {badge}
       </p>

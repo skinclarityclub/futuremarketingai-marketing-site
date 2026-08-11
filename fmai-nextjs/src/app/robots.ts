@@ -68,7 +68,12 @@ const AI_CRAWLERS: string[] = [
 ]
 
 const SHARED_ALLOW = ['/', '/llms.txt', '/llms-full.txt']
-const SHARED_DISALLOW = ['/api/', '/_next/']
+// Only the API is off-limits. `/_next/` must stay crawlable: Google does not
+// render JavaScript it cannot fetch, so blocking `/_next/static/*` costs us the
+// rendered DOM, and blocking `/_next/image` keeps every optimized image out of
+// Google Images. Robots.txt is for resources whose absence does not change how
+// the page is understood — build assets are the opposite of that.
+const SHARED_DISALLOW = ['/api/']
 
 export default function robots(): MetadataRoute.Robots {
   // One explicit rule per AI crawler with the same allow/disallow as `*`.
