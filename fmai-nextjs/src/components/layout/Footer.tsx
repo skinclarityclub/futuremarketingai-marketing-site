@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import { Linkedin, Twitter } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { CookieReopenButton } from './CookieReopenButton'
 import { FooterNewsletter } from './FooterNewsletter'
@@ -245,15 +245,15 @@ export async function Footer({ locale }: FooterProps) {
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a
-                  href="https://twitter.com/FutureMarketAI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-md text-text-muted hover:text-accent-system hover:bg-white/5 transition-all"
-                  aria-label={t('landing.footer.social_aria.twitter')}
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
+                {/* No X/Twitter link: twitter.com/FutureMarketAI and x.com/FutureMarketAI
+                    both 404, TWITTER_URL is null in seo-config so it never reached sameAs,
+                    llms.txt lists no X profile, and the client's own account_keys are
+                    li-founder, li-company, threads, ig-main, tiktok and website — there is
+                    no X account. It was a dead link on every page of the site.
+
+                    Instagram, TikTok and Threads ARE real channels and belong here and in
+                    Organization.sameAs; their profile URLs are not stored anywhere in the
+                    repo or the database, so adding them needs the actual handles. */}
               </div>
             </div>
           </div>
