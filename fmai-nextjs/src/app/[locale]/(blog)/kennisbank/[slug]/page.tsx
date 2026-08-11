@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
+import { isIndexableLocale } from '@/i18n/routing'
 import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales, getCategoryLabel } from '@/lib/blog'
 import { ArticleJsonLd } from '@/components/seo/ArticleJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
@@ -63,6 +64,11 @@ export async function generateMetadata({
         `${post.title} | ${SITE_NAME}`.length <= 60 ? `${post.title} | ${SITE_NAME}` : post.title,
     },
     description: post.description,
+    // This route builds its own metadata instead of going through
+    // generatePageMetadata, so the indexable-locale rule has to be repeated
+    // here. Today no article carries a non-indexable locale, which is exactly
+    // why a future one would slip through unnoticed.
+    ...(isIndexableLocale(locale) ? {} : { robots: { index: false, follow: true } }),
     alternates: {
       canonical: url,
       languages: Object.keys(alternates).length > 1 ? alternates : undefined,
