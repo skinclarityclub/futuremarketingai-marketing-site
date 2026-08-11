@@ -83,7 +83,8 @@ export const PAGE_DATES: Record<string, string> = {
   // Brand-entity fix (one-word SITE_NAME + visible hero kicker) shipped today.
   '/': '2026-08-11',
   '/memory': '2026-04-20',
-  '/apply': '2026-04-20',
+  // The "what happens after you apply" section moved into the server tree today.
+  '/apply': '2026-08-11',
   '/case-studies/skinclarity-club': '2026-04-20',
   '/skills/social-media': '2026-04-20',
   '/skills/blog-factory': '2026-04-20',
