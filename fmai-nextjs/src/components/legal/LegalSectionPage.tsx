@@ -28,6 +28,7 @@ const SUBSECTIONS: Record<SectionKey, readonly string[]> = {
     'data_subject_rights',
     'international_transfers',
     'ai_readiness_assessment',
+    'platform_data',
     'contact',
   ],
   cookies: [],
