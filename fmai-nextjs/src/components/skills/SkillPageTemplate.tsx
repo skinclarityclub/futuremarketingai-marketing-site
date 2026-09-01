@@ -13,6 +13,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Typewriter } from '@/components/motion/Typewriter'
+import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
@@ -24,6 +25,30 @@ import {
 } from '@/lib/skills-data'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { SkillStickyToc } from './SkillStickyToc'
+
+/**
+ * Echte schermen per vaardigheid, op slug (2026-09-01).
+ *
+ * Hier en niet in de twaalf losse paginabestanden: die zijn allemaal een aanroep
+ * van drie regels, en dat is precies waarom deze template bestaat. Een slug
+ * zonder beeld rendert er geen — de drie coming_soon-vaardigheden hebben niets
+ * te tonen, en van de rest zijn nog niet alle schermen geschoten.
+ *
+ * De beelden komen uit de demo-organisatie (fictief bureau, fictieve klanten),
+ * dus er staat geen klantdata op.
+ */
+const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
+  'blog-factory': '/screenshots/blog-factory.webp',
+  reporting: '/screenshots/rapportage.webp',
+  // seo-geo stond hier even NIET: dat scherm toonde op de demo-organisatie
+  // "GA4 niet gekoppeld", streepjes bij citaties en positie, en "Geen data" bij
+  // Core Web Vitals. Een bijschrift dat rankings belooft naast een beeld dat er
+  // geen laat zien, is precies het gat tussen belofte en bewijs dat deze hele
+  // exercitie moest dichten. Opgelost aan de bron in plaats van hier: fma-app
+  // PR #636 seedt de zeven ontbrekende SEO-tabellen, dus het scherm toont nu
+  // 4.274 bezoekers, 27% citatiegraad, positie 12,8 en Core Web Vitals "Goed".
+  'seo-geo': '/screenshots/seo-geo.webp',
+}
 
 interface SkillPageTemplateProps {
   /** i18n namespace for this skill page, e.g. 'skills-social-media' */
@@ -257,6 +282,15 @@ export async function SkillPageTemplate({
                     </RevealItem>
                   ))}
                 </RevealContainer>
+                {SKILL_SCREENSHOTS[slug] && (
+                  <div className="max-w-3xl mx-auto">
+                    <AppScreenshot
+                      src={SKILL_SCREENSHOTS[slug]!}
+                      alt={t('screenshot.alt')}
+                      caption={t('screenshot.caption')}
+                    />
+                  </div>
+                )}
               </div>
             </section>
 
