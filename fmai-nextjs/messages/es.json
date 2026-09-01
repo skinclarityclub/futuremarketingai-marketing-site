@@ -444,6 +444,21 @@
         }
       },
       "caption": "El calendario de contenido por marca, rellenado desde la agenda"
+    },
+    "platforms": {
+      "title": "Funciona en los canales que ya usas",
+      "items": {
+        "instagram": "Instagram",
+        "meta": "Meta",
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "gmail": "Gmail",
+        "analytics": "Google Analytics",
+        "searchConsole": "Search Console",
+        "shopify": "Shopify",
+        "n8n": "n8n"
+      },
+      "note": "Solo integraciones que funcionan hoy en produccion. Falta tu canal? Preguntalo en la llamada y tendras una respuesta clara."
     }
   },
   "chatbots": {
@@ -1246,6 +1261,37 @@
       "title": "¿Listo para empezar la partnership?",
       "description": "Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "button": "Agenda una llamada"
+    },
+    "systemFlow": {
+      "title": "De la marca a la publicacion",
+      "subtitle": "Seis pasos, y en uno de ellos estas tu. Donde vive la memoria y donde decide la persona, en una sola imagen.",
+      "steps": {
+        "brand": {
+          "title": "La marca",
+          "body": "Un espacio por marca, con memoria propia que no se filtra a las demas."
+        },
+        "scan": {
+          "title": "Escaneo de marca",
+          "body": "Clyde lee el sitio y registra color, tono, oferta y audiencia."
+        },
+        "clyde": {
+          "title": "Clyde con memoria",
+          "body": "Recuerda por marca lo acordado y lo que funciono antes."
+        },
+        "skills": {
+          "title": "Habilidades",
+          "body": "Diez habilidades activas asumen el trabajo: social, blogs, correo, anuncios."
+        },
+        "approval": {
+          "title": "Tu aprobacion",
+          "body": "Nada sale sin que una persona lo haya visto."
+        },
+        "publish": {
+          "title": "Publicacion",
+          "body": "Al canal, en el momento previsto, con la medicion incluida."
+        }
+      },
+      "feedback": "Lo que apruebas o rechazas vuelve a la memoria: ahi empieza el ciclo de mejora de abajo."
     }
   },
   "contact": {

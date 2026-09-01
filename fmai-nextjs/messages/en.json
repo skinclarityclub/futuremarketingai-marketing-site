@@ -444,6 +444,21 @@
         }
       },
       "caption": "The content calendar per brand, filled from the agenda"
+    },
+    "platforms": {
+      "title": "Runs on the channels you already use",
+      "items": {
+        "instagram": "Instagram",
+        "meta": "Meta",
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "gmail": "Gmail",
+        "analytics": "Google Analytics",
+        "searchConsole": "Search Console",
+        "shopify": "Shopify",
+        "n8n": "n8n"
+      },
+      "note": "Only integrations running in production today. Not seeing your channel? Ask in the call and you will get a straight answer."
     }
   },
   "chatbots": {
@@ -1246,6 +1261,37 @@
       "title": "Ready to start the partnership?",
       "description": "Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "button": "Book a call"
+    },
+    "systemFlow": {
+      "title": "From brand to published post",
+      "subtitle": "Six steps, and you stand on one of them. Where the memory sits and where the human decides, in one picture.",
+      "steps": {
+        "brand": {
+          "title": "The brand",
+          "body": "One workspace per brand, with a memory of its own that never leaks to the neighbours."
+        },
+        "scan": {
+          "title": "Brand scan",
+          "body": "Clyde reads the site and records colour, tone, offer and audience."
+        },
+        "clyde": {
+          "title": "Clyde with memory",
+          "body": "Remembers per brand what was agreed and what worked before."
+        },
+        "skills": {
+          "title": "Skills",
+          "body": "Ten live skills pick up the work: social, blogs, email, ads."
+        },
+        "approval": {
+          "title": "Your approval",
+          "body": "Nothing goes out without a human having seen it."
+        },
+        "publish": {
+          "title": "Publishing",
+          "body": "To the channel, at the planned moment, with measurement attached."
+        }
+      },
+      "feedback": "What you approve or reject goes back into the memory — that is where the improvement cycle below begins."
     }
   },
   "contact": {
