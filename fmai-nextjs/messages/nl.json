@@ -446,7 +446,8 @@
       "caption": "De contentkalender per merk, gevuld vanuit de agenda"
     },
     "platforms": {
-      "title": "Draait op de kanalen die je al gebruikt",
+      "liveTitle": "Draait vandaag voor onze klanten",
+      "connectableTitle": "Koppelbaar op verzoek",
       "items": {
         "instagram": "Instagram",
         "meta": "Meta",
@@ -456,9 +457,16 @@
         "analytics": "Google Analytics",
         "searchConsole": "Search Console",
         "shopify": "Shopify",
-        "n8n": "n8n"
+        "n8n": "n8n",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "facebook": "Facebook",
+        "threads": "Threads",
+        "pinterest": "Pinterest"
       },
-      "note": "Alleen koppelingen die vandaag in productie draaien. Komt jouw kanaal er niet bij voor? Vraag het in het gesprek — dan hoor je of het kan."
+      "note": "Publiceren loopt via Postiz, dat 27 netwerken ondersteunt. Deze zeven zijn de bekendste; de rest sluiten we op verzoek aan. We zetten alleen aan wat je echt gebruikt."
     }
   },
   "chatbots": {

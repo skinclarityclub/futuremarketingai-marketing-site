@@ -446,7 +446,8 @@
       "caption": "El calendario de contenido por marca, rellenado desde la agenda"
     },
     "platforms": {
-      "title": "Funciona en los canales que ya usas",
+      "liveTitle": "Funcionando hoy para nuestros clientes",
+      "connectableTitle": "Conectable a peticion",
       "items": {
         "instagram": "Instagram",
         "meta": "Meta",
@@ -456,9 +457,16 @@
         "analytics": "Google Analytics",
         "searchConsole": "Search Console",
         "shopify": "Shopify",
-        "n8n": "n8n"
+        "n8n": "n8n",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "facebook": "Facebook",
+        "threads": "Threads",
+        "pinterest": "Pinterest"
       },
-      "note": "Solo integraciones que funcionan hoy en produccion. Falta tu canal? Preguntalo en la llamada y tendras una respuesta clara."
+      "note": "La publicacion pasa por Postiz, que admite 27 redes. Estas siete son las mas conocidas; el resto las conectamos a peticion. Solo activamos lo que de verdad usas."
     }
   },
   "chatbots": {

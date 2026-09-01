@@ -446,7 +446,8 @@
       "caption": "The content calendar per brand, filled from the agenda"
     },
     "platforms": {
-      "title": "Runs on the channels you already use",
+      "liveTitle": "Running today for our clients",
+      "connectableTitle": "Connectable on request",
       "items": {
         "instagram": "Instagram",
         "meta": "Meta",
@@ -456,9 +457,16 @@
         "analytics": "Google Analytics",
         "searchConsole": "Search Console",
         "shopify": "Shopify",
-        "n8n": "n8n"
+        "n8n": "n8n",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "facebook": "Facebook",
+        "threads": "Threads",
+        "pinterest": "Pinterest"
       },
-      "note": "Only integrations running in production today. Not seeing your channel? Ask in the call and you will get a straight answer."
+      "note": "Publishing runs through Postiz, which supports 27 networks. These seven are the best known; we connect the rest on request. We only switch on what you actually use."
     }
   },
   "chatbots": {
