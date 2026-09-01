@@ -420,6 +420,30 @@
           "answer": "Porque es un único cerebro con memoria compartida, no 12 herramientas sueltas. Lo que Clyde aprende sobre la marca X en social media lo utiliza automáticamente en sus blogs y anuncios. El aprendizaje cross-skill es imposible con herramientas separadas: pierdes contexto en cada traspaso. Un Empleado AI de Marketing para todo tu portfolio implica que los patrones y los datos viajan entre habilidades."
         }
       }
+    },
+    "strategy": {
+      "eyebrow": "La capa de estrategia",
+      "title": "Clyde empieza por el objetivo, no por la publicacion",
+      "subtitle": "Antes de crear nada hay un plan. Clyde realiza una sesion de estrategia por marca, registra objetivos con una proyeccion y construye una agenda de contenido que mira un ano por delante. Tu confirmas; el mantiene el rumbo.",
+      "steps": {
+        "s1": {
+          "t": "Una sesion de estrategia por marca",
+          "d": "Clyde entrevista a tu cliente y registra cinco bloques: posicionamiento, audiencia, oferta, tono y objetivos. Cada respuesta lleva su fuente."
+        },
+        "s2": {
+          "t": "Objetivos con proyeccion",
+          "d": "Un objetivo por canal, una linea esperada y la realidad medida al lado. Si va por detras, lo sabes antes de que acabe el trimestre."
+        },
+        "s3": {
+          "t": "Pilares que se reponderan solos",
+          "d": "Los pilares ganan peso segun lo que funciona de forma demostrable, sin que nadie mueva un control."
+        },
+        "s4": {
+          "t": "Una agenda que mira un ano por delante",
+          "d": "Doce ventanas mensuales sobre un arco anual, traducidas a publicaciones concretas por semana."
+        }
+      },
+      "caption": "El calendario de contenido por marca, rellenado desde la agenda"
     }
   },
   "chatbots": {
@@ -802,7 +826,7 @@
     "mission": {
       "eyebrow": "Por qué existe esto",
       "heading": "Nuestra misión",
-      "text": "Dar a cada agencia de marketing acceso a un Empleado AI de Marketing que se encargue de la ejecución. Para que los equipos de agencia puedan centrarse en estrategia, creatividad y relación con el cliente.",
+      "text": "Dar a cada agencia de marketing un Empleado AI de Marketing que sostiene el trabajo: desde la sesion de estrategia y el plan anual hasta las publicaciones que se derivan. Tu mantienes la direccion y la relacion con el cliente, Clyde mantiene el rumbo y entrega.",
       "personal": "Yo mismo dirigí operaciones de marketing y vi el mismo problema que tiene toda agencia: demasiadas marcas, demasiado trabajo repetitivo, demasiado pocas horas. Así que construí el Empleado AI de Marketing que yo quería tener."
     },
     "journey": {

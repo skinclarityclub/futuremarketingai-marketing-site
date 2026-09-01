@@ -420,6 +420,30 @@
           "answer": "Because it is one brain with shared memory, not 12 separate tools. What Clyde learns about brand X in social media, he automatically uses in their blogs and ads. Cross-skill learning is impossible with separate tools: you lose context at every handover. One AI Marketing Employee for your entire portfolio means patterns and data travel between skills."
         }
       }
+    },
+    "strategy": {
+      "eyebrow": "The strategy layer",
+      "title": "Clyde starts at the goal, not at the post",
+      "subtitle": "Before anything gets made, there is a plan. Clyde runs a strategy session per brand, records goals with a projection, and builds a content agenda from it that looks a year ahead. You confirm; he holds the course.",
+      "steps": {
+        "s1": {
+          "t": "A strategy session per brand",
+          "d": "Clyde interviews your client and records five blocks: positioning, audience, offer, tone and goals. Every answer carries its source, so you can see what came from the conversation and what is an assumption."
+        },
+        "s2": {
+          "t": "Goals with a projection",
+          "d": "A goal per channel, an expected line, and the measured reality beside it. If it runs behind, you know before the quarter is over."
+        },
+        "s3": {
+          "t": "Content pillars that reweight themselves",
+          "d": "Pillars gain weight based on what demonstrably works. What performs gets more room, without anyone moving a slider."
+        },
+        "s4": {
+          "t": "An agenda that looks a year ahead",
+          "d": "Twelve monthly windows across a yearly arc, translated into concrete posts per week. No empty calendar at the start of the month."
+        }
+      },
+      "caption": "The content calendar per brand, filled from the agenda"
     }
   },
   "chatbots": {
@@ -802,7 +826,7 @@
     "mission": {
       "eyebrow": "Why this exists",
       "heading": "Our mission",
-      "text": "To give every marketing agency access to an AI Marketing Employee that handles execution. So agency teams can focus on strategy, creativity and client relationships.",
+      "text": "Give every marketing agency an AI Marketing Employee who carries the work: from the strategy session and the yearly plan through to the posts that follow from it. You keep the direction and the client relationship, Clyde holds the course and delivers.",
       "personal": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the AI Marketing Employee I wanted to have."
     },
     "journey": {

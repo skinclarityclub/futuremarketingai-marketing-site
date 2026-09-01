@@ -420,6 +420,30 @@
           "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
         }
       }
+    },
+    "strategy": {
+      "eyebrow": "De strategielaag",
+      "title": "Clyde begint bij het doel, niet bij de post",
+      "subtitle": "Voordat er iets gemaakt wordt, ligt er een plan. Clyde voert een strategiesessie per merk, legt doelen vast met een projectie, en bouwt daaruit een contentagenda die een jaar vooruit kijkt. Jij bevestigt; hij houdt koers.",
+      "steps": {
+        "s1": {
+          "t": "Strategiesessie per merk",
+          "d": "Clyde interviewt je klant en legt vijf blokken vast: positionering, doelgroep, aanbod, toon en doelen. Elk antwoord met bron, zodat je ziet wat uit het gesprek komt en wat een aanname is."
+        },
+        "s2": {
+          "t": "Doelen met een projectie",
+          "d": "Per kanaal een doel, een verwachte lijn en de gemeten werkelijkheid ernaast. Loopt het achter, dan weet je het voordat het kwartaal om is."
+        },
+        "s3": {
+          "t": "Contentpijlers die zichzelf herwegen",
+          "d": "De pijlers krijgen gewicht op basis van wat aantoonbaar werkt. Wat presteert krijgt meer ruimte, zonder dat iemand een schuif verzet."
+        },
+        "s4": {
+          "t": "Een agenda die een jaar vooruit kijkt",
+          "d": "Twaalf maandvensters over een jaarboog, vertaald naar concrete posts per week. Geen lege kalender aan het begin van de maand."
+        }
+      },
+      "caption": "De contentkalender per merk, gevuld vanuit de agenda"
     }
   },
   "chatbots": {
@@ -802,7 +826,7 @@
     "mission": {
       "eyebrow": "Waarom dit bestaat",
       "heading": "Mijn missie",
-      "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die de uitvoering op zich neemt. Zodat bureauteams zich kunnen richten op strategie, creativiteit en klantrelaties.",
+      "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die het werk draagt: van de strategiesessie en de jaarplanning tot de posts die eruit volgen. Jij houdt de regie en het klantcontact, Clyde houdt koers en levert.",
       "personal": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
     },
     "journey": {
