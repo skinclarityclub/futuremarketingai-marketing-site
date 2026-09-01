@@ -8,7 +8,7 @@ FutureMarketingAI (FMai) is a solo-founder AI marketing partnership founded by D
 
 Unlike a self-serve SaaS, FMai operates on a 20-partnerships-per-year cap with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
-The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with 6 of Clyde's 12 skills active. Sindy is the first Founding Member (spot 1 of 10).
+The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with all 10 of Clyde's live skills active. Sindy is the first Founding Member (spot 1 of 10).
 
 Key facts:
 
@@ -255,13 +255,17 @@ Setup: SkinClarity Club runs a portfolio of 4 brand identities across 3 Instagra
 - @Sindy_Huidtherapeut: personal authority account of founder Sindy, trust, expertise, personal branding (circa 30 percent of content volume).
 - @SkinClarity_Shop: product account for the webshop, launches, bundles and product content (circa 20 percent of content volume).
 
-Active skills: 6 of Clyde's 12 skills active for SKC.
+Active skills: all 10 live skills are active for SKC. The whole system was built and tested on this account, so it runs the full set; only the two coming-soon skills (Voice Agent, Reel Builder) are absent.
 - Social Media Manager: carousels, posts and stories for 3 Instagram accounts. AI-generated in the right brand voice per account.
 - Blog Factory: SEO blogs for skinclarityclub.nl. Skin themes, treatments and product deep dives.
 - SEO / GEO Analyst: technical SEO audits, position tracking and citation monitoring in ChatGPT and Perplexity.
 - Reporting and Analytics: weekly performance digest across Instagram, Shopify and SEO data. Anomaly alerts.
 - Research: trend monitoring in skincare, competitor analysis and content ideas with source citations.
-- Clyde orchestrator: the central AI Marketing Medewerker that ties the 5 skills together. Memory per account plus learning across skills.
+- Email Management: Gmail inbox classification and a daily digest across the SKC mailboxes.
+- Social Command Center (ManyChat DM): Instagram DM triggers, AI replies and lead capture.
+- Lead Qualifier: scoring and routing of inbound leads across channels.
+- Ad Manager: Meta ad publishing with leads, cost per lead and ad fatigue tracked per ad.
+- Clyde orchestrator: the central AI Marketing Medewerker that ties the other nine together. Memory per account plus learning across skills.
 
 Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
 

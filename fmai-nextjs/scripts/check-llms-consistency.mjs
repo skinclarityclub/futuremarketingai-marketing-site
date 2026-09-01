@@ -113,17 +113,25 @@ for (const [name, text] of Object.entries(files)) {
     }
   }
 
-  // 5 — a skill described as live/coming-soon must match its status. Only the
-  // explicit trailing marker is checked; prose elsewhere is left alone.
+  // 5 — a skill tagged with an explicit status marker must match its status.
+  //
+  // Only the file's two marker conventions count: "### Ad Manager (Live)" and
+  // "- [Ad Manager](url): description. Live." Matching any nearby occurrence of
+  // the word instead is what made an earlier revision of this check fail on the
+  // sentence "12 skills from social media to voice agents ... all 10 live
+  // skills active" — "Voice Agent" followed by "live" twenty words later is
+  // prose, not a status claim.
   for (const s of skills) {
+    const escaped = s.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     const marker = new RegExp(
-      `${s.name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}[^\\n]*?\\b(Live|Coming soon)\\b`,
+      `${escaped}\\s*\\((Live|Coming soon)\\)|${escaped}\\][^\\n]*?\\.\\s+(Live|Coming soon)\\.`,
       'gi',
     )
     for (const m of text.matchAll(marker)) {
-      const claimed = /coming soon/i.test(m[1]) ? 'coming_soon' : 'live'
+      const word = m[1] ?? m[2]
+      const claimed = /coming soon/i.test(word) ? 'coming_soon' : 'live'
       if (claimed !== s.status) {
-        fail(`${name}: "${s.name}" is marked ${m[1]} but skills-data.ts says ${s.status}`)
+        fail(`${name}: "${s.name}" is marked ${word} but skills-data.ts says ${s.status}`)
       }
     }
   }

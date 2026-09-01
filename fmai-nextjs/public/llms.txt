@@ -2,7 +2,7 @@
 
 > FMai is a Dutch AI marketing partnership for agencies. Clyde, the AI Marketing Medewerker, runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup.
 
-FMai is a high-touch AI marketing partnership founded by Daley. It targets performance and growth agencies in the Netherlands and EU managing portfolios of brand workspaces. Instead of selling isolated AI tools, FMai provides one persistent AI Marketing Employee named Clyde who learns each brand over time, remembers per-brand voice, operates across 12 skills from social media to voice agents, and is orchestrated by the founder personally. The proof case is SkinClarity Club, where Sindy (founder) runs 4 brands and 3 Instagram accounts autonomously with 6 active skills.
+FMai is a high-touch AI marketing partnership founded by Daley. It targets performance and growth agencies in the Netherlands and EU managing portfolios of brand workspaces. Instead of selling isolated AI tools, FMai provides one persistent AI Marketing Employee named Clyde who learns each brand over time, remembers per-brand voice, operates across 12 skills from social media to voice agents, and is orchestrated by the founder personally. The proof case is SkinClarity Club, where Sindy (founder) runs 4 brands and 3 Instagram accounts autonomously with all 10 live skills active.
 
 The product is not a self-serve SaaS. Every engagement starts with an application at https://future-marketing.ai/nl/apply. Daley reviews personally within 48 hours. The max 10 partnerships per year constraint is honored through this gate.
 
@@ -19,7 +19,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. 8 fields. Response within 48 hours.
 - [How it works](https://future-marketing.ai/nl/how-it-works): Week-by-week onboarding cadence, first month correction loop, quarterly strategy, annual retrospective.
 - [About](https://future-marketing.ai/nl/about): Solo founder Daley. 10 partnerships per year cap. Why partnership over SaaS.
-- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Sindy, 4 brands, 3 IG accounts, 6 active skills. The proof case.
+- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Sindy, 4 brands, 3 IG accounts, all 10 live skills active. The proof case.
 - [Contact](https://future-marketing.ai/nl/contact): Simple form. For partnership inquiries use Apply instead.
 
 ## 12 Skills
