@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server'
+import { BrandMark } from '@/components/marketing/BrandMark'
 import { Link } from '@/i18n/navigation'
-import { Linkedin } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { CookieReopenButton } from './CookieReopenButton'
 import { FooterNewsletter } from './FooterNewsletter'
@@ -243,7 +243,7 @@ export async function Footer({ locale }: FooterProps) {
                   className="p-1.5 rounded-md text-text-muted hover:text-accent-system hover:bg-white/5 transition-all"
                   aria-label={t('landing.footer.social_aria.linkedin')}
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <BrandMark name="linkedin" className="w-4 h-4" />
                 </a>
                 {/* No X/Twitter link: twitter.com/FutureMarketAI and x.com/FutureMarketAI
                     both 404, TWITTER_URL is null in seo-config so it never reached sameAs,

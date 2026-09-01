@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
+import { BrandMark } from '@/components/marketing/BrandMark'
 import { useLocale, useTranslations } from 'next-intl'
 import { motion } from 'motion/react'
 import {
@@ -11,7 +12,6 @@ import {
   Check,
   Clapperboard,
   Globe,
-  Linkedin,
   Link as LinkIcon,
   Mail,
   Megaphone,
@@ -338,7 +338,7 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
             rel="noopener noreferrer"
             className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#0a66c2] px-4 py-2.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a66c2]"
           >
-            <Linkedin className="h-4 w-4" />
+            <BrandMark name="linkedin" className="h-4 w-4" />
             {tShare('linkedin')}
           </a>
           <button

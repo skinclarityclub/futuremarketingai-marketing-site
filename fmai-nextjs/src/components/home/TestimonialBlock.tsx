@@ -1,8 +1,9 @@
 import { existsSync } from 'node:fs'
+import { BrandMark } from '@/components/marketing/BrandMark'
 import path from 'node:path'
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
-import { ArrowRight, Linkedin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
 const PORTRAIT_SRC = '/images/sindy-portrait.webp'
@@ -69,7 +70,7 @@ export async function TestimonialBlock({ locale }: { locale: string }) {
                   className="inline-flex items-center gap-1.5 text-sm text-text-secondary hover:text-accent-system transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
                   aria-label={t('linkedinLabel')}
                 >
-                  <Linkedin className="w-4 h-4" aria-hidden />
+                  <BrandMark name="linkedin" className="w-4 h-4" aria-hidden />
                   <span>LinkedIn</span>
                 </a>
                 <Link
