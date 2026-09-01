@@ -444,6 +444,29 @@
         }
       },
       "caption": "El calendario de contenido por marca, rellenado desde la agenda"
+    },
+    "platforms": {
+      "liveTitle": "Funcionando hoy para nuestros clientes",
+      "connectableTitle": "Conectable a peticion",
+      "items": {
+        "instagram": "Instagram",
+        "meta": "Meta",
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "gmail": "Gmail",
+        "analytics": "Google Analytics",
+        "searchConsole": "Search Console",
+        "shopify": "Shopify",
+        "n8n": "n8n",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "facebook": "Facebook",
+        "threads": "Threads",
+        "pinterest": "Pinterest"
+      },
+      "note": "La publicacion pasa por Postiz, que admite 27 redes. Estas siete son las mas conocidas; el resto las conectamos a peticion. Solo activamos lo que de verdad usas."
     }
   },
   "chatbots": {
@@ -1246,6 +1269,37 @@
       "title": "¿Listo para empezar la partnership?",
       "description": "Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "button": "Agenda una llamada"
+    },
+    "systemFlow": {
+      "title": "De la marca a la publicacion",
+      "subtitle": "Seis pasos, y en uno de ellos estas tu. Donde vive la memoria y donde decide la persona, en una sola imagen.",
+      "steps": {
+        "brand": {
+          "title": "La marca",
+          "body": "Un espacio por marca, con memoria propia que no se filtra a las demas."
+        },
+        "scan": {
+          "title": "Escaneo de marca",
+          "body": "Clyde lee el sitio y registra color, tono, oferta y audiencia."
+        },
+        "clyde": {
+          "title": "Clyde con memoria",
+          "body": "Recuerda por marca lo acordado y lo que funciono antes."
+        },
+        "skills": {
+          "title": "Habilidades",
+          "body": "Diez habilidades activas asumen el trabajo: social, blogs, correo, anuncios."
+        },
+        "approval": {
+          "title": "Tu aprobacion",
+          "body": "Nada sale sin que una persona lo haya visto."
+        },
+        "publish": {
+          "title": "Publicacion",
+          "body": "Al canal, en el momento previsto, con la medicion incluida."
+        }
+      },
+      "feedback": "Lo que apruebas o rechazas vuelve a la memoria: ahi empieza el ciclo de mejora de abajo."
     }
   },
   "contact": {

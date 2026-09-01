@@ -16,6 +16,7 @@ import { RevealContainer, RevealItem } from '@/components/sections/RevealContain
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ImprovementLoopCycle } from '@/components/how-it-works/ImprovementLoopCycle'
 import { AppScreenshot } from '@/components/marketing/AppScreenshot'
+import { SystemFlow } from '@/components/how-it-works/SystemFlow'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
@@ -103,6 +104,10 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
+
+      {/* De keten in één beeld, vóór de vijf stappen: eerst zien hoe het hangt,
+          dan lezen wat er per week gebeurt. */}
+      <SystemFlow locale={locale} />
 
       {/* Process Steps — vertical timeline + deliverable chips */}
       <SectionShell

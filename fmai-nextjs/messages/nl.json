@@ -444,6 +444,29 @@
         }
       },
       "caption": "De contentkalender per merk, gevuld vanuit de agenda"
+    },
+    "platforms": {
+      "liveTitle": "Draait vandaag voor onze klanten",
+      "connectableTitle": "Koppelbaar op verzoek",
+      "items": {
+        "instagram": "Instagram",
+        "meta": "Meta",
+        "whatsapp": "WhatsApp",
+        "telegram": "Telegram",
+        "gmail": "Gmail",
+        "analytics": "Google Analytics",
+        "searchConsole": "Search Console",
+        "shopify": "Shopify",
+        "n8n": "n8n",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "facebook": "Facebook",
+        "threads": "Threads",
+        "pinterest": "Pinterest"
+      },
+      "note": "Publiceren loopt via Postiz, dat 27 netwerken ondersteunt. Deze zeven zijn de bekendste; de rest sluiten we op verzoek aan. We zetten alleen aan wat je echt gebruikt."
     }
   },
   "chatbots": {
@@ -1246,6 +1269,37 @@
       "title": "Klaar om de partnership te starten?",
       "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "button": "Plan een gesprek"
+    },
+    "systemFlow": {
+      "title": "Van merk naar gepubliceerde post",
+      "subtitle": "Zes stappen, en op één ervan sta jij. Waar het geheugen zit en waar de mens beslist, in één beeld.",
+      "steps": {
+        "brand": {
+          "title": "Het merk",
+          "body": "Eén werkruimte per merk, met een eigen geheugen dat niet lekt naar de buren."
+        },
+        "scan": {
+          "title": "Brand-scan",
+          "body": "Clyde leest de site en legt kleur, toon, aanbod en doelgroep vast."
+        },
+        "clyde": {
+          "title": "Clyde met geheugen",
+          "body": "Onthoudt per merk wat er is afgesproken en wat er eerder werkte."
+        },
+        "skills": {
+          "title": "Vaardigheden",
+          "body": "Tien live vaardigheden pakken het werk op: social, blogs, e-mail, ads."
+        },
+        "approval": {
+          "title": "Jouw goedkeuring",
+          "body": "Niets gaat naar buiten zonder dat een mens het heeft gezien."
+        },
+        "publish": {
+          "title": "Publicatie",
+          "body": "Naar het kanaal, op het geplande moment, met de meting eraan vast."
+        }
+      },
+      "feedback": "Wat je goedkeurt of afwijst gaat terug het geheugen in — daar begint de verbetercyclus hieronder."
     }
   },
   "contact": {

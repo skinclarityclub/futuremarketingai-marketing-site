@@ -14,6 +14,7 @@ import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { AppScreenshot } from '@/components/marketing/AppScreenshot'
+import { PlatformStrip } from '@/components/marketing/PlatformStrip'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroBackdrop } from '@/components/hero/HeroBackdrop'
 import { HeroSection } from '@/components/home/HeroSection'
@@ -417,6 +418,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </ScrollReveal>
           </div>
         </section>
+      </LazySection>
+
+      {/* Kanalen. Staat NA de strategiesectie: eerst wat Clyde doet, dan waar
+          hij het doet. Alleen koppelingen die vandaag in productie draaien —
+          de uitsluitingen staan in PlatformStrip.tsx. */}
+      <LazySection minHeight="180px">
+        <PlatformStrip locale={locale} />
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
