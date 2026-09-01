@@ -1173,7 +1173,9 @@
           "description": "Daley begeleidt het traject persoonlijk. Intake van de merkstem per merk, KPI-doelen vastleggen, vaardigheden-matrix opbouwen en goedkeuringsworkflows inregelen. Geen self-service wizard.",
           "deliverable1": "Brand-scan per merk",
           "deliverable2": "Brand-voice training",
-          "deliverable3": "Goedkeuringsworkflows"
+          "deliverable3": "Goedkeuringsworkflows",
+          "screenshotAlt": "Het onboardingscherm van Clyde: stap 1 van 11, met de merkgegevens en de standaardinstellingen voor taal en tijdzone.",
+          "screenshotCaption": "Stap 1 van 11 — elke werkruimte doorloopt dezelfde route"
         },
         "configure": {
           "step": "Stap 3",
@@ -1191,7 +1193,9 @@
           "description": "Clyde gaat aan het werk: social posts, blogs, calls, ads. Jij beoordeelt elke output in de goedkeuringslijst voordat het live gaat. Week 1 veel correcties, maar Clyde leert snel.",
           "deliverable1": "Social posts live",
           "deliverable2": "Goedkeurings-queue",
-          "deliverable3": "Week-1 iteraties"
+          "deliverable3": "Week-1 iteraties",
+          "screenshotAlt": "De goedkeuringslijst met drie openstaande taken, elk met een toelichting en een knop Goedkeuren.",
+          "screenshotCaption": "Niets gaat live zonder jouw akkoord"
         },
         "improvement": {
           "step": "Stap 5",
@@ -1200,7 +1204,9 @@
           "description": "Elke week scherper per merk. Clyde onthoudt correcties, leert van prestatiedata en bouwt micro-kennis op. De wekelijkse prestatie-digest houdt je in control.",
           "deliverable1": "Wekelijkse digest",
           "deliverable2": "Memory-correcties",
-          "deliverable3": "Prestatie-feedback"
+          "deliverable3": "Prestatie-feedback",
+          "screenshotAlt": "Het doelenscherm van Clyde met meerstaps trajecten die hij zelf bijhoudt.",
+          "screenshotCaption": "Doelen die Clyde bewaakt, niet jij"
         }
       },
       "loop_eyebrow": "De ritmische cyclus",

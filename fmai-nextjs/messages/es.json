@@ -1173,7 +1173,9 @@
           "description": "Daley guía el proceso personalmente. Intake de la voz de marca por marca, definición de objetivos KPI, construcción de la matriz de habilidades y configuración de los flujos de aprobación. Sin asistente self-service.",
           "deliverable1": "Brand scan por marca",
           "deliverable2": "Entrenamiento de voz",
-          "deliverable3": "Flujos de aprobación"
+          "deliverable3": "Flujos de aprobación",
+          "screenshotAlt": "Pantalla de incorporacion de Clyde: paso 1 de 11, con los datos de marca y los ajustes de idioma y zona horaria.",
+          "screenshotCaption": "Paso 1 de 11 — cada espacio sigue la misma ruta"
         },
         "configure": {
           "step": "Paso 3",
@@ -1191,7 +1193,9 @@
           "description": "Clyde se pone a trabajar: posts sociales, blogs, llamadas, anuncios. Tú revisas cada output en la cola de aprobación antes de que salga en vivo. La semana 1 hay muchas correcciones, pero Clyde aprende rápido.",
           "deliverable1": "Posts sociales en vivo",
           "deliverable2": "Cola de aprobación",
-          "deliverable3": "Iteraciones semana 1"
+          "deliverable3": "Iteraciones semana 1",
+          "screenshotAlt": "La lista de aprobaciones con tres tareas abiertas, cada una con contexto y un boton Aprobar.",
+          "screenshotCaption": "Nada se publica sin tu aprobacion"
         },
         "improvement": {
           "step": "Paso 5",
@@ -1200,7 +1204,9 @@
           "description": "Más afilado cada semana por marca. Clyde recuerda correcciones, aprende de los datos de rendimiento y construye micro-conocimiento. El resumen semanal de rendimiento te mantiene al mando.",
           "deliverable1": "Resumen semanal",
           "deliverable2": "Correcciones de memoria",
-          "deliverable3": "Feedback de rendimiento"
+          "deliverable3": "Feedback de rendimiento",
+          "screenshotAlt": "Pantalla de objetivos de Clyde con trayectos de varios pasos que el mismo vigila.",
+          "screenshotCaption": "Objetivos que vigila Clyde, no tu"
         }
       },
       "loop_eyebrow": "El ciclo rítmico",

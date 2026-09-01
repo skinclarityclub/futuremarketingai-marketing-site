@@ -15,6 +15,7 @@ import { SectionShell } from '@/components/sections/SectionShell'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ImprovementLoopCycle } from '@/components/how-it-works/ImprovementLoopCycle'
+import { AppScreenshot } from '@/components/how-it-works/AppScreenshot'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
@@ -36,6 +37,17 @@ export async function generateMetadata({
 
 const STEP_KEYS = ['apply', 'onboarding', 'configure', 'production', 'improvement'] as const
 const FEATURED_STEPS = new Set(['onboarding', 'improvement'])
+
+/**
+ * Echte schermen uit het product per stap. Drie van de vijf stappen krijgen er
+ * een: de stappen die iets TONEN dat je anders alleen op ons woord moet geloven.
+ * `apply` (een formulier) en `configure` (instellingen) hebben er geen nodig.
+ */
+const STEP_SCREENSHOTS: Partial<Record<(typeof STEP_KEYS)[number], string>> = {
+  onboarding: '/screenshots/onboarding-11-stappen.webp',
+  production: '/screenshots/goedkeuringen.webp',
+  improvement: '/screenshots/doelen.webp',
+}
 
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -163,6 +175,13 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                       </li>
                     ))}
                   </ul>
+                  {STEP_SCREENSHOTS[stepKey] && (
+                    <AppScreenshot
+                      src={STEP_SCREENSHOTS[stepKey]!}
+                      alt={t(`process.steps.${stepKey}.screenshotAlt`)}
+                      caption={t(`process.steps.${stepKey}.screenshotCaption`)}
+                    />
+                  )}
                 </article>
               </RevealItem>
             )
