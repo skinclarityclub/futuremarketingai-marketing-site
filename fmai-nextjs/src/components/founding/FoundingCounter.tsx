@@ -57,6 +57,12 @@ export async function FoundingCounter({
   const t = await getTranslations('founding.counter')
 
   const lastUpdatedLabel = formatDate(FOUNDING_LAST_UPDATED, locale)
+
+  // A cohort start that has already passed reads as an abandoned page: on
+  // 2026-09-01 this badge still advertised "Cohort start 1 juni 2026". Scarcity
+  // that is visibly expired argues against you. Hide the line once the date is
+  // behind us; set a future FOUNDING_COHORT_START and it returns by itself.
+  const cohortStartsInFuture = new Date(FOUNDING_COHORT_START) > new Date()
   const cohortStartLabel = formatDate(FOUNDING_COHORT_START, locale)
 
   const accentClasses =
@@ -77,9 +83,11 @@ export async function FoundingCounter({
       <span className="text-xs text-text-muted">
         {t('lastUpdated', { date: lastUpdatedLabel })}
       </span>
-      <span className="text-xs text-text-muted">
-        {t('cohortStart', { date: cohortStartLabel })}
-      </span>
+      {cohortStartsInFuture && (
+        <span className="text-xs text-text-muted">
+          {t('cohortStart', { date: cohortStartLabel })}
+        </span>
+      )}
     </div>
   )
 }
