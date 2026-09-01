@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -27,7 +27,7 @@ Clyde is a persistent AI employee, not a chatbot. Key characteristics:
 
 - Named identity across every touchpoint (website, Slack, dashboard, email).
 - Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
-- Operates 12 skills: Social Media, Blog Factory, Ad Creator, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
+- Operates 12 skills: Social Media, Blog Factory, Ad Manager, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
 - Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
 - Self-hosted EU infrastructure for AVG and EU AI Act compliance.
 - Controlled via natural language through chat, Slack, Telegram, or direct dashboard commands.
@@ -61,9 +61,9 @@ Capabilities:
 
 Credit cost: 15 credits per article. Each workspace receives 800 credits per month (Founding Member: 8000 credits total).
 
-### Ad Creator (Coming soon)
+### Ad Manager (Live)
 
-Ad Creator generates complete advertisements from copy to visuals. AI builds static and video ads, optimizes for different formats (Stories, Feed, Reels) and publishes directly to Meta Ads Manager. A/B test variants included.
+Ad Manager builds ads and then steers them: it publishes to Meta and tracks leads, cost per lead and ad fatigue per individual advertisement. TikTok is not connected.
 
 Capabilities:
 - AI-generated ad copy and visuals
@@ -117,10 +117,10 @@ Credit cost: 2 credits per scored conversation.
 
 ### Email Management (Live)
 
-Email Management connects to Gmail and Outlook (Microsoft 365) via OAuth. AI classifies inboxes into 6 categories (lead, urgent client, invoice, newsletter, internal, other), auto-provisions FMai labels and folders, and generates AI-reply drafts for your approval before sending. Saves hours per week on inbox management. Dual-write organization keeps both Outlook (category plus folder) and Gmail (nested label) mailboxes tidy.
+Email Management connects to Gmail (Google Workspace and free accounts) via OAuth. AI classifies the inbox, adds smart labels and produces a daily digest of what matters. This is inbox classification, not email campaigns. Outlook and custom IMAP are on the roadmap, not live.
 
 Capabilities:
-- Gmail and Outlook (Microsoft 365) OAuth integration
+- Gmail OAuth integration (Outlook and custom IMAP on the roadmap)
 - AI inbox classification (lead, urgent, invoice, newsletter, internal)
 - Auto-provisioning of FMai labels and folders
 - AI reply drafts with approval queue
@@ -210,7 +210,7 @@ Two pricing models:
 - 10 spots total, 1 currently taken (SkinClarity Club)
 - Unlimited workspaces (no cap)
 - 8,000 credits per month
-- All 12 skills included (9 live, 3 coming soon)
+- All 12 skills included (10 live, 2 coming soon)
 - Direct founder access plus roadmap influence
 - No onboarding fee
 - Monthly cancellable; rate locked for life (never raises for founding members)
@@ -299,7 +299,7 @@ Data export and deletion: 24-hour SLA on full export or full deletion on request
 
 ## How it Works
 
-Application-gated, no self-service signup. Max 20 partnerships per year.
+Application-gated, no self-service signup. Max 10 partnerships per year.
 
 Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
 
