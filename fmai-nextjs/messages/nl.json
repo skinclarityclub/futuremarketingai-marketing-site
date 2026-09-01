@@ -3193,6 +3193,10 @@
           "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op vaardigheid-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
         }
       }
+    },
+    "screenshot": {
+      "alt": "Het SEO/GEO Command Center met bezoekers, rankings, AI-citaties en Core Web Vitals naast elkaar.",
+      "caption": "Rankings en AI-citaties in één overzicht"
     }
   },
   "skills-clyde": {

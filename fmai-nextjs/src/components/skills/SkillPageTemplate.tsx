@@ -40,12 +40,14 @@ import { SkillStickyToc } from './SkillStickyToc'
 const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
   'blog-factory': '/screenshots/blog-factory.webp',
   reporting: '/screenshots/rapportage.webp',
-  // seo-geo BEWUST NIET. Het SEO/GEO-scherm van de demo-organisatie toont
-  // "GA4 niet gekoppeld", streepjes bij AI-citaties en gemiddelde positie, en
-  // "Geen data" bij Core Web Vitals — die org heeft geen echte site gekoppeld.
-  // Een bijschrift dat rankings en citaties belooft naast een beeld dat er geen
-  // toont, is precies het gat tussen belofte en bewijs dat deze hele exercitie
-  // moest dichten. Terug zodra er een demo-site met echte meetdata aan hangt.
+  // seo-geo stond hier even NIET: dat scherm toonde op de demo-organisatie
+  // "GA4 niet gekoppeld", streepjes bij citaties en positie, en "Geen data" bij
+  // Core Web Vitals. Een bijschrift dat rankings belooft naast een beeld dat er
+  // geen laat zien, is precies het gat tussen belofte en bewijs dat deze hele
+  // exercitie moest dichten. Opgelost aan de bron in plaats van hier: fma-app
+  // PR #636 seedt de zeven ontbrekende SEO-tabellen, dus het scherm toont nu
+  // 4.274 bezoekers, 27% citatiegraad, positie 12,8 en Core Web Vitals "Goed".
+  'seo-geo': '/screenshots/seo-geo.webp',
 }
 
 interface SkillPageTemplateProps {

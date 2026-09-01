@@ -3193,6 +3193,10 @@
           "answer": "Ahrefs y Semrush son herramientas de datos, tú interpretas. Clyde combina SEO y GEO (citas IA), interpreta los datos y recomienda por urgencia. Ejemplo: 'falta tu schema Service en la página de habilidad X, arregla esto en 1 hora, 12 por ciento de probabilidad de lift en rich-result'."
         }
       }
+    },
+    "screenshot": {
+      "alt": "El SEO/GEO Command Center con visitantes, posiciones, citas de IA y Core Web Vitals en paralelo.",
+      "caption": "Posiciones y citas de IA en una sola vista"
     }
   },
   "skills-clyde": {

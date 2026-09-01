@@ -3193,6 +3193,10 @@
           "answer": "Ahrefs and Semrush are data tools, you interpret. Clyde combines SEO and GEO (AI citations), interprets the data, and recommends by urgency. Example: 'your Service schema is missing on skill page X, fix this within 1 hour, 12 percent chance of rich-result lift'."
         }
       }
+    },
+    "screenshot": {
+      "alt": "The SEO/GEO Command Center showing visitors, rankings, AI citations and Core Web Vitals side by side.",
+      "caption": "Rankings and AI citations in one view"
     }
   },
   "skills-clyde": {
