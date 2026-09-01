@@ -1962,6 +1962,10 @@
           "answer": "Looker Studio builds dashboards that you interpret weekly. Whatagraph delivers PDFs. Clyde delivers interpreted insights: not just 'CTR dropped 12 percent' but also 'cause: new creative test for brand X, recommendation: pause'. Saves the weekly interpretation hour."
         }
       }
+    },
+    "screenshot": {
+      "alt": "The dashboard showing the state of every brand and what Clyde did in the last 24 hours.",
+      "caption": "What is running, and what Clyde did while you slept"
     }
   },
   "founding-member": {
@@ -3081,6 +3085,10 @@
           "answer": "Jasper is a prompt tool, you build the structure every time. SurferSEO checks SEO quality. Clyde delivers the full article: keyword clustering, writing, optimizing, publishing, with memory of your style and prior topics. No more manual cut-and-paste between 3 tools."
         }
       }
+    },
+    "screenshot": {
+      "alt": "The Blog Factory screen with four drafts ready for review, per brand.",
+      "caption": "Generation, review and publishing from one screen"
     }
   },
   "skills-seo-geo": {

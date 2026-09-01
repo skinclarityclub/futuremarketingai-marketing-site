@@ -1962,6 +1962,10 @@
           "answer": "Looker Studio bouwt dashboards die jij elke week interpreteert. Whatagraph levert PDF's. Clyde levert geinterpreteerde inzichten: niet alleen 'CTR daalde 12 procent', maar ook 'oorzaak: nieuwe creative-test voor merk X, advies: pauzeren'. Bespaart de wekelijkse interpretatie-uur."
         }
       }
+    },
+    "screenshot": {
+      "alt": "Het dashboard met de stand van alle merken en wat Clyde de afgelopen 24 uur deed.",
+      "caption": "Wat er draait, en wat Clyde deed terwijl je sliep"
     }
   },
   "founding-member": {
@@ -3081,6 +3085,10 @@
           "answer": "Jasper is een prompt-tool, jij bouwt elke keer de structuur. SurferSEO controleert SEO-kwaliteit. Clyde levert het volledige artikel: keyword-clustering, schrijven, optimaliseren, publiceren, met geheugen voor jouw stijl en eerdere onderwerpen. Geen handmatig knippen-plakken tussen 3 tools."
         }
       }
+    },
+    "screenshot": {
+      "alt": "Het Blog Factory-scherm met vier concepten klaar voor review, per merk.",
+      "caption": "Generatie, review en publicatie vanuit één scherm"
     }
   },
   "skills-seo-geo": {

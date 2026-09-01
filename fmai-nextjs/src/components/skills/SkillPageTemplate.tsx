@@ -13,6 +13,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Typewriter } from '@/components/motion/Typewriter'
+import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
@@ -24,6 +25,28 @@ import {
 } from '@/lib/skills-data'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { SkillStickyToc } from './SkillStickyToc'
+
+/**
+ * Echte schermen per vaardigheid, op slug (2026-09-01).
+ *
+ * Hier en niet in de twaalf losse paginabestanden: die zijn allemaal een aanroep
+ * van drie regels, en dat is precies waarom deze template bestaat. Een slug
+ * zonder beeld rendert er geen — de drie coming_soon-vaardigheden hebben niets
+ * te tonen, en van de rest zijn nog niet alle schermen geschoten.
+ *
+ * De beelden komen uit de demo-organisatie (fictief bureau, fictieve klanten),
+ * dus er staat geen klantdata op.
+ */
+const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
+  'blog-factory': '/screenshots/blog-factory.webp',
+  reporting: '/screenshots/rapportage.webp',
+  // seo-geo BEWUST NIET. Het SEO/GEO-scherm van de demo-organisatie toont
+  // "GA4 niet gekoppeld", streepjes bij AI-citaties en gemiddelde positie, en
+  // "Geen data" bij Core Web Vitals — die org heeft geen echte site gekoppeld.
+  // Een bijschrift dat rankings en citaties belooft naast een beeld dat er geen
+  // toont, is precies het gat tussen belofte en bewijs dat deze hele exercitie
+  // moest dichten. Terug zodra er een demo-site met echte meetdata aan hangt.
+}
 
 interface SkillPageTemplateProps {
   /** i18n namespace for this skill page, e.g. 'skills-social-media' */
@@ -257,6 +280,15 @@ export async function SkillPageTemplate({
                     </RevealItem>
                   ))}
                 </RevealContainer>
+                {SKILL_SCREENSHOTS[slug] && (
+                  <div className="max-w-3xl mx-auto">
+                    <AppScreenshot
+                      src={SKILL_SCREENSHOTS[slug]!}
+                      alt={t('screenshot.alt')}
+                      caption={t('screenshot.caption')}
+                    />
+                  </div>
+                )}
               </div>
             </section>
 
