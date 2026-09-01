@@ -18,8 +18,8 @@
  * visible testimonial UI.
  */
 import Image from 'next/image'
+import { BrandMark } from '@/components/marketing/BrandMark'
 import { getTranslations } from 'next-intl/server'
-import { Linkedin } from 'lucide-react'
 
 export async function SkcTestimonialBlock() {
   const t = await getTranslations('case_studies.skc.testimonial')
@@ -60,7 +60,7 @@ export async function SkcTestimonialBlock() {
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-accent-system hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
             >
-              <Linkedin className="h-4 w-4" aria-hidden />
+              <BrandMark name="linkedin" className="h-4 w-4" aria-hidden />
               <span>{t('linkedinLabel')}</span>
             </a>
           </figcaption>
