@@ -389,7 +389,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     {t('pillars.compliance.body')}
                   </p>
                   <Link
-                    href="/privacy"
+                    href="/legal/privacy"
                     className="mt-5 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
                   >
                     {t('pillars.compliance.linkText')}

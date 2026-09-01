@@ -10,6 +10,14 @@ export const routing = defineRouting({
   // this the cheapest moment this switch will ever be.
   defaultLocale: 'nl',
   localePrefix: 'always',
+  // next-intl otherwise emits an hreflang `Link` HTTP header built from
+  // `locales` above — all three, including the noindex `es` — plus an x-default
+  // pointing at the bare domain. That contradicts the on-page hreflang, which
+  // generatePageMetadata builds from INDEXABLE_LOCALES (nl + en, x-default →
+  // /nl). Two conflicting hreflang maps for the same URL is worse than one:
+  // Google picks whichever it likes and we lose control of the choice.
+  // Measured live 2026-09-01 on /nl, /en, /nl/pricing and /es.
+  alternateLinks: false,
 })
 
 /**
