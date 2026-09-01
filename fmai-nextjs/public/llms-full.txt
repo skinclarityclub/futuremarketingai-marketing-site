@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (9 live, 3 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 20 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -8,7 +8,7 @@ FutureMarketingAI (FMai) is a solo-founder AI marketing partnership founded by D
 
 Unlike a self-serve SaaS, FMai operates on a 20-partnerships-per-year cap with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
-The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with 6 of Clyde's 12 skills active. Sindy is the first Founding Member (spot 1 of 10).
+The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with all 10 of Clyde's live skills active. Sindy is the first Founding Member (spot 1 of 10).
 
 Key facts:
 
@@ -27,7 +27,7 @@ Clyde is a persistent AI employee, not a chatbot. Key characteristics:
 
 - Named identity across every touchpoint (website, Slack, dashboard, email).
 - Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
-- Operates 12 skills: Social Media, Blog Factory, Ad Creator, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
+- Operates 12 skills: Social Media, Blog Factory, Ad Manager, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
 - Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
 - Self-hosted EU infrastructure for AVG and EU AI Act compliance.
 - Controlled via natural language through chat, Slack, Telegram, or direct dashboard commands.
@@ -61,9 +61,9 @@ Capabilities:
 
 Credit cost: 15 credits per article. Each workspace receives 800 credits per month (Founding Member: 8000 credits total).
 
-### Ad Creator (Coming soon)
+### Ad Manager (Live)
 
-Ad Creator generates complete advertisements from copy to visuals. AI builds static and video ads, optimizes for different formats (Stories, Feed, Reels) and publishes directly to Meta Ads Manager. A/B test variants included.
+Ad Manager builds ads and then steers them: it publishes to Meta and tracks leads, cost per lead and ad fatigue per individual advertisement. TikTok is not connected.
 
 Capabilities:
 - AI-generated ad copy and visuals
@@ -117,10 +117,10 @@ Credit cost: 2 credits per scored conversation.
 
 ### Email Management (Live)
 
-Email Management connects to Gmail and Outlook (Microsoft 365) via OAuth. AI classifies inboxes into 6 categories (lead, urgent client, invoice, newsletter, internal, other), auto-provisions FMai labels and folders, and generates AI-reply drafts for your approval before sending. Saves hours per week on inbox management. Dual-write organization keeps both Outlook (category plus folder) and Gmail (nested label) mailboxes tidy.
+Email Management connects to Gmail (Google Workspace and free accounts) via OAuth. AI classifies the inbox, adds smart labels and produces a daily digest of what matters. This is inbox classification, not email campaigns. Outlook and custom IMAP are on the roadmap, not live.
 
 Capabilities:
-- Gmail and Outlook (Microsoft 365) OAuth integration
+- Gmail OAuth integration (Outlook and custom IMAP on the roadmap)
 - AI inbox classification (lead, urgent, invoice, newsletter, internal)
 - Auto-provisioning of FMai labels and folders
 - AI reply drafts with approval queue
@@ -210,7 +210,7 @@ Two pricing models:
 - 10 spots total, 1 currently taken (SkinClarity Club)
 - Unlimited workspaces (no cap)
 - 8,000 credits per month
-- All 12 skills included (9 live, 3 coming soon)
+- All 12 skills included (10 live, 2 coming soon)
 - Direct founder access plus roadmap influence
 - No onboarding fee
 - Monthly cancellable; rate locked for life (never raises for founding members)
@@ -255,13 +255,17 @@ Setup: SkinClarity Club runs a portfolio of 4 brand identities across 3 Instagra
 - @Sindy_Huidtherapeut: personal authority account of founder Sindy, trust, expertise, personal branding (circa 30 percent of content volume).
 - @SkinClarity_Shop: product account for the webshop, launches, bundles and product content (circa 20 percent of content volume).
 
-Active skills: 6 of Clyde's 12 skills active for SKC.
+Active skills: all 10 live skills are active for SKC. The whole system was built and tested on this account, so it runs the full set; only the two coming-soon skills (Voice Agent, Reel Builder) are absent.
 - Social Media Manager: carousels, posts and stories for 3 Instagram accounts. AI-generated in the right brand voice per account.
 - Blog Factory: SEO blogs for skinclarityclub.nl. Skin themes, treatments and product deep dives.
 - SEO / GEO Analyst: technical SEO audits, position tracking and citation monitoring in ChatGPT and Perplexity.
 - Reporting and Analytics: weekly performance digest across Instagram, Shopify and SEO data. Anomaly alerts.
 - Research: trend monitoring in skincare, competitor analysis and content ideas with source citations.
-- Clyde orchestrator: the central AI Marketing Medewerker that ties the 5 skills together. Memory per account plus learning across skills.
+- Email Management: Gmail inbox classification and a daily digest across the SKC mailboxes.
+- Social Command Center (ManyChat DM): Instagram DM triggers, AI replies and lead capture.
+- Lead Qualifier: scoring and routing of inbound leads across channels.
+- Ad Manager: Meta ad publishing with leads, cost per lead and ad fatigue tracked per ad.
+- Clyde orchestrator: the central AI Marketing Medewerker that ties the other nine together. Memory per account plus learning across skills.
 
 Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
 
@@ -299,7 +303,7 @@ Data export and deletion: 24-hour SLA on full export or full deletion on request
 
 ## How it Works
 
-Application-gated, no self-service signup. Max 20 partnerships per year.
+Application-gated, no self-service signup. Max 10 partnerships per year.
 
 Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
 

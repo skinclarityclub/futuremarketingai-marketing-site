@@ -39,7 +39,7 @@ const SECONDARIES = [
   {
     key: 'sovereignty' as const,
     Icon: ShieldCheck,
-    href: '/privacy',
+    href: '/legal/privacy',
     accent: 'system' as const,
   },
 ]

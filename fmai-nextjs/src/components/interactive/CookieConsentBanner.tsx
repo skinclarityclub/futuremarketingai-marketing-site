@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useId, useState, type Dispatch, type SetStateAction } from 'react'
+import { useEffect, useId, useRef, useState, type Dispatch, type SetStateAction } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
@@ -63,6 +63,7 @@ function writeConsent(state: ConsentState) {
 
 export function CookieConsentBanner() {
   const t = useTranslations('common.cookie_consent')
+  const panelRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
   const [open, setOpen] = useState(false)
   const [expanded, setExpanded] = useState(false)
@@ -102,6 +103,28 @@ export function CookieConsentBanner() {
     return () => window.removeEventListener(REOPEN_EVENT, handleReopen)
   }, [])
 
+  // The banner is position:fixed at the bottom, so it sits ON TOP of the page
+  // instead of in its flow. Whatever the document ends with — the footer, and on
+  // /assessment the "Start de scan" button — is then covered with no amount of
+  // scrolling able to free it, because the page has no room left to scroll into.
+  // Reserving the banner's own height at the end of the document gives every
+  // element somewhere to go. Measured rather than hardcoded: the banner grows
+  // when "Aanpassen" expands the three toggles.
+  useEffect(() => {
+    const el = panelRef.current
+    if (!mounted || !open || !el) return
+    const apply = () => {
+      document.body.style.paddingBottom = `${el.offsetHeight}px`
+    }
+    apply()
+    const ro = new ResizeObserver(apply)
+    ro.observe(el)
+    return () => {
+      ro.disconnect()
+      document.body.style.paddingBottom = ''
+    }
+  }, [mounted, open])
+
   if (!mounted || !open) return null
 
   const acceptAll = () => {
@@ -133,6 +156,7 @@ export function CookieConsentBanner() {
       aria-modal="false"
       aria-labelledby={titleId}
       aria-describedby={descId}
+      ref={panelRef}
       className="fixed inset-x-0 bottom-0 z-[9999] border-t border-border-primary bg-bg-deep px-4 py-5 sm:px-6 sm:py-6 shadow-[0_-12px_40px_rgba(0,0,0,0.4)]"
     >
       <div className="max-w-5xl mx-auto">
