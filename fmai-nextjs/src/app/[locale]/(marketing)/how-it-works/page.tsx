@@ -15,7 +15,7 @@ import { SectionShell } from '@/components/sections/SectionShell'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ImprovementLoopCycle } from '@/components/how-it-works/ImprovementLoopCycle'
-import { AppScreenshot } from '@/components/how-it-works/AppScreenshot'
+import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {

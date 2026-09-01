@@ -12,6 +12,8 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { Link } from '@/i18n/navigation'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
+import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
+import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { LazySection } from '@/components/motion/LazySection'
 import { HeroBackdrop } from '@/components/hero/HeroBackdrop'
 import { HeroSection } from '@/components/home/HeroSection'
@@ -359,6 +361,62 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             }}
           />
         </ScrollReveal>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 11b — De strategielaag (2026-09-01)
+
+          De audit mat dat het product een complete strategielaag draait —
+          strategiesessie per merk, doelen met projectie, zichzelf herwegende
+          pijlers, een contentagenda over een jaarboog — en dat "doelen",
+          "jaarplanning" en "contentpijlers" als productfunctie NUL keer in
+          nl.json voorkwamen. De site verkocht Clyde als uitvoerder terwijl hij
+          bij het doel begint. Dit is de sectie die dat gat dicht, met het
+          kalenderscherm als bewijs in plaats van een belofte.
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="280px">
+        <section aria-labelledby="strategy" className="py-20 px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto">
+              <EyebrowLabel>{t('strategy.eyebrow')}</EyebrowLabel>
+              <SectionHeading id="strategy">{t('strategy.title')}</SectionHeading>
+              <p className="mt-4 text-base lg:text-lg text-text-secondary leading-relaxed">
+                {t('strategy.subtitle')}
+              </p>
+            </div>
+            <ScrollReveal>
+              <div className="mt-10 grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
+                <ol className="lg:col-span-2 space-y-5">
+                  {(['s1', 's2', 's3', 's4'] as const).map((k, i) => (
+                    <li key={k} className="flex gap-4">
+                      <span
+                        className="mt-0.5 shrink-0 w-7 h-7 rounded-full border border-accent-system/40 bg-accent-system/10 text-accent-system font-mono text-xs flex items-center justify-center"
+                        aria-hidden="true"
+                      >
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h3 className="text-base font-semibold text-text-primary">
+                          {t(`strategy.steps.${k}.t`)}
+                        </h3>
+                        <p className="mt-1 text-sm text-text-secondary leading-relaxed">
+                          {t(`strategy.steps.${k}.d`)}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <div className="lg:col-span-3">
+                  <AppScreenshot
+                    src="/screenshots/contentkalender.webp"
+                    alt={t('strategy.caption')}
+                    caption={t('strategy.caption')}
+                  />
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
