@@ -84,8 +84,17 @@ const FLAT_SKILLS: readonly SkillItemWithCategory[] = SKILL_CATEGORIES.flatMap((
 // IA reduced to 5 top-level items (2026-06-03): How it works + About demoted to
 // footer-only (they already live there); Founding folded under the Pricing
 // dropdown. Keeps Memory + Cases prominent per product decision.
+//
+// How it works PROMOTED BACK (2026-09-01), About stays in the footer. Twee
+// dingen zijn sinds juni veranderd. De pagina toont nu echte productschermen —
+// de onboarding van elf stappen, de goedkeuringslijst, het doelenscherm — in
+// plaats van alleen tekst; en de audit van 2026-09-01 wees uit dat de enige
+// pagina die uitlegt HOE het systeem werkt alleen via de footer bereikbaar was,
+// terwijl "de site beschrijft het systeem niet" de hoofdklacht was. Zes items in
+// plaats van vijf is die uitleg waard. Draai dit terug als de balk te vol wordt.
 const NAV_ITEMS = [
   { key: 'skills', kind: 'mega', href: '/#skills', matchPaths: ['/skills'] },
+  { key: 'howItWorks', kind: 'link', href: '/how-it-works', matchPaths: ['/how-it-works'] },
   { key: 'memory', kind: 'link', href: '/memory', matchPaths: ['/memory'] },
   {
     key: 'caseStudies',

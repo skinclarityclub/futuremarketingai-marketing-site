@@ -1173,7 +1173,9 @@
           "description": "Daley guides the process personally. Brand voice intake per brand, KPI targets defined, skills matrix built and approval workflows set up. No self-service wizard.",
           "deliverable1": "Brand scan per brand",
           "deliverable2": "Brand-voice training",
-          "deliverable3": "Approval workflows"
+          "deliverable3": "Approval workflows",
+          "screenshotAlt": "Clyde onboarding screen: step 1 of 11, showing the brand details and the default language and timezone settings.",
+          "screenshotCaption": "Step 1 of 11 — every workspace follows the same route"
         },
         "configure": {
           "step": "Step 3",
@@ -1191,7 +1193,9 @@
           "description": "Clyde gets to work: social posts, blogs, calls, ads. You review every output in the approval queue before it goes live. Week 1 has lots of corrections, but Clyde learns fast.",
           "deliverable1": "Social posts live",
           "deliverable2": "Approval queue",
-          "deliverable3": "Week-1 iterations"
+          "deliverable3": "Week-1 iterations",
+          "screenshotAlt": "The approval queue with three open tasks, each with context and an Approve button.",
+          "screenshotCaption": "Nothing goes live without your sign-off"
         },
         "improvement": {
           "step": "Step 5",
@@ -1200,7 +1204,9 @@
           "description": "Sharper every week per brand. Clyde remembers corrections, learns from performance data and builds micro-knowledge. The weekly performance digest keeps you in control.",
           "deliverable1": "Weekly digest",
           "deliverable2": "Memory corrections",
-          "deliverable3": "Performance feedback"
+          "deliverable3": "Performance feedback",
+          "screenshotAlt": "Clyde goal screen showing multi-step tracks it keeps on course itself.",
+          "screenshotCaption": "Goals Clyde watches, so you do not have to"
         }
       },
       "loop_eyebrow": "The rhythmic cycle",
