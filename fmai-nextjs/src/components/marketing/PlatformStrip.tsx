@@ -1,21 +1,5 @@
-import {
-  Instagram,
-  Facebook,
-  MessageCircle,
-  Send,
-  Mail,
-  BarChart3,
-  Search,
-  ShoppingBag,
-  Workflow,
-  Linkedin,
-  Youtube,
-  Twitter,
-  Music2,
-  AtSign,
-  Pin,
-} from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { BrandMark, type BrandKey } from './BrandMark'
 
 /**
  * De kanalen, in TWEE rijen — en dat onderscheid is de hele truc.
@@ -40,38 +24,40 @@ import { getTranslations } from 'next-intl/server'
  * Neutrale lucide-iconen in plaats van merklogo's: dat vermijdt de merkrecht-
  * vraag volledig. Echte logo's vragen om een merkenrechtelijke caption.
  */
-const LIVE = [
-  { key: 'instagram', Icon: Instagram },
-  { key: 'meta', Icon: Facebook },
-  { key: 'whatsapp', Icon: MessageCircle },
-  { key: 'telegram', Icon: Send },
-  { key: 'gmail', Icon: Mail },
-  { key: 'analytics', Icon: BarChart3 },
-  { key: 'searchConsole', Icon: Search },
-  { key: 'shopify', Icon: ShoppingBag },
-  { key: 'n8n', Icon: Workflow },
-] as const
+const LIVE: readonly BrandKey[] = [
+  'instagram',
+  'meta',
+  'whatsapp',
+  'telegram',
+  'gmail',
+  'analytics',
+  'searchConsole',
+  'shopify',
+  'n8n',
+]
 
-const CONNECTABLE = [
-  { key: 'linkedin', Icon: Linkedin },
-  { key: 'tiktok', Icon: Music2 },
-  { key: 'youtube', Icon: Youtube },
-  { key: 'x', Icon: Twitter },
-  { key: 'facebook', Icon: Facebook },
-  { key: 'threads', Icon: AtSign },
-  { key: 'pinterest', Icon: Pin },
-] as const
+const CONNECTABLE: readonly BrandKey[] = [
+  'linkedin',
+  'tiktok',
+  'youtube',
+  'x',
+  'facebook',
+  'threads',
+  'pinterest',
+]
 
 function Row({
   items,
+  label,
   dim,
 }: {
-  items: ReadonlyArray<{ key: string; Icon: typeof Instagram }>
+  items: readonly BrandKey[]
+  label: (k: BrandKey) => string
   dim?: boolean
 }) {
   return (
     <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-      {items.map(({ key, Icon }) => (
+      {items.map((key) => (
         <li
           key={key}
           className={`flex items-center gap-2 transition-colors duration-200 ${
@@ -80,8 +66,8 @@ function Row({
               : 'text-text-secondary/80 hover:text-text-secondary'
           }`}
         >
-          <Icon className="w-[17px] h-[17px] shrink-0" aria-hidden="true" />
-          <span className={dim ? 'text-[13px]' : 'text-sm'}>{key}</span>
+          <BrandMark name={key} className="w-[17px] h-[17px] shrink-0" />
+          <span className={dim ? 'text-[13px]' : 'text-sm'}>{label(key)}</span>
         </li>
       ))}
     </ul>
@@ -91,9 +77,7 @@ function Row({
 export async function PlatformStrip({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'home.platforms' })
 
-  const label = (k: string) => t(`items.${k}`)
-  const live = LIVE.map((p) => ({ ...p, key: label(p.key) }))
-  const connectable = CONNECTABLE.map((p) => ({ ...p, key: label(p.key) }))
+  const label = (k: BrandKey) => t(`items.${k}`)
 
   return (
     <section aria-labelledby="platforms" className="py-14 px-6 lg:px-12">
@@ -104,13 +88,13 @@ export async function PlatformStrip({ locale }: { locale: string }) {
         >
           {t('liveTitle')}
         </h2>
-        <Row items={live} />
+        <Row items={LIVE} label={label} />
 
         <div className="mt-10 pt-8 border-t border-border-primary/60">
           <h3 className="text-center font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
             {t('connectableTitle')}
           </h3>
-          <Row items={connectable} dim />
+          <Row items={CONNECTABLE} label={label} dim />
           <p className="mt-5 text-center text-xs text-text-muted max-w-xl mx-auto leading-relaxed">
             {t('note')}
           </p>
