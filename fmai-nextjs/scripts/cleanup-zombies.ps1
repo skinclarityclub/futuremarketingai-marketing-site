@@ -21,6 +21,7 @@
     A process is reaped ONLY if walking UP its parent chain (with PID-reuse
     protection) the chain DEAD-ENDS on a DEAD parent BEFORE reaching either
     (a) a live interactive owner  = claude.exe / Code.exe / codex.exe / cursor.exe
+        / WindowsTerminal.exe / OpenConsole.exe (a visible tab is an owner too)
     (b) a live Windows system root = explorer/services/svchost/wininit/...
     => An ACTIVE-session process always reaches a live anchor (its claude/Code),
        so it is ALWAYS spared. An UNKNOWN-but-live owner reaches a system root,
@@ -94,7 +95,17 @@ param(
 $ErrorActionPreference = 'Continue'
 
 # ---- live anchors (active interactive owners) and Windows system roots ----
-$ANCHORS = @('claude.exe','code.exe','codex.exe','cursor.exe','windsurf.exe')
+# WindowsTerminal.exe / OpenConsole.exe zijn hier op 2026-09-08 bijgekomen. Een sessie die in
+# een ZICHTBARE tab draait is even goed bewoond als een die onder Code.exe hangt, maar de keten
+# pwsh <- WindowsTerminal <- DEAD liep dood op een naam die in geen van beide lijsten stond: de
+# ouder van het terminalvenster is na de start weg (snelkoppeling, wt-shim, herstarte explorer).
+# Gevolg: elke sessie die `new-session.ps1` in een wt-tab startte werd na 180 s als orphan-shell
+# gereapt, en `taskkill /T` nam de claude eronder mee. Gemeten in scheduled-cleanup.log op
+# 2026-09-08 om 03:06:28 en 03:36:28, allebei een pwsh van precies een startersessie.
+# Een ECHT losgekoppelde pwsh (wscript, window 0) heeft geen terminalvenster in zijn keten en
+# blijft dus gewoon reapbaar; dat is precies het geval waarvoor deze reaper bestaat.
+$ANCHORS = @('claude.exe','code.exe','codex.exe','cursor.exe','windsurf.exe',
+  'windowsterminal.exe','openconsole.exe')
 $SYSTEM_ROOTS = @('explorer.exe','services.exe','svchost.exe','wininit.exe',
   'winlogon.exe','lsass.exe','csrss.exe','smss.exe','system','idle','dwm.exe',
   'fontdrvhost.exe','sihost.exe','ctfmon.exe','runtimebroker.exe','userinit.exe')
