@@ -68,7 +68,11 @@
   Code.exe/pwsh alive => reaches a live anchor) is ALWAYS spared.
 
 .PARAMETER KeepPort
-  Dev-server port to never reap. Default 3000.
+  Ports whose LISTENING process is never a candidate, hoe de ouderketen er ook uitziet.
+  Default 3000 (de dev-server) en 3019 (de productieserver van de e2e-ronde). Die laatste
+  wordt met opzet LOSGEKOPPELD gestart, want een e2e-run mag niet aan een tool-timeout
+  hangen, en is daarmee per definitie een wees. Op 2026-09-08 om 11:51:28 kostte dat een
+  lopende e2e-ronde zijn server: `[KILL] node.exe reason=dev-server:3019 age=611s`.
 
 .PARAMETER DevPortRange
   Ports on which a LISTENING node is considered a dev-server candidate
@@ -86,7 +90,7 @@ param(
   [switch]$DryRun,
   [int]$MinAgeSeconds = 180,
   [int]$MinClaudeAgeSeconds = 3600,
-  [int]$KeepPort = 3000,
+  [int[]]$KeepPort = @(3000, 3019),
   [int[]]$DevPortRange = @(3001..3099),
   [string]$LogPath = "$env:USERPROFILE\.claude\hooks\scheduled-cleanup.log"
 )
@@ -119,6 +123,14 @@ $CHROME_SIG = 'lighthouse\.|agent-browser-chrome|lh-clean-|\\playwright|--headle
 # detection below misses them. Reaped ONLY when the orphan test proves the
 # parent chain is dead — an active dev server reaches a live claude/Code anchor.
 $NEXTDEV_SIG = 'next[\\/]dist[\\/]bin[\\/]next|next-server|next-router-worker|next-render-worker|scripts[\\/]dev\.mjs'
+
+# LOPENDE LANGE RUNS zijn geen restanten: ze eindigen uit zichzelf. Shards, builds en e2e-rondes
+# worden hier BEWUST losgekoppeld gestart, zodat een tool-timeout ze niet halverwege afkapt, en
+# daarmee is hun ouder per definitie dood. Zonder deze uitzondering reapt de opruimer precies het
+# werk dat hij zou moeten sparen: gemeten 2026-09-08, een lopende `npx playwright test` stond met
+# `chain=[bash.exe <- DEAD]` op de kaplijst terwijl hij draaide. Geldt alleen voor de shell-familie;
+# een achtergebleven chrome of MCP-node blijft gewoon een kandidaat.
+$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm (run )?(test|build)|heavy-runner|tsc --noEmit'
 
 # ---------------------------------------------------------------------------
 $started = Get-Date
@@ -195,14 +207,25 @@ try {
   $candidates = [System.Collections.Generic.List[object]]::new()
 
   # listening dev-server ports -> owning PID
+  $luisteraars = @(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue)
   $devPidByPort = @{}
-  Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue |
-    Where-Object { $DevPortRange -contains $_.LocalPort -and $_.LocalPort -ne $KeepPort } |
+  $luisteraars |
+    Where-Object { $DevPortRange -contains $_.LocalPort -and $KeepPort -notcontains $_.LocalPort } |
     ForEach-Object { $devPidByPort[[int]$_.OwningProcess] = $_.LocalPort }
+
+  # Wie op een KeepPort luistert is helemaal geen kandidaat, langs welke weg dan ook. Alleen de
+  # poort uit $devPidByPort halen was niet genoeg: een `next start` matcht daarna alsnog op
+  # $NEXTDEV_SIG en werd als 'next-dev' gereapt. Dat is precies wat op 2026-09-08 om 11:51:28
+  # de e2e-server op 3019 kostte.
+  $spaarPids = @{}
+  $luisteraars |
+    Where-Object { $KeepPort -contains $_.LocalPort } |
+    ForEach-Object { $spaarPids[[int]$_.OwningProcess] = $_.LocalPort }
 
   foreach ($p in $snap) {
     $pid_ = [int]$p.ProcessId
     if ($selfChain.ContainsKey($pid_)) { continue }     # never touch our own tree
+    if ($spaarPids.ContainsKey($pid_)) { continue }     # luistert op een KeepPort
     $name = ($p.Name).ToLower()
     $cmd  = [string]$p.CommandLine
     $reason = $null
@@ -216,6 +239,10 @@ try {
       if ($cmd -match $CHROME_SIG)      { $reason = 'lighthouse/playwright-chrome' }
     }
     elseif ('powershell.exe','pwsh.exe','cmd.exe','bash.exe','conhost.exe' -contains $name) {
+      # Een conhost met een LEVENDE ouder is in gebruik, geen restant; zijn eigen commandoregel
+      # zegt niets (`conhost.exe 0x4`), dus die van de ouder is het enige signaal dat er is.
+      if ($name -eq 'conhost.exe' -and $byPid.ContainsKey([int]$p.ParentProcessId)) { continue }
+      if ($cmd -match $LONGRUN_SIG) { continue }   # draaiende shard/build/e2e, geen restant
       $reason = 'orphan-shell'
     }
     elseif ('claude.exe','codex.exe' -contains $name) {
