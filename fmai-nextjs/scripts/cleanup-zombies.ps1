@@ -130,7 +130,7 @@ $NEXTDEV_SIG = 'next[\\/]dist[\\/]bin[\\/]next|next-server|next-router-worker|ne
 # werk dat hij zou moeten sparen: gemeten 2026-09-08, een lopende `npx playwright test` stond met
 # `chain=[bash.exe <- DEAD]` op de kaplijst terwijl hij draaide. Geldt alleen voor de shell-familie;
 # een achtergebleven chrome of MCP-node blijft gewoon een kandidaat.
-$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm (run )?(test|build)|heavy-runner|tsc --noEmit'
+$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm (run )?(test|build)|heavy-runner|tsc --noEmit|codex'
 
 # ---------------------------------------------------------------------------
 $started = Get-Date
