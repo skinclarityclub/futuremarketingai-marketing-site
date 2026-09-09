@@ -87,7 +87,9 @@ const mobileConfig = {
 for (const route of LIGHTHOUSE_ROUTES) {
   for (const locale of LOCALES) {
     for (const formFactor of FORM_FACTORS) {
-      test(`lh ${formFactor} ${locale}${route}`, { timeout: 90_000 }, async () => {
+      // Geen inline { timeout }: dat is geen geldige TestDetails-sleutel (tsc brak erop) en
+      // playwright.config.ts:19 zet dezelfde 90_000 al globaal, dus dit deed niets.
+      test(`lh ${formFactor} ${locale}${route}`, async () => {
         const url = localizedUrl(LH_BASE_URL, locale, route)
         const lhConfig = formFactor === 'desktop' ? desktopConfig : mobileConfig
 
