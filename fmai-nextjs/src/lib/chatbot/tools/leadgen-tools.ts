@@ -6,8 +6,11 @@ import {
   type ChatbotLocale,
   type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
+// Eén implementatie van de score-banden: de apply-lead moet dezelfde grenzen
+// aanhouden als de chat, anders krijgen twee oppervlakken een ander label.
+import { qualificationFromScore, type LeadQualification } from '@/lib/fma-inbox-forwarder'
 
-type QualLevel = 'qualified' | 'hot' | 'warm' | 'cold'
+type QualLevel = LeadQualification
 
 const QUALIFY_COPY: Record<ChatbotLocale, Record<QualLevel, { recommendation: string; nextSteps: string[] }>> = {
   nl: {
@@ -141,8 +144,7 @@ export function buildLeadgenTools(locale: ChatbotLocale) {
       if (useCase !== undefined && useCase.trim().length > 0) score += 15
       if (isDecisionMaker === true) score += 20
 
-      const level: QualLevel =
-        score >= 86 ? 'qualified' : score >= 61 ? 'hot' : score >= 31 ? 'warm' : 'cold'
+      const level: QualLevel = qualificationFromScore(score)
       const copy = QUALIFY_COPY[locale][level]
       return {
         score,

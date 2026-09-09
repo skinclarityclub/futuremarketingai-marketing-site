@@ -13,6 +13,11 @@ import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
 import { calHostedUrl } from '@/config/calConfig'
 import { scoreApplication, formatScorePrefix } from '@/lib/apply/scoring'
 import {
+  sendLeadToInbox,
+  normalizeLeadScore,
+  qualificationFromScore,
+} from '@/lib/fma-inbox-forwarder'
+import {
   ASSESSMENT_ARCHETYPES,
   ASSESSMENT_STAGES,
   ASSESSMENT_CATEGORIES,
@@ -255,6 +260,36 @@ export async function POST(request: NextRequest) {
       : payload.problem
     : undefined
 
+  // 2b. Lead-doorvoer naar de Lead Qualifier in de app.
+  // `external_session_id` bestaat niet voor een formulier, dus die wordt hier
+  // SERVER-SIDE gemaakt en nooit uit de body gelezen: hij is tegelijk de
+  // idempotentiesleutel van de lead-upsert.
+  const leadSessionId = `apply:${crypto.randomUUID()}`
+  // Score genormaliseerd naar 0..100, want `fma_leads.score` eist dat bereik.
+  // Het label volgt uit die genormaliseerde score, NIET uit `branch`: die staat
+  // al op `qualified` vanaf 7 van 17. `branch` gaat als losse waarde mee.
+  const leadScore = scoreResult
+    ? normalizeLeadScore(scoreResult.total, scoreResult.max)
+    : undefined
+  const leadMetadata: Record<string, unknown> = {
+    locale: payload.locale,
+    ...(payload.role ? { role: payload.role } : {}),
+    ...(payload.tier ? { tier: payload.tier } : {}),
+    ...(payload.revenue ? { revenue: payload.revenue } : {}),
+    ...(payload.clientCount ? { client_count: payload.clientCount } : {}),
+    ...(payload.urgency ? { urgency: payload.urgency } : {}),
+    ...(typeof payload.maturity === 'number' ? { maturity: payload.maturity } : {}),
+    ...(typeof payload.workspaces === 'number' ? { workspaces: payload.workspaces } : {}),
+    ...(scoreResult
+      ? { branch: scoreResult.branch, score_raw: scoreResult.total, score_max: scoreResult.max }
+      : {}),
+    ...(payload.assessment ? { assessment: payload.assessment } : {}),
+    // Het probleem is de enige vrije tekst van een aanvraag. Zonder dit staat de
+    // lead in de app zonder context: het lead-marker-bericht wordt uit het
+    // transcript gefilterd, dus het gesprekspaneel blijft leeg.
+    ...(problemSnippet ? { problem: problemSnippet } : {}),
+  }
+
   const [adminResult, confirmationResult] = await Promise.all([
     resend.emails.send({
       from: `FutureMarketingAI <${fromAddr}>`,
@@ -289,6 +324,21 @@ export async function POST(request: NextRequest) {
       ...(payload.branch ? { branch: payload.branch } : {}),
       locale: payload.locale,
       ...(problemSnippet ? { problem: problemSnippet } : {}),
+    }),
+    // Rijdt mee in deze Promise.all: awaited, want een inzending mag niet stil
+    // verdwijnen, maar zonder de bezoeker extra wachttijd te kosten. Gooit nooit,
+    // dus een mislukte doorvoer laat mail en Telegram-alert staan.
+    sendLeadToInbox({
+      account_key: 'fmai_website',
+      external_session_id: leadSessionId,
+      origin: 'apply',
+      name: payload.name,
+      email: payload.email,
+      ...(payload.agency ? { company: payload.agency } : {}),
+      ...(leadScore !== undefined
+        ? { score: leadScore, qualification: qualificationFromScore(leadScore) }
+        : {}),
+      metadata: leadMetadata,
     }),
   ])
 

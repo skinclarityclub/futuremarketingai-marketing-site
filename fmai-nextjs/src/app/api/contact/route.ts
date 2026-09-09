@@ -10,6 +10,7 @@ import {
   type ContactPayload,
 } from '@/lib/email/contact-templates'
 import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
+import { sendLeadToInbox } from '@/lib/fma-inbox-forwarder'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -89,6 +90,13 @@ export async function POST(request: NextRequest) {
   const fromAddr = process.env.CONTACT_EMAIL_FROM ?? 'contact@future-marketing.ai'
   const toAddr = process.env.CONTACT_EMAIL_TO ?? 'info@future-marketing.ai'
 
+  // 2b. Lead-doorvoer naar de Lead Qualifier in de app. `external_session_id`
+  // bestaat niet voor een formulier, dus die wordt hier SERVER-SIDE gemaakt en
+  // nooit uit de body gelezen: hij is tegelijk de idempotentiesleutel.
+  // Een contactbericht kent geen score, dus er gaat er ook geen mee: een veld dat
+  // niet in het payload staat wordt door de upsert in de app niet aangeraakt.
+  const leadSessionId = `contact:${crypto.randomUUID()}`
+
   const [adminResult, confirmationResult] = await Promise.all([
     resend.emails.send({
       from: `FutureMarketingAI <${fromAddr}>`,
@@ -114,6 +122,24 @@ export async function POST(request: NextRequest) {
       company: payload.company || null,
       locale: payload.locale,
       message: payload.message.length > 400 ? payload.message.slice(0, 400) + '…' : payload.message,
+    }),
+    // Rijdt mee in deze Promise.all: awaited, want een inzending mag niet stil
+    // verdwijnen, maar zonder de bezoeker extra wachttijd te kosten. Gooit nooit,
+    // dus een mislukte doorvoer laat mail en Telegram-alert staan.
+    sendLeadToInbox({
+      account_key: 'fmai_website',
+      external_session_id: leadSessionId,
+      origin: 'contact',
+      name: payload.name,
+      email: payload.email,
+      ...(payload.company ? { company: payload.company } : {}),
+      metadata: {
+        locale: payload.locale,
+        // De enige inhoud die deze lead heeft: het lead-marker-bericht wordt in de
+        // app juist uit het transcript gefilterd, dus zonder dit is het paneel leeg.
+        message:
+          payload.message.length > 400 ? payload.message.slice(0, 400) + '…' : payload.message,
+      },
     }),
   ])
 
