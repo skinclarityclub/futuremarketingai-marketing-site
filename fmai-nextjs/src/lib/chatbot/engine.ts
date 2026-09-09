@@ -89,17 +89,6 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       return Response.json({ error: validation.reason }, { status: 400 })
     }
 
-    // Fire-and-forget: stuur user-turn naar inbox (dormant als env vars ontbreken)
-    // Volgorde-garantie: user arriveert in DB VOOR assistant turn (onFinish)
-    void forwardTurnToInbox({
-      account_key: 'fmai_website',
-      vendor: 'own-bot',
-      external_session_id: sessionId,
-      external_message_id: crypto.randomUUID(),
-      role: 'user',
-      content: userMessageText,
-    });
-
     // 6. Check rate limits
     const ip = getClientIp(request)
     const rateCheck = await checkAllRateLimits(sessionId, ip, personaId)
@@ -113,6 +102,18 @@ export async function handleChatRequest(request: Request): Promise<Response> {
         { status: 429 }
       )
     }
+
+    // Fire-and-forget: stuur user-turn naar inbox (dormant als env vars ontbreken)
+    // Staat NA de rate limit check: een geweigerd verzoek mag geen inboxdata schrijven.
+    // Volgorde-garantie: user arriveert in DB VOOR assistant turn (onFinish)
+    void forwardTurnToInbox({
+      account_key: 'fmai_website',
+      vendor: 'own-bot',
+      external_session_id: sessionId,
+      external_message_id: crypto.randomUUID(),
+      role: 'user',
+      content: userMessageText,
+    });
 
     // 7. Load persona (fall back to 'clyde' for unknown persona IDs)
     let persona
