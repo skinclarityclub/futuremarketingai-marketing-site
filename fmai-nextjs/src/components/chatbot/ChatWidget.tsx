@@ -12,6 +12,7 @@ import { ChatHeader } from './ChatHeader'
 import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { SidePanel } from './SidePanel'
+import { useChatChrome } from './useChatChrome'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
 import { getDemoScenarios } from './demo/scenarios'
@@ -48,12 +49,14 @@ export function ChatWidget({
     messages,
     sendMessage,
     status,
+    error,
     messageCount,
     isAtLimit,
     stop,
     regenerate,
     setMessages,
   } = usePersonaChat(personaId, pageContext)
+  const chrome = useChatChrome()
   const [editText, setEditText] = useState<string | undefined>(undefined)
   const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
@@ -179,6 +182,19 @@ export function ChatWidget({
     if (isOpen) markRead()
   }, [isOpen, markRead])
 
+  // Below lg the panel covers the whole screen, so the page behind it must not
+  // scroll along with a swipe in the chat. Desktop keeps the page scrollable
+  // next to the card.
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen || isMinimized) return
+    if (!window.matchMedia('(max-width: 1023px)').matches) return
+    const previous = document.documentElement.style.overflow
+    document.documentElement.style.overflow = 'hidden'
+    return () => {
+      document.documentElement.style.overflow = previous
+    }
+  }, [mode, isOpen, isMinimized])
+
   useEffect(() => {
     if (mode !== 'floating' || !isOpen || isMinimized) return
     const timer = setTimeout(() => {
@@ -215,6 +231,27 @@ export function ChatWidget({
     !isAtLimit &&
     !demoMode
 
+  // A failed turn used to be invisible: the user's bubble sat there and nothing
+  // followed (measured with an empty Anthropic balance: every message errored,
+  // the widget showed no sign). Surface it where the reply would have been.
+  const errorBanner = error && !isAtLimit && (
+    <div
+      role="alert"
+      className="mx-4 mb-2 flex items-center justify-between gap-3 rounded-xl border border-error/25 bg-error/[0.08] px-3 py-2 text-xs text-text-primary"
+    >
+      <span>{chrome.somethingWrong}</span>
+      {regenerate && (
+        <button
+          type="button"
+          onClick={() => regenerate()}
+          className="shrink-0 rounded-md px-2 py-1 font-medium text-accent-system transition-colors hover:bg-accent-system/10"
+        >
+          {chrome.retry}
+        </button>
+      )}
+    </div>
+  )
+
   const limitBanner = isAtLimit && (
     <div className="border-t border-border-primary bg-bg-elevated/80 px-4 py-3 text-center">
       <p className="text-xs text-text-secondary">
@@ -229,21 +266,26 @@ export function ChatWidget({
   if (mode === 'floating') {
     return (
       <>
-        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen} />
+        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen && !isMinimized} />
         <AnimatePresence>
           {isOpen && !isMinimized && (
             <motion.div
               data-chatwidget-panel
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 8, scale: 0.98, transition: { duration: 0.15 } }}
               transition={{ duration: 0.22, ease: [0.32, 0.72, 0, 1] }}
               style={{
                 boxShadow:
                   '0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 8px 24px -8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
                 transformOrigin: 'bottom right',
               }}
-              className="fixed z-[60] right-6 bottom-24 lg:right-6 lg:top-[80px] lg:bottom-6 flex max-w-[calc(100vw-3rem)] max-h-[calc(100vh-6rem)] lg:max-h-[calc(100vh-104px)] overflow-hidden rounded-2xl border border-white/[0.08] bg-bg-surface/85 backdrop-blur-2xl"
+              // Phone/tablet: the panel IS the screen (100dvh, no float, no blur:
+              // a floating 85%-card left the page peeking through above and below
+              // and shrank further under the keyboard). Desktop: a bottom-right
+              // card capped at 720px, so a fresh chat is a compact card instead of
+              // a column with 600px of nothing under the greeting.
+              className="fixed z-[60] inset-0 flex h-[100dvh] w-full overflow-hidden bg-bg-surface lg:inset-auto lg:right-6 lg:bottom-6 lg:h-[min(720px,calc(100dvh-6rem))] lg:w-auto lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-bg-surface/85 lg:backdrop-blur-2xl"
               role="dialog"
               aria-label={`Chat met ${personaName || 'Clyde'}`}
               aria-modal="true"
@@ -255,7 +297,7 @@ export function ChatWidget({
                   onClose={closeSidePanel}
                 />
               )}
-              <div className="w-[calc(100vw-3rem)] max-w-[480px] min-w-[320px] h-full flex flex-col">
+              <div className="flex h-full w-full min-w-0 flex-col lg:w-[420px]">
                 <ChatHeader
                   personaName={personaName || 'Assistant'}
                   personaAvatar={personaAvatar}
@@ -266,7 +308,7 @@ export function ChatWidget({
                   onClose={close}
                   onNewChat={handleNewChat}
                   hasMessages={messages.length > 0}
-                  badge={demoMode ? 'Demo' : isFlagship ? 'Concierge' : undefined}
+                  badge={demoMode ? 'Demo' : undefined}
                   showLimit={!isFlagship}
                 />
                 {demoMode && demoScenario && (
@@ -292,6 +334,7 @@ export function ChatWidget({
                   messageCount={messages.length}
                   onSendMessage={handleSend}
                 />
+                {errorBanner}
                 {limitBanner}
                 <ChatInput
                   onSend={handleSend}
@@ -342,6 +385,7 @@ export function ChatWidget({
         messageCount={messages.length}
         onSendMessage={handleSend}
       />
+      {errorBanner}
       {limitBanner}
       <ChatInput
         onSend={handleSend}

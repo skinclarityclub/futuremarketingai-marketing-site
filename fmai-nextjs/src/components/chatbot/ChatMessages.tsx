@@ -131,9 +131,9 @@ function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown 
 }
 
 const userBubbleClass =
-  'max-w-[85%] px-4 py-3 rounded-2xl rounded-tr-md bg-gradient-to-br from-accent-human/90 to-accent-human/70 text-white text-sm'
+  'max-w-[85%] px-4 py-2.5 rounded-2xl rounded-tr-md bg-accent-human/[0.14] border border-accent-human/20 text-text-primary text-sm'
 const assistantBubbleClass =
-  'max-w-[85%] px-4 py-3 rounded-2xl rounded-tl-md bg-bg-elevated/80 backdrop-blur-md border border-border-primary text-text-primary text-sm'
+  'max-w-[88%] px-4 py-3 rounded-2xl rounded-tl-md bg-bg-elevated/70 border border-white/[0.06] text-text-primary text-sm'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getToolName(part: any): string | null {
@@ -272,7 +272,7 @@ function CopyButton({ text }: { text: string }) {
       type="button"
       onClick={handleCopy}
       aria-label={copyAria}
-      className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
+      className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
     >
       {copied ? <Check className="h-3 w-3 text-accent-system" /> : <Copy className="h-3 w-3" />}
       {copied ? copiedLabel : copy}
@@ -490,7 +490,7 @@ export function ChatMessages({
                   type="button"
                   onClick={() => onEditMessage(message.id, messageText)}
                   aria-label={chrome.editAria}
-                  className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
+                  className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <Pencil className="h-3 w-3" />
                   {chrome.edit}
@@ -501,7 +501,7 @@ export function ChatMessages({
                   type="button"
                   onClick={onRegenerate}
                   aria-label={chrome.regenerateAria}
-                  className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
+                  className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
                 >
                   <RotateCw className="h-3 w-3" />
                   {chrome.regenerate}

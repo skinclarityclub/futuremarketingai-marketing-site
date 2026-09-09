@@ -115,7 +115,7 @@ export function ChatHeader({
                 type="button"
                 aria-label={chrome.memoryAriaCount(memoryCount)}
                 onClick={() => openSidePanel('remember_context', { remembered: memoryProfile })}
-                className="relative rounded p-1.5 text-accent-system transition-colors hover:text-accent-system/80"
+                className="relative flex h-8 w-8 items-center justify-center rounded-lg text-accent-system transition-colors hover:bg-accent-system/10"
               >
                 <Brain className="h-4 w-4" />
                 <span
@@ -131,7 +131,7 @@ export function ChatHeader({
                 type="button"
                 onClick={onNewChat}
                 aria-label={chrome.newChatAria}
-                className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-white/[0.05] hover:text-text-primary"
               >
                 <SquarePen className="h-4 w-4" />
               </button>
@@ -140,7 +140,7 @@ export function ChatHeader({
               type="button"
               onClick={onMinimize}
               aria-label={chrome.minimizeAria}
-              className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-white/[0.05] hover:text-text-primary"
             >
               <Minus className="h-4 w-4" />
             </button>
@@ -149,7 +149,7 @@ export function ChatHeader({
               type="button"
               onClick={onClose}
               aria-label={chrome.closeAria}
-              className="rounded p-1.5 text-text-secondary transition-colors hover:text-text-primary"
+              className="flex h-8 w-8 items-center justify-center rounded-lg text-text-secondary transition-colors hover:bg-white/[0.05] hover:text-text-primary"
             >
               <X className="h-4 w-4" />
             </button>

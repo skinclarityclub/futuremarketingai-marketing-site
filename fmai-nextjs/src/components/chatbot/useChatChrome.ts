@@ -120,6 +120,7 @@ interface ChatChromeLabels {
   closeAria: string
   loading: string
   somethingWrong: string
+  retry: string
   inputSend: string
   inputNewline: string
 }
@@ -141,7 +142,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     minimizeAria: 'Minimaliseer chat',
     closeAria: 'Sluit chat',
     loading: 'Laden...',
-    somethingWrong: 'Er ging iets mis',
+    somethingWrong: 'Er ging iets mis. Probeer het nog eens.',
+    retry: 'Opnieuw',
     inputSend: 'versturen',
     inputNewline: 'nieuwe regel',
   },
@@ -161,7 +163,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     minimizeAria: 'Minimize chat',
     closeAria: 'Close chat',
     loading: 'Loading...',
-    somethingWrong: 'Something went wrong',
+    somethingWrong: 'Something went wrong. Please try again.',
+    retry: 'Retry',
     inputSend: 'to send',
     inputNewline: 'for a new line',
   },
@@ -181,7 +184,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     minimizeAria: 'Minimizar chat',
     closeAria: 'Cerrar chat',
     loading: 'Cargando...',
-    somethingWrong: 'Algo salió mal',
+    somethingWrong: 'Algo salió mal. Inténtalo de nuevo.',
+    retry: 'Reintentar',
     inputSend: 'para enviar',
     inputNewline: 'nueva línea',
   },

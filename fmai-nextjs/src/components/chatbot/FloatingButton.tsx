@@ -1,6 +1,5 @@
 'use client'
 
-import { X } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface FloatingButtonProps {
@@ -15,26 +14,17 @@ interface FloatingButtonProps {
  * before and after first interaction: same sparkle mark + "Clyde"
  * wordmark in a pill, expanding to "Clyde · nu online" on hover.
  *
- * When `isOpen` is true (chat panel is up) we shrink to a circular
- * close button so it doesn't compete with the panel's chrome.
+ * While the panel is open the trigger renders nothing: the panel header
+ * carries its own close button, and the old circular X that stayed on
+ * screen sat exactly on top of the composer's send button (measured on
+ * desktop, tablet and phone). One close control, in the chrome it closes.
  */
 export function FloatingButton({
   onClick,
   hasUnread = false,
   isOpen = false,
 }: FloatingButtonProps) {
-  if (isOpen) {
-    return (
-      <button
-        type="button"
-        onClick={onClick}
-        aria-label="Sluit chat met Clyde"
-        className="fixed right-6 bottom-6 lg:bottom-8 z-[61] flex h-11 w-11 items-center justify-center rounded-full border border-accent-system/40 bg-bg-elevated text-text-primary outline-none transition-shadow duration-200 hover:shadow-[var(--shadow-glow-lg)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-      >
-        <X className="h-5 w-5 text-accent-system" />
-      </button>
-    )
-  }
+  if (isOpen) return null
 
   return (
     <button

@@ -98,7 +98,7 @@ export function ChatInput({
   const isInactive = !canSend
 
   return (
-    <div className="border-t border-border-primary bg-bg-surface/95 px-4 py-3">
+    <div className="border-t border-border-primary bg-bg-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
       <div className="group/input relative flex items-end gap-2 rounded-2xl border border-transparent bg-bg-elevated/60 px-2 py-1 transition-all duration-200 focus-within:border-accent-system/40 focus-within:bg-bg-elevated/85 focus-within:shadow-[0_0_0_3px_rgba(0,212,170,0.08)]">
         <textarea
           ref={textareaRef}
@@ -109,7 +109,7 @@ export function ChatInput({
           disabled={disabled}
           rows={1}
           aria-label="Typ een bericht voor Clyde"
-          className="w-full resize-none bg-transparent px-3 py-2 text-sm leading-relaxed text-text-primary outline-none placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full resize-none bg-transparent px-3 py-2 text-base leading-relaxed lg:text-sm text-text-primary outline-none placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
         />
         {isLoading && onStop ? (
           <button
@@ -137,7 +137,7 @@ export function ChatInput({
           </button>
         )}
       </div>
-      <div className="mt-1.5 flex items-center justify-between px-2 text-[10px] text-text-faint">
+      <div className="mt-1.5 hidden items-center justify-between px-2 text-[10px] text-text-faint [@media(hover:hover)_and_(pointer:fine)]:flex">
         <span>
           <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Enter</kbd> {inputSend} ·{' '}
           <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Shift+Enter</kbd> {inputNewline}
