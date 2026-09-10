@@ -17,6 +17,8 @@ import {
   normalizeLeadScore,
   qualificationFromScore,
 } from '@/lib/fma-inbox-forwarder'
+import { buildLeadConsent } from '@/config/privacyConfig'
+import { getTranslations } from 'next-intl/server'
 import {
   ASSESSMENT_ARCHETYPES,
   ASSESSMENT_STAGES,
@@ -93,6 +95,22 @@ function hashIp(ip: string): string {
   return crypto.createHash('sha256').update(ip + salt).digest('hex')
 }
 
+/**
+ * De privacybelofte zoals de bezoeker hem op het scherm zag, in zijn eigen taal.
+ * Faalt de vertaallaag, dan gaat de lead zonder belofte mee in plaats van dat de
+ * inzending stukloopt; `null` is eerlijker dan een verzonnen tekst.
+ */
+async function readPrivacyNotice(locale: string | undefined): Promise<string | null> {
+  const safeLocale = locale === 'en' || locale === 'es' ? locale : 'nl'
+  try {
+    const t = await getTranslations({ locale: safeLocale, namespace: 'apply.form' })
+    return t('privacyNote')
+  } catch (error) {
+    console.error('[apply][privacyNote]', error)
+    return null
+  }
+}
+
 export async function POST(request: NextRequest) {
   const ip =
     request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
@@ -130,6 +148,10 @@ export async function POST(request: NextRequest) {
     typeof body === 'object' && body !== null && 'identity' in body
 
   let payload: ApplyPayload
+  // De vrije tekst ZOALS DE BEZOEKER HEM TYPTE. `payload.problem` draagt voor de
+  // mail een score-voorvoegsel; dat hoort niet in de lead, waar de ruwe score en
+  // de uitkomst al hun eigen rij hebben.
+  let problemRaw: string | undefined
   let scoreResult: ReturnType<typeof scoreApplication> | null = null
   let honeypotTriggered = false
 
@@ -163,6 +185,7 @@ export async function POST(request: NextRequest) {
     const problemWithPrefix = parsed.data.problem
       ? `${scorePrefix}\n\n${parsed.data.problem}`
       : scorePrefix
+    problemRaw = parsed.data.problem
 
     payload = {
       name: parsed.data.identity.name,
@@ -210,6 +233,7 @@ export async function POST(request: NextRequest) {
       problem: parsed.data.problem,
       locale: parsed.data.locale,
     }
+    problemRaw = parsed.data.problem
   }
 
   // Honeypot silently accepted: 200 so bots cannot tell
@@ -260,6 +284,12 @@ export async function POST(request: NextRequest) {
       : payload.problem
     : undefined
 
+  const leadProblemSnippet = problemRaw
+    ? problemRaw.length > 300
+      ? problemRaw.slice(0, 300) + '…'
+      : problemRaw
+    : undefined
+
   // 2b. Lead-doorvoer naar de Lead Qualifier in de app.
   // `external_session_id` bestaat niet voor een formulier, dus die wordt hier
   // SERVER-SIDE gemaakt en nooit uit de body gelezen: hij is tegelijk de
@@ -287,7 +317,14 @@ export async function POST(request: NextRequest) {
     // Het probleem is de enige vrije tekst van een aanvraag. Zonder dit staat de
     // lead in de app zonder context: het lead-marker-bericht wordt uit het
     // transcript gefilterd, dus het gesprekspaneel blijft leeg.
-    ...(problemSnippet ? { problem: problemSnippet } : {}),
+    ...(leadProblemSnippet ? { problem: leadProblemSnippet } : {}),
+    // De doelbinding reist mee met de lead. De aanvraagpagina belooft "alleen voor
+    // de beoordeling"; die belofte hoort bij de rij te staan, niet alleen op de
+    // pagina die hem gaf. Zie src/config/privacyConfig.ts.
+    consent: buildLeadConsent('assessment_only', await readPrivacyNotice(payload.locale)),
+    // Expliciet, zodat de app "niet gescoord" kan onderscheiden van "koud bevonden":
+    // fma_leads.score en .qualification_label zijn NOT NULL met default 0 en 'cold'.
+    scored: leadScore !== undefined,
   }
 
   const [adminResult, confirmationResult] = await Promise.all([

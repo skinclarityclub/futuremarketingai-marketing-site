@@ -11,6 +11,7 @@ import {
 } from '@/lib/email/contact-templates'
 import { sendCriticalAlert, sendLeadAlert } from '@/lib/telegram-alert'
 import { sendLeadToInbox } from '@/lib/fma-inbox-forwarder'
+import { buildLeadConsent } from '@/config/privacyConfig'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -139,6 +140,13 @@ export async function POST(request: NextRequest) {
         // app juist uit het transcript gefilterd, dus zonder dit is het paneel leeg.
         message:
           payload.message.length > 400 ? payload.message.slice(0, 400) + '…' : payload.message,
+        // Het contactformulier toont geen eigen belofte, dus `notice` blijft leeg en
+        // geldt het algemene privacybeleid. Het doel is wel eng: antwoord geven op
+        // deze vraag, niets anders. Zie src/config/privacyConfig.ts.
+        consent: buildLeadConsent('reply_to_enquiry', null),
+        // Een contactbericht wordt niet gescoord. Zonder deze markering leest de app
+        // de kolomdefaults (score 0, label cold) als een oordeel dat nooit geveld is.
+        scored: false,
       },
     }),
   ])
