@@ -1,3 +1,4 @@
+import { after } from 'next/server'
 import { streamText, convertToModelMessages, stepCountIs } from 'ai'
 import { anthropic } from '@ai-sdk/anthropic'
 import { validateInput } from './security'
@@ -105,7 +106,7 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // Fire-and-forget: stuur user-turn naar inbox (dormant als env vars ontbreken)
     // Staat NA de rate limit check: een geweigerd verzoek mag geen inboxdata schrijven.
-    // Volgorde-garantie: user arriveert in DB VOOR assistant turn (onFinish)
+    // Volgorde-garantie: user arriveert in DB VOOR assistant turn (after, na de stream)
     void forwardTurnToInbox({
       account_key: 'fmai_website',
       vendor: 'own-bot',
@@ -217,20 +218,23 @@ export async function handleChatRequest(request: Request): Promise<Response> {
       stopWhen: stepCountIs(context?.demoMode ? 2 : 3),
       maxOutputTokens: persona.maxTokens,
       temperature: persona.temperature,
-      onFinish: ({ text }: { text: string }) => {
-        // Fire-and-forget: stuur assistant-turn naar inbox na stream-voltooiing
-        // text is de complete gestreamde tekst — nooit leeg bij normale flow
-        if (text.trim().length > 0) {
-          void forwardTurnToInbox({
-            account_key: 'fmai_website',
-            vendor: 'own-bot',
-            external_session_id: sessionId,
-            external_message_id: crypto.randomUUID(),
-            role: 'assistant',
-            content: text,
-          });
-        }
-      },
+    })
+
+    // Assistant-turn naar de inbox. NIET vanuit onFinish met `void`: Vercel bevriest de functie
+    // zodra de stream dicht is, en die fetch kwam dan vaak nooit aan (gemeten 2026-09-21 op de
+    // SKC-bot met hetzelfde patroon: 2 van 3 assistant-turns ontbraken). after() is hier in
+    // request-scope geregistreerd en houdt de invocatie open tot de turn verstuurd is.
+    after(async () => {
+      const text = await Promise.resolve(result.text).catch(() => '')
+      if (text.trim().length === 0) return
+      await forwardTurnToInbox({
+        account_key: 'fmai_website',
+        vendor: 'own-bot',
+        external_session_id: sessionId,
+        external_message_id: crypto.randomUUID(),
+        role: 'assistant',
+        content: text,
+      })
     })
 
     return result.toUIMessageStreamResponse()
