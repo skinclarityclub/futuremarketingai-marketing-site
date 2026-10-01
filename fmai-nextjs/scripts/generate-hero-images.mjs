@@ -76,7 +76,6 @@ const MOODS = {
   'zichtbaarheid-meten-ai-overviews': 'measurement and emerging signal clarity',
   'geo-monitoring-tools-chatgpt-perplexity': 'instruments, monitoring and watchful precision',
   'ai-marketing-automation-voor-bureaus': 'orchestration and an engine at scale',
-  'wat-is-een-ai-marketing-medewerker': 'a present, capable digital colleague',
   'clyde-vs-jasper-chatgpt-semrush': 'distinction and standing apart',
   'marketingbureau-schalen-met-ai': 'growth that breaks a linear limit',
   'ai-efficientie-marketingbureau': 'effortless flow and efficiency',
