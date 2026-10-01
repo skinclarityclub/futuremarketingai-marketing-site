@@ -37,12 +37,10 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Research](https://future-marketing.ai/nl/skills/research): Market research, trends, competitor analysis with sources. Live.
 - [Clyde](https://future-marketing.ai/nl/skills/clyde): The orchestrator who routes natural-language instructions to the right skill. Live.
 
-## English and Spanish
+## English
 
 - [Home (EN)](https://future-marketing.ai/en): English mirror of NL source.
-- [Home (ES)](https://future-marketing.ai/es): Spanish mirror of NL source.
 - [Pricing (EN)](https://future-marketing.ai/en/pricing): English pricing.
-- [Pricing (ES)](https://future-marketing.ai/es/pricing): Spanish pricing.
 
 ## Kennisbank / Resources
 

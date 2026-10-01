@@ -122,6 +122,21 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Spanish is gone (Daley, 2026-10-02: NL first, EN second). Its pages were
+      // noindex since September, yet Search Console still held 7 of them in the
+      // index and spent crawls on 15 more. English is the closest language a
+      // Spanish visitor reads, so every /es URL hands its signal to its /en twin.
+      // First in the list, so no rule below rewrites /es before this one does.
+      {
+        source: '/es',
+        destination: '/en',
+        statusCode: 301,
+      },
+      {
+        source: '/es/:path*',
+        destination: '/en/:path*',
+        statusCode: 301,
+      },
       // Legacy top-level routes → skill pages
       {
         source: '/:locale/chatbots',
