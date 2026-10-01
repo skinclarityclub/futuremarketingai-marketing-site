@@ -4082,12 +4082,17 @@
       "proof": "Bewijs",
       "related": "Combineert met",
       "faq": "FAQ",
-      "cta": "Plan een gesprek"
+      "cta": "Plan een gesprek",
+      "kennisbank": "Verder lezen"
     },
     "promptHero": {
       "intro": "Vraag Clyde bijvoorbeeld:"
     },
-    "scarcityBadge": "Founding open · {taken}/{total} bezet"
+    "scarcityBadge": "Founding open · {taken}/{total} bezet",
+    "kennisbank": {
+      "title": "Verder lezen in de kennisbank",
+      "intro": "Gidsen die dieper ingaan op het werk achter deze vaardigheid, met bronnen erbij."
+    }
   },
   "glossary": {
     "heading": "GEO & AI marketing woordenlijst",
