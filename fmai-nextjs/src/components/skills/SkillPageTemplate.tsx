@@ -17,6 +17,8 @@ import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
+import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
+import { getAllPosts } from '@/lib/blog'
 import {
   getSkillBySlug,
   getRelatedSkills,
@@ -49,6 +51,31 @@ const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
   // 4.274 bezoekers, 27% citatiegraad, positie 12,8 en Core Web Vitals "Goed".
   'seo-geo': '/screenshots/seo-geo.webp',
 }
+
+/**
+ * Kennisbank-artikelen per vaardigheid, in volgorde van belang (2026-10-02).
+ *
+ * Search Console liet 11 van de 13 NL-artikelen ongeindexeerd, en een artikel
+ * kreeg alleen links van de kennisbankindex en van zusterartikelen. De twaalf
+ * skillpagina's staan in de navigatie op elke pagina en linkten nergens heen.
+ * Per locale tonen we alleen wat daar bestaat: NL krijgt de eerste drie
+ * NL-artikelen, EN valt door naar de Engelse gids achteraan elke lijst.
+ */
+const SKILL_ARTICLES: Record<string, string[]> = {
+  clyde: ['ai-marketing-medewerker', 'ai-agent-vs-ai-tool-marketing', 'ai-marketing-agent-geheugen-en-leren'],
+  'seo-geo': ['geo-generative-engine-optimization', 'zichtbaarheid-meten-ai-overviews', 'geo-monitoring-tools-chatgpt-perplexity'],
+  'blog-factory': ['geo-generative-engine-optimization', 'geo-vs-seo-waar-investeren-2026', 'ai-marketing-automation-voor-bureaus'],
+  research: ['geo-monitoring-tools-chatgpt-perplexity', 'clyde-vs-jasper-chatgpt-semrush', 'ai-marketing-agent-geheugen-en-leren'],
+  reporting: ['meetbare-ai-marketing-resultaten', 'ai-marketing-resultaat-in-de-praktijk', 'ai-efficientie-marketingbureau'],
+  'ad-manager': ['meetbare-ai-marketing-resultaten', 'ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush'],
+  'social-media': ['ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush', 'ai-marketing-resultaat-in-de-praktijk'],
+  'reel-builder': ['ai-marketing-automation-voor-bureaus', 'ai-efficientie-marketingbureau', 'marketingbureau-schalen-met-ai'],
+  'voice-agent': ['ai-agent-vs-ai-tool-marketing', 'ai-efficientie-marketingbureau', 'marketingbureau-schalen-met-ai'],
+  'lead-qualifier': ['ai-agent-vs-ai-tool-marketing', 'meetbare-ai-marketing-resultaten', 'marketingbureau-schalen-met-ai'],
+  'email-management': ['ai-efficientie-marketingbureau', 'ai-marketing-automation-voor-bureaus', 'marketingbureau-schalen-met-ai'],
+  manychat: ['ai-agent-vs-ai-tool-marketing', 'ai-marketing-automation-voor-bureaus', 'ai-efficientie-marketingbureau'],
+}
+const FALLBACK_ARTICLE = 'ai-marketing-automation-guide'
 
 interface SkillPageTemplateProps {
   /** i18n namespace for this skill page, e.g. 'skills-social-media' */
@@ -124,6 +151,19 @@ export async function SkillPageTemplate({
   const isComingSoon = skill?.status === 'coming_soon'
   const related = getRelatedSkills(slug, 3)
 
+  const tHome = await getTranslations({ locale, namespace: 'home' })
+  const localePosts = getAllPosts(locale)
+  const articles: KennisbankCard[] = [...(SKILL_ARTICLES[slug] ?? []), FALLBACK_ARTICLE]
+    .flatMap((s) => localePosts.filter((p) => p.slug === s))
+    .slice(0, 3)
+    .map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      description: p.description,
+      readTime: p.readTime ?? 1,
+      kind: 'pillar' as const,
+    }))
+
   const matrixLabels = {
     fairUse: tMatrix('fairUse'),
     unlimited: tMatrix('unlimited'),
@@ -166,6 +206,7 @@ export async function SkillPageTemplate({
     ...(skill ? [{ id: 'allocation', label: tTemplate('toc.allocation') }] : []),
     ...(customProof ? [{ id: 'proof', label: tTemplate('toc.proof') }] : []),
     ...(related.length > 0 ? [{ id: 'related', label: tTemplate('toc.related') }] : []),
+    ...(articles.length > 0 ? [{ id: 'kennisbank', label: tTemplate('toc.kennisbank') }] : []),
     { id: 'faq', label: tTemplate('toc.faq') },
     { id: 'cta', label: tTemplate('toc.cta') },
   ]
@@ -497,6 +538,18 @@ export async function SkillPageTemplate({
                 </div>
               </section>
             )}
+
+            <KennisbankTeaser
+              eyebrow={tHome('kennisbank.eyebrow')}
+              title={tTemplate('kennisbank.title')}
+              intro={tTemplate('kennisbank.intro')}
+              ctaLabel={tHome('kennisbank.ctaLabel')}
+              badgePillar={tHome('kennisbank.eyebrow')}
+              badgeComparison={tHome('kennisbank.badgeComparison')}
+              readLabel={tHome('kennisbank.readLabel')}
+              readTimeLabel={tHome('kennisbank.readTimeLabel')}
+              items={articles}
+            />
 
             {/* FAQ — citation-bait, schema-content parity with FaqJsonLd above */}
             <section

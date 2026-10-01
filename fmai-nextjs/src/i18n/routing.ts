@@ -1,7 +1,9 @@
 import { defineRouting } from 'next-intl/routing'
 
 export const routing = defineRouting({
-  locales: ['en', 'nl', 'es'],
+  // `es` left on 2026-10-02 (next.config.ts redirects /es to /en). Its strings
+  // in the chatbot and API routes are dead code now, kept out of this change.
+  locales: ['en', 'nl'],
   // Dutch, not English. 14 of 15 kennisbank articles are NL, llms.txt calls
   // Dutch the source of truth, and not-found.tsx renders lang="nl" — but
   // x-default pointed at /en, so Dutch searchers were sent to the weakest
@@ -25,7 +27,8 @@ export const routing = defineRouting({
  * visitors and existing links keep working — but is marked noindex and left out
  * of both the sitemap and the hreflang map.
  *
- * `es` is excluded: zero kennisbank articles, the thinnest pages on the site
+ * `es` was excluded here in September and removed as a locale on 2026-10-02,
+ * for the same reasons: zero kennisbank articles, the thinnest pages on the site
  * (/es/apply is 30 visible words), and no Spanish query in 67 days of Search
  * Console data. Google's own guidance is to keep only translations that meet
  * your quality bar indexable; an unfinished one adds to the weak-URL footprint

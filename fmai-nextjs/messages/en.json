@@ -4082,12 +4082,17 @@
       "proof": "Proof",
       "related": "Pairs with",
       "faq": "FAQ",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "kennisbank": "Further reading"
     },
     "promptHero": {
       "intro": "Ask Clyde something like:"
     },
-    "scarcityBadge": "Founding open · {taken}/{total} reserved"
+    "scarcityBadge": "Founding open · {taken}/{total} reserved",
+    "kennisbank": {
+      "title": "Further reading in the knowledge base",
+      "intro": "Guides that go deeper into the work behind this skill, with their sources."
+    }
   },
   "glossary": {
     "heading": "GEO & AI marketing glossary",
