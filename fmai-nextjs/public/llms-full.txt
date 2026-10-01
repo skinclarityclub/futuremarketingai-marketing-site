@@ -337,22 +337,22 @@ Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, 
 
 ### Pillars
 
-- https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- Wat is GEO? Generative Engine Optimization uitgelegd: hoe AI-engines zoals ChatGPT, Perplexity en Google AI Overviews jouw merk citeren en hoe je begint.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: de complete gids over hoe een AI Marketing Medewerker bureaus laat schalen over meerdere merken zonder evenredige headcount-groei.
-- https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Marketingbureau schalen met AI: het operating model dat de lineaire relatie tussen omzet en headcount doorbreekt.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- AI medewerker voor marketing: wat een AI Marketing Medewerker is (autonomie, merkgeheugen en vaardigheden in een digitale collega), voor wie hij werkt en hoe Clyde hem invult.
+- https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- GEO optimalisatie zorgt dat ChatGPT, Perplexity en Google AI Overviews jouw merk citeren. Wat GEO betekent, hoe het verschilt van SEO en hoe je begint.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je per merk opschaalt zonder extra fte.
+- https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Een marketingbureau schaalt met AI door de lineaire relatie tussen omzet en headcount te breken. Lees welk werk AI overneemt en hoe je begint.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- Een AI medewerker voor marketing is een digitale collega met merkgeheugen die vaardigheden uitvoert voor je bureau. Wat het is, voor wie, en hoe Clyde werkt.
 
 ### Clusters
 
-- https://future-marketing.ai/nl/kennisbank/geo-vs-seo-waar-investeren-2026 -- GEO vs SEO in 2026: waarin de twee strategieen verschillen, waarom GEO SEO uitbreidt en niet vervangt, en hoe je budget verstandig te verdelen.
-- https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- Hoe je zichtbaarheid in AI Overviews meet: citatiegraad, AI share of voice, merkvermeldingen versus citaties en AI-verwezen verkeer per engine.
-- https://future-marketing.ai/nl/kennisbank/geo-monitoring-tools-chatgpt-perplexity -- GEO monitoring tools voor ChatGPT en Perplexity: een gegronde vergelijking van het GEO-monitoring-landschap voor 2026.
-- https://future-marketing.ai/nl/kennisbank/clyde-vs-jasper-chatgpt-semrush -- Clyde vs Jasper vs ChatGPT vs Semrush: welke te kiezen als bureau dat marketing wil schalen over meerdere merken.
-- https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficientie voor bureaus: welk werk AI als eerste overneemt en hoe een AI Marketing Medewerker met merkgeheugen het volume draagt.
-- https://future-marketing.ai/nl/kennisbank/meetbare-ai-marketing-resultaten -- Marketing rendement meten met AI: een framework met nulmeting, zes indicatoren en een controlegroep voor bureaus die resultaat willen verdedigen tegenover hun merken.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- AI marketing in de praktijk: een werkend voorbeeld van hoe een AI Marketing Medewerker per merk werk levert terwijl de operator regie houdt.
-- https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- AI agent vs AI tool in marketing: het echte verschil in werkmodel, autonomie en geheugen, en wanneer je welke nodig hebt.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-agent-geheugen-en-leren -- Geheugen en leren van een AI marketing agent: hoe per-merk langetermijngeheugen per-merk-personalisatie mogelijk maakt en de kern-USP van Clyde is.
+- https://future-marketing.ai/nl/kennisbank/geo-vs-seo-waar-investeren-2026 -- GEO vs SEO in 2026: waarin ze verschillen, waar AEO tussen past, waarom GEO je SEO uitbreidt en niet vervangt, en hoe je je budget over beide verdeelt.
+- https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- AI Overviews SEO meten: wat AI-samenvattingen met je klikken doen, vermelding versus citatie, de vier kernmetrieken en een meetritme per AI-engine.
+- https://future-marketing.ai/nl/kennisbank/geo-monitoring-tools-chatgpt-perplexity -- Welke AI zichtbaarheid tool meet of ChatGPT, Perplexity en Google AI Overviews je merk noemen? Zes tools vergeleken op wat ze zelf zeggen te meten.
+- https://future-marketing.ai/nl/kennisbank/clyde-vs-jasper-chatgpt-semrush -- ChatGPT vs Jasper: een AI-werkplek voor elk team tegenover een marketingplatform met agents. Plus Semrush, en wanneer een bureau beter kiest voor Clyde.
+- https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficientie voor bureaus: selecteer het juiste werk en laat een AI Marketing Medewerker het volume dragen. Welk werk neemt AI als eerste over?
+- https://future-marketing.ai/nl/kennisbank/meetbare-ai-marketing-resultaten -- Marketing rendement meten begint bij een nulmeting. Zo maak je meetbare marketing resultaten van AI zichtbaar, met zes indicatoren en eerlijke toeschrijving.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- Wat levert AI marketing in de praktijk op? Een werkend voorbeeld: hoe een AI Marketing Medewerker per merk werk levert en de operator regie houdt.
+- https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- Het verschil tussen een chatbot en een AI agent, waar een AI tool tussen past en wanneer je in marketing welke nodig hebt. Met de definities van Google en IBM.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-agent-geheugen-en-leren -- Heeft AI een geheugen? Niet uit zichzelf. Zo onthoudt een AI marketing agent per merk de toon, doelgroep en eerdere keuzes, en leert hij van je bijsturing.
 
 ## Apply
 
