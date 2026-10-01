@@ -1,9 +1,9 @@
 ---
 title: "Geheugen en leren van een AI marketing agent"
-description: "Een AI marketing agent onthoudt het merk per klant en leert over de tijd. Dat maakt per-merk-personalisatie mogelijk en is de kern-USP van Clyde."
+description: "Heeft AI een geheugen? Niet uit zichzelf. Zo onthoudt een AI marketing agent per merk de toon, doelgroep en eerdere keuzes, en leert hij van je bijsturing."
 author: "Daley van Diest"
 publishedAt: "2026-06-02"
-updatedAt: "2026-06-02"
+updatedAt: "2026-10-01"
 category: "product-clyde"
 tags: ["AI marketing agent", "langetermijngeheugen", "leren", "Clyde"]
 locale: "nl"
@@ -34,6 +34,8 @@ tableOfContents:
     title: "Clyde in de praktijk"
     level: 2
 faqs:
+  - question: "Heeft AI een geheugen?"
+    answer: "Niet uit zichzelf. Een taalmodel onthoudt niets tussen gesprekken; geheugen is een laag die je toevoegt. ChatGPT heeft sinds 2024 opgeslagen herinneringen en verwijst sinds 2025 ook naar eerdere gesprekken, maar dat geheugen gaat over jou als gebruiker. Een AI marketing agent zoals Clyde houdt per merk een eigen, gescheiden geheugen aan."
   - question: "Wat onthoudt een AI marketing agent precies?"
     answer: "Het merk zelf: de toon, de doelgroep, de strategische kaders, voorbeelden van eerder werk en de beslissingen die je samen hebt genomen. Dat geheugen is per merk gescheiden, zodat de context van het ene merk niet doorlekt in het werk voor een ander merk. Daardoor blijft elk merk in een portfolio consistent, ook als je er tientallen tegelijk bedient."
   - question: "Hoe leert een AI marketing agent over de tijd?"
@@ -45,21 +47,16 @@ faqs:
   - question: "Waar kan ik zien hoe het geheugen van Clyde werkt?"
     answer: "Het meerlaagse model van kort- en langetermijngeheugen staat toegelicht op de memory-pagina van FutureMarketingAI. Daar zie je hoe Clyde per merk onthoudt en hoe dat geheugen de output stuurt. Het geheugen is een eigen onderdeel van het product, geen bijkomstigheid, en vormt de kern van de per-merk-personalisatie."
 citations:
+  - title: "What is AI agent memory?"
+    url: "https://www.ibm.com/think/topics/ai-agent-memory"
+    source: "IBM"
+  - title: "Memory and new controls for ChatGPT"
+    url: "https://openai.com/index/memory-and-new-controls-for-chatgpt/"
+    source: "OpenAI"
+    year: 2024
   - title: "FutureMarketingAI: het geheugensysteem per merk"
     url: "https://future-marketing.ai/nl/memory"
     source: "FutureMarketingAI"
-    year: 2026
-  - title: "AI Marketing Medewerker (Clyde): definitie"
-    url: "https://future-marketing.ai/nl/kennisbank"
-    source: "FutureMarketingAI Kennisbank"
-    year: 2026
-  - title: "FutureMarketingAI: vaardigheden en service-niveaus"
-    url: "https://future-marketing.ai/nl/pricing"
-    source: "FutureMarketingAI"
-    year: 2026
-  - title: "Schema.org DefinedTerm specification"
-    url: "https://schema.org/DefinedTerm"
-    source: "Schema.org"
     year: 2026
 ---
 
@@ -67,13 +64,15 @@ Het geheugen van een AI marketing agent is de laag die per merk context vasthoud
 
 <h2 id="waarom-geheugen-telt">Waarom geheugen telt voor marketing</h2>
 
-Marketing is herhalend werk dat alleen samenhangt als iemand de context onthoudt. Een merk heeft een toon, een doelgroep, een geschiedenis van campagnes en een reeks beslissingen die samen bepalen wat wel en niet bij dat merk past. Een collega die je elke ochtend opnieuw moet uitleggen wie de klant is, is geen collega. Datzelfde geldt voor automatisering: zonder geheugen levert elke opdracht een losstaand fragment, en de samenhang moet jij erbij denken.
+Marketing is herhalend werk dat alleen samenhangt als iemand de context onthoudt. Een merk heeft een toon, een doelgroep, een geschiedenis van campagnes en een reeks beslissingen die samen bepalen wat wel en niet bij dat merk past. Een collega die je elke ochtend opnieuw moet uitleggen waar het merk voor staat, is geen collega. Datzelfde geldt voor automatisering: zonder geheugen levert elke opdracht een losstaand fragment, en de samenhang moet jij erbij denken.
 
 Daar zit het bepalende verschil tussen een losse tool en een AI marketing agent. Een tool vergeet de context zodra je de sessie sluit; je begint elke keer bij nul. Een agent houdt per merk een eigen langetermijngeheugen aan en bouwt de twintigste opdracht voort op de eerste negentien. Het geheugen is geen extraatje bovenop de functies, het is de kern die de andere eigenschappen, autonomie en leren, pas zinvol maakt. Deze cluster hoort bij de gids over de [AI Marketing Medewerker als productcategorie](/nl/kennisbank/ai-marketing-medewerker); hier zoomen we in op het geheugen en het leren zelf.
 
 Voor een bureau dat meerdere merken bedient, is geheugen het verschil tussen schalen en verdrinken. Zonder geheugen groeit de hoeveelheid context die je zelf moet bijhouden lineair mee met je portfolio: meer merken betekent meer briefings, meer herhaling, meer kans dat de toon van het ene merk in het andere verschuift. Met geheugen draagt de agent die context, en blijft elk merk consistent ook als hun aantal groeit. Hoe een agent zich precies onderscheidt van een tool, staat in [AI agent versus AI tool in marketing](/nl/kennisbank/ai-agent-vs-ai-tool-marketing).
 
 <h2 id="hoe-een-agent-onthoudt">Hoe onthoudt een AI marketing agent informatie per merk?</h2>
+
+Een taalmodel kan uit zichzelf niets onthouden, schrijft IBM: het geheugen is een laag die je er bewust aan toevoegt. Kortetermijngeheugen houdt de context binnen een gesprek vast, langetermijngeheugen bewaart informatie over sessies heen. ChatGPT kreeg die tweede laag in 2024 met opgeslagen herinneringen en verwijst sinds april 2025 ook naar eerdere gesprekken. Voor een bureau is de vraag dus niet of AI kan onthouden, maar wat het onthoudt en voor wie.
 
 Onthouden begint bij wat je de agent meegeeft. Je traint het merk in zoals je een nieuwe collega inwerkt: de toon, de doelgroep, voorbeelden van eerder werk en de strategische kaders. De agent neemt dat op in zijn langetermijngeheugen en gebruikt het bij elke volgende opdracht voor dat merk. Anders dan een chatbot, die binnen een gesprek antwoordt en daarna alles vergeet, houdt de agent die context vast over sessies en maanden heen.
 

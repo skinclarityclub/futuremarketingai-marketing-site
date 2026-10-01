@@ -167,6 +167,21 @@ const nextConfig: NextConfig = {
         destination: '/:locale/skills/ad-manager',
         statusCode: 301,
       },
+      // Merged into the pillar on 2026-10-01: both pages answered "ai medewerker"
+      // with the same definition (keyword map, docs/audits/2026-10-01-kennisbank-inventaris.md
+      // Deel F3). The article only exists in nl, so every locale and the pre-June
+      // /blog path go straight to the nl pillar in one hop. Sits before the /blog
+      // catch-all so that rule cannot turn this into a two-hop chain.
+      {
+        source: '/:locale/:section(kennisbank|blog)/wat-is-een-ai-marketing-medewerker',
+        destination: '/nl/kennisbank/ai-marketing-medewerker',
+        statusCode: 301,
+      },
+      {
+        source: '/:section(kennisbank|blog)/wat-is-een-ai-marketing-medewerker',
+        destination: '/nl/kennisbank/ai-marketing-medewerker',
+        statusCode: 301,
+      },
       // Kennisbank unification (2026-06-03): hub /resources + blog /blog → /kennisbank.
       // Hard 301 (Moved Permanently) instead of Next's permanent:true (which emits
       // 308) so every search + AI crawler transfers ranking and updates its index

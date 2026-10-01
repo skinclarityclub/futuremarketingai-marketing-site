@@ -1,5 +1,5 @@
 import { JsonLd } from './JsonLd'
-import { SITE_URL, SITE_NAME, DALEY_PERSON_ID } from '@/lib/seo-config'
+import { SITE_URL, SITE_NAME, DALEY_PERSON_ID, LINKEDIN_DALEY_URL, ORG_ID } from '@/lib/seo-config'
 
 interface ArticleJsonLdProps {
   title: string
@@ -38,14 +38,20 @@ export function ArticleJsonLd({
     description,
     datePublished,
     dateModified,
-    // Phase 14-01: when the author is Daley (the only current author), reference
-    // the Daley Person @id so search engines + LLMs unify the author identity
-    // across /about (Person rendered by 14-02) and blog posts. Future authors
-    // fall through to the inline Person path until they get their own @id.
+    // Daley keeps the shared Person @id so the identity unifies with /about, but
+    // the node is also inline: the full Person is only emitted on /about, so a
+    // bare @id left the article's author without a name, bio URL or sameAs.
+    // Future authors fall through to the generic inline Person path.
     // Canonical author name is "Daley van Diest" (short form "Daley").
     author:
       author === 'Daley van Diest' || author === 'Daley'
-        ? { '@id': DALEY_PERSON_ID }
+        ? {
+            '@type': 'Person',
+            '@id': DALEY_PERSON_ID,
+            name: 'Daley van Diest',
+            url: `${SITE_URL}/${locale}/about`,
+            sameAs: [LINKEDIN_DALEY_URL],
+          }
         : {
             '@type': 'Person',
             name: author,
@@ -53,6 +59,7 @@ export function ArticleJsonLd({
           },
     publisher: {
       '@type': 'Organization',
+      '@id': ORG_ID,
       name: SITE_NAME,
       url: SITE_URL,
       logo: {

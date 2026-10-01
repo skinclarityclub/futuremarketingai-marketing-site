@@ -1,12 +1,23 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import { SITE_URL, SITE_NAME } from '@/lib/seo-config'
+import { SITE_URL, SITE_NAME, LINKEDIN_DALEY_URL } from '@/lib/seo-config'
 import { isIndexableLocale } from '@/i18n/routing'
-import { getAllPosts, getPostSlugsWithLocales, getAllPostsAllLocales, getCategoryLabel } from '@/lib/blog'
+import { Link } from '@/i18n/navigation'
+import { OG_LOCALE_MAP } from '@/lib/metadata'
+import {
+  getAllPosts,
+  getPostSlugsWithLocales,
+  getAllPostsAllLocales,
+  getCategoryLabel,
+  formatPostDate,
+  type BlogPostMeta,
+} from '@/lib/blog'
 import { ArticleJsonLd } from '@/components/seo/ArticleJsonLd'
+import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { FaqJsonLd } from '@/components/seo/FaqJsonLd'
+import { BlogPostCard } from '@/components/blog/BlogPostCard'
 import { BlogContent } from '@/components/blog/BlogContent'
 import { TableOfContents } from '@/components/blog/TableOfContents'
 import { KeyTakeaways } from '@/components/blog/KeyTakeaways'
@@ -78,7 +89,7 @@ export async function generateMetadata({
       description: post.description,
       url,
       siteName: SITE_NAME,
-      locale,
+      locale: OG_LOCALE_MAP[locale] ?? locale,
       type: 'article',
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -100,7 +111,8 @@ interface BlogPostPageProps {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { locale, slug } = await params
-  const post = getAllPosts(locale).find((p) => p.slug === slug)
+  const posts = getAllPosts(locale)
+  const post = posts.find((p) => p.slug === slug)
 
   if (!post) {
     notFound()
@@ -115,12 +127,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const t = await getTranslations({ locale, namespace: 'blog' })
+  const tAbout = await getTranslations({ locale, namespace: 'about' })
 
-  const publishedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  // "Last updated" only shows when updatedAt was raised for a real content change;
+  // equal dates mean the article was never revised.
+  const isUpdated = post.updatedAt > post.publishedAt
+  const isDaley = post.author === 'Daley van Diest' || post.author === 'Daley'
+
+  // A related slug whose post was removed or merged must not render a dead card.
+  const relatedPosts = (post.relatedSlugs ?? [])
+    .map((s) => posts.find((p) => p.slug === s))
+    .filter((p): p is BlogPostMeta => p !== undefined)
 
   const heroAbsolute = post.heroImage
     ? post.heroImage.startsWith('http')
@@ -140,6 +157,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         locale={locale}
         image={heroAbsolute}
         type={post.schemaType ?? (post.pillar ? 'Article' : 'BlogPosting')}
+      />
+      {/* ArticleJsonLd points mainEntityOfPage at #webpage, so the node has to exist here. */}
+      <WebPageJsonLd
+        name={post.title}
+        description={post.description}
+        path={`/kennisbank/${slug}`}
+        locale={locale}
+        dateModified={post.updatedAt}
       />
       <BreadcrumbJsonLd
         items={[
@@ -174,14 +199,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.title}
           </h1>
           <p className="text-lg leading-relaxed text-text-secondary">{post.description}</p>
-          <div className="flex items-center gap-4 text-sm text-text-muted">
-            <span>{post.author}</span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-text-muted">
+            {isDaley ? (
+              <Link href="/about" className="hover:text-accent-system">
+                {post.author}
+              </Link>
+            ) : (
+              <span>{post.author}</span>
+            )}
             <span aria-hidden="true">&middot;</span>
-            <time dateTime={post.publishedAt}>{publishedDate}</time>
+            <span>
+              {t('post.published')}{' '}
+              <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt, locale)}</time>
+            </span>
+            {isUpdated ? (
+              <>
+                <span aria-hidden="true">&middot;</span>
+                <span>
+                  {t('post.updated')}{' '}
+                  <time dateTime={post.updatedAt}>{formatPostDate(post.updatedAt, locale)}</time>
+                </span>
+              </>
+            ) : null}
             {post.readTime ? (
               <>
                 <span aria-hidden="true">&middot;</span>
-                <span>{post.readTime} min read</span>
+                <span>{t('post.readTime', { minutes: post.readTime })}</span>
               </>
             ) : null}
           </div>
@@ -200,6 +243,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {post.faqs && post.faqs.length > 0 && <BlogFaq items={post.faqs} />}
         {post.citations && post.citations.length > 0 && <Citations items={post.citations} />}
+
+        {isDaley && (
+          <aside className="mt-12 rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6">
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted">
+              {t('post.writtenBy')}
+            </p>
+            <p className="mt-2 font-display text-lg font-semibold text-text-primary">
+              {tAbout('founder.fullName')}
+            </p>
+            <p className="text-sm text-text-secondary">{tAbout('founder.role')}</p>
+            <div className="mt-3 flex gap-4 text-sm">
+              <Link href="/about" className="text-accent-system hover:underline">
+                {t('post.aboutAuthor')}
+              </Link>
+              <a
+                href={LINKEDIN_DALEY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-system hover:underline"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </aside>
+        )}
+
+        {relatedPosts.length > 0 && (
+          <section className="mt-12 border-t border-border-primary pt-8">
+            <h2 className="mb-6 font-display text-lg font-semibold text-text-primary">
+              {t('post.related')}
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {relatedPosts.map((related) => (
+                <BlogPostCard key={related.slug} post={related} locale={locale} />
+              ))}
+            </div>
+          </section>
+        )}
       </article>
     </PageShell>
   )

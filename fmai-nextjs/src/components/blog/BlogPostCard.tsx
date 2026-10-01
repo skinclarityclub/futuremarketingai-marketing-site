@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { BlogPostMeta } from '@/lib/blog'
+import { formatPostDate, getCategoryLabel, type BlogPostMeta } from '@/lib/blog'
 
 interface BlogPostCardProps {
   post: BlogPostMeta
@@ -16,11 +16,7 @@ interface BlogPostCardProps {
 }
 
 export function BlogPostCard({ post, locale, priority = false }: BlogPostCardProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  const formattedDate = formatPostDate(post.publishedAt, locale)
 
   return (
     <Link
@@ -41,7 +37,7 @@ export function BlogPostCard({ post, locale, priority = false }: BlogPostCardPro
       )}
       <div className="p-6">
       <span className="mb-3 inline-block rounded-full bg-accent-system/10 px-3 py-1 text-xs font-medium text-accent-system">
-        {post.category}
+        {getCategoryLabel(post.category)}
       </span>
       <h3 className="mb-2 text-lg font-semibold text-text-primary transition-colors duration-200 group-hover:text-accent-system">
         {post.title}
