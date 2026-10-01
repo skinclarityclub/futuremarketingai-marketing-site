@@ -36,3 +36,36 @@ Meetinstrumenten: Node-scripts die de prerendered HTML parsen (zichtbare tekst n
 - Afwijking bij 1f: de auteur-@id `https://future-marketing.ai/about/#daley` wordt als inline Person uitgegeven en verwijst naar geen losse node op de pagina. Dat is geldig JSON-LD, maar een @id-lookup op de pagina vindt alleen de inline kopie.
 - 3e: de geciteerde cijfers in de copy zijn niet opnieuw tegen de brontekst gelegd, alleen dat de URL echte inhoud geeft. Bij 1d is alleen getoetst dat de kaarten de relatedSlugs volgen, niet hoe ze er visueel uitzien (geen browser).
 - 4c: gemeten tegen `main` (de standaardbranch van deze repo), als bestandsvergelijking.
+
+# Verificatie kennisbank SOTA, copyronde 2 (1 okt 2026)
+
+HEAD `2aedfe0`, build `fmai-nextjs/.next/` (BUILD_ID 1 okt 2026 23:46:08 UTC+7). Ronde 2 herschreef de negen artikelen die na ronde 1 openstonden (`ea14ae3` tot en met `cf55fd3`), daarna volgden `a3f5f07` (glossary) en `2aedfe0` (llms-full.txt). Gemeten op de gebouwde HTML onder `.next/server/app/nl/kennisbank/`, de mdx-frontmatter, `sitemap.xml.body`, de repo-checks en live HTTP-aanroepen. Geen dev-server, geen browser.
+
+Meetinstrument: een Python-script dat per artikel `<title>`, H1, meta description, de JSON-LD-blokken, de zichtbare tekst en de citatielinks uit de prerendered HTML haalt en ze naast de frontmatter legt, plus `curl -sL` op elke citatie-URL.
+
+| claim | verdict | bewijs |
+| --- | --- | --- |
+| 5a. Build slaagt met exit 0 | BEWEZEN | Twee builds, op `cf55fd3` en op `2aedfe0`: beide "Compiled successfully", "Generating static pages (125/125)", postbuild "Processed: 106 Skipped: 0", achtergrondtaak `exit 0`. |
+| 5b. Lint-baseline ongewijzigd | BEWEZEN | Beide buildlogs: "43 problems (14 errors, 29 warnings)". |
+| 5c. `<title>` en H1 volgen de nieuwe frontmatter-title | BEWEZEN | Gemeten op zichtbaarheid-meten-ai-overviews ("AI Overviews SEO: zo meet je zichtbaarheid per AI-engine"), clyde-vs-jasper-chatgpt-semrush en ai-marketing-agent-geheugen-en-leren: `<title>`, H1 en frontmatter zijn gelijk. Geen merksuffix in `<title>` (zie open punt). |
+| 5d. Meta description gelijk aan frontmatter, alle 13 NL-artikelen | BEWEZEN | 13 van 13 `meta desc == fm: True`. |
+| 5e. Elke frontmatter-citatie staat als link op de pagina | BEWEZEN | 13 van 13 artikelen: aantal gerenderde `href` gelijk aan het aantal `url:`-regels (zichtbaarheid 6, geo-monitoring 7, agent-vs-tool 4, bureaus 2, clyde-vs-jasper 4, schalen 2, efficientie 3, praktijk 1, geheugen 3; ronde-1-artikelen 5, 5, 3, 3). |
+| 5f. FAQPage-JSON-LD volgt de frontmatter-FAQ, ook de nieuwe vraag | BEWEZEN | 13 van 13: vragen in FAQPage gelijk aan de frontmatter, in dezelfde volgorde. ai-marketing-agent-geheugen-en-leren begint met "Heeft AI een geheugen?". |
+| 5g. Geen U+2014 of U+2013 | BEWEZEN | 0 in de zichtbare tekst en 0 in de mdx, alle 13. |
+| 5h. ComparisonTable met "Niet genoemd" | BEWEZEN | clyde-vs-jasper: 1 tabel, kop Clyde, Jasper, ChatGPT Business, Semrush, 5 cellen per rij, 8 keer "Niet genoemd" in de mdx. geo-monitoring-tools: 1 tabel met Profound, Peec AI, Otterly, SE Ranking als kolommen, 11 keer "Niet genoemd". |
+| 5i. Interne links in de body wijzen naar gebouwde HTML | BEWEZEN | Alle `](/nl/...)`-links in de 13 mdx-bestanden hebben een `.html` onder `.next/server/app`, 0 ontbrekend. `/nl/skills/seo-geo` en `/nl/memory` bestaan als gebouwde pagina. |
+| 5j. Elke citatie-URL van ronde 2 geeft inhoud | BEWEZEN | 31 citaties in de negen artikelen: 29 x 200 zonder redirect naar een foutpagina, 2 x 403 (gartner.com, openai.com). Die twee zijn in de schrijfsessie met Firecrawl geopend; de kopie staat in het brongeheugen van die sessie. |
+| 5k. Steekproef: het geciteerde cijfer staat letterlijk in de bron | BEWEZEN | SparkToro "60-100X" (60 tot 100 runs), Ahrefs "0.5% ... 12.1%", arXiv 2311.09735 "up to 40%" en "up to 37%" (Perplexity), Tow Center "37 percent" en "94 percent", Emerce over DDMA 2025 "62 procent", "48 procent", "532", Pew live "18%", "8% of all visits", "15% of visits", "88%". |
+| 5l. "martech.org/" en "basis.com/" weg als citatie | BEWEZEN | `grep -rlE` over `content/blog/`: 0 bestanden. |
+| 5m. Glossary: geen eindklant van een bureau als "klant" | BEWEZEN na fix | De verificatie vond nog "marge per klant naarmate je portfolio groeit" (`ai-marketing-resultaat-in-de-praktijk.mdx:86`); `a3f5f07` maakt er "merk" van, de build toont "marge per merk" 2 keer en "marge per klant" 0 keer. "klanttevredenheid" en "klantwaarde" bleven, dat zijn vaktermen. |
+| 5n. `llms-full.txt` beschrijft elk artikel met zijn nieuwe description | BEWEZEN | `2aedfe0`: 13 van 13 kennisbankregels gelijk aan de frontmatter-description (scriptvergelijking, ASCII-gevouwen zoals de rest van het bestand), 0 niet-ASCII-bytes. `npm run check:llms` geeft OK, maar dat script toetst alleen skills en constants, niet deze regels. |
+| 5o. Sitemap toont de nieuwe datum | BEWEZEN | `sitemap.xml.body`: lastmod `2026-10-01` voor zichtbaarheid, geheugen en bureaus; `check:sitemap-lastmod` OK (29 paden), `check:indexability` OK (33 pagina's). |
+
+## Open en ongemeten na ronde 2
+
+- Live prod is nog steeds NIET gemeten: niets is gemerged of gedeployed. De 301 van de oude wat-is-URL, de live HTML en of Google de nieuwe titels oppikt, meet de sessie na Daleys merge.
+- De cijfersteekproef (5k) dekt zes bronnen. De overige claims zijn in de schrijfsessie per citatie opgezocht, maar hier niet opnieuw tegen de brontekst gelegd. Concurrentieclaims (Jasper, ChatGPT Business, Semrush, de zes monitoringtools) verouderen het snelst.
+- Prijsfeiten in de copy (tarief per werkruimte, 800 credits) komen uit `messages/nl.json`. Verandert de prijspagina, dan moeten deze artikelen mee.
+- `check:llms` dekt de kennisbank niet. Een volgende copywijziging kan `llms-full.txt` weer laten achterlopen zonder dat een check rood wordt.
+- De EN-gids `ai-marketing-automation-guide` (H-08, H-09) valt buiten deze branch.
+- Open vraag aan Daley: een merksuffix in `<title>`. Onder de 60-tekensregel past het bij geen enkel artikel; advies is weglaten.
