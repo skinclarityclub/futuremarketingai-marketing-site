@@ -590,3 +590,64 @@ Volgorde van prioriteit: indexeerbaarheid, dan intentie en bewijs, dan titels, l
 - Kannibalisatie: uitwisselbare pagina's samenvoegen met een 301, verschillende pagina's differentieren.
 - llms.txt heeft lage prioriteit (97% van de bestanden kreeg in mei 2026 nul requests).
 - Indexering: GSC URL-inspectie "indexering aanvragen" (Daley handmatig; onze OAuth krijgt 403). IndexNow is optioneel en alleen voor Bing/Yandex.
+
+# Deel F: kaart zoekwoord naar pagina (1 okt 2026)
+
+Bronnen: Deel D, plus een tweede autocomplete-meting op 1 okt (`suggestqueries`, hl=nl gl=nl, 44 termen, gratis) die de "n.g."-termen uit Deel D invult. Autocomplete bewijst geen vraag; het laat zien welke formulering getypt wordt en welke intentie eronder zit. Volume komt alleen uit de Trends-ratio's van Deel D en uit GSC.
+
+Regels voor de copy:
+- Een hoofdzoekwoord staat op precies een pagina. Geen twee pagina's met hetzelfde hoofdzoekwoord.
+- Het hoofdzoekwoord gaat vooraan in de title, in de H1 en in de eerste zin. Secundaire termen gaan in een H2, de intro of een FAQ, niet in de title.
+- Vijf pagina's hebben geen gemeten vraag. Daar gaat de copy over glossary, citaties en interne links, niet over een zoekwoord.
+
+## F1. De kaart
+
+| volgorde | pagina | rol | hoofdzoekwoord | secundair | bewijs | poolonderwerpen die hierheen linken |
+|---|---|---|---|---|---|---|
+| 1 | `meetbare-ai-marketing-resultaten` | cluster | marketing rendement meten | meetbare marketing resultaten, marketing roi berekenen | De enige kennisbankpagina met GSC-vertoningen: 14, positie 62, precies op de eerste twee termen. Top 10 heeft 9 NL-titels. "marketing roi" heeft Trends 0,138, maar de autocomplete is Engels (formula, calculator) | google ads met ai, leadgeneratie met ai |
+| 2 | `ai-marketing-medewerker` (plus `wat-is-een-ai-marketing-medewerker`, zie F3) | pillar | ai medewerker | ai marketing medewerker, wat is een ai medewerker, digitale medewerker | Trends 0,062, ongeveer 8x het ijkpunt. Top 10 bestaat alleen uit kleine NL-aanbieders. De autocomplete mengt HR en vacatures ("ai medewerker neemt ontslag", "vacature ai medewerker"), dus de eerste zin moet de lezer aan marketing binden. "ai marketing medewerker" en "wat is een ai medewerker" geven 0 suggesties | fmai, ai tools voor marketingbureaus |
+| 3 | `geo-generative-engine-optimization` | pillar | geo optimalisatie | generative engine optimization, geo optimalisatie betekenis, chatgpt seo | Trends 0,008, ongeveer gelijk aan het ijkpunt (circa 90 per maand). Autocomplete 6, waaronder "betekenis". Top 10: 9 van 10 kleine NL-sites, dus winbaar. "chatgpt seo" heeft Trends 0,10, maar de autocomplete is Engels (agency, prompts). "wat is geo" is onbruikbaar: geopolitiek en geocaching | zichtbaar worden in chatgpt, ai seo |
+| 4 | `geo-vs-seo-waar-investeren-2026` | cluster | geo vs seo | geo vs seo vs aeo, geo seo | Trends 0,006, autocomplete 10 met "geo vs seo vs aeo" als tweede suggestie. "geo seo" heeft Trends 0,21, met "geo seo aeo" en "geo seo sea" | ai seo |
+| 5 | `zichtbaarheid-meten-ai-overviews` | cluster | ai overviews seo | google ai overviews seo, ai overview seo impact | Trends 0,09, autocomplete 10, Engels. De kop "ai overviews" (0,485) heeft consumentenintentie: "ai overview uitzetten", "blocker". Die niet najagen | zichtbaar worden in chatgpt |
+| 6 | `geo-monitoring-tools-chatgpt-perplexity` | cluster | ai zichtbaarheid tool | ai visibility tools, ai zichtbaarheid | Autocomplete 2, letterlijk "ai zichtbaarheid tool". Top 10 heeft 5 NL-titels (frankwatching, semrush.nl, seranking). "ai visibility tools" heeft Trends 0,031 en 16 suggesties | ai seo tools, zichtbaar worden in chatgpt |
+| 7 | `ai-agent-vs-ai-tool-marketing` | cluster | verschil chatbot en ai agent | ai agent vs ai tool, ai agents voor marketing | "verschil ai agent" vult aan tot deze zin. Top 10: 8 NL-titels, klein NL plus Salesforce. "ai agent vs ai tool" heeft 3 suggesties. "ai agents voor marketing" geeft 10 Engelse suggesties (automation, team, agency); de septemberaudit noemt het de beste opkomende categorienaam | geen |
+| 8 | `ai-marketing-automation-voor-bureaus` | pillar | ai marketing automation | ai tools voor marketingbureaus, ai voor marketingbureaus | Trends 0,213, autocomplete 10. De top 10 is Engels (HubSpot, Coursera, IBM) met 1 NL-titel, dus moeilijk. "ai tools voor marketingbureaus" geeft 0 suggesties, maar heeft de hoogste ICP-fit en staat in de pool | ai online marketing, blog schrijven met ai, contentcreatie met ai, nieuwsbrief maken met ai, leadgeneratie met ai, google ads met ai, marketingplan maken met ai, ai tools voor marketingbureaus |
+| 9 | `clyde-vs-jasper-chatgpt-semrush` | vergelijking | chatgpt vs jasper | jasper alternatief (niet getoetst) | Autocomplete 3, top 10 heeft 0 NL-titels, dus lage verwachting. Let op: "clyde ai" botst met de Discord-bot ("clyde ai discord", "clyde ai chatbot"). Nooit op kaal "clyde ai" mikken | ai tools voor marketingbureaus, ai seo tools |
+| 10 | `marketingbureau-schalen-met-ai` | pillar | geen gemeten vraag | | "marketingbureau schalen" en "marketingbureau laten groeien" geven 0 suggesties, "ai marketingbureau" 1. De rol is ICP en interne links | white label social media |
+| 11 | `ai-efficientie-marketingbureau` | cluster | geen gemeten vraag | | "ai efficiëntie" vult aan naar het Engelse "ai efficiency" | marketingplan maken met ai |
+| 12 | `ai-marketing-agent-geheugen-en-leren` | cluster | geen gemeten vraag | heeft ai geheugen (als FAQ-vraag) | "ai agent geheugen" geeft 0 suggesties. "ai geheugen" geeft 4, deels hardware ("ai ram geheugen"), maar "heeft ai geheugen" is een echte vraag | blog schrijven met ai, contentcreatie met ai |
+| 13 | `ai-marketing-resultaat-in-de-praktijk` | cluster (bewijs) | geen gemeten vraag | | "ai marketing voorbeelden" en "ai in marketing voorbeelden" geven 0 suggesties. De rol is E-E-A-T: eigen ervaring en eigen data | alle "X met ai"-onderwerpen, als bewijslink |
+| 14 | `ai-marketing-automation-guide` (EN) | wees | buiten scope | | De Engelse top 10 op "ai marketing automation" is HubSpot en IBM. Besluit staat in NEXT stap 6 (aanvullen of loslaten) | geen |
+
+De pool-kolom is de richting voor de Blog Factory: elk nieuw poolartikel linkt contextueel naar de pagina in deze kolom, en die pagina krijgt bij de copyronde een link terug zodra het artikel live staat.
+
+## F2. Risico's in de kaart
+
+- **"ai seo" en "ai seo tools" staan allebei in de pool en overlappen.** De autocomplete op "ai seo" is volledig tool-intentie ("ai seo tool", "ai seo agent", "ai seo specialist"). Om ze uit elkaar te houden:
+  - "ai seo" wordt de uitleg: wat AI-SEO is en hoe het verschilt van GEO. Het linkt naar de GEO-pillar en naar geo-vs-seo.
+  - "ai seo tools" wordt de vergelijking. Het linkt naar geo-monitoring.
+  - Anders kannibaliseert de Blog Factory zichzelf. Dit is een aandachtspunt voor de eerste run, geen blokkade.
+- **"ai seo tools" tegen `geo-monitoring-tools`.** Dat zijn twee verschillende vragen. "ai seo tools" gaat over SEO-werk doen met AI, "ai zichtbaarheid tool" over meten of je in AI-antwoorden wordt geciteerd. Ze linken naar elkaar, maar delen geen hoofdzoekwoord.
+- **"ai medewerker" trekt ook HR-zoekers.** De eerste zin en de title moeten "marketing" en "bureau" dragen, zodat een HR-zoeker de pagina in de SERP overslaat en geen pogo-stick oplevert.
+- **"ai agents voor marketing"** staat nu als secundair op pagina 7. Een eigen pagina daarvoor, item 13 van de septemberaudit, is een poolbesluit voor later en geen copywerk voor nu.
+- **Engelse top 10's** (ai marketing automation, chatgpt vs jasper, ai overviews seo): een Nederlandse pagina kan daar alleen het Nederlandse deel winnen. Verwachting laag houden en de copy richten op de NL-formulering.
+
+## F3. Kannibalisatie: `wat-is-een-ai-marketing-medewerker` tegen `ai-marketing-medewerker`
+
+Beide integraal gelezen op 1 okt. De pillar zegt zelf dat hij "bewust één niveau hoger" staat (`ai-marketing-medewerker.mdx:78`), maar de lezer krijgt op beide pagina's hetzelfde antwoord. Wat overlapt:
+- dezelfde definitie in de eerste zin ("autonome/persistente digitale collega met merkgeheugen, geen tool");
+- dezelfde vijf vaardigheden, bijna woordelijk (content, GEO en SEO, lead-kwalificatie, voice, reporting);
+- dezelfde alinea over het gehoste dashboard ("je logt in, je traint, je laat werk leveren");
+- dezelfde zin "een collega die je elke ochtend opnieuw moet uitleggen wie de klant is, is geen collega";
+- dezelfde callout over merk negen en merk tien;
+- dezelfde prijsalinea en dezelfde CTA-titel;
+- twee FAQ's die vrijwel gelijk zijn (verschil met een AI-tool, de regie bij het bureau).
+
+Het onderscheid categorie tegen definitie bestaat in het ontwerp (fase 08-03), niet in de vraag van de zoeker: niemand zoekt "ai marketing medewerker productcategorie". Wat alleen in de cluster staat: "is het een chatbot?" en "voor wie is het bedoeld?". Wat alleen in de pillar staat: autonomie en het geheugen als aparte H2's.
+
+Geen van beide heeft GSC-vertoningen (Deel D), dus een 301 kost geen gemeten rankingwaarde. Differentiëren heeft geen vrije intentie meer: "is het een chatbot?" is al het hoofdzoekwoord van `ai-agent-vs-ai-tool-marketing`.
+
+**Besluit Daley, 1 okt: samenvoegen in de pillar.** Uitvoering:
+- `ai-marketing-medewerker` blijft en neemt de twee unieke stukken over: "voor wie" en kort "is het een chatbot?", met een link naar `ai-agent-vs-ai-tool-marketing`.
+- `wat-is-een-ai-marketing-medewerker.mdx` gaat weg, met een 301 naar `/nl/kennisbank/ai-marketing-medewerker` in `next.config.ts`.
+- Mee bijwerken: `relatedSlugs` en de bodylink in `ai-marketing-automation-voor-bureaus` en `clyde-vs-jasper-chatgpt-semrush`, de verwijzing in de pillar zelf (`:78`), `public/llms-full.txt:350` en `scripts/generate-hero-images.mjs:79`.
