@@ -1483,7 +1483,13 @@
     "noPosts": "Geen artikelen gevonden.",
     "noPostsInCategory": "Geen artikelen in deze categorie.",
     "post": {
-      "eyebrow": "Artikel"
+      "eyebrow": "Artikel",
+      "published": "Gepubliceerd",
+      "updated": "Laatst bijgewerkt",
+      "readTime": "{minutes} min lezen",
+      "writtenBy": "Geschreven door",
+      "aboutAuthor": "Meer over de auteur",
+      "related": "Gerelateerde artikelen"
     }
   },
   "skills-voice-agent": {

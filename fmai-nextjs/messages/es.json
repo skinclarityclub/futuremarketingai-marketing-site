@@ -1483,7 +1483,13 @@
     "noPosts": "No se han encontrado artículos.",
     "noPostsInCategory": "No hay artículos en esta categoría.",
     "post": {
-      "eyebrow": "Artículo"
+      "eyebrow": "Artículo",
+      "published": "Publicado",
+      "updated": "Última actualización",
+      "readTime": "{minutes} min de lectura",
+      "writtenBy": "Escrito por",
+      "aboutAuthor": "Más sobre el autor",
+      "related": "Artículos relacionados"
     }
   },
   "skills-voice-agent": {

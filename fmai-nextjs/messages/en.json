@@ -1483,7 +1483,13 @@
     "noPosts": "No articles found.",
     "noPostsInCategory": "No articles in this category.",
     "post": {
-      "eyebrow": "Article"
+      "eyebrow": "Article",
+      "published": "Published",
+      "updated": "Last updated",
+      "readTime": "{minutes} min read",
+      "writtenBy": "Written by",
+      "aboutAuthor": "More about the author",
+      "related": "Related articles"
     }
   },
   "skills-voice-agent": {

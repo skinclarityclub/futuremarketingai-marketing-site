@@ -157,6 +157,20 @@ export function getAllPostsAllLocales(): BlogPostMeta[] {
 }
 
 /** Resolve a human label for a category id, falling back to a title-cased id. */
+/**
+ * Frontmatter dates are plain YYYY-MM-DD, which Date parses as UTC midnight.
+ * Formatting in UTC keeps the day from shifting with the build machine's
+ * timezone; formatting in the page locale keeps an NL page from saying "June".
+ */
+export function formatPostDate(date: string, locale: string): string {
+  return new Date(date).toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
+}
+
 export function getCategoryLabel(id: string): string {
   const found = BLOG_CATEGORIES.find((c) => c.id === id)
   if (found) return found.label

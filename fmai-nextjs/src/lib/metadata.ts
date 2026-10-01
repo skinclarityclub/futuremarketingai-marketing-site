@@ -11,7 +11,7 @@ export interface PageMetadataOptions {
   metaKeyPrefix?: string
 }
 
-const OG_LOCALE_MAP: Record<string, string> = {
+export const OG_LOCALE_MAP: Record<string, string> = {
   en: 'en_US',
   nl: 'nl_NL',
   es: 'es_ES',

@@ -26,6 +26,8 @@ interface WebPageJsonLdProps {
    * which blocks to prioritize for snippet/citation extraction. Optional.
    */
   speakableSelectors?: string[]
+  /** Overrides the PAGE_DATES lookup, for pages that carry their own date (kennisbank articles). */
+  dateModified?: string
 }
 
 type WebPageWithExtras = WithContext<WebPage> & {
@@ -42,9 +44,10 @@ export function WebPageJsonLd({
   path,
   locale,
   speakableSelectors,
+  dateModified: dateModifiedOverride,
 }: WebPageJsonLdProps) {
   const url = `${SITE_URL}/${locale}${path === '/' ? '' : path}`
-  const dateModified = PAGE_DATES[path] || PAGE_DATES['/']
+  const dateModified = dateModifiedOverride ?? (PAGE_DATES[path] || PAGE_DATES['/'])
 
   const data: WebPageWithExtras = {
     '@context': 'https://schema.org',
