@@ -130,7 +130,12 @@ $NEXTDEV_SIG = 'next[\\/]dist[\\/]bin[\\/]next|next-server|next-router-worker|ne
 # werk dat hij zou moeten sparen: gemeten 2026-09-08, een lopende `npx playwright test` stond met
 # `chain=[bash.exe <- DEAD]` op de kaplijst terwijl hij draaide. Geldt alleen voor de shell-familie;
 # een achtergebleven chrome of MCP-node blijft gewoon een kandidaat.
-$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm (run )?(test|build)|heavy-runner|tsc --noEmit|codex'
+# `npm"?`: een `npm test` uit Git Bash staat er als `bash.exe "/c/Program Files/nodejs/npm" test -- ...`,
+# met een aanhalingsteken tussen npm en test. Zonder `"?` matchte dat nooit: gemeten 2026-10-09 01:04:45,
+# [KILL] bash.exe reason=orphan-shell age=609s nam een wachtende `npm test` mee, die eindigde op exit 0
+# zonder testuitvoer (fma-app designronde D1 en D2, vijf keer). `typecheck` om dezelfde reden: een
+# `npm run typecheck` duurt minuten en matchte (test|build) evenmin.
+$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm"? (run )?(test|build|typecheck)|heavy-runner|tsc --noEmit|codex'
 
 # ---------------------------------------------------------------------------
 $started = Get-Date
