@@ -20,7 +20,7 @@
       "headlineMain": "Dit is Clyde.",
       "imageAlt": "Clyde, de AI marketing medewerker van FutureMarketingAI, als 3D-robot",
       "tagline": "Jouw <accent>AI marketing medewerker</accent>.",
-      "subtitle": "Onthoudt elk merk. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics. Autonoom uitgevoerd, met geheugen dat campagnes overleeft.",
+      "subtitle": "Onthoudt elk merk, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
       "trustAnchor": "Live in productie sinds 2025. Maximaal {maxPartners} partners per jaar.",
       "cta": "Plan een gesprek",
       "ctaSecondary": "Leer Clyde kennen",
@@ -47,7 +47,7 @@
       },
       "reporting": {
         "title": "Rapportage & Analytics",
-        "description": "Wekelijks rapport in je inbox. Bij afwijkende metrics hoor je het voordat de klant belt."
+        "description": "Elke vrijdag het SEO-rapport op WhatsApp, elke week een rapport per merk in je dashboard. Wijkt een cijfer af, dan hoor je het van Clyde voordat de klant belt."
       },
       "seoGeo": {
         "title": "SEO en GEO Analyst",
@@ -55,7 +55,7 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Medewerker",
-        "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
+        "description": "Eén aanspreekpunt voor je hele portfolio, in elk scherm van je dashboard en op WhatsApp. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
         "statusLabel": "Actief",
         "promptIntro": "Vraag bijvoorbeeld:",
         "prompt1": "Plan Instagram-content voor alle SKC-merken deze week",
@@ -435,8 +435,8 @@
           "d": "Per kanaal een doel, een verwachte lijn en de gemeten werkelijkheid ernaast. Loopt het achter, dan weet je het voordat het kwartaal om is."
         },
         "s3": {
-          "t": "Contentpijlers die zichzelf herwegen",
-          "d": "De pijlers krijgen gewicht op basis van wat aantoonbaar werkt. Wat presteert krijgt meer ruimte, zonder dat iemand een schuif verzet."
+          "t": "Per pijler gemeten wat werkt",
+          "d": "Clyde houdt per pijler bij wat aantoonbaar presteert en legt dat naast je doelen. Hij laat zien waar meer ruimte naartoe moet; jij beslist wat er schuift."
         },
         "s4": {
           "t": "Een agenda die een jaar vooruit kijkt",
@@ -444,6 +444,30 @@
         }
       },
       "caption": "De contentkalender per merk, gevuld vanuit de agenda"
+    },
+    "watch": {
+      "eyebrow": "Altijd in de buurt",
+      "title": "Clyde kijkt mee, ook als jij er niet bent",
+      "subtitle": "Clyde is geen apart scherm dat je moet openen. Hij zit in elk scherm van je dashboard, weet wat er bij elk merk speelt, en komt zelf naar je toe op WhatsApp.",
+      "steps": {
+        "s1": {
+          "t": "In elk scherm",
+          "d": "Het Clyde-paneel staat op elke pagina van het dashboard. Op de pagina van een merk weet hij over welk merk je het hebt, dus je hoeft niets eerst uit te leggen."
+        },
+        "s2": {
+          "t": "Op WhatsApp",
+          "d": "Vraag Clyde onderweg hoe je content en je cijfers ervoor staan. Hij antwoordt vanuit hetzelfde geheugen per merk als in het dashboard."
+        },
+        "s3": {
+          "t": "Hij meldt zich zelf",
+          "d": "Wijkt een cijfer af of wacht er iets op je goedkeuring, dan stuurt Clyde je een WhatsApp-bericht. Goedkeuren doe je daarna in het dashboard."
+        },
+        "s4": {
+          "t": "Elke vrijdag het rapport",
+          "d": "Het SEO-weekrapport komt elke vrijdag op WhatsApp binnen, met een link naar het volledige rapport. Daarnaast staat er elke week een rapport per merk in je dashboard."
+        }
+      },
+      "caption": "Het dashboard: wat Clyde deed terwijl je sliep, en wat er op jou wacht"
     },
     "platforms": {
       "liveTitle": "Draait vandaag voor onze klanten",
@@ -1928,7 +1952,7 @@
     "hero": {
       "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
       "title": "Clyde rapporteert elke week.",
-      "subtitle": "Automatische prestatie-digests, live KPI-dashboards en anomalie-detectie met alerts. Maandag 08:00 heb je een overzicht in je inbox. Geen handmatige Notion-updates meer.",
+      "subtitle": "Automatische prestatie-digests, live KPI-dashboards en anomalie-detectie met alerts. Elke vrijdag het SEO-rapport op WhatsApp, elke week een rapport per merk in je dashboard. Geen handmatige Notion-updates meer.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Genereer de wekelijkse performance-digest voor alle merken",
@@ -1941,7 +1965,7 @@
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
         "title": "Wekelijkse prestatie-digest",
-        "body": "Maandag 08:00 in je inbox: top-KPI's, trends, anomalieën en aanbevolen acties. Clyde schrijft de verhaallijn."
+        "body": "Elke week per merk in je dashboard: top-KPI's, trends, anomalieën en aanbevolen acties. Clyde schrijft de verhaallijn. Het SEO-rapport komt elke vrijdag ook op WhatsApp."
       },
       "feature2": {
         "title": "Live KPI-dashboards",
@@ -1949,7 +1973,7 @@
       },
       "feature3": {
         "title": "Anomalie-detectie",
-        "body": "Wijken metrics significant af van normaal, dan krijg je een alert. Geen verrassingen in de maandrapportage."
+        "body": "Wijken metrics significant af van normaal, dan stuurt Clyde je een WhatsApp-bericht. Geen verrassingen in de maandrapportage."
       },
       "feature4": {
         "title": "Rapportages op maat",
@@ -2003,7 +2027,7 @@
       "items": {
         "q1": {
           "question": "Wat doet de Rapportage-vaardigheid precies?",
-          "answer": "Clyde levert wekelijkse prestatie-digests, real-time KPI-dashboards en cross-platform analytics over social, web en sales. Detecteert anomalieen (bijvoorbeeld plotse CTR-daling) en stuurt proactieve waarschuwingen via e-mail of Slack. Custom rapporten op verzoek."
+          "answer": "Clyde levert wekelijkse prestatie-digests, real-time KPI-dashboards en cross-platform analytics over social, web en sales. Detecteert anomalieen (bijvoorbeeld plotse CTR-daling) en stuurt proactieve waarschuwingen via WhatsApp. Custom rapporten op verzoek."
         },
         "q2": {
           "question": "Welke databronnen ondersteunt Rapportage?",
@@ -2011,11 +2035,11 @@
         },
         "q3": {
           "question": "Op welke tiers is Rapportage beschikbaar?",
-          "answer": "Inbegrepen op alle tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Professional krijgt anomalie-alerts, Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
+          "answer": "Inbegrepen op alle tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Rapportage?",
-          "answer": "Een week. Dag 1 koppelt de databronnen via OAuth. Dag 2 tot 4 baseert Clyde KPI-baseline en anomalie-drempels op historische data. Vanaf dag 5 draait de wekelijkse digest autonoom (maandagochtend 08:00 in jouw inbox)."
+          "answer": "Een week. Dag 1 koppelt de databronnen via OAuth. Dag 2 tot 4 baseert Clyde KPI-baseline en anomalie-drempels op historische data. Vanaf dag 5 draait de wekelijkse digest autonoom: elke week in je dashboard, en het SEO-rapport elke vrijdag op WhatsApp."
         },
         "q5": {
           "question": "Hoe verschilt dit van Looker Studio of Whatagraph?",
@@ -3262,12 +3286,12 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: de centrale AI Marketing Medewerker | Clyde",
-      "description": "Opdrachten in gewone taal, orkestratie van alle vaardigheden, multi-channel (chat, Slack, Telegram), geheugen per merk. 1 tot 5 credits per gesprek."
+      "description": "Je AI Marketing Medewerker in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, orkestratie van alle vaardigheden, geheugen per merk. 1 tot 5 credits per gesprek."
     },
     "hero": {
       "eyebrow": "Vaardigheid 10. Clyde AI Marketing Medewerker",
       "title": "Dit is Clyde. Je AI Marketing Medewerker.",
-      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de medewerker die ze orkestreert. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Werkt via chat, Slack en Telegram.",
+      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de medewerker die ze aanstuurt en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Plan deze week voor alle SKC-merken inclusief Reels",
@@ -3287,8 +3311,8 @@
         "body": "Workflows over vaardigheden heen: blog schrijven, social posts afleiden, prestaties meten. Eén opdracht, meerdere vaardigheden."
       },
       "feature3": {
-        "title": "Multi-channel",
-        "body": "Chat in het dashboard, Slack-integratie en Telegram-bot. Clyde is waar jij werkt."
+        "title": "In elk scherm en op WhatsApp",
+        "body": "Clyde zit in elk scherm van het dashboard. Daarbuiten bereik je hem op WhatsApp of Telegram, en hij meldt zich zelf als er iets afwijkt of op je goedkeuring wacht."
       },
       "feature4": {
         "title": "Geheugen en context per merk",
@@ -3299,7 +3323,7 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Kies je kanaal",
-        "body": "Dashboard-chat, Slack of Telegram. Clyde werkt op alle drie parallel."
+        "body": "Het paneel in je dashboard, WhatsApp of Telegram. Op elk kanaal kent Clyde hetzelfde merk."
       },
       "step2": {
         "title": "Geef een opdracht",
@@ -3315,7 +3339,7 @@
       "subtitle": "Via het gedeelde geheugen per merk.",
       "integration1": "Alle andere 11 vaardigheden: Clyde is de orchestrator.",
       "integration2": "Geheugensysteem: context per merk, per account en per kanaal.",
-      "integration3": "Routines: terugkerende taken (weekdigest, maandreview) automatisch."
+      "integration3": "Routines: terugkerende taken zoals een kanaalrapport, een SEO-plan en een SEO-rapport. Per taak kies je of Clyde eerst vraagt, uitvoert en meldt, of stil uitvoert."
     },
     "useCases": {
       "title": "Voor wie",
@@ -3342,15 +3366,15 @@
       "items": {
         "q1": {
           "question": "Wat is Clyde precies?",
-          "answer": "Clyde is de centrale AI Marketing Medewerker die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt via chat, Slack, Telegram of WhatsApp."
+          "answer": "Clyde is de centrale AI Marketing Medewerker die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
         },
         "q2": {
           "question": "Welke kanalen ondersteunt Clyde?",
-          "answer": "Native chatpanel op je dashboard, Slack-app voor agencyteams, Telegram-bot voor 1-op-1, WhatsApp Business via een gekoppeld nummer en e-mail (geforwarde berichten). Clyde behoudt geheugen tussen kanalen: een Slack-gesprek wordt voortgezet in WhatsApp."
+          "answer": "In elk scherm van je dashboard, op WhatsApp via een gekoppeld nummer, en via Telegram. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Goedkeuren doe je in het dashboard. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per merk."
         },
         "q3": {
           "question": "Op welke tiers is Clyde beschikbaar?",
-          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Growth en hoger krijgen Slack en multi-channel. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
+          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Clyde?",
@@ -3450,7 +3474,7 @@
         },
         "q2": {
           "question": "Welke platforms ondersteunt ManyChat DM?",
-          "answer": "Op dit moment uitsluitend Instagram-DM's via de officiele Meta Messenger Platform-API en de ManyChat-koppeling. Facebook Messenger en WhatsApp Business staan op de roadmap voor Q3. Triggers werken op exacte keywords plus AI-intent-detectie als fallback."
+          "answer": "Op dit moment uitsluitend Instagram-DM's via de officiele Meta Messenger Platform-API en de ManyChat-koppeling. Facebook Messenger en WhatsApp Business voor gesprekken met je klanten staan op de roadmap; je eigen lijn met Clyde loopt al wel via WhatsApp. Triggers werken op exacte keywords plus AI-intent-detectie als fallback."
         },
         "q3": {
           "question": "Op welke tiers is ManyChat DM beschikbaar?",

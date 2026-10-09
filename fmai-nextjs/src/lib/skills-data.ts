@@ -326,11 +326,11 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/clyde',
     shortDescription: 'De centrale AI-medewerker die alle andere vaardigheden orkestreert.',
     longDescription:
-      'Clyde is de centrale AI medewerker die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt via chat, Slack, Telegram en andere kanalen. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
+      'Clyde is de centrale AI medewerker die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt in het dashboard, op WhatsApp en via Telegram. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
     features: [
       'Natural language opdrachten',
       'Orkestratie van alle andere skills',
-      'Multi-channel (chat, Slack, Telegram)',
+      'In elk scherm van het dashboard en op WhatsApp',
       'Geheugen en context per klant',
       'Kennisbank met zoekfunctie',
       'Routines en terugkerende taken',

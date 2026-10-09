@@ -25,12 +25,13 @@ Key facts:
 
 Clyde is a persistent AI employee, not a chatbot. Key characteristics:
 
-- Named identity across every touchpoint (website, Slack, dashboard, email).
+- Named identity across every touchpoint (website, dashboard, WhatsApp, Telegram).
 - Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
 - Operates 12 skills: Social Media, Blog Factory, Ad Manager, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
 - Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
 - Self-hosted EU infrastructure for AVG and EU AI Act compliance.
-- Controlled via natural language through chat, Slack, Telegram, or direct dashboard commands.
+- Present in every screen of the client dashboard, and reachable on WhatsApp and Telegram. On WhatsApp Clyde answers questions about content and results, delivers the weekly SEO report every Friday, and messages the agency himself when a metric deviates or something waits for approval. Approving happens in the dashboard.
+- Works from a strategy layer: a strategy session per brand, goals with a projection, content pillars measured per pillar, and a content agenda that looks a year ahead.
 
 ## The 12 Skills
 
@@ -185,12 +186,12 @@ Credit cost: 3 credits per query.
 
 ### Clyde Orchestrator (Live)
 
-Clyde is the central AI employee who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works through chat, Slack, Telegram and other channels. Has memory per client and remembers earlier conversations, preferences and context.
+Clyde is the central AI employee who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has memory per client and remembers earlier conversations, preferences and context.
 
 Capabilities:
 - Natural language commands
 - Orchestration of all other skills
-- Multi-channel (chat, Slack, Telegram)
+- In every screen of the dashboard and on WhatsApp
 - Memory and context per client
 - Knowledge base with search
 - Routines and recurring tasks
@@ -421,7 +422,7 @@ Q: Welke platformen ondersteunt Clyde?
 A: Instagram, Facebook, LinkedIn (social), WordPress en Webflow (blog), Google Ads en Meta Ads (ads), Calendly (lead qualifier), Twilio (voice agent), ManyChat (DM automation), en alle gangbare rapportagetools via API.
 
 Q: Hoe werkt de goedkeuringsflow?
-A: Clyde genereert content autonoom. Jij of je klant reviewt via het dashboard, Slack of Telegram. Goedkeuren of afwijzen met commentaar. Clyde leert van elke review en past de volgende batch aan.
+A: Clyde genereert content autonoom. Jij of je klant reviewt in het dashboard; Clyde meldt op WhatsApp wanneer er iets op goedkeuring wacht. Goedkeuren of afwijzen met commentaar. Clyde leert van elke review en past de volgende batch aan.
 
 Q: Wat is het verschil tussen Founding en Growth?
 A: Founding kost 997 EUR per maand met een levenslang vast tarief (rate lock for life), maximaal 10 plekken, directe toegang tot Daley via Slack, en prioriteit bij nieuwe vaardigheden. Growth is 499 euro per workspace per maand voor bureaus die flexibiliteit willen zonder rate lock. Beide zijn maandelijks opzegbaar.
