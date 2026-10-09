@@ -20,7 +20,7 @@
       "headlineMain": "This is Clyde.",
       "imageAlt": "Clyde, the FutureMarketingAI AI marketing employee, as a 3D robot",
       "tagline": "Your <accent>AI marketing employee</accent>.",
-      "subtitle": "Remembers every brand. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics. Run autonomously, with memory that outlives campaigns.",
+      "subtitle": "Remembers every brand, watches every screen of your dashboard and messages you on WhatsApp the moment something comes up. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics.",
       "trustAnchor": "Live in production since 2025. Max {maxPartners} partners per year.",
       "cta": "Book a call",
       "ctaSecondary": "Meet Clyde",
@@ -47,7 +47,7 @@
       },
       "reporting": {
         "title": "Reporting & Analytics",
-        "description": "Weekly report in your inbox. When metrics deviate, you hear it before the client calls."
+        "description": "The SEO report on WhatsApp every Friday, a report per brand in your dashboard every week. When a number deviates, you hear it from Clyde before the client calls."
       },
       "seoGeo": {
         "title": "SEO & GEO Analyst",
@@ -55,7 +55,7 @@
       },
       "clyde": {
         "title": "Clyde AI Marketing Employee",
-        "description": "One point of contact for your entire portfolio. Ask in plain language, Clyde picks the right skill.",
+        "description": "One point of contact for your entire portfolio, in every screen of your dashboard and on WhatsApp. Ask in plain language, Clyde picks the right skill.",
         "statusLabel": "Active",
         "promptIntro": "Ask for example:",
         "prompt1": "Plan Instagram content for all SKC brands this week",
@@ -435,8 +435,8 @@
           "d": "A goal per channel, an expected line, and the measured reality beside it. If it runs behind, you know before the quarter is over."
         },
         "s3": {
-          "t": "Content pillars that reweight themselves",
-          "d": "Pillars gain weight based on what demonstrably works. What performs gets more room, without anyone moving a slider."
+          "t": "What works, measured per pillar",
+          "d": "Clyde tracks what demonstrably performs per pillar and sets it against your goals. He shows where more room should go; you decide what shifts."
         },
         "s4": {
           "t": "An agenda that looks a year ahead",
@@ -444,6 +444,30 @@
         }
       },
       "caption": "The content calendar per brand, filled from the agenda"
+    },
+    "watch": {
+      "eyebrow": "Always close by",
+      "title": "Clyde watches along, even when you are away",
+      "subtitle": "Clyde is not a separate screen you have to open. He sits in every screen of your dashboard, knows what is going on with every brand, and comes to you himself on WhatsApp.",
+      "steps": {
+        "s1": {
+          "t": "In every screen",
+          "d": "The Clyde panel is on every page of the dashboard. On a brand's page he knows which brand you mean, so you never have to explain first."
+        },
+        "s2": {
+          "t": "On WhatsApp",
+          "d": "Ask Clyde on the go how your content and your numbers are doing. He answers from the same memory per brand as in the dashboard."
+        },
+        "s3": {
+          "t": "He messages you first",
+          "d": "When a number deviates or something waits for your approval, Clyde sends you a WhatsApp message. You then approve in the dashboard."
+        },
+        "s4": {
+          "t": "The report every Friday",
+          "d": "The weekly SEO report arrives on WhatsApp every Friday, with a link to the full report. On top of that there is a report per brand in your dashboard every week."
+        }
+      },
+      "caption": "The dashboard: what Clyde did while you slept, and what is waiting for you"
     },
     "platforms": {
       "liveTitle": "Running today for our clients",
@@ -1928,7 +1952,7 @@
     "hero": {
       "eyebrow": "Skill 06. Reporting and Analytics",
       "title": "Clyde reports every week.",
-      "subtitle": "Automatic performance digests, live KPI dashboards and anomaly detection with alerts. By Monday 08:00 you have an overview in your inbox. No more manual Notion updates.",
+      "subtitle": "Automatic performance digests, live KPI dashboards and anomaly detection with alerts. The SEO report on WhatsApp every Friday, a report per brand in your dashboard every week. No more manual Notion updates.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Generate the weekly performance digest for every brand",
@@ -1941,7 +1965,7 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Weekly performance digest",
-        "body": "Monday 08:00 in your inbox: top KPIs, trends, anomalies and recommended actions. Clyde writes the narrative."
+        "body": "Every week per brand in your dashboard: top KPIs, trends, anomalies and recommended actions. Clyde writes the narrative. The SEO report also arrives on WhatsApp every Friday."
       },
       "feature2": {
         "title": "Live KPI dashboards",
@@ -1949,7 +1973,7 @@
       },
       "feature3": {
         "title": "Anomaly detection",
-        "body": "If metrics deviate significantly from normal, you get an alert. No surprises in the monthly report."
+        "body": "If metrics deviate significantly from normal, Clyde sends you a WhatsApp message. No surprises in the monthly report."
       },
       "feature4": {
         "title": "Custom reports",
@@ -2003,7 +2027,7 @@
       "items": {
         "q1": {
           "question": "What does the Reporting skill do exactly?",
-          "answer": "Clyde delivers weekly performance digests, real-time KPI dashboards, and cross-platform analytics across social, web, and sales. Detects anomalies (for example, a sudden CTR drop) and sends proactive alerts via email or Slack. Custom reports on demand."
+          "answer": "Clyde delivers weekly performance digests, real-time KPI dashboards, and cross-platform analytics across social, web, and sales. Detects anomalies (for example, a sudden CTR drop) and sends proactive alerts via WhatsApp. Custom reports on demand."
         },
         "q2": {
           "question": "Which data sources does Reporting support?",
@@ -2011,11 +2035,11 @@
         },
         "q3": {
           "question": "On which tiers is Reporting available?",
-          "answer": "Included on all tiers, with fair-use on generated reports. 5 credits per report. Professional adds anomaly alerts, Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
+          "answer": "Included on all tiers, with fair-use on generated reports. 5 credits per report. Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
         },
         "q4": {
           "question": "How long does Reporting onboarding take?",
-          "answer": "One week. Day 1 connects data sources via OAuth. Days 2 through 4 Clyde establishes a KPI baseline and anomaly thresholds from historical data. From day 5 the weekly digest runs autonomously (Monday morning 08:00 in your inbox)."
+          "answer": "One week. Day 1 connects data sources via OAuth. Days 2 through 4 Clyde establishes a KPI baseline and anomaly thresholds from historical data. From day 5 the weekly digest runs autonomously: every week in your dashboard, and the SEO report every Friday on WhatsApp."
         },
         "q5": {
           "question": "How does this differ from Looker Studio or Whatagraph?",
@@ -3262,12 +3286,12 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: the central AI Marketing Employee | Clyde",
-      "description": "Commands in natural language, orchestration of all skills, multi-channel (chat, Slack, Telegram), memory per brand. 1 to 5 credits per conversation."
+      "description": "Your AI Marketing Employee in every screen of your dashboard and on WhatsApp. Commands in natural language, orchestration of all skills, memory per brand. 1 to 5 credits per conversation."
     },
     "hero": {
       "eyebrow": "Skill 10. Clyde AI Marketing Employee",
       "title": "This is Clyde. Your AI Marketing Employee.",
-      "subtitle": "The other 11 skills are separate tools. Clyde is the employee who orchestrates them. Give commands in natural language; Clyde routes to the right skill and brings the results back. Works via chat, Slack and Telegram.",
+      "subtitle": "The other 11 skills are separate tools. Clyde is the employee who directs them and who watches every screen of your dashboard. Give commands in natural language; Clyde routes to the right skill and brings the results back. Reachable in the dashboard, on WhatsApp and via Telegram.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Plan this week for all SKC brands, Reels included",
@@ -3287,8 +3311,8 @@
         "body": "Workflows across skills: write a blog, derive social posts, measure performance. One command, multiple skills."
       },
       "feature3": {
-        "title": "Multi-channel",
-        "body": "Chat in the dashboard, Slack integration and Telegram bot. Clyde is where you work."
+        "title": "In every screen and on WhatsApp",
+        "body": "Clyde sits in every screen of the dashboard. Outside it you reach him on WhatsApp or Telegram, and he messages you himself when something deviates or waits for your approval."
       },
       "feature4": {
         "title": "Memory and context per brand",
@@ -3299,7 +3323,7 @@
       "title": "How it works",
       "step1": {
         "title": "Choose your channel",
-        "body": "Dashboard chat, Slack or Telegram. Clyde works across all three in parallel."
+        "body": "The panel in your dashboard, WhatsApp or Telegram. On every channel Clyde knows the same brand."
       },
       "step2": {
         "title": "Give a command",
@@ -3315,7 +3339,7 @@
       "subtitle": "Via the shared memory per brand.",
       "integration1": "All other 11 skills: Clyde is the orchestrator.",
       "integration2": "Memory system: context per brand, per account and per channel.",
-      "integration3": "Routines: recurring tasks (weekly digest, monthly review) on autopilot."
+      "integration3": "Routines: recurring tasks such as a channel report, an SEO plan and an SEO report. Per task you choose whether Clyde asks first, runs and reports, or runs silently."
     },
     "useCases": {
       "title": "Who this is for",
@@ -3342,15 +3366,15 @@
       "items": {
         "q1": {
           "question": "What is Clyde exactly?",
-          "answer": "Clyde is the central AI Marketing Employee that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works via chat, Slack, Telegram, or WhatsApp."
+          "answer": "Clyde is the central AI Marketing Employee that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works in the dashboard, on WhatsApp and via Telegram."
         },
         "q2": {
           "question": "Which channels does Clyde support?",
-          "answer": "Native chat panel on your dashboard, Slack app for agency teams, Telegram bot for 1-on-1, WhatsApp Business via a connected number, and email (forwarded messages). Clyde retains memory across channels: a Slack conversation continues on WhatsApp."
+          "answer": "In every screen of your dashboard, on WhatsApp via a connected number, and via Telegram. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Approving happens in the dashboard. On every channel Clyde works from the same memory per brand."
         },
         "q3": {
           "question": "On which tiers is Clyde available?",
-          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Growth and up get Slack and multi-channel. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
+          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
         },
         "q4": {
           "question": "How long does Clyde onboarding take?",
@@ -3450,7 +3474,7 @@
         },
         "q2": {
           "question": "Which platforms does ManyChat DM support?",
-          "answer": "Currently Instagram DMs only via the official Meta Messenger Platform API and the ManyChat connector. Facebook Messenger and WhatsApp Business are on the roadmap for Q3. Triggers work on exact keywords plus AI intent detection as fallback."
+          "answer": "Currently Instagram DMs only via the official Meta Messenger Platform API and the ManyChat connector. Facebook Messenger and WhatsApp Business for conversations with your customers are on the roadmap; your own line to Clyde already runs on WhatsApp. Triggers work on exact keywords plus AI intent detection as fallback."
         },
         "q3": {
           "question": "On which tiers is ManyChat DM available?",

@@ -176,11 +176,11 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'The central AI employee that orchestrates all other skills.',
       longDescription:
-        'Clyde is the central AI employee that drives all other skills. Give instructions in natural language and Clyde routes them to the right skill. Works via chat, Slack, Telegram and other channels. Has per-client memory and remembers earlier conversations, preferences and context.',
+        'Clyde is the central AI employee that drives all other skills. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has per-client memory and remembers earlier conversations, preferences and context.',
       features: [
         'Natural language instructions',
         'Orchestration of all other skills',
-        'Multi-channel (chat, Slack, Telegram)',
+        'In every screen of the dashboard and on WhatsApp',
         'Memory and context per client',
         'Knowledge base with search',
         'Routines and recurring tasks',
@@ -331,11 +331,11 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'El empleado de IA central que orquesta todas las demás habilidades.',
       longDescription:
-        'Clyde es el empleado de IA central que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona vía chat, Slack, Telegram y otros canales. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
+        'Clyde es el empleado de IA central que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona en el dashboard, en WhatsApp y vía Telegram. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
       features: [
         'Instrucciones en lenguaje natural',
         'Orquestación de todas las demás habilidades',
-        'Multicanal (chat, Slack, Telegram)',
+        'En cada pantalla del dashboard y en WhatsApp',
         'Memoria y contexto por cliente',
         'Base de conocimiento con búsqueda',
         'Rutinas y tareas recurrentes',
