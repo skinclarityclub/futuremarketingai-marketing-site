@@ -9,16 +9,25 @@ import { sendLeadToInbox } from '../src/lib/fma-inbox-forwarder.ts'
 
 const schema = z.object(attributionShape)
 
-test('shape accepts a 7 char fmc and rejects malformed ones', () => {
-  assert.equal(schema.safeParse({ fmc: 'Ab3dE6g' }).success, true)
-  for (const fmc of ['x', 'Ab3dE6g!', 'Ab3dE6gH9k']) {
-    assert.equal(schema.safeParse({ fmc }).success, false, fmc)
-  }
+test('shape accepts a 7 char fmc', () => {
+  assert.deepEqual(schema.parse({ fmc: 'Ab3dE6g' }).fmc, 'Ab3dE6g')
 })
 
-test('shape caps utm fields at 200 chars', () => {
-  assert.equal(schema.safeParse({ utm_source: 'a'.repeat(200) }).success, true)
-  assert.equal(schema.safeParse({ utm_source: 'a'.repeat(201) }).success, false)
+test('invalid fmc or utm parses to undefined instead of failing', () => {
+  for (const bad of [{ fmc: 'x' }, { fmc: 'Ab3dE6g!' }, { fmc: 'Ab3dE6gH9k' }, { fmc: 123 }, { utm_source: 'a'.repeat(201) }]) {
+    const r = schema.safeParse(bad)
+    assert.equal(r.success, true, JSON.stringify(bad).slice(0, 40))
+    for (const v of Object.values(r.data)) assert.equal(v, undefined)
+  }
+  assert.equal(schema.parse({ utm_source: 'a'.repeat(200) }).utm_source.length, 200)
+})
+
+test('a malformed fmc leaves the other valid fields intact', () => {
+  const r = schema.parse({ fmc: 'x', utm_campaign: 'consult' })
+  assert.equal(r.fmc, undefined)
+  assert.equal(r.utm_campaign, 'consult')
+  assert.deepEqual(readAttribution(r), { utm: { campaign: 'consult' } })
+  assert.deepEqual(readAttribution(schema.parse({ fmc: 'x', utm_source: 'a'.repeat(201) })), {})
 })
 
 test('readAttribution maps to fmc plus utm, utm absent when unset', () => {

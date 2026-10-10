@@ -6,19 +6,21 @@ import { z } from 'zod'
  *
  * Pure module (zod only) so the check script can import it without Next aliases.
  * `fmc` has the format of the command center's CODE_RE: 7 alphanumerics.
- * An invalid value fails the route's validation on purpose: the form is ours and
- * the client only sends what it read from the URL, so a bad code is tampering.
+ * An invalid value is dropped silently (`.catch(undefined)`), never refused: the
+ * application is the work, the attribution is secondary, and a retry could not
+ * succeed while the bad value stays in the URL. The inbox webhook in the app
+ * validates `fmc` strictly again.
  *
  * ponytail: the code only survives when the CTA links to /apply itself (the wizard
  * reads its own URL); a code kept in sessionStorage is the upgrade if a homepage
  * CTA is wanted.
  */
 export const attributionShape = {
-  fmc: z.string().regex(/^[0-9A-Za-z]{7}$/).optional(),
-  utm_source: z.string().max(200).optional(),
-  utm_medium: z.string().max(200).optional(),
-  utm_campaign: z.string().max(200).optional(),
-  utm_content: z.string().max(200).optional(),
+  fmc: z.string().regex(/^[0-9A-Za-z]{7}$/).optional().catch(undefined),
+  utm_source: z.string().max(200).optional().catch(undefined),
+  utm_medium: z.string().max(200).optional().catch(undefined),
+  utm_campaign: z.string().max(200).optional().catch(undefined),
+  utm_content: z.string().max(200).optional().catch(undefined),
 }
 
 export interface AttributionFields {
