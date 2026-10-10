@@ -17,6 +17,7 @@ import {
   normalizeLeadScore,
   qualificationFromScore,
 } from '@/lib/fma-inbox-forwarder'
+import { attributionShape, readAttribution } from '@/lib/apply/attribution'
 import { buildLeadConsent } from '@/config/privacyConfig'
 import { getTranslations } from 'next-intl/server'
 import {
@@ -50,6 +51,7 @@ const legacyApplicationSchema = z.object({
   // Honeypot: accept any string so the honeypot check below can fire (max(0) would 422 before check)
   website: z.string().optional().default(''),
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
+  ...attributionShape,
 })
 
 /**
@@ -85,6 +87,7 @@ const wizardSchema = z.object({
   locale: z.enum(['nl', 'en', 'es']).optional().default('nl'),
   // Honeypot: accept any string so the honeypot check below can fire
   website: z.string().optional().default(''),
+  ...attributionShape,
 })
 
 // Resend constructor throws when API key is undefined — placeholder for next build.
@@ -154,6 +157,9 @@ export async function POST(request: NextRequest) {
   let problemRaw: string | undefined
   let scoreResult: ReturnType<typeof scoreApplication> | null = null
   let honeypotTriggered = false
+  // Read from the validated TOP-LEVEL body in both shapes, so it never depends on
+  // the nested-to-flat normalisation below (which only copies named fields).
+  let attribution: ReturnType<typeof readAttribution> = {}
 
   if (isWizardPayload) {
     const parsed = wizardSchema.safeParse(body)
@@ -166,6 +172,7 @@ export async function POST(request: NextRequest) {
     if (parsed.data.website && parsed.data.website.length > 0) {
       honeypotTriggered = true
     }
+    attribution = readAttribution(parsed.data)
 
     // Server-side rescore — trust nothing the client says about the math
     scoreResult = scoreApplication({
@@ -221,6 +228,7 @@ export async function POST(request: NextRequest) {
     if (parsed.data.website && parsed.data.website.length > 0) {
       honeypotTriggered = true
     }
+    attribution = readAttribution(parsed.data)
     payload = {
       name: parsed.data.name,
       email: parsed.data.email,
@@ -314,6 +322,7 @@ export async function POST(request: NextRequest) {
       ? { branch: scoreResult.branch, score_raw: scoreResult.total, score_max: scoreResult.max }
       : {}),
     ...(payload.assessment ? { assessment: payload.assessment } : {}),
+    ...(attribution.utm ? { utm: attribution.utm } : {}),
     // Het probleem is de enige vrije tekst van een aanvraag. Zonder dit staat de
     // lead in de app zonder context: het lead-marker-bericht wordt uit het
     // transcript gefilterd, dus het gesprekspaneel blijft leeg.
@@ -375,6 +384,7 @@ export async function POST(request: NextRequest) {
       ...(leadScore !== undefined
         ? { score: leadScore, qualification: qualificationFromScore(leadScore) }
         : {}),
+      ...(attribution.fmc ? { fmc: attribution.fmc } : {}),
       metadata: leadMetadata,
     }),
   ])

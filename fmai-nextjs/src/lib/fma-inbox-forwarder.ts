@@ -102,6 +102,8 @@ export interface InboxLead {
    *  app zet `vendor` en `origin` er ACHTER. */
   metadata?: Record<string, unknown>;
   vendor?: string;
+  /** 7-char DM link code from the URL; the app maps it to the DM keyword. */
+  fmc?: string;
 }
 
 /**
@@ -157,6 +159,7 @@ export async function sendLeadToInbox(lead: InboxLead): Promise<boolean> {
   if (lead.company) body.company = lead.company;
   if (lead.score !== undefined) body.score = lead.score;
   if (lead.qualification) body.qualification = lead.qualification;
+  if (lead.fmc) body.fmc = lead.fmc;
   if (lead.metadata && Object.keys(lead.metadata).length > 0) body.metadata = lead.metadata;
 
   try {
