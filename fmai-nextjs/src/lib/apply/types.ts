@@ -96,6 +96,12 @@ export interface ApplyWizardSubmission {
   locale: 'nl' | 'en' | 'es'
   /** Honeypot — must be empty. */
   website?: string
+  /** DM link attribution, read from the /apply URL. */
+  fmc?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  utm_content?: string
 }
 
 export interface ApplyWizardResponse {

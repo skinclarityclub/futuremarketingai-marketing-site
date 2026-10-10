@@ -34,6 +34,18 @@ function isCategory(v: string): v is AssessmentCategory {
   return (ASSESSMENT_CATEGORIES as readonly string[]).includes(v)
 }
 
+const ATTRIBUTION_KEYS = ['fmc', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content'] as const
+
+/** Only the keys the API accepts; the server validates the values. */
+function readUrlAttribution(searchParams: URLSearchParams): Partial<Record<(typeof ATTRIBUTION_KEYS)[number], string>> {
+  const out: Partial<Record<(typeof ATTRIBUTION_KEYS)[number], string>> = {}
+  for (const k of ATTRIBUTION_KEYS) {
+    const v = searchParams.get(k)
+    if (v) out[k] = v
+  }
+  return out
+}
+
 /**
  * Read assessment handoff data from URL params first (?a=&st=&lc=),
  * fall back to sessionStorage `fmai-assessment-v1` for tab-scoped recovery.
@@ -110,6 +122,7 @@ export function ApplyWizardClient() {
         problem: problem.trim() || undefined,
         locale,
         website: '', // honeypot
+        ...readUrlAttribution(searchParams),
       }
       const res = await fetch('/api/apply', {
         method: 'POST',
