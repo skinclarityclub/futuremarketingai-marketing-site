@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { clearMemory } from '@/lib/chatbot/memory-persistence'
+import { applyAnalyticsConsent } from '@/lib/analytics-consent'
 
 /**
  * CookieConsentBanner — first-party AVG/GDPR consent UI.
@@ -61,12 +62,13 @@ function writeConsent(state: ConsentState) {
   }
 }
 
-export function CookieConsentBanner() {
+/** `reopened`: mounted by the footer link, so open expanded even with consent stored. */
+export function CookieConsentBanner({ reopened = false }: { reopened?: boolean }) {
   const t = useTranslations('common.cookie_consent')
   const panelRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
-  const [open, setOpen] = useState(false)
-  const [expanded, setExpanded] = useState(false)
+  const [open, setOpen] = useState(reopened)
+  const [expanded, setExpanded] = useState(reopened)
   const [analytics, setAnalytics] = useState(false)
   const [marketing, setMarketing] = useState(false)
   const resetMemory = useChatbotStore((s) => s.resetMemory)
@@ -81,7 +83,7 @@ export function CookieConsentBanner() {
     /* eslint-disable react-hooks/set-state-in-effect */
     setMounted(true)
     const existing = readConsent()
-    setOpen(existing === null)
+    if (existing === null) setOpen(true)
     if (existing) {
       setAnalytics(existing.analytics)
       setMarketing(existing.marketing)
@@ -129,16 +131,19 @@ export function CookieConsentBanner() {
 
   const acceptAll = () => {
     writeConsent({ functional: true, analytics: true, marketing: true })
+    applyAnalyticsConsent(true)
     setAnalytics(true)
     setMarketing(true)
     setOpen(false)
   }
   const saveSelection = () => {
     writeConsent({ functional: true, analytics, marketing })
+    applyAnalyticsConsent(analytics)
     setOpen(false)
   }
   const rejectAll = () => {
     writeConsent({ functional: true, analytics: false, marketing: false })
+    applyAnalyticsConsent(false)
     // The visitor rejected non-essential storage, so also forget what Clyde
     // remembered. resetMemory() empties the store (the persist-on-change effect then
     // removes the clyde:memory key); clearMemory() covers the case where the chat

@@ -6,6 +6,7 @@ import { FloatingChatTrigger } from '@/components/chatbot/FloatingChatTrigger'
 import { CalendlyTrigger } from '@/components/interactive/CalendlyTrigger'
 import { BookingTrigger } from '@/components/booking/BookingTrigger'
 import { BackToTop } from '@/components/common/BackToTop'
+import { applyAnalyticsConsent } from '@/lib/analytics-consent'
 
 /**
  * ClientIslands -- mounts interaction-driven lightweight triggers on
@@ -37,12 +38,15 @@ const REOPEN_EVENT = 'fmai:cookie-reopen'
 
 export function ClientIslands() {
   const [needsConsent, setNeedsConsent] = useState(false)
+  const [reopened, setReopened] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     let consented = false
     try {
-      consented = window.localStorage.getItem('cookieConsent') !== null
+      const raw = window.localStorage.getItem('cookieConsent')
+      consented = raw !== null
+      if (raw !== null && JSON.parse(raw).analytics === true) applyAnalyticsConsent(true)
     } catch {
       // Storage blocked (private mode, quota); treat as no consent so the
       // banner is offered every visit rather than silently skipped.
@@ -53,6 +57,7 @@ export function ClientIslands() {
     }
 
     function handleReopen() {
+      setReopened(true)
       setNeedsConsent(true)
     }
     window.addEventListener(REOPEN_EVENT, handleReopen)
@@ -65,7 +70,9 @@ export function ClientIslands() {
       <CalendlyTrigger />
       <BookingTrigger />
       <BackToTop />
-      {needsConsent && <CookieConsentBannerLazy />}
+      {/* A returning visitor's banner first mounts in response to the reopen event, so
+          its own listener misses it; `reopened` tells it to open anyway. */}
+      {needsConsent && <CookieConsentBannerLazy reopened={reopened} />}
     </>
   )
 }
