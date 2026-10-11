@@ -21,11 +21,11 @@ const includeHttpsUpgrades = isProduction && !isLighthouseTest
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://unpkg.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://unpkg.com https://app.future-marketing.ai;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com https://prod.spline.design;
   font-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com;
+  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://prod.spline.design https://unpkg.com https://app.future-marketing.ai;
   frame-src https://app.cal.com https://cal.com;
   worker-src 'self' blob:;
   object-src 'none';
