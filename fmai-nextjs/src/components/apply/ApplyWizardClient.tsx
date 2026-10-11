@@ -130,6 +130,10 @@ export function ApplyWizardClient() {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error('submit_failed')
+      // The send button is type="button" with this fetch, so no submit event
+      // reaches the attribution tag (f.js on the page); tell it explicitly.
+      // No-op without the tag or without ?fmc= in the URL.
+      ;(window as Window & { __fmaiForm?: (name: string) => void }).__fmaiForm?.('aanvraag')
       const data = (await res.json()) as ApplyWizardResponse
       setResult({
         branch: data.branch,

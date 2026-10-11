@@ -106,6 +106,12 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
         </p>
       </SectionShell>
 
+      {/* DM-link attribution: counts that a request followed an Instagram DM
+          link (?fmc=). Stores nothing, reads no fields. async so React hoists
+          it into <head> and also loads it on a client-side navigation.
+          Install note: fma-app docs/ops/form-attribution-script.md */}
+      <script src="https://app.future-marketing.ai/l/f.js" async />
+
       {/* Wizard — multi-step qualification + branched result */}
       <Suspense fallback={null}>
         <ApplyWizardClient />
