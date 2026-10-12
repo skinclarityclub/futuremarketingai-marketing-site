@@ -325,7 +325,7 @@ Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, 
 ### Pillars
 
 - https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- GEO optimalisatie zorgt dat ChatGPT, Perplexity en Google AI Overviews jouw merk citeren. Wat GEO betekent, hoe het verschilt van SEO en hoe je begint.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je meer klanten bedient met het team dat je hebt.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je meer klanten bedient met je huidige team.
 - https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Een marketingbureau schaalt met AI door de lineaire relatie tussen omzet en headcount te breken. Lees welk werk AI overneemt en hoe je begint.
 - https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- Zoek je een AI-marketingmedewerker voor je bureau? Wat zo'n digitale collega doet, waarom wij Clyde een AI-collega noemen en hoe hij per klant werkt.
 
