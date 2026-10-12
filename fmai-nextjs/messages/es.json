@@ -283,11 +283,10 @@
     },
     "testimonial": {
       "eyebrow": "El momento en que hizo clic",
-      "quote": "Reconozco nuestras marcas en cada caption que se publica. Cuatro marcas, cuatro voces, ni una vez con tono genérico de IA. Eso me sorprendió.",
       "name": "Sindy Kienstra",
       "role": "Founder y operadora, SkinClarity Club",
       "portraitAlt": "Retrato de Sindy Kienstra, founder de SkinClarity Club",
-      "linkedinUrl": "https://www.linkedin.com/in/sindy-skinclarity",
+      "linkedinUrl": "https://www.linkedin.com/in/sindy-kienstra-875522124/",
       "linkedinLabel": "Ver a Sindy Kienstra en LinkedIn",
       "ctaLabel": "Leer la entrevista completa"
     },
@@ -2543,37 +2542,6 @@
         "skill10Name": "ManyChat DM",
         "skill10Body": "Automatización de DM de Instagram con disparadores por palabra clave y respuestas IA en la voz de marca, además de captura de leads."
       },
-      "outcomes": {
-        "title": "Qué entrega Clyde",
-        "subtitle": "Resultados de SkinClarity Club medidos en el Q1-2026 frente al Q1-2025. Cifras extraídas de una entrevista operativa con Sindy.",
-        "metrics": {
-          "hoursSaved": {
-            "label": "Tiempo ahorrado",
-            "value": "5 horas por semana",
-            "detail": "De 12 a 14 horas por semana antes de que Clyde entrara en producción, a 7 u 8 horas por semana ahora, dedicadas sobre todo a estrategia en lugar de ejecución.",
-            "sourceNote": "Fuente: registro de tiempo de Sindy, Q1-2026 comparado con Q1-2025."
-          },
-          "approvalTime": {
-            "label": "Tiempo de aprobación por post",
-            "value": "30 seg por post",
-            "detail": "De 4 minutos a 30 segundos, medido por lotes. La capa de memoria conoce la voz de marca y las reglas de revisión.",
-            "sourceNote": "Fuente: medición de Sindy a lo largo de cuatro lotes en la semana 14 de 2026."
-          },
-          "reachDelta": {
-            "label": "Aumento de alcance",
-            "value": "+30% por post",
-            "detail": "Atribución conservadora: medición bruta del +42 por ciento, ajustada por el efecto del lanzamiento de producto de abril de 2025.",
-            "sourceNote": "Fuente: Instagram Business Insights, Q1-2025 comparado con Q1-2026."
-          },
-          "engagementRate": {
-            "label": "Tasa de engagement",
-            "value": "3,1% a 4,3%",
-            "detail": "Medido en @SkinClarityClub, la cuenta principal. Las otras dos cuentas muestran cifras absolutas menores con la misma tendencia.",
-            "sourceNote": "Fuente: Instagram Business Insights, Q1-2025 comparado con Q1-2026."
-          }
-        },
-        "disclaimer": "Cifras extraídas de una entrevista operativa con Sindy. Notas de fuente por métrica. Las cifras se recalibran periódicamente."
-      },
       "architecture": {
         "title": "Cómo funciona",
         "subtitle": "Un único Clyde, 3 espacios de trabajo (uno por cuenta), memoria compartida de cartera. Sindy aprueba el contenido antes de publicarlo.",
@@ -2586,18 +2554,15 @@
         "week1Body": "Onboarding: voz de marca por cuenta, flujo de aprobación y definiciones de KPIs.",
         "month1Label": "Mes 1",
         "month1Body": "Primera semana completa de contenido autónomo. Mucho feedback, Clyde calibra.",
-        "month3Label": "Mes 3",
-        "month3Body": "El tiempo de aprobación por post baja de 4 minutos a 30 segundos. Clyde conoce las pequeñas manías.",
         "nowLabel": "Ahora",
         "nowBody": "Completamente autónomo en 3 cuentas y 4 marcas. Sindy revisa, Clyde ejecuta."
       },
       "testimonial": {
-        "quote": "Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba una tarde entera a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta.",
         "authorName": "Sindy",
         "authorRole": "Founder, SkinClarity Club",
         "photoSrc": "/case-studies/skc/sindy-headshot.jpg",
         "photoAlt": "Retrato de Sindy, founder de SkinClarity Club",
-        "linkedinUrl": "https://www.linkedin.com/in/sindy-skinclarity",
+        "linkedinUrl": "https://www.linkedin.com/in/sindy-kienstra-875522124/",
         "linkedinLabel": "Ver a Sindy en LinkedIn",
         "author": {
           "name": "Sindy",
@@ -2618,7 +2583,6 @@
         "chapter1": "Reto",
         "chapter2": "Enfoque",
         "chapter3": "Resultados",
-        "chapter4": "Operadora",
         "chapter5": "Siguiente paso"
       },
       "chapter1": {
@@ -2636,95 +2600,10 @@
         "title": "Lo que la operación entrega ahora",
         "intro": "Cifras medidas en Q1 2026 comparadas con Q1 2025. Notas de fuente por métrica, recalibradas periódicamente."
       },
-      "chapter4": {
-        "eyebrow": "Capítulo 04, Perspectiva de la operadora",
-        "title": "Sindy en sus propias palabras",
-        "intro": "Founder, operadora y primera Founding partner de FutureMarketingAI. A continuación, sus propias palabras sobre trabajar con Clyde día a día."
-      },
       "chapter5": {
         "eyebrow": "Capítulo 05, Siguiente paso",
         "title": "¿Quieres esto también para tu cartera?",
         "intro": "En una primera llamada hablamos sobre cómo encaja Clyde con tu agencia, qué habilidades se activan de inmediato y cómo es el recorrido Founding."
-      },
-      "heroMetrics": {
-        "title": "Lo que esto entrega, en cifras",
-        "subtitle": "Tres cifras de las propias mediciones de Sindy.",
-        "metric1": {
-          "prefix": "",
-          "amount": "5",
-          "suffix": " horas por semana",
-          "label": "Tiempo ahorrado"
-        },
-        "metric2": {
-          "prefix": "",
-          "amount": "30",
-          "suffix": " s",
-          "label": "Aprobación por post"
-        },
-        "metric3": {
-          "prefix": "+",
-          "amount": "30",
-          "suffix": "%",
-          "label": "Alcance por post"
-        }
-      },
-      "before": {
-        "title": "Antes de Clyde",
-        "intro": "Flujo manual de carruseles con freelancer en la cadena y rondas de revisión por marca.",
-        "step1": {
-          "label": "Briefing y research",
-          "body": "Sindy anotaba los temas por marca en una hoja, juntaba research desde fuentes sueltas.",
-          "duration": "60 min"
-        },
-        "step2": {
-          "label": "Diseño del carrusel",
-          "body": "La freelancer creaba 1 carrusel por marca en Canva, entregaba por enlaces de Drive.",
-          "duration": "45 min por post"
-        },
-        "step3": {
-          "label": "Caption y hashtags",
-          "body": "Caption por marca escrito a mano, hashtags desde su lista personal.",
-          "duration": "15 min por post"
-        },
-        "step4": {
-          "label": "Rondas de revisión",
-          "body": "Idas y vueltas en WhatsApp, una media de 2 rondas por post.",
-          "duration": "4 min por post"
-        },
-        "step5": {
-          "label": "Programar y publicar",
-          "body": "Programación separada por cuenta en Buffer, recordatorios en el móvil para stories.",
-          "duration": "30 min"
-        }
-      },
-      "after": {
-        "title": "Con Clyde",
-        "intro": "Clyde crea y programa; Sindy aprueba y orienta.",
-        "step1": {
-          "label": "Clyde hace el research",
-          "body": "La habilidad de research escanea tendencias por marca y consolida un brief semanal.",
-          "duration": "Autónomo"
-        },
-        "step2": {
-          "label": "Carruseles en la voz de marca",
-          "body": "El Social Media Manager crea los carruseles de cada cuenta, con la voz adecuada por marca.",
-          "duration": "Autónomo"
-        },
-        "step3": {
-          "label": "Caption y hashtags inline",
-          "body": "Se escriben en el mismo flujo y se prueban contra la memoria de cartera.",
-          "duration": "Autónomo"
-        },
-        "step4": {
-          "label": "Aprobar en 30 s",
-          "body": "Sindy aprueba lotes en la bandeja de Clyde; la capa de memoria recuerda cada corrección.",
-          "duration": "30 s por post"
-        },
-        "step5": {
-          "label": "Publicar vía programación",
-          "body": "La publicación sigue la agenda del dashboard; stories iniciadas desde el dashboard.",
-          "duration": "Autónomo"
-        }
       },
       "gallery": {
         "title": "Lo que sale por marca",
@@ -2748,13 +2627,6 @@
           "name": "Cartera de marcas de tratamiento",
           "role": "4 marcas en rotación",
           "output": "De 2 a 4 blogs por mes más carruseles temáticos por marca en la rotación."
-        }
-      },
-      "operatorQuotes": {
-        "title": "Más de Sindy",
-        "quote2": {
-          "body": "Clyde no produce contenido que tenga que limpiar. Produce contenido que publico. Esa es la diferencia real con las viejas herramientas de IA.",
-          "attribution": "Sindy, sobre la calidad del output"
         }
       }
     }

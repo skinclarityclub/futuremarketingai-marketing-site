@@ -270,21 +270,12 @@ Active skills: all 10 live skills are active for SKC. The whole system was built
 
 Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
 
-Output (autonomous, weekly):
-- Carousels: circa 21 per week
-- Instagram posts: circa 15 per week
-- Stories: on demand
-- Blog articles: 2 to 4 per month
-- SEO reports: weekly
-- Performance digest: Monday 08:00
+Output: carousels, posts and stories per account, blogs for skinclarityclub.nl, a weekly SEO report. No headline numbers until they are measured.
 
 Timeline:
 - Week 1: onboarding (brand voice per account, approval workflow, KPI definitions).
-- Month 1: first full week autonomous, lots of feedback, Clyde calibrates.
-- Month 3: approval time per post drops from 4 minutes to 30 seconds. Clyde knows the small preferences.
-- Now: fully autonomous across 3 accounts and 4 brands. Sindy reviews, Clyde executes.
-
-Testimonial: "Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit." Sindy, founder SkinClarity Club.
+- Month 1: the first content weeks, lots of feedback; Clyde carries the corrections into what he makes next.
+- Now: Clyde creates and schedules for 3 accounts and 4 brands from the calendar. Sindy approves in her own dashboard before anything goes live.
 
 ## Memory Architecture
 
@@ -314,7 +305,7 @@ Step 3, Strategy Call (30 min): honest assessment of which tier and skills deliv
 
 Step 4, Onboarding (week 1): we connect brand voice, social accounts, knowledge bases and configure Clyde for each client.
 
-Step 5, Correction Loop (month 1): Clyde calibrates on real feedback. Many corrections in week 1, fewer by week 4. By month 3 the approval time per post drops from 4 minutes to 30 seconds.
+Step 5, Correction Loop (month 1): Clyde calibrates on real feedback. Many corrections in week 1; Clyde remembers them, so each week is sharper per brand.
 
 Step 6, Quarterly Strategy plus Annual Retrospective: quarterly check-ins on what is working. Annual retrospective with full performance review.
 
@@ -390,7 +381,7 @@ Step 4 - Onboarding (week 1)
 We koppelen merkstem, social-accounts, kennisbases en configureren Clyde voor elk klantmerk. Geen technische kennis vereist van jouw kant.
 
 Step 5 - Correctielus (maand 1)
-Clyde calibreert op echte feedback. In week 1 veel correcties, in week 4 bijna geen meer. Tegen maand 3 daalt de goedkeuringstijd per post van 4 minuten naar 30 seconden.
+Clyde calibreert op echte feedback. In week 1 veel correcties; Clyde onthoudt ze, dus elke week is het scherper per merk.
 
 Step 6 - Kwartaalcheck en jaarlijkse retrospective
 Elk kwartaal een strategisch gesprek over wat werkt. Jaarlijks een volledige performance review met roadmap-update.

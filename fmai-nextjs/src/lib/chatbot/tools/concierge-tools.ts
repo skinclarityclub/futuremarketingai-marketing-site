@@ -9,7 +9,7 @@ interface CaseStudy {
   challenge: string
   solution: string
   results: string[]
-  testimonial: string
+  testimonial?: string
   url: string
 }
 
@@ -24,13 +24,10 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     results: [
       'Vier merken over 3 Instagram-accounts, elk in een eigen stem',
       'Clyde maakt en plant volgens de agenda, Sindy keurt goed',
-      '2 tot 4 longform blogartikelen per maand, SEO-geoptimaliseerd',
+      'Longform SEO-blogs voor skinclarityclub.nl',
       'Wekelijks SEO-rapport en maandagse performance-digest',
-      'Goedkeuringstijd carrousel van 4 minuten naar 30 seconden',
       'Clyde haalt werk weg bij Sindy, zij houdt de regie',
     ],
-    testimonial:
-      '"Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit." Sindy, founder SkinClarity Club',
     url: 'https://future-marketing.ai/nl/case-studies/skinclarity-club',
   },
   en: {
@@ -43,13 +40,10 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     results: [
       'Four brands across 3 Instagram accounts, each in its own voice',
       'Clyde creates and schedules from the calendar, Sindy approves',
-      '2 to 4 longform blog articles per month, SEO-optimized',
+      'Longform SEO blogs for skinclarityclub.nl',
       'Weekly SEO report and Monday performance digest',
-      'Carousel approval time from 4 minutes to 30 seconds',
       'Clyde takes work off Sindy, she stays in charge',
     ],
-    testimonial:
-      '"Clyde runs our entire social content operation across 3 Instagram accounts and 4 brands. What used to take a whole afternoon a week now runs autonomously in the background. I review, Clyde executes." Sindy, founder of SkinClarity Club',
     url: 'https://future-marketing.ai/en/case-studies/skinclarity-club',
   },
   es: {
@@ -62,13 +56,10 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     results: [
       'Cuatro marcas en 3 cuentas de Instagram, cada una con su propia voz',
       'Clyde crea y programa según la agenda, Sindy aprueba',
-      '2 a 4 artículos de blog largos al mes, optimizados para SEO',
+      'Blogs SEO de formato largo para skinclarityclub.nl',
       'Informe SEO semanal y resumen de rendimiento de los lunes',
-      'Tiempo de aprobación de carrusel de 4 minutos a 30 segundos',
       'Clyde le quita trabajo a Sindy, ella mantiene el control',
     ],
-    testimonial:
-      '"Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba toda una tarde a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta." Sindy, fundadora de SkinClarity Club',
     url: 'https://future-marketing.ai/es/case-studies/skinclarity-club',
   },
 }

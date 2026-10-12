@@ -40,7 +40,7 @@ export const TWITTER_URL: string | null = null
 
 // Personal profiles — confirm slugs in DECISIONS doc before commit.
 export const LINKEDIN_DALEY_URL = 'https://www.linkedin.com/in/daley-van-diest' // confirmed 2026-06-16
-export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-skinclarity' // TODO: confirm slug with Sindy
+export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-kienstra-875522124/'
 
 // Per DECISIONS Q2: KvK = added once Daley confirms registration via kvk.nl/zoeken. null until then.
 export const KVK_URL: string | null = null

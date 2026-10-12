@@ -53,7 +53,7 @@ Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (
 All plans include access to Clyde, the AI colleague, and all 12 skills. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
 **Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters and the cheapest path for portfolios of 3 or more brands.
-- Up to [DALEY: grens ~15] workspaces
+- Up to 15 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All 12 skills with Professional-tier caps
 - Lifetime price lock
@@ -123,7 +123,7 @@ Honest assessment of which tier and skills deliver the most impact. We assess yo
 We connect brand voice, social accounts, knowledge bases and configure Clyde for each client.
 
 **5. Correction Loop (month 1)**
-Clyde calibrates on real feedback. Many corrections in week 1, fewer by week 4. By month 3 the approval time per post drops from 4 minutes to 30 seconds.
+Clyde calibrates on real feedback. Many corrections in week 1; Clyde remembers them, so each week is sharper per brand.
 
 **6. Quarterly Strategy + Annual Retrospective**
 Quarterly check-ins on what is working. Annual retrospective with full performance review.`,
@@ -170,10 +170,9 @@ Clyde, the AI colleague, with all 10 live skills active:
 **Results:**
 - Four brands across 3 Instagram accounts, each in its own voice
 - Clyde creates and schedules from the calendar, Sindy approves
-- 2 to 4 longform blog articles per month with SEO optimization
+- Longform SEO blogs for skinclarityclub.nl
 - Weekly SEO rapport
 - Monday 08:00 performance digest
-- Carousel approval time from 4 minutes to 30 seconds
 - Clyde takes work off Sindy, she stays in charge
 - Sindy is Founding Member spot 1 of 10`,
  keywords: [

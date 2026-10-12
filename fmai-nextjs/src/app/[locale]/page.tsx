@@ -33,7 +33,6 @@ const ProcessTimeline = dynamic(() =>
   import('@/components/home/ProcessTimeline').then((m) => ({ default: m.ProcessTimeline }))
 )
 import { FounderSection } from '@/components/home/FounderSection'
-import { TestimonialBlock } from '@/components/home/TestimonialBlock'
 const PricingTeaser = dynamic(() =>
   import('@/components/home/PricingTeaser').then((m) => ({ default: m.PricingTeaser }))
 )
@@ -290,7 +289,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         title={t('entries.title')}
         subtitle={t('entries.subtitle')}
         steps={STEP_KEYS.slice(0, 3).map((k) => ({ t: t(`entries.steps.${k}.t`), d: t(`entries.steps.${k}.d`) }))}
-        screenshot="/screenshots/rapportage.webp"
+        screenshot="/screenshots/portaal-review-clyde.webp"
         caption={t('entries.caption')}
       />
 
@@ -391,14 +390,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </ScrollReveal>
       </LazySection>
 
-      {/* ─────────────────────────────────────────────────────────────
-          Sectie 9 — TestimonialBlock (Sindy operator-stem)
-          ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="280px">
-        <ScrollReveal>
-          <TestimonialBlock locale={locale} />
-        </ScrollReveal>
-      </LazySection>
+      {/* Sectie 9 (TestimonialBlock) is off: its Sindy quote was written by an agent, not said by her
+          (docs/plans/2026-05-26-post-nightshift-walkthrough.md:356). Back once she confirms one (Daley 2026-10-12). */}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 11 — PricingTeaser (4 tiers, W5.8 stagger reveal)
