@@ -22,7 +22,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
+All plans include access to Clyde, the AI colleague, and all 12 skills. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
 
 **Founding Member. EUR 997/mo lifetime** (recommended for early adopters; 10 spots only, 1 taken)
 - Unlimited workspaces
@@ -80,7 +80,7 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
  'FTE',
  'hourly',
  ],
- content: `## Cost Benchmarks: Hiring vs. AI Marketing Employee
+ content: `## Cost Benchmarks: Hiring vs. Clyde
 
 **Junior Marketing Coordinator (Netherlands)**
 - Gross salary plus employer costs: EUR 4,500-6,200/mo
@@ -134,7 +134,7 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 - Ad copy set (5 variants): 1-2 hours
 - Weekly content for 1 client: 15-20 hours
 
-**AI Marketing Employee Production Time**
+**Clyde Production Time**
 - Blog post (1000 words): 5-10 minutes
 - LinkedIn post: 1-2 minutes
 - Instagram caption plus hashtags: 1-2 minutes
@@ -148,7 +148,7 @@ All plans include access to Clyde, the AI Marketing Employee, and all 12 skills.
 - Human approach: 75-100 hours/week (needs 2-3 full-time people)
 - With FutureMarketingAI: 5-10 hours/week (review and approval only)
 - Time saved: 65-90 hours/week
-- That is 1.5-2 full-time employees worth of time, freed up for strategy and client relationships`,
+- Time the team gets back for strategy and client relationships, so the same team can serve more clients. Clyde takes work off the team; he replaces nobody.`,
  },
  {
  key: 'roi_calculations',

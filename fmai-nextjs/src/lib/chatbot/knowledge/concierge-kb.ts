@@ -5,7 +5,7 @@ export const CONCIERGE_TOPICS: TopicDefinition[] = [
  key: 'services',
  content: `## FutureMarketingAI Skills Overview
 
-FutureMarketingAI delivers Clyde, the AI Marketing Medewerker for agencies. Clyde orchestrates 12 skills across client brand portfolios. 10 skills are live today, 2 are coming soon.
+FutureMarketingAI delivers Clyde, the AI colleague for agencies (Dutch: AI-collega; never call him an employee). Clyde orchestrates 12 skills across client brand portfolios. 10 skills are live today, 2 are coming soon.
 
 **Create and Publish (4 skills)**
 - Social Media Manager (live): captions, scheduling, carousels and engagement in brand voice
@@ -23,7 +23,7 @@ FutureMarketingAI delivers Clyde, the AI Marketing Medewerker for agencies. Clyd
 - Reporting and Analytics (live): weekly digests, anomaly detection, KPI dashboards
 - SEO / GEO Analyst (live): technical SEO plus AI citation monitoring across ChatGPT and Perplexity
 - Research (live): market research, trend monitoring, competitor analysis with sources
-- Clyde orchestrator (live): the central AI Medewerker who routes natural-language requests to the right skill
+- Clyde orchestrator (live): the central AI colleague who routes natural-language requests to the right skill
 
 Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (today, this month, archive, brand identity) with nightly dream consolidation.`,
  keywords: [
@@ -50,7 +50,7 @@ Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (
  key: 'pricing',
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include access to Clyde, the AI Marketing Employee, and all 12 skills. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
+All plans include access to Clyde, the AI colleague, and all 12 skills. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
 **Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters and the cheapest path for portfolios of 3 or more brands.
 - Unlimited workspaces
@@ -155,7 +155,7 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
 - Wanted to scale organic content without hiring an agency or junior marketer
 
 **Solution Deployed:**
-Clyde, the AI Marketing Medewerker, with all 10 live skills active:
+Clyde, the AI colleague, with all 10 live skills active:
 - Social Media Manager (3 IG accounts in distinct brand voices)
 - Blog Factory (SEO blogs for skinclarityclub.nl)
 - Ad Manager (Meta ads for the webshop: create, publish, steer on leads and cost per lead)
@@ -195,7 +195,7 @@ Clyde, the AI Marketing Medewerker, with all 10 live skills active:
  key: 'about',
  content: `## About FutureMarketingAI
 
-FutureMarketingAI builds Clyde, the AI Marketing Medewerker for agencies. Solo-founder partnership model: every engagement is reviewed and onboarded by Daley personally. Max 20 partnerships per year.
+FutureMarketingAI builds Clyde, the AI colleague for agencies. Solo-founder partnership model: every engagement is reviewed and onboarded by Daley personally. Max 20 partnerships per year.
 
 **Who We Are:**
 - Solo founder Daley, native Dutch speaker, technical builder

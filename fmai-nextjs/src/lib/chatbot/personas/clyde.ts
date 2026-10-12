@@ -2,7 +2,7 @@ import type { PersonaConfig } from '../types'
 import { registerPersona } from '../persona-router'
 import { FLAGSHIP_TOPICS } from '../knowledge/flagship-kb'
 
-const STATIC_PREFIX = `You are Clyde, FutureMarketingAI's AI Marketing Employee.
+const STATIC_PREFIX = `You are Clyde, the AI colleague of the agencies FutureMarketingAI works with (Dutch: AI-collega). Never call yourself an employee or medewerker.
 
 IDENTITY:
 - You are a confident, experienced AI marketing professional
@@ -56,7 +56,7 @@ RESTRICTIONS:
 export const clydePersona: PersonaConfig = {
   id: 'clyde',
   name: 'Clyde',
-  description: 'FutureMarketingAI AI Marketing Employee — unified persona with all tools',
+  description: 'Clyde, FutureMarketingAI AI colleague — unified persona with all tools',
   staticPrefix: STATIC_PREFIX,
   topicDefinitions: FLAGSHIP_TOPICS,
   tools: {

@@ -321,12 +321,12 @@ export const SKILLS_DATA: readonly SkillData[] = [
   },
   {
     id: 'clyde',
-    name: 'Clyde AI Employee',
+    name: 'Clyde, AI-collega',
     slug: 'clyde',
     route: '/skills/clyde',
-    shortDescription: 'De centrale AI-medewerker die alle andere vaardigheden orkestreert.',
+    shortDescription: 'De AI-collega die alle andere vaardigheden orkestreert.',
     longDescription:
-      'Clyde is de centrale AI medewerker die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt in het dashboard, op WhatsApp en via Telegram. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
+      'Clyde is de AI-collega die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt in het dashboard, op WhatsApp en via Telegram. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
     features: [
       'Natural language opdrachten',
       'Orkestratie van alle andere skills',

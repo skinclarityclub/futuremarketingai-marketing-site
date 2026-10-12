@@ -11,15 +11,15 @@
   },
   "home": {
     "meta": {
-      "title": "FutureMarketingAI: Clyde, your AI Marketing Employee",
-      "description": "FutureMarketingAI builds Clyde: the AI Marketing Employee for agencies. He writes content, qualifies leads and remembers every brand. Max 10 partners per year."
+      "title": "FutureMarketingAI: Clyde, your agency's AI colleague",
+      "description": "Clyde is your agency's AI colleague: from each client's goal to the content calendar, the content and the reports. He remembers every brand separately."
     },
     "hero": {
       "brandKicker": "FutureMarketingAI",
       "badge": "{taken} of {total} founding spots taken",
       "headlineMain": "This is Clyde.",
-      "imageAlt": "Clyde, the FutureMarketingAI AI marketing employee, as a 3D robot",
-      "tagline": "Your <accent>AI marketing employee</accent>.",
+      "imageAlt": "3D illustration of Clyde, the FutureMarketingAI AI colleague",
+      "tagline": "Your agency's <accent>AI colleague</accent>.",
       "subtitle": "Remembers every brand, watches every screen of your dashboard and messages you on WhatsApp the moment something comes up. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics.",
       "trustAnchor": "Live in production since 2025. Max {maxPartners} partners per year.",
       "cta": "Book a call",
@@ -54,7 +54,7 @@
         "description": "SEO audits, keyword tracking and AI citation monitoring. Clyde tracks how often your brand is cited by AI search engines."
       },
       "clyde": {
-        "title": "Clyde AI Marketing Employee",
+        "title": "Clyde, your AI colleague",
         "description": "One point of contact for your entire portfolio, in every screen of your dashboard and on WhatsApp. Ask in plain language, Clyde picks the right skill.",
         "statusLabel": "Active",
         "promptIntro": "Ask for example:",
@@ -417,7 +417,7 @@
         },
         "q5": {
           "question": "Why does this work better for agencies than separate tools?",
-          "answer": "Because it is one brain with shared memory, not 12 separate tools. What Clyde learns about brand X in social media, he automatically uses in their blogs and ads. Cross-skill learning is impossible with separate tools: you lose context at every handover. One AI Marketing Employee for your entire portfolio means patterns and data travel between skills."
+          "answer": "Because it is one brain with shared memory, not 12 separate tools. What Clyde learns about brand X in social media, he automatically uses in their blogs and ads. Cross-skill learning is impossible with separate tools: you lose context at every handover. One colleague for your entire portfolio means patterns and data travel between skills."
         }
       }
     },
@@ -545,7 +545,7 @@
         "ecommerce": {
           "label": "Client onboarding",
           "scenario_title": "Onboarding a new client",
-          "scenario": "See how your AI Marketing Employee gets to know a new client. Brand guidelines, tone of voice and audience go in, so Clyde delivers on-brand content within hours.",
+          "scenario": "See how Clyde gets to know a new client. Brand guidelines, tone of voice and audience go in, so he delivers on-brand content within hours.",
           "capabilities_0": "Load brand voice",
           "capabilities_1": "Calibrate content style",
           "capabilities_2": "Audience analysis",
@@ -563,7 +563,7 @@
         "support": {
           "label": "ROI calculator",
           "scenario_title": "ROI calculator for agencies",
-          "scenario": "Calculate how much your agency saves with an AI Marketing Employee. Compare hiring costs, hours saved and client capacity.",
+          "scenario": "Work out what Clyde as a colleague brings your agency: hours back for the team and how many more clients still fit.",
           "capabilities_0": "Cost comparison versus hiring",
           "capabilities_1": "Hours saved estimate",
           "capabilities_2": "Client capacity estimate",
@@ -639,7 +639,7 @@
       "button": "Request a free strategy session"
     },
     "multi_platform": {
-      "title": "One AI employee, every channel",
+      "title": "One colleague, every channel",
       "subtitle": "One AI model powers your chatbot across all platforms. Consistent brand voice, shared knowledge, unified analytics.",
       "brain_label": "Claude AI",
       "platforms": {
@@ -656,7 +656,7 @@
           "behavior": "Conversations that sell, with rich media and quick replies."
         }
       },
-      "case_study": "Already live: SkinClarity Club runs the same AI employee across website, Shopify and WhatsApp. Without context loss between channels.",
+      "case_study": "Already live: SkinClarity Club runs the same Clyde across website, Shopify and WhatsApp. Without context loss between channels.",
       "stats": {
         "inquiries": {
           "value": "50,000+",
@@ -706,7 +706,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "The AI Marketing Employee for your agency. Ten skills live, two coming soon, one always-on system.",
+        "tagline": "Clyde, your agency's AI colleague. Ten skills live, two coming soon, one system that connects it all.",
         "copyright": "© {year} Future Marketing AI. All rights reserved.",
         "sections": {
           "skills": "Skills",
@@ -862,24 +862,24 @@
   "about": {
     "meta": {
       "title": "About FutureMarketingAI: the team behind Clyde AI",
-      "description": "About FutureMarketingAI: we build Clyde, the AI Marketing Employee for agencies. Made in the Netherlands, for European marketing agencies that want to scale."
+      "description": "About FutureMarketingAI: we build Clyde, your agency's AI colleague. Made in the Netherlands, for European marketing agencies that want to scale."
     },
     "hero": {
       "eyebrow": "About FutureMarketingAI",
       "badge": "Founding open · {taken}/{total} taken",
       "title": "About FutureMarketingAI",
-      "tagline": "The first AI Marketing Employee for agencies, by a solo founder."
+      "tagline": "Clyde, your agency's AI colleague. Built by Daley van Diest, who onboards every partner himself."
     },
     "mission": {
       "eyebrow": "Why this exists",
       "heading": "Our mission",
-      "text": "Give every marketing agency an AI Marketing Employee who carries the work: from the strategy session and the yearly plan through to the posts that follow from it. You keep the direction and the client relationship, Clyde holds the course and delivers.",
-      "personal": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the AI Marketing Employee I wanted to have."
+      "text": "Give every marketing agency an AI colleague who carries the work: from the strategy session and the yearly plan through to the posts that follow from it. You keep the direction and the client relationship, Clyde holds the course and delivers.",
+      "personal": "I ran marketing operations myself and saw the same problem every agency has: too many brands, too much repetitive work, too few hours. So I built the colleague I wanted to have."
     },
     "journey": {
       "eyebrow": "Build journey",
       "title": "My build journey so far",
-      "subtitle": "From the first pain point at SkinClarity Club to a live AI Marketing Employee. No pitch deck, just a log of what was true then and what is running now.",
+      "subtitle": "From the first pain point at SkinClarity Club to an AI colleague running live. No pitch deck, just a log of what was true then and what is running now.",
       "ariaLabel": "Timeline of FutureMarketingAI milestones",
       "milestones": {
         "spark": {
@@ -916,13 +916,13 @@
         },
         "autonomous": {
           "year": "2025-2026",
-          "title": "AI employee era",
+          "title": "AI on the team",
           "description": "Persistent AI agents that run full workflows autonomously. This is where early agencies build a lead that later entrants can barely catch up with."
         },
         "standard": {
           "year": "2027 and beyond",
           "title": "Standard practice",
-          "description": "Every agency has AI employees. Agencies that started early have 2 to 3 years of compounding learning baked in."
+          "description": "Every agency works with AI on the team. Agencies that started early have 2 to 3 years of compounding learning baked in."
         }
       },
       "key_message": {
@@ -1038,7 +1038,7 @@
         "name": "Growth",
         "subtitle": "For small agencies",
         "tagline": "Linear per-workspace rate. Scales with your portfolio of 2 to 4 clients.",
-        "description": "For agencies with 2 to 4 clients in their portfolio who want to use Clyde as a full marketing employee. All 12 skills available, with tier caps on the more expensive ones (voice, video, reels).",
+        "description": "For agencies with 2 to 4 clients in their portfolio who want to use Clyde as a full colleague. All 12 skills available, with tier caps on the more expensive ones (voice, video, reels).",
         "features_0": "Linear price per workspace (2 to 4 clients)",
         "features_1": "800 credits per workspace (1,600 to 3,200 total per month)",
         "features_2": "All 12 skills available",
@@ -1185,7 +1185,7 @@
         },
         "q5": {
           "question": "What is included in the onboarding fee?",
-          "answer": "The one-time onboarding fee covers 4 weeks of partnership setup by Daley: brand voice intake per brand, KPI definitions, skill configuration, test runs and approval workflow setup. It is not a technical installation fee: it is an investment in a working AI Marketing Employee."
+          "answer": "The one-time onboarding fee covers 4 weeks of partnership setup by Daley: brand voice intake per brand, KPI definitions, skill configuration, test runs and approval workflow setup. It is not a technical installation fee: it is an investment in a colleague who actually runs with your team."
         },
         "q6": {
           "question": "Can I cancel or pause mid-term?",
@@ -1211,7 +1211,7 @@
   "how-it-works": {
     "meta": {
       "title": "How it works: onboarding in 5 steps | FutureMarketingAI",
-      "description": "How to put an AI employee inside your agency: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
+      "description": "How your agency gets Clyde as its AI colleague: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
     },
     "hero": {
       "eyebrow": "Onboarding",
@@ -1329,7 +1329,7 @@
   "contact": {
     "meta": {
       "title": "Contact Future Marketing AI | AI Marketing Agency",
-      "description": "Get in touch with Future Marketing AI about Clyde, your AI Marketing Employee. Questions on partnerships or the skills? We respond within 24 hours."
+      "description": "Get in touch with Future Marketing AI about Clyde, your agency's AI colleague. Questions on partnerships or the skills? We respond within 24 hours."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -1399,11 +1399,11 @@
           "title": "Terms of service | Future Marketing AI",
           "description": "Terms of service for the Future Marketing AI platform. Subscriptions, AI-output disclaimer, data processing, termination. Dutch law applies."
         },
-        "content": "These terms of service govern your use of the Future Marketing AI (FutureMarketingAI) platform and the AI Marketing Employee services. By subscribing to or using our services, you agree to these terms. FutureMarketingAI operates as an Agent as a Service (AaaS) provider, delivering persistent AI agents with configurable marketing skills to marketing agencies. Please read these terms carefully before using our platform.",
+        "content": "These terms of service govern your use of the Future Marketing AI (FutureMarketingAI) platform and the services of Clyde, the AI colleague for agencies. By subscribing to or using our services, you agree to these terms. FutureMarketingAI operates as an Agent as a Service (AaaS) provider, delivering persistent AI agents with configurable marketing skills to marketing agencies. Please read these terms carefully before using our platform.",
         "subsections": {
           "service_description": {
             "title": "1. Service description",
-            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers AI Marketing Employee services with configurable skills. Available skills include: Content Creator (blog articles, social content, newsletters), Voice Agent (inbound and outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Manager (AI-generated static and video ads plus per-ad performance management) and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
+            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers the services of Clyde, the AI colleague for agencies, with configurable skills. Available skills include: Content Creator (blog articles, social content, newsletters), Voice Agent (inbound and outbound calls, appointment booking), Lead Qualifier (chatbot, lead scoring, routing), Social Media Manager (multi-platform scheduling, engagement tracking), Ad Manager (AI-generated static and video ads plus per-ad performance management) and Reporting & Analytics (cross-platform dashboards, weekly reports, anomaly detection). Skills are activated per subscription tier and can be added or removed at any time."
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
@@ -1411,7 +1411,7 @@
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
-            "content": "All content, recommendations and output generated by your AI Marketing Employee are provided as drafts that require human review before publication or distribution. FutureMarketingAI does not guarantee the accuracy, originality, factual correctness or suitability of AI-generated output for any specific purpose. The subscribing agency is solely responsible for reviewing, editing and approving all AI output before publishing to or on behalf of their clients. AI-generated content should not be relied upon as professional, legal, financial or medical advice."
+            "content": "All content, recommendations and output generated by Clyde, your AI colleague, are provided as drafts that require human review before publication or distribution. FutureMarketingAI does not guarantee the accuracy, originality, factual correctness or suitability of AI-generated output for any specific purpose. The subscribing agency is solely responsible for reviewing, editing and approving all AI output before publishing to or on behalf of their clients. AI-generated content should not be relied upon as professional, legal, financial or medical advice."
           },
           "liability_limitation": {
             "title": "4. Limitation of liability",
@@ -1437,7 +1437,7 @@
           "title": "Privacy policy | Future Marketing AI",
           "description": "Privacy policy of Future Marketing AI. How we collect, use, and protect personal data under GDPR. Sub-processors, retention periods, your rights."
         },
-        "content": "This privacy policy describes how Future Marketing AI (FutureMarketingAI) collects, uses, stores and protects personal data in connection with our AI Marketing Employee platform. FutureMarketingAI is committed to protecting the privacy of our subscribers, their clients and end users, in compliance with the General Data Protection Regulation (GDPR) and applicable Dutch data protection laws. This policy applies to all data processed through our platform and website.",
+        "content": "This privacy policy describes how Future Marketing AI (FutureMarketingAI) collects, uses, stores and protects personal data in connection with our platform around Clyde, the AI colleague for agencies. FutureMarketingAI is committed to protecting the privacy of our subscribers, their clients and end users, in compliance with the General Data Protection Regulation (GDPR) and applicable Dutch data protection laws. This policy applies to all data processed through our platform and website.",
         "subsections": {
           "data_collected": {
             "title": "1. Data we collect",
@@ -1445,7 +1445,7 @@
           },
           "purpose_of_processing": {
             "title": "2. Purpose of processing",
-            "content": "We process personal data for the following purposes: providing AI Marketing Employee services (content creation, voice agent operations, lead qualification, social media management, ad creation, reporting), improving service quality and AI performance through aggregated usage analysis, billing and subscription management, providing technical support and customer service, and complying with legal obligations including tax, accounting and regulatory requirements."
+            "content": "We process personal data for the following purposes: providing the services of Clyde, the AI colleague for agencies (content creation, voice agent operations, lead qualification, social media management, ad creation, reporting), improving service quality and AI performance through aggregated usage analysis, billing and subscription management, providing technical support and customer service, and complying with legal obligations including tax, accounting and regulatory requirements."
           },
           "legal_basis": {
             "title": "3. Legal basis",
@@ -1453,7 +1453,7 @@
           },
           "ai_data_processing": {
             "title": "4. AI data processing",
-            "content": "Our AI Marketing Employee processes data as follows: the Content Creator skill uses brand voice documents and content briefs to generate marketing content. Only the minimum context needed is sent to AI providers. The Voice Agent skill processes call audio for speech recognition and response generation. Recordings are retained for 90 days for quality assurance. The Lead Qualifier skill analyzes form submissions and chat messages to score and route leads. Lead scoring is advisory; no automated decisions are made. AI providers (OpenAI, Anthropic) process data under a Zero Data Retention policy, meaning your data is not used to train AI models."
+            "content": "Clyde, our AI colleague, processes data as follows: the Content Creator skill uses brand voice documents and content briefs to generate marketing content. Only the minimum context needed is sent to AI providers. The Voice Agent skill processes call audio for speech recognition and response generation. Recordings are retained for 90 days for quality assurance. The Lead Qualifier skill analyzes form submissions and chat messages to score and route leads. Lead scoring is advisory; no automated decisions are made. AI providers (OpenAI, Anthropic) process data under a Zero Data Retention policy, meaning your data is not used to train AI models."
           },
           "sub_processors": {
             "title": "5. Sub-processors",
@@ -1740,7 +1740,7 @@
     "hero": {
       "eyebrow": "Skill 01. Social Media Manager",
       "title": "Clyde runs your social media.",
-      "subtitle": "Captions in the brand voice, scheduling at optimal times, carousel builder, hashtag research and engagement tracking. Per account, per brand. One AI Marketing Employee for your entire brand portfolio.",
+      "subtitle": "Captions in the brand voice, scheduling at optimal times, carousel builder, hashtag research and engagement tracking. Per account, per brand. One colleague for your entire brand portfolio.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Plan the Instagram content for all SKC brands this week",
@@ -1819,7 +1819,7 @@
       "items": {
         "q1": {
           "question": "What does the Social Media Manager skill do exactly?",
-          "answer": "Clyde manages the full social process for Instagram, Facebook, and LinkedIn: AI-generated captions in the brand voice, multi-platform scheduling at optimal times, carousel and story builder, hashtag research, and per-post engagement tracking. One AI Marketing Employee runs multiple brands in parallel without tone bleed."
+          "answer": "Clyde manages the full social process for Instagram, Facebook, and LinkedIn: AI-generated captions in the brand voice, multi-platform scheduling at optimal times, carousel and story builder, hashtag research, and per-post engagement tracking. One colleague runs multiple brands in parallel without tone bleed."
         },
         "q2": {
           "question": "Which platforms and tools does Social Media Manager support?",
@@ -2200,12 +2200,12 @@
       "eyebrow": "Memory per brand",
       "headlineMain": "Clyde remembers everything.",
       "headlineAccent": "Per brand, forever.",
-      "subtitle": "This is the difference between a generic AI prompt and an AI Marketing Employee: memory. Clyde remembers your brand voice, audience, goals and what worked before. Every week he knows your brands better."
+      "subtitle": "This is the difference between a generic AI prompt and a colleague: memory. Clyde remembers your brand voice, audience, goals and what worked before. Every week he knows your brands better."
     },
     "layers": {
       "eyebrow": "Architecture",
       "title": "How Clyde remembers",
-      "subtitle": "Like a good employee, Clyde has four kinds of memory that work together. You do not need to know any of the details: it just works.",
+      "subtitle": "Like a good colleague, Clyde has four kinds of memory that work together. You do not need to know any of the details: it just works.",
       "scrollLabel": "Scroll through the layers",
       "promptLabel": "You ask Clyde",
       "clydeLabel": "Clyde answers",
@@ -2251,12 +2251,12 @@
       "decayTitle": "What becomes less important fades",
       "decayBody": "Not everything from the past stays equally relevant. Old details slowly lose weight, so Clyde does not get clogged up with data from six months ago. Important patterns stay, noise recedes. Just like with humans.",
       "dreamTitle": "Every night Clyde consolidates",
-      "dreamBody": "At night Clyde does what we do in our sleep: he connects the dots, abstracts patterns and writes important insights into his permanent knowledge. You wake up with a smarter AI Marketing Employee than the one you left behind yesterday."
+      "dreamBody": "At night Clyde does what we do in our sleep: he connects the dots, abstracts patterns and writes important insights into his permanent knowledge. You wake up with a colleague who is smarter than yesterday."
     },
     "progress": {
       "eyebrow": "Time curve",
       "title": "Month 1 versus month 3",
-      "subtitle": "The difference between a generic AI and an AI Marketing Employee that truly knows your brands becomes visible in weeks.",
+      "subtitle": "The difference between a generic AI and a colleague who truly knows your brands becomes visible in weeks.",
       "week1Label": "Month 1: first content",
       "week1Body": "\"Write a caption for brand X.\" Clyde follows the brand guidelines, but not yet with perfect nuance. A lot of feedback rounds. You are still busy with corrections and fine-tuning.",
       "week12Label": "Month 3: full autonomy",
@@ -2552,7 +2552,7 @@
       },
       "hero": {
         "eyebrow": "Case study, Founding partner",
-        "title": "3 accounts. 4 brands. One AI Marketing Employee.",
+        "title": "3 accounts. 4 brands. One colleague: Clyde.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 brands live in 7 days",
         "chip3": "10 skills active",
@@ -2585,7 +2585,7 @@
         "skill5Name": "Research",
         "skill5Body": "Trend monitoring in skincare, competitor analysis and content ideas with source citation.",
         "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "The central AI Marketing Employee that ties the 9 skills together. Memory per account plus cross-skill learning.",
+        "skill6Body": "Clyde, the AI colleague that ties the 9 skills together. Memory per account plus cross-skill learning.",
         "skill7Name": "Ad Manager",
         "skill7Body": "Meta ads for the webshop: create static and video ads, publish them, and steer on leads and cost per lead.",
         "skill8Name": "Lead Qualifier",
@@ -2666,7 +2666,7 @@
         "author": {
           "name": "Sindy",
           "role": "Founder and operator, SkinClarity Club",
-          "bio": "Sindy runs 4 brands under SkinClarity Club and uses Clyde as her AI Marketing Employee across 3 Instagram accounts, autonomous content, and per-brand memory isolation. Founding partner since launch."
+          "bio": "Sindy runs 4 brands under SkinClarity Club and works with Clyde as her AI colleague across 3 Instagram accounts, autonomous content, and per-brand memory isolation. Founding partner since launch."
         }
       },
       "client": {
@@ -3040,19 +3040,19 @@
   "skills-index": {
     "meta": {
       "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
-      "description": "Browse Clyde's 12 marketing skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 are live, 2 coming soon, all in one AI employee."
+      "description": "Browse Clyde's 12 marketing skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 are live, 2 coming soon, all in one AI colleague."
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
       "badge": "Founding open · {taken}/{total} reserved",
       "title": "Clyde's 12 skills",
-      "subtitle": "One AI Marketing Employee, twelve skills, one shared memory per brand. Ten are live in production, two are coming soon."
+      "subtitle": "One AI colleague, twelve skills, one shared memory per brand. Ten are live in production, two are coming soon."
     },
     "status": {
       "live": "Live"
     },
     "clyde": {
-      "title": "Clyde AI Marketing Employee",
+      "title": "Clyde, your AI colleague",
       "description": "One point of contact for your entire portfolio. Ask in plain language and Clyde routes to the right skill.",
       "statusLabel": "Active",
       "promptIntro": "Ask something like:",
@@ -3061,7 +3061,7 @@
     "grid_aria_label": "Skills list",
     "cta": {
       "eyebrow": "Founding open · {taken}/{total} reserved",
-      "title": "One AI employee, all skills under one roof",
+      "title": "One colleague, all skills under one roof",
       "description": "No separate tools, no ticketing per skill. One workspace per brand, one 30-minute call to see whether it fits.",
       "button": "Book a call",
       "secondaryLink": "See the full onboarding journey"
@@ -3285,13 +3285,13 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde: the central AI Marketing Employee | Clyde",
-      "description": "Your AI Marketing Employee in every screen of your dashboard and on WhatsApp. Commands in natural language, orchestration of all skills, memory per brand. 1 to 5 credits per conversation."
+      "title": "Clyde: your agency's AI colleague | Clyde",
+      "description": "Clyde, your agency's AI colleague, in every screen of your dashboard and on WhatsApp. Commands in natural language, orchestration of all skills, memory per brand. 1 to 5 credits per conversation."
     },
     "hero": {
-      "eyebrow": "Skill 10. Clyde AI Marketing Employee",
-      "title": "This is Clyde. Your AI Marketing Employee.",
-      "subtitle": "The other 11 skills are separate tools. Clyde is the employee who directs them and who watches every screen of your dashboard. Give commands in natural language; Clyde routes to the right skill and brings the results back. Reachable in the dashboard, on WhatsApp and via Telegram.",
+      "eyebrow": "Skill 10. Clyde, the AI colleague",
+      "title": "This is Clyde. Your agency's AI colleague.",
+      "subtitle": "The other 11 skills are separate tools. Clyde is the colleague who directs them and who watches every screen of your dashboard. Give commands in natural language; Clyde routes to the right skill and brings the results back. Reachable in the dashboard, on WhatsApp and via Telegram.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Plan this week for all SKC brands, Reels included",
@@ -3357,7 +3357,7 @@
       "subtitle": "What this skill costs per action, and how much is included in each tier."
     },
     "cta": {
-      "title": "Ready to put Clyde to work as your AI Marketing Employee?",
+      "title": "Ready to put Clyde on your team as a colleague?",
       "subtitle": "Book a call. We will discuss how Clyde fits your brands.",
       "button": "Book a call"
     },
@@ -3366,7 +3366,7 @@
       "items": {
         "q1": {
           "question": "What is Clyde exactly?",
-          "answer": "Clyde is the central AI Marketing Employee that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works in the dashboard, on WhatsApp and via Telegram."
+          "answer": "Clyde is the AI colleague that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works in the dashboard, on WhatsApp and via Telegram."
         },
         "q2": {
           "question": "Which channels does Clyde support?",
@@ -3382,7 +3382,7 @@
         },
         "q5": {
           "question": "How does Clyde differ from ChatGPT or Claude?",
-          "answer": "ChatGPT and Claude are stand-alone models without working memory, integrations, or brand-voice training. Clyde is a persistent AI employee with 4-layer per-brand memory, native CMS and CRM integrations, autonomous workflows, and consistent brand voice. No need to re-explain context every session."
+          "answer": "ChatGPT and Claude are stand-alone models without working memory, integrations, or brand-voice training. Clyde is an AI colleague with 4-layer per-brand memory, native CMS and CRM integrations, autonomous workflows, and consistent brand voice. No need to re-explain context every session."
         }
       }
     }
@@ -3663,7 +3663,7 @@
             "description": "Market research and trend monitoring"
           },
           "clyde": {
-            "title": "Clyde AI Employee",
+            "title": "Clyde, AI colleague",
             "description": "The central orchestrator of all skills"
           }
         }
@@ -4048,7 +4048,7 @@
       "eyebrow": "Confirmation",
       "meta": {
         "title": "Confirm subscription | Future Marketing AI",
-        "description": "Confirm your subscription to the Future Marketing AI Readiness Checklist and discover how ready your agency is for Clyde, your AI Marketing Employee."
+        "description": "Confirm your subscription to the Future Marketing AI Readiness Checklist and discover how ready your agency is for Clyde, your agency's AI colleague."
       },
       "pendingTitle": "Confirming...",
       "pendingBody": "One moment, we are validating your token.",
@@ -4126,8 +4126,8 @@
       "definition": "Optimizing content so AI engines like ChatGPT, Perplexity and Google AI Overviews cite your brand as a source. Where SEO targets blue links, GEO targets a mention inside the generated answer."
     },
     "ai-marketing-medewerker": {
-      "name": "AI Marketing Employee (Clyde)",
-      "definition": "A persistent AI partner with long-term memory that performs marketing skills for agencies as a digital colleague. Not a standalone tool, but a collaborating employee that remembers the brand and the client portfolio."
+      "name": "Clyde, your agency's AI colleague",
+      "definition": "The AI colleague FutureMarketingAI builds for marketing agencies. Clyde connects each client's goal to research, the content calendar, content and reports, and remembers every brand separately. Not a standalone tool, but a colleague who knows the whole client portfolio."
     },
     "citation-monitoring": {
       "name": "Citation monitoring",
@@ -4155,15 +4155,15 @@
       },
       "ai-marketing-automation": {
         "title": "AI marketing automation for agencies",
-        "description": "Marketing skills that Clyde performs as your AI Marketing Employee."
+        "description": "Marketing skills that Clyde performs as your AI colleague."
       },
       "agency-ops": {
         "title": "Agency operations and proof",
         "description": "How agencies serve more brands with the same headcount."
       },
       "product-clyde": {
-        "title": "AI Marketing Employee and Clyde",
-        "description": "What an AI Marketing Employee is and how Clyde works per brand."
+        "title": "Clyde, your agency's AI colleague",
+        "description": "What Clyde does as an AI colleague and how he works per brand."
       }
     },
     "emptyCluster": "Deep content for this pillar is coming soon.",

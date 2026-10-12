@@ -58,7 +58,7 @@ export const LEADGEN_TOPICS: TopicDefinition[] = [
  'ad copy',
  'script',
  ],
- content: `## Content Types the AI Marketing Employee Produces
+ content: `## Content Types Clyde Produces
 
 **Blog Posts & Articles**
 SEO-optimized long-form content (800-2000 words). Includes meta descriptions, internal linking suggestions, and keyword targeting. Output: 2-4 articles per week per client.

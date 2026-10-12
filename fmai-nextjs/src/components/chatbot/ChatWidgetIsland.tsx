@@ -19,7 +19,7 @@ function normalizeLocale(value: string): ChatLocale {
  * by next-intl's usePathname is the locale-stripped path (e.g. "/skills/voice-agent"
  * on both /nl/... and /en/...), so the same path keys cover all locales. NL is the
  * source of truth for tone; en/es follow it so /en and /es visitors are greeted in
- * their own language. "AI Marketing Employee" / "Empleado AI de Marketing" match the
+ * their own language. "AI colleague" / "compañero de IA" match the
  * site copy (note: Spanish uses "AI", not "IA").
  */
 const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
@@ -42,7 +42,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/apply':
       'Hoi, ik ben Clyde. Vragen voordat je je aanmeldt? Stel ze gerust.',
     '/about': 'Hoi, ik ben Clyde. Wil je weten hoe ik werk?',
-    default: 'Hoi, ik ben Clyde, je AI marketing medewerker. Wat heb je nodig?',
+    default: 'Hoi, ik ben Clyde, de AI-collega van je bureau. Wat heb je nodig?',
   },
   en: {
     '/': 'Hi, I am Clyde. Tell me what I can work on.',
@@ -63,7 +63,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/apply':
       'Hi, I am Clyde. Questions before you apply? Go ahead and ask.',
     '/about': 'Hi, I am Clyde. Want to know how I work?',
-    default: 'Hi, I am Clyde, your AI marketing employee. What do you need?',
+    default: 'Hi, I am Clyde, your agency's AI colleague. What do you need?',
   },
   es: {
     '/': 'Hola, soy Clyde. Dime en qué puedo ponerme a trabajar.',
@@ -84,7 +84,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/apply':
       'Hola, soy Clyde. ¿Dudas antes de aplicar? Pregunta lo que quieras.',
     '/about': 'Hola, soy Clyde. ¿Quieres saber cómo trabajo?',
-    default: 'Hola, soy Clyde, tu empleado AI de marketing. ¿Qué necesitas?',
+    default: 'Hola, soy Clyde, el compañero de IA de tu agencia. ¿Qué necesitas?',
   },
 }
 

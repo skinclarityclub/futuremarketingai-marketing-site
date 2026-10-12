@@ -11,15 +11,15 @@
   },
   "home": {
     "meta": {
-      "title": "FutureMarketingAI: Clyde, je AI-marketingmedewerker",
-      "description": "FutureMarketingAI bouwt Clyde: de AI-marketingmedewerker voor bureaus. Schrijft content, kwalificeert leads en onthoudt elk merk. Max 10 partners per jaar."
+      "title": "FutureMarketingAI: Clyde, de AI-collega van je bureau",
+      "description": "Clyde is de AI-collega van je bureau: van het doel van elke klant tot de agenda, de content en de rapporten. Hij onthoudt elk merk apart."
     },
     "hero": {
       "brandKicker": "FutureMarketingAI",
       "badge": "{taken} van {total} founding plekken bezet",
       "headlineMain": "Dit is Clyde.",
-      "imageAlt": "Clyde, de AI marketing medewerker van FutureMarketingAI, als 3D-robot",
-      "tagline": "Jouw <accent>AI marketing medewerker</accent>.",
+      "imageAlt": "3D-illustratie van Clyde, de AI-collega van FutureMarketingAI",
+      "tagline": "De <accent>AI-collega</accent> van je bureau.",
       "subtitle": "Onthoudt elk merk, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
       "trustAnchor": "Live in productie sinds 2025. Maximaal {maxPartners} partners per jaar.",
       "cta": "Plan een gesprek",
@@ -54,7 +54,7 @@
         "description": "SEO audits, keyword tracking en AI-citatiemonitoring. Clyde volgt hoe vaak jouw merk door AI-zoekmachines geciteerd wordt."
       },
       "clyde": {
-        "title": "Clyde AI Marketing Medewerker",
+        "title": "Clyde, je AI-collega",
         "description": "Eén aanspreekpunt voor je hele portfolio, in elk scherm van je dashboard en op WhatsApp. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
         "statusLabel": "Actief",
         "promptIntro": "Vraag bijvoorbeeld:",
@@ -274,7 +274,7 @@
     "memoryUsp": {
       "eyebrow": "Geheugen, geen sessies",
       "title": "Andere AI begint elke prompt opnieuw. Clyde onthoudt jouw merken.",
-      "intro": "Net zoals een vaste medewerker dat doet, en dat in vier lagen.",
+      "intro": "Zoals een goede collega dat doet, in vier lagen.",
       "layers": {
         "context": {
           "label": "Context",
@@ -417,7 +417,7 @@
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
-          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén AI Marketing Medewerker voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
+          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén collega voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
         }
       }
     },
@@ -545,7 +545,7 @@
         "ecommerce": {
           "label": "Klant-onboarding",
           "scenario_title": "Nieuwe klant onboarden",
-          "scenario": "Zie hoe jouw AI Marketing Medewerker een nieuwe klant leert kennen. Merkrichtlijnen, tone of voice en doelgroep komen erin, zodat Clyde binnen uren on-brand content levert.",
+          "scenario": "Zie hoe Clyde een nieuwe klant leert kennen. Merkrichtlijnen, tone of voice en doelgroep komen erin, zodat hij binnen uren on-brand content levert.",
           "capabilities_0": "Merkstem invoeren",
           "capabilities_1": "Contentstijl kalibreren",
           "capabilities_2": "Doelgroepanalyse",
@@ -563,7 +563,7 @@
         "support": {
           "label": "ROI-calculator",
           "scenario_title": "ROI-calculator voor bureaus",
-          "scenario": "Bereken hoeveel je bureau bespaart met een AI Marketing Medewerker. Vergelijk wervingskosten, bespaarde uren en klantcapaciteit.",
+          "scenario": "Reken uit wat Clyde als collega je bureau oplevert: uren die terugkomen bij het team en hoeveel klanten er nog bij passen.",
           "capabilities_0": "Kostenvergelijking versus inhuren",
           "capabilities_1": "Bespaarde uren inschatten",
           "capabilities_2": "Klantcapaciteit inschatten",
@@ -572,7 +572,7 @@
         "concierge": {
           "label": "Website-concierge",
           "scenario_title": "Website Concierge-demo",
-          "scenario": "Maak kennis met de FutureMarketingAI-concierge: een hybride rondleider en verkoopmedewerker. Vraag naar diensten, prijzen of hoe AI-marketing jouw bureau kan versnellen.",
+          "scenario": "Maak kennis met de FutureMarketingAI-concierge: rondleider en eerste gesprek in één. Vraag naar diensten, prijzen of hoe AI-marketing jouw bureau kan versnellen.",
           "capabilities_0": "Navigatie door diensten",
           "capabilities_1": "Prijsoverzicht",
           "capabilities_2": "Case study-highlights",
@@ -639,7 +639,7 @@
       "button": "Vraag een gratis strategiesessie aan"
     },
     "multi_platform": {
-      "title": "Eén AI-medewerker, elk kanaal",
+      "title": "Eén collega, elk kanaal",
       "subtitle": "Eén AI-model bestuurt je chatbot op alle platformen. Consistente merkstem, gedeelde kennis, uniforme analytics.",
       "brain_label": "Claude AI",
       "platforms": {
@@ -656,7 +656,7 @@
           "behavior": "Gesprekken die verkopen, met rich media en snelle antwoorden."
         }
       },
-      "case_study": "Al live: SkinClarity Club draait dezelfde AI-medewerker over website, Shopify en WhatsApp. Zonder contextverlies tussen kanalen.",
+      "case_study": "Al live: SkinClarity Club draait dezelfde Clyde over website, Shopify en WhatsApp. Zonder contextverlies tussen kanalen.",
       "stats": {
         "inquiries": {
           "value": "50.000+",
@@ -706,7 +706,7 @@
     "landing": {
       "footer": {
         "brand_name": "Future Marketing AI",
-        "tagline": "De AI Marketing Medewerker voor jouw bureau. Tien vaardigheden vandaag, twee binnenkort, één altijd-aan systeem.",
+        "tagline": "Clyde, de AI-collega van je bureau. Tien vaardigheden vandaag, twee binnenkort, één systeem dat alles verbindt.",
         "copyright": "© {year} Future Marketing AI. Alle rechten voorbehouden.",
         "sections": {
           "skills": "Vaardigheden",
@@ -862,24 +862,24 @@
   "about": {
     "meta": {
       "title": "Over FutureMarketingAI: het team achter Clyde AI",
-      "description": "Over FutureMarketingAI: wij bouwen Clyde, de AI-marketingmedewerker voor bureaus. Gemaakt in Nederland, voor Europese marketingbureaus die willen schalen."
+      "description": "Over FutureMarketingAI: wij bouwen Clyde, de AI-collega van je bureau. Gemaakt in Nederland, voor Europese marketingbureaus die willen schalen."
     },
     "hero": {
       "eyebrow": "Over FutureMarketingAI",
       "badge": "Founding open · {taken}/{total} bezet",
       "title": "Over FutureMarketingAI",
-      "tagline": "De eerste AI Marketing Medewerker voor bureaus, door een solo founder."
+      "tagline": "Clyde, de AI-collega van je bureau. Gebouwd door Daley van Diest, die elke partner zelf begeleidt."
     },
     "mission": {
       "eyebrow": "Waarom dit bestaat",
       "heading": "Mijn missie",
-      "text": "Elk marketingbureau toegang geven tot een AI Marketing Medewerker die het werk draagt: van de strategiesessie en de jaarplanning tot de posts die eruit volgen. Jij houdt de regie en het klantcontact, Clyde houdt koers en levert.",
-      "personal": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de AI Marketing Medewerker die ik zelf wilde hebben."
+      "text": "Elk marketingbureau toegang geven tot een AI-collega die het werk draagt: van de strategiesessie en de jaarplanning tot de posts die eruit volgen. Jij houdt de regie en het klantcontact, Clyde houdt koers en levert.",
+      "personal": "Ik draaide zelf marketingoperaties en zag hetzelfde probleem dat elk bureau heeft: te veel merken, te veel repetitief werk, te weinig uren. Dus bouwde ik de collega die ik zelf wilde hebben."
     },
     "journey": {
       "eyebrow": "Bouwreis",
       "title": "Mijn bouwreis tot nu",
-      "subtitle": "Van eerste pijnpunt bij SkinClarity Club naar live AI Marketing Medewerker. Geen pitch deck, wel een logboek van wat er stond toen, en wat er nu draait.",
+      "subtitle": "Van eerste pijnpunt bij SkinClarity Club naar een AI-collega die live draait. Geen pitch deck, wel een logboek van wat er stond toen, en wat er nu draait.",
       "ariaLabel": "Tijdslijn van FutureMarketingAI mijlpalen",
       "milestones": {
         "spark": {
@@ -916,13 +916,13 @@
         },
         "autonomous": {
           "year": "2025-2026",
-          "title": "AI-medewerker tijdperk",
+          "title": "AI werkt mee in het team",
           "description": "Persistente AI-agenten die volledige workflows autonoom uitvoeren. Hier bouwen vroege bureaus een voorsprong op die nauwelijks meer in te halen is."
         },
         "standard": {
           "year": "2027 en verder",
           "title": "Standaardpraktijk",
-          "description": "Elk bureau heeft AI-medewerkers. Bureaus die vroeg begonnen hebben 2 tot 3 jaar samengestelde leercurves in huis."
+          "description": "Elk bureau werkt met AI in het team. Bureaus die vroeg begonnen hebben 2 tot 3 jaar samengestelde leercurves in huis."
         }
       },
       "key_message": {
@@ -1038,7 +1038,7 @@
         "name": "Growth",
         "subtitle": "Voor kleine bureaus",
         "tagline": "Lineair tarief per werkruimte. Schaalt mee met je portfolio van 2 tot 4 merken.",
-        "description": "Voor bureaus met 2 tot 4 merken in hun portfolio die Clyde als volledige marketing-medewerker willen inzetten. Alle 12 vaardigheden beschikbaar met tier-caps op de duurdere (voice, video, reels).",
+        "description": "Voor bureaus met 2 tot 4 merken in hun portfolio die Clyde als volwaardige collega willen inzetten. Alle 12 vaardigheden beschikbaar met tier-caps op de duurdere (voice, video, reels).",
         "features_0": "Lineaire prijs per werkruimte (2 tot 4 merken)",
         "features_1": "800 credits per werkruimte (1.600 tot 3.200 totaal per maand)",
         "features_2": "Alle 12 vaardigheden beschikbaar",
@@ -1185,7 +1185,7 @@
         },
         "q5": {
           "question": "Wat zit er in de onboardingvergoeding?",
-          "answer": "De eenmalige onboardingvergoeding dekt 4 weken partnership-setup door Daley: intake van de merkstem per merk, KPI-definities, vaardigheden inregelen, testruns en goedkeuringsworkflow opzetten. Het is geen technische installatievergoeding: het is een investering in een werkende AI Marketing Medewerker."
+          "answer": "De eenmalige onboardingvergoeding dekt 4 weken partnership-setup door Daley: intake van de merkstem per merk, KPI-definities, vaardigheden inregelen, testruns en goedkeuringsworkflow opzetten. Het is geen technische installatievergoeding: het is een investering in een collega die echt meedraait."
         },
         "q6": {
           "question": "Kan ik tussentijds stoppen of pauzeren?",
@@ -1211,7 +1211,7 @@
   "how-it-works": {
     "meta": {
       "title": "Hoe het werkt: onboarding in 5 stappen | FutureMarketingAI",
-      "description": "Zo bouw je een AI-medewerker in jouw bureau: 5 stappen van gesprek tot live. Van weken, niet maanden. Geen ontwikkelteam nodig."
+      "description": "Zo krijgt je bureau Clyde als AI-collega: 5 stappen van gesprek tot live. Weken, geen maanden. Geen ontwikkelteam nodig."
     },
     "hero": {
       "eyebrow": "Onboarding",
@@ -1329,7 +1329,7 @@
   "contact": {
     "meta": {
       "title": "Contact Future Marketing AI | AI Marketing Bureau",
-      "description": "Neem contact op met Future Marketing AI over Clyde, je AI-marketingmedewerker. Vragen over partnerships of de skills? We reageren binnen 24 uur."
+      "description": "Neem contact op met Future Marketing AI over Clyde, de AI-collega van je bureau. Vragen over partnerships of de skills? We reageren binnen 24 uur."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -1399,11 +1399,11 @@
           "title": "Servicevoorwaarden | Future Marketing AI",
           "description": "Servicevoorwaarden voor het Future Marketing AI platform. Abonnementen, AI-output disclaimer, gegevensverwerking, beëindiging. Nederlands recht."
         },
-        "content": "Deze servicevoorwaarden zijn van toepassing op uw gebruik van het Future Marketing AI (FutureMarketingAI) platform en de AI Marketing Medewerker-diensten. Door u te abonneren op of gebruik te maken van onze diensten, gaat u akkoord met deze voorwaarden. FutureMarketingAI werkt als Agent as a Service (AaaS)-aanbieder en levert persistente AI-agenten met instelbare marketingvaardigheden aan marketingbureaus. Lees deze voorwaarden zorgvuldig door voordat u ons platform gebruikt.",
+        "content": "Deze servicevoorwaarden zijn van toepassing op uw gebruik van het Future Marketing AI (FutureMarketingAI) platform en de diensten van Clyde, de AI-collega voor bureaus. Door u te abonneren op of gebruik te maken van onze diensten, gaat u akkoord met deze voorwaarden. FutureMarketingAI werkt als Agent as a Service (AaaS)-aanbieder en levert persistente AI-agenten met instelbare marketingvaardigheden aan marketingbureaus. Lees deze voorwaarden zorgvuldig door voordat u ons platform gebruikt.",
         "subsections": {
           "service_description": {
             "title": "1. Beschrijving van de dienst",
-            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat AI Marketing Medewerker-diensten levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Content Creator (blogartikelen, social content, nieuwsbrieven), Voice Agent (inkomende en uitgaande gesprekken, afspraakplanning), Lead Qualifier (chatbot, lead scoring, routering), Social Media Manager (multi-platform planning, engagement-tracking), Ad Manager (AI-gegenereerde statische en video-advertenties plus prestatiebeheer per advertentie) en Reporting & Analytics (cross-platform dashboards, weekrapporten, anomaliedetectie). Vaardigheden worden geactiveerd per abonnementsniveau en kunnen op elk moment worden toegevoegd of verwijderd."
+            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat de diensten van Clyde, de AI-collega voor bureaus, levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Content Creator (blogartikelen, social content, nieuwsbrieven), Voice Agent (inkomende en uitgaande gesprekken, afspraakplanning), Lead Qualifier (chatbot, lead scoring, routering), Social Media Manager (multi-platform planning, engagement-tracking), Ad Manager (AI-gegenereerde statische en video-advertenties plus prestatiebeheer per advertentie) en Reporting & Analytics (cross-platform dashboards, weekrapporten, anomaliedetectie). Vaardigheden worden geactiveerd per abonnementsniveau en kunnen op elk moment worden toegevoegd of verwijderd."
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
@@ -1411,7 +1411,7 @@
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
-            "content": "Alle content, aanbevelingen en output gegenereerd door uw AI Marketing Medewerker worden geleverd als concepten die menselijke beoordeling vereisen voor publicatie of verspreiding. FutureMarketingAI garandeert niet de nauwkeurigheid, originaliteit, feitelijke juistheid of geschiktheid van AI-gegenereerde output voor enig specifiek doel. Het abonnerende bureau is als enige verantwoordelijk voor het beoordelen, bewerken en goedkeuren van alle AI-output voordat deze wordt gepubliceerd aan of namens hun klanten. AI-gegenereerde content mag niet worden beschouwd als professioneel, juridisch, financieel of medisch advies."
+            "content": "Alle content, aanbevelingen en output gegenereerd door Clyde, uw AI-collega, worden geleverd als concepten die menselijke beoordeling vereisen voor publicatie of verspreiding. FutureMarketingAI garandeert niet de nauwkeurigheid, originaliteit, feitelijke juistheid of geschiktheid van AI-gegenereerde output voor enig specifiek doel. Het abonnerende bureau is als enige verantwoordelijk voor het beoordelen, bewerken en goedkeuren van alle AI-output voordat deze wordt gepubliceerd aan of namens hun klanten. AI-gegenereerde content mag niet worden beschouwd als professioneel, juridisch, financieel of medisch advies."
           },
           "liability_limitation": {
             "title": "4. Beperking van aansprakelijkheid",
@@ -1437,7 +1437,7 @@
           "title": "Privacybeleid | Future Marketing AI",
           "description": "Privacybeleid van Future Marketing AI. Hoe we persoonsgegevens verzamelen, gebruiken en beschermen conform AVG. Sub-verwerkers, bewaartermijnen, rechten."
         },
-        "content": "Dit privacybeleid beschrijft hoe Future Marketing AI (FutureMarketingAI) persoonsgegevens verzamelt, gebruikt, opslaat en beschermt in verband met ons AI Marketing Medewerker-platform. FutureMarketingAI zet zich in voor de bescherming van de privacy van onze abonnees, hun klanten en eindgebruikers, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) en de toepasselijke Nederlandse wetgeving inzake gegevensbescherming. Dit beleid is van toepassing op alle gegevens die via ons platform en onze website worden verwerkt.",
+        "content": "Dit privacybeleid beschrijft hoe Future Marketing AI (FutureMarketingAI) persoonsgegevens verzamelt, gebruikt, opslaat en beschermt in verband met ons platform rond Clyde, de AI-collega voor bureaus. FutureMarketingAI zet zich in voor de bescherming van de privacy van onze abonnees, hun klanten en eindgebruikers, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) en de toepasselijke Nederlandse wetgeving inzake gegevensbescherming. Dit beleid is van toepassing op alle gegevens die via ons platform en onze website worden verwerkt.",
         "subsections": {
           "data_collected": {
             "title": "1. Gegevens die wij verzamelen",
@@ -1445,7 +1445,7 @@
           },
           "purpose_of_processing": {
             "title": "2. Doel van de verwerking",
-            "content": "Wij verwerken persoonsgegevens voor de volgende doeleinden: Het leveren van AI Marketing Medewerker diensten (contentcreatie, voice agent operaties, leadkwalificatie, social media management, advertentiecreatie, rapportage), het verbeteren van de dienstkwaliteit en AI-prestaties door geaggregeerde gebruiksanalyse, facturering en abonnementsbeheer, het bieden van technische ondersteuning en klantenservice, en het voldoen aan wettelijke verplichtingen waaronder fiscale, boekhoudkundige en regelgevende vereisten."
+            "content": "Wij verwerken persoonsgegevens voor de volgende doeleinden: Het leveren van de diensten van Clyde, de AI-collega voor bureaus (contentcreatie, voice agent operaties, leadkwalificatie, social media management, advertentiecreatie, rapportage), het verbeteren van de dienstkwaliteit en AI-prestaties door geaggregeerde gebruiksanalyse, facturering en abonnementsbeheer, het bieden van technische ondersteuning en klantenservice, en het voldoen aan wettelijke verplichtingen waaronder fiscale, boekhoudkundige en regelgevende vereisten."
           },
           "legal_basis": {
             "title": "3. Rechtsgrond",
@@ -1453,7 +1453,7 @@
           },
           "ai_data_processing": {
             "title": "4. AI-gegevensverwerking",
-            "content": "Onze AI Marketing Medewerker verwerkt gegevens als volgt: de Content Creator-vaardigheid gebruikt merkstem-documenten en contentbriefings om marketingcontent te genereren. Alleen de minimaal benodigde context wordt naar AI-aanbieders gestuurd. De Voice Agent-vaardigheid verwerkt gespreksaudio voor spraakherkenning en antwoordgeneratie. Opnames worden 90 dagen bewaard voor kwaliteitsborging. De Lead Qualifier-vaardigheid analyseert formulierinzendingen en chatberichten om leads te scoren en te routeren. Lead scoring is adviserend; er worden geen geautomatiseerde beslissingen genomen. AI-aanbieders (OpenAI, Anthropic) verwerken gegevens onder een Zero Data Retention-beleid, wat betekent dat uw gegevens niet worden gebruikt om AI-modellen te trainen."
+            "content": "Clyde, onze AI-collega, verwerkt gegevens als volgt: de Content Creator-vaardigheid gebruikt merkstem-documenten en contentbriefings om marketingcontent te genereren. Alleen de minimaal benodigde context wordt naar AI-aanbieders gestuurd. De Voice Agent-vaardigheid verwerkt gespreksaudio voor spraakherkenning en antwoordgeneratie. Opnames worden 90 dagen bewaard voor kwaliteitsborging. De Lead Qualifier-vaardigheid analyseert formulierinzendingen en chatberichten om leads te scoren en te routeren. Lead scoring is adviserend; er worden geen geautomatiseerde beslissingen genomen. AI-aanbieders (OpenAI, Anthropic) verwerken gegevens onder een Zero Data Retention-beleid, wat betekent dat uw gegevens niet worden gebruikt om AI-modellen te trainen."
           },
           "sub_processors": {
             "title": "5. Sub-verwerkers",
@@ -1740,7 +1740,7 @@
     "hero": {
       "eyebrow": "Vaardigheid 01. Social Media Manager",
       "title": "Clyde verzorgt je social media.",
-      "subtitle": "Captions in de merkstem, inplanning op optimale tijden, carrousel-bouwer, hashtag-onderzoek en engagement-tracking. Per account, per merk. Eén AI Marketing Medewerker voor je hele klantportfolio.",
+      "subtitle": "Captions in de merkstem, inplanning op optimale tijden, carrousel-bouwer, hashtag-onderzoek en engagement-tracking. Per account, per merk. Eén collega voor je hele klantportfolio.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Plan de Instagram-content voor alle SKC-merken deze week",
@@ -1819,7 +1819,7 @@
       "items": {
         "q1": {
           "question": "Wat doet de Social Media Manager-vaardigheid precies?",
-          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook en LinkedIn: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén AI Marketing Medewerker beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
+          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook en LinkedIn: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén collega beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
         },
         "q2": {
           "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
@@ -2200,12 +2200,12 @@
       "eyebrow": "Geheugen per merk",
       "headlineMain": "Clyde onthoudt alles.",
       "headlineAccent": "Per merk, voor altijd.",
-      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een AI Marketing Medewerker: geheugen. Clyde onthoudt je merkstem, doelgroep, doelen en wat eerder werkte. Elke week kent hij jouw merken beter."
+      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een collega: geheugen. Clyde onthoudt je merkstem, doelgroep, doelen en wat eerder werkte. Elke week kent hij jouw merken beter."
     },
     "layers": {
       "eyebrow": "Architectuur",
       "title": "Zo onthoudt Clyde",
-      "subtitle": "Net als een goede medewerker heeft Clyde vier soorten geheugen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
+      "subtitle": "Net als een goede collega heeft Clyde vier soorten geheugen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
       "scrollLabel": "Scroll door de lagen",
       "promptLabel": "Vraag aan Clyde",
       "clydeLabel": "Clyde antwoordt",
@@ -2251,12 +2251,12 @@
       "decayTitle": "Wat onbelangrijk wordt, vervaagt",
       "decayBody": "Niet alles uit het verleden blijft even relevant. Oude details verliezen langzaam gewicht, zodat Clyde niet verstopt raakt onder data van een half jaar geleden. Belangrijke patronen blijven, ruis zakt weg. Net als bij mensen.",
       "dreamTitle": "Elke nacht consolideert Clyde",
-      "dreamBody": "'s Nachts doet Clyde wat wij in onze slaap doen: hij legt verbanden, abstraheert patronen en schrijft belangrijke inzichten weg naar zijn vaste kennis. Jij wordt wakker met een slimmere AI Marketing Medewerker dan die je gisteren achterliet."
+      "dreamBody": "'s Nachts doet Clyde wat wij in onze slaap doen: hij legt verbanden, abstraheert patronen en schrijft belangrijke inzichten weg naar zijn vaste kennis. Jij wordt wakker met een collega die slimmer is dan gisteren."
     },
     "progress": {
       "eyebrow": "Tijdcurve",
       "title": "Maand 1 versus maand 3",
-      "subtitle": "Het verschil tussen een generieke AI en een AI Marketing Medewerker die jouw merken écht kent, wordt zichtbaar in weken.",
+      "subtitle": "Het verschil tussen een generieke AI en een collega die jouw merken écht kent, wordt zichtbaar in weken.",
       "week1Label": "Maand 1: eerste content",
       "week1Body": "\"Schrijf een caption voor merk X.\" Clyde volgt de merkrichtlijnen, maar nog niet met perfecte nuance. Veel feedback-rondes. Jij bent nog veel bezig met corrigeren en bijslijpen.",
       "week12Label": "Maand 3: volledige autonomie",
@@ -2552,7 +2552,7 @@
       },
       "hero": {
         "eyebrow": "Case study, Founding partner",
-        "title": "3 accounts. 4 merken. Eén AI Marketing Medewerker.",
+        "title": "3 accounts. 4 merken. Eén collega: Clyde.",
         "chip1": "3 accounts onboarded",
         "chip2": "4 merken live in 7 dagen",
         "chip3": "10 vaardigheden actief",
@@ -2585,7 +2585,7 @@
         "skill5Name": "Research",
         "skill5Body": "Trendmonitoring in huidverzorging, concurrentie-analyse en content-ideeën met bronvermelding.",
         "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "De centrale AI Marketing Medewerker die de 9 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen.",
+        "skill6Body": "Clyde, de AI-collega die de 9 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen.",
         "skill7Name": "Ad Manager",
         "skill7Body": "Meta-advertenties voor de webshop: statische en video-ads maken, publiceren en sturen op leads en kosten per lead.",
         "skill8Name": "Lead Qualifier",
@@ -2666,7 +2666,7 @@
         "author": {
           "name": "Sindy",
           "role": "Founder en operator, SkinClarity Club",
-          "bio": "Sindy runt 4 merken onder SkinClarity Club en gebruikt Clyde als AI Marketing Medewerker over 3 Instagram-accounts, autonome content en merk-gescheiden geheugen. Founding partner sinds launch."
+          "bio": "Sindy runt 4 merken onder SkinClarity Club en werkt met Clyde als AI-collega over 3 Instagram-accounts, autonome content en merk-gescheiden geheugen. Founding partner sinds launch."
         }
       },
       "client": {
@@ -3046,13 +3046,13 @@
       "eyebrow": "12 vaardigheden, één brein",
       "badge": "Founding open · {taken}/{total} bezet",
       "title": "De 12 vaardigheden van Clyde",
-      "subtitle": "Eén AI Marketing Medewerker, twaalf vaardigheden, één gedeeld geheugen per merk. Tien leveren al productie, twee zijn binnenkort live."
+      "subtitle": "Eén AI-collega, twaalf vaardigheden, één gedeeld geheugen per merk. Tien leveren al productie, twee zijn binnenkort live."
     },
     "status": {
       "live": "Live"
     },
     "clyde": {
-      "title": "Clyde AI Marketing Medewerker",
+      "title": "Clyde, je AI-collega",
       "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
       "statusLabel": "Actief",
       "promptIntro": "Vraag bijvoorbeeld:",
@@ -3061,7 +3061,7 @@
     "grid_aria_label": "Lijst met vaardigheden",
     "cta": {
       "eyebrow": "Founding open · {taken}/{total} bezet",
-      "title": "Eén AI medewerker, alle vaardigheden bij elkaar",
+      "title": "Eén collega, alle vaardigheden bij elkaar",
       "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per merk, één gesprek van 30 minuten om te kijken of het past.",
       "button": "Plan een gesprek",
       "secondaryLink": "Bekijk de volledige onboardingreis"
@@ -3285,13 +3285,13 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde: de centrale AI Marketing Medewerker | Clyde",
-      "description": "Je AI Marketing Medewerker in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, orkestratie van alle vaardigheden, geheugen per merk. 1 tot 5 credits per gesprek."
+      "title": "Clyde: de AI-collega van je bureau | Clyde",
+      "description": "Clyde, de AI-collega van je bureau, in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, orkestratie van alle vaardigheden, geheugen per merk. 1 tot 5 credits per gesprek."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 10. Clyde AI Marketing Medewerker",
-      "title": "Dit is Clyde. Je AI Marketing Medewerker.",
-      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de medewerker die ze aanstuurt en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
+      "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
+      "title": "Dit is Clyde. De AI-collega van je bureau.",
+      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de collega die ze aanstuurt en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Plan deze week voor alle SKC-merken inclusief Reels",
@@ -3357,7 +3357,7 @@
       "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Klaar om Clyde als AI Marketing Medewerker in te zetten?",
+      "title": "Klaar om Clyde als collega in je team te zetten?",
       "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw merken.",
       "button": "Plan een gesprek"
     },
@@ -3366,7 +3366,7 @@
       "items": {
         "q1": {
           "question": "Wat is Clyde precies?",
-          "answer": "Clyde is de centrale AI Marketing Medewerker die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
+          "answer": "Clyde is de AI-collega die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
         },
         "q2": {
           "question": "Welke kanalen ondersteunt Clyde?",
@@ -3382,7 +3382,7 @@
         },
         "q5": {
           "question": "Hoe verschilt Clyde van ChatGPT of Claude?",
-          "answer": "ChatGPT en Claude zijn losse modellen zonder werkgeheugen, integraties of merkstem-trainings. Clyde is een persistente AI-medewerker met 4-laags geheugen per merk, native CMS- en CRM-koppelingen, autonome workflows en consistente merkstem. Geen herhaal-uitleg per sessie nodig."
+          "answer": "ChatGPT en Claude zijn losse modellen zonder werkgeheugen, integraties of merkstem-trainings. Clyde is een AI-collega met 4-laags geheugen per merk, native CMS- en CRM-koppelingen, autonome workflows en consistente merkstem. Geen herhaal-uitleg per sessie nodig."
         }
       }
     }
@@ -3663,7 +3663,7 @@
             "description": "Marktonderzoek en trendmonitoring"
           },
           "clyde": {
-            "title": "Clyde AI Employee",
+            "title": "Clyde, AI-collega",
             "description": "De centrale orkestrator van alle vaardigheden"
           }
         }
@@ -4048,7 +4048,7 @@
       "eyebrow": "Bevestiging",
       "meta": {
         "title": "Aanmelding bevestigen | Future Marketing AI",
-        "description": "Bevestig je aanmelding voor de AI Readiness Checklist van Future Marketing AI en ontdek hoe klaar je bureau is voor Clyde, je AI-marketingmedewerker."
+        "description": "Bevestig je aanmelding voor de AI Readiness Checklist van Future Marketing AI en ontdek hoe klaar je bureau is voor Clyde, de AI-collega van je bureau."
       },
       "pendingTitle": "Bevestigen...",
       "pendingBody": "Een moment, we controleren je token.",
@@ -4126,8 +4126,8 @@
       "definition": "Het optimaliseren van content zodat AI-engines zoals ChatGPT, Perplexity en Google AI Overviews jouw merk citeren als bron. Waar SEO mikt op blauwe links, mikt GEO op vermelding in het gegenereerde antwoord."
     },
     "ai-marketing-medewerker": {
-      "name": "AI Marketing Medewerker (Clyde)",
-      "definition": "Een persistente AI-partner met langetermijngeheugen die als digitale collega marketingvaardigheden uitvoert voor bureaus. Geen losse tool, maar een meewerkende medewerker die het merk en de klantportfolio onthoudt."
+      "name": "Clyde, de AI-collega van je bureau",
+      "definition": "De AI-collega die FutureMarketingAI voor marketingbureaus bouwt. Clyde verbindt het doel van elke klant met research, agenda, content en rapporten, en onthoudt elk merk apart. Geen losse tool, maar een collega die de hele klantportfolio kent."
     },
     "citation-monitoring": {
       "name": "Citation monitoring",
@@ -4155,15 +4155,15 @@
       },
       "ai-marketing-automation": {
         "title": "AI marketing automation voor bureaus",
-        "description": "Marketingvaardigheden die Clyde als AI Marketing Medewerker uitvoert."
+        "description": "Marketingvaardigheden die Clyde als AI-collega uitvoert."
       },
       "agency-ops": {
         "title": "Agency operations en proof",
         "description": "Hoe bureaus meer merken bedienen met dezelfde bezetting."
       },
       "product-clyde": {
-        "title": "AI Marketing Medewerker en Clyde",
-        "description": "Wat een AI Marketing Medewerker is en hoe Clyde per merk werkt."
+        "title": "Clyde, de AI-collega van je bureau",
+        "description": "Wat Clyde als AI-collega doet en hoe hij per merk werkt."
       }
     },
     "emptyCluster": "Diepe content voor deze pillar verschijnt binnenkort.",

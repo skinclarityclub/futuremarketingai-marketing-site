@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI Marketing Medewerker (Employee), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI colleague for agencies (Dutch: AI-collega), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -21,9 +21,9 @@ Key facts:
 - Target market: Performance and growth agencies in NL and EU managing 10 to 50 brand portfolios
 - Compliance: AVG (GDPR) by design, EU AI Act ready, self-hosted EU infrastructure
 
-## Product: Clyde, the AI Marketing Medewerker
+## Product: Clyde, the agency's AI colleague
 
-Clyde is a persistent AI employee, not a chatbot. Key characteristics:
+Clyde is a persistent AI colleague, not a chatbot. Key characteristics:
 
 - Named identity across every touchpoint (website, dashboard, WhatsApp, Telegram).
 - Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
@@ -186,7 +186,7 @@ Credit cost: 3 credits per query.
 
 ### Clyde Orchestrator (Live)
 
-Clyde is the central AI employee who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has memory per client and remembers earlier conversations, preferences and context.
+Clyde is the AI colleague who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has memory per client and remembers earlier conversations, preferences and context.
 
 Capabilities:
 - Natural language commands
@@ -266,7 +266,7 @@ Active skills: all 10 live skills are active for SKC. The whole system was built
 - Social Command Center (ManyChat DM): Instagram DM triggers, AI replies and lead capture.
 - Lead Qualifier: scoring and routing of inbound leads across channels.
 - Ad Manager: Meta ad publishing with leads, cost per lead and ad fatigue tracked per ad.
-- Clyde orchestrator: the central AI Marketing Medewerker that ties the other nine together. Memory per account plus learning across skills.
+- Clyde orchestrator: the AI colleague that ties the other nine together. Memory per account plus learning across skills.
 
 Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
 
@@ -374,7 +374,7 @@ Content is authored in Dutch and translated to English and Spanish by native or 
 
 Type: HowTo
 Name: Hoe start ik met FutureMarketingAI?
-Description: Stap-voor-stap handleiding om als marketingbureau of brand-operator van aanvraag tot volledig autonoom werkende AI Marketing Medewerker te komen.
+Description: Stap-voor-stap handleiding om als marketingbureau of brand-operator van aanvraag tot een AI-collega die zelfstandig meedraait te komen.
 TotalTime: PT4W
 
 Step 1 - Dien je aanvraag in (5 minuten)

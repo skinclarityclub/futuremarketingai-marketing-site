@@ -144,7 +144,7 @@ export default async function SkcCaseStudyPage({
           '@context': 'https://schema.org',
           '@type': 'Service',
           '@id': `${SITE_URL}/case-studies/skinclarity-club/#service-aaas`,
-          name: 'AI Marketing Medewerker — Agent as a Service',
+          name: 'Clyde, de AI-collega voor bureaus',
           description: t('hero.subtitle'),
           serviceType: 'AI marketing automation',
           provider: { '@id': ORG_ID },

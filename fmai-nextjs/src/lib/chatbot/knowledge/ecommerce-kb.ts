@@ -12,7 +12,7 @@ Set up your agency profile with company name, logo, and team members. Each team 
 Create a client workspace with their brand name, industry, and target audience. Each client gets an isolated workspace with its own brand voice, content calendar, and connected channels.
 
 **Step 3: Configure Brand Voice**
-Upload the client's brand guidelines, tone of voice document, or simply describe their communication style. The AI Marketing Employee learns to write in their voice across all content types.
+Upload the client's brand guidelines, tone of voice document, or simply describe their communication style. Clyde learns to write in their voice across all content types.
 
 **Step 4: Connect Content Channels**
 Link the client's social media accounts, blog CMS, email marketing platform, and ad accounts. Supported: LinkedIn, Instagram, Facebook, WordPress, Mailchimp, Google Ads, Meta Ads.
@@ -21,7 +21,7 @@ Link the client's social media accounts, blog CMS, email marketing platform, and
 Choose which AI skills to enable for this client. Each skill handles a specific marketing function. Start with 1-2 skills and expand as you see results.
 
 **Step 6: Launch the Content Calendar**
-Set posting frequency, review workflows (auto-publish or approval queue), and let the AI Marketing Employee start producing content.`,
+Set posting frequency, review workflows (auto-publish or approval queue), and let Clyde start producing content.`,
  keywords: [
  'onboarding',
  'setup',
@@ -40,7 +40,7 @@ Set posting frequency, review workflows (auto-publish or approval queue), and le
  content: `## Brand Voice Setup
 
 **Why Brand Voice Matters**
-Every client has a unique tone. The AI Marketing Employee adapts its writing style per client so content sounds authentic, not generic.
+Every client has a unique tone. Clyde adapts its writing style per client so content sounds authentic, not generic.
 
 **How to Configure Brand Voice**
 1. Upload existing content samples (blog posts, social posts, newsletters) -- the AI analyzes patterns
@@ -88,7 +88,7 @@ View all client workspaces from a single agency dashboard. See content status, u
 Assign team members to specific client workspaces. Set approval workflows: auto-publish, single approval, or multi-step review. Track who approved what and when.
 
 **Scaling Clients**
-Adding a new client takes under 15 minutes: create workspace, configure brand voice, connect channels, activate skills. The AI Marketing Employee handles the rest.
+Adding a new client takes under 15 minutes: create workspace, configure brand voice, connect channels, activate skills. Clyde handles the rest.
 
 **Client Offboarding**
 Deactivate a client workspace to pause all skills and scheduled content. Data is retained for 90 days. Export all content and analytics before permanent deletion.`,
@@ -110,7 +110,7 @@ Deactivate a client workspace to pause all skills and scheduled content. Data is
  content: `## Content Calendar Basics
 
 **How It Works**
-The AI Marketing Employee generates a content calendar based on the client's industry, audience, and active skills. Content is queued for review or auto-published based on your workflow settings.
+Clyde generates a content calendar based on the client's industry, audience, and active skills. Content is queued for review or auto-published based on your workflow settings.
 
 **Calendar Features:**
 - Weekly and monthly views
