@@ -119,6 +119,19 @@ pricing/founding-member founding-copy); `src/app/[locale]/page.tsx`; `src/lib/co
   tot het getal en de meerprijs vastliggen (de slider-vergelijking hangt eraan).
 - [ ] Build + screenshots NL 1440/390 → naar Daley voor de copy. Commit `content(home): de kring, de mensen, de ingangen`.
 
+### Taak 4b: Daley's besluiten na de review (2026-10-12, sessie 3) en de claim-audit
+
+Besluiten: founding 15 werkruimtes inbegrepen + €299 per extra; NL akkoord "maar op alle pagina's valideren";
+ZDR-zin herschrijven; beeld Drie ingangen = s13 portaal + Clyde; mobiele app blijft "in aanbouw"; casecijfers weg tot
+gemeten; Sindy-citaten weg tot zij bevestigt (ze kwamen uit een MOCKUP-transcript, het homepage-citaat van een agent);
+lead-qualifier-claim toetsen; chatbot-kennis herijken; blogs meenemen.
+
+- [x] Besluiten in NL + code (`54fdf99`).
+- [ ] Claim-audit van elke namespace in nl.json, de chatbot-kennis, llms*.txt en hardcoded src-tekst tegen fma-app
+  origin/master en prod (read-only). Uitkomst in de scratchpad; onware claims herschrijf ik in NL, diff naar Daley.
+- [ ] Chatbot-kennis en llms*.txt op het nieuwe verhaal (zelfde audit).
+- [ ] Blogs (`content/blog`, 14 NL-artikelen): woord, feiten, verhaal; slugs blijven.
+
 ### Taak 5: EN en ES uit de definitieve NL
 
 - [ ] Na Daley's akkoord op de NL-copy (of zijn wijzigingen): dezelfde sleutels in `en.json` en `es.json`, zelf geschreven.
