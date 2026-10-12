@@ -22,12 +22,12 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     solution:
       'Clyde (de AI-collega) ingezet met 10 van de 12 vaardigheden: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Rapportage, SEO/GEO, Research en de Clyde-orchestrator. Geheugen per account gescheiden. Wekelijkse performance-digest op maandag 08:00. Nachtelijke geheugenconsolidatie.',
     results: [
-      'Circa 21 carrousels per week over 3 Instagram-accounts',
-      'Circa 15 Instagram-posts per week',
+      'Vier merken over 3 Instagram-accounts, elk in een eigen stem',
+      'Clyde maakt en plant volgens de agenda, Sindy keurt goed',
       '2 tot 4 longform blogartikelen per maand, SEO-geoptimaliseerd',
       'Wekelijks SEO-rapport en maandagse performance-digest',
       'Goedkeuringstijd carrousel van 4 minuten naar 30 seconden',
-      'Geen extra personeel',
+      'Clyde haalt werk weg bij Sindy, zij houdt de regie',
     ],
     testimonial:
       '"Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit." Sindy, founder SkinClarity Club',
@@ -41,12 +41,12 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     solution:
       'Deployed Clyde (the AI colleague) with 10 of 12 skills active: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research and the Clyde orchestrator. Per-account memory isolation. Weekly performance digest at Monday 08:00. Overnight memory consolidation.',
     results: [
-      'About 21 carousels per week across 3 Instagram accounts',
-      'About 15 Instagram posts per week',
+      'Four brands across 3 Instagram accounts, each in its own voice',
+      'Clyde creates and schedules from the calendar, Sindy approves',
       '2 to 4 longform blog articles per month, SEO-optimized',
       'Weekly SEO report and Monday performance digest',
       'Carousel approval time from 4 minutes to 30 seconds',
-      'Zero added headcount',
+      'Clyde takes work off Sindy, she stays in charge',
     ],
     testimonial:
       '"Clyde runs our entire social content operation across 3 Instagram accounts and 4 brands. What used to take a whole afternoon a week now runs autonomously in the background. I review, Clyde executes." Sindy, founder of SkinClarity Club',
@@ -60,12 +60,12 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     solution:
       'Se desplegó Clyde (el compañero de IA) con 10 de las 12 habilidades: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research y el orquestador Clyde. Memoria aislada por cuenta. Resumen de rendimiento semanal los lunes a las 08:00. Consolidación de memoria nocturna.',
     results: [
-      'Cerca de 21 carruseles por semana en 3 cuentas de Instagram',
-      'Cerca de 15 publicaciones de Instagram por semana',
+      'Cuatro marcas en 3 cuentas de Instagram, cada una con su propia voz',
+      'Clyde crea y programa según la agenda, Sindy aprueba',
       '2 a 4 artículos de blog largos al mes, optimizados para SEO',
       'Informe SEO semanal y resumen de rendimiento de los lunes',
       'Tiempo de aprobación de carrusel de 4 minutos a 30 segundos',
-      'Sin personal adicional',
+      'Clyde le quita trabajo a Sindy, ella mantiene el control',
     ],
     testimonial:
       '"Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba toda una tarde a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta." Sindy, fundadora de SkinClarity Club',

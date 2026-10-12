@@ -63,7 +63,7 @@ const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/apply':
       'Hi, I am Clyde. Questions before you apply? Go ahead and ask.',
     '/about': 'Hi, I am Clyde. Want to know how I work?',
-    default: 'Hi, I am Clyde, your agency's AI colleague. What do you need?',
+    default: "Hi, I am Clyde, your agency's AI colleague. What do you need?",
   },
   es: {
     '/': 'Hola, soy Clyde. Dime en qué puedo ponerme a trabajar.',

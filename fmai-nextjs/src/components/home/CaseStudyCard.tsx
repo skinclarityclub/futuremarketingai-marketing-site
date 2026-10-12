@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
-import { ArrowRight, Quote } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
 export async function CaseStudyCard({ locale }: { locale: string }) {
@@ -70,22 +70,9 @@ export async function CaseStudyCard({ locale }: { locale: string }) {
             </div>
           </div>
 
-          {/* Quote */}
-          <blockquote className="relative pl-8 lg:pl-10 max-w-3xl">
-            <Quote
-              aria-hidden
-              className="absolute left-0 top-0 w-5 h-5 lg:w-6 lg:h-6 text-accent-system/60"
-            />
-            <p className="text-base lg:text-xl text-text-primary leading-relaxed">
-              {t('quote')}
-            </p>
-            <footer className="mt-4 text-sm text-text-secondary">
-              {t('attribution')}
-            </footer>
-          </blockquote>
 
           {/* CTA */}
-          <div className="mt-8">
+          <div>
             <Link
               href="/case-studies/skinclarity-club"
               className="inline-flex items-center gap-1.5 text-sm text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"

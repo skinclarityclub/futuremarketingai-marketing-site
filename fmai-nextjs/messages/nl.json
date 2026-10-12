@@ -62,9 +62,9 @@
         "prompt2": "Maak een wekelijks performance-rapport voor merk X",
         "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
         "openLink": "Open de Clyde-vaardigheid",
-        "response1": "Gedaan. 21 carrousels + 15 posts gepland over 3 accounts, klaar voor jouw review.",
-        "response2": "Rapport staat klaar. Engagement +18%, top-post: Skincare Routine Guide.",
-        "response3": "Q4-analyse compleet. Carrousels +34% reach vs static, reels topscorer.",
+        "response1": "Gedaan. De posts van deze week staan per merk in de agenda, elk in de eigen stem, klaar voor jouw goedkeuring.",
+        "response2": "Het rapport staat in je dashboard: wat werkte, wat achterbleef en wat ik volgende week anders voorstel.",
+        "response3": "De analyse staat klaar. Per contenttype zie je wat bewaard en gedeeld werd, naast je doelen, met een voorstel voor de agenda.",
         "userLabel": "Jij",
         "clydeLabel": "Clyde"
       },
@@ -82,7 +82,7 @@
       },
       "manychat": {
         "title": "ManyChat DM",
-        "description": "Conversational flows voor Instagram en WhatsApp, gekoppeld aan jouw funnels."
+        "description": "Gesprekken in Instagram-DM's, gekoppeld aan jouw funnels."
       },
       "voiceAgent": {
         "title": "Voice Agent",
@@ -103,7 +103,7 @@
       "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
       "closingCta": "Plan een gesprek",
       "fitTitle": "Voor wie dit werkt",
-      "fit1": "Bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen. Klaar om op te schalen zonder extra personeel.",
+      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
       "fit4": "Nederlandse en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
@@ -111,48 +111,20 @@
       "notFit1": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan.",
       "notFit2": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
       "notFit3": "Je zoekt naar een volautomatische oplossing. Clyde leert van jou, en dat vraagt 4 weken onboarding plus blijvende input.",
-      "notFit4": "Je zowel meer dan 30 FTE als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen."
-    },
-    "stats": {
-      "eyebrow": "Het bewijs in cijfers",
-      "heading": "Belangrijke cijfers",
-      "hero": {
-        "valueLead": "36",
-        "valueTrail": "per week",
-        "label": "Posts autonoom uitgevoerd voor SkinClarity Club",
-        "detail": "21 carrousels en 15 posts, verdeeld over 3 Instagram-accounts. Sinds Q4 2025 zonder onderbreking live.",
-        "linkText": "Bekijk de operationele case"
-      },
-      "skills": {
-        "value": "10 / 12",
-        "label": "Vaardigheden direct inzetbaar",
-        "linkText": "Alle skills"
-      },
-      "founding": {
-        "value": "{taken} / {total}",
-        "label": "Founding plekken bezet",
-        "linkText": "Word founding partner"
-      },
-      "sovereignty": {
-        "value": "100% EU",
-        "label": "Data-residency en infra",
-        "linkText": "Hoe wij data behandelen"
-      }
+      "notFit4": "Je zowel meer dan 20 mensen als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "caseStudyCard": {
       "eyebrow": "Operator interview · SkinClarity Club",
       "companyName": "SkinClarity Club",
       "subtitle": "Skincare-merk, 4 huismerken, 3 Instagram-accounts. Founding partner sinds Q4 2025.",
       "logoAlt": "SkinClarity Club logo",
-      "outcomeHeadline": "Hoe Clyde 36 posts per week autonoom publiceert",
-      "metric1Value": "Volledig autonoom",
-      "metric1Label": "Sindy reviewt, Clyde voert uit",
-      "metric2Value": "€5.000/maand bespaard",
-      "metric2Label": "Tijd en freelancers vervallen",
-      "metric3Value": "36 posts/week",
-      "metric3Label": "21 carrousels + 15 posts, autonoom uitgevoerd",
-      "quote": "Clyde is geen tool die ik aanzet. Hij werkt als een vaste medewerker, onthoudt elk merk apart en plant zelf over drie accounts.",
-      "attribution": "Sindy Kienstra, oprichter SkinClarity Club",
+      "outcomeHeadline": "Hoe Clyde vier huismerken uit elkaar houdt, elk in een eigen stem",
+      "metric1Value": "Sindy keurt goed",
+      "metric1Label": "Clyde maakt en plant, zij beslist wat live gaat",
+      "metric2Value": "4 merken, 4 stemmen",
+      "metric2Label": "Elk merk apart onthouden, nooit generieke AI-toon",
+      "metric3Value": "3 accounts",
+      "metric3Label": "Elk account een eigen agenda vanuit de strategie",
       "ctaLink": "Bekijk het operationele rapport met bronnen"
     },
     "founder": {
@@ -166,7 +138,7 @@
       "chips": {
         "engineer": "Senior engineer",
         "stack": "n8n + LLM stack",
-        "infra": "EU-native infra"
+        "infra": "Data in de EU"
       },
       "portraitAlt": "Portret van Daley van Diest, founder van FutureMarketingAI",
       "ctaLink": "Bekijk mijn werkwijze"
@@ -235,9 +207,9 @@
         },
         "sovereignty": {
           "label": "EU-data sovereignty",
-          "diy": "US-cloud verzonden",
+          "diy": "Verspreid over Amerikaanse tools",
           "bureau": "Afhankelijk van bureau-tools",
-          "clyde": "Self-hosted EU-servers"
+          "clyde": "Data, servers en database in de EU"
         },
         "setup": {
           "label": "Setup-tijd tot productie",
@@ -286,7 +258,7 @@
         },
         "historie": {
           "label": "Historie",
-          "body": "Wat eerder werkte. De Sindy Tips-carrousel had +18% engagement, Clyde itereert daarop voort."
+          "body": "Wat eerder werkte. Sloeg de Sindy Tips-carrousel aan, dan bouwt Clyde daarop voort in plaats van opnieuw te beginnen."
         },
         "voorkeuren": {
           "label": "Voorkeuren",
@@ -405,7 +377,7 @@
         },
         "q2": {
           "question": "Wat als ik wil opzeggen?",
-          "answer": "Geen lock-in. Je data is altijd binnen 24 uur exporteerbaar (JSON + CSV). Door self-hosted infrastructuur op EU-servers zetten we geen eigen wrapper om je data. Alles wat Clyde leert over jouw merken blijft van jou. Bij opzegging heb je 30 dagen voor een volledige export voordat we je werkruimtes afbouwen."
+          "answer": "Geen lock-in. Je data is altijd binnen 24 uur exporteerbaar (JSON + CSV). Je data staat op servers en in een database in de EU, zonder eigen wrapper eromheen. Alles wat Clyde leert over jouw merken blijft van jou. Bij opzegging heb je 30 dagen voor een volledige export voordat we je werkruimtes afbouwen."
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
@@ -490,7 +462,7 @@
         "threads": "Threads",
         "pinterest": "Pinterest"
       },
-      "note": "Publiceren loopt via Postiz, dat 27 netwerken ondersteunt. Deze zeven zijn de bekendste; de rest sluiten we op verzoek aan. We zetten alleen aan wat je echt gebruikt."
+      "note": "Instagram en LinkedIn publiceren vandaag. Andere netwerken sluiten we aan via Postiz, dat er 27 ondersteunt; deze zes zijn de bekendste. We zetten alleen aan wat je echt gebruikt."
     }
   },
   "chatbots": {
@@ -941,7 +913,7 @@
       "title": "Voor wie dit werkt (en voor wie niet)",
       "subtitle": "Dezelfde hybride ICP als op home, hier uitgebreider. We zijn bewust selectief.",
       "fitTitle": "Voor wie dit werkt",
-      "fit1": "Bureaus met 5 tot 30 FTE die 10 tot 50 merken bedienen en willen opschalen zonder extra personeel.",
+      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
       "fit4": "NL- en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
@@ -961,7 +933,7 @@
       },
       "eu": {
         "title": "EU-servers (Hetzner)",
-        "body": "Fysieke servers in Duitsland en Nederland. Geen data-transfer naar de VS. AVG- en EU AI Act-ready. Geen afvinklijstje, wel het uitgangspunt."
+        "body": "Servers en database in Duitsland en Nederland. Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; wil je dat ook in de EU, dan zetten we Clyde op verzoek op Mistral. AVG- en EU AI Act-ready als uitgangspunt, niet als afvinklijstje."
       },
       "openStandards": {
         "title": "Open standaarden",
@@ -1757,7 +1729,7 @@
       },
       "feature2": {
         "title": "Multi-platform inplanning",
-        "body": "Instagram, Facebook en LinkedIn, met automatische optimale timing per account. Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
+        "body": "Instagram en LinkedIn (andere netwerken via Postiz op verzoek), met automatische optimale timing per account. Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
       },
       "feature3": {
         "title": "Carrousel- en story-bouwer",
@@ -1793,8 +1765,8 @@
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
-        "title": "Bureaus met 5 tot 30 merken",
-        "body": "In plaats van 5 tot 30 verschillende social-managers: één Clyde met merkstem per merk en leereffecten die cross-account meegenomen worden."
+        "title": "Bureaus met 5 tot 20 merken",
+        "body": "Eén Clyde naast je team, met een eigen merkstem per merk en lessen die tussen accounts meegaan."
       },
       "useCase2": {
         "title": "Multi-brand operators",
@@ -1807,7 +1779,7 @@
     },
     "proof": {
       "title": "SkinClarity Club in actie",
-      "subtitle": "Circa 21 carrousels per week, 15 posts en 3 Instagram-accounts autonoom. Bekijk de case study voor screenshots en voorbeelden."
+      "subtitle": "Vier huismerken, drie Instagram-accounts, elk in een eigen stem. Bekijk de case study voor screenshots en voorbeelden."
     },
     "cta": {
       "title": "Klaar om social media aan Clyde over te dragen?",
@@ -1819,11 +1791,11 @@
       "items": {
         "q1": {
           "question": "Wat doet de Social Media Manager-vaardigheid precies?",
-          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook en LinkedIn: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén collega beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
+          "answer": "Clyde verzorgt het complete social-proces voor Instagram en LinkedIn, en voor andere netwerken die we via Postiz aansluiten: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén collega beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
         },
         "q2": {
           "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
-          "answer": "Native publicatie naar Instagram, Facebook en LinkedIn via de Meta- en LinkedIn-API's. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
+          "answer": "Publicatie naar Instagram via de Meta-API en naar LinkedIn via Postiz; andere netwerken sluiten we via Postiz aan op verzoek. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
@@ -2275,7 +2247,7 @@
       },
       "clyde": {
         "name": "Clyde",
-        "body": "Persistent geheugen per merk, vier lagen, strikt gescheiden en elke nacht geconsolideerd. Gebouwd voor bureaus met 10 tot 50 merken. Elke week scherper, nooit verwaterd."
+        "body": "Persistent geheugen per merk, vier lagen, strikt gescheiden en elke nacht geconsolideerd. Gebouwd voor bureaus met 5 tot 20 merken. Elke week scherper, nooit verwaterd."
       }
     },
     "comparison": {
@@ -2556,7 +2528,7 @@
         "chip1": "3 accounts onboarded",
         "chip2": "4 merken live in 7 dagen",
         "chip3": "10 vaardigheden actief",
-        "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Autonoom, elke dag, zonder dat het team er omkijken naar heeft."
+        "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Clyde maakt en plant elke dag; Sindy keurt goed en stuurt bij."
       },
       "setup": {
         "title": "De opzet",
@@ -2611,23 +2583,11 @@
             "detail": "Van 4 minuten naar 30 seconden, gemeten over batches. De memory-laag kent de merkstem en review-regels.",
             "sourceNote": "Bron: Sindy's tijd-meting over vier batches in week 14, 2026."
           },
-          "outputVolume": {
-            "label": "Autonoom contentvolume",
-            "value": "21 carrousels + 15 posts per week",
-            "detail": "Plus 35 tot 50 stories per week en 2 tot 4 blogs per maand. Verdeeld over 3 Instagram-accounts en 4 merken.",
-            "sourceNote": "Bron: Buffer en Hootsuite scheduled-content-export, week 12 tot 16, 2026."
-          },
           "reachDelta": {
             "label": "Reach-stijging",
             "value": "+30% per post",
             "detail": "Conservatieve attributie: rauwe meting +42 procent, gecorrigeerd voor product-launch-effect uit april 2025.",
             "sourceNote": "Bron: Instagram Business Insights, Q1-2025 vergeleken met Q1-2026."
-          },
-          "monthlySavings": {
-            "label": "Maandelijkse besparing",
-            "value": "Circa EUR 5.000",
-            "detail": "Combinatie van Sindy's bespaarde tijd (5 tot 7 uur per week) plus freelancer-kosten voor social en content die niet meer wekelijks nodig zijn. Op maandbasis circa EUR 5.000.",
-            "sourceNote": "Bron: Sindy's tijdmeting en Moneybird-overzicht Q1-2026 vergeleken met Q1-2025."
           },
           "engagementRate": {
             "label": "Engagement-rate",
@@ -2712,7 +2672,7 @@
       },
       "heroMetrics": {
         "title": "Wat dit oplevert in cijfers",
-        "subtitle": "Vier metrics waarop de operatie nu standaard scoort.",
+        "subtitle": "Drie cijfers uit Sindy's eigen metingen.",
         "metric1": {
           "prefix": "",
           "amount": "5",
@@ -2730,12 +2690,6 @@
           "amount": "30",
           "suffix": "%",
           "label": "Reach per post"
-        },
-        "metric4": {
-          "prefix": "€ ",
-          "amount": "5000",
-          "suffix": "",
-          "label": "Besparing per maand"
         }
       },
       "before": {
@@ -2769,7 +2723,7 @@
       },
       "after": {
         "title": "Met Clyde",
-        "intro": "Autonoom contentvolume, Sindy is alleen nog operator en reviewer.",
+        "intro": "Clyde maakt en plant, Sindy keurt goed en stuurt bij.",
         "step1": {
           "label": "Clyde haalt research op",
           "body": "Research-vaardigheid scant trends per merk en consolideert in 1 brief per week.",
@@ -2777,7 +2731,7 @@
         },
         "step2": {
           "label": "Carrousels in merkstem",
-          "body": "Social Media Manager rendert 21 carrousels per week, in de juiste stem per account.",
+          "body": "De Social Media Manager maakt de carrousels voor elk account, in de juiste stem per merk.",
           "duration": "Autonoom"
         },
         "step3": {
@@ -2792,7 +2746,7 @@
         },
         "step5": {
           "label": "Publiceren via planning",
-          "body": "Geplande publicatie via Buffer-integratie, stories gestart vanuit dashboard.",
+          "body": "Publiceren volgens de agenda in het dashboard; stories gestart vanuit het dashboard.",
           "duration": "Autonoom"
         }
       },
@@ -3474,7 +3428,7 @@
         },
         "q2": {
           "question": "Welke platforms ondersteunt ManyChat DM?",
-          "answer": "Op dit moment uitsluitend Instagram-DM's via de officiele Meta Messenger Platform-API en de ManyChat-koppeling. Facebook Messenger en WhatsApp Business voor gesprekken met je klanten staan op de roadmap; je eigen lijn met Clyde loopt al wel via WhatsApp. Triggers werken op exacte keywords plus AI-intent-detectie als fallback."
+          "answer": "Op dit moment Instagram-DM's, via de officiële Meta Messenger Platform-API en de ManyChat-koppeling. Facebook Messenger en WhatsApp Business als DM-kanaal voor de volgers van je klanten zijn nog niet aangesloten. Clyde zelf zit wel al op WhatsApp: voor jou als bureau en voor je klant, ieder met een eigen koppeling. Triggers werken op exacte keywords plus AI-intentdetectie als vangnet."
         },
         "q3": {
           "question": "Op welke tiers is ManyChat DM beschikbaar?",

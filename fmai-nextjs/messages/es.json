@@ -62,9 +62,9 @@
         "prompt2": "Crea un informe semanal de rendimiento para la marca X",
         "prompt3": "Analiza qué tipos de contenido funcionaron mejor en Q4",
         "openLink": "Abrir la skill Clyde",
-        "response1": "Hecho. 21 carruseles + 15 posts planificados en 3 cuentas, listos para revisar.",
-        "response2": "Informe listo. Engagement +18%, top-post: Guía de Rutina Skincare.",
-        "response3": "Análisis Q4 completo. Carruseles +34% alcance vs estático, reels líderes.",
+        "response1": "Hecho. Los posts de esta semana están en la agenda por marca, cada uno con su propia voz, listos para tu aprobación.",
+        "response2": "El informe está en tu dashboard: qué funcionó, qué se quedó atrás y qué propongo cambiar la próxima semana.",
+        "response3": "El análisis está listo. Por tipo de contenido ves qué se guardó y se compartió, junto a tus objetivos, con una propuesta para la agenda.",
         "userLabel": "Tú",
         "clydeLabel": "Clyde"
       },
@@ -82,7 +82,7 @@
       },
       "manychat": {
         "title": "ManyChat DM",
-        "description": "Flujos conversacionales para Instagram y WhatsApp, conectados a tus embudos."
+        "description": "Conversaciones en DMs de Instagram, conectadas a tus embudos."
       },
       "voiceAgent": {
         "title": "Voice Agent",
@@ -103,7 +103,7 @@
       "closingSubtext": "En 30 minutos te digo si encajamos con tu portfolio.",
       "closingCta": "Agenda una llamada",
       "fitTitle": "Para quién funciona",
-      "fit1": "Agencias con 5 a 30 FTE que atienden entre 10 y 50 marcas. Listas para escalar sin contratar más personal.",
+      "fit1": "Agencias de 5 a 20 personas y 5 a 20 marcas que quieren que cada miembro del equipo atienda más clientes.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo ejecutarlos.",
       "fit4": "Agencias neerlandesas y EU-first que valoran la residencia de datos y el cumplimiento de RGPD y EU AI Act.",
@@ -111,48 +111,20 @@
       "notFit1": "Tu facturación anual es inferior a 300K EUR. El presupuesto no encaja y no queremos frenar tu crecimiento.",
       "notFit2": "Te dedicas solo a branding, identidad o creatividad pura. Clyde entrega contenido de performance, no diseño.",
       "notFit3": "Buscas una solución totalmente automatizada. Clyde aprende de ti, lo que requiere 4 semanas de onboarding e input continuo.",
-      "notFit4": "Tienes tanto más de 30 FTE como tu propio equipo de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
-    },
-    "stats": {
-      "eyebrow": "La prueba, en cifras",
-      "heading": "Métricas clave",
-      "hero": {
-        "valueLead": "36",
-        "valueTrail": "por semana",
-        "label": "Publicaciones autónomas para SkinClarity Club",
-        "detail": "21 carruseles y 15 posts en 3 cuentas de Instagram. Activo sin interrupción desde Q4 2025.",
-        "linkText": "Ver el caso operacional"
-      },
-      "skills": {
-        "value": "10 / 12",
-        "label": "Habilidades listas para activar",
-        "linkText": "Todas las habilidades"
-      },
-      "founding": {
-        "value": "{taken} / {total}",
-        "label": "Plazas fundadoras ocupadas",
-        "linkText": "Únete como fundador"
-      },
-      "sovereignty": {
-        "value": "100% UE",
-        "label": "Residencia de datos e infraestructura",
-        "linkText": "Cómo tratamos los datos"
-      }
+      "notFit4": "Tienes tanto más de 20 personas como tu propio equipo de IA o tecnología. Aceleramos a agencias que no lo construyen internamente."
     },
     "caseStudyCard": {
       "eyebrow": "Entrevista operacional · SkinClarity Club",
       "companyName": "SkinClarity Club",
       "subtitle": "Marca skincare, 4 marcas propias, 3 cuentas de Instagram. Founding partner desde Q4 2025.",
       "logoAlt": "Logo de SkinClarity Club",
-      "outcomeHeadline": "Cómo Clyde publica 36 posts por semana de forma autónoma",
-      "metric1Value": "Totalmente autónomo",
-      "metric1Label": "Sindy revisa, Clyde ejecuta",
-      "metric2Value": "€5.000/mes ahorrado",
-      "metric2Label": "Tiempo y freelancers liberados",
-      "metric3Value": "36 posts/semana",
-      "metric3Label": "21 carruseles + 15 posts, ejecutado de forma autónoma",
-      "quote": "Clyde no es una herramienta que enciendo. Trabaja como un empleado fijo, recuerda cada marca por separado y planifica en tres cuentas.",
-      "attribution": "Sindy Kienstra, fundadora de SkinClarity Club",
+      "outcomeHeadline": "Cómo Clyde mantiene separadas cuatro marcas propias, cada una con su propia voz",
+      "metric1Value": "Sindy aprueba",
+      "metric1Label": "Clyde crea y programa, ella decide qué se publica",
+      "metric2Value": "4 marcas, 4 voces",
+      "metric2Label": "Cada marca recordada por separado, nunca un tono genérico de IA",
+      "metric3Value": "3 cuentas",
+      "metric3Label": "Cada cuenta con su propia agenda, a partir de la estrategia",
       "ctaLink": "Ver el informe operacional con fuentes"
     },
     "founder": {
@@ -166,7 +138,7 @@
       "chips": {
         "engineer": "Ingeniero senior",
         "stack": "Stack n8n + LLM",
-        "infra": "Infra EU-nativa"
+        "infra": "Datos en la UE"
       },
       "portraitAlt": "Retrato de Daley van Diest, founder de FutureMarketingAI",
       "ctaLink": "Mira cómo trabajo"
@@ -235,9 +207,9 @@
         },
         "sovereignty": {
           "label": "Soberanía de datos en la UE",
-          "diy": "Enviado a cloud de EE. UU.",
+          "diy": "Repartido entre herramientas de EE. UU.",
           "bureau": "Depende de las herramientas de la agencia",
-          "clyde": "Servidores self-hosted en la UE"
+          "clyde": "Datos, servidores y base de datos en la UE"
         },
         "setup": {
           "label": "Tiempo de setup hasta producción",
@@ -286,7 +258,7 @@
         },
         "historie": {
           "label": "Historial",
-          "body": "Lo que funcionó antes. El carrusel Sindy Tips logró +18% de engagement, Clyde itera sobre eso."
+          "body": "Lo que funcionó antes. Si el carrusel Sindy Tips funcionó, Clyde construye sobre él en lugar de empezar de cero."
         },
         "voorkeuren": {
           "label": "Preferencias",
@@ -405,7 +377,7 @@
         },
         "q2": {
           "question": "¿Y si quiero cancelar?",
-          "answer": "Sin lock-in. Tus datos son siempre exportables en 24 horas (JSON y CSV). Gracias a la infraestructura self-hosted en servidores de la UE, no ponemos un envoltorio propietario alrededor de tus datos. Todo lo que Clyde aprende sobre tus marcas sigue siendo tuyo. Al cancelar dispones de 30 días para una exportación completa antes de que desmantelemos tus espacios de trabajo."
+          "answer": "Sin lock-in. Tus datos son siempre exportables en 24 horas (JSON y CSV). Tus datos están en servidores y en una base de datos en la UE, sin un envoltorio propietario alrededor. Todo lo que Clyde aprende sobre tus marcas sigue siendo tuyo. Al cancelar dispones de 30 días para una exportación completa antes de que desmantelemos tus espacios de trabajo."
         },
         "q3": {
           "question": "¿Por qué una solicitud? ¿Por qué no self-service?",
@@ -466,7 +438,7 @@
         "threads": "Threads",
         "pinterest": "Pinterest"
       },
-      "note": "La publicacion pasa por Postiz, que admite 27 redes. Estas siete son las mas conocidas; el resto las conectamos a peticion. Solo activamos lo que de verdad usas."
+      "note": "Instagram y LinkedIn publican hoy. Otras redes las conectamos vía Postiz, que admite 27; estas seis son las más conocidas. Solo activamos lo que realmente usas."
     }
   },
   "chatbots": {
@@ -917,7 +889,7 @@
       "title": "Para quién funciona (y para quién no)",
       "subtitle": "El mismo ICP híbrido que en la home, aquí con más detalle. Somos deliberadamente selectivos.",
       "fitTitle": "Para quién funciona",
-      "fit1": "Agencias con 5 a 30 FTE que atienden entre 10 y 50 marcas y quieren escalar sin contratar más personal.",
+      "fit1": "Agencias de 5 a 20 personas y 5 a 20 marcas que quieren que cada miembro del equipo atienda más clientes.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo a ejecutarlos.",
       "fit4": "Agencias NL y EU-first que valoran la residencia de datos y el cumplimiento de RGPD y EU AI Act.",
@@ -937,7 +909,7 @@
       },
       "eu": {
         "title": "Servidores EU (Hetzner)",
-        "body": "Servidores físicos en Alemania y los Países Bajos. Sin transferencia de datos a EE. UU. Preparado para RGPD y EU AI Act. No es un casilla de verificación, es el punto de partida."
+        "body": "Servidores y base de datos en Alemania y los Países Bajos. El modelo de lenguaje funciona por defecto en Anthropic, una empresa estadounidense; si también lo quieres en la UE, ponemos a Clyde en Mistral bajo petición. RGPD y EU AI Act como punto de partida, no como casilla."
       },
       "openStandards": {
         "title": "Estándares abiertos",
@@ -1733,7 +1705,7 @@
       },
       "feature2": {
         "title": "Programación multiplataforma",
-        "body": "Instagram, Facebook y LinkedIn, con horarios óptimos automáticos por cuenta. Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
+        "body": "Instagram y LinkedIn (otras redes vía Postiz bajo petición), con horarios óptimos automáticos por cuenta. Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
       },
       "feature3": {
         "title": "Constructor de carruseles y stories",
@@ -1769,8 +1741,8 @@
     "useCases": {
       "title": "Para quién",
       "useCase1": {
-        "title": "Agencias con entre 5 y 30 marcas",
-        "body": "En lugar de entre 5 y 30 community managers distintos: un único Clyde con voz de marca por cliente y aprendizaje aprovechado entre cuentas."
+        "title": "Agencias con 5 a 20 marcas",
+        "body": "Un Clyde junto a tu equipo, con su propia voz de marca por marca y aprendizajes que pasan de una cuenta a otra."
       },
       "useCase2": {
         "title": "Operadores multimarca",
@@ -1783,7 +1755,7 @@
     },
     "proof": {
       "title": "SkinClarity Club en acción",
-      "subtitle": "Alrededor de 21 carruseles por semana, 15 posts y 3 cuentas de Instagram de forma autónoma. Consulta el caso de estudio para ver capturas y ejemplos."
+      "subtitle": "Cuatro marcas propias, tres cuentas de Instagram, cada una con su propia voz. Consulta el caso de estudio para ver capturas y ejemplos."
     },
     "cta": {
       "title": "¿Listo para ceder las redes sociales a Clyde?",
@@ -1795,11 +1767,11 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Social Media Manager?",
-          "answer": "Clyde gestiona el proceso social completo para Instagram, Facebook y LinkedIn: copys IA en la voz de marca, programación multi-plataforma en horarios óptimos, constructor de carruseles y stories, investigación de hashtags y seguimiento de engagement por post. Un solo compañero de IA gestiona varias marcas en paralelo sin mezclar tonos."
+          "answer": "Clyde gestiona el proceso social completo para Instagram y LinkedIn, y para otras redes que conectamos vía Postiz: copys IA en la voz de marca, programación multi-plataforma en horarios óptimos, constructor de carruseles y stories, investigación de hashtags y seguimiento de engagement por post. Un solo compañero de IA gestiona varias marcas en paralelo sin mezclar tonos."
         },
         "q2": {
           "question": "¿Qué plataformas y herramientas soporta Social Media Manager?",
-          "answer": "Publicación nativa en Instagram, Facebook y LinkedIn vía las APIs de Meta y LinkedIn. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se formatean con plantillas en tu estilo de casa. Los posts programados pueden pasar por un flujo de aprobación antes de publicar."
+          "answer": "Publicación en Instagram vía la API de Meta y en LinkedIn vía Postiz; otras redes las conectamos vía Postiz bajo petición. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se formatean con plantillas en tu estilo de casa. Los posts programados pueden pasar por un flujo de aprobación antes de publicar."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Social Media Manager?",
@@ -2251,7 +2223,7 @@
       },
       "clyde": {
         "name": "Clyde",
-        "body": "Memoria persistente por marca, cuatro capas, estrictamente separada y consolidada cada noche. Construida para agencias con entre 10 y 50 marcas. Cada semana más afinada, nunca diluida."
+        "body": "Memoria persistente por marca, cuatro capas, estrictamente separada y consolidada cada noche. Construida para agencias con entre 5 y 20 marcas. Cada semana más afinada, nunca diluida."
       }
     },
     "comparison": {
@@ -2532,7 +2504,7 @@
         "chip1": "3 cuentas incorporadas",
         "chip2": "4 marcas en vivo en 7 dias",
         "chip3": "10 habilidades activas",
-        "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. De forma autónoma, cada día, sin que el equipo tenga que estar encima."
+        "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. Clyde crea y programa cada día; Sindy aprueba y orienta."
       },
       "setup": {
         "title": "La configuración",
@@ -2587,23 +2559,11 @@
             "detail": "De 4 minutos a 30 segundos, medido por lotes. La capa de memoria conoce la voz de marca y las reglas de revisión.",
             "sourceNote": "Fuente: medición de Sindy a lo largo de cuatro lotes en la semana 14 de 2026."
           },
-          "outputVolume": {
-            "label": "Volumen de contenido autónomo",
-            "value": "21 carruseles + 15 posts por semana",
-            "detail": "Además de 35 a 50 stories por semana y de 2 a 4 blogs al mes. Repartido entre 3 cuentas de Instagram y 4 marcas.",
-            "sourceNote": "Fuente: exportación de contenido programado de Buffer y Hootsuite, semanas 12 a 16 de 2026."
-          },
           "reachDelta": {
             "label": "Aumento de alcance",
             "value": "+30% por post",
             "detail": "Atribución conservadora: medición bruta del +42 por ciento, ajustada por el efecto del lanzamiento de producto de abril de 2025.",
             "sourceNote": "Fuente: Instagram Business Insights, Q1-2025 comparado con Q1-2026."
-          },
-          "monthlySavings": {
-            "label": "Ahorro mensual",
-            "value": "Alrededor de EUR 5.000",
-            "detail": "Combinación del tiempo ahorrado de Sindy (5 a 7 horas por semana) más los costes de freelancers para social y contenido que ya no son necesarios semanalmente. Aproximadamente EUR 5.000 al mes.",
-            "sourceNote": "Fuente: el registro de tiempo de Sindy y resumen Moneybird Q1-2026 comparado con Q1-2025."
           },
           "engagementRate": {
             "label": "Tasa de engagement",
@@ -2688,7 +2648,7 @@
       },
       "heroMetrics": {
         "title": "Lo que esto entrega, en cifras",
-        "subtitle": "Cuatro métricas en las que la operación marca por defecto.",
+        "subtitle": "Tres cifras de las propias mediciones de Sindy.",
         "metric1": {
           "prefix": "",
           "amount": "5",
@@ -2706,12 +2666,6 @@
           "amount": "30",
           "suffix": "%",
           "label": "Alcance por post"
-        },
-        "metric4": {
-          "prefix": "€ ",
-          "amount": "5000",
-          "suffix": "",
-          "label": "Ahorro mensual"
         }
       },
       "before": {
@@ -2745,7 +2699,7 @@
       },
       "after": {
         "title": "Con Clyde",
-        "intro": "Volumen de contenido autónomo; Sindy ya solo es operadora y revisora.",
+        "intro": "Clyde crea y programa; Sindy aprueba y orienta.",
         "step1": {
           "label": "Clyde hace el research",
           "body": "La habilidad de research escanea tendencias por marca y consolida un brief semanal.",
@@ -2753,7 +2707,7 @@
         },
         "step2": {
           "label": "Carruseles en la voz de marca",
-          "body": "El Social Media Manager renderiza 21 carruseles por semana en la voz adecuada por cuenta.",
+          "body": "El Social Media Manager crea los carruseles de cada cuenta, con la voz adecuada por marca.",
           "duration": "Autónomo"
         },
         "step3": {
@@ -2768,7 +2722,7 @@
         },
         "step5": {
           "label": "Publicar vía programación",
-          "body": "Publicación programada vía la integración de Buffer; stories disparadas desde el dashboard.",
+          "body": "La publicación sigue la agenda del dashboard; stories iniciadas desde el dashboard.",
           "duration": "Autónomo"
         }
       },
@@ -3450,7 +3404,7 @@
         },
         "q2": {
           "question": "¿Qué plataformas soporta ManyChat DM?",
-          "answer": "Por ahora solo DMs de Instagram via la API oficial Meta Messenger Platform y el conector ManyChat. Facebook Messenger y WhatsApp Business están en la hoja de ruta para Q3. Los triggers funcionan con palabras clave exactas más detección IA de intención como fallback."
+          "answer": "Por ahora DMs de Instagram, vía la API oficial Meta Messenger Platform y el conector ManyChat. Facebook Messenger y WhatsApp Business como canal de DM para los seguidores de tus clientes aún no están conectados. Clyde ya está en WhatsApp: para ti como agencia y para tu cliente, cada uno con su propia conexión. Los triggers funcionan con palabras clave exactas más detección IA de intención como respaldo."
         },
         "q3": {
           "question": "¿En qué tiers está disponible ManyChat DM?",

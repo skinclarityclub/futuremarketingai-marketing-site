@@ -18,7 +18,7 @@ Key facts:
 - Location: Netherlands (EU)
 - Languages: Dutch (source of truth), English, Spanish
 - Company type: Solo founder AI marketing partnership
-- Target market: Performance and growth agencies in NL and EU managing 10 to 50 brand portfolios
+- Target market: Performance and growth agencies in NL and EU with 5 to 20 people managing 5 to 20 brands
 - Compliance: AVG (GDPR) by design, EU AI Act ready, self-hosted EU infrastructure
 
 ## Product: Clyde, the agency's AI colleague

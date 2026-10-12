@@ -45,13 +45,11 @@ const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 
 const OUTCOME_KEYS = [
   'hoursSaved',
   'approvalTime',
-  'outputVolume',
   'reachDelta',
-  'monthlySavings',
   'engagementRate',
 ] as const
 const TIMELINE_KEYS = ['week1', 'month1', 'month3', 'now'] as const
-const HERO_METRIC_KEYS = ['metric1', 'metric2', 'metric3', 'metric4'] as const
+const HERO_METRIC_KEYS = ['metric1', 'metric2', 'metric3'] as const
 const BEFORE_AFTER_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const
 const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3', 'brand4'] as const
 
@@ -336,7 +334,7 @@ export default async function SkcCaseStudyPage({
                 <p className="text-text-secondary mb-6 max-w-3xl">
                   {t('heroMetrics.subtitle')}
                 </p>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {HERO_METRIC_KEYS.map((key) => {
                     const amount = parseFloat(t(`heroMetrics.${key}.amount`))
                     const prefix = t(`heroMetrics.${key}.prefix`)
@@ -362,7 +360,7 @@ export default async function SkcCaseStudyPage({
                 </div>
               </div>
 
-              {/* Full 6-metric outcome grid */}
+              {/* Outcome grid */}
               <div>
                 <EyebrowLabel className="mb-3">{t('outcomes.title')}</EyebrowLabel>
                 <p className="text-text-secondary mb-6 max-w-3xl">{t('outcomes.subtitle')}</p>

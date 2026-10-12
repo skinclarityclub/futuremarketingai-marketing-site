@@ -167,14 +167,14 @@ Clyde, the AI colleague, with all 10 live skills active:
 - ManyChat DM (Instagram DM automation with keyword triggers and AI replies)
 - Clyde orchestrator (per-account memory plus portfolio-level learning)
 
-**Results (autonomous, weekly):**
-- Circa 21 carousels per week across 3 Instagram accounts
-- Circa 15 Instagram posts per week
+**Results:**
+- Four brands across 3 Instagram accounts, each in its own voice
+- Clyde creates and schedules from the calendar, Sindy approves
 - 2 to 4 longform blog articles per month with SEO optimization
 - Weekly SEO rapport
 - Monday 08:00 performance digest
 - Carousel approval time from 4 minutes to 30 seconds
-- Zero added headcount
+- Clyde takes work off Sindy, she stays in charge
 - Sindy is Founding Member spot 1 of 10`,
  keywords: [
  'case study',
@@ -210,7 +210,7 @@ FutureMarketingAI builds Clyde, the AI colleague for agencies. Solo-founder part
 
 **Our Focus:**
 - Performance and growth agencies in Netherlands and EU
-- Agencies managing 10 to 50 brand portfolios
+- Agencies with 5 to 20 people managing 5 to 20 brands
 - Agencies that want to scale without hiring more marketers`,
  keywords: [
  'about',

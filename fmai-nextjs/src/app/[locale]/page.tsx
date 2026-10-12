@@ -44,9 +44,6 @@ const FaqAccordion = dynamic(() =>
 const LeadMagnetCTA = dynamic(() =>
   import('@/components/conversion/LeadMagnetCTA').then((m) => ({ default: m.LeadMagnetCTA }))
 )
-const TrustSignalsGrid = dynamic(() =>
-  import('@/components/marketing/TrustSignalsGrid').then((m) => ({ default: m.TrustSignalsGrid }))
-)
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getPillarPosts, getClusterPosts } from '@/lib/blog'
 import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
@@ -339,47 +336,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <ScrollReveal>
           <TestimonialBlock locale={locale} />
         </ScrollReveal>
-      </LazySection>
-
-      {/* ─────────────────────────────────────────────────────────────
-          Sectie 10 — TrustSignalsGrid (numerieke trust)
-          ──────────────────────────────────────────────────────────── */}
-      <LazySection minHeight="280px">
-        <section aria-labelledby="key-metrics" className="py-16 lg:py-20 px-6 lg:px-12">
-          <div className="max-w-6xl mx-auto">
-            <h2 id="key-metrics" className="sr-only">{t('stats.heading')}</h2>
-            <TrustSignalsGrid
-              eyebrow={t('stats.eyebrow')}
-              hero={{
-                valueLead: t('stats.hero.valueLead'),
-                valueTrail: t('stats.hero.valueTrail'),
-                label: t('stats.hero.label'),
-                detail: t('stats.hero.detail'),
-                linkText: t('stats.hero.linkText'),
-              }}
-              signals={{
-                skills: {
-                  value: t('stats.skills.value'),
-                  label: t('stats.skills.label'),
-                  linkText: t('stats.skills.linkText'),
-                },
-                founding: {
-                  value: t('stats.founding.value', {
-                    taken: FOUNDING_SPOTS_TAKEN,
-                    total: FOUNDING_SPOTS_TOTAL,
-                  }),
-                  label: t('stats.founding.label'),
-                  linkText: t('stats.founding.linkText'),
-                },
-                sovereignty: {
-                  value: t('stats.sovereignty.value'),
-                  label: t('stats.sovereignty.label'),
-                  linkText: t('stats.sovereignty.linkText'),
-                },
-              }}
-            />
-          </div>
-        </section>
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
