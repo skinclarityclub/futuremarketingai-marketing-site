@@ -441,52 +441,9 @@
     }
   },
   "chatbots": {
-    "meta": {
-      "title": "Soluciones de chatbot AI | Future Marketing AI",
-      "description": "Chatbots AI a medida que gestionan la atención al cliente, califican leads y agendan citas 24/7. Entrenados con tus datos y tu tono de marca."
-    },
-    "hero": {
-      "badge": "Demo interactiva",
-      "title": "Chatbots AI en acción",
-      "description": "Pruébalos tú mismo. Tres demos en vivo que muestran lo que los chatbots AI pueden hacer por tu agencia.",
-      "cta_primary": "Prueba una demo abajo",
-      "cta_secondary": "Solicita una sesión estratégica gratuita"
-    },
-    "quick_answer": "Los chatbots AI de Future Marketing AI son agentes conversacionales configurados para la personalidad de tu marca. Califican leads, responden preguntas y agendan demos. 24/7.",
-    "sections": {
-      "use_cases_heading": "¿Qué puede hacer un chatbot AI por tu agencia?",
-      "process_heading": "¿Cómo desplegamos un chatbot?",
-      "faq_heading": "Preguntas frecuentes",
-      "related_heading": "Servicios relacionados",
-      "pricing_heading": "Paquetes de chatbot",
-      "pricing_subtitle": "Precios de entrada. Una suscripción, stack AI completo.",
-      "multi_platform_heading": "Integración multiplataforma"
-    },
-    "use_cases": {
-      "title": "Lo que hacen nuestros chatbots",
-      "items": {
-        "customer_service": {
-          "title": "Atención al cliente",
-          "description": "Gestiona el 70% de las consultas de clientes automáticamente. Respuestas inmediatas, disponibilidad 24/7."
-        },
-        "lead_qualification": {
-          "title": "Cualificación de leads",
-          "description": "Puntúa y enruta leads, de día y de noche."
-        },
-        "appointment_booking": {
-          "title": "Agenda de citas",
-          "description": "Llena tu agenda sin intercambios manuales por email."
-        },
-        "faq_automation": {
-          "title": "Automatización de FAQ",
-          "description": "Respuestas consistentes y precisas. Siempre disponibles."
-        }
-      }
-    },
     "demo": {
       "title": "Demo interactiva",
       "subtitle": "Cambia entre personas y observa cómo cada chatbot gestiona distintos escenarios.",
-      "placeholder": "La demo interactiva de chatbot llegará en breve.",
       "capabilities_label": "Capacidades",
       "tabs": {
         "ecommerce": {
@@ -527,64 +484,6 @@
         }
       }
     },
-    "faq": {
-      "items": {
-        "q1": {
-          "question": "¿Qué diferencia a un chatbot AI de uno basado en reglas?",
-          "answer": "Los chatbots AI usan grandes modelos de lenguaje para entender la intención y generar respuestas contextuales."
-        },
-        "q2": {
-          "question": "¿Puedo probar el chatbot antes de comprarlo?",
-          "answer": "Sí. Nuestra página de chatbots dispone de un entorno de demo en vivo con 3 personas preconfiguradas."
-        },
-        "q3": {
-          "question": "¿Cómo configuráis la persona del chatbot?",
-          "answer": "Cada chatbot recibe un system prompt, directrices de tono, documentos de base de conocimiento y conversaciones de ejemplo."
-        },
-        "q4": {
-          "question": "¿El chatbot se integra con mi CRM?",
-          "answer": "Sí. Los leads fluyen directamente a HubSpot, Salesforce o tu CRM mediante webhook."
-        },
-        "q5": {
-          "question": "¿Qué idiomas admite el chatbot?",
-          "answer": "Los modelos subyacentes soportan más de 50 idiomas. Configuramos NL, EN y ES como estándar."
-        },
-        "q6": {
-          "question": "¿El chatbot cumple el RGPD?",
-          "answer": "Sí. Todos los datos de conversación se procesan en centros de datos de la UE y proporcionamos un acuerdo de encargado del tratamiento previa solicitud."
-        }
-      }
-    },
-    "related": {
-      "automations_title": "Automatizaciones AI",
-      "automations_description": "Automatización a medida que conecta tus herramientas y procesos.",
-      "voice_agents_title": "Voice Agents",
-      "voice_agents_description": "Agentes conversacionales AI que gestionan llamadas entrantes y salientes a escala.",
-      "marketing_machine_title": "Marketing Machine",
-      "marketing_machine_description": "Creación autónoma de contenido, planificación y automatización de campañas."
-    },
-    "process": {
-      "title": "Cómo construimos",
-      "steps": {
-        "discovery": {
-          "title": "Descubrir",
-          "description": "Mapeamos tu caso de uso y planificamos la conexión con tus herramientas existentes."
-        },
-        "build": {
-          "title": "Construir",
-          "description": "Un chatbot LLM a medida, entrenado con tus datos."
-        },
-        "optimize": {
-          "title": "Optimizar",
-          "description": "Mejora continua a partir de datos de conversaciones reales."
-        }
-      }
-    },
-    "cta": {
-      "title": "¿Listo para atención al cliente 24/7?",
-      "subtitle": "Agenda una sesión estratégica gratuita.",
-      "button": "Solicita una sesión estratégica gratuita"
-    },
     "multi_platform": {
       "title": "Un compañero, todos los canales",
       "subtitle": "Un único modelo AI impulsa tu chatbot en todas las plataformas. Voz de marca consistente, conocimiento compartido, analítica unificada.",
@@ -594,44 +493,14 @@
           "name": "Widget web",
           "behavior": "Chat embebido con conocimiento completo del producto y captura de leads."
         },
-        "shopify": {
-          "name": "Integración Shopify",
-          "behavior": "Recomendaciones de productos, estado de pedidos y recuperación de carritos."
+        "instagram": {
+          "name": "DM de Instagram",
+          "behavior": "Respuestas por palabra clave con enlace, y borradores de IA con la voz de la marca."
         },
-        "whatsapp": {
-          "name": "WhatsApp Business",
-          "behavior": "Conversaciones que venden, con contenido enriquecido y respuestas rápidas."
+        "inbox": {
+          "name": "Bandeja de ManyChat",
+          "behavior": "Las conversaciones de ManyChat llegan a la misma bandeja."
         }
-      },
-      "case_study": "Ya en vivo: SkinClarity Club opera el mismo compañero de IA en web, Shopify y WhatsApp. Sin pérdida de contexto entre canales.",
-      "stats": {
-        "inquiries": {
-          "value": "50.000+",
-          "label": "Consultas al mes"
-        },
-        "availability": {
-          "value": "24/7",
-          "label": "Siempre disponible"
-        },
-        "platforms": {
-          "value": "3+",
-          "label": "Canales conectados"
-        }
-      }
-    },
-    "trust_metrics": {
-      "title": "Con la confianza de empresas en crecimiento",
-      "inquiries": {
-        "value": "50.000+",
-        "label": "Consultas procesadas"
-      },
-      "availability": {
-        "value": "24/7",
-        "label": "Siempre disponible"
-      },
-      "crm": {
-        "value": "15+",
-        "label": "Integraciones de CRM"
       }
     }
   },

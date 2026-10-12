@@ -2,19 +2,19 @@
 
 import React from 'react'
 import { useTranslations } from 'next-intl'
-import { Brain, Globe, ShoppingBag, MessageCircle, type LucideIcon } from 'lucide-react'
+import { Brain, Globe, Inbox, MessageCircle, type LucideIcon } from 'lucide-react'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 
+// Only channels that are live in the app: website widget, Instagram DM engine, ManyChat inbox webhook.
 const PLATFORMS: readonly { id: string; icon: LucideIcon }[] = [
   { id: 'website', icon: Globe },
-  { id: 'shopify', icon: ShoppingBag },
-  { id: 'whatsapp', icon: MessageCircle },
+  { id: 'instagram', icon: MessageCircle },
+  { id: 'inbox', icon: Inbox },
 ] as const
 
 /**
  * MultiPlatformShowcase -- Animated architecture diagram showing Claude AI
- * connecting to Website, Shopify, and WhatsApp with CSS-only animations.
- * Includes case study proof section below the diagram.
+ * connecting to the website widget, Instagram DMs and the ManyChat inbox with CSS-only animations.
  */
 export function MultiPlatformShowcase() {
   const t = useTranslations('chatbots')
@@ -33,7 +33,7 @@ export function MultiPlatformShowcase() {
         </div>
 
         {/* Architecture diagram */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 mb-16">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
           {/* Central brain node */}
           <div className="flex-shrink-0 flex flex-col items-center">
             <div
@@ -88,25 +88,6 @@ export function MultiPlatformShowcase() {
                 </ScrollReveal>
               )
             })}
-          </div>
-        </div>
-
-        {/* Case study proof section */}
-        <div className="bg-white/[0.02] border border-border-primary rounded-xl p-6 lg:p-8 max-w-3xl mx-auto">
-          <p className="text-text-secondary text-sm lg:text-base text-center mb-6">
-            {t('multi_platform.case_study')}
-          </p>
-          <div className="flex justify-center gap-8 lg:gap-12">
-            {(['inquiries', 'availability', 'platforms'] as const).map((key) => (
-              <div key={key} className="text-center">
-                <p className="font-mono text-lg lg:text-xl font-bold text-accent-system">
-                  {t(`multi_platform.stats.${key}.value`)}
-                </p>
-                <p className="text-xs text-text-secondary mt-1">
-                  {t(`multi_platform.stats.${key}.label`)}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 
