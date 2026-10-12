@@ -100,3 +100,32 @@ Open na taak 6 (beslissingen voor Daley, niet gebouwd):
 - Console lokaal: `/_vercel/speed-insights/script.js` 404 en MIME-fout; bestaat alleen op Vercel, geen fout van de branch.
 - Nog steeds bij Daley: verwerkersovereenkomst, Meta-verwijder-URL, ROI-tool, `legal.last_updated` op de mergedatum,
   en push plus draft-PR.
+
+## Fixen, mergen en prod-validatie (2026-10-12, sessie 5ace0030)
+
+Daley 2026-10-12: "doe alles fixe en daarna merge en op productie valideren". Vóór de merge drie commits op de branch:
+`dee89f1` (DPF-correctie), `0b9135b` (/legal-lijst) en `57fc93c` (verwerkersovereenkomst). PR #55 is gemerged als
+merge commit `b79096d` (2026-10-12 16:51:56Z = 18:51 NL-tijd). Prod gemeten met `shoot-t6.cjs` (BASE=https://future-marketing.ai,
+Chrome-channel, uitgebreid met Spline-requests, CSP-header en privacy-checks; script en beelden in de scratchpad van sessie
+5ace0030, `vis-prod/`, `report.json`).
+
+| # | Claim | Verdict | Bewijs |
+|---|---|---|---|
+| 31 | De legaltekst claimt geen DPF meer voor Anthropic en OpenAI | PASS | Volgens de research staan ze niet op dataprivacyframework.gov: Ierse entiteit plus SCC's (as of 2026-10, `subverwerkers-research.md`). Na `dee89f1` meet de grep op "Data Privacy Framework certific" 0 treffers in nl/en/es. De DPF-opsomming is nu "o.a. Vercel, Stripe, Google". Op de eindstand: t5 `parity OK` exit 0, `check:copy` exit 0, `check:i18n-orphans` OK, `check:llms` OK; legal-sleutels nl/en/es gelijk (54, 0 missend, 0 extra). Prod /nl en /en `/legal/privacy`: `dpfClaimForAiLabs=false`, `irishSccLine=true` op 1440 en 390. |
+| 32 | /legal toont ook `ai_readiness_assessment` en `platform_data` | PASS | `0b9135b` (+2 regels), `tsc` exit 0. Prod /nl/legal bevat de Meta-platformtekst en de AI Readiness Scan-tekst; het aantal alinea's met regelafbrekingen gaat van 2 naar 3 (platform_data), alle drie `white-space: pre-wrap`. |
+| 33 | Verwerkersovereenkomst volgt de privacyverklaring | PASS (CONCEPT) | `57fc93c`: Annex A telt 19 sub-verwerkers plus 2 derde partijen (Meta IG/FB, Telegram), dus alle 20 namen uit artikel 5, met entiteit, land, locatie, waarborg en DPA. Grep op Vapi, Twilio, Voice Agent, MFA, `futuremarketingai.com` en "AI Marketing Employee" geeft 0. Annex B volgt `data_retention`. Er staan 7 open punten bovenaan, en het concept wordt niet verstuurd zonder Daley. Gemeten aanvullingen: Hetzner-VPS `nbg1-dc3` (metadata-API), Resend verzendt vanuit eu-west-1 (MX van `send.future-marketing.ai`), QStash eu-central-1. Redis lost vanuit de EU op naar eu-central-1, vanuit Azië naar ap-southeast-1 (DNS plus AWS ip-ranges). In productie staat geen `SENTRY_DSN` (`vercel env ls`). |
+| 34 | Meta-verwijderinstructie staat live | PASS | URL: https://future-marketing.ai/en/legal/privacy#privacy-platform_data (alinea "Deletion": app verwijderen plus een verzoek naar privacy@future-marketing.ai, binnen 30 dagen). Het anker staat op /nl en /en. Vóór de merge beloofde de EN-tekst op prod "We then receive a deletion request automatically"; na de merge geeft die zin 0 treffers. De callback-route bestaat alleen op `origin/feature/meta-data-deletion-callback` (`856227685`, niet gemerged). |
+| 35 | `legal.last_updated` = mergedatum | PASS | Prod /nl/legal "Laatst bijgewerkt: 12 oktober 2026", /en "Last updated: October 12, 2026". De merge was op 12 oktober NL-tijd. |
+| 36 | Homepage op prod | PASS | /nl 1440: video speelt (t 13,28 s, daarna 20,4 s, readyState 4, 714x402), de pauzeknop geeft `paused=true` en label "Speel de animatie af". /nl 390 en reduced-motion: `paused=true`, 0 requests naar `.mp4`. /en: poster, geen video. /es geeft 200 op /en. Overal 1 `<h1>`, 0 kale i18n-sleutels, geen horizontale scroll. Zelf bekeken: hero nl/en 1440 en de subverwerkers op 390 (elke categorie op een eigen regel). |
+| 37 | Geen Spline meer en een schone CSP | PASS | Op alle 6 homepage-weergaven 0 requests naar spline/unpkg. De `content-security-policy`-header (708 tekens) noemt spline en unpkg niet. 0 console-errors, 0 CSP-violations. |
+| 38 | gdpr-cleanup anonimiseert ook rijen met summary NULL | PASS (code en deploy), cronrun open | skinclarityclub/fma-app#1293 gemerged als `a183e3794`, gate groen (6m23s). De prod-deploy `fma-btbobve02` staat op `a183e3794` met alias app.future-marketing.ai. Prod HEAD-telling (consent false, >30 d): oude filter 0, nieuwe filter 1. De test faalt op de oude route. SELECT 2026-10-12 17:08Z: 1 achterstallige rij met summary NULL (2026-07-01), 0 geanonimiseerd. |
+| 39 | Vercel-preview van #55 | DEELS | De build van head `57fc93c` is Ready (`futuremarketingai-9av7x5gti`). Bekijken lukte niet: de preview staat achter Vercel-SSO en de Chrome-browser is niet ingelogd bij Vercel. De visuele controle is daarom op prod gedaan (rij 36-37). |
+
+Open na de merge:
+
+- **gdpr-cleanup:** na de cronrun van 2026-11-01 04:00 UTC verwacht dezelfde SELECT 0 achterstallige rijen met NULL en 1 of meer geanonimiseerd.
+- **Meta-dashboard (Daley):** de URL uit rij 34 invullen als "Data Deletion Instructions URL" van de Meta-app(s).
+- **Verwerkersovereenkomst:** de 7 open punten in het document (partijen, Firecrawl zonder DPA, Upstash-replica in Singapore, Hetzner-DPA, Gemini-billing, ongetoetste TOM-beweringen, Meta/Telegram als derde partij).
+- **Interne documenten met dezelfde DPF-fout** (niet live, niet aangepast): `docs/legal/dpia-ai-agent-processing.md:166,215` en `docs/wetgeving-aaas-nederland-eu.md:154`.
+- **Perplexity:** de DPF-hercertificering is op 2026-10-08 verlopen (as of 2026-10-12, dataprivacyframework.gov). De legaltekst noemt Perplexity niet onder DPF, dus daar staat geen fout.
+- Ongewijzigd uit "Open na taak 6": EN-hero, mobiele poster, vignet, demo-screenshots (creditteller, het fictieve voltooide doel op `doelen.webp`, Engelse onboarding-UI).
