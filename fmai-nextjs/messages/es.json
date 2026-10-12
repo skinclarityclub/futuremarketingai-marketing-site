@@ -443,7 +443,7 @@
           "d": "Los informes llegan solos y muestran qué funciona. Eso vuelve al objetivo y el ciclo empieza de nuevo."
         }
       },
-      "caption": "El calendario de contenido por marca, a partir de la agenda"
+      "caption": "La agenda del año de nuestro primer cliente, construida sobre la estrategia"
     },
     "people": {
       "eyebrow": "Las personas",
@@ -1904,8 +1904,8 @@
       }
     },
     "screenshot": {
-      "alt": "El panel con el estado de cada marca y lo que hizo Clyde en las ultimas 24 horas.",
-      "caption": "Lo que esta en marcha, y lo que hizo Clyde mientras dormias"
+      "alt": "Informe semanal de un cliente de demostración del 4 al 10 de octubre: resumen, rendimiento del contenido, puntos destacados y recomendaciones. Las cifras son datos de demostración.",
+      "caption": "El informe semanal de un cliente de demostración, con lo que Clyde recomienda"
     }
   },
   "founding-member": {

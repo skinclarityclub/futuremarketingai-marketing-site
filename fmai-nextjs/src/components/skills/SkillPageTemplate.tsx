@@ -41,7 +41,7 @@ import { SkillStickyToc } from './SkillStickyToc'
  */
 const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
   'blog-factory': '/screenshots/blog-factory.webp',
-  reporting: '/screenshots/rapportage.webp',
+  reporting: '/screenshots/weekrapport.webp',
   // seo-geo stond hier even NIET: dat scherm toonde op de demo-organisatie
   // "GA4 niet gekoppeld", streepjes bij citaties en positie, en "Geen data" bij
   // Core Web Vitals. Een bijschrift dat rankings belooft naast een beeld dat er

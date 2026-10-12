@@ -443,7 +443,7 @@
           "d": "The reports arrive on their own and show what works. That goes back to the goal, and the loop starts again."
         }
       },
-      "caption": "The content calendar per brand, filled from the plan"
+      "caption": "Our first client's calendar for the year, built on the strategy"
     },
     "people": {
       "eyebrow": "The people",
@@ -1904,8 +1904,8 @@
       }
     },
     "screenshot": {
-      "alt": "The dashboard showing the state of every brand and what Clyde did in the last 24 hours.",
-      "caption": "What is running, and what Clyde did while you slept"
+      "alt": "Weekly report for a demo client covering October 4 to 10: summary, content performance, highlights and recommendations. The figures are demo data.",
+      "caption": "A demo client's weekly report, with what Clyde recommends"
     }
   },
   "founding-member": {

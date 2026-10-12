@@ -443,7 +443,7 @@
           "d": "De rapporten komen vanzelf en laten zien wat werkt. Dat gaat terug naar het doel, en de kring begint opnieuw."
         }
       },
-      "caption": "De contentkalender per merk, gevuld vanuit de agenda"
+      "caption": "De jaaragenda van onze eerste klant, gebouwd op de strategie"
     },
     "people": {
       "eyebrow": "De mensen",
@@ -1904,8 +1904,8 @@
       }
     },
     "screenshot": {
-      "alt": "Het dashboard met de stand van alle merken en wat Clyde de afgelopen 24 uur deed.",
-      "caption": "Wat er draait, en wat Clyde deed terwijl je sliep"
+      "alt": "Weekrapport van een demoklant over 4 tot en met 10 oktober: samenvatting, contentprestaties, highlights en aanbevelingen. De cijfers zijn demodata.",
+      "caption": "Het weekrapport van een demoklant, met wat Clyde aanraadt"
     }
   },
   "founding-member": {

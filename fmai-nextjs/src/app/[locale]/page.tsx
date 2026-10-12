@@ -211,7 +211,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         title={t('kring.title')}
         subtitle={t('kring.subtitle')}
         steps={STEP_KEYS.map((k) => ({ t: t(`kring.steps.${k}.t`), d: t(`kring.steps.${k}.d`) }))}
-        screenshot="/screenshots/contentkalender.webp"
+        screenshot="/screenshots/jaaragenda.webp"
         caption={t('kring.caption')}
       />
 
