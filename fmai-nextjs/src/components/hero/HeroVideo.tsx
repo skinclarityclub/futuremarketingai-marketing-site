@@ -12,9 +12,9 @@ interface HeroVideoProps {
   playLabel: string
 }
 
-// Edges fade into the page background so the 16:9 frame has no visible rectangle.
-const EDGE_FADE =
-  'linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 6%, black 94%, transparent 100%)'
+// The video's near-black background (#090a13) is darker than the hero glow behind it;
+// lighten drops those pixels into the page, so no dark 16:9 box shows.
+const style = { mixBlendMode: 'lighten' } as const
 
 export function HeroVideo({ src, poster, label, pauseLabel, playLabel }: HeroVideoProps) {
   const ref = useRef<HTMLVideoElement>(null)
@@ -29,8 +29,6 @@ export function HeroVideo({ src, poster, label, pauseLabel, playLabel }: HeroVid
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (src && desktop && !reduced) ref.current?.play().catch(() => {})
   }, [src])
-
-  const style = { maskImage: EDGE_FADE, maskComposite: 'intersect', WebkitMaskImage: EDGE_FADE, WebkitMaskComposite: 'source-in' }
 
   if (!src) {
     // The poster is only Clyde's logo, so without the animation it is decorative.
