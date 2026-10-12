@@ -495,7 +495,7 @@
       "steps": {
         "s1": {
           "t": "Een reactie wordt een gesprek",
-          "d": "Reageert iemand op Instagram met het woord dat jij kiest, of komt er een DM binnen, dan antwoordt Clyde met de kennis van dat merk. Of hij zet het gesprek door naar je inbox."
+          "d": "Reageert iemand op Instagram met het woord dat jij kiest, dan stuurt Clyde een DM met jouw tekst. Op andere DM's antwoordt hij met de kennis van dat merk, of hij zet het gesprek door naar je inbox."
         },
         "s2": {
           "t": "Een link die we meten",
@@ -507,7 +507,7 @@
         },
         "s4": {
           "t": "Zien waar het stokt",
-          "d": "Per klant zie je hoeveel DM's een klik opleverden en hoeveel klikken een aanvraag. De grootste afhaker staat er in één zin bij."
+          "d": "Per Instagram-account zie je hoeveel DM's een klik opleverden en hoeveel klikken een aanvraag. De grootste afhaker staat er in één zin bij."
         }
       }
     }
