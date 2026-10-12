@@ -1696,17 +1696,17 @@
   },
   "skills-ad-manager": {
     "meta": {
-      "title": "Ad Manager. Create and steer ads on leads and CPL | Clyde",
-      "description": "Create static and video ads, publish to Meta and steer per ad on leads, cost per lead and ad fatigue. 10 credits static, 20 credits video."
+      "title": "Ad Manager. Create and track Meta ads | Clyde",
+      "description": "Create static and video ads for Meta, queue them for approval and track each ad on conversions, ROAS and ad fatigue. 10 credits static, 20 credits video."
     },
     "hero": {
       "eyebrow": "Skill 05. Ad Manager",
-      "title": "Clyde creates and steers your Meta ads.",
-      "subtitle": "Static ads and video ads: copy, visuals and multiple formats (Feed, Stories, Reels), published straight to Meta Ads Manager. After that Clyde steers on results: leads, cost per lead and ad fatigue per ad, in plain language.",
+      "title": "Clyde creates your Meta ads and tracks them.",
+      "subtitle": "Static ads and video ads: copy, visuals and multiple formats (Feed, Stories, Reels), queued for Meta Ads Manager. An ad only goes live after your approval. After that Clyde tracks every ad on conversions, ROAS and ad fatigue, in plain language.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Create 3 ad variants for the winter campaign",
-        "prompt2": "Which ad has the lowest cost per lead?",
+        "prompt2": "Which ad has the highest ROAS?",
         "prompt3": "Show the ad-fatigue signals of my running campaign"
       }
     },
@@ -1718,16 +1718,16 @@
         "body": "Copy, static visuals in 1080×1080 (Feed) or 1080×1920 (Story or Reel) and short video ads with motion graphics. In your visual identity, ready to publish."
       },
       "feature2": {
-        "title": "Publish directly to Meta",
-        "body": "Roll out to Ads Manager via the connection. You set budget and audience, Clyde delivers the creative and queues it up."
+        "title": "Queued for Meta",
+        "body": "You set budget and audience, Clyde delivers the creative and queues it for Ads Manager. An ad only goes live after your approval."
       },
       "feature3": {
         "title": "Performance per ad",
-        "body": "Leads, cost per lead and ROAS per individual ad, not just per campaign. An honest empty state while there are no results yet."
+        "body": "Reach, clicks, CTR, conversions and ROAS per individual ad, not just per campaign. An honest empty state while there are no results yet."
       },
       "feature4": {
         "title": "Ad fatigue and recommendations",
-        "body": "Ranking and fatigue signals (frequency, CTR decline) translated into 'what do we improve now', in plain language. Plus A/B variants to test."
+        "body": "Every day Clyde looks at frequency and CTR trend per ad and tells you in plain language when an ad is wearing out. Plus variants to test."
       }
     },
     "how": {
@@ -1737,30 +1737,30 @@
         "body": "Product or service, audience, USP and budget. Clyde reads the brand guidelines to stay consistent."
       },
       "step2": {
-        "title": "Create and publish",
-        "body": "Choose static or video, number of variants and format. Clyde delivers publish-ready output and queues it in Ads Manager."
+        "title": "Create and queue",
+        "body": "Choose static or video, number of variants and format. Clyde delivers publish-ready output and queues it for Ads Manager. You approve."
       },
       "step3": {
         "title": "Steer on results",
-        "body": "Clyde tracks every ad: leads, cost per lead, ranking and fatigue. You see in plain language what works and what we adjust."
+        "body": "Clyde tracks every ad: conversions, ROAS and fatigue. You see in plain language what works and what we adjust."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
+      "subtitle": "Via the shared memory per client.",
       "integration1": "Social Media: the best-performing organic posts become ad test material.",
       "integration2": "Blog Factory: blog content becomes ad copy for performance campaigns.",
-      "integration3": "Reporting: ad metrics (leads, CPL, CTR, ROAS) come together in the digest."
+      "integration3": "Reporting: ad metrics (conversions, CTR, ROAS) come together in the digest."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "E-commerce with many SKUs",
-        "body": "Per product 3 to 5 ad variants, then steer on the winners based on cost per lead. Scale without the bottleneck of a freelance designer."
+        "body": "Several ad variants per product, then carry on with the winners. Scale without the bottleneck of a freelance designer."
       },
       "useCase2": {
         "title": "Agencies managing ads for multiple brands",
-        "body": "One Clyde creates and monitors ads for 10 brands in parallel, each in its own visual identity, with performance per ad visible per brand."
+        "body": "One Clyde creates ads for all your brands, each in its own visual identity, with performance per ad visible per brand."
       }
     },
     "allocation": {
@@ -1777,7 +1777,7 @@
       "items": {
         "q1": {
           "question": "What does the Ad Manager skill do exactly?",
-          "answer": "Clyde creates complete Meta ads (copy, static visuals and short video ads) and then steers them on results: performance, leads and cost per lead per ad, ranking and ad-fatigue signals and A/B variants. Publishes directly to Ads Manager. No freelance designer or separate reporting tool needed."
+          "answer": "Clyde creates complete Meta ads (copy, static visuals and short video ads), queues them for approval and then tracks them: reach, clicks, conversions and ROAS per ad, plus ad-fatigue signals and variants to test. No freelance designer or separate reporting tool needed."
         },
         "q2": {
           "question": "Which platforms does Ad Manager support?",
@@ -1785,15 +1785,15 @@
         },
         "q3": {
           "question": "On which tiers is Ad Manager available?",
-          "answer": "Included on Growth (15 ads per month), Professional (50) and Enterprise (no cap). Founding Member receives 25 ads per month for life at 997 EUR. Performance per ad is included in all tiers."
+          "answer": "Growth 15 ads per month, Professional 50, Enterprise no cap, Founding 25. A static ad costs 10 credits, a video ad 20. Performance per ad is included in every tier."
         },
         "q4": {
-          "question": "How long does Ad Manager onboarding take?",
-          "answer": "Two to three weeks. Week 1 connects Ads Manager and Clyde reads previous campaigns. Week 2 delivers first variants with manual per-ad approval. After that the skill runs autonomously and calibrates on leads, CPL, CTR and ROAS from Reporting."
+          "question": "How does Ad Manager get started?",
+          "answer": "You connect the Meta ad account and Clyde reads the brand guidelines. You approve the first variants ad by ad. That stays the same: Clyde always runs ad spend past you first."
         },
         "q5": {
           "question": "How does this differ from AdCreative or Pencil?",
-          "answer": "AdCreative and Pencil deliver stand-alone banners from prompts, with no steering afterwards. Clyde holds the brand voice per brand via shared memory, publishes directly and then tracks every ad on leads and cost per lead. Create and manage in one, no cut-and-paste between tools."
+          "answer": "AdCreative and Pencil deliver stand-alone banners from prompts, with no follow-up afterwards. Clyde holds the brand voice per client via the shared memory, queues the ads for Meta and then tracks every ad. Create and track in one, no cut-and-paste between tools."
         }
       }
     }
@@ -1801,12 +1801,12 @@
   "skills-reporting": {
     "meta": {
       "title": "Reporting. Dashboards, digests and anomaly detection | Clyde",
-      "description": "Clyde delivers weekly performance digests, KPI dashboards and anomaly detection with alerts, so you know before your client calls. 5 credits per report."
+      "description": "Every week Clyde writes a report per brand, keeps a dashboard per client and lets you know when a figure deviates sharply. 5 credits per report."
     },
     "hero": {
       "eyebrow": "Skill 06. Reporting and Analytics",
       "title": "Clyde reports every week.",
-      "subtitle": "Automatic performance digests, live KPI dashboards and anomaly detection with alerts. The SEO report on WhatsApp every Friday, a report per brand in your dashboard every week. No more manual Notion updates.",
+      "subtitle": "A weekly report per brand in your dashboard, the SEO report on WhatsApp every Friday, and a heads-up from Clyde as soon as a figure deviates sharply. No more manual Notion updates.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Generate the weekly performance digest for every brand",
@@ -1822,12 +1822,12 @@
         "body": "Every week per brand in your dashboard: top KPIs, trends, anomalies and recommended actions. Clyde writes the narrative. The SEO report also arrives on WhatsApp every Friday."
       },
       "feature2": {
-        "title": "Live KPI dashboards",
-        "body": "Across every channel: social metrics, website traffic, sales and conversion, ad performance. Live dashboard, filterable per brand and period."
+        "title": "Dashboard per client",
+        "body": "Across the connected channels: Instagram, website traffic from GA4 and Search Console, sales from Shopify and ads from Meta. Refreshed daily, filterable per brand and period."
       },
       "feature3": {
         "title": "Anomaly detection",
-        "body": "If metrics deviate significantly from normal, Clyde sends you a WhatsApp message. No surprises in the monthly report."
+        "body": "Every day Clyde looks at reach, engagement, saves and revenue. If a figure deviates sharply, he lets you know, on WhatsApp too if you have connected it. No surprises in the monthly report."
       },
       "feature4": {
         "title": "Custom reports",
@@ -1838,29 +1838,29 @@
       "title": "How it works",
       "step1": {
         "title": "Connect data sources",
-        "body": "Instagram, Google Analytics, Shopify, Ads Manager, CRM. OAuth connection per brand."
+        "body": "Instagram, Google Analytics, Search Console, Shopify and Meta Ads, connected per brand."
       },
       "step2": {
-        "title": "Define KPIs",
-        "body": "What does \"success\" look like for this brand? Set the top 5 KPIs; Clyde tracks them continuously."
+        "title": "Set goals",
+        "body": "What does success look like for this client? Set the goals and choose where the result comes from: Shopify, a GA4 conversion, a custom connection or manual entry."
       },
       "step3": {
-        "title": "Schedule and alerts",
-        "body": "When should the digest arrive, for example Monday 08:00? Which metrics trigger an alert? Set it once, done."
+        "title": "A fixed rhythm",
+        "body": "The weekly report is ready every Sunday, the SEO report comes on Friday. Clyde flags sharp deviations the same day."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "All skills: every skill feeds data into reporting (social, blog, ads, email, voice).",
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "All skills: social, blog, ads and email feed the reporting.",
       "integration2": "Research: trend data enriches the context in digests.",
-      "integration3": "Clyde orchestrator: reports can trigger follow-up actions."
+      "integration3": "Clyde: ask him what a figure means and what the best next step is."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "Agencies with monthly client reviews",
-        "body": "Instead of a Notion marathon right before the client meeting: weekly already in sync, the monthly report is one export click."
+        "body": "Instead of a Notion marathon right before the client meeting: you are already up to date every week."
       },
       "useCase2": {
         "title": "Operators who want to work data-driven",
@@ -1881,23 +1881,23 @@
       "items": {
         "q1": {
           "question": "What does the Reporting skill do exactly?",
-          "answer": "Clyde delivers weekly performance digests, real-time KPI dashboards, and cross-platform analytics across social, web, and sales. Detects anomalies (for example, a sudden CTR drop) and sends proactive alerts via WhatsApp. Custom reports on demand."
+          "answer": "Every week Clyde writes a report per brand with the figures and his interpretation, keeps a dashboard per client across social, web, sales and ads, and checks every day for deviations in reach, engagement, saves and revenue. He lets you know about a sharp deviation, on WhatsApp too. You ask for a custom report in plain language."
         },
         "q2": {
           "question": "Which data sources does Reporting support?",
-          "answer": "Native integrations with Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive, and Stripe. Custom CSV or API sources via webhooks. Data is refreshed hourly and consolidated in a Supabase warehouse on EU servers."
+          "answer": "Instagram, Google Analytics 4, Search Console, Shopify and Meta Ads. The sources are refreshed daily and stored in our database in the EU. The result per client comes from Shopify, a GA4 conversion, a custom connection or manual entry."
         },
         "q3": {
           "question": "On which tiers is Reporting available?",
-          "answer": "Included on all tiers, with fair-use on generated reports. 5 credits per report. Enterprise adds custom KPI formulas. Founding Member receives lifetime access at 997 EUR per month."
+          "answer": "Included on every tier. A report costs 5 credits. What each tier costs is on the pricing page."
         },
         "q4": {
-          "question": "How long does Reporting onboarding take?",
-          "answer": "One week. Day 1 connects data sources via OAuth. Days 2 through 4 Clyde establishes a KPI baseline and anomaly thresholds from historical data. From day 5 the weekly digest runs autonomously: every week in your dashboard, and the SEO report every Friday on WhatsApp."
+          "question": "How soon do I get the first report?",
+          "answer": "As soon as a source is connected, the data comes in daily and the weekly report is ready every Sunday. The SEO report follows every Friday once Search Console is connected."
         },
         "q5": {
           "question": "How does this differ from Looker Studio or Whatagraph?",
-          "answer": "Looker Studio builds dashboards that you interpret weekly. Whatagraph delivers PDFs. Clyde delivers interpreted insights: not just 'CTR dropped 12 percent' but also 'cause: new creative test for brand X, recommendation: pause'. Saves the weekly interpretation hour."
+          "answer": "Looker Studio builds dashboards that you interpret yourself every week. Whatagraph bundles the figures into a report. Clyde adds the interpretation: what changed and what he proposes. And you can ask him follow-up questions, in the dashboard or on WhatsApp."
         }
       }
     },
@@ -2758,12 +2758,12 @@
   "skills-blog-factory": {
     "meta": {
       "title": "Blog Factory. SEO articles keyword to publication | Clyde",
-      "description": "Keyword research, longreads from 1,500 to 3,000 words, SEO optimization and automatic publishing. 15 credits per article."
+      "description": "Keyword research, articles in the brand voice, an SEO check and publishing after your approval. 15 credits per article."
     },
     "hero": {
       "eyebrow": "Skill 08. Blog Factory",
       "title": "Clyde writes your SEO blogs.",
-      "subtitle": "Keyword research, longreads (1,500 to 3,000 words), SEO optimization and automatic publishing to the website. One pipeline from idea to live. Quality gets better every week. Blog Factory is live, and still under active development.",
+      "subtitle": "Keyword research, articles in the brand voice and an SEO check, published on the website after your approval. The length follows what already ranks for that search term. Blog Factory is live and still under active development.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Write an SEO article on serum for sensitive skin",
@@ -2779,27 +2779,27 @@
         "body": "High-volume, low-competition keywords in the niche. Clustered into pillar pages and supporting content."
       },
       "feature2": {
-        "title": "Longreads (1,500 to 3,000 words)",
-        "body": "In-depth articles in the brand voice. Research-based, with source citation and a scannable structure."
+        "title": "A length that fits the search term",
+        "body": "Clyde looks at how long the pages that already rank are and writes to match. In the brand voice, backed by sources and with a scannable structure."
       },
       "feature3": {
         "title": "SEO optimization",
-        "body": "Meta description, heading structure, internal links, alt tags on images and a check on Core Web Vitals."
+        "body": "Meta description, heading structure, internal links and sources are checked per article. The SEO/GEO skill measures Core Web Vitals separately, per page."
       },
       "feature4": {
-        "title": "Automatic publishing",
-        "body": "Connection with WordPress, Webflow or Shopify. Draft, review, publish. Scheduling is also possible."
+        "title": "Publishing after approval",
+        "body": "To an MDX site, a Shopify blog or, with a custom connection, your own site. Draft, review, publish."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
         "title": "Keyword strategy per brand",
-        "body": "Clyde identifies 50 to 100 target keywords per brand, clustered into content themes."
+        "body": "Every day Clyde looks for keywords that fit the brand and clusters them into content themes."
       },
       "step2": {
         "title": "Plan articles",
-        "body": "Pick which keywords to tackle. Clyde creates an outline and writes. You review in a Google Docs-style interface."
+        "body": "Pick which keywords to tackle. Clyde creates an outline and writes. You review in the review screen: approve, or send back with comments."
       },
       "step3": {
         "title": "Publish and monitor",
@@ -2808,16 +2808,16 @@
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
+      "subtitle": "Via the shared memory per client.",
       "integration1": "SEO/GEO Analyst: blog positions are tracked and Core Web Vitals monitored.",
-      "integration2": "Social Media: blog content is turned into social posts.",
+      "integration2": "Social Media: an article can be the basis for social posts.",
       "integration3": "Research: trend data feeds the choice of topics."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "E-commerce with an SEO focus",
-        "body": "Product-related longreads that build organic traffic. SkinClarity Club publishes 2 to 4 blogs per month this way."
+        "body": "Articles around your products that build organic traffic, in the voice of the brand."
       },
       "useCase2": {
         "title": "B2B content marketing",
@@ -2838,19 +2838,19 @@
       "items": {
         "q1": {
           "question": "What does the Blog Factory skill do exactly?",
-          "answer": "Clyde produces SEO-optimized longreads from keyword research to publication. Each article runs 1,500 to 3,000 words, gets an automatic meta description, heading structure, internal links, and is published to your CMS. Writing happens in the brand voice learned from previously approved content."
+          "answer": "Clyde writes SEO articles, from keyword research to publication. The length follows the search intent and the pages that already rank. Every article gets a meta description, a heading structure and internal links, and goes to the website after your approval. Clyde writes in the brand voice, based on previously approved content and your corrections."
         },
         "q2": {
-          "question": "Which CMSes does Blog Factory support?",
-          "answer": "Native publishing to WordPress (REST API), Webflow, Shopify blog, Ghost, Sanity, and Notion. Custom CMSes via webhooks or MDX export. Images are added via Unsplash or DALLE APIs. Schema.org Article markup is built in automatically."
+          "question": "Where does Blog Factory publish?",
+          "answer": "To an MDX site, a Shopify blog or, with a custom connection, your own site. Does your agency work with a different CMS? Bring it up in the first call. You supply the hero image of an article yourself."
         },
         "q3": {
           "question": "On which tiers is Blog Factory available?",
-          "answer": "Growth 8 articles per month, Professional 20, Enterprise no cap. Founding Member receives 12 articles per month for life. Each article costs 15 credits. Extra articles available through credit packs."
+          "answer": "Growth 8 articles per month, Professional 20, Enterprise no cap, Founding 12. An article costs 15 credits. Extra articles available through credit packs."
         },
         "q4": {
-          "question": "How long does Blog Factory onboarding take?",
-          "answer": "Two weeks. Week 1 Clyde reads 5 to 10 previous blog posts for brand-voice modeling. Week 2 delivers the first 2 articles for manual approval with a feedback loop. From week 3 the skill runs autonomously with sample review every 5 articles."
+          "question": "How does Blog Factory get started for a new brand?",
+          "answer": "At the start Clyde reads the brand's earlier articles as an example of the voice. After that you approve every article before it goes online, and he takes your feedback into the next one."
         },
         "q5": {
           "question": "How does this differ from Jasper or SurferSEO?",
@@ -3181,17 +3181,17 @@
   },
   "skills-reel-builder": {
     "meta": {
-      "title": "Reel Builder. Vertical AI videos with music | Clyde",
-      "description": "Short vertical videos (9:16), AI scripts, automatic captions and music for Instagram Reels, TikTok and Shorts. 25 credits per Reel."
+      "title": "Reel Builder (coming soon). Vertical AI videos | Clyde",
+      "description": "Coming soon: short vertical videos (9:16) with AI scripts, captions and music, in the brand's house style. Not available yet."
     },
     "hero": {
       "eyebrow": "Skill 12. Reel Builder (coming soon)",
-      "title": "Clyde produces your Reels.",
-      "subtitle": "Short vertical videos (9:16) with AI scripts, automatic captions that run in sync and background music. For Instagram Reels, TikTok and YouTube Shorts. Coming soon.",
+      "title": "Soon Clyde makes your Reels.",
+      "subtitle": "What we are building: short vertical videos (9:16) with AI scripts, captions that run in sync and background music, for Instagram and LinkedIn. Not available yet.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Build a 30-second Reel about the morning ritual",
-        "prompt2": "Generate a TikTok script for the product launch",
+        "prompt2": "Write a Reel script for the product launch",
         "prompt3": "Spin 5 hook variants for our top-performing Reel"
       }
     },
@@ -3200,19 +3200,19 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "AI-generated scripts",
-        "body": "Short scripts (15 to 60 seconds) based on topic, hook style and brand voice."
+        "body": "Clyde will write short scripts (15 to 60 seconds) based on topic, hook style and brand voice."
       },
       "feature2": {
         "title": "Automatic captions, in sync",
-        "body": "Captions run in sync with the audio, animated according to the conventions of each platform."
+        "body": "Captions will run in sync with the audio, in the platform's style."
       },
       "feature3": {
         "title": "Music and timing",
-        "body": "Matching background music with beat sync. Built-in, royalty-free library."
+        "body": "Matching background music that lands on the beat."
       },
       "feature4": {
         "title": "Template library",
-        "body": "Templates for talking head, B-roll montage and text overlay. Quick start per format."
+        "body": "You will start from templates for talking head, B-roll montage and text overlay."
       }
     },
     "how": {
@@ -3227,15 +3227,15 @@
       },
       "step3": {
         "title": "Export and publish",
-        "body": "Publish-ready MP4 (9:16). Upload directly or schedule via the Social Media skill."
+        "body": "A publish-ready MP4 (9:16), to schedule via the Social Media skill."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "Social Media: Reels are published via the scheduler.",
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "Social Media: Reels will be published via the scheduler.",
       "integration2": "Ad Manager: video ads can follow the Reel format.",
-      "integration3": "Blog Factory: blogs can be summarized into a 60-second Reel."
+      "integration3": "Blog Factory: an article as the basis for a Reel."
     },
     "useCases": {
       "title": "Who this is for",
@@ -3253,7 +3253,7 @@
       "subtitle": "What this skill costs per action, and how much is included in each tier."
     },
     "cta": {
-      "title": "Ready to hand Reels over to Clyde?",
+      "title": "Interested in the Reel Builder?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
     },
@@ -3262,23 +3262,23 @@
       "items": {
         "q1": {
           "question": "What does the Reel Builder skill do exactly?",
-          "answer": "Clyde produces short vertical videos (9:16) for Instagram Reels, TikTok, and YouTube Shorts. Generates the AI script in the brand voice, automatically adds captions, picks fitting music, and adjusts timing. Output is publication-ready with brand overlays and typography in your house style."
+          "answer": "The Reel Builder is being built. The plan: Clyde makes short vertical videos (9:16) with a script in the brand voice, captions, fitting music and the brand's typography."
         },
         "q2": {
-          "question": "Which video stack and platforms does Reel Builder support?",
-          "answer": "Under the hood: Runway and Pika for scene generation, ElevenLabs for voice-overs, FFMPEG for compositing. Output to Instagram Reels, TikTok, YouTube Shorts, and LinkedIn Video. Videos are auto-delivered in 9:16 1080x1920 with Reels-safe margins for captions."
+          "question": "Which platforms will the Reels go to?",
+          "answer": "Publishing works today to Instagram and LinkedIn, and that is where the Reels will go too. We will settle the technology behind it before the Reel Builder goes live. Videos come in 9:16 (1080x1920), with room for captions."
         },
         "q3": {
           "question": "On which tiers is Reel Builder available?",
-          "answer": "Growth includes 4 Reels per month, Professional 15, Enterprise no cap. Founding Member receives 8 Reels monthly for life. Each Reel costs 25 credits. Reel Builder is currently on the roadmap; founding members get access first."
+          "answer": "Once the Reel Builder is live: Growth 4 Reels per month, Professional 15, Enterprise no cap, Founding 8. A Reel costs 25 credits. Founding members get access first."
         },
         "q4": {
-          "question": "How long does Reel Builder onboarding take?",
-          "answer": "Two weeks. Week 1 Clyde establishes house style from previous videos and design guidelines (typography, color, beat). Week 2 produces the first 2 Reels with manual per-scene approval. From week 3 the skill runs autonomously with sample review."
+          "question": "When will the Reel Builder be available?",
+          "answer": "There is no date yet. Founding members get access first; if you want to use it, say so in the call."
         },
         "q5": {
           "question": "How does this differ from CapCut or Opus Clip?",
-          "answer": "CapCut is a manual editor. Opus Clip cuts longer videos into Shorts. Clyde builds the Reel from scratch: script, scenes, voice-over, captions, music, in the brand voice and visual identity. No more manual editing, in batches of 4 or more per week."
+          "answer": "CapCut is a manual editor. Opus Clip cuts longer videos into Shorts. The Reel Builder will make the Reel from scratch: script, captions and music, in the brand voice and house style."
         }
       }
     }

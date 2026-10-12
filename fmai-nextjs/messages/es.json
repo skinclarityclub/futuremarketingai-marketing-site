@@ -1696,17 +1696,17 @@
   },
   "skills-ad-manager": {
     "meta": {
-      "title": "Ad Manager. Crear y dirigir anuncios por leads y CPL | Clyde",
-      "description": "Clyde crea anuncios estáticos y de vídeo, los publica en Meta y los dirige según leads, coste por lead y fatiga. 10 créditos estático, 20 vídeo."
+      "title": "Ad Manager. Crear y seguir anuncios de Meta | Clyde",
+      "description": "Crea anuncios estáticos y de vídeo para Meta, los deja listos para tu aprobación y sigue cada anuncio por conversiones, ROAS y fatiga publicitaria. 10 créditos estático, 20 vídeo."
     },
     "hero": {
       "eyebrow": "Habilidad 05. Ad Manager",
-      "title": "Clyde crea y dirige tus anuncios de Meta.",
-      "subtitle": "Anuncios estáticos y de vídeo: copy, visuales y varios formatos (Feed, Stories, Reels), publicados directamente en Meta Ads Manager. Después Clyde los dirige por resultado: leads, coste por lead y fatiga publicitaria por anuncio, en lenguaje claro.",
+      "title": "Clyde crea tus anuncios de Meta y los sigue.",
+      "subtitle": "Anuncios estáticos y de vídeo: copy, visuales y varios formatos (Feed, Stories, Reels), listos para Meta Ads Manager. Un anuncio solo se publica después de tu aprobación. Después Clyde sigue cada anuncio por conversiones, ROAS y fatiga publicitaria, en lenguaje claro.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Crea 3 variantes de anuncio para la campaña de invierno",
-        "prompt2": "¿Qué anuncio tiene el menor coste por lead?",
+        "prompt2": "¿Qué anuncio tiene el ROAS más alto?",
         "prompt3": "Muestra las señales de fatiga publicitaria de mi campaña activa"
       }
     },
@@ -1718,16 +1718,16 @@
         "body": "Copy, visuales estáticos en 1080×1080 (Feed) o 1080×1920 (Story o Reel) y vídeo-anuncios cortos con motion graphics. En tu identidad visual, listos para publicar."
       },
       "feature2": {
-        "title": "Publicación directa en Meta",
-        "body": "Despliegue a Ads Manager a través de la conexión. Tú defines presupuesto y audiencia; Clyde aporta las creatividades y las deja listas."
+        "title": "Listo para Meta",
+        "body": "Tú defines presupuesto y audiencia; Clyde aporta las creatividades y las deja listas para Ads Manager. Un anuncio solo se publica después de tu aprobación."
       },
       "feature3": {
         "title": "Rendimiento por anuncio",
-        "body": "Leads, coste por lead y ROAS por cada anuncio, no solo por campaña. Estado vacío honesto mientras todavía no hay resultados."
+        "body": "Alcance, clics, CTR, conversiones y ROAS por cada anuncio, no solo por campaña. Estado vacío honesto mientras todavía no hay resultados."
       },
       "feature4": {
         "title": "Fatiga publicitaria y recomendaciones",
-        "body": "Señales de ranking y fatiga (frecuencia, evolución del CTR) traducidas a 'qué mejoramos ahora', en lenguaje claro. Además de variantes A/B para probar."
+        "body": "Cada día Clyde revisa la frecuencia y la evolución del CTR por anuncio y te dice en lenguaje claro cuándo un anuncio se está agotando. Además de variantes para probar."
       }
     },
     "how": {
@@ -1737,30 +1737,30 @@
         "body": "Producto o servicio, público, USP y presupuesto. Clyde lee las directrices de marca para mantener la consistencia."
       },
       "step2": {
-        "title": "Crear y publicar",
-        "body": "Elige estático o vídeo, número de variantes y formato. Clyde entrega salidas listas para publicar y las deja preparadas en Ads Manager."
+        "title": "Crear y preparar",
+        "body": "Elige estático o vídeo, número de variantes y formato. Clyde entrega piezas listas para publicar y las deja preparadas para Ads Manager. Tú apruebas."
       },
       "step3": {
         "title": "Dirigir por resultado",
-        "body": "Clyde sigue cada anuncio: leads, coste por lead, ranking y fatiga. Ves en lenguaje claro qué funciona y qué ajustamos."
+        "body": "Clyde sigue cada anuncio: conversiones, ROAS y fatiga. Ves en lenguaje claro qué funciona y qué ajustamos."
       }
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
+      "subtitle": "A través de la memoria compartida por cliente.",
       "integration1": "Social Media: los posts orgánicos con mejor rendimiento se convierten en material de test publicitario.",
       "integration2": "Blog Factory: el contenido del blog se transforma en copy publicitario para campañas de rendimiento.",
-      "integration3": "Reporting: las métricas publicitarias (leads, CPL, CTR, ROAS) se reúnen en el digest."
+      "integration3": "Reporting: las métricas publicitarias (conversiones, CTR, ROAS) se reúnen en el digest."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
         "title": "E-commerce con muchas SKUs",
-        "body": "Entre 3 y 5 variantes de anuncio por producto, y luego dirigir a las ganadoras según el coste por lead. Escalar sin el cuello de botella de un diseñador freelance."
+        "body": "Varias variantes de anuncio por producto, y luego seguir con las ganadoras. Escalar sin el cuello de botella de un diseñador freelance."
       },
       "useCase2": {
         "title": "Agencias que gestionan anuncios de varias marcas",
-        "body": "Un único Clyde crea y monitoriza anuncios para 10 marcas en paralelo, cada una con su identidad visual, con el rendimiento por anuncio visible por marca."
+        "body": "Un solo Clyde crea anuncios para todas tus marcas, cada una con su propia identidad visual, con el rendimiento por anuncio visible por marca."
       }
     },
     "allocation": {
@@ -1777,7 +1777,7 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Ad Manager?",
-          "answer": "Clyde crea anuncios de Meta completos (copy, visuales estáticos y vídeo-anuncios cortos) y luego los dirige por resultado: rendimiento, leads y coste por lead por anuncio, señales de ranking y fatiga publicitaria y variantes A/B. Publica directamente en Ads Manager. Sin diseñador freelance ni herramienta de reporting aparte."
+          "answer": "Clyde crea anuncios de Meta completos (copy, visuales estáticos y vídeo-anuncios cortos), los deja listos para tu aprobación y luego los sigue: alcance, clics, conversiones y ROAS por anuncio, además de señales de fatiga publicitaria y variantes para probar. Sin diseñador freelance ni herramienta de reporting aparte."
         },
         "q2": {
           "question": "¿Qué plataformas soporta Ad Manager?",
@@ -1785,15 +1785,15 @@
         },
         "q3": {
           "question": "¿En qué niveles está disponible Ad Manager?",
-          "answer": "Incluido en Growth (15 anuncios al mes), Professional (50) y Enterprise (sin límite). Founding Member recibe 25 anuncios al mes de por vida a 997 EUR. El rendimiento por anuncio está en todos los niveles."
+          "answer": "Growth 15 anuncios al mes, Professional 50, Enterprise sin límite, Founding 25. Un anuncio estático cuesta 10 créditos, uno de vídeo 20. El rendimiento por anuncio está incluido en todos los tiers."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Ad Manager?",
-          "answer": "De dos a tres semanas. La semana 1 conecta Ads Manager y Clyde lee campañas previas. La semana 2 entrega primeras variantes con aprobación manual por anuncio. Después la habilidad opera autónoma y calibra sobre leads, CPL, CTR y ROAS de Reporting."
+          "question": "¿Cómo se pone en marcha Ad Manager?",
+          "answer": "Conectas la cuenta publicitaria de Meta y Clyde lee las directrices de marca. Las primeras variantes las apruebas anuncio por anuncio. Y así sigue: Clyde siempre te consulta antes de gastar en anuncios."
         },
         "q5": {
           "question": "¿En qué se diferencia de AdCreative o Pencil?",
-          "answer": "AdCreative y Pencil entregan banners sueltos a partir de prompts, sin dirección posterior. Clyde mantiene la voz de marca por marca vía memoria compartida, publica directamente y luego sigue cada anuncio por leads y coste por lead. Crear y gestionar en uno, sin copia-pegado entre herramientas."
+          "answer": "AdCreative y Pencil entregan banners sueltos a partir de prompts, sin seguimiento posterior. Clyde mantiene la voz de marca por cliente a través de la memoria compartida, deja los anuncios listos para Meta y luego sigue cada anuncio. Crear y seguir en uno, sin copiar y pegar entre herramientas."
         }
       }
     }
@@ -1801,12 +1801,12 @@
   "skills-reporting": {
     "meta": {
       "title": "Reporting. Paneles, informes y anomalías | Clyde",
-      "description": "Clyde entrega informes semanales de rendimiento, paneles de KPIs y detección de anomalías con alertas, antes de que llame tu cliente. 5 créditos por informe."
+      "description": "Cada semana Clyde escribe un informe por marca, mantiene un panel por cliente y te avisa cuando una cifra se desvía mucho. 5 créditos por informe."
     },
     "hero": {
       "eyebrow": "Habilidad 06. Reporting y Analytics",
       "title": "Clyde informa cada semana.",
-      "subtitle": "Informes automáticos de rendimiento, paneles de KPIs en vivo y detección de anomalías con alertas. El lunes a las 08:00 tienes un resumen en tu bandeja. Se acabaron las actualizaciones manuales en Notion.",
+      "subtitle": "Un informe semanal por marca en tu panel, el informe de SEO por WhatsApp cada viernes, y un aviso de Clyde en cuanto una cifra se desvía mucho. Se acabaron las actualizaciones manuales en Notion.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Genera el resumen semanal de rendimiento para todas las marcas",
@@ -1819,15 +1819,15 @@
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
         "title": "Informe semanal de rendimiento",
-        "body": "El lunes a las 08:00 en tu bandeja: KPIs principales, tendencias, anomalías y acciones recomendadas. Clyde escribe el hilo narrativo."
+        "body": "Cada semana, por marca, en tu panel: KPIs principales, tendencias, anomalías y acciones recomendadas. Clyde escribe el hilo narrativo. El informe de SEO llega también por WhatsApp cada viernes."
       },
       "feature2": {
-        "title": "Paneles de KPIs en vivo",
-        "body": "En todos los canales: métricas sociales, tráfico web, ventas y conversión, rendimiento publicitario. Panel en vivo, filtrable por marca y periodo."
+        "title": "Panel por cliente",
+        "body": "En los canales conectados: Instagram, tráfico web de GA4 y Search Console, ventas de Shopify y anuncios de Meta. Actualizado a diario, filtrable por marca y periodo."
       },
       "feature3": {
         "title": "Detección de anomalías",
-        "body": "Si las métricas se desvían significativamente de lo habitual, recibes una alerta. Sin sorpresas en el informe mensual."
+        "body": "Cada día Clyde revisa alcance, interacción, guardados e ingresos. Si una cifra se desvía mucho, te avisa, también por WhatsApp si lo tienes conectado. Sin sorpresas en el informe mensual."
       },
       "feature4": {
         "title": "Informes a medida",
@@ -1838,29 +1838,29 @@
       "title": "Cómo funciona",
       "step1": {
         "title": "Conectar fuentes de datos",
-        "body": "Instagram, Google Analytics, Shopify, Ads Manager, CRM. Conexión OAuth por marca."
+        "body": "Instagram, Google Analytics, Search Console, Shopify y Meta Ads, conectados por marca."
       },
       "step2": {
-        "title": "Definir KPIs",
-        "body": "¿Qué es \"éxito\" para esta marca? Define los 5 KPIs principales; Clyde los sigue de forma continua."
+        "title": "Definir objetivos",
+        "body": "¿Qué es el éxito para este cliente? Define los objetivos y elige de dónde sale el resultado: Shopify, una conversión de GA4, una conexión propia o introducción manual."
       },
       "step3": {
-        "title": "Programación y alertas",
-        "body": "¿Cuándo debe llegar el informe, por ejemplo los lunes a las 08:00? ¿Qué métricas disparan una alerta? Se configura una vez, listo."
+        "title": "Un ritmo fijo",
+        "body": "El informe semanal está listo cada domingo, el informe de SEO llega el viernes. Clyde avisa de las desviaciones fuertes el mismo día."
       }
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
-      "integration1": "Todas las habilidades: cada una aporta datos al reporting (social, blog, anuncios, correo, voz).",
+      "subtitle": "A través de la memoria compartida por cliente.",
+      "integration1": "Todas las habilidades: social, blog, anuncios y correo alimentan el reporting.",
       "integration2": "Research: los datos de tendencias enriquecen el contexto de los informes.",
-      "integration3": "Orquestador Clyde: los informes pueden desencadenar acciones de seguimiento."
+      "integration3": "Clyde: pregúntale qué significa una cifra y qué conviene hacer ahora."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
         "title": "Agencias con revisiones mensuales de cliente",
-        "body": "En lugar de una maratón de Notion justo antes de la reunión con el cliente: todo al día semanalmente y el informe mensual se exporta con un clic."
+        "body": "En lugar de una maratón de Notion justo antes de la reunión con el cliente: cada semana ya estás al día."
       },
       "useCase2": {
         "title": "Operadores que quieren trabajar con datos",
@@ -1881,23 +1881,23 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Reporting?",
-          "answer": "Clyde entrega digests semanales de rendimiento, dashboards KPI en tiempo real y analítica multi-plataforma sobre social, web y ventas. Detecta anomalías (por ejemplo, una caída repentina del CTR) y envía alertas proactivas via email o Slack. Informes personalizados a demanda."
+          "answer": "Cada semana Clyde escribe un informe por marca con las cifras y su interpretación, mantiene un panel por cliente sobre social, web, ventas y anuncios, y revisa cada día si hay desviaciones en alcance, interacción, guardados e ingresos. Si hay una desviación fuerte te avisa, también por WhatsApp. Un informe a medida lo pides en lenguaje normal."
         },
         "q2": {
           "question": "¿Qué fuentes de datos soporta Reporting?",
-          "answer": "Integraciones nativas con Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive y Stripe. Fuentes CSV o API personalizadas via webhooks. Los datos se actualizan cada hora y se consolidan en un warehouse Supabase en servidores europeos."
+          "answer": "Instagram, Google Analytics 4, Search Console, Shopify y Meta Ads. Las fuentes se actualizan a diario y se guardan en nuestra base de datos en la UE. El resultado por cliente sale de Shopify, una conversión de GA4, una conexión propia o introducción manual."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Reporting?",
-          "answer": "Incluido en todos los tiers, con uso justo sobre informes generados. 5 créditos por informe. Professional añade alertas de anomalía, Enterprise añade fórmulas KPI personalizadas. Founding Member recibe acceso de por vida a 997 EUR al mes."
+          "answer": "Incluido en todos los tiers. Un informe cuesta 5 créditos. Lo que cuesta cada tier está en la página de precios."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Reporting?",
-          "answer": "Una semana. Día 1 conecta fuentes de datos via OAuth. Días 2 a 4 Clyde establece una línea base KPI y umbrales de anomalía a partir de datos históricos. Desde el día 5 el digest semanal opera autónomo (lunes 08:00 en tu inbox)."
+          "question": "¿Cuándo recibo el primer informe?",
+          "answer": "En cuanto una fuente está conectada, los datos llegan a diario y el informe semanal está listo cada domingo. El informe de SEO llega cada viernes en cuanto Search Console está conectado."
         },
         "q5": {
           "question": "¿En qué se diferencia de Looker Studio o Whatagraph?",
-          "answer": "Looker Studio construye dashboards que tú interpretas semanalmente. Whatagraph entrega PDFs. Clyde entrega insights interpretados: no solo 'CTR cayó 12 por ciento' sino también 'causa: nuevo test creativo para marca X, recomendación: pausar'. Ahorra la hora semanal de interpretación."
+          "answer": "Looker Studio construye paneles que interpretas tú cada semana. Whatagraph reúne las cifras en un informe. Clyde añade la interpretación: qué cambió y qué propone. Y puedes hacerle más preguntas, en el panel o por WhatsApp."
         }
       }
     },
@@ -2758,12 +2758,12 @@
   "skills-blog-factory": {
     "meta": {
       "title": "Blog Factory: artículos SEO de keyword a publicar | Clyde",
-      "description": "Investigación de palabras clave, artículos largos de 1500 a 3000 palabras, optimización SEO y publicación automática. 15 créditos por artículo."
+      "description": "Investigación de palabras clave, artículos en la voz de marca, una revisión SEO y publicación tras tu aprobación. 15 créditos por artículo."
     },
     "hero": {
       "eyebrow": "Habilidad 08. Blog Factory",
       "title": "Clyde escribe tus blogs SEO.",
-      "subtitle": "Investigación de palabras clave, artículos largos (de 1500 a 3000 palabras), optimización SEO y publicación automática en la web. Un flujo único de la idea al live. La calidad mejora cada semana. Blog Factory está disponible pero sigue en desarrollo.",
+      "subtitle": "Investigación de palabras clave, artículos en la voz de marca y una revisión SEO, publicados en la web tras tu aprobación. La extensión se adapta a lo que ya posiciona para esa búsqueda. Blog Factory está disponible y sigue en desarrollo.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Redacta un artículo SEO sobre sérum para piel sensible",
@@ -2779,27 +2779,27 @@
         "body": "Palabras clave de alto volumen y baja competencia en el nicho. Agrupadas en páginas pilar y contenido de apoyo."
       },
       "feature2": {
-        "title": "Artículos largos (1500 a 3000 palabras)",
-        "body": "Artículos profundos en la voz de marca. Basados en investigación, con citas y estructura escaneable."
+        "title": "Una extensión que encaja con la búsqueda",
+        "body": "Clyde mira la extensión de las páginas que ya posicionan y escribe en consecuencia. En la voz de marca, respaldado con fuentes y con una estructura fácil de escanear."
       },
       "feature3": {
         "title": "Optimización SEO",
-        "body": "Meta descripción, estructura de encabezados, enlaces internos, etiquetas alt en imágenes y control de Core Web Vitals."
+        "body": "La meta descripción, la estructura de encabezados, los enlaces internos y las fuentes se revisan en cada artículo. La habilidad de SEO/GEO mide los Core Web Vitals aparte, por página."
       },
       "feature4": {
-        "title": "Publicación automática",
-        "body": "Conexión con WordPress, Webflow o Shopify. Borrador, revisión, publicación. También se puede programar."
+        "title": "Publicación tras aprobación",
+        "body": "A un sitio MDX, a un blog de Shopify o, con una conexión a medida, a tu propia web. Borrador, revisión, publicación."
       }
     },
     "how": {
       "title": "Cómo funciona",
       "step1": {
         "title": "Estrategia de palabras clave por marca",
-        "body": "Clyde identifica entre 50 y 100 palabras clave objetivo por marca, agrupadas por temas de contenido."
+        "body": "Cada día Clyde busca palabras clave que encajan con la marca y las agrupa por temas de contenido."
       },
       "step2": {
         "title": "Planificar los artículos",
-        "body": "Elige qué palabras clave quieres atacar. Clyde hace el esquema y escribe. Tú revisas en una interfaz estilo Google Docs."
+        "body": "Elige qué palabras clave quieres trabajar. Clyde hace el esquema y escribe. Tú revisas en la pantalla de revisión: apruebas o lo devuelves con comentarios."
       },
       "step3": {
         "title": "Publicar y monitorizar",
@@ -2808,16 +2808,16 @@
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
+      "subtitle": "A través de la memoria compartida por cliente.",
       "integration1": "SEO/GEO Analyst: se hace seguimiento de las posiciones del blog y se monitorizan los Core Web Vitals.",
-      "integration2": "Social Media: el contenido del blog se transforma en posts sociales.",
+      "integration2": "Social Media: un artículo puede ser la base de posts para redes sociales.",
       "integration3": "Research: los datos de tendencias alimentan la elección de temas."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
         "title": "E-commerce con foco SEO",
-        "body": "Artículos largos relacionados con productos que construyen tráfico orgánico. SkinClarity Club publica entre 2 y 4 blogs al mes así."
+        "body": "Artículos sobre tus productos que generan tráfico orgánico, con la voz de la marca."
       },
       "useCase2": {
         "title": "Content marketing B2B",
@@ -2838,19 +2838,19 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Blog Factory?",
-          "answer": "Clyde produce artículos largos optimizados para SEO desde la investigación de palabras clave hasta la publicación. Cada artículo tiene 1.500 a 3.000 palabras, recibe meta-description automática, estructura de encabezados, enlaces internos y se publica en tu CMS. La escritura sucede en la voz de marca aprendida del contenido aprobado previamente."
+          "answer": "Clyde escribe artículos SEO, desde la investigación de palabras clave hasta la publicación. La extensión se adapta a la intención de búsqueda y a las páginas que ya posicionan. Cada artículo recibe una meta descripción, una estructura de encabezados y enlaces internos, y se publica en la web tras tu aprobación. Clyde escribe en la voz de marca, a partir del contenido aprobado antes y de tus correcciones."
         },
         "q2": {
-          "question": "¿Qué CMSs soporta Blog Factory?",
-          "answer": "Publicación nativa en WordPress (REST API), Webflow, blog Shopify, Ghost, Sanity y Notion. CMSs personalizados via webhooks o exportación MDX. Las imágenes se añaden via APIs de Unsplash o DALLE. El markup Schema.org Article se incluye automáticamente."
+          "question": "¿Dónde publica Blog Factory?",
+          "answer": "A un sitio MDX, a un blog de Shopify o, con una conexión a medida, a tu propia web. ¿Tu agencia trabaja con otro CMS? Coméntalo en la primera llamada. La imagen principal de cada artículo la aportas tú."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Blog Factory?",
-          "answer": "Growth 8 artículos al mes, Professional 20, Enterprise sin límite. Founding Member recibe 12 artículos al mes de por vida. Cada artículo cuesta 15 créditos. Artículos extra disponibles via packs de créditos."
+          "answer": "Growth 8 artículos al mes, Professional 20, Enterprise sin límite, Founding 12. Un artículo cuesta 15 créditos. Artículos extra disponibles con packs de créditos."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Blog Factory?",
-          "answer": "Dos semanas. Semana 1 Clyde lee 5 a 10 entradas previas para modelar la voz de marca. Semana 2 entrega los 2 primeros artículos con aprobación manual y bucle de feedback. Desde la semana 3 la habilidad opera autónoma con revisión por muestra cada 5 artículos."
+          "question": "¿Cómo se pone en marcha Blog Factory para una marca nueva?",
+          "answer": "Al empezar, Clyde lee artículos anteriores de la marca como ejemplo de su voz. Después apruebas cada artículo antes de que se publique, y tu feedback lo aplica en el siguiente."
         },
         "q5": {
           "question": "¿En qué se diferencia de Jasper o SurferSEO?",
@@ -3181,17 +3181,17 @@
   },
   "skills-reel-builder": {
     "meta": {
-      "title": "Reel Builder. Videos AI verticales con música | Clyde",
-      "description": "Videos verticales cortos (9:16), guiones AI, subtítulos automáticos y música para Instagram Reels, TikTok y Shorts. 25 créditos por Reel."
+      "title": "Reel Builder (próximamente). Vídeos verticales con IA | Clyde",
+      "description": "Próximamente: vídeos verticales cortos (9:16) con guiones de IA, subtítulos y música, con el estilo de la marca. Todavía no disponible."
     },
     "hero": {
       "eyebrow": "Habilidad 12. Reel Builder (próximamente)",
-      "title": "Clyde produce tus Reels.",
-      "subtitle": "Videos verticales cortos (9:16) con guiones AI, subtítulos automáticos sincronizados y música de fondo. Para Instagram Reels, TikTok y YouTube Shorts. Próximamente.",
+      "title": "Pronto Clyde hará tus Reels.",
+      "subtitle": "En lo que estamos trabajando: vídeos verticales cortos (9:16) con guiones de IA, subtítulos sincronizados y música de fondo, para Instagram y LinkedIn. Todavía no disponible.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Crea un Reel de 30 segundos sobre la rutina matinal",
-        "prompt2": "Genera un guion de TikTok para el lanzamiento",
+        "prompt2": "Escribe un guion de Reel para el lanzamiento del producto",
         "prompt3": "Diseña 5 variantes de hook para nuestro Reel destacado"
       }
     },
@@ -3200,19 +3200,19 @@
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
         "title": "Guiones generados por AI",
-        "body": "Guiones cortos (de 15 a 60 segundos) a partir del tema, el estilo del gancho y la voz de marca."
+        "body": "Clyde escribirá guiones cortos (de 15 a 60 segundos) a partir del tema, el estilo del gancho y la voz de marca."
       },
       "feature2": {
         "title": "Subtítulos automáticos sincronizados",
-        "body": "Los subtítulos van sincronizados con el audio, animados según las convenciones de cada plataforma."
+        "body": "Los subtítulos irán sincronizados con el audio, con el estilo de la plataforma."
       },
       "feature3": {
         "title": "Música y timing",
-        "body": "Música de fondo adecuada con beat sync. Biblioteca integrada libre de derechos."
+        "body": "Música de fondo adecuada que cae en el ritmo."
       },
       "feature4": {
         "title": "Biblioteca de plantillas",
-        "body": "Plantillas de talking head, montaje de B-roll y texto en pantalla. Arranque rápido por formato."
+        "body": "Empezarás desde plantillas de talking head, montaje de B-roll y texto en pantalla."
       }
     },
     "how": {
@@ -3227,15 +3227,15 @@
       },
       "step3": {
         "title": "Exportar y publicar",
-        "body": "MP4 listo para publicar (9:16). Súbelo directo o prográmalo desde la habilidad de Social Media."
+        "body": "Un MP4 listo para publicar (9:16), para programar desde la habilidad de Social Media."
       }
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
-      "integration1": "Social Media: los Reels se publican vía programación.",
+      "subtitle": "A través de la memoria compartida por cliente.",
+      "integration1": "Social Media: los Reels se publicarán desde la programación.",
       "integration2": "Ad Manager: los anuncios de video pueden seguir el formato Reel.",
-      "integration3": "Blog Factory: los blogs se pueden resumir en un Reel de 60 segundos."
+      "integration3": "Blog Factory: un artículo como base para un Reel."
     },
     "useCases": {
       "title": "Para quién",
@@ -3253,7 +3253,7 @@
       "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
     },
     "cta": {
-      "title": "¿Listo para ceder los Reels a Clyde?",
+      "title": "¿Te interesa el Reel Builder?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
     },
@@ -3262,23 +3262,23 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Reel Builder?",
-          "answer": "Clyde produce vídeos verticales cortos (9:16) para Instagram Reels, TikTok y YouTube Shorts. Genera el script IA en la voz de marca, añade subtítulos automáticos, elige música acorde y ajusta el timing. La salida está lista para publicar con overlays de marca y tipografía en tu estilo de casa."
+          "answer": "El Reel Builder está en desarrollo. El plan: Clyde hace vídeos verticales cortos (9:16) con un guion en la voz de marca, subtítulos, música adecuada y la tipografía de la marca."
         },
         "q2": {
-          "question": "¿Qué stack de vídeo y plataformas soporta Reel Builder?",
-          "answer": "Por debajo: Runway y Pika para generación de escenas, ElevenLabs para voz en off, FFMPEG para composición. Salida a Instagram Reels, TikTok, YouTube Shorts y LinkedIn Video. Los vídeos se entregan en 9:16 1080x1920 con márgenes seguros para subtítulos en Reels."
+          "question": "¿En qué plataformas se publicarán los Reels?",
+          "answer": "Hoy se puede publicar en Instagram y LinkedIn, y ahí irán también los Reels. La tecnología la decidiremos antes de que el Reel Builder esté disponible. Los vídeos salen en 9:16 (1080x1920), con espacio para los subtítulos."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Reel Builder?",
-          "answer": "Growth incluye 4 Reels al mes, Professional 15, Enterprise sin límite. Founding Member recibe 8 Reels al mes de por vida. Cada Reel cuesta 25 créditos. Reel Builder está actualmente en la roadmap; los founding members obtienen acceso primero."
+          "answer": "Cuando el Reel Builder esté disponible: Growth 4 Reels al mes, Professional 15, Enterprise sin límite, Founding 8. Un Reel cuesta 25 créditos. Los miembros Founding tendrán acceso primero."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Reel Builder?",
-          "answer": "Dos semanas. Semana 1 Clyde establece el estilo de casa a partir de vídeos previos y guías de diseño (tipografía, color, beat). Semana 2 produce los 2 primeros Reels con aprobación manual por escena. Desde la semana 3 la habilidad opera autónoma con revisión de muestras."
+          "question": "¿Cuándo estará disponible el Reel Builder?",
+          "answer": "Todavía no hay fecha. Los miembros Founding tendrán acceso primero; si quieres usarlo, dilo en la llamada."
         },
         "q5": {
           "question": "¿En qué se diferencia de CapCut o Opus Clip?",
-          "answer": "CapCut es un editor manual. Opus Clip recorta vídeos largos en Shorts. Clyde construye el Reel desde cero: script, escenas, voz en off, subtítulos, música, en la voz de marca y la identidad visual. Sin más edición manual, en lotes de 4 o más por semana."
+          "answer": "CapCut es un editor manual. Opus Clip recorta vídeos largos en Shorts. El Reel Builder hará el Reel desde cero: guion, subtítulos y música, en la voz de marca y con el estilo de la marca."
         }
       }
     }
