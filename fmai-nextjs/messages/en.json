@@ -1372,13 +1372,13 @@
   },
   "skills-voice-agent": {
     "meta": {
-      "title": "Voice Agent. Inbound and outbound AI calls | Clyde",
-      "description": "Clyde makes AI phone calls, books appointments, logs every conversation and escalates to a human when needed. 5 credits per minute, in your brand voice."
+      "title": "Voice Agent (coming soon). AI phone calls | Clyde",
+      "description": "Coming soon: Clyde answers phone calls, books appointments and hands off to a human when needed. Not available yet."
     },
     "hero": {
       "eyebrow": "Skill 02. Voice Agent (coming soon)",
-      "title": "Clyde picks up the phone.",
-      "subtitle": "Inbound calls are answered, FAQs handled, appointments booked. Outbound campaigns run without your team having to dial. Escalation to a human when the conversation calls for it. Coming soon.",
+      "title": "Soon Clyde picks up the phone.",
+      "subtitle": "What we are building: answering inbound calls, handling frequently asked questions, booking appointments and handing off to a human when the conversation calls for it. Not available yet.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Call the waitlist and book appointments for next week",
@@ -1398,45 +1398,45 @@
         "body": "Working through lists, intake calls, follow-ups. Clyde will dial the contact list and log the result per call."
       },
       "feature3": {
-        "title": "Call logging and transcripts",
-        "body": "Every conversation is recorded, transcribed and made searchable in the memory per brand."
+        "title": "Transcripts",
+        "body": "Every call will get a transcript, searchable in the client's memory."
       },
       "feature4": {
         "title": "Human escalation",
-        "body": "Clear rules for when Clyde hands off to a human. No call ends without proper handling."
+        "body": "Clyde gets clear rules for when he hands off to a human."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
         "title": "Set voice and persona",
-        "body": "Choose voice, personality and knowledge base per brand. Upload the FAQ and calendar availability."
+        "body": "You will choose voice, personality and knowledge base per brand, with the FAQ and calendar availability included."
       },
       "step2": {
         "title": "Connect a phone number",
-        "body": "Connect a phone number via VAPI. Inbound routes to Clyde; outbound campaigns are scheduled."
+        "body": "You connect a phone number. Inbound calls go to Clyde; you schedule follow-up calls."
       },
       "step3": {
         "title": "Clyde will run, you monitor",
-        "body": "Real-time dashboard for calls, escalations and results. Clyde will learn from every conversation for sharper answers."
+        "body": "Calls, handoffs and results show up in the dashboard."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "Lead Qualifier: calls qualify leads and sync to the CRM.",
-      "integration2": "Reporting: call metrics (volume, average duration, escalation rate) in the weekly digest.",
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "Lead Qualifier: leads from calls land in the same lead list.",
+      "integration2": "Reporting: number of calls, duration and handoffs in the weekly report.",
       "integration3": "Clyde orchestrator: conversation context travels along to other skills."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "Practices with front-desk pressure",
-        "body": "Clinics, dentists and therapists with high call volume. Clyde handles intake and appointments."
+        "body": "Clinics, dentists and therapists with high call volume. Clyde will handle intake and appointments."
       },
       "useCase2": {
         "title": "Outbound sales teams",
-        "body": "Unload SDRs from first-contact calls. Clyde qualifies, schedules and escalates where needed."
+        "body": "Take first-contact calls off your SDRs: Clyde will qualify, schedule and hand off where needed."
       }
     },
     "allocation": {
@@ -1444,7 +1444,7 @@
       "subtitle": "What this skill costs per action, and how much is included in each tier."
     },
     "cta": {
-      "title": "Ready to hand phone traffic over to Clyde?",
+      "title": "Interested in the Voice Agent?",
       "subtitle": "Book a call. We will discuss how this skill fits your brands.",
       "button": "Book a call"
     },
@@ -1457,40 +1457,40 @@
       "items": {
         "q1": {
           "question": "What does the Voice Agent skill do exactly?",
-          "answer": "Clyde handles inbound and outbound phone calls with an AI voice: books appointments in your calendar, answers FAQ from the knowledge base, logs calls, transcribes automatically, and escalates to a human when a conversation gets complex or the caller asks for one."
+          "answer": "The Voice Agent is being built. The plan: Clyde handles phone calls with an AI voice, books appointments, answers questions from the knowledge base, turns every call into a transcript and hands off to a human when a conversation gets complex or the caller asks for one."
         },
         "q2": {
-          "question": "Which telephony provider does Voice Agent use?",
-          "answer": "Under the hood it runs on ElevenLabs (voice) plus Twilio or Telnyx (phone number). You get a dedicated NL mobile or landline number as endpoint. SIP trunking porting of an existing number is supported from the Professional tier."
+          "question": "What technology does the Voice Agent use?",
+          "answer": "The voice comes from ElevenLabs. How phone numbers are connected, we will settle before the Voice Agent goes live."
         },
         "q3": {
           "question": "On which tiers is Voice Agent available?",
-          "answer": "Growth includes 30 call minutes per month, Professional 120 minutes, Enterprise no cap. Founding Member receives 60 minutes monthly for life. Extra minutes can be purchased through credit packs."
+          "answer": "Once the Voice Agent is live: Growth 30 call minutes per month, Professional 120, Enterprise no cap, Founding 60. A minute costs 5 credits."
         },
         "q4": {
-          "question": "How long does Voice Agent onboarding take?",
-          "answer": "Three to four weeks. Week 1 connects the number and builds the knowledge base. Week 2 Clyde shadow-listens to real calls. Week 3 runs first live calls with human fallback. From week 4 the skill operates autonomously with sample review."
+          "question": "When will the Voice Agent be available?",
+          "answer": "There is no date yet. Founding members get access first; if you want to use it, say so in the call."
         },
         "q5": {
           "question": "How does this differ from Vapi or Bland?",
-          "answer": "Vapi and Bland are developer API platforms. Clyde adds the management, knowledge-base maintenance, and CRM integration on top. No in-house Voice engineer required. Calls feed back into Lead Qualifier and Reporting without extra wiring."
+          "answer": "Vapi and Bland are API platforms for developers. The Voice Agent will be one of Clyde's skills, with your client's knowledge base and memory, without an in-house voice engineer."
         }
       }
     }
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot that scores and routes leads | Clyde",
-      "description": "Clyde qualifies leads with an AI chatbot on your website: lead scoring, CRM routing and conversation analytics per brand. 2 credits per scored lead."
+      "title": "Lead Qualifier. Chatbot that scores and passes on leads | Clyde",
+      "description": "Clyde qualifies leads with an AI chatbot on your website: a score per lead and a webhook to the CRM you already use. 2 credits per scored lead."
     },
     "hero": {
       "eyebrow": "Skill 03. Lead Qualifier",
       "title": "Clyde qualifies your website leads.",
-      "subtitle": "An embeddable AI chatbot on every brand's website. Runs the qualification conversation, scores intent and routes warm leads to the CRM or sales. No lead lost through missed chats.",
+      "subtitle": "An embeddable AI chatbot on every brand's website. It runs the qualification conversation, scores the lead and passes it on via a webhook to the CRM you already use.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Qualify the leads from the past 24 hours",
-        "prompt2": "Route all hot leads straight to the sales inbox",
+        "prompt2": "Which of this week's leads are hot?",
         "prompt3": "Show me a sample of ten freshly arrived chats"
       }
     },
@@ -1503,15 +1503,15 @@
       },
       "feature2": {
         "title": "Automatic lead scoring",
-        "body": "Clyde calculates a lead score based on signals (budget, timeline, specificity). Directly visible in the CRM."
+        "body": "Clyde gives every lead a score from 0 to 100 on profile, intent and conversation quality, with budget, timeline and decision-maker highlighted separately. You see the score in the lead dashboard."
       },
       "feature3": {
-        "title": "CRM routing",
-        "body": "Warm leads flow automatically to HubSpot, Salesforce or Pipedrive, including conversation summary. Cold leads enter a nurture flow."
+        "title": "Passing on via webhook",
+        "body": "Every lead goes to your CRM via a webhook. Failed deliveries show up so you can resend them."
       },
       "feature4": {
-        "title": "Conversation analytics",
-        "body": "Which questions come up often, where people drop off, which flows convert best. Continuously tuned."
+        "title": "Reviewing conversations",
+        "body": "All conversations and leads per chatbot in one place and searchable. That way you see which questions keep coming back and you add to the knowledge base."
       }
     },
     "how": {
@@ -1525,16 +1525,16 @@
         "body": "One embed tag on the website. Done. Clyde starts the conversation."
       },
       "step3": {
-        "title": "CRM and sales routing",
-        "body": "Set thresholds: a score of 80+ goes directly to the sales team, 40-80 into a CRM nurture flow, below 40 to the info mailbox."
+        "title": "Passing on leads",
+        "body": "Every lead gets a score and a label from cold to hot. Via the webhook it goes to your CRM, where you decide what sales picks up."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "Voice Agent (coming soon): chat leads can be followed up with a phone call.",
-      "integration2": "Email Management: follow-up emails to qualified leads.",
-      "integration3": "Reporting: conversion funnel and cost-per-lead per source."
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "ManyChat DM: leads from Instagram DMs land in the same lead list.",
+      "integration2": "Knowledge base: persona and knowledge per brand, from your own site and documents.",
+      "integration3": "Lead dashboard: all leads with source and score in one place."
     },
     "useCases": {
       "title": "Who this is for",
@@ -1558,30 +1558,30 @@
     },
     "proof": {
       "title": "Live demo",
-      "subtitle": "Embeddable on every channel. Try it below, or take a look at the SKC setup."
+      "subtitle": "Try below how the chatbot runs a conversation."
     },
     "faq": {
       "title": "Frequently asked questions about Lead Qualifier",
       "items": {
         "q1": {
           "question": "What does the Lead Qualifier skill do exactly?",
-          "answer": "Clyde places an AI chatbot on your website that greets visitors, asks qualifying questions, assigns scores based on intent and behavior, and routes warm leads automatically to your CRM, Slack, or sales team. Every interaction is stored in the brand memory."
+          "answer": "Clyde places an AI chatbot on your website that greets visitors, asks qualifying questions and gives every lead a score on profile, intent and conversation quality. Leads go to your CRM via a webhook and appear in your lead dashboard."
         },
         "q2": {
           "question": "Which CRMs and channels does Lead Qualifier support?",
-          "answer": "Native integrations with HubSpot, Pipedrive, Salesforce, and Notion. Webhooks for custom CRMs. Deployable on any website (script snippet) and as a WhatsApp or Telegram flow from the Growth tier."
+          "answer": "Every lead goes via a webhook to the CRM you already use. Failed deliveries show up so you can resend them. You place the widget on any website with one script snippet, and conversations from ManyChat land in the same inbox."
         },
         "q3": {
           "question": "On which tiers is Lead Qualifier available?",
-          "answer": "Included on all tiers, with fair-use on conversation volume. Costs 2 credits per qualification score. Professional and Enterprise add dynamic routing on score thresholds and automatic email follow-up sequences."
+          "answer": "Included on every tier, with fair use on conversation volume. A scored lead costs 2 credits."
         },
         "q4": {
-          "question": "How long does Lead Qualifier onboarding take?",
-          "answer": "Two weeks. Week 1 installs the script, defines qualification criteria (BANT or MEDDIC), and connects the CRM. Week 2 the bot goes live with manual sample review. After that Clyde runs autonomously with weekly score-threshold calibration."
+          "question": "How does Lead Qualifier get started?",
+          "answer": "You set the qualification questions (budget, timeline, need, decision-maker), fill the knowledge base with your site and documents and place the script. Once the webhook is in place, every lead goes to your CRM."
         },
         "q5": {
           "question": "How does this differ from Intercom or Drift?",
-          "answer": "Intercom and Drift offer chat with human agents and rule-based bots. Clyde combines qualification, scoring, and CRM routing in a single AI skill that learns the brand voice per brand. Cheaper than a Sales Development Rep, faster than a traditional chatbot, with memory across sessions."
+          "answer": "Intercom and Drift offer chat with human agents and rule-based bots. Clyde combines the qualification conversation and the scoring in one skill, with a persona and knowledge base per brand, and passes the lead on to your CRM."
         }
       }
     }
@@ -2519,17 +2519,17 @@
   },
   "skills-email-management": {
     "meta": {
-      "title": "Email Management. Gmail inbox classification | Clyde",
-      "description": "Clyde classifies your Gmail inbox, applies smart labels, sends a daily digest and drafts replies per brand. 5 credits per action, all in your voice."
+      "title": "Email Management. Inbox classification | Clyde",
+      "description": "Clyde classifies your Gmail or Outlook inbox, applies labels, tells you every morning what came in and drafts replies per brand. 5 credits per action."
     },
     "hero": {
       "eyebrow": "Skill 04. Email Management",
-      "title": "Clyde classifies your Gmail inbox.",
-      "subtitle": "Not email campaigns: this is inbox classification. Clyde reads incoming emails, applies smart labels (urgent, action, info), sets priority and sends a daily digest. You start the day with an overview instead of chaos.",
+      "title": "Clyde classifies your inbox.",
+      "subtitle": "Not email campaigns: this is inbox classification for Gmail and Outlook. Clyde reads incoming emails, puts them in the categories you choose, gives every email an urgency and drafts replies. You start the day with an overview instead of chaos.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Summarize today’s most important emails",
-        "prompt2": "Label every invoice and route them to bookkeeping",
+        "prompt2": "Label all of this week's invoices",
         "prompt3": "Which three inbox actions matter today?"
       }
     },
@@ -2538,40 +2538,40 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "AI classification",
-        "body": "Every incoming message in a category: urgent (direct action), action (follow-up needed), info (for awareness), other."
+        "body": "Every incoming message in a category you set per client, such as invoices, leads or client questions, with an urgency from 1 to 5."
       },
       "feature2": {
         "title": "Smart labels",
-        "body": "Automatic labels like \"From brand X\", \"Invoice\", \"Application\" or \"Sales lead\" based on the context."
+        "body": "Status labels like \"To reply\" and \"Waiting on client\", so you see where an email stands. With sender rules you fix what always belongs in which category."
       },
       "feature3": {
-        "title": "Daily digest",
-        "body": "Every morning a summary: top 3 urgent items, open actions and draft replies ready to send."
+        "title": "A notification every morning",
+        "body": "Every morning you see what came in yesterday and how many draft replies are waiting for you."
       },
       "feature4": {
         "title": "Draft replies",
-        "body": "For common emails Clyde suggests a draft reply in your brand voice. Send in one click or edit first."
+        "body": "For common emails Clyde suggests a draft reply in the brand voice. You approve, edit or discard it; it is only sent after approval."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
-        "title": "Connect Gmail (OAuth)",
-        "body": "Connect your Gmail or your client's via OAuth. Read and label permissions only; nothing is sent without review."
+        "title": "Connect Gmail or Outlook",
+        "body": "Connect your own inbox or your client's via OAuth. Clyde may read, label and archive; sending only happens after you approve a draft."
       },
       "step2": {
         "title": "Train the classifier",
-        "body": "Week 1: Clyde classifies, you correct. From week 2: 95% or higher accuracy for your specific context."
+        "body": "Clyde classifies, you correct. He uses every correction as an example for the next email."
       },
       "step3": {
-        "title": "Digest and review",
-        "body": "Daily digest in the dashboard. Send draft replies in one click or edit them in Gmail."
+        "title": "Notification and review",
+        "body": "Every morning a notification in the dashboard. You approve or edit draft replies before they are sent."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "Lead Qualifier: sales emails to leads via a scoring flow.",
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "Brand voice: draft replies use the brand voice and the client's earlier replies.",
       "integration2": "Clyde orchestrator: email context shareable with other skills.",
       "integration3": "Reporting: email volume and response time metrics."
     },
@@ -2600,23 +2600,23 @@
       "items": {
         "q1": {
           "question": "What does the Email Management skill do exactly?",
-          "answer": "Clyde reads incoming emails in Gmail and applies smart labels (urgent, action, info, other) based on content and context. Generates a daily digest of top-3 urgent items with draft replies ready to send. This is inbox classification, not email campaigns."
+          "answer": "Clyde reads incoming emails in Gmail or Outlook, puts them in the categories you set per client and gives every email an urgency from 1 to 5. For common emails he drafts a reply, which is only sent after your approval. This is inbox classification, not email campaigns."
         },
         "q2": {
           "question": "Which email providers does Email Management support?",
-          "answer": "Currently Gmail only (Google Workspace and free accounts) via OAuth. Outlook and custom IMAP are on the roadmap for Q3. Connection refreshes hourly, no email content is stored outside EU servers."
+          "answer": "Gmail (Google Workspace and free accounts) and Outlook, both via OAuth. Clyde checks for new email every fifteen minutes. Emails and labels are stored in our database in the EU. To classify and draft, the text of an email goes to the language model; by default that runs at Anthropic, a US company."
         },
         "q3": {
           "question": "On which tiers is Email Management available?",
-          "answer": "Included on all tiers: Growth 20 classifications per month, Professional 60, Enterprise no cap. Founding Member receives 40 actions per month for life. An action is a classification or a generated draft reply."
+          "answer": "Included on every tier: Growth 20 actions per month, Professional 60, Enterprise no cap, Founding 40. An action is a classification or a draft reply."
         },
         "q4": {
-          "question": "How long does Email Management onboarding take?",
-          "answer": "One week. Day 1 OAuth connection with Gmail. Days 2 through 4 Clyde learns your label patterns by analyzing previous emails (label categories only, no content storage). Day 5 the digest goes live with a manual correction loop. From week 2 classification stabilizes."
+          "question": "How does Email Management get started?",
+          "answer": "You connect the inbox via OAuth and choose the categories. Clyde starts with new email; every correction you make, he takes on board."
         },
         "q5": {
           "question": "How does this differ from SaneBox or Superhuman?",
-          "answer": "SaneBox sorts into folders by sender. Superhuman is a fast email client. Clyde reads content, classifies on intent (lead, invoice, sales question), and generates draft replies in your writing style. Saves the daily scan-and-type hours."
+          "answer": "SaneBox sorts into folders by sender. Superhuman is a fast email client. Clyde reads the content, classifies on intent (lead, invoice, client question) and drafts replies in the brand voice, based on earlier replies."
         }
       }
     }
@@ -3077,13 +3077,13 @@
   },
   "skills-manychat": {
     "meta": {
-      "title": "ManyChat DM. Instagram triggers with AI replies | Clyde",
-      "description": "Clyde manages Instagram DMs with keyword triggers, AI replies, lead capture and CRM routing per brand. 2 credits per 10 DMs, day and night."
+      "title": "ManyChat DM. Instagram DMs with keyword triggers | Clyde",
+      "description": "Clyde answers Instagram DMs and comments with keyword triggers, adds leads to your lead list and writes AI replies as drafts. 2 credits per 10 DMs."
     },
     "hero": {
       "eyebrow": "Skill 11. ManyChat DM",
       "title": "Clyde handles Instagram DMs.",
-      "subtitle": "Keyword triggers (\"INFO\", \"PRICE\") start AI flows that qualify, share information and route warm leads to the CRM. No missed DMs.",
+      "subtitle": "A keyword (\"INFO\", \"PRICE\") in a comment, DM or story reply sends the answer you set, with the link, within about a minute. For other messages Clyde writes a draft, and anyone who responds lands in your lead list.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Auto-answer DMs containing the keyword delivery time",
@@ -3096,48 +3096,48 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Keyword triggers",
-        "body": "Configure \"INFO\", \"FREE\" or \"PRICE\" per post or Reel. As soon as someone sends a DM, the flow starts."
+        "body": "Set a keyword for comments, DMs, story replies or mentions. Whoever sends the keyword gets the answer you set."
       },
       "feature2": {
-        "title": "AI replies in the brand voice",
-        "body": "Not a stiff auto-responder. Clyde talks like the brand. With memory per user and context awareness."
+        "title": "Drafts in the brand voice",
+        "body": "For messages without a keyword, Clyde writes a draft in the brand voice. You read it and send it."
       },
       "feature3": {
-        "title": "Lead capture and CRM routing",
-        "body": "Ask for contact details, qualify and route to HubSpot, Salesforce or the sales team."
+        "title": "Lead capture",
+        "body": "Anyone who responds lands in your lead list, next to the leads from your website chatbot."
       },
       "feature4": {
-        "title": "Performance per trigger",
-        "body": "Which keyword performs, which flow converts, where people drop off. Iteratively improve."
+        "title": "Every reply logged",
+        "body": "Every reply is logged, so you see which keyword works and what to adjust."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
-        "title": "Connect Meta and ManyChat",
-        "body": "Connect Instagram Business via ManyChat. Requires Meta Business approval."
+        "title": "Connect Instagram",
+        "body": "We connect the brand's Instagram account via Instagram Login. Already working with ManyChat? Then those conversations land in the same inbox."
       },
       "step2": {
-        "title": "Keywords and flows",
-        "body": "Per product or campaign: keyword, flow and routing. Clyde suggests flows based on the objective."
+        "title": "Keywords and replies",
+        "body": "Per post or campaign: the keyword and the reply, with the link you want to send the follower to."
       },
       "step3": {
         "title": "Live and monitor",
-        "body": "Clyde replies within seconds. The dashboard shows live conversations, conversions and drop-offs."
+        "body": "A keyword reply goes out within about a minute. In the dashboard you see the conversations and the drafts waiting for you."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
+      "subtitle": "Via the shared memory per client.",
       "integration1": "Social Media: posts trigger DMs via call-to-DM.",
-      "integration2": "Lead Qualifier: DM leads continue through the qualification flow.",
+      "integration2": "Lead Qualifier: DM leads land in the same lead list as the leads from your website.",
       "integration3": "Clyde orchestrator: DM context shareable with other skills."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "E-commerce with Instagram as a channel",
-        "body": "Reel with \"DM PRICE for the price list\". Clyde replies, qualifies and routes to the shop."
+        "body": "Reel with \"DM PRICE for the price list\". Whoever sends PRICE gets the link to the shop and lands in your lead list."
       },
       "useCase2": {
         "title": "Service agencies with Instagram lead-gen",
@@ -3158,23 +3158,23 @@
       "items": {
         "q1": {
           "question": "What does the ManyChat DM skill do exactly?",
-          "answer": "Clyde responds automatically to Instagram DMs with AI-generated answers in the brand voice. You set keyword triggers (for example, 'price' or 'rate'), Clyde responds instantly, captures leads, qualifies intent, and routes warm prospects to your CRM or sales team."
+          "answer": "Clyde answers Instagram DMs, comments and story replies with keyword triggers: whoever sends 'price' or 'info', for example, gets the answer you set, with the link, within about a minute. For other messages Clyde writes a draft in the brand voice that you send. Anyone who responds lands in your lead list."
         },
         "q2": {
           "question": "Which platforms does ManyChat DM support?",
-          "answer": "Currently Instagram DMs, via the official Meta Messenger Platform API and the ManyChat connector. Facebook Messenger and WhatsApp Business as a DM channel for your clients' followers are not connected yet. Clyde himself is already on WhatsApp: for you as the agency and for your client, each with their own connection. Triggers work on exact keywords plus AI intent detection as a fallback."
+          "answer": "Currently Instagram: DMs, comments and story replies, via the official Instagram API. Conversations from ManyChat land in the same inbox. Facebook Messenger and WhatsApp Business as a DM channel for your clients' followers are not connected yet. Clyde himself is already on WhatsApp: for you as the agency and for your client, each with their own connection."
         },
         "q3": {
           "question": "On which tiers is ManyChat DM available?",
-          "answer": "Growth includes 200 DMs per month, Professional 1,000, Enterprise no cap. Founding Member receives 500 DMs monthly for life. Costs 2 credits per 10 DMs."
+          "answer": "Growth 200 DMs per month, Professional 1,000, Enterprise no cap, Founding 500. Ten DMs cost 2 credits."
         },
         "q4": {
-          "question": "How long does ManyChat DM onboarding take?",
-          "answer": "One week. Day 1 OAuth connection with Instagram Business account and ManyChat. Days 2 through 4 you set keyword triggers and qualification flows. Day 5 goes live with manual approval per new flow path. From week 2 it runs autonomously."
+          "question": "How does ManyChat DM get started?",
+          "answer": "We connect the brand's Instagram account and you set the keywords and replies. Keyword replies then go out directly; AI replies stay drafts that you send."
         },
         "q5": {
           "question": "How does this differ from standard ManyChat?",
-          "answer": "Standard ManyChat runs on static flow builders, you write every variant. Clyde adds AI replies in the brand voice per brand plus qualification scoring and automatic CRM routing. Saves the weekly flow-maintenance hour and captures leads ChatGPT bots miss."
+          "answer": "Standard ManyChat runs on flow builders in which you write every variant. Clyde links the keyword replies to your lead list and writes a draft in the brand voice for the other messages. Already working with ManyChat? That keeps working, and those conversations land in the same inbox."
         }
       }
     }
