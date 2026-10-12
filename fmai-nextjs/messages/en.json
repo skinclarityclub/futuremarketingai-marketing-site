@@ -1594,10 +1594,10 @@
     "hero": {
       "eyebrow": "Skill 01. Social Media Manager",
       "title": "Clyde runs your social media.",
-      "subtitle": "Captions in the brand voice, scheduling at optimal times, carousel builder, hashtag research and engagement tracking. Per account, per brand. One colleague for your entire brand portfolio.",
+      "subtitle": "Captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Per account, per brand. One colleague for your entire client portfolio.",
       "cta": "Book a call",
       "prompts": {
-        "prompt1": "Plan the Instagram content for all SKC brands this week",
+        "prompt1": "Plan the Instagram content for the three SKC accounts this week",
         "prompt2": "Draft 5 carousel posts about the winter routine",
         "prompt3": "Which captions perform best on LinkedIn for B2B?"
       }
@@ -1607,19 +1607,19 @@
       "subtitle": "Four core functions, seamlessly integrated. Every output fits the brand voice.",
       "feature1": {
         "title": "AI captions in the brand voice",
-        "body": "Clyde writes posts and captions that sound like the brand. Learned from previously approved content and the brand guidelines. Sharper every week."
+        "body": "Clyde writes posts and captions that sound like the brand, based on previously approved content, the brand guidelines and your corrections."
       },
       "feature2": {
         "title": "Multi-platform scheduling",
-        "body": "Instagram and LinkedIn (other networks via Postiz on request), with automatic optimal timing per account. One content calendar, drag and drop, preview across all channels."
+        "body": "Instagram and LinkedIn (other networks via Postiz on request). One content calendar, drag and drop, preview across all channels."
       },
       "feature3": {
-        "title": "Carousel and story builder",
-        "body": "Educational carousels (3 to 10 slides) and stories with templates in the visual identity. From idea to publish-ready output in one pipeline."
+        "title": "Carousels in the house style",
+        "body": "Educational carousels, usually 5 to 7 slides, with templates in the house style. From idea to publish-ready output in one pipeline."
       },
       "feature4": {
-        "title": "Hashtag research and engagement tracking",
-        "body": "Relevant hashtags per topic, performance per post (likes, comments, saves, shares) and automatic learning for the next round of content."
+        "title": "Performance per post",
+        "body": "Reach, comments, saves and engagement per post. What lands counts towards which content pillars Clyde schedules more often."
       }
     },
     "how": {
@@ -1634,12 +1634,12 @@
       },
       "step3": {
         "title": "Approve and publish",
-        "body": "You review the calendar (drag and drop). After approval Clyde publishes at optimal times and tracks performance."
+        "body": "You review the calendar (drag and drop). After approval Clyde publishes at the scheduled times and tracks performance."
       }
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "The Social Media skill shares context with other skills via the shared memory per brand.",
+      "subtitle": "The Social Media skill shares context with other skills via the shared memory per client.",
       "integration1": "Blog Factory: social posts derived from blog content.",
       "integration2": "Ad Manager: the best-performing organic content becomes ad test material.",
       "integration3": "Reporting: social KPIs in the weekly performance digest."
@@ -1648,11 +1648,11 @@
       "title": "Who this is for",
       "useCase1": {
         "title": "Agencies with 5 to 20 brands",
-        "body": "One Clyde next to your team, with its own brand voice per brand and lessons that travel between accounts."
+        "body": "One Clyde next to your team, with its own brand voice per client. How you work as an agency, he remembers for all clients."
       },
       "useCase2": {
         "title": "Multi-brand operators",
-        "body": "SkinClarity Club already runs 3 Instagram accounts with 4 brands on one Clyde setup. See the case study for concrete output."
+        "body": "SkinClarity Club, our first client, runs 3 Instagram accounts on one Clyde setup, each in its own voice. See the case study for concrete output."
       }
     },
     "allocation": {
@@ -1661,7 +1661,7 @@
     },
     "proof": {
       "title": "SkinClarity Club in action",
-      "subtitle": "Four house brands, three Instagram accounts, each in its own voice. See the case study for screenshots and examples."
+      "subtitle": "Three Instagram accounts, each in its own voice. See the case study for screenshots and examples."
     },
     "cta": {
       "title": "Ready to hand social media over to Clyde?",
@@ -1673,7 +1673,7 @@
       "items": {
         "q1": {
           "question": "What does the Social Media Manager skill do exactly?",
-          "answer": "Clyde manages the full social process for Instagram and LinkedIn, and for other networks we connect through Postiz: AI-generated captions in the brand voice, multi-platform scheduling at optimal times, carousel and story builder, hashtag research, and per-post engagement tracking. One colleague runs multiple brands in parallel without tone bleed."
+          "answer": "Clyde handles the full social process for Instagram and LinkedIn, and for other networks we connect through Postiz: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. One colleague runs multiple brands at once without tones bleeding into each other."
         },
         "q2": {
           "question": "Which platforms and tools does Social Media Manager support?",
@@ -1681,15 +1681,15 @@
         },
         "q3": {
           "question": "On which tiers is Social Media Manager available?",
-          "answer": "Available on all tiers: Founding Member €997 for life with unlimited workspaces, or the workspace-priced tiers Growth €499 per workspace (2-4 brands), Professional €399 (5-14 brands) and Enterprise €299 (15+ brands). Volume scales with credits: 800 per workspace on the workspace-priced tiers, 8,000 on Founding. Carousels and posts cost 1 to 2 credits each."
+          "answer": "Included on every tier. A post or carousel costs 1 to 2 credits. How many credits and workspaces each tier has is on the pricing page."
         },
         "q4": {
-          "question": "How long does Social Media Manager onboarding take?",
-          "answer": "Four weeks. Week 1 Clyde reads previous content, brand guidelines, and audience data. Week 2 produces the first content calendar with per-post approval. Week 3 calibrates on feedback. From week 4 the skill runs autonomously with shorter approval cycles."
+          "question": "How does Social Media Manager get started?",
+          "answer": "Clyde reads in earlier content, brand guidelines and audience data, and you approve the first calendar post by post. How much Clyde may do on his own after that, you decide per task."
         },
         "q5": {
           "question": "How does this differ from Buffer or Later?",
-          "answer": "Buffer and Later are schedulers, not content creators. You or a copywriter still write every caption and visual. Clyde combines creation, scheduling, and publishing in one pipeline with a brand-voice model trained per brand. No more separate tools for copy, visuals, and scheduling."
+          "answer": "Buffer and Later are schedulers, not content creators. You or a copywriter still write every caption and visual. Clyde combines creation, scheduling and publishing in one pipeline, with each client's brand voice as fixed context and your corrections on top. No more separate tools for copy, visuals and scheduling."
         }
       }
     }
@@ -2624,12 +2624,12 @@
   "skills-research": {
     "meta": {
       "title": "Research: market research, trends and competitors | Clyde",
-      "description": "Clyde runs automated market research, trend monitoring and competitor analysis with source citation, right inside your briefings. 3 credits per question."
+      "description": "Clyde does market research, follows trends and analyzes competitors, with a source link for every insight. 3 credits per question."
     },
     "hero": {
       "eyebrow": "Skill 07. Research",
       "title": "Clyde does your market research.",
-      "subtitle": "Trend monitoring in each brand's niche, competitor analysis with benchmarks and content ideas with source citation. Every insight has a source, so you can verify it. No LLM hallucinations as input to your research.",
+      "subtitle": "Trends in each brand's niche, competitor analysis and content ideas, with a source link for every insight so you can check it. In the weekly trend scan, findings with fewer than two sources are dropped.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Research the top-5 competitors in the hydration market",
@@ -2642,7 +2642,7 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Trend monitoring per niche",
-        "body": "Continuous scanning of news sources, social media and search volumes in the specific niche of each brand."
+        "body": "Scheduled research runs per client into market trends, competitors and news in the brand's niche."
       },
       "feature2": {
         "title": "Competitor analysis",
@@ -2650,7 +2650,7 @@
       },
       "feature3": {
         "title": "Content ideas with source citation",
-        "body": "Actionable content proposals with the underlying sources. No \"the AI made this up\". Every claim is verifiable."
+        "body": "Actionable content proposals with the sources attached. No \"the AI made this up\": you see what every proposal rests on."
       },
       "feature4": {
         "title": "Actionable insights",
@@ -2664,8 +2664,8 @@
         "body": "Per brand: which niche, which 3 to 5 key competitors, which keywords and themes do we track?"
       },
       "step2": {
-        "title": "Turn on monitoring",
-        "body": "Clyde runs continuously. News, social and search volumes. Alerts on significant changes."
+        "title": "Research in the background",
+        "body": "Clyde runs scheduled research per client: trends, competitors and news."
       },
       "step3": {
         "title": "Ask what you want to know",
@@ -2674,10 +2674,10 @@
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
+      "subtitle": "Via the shared memory per client.",
       "integration1": "Blog Factory: research data feeds the choice of blog topics.",
       "integration2": "Social Media: trend insights become content proposals.",
-      "integration3": "Ad Manager: competitor analysis improves your own ads."
+      "integration3": "Strategy: research backs up the goals and plans per client."
     },
     "useCases": {
       "title": "Who this is for",
@@ -2687,7 +2687,7 @@
       },
       "useCase2": {
         "title": "Getting up to speed in a new niche",
-        "body": "New client in an industry you are not familiar with? Clyde builds a niche briefing in a day."
+        "body": "New client in an industry you do not know? Clyde prepares a first niche briefing with sources."
       }
     },
     "allocation": {
@@ -2704,23 +2704,23 @@
       "items": {
         "q1": {
           "question": "What does the Research skill do exactly?",
-          "answer": "Clyde runs continuous market research, monitors trends in your niche, analyzes competitors, and delivers actionable insights with source citations. Answers targeted questions (for example, 'what did competitor X launch in the last 30 days') or runs weekly trend scans in the background."
+          "answer": "Clyde does market research, follows trends in your niche, analyzes competitors and delivers insights with source citations. He answers targeted questions (for example, 'what did competitor X launch in the last 30 days') and runs scheduled research in the background."
         },
         "q2": {
           "question": "Which sources does Research use?",
-          "answer": "Web (via Perplexity, Tavily, and Exa APIs), news aggregators, social platforms (Instagram, LinkedIn, TikTok), Meta Ad Library, Google Trends, and custom RSS feeds you add. Every output shows the exact source, date, and relevance score."
+          "answer": "Web research via Perplexity, with the source links attached, supplemented by Firecrawl to read websites, PubMed for scientific sources and the Meta Ad Library for competitor ads. Every insight shows the source with link and title."
         },
         "q3": {
           "question": "On which tiers is Research available?",
-          "answer": "Included on all tiers with fair-use on number of queries. 3 credits per query. Professional adds scheduled weekly trend reports, Enterprise adds custom report cadences and specific competitor watchlists. Founding Member receives lifetime access at 997 EUR."
+          "answer": "Included on every tier, with fair use on the number of questions. A question costs 3 credits."
         },
         "q4": {
-          "question": "How long does Research onboarding take?",
-          "answer": "Three to five days. Day 1 you specify the niche, audience, and competitors. Days 2 through 3 Clyde establishes a baseline trend profile. Day 4 delivers the first weekly report with manual feedback. From day 5 it runs autonomously with a weekly review."
+          "question": "How does Research get started?",
+          "answer": "During onboarding you specify the niche, audience and competitors. Clyde then runs the first research into audience, customer profile and competitors; after that the scheduled runs happen on their own."
         },
         "q5": {
           "question": "How does this differ from Perplexity Pro or Brandwatch?",
-          "answer": "Perplexity Pro answers stand-alone questions without memory. Brandwatch is enterprise social listening. Clyde combines deep web search and social listening with brand-level memory: a trend that was relevant last week is not pulled again, and competitor moves are linked to your earlier analyses."
+          "answer": "Perplexity Pro answers stand-alone questions. Brandwatch is enterprise social listening. Clyde ties the research to the client: findings land in that brand's knowledge, and he does not keep fetching the same question again."
         }
       }
     }
@@ -2884,11 +2884,11 @@
       "subtitle": "Four core functions of this skill.",
       "feature1": {
         "title": "Technical SEO audits",
-        "body": "Periodic crawl: broken links, missing meta tags, slow pages, mobile friendliness and structured data. With a prioritized fix list."
+        "body": "Weekly crawl: broken links, missing meta tags, slow pages, mobile friendliness and structured data. With a prioritized fix list."
       },
       "feature2": {
         "title": "Position tracking",
-        "body": "Daily check of your Google positions for target keywords. Comparison with competitors. Alerts when positions drop."
+        "body": "Your Google positions from Search Console every day, with a notification when a keyword drops. You follow competitors on Core Web Vitals and new pages in their sitemap."
       },
       "feature3": {
         "title": "Core Web Vitals",
@@ -2896,7 +2896,7 @@
       },
       "feature4": {
         "title": "Monitoring of AI citations (GEO)",
-        "body": "Clyde asks ChatGPT and Perplexity questions from your niche. Is your brand mentioned? How often? In what context? A new kind of visibility."
+        "body": "Every week Clyde asks ChatGPT, Perplexity, Gemini and Google AI Overviews questions from your niche. Is your brand mentioned? How often? In what context? A new kind of visibility."
       }
     },
     "how": {
@@ -2907,7 +2907,7 @@
       },
       "step2": {
         "title": "Set up GEO queries",
-        "body": "Which questions would a customer in your niche ask ChatGPT? Clyde asks them regularly and logs the answers."
+        "body": "Which questions would a customer in your niche ask ChatGPT? Clyde asks them every week and logs the answers."
       },
       "step3": {
         "title": "Weekly overview",
@@ -2916,7 +2916,7 @@
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
+      "subtitle": "Via the shared memory per client.",
       "integration1": "Blog Factory: blog articles are tracked on positions.",
       "integration2": "Research: competitor keyword data enriches the strategy.",
       "integration3": "Reporting: SEO and GEO KPIs in the weekly digest."
@@ -2946,23 +2946,23 @@
       "items": {
         "q1": {
           "question": "What does the SEO/GEO skill do exactly?",
-          "answer": "Clyde runs technical SEO audits, tracks keyword rankings in Google, monitors Core Web Vitals, and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Google AI Overviews, Claude). Delivers prioritized fix recommendations ranked by impact and effort."
+          "answer": "Clyde runs technical SEO audits, follows your Google positions via Search Console, monitors Core Web Vitals and tracks how often your brand is mentioned by AI search engines (ChatGPT, Perplexity, Gemini and Google AI Overviews). Delivers prioritized fix recommendations ranked by impact and effort."
         },
         "q2": {
           "question": "Which tools and APIs are used?",
-          "answer": "Lighthouse and PageSpeed Insights for Core Web Vitals, Ahrefs or Semrush for keyword tracking (your existing seat), schema validators for structured-data audits, and direct Perplexity and Otterly probes for AI citation monitoring. Output consolidates into a weekly report."
+          "answer": "PageSpeed Insights and Chrome user data (CrUX) for Core Web Vitals, Google Search Console for your positions, our own crawler that checks, among other things, whether structured data is present, and questions to ChatGPT, Perplexity, Gemini and Google AI Overviews for AI citations. Everything comes together in the weekly report."
         },
         "q3": {
           "question": "On which tiers is SEO/GEO available?",
-          "answer": "Included on all tiers with fair-use on number of audits. 5 credits per audit, 3 credits per short report. Professional adds automatic monthly audits, Enterprise adds custom alert thresholds and SERP snapshot tracking. Founding Member receives lifetime full access."
+          "answer": "Included on every tier. An audit costs 5 credits, a short report 3. The weekly crawl and the monthly report run for everyone."
         },
         "q4": {
-          "question": "How long does SEO/GEO onboarding take?",
-          "answer": "One week. Day 1 connects Search Console, Ahrefs or Semrush, and Google Analytics. Days 2 through 4 Clyde runs the baseline audit and GEO citation probe. Day 5 delivers the first action plan with top-10 fixes. From week 2 monitoring runs autonomously with weekly digest."
+          "question": "How does SEO/GEO get started?",
+          "answer": "You connect Search Console and Google Analytics; Clyde crawls the site and asks the first AI questions. After that positions come in daily and AI citations weekly, with the SEO report every Friday."
         },
         "q5": {
           "question": "How does this differ from Ahrefs or Semrush?",
-          "answer": "Ahrefs and Semrush are data tools, you interpret. Clyde combines SEO and GEO (AI citations), interprets the data, and recommends by urgency. Example: 'your Service schema is missing on skill page X, fix this within 1 hour, 12 percent chance of rich-result lift'."
+          "answer": "Ahrefs and Semrush are data tools, you interpret. Clyde combines SEO and GEO (AI citations), interprets the data and recommends by urgency. Example: 'your product page dropped four positions this week and loads slowly on mobile; start there.'"
         }
       }
     },
@@ -2974,15 +2974,15 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: your agency's AI colleague | Clyde",
-      "description": "Clyde, your agency's AI colleague, in every screen of your dashboard and on WhatsApp. Commands in natural language, orchestration of all skills, memory per brand. 1 to 5 credits per conversation."
+      "description": "Clyde, your agency's AI colleague, in every screen of your dashboard and on WhatsApp. Commands in plain language, every skill through one point of contact, memory per client. 1 to 5 credits per conversation."
     },
     "hero": {
       "eyebrow": "Skill 10. Clyde, the AI colleague",
       "title": "This is Clyde. Your agency's AI colleague.",
-      "subtitle": "The other 11 skills are separate tools. Clyde is the colleague who directs them and who watches every screen of your dashboard. Give commands in natural language; Clyde routes to the right skill and brings the results back. Reachable in the dashboard, on WhatsApp and via Telegram.",
+      "subtitle": "The other skills (nine live, two in development) are specialized executors. Clyde is the colleague who puts them to work and who looks along in every screen of your dashboard. Give commands in plain language; Clyde picks the right skill and brings the results back. Reachable in the dashboard, on WhatsApp and via Telegram.",
       "cta": "Book a call",
       "prompts": {
-        "prompt1": "Plan this week for all SKC brands, Reels included",
+        "prompt1": "Plan this week for the three SKC accounts",
         "prompt2": "Build a weekly report on the top performing posts",
         "prompt3": "Which skill is running which campaign this sprint?"
       }
@@ -2995,23 +2995,23 @@
         "body": "\"Write 3 Instagram posts for brand X about topic Y.\" Clyde understands the context and executes."
       },
       "feature2": {
-        "title": "Orchestration of every skill",
-        "body": "Workflows across skills: write a blog, derive social posts, measure performance. One command, multiple skills."
+        "title": "One point of contact for every skill",
+        "body": "You do not need to know which skill does what. Ask Clyde for a blog, a post or a report and he puts the right one to work."
       },
       "feature3": {
         "title": "In every screen and on WhatsApp",
         "body": "Clyde sits in every screen of the dashboard. Outside it you reach him on WhatsApp or Telegram, and he messages you himself when something deviates or waits for your approval."
       },
       "feature4": {
-        "title": "Memory and context per brand",
-        "body": "Remembers past conversations, preferences and corrections. Sharper every week, per brand."
+        "title": "Memory per client",
+        "body": "Remembers past conversations, preferences and corrections, separately per client. He takes your corrections into the next request."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
         "title": "Choose your channel",
-        "body": "The panel in your dashboard, WhatsApp or Telegram. On every channel Clyde knows the same brand."
+        "body": "The panel in your dashboard, WhatsApp or Telegram. On every channel Clyde works from the same memory."
       },
       "step2": {
         "title": "Give a command",
@@ -3024,16 +3024,16 @@
     },
     "integrations": {
       "title": "Works together with",
-      "subtitle": "Via the shared memory per brand.",
-      "integration1": "All other 11 skills: Clyde is the orchestrator.",
-      "integration2": "Memory system: context per brand, per account and per channel.",
+      "subtitle": "Via the shared memory per client.",
+      "integration1": "The other skills (nine live, two in development): Clyde puts them to work.",
+      "integration2": "Memory: per client, from conversations, feedback and the strategy.",
       "integration3": "Routines: recurring tasks such as a channel report, an SEO plan and an SEO report. Per task you choose whether Clyde asks first, runs and reports, or runs silently."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
         "title": "One interface for your entire portfolio",
-        "body": "Instead of opening 12 tools: ask Clyde in the chat. He knows which brand is which and which skill to call."
+        "body": "Instead of opening screen after screen: ask Clyde in the chat. He knows which client has which brand and which skill to put to work."
       },
       "useCase2": {
         "title": "Delegate instead of execute",
@@ -3054,23 +3054,23 @@
       "items": {
         "q1": {
           "question": "What is Clyde exactly?",
-          "answer": "Clyde is the AI colleague that orchestrates the 11 other skills. Give instructions in plain language (English or Dutch) and Clyde routes to the right skill: write a blog, schedule social posts, build a Reel, run an SEO audit. Works in the dashboard, on WhatsApp and via Telegram."
+          "answer": "Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language (Dutch or English) and Clyde picks the right skill: write a blog, plan social posts, run an SEO audit. Works in the dashboard, on WhatsApp and via Telegram."
         },
         "q2": {
           "question": "Which channels does Clyde support?",
-          "answer": "In every screen of your dashboard, on WhatsApp via a connected number, and via Telegram. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Approving happens in the dashboard. On every channel Clyde works from the same memory per brand."
+          "answer": "In every screen of your dashboard, on WhatsApp via a connected number, and via Telegram. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Approving happens in the dashboard. On every channel Clyde works from the same memory per client."
         },
         "q3": {
           "question": "On which tiers is Clyde available?",
-          "answer": "Clyde is included on every tier, it is not a separate skill but the base layer. Enterprise adds custom persona settings and brand-voice fine-tuning. Costs 1 to 5 credits per conversation."
+          "answer": "Clyde is included on every tier; he is not a separate skill but the base layer. A conversation costs 1 to 5 credits, depending on the language model."
         },
         "q4": {
           "question": "How long does Clyde onboarding take?",
-          "answer": "Four weeks of full platform onboarding. Week 1 connections and knowledge base. Week 2 brand-voice modeling and approval workflows. Week 3 first autonomous runs with manual sample review. Week 4 calibration. After that: continuous learning via dream cycles and Sindy-style portfolio learning."
+          "answer": "The whole platform is set up in four weeks: connecting and gathering knowledge, setting up brand voice and approvals, first assignments and adjusting. After that Clyde keeps learning: every night he organizes what he learned about your clients that day."
         },
         "q5": {
           "question": "How does Clyde differ from ChatGPT or Claude?",
-          "answer": "ChatGPT and Claude are stand-alone models without working memory, integrations, or brand-voice training. Clyde is an AI colleague with 4-layer per-brand memory, native CMS and CRM integrations, autonomous workflows, and consistent brand voice. No need to re-explain context every session."
+          "answer": "ChatGPT and Claude are general assistants: they do not know your clients and are not in your channels. Clyde is an AI colleague with his own memory per client, connections to your channels and data, and each client's brand voice as fixed context. No need to re-explain context every session."
         }
       }
     }

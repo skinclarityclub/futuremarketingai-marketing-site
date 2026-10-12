@@ -1594,10 +1594,10 @@
     "hero": {
       "eyebrow": "Habilidad 01. Social Media Manager",
       "title": "Clyde se encarga de tus redes sociales.",
-      "subtitle": "Copys en la voz de marca, programación en los horarios óptimos, constructor de carruseles, investigación de hashtags y seguimiento de engagement. Por cuenta, por marca. Un compañero de IA para toda tu cartera de clientes.",
+      "subtitle": "Copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Por cuenta, por marca. Un compañero para toda tu cartera de clientes.",
       "cta": "Agenda una llamada",
       "prompts": {
-        "prompt1": "Planifica el contenido de Instagram de todas las marcas SKC esta semana",
+        "prompt1": "Planifica el contenido de Instagram de las tres cuentas de SKC esta semana",
         "prompt2": "Crea 5 carruseles sobre la rutina de invierno",
         "prompt3": "¿Qué pies de foto rinden mejor en LinkedIn para B2B?"
       }
@@ -1607,19 +1607,19 @@
       "subtitle": "Cuatro funciones esenciales, integradas sin fisuras. Cada salida encaja en la voz de marca.",
       "feature1": {
         "title": "Copys AI en la voz de marca",
-        "body": "Clyde escribe posts y copys que suenan a la marca. Aprende del contenido aprobado anteriormente y de las directrices de marca. Más afinado cada semana."
+        "body": "Clyde escribe posts y copys que suenan a la marca, a partir del contenido aprobado antes, las directrices de marca y tus correcciones."
       },
       "feature2": {
         "title": "Programación multiplataforma",
-        "body": "Instagram y LinkedIn (otras redes vía Postiz bajo petición), con horarios óptimos automáticos por cuenta. Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
+        "body": "Instagram y LinkedIn (otras redes vía Postiz bajo petición). Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
       },
       "feature3": {
-        "title": "Constructor de carruseles y stories",
-        "body": "Carruseles educativos (de 3 a 10 diapositivas) y stories con plantillas en la identidad visual. De la idea a la salida lista para publicar en un solo flujo."
+        "title": "Carruseles con el estilo de la marca",
+        "body": "Carruseles educativos, normalmente de 5 a 7 diapositivas, con plantillas en el estilo de la marca. De la idea a la pieza lista para publicar en un solo flujo."
       },
       "feature4": {
-        "title": "Investigación de hashtags y seguimiento de engagement",
-        "body": "Hashtags relevantes por tema, rendimiento por post (likes, comentarios, guardados, compartidos) y aprendizaje automático para el siguiente contenido."
+        "title": "Rendimiento por post",
+        "body": "Alcance, comentarios, guardados e interacción por post. Lo que funciona influye en qué pilares de contenido programa Clyde con más frecuencia."
       }
     },
     "how": {
@@ -1634,12 +1634,12 @@
       },
       "step3": {
         "title": "Aprobar y publicar",
-        "body": "Tú revisas el calendario (arrastrar y soltar). Tras la aprobación, Clyde publica en los horarios óptimos y mide el rendimiento."
+        "body": "Tú revisas el calendario (arrastrar y soltar). Tras la aprobación, Clyde publica en los horarios programados y mide el rendimiento."
       }
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por marca.",
+      "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por cliente.",
       "integration1": "Blog Factory: posts sociales derivados del contenido del blog.",
       "integration2": "Ad Manager: el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
       "integration3": "Reporting: KPIs sociales en el informe semanal de rendimiento."
@@ -1648,11 +1648,11 @@
       "title": "Para quién",
       "useCase1": {
         "title": "Agencias con 5 a 20 marcas",
-        "body": "Un Clyde junto a tu equipo, con su propia voz de marca por marca y aprendizajes que pasan de una cuenta a otra."
+        "body": "Un Clyde junto a tu equipo, con una voz de marca propia por cliente. Cómo trabajáis como agencia, lo recuerda para todos los clientes."
       },
       "useCase2": {
         "title": "Operadores multimarca",
-        "body": "SkinClarity Club ya gestiona 3 cuentas de Instagram con 4 marcas en una sola configuración de Clyde. Consulta el caso de estudio para ver los resultados concretos."
+        "body": "SkinClarity Club, nuestro primer cliente, gestiona 3 cuentas de Instagram con una sola configuración de Clyde, cada una con su propia voz. Consulta el caso de estudio para ver resultados concretos."
       }
     },
     "allocation": {
@@ -1661,7 +1661,7 @@
     },
     "proof": {
       "title": "SkinClarity Club en acción",
-      "subtitle": "Cuatro marcas propias, tres cuentas de Instagram, cada una con su propia voz. Consulta el caso de estudio para ver capturas y ejemplos."
+      "subtitle": "Tres cuentas de Instagram, cada una con su propia voz. Consulta el caso de estudio para ver capturas y ejemplos."
     },
     "cta": {
       "title": "¿Listo para ceder las redes sociales a Clyde?",
@@ -1673,23 +1673,23 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Social Media Manager?",
-          "answer": "Clyde gestiona el proceso social completo para Instagram y LinkedIn, y para otras redes que conectamos vía Postiz: copys IA en la voz de marca, programación multi-plataforma en horarios óptimos, constructor de carruseles y stories, investigación de hashtags y seguimiento de engagement por post. Un solo compañero de IA gestiona varias marcas en paralelo sin mezclar tonos."
+          "answer": "Clyde gestiona el proceso social completo para Instagram y LinkedIn, y para otras redes que conectamos vía Postiz: copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Un solo compañero gestiona varias marcas a la vez sin que se mezclen los tonos."
         },
         "q2": {
           "question": "¿Qué plataformas y herramientas soporta Social Media Manager?",
-          "answer": "Publicación en Instagram vía la API de Meta y en LinkedIn vía Postiz; otras redes las conectamos vía Postiz bajo petición. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se formatean con plantillas en tu estilo de casa. Los posts programados pueden pasar por un flujo de aprobación antes de publicar."
+          "answer": "Publicación en Instagram vía la API de Meta y en LinkedIn vía Postiz; otras redes las conectamos vía Postiz bajo petición. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se maquetan con plantillas en el estilo de tu marca. Los posts programados pueden pasar por un flujo de aprobación antes de publicarse."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Social Media Manager?",
-          "answer": "Disponible en todos los niveles: Founding Member 997 € de por vida con espacios ilimitados, o los niveles facturados por espacio Growth 499 € por espacio (2-4 marcas), Professional 399 € (5-14 marcas) y Enterprise 299 € (15+ marcas). El volumen escala con los créditos: 800 por espacio en los niveles facturados por espacio, 8.000 en Founding. Carruseles y posts cuestan 1 a 2 créditos cada uno."
+          "answer": "Incluido en todos los tiers. Un post o carrusel cuesta de 1 a 2 créditos. Cuántos créditos y espacios de trabajo tiene cada tier está en la página de precios."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Social Media Manager?",
-          "answer": "Cuatro semanas. Semana 1 Clyde lee contenido previo, guías de marca y datos de audiencia. Semana 2 produce el primer calendario de contenido con aprobación por post. Semana 3 calibra con feedback. Desde la semana 4 la habilidad opera autónoma con ciclos de aprobación más cortos."
+          "question": "¿Cómo se pone en marcha Social Media Manager?",
+          "answer": "Clyde lee el contenido anterior, las directrices de marca y los datos de audiencia, y el primer calendario lo apruebas post a post. Cuánto puede hacer Clyde por su cuenta después lo decides tú, tarea por tarea."
         },
         "q5": {
           "question": "¿En qué se diferencia de Buffer o Later?",
-          "answer": "Buffer y Later son programadores, no creadores de contenido. Tú o un copywriter siguen escribiendo cada copy y visual. Clyde combina creación, programación y publicación en un solo pipeline con un modelo de voz de marca entrenado por marca. No más herramientas separadas para copy, visuales y programación."
+          "answer": "Buffer y Later son programadores, no creadores de contenido. Tú o un copywriter seguís escribiendo cada copy y cada visual. Clyde combina creación, programación y publicación en un solo flujo, con la voz de marca de cada cliente como contexto fijo y tus correcciones encima. Se acabaron las herramientas separadas para copy, visuales y programación."
         }
       }
     }
@@ -2624,12 +2624,12 @@
   "skills-research": {
     "meta": {
       "title": "Research. Estudio de mercado y competencia | Clyde",
-      "description": "Investigación de mercado automatizada, seguimiento de tendencias y análisis de competencia con citación de fuentes. 3 créditos por consulta."
+      "description": "Clyde investiga el mercado, sigue tendencias y analiza a la competencia, con un enlace a la fuente en cada insight. 3 créditos por consulta."
     },
     "hero": {
       "eyebrow": "Habilidad 07. Research",
       "title": "Clyde hace tu estudio de mercado.",
-      "subtitle": "Seguimiento de tendencias en el nicho de cada marca, análisis de competencia con benchmarks e ideas de contenido con citas. Cada insight tiene una fuente para que puedas verificarlo. Nada de alucinaciones de LLM como base de tu investigación.",
+      "subtitle": "Tendencias en el nicho de cada marca, análisis de competencia e ideas de contenido, con un enlace a la fuente en cada insight para que puedas comprobarlo. En el escaneo semanal de tendencias se descartan los hallazgos con menos de dos fuentes.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Investiga los 5 principales competidores en hidratación",
@@ -2642,7 +2642,7 @@
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
         "title": "Seguimiento de tendencias por nicho",
-        "body": "Escaneo continuo de fuentes de noticias, redes sociales y volúmenes de búsqueda en el nicho específico de cada marca."
+        "body": "Investigaciones programadas por cliente sobre tendencias de mercado, competidores y noticias del nicho de la marca."
       },
       "feature2": {
         "title": "Análisis de competencia",
@@ -2650,7 +2650,7 @@
       },
       "feature3": {
         "title": "Ideas de contenido con citas",
-        "body": "Propuestas de contenido aplicables con las fuentes que las sustentan. Nada de \"la AI se lo inventó\". Cada afirmación es verificable."
+        "body": "Propuestas de contenido aplicables con sus fuentes. Nada de \"la IA se lo inventó\": ves en qué se basa cada propuesta."
       },
       "feature4": {
         "title": "Insights aplicables",
@@ -2664,8 +2664,8 @@
         "body": "Por marca: qué nicho, cuáles son los 3 a 5 competidores principales y qué palabras clave y temas seguimos."
       },
       "step2": {
-        "title": "Activar el seguimiento",
-        "body": "Clyde funciona de forma continua. Noticias, redes sociales y volúmenes de búsqueda. Alertas ante cambios significativos."
+        "title": "Investigación en segundo plano",
+        "body": "Clyde ejecuta investigaciones programadas por cliente: tendencias, competidores y noticias."
       },
       "step3": {
         "title": "Pregunta lo que quieras saber",
@@ -2674,10 +2674,10 @@
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
+      "subtitle": "A través de la memoria compartida por cliente.",
       "integration1": "Blog Factory: los datos de investigación alimentan la elección de temas de blog.",
       "integration2": "Social Media: los insights de tendencias se convierten en propuestas de contenido.",
-      "integration3": "Ad Manager: el análisis de competencia mejora tus propios anuncios."
+      "integration3": "Estrategia: la investigación respalda los objetivos y planes por cliente."
     },
     "useCases": {
       "title": "Para quién",
@@ -2687,7 +2687,7 @@
       },
       "useCase2": {
         "title": "Ponerse al día rápido en un nicho nuevo",
-        "body": "¿Cliente nuevo en un sector que no conoces? Clyde construye un briefing del nicho en un día."
+        "body": "¿Cliente nuevo en un sector que no conoces? Clyde prepara un primer briefing del nicho con fuentes."
       }
     },
     "allocation": {
@@ -2704,23 +2704,23 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Research?",
-          "answer": "Clyde realiza investigación de mercado continua, monitoriza tendencias en tu nicho, analiza competidores y entrega insights accionables con citas de fuente. Responde a preguntas concretas (por ejemplo, 'qué lanzó el competidor X en los últimos 30 días') o ejecuta escaneos de tendencias semanales en segundo plano."
+          "answer": "Clyde investiga el mercado, sigue las tendencias de tu nicho, analiza competidores y entrega insights con sus fuentes. Responde preguntas concretas (por ejemplo, 'qué lanzó el competidor X en los últimos 30 días') y ejecuta investigaciones programadas en segundo plano."
         },
         "q2": {
           "question": "¿Qué fuentes utiliza Research?",
-          "answer": "Web (via APIs de Perplexity, Tavily y Exa), agregadores de noticias, plataformas sociales (Instagram, LinkedIn, TikTok), Meta Ad Library, Google Trends y feeds RSS personalizados que añadas. Cada salida muestra la fuente exacta, la fecha y la puntuación de relevancia."
+          "answer": "Investigación web con Perplexity, con los enlaces a las fuentes, complementada con Firecrawl para leer webs, PubMed para fuentes científicas y la Meta Ad Library para los anuncios de la competencia. Cada insight muestra la fuente con enlace y título."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Research?",
-          "answer": "Incluido en todos los tiers con uso justo sobre número de queries. 3 créditos por consulta. Professional añade informes de tendencias semanales programados, Enterprise añade cadencias de informe personalizadas y watchlists de competidores específicos. Founding Member recibe acceso de por vida a 997 EUR."
+          "answer": "Incluido en todos los tiers, con uso justo en el número de consultas. Una consulta cuesta 3 créditos."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de Research?",
-          "answer": "De tres a cinco días. Día 1 especificas el nicho, audiencia y competidores. Días 2 a 3 Clyde establece un perfil de tendencia base. Día 4 entrega el primer informe semanal con feedback manual. Desde el día 5 opera autónomo con revisión semanal."
+          "question": "¿Cómo se pone en marcha Research?",
+          "answer": "En el onboarding indicas el nicho, el público y los competidores. Clyde hace entonces las primeras investigaciones sobre público, perfil de cliente y competidores; después las investigaciones programadas funcionan solas."
         },
         "q5": {
           "question": "¿En qué se diferencia de Perplexity Pro o Brandwatch?",
-          "answer": "Perplexity Pro responde preguntas aisladas sin memoria. Brandwatch es social listening empresarial. Clyde combina búsqueda web profunda y social listening con memoria a nivel de marca: una tendencia que fue relevante la semana pasada no se vuelve a recuperar, y los movimientos de competidores se enlazan con tus análisis previos."
+          "answer": "Perplexity Pro responde preguntas aisladas. Brandwatch es social listening empresarial. Clyde vincula la investigación al cliente: los hallazgos se suman al conocimiento de esa marca, y no vuelve a buscar una y otra vez la misma pregunta."
         }
       }
     }
@@ -2884,11 +2884,11 @@
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
         "title": "Auditorías técnicas SEO",
-        "body": "Rastreo periódico: enlaces rotos, meta tags ausentes, páginas lentas, mobile friendliness y structured data. Con lista priorizada de arreglos."
+        "body": "Rastreo semanal: enlaces rotos, meta tags que faltan, páginas lentas, adaptación a móvil y datos estructurados. Con una lista priorizada de arreglos."
       },
       "feature2": {
         "title": "Seguimiento de posiciones",
-        "body": "Comprobación diaria de tus posiciones en Google para las palabras clave objetivo. Comparación con competidores. Alertas si las posiciones bajan."
+        "body": "Tus posiciones en Google desde Search Console cada día, con un aviso cuando una palabra clave baja. A los competidores los sigues por Core Web Vitals y por las páginas nuevas de su sitemap."
       },
       "feature3": {
         "title": "Core Web Vitals",
@@ -2896,7 +2896,7 @@
       },
       "feature4": {
         "title": "Monitorización de citaciones AI (GEO)",
-        "body": "Clyde lanza preguntas de tu nicho a ChatGPT y Perplexity. ¿Se menciona tu marca? ¿Con qué frecuencia? ¿En qué contexto? Un nuevo tipo de visibilidad."
+        "body": "Cada semana Clyde lanza preguntas de tu nicho a ChatGPT, Perplexity, Gemini y Google AI Overviews. ¿Se menciona tu marca? ¿Con qué frecuencia? ¿En qué contexto? Un nuevo tipo de visibilidad."
       }
     },
     "how": {
@@ -2907,7 +2907,7 @@
       },
       "step2": {
         "title": "Configurar las consultas GEO",
-        "body": "¿Qué preguntas haría un cliente de tu nicho a ChatGPT? Clyde las hace con regularidad y registra las respuestas."
+        "body": "¿Qué preguntas haría un cliente de tu nicho a ChatGPT? Clyde las hace cada semana y registra las respuestas."
       },
       "step3": {
         "title": "Resumen semanal",
@@ -2916,7 +2916,7 @@
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
+      "subtitle": "A través de la memoria compartida por cliente.",
       "integration1": "Blog Factory: se hace seguimiento de las posiciones de los artículos.",
       "integration2": "Research: los datos de palabras clave de la competencia enriquecen la estrategia.",
       "integration3": "Reporting: KPIs de SEO y GEO en el informe semanal."
@@ -2946,23 +2946,23 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad SEO/GEO?",
-          "answer": "Clyde ejecuta auditorías técnicas SEO, sigue rankings de palabras clave en Google, monitoriza Core Web Vitals y registra cuántas veces tu marca es citada por motores de búsqueda IA (ChatGPT, Perplexity, Google AI Overviews, Claude). Entrega recomendaciones priorizadas según impacto y esfuerzo."
+          "answer": "Clyde hace auditorías técnicas de SEO, sigue tus posiciones en Google a través de Search Console, monitoriza los Core Web Vitals y registra cuántas veces mencionan tu marca los buscadores de IA (ChatGPT, Perplexity, Gemini y Google AI Overviews). Entrega recomendaciones de arreglos priorizadas según impacto y esfuerzo."
         },
         "q2": {
           "question": "¿Qué herramientas y APIs se usan?",
-          "answer": "Lighthouse y PageSpeed Insights para Core Web Vitals, Ahrefs o Semrush para tracking de keywords (tu seat existente), validadores de schema para auditorías de structured data y sondeos directos a Perplexity y Otterly para monitorización de citas IA. La salida se consolida en un informe semanal."
+          "answer": "PageSpeed Insights y los datos de usuarios de Chrome (CrUX) para los Core Web Vitals, Google Search Console para tus posiciones, un rastreador propio que comprueba, entre otras cosas, si hay datos estructurados, y preguntas a ChatGPT, Perplexity, Gemini y Google AI Overviews para las citas en IA. Todo se reúne en el informe semanal."
         },
         "q3": {
           "question": "¿En qué tiers está disponible SEO/GEO?",
-          "answer": "Incluido en todos los tiers con uso justo sobre número de auditorías. 5 créditos por auditoría, 3 créditos por informe corto. Professional añade auditorías mensuales automáticas, Enterprise añade umbrales de alerta personalizados y tracking de snapshots SERP. Founding Member recibe acceso completo de por vida."
+          "answer": "Incluido en todos los tiers. Una auditoría cuesta 5 créditos, un informe corto 3. El rastreo semanal y el informe mensual funcionan para todos."
         },
         "q4": {
-          "question": "¿Cuánto dura el onboarding de SEO/GEO?",
-          "answer": "Una semana. Día 1 conecta Search Console, Ahrefs o Semrush y Google Analytics. Días 2 a 4 Clyde ejecuta la auditoría base y la sonda GEO de citaciones. Día 5 entrega el primer plan de acción con top-10 fixes. Desde la semana 2 la monitorización opera autónoma con digest semanal."
+          "question": "¿Cómo se pone en marcha SEO/GEO?",
+          "answer": "Conectas Search Console y Google Analytics; Clyde rastrea la web y hace las primeras preguntas a la IA. Después las posiciones llegan a diario y las citas en IA cada semana, con el informe de SEO cada viernes."
         },
         "q5": {
           "question": "¿En qué se diferencia de Ahrefs o Semrush?",
-          "answer": "Ahrefs y Semrush son herramientas de datos, tú interpretas. Clyde combina SEO y GEO (citas IA), interpreta los datos y recomienda por urgencia. Ejemplo: 'falta tu schema Service en la página de habilidad X, arregla esto en 1 hora, 12 por ciento de probabilidad de lift en rich-result'."
+          "answer": "Ahrefs y Semrush son herramientas de datos, tú interpretas. Clyde combina SEO y GEO (citas en IA), interpreta los datos y recomienda por urgencia. Ejemplo: 'tu página de producto bajó cuatro posiciones esta semana y carga lenta en móvil; empieza por ahí.'"
         }
       }
     },
@@ -2974,15 +2974,15 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: el compañero de IA de tu agencia | Clyde",
-      "description": "Órdenes en lenguaje natural, orquestación de habilidades, multicanal (chat, Slack, Telegram), memoria por marca. 1 a 5 créditos."
+      "description": "Clyde, el compañero de IA de tu agencia, en cada pantalla de tu panel y en WhatsApp. Órdenes en lenguaje natural, todas las habilidades a través de un solo interlocutor, memoria por cliente. De 1 a 5 créditos por conversación."
     },
     "hero": {
       "eyebrow": "Habilidad 10. Clyde, el compañero de IA",
       "title": "Este es Clyde. El compañero de IA de tu agencia.",
-      "subtitle": "Las otras 11 habilidades son herramientas sueltas. Clyde es el compañero que las orquesta. Da las órdenes en lenguaje natural; Clyde activa la habilidad correcta y te trae los resultados. Funciona por chat, Slack y Telegram.",
+      "subtitle": "Las demás habilidades (nueve en vivo, dos en desarrollo) son ejecutoras especializadas. Clyde es el compañero que las pone a trabajar y que te acompaña en cada pantalla de tu panel. Da órdenes en lenguaje natural; Clyde elige la habilidad correcta y te trae los resultados. Disponible en el panel, en WhatsApp y por Telegram.",
       "cta": "Agenda una llamada",
       "prompts": {
-        "prompt1": "Planifica esta semana para todas las marcas SKC, Reels incluidos",
+        "prompt1": "Planifica esta semana para las tres cuentas de SKC",
         "prompt2": "Crea un informe semanal de las publicaciones con mejor rendimiento",
         "prompt3": "¿Qué habilidad gestiona cada campaña en este sprint?"
       }
@@ -2995,23 +2995,23 @@
         "body": "\"Escribe 3 posts de Instagram para la marca X sobre el tema Y.\" Clyde entiende el contexto y ejecuta."
       },
       "feature2": {
-        "title": "Orquestación de todas las habilidades",
-        "body": "Flujos entre habilidades: escribir un blog, derivar posts sociales y medir el rendimiento. Una sola orden, varias habilidades."
+        "title": "Un solo interlocutor para todas las habilidades",
+        "body": "No necesitas saber qué habilidad hace qué. Pide a Clyde un blog, un post o un informe y él pone a trabajar la adecuada."
       },
       "feature3": {
         "title": "Multicanal",
-        "body": "Chat en el panel, integración con Slack y bot de Telegram. Clyde está donde trabajas."
+        "body": "Clyde está en cada pantalla del panel. Fuera de él lo encuentras en WhatsApp o Telegram, y él mismo te escribe cuando algo se desvía o espera tu aprobación."
       },
       "feature4": {
-        "title": "Memoria y contexto por marca",
-        "body": "Recuerda conversaciones anteriores, preferencias y correcciones. Cada semana más afinado, por marca."
+        "title": "Memoria por cliente",
+        "body": "Recuerda conversaciones anteriores, preferencias y correcciones, por separado para cada cliente. Tus correcciones las aplica en la siguiente petición."
       }
     },
     "how": {
       "title": "Cómo funciona",
       "step1": {
         "title": "Elige tu canal",
-        "body": "Chat del panel, Slack o Telegram. Clyde funciona en los tres en paralelo."
+        "body": "El panel de tu dashboard, WhatsApp o Telegram. En cada canal Clyde trabaja con la misma memoria."
       },
       "step2": {
         "title": "Da una orden",
@@ -3024,16 +3024,16 @@
     },
     "integrations": {
       "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por marca.",
-      "integration1": "Las otras 11 habilidades: Clyde es el orquestador.",
-      "integration2": "Sistema de memoria: contexto por marca, por cuenta y por canal.",
+      "subtitle": "A través de la memoria compartida por cliente.",
+      "integration1": "Las demás habilidades (nueve en vivo, dos en desarrollo): Clyde las pone a trabajar.",
+      "integration2": "Memoria: por cliente, a partir de conversaciones, feedback y la estrategia.",
       "integration3": "Rutinas: tareas recurrentes (informe semanal, revisión mensual) en automático."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
         "title": "Una interfaz para toda tu cartera",
-        "body": "En lugar de abrir 12 herramientas: pregunta a Clyde en el chat. Sabe qué marca es cuál y qué habilidad debe activar."
+        "body": "En lugar de abrir pantalla tras pantalla: pregunta a Clyde en el chat. Sabe qué cliente tiene qué marca y qué habilidad debe poner a trabajar."
       },
       "useCase2": {
         "title": "Delegar en lugar de ejecutar",
@@ -3054,23 +3054,23 @@
       "items": {
         "q1": {
           "question": "¿Qué es Clyde exactamente?",
-          "answer": "Clyde es el compañero de IA central que orquesta las otras 11 habilidades. Da instrucciones en lenguaje natural (español, neerlandés o inglés) y Clyde enruta a la habilidad correcta: escribe un blog, programa posts sociales, crea un Reel, ejecuta una auditoría SEO. Funciona via chat, Slack, Telegram o WhatsApp."
+          "answer": "Clyde es el compañero de IA que pone a trabajar las demás habilidades. Da instrucciones en lenguaje natural (neerlandés o inglés) y Clyde elige la habilidad correcta: escribir un blog, planificar posts, hacer una auditoría SEO. Funciona en el panel, en WhatsApp y por Telegram."
         },
         "q2": {
           "question": "¿Qué canales soporta Clyde?",
-          "answer": "Panel de chat nativo en tu dashboard, app Slack para equipos de agencia, bot Telegram para 1-a-1, WhatsApp Business via número conectado y email (mensajes reenviados). Clyde mantiene memoria entre canales: una conversación en Slack continúa en WhatsApp."
+          "answer": "En cada pantalla de tu panel, en WhatsApp mediante un número conectado y por Telegram. En WhatsApp preguntas a Clyde cómo van tu contenido y tus cifras, recibes cada viernes el informe semanal de SEO, y él mismo te escribe cuando una cifra se desvía o algo espera tu aprobación. La aprobación se hace en el panel. En cada canal Clyde trabaja con la misma memoria por cliente."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Clyde?",
-          "answer": "Clyde está incluido en cada tier, no es una habilidad separada sino la capa base. Growth y superiores reciben Slack y multi-canal. Enterprise añade ajustes de persona personalizada y fine-tuning de voz de marca. Cuesta 1 a 5 créditos por conversación."
+          "answer": "Clyde está incluido en todos los tiers; no es una habilidad aparte sino la capa base. Una conversación cuesta de 1 a 5 créditos, según el modelo de lenguaje."
         },
         "q4": {
           "question": "¿Cuánto dura el onboarding de Clyde?",
-          "answer": "Cuatro semanas de onboarding completo de plataforma. Semana 1 conexiones y base de conocimiento. Semana 2 modelado de voz de marca y flujos de aprobación. Semana 3 primeras ejecuciones autónomas con revisión manual de muestras. Semana 4 calibración. Después: aprendizaje continuo via ciclos dream y aprendizaje portfolio estilo Sindy."
+          "answer": "Toda la plataforma está lista en cuatro semanas: conectar y reunir conocimiento, configurar la voz de marca y las aprobaciones, primeros encargos y ajustes. Después Clyde sigue aprendiendo: cada noche ordena lo que aprendió ese día sobre tus clientes."
         },
         "q5": {
           "question": "¿En qué se diferencia Clyde de ChatGPT o Claude?",
-          "answer": "ChatGPT y Claude son modelos aislados sin memoria de trabajo, integraciones ni entrenamiento de voz de marca. Clyde es un compañero de IA persistente con memoria de 4 capas por marca, integraciones nativas con CMS y CRM, flujos autónomos y voz de marca consistente. Sin necesidad de re-explicar contexto cada sesión."
+          "answer": "ChatGPT y Claude son asistentes generales: no conocen a tus clientes y no están en tus canales. Clyde es un compañero de IA con su propia memoria por cliente, conexiones con tus canales y datos, y la voz de marca de cada cliente como contexto fijo. Sin necesidad de volver a explicar el contexto en cada sesión."
         }
       }
     }
