@@ -121,15 +121,9 @@ test.describe('No OpenAI References', () => {
     await page.goto('/en')
     await page.waitForLoadState('networkidle')
 
-    // Vercel AI SDK may reference 'openai' as a provider name — filter those
-    // out. Spline runtime also contains "openai" inside a font glyph table /
-    // tokenizer dictionary; skip its bundle too since we ship its WebGL
-    // robot and don't control its internals.
+    // Vercel AI SDK may reference 'openai' as a provider name — filter those out.
     const nonSdkRefs = openaiScripts.filter(
-      (url) =>
-        !url.includes('_ai_') &&
-        !url.includes('ai_dist') &&
-        !url.includes('splinetool'),
+      (url) => !url.includes('_ai_') && !url.includes('ai_dist'),
     )
     expect(nonSdkRefs).toHaveLength(0)
   })

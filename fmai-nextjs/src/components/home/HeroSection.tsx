@@ -1,4 +1,4 @@
-import { HeroSpline } from '@/components/hero/HeroSpline'
+import { HeroVideo } from '@/components/hero/HeroVideo'
 import { HeroSectionDesktop } from './HeroSectionDesktop'
 import { HeroSectionMobile } from './HeroSectionMobile'
 
@@ -15,8 +15,12 @@ interface HeroSectionProps {
   trustClusterTarget: string
   trustClusterFounding: string
   trustClusterAvg: string
-  /** Localized alt for the hero preview image (homepage LCP candidate). */
+  /** Localized description of the loop animation (aria-label on the video). */
   imageAlt: string
+  videoPause: string
+  videoPlay: string
+  /** Only the NL render exists; other locales show the poster (Clyde's logo). */
+  showVideo: boolean
 }
 
 /*
@@ -33,28 +37,33 @@ interface HeroSectionProps {
   role="heading" aria-level={1}. Only one is visible per viewport, so
   there's no screen-reader conflict.
 */
-export function HeroSection({ imageAlt, ...props }: HeroSectionProps) {
+export function HeroSection({ imageAlt, videoPause, videoPlay, showVideo, ...props }: HeroSectionProps) {
   return (
     <section
       aria-label="Hero"
       className="relative min-h-[85dvh] flex items-center px-6 lg:px-12 pt-24 lg:pt-[140px] pb-8 lg:pb-20 overflow-hidden"
     >
-      {/* 3D Robot — internally gates desktop scene vs mobile preview */}
-      <HeroSpline imageAlt={imageAlt} />
-
-      {/* Mobile (server, CSS animations) */}
-      <div className="lg:hidden w-full">
+      <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-12">
         <div className="relative z-10 max-w-[720px]">
-          <HeroSectionMobile {...props} />
-        </div>
-      </div>
+          {/* Mobile (server, CSS animations) */}
+          <div className="lg:hidden">
+            <HeroSectionMobile {...props} />
+          </div>
 
-      {/* Desktop (motion-react, unchanged behaviour) */}
-      <div className="hidden lg:flex lg:flex-row items-center w-full gap-8">
-        <div className="relative z-10 flex-1 max-w-[720px]">
-          <HeroSectionDesktop {...props} />
+          {/* Desktop (motion-react, unchanged behaviour) */}
+          <div className="hidden lg:block">
+            <HeroSectionDesktop {...props} />
+          </div>
         </div>
-        <div className="flex-1" />
+
+        {/* The loop animation plays on desktop only; phones get its poster. */}
+        <HeroVideo
+          src={showVideo ? '/videos/clyde-kring.mp4' : undefined}
+          poster="/images/clyde-kring-poster.webp"
+          label={imageAlt}
+          pauseLabel={videoPause}
+          playLabel={videoPlay}
+        />
       </div>
     </section>
   )

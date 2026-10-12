@@ -102,29 +102,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <PageShell showStickyCta>
       {/*
-        Spline preconnect + prefetch removed 2026-05-27: the prefetch was
-        VeryLow-priority but still occupied bandwidth slots that competed
-        with first-paint resources (CSS, fonts). SplineScene's own idle
-        callback orchestrates the runtime download when needed.
-
-        Desktop hero LCP preload — Next.js 16's `priority` prop on
-        <Image> emits a preload link without `fetchpriority="high"`, so
-        the WebP was getting Low priority in the browser. Adding an
-        explicit preload with the high-priority hint + media-query gate
-        so mobile never preloads it (mobile container is `hidden lg:block`
-        and the entire SplineScene runtime is skipped via matchMedia
-        inside ui/spline.tsx).
-
-        See docs/plans/2026-05-27-hero-perf-audit.md for the full trace.
+        Desktop hero LCP candidate: the poster of the loop video
+        (src/components/hero/HeroVideo.tsx), fetched at high priority. Media-gated
+        because on mobile the poster sits below the fold.
       */}
       <link
         rel="preload"
         as="image"
         fetchPriority="high"
         media="(min-width: 1024px)"
-        href="/_next/image?url=%2Fimages%2Fhero-robot-preview.webp&w=1280&q=75"
-        imageSrcSet="/_next/image?url=%2Fimages%2Fhero-robot-preview.webp&w=1024&q=75 1024w, /_next/image?url=%2Fimages%2Fhero-robot-preview.webp&w=1280&q=75 1280w, /_next/image?url=%2Fimages%2Fhero-robot-preview.webp&w=1536&q=75 1536w, /_next/image?url=%2Fimages%2Fhero-robot-preview.webp&w=1920&q=75 1920w"
-        imageSizes="60vw"
+        href="/images/clyde-kring-poster.webp"
       />
 
       {/*
@@ -173,6 +160,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         })}
         trustClusterAvg={t('hero.trustCluster.avgLabel')}
         imageAlt={t('hero.imageAlt')}
+        videoPause={t('hero.videoPause')}
+        videoPlay={t('hero.videoPlay')}
+        showVideo={locale === 'nl'}
       />
 
       {/* ─────────────────────────────────────────────────────────────

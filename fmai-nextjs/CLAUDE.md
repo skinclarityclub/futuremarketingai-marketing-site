@@ -153,7 +153,7 @@ Bij variable-interpolatie: `{var}` notation, bijv. `"badge": "{taken} van {total
 
 - `VoiceDemoSection` + `VoiceDemoFAB` op `/skills/voice-agent` — bestaande interactieve demo, werkt
 - `DemoPlayground` + `MultiPlatformShowcase` — verhuist naar lead-qualifier in Phase 3, niet vergooien
-- Spline 3D robot (`HeroSpline`) — zware asset, gedeeltelijk optimized, niet vervangen zonder design akkoord
+- Hero-kringvideo (`HeroVideo`, `public/videos/clyde-kring.mp4`) — goedgekeurd beeld uit stream 2b (Daley 2026-10-12); alleen een nieuwe render uit `C:/tmp/fmai-verhaal-beeld/` met status klaar in MANIFEST.md mag hem vervangen
 - `messages/nl.json` keys die actief gebruikt worden — altijd verifiëren via grep vóór verwijderen
 - Hardcoded `futuremarketingai.com` anywhere in code or copy — the domain was unified to `future-marketing.ai` on 2026-04-24. Always use the canonical. Customer-facing email is `hello@future-marketing.ai` except on the legal page which keeps `privacy@future-marketing.ai`.
 

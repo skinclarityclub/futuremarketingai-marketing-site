@@ -13,7 +13,7 @@ export function HeroBackdrop() {
       aria-hidden="true"
       style={{ contain: 'layout style paint' }}
     >
-      {/* Base radial — deep teal anchor top-right (achter de Spline robot) */}
+      {/* Base radial — deep teal anchor top-right (achter de kring-video) */}
       <div
         className="absolute inset-0"
         style={{
