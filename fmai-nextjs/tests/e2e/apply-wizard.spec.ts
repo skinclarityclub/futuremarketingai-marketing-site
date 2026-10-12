@@ -11,7 +11,7 @@ import { test, expect, type Page, type BrowserContext } from '@playwright/test'
 // Helpers
 // ---------------------------------------------------------------------------
 
-const BASE = 'http://localhost:3000'
+const BASE = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000'
 
 async function clearWizardState(context: BrowserContext) {
   await context.addInitScript(() => {
@@ -473,6 +473,16 @@ test.describe('Critical path: mobile 390px viewport', () => {
     const hasResult = await page.getByText(/geweldig/i).count() > 0 ||
                       await page.getByText(/bedankt/i).count() > 0
     expect(hasResult).toBe(true)
+  })
+
+  // Next sits at the bottom of a step; without scrolling to the new step the visitor landed on the footer.
+  test('after Next the new step starts in view, not at the footer', async ({ page, context }) => {
+    await clearWizardState(context)
+    await page.goto(`${BASE}/nl/apply`)
+    await expect(page.locator('#apply-name')).toBeVisible({ timeout: 10_000 })
+    await fillIdentity(page)
+    await expect(page.getByRole('heading', { name: /heb je de AI bureau scan/i })).toBeInViewport({ timeout: 5_000 })
+    await expect(page.locator('footer').last()).not.toBeInViewport()
   })
 })
 

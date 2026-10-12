@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useApplyWizard } from '@/lib/apply/store'
 import { WIZARD_STEP_ORDER } from '@/lib/apply/types'
 import type {
@@ -96,6 +96,18 @@ export function ApplyWizardClient() {
   const goToStep = useApplyWizard((s) => s.goToStep)
   const setResult = useApplyWizard((s) => s.setResult)
   const result = useApplyWizard((s) => s.result)
+  const stepTopRef = useRef<HTMLDivElement>(null)
+  const prefersReducedMotion = useReducedMotion()
+
+  // The Next button sits at the bottom of a step and the old step collapses before the new one
+  // enters, so without this the visitor lands on the footer. Focus follows, because the clicked
+  // button is gone and focus would fall back to <body>.
+  const showNewStep = () => {
+    const top = stepTopRef.current
+    if (!top) return
+    top.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' })
+    top.focus({ preventScroll: true })
+  }
 
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
@@ -168,8 +180,9 @@ export function ApplyWizardClient() {
       ) : null}
 
       <div className="px-6 lg:px-12 pb-32 lg:pb-40">
-        <div className="mx-auto max-w-2xl">
-          <AnimatePresence mode="wait">
+        {/* scroll-mt clears the fixed header, plus the progress bar that sits on top below lg */}
+        <div ref={stepTopRef} tabIndex={-1} className="mx-auto max-w-2xl scroll-mt-32 outline-none lg:scroll-mt-24">
+          <AnimatePresence mode="wait" onExitComplete={showNewStep}>
             <motion.div
               key={step}
               initial={{ opacity: 0, y: 12 }}
