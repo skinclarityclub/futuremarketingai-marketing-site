@@ -2031,57 +2031,57 @@
   },
   "memory": {
     "meta": {
-      "title": "Memoria. Clyde recuerda cada marca | FutureMarketingAI",
-      "description": "Clyde recuerda cada marca por separado: voz de marca, audiencia, KPIs y lo que funcionó antes. Aislamiento por cliente, mejor cada semana."
+      "title": "Memoria: Clyde recuerda a cada cliente | FutureMarketingAI",
+      "description": "Por cliente, Clyde recuerda la voz de marca, el público, los objetivos y lo acordado. Cada cliente con su propia memoria, actualizada cada noche."
     },
     "hero": {
-      "eyebrow": "Memoria por marca",
-      "headlineMain": "Clyde lo recuerda todo.",
-      "headlineAccent": "Por marca, para siempre.",
-      "subtitle": "Esta es la diferencia entre un prompt de AI genérico y un compañero de IA: la memoria. Clyde recuerda tu voz de marca, audiencia, objetivos y lo que funcionó antes. Cada semana conoce mejor tus marcas."
+      "eyebrow": "Memoria por cliente",
+      "headlineMain": "Clyde recuerda a tus clientes.",
+      "headlineAccent": "Cada cliente por separado.",
+      "subtitle": "Esta es la diferencia entre un prompt de IA genérico y un compañero: la memoria. Por cliente, Clyde recuerda la voz de marca, el público, los objetivos y lo que habéis acordado. Tiene en cuenta tus correcciones."
     },
     "layers": {
       "eyebrow": "Arquitectura",
       "title": "Así recuerda Clyde",
-      "subtitle": "Como un buen compañero, Clyde tiene cuatro tipos de memoria que trabajan en conjunto. Tú no tienes que saber nada de esto: simplemente funciona.",
-      "scrollLabel": "Recorre las capas",
+      "subtitle": "Cuando Clyde responde, recurre a cuatro fuentes que trabajan juntas. Tú no tienes que saber nada de esto: simplemente funciona.",
+      "scrollLabel": "Recorre las cuatro fuentes",
       "promptLabel": "Le preguntas a Clyde",
       "clydeLabel": "Clyde responde",
       "activeLabel": "Activo",
       "hot": {
-        "name": "En vivo",
-        "window": "Últimas 24 horas",
-        "description": "La conversación en curso, la campaña del día, el contenido pendiente de aprobación. Siempre a mano.",
+        "name": "La conversación",
+        "window": "Ahora",
+        "description": "La conversación en curso y la pantalla en la que estás. En la página de un cliente, Clyde sabe de qué cliente hablas.",
         "prompt": "¿Qué posts aprobé hoy para la marca Skin?",
         "clydeAnswer": "Tres posts: post de la mañana sobre la rutina de limpieza, post del mediodía con una reseña UGC, carrusel de fin del día sobre los ingredientes. El carrusel está programado para las 19:00."
       },
       "warm": {
-        "name": "Este mes",
-        "window": "Últimos 30 días",
-        "description": "Posts aprobados recientemente, informes de KPIs y feedback. Así Clyde puede comparar qué funcionó mejor esta semana que la anterior.",
-        "prompt": "¿Qué rindió mejor este mes para la marca Skin?",
-        "clydeAnswer": "Los carruseles con citas UGC: en promedio 2,4 veces más engagement que los posts de producto sueltos. Los reels de menos de 15 segundos convirtieron por encima de la media. Los posts estáticos después de las 21:00 perdieron alcance."
+        "name": "Recuerdos",
+        "window": "De conversaciones y feedback",
+        "description": "Lo que acordáis y lo que corriges, Clyde lo guarda como recuerdo. Lo importante pesa más; lo que se vuelve viejo y poco importante se va desvaneciendo.",
+        "prompt": "¿Qué quería cambiar el cliente en los carruseles?",
+        "clydeAnswer": "Menos texto por slide, y terminar con una pregunta en lugar de un enlace. Lo pidió hace dos semanas al rechazar un borrador; desde entonces lo aplico."
       },
       "cold": {
-        "name": "Archivo",
-        "window": "Todo el material más antiguo",
-        "description": "El archivo completo: directrices de marca, campañas antiguas e informes previos. Buscable por significado, no solo por palabra clave.",
-        "prompt": "¿Qué publicamos el otoño pasado sobre piel seca de invierno?",
-        "clydeAnswer": "Tres carruseles en octubre y noviembre. El de mejor rendimiento abría con 'primero reparar, luego hidratar'. Combinado con una rutina de producto, compartido 312 veces y guardado por 1.804 seguidores."
+        "name": "Estrategia e investigación",
+        "window": "Por cliente",
+        "description": "Los objetivos de la sesión de estrategia, los pilares y la investigación de mercado, competidores y público. Con eso Clyde contrasta sus propuestas.",
+        "prompt": "¿Encaja un post sobre protector solar en la planificación?",
+        "clydeAnswer": "Sí, dentro del pilar de conocimiento de la piel. El objetivo de este trimestre es llegar a nuevos seguidores, así que lo convertiré en un carrusel que la gente quiera compartir."
       },
       "context": {
         "name": "Quién es la marca",
-        "window": "Conocimiento permanente",
-        "description": "El núcleo que siempre va con Clyde: voz de marca, persona del público, objetivos de KPIs y lo que sí o no se permite. Solo cambia cuando tú lo pides explícitamente.",
+        "window": "Siempre a mano",
+        "description": "El núcleo que siempre va con Clyde: el perfil del cliente, la voz de marca, el público y lo que sí y no se permite. Clyde lo mantiene al día: tus correcciones entran ahí, y cada noche actualiza el resumen.",
         "prompt": "Escribe un copy para la nueva crema de noche.",
         "clydeAnswer": "Tono: cálido, directo, sin Tú con mayúscula. Audiencia: mujeres 28-44 que valoran los rituales. Sin claims, los resultados se expresan en semanas concretas. El copy abre con la rutina nocturna y cierra con una pregunta en vez de una CTA."
       }
     },
     "isolation": {
-      "eyebrow": "Aislamiento por marca",
-      "title": "Estrictamente separado por marca",
-      "body1": "Clyde trabaja para varios clientes y varias marcas a la vez sin que se toquen entre sí. Lo que aprende sobre la Marca A nunca aparece en la Marca B. Sin voces de marca que se cruzan, sin datos que se filtran, sin ejemplos que se mezclan por accidente.",
-      "body2": "A nivel técnico está resuelto con un espacio de memoria propio por cliente, estrictamente separado a nivel de base de datos y en el índice de búsqueda. A nivel humano: lo que pertenece a tu cliente se queda con tu cliente. Al cancelar, tus datos se pueden exportar en 24 horas y se eliminan por completo a los 30 días."
+      "eyebrow": "Memoria propia por cliente",
+      "title": "Separado por cliente",
+      "body1": "Clyde trabaja a la vez para varias agencias y sus clientes. Cada cliente tiene su propio espacio de trabajo con su propia memoria: cuando Clyde trabaja para el cliente A, recupera la memoria del cliente A, no la del cliente B. Así una voz de marca no salta a otro cliente.",
+      "body2": "A nivel técnico, cada recuerdo sobre un cliente está vinculado en la base de datos a esa agencia y a ese cliente, y cada consulta filtra por ellos. Tras la cancelación tienes 30 días para llevarte tus datos; después los eliminamos."
     },
     "decay": {
       "eyebrow": "Día y noche",
@@ -2089,16 +2089,16 @@
       "decayTitle": "Lo que pierde importancia, se difumina",
       "decayBody": "No todo lo que pasó mantiene la misma relevancia. Los detalles antiguos van perdiendo peso para que Clyde no se atasque bajo datos de hace medio año. Los patrones importantes permanecen, el ruido se desvanece. Igual que en las personas.",
       "dreamTitle": "Cada noche Clyde consolida",
-      "dreamBody": "Por la noche Clyde hace lo que nosotros hacemos al dormir: conecta ideas, abstrae patrones y guarda los aprendizajes importantes en su conocimiento estable. Te despiertas con un compañero de IA más afinado que el que dejaste ayer."
+      "dreamBody": "Por la noche Clyde hace lo que nosotros hacemos al dormir: conecta ideas, abstrae patrones y guarda los aprendizajes importantes en su conocimiento estable. Te despiertas con un compañero más listo que ayer."
     },
     "progress": {
       "eyebrow": "Curva de tiempo",
-      "title": "Mes 1 frente a mes 3",
-      "subtitle": "La diferencia entre una AI genérica y un compañero de IA que realmente conoce tus marcas se ve en cuestión de semanas.",
-      "week1Label": "Mes 1: primer contenido",
+      "title": "El primer mes y después",
+      "subtitle": "La diferencia entre una IA genérica y un compañero que conoce a tus clientes crece con cada corrección.",
+      "week1Label": "Mes 1: Clyde conoce a tus clientes",
       "week1Body": "\"Escribe un copy para la marca X.\" Clyde sigue las directrices de marca, pero aún sin la sutileza perfecta. Muchas rondas de feedback. Todavía dedicas bastante tiempo a corregir y pulir.",
-      "week12Label": "Mes 3: autonomía total",
-      "week12Body": "Clyde conoce las pequeñas manías de la marca X: qué emojis sí y cuáles no, qué frase de apertura convierte, qué hashtags rinden y qué horarios funcionan. La primera versión ya es aprovechable. Tú revisas, Clyde ejecuta."
+      "week12Label": "Después: menos correcciones",
+      "week12Body": "Clyde conoce las manías del cliente X: qué palabras sí y cuáles no, cómo empieza un post, lo que habéis acordado. Corriges menos. Cuánto puede hacer por su cuenta lo sigues decidiendo tú, tarea por tarea."
     },
     "contrast": {
       "eyebrow": "Comparativa",
@@ -2113,13 +2113,13 @@
       },
       "clyde": {
         "name": "Clyde",
-        "body": "Memoria persistente por marca, cuatro capas, estrictamente separada y consolidada cada noche. Construida para agencias con entre 5 y 20 marcas. Cada semana más afinada, nunca diluida."
+        "body": "Una memoria propia por cliente, separada de los demás clientes y actualizada cada noche. Construida para agencias con entre 5 y 20 marcas."
       }
     },
     "comparison": {
       "eyebrow": "La memoria en acción",
       "title": "Tres conversaciones, una marca, una semana.",
-      "intro": "La misma conversación con una AI sin memoria frente a Clyde. Este patrón aparece cada semana laboral en SkinClarity Club.",
+      "intro": "La misma conversación con una IA sin memoria y con Clyde. Un ejemplo, con una marca inventada.",
       "diyLabel": "Otra AI",
       "diyNote": "olvida todo al cerrar la sesión",
       "clydeLabel": "Clyde",
@@ -2140,14 +2140,14 @@
         {
           "user": "¿Cuál funcionó mejor el mes pasado en esta categoría?",
           "diy": "No tengo acceso a los datos históricos de tu cuenta.",
-          "clyde": "La variante con la rutina nocturna y la pregunta de guardar fue la que mejor rindió en octubre: 2,1 veces más guardados que la media mensual. La Variante A se acerca más a ese tono, empieza por ahí."
+          "clyde": "La variante con la rutina nocturna y una pregunta para que la guarden fue la más guardada en octubre. La variante A es la más cercana a ese tono, yo empezaría por ahí."
         }
       ]
     },
     "cta": {
       "eyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "¿Listo para una AI que conoce tus marcas?",
-      "subtitle": "Una llamada de 30 minutos sobre la configuración de SkinClarity Club. Después sabrás si encaja con tu cartera.",
+      "title": "¿Listo para un compañero que conoce a tus clientes?",
+      "subtitle": "Una llamada de 30 minutos. Después sabrás si encaja con tu cartera.",
       "button": "Agenda una llamada"
     }
   },
@@ -2385,68 +2385,68 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 cuentas, 4 marcas | FutureMarketingAI",
-        "description": "Cómo Clyde gestiona de forma autónoma toda la operación social de SkinClarity Club: 3 cuentas de Instagram, 4 marcas, founding partner."
+        "title": "SkinClarity Club: 3 cuentas de Instagram, un solo Clyde | FutureMarketingAI",
+        "description": "Cómo Clyde lleva la operación social de SkinClarity Club: 3 cuentas de Instagram, cada una con su propio tono y calendario, aprobadas por la agencia antes de que se publique nada."
       },
       "hero": {
-        "eyebrow": "Caso de estudio, Founding partner",
-        "title": "3 cuentas. 4 marcas. Un compañero: Clyde.",
+        "eyebrow": "Caso de estudio, primer cliente",
+        "title": "3 cuentas. Un cliente. Un compañero: Clyde.",
         "chip1": "3 cuentas incorporadas",
-        "chip2": "4 marcas en vivo en 7 dias",
+        "chip2": "Cada cuenta con su propio tono",
         "chip3": "10 habilidades activas",
-        "subtitle": "SkinClarity Club es cliente Founding desde la primera semana. Clyde gestiona 3 cuentas de Instagram, 4 marcas y varios tipos de contenido. Clyde crea y programa cada día; Sindy aprueba y orienta."
+        "subtitle": "SkinClarity Club es nuestro primer cliente, y la agencia somos nosotros. Clyde crea y programa el contenido de 3 cuentas de Instagram según el calendario, nosotros lo aprobamos, y Sindy tiene su propio panel y a Clyde en WhatsApp."
       },
       "setup": {
         "title": "La configuración",
-        "subtitle": "SkinClarity Club opera una cartera de especialistas en la piel y marcas de producto. Tres cuentas de Instagram, cada una con su propio público e identidad visual.",
+        "subtitle": "SkinClarity Club está formado por un club, una tienda online y la cuenta personal de su fundadora, Sindy. Tres cuentas de Instagram, cada una con su propio público e identidad visual.",
         "account1Label": "@SkinClarityClub",
-        "account1Share": "Alrededor del 50% del volumen de contenido",
+        "account1Share": "Alrededor del 40% de lo publicado",
         "account1Body": "Cuenta principal. Tratamientos, consejos y conocimiento de piel para consumidores.",
         "account2Label": "@Sindy_Huidtherapeut",
-        "account2Share": "Alrededor del 30% del volumen de contenido",
+        "account2Share": "Alrededor de un tercio de lo publicado",
         "account2Body": "Cuenta personal de autoridad de la founder Sindy. Confianza, experiencia y marca personal.",
-        "account3Label": "@SkinClarity_Shop",
-        "account3Share": "Alrededor del 20% del volumen de contenido",
+        "account3Label": "@skinclarityshop",
+        "account3Share": "Alrededor de una cuarta parte de lo publicado",
         "account3Body": "Cuenta de producto de la tienda online. Lanzamientos, packs y contenido de producto."
       },
       "skills": {
         "title": "Qué habilidades están activas",
         "subtitle": "De las 12 habilidades de Clyde, las 10 activas funcionan para SKC. Las dos restantes (Voice Agent y Reel Builder) llegan en cuanto estén disponibles.",
         "skill1Name": "Social Media Manager",
-        "skill1Body": "Carruseles, posts y stories para 3 cuentas de Instagram. Generado con AI en la voz de marca correcta por cuenta.",
+        "skill1Body": "Carruseles, posts y stories para 3 cuentas de Instagram, con el tono de cada cuenta.",
         "skill2Name": "Blog Factory",
         "skill2Body": "Blogs SEO para skinclarityclub.nl. Temas de piel, tratamientos y análisis profundos de producto.",
         "skill3Name": "SEO / GEO Analyst",
-        "skill3Body": "Auditorías técnicas SEO, seguimiento de posiciones y monitorización de citaciones en ChatGPT y Perplexity.",
+        "skill3Body": "Auditorías técnicas de SEO, seguimiento de posiciones y medición de si los buscadores de IA mencionan a SKC.",
         "skill4Name": "Reporting y Analytics",
-        "skill4Body": "Informe semanal de rendimiento sobre Instagram, Shopify y datos de SEO. Alertas de anomalías.",
+        "skill4Body": "Informe semanal sobre Instagram, Shopify y datos de SEO.",
         "skill5Name": "Research",
         "skill5Body": "Monitorización de tendencias en el cuidado de la piel, análisis de competencia e ideas de contenido con citas.",
         "skill6Name": "Clyde (orquestador)",
-        "skill6Body": "El compañero de IA central que conecta las 9 habilidades. Memoria por cuenta y aprendizaje entre habilidades.",
+        "skill6Body": "Clyde, el compañero de IA que conecta las demás habilidades, con una sola memoria para todo el cliente.",
         "skill7Name": "Ad Manager",
-        "skill7Body": "Anuncios de Meta para la tienda: crear anuncios estáticos y de vídeo, publicarlos y dirigir por leads y coste por lead.",
+        "skill7Body": "La cuenta publicitaria de Meta de la tienda está conectada. Clyde crea los anuncios; los resultados medidos llegarán después.",
         "skill8Name": "Lead Qualifier",
-        "skill8Body": "Chatbot web que cualifica a los visitantes y enruta los leads cálidos a ventas.",
+        "skill8Body": "Activada. Todavía no hay ningún chatbot funcionando en la web de SKC.",
         "skill9Name": "Email Management",
-        "skill9Body": "Clasificación de Gmail con un resumen diario: solo aflora lo que necesita atención.",
+        "skill9Body": "Triaje de Gmail con etiquetas y borradores de respuesta: solo aflora lo que necesita atención.",
         "skill10Name": "ManyChat DM",
-        "skill10Body": "Automatización de DM de Instagram con disparadores por palabra clave y respuestas IA en la voz de marca, además de captura de leads."
+        "skill10Body": "Activada. La bandeja de DMs todavía no gestiona conversaciones para SKC."
       },
       "architecture": {
         "title": "Cómo funciona",
-        "subtitle": "Un único Clyde, 3 espacios de trabajo (uno por cuenta), memoria compartida de cartera. Sindy aprueba el contenido antes de publicarlo.",
-        "body1": "Clyde mantiene una memoria separada para cada cuenta de Instagram. Lo que funciona en @SkinClarityClub (educativo, consejos) no es lo mismo que en @Sindy_Huidtherapeut (personal, autoridad).",
-        "body2": "El aprendizaje entre cuentas ocurre a nivel de cartera. Un tema que funciona en la tienda puede, por ejemplo, adaptarse a la cuenta principal."
+        "subtitle": "Un Clyde, un espacio de trabajo para SKC con tres cuentas de Instagram, y una sola memoria. La agencia aprueba el contenido antes de que se publique.",
+        "body1": "Cada cuenta tiene su propio tono y su propio calendario. Lo que funciona en @skinclarityclub (educativo, consejos) no es lo mismo que en @sindy_huidtherapeut (personal, autoridad).",
+        "body2": "La memoria está a nivel de cliente. Lo que Clyde aprende sobre SkinClarity Club lo usa en las tres cuentas."
       },
       "timeline": {
         "title": "Cronología",
         "week1Label": "Semana 1",
-        "week1Body": "Onboarding: voz de marca por cuenta, flujo de aprobación y definiciones de KPIs.",
+        "week1Body": "Onboarding: tono por cuenta, flujo de aprobación y objetivos.",
         "month1Label": "Mes 1",
-        "month1Body": "Primera semana completa de contenido autónomo. Mucho feedback, Clyde calibra.",
+        "month1Body": "Las primeras semanas de contenido, con mucho feedback.",
         "nowLabel": "Ahora",
-        "nowBody": "Completamente autónomo en 3 cuentas y 4 marcas. Sindy revisa, Clyde ejecuta."
+        "nowBody": "Clyde crea y programa para 3 cuentas según el calendario. La agencia aprueba antes de que se publique nada; Sindy tiene su propio panel y a Clyde en WhatsApp."
       },
       "testimonial": {
         "authorName": "Sindy",
@@ -2458,11 +2458,11 @@
         "author": {
           "name": "Sindy",
           "role": "Founder y operadora, SkinClarity Club",
-          "bio": "Sindy gestiona 4 marcas bajo SkinClarity Club y utiliza Clyde como su compañero de IA en 3 cuentas de Instagram, con contenido autónomo y memoria aislada por marca. Founding partner desde el lanzamiento."
+          "bio": "Sindy es la fundadora de SkinClarity Club. Clyde crea y programa para sus tres cuentas de Instagram. Nuestro primer cliente."
         }
       },
       "client": {
-        "description": "Cartera neerlandesa de skincare. 4 marcas, 3 cuentas de Instagram, operación completa de contenido."
+        "description": "Cuidado de la piel neerlandés: club, tienda online y terapeuta de la piel, 3 cuentas de Instagram."
       },
       "cta": {
         "title": "¿Quieres esto también para tu cartera?",
@@ -2473,46 +2473,46 @@
         "title": "El recorrido",
         "chapter1": "Reto",
         "chapter2": "Enfoque",
-        "chapter3": "Resultados",
+        "chapter3": "Ahora",
         "chapter5": "Siguiente paso"
       },
       "chapter1": {
         "eyebrow": "Capítulo 01, Reto",
-        "title": "Tres cuentas, cuatro marcas, un equipo",
-        "intro": "Antes de Clyde, Sindy llevaba la operación social por su cuenta, a menudo en un día libre, con una freelancer encargada de los carruseles. La cartera tenía 3 cuentas de Instagram y 4 marcas, cada una con su estilo y su voz."
+        "title": "Tres cuentas, cada una con su propio público",
+        "intro": "SkinClarity Club tiene tres cuentas de Instagram: el club, la tienda online y la cuenta personal de su fundadora, Sindy. Cada una con su propio público, estilo y voz, así que el triple de trabajo mental que una sola cuenta."
       },
       "chapter2": {
         "eyebrow": "Capítulo 02, Enfoque",
-        "title": "Un Clyde, tres workspaces, memoria compartida",
-        "intro": "Seis habilidades de Clyde están activas para SkinClarity Club. La memoria de cartera aprende entre cuentas. Sindy revisa, Clyde ejecuta."
+        "title": "Un Clyde, un espacio de trabajo, tres cuentas",
+        "intro": "Diez habilidades de Clyde están activadas para SkinClarity Club. Una sola memoria para todo el cliente, y un tono y un calendario propios por cuenta. Clyde crea, la agencia aprueba."
       },
       "chapter3": {
-        "eyebrow": "Capítulo 03, Resultados",
-        "title": "Lo que la operación entrega ahora",
-        "intro": "Cifras medidas en Q1 2026 comparadas con Q1 2025. Notas de fuente por métrica, recalibradas periódicamente."
+        "eyebrow": "Capítulo 03, Ahora",
+        "title": "Lo que está en marcha cada semana",
+        "intro": "Lo que sale por cuenta. Las cifras principales llegarán cuando las hayamos medido."
       },
       "chapter5": {
-        "eyebrow": "Capítulo 05, Siguiente paso",
+        "eyebrow": "Capítulo 04, Siguiente paso",
         "title": "¿Quieres esto también para tu cartera?",
         "intro": "En una primera llamada hablamos sobre cómo encaja Clyde con tu agencia, qué habilidades se activan de inmediato y cómo es el recorrido Founding."
       },
       "gallery": {
-        "title": "Lo que sale por marca",
-        "subtitle": "Un corte transversal del contenido que Clyde renderiza autónomamente cada semana. Las miniaturas finales se añadirán después; las tarjetas actuales muestran volumen y tipo por marca.",
+        "title": "Lo que sale por cuenta",
+        "subtitle": "Una muestra de lo que Clyde crea por cuenta. Los ejemplos reales llegarán después; por ahora las tarjetas muestran el tipo de contenido por cuenta.",
         "brand1": {
           "name": "SkinClarity Club",
           "role": "Cuenta principal, educativo",
-          "output": "10 carruseles, 7 posts y más de 20 stories por semana. Tratamientos, consejos y conocimiento de la piel."
+          "output": "Carruseles, posts y stories. Tratamientos, consejos y conocimiento de la piel."
         },
         "brand2": {
           "name": "Sindy Huidtherapeut",
           "role": "Cuenta personal de autoridad",
-          "output": "6 carruseles y 5 posts por semana. Confianza, experiencia, marca personal."
+          "output": "Carruseles y posts. Confianza, experiencia, marca personal."
         },
         "brand3": {
           "name": "SkinClarity Shop",
           "role": "Cuenta de producto para la tienda",
-          "output": "5 carruseles y 3 posts por semana. Lanzamientos, packs y contenido de producto."
+          "output": "Carruseles y posts. Lanzamientos, packs y contenido de producto."
         }
       }
     }
