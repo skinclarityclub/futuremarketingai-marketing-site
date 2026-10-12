@@ -58,3 +58,45 @@ Open na taak 5:
 
 - `legal.last_updated` zegt "October 12, 2026" / "12 de octubre de 2026" (NL idem). Zet het bij de merge op de mergedatum.
 - Niet gemeten: `next build`, lint, en de visuele controle van /nl /en /es op 1440 en 390 px, inclusief /legal (de `\n`-regels). Dat hoort bij taak 6.
+
+## Taak 6: hero, screenshots, eindcontrole (gemeten 2026-10-12 ~23:00 lokale tijd, HEAD bbb384e)
+
+Commits 106d85b (hero), ba0a7e7 (screens), 8fc2bff (legal-regels), bbb384e (video-menging). Alles gemeten vanuit
+`fmai-nextjs/`, werkboom schoon. Visuele controle met `next start -p 3047` en Playwright op Chrome-channel (de eigen
+Chromium van Playwright speelt geen H.264); script en beelden in de scratchpad van sessie 28c848f3 (`shoot-t6.cjs`, `vis/`).
+
+| # | Claim | Verdict | Bewijs |
+|---|---|---|---|
+| 19 | Spline-robot volledig weg | PASS | `grep -rli 'splinetool\|HeroSpline\|hero-robot' src next.config.ts package.json scripts tests` geeft 0 bestanden. Weg: HeroSpline, ui/spline, useIsDesktop, scene.splinecode, hero-robot-preview.webp, regenerate-hero-preview.mjs; `npm uninstall @splinetool/react-spline @splinetool/runtime gsap` (gsap had alleen HeroSpline als gebruiker); lockfile-diff alleen verwijderingen (86 regels). CSP: `prod.spline.design` en `unpkg.com` weg (unpkg stond er sinds 84d6899 alleen voor de Spline-CDN, zie phase-15-playwright.mjs:744). |
+| 20 | Kringvideo speelt op /nl desktop, met werkende pauzeknop | PASS | 1440x900: `video.paused=false`, `currentTime` 9,2 s na laden en 16,35 s later, readyState 4, 714x402 px; klik op de knop geeft `paused=true` en label "Speel de animatie af" (WCAG 2.2.2). Zelf bekeken: geen donkere 16:9-rechthoek meer dankzij `mix-blend-mode: lighten` (bbb384e), alle stationslabels en de staptekst leesbaar. |
+| 21 | Telefoon en reduced-motion laden de video niet | PASS | 390x844: `paused=true`, readyState 0, 0 requests naar `.mp4`. 1440 met `reducedMotion: 'reduce'`: `paused=true`, t=0, 0 requests naar `.mp4`. Beide tonen de poster (`/images/clyde-kring-poster.webp`, 5,4 KB). |
+| 22 | /en en /es tonen alleen de poster | PASS | /en 1440 en 390: geen `<video>`, `<img src=/images/clyde-kring-poster.webp alt="">` (alleen het logo, dus decoratief). /es geeft 200 op /en: `es` is sinds 2026-10-02 geen locale meer (`src/i18n/routing.ts`, redirect in next.config.ts). |
+| 23 | Hero-alt en knoplabels in pariteit | PASS | `home.hero.imageAlt` beschrijft nu de animatie (nl/en/es), plus `home.hero.videoPause` en `videoPlay`. `T5_MAX=99999 node ~/.claude/fmai-site-tools/t5/check.mjs` geeft `parity OK`, exit 0. |
+| 24 | contentkalender.webp en rapportage.webp vervangen door beeld met status klaar | PASS | Kring: `public/screenshots/jaaragenda.webp` uit `screens/s01a-jaaragenda.png` (SKC-ok, klaar); bijschrift "De jaaragenda van onze eerste klant, gebouwd op de strategie". Rapportage: `weekrapport.webp` uit `screens/s07d-weekrapport.png` (demo, klaar); bijschrift en alt noemen "demoklant" en "demodata" (§4, alleen mechanisme). Beide zelf bekeken, op /nl en /nl/skills/reporting gerenderd. Herkomst in MANIFEST.md, sectie "site (stream 3, fmai-site)". |
+| 25 | De zes niet-bekeken screenshots zelf bekeken | PASS, met opmerkingen | portaal-review-clyde: demo-portaal met Clyde-paneel, gelijk aan s13-portaal-review-met-clyde, in orde. blog-factory, seo-geo, goedkeuringen, doelen, onboarding-11-stappen: bruikbaar, opmerkingen onder Open. |
+| 26 | /legal toont de `\n`-regels als losse regels | PASS (na fix 8fc2bff) | Vóór de fix: `<p>` zonder white-space-regel, de regels liepen in elkaar (ook op origin/main, waar al 1 legaltekst een `\n` had). Na de fix: 2 alinea's met `\n`, computed `white-space: pre-wrap`, 8 en 11 gerenderde regels, op nl/en en 1440/390. Zelf bekeken op 390 (subverwerkers per categorie op een eigen regel). `/legal/privacy` gebruikte al `whitespace-pre-wrap` (LegalSectionPage.tsx:99,109). |
+| 27 | Homepage-secties renderen op 1440 en 390 | PASS | kring, people, entries, lead per sectie gefotografeerd voor nl/en/es op beide breedtes en zelf bekeken (nl volledig, en/es steekproef): geen kale i18n-sleutels (regex op `home.`/`legal.`/`skills-*.` in body-tekst: 0), geen horizontale scroll, precies 1 `<h1>`. |
+| 28 | Copy-, i18n- en llms-checks op de eindstand | PASS | `npm run check:copy` schoon, `check:i18n-orphans` OK (42 namespaces, 3 locales), `check:llms` OK, `npx tsc --noEmit` exit 0, allemaal op bbb384e. |
+| 29 | `next build` slaagt | PASS | `npx next build` exit 0, "Compiled successfully", "Generating static pages (93/93)", op de eindstand van de code (de build volgde na de laatste codewijziging; daarna alleen commits). Exitcode vastgelegd, dus Open-punt 1 van taak 1-4 is dicht. |
+| 30 | Lint voegt geen fouten toe | PASS | `npm run lint` exit 1 met 14 errors en 29 warnings, allemaal al op origin/main: 9 errors in bestanden die deze branch niet raakt (not-found, ChatInput, ChatWidget, MemoryLiveComparison, ChatSimulation, usePersonaChat), en 5 in ChatWidgetIsland.tsx, waar de origin/main-versie via `eslint --stdin` ook 5 geeft. Open-punt 2 van taak 1-4 is daarmee gemeten en dicht. |
+
+Open na taak 6 (beslissingen voor Daley, niet gebouwd):
+
+- **EN-hero heeft geen eigen video.** De kring-animatie bevat NL-tekst ("Dit is Clyde", "Elke klant een eigen kring"),
+  dus /en toont alleen de logo-poster en heeft een lege rechterkolom. Een EN-render hoort bij stream 2b
+  (`animatie/kring/scene.js`); of NL-video op /en beter is dan alleen het logo, is aan Daley.
+- **Mobiel toont de poster als los logo** tussen de knop en de volgende sectie (~190 px). Dat volgt de opdracht
+  ("mobiel poster"), maar levert weinig op; weglaten is één regel.
+- **Onderste derde van de viewport is gedimd** door de vaste vignet in `HeroBackdrop` (fixed, z-0, over de inhoud).
+  Op live prod ook zo ("Voor wie dit werkt" valt daar weg). Raakt stap 5 en het bijschrift van de kring tijdens het
+  scrollen. Niet aangeraakt: bestaand ontwerp, buiten taak 6.
+- **Kleine dingen in de bewaarde demo-screenshots:** de creditteller staat op 4.259-4.268 / 4.000 (boven het budget) op
+  blog-factory, seo-geo, goedkeuringen en doelen; doelen.webp toont "FitnessFlow: 50 nieuwe leads via
+  proefles-flow" als voltooid doel (fictief resultaat); onboarding-11-stappen.webp heeft een Engelstalige UI
+  ("Workspace is ready", "Website: Not set"). Vervangen kan met s01c-doelen (Paul-ok); er is geen nieuwe
+  onboarding-opname.
+- **/legal laat twee privacy-subsecties weg** die /legal/privacy wel heeft (`platform_data`,
+  `ai_readiness_assessment`): de gecombineerde pagina gebruikt een eigen, kortere lijst. Al zo op origin/main.
+- Console lokaal: `/_vercel/speed-insights/script.js` 404 en MIME-fout; bestaat alleen op Vercel, geen fout van de branch.
+- Nog steeds bij Daley: verwerkersovereenkomst, Meta-verwijder-URL, ROI-tool, `legal.last_updated` op de mergedatum,
+  en push plus draft-PR.
