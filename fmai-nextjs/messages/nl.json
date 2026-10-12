@@ -78,7 +78,7 @@
       },
       "adCreator": {
         "title": "Ad Manager",
-        "description": "Advertenties voor Meta: copy en beeld per merk, en per advertentie de leads, kosten per lead en ad-fatigue."
+        "description": "Advertenties voor Meta: copy en beeld per merk, klaargezet ter goedkeuring. Daarna per advertentie de conversies, ROAS en ad-fatigue."
       },
       "manychat": {
         "title": "ManyChat DM",
@@ -1725,10 +1725,10 @@
     "hero": {
       "eyebrow": "Vaardigheid 01. Social Media Manager",
       "title": "Clyde verzorgt je social media.",
-      "subtitle": "Captions in de merkstem, inplanning op optimale tijden, carrousel-bouwer, hashtag-onderzoek en engagement-tracking. Per account, per merk. Eén collega voor je hele klantportfolio.",
+      "subtitle": "Captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Per account, per merk. Eén collega voor je hele klantportfolio.",
       "cta": "Plan een gesprek",
       "prompts": {
-        "prompt1": "Plan de Instagram-content voor alle SKC-merken deze week",
+        "prompt1": "Plan de Instagram-content voor de drie SKC-accounts deze week",
         "prompt2": "Maak 5 carrouselposts over de winter-routine",
         "prompt3": "Welke captions presteren het best op LinkedIn voor B2B?"
       }
@@ -1738,19 +1738,19 @@
       "subtitle": "Vier kernfuncties, naadloos geïntegreerd. Elke output past in de merkstem.",
       "feature1": {
         "title": "AI-captions in de merkstem",
-        "body": "Clyde schrijft posts en captions die klinken als het merk. Geleerd van eerdere goedgekeurde content en de merkrichtlijnen. Elke week scherper."
+        "body": "Clyde schrijft posts en captions die klinken als het merk, op basis van eerder goedgekeurde content, de merkrichtlijnen en jouw correcties."
       },
       "feature2": {
         "title": "Multi-platform inplanning",
-        "body": "Instagram en LinkedIn (andere netwerken via Postiz op verzoek), met automatische optimale timing per account. Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
+        "body": "Instagram en LinkedIn (andere netwerken via Postiz op verzoek). Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
       },
       "feature3": {
-        "title": "Carrousel- en story-bouwer",
-        "body": "Educatieve carrousels (3 tot 10 slides) en stories met templates in de huisstijl. Van idee tot publicatieklare output in één pipeline."
+        "title": "Carrousels in de huisstijl",
+        "body": "Educatieve carrousels, meestal 5 tot 7 slides, met templates in de huisstijl. Van idee tot publicatieklare output in één pipeline."
       },
       "feature4": {
-        "title": "Hashtag-onderzoek en engagement-tracking",
-        "body": "Relevante hashtags per onderwerp, prestaties per post (likes, comments, saves, shares) en automatisch leren voor volgende content."
+        "title": "Prestaties per post",
+        "body": "Bereik, comments, saves en betrokkenheid per post. Wat aanslaat, weegt mee in welke contentpijlers Clyde vaker inplant."
       }
     },
     "how": {
@@ -1765,12 +1765,12 @@
       },
       "step3": {
         "title": "Goedkeuren en publiceren",
-        "body": "Jij beoordeelt de kalender (slepen en neerzetten). Na goedkeuring publiceert Clyde op optimale tijden en meet de prestaties."
+        "body": "Jij beoordeelt de kalender (slepen en neerzetten). Na goedkeuring publiceert Clyde op de geplande tijden en meet de prestaties."
       }
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "De Social Media-vaardigheid deelt context met andere vaardigheden via het gedeelde geheugen per merk.",
+      "subtitle": "De Social Media-vaardigheid deelt context met andere vaardigheden via het gedeelde geheugen per klant.",
       "integration1": "Blog Factory: social posts afgeleid van blogcontent.",
       "integration2": "Ad Manager: de best presterende organische content wordt advertentietestmateriaal.",
       "integration3": "Rapportage: social-KPI's in de wekelijkse prestatie-digest."
@@ -1779,11 +1779,11 @@
       "title": "Voor wie",
       "useCase1": {
         "title": "Bureaus met 5 tot 20 merken",
-        "body": "Eén Clyde naast je team, met een eigen merkstem per merk en lessen die tussen accounts meegaan."
+        "body": "Eén Clyde naast je team, met een eigen merkstem per klant. Hoe jullie als bureau werken, onthoudt hij voor alle klanten."
       },
       "useCase2": {
         "title": "Multi-brand operators",
-        "body": "SkinClarity Club draait al 3 Instagram-accounts met 4 merken op één Clyde-setup. Zie de case study voor concrete output."
+        "body": "SkinClarity Club, onze eerste klant, draait 3 Instagram-accounts op één Clyde-setup, elk in een eigen stem. Zie de case study voor concrete output."
       }
     },
     "allocation": {
@@ -1792,7 +1792,7 @@
     },
     "proof": {
       "title": "SkinClarity Club in actie",
-      "subtitle": "Vier huismerken, drie Instagram-accounts, elk in een eigen stem. Bekijk de case study voor screenshots en voorbeelden."
+      "subtitle": "Drie Instagram-accounts, elk in een eigen stem. Bekijk de case study voor screenshots en voorbeelden."
     },
     "cta": {
       "title": "Klaar om social media aan Clyde over te dragen?",
@@ -1804,7 +1804,7 @@
       "items": {
         "q1": {
           "question": "Wat doet de Social Media Manager-vaardigheid precies?",
-          "answer": "Clyde verzorgt het complete social-proces voor Instagram en LinkedIn, en voor andere netwerken die we via Postiz aansluiten: AI-captions in de merkstem, multi-platform inplanning op optimale tijden, carrousel- en story-bouwer, hashtag-onderzoek en engagement-tracking per post. Eén collega beheert meerdere merken parallel zonder dat tonen door elkaar lopen."
+          "answer": "Clyde verzorgt het complete social-proces voor Instagram en LinkedIn, en voor andere netwerken die we via Postiz aansluiten: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Eén collega beheert meerdere merken tegelijk zonder dat tonen door elkaar lopen."
         },
         "q2": {
           "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
@@ -1812,32 +1812,32 @@
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
-          "answer": "Beschikbaar op alle tiers: Founding Member €997 levenslang voor maximaal 15 werkruimtes, of de workspace-priced tiers Growth €499 per werkruimte (2-4 merken), Professional €399 (5-14 merken) en Enterprise €299 (15+ merken). Volume schaalt mee met je credits: 800 per werkruimte op de workspace-tiers, 8.000 op Founding. Carrousels en posts kosten 1 tot 2 credits per stuk."
+          "answer": "Inbegrepen op elke tier. Een post of carrousel kost 1 tot 2 credits. Hoeveel credits en werkruimtes elke tier heeft, staat op de prijspagina."
         },
         "q4": {
-          "question": "Hoelang duurt de onboarding van Social Media Manager?",
-          "answer": "Vier weken. In week 1 leest Clyde eerdere content, merkrichtlijnen en doelgroepdata in. Week 2 produceert de eerste contentkalender met goedkeuring per post. Week 3 kalibreert op feedback. Vanaf week 4 draait de vaardigheid autonoom met kortere goedkeuringscycli."
+          "question": "Hoe start Social Media Manager?",
+          "answer": "Clyde leest eerdere content, merkrichtlijnen en doelgroepdata in, en de eerste kalender keur je per post goed. Hoeveel Clyde daarna zelf mag doen, bepaal je per taak."
         },
         "q5": {
           "question": "Hoe verschilt dit van Buffer of Later?",
-          "answer": "Buffer en Later zijn schedulers, geen content-creators. Jij of een copywriter blijft elke caption en visual schrijven. Clyde combineert creatie, planning en publicatie in één pipeline met een merkstem-model dat per merk getraind blijft. Geen losse tools voor copy, visual en planning meer."
+          "answer": "Buffer en Later zijn schedulers, geen content-creators. Jij of een copywriter blijft elke caption en visual schrijven. Clyde combineert creatie, planning en publicatie in één pipeline, met de merkstem van elke klant als vaste context en jouw correcties erbij. Geen losse tools voor copy, visual en planning meer."
         }
       }
     }
   },
   "skills-ad-manager": {
     "meta": {
-      "title": "Ad Manager. Ads maken én sturen op leads en CPL | Clyde",
-      "description": "Statische en video-ads maken, publiceren naar Meta en per advertentie sturen op leads, kosten per lead en ad-fatigue. 10 credits statisch, 20 credits video."
+      "title": "Ad Manager. Meta-ads maken en volgen | Clyde",
+      "description": "Statische en video-ads voor Meta maken, klaarzetten ter goedkeuring en per advertentie volgen op conversies, ROAS en ad-fatigue. 10 credits statisch, 20 credits video."
     },
     "hero": {
       "eyebrow": "Vaardigheid 05. Ad Manager",
-      "title": "Clyde maakt én stuurt je Meta-ads.",
-      "subtitle": "Statische ads en video-ads: copy, visuals en meerdere formaten (Feed, Stories, Reels), direct gepubliceerd in Meta Ads Manager. Daarna stuurt Clyde op resultaat: leads, kosten per lead en ad-fatigue per advertentie, in klare taal.",
+      "title": "Clyde maakt je Meta-ads en volgt ze.",
+      "subtitle": "Statische ads en video-ads: copy, visuals en meerdere formaten (Feed, Stories, Reels), klaargezet voor Meta Ads Manager. Live gaat een advertentie pas na jouw akkoord. Daarna volgt Clyde elke advertentie op conversies, ROAS en ad-fatigue, in klare taal.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Maak 3 ad-varianten voor de winter-campagne",
-        "prompt2": "Welke advertentie heeft de laagste kosten per lead?",
+        "prompt2": "Welke advertentie heeft de hoogste ROAS?",
         "prompt3": "Toon de ad-fatigue-signalen van mijn lopende campagne"
       }
     },
@@ -1849,16 +1849,16 @@
         "body": "Copy, statische visuals in 1080×1080 (Feed) of 1080×1920 (Story of Reel) en korte video-ads met motion graphics. In jouw huisstijl, klaar om te publiceren."
       },
       "feature2": {
-        "title": "Direct publiceren naar Meta",
-        "body": "Uitrollen naar Ads Manager via de koppeling. Jij stelt budget en doelgroep in, Clyde levert de creatives en zet ze klaar."
+        "title": "Klaarzetten voor Meta",
+        "body": "Jij stelt budget en doelgroep in, Clyde levert de creatives en zet ze klaar voor Ads Manager. Live gaat een advertentie pas na jouw akkoord."
       },
       "feature3": {
         "title": "Prestaties per advertentie",
-        "body": "Leads, kosten per lead en ROAS per losse ad, niet alleen per campagne. Eerlijke lege staat zolang er nog geen resultaat is."
+        "body": "Bereik, klikken, CTR, conversies en ROAS per losse ad, niet alleen per campagne. Eerlijke lege staat zolang er nog geen resultaat is."
       },
       "feature4": {
         "title": "Ad-fatigue en aanbevelingen",
-        "body": "Ranking- en fatigue-signalen (frequentie, CTR-verloop) vertaald naar 'wat verbeteren we nu', in klare taal. Plus A/B-varianten om te testen."
+        "body": "Clyde bekijkt elke dag frequentie en CTR-verloop per advertentie en zegt in klare taal wanneer een advertentie moe wordt. Plus varianten om te testen."
       }
     },
     "how": {
@@ -1868,30 +1868,30 @@
         "body": "Product of dienst, doelgroep, USP en budget. Clyde leest de merkrichtlijnen om consistent te blijven."
       },
       "step2": {
-        "title": "Maken en publiceren",
-        "body": "Kies statisch of video, aantal varianten en formaat. Clyde levert publicatieklare output en zet die klaar in Ads Manager."
+        "title": "Maken en klaarzetten",
+        "body": "Kies statisch of video, aantal varianten en formaat. Clyde levert publicatieklare output en zet die klaar voor Ads Manager. Jij keurt goed."
       },
       "step3": {
         "title": "Sturen op resultaat",
-        "body": "Clyde volgt elke advertentie: leads, kosten per lead, ranking en fatigue. Je ziet in klare taal wat werkt en wat we bijstellen."
+        "body": "Clyde volgt elke advertentie: conversies, ROAS en fatigue. Je ziet in klare taal wat werkt en wat we bijstellen."
       }
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per merk.",
+      "subtitle": "Via het gedeelde geheugen per klant.",
       "integration1": "Social Media: de best presterende organische posts worden advertentietestmateriaal.",
       "integration2": "Blog Factory: blog-content wordt advertentiecopy voor prestatiecampagnes.",
-      "integration3": "Rapportage: advertentiemetrics (leads, CPL, CTR, ROAS) komen samen in de digest."
+      "integration3": "Rapportage: advertentiemetrics (conversies, CTR, ROAS) komen samen in de digest."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
         "title": "E-commerce met veel SKU's",
-        "body": "Per product 3 tot 5 advertentievarianten, en daarna sturen op de winnaars op basis van kosten per lead. Schalen zonder de bottleneck van een freelance-designer."
+        "body": "Per product meerdere advertentievarianten, en daarna verder met de winnaars. Schalen zonder de bottleneck van een freelance-designer."
       },
       "useCase2": {
         "title": "Bureaus die ads voor meerdere merken beheren",
-        "body": "Eén Clyde maakt én monitort ads voor 10 merken parallel, elk in eigen huisstijl, met prestaties per advertentie inzichtelijk per merk."
+        "body": "Eén Clyde maakt ads voor al je merken, elk in de eigen huisstijl, met de prestaties per advertentie inzichtelijk per merk."
       }
     },
     "allocation": {
@@ -1908,7 +1908,7 @@
       "items": {
         "q1": {
           "question": "Wat doet de Ad Manager-vaardigheid precies?",
-          "answer": "Clyde maakt complete Meta-advertenties (copy, statische visuals en korte video-ads) én stuurt ze daarna op resultaat: prestaties, leads en kosten per lead per advertentie, ranking- en ad-fatigue-signalen en A/B-varianten. Publiceert direct in Ads Manager. Geen freelance-designer of losse rapportagetool nodig."
+          "answer": "Clyde maakt complete Meta-advertenties (copy, statische visuals en korte video-ads), zet ze klaar ter goedkeuring en volgt ze daarna: bereik, klikken, conversies en ROAS per advertentie, plus signalen van ad-fatigue en varianten om te testen. Geen freelance-designer of losse rapportagetool nodig."
         },
         "q2": {
           "question": "Welke platforms ondersteunt Ad Manager?",
@@ -1916,15 +1916,15 @@
         },
         "q3": {
           "question": "Op welke tiers is Ad Manager beschikbaar?",
-          "answer": "Inbegrepen op Growth (15 ads per maand), Professional (50) en Enterprise (zonder plafond). Founding Member krijgt 25 ads per maand levenslang voor 997 EUR. Prestaties per advertentie zitten in alle tiers."
+          "answer": "Growth 15 ads per maand, Professional 50, Enterprise zonder plafond, Founding 25. Een statische ad kost 10 credits, een video-ad 20. Prestaties per advertentie zitten in elke tier."
         },
         "q4": {
-          "question": "Hoelang duurt de onboarding van Ad Manager?",
-          "answer": "Twee tot drie weken. Week 1 koppelt Ads Manager en leest Clyde eerdere campagnes. Week 2 levert eerste varianten met handmatige goedkeuring per ad. Daarna draait de vaardigheid autonoom en kalibreert op leads, CPL, CTR en ROAS uit Rapportage."
+          "question": "Hoe start Ad Manager?",
+          "answer": "Je koppelt het Meta-advertentieaccount en Clyde leest de merkrichtlijnen. De eerste varianten keur je per advertentie goed. Dat blijft zo: advertentie-uitgaven legt Clyde altijd eerst aan je voor."
         },
         "q5": {
           "question": "Hoe verschilt dit van AdCreative of Pencil?",
-          "answer": "AdCreative en Pencil leveren losse banners op basis van prompts, zonder sturing achteraf. Clyde houdt de merkstem per merk vast via gedeeld geheugen, publiceert direct én volgt daarna elke advertentie op leads en kosten per lead. Maken en managen in één, geen knip-en-plak tussen tools."
+          "answer": "AdCreative en Pencil leveren losse banners op basis van prompts, zonder opvolging achteraf. Clyde houdt de merkstem per klant vast via het gedeelde geheugen, zet de ads klaar voor Meta en volgt daarna elke advertentie. Maken en volgen in één, geen knip-en-plak tussen tools."
         }
       }
     }
@@ -1932,12 +1932,12 @@
   "skills-reporting": {
     "meta": {
       "title": "Rapportage. Dashboards, digests en anomalie-detectie | Clyde",
-      "description": "Clyde levert wekelijkse prestatie-digests, KPI-dashboards en anomalie-detectie met alerts, zodat je het weet vóór je klant belt. 5 credits per rapport."
+      "description": "Clyde schrijft elke week een rapport per merk, houdt een dashboard per klant bij en meldt het je als een cijfer sterk afwijkt. 5 credits per rapport."
     },
     "hero": {
       "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
       "title": "Clyde rapporteert elke week.",
-      "subtitle": "Automatische prestatie-digests, live KPI-dashboards en anomalie-detectie met alerts. Elke vrijdag het SEO-rapport op WhatsApp, elke week een rapport per merk in je dashboard. Geen handmatige Notion-updates meer.",
+      "subtitle": "Een weekrapport per merk in je dashboard, elke vrijdag het SEO-rapport op WhatsApp, en een seintje van Clyde zodra een cijfer sterk afwijkt. Geen handmatige Notion-updates meer.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Genereer de wekelijkse performance-digest voor alle merken",
@@ -1953,12 +1953,12 @@
         "body": "Elke week per merk in je dashboard: top-KPI's, trends, anomalieën en aanbevolen acties. Clyde schrijft de verhaallijn. Het SEO-rapport komt elke vrijdag ook op WhatsApp."
       },
       "feature2": {
-        "title": "Live KPI-dashboards",
-        "body": "Over alle kanalen: social-metrics, websiteverkeer, verkoop en conversie, advertentieprestaties. Live dashboard, te filteren per merk en periode."
+        "title": "Dashboard per klant",
+        "body": "Over de gekoppelde kanalen: Instagram, websiteverkeer uit GA4 en Search Console, verkoop uit Shopify en advertenties uit Meta. Dagelijks ververst, te filteren per merk en periode."
       },
       "feature3": {
         "title": "Anomalie-detectie",
-        "body": "Wijken metrics significant af van normaal, dan stuurt Clyde je een WhatsApp-bericht. Geen verrassingen in de maandrapportage."
+        "body": "Clyde kijkt elke dag naar bereik, betrokkenheid, saves en omzet. Wijkt een cijfer sterk af, dan meldt hij het je, ook op WhatsApp als je dat gekoppeld hebt. Geen verrassingen in de maandrapportage."
       },
       "feature4": {
         "title": "Rapportages op maat",
@@ -1969,29 +1969,29 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Databronnen koppelen",
-        "body": "Instagram, Google Analytics, Shopify, Ads Manager, CRM. OAuth-koppeling per merk."
+        "body": "Instagram, Google Analytics, Search Console, Shopify en Meta Ads, per merk gekoppeld."
       },
       "step2": {
-        "title": "KPI's definiëren",
-        "body": "Wat is \"succes\" voor dit merk? Leg de top-5 KPI's vast; Clyde volgt ze continu."
+        "title": "Doelen vastleggen",
+        "body": "Wat is succes voor deze klant? Leg de doelen vast en kies waar het resultaat vandaan komt: Shopify, een GA4-conversie, een eigen koppeling of handmatig."
       },
       "step3": {
-        "title": "Planning en alerts",
-        "body": "Wanneer moet de digest komen, bijvoorbeeld maandag 08:00? Welke metrics triggeren een alert? Eenmalig instellen, klaar."
+        "title": "Vast ritme",
+        "body": "Het weekrapport staat elke zondag klaar, het SEO-rapport komt op vrijdag. Sterke afwijkingen meldt Clyde dezelfde dag."
       }
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per merk.",
-      "integration1": "Alle vaardigheden: elke vaardigheid voedt data in de rapportage (social, blog, ads, e-mail, voice).",
+      "subtitle": "Via het gedeelde geheugen per klant.",
+      "integration1": "Alle vaardigheden: social, blog, ads en e-mail voeden de rapportage.",
       "integration2": "Research: trenddata verrijkt de context in digests.",
-      "integration3": "Clyde-orchestrator: rapporten kunnen vervolgacties in gang zetten."
+      "integration3": "Clyde: vraag hem wat een cijfer betekent en wat je nu het beste kunt doen."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
         "title": "Bureaus met maandelijkse klant-reviews",
-        "body": "In plaats van een Notion-marathon vlak vóór de klantmeeting: wekelijks al bij, maandrapport is een exportklik."
+        "body": "In plaats van een Notion-marathon vlak vóór de klantmeeting: je bent elke week al bij."
       },
       "useCase2": {
         "title": "Operators die datagedreven willen werken",
@@ -2012,23 +2012,23 @@
       "items": {
         "q1": {
           "question": "Wat doet de Rapportage-vaardigheid precies?",
-          "answer": "Clyde levert wekelijkse prestatie-digests, real-time KPI-dashboards en cross-platform analytics over social, web en sales. Detecteert anomalieen (bijvoorbeeld plotse CTR-daling) en stuurt proactieve waarschuwingen via WhatsApp. Custom rapporten op verzoek."
+          "answer": "Clyde schrijft elke week een rapport per merk met de cijfers en zijn duiding, houdt een dashboard per klant bij over social, web, verkoop en advertenties, en kijkt elke dag naar afwijkingen in bereik, betrokkenheid, saves en omzet. Een sterke afwijking meldt hij je, ook op WhatsApp. Een rapport op maat vraag je in gewone taal."
         },
         "q2": {
           "question": "Welke databronnen ondersteunt Rapportage?",
-          "answer": "Native koppelingen met Meta Ads, Google Analytics 4, Shopify, HubSpot, Pipedrive en Stripe. Custom CSV- of API-bronnen via webhooks. Data wordt elk uur ververst en geconsolideerd in een Supabase-warehouse op EU-servers."
+          "answer": "Instagram, Google Analytics 4, Search Console, Shopify en Meta Ads. De bronnen worden dagelijks ververst en staan in onze database in de EU. Het resultaat per klant komt uit Shopify, een GA4-conversie, een eigen koppeling of handmatige invoer."
         },
         "q3": {
           "question": "Op welke tiers is Rapportage beschikbaar?",
-          "answer": "Inbegrepen op alle tiers, met fair-use op gegenereerde rapporten. 5 credits per rapport. Enterprise krijgt aanpasbare KPI-formules. Founding Member krijgt levenslang toegang voor 997 EUR per maand."
+          "answer": "Inbegrepen op elke tier. Een rapport kost 5 credits. Wat elke tier kost, staat op de prijspagina."
         },
         "q4": {
-          "question": "Hoelang duurt de onboarding van Rapportage?",
-          "answer": "Een week. Dag 1 koppelt de databronnen via OAuth. Dag 2 tot 4 baseert Clyde KPI-baseline en anomalie-drempels op historische data. Vanaf dag 5 draait de wekelijkse digest autonoom: elke week in je dashboard, en het SEO-rapport elke vrijdag op WhatsApp."
+          "question": "Hoe snel krijg ik het eerste rapport?",
+          "answer": "Zodra een bron gekoppeld is, komt de data dagelijks binnen en staat het weekrapport elke zondag klaar. Het SEO-rapport volgt elke vrijdag zodra Search Console gekoppeld is."
         },
         "q5": {
           "question": "Hoe verschilt dit van Looker Studio of Whatagraph?",
-          "answer": "Looker Studio bouwt dashboards die jij elke week interpreteert. Whatagraph levert PDF's. Clyde levert geinterpreteerde inzichten: niet alleen 'CTR daalde 12 procent', maar ook 'oorzaak: nieuwe creative-test voor merk X, advies: pauzeren'. Bespaart de wekelijkse interpretatie-uur."
+          "answer": "Looker Studio bouwt dashboards die jij elke week zelf interpreteert. Whatagraph bundelt de cijfers in een rapport. Clyde schrijft de duiding erbij: wat er veranderde en wat hij voorstelt. En je kunt hem erover doorvragen, in het dashboard of op WhatsApp."
         }
       }
     },
@@ -2889,12 +2889,12 @@
   "skills-blog-factory": {
     "meta": {
       "title": "Blog Factory. SEO-artikelen zoekwoord tot publicatie | Clyde",
-      "description": "Zoekwoord-onderzoek, longreads van 1500 tot 3000 woorden, SEO-optimalisatie en automatische publicatie. 15 credits per artikel."
+      "description": "Zoekwoord-onderzoek, artikelen in de merkstem, een SEO-check en publicatie na jouw goedkeuring. 15 credits per artikel."
     },
     "hero": {
       "eyebrow": "Vaardigheid 08. Blog Factory",
       "title": "Clyde schrijft je SEO-blogs.",
-      "subtitle": "Zoekwoord-onderzoek, longreads (1500 tot 3000 woorden), SEO-optimalisatie en automatische publicatie naar de website. Eén pipeline van idee tot live. De kwaliteit wordt elke week beter. Blog Factory is live maar blijft in doorontwikkeling.",
+      "subtitle": "Zoekwoord-onderzoek, artikelen in de merkstem en een SEO-check, en na jouw goedkeuring gepubliceerd op de website. De lengte volgt wat er voor die zoekterm al rankt. Blog Factory is live en blijft in doorontwikkeling.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Schrijf een SEO-artikel over serum voor de gevoelige huid",
@@ -2910,27 +2910,27 @@
         "body": "Zoekwoorden met veel volume en lage concurrentie in de niche. Clustering naar pijlerpagina's en ondersteunende content."
       },
       "feature2": {
-        "title": "Longreads (1500 tot 3000 woorden)",
-        "body": "Diepgaande artikelen in de merkstem. Onderzoeksgebaseerd, met bronvermelding en een scanbare structuur."
+        "title": "Lengte die bij de zoekterm past",
+        "body": "Clyde kijkt hoe lang de pagina's zijn die al ranken en schrijft daarnaar. In de merkstem, onderbouwd met bronnen en met een scanbare structuur."
       },
       "feature3": {
         "title": "SEO-optimalisatie",
-        "body": "Meta-description, kopstructuur, interne links, alt-tags bij afbeeldingen en een check op Core Web Vitals."
+        "body": "Meta-description, kopstructuur, interne links en bronnen worden per artikel gecontroleerd. Core Web Vitals meet de SEO/GEO-vaardigheid apart, per pagina."
       },
       "feature4": {
-        "title": "Automatische publicatie",
-        "body": "Koppeling met WordPress, Webflow of Shopify. Concept, beoordeling, publicatie. Inplannen kan ook."
+        "title": "Publiceren na goedkeuring",
+        "body": "Naar een MDX-site, een Shopify-blog of met een koppeling op maat naar je eigen site. Concept, beoordeling, publicatie."
       }
     },
     "how": {
       "title": "Hoe het werkt",
       "step1": {
         "title": "Zoekwoord-strategie per merk",
-        "body": "Clyde identificeert 50 tot 100 doelzoekwoorden per merk, geclusterd naar content-thema's."
+        "body": "Clyde zoekt dagelijks naar zoekwoorden die bij het merk passen en clustert ze naar content-thema's."
       },
       "step2": {
         "title": "Artikelen plannen",
-        "body": "Kies welke zoekwoorden je wilt aanpakken. Clyde maakt een outline en schrijft. Jij beoordeelt in een Google Doc-achtige interface."
+        "body": "Kies welke zoekwoorden je wilt aanpakken. Clyde maakt een outline en schrijft. Jij beoordeelt in het reviewscherm: goedkeuren of met opmerkingen terugsturen."
       },
       "step3": {
         "title": "Publiceren en monitoren",
@@ -2939,16 +2939,16 @@
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per merk.",
+      "subtitle": "Via het gedeelde geheugen per klant.",
       "integration1": "SEO/GEO Analyst: blog-posities worden bijgehouden en Core Web Vitals gemonitord.",
-      "integration2": "Social Media: blogcontent wordt omgezet in social posts.",
+      "integration2": "Social Media: een artikel kan de basis zijn voor social posts.",
       "integration3": "Research: trenddata voedt de keuze van onderwerpen."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
         "title": "E-commerce met SEO-focus",
-        "body": "Product-gerelateerde longreads die organisch verkeer opbouwen. SkinClarity Club publiceert zo 2 tot 4 blogs per maand."
+        "body": "Artikelen rond je producten die organisch verkeer opbouwen, in de stem van het merk."
       },
       "useCase2": {
         "title": "B2B-contentmarketing",
@@ -2969,19 +2969,19 @@
       "items": {
         "q1": {
           "question": "Wat doet de Blog Factory-vaardigheid precies?",
-          "answer": "Clyde produceert SEO-geoptimaliseerde longreads van zoekwoord-onderzoek tot publicatie. Elk artikel telt 1.500 tot 3.000 woorden, krijgt automatisch een meta-description, koppen-structuur, interne links en wordt gepubliceerd naar je CMS. Schrijven gebeurt in de merkstem zoals geleerd uit eerdere goedgekeurde content."
+          "answer": "Clyde schrijft SEO-artikelen, van zoekwoord-onderzoek tot publicatie. De lengte volgt de zoekintentie en de pagina's die al ranken. Elk artikel krijgt een meta-description, een kopstructuur en interne links, en gaat na jouw goedkeuring naar de website. Clyde schrijft in de merkstem, op basis van eerder goedgekeurde content en jouw correcties."
         },
         "q2": {
-          "question": "Welke CMS'en ondersteunt Blog Factory?",
-          "answer": "Native publicatie naar WordPress (REST-API), Webflow, Shopify-blog, Ghost, Sanity en Notion. Custom CMS'en via webhooks of MDX-export. Beelden worden via Unsplash- of DALLE-API toegevoegd. Schema.org-Article-markup wordt automatisch ingebouwd."
+          "question": "Waar publiceert Blog Factory?",
+          "answer": "Naar een MDX-site, een Shopify-blog of, met een koppeling op maat, naar je eigen site. Werkt je bureau met een ander CMS, bespreek het in het eerste gesprek. De hoofdafbeelding van een artikel lever je zelf aan."
         },
         "q3": {
           "question": "Op welke tiers is Blog Factory beschikbaar?",
-          "answer": "Growth 8 artikelen per maand, Professional 20, Enterprise zonder plafond. Founding Member krijgt 12 artikelen per maand levenslang. Per artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
+          "answer": "Growth 8 artikelen per maand, Professional 20, Enterprise zonder plafond, Founding 12. Een artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
         },
         "q4": {
-          "question": "Hoelang duurt de onboarding van Blog Factory?",
-          "answer": "Twee weken. Week 1 leest Clyde 5 tot 10 eerdere blogartikelen voor merkstem-modellering. Week 2 levert eerste 2 artikelen voor handmatige goedkeuring met feedback-loop. Vanaf week 3 draait de vaardigheid autonoom met sample-review per 5 artikelen."
+          "question": "Hoe start Blog Factory voor een nieuw merk?",
+          "answer": "Clyde leest bij de start eerdere artikelen van het merk als voorbeeld voor de stem. Daarna keur je elk artikel goed voordat het online gaat, en je feedback neemt hij mee in het volgende."
         },
         "q5": {
           "question": "Hoe verschilt dit van Jasper of SurferSEO?",
@@ -3015,11 +3015,11 @@
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
         "title": "Technische SEO-audits",
-        "body": "Periodieke crawl: kapotte links, ontbrekende meta-tags, trage pagina's, mobielvriendelijkheid en structured data. Met geprioriteerde fixlijst."
+        "body": "Wekelijkse crawl: kapotte links, ontbrekende meta-tags, trage pagina's, mobielvriendelijkheid en structured data. Met geprioriteerde fixlijst."
       },
       "feature2": {
         "title": "Posities bijhouden",
-        "body": "Dagelijks je Google-posities checken voor doelzoekwoorden. Vergelijking met concurrenten. Alerts als posities dalen."
+        "body": "Dagelijks je Google-posities uit Search Console, met een melding als een zoekwoord zakt. Concurrenten volg je op Core Web Vitals en nieuwe pagina's in hun sitemap."
       },
       "feature3": {
         "title": "Core Web Vitals",
@@ -3027,7 +3027,7 @@
       },
       "feature4": {
         "title": "Monitoring van AI-citaties (GEO)",
-        "body": "Clyde stelt ChatGPT en Perplexity vragen uit jouw niche. Wordt je merk genoemd? Hoe vaak? In welke context? Een nieuw soort zichtbaarheid."
+        "body": "Clyde stelt ChatGPT, Perplexity, Gemini en Google AI Overviews elke week vragen uit jouw niche. Wordt je merk genoemd? Hoe vaak? In welke context? Een nieuw soort zichtbaarheid."
       }
     },
     "how": {
@@ -3038,7 +3038,7 @@
       },
       "step2": {
         "title": "GEO-vragen opzetten",
-        "body": "Welke vragen zou een klant uit jouw niche aan ChatGPT stellen? Clyde stelt ze regelmatig en logt de antwoorden."
+        "body": "Welke vragen zou een klant uit jouw niche aan ChatGPT stellen? Clyde stelt ze elke week en logt de antwoorden."
       },
       "step3": {
         "title": "Wekelijks overzicht",
@@ -3047,7 +3047,7 @@
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per merk.",
+      "subtitle": "Via het gedeelde geheugen per klant.",
       "integration1": "Blog Factory: blogartikelen worden bijgehouden op posities.",
       "integration2": "Research: zoekwoord-data van concurrenten verrijkt de strategie.",
       "integration3": "Rapportage: SEO- en GEO-KPI's in de wekelijkse digest."
@@ -3077,23 +3077,23 @@
       "items": {
         "q1": {
           "question": "Wat doet de SEO/GEO-vaardigheid precies?",
-          "answer": "Clyde voert technische SEO-audits uit, trackt keyword-rankings in Google, monitort Core Web Vitals en houdt bij hoe vaak jouw merk geciteerd wordt door AI-zoekmachines (ChatGPT, Perplexity, Google AI Overviews, Claude). Levert geprioriteerde fix-aanbevelingen per niveau van impact en moeite."
+          "answer": "Clyde voert technische SEO-audits uit, volgt je posities in Google via Search Console, monitort Core Web Vitals en houdt bij hoe vaak jouw merk genoemd wordt door AI-zoekmachines (ChatGPT, Perplexity, Gemini en Google AI Overviews). Levert geprioriteerde fix-aanbevelingen per niveau van impact en moeite."
         },
         "q2": {
           "question": "Welke tools en API's worden gebruikt?",
-          "answer": "Lighthouse en PageSpeed Insights voor Core Web Vitals, Ahrefs of Semrush voor keyword-tracking (jouw bestaande seat), schema-validatoren voor structured-data audits en directe Perplexity- en Otterly-probes voor AI-citatie-monitoring. Output wordt geconsolideerd in een wekelijks rapport."
+          "answer": "PageSpeed Insights en Chrome-gebruikersdata (CrUX) voor Core Web Vitals, Google Search Console voor je posities, een eigen crawler die onder meer controleert of structured data aanwezig is, en vragen aan ChatGPT, Perplexity, Gemini en Google AI Overviews voor AI-citaties. Alles komt samen in het wekelijkse rapport."
         },
         "q3": {
           "question": "Op welke tiers is SEO/GEO beschikbaar?",
-          "answer": "Inbegrepen op alle tiers met fair-use op aantal audits. 5 credits per audit, 3 credits per kort rapport. Professional krijgt automatische maandelijkse audits, Enterprise krijgt aangepaste alert-drempels en SERP-snapshot-tracking. Founding Member krijgt levenslang volledige toegang."
+          "answer": "Inbegrepen op elke tier. Een audit kost 5 credits, een kort rapport 3. De wekelijkse crawl en het maandrapport draaien voor iedereen."
         },
         "q4": {
-          "question": "Hoelang duurt de onboarding van SEO/GEO?",
-          "answer": "Een week. Dag 1 koppelt Search Console, Ahrefs of Semrush en Google Analytics. Dag 2 tot 4 voert Clyde de baseline-audit en GEO-citatieprobe uit. Dag 5 levert het eerste actieplan met top-10 fixes. Vanaf week 2 draait monitoring autonoom met wekelijkse digest."
+          "question": "Hoe start SEO/GEO?",
+          "answer": "Je koppelt Search Console en Google Analytics; Clyde crawlt de site en stelt de eerste AI-vragen. Daarna komen posities dagelijks en AI-citaties wekelijks binnen, met elke vrijdag het SEO-rapport."
         },
         "q5": {
           "question": "Hoe verschilt dit van Ahrefs of Semrush?",
-          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'jouw Service-schema mist op vaardigheid-pagina X, fix dit binnen 1 uur, levert 12 procent kans op rich-result lift'."
+          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'je productpagina zakte deze week vier posities en laadt traag op mobiel; begin daar.'"
         }
       }
     },
@@ -3105,15 +3105,15 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: de AI-collega van je bureau | Clyde",
-      "description": "Clyde, de AI-collega van je bureau, in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, orkestratie van alle vaardigheden, geheugen per merk. 1 tot 5 credits per gesprek."
+      "description": "Clyde, de AI-collega van je bureau, in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, alle vaardigheden via één aanspreekpunt, geheugen per klant. 1 tot 5 credits per gesprek."
     },
     "hero": {
       "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
       "title": "Dit is Clyde. De AI-collega van je bureau.",
-      "subtitle": "De andere 11 vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de collega die ze aanstuurt en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde zet de juiste vaardigheid in en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
+      "subtitle": "De andere vaardigheden (negen live, twee in aanbouw) zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
       "cta": "Plan een gesprek",
       "prompts": {
-        "prompt1": "Plan deze week voor alle SKC-merken inclusief Reels",
+        "prompt1": "Plan deze week voor de drie SKC-accounts",
         "prompt2": "Maak een wekelijks rapport over de top presterende posts",
         "prompt3": "Welke vaardigheid werkt aan welke campagne deze sprint?"
       }
@@ -3126,23 +3126,23 @@
         "body": "\"Schrijf 3 Instagram-posts voor merk X over onderwerp Y.\" Clyde begrijpt de context en voert uit."
       },
       "feature2": {
-        "title": "Orkestratie van alle vaardigheden",
-        "body": "Workflows over vaardigheden heen: blog schrijven, social posts afleiden, prestaties meten. Eén opdracht, meerdere vaardigheden."
+        "title": "Eén aanspreekpunt voor alle vaardigheden",
+        "body": "Je hoeft niet te weten welke vaardigheid wat doet. Vraag Clyde om een blog, een post of een rapport en hij zet de juiste in."
       },
       "feature3": {
         "title": "In elk scherm en op WhatsApp",
         "body": "Clyde zit in elk scherm van het dashboard. Daarbuiten bereik je hem op WhatsApp of Telegram, en hij meldt zich zelf als er iets afwijkt of op je goedkeuring wacht."
       },
       "feature4": {
-        "title": "Geheugen en context per merk",
-        "body": "Onthoudt eerdere gesprekken, voorkeuren en correcties. Elke week scherper, per merk."
+        "title": "Geheugen per klant",
+        "body": "Onthoudt eerdere gesprekken, voorkeuren en correcties, per klant apart. Je correcties neemt hij mee in het volgende verzoek."
       }
     },
     "how": {
       "title": "Hoe het werkt",
       "step1": {
         "title": "Kies je kanaal",
-        "body": "Het paneel in je dashboard, WhatsApp of Telegram. Op elk kanaal kent Clyde hetzelfde merk."
+        "body": "Het paneel in je dashboard, WhatsApp of Telegram. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen."
       },
       "step2": {
         "title": "Geef een opdracht",
@@ -3155,16 +3155,16 @@
     },
     "integrations": {
       "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per merk.",
-      "integration1": "Alle andere 11 vaardigheden: Clyde is de orchestrator.",
-      "integration2": "Geheugensysteem: context per merk, per account en per kanaal.",
+      "subtitle": "Via het gedeelde geheugen per klant.",
+      "integration1": "De andere vaardigheden (negen live, twee in aanbouw): Clyde zet ze in.",
+      "integration2": "Geheugen: per klant, uit gesprekken, feedback en de strategie.",
       "integration3": "Routines: terugkerende taken zoals een kanaalrapport, een SEO-plan en een SEO-rapport. Per taak kies je of Clyde eerst vraagt, uitvoert en meldt, of stil uitvoert."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
         "title": "Eén interface voor je hele portfolio",
-        "body": "In plaats van 12 schermen openen: vraag Clyde in de chat. Hij weet wie welk merk is en welke vaardigheid hij moet inzetten."
+        "body": "In plaats van scherm na scherm te openen: vraag Clyde in de chat. Hij weet welke klant welk merk heeft en welke vaardigheid hij moet inzetten."
       },
       "useCase2": {
         "title": "Delegeren in plaats van uitvoeren",
@@ -3185,23 +3185,23 @@
       "items": {
         "q1": {
           "question": "Wat is Clyde precies?",
-          "answer": "Clyde is de AI-collega die de 11 andere vaardigheden orkestreert. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde routeert naar de juiste vaardigheid: schrijf een blog, plan social posts, maak een Reel, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
+          "answer": "Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde kiest de juiste vaardigheid: schrijf een blog, plan social posts, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
         },
         "q2": {
           "question": "Welke kanalen ondersteunt Clyde?",
-          "answer": "In elk scherm van je dashboard, op WhatsApp via een gekoppeld nummer, en via Telegram. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Goedkeuren doe je in het dashboard. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per merk."
+          "answer": "In elk scherm van je dashboard, op WhatsApp via een gekoppeld nummer, en via Telegram. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Goedkeuren doe je in het dashboard. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per klant."
         },
         "q3": {
           "question": "Op welke tiers is Clyde beschikbaar?",
-          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Enterprise krijgt aangepaste persona-instellingen en eigen merkstem-finetuning. Kost 1 tot 5 credits per gesprek."
+          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Een gesprek kost 1 tot 5 credits, afhankelijk van het taalmodel."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Clyde?",
-          "answer": "Vier weken volledige onboarding van het hele platform. Week 1 connectie en kennisbasis. Week 2 merkstem-modellering en goedkeuringsworkflows. Week 3 eerste autonome runs met handmatige sample-review. Week 4 kalibratie. Daarna: doorlopend leereffect via dream-cycli en Sindy-stijl portfolio-leren."
+          "answer": "Het hele platform staat in vier weken: koppelen en kennis verzamelen, merkstem en goedkeuringen inrichten, eerste opdrachten en bijsturen. Daarna leert Clyde door: elke nacht ordent hij wat hij die dag over je klanten leerde."
         },
         "q5": {
           "question": "Hoe verschilt Clyde van ChatGPT of Claude?",
-          "answer": "ChatGPT en Claude zijn losse modellen zonder werkgeheugen, integraties of merkstem-trainings. Clyde is een AI-collega met 4-laags geheugen per merk, native CMS- en CRM-koppelingen, autonome workflows en consistente merkstem. Geen herhaal-uitleg per sessie nodig."
+          "answer": "ChatGPT en Claude zijn algemene assistenten: ze kennen je klanten niet en zitten niet in je kanalen. Clyde is een AI-collega met een eigen geheugen per klant, koppelingen met je kanalen en data, en de merkstem van elke klant als vaste context. Geen herhaal-uitleg per sessie nodig."
         }
       }
     }
