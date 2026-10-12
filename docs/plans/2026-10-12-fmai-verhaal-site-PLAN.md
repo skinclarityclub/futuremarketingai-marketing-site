@@ -127,10 +127,12 @@ gemeten; Sindy-citaten weg tot zij bevestigt (ze kwamen uit een MOCKUP-transcrip
 lead-qualifier-claim toetsen; chatbot-kennis herijken; blogs meenemen.
 
 - [x] Besluiten in NL + code (`54fdf99`).
-- [ ] Claim-audit van elke namespace in nl.json, de chatbot-kennis, llms*.txt en hardcoded src-tekst tegen fma-app
-  origin/master en prod (read-only). Uitkomst in de scratchpad; onware claims herschrijf ik in NL, diff naar Daley.
+- [x] Claim-audit van elke namespace in nl.json, de chatbot-kennis, llms*.txt en hardcoded src-tekst tegen fma-app
+  origin/master en prod (read-only): `docs/audits/2026-10-12-claim-audit/` A-F (ruim 330 rijen ONWAAR/NIET-LIVE/ONBEWEZEN/VERBODEN).
+- [ ] NL-herschrijving per audit-rij (patch in `~/.claude/fmai-site-tools/`), juridische feiten apart naar Daley, diff naar Daley.
 - [ ] Chatbot-kennis en llms*.txt op het nieuwe verhaal (zelfde audit).
-- [ ] Blogs (`content/blog`, 14 NL-artikelen): woord, feiten, verhaal; slugs blijven.
+- [x] Blogs, woordlaag (`541beda`) + brug-artikel ai-marketing-medewerker (`f3c12e6`, Daley: brug-artikel).
+- [ ] Blogs, feitenlaag: elk artikel tegen de audit (geen CRM-koppelingen, geen "elk uur", geheugenretentie 6/12 mnd).
 
 ### Taak 5: EN en ES uit de definitieve NL
 
