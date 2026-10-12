@@ -43,7 +43,7 @@ const FaqAccordion = dynamic(() =>
 const LeadMagnetCTA = dynamic(() =>
   import('@/components/conversion/LeadMagnetCTA').then((m) => ({ default: m.LeadMagnetCTA }))
 )
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getPillarPosts, getClusterPosts } from '@/lib/blog'
 import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
 import { ArrowRight, ShieldCheck, ServerCog, Handshake, Users, UserRound, Check } from 'lucide-react'
@@ -158,7 +158,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           ──────────────────────────────────────────────────────────── */}
       <HeroSection
         brandKicker={t('hero.brandKicker')}
-        badge={t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+        badge={t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
         headlineMain={t('hero.headlineMain')}
         tagline={t.rich('hero.tagline', {
           accent: (chunks) => <span>{chunks}</span>,
@@ -169,7 +169,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         ctaSecondary={t('hero.ctaSecondary')}
         trustClusterTarget={t('hero.trustCluster.target')}
         trustClusterFounding={t('hero.trustCluster.founding', {
-          taken: FOUNDING_SPOTS_TAKEN,
           total: FOUNDING_SPOTS_TOTAL,
         })}
         trustClusterAvg={t('hero.trustCluster.avgLabel')}
@@ -403,7 +402,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             title={t('pricingTeaser.title')}
             subtitle={t('pricingTeaser.subtitle')}
             ctaLink={t('pricingTeaser.ctaLink')}
-            spotsTaken={t('pricingTeaser.spotsTaken', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            spotsTaken={t('pricingTeaser.spotsTaken', { total: FOUNDING_SPOTS_TOTAL })}
             perMonth={t('pricingTeaser.perMonth')}
             perWorkspace={t('pricingTeaser.perWorkspace')}
             futurePhaseEyebrow={t('pricingTeaser.futurePhaseEyebrow')}
@@ -588,7 +587,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               />
               <div className="relative">
                 <p className="text-xs font-mono uppercase tracking-[0.18em] text-accent-human mb-5">
-                  {t('cta.eyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+                  {t('cta.eyebrow', { total: FOUNDING_SPOTS_TOTAL })}
                 </p>
                 <h2
                   id="cta"

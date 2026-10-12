@@ -15,10 +15,9 @@ import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
-import { SpotScarcityGrid } from '@/components/founding/SpotScarcityGrid'
 import { QuickApplyTeaser } from '@/components/founding/QuickApplyTeaser'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -66,15 +65,6 @@ export default async function FoundingMemberPage({
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'founding-member' })
-
-  const takenSpots = [
-    {
-      position: 1,
-      name: t('scarcity.takenSpots.skc.name'),
-      since: t('scarcity.takenSpots.skc.since'),
-      emblem: '/brand/skc-emblem.png',
-    },
-  ]
 
   return (
     <PageShell showStickyCta>
@@ -177,33 +167,6 @@ export default async function FoundingMemberPage({
               {t('value.line3')}
             </p>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Scarcity grid — Fase 6 signature */}
-      <section aria-labelledby="scarcity" className="py-20 px-6 lg:px-12 bg-bg-surface/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <EyebrowLabel className="mb-3 inline-block text-accent-human">
-              {t('eyebrows.scarcity')}
-            </EyebrowLabel>
-            <h2
-              id="scarcity"
-              className="text-2xl md:text-3xl font-bold font-display text-text-primary mb-4"
-            >
-              {t('scarcity.heading')}
-            </h2>
-            <p className="text-base text-text-secondary leading-relaxed max-w-2xl mx-auto">
-              {t('scarcity.intro')}
-            </p>
-          </div>
-          <SpotScarcityGrid
-            total={FOUNDING_SPOTS_TOTAL}
-            takenSpots={takenSpots}
-            openHeading={t('scarcity.open.heading')}
-            openLabel={t('scarcity.open.body')}
-            ariaLabel={t('scarcity.ariaLabel')}
-          />
         </div>
       </section>
 
@@ -345,7 +308,7 @@ export default async function FoundingMemberPage({
               {t('cta.title')}
             </h2>
             <p className="text-lg text-text-secondary mb-8">
-              {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+              {t('cta.subtitle', { total: FOUNDING_SPOTS_TOTAL })}
             </p>
             <CTAButton href="/apply" size="lg">
               {t('cta.button')}

@@ -1,23 +1,14 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import {
-  FOUNDING_SPOTS_TAKEN,
   FOUNDING_SPOTS_TOTAL,
-  FOUNDING_LAST_UPDATED,
   FOUNDING_COHORT_START,
 } from '@/lib/constants'
 
 /**
  * FoundingCounter
  *
- * WHY: audit 03 leak #5 — the bare "1 van 10 plekken bezet" counter reads as
- * fabricated urgency. Adding a date-stamp ("stand van 24 april 2026") and a
- * cohort-start ("cohort start 1 juni 2026") makes the scarcity claim concrete
- * and verifiable.
- *
- * Renders three lines:
- *   1. badge   — "1 van 10 founding plekken vergeven" (interpolated)
- *   2. updated — "Stand van 24 april 2026"
- *   3. cohort  — "Cohort start 1 juni 2026"
+ * WHY: shows the founding cap ("maximaal 10 founding-plekken") and, while it is still
+ * ahead, the cohort start. No taken count: no founding org pays yet (Daley 2026-10-12).
  *
  * Locale-aware date formatting via Intl.DateTimeFormat.
  *
@@ -56,8 +47,6 @@ export async function FoundingCounter({
   const locale = await getLocale()
   const t = await getTranslations('founding.counter')
 
-  const lastUpdatedLabel = formatDate(FOUNDING_LAST_UPDATED, locale)
-
   // A cohort start that has already passed reads as an abandoned page: on
   // 2026-09-01 this badge still advertised "Cohort start 1 juni 2026". Scarcity
   // that is visibly expired argues against you. Hide the line once the date is
@@ -76,12 +65,8 @@ export async function FoundingCounter({
     >
       <span className="text-sm font-semibold">
         {t('badge', {
-          taken: FOUNDING_SPOTS_TAKEN,
           total: FOUNDING_SPOTS_TOTAL,
         })}
-      </span>
-      <span className="text-xs text-text-muted">
-        {t('lastUpdated', { date: lastUpdatedLabel })}
       </span>
       {cohortStartsInFuture && (
         <span className="text-xs text-text-muted">

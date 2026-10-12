@@ -12,22 +12,22 @@
   "home": {
     "meta": {
       "title": "FutureMarketingAI: Clyde, de AI-collega van je bureau",
-      "description": "Clyde is de AI-collega van je bureau: van het doel van elke klant tot de agenda, de content en de rapporten. Hij onthoudt elk merk apart."
+      "description": "Clyde is de AI-collega van je bureau: van het doel van elke klant tot de agenda, de content en de rapporten. Met een eigen geheugen per klant."
     },
     "hero": {
       "brandKicker": "FutureMarketingAI",
-      "badge": "{taken} van {total} founding plekken bezet",
+      "badge": "Maximaal {total} founding-plekken",
       "headlineMain": "Dit is Clyde.",
       "imageAlt": "3D-illustratie van Clyde, de AI-collega van FutureMarketingAI",
       "tagline": "De <accent>AI-collega</accent> van je bureau.",
-      "subtitle": "Onthoudt elk merk, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
-      "trustAnchor": "Live in productie sinds 2025. Maximaal {maxPartners} partners per jaar.",
+      "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
+      "trustAnchor": "Draait in productie bij onze eerste klant. Maximaal {maxPartners} partners per jaar.",
       "cta": "Plan een gesprek",
       "ctaSecondary": "Leer Clyde kennen",
       "trustCluster": {
         "target": "Gebouwd voor bureaus",
-        "founding": "{taken} van {total} founding plekken",
-        "avgLabel": "AVG-compliant"
+        "founding": "Maximaal {total} founding-plekken",
+        "avgLabel": "Data in de EU"
       }
     },
     "services": {
@@ -39,15 +39,15 @@
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
-        "description": "Chatbot op de website die leads kwalificeert en warme prospects doorzet naar het CRM."
+        "description": "Chatbot op de website die bezoekers kwalificeert en warme leads via een webhook doorzet naar het CRM dat je al gebruikt."
       },
       "emailManagement": {
         "title": "Email Management",
-        "description": "Jij ziet alleen wat aandacht nodig heeft. De rest is al weg."
+        "description": "Clyde sorteert de inbox, zet labels en schrijft conceptantwoorden. Jij ziet eerst wat aandacht nodig heeft en keurt de concepten goed."
       },
       "reporting": {
         "title": "Rapportage & Analytics",
-        "description": "Elke vrijdag het SEO-rapport op WhatsApp, elke week een rapport per merk in je dashboard. Wijkt een cijfer af, dan hoor je het van Clyde voordat de klant belt."
+        "description": "Elke vrijdag het SEO-rapport op WhatsApp, elke week een rapport per merk in je dashboard. Wijkt een cijfer af, dan meldt Clyde het je."
       },
       "seoGeo": {
         "title": "SEO en GEO Analyst",
@@ -58,11 +58,11 @@
         "description": "Eén aanspreekpunt voor je hele portfolio, in elk scherm van je dashboard en op WhatsApp. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
         "statusLabel": "Actief",
         "promptIntro": "Vraag bijvoorbeeld:",
-        "prompt1": "Plan Instagram-content voor alle SKC-merken deze week",
+        "prompt1": "Plan Instagram-content voor alle SKC-accounts deze week",
         "prompt2": "Maak een wekelijks performance-rapport voor merk X",
         "prompt3": "Analyseer welke contenttypen het beste presteerden in Q4",
         "openLink": "Open de Clyde-vaardigheid",
-        "response1": "Gedaan. De posts van deze week staan per merk in de agenda, elk in de eigen stem, klaar voor jouw goedkeuring.",
+        "response1": "Gedaan. De posts van deze week staan per account in de agenda, elk in de eigen toon, klaar voor jouw goedkeuring.",
         "response2": "Het rapport staat in je dashboard: wat werkte, wat achterbleef en wat ik volgende week anders voorstel.",
         "response3": "De analyse staat klaar. Per contenttype zie je wat bewaard en gedeeld werd, naast je doelen, met een voorstel voor de agenda.",
         "userLabel": "Jij",
@@ -70,7 +70,7 @@
       },
       "research": {
         "title": "Research",
-        "description": "Marktonderzoek, concurrentie-analyse en trendsignalen per merk, in jouw briefingdocs."
+        "description": "Marktonderzoek, concurrentieanalyse en trends per klant, als onderbouwing van de strategie."
       },
       "blogFactory": {
         "title": "Blog Factory",
@@ -78,7 +78,7 @@
       },
       "adCreator": {
         "title": "Ad Manager",
-        "description": "Ads maken én sturen: copy, visuals en video voor Meta, plus leads, kosten per lead en ad-fatigue per advertentie."
+        "description": "Advertenties voor Meta: copy en beeld per merk, en per advertentie de leads, kosten per lead en ad-fatigue."
       },
       "manychat": {
         "title": "ManyChat DM",
@@ -98,7 +98,7 @@
     "icp": {
       "title": "Voor wie dit werkt (en voor wie niet)",
       "subtitle": "Geen marketingpraatje. Eerlijk gezegd: we werken liever niet met iedereen.",
-      "scarcityCallout": "{taken}/{total} founding plekken bezet · Max {maxPerYear} partners per jaar",
+      "scarcityCallout": "{total} founding-plekken · Maximaal {maxPerYear} partners per jaar",
       "closingHeadline": "Klopt het verhaal links?",
       "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
       "closingCta": "Plan een gesprek",
@@ -106,7 +106,7 @@
       "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
-      "fit4": "Nederlandse en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
+      "fit4": "Nederlandse en EU-first bureaus die willen weten waar hun data staat.",
       "notFitTitle": "Voor wie dit niet werkt",
       "notFit1": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan.",
       "notFit2": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
@@ -116,13 +116,13 @@
     "caseStudyCard": {
       "eyebrow": "Case · SkinClarity Club",
       "companyName": "SkinClarity Club",
-      "subtitle": "Skincare-merk, 4 huismerken, 3 Instagram-accounts. Founding partner sinds Q4 2025.",
+      "subtitle": "Huidverzorging, 3 Instagram-accounts. Onze eerste klant.",
       "logoAlt": "SkinClarity Club logo",
-      "outcomeHeadline": "Hoe Clyde vier huismerken uit elkaar houdt, elk in een eigen stem",
-      "metric1Value": "Sindy keurt goed",
-      "metric1Label": "Clyde maakt en plant, zij beslist wat live gaat",
-      "metric2Value": "4 merken, 4 stemmen",
-      "metric2Label": "Elk merk apart onthouden, nooit generieke AI-toon",
+      "outcomeHeadline": "Hoe Clyde drie Instagram-accounts bedient, elk met een eigen toon",
+      "metric1Value": "Het bureau keurt goed",
+      "metric1Label": "Clyde maakt en plant, het bureau beslist wat live gaat",
+      "metric2Value": "Eén geheugen",
+      "metric2Label": "Wat Clyde over de klant leert, gebruikt hij voor alle drie de accounts",
       "metric3Value": "3 accounts",
       "metric3Label": "Elk account een eigen agenda vanuit de strategie",
       "ctaLink": "Lees de case"
@@ -145,7 +145,7 @@
     },
     "processTimeline": {
       "eyebrow": "Onboarding",
-      "title": "In 4 weken: van eerste gesprek naar autonome content",
+      "title": "In 4 weken: van eerste gesprek naar content die live gaat",
       "subtitle": "Een werksessie, dan gefaseerd live. Elke week eerlijk uitgesplitst, jouw tijdsinvestering inbegrepen.",
       "weeks": {
         "1": {
@@ -158,8 +158,8 @@
         "2": {
           "label": "Week 2",
           "heading": "Setup en pijlers",
-          "body": "Content-pijlers automatisch gegenereerd uit brand-DNA. Design-templates per merk via Stitch. Channels (IG, LinkedIn) plus CTA-mapping geactiveerd.",
-          "deliverable": "4 tot 6 content-pijlers, design-templates en channels live",
+          "body": "Content-pijlers automatisch gegenereerd uit het merk-DNA. Design-templates per merk. Kanalen (Instagram, LinkedIn) en CTA-mapping ingesteld.",
+          "deliverable": "5 tot 7 content-pijlers, design-templates en kanalen live",
           "clientHours": "2 uur jouw tijd"
         },
         "3": {
@@ -172,8 +172,8 @@
         "4": {
           "label": "Week 4",
           "heading": "Kickoff en activatie",
-          "body": "Kickoff sessie met Daley. Clyde plant en publiceert autonoom volgens jouw merk-schema. Directe Slack-lijn voor escalaties.",
-          "deliverable": "Autonome contentmotor live, Founder Slack actief",
+          "body": "Kickoff met Daley. Clyde plant en publiceert volgens de agenda, met zoveel zelfstandigheid als jij per taak kiest. Directe Slack-lijn voor escalaties.",
+          "deliverable": "Contentmotor live, Founder Slack actief",
           "clientHours": "2 uur per week, doorlopend"
         }
       },
@@ -184,7 +184,7 @@
     "comparison": {
       "eyebrow": "Vergelijking",
       "title": "Drie modellen, een keuze die schaalt",
-      "subtitle": "Wat is het verschil met een DIY-stack of een traditioneel bureau? Op zes punten die er voor jouw klantportfolio toe doen.",
+      "subtitle": "Wat is het verschil met een DIY-stack of een traditioneel bureau? Op zes punten die er voor jouw klantportfolio toe doen. Bedragen en doorlooptijden van de alternatieven zijn indicaties.",
       "headers": {
         "topic": "Onderwerp",
         "diy": "DIY-stack",
@@ -197,13 +197,13 @@
           "label": "Geheugen tussen sessies",
           "diy": "Reset bij elke prompt",
           "bureau": "Account-manager kent jouw merken",
-          "clyde": "Vier lagen persistent geheugen per merk"
+          "clyde": "Eigen geheugen per klant, blijft tussen sessies"
         },
         "schaalbaar": {
           "label": "Schaalbaar bij meer merken",
           "diy": "Handmatig per merk opnieuw inrichten",
           "bureau": "Lineair meer uren, hogere kosten",
-          "clyde": "Marginale kosten per extra merk"
+          "clyde": "Vaste prijs per extra werkruimte"
         },
         "sovereignty": {
           "label": "EU-data sovereignty",
@@ -227,7 +227,7 @@
           "label": "Lock-in en data-export",
           "diy": "Per tool verschillend",
           "bureau": "Data vaak bij bureau",
-          "clyde": "Export binnen 24u, open API"
+          "clyde": "Data blijft van jou, 30 dagen om alles mee te nemen"
         }
       },
       "strengthLabels": {
@@ -245,37 +245,37 @@
     },
     "memoryUsp": {
       "eyebrow": "Geheugen, geen sessies",
-      "title": "Andere AI begint elke prompt opnieuw. Clyde onthoudt jouw merken.",
-      "intro": "Zoals een goede collega dat doet, in vier lagen.",
+      "title": "Andere AI begint elke prompt opnieuw. Clyde onthoudt je klanten.",
+      "intro": "Zoals een goede collega: hij weet wat er speelt, hoe elke klant klinkt, wat eerder werkte en hoe jullie werken.",
       "layers": {
         "context": {
           "label": "Context",
           "body": "Lopende campagnes, deadlines, recent klantcontact. Clyde weet dat de winter-campagne deze week piekt."
         },
         "merken": {
-          "label": "Merken",
-          "body": "Stem en do's per merk. @sindy_huidtherapeut intiem, @SkinClarity_Shop product-energetic, @SkinClarityClub educatief."
+          "label": "Merkstem",
+          "body": "Toon, woorden en do's en don'ts per klant. Vastgelegd bij de start, bijgewerkt met elke correctie."
         },
         "historie": {
           "label": "Historie",
-          "body": "Wat eerder werkte. Sloeg de Sindy Tips-carrousel aan, dan bouwt Clyde daarop voort in plaats van opnieuw te beginnen."
+          "body": "Wat eerder werkte. Sloeg een carrousel aan, dan bouwt Clyde daarop voort in plaats van opnieuw te beginnen."
         },
         "voorkeuren": {
           "label": "Voorkeuren",
-          "body": "Sindy reviewt op vrijdag. Geen uitroeptekens. Posten doorgaans 19:00. Clyde houdt zich eraan."
+          "body": "Hoe jullie werken: wie goedkeurt, welke woorden niet mogen, wanneer er gepost wordt. Clyde houdt zich eraan."
         }
       },
-      "ctaLink": "Bekijk de 4-laagse geheugen-visualisatie",
+      "ctaLink": "Zo werkt het geheugen van Clyde",
       "compare": {
         "eyebrow": "Zelfde prompt, twee uitkomsten",
-        "prompt": "Schrijf een blog over rosacea voor SkinClarity Club",
+        "prompt": "Schrijf een blog over rosacea voor onze klant, de huidkliniek",
         "otherLabel": "Andere AI",
         "otherTag": "sessie-based",
         "otherResponse": "Rosacea is een chronische huidaandoening met roodheid en zichtbare bloedvaten. Behandelingen: topical medicatie, laser, dieet-aanpassingen...",
         "otherWarning": "Jij moet brand-context en producten bij elke prompt opnieuw aanleveren.",
         "clydeLabel": "Clyde",
-        "clydeTag": "met 4-laags geheugen",
-        "clydeResponse": "Rosacea bij Sindy's klantengroep: kalmerende toon, sluit aan op @sindy_huidtherapeut's eerdere barriere-herstel post, vermijdt sales-jargon en uitroeptekens.",
+        "clydeTag": "met geheugen per klant",
+        "clydeResponse": "Rosacea voor de klanten van de kliniek: kalmerende toon, sluit aan op de eerdere post over barrièreherstel, zonder salestaal.",
         "clydeProof": "Klopt direct op brand-stem, producten en eerdere content. Geen rebrief nodig.",
         "promptLabel": "Prompt",
         "responseLabel": "Response"
@@ -299,12 +299,12 @@
       "futurePhaseEyebrow": "Na de founding-fase",
       "futureAvailability": "Beschikbaar na founding-fase",
       "foundingCtaLabel": "Word founding partner",
-      "spotsTaken": "{taken} van {total} plekken bezet",
+      "spotsTaken": "Maximaal {total} plekken",
       "tiers": {
         "founding": {
           "label": "Founding",
           "tagline": "Levenslang vast",
-          "desc": "Voor de eerste 10 bureaus. Volledige toegang tot alle 12 vaardigheden, tot 15 werkruimtes (daarboven €299 per extra werkruimte), Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
+          "desc": "Voor de eerste 10 bureaus. Alle live vaardigheden, 15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
         },
         "growth": {
           "label": "Growth",
@@ -319,7 +319,7 @@
         "enterprise": {
           "label": "Enterprise",
           "tagline": "15+ merken",
-          "desc": "Voor grote bureaus. Aangepaste SLA, dedicated capaciteit en uitbreidbare caps."
+          "desc": "Voor grote bureaus. Geen caps op vaardigheden en een vaste contactpersoon."
         }
       },
       "ctaLink": "Plan een gesprek"
@@ -338,7 +338,7 @@
         "label": "Data in de EU",
         "stat": "EU",
         "statLabel": "Data, servers, database",
-        "body": "Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf. Wil je ook dat in de EU, dan zetten we Clyde op verzoek op Mistral. Export in JSON en CSV binnen 24 uur.",
+        "body": "Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; voor onder meer beeld en zoeken gebruiken we nog andere aanbieders, die in onze privacyverklaring staan. Wil je het taalmodel ook in de EU, dan zetten we Clyde op verzoek op Mistral.",
         "linkText": "Hoe wij data behandelen"
       },
       "partnership": {
@@ -360,8 +360,8 @@
       "readTimeLabel": "min lezen"
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
-      "title": "Tien plekken open. Daarna sluit founding.",
+      "eyebrow": "Founding open · maximaal {total} plekken",
+      "title": "Maximaal tien plekken. Daarna sluit founding.",
       "subtitle": "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past.",
       "button": "Plan een gesprek",
       "foundingLabel": "Bekijk Founding tier"
@@ -372,11 +372,11 @@
       "items": {
         "q1": {
           "question": "Hoe verschilt Clyde van ChatGPT of Jasper?",
-          "answer": "ChatGPT en Jasper zijn generieke tools zonder geheugen. Je moet context bij elke prompt opnieuw leveren. Clyde heeft persistent geheugen per merk: merkstem, doelgroep, prestatiegeschiedenis en voorkeuren blijven bewaard. Daarnaast orkestreert Clyde tien live vaardigheden plus twee binnenkort (social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics en meer), niet alleen tekst. Eén brein met gedeeld geheugen, geen losse tool per taak."
+          "answer": "ChatGPT en Jasper zijn generieke tools zonder geheugen. Je moet context bij elke prompt opnieuw leveren. Clyde heeft een eigen geheugen per klant: merkstem, doelgroep, doelen en werkafspraken blijven bewaard. Daarnaast orkestreert Clyde tien live vaardigheden plus twee binnenkort (social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics en meer), niet alleen tekst. Eén brein met gedeeld geheugen, geen losse tool per taak."
         },
         "q2": {
           "question": "Wat als ik wil opzeggen?",
-          "answer": "Geen lock-in. Je data is altijd binnen 24 uur exporteerbaar (JSON + CSV). Je data staat op servers en in een database in de EU, zonder eigen wrapper eromheen. Alles wat Clyde leert over jouw merken blijft van jou. Bij opzegging heb je 30 dagen voor een volledige export voordat we je werkruimtes afbouwen."
+          "answer": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes. Je data staat op servers en in een database in de EU."
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
@@ -384,11 +384,11 @@
         },
         "q4": {
           "question": "Hoeveel vaardigheden krijg ik precies?",
-          "answer": "Twaalf in totaal: 10 live (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 2 binnenkort beschikbaar (Voice Agent, Reel Builder). Founding, Growth, Professional en Enterprise hebben alle 12 vaardigheden, met caps op de duurdere (voice, video, reels)."
+          "answer": "Twaalf in totaal: 10 live (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 2 binnenkort (Voice Agent, Reel Builder). Elk pakket gebruikt alle live vaardigheden; op de zwaardere gelden caps, behalve bij Enterprise."
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
-          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde leert over merk X bij social media, gebruikt hij automatisch bij hun blogs en advertenties. Leren tussen vaardigheden is onmogelijk met aparte tools: je verliest context bij elke overdracht. Eén collega voor je hele portfolio betekent dat patronen en data tussen vaardigheden meereizen."
+          "answer": "Omdat het één brein is met gedeeld geheugen, geen 12 losse tools. Wat Clyde over een klant leert bij social media, gebruikt hij ook bij de blogs en advertenties van die klant. Met aparte tools verlies je die context bij elke overdracht. Eén collega voor je hele portfolio betekent dat wat hij over een klant weet tussen vaardigheden meereist."
         }
       }
     },
@@ -418,7 +418,7 @@
     "kring": {
       "eyebrow": "De kring",
       "title": "Alles hangt aan het doel van je klant",
-      "subtitle": "Clyde begint bij de doelen van elke klant en houdt die vast tot in de rapporten. Wat de rapporten laten zien, voedt het volgende doel. Hij zit in elke stap en onthoudt elk merk apart.",
+      "subtitle": "Clyde begint bij de doelen van elke klant en houdt die vast tot in de rapporten. Wat de rapporten laten zien, voedt het volgende doel. Hij zit in elke stap, met een eigen geheugen per klant.",
       "steps": {
         "s1": {
           "t": "Doel",
@@ -759,7 +759,6 @@
           "seo_geo": "SEO / GEO",
           "clyde": "Clyde Orchestrator"
         },
-        "status_badge": "Alle systemen draaien",
         "social_aria": {
           "linkedin": "Volg ons op LinkedIn",
           "twitter": "Volg ons op X"
@@ -774,7 +773,7 @@
           "label": "E-mailadres",
           "placeholder": "jij@bureau.nl",
           "cta": "Aanmelden",
-          "consent": "Ik wil maandelijkse updates over Clyde en mag me altijd uitschrijven.",
+          "consent": "Ik wil updates over Clyde per e-mail en mag me altijd uitschrijven.",
           "success": "Check je inbox voor de bevestigingsmail.",
           "error": "Aanmelden lukte niet. Probeer het later opnieuw."
         },
@@ -834,7 +833,7 @@
       "categories": {
         "functional": {
           "name": "Noodzakelijk",
-          "description": "Vereist voor login, sessie en kernfuncties. Altijd actief."
+          "description": "Nodig om de site te laten werken, zoals het onthouden van je cookiekeuze. Altijd actief."
         },
         "analytics": {
           "name": "Analyses",
@@ -842,7 +841,7 @@
         },
         "marketing": {
           "name": "Marketing",
-          "description": "Helpt ons relevante content en aanbiedingen te tonen."
+          "description": "Wordt nu niet gebruikt: we plaatsen geen advertentiepixels."
         }
       }
     },
@@ -884,7 +883,7 @@
     },
     "hero": {
       "eyebrow": "Over FutureMarketingAI",
-      "badge": "Founding open · {taken}/{total} bezet",
+      "badge": "Founding open · maximaal {total} plekken",
       "title": "Over FutureMarketingAI",
       "tagline": "Clyde, de AI-collega van je bureau. Gebouwd door Daley van Diest, die elke partner zelf begeleidt."
     },
@@ -903,23 +902,23 @@
         "spark": {
           "period": "Q3 2025",
           "title": "Eerste pijnpunt zichtbaar",
-          "body": "Bij SkinClarity Club merkte ik dat 12 losse marketing-tools niet meeschalen bij 3 Instagram-accounts en 4 merken. De aanleiding voor wat later FMai werd."
+          "body": "Bij SkinClarity Club merkte ik dat losse marketingtools niet meeschalen bij drie Instagram-accounts. De aanleiding voor wat later FMai werd."
         },
         "prototype": {
           "period": "Q4 2025",
           "title": "Eerste Clyde-prototype",
-          "body": "n8n + Supabase als basis, eerste merk-geheugen-laag live. Een handvol vaardigheden draaide autonoom voor één merk binnen SKC."
+          "body": "n8n en Supabase als basis, met een eerste merkgeheugen. Een handvol vaardigheden draaide voor één account binnen SKC."
         },
         "founding": {
           "period": "Q1 2026",
           "title": "Founding-cohort opengesteld",
-          "body": "Eerste 10 founding plekken ge-announced. SKC is officieel klant 1. Workspace-priced model uitgewerkt op basis van echte usage-data.",
+          "body": "De eerste 10 founding-plekken aangekondigd. SKC is onze eerste klant. Prijs per werkruimte uitgewerkt.",
           "current": true
         },
         "scale": {
-          "period": "H2 2026",
-          "title": "Cohort 2 + Marketplace-app",
-          "body": "Volgende 9 founding bureaus onboarden. SaaS command center publiek live voor self-serve werkruimtes per bureau."
+          "period": "Q4 2026",
+          "title": "Waar we nu aan bouwen",
+          "body": "De eerste founding-bureaus aan boord, een mobiele app en een kennisbank die laat zien wat Clyde per klant weet. In aanbouw, nog niet live."
         }
       }
     },
@@ -935,17 +934,17 @@
         "autonomous": {
           "year": "2025-2026",
           "title": "AI werkt mee in het team",
-          "description": "Persistente AI-agenten die volledige workflows autonoom uitvoeren. Hier bouwen vroege bureaus een voorsprong op die nauwelijks meer in te halen is."
+          "description": "AI met geheugen neemt hele stukken werk over, onder regie van het team. Bureaus die nu beginnen, doen er als eerste ervaring mee op."
         },
         "standard": {
           "year": "2027 en verder",
           "title": "Standaardpraktijk",
-          "description": "Elk bureau werkt met AI in het team. Bureaus die vroeg begonnen hebben 2 tot 3 jaar samengestelde leercurves in huis."
+          "description": "Elk bureau werkt met AI in het team. Wie vroeg begon, weet dan al hoe dat werkt."
         }
       },
       "key_message": {
-        "title": "Early-adopter bureaus bouwen een voorsprong van 2 tot 3 jaar op",
-        "description": "Het samengestelde effect van AI-leren betekent dat nu beginnen een voorsprong geeft die laatkomers niet meer inlopen."
+        "title": "Wie nu begint, weet eerder wat werkt",
+        "description": "Hoe eerder je begint, hoe eerder Clyde je klanten kent en hoe eerder je team weet hoe je met een AI-collega werkt."
       }
     },
     "cta": {
@@ -962,12 +961,12 @@
       "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
-      "fit4": "NL- en EU-first bureaus die waarde hechten aan dataresidentie en AVG- en EU AI Act-compliance.",
+      "fit4": "NL- en EU-first bureaus die willen weten waar hun data staat.",
       "notFitTitle": "Voor wie dit niet werkt",
       "notFit1": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan.",
       "notFit2": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
       "notFit3": "Je zoekt naar een volautomatische oplossing. Clyde leert van jou, en dat vraagt 4 weken onboarding plus blijvende input.",
-      "notFit4": "Je een bureau runt met meer dan 30 FTE én een eigen AI- of tech-team. Wij versnellen bureaus die dat niet zelf bouwen."
+      "notFit4": "Je zowel meer dan 20 mensen als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen."
     },
     "infra": {
       "eyebrow": "Infrastructuur",
@@ -975,29 +974,26 @@
       "subtitle": "Feiten, geen ideologie. Waar je data woont en wie de code schrijft is belangrijk.",
       "selfHosted": {
         "title": "Self-hosted n8n en Supabase",
-        "body": "Orchestratie via n8n op eigen servers. Data in Supabase EU. Geen black-box SaaS waar je data doorheen stroomt: ik bouw transparante pipelines die we samen bijstellen."
+        "body": "Orchestratie via n8n op eigen servers, data in Supabase in de EU. Ik bouw de pipelines zelf en we stellen ze samen bij."
       },
       "eu": {
-        "title": "EU-servers (Hetzner)",
-        "body": "Servers en database in Duitsland en Nederland. Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; wil je dat ook in de EU, dan zetten we Clyde op verzoek op Mistral. AVG- en EU AI Act-ready als uitgangspunt, niet als afvinklijstje."
+        "title": "Servers in de EU",
+        "body": "Servers en database staan in de EU. Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; voor onder meer beeld en zoeken gebruiken we nog andere aanbieders, die in onze privacyverklaring staan. Wil je het taalmodel ook in de EU, dan zetten we Clyde op verzoek op Mistral."
       },
       "openStandards": {
-        "title": "Open standaarden",
-        "body": "OpenAPI, JSON, CSV en standaard OAuth. Geen proprietary formats om je content of klantdata vast te houden."
+        "title": "Gewone formaten",
+        "body": "Koppelingen via standaard OAuth; lijsten zoals leads en zoekwoordposities exporteer je als CSV. Geen eigen formaat dat je content of klantdata vasthoudt."
       },
       "noLockIn": {
         "title": "Geen lock-in",
-        "body": "Je data is binnen 24 uur exporteerbaar. 30 dagen retentie als vangnet na opzegging. Geen boetes, geen exit-fees, geen voorwaarden die je beperken."
+        "body": "Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen boetes en geen exit-fees."
       }
     },
     "capacity": {
       "eyebrow": "Capaciteit",
       "title": "Capaciteit en transparantie",
-      "body": "Maximaal {maxPartners} bureaus per jaar. Op dit moment {taken} van {total} Founding plekken bezet. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort.",
-      "barLegend": "Founding plekken bezet",
-      "barTakenLabel": "Bezet",
-      "barAvailableLabel": "Beschikbaar"
+      "body": "Maximaal {maxPartners} bureaus per jaar. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -1005,19 +1001,19 @@
       "name": "Daley",
       "fullName": "Daley van Diest",
       "role": "Founder en operator, FutureMarketingAI",
-      "bio": "Ik bouw FutureMarketingAI vanuit ervaring: als operator bij SkinClarity Club zag ik hoe 12 losse tools niet meeschalen bij 3 Instagram-accounts en 4 merken. Uit dat probleem is Clyde ontstaan, als oplossing voor mijn eigen werk. Elke nieuwe klant die ik aanneem krijgt persoonlijk contact. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen."
+      "bio": "Ik bouw FutureMarketingAI vanuit ervaring: als operator bij SkinClarity Club zag ik hoe losse tools niet meeschalen bij drie Instagram-accounts. Uit dat probleem is Clyde ontstaan, als oplossing voor mijn eigen werk. Elke nieuwe klant die ik aanneem krijgt persoonlijk contact. Geen CSM-laag, geen ticketsysteem voor strategische beslissingen."
     }
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen: Founding €997 per werkruimte | FutureMarketingAI",
+      "title": "Prijzen: Founding €997 per maand | FutureMarketingAI",
       "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna per werkruimte: Growth €499, Pro €399, Enterprise €299. Geen lock-in."
     },
     "hero": {
       "eyebrow": "Tarieven & vaardigheden",
       "title": "Premium partnerships. Founding €997 levenslang.",
       "description": "Alle prijzen staan zichtbaar. Founding €997 levenslang voor de eerste 10 bureaus. Daarna een lineair tarief per werkruimte: Growth €499, Professional €399, Enterprise €299. Caps per vaardigheid eerlijk uitgelegd, geen verborgen kosten, geen \"neem contact op voor prijs\".",
-      "counter": "{taken} van {total} Founding plekken bezet"
+      "counter": "Maximaal {total} Founding-plekken"
     },
     "visibility": {
       "eyebrow": "Filosofie",
@@ -1056,15 +1052,15 @@
         "name": "Growth",
         "subtitle": "Voor kleine bureaus",
         "tagline": "Lineair tarief per werkruimte. Schaalt mee met je portfolio van 2 tot 4 merken.",
-        "description": "Voor bureaus met 2 tot 4 merken in hun portfolio die Clyde als volwaardige collega willen inzetten. Alle 12 vaardigheden beschikbaar met tier-caps op de duurdere (voice, video, reels).",
+        "description": "Voor bureaus met 2 tot 4 merken in hun portfolio die Clyde als volwaardige collega willen inzetten. Alle live vaardigheden, met caps op de zwaardere.",
         "features_0": "Lineaire prijs per werkruimte (2 tot 4 merken)",
         "features_1": "800 credits per werkruimte (1.600 tot 3.200 totaal per maand)",
-        "features_2": "Alle 12 vaardigheden beschikbaar",
+        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
         "features_3": "Blog Factory: 8 per maand",
         "features_4": "Statische ads: 15 per maand. Video ads: 4 per maand",
-        "features_5": "Reel Builder: 4 per maand",
-        "features_6": "Voice Agent: 30 minuten per maand",
-        "features_7": "E-mail- en app-support"
+        "features_5": "Reel Builder: 4 per maand, zodra live",
+        "features_6": "Voice Agent: 30 minuten per maand, zodra live",
+        "features_7": "Support per e-mail"
       },
       "professional": {
         "name": "Professional",
@@ -1073,38 +1069,36 @@
         "description": "Voor bureaus met 5 tot 14 merken in hun portfolio die serieus op Clyde draaien. Lineair tarief, ruimere caps, directe Slack-toegang tot Daley, maandelijkse strategiecall.",
         "features_0": "Lineaire prijs per werkruimte (5 tot 14 merken)",
         "features_1": "800 credits per werkruimte (4.000 tot 11.200 totaal per maand)",
-        "features_2": "Alle 12 vaardigheden beschikbaar",
+        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
         "features_3": "Blog Factory: 20 per maand",
         "features_4": "Statische ads: 50 per maand. Video ads: 20 per maand",
-        "features_5": "Reel Builder: 15 per maand",
-        "features_6": "Voice Agent: 120 minuten per maand",
+        "features_5": "Reel Builder: 15 per maand, zodra live",
+        "features_6": "Voice Agent: 120 minuten per maand, zodra live",
         "features_7": "Slack-support plus maandelijkse strategiecall"
       },
       "enterprise": {
         "name": "Enterprise",
         "subtitle": "Voor grote bureaus",
-        "tagline": "Lineair tarief vanaf 15 werkruimtes. Geen caps (fair use). White-label en API-toegang.",
-        "description": "Voor bureaus met 15 of meer merken die Clyde als kern-infrastructuur gebruiken. Lineair tarief vanaf 15 werkruimtes, geen caps op vaardigheden (fair use), white-label, API-toegang, eigen customer success manager met SLA.",
+        "tagline": "Lineair tarief vanaf 15 werkruimtes. Geen caps (fair use). Eigen contactpersoon.",
+        "description": "Voor bureaus met 15 of meer merken die Clyde als kern-infrastructuur gebruiken. Lineair tarief vanaf 15 werkruimtes, geen caps op vaardigheden (fair use) en een eigen customer success manager met SLA.",
         "features_0": "Lineaire prijs per werkruimte vanaf 15 merken",
         "features_1": "800 credits per werkruimte (vanaf 12.000 per maand)",
-        "features_2": "Alle 12 vaardigheden zonder caps (fair use)",
-        "features_3": "White-label optie",
-        "features_4": "API-toegang voor integraties",
-        "features_5": "Eigen Customer Success Manager",
-        "features_6": "SLA-contract"
+        "features_2": "Alle live vaardigheden zonder caps (fair use)",
+        "features_3": "Eigen Customer Success Manager",
+        "features_4": "SLA-contract"
       },
       "founding": {
         "name": "Founding",
         "subtitle": "10 plekken · levenslang anker",
-        "tagline": "10 plekken totaal. Pro-caps. Levenslang €997. Founder Slack.",
-        "description": "De oprichtende klanten die vóór launch committeerden. Levenslange prijs van €997, Pro-caps op elke vaardigheid, directe Slack-lijn met Daley. {taken} van {total} plekken bezet.",
+        "tagline": "10 plekken totaal. Ruime caps. Levenslang €997. Founder Slack.",
+        "description": "Voor de oprichtende klanten die vóór launch committeren. Levenslange prijs van €997, ruimere caps dan Growth, directe Slack-lijn met Daley. Maximaal {total} plekken.",
         "features_0": "15 werkruimtes inbegrepen",
         "features_1": "8.000 credits per maand",
-        "features_2": "Alle 12 vaardigheden (met Pro-caps)",
+        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
         "features_3": "Blog Factory: 12 per maand",
         "features_4": "Statische ads: 25 per maand. Video ads: 8 per maand",
-        "features_5": "Reel Builder: 8 per maand",
-        "features_6": "Voice Agent: 60 minuten per maand",
+        "features_5": "Reel Builder: 8 per maand, zodra live",
+        "features_6": "Voice Agent: 60 minuten per maand, zodra live",
         "features_7": "ManyChat DM: 500 DM's per maand",
         "features_8": "Founder Slack (directe lijn naar Daley)",
         "features_9": "Levenslange prijsgarantie"
@@ -1118,14 +1112,14 @@
       "fairUse": "Fair use",
       "unlimited": "Onbeperkt",
       "notAvailable": "·",
-      "addOn": "Add-on",
-      "addOn47": "Add-on €47",
-      "addOn97": "Add-on €97",
+      "addOn": "Niet inbegrepen",
+      "addOn47": "Niet inbegrepen",
+      "addOn97": "Niet inbegrepen",
       "perMonth": "/mnd",
       "minPerMonth": "{count} min/mnd",
       "dmsPerMonth": "{count} DM's/mnd",
       "itemsPerMonth": "{count}/mnd",
-      "legend": "Cijfers zijn maandcaps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme uitschieters. \"Add-on\" = beschikbaar via pack, niet in het basis-tier."
+      "legend": "Cijfers zijn maandcaps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme uitschieters. \"Niet inbegrepen\" = niet in dit tier."
     },
     "creditPacks": {
       "eyebrow": "Top-ups",
@@ -1154,33 +1148,6 @@
         }
       }
     },
-    "skillPacks": {
-      "eyebrow": "Vaardigheid-specifiek",
-      "title": "Packs per vaardigheid, gericht bijkopen",
-      "description": "Eén vaardigheid tegen de cap? Koop een gerichte add-on voor die ene vaardigheid in plaats van een hele tier-upgrade.",
-      "items": {
-        "voiceMinutes": {
-          "name": "Voice Minutes Pack",
-          "quantity": "100 minuten",
-          "price": "147"
-        },
-        "videoAds": {
-          "name": "Video Ads Pack",
-          "quantity": "10 video ads",
-          "price": "197"
-        },
-        "reels": {
-          "name": "Reels Pack",
-          "quantity": "10 reels",
-          "price": "197"
-        },
-        "blogPower": {
-          "name": "Blog Power Pack",
-          "quantity": "10 artikelen",
-          "price": "197"
-        }
-      }
-    },
     "faq": {
       "eyebrow": "Veelgestelde vragen",
       "title": "Veelgestelde vragen over pricing",
@@ -1191,15 +1158,15 @@
         },
         "q2": {
           "question": "Wat gebeurt er als ik over mijn credits of caps heen ga?",
-          "answer": "Je krijgt een waarschuwing bij 80% en 100% van je maandallocatie. Daarna kun je kiezen: wachten tot de volgende maand, een credit pack bijkopen (Mini Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
+          "answer": "Zijn je credits op, dan voert Clyde geen acties meer uit die credits kosten. Je kiest dan: wachten tot de volgende maand, een credit pack bijkopen (Mini Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
         },
         "q3": {
           "question": "Kan ik tussen tiers op- of afschalen?",
-          "answer": "Opschalen kan op elk moment, naar rato gefactureerd. Afschalen gaat in per volgende factureringsronde. Van Founding naar lager kan niet: je Founding-prijs blijft levenslang geldig zolang je actief blijft."
+          "answer": "Opschalen kan op elk moment. Afschalen gaat in per volgende factureringsronde. Van Founding naar lager kan niet: je Founding-prijs blijft levenslang geldig zolang je actief blijft."
         },
         "q4": {
-          "question": "Krijg ik alle 12 vaardigheden of een deel?",
-          "answer": "Growth, Professional, Enterprise en Founding hebben alle 12 vaardigheden, met tier-caps op de duurdere (Voice, Video, Reel Builder). Founding krijgt Pro-caps voor levenslange €997. Caps schalen op naar Pro en Enterprise voor grotere portfolio's."
+          "question": "Krijg ik alle vaardigheden of een deel?",
+          "answer": "Elk tier krijgt alle vaardigheden: vandaag 10 live, Voice Agent en Reel Builder volgen. Op de zwaardere gelden caps per tier. Founding zit met zijn caps tussen Growth en Professional, voor levenslang €997. Enterprise heeft geen caps (fair use)."
         },
         "q5": {
           "question": "Wat zit er in de onboardingvergoeding?",
@@ -1207,15 +1174,15 @@
         },
         "q6": {
           "question": "Kan ik tussentijds stoppen of pauzeren?",
-          "answer": "Elke tier heeft maandelijks opzegrecht: je beëindigt per de volgende factureringsronde, geen boete, geen ophalen van data via een formulier. Pauzeren tot drie maanden is mogelijk bij een goede reden, sabbatical of zware herstructurering, met behoud van je tier-prijs. Founding-leden kunnen niet pauzeren zonder hun levenslange prijs te verliezen: dat is de aard van het Founding-contract."
+          "answer": "Elke tier heeft maandelijks opzegrecht: je beëindigt per de volgende factureringsronde, zonder boete. Pauzeren kan in overleg, met behoud van je tier-prijs. Founding-leden kunnen niet pauzeren zonder hun levenslange prijs te verliezen: dat is de aard van het Founding-contract."
         },
         "q7": {
           "question": "Wat gebeurt er precies als ik downgrade?",
-          "answer": "Downgraden gaat in per de volgende factureringsronde. Je merkstem-data en workflows blijven 90 dagen bewaard op het oude tier-niveau zodat je kunt terugschalen zonder verlies. Vaardigheden die in het lagere tier niet beschikbaar zijn, Voice Agent, Video Ads en Reel Builder onder Growth, worden uitgezet, niet gewist. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
+          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun geheugen en je instellingen blijven staan; vanaf dan gelden de caps van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
         },
         "q8": {
           "question": "Van wie is de data en kan ik die exporteren?",
-          "answer": "Alle data, merkstem-profielen, content-archief, knowledge-base en logs, blijft van jou. Bij opzegging krijg je binnen 14 dagen een volledige export, JSON plus media-bestanden, via een ondertekende S3-link. Daarna wordt de data binnen 30 dagen verwijderd uit alle systemen, conform AVG. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
+          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
         }
       }
     },
@@ -1233,9 +1200,9 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
-      "badge": "Founding open · {taken}/{total} bezet",
+      "badge": "Founding open · maximaal {total} plekken",
       "title": "Hoe begint jouw partnership met Clyde?",
-      "description": "Vijf stappen van eerste gesprek tot autonoom draaien. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
+      "description": "Vijf stappen van eerste gesprek tot Clyde live draait voor je klanten. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
       "cta": "Plan een gesprek"
     },
     "jsonLd": {
@@ -1259,7 +1226,7 @@
           "step": "Stap 2",
           "timeStamp": "Week 1 tot 4",
           "title": "4 weken partnership-setup met Daley",
-          "description": "Daley begeleidt het traject persoonlijk. Intake van de merkstem per merk, KPI-doelen vastleggen, vaardigheden-matrix opbouwen en goedkeuringsworkflows inregelen. Geen self-service wizard.",
+          "description": "Daley begeleidt het traject persoonlijk: per klant de merkstem, de doelen uit een strategiesessie, de actieve vaardigheden en wie wat goedkeurt. Je doorloopt de onboarding samen, niet alleen.",
           "deliverable1": "Brand-scan per merk",
           "deliverable2": "Brand-voice training",
           "deliverable3": "Goedkeuringsworkflows",
@@ -1269,30 +1236,30 @@
         "configure": {
           "step": "Stap 3",
           "timeStamp": "Week 4",
-          "title": "Clyde inregelen per merk",
-          "description": "Voor elk merk een werkruimte met: merkrichtlijnen, doelgroep, tone of voice, actieve vaardigheden, kanalen en goedkeuringsregels. Clyde begint zijn geheugen per merk op te bouwen.",
-          "deliverable1": "Werkruimte per merk",
+          "title": "Clyde inregelen per klant",
+          "description": "Voor elke klant een werkruimte met merkrichtlijnen, doelgroep, tone of voice, actieve vaardigheden, kanalen en goedkeuringsregels. Clyde begint zijn geheugen per klant op te bouwen.",
+          "deliverable1": "Werkruimte per klant",
           "deliverable2": "Vaardigheden actief",
           "deliverable3": "Kanalen gekoppeld"
         },
         "production": {
           "step": "Stap 4",
           "timeStamp": "Vanaf week 5",
-          "title": "Productie start met jouw goedkeuring",
-          "description": "Clyde gaat aan het werk: social posts, blogs, calls, ads. Jij beoordeelt elke output in de goedkeuringslijst voordat het live gaat. Week 1 veel correcties, maar Clyde leert snel.",
+          "title": "Productie start, jij houdt de regie",
+          "description": "Clyde gaat aan het werk: social posts, blogs, e-mail, ads. Wat hij voorlegt, beoordeel je in de goedkeuringslijst; hoeveel hij zelf mag doen, kies je per taak. Week 1 veel correcties, en die neemt Clyde mee.",
           "deliverable1": "Social posts live",
           "deliverable2": "Goedkeurings-queue",
           "deliverable3": "Week-1 iteraties",
           "screenshotAlt": "De goedkeuringslijst met drie openstaande taken, elk met een toelichting en een knop Goedkeuren.",
-          "screenshotCaption": "Niets gaat live zonder jouw akkoord"
+          "screenshotCaption": "De goedkeuringslijst: wat Clyde voorlegt, keur jij goed"
         },
         "improvement": {
           "step": "Stap 5",
           "timeStamp": "Doorlopend",
           "title": "Continu verbeteren plus wekelijkse rapportages",
-          "description": "Elke week scherper per merk. Clyde onthoudt correcties, leert van prestatiedata en bouwt micro-kennis op. De wekelijkse prestatie-digest houdt je in control.",
+          "description": "Clyde onthoudt je correcties, en de weekrapporten laten per klant zien wat werkt. De wekelijkse digest houdt je op de hoogte.",
           "deliverable1": "Wekelijkse digest",
-          "deliverable2": "Memory-correcties",
+          "deliverable2": "Correcties in het geheugen",
           "deliverable3": "Prestatie-feedback",
           "screenshotAlt": "Het doelenscherm van Clyde met meerstaps trajecten die hij zelf bijhoudt.",
           "screenshotCaption": "Doelen die Clyde bewaakt, niet jij"
@@ -1300,14 +1267,14 @@
       },
       "loop_eyebrow": "De ritmische cyclus",
       "loop_title": "Continu verbeteren",
-      "loop_description": "Clyde wordt elke week beter per merk. Geheugen, prestatiedata en jouw correcties voeden de volgende iteratie. Na een paar maanden zie je het verschil met week 1.",
+      "loop_description": "Geheugen, prestatiedata en jouw correcties voeden de volgende ronde. Zo werkt Clyde per klant steeds meer zoals jij het wilt.",
       "loop_stage1": "Productie",
       "loop_stage2": "Goedkeuring",
       "loop_stage3": "Geheugen",
       "loop_stage4": "Verbetering"
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Klaar om de partnership te starten?",
       "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "button": "Plan een gesprek"
@@ -1317,8 +1284,8 @@
       "subtitle": "Zes stappen, en op één ervan sta jij. Waar het geheugen zit en waar de mens beslist, in één beeld.",
       "steps": {
         "brand": {
-          "title": "Het merk",
-          "body": "Eén werkruimte per merk, met een eigen geheugen dat niet lekt naar de buren."
+          "title": "De klant",
+          "body": "Eén werkruimte per klant, met een eigen geheugen."
         },
         "scan": {
           "title": "Brand-scan",
@@ -1326,15 +1293,15 @@
         },
         "clyde": {
           "title": "Clyde met geheugen",
-          "body": "Onthoudt per merk wat er is afgesproken en wat er eerder werkte."
+          "body": "Onthoudt per klant wat er is afgesproken en wat er eerder werkte."
         },
         "skills": {
           "title": "Vaardigheden",
           "body": "Tien live vaardigheden pakken het werk op: social, blogs, e-mail, ads."
         },
         "approval": {
-          "title": "Jouw goedkeuring",
-          "body": "Niets gaat naar buiten zonder dat een mens het heeft gezien."
+          "title": "Jouw regels",
+          "body": "Jij bepaalt per taak wat Clyde eerst voorlegt en wat hij zelf mag doen en melden."
         },
         "publish": {
           "title": "Publicatie",
@@ -1347,7 +1314,7 @@
   "contact": {
     "meta": {
       "title": "Contact Future Marketing AI | AI Marketing Bureau",
-      "description": "Neem contact op met Future Marketing AI over Clyde, de AI-collega van je bureau. Vragen over partnerships of de skills? We reageren binnen 24 uur."
+      "description": "Neem contact op met Future Marketing AI over Clyde, de AI-collega van je bureau. Vragen over partnerships of de skills? We reageren binnen 1 tot 2 werkdagen."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -1387,7 +1354,7 @@
       "location_label": "Locatie",
       "location_text": "Nederland (remote-first)",
       "response_time_label": "Reactietijd",
-      "response_time_text": "Binnen 24 uur"
+      "response_time_text": "Binnen 1 tot 2 werkdagen"
     },
     "applyCallout": {
       "eyebrow": "Voor partnerships",
@@ -1396,7 +1363,7 @@
       "button": "Plan een gesprek"
     },
     "finalCta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct naar de aanmelding?",
       "description": "Geen vragen, maar wel klaar voor een gesprek over partnership? Sla het bericht over en ga direct naar de aanmelding.",
       "button": "Plan een gesprek"
@@ -2073,12 +2040,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: €997 levenslang | FutureMarketingAI",
-      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. Tot 15 werkruimtes, prijs-lock voor altijd. 1/10 plekken bezet."
+      "description": "Founding Member: €997 per maand levenslang voor de eerste 10 bureaus. 15 werkruimtes inbegrepen, daarboven €299 per extra werkruimte."
     },
     "hero": {
-      "badge": "{taken} van {total} Founding plekken bezet",
+      "badge": "Maximaal {total} Founding-plekken",
       "title": "Word Founding partner. Eén keuze, levenslang vast.",
-      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, voor maximaal 15 werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley.",
+      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, met 15 werkruimtes inbegrepen. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle live vaardigheden, ruime caps en een directe Slack-lijn met Daley.",
       "cta": "Reserveer je plek"
     },
     "pricing": {
@@ -2087,13 +2054,13 @@
       "price": "997",
       "period": "/mnd, levenslang",
       "locked": "Levenslange prijsgarantie. Geen prijsverhoging, ooit.",
-      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor maximaal 15 werkruimtes. Vanaf 3 merken bespaar je structureel.",
-      "includes": "15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), 8.000 credits per maand, alle 12 vaardigheden met Pro-caps, Founder Slack en €0 onboarding."
+      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor 15 werkruimtes. Vanaf 3 merken bespaar je structureel.",
+      "includes": "15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), 8.000 credits per maand, alle live vaardigheden met ruime caps, Founder Slack en €0 onboarding."
     },
     "value": {
       "heading": "Waarom de 10 Founding plekken bestaan",
       "line1": "Founding partners zijn de bureaus waarmee ik Clyde samen vormgeef. Jullie feedback bepaalt wat ik bouw, welke vaardigheden voorrang krijgen en hoe de geheugenlaag zich ontwikkelt.",
-      "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang €997, ongeacht hoeveel werkruimtes je gebruikt. De andere tiers schalen lineair per werkruimte: bij 5 merken op Professional betaal je €1.995 per maand, bij 14 merken €5.586. Zelfs als we het tarief over een jaar herijken, blijf jij op €997.",
+      "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang €997 voor 15 werkruimtes. De andere tiers schalen lineair per werkruimte: bij 5 merken op Professional betaal je €1.995 per maand, bij 14 merken €5.586. Zelfs als we het tarief over een jaar herijken, blijf jij op €997.",
       "line3": "Tien plekken. Geen heropening. Vol is vol."
     },
     "benefits": {
@@ -2113,11 +2080,11 @@
         },
         "early_access": {
           "title": "Vroege toegang tot nieuwe vaardigheden",
-          "description": "Reel Builder, Email Management en ManyChat DM komen eerst naar Founding partners. Jij probeert het voordat de rest toegang krijgt."
+          "description": "Nieuwe vaardigheden, zoals Reel Builder en Voice Agent, komen eerst naar Founding partners. Jij probeert ze voordat de rest toegang krijgt."
         },
         "community": {
           "title": "Founder Slack",
-          "description": "Directe Slack-ruimte met mij en de andere 9 Founding partners. Vragen, hulp en best practices. In dezelfde ruimte."
+          "description": "Directe Slack-ruimte met mij en de andere Founding partners. Vragen, hulp en best practices. In dezelfde ruimte."
         },
         "onboarding": {
           "title": "€0 onboardingvergoeding",
@@ -2126,8 +2093,8 @@
       }
     },
     "proof": {
-      "heading": "Onze eerste Founding partner",
-      "body": "SkinClarity Club is sinds dag 1 Founding partner. Clyde maakt en plant voor 3 Instagram-accounts en 4 merken; Sindy (founder) keurt goed. Lees de case study om te zien hoe een Founding-setup er in de praktijk uitziet.",
+      "heading": "Onze eerste klant",
+      "body": "SkinClarity Club is onze eerste klant. Clyde maakt en plant voor 3 Instagram-accounts, wij keuren als bureau goed, en Sindy (founder) heeft een eigen dashboard. Lees de case om te zien hoe dat er in de praktijk uitziet.",
       "caseButton": "Lees SkinClarity case study"
     },
     "faq": {
@@ -2135,15 +2102,15 @@
       "items": {
         "q1": {
           "question": "Wat gebeurt er als de 10 plekken vol zijn?",
-          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor maximaal 15 werkruimtes, levenslang, zolang je actief blijft."
+          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor 15 werkruimtes, levenslang, zolang je actief blijft."
         },
         "q2": {
           "question": "Kan ik later doorschalen naar Professional of Enterprise?",
-          "answer": "Ja, naar rato gefactureerd. Afschalen van Founding naar Growth kan niet: je Founding-prijs is exclusief voor Founding."
+          "answer": "Ja. Afschalen van Founding naar Growth kan niet: je Founding-prijs is exclusief voor Founding."
         },
         "q3": {
-          "question": "Wat zijn \"Pro-caps\" precies?",
-          "answer": "Je krijgt alle 12 vaardigheden met dezelfde caps als het Professional tier, maar tegen de Founding-prijs. Concreet: Voice Agent 60 minuten per maand, video-ads 8 per maand, Reels 8 per maand, ManyChat 500 DM's per maand, blogs 12 per maand. Beter dan Growth, onder Enterprise."
+          "question": "Welke caps horen bij Founding?",
+          "answer": "Je krijgt alle live vaardigheden met ruimere caps dan Growth, tegen de Founding-prijs. Concreet: blogs 12 per maand, video-ads 8 per maand, ManyChat 500 DM's per maand, en zodra ze live zijn Voice Agent 60 minuten en Reels 8 per maand. Ruimer dan Growth, minder dan Professional."
         },
         "q4": {
           "question": "Wat als ik stop en later weer wil starten?",
@@ -2157,33 +2124,17 @@
     },
     "cta": {
       "title": "Word een van de 10",
-      "subtitle": "{taken} van {total} plekken bezet. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
+      "subtitle": "Maximaal {total} plekken. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
       "button": "Plan een gesprek"
     },
     "eyebrows": {
       "pricing": "Prijs",
       "value": "Waarom Founding",
-      "scarcity": "10 plekken, vol is vol",
       "benefits": "Wat je krijgt",
       "quickApply": "Snel starten",
-      "proof": "Eerste partner",
+      "proof": "Eerste klant",
       "faq": "Vragen",
       "cta": "Plek reserveren"
-    },
-    "scarcity": {
-      "heading": "Zo staat het ervoor",
-      "intro": "Tien Founding plekken in totaal. Eén is bezet door SkinClarity Club. Negen liggen open. Hover op een plek voor context.",
-      "ariaLabel": "Founding plekken status",
-      "open": {
-        "heading": "Founding plek beschikbaar",
-        "body": "Deze plek kan voor jouw bureau zijn. Plan een gesprek om hem te reserveren."
-      },
-      "takenSpots": {
-        "skc": {
-          "name": "SkinClarity Club",
-          "since": "Founding partner sinds Q4 2025"
-        }
-      }
     },
     "quickApply": {
       "eyebrow": "Snelle start",
@@ -2202,8 +2153,8 @@
   "booking": {
     "title": "Plan een gesprek",
     "subtitle": "Ontdek hoe Clyde je marketing kan versnellen.",
-    "bullet1": "Gratis audit van je huidige marketing",
-    "bullet2": "Live Clyde-demo met jouw merk",
+    "bullet1": "Een eerlijke blik op je huidige marketing",
+    "bullet2": "Live Clyde-demo in een voorbeeldwerkruimte",
     "bullet3": "Strategie-aanbevelingen op maat",
     "bullet4": "Transparante bespreking van de prijs",
     "credential": "Daley, oprichter van FutureMarketingAI",
@@ -2211,57 +2162,57 @@
   },
   "memory": {
     "meta": {
-      "title": "Geheugen. Clyde onthoudt elk merk | FutureMarketingAI",
-      "description": "Clyde onthoudt elk merk apart: merkstem, doelgroep, KPI's en wat werkte in het verleden. Strikt gescheiden per klant, elke week scherper."
+      "title": "Geheugen: Clyde onthoudt elke klant | FutureMarketingAI",
+      "description": "Clyde onthoudt per klant de merkstem, de doelgroep, de doelen en wat er is afgesproken. Elke klant een eigen geheugen, elke nacht bijgewerkt."
     },
     "hero": {
-      "eyebrow": "Geheugen per merk",
-      "headlineMain": "Clyde onthoudt alles.",
-      "headlineAccent": "Per merk, voor altijd.",
-      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een collega: geheugen. Clyde onthoudt je merkstem, doelgroep, doelen en wat eerder werkte. Elke week kent hij jouw merken beter."
+      "eyebrow": "Geheugen per klant",
+      "headlineMain": "Clyde onthoudt je klanten.",
+      "headlineAccent": "Elke klant apart.",
+      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een collega: geheugen. Clyde onthoudt per klant de merkstem, de doelgroep, de doelen en wat jullie hebben afgesproken. Je correcties neemt hij mee."
     },
     "layers": {
       "eyebrow": "Architectuur",
       "title": "Zo onthoudt Clyde",
-      "subtitle": "Net als een goede collega heeft Clyde vier soorten geheugen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
-      "scrollLabel": "Scroll door de lagen",
+      "subtitle": "Als Clyde antwoordt, put hij uit vier bronnen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
+      "scrollLabel": "Scroll door de vier bronnen",
       "promptLabel": "Vraag aan Clyde",
       "clydeLabel": "Clyde antwoordt",
       "activeLabel": "Actief",
       "hot": {
-        "name": "Nu live",
-        "window": "Laatste 24 uur",
-        "description": "Het lopende gesprek, de campagne van vandaag, content die wacht op goedkeuring. Direct paraat.",
+        "name": "Het gesprek",
+        "window": "Nu",
+        "description": "Het lopende gesprek en het scherm waar je op staat. Op de pagina van een klant weet Clyde over welke klant je het hebt.",
         "prompt": "Welke posts heb ik vandaag goedgekeurd voor merk Skin?",
         "clydeAnswer": "Drie posts: ochtendpost over de cleanser-routine, middagpost met UGC-review, einde-dag carrousel over de ingrediënten. De carrousel staat ingepland voor 19:00."
       },
       "warm": {
-        "name": "Deze maand",
-        "window": "Laatste 30 dagen",
-        "description": "Recent goedgekeurde posts, KPI-rapporten en feedback. Zo kan Clyde vergelijken wat deze week beter werkte dan vorige week.",
-        "prompt": "Wat presteerde deze maand het best bij merk Skin?",
-        "clydeAnswer": "Carrousels met UGC-citaten: gemiddeld 2,4x meer engagement dan losse productposts. Reels onder 15 seconden converteerden bovengemiddeld. Statische posts na 21:00 verloren reach."
+        "name": "Herinneringen",
+        "window": "Uit gesprekken en feedback",
+        "description": "Wat jullie afspreken en wat je corrigeert, legt Clyde vast als herinnering. Wat belangrijk is weegt zwaarder, wat oud en onbelangrijk wordt zakt weg.",
+        "prompt": "Wat wilde de klant anders aan de carrousels?",
+        "clydeAnswer": "Minder tekst per slide, en eindigen met een vraag in plaats van een link. Dat gaf ze twee weken geleden mee bij het afkeuren; sindsdien pas ik het toe."
       },
       "cold": {
-        "name": "Archief",
-        "window": "Al het oudere materiaal",
-        "description": "Het volledige archief: merkrichtlijnen, oude campagnes, eerdere rapporten. Doorzoekbaar op betekenis, niet alleen op trefwoord.",
-        "prompt": "Wat schreven we vorig najaar over droge winterhuid?",
-        "clydeAnswer": "Drie carrousels in oktober en november. De best presterende opende met 'eerst herstellen, dan hydrateren'. Combineerde met productroute, gedeeld 312 keer en bewaard door 1.804 volgers."
+        "name": "Strategie en research",
+        "window": "Per klant",
+        "description": "De doelen uit de strategiesessie, de pijlers en het onderzoek naar markt, concurrenten en doelgroep. Daar toetst Clyde zijn voorstellen aan.",
+        "prompt": "Past een post over zonnebrand in de planning?",
+        "clydeAnswer": "Ja, onder de pijler huidkennis. Het doel dit kwartaal is bereik bij nieuwe volgers, dus ik maak er een carrousel van die mensen willen delen."
       },
       "context": {
         "name": "Wie het merk ís",
-        "window": "Permanente kennis",
-        "description": "De kern die altijd meegaat: merkstem, doelgroep-persona, KPI-doelen, wat wél en niet mag. Past zich alleen aan als je dat expliciet vraagt.",
+        "window": "Altijd paraat",
+        "description": "De kern die altijd meegaat: het klantprofiel, de merkstem, de doelgroep en wat wel en niet mag. Clyde houdt die bij: je correcties gaan erin, en elke nacht werkt hij de samenvatting bij.",
         "prompt": "Schrijf een caption voor de nieuwe nachtcrème.",
         "clydeAnswer": "Toon: warm, direct, geen jij-met-hoofdletter. Doelgroep: vrouwen 28-44 die rituelen waarderen. Geen claims, wel resultaten in concrete weken. Caption opent met de avondroutine, sluit met een vraag in plaats van een CTA."
       }
     },
     "isolation": {
-      "eyebrow": "Isolatie per merk",
-      "title": "Strikt gescheiden per merk",
-      "body1": "Clyde werkt voor meerdere bureaus en meerdere merken tegelijk zonder dat ze elkaar raken. Wat hij leert over Merk A komt nooit terecht bij Merk B. Geen merkstem die overspringt, geen data die uitlekt, geen voorbeelden die per ongeluk over en weer gaan.",
-      "body2": "Technisch is dat geregeld met een eigen geheugenruimte per klant, strikt gescheiden op databaseniveau en in de zoekindex. Menselijk gezien: wat bij jouw klant hoort, blijft bij jouw klant. Bij opzegging is je data binnen 24 uur exporteerbaar en wordt na 30 dagen volledig verwijderd."
+      "eyebrow": "Eigen geheugen per klant",
+      "title": "Gescheiden per klant",
+      "body1": "Clyde werkt voor meerdere bureaus en hun klanten tegelijk. Elke klant heeft een eigen werkruimte met een eigen geheugen: werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Zo springt een merkstem niet over naar een andere klant.",
+      "body2": "Technisch hangt elke herinnering aan één bureau en één klant in de database, en elke opvraging filtert daarop. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze."
     },
     "decay": {
       "eyebrow": "Dag en nacht",
@@ -2273,12 +2224,12 @@
     },
     "progress": {
       "eyebrow": "Tijdcurve",
-      "title": "Maand 1 versus maand 3",
-      "subtitle": "Het verschil tussen een generieke AI en een collega die jouw merken écht kent, wordt zichtbaar in weken.",
-      "week1Label": "Maand 1: eerste content",
+      "title": "De eerste maand en daarna",
+      "subtitle": "Het verschil tussen een generieke AI en een collega die je klanten kent, groeit met elke correctie.",
+      "week1Label": "Maand 1: Clyde leert je klanten kennen",
       "week1Body": "\"Schrijf een caption voor merk X.\" Clyde volgt de merkrichtlijnen, maar nog niet met perfecte nuance. Veel feedback-rondes. Jij bent nog veel bezig met corrigeren en bijslijpen.",
-      "week12Label": "Maand 3: volledige autonomie",
-      "week12Body": "Clyde kent de kleine hebbelijkheden van merk X: welke emoji wel en niet, welke openingszin converteert, welke hashtags presteren, welke tijdstippen werken. De eerste versie is meteen bruikbaar. Jij beoordeelt, Clyde voert uit."
+      "week12Label": "Daarna: minder bijsturen",
+      "week12Body": "Clyde kent de hebbelijkheden van klant X: welke woorden wel en niet, hoe een post opent, wat jullie hebben afgesproken. Je stuurt minder bij. Hoeveel hij zelf mag doen, blijf jij per taak bepalen."
     },
     "contrast": {
       "eyebrow": "Vergelijking",
@@ -2293,13 +2244,13 @@
       },
       "clyde": {
         "name": "Clyde",
-        "body": "Persistent geheugen per merk, vier lagen, strikt gescheiden en elke nacht geconsolideerd. Gebouwd voor bureaus met 5 tot 20 merken. Elke week scherper, nooit verwaterd."
+        "body": "Een eigen geheugen per klant, gescheiden van de andere klanten en elke nacht bijgewerkt. Gebouwd voor bureaus met 5 tot 20 merken."
       }
     },
     "comparison": {
       "eyebrow": "Geheugen in actie",
       "title": "Drie gesprekken, één merk, één week.",
-      "intro": "Hetzelfde gesprek met een AI zonder geheugen versus met Clyde. Dit patroon zien we elke werkweek terug bij SkinClarity Club.",
+      "intro": "Hetzelfde gesprek met een AI zonder geheugen en met Clyde. Een voorbeeld, met een verzonnen merk.",
       "diyLabel": "Andere AI",
       "diyNote": "vergeet alles na sessie-eind",
       "clydeLabel": "Clyde",
@@ -2320,14 +2271,14 @@
         {
           "user": "Welke werkte vorige maand het best in deze categorie?",
           "diy": "Ik heb geen toegang tot historische data over jouw account.",
-          "clyde": "De variant met avondroutine en bewaar-vraag deed het in oktober het best: 2,1x meer saves dan het maandgemiddelde. Variant A zit dichtbij die toon, ga daarmee starten."
+          "clyde": "De variant met de avondroutine en een vraag om te bewaren werd in oktober het vaakst bewaard. Variant A zit het dichtst bij die toon, ik zou daarmee starten."
         }
       ]
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
-      "title": "Klaar voor een AI die je merken kent?",
-      "subtitle": "Een gesprek van 30 minuten op de SkinClarity Club-opzet. Daarna weet je of het past bij jouw portfolio.",
+      "eyebrow": "Founding open · maximaal {total} plekken",
+      "title": "Klaar voor een collega die je klanten kent?",
+      "subtitle": "Een gesprek van 30 minuten. Daarna weet je of het past bij jouw portfolio.",
       "button": "Plan een gesprek"
     }
   },
@@ -2349,16 +2300,16 @@
     "voiceAgent": {
       "name": "Voice Agent",
       "phase": "In testing",
-      "description": "Inkomende en uitgaande AI-telefoongesprekken. Afspraken boeken, FAQ afhandelen, escalatie naar mens. De interactieve demo werkt al; de productie-integratie met VAPI en agenda-systemen is in pilot."
+      "description": "Inkomende en uitgaande AI-telefoongesprekken: afspraken boeken, vragen afhandelen, doorschakelen naar een mens. We bouwen eraan; er draait nog geen klant op."
     },
     "reelBuilder": {
       "name": "Reel Builder",
       "phase": "In ontwikkeling",
-      "description": "Korte verticale video's (9:16) met AI-scripts, automatische captions die synchroon lopen en achtergrondmuziek. Voor Instagram Reels, TikTok en YouTube Shorts. Template-bibliotheek wordt opgebouwd."
+      "description": "Korte verticale video's (9:16) met scripts, ondertitels en muziek, voor Instagram Reels, TikTok en YouTube Shorts. We bouwen eraan."
     },
     "cta": {
       "eyebrow": "Vroege toegang",
-      "scarcityEyebrow": "Founding open · {taken}/{total} bezet",
+      "scarcityEyebrow": "Founding open · maximaal {total} plekken",
       "title": "Wil je als eerste meedraaien?",
       "subtitle": "Founding-leden krijgen early access op allebei zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
       "button": "Plan een gesprek"
@@ -2367,20 +2318,20 @@
   "apply": {
     "meta": {
       "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
-      "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor bureaus met 5+ merken. Max 10 plekken per jaar."
+      "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Maximaal 10 nieuwe bureaus per jaar."
     },
     "hero": {
       "eyebrow": "Aanvraag",
-      "counter": "{taken} van {total} Founding plekken bezet",
+      "counter": "Maximaal {total} Founding-plekken",
       "title": "Plan een gesprek",
-      "subtitle": "Geen zelfbediening. Geen generieke aanmelding. We beoordelen elke aanvraag persoonlijk en antwoorden binnen 3 werkdagen. Ook als het geen match is."
+      "subtitle": "Geen zelfbediening. Geen generieke aanmelding. Daley kijkt zelf naar elke aanvraag en je hoort binnen 3 werkdagen van ons. Ook als het geen match is."
     },
     "expectations": {
       "eyebrow": "Wat je krijgt",
       "title": "Wat er gebeurt na aanmelden",
       "step1": {
         "title": "Beoordeling binnen 3 werkdagen",
-        "body": "Daley leest elke aanvraag persoonlijk. Je krijgt binnen 72 uur antwoord: ja, nee of \"laten we eerst bellen\"."
+        "body": "Daley leest elke aanvraag zelf. Binnen 3 werkdagen hoor je: ja, nee of \"laten we eerst bellen\"."
       },
       "step2": {
         "title": "Kennismakingsgesprek van 30 minuten",
@@ -2437,7 +2388,7 @@
       "problemPlaceholder": "Bijvoorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 merken\" of \"Onze SEO stagneert en we hebben geen ruimte voor blogs.\"",
       "submit": "Verstuur aanvraag",
       "submitting": "Bezig met versturen…",
-      "privacyNote": "We gebruiken deze gegevens alleen voor de beoordeling. Geen marketing-automatisering, geen mailinglijst, geen doorverkoop.",
+      "privacyNote": "We gebruiken deze gegevens alleen om je aanvraag te beoordelen. Geen mailinglijst, geen doorverkoop.",
       "successTitle": "Dank je. Aanvraag ontvangen.",
       "successBody": "Daley leest je aanvraag persoonlijk en antwoordt binnen 3 werkdagen. Check je inbox (en de spam-map) voor onze reactie.",
       "errorValidation": "Controleer de velden: niet alle verplichte velden zijn ingevuld.",
@@ -2541,9 +2492,9 @@
         "review": {
           "eyebrow": "Ontvangen",
           "title": "Bedankt. Daley reviewt je aanvraag persoonlijk.",
-          "subtitle": "Binnen 3 werkdagen hoor je een persoonlijke reactie. Geen automatische e-mails, geen ghosting.",
+          "subtitle": "Je krijgt nu een bevestiging per e-mail, en binnen 3 werkdagen een persoonlijke reactie van Daley.",
           "nextLabel": "Wat gebeurt nu",
-          "nextStep1": "Daley leest je aanvraag binnen 72 uur",
+          "nextStep1": "Daley leest je aanvraag binnen 3 werkdagen",
           "nextStep2": "Je krijgt een persoonlijk antwoord per e-mail",
           "nextStep3": "Als het past, plannen we het gesprek"
         }
@@ -2565,68 +2516,68 @@
   "case_studies": {
     "skc": {
       "meta": {
-        "title": "SkinClarity Club: 3 accounts, 4 merken | FutureMarketingAI",
-        "description": "Hoe Clyde de social-operatie van SkinClarity Club draait: 3 Instagram-accounts, 4 merken, en Sindy die goedkeurt voordat er iets live gaat."
+        "title": "SkinClarity Club: 3 Instagram-accounts, één Clyde | FutureMarketingAI",
+        "description": "Hoe Clyde de social-operatie van SkinClarity Club draait: 3 Instagram-accounts, elk met een eigen toon en agenda, goedgekeurd door het bureau voordat er iets live gaat."
       },
       "hero": {
-        "eyebrow": "Case study, Founding partner",
-        "title": "3 accounts. 4 merken. Eén collega: Clyde.",
+        "eyebrow": "Case study, eerste klant",
+        "title": "3 accounts. Eén klant. Eén collega: Clyde.",
         "chip1": "3 accounts onboarded",
-        "chip2": "4 merken, elk een eigen stem",
+        "chip2": "Elk account een eigen toon",
         "chip3": "10 vaardigheden actief",
-        "subtitle": "SkinClarity Club is vanaf de eerste week Founding klant. Clyde beheert 3 Instagram-accounts, 4 merken en meerdere contentsoorten. Clyde maakt en plant elke dag; Sindy keurt goed en stuurt bij."
+        "subtitle": "SkinClarity Club is onze eerste klant, en wij zijn het bureau. Clyde maakt en plant de content voor 3 Instagram-accounts volgens de agenda, wij keuren goed, en Sindy heeft een eigen dashboard en Clyde op WhatsApp."
       },
       "setup": {
         "title": "De opzet",
-        "subtitle": "SkinClarity Club draait een portfolio van huidspecialisten en productmerken. Drie Instagram-accounts, elk met een eigen doelgroep en huisstijl.",
+        "subtitle": "SkinClarity Club bestaat uit een club, een webshop en het persoonlijke account van founder Sindy. Drie Instagram-accounts, elk met een eigen doelgroep en huisstijl.",
         "account1Label": "@SkinClarityClub",
-        "account1Share": "Circa 50% van het contentvolume",
+        "account1Share": "Ongeveer 40% van wat er live ging",
         "account1Body": "Hoofdaccount. Behandelingen, tips en huidkennis voor consumenten.",
         "account2Label": "@Sindy_Huidtherapeut",
-        "account2Share": "Circa 30% van het contentvolume",
+        "account2Share": "Ongeveer een derde van wat er live ging",
         "account2Body": "Het persoonlijke autoriteits-account van founder Sindy. Vertrouwen, expertise, persoonlijke branding.",
-        "account3Label": "@SkinClarity_Shop",
-        "account3Share": "Circa 20% van het contentvolume",
+        "account3Label": "@skinclarityshop",
+        "account3Share": "Ongeveer een kwart van wat er live ging",
         "account3Body": "Product-account voor de webshop. Lanceringen, bundels en productcontent."
       },
       "skills": {
         "title": "Welke vaardigheden actief zijn",
         "subtitle": "Van de 12 vaardigheden van Clyde staan alle 10 live skills aan voor SKC. De laatste twee (Voice Agent en Reel Builder) komen erbij zodra ze live gaan.",
         "skill1Name": "Social Media Manager",
-        "skill1Body": "Carrousels, posts en stories voor 3 Instagram-accounts. AI-gegenereerd in de juiste merkstem per account.",
+        "skill1Body": "Carrousels, posts en stories voor 3 Instagram-accounts, in de toon van elk account.",
         "skill2Name": "Blog Factory",
         "skill2Body": "SEO-blogs voor skinclarityclub.nl. Huidthema's, behandelingen en product-deep-dives.",
         "skill3Name": "SEO / GEO Analyst",
-        "skill3Body": "Technische SEO-audits, posities bijhouden en citaties monitoren in ChatGPT en Perplexity.",
+        "skill3Body": "Technische SEO-audits, posities bijhouden en meten of AI-zoekmachines SKC noemen.",
         "skill4Name": "Rapportage en Analytics",
-        "skill4Body": "Wekelijkse prestatie-digest over Instagram, Shopify en SEO-data. Anomalie-alerts.",
+        "skill4Body": "Weekrapport over Instagram, Shopify en SEO-data.",
         "skill5Name": "Research",
         "skill5Body": "Trendmonitoring in huidverzorging, concurrentie-analyse en content-ideeën met bronvermelding.",
         "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "Clyde, de AI-collega die de 9 vaardigheden aan elkaar knoopt. Geheugen per account plus leren over vaardigheden heen.",
+        "skill6Body": "Clyde, de AI-collega die de andere vaardigheden aan elkaar knoopt, met één geheugen voor de hele klant.",
         "skill7Name": "Ad Manager",
-        "skill7Body": "Meta-advertenties voor de webshop: statische en video-ads maken, publiceren en sturen op leads en kosten per lead.",
+        "skill7Body": "Het Meta-advertentieaccount van de webshop is gekoppeld. Clyde maakt de advertenties; gemeten resultaten volgen.",
         "skill8Name": "Lead Qualifier",
-        "skill8Body": "Website-chatbot die bezoekers kwalificeert en warme leads doorzet naar sales.",
+        "skill8Body": "Staat aan. Er draait voor SKC nog geen chatbot op de site.",
         "skill9Name": "Email Management",
-        "skill9Body": "Gmail-classificatie met een dagelijkse digest: alleen wat aandacht nodig heeft komt bovendrijven.",
+        "skill9Body": "Gmail-triage met labels en conceptantwoorden: alleen wat aandacht nodig heeft komt bovendrijven.",
         "skill10Name": "ManyChat DM",
-        "skill10Body": "Instagram DM-automatisering met keyword-triggers en AI-antwoorden in de merkstem, plus lead-capture."
+        "skill10Body": "Staat aan. De DM-inbox verwerkt voor SKC nog geen gesprekken."
       },
       "architecture": {
         "title": "Hoe het werkt",
-        "subtitle": "Eén Clyde, 3 werkruimtes (per account), gedeeld portfolio-geheugen. Content wordt eerst door Sindy goedgekeurd voordat het gepubliceerd wordt.",
-        "body1": "Clyde houdt een apart geheugen bij per Instagram-account. Wat werkt op @SkinClarityClub (educatief, tips) is anders dan op @Sindy_Huidtherapeut (persoonlijk, autoriteit).",
-        "body2": "Op portfolio-niveau gebeurt het leren over accounts heen. Een succesvol thema op de shop kan bijvoorbeeld vertaald worden naar het hoofdaccount."
+        "subtitle": "Eén Clyde, één werkruimte voor SKC met drie Instagram-accounts, en één geheugen. Het bureau keurt de content goed voordat hij live gaat.",
+        "body1": "Elk account heeft een eigen toon en een eigen agenda. Wat werkt op @skinclarityclub (educatief, tips) is anders dan op @sindy_huidtherapeut (persoonlijk, autoriteit).",
+        "body2": "Het geheugen zit op het niveau van de klant. Wat Clyde over SkinClarity Club leert, gebruikt hij voor alle drie de accounts."
       },
       "timeline": {
         "title": "Tijdlijn",
         "week1Label": "Week 1",
-        "week1Body": "Onboarding: merkstem per account, goedkeuringsworkflow en KPI-definities.",
+        "week1Body": "Onboarding: toon per account, goedkeuringsflow en doelen.",
         "month1Label": "Maand 1",
-        "month1Body": "De eerste contentweken. Veel feedback, en Clyde neemt de correcties mee in wat hij daarna maakt.",
+        "month1Body": "De eerste contentweken, met veel feedback.",
         "nowLabel": "Nu",
-        "nowBody": "Clyde maakt en plant voor 3 accounts en 4 merken volgens de agenda. Sindy keurt goed in haar eigen dashboard voordat er iets live gaat."
+        "nowBody": "Clyde maakt en plant voor 3 accounts volgens de agenda. Het bureau keurt goed voordat er iets live gaat; Sindy heeft haar eigen dashboard en Clyde op WhatsApp."
       },
       "testimonial": {
         "authorName": "Sindy",
@@ -2638,11 +2589,11 @@
         "author": {
           "name": "Sindy",
           "role": "Founder en operator, SkinClarity Club",
-          "bio": "Sindy runt 4 merken onder SkinClarity Club en werkt met Clyde, de AI-collega, over 3 Instagram-accounts. Clyde maakt en plant, zij keurt goed. Founding partner sinds de start."
+          "bio": "Sindy is founder van SkinClarity Club. Clyde maakt en plant voor haar drie Instagram-accounts. Onze eerste klant."
         }
       },
       "client": {
-        "description": "Nederlandse skincare-portefeuille. 4 merken, 3 Instagram-accounts, volledige content-operatie."
+        "description": "Nederlandse huidverzorging: club, webshop en huidtherapeut, 3 Instagram-accounts."
       },
       "cta": {
         "title": "Wil je dit ook voor jouw portfolio?",
@@ -2658,18 +2609,18 @@
       },
       "chapter1": {
         "eyebrow": "Hoofdstuk 01, Uitdaging",
-        "title": "Drie accounts, vier merken, één team",
-        "intro": "Voor Clyde live ging draaide Sindy de social-operatie zelf, vaak op een vrije middag, geholpen door een freelancer voor de carrousels. De portfolio bestond uit 3 Instagram-accounts en 4 merken, elk met een eigen huisstijl en stem."
+        "title": "Drie accounts, elk met een eigen doelgroep",
+        "intro": "SkinClarity Club heeft drie Instagram-accounts: de club, de webshop en het persoonlijke account van founder Sindy. Elk met een eigen doelgroep, huisstijl en stem, en dus drie keer zoveel denkwerk als één account."
       },
       "chapter2": {
         "eyebrow": "Hoofdstuk 02, Aanpak",
-        "title": "Eén Clyde, drie werkruimtes, gedeeld geheugen",
-        "intro": "Tien vaardigheden van Clyde staan aan voor SkinClarity Club. Het portfolio-geheugen leert over accounts heen. Clyde maakt, Sindy keurt goed."
+        "title": "Eén Clyde, één werkruimte, drie accounts",
+        "intro": "Tien vaardigheden van Clyde staan aan voor SkinClarity Club. Eén geheugen voor de hele klant, een eigen toon en agenda per account. Clyde maakt, het bureau keurt goed."
       },
       "chapter3": {
         "eyebrow": "Hoofdstuk 03, Nu",
         "title": "Wat er nu elke week draait",
-        "intro": "Per merk wat er de deur uit gaat, en hoe de samenwerking zo gegroeid is. Kopcijfers volgen zodra we ze gemeten hebben."
+        "intro": "Per account wat er de deur uit gaat. Kopcijfers volgen zodra we ze gemeten hebben."
       },
       "chapter5": {
         "eyebrow": "Hoofdstuk 04, Vervolg",
@@ -2677,8 +2628,8 @@
         "intro": "We bespreken in een eerste gesprek hoe Clyde past bij jouw bureau, welke vaardigheden meteen aanstaan en hoe het Founding traject verloopt."
       },
       "gallery": {
-        "title": "Wat er per merk de deur uit gaat",
-        "subtitle": "Een doorsnede van wat Clyde per merk maakt. Echte voorbeelden volgen; de kaarten tonen nu het soort content per merk.",
+        "title": "Wat er per account de deur uit gaat",
+        "subtitle": "Een doorsnede van wat Clyde per account maakt. Echte voorbeelden volgen; de kaarten tonen nu het soort content per account.",
         "brand1": {
           "name": "SkinClarity Club",
           "role": "Hoofdaccount, educatief",
@@ -2693,11 +2644,6 @@
           "name": "SkinClarity Shop",
           "role": "Product-account voor de webshop",
           "output": "Carrousels en posts. Lanceringen, bundels en productcontent."
-        },
-        "brand4": {
-          "name": "Behandelmerken portfolio",
-          "role": "4 merken in beheer",
-          "output": "Blogs en thematische carrousels per merk in de rotatie."
         }
       }
     }
@@ -2917,9 +2863,9 @@
     },
     "hero": {
       "eyebrow": "12 vaardigheden, één brein",
-      "badge": "Founding open · {taken}/{total} bezet",
+      "badge": "Founding open · maximaal {total} plekken",
       "title": "De 12 vaardigheden van Clyde",
-      "subtitle": "Eén AI-collega, twaalf vaardigheden, één gedeeld geheugen per merk. Tien leveren al productie, twee zijn binnenkort live."
+      "subtitle": "Eén AI-collega, twaalf vaardigheden, één gedeeld geheugen per klant. Tien leveren al productie, twee zijn binnenkort live."
     },
     "status": {
       "live": "Live"
@@ -2933,9 +2879,9 @@
     },
     "grid_aria_label": "Lijst met vaardigheden",
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Eén collega, alle vaardigheden bij elkaar",
-      "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per merk, één gesprek van 30 minuten om te kijken of het past.",
+      "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per klant, één gesprek van 30 minuten om te kijken of het past.",
       "button": "Plan een gesprek",
       "secondaryLink": "Bekijk de volledige onboardingreis"
     }
@@ -3485,11 +3431,11 @@
           },
           "blogFactory": {
             "title": "Blog Factory",
-            "description": "Longform SEO-artikelen van 1.500 tot 3.000 woorden"
+            "description": "SEO- en GEO-artikelen per klant, van onderwerp tot publicatie"
           },
           "adCreator": {
             "title": "Ad Manager",
-            "description": "Ads maken en sturen op leads en CPL voor Meta"
+            "description": "Meta-ads maken en volgen op leads en CPL"
           },
           "reelBuilder": {
             "title": "Reel Builder",
@@ -3511,7 +3457,7 @@
           },
           "emailManagement": {
             "title": "Email Management",
-            "description": "Gmail-classificatie met dagelijkse digest"
+            "description": "Inbox-triage voor Gmail en Outlook, met conceptantwoorden"
           },
           "manychat": {
             "title": "ManyChat DM",
@@ -3569,7 +3515,7 @@
       "foundingMember": {
         "subtitle": "Levenslang vast tarief"
       },
-      "spots": "{taken}/{total} plekken"
+      "spots": "max. {total} plekken"
     }
   },
   "chat": {
@@ -3597,8 +3543,8 @@
         "skills": "Drie aanbevolen Clyde-vaardigheden voor jouw profiel"
       },
       "trust": {
-        "privacy": "Privacy-first, EU-gehost, geen tracking-cookies",
-        "validated": "Resultaten gevalideerd met bureaus in de praktijk",
+        "privacy": "Analytics alleen na jouw toestemming",
+        "validated": "Gratis, 16 vragen, rapport per e-mail",
         "retention": "Antwoorden 12 maanden bewaard, dan verwijderd"
       },
       "start": "Start de scan",
@@ -3863,7 +3809,7 @@
       "bullet3": "Week-voor-week roadmap voor jouw bureau-profiel",
       "emailLabel": "Werk-email",
       "emailPlaceholder": "daley@jouwbureau.nl",
-      "consent": "Ja, stuur me het rapport en maandelijkse inzichten. Mijn antwoorden worden 12 maanden bewaard om mijn aanbevelingen te onderbouwen. Ik kan me op elk moment uitschrijven.",
+      "consent": "Ja, stuur me het rapport en af en toe inzichten per e-mail. Mijn antwoorden worden 12 maanden bewaard om mijn aanbevelingen te onderbouwen. Ik kan me op elk moment uitschrijven.",
       "privacyLink": "Privacybeleid",
       "submit": "Stuur mijn actieplan",
       "submitting": "Verzenden...",
@@ -3874,7 +3820,7 @@
       "body": "We hebben je een bevestigingsmail gestuurd. Klik op de link in die mail en je volledige actieplan komt direct binnen."
     },
     "finalCta": {
-      "eyebrow": "Founding open · {taken}/{total} bezet",
+      "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct praten?",
       "description": "Niet iedereen wil eerst een scan. Sla 'm over en plan een gesprek van 30 minuten met Daley.",
       "button": "Plan een gesprek"
@@ -3948,8 +3894,7 @@
   },
   "founding": {
     "counter": {
-      "badge": "{taken} van {total} founding plekken vergeven",
-      "lastUpdated": "Stand van {date}",
+      "badge": "Maximaal {total} founding-plekken",
       "cohortStart": "Cohort start {date}"
     }
   },
@@ -3985,7 +3930,7 @@
     "promptHero": {
       "intro": "Vraag Clyde bijvoorbeeld:"
     },
-    "scarcityBadge": "Founding open · {taken}/{total} bezet",
+    "scarcityBadge": "Founding open · maximaal {total} plekken",
     "kennisbank": {
       "title": "Verder lezen in de kennisbank",
       "intro": "Gidsen die dieper ingaan op het werk achter deze vaardigheid, met bronnen erbij."
@@ -4000,7 +3945,7 @@
     },
     "ai-marketing-medewerker": {
       "name": "Clyde, de AI-collega van je bureau",
-      "definition": "De AI-collega die FutureMarketingAI voor marketingbureaus bouwt. Clyde verbindt het doel van elke klant met research, agenda, content en rapporten, en onthoudt elk merk apart. Geen losse tool, maar een collega die de hele klantportfolio kent."
+      "definition": "De AI-collega die FutureMarketingAI voor marketingbureaus bouwt. Clyde verbindt het doel van elke klant met research, agenda, content en rapporten, met een eigen geheugen per klant. Geen losse tool, maar een collega die de hele klantportfolio kent."
     },
     "citation-monitoring": {
       "name": "Citation monitoring",
@@ -4008,7 +3953,7 @@
     },
     "tier-caps": {
       "name": "Tier caps",
-      "definition": "De grenzen per abonnementsniveau aan het aantal merken of werkruimtes dat een bureau onder een plan beheert. Bepaalt welke vaardigheden en welk volume binnen een tier vallen."
+      "definition": "De grenzen per abonnementsniveau: hoeveel werkruimtes een plan omvat en hoeveel een bureau per maand van de zwaardere vaardigheden gebruikt."
     }
   },
   "resources": {

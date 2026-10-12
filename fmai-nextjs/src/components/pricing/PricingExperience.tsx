@@ -18,7 +18,7 @@ interface PricingExperienceProps {
   /** Mid-range workspace default, defined server-side for SSR parity. */
   initialWorkspaces: number
   /** Founding counter values for the Founding card description. */
-  foundingCounter: { taken: number; total: number }
+  foundingCounter: { total: number }
   /** Per-tier feature count (deferred render — same shape as old TIER_CONFIG). */
   tierFeatureCounts: Record<TierLabelKey, number>
 }

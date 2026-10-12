@@ -16,7 +16,7 @@
     },
     "hero": {
       "brandKicker": "FutureMarketingAI",
-      "badge": "{taken} de {total} plazas founding ocupadas",
+      "badge": "Máx. {total} plazas founding",
       "headlineMain": "Este es Clyde.",
       "imageAlt": "Ilustración 3D de Clyde, el compañero de IA de FutureMarketingAI",
       "tagline": "El <accent>compañero de IA</accent> de tu agencia.",
@@ -26,7 +26,7 @@
       "ctaSecondary": "Conoce a Clyde",
       "trustCluster": {
         "target": "Hecho para agencias",
-        "founding": "{taken} de {total} plazas founding",
+        "founding": "Máx. {total} plazas founding",
         "avgLabel": "Cumple con el RGPD"
       }
     },
@@ -98,7 +98,7 @@
     "icp": {
       "title": "Para quién funciona (y para quién no)",
       "subtitle": "Sin discurso de marketing. Sinceramente, preferimos no trabajar con cualquiera.",
-      "scarcityCallout": "{taken}/{total} plazas founding ocupadas · Máx. {maxPerYear} partners al año",
+      "scarcityCallout": "{total} plazas founding · Máx. {maxPerYear} partners al año",
       "closingHeadline": "¿Te reconoces en la columna izquierda?",
       "closingSubtext": "En 30 minutos te digo si encajamos con tu portfolio.",
       "closingCta": "Agenda una llamada",
@@ -299,7 +299,7 @@
       "futurePhaseEyebrow": "Tras la fase founding",
       "futureAvailability": "Disponible tras la fase founding",
       "foundingCtaLabel": "Únete como socio founding",
-      "spotsTaken": "{taken} de {total} plazas ocupadas",
+      "spotsTaken": "Máx. {total} plazas",
       "tiers": {
         "founding": {
           "label": "Founding",
@@ -360,7 +360,7 @@
       "readTimeLabel": "min de lectura"
     },
     "cta": {
-      "eyebrow": "Founding abierto · {taken}/{total} ocupadas",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "Diez plazas abiertas. Después founding cierra.",
       "subtitle": "€997 al mes, tarifa vitalicia. Una llamada de 30 minutos nos dice si encaja.",
       "button": "Agenda una llamada",
@@ -688,7 +688,6 @@
           "seo_geo": "SEO / GEO",
           "clyde": "Clyde Orchestrator"
         },
-        "status_badge": "Todos los sistemas operativos",
         "social_aria": {
           "linkedin": "Síguenos en LinkedIn",
           "twitter": "Síguenos en X"
@@ -813,7 +812,7 @@
     },
     "hero": {
       "eyebrow": "Sobre FutureMarketingAI",
-      "badge": "Founding abierto · {taken}/{total} ocupado",
+      "badge": "Founding abierto · máx. {total} plazas",
       "title": "Sobre FutureMarketingAI",
       "tagline": "Clyde, el compañero de IA de tu agencia. Creado por Daley van Diest, que acompaña personalmente a cada partner."
     },
@@ -922,11 +921,8 @@
     "capacity": {
       "eyebrow": "Capacidad",
       "title": "Capacidad y transparencia",
-      "body": "Máx. {maxPartners} agencias al año. Actualmente {taken} de {total} plazas Founding ocupadas. No es un truco de marketing, es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente durante 4 semanas de setup, y hay un límite en cuántas agencias podemos recibir a la vez.",
-      "reasoning": "Elegimos calidad sobre volumen. Preferimos {maxPartners} agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte.",
-      "barLegend": "Plazas Founding ocupadas",
-      "barTakenLabel": "Ocupadas",
-      "barAvailableLabel": "Disponibles"
+      "body": "Máx. {maxPartners} agencias al año. No es un truco de marketing, es la realidad del onboarding high-touch. Daley guía personalmente a cada nuevo cliente durante 4 semanas de setup, y hay un límite en cuántas agencias podemos recibir a la vez.",
+      "reasoning": "Elegimos calidad sobre volumen. Preferimos {maxPartners} agencias donde Clyde aporte valor real, que 200 a las que no podamos dedicar atención suficiente. La lista de espera escala con la demanda. Si estamos llenos, agendamos una llamada para el siguiente cohorte."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -946,7 +942,7 @@
       "eyebrow": "Precios y habilidades",
       "title": "Partnerships premium. Founding €997 de por vida.",
       "description": "Todos los precios visibles. Founding €997 de por vida para las primeras 10 agencias. Después una tarifa lineal por espacio de trabajo: Growth €499, Professional €399, Enterprise €299. Caps por habilidad explicados con claridad, sin costes ocultos, sin \"contáctanos para precios\".",
-      "counter": "{taken} de {total} plazas Founding ocupadas"
+      "counter": "Máx. {total} plazas Founding"
     },
     "visibility": {
       "eyebrow": "Filosofía",
@@ -1017,16 +1013,14 @@
         "features_0": "Precio lineal por espacio desde 15 clientes",
         "features_1": "800 créditos por espacio (desde 12.000 al mes)",
         "features_2": "Las 12 habilidades sin caps (uso razonable)",
-        "features_3": "Opción white-label",
-        "features_4": "Acceso por API para integraciones",
-        "features_5": "Customer Success Manager dedicado",
-        "features_6": "Contrato SLA"
+        "features_3": "Customer Success Manager dedicado",
+        "features_4": "Contrato SLA"
       },
       "founding": {
         "name": "Founding",
         "subtitle": "10 plazas · ancla de por vida",
         "tagline": "10 plazas en total. Caps Pro-level. 997 EUR de por vida. Founder Slack.",
-        "description": "Los clientes fundadores que se comprometieron antes del lanzamiento. Precio de por vida de 997 EUR, caps Pro-level en todas las habilidades, línea directa con Daley por Slack. {taken} de {total} plazas ocupadas.",
+        "description": "Los clientes fundadores que se comprometieron antes del lanzamiento. Precio de por vida de 997 EUR, caps Pro-level en todas las habilidades, línea directa con Daley por Slack. Máx. {total} plazas.",
         "features_0": "Espacios de trabajo ilimitados",
         "features_1": "8.000 créditos al mes",
         "features_2": "Las 12 habilidades (con caps Pro-level)",
@@ -1083,33 +1077,6 @@
         }
       }
     },
-    "skillPacks": {
-      "eyebrow": "Por habilidad",
-      "title": "Packs por habilidad, add-ons dirigidos",
-      "description": "¿Una habilidad contra el cap? Compra un add-on dirigido a esa habilidad concreta, en lugar de un upgrade de tier completo.",
-      "items": {
-        "voiceMinutes": {
-          "name": "Voice Minutes Pack",
-          "quantity": "100 minutos",
-          "price": "147"
-        },
-        "videoAds": {
-          "name": "Video Ads Pack",
-          "quantity": "10 anuncios en vídeo",
-          "price": "197"
-        },
-        "reels": {
-          "name": "Reels Pack",
-          "quantity": "10 reels",
-          "price": "197"
-        },
-        "blogPower": {
-          "name": "Blog Power Pack",
-          "quantity": "10 artículos",
-          "price": "197"
-        }
-      }
-    },
     "faq": {
       "eyebrow": "Preguntas frecuentes",
       "title": "Preguntas frecuentes sobre precios",
@@ -1162,7 +1129,7 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
-      "badge": "Founding abierto · {taken}/{total} reservadas",
+      "badge": "Founding abierto · máx. {total} plazas",
       "title": "¿Cómo empieza tu partnership con Clyde?",
       "description": "Cinco pasos desde la primera conversación hasta operar de forma autónoma. Sin self-service. Daley guía personalmente a cada cliente por el proceso.",
       "cta": "Agenda una llamada"
@@ -1236,7 +1203,7 @@
       "loop_stage4": "Mejora"
     },
     "cta": {
-      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Listo para empezar la partnership?",
       "description": "Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "button": "Agenda una llamada"
@@ -1325,7 +1292,7 @@
       "button": "Agenda una llamada"
     },
     "finalCta": {
-      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Saltar el formulario y aplicar directamente?",
       "description": "Sin preguntas, ¿pero listo para una conversación sobre partnership? Salta este formulario y ve directo a la solicitud.",
       "button": "Agenda una llamada"
@@ -2005,7 +1972,7 @@
       "description": "Founding Member: €997/mes de por vida, solo primeras 10 agencias. Espacios de trabajo ilimitados, precio fijo para siempre. 1/10 plazas."
     },
     "hero": {
-      "badge": "{taken} de {total} plazas Founding ocupadas",
+      "badge": "Máx. {total} plazas Founding",
       "title": "Conviértete en Founding partner. Una elección, fijo de por vida.",
       "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, para espacios de trabajo ilimitados. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Las 12 habilidades, topes Pro y línea directa de Slack con Daley.",
       "cta": "Reserva tu plaza"
@@ -2086,33 +2053,17 @@
     },
     "cta": {
       "title": "Conviértete en uno de los 10",
-      "subtitle": "{taken} de {total} plazas ocupadas. Agenda una llamada. Si hay encaje mutuo, reservamos tu plaza.",
+      "subtitle": "Máx. {total} plazas. Agenda una llamada. Si hay encaje mutuo, reservamos tu plaza.",
       "button": "Agenda una llamada"
     },
     "eyebrows": {
       "pricing": "Precio",
       "value": "Por qué Founding",
-      "scarcity": "10 plazas, completo es completo",
       "benefits": "Lo que recibes",
       "quickApply": "Inicio rápido",
       "proof": "Primer partner",
       "faq": "Preguntas",
       "cta": "Reserva tu plaza"
-    },
-    "scarcity": {
-      "heading": "Así está la situación",
-      "intro": "Diez plazas Founding en total. Una ocupada por SkinClarity Club. Nueve disponibles. Pasa el cursor por una plaza para ver el contexto.",
-      "ariaLabel": "Estado de las plazas Founding",
-      "open": {
-        "heading": "Plaza Founding disponible",
-        "body": "Esta plaza puede ser para tu agencia. Agenda una llamada para reservarla."
-      },
-      "takenSpots": {
-        "skc": {
-          "name": "SkinClarity Club",
-          "since": "Founding partner desde Q4 2025"
-        }
-      }
     },
     "quickApply": {
       "eyebrow": "Inicio rápido",
@@ -2254,7 +2205,7 @@
       ]
     },
     "cta": {
-      "eyebrow": "Founding abierto · {taken}/{total} ocupado",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Listo para una AI que conoce tus marcas?",
       "subtitle": "Una llamada de 30 minutos sobre la configuración de SkinClarity Club. Después sabrás si encaja con tu cartera.",
       "button": "Agenda una llamada"
@@ -2287,7 +2238,7 @@
     },
     "cta": {
       "eyebrow": "Acceso anticipado",
-      "scarcityEyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "scarcityEyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Quieres ser el primero?",
       "subtitle": "Los founding members obtienen acceso anticipado a ambas a medida que entran en vivo, además de voz en lo que construimos a continuación.",
       "button": "Agenda una llamada"
@@ -2300,7 +2251,7 @@
     },
     "hero": {
       "eyebrow": "Solicitud",
-      "counter": "{taken} de {total} plazas Founding ocupadas",
+      "counter": "Máx. {total} plazas Founding",
       "title": "Agenda una llamada",
       "subtitle": "Sin autoservicio. Sin registro genérico. Revisamos cada solicitud personalmente y respondemos en 3 días laborables. Incluso si no hay encaje."
     },
@@ -2622,11 +2573,6 @@
           "name": "SkinClarity Shop",
           "role": "Cuenta de producto para la tienda",
           "output": "5 carruseles y 3 posts por semana. Lanzamientos, packs y contenido de producto."
-        },
-        "brand4": {
-          "name": "Cartera de marcas de tratamiento",
-          "role": "4 marcas en rotación",
-          "output": "De 2 a 4 blogs por mes más carruseles temáticos por marca en la rotación."
         }
       }
     }
@@ -2846,7 +2792,7 @@
     },
     "hero": {
       "eyebrow": "12 habilidades, una sola mente",
-      "badge": "Founding abierto · {taken}/{total} reservadas",
+      "badge": "Founding abierto · máx. {total} plazas",
       "title": "Las 12 habilidades de Clyde",
       "subtitle": "Un compañero de IA, doce habilidades, una memoria compartida por marca. Diez en producción, dos próximamente."
     },
@@ -2862,7 +2808,7 @@
     },
     "grid_aria_label": "Lista de habilidades",
     "cta": {
-      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "Un compañero, todas las habilidades en un solo lugar",
       "description": "Sin herramientas sueltas, sin ticketing por habilidad. Un espacio por marca, una llamada de 30 minutos para ver si encaja.",
       "button": "Agenda una llamada",
@@ -3498,7 +3444,7 @@
       "foundingMember": {
         "subtitle": "Tarifa fija de por vida"
       },
-      "spots": "{taken}/{total} plazas"
+      "spots": "máx. {total} plazas"
     }
   },
   "chat": {
@@ -3803,7 +3749,7 @@
       "body": "Te hemos enviado un correo de confirmación. Haz clic en el enlace y tu plan de acción completo llega a tu bandeja."
     },
     "finalCta": {
-      "eyebrow": "Founding abierto · {taken}/{total} reservadas",
+      "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Prefieres saltar el scan?",
       "description": "No todos quieren un scan primero. Sáltalo y agenda una llamada de 30 minutos con Daley.",
       "button": "Agenda una llamada"
@@ -3877,8 +3823,7 @@
   },
   "founding": {
     "counter": {
-      "badge": "{taken} de {total} plazas founding ocupadas",
-      "lastUpdated": "A fecha de {date}",
+      "badge": "Máx. {total} plazas founding",
       "cohortStart": "El cohort empieza el {date}"
     }
   },
@@ -3913,7 +3858,7 @@
     "promptHero": {
       "intro": "Pídele a Clyde, por ejemplo:"
     },
-    "scarcityBadge": "Founding abierto · {taken}/{total} reservadas"
+    "scarcityBadge": "Founding abierto · máx. {total} plazas"
   },
   "glossary": {
     "heading": "Glosario de GEO y marketing con IA",

@@ -10,7 +10,7 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { AssessmentClient } from './AssessmentClient'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -59,7 +59,7 @@ export default async function AssessmentPage({
           <ScrollReveal>
             <GlassCard className="p-12 text-center space-y-5">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-                {t('finalCta.eyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+                {t('finalCta.eyebrow', { total: FOUNDING_SPOTS_TOTAL })}
               </span>
               <h2
                 id="assessment-final-cta"

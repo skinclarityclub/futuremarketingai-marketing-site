@@ -25,9 +25,7 @@ import { SectionShell } from '@/components/sections/SectionShell'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { MissionTimeline, type TimelineMilestone } from '@/components/about/MissionTimeline'
-import { CapacityBar } from '@/components/about/CapacityBar'
 import {
-  FOUNDING_SPOTS_TAKEN,
   FOUNDING_SPOTS_TOTAL,
   MAX_PARTNERS_PER_YEAR,
 } from '@/lib/constants'
@@ -106,7 +104,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-            {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            {t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
           </span>
           <h1
             id="about-hero"
@@ -306,17 +304,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       >
         <ScrollReveal>
           <div className="space-y-6">
-            <CapacityBar
-              totalPerYear={MAX_PARTNERS_PER_YEAR}
-              taken={FOUNDING_SPOTS_TAKEN}
-              takenLabel={t('capacity.barTakenLabel')}
-              availableLabel={t('capacity.barAvailableLabel')}
-              legendLabel={t('capacity.barLegend')}
-            />
             <GlassCard className="text-left">
               <p className="text-text-secondary leading-relaxed mb-4">
                 {t('capacity.body', {
-                  taken: FOUNDING_SPOTS_TAKEN,
                   total: FOUNDING_SPOTS_TOTAL,
                   maxPartners: MAX_PARTNERS_PER_YEAR,
                 })}

@@ -16,7 +16,7 @@
     },
     "hero": {
       "brandKicker": "FutureMarketingAI",
-      "badge": "{taken} of {total} founding spots taken",
+      "badge": "Max {total} founding spots",
       "headlineMain": "This is Clyde.",
       "imageAlt": "3D illustration of Clyde, the FutureMarketingAI AI colleague",
       "tagline": "Your agency's <accent>AI colleague</accent>.",
@@ -26,7 +26,7 @@
       "ctaSecondary": "Meet Clyde",
       "trustCluster": {
         "target": "Built for agencies",
-        "founding": "{taken} of {total} founding spots",
+        "founding": "Max {total} founding spots",
         "avgLabel": "GDPR-compliant"
       }
     },
@@ -98,7 +98,7 @@
     "icp": {
       "title": "Who this works for (and who it doesn't)",
       "subtitle": "No marketing pitch. Honestly, we'd rather not work with everyone.",
-      "scarcityCallout": "{taken}/{total} founding seats taken · Max {maxPerYear} partners per year",
+      "scarcityCallout": "{total} founding seats · Max {maxPerYear} partners per year",
       "closingHeadline": "Does the left side match you?",
       "closingSubtext": "Then I'll tell you in 30 minutes whether we're a fit for your portfolio.",
       "closingCta": "Book a call",
@@ -299,7 +299,7 @@
       "futurePhaseEyebrow": "After the founding phase",
       "futureAvailability": "Available after founding phase",
       "foundingCtaLabel": "Become a founding partner",
-      "spotsTaken": "{taken} of {total} seats taken",
+      "spotsTaken": "Max {total} seats",
       "tiers": {
         "founding": {
           "label": "Founding",
@@ -360,7 +360,7 @@
       "readTimeLabel": "min read"
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} taken",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "Ten seats open. Then founding closes.",
       "subtitle": "€997 per month, locked for life. A 30-minute call tells us if it fits.",
       "button": "Book a call",
@@ -712,7 +712,6 @@
           "seo_geo": "SEO / GEO",
           "clyde": "Clyde Orchestrator"
         },
-        "status_badge": "All systems operational",
         "social_aria": {
           "linkedin": "Follow us on LinkedIn",
           "twitter": "Follow us on X"
@@ -837,7 +836,7 @@
     },
     "hero": {
       "eyebrow": "About FutureMarketingAI",
-      "badge": "Founding open · {taken}/{total} taken",
+      "badge": "Founding open · max {total} spots",
       "title": "About FutureMarketingAI",
       "tagline": "Clyde, your agency's AI colleague. Built by Daley van Diest, who onboards every partner himself."
     },
@@ -946,11 +945,8 @@
     "capacity": {
       "eyebrow": "Capacity",
       "title": "Capacity and transparency",
-      "body": "Max {maxPartners} agencies per year. Currently {taken} of {total} Founding spots taken. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
-      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort.",
-      "barLegend": "Founding spots taken",
-      "barTakenLabel": "Taken",
-      "barAvailableLabel": "Available"
+      "body": "Max {maxPartners} agencies per year. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
+      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -970,7 +966,7 @@
       "eyebrow": "Pricing and skills",
       "title": "Premium partnerships. Founding €997 lifetime.",
       "description": "All prices are visible. Founding €997 lifetime for the first 10 agencies. After that a linear per-workspace rate: Growth €499, Professional €399, Enterprise €299. Caps per skill explained honestly, no hidden costs, no \"contact us for pricing\".",
-      "counter": "{taken} of {total} Founding spots taken"
+      "counter": "Max {total} Founding spots"
     },
     "visibility": {
       "eyebrow": "Philosophy",
@@ -1041,16 +1037,14 @@
         "features_0": "Linear price per workspace from 15 clients",
         "features_1": "800 credits per workspace (from 12,000 per month)",
         "features_2": "All 12 skills with no caps (fair use)",
-        "features_3": "White-label option",
-        "features_4": "API access for integrations",
-        "features_5": "Dedicated Customer Success Manager",
-        "features_6": "SLA contract"
+        "features_3": "Dedicated Customer Success Manager",
+        "features_4": "SLA contract"
       },
       "founding": {
         "name": "Founding",
         "subtitle": "10 seats · lifetime anchor",
         "tagline": "10 total spots. Pro-level caps. €997 for life. Founder Slack.",
-        "description": "The founding clients who committed before launch. Lifetime price of €997, Pro-level caps on every skill, direct Slack line with Daley. {taken} of {total} spots taken.",
+        "description": "The founding clients who committed before launch. Lifetime price of €997, Pro-level caps on every skill, direct Slack line with Daley. Max {total} spots.",
         "features_0": "Unlimited workspaces",
         "features_1": "8,000 credits per month",
         "features_2": "All 12 skills (with Pro-level caps)",
@@ -1107,33 +1101,6 @@
         }
       }
     },
-    "skillPacks": {
-      "eyebrow": "Skill-specific",
-      "title": "Skill packs, targeted top-ups",
-      "description": "One skill running against the cap? Buy a targeted add-on for that specific skill, instead of a full tier upgrade.",
-      "items": {
-        "voiceMinutes": {
-          "name": "Voice Minutes Pack",
-          "quantity": "100 minutes",
-          "price": "147"
-        },
-        "videoAds": {
-          "name": "Video Ads Pack",
-          "quantity": "10 video ads",
-          "price": "197"
-        },
-        "reels": {
-          "name": "Reels Pack",
-          "quantity": "10 reels",
-          "price": "197"
-        },
-        "blogPower": {
-          "name": "Blog Power Pack",
-          "quantity": "10 articles",
-          "price": "197"
-        }
-      }
-    },
     "faq": {
       "eyebrow": "Frequently asked",
       "title": "Frequently asked questions about pricing",
@@ -1186,7 +1153,7 @@
     },
     "hero": {
       "eyebrow": "Onboarding",
-      "badge": "Founding open · {taken}/{total} reserved",
+      "badge": "Founding open · max {total} spots",
       "title": "How does your partnership with Clyde start?",
       "description": "Five steps from first call to running autonomously. No self-service. Daley personally guides every client through the process.",
       "cta": "Book a call"
@@ -1260,7 +1227,7 @@
       "loop_stage4": "Improvement"
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "Ready to start the partnership?",
       "description": "Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "button": "Book a call"
@@ -1349,7 +1316,7 @@
       "button": "Book a call"
     },
     "finalCta": {
-      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "Skip the form and apply directly?",
       "description": "No questions, but ready for a partnership conversation? Skip this contact form and go straight to the application.",
       "button": "Book a call"
@@ -2029,7 +1996,7 @@
       "description": "Founding Member: €997/month for life, first 10 agencies only. Unlimited workspaces, price locked forever. 1 of 10 seats taken."
     },
     "hero": {
-      "badge": "{taken} of {total} Founding spots taken",
+      "badge": "Max {total} Founding spots",
       "title": "Become a Founding partner. One choice, locked for life.",
       "description": "Ten total spots for agencies that commit from launch. €997 per month, locked for life, for unlimited workspaces. The other tiers scale linearly per workspace (€499 / €399 / €299). All 12 skills, Pro-level caps and a direct Slack line with Daley.",
       "cta": "Reserve your seat"
@@ -2110,33 +2077,17 @@
     },
     "cta": {
       "title": "Become one of the 10",
-      "subtitle": "{taken} of {total} spots taken. Book a call. If it is a mutual fit, we reserve your spot.",
+      "subtitle": "Max {total} spots. Book a call. If it is a mutual fit, we reserve your spot.",
       "button": "Book a call"
     },
     "eyebrows": {
       "pricing": "Pricing",
       "value": "Why Founding",
-      "scarcity": "10 spots, full is full",
       "benefits": "What you get",
       "quickApply": "Quick start",
       "proof": "First partner",
       "faq": "Questions",
       "cta": "Reserve your spot"
-    },
-    "scarcity": {
-      "heading": "Here is where we stand",
-      "intro": "Ten Founding spots in total. One is taken by SkinClarity Club. Nine are open. Hover a spot for context.",
-      "ariaLabel": "Founding spots status",
-      "open": {
-        "heading": "Founding spot available",
-        "body": "This spot could be yours. Book a call to reserve it."
-      },
-      "takenSpots": {
-        "skc": {
-          "name": "SkinClarity Club",
-          "since": "Founding partner since Q4 2025"
-        }
-      }
     },
     "quickApply": {
       "eyebrow": "Quick start",
@@ -2278,7 +2229,7 @@
       ]
     },
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} taken",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "Ready for an AI that knows your brands?",
       "subtitle": "A 30-minute call on the SkinClarity Club setup. After that you know if it fits your portfolio.",
       "button": "Book a call"
@@ -2311,7 +2262,7 @@
     },
     "cta": {
       "eyebrow": "Early access",
-      "scarcityEyebrow": "Founding open · {taken}/{total} reserved",
+      "scarcityEyebrow": "Founding open · max {total} spots",
       "title": "Want to be first in line?",
       "subtitle": "Founding members get early access to both as they go live, plus a say in what we build next.",
       "button": "Book a call"
@@ -2324,7 +2275,7 @@
     },
     "hero": {
       "eyebrow": "Application",
-      "counter": "{taken} of {total} Founding spots taken",
+      "counter": "Max {total} Founding spots",
       "title": "Book a call",
       "subtitle": "No self-service. No generic application. We review every request personally and reply within 3 business days. Even if it is not a match."
     },
@@ -2646,11 +2597,6 @@
           "name": "SkinClarity Shop",
           "role": "Product account for the webshop",
           "output": "5 carousels and 3 posts per week. Launches, bundles, and product content."
-        },
-        "brand4": {
-          "name": "Treatment brand portfolio",
-          "role": "4 brands in rotation",
-          "output": "2 to 4 blogs per month plus themed carousels per brand in the rotation."
         }
       }
     }
@@ -2870,7 +2816,7 @@
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
-      "badge": "Founding open · {taken}/{total} reserved",
+      "badge": "Founding open · max {total} spots",
       "title": "Clyde's 12 skills",
       "subtitle": "One AI colleague, twelve skills, one shared memory per brand. Ten are live in production, two are coming soon."
     },
@@ -2886,7 +2832,7 @@
     },
     "grid_aria_label": "Skills list",
     "cta": {
-      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "One colleague, all skills under one roof",
       "description": "No separate tools, no ticketing per skill. One workspace per brand, one 30-minute call to see whether it fits.",
       "button": "Book a call",
@@ -3522,7 +3468,7 @@
       "foundingMember": {
         "subtitle": "Rate locked for life"
       },
-      "spots": "{taken}/{total} spots"
+      "spots": "max {total} spots"
     }
   },
   "chat": {
@@ -3827,7 +3773,7 @@
       "body": "We've sent you a confirmation email. Click the link in that email and your full action plan lands in your inbox."
     },
     "finalCta": {
-      "eyebrow": "Founding open · {taken}/{total} reserved",
+      "eyebrow": "Founding open · max {total} spots",
       "title": "Rather skip the scan?",
       "description": "Not everyone wants a scan first. Skip it and book a 30-minute call with Daley.",
       "button": "Book a call"
@@ -3901,8 +3847,7 @@
   },
   "founding": {
     "counter": {
-      "badge": "{taken} of {total} founding spots taken",
-      "lastUpdated": "As of {date}",
+      "badge": "Max {total} founding spots",
       "cohortStart": "Cohort starts {date}"
     }
   },
@@ -3938,7 +3883,7 @@
     "promptHero": {
       "intro": "Ask Clyde something like:"
     },
-    "scarcityBadge": "Founding open · {taken}/{total} reserved",
+    "scarcityBadge": "Founding open · max {total} spots",
     "kennisbank": {
       "title": "Further reading in the knowledge base",
       "intro": "Guides that go deeper into the work behind this skill, with their sources."

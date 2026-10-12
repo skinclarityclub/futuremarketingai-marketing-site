@@ -16,7 +16,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ChapterSection } from '@/components/case-study/ChapterSection'
 import { ScrollProgressRail } from '@/components/case-study/ScrollProgressRail'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
-import { ArrowRight, Instagram, ShoppingBag, Sparkles, Layers, type LucideIcon } from 'lucide-react'
+import { ArrowRight, Instagram, ShoppingBag, Sparkles, type LucideIcon } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -42,7 +42,8 @@ const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 
 // Outcome numbers, before/after durations, month 3 and Sindy's quotes came from a MOCKUP transcript
 // (docs/interviews/2026-04-sindy-skc-transcript.md); they stay out until Sindy confirms real ones (Daley 2026-10-12).
 const TIMELINE_KEYS = ['week1', 'month1', 'now'] as const
-const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3', 'brand4'] as const
+// SKC is one client with three Instagram accounts; the fourth 'brands portfolio' card had no source in the data.
+const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3'] as const
 
 // Per-brand iconography (placeholder until real gallery assets land)
 const GALLERY_BRAND_META: Record<
@@ -52,7 +53,6 @@ const GALLERY_BRAND_META: Record<
   brand1: { Icon: Instagram, accent: 'system' }, // main account (educational)
   brand2: { Icon: Sparkles, accent: 'human' }, // personal authority
   brand3: { Icon: ShoppingBag, accent: 'system' }, // shop
-  brand4: { Icon: Layers, accent: 'human' }, // portfolio
 }
 
 const CHAPTERS = [
@@ -264,7 +264,7 @@ export default async function SkcCaseStudyPage({
               <div>
                 <EyebrowLabel className="mb-3">{t('gallery.title')}</EyebrowLabel>
                 <p className="text-text-secondary mb-6 max-w-3xl">{t('gallery.subtitle')}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {GALLERY_BRAND_KEYS.map((key) => {
                     const { Icon, accent } = GALLERY_BRAND_META[key]
                     const accentTint =

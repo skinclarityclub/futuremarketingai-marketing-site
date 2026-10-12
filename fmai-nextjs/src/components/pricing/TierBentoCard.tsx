@@ -34,7 +34,7 @@ interface TierBentoCardProps {
   /** Shared slider value driving live price + glow state. */
   workspaces: number
   /** Founding-only counter values for description interpolation. */
-  foundingCounter?: { taken: number; total: number }
+  foundingCounter?: { total: number }
 }
 
 /**
