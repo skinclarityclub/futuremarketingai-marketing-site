@@ -2212,7 +2212,7 @@
       "eyebrow": "Eigen geheugen per klant",
       "title": "Gescheiden per klant",
       "body1": "Clyde werkt voor meerdere bureaus en hun klanten tegelijk. Elke klant heeft een eigen werkruimte met een eigen geheugen: werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Zo springt een merkstem niet over naar een andere klant.",
-      "body2": "Technisch hangt elke herinnering aan één bureau en één klant in de database, en elke opvraging filtert daarop. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze."
+      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze."
     },
     "decay": {
       "eyebrow": "Dag en nacht",
