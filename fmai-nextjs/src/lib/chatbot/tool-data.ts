@@ -29,10 +29,9 @@ export const CHATBOT_TIERS = {
     pricingModel: 'fixed' as const,
     monthlyPrice: 997,
     onboardingFee: 0,
-    workspaces: -1, // unlimited
+    workspaces: -1, // not rendered; founding includes 15 workspaces, EUR 299 per extra one (app-side cap: stream P)
     credits: 8000,
     spotsTotal: 10,
-    spotsTaken: 1,
     skillsIncluded: 12,
     skillsTotal: 12,
   },
@@ -87,12 +86,12 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mnd',
       features: [
         'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
-        'Onbeperkt aantal werkruimtes',
+        'Tot 15 werkruimtes',
         '8.000 credits per maand',
         'Levenslang vast tarief van €997 (wordt nooit herijkt voor founding members)',
         'Directe toegang tot de founder',
         'Bepaal mee de productroadmap',
-        '10 plekken totaal, 1 bezet (SkinClarity Club), geen onboarding-fee',
+        'Maximaal 10 founding-plekken, geen onboarding-fee',
       ],
     },
     growth: {
@@ -134,12 +133,12 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mo',
       features: [
         'All 12 skills included (10 live, 2 coming soon)',
-        'Unlimited workspaces',
+        'Up to 15 workspaces',
         '8,000 credits per month',
         'Lifetime price lock at €997 (never raises for founding members)',
         'Direct founder access',
         'Shape the product roadmap',
-        '10 spots total, 1 taken (SkinClarity Club), no onboarding fee',
+        'Maximum 10 founding spots, no onboarding fee',
       ],
     },
     growth: {
@@ -181,12 +180,12 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mes',
       features: [
         'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
-        'Espacios de trabajo ilimitados',
+        'Hasta 15 espacios de trabajo',
         '8.000 créditos al mes',
         'Precio fijo de por vida de €997 (nunca sube para los miembros founding)',
         'Acceso directo al fundador',
         'Influye en la hoja de ruta del producto',
-        '10 plazas en total, 1 ocupada (SkinClarity Club), sin tarifa de incorporación',
+        'Máximo 10 plazas founding, sin tarifa de incorporación',
       ],
     },
     growth: {

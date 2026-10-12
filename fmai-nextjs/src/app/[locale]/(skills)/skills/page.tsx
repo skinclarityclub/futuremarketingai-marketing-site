@@ -32,7 +32,7 @@ import { CTAButton } from '@/components/ui/CTAButton'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { Link } from '@/i18n/navigation'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -130,7 +130,7 @@ export default async function SkillsIndexPage({
           <header className="text-center mb-12 space-y-4">
             <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-              {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+              {t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
             </span>
             <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary">
               {t('hero.title')}
@@ -218,7 +218,7 @@ export default async function SkillsIndexPage({
           <ScrollReveal>
             <GlassCard className="p-12 text-center space-y-5">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-                {t('cta.eyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+                {t('cta.eyebrow', { total: FOUNDING_SPOTS_TOTAL })}
               </span>
               <h2
                 id="skills-cta"

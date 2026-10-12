@@ -17,7 +17,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ImprovementLoopCycle } from '@/components/how-it-works/ImprovementLoopCycle'
 import { AppScreenshot } from '@/components/marketing/AppScreenshot'
 import { SystemFlow } from '@/components/how-it-works/SystemFlow'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -86,7 +86,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-            {t('hero.badge', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            {t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
           </span>
           <h1
             id="hiw-hero"
@@ -217,7 +217,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <ScrollReveal>
             <GlassCard className="p-12 text-center space-y-5">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-                {t('cta.eyebrow', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+                {t('cta.eyebrow', { total: FOUNDING_SPOTS_TOTAL })}
               </span>
               <h2
                 id="hiw-cta"

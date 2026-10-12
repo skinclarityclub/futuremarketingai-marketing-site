@@ -203,15 +203,6 @@ export async function Footer({ locale }: FooterProps) {
                 <p className="text-xs text-text-muted">
                   {t('landing.footer.copyright', { year })}
                 </p>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 bg-accent-system/10 border border-accent-system/20 rounded-full">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-system opacity-40" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-system" />
-                  </span>
-                  <span className="text-[10px] font-medium text-text-secondary">
-                    {t('landing.footer.status_badge')}
-                  </span>
-                </div>
                 <div className="flex items-center gap-3">
                   <Link
                     href="/legal/privacy"

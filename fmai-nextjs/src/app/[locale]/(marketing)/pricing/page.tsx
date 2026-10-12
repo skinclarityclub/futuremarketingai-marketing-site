@@ -20,11 +20,10 @@ import { PricingExperience } from '@/components/pricing/PricingExperience'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
 import {
-  FOUNDING_SPOTS_TAKEN,
   FOUNDING_SPOTS_TOTAL,
   MAX_PARTNERS_PER_YEAR,
 } from '@/lib/constants'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -45,11 +44,10 @@ const TIER_FEATURE_COUNTS = {
   founding: 10,
   growth: 8,
   professional: 8,
-  enterprise: 7,
+  enterprise: 5,
 } as const
 
 const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const
-const SKILL_PACK_KEYS = ['voiceMinutes', 'videoAds', 'reels', 'blogPower'] as const
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'] as const
 
 // Mid-range slider start: 5 workspaces = top of Growth / bottom of Pro,
@@ -129,7 +127,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             <PricingExperience
               locale={locale}
               initialWorkspaces={INITIAL_WORKSPACES}
-              foundingCounter={{ taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL }}
+              foundingCounter={{ total: FOUNDING_SPOTS_TOTAL }}
               tierFeatureCounts={TIER_FEATURE_COUNTS}
             />
           </NextIntlClientProvider>
@@ -190,48 +188,6 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Skill-specific Packs — progressive disclosure (add-ons, not core decision data) */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="skill-packs">
-        <div className="max-w-5xl mx-auto">
-          <details className="group rounded-2xl border border-border-primary bg-white/[0.02] backdrop-blur-sm">
-            <summary className="flex items-center justify-between cursor-pointer list-none px-6 py-5 transition-colors hover:bg-white/[0.03] rounded-2xl">
-              <div className="text-left space-y-1">
-                <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-system">
-                  {t('skillPacks.eyebrow')}
-                </p>
-                <h2 id="skill-packs" className="text-2xl md:text-3xl font-display font-bold text-text-primary">
-                  {t('skillPacks.title')}
-                </h2>
-              </div>
-              <ChevronDown
-                className="w-5 h-5 text-text-muted transition-transform duration-300 group-open:rotate-180 shrink-0 ml-4"
-                aria-hidden
-              />
-            </summary>
-            <div className="px-6 pb-6 pt-2">
-              <p className="text-text-secondary mb-6 max-w-2xl">{t('skillPacks.description')}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {SKILL_PACK_KEYS.map((key) => (
-                  <ScrollReveal key={key}>
-                    <div className="border border-border-primary bg-white/[0.02] backdrop-blur-sm rounded-xl px-5 py-5 transition-all duration-300 hover:bg-white/[0.04]">
-                      <h3 className="text-base font-semibold text-text-primary mb-1">
-                        {t(`skillPacks.items.${key}.name`)}
-                      </h3>
-                      <p className="text-sm text-text-secondary mb-3">
-                        {t(`skillPacks.items.${key}.quantity`)}
-                      </p>
-                      <span className="font-mono text-lg font-bold text-accent-system">
-                        &euro;{t(`skillPacks.items.${key}.price`)}
-                      </span>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          </details>
         </div>
       </section>
 

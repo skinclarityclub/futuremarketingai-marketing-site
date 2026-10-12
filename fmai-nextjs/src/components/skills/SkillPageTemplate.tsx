@@ -25,7 +25,7 @@ import {
   type SkillData,
   type TierKey,
 } from '@/lib/skills-data'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { SkillStickyToc } from './SkillStickyToc'
 
 /**
@@ -41,7 +41,7 @@ import { SkillStickyToc } from './SkillStickyToc'
  */
 const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
   'blog-factory': '/screenshots/blog-factory.webp',
-  reporting: '/screenshots/rapportage.webp',
+  reporting: '/screenshots/weekrapport.webp',
   // seo-geo stond hier even NIET: dat scherm toonde op de demo-organisatie
   // "GA4 niet gekoppeld", streepjes bij citaties en positie, en "Geen data" bij
   // Core Web Vitals. Een bijschrift dat rankings belooft naast een beeld dat er
@@ -254,7 +254,6 @@ export async function SkillPageTemplate({
                 </div>
                 <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
                   {tTemplate('scarcityBadge', {
-                    taken: FOUNDING_SPOTS_TAKEN,
                     total: FOUNDING_SPOTS_TOTAL,
                   })}
                 </span>
@@ -575,7 +574,6 @@ export async function SkillPageTemplate({
                   ) : (
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
                       {tTemplate('scarcityBadge', {
-                        taken: FOUNDING_SPOTS_TAKEN,
                         total: FOUNDING_SPOTS_TOTAL,
                       })}
                     </span>

@@ -9,7 +9,7 @@ export const ORG_EMAIL = 'hello@future-marketing.ai'
 export const LINKEDIN_URL = 'https://www.linkedin.com/company/futuremarketingai'
 
 export const ENTITY_DESCRIPTION =
-  'Future Marketing AI provides an AI Marketing Employee for marketing agencies: a persistent AI partner named Clyde with 12 skills (social media, blog factory, ad creator, voice agent, lead qualifier, email management, reporting, SEO/GEO, research, ManyChat DM, reel builder, and orchestration) plus long-term client memory.'
+  'Future Marketing AI builds Clyde, the AI colleague for marketing agencies: a persistent AI partner with 12 skills (social media, blog factory, ad creator, voice agent, lead qualifier, email management, reporting, SEO/GEO, research, ManyChat DM, reel builder, and orchestration) plus long-term client memory.'
 
 // --- Entity Identity (added Phase 14-01) ---
 // All values below trace to .planning/phases/DECISIONS-2026-04-24.md Phase 14 section.
@@ -40,7 +40,7 @@ export const TWITTER_URL: string | null = null
 
 // Personal profiles — confirm slugs in DECISIONS doc before commit.
 export const LINKEDIN_DALEY_URL = 'https://www.linkedin.com/in/daley-van-diest' // confirmed 2026-06-16
-export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-skinclarity' // TODO: confirm slug with Sindy
+export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-kienstra-875522124/'
 
 // Per DECISIONS Q2: KvK = added once Daley confirms registration via kvk.nl/zoeken. null until then.
 export const KVK_URL: string | null = null

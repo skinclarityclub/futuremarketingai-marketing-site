@@ -65,8 +65,24 @@ if (skills.length === 0) {
 const live = skills.filter((s) => s.status === 'live')
 const soon = skills.filter((s) => s.status === 'coming_soon')
 const maxPartners = constant('MAX_PARTNERS_PER_YEAR')
-const spotsTaken = constant('FOUNDING_SPOTS_TAKEN')
 const spotsTotal = constant('FOUNDING_SPOTS_TOTAL')
+
+// Founding occupancy as the files used to publish it. Dutch "5 taken" means
+// "5 tasks", so English "taken" only counts next to "spot(s)".
+const OCCUPANCY =
+  /spots?\b[^.\n]{0,40}?\b\d+\s+(?:currently\s+)?taken\b|\b\d+\s+spots?\s+(?:currently\s+)?taken\b|\b\d+\s+(?:plek(?:ken)?\s+)?bezet\b/gi
+for (const [sample, hit] of [
+  ['(10 spots, 1 taken)', true],
+  ['10 spots total, 1 currently taken', true],
+  ['1 spot taken', true],
+  ['10 plekken totaal, 1 bezet', true],
+  ['Clyde neemt 5 taken over', false],
+  ['maximum 10 founding spots', false],
+]) {
+  if (new RegExp(OCCUPANCY.source, 'i').test(sample) !== hit) {
+    throw new Error(`OCCUPANCY self-check failed on "${sample}"`)
+  }
+}
 
 for (const [name, text] of Object.entries(files)) {
   // 1 — partnership cap. Catch any number claiming to be the yearly cap.
@@ -93,14 +109,15 @@ for (const [name, text] of Object.entries(files)) {
     }
   }
 
-  // 3 — founding counter.
-  for (const m of text.matchAll(/\((\d+)\s+spots?,\s*(\d+)\s+taken\)/gi)) {
-    if (Number(m[1]) !== spotsTotal || Number(m[2]) !== spotsTaken) {
-      fail(
-        `${name}: "${m[0]}" contradicts constants.ts ` +
-          `(${spotsTotal} spots, ${spotsTaken} taken)`,
-      )
+  // 3 — founding spots. Only the total is a fact; the occupancy counter was
+  // removed in 49b30d5 (Daley 2026-10-12), so any "N taken"/"bezet" is stale.
+  for (const m of text.matchAll(/(\d+)\s+(?:founding\s+)?(?:spots|plekken)\b/gi)) {
+    if (Number(m[1]) !== spotsTotal) {
+      fail(`${name}: "${m[0]}" contradicts FOUNDING_SPOTS_TOTAL = ${spotsTotal}`)
     }
+  }
+  for (const m of text.matchAll(OCCUPANCY)) {
+    fail(`${name}: "${m[0]}" publishes founding occupancy, which the site no longer shows`)
   }
 
   // 4 — every /skills/<slug> URL must name a skill that exists. This is what
@@ -150,5 +167,5 @@ if (failures.length > 0) {
 console.log(
   `OK: llms.txt + llms-full.txt agree with the SSoT ` +
     `(${skills.length} skills — ${live.length} live, ${soon.length} coming soon; ` +
-    `max ${maxPartners} partners/year; ${spotsTaken}/${spotsTotal} founding spots).`,
+    `max ${maxPartners} partners/year; ${spotsTotal} founding spots).`,
 )

@@ -2,12 +2,24 @@
 title: Verwerkersovereenkomst (Data Processing Agreement)
 tags: #legal #gdpr #dpa #compliance #aaas
 created: 2026-03-20
-source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md'
+updated: 2026-10-12
+status: concept
+source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md, privacyverklaring op future-marketing.ai/legal/privacy'
 ---
 
 # Verwerkersovereenkomst
 
 > **Disclaimer**: Dit is een conceptdocument en geen juridisch advies. Professioneel juridisch advies wordt sterk aanbevolen voordat dit document wordt gebruikt.
+
+> **Open punten (intern, verwijderen vóór verzending).** Bijgewerkt op 2026-10-12, zodat het concept aansluit op de subverwerkers en bewaartermijnen in de privacyverklaring. Wat nog open staat:
+>
+> 1. **Partijen**: juridische naam (nu "Future Marketing AI B.V. (i.o.)"), adres, KvK-nummer en contactpersoon invullen.
+> 2. **Firecrawl**: geen openbare DPA en geen SCC's gevonden. Een DPA opvragen, of Firecrawl geen persoonsgegevens laten verwerken.
+> 3. **Upstash Redis**: volgens DNS staat er vanuit de EU een instantie in Frankfurt en vanuit Azië een in Singapore (gemeten 2026-10-12). Dat wijst op een replica buiten de EU. Controleer de primaire regio en de leesregio's in de Upstash-console.
+> 4. **Hetzner**: de verwerkersovereenkomst moet in het Hetzner-account worden afgesloten. Of dat gebeurd is, is niet gecontroleerd.
+> 5. **Google Gemini**: de DPA geldt alleen voor betaalde diensten. Controleer dat het gebruikte project billing heeft.
+> 6. **Niet getoetste beweringen** in dit concept: audit logging met 90 dagen bewaring en intrusion detection (9.1), achtergrondcontrole en training (9.2), "heeft een TIA uitgevoerd" (11.2) en melding van een datalek binnen 24 uur (12.2). Bevestigen of aanpassen.
+> 7. **Meta (Instagram/Facebook) en Telegram** staan in Annex A apart als derde partij, omdat zij daar zelf verantwoordelijk zijn. De privacyverklaring noemt ze nog gewoon bij de sub-verwerkers.
 
 ---
 
@@ -31,7 +43,7 @@ Hierna te noemen: "Verwerkingsverantwoordelijke" of "Opdrachtgever"
 - Adres: Nederland
 - KvK-nummer: [Nummer]
 - Contactpersoon: [Naam]
-- E-mail: privacy@futuremarketingai.com
+- E-mail: privacy@future-marketing.ai
 
 Hierna te noemen: "Verwerker" of "FMai"
 
@@ -43,7 +55,7 @@ Gezamenlijk aangeduid als "Partijen".
 
 ### 2.1 Onderwerp
 
-Deze Overeenkomst heeft betrekking op de verwerking van persoonsgegevens door de Verwerker ten behoeve van de Verwerkingsverantwoordelijke in het kader van het leveren van AI Marketing Employee diensten (Agent as a Service / AaaS).
+Deze Overeenkomst heeft betrekking op de verwerking van persoonsgegevens door de Verwerker ten behoeve van de Verwerkingsverantwoordelijke in het kader van het leveren van het FMai-platform met Clyde, de AI-collega voor marketingbureaus.
 
 ### 2.2 Duur
 
@@ -61,13 +73,13 @@ De Verwerker verwerkt persoonsgegevens uitsluitend ten behoeve van de volgende d
 
 - Genereren van blogartikelen, social media posts, nieuwsbrieven en andere marketingcontent op basis van klantgegevens en merkrichtlijnen van de Opdrachtgever.
 
-### 3.2 Voice Agent Interacties
+### 3.2 Berichten op gekoppelde kanalen
 
-- Verwerking van telefoongesprekken (inbound en outbound) voor leadkwalificatie, afspraakplanning en klantenservice. Inclusief opname, transcriptie en analyse van gesprekken.
+- Ontvangen en beantwoorden van berichten en reacties op gekoppelde Instagram-accounts, en gesprekken met de chatbot op websites van klanten van de Opdrachtgever.
 
 ### 3.3 Lead Kwalificatie
 
-- Analyse van formuliergegevens, chatberichten en websitegedrag om leads te scoren en te routeren naar de verkoopafdeling van de Opdrachtgever.
+- Analyse van chatberichten en formulierinzendingen om leads te scoren en door te sturen naar de Opdrachtgever. De score is adviserend; er worden geen geautomatiseerde besluiten genomen.
 
 ### 3.4 Social Media Management
 
@@ -77,9 +89,17 @@ De Verwerker verwerkt persoonsgegevens uitsluitend ten behoeve van de volgende d
 
 - Genereren van advertentiemateriaal (statisch en video) en publicatie naar advertentieplatforms namens de Opdrachtgever.
 
-### 3.6 Rapportage en Analytics
+### 3.6 Research en SEO
+
+- Onderzoek naar markt, concurrenten, zoekwoorden en zoekposities op basis van openbare bronnen.
+
+### 3.7 Rapportage en Analytics
 
 - Verzamelen, aggregeren en rapporteren van prestatiemetrieken, campagneresultaten en anomaliedetectie.
+
+### 3.8 Vergaderingen
+
+- Opnemen en uitschrijven van een vergadering, alleen als de Opdrachtgever Clyde vraagt die vergadering bij te wonen.
 
 ---
 
@@ -87,15 +107,15 @@ De Verwerker verwerkt persoonsgegevens uitsluitend ten behoeve van de volgende d
 
 De volgende categorieen persoonsgegevens kunnen worden verwerkt:
 
-| Categorie             | Voorbeelden                                             | Skills                          |
-| --------------------- | ------------------------------------------------------- | ------------------------------- |
-| Contactgegevens       | Naam, e-mailadres, telefoonnummer, bedrijfsnaam         | Alle skills                     |
-| Social media gegevens | Profielnamen, engagement-data, volgersgegevens          | Social Media, Content Creator   |
-| CRM-gegevens          | Klantprofielen, aankoophistorie, interactiegeschiedenis | Lead Qualifier, Reporting       |
-| Spraakopnames         | Gespreksopnames, transcripties                          | Voice Agent                     |
-| Websitegedrag         | IP-adressen, paginabezoeken, formuliergegevens          | Lead Qualifier, Reporting       |
-| Analytische gegevens  | Prestatiemetrieken, campagneresultaten                  | Reporting, alle skills          |
-| Communicatiegegevens  | Chatberichten, e-mailcorrespondentie                    | Lead Qualifier, Content Creator |
+| Categorie                | Voorbeelden                                                                                          | Doel (artikel 3)                 |
+| ------------------------ | ---------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Contactgegevens          | Naam, e-mailadres, telefoonnummer, bedrijfsnaam                                                      | Alle doeleinden                  |
+| Social media gegevens    | Profielnamen, engagement-data, volgersaantallen                                                      | 3.1, 3.4, 3.7                    |
+| Kanaalgegevens           | Berichten en reacties op gekoppelde Instagram-accounts, gesprekken met de chatbot op klantwebsites   | 3.2, 3.3                         |
+| Lead- en aanvraaggegevens | Formulierinzendingen, leadscores                                                                    | 3.3, 3.7                         |
+| Interactie met Clyde     | Berichten aan Clyde in het dashboard, via WhatsApp of Telegram, en het geheugen dat Clyde per klant bijhoudt | Alle doeleinden          |
+| Vergaderopnames          | Opnames en transcripties van vergaderingen die Clyde op verzoek bijwoont                             | 3.8                              |
+| Analytische gegevens     | Prestatiemetrieken, campagneresultaten                                                               | 3.7                              |
 
 **Bijzondere categorieen persoonsgegevens**: De Verwerker verwerkt in beginsel geen bijzondere categorieen persoonsgegevens (zoals bedoeld in artikel 9 AVG). Indien de Opdrachtgever dergelijke gegevens aanlevert, dient dit vooraf schriftelijk te worden overeengekomen.
 
@@ -108,8 +128,8 @@ De persoonsgegevens hebben betrekking op de volgende categorieen van betrokkenen
 - **Klanten van de Opdrachtgever**: Eindklanten van het marketing agency waarvoor de AI-diensten worden uitgevoerd
 - **Leads en prospects**: Potentiele klanten die via marketing, website of andere kanalen worden bereikt
 - **Websitebezoekers**: Bezoekers van de websites van de klanten van de Opdrachtgever
-- **Social media volgers**: Personen die interacteren met de social media accounts van de klanten
-- **Bellers en gebelden**: Personen die telefonisch contact hebben met de Voice Agent
+- **Social media volgers**: Personen die interacteren met de social media accounts van de klanten, of er berichten naartoe sturen
+- **Deelnemers aan vergaderingen**: Personen in een vergadering die Clyde op verzoek van de Opdrachtgever bijwoont
 
 ---
 
@@ -172,7 +192,6 @@ De Verwerker treft de volgende technische en organisatorische maatregelen (TOMs)
 - **Encryptie**: Versleuteling van gegevens in transit (TLS 1.2+) en at rest (AES-256)
 - **Toegangscontrole**: Role-based access control (RBAC) met principe van minimale rechten
 - **Multi-tenant isolatie**: Strikte scheiding van gegevens tussen verschillende klantworkspaces
-- **Authenticatie**: Multi-factor authenticatie (MFA) voor toegang tot het platform
 - **Logging en monitoring**: Audit logging van alle verwerkingsactiviteiten met bewaring van minimaal 90 dagen
 - **Backup en recovery**: Geregelde back-ups met encryptie en disaster recovery procedures
 - **Netwerkbeveiliging**: Firewalls, intrusion detection en DDoS-bescherming
@@ -295,32 +314,90 @@ De Verwerker verleent alle redelijke medewerking aan audits en stelt de benodigd
 
 ## Annex A: Lijst van sub-verwerkers
 
-| Sub-verwerker                | Doel van verwerking                                                       | Locatie                          | Waarborg doorgifte                  | DPA aanwezig |
-| ---------------------------- | ------------------------------------------------------------------------- | -------------------------------- | ----------------------------------- | ------------ |
-| OpenAI (OpenAI Ireland Ltd.) | LLM-verwerking voor contentgeneratie, tekstanalyse en chatfunctionaliteit | VS (EU-regio beschikbaar)        | EU-US Data Privacy Framework + SCCs | Ja           |
-| Anthropic                    | LLM-verwerking voor contentgeneratie en tekstanalyse                      | VS (EU-verwerking beschikbaar)   | EU-US Data Privacy Framework + SCCs | Ja           |
-| Supabase (via AWS EU)        | Database, authenticatie en gebruikersbeheer                               | EU (Frankfurt)                   | EU-verwerking                       | Ja           |
-| Vercel                       | Hosting van webapplicatie en CDN                                          | Globaal (EU-regio's beschikbaar) | EU-US Data Privacy Framework + SCCs | Ja           |
-| Vapi                         | Voice agent verwerking, spraakherkenning en -synthese                     | VS                               | SCCs                                | Ja           |
-| n8n                          | Workflow automatisering en orkestratie                                    | Self-hosted (EU)                 | Niet van toepassing (self-hosted)   | N.v.t.       |
-| Twilio                       | Telefonie-infrastructuur voor voice agents                                | VS (EU-nummers)                  | EU-US Data Privacy Framework + SCCs | Ja           |
-| Stripe                       | Betalingsverwerking en abonnementsbeheer                                  | VS/EU                            | EU-US Data Privacy Framework + SCCs | Ja           |
+De categorieën volgen artikel 5 van de privacyverklaring. "DPF" is het EU-VS Data Privacy Framework, "SCC" zijn de standaardcontractbepalingen van de Europese Commissie. ONBEKEND betekent: niet gevonden in de bronnen van de leverancier, dus niet ingevuld.
 
-_Deze lijst wordt bijgewerkt bij wijzigingen conform artikel 10.2._
+### A.1 Sub-verwerkers
+
+**Infrastructuur**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Supabase | Supabase Pte. Ltd. (Singapore); support en operations door Supabase, Inc. (VS) | Database, authenticatie en opslag | EU (Frankfurt, eu-central-1). Account-, billing-, support- en telemetriegegevens buiten de regio | SCC (geen DPF) | Ja |
+| Vercel | Vercel Inc. (VS) | Hosting van de applicatie en CDN | Serverfuncties in Frankfurt (fra1), CDN wereldwijd. Volgens de Vercel-DPA zitten de primaire voorzieningen in de VS | DPF + SCC | Ja |
+| Hetzner | Hetzner Online GmbH (Duitsland) | Eigen server voor automatiseringen (n8n), de kennisbank en het inplannen van posts (Postiz, zelf-gehost) | Duitsland, Neurenberg (nbg1) | n.v.t. (EU) | Ja, af te sluiten in het Hetzner-account (zie open punt 4) |
+| Upstash | Upstash, Inc. (VS) | Wachtrijen (QStash) en tijdelijke opslag (Redis) | QStash: Frankfurt (eu-central-1). Redis: zie open punt 3 | DPF + SCC | Ja |
+| Sentry | Functional Software, Inc. (VS) | Foutmeldingen | Opslagregio ONBEKEND. Op 2026-10-12 was in productie geen Sentry-DSN ingesteld, dus ontving Sentry toen geen gegevens | DPF + SCC | Ja |
+
+**Taalmodellen en AI**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Anthropic | Anthropic Ireland, Limited (Ierland) | Taalmodel voor tekst | VS (opslag at rest alleen in de VS) | SCC (geen DPF) | Ja |
+| OpenAI | OpenAI Ireland Ltd. (Ierland) | Taalmodel voor tekst en beeld | ONBEKEND. FMai gebruikt het standaard-endpoint en geen EU-project; EU-residentie bestaat alleen voor een EU-project | SCC (geen DPF) | Ja |
+| Google Gemini API | Google Cloud EMEA Limited (Ierland) | Research en productanalyse | Wereldwijd | DPF (Google LLC) + SCC | Ja, alleen voor betaalde diensten (zie open punt 5) |
+| Perplexity | Perplexity AI, Inc. (VS) | Research met bronvermelding | VS (AWS, Noord-Amerika) | SCC. De DPF-hercertificering is op 2026-10-08 verlopen | Ja |
+| Voyage AI | Voyage AI Innovations Inc. (VS), dochter van MongoDB, Inc. | Kennis en geheugen doorzoekbaar maken | VS volgens het privacybeleid; regio ONBEKEND | DPF (via MongoDB, Inc.) + SCC | Ja |
+
+**Beeld, video en audio**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| fal.ai | Features & Labels, Inc. (VS) | Beeld en video voor advertenties | VS en andere landen | SCC; DPF ONBEKEND | Ja |
+| ElevenLabs | Eleven Labs Inc. (VS) | Voice-overs voor advertenties | VS (EU-residentie alleen bij Enterprise) | DPF + SCC | Ja |
+
+**Webdata en SEO**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Firecrawl | SideGuide Technologies, Inc. (VS) | Webpagina's lezen | VS | ONBEKEND: geen DPF en geen SCC's gevonden | Geen openbare DPA (zie open punt 2) |
+| Apify | Apify Technologies s.r.o. (Tsjechië) | Openbare socialmediagegevens | AWS, regio ONBEKEND; subverwerkers in de VS | n.v.t. (EU); de DPA bevat SCC's voor doorgifte naar de VS | Ja |
+| DataForSEO | DataForSEO OÜ (Estland) | Zoekposities, zoekwoorden en vermeldingen in AI-antwoorden | Hetzner Duitsland, plus subverwerkers in de VS | n.v.t. (EU) | Ja |
+
+**Communicatie en kanalen**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Resend | Plus Five Five, Inc. (VS) | E-mail | Verzending vanuit Ierland (eu-west-1); account-, metadata en logs in de VS | DPF (hercertificering in behandeling) + SCC | Ja |
+| Meta: WhatsApp Business | Meta Platforms Ireland Limited (Ierland) | Berichten van en aan Clyde via WhatsApp | Wereldwijd (EER en VS) | SCC via het EU Data Transfer Addendum; WhatsApp LLC staat in het DPF | Ja, via de Meta Global Processor Terms |
+| Recall.ai | Hyperdoc Inc. (San Francisco, VS) | Vergaderingen opnemen en uitschrijven, alleen als Clyde een vergadering bijwoont | EU-regio Frankfurt (eu-central-1). Volgens de DPA vindt de primaire verwerking in de VS plaats | SCC (geen DPF) | Ja |
+
+**Betalingen**
+
+| Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Stripe | Stripe Payments Europe, Limited (Ierland) | Betalingen en abonnementen | Doorgifte naar Stripe, LLC (VS) en wereldwijd | DPF (Stripe, LLC) + SCC | Ja |
+
+### A.2 Derde partijen (geen sub-verwerker)
+
+Bij deze partijen is de aanbieder zelf verwerkingsverantwoordelijke. Een verwerkersovereenkomst is daar niet mogelijk.
+
+| Partij | Entiteit | Waarvoor | Rol |
+| --- | --- | --- | --- |
+| Meta: Instagram en Facebook (Graph API) | Meta Platforms Ireland Limited (Ierland) | Publiceren, statistieken en berichten op gekoppelde accounts | Meta is zelfstandig verwerkingsverantwoordelijke ("data exporter") onder de Meta Platform Terms |
+| Telegram | Telegram Messenger Inc. (land ONBEKEND; EER-vertegenwoordiger EDPO) | Berichten aan Clyde via Telegram | Een botontwikkelaar geldt bij Telegram als derde partij. Gegevens van EER-gebruikers staan in Nederlandse datacenters |
+
+_Bronnen: de DPA-, privacy- en trustpagina's van de leveranciers en dataprivacyframework.gov, peildatum 2026-10-12. Deze lijst wordt bijgewerkt bij wijzigingen conform artikel 10.2._
 
 ---
 
 ## Annex B: Retentiebeleid
 
-| Gegevenscategorie                 | Bewaartermijn                         | Grondslag               |
-| --------------------------------- | ------------------------------------- | ----------------------- |
-| Account- en contactgegevens       | Duur serviceovereenkomst + 30 dagen   | Uitvoering overeenkomst |
-| Klantworkspace-gegevens           | Duur serviceovereenkomst + 30 dagen   | Uitvoering overeenkomst |
-| Spraakopnames en transcripties    | 90 dagen na verwerking                | Gerechtvaardigd belang  |
-| Chatgesprekken en berichten       | 90 dagen na verwerking                | Gerechtvaardigd belang  |
-| Analytische en rapportagegegevens | Duur serviceovereenkomst              | Uitvoering overeenkomst |
-| Audit logs                        | 90 dagen                              | Wettelijke verplichting |
-| Back-ups                          | 30 dagen na verwijdering brongegevens | Beveiliging             |
+De termijnen volgen artikel 6 van de privacyverklaring.
+
+| Gegevenscategorie | Bewaartermijn |
+| --- | --- |
+| Gegevens van actieve accounts | Duur van de serviceovereenkomst, behalve waar hieronder een kortere termijn staat |
+| Na beëindiging | Exportperiode van 30 dagen, daarna permanent verwijderd (artikel 13) |
+| Geheugen en gesprekken van Clyde | Founding 6 maanden, Growth en Professional 12 maanden, Enterprise zolang het account actief is |
+| Chatbotgesprekken op websites van klanten | Zonder toestemming van de bezoeker na 30 dagen geanonimiseerd, met toestemming na 12 maanden verwijderd |
+| Instagram-berichten | Tekst en id's van afzender en ontvanger na 90 dagen gewist; alleen tellingen blijven over |
+| Leads en aanvragen via de website | 24 maanden |
+| Inboxgesprekken | 24 maanden na het laatste bericht |
+| Video-uploads die niet gepubliceerd worden | 24 uur |
+
+De opschoning draait periodiek, waardoor gegevens tot een maand na het verstrijken van de termijn kunnen blijven staan.
+
+De privacyverklaring noemt daarnaast 12 maanden voor antwoorden op de AI Readiness Scan en 7 jaar voor factuurgegevens. Die gegevens verwerkt FMai als verwerkingsverantwoordelijke, en ze vallen buiten deze overeenkomst.
 
 ---
 

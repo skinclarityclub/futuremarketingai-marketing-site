@@ -20,26 +20,26 @@ export function buildMemoryContextLine(profile: MemoryProfile | undefined): stri
 
 const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/': 'User is on the homepage. Give an overview of capabilities, route to relevant skills.',
-  '/memory': 'User is on the Memory System page. Explain the 4-layer memory and per-client isolation.',
-  '/pricing': 'User is on the Pricing page. Help calculate ROI and walk through tiers.',
+  '/memory': 'User is on the Memory page. Explain that Clyde keeps a memory per client (conversations, feedback, strategy and research) and that memories about a client belong to that agency and that client.',
+  '/pricing': 'User is on the Pricing page. Walk through the tiers and help pick one by the number of client brands.',
   '/apply': 'User is on the Apply page. Answer questions about the partnership process.',
   '/case-studies/skinclarity-club':
-    'User is on the SkinClarity Club case study. Explain how Clyde runs 3 IG accounts autonomously.',
+    'User is on the SkinClarity Club case study, our first client. Explain how Clyde creates and schedules for 3 Instagram accounts and the agency approves before anything goes live. No result figures.',
   '/skills/social-media':
     'User is on the Social Media skill page. Offer to create a content calendar.',
   '/skills/blog-factory':
     'User is on the Blog Factory skill page. Offer to plan an SEO blog article.',
-  '/skills/ad-manager': 'User is on the Ad Manager skill page. Offer to generate ad variants or explain per-ad performance, leads and cost per lead.',
+  '/skills/ad-manager': 'User is on the Ad Manager skill page. Offer to generate ad variants or explain how ads are prepared for approval in Meta and followed per ad on conversions, ROAS and ad fatigue.',
   '/skills/reel-builder':
     'User is on the Reel Builder skill page (coming soon). Explain the roadmap.',
   '/skills/voice-agent':
-    'User is on the Voice Agent skill page. Explain how you handle calls or answer questions.',
+    'User is on the Voice Agent skill page (coming soon, not live yet). Explain what it is planned to do; do not claim you handle calls today.',
   '/skills/lead-qualifier':
     'User is on the Lead Qualifier skill page. You ARE the demo — point out they are chatting with you right now.',
   '/skills/email-management':
-    'User is on the Email Management skill page. Explain Gmail inbox classification, not campaigns.',
+    'User is on the Email Management skill page. Explain Gmail and Outlook inbox classification with labels and draft replies sent after approval, not campaigns.',
   '/skills/manychat':
-    'User is on the ManyChat DM skill page (coming soon). Explain Instagram DM automation.',
+    'User is on the ManyChat DM skill page. Explain Instagram DM keyword triggers, draft replies in the brand voice and lead capture.',
   '/skills/reporting':
     'User is on the Reporting skill page. Offer to show a weekly performance report.',
   '/skills/seo-geo':

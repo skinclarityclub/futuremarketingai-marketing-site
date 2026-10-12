@@ -5,23 +5,28 @@ export const ECOMMERCE_TOPICS: TopicDefinition[] = [
  key: 'onboarding_steps',
  content: `## Agency Onboarding Steps
 
-**Step 1: Create Your Agency Workspace**
-Set up your agency profile with company name, logo, and team members. Each team member gets role-based access (Admin, Manager, Viewer).
+Onboarding takes 4 weeks and is done together with FutureMarketingAI; there is no self-service signup.
 
-**Step 2: Add Your First Client**
-Create a client workspace with their brand name, industry, and target audience. Each client gets an isolated workspace with its own brand voice, content calendar, and connected channels.
+**Step 1: Agency workspace and team**
+Your agency gets its own environment. Team members get a role (owner-admin or member) and are assigned to the clients they work on.
 
-**Step 3: Configure Brand Voice**
-Upload the client's brand guidelines, tone of voice document, or simply describe their communication style. The AI Marketing Employee learns to write in their voice across all content types.
+**Step 2: Add a client**
+Each client gets its own workspace with brand voice, content agenda, connected channels and its own memory.
 
-**Step 4: Connect Content Channels**
-Link the client's social media accounts, blog CMS, email marketing platform, and ad accounts. Supported: LinkedIn, Instagram, Facebook, WordPress, Mailchimp, Google Ads, Meta Ads.
+**Step 3: Brand voice and knowledge**
+Upload brand guidelines, a tone of voice document or examples of approved content. Clyde uses them as context for everything he writes for that client.
 
-**Step 5: Activate Skills**
-Choose which AI skills to enable for this client. Each skill handles a specific marketing function. Start with 1-2 skills and expand as you see results.
+**Step 4: Connect channels**
+Instagram and LinkedIn for publishing (other networks via Postiz on request), Google Analytics, Search Console, Shopify and Meta Ads for data, Gmail or Outlook for the inbox, and an MDX site or Shopify blog for articles.
 
-**Step 6: Launch the Content Calendar**
-Set posting frequency, review workflows (auto-publish or approval queue), and let the AI Marketing Employee start producing content.`,
+**Step 5: Strategy session**
+Goals, audience and content pillars per client, backed by research. That sets the content agenda.
+
+**Step 6: Control per task**
+Per task you choose what Clyde proposes first and what he may do himself and report. Critical actions such as ad spend are always proposed first.
+
+**Step 7: The client's own dashboard**
+Your client gets their own dashboard to see and review their content, add photos and videos to the content library and send requests to the agency, plus Clyde on WhatsApp.`,
  keywords: [
  'onboarding',
  'setup',
@@ -40,22 +45,22 @@ Set posting frequency, review workflows (auto-publish or approval queue), and le
  content: `## Brand Voice Setup
 
 **Why Brand Voice Matters**
-Every client has a unique tone. The AI Marketing Employee adapts its writing style per client so content sounds authentic, not generic.
+Every client has a unique tone. Clyde adapts his writing per client so content sounds like the brand, not generic.
 
 **How to Configure Brand Voice**
-1. Upload existing content samples (blog posts, social posts, newsletters) -- the AI analyzes patterns
-2. Set tone parameters: formal vs. casual, technical vs. accessible, authoritative vs. friendly
-3. Define industry-specific terminology and phrases to use or avoid
-4. Specify audience demographics and psychographics
-5. Review generated sample content and refine settings
+1. Upload existing content samples (blog posts, social posts): Clyde uses them as examples
+2. Describe the tone: formal or casual, technical or accessible
+3. Define words and phrases to use or avoid
+4. Describe the target audience
+5. Review the first content and correct it; corrections go into the client's memory
 
-**Per-Client Isolation**
-Each client workspace has its own brand voice profile. Content for Client A never bleeds into Client B's voice. Agencies managing 10+ clients can maintain distinct voices for each.
+**Per-Client Separation**
+Each client workspace has its own brand voice and its own memory. Memories about a client belong to that agency and that client.
 
 **Brand Voice Elements:**
 - Tone (professional, playful, bold, empathetic)
 - Vocabulary level (expert, intermediate, accessible)
-- Sentence structure (short and punchy, detailed and thorough)
+- Do's and don'ts
 - Call-to-action style (direct, suggestive, educational)
 - Industry jargon preferences (use, avoid, or explain)`,
  keywords: [
@@ -73,25 +78,27 @@ Each client workspace has its own brand voice profile. Content for Client A neve
  key: 'client_management',
  content: `## Client Workspace Management
 
-**Multi-Client Dashboard**
-View all client workspaces from a single agency dashboard. See content status, upcoming posts, performance metrics, and skill activity per client at a glance.
+**Agency Dashboard**
+All clients in one dashboard: content status, upcoming posts, the latest report per client and what Clyde did.
 
 **Client Workspace Includes:**
-- Brand voice profile and guidelines
-- Connected social accounts and CMS
-- Active skills and their configurations
-- Content calendar with approval workflows
-- Performance analytics and reporting
-- Usage metrics and billing allocation
+- Brand voice and knowledge
+- Connected channels
+- Active skills
+- Content agenda with approvals
+- Reports
 
 **Team Collaboration**
-Assign team members to specific client workspaces. Set approval workflows: auto-publish, single approval, or multi-step review. Track who approved what and when.
+Assign team members to specific clients. Per task you choose what Clyde proposes first and what he may do himself and report.
 
-**Scaling Clients**
-Adding a new client takes under 15 minutes: create workspace, configure brand voice, connect channels, activate skills. The AI Marketing Employee handles the rest.
+**The Client's Own Dashboard**
+The agency's client sees and reviews their own content, adds photos and videos to the content library, sends requests to the agency, and has Clyde on WhatsApp.
 
-**Client Offboarding**
-Deactivate a client workspace to pause all skills and scheduled content. Data is retained for 90 days. Export all content and analytics before permanent deletion.`,
+**Adding a Client**
+Part of the onboarding of that client: workspace, brand voice, channels and the strategy session.
+
+**After Cancellation**
+After cancelling, you have 30 days to take your data with you; after that it is deleted.`,
  keywords: [
  'client',
  'workspace',
@@ -110,26 +117,21 @@ Deactivate a client workspace to pause all skills and scheduled content. Data is
  content: `## Content Calendar Basics
 
 **How It Works**
-The AI Marketing Employee generates a content calendar based on the client's industry, audience, and active skills. Content is queued for review or auto-published based on your workflow settings.
+Clyde fills the content agenda from the client's goals and content pillars. Content goes to review; what Clyde may publish himself, you set per task.
 
 **Calendar Features:**
-- Weekly and monthly views
 - Drag-and-drop rescheduling
-- Platform-specific post previews (LinkedIn, Instagram, blog)
-- Approval status indicators (draft, pending review, approved, published)
-- Holiday and industry event integration
+- Approval status per post (draft, pending review, approved, published)
+- Separate agenda per account
 
-**Content Frequency Recommendations:**
-- Blog: 2-4 posts per week for SEO impact
-- LinkedIn: 3-5 posts per week for visibility
-- Instagram: 4-7 posts per week (mix of feed, stories, reels)
-- Newsletter: 1-2 per week for engagement without fatigue
-- Ad campaigns: Refresh creatives every 2-4 weeks
+**Cadence**
+The cadence is set per client in the strategy; there are no fixed weekly quotas.
 
-**Review Workflow Options:**
-1. Auto-publish: AI creates and publishes without human review (fastest)
-2. Single approval: Content goes to one approver before publishing
-3. Agency + Client approval: Agency reviews first, then client approves`,
+**Review Options (per task):**
+1. Clyde proposes first and the team approves
+2. Clyde does it himself and reports what he did
+3. The client reviews their own content in their own dashboard
+Ad spend is always proposed first.`,
  keywords: [
  'calendar',
  'schedule',

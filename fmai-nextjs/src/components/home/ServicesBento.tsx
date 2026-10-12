@@ -16,7 +16,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 import { ClydeFeaturedTile } from './ClydeFeaturedTile'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { CTAButton } from '@/components/ui/CTAButton'
 
 type ServiceKey =
@@ -140,7 +140,7 @@ export async function ServicesBento({ locale }: { locale: string }) {
         {/* Final CTA below grid */}
         <div className="text-center mt-12">
           <p className="text-text-secondary mb-6">
-            {t('cta.subtitle', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            {t('cta.subtitle', { total: FOUNDING_SPOTS_TOTAL })}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton size="lg" href="/skills/clyde">

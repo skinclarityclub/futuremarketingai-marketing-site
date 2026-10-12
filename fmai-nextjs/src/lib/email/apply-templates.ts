@@ -156,7 +156,7 @@ function wrapEmail({ preheader, inner }: { preheader: string; inner: string }): 
               <td style="padding:22px 40px; border-top:1px solid ${HAIRLINE};">
                 <p style="margin:0; font-family:${FONT}; font-size:12px; line-height:1.7; color:${DIM};">
                   FutureMarketingAI &middot; <a href="${SITE_URL}" style="color:${MUTED}; text-decoration:none;">future-marketing.ai</a><br>
-                  Jouw AI Marketing Medewerker. EU-native, zonder lock-in.
+                  Clyde, de AI-collega van je bureau. Zonder lock-in.
                 </p>
               </td>
             </tr>

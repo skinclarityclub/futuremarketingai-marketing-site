@@ -14,18 +14,21 @@ import { BrandMark, type BrandKey } from './BrandMark'
  *   Instagram 3.360 ingepland / 376 gepubliceerd · Gmail 10.829 maillogs ·
  *   GA4 + Search Console syncen dagelijks · Shopify 1 koppeling ok ·
  *   ManyChat 5 tokens · WhatsApp en Telegram zijn de twee echte Clyde-kanalen.
+ *   Hermeten 2026-10-12 (content_schedule, 60 dagen): Instagram 259 gepubliceerd
+ *   over 10 accounts, LinkedIn 5 gepubliceerd (1 account, sinds 2026-10-05).
+ *   Daarom staat LinkedIn sinds die meting in rij 1.
  *
  * RIJ 2, publicatiekanalen die via Postiz aangesloten kunnen worden. Postiz
  * ondersteunt 27 platforms (as of 2026-09, docs.postiz.com/public-api/
- * integrations/list). In content_schedule staat naast instagram alleen linkedin
- * met 18 ingeplande en NUL gepubliceerde items — koppelbaar dus, nog niet in
- * gebruik. Dat verschil staat in het label, niet in de kleine lettertjes.
+ * integrations/list). Geen van deze zes publiceert vandaag voor een klant; dat
+ * verschil staat in het label, niet in de kleine lettertjes.
  *
  * Neutrale lucide-iconen in plaats van merklogo's: dat vermijdt de merkrecht-
  * vraag volledig. Echte logo's vragen om een merkenrechtelijke caption.
  */
 const LIVE: readonly BrandKey[] = [
   'instagram',
+  'linkedin',
   'meta',
   'whatsapp',
   'telegram',
@@ -37,7 +40,6 @@ const LIVE: readonly BrandKey[] = [
 ]
 
 const CONNECTABLE: readonly BrandKey[] = [
-  'linkedin',
   'tiktok',
   'youtube',
   'x',

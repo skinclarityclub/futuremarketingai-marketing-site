@@ -8,8 +8,8 @@ import Image from 'next/image'
  * en een robot-render). Elke pagina beschreef het systeem en geen enkele toonde het.
  *
  * De beelden komen uit de demo-organisatie (fictief bureau "Nova Digital", fictieve
- * klanten), niet uit een klantaccount — daarom staat er geen echte klantdata op en
- * hoeft er niets geanonimiseerd te worden.
+ * klanten) of, met toestemming, uit het account van een echte klant. Herkomst en
+ * toestemming per bestand: MANIFEST.md van het FMai-verhaal (sectie "site").
  */
 export function AppScreenshot({
   src,

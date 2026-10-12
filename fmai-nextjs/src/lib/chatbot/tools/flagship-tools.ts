@@ -62,7 +62,7 @@ const navigate_to_page = tool({
       '/skills/reporting': 'Reporting & Analytics',
       '/skills/seo-geo': 'SEO / GEO Analyst',
       '/skills/research': 'Research',
-      '/skills/clyde': 'Clyde AI Employee',
+      '/skills/clyde': 'Clyde, AI colleague',
       '/about': 'About Us',
       '/contact': 'Contact',
       '/how-it-works': 'How It Works',

@@ -10,7 +10,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { SectionShell } from '@/components/sections/SectionShell'
 import { ApplyWizardClient } from '@/components/apply/ApplyWizardClient'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -53,7 +53,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ locale: 
         <div className="max-w-3xl mx-auto text-center space-y-5">
           <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-            {t('hero.counter', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
+            {t('hero.counter', { total: FOUNDING_SPOTS_TOTAL })}
           </div>
           <h1
             id="apply-hero"

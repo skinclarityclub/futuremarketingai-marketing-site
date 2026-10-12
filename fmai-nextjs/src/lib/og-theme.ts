@@ -20,9 +20,9 @@ export const OG_THEME = {
 } as const
 
 export const OG_TAGLINES = {
-  nl: 'Jouw AI Marketing Medewerker. Voor Nederlandse bureaus.',
-  en: 'Your AI Marketing Employee. For agencies.',
-  es: 'Tu Empleado AI de Marketing. Para agencias.',
+  nl: 'Clyde, de AI-collega van je bureau.',
+  en: "Clyde, your agency's AI colleague.",
+  es: 'Clyde, el compañero de IA de tu agencia.',
 } as const
 
 export type OgLocale = keyof typeof OG_TAGLINES

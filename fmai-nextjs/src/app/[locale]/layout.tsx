@@ -55,11 +55,6 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      {/*
-        Spline preconnect + scene prefetch live on the home page only
-        (src/app/[locale]/page.tsx) to avoid 1.3 MB of bandwidth on the
-        86 non-home prerendered routes. See 13-01-PLAN.md Task 2.
-      */}
       <body className="bg-bg-deep text-text-primary font-sans antialiased">
         <a
           href="#main"

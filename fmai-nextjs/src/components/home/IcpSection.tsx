@@ -4,7 +4,6 @@ import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTAButton } from '@/components/ui/CTAButton'
 import {
-  FOUNDING_SPOTS_TAKEN,
   FOUNDING_SPOTS_TOTAL,
   MAX_PARTNERS_PER_YEAR,
 } from '@/lib/constants'
@@ -71,7 +70,6 @@ export async function IcpSection({ locale }: { locale: string }) {
         <div className="mt-12 rounded-2xl border border-accent-human/30 bg-gradient-to-br from-accent-human/[0.05] via-transparent to-transparent p-6 md:p-8 lg:p-10 text-center">
           <p className="text-xs font-mono uppercase tracking-[0.14em] text-accent-human mb-4">
             {t('scarcityCallout', {
-              taken: FOUNDING_SPOTS_TAKEN,
               total: FOUNDING_SPOTS_TOTAL,
               maxPerYear: MAX_PARTNERS_PER_YEAR,
             })}

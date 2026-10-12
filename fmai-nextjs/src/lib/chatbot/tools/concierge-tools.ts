@@ -9,66 +9,57 @@ interface CaseStudy {
   challenge: string
   solution: string
   results: string[]
-  testimonial: string
+  testimonial?: string
   url: string
 }
 
 const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
   nl: {
     client: 'SkinClarity Club',
-    industry: 'Beauty / skincare (DTC en fysieke kliniek)',
+    industry: 'Huidverzorging: een club, een webshop en het account van oprichter Sindy',
     challenge:
-      'Sindy runt SkinClarity Club over 4 merken en 3 Instagram-accounts. Als solo-operator zat ze aan haar capaciteitsplafond. Ze wilde organische content opschalen zonder een bureau of junior marketeer in te huren.',
+      'SkinClarity Club is onze eerste klant, en FutureMarketingAI is het bureau. Drie Instagram-accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), elk met een eigen publiek, toon en agenda, plus een blog en een webshop.',
     solution:
-      'Clyde (de AI Marketing Medewerker) ingezet met 10 van de 12 vaardigheden: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Rapportage, SEO/GEO, Research en de Clyde-orchestrator. Geheugen per account gescheiden. Wekelijkse performance-digest op maandag 08:00. Nachtelijke geheugenconsolidatie.',
+      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Alle 10 live vaardigheden staan aan. Clyde maakt en plant de content volgens de agenda, het bureau keurt goed voordat er iets live gaat, en Sindy heeft een eigen dashboard en Clyde op WhatsApp.',
     results: [
-      'Circa 21 carrousels per week over 3 Instagram-accounts',
-      'Circa 15 Instagram-posts per week',
-      '2 tot 4 longform blogartikelen per maand, SEO-geoptimaliseerd',
-      'Wekelijks SEO-rapport en maandagse performance-digest',
-      'Goedkeuringstijd carrousel van 4 minuten naar 30 seconden',
-      'Geen extra personeel',
+      'Posts en carrousels voor 3 accounts, elk in een eigen toon',
+      'SEO-blogs voor skinclarityclub.nl',
+      'Elke week een rapport in het dashboard, elke vrijdag het SEO-rapport op WhatsApp',
+      'Lead Qualifier, ManyChat DM en Ad Manager staan aan, maar zijn voor SKC nog niet in gebruik',
+      'Gemeten resultaten volgen; we publiceren nog geen cijfers',
     ],
-    testimonial:
-      '"Clyde beheert onze volledige social-contentoperatie over 3 Instagram-accounts en 4 merken. Wat eerst een hele middag per week kostte, draait nu autonoom op de achtergrond. Ik beoordeel, Clyde voert uit." Sindy, founder SkinClarity Club',
     url: 'https://future-marketing.ai/nl/case-studies/skinclarity-club',
   },
   en: {
     client: 'SkinClarity Club',
-    industry: 'Beauty / skincare (DTC plus physical clinic)',
+    industry: 'Skincare: a club, a webshop and the account of founder Sindy',
     challenge:
-      'Sindy runs SkinClarity Club across 4 brands and 3 Instagram accounts. As a single operator she hit her capacity ceiling. She wanted to scale organic content without hiring an agency or a junior marketer.',
+      'SkinClarity Club is our first client, and FutureMarketingAI is the agency. Three Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience, tone and agenda, plus a blog and a webshop.',
     solution:
-      'Deployed Clyde (the AI Marketing Employee) with 10 of 12 skills active: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research and the Clyde orchestrator. Per-account memory isolation. Weekly performance digest at Monday 08:00. Overnight memory consolidation.',
+      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. All 10 live skills are switched on. Clyde creates and schedules the content from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp.',
     results: [
-      'About 21 carousels per week across 3 Instagram accounts',
-      'About 15 Instagram posts per week',
-      '2 to 4 longform blog articles per month, SEO-optimized',
-      'Weekly SEO report and Monday performance digest',
-      'Carousel approval time from 4 minutes to 30 seconds',
-      'Zero added headcount',
+      'Posts and carousels for 3 accounts, each in its own tone',
+      'SEO blogs for skinclarityclub.nl',
+      'A weekly report in the dashboard, and the SEO report on WhatsApp every Friday',
+      'Lead Qualifier, ManyChat DM and Ad Manager are switched on but not yet in use for SKC',
+      'Measured results to follow; we do not publish figures yet',
     ],
-    testimonial:
-      '"Clyde runs our entire social content operation across 3 Instagram accounts and 4 brands. What used to take a whole afternoon a week now runs autonomously in the background. I review, Clyde executes." Sindy, founder of SkinClarity Club',
     url: 'https://future-marketing.ai/en/case-studies/skinclarity-club',
   },
   es: {
     client: 'SkinClarity Club',
-    industry: 'Belleza / cuidado de la piel (DTC y clínica física)',
+    industry: 'Cuidado de la piel: un club, una tienda online y la cuenta de la fundadora Sindy',
     challenge:
-      'Sindy gestiona SkinClarity Club en 4 marcas y 3 cuentas de Instagram. Como operadora en solitario llegó a su límite de capacidad. Quería escalar el contenido orgánico sin contratar una agencia ni un marketero junior.',
+      'SkinClarity Club es nuestro primer cliente, y FutureMarketingAI es la agencia. Tres cuentas de Instagram (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), cada una con su propio público, tono y agenda, además de un blog y una tienda online.',
     solution:
-      'Se desplegó Clyde (el Empleado de Marketing IA) con 10 de las 12 habilidades: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research y el orquestador Clyde. Memoria aislada por cuenta. Resumen de rendimiento semanal los lunes a las 08:00. Consolidación de memoria nocturna.',
+      'Un espacio de trabajo para SkinClarity Club con 3 cuentas de Instagram y una memoria para todo el cliente. Las 10 habilidades activas están encendidas. Clyde crea y programa el contenido según la agenda, la agencia aprueba antes de que algo se publique, y Sindy tiene su propio panel y Clyde en WhatsApp.',
     results: [
-      'Cerca de 21 carruseles por semana en 3 cuentas de Instagram',
-      'Cerca de 15 publicaciones de Instagram por semana',
-      '2 a 4 artículos de blog largos al mes, optimizados para SEO',
-      'Informe SEO semanal y resumen de rendimiento de los lunes',
-      'Tiempo de aprobación de carrusel de 4 minutos a 30 segundos',
-      'Sin personal adicional',
+      'Posts y carruseles para 3 cuentas, cada una con su propio tono',
+      'Blogs SEO para skinclarityclub.nl',
+      'Un informe semanal en el panel, y el informe SEO por WhatsApp cada viernes',
+      'Lead Qualifier, ManyChat DM y Ad Manager están encendidos, pero aún no se usan para SKC',
+      'Los resultados medidos llegarán; todavía no publicamos cifras',
     ],
-    testimonial:
-      '"Clyde gestiona toda nuestra operación de contenido social en 3 cuentas de Instagram y 4 marcas. Lo que antes ocupaba toda una tarde a la semana ahora funciona de forma autónoma en segundo plano. Yo reviso, Clyde ejecuta." Sindy, fundadora de SkinClarity Club',
     url: 'https://future-marketing.ai/es/case-studies/skinclarity-club',
   },
 }
@@ -86,7 +77,7 @@ const PAGE_LABELS: Record<string, string> = {
   '/skills/reporting': 'Reporting & Analytics',
   '/skills/seo-geo': 'SEO / GEO Analyst',
   '/skills/research': 'Research',
-  '/skills/clyde': 'Clyde AI Employee',
+  '/skills/clyde': 'Clyde, AI colleague',
   '/memory': 'Memory System',
   '/case-studies/skinclarity-club': 'SkinClarity Club Case Study',
   '/apply': 'Apply',
@@ -201,7 +192,7 @@ export function buildConciergeTools(locale: ChatbotLocale) {
 
     get_case_study: tool({
       description:
-        'Get the SkinClarity Club case study showing FMai results with a real client. Use when user asks for proof, evidence, real results, case study, testimonial, bewijs, concrete resultaten, heeft het gewerkt, echt gebruik, referentie, or wants to see a real example before deciding.',
+        'Get the SkinClarity Club case study: how Clyde works for our first client (no published result figures yet). Use when user asks for proof, evidence, real results, case study, testimonial, bewijs, concrete resultaten, heeft het gewerkt, echt gebruik, referentie, or wants to see a real example before deciding.',
       inputSchema: z.object({
         studyId: z.enum(['skc']).default('skc').describe('The case study identifier'),
       }),

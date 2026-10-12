@@ -13,7 +13,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { LayerCube } from '@/components/memory/LayerCube'
 import { MemoryComparison } from '@/components/memory/MemoryComparison'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -239,7 +239,6 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
           <div className="max-w-3xl mx-auto text-center">
             <p className="font-mono uppercase tracking-[0.18em] text-xs text-accent-human mb-3">
               {t('cta.eyebrow', {
-                taken: FOUNDING_SPOTS_TAKEN,
                 total: FOUNDING_SPOTS_TOTAL,
               })}
             </p>

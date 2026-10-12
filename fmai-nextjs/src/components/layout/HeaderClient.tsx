@@ -30,7 +30,7 @@ import {
 import type { LucideIcon } from 'lucide-react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { getSkillBySlug } from '@/lib/skills-data'
-import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 interface HeaderClientProps {
   locale: string
@@ -870,7 +870,6 @@ function NavDropdown({ item, active }: { item: NavDropdownItem; active: boolean 
                   {accent && (
                     <span className="text-[9px] font-semibold uppercase tracking-wider text-[#F5A623] bg-[#F5A623]/10 border border-[#F5A623]/30 rounded px-1 py-0.5">
                       {tHeader('priceMenu.spots', {
-                        taken: FOUNDING_SPOTS_TAKEN,
                         total: FOUNDING_SPOTS_TOTAL,
                       })}
                     </span>

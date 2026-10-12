@@ -43,6 +43,8 @@ const SECTION_SUBSECTIONS: Record<string, string[]> = {
     'data_retention',
     'data_subject_rights',
     'international_transfers',
+    'ai_readiness_assessment',
+    'platform_data',
     'contact',
   ],
   cookies: [],
@@ -90,7 +92,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
                 {t(`sections.${sectionKey}.title`)}
               </SectionHeading>
               <div className="bg-white/[0.02] border border-border-primary rounded-[var(--radius-card)] p-8">
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-text-secondary leading-relaxed whitespace-pre-wrap">
                   {t(`sections.${sectionKey}.content`)}
                 </p>
                 {SECTION_SUBSECTIONS[sectionKey]?.map((subKey) => (
@@ -98,7 +100,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
                     <h3 className="text-lg font-semibold text-text-primary mb-2">
                       {t(`sections.${sectionKey}.subsections.${subKey}.title`)}
                     </h3>
-                    <p className="text-text-secondary leading-relaxed">
+                    <p className="text-text-secondary leading-relaxed whitespace-pre-wrap">
                       {t(`sections.${sectionKey}.subsections.${subKey}.content`)}
                     </p>
                   </div>

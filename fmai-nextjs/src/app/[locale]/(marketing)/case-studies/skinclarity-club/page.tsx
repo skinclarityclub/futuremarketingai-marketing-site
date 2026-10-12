@@ -13,13 +13,10 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { CountUp } from '@/components/motion/CountUp'
-import { SkcTestimonialBlock } from '@/components/case-studies/SkcTestimonialBlock'
 import { ChapterSection } from '@/components/case-study/ChapterSection'
 import { ScrollProgressRail } from '@/components/case-study/ScrollProgressRail'
-import { BeforeAfterTimeline } from '@/components/case-study/BeforeAfterTimeline'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
-import { ArrowRight, Instagram, Quote, ShoppingBag, Sparkles, Layers, type LucideIcon } from 'lucide-react'
+import { ArrowRight, Instagram, ShoppingBag, Sparkles, type LucideIcon } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -42,18 +39,11 @@ const ACCOUNT_KEYS = ['account1', 'account2', 'account3'] as const
 // Clyde (skill6) renders last as the orchestrator; the 4 newer live skills
 // (skill7-10) slot in before it. All 10 live skills run for SKC (2026-06-15).
 const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 'skill8', 'skill9', 'skill10', 'skill6'] as const
-const OUTCOME_KEYS = [
-  'hoursSaved',
-  'approvalTime',
-  'outputVolume',
-  'reachDelta',
-  'monthlySavings',
-  'engagementRate',
-] as const
-const TIMELINE_KEYS = ['week1', 'month1', 'month3', 'now'] as const
-const HERO_METRIC_KEYS = ['metric1', 'metric2', 'metric3', 'metric4'] as const
-const BEFORE_AFTER_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const
-const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3', 'brand4'] as const
+// Outcome numbers, before/after durations, month 3 and Sindy's quotes came from a MOCKUP transcript
+// (docs/interviews/2026-04-sindy-skc-transcript.md); they stay out until Sindy confirms real ones (Daley 2026-10-12).
+const TIMELINE_KEYS = ['week1', 'month1', 'now'] as const
+// SKC is one client with three Instagram accounts; the fourth 'brands portfolio' card had no source in the data.
+const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3'] as const
 
 // Per-brand iconography (placeholder until real gallery assets land)
 const GALLERY_BRAND_META: Record<
@@ -63,15 +53,13 @@ const GALLERY_BRAND_META: Record<
   brand1: { Icon: Instagram, accent: 'system' }, // main account (educational)
   brand2: { Icon: Sparkles, accent: 'human' }, // personal authority
   brand3: { Icon: ShoppingBag, accent: 'system' }, // shop
-  brand4: { Icon: Layers, accent: 'human' }, // portfolio
 }
 
 const CHAPTERS = [
   { id: 'chapter-uitdaging', railKey: 'chapter1', index: '01' },
   { id: 'chapter-aanpak', railKey: 'chapter2', index: '02' },
   { id: 'chapter-resultaten', railKey: 'chapter3', index: '03' },
-  { id: 'chapter-operator', railKey: 'chapter4', index: '04' },
-  { id: 'chapter-vervolg', railKey: 'chapter5', index: '05' },
+  { id: 'chapter-vervolg', railKey: 'chapter5', index: '04' },
 ] as const
 
 const CHAPTER_TOTAL = String(CHAPTERS.length).padStart(2, '0')
@@ -90,18 +78,6 @@ export default async function SkcCaseStudyPage({
     id: c.id,
     label: t(`rail.${c.railKey}`),
     index: c.index,
-  }))
-
-  const beforeSteps = BEFORE_AFTER_STEPS.map((s) => ({
-    label: t(`before.${s}.label`),
-    body: t(`before.${s}.body`),
-    duration: t(`before.${s}.duration`),
-  }))
-
-  const afterSteps = BEFORE_AFTER_STEPS.map((s) => ({
-    label: t(`after.${s}.label`),
-    body: t(`after.${s}.body`),
-    duration: t(`after.${s}.duration`),
   }))
 
   return (
@@ -144,38 +120,12 @@ export default async function SkcCaseStudyPage({
           '@context': 'https://schema.org',
           '@type': 'Service',
           '@id': `${SITE_URL}/case-studies/skinclarity-club/#service-aaas`,
-          name: 'AI Marketing Medewerker — Agent as a Service',
+          name: 'Clyde, de AI-collega voor bureaus',
           description: t('hero.subtitle'),
           serviceType: 'AI marketing automation',
           provider: { '@id': ORG_ID },
           areaServed: ['NL', 'EU'],
           availableLanguage: ['nl', 'en', 'es'],
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '5',
-            reviewCount: '1',
-            bestRating: '5',
-            worstRating: '1',
-          },
-        }}
-      />
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'Review',
-          '@id': `${SITE_URL}/case-studies/skinclarity-club/#review-sindy`,
-          itemReviewed: {
-            '@id': `${SITE_URL}/case-studies/skinclarity-club/#service-aaas`,
-          },
-          author: { '@id': SINDY_PERSON_ID },
-          reviewBody: t('testimonial.quote'),
-          reviewRating: {
-            '@type': 'Rating',
-            ratingValue: '5',
-            bestRating: '5',
-            worstRating: '1',
-          },
-          publisher: { '@id': ORG_ID },
         }}
       />
       <CaseStudyJsonLd
@@ -187,11 +137,7 @@ export default async function SkcCaseStudyPage({
         aboutOrgId={`${SITE_URL}/case-studies/skinclarity-club/#organization-skc`}
         serviceId={`${SITE_URL}/case-studies/skinclarity-club/#service-aaas`}
         datePublished="2026-03-15"
-        dateModified="2026-05-26"
-        claims={OUTCOME_KEYS.map((key) => ({
-          name: t(`outcomes.metrics.${key}.label`),
-          value: t(`outcomes.metrics.${key}.value`),
-        }))}
+        dateModified="2026-10-12"
       />
 
       {/* Hero */}
@@ -300,22 +246,6 @@ export default async function SkcCaseStudyPage({
                   </GlassCard>
                 </ScrollReveal>
               </div>
-
-              {/* Before vs After */}
-              <div>
-                <EyebrowLabel className="mb-3">
-                  {t('before.title')} {String.fromCharCode(8594)} {t('after.title')}
-                </EyebrowLabel>
-                <BeforeAfterTimeline
-                  beforeTitle={t('before.title')}
-                  beforeIntro={t('before.intro')}
-                  beforeSteps={beforeSteps}
-                  afterTitle={t('after.title')}
-                  afterIntro={t('after.intro')}
-                  afterSteps={afterSteps}
-                  ariaLabel={`${t('before.title')} versus ${t('after.title')}`}
-                />
-              </div>
             </div>
           </ChapterSection>
 
@@ -330,72 +260,11 @@ export default async function SkcCaseStudyPage({
             railLabel={t('rail.chapter3')}
           >
             <div className="space-y-14">
-              {/* Hero metrics — CountUp strip */}
-              <div>
-                <EyebrowLabel className="mb-3">{t('heroMetrics.title')}</EyebrowLabel>
-                <p className="text-text-secondary mb-6 max-w-3xl">
-                  {t('heroMetrics.subtitle')}
-                </p>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                  {HERO_METRIC_KEYS.map((key) => {
-                    const amount = parseFloat(t(`heroMetrics.${key}.amount`))
-                    const prefix = t(`heroMetrics.${key}.prefix`)
-                    const suffix = t(`heroMetrics.${key}.suffix`)
-                    const label = t(`heroMetrics.${key}.label`)
-                    return (
-                      <div
-                        key={key}
-                        className="rounded-2xl border border-border-primary bg-bg-surface/40 p-5 lg:p-6"
-                      >
-                        <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-2">
-                          <CountUp
-                            to={amount}
-                            prefix={prefix || undefined}
-                            suffix={suffix || undefined}
-                            locale={locale === 'en' ? 'en-US' : locale === 'es' ? 'es-ES' : 'nl-NL'}
-                          />
-                        </div>
-                        <p className="text-xs uppercase tracking-wide text-text-muted">{label}</p>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-
-              {/* Full 6-metric outcome grid */}
-              <div>
-                <EyebrowLabel className="mb-3">{t('outcomes.title')}</EyebrowLabel>
-                <p className="text-text-secondary mb-6 max-w-3xl">{t('outcomes.subtitle')}</p>
-                <ScrollReveal>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {OUTCOME_KEYS.map((key) => (
-                      <GlassCard key={key} className="speakable-skc-outcome text-left">
-                        <div className="text-xs uppercase tracking-wide text-text-muted mb-2">
-                          {t(`outcomes.metrics.${key}.label`)}
-                        </div>
-                        <div className="text-2xl lg:text-3xl font-bold font-display text-accent-system mb-3">
-                          {t(`outcomes.metrics.${key}.value`)}
-                        </div>
-                        <p className="text-sm text-text-secondary leading-relaxed mb-3">
-                          {t(`outcomes.metrics.${key}.detail`)}
-                        </p>
-                        <p className="text-xs text-text-muted italic">
-                          {t(`outcomes.metrics.${key}.sourceNote`)}
-                        </p>
-                      </GlassCard>
-                    ))}
-                  </div>
-                </ScrollReveal>
-                <p className="mt-6 text-xs text-text-muted italic max-w-3xl">
-                  {t('outcomes.disclaimer')}
-                </p>
-              </div>
-
               {/* Photo gallery — placeholder cards per brand */}
               <div>
                 <EyebrowLabel className="mb-3">{t('gallery.title')}</EyebrowLabel>
                 <p className="text-text-secondary mb-6 max-w-3xl">{t('gallery.subtitle')}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {GALLERY_BRAND_KEYS.map((key) => {
                     const { Icon, accent } = GALLERY_BRAND_META[key]
                     const accentTint =
@@ -459,45 +328,11 @@ export default async function SkcCaseStudyPage({
             </div>
           </ChapterSection>
 
-          {/* Chapter 04 — Operator */}
+          {/* Chapter 04 — Vervolg / CTA (the operator chapter held only mockup quotes, see TIMELINE_KEYS) */}
           <ChapterSection
             index="04"
             total={CHAPTER_TOTAL}
             id={CHAPTERS[3].id}
-            eyebrow={t('chapter4.eyebrow')}
-            title={t('chapter4.title')}
-            intro={t('chapter4.intro')}
-            bgVariant="surface"
-            railLabel={t('rail.chapter4')}
-          >
-            <div className="space-y-10">
-              <ScrollReveal>
-                <SkcTestimonialBlock />
-              </ScrollReveal>
-
-              <div>
-                <EyebrowLabel className="mb-4">{t('operatorQuotes.title')}</EyebrowLabel>
-                <figure className="relative max-w-2xl rounded-2xl border border-border-primary bg-bg-surface/40 p-6">
-                  <Quote
-                    className="absolute -top-3 -left-3 h-6 w-6 text-accent-system/70"
-                    aria-hidden
-                  />
-                  <blockquote className="text-text-primary leading-relaxed">
-                    {t('operatorQuotes.quote2.body')}
-                  </blockquote>
-                  <figcaption className="mt-3 text-xs font-mono uppercase tracking-wide text-text-muted">
-                    {t('operatorQuotes.quote2.attribution')}
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </ChapterSection>
-
-          {/* Chapter 05 — Vervolg / CTA */}
-          <ChapterSection
-            index="05"
-            total={CHAPTER_TOTAL}
-            id={CHAPTERS[4].id}
             eyebrow={t('chapter5.eyebrow')}
             title={t('chapter5.title')}
             intro={t('chapter5.intro')}
