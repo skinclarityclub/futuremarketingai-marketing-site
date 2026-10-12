@@ -101,39 +101,39 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     'lead-qualifier': {
-      shortDescription: 'Website chatbot that qualifies leads and routes them to CRM or sales.',
+      shortDescription: 'Website chatbot that scores leads and sends them to your CRM via a webhook.',
       longDescription:
-        'The Lead Qualifier puts an AI chatbot on your website that qualifies visitors, scores them based on intent and behaviour, and automatically routes warm leads to your CRM or sales team.',
+        'The Lead Qualifier puts an AI chatbot on your website that qualifies visitors, gives every lead a score on profile, intent and conversation quality, and sends the lead via a webhook to the CRM you already use.',
       features: [
         'Embeddable AI chatbot for websites',
         'Automatic lead scoring',
-        'CRM routing based on qualification',
-        'Conversation analytics',
+        'Leads to your CRM via a webhook',
+        'Conversations and leads searchable per chatbot',
         'Custom qualification criteria per client',
       ],
     },
     'email-management': {
-      shortDescription: 'Gmail inbox classification + smart labels + daily digest.',
+      shortDescription: 'Inbox classification for Gmail and Outlook, with labels and draft replies.',
       longDescription:
-        'Email Management classifies your Gmail inbox automatically with AI, adds smart labels and generates a daily digest of important messages. Save hours per week on email management. Note: this is inbox classify, not email campaigns.',
+        'Email Management classifies your Gmail or Outlook inbox with AI: categories per client, an urgency per email, status labels and draft replies that are sent only after approval. Every morning you see what came in. Note: this is inbox classification, not email campaigns.',
       features: [
-        'AI inbox classification (urgent, action, info)',
+        'AI classification into categories per client',
         'Smart labels and auto-categorisation',
-        'Daily email digest',
-        'Priority ranking of messages',
-        'Suggested replies',
+        'A daily note of what came in',
+        'Urgency per email (1 to 5)',
+        'Draft replies, sent after approval',
       ],
     },
     manychat: {
-      shortDescription: 'Instagram DM keyword triggers + AI replies + lead capture.',
+      shortDescription: 'Instagram DMs with keyword triggers, AI drafts and lead capture.',
       longDescription:
-        'ManyChat DM Automation replies automatically to Instagram DMs with AI-generated answers. Set keyword triggers, capture leads and route warm prospects to your CRM or sales team.',
+        'ManyChat DM answers Instagram DMs, comments and story replies with keyword triggers: whoever sends the keyword gets the reply you set, with a link. For other messages Clyde writes a draft in the brand voice, and everyone who responds lands in your lead list.',
       features: [
         'Keyword-based DM triggers',
-        'AI-generated replies in the brand voice',
-        'Lead capture and CRM routing',
-        'Conversation flows with branching',
-        'Performance analytics per trigger',
+        'AI drafts in the brand voice',
+        'Lead capture in your lead list',
+        'Replies to comments, DMs and story replies',
+        'Every reply logged',
       ],
     },
     reporting: {
@@ -255,39 +255,39 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     'lead-qualifier': {
-      shortDescription: 'Chatbot web que califica leads y los enruta a CRM o ventas.',
+      shortDescription: 'Chatbot web que puntúa leads y los envía a tu CRM mediante un webhook.',
       longDescription:
-        'El Lead Qualifier coloca un chatbot de IA en tu web que califica a los visitantes, les asigna una puntuación según intención y comportamiento, y enruta automáticamente los leads cálidos a tu CRM o equipo de ventas.',
+        'El Lead Qualifier coloca un chatbot de IA en tu web que califica a los visitantes, da a cada lead una puntuación según perfil, intención y calidad de la conversación, y envía el lead mediante un webhook al CRM que ya usas.',
       features: [
         'Chatbot de IA integrable para webs',
         'Puntuación automática de leads',
-        'Enrutamiento a CRM según calificación',
-        'Analítica de conversaciones',
+        'Leads a tu CRM mediante un webhook',
+        'Conversaciones y leads consultables por chatbot',
         'Criterios de calificación personalizados por cliente',
       ],
     },
     'email-management': {
-      shortDescription: 'Clasificación de la bandeja de Gmail + etiquetas inteligentes + resumen diario.',
+      shortDescription: 'Clasificación de la bandeja de Gmail y Outlook, con etiquetas y borradores de respuesta.',
       longDescription:
-        'Email Management clasifica tu bandeja de Gmail automáticamente con IA, añade etiquetas inteligentes y genera un resumen diario de los mensajes importantes. Ahorra horas por semana en gestión de email. Nota: es clasificación de bandeja, no campañas de email.',
+        'Email Management clasifica tu bandeja de Gmail u Outlook con IA: categorías por cliente, una urgencia por email, etiquetas de estado y borradores de respuesta que solo se envían tras tu aprobación. Cada mañana ves lo que ha entrado. Nota: es clasificación de bandeja, no campañas de email.',
       features: [
-        'Clasificación de bandeja con IA (urgente, acción, info)',
+        'Clasificación con IA en categorías por cliente',
         'Etiquetas inteligentes y autocategorización',
-        'Resumen diario de email',
-        'Priorización de mensajes',
-        'Respuestas sugeridas',
+        'Un aviso diario de lo que ha entrado',
+        'Urgencia por email (1 a 5)',
+        'Borradores de respuesta, enviados tras aprobación',
       ],
     },
     manychat: {
-      shortDescription: 'Triggers por palabra clave en DMs de Instagram + respuestas IA + captura de leads.',
+      shortDescription: 'DMs de Instagram con triggers por palabra clave, borradores de IA y captura de leads.',
       longDescription:
-        'ManyChat DM Automation responde automáticamente a los DMs de Instagram con respuestas generadas por IA. Configura triggers por palabra clave, captura leads y enruta prospectos cálidos a tu CRM o equipo de ventas.',
+        'ManyChat DM responde a DMs, comentarios y respuestas a historias de Instagram con triggers por palabra clave: quien envía la palabra clave recibe la respuesta que tú fijas, con un enlace. Para otros mensajes Clyde escribe un borrador con la voz de marca, y quien responde entra en tu lista de leads.',
       features: [
         'Triggers de DM por palabra clave',
-        'Respuestas generadas por IA con la voz de marca',
-        'Captura de leads y enrutamiento a CRM',
-        'Flujos de conversación con ramificación',
-        'Analítica de rendimiento por trigger',
+        'Borradores de IA con la voz de marca',
+        'Captura de leads en tu lista de leads',
+        'Respuestas a comentarios, DMs y respuestas a historias',
+        'Cada respuesta registrada',
       ],
     },
     reporting: {

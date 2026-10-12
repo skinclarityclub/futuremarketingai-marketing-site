@@ -32,7 +32,6 @@ export const CHATBOT_TIERS = {
     workspaces: -1, // not rendered; founding includes 15 workspaces, EUR 299 per extra one (app-side cap: stream P)
     credits: 8000,
     spotsTotal: 10,
-    spotsTaken: 1,
     skillsIncluded: 12,
     skillsTotal: 12,
   },
@@ -92,7 +91,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         'Levenslang vast tarief van €997 (wordt nooit herijkt voor founding members)',
         'Directe toegang tot de founder',
         'Bepaal mee de productroadmap',
-        '10 plekken totaal, 1 bezet (SkinClarity Club), geen onboarding-fee',
+        'Maximaal 10 founding-plekken, geen onboarding-fee',
       ],
     },
     growth: {
@@ -139,7 +138,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         'Lifetime price lock at €997 (never raises for founding members)',
         'Direct founder access',
         'Shape the product roadmap',
-        '10 spots total, 1 taken (SkinClarity Club), no onboarding fee',
+        'Maximum 10 founding spots, no onboarding fee',
       ],
     },
     growth: {
@@ -186,7 +185,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         'Precio fijo de por vida de €997 (nunca sube para los miembros founding)',
         'Acceso directo al fundador',
         'Influye en la hoja de ruta del producto',
-        '10 plazas en total, 1 ocupada (SkinClarity Club), sin tarifa de incorporación',
+        'Máximo 10 plazas founding, sin tarifa de incorporación',
       ],
     },
     growth: {

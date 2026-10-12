@@ -1,14 +1,14 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for performance and growth agencies. Clyde, the AI colleague for agencies (Dutch: AI-collega), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 15 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. Data, servers and database in the EU; the language model runs by default at Anthropic (US), on request on Mistral. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
-FutureMarketingAI (FMai) is a solo-founder AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Headquartered in the Netherlands, serving EU agencies. EU AI Act compliant ahead of the August 2026 deadline.
+FutureMarketingAI (FMai) is an AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Based in the Netherlands, serving EU agencies.
 
-Unlike a self-serve SaaS, FMai operates on a 20-partnerships-per-year cap with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
+Unlike a self-serve SaaS, FMai takes at most 10 new partnerships per year, with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
-The proof case is SkinClarity Club, a Dutch beauty brand where Sindy (founder) operates 4 brands and 3 Instagram accounts with all 10 of Clyde's live skills active. Sindy is the first Founding Member (spot 1 of 10).
+The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all 10 of Clyde's live skills are switched on there.
 
 Key facts:
 
@@ -17,183 +17,189 @@ Key facts:
 - Founder: Daley
 - Location: Netherlands (EU)
 - Languages: Dutch (source of truth), English, Spanish
-- Company type: Solo founder AI marketing partnership
-- Target market: Performance and growth agencies in NL and EU with 5 to 20 people managing 5 to 20 brands
-- Compliance: AVG (GDPR) by design, EU AI Act ready, self-hosted EU infrastructure
+- Company type: AI marketing partnership for agencies
+- Target market: marketing agencies in NL and the EU with 5 to 20 people managing 5 to 20 client brands
+- Data: data, servers and database in the EU. The language model runs by default at Anthropic, a US company; on request we run Clyde on Mistral to keep the language model in the EU too.
 
 ## Product: Clyde, the agency's AI colleague
 
-Clyde is a persistent AI colleague, not a chatbot. Key characteristics:
+Clyde is the AI colleague of your agency. He is named Clyde everywhere: on the website, in every screen of the dashboard, on WhatsApp and on Telegram.
 
-- Named identity across every touchpoint (website, dashboard, WhatsApp, Telegram).
-- Persistent 4-layer memory per brand: hot cache (today), working memory (this month), archive (history), and "who the brand is" (identity consolidation via nightly dream process).
-- Operates 12 skills: Social Media, Blog Factory, Ad Manager, Reel Builder, Voice Agent, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, and the Clyde orchestrator.
-- Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
-- Self-hosted EU infrastructure for AVG and EU AI Act compliance.
-- Present in every screen of the client dashboard, and reachable on WhatsApp and Telegram. On WhatsApp Clyde answers questions about content and results, delivers the weekly SEO report every Friday, and messages the agency himself when a metric deviates or something waits for approval. Approving happens in the dashboard.
-- Works from a strategy layer: a strategy session per brand, goals with a projection, content pillars measured per pillar, and a content agenda that looks a year ahead.
+The loop. Everything hangs on the goal of the client:
+- Goal: a strategy session per brand sets the goals, with a projection per channel and the pillars the brand runs on.
+- Research: market, competitors, audience and trends, laid under the strategy so every choice has a reason.
+- Agenda: from the strategy follows a plan per channel for the whole year, plus the blogs needed to reach the SEO goals.
+- Execution: Clyde creates the content. The team and the client approve, and quality gates stop what is not good enough.
+- Reporting: reports arrive by themselves and show what works. That goes back to the goal, and the loop starts again.
+
+Control. Per task the agency chooses how independently Clyde works: observe, propose, do and report, or fully on his own. Critical actions such as ad spend are always proposed first. What Clyde did shows in the log on the dashboard.
+
+People. Team members are assigned to clients and see what is ready, what waits for approval and what went live. The agency's client gets their own dashboard where everything is complete and where they approve, their own content library to add photos and video, requests to the agency from that dashboard, and their own Clyde in the dashboard and on WhatsApp.
+
+Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday; approving happens in the dashboard. A mobile app for approving and steering from your phone is in development.
+
+From post to lead. When someone comments on Instagram with the keyword you chose, Clyde sends a DM with your text; other DMs get an answer from that brand's knowledge or go to the inbox. The DM contains a tracked link, so every click counts for the right client (bots and link scanners excluded). When the form on the client's site is connected, you see how many requests came in through such a link, and per Instagram account where people drop off.
+
+Memory per client. Clyde remembers the conversation, memories from conversations and feedback, and the strategy and research per client. Memories are consolidated daily. Memories about a client belong to that agency and that client.
 
 ## The 12 Skills
 
 ### Social Media Manager (Live)
 
-The Social Media Manager runs the full content process from idea to publication. AI analyzes trending topics, generates captions in the right brand voice, schedules posts at optimal times and tracks engagement metrics. Suitable for Instagram, Facebook and LinkedIn.
+The Social Media Manager runs the content process from idea to publication: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn after approval; other networks via Postiz on request.
 
 Capabilities:
 - AI-generated captions in brand voice
-- Multi-platform scheduling with optimal timing
+- Scheduling for Instagram and LinkedIn
 - Content calendar with drag and drop
 - Engagement tracking per post
-- Carousel and story builder
-- Hashtag research and optimization
+- Carousels in the house style
+- Hashtag strategy per brand
 
 Credit cost: 1 to 2 credits per post.
 
 ### Blog Factory (Live)
 
-Blog Factory produces SEO-optimized longform articles from research to publish. Keyword research, writing in brand voice, meta descriptions, heading structure, internal linking, all automatic. Output: 1,500 to 3,000 words ready to publish.
+Blog Factory writes SEO articles from research to publication: keyword research, writing in the brand voice, meta description, heading structure and internal links. Length follows the search intent and the pages that already rank. Publication after approval, to an MDX site, a Shopify blog or a custom connection.
 
 Capabilities:
 - Keyword research and topic clustering
-- Longform articles (1,500-3,000 words)
+- Length according to search intent
 - SEO optimization (meta tags, headings, internal links)
-- Automatic publication to website
+- Publication after approval
 - Brand voice consistency
 
 Credit cost: 15 credits per article. Each workspace receives 800 credits per month (Founding Member: 8000 credits total).
 
 ### Ad Manager (Live)
 
-Ad Manager builds ads and then steers them: it publishes to Meta and tracks leads, cost per lead and ad fatigue per individual advertisement. TikTok is not connected.
+Ad Manager creates complete ads (copy, static visuals and video) and prepares them for Meta Ads Manager; an ad goes live only after your approval. Then Clyde follows every ad: reach, clicks, conversions, ROAS and ad fatigue, plus variants to test. Ad spend is always proposed first.
 
 Capabilities:
-- AI-generated ad copy and visuals
-- Static and video ad creation
-- Multi-format output (Stories, Feed, Reels)
-- Competitor ad library research
-- Direct publishing to Meta Ads
-- A/B test variant generation
+- AI-generated ad copy, static visuals and video ads
+- Prepared for Meta Ads Manager, live after approval
+- Per-ad performance: conversions, CTR and ROAS
+- Ad-fatigue signals with plain-language recommendations
+- Variants to test
+- Competitor research in the Meta Ad Library
 
-Credit cost: 10 credits per static ad, 20 credits per video ad. Status: coming soon.
+Credit cost: 10 credits per static ad, 20 credits per video ad.
 
 ### Reel Builder (Coming soon)
 
-Reel Builder creates short vertical videos (9:16 aspect) with AI, including captions, music and transitions. Ideal for Instagram Reels, TikTok and YouTube Shorts. From script to publish-ready video.
+Reel Builder will create short vertical videos (9:16) with a script in the brand voice, captions and music, for Instagram and LinkedIn. Not available yet.
 
-Capabilities:
+Planned capabilities:
 - AI-generated video scripts
-- Automatic caption generation
+- Automatic captions
 - Music selection and timing
-- Vertical format (9:16) optimization
-- Template library for fast creation
+- Vertical format (9:16)
+- Template library
 
 Credit cost: 25 credits per reel. Status: coming soon.
 
 ### Voice Agent (Coming soon)
 
-The Voice Agent handles phone traffic with AI, both inbound and outbound. Books appointments, answers FAQs, logs conversations and escalates to a human when needed. Fully customizable per client (voice, personality, knowledge base). Built on ElevenLabs voice technology.
+The Voice Agent will answer phone calls with AI, book appointments, answer questions from the knowledge base and hand over to a person when needed. Not available yet.
 
-Capabilities:
+Planned capabilities:
 - Inbound and outbound AI phone calls
-- Automatic appointment booking
-- FAQ answering in natural language
-- Conversation logging and transcripts
-- Escalation to human agent
+- Appointment booking
+- Answering questions in natural language
+- Call transcripts
+- Handover to a person
 - Campaign management for outbound calls
 
 Credit cost: 5 credits per minute. Status: coming soon.
 
 ### Lead Qualifier (Live)
 
-The Lead Qualifier places an AI chatbot on your website that qualifies visitors, scores them based on intent and behavior, and automatically routes warm leads to your CRM or sales team.
+The Lead Qualifier places an AI chatbot on your website that qualifies visitors, gives every lead a score on profile, intent and conversation quality, and sends the lead via a webhook to the CRM you already use.
 
 Capabilities:
 - Embeddable AI chatbot for websites
 - Automatic lead scoring
-- CRM routing based on qualification
-- Conversation analytics
+- Leads to your CRM via a webhook
+- Conversations and leads searchable per chatbot
 - Custom qualification criteria per client
 
 Credit cost: 2 credits per scored conversation.
 
 ### Email Management (Live)
 
-Email Management connects to Gmail (Google Workspace and free accounts) via OAuth. AI classifies the inbox, adds smart labels and produces a daily digest of what matters. This is inbox classification, not email campaigns. Outlook and custom IMAP are on the roadmap, not live.
+Email Management classifies your Gmail or Outlook inbox with AI: categories per client, an urgency per email, status labels and draft replies that are sent only after approval. Every morning you see what came in. This is inbox classification, not email campaigns.
 
 Capabilities:
-- Gmail OAuth integration (Outlook and custom IMAP on the roadmap)
-- AI inbox classification (lead, urgent, invoice, newsletter, internal)
-- Auto-provisioning of FMai labels and folders
-- AI reply drafts with approval queue
-- Brand-voice per client
-- Round-trip send via mailbox-native API
-- Approval audit log
+- AI classification into categories per client
+- Smart labels and auto-categorization
+- A daily note of what came in
+- Urgency per email (1 to 5)
+- Draft replies, sent after approval
 
-Credit cost: 5 credits per action. Brand-voice learns from your corrections per client.
+Credit cost: 5 credits per action.
 
 ### ManyChat DM (Live)
 
-ManyChat DM Automation responds automatically to Instagram DMs with AI-generated answers. Set keyword triggers, capture leads and route warm prospects to your CRM or sales team.
+ManyChat DM answers Instagram DMs, comments and story replies with keyword triggers: whoever sends the keyword gets the reply you set, with a link. For other messages Clyde writes a draft in the brand voice, and everyone who responds lands in your lead list.
 
 Capabilities:
 - Keyword-based DM triggers
-- AI-generated replies in brand voice
-- Lead capture and CRM routing
-- Conversation flows with branching
-- Performance analytics per trigger
+- AI drafts in brand voice
+- Lead capture in your lead list
+- Replies to comments, DMs and story replies
+- Every reply logged
 
 Credit cost: 2 credits per 10 DMs.
 
-### Reporting and Analytics (Live)
+### Reporting & Analytics (Live)
 
-Reporting and Analytics delivers automatic dashboards, weekly digests and real-time KPI tracking. The system detects anomalies in your data and proactively alerts you when metrics deviate.
+Reporting & Analytics writes a weekly report per brand, keeps a dashboard per client with data refreshed daily from Instagram, GA4, Search Console, Shopify and Meta Ads, and alerts you when a figure deviates strongly.
 
 Capabilities:
-- Automatic weekly performance digests
-- Real-time KPI dashboards
-- Anomaly detection with alerts
-- Cross-platform analytics (social, web, sales)
+- Automatic weekly performance reports
+- Dashboard per client, refreshed daily
+- Alerts on strong deviations
+- Social, web, sales and ads together
 - Custom report generation
 
 Credit cost: 5 credits per report.
 
 ### SEO / GEO Analyst (Live)
 
-The SEO/GEO Analyst runs automatic SEO audits, tracks keyword rankings, monitors Core Web Vitals and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Google AI Overviews). Actionable fixes prioritized.
+The SEO/GEO Analyst runs automatic SEO audits, follows your positions via Search Console, monitors Core Web Vitals and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Gemini and Google AI Overviews). Fixes in order of priority. The SEO report arrives on WhatsApp every Friday.
 
 Capabilities:
 - Automatic technical SEO audits
-- Keyword ranking tracking
+- Positions from Search Console
 - Core Web Vitals monitoring
 - AI citation monitoring (GEO)
-- Competitor keyword analysis
+- Competitors on Core Web Vitals and new pages
 - Prioritized fix recommendations
 
 Credit cost: 5 credits per audit, 3 credits per report.
 
 ### Research (Live)
 
-The Research skill runs continuous market research, monitors trends in your niche and analyzes competitors. AI searches sources, synthesizes insights and delivers actionable recommendations directly in your dashboard, with source citations on every insight.
+The Research skill runs scheduled research per client on market trends, competitors and news, and answers targeted questions. Every insight carries its source with a link.
 
 Capabilities:
-- Automated market research
+- Scheduled research runs per client
 - Trend monitoring in your niche
-- Competitor analysis with benchmarks
+- Competitor analysis
 - Actionable insights and recommendations
 - Source citations on every insight
 
 Credit cost: 3 credits per query.
 
-### Clyde Orchestrator (Live)
+### Clyde (Live)
 
-Clyde is the AI colleague who routes all other skills. Give instructions in natural language and Clyde routes to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has memory per client and remembers earlier conversations, preferences and context.
+Clyde is the AI colleague who directs all other skills. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, on WhatsApp and via Telegram, with a memory per client of earlier conversations, preferences and context.
 
 Capabilities:
-- Natural language commands
+- Plain-language instructions
 - Orchestration of all other skills
 - In every screen of the dashboard and on WhatsApp
 - Memory and context per client
-- Knowledge base with search
 - Routines and recurring tasks
 
 Credit cost: 1 to 5 credits per chat.
@@ -208,14 +214,14 @@ Two pricing models:
 
 ### Founding Member, 997 EUR per month, lifetime rate lock
 
-- 10 spots total, 1 currently taken (SkinClarity Club)
-- Unlimited workspaces (no cap)
+- Maximum 10 founding spots
+- 15 workspaces included, 299 EUR per extra workspace
 - 8,000 credits per month
 - All 12 skills included (10 live, 2 coming soon)
 - Direct founder access plus roadmap influence
 - No onboarding fee
 - Monthly cancellable; rate locked for life (never raises for founding members)
-- Mathematical advantage over workspace pricing kicks in from 3 brands (997 vs 1497 at Growth 499 times 3)
+- Cheaper than the workspace tiers from 3 brands (997 vs 1497 at Growth 499 times 3)
 
 ### Growth, 499 EUR per workspace
 
@@ -249,79 +255,68 @@ Two pricing models:
 
 ## Case Study: SkinClarity Club
 
-Client: SkinClarity Club, a Dutch beauty and skincare operation (DTC plus physical clinic). Founder and operator: Sindy.
+Client: SkinClarity Club, our first client, and FutureMarketingAI is the agency. Skincare: a club, a webshop and the personal account of founder Sindy.
 
-Setup: SkinClarity Club runs a portfolio of 4 brand identities across 3 Instagram accounts, each with its own audience and house style.
-- @SkinClarityClub: main account, treatments, tips and skin knowledge for consumers (circa 50 percent of content volume).
-- @Sindy_Huidtherapeut: personal authority account of founder Sindy, trust, expertise, personal branding (circa 30 percent of content volume).
-- @SkinClarity_Shop: product account for the webshop, launches, bundles and product content (circa 20 percent of content volume).
+Setup: one workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. Each account has its own audience, tone and agenda.
+- @skinclarityclub: main account, treatments, tips and skin knowledge for consumers.
+- @sindy_huidtherapeut: the personal authority account of founder Sindy: trust, expertise, personal branding.
+- @skinclarityshop: product account for the webshop: launches, bundles and product content.
 
-Active skills: all 10 live skills are active for SKC. The whole system was built and tested on this account, so it runs the full set; only the two coming-soon skills (Voice Agent, Reel Builder) are absent.
-- Social Media Manager: carousels, posts and stories for 3 Instagram accounts. AI-generated in the right brand voice per account.
-- Blog Factory: SEO blogs for skinclarityclub.nl. Skin themes, treatments and product deep dives.
-- SEO / GEO Analyst: technical SEO audits, position tracking and citation monitoring in ChatGPT and Perplexity.
-- Reporting and Analytics: weekly performance digest across Instagram, Shopify and SEO data. Anomaly alerts.
-- Research: trend monitoring in skincare, competitor analysis and content ideas with source citations.
-- Email Management: Gmail inbox classification and a daily digest across the SKC mailboxes.
-- Social Command Center (ManyChat DM): Instagram DM triggers, AI replies and lead capture.
-- Lead Qualifier: scoring and routing of inbound leads across channels.
-- Ad Manager: Meta ad publishing with leads, cost per lead and ad fatigue tracked per ad.
-- Clyde orchestrator: the AI colleague that ties the other nine together. Memory per account plus learning across skills.
+What runs: all 10 live skills are switched on.
+- Social Media Manager: posts and carousels for the 3 accounts, each in its own tone, created and scheduled from the agenda.
+- Blog Factory: SEO blogs for skinclarityclub.nl.
+- SEO / GEO Analyst: technical SEO, positions and AI citations.
+- Reporting & Analytics: a weekly report on Instagram, Shopify and SEO data, plus the SEO report on Friday.
+- Research: skincare trends and competitor analysis with sources.
+- Email Management: inbox triage with labels and draft replies.
+- Clyde: the AI colleague who ties the other skills together, with one memory for the whole client.
 
-Architecture: One Clyde, 3 workspaces (one per account), shared portfolio memory. Content is approved by Sindy before it is published.
+Switched on, not yet in use for SkinClarity Club: Lead Qualifier (no chatbot on the site yet), ManyChat DM (no DM conversations yet), Ad Manager (Meta account connected, measured results to follow).
 
-Output: carousels, posts and stories per account, blogs for skinclarityclub.nl, a weekly SEO report. No headline numbers until they are measured.
+How it works: Clyde creates and schedules from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp. Clyde takes work off the team; people stay in charge.
 
-Timeline:
-- Week 1: onboarding (brand voice per account, approval workflow, KPI definitions).
-- Month 1: the first content weeks, lots of feedback; Clyde carries the corrections into what he makes next.
-- Now: Clyde creates and schedules for 3 accounts and 4 brands from the calendar. Sindy approves in her own dashboard before anything goes live.
+No result figures are published for this case until they are measured.
 
-## Memory Architecture
+## Memory per client
 
-Clyde's 4-layer memory is the USP that separates a partnership from generic AI tools. Per-brand isolation via Supabase Row Level Security. No cross-brand leakage.
+Clyde keeps a memory per client, so you do not have to supply brand context with every prompt:
+- The conversation: what is being discussed right now.
+- Memories from conversations and feedback: preferences, corrections, what worked and what did not.
+- Strategy and research per client: goals, pillars, audience and market.
+- Always at hand: the brand voice and the working agreements, such as who approves and which words are not allowed.
 
-Layer 1, Today (hot cache): every interaction within the current 24-hour window, immediately addressable. Used for "the post we just discussed" or "remember the angle from this morning."
+Memories are consolidated daily: overlapping memories are merged and memories that are no longer used fade and are archived. Every memory about a client belongs to that agency and that client.
 
-Layer 2, This month (working memory): rolling 30-day context. Recent campaigns, recent feedback, recent performance signals. The texture of "how things are going right now."
-
-Layer 3, Archive (history): every prior interaction, indexed and searchable but not always loaded. Pulled in when relevance is high or when the user asks about something old.
-
-Layer 4, Who the brand is (identity): consolidated brand essence. Voice rules, audience persona, what works and what does not. Distilled overnight via the dream process from the layers above. This is what makes Clyde act like a brand insider rather than a generic tool.
-
-Dream consolidation: nightly, Clyde re-reads the working memory and the latest archive entries and updates the identity layer. Connections that survive multiple nights become part of "who the brand is." Stale or contradicted entries fade.
-
-Data export and deletion: 24-hour SLA on full export or full deletion on request. AVG (GDPR) compliant by design.
+Leaving: after cancellation you have 30 days to take your data with you; after that we delete your workspaces.
 
 ## How it Works
 
 Application-gated, no self-service signup. Max 10 partnerships per year.
 
-Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. 8 fields: name, email, agency, role, revenue band, client count, preferred tier, problem statement.
+Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. Name, email, agency and role are required; preferred tier, revenue band, number of clients, urgency and a short problem statement are optional.
 
 Step 2, Founder Review (within 48 hours): Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.
 
 Step 3, Strategy Call (30 min): honest assessment of which tier and skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
 
-Step 4, Onboarding (week 1): we connect brand voice, social accounts, knowledge bases and configure Clyde for each client.
+Step 4, Onboarding (4 weeks): we connect the accounts, brand voice and knowledge, run the strategy session per client, and set up Clyde, the content agenda and the approvals.
 
-Step 5, Correction Loop (month 1): Clyde calibrates on real feedback. Many corrections in week 1; Clyde remembers them, so each week is sharper per brand.
+Step 5, Correction Loop (month 1): Clyde calibrates on real feedback. Corrections are stored in the client's memory and used in the next request.
 
 Step 6, Quarterly Strategy plus Annual Retrospective: quarterly check-ins on what is working. Annual retrospective with full performance review.
 
 ## Founder
 
-Daley is the solo founder of FutureMarketingAI. Native Dutch speaker, based in the Netherlands. Technical builder who personally architects every system. Every partnership is reviewed by Daley directly. Contact: hello@future-marketing.ai. LinkedIn: https://www.linkedin.com/company/futuremarketingai.
+Daley is the founder of FutureMarketingAI. Native Dutch speaker, based in the Netherlands. Technical builder who personally architects every system. Every partnership is reviewed by Daley directly. Contact: hello@future-marketing.ai. LinkedIn: https://www.linkedin.com/company/futuremarketingai.
 
-## Compliance and Trust
+## Data and control
 
-- AVG (GDPR) compliant by design. Per-brand data isolation via Supabase Row Level Security.
-- EU AI Act transparency obligations met (chatbot identifies as AI, voice agent greeting identifies as AI).
-- Self-hosted EU infrastructure (Hetzner Amsterdam region).
-- 24-hour data export and deletion SLA.
-- No data leaves the EU for training or inference.
-- DPA (Data Processing Agreement) available on request.
-- DPIA (Data Protection Impact Assessment) covers all 6 active skill categories.
+- Data, servers and database are in the EU.
+- The language model runs by default at Anthropic, a US company. Other providers (for example for images and search) are listed in the privacy statement. On request we run Clyde on Mistral to keep the language model in the EU too.
+- Every client has its own workspace; memories about a client belong to that agency and that client.
+- Per task the agency decides how independently Clyde works; critical actions such as ad spend are always proposed first.
+- The website chatbot identifies itself as AI when asked.
+- After cancellation you have 30 days to take your data with you; after that we delete your workspaces.
 
 ## Kennisbank / Resources
 
@@ -330,9 +325,9 @@ Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, 
 ### Pillars
 
 - https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- GEO optimalisatie zorgt dat ChatGPT, Perplexity en Google AI Overviews jouw merk citeren. Wat GEO betekent, hoe het verschilt van SEO en hoe je begint.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je per merk opschaalt zonder extra fte.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je meer klanten bedient met het team dat je hebt.
 - https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Een marketingbureau schaalt met AI door de lineaire relatie tussen omzet en headcount te breken. Lees welk werk AI overneemt en hoe je begint.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- Een AI medewerker voor marketing is een digitale collega met merkgeheugen die vaardigheden uitvoert voor je bureau. Wat het is, voor wie, en hoe Clyde werkt.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- Zoek je een AI-marketingmedewerker voor je bureau? Wat zo'n digitale collega doet, waarom wij Clyde een AI-collega noemen en hoe hij per klant werkt.
 
 ### Clusters
 
@@ -340,15 +335,15 @@ Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, 
 - https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- AI Overviews SEO meten: wat AI-samenvattingen met je klikken doen, vermelding versus citatie, de vier kernmetrieken en een meetritme per AI-engine.
 - https://future-marketing.ai/nl/kennisbank/geo-monitoring-tools-chatgpt-perplexity -- Welke AI zichtbaarheid tool meet of ChatGPT, Perplexity en Google AI Overviews je merk noemen? Zes tools vergeleken op wat ze zelf zeggen te meten.
 - https://future-marketing.ai/nl/kennisbank/clyde-vs-jasper-chatgpt-semrush -- ChatGPT vs Jasper: een AI-werkplek voor elk team tegenover een marketingplatform met agents. Plus Semrush, en wanneer een bureau beter kiest voor Clyde.
-- https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficientie voor bureaus: selecteer het juiste werk en laat een AI Marketing Medewerker het volume dragen. Welk werk neemt AI als eerste over?
+- https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficiëntie voor bureaus: selecteer het juiste werk en laat Clyde het volume dragen. Welk werk neemt AI als eerste over?
 - https://future-marketing.ai/nl/kennisbank/meetbare-ai-marketing-resultaten -- Marketing rendement meten begint bij een nulmeting. Zo maak je meetbare marketing resultaten van AI zichtbaar, met zes indicatoren en eerlijke toeschrijving.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- Wat levert AI marketing in de praktijk op? Een werkend voorbeeld: hoe een AI Marketing Medewerker per merk werk levert en de operator regie houdt.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- Wat levert AI marketing in de praktijk op? Een werkend voorbeeld: hoe Clyde per merk werk levert en de operator regie houdt.
 - https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- Het verschil tussen een chatbot en een AI agent, waar een AI tool tussen past en wanneer je in marketing welke nodig hebt. Met de definities van Google en IBM.
 - https://future-marketing.ai/nl/kennisbank/ai-marketing-agent-geheugen-en-leren -- Heeft AI een geheugen? Niet uit zichzelf. Zo onthoudt een AI marketing agent per merk de toon, doelgroep en eerdere keuzes, en leert hij van je bijsturing.
 
 ## Apply
 
-Start at https://future-marketing.ai/nl/apply. 8-field application form (name, email, agency, role, revenue band, client count, preferred tier, problem statement). Review within 48 hours by Daley personally. If accepted, Daley schedules a 30-minute strategy call. Then 4-week onboarding to connect brand voice, accounts, and skills.
+Start at https://future-marketing.ai/nl/apply. Name, email, agency and role are required; the rest is optional. Review within 48 hours by Daley personally. If accepted, Daley schedules a 30-minute strategy call. Then a 4-week onboarding to connect accounts, brand voice and skills.
 
 ## Contact
 
@@ -359,17 +354,17 @@ Start at https://future-marketing.ai/nl/apply. 8-field application form (name, e
 
 ## Languages
 
-Content is authored in Dutch and translated to English and Spanish by native or senior-native translators. NL is the source of truth.
+Content is authored in Dutch and translated to English and Spanish. NL is the source of truth.
 
 ## HowTo: Start met FutureMarketingAI
 
 Type: HowTo
 Name: Hoe start ik met FutureMarketingAI?
-Description: Stap-voor-stap handleiding om als marketingbureau of brand-operator van aanvraag tot een AI-collega die zelfstandig meedraait te komen.
+Description: Stap-voor-stap van aanvraag tot een AI-collega die meedraait in je bureau, met Clyde ingericht voor elke klant.
 TotalTime: PT4W
 
 Step 1 - Dien je aanvraag in (5 minuten)
-Ga naar https://future-marketing.ai/nl/apply en vul het aanvraagformulier in. Je hebt alleen je naam, e-mailadres en eventueel je bedrijfsnaam nodig. Extra context over je portfolio en doelen is welkom maar niet verplicht.
+Ga naar https://future-marketing.ai/nl/apply en vul het aanvraagformulier in. Naam, e-mailadres, bureau en rol zijn verplicht. Extra context over je portfolio en doelen is welkom maar niet verplicht.
 
 Step 2 - Persoonlijke beoordeling door Daley (binnen 48 uur)
 Daley beoordeelt elke aanvraag persoonlijk. Als er een goede match is, plant hij direct een Strategy Call in. Geen automatische afwijzingen, geen verkoopscript.
@@ -377,11 +372,11 @@ Daley beoordeelt elke aanvraag persoonlijk. Als er een goede match is, plant hij
 Step 3 - Strategy Call (30 minuten)
 Een eerlijk gesprek over welk tier en welke vaardigheden het meeste impact hebben voor jouw portfolio. We kiezen de juiste startopzet samen.
 
-Step 4 - Onboarding (week 1)
-We koppelen merkstem, social-accounts, kennisbases en configureren Clyde voor elk klantmerk. Geen technische kennis vereist van jouw kant.
+Step 4 - Onboarding (4 weken)
+We koppelen de accounts, merkstem en kennis, doen de strategiesessie per klant en richten Clyde, de content-agenda en de goedkeuringen in. Geen technische kennis vereist van jouw kant.
 
 Step 5 - Correctielus (maand 1)
-Clyde calibreert op echte feedback. In week 1 veel correcties; Clyde onthoudt ze, dus elke week is het scherper per merk.
+Clyde kalibreert op echte feedback. Correcties komen in het geheugen van die klant, en Clyde gebruikt ze bij het volgende verzoek.
 
 Step 6 - Kwartaalcheck en jaarlijkse retrospective
 Elk kwartaal een strategisch gesprek over wat werkt. Jaarlijks een volledige performance review met roadmap-update.
@@ -392,31 +387,31 @@ Type: FAQPage
 URL: https://future-marketing.ai
 
 Q: Wat kost FutureMarketingAI?
-A: Founding Member kost 997 EUR per maand, levenslang vast tarief (rate lock for life), maandelijks opzegbaar (10 plekken, 1 bezet). Growth kost 499 euro per workspace per maand (2 tot 4 merken). Professional kost 399 euro per workspace per maand (5 tot 14 merken). Enterprise kost 299 euro per workspace per maand (15 of meer merken). Prijzen worden halfjaarlijks herzien. Geen verborgen kosten, geen opzetkosten voor Founding.
+A: Founding Member kost 997 EUR per maand, levenslang vast tarief, maandelijks opzegbaar, met 15 werkruimtes inbegrepen (daarboven 299 EUR per extra werkruimte) en maximaal 10 plekken. Growth kost 499 euro per werkruimte per maand (2 tot 4 merken). Professional kost 399 euro per werkruimte per maand (5 tot 14 merken). Enterprise kost 299 euro per werkruimte per maand (15 of meer merken). De tarieven per werkruimte worden halfjaarlijks herijkt op het werkelijke creditverbruik. Geen onboardingkosten voor Founding.
 
 Q: Kan ik stoppen wanneer ik wil?
 A: Ja. Alle tiers, inclusief Founding, zijn maandelijks opzegbaar. Founding is geen eenmalige betaling maar een maandelijks abonnement met een levenslang vast tarief: je betaalt altijd 997 EUR per maand, het tarief stijgt nooit.
 
 Q: Voor welke bureaus is FutureMarketingAI geschikt?
-A: Voor performance- en groeibureaus in Nederland en de EU die 2 tot 50 klantmerken beheren. Het model is ontworpen voor operators die kwaliteit belangrijker vinden dan schaal en die bereid zijn Clyde te laten leren in maand 1.
+A: Voor marketingbureaus in Nederland en de EU met 5 tot 20 mensen die 5 tot 20 klantmerken beheren, en die meer klanten willen bedienen met het team dat ze hebben. De pakketten beginnen bij 2 merken.
 
 Q: Hoelang duurt de onboarding?
-A: Week 1 is technische onboarding (koppeling accounts, merkstem, kennisbases). Maand 1 is de correctielus. Volledig autonoom werken begint meestal in maand 2.
+A: De onboarding duurt 4 weken: accounts koppelen, merkstem en kennis, een strategiesessie per klant, en Clyde, de agenda en de goedkeuringen inrichten. Maand 1 is de correctielus. Per taak kies je daarna hoe zelfstandig Clyde werkt.
 
 Q: Is mijn data veilig?
-A: Ja. Per-merk data-isolatie via Supabase Row Level Security. Geen cross-brand lekkage. Zelfgehoste EU-infrastructuur (Hetzner Amsterdam). Voldoet aan AVG en EU AI Act. Exporteer of verwijder al je data binnen 24 uur op verzoek.
+A: Je data, servers en database staan in de EU. Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; wil je het taalmodel ook in de EU, dan zetten we Clyde op verzoek op Mistral. Elke klant heeft een eigen werkruimte, en herinneringen over een klant horen bij dat bureau en die klant. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes.
 
 Q: Kan Clyde meerdere merken tegelijk beheren?
-A: Ja. Clyde is ontworpen voor multi-brand portfolios. Elk merk krijgt zijn eigen workspace met aparte merkstem, memory en goedkeuringsflow. De merken weten niets van elkaar.
+A: Ja. Elke klant krijgt een eigen werkruimte met een eigen merkstem, geheugen, agenda en goedkeuringen. Binnen een klant kunnen meerdere accounts vallen, zoals bij SkinClarity Club met 3 Instagram-accounts.
 
 Q: Welke platformen ondersteunt Clyde?
-A: Instagram, Facebook, LinkedIn (social), WordPress en Webflow (blog), Google Ads en Meta Ads (ads), Calendly (lead qualifier), Twilio (voice agent), ManyChat (DM automation), en alle gangbare rapportagetools via API.
+A: Publiceren op Instagram en LinkedIn; andere netwerken via Postiz op verzoek. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, op WhatsApp en op Telegram.
 
 Q: Hoe werkt de goedkeuringsflow?
-A: Clyde genereert content autonoom. Jij of je klant reviewt in het dashboard; Clyde meldt op WhatsApp wanneer er iets op goedkeuring wacht. Goedkeuren of afwijzen met commentaar. Clyde leert van elke review en past de volgende batch aan.
+A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Wat Clyde voorlegt, keuren jij of je klant goed in het dashboard; Clyde meldt op WhatsApp wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
 Q: Wat is het verschil tussen Founding en Growth?
-A: Founding kost 997 EUR per maand met een levenslang vast tarief (rate lock for life), maximaal 10 plekken, directe toegang tot Daley via Slack, en prioriteit bij nieuwe vaardigheden. Growth is 499 euro per workspace per maand voor bureaus die flexibiliteit willen zonder rate lock. Beide zijn maandelijks opzegbaar.
+A: Founding kost 997 EUR per maand met een levenslang vast tarief, 15 werkruimtes inbegrepen, maximaal 10 plekken en een directe Slack-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
 
 Q: Kan ik FutureMarketingAI eerst uitproberen?
 A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

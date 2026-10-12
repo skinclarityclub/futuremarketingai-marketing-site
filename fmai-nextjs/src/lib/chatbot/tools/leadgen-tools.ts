@@ -157,7 +157,7 @@ export function buildLeadgenTools(locale: ChatbotLocale) {
 
   const get_pricing_info = tool({
     description:
-      'Retrieve pricing information for a specific tier or all tiers. 4 tiers: Founding Member (997 EUR/mo lifetime, 10 spots, 1 taken), Growth (499 EUR per workspace, 2-4 brands), Professional (399 EUR per workspace, 5-14 brands), Enterprise (299 EUR per workspace, 15+ brands). Workspace-priced tiers have a one-time onboarding fee.',
+      'Retrieve pricing information for a specific tier or all tiers. 4 tiers: Founding Member (997 EUR/mo lifetime, maximum 10 spots), Growth (499 EUR per workspace, 2-4 brands), Professional (399 EUR per workspace, 5-14 brands), Enterprise (299 EUR per workspace, 15+ brands). Workspace-priced tiers have a one-time onboarding fee.',
     inputSchema: z.object({
       tier: z
         .enum(['founding', 'growth', 'professional', 'enterprise', 'all'])

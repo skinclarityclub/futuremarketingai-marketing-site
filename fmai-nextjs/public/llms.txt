@@ -1,8 +1,8 @@
 # FutureMarketingAI (FMai)
 
-> FMai is a Dutch AI marketing partnership for agencies. Clyde, the AI colleague for agencies (Dutch: AI-collega), runs 12 skills (10 live, 2 coming soon) across brand workspace portfolios with per-brand memory isolation. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock (10 spots, 1 taken), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. EU-native, AVG and EU AI Act ready. Application-gated: no self-service signup.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 15 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. Data, servers and database in the EU; the language model runs by default at Anthropic (US), on request on Mistral. Application-gated: no self-service signup.
 
-FMai is a high-touch AI marketing partnership founded by Daley. It targets performance and growth agencies in the Netherlands and EU managing portfolios of brand workspaces. Instead of selling isolated AI tools, FMai provides one persistent AI colleague named Clyde who learns each brand over time, remembers per-brand voice, operates across 12 skills from social media to voice agents, and is orchestrated by the founder personally. The proof case is SkinClarity Club, where Sindy (founder) runs 4 brands and 3 Instagram accounts autonomously with all 10 live skills active.
+FMai is an AI marketing partnership founded by Daley for marketing agencies in the Netherlands and the EU with 5 to 20 people managing 5 to 20 client brands. Instead of isolated AI tools, FMai provides one AI colleague named Clyde who knows the goals of every client, works in every screen of the dashboard and on WhatsApp, and keeps a memory per client. Per task the agency decides what Clyde proposes first and what he may do himself and report. The agency's client gets their own dashboard, approves there, sends requests to the agency and talks to Clyde on WhatsApp. The first client is SkinClarity Club: 3 Instagram accounts, all 10 live skills switched on, and FutureMarketingAI is the agency that approves the content.
 
 The product is not a self-serve SaaS. Every engagement starts with an application at https://future-marketing.ai/nl/apply. Daley reviews personally within 48 hours. The max 10 partnerships per year constraint is honored through this gate.
 
@@ -12,30 +12,30 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 
 ## Core pages
 
-- [Home (NL)](https://future-marketing.ai/nl): Hero "Dit is Clyde" plus 12-skill overview, SKC case, founding counter, FAQ.
-- [Memory system](https://future-marketing.ai/nl/memory): Why Clyde's 4-layer memory (Vandaag / Deze maand / Archief / Wie het merk is) is the USP. Per-brand isolation via Supabase RLS. Nightly dream consolidation.
-- [Pricing](https://future-marketing.ai/nl/pricing): Workspace-priced model. Founding Member 997 EUR per month, lifetime rate lock, monthly cancellable (10 spots, 1 taken). Growth 499 EUR per workspace (2 to 4 brands, onboarding 1997 EUR). Professional 399 EUR per workspace (5 to 14 brands, onboarding 3997 EUR). Enterprise 299 EUR per workspace (15 plus brands, onboarding 5997 EUR). All workspace tiers include 800 credits per workspace per month. Tariff recalibrated every 6 months.
-- [Founding Member](https://future-marketing.ai/nl/founding-member): 10-spot program. 997 EUR per month, lifetime rate lock, monthly cancellable. Includes 8000 credits per month and unlimited workspaces. Mathematical advantage over workspace pricing kicks in from 3 brands (997 vs 1497 at Growth 499 times 3). 1 spot taken (SkinClarity Club).
-- [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. 8 fields. Response within 48 hours.
-- [How it works](https://future-marketing.ai/nl/how-it-works): Week-by-week onboarding cadence, first month correction loop, quarterly strategy, annual retrospective.
-- [About](https://future-marketing.ai/nl/about): Solo founder Daley. 10 partnerships per year cap. Why partnership over SaaS.
-- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Sindy, 4 brands, 3 IG accounts, all 10 live skills active. The proof case.
+- [Home (NL)](https://future-marketing.ai/nl): Clyde, the loop from client goal to report, the team and the client, the entrances (dashboard, WhatsApp, a mobile app in development), from post to lead, control and EU data, FAQ.
+- [Memory](https://future-marketing.ai/nl/memory): How Clyde keeps a memory per client: the conversation, memories from conversations and feedback, strategy and research per client. Memories about a client belong to that agency and that client.
+- [Pricing](https://future-marketing.ai/nl/pricing): Workspace-priced model. Founding Member 997 EUR per month, lifetime rate lock, monthly cancellable, 15 workspaces included, maximum 10 spots. Growth 499 EUR per workspace (2 to 4 brands, onboarding 1997 EUR). Professional 399 EUR per workspace (5 to 14 brands, onboarding 3997 EUR). Enterprise 299 EUR per workspace (15 plus brands, onboarding 5997 EUR). All workspace tiers include 800 credits per workspace per month. Tariff recalibrated every 6 months.
+- [Founding Member](https://future-marketing.ai/nl/founding-member): Program of maximum 10 spots. 997 EUR per month, lifetime rate lock, monthly cancellable. 15 workspaces included, 299 EUR per extra workspace, 8000 credits per month. Cheaper than the workspace tiers from 3 brands (997 vs 1497 at Growth 499 times 3).
+- [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. Name, email, agency and role are required; the rest is optional. Response within 48 hours.
+- [How it works](https://future-marketing.ai/nl/how-it-works): 4-week onboarding, a workspace per client, approvals and control per task, a correction loop in the first month.
+- [About](https://future-marketing.ai/nl/about): Founder Daley. 10 partnerships per year cap. Why partnership over SaaS.
+- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Our first client, with FutureMarketingAI as the agency. 3 Instagram accounts, each in its own tone, all 10 live skills switched on, the agency approves. No result figures published yet.
 - [Contact](https://future-marketing.ai/nl/contact): Simple form. For partnership inquiries use Apply instead.
 
 ## 12 Skills
 
-- [Social Media Manager](https://future-marketing.ai/nl/skills/social-media): Captions, scheduling, carousels and engagement in brand voice. Live.
-- [Blog Factory](https://future-marketing.ai/nl/skills/blog-factory): Longform SEO articles 1500 to 3000 words, keyword to publish. Live.
-- [Ad Manager](https://future-marketing.ai/nl/skills/ad-manager): Publishes ads to Meta and tracks leads, cost per lead and ad fatigue. Live.
-- [Reel Builder](https://future-marketing.ai/nl/skills/reel-builder): Short video generation from product imagery. Coming soon.
-- [Voice Agent](https://future-marketing.ai/nl/skills/voice-agent): Inbound and outbound calls via ElevenLabs. Coming soon.
-- [Lead Qualifier](https://future-marketing.ai/nl/skills/lead-qualifier): Multi-channel lead scoring and routing. Live.
-- [Email Management](https://future-marketing.ai/nl/skills/email-management): Gmail inbox classification, smart labels and a daily digest. Outlook on the roadmap. Live.
-- [ManyChat DM](https://future-marketing.ai/nl/skills/manychat): Instagram DM keyword triggers, AI replies, lead capture. Live.
-- [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): Weekly digests, anomaly alerts, cross-platform KPIs. Live.
-- [SEO / GEO Analyst](https://future-marketing.ai/nl/skills/seo-geo): Technical SEO plus AI citation monitoring. Live.
-- [Research](https://future-marketing.ai/nl/skills/research): Market research, trends, competitor analysis with sources. Live.
-- [Clyde](https://future-marketing.ai/nl/skills/clyde): The orchestrator who routes natural-language instructions to the right skill. Live.
+- [Social Media Manager](https://future-marketing.ai/nl/skills/social-media): Captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn after approval. Live.
+- [Blog Factory](https://future-marketing.ai/nl/skills/blog-factory): SEO articles from keyword research to publication after approval; length follows the search intent. Live.
+- [Ad Manager](https://future-marketing.ai/nl/skills/ad-manager): Static and video ads prepared for Meta, live only after approval, then followed per ad on conversions, ROAS and ad fatigue. Live.
+- [Reel Builder](https://future-marketing.ai/nl/skills/reel-builder): Short vertical videos with script, captions and music. Coming soon.
+- [Voice Agent](https://future-marketing.ai/nl/skills/voice-agent): AI phone calls for appointments, questions and handover to a person. Coming soon.
+- [Lead Qualifier](https://future-marketing.ai/nl/skills/lead-qualifier): Website chatbot that scores leads and sends them to your CRM via a webhook. Live.
+- [Email Management](https://future-marketing.ai/nl/skills/email-management): Gmail and Outlook inbox classification with labels and draft replies sent after approval. Live.
+- [ManyChat DM](https://future-marketing.ai/nl/skills/manychat): Instagram DMs, comments and story replies with keyword triggers, AI drafts in the brand voice and lead capture. Live.
+- [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): A weekly report per brand, a dashboard per client refreshed daily, and an alert on strong deviations. Live.
+- [SEO / GEO Analyst](https://future-marketing.ai/nl/skills/seo-geo): Technical SEO, positions from Search Console, Core Web Vitals and AI citation monitoring. Live.
+- [Research](https://future-marketing.ai/nl/skills/research): Scheduled research per client on market, trends and competitors, with a source link per insight. Live.
+- [Clyde](https://future-marketing.ai/nl/skills/clyde): The AI colleague who routes plain-language requests to the right skill, in the dashboard, on WhatsApp and on Telegram. Live.
 
 ## English
 
@@ -52,4 +52,4 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Legal: Privacy](https://future-marketing.ai/nl/legal/privacy): AVG (GDPR) privacy policy.
 - [Legal: Terms](https://future-marketing.ai/nl/legal/terms): Terms of service including subscription terms.
 - [Legal: Cookies](https://future-marketing.ai/nl/legal/cookies): Cookie disclosures.
-- [Full long-form content for LLMs](https://future-marketing.ai/llms-full.txt): Complete product description with all tiers, skill definitions, case study, memory architecture, AVG stance.
+- [Full long-form content for LLMs](https://future-marketing.ai/llms-full.txt): Complete product description with all tiers, skill definitions, case study, memory per client and where data lives.

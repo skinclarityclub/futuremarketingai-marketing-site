@@ -16,49 +16,49 @@ interface CaseStudy {
 const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
   nl: {
     client: 'SkinClarity Club',
-    industry: 'Beauty / skincare (DTC en fysieke kliniek)',
+    industry: 'Huidverzorging: een club, een webshop en het account van oprichter Sindy',
     challenge:
-      'Sindy runt SkinClarity Club over 4 merken en 3 Instagram-accounts. Als solo-operator zat ze aan haar capaciteitsplafond. Ze wilde organische content opschalen zonder een bureau of junior marketeer in te huren.',
+      'SkinClarity Club is onze eerste klant, en FutureMarketingAI is het bureau. Drie Instagram-accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), elk met een eigen publiek, toon en agenda, plus een blog en een webshop.',
     solution:
-      'Clyde (de AI-collega) ingezet met 10 van de 12 vaardigheden: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Rapportage, SEO/GEO, Research en de Clyde-orchestrator. Geheugen per account gescheiden. Wekelijkse performance-digest op maandag 08:00. Nachtelijke geheugenconsolidatie.',
+      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Alle 10 live vaardigheden staan aan. Clyde maakt en plant de content volgens de agenda, het bureau keurt goed voordat er iets live gaat, en Sindy heeft een eigen dashboard en Clyde op WhatsApp.',
     results: [
-      'Vier merken over 3 Instagram-accounts, elk in een eigen stem',
-      'Clyde maakt en plant volgens de agenda, Sindy keurt goed',
-      'Longform SEO-blogs voor skinclarityclub.nl',
-      'Wekelijks SEO-rapport en maandagse performance-digest',
-      'Clyde haalt werk weg bij Sindy, zij houdt de regie',
+      'Posts en carrousels voor 3 accounts, elk in een eigen toon',
+      'SEO-blogs voor skinclarityclub.nl',
+      'Elke week een rapport in het dashboard, elke vrijdag het SEO-rapport op WhatsApp',
+      'Lead Qualifier, ManyChat DM en Ad Manager staan aan, maar zijn voor SKC nog niet in gebruik',
+      'Gemeten resultaten volgen; we publiceren nog geen cijfers',
     ],
     url: 'https://future-marketing.ai/nl/case-studies/skinclarity-club',
   },
   en: {
     client: 'SkinClarity Club',
-    industry: 'Beauty / skincare (DTC plus physical clinic)',
+    industry: 'Skincare: a club, a webshop and the account of founder Sindy',
     challenge:
-      'Sindy runs SkinClarity Club across 4 brands and 3 Instagram accounts. As a single operator she hit her capacity ceiling. She wanted to scale organic content without hiring an agency or a junior marketer.',
+      'SkinClarity Club is our first client, and FutureMarketingAI is the agency. Three Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience, tone and agenda, plus a blog and a webshop.',
     solution:
-      'Deployed Clyde (the AI colleague) with 10 of 12 skills active: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research and the Clyde orchestrator. Per-account memory isolation. Weekly performance digest at Monday 08:00. Overnight memory consolidation.',
+      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. All 10 live skills are switched on. Clyde creates and schedules the content from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp.',
     results: [
-      'Four brands across 3 Instagram accounts, each in its own voice',
-      'Clyde creates and schedules from the calendar, Sindy approves',
-      'Longform SEO blogs for skinclarityclub.nl',
-      'Weekly SEO report and Monday performance digest',
-      'Clyde takes work off Sindy, she stays in charge',
+      'Posts and carousels for 3 accounts, each in its own tone',
+      'SEO blogs for skinclarityclub.nl',
+      'A weekly report in the dashboard, and the SEO report on WhatsApp every Friday',
+      'Lead Qualifier, ManyChat DM and Ad Manager are switched on but not yet in use for SKC',
+      'Measured results to follow; we do not publish figures yet',
     ],
     url: 'https://future-marketing.ai/en/case-studies/skinclarity-club',
   },
   es: {
     client: 'SkinClarity Club',
-    industry: 'Belleza / cuidado de la piel (DTC y clínica física)',
+    industry: 'Cuidado de la piel: un club, una tienda online y la cuenta de la fundadora Sindy',
     challenge:
-      'Sindy gestiona SkinClarity Club en 4 marcas y 3 cuentas de Instagram. Como operadora en solitario llegó a su límite de capacidad. Quería escalar el contenido orgánico sin contratar una agencia ni un marketero junior.',
+      'SkinClarity Club es nuestro primer cliente, y FutureMarketingAI es la agencia. Tres cuentas de Instagram (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), cada una con su propio público, tono y agenda, además de un blog y una tienda online.',
     solution:
-      'Se desplegó Clyde (el compañero de IA) con 10 de las 12 habilidades: Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research y el orquestador Clyde. Memoria aislada por cuenta. Resumen de rendimiento semanal los lunes a las 08:00. Consolidación de memoria nocturna.',
+      'Un espacio de trabajo para SkinClarity Club con 3 cuentas de Instagram y una memoria para todo el cliente. Las 10 habilidades activas están encendidas. Clyde crea y programa el contenido según la agenda, la agencia aprueba antes de que algo se publique, y Sindy tiene su propio panel y Clyde en WhatsApp.',
     results: [
-      'Cuatro marcas en 3 cuentas de Instagram, cada una con su propia voz',
-      'Clyde crea y programa según la agenda, Sindy aprueba',
-      'Blogs SEO de formato largo para skinclarityclub.nl',
-      'Informe SEO semanal y resumen de rendimiento de los lunes',
-      'Clyde le quita trabajo a Sindy, ella mantiene el control',
+      'Posts y carruseles para 3 cuentas, cada una con su propio tono',
+      'Blogs SEO para skinclarityclub.nl',
+      'Un informe semanal en el panel, y el informe SEO por WhatsApp cada viernes',
+      'Lead Qualifier, ManyChat DM y Ad Manager están encendidos, pero aún no se usan para SKC',
+      'Los resultados medidos llegarán; todavía no publicamos cifras',
     ],
     url: 'https://future-marketing.ai/es/case-studies/skinclarity-club',
   },
@@ -192,7 +192,7 @@ export function buildConciergeTools(locale: ChatbotLocale) {
 
     get_case_study: tool({
       description:
-        'Get the SkinClarity Club case study showing FMai results with a real client. Use when user asks for proof, evidence, real results, case study, testimonial, bewijs, concrete resultaten, heeft het gewerkt, echt gebruik, referentie, or wants to see a real example before deciding.',
+        'Get the SkinClarity Club case study: how Clyde works for our first client (no published result figures yet). Use when user asks for proof, evidence, real results, case study, testimonial, bewijs, concrete resultaten, heeft het gewerkt, echt gebruik, referentie, or wants to see a real example before deciding.',
       inputSchema: z.object({
         studyId: z.enum(['skc']).default('skc').describe('The case study identifier'),
       }),
