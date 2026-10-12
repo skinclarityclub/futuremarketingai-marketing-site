@@ -305,7 +305,7 @@
         "founding": {
           "label": "Founding",
           "tagline": "Levenslang vast",
-          "desc": "Voor de eerste 10 bureaus. Volledige toegang tot alle 12 vaardigheden, onbeperkt aantal werkruimtes, Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
+          "desc": "Voor de eerste 10 bureaus. Volledige toegang tot alle 12 vaardigheden, tot [DALEY: grens ~15] werkruimtes (daarboven [DALEY: meerprijs] per extra werkruimte), Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
         },
         "growth": {
           "label": "Growth",
@@ -326,21 +326,21 @@
       "ctaLink": "Plan een gesprek"
     },
     "pillars": {
-      "title": "Drie pijlers die geen US-tool kan matchen",
-      "subtitle": "EU-native compliance, EU-native infra en directe samenwerking. Geen tussenlaag, geen US-clouds, geen vendor lock-in.",
+      "title": "Jij houdt de controle. Je data staat in de EU.",
+      "subtitle": "Clyde vraagt eerst, mensen keuren goed, en je weet precies waar je data staat.",
       "compliance": {
-        "label": "Veiligheid en compliance",
-        "headingLine1": "GDPR-first.",
-        "headingLine2": "EU AI Act ready.",
-        "body": "AVG-first en EU AI Act ready. Self-hosted op Europese servers, data nooit naar US-clouds. Audit-trail per actie van Clyde.",
-        "linkText": "Hoe wij data behandelen"
+        "label": "Controle",
+        "headingLine1": "Clyde vraagt eerst.",
+        "headingLine2": "Jij beslist.",
+        "body": "Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Jij en je klant keuren goed, en wat Clyde deed zie je terug in het logboek op je dashboard.",
+        "linkText": "Zo werkt Clyde"
       },
       "infrastructure": {
-        "label": "Infrastructuur",
-        "stat": "24u",
-        "statLabel": "Data-export SLA",
-        "body": "Open API, JSON en CSV export binnen 24 uur. Self-hosted EU-infrastructuur, geen vendor lock-in op data of werkruimtes.",
-        "linkText": "Bekijk de geheugenlaag"
+        "label": "Data in de EU",
+        "stat": "EU",
+        "statLabel": "Data, servers, database",
+        "body": "Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf. Wil je ook dat in de EU, dan zetten we Clyde op verzoek op Mistral. Export in JSON en CSV binnen 24 uur.",
+        "linkText": "Hoe wij data behandelen"
       },
       "partnership": {
         "label": "Samenwerking",
@@ -393,54 +393,6 @@
         }
       }
     },
-    "strategy": {
-      "eyebrow": "De strategielaag",
-      "title": "Clyde begint bij het doel, niet bij de post",
-      "subtitle": "Voordat er iets gemaakt wordt, ligt er een plan. Clyde voert een strategiesessie per merk, legt doelen vast met een projectie, en bouwt daaruit een contentagenda die een jaar vooruit kijkt. Jij bevestigt; hij houdt koers.",
-      "steps": {
-        "s1": {
-          "t": "Strategiesessie per merk",
-          "d": "Clyde interviewt je klant en legt vijf blokken vast: positionering, doelgroep, aanbod, toon en doelen. Elk antwoord met bron, zodat je ziet wat uit het gesprek komt en wat een aanname is."
-        },
-        "s2": {
-          "t": "Doelen met een projectie",
-          "d": "Per kanaal een doel, een verwachte lijn en de gemeten werkelijkheid ernaast. Loopt het achter, dan weet je het voordat het kwartaal om is."
-        },
-        "s3": {
-          "t": "Per pijler gemeten wat werkt",
-          "d": "Clyde houdt per pijler bij wat aantoonbaar presteert en legt dat naast je doelen. Hij laat zien waar meer ruimte naartoe moet; jij beslist wat er schuift."
-        },
-        "s4": {
-          "t": "Een agenda die een jaar vooruit kijkt",
-          "d": "Twaalf maandvensters over een jaarboog, vertaald naar concrete posts per week. Geen lege kalender aan het begin van de maand."
-        }
-      },
-      "caption": "De contentkalender per merk, gevuld vanuit de agenda"
-    },
-    "watch": {
-      "eyebrow": "Altijd in de buurt",
-      "title": "Clyde kijkt mee, ook als jij er niet bent",
-      "subtitle": "Clyde is geen apart scherm dat je moet openen. Hij zit in elk scherm van je dashboard, weet wat er bij elk merk speelt, en komt zelf naar je toe op WhatsApp.",
-      "steps": {
-        "s1": {
-          "t": "In elk scherm",
-          "d": "Het Clyde-paneel staat op elke pagina van het dashboard. Op de pagina van een merk weet hij over welk merk je het hebt, dus je hoeft niets eerst uit te leggen."
-        },
-        "s2": {
-          "t": "Op WhatsApp",
-          "d": "Vraag Clyde onderweg hoe je content en je cijfers ervoor staan. Hij antwoordt vanuit hetzelfde geheugen per merk als in het dashboard."
-        },
-        "s3": {
-          "t": "Hij meldt zich zelf",
-          "d": "Wijkt een cijfer af of wacht er iets op je goedkeuring, dan stuurt Clyde je een WhatsApp-bericht. Goedkeuren doe je daarna in het dashboard."
-        },
-        "s4": {
-          "t": "Elke vrijdag het rapport",
-          "d": "Het SEO-weekrapport komt elke vrijdag op WhatsApp binnen, met een link naar het volledige rapport. Daarnaast staat er elke week een rapport per merk in je dashboard."
-        }
-      },
-      "caption": "Het dashboard: wat Clyde deed terwijl je sliep, en wat er op jou wacht"
-    },
     "platforms": {
       "liveTitle": "Draait vandaag voor onze klanten",
       "connectableTitle": "Koppelbaar op verzoek",
@@ -463,6 +415,101 @@
         "pinterest": "Pinterest"
       },
       "note": "Instagram en LinkedIn publiceren vandaag. Andere netwerken sluiten we aan via Postiz, dat er 27 ondersteunt; deze zes zijn de bekendste. We zetten alleen aan wat je echt gebruikt."
+    },
+    "kring": {
+      "eyebrow": "De kring",
+      "title": "Alles hangt aan het doel van je klant",
+      "subtitle": "Clyde begint bij de doelen van elke klant en houdt die vast tot in de rapporten. Wat de rapporten laten zien, voedt het volgende doel. Hij zit in elke stap en onthoudt elk merk apart.",
+      "steps": {
+        "s1": {
+          "t": "Doel",
+          "d": "Een strategiesessie per merk legt de doelen vast, met een projectie per kanaal en de pijlers waar het merk op draait."
+        },
+        "s2": {
+          "t": "Research",
+          "d": "Markt, concurrenten, doelgroep en trends. Clyde zoekt het uit en legt het onder de strategie, zodat elke keuze een reden heeft."
+        },
+        "s3": {
+          "t": "Agenda",
+          "d": "Uit de strategie volgt een planning per kanaal voor het hele jaar, plus de blogs die nodig zijn om de SEO-doelen te halen."
+        },
+        "s4": {
+          "t": "Uitvoering",
+          "d": "Clyde maakt de content. Je team en je klant keuren goed, en kwaliteitspoorten houden tegen wat niet goed genoeg is."
+        },
+        "s5": {
+          "t": "Rapporten",
+          "d": "De rapporten komen vanzelf en laten zien wat werkt. Dat gaat terug naar het doel, en de kring begint opnieuw."
+        }
+      },
+      "caption": "De contentkalender per merk, gevuld vanuit de agenda"
+    },
+    "people": {
+      "eyebrow": "De mensen",
+      "title": "Clyde werkt met je team. En met je klant.",
+      "subtitle": "Hij haalt werk weg bij je team en vervangt niemand. Je klant krijgt er een eigen plek bij, en ook een eigen Clyde.",
+      "team": {
+        "title": "Je team",
+        "items": {
+          "i1": "Teamleden worden aan klanten toegewezen; ieder werkt aan de eigen klanten.",
+          "i2": "Iedereen ziet wat klaarstaat, wat op goedkeuring wacht en wat live ging.",
+          "i3": "Rapportages per merk komen vanzelf, niemand hoeft ze bij elkaar te zoeken.",
+          "i4": "Clyde neemt het maakwerk over, je team houdt de regie."
+        }
+      },
+      "client": {
+        "title": "Je klant",
+        "items": {
+          "i1": "Een eigen dashboard waar alles compleet staat, en waar je klant zelf goedkeurt.",
+          "i2": "Een eigen contentbibliotheek: zelf foto's en video toevoegen, zodat de content beter wordt.",
+          "i3": "Aanvragen naar jouw bureau sturen, vanuit het eigen dashboard.",
+          "i4": "Een eigen Clyde, in het dashboard en op WhatsApp."
+        }
+      },
+      "note": "Een klant die ziet wat er gebeurt en zelf meedoet, heeft een reden om bij je bureau te blijven."
+    },
+    "entries": {
+      "eyebrow": "Drie ingangen",
+      "title": "Clyde is er waar jij bent",
+      "subtitle": "Voor jou en voor je klant: het dashboard voor het complete beeld, WhatsApp voor onderweg. De mobiele app komt erbij.",
+      "steps": {
+        "s1": {
+          "t": "Dashboard",
+          "d": "Alles compleet. Clyde zit in elk scherm en weet op de pagina van een merk over welk merk je het hebt, dus je hoeft niets eerst uit te leggen."
+        },
+        "s2": {
+          "t": "WhatsApp",
+          "d": "Vraag Clyde onderweg hoe het ervoor staat. Hij meldt zich zelf als er iets afwijkt of op je wacht, en elke vrijdag komt het SEO-rapport binnen. Goedkeuren doe je in het dashboard."
+        },
+        "s3": {
+          "t": "Mobiele app, in aanbouw",
+          "d": "Voor onderweg: goedkeuren en bijsturen vanaf je telefoon. We bouwen eraan."
+        }
+      },
+      "caption": "Het dashboard: wat Clyde deed terwijl je sliep, en wat er op jou wacht"
+    },
+    "lead": {
+      "eyebrow": "Van post naar lead",
+      "title": "Een post is pas af als hij iets oplevert",
+      "subtitle": "Clyde volgt wat er na het posten gebeurt, van reactie tot aanvraag. Zo zie je per klant of content gesprekken oplevert, en waar het stokt.",
+      "steps": {
+        "s1": {
+          "t": "Een reactie wordt een gesprek",
+          "d": "Reageert iemand op Instagram met het woord dat jij kiest, of komt er een DM binnen, dan antwoordt Clyde met de kennis van dat merk. Of hij zet het gesprek door naar je inbox."
+        },
+        "s2": {
+          "t": "Een link die we meten",
+          "d": "In de DM stuurt Clyde een link die we volgen, zodat elke klik bij de juiste klant meetelt. Bots en linkscanners tellen niet mee."
+        },
+        "s3": {
+          "t": "Van klik naar aanvraag",
+          "d": "Is het formulier op de site van je klant gekoppeld, dan zie je hoeveel aanvragen via zo'n link binnenkwamen."
+        },
+        "s4": {
+          "t": "Zien waar het stokt",
+          "d": "Per klant zie je hoeveel DM's een klik opleverden en hoeveel klikken een aanvraag. De grootste afhaker staat er in één zin bij."
+        }
+      }
     }
   },
   "chatbots": {
@@ -1052,7 +1099,7 @@
         "subtitle": "10 plekken · levenslang anker",
         "tagline": "10 plekken totaal. Pro-caps. Levenslang €997. Founder Slack.",
         "description": "De oprichtende klanten die vóór launch committeerden. Levenslange prijs van €997, Pro-caps op elke vaardigheid, directe Slack-lijn met Daley. {taken} van {total} plekken bezet.",
-        "features_0": "Onbeperkt aantal werkruimtes",
+        "features_0": "Tot [DALEY: grens ~15] werkruimtes",
         "features_1": "8.000 credits per maand",
         "features_2": "Alle 12 vaardigheden (met Pro-caps)",
         "features_3": "Blog Factory: 12 per maand",
@@ -1379,7 +1426,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd levenslang voor onbeperkt aantal werkruimtes, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per niveau op voice, video en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd levenslang voor maximaal [DALEY: grens ~15] werkruimtes, daarboven [DALEY: meerprijs] per extra werkruimte, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, met caps per niveau op voice, video en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -1799,7 +1846,7 @@
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
-          "answer": "Beschikbaar op alle tiers: Founding Member €997 levenslang voor onbeperkt aantal werkruimtes, of de workspace-priced tiers Growth €499 per werkruimte (2-4 merken), Professional €399 (5-14 merken) en Enterprise €299 (15+ merken). Volume schaalt mee met je credits: 800 per werkruimte op de workspace-tiers, 8.000 op Founding. Carrousels en posts kosten 1 tot 2 credits per stuk."
+          "answer": "Beschikbaar op alle tiers: Founding Member €997 levenslang voor maximaal [DALEY: grens ~15] werkruimtes, of de workspace-priced tiers Growth €499 per werkruimte (2-4 merken), Professional €399 (5-14 merken) en Enterprise €299 (15+ merken). Volume schaalt mee met je credits: 800 per werkruimte op de workspace-tiers, 8.000 op Founding. Carrousels en posts kosten 1 tot 2 credits per stuk."
         },
         "q4": {
           "question": "Hoelang duurt de onboarding van Social Media Manager?",
@@ -2027,12 +2074,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: €997 levenslang | FutureMarketingAI",
-      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. Onbeperkt aantal werkruimtes, prijs-lock voor altijd. 1/10 plekken bezet."
+      "description": "Founding Member: €997/maand levenslang voor de eerste 10 bureaus. Tot [DALEY: grens ~15] werkruimtes, prijs-lock voor altijd. 1/10 plekken bezet."
     },
     "hero": {
       "badge": "{taken} van {total} Founding plekken bezet",
       "title": "Word Founding partner. Eén keuze, levenslang vast.",
-      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, voor onbeperkt aantal werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley.",
+      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, voor maximaal [DALEY: grens ~15] werkruimtes. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle 12 vaardigheden, Pro-caps en directe Slack-lijn met Daley.",
       "cta": "Reserveer je plek"
     },
     "pricing": {
@@ -2041,8 +2088,8 @@
       "price": "997",
       "period": "/mnd, levenslang",
       "locked": "Levenslange prijsgarantie. Geen prijsverhoging, ooit.",
-      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor onbeperkt. Vanaf 3 merken bespaar je structureel.",
-      "includes": "Onbeperkt aantal werkruimtes, 8.000 credits per maand, alle 12 vaardigheden met Pro-caps, Founder Slack en €0 onboarding."
+      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor maximaal [DALEY: grens ~15] werkruimtes. Vanaf 3 merken bespaar je structureel.",
+      "includes": "Tot [DALEY: grens ~15] werkruimtes, 8.000 credits per maand, alle 12 vaardigheden met Pro-caps, Founder Slack en €0 onboarding."
     },
     "value": {
       "heading": "Waarom de 10 Founding plekken bestaan",
@@ -2089,7 +2136,7 @@
       "items": {
         "q1": {
           "question": "Wat gebeurt er als de 10 plekken vol zijn?",
-          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor onbeperkt aantal werkruimtes, levenslang, zolang je actief blijft."
+          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor maximaal [DALEY: grens ~15] werkruimtes, levenslang, zolang je actief blijft."
         },
         "q2": {
           "question": "Kan ik later doorschalen naar Professional of Enterprise?",

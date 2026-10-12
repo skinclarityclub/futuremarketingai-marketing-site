@@ -25,7 +25,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
 All plans include access to Clyde, the AI colleague, and all 12 skills. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
 
 **Founding Member. EUR 997/mo lifetime** (recommended for early adopters; 10 spots only, 1 taken)
-- Unlimited workspaces
+- Up to [DALEY: grens ~15] workspaces
 - 8,000 credits/mo
 - All 12 skills with Professional-tier caps
 - Lifetime price lock
@@ -107,7 +107,7 @@ All plans include access to Clyde, the AI colleague, and all 12 skills. Workspac
 
 **Key Comparison:**
 - Junior marketer for 3 clients: ~EUR 4,500/mo = EUR 1,500/client
-- FutureMarketingAI Founding Member: EUR 997/mo lifetime, unlimited workspaces (10 spots, recommended for early adopters)
+- FutureMarketingAI Founding Member: EUR 997/mo lifetime, up to [DALEY: grens ~15] workspaces (10 spots, recommended for early adopters)
 - FutureMarketingAI Growth for 3 clients: EUR 1,497/mo = EUR 499/client (linear per-workspace pricing)`,
  },
  {
@@ -172,7 +172,7 @@ All plans include access to Clyde, the AI colleague, and all 12 skills. Workspac
 Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription) / FutureMarketingAI Subscription x 100%
 
 **Scenario A: Founding Member (EUR 997/mo lifetime — best value while spots are open)**
-- Tier: Founding with all 12 skills at Professional-tier caps, unlimited workspaces, 8,000 credits
+- Tier: Founding with all 12 skills at Professional-tier caps, up to [DALEY: grens ~15] workspaces, 8,000 credits
 - Cheapest path for any portfolio of 3+ brands (vs. Growth at 3×499 = EUR 1,497)
 - Direct founder access via Slack, no onboarding fee, 10 spots only
 
@@ -199,7 +199,7 @@ Monthly ROI = (Cost Savings + Revenue Increase - FutureMarketingAI Subscription)
 - Resell margin on unlimited clients: potentially EUR 10,000-30,000/mo additional revenue
 - ROI: 224% on direct savings alone
 
-**Founding Member (EUR 997/mo):** all 12 skills, unlimited workspaces, 8,000 credits, lifetime price lock. Best value in the market. 10 spots only, 1 already taken.
+**Founding Member (EUR 997/mo):** all 12 skills, up to [DALEY: grens ~15] workspaces, 8,000 credits, lifetime price lock. Best value in the market. 10 spots only, 1 already taken.
 
 **Payback Period:** Typically under 1 month. Savings exceed subscription from day one across every tier.`,
  },
@@ -225,7 +225,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 
 **Benefits:**
 - EUR 997/mo locked for life (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
-- Unlimited workspaces (cheapest path for any portfolio of 3+ brands)
+- Up to [DALEY: grens ~15] workspaces (cheapest path for any portfolio of 3+ brands)
 - 8,000 credits/mo (vs. 800 per workspace on the other tiers — equivalent to a 10-workspace allocation)
 - All 12 skills with Professional-tier caps. No feature restrictions
 - Direct access to the founder for support and feature requests
@@ -241,7 +241,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 **Who Is It For?**
 Marketing agencies who want to:
 - Get all capabilities at the best price in the market
-- Scale client capacity without hiring. Unlimited workspaces
+- Serve more clients per team member. Up to [DALEY: grens ~15] workspaces
 - Maximize resell margin on AI marketing services
 - Get early access to AI marketing tools before competitors
 - Have direct influence on product development

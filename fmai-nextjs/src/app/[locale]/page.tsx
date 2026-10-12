@@ -47,7 +47,7 @@ const LeadMagnetCTA = dynamic(() =>
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getPillarPosts, getClusterPosts } from '@/lib/blog'
 import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
-import { ArrowRight, ShieldCheck, ServerCog, Handshake } from 'lucide-react'
+import { ArrowRight, ShieldCheck, ServerCog, Handshake, Users, UserRound, Check } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -63,7 +63,9 @@ export async function generateMetadata({
 }
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
-const STEP_KEYS = ['s1', 's2', 's3', 's4'] as const
+// The kring has five steps, the lead section four and the entries three; each takes the slice it needs.
+const STEP_KEYS = ['s1', 's2', 's3', 's4', 's5'] as const
+const PEOPLE_KEYS = ['i1', 'i2', 'i3', 'i4'] as const
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -207,50 +209,110 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </LazySection>
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 4b — De strategielaag (2026-09-01, naar boven 2026-10-10)
+          Sectie 4b — De kring (2026-10-12, verving de strategielaag)
 
-          De audit mat dat het product een complete strategielaag draait —
-          strategiesessie per merk, doelen met projectie, pijlers die per pijler
-          gemeten worden, een contentagenda over een jaarboog — en dat "doelen",
-          "jaarplanning" en "contentpijlers" als productfunctie NUL keer in
-          nl.json voorkwamen. De site verkocht Clyde als uitvoerder terwijl hij
-          bij het doel begint. Stond tot 2026-10-10 als 12e van 17 secties, na
-          de prijzen; daar las niemand hem. Nu direct na de vaardigheden.
+          Het verhaal uit de spec (fma-app, 2026-10-12-fmai-verhaal-ai-collega-
+          design §3.2): doel → research → agenda → uitvoering → rapporten, en
+          terug naar het doel. Direct na de vaardigheden, want Clyde begint bij
+          het doel en niet bij de post. "Analytics compleet" is richting, de
+          rapporten zijn live; daarom heet stap 5 "Rapporten".
           ──────────────────────────────────────────────────────────── */}
       <StepsSection
-        id="strategy"
-        eyebrow={t('strategy.eyebrow')}
-        title={t('strategy.title')}
-        subtitle={t('strategy.subtitle')}
-        steps={STEP_KEYS.map((k) => ({ t: t(`strategy.steps.${k}.t`), d: t(`strategy.steps.${k}.d`) }))}
+        id="kring"
+        eyebrow={t('kring.eyebrow')}
+        title={t('kring.title')}
+        subtitle={t('kring.subtitle')}
+        steps={STEP_KEYS.map((k) => ({ t: t(`kring.steps.${k}.t`), d: t(`kring.steps.${k}.d`) }))}
         screenshot="/screenshots/contentkalender.webp"
-        caption={t('strategy.caption')}
+        caption={t('kring.caption')}
       />
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 4c — Clyde kijkt mee (2026-10-10)
+          Sectie 4c — De mensen (2026-10-12, spec §3.3)
 
-          Daley: de site miste dat Clyde in elk scherm zit, alles bewaakt en
-          zelf op WhatsApp komt. Alleen wat in productie draait staat erin
-          (gemeten 2026-10-10): paneel in beide shells, signalen en
-          goedkeuringsmeldingen op WhatsApp, het SEO-weekrapport op vrijdag.
-          NIET claimen tot het gebouwd is: goedkeuren vanuit WhatsApp,
-          opdrachten van klanten via WhatsApp, het rapport in het gesprek
-          doorpraten.
+          Live gemeten: teamtoewijzing (/settings/team), het klantportaal met
+          goedkeuren, contentbibliotheek en aanvraagformulier, Clyde op
+          WhatsApp voor de klant. NIET claimen: dat een teamlid in Clyde's
+          geheugen alleen zijn eigen klanten ziet, en aanvragen via een
+          gesprek met Clyde (alleen het formulier bestaat).
+          ──────────────────────────────────────────────────────────── */}
+      <LazySection minHeight="280px">
+        <section aria-labelledby="people" className="py-20 px-6 lg:px-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto">
+              <EyebrowLabel>{t('people.eyebrow')}</EyebrowLabel>
+              <SectionHeading id="people">{t('people.title')}</SectionHeading>
+              <p className="mt-4 text-base lg:text-lg text-text-secondary leading-relaxed">{t('people.subtitle')}</p>
+            </div>
+            <ScrollReveal>
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+                {([['team', Users], ['client', UserRound]] as const).map(([side, Icon]) => (
+                  <div
+                    key={side}
+                    className="rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-7 lg:p-9"
+                  >
+                    <h3 className="flex items-center gap-3 font-display text-2xl font-bold text-text-primary">
+                      <Icon className="w-5 h-5 text-accent-system" aria-hidden />
+                      {t(`people.${side}.title`)}
+                    </h3>
+                    <ul className="mt-6 space-y-4">
+                      {PEOPLE_KEYS.map((k) => (
+                        <li key={k} className="flex gap-3 text-sm text-text-secondary leading-relaxed">
+                          <Check aria-hidden className="w-4 h-4 text-accent-system mt-[3px] shrink-0" />
+                          <span>{t(`people.${side}.items.${k}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-8 text-center text-base text-text-secondary leading-relaxed max-w-2xl mx-auto">
+                {t('people.note')}
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
+      </LazySection>
+
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 4d — Drie ingangen (2026-10-12, verving "Clyde kijkt mee")
+
+          Dashboard en WhatsApp zijn live, voor het bureau én voor de klant
+          (Clyde op WhatsApp voor de klant: live volgens spec §4, gemeten
+          2026-10-12, eigen koppeling per klantgebruiker). De mobiele app staat erin als
+          "in aanbouw" en nooit als bestaand. NIET claimen tot het gebouwd is:
+          goedkeuren vanuit WhatsApp, aanvragen van klanten via WhatsApp, het
+          rapport in het gesprek doorpraten.
           ──────────────────────────────────────────────────────────── */}
       <StepsSection
-        id="watch"
-        eyebrow={t('watch.eyebrow')}
-        title={t('watch.title')}
-        subtitle={t('watch.subtitle')}
-        steps={STEP_KEYS.map((k) => ({ t: t(`watch.steps.${k}.t`), d: t(`watch.steps.${k}.d`) }))}
+        id="entries"
+        eyebrow={t('entries.eyebrow')}
+        title={t('entries.title')}
+        subtitle={t('entries.subtitle')}
+        steps={STEP_KEYS.slice(0, 3).map((k) => ({ t: t(`entries.steps.${k}.t`), d: t(`entries.steps.${k}.d`) }))}
         screenshot="/screenshots/rapportage.webp"
-        caption={t('watch.caption')}
+        caption={t('entries.caption')}
       />
 
-      {/* Kanalen. Staat NA de strategie- en meekijksectie: eerst wat Clyde
-          doet, dan waar hij het doet. Alleen koppelingen die vandaag in
-          productie draaien — de uitsluitingen staan in PlatformStrip.tsx. */}
+      {/* ─────────────────────────────────────────────────────────────
+          Sectie 4e — Van post naar lead (2026-10-12, spec §3.2)
+
+          Het mechanisme zoals het in productie draait (attributie live sinds
+          2026-10-11): reactie of DM → Clyde antwoordt met een gevolgde link →
+          klik → gekoppeld formulier → trechter op /social. Geen resultaatcijfer:
+          er is nog geen lead aan een bureauklant toegeschreven.
+          ──────────────────────────────────────────────────────────── */}
+      <StepsSection
+        id="lead"
+        eyebrow={t('lead.eyebrow')}
+        title={t('lead.title')}
+        subtitle={t('lead.subtitle')}
+        steps={STEP_KEYS.slice(0, 4).map((k) => ({ t: t(`lead.steps.${k}.t`), d: t(`lead.steps.${k}.d`) }))}
+      />
+
+      {/* Kanalen. Staat NA de kring, de mensen, de ingangen en de lead-sectie:
+          eerst wat Clyde doet, dan waar hij het doet. Alleen koppelingen die
+          vandaag in productie draaien — de uitsluitingen staan in PlatformStrip.tsx. */}
       <LazySection minHeight="180px">
         <PlatformStrip locale={locale} />
       </LazySection>
@@ -384,7 +446,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
             <ScrollReveal>
               <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-5 auto-rows-fr">
-                {/* Tile A — Compliance, spans 2 cols on desktop, typographic 2-line */}
+                {/* Tile A — Controle (autonomie per taak), spans 2 cols on desktop, typographic 2-line */}
                 <div className="md:col-span-2 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-7 lg:p-9 flex flex-col justify-between min-h-[220px]">
                   <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
                     <ShieldCheck className="w-4 h-4" aria-hidden />
@@ -398,7 +460,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     {t('pillars.compliance.body')}
                   </p>
                   <Link
-                    href="/legal/privacy"
+                    href="/how-it-works"
                     className="mt-5 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
                   >
                     {t('pillars.compliance.linkText')}
@@ -406,7 +468,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </Link>
                 </div>
 
-                {/* Tile B — Infrastructure, single col, numeric */}
+                {/* Tile B — Data in de EU (spec §3.5: taalmodel standaard Anthropic, Mistral op verzoek), single col */}
                 <div className="md:col-span-1 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 flex flex-col justify-between min-h-[220px]">
                   <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
                     <ServerCog className="w-4 h-4" aria-hidden />
@@ -424,7 +486,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     {t('pillars.infrastructure.body')}
                   </p>
                   <Link
-                    href="/memory"
+                    href="/legal/privacy"
                     className="mt-4 inline-flex items-center gap-1 text-xs text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm self-start"
                   >
                     {t('pillars.infrastructure.linkText')}
@@ -562,7 +624,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   )
 }
 
-/** Numbered steps next to a product screenshot. Shared by the strategy and watch sections. */
+/** Numbered steps next to a product screenshot, or in two columns when there is none (lead, until task 6 brings one). */
 function StepsSection({
   id,
   eyebrow,
@@ -577,8 +639,8 @@ function StepsSection({
   title: string
   subtitle: string
   steps: { t: string; d: string }[]
-  screenshot: string
-  caption: string
+  screenshot?: string
+  caption?: string
 }) {
   return (
     <LazySection minHeight="280px">
@@ -591,7 +653,7 @@ function StepsSection({
           </div>
           <ScrollReveal>
             <div className="mt-10 grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
-              <ol className="lg:col-span-2 space-y-5">
+              <ol className={screenshot ? 'lg:col-span-2 space-y-5' : 'lg:col-span-5 grid gap-5 md:grid-cols-2 md:gap-x-10'}>
                 {steps.map((step, i) => (
                   <li key={step.t} className="flex gap-4">
                     <span
@@ -607,9 +669,11 @@ function StepsSection({
                   </li>
                 ))}
               </ol>
-              <div className="lg:col-span-3">
-                <AppScreenshot src={screenshot} alt={caption} caption={caption} />
-              </div>
+              {screenshot && (
+                <div className="lg:col-span-3">
+                  <AppScreenshot src={screenshot} alt={caption ?? ''} caption={caption ?? ''} />
+                </div>
+              )}
             </div>
           </ScrollReveal>
         </div>

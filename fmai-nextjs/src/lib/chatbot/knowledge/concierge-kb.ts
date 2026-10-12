@@ -53,7 +53,7 @@ Memory is positioned as the USP across all 12 skills: per-brand 4-layer memory (
 All plans include access to Clyde, the AI colleague, and all 12 skills. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
 **Founding Member. EUR 997/mo lifetime**: 10 spots only (1 taken). Recommended for early adopters and the cheapest path for portfolios of 3 or more brands.
-- Unlimited workspaces
+- Up to [DALEY: grens ~15] workspaces
 - 8,000 credits/mo
 - All 12 skills with Professional-tier caps
 - Lifetime price lock
