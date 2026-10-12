@@ -43,6 +43,8 @@ const SECTION_SUBSECTIONS: Record<string, string[]> = {
     'data_retention',
     'data_subject_rights',
     'international_transfers',
+    'ai_readiness_assessment',
+    'platform_data',
     'contact',
   ],
   cookies: [],
