@@ -22,24 +22,25 @@ export const LEADGEN_TOPICS: TopicDefinition[] = [
  ],
  content: `## Voor wie Clyde WEL en NIET werkt
 
-**Werkt uitstekend voor:**
-- Marketing bureaus met 3+ klantmerken actief
-- Solo operators die meerdere Instagram-accounts beheren (zie SkinClarity Club: 3 accounts, 1 persoon)
-- Teams die 10+ uur/week kwijt zijn aan repetitieve content, email, of rapportage
-- Bureaus die willen schalen zonder lineair meer mensen aan te nemen
+**Werkt goed voor:**
+- Marketingbureaus met 5 tot 20 mensen en 5 tot 20 klantmerken
+- Bureaus die per klant werken met doelen, een contentagenda en rapportage
+- Teams die veel tijd kwijt zijn aan repetitieve content, inbox of rapportage
+- Bureaus die meer klanten willen bedienen met het team dat ze hebben
 
 **Werkt NIET goed voor:**
-- Solo freelancers met 1 enkel merk — de investering weegt niet op tegen de schaal
-- Teams die elke post 100% handmatig willen goedkeuren en aanpassen vóór publicatie (Clyde drafts, jij approves — maar als je alles herschrijft is er geen winst)
-- Bedrijven met ultra-custom workflows die compleet afwijken van standaard marketing (bijv. alleen offline events, geen digitale content)
-- Bedrijven die < 3 actieve klantmerken hebben en geen plan om te groeien
-- Mensen die op zoek zijn naar een goedkoop AI-tool zonder begeleiding — Clyde is een managed partnership, niet een zelfbedieningsplatform
+- Solo freelancers met 1 enkel merk: de investering weegt niet op tegen de schaal
+- Teams die elke post volledig zelf willen herschrijven (Clyde maakt, jij keurt goed; als je alles herschrijft is er geen winst)
+- Bedrijven met workflows die compleet afwijken van digitale marketing (bijvoorbeeld alleen offline events)
+- Bedrijven met minder dan 3 actieve klantmerken en geen plan om te groeien
+- Wie een goedkope AI-tool zonder begeleiding zoekt: Clyde is een partnership met onboarding, geen zelfbedieningsplatform
 
 **Eerlijke verwachtingen:**
-- Setup duurt 4 weken — er is geen instant resultaat op dag 1
-- Clyde vervangt strategisch denken niet — je hebt nog steeds een menselijke strateeg nodig
-- Tijdsbesparing is 15-20 uur/week, niet 40 — de complexe werk blijft bij jou
-- Eerste maand is onboarding en tuning, content schaalt op in maand 2-3`,
+- De onboarding duurt 4 weken: er is geen instant resultaat op dag 1
+- Clyde vervangt strategisch denken niet: de strategie bepaal je samen, jouw team beslist
+- Clyde neemt werk weg, maar vervangt niemand: je team keurt goed en houdt de regie
+- De eerste maand is onboarding en bijsturen op feedback
+- Er zijn nog geen gemeten resultaatcijfers om te beloven`,
  },
  {
  key: 'content_types',
@@ -60,23 +61,21 @@ export const LEADGEN_TOPICS: TopicDefinition[] = [
  ],
  content: `## Content Types Clyde Produces
 
-**Blog Posts & Articles**
-SEO-optimized long-form content (800-2000 words). Includes meta descriptions, internal linking suggestions, and keyword targeting. Output: 2-4 articles per week per client.
+**Social posts (Instagram, LinkedIn)**
+Captions in the brand voice and carousels (usually 5 to 7 slides) in the house style, following the brand's hashtag strategy. Published after approval, according to the content agenda. Other networks via Postiz on request.
 
-**LinkedIn Posts**
-Professional thought leadership posts, carousel text, and engagement-driving questions. Platform-optimized formatting with hashtag strategy. Output: 3-5 posts per week.
+**Blog articles**
+SEO articles whose length follows the search intent and the pages that already rank. Meta description, heading structure and internal links are checked. Published after approval to an MDX site, a Shopify blog or a custom connection.
 
-**Instagram Content**
-Captions for feed posts, stories text, and reel scripts. Includes emoji strategy, hashtag sets, and call-to-action variants. Output: 4-7 pieces per week.
+**Ads (Meta)**
+Ad copy plus static or video creatives in Feed, Story and Reel formats, with variants to test. Prepared for approval; ad spend is always proposed first.
 
-**Newsletters**
-Email newsletters with subject line A/B variants, preview text, and structured sections (intro, main story, tips, CTA). Output: 1-2 per week.
+**Email draft replies**
+Draft replies to incoming mail in the brand voice. This is inbox management, not newsletters or campaigns.
 
-**Video Scripts**
-Short-form video scripts (30-90 seconds) for reels, TikTok, and YouTube Shorts. Includes hook, body, and CTA structure. Output: 2-3 scripts per week.
+**Not available today:** newsletters and email campaigns, Google Ads and LinkedIn Ads, TikTok and YouTube Shorts. Reel scripts and video come with the Reel Builder, which is coming soon.
 
-**Ad Copy**
-Google Ads headlines and descriptions, Meta ad primary text and headlines, LinkedIn sponsored content. Includes A/B test variants. Output: ad sets with 3-5 variants.`,
+How much is produced follows the content agenda per client; there are no fixed weekly quotas.`,
  },
  {
  key: 'content_strategy',
@@ -95,27 +94,26 @@ Google Ads headlines and descriptions, Meta ad primary text and headlines, Linke
  ],
  content: `## Content Strategy Framework
 
-**Discovery Phase (What the AI Asks First)**
+**Strategy per client**
+At onboarding the agency and Clyde run a strategy session per client: goals (with a projection), target audience, brand voice and content pillars, backed by research on the audience, the ideal customer and competitors.
+
+**Discovery questions**
 1. Client industry and niche
-2. Target audience demographics and psychographics
+2. Target audience
 3. Primary business goals (awareness, leads, sales, retention)
 4. Existing brand voice and tone guidelines
 5. Competitor landscape and differentiation
 
-**Content Pillar Approach**
-The AI organizes content around 3-5 pillars per client:
+**Content pillars**
+Content is organized around pillars per client, for example:
 - Educational content (how-to guides, tips, industry insights)
-- Authority content (case studies, data-driven posts, expert opinions)
-- Engagement content (polls, questions, behind-the-scenes)
+- Authority content (expertise, behind the work)
+- Engagement content (questions, behind-the-scenes)
 - Promotional content (offers, product highlights, CTAs)
-- Community content (user stories, testimonials, culture posts)
+- Community content (customer stories, culture posts)
 
-**Recommended Posting Cadence by Platform:**
-- LinkedIn: 3-5x/week (Tuesday-Thursday peak)
-- Instagram: 4-7x/week (evenings and weekends peak)
-- Blog: 2-4x/week (consistency matters more than volume)
-- Newsletter: 1-2x/week (Tuesday and Thursday mornings)
-- Ads: Refresh creatives every 2-4 weeks`,
+**The loop**
+Goals and pillars set the content agenda per channel. Clyde creates, the team and the client approve. Performance per post weighs in on which pillars Clyde schedules more often, and the weekly report feeds the next goal. The cadence is set per client, not a fixed number of posts.`,
  },
  {
  key: 'seo_basics',
@@ -147,7 +145,6 @@ Every blog post and article is created with SEO best practices:
 - Each post targets one primary keyword and 2-3 related terms
 - Content clusters: pillar pages linked to supporting articles
 - FAQ sections for featured snippet opportunities
-- Image alt text suggestions for visual content
 
 **What the AI Does NOT Do:**
 - No keyword stuffing or unnatural placement
@@ -170,21 +167,19 @@ Every blog post and article is created with SEO best practices:
  ],
  content: `## Brand Voice Adaptation
 
-**How the AI Adapts to Each Client's Voice**
-The Content Creator skill maintains a separate brand voice profile per client workspace. Content for a law firm reads completely differently from content for a fitness studio.
+**How Clyde Adapts to Each Client's Voice**
+Clyde keeps a brand voice per client, used by Social Media, Blog Factory, Email Management and Clyde himself. Content for a law firm reads completely differently from content for a fitness studio.
 
-**Voice Parameters:**
-- Formality: corporate, professional, conversational, casual
-- Energy: calm, enthusiastic, bold, understated
-- Expertise level: expert (assumes knowledge), educational (explains concepts), accessible (simple language)
-- Humor: none, subtle, frequent
-- Sentence style: short and punchy, balanced, detailed and thorough
+**What a brand voice covers:**
+- Tone and formality
+- Words to use and words to avoid
+- Do's and don'ts per client
+- Examples of approved content
 
-**Consistency Mechanisms:**
-- Voice profile is loaded before every content generation
-- Output is checked against voice parameters before delivery
-- Agencies can fine-tune by rating generated content (thumbs up/down)
-- Voice profiles improve over time with feedback
+**Consistency:**
+- The brand voice is part of the context for every piece of content
+- Corrections and comments from review are stored in the client's memory and used in the next request
+- The agency approves before anything is published
 
 **Example Voice Contrasts:**
 - Law firm: "Our team ensures full regulatory compliance for your expansion." (formal, expert, calm)
@@ -206,27 +201,14 @@ The Content Creator skill maintains a separate brand voice profile per client wo
  ],
  content: `## Content Calendar Planning
 
-**How the AI Plans Content**
-Given a client brief and active content types, the AI generates a weekly content calendar:
-1. Maps content pillars to days of the week
-2. Balances content types (educational, promotional, engagement)
-3. Accounts for industry events, holidays, and seasonal trends
-4. Varies formats to keep the audience engaged
-5. Builds in repurposing (blog post becomes 3 social posts and a newsletter section)
+**How Clyde Plans Content**
+The content agenda per channel follows from the client's goals and content pillars:
+1. Clyde fills the agenda with post proposals per account
+2. He varies pillars and formats (posts, carousels)
+3. The team reviews the calendar, moves posts by drag and drop and approves
+4. The client sees their own content in their own dashboard
+5. Approved posts are published at the planned time
 
-**Sample Weekly Calendar (Marketing Agency Client):**
-- Monday: LinkedIn thought leadership post + blog article
-- Tuesday: Instagram carousel + newsletter draft
-- Wednesday: LinkedIn case study post + blog article
-- Thursday: Instagram reel script + LinkedIn engagement post
-- Friday: Weekly performance summary + next week preview
-
-**Batch Production:**
-The AI generates content in batches for efficiency. A typical weekly batch for one client includes:
-- 2-3 blog posts (drafted, SEO-optimized)
-- 5 LinkedIn posts (with image suggestions)
-- 5 Instagram captions (with hashtag sets)
-- 1 newsletter (with subject line variants)
-- Ad copy refreshes (if ad skill is active)`,
+There are no fixed weekly quotas: the cadence is set per client, and performance per post weighs in on which pillars come back more often.`,
  },
 ]
