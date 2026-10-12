@@ -38,3 +38,23 @@ De eindverificatie (lint, build, /nl /en /es op 1440 en 390) volgt bij de afrond
   (159 totaal, ongewijzigd).
 - **Claim 7.** De 5 ESLint-fouten in `ChatWidgetIsland.tsx` zijn in de vorige handover (stream 3, bij `a7fe90e`)
   gemeten op een kopie van de origin/main-versie van dat bestand en stonden daar ook. Geen werk voor deze stream.
+
+## Taak 5: EN/ES (gemeten 2026-10-12 22:20 lokale tijd, HEAD 8320b0a)
+
+Commits 43a90a2, 211565c, 0bbd4d4, 283c529, ed0449a, 2b92091 (messages) en 8320b0a (src/lib/chatbot/skill-i18n.ts).
+Alles gemeten vanuit `fmai-nextjs/`, de werkboom was schoon.
+
+| # | Claim | Verdict | Bewijs |
+|---|---|---|---|
+| 12 | EN/ES volgen elke NL-sleutel die op de branch veranderde | PASS | `T5_MAX=99999 node ~/.claude/fmai-site-tools/t5/check.mjs` geeft `parity OK`, exit 0. Bij de baseline waren het 1038 issues. |
+| 13 | Copy-check schoon (vervangt rij 6) | PASS | `npm run check:copy` geeft `check-verhaal-copy: schoon`, exit 0. Er staan geen `[DALEY:`-placeholders meer. |
+| 14 | Geen verweesde of ontbrekende i18n-sleutels | PASS | `npm run check:i18n-orphans` geeft `OK (42 namespaces, 3 locales)`, exit 0. `prune.mjs` verwijderde 0 sleutels in EN en 0 in ES. |
+| 15 | llms.txt en llms-full.txt kloppen met de SSoT | PASS | `npm run check:llms` geeft OK (12 skills: 10 live, 2 coming soon; max 10 partners per jaar; 10 founding-plekken), exit 0. |
+| 16 | Types kloppen na de overlay-edit | PASS | `npx tsc --noEmit` exit 0. |
+| 17 | De 9 chatbot-overlays volgen skills-data.ts (NL) | PASS (gelezen, geen test) | In skill-i18n.ts zijn deze claims weg: optimal timing, Facebook, 1.500-3.000 woorden, automatisch publiceren, direct naar Meta publiceren, leads/CPL, A/B, real-time, anomaly, keyword ranking, de Clyde-feature "Knowledge base with search". Voice Agent en Reel Builder heten nu "Coming soon / Próximamente … Not available yet / Todavía no disponible". lead-qualifier, email-management en manychat zijn niet aangeraakt (zij waren al bijgewerkt in 0bc13a6). |
+| 18 | Drift buiten de werklijst opgeruimd | PASS | Een token-sweep (EN/ES-tokens die niet in NL voorkomen) vond 2 ES-claims: `skills-reporting.features.feature1.body` beloofde "lunes 08:00" en `skills-clyde.features.feature3.body` noemde Slack. Beide zijn rechtgezet in 283c529 en ed0449a. "Vapi" staat nog 2 keer per locale in `skills-voice-agent` q5; dat is de bewuste vergelijkingsvraag. |
+
+Open na taak 5:
+
+- `legal.last_updated` zegt "October 12, 2026" / "12 de octubre de 2026" (NL idem). Zet het bij de merge op de mergedatum.
+- Niet gemeten: `next build`, lint, en de visuele controle van /nl /en /es op 1440 en 390 px, inclusief /legal (de `\n`-regels). Dat hoort bij taak 6.
