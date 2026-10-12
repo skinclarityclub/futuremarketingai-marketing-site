@@ -129,3 +129,16 @@ Open na de merge:
 - **Interne documenten met dezelfde DPF-fout** (niet live, niet aangepast): `docs/legal/dpia-ai-agent-processing.md:166,215` en `docs/wetgeving-aaas-nederland-eu.md:154`.
 - **Perplexity:** de DPF-hercertificering is op 2026-10-08 verlopen (as of 2026-10-12, dataprivacyframework.gov). De legaltekst noemt Perplexity niet onder DPF, dus daar staat geen fout.
 - Ongewijzigd uit "Open na taak 6": EN-hero, mobiele poster, vignet, demo-screenshots (creditteller, het fictieve voltooide doel op `doelen.webp`, Engelse onboarding-UI).
+
+## Vervolg: de laatste acties (2026-10-13 ~00:40-01:10 lokale tijd)
+
+Daley: "Jij moet de laatste acties doen".
+
+| # | Claim | Verdict | Bewijs |
+|---|---|---|---|
+| 40 | De Meta-app heeft een verwijder-URL | PASS | Meta-app `1809736196273684` (FutureMarketingAI), App settings > Basic > User data deletion: "Data deletion instructions URL" = https://future-marketing.ai/en/legal/privacy#privacy-platform_data. Het veld was leeg. Opgeslagen en na herladen teruggelezen. De callback in het Instagram-product is niet aangeraakt; die is van de data-deletion-sessie (peers-sleutel `meta:deletion-instructions-url`). |
+| 41 | Upstash Redis staat in de EU | PASS | `INFO` via de REST-API: `all_members:eu-central-1-r4,eu-central-1-r6`, `primary_member:eu-central-1-r4`, vanuit de EU (VPS) en vanuit Azië hetzelfde. Het ap-southeast-1-IP uit de DNS was een netwerk-ingang, geen kopie van de data. Open punt in de verwerkersovereenkomst gesloten. |
+| 42 | Het Gemini-project valt onder de DPA voor betaalde diensten | PASS, met bijvangst | Een minimale call met `GEMINI_API_KEY` uit `.env.local` geeft 402 "Your prepayment credits are depleted", dus het project heeft prepaid billing. Bijvangst: het tegoed is op. Of prod dezelfde key gebruikt is niet gemeten, want de waarde is versleuteld. |
+| 43 | Interne documenten claimen geen DPF meer voor Anthropic en OpenAI | PASS | `docs/legal/dpia-ai-agent-processing.md` (beschrijving 3.4, maatregelrij 3.4 nu "Deels", plus een kop "Verouderd") en `docs/wetgeving-aaas-nederland-eu.md:154`. Gemeten TOM-feiten staan in open punt 4 van de verwerkersovereenkomst: ufw en fail2ban actief, wachtwoord-login uit, geen TIA-document, audit-tabellen alleen per onderdeel. |
+
+Nog steeds bij Daley: partijen en KvK, Firecrawl-DPA, Hetzner-DPA (accountpagina achter een botcontrole), de TOM-beweringen, Meta/Telegram in de privacyverklaring, Gemini-tegoed.

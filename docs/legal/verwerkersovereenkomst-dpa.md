@@ -11,15 +11,15 @@ source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md, privacyverklaring op
 
 > **Disclaimer**: Dit is een conceptdocument en geen juridisch advies. Professioneel juridisch advies wordt sterk aanbevolen voordat dit document wordt gebruikt.
 
-> **Open punten (intern, verwijderen vóór verzending).** Bijgewerkt op 2026-10-12, zodat het concept aansluit op de subverwerkers en bewaartermijnen in de privacyverklaring. Wat nog open staat:
+> **Open punten (intern, verwijderen vóór verzending).** Bijgewerkt op 2026-10-12 en 2026-10-13, zodat het concept aansluit op de subverwerkers en bewaartermijnen in de privacyverklaring. Wat nog open staat:
 >
 > 1. **Partijen**: juridische naam (nu "Future Marketing AI B.V. (i.o.)"), adres, KvK-nummer en contactpersoon invullen.
 > 2. **Firecrawl**: geen openbare DPA en geen SCC's gevonden. Een DPA opvragen, of Firecrawl geen persoonsgegevens laten verwerken.
-> 3. **Upstash Redis**: volgens DNS staat er vanuit de EU een instantie in Frankfurt en vanuit Azië een in Singapore (gemeten 2026-10-12). Dat wijst op een replica buiten de EU. Controleer de primaire regio en de leesregio's in de Upstash-console.
-> 4. **Hetzner**: de verwerkersovereenkomst moet in het Hetzner-account worden afgesloten. Of dat gebeurd is, is niet gecontroleerd.
-> 5. **Google Gemini**: de DPA geldt alleen voor betaalde diensten. Controleer dat het gebruikte project billing heeft.
-> 6. **Niet getoetste beweringen** in dit concept: audit logging met 90 dagen bewaring en intrusion detection (9.1), achtergrondcontrole en training (9.2), "heeft een TIA uitgevoerd" (11.2) en melding van een datalek binnen 24 uur (12.2). Bevestigen of aanpassen.
-> 7. **Meta (Instagram/Facebook) en Telegram** staan in Annex A apart als derde partij, omdat zij daar zelf verantwoordelijk zijn. De privacyverklaring noemt ze nog gewoon bij de sub-verwerkers.
+> 3. **Hetzner**: de verwerkersovereenkomst moet in het Hetzner-account worden afgesloten (accounts.hetzner.com/account/dpa). Of dat gebeurd is, is niet gecontroleerd: de accountpagina zit achter een botcontrole.
+> 4. **Beweringen in 9.1, 9.2, 11.2 en 12.2**, gemeten op 2026-10-13. De firewall (ufw) en fail2ban (sshd-jail) staan aan op de eigen server en wachtwoord-login is uit. "Intrusion detection" is dus fail2ban op SSH, niet meer. Er bestaan audit-tabellen per onderdeel (klanttoegang, service-role, koppelingen, strategie, WhatsApp, chatbot-consent), maar geen log van "alle verwerkingsactiviteiten", en de bewaring van 90 dagen is niet aangetoond. Er bestaat geen TIA-document, dus "heeft een TIA uitgevoerd" (11.2) klopt niet. Achtergrondcontrole, training en melding binnen 24 uur zijn beloftes. Bevestigen of aanpassen.
+> 5. **Meta (Instagram/Facebook) en Telegram** staan in Annex A apart als derde partij, omdat zij daar zelf verantwoordelijk zijn. De privacyverklaring noemt ze nog gewoon bij de sub-verwerkers.
+>
+> Opgelost op 2026-10-13: Upstash Redis staat volledig in Frankfurt (zie Annex A), en het Gemini-project heeft prepaid billing, dus de DPA voor betaalde diensten geldt.
 
 ---
 
@@ -324,8 +324,8 @@ De categorieën volgen artikel 5 van de privacyverklaring. "DPF" is het EU-VS Da
 | --- | --- | --- | --- | --- | --- |
 | Supabase | Supabase Pte. Ltd. (Singapore); support en operations door Supabase, Inc. (VS) | Database, authenticatie en opslag | EU (Frankfurt, eu-central-1). Account-, billing-, support- en telemetriegegevens buiten de regio | SCC (geen DPF) | Ja |
 | Vercel | Vercel Inc. (VS) | Hosting van de applicatie en CDN | Serverfuncties in Frankfurt (fra1), CDN wereldwijd. Volgens de Vercel-DPA zitten de primaire voorzieningen in de VS | DPF + SCC | Ja |
-| Hetzner | Hetzner Online GmbH (Duitsland) | Eigen server voor automatiseringen (n8n), de kennisbank en het inplannen van posts (Postiz, zelf-gehost) | Duitsland, Neurenberg (nbg1) | n.v.t. (EU) | Ja, af te sluiten in het Hetzner-account (zie open punt 4) |
-| Upstash | Upstash, Inc. (VS) | Wachtrijen (QStash) en tijdelijke opslag (Redis) | QStash: Frankfurt (eu-central-1). Redis: zie open punt 3 | DPF + SCC | Ja |
+| Hetzner | Hetzner Online GmbH (Duitsland) | Eigen server voor automatiseringen (n8n), de kennisbank en het inplannen van posts (Postiz, zelf-gehost) | Duitsland, Neurenberg (nbg1) | n.v.t. (EU) | Ja, af te sluiten in het Hetzner-account (zie open punt 3) |
+| Upstash | Upstash, Inc. (VS) | Wachtrijen (QStash) en tijdelijke opslag (Redis) | Frankfurt (eu-central-1). De Redis-database heeft twee leden, allebei in eu-central-1 (gemeten 2026-10-13) | DPF + SCC | Ja |
 | Sentry | Functional Software, Inc. (VS) | Foutmeldingen | Opslagregio ONBEKEND. Op 2026-10-12 was in productie geen Sentry-DSN ingesteld, dus ontving Sentry toen geen gegevens | DPF + SCC | Ja |
 
 **Taalmodellen en AI**
@@ -334,7 +334,7 @@ De categorieën volgen artikel 5 van de privacyverklaring. "DPF" is het EU-VS Da
 | --- | --- | --- | --- | --- | --- |
 | Anthropic | Anthropic Ireland, Limited (Ierland) | Taalmodel voor tekst | VS (opslag at rest alleen in de VS) | SCC (geen DPF) | Ja |
 | OpenAI | OpenAI Ireland Ltd. (Ierland) | Taalmodel voor tekst en beeld | ONBEKEND. FMai gebruikt het standaard-endpoint en geen EU-project; EU-residentie bestaat alleen voor een EU-project | SCC (geen DPF) | Ja |
-| Google Gemini API | Google Cloud EMEA Limited (Ierland) | Research en productanalyse | Wereldwijd | DPF (Google LLC) + SCC | Ja, alleen voor betaalde diensten (zie open punt 5) |
+| Google Gemini API | Google Cloud EMEA Limited (Ierland) | Research en productanalyse | Wereldwijd | DPF (Google LLC) + SCC | Ja, geldt voor betaalde diensten; het project heeft prepaid billing (gemeten 2026-10-13) |
 | Perplexity | Perplexity AI, Inc. (VS) | Research met bronvermelding | VS (AWS, Noord-Amerika) | SCC. De DPF-hercertificering is op 2026-10-08 verlopen | Ja |
 | Voyage AI | Voyage AI Innovations Inc. (VS), dochter van MongoDB, Inc. | Kennis en geheugen doorzoekbaar maken | VS volgens het privacybeleid; regio ONBEKEND | DPF (via MongoDB, Inc.) + SCC | Ja |
 

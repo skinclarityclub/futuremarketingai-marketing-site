@@ -151,7 +151,7 @@ Dit is een van de complexste uitdagingen:
 
 **EU-US Data Privacy Framework (DPF)**:
 - Aangenomen juli 2023 als opvolger van Privacy Shield
-- OpenAI en Anthropic zijn gecertificeerd onder het DPF
+- OpenAI en Anthropic staan NIET in het DPF (gecontroleerd 2026-10-12 op dataprivacyframework.gov). EER-klanten contracteren met hun Ierse entiteit en de doorgifte naar de VS loopt via SCC's
 - MAAR: juridische aanvechting (Schrems III) wordt verwacht — het DPF kan opnieuw ongeldig worden verklaard
 
 **Provider-specifieke oplossingen**:

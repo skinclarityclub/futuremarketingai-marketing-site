@@ -11,6 +11,8 @@ source: 'GDPR Art. 35, WP29 richtlijnen, docs/wetgeving-aaas-nederland-eu.md'
 
 > **Disclaimer**: Dit is een conceptdocument en geen juridisch advies. Professioneel juridisch advies wordt sterk aanbevolen voordat dit document wordt gebruikt. Een DPIA dient regelmatig te worden geactualiseerd bij wijzigingen in de verwerking.
 
+> **Verouderd (2026-10-13).** Dit document is sinds maart 2026 niet herzien. Voice en Vapi bestaan niet meer. De actuele sub-verwerkers met land en waarborg staan in Annex A van `docs/legal/verwerkersovereenkomst-dpa.md`. Alleen de DPF-uitspraken hieronder zijn gecorrigeerd.
+
 **Versie**: 1.0
 **Datum**: maart 2026
 **Verantwoordelijke**: Future Marketing AI B.V. (i.o.)
@@ -163,7 +165,7 @@ De volgende maatregelen zijn getroffen om data minimalisatie te waarborgen:
 
 ### 3.4 Risico: Doorgifte van persoonsgegevens naar sub-verwerkers buiten de EU
 
-**Beschrijving**: Bepaalde sub-verwerkers (OpenAI, Anthropic, Vapi) zijn gevestigd in de VS. API-calls naar deze diensten kunnen persoonsgegevens buiten de EU/EER brengen, ondanks DPF-certificering.
+**Beschrijving**: Bepaalde sub-verwerkers verwerken gegevens in de VS, waaronder Anthropic en OpenAI. API-calls naar deze diensten brengen persoonsgegevens buiten de EU/EER. Anthropic en OpenAI staan niet in het DPF: FMai contracteert met hun Ierse entiteit en de doorgifte naar de VS loopt via SCC's (gecontroleerd 2026-10-12 op dataprivacyframework.gov).
 
 **Waarschijnlijkheid**: Middel
 **Impact**: Middel
@@ -212,7 +214,7 @@ De volgende maatregelen zijn getroffen om data minimalisatie te waarborgen:
 | 3.1 Content met persoonsgegevens | Content review workflow: AI-output wordt als concept geleverd, agency beoordeelt voor publicatie                                       | Geimplementeerd |
 | 3.2 Spraakopnames                | Encryptie at rest (AES-256) en in transit (TLS 1.2+); toegang beperkt tot geautoriseerd personeel; retentie max 90 dagen               | Geimplementeerd |
 | 3.3 Cross-client lekkage         | Tenant-isolatie via Row Level Security (RLS) in Supabase; gescheiden API-keys per workspace; geautomatiseerde isolatietests            | Geimplementeerd |
-| 3.4 Internationale doorgifte     | Gebruik van EU-datacenterregio's bij OpenAI en Anthropic; Zero Data Retention (ZDR) ingeschakeld; DPF + SCCs                           | Geimplementeerd |
+| 3.4 Internationale doorgifte     | SCC's voor Anthropic en OpenAI (niet in het DPF); DPF + SCC's voor gecertificeerde partijen (Annex A verwerkersovereenkomst). Geen EU-regio bij Anthropic en OpenAI (standaard-endpoint); ZDR niet aangetoond | Deels           |
 | 3.5 Geautomatiseerde profilering | Leadscore is adviserend, niet besluitvormend; agency neemt de uiteindelijke beslissing; opt-out mogelijkheid                           | Geimplementeerd |
 | 3.6 Recht op vergetelheid        | Verwijderingsmechanisme per klant-ID; ZDR bij LLM-providers zodat gegevens niet in modellen worden opgenomen; verwijderingsbevestiging | Gepland         |
 | 3.7 Onjuiste informatie          | AI-disclosure aan begin van elk gesprek; guardrails en content filters; menselijke controle op kritieke uitingen                       | Geimplementeerd |
