@@ -135,7 +135,10 @@ $NEXTDEV_SIG = 'next[\\/]dist[\\/]bin[\\/]next|next-server|next-router-worker|ne
 # [KILL] bash.exe reason=orphan-shell age=609s nam een wachtende `npm test` mee, die eindigde op exit 0
 # zonder testuitvoer (fma-app designronde D1 en D2, vijf keer). `typecheck` om dezelfde reden: een
 # `npm run typecheck` duurt minuten en matchte (test|build) evenmin.
-$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm"? (run )?(test|build|typecheck)|heavy-runner|tsc --noEmit|codex'
+# DETACH_LONGRUN: ~/.claude/scripts/detach.ps1 zet die marker in de cmd-regel van elke run die een sessie
+# moet overleven. Zo'n WMI-cmd heeft per ontwerp een dode ouder; gemeten 2026-10-14 04:36:46 reapte de
+# orphan-shell-regel er een (cmd 48740) en taskkill /T nam een betaalde auditrun op 66/94 mee.
+$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm"? (run )?(test|build|typecheck)|heavy-runner|tsc --noEmit|codex|DETACH_LONGRUN'
 
 # ---------------------------------------------------------------------------
 $started = Get-Date
