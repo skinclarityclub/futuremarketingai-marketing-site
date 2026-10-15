@@ -1,10 +1,21 @@
 import createMiddleware from 'next-intl/middleware'
 import { NextResponse, type NextRequest } from 'next/server'
 import { routing } from './i18n/routing'
+import { clientIp, voorAllowed } from './lib/voor-ratelimit'
 
 const intlMiddleware = createMiddleware(routing)
 
-export default function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
+  // Personal video pages live outside [locale]: no next-intl, no locale redirect.
+  if (request.nextUrl.pathname.startsWith('/voor/')) {
+    if (!(await voorAllowed('page', clientIp(request.headers)))) {
+      return new NextResponse(null, { status: 429, headers: { 'Retry-After': '600' } })
+    }
+    // set() overwrites an x-voor-method the visitor sent themselves.
+    const h = new Headers(request.headers)
+    h.set('x-voor-method', request.method)
+    return NextResponse.next({ request: { headers: h } })
+  }
   const response = intlMiddleware(request)
   // next-intl adds the locale prefix with a 307. Temporary tells Google the
   // unprefixed URL is the real one, so it indexed /kennisbank/<slug> and
