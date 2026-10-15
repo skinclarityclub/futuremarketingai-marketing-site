@@ -3,7 +3,7 @@ import { randomInt } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
-// Proof of /voor/<slug> in a real Chrome against the stub of the app (tests/e2e/stubs/video-pages-app.mjs).
+// Proof of /voor/<slug> in a real Chrome against the stub of the app (tests/e2e-voor/stubs/video-pages-app.mjs).
 // The stub never orders events: these tests prove what the BROWSER sends and when it starts measuring.
 
 const STUB = 'http://localhost:3999'
@@ -160,6 +160,16 @@ async function consentConfirmed(page: Page, slug: string) {
   await expect.poll(() => stored(page, slug, 'bevestigd')).toMatchObject({ on: true })
 }
 
+/** Lets a held answer through, waits until the page has received it and until its handler (under the lock) has run. */
+async function answerLate(page: Page, slug: string, seq: number, release: () => void) {
+  const answered = page.waitForResponse(
+    (r) => r.url().endsWith('/api/voor/event') && r.request().postDataJSON()?.kind === 'consent' && r.request().postDataJSON()?.seq === seq,
+  )
+  release()
+  await answered
+  await page.evaluate((s) => navigator.locks.request(`voor:${s}`, () => undefined), slug)
+}
+
 const watches = (evs: Ev[]) => evs.filter((e) => e.kind === 'watch')
 
 async function twoTabs(context: BrowserContext, slug: string) {
@@ -299,9 +309,8 @@ test.describe('voor', () => {
     await expect.poll(() => stored(page, slug, 'keuze')).toMatchObject({ on: false, seq: 2 })
     await expect.poll(() => stored(page, slug, 'bevestigd')).toMatchObject({ on: false, seq: 2 })
     const before = await stored(page, slug, 'bevestigd')
-    held.release('continue')
+    await answerLate(page, slug, 1, () => held.release('continue'))
     await expect.poll(async () => tags(await stubEvents(request, slug)).sort()).toEqual(['consent:1', 'consent_withdrawn:2'])
-    await page.waitForTimeout(500)
     expect(await stored(page, slug, 'bevestigd')).toEqual(before)
     expect(await stored(page, slug, 'keuze')).toMatchObject({ on: false, seq: 2 })
     await expect(sw(page)).toHaveAttribute('aria-checked', 'false')
@@ -375,8 +384,7 @@ test.describe('voor', () => {
     await expect(sw(one)).toHaveAttribute('aria-checked', 'false')
     await expect.poll(() => stored(two, slug, 'bevestigd')).toMatchObject({ on: false, seq: 2 })
     const before = await stored(two, slug, 'bevestigd')
-    held.release('continue')
-    await one.waitForTimeout(800)
+    await answerLate(one, slug, 1, () => held.release('continue'))
     expect(await stored(one, slug, 'bevestigd')).toEqual(before)
     for (const p of [one, two]) {
       await startVideo(p)
@@ -408,6 +416,7 @@ test.describe('voor', () => {
     // One evaluate per tab, same tick: a locator click would let the first tab's storage event flip the other switch first.
     await Promise.all([one, two].map((p) => p.evaluate(() => (document.querySelector('[role=switch]') as HTMLElement).click())))
     await expect.poll(async () => (await stubEvents(request, slug)).filter((e) => e.kind === 'consent').length).toBe(2)
+    await one.waitForTimeout(500) // poll stops at the first match: a third consent must not follow
     const consents = (await stubEvents(request, slug)).filter((e) => e.kind === 'consent')
     expect(consents.map((e) => e.seq).sort()).toEqual([1, 2])
     expect(new Set(consents.map((e) => e.visitor)).size).toBe(1)
@@ -415,6 +424,7 @@ test.describe('voor', () => {
     await expect(sw(one)).toHaveAttribute('aria-checked', 'true')
     await sw(one).click()
     await expect.poll(async () => (await stubEvents(request, slug)).filter((e) => e.kind === 'consent_withdrawn').length).toBe(1)
+    await one.waitForTimeout(500)
     const out = (await stubEvents(request, slug)).filter((e) => e.kind === 'consent_withdrawn')
     expect(out[0].seq).toBe(3)
     expect(out[0].visitor).toBe(consents[0].visitor)
@@ -497,31 +507,49 @@ test.describe('voor', () => {
 
   test('kijksegment over een keuzewissel', async ({ page, request }) => {
     const slug = newSlug()
+    await page.clock.install() // real time keeps flowing; the page's timers are the clock's, so nothing runs ahead
     const sent = watchEvents(page)
+    const held = hold(page, 'consent', 3) // the answer to seq 3 is held, so click and confirmation are far apart
     await open(page, slug)
     await startVideo(page)
     await pause(page)
     await consentConfirmed(page, slug) // seq 1
-    // Double speed keeps the whole test inside the player's first 15 s flush interval, which would split the segment.
     await page.evaluate(() => {
       const v = document.querySelector('video')!
       v.currentTime = 0
-      v.playbackRate = 2
       void v.play()
     })
     await page.waitForFunction(() => document.querySelector('video')!.currentTime >= 3, null, { polling: 'raf' })
     await toggleOff(page) // seq 2
-    const tBefore = await time(page)
-    await toggleOn(page) // seq 3
-    await expect.poll(() => stored(page, slug, 'bevestigd')).toMatchObject({ on: true, seq: 3 })
+    await sw(page).click() // seq 3, held
+    await held.seen
+    const tClick = await time(page)
+    await page.waitForTimeout(1000)
+    held.release('continue')
+    // The video time in the very frame in which `bevestigd` turns seq 3: the segment may not start before it.
+    const tConfirm = (await (
+      await page.waitForFunction(
+        (k) => {
+          try {
+            const c = JSON.parse(localStorage.getItem(k) ?? 'null')
+            return c?.seq === 3 && c.on === true ? document.querySelector('video')!.currentTime : false
+          } catch {
+            return false
+          }
+        },
+        `voor:${slug}:bevestigd`,
+        { polling: 'raf' },
+      )
+    ).jsonValue()) as number
+    expect(tConfirm).toBeGreaterThan(tClick + 0.5)
     await playUntil(page, 8)
     await expect.poll(() => watches(sent).filter((e) => e.seq === 3).length).toBe(1)
     await page.waitForTimeout(500)
+    expect(watches(sent).filter((e) => e.seq === 3)).toHaveLength(1)
     expect(watches(sent).filter((e) => e.seq === 1)).toEqual([])
     const w = watches(await stubEvents(request, slug)).filter((e) => e.seq === 3)
     expect(w).toHaveLength(1)
-    expect(w[0].from!).toBeGreaterThanOrEqual(tBefore - 0.1)
-    expect(w[0].from!).toBeGreaterThan(2.9)
+    expect(w[0].from!).toBeGreaterThanOrEqual(tConfirm - 0.1)
     expect(Math.abs(w[0].to! - 8)).toBeLessThan(0.5)
   })
 
@@ -536,8 +564,7 @@ test.describe('voor', () => {
     await toggleOn(two) // seq 3
     await expect.poll(() => stored(two, slug, 'bevestigd')).toMatchObject({ on: true, seq: 3 })
     const before = await stored(two, slug, 'bevestigd')
-    held.release(503)
-    await one.waitForTimeout(1000)
+    await answerLate(one, slug, 1, () => held.release(503))
     expect(await stored(one, slug, 'keuze')).toMatchObject({ on: true, seq: 3 })
     expect(await stored(one, slug, 'bevestigd')).toEqual(before)
     const kinds = tags(await stubEvents(request, slug))
@@ -621,6 +648,8 @@ test.describe('voor', () => {
     await playFor(page, 1.5)
     await page.goto('about:blank') // fires pagehide
     await expect.poll(() => seen.length).toBe(1)
+    await page.waitForTimeout(500)
+    expect(seen).toHaveLength(1)
     const { headers, body } = await seen[0]
     // Playwright sometimes lists a bare `referer: ""` for a request that carries none; only a value would leak.
     expect(headers['referer'] ?? '').toBe('')

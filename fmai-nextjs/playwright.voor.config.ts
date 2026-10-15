@@ -4,7 +4,9 @@ import { defineConfig } from '@playwright/test'
 // (Playwright's Chromium cannot play H.264/AAC), a stub of the app, and a production server that talks to it.
 // reuseExistingServer is false so a busy port fails hard instead of testing against some other server.
 export default defineConfig({
-  testDir: './tests/e2e',
+  testDir: './tests/e2e-voor',
+  // Under the ignored dist dir: the default outputDir would rewrite the tracked test-results/.last-run.json.
+  outputDir: '.next-voor-e2e/test-results',
   testMatch: 'voor.spec.ts',
   timeout: 90_000,
   workers: 1,
@@ -13,7 +15,7 @@ export default defineConfig({
   projects: [{ name: 'voor-chrome' }],
   webServer: [
     {
-      command: 'node tests/e2e/stubs/video-pages-app.mjs',
+      command: 'node tests/e2e-voor/stubs/video-pages-app.mjs',
       url: 'http://localhost:3999/__log',
       reuseExistingServer: false,
     },
@@ -28,6 +30,8 @@ export default defineConfig({
         VIDEO_PAGES_APP_URL: 'http://localhost:3999',
         VIDEO_PAGES_SECRET: 'test-secret',
         NEXT_DIST_DIR: '.next-voor-e2e',
+        // The copied .env.local is a `vercel pull` of production; without this the placeholder guard in next.config.ts would stop the build.
+        VERCEL_ENV: 'development',
         // The copied .env.local holds real Upstash keys, so override them: the e2e must never write into that Redis.
         // Not '' (ruling R18): with no URL the Upstash client retries its failing fetch with backoff for ~4.3 s per
         // call (measured), and every event would answer 4 s late. The stub answers 404 at once and the limiter fails open.
