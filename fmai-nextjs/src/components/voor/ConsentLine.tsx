@@ -10,7 +10,6 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
   const [ok, setOk] = useState(true) // optimistic for SSR; corrected on mount
   const [on, setOn] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
-  const [busy, setBusy] = useState(false)
 
   useEffect(() => {
     // Browser-only capability (Web Locks, storage): unknown during SSR, so it is read after mount.
@@ -32,15 +31,13 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
 
   async function toggle() {
     setMsg(null)
-    setBusy(true)
     try {
       const res = await choose(slug, v, !on)
       if (res === 'unsupported') setMsg(NO_SUPPORT)
       else if (res === 'failed' && !on) setMsg(FAILED)
     } catch {
-      setMsg(FAILED) // locks.request can reject; the switch must never stay busy
+      setMsg(FAILED) // locks.request can reject
     } finally {
-      setBusy(false)
       setOn(isOn(slug))
     }
   }
@@ -53,7 +50,7 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
           role="switch"
           aria-checked={on}
           aria-labelledby="voor-consent"
-          disabled={!ok || busy}
+          disabled={!ok}
           onClick={toggle}
           className={`relative mt-1 h-7 w-12 shrink-0 rounded-full border transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${
             on ? 'border-accent-system bg-accent-system/30' : 'border-white/20 bg-bg-elevated'
@@ -72,7 +69,7 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
             mail, dan wis ik deze pagina en wat ze bijhield, en mail ik je niet meer.{' '}
             {/* Full navigation on purpose: /voor has its own root layout, the legal page another. */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a href="/nl/legal/privacy#voor" className="text-accent-system underline underline-offset-2">
+            <a href="/nl/legal/privacy#privacy-voor" className="text-accent-system underline underline-offset-2">
               Privacyverklaring
             </a>
           </p>
