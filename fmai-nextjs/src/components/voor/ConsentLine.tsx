@@ -20,18 +20,29 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
     if (!can) return
     const sync = () => setOn(isOn(slug))
     sync()
-    void replay(slug, v)
+    const wasOn = isOn(slug)
+    // A replayed "on" the server refused is rolled back inside replay: say so, like a refused click.
+    replay(slug, v)
+      .then((res) => {
+        if (res === 'failed' && wasOn && !isOn(slug)) setMsg(FAILED)
+      })
+      .catch(() => undefined)
     return onChange(slug, sync)
   }, [slug, v])
 
   async function toggle() {
     setMsg(null)
     setBusy(true)
-    const res = await choose(slug, v, !on)
-    setBusy(false)
-    setOn(isOn(slug))
-    if (res === 'unsupported') setMsg(NO_SUPPORT)
-    else if (res === 'failed' && !on) setMsg(FAILED)
+    try {
+      const res = await choose(slug, v, !on)
+      if (res === 'unsupported') setMsg(NO_SUPPORT)
+      else if (res === 'failed' && !on) setMsg(FAILED)
+    } catch {
+      setMsg(FAILED) // locks.request can reject; the switch must never stay busy
+    } finally {
+      setBusy(false)
+      setOn(isOn(slug))
+    }
   }
 
   return (

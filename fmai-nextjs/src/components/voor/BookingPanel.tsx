@@ -34,6 +34,7 @@ export function BookingPanel({ agencyName, onOpen }: { agencyName: string; onOpe
     <>
       <aside className="flex flex-col gap-3 rounded-xl border border-border-primary bg-bg-surface p-5">
         <div className="flex items-center gap-3">
+          {/* shortcut: placeholder asset until plan A2 delivers the real video (ruling R2), replace at Task 11 step 1 */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/voor/daley-still.png" alt="" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
           <div>
@@ -49,7 +50,7 @@ export function BookingPanel({ agencyName, onOpen }: { agencyName: string; onOpe
           Je kiest zelf een tijd in mijn agenda. Je naam en e-mail staan al ingevuld.
         </p>
         <p className="border-t border-white/10 pt-3 text-sm text-text-secondary">
-          <b className="text-text-primary">Eerst een vraag?</b> Antwoord gewoon op mijn mail, dan reageer ik zelf.
+          <b className="text-text-primary">Eerst een vraag?</b> Antwoord gewoon op mijn mail.
         </p>
       </aside>
       {out && (

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react'
 import type Hls from 'hls.js'
 import { isOn, measuring, onChange, readPos, sendDropoff, trackWatch } from '@/lib/voor-tracking'
-import { mmss, type Chapter } from './ChapterList'
+import { mmss } from './ChapterList'
 
 export type VoorPlayerHandle = { seek: (sec: number) => void }
 
@@ -14,7 +14,6 @@ type Props = {
   poster: string
   still: string
   agencyName: string
-  chapters: Chapter[]
   endCardSec: number
   onCta: () => void
   handle: Ref<VoorPlayerHandle>
@@ -29,6 +28,8 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
   const [live, setLive] = useState(false)
   const [atEnd, setAtEnd] = useState(false)
   const [resume, setResume] = useState<number | null>(null)
+  const [broken, setBroken] = useState(false)
+  const gone = useRef(false)
 
   // Segment bound to the seq of the moment it STARTED (B-44); trackWatch re-checks it when sending.
   const seg = useRef<{ from: number; seq: number } | null>(null)
@@ -64,9 +65,18 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
         el.src = src
       } else {
         const { default: HlsLib } = await import('hls.js')
+        if (gone.current) return // unmounted while the chunk loaded: never create an instance nobody destroys
         if (HlsLib.isSupported()) {
-          const h = new HlsLib({ enableWorker: false })
+          const h = new HlsLib({ enableWorker: false, startPosition: at ?? -1 })
           hls.current = h
+          h.on(HlsLib.Events.ERROR, (_e, data) => {
+            if (!data.fatal) return
+            h.destroy()
+            if (hls.current === h) hls.current = null
+            started.current = false
+            setLive(false)
+            setBroken(true)
+          })
           h.loadSource(src)
           h.attachMedia(el)
         } else {
@@ -102,9 +112,17 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
       off()
       clearInterval(timer)
       window.removeEventListener('pagehide', hide)
-      hls.current?.destroy()
     }
   }, [slug, v, close])
+
+  useEffect(() => {
+    gone.current = false
+    return () => {
+      gone.current = true
+      hls.current?.destroy()
+      hls.current = null
+    }
+  }, [])
 
   const onTime = () => {
     const el = video.current
@@ -142,6 +160,7 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
         }}
         onTimeUpdate={onTime}
       >
+        {/* shortcut: placeholder asset until plan A2 delivers the real video (ruling R2), replace at Task 11 step 1 */}
         <track kind="subtitles" srcLang="nl" label="Nederlands" src="/voor/outreach.nl.vtt" default />
       </video>
 
@@ -157,7 +176,6 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
             <img src={still} alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
             <span className="absolute inset-0 bg-gradient-to-t from-bg-deep/90 via-bg-deep/30 to-transparent" />
             <span className="absolute bottom-4 left-4 right-4">
-              <span className="block text-xs uppercase tracking-widest text-text-secondary">Gemaakt voor</span>
               <span className="block text-xl font-semibold sm:text-2xl">Voor {agencyName}</span>
             </span>
             <span className="absolute right-4 top-4 rounded-full bg-accent-human px-4 py-2 text-sm font-semibold text-bg-deep">
@@ -174,6 +192,12 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
             </button>
           )}
         </div>
+      )}
+
+      {broken && !live && (
+        <p role="alert" className="absolute inset-x-4 top-4 rounded-lg bg-bg-deep/90 p-3 text-sm text-warning">
+          De video kon niet worden geladen. Probeer het zo nog eens.
+        </p>
       )}
 
       {atEnd && (

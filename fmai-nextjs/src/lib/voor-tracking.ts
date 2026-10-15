@@ -49,12 +49,14 @@ const same = (a: Choice | null, b: Choice | null) =>
 
 // --- fail closed -------------------------------------------------------------------------------
 
-/** Web Locks (secure context) and a working localStorage are both required for any per-lead event. */
+/**
+ * Web Locks (secure context) and a readable localStorage. Never probes by writing: a full storage must still
+ * reach `step()`, where a failed withdrawal write is recovered (B-36/B-45); only a failed "on" write stops there.
+ */
 export function supported(): boolean {
   try {
-    if (typeof navigator === 'undefined' || !('locks' in navigator) || !navigator.locks) return false
-    localStorage.setItem('voor:probe', '1')
-    localStorage.removeItem('voor:probe')
+    if (typeof navigator === 'undefined' || !navigator.locks) return false
+    localStorage.getItem('voor:probe')
     return true
   } catch {
     return false
@@ -69,6 +71,16 @@ function locked<T>(slug: string, fn: () => T): Promise<T> {
 
 let held: { slug: string; v: string; choice: Choice } | null = null
 let retryTimer: ReturnType<typeof setInterval> | null = null
+let onHide: (() => void) | null = null
+
+// One place that forgets the held withdrawal, so the timer and the pagehide listener never outlive it.
+function dropHeld(): void {
+  held = null
+  if (retryTimer) clearInterval(retryTimer)
+  retryTimer = null
+  if (onHide) window.removeEventListener('pagehide', onHide)
+  onHide = null
+}
 
 function heldFor(slug: string): Choice | null {
   return held && held.slug === slug ? held.choice : null
@@ -109,7 +121,7 @@ export function isOn(slug: string): boolean {
 
 /** Non-null only when the server confirmed exactly the current "on" choice (all three fields equal). */
 export function measuring(slug: string): { visitor: string; seq: number } | null {
-  if (heldFor(slug)) return null
+  if (heldFor(slug) || !supported()) return null
   const k = readChoice(keyChoice(slug))
   if (!k || !k.on || !same(k, readChoice(keyConfirmed(slug)))) return null
   return { visitor: k.visitor, seq: k.seq }
@@ -167,7 +179,8 @@ function step(slug: string, v: string, on: boolean): Choice | null {
   const seq = Math.max(stored?.seq ?? 0, mem?.seq ?? 0) + 1
   const next: Choice = { visitor, on, seq }
   if (writeItem(keyChoice(slug), JSON.stringify(next))) {
-    held = null
+    // A withdrawal held for ANOTHER visitor (a tab created one meanwhile) is still owed to the server.
+    if (held?.slug === slug && held.choice.visitor === next.visitor) dropHeld()
     if (!on) removeItem(keyPos(slug))
     emit()
     return next
@@ -178,7 +191,7 @@ function step(slug: string, v: string, on: boolean): Choice | null {
   removeItem(keyPos(slug))
   removeItem(keyConfirmed(slug))
   if (writeItem(keyChoice(slug), JSON.stringify(next))) {
-    held = null
+    dropHeld()
   } else {
     removeItem(keyChoice(slug)) // even the short choice does not fit: send the withdrawal anyway, retry from memory
   }
@@ -188,16 +201,24 @@ function step(slug: string, v: string, on: boolean): Choice | null {
 
 // Answer handling happens under the lock again (B-46) and acts only if the choice is still exactly the one sent.
 async function drive(sent: Sent): Promise<ChooseResult> {
-  const status = await post(choiceBody(sent))
   const { slug, v, choice } = sent
+  const isHeld = same(heldFor(slug), choice)
+  const status = await post(choiceBody(sent), isHeld) // a held withdrawal may be the last thing this page sends
   const { result, rollback } = await locked(slug, (): { result: ChooseResult; rollback: Choice | null } => {
-    if (!same(current(slug), choice)) return { result: 'superseded', rollback: null } // a later choice sends itself
-    if (status === 204) {
-      if (!choice.on && heldFor(slug)) {
-        held = null // nothing stored to confirm; writing now could hit the full storage again
+    // A held withdrawal is owed to the server even if a later choice (another visitor) now sits in storage.
+    if (same(heldFor(slug), choice)) {
+      if (status === 204) {
+        dropHeld() // nothing stored to confirm; writing now could hit the full storage again
         emit()
         return { result: 'ok', rollback: null }
       }
+      scheduleWithdrawRetry()
+      return { result: 'failed', rollback: null }
+    }
+    if (!same(current(slug), choice)) return { result: 'superseded', rollback: null } // a later choice sends itself
+    // Already confirmed (another tab, or a replay racing its own answer): a failed repeat must not undo it.
+    if (status !== 204 && same(readChoice(keyConfirmed(slug)), choice)) return { result: 'ok', rollback: null }
+    if (status === 204) {
       if (writeItem(keyConfirmed(slug), JSON.stringify(choice))) {
         emit()
         return { result: 'ok', rollback: null }
@@ -209,7 +230,6 @@ async function drive(sent: Sent): Promise<ChooseResult> {
     // 503 or a network error can follow a successful RPC, so a failed "on" is withdrawn with a higher seq (B-20).
     if (choice.on) return { result: 'failed', rollback: step(slug, v, false) }
     // Withdrawal unconfirmed: `bevestigd` stays behind and measuring is already off.
-    if (heldFor(slug)) scheduleWithdrawRetry()
     return { result: 'failed', rollback: null }
   })
   if (rollback) void drive({ slug, v, choice: rollback })
@@ -221,17 +241,16 @@ function scheduleWithdrawRetry(): void {
   if (retryTimer) return
   const attempt = async (keepalive: boolean) => {
     const h = held
-    if (!h) return
+    if (!h) return dropHeld()
     const status = await post(choiceBody({ slug: h.slug, v: h.v, choice: h.choice }), keepalive)
-    if (status === 204 && held === h) held = null
-    if (!held && retryTimer) {
-      clearInterval(retryTimer)
-      retryTimer = null
+    if (status === 204 && held === h) {
+      dropHeld()
       emit()
     }
   }
   retryTimer = setInterval(() => void attempt(false), RETRY_MS)
-  window.addEventListener('pagehide', () => void attempt(true))
+  onHide = () => void attempt(true)
+  window.addEventListener('pagehide', onHide)
 }
 
 export async function choose(slug: string, v: string, on: boolean): Promise<ChooseResult> {
@@ -242,13 +261,13 @@ export async function choose(slug: string, v: string, on: boolean): Promise<Choo
 }
 
 /** On every page load: a stored choice the server never confirmed goes out again with the same seq (B-19). */
-export async function replay(slug: string, v: string): Promise<void> {
-  if (!supported()) return
+export async function replay(slug: string, v: string): Promise<ChooseResult> {
+  if (!supported()) return 'unsupported'
   const choice = await locked(slug, () => {
     const k = readChoice(keyChoice(slug))
     return k && !same(k, readChoice(keyConfirmed(slug))) ? k : null
   })
-  if (choice) await drive({ slug, v, choice })
+  return choice ? drive({ slug, v, choice }) : 'ok'
 }
 
 // --- events that need a confirmed "yes" --------------------------------------------------------
