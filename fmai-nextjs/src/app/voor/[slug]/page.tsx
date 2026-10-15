@@ -20,7 +20,9 @@ function recordFrom(h: Headers): ViewRecord | null {
       referrerHost = null
     }
   }
-  return { method, userAgent: h.get('user-agent'), referrerHost }
+  // The app rejects longer values with a 400 (zod max 512 / 253), which would hide the page.
+  const ua = h.get('user-agent')?.slice(0, 512) || null
+  return { method, userAgent: ua, referrerHost: referrerHost?.slice(0, 253) || null }
 }
 
 // One view call shared by generateMetadata and the page.

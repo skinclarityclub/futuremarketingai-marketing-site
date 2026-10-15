@@ -8,7 +8,16 @@ export const runtime = 'nodejs'
 
 const NO_STORE = { 'Cache-Control': 'private, no-store' }
 
-export async function GET(request: Request, { params }: { params: Promise<{ slug: string }> }) {
+export async function GET(request: Request, ctx: { params: Promise<{ slug: string }> }) {
+  // Any throw must still carry no-store; no logging, so the slug never lands in a log.
+  try {
+    return await render(request, ctx)
+  } catch {
+    return new Response(null, { status: 500, headers: NO_STORE })
+  }
+}
+
+async function render(request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   if (!SLUG_RE.test(slug)) return new Response(null, { status: 404, headers: NO_STORE })
 
