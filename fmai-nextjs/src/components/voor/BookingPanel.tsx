@@ -18,7 +18,7 @@ export function bookingSentence(iso: string): string | null {
 const buttonCls = 'rounded-lg bg-accent-human px-6 py-3 text-center font-semibold text-bg-deep'
 
 /** The button next to the video (desktop) / under it (phone), the second route, and the fixed phone bar. */
-export function BookingPanel({ agencyName, onOpen }: { agencyName: string; onOpen: () => void }) {
+export function BookingPanel({ agencyName, onOpen, open }: { agencyName: string; onOpen: () => void; open: boolean }) {
   const block = useRef<HTMLButtonElement>(null)
   const [out, setOut] = useState(false) // button scrolled out of view
 
@@ -53,7 +53,7 @@ export function BookingPanel({ agencyName, onOpen }: { agencyName: string; onOpe
           <b className="text-text-primary">Eerst een vraag?</b> Antwoord gewoon op mijn mail.
         </p>
       </aside>
-      {out && (
+      {out && !open && ( // not over the Cal embed once it is open
         <div className="fixed inset-x-0 bottom-0 z-20 border-t border-white/10 bg-bg-deep/95 p-3 lg:hidden">
           <button type="button" onClick={onOpen} className={`${buttonCls} w-full`}>
             Plan een gesprek

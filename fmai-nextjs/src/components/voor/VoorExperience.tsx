@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { trackCta } from '@/lib/voor-tracking'
 import { voorVideo } from '@/config/voorVideo'
 import { BookingPanel, BookingSlot } from './BookingPanel'
@@ -28,11 +28,9 @@ export function VoorExperience({ slug, firstName, agencyName, email, bookingStar
   const onCta = useCallback(() => {
     trackCta(slug, v)
     setOpen(true)
+    // On every click, not in an effect on `open`: a second click leaves `open` unchanged and would do nothing.
+    slot.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [slug, v])
-
-  useEffect(() => {
-    if (open) slot.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [open])
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
@@ -48,7 +46,7 @@ export function VoorExperience({ slug, firstName, agencyName, email, bookingStar
         onCta={onCta}
         handle={player}
       />
-      <BookingPanel agencyName={agencyName} onOpen={onCta} />
+      <BookingPanel agencyName={agencyName} onOpen={onCta} open={open} />
 
       <div className="lg:col-span-2">
         <ConsentLine slug={slug} v={v} />

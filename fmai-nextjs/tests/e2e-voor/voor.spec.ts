@@ -246,9 +246,26 @@ test.describe('voor', () => {
     await open(page, newSlug())
     await startVideo(page)
     await expect.poll(() => time(page)).toBeGreaterThan(1)
+    // Chrome 155 plays HLS natively (canPlayType says 'maybe'), so the source is the playlist URL itself; hls.js is the next test.
+    expect(await page.evaluate(() => document.querySelector('video')!.src)).toBe('https://voor-video.invalid/outreach/playlist.m3u8')
     expect(hits.some((h) => h.url.endsWith('.m3u8'))).toBe(true)
     expect(hits.some((h) => h.url.endsWith('.m2ts'))).toBe(true)
     expect(hits.filter((h) => h.headers['referer'])).toEqual([])
+  })
+
+  test('video speelt via hls.js waar de browser geen eigen HLS kent', async ({ page }) => {
+    await page.addInitScript(() => {
+      const real = HTMLMediaElement.prototype.canPlayType
+      HTMLMediaElement.prototype.canPlayType = function (t: string) {
+        return /mpegurl/i.test(t) ? '' : real.call(this, t)
+      }
+    })
+    const hits = serveVideo(page)
+    await open(page, newSlug())
+    await startVideo(page)
+    await expect.poll(() => time(page)).toBeGreaterThan(1)
+    expect(await page.evaluate(() => document.querySelector('video')!.src)).toMatch(/^blob:/) // MediaSource, fed by hls.js
+    expect(hits.some((h) => h.url.endsWith('.m2ts'))).toBe(true)
   })
 
   test('niets per persoon zonder ja', async ({ page }) => {
@@ -366,9 +383,50 @@ test.describe('voor', () => {
     calRequests(page)
     sent.length = 0
     await open(page, slug)
-    await expect.poll(() => tags(sent)).toEqual(['consent_withdrawn:2'])
-    await expect.poll(async () => tags(await stubEvents(request, slug)).filter((t) => t.startsWith('consent_withdrawn'))).toEqual(['consent_withdrawn:2'])
+    // The old page's pagehide resend and the new page's replay both carry the same withdrawal, never a new seq.
+    await expect.poll(() => sent.length).toBeGreaterThan(0)
+    await expect.poll(async () => tags(await stubEvents(request, slug)).length).toBeGreaterThan(0)
+    expect(new Set(tags(sent))).toEqual(new Set(['consent_withdrawn:2']))
+    expect(new Set(tags(await stubEvents(request, slug)).filter((t) => t.startsWith('consent_withdrawn')))).toEqual(new Set(['consent_withdrawn:2']))
     await expect.poll(() => stored(page, slug, 'bevestigd')).toEqual(keuze)
+  })
+
+  test('intrekking die faalt, en hij wordt opnieuw geprobeerd zonder herlading', async ({ page, request }) => {
+    const slug = newSlug()
+    await page.clock.install()
+    const sent = watchEvents(page)
+    await open(page, slug)
+    await startVideo(page)
+    await pause(page)
+    await consentConfirmed(page, slug)
+    await failKind(page, 'consent_withdrawn', 503)
+    await toggleOff(page)
+    const notice = page.getByText('Uitzetten is nog niet bij ons aangekomen. Je browser probeert het opnieuw.')
+    await expect(notice).toBeVisible()
+    expect(await stored(page, slug, 'bevestigd')).toMatchObject({ on: true, seq: 1 })
+    await page.clock.fastForward(15_000) // still failing: one more try, still one timer
+    await expect.poll(() => sent.filter((e) => e.kind === 'consent_withdrawn').length).toBe(2)
+    await page.unroute('**/api/voor/event')
+    await page.clock.fastForward(15_000)
+    await expect.poll(async () => tags(await stubEvents(request, slug)).filter((t) => t.startsWith('consent_withdrawn'))).toEqual(['consent_withdrawn:2'])
+    await expect.poll(async () => (await stored(page, slug, 'bevestigd')) !== null && JSON.stringify(await stored(page, slug, 'bevestigd')) === JSON.stringify(await stored(page, slug, 'keuze'))).toBe(true)
+    await expect(notice).toHaveCount(0)
+    await page.clock.fastForward(30_000) // timer is gone: nothing more goes out
+    await page.waitForTimeout(500)
+    expect(sent.filter((e) => e.kind === 'consent_withdrawn')).toHaveLength(3)
+  })
+
+  test('Plan een gesprek scrolt bij elke klik naar het Cal-vak', async ({ page }) => {
+    await open(page, newSlug())
+    const slotTop = () => page.evaluate(() => document.querySelector('[aria-live=polite]')!.getBoundingClientRect().top)
+    const innerH = await page.evaluate(() => innerHeight)
+    expect(await slotTop()).toBeGreaterThan(innerH) // below the fold to begin with
+    await cta(page).first().click()
+    await expect.poll(slotTop).toBeLessThan(innerH)
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
+    expect(await slotTop()).toBeGreaterThan(innerH)
+    await cta(page).first().click()
+    await expect.poll(slotTop).toBeLessThan(innerH)
   })
 
   test('twee tabs met een lopende consent', async ({ context }) => {
@@ -497,7 +555,8 @@ test.describe('voor', () => {
     calRequests(page)
     sent.length = 0
     await open(page, slug)
-    await expect.poll(() => sent.map((e) => `${e.kind}:${e.visitor}:${e.seq}`)).toEqual([`consent_withdrawn:${A}:2`])
+    await expect.poll(() => sent.length).toBeGreaterThan(0)
+    expect(new Set(sent.map((e) => `${e.kind}:${e.visitor}:${e.seq}`))).toEqual(new Set([`consent_withdrawn:${A}:2`])) // pagehide resend and replay are the same withdrawal
     await expect.poll(() => stored(page, slug, 'bevestigd')).toEqual({ visitor: A, on: false, seq: 2 })
     await toggleOn(page)
     await expect

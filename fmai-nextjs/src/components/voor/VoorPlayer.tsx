@@ -64,7 +64,15 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
       if (el.canPlayType('application/vnd.apple.mpegurl')) {
         el.src = src
       } else {
-        const { default: HlsLib } = await import('hls.js')
+        let HlsLib: typeof Hls
+        try {
+          HlsLib = (await import('hls.js')).default
+        } catch {
+          started.current = false // chunk failed to load: back to the cover with the message, not a black player
+          setLive(false)
+          setBroken(true)
+          return
+        }
         if (gone.current) return // unmounted while the chunk loaded: never create an instance nobody destroys
         if (HlsLib.isSupported()) {
           const h = new HlsLib({ enableWorker: false, startPosition: at ?? -1 })

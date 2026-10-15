@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { choose, isOn, onChange, replay, supported } from '@/lib/voor-tracking'
+import { choose, isOn, onChange, replay, supported, withdrawalPending } from '@/lib/voor-tracking'
 
 const NO_SUPPORT = 'Meten per persoon kan in deze browser niet.'
 const FAILED = 'Dat lukte niet, probeer het zo nog eens.'
@@ -9,6 +9,7 @@ const FAILED = 'Dat lukte niet, probeer het zo nog eens.'
 export function ConsentLine({ slug, v }: { slug: string; v: string }) {
   const [ok, setOk] = useState(true) // optimistic for SSR; corrected on mount
   const [on, setOn] = useState(false)
+  const [pending, setPending] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
 
   useEffect(() => {
@@ -17,7 +18,10 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setOk(can)
     if (!can) return
-    const sync = () => setOn(isOn(slug))
+    const sync = () => {
+      setOn(isOn(slug))
+      setPending(withdrawalPending(slug))
+    }
     sync()
     const wasOn = isOn(slug)
     // A replayed "on" the server refused is rolled back inside replay: say so, like a refused click.
@@ -66,7 +70,7 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
             Mag ik zien welke stukken je bekeek? Dan bereid ik ons gesprek daarop voor. Je kunt de video ook gewoon zo kijken.
           </p>
           <p className="mt-2 text-sm text-text-secondary">
-            Zonder dit zie ik alleen of deze pagina geopend is en of je een gesprek plant. Liever niet? Antwoord NEE op mijn
+            Zonder dit zie ik alleen wanneer deze pagina geopend is, op wat voor apparaat, en of je een gesprek plant. Liever niet? Antwoord NEE op mijn
             mail, dan wis ik deze pagina en wat ze bijhield, en mail ik je niet meer.{' '}
             {/* Full navigation on purpose: /voor has its own root layout, the legal page another. */}
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
@@ -75,6 +79,11 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
             </a>
           </p>
           {!ok && <p className="mt-2 text-sm text-warning">{NO_SUPPORT}</p>}
+          {pending && (
+            <p role="status" className="mt-2 text-sm text-warning">
+              Uitzetten is nog niet bij ons aangekomen. Je browser probeert het opnieuw.
+            </p>
+          )}
           {msg && (
             <p role="status" className="mt-2 text-sm text-warning">
               {msg}

@@ -82,6 +82,36 @@ function dropHeld(): void {
   onHide = null
 }
 
+// A withdrawal that IS stored but the server has not confirmed (503, 429, network): resent every 15 s and on pagehide
+// while the page is open, so her data does not wait for a next visit. One timer, one listener, gone once confirmed.
+let unconfirmed: { slug: string; timer: ReturnType<typeof setInterval>; hide: () => void } | null = null
+
+function stopUnconfirmed(): void {
+  if (!unconfirmed) return
+  clearInterval(unconfirmed.timer)
+  window.removeEventListener('pagehide', unconfirmed.hide)
+  unconfirmed = null
+  emit()
+}
+
+function scheduleStoredRetry(slug: string, v: string, status: number): void {
+  if (status === 400) return stopUnconfirmed() // a 400 will not change on a retry
+  if (unconfirmed) return
+  const hide = () => {
+    const c = readChoice(keyChoice(slug))
+    if (c && !c.on && !same(c, readChoice(keyConfirmed(slug)))) void post(choiceBody({ slug, v, choice: c }), true)
+  }
+  const timer = setInterval(() => void replay(slug, v).then((r) => r !== 'failed' && stopUnconfirmed()), RETRY_MS)
+  window.addEventListener('pagehide', hide)
+  unconfirmed = { slug, timer, hide }
+  emit()
+}
+
+/** True while a withdrawal of this slug has not reached the server (held in memory or stored and retrying). */
+export function withdrawalPending(slug: string): boolean {
+  return !!heldFor(slug) || unconfirmed?.slug === slug
+}
+
 function heldFor(slug: string): Choice | null {
   return held && held.slug === slug ? held.choice : null
 }
@@ -215,11 +245,18 @@ async function drive(sent: Sent): Promise<ChooseResult> {
       scheduleWithdrawRetry()
       return { result: 'failed', rollback: null }
     }
-    if (!same(current(slug), choice)) return { result: 'superseded', rollback: null } // a later choice sends itself
+    if (!same(current(slug), choice)) {
+      stopUnconfirmed() // a later choice sends itself
+      return { result: 'superseded', rollback: null }
+    }
     // Already confirmed (another tab, or a replay racing its own answer): a failed repeat must not undo it.
-    if (status !== 204 && same(readChoice(keyConfirmed(slug)), choice)) return { result: 'ok', rollback: null }
+    if (status !== 204 && same(readChoice(keyConfirmed(slug)), choice)) {
+      stopUnconfirmed()
+      return { result: 'ok', rollback: null }
+    }
     if (status === 204) {
       if (writeItem(keyConfirmed(slug), JSON.stringify(choice))) {
+        stopUnconfirmed()
         emit()
         return { result: 'ok', rollback: null }
       }
@@ -229,7 +266,8 @@ async function drive(sent: Sent): Promise<ChooseResult> {
     }
     // 503 or a network error can follow a successful RPC, so a failed "on" is withdrawn with a higher seq (B-20).
     if (choice.on) return { result: 'failed', rollback: step(slug, v, false) }
-    // Withdrawal unconfirmed: `bevestigd` stays behind and measuring is already off.
+    // Withdrawal unconfirmed: `bevestigd` stays behind and measuring is already off; keep resending it.
+    scheduleStoredRetry(slug, v, status)
     return { result: 'failed', rollback: null }
   })
   if (rollback) void drive({ slug, v, choice: rollback })
