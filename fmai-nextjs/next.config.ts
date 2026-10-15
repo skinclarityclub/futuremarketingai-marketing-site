@@ -1,8 +1,19 @@
+import { readFileSync, readdirSync } from 'node:fs'
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 import createMDX from '@next/mdx'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 import { voorVideo } from './src/config/voorVideo'
+
+// A [DALEY: ...] marker in the copy is a placeholder that must not ship; check:copy only flags it when someone runs it.
+if (process.env.VERCEL_ENV === 'production') {
+  const open = readdirSync('messages')
+    .filter((f) => f.endsWith('.json') && readFileSync(`messages/${f}`, 'utf8').includes('[DALEY:'))
+    .map((f) => `messages/${f}`)
+  if (open.length) {
+    throw new Error(`Unresolved [DALEY: placeholder in ${open.join(', ')}: resolve it before a production deploy.`)
+  }
+}
 
 const withNextIntl = createNextIntlPlugin()
 

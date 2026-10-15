@@ -32,9 +32,10 @@ export function ConsentLine({ slug, v }: { slug: string; v: string }) {
   async function toggle() {
     setMsg(null)
     try {
-      const res = await choose(slug, v, !on)
+      const turnOn = !isOn(slug) // the store, not the render closure: a click can land before the last render
+      const res = await choose(slug, v, turnOn)
       if (res === 'unsupported') setMsg(NO_SUPPORT)
-      else if (res === 'failed' && !on) setMsg(FAILED)
+      else if (res === 'failed' && turnOn) setMsg(FAILED)
     } catch {
       setMsg(FAILED) // locks.request can reject
     } finally {
