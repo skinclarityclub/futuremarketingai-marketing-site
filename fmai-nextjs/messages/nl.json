@@ -1703,7 +1703,7 @@
   "skills-ad-manager": {
     "meta": {
       "title": "Ad Manager. Meta-ads maken en volgen | Clyde",
-      "description": "Statische en video-ads voor Meta maken, klaarzetten ter goedkeuring en per advertentie volgen op conversies, ROAS en ad-fatigue. 10 credits statisch, 20 credits video."
+      "description": "Statische en video-ads voor Meta maken, klaarzetten ter goedkeuring en per ad volgen op conversies, ROAS en ad-fatigue. 10 credits statisch, 20 video."
     },
     "hero": {
       "eyebrow": "Vaardigheid 05. Ad Manager",
@@ -2392,7 +2392,7 @@
     "skc": {
       "meta": {
         "title": "SkinClarity Club: 3 Instagram-accounts, één Clyde | FutureMarketingAI",
-        "description": "Hoe Clyde de social-operatie van SkinClarity Club draait: 3 Instagram-accounts, elk met een eigen toon en agenda, goedgekeurd door het bureau voordat er iets live gaat."
+        "description": "Hoe Clyde de socials van SkinClarity Club draait: 3 Instagram-accounts, elk met eigen toon en agenda. Niets gaat live zonder akkoord van het bureau."
       },
       "hero": {
         "eyebrow": "Case study, eerste klant",
@@ -2980,7 +2980,7 @@
   "skills-clyde": {
     "meta": {
       "title": "Clyde: de AI-collega van je bureau | Clyde",
-      "description": "Clyde, de AI-collega van je bureau, in elk scherm van je dashboard en op WhatsApp. Opdrachten in gewone taal, alle vaardigheden via één aanspreekpunt, geheugen per klant. 1 tot 5 credits per gesprek."
+      "description": "Clyde, de AI-collega van je bureau, in je dashboard en op WhatsApp. Opdrachten in gewone taal, geheugen per klant. 1 tot 5 credits per gesprek."
     },
     "hero": {
       "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
