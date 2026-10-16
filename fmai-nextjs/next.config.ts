@@ -1,7 +1,19 @@
+import { readFileSync, readdirSync } from 'node:fs'
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 import createMDX from '@next/mdx'
 import withBundleAnalyzer from '@next/bundle-analyzer'
+import { voorVideo } from './src/config/voorVideo'
+
+// A [DALEY: ...] marker in the copy is a placeholder that must not ship; check:copy only flags it when someone runs it.
+if (process.env.VERCEL_ENV === 'production') {
+  const open = readdirSync('messages')
+    .filter((f) => f.endsWith('.json') && readFileSync(`messages/${f}`, 'utf8').includes('[DALEY:'))
+    .map((f) => `messages/${f}`)
+  if (open.length) {
+    throw new Error(`Unresolved [DALEY: placeholder in ${open.join(', ')}: resolve it before a production deploy.`)
+  }
+}
 
 const withNextIntl = createNextIntlPlugin()
 
@@ -23,9 +35,10 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://app.future-marketing.ai;
   style-src 'self' 'unsafe-inline';
+  media-src 'self' blob: ${voorVideo.cdnOrigin};
   img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com;
   font-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://app.future-marketing.ai;
+  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://app.future-marketing.ai ${voorVideo.cdnOrigin};
   frame-src https://app.cal.com https://cal.com;
   worker-src 'self' blob:;
   object-src 'none';
@@ -117,6 +130,16 @@ const nextConfig: NextConfig = {
         // Apply security headers to all routes
         source: '/(.*)',
         headers: securityHeaders,
+      },
+      {
+        // Personal video pages: never cached, never indexed, no referrer leak of the slug.
+        // Listed after the catch-all so these values override its Referrer-Policy.
+        source: '/voor/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'private, no-store' },
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Referrer-Policy', value: 'no-referrer' },
+        ],
       },
     ]
   },

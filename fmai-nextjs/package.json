@@ -45,6 +45,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "ai": "~6.0.168",
     "gray-matter": "^4.0.3",
+    "hls.js": "1.7.3",
     "lucide-react": "^0.577.0",
     "motion": "^12.38.0",
     "next": "^16.2.4",
