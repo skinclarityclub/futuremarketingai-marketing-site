@@ -211,6 +211,22 @@ try {
     return $true   # exceeded depth (shouldn't happen) => treat conservatively as orphan
   }
 
+  # Een shell ONDER een levende detach.ps1-cmd hoort bij een lopende run, maar alleen die cmd draagt de
+  # marker; zijn bash-kind niet. Zodra de WmiPrvSE boven die cmd weg is, gaf Test-Orphan het kind vrij:
+  # gemeten 2026-10-18 13:51:35, [KILL] bash.exe chain=[bash.exe(39892) <- cmd.exe(12060) <- DEAD] nam
+  # een vitest-shard mee. Daarvoor al drie keer hetzelfde gat, telkens met een regel die de sessie moest
+  # onthouden (marker als argument). Hier lopen we de LEVENDE keten op; de datumtoets weert PID-hergebruik.
+  function Test-UnderDetach([int]$startPid) {
+    $child = $byPid[$startPid]
+    for ($i = 0; $i -lt 60 -and $child; $i++) {
+      $parent = $byPid[[int]$child.ParentProcessId]
+      if (-not $parent -or ($parent.CreationDate -and $child.CreationDate -and $parent.CreationDate -gt $child.CreationDate)) { return $false }
+      if ([string]$parent.CommandLine -match 'DETACH_LONGRUN') { return $true }
+      $child = $parent
+    }
+    return $false
+  }
+
   # ---- build candidate set ----
   $candidates = [System.Collections.Generic.List[object]]::new()
 
@@ -251,6 +267,7 @@ try {
       # zegt niets (`conhost.exe 0x4`), dus die van de ouder is het enige signaal dat er is.
       if ($name -eq 'conhost.exe' -and $byPid.ContainsKey([int]$p.ParentProcessId)) { continue }
       if ($cmd -match $LONGRUN_SIG) { continue }   # draaiende shard/build/e2e, geen restant
+      if (Test-UnderDetach $pid_) { continue }     # kind van een lopende detach.ps1-run
       $reason = 'orphan-shell'
     }
     elseif ('claude.exe','codex.exe' -contains $name) {
