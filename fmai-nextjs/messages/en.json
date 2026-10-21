@@ -2354,7 +2354,23 @@
         "subtitle": "1 or 2 sentences. No pitch — just the real blocker.",
         "placeholder": "Example: \"We lose 2 FTE on content production for 15 brands\" or \"SEO stagnates and we have no room for blogs.\"",
         "help": "Optional but recommended. Helps Daley prepare the conversation.",
-        "counter": "{count} characters"
+        "counter": "{count} characters",
+        "heardFrom": {
+          "legend": "How did you hear about us?",
+          "hint": "So we know which channels work.",
+          "options": {
+            "linkedin": "LinkedIn",
+            "google": "Google",
+            "ai_assistant": "An AI assistant (ChatGPT, Perplexity)",
+            "instagram": "Instagram",
+            "podcast_event": "A podcast or event",
+            "referral": "Through someone I know",
+            "partner": "Through a partner (SalesLobe)",
+            "other": "Other",
+            "unknown": "I don't remember"
+          },
+          "error": "Choose how you heard about us, or 'I don't remember'."
+        }
       },
       "result": {
         "qualified": {

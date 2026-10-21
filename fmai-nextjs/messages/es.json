@@ -2354,7 +2354,23 @@
         "subtitle": "1 o 2 frases. Sin pitch, solo el bloqueador real.",
         "placeholder": "Ejemplo: \"Perdemos 2 FTE en producción de contenido para 15 marcas\" o \"SEO estancado y sin espacio para blogs.\"",
         "help": "Opcional pero recomendado. Ayuda a Daley a preparar la conversación.",
-        "counter": "{count} caracteres"
+        "counter": "{count} caracteres",
+        "heardFrom": {
+          "legend": "¿Cómo nos conociste?",
+          "hint": "Así sabemos qué canales funcionan.",
+          "options": {
+            "linkedin": "LinkedIn",
+            "google": "Google",
+            "ai_assistant": "Un asistente de IA (ChatGPT, Perplexity)",
+            "instagram": "Instagram",
+            "podcast_event": "Un pódcast o un evento",
+            "referral": "A través de alguien que conozco",
+            "partner": "A través de un socio (SalesLobe)",
+            "other": "Otro",
+            "unknown": "No lo recuerdo"
+          },
+          "error": "Elige cómo nos conociste, o «No lo recuerdo»."
+        }
       },
       "result": {
         "qualified": {

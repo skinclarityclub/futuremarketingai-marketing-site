@@ -2354,7 +2354,23 @@
         "subtitle": "1 tot 2 zinnen. Geen pitch, gewoon de echte blokkade.",
         "placeholder": "Voorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 merken\" of \"SEO stagneert en we hebben geen ruimte voor blogs.\"",
         "help": "Optioneel maar aanbevolen. Helpt Daley het gesprek voor te bereiden.",
-        "counter": "{count} tekens"
+        "counter": "{count} tekens",
+        "heardFrom": {
+          "legend": "Hoe ken je ons?",
+          "hint": "Zo weten we welke kanalen werken.",
+          "options": {
+            "linkedin": "LinkedIn",
+            "google": "Google",
+            "ai_assistant": "Een AI-assistent (ChatGPT, Perplexity)",
+            "instagram": "Instagram",
+            "podcast_event": "Een podcast of evenement",
+            "referral": "Via iemand die ik ken",
+            "partner": "Via een partner (SalesLobe)",
+            "other": "Anders",
+            "unknown": "Weet ik niet meer"
+          },
+          "error": "Kies hoe je ons kent, of 'Weet ik niet meer'."
+        }
       },
       "result": {
         "qualified": {

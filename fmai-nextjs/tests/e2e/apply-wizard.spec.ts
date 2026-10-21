@@ -72,6 +72,8 @@ async function clickNext(page: Page) {
 }
 
 async function clickSubmit(page: Page) {
+  // The source question is required since the heard-from field; any answer will do here.
+  await page.getByRole('radio', { name: /weet ik niet meer/i }).check()
   await page.getByRole('button', { name: /verstuur aanvraag/i }).click()
 }
 
