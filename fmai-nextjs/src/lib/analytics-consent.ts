@@ -54,6 +54,17 @@ export function applyAnalyticsConsent(granted: boolean): void {
   document.head.appendChild(script)
 }
 
+/**
+ * Sends a GA4 event only while consent is granted. `ga-disable` is false only after
+ * a grant: after a revocation `window.gtag` still exists, so checking for gtag alone
+ * would keep sending (plan T4-02). No visitor data in `params`.
+ */
+export function trackAnalyticsEvent(name: string, params: Record<string, string>): void {
+  const flags = window as unknown as Record<string, boolean | undefined>
+  if (flags[`ga-disable-${GA_ID}`] !== false) return
+  window.gtag?.('event', name, params)
+}
+
 // gtag sets _ga and _ga_<id> on the widest domain it can (.future-marketing.ai), so
 // expire them host-only and on every parent domain; the browser ignores the misses.
 function clearGaCookies(): void {

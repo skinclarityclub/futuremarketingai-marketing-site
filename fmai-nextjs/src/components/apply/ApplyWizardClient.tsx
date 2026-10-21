@@ -21,6 +21,7 @@ import { ScanSummaryStep } from './ScanSummaryStep'
 import { ProblemStep } from './ProblemStep'
 import { ResultBranchA } from './ResultBranchA'
 import { ResultBranchB } from './ResultBranchB'
+import { trackAnalyticsEvent } from '@/lib/analytics-consent'
 
 const ASSESSMENT_SESSION_KEY = 'fmai-assessment-v1'
 
@@ -147,6 +148,7 @@ export function ApplyWizardClient() {
       // No-op without the tag or without ?fmc= in the URL.
       ;(window as Window & { __fmaiForm?: (name: string) => void }).__fmaiForm?.('aanvraag')
       const data = (await res.json()) as ApplyWizardResponse
+      trackAnalyticsEvent('apply_submit', { branch: data.branch })
       setResult({
         branch: data.branch,
         calendlyUrl: data.calendlyUrl,
