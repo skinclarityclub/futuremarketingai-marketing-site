@@ -31,14 +31,16 @@ const isProduction = process.env.NODE_ENV === 'production'
 const isLighthouseTest = process.env.LIGHTHOUSE_TEST === 'true'
 const includeHttpsUpgrades = isProduction && !isLighthouseTest
 
+// GA4 wildcards per Google's CSP guide (developers.google.com/tag-platform/security/guides/csp): gtag sends a
+// Dutch visitor's hits to region1.google-analytics.com, which www-only blocked (measured 2026-10-21, 0 hits arrived).
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://app.future-marketing.ai;
   style-src 'self' 'unsafe-inline';
   media-src 'self' blob: ${voorVideo.cdnOrigin};
-  img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com;
+  img-src 'self' data: blob: https://*.google-analytics.com https://www.googletagmanager.com https://app.cal.com https://cal.com;
   font-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://app.future-marketing.ai ${voorVideo.cdnOrigin};
+  connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://app.cal.com https://cal.com https://vitals.vercel-insights.com https://app.future-marketing.ai ${voorVideo.cdnOrigin};
   frame-src https://app.cal.com https://cal.com;
   worker-src 'self' blob:;
   object-src 'none';
