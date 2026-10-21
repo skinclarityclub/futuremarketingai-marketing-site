@@ -8,7 +8,9 @@
 -- HOW: apply with MCP apply_migration, name `applications_heard_from`, on Daley's yes. The ledger version will be the
 -- apply time (14 digits) and will differ from this file name (R-B34-3: the earlier FMai migrations never got a ledger row
 -- either). NEVER `supabase db push` (it would try to apply files the ledger does not know).
--- ORDER: migration first (additive, nullable), code that writes heard_from second; the other way round 500s the form.
+-- ORDER: migration first (additive, nullable), code that writes heard_from second. Code first does NOT 500 the form:
+-- src/app/api/apply/route.ts only logs the failed insert and still returns 200, so the lead is kept but the
+-- `applications` row (and its heard_from) is lost.
 -- COMPAT: nullable, no default. NULL = a row from before the question (108 on prod), never backfilled.
 -- Rollback: ../rollbacks/20261021_applications_heard_from_DOWN.sql (not in migrations/, so nothing applies it by accident).
 -- Proof: throwaway db, fma-app supabase/tests/rls/tracking_b34.test.sql.

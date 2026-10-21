@@ -3,6 +3,7 @@
 // tsc, lint and the Playwright spec tests/e2e/apply-heard-from.spec.ts, as with attribution.
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import { z } from 'zod'
 import { HEARD_FROM, heardFromShape, resolveHeardFrom } from '../src/lib/apply/heard-from.ts'
 
@@ -36,4 +37,13 @@ test('an extra field such as heardFromOther is dropped', () => {
   const r = schema.parse({ heardFrom: 'linkedin', heardFromOther: '06 12 34 56 78' })
   assert.deepEqual(r, { heardFrom: 'linkedin' })
   assert.equal('heardFromOther' in r, false)
+})
+
+test('the migration CHECK list equals the TS list plus not_asked', () => {
+  // A value added in TS only would make every insert with that answer fail silently (the route only logs).
+  const sql = readFileSync(new URL('../supabase/migrations/20261021_applications_heard_from.sql', import.meta.url), 'utf8')
+  const m = sql.match(/heard_from IN\s*\(([^)]*)\)/)
+  assert.ok(m, 'CHECK IN-list not found')
+  const inList = [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1])
+  assert.deepStrictEqual([...inList].sort(), [...HEARD_FROM, 'not_asked'].sort())
 })

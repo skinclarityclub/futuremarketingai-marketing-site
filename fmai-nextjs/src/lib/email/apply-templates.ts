@@ -15,6 +15,7 @@
  */
 import { SITE_URL } from '@/lib/seo-config'
 import { calHostedUrl } from '@/config/calConfig'
+import type { HeardFrom } from '@/lib/apply/heard-from'
 
 const LOGO_URL = `${SITE_URL}/logo.png`
 
@@ -179,7 +180,7 @@ function ctaButton(href: string, label: string): string {
   </table>`
 }
 
-export function adminApplyTemplate(p: ApplyPayload, heardFrom?: string): string {
+export function adminApplyTemplate(p: ApplyPayload, heardFrom?: HeardFrom | 'not_asked'): string {
   const safe = escape
   const agencyHeading = p.agency
     ? `Nieuwe aanvraag van ${safe(p.agency)}`

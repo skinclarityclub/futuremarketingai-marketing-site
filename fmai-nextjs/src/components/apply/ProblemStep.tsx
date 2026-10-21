@@ -23,9 +23,12 @@ export function ProblemStep({
   const [showHeardFromError, setShowHeardFromError] = useState(false)
   const fieldsetRef = useRef<HTMLFieldSetElement>(null)
 
+  // A stored value outside the list (old tab, tampered sessionStorage) counts as unanswered.
+  const answered = heardFrom !== null && HEARD_FROM.some((v) => v === heardFrom)
+
   // The button stays enabled so an attempt without a choice can explain itself.
   const handleSubmit = () => {
-    if (!heardFrom) {
+    if (!answered) {
       setShowHeardFromError(true)
       fieldsetRef.current?.querySelector<HTMLInputElement>('input[type="radio"]')?.focus()
       return
@@ -45,13 +48,32 @@ export function ProblemStep({
         </p>
       </header>
 
+      <div className="space-y-2">
+        <textarea
+          id="apply-problem"
+          value={problem}
+          onChange={(e) => setProblem(e.target.value)}
+          placeholder={t('problem.placeholder')}
+          rows={6}
+          maxLength={2000}
+          className="w-full bg-bg-deep/60 border border-border-primary rounded-lg px-3.5 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system/40 focus:border-accent-system transition-colors resize-y"
+        />
+        <div className="flex items-center justify-between text-xs">
+          <p className="text-text-muted">{t('problem.help')}</p>
+          <p className="text-text-muted font-mono">
+            {t('problem.counter', { count: problem.length })}
+          </p>
+        </div>
+      </div>
+
       <fieldset
         ref={fieldsetRef}
         className="space-y-3"
-        aria-describedby={`apply-heard-from-hint${showHeardFromError && !heardFrom ? ' apply-heard-from-error' : ''}`}
+        aria-describedby={`apply-heard-from-hint${showHeardFromError && !answered ? ' apply-heard-from-error' : ''}`}
       >
         <legend className="text-sm font-semibold text-text-primary">
           {t('problem.heardFrom.legend')}
+          <span className="text-accent-human ml-1">*</span>
         </legend>
         <p id="apply-heard-from-hint" className="text-xs text-text-muted">
           {t('problem.heardFrom.hint')}
@@ -74,30 +96,12 @@ export function ProblemStep({
             </label>
           ))}
         </div>
-        {showHeardFromError && !heardFrom && (
-          <p id="apply-heard-from-error" role="alert" className="text-xs text-red-400">
+        {showHeardFromError && !answered && (
+          <p id="apply-heard-from-error" role="alert" className="text-xs text-error">
             {t('problem.heardFrom.error')}
           </p>
         )}
       </fieldset>
-
-      <div className="space-y-2">
-        <textarea
-          id="apply-problem"
-          value={problem}
-          onChange={(e) => setProblem(e.target.value)}
-          placeholder={t('problem.placeholder')}
-          rows={6}
-          maxLength={2000}
-          className="w-full bg-bg-deep/60 border border-border-primary rounded-lg px-3.5 py-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent-system/40 focus:border-accent-system transition-colors resize-y"
-        />
-        <div className="flex items-center justify-between text-xs">
-          <p className="text-text-muted">{t('problem.help')}</p>
-          <p className="text-text-muted font-mono">
-            {t('problem.counter', { count: problem.length })}
-          </p>
-        </div>
-      </div>
 
       <div className="flex justify-between pt-2">
         <button

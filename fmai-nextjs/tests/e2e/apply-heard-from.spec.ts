@@ -111,3 +111,37 @@ test('a state stored before the deploy (no heardFrom) loads and asks the questio
   expect(bodies).toEqual([])
   expect(errors).toEqual([])
 })
+
+test('a stored value outside the list counts as unanswered: error, no radio, no request, then a pick goes out', async ({ page }) => {
+  const bodies = await mockApply(page)
+  await page.addInitScript((key) => {
+    sessionStorage.setItem(
+      key,
+      JSON.stringify({
+        state: {
+          step: 'problem',
+          identity: { name: 'Jan de Vries', email: 'jan@testbureau.nl', agency: 'TestBureau NL', role: 'CEO' },
+          qualification: {},
+          assessment: null,
+          problem: '',
+          heardFrom: 'bogus',
+          scanCheckChoice: 'no',
+          startedAt: null,
+        },
+        version: 0,
+      }),
+    )
+  }, STORAGE_KEY)
+  await page.goto('/nl/apply')
+  await expect(page.getByRole('group', { name: 'Hoe ken je ons?' })).toBeVisible()
+  await submit(page).click()
+  await expect(page.getByRole('alert').filter({ hasText: /Kies hoe je ons kent/ })).toBeVisible()
+  await expect(page.getByRole('radio', { checked: true })).toHaveCount(0)
+  await page.waitForTimeout(500)
+  expect(bodies).toEqual([])
+  await page.getByRole('radio', { name: 'LinkedIn' }).check()
+  await submit(page).click()
+  await expect(page.getByText(/bedankt|daley reviewt/i).first()).toBeVisible({ timeout: 15_000 })
+  expect(bodies).toHaveLength(1)
+  expect(bodies[0].heardFrom).toBe('linkedin')
+})

@@ -31,8 +31,8 @@ interface ApplyWizardState {
   qualification: QualificationAnswers
   assessment: AssessmentHandoff | null
   problem: string
-  // null = not answered yet; a state persisted before this field existed rehydrates as undefined,
-  // which the UI treats the same (the zustand merge keeps the default null).
+  // null = not answered yet; a state persisted before this field existed keeps the initial null,
+  // because zustand's default shallow merge only overwrites keys present in the stored state.
   heardFrom: HeardFrom | null
   scanCheckChoice: 'yes' | 'no' | null
   result: {
