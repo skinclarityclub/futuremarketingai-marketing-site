@@ -90,6 +90,7 @@ export function ApplyWizardClient() {
   const qualification = useApplyWizard((s) => s.qualification)
   const assessment = useApplyWizard((s) => s.assessment)
   const problem = useApplyWizard((s) => s.problem)
+  const heardFrom = useApplyWizard((s) => s.heardFrom)
   const setAssessment = useApplyWizard((s) => s.setAssessment)
   const setScanCheckChoice = useApplyWizard((s) => s.setScanCheckChoice)
   const next = useApplyWizard((s) => s.next)
@@ -133,6 +134,7 @@ export function ApplyWizardClient() {
         qualification: Object.keys(qualification).length > 0 ? qualification : undefined,
         assessment: assessment ?? undefined,
         problem: problem.trim() || undefined,
+        heardFrom: heardFrom ?? undefined,
         locale,
         website: '', // honeypot
         ...readUrlAttribution(searchParams),

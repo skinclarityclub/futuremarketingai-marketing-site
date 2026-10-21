@@ -9,6 +9,7 @@
  */
 
 import type { Archetype, Stage, AssessmentCategory } from '@/lib/assessment/types'
+import type { HeardFrom } from './heard-from'
 
 export type WizardStep =
   | 'identity'
@@ -96,6 +97,8 @@ export interface ApplyWizardSubmission {
   locale: 'nl' | 'en' | 'es'
   /** Honeypot — must be empty. */
   website?: string
+  /** Self-reported source from the wizard question; the server tolerates it missing. */
+  heardFrom?: HeardFrom
   /** DM link attribution, read from the /apply URL. */
   fmc?: string
   utm_source?: string

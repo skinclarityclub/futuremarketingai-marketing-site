@@ -47,6 +47,7 @@ async function completeWizard(page: Page, afterLoad?: () => Promise<void>) {
   await page.getByRole('radio', { name: '1 van 5' }).click()
   await pick(/verkennen/i)
   await page.getByRole('button', { name: /volgende/i }).click()
+  await page.getByRole('radio', { name: /weet ik niet meer/i }).check()
   await page.getByRole('button', { name: /verstuur aanvraag/i }).click()
 }
 

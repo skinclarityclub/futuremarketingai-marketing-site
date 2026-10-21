@@ -23,6 +23,7 @@ import type {
   ApplyScoreBreakdown,
   ResultBranch,
 } from './types'
+import type { HeardFrom } from './heard-from'
 
 interface ApplyWizardState {
   step: WizardStep
@@ -30,6 +31,9 @@ interface ApplyWizardState {
   qualification: QualificationAnswers
   assessment: AssessmentHandoff | null
   problem: string
+  // null = not answered yet; a state persisted before this field existed keeps the initial null,
+  // because zustand's default shallow merge only overwrites keys present in the stored state.
+  heardFrom: HeardFrom | null
   scanCheckChoice: 'yes' | 'no' | null
   result: {
     branch: ResultBranch
@@ -44,6 +48,7 @@ interface ApplyWizardState {
   setQualification: (answers: Partial<QualificationAnswers>) => void
   setAssessment: (handoff: AssessmentHandoff | null) => void
   setProblem: (text: string) => void
+  setHeardFrom: (value: HeardFrom) => void
   setScanCheckChoice: (choice: 'yes' | 'no' | null) => void
   goToStep: (step: WizardStep) => void
   next: () => void
@@ -100,6 +105,7 @@ export const useApplyWizard = create<ApplyWizardState>()(
       qualification: {},
       assessment: null,
       problem: '',
+      heardFrom: null,
       scanCheckChoice: null,
       result: null,
       startedAt: null,
@@ -119,6 +125,8 @@ export const useApplyWizard = create<ApplyWizardState>()(
       setAssessment: (handoff) => set({ assessment: handoff }),
 
       setProblem: (text) => set({ problem: text }),
+
+      setHeardFrom: (value) => set({ heardFrom: value }),
 
       setScanCheckChoice: (choice) => set({ scanCheckChoice: choice }),
 
@@ -143,6 +151,7 @@ export const useApplyWizard = create<ApplyWizardState>()(
           qualification: {},
           assessment: null,
           problem: '',
+          heardFrom: null,
           scanCheckChoice: null,
           result: null,
           startedAt: null,
@@ -160,6 +169,7 @@ export const useApplyWizard = create<ApplyWizardState>()(
         qualification: state.qualification,
         assessment: state.assessment,
         problem: state.problem,
+        heardFrom: state.heardFrom,
         scanCheckChoice: state.scanCheckChoice,
         startedAt: state.startedAt,
       }),

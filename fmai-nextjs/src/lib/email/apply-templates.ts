@@ -15,6 +15,7 @@
  */
 import { SITE_URL } from '@/lib/seo-config'
 import { calHostedUrl } from '@/config/calConfig'
+import type { HeardFrom } from '@/lib/apply/heard-from'
 
 const LOGO_URL = `${SITE_URL}/logo.png`
 
@@ -179,7 +180,7 @@ function ctaButton(href: string, label: string): string {
   </table>`
 }
 
-export function adminApplyTemplate(p: ApplyPayload): string {
+export function adminApplyTemplate(p: ApplyPayload, heardFrom?: HeardFrom | 'not_asked'): string {
   const safe = escape
   const agencyHeading = p.agency
     ? `Nieuwe aanvraag van ${safe(p.agency)}`
@@ -264,7 +265,8 @@ export function adminApplyTemplate(p: ApplyPayload): string {
         (p.role ? row('Rol', safe(p.role)) : '') +
         row('E-mail', `<a href="mailto:${safe(p.email)}" style="color:${TEAL_TEXT}; text-decoration:none;">${safe(p.email)}</a>`) +
         (p.agency ? row('Bureau', safe(p.agency)) : '') +
-        row('Locale', safe(p.locale))
+        row('Locale', safe(p.locale)) +
+        (heardFrom ? row('Hoe ken je ons', safe(heardFrom)) : '')
     )}
     ${assessmentBlock}
     ${qualificationBlock}
