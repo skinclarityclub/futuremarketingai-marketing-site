@@ -173,6 +173,45 @@ try {
     $c = [int]$byPid[[int]$c].ParentProcessId
   }
 
+  # ---- EEN LOPENDE CODEX-RUN IS ONAANTASTBAAR ----------------------------------
+  # Elke levende codex.exe plus zijn HELE ouderketen tot aan de systeemwortel wordt
+  # overgeslagen, ongeacht leeftijd, procesnaam of een dode schakel in die keten.
+  #
+  # Waarom dit er als APARTE poort staat en de bestaande beschermingen niet volstaan
+  # (alle drie gemeten 2026-09-16, gate research-weekproces):
+  #   1. $LONGRUN_SIG bevat `codex`, maar wordt getoetst op de COMMANDOREGEL VAN DE
+  #      SHELL. De launcher draaide `-File ...\gate-research-week\launch-r1.ps1` en
+  #      daar staat het woord niet in, net zomin als in gate472\launch-472r2.ps1.
+  #      De uitzondering bestond dus wel en vuurde nooit.
+  #   2. Test-Orphan kapt bij hop 0 af zodra de DIRECTE ouder uit de snapshot weg is.
+  #      Een verdwenen wscript.exe maakte de hele boom vogelvrij terwijl codex er
+  #      onderaan doorliep: [KILL] pid=50008 name=pwsh.exe reason=orphan-shell
+  #      age=884s chain=[pwsh.exe(50008) <- DEAD], veertien minuten in de run.
+  #   3. codex.exe staat zelf in de kandidatenlijst als 'orphan-claude' en wordt
+  #      alleen door een leeftijdsmarge beschermd, niet door een verbod.
+  #
+  # Wat het kostte: die kill nam de gate-ronde mee, de herstart liep op de
+  # ChatGPT-Plus-quota van vijf uur, en dat is een dag vertraging op een poort die
+  # voor de eerste regel code moet sluiten. Een codex-run eindigt altijd uit
+  # zichzelf; hem halverwege afkappen is nooit de goedkoopste uitkomst.
+  #
+  # Prijs, bewust aanvaard (Daley 2026-09-16, "hij mag nooit codex killen"): een
+  # ECHT vastgelopen codex-boom wordt hier niet meer opgeruimd. Dat is zichtbaar
+  # (stream-*.jsonl stopt met groeien) en met de hand te doen.
+  $codexTree = @{}
+  foreach ($p in $snap) {
+    if (($p.Name).ToLower() -ne 'codex.exe') { continue }
+    $cur = [int]$p.ProcessId
+    for ($i = 0; $i -lt 60; $i++) {
+      $proc = $byPid[$cur]
+      if (-not $proc) { break }            # keten loopt dood: de rest bestaat niet meer
+      $codexTree[$cur] = $true
+      if ($SYSTEM_ROOTS -contains ($proc.Name).ToLower()) { break }
+      $cur = [int]$proc.ParentProcessId
+      if ($cur -eq 0) { break }
+    }
+  }
+
   # ---- the safe orphan test ----
   function Test-Orphan([int]$startPid) {
     $cur = $startPid
@@ -250,6 +289,7 @@ try {
     $pid_ = [int]$p.ProcessId
     if ($selfChain.ContainsKey($pid_)) { continue }     # never touch our own tree
     if ($spaarPids.ContainsKey($pid_)) { continue }     # luistert op een KeepPort
+    if ($codexTree.ContainsKey($pid_))  { continue }    # lopende codex-run, zie blok hierboven
     $name = ($p.Name).ToLower()
     $cmd  = [string]$p.CommandLine
     $reason = $null
@@ -257,7 +297,9 @@ try {
     if ($name -eq 'node.exe' -or $name -eq 'bun.exe') {
       if ($cmd -match $MCP_SIG)         { $reason = 'mcp-stdio' }
       elseif ($devPidByPort.ContainsKey($pid_)) { $reason = "dev-server:$($devPidByPort[$pid_])" }
-      elseif ($cmd -match $NEXTDEV_SIG) { $reason = 'next-dev' }
+      # `next build` eindigt altijd zelf; onder detach is zijn keten DEAD, dus Test-Orphan gaf hem vrij en een build die over een
+      # veegronde liep stierf stil met exit 1 (2026-10-22 19:36:41Z, [KILL] node.exe reason=next-dev age=202s, webpack-build sp-int).
+      elseif ($cmd -match $NEXTDEV_SIG -and $cmd -notmatch 'next[\\/]dist[\\/]bin[\\/]next"?\s+build\b') { $reason = 'next-dev' }
     }
     elseif ($name -eq 'chrome.exe' -or $name -eq 'headless_shell.exe') {
       if ($cmd -match $CHROME_SIG)      { $reason = 'lighthouse/playwright-chrome' }
