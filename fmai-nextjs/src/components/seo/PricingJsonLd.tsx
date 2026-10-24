@@ -74,7 +74,7 @@ export function PricingJsonLd() {
       ),
       workspaceOffer(
         'AI Marketing Suite (Enterprise)',
-        `Enterprise tier — linear per-workspace rate (€${(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0)}/workspace) from 15 brands upward. All 12 skills uncapped (fair use), 800 credits per workspace per month, dedicated CSM + SLA, white-label and API access. One-time onboarding €${TIER_PRICING.ENTERPRISE.onboardingFee.toLocaleString('en-US')}.`,
+        `Enterprise tier — linear per-workspace rate (€${(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0)}/workspace) from 15 brands upward. All 12 skills uncapped (fair use), 800 credits per workspace per month, dedicated CSM + SLA, white-label, API access built on request. One-time onboarding €${TIER_PRICING.ENTERPRISE.onboardingFee.toLocaleString('en-US')}.`,
         'ENTERPRISE',
       ),
     ],
