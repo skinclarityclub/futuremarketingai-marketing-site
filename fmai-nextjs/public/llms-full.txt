@@ -317,6 +317,8 @@ Daley is the founder of FutureMarketingAI. Native Dutch speaker, based in the Ne
 - Per task the agency decides how independently Clyde works; critical actions such as ad spend are always proposed first.
 - The website chatbot identifies itself as AI when asked.
 - After cancellation you have 30 days to take your data with you; after that we delete your workspaces.
+- No zero data retention agreement with Anthropic or OpenAI: by their standard API terms they do not train on API data and delete it within 30 days, longer for abuse monitoring or when the law requires it. A data processing agreement is available on request via privacy@future-marketing.ai.
+- Per component where it runs, what the language model providers retain and how long we keep data: https://future-marketing.ai/nl/trust
 
 ## Kennisbank / Resources
 

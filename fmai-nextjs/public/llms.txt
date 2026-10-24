@@ -52,4 +52,5 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Legal: Privacy](https://future-marketing.ai/nl/legal/privacy): AVG (GDPR) privacy policy.
 - [Legal: Terms](https://future-marketing.ai/nl/legal/terms): Terms of service including subscription terms.
 - [Legal: Cookies](https://future-marketing.ai/nl/legal/cookies): Cookie disclosures.
+- [Trust](https://future-marketing.ai/nl/trust): Where the data lives per component (Vercel functions in Frankfurt, Supabase in Frankfurt, own Hetzner server in Nuremberg, Upstash in Frankfurt), what Anthropic and OpenAI retain, our retention periods, what we do not promise (no zero data retention, the language model runs in the US), and the data processing agreement on request.
 - [Full long-form content for LLMs](https://future-marketing.ai/llms-full.txt): Complete product description with all tiers, skill definitions, case study, memory per client and where data lives.

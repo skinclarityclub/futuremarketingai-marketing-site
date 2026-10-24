@@ -36,6 +36,7 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/apply': { labelKey: 'apply', parent: '/' },
   '/assessment': { labelKey: 'assessment', parent: '/' },
   '/roadmap': { labelKey: 'roadmap', parent: '/' },
+  '/trust': { labelKey: 'trust', parent: '/' },
 
   // Case studies
   '/case-studies/skinclarity-club': {

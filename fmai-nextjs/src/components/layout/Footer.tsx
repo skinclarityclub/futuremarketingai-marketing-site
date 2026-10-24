@@ -205,6 +205,12 @@ export async function Footer({ locale }: FooterProps) {
                 </p>
                 <div className="flex items-center gap-3">
                   <Link
+                    href="/trust"
+                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
+                  >
+                    {t('landing.footer.nav.trust')}
+                  </Link>
+                  <Link
                     href="/legal/privacy"
                     className="text-xs text-text-muted hover:text-text-primary transition-colors"
                   >

@@ -110,7 +110,9 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills': '2026-06-15',
   '/assessment': '2026-05-28',
   '/roadmap': '2026-06-15',
-  '/legal/privacy': '2026-04-27',
+  // Sub-processor list gained HeyGen and the integrations you switch on yourself.
+  '/legal/privacy': '2026-10-25',
   '/legal/terms': '2026-04-27',
   '/legal/cookies': '2026-04-27',
+  '/trust': '2026-10-25',
 }
