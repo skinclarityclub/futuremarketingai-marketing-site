@@ -614,6 +614,7 @@
           "manychat": "ManyChat DM",
           "research": "Research",
           "pricing": "Prijzen",
+          "alternatives": "Alternatieven",
           "about": "Over ons",
           "how_it_works": "Hoe het werkt",
           "founding_member": "Founding Member",
@@ -665,6 +666,7 @@
       "about": "Over ons",
       "how_it_works": "Hoe het werkt",
       "pricing": "Prijzen",
+      "alternatives": "Alternatieven",
       "founding_member": "Founding Member",
       "contact": "Contact",
       "memory": "Geheugen",
@@ -1062,6 +1064,81 @@
       "title": "Klaar om de partnership te starten?",
       "description": "Maximaal {maxPartners} bureaus per jaar. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
       "primary": "Plan een gesprek"
+    }
+  },
+  "alternatives": {
+    "meta": {
+      "title": "Alternatieven voor Clyde vergeleken | FutureMarketingAI",
+      "description": "Lindy, Sintra, GoSocio en aicollegas.nl naast Clyde: wat ze doen, wat ze kosten en wanneer ze beter bij je bureau passen. Gecontroleerd op 25 oktober 2026."
+    },
+    "hero": {
+      "eyebrow": "Alternatieven",
+      "title": "Alternatieven voor Clyde, eerlijk vergeleken",
+      "subtitle": "Vier tools die bureaus naast ons bekijken. Per tool: wat het doet, wat het kost en wanneer het beter bij je past dan Clyde."
+    },
+    "checked": "Prijzen en functies gecontroleerd op 25 oktober 2026, op de eigen sites van de aanbieders.",
+    "clyde": {
+      "eyebrow": "Ons uitgangspunt",
+      "title": "Waar Clyde voor is",
+      "body": "Clyde is de AI-collega van je bureau, gebouwd voor bureaus met 5 tot 20 mensen en 5 tot 20 merken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in een eigen dashboard. Instagram en LinkedIn publiceren vandaag; andere netwerken sluiten we op verzoek aan. Data, servers en database staan in de EU; het taalmodel draait in de VS.",
+      "price": "Founding Member €997 per maand, met 15 werkruimtes (10 plekken). Daarna €499, €399 of €299 per werkruimte per maand, afhankelijk van het aantal merken. Je begint met een gesprek."
+    },
+    "list": {
+      "eyebrow": "Vergelijking",
+      "title": "Vier alternatieven"
+    },
+    "labels": {
+      "what": "Wat het is",
+      "price": "Prijs",
+      "agencies": "Voor bureaus",
+      "data": "Data",
+      "pickThem": "Kies {name} als",
+      "pickClyde": "Kies Clyde als",
+      "source": "Bron:"
+    },
+    "items": {
+      "lindy": {
+        "name": "Lindy",
+        "what": "Een AI-assistent voor je hele team: inbox, vergaderingen, Slack, je CRM en meer dan 1.500 koppelingen. Acties naar buiten wachten op goedkeuring.",
+        "price": "Gratis start met $50 aan credits voor 7 dagen. Team vanaf $49,99 per maand per actieve gebruiker, met 5.000 credits per gebruiker. Enterprise op maat.",
+        "agencies": "Lindy werkt in de werkruimte van je eigen team. Een werkruimte of portal per klant vonden we niet op hun site.",
+        "data": "Volgens hun site: SOC 2 Type II, AVG, HIPAA en PIPEDA.",
+        "pickThem": "Je vooral hulp zoekt voor je eigen team: inbox, agenda, vergaderingen en losse taken in veel verschillende tools.",
+        "pickClyde": "Je werk om klanten draait: per klant een strategie, content die de klant zelf goedkeurt, en een geheugen dat per klant gescheiden blijft."
+      },
+      "sintra": {
+        "name": "Sintra",
+        "what": "Twaalf AI-helpers voor ondernemers, onder andere voor social media, klantenservice en SEO, met een kennisbank over je bedrijf (Brain AI).",
+        "price": "$48,50 per maand bij maandbetaling (actieprijs, normaal $97), $15,60 per maand bij een jaar vooruit. 250 credits per maand.",
+        "agencies": "Over bureaus of werken voor meerdere klanten staat niets op hun prijs- en homepagina.",
+        "data": "Waar data staat, vonden we niet op die pagina’s.",
+        "pickThem": "Je zelfstandig bent of één merk hebt, en voor weinig geld hulp wilt bij veel soorten taken.",
+        "pickClyde": "Je meerdere klanten bedient en per klant een eigen werkruimte, geheugen en goedkeuring door de klant wilt."
+      },
+      "gosocio": {
+        "name": "GoSocio",
+        "what": "Een AI-tool voor social media: posts, beeld en video maken, inplannen en zelf publiceren op LinkedIn, Instagram, X, Facebook, TikTok en YouTube.",
+        "price": "€31, €71 of €159 per maand, jaarlijks betaald. Proefperiode van 14 dagen.",
+        "agencies": "Werkruimtes per klant en een goedkeuringswachtrij voor je team. Een portal waar je klant zelf goedkeurt, vonden we niet op hun site.",
+        "data": "Gevestigd in Oostenrijk (Graz en Wenen), hosting in de EU.",
+        "pickThem": "Je alleen social nodig hebt, nu al op zes netwerken wilt publiceren, of een klein budget hebt.",
+        "pickClyde": "Je meer wilt dan social, zoals research, rapportage, blogs en leads per klant, en je klant zelf laat goedkeuren in een eigen dashboard."
+      },
+      "aicollegas": {
+        "name": "aicollegas.nl",
+        "what": "Een bureau uit Nijmegen dat AI-agents op maat bouwt voor je eigen processen, met een aanbod voor marketingbureaus: onboarding, content, planning en rapportage.",
+        "price": "Start met een AI Impact Sessie van €1.495. Daarna een partnership van 12 maanden: €4.500, €8.500 of €14.000 per maand.",
+        "agencies": "Ze bouwen per organisatie op maat. Je agents en het verbruik zie je in hun eigen hub.",
+        "data": "AI-tokens lopen via je eigen sleutels (BYOK), zonder opslag, volgens hun prijspagina.",
+        "pickThem": "Je maatwerk wilt voor je eigen interne processen en budget hebt voor een traject van een jaar.",
+        "pickClyde": "Je een product wilt dat al draait voor marketing per klant, vanaf €997 per maand."
+      }
+    },
+    "correction": "Klopt er iets niet meer? Mail hello@future-marketing.ai, dan passen we het aan.",
+    "cta": {
+      "title": "Past Clyde bij je bureau?",
+      "body": "In een gesprek kijken we samen of Clyde past, of dat een van de tools hierboven beter bij je werk past.",
+      "button": "Plan een gesprek"
     }
   },
   "how-it-works": {

@@ -614,6 +614,7 @@
           "manychat": "ManyChat DM",
           "research": "Research",
           "pricing": "Precios",
+          "alternatives": "Alternativas",
           "about": "Sobre nosotros",
           "how_it_works": "Cómo funciona",
           "founding_member": "Founding Member",
@@ -665,6 +666,7 @@
       "about": "Sobre nosotros",
       "how_it_works": "Cómo funciona",
       "pricing": "Precios",
+      "alternatives": "Alternativas",
       "founding_member": "Founding Member",
       "contact": "Contacto",
       "memory": "Memoria",
@@ -1062,6 +1064,81 @@
       "title": "¿Listo para empezar la partnership?",
       "description": "Máx. {maxPartners} agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
       "primary": "Agenda una llamada"
+    }
+  },
+  "alternatives": {
+    "meta": {
+      "title": "Alternativas a Clyde comparadas | FutureMarketingAI",
+      "description": "Lindy, Sintra, GoSocio y aicollegas.nl junto a Clyde: qué hacen, cuánto cuestan y cuándo encajan mejor con tu agencia. Revisado el 25 de octubre de 2026."
+    },
+    "hero": {
+      "eyebrow": "Alternativas",
+      "title": "Alternativas a Clyde, comparadas con honestidad",
+      "subtitle": "Cuatro herramientas que las agencias miran junto a nosotros. Por herramienta: qué hace, cuánto cuesta y cuándo te encaja mejor que Clyde."
+    },
+    "checked": "Precios y funciones revisados el 25 de octubre de 2026, en las webs de cada proveedor.",
+    "clyde": {
+      "eyebrow": "Nuestro punto de partida",
+      "title": "Para qué es Clyde",
+      "body": "Clyde es el colega de IA de tu agencia, hecho para agencias de 5 a 20 personas y de 5 a 20 marcas. Cada cliente tiene su propio espacio de trabajo y su propia memoria. Por cliente, Clyde hace estrategia, investigación, contenido, informes y leads, y tu cliente aprueba en su propio panel. Instagram y LinkedIn publican hoy; otras redes las conectamos bajo petición. Los datos, los servidores y la base de datos están en la UE; el modelo de lenguaje funciona en EE. UU.",
+      "price": "Founding Member 997 € al mes, con 15 espacios de trabajo (10 plazas). Después 499 €, 399 € o 299 € por espacio de trabajo al mes, según el número de marcas. Empiezas con una llamada."
+    },
+    "list": {
+      "eyebrow": "Comparación",
+      "title": "Cuatro alternativas"
+    },
+    "labels": {
+      "what": "Qué es",
+      "price": "Precio",
+      "agencies": "Para agencias",
+      "data": "Datos",
+      "pickThem": "Elige {name} si",
+      "pickClyde": "Elige Clyde si",
+      "source": "Fuente:"
+    },
+    "items": {
+      "lindy": {
+        "name": "Lindy",
+        "what": "Un asistente de IA para todo tu equipo: bandeja de entrada, reuniones, Slack, tu CRM y más de 1.500 integraciones. Las acciones hacia fuera esperan aprobación.",
+        "price": "Inicio gratis con 50 $ en créditos durante 7 días. Team desde 49,99 $ al mes por usuario activo, con 5.000 créditos por usuario. Enterprise a medida.",
+        "agencies": "Lindy trabaja en el espacio de trabajo de tu propio equipo. No encontramos en su web un espacio ni un portal por cliente.",
+        "data": "Según su web: SOC 2 Type II, RGPD, HIPAA y PIPEDA.",
+        "pickThem": "Buscas sobre todo ayuda para tu propio equipo: bandeja de entrada, agenda, reuniones y tareas sueltas en muchas herramientas.",
+        "pickClyde": "Tu trabajo gira en torno a clientes: una estrategia por cliente, contenido que aprueba el propio cliente y una memoria separada por cliente."
+      },
+      "sintra": {
+        "name": "Sintra",
+        "what": "Doce ayudantes de IA para emprendedores, entre otros para redes sociales, atención al cliente y SEO, con una base de conocimiento sobre tu negocio (Brain AI).",
+        "price": "48,50 $ al mes con pago mensual (precio de oferta, normalmente 97 $), 15,60 $ al mes pagando un año por adelantado. 250 créditos al mes.",
+        "agencies": "Su página de precios y su portada no dicen nada sobre agencias ni sobre trabajar para varios clientes.",
+        "data": "No encontramos en esas páginas dónde se guardan los datos.",
+        "pickThem": "Trabajas por tu cuenta o tienes una sola marca, y quieres ayuda con muchos tipos de tareas por poco dinero.",
+        "pickClyde": "Atiendes a varios clientes y quieres por cliente un espacio de trabajo, una memoria y la aprobación del cliente."
+      },
+      "gosocio": {
+        "name": "GoSocio",
+        "what": "Una herramienta de IA para redes sociales: crear publicaciones, imágenes y vídeo, programarlas y publicarlas directamente en LinkedIn, Instagram, X, Facebook, TikTok y YouTube.",
+        "price": "31 €, 71 € o 159 € al mes, con pago anual. Prueba de 14 días.",
+        "agencies": "Espacios de trabajo por cliente y una cola de aprobación para tu equipo. No encontramos en su web un portal donde apruebe tu cliente.",
+        "data": "Con sede en Austria (Graz y Viena), alojamiento en la UE.",
+        "pickThem": "Solo necesitas redes sociales, quieres publicar ya en seis redes o tienes poco presupuesto.",
+        "pickClyde": "Quieres más que redes sociales, como investigación, informes, blogs y leads por cliente, y que tu cliente apruebe en su propio panel."
+      },
+      "aicollegas": {
+        "name": "aicollegas.nl",
+        "what": "Una agencia de Nimega que construye agentes de IA a medida para tus propios procesos, con una oferta para agencias de marketing: onboarding, contenido, planificación e informes.",
+        "price": "Empieza con una AI Impact Sessie de 1.495 €. Después, una colaboración de 12 meses: 4.500 €, 8.500 € o 14.000 € al mes.",
+        "agencies": "Construyen a medida por organización. Ves tus agentes y el consumo en su propio hub.",
+        "data": "Los tokens de IA van con tus propias claves (BYOK), sin almacenamiento, según su página de precios.",
+        "pickThem": "Quieres algo a medida para tus procesos internos y tienes presupuesto para un proyecto de un año.",
+        "pickClyde": "Quieres un producto que ya funciona para el marketing por cliente, desde 997 € al mes."
+      }
+    },
+    "correction": "¿Algo ya no es correcto? Escribe a hello@future-marketing.ai y lo corregimos.",
+    "cta": {
+      "title": "¿Encaja Clyde con tu agencia?",
+      "body": "En una llamada vemos juntos si Clyde encaja, o si alguna de las herramientas de arriba encaja mejor con tu trabajo.",
+      "button": "Agenda una llamada"
     }
   },
   "how-it-works": {

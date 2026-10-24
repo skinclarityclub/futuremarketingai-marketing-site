@@ -614,6 +614,7 @@
           "manychat": "ManyChat DM",
           "research": "Research",
           "pricing": "Pricing",
+          "alternatives": "Alternatives",
           "about": "About",
           "how_it_works": "How it works",
           "founding_member": "Founding Member",
@@ -665,6 +666,7 @@
       "about": "About",
       "how_it_works": "How it works",
       "pricing": "Pricing",
+      "alternatives": "Alternatives",
       "founding_member": "Founding Member",
       "contact": "Contact",
       "memory": "Memory",
@@ -1062,6 +1064,81 @@
       "title": "Ready to start the partnership?",
       "description": "Max {maxPartners} agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "primary": "Book a call"
+    }
+  },
+  "alternatives": {
+    "meta": {
+      "title": "Alternatives to Clyde compared | FutureMarketingAI",
+      "description": "Lindy, Sintra, GoSocio and aicollegas.nl next to Clyde: what they do, what they cost and when they suit your agency better. Checked October 25, 2026."
+    },
+    "hero": {
+      "eyebrow": "Alternatives",
+      "title": "Alternatives to Clyde, compared honestly",
+      "subtitle": "Four tools agencies look at alongside us. Per tool: what it does, what it costs and when it suits you better than Clyde."
+    },
+    "checked": "Prices and features checked on October 25, 2026, on the providers' own sites.",
+    "clyde": {
+      "eyebrow": "Our starting point",
+      "title": "What Clyde is for",
+      "body": "Clyde is your agency's AI colleague, built for agencies with 5 to 20 people and 5 to 20 brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own dashboard. Instagram and LinkedIn publish today; we connect other networks on request. Data, servers and database are in the EU; the language model runs in the US.",
+      "price": "Founding Member €997 per month, with 15 workspaces (10 spots). After that €499, €399 or €299 per workspace per month, depending on the number of brands. You start with a call."
+    },
+    "list": {
+      "eyebrow": "Comparison",
+      "title": "Four alternatives"
+    },
+    "labels": {
+      "what": "What it is",
+      "price": "Price",
+      "agencies": "For agencies",
+      "data": "Data",
+      "pickThem": "Choose {name} if",
+      "pickClyde": "Choose Clyde if",
+      "source": "Source:"
+    },
+    "items": {
+      "lindy": {
+        "name": "Lindy",
+        "what": "An AI assistant for your whole team: inbox, meetings, Slack, your CRM and more than 1,500 integrations. Actions with outside impact wait for approval.",
+        "price": "Free start with $50 in credits for 7 days. Team from $49.99 per month per active user, with 5,000 credits per user. Enterprise is custom.",
+        "agencies": "Lindy works in your own team's workspace. We found no workspace or portal per client on their site.",
+        "data": "According to their site: SOC 2 Type II, GDPR, HIPAA and PIPEDA.",
+        "pickThem": "You mainly want help for your own team: inbox, calendar, meetings and one-off tasks across many tools.",
+        "pickClyde": "Your work revolves around clients: a strategy per client, content the client approves, and a memory kept separate per client."
+      },
+      "sintra": {
+        "name": "Sintra",
+        "what": "Twelve AI helpers for business owners, covering social media, customer support and SEO among others, with a knowledge base about your business (Brain AI).",
+        "price": "$48.50 per month on the monthly plan (sale price, normally $97), $15.60 per month when paying a year ahead. 250 credits per month.",
+        "agencies": "Their pricing and home pages say nothing about agencies or working for several clients.",
+        "data": "We found nothing on those pages about where data is stored.",
+        "pickThem": "You work on your own or have one brand, and want help with many kinds of tasks for little money.",
+        "pickClyde": "You serve several clients and want a workspace, a memory and client approval per client."
+      },
+      "gosocio": {
+        "name": "GoSocio",
+        "what": "An AI tool for social media: create posts, images and video, schedule them and publish directly to LinkedIn, Instagram, X, Facebook, TikTok and YouTube.",
+        "price": "€31, €71 or €159 per month, billed annually. 14-day trial.",
+        "agencies": "Workspaces per client and an approval queue for your team. We found no portal on their site where your client approves.",
+        "data": "Based in Austria (Graz and Vienna), hosting in the EU.",
+        "pickThem": "You only need social, want to publish to six networks today, or have a small budget.",
+        "pickClyde": "You want more than social, such as research, reporting, blogs and leads per client, and you let your client approve in their own dashboard."
+      },
+      "aicollegas": {
+        "name": "aicollegas.nl",
+        "what": "An agency from Nijmegen that builds custom AI agents for your own processes, with an offer for marketing agencies: onboarding, content, planning and reporting.",
+        "price": "Starts with an AI Impact Session of €1,495. Then a 12-month partnership: €4,500, €8,500 or €14,000 per month.",
+        "agencies": "They build custom per organisation. You see your agents and usage in their own hub.",
+        "data": "AI tokens run on your own keys (BYOK), without storage, according to their pricing page.",
+        "pickThem": "You want custom work for your own internal processes and have budget for a year-long project.",
+        "pickClyde": "You want a product that already runs marketing per client, from €997 per month."
+      }
+    },
+    "correction": "Is something no longer right? Email hello@future-marketing.ai and we will fix it.",
+    "cta": {
+      "title": "Is Clyde a fit for your agency?",
+      "body": "In a call we look together at whether Clyde fits, or whether one of the tools above suits your work better.",
+      "button": "Book a call"
     }
   },
   "how-it-works": {

@@ -7,6 +7,7 @@ const pages = [
   { path: '/', changeFrequency: 'weekly' as const, priority: 1 },
   { path: '/memory', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/pricing', changeFrequency: 'monthly' as const, priority: 0.9 },
+  { path: '/alternatives', changeFrequency: 'monthly' as const, priority: 0.7 },
   { path: '/apply', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/case-studies/skinclarity-club', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills', changeFrequency: 'monthly' as const, priority: 0.9 },
