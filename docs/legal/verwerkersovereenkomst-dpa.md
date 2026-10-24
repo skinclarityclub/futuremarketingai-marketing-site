@@ -2,7 +2,7 @@
 title: Verwerkersovereenkomst (Data Processing Agreement)
 tags: #legal #gdpr #dpa #compliance #aaas
 created: 2026-03-20
-updated: 2026-10-12
+updated: 2026-10-25
 status: concept
 source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md, privacyverklaring op future-marketing.ai/legal/privacy'
 ---
@@ -18,8 +18,11 @@ source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md, privacyverklaring op
 > 3. **Hetzner**: de verwerkersovereenkomst moet in het Hetzner-account worden afgesloten (accounts.hetzner.com/account/dpa). Of dat gebeurd is, is niet gecontroleerd: de accountpagina zit achter een botcontrole.
 > 4. **Beweringen in 9.1, 9.2, 11.2 en 12.2**, gemeten op 2026-10-13. De firewall (ufw) en fail2ban (sshd-jail) staan aan op de eigen server en wachtwoord-login is uit. "Intrusion detection" is dus fail2ban op SSH, niet meer. Er bestaan audit-tabellen per onderdeel (klanttoegang, service-role, koppelingen, strategie, WhatsApp, chatbot-consent), maar geen log van "alle verwerkingsactiviteiten", en de bewaring van 90 dagen is niet aangetoond. Er bestaat geen TIA-document, dus "heeft een TIA uitgevoerd" (11.2) klopt niet. Achtergrondcontrole, training en melding binnen 24 uur zijn beloftes. Bevestigen of aanpassen.
 > 5. **Meta (Instagram/Facebook) en Telegram** staan in Annex A apart als derde partij, omdat zij daar zelf verantwoordelijk zijn. De privacyverklaring noemt ze nog gewoon bij de sub-verwerkers.
+> 6. **Bunny.net en Cal.com** staan in de privacyverklaring bij de sub-verwerkers, maar niet in Annex A. Beide horen bij de persoonlijke videopagina's van FMai's eigen outreach. De Cal.com-webhook draait in productie; voor Bunny.net is in fma-app geen productiesleutel gevonden (2026-10-25). Bij outreach is FMai zelf verwerkingsverantwoordelijke, en dan vallen ze buiten deze overeenkomst. Bevestigen, en daarna de privacyverklaring splitsen of ze hier alsnog opnemen.
 >
 > Opgelost op 2026-10-13: Upstash Redis staat volledig in Frankfurt (zie Annex A), en het Gemini-project heeft prepaid billing, dus de DPA voor betaalde diensten geldt.
+>
+> Opgelost op 2026-10-25: HeyGen staat in A.1. Google, Microsoft en ManyChat staan in A.3, omdat de klant ze zelf koppelt; zo noemt de privacyverklaring ze ook.
 
 ---
 
@@ -343,6 +346,7 @@ De categorieën volgen artikel 5 van de privacyverklaring. "DPF" is het EU-VS Da
 | Sub-verwerker | Entiteit en land | Doel | Verwerkingslocatie | Waarborg doorgifte | DPA |
 | --- | --- | --- | --- | --- | --- |
 | fal.ai | Features & Labels, Inc. (VS) | Beeld en video voor advertenties | VS en andere landen | SCC; DPF ONBEKEND | Ja |
+| HeyGen | HeyGen Technology, Inc. (VS) | Video's met een avatar voor advertenties | VS (AWS) | DPF (actief, hercertificering in behandeling) + SCC | Ja |
 | ElevenLabs | Eleven Labs Inc. (VS) | Voice-overs voor advertenties | VS (EU-residentie alleen bij Enterprise) | DPF + SCC | Ja |
 
 **Webdata en SEO**
@@ -376,7 +380,19 @@ Bij deze partijen is de aanbieder zelf verwerkingsverantwoordelijke. Een verwerk
 | Meta: Instagram en Facebook (Graph API) | Meta Platforms Ireland Limited (Ierland) | Publiceren, statistieken en berichten op gekoppelde accounts | Meta is zelfstandig verwerkingsverantwoordelijke ("data exporter") onder de Meta Platform Terms |
 | Telegram | Telegram Messenger Inc. (land ONBEKEND; EER-vertegenwoordiger EDPO) | Berichten aan Clyde via Telegram | Een botontwikkelaar geldt bij Telegram als derde partij. Gegevens van EER-gebruikers staan in Nederlandse datacenters |
 
+### A.3 Koppelingen die de Verwerkingsverantwoordelijke zelf aanzet (geen sub-verwerker)
+
+Deze aanbieders schakelt de Verwerker niet in. De Verwerkingsverantwoordelijke koppelt zijn eigen account, en Clyde werkt alleen in dat account. De aanbieder verwerkt de gegevens onder het contract dat de Verwerkingsverantwoordelijke zelf met hem heeft. Wat Clyde uit zo'n account ophaalt, valt daarna onder A.1.
+
+| Koppeling | Contractpartij van de klant | Waarvoor | Verwerkingslocatie | Waarborg doorgifte | DPA |
+| --- | --- | --- | --- | --- | --- |
+| Google: Analytics, Search Console en Gmail | Google Cloud EMEA Limited (Ierland), voor zakelijke klanten in de EMEA behalve Frankrijk, Italië en Polen | Statistieken en zoekdata voor rapportage; e-mail in de inbox | Elk land waar Google of zijn subverwerkers faciliteiten hebben | DPF (Google LLC, actief) + SCC | Ja, de Cloud Data Processing Addendum in het Google Workspace-contract van de klant |
+| Microsoft: Outlook (e-mail en agenda) | Volgt uit het Microsoft-contract van de klant. De voorwaarden van de Graph-API, waarlangs Clyde werkt, zijn met Microsoft Corporation (VS) | E-mail en agenda in de inbox | EU Data Boundary: gegevens van zakelijke klanten in de EU worden opgeslagen en verwerkt in datacenters in de EU of EFTA, met de uitzonderingen die Microsoft daar noemt | DPF (Microsoft Corporation, actief) + SCC (EU-modelclausules) | Ja, de Microsoft Products and Services DPA in het contract van de klant. Volgens de Graph-voorwaarden ontstaat geen verwerker-subverwerkerrelatie tussen de Verwerker en Microsoft |
+| ManyChat | Manychat, Inc. (VS) | Gesprekken uit ManyChat komen in de inbox van Clyde | Productiedata in AWS Frankfurt. Volgens de DPA kan verwerking ook buiten de EER plaatsvinden, onder meer in de VS | DPF (Manychat, Inc., actief) + SCC | Ja, de ManyChat-DPA (ingangsdatum 16 oktober 2026) in het contract van de klant |
+
 _Bronnen: de DPA-, privacy- en trustpagina's van de leveranciers en dataprivacyframework.gov, peildatum 2026-10-12. Deze lijst wordt bijgewerkt bij wijzigingen conform artikel 10.2._
+
+_Bronnen HeyGen en A.3, peildatum 2026-10-25: heygen.com/terms, heygen.com/security en heygen.com/data-processing-addendum; cloud.google.com/terms/google-entity en cloud.google.com/terms/data-processing-addendum; learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use, learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn en learn.microsoft.com/en-us/compliance/regulatory/offering-eu-model-clauses; manychat.com/legal/tos, manychat.com/legal/dpa en manychat.com/security. DPF-status per deelnemer in de lijst op dataprivacyframework.gov: HeyGen Technology Inc. (9160), Manychat, Inc. (1401), Google LLC (5780) en Microsoft Corporation (6474)._
 
 ---
 
