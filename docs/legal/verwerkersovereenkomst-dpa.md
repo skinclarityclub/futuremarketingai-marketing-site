@@ -22,7 +22,7 @@ source: 'GDPR Art. 28, docs/wetgeving-aaas-nederland-eu.md, privacyverklaring op
 >
 > Opgelost op 2026-10-13: Upstash Redis staat volledig in Frankfurt (zie Annex A), en het Gemini-project heeft prepaid billing, dus de DPA voor betaalde diensten geldt.
 >
-> Opgelost op 2026-10-25: HeyGen staat in A.1. Google, Microsoft en ManyChat staan in A.3, omdat de klant ze zelf koppelt; zo noemt de privacyverklaring ze ook.
+> Opgelost op 2026-10-25: HeyGen staat in A.1. Google, Microsoft, ManyChat en Shopify staan in A.3, omdat de klant ze zelf koppelt; zo noemt de privacyverklaring ze ook. De n8n-workflows voor de spraakagent (HubSpot, Twilio, Vapi) zijn op 2026-10-25 gedeactiveerd: de spraakagent is nog niet live en de tabel met gesprekken was leeg.
 
 ---
 
@@ -389,10 +389,11 @@ Deze aanbieders schakelt de Verwerker niet in. De Verwerkingsverantwoordelijke k
 | Google: Analytics, Search Console en Gmail | Google Cloud EMEA Limited (Ierland), voor zakelijke klanten in de EMEA behalve Frankrijk, Italië en Polen | Statistieken en zoekdata voor rapportage; e-mail in de inbox | Elk land waar Google of zijn subverwerkers faciliteiten hebben | DPF (Google LLC, actief) + SCC | Ja, de Cloud Data Processing Addendum in het Google Workspace-contract van de klant |
 | Microsoft: Outlook (e-mail en agenda) | Volgt uit het Microsoft-contract van de klant. De voorwaarden van de Graph-API, waarlangs Clyde werkt, zijn met Microsoft Corporation (VS) | E-mail en agenda in de inbox | EU Data Boundary: gegevens van zakelijke klanten in de EU worden opgeslagen en verwerkt in datacenters in de EU of EFTA, met de uitzonderingen die Microsoft daar noemt | DPF (Microsoft Corporation, actief) + SCC (EU-modelclausules) | Ja, de Microsoft Products and Services DPA in het contract van de klant. Volgens de Graph-voorwaarden ontstaat geen verwerker-subverwerkerrelatie tussen de Verwerker en Microsoft |
 | ManyChat | Manychat, Inc. (VS) | Gesprekken uit ManyChat komen in de inbox van Clyde | Productiedata in AWS Frankfurt. Volgens de DPA kan verwerking ook buiten de EER plaatsvinden, onder meer in de VS | DPF (Manychat, Inc., actief) + SCC | Ja, de ManyChat-DPA (ingangsdatum 16 oktober 2026) in het contract van de klant |
+| Shopify | Shopify International Limited (Ierland), voor winkels in de EMEA | Orders en klantgegevens uit de eigen winkel, voor rapportage en winkelacties | Doorgifte naar het moederbedrijf Shopify Inc. (Canada) en andere Shopify-entiteiten | Binding Corporate Rules, het adequaatheidsbesluit voor Canada en SCC (geen DPF: Shopify trok zich in 2021 terug) | Ja, de Shopify-DPA (bijgewerkt 7 juli 2026) in de voorwaarden van de klant |
 
 _Bronnen: de DPA-, privacy- en trustpagina's van de leveranciers en dataprivacyframework.gov, peildatum 2026-10-12. Deze lijst wordt bijgewerkt bij wijzigingen conform artikel 10.2._
 
-_Bronnen HeyGen en A.3, peildatum 2026-10-25: heygen.com/terms, heygen.com/security en heygen.com/data-processing-addendum; cloud.google.com/terms/google-entity en cloud.google.com/terms/data-processing-addendum; learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use, learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn en learn.microsoft.com/en-us/compliance/regulatory/offering-eu-model-clauses; manychat.com/legal/tos, manychat.com/legal/dpa en manychat.com/security. DPF-status per deelnemer in de lijst op dataprivacyframework.gov: HeyGen Technology Inc. (9160), Manychat, Inc. (1401), Google LLC (5780) en Microsoft Corporation (6474)._
+_Bronnen HeyGen en A.3, peildatum 2026-10-25: heygen.com/terms, heygen.com/security en heygen.com/data-processing-addendum; cloud.google.com/terms/google-entity en cloud.google.com/terms/data-processing-addendum; learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use, learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn en learn.microsoft.com/en-us/compliance/regulatory/offering-eu-model-clauses; manychat.com/legal/tos, manychat.com/legal/dpa en manychat.com/security; shopify.com/legal/terms en shopify.com/legal/dpa. DPF-status per deelnemer in de lijst op dataprivacyframework.gov: HeyGen Technology Inc. (9160), Manychat, Inc. (1401), Google LLC (5780), Microsoft Corporation (6474) en Shopify (603, "Inactive - Withdrawal")._
 
 ---
 
