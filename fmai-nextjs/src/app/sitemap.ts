@@ -28,6 +28,7 @@ const pages = [
   { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/how-it-works', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/trust', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/legal', changeFrequency: 'monthly' as const, priority: 0.6 },
   { path: '/legal/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },

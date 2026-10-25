@@ -628,7 +628,8 @@
           "caseStudies": "Casos de estudio",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Orchestrator"
+          "clyde": "Clyde Orchestrator",
+          "trust": "Confianza"
         },
         "social_aria": {
           "linkedin": "Síguenos en LinkedIn",
@@ -690,7 +691,8 @@
       "legal": "Aviso legal",
       "legal_privacy": "Privacidad",
       "legal_terms": "Términos",
-      "legal_cookies": "Cookies"
+      "legal_cookies": "Cookies",
+      "trust": "Confianza"
     },
     "cookie_consent": {
       "title": "Usamos cookies",
@@ -844,8 +846,8 @@
       "title": "Nuestra infraestructura",
       "subtitle": "Hechos, no ideología. Dónde viven tus datos y quién escribe el código importa.",
       "selfHosted": {
-        "title": "n8n y Supabase self-hosted",
-        "body": "Orquestación con n8n en servidores propios, datos en Supabase en la UE. Construyo yo mismo los pipelines y los ajustamos juntos."
+        "title": "n8n en servidor propio, base de datos en Fráncfort",
+        "body": "Orquestación con n8n en nuestro propio servidor de Hetzner en Núremberg. La base de datos funciona como servicio gestionado en Supabase, en Fráncfort. Construyo yo mismo los pipelines y los ajustamos juntos."
       },
       "eu": {
         "title": "Servidores en la UE",
@@ -1313,7 +1315,7 @@
           },
           "sub_processors": {
             "title": "5. Sub-encargados del tratamiento",
-            "content": "Utilizamos los siguientes sub-encargados para prestar nuestros servicios.\nInfraestructura: Supabase (base de datos y autenticación, región UE Fráncfort), Vercel (hosting; funciones de servidor en Fráncfort, CDN global), Hetzner (servidor propio en la UE para automatizaciones, la base de conocimiento y la programación de publicaciones; el software de programación Postiz funciona allí autoalojado), Upstash (colas y almacenamiento temporal) y Sentry (notificación de errores).\nModelos de lenguaje e IA: Anthropic (texto) y OpenAI (texto e imagen), ambos mediante un contrato con su entidad irlandesa y con transferencias a EE. UU. basadas en CCT, Google Gemini (investigación y análisis de producto), Perplexity (investigación con fuentes citadas) y Voyage AI (hacer que el conocimiento y la memoria se puedan buscar).\nImagen, vídeo y audio: fal.ai (imagen y vídeo para anuncios) ElevenLabs (locuciones para anuncios) y Bunny.net (reproducción de vídeo en páginas de vídeo personales; con sede en Eslovenia).\nDatos web y SEO: Firecrawl (lectura de páginas web), Apify (datos públicos de redes sociales) y DataForSEO (posiciones de búsqueda, palabras clave y menciones en respuestas de IA).\nComunicación y canales: Resend (email), Cal.com (programación de reuniones), Meta (Instagram, Facebook y WhatsApp Business), Telegram (mensajes a Clyde) y Recall.ai (grabación y transcripción de reuniones, solo si usted hace que Clyde asista a una reunión).\nPagos: Stripe.\nEn nuestro Acuerdo de Encargo del Tratamiento se mantiene una lista completa y actualizada, con el país de establecimiento y la garantía de transferencia de cada sub-encargado. Notificaremos a los suscriptores con una antelación mínima de 30 días la incorporación de nuevos sub-encargados."
+            "content": "Utilizamos los siguientes sub-encargados para prestar nuestros servicios.\nInfraestructura: Supabase (base de datos y autenticación, región UE Fráncfort), Vercel (hosting; funciones de servidor en Fráncfort, CDN global), Hetzner (servidor propio en la UE para automatizaciones, la base de conocimiento y la programación de publicaciones; el software de programación Postiz funciona allí autoalojado), Upstash (colas y almacenamiento temporal) y Sentry (notificación de errores).\nModelos de lenguaje e IA: Anthropic (texto) y OpenAI (texto e imagen), ambos mediante un contrato con su entidad irlandesa y con transferencias a EE. UU. basadas en CCT, Google Gemini (investigación y análisis de producto), Perplexity (investigación con fuentes citadas) y Voyage AI (hacer que el conocimiento y la memoria se puedan buscar).\nImagen, vídeo y audio: fal.ai (imagen y vídeo para anuncios), HeyGen (vídeos con avatar para anuncios), ElevenLabs (locuciones para anuncios) y Bunny.net (reproducción de vídeo en páginas de vídeo personales; con sede en Eslovenia).\nDatos web y SEO: Firecrawl (lectura de páginas web), Apify (datos públicos de redes sociales) y DataForSEO (posiciones de búsqueda, palabras clave y menciones en respuestas de IA).\nComunicación y canales: Resend (email), Cal.com (programación de reuniones), Meta (Instagram, Facebook y WhatsApp Business), Telegram (mensajes a Clyde) y Recall.ai (grabación y transcripción de reuniones, solo si usted hace que Clyde asista a una reunión).\nIntegraciones que usted activa: Google (Analytics, Search Console y Gmail), Microsoft (Outlook) y ManyChat. Clyde solo trabaja en la cuenta que usted conecta.\nPagos: Stripe.\nEn nuestro Acuerdo de Encargo del Tratamiento se mantiene una lista completa y actualizada, con el país de establecimiento y la garantía de transferencia de cada sub-encargado. Notificaremos a los suscriptores con una antelación mínima de 30 días la incorporación de nuevos sub-encargados."
           },
           "data_retention": {
             "title": "6. Plazos de conservación",
@@ -1358,7 +1360,112 @@
         "content": "La información contenida en este sitio web se facilita con fines de información general. Cualquier confianza que usted deposite en dicha información es bajo su propio riesgo."
       }
     },
-    "last_updated": "Última actualización: 16 de octubre de 2026"
+    "last_updated": "Última actualización: 25 de octubre de 2026"
+  },
+  "trust": {
+    "meta": {
+      "title": "Confianza: dónde están tus datos | FutureMarketingAI",
+      "description": "Base de datos y servidores en la UE, el modelo de lenguaje en Anthropic y OpenAI en EE. UU. Qué conservan, cuánto conservamos y el acuerdo de encargo."
+    },
+    "updated": "Actualizado el 25 de octubre de 2026",
+    "hero": {
+      "eyebrow": "Confianza",
+      "title": "Dónde están tus datos",
+      "subtitle": "La base de datos, los servidores y las colas están en la UE. El modelo de lenguaje funciona en Anthropic y OpenAI, en EE. UU. Abajo, por componente: dónde funciona, qué conservan los modelos de lenguaje y cuánto tiempo conservamos los datos."
+    },
+    "hosting": {
+      "eyebrow": "Alojamiento",
+      "title": "Dónde funciona",
+      "intro": "Por componente: qué proveedor lo presta y dónde están los servidores.",
+      "app": {
+        "title": "App y web",
+        "place": "Vercel · Fráncfort (fra1)",
+        "body": "La app y esta web funcionan en Vercel. Las funciones de servidor están en Fráncfort; imágenes y scripts llegan por una red global (CDN). Vercel es una empresa estadounidense."
+      },
+      "database": {
+        "title": "Base de datos e inicio de sesión",
+        "place": "Supabase · Fráncfort (eu-central-1)",
+        "body": "Las cuentas, los espacios de trabajo y la memoria de Clyde están en una base de datos de Supabase en Fráncfort. Supabase gestiona esa base de datos; no la alojamos nosotros."
+      },
+      "server": {
+        "title": "Automatizaciones y programación",
+        "place": "Hetzner · Núremberg",
+        "body": "En nuestro propio servidor de Hetzner, una empresa alemana, funcionan n8n para las automatizaciones, la base de conocimiento y Postiz para programar publicaciones."
+      },
+      "queues": {
+        "title": "Colas",
+        "place": "Upstash · Fráncfort (eu-central-1)",
+        "body": "Las tareas que se ejecutan más tarde y los datos temporales están en Upstash, en Fráncfort. Upstash es una empresa estadounidense."
+      }
+    },
+    "model": {
+      "eyebrow": "Modelo de lenguaje",
+      "title": "El modelo de lenguaje funciona en EE. UU.",
+      "intro": "Clyde escribe sobre todo con Claude de Anthropic, y usa modelos de OpenAI para texto e imagen. Ambas son empresas estadounidenses y sus modelos funcionan en EE. UU. Un modelo de lenguaje solo recibe el contexto que necesita la tarea, no todo tu espacio de trabajo.",
+      "rows": {
+        "training": "Entrena con tus datos",
+        "retention": "Conservación",
+        "contract": "Contrato"
+      },
+      "anthropic": {
+        "name": "Anthropic (Claude)",
+        "training": "No. Las condiciones comerciales prohíben a Anthropic entrenar modelos con lo que llega por la API.",
+        "retention": "Se borra en 30 días. Más tiempo si la ley lo exige, o hasta 2 años si su control de abusos marca una solicitud.",
+        "contract": "Con Anthropic Ireland. Transferencias a EE. UU. basadas en cláusulas contractuales tipo (CCT)."
+      },
+      "openai": {
+        "name": "OpenAI",
+        "training": "No por defecto. OpenAI no entrena con datos de la API salvo que un cliente lo active.",
+        "retention": "Hasta 30 días, para el control de abusos. Más tiempo si la ley lo exige o si hace falta para proteger sus servicios.",
+        "contract": "Con OpenAI Ireland. Transferencias a EE. UU. basadas en cláusulas contractuales tipo (CCT)."
+      },
+      "sources": "Fuentes, leídas el 25 de octubre de 2026: las <terms>condiciones</terms> y los <retention>plazos de conservación</retention> de Anthropic, y la <openai>política de datos de la API de OpenAI</openai>.",
+      "others": "Para investigación, imagen, vídeo y locuciones trabajamos con otros proveedores especializados. Aparecen con su finalidad en el <link>artículo 5 de la política de privacidad</link>."
+    },
+    "retention": {
+      "eyebrow": "Conservación",
+      "title": "Cuánto tiempo conservamos",
+      "intro": "Una tarea de limpieza aplica estos plazos automáticamente cada noche.",
+      "chats": {
+        "what": "Conversaciones de chat en webs de clientes",
+        "term": "Sin consentimiento del visitante, anonimizadas a los 30 días. Con consentimiento, borradas a los 12 meses."
+      },
+      "leads": {
+        "what": "Leads",
+        "term": "Borrados a los 24 meses."
+      },
+      "inbox": {
+        "what": "Conversaciones de la bandeja de entrada",
+        "term": "Borradas 24 meses después del último mensaje."
+      },
+      "uploads": {
+        "what": "Vídeos subidos que no se publican",
+        "term": "Borrados a las 24 horas."
+      },
+      "exit": "Si cancelas, tienes 30 días para llevarte tus datos. Después los borramos.",
+      "more": "Todos los plazos, también los de la memoria de Clyde, los mensajes de Instagram y las facturas, están en el <link>artículo 6 de la política de privacidad</link>."
+    },
+    "limits": {
+      "eyebrow": "Con franqueza",
+      "title": "Lo que no prometemos",
+      "zdr": {
+        "title": "Sin retención cero de datos",
+        "body": "No tenemos un acuerdo con Anthropic ni con OpenAI para que no conserven nada. Se aplican sus plazos estándar indicados arriba."
+      },
+      "model": {
+        "title": "El modelo de lenguaje no funciona en la UE",
+        "body": "Los servidores, la base de datos y las colas están en la UE; el modelo de lenguaje no. Si quieres que el modelo de lenguaje también funcione en la UE, ponemos Clyde en Mistral bajo petición."
+      },
+      "cdn": {
+        "title": "No todo se queda en la UE",
+        "body": "Vercel sirve imágenes y scripts por una red global, y parte de los proveedores de investigación, imagen y vídeo están en EE. UU. Para esas transferencias rigen las garantías del artículo 8 de la política de privacidad."
+      }
+    },
+    "dpa": {
+      "eyebrow": "Acuerdo de encargo",
+      "title": "Acuerdo de encargo del tratamiento bajo petición",
+      "body": "Enviamos un acuerdo de encargo del tratamiento bajo petición. Escríbenos; también con preguntas sobre tus datos o una solicitud como interesado."
+    }
   },
   "blog": {
     "eyebrow": "Biblioteca",

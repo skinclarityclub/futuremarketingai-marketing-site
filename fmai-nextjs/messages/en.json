@@ -628,7 +628,8 @@
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Orchestrator"
+          "clyde": "Clyde Orchestrator",
+          "trust": "Trust"
         },
         "social_aria": {
           "linkedin": "Follow us on LinkedIn",
@@ -690,7 +691,8 @@
       "legal": "Legal",
       "legal_privacy": "Privacy",
       "legal_terms": "Terms",
-      "legal_cookies": "Cookies"
+      "legal_cookies": "Cookies",
+      "trust": "Trust"
     },
     "cookie_consent": {
       "title": "We use cookies",
@@ -844,8 +846,8 @@
       "title": "Our infrastructure",
       "subtitle": "Facts, not ideology. Where your data lives and who writes the code matters.",
       "selfHosted": {
-        "title": "Self-hosted n8n and Supabase",
-        "body": "Orchestration via n8n on our own servers, data in Supabase in the EU. I build the pipelines myself and we tune them together."
+        "title": "n8n on our own server, database in Frankfurt",
+        "body": "Orchestration via n8n on our own server at Hetzner in Nuremberg. The database runs as a managed service at Supabase in Frankfurt. I build the pipelines myself and we tune them together."
       },
       "eu": {
         "title": "Servers in the EU",
@@ -1313,7 +1315,7 @@
           },
           "sub_processors": {
             "title": "5. Sub-processors",
-            "content": "We use the following sub-processors to deliver our services.\nInfrastructure: Supabase (database and authentication, EU region Frankfurt), Vercel (hosting; server functions in Frankfurt, global CDN), Hetzner (our own server in the EU for automations, the knowledge base and post scheduling; the scheduling software Postiz runs there self-hosted), Upstash (queues and temporary storage) and Sentry (error reporting).\nLanguage models and AI: Anthropic (text) and OpenAI (text and images), both under a contract with their Irish entity, with transfers to the US based on SCCs, Google Gemini (research and product analysis), Perplexity (research with source citations) and Voyage AI (making knowledge and memory searchable).\nImages, video and audio: fal.ai (images and video for ads) ElevenLabs (voice-overs for ads) and Bunny.net (video playback on personal video pages; based in Slovenia).\nWeb data and SEO: Firecrawl (reading web pages), Apify (public social media data) and DataForSEO (search positions, keywords and mentions in AI answers).\nCommunication and channels: Resend (email), Cal.com (scheduling meetings), Meta (Instagram, Facebook and WhatsApp Business), Telegram (messages to Clyde) and Recall.ai (recording and transcribing meetings, only if you have Clyde attend a meeting).\nPayments: Stripe.\nA complete and current list, with country of establishment and transfer safeguard per sub-processor, is maintained in our Data Processing Agreement. We notify subscribers at least 30 days in advance of new sub-processors."
+            "content": "We use the following sub-processors to deliver our services.\nInfrastructure: Supabase (database and authentication, EU region Frankfurt), Vercel (hosting; server functions in Frankfurt, global CDN), Hetzner (our own server in the EU for automations, the knowledge base and post scheduling; the scheduling software Postiz runs there self-hosted), Upstash (queues and temporary storage) and Sentry (error reporting).\nLanguage models and AI: Anthropic (text) and OpenAI (text and images), both under a contract with their Irish entity, with transfers to the US based on SCCs, Google Gemini (research and product analysis), Perplexity (research with source citations) and Voyage AI (making knowledge and memory searchable).\nImages, video and audio: fal.ai (images and video for ads), HeyGen (avatar videos for ads), ElevenLabs (voice-overs for ads) and Bunny.net (video playback on personal video pages; based in Slovenia).\nWeb data and SEO: Firecrawl (reading web pages), Apify (public social media data) and DataForSEO (search positions, keywords and mentions in AI answers).\nCommunication and channels: Resend (email), Cal.com (scheduling meetings), Meta (Instagram, Facebook and WhatsApp Business), Telegram (messages to Clyde) and Recall.ai (recording and transcribing meetings, only if you have Clyde attend a meeting).\nIntegrations you switch on yourself: Google (Analytics, Search Console and Gmail), Microsoft (Outlook) and ManyChat. Clyde only works in the account you connect.\nPayments: Stripe.\nA complete and current list, with country of establishment and transfer safeguard per sub-processor, is maintained in our Data Processing Agreement. We notify subscribers at least 30 days in advance of new sub-processors."
           },
           "data_retention": {
             "title": "6. Data retention",
@@ -1358,7 +1360,112 @@
         "content": "The information on this website is provided for general information purposes. Any reliance you place on this information is at your own risk."
       }
     },
-    "last_updated": "Last updated: October 16, 2026"
+    "last_updated": "Last updated: October 25, 2026"
+  },
+  "trust": {
+    "meta": {
+      "title": "Trust: where your data lives | FutureMarketingAI",
+      "description": "Database and servers in the EU, the language model at Anthropic and OpenAI in the US. What they retain, how long we retain and the data processing agreement."
+    },
+    "updated": "Updated October 25, 2026",
+    "hero": {
+      "eyebrow": "Trust",
+      "title": "Where your data lives",
+      "subtitle": "Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US. Below, per component: where it runs, what the language models retain and how long we keep things."
+    },
+    "hosting": {
+      "eyebrow": "Hosting",
+      "title": "Where it runs",
+      "intro": "Per component: which provider delivers it and where the servers are.",
+      "app": {
+        "title": "App and website",
+        "place": "Vercel · Frankfurt (fra1)",
+        "body": "The app and this site run at Vercel. The server functions are in Frankfurt; images and scripts come from a global network (CDN). Vercel is a US company."
+      },
+      "database": {
+        "title": "Database and login",
+        "place": "Supabase · Frankfurt (eu-central-1)",
+        "body": "Accounts, workspaces and Clyde's memory live in a database at Supabase in Frankfurt. Supabase manages that database; we do not host it ourselves."
+      },
+      "server": {
+        "title": "Automations and scheduling",
+        "place": "Hetzner · Nuremberg",
+        "body": "Our own server at Hetzner, a German company, runs n8n for the automations, the knowledge base and Postiz for scheduling posts."
+      },
+      "queues": {
+        "title": "Queues",
+        "place": "Upstash · Frankfurt (eu-central-1)",
+        "body": "Tasks that run later and temporary data are kept at Upstash in Frankfurt. Upstash is a US company."
+      }
+    },
+    "model": {
+      "eyebrow": "Language model",
+      "title": "The language model runs in the US",
+      "intro": "Clyde writes mostly with Claude from Anthropic, and uses OpenAI models for text and images. Both are US companies and their models run in the US. A language model only gets the context a task needs, not your whole workspace.",
+      "rows": {
+        "training": "Trains on your data",
+        "retention": "Retention",
+        "contract": "Contract"
+      },
+      "anthropic": {
+        "name": "Anthropic (Claude)",
+        "training": "No. The commercial terms forbid Anthropic to train models on what comes in through the API.",
+        "retention": "Deleted within 30 days. Longer if the law requires it, or up to 2 years if their abuse monitoring flags a request.",
+        "contract": "With Anthropic Ireland. Transfers to the US based on standard contractual clauses (SCCs)."
+      },
+      "openai": {
+        "name": "OpenAI",
+        "training": "Not by default. OpenAI does not train on API data unless a customer opts in.",
+        "retention": "Up to 30 days, for abuse monitoring. Longer if the law requires it or if needed to protect their services.",
+        "contract": "With OpenAI Ireland. Transfers to the US based on standard contractual clauses (SCCs)."
+      },
+      "sources": "Sources, read on October 25, 2026: Anthropic's <terms>terms</terms> and <retention>retention periods</retention>, and the <openai>OpenAI API data policy</openai>.",
+      "others": "For research, images, video and voice-overs we work with other specialised providers. They are listed with their purpose in <link>article 5 of the privacy policy</link>."
+    },
+    "retention": {
+      "eyebrow": "Retention",
+      "title": "How long we keep things",
+      "intro": "A cleanup job enforces these periods automatically every night.",
+      "chats": {
+        "what": "Chat conversations on clients' websites",
+        "term": "Anonymised after 30 days without the visitor's consent. Deleted after 12 months with consent."
+      },
+      "leads": {
+        "what": "Leads",
+        "term": "Deleted after 24 months."
+      },
+      "inbox": {
+        "what": "Inbox conversations",
+        "term": "Deleted 24 months after the last message."
+      },
+      "uploads": {
+        "what": "Video uploads that are not published",
+        "term": "Deleted after 24 hours."
+      },
+      "exit": "If you cancel, you have 30 days to take your data with you. After that we delete it.",
+      "more": "All periods, including those for Clyde's memory, Instagram messages and invoices, are in <link>article 6 of the privacy policy</link>."
+    },
+    "limits": {
+      "eyebrow": "Honest",
+      "title": "What we do not promise",
+      "zdr": {
+        "title": "No zero data retention",
+        "body": "We have no agreement with Anthropic or OpenAI under which they retain nothing. Their standard periods above apply."
+      },
+      "model": {
+        "title": "The language model does not run in the EU",
+        "body": "Servers, database and queues are in the EU, the language model is not. If you want the language model in the EU too, we run Clyde on Mistral on request."
+      },
+      "cdn": {
+        "title": "Not everything stays in the EU",
+        "body": "Vercel serves images and scripts through a global network, and some of the providers for research, images and video are in the US. Those transfers are covered by the safeguards in article 8 of the privacy policy."
+      }
+    },
+    "dpa": {
+      "eyebrow": "Data processing agreement",
+      "title": "Data processing agreement on request",
+      "body": "We send a data processing agreement on request. Email us; you can also write with questions about your data or a data subject request."
+    }
   },
   "blog": {
     "eyebrow": "Library",

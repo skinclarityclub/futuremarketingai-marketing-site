@@ -628,7 +628,8 @@
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
           "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Orchestrator"
+          "clyde": "Clyde Orchestrator",
+          "trust": "Vertrouwen"
         },
         "social_aria": {
           "linkedin": "Volg ons op LinkedIn",
@@ -690,7 +691,8 @@
       "legal": "Juridisch",
       "legal_privacy": "Privacy",
       "legal_terms": "Voorwaarden",
-      "legal_cookies": "Cookies"
+      "legal_cookies": "Cookies",
+      "trust": "Vertrouwen"
     },
     "cookie_consent": {
       "title": "We gebruiken cookies",
@@ -844,8 +846,8 @@
       "title": "Mijn infrastructuur",
       "subtitle": "Feiten, geen ideologie. Waar je data woont en wie de code schrijft is belangrijk.",
       "selfHosted": {
-        "title": "Self-hosted n8n en Supabase",
-        "body": "Orchestratie via n8n op eigen servers, data in Supabase in de EU. Ik bouw de pipelines zelf en we stellen ze samen bij."
+        "title": "n8n op eigen server, database in Frankfurt",
+        "body": "Orchestratie via n8n op onze eigen server bij Hetzner in Neurenberg. De database draait als beheerde dienst bij Supabase in Frankfurt. Ik bouw de pipelines zelf en we stellen ze samen bij."
       },
       "eu": {
         "title": "Servers in de EU",
@@ -1313,7 +1315,7 @@
           },
           "sub_processors": {
             "title": "5. Sub-verwerkers",
-            "content": "Wij gebruiken de volgende sub-verwerkers om onze diensten te leveren.\nInfrastructuur: Supabase (database en authenticatie, EU-regio Frankfurt), Vercel (hosting; serverfuncties in Frankfurt, CDN wereldwijd), Hetzner (eigen server in de EU voor automatiseringen, de kennisbank en het inplannen van posts; de planningssoftware Postiz draait daar zelf-gehost), Upstash (wachtrijen en tijdelijke opslag) en Sentry (foutmeldingen).\nTaalmodellen en AI: Anthropic (tekst) en OpenAI (tekst en beeld), beide via een contract met hun Ierse entiteit en met doorgifte naar de VS op basis van SCC's, Google Gemini (research en productanalyse), Perplexity (research met bronvermelding) en Voyage AI (kennis en geheugen doorzoekbaar maken).\nBeeld, video en audio: fal.ai (beeld en video voor advertenties) ElevenLabs (voice-overs voor advertenties) en Bunny.net (video afspelen op persoonlijke videopagina's; gevestigd in Slovenië).\nWebdata en SEO: Firecrawl (webpagina's lezen), Apify (openbare socialmediagegevens) en DataForSEO (zoekposities, zoekwoorden en vermeldingen in AI-antwoorden).\nCommunicatie en kanalen: Resend (e-mail), Cal.com (afspraken plannen), Meta (Instagram, Facebook en WhatsApp Business), Telegram (berichten aan Clyde) en Recall.ai (vergaderingen opnemen en uitschrijven, alleen als u Clyde een vergadering laat bijwonen).\nBetalingen: Stripe.\nEen volledige en actuele lijst, met vestigingsland en doorgiftewaarborg per sub-verwerker, wordt bijgehouden in onze Verwerkersovereenkomst. Wij stellen abonnees ten minste 30 dagen vooraf op de hoogte van nieuwe sub-verwerkers."
+            "content": "Wij gebruiken de volgende sub-verwerkers om onze diensten te leveren.\nInfrastructuur: Supabase (database en authenticatie, EU-regio Frankfurt), Vercel (hosting; serverfuncties in Frankfurt, CDN wereldwijd), Hetzner (eigen server in de EU voor automatiseringen, de kennisbank en het inplannen van posts; de planningssoftware Postiz draait daar zelf-gehost), Upstash (wachtrijen en tijdelijke opslag) en Sentry (foutmeldingen).\nTaalmodellen en AI: Anthropic (tekst) en OpenAI (tekst en beeld), beide via een contract met hun Ierse entiteit en met doorgifte naar de VS op basis van SCC's, Google Gemini (research en productanalyse), Perplexity (research met bronvermelding) en Voyage AI (kennis en geheugen doorzoekbaar maken).\nBeeld, video en audio: fal.ai (beeld en video voor advertenties), HeyGen (video's met een avatar voor advertenties), ElevenLabs (voice-overs voor advertenties) en Bunny.net (video afspelen op persoonlijke videopagina's; gevestigd in Slovenië).\nWebdata en SEO: Firecrawl (webpagina's lezen), Apify (openbare socialmediagegevens) en DataForSEO (zoekposities, zoekwoorden en vermeldingen in AI-antwoorden).\nCommunicatie en kanalen: Resend (e-mail), Cal.com (afspraken plannen), Meta (Instagram, Facebook en WhatsApp Business), Telegram (berichten aan Clyde) en Recall.ai (vergaderingen opnemen en uitschrijven, alleen als u Clyde een vergadering laat bijwonen).\nKoppelingen die u zelf aanzet: Google (Analytics, Search Console en Gmail), Microsoft (Outlook) en ManyChat. Clyde werkt daar alleen in het account dat u zelf koppelt.\nBetalingen: Stripe.\nEen volledige en actuele lijst, met vestigingsland en doorgiftewaarborg per sub-verwerker, wordt bijgehouden in onze Verwerkersovereenkomst. Wij stellen abonnees ten minste 30 dagen vooraf op de hoogte van nieuwe sub-verwerkers."
           },
           "data_retention": {
             "title": "6. Bewaartermijnen",
@@ -1358,7 +1360,112 @@
         "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat u in deze informatie stelt is op eigen risico."
       }
     },
-    "last_updated": "Laatst bijgewerkt: 16 oktober 2026"
+    "last_updated": "Laatst bijgewerkt: 25 oktober 2026"
+  },
+  "trust": {
+    "meta": {
+      "title": "Vertrouwen: waar je data staat | FutureMarketingAI",
+      "description": "Database en servers in de EU, het taalmodel bij Anthropic en OpenAI in de VS. Wat zij bewaren, hoe lang wij bewaren en de verwerkersovereenkomst."
+    },
+    "updated": "Bijgewerkt op 25 oktober 2026",
+    "hero": {
+      "eyebrow": "Vertrouwen",
+      "title": "Waar je data staat",
+      "subtitle": "Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Hieronder staat per onderdeel waar het draait, wat de taalmodellen bewaren en hoe lang wij iets bewaren."
+    },
+    "hosting": {
+      "eyebrow": "Hosting",
+      "title": "Waar het draait",
+      "intro": "Per onderdeel: welke aanbieder het levert en waar de servers staan.",
+      "app": {
+        "title": "App en website",
+        "place": "Vercel · Frankfurt (fra1)",
+        "body": "De app en deze site draaien bij Vercel. De serverfuncties staan in Frankfurt; afbeeldingen en scripts komen via een wereldwijd netwerk (CDN). Vercel is een Amerikaans bedrijf."
+      },
+      "database": {
+        "title": "Database en inloggen",
+        "place": "Supabase · Frankfurt (eu-central-1)",
+        "body": "Accounts, werkruimtes en het geheugen van Clyde staan in een database bij Supabase in Frankfurt. Supabase beheert die database; wij hosten hem niet zelf."
+      },
+      "server": {
+        "title": "Automatiseringen en inplannen",
+        "place": "Hetzner · Neurenberg",
+        "body": "Op onze eigen server bij Hetzner, een Duits bedrijf, draaien n8n voor de automatiseringen, de kennisbank en Postiz voor het inplannen van posts."
+      },
+      "queues": {
+        "title": "Wachtrijen",
+        "place": "Upstash · Frankfurt (eu-central-1)",
+        "body": "Taken die later moeten draaien en tijdelijke gegevens staan bij Upstash in Frankfurt. Upstash is een Amerikaans bedrijf."
+      }
+    },
+    "model": {
+      "eyebrow": "Taalmodel",
+      "title": "Het taalmodel draait in de VS",
+      "intro": "Clyde schrijft vooral met Claude van Anthropic, en gebruikt modellen van OpenAI voor tekst en beeld. Beide bedrijven zijn Amerikaans en hun modellen draaien in de VS. Een taalmodel krijgt alleen de context die nodig is voor de opdracht, niet je hele werkruimte.",
+      "rows": {
+        "training": "Traint het op je data",
+        "retention": "Bewaren",
+        "contract": "Contract"
+      },
+      "anthropic": {
+        "name": "Anthropic (Claude)",
+        "training": "Nee. De commerciële voorwaarden verbieden Anthropic om modellen te trainen op wat via de API binnenkomt.",
+        "retention": "Binnen 30 dagen verwijderd. Langer als de wet dat eist, of als hun controle op misbruik een verzoek markeert: dan tot 2 jaar.",
+        "contract": "Met Anthropic Ireland. Doorgifte naar de VS op basis van standaardcontractbepalingen (SCC's)."
+      },
+      "openai": {
+        "name": "OpenAI",
+        "training": "Standaard niet. OpenAI traint niet op API-gegevens, tenzij een klant zich daar zelf voor aanmeldt.",
+        "retention": "Tot 30 dagen, voor controle op misbruik. Langer als de wet dat eist of als het nodig is om hun diensten te beschermen.",
+        "contract": "Met OpenAI Ireland. Doorgifte naar de VS op basis van standaardcontractbepalingen (SCC's)."
+      },
+      "sources": "Bronnen, gelezen op 25 oktober 2026: de <terms>voorwaarden</terms> en de <retention>bewaartermijnen</retention> van Anthropic, en het <openai>gegevensbeleid van de OpenAI API</openai>.",
+      "others": "Voor research, beeld, video en voice-overs werken we met andere gespecialiseerde aanbieders. Die staan met hun doel in <link>artikel 5 van de privacyverklaring</link>."
+    },
+    "retention": {
+      "eyebrow": "Bewaren",
+      "title": "Hoe lang wij bewaren",
+      "intro": "Deze termijnen ruimt een opschoontaak elke nacht automatisch op.",
+      "chats": {
+        "what": "Chatgesprekken op websites van klanten",
+        "term": "Zonder toestemming van de bezoeker na 30 dagen geanonimiseerd. Met toestemming na 12 maanden verwijderd."
+      },
+      "leads": {
+        "what": "Leads",
+        "term": "Na 24 maanden verwijderd."
+      },
+      "inbox": {
+        "what": "Inboxgesprekken",
+        "term": "24 maanden na het laatste bericht verwijderd."
+      },
+      "uploads": {
+        "what": "Video-uploads die niet gepubliceerd worden",
+        "term": "Na 24 uur verwijderd."
+      },
+      "exit": "Zeg je op, dan heb je 30 dagen om je gegevens mee te nemen. Daarna verwijderen we ze.",
+      "more": "Alle termijnen, ook die voor het geheugen van Clyde, Instagram-berichten en facturen, staan in <link>artikel 6 van de privacyverklaring</link>."
+    },
+    "limits": {
+      "eyebrow": "Eerlijk",
+      "title": "Wat we niet beloven",
+      "zdr": {
+        "title": "Geen zero data retention",
+        "body": "We hebben met Anthropic en OpenAI geen afspraak waardoor zij niets bewaren. Hun standaardtermijnen hierboven gelden."
+      },
+      "model": {
+        "title": "Het taalmodel draait niet in de EU",
+        "body": "Servers, database en wachtrijen staan in de EU, het taalmodel niet. Wil je dat het taalmodel ook in de EU draait, dan zetten we Clyde op verzoek op Mistral."
+      },
+      "cdn": {
+        "title": "Niet alles blijft in de EU",
+        "body": "Vercel levert afbeeldingen en scripts via een wereldwijd netwerk, en een deel van de aanbieders voor research, beeld en video zit in de VS. Voor die doorgifte gelden de waarborgen uit artikel 8 van de privacyverklaring."
+      }
+    },
+    "dpa": {
+      "eyebrow": "Verwerkersovereenkomst",
+      "title": "Verwerkersovereenkomst op aanvraag",
+      "body": "Een verwerkersovereenkomst sturen we op aanvraag. Mail ons; dat kan ook met vragen over je gegevens of een verzoek als betrokkene."
+    }
   },
   "blog": {
     "eyebrow": "Bibliotheek",
