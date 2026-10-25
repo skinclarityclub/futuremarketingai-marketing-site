@@ -100,6 +100,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/clyde': '2026-04-20',
   '/founding-member': '2026-04-20',
   '/pricing': '2026-04-20',
+  '/alternatives': '2026-10-25',
   '/about': '2026-03-18',
   '/contact': '2026-03-18',
   '/how-it-works': '2026-03-18',
