@@ -123,6 +123,16 @@ interface ChatChromeLabels {
   retry: string
   inputSend: string
   inputNewline: string
+  aiLabel: string
+  disclosure: string
+  noAnswer: string
+  limitReached: string
+  keepTalking: string
+  applyCta: string
+  inputAria: string
+  sendAria: string
+  stopAria: string
+  answeringAria: string
 }
 
 const LABELS: Record<ChatLocale, ChatChromeLabels> = {
@@ -146,6 +156,16 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     retry: 'Opnieuw',
     inputSend: 'versturen',
     inputNewline: 'nieuwe regel',
+    aiLabel: 'AI',
+    disclosure: 'Clyde is AI en kan zich vergissen.',
+    noAnswer: 'Geen antwoord ontvangen',
+    limitReached: 'Dit gesprek zit vol.',
+    keepTalking: 'Verder praten?',
+    applyCta: 'Aanvraag starten',
+    inputAria: 'Typ een bericht voor Clyde',
+    sendAria: 'Verstuur bericht',
+    stopAria: 'Stop het antwoord',
+    answeringAria: 'Clyde antwoordt…',
   },
   en: {
     viewDetails: 'View details',
@@ -167,6 +187,16 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     retry: 'Retry',
     inputSend: 'to send',
     inputNewline: 'for a new line',
+    aiLabel: 'AI',
+    disclosure: 'Clyde is AI and can make mistakes.',
+    noAnswer: 'No reply received',
+    limitReached: 'This conversation is full.',
+    keepTalking: 'Want to keep talking?',
+    applyCta: 'Start an application',
+    inputAria: 'Message Clyde',
+    sendAria: 'Send message',
+    stopAria: 'Stop the reply',
+    answeringAria: 'Clyde is replying…',
   },
   es: {
     viewDetails: 'Ver detalles',
@@ -188,7 +218,29 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     retry: 'Reintentar',
     inputSend: 'para enviar',
     inputNewline: 'nueva línea',
+    aiLabel: 'IA',
+    disclosure: 'Clyde es una IA y puede equivocarse.',
+    noAnswer: 'No se recibió respuesta',
+    limitReached: 'Esta conversación está completa.',
+    keepTalking: '¿Seguimos hablando?',
+    applyCta: 'Iniciar solicitud',
+    inputAria: 'Escribe un mensaje a Clyde',
+    sendAria: 'Enviar mensaje',
+    stopAria: 'Detener la respuesta',
+    answeringAria: 'Clyde está respondiendo…',
   },
+}
+
+const RATE_LIMITED: Record<ChatLocale, (m: number) => string> = {
+  nl: (m) => `Even te veel vragen tegelijk. Probeer het over ${m} ${m === 1 ? 'minuut' : 'minuten'} opnieuw.`,
+  en: (m) => `Too many questions at once. Try again in ${m} ${m === 1 ? 'minute' : 'minutes'}.`,
+  es: (m) => `Demasiadas preguntas a la vez. Inténtalo de nuevo en ${m} ${m === 1 ? 'minuto' : 'minutos'}.`,
+}
+
+const LIMIT_WARNING: Record<ChatLocale, (n: number) => string> = {
+  nl: (n) => `Nog ${n} ${n === 1 ? 'bericht' : 'berichten'} in dit gesprek.`,
+  en: (n) => `${n} ${n === 1 ? 'message' : 'messages'} left in this conversation.`,
+  es: (n) => `${n === 1 ? 'Queda' : 'Quedan'} ${n} ${n === 1 ? 'mensaje' : 'mensajes'} en esta conversación.`,
 }
 
 // Count-aware memory badge label: an explicit aria-label overrides the visible
@@ -205,6 +257,8 @@ export interface ChatChrome extends ChatChromeLabels {
   panelTitle: (toolName: string) => string
   followups: (toolName: string) => string[] | null
   memoryAriaCount: (count: number) => string
+  rateLimited: (minutes: number) => string
+  limitWarning: (remaining: number) => string
 }
 
 export function chatChromeFor(locale: ChatLocale): ChatChrome {
@@ -214,6 +268,8 @@ export function chatChromeFor(locale: ChatLocale): ChatChrome {
     panelTitle: (toolName) => PANEL_TITLES[locale][toolName] ?? PANEL_TITLE_FALLBACK[locale],
     followups: (toolName) => FOLLOWUPS[locale][toolName] ?? null,
     memoryAriaCount: (count) => MEMORY_ARIA_COUNT[locale](count),
+    rateLimited: (m) => RATE_LIMITED[locale](m),
+    limitWarning: (n) => LIMIT_WARNING[locale](n),
   }
 }
 

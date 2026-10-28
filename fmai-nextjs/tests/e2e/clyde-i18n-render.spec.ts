@@ -35,9 +35,9 @@ async function openClyde(page: Page, locale: string) {
 }
 
 const CASES = [
-  { locale: 'nl', welcome: 'Hoi, ik ben Clyde', prompt: 'Welke vaardigheden heb je?' },
-  { locale: 'en', welcome: 'Hi, I am Clyde', prompt: 'Which skills do you have?' },
-  { locale: 'es', welcome: 'Hola, soy Clyde', prompt: '¿Qué habilidades tienes?' },
+  { locale: 'nl', welcome: 'Hoi, ik ben Clyde', prompt: 'Wat kun je voor mijn bureau doen?' },
+  { locale: 'en', welcome: 'Hi, I am Clyde', prompt: 'What can you do for my agency?' },
+  { locale: 'es', welcome: 'Hola, soy Clyde', prompt: '¿Qué puedes hacer por mi agencia?' },
 ]
 
 for (const c of CASES) {

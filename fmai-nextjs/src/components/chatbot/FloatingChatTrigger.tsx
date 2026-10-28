@@ -2,10 +2,13 @@
 
 import { useState, useCallback } from 'react'
 import dynamic from 'next/dynamic'
+import { useLocale } from 'next-intl'
 import { usePathname } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { useIdleEngagement } from '@/hooks/useIdleEngagement'
 import { ClydePresence } from './ClydePresence'
+import { WHISPERS } from './widget-copy'
+import type { ChatLocale } from './useChatChrome'
 
 /**
  * FloatingChatTrigger -- Minimal placeholder that lazy-imports the full
@@ -29,27 +32,11 @@ const ChatWidgetIsland = dynamic(
   { ssr: false, loading: () => null }
 )
 
-/**
- * Page-aware whispers shown after 20s of scroll-idle. Tone: senior
- * Dutch colleague making a statement, not a chatbot asking "how can I
- * help?". Mirrors the path keys from ChatWidgetIsland.WELCOME_MESSAGES.
- */
-const WHISPERS: Record<string, string> = {
-  '/': 'Vraag me wat.',
-  '/skills/voice-agent': 'Telefoon? Ik laat het zien.',
-  '/skills/social-media': 'Content-kalender nodig?',
-  '/skills/lead-qualifier': 'Dit is wat je klanten krijgen.',
-  '/skills/ad-manager': 'Brief? Ik maak varianten.',
-  '/skills/email-management': 'Inbox-classificatie tonen?',
-  '/skills/reporting': 'Een weekrapport laten zien?',
-  '/pricing': 'ROI berekenen.',
-  '/apply': 'Vraag voor je invult?',
-  '/about': 'Vraag maar.',
-}
-
 export function FloatingChatTrigger() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+  const rawLocale = useLocale()
+  const locale: ChatLocale = rawLocale === 'en' || rawLocale === 'es' ? rawLocale : 'nl'
   const idleStage = useIdleEngagement()
   const hasUnread = useChatbotStore((state) => state.hasUnread)
 
@@ -61,7 +48,7 @@ export function FloatingChatTrigger() {
 
   if (mounted) return <ChatWidgetIsland />
 
-  const whisper = WHISPERS[pathname] ?? WHISPERS['/']
+  const whisper = WHISPERS[locale][pathname] ?? WHISPERS[locale]['/']
 
   return (
     <ClydePresence

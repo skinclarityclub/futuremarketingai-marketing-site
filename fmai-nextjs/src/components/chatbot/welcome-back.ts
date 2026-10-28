@@ -19,15 +19,15 @@ export function welcomeBackMessage(locale: ChatLocale, p: MemoryProfile): string
       : null
   if (locale === 'en') {
     return brands
-      ? `Welcome back. Still ${brands} at ${p.agencyName}? What can I work on?`
-      : `Welcome back, ${p.agencyName}. What can I work on?`
+      ? `Welcome back. Clyde here, your AI colleague. Still ${brands} at ${p.agencyName}? What can I work on?`
+      : `Welcome back, ${p.agencyName}. Clyde here, your AI colleague. What can I work on?`
   }
   if (locale === 'es') {
     return brands
-      ? `Bienvenido de nuevo. ¿Sigues con ${brands} en ${p.agencyName}? ¿En qué trabajo?`
-      : `Bienvenido de nuevo, ${p.agencyName}. ¿En qué trabajo?`
+      ? `Bienvenido de nuevo. Soy Clyde, tu compañero de IA. ¿Sigues con ${brands} en ${p.agencyName}? ¿En qué trabajo?`
+      : `Bienvenido de nuevo, ${p.agencyName}. Soy Clyde, tu compañero de IA. ¿En qué trabajo?`
   }
   return brands
-    ? `Welkom terug. Nog steeds ${brands} bij ${p.agencyName}? Waar wil je verder?`
-    : `Welkom terug, ${p.agencyName}. Waar wil je verder?`
+    ? `Welkom terug. Clyde hier, je AI-collega. Nog steeds ${brands} bij ${p.agencyName}? Waar wil je verder?`
+    : `Welkom terug, ${p.agencyName}. Clyde hier, je AI-collega. Waar wil je verder?`
 }
