@@ -30,20 +30,27 @@ export function parseMemory(raw: string | null): MemoryProfile {
   try {
     const data = JSON.parse(raw) as { v?: number; profile?: Record<string, unknown> }
     if (data?.v !== MEMORY_VERSION || !data.profile) return {}
-    const out: MemoryProfile = {}
-    for (const key of MEMORY_FIELD_ORDER) {
-      const v = data.profile[key]
-      if (v === undefined || v === null) continue
-      if (NUMERIC_FIELDS.has(key)) {
-        if (typeof v === 'number' && Number.isFinite(v)) (out as Record<string, unknown>)[key] = v
-      } else if (typeof v === 'string') {
-        ;(out as Record<string, unknown>)[key] = v
-      }
-    }
-    return out
+    return sanitizeMemory(data.profile)
   } catch {
     return {}
   }
+}
+
+/** Keep only known fields with the expected type. Also the server's guard on a
+ *  profile or tool output the client sent. */
+export function sanitizeMemory(profile: unknown): MemoryProfile {
+  if (!profile || typeof profile !== 'object') return {}
+  const out: MemoryProfile = {}
+  for (const key of MEMORY_FIELD_ORDER) {
+    const v = (profile as Record<string, unknown>)[key]
+    if (v === undefined || v === null) continue
+    if (NUMERIC_FIELDS.has(key)) {
+      if (typeof v === 'number' && Number.isFinite(v)) (out as Record<string, unknown>)[key] = v
+    } else if (typeof v === 'string') {
+      ;(out as Record<string, unknown>)[key] = v
+    }
+  }
+  return out
 }
 
 /** True when the visitor has interacted with the cookie banner (functional is

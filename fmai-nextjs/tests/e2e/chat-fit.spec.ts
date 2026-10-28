@@ -3,6 +3,7 @@ import {
   applicationOffered,
   assessFit,
   decideFit,
+  fitSession,
   rememberedInHistory,
   type FitSession,
 } from '../../src/lib/chatbot/fit'
@@ -86,4 +87,21 @@ test('decideFit merges facts across calls and offers the application card once, 
 
   const solo: FitSession = { profile: {}, offered: false, offerEnabled: true }
   expect(decideFit(solo, { teamSize: 1, brandCount: 1 })).toEqual({ fit: 'no_fit', offerApplication: false })
+})
+
+test('fitSession builds the request state from the client profile and history, dropping garbage', () => {
+  const history = [
+    user('8 mensen'),
+    assistant(tool('remember_context', { remembered: { teamSize: 8, __proto__x: 1, brandCount: '6' } })),
+  ]
+  // the client profile is untrusted: unknown keys and wrong types are dropped, history wins per field
+  const forged = { agencyName: 'Studio Noord', brandCount: 6, teamSize: 'veel', isAdmin: true }
+  expect(fitSession(history, forged, false)).toEqual({
+    profile: { agencyName: 'Studio Noord', brandCount: 6, teamSize: 8 },
+    offered: false,
+    offerEnabled: true,
+  })
+  expect(fitSession(undefined, 'not an object', false).profile).toEqual({})
+  expect(fitSession([assistant(tool('book_call', { action: 'open_apply' }))], {}, false).offered).toBe(true)
+  expect(fitSession([], {}, true).offerEnabled).toBe(false)
 })

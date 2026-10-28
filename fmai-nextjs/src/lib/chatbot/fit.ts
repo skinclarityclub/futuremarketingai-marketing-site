@@ -1,4 +1,5 @@
 import { mergeMemory, type MemoryProfile } from './memory'
+import { sanitizeMemory } from './memory-persistence'
 
 /**
  * Fit of a prospect agency, decided in code from facts the visitor gave, never by
@@ -97,6 +98,24 @@ export function rememberedInHistory(messages: unknown): Partial<MemoryProfile>[]
   return assistantToolResults(messages).flatMap((t) => {
     if (t.name !== 'remember_context') return []
     const remembered = (t.output as { remembered?: unknown } | null)?.remembered
-    return remembered && typeof remembered === 'object' ? [remembered as Partial<MemoryProfile>] : []
+    return remembered && typeof remembered === 'object' ? [sanitizeMemory(remembered)] : []
   })
+}
+
+/** Without a session (manual tool path) nothing is remembered and no card is offered. */
+export function noOfferSession(): FitSession {
+  return { profile: {}, offered: false, offerEnabled: false }
+}
+
+/**
+ * The session for one request. Profile and history come from the client, so both
+ * pass sanitizeMemory; a forged history can at most suppress or force the card,
+ * which only links to /apply, and /api/apply scores again on the server.
+ */
+export function fitSession(messages: unknown, clientProfile: unknown, demoMode: boolean): FitSession {
+  return {
+    profile: rememberedInHistory(messages).reduce(mergeMemory, sanitizeMemory(clientProfile)),
+    offered: applicationOffered(messages),
+    offerEnabled: !demoMode,
+  }
 }

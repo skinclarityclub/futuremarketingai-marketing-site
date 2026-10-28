@@ -6,13 +6,9 @@ import {
   type ChatbotLocale,
   type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
-import { decideFit, type FitSession } from '@/lib/chatbot/fit'
+import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
-// Without a session (manual tool path) nothing is remembered and no card is offered.
-export function buildLeadgenTools(
-  locale: ChatbotLocale,
-  session: FitSession = { profile: {}, offered: false, offerEnabled: false },
-) {
+export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = noOfferSession()) {
   // No score anywhere: the model cannot state what it never receives (R28). Fit comes
   // from code; the model only passes facts the visitor gave.
   const qualify_lead = tool({
@@ -87,6 +83,3 @@ export function buildLeadgenTools(
 
   return { qualify_lead, get_pricing_info, get_roi_estimate }
 }
-
-/** Backward-compatible static export (NL build). */
-export const leadgenTools = buildLeadgenTools('nl')
