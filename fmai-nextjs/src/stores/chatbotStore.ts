@@ -18,8 +18,6 @@ interface ChatbotState {
   personaId: string
   /** Whether the chatbot panel is open */
   isOpen: boolean
-  /** Whether the chatbot panel is minimized */
-  isMinimized: boolean
   /** Whether there are unread messages */
   hasUnread: boolean
   /** Session identifier (UUID) */
@@ -53,7 +51,6 @@ interface ChatbotState {
   setPersona: (id: string) => void
   toggle: () => void
   close: () => void
-  minimize: () => void
   markRead: () => void
   incrementMessageCount: (personaId: string) => void
   setDemoMode: (enabled: boolean) => void
@@ -80,7 +77,6 @@ export const useChatbotStore = create<ChatbotState>()(
       // Defaults
       personaId: 'clyde',
       isOpen: false,
-      isMinimized: false,
       hasUnread: false,
       sessionId: generateSessionId(),
       messageCounts: {},
@@ -98,13 +94,8 @@ export const useChatbotStore = create<ChatbotState>()(
 
       // Actions
       setPersona: (id: string) => set({ personaId: id }),
-      toggle: () =>
-        set((state) => ({
-          isOpen: !state.isOpen,
-          isMinimized: false,
-        })),
-      close: () => set({ isOpen: false, isMinimized: false }),
-      minimize: () => set({ isMinimized: true }),
+      toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+      close: () => set({ isOpen: false }),
       markRead: () => set({ hasUnread: false }),
       incrementMessageCount: (personaId: string) =>
         set((state) => ({

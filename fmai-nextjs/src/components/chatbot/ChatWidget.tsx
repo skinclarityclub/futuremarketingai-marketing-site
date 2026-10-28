@@ -58,7 +58,7 @@ export function ChatWidget({
   } = usePersonaChat(personaId, pageContext)
   const chrome = useChatChrome()
   const [editText, setEditText] = useState<string | undefined>(undefined)
-  const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
+  const { isOpen, hasUnread, toggle, close, markRead } = useChatbotStore()
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
@@ -186,17 +186,59 @@ export function ChatWidget({
   // scroll along with a swipe in the chat. Desktop keeps the page scrollable
   // next to the card.
   useEffect(() => {
-    if (mode !== 'floating' || !isOpen || isMinimized) return
+    if (mode !== 'floating' || !isOpen) return
     if (!window.matchMedia('(max-width: 1023px)').matches) return
     const previous = document.documentElement.style.overflow
     document.documentElement.style.overflow = 'hidden'
     return () => {
       document.documentElement.style.overflow = previous
     }
-  }, [mode, isOpen, isMinimized])
+  }, [mode, isOpen])
+
+  const [isPhone, setIsPhone] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1023px)')
+    const sync = () => setIsPhone(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
+  // Below lg the panel is modal (aria-modal), so Tab must not leave it.
+  const handlePanelKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key !== 'Tab' || !window.matchMedia('(max-width: 1023px)').matches) return
+    const items = Array.from(
+      e.currentTarget.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
+    if (items.length === 0) return
+    const first = items[0]
+    const last = items[items.length - 1]
+    const active = document.activeElement
+    if (e.shiftKey && (active === first || !e.currentTarget.contains(active))) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && (active === last || !e.currentTarget.contains(active))) {
+      e.preventDefault()
+      first.focus()
+    }
+  }, [])
+
+  // Closing by any route (Escape, X) hands focus back to the launcher.
+  const wasOpen = useRef(false)
+  useEffect(() => {
+    if (mode !== 'floating') return
+    if (wasOpen.current && !isOpen) {
+      requestAnimationFrame(() =>
+        document.querySelector<HTMLElement>('button[aria-label^="Open chat met Clyde"]')?.focus()
+      )
+    }
+    wasOpen.current = isOpen
+  }, [mode, isOpen])
 
   useEffect(() => {
-    if (mode !== 'floating' || !isOpen || isMinimized) return
+    if (mode !== 'floating' || !isOpen) return
     const timer = setTimeout(() => {
       const textarea = document.querySelector<HTMLTextAreaElement>(
         '[data-chatwidget-panel] textarea'
@@ -211,7 +253,7 @@ export function ChatWidget({
       clearTimeout(timer)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [mode, isOpen, isMinimized, close])
+  }, [mode, isOpen, close])
 
   const showPrompts =
     messages.length === 0 &&
@@ -266,11 +308,12 @@ export function ChatWidget({
   if (mode === 'floating') {
     return (
       <>
-        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen && !isMinimized} />
+        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen} />
         <AnimatePresence>
-          {isOpen && !isMinimized && (
+          {isOpen && (
             <motion.div
               data-chatwidget-panel
+              onKeyDown={handlePanelKeyDown}
               initial={{ opacity: 0, y: 12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.98, transition: { duration: 0.15 } }}
@@ -288,7 +331,7 @@ export function ChatWidget({
               className="fixed z-[60] inset-0 flex h-[100dvh] w-full overflow-hidden bg-bg-surface lg:inset-auto lg:right-6 lg:bottom-6 lg:h-[min(720px,calc(100dvh-6rem))] lg:w-auto lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-bg-surface/85 lg:backdrop-blur-2xl"
               role="dialog"
               aria-label={`Chat met ${personaName || 'Clyde'}`}
-              aria-modal="true"
+              aria-modal={isPhone ? 'true' : undefined}
             >
               {isFlagship && (
                 <SidePanel
@@ -304,7 +347,6 @@ export function ChatWidget({
                   mode="floating"
                   messageCount={messageCount}
                   messageLimit={messageLimit}
-                  onMinimize={minimize}
                   onClose={close}
                   onNewChat={handleNewChat}
                   hasMessages={messages.length > 0}

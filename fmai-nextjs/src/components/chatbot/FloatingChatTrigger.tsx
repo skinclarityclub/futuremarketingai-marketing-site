@@ -42,7 +42,7 @@ export function FloatingChatTrigger() {
 
   const handleOpen = useCallback(() => {
     void useChatbotStore.persist.rehydrate()
-    useChatbotStore.setState({ isOpen: true, isMinimized: false })
+    useChatbotStore.setState({ isOpen: true })
     setMounted(true)
   }, [])
 

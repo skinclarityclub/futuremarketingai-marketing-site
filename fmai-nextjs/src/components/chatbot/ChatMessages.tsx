@@ -427,6 +427,8 @@ export function ChatMessages({
 
         return messages.map((message, idx) => {
           const isUser = message.role === 'user'
+          // Client-injected greeting and follow-ups are not model output: nothing to copy or regenerate.
+          const isClientInjected = message.id.startsWith('clyde-')
           const isLastAssistant = idx === lastAssistantIdx
           const messageText = extractText(message)
           return (
@@ -482,7 +484,7 @@ export function ChatMessages({
                   })}
                 </div>
               )}
-              {!isUser && messageText.length > 0 && (
+              {!isUser && messageText.length > 0 && !isClientInjected && (
                 <CopyButton text={normalizeDashes(stripChipsLine(messageText))} />
               )}
               {isUser && onEditMessage && messageText.length > 0 && (
@@ -496,7 +498,7 @@ export function ChatMessages({
                   {chrome.edit}
                 </button>
               )}
-              {!isUser && isLastAssistant && onRegenerate && !isStreaming && (
+              {!isUser && isLastAssistant && onRegenerate && !isStreaming && !isClientInjected && (
                 <button
                   type="button"
                   onClick={onRegenerate}
