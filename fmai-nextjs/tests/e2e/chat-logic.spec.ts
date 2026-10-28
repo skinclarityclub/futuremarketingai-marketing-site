@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test'
 import { limitState } from '../../src/lib/chatbot/message-limit'
 import { classifyChatError } from '../../src/lib/chatbot/chat-error'
+import { buildSystemMessages } from '../../src/lib/chatbot/prompt-builder'
+import { clydePersona } from '../../src/lib/chatbot/personas'
 
 // Pure-logic spec (no browser, no API). Runs under any project; fast.
 test('limitState', () => {
@@ -40,4 +42,20 @@ test('classifyChatError', () => {
   expect(classifyChatError(new Error('{"error":"Message cannot be empty"}'), now)).toEqual({
     kind: 'failed',
   })
+})
+
+// qualify_lead renders no card (spec 9), so the prompt must send fit questions to the
+// application card instead and must not point at a panel that no longer exists.
+test('demo prompt: fit step ends in the application card, no side panel', () => {
+  const text = buildSystemMessages(
+    clydePersona,
+    { topics: [], knowledgeContent: '', estimatedTokens: 0 },
+    { language: 'nl', demoMode: true }
+  )
+    .map((m) => m.content)
+    .join('\n')
+  expect(text).not.toMatch(/side panel/i)
+  expect(text).toContain('qualify_lead')
+  expect(text).toMatch(/never state a score/)
+  expect(text).toMatch(/hot or warm also call book_call/)
 })
