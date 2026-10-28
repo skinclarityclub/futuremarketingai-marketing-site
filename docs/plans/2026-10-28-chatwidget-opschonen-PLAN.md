@@ -43,10 +43,14 @@ All paths below are relative to `fmai-nextjs/` in the worktree `C:/tmp/fmai-chat
 - `npm run build`
 - `npx playwright test tests/e2e/chat-logic.spec.ts tests/e2e/widget-copy.spec.ts tests/e2e/memory-merge.spec.ts tests/e2e/memory-welcome-back.spec.ts tests/e2e/memory-persistence.spec.ts tests/e2e/clyde-i18n-render.spec.ts tests/e2e/chatwidget-mocked.spec.ts --project=chromium`
 
-**Defaults for the open decisions (Daley may override; each is a one-line change):**
+**Decisions (Daley, 2026-10-28):**
 - **D1.** Memory across visits stays as it is today: it is read whenever `cookieConsent` exists. It now gets a 30-day expiry (Task 9).
 - **D2.** The limit stays 15 replies per conversation, and the server stays 15 per hour per session (`src/lib/chatbot/rate-limiter.ts:22-28`, untouched).
-- **D3.** "Reactie binnen 24u" (`tool-results/cardI18n.ts:91`) against "binnen 48 uur" (`lib/chatbot/tools/leadgen-tools.ts` `QUALIFY_COPY`) stays unresolved; no task changes either string.
+- **D3.** 48 hours everywhere. Already 48: `leadgen-tools.ts` `QUALIFY_COPY`, `concierge-kb.ts:117,222`, `lib/email/contact-templates.ts:65-68`. Task 8 changes the two 24-hour outliers: `cardI18n.ts:91` `trustResponse` and `concierge-kb.ts:226`.
+- **Spanish says "IA", not "AI".** The es site copy uses "IA" (`ChatWidgetIsland.tsx:87` "compañero de IA", 116× in `messages/es.json`). Every es string below that names AI uses "IA", and every test that checks for the AI word uses the per-locale regex `AI_WORD = { nl: /\bAI\b/, en: /\bAI\b/, es: /\bIA\b/ }`.
+- No re-run of the live mobile shots; mobile is covered by the visual proof in Task 6 and 10.
+
+**Test server:** every browser spec runs against a dev server of THIS worktree on port 3123: `PLAYWRIGHT_BASE_URL=http://localhost:3123 npx playwright test …`. Without that variable, `playwright.config.ts:42-47` reuses whatever already listens on port 3000, which may be another checkout.
 
 ## Review Focus
 
@@ -125,8 +129,8 @@ test('classifyChatError', () => {
 
 | key | nl | en | es |
 |---|---|---|---|
-| `aiLabel` | `AI` | `AI` | `AI` |
-| `disclosure` | `Clyde is AI en kan zich vergissen.` | `Clyde is AI and can make mistakes.` | `Clyde funciona con AI y puede equivocarse.` |
+| `aiLabel` | `AI` | `AI` | `IA` |
+| `disclosure` | `Clyde is AI en kan zich vergissen.` | `Clyde is AI and can make mistakes.` | `Clyde es una IA y puede equivocarse.` |
 | `noAnswer` | `Geen antwoord ontvangen` | `No reply received` | `No se recibió respuesta` |
 | `rateLimited(m)` | `Even te veel vragen tegelijk. Probeer het over ${m} ${m === 1 ? 'minuut' : 'minuten'} opnieuw.` | `Too many questions at once. Try again in ${m} ${m === 1 ? 'minute' : 'minutes'}.` | `Demasiadas preguntas a la vez. Inténtalo de nuevo en ${m} ${m === 1 ? 'minuto' : 'minutos'}.` |
 | `limitWarning(n)` | `Nog ${n} ${n === 1 ? 'bericht' : 'berichten'} in dit gesprek.` | `${n} ${n === 1 ? 'message' : 'messages'} left in this conversation.` | `${n === 1 ? 'Queda' : 'Quedan'} ${n} ${n === 1 ? 'mensaje' : 'mensajes'} en esta conversación.` |
@@ -141,7 +145,8 @@ test('classifyChatError', () => {
 - **Copy rules:**
   - Every `WELCOME_MESSAGES` value opens with the locale's AI intro.
     - nl: `Hoi, ik ben Clyde, een AI-collega.`, followed by the existing page sentence. The `default` value keeps its own "de AI-collega van je bureau".
-    - en and es: the same pattern, using the AI wording of their `default` entry.
+    - en and es: the same pattern, using the AI wording of their `default` entry (es: "IA", e.g. `Hola, soy Clyde, un compañero de IA.`).
+    - Fix the comment at `ChatWidgetIsland.tsx:22-23` when you move it: Spanish uses "IA", not "AI".
   - Every `SUGGESTED_PROMPTS` list has exactly 3 entries:
     - drop the "demo" chip (the tour stays as a link) and keep the page-specific ones;
     - the `/` list is `Wat kun je voor mijn bureau doen?`, `Wat kost het?`, `Laat een echte klant zien`;
@@ -152,8 +157,9 @@ test('classifyChatError', () => {
 
 ```ts
 const all = (o: Record<string, Record<string, string | string[]>>) => Object.values(o).flatMap((m) => Object.values(m)).flat()
+const AI_WORD = { nl: /\bAI\b/, en: /\bAI\b/, es: /\bIA\b/ } as const
 test('every greeting names AI', () => {
-  for (const loc of ['nl', 'en', 'es'] as const) for (const g of Object.values(WELCOME_MESSAGES[loc])) expect(g).toMatch(/\bAI\b/)
+  for (const loc of ['nl', 'en', 'es'] as const) for (const g of Object.values(WELCOME_MESSAGES[loc])) expect(g).toMatch(AI_WORD[loc])
 })
 test('three suggested prompts per path', () => {
   for (const loc of ['nl', 'en', 'es'] as const) for (const list of Object.values(SUGGESTED_PROMPTS[loc])) expect(list).toHaveLength(3)
@@ -167,7 +173,7 @@ test('no em-dash in widget copy', () => {
 })
 ```
 
-In `memory-welcome-back.spec.ts`, add `expect(welcomeBackMessage(loc, p)).toMatch(/\bAI\b/)` inside the existing locale loop.
+In `memory-welcome-back.spec.ts`, add `expect(welcomeBackMessage(loc, p)).toMatch(AI_WORD[loc])` inside the existing locale loop, with the same `AI_WORD` map.
 - [ ] **Step 2: Run both specs, expect FAIL.**
 - [ ] **Step 3: Move the maps, rewrite the copy, and add the chrome keys.** `FloatingChatTrigger` reads `WHISPERS[locale][pathname] ?? WHISPERS[locale]['/']`, with locale from `useLocale()` normalized like the island does.
 - [ ] **Step 4: Run both specs plus `clyde-i18n-render.spec.ts` (free, opens without sending), expect PASS.**
@@ -394,6 +400,9 @@ The `CASE` and `QUALIFY` fixtures copy the outputs in `werk/fmai/shots.mjs` (`SC
   - one assumptions line from `breakdown` (`hoursSavedPerWeek`, `subscriptionCost`);
   - delete the score/qualification branch.
 - **`tool-results/BookingCard.tsx`**: title, the existing trust lines, and one amber button `applyCta` to `url`.
+- **D3, 48 hours everywhere:**
+  - `cardI18n.ts` `trustResponse`: nl `Reactie binnen 48 uur`, en `Reply within 48 hours`, es `Respuesta en 48 horas`.
+  - `src/lib/chatbot/knowledge/concierge-kb.ts:226`: `Response within 48 hours on business days.`
 - **`tool-results/cardI18n.ts`**: new labels `readCase`, `allSkills`, `allPricing`, `comingSoon` and `assumptions(hours, subscription)` in nl/en/es; delete keys that no card reads any more (`check:i18n-orphans` only covers `messages/*.json`, so grep `cardI18n` keys yourself).
 - Test: `tests/e2e/chatwidget-mocked.spec.ts`
 
