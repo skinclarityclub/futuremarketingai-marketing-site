@@ -3579,10 +3579,7 @@
   },
   "chat": {
     "widget": {
-      "typeMessage": "Escribe un mensaje...",
-      "demoLimitReached": "Límite de demo alcanzado",
-      "demoLimitMessage": "Has alcanzado el límite de la demo.",
-      "demoLimitCta": "Agenda una llamada para continuar."
+      "typeMessage": "Escribe un mensaje..."
     }
   },
   "assessment": {

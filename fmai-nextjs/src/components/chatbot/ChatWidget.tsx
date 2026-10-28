@@ -13,6 +13,7 @@ import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { SidePanel } from './SidePanel'
 import { useChatChrome } from './useChatChrome'
+import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
 import { getDemoScenarios } from './demo/scenarios'
@@ -52,6 +53,7 @@ export function ChatWidget({
     error,
     messageCount,
     isAtLimit,
+    limit,
     stop,
     regenerate,
     setMessages,
@@ -273,37 +275,23 @@ export function ChatWidget({
     !isAtLimit &&
     !demoMode
 
-  // A failed turn used to be invisible: the user's bubble sat there and nothing
-  // followed (measured with an empty Anthropic balance: every message errored,
-  // the widget showed no sign). Surface it where the reply would have been.
-  const errorBanner = error && !isAtLimit && (
-    <div
-      role="alert"
-      className="mx-4 mb-2 flex items-center justify-between gap-3 rounded-xl border border-error/25 bg-error/[0.08] px-3 py-2 text-xs text-text-primary"
-    >
-      <span>{chrome.somethingWrong}</span>
-      {regenerate && (
-        <button
-          type="button"
-          onClick={() => regenerate()}
-          className="shrink-0 rounded-md px-2 py-1 font-medium text-accent-system transition-colors hover:bg-accent-system/10"
-        >
-          {chrome.retry}
-        </button>
-      )}
-    </div>
+  // The limit and error states speak in the footer and under the question, not in banners.
+  const applyLink = (
+    <Link href="/apply" className="font-medium text-accent-system hover:underline">
+      {chrome.applyCta}
+    </Link>
   )
-
-  const limitBanner = isAtLimit && (
-    <div className="border-t border-border-primary bg-bg-elevated/80 px-4 py-3 text-center">
-      <p className="text-xs text-text-secondary">
-        {t('demoLimitMessage')}{' '}
-        <Link href="/contact" className="font-medium text-accent-system hover:underline">
-          {t('demoLimitCta')}
-        </Link>
-      </p>
-    </div>
-  )
+  const footer = limit.atLimit ? (
+    <>
+      {chrome.limitReached} {chrome.keepTalking} {applyLink}
+    </>
+  ) : limit.warn ? (
+    <>
+      <span className="text-accent-human">{chrome.limitWarning(limit.remaining)}</span> {applyLink}
+    </>
+  ) : undefined
+  const failure = classifyChatError(error)
+  const inputPlaceholder = isAtLimit ? chrome.limitReached : t('typeMessage')
 
   if (mode === 'floating') {
     return (
@@ -367,6 +355,8 @@ export function ChatWidget({
                   suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
                   onPromptSelect={handlePromptSelect}
                   onRegenerate={regenerate ? () => regenerate() : undefined}
+                  failure={failure}
+                  onRetry={regenerate ? () => regenerate() : undefined}
                   onEditMessage={handleEditMessage}
                   inlinePrompts={showInlinePrompts ? suggestedPrompts : undefined}
                   onInlinePromptSelect={handlePromptSelect}
@@ -376,14 +366,13 @@ export function ChatWidget({
                   messageCount={messages.length}
                   onSendMessage={handleSend}
                 />
-                {errorBanner}
-                {limitBanner}
                 <ChatInput
                   onSend={handleSend}
                   onStop={stop}
                   disabled={isAtLimit}
                   isLoading={status === 'submitted' || status === 'streaming'}
-                  placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+                  placeholder={inputPlaceholder}
+                  footer={footer}
                   initialText={editText}
                 />
               </div>
@@ -420,6 +409,8 @@ export function ChatWidget({
         suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
         onPromptSelect={handlePromptSelect}
         onRegenerate={regenerate ? () => regenerate() : undefined}
+                  failure={failure}
+                  onRetry={regenerate ? () => regenerate() : undefined}
         onEditMessage={handleEditMessage}
       />
       <DemoOrchestrator
@@ -427,14 +418,13 @@ export function ChatWidget({
         messageCount={messages.length}
         onSendMessage={handleSend}
       />
-      {errorBanner}
-      {limitBanner}
       <ChatInput
         onSend={handleSend}
         onStop={stop}
         disabled={isAtLimit}
         isLoading={status === 'submitted' || status === 'streaming'}
-        placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+        placeholder={inputPlaceholder}
+                  footer={footer}
         initialText={editText}
       />
     </div>

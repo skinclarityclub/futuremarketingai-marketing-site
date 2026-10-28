@@ -80,3 +80,10 @@ export async function openWidget(
   }).toPass({ timeout: 40000 })
   return panel
 }
+
+/** Types and submits the way a user does: Enter in the textarea. */
+export async function send(panel: Locator, text: string): Promise<void> {
+  const box = panel.locator('textarea')
+  await box.fill(text)
+  await box.press('Enter')
+}

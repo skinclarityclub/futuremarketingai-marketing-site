@@ -174,10 +174,18 @@ export const useChatbotStore = create<ChatbotState>()(
     {
       name: 'chatbot-store',
       skipHydration: true,
+      // The message limit lives as long as the conversation, which is not persisted.
+      // v0 stored messageCounts; zustand merges a stored value on hydration even when
+      // partialize no longer writes it, so the migrate drops it for returning visitors.
+      version: 1,
+      migrate: (persisted) => {
+        const state = { ...(persisted as Record<string, unknown>) }
+        delete state.messageCounts
+        return state as never
+      },
       partialize: (state) => ({
         sessionId: state.sessionId,
         personaId: state.personaId,
-        messageCounts: state.messageCounts,
       }),
     }
   )

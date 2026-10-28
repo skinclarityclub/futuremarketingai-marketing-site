@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useCallback, useMemo, useState } from 'react'
+import { Fragment, useEffect, useRef, useCallback, useMemo, useState } from 'react'
 import { useLocale } from 'next-intl'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
@@ -19,6 +19,7 @@ import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
+import type { ChatFailure } from '@/lib/chatbot/chat-error'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface ChatMessagesProps {
@@ -40,6 +41,10 @@ interface ChatMessagesProps {
   inlinePrompts?: string[]
   /** Triggered when user clicks an inline prompt chip. */
   onInlinePromptSelect?: (prompt: string) => void
+  /** A failed turn, shown under the question it belongs to. */
+  failure?: ChatFailure | null
+  /** Resends the failed turn (offered for `failed` only; a 429 needs waiting, not retrying). */
+  onRetry?: () => void
 }
 
 function extractText(msg: UIMessage): string {
@@ -292,6 +297,8 @@ export function ChatMessages({
   onEditMessage,
   inlinePrompts,
   onInlinePromptSelect,
+  failure,
+  onRetry,
 }: ChatMessagesProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
@@ -424,6 +431,7 @@ export function ChatMessages({
           return -1
         })()
         const isStreaming = status === 'submitted' || status === 'streaming'
+        const lastUserIdx = messages.findLastIndex((m) => m.role === 'user')
 
         return messages.map((message, idx) => {
           const isUser = message.role === 'user'
@@ -432,8 +440,8 @@ export function ChatMessages({
           const isLastAssistant = idx === lastAssistantIdx
           const messageText = extractText(message)
           return (
+            <Fragment key={message.id}>
             <div
-              key={message.id}
               className={`group/msg flex ${isUser ? 'justify-end' : 'flex-col items-start'}`}
               style={{ animation: 'fadeIn 0.3s ease-in' }}
             >
@@ -510,6 +518,27 @@ export function ChatMessages({
                 </button>
               )}
             </div>
+            {isUser && idx === lastUserIdx && failure && !isStreaming && (
+              <p role="alert" className="-mt-2 mr-1 text-right text-xs text-text-secondary">
+                {failure.kind === 'rate-limit' ? (
+                  chrome.rateLimited(failure.minutes)
+                ) : (
+                  <>
+                    {chrome.noAnswer} ·{' '}
+                    {onRetry && (
+                      <button
+                        type="button"
+                        onClick={onRetry}
+                        className="font-medium text-accent-system hover:underline"
+                      >
+                        {chrome.retry}
+                      </button>
+                    )}
+                  </>
+                )}
+              </p>
+            )}
+            </Fragment>
           )
         })
       })()}
