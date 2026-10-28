@@ -66,7 +66,7 @@ async function sendToClyde(page: Page, text: string) {
 
 /** A tool result renders as a bordered card inside the conversation log. */
 function resultCard(page: Page) {
-  return page.locator('[data-chatwidget-panel] [role="log"] [data-tool-card]').first()
+  return page.locator('[data-chatwidget-panel] [role="log"] [data-tool-card]:not([data-tool-card="remember_context"])').first()
 }
 
 function hasCard(page: Page) {

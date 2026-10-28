@@ -78,7 +78,7 @@ const navigate_to_page = tool({
 
 /**
  * Capture tool: records concrete facts the prospect reveals about their agency so
- * Clyde remembers them across the conversation and the memory panel can show them.
+ * Clyde remembers them across the conversation and the memory sheet can show them.
  * Locale-neutral — it echoes its input; the card localizes labels and reads the
  * accumulated profile from the store.
  */

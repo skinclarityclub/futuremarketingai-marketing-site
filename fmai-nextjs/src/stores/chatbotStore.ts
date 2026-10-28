@@ -38,7 +38,7 @@ interface ChatbotState {
   calendlyOpen: boolean
   /** Calendly prefill data */
   calendlyPrefill: { name?: string; email?: string } | undefined
-  /** Message queued from sidebar skill-card click — consumed by ChatWidget */
+  /** Message queued from a skill-card click — consumed by ChatWidget */
   pendingChatMessage: string | null
   /** Within-session accumulated facts Clyde has captured about the visitor. */
   memoryProfile: MemoryProfile
