@@ -129,34 +129,37 @@ test('remember_context decides fit in code and offers the card once the facts ar
   expect(await qualify_lead.execute!({}, call)).toEqual({ fit: 'strong', offerApplication: false })
 })
 
-test('get_roi_estimate counts only numbers the visitor typed, asks for the rest, caps hours per person', async () => {
-  // the visitor typed "8 mensen" (also remembered) and "40 uur per week"
-  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true, said: [8, 40] }
+test('get_roi_estimate shows only hours the visitor typed and the price for their brands, never a saving', async () => {
+  // the visitor typed "8 mensen", "6 merken" (both remembered) and "40 uur per week"
+  const session: FitSession = {
+    profile: { teamSize: 8, brandCount: 6 },
+    offered: false,
+    offerEnabled: true,
+    said: [8, 6, 40],
+  }
   const { get_roi_estimate } = buildLeadgenTools('nl', session)
   const run = (input: Parameters<NonNullable<typeof get_roi_estimate.execute>>[0]) =>
     get_roi_estimate.execute!(input, call)
-  expect(await run({ teamSize: 8, monthlySubscription: 998 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
+  expect(await run({ teamSize: 8 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
   // the paid-test failure: the model passes hours nobody typed
-  expect(await run({ teamSize: 8, teamHoursPerWeek: 10, monthlySubscription: 998 })).toEqual({
-    needsInput: ['teamHoursPerWeek'],
-  })
-  // team size from memory; a rate nobody typed stays the assumed EUR 50
-  for (const rate of [undefined, 80]) {
-    expect(await run({ teamHoursPerWeek: 40, averageHourlyRate: rate, monthlySubscription: 2394 })).toMatchObject({
-      monthlySavings: 5606,
-      roiPercent: 234,
-      breakdown: { teamSize: 8, teamHoursPerWeek: 40, hoursSavedPerWeek: 40, hourlyRate: 50, rateAssumed: true },
-    })
+  expect(await run({ teamHoursPerWeek: 10 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
+  // Professional: 6 workspaces x EUR 399
+  const shown = await run({ teamHoursPerWeek: 40 })
+  expect(shown).toEqual({ teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 2394 })
+  expect(JSON.stringify(shown)).not.toMatch(/saving|roi|payback|percent/i)
+
+  // "we zijn met 2, elk 20 uur, 1 merk": per-person hours times the team count; 1 brand has no plan
+  const small: FitSession = { profile: {}, offered: false, offerEnabled: true, said: [2, 20, 1] }
+  expect(
+    await buildLeadgenTools('nl', small).get_roi_estimate.execute!({ teamSize: 2, teamHoursPerWeek: 40, brandCount: 1 }, call),
+  ).toEqual({ teamHoursPerWeek: 40, teamHoursPerMonth: 173 })
+
+  const price = async (brands: number) => {
+    const s: FitSession = { profile: {}, offered: false, offerEnabled: true, said: [40, brands] }
+    const out = await buildLeadgenTools('nl', s).get_roi_estimate.execute!({ teamHoursPerWeek: 40, brandCount: brands }, call)
+    return (out as { subscription?: number }).subscription
   }
-  // "we zijn met 2, elk 20 uur, EUR 80 per uur": per-person hours times the team count, capped at 15 each
-  const perPerson: FitSession = { profile: {}, offered: false, offerEnabled: true, said: [2, 20, 80] }
-  const input = { teamSize: 2, teamHoursPerWeek: 40, averageHourlyRate: 80, monthlySubscription: 998 }
-  expect(await buildLeadgenTools('nl', perPerson).get_roi_estimate.execute!(input, call)).toMatchObject({
-    breakdown: { teamHoursPerWeek: 40, hoursSavedPerWeek: 30, hourlyRate: 80, rateAssumed: false },
-  })
-  expect(await buildLeadgenTools('nl').get_roi_estimate.execute!(input, call)).toEqual({
-    needsInput: ['teamSize', 'teamHoursPerWeek'],
-  })
+  expect([await price(3), await price(14), await price(15)]).toEqual([3 * 499, 14 * 399, 15 * 299])
 })
 
 test('numbersSaid reads only what the visitor typed', () => {

@@ -28,10 +28,12 @@ interface CardCopy {
   skillsHeader: string
   popular: string
   comingSoon: string
-  roiHeader: string
-  monthlySavings: string
-  roi: string
-  payback: string
+  hoursHeader: string
+  perWeekManual: string
+  perMonthManual: string
+  hours: (n: number) => string
+  subscription: (brands: number) => string
+  ownHoursNote: string
   readCase: string
   allSkills: string
   allPricing: string
@@ -40,17 +42,6 @@ interface CardCopy {
   trustPersonal: string
   trustResponse: string
   trustNoStrings: string
-  assumptions: (a: RoiAssumptions) => string
-}
-
-/** What a ROI figure rests on, all shown on the card. Money values come formatted. */
-export interface RoiAssumptions {
-  team: number
-  teamHours: number
-  cap: number
-  rate: string
-  rateAssumed: boolean
-  subscription: string
 }
 
 const COPY: Record<CardLocale, CardCopy> = {
@@ -59,10 +50,13 @@ const COPY: Record<CardLocale, CardCopy> = {
     skillsHeader: 'Onze vaardigheden',
     popular: 'Populair',
     comingSoon: 'Binnenkort',
-    roiHeader: 'ROI berekening',
-    monthlySavings: 'Maandelijkse besparing',
-    roi: 'ROI',
-    payback: 'Terugverdientijd',
+    hoursHeader: 'Jullie uren nu',
+    perWeekManual: 'per week handmatig',
+    perMonthManual: 'per maand handmatig',
+    hours: (n) => `${n} uur`,
+    subscription: (b) => `abonnement per maand (${b} merken)`,
+    ownHoursNote:
+      'Dit zijn jullie eigen uren. Hoeveel Clyde daarvan overneemt is nog niet gemeten; in het gesprek rekenen we het uit met jullie cijfers.',
     readCase: 'Lees de case →',
     allSkills: 'Alle vaardigheden →',
     allPricing: 'Alle prijzen →',
@@ -71,18 +65,19 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Persoonlijk gesprek',
     trustResponse: 'Reactie binnen 48 uur',
     trustNoStrings: 'Geen verplichtingen',
-    assumptions: (a) =>
-      `Rekenvoorbeeld, geen garantie: ${a.teamHours} uur per week van ${a.team} mensen (max. ${a.cap} per persoon), alsof Clyde al die uren overneemt, × 4 weken × ${a.rate} per uur${a.rateAssumed ? ' (aangenomen)' : ''}, min ${a.subscription} abonnement per maand.`,
   },
   en: {
     pricingHeader: 'Pricing',
     skillsHeader: 'Our skills',
     popular: 'Popular',
     comingSoon: 'Coming soon',
-    roiHeader: 'ROI calculation',
-    monthlySavings: 'Monthly savings',
-    roi: 'ROI',
-    payback: 'Payback',
+    hoursHeader: "Your team's hours today",
+    perWeekManual: 'per week, manual',
+    perMonthManual: 'per month, manual',
+    hours: (n) => `${n} hours`,
+    subscription: (b) => `subscription per month (${b} brands)`,
+    ownHoursNote:
+      'These are your own hours. How much of them Clyde takes over is not measured yet; in the call we work it out with your numbers.',
     readCase: 'Read the case →',
     allSkills: 'All skills →',
     allPricing: 'All prices →',
@@ -91,18 +86,19 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Personal conversation',
     trustResponse: 'Reply within 48 hours',
     trustNoStrings: 'No obligations',
-    assumptions: (a) =>
-      `Worked example, no guarantee: ${a.teamHours} hours a week from ${a.team} people (max ${a.cap} per person), as if Clyde takes all those hours over, × 4 weeks × ${a.rate} an hour${a.rateAssumed ? ' (assumed)' : ''}, minus ${a.subscription} subscription a month.`,
   },
   es: {
     pricingHeader: 'Tarifas',
     skillsHeader: 'Nuestras habilidades',
     popular: 'Popular',
     comingSoon: 'Próximamente',
-    roiHeader: 'Cálculo de ROI',
-    monthlySavings: 'Ahorro mensual',
-    roi: 'ROI',
-    payback: 'Amortización',
+    hoursHeader: 'Horas de tu equipo hoy',
+    perWeekManual: 'por semana, a mano',
+    perMonthManual: 'por mes, a mano',
+    hours: (n) => `${n} horas`,
+    subscription: (b) => `suscripción al mes (${b} marcas)`,
+    ownHoursNote:
+      'Son las horas de tu propio equipo. Cuánto asume Clyde aún no está medido; en la llamada lo calculamos con tus cifras.',
     readCase: 'Lee el caso →',
     allSkills: 'Todas las habilidades →',
     allPricing: 'Todas las tarifas →',
@@ -111,8 +107,6 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Conversación personal',
     trustResponse: 'Respuesta en 48 horas',
     trustNoStrings: 'Sin compromisos',
-    assumptions: (a) =>
-      `Ejemplo de cálculo, sin garantía: ${a.teamHours} horas por semana de ${a.team} personas (máx. ${a.cap} por persona), como si Clyde asumiera todas esas horas, × 4 semanas × ${a.rate} por hora${a.rateAssumed ? ' (supuesto)' : ''}, menos ${a.subscription} de suscripción al mes.`,
   },
 }
 
@@ -120,7 +114,6 @@ export interface CardCopyHandle {
   locale: CardLocale
   t: CardCopy
   money: (value: number | string | undefined) => string | null
-  payback: (months: number) => string
 }
 
 function formatMoney(locale: CardLocale, value: number | string | undefined): string | null {
@@ -129,18 +122,11 @@ function formatMoney(locale: CardLocale, value: number | string | undefined): st
   return `€${new Intl.NumberFormat(INTL_LOCALE[locale]).format(value)}`
 }
 
-function formatPayback(locale: CardLocale, months: number): string {
-  if (locale === 'en') return `${months} month${months !== 1 ? 's' : ''}`
-  if (locale === 'es') return `${months} mes${months !== 1 ? 'es' : ''}`
-  return `${months} maand${months !== 1 ? 'en' : ''}`
-}
-
 export function useCardCopy(): CardCopyHandle {
   const locale = normalize(useLocale())
   return {
     locale,
     t: COPY[locale],
     money: (value) => formatMoney(locale, value),
-    payback: (months) => formatPayback(locale, months),
   }
 }

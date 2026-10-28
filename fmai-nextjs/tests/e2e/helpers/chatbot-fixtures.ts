@@ -79,24 +79,8 @@ export const PRICING = {
   ],
 }
 
-// get_roi_estimate for 8 people who said 40 team hours a week, rate not stated (EUR 50 assumed).
-export const ROI = {
-  monthlySavings: 5606,
-  annualSavings: 67272,
-  roiPercent: 234,
-  paybackPeriodMonths: 1,
-  breakdown: {
-    teamSize: 8,
-    teamHoursPerWeek: 40,
-    hoursCapPerPerson: 15,
-    hoursSavedPerWeek: 40,
-    timeSavedMonthly: 160,
-    hourlyRate: 50,
-    rateAssumed: true,
-    costSavedMonthly: 8000,
-    subscriptionCost: 2394,
-  },
-}
+// get_roi_estimate for a team that said 40 hours a week and 6 brands: their own hours plus the price, no saving.
+export const ROI = { teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 2394 }
 
 export const ROI_NEEDS_INPUT = { needsInput: ['teamHoursPerWeek'] }
 

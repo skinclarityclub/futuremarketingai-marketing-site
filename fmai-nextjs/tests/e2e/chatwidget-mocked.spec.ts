@@ -636,15 +636,15 @@ test.describe('compact cards', () => {
       await expect(card.getByText('Binnenkort')).toHaveCount(1)
     })
 
-    test('roi shows three figures and every assumption, as a worked example', async ({ page }) => {
+    test('roi shows the own hours and the price, and claims no saving', async ({ page }) => {
       const { card } = await show(page, 'get_roi_estimate', ROI)
-      await expect(card.getByText('234%')).toBeVisible()
       await expect(card.locator('[data-roi-figure]')).toHaveCount(3)
-      const line = card.getByText(/^Rekenvoorbeeld, geen garantie/)
-      await expect(line).toBeVisible()
-      for (const part of ['40 uur per week van 8 mensen', 'max. 15 per persoon', '€50 per uur (aangenomen)', '€2.394 abonnement']) {
-        await expect(line).toContainText(part)
-      }
+      await expect(card.getByText('40 uur')).toBeVisible()
+      await expect(card.getByText('173 uur')).toBeVisible()
+      await expect(card.getByText('€2.394')).toBeVisible()
+      await expect(card.getByText('abonnement per maand (6 merken)')).toBeVisible()
+      await expect(card.getByText(/nog niet gemeten/)).toBeVisible()
+      await expect(card.getByText(/besparing|ROI|%|terugverdien/i)).toHaveCount(0)
     })
   })
 

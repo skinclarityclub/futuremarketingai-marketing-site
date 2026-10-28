@@ -1,6 +1,7 @@
 import { tool } from 'ai'
 import { z } from 'zod'
 import {
+  CHATBOT_TIERS,
   getChatbotTiers,
   getChatbotTier,
   type ChatbotLocale,
@@ -8,8 +9,13 @@ import {
 } from '@/lib/chatbot/tool-data'
 import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
-const ASSUMED_HOURLY_RATE = 50
-const HOURS_CAP_PER_PERSON = 15
+// One workspace per client brand; the tier follows from the count (tool-data.ts). Solo/1 brand has no plan.
+function subscriptionFor(brands: number) {
+  const tier = [CHATBOT_TIERS.enterprise, CHATBOT_TIERS.professional, CHATBOT_TIERS.growth].find(
+    (t) => brands >= t.minWorkspaces,
+  )
+  return tier && { brandCount: brands, subscription: tier.pricePerWorkspace * brands }
+}
 
 export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = noOfferSession()) {
   // No score anywhere: the model cannot state what it never receives (R28). Fit comes
@@ -43,75 +49,39 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
     },
   })
 
+  // No measured saving exists (support-kb "roi_calculations"; RCC 2026/00196), so this tool
+  // returns no hours saved, euros, ROI or payback: only the visitor's own hours and the price.
   const get_roi_estimate = tool({
     description:
-      'Calculate an indicative ROI from the team size and the hours the whole team spends on manual marketing per week, both only as the visitor stated them. Leave a field out when the visitor did not say it, never estimate: the result then lists needsInput and you ask for that in one short question. Returns monthly/annual savings and payback period.',
+      'For ROI, savings or "what does it bring us": show the hours the whole team spends on manual marketing per week, as the visitor stated them, and the monthly subscription for their number of brands. Leave a field out when the visitor did not say it, never estimate: the result then lists needsInput and you ask for that in one short question. There is no measured saving: never state hours saved, a euro saving, ROI percentage or payback; say that how much Clyde takes over is worked out in the call with their own numbers.',
     inputSchema: z.object({
-      teamSize: z
-        .number()
-        .optional()
-        .describe('People on the marketing team, only as the visitor stated; leave out when unknown'),
       teamHoursPerWeek: z
         .number()
         .optional()
         .describe(
           'Hours the WHOLE team spends on manual marketing per week, only as the visitor stated (hours per person times the stated team size); leave out when unknown, never estimate',
         ),
-      averageHourlyRate: z
-        .number()
-        .optional()
-        .describe('Hourly rate in EUR, only when the visitor stated it; leave out otherwise'),
-      monthlySubscription: z
-        .number()
-        .default(998)
-        .describe('Monthly subscription cost in EUR (default: Growth starter 998 = 2 workspaces × 499)'),
+      teamSize: z.number().optional().describe('People on the team, only as the visitor stated'),
+      brandCount: z.number().optional().describe('Client brands the agency manages, only as the visitor stated'),
     }),
-    execute: async ({ teamSize, teamHoursPerWeek, averageHourlyRate, monthlySubscription }) => {
-      // Only stated facts count: labels do not repair invented input (RCC 2026/00196). A number
-      // counts as stated when the visitor typed it; the remembered team size counts as known.
-      const stated = (n: number | undefined): n is number =>
-        typeof n === 'number' && Number.isFinite(n) && n > 0 && session.said.includes(n)
+    execute: async ({ teamHoursPerWeek, teamSize, brandCount }) => {
+      // Only numbers the visitor typed count (paid test 10-28: the model passed hours nobody said);
+      // remembered facts count as known.
       const known = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
+      const stated = (n: number | undefined): n is number => known(n) && session.said.includes(n)
       const team = stated(teamSize) ? teamSize : session.profile.teamSize
+      const brands = stated(brandCount) ? brandCount : session.profile.brandCount
       // per-person hours times the team are stated too
       const hours =
         known(teamHoursPerWeek) &&
         (stated(teamHoursPerWeek) || (known(team) && stated(teamHoursPerWeek / team)))
           ? teamHoursPerWeek
           : undefined
-      const needsInput = [...(known(team) ? [] : ['teamSize']), ...(known(hours) ? [] : ['teamHoursPerWeek'])]
-      if (!known(team) || !known(hours)) return { needsInput }
-
-      const visitorRate = stated(averageHourlyRate) ? averageHourlyRate : undefined
-      const hourlyRate = visitorRate ?? ASSUMED_HOURLY_RATE
-      // Guard degenerate input so the card never shows NaN/Infinity.
-      const safeSubscription = Math.max(1, monthlySubscription)
-      const hoursSavedPerWeek = Math.min(hours, HOURS_CAP_PER_PERSON * team)
-      const timeSavedMonthly = hoursSavedPerWeek * 4
-      const costSavedMonthly = timeSavedMonthly * hourlyRate
-      const roiPercent = Math.round(((costSavedMonthly - safeSubscription) / safeSubscription) * 100)
-      const monthlySavings = Math.round(costSavedMonthly - safeSubscription)
-      const annualSavings = monthlySavings * 12
-      const paybackPeriodMonths =
-        monthlySavings > 0 ? Math.max(1, Math.round(safeSubscription / monthlySavings)) : 0
-
+      if (!known(hours)) return { needsInput: ['teamHoursPerWeek'] }
       return {
-        monthlySavings,
-        annualSavings,
-        roiPercent,
-        paybackPeriodMonths,
-        // Every assumption goes to the card, so the visitor sees what the figures rest on.
-        breakdown: {
-          teamSize: team,
-          teamHoursPerWeek: hours,
-          hoursCapPerPerson: HOURS_CAP_PER_PERSON,
-          hoursSavedPerWeek,
-          timeSavedMonthly,
-          hourlyRate,
-          rateAssumed: visitorRate === undefined,
-          costSavedMonthly: Math.round(costSavedMonthly),
-          subscriptionCost: monthlySubscription,
-        },
+        teamHoursPerWeek: hours,
+        teamHoursPerMonth: Math.round((hours * 52) / 12),
+        ...(known(brands) ? subscriptionFor(brands) : undefined),
       }
     },
   })
