@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test'
+import { PROACTIVE_PROMPTS, WHISPERS } from '../../src/components/chatbot/widget-copy'
 import { SSE_HEADERS, mockChatbot, openWidget, send, uiStream } from './helpers/chatbot-mock'
 
 // Every test answers /api/chatbot itself: zero paid calls, and it proves none leaked.
@@ -138,5 +139,56 @@ test.describe('errors and the limit', () => {
     await expect(w.getByText('Dit gesprek zit vol.').first()).toBeVisible()
     await expect(w.getByRole('link', { name: 'Aanvraag starten' })).toHaveAttribute('href', /\/nl\/apply$/)
     expect(m.calls()).toBe(15)
+  })
+})
+
+test.describe('one proactive hint', () => {
+  const whisper = (page: Page) => page.getByText(WHISPERS.nl['/'])
+  const consent = JSON.stringify({ necessary: true, analytics: false, marketing: false })
+
+  // The idle timers only exist after hydration, so wait for it, then jump the clock.
+  async function visit(page: Page, path = '/nl') {
+    await page.addInitScript((c) => {
+      try {
+        localStorage.setItem('cookieConsent', c)
+      } catch {}
+    }, consent)
+    await page.goto(path, { waitUntil: 'load' })
+    await page.waitForLoadState('networkidle')
+    await page.clock.fastForward(21_000)
+  }
+
+  test('whisper once per session', async ({ page }) => {
+    const { mock } = await setup(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.clock.install()
+    await visit(page)
+    await expect(whisper(page)).toBeVisible()
+    await page.reload({ waitUntil: 'load' })
+    await page.waitForLoadState('networkidle')
+    await page.clock.fastForward(21_000)
+    await expect(whisper(page)).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('no whisper on phones', async ({ page }) => {
+    const { mock } = await setup(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.clock.install()
+    await visit(page)
+    await expect(whisper(page)).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('no cold nudge', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.clock.install()
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl/pricing')
+    await w.locator('button[aria-label="Sluit chat"]').click()
+    await expect(w).toBeHidden()
+    await page.clock.fastForward(45_000)
+    await expect(page.getByText(PROACTIVE_PROMPTS.nl['/pricing']!)).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
   })
 })

@@ -20,7 +20,6 @@ function normalizeLocale(value: string): ChatLocale {
   return value === 'en' || value === 'es' ? value : 'nl'
 }
 
-const NUDGE_DELAY_MS = 40_000
 /** After Clyde sends the visitor to a page, he chimes in once this soon. */
 const POST_NAV_NUDGE_DELAY_MS = 6_000
 
@@ -32,7 +31,6 @@ export function ChatWidgetIsland() {
   const close = useChatbotStore((s) => s.close)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const messageCounts = useChatbotStore((s) => s.messageCounts)
   const memoryProfile = useChatbotStore((s) => s.memoryProfile)
   const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
 
@@ -41,7 +39,7 @@ export function ChatWidgetIsland() {
   // destination page instead of going silent.
   const [cameFromChat, setCameFromChat] = useState(false)
   const prevPathname = useRef(pathname)
-  // At most one proactive nudge per page visit (cold timer, scroll, or post-nav).
+  // At most one proactive nudge per page visit (post-nav).
   const nudgedThisPage = useRef(false)
   const nudgePrompt = PROACTIVE_PROMPTS[locale][pathname]
   const followupMessage = PROACTIVE_FOLLOWUPS[locale][pathname] ?? PROACTIVE_FOLLOWUPS[locale].default
@@ -91,21 +89,8 @@ export function ChatWidgetIsland() {
     if (isOpen) setNudgeVisible(false)
   }, [isOpen])
 
-  // Proactive nudge: fire after NUDGE_DELAY_MS if user hasn't engaged
-  useEffect(() => {
-    if (!nudgePrompt) return
-    const totalMessages = Object.values(messageCounts).reduce((a, b) => a + b, 0)
-    if (totalMessages > 0 || isOpen) return
-    const timer = setTimeout(() => {
-      if (nudgedThisPage.current) return
-      nudgedThisPage.current = true
-      setNudgeVisible(true)
-    }, NUDGE_DELAY_MS)
-    return () => clearTimeout(timer)
-  }, [nudgePrompt, messageCounts, isOpen, pathname])
-
-  // Post-navigation follow-up: Clyde sent them here, so chime in once, sooner
-  // than the cold-visitor timer and regardless of prior engagement.
+  // Post-navigation follow-up: Clyde sent them here, so chime in once, regardless
+  // of prior engagement.
   useEffect(() => {
     if (!cameFromChat) return
     if (!nudgePrompt || isOpen || nudgedThisPage.current) {
@@ -119,24 +104,6 @@ export function ChatWidgetIsland() {
     }, POST_NAV_NUDGE_DELAY_MS)
     return () => clearTimeout(timer)
   }, [cameFromChat, nudgePrompt, isOpen])
-
-  // Scroll-trigger nudge: also fire at 72% scroll depth
-  useEffect(() => {
-    if (!nudgePrompt) return
-    const handleScroll = () => {
-      const el = document.documentElement
-      const fraction = el.scrollTop / Math.max(1, el.scrollHeight - el.clientHeight)
-      if (fraction > 0.72) {
-        const total = Object.values(messageCounts).reduce((a, b) => a + b, 0)
-        if (total === 0 && !isOpen && !nudgeVisible && !nudgedThisPage.current) {
-          nudgedThisPage.current = true
-          setNudgeVisible(true)
-        }
-      }
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [nudgePrompt, isOpen, nudgeVisible, messageCounts])
 
   const handleNudgeAccept = useCallback(() => {
     setNudgeVisible(false)

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useLocale } from 'next-intl'
 import { usePathname } from '@/i18n/navigation'
@@ -32,6 +32,16 @@ const ChatWidgetIsland = dynamic(
   { ssr: false, loading: () => null }
 )
 
+function canWhisper(): boolean {
+  if (typeof window === 'undefined') return false
+  if (window.matchMedia('(max-width: 639px)').matches) return false
+  try {
+    return !sessionStorage.getItem('clyde:whispered')
+  } catch {
+    return true
+  }
+}
+
 export function FloatingChatTrigger() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
@@ -39,6 +49,24 @@ export function FloatingChatTrigger() {
   const locale: ChatLocale = rawLocale === 'en' || rawLocale === 'es' ? rawLocale : 'nl'
   const idleStage = useIdleEngagement()
   const hasUnread = useChatbotStore((state) => state.hasUnread)
+
+  // One hint per browser session, never on phones. The whisper only renders ~20s after
+  // mount, so reading browser state in this initializer cannot cause a hydration mismatch.
+  const [whisperAllowed] = useState(canWhisper)
+  // Once the whisper has shown and folded away it stays away, also across SPA navigation.
+  const [prevStage, setPrevStage] = useState(idleStage)
+  const [whisperSpent, setWhisperSpent] = useState(false)
+  if (idleStage !== prevStage) {
+    setPrevStage(idleStage)
+    if (prevStage === 'whispering') setWhisperSpent(true)
+  }
+  const showWhisper = whisperAllowed && !whisperSpent
+  useEffect(() => {
+    if (idleStage !== 'whispering' || !showWhisper) return
+    try {
+      sessionStorage.setItem('clyde:whispered', '1')
+    } catch {}
+  }, [idleStage, showWhisper])
 
   const handleOpen = useCallback(() => {
     void useChatbotStore.persist.rehydrate()
@@ -54,7 +82,7 @@ export function FloatingChatTrigger() {
     <ClydePresence
       onClick={handleOpen}
       whisper={whisper}
-      idleStage={idleStage}
+      idleStage={idleStage === 'whispering' && !showWhisper ? 'noticed' : idleStage}
       hasUnread={hasUnread}
     />
   )
