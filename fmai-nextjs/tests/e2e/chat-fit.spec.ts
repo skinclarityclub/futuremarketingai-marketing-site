@@ -276,6 +276,10 @@ test('unitsSaid reads only what the visitor typed, by the unit after each number
   // an open prefix is no compound, and an exponent is no count (Codex R3)
   expect(unitsSaid([user('We verwerken 40 facturen per week en hebben 6 keurmerken en 3 kenmerken')])).toEqual(said())
   expect(unitsSaid([user('4e1 uur per week, 1e2 merken')])).toEqual(said())
+  // a signed exponent is no count either, and a hyphen joins only a listed prefix (Codex R4)
+  expect(unitsSaid([user('4e+1 uur, 4e-1 uur')])).toEqual(said())
+  expect(unitsSaid([user('We besteden 10 uur per week aan verpakkingen met 6 CE-merken')])).toEqual(said({ hours: [10] }))
+  expect(unitsSaid([user('6 skincaremerken en 4 beauty-klanten')])).toEqual(said({ brands: [6, 4] }))
   // a bare number has no unit, and "uur" inside a longer word is no unit
   expect(unitsSaid([user('we zijn met 8 en doen 6 uurtjes')])).toEqual(said())
   expect(unitsSaid(undefined)).toEqual(said())
