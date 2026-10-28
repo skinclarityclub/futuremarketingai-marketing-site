@@ -6,6 +6,7 @@ import { ecommerceTools } from './ecommerce-tools'
 import { buildLeadgenTools } from './leadgen-tools'
 import { supportTools } from './support-tools'
 import type { ChatbotLocale } from '@/lib/chatbot/tool-data'
+import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyToolRecord = Record<string, Tool<any, any>>
@@ -80,23 +81,27 @@ const navigate_to_page = tool({
  * Capture tool: records concrete facts the prospect reveals about their agency so
  * Clyde remembers them across the conversation and the memory sheet can show them.
  * Locale-neutral — it echoes its input; the card localizes labels and reads the
- * accumulated profile from the store.
+ * accumulated profile from the store. It also decides fit in code, so the
+ * application card appears once the facts are in, even when the model never calls
+ * qualify_lead (R28).
  */
-const remember_context = tool({
-  description:
-    'Record a concrete fact the visitor just revealed about their agency so you remember it for the rest of the conversation: agency name, niche/vertical, number of brands or clients they manage, team size, their main pain point, or their goal. Call this whenever the visitor shares a NEW such fact, passing only the fields you just learned. Then refer back to what you remember in later replies.',
-  inputSchema: z.object({
-    agencyName: z.string().optional().describe('Name of the prospect agency'),
-    niche: z.string().optional().describe('Their niche/vertical, e.g. skincare, SaaS, hospitality'),
-    brandCount: z.number().optional().describe('How many brands or clients they manage'),
-    teamSize: z.number().optional().describe('Number of people on their team'),
-    painPoint: z.string().optional().describe('Their main pain or bottleneck'),
-    goal: z.string().optional().describe('What they want to achieve'),
-  }),
-  execute: async ({ agencyName, niche, brandCount, teamSize, painPoint, goal }) => ({
-    remembered: { agencyName, niche, brandCount, teamSize, painPoint, goal },
-  }),
-})
+const rememberContext = (session: FitSession) =>
+  tool({
+    description:
+      'Record a concrete fact the visitor just revealed about their agency so you remember it for the rest of the conversation: agency name, niche/vertical, number of brands or clients they manage, team size, their main pain point, or their goal. Call this whenever the visitor shares a NEW such fact, passing only the fields you just learned; never guess a number. Then refer back to what you remember in later replies. When the result has offerApplication true, the visitor sees an application card: mention it in one short sentence.',
+    inputSchema: z.object({
+      agencyName: z.string().optional().describe('Name of the prospect agency'),
+      niche: z.string().optional().describe('Their niche/vertical, e.g. skincare, SaaS, hospitality'),
+      brandCount: z.number().optional().describe('How many brands or clients they manage, as the visitor stated'),
+      teamSize: z.number().optional().describe('Number of people on their team, as the visitor stated'),
+      painPoint: z.string().optional().describe('Their main pain or bottleneck'),
+      goal: z.string().optional().describe('What they want to achieve'),
+    }),
+    execute: async ({ agencyName, niche, brandCount, teamSize, painPoint, goal }) => {
+      const remembered = { agencyName, niche, brandCount, teamSize, painPoint, goal }
+      return { remembered, ...decideFit(session, remembered) }
+    },
+  })
 
 /**
  * Flagship tool set for Clyde, built per request so card-producing tools render
@@ -109,12 +114,15 @@ const remember_context = tool({
  * and support tickets are always off-context. The guided demo uses only the real
  * agency tools below.
  */
-export function buildFlagshipTools(locale: ChatbotLocale): AnyToolRecord {
+export function buildFlagshipTools(
+  locale: ChatbotLocale,
+  session: FitSession = noOfferSession(),
+): AnyToolRecord {
   const concierge = buildConciergeTools(locale)
-  const leadgen = buildLeadgenTools(locale)
+  const leadgen = buildLeadgenTools(locale, session)
   return {
     navigate_to_page,
-    remember_context,
+    remember_context: rememberContext(session),
     book_call: concierge.book_call,
 
     get_skills: concierge.get_skills,
@@ -135,6 +143,3 @@ export function buildFlagshipTools(locale: ChatbotLocale): AnyToolRecord {
     escalate_to_human: supportTools.escalate_to_human,
   }
 }
-
-/** Backward-compatible static export (NL build). */
-export const flagshipTools: AnyToolRecord = buildFlagshipTools('nl')

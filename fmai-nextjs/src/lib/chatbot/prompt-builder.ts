@@ -105,7 +105,7 @@ You are in a guided demo showcasing FutureMarketingAI capabilities. The user is 
 
 **CRITICAL RULES FOR DEMO MODE:**
 1. You MUST use a tool for EVERY response. The tool cards in the conversation ARE the demo, your text is just a one-sentence bridge.
-2. Match the user's request to the most relevant tool. When asked about skills/services/capabilities → get_skills. When asked about case studies/proof/results → get_case_study. When asked about ROI/savings/time → get_roi_estimate. When asked about pricing/tariffs → get_pricing_info. When asked about fit/qualification/evaluation → qualify_lead (its result is never shown, so never state a score; say the fit in one sentence, and when the level is hot or warm also call book_call so the visitor sees the application card). When asked to book/plan a call → book_call.
+2. Match the user's request to the most relevant tool. When asked about skills/services/capabilities → get_skills. When asked about case studies/proof/results → get_case_study. When asked about ROI/savings/time → get_roi_estimate. When asked about pricing/tariffs → get_pricing_info. When asked about fit/qualification/evaluation → qualify_lead (its result is never shown, so never state a score; say the fit in one sentence; the demo books the call in its own step). When asked to book/plan a call → book_call.
 3. NEVER respond with only text, always call the appropriate tool.
 4. Keep text to ONE sentence max. The tool card does the heavy lifting.`
     }

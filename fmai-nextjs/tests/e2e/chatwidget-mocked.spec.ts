@@ -2,7 +2,16 @@ import { readFileSync } from 'node:fs'
 import { test, expect, type Locator, type Page } from '@playwright/test'
 import { PROACTIVE_PROMPTS, WHISPERS } from '../../src/components/chatbot/widget-copy'
 import { SSE_HEADERS, mockChatbot, openWidget, send, uiStream } from './helpers/chatbot-mock'
-import { BOOK, CASE, PRICING, QUALIFY, ROI, SKILLS } from './helpers/chatbot-fixtures'
+import {
+  BOOK,
+  CASE,
+  PRICING,
+  QUALIFY,
+  REMEMBER_OFFER,
+  ROI,
+  ROI_NEEDS_INPUT,
+  SKILLS,
+} from './helpers/chatbot-fixtures'
 
 // Every test answers /api/chatbot itself: zero paid calls, and it proves none leaked.
 async function setup(page: Page) {
@@ -483,18 +492,82 @@ test.describe('tool results render in the conversation', () => {
       expect(mock.calls()).toBe(1)
     })
 
-    test('qualify_lead shows no score and no JSON', async ({ page }) => {
+    test('qualify_lead shows no score and no JSON, its offer is the application card', async ({ page }) => {
       const { mock, w } = await ask(
         page,
         'qualify_lead',
-        { companySize: 8 },
+        { brandCount: 6, teamSize: 8 },
         QUALIFY,
         'Lijkt een goede match.',
       )
       const log = w.locator('[role="log"]')
       await expect(log.getByText('Lijkt een goede match.')).toBeVisible()
       // page-wide: the old panel sat outside the log
-      await expect(page.getByText(/LEAD SCORE|HOT/i)).toHaveCount(0)
+      await expect(page.getByText(/LEAD SCORE|HOT|strong/i)).toHaveCount(0)
+      await expect(log.locator('pre')).toHaveCount(0)
+      await expect(log.locator('[data-tool-card="book_call"]')).toHaveCount(1)
+      // an offer gets the booking chips, not none
+      await expect(w.getByRole('button', { name: 'Laat de case study zien' })).toBeVisible()
+      expect(mock.calls()).toBe(1)
+    })
+
+    test('a fit offer next to book_call in one reply shows one application card', async ({ page }) => {
+      const mock = await mockChatbot(page, (r) =>
+        r.fulfill({
+          status: 200,
+          headers: SSE_HEADERS,
+          body: uiStream({
+            tools: [
+              { tool: 'remember_context', input: { teamSize: 8, brandCount: 6 }, output: REMEMBER_OFFER },
+              { tool: 'book_call', input: { reason: 'kennismaking' }, output: BOOK },
+            ],
+            text: 'Dit past goed bij jullie bureau.',
+          }),
+        }),
+      )
+      const w = await openWidget(page)
+      await send(w, 'Wij zijn 8 mensen met 6 merken, plan een gesprek')
+      const log = w.locator('[role="log"]')
+      await expect(log.getByText('Dit past goed bij jullie bureau.')).toBeVisible()
+      await expect(log.locator('[data-tool-card="remember_context"]')).toBeVisible()
+      await expect(log.locator('[data-tool-card="book_call"]')).toHaveCount(1)
+      expect(mock.calls()).toBe(1)
+    })
+
+    test('a failed book_call does not take the slot of the fit offer', async ({ page }) => {
+      const mock = await mockChatbot(page, (r) =>
+        r.fulfill({
+          status: 200,
+          headers: SSE_HEADERS,
+          body: uiStream({
+            tools: [
+              { tool: 'book_call', input: { reason: 'kennismaking' }, errorText: 'boom' },
+              { tool: 'remember_context', input: { teamSize: 8, brandCount: 6 }, output: REMEMBER_OFFER },
+            ],
+            text: 'Dit past goed bij jullie bureau.',
+          }),
+        }),
+      )
+      const w = await openWidget(page)
+      await send(w, 'Wij zijn 8 mensen met 6 merken, plan een gesprek')
+      const log = w.locator('[role="log"]')
+      await expect(log.getByText('Dit past goed bij jullie bureau.')).toBeVisible()
+      await expect(log.locator('[data-tool-card="book_call"]')).toHaveCount(1)
+      expect(mock.calls()).toBe(1)
+    })
+
+    test('roi without stated hours shows no card and no figures', async ({ page }) => {
+      const { mock, w } = await ask(
+        page,
+        'get_roi_estimate',
+        {},
+        ROI_NEEDS_INPUT,
+        'Hoeveel uur per week besteedt jullie team aan marketing?',
+      )
+      const log = w.locator('[role="log"]')
+      await expect(log.getByText(/Hoeveel uur per week/)).toBeVisible()
+      await expect(log.locator('[data-tool-card]')).toHaveCount(0)
+      await expect(log.locator('[data-roi-figure]')).toHaveCount(0)
       await expect(log.locator('pre')).toHaveCount(0)
       expect(mock.calls()).toBe(1)
     })
@@ -585,11 +658,15 @@ test.describe('compact cards', () => {
       await expect(card.getByText('Binnenkort')).toHaveCount(1)
     })
 
-    test('roi shows three figures and one assumptions line', async ({ page }) => {
+    test('roi shows the own hours and the price, and claims no saving', async ({ page }) => {
       const { card } = await show(page, 'get_roi_estimate', ROI)
-      await expect(card.getByText('769%')).toBeVisible()
-      await expect(card.getByText(/80/).first()).toBeVisible()
       await expect(card.locator('[data-roi-figure]')).toHaveCount(3)
+      await expect(card.getByText('40 uur')).toBeVisible()
+      await expect(card.getByText('173 uur')).toBeVisible()
+      await expect(card.getByText('€2.394')).toBeVisible()
+      await expect(card.getByText('abonnement per maand (6 merken)')).toBeVisible()
+      await expect(card.getByText(/nog niet gemeten/)).toBeVisible()
+      await expect(card.getByText(/besparing|ROI|%|terugverdien/i)).toHaveCount(0)
     })
   })
 

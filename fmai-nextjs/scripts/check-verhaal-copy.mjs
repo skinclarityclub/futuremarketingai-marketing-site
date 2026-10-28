@@ -32,6 +32,8 @@ const ALLOW = [
   { where: /assessment-templates.ts:/, re: /beste medewerker|mejor empleado|best employee/i },
   // zoekwoord waarop de chatbot een vraag over aannemen herkent
   { where: /support-kb.ts:/, re: /^'employee',$/ },
+  // woorden waaraan fit.ts het aantal mensen herkent dat de bezoeker typt ("8 medewerkers")
+  { where: /chatbot\/fit.ts:/, re: /^(compound: "mensen|bare: 'man)\|/ },
   // samenvattingen van blogartikelen: volgen het besluit over content/blog
   { where: /llms-full\.txt:/, re: /\/kennisbank\// },
   // de chatbot-instructie die het woord juist verbiedt

@@ -32,7 +32,6 @@ const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
     ],
     get_case_study: ['Wat zijn de tarieven?', 'Hoe werkt het precies?', 'Plan een gesprek'],
     book_call: ['Welke vaardigheden zijn beschikbaar?', 'Laat de case study zien'],
-    qualify_lead: ['Wat kost dit?', 'Plan een gesprek', 'Welke vaardigheden zijn beschikbaar?'],
     get_roi_estimate: ['Wat kost dit?', 'Plan een gesprek', 'Welke vaardigheden zijn beschikbaar?'],
   },
   en: {
@@ -40,7 +39,6 @@ const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
     get_pricing_info: ['Which skills are available?', 'Calculate my ROI', 'Book a call'],
     get_case_study: ['What are the prices?', 'How does it work exactly?', 'Book a call'],
     book_call: ['Which skills are available?', 'Show the case study'],
-    qualify_lead: ['What does it cost?', 'Book a call', 'Which skills are available?'],
     get_roi_estimate: ['What does it cost?', 'Book a call', 'Which skills are available?'],
   },
   es: {
@@ -52,7 +50,6 @@ const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
       'Agenda una llamada',
     ],
     book_call: ['¿Qué habilidades hay?', 'Muestra el caso de éxito'],
-    qualify_lead: ['¿Cuánto cuesta?', 'Agenda una llamada', '¿Qué habilidades hay?'],
     get_roi_estimate: ['¿Cuánto cuesta?', 'Agenda una llamada', '¿Qué habilidades hay?'],
   },
 }

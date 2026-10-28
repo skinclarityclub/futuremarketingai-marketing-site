@@ -11,6 +11,7 @@ import { CaseStudyCard } from './CaseStudyCard'
 import { BookingCard } from './BookingCard'
 import { Brain } from 'lucide-react'
 import { MEMORY_FIELD_ORDER, type MemoryProfile } from '@/lib/chatbot/memory'
+import { offersApplication } from '@/lib/chatbot/fit'
 import { NavigationButton } from '../NavigationButton'
 import { useChatChrome } from '../useChatChrome'
 
@@ -31,7 +32,11 @@ export type { ServiceCardData } from './ServiceCard'
 export type { CaseStudyData } from './CaseStudyCard'
 export type { BookingCardData } from './BookingCard'
 
-// Scoring is for the sales team, not the visitor: no card, and no JSON fallback either.
+export function needsInput(output: unknown): boolean {
+  return Array.isArray((output as { needsInput?: unknown } | null)?.needsInput)
+}
+
+// Fit is for deciding the offer, not for the visitor: no card of its own, and no JSON fallback either.
 export const HIDDEN_TOOLS = new Set(['qualify_lead'])
 
 // Only what this call captured, on one faint line; the full profile lives in the memory sheet.
@@ -105,7 +110,16 @@ interface ToolResultRendererProps {
 
 export function ToolResultRenderer({ part }: ToolResultRendererProps) {
   const toolName = part.toolName ?? 'unknown'
-  if (HIDDEN_TOOLS.has(toolName)) return null
+  // Fit is decided in code (fit.ts): an offer on remember_context or qualify_lead is the application card.
+  const application =
+    part.state === 'output-available' && offersApplication(part.output) ? (
+      <div data-tool-card="book_call">
+        <BookingCard />
+      </div>
+    ) : null
+  if (HIDDEN_TOOLS.has(toolName)) return application
+  // A tool that still needs the visitor's input has nothing to show; Clyde asks for it.
+  if (part.state === 'output-available' && needsInput(part.output)) return null
   if (part.state === 'input-streaming' || part.state === 'input-available')
     return <ToolLoadingCard />
   if (part.state === 'output-error') return <ToolErrorCard />
@@ -132,9 +146,12 @@ export function ToolResultRenderer({ part }: ToolResultRendererProps) {
       )
     // One stable hook for every card: tests and audits select on it, not on styling classes.
     return (
-      <div data-tool-card={toolName}>
-        <Card data={part.output} />
-      </div>
+      <>
+        <div data-tool-card={toolName}>
+          <Card data={part.output} />
+        </div>
+        {application}
+      </>
     )
   }
   return null

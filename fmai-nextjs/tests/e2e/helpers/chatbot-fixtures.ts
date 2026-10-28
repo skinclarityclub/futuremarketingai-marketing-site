@@ -79,28 +79,18 @@ export const PRICING = {
   ],
 }
 
-export const ROI = {
-  monthlySavings: 18406,
-  annualSavings: 220872,
-  roiPercent: 769,
-  paybackPeriodMonths: 1,
-  breakdown: {
-    hoursSavedPerWeek: 80,
-    timeSavedMonthly: 320,
-    costSavedMonthly: 20800,
-    subscriptionCost: 2394,
-  },
-}
+// get_roi_estimate for a team that said 40 hours a week and 6 brands: their own hours plus the price, no saving.
+export const ROI = { teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 2394 }
 
-export const QUALIFY = {
-  score: 55,
-  qualification: 'hot',
-  recommendation:
-    'Sterke match. Plan een gesprek om de juiste tier en vaardigheden voor jouw portfolio te bepalen.',
-  nextSteps: [
-    'Bekijk de SkinClarity Club case study voor concrete resultaten',
-    'Dien een aanvraag in via future-marketing.ai/apply',
-  ],
+export const ROI_NEEDS_INPUT = { needsInput: ['teamHoursPerWeek'] }
+
+// qualify_lead carries no score: fit is decided in code and only offers the application card.
+export const QUALIFY = { fit: 'strong', offerApplication: true }
+
+export const REMEMBER_OFFER = {
+  remembered: { teamSize: 8, brandCount: 6 },
+  fit: 'strong',
+  offerApplication: true,
 }
 
 export const BOOK = {

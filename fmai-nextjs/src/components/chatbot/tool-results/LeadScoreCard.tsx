@@ -3,40 +3,35 @@
 import { useCardCopy } from './cardI18n'
 import { CardShell, CardTitle } from './CardShell'
 
-// Serves get_roi_estimate only; qualify_lead is scoring for the sales team and renders nothing.
+// Serves get_roi_estimate: the visitor's own hours and the price, no saving (none is measured).
 export interface LeadScoreData {
-  monthlySavings?: number | string
-  roiPercent?: number
-  paybackPeriodMonths?: number
-  breakdown?: {
-    hoursSavedPerWeek?: number
-    subscriptionCost?: number
-  }
+  teamHoursPerWeek?: number
+  teamHoursPerMonth?: number
+  brandCount?: number
+  subscription?: number
 }
 
 export function LeadScoreCard({ data }: { data: LeadScoreData }) {
-  const { t, money, payback } = useCardCopy()
-  const hours = data.breakdown?.hoursSavedPerWeek
-  const subscription = data.breakdown?.subscriptionCost
+  const { t, money } = useCardCopy()
   const figures = [
-    { label: t.monthlySavings, value: money(data.monthlySavings) },
-    {
-      label: t.roi,
-      value:
-        data.roiPercent !== undefined && data.roiPercent !== null ? `${data.roiPercent}%` : null,
+    data.teamHoursPerWeek !== undefined && {
+      label: t.perWeekManual,
+      value: t.hours(data.teamHoursPerWeek),
     },
-    {
-      label: t.payback,
-      value:
-        data.paybackPeriodMonths !== undefined && data.paybackPeriodMonths !== null
-          ? payback(data.paybackPeriodMonths)
-          : null,
+    data.teamHoursPerMonth !== undefined && {
+      label: t.perMonthManual,
+      value: t.hours(data.teamHoursPerMonth),
     },
-  ].filter((f) => f.value)
+    data.subscription !== undefined &&
+      data.brandCount !== undefined && {
+        label: t.subscription(data.brandCount),
+        value: money(data.subscription),
+      },
+  ].filter((f): f is { label: string; value: string } => !!f && !!f.value)
 
   return (
     <CardShell>
-      <CardTitle title={t.roiHeader} />
+      <CardTitle title={t.hoursHeader} />
       <div className="grid grid-cols-3 gap-2">
         {figures.map((f) => (
           <div key={f.label} data-roi-figure className="min-w-0">
@@ -45,11 +40,7 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
           </div>
         ))}
       </div>
-      {hours !== undefined && subscription !== undefined && (
-        <p className="border-t border-border-primary pt-2.5 text-xs text-text-secondary/70">
-          {t.assumptions(hours, money(subscription) ?? '')}
-        </p>
-      )}
+      <p className="border-t border-border-primary pt-2.5 text-xs text-text-secondary/70">{t.ownHoursNote}</p>
     </CardShell>
   )
 }

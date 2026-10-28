@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { getPersona } from './persona-router'
 import { buildFlagshipTools } from './tools/flagship-tools'
 import type { ChatbotLocale } from './tool-data'
+import type { FitSession } from './fit'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyToolRecord = Record<string, Tool<any, any>>
@@ -18,9 +19,10 @@ const FLAGSHIP_PERSONA_IDS = new Set(['clyde', 'flagship'])
  */
 export function createPersonaTools(
   persona: PersonaConfig,
-  locale: ChatbotLocale = 'nl'
+  locale: ChatbotLocale = 'nl',
+  session?: FitSession
 ): AnyToolRecord {
-  return FLAGSHIP_PERSONA_IDS.has(persona.id) ? buildFlagshipTools(locale) : {}
+  return FLAGSHIP_PERSONA_IDS.has(persona.id) ? buildFlagshipTools(locale, session) : {}
 }
 
 /**

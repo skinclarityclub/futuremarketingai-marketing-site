@@ -16,10 +16,11 @@ import {
   MessageCircle,
   AlertCircle,
 } from 'lucide-react'
-import { ToolResultRenderer, TOOL_CARD_MAP } from './tool-results'
+import { ToolResultRenderer, TOOL_CARD_MAP, needsInput } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { useChatChrome } from './useChatChrome'
 import type { ChatFailure } from '@/lib/chatbot/chat-error'
+import { offersApplication } from '@/lib/chatbot/fit'
 import { TOUR_LABEL } from './widget-copy'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
@@ -147,6 +148,8 @@ type PartGroup =
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function groupParts(parts: any[]): PartGroup[] {
   const groups: PartGroup[] = []
+  // One application card per reply: book_call and a fit offer can fire in the same step.
+  let applicationShown = false
   for (const part of parts) {
     if (part.type === 'text') {
       const last = groups[groups.length - 1]
@@ -155,7 +158,17 @@ function groupParts(parts: any[]): PartGroup[] {
       continue
     }
     const toolName = getToolName(part)
-    if (toolName && 'state' in part) groups.push({ kind: 'tool', part: { ...part, toolName } })
+    if (!toolName || !('state' in part)) continue
+    // Only a finished card holds the slot: a failed book_call must not strip the real offer (Codex R1).
+    if (part.state === 'output-available' && (toolName === 'book_call' || offersApplication(part.output))) {
+      if (applicationShown) {
+        if (toolName === 'book_call') continue
+        groups.push({ kind: 'tool', part: { ...part, toolName, output: { ...part.output, offerApplication: false } } })
+        continue
+      }
+      applicationShown = true
+    }
+    groups.push({ kind: 'tool', part: { ...part, toolName } })
   }
   return groups
 }
@@ -334,7 +347,10 @@ export function ChatMessages({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
-        if (!tn || part.state !== 'output-available' || !TOOL_CARD_MAP[tn]) continue
+        if (!tn || part.state !== 'output-available') continue
+        // A fit offer is the application card, so it gets book_call's chips.
+        if (offersApplication(part.output)) return { toolName: 'book_call', data: part.output }
+        if (!TOOL_CARD_MAP[tn] || needsInput(part.output)) continue
         if (tn === 'remember_context') {
           if (!memoryCandidate) memoryCandidate = { toolName: tn, data: part.output }
           continue

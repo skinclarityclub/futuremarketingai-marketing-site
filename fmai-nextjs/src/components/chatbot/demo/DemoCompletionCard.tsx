@@ -16,12 +16,11 @@ type CompletionLocale = 'nl' | 'en' | 'es'
 
 const COMPLETION_COPY: Record<
   CompletionLocale,
-  { title: string; min: string; social: string; bookCall: string; tryAnother: string; endDemo: string }
+  { title: string; min: string; bookCall: string; tryAnother: string; endDemo: string }
 > = {
   nl: {
     title: 'Demo voltooid',
     min: 'min',
-    social: '86% van de prospects plant een gesprek na deze demo',
     bookCall: 'Plan een gesprek',
     tryAnother: 'Probeer een ander',
     endDemo: 'Stop demo',
@@ -29,7 +28,6 @@ const COMPLETION_COPY: Record<
   en: {
     title: 'Demo Complete',
     min: 'min',
-    social: '86% of prospects book a call after this demo',
     bookCall: 'Book a call',
     tryAnother: 'Try another',
     endDemo: 'End demo',
@@ -37,7 +35,6 @@ const COMPLETION_COPY: Record<
   es: {
     title: 'Demo completada',
     min: 'min',
-    social: 'El 86% de los prospectos agenda una llamada tras esta demo',
     bookCall: 'Agendar una llamada',
     tryAnother: 'Probar otro',
     endDemo: 'Terminar demo',
@@ -71,7 +68,6 @@ export function DemoCompletionCard({
           <p className="mt-0.5 text-xs text-text-quiet">
             {scenarioTitle} · {durationMin} {copy.min}
           </p>
-          <p className="mt-2 text-[11px] text-accent-system/70">{copy.social}</p>
         </div>
       </div>
 

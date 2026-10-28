@@ -44,9 +44,9 @@ test('classifyChatError', () => {
   })
 })
 
-// qualify_lead renders no card (spec 9), so the prompt must send fit questions to the
-// application card instead and must not point at a panel that no longer exists.
-test('demo prompt: fit step ends in the application card, no side panel', () => {
+// qualify_lead renders no card and states no score; the demo books the call in its own
+// step, so the fit step must not chain book_call, nor point at a panel that no longer exists.
+test('demo prompt: fit step states no score and does not chain book_call, no side panel', () => {
   const text = buildSystemMessages(
     clydePersona,
     { topics: [], knowledgeContent: '', estimatedTokens: 0 },
@@ -57,5 +57,6 @@ test('demo prompt: fit step ends in the application card, no side panel', () => 
   expect(text).not.toMatch(/side panel/i)
   expect(text).toContain('qualify_lead')
   expect(text).toMatch(/never state a score/)
-  expect(text).toMatch(/hot or warm also call book_call/)
+  expect(text).not.toMatch(/also call book_call/)
+  expect(text).not.toMatch(/hot or warm/)
 })

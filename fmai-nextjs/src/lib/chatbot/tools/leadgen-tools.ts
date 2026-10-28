@@ -1,157 +1,36 @@
 import { tool } from 'ai'
 import { z } from 'zod'
 import {
+  CHATBOT_TIERS,
   getChatbotTiers,
   getChatbotTier,
   type ChatbotLocale,
   type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
-// Eén implementatie van de score-banden: de apply-lead moet dezelfde grenzen
-// aanhouden als de chat, anders krijgen twee oppervlakken een ander label.
-import { qualificationFromScore, type LeadQualification } from '@/lib/fma-inbox-forwarder'
+import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
-type QualLevel = LeadQualification
-
-const QUALIFY_COPY: Record<ChatbotLocale, Record<QualLevel, { recommendation: string; nextSteps: string[] }>> = {
-  nl: {
-    qualified: {
-      recommendation:
-        'Uitstekende match. Dit bureau past precies binnen het ICP van FutureMarketingAI.',
-      nextSteps: [
-        'Dien een aanvraag in via future-marketing.ai/apply',
-        'Daley beoordeelt elke aanvraag persoonlijk binnen 48 uur',
-        'Na goedkeuring: 30 min strategiegesprek om de juiste setup te bepalen',
-      ],
-    },
-    hot: {
-      recommendation:
-        'Sterke match. Plan een gesprek om de juiste tier en vaardigheden voor jouw portfolio te bepalen.',
-      nextSteps: [
-        'Bekijk de SkinClarity Club case study voor concrete resultaten',
-        'Bereken jouw ROI op basis van je teamgrootte',
-        'Dien een aanvraag in via future-marketing.ai/apply',
-      ],
-    },
-    warm: {
-      recommendation: 'Interessante lead. Meer context nodig over portfolio en doelstellingen.',
-      nextSteps: [
-        'Bekijk hoe het onboardingproces werkt op de Werkwijze-pagina',
-        'Lees de SkinClarity Club case study',
-        'Stel Clyde een vraag over jouw specifieke situatie',
-      ],
-    },
-    cold: {
-      recommendation: 'Vroeg stadium. Leer eerst meer over wat Clyde doet voor bureaus.',
-      nextSteps: [
-        'Bekijk alle 12 vaardigheden van Clyde',
-        'Lees de case study van SkinClarity Club',
-        'Stel een vraag als je meer wilt weten',
-      ],
-    },
-  },
-  en: {
-    qualified: {
-      recommendation: "Excellent match. This agency fits squarely within FutureMarketingAI's ICP.",
-      nextSteps: [
-        'Submit an application at future-marketing.ai/apply',
-        'Daley reviews every application personally within 48 hours',
-        'After approval: a 30-min strategy call to define the right setup',
-      ],
-    },
-    hot: {
-      recommendation:
-        'Strong match. Book a call to determine the right tier and skills for your portfolio.',
-      nextSteps: [
-        'Review the SkinClarity Club case study for concrete results',
-        'Calculate your ROI based on your team size',
-        'Submit an application at future-marketing.ai/apply',
-      ],
-    },
-    warm: {
-      recommendation: 'Interesting lead. We need more context on your portfolio and goals.',
-      nextSteps: [
-        'See how onboarding works on the How it Works page',
-        'Read the SkinClarity Club case study',
-        'Ask Clyde about your specific situation',
-      ],
-    },
-    cold: {
-      recommendation: 'Early stage. Start by learning what Clyde does for agencies.',
-      nextSteps: [
-        "Explore all 12 of Clyde's skills",
-        'Read the SkinClarity Club case study',
-        'Ask a question if you want to know more',
-      ],
-    },
-  },
-  es: {
-    qualified: {
-      recommendation: 'Coincidencia excelente. Esta agencia encaja de lleno en el ICP de FutureMarketingAI.',
-      nextSteps: [
-        'Envía una solicitud en future-marketing.ai/apply',
-        'Daley revisa cada solicitud personalmente en 48 horas',
-        'Tras la aprobación: una llamada de estrategia de 30 min para definir la configuración',
-      ],
-    },
-    hot: {
-      recommendation:
-        'Buena coincidencia. Agenda una llamada para determinar el tier y las habilidades adecuadas para tu portafolio.',
-      nextSteps: [
-        'Revisa el caso de SkinClarity Club para ver resultados concretos',
-        'Calcula tu ROI según el tamaño de tu equipo',
-        'Envía una solicitud en future-marketing.ai/apply',
-      ],
-    },
-    warm: {
-      recommendation: 'Lead interesante. Necesitamos más contexto sobre tu portafolio y objetivos.',
-      nextSteps: [
-        'Mira cómo funciona el onboarding en la página How it Works',
-        'Lee el caso de SkinClarity Club',
-        'Pregúntale a Clyde sobre tu situación específica',
-      ],
-    },
-    cold: {
-      recommendation: 'Etapa temprana. Empieza por conocer lo que Clyde hace para las agencias.',
-      nextSteps: [
-        'Explora las 12 habilidades de Clyde',
-        'Lee el caso de SkinClarity Club',
-        'Haz una pregunta si quieres saber más',
-      ],
-    },
-  },
+// One workspace per client brand; the tier follows from the count (tool-data.ts). Solo/1 brand has no plan.
+function subscriptionFor(brands: number) {
+  const tier = [CHATBOT_TIERS.enterprise, CHATBOT_TIERS.professional, CHATBOT_TIERS.growth].find(
+    (t) => brands >= t.minWorkspaces,
+  )
+  return tier && { brandCount: brands, subscription: tier.pricePerWorkspace * brands }
 }
 
-export function buildLeadgenTools(locale: ChatbotLocale) {
+export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = noOfferSession()) {
+  // No score anywhere: the model cannot state what it never receives (R28). Fit comes
+  // from code; the model only passes facts the visitor gave.
   const qualify_lead = tool({
     description:
-      'Qualify a B2B lead based on company profile and buying signals. Returns a lead score (0-100) with qualification level and recommended next steps. The visitor never sees the result: never state the score, say the fit in one sentence, and when the level is hot or warm also call book_call so the visitor sees the application card.',
+      'Assess whether the agency of the visitor fits, for a fit question ("past dit bij ons", "is this for us", "¿encaja con nosotros?"). Pass the number of brands the agency manages and its team size as the visitor stated them or as you remember them; leave a field out when it is unknown, never guess. Returns fit (strong, good, unclear or no_fit) and offerApplication. There is no score.',
     inputSchema: z.object({
-      companySize: z.number().optional().describe('Number of employees at the company'),
-      budget: z.number().optional().describe('Monthly marketing budget in EUR'),
-      timeline: z
-        .enum(['immediate', '1-3months', '3-6months', '6months+'])
-        .optional()
-        .describe('Expected implementation timeline'),
-      useCase: z.string().optional().describe('Primary use case or pain point'),
-      isDecisionMaker: z.boolean().optional().describe('Whether the contact is a decision maker'),
+      brandCount: z.number().optional().describe('Brands or clients the agency manages, as the visitor stated'),
+      teamSize: z.number().optional().describe('People working at the agency, as the visitor stated'),
     }),
-    execute: async ({ companySize, budget, timeline, useCase, isDecisionMaker }) => {
-      let score = 0
-      if (companySize !== undefined && companySize >= 20 && companySize <= 500) score += 20
-      if (budget !== undefined && budget >= 1000) score += 25
-      if (timeline === 'immediate' || timeline === '1-3months') score += 20
-      else if (timeline === '3-6months') score += 10
-      if (useCase !== undefined && useCase.trim().length > 0) score += 15
-      if (isDecisionMaker === true) score += 20
-
-      const level: QualLevel = qualificationFromScore(score)
-      const copy = QUALIFY_COPY[locale][level]
-      return {
-        score,
-        qualification: level,
-        recommendation: copy.recommendation,
-        nextSteps: [...copy.nextSteps],
-      }
+    execute: async ({ brandCount, teamSize }) => {
+      const { fit, offerApplication } = decideFit(session, { brandCount, teamSize })
+      const missing = (['brandCount', 'teamSize'] as const).filter((k) => session.profile[k] == null)
+      return { fit, offerApplication, ...(fit === 'unclear' ? { missing } : {}) }
     },
   })
 
@@ -170,49 +49,43 @@ export function buildLeadgenTools(locale: ChatbotLocale) {
     },
   })
 
+  // No measured saving exists (support-kb "roi_calculations"; RCC 2026/00196), so this tool
+  // returns no hours saved, euros, ROI or payback: only the visitor's own hours and the price.
   const get_roi_estimate = tool({
     description:
-      'Calculate estimated ROI based on team size, current marketing hours, and hourly rate. Returns monthly/annual savings and payback period.',
+      'For ROI, savings or "what does it bring us": show the hours the whole team spends on manual marketing per week, as the visitor stated them, and the monthly subscription for their number of brands. Leave a field out when the visitor did not say it, never estimate: the result then lists needsInput and you ask for that in one short question. There is no measured saving: never state hours saved, a euro saving, ROI percentage or payback; say that how much Clyde takes over is worked out in the call with their own numbers.',
     inputSchema: z.object({
-      teamSize: z.number().describe('Number of marketing team members'),
-      currentHoursOnMarketing: z
+      teamHoursPerWeek: z
         .number()
-        .describe('Current hours per week each team member spends on manual marketing tasks'),
-      averageHourlyRate: z.number().default(50).describe('Average hourly rate in EUR'),
-      monthlySubscription: z
-        .number()
-        .default(998)
-        .describe('Monthly subscription cost in EUR (default: Growth starter 998 = 2 workspaces × 499)'),
+        .optional()
+        .describe(
+          'Hours the WHOLE team spends on manual marketing per week, only as the visitor stated (hours per person times the stated team size); leave out when unknown, never estimate',
+        ),
+      brandCount: z.number().optional().describe('Client brands the agency manages, only as the visitor stated'),
     }),
-    execute: async ({ teamSize, currentHoursOnMarketing, averageHourlyRate, monthlySubscription }) => {
-      // Guard degenerate input so the card never shows NaN/Infinity.
-      const safeSubscription = Math.max(1, monthlySubscription)
-      const hoursSavedPerWeek = Math.min(15, Math.max(0, currentHoursOnMarketing)) * Math.max(1, teamSize)
-      const timeSavedMonthly = hoursSavedPerWeek * 4
-      const costSavedMonthly = timeSavedMonthly * averageHourlyRate
-      const roiPercent = Math.round(((costSavedMonthly - safeSubscription) / safeSubscription) * 100)
-      const monthlySavings = Math.round(costSavedMonthly - safeSubscription)
-      const annualSavings = monthlySavings * 12
-      const paybackPeriodMonths =
-        monthlySavings > 0 ? Math.max(1, Math.round(safeSubscription / monthlySavings)) : 0
-
+    execute: async ({ teamHoursPerWeek, brandCount }) => {
+      // Only numbers the visitor typed in THIS conversation, with that unit, count (paid test
+      // 10-28: the model passed hours nobody said). A remembered or client-sent profile value
+      // counts only when it was typed here too (Codex R1: a stored 15 brands priced the card).
+      const known = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
+      const { hours: typedHours, brands: typedBrands, people: typedPeople } = session.said
+      // counts compare exactly (Codex R2: a tolerance let 14.9999999995 brands through)
+      const brands = [brandCount, session.profile.brandCount].find((n) => known(n) && typedBrands.includes(n))
+      // Team hours are typed hours, or typed per-person hours times a typed head count. The card
+      // shows that product, never the model's own figure; the tolerance only absorbs float error.
+      const hours = known(teamHoursPerWeek)
+        ? [...typedHours, ...typedHours.flatMap((h) => typedPeople.map((p) => h * p))].find(
+            (t) => known(t) && Math.abs(t - teamHoursPerWeek) < 0.01,
+          )
+        : undefined
+      if (hours === undefined) return { needsInput: ['teamHoursPerWeek'] }
       return {
-        monthlySavings,
-        annualSavings,
-        roiPercent,
-        paybackPeriodMonths,
-        breakdown: {
-          hoursSavedPerWeek,
-          timeSavedMonthly,
-          costSavedMonthly: Math.round(costSavedMonthly),
-          subscriptionCost: monthlySubscription,
-        },
+        teamHoursPerWeek: Math.round(hours * 100) / 100,
+        teamHoursPerMonth: Math.round((hours * 52) / 12),
+        ...(brands !== undefined ? subscriptionFor(brands) : undefined),
       }
     },
   })
 
   return { qualify_lead, get_pricing_info, get_roi_estimate }
 }
-
-/** Backward-compatible static export (NL build). */
-export const leadgenTools = buildLeadgenTools('nl')
