@@ -85,13 +85,9 @@ export function ChatWidget({
 
   const handlePromptSelect = useCallback(
     (text: string) => {
-      if (text === 'Start guided demo') {
-        startDemo()
-        return
-      }
       handleSend(text)
     },
-    [handleSend, startDemo]
+    [handleSend]
   )
 
   /**

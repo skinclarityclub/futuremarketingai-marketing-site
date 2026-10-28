@@ -301,3 +301,10 @@ export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
     '/about': 'Pregunta cuando quieras.',
   },
 }
+
+/** Link under the greeting's prompts, and in the empty-state, that starts the guided tour. */
+export const TOUR_LABEL: Record<string, string> = {
+  nl: 'Of start een rondleiding →',
+  en: 'Or take a guided tour →',
+  es: 'O haz un recorrido guiado →',
+}

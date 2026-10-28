@@ -113,7 +113,7 @@ export function ChatInput({
           disabled={disabled}
           rows={1}
           aria-label={inputAria}
-          className="w-full resize-none bg-transparent px-3 py-2 text-base leading-relaxed lg:text-sm text-text-primary outline-none focus-visible:outline-none placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full resize-none bg-transparent px-3 py-2 text-base leading-relaxed lg:text-sm text-text-primary outline-none focus-visible:outline-none! placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
         />
         {isLoading && onStop ? (
           <button

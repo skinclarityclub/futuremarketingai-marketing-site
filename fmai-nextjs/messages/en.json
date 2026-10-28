@@ -3579,7 +3579,7 @@
   },
   "chat": {
     "widget": {
-      "typeMessage": "Type a message..."
+      "typeMessage": "Ask Clyde something…"
     }
   },
   "assessment": {

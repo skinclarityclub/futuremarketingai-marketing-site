@@ -14,12 +14,15 @@ import {
   RotateCw,
   Copy,
   Check,
+  MessageCircle,
+  AlertCircle,
 } from 'lucide-react'
 import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 import type { ChatFailure } from '@/lib/chatbot/chat-error'
+import { TOUR_LABEL } from './widget-copy'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 
 interface ChatMessagesProps {
@@ -168,12 +171,6 @@ interface WelcomeStateProps {
   onStartDemo?: () => void
 }
 
-const TOUR_LABEL: Record<string, string> = {
-  nl: 'Of start een rondleiding →',
-  en: 'Or take a guided tour →',
-  es: 'O haz un recorrido guiado →',
-}
-
 function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: WelcomeStateProps) {
   const locale = useLocale()
   const tourLabel = TOUR_LABEL[locale] ?? TOUR_LABEL.nl
@@ -308,6 +305,7 @@ export function ChatMessages({
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
+  const locale = useLocale()
 
   const handleScroll = useCallback(() => {
     const el = scrollRef.current
@@ -474,22 +472,28 @@ export function ChatMessages({
                 <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
               )}
               {!isUser && idx === 0 && messages.length === 1 && !isStreaming && inlinePrompts && inlinePrompts.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {inlinePrompts.slice(0, 4).map((prompt, pi) => {
-                    const Icon = iconForPrompt(prompt)
-                    return (
-                      <button
-                        key={prompt}
-                        type="button"
-                        onClick={() => onInlinePromptSelect?.(prompt)}
-                        style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
-                        className="group/ip flex items-center gap-1.5 rounded-xl border border-white/[0.06] bg-bg-elevated/60 px-3 py-2 text-xs font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
-                      >
-                        <Icon className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
-                        {prompt}
-                      </button>
-                    )
-                  })}
+                <div className="mt-3 flex w-full flex-col gap-1.5">
+                  {inlinePrompts.slice(0, 4).map((prompt, pi) => (
+                    <button
+                      key={prompt}
+                      type="button"
+                      onClick={() => onInlinePromptSelect?.(prompt)}
+                      style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
+                      className="group/ip flex w-full items-center gap-2 rounded-xl border border-white/[0.06] bg-bg-elevated/60 px-3 py-2 text-left text-xs font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
+                    >
+                      <MessageCircle className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
+                      {prompt}
+                    </button>
+                  ))}
+                  {onStartDemo && (
+                    <button
+                      type="button"
+                      onClick={onStartDemo}
+                      className="self-start px-1 text-xs text-accent-system underline-offset-4 hover:underline"
+                    >
+                      {TOUR_LABEL[locale] ?? TOUR_LABEL.nl}
+                    </button>
+                  )}
                 </div>
               )}
               {!isUser && messageText.length > 0 && !isClientInjected && (
@@ -519,20 +523,24 @@ export function ChatMessages({
               )}
             </div>
             {isUser && idx === lastUserIdx && failure && !isStreaming && (
-              <p role="alert" className="-mt-2 mr-1 text-right text-xs text-text-secondary">
+              <p role="status" className="-mt-2 mr-1 flex items-center justify-end gap-1.5 text-xs text-error">
+                <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                 {failure.kind === 'rate-limit' ? (
                   chrome.rateLimited(failure.minutes)
                 ) : (
                   <>
-                    {chrome.noAnswer} ·{' '}
+                    <span>{chrome.noAnswer}</span>
                     {onRetry && (
-                      <button
-                        type="button"
-                        onClick={onRetry}
-                        className="font-medium text-accent-system hover:underline"
-                      >
-                        {chrome.retry}
-                      </button>
+                      <>
+                        <span aria-hidden="true">·</span>
+                        <button
+                          type="button"
+                          onClick={onRetry}
+                          className="font-medium text-accent-system hover:underline"
+                        >
+                          {chrome.retry}
+                        </button>
+                      </>
                     )}
                   </>
                 )}

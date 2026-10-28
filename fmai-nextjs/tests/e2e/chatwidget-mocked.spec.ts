@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect, type Locator, type Page } from '@playwright/test'
 import { PROACTIVE_PROMPTS, WHISPERS } from '../../src/components/chatbot/widget-copy'
 import { SSE_HEADERS, mockChatbot, openWidget, send, uiStream } from './helpers/chatbot-mock'
 
@@ -31,6 +31,16 @@ for (const [name, viewport] of [
       await expect.poll(async () => (await close.boundingBox())!.width).toBeGreaterThanOrEqual(40)
       await expect.poll(async () => (await close.boundingBox())!.height).toBeGreaterThanOrEqual(40)
       await expect(w.getByText('Shift+Enter')).toHaveCount(0)
+      expect(mock.calls()).toBe(0)
+    })
+
+    test('one focus ring, placeholder as on the board', async ({ page }) => {
+      const { mock } = await setup(page)
+      const w = await openWidget(page)
+      const ta = w.locator('textarea')
+      await ta.focus()
+      expect(await ta.evaluate((e) => getComputedStyle(e).outlineStyle)).toBe('none')
+      await expect(ta).toHaveAttribute('placeholder', 'Vraag Clyde iets…')
       expect(mock.calls()).toBe(0)
     })
 
@@ -82,6 +92,24 @@ for (const [name, viewport] of [
   })
 }
 
+test.describe('greeting prompts', () => {
+  test.use({ viewport: { width: 1440, height: 900 } })
+  test('one column, tour link below', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page)
+    const rows = w.locator('button').filter({ has: page.locator('svg') }).filter({ hasText: /\?|Laat een echte klant zien/ })
+    await expect(rows).toHaveCount(3)
+    // polled: the panel scales in for 220ms
+    await expect.poll(async () => {
+      const b = await Promise.all([0, 1, 2].map((i) => rows.nth(i).boundingBox()))
+      const same = new Set(b.map((x) => Math.round(x!.x))).size === 1
+      return same && b[1]!.y > b[0]!.y && b[2]!.y > b[1]!.y
+    }).toBe(true)
+    await expect(w.getByText('Of start een rondleiding')).toBeVisible()
+    expect(mock.calls()).toBe(0)
+  })
+})
+
 test.describe('errors and the limit', () => {
   test('500 shows "Geen antwoord ontvangen" under the question and Opnieuw resends', async ({ page }) => {
     const m = await mockChatbot(page, async (r, n) =>
@@ -91,7 +119,17 @@ test.describe('errors and the limit', () => {
     )
     const w = await openWidget(page)
     await send(w, 'Wat kost het?')
-    await expect(w.getByText('Geen antwoord ontvangen')).toBeVisible()
+    const fail = w.getByText('Geen antwoord ontvangen')
+    await expect(fail).toBeVisible()
+    await expect(fail.locator('xpath=..').locator('svg')).toHaveCount(1)
+    const colour = (l: Locator) => l.evaluate((e) => getComputedStyle(e).color)
+    await page.evaluate(() => {
+      const probe = document.createElement('i')
+      probe.className = 'text-error'
+      probe.id = 'err-probe'
+      document.body.appendChild(probe)
+    })
+    expect(await colour(fail)).toBe(await colour(page.locator('#err-probe')))
     await expect(w.locator('[role="alert"]').filter({ hasText: 'Er ging iets mis' })).toHaveCount(0)
     await w.getByRole('button', { name: 'Opnieuw', exact: true }).click()
     await expect(w.getByText('Vier niveaus.')).toBeVisible()

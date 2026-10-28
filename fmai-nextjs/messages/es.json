@@ -3579,7 +3579,7 @@
   },
   "chat": {
     "widget": {
-      "typeMessage": "Escribe un mensaje..."
+      "typeMessage": "Pregúntale algo a Clyde…"
     }
   },
   "assessment": {
