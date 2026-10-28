@@ -560,7 +560,7 @@ test.describe('tool results render in the conversation', () => {
       const { mock, w } = await ask(
         page,
         'get_roi_estimate',
-        { teamSize: 8 },
+        {},
         ROI_NEEDS_INPUT,
         'Hoeveel uur per week besteedt jullie team aan marketing?',
       )

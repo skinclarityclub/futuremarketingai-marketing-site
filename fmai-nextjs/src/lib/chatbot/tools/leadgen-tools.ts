@@ -7,7 +7,7 @@ import {
   type ChatbotLocale,
   type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
-import { decideFit, noOfferSession, type FitSession, type Said } from '@/lib/chatbot/fit'
+import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
 // One workspace per client brand; the tier follows from the count (tool-data.ts). Solo/1 brand has no plan.
 function subscriptionFor(brands: number) {
@@ -68,19 +68,19 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
       // 10-28: the model passed hours nobody said). A remembered or client-sent profile value
       // counts only when it was typed here too (Codex R1: a stored 15 brands priced the card).
       const known = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
-      const stated = (n: number | undefined, unit: keyof Said): n is number =>
-        known(n) && session.said[unit].some((s) => Math.abs(s - n) < 1e-9)
-      const brands = [brandCount, session.profile.brandCount].find((n) => stated(n, 'brands'))
-      // per-person hours times a typed head count are stated too
-      const hours =
-        known(teamHoursPerWeek) &&
-        (stated(teamHoursPerWeek, 'hours') ||
-          session.said.people.some((p) => stated(teamHoursPerWeek / p, 'hours')))
-          ? teamHoursPerWeek
-          : undefined
-      if (!known(hours)) return { needsInput: ['teamHoursPerWeek'] }
+      const { hours: typedHours, brands: typedBrands, people: typedPeople } = session.said
+      // counts compare exactly (Codex R2: a tolerance let 14.9999999995 brands through)
+      const brands = [brandCount, session.profile.brandCount].find((n) => known(n) && typedBrands.includes(n))
+      // Team hours are typed hours, or typed per-person hours times a typed head count. The card
+      // shows that product, never the model's own figure; the tolerance only absorbs float error.
+      const hours = known(teamHoursPerWeek)
+        ? [...typedHours, ...typedHours.flatMap((h) => typedPeople.map((p) => h * p))].find(
+            (t) => known(t) && Math.abs(t - teamHoursPerWeek) < 0.01,
+          )
+        : undefined
+      if (hours === undefined) return { needsInput: ['teamHoursPerWeek'] }
       return {
-        teamHoursPerWeek: hours,
+        teamHoursPerWeek: Math.round(hours * 100) / 100,
         teamHoursPerMonth: Math.round((hours * 52) / 12),
         ...(brands !== undefined ? subscriptionFor(brands) : undefined),
       }

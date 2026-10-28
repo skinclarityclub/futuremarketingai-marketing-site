@@ -111,11 +111,15 @@ export function noOfferSession(): FitSession {
 }
 
 // The word right after a number gives its unit (Codex R1: in "8 mensen, 6 merken" the 6
-// passed as hours, so 48 = 6 x 8 reached the card as team hours).
-const UNIT_WORDS: Record<keyof Said, string> = {
-  hours: 'uur|uren|manuren|u|hours?|hrs?|h|horas?',
-  brands: 'merken|merk|klantmerken|klanten|klant|brands?|clients?|marcas?|clientes?',
-  people: "mensen|personen|persoon|man|fte|medewerkers?|collega'?s|people|persons?|employees|staff|personas?|empleados?",
+// passed as hours, so 48 = 6 x 8 reached the card as team hours). A Dutch head may carry a
+// compound prefix ("skincare-merken", "marketinguren", "teamleden"); u, h and man never do.
+const UNIT_WORDS: Record<keyof Said, { compound: string; bare: string }> = {
+  hours: { compound: 'uur|uren', bare: 'u|h|hrs?|hours?|horas?' },
+  brands: { compound: 'merken|merk|klanten|klant', bare: 'brands?|clients?|marcas?|clientes?' },
+  people: {
+    compound: "mensen|personen|medewerkers?|collega'?s|leden",
+    bare: 'man|fte|persoon|people|persons?|employees|staff|personas?|empleados?',
+  },
 }
 
 export type Said = { hours: number[]; brands: number[]; people: number[] }
@@ -123,7 +127,7 @@ export type Said = { hours: number[]; brands: number[]; people: number[] }
 /**
  * Numbers the visitor typed in this conversation, by the unit written after them (paid
  * test 10-28: the model passed "10 uur" the visitor never said, and the card turned it into euros).
- * shortcut: digits plus a unit word only, so "veertig uur" or "team van 8" is asked again; upgrade to an evidence quote if that bothers visitors.
+ * shortcut: digits plus a unit word only, so "veertig uur", "team van 8" or "8 vaste klanten" is asked again; upgrade to an evidence quote if that bothers visitors.
  */
 export function unitsSaid(messages: unknown): Said {
   const texts = !Array.isArray(messages)
@@ -136,12 +140,16 @@ export function unitsSaid(messages: unknown): Said {
           return p?.type === 'text' && typeof p.text === 'string' ? [p.text] : []
         })
       })
-  const read = (words: string) =>
-    texts.flatMap((t) =>
-      [...t.matchAll(new RegExp(String.raw`(\d+(?:[.,]\d+)?)\s*(?:${words})\b`, 'gi'))].map((m) =>
-        Number(m[1].replace(',', '.')),
-      ),
+  // A number starts a whole token (not the 30 of "14:30", never mid-digits, which also keeps a
+  // long digit run linear: Codex R2) and the unit ends one ("H&M" is no hour). Built per call,
+  // not at import, because the browser loads this module for offersApplication.
+  const read = ({ compound, bare }: { compound: string; bare: string }) => {
+    const re = new RegExp(
+      String.raw`(?<![\d.,:])(\d+(?:[.,]\d+)?)\s*(?:[\p{L}-]*(?:${compound})|(?:${bare}))(?![\p{L}\p{N}_&'’-])`,
+      'giu',
     )
+    return texts.flatMap((t) => [...t.matchAll(re)].map((m) => Number(m[1].replace(',', '.'))))
+  }
   return { hours: read(UNIT_WORDS.hours), brands: read(UNIT_WORDS.brands), people: read(UNIT_WORDS.people) }
 }
 

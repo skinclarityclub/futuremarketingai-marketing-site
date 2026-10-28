@@ -218,6 +218,30 @@ test('get_roi_estimate never prices brands or a team that only the client profil
   })
 })
 
+test('get_roi_estimate shows a figure built from typed numbers, and compares counts exactly (Codex R2)', async () => {
+  const roi = (text: string) => buildLeadgenTools('nl', fitSession([user(text)], {}, false)).get_roi_estimate
+  // a float a hair under the typed count is no brand count
+  expect(await roi('40 uur per week, 15 merken').execute!({ teamHoursPerWeek: 40, brandCount: 14.9999999995 }, call)).toEqual({
+    teamHoursPerWeek: 40,
+    teamHoursPerMonth: 173,
+  })
+  // the card shows the typed figure, not the model's near miss
+  expect(await roi('40 uur per week').execute!({ teamHoursPerWeek: 40.004 }, call)).toMatchObject({ teamHoursPerWeek: 40 })
+  // per-person decimals multiply without float noise on the card
+  expect(await roi('3 mensen, elk 7,3 uur').execute!({ teamHoursPerWeek: 21.9 }, call)).toMatchObject({ teamHoursPerWeek: 21.9 })
+  // a clock time and a brand name are no hours
+  expect(await roi('Bel me om 14:30 uur').execute!({ teamHoursPerWeek: 30 }, call)).toEqual({ needsInput: ['teamHoursPerWeek'] })
+  expect(await roi('8 mensen, 6 merken, 4 H&M-campagnes per week').execute!({ teamHoursPerWeek: 4 }, call)).toEqual({
+    needsInput: ['teamHoursPerWeek'],
+  })
+})
+
+test('unitsSaid stays linear on a long digit run in the history (Codex R2)', () => {
+  const t0 = Date.now()
+  expect(unitsSaid([user('1'.repeat(100_000)), user('hoi')])).toEqual(said())
+  expect(Date.now() - t0).toBeLessThan(500)
+})
+
 test('unitsSaid reads only what the visitor typed, by the unit after each number', () => {
   expect(unitsSaid([user('7,5 uur per week en €80 per uur'), assistant({ type: 'text', text: '10 uur' })])).toEqual(
     said({ hours: [7.5] }),
@@ -232,6 +256,13 @@ test('unitsSaid reads only what the visitor typed, by the unit after each number
     said({ hours: [20], brands: [12], people: [4] }),
   )
   expect(unitsSaid([user('3 fte, 5 klanten, 12 manuren')])).toEqual(said({ hours: [12], brands: [5], people: [3] }))
+  // Dutch compounds keep their head: skincare-merken, marketinguren, teamleden
+  expect(unitsSaid([user('8 teamleden, 6 skincare-merken, 40 marketinguren')])).toEqual(
+    said({ hours: [40], brands: [6], people: [8] }),
+  )
+  expect(unitsSaid([user('8 marketingmedewerkers en 6 klantmerken')])).toEqual(said({ brands: [6], people: [8] }))
+  // look-alikes that are no unit
+  expect(unitsSaid([user('3 bureaus, 10 tech, 2 opmerkingen, 4 klantenservice, 4 H&M-campagnes, 14:30 uur')])).toEqual(said())
   // a bare number has no unit, and "uur" inside a longer word is no unit
   expect(unitsSaid([user('we zijn met 8 en doen 6 uurtjes')])).toEqual(said())
   expect(unitsSaid(undefined)).toEqual(said())
