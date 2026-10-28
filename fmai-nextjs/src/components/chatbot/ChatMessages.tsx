@@ -139,6 +139,28 @@ function getToolName(part: any): string | null {
   return null
 }
 
+// Consecutive text parts share one bubble; each tool result is its own block, in message order.
+type PartGroup =
+  | { kind: 'text'; texts: string[] }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | { kind: 'tool'; part: any }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function groupParts(parts: any[]): PartGroup[] {
+  const groups: PartGroup[] = []
+  for (const part of parts) {
+    if (part.type === 'text') {
+      const last = groups[groups.length - 1]
+      if (last?.kind === 'text') last.texts.push(part.text)
+      else groups.push({ kind: 'text', texts: [part.text] })
+      continue
+    }
+    const toolName = getToolName(part)
+    if (toolName && 'state' in part) groups.push({ kind: 'tool', part: { ...part, toolName } })
+  }
+  return groups
+}
+
 /**
  * Pick an icon for a prompt based on a keyword match. Falls back to
  * Sparkles. Keeps the card surface visually scannable without forcing
@@ -420,18 +442,24 @@ export function ChatMessages({
                 className={`group/msg flex ${isUser ? 'justify-end' : 'flex-col items-start'}`}
                 style={{ animation: 'fadeIn 0.3s ease-in' }}
               >
-                <div className={isUser ? userBubbleClass : assistantBubbleClass}>
-                  {message.parts.map((part, i) => {
-                    if (part.type === 'text') return <MarkdownContent key={i} text={part.text} />
-                    const toolName = getToolName(part)
-                    if (toolName && 'state' in part) {
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      const toolPart = part as any
-                      return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
-                    }
-                    return null
-                  })}
-                </div>
+                {groupParts(message.parts).map((g, gi) =>
+                  g.kind === 'text' ? (
+                    <div
+                      key={gi}
+                      className={isUser ? userBubbleClass : assistantBubbleClass}
+                      data-assistant-bubble={isUser ? undefined : ''}
+                    >
+                      {g.texts.map((t, ti) => (
+                        <MarkdownContent key={ti} text={t} />
+                      ))}
+                    </div>
+                  ) : (
+                    // Tool results sit outside the text bubble, full width of the column (board 2).
+                    <div key={gi} className="w-full">
+                      <ToolResultRenderer part={g.part} />
+                    </div>
+                  )
+                )}
                 {!isUser && isLastAssistant && lastFollowUpChips && (
                   <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
                 )}

@@ -565,6 +565,14 @@ test.describe('compact cards', () => {
       await expect(card.getByText('Uitdaging')).toHaveCount(0)
     })
 
+    test('the case card is its own block, not inside the text bubble', async ({ page }) => {
+      const { w, card } = await show(page, 'get_case_study', CASE)
+      await expect(card.locator('xpath=ancestor::*[@data-assistant-bubble]')).toHaveCount(0)
+      const bubble = w.locator('[role="log"] [data-assistant-bubble]').last()
+      const [c, b] = [await card.boundingBox(), await bubble.boundingBox()]
+      expect(c!.width).toBeGreaterThan(b!.width)
+    })
+
     test('pricing shows 4 rows', async ({ page }) => {
       const { card } = await show(page, 'get_pricing_info', PRICING)
       await expect(card.locator('li')).toHaveCount(4)
