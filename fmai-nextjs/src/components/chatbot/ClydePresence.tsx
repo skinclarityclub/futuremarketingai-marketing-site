@@ -85,15 +85,18 @@ export function ClydePresence({
       aria-label={ariaLabel}
       data-hidden={keyboardOpen}
       data-stage={idleStage}
+      data-clyde-launcher
       className={`clyde-fab group fixed right-6 ${bottomClass} ${zClass} inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md transition-[bottom,box-shadow,transform] duration-300 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system data-[hidden=true]:pointer-events-none data-[hidden=true]:opacity-0`}
       style={{ boxShadow: 'var(--shadow-glow)' }}
     >
       <LogoSynapse size={22} ariaLabel="" />
       <span className="font-display text-sm font-semibold tracking-tight">Clyde</span>
-      {isWhispering && (
+      {/* Mounted while a whisper is allowed, so the stage change can transition it; an
+          element inserted in the same commit as data-stage would start at its end state. */}
+      {whisper.length > 0 && (
         <span
           className="clyde-status overflow-hidden whitespace-nowrap text-sm text-text-secondary"
-          data-visible="whisper"
+          aria-hidden={!isWhispering}
         >
           <span className="clyde-status-inner">
             <span className="mx-1.5 text-text-faint">·</span>

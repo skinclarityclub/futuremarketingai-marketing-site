@@ -18,6 +18,9 @@ import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
 import { getDemoScenarios } from './demo/scenarios'
 
+// One definition: below lg the panel is the whole screen and modal.
+const PHONE_QUERY = '(max-width: 1023px)'
+
 interface ChatWidgetProps {
   mode: 'floating' | 'embedded'
   personaId: string
@@ -183,28 +186,34 @@ export function ChatWidget({
   // Below lg the panel covers the whole screen, so the page behind it must not
   // scroll along with a swipe in the chat. Desktop keeps the page scrollable
   // next to the card.
-  useEffect(() => {
-    if (mode !== 'floating' || !isOpen) return
-    if (!window.matchMedia('(max-width: 1023px)').matches) return
-    const previous = document.documentElement.style.overflow
-    document.documentElement.style.overflow = 'hidden'
-    return () => {
-      document.documentElement.style.overflow = previous
-    }
-  }, [mode, isOpen])
-
   const [isPhone, setIsPhone] = useState(false)
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 1023px)')
+    const mq = window.matchMedia(PHONE_QUERY)
     const sync = () => setIsPhone(mq.matches)
     sync()
     mq.addEventListener('change', sync)
     return () => mq.removeEventListener('change', sync)
   }, [])
 
+  // aria-modal only holds when the page behind is really inert, so the same
+  // effect makes header, #main and footer inert. The cookie banner stays
+  // interactive: it sits above the phone panel (z-9999).
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen) return
+    if (!window.matchMedia(PHONE_QUERY).matches) return
+    const previous = document.documentElement.style.overflow
+    document.documentElement.style.overflow = 'hidden'
+    const page = document.querySelectorAll<HTMLElement>('header, #main, footer')
+    page.forEach((el) => el.setAttribute('inert', ''))
+    return () => {
+      document.documentElement.style.overflow = previous
+      page.forEach((el) => el.removeAttribute('inert'))
+    }
+  }, [mode, isOpen, isPhone])
+
   // Below lg the panel is modal (aria-modal), so Tab must not leave it.
   const handlePanelKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key !== 'Tab' || !window.matchMedia('(max-width: 1023px)').matches) return
+    if (e.key !== 'Tab' || !isPhone) return
     const items = Array.from(
       e.currentTarget.querySelectorAll<HTMLElement>(
         'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
@@ -221,19 +230,16 @@ export function ChatWidget({
       e.preventDefault()
       first.focus()
     }
-  }, [])
+  }, [isPhone])
 
-  // Closing by any route (Escape, X) hands focus back to the launcher.
-  const wasOpen = useRef(false)
-  useEffect(() => {
-    if (mode !== 'floating') return
-    if (wasOpen.current && !isOpen) {
-      requestAnimationFrame(() =>
-        document.querySelector<HTMLElement>('button[aria-label^="Open chat met Clyde"]')?.focus()
-      )
-    }
-    wasOpen.current = isOpen
-  }, [mode, isOpen])
+  // Only the visitor's own close (Escape, X) hands focus back to the launcher. A
+  // route change also closes the chat (island), and there focus must stay on the new page.
+  const closeAndRestoreFocus = useCallback(() => {
+    close()
+    requestAnimationFrame(() =>
+      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus()
+    )
+  }, [close])
 
   useEffect(() => {
     if (mode !== 'floating' || !isOpen) return
@@ -243,15 +249,40 @@ export function ChatWidget({
       )
       textarea?.focus()
     }, 300)
+    return () => clearTimeout(timer)
+  }, [mode, isOpen])
+
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key !== 'Escape') return
+      // Desktop is non-modal: Escape elsewhere on the page is not ours.
+      const panel = document.querySelector('[data-chatwidget-panel]')
+      if (!isPhone && !panel?.contains(document.activeElement)) return
+      closeAndRestoreFocus()
     }
     document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      clearTimeout(timer)
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [mode, isOpen, close])
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [mode, isOpen, isPhone, closeAndRestoreFocus])
+
+  // The composer (or, once it is disabled, the apply link) keeps focus inside the
+  // modal when the element that had it disappears: Opnieuw clicked, limit reached.
+  const focusComposer = useCallback(() => {
+    requestAnimationFrame(() => {
+      const panel = document.querySelector('[data-chatwidget-panel]')
+      const target =
+        panel?.querySelector<HTMLElement>('textarea:not([disabled])') ??
+        panel?.querySelector<HTMLElement>('[data-chat-apply]')
+      target?.focus()
+    })
+  }, [])
+
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen || !isAtLimit) return
+    // Only when focus was dropped (body) or is stuck on the now-disabled composer.
+    const active = document.activeElement
+    if (active === document.body || active?.tagName === 'TEXTAREA') focusComposer()
+  }, [mode, isOpen, isAtLimit, focusComposer])
 
   const showPrompts =
     messages.length === 0 &&
@@ -273,7 +304,7 @@ export function ChatWidget({
 
   // The limit and error states speak in the footer and under the question, not in banners.
   const applyLink = (
-    <Link href="/apply" className="font-medium text-accent-system hover:underline">
+    <Link href="/apply" data-chat-apply className="font-medium text-accent-system hover:underline">
       {chrome.applyCta}
     </Link>
   )
@@ -283,7 +314,8 @@ export function ChatWidget({
     </>
   ) : limit.warn ? (
     <>
-      <span className="text-accent-human">{chrome.limitWarning(limit.remaining)}</span> {applyLink}
+      <span className="text-accent-human">{chrome.limitWarning(limit.remaining)}</span>{' '}
+      <span className="text-text-faint">{chrome.keepTalking}</span> {applyLink}
     </>
   ) : undefined
   const failure = classifyChatError(error)
@@ -331,7 +363,7 @@ export function ChatWidget({
                   mode="floating"
                   messageCount={messageCount}
                   messageLimit={messageLimit}
-                  onClose={close}
+                  onClose={closeAndRestoreFocus}
                   onNewChat={handleNewChat}
                   hasMessages={messages.length > 0}
                   badge={demoMode ? 'Demo' : undefined}
@@ -352,7 +384,14 @@ export function ChatWidget({
                   onPromptSelect={handlePromptSelect}
                   onRegenerate={regenerate ? () => regenerate() : undefined}
                   failure={failure}
-                  onRetry={regenerate ? () => regenerate() : undefined}
+                  onRetry={
+                    regenerate
+                      ? () => {
+                          regenerate()
+                          focusComposer()
+                        }
+                      : undefined
+                  }
                   onEditMessage={handleEditMessage}
                   inlinePrompts={showInlinePrompts ? suggestedPrompts : undefined}
                   onInlinePromptSelect={handlePromptSelect}

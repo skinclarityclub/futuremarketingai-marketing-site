@@ -50,9 +50,10 @@ export function FloatingChatTrigger() {
   const idleStage = useIdleEngagement()
   const hasUnread = useChatbotStore((state) => state.hasUnread)
 
-  // One hint per browser session, never on phones. The whisper only renders ~20s after
-  // mount, so reading browser state in this initializer cannot cause a hydration mismatch.
-  const [whisperAllowed] = useState(canWhisper)
+  // One hint per browser session, never on phones. The whisper element is mounted (hidden)
+  // from the start so it can transition, hence browser state is read after hydration.
+  const [whisperAllowed, setWhisperAllowed] = useState(false)
+  useEffect(() => setWhisperAllowed(canWhisper()), [])
   // Once the whisper has shown and folded away it stays away, also across SPA navigation.
   const [prevStage, setPrevStage] = useState(idleStage)
   const [whisperSpent, setWhisperSpent] = useState(false)
@@ -81,7 +82,7 @@ export function FloatingChatTrigger() {
   return (
     <ClydePresence
       onClick={handleOpen}
-      whisper={whisper}
+      whisper={showWhisper ? whisper : ''}
       idleStage={idleStage === 'whispering' && !showWhisper ? 'noticed' : idleStage}
       hasUnread={hasUnread}
     />
