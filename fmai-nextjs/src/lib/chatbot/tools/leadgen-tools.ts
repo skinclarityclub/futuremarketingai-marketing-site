@@ -67,19 +67,26 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
         .describe('Monthly subscription cost in EUR (default: Growth starter 998 = 2 workspaces × 499)'),
     }),
     execute: async ({ teamSize, teamHoursPerWeek, averageHourlyRate, monthlySubscription }) => {
-      // Only stated facts count: labels do not repair invented input (RCC 2026/00196).
-      const stated = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
+      // Only stated facts count: labels do not repair invented input (RCC 2026/00196). A number
+      // counts as stated when the visitor typed it; the remembered team size counts as known.
+      const stated = (n: number | undefined): n is number =>
+        typeof n === 'number' && Number.isFinite(n) && n > 0 && session.said.includes(n)
+      const known = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
       const team = stated(teamSize) ? teamSize : session.profile.teamSize
-      const needsInput = [
-        ...(stated(team) ? [] : ['teamSize']),
-        ...(stated(teamHoursPerWeek) ? [] : ['teamHoursPerWeek']),
-      ]
-      if (!stated(team) || !stated(teamHoursPerWeek)) return { needsInput }
+      // per-person hours times the team are stated too
+      const hours =
+        known(teamHoursPerWeek) &&
+        (stated(teamHoursPerWeek) || (known(team) && stated(teamHoursPerWeek / team)))
+          ? teamHoursPerWeek
+          : undefined
+      const needsInput = [...(known(team) ? [] : ['teamSize']), ...(known(hours) ? [] : ['teamHoursPerWeek'])]
+      if (!known(team) || !known(hours)) return { needsInput }
 
-      const hourlyRate = stated(averageHourlyRate) ? averageHourlyRate : ASSUMED_HOURLY_RATE
+      const visitorRate = stated(averageHourlyRate) ? averageHourlyRate : undefined
+      const hourlyRate = visitorRate ?? ASSUMED_HOURLY_RATE
       // Guard degenerate input so the card never shows NaN/Infinity.
       const safeSubscription = Math.max(1, monthlySubscription)
-      const hoursSavedPerWeek = Math.min(teamHoursPerWeek, HOURS_CAP_PER_PERSON * team)
+      const hoursSavedPerWeek = Math.min(hours, HOURS_CAP_PER_PERSON * team)
       const timeSavedMonthly = hoursSavedPerWeek * 4
       const costSavedMonthly = timeSavedMonthly * hourlyRate
       const roiPercent = Math.round(((costSavedMonthly - safeSubscription) / safeSubscription) * 100)
@@ -96,12 +103,12 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
         // Every assumption goes to the card, so the visitor sees what the figures rest on.
         breakdown: {
           teamSize: team,
-          teamHoursPerWeek,
+          teamHoursPerWeek: hours,
           hoursCapPerPerson: HOURS_CAP_PER_PERSON,
           hoursSavedPerWeek,
           timeSavedMonthly,
           hourlyRate,
-          rateAssumed: !stated(averageHourlyRate),
+          rateAssumed: visitorRate === undefined,
           costSavedMonthly: Math.round(costSavedMonthly),
           subscriptionCost: monthlySubscription,
         },

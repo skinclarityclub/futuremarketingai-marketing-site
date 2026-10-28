@@ -34,6 +34,8 @@ export interface FitSession {
   offered: boolean
   // false in the guided demo: its script books the call in its own step
   offerEnabled: boolean
+  // numbers the visitor typed; a number the model passes as stated must be one of them
+  said: number[]
 }
 
 /**
@@ -105,7 +107,25 @@ export function rememberedInHistory(messages: unknown): Partial<MemoryProfile>[]
 
 /** Without a session (manual tool path) nothing is remembered and no card is offered. */
 export function noOfferSession(): FitSession {
-  return { profile: {}, offered: false, offerEnabled: false }
+  return { profile: {}, offered: false, offerEnabled: false, said: [] }
+}
+
+/**
+ * Numbers the visitor typed in this conversation (paid test 10-28: the model passed
+ * "10 uur" the visitor never said, and the ROI card turned it into euros).
+ * shortcut: digits only, so "veertig uur" is asked again; upgrade to an evidence quote if that bothers visitors.
+ */
+export function numbersSaid(messages: unknown): number[] {
+  if (!Array.isArray(messages)) return []
+  return messages.flatMap((msg) => {
+    const m = msg as { role?: unknown; parts?: unknown }
+    if (m?.role !== 'user' || !Array.isArray(m.parts)) return []
+    return m.parts.flatMap((part) => {
+      const p = part as { type?: unknown; text?: unknown }
+      if (p?.type !== 'text' || typeof p.text !== 'string') return []
+      return (p.text.match(/\d+(?:[.,]\d+)?/g) ?? []).map((n) => Number(n.replace(',', '.')))
+    })
+  })
 }
 
 /**
@@ -118,5 +138,6 @@ export function fitSession(messages: unknown, clientProfile: unknown, demoMode: 
     profile: rememberedInHistory(messages).reduce(mergeMemory, sanitizeMemory(clientProfile)),
     offered: applicationOffered(messages),
     offerEnabled: !demoMode,
+    said: numbersSaid(messages),
   }
 }

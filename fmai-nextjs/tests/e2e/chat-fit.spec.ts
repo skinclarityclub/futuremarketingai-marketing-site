@@ -4,6 +4,7 @@ import {
   assessFit,
   decideFit,
   fitSession,
+  numbersSaid,
   rememberedInHistory,
   type FitSession,
 } from '../../src/lib/chatbot/fit'
@@ -73,7 +74,7 @@ test('rememberedInHistory returns the facts earlier remember_context calls captu
 })
 
 test('decideFit merges facts across calls and offers the application card once, never in the demo', () => {
-  const session: FitSession = { profile: { agencyName: 'Studio Noord' }, offered: false, offerEnabled: true }
+  const session: FitSession = { profile: { agencyName: 'Studio Noord' }, offered: false, offerEnabled: true, said: [] }
   expect(decideFit(session, { teamSize: 8 })).toEqual({ fit: 'unclear', offerApplication: false })
   // brand count arrives in a later call: the merged profile is a strong fit
   expect(decideFit(session, { brandCount: 6 })).toEqual({ fit: 'strong', offerApplication: true })
@@ -81,13 +82,13 @@ test('decideFit merges facts across calls and offers the application card once, 
   // a second call in the same conversation does not show a second card
   expect(decideFit(session, { niche: 'skincare' })).toEqual({ fit: 'strong', offerApplication: false })
 
-  const shownBefore: FitSession = { profile: {}, offered: true, offerEnabled: true }
+  const shownBefore: FitSession = { profile: {}, offered: true, offerEnabled: true, said: [] }
   expect(decideFit(shownBefore, { brandCount: 6, teamSize: 8 }).offerApplication).toBe(false)
 
-  const demo: FitSession = { profile: {}, offered: false, offerEnabled: false }
+  const demo: FitSession = { profile: {}, offered: false, offerEnabled: false, said: [] }
   expect(decideFit(demo, { brandCount: 6, teamSize: 8 })).toEqual({ fit: 'strong', offerApplication: false })
 
-  const solo: FitSession = { profile: {}, offered: false, offerEnabled: true }
+  const solo: FitSession = { profile: {}, offered: false, offerEnabled: true, said: [] }
   expect(decideFit(solo, { teamSize: 1, brandCount: 1 })).toEqual({ fit: 'no_fit', offerApplication: false })
 })
 
@@ -102,6 +103,7 @@ test('fitSession builds the request state from the client profile and history, d
     profile: { agencyName: 'Studio Noord', brandCount: 6, teamSize: 8 },
     offered: false,
     offerEnabled: true,
+    said: [8],
   })
   expect(fitSession(undefined, 'not an object', false).profile).toEqual({})
   expect(fitSession([assistant(tool('book_call', { action: 'open_apply' }))], {}, false).offered).toBe(true)
@@ -111,7 +113,7 @@ test('fitSession builds the request state from the client profile and history, d
 const call = { toolCallId: 't', messages: [] }
 
 test('remember_context decides fit in code and offers the card once the facts are in', async () => {
-  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true }
+  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true, said: [] }
   const { remember_context } = buildFlagshipTools('nl', session)
   expect(await remember_context.execute!({ agencyName: 'Studio Noord' }, call)).toMatchObject({
     fit: 'unclear',
@@ -127,23 +129,39 @@ test('remember_context decides fit in code and offers the card once the facts ar
   expect(await qualify_lead.execute!({}, call)).toEqual({ fit: 'strong', offerApplication: false })
 })
 
-test('get_roi_estimate counts only stated input, asks for the rest, caps hours per person', async () => {
-  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true }
+test('get_roi_estimate counts only numbers the visitor typed, asks for the rest, caps hours per person', async () => {
+  // the visitor typed "8 mensen" (also remembered) and "40 uur per week"
+  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true, said: [8, 40] }
   const { get_roi_estimate } = buildLeadgenTools('nl', session)
   const run = (input: Parameters<NonNullable<typeof get_roi_estimate.execute>>[0]) =>
     get_roi_estimate.execute!(input, call)
   expect(await run({ teamSize: 8, monthlySubscription: 998 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
-  // team size comes from what the visitor told remember_context; the rate is an assumption
-  expect(await run({ teamHoursPerWeek: 40, monthlySubscription: 2394 })).toMatchObject({
-    monthlySavings: 5606,
-    roiPercent: 234,
-    breakdown: { teamSize: 8, teamHoursPerWeek: 40, hoursSavedPerWeek: 40, hourlyRate: 50, rateAssumed: true },
+  // the paid-test failure: the model passes hours nobody typed
+  expect(await run({ teamSize: 8, teamHoursPerWeek: 10, monthlySubscription: 998 })).toEqual({
+    needsInput: ['teamHoursPerWeek'],
   })
-  expect(await run({ teamSize: 2, teamHoursPerWeek: 100, averageHourlyRate: 80, monthlySubscription: 998 })).toMatchObject({
-    breakdown: { hoursSavedPerWeek: 30, hourlyRate: 80, rateAssumed: false },
+  // team size from memory; a rate nobody typed stays the assumed EUR 50
+  for (const rate of [undefined, 80]) {
+    expect(await run({ teamHoursPerWeek: 40, averageHourlyRate: rate, monthlySubscription: 2394 })).toMatchObject({
+      monthlySavings: 5606,
+      roiPercent: 234,
+      breakdown: { teamSize: 8, teamHoursPerWeek: 40, hoursSavedPerWeek: 40, hourlyRate: 50, rateAssumed: true },
+    })
+  }
+  // "we zijn met 2, elk 20 uur, EUR 80 per uur": per-person hours times the team count, capped at 15 each
+  const perPerson: FitSession = { profile: {}, offered: false, offerEnabled: true, said: [2, 20, 80] }
+  const input = { teamSize: 2, teamHoursPerWeek: 40, averageHourlyRate: 80, monthlySubscription: 998 }
+  expect(await buildLeadgenTools('nl', perPerson).get_roi_estimate.execute!(input, call)).toMatchObject({
+    breakdown: { teamHoursPerWeek: 40, hoursSavedPerWeek: 30, hourlyRate: 80, rateAssumed: false },
   })
-  const unknownTeam = buildLeadgenTools('nl').get_roi_estimate
-  expect(await unknownTeam.execute!({ teamHoursPerWeek: 0, monthlySubscription: 998 }, call)).toEqual({
+  expect(await buildLeadgenTools('nl').get_roi_estimate.execute!(input, call)).toEqual({
     needsInput: ['teamSize', 'teamHoursPerWeek'],
   })
+})
+
+test('numbersSaid reads only what the visitor typed', () => {
+  expect(numbersSaid([user('7,5 uur per week en €80 per uur'), assistant({ type: 'text', text: '10 uur' })])).toEqual([
+    7.5, 80,
+  ])
+  expect(numbersSaid(undefined)).toEqual([])
 })
