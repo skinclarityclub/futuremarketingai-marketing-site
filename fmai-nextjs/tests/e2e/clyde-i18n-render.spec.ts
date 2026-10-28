@@ -34,10 +34,10 @@ async function openClyde(page: Page, locale: string) {
   await page.waitForTimeout(1200) // let the auto-greet settle
 }
 
+// No es case: since 210797c /es 301-redirects to /en (Spanish dropped from routing), so it can never pass.
 const CASES = [
   { locale: 'nl', welcome: 'Hoi, ik ben Clyde', prompt: 'Wat kun je voor mijn bureau doen?' },
-  { locale: 'en', welcome: 'Hi, I am Clyde', prompt: 'What can you do for my agency?' },
-  { locale: 'es', welcome: 'Hola, soy Clyde', prompt: '¿Qué puedes hacer por mi agencia?' },
+  { locale: 'en', welcome: "Hi, I'm Clyde", prompt: 'What can you do for my agency?' },
 ]
 
 for (const c of CASES) {

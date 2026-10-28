@@ -32,25 +32,25 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     default: 'Hoi, ik ben Clyde, de AI-collega van je bureau. Wat heb je nodig?',
   },
   en: {
-    '/': 'Hi, I am Clyde, an AI colleague. Tell me what I can work on.',
+    '/': "Hi, I'm Clyde, an AI colleague. Tell me what I can work on.",
     '/skills/social-media':
-      'Hi, I am Clyde, an AI colleague. Want me to set up a content calendar for one of your brands?',
+      "Hi, I'm Clyde, an AI colleague. Want me to set up a content calendar for one of your brands?",
     '/skills/voice-agent':
-      'Hi, I am Clyde, an AI colleague. I can show you how I answer calls, or just answer a question.',
+      "Hi, I'm Clyde, an AI colleague. I can show you how I answer calls, or just answer a question.",
     '/skills/lead-qualifier':
-      'Hi, I am Clyde, an AI colleague. This is exactly what your clients would get on their site.',
+      "Hi, I'm Clyde, an AI colleague. This is exactly what your clients would get on their site.",
     '/skills/ad-manager':
-      'Hi, I am Clyde, an AI colleague. Give me a brief and I will spin up variants.',
+      "Hi, I'm Clyde, an AI colleague. Give me a brief and I'll spin up variants.",
     '/skills/email-management':
-      'Hi, I am Clyde, an AI colleague. I filter your Gmail and send a daily digest of what matters.',
+      "Hi, I'm Clyde, an AI colleague. I filter your Gmail and send a daily digest of what matters.",
     '/skills/reporting':
-      'Hi, I am Clyde, an AI colleague. I can show you what a weekly report looks like.',
+      "Hi, I'm Clyde, an AI colleague. I can show you what a weekly report looks like.",
     '/pricing':
-      'Hi, I am Clyde, an AI colleague. I can calculate your ROI or walk you through the tiers.',
+      "Hi, I'm Clyde, an AI colleague. I can calculate your ROI or walk you through the tiers.",
     '/apply':
-      'Hi, I am Clyde, an AI colleague. Questions before you apply? Go ahead and ask.',
-    '/about': 'Hi, I am Clyde, an AI colleague. Want to know how I work?',
-    default: "Hi, I am Clyde, your agency's AI colleague. What do you need?",
+      "Hi, I'm Clyde, an AI colleague. Questions before you apply? Go ahead and ask.",
+    '/about': "Hi, I'm Clyde, an AI colleague. Want to know how I work?",
+    default: "Hi, I'm Clyde, your agency's AI colleague. What do you need?",
   },
   es: {
     '/': 'Hola, soy Clyde, un compañero de IA. Dime en qué puedo ponerme a trabajar.',
@@ -257,7 +257,6 @@ export const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
   },
 }
 
-
 /**
  * Page-aware whispers shown after 20s of scroll-idle. Tone: senior
  * Dutch colleague making a statement, not a chatbot asking "how can I
@@ -279,7 +278,7 @@ export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
   },
   en: {
     '/': 'Ask me something.',
-    '/skills/voice-agent': 'Phone? I will show you.',
+    '/skills/voice-agent': "Phone? I'll show you.",
     '/skills/social-media': 'Need a content calendar?',
     '/skills/lead-qualifier': 'This is what your clients get.',
     '/skills/ad-manager': 'Brief? I make variants.',
