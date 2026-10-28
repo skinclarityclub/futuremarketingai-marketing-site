@@ -97,7 +97,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     growth: {
       priceLabel: '€499 per werkruimte/mnd',
       features: [
-        'Alle 12 vaardigheden inbegrepen',
+        'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
         '2 tot 4 merk-werkruimtes',
         '€499 per werkruimte per maand (vanaf €998 voor 2 merken)',
         '800 credits per werkruimte (1.600 tot 3.200 totaal per maand)',
@@ -108,7 +108,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     professional: {
       priceLabel: '€399 per werkruimte/mnd',
       features: [
-        'Alle 12 vaardigheden inbegrepen',
+        'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
         '5 tot 14 merk-werkruimtes',
         '€399 per werkruimte per maand (vanaf €1.995 voor 5 merken)',
         '800 credits per werkruimte (4.000 tot 11.200 totaal per maand)',
@@ -119,7 +119,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     enterprise: {
       priceLabel: '€299 per werkruimte/mnd',
       features: [
-        'Alle 12 vaardigheden inbegrepen',
+        'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
         '15+ merk-werkruimtes (geen bovengrens)',
         '€299 per werkruimte per maand (vanaf €4.485 voor 15 merken)',
         '800 credits per werkruimte (12.000+ totaal per maand)',
@@ -144,7 +144,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     growth: {
       priceLabel: '€499 per workspace/mo',
       features: [
-        'All 12 skills included',
+        'All 12 skills included (10 live, 2 coming soon)',
         '2 to 4 brand workspaces',
         '€499 per workspace per month (from €998 for 2 brands)',
         '800 credits per workspace (1,600 to 3,200 total per month)',
@@ -155,7 +155,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     professional: {
       priceLabel: '€399 per workspace/mo',
       features: [
-        'All 12 skills included',
+        'All 12 skills included (10 live, 2 coming soon)',
         '5 to 14 brand workspaces',
         '€399 per workspace per month (from €1,995 for 5 brands)',
         '800 credits per workspace (4,000 to 11,200 total per month)',
@@ -166,7 +166,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     enterprise: {
       priceLabel: '€299 per workspace/mo',
       features: [
-        'All 12 skills included',
+        'All 12 skills included (10 live, 2 coming soon)',
         '15+ brand workspaces (no upper cap)',
         '€299 per workspace per month (from €4,485 for 15 brands)',
         '800 credits per workspace (12,000+ total per month)',
@@ -191,7 +191,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     growth: {
       priceLabel: '€499 por espacio/mes',
       features: [
-        'Las 12 habilidades incluidas',
+        'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
         '2 a 4 espacios de marca',
         '€499 por espacio al mes (desde €998 para 2 marcas)',
         '800 créditos por espacio (1.600 a 3.200 en total al mes)',
@@ -202,7 +202,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     professional: {
       priceLabel: '€399 por espacio/mes',
       features: [
-        'Las 12 habilidades incluidas',
+        'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
         '5 a 14 espacios de marca',
         '€399 por espacio al mes (desde €1.995 para 5 marcas)',
         '800 créditos por espacio (4.000 a 11.200 en total al mes)',
@@ -213,7 +213,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
     enterprise: {
       priceLabel: '€299 por espacio/mes',
       features: [
-        'Las 12 habilidades incluidas',
+        'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
         '15+ espacios de marca (sin límite superior)',
         '€299 por espacio al mes (desde €4.485 para 15 marcas)',
         '800 créditos por espacio (12.000+ en total al mes)',

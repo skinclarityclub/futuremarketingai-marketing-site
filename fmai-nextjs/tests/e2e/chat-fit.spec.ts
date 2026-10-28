@@ -7,6 +7,8 @@ import {
   rememberedInHistory,
   type FitSession,
 } from '../../src/lib/chatbot/fit'
+import { buildFlagshipTools } from '../../src/lib/chatbot/tools/flagship-tools'
+import { buildLeadgenTools } from '../../src/lib/chatbot/tools/leadgen-tools'
 
 // Pure-logic spec (no browser, no API): the fit rules that decide the application card.
 test('assessFit follows the ICP on the site: 5 to 20 people, 5 to 20 brands, plans from 2 brands', () => {
@@ -104,4 +106,44 @@ test('fitSession builds the request state from the client profile and history, d
   expect(fitSession(undefined, 'not an object', false).profile).toEqual({})
   expect(fitSession([assistant(tool('book_call', { action: 'open_apply' }))], {}, false).offered).toBe(true)
   expect(fitSession([], {}, true).offerEnabled).toBe(false)
+})
+
+const call = { toolCallId: 't', messages: [] }
+
+test('remember_context decides fit in code and offers the card once the facts are in', async () => {
+  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true }
+  const { remember_context } = buildFlagshipTools('nl', session)
+  expect(await remember_context.execute!({ agencyName: 'Studio Noord' }, call)).toMatchObject({
+    fit: 'unclear',
+    offerApplication: false,
+  })
+  expect(await remember_context.execute!({ brandCount: 6 }, call)).toMatchObject({
+    remembered: { brandCount: 6 },
+    fit: 'strong',
+    offerApplication: true,
+  })
+  // qualify_lead in the same request shares the session: no second card
+  const { qualify_lead } = buildFlagshipTools('nl', session)
+  expect(await qualify_lead.execute!({}, call)).toEqual({ fit: 'strong', offerApplication: false })
+})
+
+test('get_roi_estimate counts only stated input, asks for the rest, caps hours per person', async () => {
+  const session: FitSession = { profile: { teamSize: 8 }, offered: false, offerEnabled: true }
+  const { get_roi_estimate } = buildLeadgenTools('nl', session)
+  const run = (input: Parameters<NonNullable<typeof get_roi_estimate.execute>>[0]) =>
+    get_roi_estimate.execute!(input, call)
+  expect(await run({ teamSize: 8, monthlySubscription: 998 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
+  // team size comes from what the visitor told remember_context; the rate is an assumption
+  expect(await run({ teamHoursPerWeek: 40, monthlySubscription: 2394 })).toMatchObject({
+    monthlySavings: 5606,
+    roiPercent: 234,
+    breakdown: { teamSize: 8, teamHoursPerWeek: 40, hoursSavedPerWeek: 40, hourlyRate: 50, rateAssumed: true },
+  })
+  expect(await run({ teamSize: 2, teamHoursPerWeek: 100, averageHourlyRate: 80, monthlySubscription: 998 })).toMatchObject({
+    breakdown: { hoursSavedPerWeek: 30, hourlyRate: 80, rateAssumed: false },
+  })
+  const unknownTeam = buildLeadgenTools('nl').get_roi_estimate
+  expect(await unknownTeam.execute!({ teamHoursPerWeek: 0, monthlySubscription: 998 }, call)).toEqual({
+    needsInput: ['teamSize', 'teamHoursPerWeek'],
+  })
 })

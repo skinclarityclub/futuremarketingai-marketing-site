@@ -40,7 +40,17 @@ interface CardCopy {
   trustPersonal: string
   trustResponse: string
   trustNoStrings: string
-  assumptions: (hoursPerWeek: number, subscription: string) => string
+  assumptions: (a: RoiAssumptions) => string
+}
+
+/** What a ROI figure rests on, all shown on the card. Money values come formatted. */
+export interface RoiAssumptions {
+  team: number
+  teamHours: number
+  cap: number
+  rate: string
+  rateAssumed: boolean
+  subscription: string
 }
 
 const COPY: Record<CardLocale, CardCopy> = {
@@ -61,8 +71,8 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Persoonlijk gesprek',
     trustResponse: 'Reactie binnen 48 uur',
     trustNoStrings: 'Geen verplichtingen',
-    assumptions: (h, s) =>
-      `Gebaseerd op ${h} uur per week bespaard en ${s} abonnementskosten per maand.`,
+    assumptions: (a) =>
+      `Rekenvoorbeeld, geen garantie: ${a.teamHours} uur per week van ${a.team} mensen (max. ${a.cap} per persoon), alsof Clyde al die uren overneemt, × 4 weken × ${a.rate} per uur${a.rateAssumed ? ' (aangenomen)' : ''}, min ${a.subscription} abonnement per maand.`,
   },
   en: {
     pricingHeader: 'Pricing',
@@ -81,8 +91,8 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Personal conversation',
     trustResponse: 'Reply within 48 hours',
     trustNoStrings: 'No obligations',
-    assumptions: (h, s) =>
-      `Based on ${h} hours saved per week and ${s} subscription cost per month.`,
+    assumptions: (a) =>
+      `Worked example, no guarantee: ${a.teamHours} hours a week from ${a.team} people (max ${a.cap} per person), as if Clyde takes all those hours over, × 4 weeks × ${a.rate} an hour${a.rateAssumed ? ' (assumed)' : ''}, minus ${a.subscription} subscription a month.`,
   },
   es: {
     pricingHeader: 'Tarifas',
@@ -101,8 +111,8 @@ const COPY: Record<CardLocale, CardCopy> = {
     trustPersonal: 'Conversación personal',
     trustResponse: 'Respuesta en 48 horas',
     trustNoStrings: 'Sin compromisos',
-    assumptions: (h, s) =>
-      `Basado en ${h} horas ahorradas por semana y ${s} de suscripción al mes.`,
+    assumptions: (a) =>
+      `Ejemplo de cálculo, sin garantía: ${a.teamHours} horas por semana de ${a.team} personas (máx. ${a.cap} por persona), como si Clyde asumiera todas esas horas, × 4 semanas × ${a.rate} por hora${a.rateAssumed ? ' (supuesto)' : ''}, menos ${a.subscription} de suscripción al mes.`,
   },
 }
 

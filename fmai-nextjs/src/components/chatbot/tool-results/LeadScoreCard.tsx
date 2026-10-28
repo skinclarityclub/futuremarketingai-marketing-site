@@ -3,21 +3,24 @@
 import { useCardCopy } from './cardI18n'
 import { CardShell, CardTitle } from './CardShell'
 
-// Serves get_roi_estimate only; qualify_lead is scoring for the sales team and renders nothing.
+// Serves get_roi_estimate only; qualify_lead decides fit and renders no card of its own.
 export interface LeadScoreData {
   monthlySavings?: number | string
   roiPercent?: number
   paybackPeriodMonths?: number
   breakdown?: {
-    hoursSavedPerWeek?: number
+    teamSize?: number
+    teamHoursPerWeek?: number
+    hoursCapPerPerson?: number
+    hourlyRate?: number
+    rateAssumed?: boolean
     subscriptionCost?: number
   }
 }
 
 export function LeadScoreCard({ data }: { data: LeadScoreData }) {
   const { t, money, payback } = useCardCopy()
-  const hours = data.breakdown?.hoursSavedPerWeek
-  const subscription = data.breakdown?.subscriptionCost
+  const b = data.breakdown
   const figures = [
     { label: t.monthlySavings, value: money(data.monthlySavings) },
     {
@@ -45,11 +48,22 @@ export function LeadScoreCard({ data }: { data: LeadScoreData }) {
           </div>
         ))}
       </div>
-      {hours !== undefined && subscription !== undefined && (
-        <p className="border-t border-border-primary pt-2.5 text-xs text-text-secondary/70">
-          {t.assumptions(hours, money(subscription) ?? '')}
-        </p>
-      )}
+      {b?.teamSize !== undefined &&
+        b.teamHoursPerWeek !== undefined &&
+        b.hoursCapPerPerson !== undefined &&
+        b.hourlyRate !== undefined &&
+        b.subscriptionCost !== undefined && (
+          <p className="border-t border-border-primary pt-2.5 text-xs text-text-secondary/70">
+            {t.assumptions({
+              team: b.teamSize,
+              teamHours: b.teamHoursPerWeek,
+              cap: b.hoursCapPerPerson,
+              rate: money(b.hourlyRate) ?? '',
+              rateAssumed: b.rateAssumed === true,
+              subscription: money(b.subscriptionCost) ?? '',
+            })}
+          </p>
+        )}
     </CardShell>
   )
 }

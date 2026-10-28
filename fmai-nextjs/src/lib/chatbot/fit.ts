@@ -80,7 +80,8 @@ function assistantToolResults(messages: unknown): ToolPartView[] {
   return out
 }
 
-function offered(output: unknown): boolean {
+/** True when a remember_context or qualify_lead result offers the application card. */
+export function offersApplication(output: unknown): boolean {
   return (output as { offerApplication?: unknown } | null)?.offerApplication === true
 }
 
@@ -89,7 +90,7 @@ export function applicationOffered(messages: unknown): boolean {
   return assistantToolResults(messages).some(
     (t) =>
       t.name === 'book_call' ||
-      ((t.name === 'remember_context' || t.name === 'qualify_lead') && offered(t.output)),
+      ((t.name === 'remember_context' || t.name === 'qualify_lead') && offersApplication(t.output)),
   )
 }
 

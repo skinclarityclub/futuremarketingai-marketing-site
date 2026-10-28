@@ -8,6 +8,9 @@ import {
 } from '@/lib/chatbot/tool-data'
 import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
+const ASSUMED_HOURLY_RATE = 50
+const HOURS_CAP_PER_PERSON = 15
+
 export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = noOfferSession()) {
   // No score anywhere: the model cannot state what it never receives (R28). Fit comes
   // from code; the model only passes facts the visitor gave.
@@ -42,24 +45,43 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
 
   const get_roi_estimate = tool({
     description:
-      'Calculate estimated ROI based on team size, current marketing hours, and hourly rate. Returns monthly/annual savings and payback period.',
+      'Calculate an indicative ROI from the team size and the hours the whole team spends on manual marketing per week, both only as the visitor stated them. Leave a field out when the visitor did not say it, never estimate: the result then lists needsInput and you ask for that in one short question. Returns monthly/annual savings and payback period.',
     inputSchema: z.object({
-      teamSize: z.number().describe('Number of marketing team members'),
-      currentHoursOnMarketing: z
+      teamSize: z
         .number()
-        .describe('Current hours per week each team member spends on manual marketing tasks'),
-      averageHourlyRate: z.number().default(50).describe('Average hourly rate in EUR'),
+        .optional()
+        .describe('People on the marketing team, only as the visitor stated; leave out when unknown'),
+      teamHoursPerWeek: z
+        .number()
+        .optional()
+        .describe(
+          'Hours the WHOLE team spends on manual marketing per week, only as the visitor stated (hours per person times the stated team size); leave out when unknown, never estimate',
+        ),
+      averageHourlyRate: z
+        .number()
+        .optional()
+        .describe('Hourly rate in EUR, only when the visitor stated it; leave out otherwise'),
       monthlySubscription: z
         .number()
         .default(998)
         .describe('Monthly subscription cost in EUR (default: Growth starter 998 = 2 workspaces × 499)'),
     }),
-    execute: async ({ teamSize, currentHoursOnMarketing, averageHourlyRate, monthlySubscription }) => {
+    execute: async ({ teamSize, teamHoursPerWeek, averageHourlyRate, monthlySubscription }) => {
+      // Only stated facts count: labels do not repair invented input (RCC 2026/00196).
+      const stated = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
+      const team = stated(teamSize) ? teamSize : session.profile.teamSize
+      const needsInput = [
+        ...(stated(team) ? [] : ['teamSize']),
+        ...(stated(teamHoursPerWeek) ? [] : ['teamHoursPerWeek']),
+      ]
+      if (!stated(team) || !stated(teamHoursPerWeek)) return { needsInput }
+
+      const hourlyRate = stated(averageHourlyRate) ? averageHourlyRate : ASSUMED_HOURLY_RATE
       // Guard degenerate input so the card never shows NaN/Infinity.
       const safeSubscription = Math.max(1, monthlySubscription)
-      const hoursSavedPerWeek = Math.min(15, Math.max(0, currentHoursOnMarketing)) * Math.max(1, teamSize)
+      const hoursSavedPerWeek = Math.min(teamHoursPerWeek, HOURS_CAP_PER_PERSON * team)
       const timeSavedMonthly = hoursSavedPerWeek * 4
-      const costSavedMonthly = timeSavedMonthly * averageHourlyRate
+      const costSavedMonthly = timeSavedMonthly * hourlyRate
       const roiPercent = Math.round(((costSavedMonthly - safeSubscription) / safeSubscription) * 100)
       const monthlySavings = Math.round(costSavedMonthly - safeSubscription)
       const annualSavings = monthlySavings * 12
@@ -71,9 +93,15 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
         annualSavings,
         roiPercent,
         paybackPeriodMonths,
+        // Every assumption goes to the card, so the visitor sees what the figures rest on.
         breakdown: {
+          teamSize: team,
+          teamHoursPerWeek,
+          hoursCapPerPerson: HOURS_CAP_PER_PERSON,
           hoursSavedPerWeek,
           timeSavedMonthly,
+          hourlyRate,
+          rateAssumed: !stated(averageHourlyRate),
           costSavedMonthly: Math.round(costSavedMonthly),
           subscriptionCost: monthlySubscription,
         },
