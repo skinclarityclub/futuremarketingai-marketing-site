@@ -225,9 +225,12 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
       <CardShell>
         <CardTitle title={t.skillsHeader} />
         <ul className="flex list-none flex-col gap-2 p-0">
-          {normalizedServices.slice(0, 5).map((service, i) => (
-            <ServiceRow key={service.name || i} service={service} />
-          ))}
+          {[...normalizedServices]
+            .sort((a, b) => Number(a.status === 'coming_soon') - Number(b.status === 'coming_soon'))
+            .slice(0, 5)
+            .map((service, i) => (
+              <ServiceRow key={service.name || i} service={service} />
+            ))}
         </ul>
         <CardFooter href="/skills" label={t.allSkills} />
       </CardShell>
@@ -239,6 +242,12 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
       <ul className="flex list-none flex-col gap-2 p-0">
         <ServiceRow service={data} />
       </ul>
+      {/* A single skill carries its url; a single tier does not. */}
+      {data.url ? (
+        <CardFooter href="/skills" label={t.allSkills} />
+      ) : (
+        <CardFooter href="/pricing" label={t.allPricing} />
+      )}
     </CardShell>
   )
 }

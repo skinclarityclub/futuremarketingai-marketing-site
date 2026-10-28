@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { Brain, X } from 'lucide-react'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { MEMORY_FIELD_ORDER } from '@/lib/chatbot/memory'
-import { saveMemory } from '@/lib/chatbot/memory-persistence'
+import { hasMemoryConsent, saveMemory } from '@/lib/chatbot/memory-persistence'
 import { FIELD_LABELS, loc } from './tool-results/MemoryCard'
 import { useChatChrome } from './useChatChrome'
 
@@ -14,7 +14,7 @@ import { useChatChrome } from './useChatChrome'
  * against the composer wrapper (ChatInput is `relative`), so it floats above the
  * composer inside the chat column and never leaves it.
  */
-export function MemoryChip() {
+export function MemoryChip({ onForgotten }: { onForgotten?: () => void }) {
   const chrome = useChatChrome()
   const labels = FIELD_LABELS[loc(useLocale())]
   const profile = useChatbotStore((s) => s.memoryProfile)
@@ -41,8 +41,7 @@ export function MemoryChip() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return
       e.stopPropagation()
-      setOpen(false)
-      chipRef.current?.focus()
+      close()
     }
     window.addEventListener('keydown', onKey, true)
     return () => window.removeEventListener('keydown', onKey, true)
@@ -77,7 +76,7 @@ export function MemoryChip() {
             <button
               type="button"
               onClick={close}
-              aria-label={chrome.closeAria}
+              aria-label={chrome.closeMemory}
               className="-m-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-text-secondary transition-colors hover:text-text-primary"
             >
               <X className="h-4 w-4" aria-hidden />
@@ -91,20 +90,24 @@ export function MemoryChip() {
               >
                 <dt className="text-text-secondary">{labels[key]}</dt>
                 <dd className="min-w-0 break-words text-right font-medium text-text-primary">
-                  {String(profile[key])}
+                  {chrome.memoryValue(key, profile[key])}
                 </dd>
               </div>
             ))}
           </dl>
           <div className="mt-2 flex items-center justify-between gap-3">
-            <p className="text-[11px] leading-relaxed text-text-faint">{chrome.memoryNote}</p>
+            <p className="text-[11px] leading-relaxed text-text-faint">
+              {hasMemoryConsent() ? chrome.memoryNote : chrome.memoryNoteSession}
+            </p>
             <button
               type="button"
               onClick={() => {
                 resetMemory()
                 saveMemory({})
-                // The chip unmounts with the profile; keep focus inside the chat.
-                document.querySelector<HTMLElement>('[data-chatwidget-panel] textarea')?.focus()
+                // The chip unmounts with the profile: drop the open state with it, or the
+                // Escape listener lingers and the next capture reopens the sheet.
+                setOpen(false)
+                onForgotten?.()
               }}
               className="-my-2 min-h-10 shrink-0 cursor-pointer px-1 text-xs font-medium text-accent-system hover:underline"
             >

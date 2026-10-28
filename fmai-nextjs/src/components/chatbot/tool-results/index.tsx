@@ -36,10 +36,11 @@ export const HIDDEN_TOOLS = new Set(['qualify_lead'])
 
 // Only what this call captured, on one faint line; the full profile lives in the memory sheet.
 function RememberedLine({ data }: { data: { remembered?: Partial<MemoryProfile> } }) {
-  const { remembered } = useChatChrome()
-  const values = MEMORY_FIELD_ORDER.map((k) => data?.remembered?.[k]).filter(
-    (v) => v !== undefined && v !== null && String(v).trim() !== ''
-  )
+  const { remembered, memoryValue } = useChatChrome()
+  const values = MEMORY_FIELD_ORDER.flatMap((k) => {
+    const v = data?.remembered?.[k]
+    return v === undefined || v === null || String(v).trim() === '' ? [] : [memoryValue(k, v)]
+  })
   if (values.length === 0) return null
   return (
     <p className="flex items-center gap-1.5 text-xs text-text-faint">
@@ -57,7 +58,6 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   get_product_details: ProductCard,
   build_routine: ProductCard,
   add_to_cart_suggestion: ProductCard,
-  qualify_lead: LeadScoreCard,
   get_roi_estimate: LeadScoreCard,
   get_pricing_info: ServiceCard,
   schedule_demo: ServiceCard,

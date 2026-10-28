@@ -625,6 +625,49 @@ test.describe('compact cards', () => {
     })
   }
 
+  test('skills card shows live skills before coming-soon ones', async ({ page }) => {
+    const live = (i: number) => ({
+      name: `Live ${i}`,
+      description: 'Beschrijving.',
+      url: `/nl/skills/live-${i}`,
+      status: 'live',
+    })
+    const soon = (i: number) => ({ ...live(i), name: `Soon ${i}`, status: 'coming_soon' })
+    const { card } = await show(page, 'get_skills', {
+      ...SKILLS,
+      services: [soon(1), soon(2), live(1), live(2), live(3), live(4), live(5), live(6)],
+    })
+    await expect(card.locator('li')).toHaveCount(5)
+    await expect(card.getByText('Live 5')).toBeVisible()
+    await expect(card.getByText('Binnenkort')).toHaveCount(0)
+    await expect(card.getByText('Soon 1')).toHaveCount(0)
+  })
+
+  test('a single skill keeps its link to all skills', async ({ page }) => {
+    const { card } = await show(page, 'get_skills', {
+      name: 'Social Media',
+      description: 'Posts en carrousels.',
+      features: ['Content kalender'],
+      url: '/nl/skills/social-media',
+    })
+    await expect(card.getByRole('link', { name: /Alle vaardigheden/ })).toHaveAttribute(
+      'href',
+      /\/skills$/,
+    )
+  })
+
+  test('a single tier keeps its link to all prices', async ({ page }) => {
+    const { card } = await show(page, 'get_pricing_info', {
+      name: 'Growth',
+      description: '€499 per werkruimte',
+      features: ['2-4 merken'],
+    })
+    await expect(card.getByRole('link', { name: /Alle prijzen/ })).toHaveAttribute(
+      'href',
+      /\/pricing$/,
+    )
+  })
+
   test.describe('phone', () => {
     test.use({ viewport: { width: 390, height: 844 } })
 
@@ -747,15 +790,131 @@ test.describe('memory chip and sheet', () => {
     await expect.poll(() => stored(page)).toEqual({ ...SEEDED.profile, goal: 'meer leads' })
     expect(mock.calls()).toBe(1)
   })
+
+  test('a capture that streams while the chat is closed still reaches the chip and storage', async ({
+    page,
+  }) => {
+    let answered = false
+    const mock = await mockChatbot(page, async (r) => {
+      await new Promise((res) => setTimeout(res, 1500))
+      await r
+        .fulfill({
+          status: 200,
+          headers: SSE_HEADERS,
+          body: uiStream({ ...remember({ agencyName: 'Studio Noord' }), text: 'Genoteerd.' }),
+        })
+        .catch(() => {})
+      answered = true
+    })
+    const w = await openWidget(page)
+    await send(w, 'Wij zijn Studio Noord')
+    await page.getByRole('button', { name: 'Sluit chat' }).first().click()
+    await expect(page.locator('[data-chatwidget-panel]')).toHaveCount(0)
+    await expect.poll(() => answered).toBe(true)
+    // saved while the panel was still closed
+    await expect.poll(() => stored(page)).toEqual({ agencyName: 'Studio Noord' })
+    await page.locator('button[aria-label^="Open chat met Clyde"]').first().click()
+    const w2 = page.locator('[data-chatwidget-panel]').first()
+    await expect(w2.locator('[role="log"]').getByText('Onthouden: Studio Noord')).toBeVisible()
+    await expect(w2.getByRole('button', { name: 'Onthoudt 1 ding' })).toBeVisible()
+    expect(mock.calls()).toBe(1)
+  })
+
+  test('after Wis alles a new capture shows the chip but leaves the sheet closed', async ({
+    page,
+  }) => {
+    const mock = await mockChatbot(page, (r, n) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body:
+          n === 1
+            ? uiStream({ ...remember({ agencyName: 'Studio Noord' }), text: 'Genoteerd.' })
+            : uiStream({ ...remember({ teamSize: 5 }), text: 'Vijf mensen, genoteerd.' }),
+      }),
+    )
+    const w = await openWidget(page)
+    await send(w, 'een')
+    await w.getByRole('button', { name: 'Onthoudt 1 ding' }).click()
+    await w.getByRole('button', { name: 'Wis alles' }).click()
+    await send(w, 'we zijn met 5')
+    await expect(w.locator('[role="log"]').getByText('Vijf mensen, genoteerd.')).toBeVisible()
+    const chip = w.getByRole('button', { name: 'Onthoudt 1 ding' })
+    await expect(chip).toBeVisible()
+    await expect(chip).toHaveAttribute('aria-expanded', 'false')
+    await expect(w.getByRole('region', { name: 'Wat Clyde onthoudt' })).toHaveCount(0)
+    expect(mock.calls()).toBe(2)
+  })
+
+  test('after Wis alles one Escape closes the chat', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    await w.getByRole('button', { name: 'Wis alles' }).click()
+    await expect(w.getByRole('button', { name: /Onthoudt/ })).toHaveCount(0)
+    await expect(w.locator('textarea')).toBeFocused()
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-chatwidget-panel]')).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('the sheet close button is named for the sheet, not the chat', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    const sheet = w.getByRole('region', { name: 'Wat Clyde onthoudt' })
+    await expect(sheet.getByRole('button', { name: 'Sluit geheugen' })).toBeVisible()
+    await expect(sheet.getByRole('button', { name: 'Sluit chat' })).toHaveCount(0)
+    await expect(w.getByRole('button', { name: 'Sluit chat' })).toHaveCount(1)
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('counts carry units in the remembered line and in the sheet', async ({ page }) => {
+    const mock = await mockChatbot(page, (r) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body: uiStream({
+          ...remember({ agencyName: 'Studio Noord', niche: 'skincare', brandCount: 6, teamSize: 8 }),
+          text: 'Genoteerd.',
+        }),
+      }),
+    )
+    const w = await openWidget(page)
+    await send(w, 'wij zijn Studio Noord')
+    await expect(
+      w.locator('[role="log"]').getByText('Onthouden: Studio Noord · skincare · 6 merken · 8 mensen'),
+    ).toBeVisible()
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    const sheet = w.getByRole('region', { name: 'Wat Clyde onthoudt' })
+    await expect(sheet.getByText('6 merken', { exact: true })).toBeVisible()
+    await expect(sheet.getByText('8 mensen', { exact: true })).toBeVisible()
+    expect(mock.calls()).toBe(1)
+  })
+
+  test('the sheet note says what is true: saved with consent, session only without', async ({
+    page,
+  }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    const sheet = w.getByRole('region', { name: 'Wat Clyde onthoudt' })
+    await expect(sheet.getByText('Alleen in deze browser, voor je volgende bezoek.')).toBeVisible()
+    await sheet.getByRole('button', { name: 'Sluit geheugen' }).click()
+    await page.evaluate(() => localStorage.removeItem('cookieConsent'))
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    await expect(sheet.getByText('Alleen voor dit gesprek.')).toBeVisible()
+    await expect(sheet.getByText('voor je volgende bezoek')).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
 })
 
-// The only page that mounts the embedded widget with the clyde persona is
-// /skills/lead-qualifier (DemoPlayground), and every nested skill page 404s on the shared
-// :3123 dev server, so the chip cannot be rendered there. Pin the wiring instead: each of
-// the two ChatInput render paths (floating, embedded) passes the chip exactly once.
-test('memory chip is wired into both ChatInput paths, once each', async () => {
+// Memory is a floating-widget feature: embedded captures are never persisted, so a chip or
+// sheet there would promise "voor je volgende bezoek" for data that is not saved. Pin the
+// wiring: of the two ChatInput render paths only the floating one gets the chip.
+test('memory chip is wired into the floating ChatInput only', async () => {
   const src = readFileSync('src/components/chatbot/ChatWidget.tsx', 'utf8')
   expect(src.match(/<ChatInput\b/g)).toHaveLength(2)
-  expect(src.match(/footerEnd=\{isFlagship \? <MemoryChip \/> : undefined\}/g)).toHaveLength(2)
-  expect(src.match(/footerEnd=/g)).toHaveLength(2)
+  expect(src.match(/footerEnd=/g)).toHaveLength(1)
+  expect(src.match(/footerEnd=\{isFlagship \? <MemoryChip\b/g)).toHaveLength(1)
 })

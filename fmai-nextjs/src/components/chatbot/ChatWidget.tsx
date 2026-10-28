@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback, useState, useRef } from 'react'
+import { useEffect, useCallback, useMemo, useState, useRef } from 'react'
 import type { UIMessage } from 'ai'
 import { useTranslations, useLocale } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
@@ -9,10 +9,11 @@ import { usePersonaChat } from '@/hooks/usePersonaChat'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { FloatingButton } from './FloatingButton'
 import { ChatHeader } from './ChatHeader'
-import { ChatMessages } from './ChatMessages'
+import { ChatMessages, getToolName } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { MemoryChip } from './MemorySheet'
 import { useChatChrome } from './useChatChrome'
+import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
@@ -75,19 +76,51 @@ export function ChatWidget({
   const isFlagship = personaId === 'clyde' || personaId === 'flagship'
   const demoScenario = getDemoScenarios(locale).find((s) => s.id === demoScenarioId)
 
+  // Memory is a floating-widget feature. The merge lives here, not in ChatMessages, because
+  // this stays mounted while the panel is closed: a capture that streams in meanwhile must
+  // still reach the store. Captures present at first run count as applied, and an empty
+  // delta never writes, so "Wis alles" is not refilled from older tool parts.
+  const memoryEnabled = mode === 'floating' && isFlagship
+  const captures = useMemo(() => {
+    const out: Partial<MemoryProfile>[] = []
+    if (!memoryEnabled) return out
+    for (const msg of messages) {
+      if (msg.role !== 'assistant') continue
+      for (const part of msg.parts as unknown[]) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const p = part as any
+        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
+          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
+          if (remembered) out.push(remembered)
+        }
+      }
+    }
+    return out
+  }, [memoryEnabled, messages])
+
+  const appliedCaptures = useRef<number | null>(null)
+  useEffect(() => {
+    if (appliedCaptures.current === null) appliedCaptures.current = captures.length
+    const fresh = captures.slice(appliedCaptures.current)
+    appliedCaptures.current = captures.length
+    if (fresh.length === 0) return
+    const { memoryProfile, setMemoryProfile } = useChatbotStore.getState()
+    setMemoryProfile(fresh.reduce(mergeMemory, memoryProfile))
+  }, [captures])
+
   const handleSend = useCallback(
     (text: string) => {
       if (isAtLimit) return
       sendMessage({ text })
     },
-    [isAtLimit, sendMessage]
+    [isAtLimit, sendMessage],
   )
 
   const handlePromptSelect = useCallback(
     (text: string) => {
       handleSend(text)
     },
-    [handleSend]
+    [handleSend],
   )
 
   /**
@@ -110,7 +143,7 @@ export function ChatWidget({
       // controlled component again.
       setTimeout(() => setEditText(undefined), 0)
     },
-    [messages, setMessages, stop]
+    [messages, setMessages, stop],
   )
 
   const handleNewChat = useCallback(() => {
@@ -225,8 +258,8 @@ export function ChatWidget({
       if (e.key !== 'Tab' || !isPhone) return
       const items = Array.from(
         e.currentTarget.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        )
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
       ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
       if (items.length === 0) return
       const first = items[0]
@@ -240,7 +273,7 @@ export function ChatWidget({
         first.focus()
       }
     },
-    [isPhone]
+    [isPhone],
   )
 
   // Only the visitor's own close (Escape, X) hands focus back to the launcher. A
@@ -248,7 +281,7 @@ export function ChatWidget({
   const closeAndRestoreFocus = useCallback(() => {
     close()
     requestAnimationFrame(() =>
-      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus()
+      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus(),
     )
   }, [close])
 
@@ -256,7 +289,7 @@ export function ChatWidget({
     if (mode !== 'floating' || !isOpen) return
     const timer = setTimeout(() => {
       const textarea = document.querySelector<HTMLTextAreaElement>(
-        '[data-chatwidget-panel] textarea'
+        '[data-chatwidget-panel] textarea',
       )
       textarea?.focus()
     }, 300)
@@ -412,7 +445,7 @@ export function ChatWidget({
                   isLoading={status === 'submitted' || status === 'streaming'}
                   placeholder={inputPlaceholder}
                   footer={footer}
-                  footerEnd={isFlagship ? <MemoryChip /> : undefined}
+                  footerEnd={isFlagship ? <MemoryChip onForgotten={focusComposer} /> : undefined}
                   initialText={editText}
                 />
               </div>
@@ -465,7 +498,6 @@ export function ChatWidget({
         isLoading={status === 'submitted' || status === 'streaming'}
         placeholder={inputPlaceholder}
         footer={footer}
-        footerEnd={isFlagship ? <MemoryChip /> : undefined}
         initialText={editText}
       />
     </div>

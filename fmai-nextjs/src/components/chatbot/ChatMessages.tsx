@@ -18,7 +18,6 @@ import {
 } from 'lucide-react'
 import { ToolResultRenderer, TOOL_CARD_MAP } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
-import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 import type { ChatFailure } from '@/lib/chatbot/chat-error'
 import { TOUR_LABEL } from './widget-copy'
@@ -133,7 +132,7 @@ const assistantBubbleClass =
   'max-w-[88%] px-4 py-3 rounded-2xl rounded-tl-md bg-bg-elevated/70 border border-white/[0.06] text-text-primary text-sm'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getToolName(part: any): string | null {
+export function getToolName(part: any): string | null {
   if ('toolName' in part) return part.toolName
   if (typeof part.type === 'string' && part.type.startsWith('tool-')) return part.type.slice(5)
   return null
@@ -347,36 +346,6 @@ export function ChatMessages({
     return null
   }, [flagship, messages])
 
-  // Merge each NEW remember_context capture into the store profile (which may hold a
-  // hydrated profile). Captures already present when this mounts count as applied, and
-  // an empty delta never writes, so "Wis alles" is not refilled from older tool parts.
-  const captures = useMemo(() => {
-    const out: Partial<MemoryProfile>[] = []
-    if (!flagship) return out
-    for (const msg of messages) {
-      if (msg.role !== 'assistant') continue
-      for (const part of msg.parts as unknown[]) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const p = part as any
-        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
-          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
-          if (remembered) out.push(remembered)
-        }
-      }
-    }
-    return out
-  }, [flagship, messages])
-
-  const appliedCaptures = useRef<number | null>(null)
-  useEffect(() => {
-    if (appliedCaptures.current === null) appliedCaptures.current = captures.length
-    const fresh = captures.slice(appliedCaptures.current)
-    appliedCaptures.current = captures.length
-    if (fresh.length === 0) return
-    const { memoryProfile, setMemoryProfile } = useChatbotStore.getState()
-    setMemoryProfile(fresh.reduce(mergeMemory, memoryProfile))
-  }, [captures])
-
   const lastFollowUpChips = useMemo(() => {
     if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
@@ -394,7 +363,7 @@ export function ChatMessages({
     (chip: string) => {
       sendChatMessage(chip)
     },
-    [sendChatMessage]
+    [sendChatMessage],
   )
 
   const isEmpty = messages.length === 0
@@ -457,7 +426,7 @@ export function ChatMessages({
                     <div key={gi} className="w-full">
                       <ToolResultRenderer part={g.part} />
                     </div>
-                  )
+                  ),
                 )}
                 {!isUser && isLastAssistant && lastFollowUpChips && (
                   <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />

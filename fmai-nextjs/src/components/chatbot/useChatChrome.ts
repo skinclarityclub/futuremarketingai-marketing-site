@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl'
 
 /**
- * Locale-aware chrome for the Clyde chat widget: sidebar panel titles, follow-up
+ * Locale-aware chrome for the Clyde chat widget: memory sheet titles, follow-up
  * chips, message-action labels and header status. Card DATA + card chrome live in
  * tool-results/cardI18n; this covers the surrounding widget shell so /en and /es
  * no longer show Dutch titles ("Onze vaardigheden") over localized cards.
@@ -86,6 +86,8 @@ interface ChatChromeLabels {
   remembered: string
   memoryTitle: string
   memoryNote: string
+  memoryNoteSession: string
+  closeMemory: string
   forgetAll: string
 }
 
@@ -120,6 +122,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     remembered: 'Onthouden',
     memoryTitle: 'Wat Clyde onthoudt',
     memoryNote: 'Alleen in deze browser, voor je volgende bezoek.',
+    memoryNoteSession: 'Alleen voor dit gesprek.',
+    closeMemory: 'Sluit geheugen',
     forgetAll: 'Wis alles',
   },
   en: {
@@ -152,6 +156,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     remembered: 'Remembered',
     memoryTitle: 'What Clyde remembers',
     memoryNote: 'Only in this browser, for your next visit.',
+    memoryNoteSession: 'Only for this conversation.',
+    closeMemory: 'Close memory',
     forgetAll: 'Forget all',
   },
   es: {
@@ -184,6 +190,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     remembered: 'Recordado',
     memoryTitle: 'Lo que Clyde recuerda',
     memoryNote: 'Solo en este navegador, para tu próxima visita.',
+    memoryNoteSession: 'Solo para esta conversación.',
+    closeMemory: 'Cerrar memoria',
     forgetAll: 'Borrar todo',
   },
 }
@@ -202,6 +210,24 @@ const MEMORY_CHIP: Record<ChatLocale, (n: number) => string> = {
   es: (n) => `Recuerda ${n} ${n === 1 ? 'dato' : 'datos'}`,
 }
 
+const MEMORY_UNITS: Record<
+  ChatLocale,
+  { brandCount: (n: number) => string; teamSize: (n: number) => string }
+> = {
+  nl: {
+    brandCount: (n) => (n === 1 ? '1 merk' : `${n} merken`),
+    teamSize: (n) => (n === 1 ? '1 persoon' : `${n} mensen`),
+  },
+  en: {
+    brandCount: (n) => (n === 1 ? '1 brand' : `${n} brands`),
+    teamSize: (n) => (n === 1 ? '1 person' : `${n} people`),
+  },
+  es: {
+    brandCount: (n) => (n === 1 ? '1 marca' : `${n} marcas`),
+    teamSize: (n) => (n === 1 ? '1 persona' : `${n} personas`),
+  },
+}
+
 const LIMIT_WARNING: Record<ChatLocale, (n: number) => string> = {
   nl: (n) => `Nog ${n} ${n === 1 ? 'bericht' : 'berichten'} in dit gesprek.`,
   en: (n) => `${n} ${n === 1 ? 'message' : 'messages'} left in this conversation.`,
@@ -215,6 +241,8 @@ export interface ChatChrome extends ChatChromeLabels {
   rateLimited: (minutes: number) => string
   limitWarning: (remaining: number) => string
   memoryChip: (n: number) => string
+  /** One formatter for a remembered value: numbers get units, text stays as is. */
+  memoryValue: (key: string, value: unknown) => string
 }
 
 export function chatChromeFor(locale: ChatLocale): ChatChrome {
@@ -225,6 +253,13 @@ export function chatChromeFor(locale: ChatLocale): ChatChrome {
     rateLimited: (m) => RATE_LIMITED[locale](m),
     limitWarning: (n) => LIMIT_WARNING[locale](n),
     memoryChip: (n) => MEMORY_CHIP[locale](n),
+    memoryValue: (key, value) => {
+      const n = Number(value)
+      if ((key === 'brandCount' || key === 'teamSize') && Number.isFinite(n)) {
+        return MEMORY_UNITS[locale][key](n)
+      }
+      return String(value)
+    },
   }
 }
 
