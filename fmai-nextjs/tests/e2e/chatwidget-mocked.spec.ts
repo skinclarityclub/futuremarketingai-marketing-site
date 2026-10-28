@@ -83,6 +83,7 @@ for (const [name, viewport] of [
     test('Escape closes and focus returns to the launcher', async ({ page }) => {
       const { mock } = await setup(page)
       const w = await openWidget(page)
+      await expect(w.locator('textarea')).toBeFocused()
       await page.keyboard.press('Escape')
       await expect(w).toBeHidden()
       const launcher = page.locator('button[aria-label^="Open chat met Clyde"]').first()
@@ -105,7 +106,8 @@ test.describe('greeting prompts', () => {
       const same = new Set(b.map((x) => Math.round(x!.x))).size === 1
       return same && b[1]!.y > b[0]!.y && b[2]!.y > b[1]!.y
     }).toBe(true)
-    await expect(w.getByText('Of start een rondleiding')).toBeVisible()
+    await expect(w.getByText('Of volg een korte rondleiding')).toBeVisible()
+    await expect.poll(async () => (await rows.first().boundingBox())!.height).toBeGreaterThanOrEqual(40)
     expect(mock.calls()).toBe(0)
   })
 })
@@ -131,9 +133,65 @@ test.describe('errors and the limit', () => {
     })
     expect(await colour(fail)).toBe(await colour(page.locator('#err-probe')))
     await expect(w.locator('[role="alert"]').filter({ hasText: 'Er ging iets mis' })).toHaveCount(0)
-    await w.getByRole('button', { name: 'Opnieuw', exact: true }).click()
+    const retry = w.getByRole('button', { name: 'Opnieuw', exact: true })
+    // polled: the panel scales in; the hit area is padding around a text-xs label
+    await expect.poll(async () => (await retry.boundingBox())!.height).toBeGreaterThanOrEqual(40)
+    await retry.click()
     await expect(w.getByText('Vier niveaus.')).toBeVisible()
     expect(m.calls()).toBe(2)
+  })
+
+  test('a failed attempt does not count toward the 15', async ({ page }) => {
+    const m = await mockChatbot(page, async (r, n) =>
+      n === 1
+        ? r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
+        : r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: `Antwoord ${n}.` }) })
+    )
+    const w = await openWidget(page)
+    await send(w, 'Vraag 1')
+    await w.getByRole('button', { name: 'Opnieuw', exact: true }).click()
+    await expect(w.getByText('Antwoord 2.', { exact: true })).toBeVisible()
+    // 11 replies so far (1 retry + 10): the warning belongs to reply 12, not earlier
+    for (let i = 2; i <= 11; i++) {
+      await send(w, `Vraag ${i}`)
+      await expect(w.getByText(`Antwoord ${i + 1}.`, { exact: true })).toBeVisible()
+    }
+    await expect(w.getByText('Nog 3 berichten in dit gesprek.')).toHaveCount(0)
+    await send(w, 'Vraag 12')
+    await expect(w.getByText('Nog 3 berichten in dit gesprek.')).toBeVisible()
+    expect(m.calls()).toBe(13)
+  })
+
+  test('a failure hides the regenerate action on the previous answer', async ({ page }) => {
+    const m = await mockChatbot(page, async (r, n) =>
+      n === 1
+        ? r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: 'Eerste antwoord.' }) })
+        : r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
+    )
+    const w = await openWidget(page)
+    await send(w, 'Vraag een')
+    await expect(w.getByText('Eerste antwoord.')).toBeVisible()
+    await expect(w.getByRole('button', { name: /Opnieuw genereren/ })).toHaveCount(1)
+    await send(w, 'Vraag twee')
+    await expect(w.getByText('Geen antwoord ontvangen')).toBeVisible()
+    await expect(w.getByRole('button', { name: /Opnieuw genereren/ })).toHaveCount(0)
+    expect(m.calls()).toBe(2)
+  })
+
+  test('400 on personal data says so, without a retry button', async ({ page }) => {
+    const m = await mockChatbot(page, (r) =>
+      r.fulfill({
+        status: 400,
+        contentType: 'application/json',
+        body: JSON.stringify({ error: "Please don't share personal information like email" }),
+      })
+    )
+    const w = await openWidget(page)
+    await send(w, 'mail me op a@b.nl')
+    await expect(w.getByText(/Clyde kan geen persoonlijke gegevens/)).toBeVisible()
+    await expect(w.getByText('Geen antwoord ontvangen')).toHaveCount(0)
+    await expect(w.getByRole('button', { name: 'Opnieuw', exact: true })).toHaveCount(0)
+    expect(m.calls()).toBe(1)
   })
 
   test('429 says when to retry, without a retry button', async ({ page }) => {
@@ -169,6 +227,7 @@ test.describe('errors and the limit', () => {
       await expect(w.getByText(`Antwoord ${i}.`, { exact: true })).toBeVisible()
     }
     await expect(w.getByText('Nog 3 berichten in dit gesprek.')).toBeVisible()
+    await expect(w.getByText('Verder praten?')).toBeVisible()
     for (let i = 13; i <= 15; i++) {
       await send(w, `Vraag ${i}`)
       await expect(w.getByText(`Antwoord ${i}.`, { exact: true })).toBeVisible()
@@ -227,6 +286,103 @@ test.describe('one proactive hint', () => {
     await expect(w).toBeHidden()
     await page.clock.fastForward(45_000)
     await expect(page.getByText(PROACTIVE_PROMPTS.nl['/pricing']!)).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
+})
+
+test.describe('focus on desktop', () => {
+  test.use({ viewport: { width: 1440, height: 900 } })
+
+  test('following a page link does not pull focus to the launcher', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page)
+    const link = page.locator('footer a[href="/nl/how-it-works"]').first()
+    await link.focus()
+    await page.keyboard.press('Enter')
+    await page.waitForURL(/\/nl\/how-it-works/)
+    await expect(w).toBeHidden()
+    const launcher = page.locator('[data-clyde-launcher]').first()
+    await expect(launcher).toBeVisible()
+    await expect(launcher).not.toBeFocused()
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('Escape outside the panel leaves it open, inside it closes', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page)
+    await page.locator('footer a').first().focus()
+    await page.keyboard.press('Escape')
+    await expect(w).toBeVisible()
+    await w.locator('textarea').focus()
+    await page.keyboard.press('Escape')
+    await expect(w).toBeHidden()
+    await expect(page.locator('[data-clyde-launcher]').first()).toBeFocused()
+    expect(mock.calls()).toBe(0)
+  })
+})
+
+test.describe('phone modal', () => {
+  test.use({ viewport: { width: 390, height: 844 } })
+
+  test('page behind is inert while open, Shift+Tab wraps, inert is gone after close', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page)
+    await expect(page.locator('#main')).toHaveAttribute('inert', '')
+    await expect(page.locator('header').first()).toHaveAttribute('inert', '')
+    await expect(page.locator('footer').first()).toHaveAttribute('inert', '')
+    // Shift+Tab from the first focusable wraps to the last
+    const focusables = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    await w.locator(focusables).first().focus()
+    await page.keyboard.press('Shift+Tab')
+    const lastIsFocused = await page.evaluate((sel) => {
+      const panel = document.querySelector('[data-chatwidget-panel]')!
+      const items = Array.from(panel.querySelectorAll<HTMLElement>(sel)).filter(
+        (el) => el.tabIndex >= 0 && el.offsetParent !== null
+      )
+      return document.activeElement === items[items.length - 1]
+    }, focusables)
+    expect(lastIsFocused).toBe(true)
+    await w.locator('button[aria-label="Sluit chat"]').click()
+    await expect(w).toBeHidden()
+    await expect(page.locator('#main')).not.toHaveAttribute('inert', '')
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('after Opnieuw focus is back in the composer', async ({ page }) => {
+    const m = await mockChatbot(page, async (r, n) =>
+      n === 1
+        ? r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
+        : r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: 'Klaar.' }) })
+    )
+    const w = await openWidget(page)
+    await send(w, 'Hallo')
+    await w.getByRole('button', { name: 'Opnieuw', exact: true }).click()
+    await expect(w.getByText('Klaar.')).toBeVisible()
+    await expect(w.locator('textarea')).toBeFocused()
+    expect(m.calls()).toBe(2)
+  })
+})
+
+test.describe('whisper animates', () => {
+  test.use({ viewport: { width: 1440, height: 900 } })
+
+  test('the whisper element exists, hidden, before the stage flips', async ({ page }) => {
+    const { mock } = await setup(page)
+    await page.clock.install()
+    await page.addInitScript((c) => {
+      try {
+        localStorage.setItem('cookieConsent', c)
+      } catch {}
+    }, JSON.stringify({ necessary: true, analytics: false, marketing: false }))
+    await page.goto('/nl', { waitUntil: 'load' })
+    await page.waitForLoadState('networkidle')
+    const text = page.getByText(WHISPERS.nl['/'])
+    // mounted in advance: an element inserted with the stage change would skip its transition
+    await expect(text).toHaveCount(1)
+    const pill = text.locator('xpath=ancestor::span[contains(@class,"clyde-status")]')
+    await expect(pill).toHaveCSS('opacity', '0')
+    await page.clock.fastForward(21_000)
+    await expect(pill).toHaveCSS('opacity', '1')
     expect(mock.calls()).toBe(0)
   })
 })
