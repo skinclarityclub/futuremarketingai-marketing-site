@@ -18,4 +18,7 @@ test('classifyChatError', () => {
   expect(classifyChatError(new Error(JSON.stringify({ error: 'Rate limit exceeded' })), now)).toEqual({ kind: 'rate-limit', minutes: 1 })
   expect(classifyChatError(new Error('Failed to fetch the chat response.'), now)).toEqual({ kind: 'failed' })
   expect(classifyChatError(new Error('{"error":"Invalid JSON body"}'), now)).toEqual({ kind: 'failed' })
+  expect(classifyChatError(new Error('{"error":"Please don\'t share personal information like email"}'), now)).toEqual({ kind: 'rejected', reason: 'personal' })
+  expect(classifyChatError(new Error('{"error":"Message too long (max 2000 characters)"}'), now)).toEqual({ kind: 'rejected', reason: 'too-long' })
+  expect(classifyChatError(new Error('{"error":"Message cannot be empty"}'), now)).toEqual({ kind: 'failed' })
 })

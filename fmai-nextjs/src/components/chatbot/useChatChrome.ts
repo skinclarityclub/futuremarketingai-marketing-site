@@ -122,6 +122,8 @@ interface ChatChromeLabels {
   aiLabel: string
   disclosure: string
   noAnswer: string
+  rejectedPersonal: string
+  rejectedTooLong: string
   limitReached: string
   keepTalking: string
   applyCta: string
@@ -151,6 +153,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'AI',
     disclosure: 'Clyde is AI en kan zich vergissen.',
     noAnswer: 'Geen antwoord ontvangen',
+    rejectedPersonal: 'Clyde kan geen persoonlijke gegevens zoals een e-mailadres of telefoonnummer ontvangen. Stuur je vraag opnieuw zonder die gegevens.',
+    rejectedTooLong: 'Dit bericht is te lang. Maak het korter en stuur het opnieuw.',
     limitReached: 'Dit gesprek zit vol.',
     keepTalking: 'Verder praten?',
     applyCta: 'Aanvraag starten',
@@ -178,6 +182,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'AI',
     disclosure: 'Clyde is AI and can make mistakes.',
     noAnswer: 'No reply received',
+    rejectedPersonal: "Clyde can't receive personal details like an email address or phone number. Send your question again without them.",
+    rejectedTooLong: 'This message is too long. Shorten it and send it again.',
     limitReached: 'This conversation is full.',
     keepTalking: 'Want to keep talking?',
     applyCta: 'Start an application',
@@ -205,6 +211,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'IA',
     disclosure: 'Clyde es una IA y puede equivocarse.',
     noAnswer: 'No se recibió respuesta',
+    rejectedPersonal: 'Clyde no puede recibir datos personales como un correo o un teléfono. Vuelve a enviar tu pregunta sin ellos.',
+    rejectedTooLong: 'Este mensaje es demasiado largo. Acórtalo y vuelve a enviarlo.',
     limitReached: 'Esta conversación está completa.',
     keepTalking: '¿Seguimos hablando?',
     applyCta: 'Iniciar solicitud',

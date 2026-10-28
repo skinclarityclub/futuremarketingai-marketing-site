@@ -75,8 +75,9 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
   const chat = useChat({
     id: `chat-${personaId}`,
     transport,
-    onFinish: () => {
-      incrementMessageCount(personaId)
+    // The SDK also calls onFinish on error; a failed attempt is not a reply. An abort still counts.
+    onFinish: ({ isError }) => {
+      if (!isError) incrementMessageCount(personaId)
     },
     onError: (error) => {
       console.error(`[chat-${personaId}] error:`, error)

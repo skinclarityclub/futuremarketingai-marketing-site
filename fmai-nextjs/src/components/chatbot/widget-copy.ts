@@ -146,7 +146,7 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
 
 /**
  * Proactive nudge prompts, keyed by locale then path. Shown as a bubble above the
- * FAB after 40s of inactivity on pages where Clyde has something specific to offer.
+ * FAB 6s after a route change, only when the visitor navigated away from an open chat, on pages where Clyde has something specific to offer.
  * Action-oriented: clicking SENDS the message to Clyde, so they live in the visitor's
  * language to keep his reply in that language too.
  *
@@ -304,7 +304,7 @@ export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
 
 /** Link under the greeting's prompts, and in the empty-state, that starts the guided tour. */
 export const TOUR_LABEL: Record<string, string> = {
-  nl: 'Of start een rondleiding →',
-  en: 'Or take a guided tour →',
-  es: 'O haz un recorrido guiado →',
+  nl: 'Of volg een korte rondleiding →',
+  en: 'Or take a short tour →',
+  es: 'O haz un recorrido corto →',
 }

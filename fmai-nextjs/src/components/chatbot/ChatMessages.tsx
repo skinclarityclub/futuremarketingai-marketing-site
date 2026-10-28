@@ -479,7 +479,7 @@ export function ChatMessages({
                       type="button"
                       onClick={() => onInlinePromptSelect?.(prompt)}
                       style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
-                      className="group/ip flex w-full items-center gap-2 rounded-xl border border-white/[0.06] bg-bg-elevated/60 px-3 py-2 text-left text-xs font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
+                      className="group/ip flex w-full items-center gap-2 rounded-xl border border-white/[0.06] bg-bg-elevated/60 min-h-10 px-3 py-2 text-left text-sm font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
                     >
                       <MessageCircle className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
                       {prompt}
@@ -510,7 +510,7 @@ export function ChatMessages({
                   {chrome.edit}
                 </button>
               )}
-              {!isUser && isLastAssistant && onRegenerate && !isStreaming && !isClientInjected && (
+              {!isUser && isLastAssistant && onRegenerate && !isStreaming && !isClientInjected && !failure && (
                 <button
                   type="button"
                   onClick={onRegenerate}
@@ -527,6 +527,8 @@ export function ChatMessages({
                 <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                 {failure.kind === 'rate-limit' ? (
                   chrome.rateLimited(failure.minutes)
+                ) : failure.kind === 'rejected' ? (
+                  failure.reason === 'personal' ? chrome.rejectedPersonal : chrome.rejectedTooLong
                 ) : (
                   <>
                     <span>{chrome.noAnswer}</span>
@@ -536,7 +538,8 @@ export function ChatMessages({
                         <button
                           type="button"
                           onClick={onRetry}
-                          className="font-medium text-accent-system hover:underline"
+                          // 40px hit area via padding, pulled back with negative margin so the line looks the same
+                          className="-my-3 -mx-2 px-2 py-3 font-medium text-accent-system hover:underline"
                         >
                           {chrome.retry}
                         </button>
