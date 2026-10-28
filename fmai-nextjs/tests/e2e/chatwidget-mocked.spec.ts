@@ -534,6 +534,28 @@ test.describe('tool results render in the conversation', () => {
       expect(mock.calls()).toBe(1)
     })
 
+    test('a failed book_call does not take the slot of the fit offer', async ({ page }) => {
+      const mock = await mockChatbot(page, (r) =>
+        r.fulfill({
+          status: 200,
+          headers: SSE_HEADERS,
+          body: uiStream({
+            tools: [
+              { tool: 'book_call', input: { reason: 'kennismaking' }, errorText: 'boom' },
+              { tool: 'remember_context', input: { teamSize: 8, brandCount: 6 }, output: REMEMBER_OFFER },
+            ],
+            text: 'Dit past goed bij jullie bureau.',
+          }),
+        }),
+      )
+      const w = await openWidget(page)
+      await send(w, 'Wij zijn 8 mensen met 6 merken, plan een gesprek')
+      const log = w.locator('[role="log"]')
+      await expect(log.getByText('Dit past goed bij jullie bureau.')).toBeVisible()
+      await expect(log.locator('[data-tool-card="book_call"]')).toHaveCount(1)
+      expect(mock.calls()).toBe(1)
+    })
+
     test('roi without stated hours shows no card and no figures', async ({ page }) => {
       const { mock, w } = await ask(
         page,

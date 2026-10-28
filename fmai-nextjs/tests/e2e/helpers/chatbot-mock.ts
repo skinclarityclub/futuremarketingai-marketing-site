@@ -11,8 +11,8 @@ export const uiStream = (opts: {
   tool?: string
   input?: object
   output?: unknown
-  /** Several tool calls in one turn; `tool` stays as the one-call shorthand. */
-  tools?: Array<{ tool: string; input?: object; output?: unknown }>
+  /** Several tool calls in one turn; `tool` stays as the one-call shorthand. `errorText` fails that call. */
+  tools?: Array<{ tool: string; input?: object; output?: unknown; errorText?: string }>
 }): string => {
   const c: object[] = [{ type: 'start', messageId: 'mock-' + Math.random().toString(36).slice(2) }]
   const tools =
@@ -26,7 +26,9 @@ export const uiStream = (opts: {
         toolName: t.tool,
         input: t.input ?? {},
       },
-      { type: 'tool-output-available', toolCallId: `t${i + 1}`, output: t.output },
+      t.errorText
+        ? { type: 'tool-output-error', toolCallId: `t${i + 1}`, errorText: t.errorText }
+        : { type: 'tool-output-available', toolCallId: `t${i + 1}`, output: t.output },
       { type: 'finish-step' }
     )
   })

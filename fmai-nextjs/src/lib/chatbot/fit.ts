@@ -34,8 +34,8 @@ export interface FitSession {
   offered: boolean
   // false in the guided demo: its script books the call in its own step
   offerEnabled: boolean
-  // numbers the visitor typed; a number the model passes as stated must be one of them
-  said: number[]
+  // numbers the visitor typed, per unit; a number the model passes as stated must be one of them
+  said: Said
 }
 
 /**
@@ -107,25 +107,42 @@ export function rememberedInHistory(messages: unknown): Partial<MemoryProfile>[]
 
 /** Without a session (manual tool path) nothing is remembered and no card is offered. */
 export function noOfferSession(): FitSession {
-  return { profile: {}, offered: false, offerEnabled: false, said: [] }
+  return { profile: {}, offered: false, offerEnabled: false, said: { hours: [], brands: [], people: [] } }
 }
 
+// The word right after a number gives its unit (Codex R1: in "8 mensen, 6 merken" the 6
+// passed as hours, so 48 = 6 x 8 reached the card as team hours).
+const UNIT_WORDS: Record<keyof Said, string> = {
+  hours: 'uur|uren|manuren|u|hours?|hrs?|h|horas?',
+  brands: 'merken|merk|klantmerken|klanten|klant|brands?|clients?|marcas?|clientes?',
+  people: "mensen|personen|persoon|man|fte|medewerkers?|collega'?s|people|persons?|employees|staff|personas?|empleados?",
+}
+
+export type Said = { hours: number[]; brands: number[]; people: number[] }
+
 /**
- * Numbers the visitor typed in this conversation (paid test 10-28: the model passed
- * "10 uur" the visitor never said, and the ROI card turned it into euros).
- * shortcut: digits only, so "veertig uur" is asked again; upgrade to an evidence quote if that bothers visitors.
+ * Numbers the visitor typed in this conversation, by the unit written after them (paid
+ * test 10-28: the model passed "10 uur" the visitor never said, and the card turned it into euros).
+ * shortcut: digits plus a unit word only, so "veertig uur" or "team van 8" is asked again; upgrade to an evidence quote if that bothers visitors.
  */
-export function numbersSaid(messages: unknown): number[] {
-  if (!Array.isArray(messages)) return []
-  return messages.flatMap((msg) => {
-    const m = msg as { role?: unknown; parts?: unknown }
-    if (m?.role !== 'user' || !Array.isArray(m.parts)) return []
-    return m.parts.flatMap((part) => {
-      const p = part as { type?: unknown; text?: unknown }
-      if (p?.type !== 'text' || typeof p.text !== 'string') return []
-      return (p.text.match(/\d+(?:[.,]\d+)?/g) ?? []).map((n) => Number(n.replace(',', '.')))
-    })
-  })
+export function unitsSaid(messages: unknown): Said {
+  const texts = !Array.isArray(messages)
+    ? []
+    : messages.flatMap((msg) => {
+        const m = msg as { role?: unknown; parts?: unknown }
+        if (m?.role !== 'user' || !Array.isArray(m.parts)) return []
+        return m.parts.flatMap((part) => {
+          const p = part as { type?: unknown; text?: unknown }
+          return p?.type === 'text' && typeof p.text === 'string' ? [p.text] : []
+        })
+      })
+  const read = (words: string) =>
+    texts.flatMap((t) =>
+      [...t.matchAll(new RegExp(String.raw`(\d+(?:[.,]\d+)?)\s*(?:${words})\b`, 'gi'))].map((m) =>
+        Number(m[1].replace(',', '.')),
+      ),
+    )
+  return { hours: read(UNIT_WORDS.hours), brands: read(UNIT_WORDS.brands), people: read(UNIT_WORDS.people) }
 }
 
 /**
@@ -138,6 +155,6 @@ export function fitSession(messages: unknown, clientProfile: unknown, demoMode: 
     profile: rememberedInHistory(messages).reduce(mergeMemory, sanitizeMemory(clientProfile)),
     offered: applicationOffered(messages),
     offerEnabled: !demoMode,
-    said: numbersSaid(messages),
+    said: unitsSaid(messages),
   }
 }

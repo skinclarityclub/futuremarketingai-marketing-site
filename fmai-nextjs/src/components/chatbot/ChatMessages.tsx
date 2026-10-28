@@ -159,8 +159,8 @@ function groupParts(parts: any[]): PartGroup[] {
     }
     const toolName = getToolName(part)
     if (!toolName || !('state' in part)) continue
-    const offer = part.state === 'output-available' && offersApplication(part.output)
-    if (toolName === 'book_call' || offer) {
+    // Only a finished card holds the slot: a failed book_call must not strip the real offer (Codex R1).
+    if (part.state === 'output-available' && (toolName === 'book_call' || offersApplication(part.output))) {
       if (applicationShown) {
         if (toolName === 'book_call') continue
         groups.push({ kind: 'tool', part: { ...part, toolName, output: { ...part.output, offerApplication: false } } })

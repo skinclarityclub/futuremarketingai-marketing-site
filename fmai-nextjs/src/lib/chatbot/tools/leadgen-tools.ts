@@ -7,7 +7,7 @@ import {
   type ChatbotLocale,
   type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
-import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
+import { decideFit, noOfferSession, type FitSession, type Said } from '@/lib/chatbot/fit'
 
 // One workspace per client brand; the tier follows from the count (tool-data.ts). Solo/1 brand has no plan.
 function subscriptionFor(brands: number) {
@@ -61,27 +61,28 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
         .describe(
           'Hours the WHOLE team spends on manual marketing per week, only as the visitor stated (hours per person times the stated team size); leave out when unknown, never estimate',
         ),
-      teamSize: z.number().optional().describe('People on the team, only as the visitor stated'),
       brandCount: z.number().optional().describe('Client brands the agency manages, only as the visitor stated'),
     }),
-    execute: async ({ teamHoursPerWeek, teamSize, brandCount }) => {
-      // Only numbers the visitor typed count (paid test 10-28: the model passed hours nobody said);
-      // remembered facts count as known.
+    execute: async ({ teamHoursPerWeek, brandCount }) => {
+      // Only numbers the visitor typed in THIS conversation, with that unit, count (paid test
+      // 10-28: the model passed hours nobody said). A remembered or client-sent profile value
+      // counts only when it was typed here too (Codex R1: a stored 15 brands priced the card).
       const known = (n: number | undefined): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0
-      const stated = (n: number | undefined): n is number => known(n) && session.said.includes(n)
-      const team = stated(teamSize) ? teamSize : session.profile.teamSize
-      const brands = stated(brandCount) ? brandCount : session.profile.brandCount
-      // per-person hours times the team are stated too
+      const stated = (n: number | undefined, unit: keyof Said): n is number =>
+        known(n) && session.said[unit].some((s) => Math.abs(s - n) < 1e-9)
+      const brands = [brandCount, session.profile.brandCount].find((n) => stated(n, 'brands'))
+      // per-person hours times a typed head count are stated too
       const hours =
         known(teamHoursPerWeek) &&
-        (stated(teamHoursPerWeek) || (known(team) && stated(teamHoursPerWeek / team)))
+        (stated(teamHoursPerWeek, 'hours') ||
+          session.said.people.some((p) => stated(teamHoursPerWeek / p, 'hours')))
           ? teamHoursPerWeek
           : undefined
       if (!known(hours)) return { needsInput: ['teamHoursPerWeek'] }
       return {
         teamHoursPerWeek: hours,
         teamHoursPerMonth: Math.round((hours * 52) / 12),
-        ...(known(brands) ? subscriptionFor(brands) : undefined),
+        ...(brands !== undefined ? subscriptionFor(brands) : undefined),
       }
     },
   })

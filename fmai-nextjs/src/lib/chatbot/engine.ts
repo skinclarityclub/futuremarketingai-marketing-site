@@ -162,7 +162,17 @@ export async function handleChatRequest(request: Request): Promise<Response> {
 
     // Fit is decided in code (fit.ts); the session carries what is known and whether
     // the application card was already shown in this conversation.
-    const session = fitSession(messages, context?.memoryProfile, !!context?.demoMode)
+    // Legacy requests carry text only; as text parts their typed numbers still count (Codex R1).
+    const fitHistory = isUseChatMode
+      ? messages
+      : [
+          ...(conversationHistory ?? []),
+          { role: 'user', content: validation.sanitizedInput ?? (message as string) },
+        ].map((m) => ({
+          role: m.role,
+          parts: [{ type: 'text', text: m.content }],
+        }))
+    const session = fitSession(fitHistory, context?.memoryProfile, !!context?.demoMode)
     let tools = createPersonaTools(persona, locale, session)
     if (persona.id === 'clyde' || persona.id === 'flagship') {
       // Strip e-commerce/support/legacy tools inherited from the SkinClarity
