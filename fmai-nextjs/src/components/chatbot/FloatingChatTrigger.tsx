@@ -53,6 +53,7 @@ export function FloatingChatTrigger() {
   // One hint per browser session, never on phones. The whisper element is mounted (hidden)
   // from the start so it can transition, hence browser state is read after hydration.
   const [whisperAllowed, setWhisperAllowed] = useState(false)
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage/matchMedia exist only after hydration
   useEffect(() => setWhisperAllowed(canWhisper()), [])
   // Once the whisper has shown and folded away it stays away, also across SPA navigation.
   const [prevStage, setPrevStage] = useState(idleStage)
