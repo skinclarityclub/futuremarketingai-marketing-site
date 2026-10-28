@@ -29,6 +29,16 @@ for (const [name, viewport] of [
       // polled: the panel scales in from 0.98 for 220ms
       await expect.poll(async () => (await close.boundingBox())!.width).toBeGreaterThanOrEqual(40)
       await expect.poll(async () => (await close.boundingBox())!.height).toBeGreaterThanOrEqual(40)
+      await expect(w.getByText('Shift+Enter')).toHaveCount(0)
+      expect(mock.calls()).toBe(0)
+    })
+
+    test('launcher does not claim to be online', async ({ page }) => {
+      const { mock } = await setup(page)
+      await page.goto('/nl', { waitUntil: 'domcontentloaded' })
+      const launcher = page.locator('button[aria-label^="Open chat met Clyde"]').first()
+      await launcher.hover()
+      await expect(launcher).not.toContainText(/online/i)
       expect(mock.calls()).toBe(0)
     })
 

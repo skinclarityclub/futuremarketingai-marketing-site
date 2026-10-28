@@ -19,8 +19,7 @@ interface ClydePresenceProps {
  *
  * Horizontal name-pill: small sparkle mark + "Clyde" wordmark. Reads as
  * a colleague's name tag, not a generic chat bubble. The pill expands
- * to reveal status copy:
- *   - On hover: " · nu online" (always-available signal)
+ * to reveal a whisper:
  *   - On 20s scroll-idle: page-aware whisper (e.g. "Telefoon? Ik laat
  *     het zien." on /skills/voice-agent)
  *
@@ -91,22 +90,17 @@ export function ClydePresence({
     >
       <LogoSynapse size={22} ariaLabel="" />
       <span className="font-display text-sm font-semibold tracking-tight">Clyde</span>
-      <span
-        className="clyde-status overflow-hidden whitespace-nowrap text-sm text-text-secondary"
-        data-visible={isWhispering ? 'whisper' : 'hover'}
-      >
-        {isWhispering ? (
+      {isWhispering && (
+        <span
+          className="clyde-status overflow-hidden whitespace-nowrap text-sm text-text-secondary"
+          data-visible="whisper"
+        >
           <span className="clyde-status-inner">
             <span className="mx-1.5 text-text-faint">·</span>
             {whisper}
           </span>
-        ) : (
-          <span className="clyde-status-inner">
-            <span className="mx-1.5 text-text-faint">·</span>
-            nu online
-          </span>
-        )}
-      </span>
+        </span>
+      )}
       {hasUnread && (
         <span
           aria-hidden="true"

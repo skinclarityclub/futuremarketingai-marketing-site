@@ -12,7 +12,7 @@ interface ChatInputProps {
   placeholder?: string
   /** Optional initial text (used by edit-message flow). */
   initialText?: string
-  /** Replaces the disclosure line; the keyboard hint is kept only when this is not given. */
+  /** Replaces the disclosure text in the single footer row (e.g. the limit text). */
   footer?: React.ReactNode
 }
 
@@ -42,7 +42,7 @@ export function ChatInput({
 }: ChatInputProps) {
   const [input, setInput] = useState(initialText ?? '')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const { inputSend, inputNewline, disclosure, inputAria, sendAria, stopAria, answeringAria } =
+  const { disclosure, inputAria, sendAria, stopAria, answeringAria } =
     useChatChrome()
 
   // External edit-flow can push a value into the input. Replace the
@@ -141,15 +141,10 @@ export function ChatInput({
           </button>
         )}
       </div>
-      <div className="mt-1.5 px-2 text-[11px] text-text-faint">{footer ?? disclosure}</div>
-      {footer === undefined && (
-        <div className="mt-1 hidden items-center justify-between px-2 text-[10px] text-text-faint [@media(hover:hover)_and_(pointer:fine)]:flex">
-          <span>
-            <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Enter</kbd> {inputSend} ·{' '}
-            <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Shift+Enter</kbd> {inputNewline}
-          </span>
-        </div>
-      )}
+      {/* One row: disclosure left, slot right (Task 9 puts the memory chip there). */}
+      <div className="mt-1.5 flex items-center justify-between gap-2 px-2 text-[11px] text-text-faint">
+        <span>{footer ?? disclosure}</span>
+      </div>
     </div>
   )
 }

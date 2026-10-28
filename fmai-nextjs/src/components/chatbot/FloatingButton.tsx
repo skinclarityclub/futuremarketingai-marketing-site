@@ -12,7 +12,7 @@ interface FloatingButtonProps {
  * Post-mount Clyde trigger rendered inside ChatWidget when the chat is
  * minimized. Matches ClydePresence so the identity stays consistent
  * before and after first interaction: same sparkle mark + "Clyde"
- * wordmark in a pill, expanding to "Clyde · nu online" on hover.
+ * wordmark in a pill.
  *
  * While the panel is open the trigger renders nothing: the panel header
  * carries its own close button, and the old circular X that stayed on
@@ -36,12 +36,6 @@ export function FloatingButton({
     >
       <LogoSynapse size={22} ariaLabel="" />
       <span className="font-display text-sm font-semibold tracking-tight">Clyde</span>
-      <span className="clyde-status overflow-hidden whitespace-nowrap text-sm text-text-secondary" data-visible="hover">
-        <span className="clyde-status-inner">
-          <span className="mx-1.5 text-text-faint">·</span>
-          nu online
-        </span>
-      </span>
       {hasUnread && (
         <span
           aria-hidden="true"

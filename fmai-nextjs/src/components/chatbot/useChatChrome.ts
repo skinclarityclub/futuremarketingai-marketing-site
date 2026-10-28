@@ -113,16 +113,12 @@ interface ChatChromeLabels {
   editAria: string
   regenerate: string
   regenerateAria: string
-  online: string
   memoryAria: string
   newChatAria: string
-  minimizeAria: string
   closeAria: string
   loading: string
   somethingWrong: string
   retry: string
-  inputSend: string
-  inputNewline: string
   aiLabel: string
   disclosure: string
   noAnswer: string
@@ -146,16 +142,12 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Bewerk dit bericht',
     regenerate: 'Opnieuw genereren',
     regenerateAria: 'Opnieuw genereren',
-    online: 'Nu online',
     memoryAria: 'Bekijk wat Clyde onthoudt',
     newChatAria: 'Nieuwe chat starten',
-    minimizeAria: 'Minimaliseer chat',
     closeAria: 'Sluit chat',
     loading: 'Laden...',
     somethingWrong: 'Er ging iets mis. Probeer het nog eens.',
     retry: 'Opnieuw',
-    inputSend: 'versturen',
-    inputNewline: 'nieuwe regel',
     aiLabel: 'AI',
     disclosure: 'Clyde is AI en kan zich vergissen.',
     noAnswer: 'Geen antwoord ontvangen',
@@ -177,16 +169,12 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Edit this message',
     regenerate: 'Regenerate',
     regenerateAria: 'Regenerate',
-    online: 'Online now',
     memoryAria: 'View what Clyde remembers',
     newChatAria: 'Start new chat',
-    minimizeAria: 'Minimize chat',
     closeAria: 'Close chat',
     loading: 'Loading...',
     somethingWrong: 'Something went wrong. Please try again.',
     retry: 'Retry',
-    inputSend: 'to send',
-    inputNewline: 'for a new line',
     aiLabel: 'AI',
     disclosure: 'Clyde is AI and can make mistakes.',
     noAnswer: 'No reply received',
@@ -208,16 +196,12 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Editar este mensaje',
     regenerate: 'Regenerar',
     regenerateAria: 'Regenerar',
-    online: 'En línea',
     memoryAria: 'Ver lo que Clyde recuerda',
     newChatAria: 'Iniciar nuevo chat',
-    minimizeAria: 'Minimizar chat',
     closeAria: 'Cerrar chat',
     loading: 'Cargando...',
     somethingWrong: 'Algo salió mal. Inténtalo de nuevo.',
     retry: 'Reintentar',
-    inputSend: 'para enviar',
-    inputNewline: 'nueva línea',
     aiLabel: 'IA',
     disclosure: 'Clyde es una IA y puede equivocarse.',
     noAnswer: 'No se recibió respuesta',
