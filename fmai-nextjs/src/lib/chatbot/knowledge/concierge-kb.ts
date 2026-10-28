@@ -223,7 +223,7 @@ Start at https://future-marketing.ai/nl/apply. Application reviewed by Daley wit
 
 **Email:**
 hello@future-marketing.ai
-Response within 24 hours on business days.
+Response within 48 hours on business days.
 
 **What to Expect:**
 - No sales pressure. We listen first

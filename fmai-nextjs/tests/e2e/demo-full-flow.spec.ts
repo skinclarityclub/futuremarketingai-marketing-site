@@ -75,7 +75,7 @@ async function waitForDemoStepComplete(page: Page) {
 // Helper: a tool result card is visible inside the conversation log
 async function hasResultCard(page: Page): Promise<boolean> {
   return await page
-    .locator('[data-chatwidget-panel] [role="log"] .border-border-primary')
+    .locator('[data-chatwidget-panel] [role="log"] [data-tool-card]')
     .last()
     .isVisible()
     .catch(() => false)

@@ -102,7 +102,7 @@ async function send(page: Page, text: string) {
 async function capture(page: Page, id: string, browserName: string) {
   const panel = page.locator('[data-chatwidget-panel]')
   const hasCard = await panel
-    .locator('[role="log"] .border-border-primary')
+    .locator('[role="log"] [data-tool-card]')
     .first()
     .isVisible()
     .catch(() => false)
