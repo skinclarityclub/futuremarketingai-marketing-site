@@ -1,6 +1,6 @@
 # Handover: Clyde-widget future-marketing.ai, baan 2, plan klaar (2026-10-28)
 
-**Commits:** `c407bf7`, lokaal in de worktree en niet gepusht
+**Commits:** `c407bf7` (plan) met daarboven de handover-commits, lokaal in de worktree en niet gepusht
 **Branch:** `chore/chatwidget-opschonen` in `C:/tmp/fmai-chatwidget-audit`, op basis van origin/main `8c42a42` (repo `skinclarityclub/futuremarketingai-marketing-site`)
 **Scope:** SOTA-onderzoek, screenshots, een presentatie met 6 voorstellen (Daley heeft ze goedgekeurd) en het implementatieplan voor de Clyde-widget op de site.
 
@@ -8,7 +8,7 @@
 
 ```
 Baan 2 van de chatbot-UX-audit: de Clyde-widget op future-marketing.ai. Dit is een vervolg.
-Je werkt in worktree C:/tmp/fmai-chatwidget-audit, branch chore/chatwidget-opschonen, HEAD c407bf7 (lokaal, niet gepusht).
+Je werkt in worktree C:/tmp/fmai-chatwidget-audit, branch chore/chatwidget-opschonen, met plan c407bf7 en daarboven de handover-commits, lokaal en niet gepusht.
 
 Lees eerst volledig:
 - deze handover;
