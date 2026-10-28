@@ -3579,10 +3579,7 @@
   },
   "chat": {
     "widget": {
-      "typeMessage": "Type a message...",
-      "demoLimitReached": "Demo limit reached",
-      "demoLimitMessage": "You've reached the demo limit.",
-      "demoLimitCta": "Book a call to continue the conversation."
+      "typeMessage": "Ask Clyde something…"
     }
   },
   "assessment": {

@@ -199,8 +199,8 @@ test.describe('Guided Demo — Orchestrator State', () => {
     await page.goto('/nl')
     await openChat(page)
 
-    // Suggested prompts include "Laat me een demo zien" on the homepage
-    const demoPrompt = page.getByRole('button', { name: /Laat me een demo zien/i })
+    // Suggested prompts include "Wat kost het?" on the homepage
+    const demoPrompt = page.getByRole('button', { name: /Wat kost het\?/i })
     await expect(demoPrompt).toBeVisible({ timeout: 5000 })
 
     const tourButton = page.getByRole('button', { name: /rondleiding/i })
@@ -227,7 +227,9 @@ test.describe('Guided Demo — End Demo Flow', () => {
     await expect(panel).toBeVisible({ timeout: 10000 })
 
     // Demo should still be in choosing mode
-    await expect(page.getByText('Kies een scenario om te verkennen:')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByText('Kies een scenario om te verkennen:')).toBeVisible({
+      timeout: 5000,
+    })
   })
 })
 

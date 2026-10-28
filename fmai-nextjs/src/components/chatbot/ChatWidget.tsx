@@ -13,9 +13,13 @@ import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
 import { SidePanel } from './SidePanel'
 import { useChatChrome } from './useChatChrome'
+import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
 import { getDemoScenarios } from './demo/scenarios'
+
+// One definition: below lg the panel is the whole screen and modal.
+const PHONE_QUERY = '(max-width: 1023px)'
 
 interface ChatWidgetProps {
   mode: 'floating' | 'embedded'
@@ -52,13 +56,14 @@ export function ChatWidget({
     error,
     messageCount,
     isAtLimit,
+    limit,
     stop,
     regenerate,
     setMessages,
   } = usePersonaChat(personaId, pageContext)
   const chrome = useChatChrome()
   const [editText, setEditText] = useState<string | undefined>(undefined)
-  const { isOpen, isMinimized, hasUnread, toggle, close, minimize, markRead } = useChatbotStore()
+  const { isOpen, hasUnread, toggle, close, markRead } = useChatbotStore()
   const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
   const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
   const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
@@ -83,13 +88,9 @@ export function ChatWidget({
 
   const handlePromptSelect = useCallback(
     (text: string) => {
-      if (text === 'Start guided demo') {
-        startDemo()
-        return
-      }
       handleSend(text)
     },
-    [handleSend, startDemo]
+    [handleSend]
   )
 
   /**
@@ -138,15 +139,26 @@ export function ChatWidget({
   // is ever live (cleanup clears the previous), so the greet fires exactly once.
   const hasGreeted = useRef(false)
   useEffect(() => {
-    if (mode !== 'floating' || !isFlagship || !isOpen || messages.length > 0 || hasGreeted.current || !welcomeMessage || demoMode) return
+    if (
+      mode !== 'floating' ||
+      !isFlagship ||
+      !isOpen ||
+      messages.length > 0 ||
+      hasGreeted.current ||
+      !welcomeMessage ||
+      demoMode
+    )
+      return
     const timer = setTimeout(() => {
       hasGreeted.current = true
-      setMessages?.([{
-        id: 'clyde-welcome',
-        role: 'assistant',
-        content: welcomeMessage,
-        parts: [{ type: 'text', text: welcomeMessage }],
-      } as UIMessage])
+      setMessages?.([
+        {
+          id: 'clyde-welcome',
+          role: 'assistant',
+          content: welcomeMessage,
+          parts: [{ type: 'text', text: welcomeMessage }],
+        } as UIMessage,
+      ])
     }, 400)
     return () => clearTimeout(timer)
   }, [isOpen, messages.length, welcomeMessage, setMessages, mode, isFlagship, demoMode])
@@ -154,7 +166,8 @@ export function ChatWidget({
   // Proactive follow-up: Clyde sends a message after 2 min of silence in active chat
   const hasSentFollowup = useRef(false)
   useEffect(() => {
-    if (!proactiveFollowupMessage || !isOpen || messages.length === 0 || hasSentFollowup.current) return
+    if (!proactiveFollowupMessage || !isOpen || messages.length === 0 || hasSentFollowup.current)
+      return
     const lastMsg = messages[messages.length - 1]
     if (lastMsg.role === 'user' || status === 'streaming' || status === 'submitted') return
     const timer = setTimeout(() => {
@@ -185,33 +198,106 @@ export function ChatWidget({
   // Below lg the panel covers the whole screen, so the page behind it must not
   // scroll along with a swipe in the chat. Desktop keeps the page scrollable
   // next to the card.
+  const [isPhone, setIsPhone] = useState(false)
   useEffect(() => {
-    if (mode !== 'floating' || !isOpen || isMinimized) return
-    if (!window.matchMedia('(max-width: 1023px)').matches) return
+    const mq = window.matchMedia(PHONE_QUERY)
+    const sync = () => setIsPhone(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
+  // aria-modal only holds when the page behind is really inert, so the same
+  // effect makes header, #main and footer inert. The cookie banner stays
+  // interactive: it sits above the phone panel (z-9999).
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen) return
+    if (!window.matchMedia(PHONE_QUERY).matches) return
     const previous = document.documentElement.style.overflow
     document.documentElement.style.overflow = 'hidden'
+    const page = document.querySelectorAll<HTMLElement>('header, #main, footer')
+    page.forEach((el) => el.setAttribute('inert', ''))
     return () => {
       document.documentElement.style.overflow = previous
+      page.forEach((el) => el.removeAttribute('inert'))
     }
-  }, [mode, isOpen, isMinimized])
+  }, [mode, isOpen, isPhone])
+
+  // Below lg the panel is modal (aria-modal), so Tab must not leave it.
+  const handlePanelKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key !== 'Tab' || !isPhone) return
+      const items = Array.from(
+        e.currentTarget.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
+      if (items.length === 0) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      const active = document.activeElement
+      if (e.shiftKey && (active === first || !e.currentTarget.contains(active))) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && (active === last || !e.currentTarget.contains(active))) {
+        e.preventDefault()
+        first.focus()
+      }
+    },
+    [isPhone]
+  )
+
+  // Only the visitor's own close (Escape, X) hands focus back to the launcher. A
+  // route change also closes the chat (island), and there focus must stay on the new page.
+  const closeAndRestoreFocus = useCallback(() => {
+    close()
+    requestAnimationFrame(() =>
+      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus()
+    )
+  }, [close])
 
   useEffect(() => {
-    if (mode !== 'floating' || !isOpen || isMinimized) return
+    if (mode !== 'floating' || !isOpen) return
     const timer = setTimeout(() => {
       const textarea = document.querySelector<HTMLTextAreaElement>(
         '[data-chatwidget-panel] textarea'
       )
       textarea?.focus()
     }, 300)
+    return () => clearTimeout(timer)
+  }, [mode, isOpen])
+
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key !== 'Escape') return
+      // Desktop is non-modal: Escape elsewhere on the page is not ours.
+      const panel = document.querySelector('[data-chatwidget-panel]')
+      if (!isPhone && !panel?.contains(document.activeElement)) return
+      closeAndRestoreFocus()
     }
     document.addEventListener('keydown', handleKeyDown)
-    return () => {
-      clearTimeout(timer)
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [mode, isOpen, isMinimized, close])
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [mode, isOpen, isPhone, closeAndRestoreFocus])
+
+  // The composer (or, once it is disabled, the apply link) keeps focus inside the
+  // modal when the element that had it disappears: Opnieuw clicked, limit reached.
+  const focusComposer = useCallback(() => {
+    requestAnimationFrame(() => {
+      const panel = document.querySelector('[data-chatwidget-panel]')
+      const target =
+        panel?.querySelector<HTMLElement>('textarea:not([disabled])') ??
+        panel?.querySelector<HTMLElement>('[data-chat-apply]')
+      target?.focus()
+    })
+  }, [])
+
+  useEffect(() => {
+    if (mode !== 'floating' || !isOpen || !isAtLimit) return
+    // Only when focus was dropped (body) or is stuck on the now-disabled composer.
+    const active = document.activeElement
+    if (active === document.body || active?.tagName === 'TEXTAREA') focusComposer()
+  }, [mode, isOpen, isAtLimit, focusComposer])
 
   const showPrompts =
     messages.length === 0 &&
@@ -231,46 +317,34 @@ export function ChatWidget({
     !isAtLimit &&
     !demoMode
 
-  // A failed turn used to be invisible: the user's bubble sat there and nothing
-  // followed (measured with an empty Anthropic balance: every message errored,
-  // the widget showed no sign). Surface it where the reply would have been.
-  const errorBanner = error && !isAtLimit && (
-    <div
-      role="alert"
-      className="mx-4 mb-2 flex items-center justify-between gap-3 rounded-xl border border-error/25 bg-error/[0.08] px-3 py-2 text-xs text-text-primary"
-    >
-      <span>{chrome.somethingWrong}</span>
-      {regenerate && (
-        <button
-          type="button"
-          onClick={() => regenerate()}
-          className="shrink-0 rounded-md px-2 py-1 font-medium text-accent-system transition-colors hover:bg-accent-system/10"
-        >
-          {chrome.retry}
-        </button>
-      )}
-    </div>
+  // The limit and error states speak in the footer and under the question, not in banners.
+  const applyLink = (
+    <Link href="/apply" data-chat-apply className="font-medium text-accent-system hover:underline">
+      {chrome.applyCta}
+    </Link>
   )
-
-  const limitBanner = isAtLimit && (
-    <div className="border-t border-border-primary bg-bg-elevated/80 px-4 py-3 text-center">
-      <p className="text-xs text-text-secondary">
-        {t('demoLimitMessage')}{' '}
-        <Link href="/contact" className="font-medium text-accent-system hover:underline">
-          {t('demoLimitCta')}
-        </Link>
-      </p>
-    </div>
-  )
+  const footer = limit.atLimit ? (
+    <>
+      {chrome.limitReached} {chrome.keepTalking} {applyLink}
+    </>
+  ) : limit.warn ? (
+    <>
+      <span className="text-accent-human">{chrome.limitWarning(limit.remaining)}</span>{' '}
+      <span className="text-text-faint">{chrome.keepTalking}</span> {applyLink}
+    </>
+  ) : undefined
+  const failure = classifyChatError(error)
+  const inputPlaceholder = isAtLimit ? chrome.limitReached : t('typeMessage')
 
   if (mode === 'floating') {
     return (
       <>
-        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen && !isMinimized} />
+        <FloatingButton onClick={toggle} hasUnread={hasUnread} isOpen={isOpen} />
         <AnimatePresence>
-          {isOpen && !isMinimized && (
+          {isOpen && (
             <motion.div
               data-chatwidget-panel
+              onKeyDown={handlePanelKeyDown}
               initial={{ opacity: 0, y: 12, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.98, transition: { duration: 0.15 } }}
@@ -288,7 +362,7 @@ export function ChatWidget({
               className="fixed z-[60] inset-0 flex h-[100dvh] w-full overflow-hidden bg-bg-surface lg:inset-auto lg:right-6 lg:bottom-6 lg:h-[min(720px,calc(100dvh-6rem))] lg:w-auto lg:rounded-2xl lg:border lg:border-white/[0.08] lg:bg-bg-surface/85 lg:backdrop-blur-2xl"
               role="dialog"
               aria-label={`Chat met ${personaName || 'Clyde'}`}
-              aria-modal="true"
+              aria-modal={isPhone ? 'true' : undefined}
             >
               {isFlagship && (
                 <SidePanel
@@ -304,8 +378,7 @@ export function ChatWidget({
                   mode="floating"
                   messageCount={messageCount}
                   messageLimit={messageLimit}
-                  onMinimize={minimize}
-                  onClose={close}
+                  onClose={closeAndRestoreFocus}
                   onNewChat={handleNewChat}
                   hasMessages={messages.length > 0}
                   badge={demoMode ? 'Demo' : undefined}
@@ -325,6 +398,15 @@ export function ChatWidget({
                   suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
                   onPromptSelect={handlePromptSelect}
                   onRegenerate={regenerate ? () => regenerate() : undefined}
+                  failure={failure}
+                  onRetry={
+                    regenerate
+                      ? () => {
+                          regenerate()
+                          focusComposer()
+                        }
+                      : undefined
+                  }
                   onEditMessage={handleEditMessage}
                   inlinePrompts={showInlinePrompts ? suggestedPrompts : undefined}
                   onInlinePromptSelect={handlePromptSelect}
@@ -334,14 +416,13 @@ export function ChatWidget({
                   messageCount={messages.length}
                   onSendMessage={handleSend}
                 />
-                {errorBanner}
-                {limitBanner}
                 <ChatInput
                   onSend={handleSend}
                   onStop={stop}
                   disabled={isAtLimit}
                   isLoading={status === 'submitted' || status === 'streaming'}
-                  placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+                  placeholder={inputPlaceholder}
+                  footer={footer}
                   initialText={editText}
                 />
               </div>
@@ -378,6 +459,8 @@ export function ChatWidget({
         suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
         onPromptSelect={handlePromptSelect}
         onRegenerate={regenerate ? () => regenerate() : undefined}
+        failure={failure}
+        onRetry={regenerate ? () => regenerate() : undefined}
         onEditMessage={handleEditMessage}
       />
       <DemoOrchestrator
@@ -385,14 +468,13 @@ export function ChatWidget({
         messageCount={messages.length}
         onSendMessage={handleSend}
       />
-      {errorBanner}
-      {limitBanner}
       <ChatInput
         onSend={handleSend}
         onStop={stop}
         disabled={isAtLimit}
         isLoading={status === 'submitted' || status === 'streaming'}
-        placeholder={isAtLimit ? t('demoLimitReached') : t('typeMessage')}
+        placeholder={inputPlaceholder}
+        footer={footer}
         initialText={editText}
       />
     </div>

@@ -6,8 +6,8 @@ import { useEffect, useMemo, useRef } from 'react'
 import { useLocale } from 'next-intl'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import type { MemoryProfile } from '@/lib/chatbot/memory'
+import { limitState } from '@/lib/chatbot/message-limit'
 
-const DEMO_MESSAGE_LIMIT = 15
 const FLAGSHIP_PERSONA_ID = 'flagship'
 
 export function usePersonaChat(personaId: string, pageContext?: { pathname: string }) {
@@ -75,17 +75,17 @@ export function usePersonaChat(personaId: string, pageContext?: { pathname: stri
   const chat = useChat({
     id: `chat-${personaId}`,
     transport,
-    onFinish: () => {
-      incrementMessageCount(personaId)
+    // The SDK also calls onFinish on error; a failed attempt is not a reply. An abort still counts.
+    onFinish: ({ isError }) => {
+      if (!isError) incrementMessageCount(personaId)
     },
     onError: (error) => {
       console.error(`[chat-${personaId}] error:`, error)
     },
   })
 
-  return {
-    ...chat,
-    messageCount,
-    isAtLimit: personaId === FLAGSHIP_PERSONA_ID ? false : messageCount >= DEMO_MESSAGE_LIMIT,
-  }
+  // The flagship has no limit: count 0 keeps warn and atLimit false.
+  const limit = limitState(personaId === FLAGSHIP_PERSONA_ID ? 0 : messageCount)
+
+  return { ...chat, messageCount, limit, isAtLimit: limit.atLimit }
 }

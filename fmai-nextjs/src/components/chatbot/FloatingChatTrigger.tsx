@@ -1,11 +1,14 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import { useLocale } from 'next-intl'
 import { usePathname } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { useIdleEngagement } from '@/hooks/useIdleEngagement'
 import { ClydePresence } from './ClydePresence'
+import { WHISPERS } from './widget-copy'
+import type { ChatLocale } from './useChatChrome'
 
 /**
  * FloatingChatTrigger -- Minimal placeholder that lazy-imports the full
@@ -29,45 +32,59 @@ const ChatWidgetIsland = dynamic(
   { ssr: false, loading: () => null }
 )
 
-/**
- * Page-aware whispers shown after 20s of scroll-idle. Tone: senior
- * Dutch colleague making a statement, not a chatbot asking "how can I
- * help?". Mirrors the path keys from ChatWidgetIsland.WELCOME_MESSAGES.
- */
-const WHISPERS: Record<string, string> = {
-  '/': 'Vraag me wat.',
-  '/skills/voice-agent': 'Telefoon? Ik laat het zien.',
-  '/skills/social-media': 'Content-kalender nodig?',
-  '/skills/lead-qualifier': 'Dit is wat je klanten krijgen.',
-  '/skills/ad-manager': 'Brief? Ik maak varianten.',
-  '/skills/email-management': 'Inbox-classificatie tonen?',
-  '/skills/reporting': 'Een weekrapport laten zien?',
-  '/pricing': 'ROI berekenen.',
-  '/apply': 'Vraag voor je invult?',
-  '/about': 'Vraag maar.',
+function canWhisper(): boolean {
+  if (typeof window === 'undefined') return false
+  if (window.matchMedia('(max-width: 639px)').matches) return false
+  try {
+    return !sessionStorage.getItem('clyde:whispered')
+  } catch {
+    return true
+  }
 }
 
 export function FloatingChatTrigger() {
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+  const rawLocale = useLocale()
+  const locale: ChatLocale = rawLocale === 'en' || rawLocale === 'es' ? rawLocale : 'nl'
   const idleStage = useIdleEngagement()
   const hasUnread = useChatbotStore((state) => state.hasUnread)
 
+  // One hint per browser session, never on phones. The whisper element is mounted (hidden)
+  // from the start so it can transition, hence browser state is read after hydration.
+  const [whisperAllowed, setWhisperAllowed] = useState(false)
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage/matchMedia exist only after hydration
+  useEffect(() => setWhisperAllowed(canWhisper()), [])
+  // Once the whisper has shown and folded away it stays away, also across SPA navigation.
+  const [prevStage, setPrevStage] = useState(idleStage)
+  const [whisperSpent, setWhisperSpent] = useState(false)
+  if (idleStage !== prevStage) {
+    setPrevStage(idleStage)
+    if (prevStage === 'whispering') setWhisperSpent(true)
+  }
+  const showWhisper = whisperAllowed && !whisperSpent
+  useEffect(() => {
+    if (idleStage !== 'whispering' || !showWhisper) return
+    try {
+      sessionStorage.setItem('clyde:whispered', '1')
+    } catch {}
+  }, [idleStage, showWhisper])
+
   const handleOpen = useCallback(() => {
     void useChatbotStore.persist.rehydrate()
-    useChatbotStore.setState({ isOpen: true, isMinimized: false })
+    useChatbotStore.setState({ isOpen: true })
     setMounted(true)
   }, [])
 
   if (mounted) return <ChatWidgetIsland />
 
-  const whisper = WHISPERS[pathname] ?? WHISPERS['/']
+  const whisper = WHISPERS[locale][pathname] ?? WHISPERS[locale]['/']
 
   return (
     <ClydePresence
       onClick={handleOpen}
-      whisper={whisper}
-      idleStage={idleStage}
+      whisper={showWhisper ? whisper : ''}
+      idleStage={idleStage === 'whispering' && !showWhisper ? 'noticed' : idleStage}
       hasUnread={hasUnread}
     />
   )

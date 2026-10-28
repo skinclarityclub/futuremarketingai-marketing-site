@@ -3579,10 +3579,7 @@
   },
   "chat": {
     "widget": {
-      "typeMessage": "Typ een bericht...",
-      "demoLimitReached": "Demolimiet bereikt",
-      "demoLimitMessage": "Je hebt de demolimiet bereikt.",
-      "demoLimitCta": "Plan een gesprek om verder te praten."
+      "typeMessage": "Vraag Clyde iets…"
     }
   },
   "assessment": {

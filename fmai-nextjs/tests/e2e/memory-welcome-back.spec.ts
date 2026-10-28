@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test'
 import { welcomeBackMessage } from '../../src/components/chatbot/welcome-back'
 
+const AI_WORD = { nl: /\bAI\b/, en: /\bAI\b/, es: /\bIA\b/ } as const
+
 // Pure-logic spec (no browser, no API). Verifies the localized welcome-back line.
 test('null without agencyName', () => {
   expect(welcomeBackMessage('nl', {})).toBeNull()
@@ -13,6 +15,7 @@ test('localized greetings, no em-dashes', () => {
     const m = welcomeBackMessage(loc, p)!
     expect(m).toContain('Duinrust')
     expect(m).not.toContain('—')
+    expect(m).toMatch(AI_WORD[loc])
   }
   expect(welcomeBackMessage('nl', p)).toContain('horeca')
   expect(welcomeBackMessage('es', p)).toContain('marcas')

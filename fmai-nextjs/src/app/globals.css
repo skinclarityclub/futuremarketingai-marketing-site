@@ -589,9 +589,8 @@ body::-webkit-scrollbar-corner {
  * Clyde concierge entry-point — horizontal name-pill with sparkle mark
  * + "Clyde" wordmark. Reads as a colleague's name tag, not a chatbot.
  *   - Default: "✦ Clyde"
- *   - On hover: pill expands to "✦ Clyde · nu online"
  *   - On 20s scroll-idle (data-stage="whispering"): expands with a
- *     page-aware whisper instead of the generic status
+ *     page-aware whisper
  * All motion gated behind prefers-reduced-motion: no-preference; the
  * static fallback shows status text inline at all times.
  */
@@ -600,25 +599,20 @@ body::-webkit-scrollbar-corner {
   100% { box-shadow: var(--shadow-glow-lg), 0 0 24px rgba(0, 212, 170, 0.35); }
 }
 
-/* Status text -- collapsed by default, expands on hover or while whispering */
+/* Status text -- collapsed by default, expands while whispering */
 .clyde-status {
   max-width: 0;
   opacity: 0;
   transition: max-width 320ms ease-out, opacity 220ms ease-out 60ms;
 }
-.clyde-fab:hover .clyde-status[data-visible='hover'],
-.clyde-fab:focus-visible .clyde-status[data-visible='hover'],
 .clyde-fab[data-stage='whispering'] .clyde-status {
   max-width: 240px;
   opacity: 1;
 }
 
-/* Reduced-motion: status text is always visible so the pill never
-   silently changes width during interaction. */
+/* Reduced-motion: the whisper appears without the width/opacity transition. */
 @media (prefers-reduced-motion: reduce) {
   .clyde-status {
-    max-width: 240px;
-    opacity: 1;
     transition: none;
   }
 }

@@ -12,6 +12,8 @@ interface ChatInputProps {
   placeholder?: string
   /** Optional initial text (used by edit-message flow). */
   initialText?: string
+  /** Replaces the disclosure text in the single footer row (e.g. the limit text). */
+  footer?: React.ReactNode
 }
 
 /**
@@ -36,10 +38,11 @@ export function ChatInput({
   isLoading = false,
   placeholder = 'Typ een bericht...',
   initialText,
+  footer,
 }: ChatInputProps) {
   const [input, setInput] = useState(initialText ?? '')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const { inputSend, inputNewline } = useChatChrome()
+  const { disclosure, inputAria, sendAria, stopAria, answeringAria } = useChatChrome()
 
   // External edit-flow can push a value into the input. Replace the
   // current text (we don't merge -- the consumer owns the intent) and
@@ -84,8 +87,7 @@ export function ChatInput({
       // Enter (without shift) sends; Shift+Enter inserts newline
       // Cmd/Ctrl+Enter also sends (matches ChatGPT/Claude conventions)
       const submitCombo =
-        (e.key === 'Enter' && !e.shiftKey) ||
-        (e.key === 'Enter' && (e.metaKey || e.ctrlKey))
+        (e.key === 'Enter' && !e.shiftKey) || (e.key === 'Enter' && (e.metaKey || e.ctrlKey))
       if (submitCombo) {
         e.preventDefault()
         handleSend()
@@ -108,15 +110,15 @@ export function ChatInput({
           placeholder={placeholder}
           disabled={disabled}
           rows={1}
-          aria-label="Typ een bericht voor Clyde"
-          className="w-full resize-none bg-transparent px-3 py-2 text-base leading-relaxed lg:text-sm text-text-primary outline-none placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
+          aria-label={inputAria}
+          className="w-full resize-none bg-transparent px-3 py-2 text-base leading-relaxed lg:text-sm text-text-primary outline-none focus-visible:outline-none! placeholder:text-text-quiet disabled:cursor-not-allowed disabled:opacity-50"
         />
         {isLoading && onStop ? (
           <button
             type="button"
             onClick={onStop}
-            aria-label="Stop generatie"
-            className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-bg-elevated text-text-primary shadow-sm transition-all duration-200 hover:bg-error/15 hover:text-error focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-error"
+            aria-label={stopAria}
+            className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-bg-elevated text-text-primary shadow-sm transition-all duration-200 hover:bg-error/15 hover:text-error focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-error"
           >
             <Square className="h-3.5 w-3.5 fill-current" />
           </button>
@@ -125,23 +127,21 @@ export function ChatInput({
             type="button"
             onClick={handleSend}
             aria-disabled={isInactive}
-            aria-label={isLoading ? 'Clyde antwoordt...' : 'Verstuur bericht'}
+            aria-label={isLoading ? answeringAria : sendAria}
             tabIndex={isInactive ? -1 : 0}
             className={
               isInactive
-                ? 'flex h-9 w-9 shrink-0 cursor-not-allowed items-center justify-center rounded-xl bg-bg-elevated text-text-faint transition-all duration-200'
-                : 'flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-accent-system text-bg-deep shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-[var(--shadow-glow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system'
+                ? 'flex h-10 w-10 shrink-0 cursor-not-allowed items-center justify-center rounded-xl bg-bg-elevated text-text-faint transition-all duration-200'
+                : 'flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl bg-accent-system text-bg-deep shadow-sm transition-all duration-200 hover:scale-105 hover:shadow-[var(--shadow-glow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system'
             }
           >
             <ArrowUp className="h-4 w-4" strokeWidth={2.5} />
           </button>
         )}
       </div>
-      <div className="mt-1.5 hidden items-center justify-between px-2 text-[10px] text-text-faint [@media(hover:hover)_and_(pointer:fine)]:flex">
-        <span>
-          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Enter</kbd> {inputSend} ·{' '}
-          <kbd className="rounded bg-bg-elevated px-1 py-0.5 font-mono">Shift+Enter</kbd> {inputNewline}
-        </span>
+      {/* One row: disclosure left, slot right (Task 9 puts the memory chip there). */}
+      <div className="mt-1.5 flex items-center justify-between gap-2 px-2 text-[11px] text-text-faint">
+        <span>{footer ?? disclosure}</span>
       </div>
     </div>
   )
