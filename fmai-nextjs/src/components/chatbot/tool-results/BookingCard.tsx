@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
-import { Clock, MessageCircle, ShieldCheck } from "lucide-react";
-import { Link } from "@/i18n/navigation";
-import { useChatbotStore } from "@/stores/chatbotStore";
-import { useChatChrome } from "../useChatChrome";
-import { useCardCopy } from "./cardI18n";
-import { CardShell, CardTitle } from "./CardShell";
+import { Clock, MessageCircle, ShieldCheck } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
+import { useChatbotStore } from '@/stores/chatbotStore'
+import { useChatChrome } from '../useChatChrome'
+import { useCardCopy } from './cardI18n'
+import { CardShell, CardTitle } from './CardShell'
 
 export interface BookingCardData {
-  action: string;
-  url: string;
-  reason?: string;
+  action: string
+  url: string
+  reason?: string
 }
 
 // The tool's `reason` is a machine label ("kennismaking"), not copy, so it is not shown.
 export function BookingCard() {
-  const { t } = useCardCopy();
-  const { applyCta } = useChatChrome();
-  const close = useChatbotStore((s) => s.close);
+  const { t } = useCardCopy()
+  const { applyCta } = useChatChrome()
+  const close = useChatbotStore((s) => s.close)
   const trustSignals = [
     { icon: MessageCircle, label: t.trustPersonal },
     { icon: Clock, label: t.trustResponse },
     { icon: ShieldCheck, label: t.trustNoStrings },
-  ];
+  ]
 
   return (
     <CardShell>
@@ -30,10 +30,7 @@ export function BookingCard() {
       <ul className="flex list-none flex-col gap-1 p-0">
         {trustSignals.map(({ icon: Icon, label }) => (
           <li key={label} className="flex items-center gap-2">
-            <Icon
-              className="h-3.5 w-3.5 shrink-0 text-accent-system/70"
-              aria-hidden
-            />
+            <Icon className="h-3.5 w-3.5 shrink-0 text-accent-system/70" aria-hidden />
             {label}
           </li>
         ))}
@@ -47,7 +44,7 @@ export function BookingCard() {
         {applyCta}
       </Link>
     </CardShell>
-  );
+  )
 }
 
-export default BookingCard;
+export default BookingCard
