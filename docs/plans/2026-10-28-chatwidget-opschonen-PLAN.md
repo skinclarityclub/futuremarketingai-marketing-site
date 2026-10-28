@@ -322,6 +322,18 @@ test('warning at 3 left, full at 15, link goes to /nl/apply', async ({ page }) =
   - look at every shot yourself.
 - [ ] **Step 4:** Only on Daley's yes: push `chore/chatwidget-opschonen` and open the PR with title `fix(chatbot): Clyde widget says it is AI, honest limit, errors at the question`.
 
+### Deviations during execution (PR 1, 2026-10-28)
+
+Where the code differs from the task text above, the boards (spec) or a review finding won:
+- **Footer:** one row under the input (left: disclosure or limit text; right: slot for the Task 9 chip). The keyboard-hint row is gone everywhere (board `make-boards.mjs:28-32`).
+- **Launcher:** the hover "nu online" is gone too (`index-fmai.html:149` calls it a human signal).
+- **Prompts:** page-specific lists dropped their trailing "Plan een gesprek" chip to reach 3. The floating greeting shows them as one column of 40px rows with the tour link "Of volg een korte rondleiding →" under them (board 1).
+- **Failure line:** red with an icon, "Opnieuw" with a 40px hit area (board 5). A 400 rejection (personal data, too long) gets its own line without retry (`rejectedPersonal`, `rejectedTooLong`). Failed attempts do not count toward the 15.
+- **Warn state:** warning + "Verder praten?" + apply link (board 6). The placeholder is "Vraag Clyde iets…".
+- **Phone modal:** `inert` on header, `#main` and footer, but not on the cookie banner (`sota-fmai.md:168,179`). Focus returns to the launcher only after the visitor's own close (X, or Escape inside the panel), not after a route change.
+- **Lint gate:** "no new errors". `npm run lint` already fails on 8c42a42, with errors in files outside this plan.
+- **Test server:** browser specs run against this worktree's dev server on :3123 with `--workers=2`.
+
 ---
 
 ## PR 2: kaarten in het gesprek (proposals 2, 3, 4)
