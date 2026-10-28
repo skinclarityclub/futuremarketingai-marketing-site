@@ -363,7 +363,7 @@ export function ChatMessages({
     (chip: string) => {
       sendChatMessage(chip)
     },
-    [sendChatMessage],
+    [sendChatMessage]
   )
 
   const isEmpty = messages.length === 0
@@ -426,7 +426,7 @@ export function ChatMessages({
                     <div key={gi} className="w-full">
                       <ToolResultRenderer part={g.part} />
                     </div>
-                  ),
+                  )
                 )}
                 {!isUser && isLastAssistant && lastFollowUpChips && (
                   <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />

@@ -113,14 +113,14 @@ export function ChatWidget({
       if (isAtLimit) return
       sendMessage({ text })
     },
-    [isAtLimit, sendMessage],
+    [isAtLimit, sendMessage]
   )
 
   const handlePromptSelect = useCallback(
     (text: string) => {
       handleSend(text)
     },
-    [handleSend],
+    [handleSend]
   )
 
   /**
@@ -143,7 +143,7 @@ export function ChatWidget({
       // controlled component again.
       setTimeout(() => setEditText(undefined), 0)
     },
-    [messages, setMessages, stop],
+    [messages, setMessages, stop]
   )
 
   const handleNewChat = useCallback(() => {
@@ -258,8 +258,8 @@ export function ChatWidget({
       if (e.key !== 'Tab' || !isPhone) return
       const items = Array.from(
         e.currentTarget.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        ),
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
       ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
       if (items.length === 0) return
       const first = items[0]
@@ -273,7 +273,7 @@ export function ChatWidget({
         first.focus()
       }
     },
-    [isPhone],
+    [isPhone]
   )
 
   // Only the visitor's own close (Escape, X) hands focus back to the launcher. A
@@ -281,17 +281,18 @@ export function ChatWidget({
   const closeAndRestoreFocus = useCallback(() => {
     close()
     requestAnimationFrame(() =>
-      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus(),
+      document.querySelector<HTMLElement>('[data-clyde-launcher]')?.focus()
     )
   }, [close])
 
   useEffect(() => {
     if (mode !== 'floating' || !isOpen) return
     const timer = setTimeout(() => {
-      const textarea = document.querySelector<HTMLTextAreaElement>(
-        '[data-chatwidget-panel] textarea',
-      )
-      textarea?.focus()
+      const panel = document.querySelector<HTMLElement>('[data-chatwidget-panel]')
+      // The visitor may already be inside the panel (chip, sheet) within these 300ms:
+      // stealing focus back to the composer would undo what they just did.
+      if (panel?.contains(document.activeElement)) return
+      panel?.querySelector<HTMLTextAreaElement>('textarea')?.focus()
     }, 300)
     return () => clearTimeout(timer)
   }, [mode, isOpen])
