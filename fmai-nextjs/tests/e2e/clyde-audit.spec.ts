@@ -64,15 +64,13 @@ async function sendToClyde(page: Page, text: string) {
   await page.waitForTimeout(900)
 }
 
-/** Desktop sidebar title (next to the back/close button in the panel header). */
-async function sidebarTitle(page: Page): Promise<string | null> {
-  const back = page.locator('button[aria-label="Close details panel"]').first()
-  if (!(await back.isVisible().catch(() => false))) return null
-  return (await back.locator('..').locator('span').first().textContent())?.trim() ?? null
+/** A tool result renders as a bordered card inside the conversation log. */
+function resultCard(page: Page) {
+  return page.locator('[data-chatwidget-panel] [role="log"] [data-tool-card]:not([data-tool-card="remember_context"])').first()
 }
 
-function hasSidebar(page: Page) {
-  return page.locator('button[aria-label="Close details panel"]').first().isVisible()
+function hasCard(page: Page) {
+  return resultCard(page).isVisible()
 }
 
 // ── Chrome tests (no API key) ────────────────────────────────────────────────
@@ -96,11 +94,10 @@ test.describe('Clyde audit — chrome (no API key)', () => {
 test.describe('Clyde audit — live conversation', () => {
   test.skip(!LIVE, 'Set RUN_CLYDE_LIVE=1 and provide ANTHROPIC_API_KEY to run')
 
-  test('T1: skills → ServiceCard, dynamic title "Onze vaardigheden" (F1)', async ({ page }) => {
+  test('T1: skills → ServiceCard inline in the chat (F1)', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Welke vaardigheden hebben jullie?')
-    await expect(page.locator('button[aria-label="Close details panel"]').first()).toBeVisible()
-    expect(await sidebarTitle(page)).toBe('Onze vaardigheden')
+    await expect(resultCard(page)).toBeVisible()
     await expect(page.locator('[data-chatwidget-panel]')).not.toContainText('CHIPS:')
   })
 
@@ -110,26 +107,27 @@ test.describe('Clyde audit — live conversation', () => {
     const newChat = page.locator('button[aria-label="Nieuwe chat starten"]')
     await expect(newChat).toBeVisible()
     await newChat.click()
-    await expect(page.locator('button[aria-label="Close details panel"]')).toHaveCount(0)
+    await expect(resultCard(page)).toHaveCount(0)
     await expect(page.locator('[data-chatwidget-panel] textarea')).toBeVisible()
   })
 
-  test('T2: pricing → title "Tarieven"', async ({ page }) => {
+  test('T2: pricing → card inline in the chat', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Wat kost het voor 4 merken?')
-    expect(await sidebarTitle(page)).toBe('Tarieven')
+    await expect(resultCard(page)).toBeVisible()
   })
 
-  test('T9: qualify_lead → title "Jouw match" (F4 regression)', async ({ page }) => {
+  test('T9: qualify_lead → no card, no score shown (F4 regression)', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Kwalificeer mij: 50 medewerkers, 5000 euro budget, ik ben de beslisser')
-    expect(await sidebarTitle(page)).toBe('Jouw match')
+    expect(await hasCard(page)).toBe(false)
+    await expect(page.getByText(/LEAD SCORE|HOT/i)).toHaveCount(0)
   })
 
-  test('T6: honest-fit → no sidebar, chips, no raw CHIPS line', async ({ page }) => {
+  test('T6: honest-fit → no card, chips, no raw CHIPS line', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Voor wie werkt dit niet?')
-    expect(await hasSidebar(page)).toBe(false)
+    expect(await hasCard(page)).toBe(false)
     const txt = await page.locator('[data-chatwidget-panel]').innerText()
     expect(txt).not.toContain('CHIPS:')
     expect(txt.toLowerCase()).toContain('vraag verder') // follow-up chips rendered
@@ -138,13 +136,13 @@ test.describe('Clyde audit — live conversation', () => {
   test('GUARD: skincare product query does NOT open a ProductCard (F3)', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Ik zoek een goed product voor mijn droge huid')
-    expect(await hasSidebar(page)).toBe(false)
+    expect(await hasCard(page)).toBe(false)
   })
 
   test('GUARD: password reset does NOT create a support ticket card (F3)', async ({ page }) => {
     await openClyde(page)
     await sendToClyde(page, 'Hoe reset ik mijn wachtwoord?')
-    expect(await hasSidebar(page)).toBe(false)
+    expect(await hasCard(page)).toBe(false)
     await expect(page.locator('[data-chatwidget-panel]')).not.toContainText('Ticket created')
   })
 })

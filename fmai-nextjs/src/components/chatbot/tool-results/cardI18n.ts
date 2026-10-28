@@ -3,17 +3,21 @@
 import { useLocale } from 'next-intl'
 
 /**
- * Locale-aware copy + formatting for the chatbot sidebar cards.
+ * Locale-aware copy + formatting for the chatbot cards.
  *
  * Card DATA (pricing, case study, recommendations) is localized server-side in
  * the tool layer. This module localizes the card CHROME (headers, labels, CTAs)
- * and number/period formatting so the sidebar reads fully in the visitor's
+ * and number/period formatting so the chat reads fully in the visitor's
  * language on /nl, /en and /es. NL is the source of truth.
  */
 
 export type CardLocale = 'nl' | 'en' | 'es'
 
-const INTL_LOCALE: Record<CardLocale, string> = { nl: 'nl-NL', en: 'en-US', es: 'es-ES' }
+const INTL_LOCALE: Record<CardLocale, string> = {
+  nl: 'nl-NL',
+  en: 'en-US',
+  es: 'es-ES',
+}
 
 function normalize(value: string): CardLocale {
   return value === 'en' || value === 'es' ? value : 'nl'
@@ -22,144 +26,83 @@ function normalize(value: string): CardLocale {
 interface CardCopy {
   pricingHeader: string
   skillsHeader: string
-  viewSkill: string
-  bookCall: string
   popular: string
   comingSoon: string
   roiHeader: string
-  recommendation: string
-  assessmentFactors: string
-  keyFactors: string
-  leadScore: string
   monthlySavings: string
-  annualSavings: string
-  hoursBack: string
-  hoursSavedPerMonth: string
-  laborSavings: string
-  toolSavings: string
-  implementationTime: string
   roi: string
   payback: string
-  teamSize: string
-  roiCta: string
-  tellMeMorePrefix: string
-  caseChallenge: string
-  caseSolution: string
-  caseResults: string
   readCase: string
-  similarResults: string
+  allSkills: string
+  allPricing: string
   bookingTitle: string
   bookingSubtitle: string
   trustPersonal: string
   trustResponse: string
   trustNoStrings: string
+  assumptions: (hoursPerWeek: number, subscription: string) => string
 }
 
 const COPY: Record<CardLocale, CardCopy> = {
   nl: {
     pricingHeader: 'Tarieven',
     skillsHeader: 'Onze vaardigheden',
-    viewSkill: 'Bekijk vaardigheid',
-    bookCall: 'Plan een gesprek',
     popular: 'Populair',
     comingSoon: 'Binnenkort',
     roiHeader: 'ROI berekening',
-    recommendation: 'Aanbeveling',
-    assessmentFactors: 'Beoordelingsfactoren',
-    keyFactors: 'Sleutelfactoren',
-    leadScore: 'Lead score',
     monthlySavings: 'Maandelijkse besparing',
-    annualSavings: 'Jaarlijkse besparing',
-    hoursBack: 'Uren terug/mnd',
-    hoursSavedPerMonth: 'Uren bespaard/mnd',
-    laborSavings: 'Loonbesparing/mnd',
-    toolSavings: 'Toolbesparing/mnd',
-    implementationTime: 'Implementatietijd',
     roi: 'ROI',
     payback: 'Terugverdientijd',
-    teamSize: 'Teamgrootte',
-    roiCta: 'Ontvang jouw ROI-analyse, plan een gesprek',
-    tellMeMorePrefix: 'Vertel me meer over',
-    caseChallenge: 'Uitdaging',
-    caseSolution: 'Oplossing',
-    caseResults: 'Resultaten',
-    readCase: 'Lees de volledige case study',
-    similarResults: 'Vergelijkbare resultaten behalen? Plan een gesprek',
+    readCase: 'Lees de case →',
+    allSkills: 'Alle vaardigheden →',
+    allPricing: 'Alle prijzen →',
     bookingTitle: 'Plan een gesprek',
     bookingSubtitle: 'Samen kijken of het past',
     trustPersonal: 'Persoonlijk gesprek',
-    trustResponse: 'Reactie binnen 24u',
+    trustResponse: 'Reactie binnen 48 uur',
     trustNoStrings: 'Geen verplichtingen',
+    assumptions: (h, s) =>
+      `Gebaseerd op ${h} uur per week bespaard en ${s} abonnementskosten per maand.`,
   },
   en: {
     pricingHeader: 'Pricing',
     skillsHeader: 'Our skills',
-    viewSkill: 'View skill',
-    bookCall: 'Book a call',
     popular: 'Popular',
     comingSoon: 'Coming soon',
     roiHeader: 'ROI calculation',
-    recommendation: 'Recommendation',
-    assessmentFactors: 'Assessment factors',
-    keyFactors: 'Key factors',
-    leadScore: 'Lead score',
     monthlySavings: 'Monthly savings',
-    annualSavings: 'Annual savings',
-    hoursBack: 'Hours saved/mo',
-    hoursSavedPerMonth: 'Hours saved/mo',
-    laborSavings: 'Labour savings/mo',
-    toolSavings: 'Tool savings/mo',
-    implementationTime: 'Implementation time',
     roi: 'ROI',
     payback: 'Payback',
-    teamSize: 'Team size',
-    roiCta: 'Get your ROI analysis, book a call',
-    tellMeMorePrefix: 'Tell me more about',
-    caseChallenge: 'Challenge',
-    caseSolution: 'Solution',
-    caseResults: 'Results',
-    readCase: 'Read the full case study',
-    similarResults: 'Want similar results? Book a call',
+    readCase: 'Read the case →',
+    allSkills: 'All skills →',
+    allPricing: 'All prices →',
     bookingTitle: 'Book a call',
     bookingSubtitle: "Let's see if it's a fit",
     trustPersonal: 'Personal conversation',
-    trustResponse: 'Reply within 24h',
+    trustResponse: 'Reply within 48 hours',
     trustNoStrings: 'No obligations',
+    assumptions: (h, s) =>
+      `Based on ${h} hours saved per week and ${s} subscription cost per month.`,
   },
   es: {
     pricingHeader: 'Tarifas',
     skillsHeader: 'Nuestras habilidades',
-    viewSkill: 'Ver habilidad',
-    bookCall: 'Agenda una llamada',
     popular: 'Popular',
     comingSoon: 'Próximamente',
     roiHeader: 'Cálculo de ROI',
-    recommendation: 'Recomendación',
-    assessmentFactors: 'Factores de evaluación',
-    keyFactors: 'Factores clave',
-    leadScore: 'Puntuación de lead',
     monthlySavings: 'Ahorro mensual',
-    annualSavings: 'Ahorro anual',
-    hoursBack: 'Horas/mes',
-    hoursSavedPerMonth: 'Horas ahorradas/mes',
-    laborSavings: 'Ahorro salarial/mes',
-    toolSavings: 'Ahorro en herramientas/mes',
-    implementationTime: 'Tiempo de implementación',
     roi: 'ROI',
     payback: 'Amortización',
-    teamSize: 'Tamaño del equipo',
-    roiCta: 'Recibe tu análisis de ROI, agenda una llamada',
-    tellMeMorePrefix: 'Cuéntame más sobre',
-    caseChallenge: 'Desafío',
-    caseSolution: 'Solución',
-    caseResults: 'Resultados',
-    readCase: 'Lee el caso completo',
-    similarResults: '¿Resultados similares? Agenda una llamada',
+    readCase: 'Lee el caso →',
+    allSkills: 'Todas las habilidades →',
+    allPricing: 'Todas las tarifas →',
     bookingTitle: 'Agenda una llamada',
     bookingSubtitle: 'Veamos si encaja',
     trustPersonal: 'Conversación personal',
-    trustResponse: 'Respuesta en 24h',
+    trustResponse: 'Respuesta en 48 horas',
     trustNoStrings: 'Sin compromisos',
+    assumptions: (h, s) =>
+      `Basado en ${h} horas ahorradas por semana y ${s} de suscripción al mes.`,
   },
 }
 

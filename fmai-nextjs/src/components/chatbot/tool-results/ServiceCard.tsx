@@ -1,11 +1,9 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Check, ArrowRight, Zap, Bot, BarChart3, Megaphone } from 'lucide-react'
-import { Link } from '@/i18n/navigation'
-import { useChatbotStore } from '@/stores/chatbotStore'
+import { Check } from 'lucide-react'
 import { useCardCopy } from './cardI18n'
-import { ApplyCtaButton } from '../ApplyCtaButton'
+import { CardFooter, CardShell, CardTitle, Dot } from './CardShell'
 
 export interface ServiceCardData {
   name: string
@@ -18,7 +16,12 @@ export interface ServiceCardData {
   status?: 'live' | 'coming_soon'
   services?: ServiceCardData[] | Record<string, ServiceCardData>
   tiers?:
-    | { name: string; price: string; features: string[]; highlighted?: boolean }[]
+    | {
+        name: string
+        price: string
+        features: string[]
+        highlighted?: boolean
+      }[]
     | Record<
         string,
         {
@@ -30,162 +33,64 @@ export interface ServiceCardData {
           highlighted?: boolean
         }
       >
-  module?: string | { name: string; description?: string; features?: string[]; icon?: string }
+  module?:
+    | string
+    | {
+        name: string
+        description?: string
+        features?: string[]
+        icon?: string
+      }
   benefits?: string[]
   metrics?: { label: string; value: string }[]
 }
 
-type ServiceIconKind = 'bot' | 'voice' | 'automation' | 'marketing' | 'default'
-
-const ICON_MATCHERS: ReadonlyArray<{ key: string; kind: ServiceIconKind }> = [
-  { key: 'chatbot', kind: 'bot' },
-  { key: 'ai chatbot', kind: 'bot' },
-  { key: 'voice agent', kind: 'voice' },
-  { key: 'voice', kind: 'voice' },
-  { key: 'marketing machine', kind: 'marketing' },
-  { key: 'marketing', kind: 'marketing' },
-  { key: 'automation', kind: 'automation' },
-]
-
-function getServiceIconKind(name?: string): ServiceIconKind {
-  if (!name) return 'default'
-  const lower = name.toLowerCase()
-  for (const match of ICON_MATCHERS) {
-    if (lower.includes(match.key)) return match.kind
-  }
-  return 'default'
+type Tier = {
+  name: string
+  price: string
+  features: string[]
+  highlighted?: boolean
 }
 
-function ServiceIcon({ kind, className }: { kind: ServiceIconKind; className?: string }) {
-  switch (kind) {
-    case 'bot':
-      return <Bot className={className} />
-    case 'voice':
-      return <Megaphone className={className} />
-    case 'automation':
-      return <Zap className={className} />
-    case 'marketing':
-      return <BarChart3 className={className} />
-    default:
-      return <Zap className={className} />
-  }
-}
-
-function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
+function ServiceRow({ service }: { service: ServiceCardData }) {
   const { t } = useCardCopy()
-  const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
-  const iconKind = getServiceIconKind(data.name)
-
-  const handleCardClick = data.url
-    ? () => {
-        closeSidePanel()
-        sendChatMessage(`${t.tellMeMorePrefix} ${data.name}`)
-      }
-    : undefined
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: (index ?? 0) * 0.08, duration: 0.25 }}
-      onClick={handleCardClick}
-      className={`group rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md transition-all duration-200 hover:border-accent-system/30${data.url ? ' cursor-pointer hover:bg-bg-elevated' : ''}`}
-    >
-      <div className="flex items-start gap-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent-system/15">
-          <ServiceIcon kind={iconKind} className="h-4 w-4 text-accent-system" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <p className="font-sans text-sm font-semibold text-text-primary">
-              {data.name || 'Service'}
-            </p>
-            {data.status === 'coming_soon' && (
-              <span className="shrink-0 rounded-full bg-accent-human/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-human">
-                {t.comingSoon}
-              </span>
-            )}
-          </div>
-          {data.description && (
-            <p className="mt-0.5 text-xs leading-relaxed text-text-secondary">{data.description}</p>
-          )}
-        </div>
-      </div>
-      {data.features && data.features.length > 0 && (
-        <ul className="mt-3 space-y-1.5">
-          {data.features.map((feature, i) => (
-            <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
-              <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
-              {feature}
-            </li>
-          ))}
-        </ul>
+    <li className="relative pl-4 leading-[1.45]">
+      <Dot />
+      <span className="font-medium text-text-primary">{service.name || 'Service'}</span>
+      {service.status === 'coming_soon' && (
+        <span className="ml-2 rounded-full bg-accent-human/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-human">
+          {t.comingSoon}
+        </span>
       )}
-      {data.url && (
-        <div className="mt-3 flex items-center justify-between">
-          {data.price && (
-            <p className="font-mono text-sm font-bold text-accent-human">{data.price}</p>
-          )}
-          <Link
-            href={data.url}
-            onClick={(e) => e.stopPropagation()}
-            className="ml-auto inline-flex items-center gap-1 text-xs font-medium text-accent-system hover:underline"
-          >
-            {t.viewSkill}
-            <ArrowRight className="h-3 w-3 transition-transform duration-150 group-hover:translate-x-0.5" />
-          </Link>
-        </div>
-      )}
-      {!data.url && data.price && (
-        <p className="mt-3 font-mono text-sm font-bold text-accent-human">{data.price}</p>
-      )}
-    </motion.div>
+      {service.description && <span className="block">{service.description}</span>}
+    </li>
   )
 }
 
-function PricingTier({
-  tier,
-  index,
-}: {
-  tier: { name: string; price: string; features: string[]; highlighted?: boolean }
-  index: number
-}) {
+function TierRow({ tier }: { tier: Tier }) {
   const { t } = useCardCopy()
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.25 }}
-      className={`rounded-xl border p-4 ${tier.highlighted ? 'border-accent-system/40 bg-accent-system/5 ring-1 ring-accent-system/20' : 'border-border-primary bg-bg-elevated/80'}`}
+    <li
+      className={`relative pl-4 leading-[1.45] ${tier.highlighted ? 'rounded-lg bg-accent-system/5 py-1 pr-2' : ''}`}
     >
-      <div className="flex items-center justify-between">
-        <p className="font-sans text-sm font-semibold text-text-primary">{tier.name}</p>
-        {tier.highlighted && (
-          <span className="rounded-full bg-accent-system/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-system">
-            {t.popular}
-          </span>
-        )}
-      </div>
-      <p className="mt-1 font-mono text-lg font-bold text-accent-human">{tier.price}</p>
-      <ul className="mt-3 space-y-1.5">
-        {tier.features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
-            <Check className="mt-0.5 h-3 w-3 shrink-0 text-accent-success" />
-            {f}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
+      <Dot />
+      <span className="font-medium text-text-primary">{tier.name}</span>
+      {tier.highlighted && (
+        <span className="ml-2 rounded-full bg-accent-system/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-system">
+          {t.popular}
+        </span>
+      )}
+      <span className="block font-mono text-accent-human">{tier.price}</span>
+      {tier.features[0] && <span className="block">{tier.features[0]}</span>}
+    </li>
   )
 }
 
 export function ServiceCard({ data }: { data: ServiceCardData }) {
   const { t } = useCardCopy()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let normalizedTiers:
-    | { name: string; price: string; features: string[]; highlighted?: boolean }[]
-    | undefined
+  let normalizedTiers: Tier[] | undefined
   if (data.tiers) {
     if (Array.isArray(data.tiers)) {
       normalizedTiers = data.tiers
@@ -209,13 +114,15 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
 
   if (normalizedTiers && normalizedTiers.length > 0) {
     return (
-      <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">{t.pricingHeader}</p>
-        {normalizedTiers.map((tier, i) => (
-          <PricingTier key={tier.name} tier={tier} index={i} />
-        ))}
-        <ApplyCtaButton size="sm">{t.bookCall}</ApplyCtaButton>
-      </div>
+      <CardShell>
+        <CardTitle title={t.pricingHeader} />
+        <ul className="flex list-none flex-col gap-2 p-0">
+          {normalizedTiers.map((tier) => (
+            <TierRow key={tier.name} tier={tier} />
+          ))}
+        </ul>
+        <CardFooter href="/pricing" label={t.allPricing} />
+      </CardShell>
     )
   }
 
@@ -295,18 +202,17 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
   if (data.services) {
     if (Array.isArray(data.services)) {
       normalizedServices = data.services
-    }
-    else if (typeof data.services === 'object') {
+    } else if (typeof data.services === 'object') {
       normalizedServices = Object.values(data.services as Record<string, unknown>).map((raw) => {
         const svc = raw as Record<string, unknown>
         return {
           name: (svc.name as string) || 'Service',
           description: svc.description as string | undefined,
-          features: (svc.features as string[] | undefined) ||
+          features:
+            (svc.features as string[] | undefined) ||
             (svc.highlights as string[] | undefined) ||
             [],
-          price: (svc.price as string | undefined) ||
-            (svc.starting_price as string | undefined),
+          price: (svc.price as string | undefined) || (svc.starting_price as string | undefined),
           url: svc.url as string | undefined,
           status: svc.status as 'live' | 'coming_soon' | undefined,
         }
@@ -316,25 +222,33 @@ export function ServiceCard({ data }: { data: ServiceCardData }) {
 
   if (normalizedServices && normalizedServices.length > 0) {
     return (
-      <div className="w-full space-y-3">
-        <p className="font-sans text-sm font-semibold text-text-primary">{t.skillsHeader}</p>
-        {normalizedServices.map((service, i) => (
-          <SingleServiceCard key={service.name || i} data={service} index={i} />
-        ))}
-        <ApplyCtaButton size="sm">{t.bookCall}</ApplyCtaButton>
-      </div>
+      <CardShell>
+        <CardTitle title={t.skillsHeader} />
+        <ul className="flex list-none flex-col gap-2 p-0">
+          {[...normalizedServices]
+            .sort((a, b) => Number(a.status === 'coming_soon') - Number(b.status === 'coming_soon'))
+            .slice(0, 5)
+            .map((service, i) => (
+              <ServiceRow key={service.name || i} service={service} />
+            ))}
+        </ul>
+        <CardFooter href="/skills" label={t.allSkills} />
+      </CardShell>
     )
   }
 
-  const normalizedData: ServiceCardData = {
-    ...data,
-    features: data.features || data.highlights,
-    price: data.price || data.starting_price,
-  }
   return (
-    <div className="my-2">
-      <SingleServiceCard data={normalizedData} />
-    </div>
+    <CardShell>
+      <ul className="flex list-none flex-col gap-2 p-0">
+        <ServiceRow service={data} />
+      </ul>
+      {/* A single skill carries its url; a single tier does not. */}
+      {data.url ? (
+        <CardFooter href="/skills" label={t.allSkills} />
+      ) : (
+        <CardFooter href="/pricing" label={t.allPricing} />
+      )}
+    </CardShell>
   )
 }
 

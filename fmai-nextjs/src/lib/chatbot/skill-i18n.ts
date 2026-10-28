@@ -3,7 +3,7 @@
  *
  * WHY: `SKILLS_DATA` (src/lib/skills-data.ts) mirrors the fma-app pricing SSoT
  * and is authored in NL only. The chatbot's `get_skills` tool feeds those
- * descriptions into the sidebar ServiceCard, so on /en and /es the card used to
+ * descriptions into the ServiceCard, so on /en and /es the card used to
  * render Dutch text. This module overlays EN/ES translations of the text fields
  * (short/long description + features) keyed by skill id. Names, routes and
  * status stay locale-neutral and come straight from SKILLS_DATA.

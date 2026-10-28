@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback, useState, useRef } from 'react'
+import { useEffect, useCallback, useMemo, useState, useRef } from 'react'
 import type { UIMessage } from 'ai'
 import { useTranslations, useLocale } from 'next-intl'
 import { AnimatePresence, motion } from 'motion/react'
@@ -9,10 +9,11 @@ import { usePersonaChat } from '@/hooks/usePersonaChat'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { FloatingButton } from './FloatingButton'
 import { ChatHeader } from './ChatHeader'
-import { ChatMessages } from './ChatMessages'
+import { ChatMessages, getToolName } from './ChatMessages'
 import { ChatInput } from './ChatInput'
-import { SidePanel } from './SidePanel'
+import { MemoryChip } from './MemorySheet'
 import { useChatChrome } from './useChatChrome'
+import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
 import { DemoProgress } from './demo/DemoProgress'
@@ -64,9 +65,6 @@ export function ChatWidget({
   const chrome = useChatChrome()
   const [editText, setEditText] = useState<string | undefined>(undefined)
   const { isOpen, hasUnread, toggle, close, markRead } = useChatbotStore()
-  const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
-  const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const resetMessageCount = useChatbotStore((s) => s.resetMessageCount)
   const pendingChatMessage = useChatbotStore((s) => s.pendingChatMessage)
   const clearPendingMessage = useChatbotStore((s) => s.clearPendingMessage)
@@ -77,6 +75,38 @@ export function ChatWidget({
 
   const isFlagship = personaId === 'clyde' || personaId === 'flagship'
   const demoScenario = getDemoScenarios(locale).find((s) => s.id === demoScenarioId)
+
+  // Memory is a floating-widget feature. The merge lives here, not in ChatMessages, because
+  // this stays mounted while the panel is closed: a capture that streams in meanwhile must
+  // still reach the store. Captures present at first run count as applied, and an empty
+  // delta never writes, so "Wis alles" is not refilled from older tool parts.
+  const memoryEnabled = mode === 'floating' && isFlagship
+  const captures = useMemo(() => {
+    const out: Partial<MemoryProfile>[] = []
+    if (!memoryEnabled) return out
+    for (const msg of messages) {
+      if (msg.role !== 'assistant') continue
+      for (const part of msg.parts as unknown[]) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const p = part as any
+        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
+          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
+          if (remembered) out.push(remembered)
+        }
+      }
+    }
+    return out
+  }, [memoryEnabled, messages])
+
+  const appliedCaptures = useRef<number | null>(null)
+  useEffect(() => {
+    if (appliedCaptures.current === null) appliedCaptures.current = captures.length
+    const fresh = captures.slice(appliedCaptures.current)
+    appliedCaptures.current = captures.length
+    if (fresh.length === 0) return
+    const { memoryProfile, setMemoryProfile } = useChatbotStore.getState()
+    setMemoryProfile(fresh.reduce(mergeMemory, memoryProfile))
+  }, [captures])
 
   const handleSend = useCallback(
     (text: string) => {
@@ -119,12 +149,11 @@ export function ChatWidget({
   const handleNewChat = useCallback(() => {
     stop?.()
     setMessages?.([])
-    closeSidePanel()
     resetMessageCount(personaId)
     // Keep the persistent memory profile: only "Wis geheugen" clears it (Task 7).
     hasGreeted.current = false
     hasSentFollowup.current = false
-  }, [stop, setMessages, closeSidePanel, resetMessageCount, personaId])
+  }, [stop, setMessages, resetMessageCount, personaId])
 
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend
@@ -259,10 +288,11 @@ export function ChatWidget({
   useEffect(() => {
     if (mode !== 'floating' || !isOpen) return
     const timer = setTimeout(() => {
-      const textarea = document.querySelector<HTMLTextAreaElement>(
-        '[data-chatwidget-panel] textarea'
-      )
-      textarea?.focus()
+      const panel = document.querySelector<HTMLElement>('[data-chatwidget-panel]')
+      // The visitor may already be inside the panel (chip, sheet) within these 300ms:
+      // stealing focus back to the composer would undo what they just did.
+      if (panel?.contains(document.activeElement)) return
+      panel?.querySelector<HTMLTextAreaElement>('textarea')?.focus()
     }, 300)
     return () => clearTimeout(timer)
   }, [mode, isOpen])
@@ -364,13 +394,6 @@ export function ChatWidget({
               aria-label={`Chat met ${personaName || 'Clyde'}`}
               aria-modal={isPhone ? 'true' : undefined}
             >
-              {isFlagship && (
-                <SidePanel
-                  isOpen={isSidePanelOpen}
-                  content={sidePanelContent}
-                  onClose={closeSidePanel}
-                />
-              )}
               <div className="flex h-full w-full min-w-0 flex-col lg:w-[420px]">
                 <ChatHeader
                   personaName={personaName || 'Assistant'}
@@ -423,6 +446,7 @@ export function ChatWidget({
                   isLoading={status === 'submitted' || status === 'streaming'}
                   placeholder={inputPlaceholder}
                   footer={footer}
+                  footerEnd={isFlagship ? <MemoryChip onForgotten={focusComposer} /> : undefined}
                   initialText={editText}
                 />
               </div>

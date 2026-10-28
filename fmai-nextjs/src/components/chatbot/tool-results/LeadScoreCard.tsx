@@ -1,287 +1,56 @@
 'use client'
 
-import { motion } from 'motion/react'
-import { TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
 import { useCardCopy } from './cardI18n'
-import { ApplyCtaButton } from '../ApplyCtaButton'
+import { CardShell, CardTitle } from './CardShell'
 
+// Serves get_roi_estimate only; qualify_lead is scoring for the sales team and renders nothing.
 export interface LeadScoreData {
-  score: number
-  stage?: string
-  qualification?: string
-  recommendation?: string
-  factors?: string[]
-  nextSteps?: string[]
   monthlySavings?: number | string
-  annualSavings?: number | string
-  hoursReclaimed?: number | string
-  roi?: string
   roiPercent?: number
-  paybackPeriod?: string
   paybackPeriodMonths?: number
-  teamSize?: number
   breakdown?: {
     hoursSavedPerWeek?: number
-    timeSavedMonthly?: string
-    costSavedMonthly?: number
     subscriptionCost?: number
   }
-  hoursSavedPerMonth?: number
-  laborSavingsPerMonth?: number
-  toolSavingsPerMonth?: number
-  totalMonthlySavings?: number
-  implementationTime?: string
-  metrics?: { label: string; value: string }[]
 }
-
-function scoreColor(score: number): string {
-  if (score <= 30) return 'text-red-400'
-  if (score <= 60) return 'text-accent-human'
-  return 'text-accent-system'
-}
-
-function scoreBg(score: number): string {
-  if (score <= 30) return 'bg-red-400'
-  if (score <= 60) return 'bg-accent-human'
-  return 'bg-accent-system'
-}
-
-function stageBadgeClass(stage: string): string {
-  switch (stage) {
-    case 'cold':
-      return 'bg-blue-500/20 text-blue-400'
-    case 'warm':
-      return 'bg-accent-human/20 text-accent-human'
-    case 'hot':
-      return 'bg-red-500/20 text-red-400'
-    case 'qualified':
-      return 'bg-accent-system/20 text-accent-system'
-    default:
-      return 'bg-text-secondary/20 text-text-secondary'
-  }
-}
-
-// Money formatting moved to cardI18n.useCardCopy().money (locale-aware).
-
-const ROI_ICONS = [TrendingUp, DollarSign, Clock, Users]
 
 export function LeadScoreCard({ data }: { data: LeadScoreData }) {
   const { t, money, payback } = useCardCopy()
-  const stage = data.stage || data.qualification
-  const factors = data.factors || data.nextSteps
-  const roi =
-    data.roi ||
-    (data.roiPercent !== null && data.roiPercent !== undefined ? `${data.roiPercent}%` : undefined)
-  const paybackPeriod =
-    data.paybackPeriod ||
-    (data.paybackPeriodMonths !== null && data.paybackPeriodMonths !== undefined
-      ? payback(data.paybackPeriodMonths)
-      : undefined)
-  // Use the monthly figure to match the "Uren terug/mnd" label (breakdown
-  // exposes weekly hours; the label is per month).
-  const hoursReclaimed = data.hoursReclaimed || data.breakdown?.timeSavedMonthly
-  const monthlySavings = data.monthlySavings || data.totalMonthlySavings
-  const annualSavings = data.annualSavings
-
-  const hasRoiData =
-    monthlySavings ||
-    annualSavings ||
-    hoursReclaimed ||
-    data.metrics ||
-    data.hoursSavedPerMonth ||
-    data.totalMonthlySavings
-
-  if (hasRoiData && !data.score) {
-    let autoMetrics: { label: string; value: string }[] | undefined
-    if (!data.metrics && (data.hoursSavedPerMonth || data.totalMonthlySavings)) {
-      autoMetrics = [
-        ...(data.hoursSavedPerMonth !== null && data.hoursSavedPerMonth !== undefined
-          ? [{ label: t.hoursSavedPerMonth, value: String(data.hoursSavedPerMonth) }]
-          : []),
-        ...(data.totalMonthlySavings !== null && data.totalMonthlySavings !== undefined
-          ? [{ label: t.monthlySavings, value: money(data.totalMonthlySavings) || '' }]
-          : []),
-        ...(data.annualSavings !== null && data.annualSavings !== undefined
-          ? [{ label: t.annualSavings, value: money(data.annualSavings) || '' }]
-          : []),
-        ...(data.laborSavingsPerMonth !== null && data.laborSavingsPerMonth !== undefined
-          ? [{ label: t.laborSavings, value: money(data.laborSavingsPerMonth) || '' }]
-          : []),
-        ...(data.toolSavingsPerMonth !== null && data.toolSavingsPerMonth !== undefined
-          ? [{ label: t.toolSavings, value: money(data.toolSavingsPerMonth) || '' }]
-          : []),
-        ...(data.implementationTime
-          ? [{ label: t.implementationTime, value: data.implementationTime }]
-          : []),
-      ]
-    }
-
-    const metricsToShow = data.metrics ||
-      autoMetrics || [
-        ...(monthlySavings
-          ? [{ label: t.monthlySavings, value: money(monthlySavings) || '' }]
-          : []),
-        ...(annualSavings
-          ? [{ label: t.annualSavings, value: money(annualSavings) || '' }]
-          : []),
-        ...(hoursReclaimed ? [{ label: t.hoursBack, value: String(hoursReclaimed) }] : []),
-        ...(roi ? [{ label: t.roi, value: roi }] : []),
-        ...(paybackPeriod ? [{ label: t.payback, value: paybackPeriod }] : []),
-        ...(data.teamSize ? [{ label: t.teamSize, value: String(data.teamSize) }] : []),
-      ]
-
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-        className="w-full space-y-3"
-      >
-        <div className="rounded-xl bg-gradient-to-br from-accent-success/15 to-accent-system/10 border border-accent-success/20 p-4">
-          <div className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-accent-success" />
-            <p className="font-sans text-sm font-semibold text-text-primary">{t.roiHeader}</p>
-          </div>
-          {data.recommendation && (
-            <p className="mt-1.5 text-xs leading-relaxed text-text-secondary">
-              {data.recommendation}
-            </p>
-          )}
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          {metricsToShow.map((m, i) => {
-            const Icon = ROI_ICONS[i % ROI_ICONS.length]
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.08 * i, duration: 0.2 }}
-                className="rounded-xl border border-border-primary bg-bg-elevated/80 p-3"
-              >
-                <Icon className="h-3.5 w-3.5 text-accent-system/60 mb-1" />
-                <p className="font-mono text-lg font-bold text-accent-system">{m.value}</p>
-                <p className="mt-0.5 text-[10px] uppercase tracking-wider text-text-secondary">
-                  {m.label}
-                </p>
-              </motion.div>
-            )
-          })}
-        </div>
-        {factors && factors.length > 0 && (
-          <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-3">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary mb-2">
-              {t.keyFactors}
-            </p>
-            <ul className="space-y-1">
-              {factors.map((factor, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-text-secondary">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-system" />
-                  {factor}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        <ApplyCtaButton size="sm">{t.roiCta}</ApplyCtaButton>
-      </motion.div>
-    )
-  }
-
-  const clamped = Math.max(0, Math.min(100, data.score || 0))
+  const hours = data.breakdown?.hoursSavedPerWeek
+  const subscription = data.breakdown?.subscriptionCost
+  const figures = [
+    { label: t.monthlySavings, value: money(data.monthlySavings) },
+    {
+      label: t.roi,
+      value:
+        data.roiPercent !== undefined && data.roiPercent !== null ? `${data.roiPercent}%` : null,
+    },
+    {
+      label: t.payback,
+      value:
+        data.paybackPeriodMonths !== undefined && data.paybackPeriodMonths !== null
+          ? payback(data.paybackPeriodMonths)
+          : null,
+    },
+  ].filter((f) => f.value)
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="w-full space-y-3"
-    >
-      <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-4 backdrop-blur-md">
-        <div className="flex items-center gap-3">
-          <motion.span
-            initial={{ scale: 0.5 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
-            className={`font-mono text-4xl font-bold ${scoreColor(clamped)}`}
-          >
-            {clamped}
-          </motion.span>
-          <div>
-            {stage && (
-              <span
-                className={`rounded-full px-2.5 py-0.5 font-mono text-xs font-bold ${stageBadgeClass(stage)}`}
-              >
-                {stage.toUpperCase()}
-              </span>
-            )}
-            <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-text-secondary">
-              {t.leadScore}
-            </p>
+    <CardShell>
+      <CardTitle title={t.roiHeader} />
+      <div className="grid grid-cols-3 gap-2">
+        {figures.map((f) => (
+          <div key={f.label} data-roi-figure className="min-w-0">
+            <p className="font-mono text-sm font-bold text-accent-system">{f.value}</p>
+            <p className="mt-0.5 text-[11px] leading-tight text-text-secondary">{f.label}</p>
           </div>
-        </div>
-        <div className="mt-3 h-2 w-full rounded-full bg-bg-elevated">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${clamped}%` }}
-            transition={{ delay: 0.2, duration: 0.8, ease: 'easeOut' }}
-            className={`h-full rounded-full ${scoreBg(clamped)}`}
-          />
-        </div>
+        ))}
       </div>
-      {data.recommendation && (
-        <div className="rounded-xl border border-accent-system/20 bg-accent-system/5 p-3">
-          <p className="text-xs font-semibold text-accent-system mb-1">{t.recommendation}</p>
-          <p className="text-xs leading-relaxed text-text-secondary">{data.recommendation}</p>
-        </div>
+      {hours !== undefined && subscription !== undefined && (
+        <p className="border-t border-border-primary pt-2.5 text-xs text-text-secondary/70">
+          {t.assumptions(hours, money(subscription) ?? '')}
+        </p>
       )}
-      {factors && factors.length > 0 && (
-        <div className="rounded-xl border border-border-primary bg-bg-elevated/80 p-3">
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-text-secondary mb-2">
-            {t.assessmentFactors}
-          </p>
-          <ul className="space-y-1.5">
-            {factors.map((factor, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 * i, duration: 0.2 }}
-                className="flex items-start gap-2 text-xs text-text-secondary"
-              >
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-system/60" />
-                {factor}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {hasRoiData && (
-        <div className="grid grid-cols-2 gap-2">
-          {monthlySavings && (
-            <div className="rounded-lg border border-border-primary bg-bg-elevated/80 p-3 text-center">
-              <p className="font-mono text-sm font-bold text-accent-success">
-                {money(monthlySavings)}
-              </p>
-              <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                {t.monthlySavings}
-              </p>
-            </div>
-          )}
-          {annualSavings && (
-            <div className="rounded-lg border border-border-primary bg-bg-elevated/80 p-3 text-center">
-              <p className="font-mono text-sm font-bold text-accent-success">
-                {money(annualSavings)}
-              </p>
-              <p className="text-[10px] uppercase tracking-wider text-text-secondary">
-                {t.annualSavings}
-              </p>
-            </div>
-          )}
-        </div>
-      )}
-      <ApplyCtaButton size="sm">{t.bookCall}</ApplyCtaButton>
-    </motion.div>
+    </CardShell>
   )
 }
 

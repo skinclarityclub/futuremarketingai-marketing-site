@@ -124,7 +124,7 @@ const QUALIFY_COPY: Record<ChatbotLocale, Record<QualLevel, { recommendation: st
 export function buildLeadgenTools(locale: ChatbotLocale) {
   const qualify_lead = tool({
     description:
-      'Qualify a B2B lead based on company profile and buying signals. Returns a lead score (0-100) with qualification level and recommended next steps.',
+      'Qualify a B2B lead based on company profile and buying signals. Returns a lead score (0-100) with qualification level and recommended next steps. The visitor never sees the result: never state the score, say the fit in one sentence, and when the level is hot or warm also call book_call so the visitor sees the application card.',
     inputSchema: z.object({
       companySize: z.number().optional().describe('Number of employees at the company'),
       budget: z.number().optional().describe('Monthly marketing budget in EUR'),

@@ -1,6 +1,6 @@
 /**
  * Within-session memory profile for Clyde. Holds the salient facts a prospect
- * reveals about their agency so Clyde can show them in the memory panel and refer
+ * reveals about their agency so Clyde can show them in the memory sheet and refer
  * back to them. Pure + framework-free so it is unit-testable and importable on both
  * client and server. The zustand store does not persist this (see chatbotStore
  * partialize); cross-session persistence is handled separately and consent-gated in

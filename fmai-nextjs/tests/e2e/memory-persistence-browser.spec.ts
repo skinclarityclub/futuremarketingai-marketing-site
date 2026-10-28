@@ -5,7 +5,7 @@ import { test, expect, type Page } from '@playwright/test'
 // subtle behaviors that pure specs cannot reach: that opening the chat does NOT
 // clobber a hydrated profile, and that "Wis geheugen" leaves no trace.
 const SEEDED = { agencyName: 'Duinrust', niche: 'horeca', brandCount: 6, teamSize: 3 }
-const BADGE = 'button[aria-label^="Bekijk wat Clyde onthoudt"]'
+const BADGE = 'button:has-text("Onthoudt")'
 
 async function seedConsentAndMemory(page: Page) {
   await page.addInitScript((seeded) => {
@@ -48,7 +48,7 @@ test.describe('Clyde memory v2 — persistence (browser, no API)', () => {
     await badge.click()
     const wipe = page
       .locator('[data-chatwidget-panel]')
-      .getByRole('button', { name: 'Wis geheugen' })
+      .getByRole('button', { name: 'Wis alles' })
     await wipe.click()
     // resetMemory() + the persist-on-change effect must converge on a removed key.
     await page.waitForTimeout(700)

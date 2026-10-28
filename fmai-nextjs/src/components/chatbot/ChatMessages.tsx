@@ -5,7 +5,6 @@ import { useLocale } from 'next-intl'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import {
-  ExternalLink,
   Sparkles,
   Play,
   Calculator,
@@ -17,9 +16,8 @@ import {
   MessageCircle,
   AlertCircle,
 } from 'lucide-react'
-import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
+import { ToolResultRenderer, TOOL_CARD_MAP } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
-import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
 import type { ChatFailure } from '@/lib/chatbot/chat-error'
 import { TOUR_LABEL } from './widget-copy'
@@ -128,31 +126,38 @@ function TypingIndicator() {
   )
 }
 
-function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
-  const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
-  const { viewDetails } = useChatChrome()
-  return (
-    <button
-      type="button"
-      onClick={() => openSidePanelTrigger(toolName, data)}
-      className="my-1 inline-flex items-center gap-1.5 text-xs text-accent-system hover:underline cursor-pointer"
-    >
-      <ExternalLink className="h-3 w-3" />
-      {viewDetails}
-    </button>
-  )
-}
-
 const userBubbleClass =
   'max-w-[85%] px-4 py-2.5 rounded-2xl rounded-tr-md bg-accent-human/[0.14] border border-accent-human/20 text-text-primary text-sm'
 const assistantBubbleClass =
   'max-w-[88%] px-4 py-3 rounded-2xl rounded-tl-md bg-bg-elevated/70 border border-white/[0.06] text-text-primary text-sm'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getToolName(part: any): string | null {
+export function getToolName(part: any): string | null {
   if ('toolName' in part) return part.toolName
   if (typeof part.type === 'string' && part.type.startsWith('tool-')) return part.type.slice(5)
   return null
+}
+
+// Consecutive text parts share one bubble; each tool result is its own block, in message order.
+type PartGroup =
+  | { kind: 'text'; texts: string[] }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | { kind: 'tool'; part: any }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function groupParts(parts: any[]): PartGroup[] {
+  const groups: PartGroup[] = []
+  for (const part of parts) {
+    if (part.type === 'text') {
+      const last = groups[groups.length - 1]
+      if (last?.kind === 'text') last.texts.push(part.text)
+      else groups.push({ kind: 'text', texts: [part.text] })
+      continue
+    }
+    const toolName = getToolName(part)
+    if (toolName && 'state' in part) groups.push({ kind: 'tool', part: { ...part, toolName } })
+  }
+  return groups
 }
 
 /**
@@ -299,10 +304,7 @@ export function ChatMessages({
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
-  const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
-  const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
   const locale = useLocale()
 
@@ -318,21 +320,21 @@ export function ChatMessages({
   }, [messages.length, status])
 
   // eslint-disable-next-line react-hooks/preserve-manual-memoization -- compiler can't unify the per-part as-any cast inside the loop; manual memoization stays correct because messages/flagship deps are sufficient
-  const lastSidePanelTool = useMemo(() => {
+  const lastCardTool = useMemo(() => {
     if (!flagship) return null
     for (let i = messages.length - 1; i >= 0; i--) {
       const msg = messages[i]
       if (msg.role !== 'assistant') continue
-      // Prefer a conversion card (pricing/qualify/case/booking/...) over the memory
-      // panel when both fire in one turn, so capturing a fact never steals the side
-      // panel (or its follow-up chips) from a higher-intent card. Memory only takes
-      // the panel when it is the sole side-panel tool of the turn.
+      // Prefer a conversion card (pricing/case/booking/...) over the memory card
+      // when both fire in one turn, so capturing a fact never steals the follow-up
+      // chips from a higher-intent card. Memory only counts when it is the sole
+      // card tool of the turn.
       let memoryCandidate: { toolName: string; data: unknown } | null = null
       for (let j = msg.parts.length - 1; j >= 0; j--) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
-        if (!tn || part.state !== 'output-available' || !shouldUseSidePanel(tn)) continue
+        if (!tn || part.state !== 'output-available' || !TOOL_CARD_MAP[tn]) continue
         if (tn === 'remember_context') {
           if (!memoryCandidate) memoryCandidate = { toolName: tn, data: part.output }
           continue
@@ -344,58 +346,24 @@ export function ChatMessages({
     return null
   }, [flagship, messages])
 
-  useEffect(() => {
-    if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
-  }, [lastSidePanelTool, openSidePanel])
-
-  // Accumulate every remember_context capture across the whole conversation into the
-  // store so the MemoryCard can show the full known profile (not just the last call).
-  const accumulatedMemory = useMemo<MemoryProfile | null>(() => {
-    if (!flagship) return null
-    let acc: MemoryProfile = {}
-    for (const msg of messages) {
-      if (msg.role !== 'assistant') continue
-      for (const part of msg.parts as unknown[]) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const p = part as any
-        if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
-          const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
-          if (remembered) acc = mergeMemory(acc, remembered)
-        }
-      }
-    }
-    return acc
-  }, [flagship, messages])
-
-  // Only push to the store when the captured content actually changes, so streaming
-  // token updates (which churn the messages array each tick) don't re-set the store.
-  const lastAppliedMemory = useRef('')
-  useEffect(() => {
-    if (!accumulatedMemory) return
-    const key = JSON.stringify(accumulatedMemory)
-    if (key === lastAppliedMemory.current) return
-    lastAppliedMemory.current = key
-    setMemoryProfile(accumulatedMemory)
-  }, [accumulatedMemory, setMemoryProfile])
-
   const lastFollowUpChips = useMemo(() => {
     if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
     // Tool-based chips take priority
-    if (lastSidePanelTool) return chrome.followups(lastSidePanelTool.toolName)
+    const toolChips = lastCardTool && chrome.followups(lastCardTool.toolName)
+    if (toolChips) return toolChips
     // Text-based chips fallback: parse CHIPS: line from last assistant message
     const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant')
     if (!lastAssistant) return null
     const chips = parseChipsFromText(extractText(lastAssistant))
     return chips.length > 0 ? chips : null
-  }, [flagship, lastSidePanelTool, status, messages, chrome])
+  }, [flagship, lastCardTool, status, messages, chrome])
 
   const handleFollowUp = useCallback(
     (chip: string) => {
-      closeSidePanel()
       sendChatMessage(chip)
     },
-    [closeSidePanel, sendChatMessage]
+    [sendChatMessage]
   )
 
   const isEmpty = messages.length === 0
@@ -442,31 +410,24 @@ export function ChatMessages({
                 className={`group/msg flex ${isUser ? 'justify-end' : 'flex-col items-start'}`}
                 style={{ animation: 'fadeIn 0.3s ease-in' }}
               >
-                <div className={isUser ? userBubbleClass : assistantBubbleClass}>
-                  {message.parts.map((part, i) => {
-                    if (part.type === 'text') return <MarkdownContent key={i} text={part.text} />
-                    const toolName = getToolName(part)
-                    if (toolName && 'state' in part) {
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      const toolPart = part as any
-                      if (
-                        flagship &&
-                        toolPart.state === 'output-available' &&
-                        shouldUseSidePanel(toolName)
-                      ) {
-                        return (
-                          <SidePanelTrigger
-                            key={`${message.id}-${i}`}
-                            toolName={toolName}
-                            data={toolPart.output}
-                          />
-                        )
-                      }
-                      return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
-                    }
-                    return null
-                  })}
-                </div>
+                {groupParts(message.parts).map((g, gi) =>
+                  g.kind === 'text' ? (
+                    <div
+                      key={gi}
+                      className={isUser ? userBubbleClass : assistantBubbleClass}
+                      data-assistant-bubble={isUser ? undefined : ''}
+                    >
+                      {g.texts.map((t, ti) => (
+                        <MarkdownContent key={ti} text={t} />
+                      ))}
+                    </div>
+                  ) : (
+                    // Tool results sit outside the text bubble, full width of the column (board 2).
+                    <div key={gi} className="w-full">
+                      <ToolResultRenderer part={g.part} />
+                    </div>
+                  )
+                )}
                 {!isUser && isLastAssistant && lastFollowUpChips && (
                   <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
                 )}

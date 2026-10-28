@@ -6,7 +6,7 @@
  *
  * Numeric/structural facts live in CHATBOT_TIERS (locale-neutral). User-facing
  * copy (price label + feature bullets) lives in TIER_COPY per locale so the
- * sidebar pricing card renders in the visitor's language (NL is source of truth).
+ * pricing card renders in the visitor's language (NL is source of truth).
  *
  * Pricing model:
  * - 'fixed': single monthly price (Founding Member only).

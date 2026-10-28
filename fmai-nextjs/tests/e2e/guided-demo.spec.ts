@@ -233,16 +233,6 @@ test.describe('Guided Demo — End Demo Flow', () => {
   })
 })
 
-test.describe('Guided Demo — Side Panel Cleanup', () => {
-  test('side panel not open during demo scenario selection', async ({ page }) => {
-    await page.goto('/nl')
-    await startTour(page)
-
-    const sidePanel = page.locator('[aria-label="Close details panel"]')
-    await expect(sidePanel).not.toBeVisible()
-  })
-})
-
 test.describe('Guided Demo — Component Rendering', () => {
   test('DemoScenarioCard has proper interactive buttons', async ({ page }) => {
     await page.goto('/nl')

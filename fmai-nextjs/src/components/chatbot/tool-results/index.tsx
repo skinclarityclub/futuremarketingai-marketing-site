@@ -9,7 +9,8 @@ import { TicketCard } from './TicketCard'
 import { ServiceCard } from './ServiceCard'
 import { CaseStudyCard } from './CaseStudyCard'
 import { BookingCard } from './BookingCard'
-import { MemoryCard } from './MemoryCard'
+import { Brain } from 'lucide-react'
+import { MEMORY_FIELD_ORDER, type MemoryProfile } from '@/lib/chatbot/memory'
 import { NavigationButton } from '../NavigationButton'
 import { useChatChrome } from '../useChatChrome'
 
@@ -21,7 +22,6 @@ export {
   ServiceCard,
   CaseStudyCard,
   BookingCard,
-  MemoryCard,
 }
 export type { ProductCardData } from './ProductCard'
 export type { LeadScoreData } from './LeadScoreCard'
@@ -30,32 +30,27 @@ export type { TicketData } from './TicketCard'
 export type { ServiceCardData } from './ServiceCard'
 export type { CaseStudyData } from './CaseStudyCard'
 export type { BookingCardData } from './BookingCard'
-export type { MemoryCardData } from './MemoryCard'
 
-const SIDE_PANEL_TOOLS = new Set([
-  'search_products',
-  'get_product_details',
-  'build_routine',
-  'get_case_study',
-  'get_roi_estimate',
-  'get_pricing_info',
-  'qualify_lead',
-  'search_knowledge_base',
-  'book_call',
-  'get_skills',
-  'create_ticket',
-  'check_status',
-  'escalate_to_human',
-  'remember_context',
-])
-const INLINE_TOOLS = new Set(['navigate_to_page'])
+// Scoring is for the sales team, not the visitor: no card, and no JSON fallback either.
+export const HIDDEN_TOOLS = new Set(['qualify_lead'])
 
-export function shouldUseSidePanel(toolName: string): boolean {
-  return SIDE_PANEL_TOOLS.has(toolName)
+// Only what this call captured, on one faint line; the full profile lives in the memory sheet.
+function RememberedLine({ data }: { data: { remembered?: Partial<MemoryProfile> } }) {
+  const { remembered, memoryValue } = useChatChrome()
+  const values = MEMORY_FIELD_ORDER.flatMap((k) => {
+    const v = data?.remembered?.[k]
+    return v === undefined || v === null || String(v).trim() === '' ? [] : [memoryValue(k, v)]
+  })
+  if (values.length === 0) return null
+  return (
+    <p className="flex items-center gap-1.5 text-xs text-text-faint">
+      <Brain className="h-3 w-3 shrink-0" aria-hidden />
+      <span>
+        {remembered}: {values.join(' · ')}
+      </span>
+    </p>
+  )
 }
-export { SIDE_PANEL_TOOLS, INLINE_TOOLS }
-
-// Sidebar panel titles + follow-up chips are locale-aware; see useChatChrome.
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
@@ -63,7 +58,6 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   get_product_details: ProductCard,
   build_routine: ProductCard,
   add_to_cart_suggestion: ProductCard,
-  qualify_lead: LeadScoreCard,
   get_roi_estimate: LeadScoreCard,
   get_pricing_info: ServiceCard,
   schedule_demo: ServiceCard,
@@ -74,7 +68,7 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   get_skills: ServiceCard,
   get_case_study: CaseStudyCard,
   book_call: BookingCard,
-  remember_context: MemoryCard,
+  remember_context: RememberedLine,
 }
 
 function ToolLoadingCard() {
@@ -111,6 +105,7 @@ interface ToolResultRendererProps {
 
 export function ToolResultRenderer({ part }: ToolResultRendererProps) {
   const toolName = part.toolName ?? 'unknown'
+  if (HIDDEN_TOOLS.has(toolName)) return null
   if (part.state === 'input-streaming' || part.state === 'input-available')
     return <ToolLoadingCard />
   if (part.state === 'output-error') return <ToolErrorCard />
@@ -135,7 +130,12 @@ export function ToolResultRenderer({ part }: ToolResultRendererProps) {
           {JSON.stringify(part.output, null, 2)}
         </pre>
       )
-    return <Card data={part.output} />
+    // One stable hook for every card: tests and audits select on it, not on styling classes.
+    return (
+      <div data-tool-card={toolName}>
+        <Card data={part.output} />
+      </div>
+    )
   }
   return null
 }
