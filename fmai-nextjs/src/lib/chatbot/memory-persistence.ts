@@ -9,13 +9,15 @@ import { MEMORY_FIELD_ORDER, type MemoryProfile } from './memory'
 
 export const MEMORY_STORAGE_KEY = 'clyde:memory'
 const MEMORY_VERSION = 1
+/** Stored memory expires 30 days after it was last saved (D1). */
+export const MEMORY_TTL_MS = 30 * 24 * 60 * 60 * 1000
 
 /** Fields stored as finite numbers; every other MEMORY_FIELD_ORDER key is a string. */
 const NUMERIC_FIELDS = new Set<keyof MemoryProfile>(['brandCount', 'teamSize'])
 
 /** Serialize a profile to a versioned JSON payload. */
 export function serializeMemory(profile: MemoryProfile): string {
-  return JSON.stringify({ v: MEMORY_VERSION, profile })
+  return JSON.stringify({ v: MEMORY_VERSION, profile, savedAt: Date.now() })
 }
 
 /** Parse a stored payload back to a profile. Returns {} for null/garbage/version
@@ -55,11 +57,19 @@ export function hasMemoryConsent(): boolean {
   }
 }
 
-/** Load the persisted profile (consent-gated, storage-safe). */
-export function loadMemory(): MemoryProfile {
+/** Load the persisted profile (consent-gated, storage-safe). An entry older than
+ *  MEMORY_TTL_MS is removed and not loaded; one without savedAt (written before the
+ *  expiry existed) loads and gets stamped on the next save. */
+export function loadMemory(now = Date.now()): MemoryProfile {
   if (typeof window === 'undefined' || !hasMemoryConsent()) return {}
   try {
-    return parseMemory(window.localStorage.getItem(MEMORY_STORAGE_KEY))
+    const raw = window.localStorage.getItem(MEMORY_STORAGE_KEY)
+    const savedAt = raw ? (JSON.parse(raw) as { savedAt?: unknown })?.savedAt : undefined
+    if (typeof savedAt === 'number' && now - savedAt > MEMORY_TTL_MS) {
+      window.localStorage.removeItem(MEMORY_STORAGE_KEY)
+      return {}
+    }
+    return parseMemory(raw)
   } catch {
     return {}
   }

@@ -9,7 +9,8 @@ import { TicketCard } from './TicketCard'
 import { ServiceCard } from './ServiceCard'
 import { CaseStudyCard } from './CaseStudyCard'
 import { BookingCard } from './BookingCard'
-import { MemoryCard } from './MemoryCard'
+import { Brain } from 'lucide-react'
+import { MEMORY_FIELD_ORDER, type MemoryProfile } from '@/lib/chatbot/memory'
 import { NavigationButton } from '../NavigationButton'
 import { useChatChrome } from '../useChatChrome'
 
@@ -21,7 +22,6 @@ export {
   ServiceCard,
   CaseStudyCard,
   BookingCard,
-  MemoryCard,
 }
 export type { ProductCardData } from './ProductCard'
 export type { LeadScoreData } from './LeadScoreCard'
@@ -30,10 +30,26 @@ export type { TicketData } from './TicketCard'
 export type { ServiceCardData } from './ServiceCard'
 export type { CaseStudyData } from './CaseStudyCard'
 export type { BookingCardData } from './BookingCard'
-export type { MemoryCardData } from './MemoryCard'
 
 // Scoring is for the sales team, not the visitor: no card, and no JSON fallback either.
 export const HIDDEN_TOOLS = new Set(['qualify_lead'])
+
+// Only what this call captured, on one faint line; the full profile lives in the memory sheet.
+function RememberedLine({ data }: { data: { remembered?: Partial<MemoryProfile> } }) {
+  const { remembered } = useChatChrome()
+  const values = MEMORY_FIELD_ORDER.map((k) => data?.remembered?.[k]).filter(
+    (v) => v !== undefined && v !== null && String(v).trim() !== ''
+  )
+  if (values.length === 0) return null
+  return (
+    <p className="flex items-center gap-1.5 text-xs text-text-faint">
+      <Brain className="h-3 w-3 shrink-0" aria-hidden />
+      <span>
+        {remembered}: {values.join(' · ')}
+      </span>
+    </p>
+  )
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
@@ -52,7 +68,7 @@ export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
   get_skills: ServiceCard,
   get_case_study: CaseStudyCard,
   book_call: BookingCard,
-  remember_context: MemoryCard,
+  remember_context: RememberedLine,
 }
 
 function ToolLoadingCard() {

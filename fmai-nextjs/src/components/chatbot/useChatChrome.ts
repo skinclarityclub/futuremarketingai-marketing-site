@@ -83,6 +83,10 @@ interface ChatChromeLabels {
   sendAria: string
   stopAria: string
   answeringAria: string
+  remembered: string
+  memoryTitle: string
+  memoryNote: string
+  forgetAll: string
 }
 
 const LABELS: Record<ChatLocale, ChatChromeLabels> = {
@@ -113,6 +117,10 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     sendAria: 'Verstuur bericht',
     stopAria: 'Stop het antwoord',
     answeringAria: 'Clyde antwoordt…',
+    remembered: 'Onthouden',
+    memoryTitle: 'Wat Clyde onthoudt',
+    memoryNote: 'Alleen in deze browser, voor je volgende bezoek.',
+    forgetAll: 'Wis alles',
   },
   en: {
     askFurther: 'Ask more',
@@ -141,6 +149,10 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     sendAria: 'Send message',
     stopAria: 'Stop the reply',
     answeringAria: 'Clyde is replying…',
+    remembered: 'Remembered',
+    memoryTitle: 'What Clyde remembers',
+    memoryNote: 'Only in this browser, for your next visit.',
+    forgetAll: 'Forget all',
   },
   es: {
     askFurther: 'Pregunta más',
@@ -169,6 +181,10 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     sendAria: 'Enviar mensaje',
     stopAria: 'Detener la respuesta',
     answeringAria: 'Clyde está respondiendo…',
+    remembered: 'Recordado',
+    memoryTitle: 'Lo que Clyde recuerda',
+    memoryNote: 'Solo en este navegador, para tu próxima visita.',
+    forgetAll: 'Borrar todo',
   },
 }
 
@@ -178,6 +194,12 @@ const RATE_LIMITED: Record<ChatLocale, (m: number) => string> = {
   en: (m) => `Too many questions at once. Try again in ${m} ${m === 1 ? 'minute' : 'minutes'}.`,
   es: (m) =>
     `Demasiadas preguntas a la vez. Inténtalo de nuevo en ${m} ${m === 1 ? 'minuto' : 'minutos'}.`,
+}
+
+const MEMORY_CHIP: Record<ChatLocale, (n: number) => string> = {
+  nl: (n) => `Onthoudt ${n} ${n === 1 ? 'ding' : 'dingen'}`,
+  en: (n) => `Remembers ${n} ${n === 1 ? 'thing' : 'things'}`,
+  es: (n) => `Recuerda ${n} ${n === 1 ? 'dato' : 'datos'}`,
 }
 
 const LIMIT_WARNING: Record<ChatLocale, (n: number) => string> = {
@@ -192,6 +214,7 @@ export interface ChatChrome extends ChatChromeLabels {
   followups: (toolName: string) => string[] | null
   rateLimited: (minutes: number) => string
   limitWarning: (remaining: number) => string
+  memoryChip: (n: number) => string
 }
 
 export function chatChromeFor(locale: ChatLocale): ChatChrome {
@@ -201,6 +224,7 @@ export function chatChromeFor(locale: ChatLocale): ChatChrome {
     followups: (toolName) => FOLLOWUPS[locale][toolName] ?? null,
     rateLimited: (m) => RATE_LIMITED[locale](m),
     limitWarning: (n) => LIMIT_WARNING[locale](n),
+    memoryChip: (n) => MEMORY_CHIP[locale](n),
   }
 }
 

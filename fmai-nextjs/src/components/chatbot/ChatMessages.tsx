@@ -306,7 +306,6 @@ export function ChatMessages({
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
   const locale = useLocale()
 
@@ -348,11 +347,12 @@ export function ChatMessages({
     return null
   }, [flagship, messages])
 
-  // Accumulate every remember_context capture across the whole conversation into the
-  // store so the MemoryCard can show the full known profile (not just the last call).
-  const accumulatedMemory = useMemo<MemoryProfile | null>(() => {
-    if (!flagship) return null
-    let acc: MemoryProfile = {}
+  // Merge each NEW remember_context capture into the store profile (which may hold a
+  // hydrated profile). Captures already present when this mounts count as applied, and
+  // an empty delta never writes, so "Wis alles" is not refilled from older tool parts.
+  const captures = useMemo(() => {
+    const out: Partial<MemoryProfile>[] = []
+    if (!flagship) return out
     for (const msg of messages) {
       if (msg.role !== 'assistant') continue
       for (const part of msg.parts as unknown[]) {
@@ -360,23 +360,22 @@ export function ChatMessages({
         const p = part as any
         if (getToolName(p) === 'remember_context' && p.state === 'output-available') {
           const remembered = (p.output as { remembered?: Partial<MemoryProfile> })?.remembered
-          if (remembered) acc = mergeMemory(acc, remembered)
+          if (remembered) out.push(remembered)
         }
       }
     }
-    return acc
+    return out
   }, [flagship, messages])
 
-  // Only push to the store when the captured content actually changes, so streaming
-  // token updates (which churn the messages array each tick) don't re-set the store.
-  const lastAppliedMemory = useRef('')
+  const appliedCaptures = useRef<number | null>(null)
   useEffect(() => {
-    if (!accumulatedMemory) return
-    const key = JSON.stringify(accumulatedMemory)
-    if (key === lastAppliedMemory.current) return
-    lastAppliedMemory.current = key
-    setMemoryProfile(accumulatedMemory)
-  }, [accumulatedMemory, setMemoryProfile])
+    if (appliedCaptures.current === null) appliedCaptures.current = captures.length
+    const fresh = captures.slice(appliedCaptures.current)
+    appliedCaptures.current = captures.length
+    if (fresh.length === 0) return
+    const { memoryProfile, setMemoryProfile } = useChatbotStore.getState()
+    setMemoryProfile(fresh.reduce(mergeMemory, memoryProfile))
+  }, [captures])
 
   const lastFollowUpChips = useMemo(() => {
     if (!flagship) return null

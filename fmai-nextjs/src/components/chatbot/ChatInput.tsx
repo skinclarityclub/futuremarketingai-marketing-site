@@ -14,6 +14,8 @@ interface ChatInputProps {
   initialText?: string
   /** Replaces the disclosure text in the single footer row (e.g. the limit text). */
   footer?: React.ReactNode
+  /** Right end of the footer row: the memory chip. Its sheet anchors to this component. */
+  footerEnd?: React.ReactNode
 }
 
 /**
@@ -39,6 +41,7 @@ export function ChatInput({
   placeholder = 'Typ een bericht...',
   initialText,
   footer,
+  footerEnd,
 }: ChatInputProps) {
   const [input, setInput] = useState(initialText ?? '')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -100,7 +103,7 @@ export function ChatInput({
   const isInactive = !canSend
 
   return (
-    <div className="border-t border-border-primary bg-bg-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <div className="relative border-t border-border-primary bg-bg-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
       <div className="group/input relative flex items-end gap-2 rounded-2xl border border-transparent bg-bg-elevated/60 px-2 py-1 transition-all duration-200 focus-within:border-accent-system/40 focus-within:bg-bg-elevated/85 focus-within:shadow-[0_0_0_3px_rgba(0,212,170,0.08)]">
         <textarea
           ref={textareaRef}
@@ -139,9 +142,10 @@ export function ChatInput({
           </button>
         )}
       </div>
-      {/* One row: disclosure left, slot right (Task 9 puts the memory chip there). */}
+      {/* One row: disclosure or limit text left, memory chip right. */}
       <div className="mt-1.5 flex items-center justify-between gap-2 px-2 text-[11px] text-text-faint">
         <span>{footer ?? disclosure}</span>
+        {footerEnd}
       </div>
     </div>
   )

@@ -639,3 +639,111 @@ test.describe('compact cards', () => {
     }
   })
 })
+
+test.describe('memory chip and sheet', () => {
+  test.use({ viewport: { width: 1440, height: 900 } })
+  const SEEDED = {
+    v: 1,
+    profile: { agencyName: 'Studio Noord', niche: 'skincare', brandCount: 6, teamSize: 8 },
+  }
+  const remember = (remembered: object) => ({
+    tool: 'remember_context',
+    input: remembered,
+    output: { remembered },
+  })
+  const stored = (page: Page) =>
+    page.evaluate(
+      () => JSON.parse(localStorage.getItem('clyde:memory') ?? '{"profile":{}}').profile,
+    )
+
+  test('seeded memory shows the chip; sheet lists and forgets', async ({ page }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    await w.getByRole('button', { name: 'Onthoudt 4 dingen' }).click()
+    await expect(w.getByText('Wat Clyde onthoudt')).toBeVisible()
+    await expect(
+      w.getByRole('region', { name: 'Wat Clyde onthoudt' }).getByText('Studio Noord'),
+    ).toBeVisible()
+    await w.getByRole('button', { name: 'Wis alles' }).click()
+    await expect(w.getByRole('button', { name: /Onthoudt/ })).toHaveCount(0)
+    expect(await stored(page)).toEqual({})
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('sheet closes on Escape, keeps the chat open and returns focus to the chip', async ({
+    page,
+  }) => {
+    const { mock } = await setup(page)
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    const chip = w.getByRole('button', { name: 'Onthoudt 4 dingen' })
+    await chip.click()
+    const sheet = w.getByRole('region', { name: 'Wat Clyde onthoudt' })
+    await expect(sheet).toBeVisible()
+    await page.keyboard.press('Escape')
+    await expect(sheet).toHaveCount(0)
+    await expect(w).toBeVisible()
+    await expect(chip).toBeFocused()
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('memory plus card in one turn', async ({ page }) => {
+    const mock = await mockChatbot(page, (r) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body: uiStream({
+          tools: [
+            remember({ agencyName: 'Studio Noord' }),
+            { tool: 'get_case_study', input: {}, output: CASE },
+          ],
+          text: 'Hier.',
+        }),
+      }),
+    )
+    const w = await openWidget(page)
+    await send(w, 'vraag')
+    const log = w.locator('[role="log"]')
+    await expect(log.getByText('Onthouden: Studio Noord')).toBeVisible()
+    await expect(log.locator('[data-tool-card="get_case_study"]')).toBeVisible()
+    await expect(w.getByRole('button', { name: 'Onthoudt 1 ding' })).toBeVisible()
+    await expect(log.locator('pre')).toHaveCount(0)
+    expect(mock.calls()).toBe(1)
+  })
+
+  test('Wis alles stays wiped during the conversation', async ({ page }) => {
+    const mock = await mockChatbot(page, (r, n) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body:
+          n === 1
+            ? uiStream({ ...remember({ agencyName: 'Studio Noord' }), text: 'Genoteerd.' })
+            : uiStream({ text: 'Prima.' }),
+      }),
+    )
+    const w = await openWidget(page)
+    await send(w, 'een')
+    await w.getByRole('button', { name: 'Onthoudt 1 ding' }).click()
+    await w.getByRole('button', { name: 'Wis alles' }).click()
+    await send(w, 'twee')
+    await expect(w.locator('[role="log"]').getByText('Prima.')).toBeVisible()
+    await expect(w.getByRole('button', { name: /Onthoudt/ })).toHaveCount(0)
+    expect(await stored(page)).toEqual({})
+    expect(mock.calls()).toBe(2)
+  })
+
+  test('a new capture merges into the seeded profile instead of replacing it', async ({ page }) => {
+    const mock = await mockChatbot(page, (r) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body: uiStream({ ...remember({ goal: 'meer leads' }), text: 'Genoteerd.' }),
+      }),
+    )
+    const w = await openWidget(page, '/nl', { memory: SEEDED })
+    await send(w, 'ons doel is meer leads')
+    await expect(w.getByRole('button', { name: 'Onthoudt 5 dingen' })).toBeVisible()
+    await expect.poll(() => stored(page)).toEqual({ ...SEEDED.profile, goal: 'meer leads' })
+    expect(mock.calls()).toBe(1)
+  })
+})

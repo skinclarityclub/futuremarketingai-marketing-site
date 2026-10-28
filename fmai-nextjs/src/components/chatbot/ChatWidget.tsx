@@ -11,6 +11,7 @@ import { FloatingButton } from './FloatingButton'
 import { ChatHeader } from './ChatHeader'
 import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
+import { MemoryChip } from './MemorySheet'
 import { useChatChrome } from './useChatChrome'
 import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
@@ -411,6 +412,8 @@ export function ChatWidget({
                   isLoading={status === 'submitted' || status === 'streaming'}
                   placeholder={inputPlaceholder}
                   footer={footer}
+                  footerEnd={isFlagship ? <MemoryChip /> : undefined}
+                  footerEnd={isFlagship ? <MemoryChip /> : undefined}
                   initialText={editText}
                 />
               </div>

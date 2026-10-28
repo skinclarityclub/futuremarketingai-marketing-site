@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 import {
   serializeMemory,
   parseMemory,
+  loadMemory,
   MEMORY_STORAGE_KEY,
 } from '../../src/lib/chatbot/memory-persistence'
 
@@ -39,5 +40,48 @@ test.describe('memory-persistence (pure)', () => {
 
   test('storage key is stable', () => {
     expect(MEMORY_STORAGE_KEY).toBe('clyde:memory')
+  })
+
+  test.describe('30-day expiry (loadMemory against a fake localStorage)', () => {
+    const DAY = 24 * 60 * 60 * 1000
+    let store: Map<string, string>
+    test.beforeEach(() => {
+      store = new Map([['cookieConsent', '{}']])
+      ;(globalThis as { window?: unknown }).window = {
+        localStorage: {
+          getItem: (k: string) => store.get(k) ?? null,
+          setItem: (k: string, v: string) => void store.set(k, v),
+          removeItem: (k: string) => void store.delete(k),
+        },
+      }
+    })
+    test.afterEach(() => {
+      delete (globalThis as { window?: unknown }).window
+    })
+
+    test('legacy profile without savedAt loads', () => {
+      store.set(MEMORY_STORAGE_KEY, JSON.stringify({ v: 1, profile: { agencyName: 'X' } }))
+      expect(loadMemory()).toEqual({ agencyName: 'X' })
+    })
+
+    test('profile older than 30 days is dropped', () => {
+      const now = Date.now()
+      store.set(
+        MEMORY_STORAGE_KEY,
+        JSON.stringify({ v: 1, profile: { agencyName: 'X' }, savedAt: now - 31 * DAY })
+      )
+      expect(loadMemory(now)).toEqual({})
+      expect(store.has(MEMORY_STORAGE_KEY)).toBe(false)
+    })
+
+    test('profile younger than 30 days loads, and serialize stamps savedAt', () => {
+      const now = Date.now()
+      store.set(
+        MEMORY_STORAGE_KEY,
+        JSON.stringify({ v: 1, profile: { agencyName: 'X' }, savedAt: now - 29 * DAY })
+      )
+      expect(loadMemory(now)).toEqual({ agencyName: 'X' })
+      expect(JSON.parse(serializeMemory({ agencyName: 'X' })).savedAt).toBeGreaterThan(now - 5000)
+    })
   })
 })

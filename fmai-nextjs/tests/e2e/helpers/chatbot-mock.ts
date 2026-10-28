@@ -11,21 +11,25 @@ export const uiStream = (opts: {
   tool?: string
   input?: object
   output?: unknown
+  /** Several tool calls in one turn; `tool` stays as the one-call shorthand. */
+  tools?: Array<{ tool: string; input?: object; output?: unknown }>
 }): string => {
   const c: object[] = [{ type: 'start', messageId: 'mock-' + Math.random().toString(36).slice(2) }]
-  if (opts.tool) {
+  const tools =
+    opts.tools ?? (opts.tool ? [{ tool: opts.tool, input: opts.input, output: opts.output }] : [])
+  tools.forEach((t, i) => {
     c.push(
       { type: 'start-step' },
       {
         type: 'tool-input-available',
-        toolCallId: 't1',
-        toolName: opts.tool,
-        input: opts.input ?? {},
+        toolCallId: `t${i + 1}`,
+        toolName: t.tool,
+        input: t.input ?? {},
       },
-      { type: 'tool-output-available', toolCallId: 't1', output: opts.output },
+      { type: 'tool-output-available', toolCallId: `t${i + 1}`, output: t.output },
       { type: 'finish-step' }
     )
-  }
+  })
   if (opts.text) {
     c.push(
       { type: 'start-step' },
