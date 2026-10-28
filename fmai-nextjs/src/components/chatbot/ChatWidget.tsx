@@ -11,7 +11,6 @@ import { FloatingButton } from './FloatingButton'
 import { ChatHeader } from './ChatHeader'
 import { ChatMessages } from './ChatMessages'
 import { ChatInput } from './ChatInput'
-import { SidePanel } from './SidePanel'
 import { useChatChrome } from './useChatChrome'
 import { classifyChatError } from '@/lib/chatbot/chat-error'
 import { DemoOrchestrator } from './demo/DemoOrchestrator'
@@ -64,9 +63,6 @@ export function ChatWidget({
   const chrome = useChatChrome()
   const [editText, setEditText] = useState<string | undefined>(undefined)
   const { isOpen, hasUnread, toggle, close, markRead } = useChatbotStore()
-  const isSidePanelOpen = useChatbotStore((s) => s.isSidePanelOpen)
-  const sidePanelContent = useChatbotStore((s) => s.sidePanelContent)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const resetMessageCount = useChatbotStore((s) => s.resetMessageCount)
   const pendingChatMessage = useChatbotStore((s) => s.pendingChatMessage)
   const clearPendingMessage = useChatbotStore((s) => s.clearPendingMessage)
@@ -119,12 +115,11 @@ export function ChatWidget({
   const handleNewChat = useCallback(() => {
     stop?.()
     setMessages?.([])
-    closeSidePanel()
     resetMessageCount(personaId)
     // Keep the persistent memory profile: only "Wis geheugen" clears it (Task 7).
     hasGreeted.current = false
     hasSentFollowup.current = false
-  }, [stop, setMessages, closeSidePanel, resetMessageCount, personaId])
+  }, [stop, setMessages, resetMessageCount, personaId])
 
   const handleSendRef = useRef(handleSend)
   handleSendRef.current = handleSend
@@ -364,13 +359,6 @@ export function ChatWidget({
               aria-label={`Chat met ${personaName || 'Clyde'}`}
               aria-modal={isPhone ? 'true' : undefined}
             >
-              {isFlagship && (
-                <SidePanel
-                  isOpen={isSidePanelOpen}
-                  content={sidePanelContent}
-                  onClose={closeSidePanel}
-                />
-              )}
               <div className="flex h-full w-full min-w-0 flex-col lg:w-[420px]">
                 <ChatHeader
                   personaName={personaName || 'Assistant'}

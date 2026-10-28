@@ -1,6 +1,7 @@
 import { test, expect, type Locator, type Page } from '@playwright/test'
 import { PROACTIVE_PROMPTS, WHISPERS } from '../../src/components/chatbot/widget-copy'
 import { SSE_HEADERS, mockChatbot, openWidget, send, uiStream } from './helpers/chatbot-mock'
+import { CASE, QUALIFY } from './helpers/chatbot-fixtures'
 
 // Every test answers /api/chatbot itself: zero paid calls, and it proves none leaked.
 async function setup(page: Page) {
@@ -414,5 +415,74 @@ test.describe('whisper animates', () => {
     await page.clock.fastForward(21_000)
     await expect(pill).toHaveCSS('opacity', '1')
     expect(mock.calls()).toBe(0)
+  })
+})
+
+test.describe('tool results render in the conversation', () => {
+  async function ask(page: Page, tool: string, input: object, output: unknown, text: string) {
+    const mock = await mockChatbot(page, (r) =>
+      r.fulfill({
+        status: 200,
+        headers: SSE_HEADERS,
+        body: uiStream({ tool, input, output, text }),
+      })
+    )
+    const w = await openWidget(page)
+    await send(w, 'vraag')
+    return { mock, w }
+  }
+
+  test.describe('desktop', () => {
+    test.use({ viewport: { width: 1440, height: 900 } })
+
+    test('case result is a card in the chat, widget stays 420 wide', async ({ page }) => {
+      const { mock, w } = await ask(
+        page,
+        'get_case_study',
+        { studyId: 'skc' },
+        CASE,
+        'Hier is de case.'
+      )
+      await expect(w.locator('[role="log"]').getByText('SkinClarity Club').first()).toBeVisible()
+      expect((await w.boundingBox())!.width).toBeLessThanOrEqual(422)
+      await expect(page.getByText('Bekijk details')).toHaveCount(0)
+      expect(mock.calls()).toBe(1)
+    })
+
+    test('qualify_lead shows no score and no JSON', async ({ page }) => {
+      const { mock, w } = await ask(
+        page,
+        'qualify_lead',
+        { companySize: 8 },
+        QUALIFY,
+        'Lijkt een goede match.'
+      )
+      const log = w.locator('[role="log"]')
+      await expect(log.getByText('Lijkt een goede match.')).toBeVisible()
+      // page-wide: the old panel sat outside the log
+      await expect(page.getByText(/LEAD SCORE|HOT/i)).toHaveCount(0)
+      await expect(log.locator('pre')).toHaveCount(0)
+      expect(mock.calls()).toBe(1)
+    })
+  })
+
+  test.describe('phone', () => {
+    test.use({ viewport: { width: 390, height: 844 } })
+
+    test('result stays in the chat, nothing covers the input', async ({ page }) => {
+      const { mock, w } = await ask(
+        page,
+        'get_case_study',
+        { studyId: 'skc' },
+        CASE,
+        'Hier is de case.'
+      )
+      await expect(w.locator('[role="log"]').getByText('SkinClarity Club').first()).toBeVisible()
+      const ta = w.locator('textarea')
+      await expect(ta).toBeVisible()
+      await ta.click({ timeout: 3000 })
+      await expect(ta).toBeFocused()
+      expect(mock.calls()).toBe(1)
+    })
   })
 })

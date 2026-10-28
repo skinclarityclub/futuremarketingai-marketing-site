@@ -74,12 +74,10 @@ function ServiceIcon({ kind, className }: { kind: ServiceIconKind; className?: s
 function SingleServiceCard({ data, index }: { data: ServiceCardData; index?: number }) {
   const { t } = useCardCopy()
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const iconKind = getServiceIconKind(data.name)
 
   const handleCardClick = data.url
     ? () => {
-        closeSidePanel()
         sendChatMessage(`${t.tellMeMorePrefix} ${data.name}`)
       }
     : undefined

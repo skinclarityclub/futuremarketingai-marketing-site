@@ -72,10 +72,10 @@ async function waitForDemoStepComplete(page: Page) {
   await expect(continueBtn.or(checkpointBtn)).toBeVisible({ timeout: AI_RESPONSE_TIMEOUT })
 }
 
-// Helper: check if "View details" appeared (tool routed to side panel)
-async function hasViewDetails(page: Page): Promise<boolean> {
-  const buttons = page.locator('[data-chatwidget-panel]').getByText('View details')
-  return await buttons
+// Helper: a tool result card is visible inside the conversation log
+async function hasResultCard(page: Page): Promise<boolean> {
+  return await page
+    .locator('[data-chatwidget-panel] [role="log"] .border-border-primary')
     .last()
     .isVisible()
     .catch(() => false)
@@ -93,12 +93,6 @@ async function handleCheckpoint(page: Page, optionLabel: string) {
   const option = page.getByRole('button', { name: new RegExp(optionLabel, 'i') })
   await expect(option).toBeVisible({ timeout: AI_RESPONSE_TIMEOUT })
   await option.click()
-}
-
-// Helper: verify side panel opened
-async function verifySidePanelOpen(page: Page) {
-  const closeBtn = page.locator('button[aria-label="Close details panel"]').first()
-  await expect(closeBtn).toBeVisible({ timeout: 5_000 })
 }
 
 // ---------------------------------------------------------------------------
@@ -119,9 +113,7 @@ test.describe('Full Flow: New Client Journey', () => {
     })
     await waitForDemoStepComplete(page)
 
-    if (await hasViewDetails(page)) {
-      await verifySidePanelOpen(page)
-    }
+    expect(await hasResultCard(page)).toBe(true)
     await clickContinueDemo(page)
 
     // Step 2: "Do you have a case study?" → get_case_study

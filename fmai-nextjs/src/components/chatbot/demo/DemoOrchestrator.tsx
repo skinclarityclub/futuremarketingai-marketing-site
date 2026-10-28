@@ -118,19 +118,15 @@ export function DemoOrchestrator({
     [selectScenario]
   )
 
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
-
   // User clicks "Continue" to advance to next step
   const handleContinue = useCallback(() => {
     hasSentRef.current = false
-    closeSidePanel()
     advanceStep()
-  }, [advanceStep, closeSidePanel])
+  }, [advanceStep])
 
   const handleCheckpoint = useCallback(
     (action: 'next' | 'skip-to-booking' | 'end' | 'next-scenario') => {
       hasSentRef.current = false
-      closeSidePanel()
 
       switch (action) {
         case 'next':
@@ -148,7 +144,7 @@ export function DemoOrchestrator({
           break
       }
     },
-    [advanceStep, onSendMessage, setDemoStatus, endDemo, closeSidePanel, locale]
+    [advanceStep, onSendMessage, setDemoStatus, endDemo, locale]
   )
 
   const handleCompletionBookCall = useCallback(() => {

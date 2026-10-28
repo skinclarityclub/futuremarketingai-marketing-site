@@ -65,7 +65,6 @@ export function MemoryCard() {
   const l = loc(useLocale())
   const profile = useChatbotStore((s) => s.memoryProfile)
   const resetMemory = useChatbotStore((s) => s.resetMemory)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const labels = FIELD_LABELS[l]
   const rows = MEMORY_FIELD_ORDER.filter((k) => {
     const v = profile[k]
@@ -108,7 +107,6 @@ export function MemoryCard() {
           onClick={() => {
             resetMemory()
             clearMemory()
-            closeSidePanel()
           }}
           className="text-xs font-medium text-text-secondary underline-offset-2 transition-colors hover:text-text-primary hover:underline"
         >

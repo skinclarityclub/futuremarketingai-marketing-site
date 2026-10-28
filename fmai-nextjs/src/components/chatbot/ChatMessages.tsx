@@ -5,7 +5,6 @@ import { useLocale } from 'next-intl'
 import type { UIMessage } from 'ai'
 import ReactMarkdown from 'react-markdown'
 import {
-  ExternalLink,
   Sparkles,
   Play,
   Calculator,
@@ -17,7 +16,7 @@ import {
   MessageCircle,
   AlertCircle,
 } from 'lucide-react'
-import { ToolResultRenderer, shouldUseSidePanel } from './tool-results'
+import { ToolResultRenderer, TOOL_CARD_MAP } from './tool-results'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { mergeMemory, type MemoryProfile } from '@/lib/chatbot/memory'
 import { useChatChrome } from './useChatChrome'
@@ -125,21 +124,6 @@ function TypingIndicator() {
         />
       </div>
     </div>
-  )
-}
-
-function SidePanelTrigger({ toolName, data }: { toolName: string; data: unknown }) {
-  const openSidePanelTrigger = useChatbotStore((s) => s.openSidePanel)
-  const { viewDetails } = useChatChrome()
-  return (
-    <button
-      type="button"
-      onClick={() => openSidePanelTrigger(toolName, data)}
-      className="my-1 inline-flex items-center gap-1.5 text-xs text-accent-system hover:underline cursor-pointer"
-    >
-      <ExternalLink className="h-3 w-3" />
-      {viewDetails}
-    </button>
   )
 }
 
@@ -299,9 +283,7 @@ export function ChatMessages({
   const scrollRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const shouldAutoScroll = useRef(true)
-  const openSidePanel = useChatbotStore((s) => s.openSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
   const chrome = useChatChrome()
   const locale = useLocale()
@@ -318,21 +300,21 @@ export function ChatMessages({
   }, [messages.length, status])
 
   // eslint-disable-next-line react-hooks/preserve-manual-memoization -- compiler can't unify the per-part as-any cast inside the loop; manual memoization stays correct because messages/flagship deps are sufficient
-  const lastSidePanelTool = useMemo(() => {
+  const lastCardTool = useMemo(() => {
     if (!flagship) return null
     for (let i = messages.length - 1; i >= 0; i--) {
       const msg = messages[i]
       if (msg.role !== 'assistant') continue
-      // Prefer a conversion card (pricing/qualify/case/booking/...) over the memory
-      // panel when both fire in one turn, so capturing a fact never steals the side
-      // panel (or its follow-up chips) from a higher-intent card. Memory only takes
-      // the panel when it is the sole side-panel tool of the turn.
+      // Prefer a conversion card (pricing/case/booking/...) over the memory card
+      // when both fire in one turn, so capturing a fact never steals the follow-up
+      // chips from a higher-intent card. Memory only counts when it is the sole
+      // card tool of the turn.
       let memoryCandidate: { toolName: string; data: unknown } | null = null
       for (let j = msg.parts.length - 1; j >= 0; j--) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const part = msg.parts[j] as any
         const tn = getToolName(part)
-        if (!tn || part.state !== 'output-available' || !shouldUseSidePanel(tn)) continue
+        if (!tn || part.state !== 'output-available' || !TOOL_CARD_MAP[tn]) continue
         if (tn === 'remember_context') {
           if (!memoryCandidate) memoryCandidate = { toolName: tn, data: part.output }
           continue
@@ -343,10 +325,6 @@ export function ChatMessages({
     }
     return null
   }, [flagship, messages])
-
-  useEffect(() => {
-    if (lastSidePanelTool) openSidePanel(lastSidePanelTool.toolName, lastSidePanelTool.data)
-  }, [lastSidePanelTool, openSidePanel])
 
   // Accumulate every remember_context capture across the whole conversation into the
   // store so the MemoryCard can show the full known profile (not just the last call).
@@ -382,20 +360,20 @@ export function ChatMessages({
     if (!flagship) return null
     if (status === 'submitted' || status === 'streaming') return null
     // Tool-based chips take priority
-    if (lastSidePanelTool) return chrome.followups(lastSidePanelTool.toolName)
+    const toolChips = lastCardTool && chrome.followups(lastCardTool.toolName)
+    if (toolChips) return toolChips
     // Text-based chips fallback: parse CHIPS: line from last assistant message
     const lastAssistant = [...messages].reverse().find((m) => m.role === 'assistant')
     if (!lastAssistant) return null
     const chips = parseChipsFromText(extractText(lastAssistant))
     return chips.length > 0 ? chips : null
-  }, [flagship, lastSidePanelTool, status, messages, chrome])
+  }, [flagship, lastCardTool, status, messages, chrome])
 
   const handleFollowUp = useCallback(
     (chip: string) => {
-      closeSidePanel()
       sendChatMessage(chip)
     },
-    [closeSidePanel, sendChatMessage]
+    [sendChatMessage]
   )
 
   const isEmpty = messages.length === 0
@@ -449,19 +427,6 @@ export function ChatMessages({
                     if (toolName && 'state' in part) {
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       const toolPart = part as any
-                      if (
-                        flagship &&
-                        toolPart.state === 'output-available' &&
-                        shouldUseSidePanel(toolName)
-                      ) {
-                        return (
-                          <SidePanelTrigger
-                            key={`${message.id}-${i}`}
-                            toolName={toolName}
-                            data={toolPart.output}
-                          />
-                        )
-                      }
                       return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
                     }
                     return null

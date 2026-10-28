@@ -32,30 +32,8 @@ export type { CaseStudyData } from './CaseStudyCard'
 export type { BookingCardData } from './BookingCard'
 export type { MemoryCardData } from './MemoryCard'
 
-const SIDE_PANEL_TOOLS = new Set([
-  'search_products',
-  'get_product_details',
-  'build_routine',
-  'get_case_study',
-  'get_roi_estimate',
-  'get_pricing_info',
-  'qualify_lead',
-  'search_knowledge_base',
-  'book_call',
-  'get_skills',
-  'create_ticket',
-  'check_status',
-  'escalate_to_human',
-  'remember_context',
-])
-const INLINE_TOOLS = new Set(['navigate_to_page'])
-
-export function shouldUseSidePanel(toolName: string): boolean {
-  return SIDE_PANEL_TOOLS.has(toolName)
-}
-export { SIDE_PANEL_TOOLS, INLINE_TOOLS }
-
-// Sidebar panel titles + follow-up chips are locale-aware; see useChatChrome.
+// Scoring is for the sales team, not the visitor: no card, and no JSON fallback either.
+export const HIDDEN_TOOLS = new Set(['qualify_lead'])
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TOOL_CARD_MAP: Record<string, ComponentType<{ data: any }>> = {
@@ -111,6 +89,7 @@ interface ToolResultRendererProps {
 
 export function ToolResultRenderer({ part }: ToolResultRendererProps) {
   const toolName = part.toolName ?? 'unknown'
+  if (HIDDEN_TOOLS.has(toolName)) return null
   if (part.state === 'input-streaming' || part.state === 'input-available')
     return <ToolLoadingCard />
   if (part.state === 'output-error') return <ToolErrorCard />

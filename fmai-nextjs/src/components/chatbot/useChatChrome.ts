@@ -12,7 +12,7 @@ import { useLocale } from 'next-intl'
  * keeps Clyde answering in the visitor's language.
  *
  * NL is the source of truth. A handful of NL aria-labels ("Sluit chat",
- * "Opnieuw genereren") and the SidePanel aria-labels are relied on by the e2e
+ * "Opnieuw genereren") are relied on by the e2e
  * suite (which runs on /nl) — keep their NL values byte-identical.
  */
 
@@ -20,60 +20,6 @@ export type ChatLocale = 'nl' | 'en' | 'es'
 
 function normalize(value: string): ChatLocale {
   return value === 'en' || value === 'es' ? value : 'nl'
-}
-
-const PANEL_TITLES: Record<ChatLocale, Record<string, string>> = {
-  nl: {
-    get_skills: 'Onze vaardigheden',
-    get_pricing_info: 'Tarieven',
-    get_case_study: 'Case study',
-    book_call: 'Plan een gesprek',
-    qualify_lead: 'Jouw match',
-    get_roi_estimate: 'ROI berekening',
-    search_products: 'Producten',
-    get_product_details: 'Productdetails',
-    build_routine: 'Routine',
-    search_knowledge_base: 'Kennisbank',
-    create_ticket: 'Aanvraag',
-    check_status: 'Status',
-    remember_context: 'Wat Clyde onthoudt',
-  },
-  en: {
-    get_skills: 'Our skills',
-    get_pricing_info: 'Pricing',
-    get_case_study: 'Case study',
-    book_call: 'Book a call',
-    qualify_lead: 'Your match',
-    get_roi_estimate: 'ROI calculation',
-    search_products: 'Products',
-    get_product_details: 'Product details',
-    build_routine: 'Routine',
-    search_knowledge_base: 'Knowledge base',
-    create_ticket: 'Request',
-    check_status: 'Status',
-    remember_context: 'What Clyde remembers',
-  },
-  es: {
-    get_skills: 'Nuestras habilidades',
-    get_pricing_info: 'Tarifas',
-    get_case_study: 'Caso de éxito',
-    book_call: 'Agenda una llamada',
-    qualify_lead: 'Tu encaje',
-    get_roi_estimate: 'Cálculo de ROI',
-    search_products: 'Productos',
-    get_product_details: 'Detalles del producto',
-    build_routine: 'Rutina',
-    search_knowledge_base: 'Base de conocimiento',
-    create_ticket: 'Solicitud',
-    check_status: 'Estado',
-    remember_context: 'Lo que Clyde recuerda',
-  },
-}
-
-const PANEL_TITLE_FALLBACK: Record<ChatLocale, string> = {
-  nl: 'Details',
-  en: 'Details',
-  es: 'Detalles',
 }
 
 const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
@@ -112,7 +58,6 @@ const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
 }
 
 interface ChatChromeLabels {
-  viewDetails: string
   askFurther: string
   copy: string
   copied: string
@@ -121,7 +66,6 @@ interface ChatChromeLabels {
   editAria: string
   regenerate: string
   regenerateAria: string
-  memoryAria: string
   newChatAria: string
   closeAria: string
   loading: string
@@ -143,7 +87,6 @@ interface ChatChromeLabels {
 
 const LABELS: Record<ChatLocale, ChatChromeLabels> = {
   nl: {
-    viewDetails: 'Bekijk details',
     askFurther: 'Vraag verder',
     copy: 'Kopieer',
     copied: 'Gekopieerd',
@@ -152,7 +95,6 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Bewerk dit bericht',
     regenerate: 'Opnieuw genereren',
     regenerateAria: 'Opnieuw genereren',
-    memoryAria: 'Bekijk wat Clyde onthoudt',
     newChatAria: 'Nieuwe chat starten',
     closeAria: 'Sluit chat',
     loading: 'Laden...',
@@ -173,7 +115,6 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     answeringAria: 'Clyde antwoordt…',
   },
   en: {
-    viewDetails: 'View details',
     askFurther: 'Ask more',
     copy: 'Copy',
     copied: 'Copied',
@@ -182,7 +123,6 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Edit this message',
     regenerate: 'Regenerate',
     regenerateAria: 'Regenerate',
-    memoryAria: 'View what Clyde remembers',
     newChatAria: 'Start new chat',
     closeAria: 'Close chat',
     loading: 'Loading...',
@@ -203,7 +143,6 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     answeringAria: 'Clyde is replying…',
   },
   es: {
-    viewDetails: 'Ver detalles',
     askFurther: 'Pregunta más',
     copy: 'Copiar',
     copied: 'Copiado',
@@ -212,7 +151,6 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     editAria: 'Editar este mensaje',
     regenerate: 'Regenerar',
     regenerateAria: 'Regenerar',
-    memoryAria: 'Ver lo que Clyde recuerda',
     newChatAria: 'Iniciar nuevo chat',
     closeAria: 'Cerrar chat',
     loading: 'Cargando...',
@@ -249,20 +187,9 @@ const LIMIT_WARNING: Record<ChatLocale, (n: number) => string> = {
     `${n === 1 ? 'Queda' : 'Quedan'} ${n} ${n === 1 ? 'mensaje' : 'mensajes'} en esta conversación.`,
 }
 
-// Count-aware memory badge label: an explicit aria-label overrides the visible
-// number in the badge, so the count must be spoken here or screen-reader users
-// lose the at-a-glance "how much Clyde remembers" signal.
-const MEMORY_ARIA_COUNT: Record<ChatLocale, (n: number) => string> = {
-  nl: (n) => `Bekijk wat Clyde onthoudt (${n} ${n === 1 ? 'feit' : 'feiten'})`,
-  en: (n) => `View what Clyde remembers (${n} ${n === 1 ? 'fact' : 'facts'})`,
-  es: (n) => `Ver lo que Clyde recuerda (${n} ${n === 1 ? 'dato' : 'datos'})`,
-}
-
 export interface ChatChrome extends ChatChromeLabels {
   locale: ChatLocale
-  panelTitle: (toolName: string) => string
   followups: (toolName: string) => string[] | null
-  memoryAriaCount: (count: number) => string
   rateLimited: (minutes: number) => string
   limitWarning: (remaining: number) => string
 }
@@ -271,9 +198,7 @@ export function chatChromeFor(locale: ChatLocale): ChatChrome {
   return {
     locale,
     ...LABELS[locale],
-    panelTitle: (toolName) => PANEL_TITLES[locale][toolName] ?? PANEL_TITLE_FALLBACK[locale],
     followups: (toolName) => FOLLOWUPS[locale][toolName] ?? null,
-    memoryAriaCount: (count) => MEMORY_ARIA_COUNT[locale](count),
     rateLimited: (m) => RATE_LIMITED[locale](m),
     limitWarning: (n) => LIMIT_WARNING[locale](n),
   }

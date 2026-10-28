@@ -99,31 +99,22 @@ async function send(page: Page, text: string) {
   await page.waitForTimeout(900)
 }
 
-async function getSidebarTitle(page: Page): Promise<string | null> {
-  const back = page.locator('button[aria-label="Close details panel"]').first()
-  if (!(await back.isVisible().catch(() => false))) return null
-  const span = back.locator('..').locator('span').first()
-  return (await span.textContent().catch(() => null))?.trim() ?? null
-}
-
 async function capture(page: Page, id: string, browserName: string) {
   const panel = page.locator('[data-chatwidget-panel]')
-  const hasSidebar = await page
-    .locator('button[aria-label="Close details panel"]')
+  const hasCard = await panel
+    .locator('[role="log"] .border-border-primary')
     .first()
     .isVisible()
     .catch(() => false)
-  const sidebarTitle = await getSidebarTitle(page)
   const panelText = (await panel.innerText().catch(() => '')) || ''
-  // On mobile the sidebar portals to <body>; grab a broader text snapshot too.
+  // Broader text snapshot than the panel alone.
   const bodyText = await page.evaluate(() => document.body.innerText).catch(() => '')
   const rec = {
     id,
     locale: LOCALE,
     viewport: `${VW}x${VH}`,
     browser: browserName,
-    hasSidebar,
-    sidebarTitle,
+    hasCard,
     rawChipsLeak: panelText.includes('CHIPS:') || bodyText.includes('CHIPS:'),
     hasChipsSection: panelText.toLowerCase().includes('vraag verder'),
     panelText,

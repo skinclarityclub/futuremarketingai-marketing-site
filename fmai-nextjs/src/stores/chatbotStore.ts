@@ -34,10 +34,6 @@ interface ChatbotState {
   demoStatus: DemoStatus
   /** Timestamp when demo started */
   demoStartedAt: number | null
-  /** Side panel open state */
-  isSidePanelOpen: boolean
-  /** Side panel content */
-  sidePanelContent: { toolName: string; data: unknown } | null
   /** Calendly modal open state */
   calendlyOpen: boolean
   /** Calendly prefill data */
@@ -60,8 +56,6 @@ interface ChatbotState {
   advanceStep: () => void
   setDemoStatus: (status: DemoStatus) => void
   endDemo: () => void
-  openSidePanel: (toolName: string, data: unknown) => void
-  closeSidePanel: () => void
   openCalendly: (prefill?: { name?: string; email?: string }) => void
   closeCalendly: () => void
   sendChatMessage: (text: string) => void
@@ -85,8 +79,6 @@ export const useChatbotStore = create<ChatbotState>()(
       demoStepIndex: 0,
       demoStatus: 'choosing' as DemoStatus,
       demoStartedAt: null,
-      isSidePanelOpen: false,
-      sidePanelContent: null,
       calendlyOpen: false,
       calendlyPrefill: undefined,
       pendingChatMessage: null,
@@ -141,16 +133,6 @@ export const useChatbotStore = create<ChatbotState>()(
           demoStepIndex: 0,
           demoStatus: 'choosing' as DemoStatus,
           demoStartedAt: null,
-        }),
-      openSidePanel: (toolName: string, data: unknown) =>
-        set({
-          isSidePanelOpen: true,
-          sidePanelContent: { toolName, data },
-        }),
-      closeSidePanel: () =>
-        set({
-          isSidePanelOpen: false,
-          sidePanelContent: null,
         }),
       openCalendly: (prefill?: { name?: string; email?: string }) =>
         set({

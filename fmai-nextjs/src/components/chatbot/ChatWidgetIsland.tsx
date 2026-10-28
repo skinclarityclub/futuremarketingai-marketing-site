@@ -29,7 +29,6 @@ export function ChatWidgetIsland() {
   const isOpen = useChatbotStore((s) => s.isOpen)
   const toggle = useChatbotStore((s) => s.toggle)
   const close = useChatbotStore((s) => s.close)
-  const closeSidePanel = useChatbotStore((s) => s.closeSidePanel)
   const sendChatMessage = useChatbotStore((s) => s.sendChatMessage)
   const memoryProfile = useChatbotStore((s) => s.memoryProfile)
   const setMemoryProfile = useChatbotStore((s) => s.setMemoryProfile)
@@ -76,15 +75,13 @@ export function ChatWidgetIsland() {
     prevPathname.current = pathname
     setNudgeVisible(false)
     nudgedThisPage.current = false
-    // Clear any open tool side panel so reopening on the new page starts clean.
-    closeSidePanel()
     if (isOpen) {
       close()
       setCameFromChat(true)
     } else {
       setCameFromChat(false)
     }
-  }, [pathname, isOpen, close, closeSidePanel])
+  }, [pathname, isOpen, close])
 
   // Hide nudge when chat opens
   useEffect(() => {
