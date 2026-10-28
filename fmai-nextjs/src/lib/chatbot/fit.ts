@@ -112,7 +112,9 @@ export function noOfferSession(): FitSession {
 
 // The word right after a number gives its unit (Codex R1: in "8 mensen, 6 merken" the 6
 // passed as hours, so 48 = 6 x 8 reached the card as team hours). A Dutch head may carry a
-// compound prefix ("skincare-merken", "marketinguren", "teamleden"); u, h and man never do.
+// known prefix or any word joined by a hyphen ("marketinguren", "teamleden", "skincare-merken");
+// u, h and man never do. An open prefix read "facturen" as hours and "keurmerken" as brands (Codex R3).
+const COMPOUND_PREFIX = String.raw`(?:\p{L}+-|klant|marketing|team|werk|man|kantoor)?`
 const UNIT_WORDS: Record<keyof Said, { compound: string; bare: string }> = {
   hours: { compound: 'uur|uren', bare: 'u|h|hrs?|hours?|horas?' },
   brands: { compound: 'merken|merk|klanten|klant', bare: 'brands?|clients?|marcas?|clientes?' },
@@ -140,15 +142,17 @@ export function unitsSaid(messages: unknown): Said {
           return p?.type === 'text' && typeof p.text === 'string' ? [p.text] : []
         })
       })
-  // A number starts a whole token (not the 30 of "14:30", never mid-digits, which also keeps a
-  // long digit run linear: Codex R2) and the unit ends one ("H&M" is no hour). Built per call,
-  // not at import, because the browser loads this module for offersApplication.
+  // A number starts a whole token (not the 30 of "14:30" or the 1 of "4e1", never mid-digits,
+  // which also keeps a long digit run linear: Codex R2/R3) and the unit ends one ("H&M" is no
+  // hour). Built per call, not at import, because the browser loads this module for offersApplication.
   const read = ({ compound, bare }: { compound: string; bare: string }) => {
     const re = new RegExp(
-      String.raw`(?<![\d.,:])(\d+(?:[.,]\d+)?)\s*(?:[\p{L}-]*(?:${compound})|(?:${bare}))(?![\p{L}\p{N}_&'’-])`,
+      String.raw`(?<![\p{L}\p{N}_.,:])(\d+(?:[.,]\d+)?)\s*(?:${COMPOUND_PREFIX}(?:${compound})|(?:${bare}))(?![\p{L}\p{N}_&'’-])`,
       'giu',
     )
-    return texts.flatMap((t) => [...t.matchAll(re)].map((m) => Number(m[1].replace(',', '.'))))
+    const found = texts.flatMap((t) => [...t.matchAll(re)].map((m) => Number(m[1].replace(',', '.'))))
+    // A real chat types a handful; the cap bounds the hours x people search on a forged history (Codex R3).
+    return [...new Set(found)].slice(-50)
   }
   return { hours: read(UNIT_WORDS.hours), brands: read(UNIT_WORDS.brands), people: read(UNIT_WORDS.people) }
 }

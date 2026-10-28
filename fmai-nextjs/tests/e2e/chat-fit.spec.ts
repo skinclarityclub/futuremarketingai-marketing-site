@@ -242,6 +242,16 @@ test('unitsSaid stays linear on a long digit run in the history (Codex R2)', () 
   expect(Date.now() - t0).toBeLessThan(500)
 })
 
+test('a forged history with thousands of distinct numbers stays cheap (Codex R3)', async () => {
+  const flood = Array.from({ length: 20_000 }, (_, i) => `${i + 1} uur, ${i + 1} mensen`).join('; ')
+  const t0 = Date.now()
+  const session = fitSession([user(flood), user('wat levert het op?')], {}, false)
+  expect(session.said.hours.length).toBeLessThanOrEqual(50)
+  expect(session.said.people.length).toBeLessThanOrEqual(50)
+  await buildLeadgenTools('nl', session).get_roi_estimate.execute!({ teamHoursPerWeek: 7 }, call)
+  expect(Date.now() - t0).toBeLessThan(1000)
+})
+
 test('unitsSaid reads only what the visitor typed, by the unit after each number', () => {
   expect(unitsSaid([user('7,5 uur per week en €80 per uur'), assistant({ type: 'text', text: '10 uur' })])).toEqual(
     said({ hours: [7.5] }),
@@ -263,6 +273,9 @@ test('unitsSaid reads only what the visitor typed, by the unit after each number
   expect(unitsSaid([user('8 marketingmedewerkers en 6 klantmerken')])).toEqual(said({ brands: [6], people: [8] }))
   // look-alikes that are no unit
   expect(unitsSaid([user('3 bureaus, 10 tech, 2 opmerkingen, 4 klantenservice, 4 H&M-campagnes, 14:30 uur')])).toEqual(said())
+  // an open prefix is no compound, and an exponent is no count (Codex R3)
+  expect(unitsSaid([user('We verwerken 40 facturen per week en hebben 6 keurmerken en 3 kenmerken')])).toEqual(said())
+  expect(unitsSaid([user('4e1 uur per week, 1e2 merken')])).toEqual(said())
   // a bare number has no unit, and "uur" inside a longer word is no unit
   expect(unitsSaid([user('we zijn met 8 en doen 6 uurtjes')])).toEqual(said())
   expect(unitsSaid(undefined)).toEqual(said())
