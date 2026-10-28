@@ -13,7 +13,7 @@ import { test, expect, type Page } from '@playwright/test'
 test.describe.configure({ retries: 1, mode: 'serial' })
 test.skip(
   !process.env.ANTHROPIC_API_KEY,
-  'demo-full-flow requires ANTHROPIC_API_KEY for real AI streaming',
+  'demo-full-flow requires ANTHROPIC_API_KEY for real AI streaming'
 )
 
 const AI_RESPONSE_TIMEOUT = 60_000

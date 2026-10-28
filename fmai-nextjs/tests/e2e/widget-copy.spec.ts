@@ -8,7 +8,9 @@ import {
 // Pure-logic spec (no browser, no API). EU AI Act art. 50(1): every greeting must say it is AI.
 // Spanish site copy says "IA", not "AI".
 const all = (o: Record<string, Record<string, string | string[]>>) =>
-  Object.values(o).flatMap((m) => Object.values(m)).flat()
+  Object.values(o)
+    .flatMap((m) => Object.values(m))
+    .flat()
 const AI_WORD = { nl: /\bAI\b/, en: /\bAI\b/, es: /\bIA\b/ } as const
 
 test('every greeting names AI', () => {

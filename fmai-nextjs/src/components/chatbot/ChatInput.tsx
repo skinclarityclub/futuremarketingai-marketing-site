@@ -42,8 +42,7 @@ export function ChatInput({
 }: ChatInputProps) {
   const [input, setInput] = useState(initialText ?? '')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const { disclosure, inputAria, sendAria, stopAria, answeringAria } =
-    useChatChrome()
+  const { disclosure, inputAria, sendAria, stopAria, answeringAria } = useChatChrome()
 
   // External edit-flow can push a value into the input. Replace the
   // current text (we don't merge -- the consumer owns the intent) and
@@ -88,8 +87,7 @@ export function ChatInput({
       // Enter (without shift) sends; Shift+Enter inserts newline
       // Cmd/Ctrl+Enter also sends (matches ChatGPT/Claude conventions)
       const submitCombo =
-        (e.key === 'Enter' && !e.shiftKey) ||
-        (e.key === 'Enter' && (e.metaKey || e.ctrlKey))
+        (e.key === 'Enter' && !e.shiftKey) || (e.key === 'Enter' && (e.metaKey || e.ctrlKey))
       if (submitCombo) {
         e.preventDefault()
         handleSend()

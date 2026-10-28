@@ -79,7 +79,11 @@ const PANEL_TITLE_FALLBACK: Record<ChatLocale, string> = {
 const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
   nl: {
     get_skills: ['Wat kost dit?', 'Laat de case study zien', 'Plan een gesprek'],
-    get_pricing_info: ['Welke vaardigheden zijn beschikbaar?', 'Bereken mijn ROI', 'Plan een gesprek'],
+    get_pricing_info: [
+      'Welke vaardigheden zijn beschikbaar?',
+      'Bereken mijn ROI',
+      'Plan een gesprek',
+    ],
     get_case_study: ['Wat zijn de tarieven?', 'Hoe werkt het precies?', 'Plan een gesprek'],
     book_call: ['Welke vaardigheden zijn beschikbaar?', 'Laat de case study zien'],
     qualify_lead: ['Wat kost dit?', 'Plan een gesprek', 'Welke vaardigheden zijn beschikbaar?'],
@@ -96,7 +100,11 @@ const FOLLOWUPS: Record<ChatLocale, Record<string, string[]>> = {
   es: {
     get_skills: ['¿Cuánto cuesta?', 'Muestra el caso de éxito', 'Agenda una llamada'],
     get_pricing_info: ['¿Qué habilidades hay?', 'Calcula mi ROI', 'Agenda una llamada'],
-    get_case_study: ['¿Cuáles son las tarifas?', '¿Cómo funciona exactamente?', 'Agenda una llamada'],
+    get_case_study: [
+      '¿Cuáles son las tarifas?',
+      '¿Cómo funciona exactamente?',
+      'Agenda una llamada',
+    ],
     book_call: ['¿Qué habilidades hay?', 'Muestra el caso de éxito'],
     qualify_lead: ['¿Cuánto cuesta?', 'Agenda una llamada', '¿Qué habilidades hay?'],
     get_roi_estimate: ['¿Cuánto cuesta?', 'Agenda una llamada', '¿Qué habilidades hay?'],
@@ -153,7 +161,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'AI',
     disclosure: 'Clyde is AI en kan zich vergissen.',
     noAnswer: 'Geen antwoord ontvangen',
-    rejectedPersonal: 'Clyde kan geen persoonlijke gegevens zoals een e-mailadres of telefoonnummer ontvangen. Stuur je vraag opnieuw zonder die gegevens.',
+    rejectedPersonal:
+      'Clyde kan geen persoonlijke gegevens zoals een e-mailadres of telefoonnummer ontvangen. Stuur je vraag opnieuw zonder die gegevens.',
     rejectedTooLong: 'Dit bericht is te lang. Maak het korter en stuur het opnieuw.',
     limitReached: 'Dit gesprek zit vol.',
     keepTalking: 'Verder praten?',
@@ -182,7 +191,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'AI',
     disclosure: 'Clyde is AI and can make mistakes.',
     noAnswer: 'No reply received',
-    rejectedPersonal: "Clyde can't receive personal details like an email address or phone number. Send your question again without them.",
+    rejectedPersonal:
+      "Clyde can't receive personal details like an email address or phone number. Send your question again without them.",
     rejectedTooLong: 'This message is too long. Shorten it and send it again.',
     limitReached: 'This conversation is full.',
     keepTalking: 'Want to keep talking?',
@@ -211,7 +221,8 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
     aiLabel: 'IA',
     disclosure: 'Clyde es una IA y puede equivocarse.',
     noAnswer: 'No se recibió respuesta',
-    rejectedPersonal: 'Clyde no puede recibir datos personales como un correo o un teléfono. Vuelve a enviar tu pregunta sin ellos.',
+    rejectedPersonal:
+      'Clyde no puede recibir datos personales como un correo o un teléfono. Vuelve a enviar tu pregunta sin ellos.',
     rejectedTooLong: 'Este mensaje es demasiado largo. Acórtalo y vuelve a enviarlo.',
     limitReached: 'Esta conversación está completa.',
     keepTalking: '¿Seguimos hablando?',
@@ -224,15 +235,18 @@ const LABELS: Record<ChatLocale, ChatChromeLabels> = {
 }
 
 const RATE_LIMITED: Record<ChatLocale, (m: number) => string> = {
-  nl: (m) => `Even te veel vragen tegelijk. Probeer het over ${m} ${m === 1 ? 'minuut' : 'minuten'} opnieuw.`,
+  nl: (m) =>
+    `Even te veel vragen tegelijk. Probeer het over ${m} ${m === 1 ? 'minuut' : 'minuten'} opnieuw.`,
   en: (m) => `Too many questions at once. Try again in ${m} ${m === 1 ? 'minute' : 'minutes'}.`,
-  es: (m) => `Demasiadas preguntas a la vez. Inténtalo de nuevo en ${m} ${m === 1 ? 'minuto' : 'minutos'}.`,
+  es: (m) =>
+    `Demasiadas preguntas a la vez. Inténtalo de nuevo en ${m} ${m === 1 ? 'minuto' : 'minutos'}.`,
 }
 
 const LIMIT_WARNING: Record<ChatLocale, (n: number) => string> = {
   nl: (n) => `Nog ${n} ${n === 1 ? 'bericht' : 'berichten'} in dit gesprek.`,
   en: (n) => `${n} ${n === 1 ? 'message' : 'messages'} left in this conversation.`,
-  es: (n) => `${n === 1 ? 'Queda' : 'Quedan'} ${n} ${n === 1 ? 'mensaje' : 'mensajes'} en esta conversación.`,
+  es: (n) =>
+    `${n === 1 ? 'Queda' : 'Quedan'} ${n} ${n === 1 ? 'mensaje' : 'mensajes'} en esta conversación.`,
 }
 
 // Count-aware memory badge label: an explicit aria-label overrides the visible

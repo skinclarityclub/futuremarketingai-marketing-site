@@ -24,10 +24,8 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hoi, ik ben Clyde, een AI-collega. Ik filter je Gmail en stuur dagelijks een digest van wat ertoe doet.',
     '/skills/reporting':
       'Hoi, ik ben Clyde, een AI-collega. Ik laat zien hoe een weekrapport eruitziet.',
-    '/pricing':
-      'Hoi, ik ben Clyde, een AI-collega. Ik kan je ROI berekenen of de tiers doorlopen.',
-    '/apply':
-      'Hoi, ik ben Clyde, een AI-collega. Vragen voordat je je aanmeldt? Stel ze gerust.',
+    '/pricing': 'Hoi, ik ben Clyde, een AI-collega. Ik kan je ROI berekenen of de tiers doorlopen.',
+    '/apply': 'Hoi, ik ben Clyde, een AI-collega. Vragen voordat je je aanmeldt? Stel ze gerust.',
     '/about': 'Hoi, ik ben Clyde, een AI-collega. Wil je weten hoe ik werk?',
     default: 'Hoi, ik ben Clyde, de AI-collega van je bureau. Wat heb je nodig?',
   },
@@ -47,8 +45,7 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       "Hi, I'm Clyde, an AI colleague. I can show you what a weekly report looks like.",
     '/pricing':
       "Hi, I'm Clyde, an AI colleague. I can calculate your ROI or walk you through the tiers.",
-    '/apply':
-      "Hi, I'm Clyde, an AI colleague. Questions before you apply? Go ahead and ask.",
+    '/apply': "Hi, I'm Clyde, an AI colleague. Questions before you apply? Go ahead and ask.",
     '/about': "Hi, I'm Clyde, an AI colleague. Want to know how I work?",
     default: "Hi, I'm Clyde, your agency's AI colleague. What do you need?",
   },
@@ -66,8 +63,7 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hola, soy Clyde, un compañero de IA. Filtro tu Gmail y envío un resumen diario de lo que importa.',
     '/skills/reporting':
       'Hola, soy Clyde, un compañero de IA. Puedo mostrarte cómo es un informe semanal.',
-    '/pricing':
-      'Hola, soy Clyde, un compañero de IA. Puedo calcular tu ROI o repasar los planes.',
+    '/pricing': 'Hola, soy Clyde, un compañero de IA. Puedo calcular tu ROI o repasar los planes.',
     '/apply':
       'Hola, soy Clyde, un compañero de IA. ¿Dudas antes de aplicar? Pregunta lo que quieras.',
     '/about': 'Hola, soy Clyde, un compañero de IA. ¿Quieres saber cómo trabajo?',

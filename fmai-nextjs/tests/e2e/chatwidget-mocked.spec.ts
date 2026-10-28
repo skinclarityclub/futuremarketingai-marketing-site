@@ -98,26 +98,39 @@ test.describe('greeting prompts', () => {
   test('one column, tour link below', async ({ page }) => {
     const { mock } = await setup(page)
     const w = await openWidget(page)
-    const rows = w.locator('button').filter({ has: page.locator('svg') }).filter({ hasText: /\?|Laat een echte klant zien/ })
+    const rows = w
+      .locator('button')
+      .filter({ has: page.locator('svg') })
+      .filter({ hasText: /\?|Laat een echte klant zien/ })
     await expect(rows).toHaveCount(3)
     // polled: the panel scales in for 220ms
-    await expect.poll(async () => {
-      const b = await Promise.all([0, 1, 2].map((i) => rows.nth(i).boundingBox()))
-      const same = new Set(b.map((x) => Math.round(x!.x))).size === 1
-      return same && b[1]!.y > b[0]!.y && b[2]!.y > b[1]!.y
-    }).toBe(true)
+    await expect
+      .poll(async () => {
+        const b = await Promise.all([0, 1, 2].map((i) => rows.nth(i).boundingBox()))
+        const same = new Set(b.map((x) => Math.round(x!.x))).size === 1
+        return same && b[1]!.y > b[0]!.y && b[2]!.y > b[1]!.y
+      })
+      .toBe(true)
     await expect(w.getByText('Of volg een korte rondleiding')).toBeVisible()
-    await expect.poll(async () => (await rows.first().boundingBox())!.height).toBeGreaterThanOrEqual(40)
+    await expect
+      .poll(async () => (await rows.first().boundingBox())!.height)
+      .toBeGreaterThanOrEqual(40)
     expect(mock.calls()).toBe(0)
   })
 })
 
 test.describe('errors and the limit', () => {
-  test('500 shows "Geen antwoord ontvangen" under the question and Opnieuw resends', async ({ page }) => {
+  test('500 shows "Geen antwoord ontvangen" under the question and Opnieuw resends', async ({
+    page,
+  }) => {
     const m = await mockChatbot(page, async (r, n) =>
       n === 1
         ? r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
-        : r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: 'Vier niveaus.' }) })
+        : r.fulfill({
+            status: 200,
+            headers: SSE_HEADERS,
+            body: uiStream({ text: 'Vier niveaus.' }),
+          })
     )
     const w = await openWidget(page)
     await send(w, 'Wat kost het?')
@@ -145,7 +158,11 @@ test.describe('errors and the limit', () => {
     const m = await mockChatbot(page, async (r, n) =>
       n === 1
         ? r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
-        : r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: `Antwoord ${n}.` }) })
+        : r.fulfill({
+            status: 200,
+            headers: SSE_HEADERS,
+            body: uiStream({ text: `Antwoord ${n}.` }),
+          })
     )
     const w = await openWidget(page)
     await send(w, 'Vraag 1')
@@ -165,7 +182,11 @@ test.describe('errors and the limit', () => {
   test('a failure hides the regenerate action on the previous answer', async ({ page }) => {
     const m = await mockChatbot(page, async (r, n) =>
       n === 1
-        ? r.fulfill({ status: 200, headers: SSE_HEADERS, body: uiStream({ text: 'Eerste antwoord.' }) })
+        ? r.fulfill({
+            status: 200,
+            headers: SSE_HEADERS,
+            body: uiStream({ text: 'Eerste antwoord.' }),
+          })
         : r.fulfill({ status: 500, contentType: 'application/json', body: '{"error":"x"}' })
     )
     const w = await openWidget(page)
@@ -234,7 +255,10 @@ test.describe('errors and the limit', () => {
     }
     await expect(w.locator('textarea')).toBeDisabled()
     await expect(w.getByText('Dit gesprek zit vol.').first()).toBeVisible()
-    await expect(w.getByRole('link', { name: 'Aanvraag starten' })).toHaveAttribute('href', /\/nl\/apply$/)
+    await expect(w.getByRole('link', { name: 'Aanvraag starten' })).toHaveAttribute(
+      'href',
+      /\/nl\/apply$/
+    )
     expect(m.calls()).toBe(15)
   })
 })
@@ -324,14 +348,17 @@ test.describe('focus on desktop', () => {
 test.describe('phone modal', () => {
   test.use({ viewport: { width: 390, height: 844 } })
 
-  test('page behind is inert while open, Shift+Tab wraps, inert is gone after close', async ({ page }) => {
+  test('page behind is inert while open, Shift+Tab wraps, inert is gone after close', async ({
+    page,
+  }) => {
     const { mock } = await setup(page)
     const w = await openWidget(page)
     await expect(page.locator('#main')).toHaveAttribute('inert', '')
     await expect(page.locator('header').first()).toHaveAttribute('inert', '')
     await expect(page.locator('footer').first()).toHaveAttribute('inert', '')
     // Shift+Tab from the first focusable wraps to the last
-    const focusables = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    const focusables =
+      'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
     await w.locator(focusables).first().focus()
     await page.keyboard.press('Shift+Tab')
     const lastIsFocused = await page.evaluate((sel) => {
@@ -369,11 +396,14 @@ test.describe('whisper animates', () => {
   test('the whisper element exists, hidden, before the stage flips', async ({ page }) => {
     const { mock } = await setup(page)
     await page.clock.install()
-    await page.addInitScript((c) => {
-      try {
-        localStorage.setItem('cookieConsent', c)
-      } catch {}
-    }, JSON.stringify({ necessary: true, analytics: false, marketing: false }))
+    await page.addInitScript(
+      (c) => {
+        try {
+          localStorage.setItem('cookieConsent', c)
+        } catch {}
+      },
+      JSON.stringify({ necessary: true, analytics: false, marketing: false })
+    )
     await page.goto('/nl', { waitUntil: 'load' })
     await page.waitForLoadState('networkidle')
     const text = page.getByText(WHISPERS.nl['/'])

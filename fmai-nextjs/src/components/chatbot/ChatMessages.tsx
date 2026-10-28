@@ -51,18 +51,23 @@ interface ChatMessagesProps {
 }
 
 function extractText(msg: UIMessage): string {
-  return msg.parts
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .filter((p: any) => p.type === 'text')
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .map((p: any) => p.text)
-    .join('\n')
+  return (
+    msg.parts
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .filter((p: any) => p.type === 'text')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .map((p: any) => p.text)
+      .join('\n')
+  )
 }
 
 function parseChipsFromText(text: string): string[] {
   const match = text.match(/\n*CHIPS:\s*(.+)$/m)
   if (!match) return []
-  return match[1].split('|').map((c) => c.trim()).filter(Boolean)
+  return match[1]
+    .split('|')
+    .map((c) => c.trim())
+    .filter(Boolean)
 }
 
 /** Strip the machine-readable `CHIPS:` line (and anything after it) so copied
@@ -227,13 +232,7 @@ function WelcomeState({ welcomeMessage, prompts, onSelect, onStartDemo }: Welcom
   )
 }
 
-function FollowUpChips({
-  chips,
-  onSelect,
-}: {
-  chips: string[]
-  onSelect: (chip: string) => void
-}) {
+function FollowUpChips({ chips, onSelect }: { chips: string[]; onSelect: (chip: string) => void }) {
   const { askFurther } = useChatChrome()
   return (
     <div className="mt-2 ml-1 space-y-1.5">
@@ -439,116 +438,133 @@ export function ChatMessages({
           const messageText = extractText(message)
           return (
             <Fragment key={message.id}>
-            <div
-              className={`group/msg flex ${isUser ? 'justify-end' : 'flex-col items-start'}`}
-              style={{ animation: 'fadeIn 0.3s ease-in' }}
-            >
-              <div className={isUser ? userBubbleClass : assistantBubbleClass}>
-                {message.parts.map((part, i) => {
-                  if (part.type === 'text') return <MarkdownContent key={i} text={part.text} />
-                  const toolName = getToolName(part)
-                  if (toolName && 'state' in part) {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    const toolPart = part as any
-                    if (
-                      flagship &&
-                      toolPart.state === 'output-available' &&
-                      shouldUseSidePanel(toolName)
-                    ) {
-                      return (
-                        <SidePanelTrigger
-                          key={`${message.id}-${i}`}
-                          toolName={toolName}
-                          data={toolPart.output}
-                        />
-                      )
+              <div
+                className={`group/msg flex ${isUser ? 'justify-end' : 'flex-col items-start'}`}
+                style={{ animation: 'fadeIn 0.3s ease-in' }}
+              >
+                <div className={isUser ? userBubbleClass : assistantBubbleClass}>
+                  {message.parts.map((part, i) => {
+                    if (part.type === 'text') return <MarkdownContent key={i} text={part.text} />
+                    const toolName = getToolName(part)
+                    if (toolName && 'state' in part) {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      const toolPart = part as any
+                      if (
+                        flagship &&
+                        toolPart.state === 'output-available' &&
+                        shouldUseSidePanel(toolName)
+                      ) {
+                        return (
+                          <SidePanelTrigger
+                            key={`${message.id}-${i}`}
+                            toolName={toolName}
+                            data={toolPart.output}
+                          />
+                        )
+                      }
+                      return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
                     }
-                    return <ToolResultRenderer key={i} part={{ ...toolPart, toolName }} />
-                  }
-                  return null
-                })}
-              </div>
-              {!isUser && isLastAssistant && lastFollowUpChips && (
-                <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
-              )}
-              {!isUser && idx === 0 && messages.length === 1 && !isStreaming && inlinePrompts && inlinePrompts.length > 0 && (
-                <div className="mt-3 flex w-full flex-col gap-1.5">
-                  {inlinePrompts.slice(0, 4).map((prompt, pi) => (
-                    <button
-                      key={prompt}
-                      type="button"
-                      onClick={() => onInlinePromptSelect?.(prompt)}
-                      style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
-                      className="group/ip flex w-full items-center gap-2 rounded-xl border border-white/[0.06] bg-bg-elevated/60 min-h-10 px-3 py-2 text-left text-sm font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
-                    >
-                      <MessageCircle className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
-                      {prompt}
-                    </button>
-                  ))}
-                  {onStartDemo && (
-                    <button
-                      type="button"
-                      onClick={onStartDemo}
-                      className="self-start px-1 text-xs text-accent-system underline-offset-4 hover:underline"
-                    >
-                      {TOUR_LABEL[locale] ?? TOUR_LABEL.nl}
-                    </button>
-                  )}
+                    return null
+                  })}
                 </div>
-              )}
-              {!isUser && messageText.length > 0 && !isClientInjected && (
-                <CopyButton text={normalizeDashes(stripChipsLine(messageText))} />
-              )}
-              {isUser && onEditMessage && messageText.length > 0 && (
-                <button
-                  type="button"
-                  onClick={() => onEditMessage(message.id, messageText)}
-                  aria-label={chrome.editAria}
-                  className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
-                >
-                  <Pencil className="h-3 w-3" />
-                  {chrome.edit}
-                </button>
-              )}
-              {!isUser && isLastAssistant && onRegenerate && !isStreaming && !isClientInjected && !failure && (
-                <button
-                  type="button"
-                  onClick={onRegenerate}
-                  aria-label={chrome.regenerateAria}
-                  className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
-                >
-                  <RotateCw className="h-3 w-3" />
-                  {chrome.regenerate}
-                </button>
-              )}
-            </div>
-            {isUser && idx === lastUserIdx && failure && !isStreaming && (
-              <p role="status" className="-mt-2 mr-1 flex items-center justify-end gap-1.5 text-xs text-error">
-                <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                {failure.kind === 'rate-limit' ? (
-                  chrome.rateLimited(failure.minutes)
-                ) : failure.kind === 'rejected' ? (
-                  failure.reason === 'personal' ? chrome.rejectedPersonal : chrome.rejectedTooLong
-                ) : (
-                  <>
-                    <span>{chrome.noAnswer}</span>
-                    {onRetry && (
-                      <>
-                        <span aria-hidden="true">·</span>
+                {!isUser && isLastAssistant && lastFollowUpChips && (
+                  <FollowUpChips chips={lastFollowUpChips} onSelect={handleFollowUp} />
+                )}
+                {!isUser &&
+                  idx === 0 &&
+                  messages.length === 1 &&
+                  !isStreaming &&
+                  inlinePrompts &&
+                  inlinePrompts.length > 0 && (
+                    <div className="mt-3 flex w-full flex-col gap-1.5">
+                      {inlinePrompts.slice(0, 4).map((prompt, pi) => (
+                        <button
+                          key={prompt}
+                          type="button"
+                          onClick={() => onInlinePromptSelect?.(prompt)}
+                          style={{ animation: `fadeIn 0.25s ease-out ${200 + pi * 70}ms both` }}
+                          className="group/ip flex w-full items-center gap-2 rounded-xl border border-white/[0.06] bg-bg-elevated/60 min-h-10 px-3 py-2 text-left text-sm font-medium text-text-secondary transition-all hover:border-accent-system/30 hover:bg-bg-elevated hover:text-text-primary"
+                        >
+                          <MessageCircle className="h-3 w-3 shrink-0 text-accent-system/60 transition-colors group-hover/ip:text-accent-system" />
+                          {prompt}
+                        </button>
+                      ))}
+                      {onStartDemo && (
                         <button
                           type="button"
-                          onClick={onRetry}
-                          // 40px hit area via padding, pulled back with negative margin so the line looks the same
-                          className="-my-3 -mx-2 px-2 py-3 font-medium text-accent-system hover:underline"
+                          onClick={onStartDemo}
+                          className="self-start px-1 text-xs text-accent-system underline-offset-4 hover:underline"
                         >
-                          {chrome.retry}
+                          {TOUR_LABEL[locale] ?? TOUR_LABEL.nl}
                         </button>
-                      </>
-                    )}
-                  </>
+                      )}
+                    </div>
+                  )}
+                {!isUser && messageText.length > 0 && !isClientInjected && (
+                  <CopyButton text={normalizeDashes(stripChipsLine(messageText))} />
                 )}
-              </p>
-            )}
+                {isUser && onEditMessage && messageText.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => onEditMessage(message.id, messageText)}
+                    aria-label={chrome.editAria}
+                    className="mt-1 mr-1 inline-flex items-center gap-1 self-end rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-text-primary focus-visible:opacity-100 group-hover/msg:opacity-100"
+                  >
+                    <Pencil className="h-3 w-3" />
+                    {chrome.edit}
+                  </button>
+                )}
+                {!isUser &&
+                  isLastAssistant &&
+                  onRegenerate &&
+                  !isStreaming &&
+                  !isClientInjected &&
+                  !failure && (
+                    <button
+                      type="button"
+                      onClick={onRegenerate}
+                      aria-label={chrome.regenerateAria}
+                      className="mt-1 ml-1 inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] text-text-faint opacity-0 transition-opacity duration-150 [@media(hover:none)]:opacity-100 hover:text-accent-system focus-visible:opacity-100 group-hover/msg:opacity-100"
+                    >
+                      <RotateCw className="h-3 w-3" />
+                      {chrome.regenerate}
+                    </button>
+                  )}
+              </div>
+              {isUser && idx === lastUserIdx && failure && !isStreaming && (
+                <p
+                  role="status"
+                  className="-mt-2 mr-1 flex items-center justify-end gap-1.5 text-xs text-error"
+                >
+                  <AlertCircle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  {failure.kind === 'rate-limit' ? (
+                    chrome.rateLimited(failure.minutes)
+                  ) : failure.kind === 'rejected' ? (
+                    failure.reason === 'personal' ? (
+                      chrome.rejectedPersonal
+                    ) : (
+                      chrome.rejectedTooLong
+                    )
+                  ) : (
+                    <>
+                      <span>{chrome.noAnswer}</span>
+                      {onRetry && (
+                        <>
+                          <span aria-hidden="true">·</span>
+                          <button
+                            type="button"
+                            onClick={onRetry}
+                            // 40px hit area via padding, pulled back with negative margin so the line looks the same
+                            className="-my-3 -mx-2 px-2 py-3 font-medium text-accent-system hover:underline"
+                          >
+                            {chrome.retry}
+                          </button>
+                        </>
+                      )}
+                    </>
+                  )}
+                </p>
+              )}
             </Fragment>
           )
         })

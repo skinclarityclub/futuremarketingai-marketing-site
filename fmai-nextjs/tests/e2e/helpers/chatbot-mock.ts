@@ -16,7 +16,12 @@ export const uiStream = (opts: {
   if (opts.tool) {
     c.push(
       { type: 'start-step' },
-      { type: 'tool-input-available', toolCallId: 't1', toolName: opts.tool, input: opts.input ?? {} },
+      {
+        type: 'tool-input-available',
+        toolCallId: 't1',
+        toolName: opts.tool,
+        input: opts.input ?? {},
+      },
       { type: 'tool-output-available', toolCallId: 't1', output: opts.output },
       { type: 'finish-step' }
     )
@@ -60,7 +65,10 @@ export async function openWidget(
         if (counts)
           localStorage.setItem(
             'chatbot-store',
-            JSON.stringify({ state: { sessionId: 'mock', personaId: 'clyde', messageCounts: counts }, version: 0 })
+            JSON.stringify({
+              state: { sessionId: 'mock', personaId: 'clyde', messageCounts: counts },
+              version: 0,
+            })
           )
       } catch {}
     },

@@ -227,7 +227,9 @@ test.describe('Guided Demo — End Demo Flow', () => {
     await expect(panel).toBeVisible({ timeout: 10000 })
 
     // Demo should still be in choosing mode
-    await expect(page.getByText('Kies een scenario om te verkennen:')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByText('Kies een scenario om te verkennen:')).toBeVisible({
+      timeout: 5000,
+    })
   })
 })
 

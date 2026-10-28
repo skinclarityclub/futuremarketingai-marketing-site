@@ -139,15 +139,26 @@ export function ChatWidget({
   // is ever live (cleanup clears the previous), so the greet fires exactly once.
   const hasGreeted = useRef(false)
   useEffect(() => {
-    if (mode !== 'floating' || !isFlagship || !isOpen || messages.length > 0 || hasGreeted.current || !welcomeMessage || demoMode) return
+    if (
+      mode !== 'floating' ||
+      !isFlagship ||
+      !isOpen ||
+      messages.length > 0 ||
+      hasGreeted.current ||
+      !welcomeMessage ||
+      demoMode
+    )
+      return
     const timer = setTimeout(() => {
       hasGreeted.current = true
-      setMessages?.([{
-        id: 'clyde-welcome',
-        role: 'assistant',
-        content: welcomeMessage,
-        parts: [{ type: 'text', text: welcomeMessage }],
-      } as UIMessage])
+      setMessages?.([
+        {
+          id: 'clyde-welcome',
+          role: 'assistant',
+          content: welcomeMessage,
+          parts: [{ type: 'text', text: welcomeMessage }],
+        } as UIMessage,
+      ])
     }, 400)
     return () => clearTimeout(timer)
   }, [isOpen, messages.length, welcomeMessage, setMessages, mode, isFlagship, demoMode])
@@ -155,7 +166,8 @@ export function ChatWidget({
   // Proactive follow-up: Clyde sends a message after 2 min of silence in active chat
   const hasSentFollowup = useRef(false)
   useEffect(() => {
-    if (!proactiveFollowupMessage || !isOpen || messages.length === 0 || hasSentFollowup.current) return
+    if (!proactiveFollowupMessage || !isOpen || messages.length === 0 || hasSentFollowup.current)
+      return
     const lastMsg = messages[messages.length - 1]
     if (lastMsg.role === 'user' || status === 'streaming' || status === 'submitted') return
     const timer = setTimeout(() => {
@@ -212,25 +224,28 @@ export function ChatWidget({
   }, [mode, isOpen, isPhone])
 
   // Below lg the panel is modal (aria-modal), so Tab must not leave it.
-  const handlePanelKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key !== 'Tab' || !isPhone) return
-    const items = Array.from(
-      e.currentTarget.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      )
-    ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
-    if (items.length === 0) return
-    const first = items[0]
-    const last = items[items.length - 1]
-    const active = document.activeElement
-    if (e.shiftKey && (active === first || !e.currentTarget.contains(active))) {
-      e.preventDefault()
-      last.focus()
-    } else if (!e.shiftKey && (active === last || !e.currentTarget.contains(active))) {
-      e.preventDefault()
-      first.focus()
-    }
-  }, [isPhone])
+  const handlePanelKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key !== 'Tab' || !isPhone) return
+      const items = Array.from(
+        e.currentTarget.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => el.tabIndex >= 0 && el.offsetParent !== null)
+      if (items.length === 0) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      const active = document.activeElement
+      if (e.shiftKey && (active === first || !e.currentTarget.contains(active))) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && (active === last || !e.currentTarget.contains(active))) {
+        e.preventDefault()
+        first.focus()
+      }
+    },
+    [isPhone]
+  )
 
   // Only the visitor's own close (Escape, X) hands focus back to the launcher. A
   // route change also closes the chat (island), and there focus must stay on the new page.
@@ -444,8 +459,8 @@ export function ChatWidget({
         suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
         onPromptSelect={handlePromptSelect}
         onRegenerate={regenerate ? () => regenerate() : undefined}
-                  failure={failure}
-                  onRetry={regenerate ? () => regenerate() : undefined}
+        failure={failure}
+        onRetry={regenerate ? () => regenerate() : undefined}
         onEditMessage={handleEditMessage}
       />
       <DemoOrchestrator
@@ -459,7 +474,7 @@ export function ChatWidget({
         disabled={isAtLimit}
         isLoading={status === 'submitted' || status === 'streaming'}
         placeholder={inputPlaceholder}
-                  footer={footer}
+        footer={footer}
         initialText={editText}
       />
     </div>
