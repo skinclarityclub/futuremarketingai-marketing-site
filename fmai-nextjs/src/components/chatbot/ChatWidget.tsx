@@ -413,7 +413,6 @@ export function ChatWidget({
                   placeholder={inputPlaceholder}
                   footer={footer}
                   footerEnd={isFlagship ? <MemoryChip /> : undefined}
-                  footerEnd={isFlagship ? <MemoryChip /> : undefined}
                   initialText={editText}
                 />
               </div>
@@ -466,6 +465,7 @@ export function ChatWidget({
         isLoading={status === 'submitted' || status === 'streaming'}
         placeholder={inputPlaceholder}
         footer={footer}
+        footerEnd={isFlagship ? <MemoryChip /> : undefined}
         initialText={editText}
       />
     </div>

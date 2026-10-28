@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { test, expect, type Locator, type Page } from '@playwright/test'
 import { PROACTIVE_PROMPTS, WHISPERS } from '../../src/components/chatbot/widget-copy'
 import { SSE_HEADERS, mockChatbot, openWidget, send, uiStream } from './helpers/chatbot-mock'
@@ -746,4 +747,15 @@ test.describe('memory chip and sheet', () => {
     await expect.poll(() => stored(page)).toEqual({ ...SEEDED.profile, goal: 'meer leads' })
     expect(mock.calls()).toBe(1)
   })
+})
+
+// The only page that mounts the embedded widget with the clyde persona is
+// /skills/lead-qualifier (DemoPlayground), and every nested skill page 404s on the shared
+// :3123 dev server, so the chip cannot be rendered there. Pin the wiring instead: each of
+// the two ChatInput render paths (floating, embedded) passes the chip exactly once.
+test('memory chip is wired into both ChatInput paths, once each', async () => {
+  const src = readFileSync('src/components/chatbot/ChatWidget.tsx', 'utf8')
+  expect(src.match(/<ChatInput\b/g)).toHaveLength(2)
+  expect(src.match(/footerEnd=\{isFlagship \? <MemoryChip \/> : undefined\}/g)).toHaveLength(2)
+  expect(src.match(/footerEnd=/g)).toHaveLength(2)
 })
