@@ -53,7 +53,7 @@ const COPY: Record<CardLocale, CardCopy> = {
     hoursHeader: 'Jullie uren nu',
     perWeekManual: 'per week handmatig',
     perMonthManual: 'per maand handmatig',
-    hours: (n) => `${n} uur`,
+    hours: (n) => `${n.toLocaleString(INTL_LOCALE.nl)} uur`,
     subscription: (b) => `abonnement per maand (${b} merken)`,
     ownHoursNote:
       'Dit zijn jullie eigen uren. Hoeveel Clyde daarvan overneemt is nog niet gemeten; in het gesprek rekenen we het uit met jullie cijfers.',
@@ -74,7 +74,7 @@ const COPY: Record<CardLocale, CardCopy> = {
     hoursHeader: "Your team's hours today",
     perWeekManual: 'per week, manual',
     perMonthManual: 'per month, manual',
-    hours: (n) => `${n} hours`,
+    hours: (n) => `${n.toLocaleString(INTL_LOCALE.en)} hours`,
     subscription: (b) => `subscription per month (${b} brands)`,
     ownHoursNote:
       'These are your own hours. How much of them Clyde takes over is not measured yet; in the call we work it out with your numbers.',
@@ -95,7 +95,7 @@ const COPY: Record<CardLocale, CardCopy> = {
     hoursHeader: 'Horas de tu equipo hoy',
     perWeekManual: 'por semana, a mano',
     perMonthManual: 'por mes, a mano',
-    hours: (n) => `${n} horas`,
+    hours: (n) => `${n.toLocaleString(INTL_LOCALE.es)} horas`,
     subscription: (b) => `suscripción al mes (${b} marcas)`,
     ownHoursNote:
       'Son las horas de tu propio equipo. Cuánto asume Clyde aún no está medido; en la llamada lo calculamos con tus cifras.',
