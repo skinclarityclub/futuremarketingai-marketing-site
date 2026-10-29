@@ -603,7 +603,7 @@ const CARDS = [
 ]
 
 test.describe('compact cards', () => {
-  async function show(page: Page, tool: string, out: unknown) {
+  async function show(page: Page, tool: string, out: unknown, path?: string) {
     const mock = await mockChatbot(page, (r) =>
       r.fulfill({
         status: 200,
@@ -611,7 +611,7 @@ test.describe('compact cards', () => {
         body: uiStream({ tool, input: {}, output: out, text: 'Hier.' }),
       }),
     )
-    const w = await openWidget(page)
+    const w = await openWidget(page, path)
     await send(w, 'vraag')
     const card = w.locator('[role="log"] [data-tool-card]').last()
     await expect(card).toBeVisible()
@@ -668,6 +668,19 @@ test.describe('compact cards', () => {
       await expect(card.getByText(/nog niet gemeten/)).toBeVisible()
       await expect(card.getByText(/besparing|ROI|%|terugverdien/i)).toHaveCount(0)
     })
+
+    // No /es row: es is no longer a locale and /es redirects to /en.
+    for (const [path, week, month] of [
+      ['/nl', '7,5 uur', '32,5 uur'],
+      ['/en', '7.5 hours', '32.5 hours'],
+    ] as const) {
+      test(`roi hours use the local decimal mark on ${path}`, async ({ page }) => {
+        const roi = { ...ROI, teamHoursPerWeek: 7.5, teamHoursPerMonth: 32.5 }
+        const { card } = await show(page, 'get_roi_estimate', roi, path)
+        await expect(card.getByText(week, { exact: true })).toBeVisible()
+        await expect(card.getByText(month, { exact: true })).toBeVisible()
+      })
+    }
   })
 
   for (const { tool, out, name, href } of [
