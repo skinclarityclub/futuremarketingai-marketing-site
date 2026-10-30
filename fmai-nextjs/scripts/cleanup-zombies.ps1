@@ -295,7 +295,14 @@ try {
     $reason = $null
 
     if ($name -eq 'node.exe' -or $name -eq 'bun.exe') {
+      # The claude-peers broker is the shared daemon every session talks to, not a stdio server: it is orphaned by design (its
+      # spawning session leaves), so reaping it cut all peer messaging (2026-10-28 12:52:20Z and 13:31:10Z, reason=mcp-stdio).
+      if ($cmd -match 'claude-peers-mcp[\\/]broker\.ts') { continue }
       if ($cmd -match $MCP_SIG)         { $reason = 'mcp-stdio' }
+      # Een dev-server onder een LEVENDE detach.ps1-run is bewust verborgen (staande regel Daley 2026-10-28), geen restant:
+      # gemeten 2026-10-29 05:21:30, [KILL] node.exe reason=next-dev age=243s chain=[... <- cmd.exe(79152) <- DEAD] nam een
+      # verborgen `npm run dev` mee. Valt de detach-cmd weg, dan is de keten dood en reapen de regels hieronder hem gewoon.
+      elseif (Test-UnderDetach $pid_)   { continue }
       elseif ($devPidByPort.ContainsKey($pid_)) { $reason = "dev-server:$($devPidByPort[$pid_])" }
       # `next build` eindigt altijd zelf; onder detach is zijn keten DEAD, dus Test-Orphan gaf hem vrij en een build die over een
       # veegronde liep stierf stil met exit 1 (2026-10-22 19:36:41Z, [KILL] node.exe reason=next-dev age=202s, webpack-build sp-int).
