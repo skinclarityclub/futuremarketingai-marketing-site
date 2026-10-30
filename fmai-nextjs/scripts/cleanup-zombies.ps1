@@ -130,7 +130,15 @@ $NEXTDEV_SIG = 'next[\\/]dist[\\/]bin[\\/]next|next-server|next-router-worker|ne
 # werk dat hij zou moeten sparen: gemeten 2026-09-08, een lopende `npx playwright test` stond met
 # `chain=[bash.exe <- DEAD]` op de kaplijst terwijl hij draaide. Geldt alleen voor de shell-familie;
 # een achtergebleven chrome of MCP-node blijft gewoon een kandidaat.
-$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm (run )?(test|build)|heavy-runner|tsc --noEmit|codex'
+# `npm"?`: een `npm test` uit Git Bash staat er als `bash.exe "/c/Program Files/nodejs/npm" test -- ...`,
+# met een aanhalingsteken tussen npm en test. Zonder `"?` matchte dat nooit: gemeten 2026-10-09 01:04:45,
+# [KILL] bash.exe reason=orphan-shell age=609s nam een wachtende `npm test` mee, die eindigde op exit 0
+# zonder testuitvoer (fma-app designronde D1 en D2, vijf keer). `typecheck` om dezelfde reden: een
+# `npm run typecheck` duurt minuten en matchte (test|build) evenmin.
+# DETACH_LONGRUN: ~/.claude/scripts/detach.ps1 zet die marker in de cmd-regel van elke run die een sessie
+# moet overleven. Zo'n WMI-cmd heeft per ontwerp een dode ouder; gemeten 2026-10-14 04:36:46 reapte de
+# orphan-shell-regel er een (cmd 48740) en taskkill /T nam een betaalde auditrun op 66/94 mee.
+$LONGRUN_SIG = 'playwright|vitest|jest\b|next build|npm"? (run )?(test|build|typecheck)|heavy-runner|tsc --noEmit|codex|DETACH_LONGRUN'
 
 # ---------------------------------------------------------------------------
 $started = Get-Date
@@ -163,6 +171,45 @@ try {
   for ($i = 0; $i -lt 60 -and $byPid.ContainsKey([int]$c); $i++) {
     $selfChain[[int]$c] = $true
     $c = [int]$byPid[[int]$c].ParentProcessId
+  }
+
+  # ---- EEN LOPENDE CODEX-RUN IS ONAANTASTBAAR ----------------------------------
+  # Elke levende codex.exe plus zijn HELE ouderketen tot aan de systeemwortel wordt
+  # overgeslagen, ongeacht leeftijd, procesnaam of een dode schakel in die keten.
+  #
+  # Waarom dit er als APARTE poort staat en de bestaande beschermingen niet volstaan
+  # (alle drie gemeten 2026-09-16, gate research-weekproces):
+  #   1. $LONGRUN_SIG bevat `codex`, maar wordt getoetst op de COMMANDOREGEL VAN DE
+  #      SHELL. De launcher draaide `-File ...\gate-research-week\launch-r1.ps1` en
+  #      daar staat het woord niet in, net zomin als in gate472\launch-472r2.ps1.
+  #      De uitzondering bestond dus wel en vuurde nooit.
+  #   2. Test-Orphan kapt bij hop 0 af zodra de DIRECTE ouder uit de snapshot weg is.
+  #      Een verdwenen wscript.exe maakte de hele boom vogelvrij terwijl codex er
+  #      onderaan doorliep: [KILL] pid=50008 name=pwsh.exe reason=orphan-shell
+  #      age=884s chain=[pwsh.exe(50008) <- DEAD], veertien minuten in de run.
+  #   3. codex.exe staat zelf in de kandidatenlijst als 'orphan-claude' en wordt
+  #      alleen door een leeftijdsmarge beschermd, niet door een verbod.
+  #
+  # Wat het kostte: die kill nam de gate-ronde mee, de herstart liep op de
+  # ChatGPT-Plus-quota van vijf uur, en dat is een dag vertraging op een poort die
+  # voor de eerste regel code moet sluiten. Een codex-run eindigt altijd uit
+  # zichzelf; hem halverwege afkappen is nooit de goedkoopste uitkomst.
+  #
+  # Prijs, bewust aanvaard (Daley 2026-09-16, "hij mag nooit codex killen"): een
+  # ECHT vastgelopen codex-boom wordt hier niet meer opgeruimd. Dat is zichtbaar
+  # (stream-*.jsonl stopt met groeien) en met de hand te doen.
+  $codexTree = @{}
+  foreach ($p in $snap) {
+    if (($p.Name).ToLower() -ne 'codex.exe') { continue }
+    $cur = [int]$p.ProcessId
+    for ($i = 0; $i -lt 60; $i++) {
+      $proc = $byPid[$cur]
+      if (-not $proc) { break }            # keten loopt dood: de rest bestaat niet meer
+      $codexTree[$cur] = $true
+      if ($SYSTEM_ROOTS -contains ($proc.Name).ToLower()) { break }
+      $cur = [int]$proc.ParentProcessId
+      if ($cur -eq 0) { break }
+    }
   }
 
   # ---- the safe orphan test ----
@@ -203,6 +250,22 @@ try {
     return $true   # exceeded depth (shouldn't happen) => treat conservatively as orphan
   }
 
+  # Een shell ONDER een levende detach.ps1-cmd hoort bij een lopende run, maar alleen die cmd draagt de
+  # marker; zijn bash-kind niet. Zodra de WmiPrvSE boven die cmd weg is, gaf Test-Orphan het kind vrij:
+  # gemeten 2026-10-18 13:51:35, [KILL] bash.exe chain=[bash.exe(39892) <- cmd.exe(12060) <- DEAD] nam
+  # een vitest-shard mee. Daarvoor al drie keer hetzelfde gat, telkens met een regel die de sessie moest
+  # onthouden (marker als argument). Hier lopen we de LEVENDE keten op; de datumtoets weert PID-hergebruik.
+  function Test-UnderDetach([int]$startPid) {
+    $child = $byPid[$startPid]
+    for ($i = 0; $i -lt 60 -and $child; $i++) {
+      $parent = $byPid[[int]$child.ParentProcessId]
+      if (-not $parent -or ($parent.CreationDate -and $child.CreationDate -and $parent.CreationDate -gt $child.CreationDate)) { return $false }
+      if ([string]$parent.CommandLine -match 'DETACH_LONGRUN') { return $true }
+      $child = $parent
+    }
+    return $false
+  }
+
   # ---- build candidate set ----
   $candidates = [System.Collections.Generic.List[object]]::new()
 
@@ -226,14 +289,24 @@ try {
     $pid_ = [int]$p.ProcessId
     if ($selfChain.ContainsKey($pid_)) { continue }     # never touch our own tree
     if ($spaarPids.ContainsKey($pid_)) { continue }     # luistert op een KeepPort
+    if ($codexTree.ContainsKey($pid_))  { continue }    # lopende codex-run, zie blok hierboven
     $name = ($p.Name).ToLower()
     $cmd  = [string]$p.CommandLine
     $reason = $null
 
     if ($name -eq 'node.exe' -or $name -eq 'bun.exe') {
+      # The claude-peers broker is the shared daemon every session talks to, not a stdio server: it is orphaned by design (its
+      # spawning session leaves), so reaping it cut all peer messaging (2026-10-28 12:52:20Z and 13:31:10Z, reason=mcp-stdio).
+      if ($cmd -match 'claude-peers-mcp[\\/]broker\.ts') { continue }
       if ($cmd -match $MCP_SIG)         { $reason = 'mcp-stdio' }
+      # Een dev-server onder een LEVENDE detach.ps1-run is bewust verborgen (staande regel Daley 2026-10-28), geen restant:
+      # gemeten 2026-10-29 05:21:30, [KILL] node.exe reason=next-dev age=243s chain=[... <- cmd.exe(79152) <- DEAD] nam een
+      # verborgen `npm run dev` mee. Valt de detach-cmd weg, dan is de keten dood en reapen de regels hieronder hem gewoon.
+      elseif (Test-UnderDetach $pid_)   { continue }
       elseif ($devPidByPort.ContainsKey($pid_)) { $reason = "dev-server:$($devPidByPort[$pid_])" }
-      elseif ($cmd -match $NEXTDEV_SIG) { $reason = 'next-dev' }
+      # `next build` eindigt altijd zelf; onder detach is zijn keten DEAD, dus Test-Orphan gaf hem vrij en een build die over een
+      # veegronde liep stierf stil met exit 1 (2026-10-22 19:36:41Z, [KILL] node.exe reason=next-dev age=202s, webpack-build sp-int).
+      elseif ($cmd -match $NEXTDEV_SIG -and $cmd -notmatch 'next[\\/]dist[\\/]bin[\\/]next"?\s+build\b') { $reason = 'next-dev' }
     }
     elseif ($name -eq 'chrome.exe' -or $name -eq 'headless_shell.exe') {
       if ($cmd -match $CHROME_SIG)      { $reason = 'lighthouse/playwright-chrome' }
@@ -243,6 +316,7 @@ try {
       # zegt niets (`conhost.exe 0x4`), dus die van de ouder is het enige signaal dat er is.
       if ($name -eq 'conhost.exe' -and $byPid.ContainsKey([int]$p.ParentProcessId)) { continue }
       if ($cmd -match $LONGRUN_SIG) { continue }   # draaiende shard/build/e2e, geen restant
+      if (Test-UnderDetach $pid_) { continue }     # kind van een lopende detach.ps1-run
       $reason = 'orphan-shell'
     }
     elseif ('claude.exe','codex.exe' -contains $name) {
