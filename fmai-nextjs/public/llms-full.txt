@@ -23,7 +23,7 @@ Key facts:
 
 ## Product: Clyde, the agency's AI colleague
 
-Clyde is the AI colleague of your agency. He is named Clyde everywhere: on the website, in every screen of the dashboard, on WhatsApp and on Telegram.
+Clyde is the AI colleague of your agency. He is named Clyde everywhere: on the website, in every screen of the dashboard, in the app on your phone and on WhatsApp.
 
 The loop. Everything hangs on the goal of the client:
 - Goal: a strategy session per brand sets the goals, with a projection per channel and the pillars the brand runs on.
@@ -36,7 +36,7 @@ Control. Per task the agency chooses how independently Clyde works: observe, pro
 
 People. Team members are assigned to clients and see what is ready, what waits for approval and what went live. The agency's client gets their own dashboard where everything is complete and where they approve, their own content library to add photos and video, requests to the agency from that dashboard, and their own Clyde in the dashboard and on WhatsApp.
 
-Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday; approving happens in the dashboard. A mobile app for approving and steering from your phone is in development.
+Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday. Reports and Clyde's proposals are confirmed with one tap in WhatsApp; content is approved in the dashboard or in the app on your phone. Clyde installs on the home screen of your phone as an app, for the agency and for its client.
 
 From post to lead. When someone comments on Instagram with the keyword you chose, Clyde sends a DM with your text; other DMs get an answer from that brand's knowledge or go to the inbox. The DM contains a tracked link, so every click counts for the right client (bots and link scanners excluded). When the form on the client's site is connected, you see how many requests came in through such a link, and per Instagram account where people drop off.
 
@@ -46,11 +46,11 @@ Memory per client. Clyde remembers the conversation, memories from conversations
 
 ### Social Media Manager (Live)
 
-The Social Media Manager runs the content process from idea to publication: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn after approval; other networks via Postiz on request.
+The Social Media Manager runs the content process from idea to publication: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube after approval.
 
 Capabilities:
 - AI-generated captions in brand voice
-- Scheduling for Instagram and LinkedIn
+- Scheduling for Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube
 - Content calendar with drag and drop
 - Engagement tracking per post
 - Carousels in the house style
@@ -193,12 +193,12 @@ Credit cost: 3 credits per query.
 
 ### Clyde (Live)
 
-Clyde is the AI colleague who directs all other skills. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, on WhatsApp and via Telegram, with a memory per client of earlier conversations, preferences and context.
+Clyde is the AI colleague who directs all other skills. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, in the app on your phone and on WhatsApp, with a memory per client of earlier conversations, preferences and context.
 
 Capabilities:
 - Plain-language instructions
 - Orchestration of all other skills
-- In every screen of the dashboard and on WhatsApp
+- In every screen of the dashboard, in the app on your phone and on WhatsApp
 - Memory and context per client
 - Routines and recurring tasks
 
@@ -237,7 +237,7 @@ Two pricing models:
 - 800 credits per workspace per month (4000 to 11200 total)
 - All 12 skills included
 - 3,997 EUR one-time onboarding
-- Dedicated Slack channel
+- Direct WhatsApp line with Daley
 
 ### Enterprise, 299 EUR per workspace
 
@@ -407,13 +407,13 @@ Q: Kan Clyde meerdere merken tegelijk beheren?
 A: Ja. Elke klant krijgt een eigen werkruimte met een eigen merkstem, geheugen, agenda en goedkeuringen. Binnen een klant kunnen meerdere accounts vallen, zoals bij SkinClarity Club met 3 Instagram-accounts.
 
 Q: Welke platformen ondersteunt Clyde?
-A: Publiceren op Instagram en LinkedIn; andere netwerken via Postiz op verzoek. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, op WhatsApp en op Telegram.
+A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de app op je telefoon en op WhatsApp.
 
 Q: Hoe werkt de goedkeuringsflow?
-A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Wat Clyde voorlegt, keuren jij of je klant goed in het dashboard; Clyde meldt op WhatsApp wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
+A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de app op je telefoon. Rapporten en voorstellen van Clyde bevestig je met één tik in WhatsApp, en daar meldt Clyde zich ook wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
 Q: Wat is het verschil tussen Founding en Growth?
-A: Founding kost 997 EUR per maand met een levenslang vast tarief, 15 werkruimtes inbegrepen, maximaal 10 plekken en een directe Slack-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
+A: Founding kost 997 EUR per maand met een levenslang vast tarief, 15 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
 
 Q: Kan ik FutureMarketingAI eerst uitproberen?
 A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

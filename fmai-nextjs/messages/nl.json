@@ -135,7 +135,7 @@
       "role": "Founder en lead engineer, FutureMarketingAI",
       "quote1": "Ik schrijf Clyde's code.",
       "quote2": "Ik leer hem jouw merken kennen.",
-      "quote3": "Ik blijf in onze Slack als je iets nodig hebt.",
+      "quote3": "Als je iets nodig hebt, app je me gewoon op WhatsApp.",
       "proof": "Founder-led builds. Geen account-manager tussen jou en hoe Clyde voor jouw merken werkt.",
       "chips": {
         "engineer": "Senior engineer",
@@ -160,7 +160,7 @@
         "2": {
           "label": "Week 2",
           "heading": "Setup en pijlers",
-          "body": "Content-pijlers automatisch gegenereerd uit het merk-DNA. Design-templates per merk. Kanalen (Instagram, LinkedIn) en CTA-mapping ingesteld.",
+          "body": "Content-pijlers automatisch gegenereerd uit het merk-DNA. Design-templates per merk. Kanalen per merk en CTA-mapping ingesteld.",
           "deliverable": "5 tot 7 content-pijlers, design-templates en kanalen live",
           "clientHours": "2 uur jouw tijd"
         },
@@ -174,8 +174,8 @@
         "4": {
           "label": "Week 4",
           "heading": "Kickoff en activatie",
-          "body": "Kickoff met Daley. Clyde plant en publiceert volgens de agenda, met zoveel zelfstandigheid als jij per taak kiest. Directe Slack-lijn voor escalaties.",
-          "deliverable": "Contentmotor live, Founder Slack actief",
+          "body": "Kickoff met Daley. Clyde plant en publiceert volgens de agenda, met zoveel zelfstandigheid als jij per taak kiest. Directe WhatsApp-lijn met Daley voor escalaties.",
+          "deliverable": "Contentmotor live, directe WhatsApp-lijn actief",
           "clientHours": "2 uur per week, doorlopend"
         }
       },
@@ -306,7 +306,7 @@
         "founding": {
           "label": "Founding",
           "tagline": "Levenslang vast",
-          "desc": "Voor de eerste 10 bureaus. Alle live vaardigheden, 15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), Founder Slack-toegang en een maandtarief van €997 dat nooit wordt herijkt."
+          "desc": "Voor de eerste 10 bureaus. Alle live vaardigheden, 15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), een directe WhatsApp-lijn met Daley en een maandtarief van €997 dat nooit wordt herijkt."
         },
         "growth": {
           "label": "Growth",
@@ -396,12 +396,10 @@
     },
     "platforms": {
       "liveTitle": "Draait vandaag voor onze klanten",
-      "connectableTitle": "Koppelbaar op verzoek",
       "items": {
         "instagram": "Instagram",
         "meta": "Meta",
         "whatsapp": "WhatsApp",
-        "telegram": "Telegram",
         "gmail": "Gmail",
         "analytics": "Google Analytics",
         "searchConsole": "Search Console",
@@ -412,10 +410,9 @@
         "youtube": "YouTube",
         "x": "X",
         "facebook": "Facebook",
-        "threads": "Threads",
-        "pinterest": "Pinterest"
+        "threads": "Threads"
       },
-      "note": "Instagram en LinkedIn publiceren vandaag. Andere netwerken sluiten we aan via Postiz, dat er 27 ondersteunt; deze zes zijn de bekendste. We zetten alleen aan wat je echt gebruikt."
+      "note": "Clyde publiceert vandaag naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Andere netwerken die Postiz ondersteunt, sluiten we op verzoek aan."
     },
     "kring": {
       "eyebrow": "De kring",
@@ -472,7 +469,7 @@
     "entries": {
       "eyebrow": "Drie ingangen",
       "title": "Clyde is er waar jij bent",
-      "subtitle": "Voor jou en voor je klant: het dashboard voor het complete beeld, WhatsApp voor onderweg. De mobiele app komt erbij.",
+      "subtitle": "Voor jou en voor je klant: het dashboard voor het complete beeld, WhatsApp en de app op je telefoon voor onderweg.",
       "steps": {
         "s1": {
           "t": "Dashboard",
@@ -480,11 +477,11 @@
         },
         "s2": {
           "t": "WhatsApp",
-          "d": "Vraag Clyde onderweg hoe het ervoor staat. Hij meldt zich zelf als er iets afwijkt of op je wacht, en elke vrijdag komt het SEO-rapport binnen. Goedkeuren doe je in het dashboard."
+          "d": "Vraag Clyde onderweg hoe het ervoor staat. Hij meldt zich zelf als er iets afwijkt of op je wacht, en elke vrijdag komt het SEO-rapport binnen. Rapporten en voorstellen van Clyde bevestig je met één tik; content keur je goed in de app."
         },
         "s3": {
-          "t": "Mobiele app, in aanbouw",
-          "d": "Voor onderweg: goedkeuren en bijsturen vanaf je telefoon. We bouwen eraan."
+          "t": "Op je telefoon",
+          "d": "Installeer Clyde op je beginscherm: goedkeuren en bijsturen vanaf je telefoon, voor jou en voor je klant."
         }
       },
       "caption": "Het klantportaal: je klant keurt goed, met Clyde ernaast"
@@ -792,8 +789,8 @@
         },
         "scale": {
           "period": "Q4 2026",
-          "title": "Waar we nu aan bouwen",
-          "body": "De eerste founding-bureaus aan boord, een mobiele app en een kennisbank die laat zien wat Clyde per klant weet. In aanbouw, nog niet live."
+          "title": "Waar we nu staan",
+          "body": "Founding-plekken open voor de eerste bureaus. Clyde op je telefoon als app, en een kennisbank die per klant laat zien wat Clyde weet."
         }
       }
     },
@@ -940,8 +937,8 @@
       "professional": {
         "name": "Professional",
         "subtitle": "Voor middelgrote bureaus",
-        "tagline": "Lineair tarief vanaf 5 werkruimtes. Ruimere caps. Slack-support en maandelijkse strategiecall.",
-        "description": "Voor bureaus met 5 tot 14 merken in hun portfolio die serieus op Clyde draaien. Lineair tarief, ruimere caps, directe Slack-toegang tot Daley, maandelijkse strategiecall.",
+        "tagline": "Lineair tarief vanaf 5 werkruimtes. Ruimere caps. WhatsApp-support en maandelijkse strategiecall.",
+        "description": "Voor bureaus met 5 tot 14 merken in hun portfolio die serieus op Clyde draaien. Lineair tarief, ruimere caps, een directe WhatsApp-lijn met Daley, maandelijkse strategiecall.",
         "features_0": "Lineaire prijs per werkruimte (5 tot 14 merken)",
         "features_1": "800 credits per werkruimte (4.000 tot 11.200 totaal per maand)",
         "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
@@ -949,7 +946,7 @@
         "features_4": "Statische ads: 50 per maand. Video ads: 20 per maand",
         "features_5": "Reel Builder: 15 per maand, zodra live",
         "features_6": "Voice Agent: 120 minuten per maand, zodra live",
-        "features_7": "Slack-support plus maandelijkse strategiecall"
+        "features_7": "WhatsApp-support plus maandelijkse strategiecall"
       },
       "enterprise": {
         "name": "Enterprise",
@@ -965,8 +962,8 @@
       "founding": {
         "name": "Founding",
         "subtitle": "10 plekken · levenslang anker",
-        "tagline": "10 plekken totaal. Ruime caps. Levenslang €997. Founder Slack.",
-        "description": "Voor de oprichtende klanten die vóór launch committeren. Levenslange prijs van €997, ruimere caps dan Growth, directe Slack-lijn met Daley. Maximaal {total} plekken.",
+        "tagline": "10 plekken totaal. Ruime caps. Levenslang €997. Directe lijn met Daley.",
+        "description": "Voor de oprichtende klanten die vóór launch committeren. Levenslange prijs van €997, ruimere caps dan Growth, directe WhatsApp-lijn met Daley. Maximaal {total} plekken.",
         "features_0": "15 werkruimtes inbegrepen",
         "features_1": "8.000 credits per maand",
         "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
@@ -975,7 +972,7 @@
         "features_5": "Reel Builder: 8 per maand, zodra live",
         "features_6": "Voice Agent: 60 minuten per maand, zodra live",
         "features_7": "ManyChat DM: 500 DM's per maand",
-        "features_8": "Founder Slack (directe lijn naar Daley)",
+        "features_8": "Directe lijn met Daley via WhatsApp",
         "features_9": "Levenslange prijsgarantie"
       }
     },
@@ -1082,7 +1079,7 @@
     "clyde": {
       "eyebrow": "Ons uitgangspunt",
       "title": "Waar Clyde voor is",
-      "body": "Clyde is de AI-collega van je bureau, gebouwd voor bureaus met 5 tot 20 mensen en 5 tot 20 merken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in een eigen dashboard. Instagram en LinkedIn publiceren vandaag; andere netwerken sluiten we op verzoek aan. Data, servers en database staan in de EU; het taalmodel draait in de VS.",
+      "body": "Clyde is de AI-collega van je bureau, gebouwd voor bureaus met 5 tot 20 mensen en 5 tot 20 merken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in een eigen dashboard. Clyde publiceert naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Data, servers en database staan in de EU; het taalmodel draait in de VS.",
       "price": "Founding Member €997 per maand, met 15 werkruimtes (10 plekken). Daarna €499, €399 of €299 per werkruimte per maand, afhankelijk van het aantal merken. Je begint met een gesprek."
     },
     "list": {
@@ -1801,7 +1798,7 @@
       },
       "feature2": {
         "title": "Multi-platform inplanning",
-        "body": "Instagram en LinkedIn (andere netwerken via Postiz op verzoek). Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
+        "body": "Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
       },
       "feature3": {
         "title": "Carrousels in de huisstijl",
@@ -1863,11 +1860,11 @@
       "items": {
         "q1": {
           "question": "Wat doet de Social Media Manager-vaardigheid precies?",
-          "answer": "Clyde verzorgt het complete social-proces voor Instagram en LinkedIn, en voor andere netwerken die we via Postiz aansluiten: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Eén collega beheert meerdere merken tegelijk zonder dat tonen door elkaar lopen."
+          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Eén collega beheert meerdere merken tegelijk zonder dat tonen door elkaar lopen."
         },
         "q2": {
           "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
-          "answer": "Publicatie naar Instagram via de Meta-API en naar LinkedIn via Postiz; andere netwerken sluiten we via Postiz aan op verzoek. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
+          "answer": "Publicatie naar Instagram via de Meta-API, en naar Facebook, LinkedIn, X, Threads, TikTok en YouTube via Postiz. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
         },
         "q3": {
           "question": "Op welke tiers is de Social Media Manager beschikbaar?",
@@ -2104,7 +2101,7 @@
     "hero": {
       "badge": "Maximaal {total} Founding-plekken",
       "title": "Word Founding partner. Eén keuze, levenslang vast.",
-      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, met 15 werkruimtes inbegrepen. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle live vaardigheden, ruime caps en een directe Slack-lijn met Daley.",
+      "description": "Tien plekken totaal voor bureaus die zich vanaf launch committeren. €997 per maand, levenslang gelockt, met 15 werkruimtes inbegrepen. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle live vaardigheden, ruime caps en een directe WhatsApp-lijn met Daley.",
       "cta": "Reserveer je plek"
     },
     "pricing": {
@@ -2114,7 +2111,7 @@
       "period": "/mnd, levenslang",
       "locked": "Levenslange prijsgarantie. Geen prijsverhoging, ooit.",
       "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor 15 werkruimtes. Vanaf 3 merken bespaar je structureel.",
-      "includes": "15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), 8.000 credits per maand, alle live vaardigheden met ruime caps, Founder Slack en €0 onboarding."
+      "includes": "15 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), 8.000 credits per maand, alle live vaardigheden met ruime caps, een directe WhatsApp-lijn met Daley en €0 onboarding."
     },
     "value": {
       "heading": "Waarom de 10 Founding plekken bestaan",
@@ -2142,8 +2139,8 @@
           "description": "Nieuwe vaardigheden, zoals Reel Builder en Voice Agent, komen eerst naar Founding partners. Jij probeert ze voordat de rest toegang krijgt."
         },
         "community": {
-          "title": "Founder Slack",
-          "description": "Directe Slack-ruimte met mij en de andere Founding partners. Vragen, hulp en best practices. In dezelfde ruimte."
+          "title": "Directe lijn met Daley",
+          "description": "Je appt me rechtstreeks op WhatsApp. Vragen, hulp en best practices, zonder ticketsysteem ertussen."
         },
         "onboarding": {
           "title": "€0 onboardingvergoeding",
@@ -2685,25 +2682,6 @@
         "eyebrow": "Hoofdstuk 04, Vervolg",
         "title": "Wil je dit ook voor jouw portfolio?",
         "intro": "We bespreken in een eerste gesprek hoe Clyde past bij jouw bureau, welke vaardigheden meteen aanstaan en hoe het Founding traject verloopt."
-      },
-      "gallery": {
-        "title": "Wat er per account de deur uit gaat",
-        "subtitle": "Een doorsnede van wat Clyde per account maakt. Echte voorbeelden volgen; de kaarten tonen nu het soort content per account.",
-        "brand1": {
-          "name": "SkinClarity Club",
-          "role": "Hoofdaccount, educatief",
-          "output": "Carrousels, posts en stories. Behandelingen, tips en huidkennis."
-        },
-        "brand2": {
-          "name": "Sindy Huidtherapeut",
-          "role": "Persoonlijk autoriteits-account",
-          "output": "Carrousels en posts. Vertrouwen, expertise, persoonlijke branding."
-        },
-        "brand3": {
-          "name": "SkinClarity Shop",
-          "role": "Product-account voor de webshop",
-          "output": "Carrousels en posts. Lanceringen, bundels en productcontent."
-        }
       }
     }
   },
@@ -3169,7 +3147,7 @@
     "hero": {
       "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
       "title": "Dit is Clyde. De AI-collega van je bureau.",
-      "subtitle": "De andere vaardigheden (negen live, twee in aanbouw) zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, op WhatsApp en via Telegram.",
+      "subtitle": "De andere vaardigheden (negen live, twee in aanbouw) zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, in de app op je telefoon en op WhatsApp.",
       "cta": "Plan een gesprek",
       "prompts": {
         "prompt1": "Plan deze week voor de drie SKC-accounts",
@@ -3190,7 +3168,7 @@
       },
       "feature3": {
         "title": "In elk scherm en op WhatsApp",
-        "body": "Clyde zit in elk scherm van het dashboard. Daarbuiten bereik je hem op WhatsApp of Telegram, en hij meldt zich zelf als er iets afwijkt of op je goedkeuring wacht."
+        "body": "Clyde zit in elk scherm van het dashboard. Daarbuiten bereik je hem op WhatsApp, en hij meldt zich zelf als er iets afwijkt of op je goedkeuring wacht."
       },
       "feature4": {
         "title": "Geheugen per klant",
@@ -3201,7 +3179,7 @@
       "title": "Hoe het werkt",
       "step1": {
         "title": "Kies je kanaal",
-        "body": "Het paneel in je dashboard, WhatsApp of Telegram. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen."
+        "body": "Het paneel in je dashboard, de app op je telefoon of WhatsApp. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen."
       },
       "step2": {
         "title": "Geef een opdracht",
@@ -3244,11 +3222,11 @@
       "items": {
         "q1": {
           "question": "Wat is Clyde precies?",
-          "answer": "Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde kiest de juiste vaardigheid: schrijf een blog, plan social posts, draai een SEO-audit. Werkt in het dashboard, op WhatsApp en via Telegram."
+          "answer": "Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde kiest de juiste vaardigheid: schrijf een blog, plan social posts, draai een SEO-audit. Werkt in het dashboard, in de app op je telefoon en op WhatsApp."
         },
         "q2": {
           "question": "Welke kanalen ondersteunt Clyde?",
-          "answer": "In elk scherm van je dashboard, op WhatsApp via een gekoppeld nummer, en via Telegram. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Goedkeuren doe je in het dashboard. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per klant."
+          "answer": "In elk scherm van je dashboard, in de app op je telefoon, en op WhatsApp via een gekoppeld nummer. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Rapporten en voorstellen van Clyde bevestig je daar met één tik; content keur je goed in de app. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per klant."
         },
         "q3": {
           "question": "Op welke tiers is Clyde beschikbaar?",
@@ -3456,7 +3434,7 @@
         },
         "q2": {
           "question": "Op welke platforms komen de Reels?",
-          "answer": "Publiceren kan vandaag naar Instagram en LinkedIn, en daar komen ook de Reels. De techniek erachter leggen we vast voordat de Reel Builder live gaat. Video's komen in 9:16 (1080x1920), met ruimte voor captions."
+          "answer": "Clyde publiceert vandaag naar onder meer Instagram, TikTok en YouTube, en daar komen ook de Reels. De techniek erachter leggen we vast voordat de Reel Builder live gaat. Video's komen in 9:16 (1080x1920), met ruimte voor captions."
         },
         "q3": {
           "question": "Op welke tiers is Reel Builder beschikbaar?",

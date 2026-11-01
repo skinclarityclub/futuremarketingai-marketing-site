@@ -135,7 +135,7 @@
       "role": "Founder y lead engineer, FutureMarketingAI",
       "quote1": "Yo escribo el código de Clyde.",
       "quote2": "Le enseño tus marcas.",
-      "quote3": "Estoy en nuestro Slack cuando lo necesitas.",
+      "quote3": "Si necesitas algo, escríbeme por WhatsApp.",
       "proof": "Builds dirigidos por el founder. Sin account manager entre tú y cómo Clyde trabaja para tus marcas.",
       "chips": {
         "engineer": "Ingeniero senior",
@@ -160,7 +160,7 @@
         "2": {
           "label": "Semana 2",
           "heading": "Setup y pilares",
-          "body": "Pilares de contenido generados automáticamente a partir del ADN de marca. Plantillas de diseño por marca. Canales (Instagram, LinkedIn) y mapeo de CTA configurados.",
+          "body": "Pilares de contenido generados automáticamente a partir del ADN de marca. Plantillas de diseño por marca. Canales por marca y mapeo de CTA configurados.",
           "deliverable": "De 5 a 7 pilares de contenido, plantillas de diseño y canales en marcha",
           "clientHours": "2 horas de tu tiempo"
         },
@@ -174,8 +174,8 @@
         "4": {
           "label": "Semana 4",
           "heading": "Kickoff y activacion",
-          "body": "Kickoff con Daley. Clyde planifica y publica según la agenda, con tanta autonomía como elijas por tarea. Línea directa de Slack para escalados.",
-          "deliverable": "Motor de contenido en marcha, Founder Slack activo",
+          "body": "Kickoff con Daley. Clyde planifica y publica según la agenda, con tanta autonomía como elijas por tarea. Línea directa con Daley por WhatsApp para escalados.",
+          "deliverable": "Motor de contenido en marcha, línea directa por WhatsApp activa",
           "clientHours": "2 horas por semana, continuo"
         }
       },
@@ -306,7 +306,7 @@
         "founding": {
           "label": "Founding",
           "tagline": "Precio vitalicio fijo",
-          "desc": "Para las primeras 10 agencias. Todas las habilidades en vivo, 15 workspaces incluidos (a partir de ahí, €299 por workspace adicional), acceso al Slack del founder y una tarifa mensual de €997 que nunca se recalibra."
+          "desc": "Para las primeras 10 agencias. Todas las habilidades en vivo, 15 workspaces incluidos (a partir de ahí, €299 por workspace adicional), línea directa con Daley por WhatsApp y una tarifa mensual de €997 que nunca se recalibra."
         },
         "growth": {
           "label": "Growth",
@@ -396,12 +396,10 @@
     },
     "platforms": {
       "liveTitle": "Funcionando hoy para nuestros clientes",
-      "connectableTitle": "Conectable a peticion",
       "items": {
         "instagram": "Instagram",
         "meta": "Meta",
         "whatsapp": "WhatsApp",
-        "telegram": "Telegram",
         "gmail": "Gmail",
         "analytics": "Google Analytics",
         "searchConsole": "Search Console",
@@ -412,10 +410,9 @@
         "youtube": "YouTube",
         "x": "X",
         "facebook": "Facebook",
-        "threads": "Threads",
-        "pinterest": "Pinterest"
+        "threads": "Threads"
       },
-      "note": "Instagram y LinkedIn publican hoy. Otras redes las conectamos vía Postiz, que admite 27; estas seis son las más conocidas. Solo activamos lo que realmente usas."
+      "note": "Clyde publica hoy en Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube. Otras redes que admite Postiz las conectamos bajo petición."
     },
     "kring": {
       "eyebrow": "El ciclo",
@@ -472,7 +469,7 @@
     "entries": {
       "eyebrow": "Tres accesos",
       "title": "Clyde está donde estás tú",
-      "subtitle": "Para ti y para tu cliente: el dashboard para la visión completa, WhatsApp para cuando estás fuera. La app móvil está en camino.",
+      "subtitle": "Para ti y para tu cliente: el dashboard para la visión completa, WhatsApp y la app en tu móvil para cuando estás fuera.",
       "steps": {
         "s1": {
           "t": "Dashboard",
@@ -480,11 +477,11 @@
         },
         "s2": {
           "t": "WhatsApp",
-          "d": "Pregunta a Clyde cómo va todo cuando estás fuera. Él mismo te avisa si algo se desvía o te está esperando, y cada viernes llega el informe SEO. La aprobación se hace en el dashboard."
+          "d": "Pregunta a Clyde cómo va todo cuando estás fuera. Él mismo te avisa si algo se desvía o te está esperando, y cada viernes llega el informe SEO. Los informes y las propuestas de Clyde los confirmas con un toque; el contenido lo apruebas en la app."
         },
         "s3": {
-          "t": "App móvil, en desarrollo",
-          "d": "Para cuando estás fuera: aprobar y ajustar desde el móvil. La estamos construyendo."
+          "t": "En tu móvil",
+          "d": "Instala Clyde en tu pantalla de inicio: aprueba y ajusta desde el móvil, para ti y para tu cliente."
         }
       },
       "caption": "El portal del cliente: tu cliente aprueba, con Clyde al lado"
@@ -792,8 +789,8 @@
         },
         "scale": {
           "period": "Q4 2026",
-          "title": "En qué trabajamos ahora",
-          "body": "Las primeras agencias founding a bordo, una app móvil y una base de conocimiento que muestra lo que Clyde sabe de cada cliente. En desarrollo, aún no disponible."
+          "title": "Dónde estamos ahora",
+          "body": "Plazas founding abiertas para las primeras agencias. Clyde en tu móvil como app, y una base de conocimiento que muestra por cliente lo que Clyde sabe."
         }
       }
     },
@@ -940,8 +937,8 @@
       "professional": {
         "name": "Professional",
         "subtitle": "Para agencias medianas",
-        "tagline": "Tarifa lineal desde 5 espacios. Caps más amplios. Soporte Slack y llamada estratégica mensual.",
-        "description": "Para agencias con 5 a 14 clientes que operan en serio con Clyde. Tarifa lineal, caps más amplios, acceso directo a Daley por Slack, llamada estratégica mensual.",
+        "tagline": "Tarifa lineal desde 5 espacios. Caps más amplios. Soporte por WhatsApp y llamada estratégica mensual.",
+        "description": "Para agencias con 5 a 14 clientes que operan en serio con Clyde. Tarifa lineal, caps más amplios, acceso directo a Daley por WhatsApp, llamada estratégica mensual.",
         "features_0": "Precio lineal por espacio (5 a 14 clientes)",
         "features_1": "800 créditos por espacio (4.000 a 11.200 totales al mes)",
         "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
@@ -949,7 +946,7 @@
         "features_4": "Anuncios estáticos: 50 al mes. Anuncios en vídeo: 20 al mes",
         "features_5": "Reel Builder: 15 al mes, cuando esté disponible",
         "features_6": "Voice Agent: 120 minutos al mes, cuando esté disponible",
-        "features_7": "Soporte Slack y llamada estratégica mensual"
+        "features_7": "Soporte por WhatsApp y llamada estratégica mensual"
       },
       "enterprise": {
         "name": "Enterprise",
@@ -965,8 +962,8 @@
       "founding": {
         "name": "Founding",
         "subtitle": "10 plazas · ancla de por vida",
-        "tagline": "10 plazas en total. Caps amplios. 997 EUR de por vida. Founder Slack.",
-        "description": "Para los clientes fundadores que se comprometen antes del lanzamiento. Precio de por vida de 997 EUR, caps más amplios que Growth, línea directa con Daley por Slack. Máx. {total} plazas.",
+        "tagline": "10 plazas en total. Caps amplios. 997 EUR de por vida. Línea directa con Daley.",
+        "description": "Para los clientes fundadores que se comprometen antes del lanzamiento. Precio de por vida de 997 EUR, caps más amplios que Growth, línea directa con Daley por WhatsApp. Máx. {total} plazas.",
         "features_0": "15 espacios de trabajo incluidos",
         "features_1": "8.000 créditos al mes",
         "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
@@ -975,7 +972,7 @@
         "features_5": "Reel Builder: 8 al mes, cuando esté disponible",
         "features_6": "Voice Agent: 60 minutos al mes, cuando esté disponible",
         "features_7": "ManyChat DM: 500 DM al mes",
-        "features_8": "Founder Slack (línea directa con Daley)",
+        "features_8": "Línea directa con Daley por WhatsApp",
         "features_9": "Garantía de precio de por vida"
       }
     },
@@ -1082,7 +1079,7 @@
     "clyde": {
       "eyebrow": "Nuestro punto de partida",
       "title": "Para qué es Clyde",
-      "body": "Clyde es el colega de IA de tu agencia, hecho para agencias de 5 a 20 personas y de 5 a 20 marcas. Cada cliente tiene su propio espacio de trabajo y su propia memoria. Por cliente, Clyde hace estrategia, investigación, contenido, informes y leads, y tu cliente aprueba en su propio panel. Instagram y LinkedIn publican hoy; otras redes las conectamos bajo petición. Los datos, los servidores y la base de datos están en la UE; el modelo de lenguaje funciona en EE. UU.",
+      "body": "Clyde es el colega de IA de tu agencia, hecho para agencias de 5 a 20 personas y de 5 a 20 marcas. Cada cliente tiene su propio espacio de trabajo y su propia memoria. Por cliente, Clyde hace estrategia, investigación, contenido, informes y leads, y tu cliente aprueba en su propio panel. Clyde publica en Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube. Los datos, los servidores y la base de datos están en la UE; el modelo de lenguaje funciona en EE. UU.",
       "price": "Founding Member 997 € al mes, con 15 espacios de trabajo (10 plazas). Después 499 €, 399 € o 299 € por espacio de trabajo al mes, según el número de marcas. Empiezas con una llamada."
     },
     "list": {
@@ -1801,7 +1798,7 @@
       },
       "feature2": {
         "title": "Programación multiplataforma",
-        "body": "Instagram y LinkedIn (otras redes vía Postiz bajo petición). Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
+        "body": "Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube. Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
       },
       "feature3": {
         "title": "Carruseles con el estilo de la marca",
@@ -1863,11 +1860,11 @@
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Social Media Manager?",
-          "answer": "Clyde gestiona el proceso social completo para Instagram y LinkedIn, y para otras redes que conectamos vía Postiz: copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Un solo compañero gestiona varias marcas a la vez sin que se mezclen los tonos."
+          "answer": "Clyde gestiona el proceso social completo para Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube: copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Un solo compañero gestiona varias marcas a la vez sin que se mezclen los tonos."
         },
         "q2": {
           "question": "¿Qué plataformas y herramientas soporta Social Media Manager?",
-          "answer": "Publicación en Instagram vía la API de Meta y en LinkedIn vía Postiz; otras redes las conectamos vía Postiz bajo petición. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se maquetan con plantillas en el estilo de tu marca. Los posts programados pueden pasar por un flujo de aprobación antes de publicarse."
+          "answer": "Publicación en Instagram vía la API de Meta, y en Facebook, LinkedIn, X, Threads, TikTok y YouTube vía Postiz. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se maquetan con plantillas en el estilo de tu marca. Los posts programados pueden pasar por un flujo de aprobación antes de publicarse."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Social Media Manager?",
@@ -2104,7 +2101,7 @@
     "hero": {
       "badge": "Máx. {total} plazas Founding",
       "title": "Conviértete en Founding partner. Una elección, fijo de por vida.",
-      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, con 15 espacios de trabajo incluidos. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Todas las habilidades en vivo, topes amplios y línea directa de Slack con Daley.",
+      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, con 15 espacios de trabajo incluidos. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Todas las habilidades en vivo, topes amplios y línea directa con Daley por WhatsApp.",
       "cta": "Reserva tu plaza"
     },
     "pricing": {
@@ -2114,7 +2111,7 @@
       "period": "/mes, de por vida",
       "locked": "Garantía de precio de por vida. Sin subidas, nunca.",
       "comparison": "Growth empieza en 998 € al mes para 2 espacios y escala contigo. Tú pagas 997 € por 15 espacios. A partir de 3 marcas ahorras de forma estructural.",
-      "includes": "15 espacios de trabajo incluidos (a partir de ahí, 299 € por espacio adicional), 8.000 créditos al mes, todas las habilidades en vivo con topes amplios, Founder Slack y 0 € de onboarding."
+      "includes": "15 espacios de trabajo incluidos (a partir de ahí, 299 € por espacio adicional), 8.000 créditos al mes, todas las habilidades en vivo con topes amplios, línea directa con Daley por WhatsApp y 0 € de onboarding."
     },
     "value": {
       "heading": "Por qué existen las 10 plazas Founding",
@@ -2142,8 +2139,8 @@
           "description": "Las nuevas habilidades, como Reel Builder y Voice Agent, llegan primero a los Founding partners. Tú las pruebas antes que nadie."
         },
         "community": {
-          "title": "Founder Slack",
-          "description": "Canal de Slack directo conmigo y con los demás Founding partners. Preguntas, ayuda y buenas prácticas. En la misma sala."
+          "title": "Línea directa con Daley",
+          "description": "Me escribes directamente por WhatsApp. Preguntas, ayuda y buenas prácticas, sin sistema de tickets de por medio."
         },
         "onboarding": {
           "title": "0 € de onboarding",
@@ -2685,25 +2682,6 @@
         "eyebrow": "Capítulo 04, Siguiente paso",
         "title": "¿Quieres esto también para tu cartera?",
         "intro": "En una primera llamada hablamos sobre cómo encaja Clyde con tu agencia, qué habilidades se activan de inmediato y cómo es el recorrido Founding."
-      },
-      "gallery": {
-        "title": "Lo que sale por cuenta",
-        "subtitle": "Una muestra de lo que Clyde crea por cuenta. Los ejemplos reales llegarán después; por ahora las tarjetas muestran el tipo de contenido por cuenta.",
-        "brand1": {
-          "name": "SkinClarity Club",
-          "role": "Cuenta principal, educativo",
-          "output": "Carruseles, posts y stories. Tratamientos, consejos y conocimiento de la piel."
-        },
-        "brand2": {
-          "name": "Sindy Huidtherapeut",
-          "role": "Cuenta personal de autoridad",
-          "output": "Carruseles y posts. Confianza, experiencia, marca personal."
-        },
-        "brand3": {
-          "name": "SkinClarity Shop",
-          "role": "Cuenta de producto para la tienda",
-          "output": "Carruseles y posts. Lanzamientos, packs y contenido de producto."
-        }
       }
     }
   },
@@ -3169,7 +3147,7 @@
     "hero": {
       "eyebrow": "Habilidad 10. Clyde, el compañero de IA",
       "title": "Este es Clyde. El compañero de IA de tu agencia.",
-      "subtitle": "Las demás habilidades (nueve en vivo, dos en desarrollo) son ejecutoras especializadas. Clyde es el compañero que las pone a trabajar y que te acompaña en cada pantalla de tu panel. Da órdenes en lenguaje natural; Clyde elige la habilidad correcta y te trae los resultados. Disponible en el panel, en WhatsApp y por Telegram.",
+      "subtitle": "Las demás habilidades (nueve en vivo, dos en desarrollo) son ejecutoras especializadas. Clyde es el compañero que las pone a trabajar y que te acompaña en cada pantalla de tu panel. Da órdenes en lenguaje natural; Clyde elige la habilidad correcta y te trae los resultados. Disponible en el panel, en la app de tu móvil y en WhatsApp.",
       "cta": "Agenda una llamada",
       "prompts": {
         "prompt1": "Planifica esta semana para las tres cuentas de SKC",
@@ -3190,7 +3168,7 @@
       },
       "feature3": {
         "title": "Multicanal",
-        "body": "Clyde está en cada pantalla del panel. Fuera de él lo encuentras en WhatsApp o Telegram, y él mismo te escribe cuando algo se desvía o espera tu aprobación."
+        "body": "Clyde está en cada pantalla del panel. Fuera de él lo encuentras en WhatsApp, y él mismo te escribe cuando algo se desvía o espera tu aprobación."
       },
       "feature4": {
         "title": "Memoria por cliente",
@@ -3201,7 +3179,7 @@
       "title": "Cómo funciona",
       "step1": {
         "title": "Elige tu canal",
-        "body": "El panel de tu dashboard, WhatsApp o Telegram. En cada canal Clyde trabaja con la misma memoria."
+        "body": "El panel de tu dashboard, la app de tu móvil o WhatsApp. En cada canal Clyde trabaja con la misma memoria."
       },
       "step2": {
         "title": "Da una orden",
@@ -3244,11 +3222,11 @@
       "items": {
         "q1": {
           "question": "¿Qué es Clyde exactamente?",
-          "answer": "Clyde es el compañero de IA que pone a trabajar las demás habilidades. Da instrucciones en lenguaje natural (neerlandés o inglés) y Clyde elige la habilidad correcta: escribir un blog, planificar posts, hacer una auditoría SEO. Funciona en el panel, en WhatsApp y por Telegram."
+          "answer": "Clyde es el compañero de IA que pone a trabajar las demás habilidades. Da instrucciones en lenguaje natural (neerlandés o inglés) y Clyde elige la habilidad correcta: escribir un blog, planificar posts, hacer una auditoría SEO. Funciona en el panel, en la app de tu móvil y en WhatsApp."
         },
         "q2": {
           "question": "¿Qué canales soporta Clyde?",
-          "answer": "En cada pantalla de tu panel, en WhatsApp mediante un número conectado y por Telegram. En WhatsApp preguntas a Clyde cómo van tu contenido y tus cifras, recibes cada viernes el informe semanal de SEO, y él mismo te escribe cuando una cifra se desvía o algo espera tu aprobación. La aprobación se hace en el panel. En cada canal Clyde trabaja con la misma memoria por cliente."
+          "answer": "En cada pantalla de tu panel, en la app de tu móvil y en WhatsApp mediante un número conectado. En WhatsApp preguntas a Clyde cómo van tu contenido y tus cifras, recibes cada viernes el informe semanal de SEO, y él mismo te escribe cuando una cifra se desvía o algo espera tu aprobación. Los informes y las propuestas de Clyde los confirmas allí con un toque; el contenido lo apruebas en la app. En cada canal Clyde trabaja con la misma memoria por cliente."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Clyde?",
@@ -3456,7 +3434,7 @@
         },
         "q2": {
           "question": "¿En qué plataformas se publicarán los Reels?",
-          "answer": "Hoy se puede publicar en Instagram y LinkedIn, y ahí irán también los Reels. La tecnología la decidiremos antes de que el Reel Builder esté disponible. Los vídeos salen en 9:16 (1080x1920), con espacio para los subtítulos."
+          "answer": "Clyde publica hoy en Instagram, TikTok y YouTube, entre otros, y ahí irán también los Reels. La tecnología la decidiremos antes de que el Reel Builder esté disponible. Los vídeos salen en 9:16 (1080x1920), con espacio para los subtítulos."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Reel Builder?",

@@ -12,7 +12,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 
 ## Core pages
 
-- [Home (NL)](https://future-marketing.ai/nl): Clyde, the loop from client goal to report, the team and the client, the entrances (dashboard, WhatsApp, a mobile app in development), from post to lead, control and EU data, FAQ.
+- [Home (NL)](https://future-marketing.ai/nl): Clyde, the loop from client goal to report, the team and the client, the entrances (dashboard, WhatsApp and the installable app on your phone), from post to lead, control and EU data, FAQ.
 - [Memory](https://future-marketing.ai/nl/memory): How Clyde keeps a memory per client: the conversation, memories from conversations and feedback, strategy and research per client. Memories about a client belong to that agency and that client.
 - [Pricing](https://future-marketing.ai/nl/pricing): Workspace-priced model. Founding Member 997 EUR per month, lifetime rate lock, monthly cancellable, 15 workspaces included, maximum 10 spots. Growth 499 EUR per workspace (2 to 4 brands, onboarding 1997 EUR). Professional 399 EUR per workspace (5 to 14 brands, onboarding 3997 EUR). Enterprise 299 EUR per workspace (15 plus brands, onboarding 5997 EUR). All workspace tiers include 800 credits per workspace per month. Tariff recalibrated every 6 months.
 - [Alternatives (NL)](https://future-marketing.ai/nl/alternatives): Honest comparison with Lindy, Sintra, GoSocio and aicollegas.nl, checked 2026-10-25: what each does, its price, how it handles multiple clients and data, and when it suits an agency better than Clyde.
@@ -25,7 +25,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 
 ## 12 Skills
 
-- [Social Media Manager](https://future-marketing.ai/nl/skills/social-media): Captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn after approval. Live.
+- [Social Media Manager](https://future-marketing.ai/nl/skills/social-media): Captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube after approval. Live.
 - [Blog Factory](https://future-marketing.ai/nl/skills/blog-factory): SEO articles from keyword research to publication after approval; length follows the search intent. Live.
 - [Ad Manager](https://future-marketing.ai/nl/skills/ad-manager): Static and video ads prepared for Meta, live only after approval, then followed per ad on conversions, ROAS and ad fatigue. Live.
 - [Reel Builder](https://future-marketing.ai/nl/skills/reel-builder): Short vertical videos with script, captions and music. Coming soon.
@@ -36,7 +36,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): A weekly report per brand, a dashboard per client refreshed daily, and an alert on strong deviations. Live.
 - [SEO / GEO Analyst](https://future-marketing.ai/nl/skills/seo-geo): Technical SEO, positions from Search Console, Core Web Vitals and AI citation monitoring. Live.
 - [Research](https://future-marketing.ai/nl/skills/research): Scheduled research per client on market, trends and competitors, with a source link per insight. Live.
-- [Clyde](https://future-marketing.ai/nl/skills/clyde): The AI colleague who routes plain-language requests to the right skill, in the dashboard, on WhatsApp and on Telegram. Live.
+- [Clyde](https://future-marketing.ai/nl/skills/clyde): The AI colleague who routes plain-language requests to the right skill, in the dashboard, in the app on your phone and on WhatsApp. Live.
 
 ## English
 
