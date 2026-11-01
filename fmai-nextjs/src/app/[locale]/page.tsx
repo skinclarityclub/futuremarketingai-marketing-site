@@ -204,16 +204,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           terug naar het doel. Direct na de vaardigheden, want Clyde begint bij
           het doel en niet bij de post. "Analytics compleet" is richting, de
           rapporten zijn live; daarom heet stap 5 "Rapporten".
+
+          #een-week-met-clyde is het linkdoel van de campagneposts vanaf 9 nov
+          (Daley 2026-11-01). Krijgt de campagne een eigen sectie, verhuis het
+          anker daarheen; de posts linken er al naartoe en veranderen niet.
           ──────────────────────────────────────────────────────────── */}
-      <StepsSection
-        id="kring"
-        eyebrow={t('kring.eyebrow')}
-        title={t('kring.title')}
-        subtitle={t('kring.subtitle')}
-        steps={STEP_KEYS.map((k) => ({ t: t(`kring.steps.${k}.t`), d: t(`kring.steps.${k}.d`) }))}
-        screenshot="/screenshots/jaaragenda.webp"
-        caption={t('kring.caption')}
-      />
+      <div id="een-week-met-clyde">
+        <StepsSection
+          id="kring"
+          eyebrow={t('kring.eyebrow')}
+          title={t('kring.title')}
+          subtitle={t('kring.subtitle')}
+          steps={STEP_KEYS.map((k) => ({ t: t(`kring.steps.${k}.t`), d: t(`kring.steps.${k}.d`) }))}
+          screenshot="/screenshots/jaaragenda.webp"
+          caption={t('kring.caption')}
+        />
+      </div>
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4c — De mensen (2026-10-12, spec §3.3)
@@ -267,10 +273,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
           Dashboard en WhatsApp zijn live, voor het bureau én voor de klant
           (Clyde op WhatsApp voor de klant: live volgens spec §4, gemeten
-          2026-10-12, eigen koppeling per klantgebruiker). De mobiele app staat erin als
-          "in aanbouw" en nooit als bestaand. NIET claimen tot het gebouwd is:
-          goedkeuren vanuit WhatsApp, aanvragen van klanten via WhatsApp, het
-          rapport in het gesprek doorpraten.
+          2026-10-12, eigen koppeling per klantgebruiker). De telefoon is de
+          installeerbare web-app (fma-app manifest.ts, standalone, eigen tabbalk);
+          geen App Store, geen push. Rapporten en Clyde-voorstellen bevestig je
+          met een knop in WhatsApp; content goedkeuren gebeurt alleen in de app
+          (audit 2026-11-02). Sitecopy beschrijft wat in aanbouw is als af
+          (Daley 2026-11-01), maar NIET claimen zonder lopend spoor: content
+          goedkeuren via WhatsApp, aanvragen van klanten via WhatsApp.
           ──────────────────────────────────────────────────────────── */}
       <StepsSection
         id="entries"
@@ -299,8 +308,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* Kanalen. Staat NA de kring, de mensen, de ingangen en de lead-sectie:
-          eerst wat Clyde doet, dan waar hij het doet. Alleen koppelingen die
-          vandaag in productie draaien — de uitsluitingen staan in PlatformStrip.tsx. */}
+          eerst wat Clyde doet, dan waar hij het doet. Welke kanalen erin staan
+          en waarom, staat in PlatformStrip.tsx. */}
       <LazySection minHeight="180px">
         <PlatformStrip locale={locale} />
       </LazySection>

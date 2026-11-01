@@ -84,7 +84,26 @@ for (const [sample, hit] of [
   }
 }
 
+// Claims that drifted from the product rather than from src/lib, so the SSoT
+// checks below cannot see them. All five were live in these files until the
+// website audit of 2026-11-02. The phone app had shipped. Publishing reached 7
+// networks (fma-app #1587). Approvals are split between the app and WhatsApp
+// buttons. Clyde is reached on WhatsApp, not on Telegram (Daley 2026-11-01).
+// There is no Slack.
+const STALE = [
+  /mobile app[^.\n]{0,60}\bin development/gi,
+  /approving happens in the dashboard/gi,
+  /\bTelegram\b/gi,
+  /Founder Slack|Slack[- ](?:line|lijn|channel|support)/gi,
+  /(?:networks|netwerken) via Postiz (?:on request|op verzoek)/gi,
+]
+
 for (const [name, text] of Object.entries(files)) {
+  // 0 — stale product claims (see STALE).
+  for (const re of STALE) {
+    for (const m of text.matchAll(re)) fail(`${name}: "${m[0]}" is a stale product claim (STALE list)`)
+  }
+
   // 1 — partnership cap. Catch any number claiming to be the yearly cap.
   for (const m of text.matchAll(/(\d+)\s+(?:new\s+)?partnerships?\s+per\s+year/gi)) {
     if (Number(m[1]) !== maxPartners) {

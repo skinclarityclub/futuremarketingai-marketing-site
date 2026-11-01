@@ -2,36 +2,32 @@ import { getTranslations } from 'next-intl/server'
 import { BrandMark, type BrandKey } from './BrandMark'
 
 /**
- * De kanalen, in TWEE rijen — en dat onderscheid is de hele truc.
+ * De kanalen waar Clyde vandaag in draait, in één rij.
  *
- * Eén platte logomuur zou liegen in de ene of de andere richting. Alleen tonen
- * wat vandaag publiceert (Instagram) verzwijgt dat de rest een kwestie van
- * koppelen is; alles tonen als "draait" herhaalt precies de vijftien valse
- * claims die de audit van 2026-09-01 vond (LinkedIn-publicatie, TikTok-ads,
- * Slack, WordPress, Ahrefs — geen daarvan bestaat in de codebase).
+ * Tot 2026-11-01 waren dit twee rijen ("draait vandaag" en "koppelbaar op
+ * verzoek"), omdat alleen Instagram en LinkedIn publiceerden. Sinds fma-app
+ * #1587 (2026-10-19) publiceert de app ook naar Facebook, X, Threads, TikTok en
+ * YouTube via Postiz, met per kanaal een live testpost als bewijs. Daarmee
+ * waren alle zes "koppelbaar"-kanalen behalve Pinterest live, en is de tweede
+ * rij vervallen. Andere Postiz-netwerken staan alleen nog in de noot.
  *
- * RIJ 1, gemeten op de productiedatabase 2026-09-02:
- *   Instagram 3.360 ingepland / 376 gepubliceerd · Gmail 10.829 maillogs ·
- *   GA4 + Search Console syncen dagelijks · Shopify 1 koppeling ok ·
- *   ManyChat 5 tokens · WhatsApp en Telegram zijn de twee echte Clyde-kanalen.
- *   Hermeten 2026-10-12 (content_schedule, 60 dagen): Instagram 259 gepubliceerd
- *   over 10 accounts, LinkedIn 5 gepubliceerd (1 account, sinds 2026-10-05).
- *   Daarom staat LinkedIn sinds die meting in rij 1.
- *
- * RIJ 2, publicatiekanalen die via Postiz aangesloten kunnen worden. Postiz
- * ondersteunt 27 platforms (as of 2026-09, docs.postiz.com/public-api/
- * integrations/list). Geen van deze zes publiceert vandaag voor een klant; dat
- * verschil staat in het label, niet in de kleine lettertjes.
+ * Telegram is uit de marketingtekst gehaald (Daley 2026-11-01): het werkt
+ * technisch, maar Clyde wordt via WhatsApp gebruikt. De privacytekst noemt
+ * Telegram nog als sub-verwerker, en dat moet zo blijven zolang het kanaal bestaat.
  *
  * Neutrale lucide-iconen in plaats van merklogo's: dat vermijdt de merkrecht-
  * vraag volledig. Echte logo's vragen om een merkenrechtelijke caption.
  */
 const LIVE: readonly BrandKey[] = [
   'instagram',
+  'facebook',
   'linkedin',
+  'x',
+  'threads',
+  'tiktok',
+  'youtube',
   'meta',
   'whatsapp',
-  'telegram',
   'gmail',
   'analytics',
   'searchConsole',
@@ -39,47 +35,8 @@ const LIVE: readonly BrandKey[] = [
   'n8n',
 ]
 
-const CONNECTABLE: readonly BrandKey[] = [
-  'tiktok',
-  'youtube',
-  'x',
-  'facebook',
-  'threads',
-  'pinterest',
-]
-
-function Row({
-  items,
-  label,
-  dim,
-}: {
-  items: readonly BrandKey[]
-  label: (k: BrandKey) => string
-  dim?: boolean
-}) {
-  return (
-    <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-      {items.map((key) => (
-        <li
-          key={key}
-          className={`flex items-center gap-2 transition-colors duration-200 ${
-            dim
-              ? 'text-text-muted/70 hover:text-text-muted'
-              : 'text-text-secondary/80 hover:text-text-secondary'
-          }`}
-        >
-          <BrandMark name={key} className="w-[17px] h-[17px] shrink-0" />
-          <span className={dim ? 'text-[13px]' : 'text-sm'}>{label(key)}</span>
-        </li>
-      ))}
-    </ul>
-  )
-}
-
 export async function PlatformStrip({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'home.platforms' })
-
-  const label = (k: BrandKey) => t(`items.${k}`)
 
   return (
     <section aria-labelledby="platforms" className="py-14 px-6 lg:px-12">
@@ -90,17 +47,20 @@ export async function PlatformStrip({ locale }: { locale: string }) {
         >
           {t('liveTitle')}
         </h2>
-        <Row items={LIVE} label={label} />
-
-        <div className="mt-10 pt-8 border-t border-border-primary/60">
-          <h3 className="text-center font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
-            {t('connectableTitle')}
-          </h3>
-          <Row items={CONNECTABLE} label={label} dim />
-          <p className="mt-5 text-center text-xs text-text-muted max-w-xl mx-auto leading-relaxed">
-            {t('note')}
-          </p>
-        </div>
+        <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+          {LIVE.map((key) => (
+            <li
+              key={key}
+              className="flex items-center gap-2 text-text-secondary/80 hover:text-text-secondary transition-colors duration-200"
+            >
+              <BrandMark name={key} className="w-[17px] h-[17px] shrink-0" />
+              <span className="text-sm">{t(`items.${key}`)}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-center text-xs text-text-muted max-w-xl mx-auto leading-relaxed">
+          {t('note')}
+        </p>
       </div>
     </section>
   )

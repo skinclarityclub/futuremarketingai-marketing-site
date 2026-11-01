@@ -16,7 +16,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { ChapterSection } from '@/components/case-study/ChapterSection'
 import { ScrollProgressRail } from '@/components/case-study/ScrollProgressRail'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
-import { ArrowRight, Instagram, ShoppingBag, Sparkles, type LucideIcon } from 'lucide-react'
+import { ArrowRight, Instagram } from 'lucide-react'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -42,18 +42,8 @@ const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 
 // Outcome numbers, before/after durations, month 3 and Sindy's quotes came from a MOCKUP transcript
 // (docs/interviews/2026-04-sindy-skc-transcript.md); they stay out until Sindy confirms real ones (Daley 2026-10-12).
 const TIMELINE_KEYS = ['week1', 'month1', 'now'] as const
-// SKC is one client with three Instagram accounts; the fourth 'brands portfolio' card had no source in the data.
-const GALLERY_BRAND_KEYS = ['brand1', 'brand2', 'brand3'] as const
-
-// Per-brand iconography (placeholder until real gallery assets land)
-const GALLERY_BRAND_META: Record<
-  (typeof GALLERY_BRAND_KEYS)[number],
-  { Icon: LucideIcon; accent: 'system' | 'human' }
-> = {
-  brand1: { Icon: Instagram, accent: 'system' }, // main account (educational)
-  brand2: { Icon: Sparkles, accent: 'human' }, // personal authority
-  brand3: { Icon: ShoppingBag, accent: 'system' }, // shop
-}
+// The per-account gallery was removed 2026-11-01 (Daley): its cards were placeholders while
+// campaign traffic lands here. It returns with real posts after the design session.
 
 const CHAPTERS = [
   { id: 'chapter-uitdaging', railKey: 'chapter1', index: '01' },
@@ -260,47 +250,6 @@ export default async function SkcCaseStudyPage({
             railLabel={t('rail.chapter3')}
           >
             <div className="space-y-14">
-              {/* Photo gallery — placeholder cards per brand */}
-              <div>
-                <EyebrowLabel className="mb-3">{t('gallery.title')}</EyebrowLabel>
-                <p className="text-text-secondary mb-6 max-w-3xl">{t('gallery.subtitle')}</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {GALLERY_BRAND_KEYS.map((key) => {
-                    const { Icon, accent } = GALLERY_BRAND_META[key]
-                    const accentTint =
-                      accent === 'human'
-                        ? 'from-accent-human/20 via-bg-elevated to-bg-deep'
-                        : 'from-accent-system/20 via-bg-elevated to-bg-deep'
-                    const iconColor =
-                      accent === 'human' ? 'text-accent-human' : 'text-accent-system'
-                    return (
-                      <div
-                        key={key}
-                        className="rounded-2xl border border-border-primary bg-bg-surface/40 overflow-hidden"
-                      >
-                        <div
-                          aria-hidden
-                          className={`aspect-square bg-gradient-to-br ${accentTint} flex items-center justify-center`}
-                        >
-                          <Icon className={`h-12 w-12 ${iconColor}/80`} />
-                        </div>
-                        <div className="p-4">
-                          <p className="text-sm font-semibold text-text-primary">
-                            {t(`gallery.${key}.name`)}
-                          </p>
-                          <p className="font-mono text-[10px] uppercase tracking-wide text-text-muted mt-1">
-                            {t(`gallery.${key}.role`)}
-                          </p>
-                          <p className="text-xs text-text-secondary mt-2 leading-relaxed">
-                            {t(`gallery.${key}.output`)}
-                          </p>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-
               {/* Timeline — 4 phases */}
               <div>
                 <EyebrowLabel className="mb-6">{t('timeline.title')}</EyebrowLabel>
