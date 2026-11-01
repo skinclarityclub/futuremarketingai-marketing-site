@@ -51,7 +51,7 @@ export function PricingJsonLd() {
         '@type': 'Offer',
         name: 'Founders Club',
         description:
-          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, Founder Slack with Daley. No onboarding fee. Recommended for early adopters.',
+          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, a direct WhatsApp line with Daley. No onboarding fee. Recommended for early adopters.',
         price: String(founding.pricingModel === 'fixed' ? founding.price : 997),
         priceCurrency: 'EUR',
         priceSpecification: {
@@ -69,7 +69,7 @@ export function PricingJsonLd() {
       ),
       workspaceOffer(
         'AI Marketing Pro (Professional)',
-        `Professional tier — linear per-workspace rate (€${(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0)}/workspace) for portfolios of 5 to 14 brands. All 12 skills with wider caps, 800 credits per workspace per month, Slack support + monthly strategy call. One-time onboarding €${TIER_PRICING.PROFESSIONAL.onboardingFee.toLocaleString('en-US')}.`,
+        `Professional tier — linear per-workspace rate (€${(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0)}/workspace) for portfolios of 5 to 14 brands. All 12 skills with wider caps, 800 credits per workspace per month, WhatsApp support + monthly strategy call. One-time onboarding €${TIER_PRICING.PROFESSIONAL.onboardingFee.toLocaleString('en-US')}.`,
         'PROFESSIONAL',
       ),
       workspaceOffer(

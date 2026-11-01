@@ -17,7 +17,7 @@ Each client gets its own workspace with brand voice, content agenda, connected c
 Upload brand guidelines, a tone of voice document or examples of approved content. Clyde uses them as context for everything he writes for that client.
 
 **Step 4: Connect channels**
-Instagram and LinkedIn for publishing (other networks via Postiz on request), Google Analytics, Search Console, Shopify and Meta Ads for data, Gmail or Outlook for the inbox, and an MDX site or Shopify blog for articles.
+Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube for publishing, Google Analytics, Search Console, Shopify and Meta Ads for data, Gmail or Outlook for the inbox, and an MDX site or Shopify blog for articles.
 
 **Step 5: Strategy session**
 Goals, audience and content pillars per client, backed by research. That sets the content agenda.

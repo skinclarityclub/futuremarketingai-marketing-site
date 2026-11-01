@@ -66,10 +66,10 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/social-media',
     shortDescription: 'Captions, contentkalender, carrousels en prestaties per post, per merk in de juiste merkstem.',
     longDescription:
-      'De Social Media Manager beheert het contentproces van idee tot publicatie: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Publiceert na goedkeuring naar Instagram en LinkedIn; andere netwerken via Postiz op verzoek.',
+      'De Social Media Manager beheert het contentproces van idee tot publicatie: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Publiceert na goedkeuring naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube.',
     features: [
       'AI-gegenereerde captions in de merkstem',
-      'Inplannen voor Instagram en LinkedIn',
+      'Inplannen voor Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube',
       'Content kalender met drag & drop',
       'Engagement tracking per post',
       'Carrousels in de huisstijl',
@@ -326,7 +326,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/clyde',
     shortDescription: 'De AI-collega die alle andere vaardigheden orkestreert.',
     longDescription:
-      'Clyde is de AI-collega die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt in het dashboard, op WhatsApp en via Telegram. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
+      'Clyde is de AI-collega die alle andere skills aanstuurt. Geef opdrachten in natural language en Clyde routeert naar de juiste skill. Werkt in het dashboard, in de app op je telefoon en op WhatsApp. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
     features: [
       'Natural language opdrachten',
       'Orkestratie van alle andere skills',

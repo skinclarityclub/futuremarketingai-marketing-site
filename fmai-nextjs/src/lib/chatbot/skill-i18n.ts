@@ -39,10 +39,10 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       shortDescription:
         'Captions, content calendar, carousels and performance per post, per brand in the right brand voice.',
       longDescription:
-        'The Social Media Manager runs the content process from idea to publication: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn after approval; other networks via Postiz on request.',
+        'The Social Media Manager runs the content process from idea to publication: captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube after approval.',
       features: [
         'AI-generated captions in the brand voice',
-        'Scheduling for Instagram and LinkedIn',
+        'Scheduling for Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube',
         'Content calendar with drag & drop',
         'Engagement tracking per post',
         'Carousels in the house style',
@@ -175,7 +175,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'The AI colleague that orchestrates all other skills.',
       longDescription:
-        'Clyde is the AI colleague that drives all other skills. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, on WhatsApp and via Telegram. Has per-client memory and remembers earlier conversations, preferences and context.',
+        'Clyde is the AI colleague that drives all other skills. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, in the app on your phone and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
       features: [
         'Natural language instructions',
         'Orchestration of all other skills',
@@ -190,10 +190,10 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       shortDescription:
         'Captions, calendario de contenido, carruseles y rendimiento por publicación, por marca y con la voz de marca correcta.',
       longDescription:
-        'El Social Media Manager gestiona el proceso de contenido de la idea a la publicación: captions con la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por publicación. Publica en Instagram y LinkedIn tras tu aprobación; otras redes vía Postiz bajo petición.',
+        'El Social Media Manager gestiona el proceso de contenido de la idea a la publicación: captions con la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por publicación. Publica en Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube tras tu aprobación.',
       features: [
         'Captions generados por IA con la voz de marca',
-        'Programación para Instagram y LinkedIn',
+        'Programación para Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube',
         'Calendario de contenido con arrastrar y soltar',
         'Seguimiento de engagement por publicación',
         'Carruseles con el estilo de la marca',
@@ -327,7 +327,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'El compañero de IA que orquesta todas las demás habilidades.',
       longDescription:
-        'Clyde es el compañero de IA que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona en el dashboard, en WhatsApp y vía Telegram. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
+        'Clyde es el compañero de IA que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona en el dashboard, en la app de tu móvil y en WhatsApp. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
       features: [
         'Instrucciones en lenguaje natural',
         'Orquestación de todas las demás habilidades',
