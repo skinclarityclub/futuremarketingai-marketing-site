@@ -113,7 +113,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         '€399 per werkruimte per maand (vanaf €1.995 voor 5 merken)',
         '800 credits per werkruimte (4.000 tot 11.200 totaal per maand)',
         '€3.997 eenmalige onboarding',
-        'Eigen Slack-kanaal',
+        'Directe WhatsApp-lijn met Daley',
       ],
     },
     enterprise: {
@@ -160,7 +160,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         '€399 per workspace per month (from €1,995 for 5 brands)',
         '800 credits per workspace (4,000 to 11,200 total per month)',
         '€3,997 one-time onboarding',
-        'Dedicated Slack channel',
+        'Direct WhatsApp line with Daley',
       ],
     },
     enterprise: {
@@ -207,7 +207,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         '€399 por espacio al mes (desde €1.995 para 5 marcas)',
         '800 créditos por espacio (4.000 a 11.200 en total al mes)',
         '€3.997 de incorporación única',
-        'Canal de Slack dedicado',
+        'Línea directa con Daley por WhatsApp',
       ],
     },
     enterprise: {

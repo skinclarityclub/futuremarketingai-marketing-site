@@ -62,7 +62,7 @@ export const LEADGEN_TOPICS: TopicDefinition[] = [
  content: `## Content Types Clyde Produces
 
 **Social posts (Instagram, LinkedIn)**
-Captions in the brand voice and carousels (usually 5 to 7 slides) in the house style, following the brand's hashtag strategy. Published after approval, according to the content agenda. Other networks via Postiz on request.
+Captions in the brand voice and carousels (usually 5 to 7 slides) in the house style, following the brand's hashtag strategy. Published after approval, according to the content agenda, to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.
 
 **Blog articles**
 SEO articles whose length follows the search intent and the pages that already rank. Meta description, heading structure and internal links are checked. Published after approval to an MDX site, a Shopify blog or a custom connection.

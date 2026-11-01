@@ -28,7 +28,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 - 15 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
-- Founder Slack (direct line to Daley)
+- Direct line to Daley on WhatsApp
 - No onboarding fee
 
 **Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands** (EUR 998 to EUR 1,996 / mo total)
@@ -40,7 +40,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 **Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands** (EUR 1,995 to EUR 5,586 / mo total)
 - 800 credits per workspace (4,000 to 11,200 total / mo)
 - All skills with wider caps
-- Slack support plus a monthly strategy call
+- WhatsApp support plus a monthly strategy call
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands** (from EUR 4,485 / mo upward)
@@ -157,7 +157,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 - 15 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo (the other tiers get 800 per workspace)
 - All skills, with caps between Growth and Professional
-- Founder Slack: direct access to Daley for support and feature requests
+- Direct line to Daley on WhatsApp for support and feature requests
 - First access to new skills when they go live
 - No onboarding fee
 

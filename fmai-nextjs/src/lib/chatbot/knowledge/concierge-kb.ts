@@ -8,7 +8,7 @@ export const CONCIERGE_TOPICS: TopicDefinition[] = [
 FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-collega; never call him an employee). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills: 10 are live today, 2 are coming soon.
 
 **Create and Publish**
-- Social Media Manager (live): captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram and LinkedIn; other networks via Postiz on request.
+- Social Media Manager (live): captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.
 - Blog Factory (live): SEO articles from keyword research to publication after approval. Length follows the search intent and the pages that already rank. Publishes to an MDX site, a Shopify blog or a custom connection.
 - Ad Manager (live): static and video ads for Meta, prepared for approval in Ads Manager (ad spend is always proposed first), then followed per ad on conversions, ROAS and ad fatigue.
 - Reel Builder (coming soon): short vertical videos with script, captions and music.
@@ -23,13 +23,13 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 - Reporting and Analytics (live): a weekly report per brand and a dashboard per client from Instagram, GA4, Search Console, Shopify and Meta Ads, refreshed daily, with an alert on strong deviations.
 - SEO / GEO Analyst (live): weekly crawl, daily positions from Search Console, Core Web Vitals, and AI citation monitoring in ChatGPT, Perplexity, Gemini and Google AI Overviews. The SEO report arrives on WhatsApp every Friday.
 - Research (live): market research, trends and competitors with a source link per insight (Perplexity, Firecrawl, PubMed, Meta Ad Library).
-- Clyde (live): the AI colleague in every screen of the dashboard, on WhatsApp and on Telegram, who picks the right skill for a request in plain language.
+- Clyde (live): the AI colleague in every screen of the dashboard, in the app on your phone and on WhatsApp, who picks the right skill for a request in plain language.
 
 Memory: Clyde keeps a memory per client (conversations, feedback, strategy and research), consolidated every night. Memories about a client belong to that agency and that client.
 
 Control: per task the agency chooses what Clyde proposes first and what he may do himself and report. Critical actions such as ad spend are always proposed first.
 
-Entrances: the dashboard, WhatsApp and Telegram; a mobile app is in development. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard.`,
+Entrances: the dashboard, WhatsApp and the installable app on your phone (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard.`,
  keywords: [
  'services',
  'skills',
@@ -61,7 +61,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
 - Lifetime price lock
-- Founder Slack (direct line to Daley)
+- Direct line to Daley on WhatsApp
 - No onboarding fee
 
 **Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands**. Linear pricing: EUR 998 to EUR 1,996 per month total.
@@ -73,7 +73,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 **Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands**. Linear pricing: EUR 1,995 to EUR 5,586 per month total.
 - 800 credits per workspace (4,000 to 11,200 total per month)
 - All skills with wider caps
-- Slack support plus a monthly strategy call
+- WhatsApp support plus a monthly strategy call
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands**. Linear pricing: from EUR 4,485 per month upward.
