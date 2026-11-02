@@ -54,7 +54,8 @@ test.describe('Home hero 3 (/nl)', () => {
     page,
   }) => {
     // No client script runs: this is the server HTML plus CSS, the state before the observer measures.
-    await page.route('**/_next/static/chunks/**', (route) => route.abort())
+    // Block only the JS chunks: on Vercel the CSS also lives under /_next/static/chunks/ (no inlined critical CSS there).
+    await page.route(/\/_next\/static\/chunks\/.*\.js(\?|$)/, (route) => route.abort())
     await page.goto('/nl')
     const fab = page.locator('[data-clyde-launcher]')
     await expect(fab).not.toHaveAttribute('data-quiet')
