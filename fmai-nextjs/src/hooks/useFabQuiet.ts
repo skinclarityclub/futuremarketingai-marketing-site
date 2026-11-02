@@ -8,12 +8,14 @@ import { usePathname } from 'next/navigation'
  * where the fixed Clyde button and BackToTop sit. There the Clyde button shrinks to its round mark and BackToTop hides,
  * so neither covers the scenes (K1 B, website-port PR 3, Daley 2026-11-03).
  *
- * Observed again per pathname, because a client navigation swaps the sections. The answer is keyed by the pathname it
- * was measured on, so a stale `true` from the previous page never shows on the next one.
+ * `null` until the observer has measured this pathname (SSR, first paint, right after a client navigation). The
+ * Clyde button then omits `data-quiet` and globals.css shows the quiet shape on any page with such a section, so the
+ * button does not render as a pill and shrink a moment later. Keyed by pathname, so a stale answer from the previous
+ * page never shows on the next one.
  */
-export function useFabQuiet(): boolean {
+export function useFabQuiet(): boolean | null {
   const pathname = usePathname()
-  const [state, setState] = useState({ path: '', quiet: false })
+  const [state, setState] = useState<{ path: string; quiet: boolean }>({ path: '', quiet: false })
 
   useEffect(() => {
     const els = document.querySelectorAll('[data-fab-quiet]')
@@ -33,5 +35,5 @@ export function useFabQuiet(): boolean {
     return () => io.disconnect()
   }, [pathname])
 
-  return state.path === pathname && state.quiet
+  return state.path === pathname ? state.quiet : null
 }

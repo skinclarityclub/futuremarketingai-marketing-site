@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import type { IdleStage } from '@/hooks/useIdleEngagement'
-import { useFabQuiet } from '@/hooks/useFabQuiet'
 
 interface ClydePresenceProps {
   onClick: () => void
@@ -13,6 +12,8 @@ interface ClydePresenceProps {
   idleStage: IdleStage
   /** Whether there are unread messages; renders a small dot when true. */
   hasUnread?: boolean
+  /** useFabQuiet: true = round mark only, null = not measured yet (CSS decides). */
+  quiet: boolean | null
 }
 
 /**
@@ -35,10 +36,10 @@ export function ClydePresence({
   whisper,
   idleStage,
   hasUnread = false,
+  quiet,
 }: ClydePresenceProps) {
   const [keyboardOpen, setKeyboardOpen] = useState(false)
   const [cookieBannerVisible, setCookieBannerVisible] = useState(false)
-  const quiet = useFabQuiet()
 
   useEffect(() => {
     if (typeof window === 'undefined' || !window.visualViewport) return
@@ -90,7 +91,7 @@ export function ClydePresence({
       aria-label={ariaLabel}
       data-hidden={keyboardOpen}
       data-stage={idleStage}
-      data-quiet={quiet}
+      data-quiet={quiet ?? undefined}
       data-clyde-launcher
       className={`clyde-fab group fixed right-6 ${bottomClass} ${zClass} inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md transition-[bottom,box-shadow,transform] duration-300 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system data-[hidden=true]:pointer-events-none data-[hidden=true]:opacity-0`}
       style={{ boxShadow: 'var(--shadow-glow)' }}
