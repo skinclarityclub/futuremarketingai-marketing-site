@@ -1,0 +1,25 @@
+/*
+ * Scroll reveal for ScrollReveal (.fm-reveal), CSS only: the content is in the HTML and stays visible
+ * without JavaScript, with reduced motion, and in browsers without `animation-timeline: view()`
+ * (audit MF-01: a JS reveal once left sections blank for crawlers). Port plan Task 1.2, 2026-11-02.
+ */
+@keyframes fm-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+/* Known side effect (measured 2026-11-02): Chromium keeps a scroll-driven animation on its own compositor
+   layer, also once finished, so text inside a reveal gets grayscale instead of LCD antialiasing (measured in
+   headless Chromium on Windows). Only browsers that use LCD text antialiasing show it, such as desktop
+   Chrome/Edge on Windows; positions and colours are unchanged. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fm-reveal {
+      animation: fm-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
