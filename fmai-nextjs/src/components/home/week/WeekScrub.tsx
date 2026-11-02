@@ -104,6 +104,8 @@ export function WeekScrub({ labels }: { labels: string[] }) {
 
     function clearInline() {
       sts.forEach((s) => [s.ag, s.cl, s.el].forEach((e) => e?.removeAttribute('style')))
+      // Day 5's approve state is scroll-driven in 3D; flat mode starts from the markup's state after a resize too.
+      sts.forEach((s) => s.el.classList.remove('ok', 'tapgo'))
       world!.style.removeProperty('transform')
     }
 
@@ -178,6 +180,8 @@ export function WeekScrub({ labels }: { labels: string[] }) {
       else wake()
     }
     const onModeChange = () => {
+      // Flat mode does not track the scroll; jump to it so a rotation to 3D does not ease in from a stale position.
+      ps = target()
       render()
       fit()
       wake()
@@ -207,6 +211,12 @@ export function WeekScrub({ labels }: { labels: string[] }) {
       if (inView) wake()
     })
     io.observe(sec)
+    // Flat mode sizes the scene from the world's height, and next/image loads the screenshots lazily, after fit()
+    // ran on the tap: refit whenever the world's height changes (fit only sets the scene height, so no loop).
+    const ro = new ResizeObserver(() => {
+      if (isFlat()) fit()
+    })
+    ro.observe(world)
     document.fonts?.ready.then(() => {
       if (disposed || cur < 0) return
       const c = cur
@@ -227,6 +237,7 @@ export function WeekScrub({ labels }: { labels: string[] }) {
       window.removeEventListener('resize', onResize)
       mq.removeEventListener('change', onModeChange)
       io.disconnect()
+      ro.disconnect()
       clicks.forEach((off) => off())
       delete sec.dataset.ready
     }

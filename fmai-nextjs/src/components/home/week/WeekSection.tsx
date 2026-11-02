@@ -525,7 +525,7 @@ export function WeekView({ t }: { t: WeekT }) {
                     </span>
                   </div>
                   <div className="wb sh">
-                    <Image src="/home/week/geheugen.jpg" width={1484} height={724} sizes="(max-width: 860px) 92vw, 699px" className="shot" alt={t("alt.geheugen")} />
+                    <Image src="/home/week/geheugen.jpg" width={1484} height={724} sizes="(max-width: 860px) 1484px, 699px" className="shot" alt={t("alt.geheugen")} />
                   </div>
                 </div>
               </div>
