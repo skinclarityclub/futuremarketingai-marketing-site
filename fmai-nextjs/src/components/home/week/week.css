@@ -722,3 +722,4 @@
 @media (scripting: enabled){
 #een-week-met-clyde:not([data-ready]) .st:not(.on){visibility:hidden}
 }
+#een-week-met-clyde .st .cl .mem>.wb.sh{flex-basis:100%}
