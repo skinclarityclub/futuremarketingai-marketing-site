@@ -111,8 +111,8 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills': '2026-06-15',
   '/assessment': '2026-05-28',
   '/roadmap': '2026-06-15',
-  // Sub-processor list gained HeyGen and the integrations you switch on yourself.
-  '/legal/privacy': '2026-10-25',
+  // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
+  '/legal/privacy': '2026-11-02',
   '/legal/terms': '2026-04-27',
   '/legal/cookies': '2026-04-27',
   '/trust': '2026-10-25',
