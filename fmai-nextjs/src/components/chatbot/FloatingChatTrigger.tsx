@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl'
 import { usePathname } from '@/i18n/navigation'
 import { useChatbotStore } from '@/stores/chatbotStore'
 import { useIdleEngagement } from '@/hooks/useIdleEngagement'
+import { useFabQuiet } from '@/hooks/useFabQuiet'
 import { ClydePresence } from './ClydePresence'
 import { WHISPERS } from './widget-copy'
 import type { ChatLocale } from './useChatChrome'
@@ -47,7 +48,10 @@ export function FloatingChatTrigger() {
   const pathname = usePathname()
   const rawLocale = useLocale()
   const locale: ChatLocale = rawLocale === 'en' || rawLocale === 'es' ? rawLocale : 'nl'
-  const idleStage = useIdleEngagement()
+  const quiet = useFabQuiet()
+  // While the button is only its round mark (K1 B) the whisper has no room: it waits instead of being spent unseen.
+  const idle = useIdleEngagement()
+  const idleStage = idle === 'whispering' && quiet === true ? 'noticed' : idle
   const hasUnread = useChatbotStore((state) => state.hasUnread)
 
   // One hint per browser session, never on phones. The whisper element is mounted (hidden)
@@ -86,6 +90,7 @@ export function FloatingChatTrigger() {
       whisper={showWhisper ? whisper : ''}
       idleStage={idleStage === 'whispering' && !showWhisper ? 'noticed' : idleStage}
       hasUnread={hasUnread}
+      quiet={quiet}
     />
   )
 }

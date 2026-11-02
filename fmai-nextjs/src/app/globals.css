@@ -672,6 +672,30 @@ body::-webkit-scrollbar-corner {
   }
 }
 
+/* K1 B (website-port PR 3, Daley 2026-11-03): over hero 3 and the week (useFabQuiet) the Clyde pill
+ * shrinks to its round 44x44 mark, so it does not cover the scenes; the unread dot stays on its edge.
+ * Before the observer has measured (no data-quiet: SSR, first paint) any page with a quiet section starts as the mark,
+ * so the button does not jump from pill to mark under a first click; /nl opens on the hero or the week anyway. */
+.clyde-fab[data-quiet='true'],
+body:has([data-fab-quiet]) .clyde-fab:not([data-quiet]) {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  gap: 0;
+  justify-content: center;
+}
+.clyde-fab[data-quiet='true'] > span:not([data-unread]),
+body:has([data-fab-quiet]) .clyde-fab:not([data-quiet]) > span:not([data-unread]) {
+  display: none;
+}
+.clyde-fab[data-quiet='true'] > [data-unread],
+body:has([data-fab-quiet]) .clyde-fab:not([data-quiet]) > [data-unread] {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  margin: 0;
+}
+
 /* BackToTop rests one Clyde-pill-height (4.5rem ≈ 72px) above the FAB.
  * Base lifted to 9.5rem to match the new Clyde floor (5rem + 4.5rem). */
 .fab-rest-stacked {

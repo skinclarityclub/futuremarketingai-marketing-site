@@ -295,6 +295,16 @@ test.describe('errors and the limit', () => {
   })
 })
 
+// On /nl the hero and the week keep the button a round mark (K1 B, website-port PR 3), so the whisper waits for the
+// pill past the week. Instant scroll: a smooth one would fire scroll events (idle resets) after the jump.
+async function pastWeek(page: Page) {
+  await page.evaluate(() => {
+    const week = document.getElementById('een-week-met-clyde')!
+    window.scrollTo({ top: week.getBoundingClientRect().bottom + window.scrollY, behavior: 'instant' })
+  })
+  await expect(page.locator('[data-clyde-launcher]')).toHaveAttribute('data-quiet', 'false')
+}
+
 test.describe('one proactive hint', () => {
   const whisper = (page: Page) => page.getByText(WHISPERS.nl['/'])
   const consent = JSON.stringify({
@@ -320,11 +330,27 @@ test.describe('one proactive hint', () => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.clock.install()
     await visit(page)
+    await pastWeek(page)
+    await page.clock.fastForward(21_000)
     await expect(whisper(page)).toBeVisible()
     await page.reload({ waitUntil: 'load' })
     await page.waitForLoadState('networkidle')
     await page.clock.fastForward(21_000)
     await expect(whisper(page)).toHaveCount(0)
+    expect(mock.calls()).toBe(0)
+  })
+
+  test('whisper is not spent while the button is only its mark', async ({ page }) => {
+    const { mock } = await setup(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.clock.install()
+    await visit(page)
+    await expect(page.locator('[data-clyde-launcher]')).toHaveAttribute('data-quiet', 'true')
+    await expect(whisper(page)).toBeHidden()
+    expect(await page.evaluate(() => sessionStorage.getItem('clyde:whispered'))).toBeNull()
+    await pastWeek(page)
+    await page.clock.fastForward(21_000)
+    await expect(whisper(page)).toBeVisible()
     expect(mock.calls()).toBe(0)
   })
 
@@ -450,6 +476,7 @@ test.describe('whisper animates', () => {
     )
     await page.goto('/nl', { waitUntil: 'load' })
     await page.waitForLoadState('networkidle')
+    await pastWeek(page)
     const text = page.getByText(WHISPERS.nl['/'])
     // mounted in advance: an element inserted with the stage change would skip its transition
     await expect(text).toHaveCount(1)

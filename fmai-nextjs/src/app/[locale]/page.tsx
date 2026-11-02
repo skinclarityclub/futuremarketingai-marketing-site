@@ -22,6 +22,7 @@ import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
 import { WeekSection } from '@/components/home/week/WeekSection'
+import { Hero3Section } from '@/components/home/hero3/Hero3Section'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
 // (ssr: true) so SEO + crawlers see real content. The browser fetches
@@ -105,22 +106,36 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/*
         Desktop hero LCP candidate: the poster of the loop video
         (src/components/hero/HeroVideo.tsx), fetched at high priority. Media-gated
-        because on mobile the poster sits below the fold.
+        because on mobile the poster sits below the fold. Not on /nl: hero 3 has no
+        poster (website-port PR 3, besluit 10).
       */}
-      <link
-        rel="preload"
-        as="image"
-        fetchPriority="high"
-        media="(min-width: 1024px)"
-        href="/images/clyde-kring-poster.webp"
-      />
+      {locale !== 'nl' ? (
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          media="(min-width: 1024px)"
+          href="/images/clyde-kring-poster.webp"
+        />
+      ) : (
+        // Hero 3's phone LCP is the LinkedIn post in the front phone, a CSS background that the browser only finds
+        // after layout, at low priority (Lighthouse mobile LCP 6.5 s locally). Below 600 px the calendar is a 1 px GIF.
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          media="(max-width: 599px)"
+          href="/home/hero3/meerkade_posts_meerkade-li-twintig-minuten-1.webp"
+        />
+      )}
 
       {/*
         Hero background — statische subtle radial + grid overlay.
         Vervangt PaperShaderMesh (W5.2 reverted): user feedback animated
         WebGL mesh was te dominant. Server-rendered, geen JS, geen WebGL.
+        Belongs to the old hero; hero 3 on /nl draws its own floor and orbs.
       */}
-      <HeroBackdrop />
+      {locale !== 'nl' && <HeroBackdrop />}
 
       {/* JSON-LD Structured Data */}
       <WebSiteJsonLd />
@@ -142,29 +157,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 1 — Hero + TrustCluster (W4 motion migration)
+          Sectie 1 — Hero. /nl: hero 3 (website-port PR 3, approved 2026-11-02); its scenes are
+          Dutch captures, so /en keeps the old hero + TrustCluster (W4 motion migration).
           ──────────────────────────────────────────────────────────── */}
-      <HeroSection
-        brandKicker={t('hero.brandKicker')}
-        badge={t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
-        headlineMain={t('hero.headlineMain')}
-        tagline={t.rich('hero.tagline', {
-          accent: (chunks) => <span>{chunks}</span>,
-        })}
-        subtitle={t('hero.subtitle')}
-        trustAnchor={t('hero.trustAnchor')}
-        ctaPrimary={t('hero.cta')}
-        ctaSecondary={t('hero.ctaSecondary')}
-        trustClusterTarget={t('hero.trustCluster.target')}
-        trustClusterFounding={t('hero.trustCluster.founding', {
-          total: FOUNDING_SPOTS_TOTAL,
-        })}
-        trustClusterAvg={t('hero.trustCluster.avgLabel')}
-        imageAlt={t('hero.imageAlt')}
-        videoPause={t('hero.videoPause')}
-        videoPlay={t('hero.videoPlay')}
-        showVideo={locale === 'nl'}
-      />
+      {locale === 'nl' ? (
+        <Hero3Section />
+      ) : (
+        <HeroSection
+          brandKicker={t('hero.brandKicker')}
+          badge={t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
+          headlineMain={t('hero.headlineMain')}
+          tagline={t.rich('hero.tagline', {
+            accent: (chunks) => <span>{chunks}</span>,
+          })}
+          subtitle={t('hero.subtitle')}
+          trustAnchor={t('hero.trustAnchor')}
+          ctaPrimary={t('hero.cta')}
+          ctaSecondary={t('hero.ctaSecondary')}
+          trustClusterTarget={t('hero.trustCluster.target')}
+          trustClusterFounding={t('hero.trustCluster.founding', {
+            total: FOUNDING_SPOTS_TOTAL,
+          })}
+          trustClusterAvg={t('hero.trustCluster.avgLabel')}
+          imageAlt={t('hero.imageAlt')}
+          videoPause={t('hero.videoPause')}
+          videoPlay={t('hero.videoPlay')}
+          showVideo={locale === 'nl'}
+        />
+      )}
 
       {/* Een week met Clyde (port PR 2, 2026-11-02): on /nl the approved week takes the campaign anchor
           #een-week-met-clyde right after the hero and the kring below goes. The screens are Dutch captures,

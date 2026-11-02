@@ -12,6 +12,8 @@ interface ClydePresenceProps {
   idleStage: IdleStage
   /** Whether there are unread messages; renders a small dot when true. */
   hasUnread?: boolean
+  /** useFabQuiet: true = round mark only, null = not measured yet (CSS decides). */
+  quiet: boolean | null
 }
 
 /**
@@ -25,12 +27,16 @@ interface ClydePresenceProps {
  *
  * Mobile: lifts above the cookie banner while no consent is stored,
  * hides while the on-screen keyboard is open.
+ *
+ * Over hero 3 and the week (`[data-fab-quiet]`) only the round mark shows, so the
+ * pill does not cover the scenes; the unread dot stays (K1 B, website-port PR 3).
  */
 export function ClydePresence({
   onClick,
   whisper,
   idleStage,
   hasUnread = false,
+  quiet,
 }: ClydePresenceProps) {
   const [keyboardOpen, setKeyboardOpen] = useState(false)
   const [cookieBannerVisible, setCookieBannerVisible] = useState(false)
@@ -85,6 +91,7 @@ export function ClydePresence({
       aria-label={ariaLabel}
       data-hidden={keyboardOpen}
       data-stage={idleStage}
+      data-quiet={quiet ?? undefined}
       data-clyde-launcher
       className={`clyde-fab group fixed right-6 ${bottomClass} ${zClass} inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md transition-[bottom,box-shadow,transform] duration-300 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system data-[hidden=true]:pointer-events-none data-[hidden=true]:opacity-0`}
       style={{ boxShadow: 'var(--shadow-glow)' }}
@@ -107,6 +114,7 @@ export function ClydePresence({
       {hasUnread && (
         <span
           aria-hidden="true"
+          data-unread
           className="ml-1 flex h-2 w-2 items-center justify-center rounded-full bg-error"
         >
           <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-error opacity-60" />

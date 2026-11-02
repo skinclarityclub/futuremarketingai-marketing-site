@@ -14,7 +14,7 @@ const LABELS = ['ts.0', 'ts.1', 'ts.2', 'ts.3', 'ts.4', 'ts.5', 'ts.6'] as const
 
 export function WeekView({ t }: { t: WeekT }) {
   return (
-    <section id="een-week-met-clyde" className="wk" aria-labelledby="wk-h">
+    <section id="een-week-met-clyde" className="wk" aria-labelledby="wk-h" data-fab-quiet="">
       <svg width="0" height="0" style={{ position: 'absolute' } as CSSProperties} aria-hidden="true">
         <defs>
           <symbol id="i-ig" viewBox="0 0 24 24">

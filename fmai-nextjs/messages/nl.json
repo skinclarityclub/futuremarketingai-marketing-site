@@ -11,7 +11,7 @@
   },
   "home": {
     "meta": {
-      "title": "FutureMarketingAI: Clyde, de AI-collega van je bureau",
+      "title": "Clyde, de AI-collega voor marketingbureaus",
       "description": "Clyde is de AI-collega van je bureau: van het doel van elke klant tot de agenda, de content en de rapporten. Met een eigen geheugen per klant."
     },
     "hero": {
@@ -31,6 +31,87 @@
         "founding": "Maximaal {total} founding-plekken",
         "avgLabel": "Data in de EU"
       }
+    },
+    "hero3": {
+      "alt": {
+        "h3-kal": "De kalender van woensdag 11 tot en met vrijdag 13 november, met posts van vijf klanten",
+        "krijtenstaal_mark": "Krijt & Staal",
+        "luwte_mark": "Dagspa Luwte",
+        "meerkade_mark": "Mondzorg Meerkade"
+      },
+      "cta": {
+        "primary": "Plan een gesprek",
+        "secondary": "Zie Clyde aan het werk"
+      },
+      "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
+      "pause": {
+        "pause": "Pauzeer de animatie",
+        "play": "Speel de animatie af"
+      },
+      "proof": {
+        "desktop": "Dashboard, telefoon en WhatsApp. Niets gaat live zonder akkoord van jou en je klant.",
+        "mobile": "Jij stuurt, Clyde doet het werk, je klant keurt goed."
+      },
+      "sceneDescription": "In de kalender van Nova Digital staan de posts van vijf klanten voor de week van 9 november, op Instagram, LinkedIn, TikTok, Facebook en X. Mondzorg Meerkade keurt een LinkedIn-post goed op de eigen telefoon. Dagspa Luwte keurt een reel goed voor TikTok, Instagram en Facebook. Krijt & Staal keurt een Instagram-story goed. Daarna komt het weekrapport van Luwte als PDF in WhatsApp.",
+      "screens": {
+        "n1": "Jij stuurt",
+        "n10": "19:00",
+        "n11": "Dagspa Luwte ·",
+        "n12": "Vijftig minuten in Luwte",
+        "n13": "19:00",
+        "n14": "Dagspa Luwte ·",
+        "n15": "Vijftig minuten in Luwte",
+        "n16": "19:00",
+        "n17": "Dagspa Luwte ·",
+        "n18": "Vijftig minuten in Luwte",
+        "n19": "Clyde doet het werk",
+        "n2": "Nova Digital / Content / Kalender",
+        "n20": "Clyde",
+        "n21": "Week van 9 november",
+        "n22": "posts voor vijf klanten staan klaar",
+        "n23": "LinkedIn-post goedgekeurd",
+        "n24": "staat gepland voor wo 08:30",
+        "n25": "Reel goedgekeurd",
+        "n26": "gepland op TikTok, Instagram en Facebook",
+        "n27": "Story goedgekeurd",
+        "n28": "Instagram, gepland voor vr 17:00",
+        "n29": "Weekrapport gestuurd",
+        "n3": "November 2026",
+        "n30": "via WhatsApp, aan Noor",
+        "n31": "Je klanten keuren goed",
+        "n32": "Mondzorg Meerkade",
+        "n33": "LinkedIn-post · wo 08:30",
+        "n34": "Die tijd gaat niet naar de stoel, maar naar uitleg en vragen. Werk je in de mondzorg en wil je die tijd ook? We zoeken een mondhygiënist.",
+        "n35": "Goedkeuren",
+        "n36": "Wijzigen",
+        "n37": "Goedgekeurd",
+        "n38": "Dagspa Luwte",
+        "n39": "TikTok-video · wo 19:00",
+        "n4": "08:30",
+        "n40": "Vijftig minuten even niets. Daarna thee.",
+        "n41": "#dagspa #evenniets #rust",
+        "n42": "Goedkeuren",
+        "n43": "Wijzigen",
+        "n44": "Goedgekeurd",
+        "n45": "Krijt & Staal",
+        "n46": "Instagram-story · vr 17:00",
+        "n47": "Goedkeuren",
+        "n48": "Wijzigen",
+        "n49": "Goedgekeurd",
+        "n5": "Mondzorg Meerkade ·",
+        "n50": "WhatsApp van de klant: weekrapport",
+        "n51": "Clyde",
+        "n52": "WhatsApp",
+        "n53": "PDF",
+        "n54": "Weekrapport Luwte.pdf",
+        "n55": "PDF",
+        "n56": "Hoi Noor, het weekrapport van Luwte staat klaar. Boekingen: 86, het doel was 80 per vier weken. Nova Digital heeft het eerst nagekeken.",
+        "n6": "Een controle van tien minuten is te kort.",
+        "n7": "17:00",
+        "n8": "Krijt & Staal ·",
+        "n9": "Proeftraining? Er is deze week nog plek."
+      },
+      "title": "Meer klanten per teamlid."
     },
     "services": {
       "title": "Wat Clyde doet voor jouw bureau",
