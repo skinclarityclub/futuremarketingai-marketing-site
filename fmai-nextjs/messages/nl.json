@@ -442,6 +442,182 @@
       },
       "caption": "De jaaragenda van onze eerste klant, gebouwd op de strategie"
     },
+    "week": {
+      "alt": {
+        "agenda": "De strategie-agenda van Dagspa Luwte met zes vensters en hun pijlers, in de demo-omgeving",
+        "analyse": "Twee signalen voor Dagspa Luwte met hun urgentie, in de demo-omgeving",
+        "dagstart": "Het overzicht van Clyde met wat er bij vier klanten op je wacht, in de demo-omgeving",
+        "deck": "De review van de carrousel Welke behandeling past bij jou?, met bijschrift, platformcheck en taalcontrole, in de demo-omgeving",
+        "geheugen": "Het kerngeheugen van Clyde over Dagspa Luwte: klantprofiel, merkidentiteit, strategie, werkwijze en samenvatting, in de demo-omgeving",
+        "maken": "Twee blogs voor Dagspa Luwte met hun scores, waaronder Je eerste keer in een dagspa, in de demo-omgeving",
+        "rapport": "De boekingen van Dagspa Luwte per week tegen het doel van 80 per vier weken, in de demo-omgeving",
+        "strategie": "De strategie van Dagspa Luwte: waar we voor gaan, voor wie en het klantprofiel, in de demo-omgeving"
+      },
+      "desc": {
+        "0": "Clyde start de dag met wat jouw aandacht nodig heeft, over al je klanten heen. De ochtendbriefing staat al in je WhatsApp.",
+        "1": "Clyde onderzoekt per klant wat er speelt: concurrenten, markt, zoekwoorden en doelgroep. Ziet hij een kans, dan legt hij die aan je voor. Rond de feestdagen komen de cadeaubonnen binnen, en bijna geen spa laat zien wat er bij een behandeling gebeurt. Dus stelt hij een blog voor over je eerste keer.",
+        "2": "Clyde zet per klant de koers op papier: voor wie, wat je belooft en waar je het over hebt. Jij en je klant beslissen. Wat jullie in de terugblik afspreken, staat dezelfde dag in de agenda.",
+        "3": "Clyde schrijft in de stem van de klant, vanuit wat hij over die klant onthoudt: aanbod, toon en wat je nooit belooft. Vannacht vier blogs voor Luwte, ook die over je eerste keer, elk al gekeurd op vindbaarheid en betrouwbaarheid.",
+        "4": "Jij beslist per dag wat klaarstaat, met bijschrift, platformcheck en taalcontrole erbij: goedkeuren, aanpassen of overslaan. De klant kijkt mee in het portaal op de telefoon. Niets gaat live zonder akkoord.",
+        "5": "Zaterdag ben jij vrij. De post gaat op het ingeplande moment live, met per kanaal een eigen tekst: Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Wie reageert met RUST, krijgt een DM met de link om te boeken. Pauzeren kan altijd.",
+        "6": "Zondag zet Clyde de week van elke klant op een rij, zoals de boekingen tegen het doel. Maandagochtend, als jij het hebt nagekeken, staat het weekrapport als PDF in de WhatsApp van de klant."
+      },
+      "rail": {
+        "0": {
+          "day": "Ma",
+          "name": "Dagstart"
+        },
+        "1": {
+          "day": "Di",
+          "name": "Analyse"
+        },
+        "2": {
+          "day": "Wo",
+          "name": "Strategie"
+        },
+        "3": {
+          "day": "Do",
+          "name": "Maken"
+        },
+        "4": {
+          "day": "Vr",
+          "name": "Goedkeuren"
+        },
+        "5": {
+          "day": "Za",
+          "name": "Live"
+        },
+        "6": {
+          "day": "Zo",
+          "name": "Rapport"
+        }
+      },
+      "railLabel": "De zeven dagen",
+      "screens": {
+        "s0": {
+          "n1": "Nova Digital / Clyde",
+          "n10": "Later",
+          "n2": "Clyde",
+          "n3": "Briefing staat in je WhatsApp",
+          "n4": "Routine · Ochtendbriefing 09:00",
+          "n5": "Clyde",
+          "n6": "WhatsApp",
+          "n7": "Goedemorgen. Bij vier klanten wacht iets op je: twee signalen voor Luwte, een blogonderwerp voor Havermoed Granola en vijf posts ter review. Zal ik de review openzetten?",
+          "n8": "09:00",
+          "n9": "Open review"
+        },
+        "s1": {
+          "n1": "Nova Digital / Research",
+          "n2": "Clyde",
+          "n3": "Kans voor Luwte: uitleg voor wie met een cadeaubon komt",
+          "n4": "Voor jou",
+          "n5": "Blog voor Luwte: Je eerste keer in een dagspa",
+          "n6": "Clyde wil een blog schrijven voor Dagspa Luwte over wat een gast bij de eerste keer kan verwachten. Geef het onderwerp vrij, dan schrijft Clyde het concept.",
+          "n7": "Goedkeuren",
+          "n8": "Leg weg"
+        },
+        "s2": {
+          "n1": "Nova Digital / Strategie",
+          "n2": "Clyde",
+          "n3": "Koers staat, agenda gevuld tot en met januari 2028",
+          "n4": "Terugblik op de week · Luwte",
+          "n5": "Google Meet · 3 deelnemers",
+          "n6": "Besluit: twee extra uitlegposts (gezichtsbehandeling, wat je meeneemt) en een story over cadeaubonnen.",
+          "n7": "Meegenomen in de agenda",
+          "n8": "Nova Digital / Strategie / Agenda"
+        },
+        "s3": {
+          "n1": "Nova Digital / Blog Factory",
+          "n2": "Clyde",
+          "n3": "4 blogs klaar voor review",
+          "n4": "Nova Digital / Clyde / Geheugen"
+        },
+        "s4": {
+          "n1": "Nova Digital / Social Media Manager / Review",
+          "n10": "Agenda",
+          "n11": "Rapporten",
+          "n12": "Carrousel · 1/6",
+          "n13": "Welke behandeling past bij jou?",
+          "n14": "Carrousel · 2/6",
+          "n15": "1",
+          "n16": "Adem rustig in",
+          "n17": "Carrousel · 3/6",
+          "n18": "Plan je rustmoment",
+          "n19": "Boek nu",
+          "n2": "Clyde",
+          "n20": "We krijgen vaak de vraag welke behandeling iemand moet kiezen. Het eerlijke antwoord: dat hangt af van hoeveel tijd je hebt en waar je behoefte aan hebt. Hier staan ze alle drie, in gewone woorden.",
+          "n21": "Instagram · za 10:00",
+          "n22": "1 van 2",
+          "n23": "Goedkeuren",
+          "n24": "Wijzigen",
+          "n25": "Goedgekeurd",
+          "n26": "Video",
+          "n27": "Een uur voor je gezicht",
+          "n3": "Luwte bekijkt de carrousel in het portaal",
+          "n4": "Luwte keurde goed. Ingepland voor za 10:00",
+          "n5": "Stopmoment · jij kunt pauzeren",
+          "n6": "Telefoon van de klant: het portaal van Nova Digital",
+          "n7": "Nova Digital",
+          "n8": "Portaal · Luwte",
+          "n9": "Goedkeuren"
+        },
+        "s5": {
+          "n1": "luwte",
+          "n10": "Luwte",
+          "n11": "@luwte",
+          "n12": "Rugmassage, gezicht of allebei? Zo kies je wat bij je past.",
+          "n13": "luwte.nl",
+          "n14": "luwte",
+          "n15": "De vraag die we het vaakst krijgen: wat kies ik de eerste keer? Ons eerlijke antwoord.",
+          "n16": "Luwte",
+          "n17": "Zojuist",
+          "n18": "We krijgen vaak de vraag welke behandeling iemand moet kiezen. Hier staan ze alle drie, in gewone woorden.",
+          "n19": "Leuk",
+          "n2": "<b>luwte</b> Welke behandeling past bij jou? Swipe door alle drie. Reageer RUST, dan sturen we je de link.",
+          "n20": "Reageren",
+          "n21": "Delen",
+          "n22": "0:24",
+          "n23": "Welke behandeling past bij jou? Drie opties uitgelegd",
+          "n24": "Luwte",
+          "n25": "Komt eraan",
+          "n26": "Pauzeer",
+          "n27": "Reactie op Instagram",
+          "n28": "RUST",
+          "n29": "DM verstuurd met de link om te boeken",
+          "n3": "Luwte",
+          "n4": "Dagspa · Amsterdam",
+          "n5": "Een cadeaubon voor je team? Zo kiest iedereen zelf de behandeling die past.",
+          "n6": "Leuk",
+          "n7": "Reageren",
+          "n8": "Delen",
+          "n9": "<b>@luwte</b><br></br>Je eerste gezichtsbehandeling, van begin tot eind"
+        },
+        "s6": {
+          "n1": "Nova Digital / Resultaten / Boekingen",
+          "n10": "PDF",
+          "n11": "Hoi Noor, het weekrapport van Luwte staat klaar. Boekingen: 86, het doel was 80 per vier weken. Nova Digital heeft het eerst nagekeken.",
+          "n2": "Terug in de strategie",
+          "n3": "Wat werkte gaat mee in de agenda van volgende week",
+          "n4": "Routine · Weekrapport Luwte",
+          "n5": "WhatsApp van de klant: weekrapport",
+          "n6": "Clyde",
+          "n7": "WhatsApp",
+          "n8": "PDF",
+          "n9": "Weekrapport Luwte.pdf"
+        }
+      },
+      "sub": "Zeven dagen, van dagstart tot weekrapport. Clyde draait de marketing voor al je klanten, jij houdt de regie en je klant kijkt mee.",
+      "title": "Een week<br></br>met Clyde",
+      "ts": {
+        "0": "Briefing klaar",
+        "1": "Kans gevonden",
+        "2": "Strategie staat",
+        "3": "Geschreven",
+        "4": "Wacht op akkoord",
+        "5": "Live",
+        "6": "Rapport verstuurd"
+      }
+    },
     "people": {
       "eyebrow": "De mensen",
       "title": "Clyde werkt met je team. En met je klant.",

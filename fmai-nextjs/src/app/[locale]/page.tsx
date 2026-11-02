@@ -21,6 +21,7 @@ import { HeroSection } from '@/components/home/HeroSection'
 import { IcpSection } from '@/components/home/IcpSection'
 import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
+import { WeekSection } from '@/components/home/week/WeekSection'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
 // (ssr: true) so SEO + crawlers see real content. The browser fetches
@@ -165,6 +166,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         showVideo={locale === 'nl'}
       />
 
+      {/* Een week met Clyde (port PR 2, 2026-11-02): on /nl the approved week takes the campaign anchor
+          #een-week-met-clyde right after the hero and the kring below goes. The screens are Dutch captures,
+          so /en keeps the kring until there are English ones. */}
+      {locale === 'nl' && <WeekSection />}
+
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
           Verplaatst van positie 14 naar 2: interactive engagement direct
@@ -209,6 +215,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           (Daley 2026-11-01). Krijgt de campagne een eigen sectie, verhuis het
           anker daarheen; de posts linken er al naartoe en veranderen niet.
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <div id="een-week-met-clyde">
         <StepsSection
           id="kring"
@@ -220,6 +227,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           caption={t('kring.caption')}
         />
       </div>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4c — De mensen (2026-10-12, spec §3.3)
