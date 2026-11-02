@@ -1,8 +1,10 @@
 import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 
+// Variable (no `weight`) with the opsz axis: static DM Sans pins optical size at 14, which set the
+// homepage H1 11% wider than the approved design (measured 2026-11-02, port plan Task 1.1).
 export const dmSans = DM_Sans({
   variable: '--font-dm-sans',
-  weight: ['400', '500', '600', '700'],
+  axes: ['opsz'],
   subsets: ['latin'],
   display: 'swap',
   preload: true,
