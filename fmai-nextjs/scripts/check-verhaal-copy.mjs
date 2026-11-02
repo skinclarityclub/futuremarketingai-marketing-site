@@ -74,8 +74,13 @@ for (const l of LOCALES) {
   keysets[l] = new Set(flat.keys())
   for (const [k, v] of flat) check(`${file}:${k}`, v)
 }
+// Namespaces that only render on /nl, so en/es do not need them. home.week: "Een week met Clyde" shows Dutch
+// app captures and page.tsx renders it for locale 'nl' only, until there are English captures (port PR 2,
+// 2026-11-02). The copy rules above still run on these keys; only the parity check skips them.
+const NL_ONLY = [/^home\.week\./]
 for (const l of LOCALES.slice(1)) {
-  for (const k of keysets.nl) if (!keysets[l].has(k)) hits.push(`sleutel     messages/${l}.json mist ${k}`)
+  for (const k of keysets.nl)
+    if (!keysets[l].has(k) && !NL_ONLY.some((re) => re.test(k))) hits.push(`sleutel     messages/${l}.json mist ${k}`)
   for (const k of keysets[l]) if (!keysets.nl.has(k)) hits.push(`sleutel     messages/${l}.json heeft extra ${k}`)
 }
 
