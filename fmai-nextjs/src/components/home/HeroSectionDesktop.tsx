@@ -67,7 +67,7 @@ export function HeroSectionDesktop(props: HeroSectionProps) {
       <div
         role="heading"
         aria-level={1}
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-text-primary mb-3"
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary mb-3"
       >
         <KineticHeadline text={headlineMain} className="block" baseDelay={0.25} />
       </div>

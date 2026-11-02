@@ -75,7 +75,7 @@ export function SharedResultReveal({
           initial={{ opacity: 0, scale: 0.94, y: 18 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.2 }}
-          className="mb-4 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl"
+          className="mb-4 font-display text-6xl font-bold leading-none tracking-tight sm:text-7xl"
         >
           <span
             className="bg-clip-text text-transparent"

@@ -82,7 +82,7 @@ export default async function MemoryPage({ params }: { params: Promise<{ locale:
           <EyebrowLabel className="mb-6 inline-block">{t('hero.eyebrow')}</EyebrowLabel>
           <h1
             id="memory-hero"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-text-primary"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-text-primary"
           >
             {t('hero.headlineMain')}
             <br />

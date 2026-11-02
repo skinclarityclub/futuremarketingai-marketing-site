@@ -64,7 +64,7 @@ export function HeroSectionMobile(props: HeroSectionMobileProps) {
       </p>
 
       <h1
-        className="hero-mobile-anim text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-text-primary mb-3"
+        className="hero-mobile-anim text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-text-primary mb-3"
         style={{ animation: `hero-mobile-fade-up-sm 0.55s ${ease} 0.15s both` }}
       >
         {headlineMain}
