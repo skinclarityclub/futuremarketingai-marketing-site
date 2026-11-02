@@ -130,7 +130,7 @@ export function ResultReveal({ result, recommendedSkills, emailGate }: ResultRev
           initial={{ opacity: 0, scale: 0.92, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.3, type: 'spring', stiffness: 160, damping: 22 }}
-          className="mb-3 font-display text-6xl font-black leading-none tracking-tight sm:text-7xl md:text-8xl"
+          className="mb-3 font-display text-6xl font-bold leading-none tracking-tight sm:text-7xl md:text-8xl"
         >
           <span
             className="bg-clip-text text-transparent"
