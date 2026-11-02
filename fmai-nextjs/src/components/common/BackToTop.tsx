@@ -10,6 +10,7 @@ import {
 } from 'motion/react'
 import { ArrowUp } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { useFabQuiet } from '@/hooks/useFabQuiet'
 
 /**
  * BackToTop -- floating scroll-to-top control, stacked above the Clyde FAB in
@@ -22,7 +23,8 @@ import { useTranslations } from 'next-intl'
  *   nothing until clicked is dead weight; this one earns its presence while you
  *   scroll. (Emil: every animation needs a purpose.)
  * - Appears only after the hero is scrolled past (~60% of a viewport), fading +
- *   lifting in, and exits the same way for spatial consistency.
+ *   lifting in, and exits the same way for spatial consistency. Hidden while hero 3
+ *   or the week lies under the corner (`useFabQuiet`, K1 B, website-port PR 3).
  * - Positions LIFT in lockstep with ClydePresence while the consent banner is
  *   up, so the FAB stack moves as one piece instead of colliding with the
  *   banner. The `*_BOTTOM` offsets below are derived from ClydePresence's bottom
@@ -47,6 +49,7 @@ export function BackToTop() {
 
   const [visible, setVisible] = useState(false)
   const [cookieBannerVisible, setCookieBannerVisible] = useState(false)
+  const quiet = useFabQuiet()
 
   // Reveal once the hero is scrolled past (~60% of a viewport). setState bails
   // out when the boolean is unchanged, so this stays a cheap per-frame compare.
@@ -90,7 +93,7 @@ export function BackToTop() {
 
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !quiet && (
         <motion.button
           type="button"
           onClick={scrollToTop}

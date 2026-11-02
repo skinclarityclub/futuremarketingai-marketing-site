@@ -1,0 +1,37 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+
+/**
+ * True while a `[data-fab-quiet]` section (hero 3 and the week on /nl) lies in the bottom quarter of the viewport,
+ * where the fixed Clyde button and BackToTop sit. There the Clyde button shrinks to its round mark and BackToTop hides,
+ * so neither covers the scenes (K1 B, website-port PR 3, Daley 2026-11-03).
+ *
+ * Observed again per pathname, because a client navigation swaps the sections. The answer is keyed by the pathname it
+ * was measured on, so a stale `true` from the previous page never shows on the next one.
+ */
+export function useFabQuiet(): boolean {
+  const pathname = usePathname()
+  const [state, setState] = useState({ path: '', quiet: false })
+
+  useEffect(() => {
+    const els = document.querySelectorAll('[data-fab-quiet]')
+    if (els.length === 0) return
+    const inBand = new Set<Element>()
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) inBand.add(e.target)
+          else inBand.delete(e.target)
+        }
+        setState({ path: pathname, quiet: inBand.size > 0 })
+      },
+      { rootMargin: '-75% 0px 0px 0px' },
+    )
+    els.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [pathname])
+
+  return state.path === pathname && state.quiet
+}
