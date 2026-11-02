@@ -32,7 +32,11 @@ export function useFabQuiet(): boolean | null {
       { rootMargin: '-75% 0px 0px 0px' },
     )
     els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
+    return () => {
+      io.disconnect()
+      // forget this page's answer, so coming back to it starts unmeasured (CSS) instead of a stale pill or mark
+      setState({ path: '', quiet: false })
+    }
   }, [pathname])
 
   return state.path === pathname ? state.quiet : null

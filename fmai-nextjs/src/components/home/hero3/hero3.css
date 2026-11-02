@@ -576,4 +576,4 @@
 }
 #hero:not(._pad){--out:cubic-bezier(.23,1,.32,1);--dim:#8a95a8}
 #hero .kc{display:inline-flex;align-items:center;gap:7px;padding:4px 10px 4px 5px;border-radius:99px;border:1px solid rgba(0,212,170,.35);background:rgba(0,212,170,.07);font-size:12px;color:#dfe5ee;opacity:calc(clamp(0,(var(--u) - var(--i,0)*.05)*4,1))}
-#hero .smk{display:inline-block}
+#hero .smk{display:inline-block;overflow:hidden}

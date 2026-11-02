@@ -109,13 +109,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         because on mobile the poster sits below the fold. Not on /nl: hero 3 has no
         poster (website-port PR 3, besluit 10).
       */}
-      {locale !== 'nl' && (
+      {locale !== 'nl' ? (
         <link
           rel="preload"
           as="image"
           fetchPriority="high"
           media="(min-width: 1024px)"
           href="/images/clyde-kring-poster.webp"
+        />
+      ) : (
+        // Hero 3's phone LCP is the LinkedIn post in the front phone, a CSS background that the browser only finds
+        // after layout, at low priority (Lighthouse mobile LCP 6.5 s locally). Below 600 px the calendar is a 1 px GIF.
+        <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          media="(max-width: 599px)"
+          href="/home/hero3/meerkade_posts_meerkade-li-twintig-minuten-1.webp"
         />
       )}
 

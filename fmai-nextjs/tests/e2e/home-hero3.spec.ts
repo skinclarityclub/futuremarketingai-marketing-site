@@ -18,6 +18,8 @@ test.describe('Home hero 3 (/nl)', () => {
     await expect(page.locator('.speakable-hero')).toHaveCount(1)
     await expect(page.locator('.speakable-tldr')).toHaveCount(1)
     await expect(page.locator('link[rel="preload"][href*="clyde-kring-poster"]')).toHaveCount(0)
+    // the phone LCP (LinkedIn post, a CSS background) is preloaded for phones only (React also hoists a copy into <head>)
+    expect(await page.locator('link[rel="preload"][href*="meerkade-li"][media="(max-width: 599px)"]').count()).toBeGreaterThan(0)
   })
 
   test('the pause button stops the loop and says so (WCAG 2.2.2)', async ({ page }) => {
