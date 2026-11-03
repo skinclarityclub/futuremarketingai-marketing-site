@@ -200,6 +200,10 @@ export function WeekView({ t }: { t: WeekT }) {
             {' '}
           </div>
           {' '}
+          <p className="wk-demo">
+            {t("demo")}
+          </p>
+          {' '}
         </div>
         {' '}
         <div className="wk-scene" id="wscene" inert aria-hidden="true">

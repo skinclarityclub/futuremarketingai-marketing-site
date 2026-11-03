@@ -23,13 +23,13 @@
       "videoPlay": "Play the animation",
       "tagline": "Your agency's <accent>AI colleague</accent>.",
       "subtitle": "Knows every client's goals, sits in every screen of your dashboard and messages you on WhatsApp the moment something comes up. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics.",
-      "trustAnchor": "Running in production at our first client. Max {maxPartners} partners per year.",
+      "trustAnchor": "Running in production at our first client. Ten founding seats in total.",
       "cta": "Book a call",
       "ctaSecondary": "Meet Clyde",
       "trustCluster": {
         "target": "Built for agencies",
         "founding": "Max {total} founding spots",
-        "avgLabel": "Data in the EU"
+        "avgLabel": "Servers and database in the EU"
       }
     },
     "services": {
@@ -100,7 +100,7 @@
     "icp": {
       "title": "Who this works for (and who it doesn't)",
       "subtitle": "No marketing pitch. Honestly, we'd rather not work with everyone.",
-      "scarcityCallout": "{total} founding seats · Max {maxPerYear} partners per year",
+      "scarcityCallout": "{total} founding seats · Daley guides every start personally",
       "closingHeadline": "Does the left side match you?",
       "closingSubtext": "Then I'll tell you in 30 minutes whether we're a fit for your portfolio.",
       "closingCta": "Book a call",
@@ -140,7 +140,7 @@
       "chips": {
         "engineer": "Senior engineer",
         "stack": "n8n + LLM stack",
-        "infra": "Data in the EU"
+        "infra": "Servers and database in the EU"
       },
       "portraitAlt": "Portrait of Daley van Diest, founder of FutureMarketingAI",
       "ctaLink": "See how I work"
@@ -154,7 +154,7 @@
           "label": "Week 1",
           "heading": "Intake and brand scan",
           "body": "One working session with Daley. Brand scan extracts brand DNA per client: colors, fonts, tone and USPs. IG analysis reads your content patterns.",
-          "deliverable": "Brand DNA per client + IG baseline + accounts configured",
+          "deliverable": "Brand DNA per client + IG baseline",
           "clientHours": "2 hours of your time"
         },
         "2": {
@@ -180,13 +180,13 @@
         }
       },
       "ctaLabel": "Book a call",
-      "ctaHint": "Available onboarding slots: 2 per month",
-      "fullJourneyLink": "See the full 5-step onboarding journey"
+      "ctaHint": "Ten founding seats in total",
+      "fullJourneyLink": "See the four weeks in detail"
     },
     "comparison": {
       "eyebrow": "Comparison",
       "title": "Three models, one choice that scales",
-      "subtitle": "What is different from a DIY stack or a traditional agency? Six points that matter for your client portfolio. Prices and lead times of the alternatives are estimates.",
+      "subtitle": "What is different from a DIY stack or a traditional agency? Six points that matter for your client portfolio.",
       "headers": {
         "topic": "Topic",
         "diy": "DIY stack",
@@ -196,8 +196,8 @@
       },
       "rows": {
         "geheugen": {
-          "label": "Memory across sessions",
-          "diy": "Resets at every prompt",
+          "label": "Memory per client",
+          "diy": "Per chat or project, apart from your planning",
           "bureau": "Account manager knows your brands",
           "clyde": "A separate memory per client, kept between sessions"
         },
@@ -208,21 +208,21 @@
           "clyde": "Fixed price per extra workspace"
         },
         "sovereignty": {
-          "label": "EU data sovereignty",
+          "label": "Where your data is",
           "diy": "Spread across US tools",
           "bureau": "Depends on agency tooling",
-          "clyde": "Data, servers and database in the EU"
+          "clyde": "Servers and database in the EU, language model in the US"
         },
         "setup": {
           "label": "Setup time to production",
-          "diy": "2 to 3 weeks of your own work",
-          "bureau": "4 to 8 weeks of onboarding",
+          "diy": "Figure it out and set it up yourself",
+          "bureau": "Setup per brand, lead time varies",
           "clyde": "Guided onboarding, 4 weeks"
         },
         "prijs": {
           "label": "Monthly cost for 4 brands",
-          "diy": "€250 to €400 plus your time",
-          "bureau": "€4,000 to €12,000",
+          "diy": "Separate subscriptions plus your time",
+          "bureau": "A retainer per brand",
           "clyde": "997 to 1,996 euro"
         },
         "lockin": {
@@ -246,8 +246,8 @@
       }
     },
     "memoryUsp": {
-      "eyebrow": "Memory, not sessions",
-      "title": "Other AI starts over with every prompt. Clyde remembers your clients.",
+      "eyebrow": "Memory per client",
+      "title": "Clyde remembers every client, and that memory is tied to the work.",
       "intro": "Like a good colleague: he knows what's going on, how each client sounds, what worked before and how you work.",
       "layers": {
         "context": {
@@ -272,9 +272,9 @@
         "eyebrow": "Same prompt, two outcomes",
         "prompt": "Write a blog about rosacea for our client, the skin clinic",
         "otherLabel": "Other AI",
-        "otherTag": "session-based",
+        "otherTag": "per chat",
         "otherResponse": "Rosacea is a chronic skin condition causing redness and visible blood vessels. Treatments: topical medication, laser, diet adjustments...",
-        "otherWarning": "You re-supply brand context and product info with every prompt.",
+        "otherWarning": "Brand context and products live per chat or project, apart from your planning and approvals.",
         "clydeLabel": "Clyde",
         "clydeTag": "with memory per client",
         "clydeResponse": "Rosacea for the clinic's clients: calming tone, builds on the earlier post about barrier repair, no sales talk.",
@@ -327,7 +327,7 @@
       "ctaLink": "Book a call"
     },
     "pillars": {
-      "title": "You stay in control. Your data is in the EU.",
+      "title": "You stay in control. And you know where your data is.",
       "subtitle": "Clyde asks first, people approve, and you know exactly where your data is.",
       "compliance": {
         "label": "Control",
@@ -337,10 +337,10 @@
         "linkText": "How Clyde works"
       },
       "infrastructure": {
-        "label": "Data in the EU",
+        "label": "Servers and database in the EU",
         "stat": "EU",
         "statLabel": "Data, servers, database",
-        "body": "By default the language model runs at Anthropic, a US company; for things like images and search we also use other providers, listed in our privacy policy. Want the language model in the EU too? Then we move Clyde to Mistral on request.",
+        "body": "The language model runs at Anthropic and OpenAI in the US; for things like images and search we also use other providers, listed in our privacy policy.",
         "linkText": "How we handle data"
       },
       "partnership": {
@@ -374,7 +374,7 @@
       "items": {
         "q1": {
           "question": "How is Clyde different from ChatGPT or Jasper?",
-          "answer": "ChatGPT and Jasper are generic tools without memory. You have to supply context with every prompt. Clyde has a separate memory for each client: brand voice, audience, goals and working agreements are kept. On top of that, Clyde orchestrates ten live skills plus two coming soon (social, blogs, ads, email, lead qualification, SEO, analytics and more), not just text. One brain with shared memory, not a separate tool per task."
+          "answer": "ChatGPT and Jasper are generic tools: their memory belongs to a user or a project, not to a client of your agency. Clyde has a separate memory for each client: brand voice, audience, goals and working agreements are kept, and that memory is tied to the agenda, the approvals and the reports. And Clyde does more than text: social, blogs, ads, email, lead qualification, SEO, reporting and more. One memory per client, not a separate tool per task."
         },
         "q2": {
           "question": "What if I want to cancel?",
@@ -382,7 +382,7 @@
         },
         "q3": {
           "question": "Why an application? Why no self-service?",
-          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. We accept a maximum of {maxPartners} new agencies per year. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
+          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. There are ten founding seats. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
         },
         "q4": {
           "question": "Exactly how many skills do I get?",
@@ -469,7 +469,7 @@
     "entries": {
       "eyebrow": "Three ways in",
       "title": "Clyde is where you are",
-      "subtitle": "For you and for your client: the dashboard for the full picture, WhatsApp and the app on your phone for on the go.",
+      "subtitle": "For you and for your client: the dashboard for the full picture, WhatsApp and the web app on your home screen for on the go.",
       "steps": {
         "s1": {
           "t": "Dashboard",
@@ -790,7 +790,7 @@
         "scale": {
           "period": "Q4 2026",
           "title": "Where we are now",
-          "body": "Founding spots open for the first agencies. Clyde on your phone as an app, and a knowledge base that shows per client what Clyde knows."
+          "body": "Founding spots open for the first agencies. Clyde as a web app on your home screen, and a knowledge base that shows per client what Clyde knows."
         }
       }
     },
@@ -850,7 +850,7 @@
       },
       "eu": {
         "title": "Servers in the EU",
-        "body": "Servers and database are in the EU. By default the language model runs at Anthropic, a US company; for things like images and search we also use other providers, listed in our privacy policy. Want the language model in the EU too? Then we move Clyde to Mistral on request."
+        "body": "Servers and database are in the EU. The language model runs at Anthropic and OpenAI in the US; for things like images and search we also use other providers, listed in our privacy policy."
       },
       "openStandards": {
         "title": "Common formats",
@@ -864,7 +864,7 @@
     "capacity": {
       "eyebrow": "Capacity",
       "title": "Capacity and transparency",
-      "body": "Max {maxPartners} agencies per year. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
+      "body": "Ten founding seats. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
       "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
     },
     "founder": {
@@ -952,18 +952,17 @@
         "name": "Enterprise",
         "subtitle": "For large agencies",
         "tagline": "Linear rate from 15 workspaces. No caps (fair use). Dedicated contact person.",
-        "description": "For agencies with 15 or more brands who use Clyde as core infrastructure. Linear rate from 15 workspaces, no caps on skills (fair use) and a dedicated customer success manager with SLA.",
+        "description": "For agencies with 15 or more brands who use Clyde as core infrastructure. Linear rate from 15 workspaces, no caps on skills (fair use) and a direct line with Daley.",
         "features_0": "Linear price per workspace from 15 clients",
         "features_1": "800 credits per workspace (from 12,000 per month)",
         "features_2": "All live skills with no caps (fair use)",
-        "features_3": "Dedicated Customer Success Manager",
-        "features_4": "SLA contract"
+        "features_3": "Direct line with Daley"
       },
       "founding": {
         "name": "Founding",
         "subtitle": "10 seats · lifetime anchor",
         "tagline": "10 total spots. Generous caps. €997 for life. Direct line to Daley.",
-        "description": "For the founding clients who commit before launch. Lifetime price of €997, higher caps than Growth, direct WhatsApp line with Daley. Max {total} spots.",
+        "description": "For the agencies that join first. Lifetime price of €997, higher caps than Growth, direct WhatsApp line with Daley. Max {total} spots.",
         "features_0": "15 workspaces included",
         "features_1": "8,000 credits per month",
         "features_2": "All 10 live skills, plus the 2 coming next",
@@ -1061,21 +1060,21 @@
     "cta": {
       "eyebrow": "Ready?",
       "title": "Ready to start the partnership?",
-      "description": "Max {maxPartners} agencies per year. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
+      "description": "Ten founding seats. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
       "primary": "Book a call"
     }
   },
   "alternatives": {
     "meta": {
       "title": "Alternatives to Clyde compared | FutureMarketingAI",
-      "description": "Lindy, Sintra, GoSocio and aicollegas.nl next to Clyde: what they do, what they cost and when they suit your agency better. Checked October 25, 2026."
+      "description": "Lindy, Sintra, GoSocio and aicollegas.nl next to Clyde: what they do, what they cost and when they suit your agency better. Checked November 3, 2026."
     },
     "hero": {
       "eyebrow": "Alternatives",
       "title": "Alternatives to Clyde, compared honestly",
       "subtitle": "Four tools agencies look at alongside us. Per tool: what it does, what it costs and when it suits you better than Clyde."
     },
-    "checked": "Prices and features checked on October 25, 2026, on the providers' own sites.",
+    "checked": "Prices and features checked on November 3, 2026, on the providers' own sites.",
     "clyde": {
       "eyebrow": "Our starting point",
       "title": "What Clyde is for",
@@ -1099,7 +1098,7 @@
       "lindy": {
         "name": "Lindy",
         "what": "An AI assistant for your whole team: inbox, meetings, Slack, your CRM and more than 1,500 integrations. Actions with outside impact wait for approval.",
-        "price": "Free start with $50 in credits for 7 days. Team from $29.99 per month per active user, with 3,000 credits per user. The pricing page sometimes shows $49.99 for 5,000 credits as the entry tier. Enterprise is custom.",
+        "price": "Free start with $50 in credits for 7 days. Team from $49.99 per month per active user, with 5,000 credits per user; the whole team shares the credits. Enterprise is custom.",
         "agencies": "Lindy works in your own team's workspace. We found no workspace or portal per client on their site.",
         "data": "According to their site: SOC 2 Type II, GDPR, HIPAA and PIPEDA.",
         "pickThem": "You mainly want help for your own team: inbox, calendar, meetings and one-off tasks across many tools.",
@@ -1142,14 +1141,14 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "How it works: onboarding in 5 steps | FutureMarketingAI",
-      "description": "How your agency gets Clyde as its AI colleague: 5 steps from conversation to live. Weeks, not months. No engineering team needed."
+      "title": "How it works: live in four weeks | FutureMarketingAI",
+      "description": "How your agency gets Clyde as its AI colleague: from conversation to live in four weeks. No engineering team needed."
     },
     "hero": {
       "eyebrow": "Onboarding",
       "badge": "Founding open · max {total} spots",
       "title": "How does your partnership with Clyde start?",
-      "description": "Five steps from first call to Clyde running live for your clients. No self-service. Daley personally guides every client through the process.",
+      "description": "Four weeks from first call to Clyde running live for your clients. No self-service. Daley personally guides every client through the process.",
       "cta": "Book a call"
     },
     "jsonLd": {
@@ -1182,7 +1181,7 @@
         },
         "configure": {
           "step": "Step 3",
-          "timeStamp": "Week 4",
+          "timeStamp": "Week 1 to 3",
           "title": "Configure Clyde per client",
           "description": "For every client a workspace with brand guidelines, audience, tone of voice, active skills, channels and approval rules. Clyde starts building his memory per client.",
           "deliverable1": "Workspace per client",
@@ -1191,7 +1190,7 @@
         },
         "production": {
           "step": "Step 4",
-          "timeStamp": "From week 5",
+          "timeStamp": "From week 4",
           "title": "Production starts, you stay in charge",
           "description": "Clyde gets to work: social posts, blogs, email, ads. What he puts forward, you review in the approval queue; how much he may do on his own, you choose per task. Week 1 brings lots of corrections, and Clyde takes them on board.",
           "deliverable1": "Social posts live",
@@ -1260,7 +1259,7 @@
   },
   "contact": {
     "meta": {
-      "title": "Contact Future Marketing AI | AI Marketing Agency",
+      "title": "Contact | FutureMarketingAI",
       "description": "Get in touch with Future Marketing AI about Clyde, your agency's AI colleague. Questions on partnerships or the skills? We respond within 1 to 2 business days."
     },
     "hero": {
@@ -1523,12 +1522,12 @@
       "eyebrow": "Honest",
       "title": "What we do not promise",
       "zdr": {
-        "title": "No zero data retention",
+        "title": "Anthropic and OpenAI retain data on their own terms",
         "body": "We have no agreement with Anthropic or OpenAI under which they retain nothing. Their standard periods above apply."
       },
       "model": {
         "title": "The language model does not run in the EU",
-        "body": "Servers, database and queues are in the EU, the language model is not. If you want the language model in the EU too, we run Clyde on Mistral on request."
+        "body": "Servers, database and queues are in the EU, the language model is not. If you want the language model in the EU too, we build a setup with Mistral, a European language model, on request."
       },
       "cdn": {
         "title": "Not everything stays in the EU",
@@ -1685,8 +1684,8 @@
       "title": "What Clyde does",
       "subtitle": "Four core functions of this skill.",
       "feature1": {
-        "title": "Embeddable chat widget",
-        "body": "One script tag on every brand site. Styling, persona and knowledge base adjustable per brand."
+        "title": "One chatbot per brand",
+        "body": "Styling, persona and knowledge base are set per brand."
       },
       "feature2": {
         "title": "Automatic lead scoring",
@@ -1756,7 +1755,7 @@
         },
         "q2": {
           "question": "Which CRMs and channels does Lead Qualifier support?",
-          "answer": "Every lead goes via a webhook to the CRM you already use. Failed deliveries show up so you can resend them. You place the widget on any website with one script snippet, and conversations from ManyChat land in the same inbox."
+          "answer": "Every lead goes via a webhook to the CRM you already use. Failed deliveries show up so you can resend them. Leads from Instagram DMs land in the same list."
         },
         "q3": {
           "question": "On which tiers is Lead Qualifier available?",
@@ -2101,7 +2100,7 @@
     "hero": {
       "badge": "Max {total} Founding spots",
       "title": "Become a Founding partner. One choice, locked for life.",
-      "description": "Ten total spots for agencies that commit from launch. €997 per month, locked for life, with 15 workspaces included. The other tiers scale linearly per workspace (€499 / €399 / €299). All live skills, generous caps and a direct WhatsApp line with Daley.",
+      "description": "Ten spots in total, for the agencies that join first. €997 per month, locked for life, with 15 workspaces included. The other tiers scale linearly per workspace (€499 / €399 / €299). All live skills, generous caps and a direct WhatsApp line with Daley.",
       "cta": "Reserve your seat"
     },
     "pricing": {
@@ -2116,7 +2115,7 @@
     "value": {
       "heading": "Why the 10 Founding spots exist",
       "line1": "Founding partners are the agencies we shape Clyde with. Your feedback determines what we build, which skills get priority and how the memory layer evolves.",
-      "line2": "In return for that early trust you get €997 for life for 15 workspaces. The other tiers scale linearly per workspace: at 5 brands on Professional you pay €1,995 per month, at 14 brands €5,586. Even if we recalibrate the rate next year, you stay at €997.",
+      "line2": "In return for that early trust you get €997 for life for 15 workspaces. The other tiers scale linearly per workspace: at 5 brands on Professional you pay €1,995 per month, at 14 brands €5,586. We recalibrate the other rates every six months; you stay at €997.",
       "line3": "Ten spots. No reopening. Full is full."
     },
     "benefits": {
@@ -2150,7 +2149,7 @@
     },
     "proof": {
       "heading": "Our first client",
-      "body": "SkinClarity Club is our first client. Clyde creates and schedules for 3 Instagram accounts, we approve as the agency, and Sindy (founder) has her own dashboard. Read the case to see what that looks like in practice.",
+      "body": "SkinClarity Club is our first client. Clyde creates and schedules for 3 Instagram accounts and we approve as the agency. Read the case to see what that looks like in practice.",
       "caseButton": "Read the SkinClarity case study"
     },
     "faq": {
@@ -2162,7 +2161,7 @@
         },
         "q2": {
           "question": "Can I upgrade later to Professional or Enterprise?",
-          "answer": "Yes. You cannot downgrade from Founding to Growth: your Founding price is exclusive to Founding."
+          "answer": "Yes. Above 15 workspaces you pay €299 per extra workspace, and your Founding price stays as it is. If you move to Professional or Enterprise, that package's rate applies and your Founding price lapses."
         },
         "q3": {
           "question": "Which caps come with Founding?",
@@ -2292,7 +2291,7 @@
       "title": "Why generic AI hits a wall here",
       "chatgpt": {
         "name": "Generic chat AI",
-        "body": "No memory per brand. Every session starts blank. You have to supply brand voice, audience and context with every prompt. Does not work when you serve 20 brands."
+        "body": "Memory per user or project, not per brand. You keep brand voice, audience and context up to date yourself and supply them per project. With 20 brands, that is 20 separate projects."
       },
       "jasper": {
         "name": "Copy tools",
@@ -2374,7 +2373,7 @@
   "apply": {
     "meta": {
       "title": "Apply. Book a call with Daley | FutureMarketingAI",
-      "description": "Apply for a conversation about FutureMarketingAI. Partnership with Clyde for marketing agencies. Max 10 new agencies per year."
+      "description": "Apply for a conversation about FutureMarketingAI. Partnership with Clyde for marketing agencies. Ten founding seats."
     },
     "hero": {
       "eyebrow": "Application",
@@ -2598,7 +2597,7 @@
       },
       "skills": {
         "title": "Which skills are active",
-        "subtitle": "Of Clyde's 12 skills, all 10 live ones are active for SKC. The last two (Voice Agent and Reel Builder) arrive as they go live.",
+        "subtitle": "These are the skills Clyde runs for SKC. Voice Agent and Reel Builder join soon.",
         "skill1Name": "Social Media Manager",
         "skill1Body": "Carousels, posts and stories for 3 Instagram accounts, in the tone of each account.",
         "skill2Name": "Blog Factory",
@@ -2612,13 +2611,13 @@
         "skill6Name": "Clyde (orchestrator)",
         "skill6Body": "Clyde, the AI colleague who ties the other skills together, with one memory for the whole client.",
         "skill7Name": "Ad Manager",
-        "skill7Body": "The webshop's Meta ad account is connected. Clyde creates the ads; measured results will follow.",
+        "skill7Body": "The webshop's Meta ad account is connected. Clyde creates the ads.",
         "skill8Name": "Lead Qualifier",
         "skill8Body": "Switched on. No chatbot is running on SKC's site yet.",
         "skill9Name": "Email Management",
         "skill9Body": "Gmail triage with labels and draft replies: only what needs attention surfaces.",
-        "skill10Name": "ManyChat DM",
-        "skill10Body": "Switched on. The DM inbox is not handling any conversations for SKC yet."
+        "skill10Name": "Comments and DMs",
+        "skill10Body": "Instagram comments and DMs: a keyword starts the conversation, Clyde writes the reply in the account's voice."
       },
       "architecture": {
         "title": "How it works",
@@ -2676,7 +2675,7 @@
       "chapter3": {
         "eyebrow": "Chapter 03, Now",
         "title": "What runs every week now",
-        "intro": "How it runs every week now. Headline figures will follow once we have measured them."
+        "intro": "How the work for SKC runs today."
       },
       "chapter5": {
         "eyebrow": "Chapter 04, Next step",
@@ -2896,7 +2895,7 @@
   "skills-index": {
     "meta": {
       "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
-      "description": "Browse Clyde's 12 marketing skills: social, blogs, ads, voice, leads, email, SEO/GEO and more. 10 are live, 2 coming soon, all in one AI colleague."
+      "description": "Browse Clyde's skills: social, blogs, ads, leads, email, reporting, SEO/GEO and research, all in one AI colleague."
     },
     "hero": {
       "eyebrow": "12 skills, one mind",
@@ -3147,7 +3146,7 @@
     "hero": {
       "eyebrow": "Skill 10. Clyde, the AI colleague",
       "title": "This is Clyde. Your agency's AI colleague.",
-      "subtitle": "The other skills (nine live, two in development) are specialized executors. Clyde is the colleague who puts them to work and who looks along in every screen of your dashboard. Give commands in plain language; Clyde picks the right skill and brings the results back. Reachable in the dashboard, in the app on your phone and on WhatsApp.",
+      "subtitle": "The other skills are specialized executors. Clyde is the colleague who puts them to work and who looks along in every screen of your dashboard. Give commands in plain language; Clyde picks the right skill and brings the results back. Reachable in the dashboard, in the web app on your home screen and on WhatsApp.",
       "cta": "Book a call",
       "prompts": {
         "prompt1": "Plan this week for the three SKC accounts",
@@ -3179,7 +3178,7 @@
       "title": "How it works",
       "step1": {
         "title": "Choose your channel",
-        "body": "The panel in your dashboard, the app on your phone or WhatsApp. On every channel Clyde works from the same memory."
+        "body": "The panel in your dashboard, the web app on your home screen or WhatsApp. On every channel Clyde works from the same memory."
       },
       "step2": {
         "title": "Give a command",
@@ -3193,7 +3192,7 @@
     "integrations": {
       "title": "Works together with",
       "subtitle": "Via the shared memory per client.",
-      "integration1": "The other skills (nine live, two in development): Clyde puts them to work.",
+      "integration1": "The other skills: Clyde puts them to work.",
       "integration2": "Memory: per client, from conversations, feedback and the strategy.",
       "integration3": "Routines: recurring tasks such as a channel report, an SEO plan and an SEO report. Per task you choose whether Clyde asks first, runs and reports, or runs silently."
     },
@@ -3222,11 +3221,11 @@
       "items": {
         "q1": {
           "question": "What is Clyde exactly?",
-          "answer": "Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language (Dutch or English) and Clyde picks the right skill: write a blog, plan social posts, run an SEO audit. Works in the dashboard, in the app on your phone and on WhatsApp."
+          "answer": "Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language (Dutch or English) and Clyde picks the right skill: write a blog, plan social posts, run an SEO audit. Works in the dashboard, in the web app on your home screen and on WhatsApp."
         },
         "q2": {
           "question": "Which channels does Clyde support?",
-          "answer": "In every screen of your dashboard, in the app on your phone, and on WhatsApp via a connected number. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Reports and Clyde's proposals you confirm there with one tap; content you approve in the app. On every channel Clyde works from the same memory per client."
+          "answer": "In every screen of your dashboard, in the web app on your home screen, and on WhatsApp via a connected number. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Reports and Clyde's proposals you confirm there with one tap; content you approve in the app. On every channel Clyde works from the same memory per client."
         },
         "q3": {
           "question": "On which tiers is Clyde available?",

@@ -44,7 +44,7 @@ const TIER_FEATURE_COUNTS = {
   founding: 10,
   growth: 8,
   professional: 8,
-  enterprise: 5,
+  enterprise: 4, // features_4 (SLA contract) dropped in golf 0: Enterprise is a direct line with Daley
 } as const
 
 const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const

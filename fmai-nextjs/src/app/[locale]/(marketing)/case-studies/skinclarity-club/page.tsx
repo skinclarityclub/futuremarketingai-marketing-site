@@ -36,9 +36,9 @@ export async function generateMetadata({
 }
 
 const ACCOUNT_KEYS = ['account1', 'account2', 'account3'] as const
-// Clyde (skill6) renders last as the orchestrator; the 4 newer live skills
-// (skill7-10) slot in before it. All 10 live skills run for SKC (2026-06-15).
-const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 'skill8', 'skill9', 'skill10', 'skill6'] as const
+// Clyde (skill6) renders last; the newer skills slot in before it. Lead Qualifier (skill8)
+// is left out: there is no chat on the SKC site (golf 0, 2026-11-03).
+const SKILL_KEYS = ['skill1', 'skill2', 'skill7', 'skill3', 'skill4', 'skill5', 'skill9', 'skill10', 'skill6'] as const
 // Outcome numbers, before/after durations, month 3 and Sindy's quotes came from a MOCKUP transcript
 // (docs/interviews/2026-04-sindy-skc-transcript.md); they stay out until Sindy confirms real ones (Daley 2026-10-12).
 const TIMELINE_KEYS = ['week1', 'month1', 'now'] as const

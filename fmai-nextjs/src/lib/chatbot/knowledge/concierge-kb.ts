@@ -23,13 +23,13 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 - Reporting and Analytics (live): a weekly report per brand and a dashboard per client from Instagram, GA4, Search Console, Shopify and Meta Ads, refreshed daily, with an alert on strong deviations.
 - SEO / GEO Analyst (live): weekly crawl, daily positions from Search Console, Core Web Vitals, and AI citation monitoring in ChatGPT, Perplexity, Gemini and Google AI Overviews. The SEO report arrives on WhatsApp every Friday.
 - Research (live): market research, trends and competitors with a source link per insight (Perplexity, Firecrawl, PubMed, Meta Ad Library).
-- Clyde (live): the AI colleague in every screen of the dashboard, in the app on your phone and on WhatsApp, who picks the right skill for a request in plain language.
+- Clyde (live): the AI colleague in every screen of the dashboard, in the web app on your home screen and on WhatsApp, who picks the right skill for a request in plain language.
 
 Memory: Clyde keeps a memory per client (conversations, feedback, strategy and research), consolidated every night. Memories about a client belong to that agency and that client.
 
 Control: per task the agency chooses what Clyde proposes first and what he may do himself and report. Critical actions such as ad spend are always proposed first.
 
-Entrances: the dashboard, WhatsApp and the installable app on your phone (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard.`,
+Entrances: the dashboard, WhatsApp and the web app on your home screen (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard.`,
  keywords: [
  'services',
  'skills',
@@ -79,14 +79,13 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands**. Linear pricing: from EUR 4,485 per month upward.
 - 800 credits per workspace (12,000+ total per month)
 - All live skills without caps (fair use)
-- Dedicated Customer Success Manager
-- SLA contract
+- Direct line with Daley
 - EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**
 Mini Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max 15,000 credits EUR 697
 
-Every engagement starts with a Strategy Call via the Apply form at https://future-marketing.ai/nl/apply. No self-service signup. Max 10 partnerships per year.`,
+Every engagement starts with a Strategy Call via the Apply form at https://future-marketing.ai/nl/apply. No self-service signup.`,
  keywords: [
  'pricing',
  'cost',
@@ -109,7 +108,7 @@ Every engagement starts with a Strategy Call via the Apply form at https://futur
  key: 'process',
  content: `## FutureMarketingAI Onboarding Process
 
-Application-gated, no self-service signup. Max 10 partnerships per year.
+Application-gated, no self-service signup.
 
 **1. Apply (5 min)**
 Submit the short application form at https://future-marketing.ai/nl/apply.
@@ -158,8 +157,8 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
 - Reporting and Analytics: a weekly report on Instagram, Shopify and SEO data, plus the SEO report on Friday
 - Research: skincare trends and competitor analysis
 - Email Management: inbox triage with labels and draft replies
-
-**Switched on, not yet in use for SKC:** Lead Qualifier (no chatbot on the site yet), ManyChat DM (no DM conversations yet), Ad Manager (Meta account connected, measured results to follow).
+- Ad Manager: ads for the webshop, on its connected Meta ad account
+- Comments and DMs: Instagram comments and DMs; a keyword starts the conversation and Clyde writes the reply in the account's voice
 
 **How it works:** the agency approves the content before it goes live. Sindy has her own dashboard and Clyde on WhatsApp. Clyde takes work off the team; people stay in charge.
 
@@ -183,16 +182,16 @@ No measured result figures are published for this case yet; do not quote numbers
  key: 'about',
  content: `## About FutureMarketingAI
 
-FutureMarketingAI builds Clyde, the AI colleague of your agency. Partnership model: every engagement is reviewed and onboarded by Daley personally. Max 10 partnerships per year.
+FutureMarketingAI builds Clyde, the AI colleague of your agency. Partnership model: every engagement is reviewed and onboarded by Daley personally.
 
 **Who We Are:**
 - Founder Daley, native Dutch speaker, technical builder
 - Based in the Netherlands, serving EU agencies
-- Data, servers and database are in the EU. The language model runs by default at Anthropic, a US company; other providers (for example for images and search) are listed in the privacy statement. On request we run Clyde on Mistral to keep the language model in the EU too.
+- Servers, database and queues are in the EU. The language model runs at Anthropic and OpenAI in the US; other providers (for example for images and search) are listed in the privacy statement. If you want the language model in the EU too, a setup with Mistral, a European language model, can be built on request.
 
 **Our Philosophy:**
 - Clyde is a colleague, not a tool. You assign tasks, he executes, and per task you decide what he proposes first
-- Quality of partnership over volume of clients (max 10 per year)
+- Quality of partnership over volume of clients
 - Application-gated. No self-service signup
 - Memory per client: Clyde remembers each client's brand voice, goals and your feedback
 

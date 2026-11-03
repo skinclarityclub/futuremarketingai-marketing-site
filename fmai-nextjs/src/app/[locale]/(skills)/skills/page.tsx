@@ -24,6 +24,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SITE_URL, pageWebPageId } from '@/lib/seo-config'
 import { SKILLS_DATA, getSkillBySlug } from '@/lib/skills-data'
+import { getChatbotSkills } from '@/lib/chatbot/skill-i18n'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 import { ClydeFeaturedTile } from '@/components/home/ClydeFeaturedTile'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
@@ -99,6 +100,8 @@ export default async function SkillsIndexPage({
 
   const clydeSkill = getSkillBySlug('clyde')
   const secondarySkills = SKILLS_DATA.filter((s) => s.slug !== 'clyde')
+  // SKILLS_DATA is Dutch; skill-i18n carries the English card text, so /en no longer shows Dutch cards (golf 0, T5).
+  const cardText = new Map(getChatbotSkills(locale === 'en' ? 'en' : 'nl').map((s) => [s.id, s.shortDescription]))
 
   const clydePairs = [
     { user: tHomeClyde('prompt1'), clyde: tHomeClyde('response1') },
@@ -192,7 +195,7 @@ export default async function SkillsIndexPage({
                       {label}
                     </h2>
                     <p className="text-xs lg:text-sm text-text-secondary leading-relaxed flex-1">
-                      {skill.shortDescription}
+                      {cardText.get(skill.id) ?? skill.shortDescription}
                     </p>
 
                     <span

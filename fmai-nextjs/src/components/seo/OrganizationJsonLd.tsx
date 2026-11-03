@@ -70,7 +70,7 @@ function buildOfferCatalog() {
 export function OrganizationJsonLd() {
   const data = {
     '@context': 'https://schema.org',
-    '@type': ['Organization', 'ProfessionalService'],
+    '@type': 'Organization',
     '@id': ORG_ID,
     name: SITE_NAME,
     alternateName: SITE_ALTERNATE_NAME,
@@ -90,23 +90,17 @@ export function OrganizationJsonLd() {
     founder: {
       '@id': DALEY_PERSON_ID,
     },
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'NL',
-      addressRegion: 'Netherlands',
-    },
     areaServed: ['NL', 'EU', 'Worldwide'],
     knowsAbout: ORG_KNOWS_ABOUT,
-    knowsLanguage: ['en', 'nl', 'es'],
+    knowsLanguage: ['en', 'nl'],
     hasOfferCatalog: buildOfferCatalog(),
     contactPoint: {
       '@type': 'ContactPoint',
       email: ORG_EMAIL,
       contactType: 'sales',
-      availableLanguage: ['English', 'Dutch', 'Spanish'],
+      availableLanguage: ['English', 'Dutch'],
     },
     sameAs: buildSameAs(),
-    priceRange: '€€€',
   }
 
   return <JsonLd data={data} />

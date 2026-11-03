@@ -46,8 +46,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands** (from EUR 4,485 / mo upward)
 - 800 credits per workspace (12,000+ total / mo)
 - All live skills without caps (fair use)
-- Dedicated Customer Success Manager
-- SLA contract
+- Direct line with Daley
 - EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**

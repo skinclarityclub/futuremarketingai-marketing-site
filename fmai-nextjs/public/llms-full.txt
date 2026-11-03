@@ -1,12 +1,12 @@
 # FutureMarketingAI (FMai)
 
-> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 15 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Max 10 new partnerships per year. Data, servers and database in the EU; the language model runs by default at Anthropic (US), on request on Mistral. Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English, Spanish. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 15 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
 FutureMarketingAI (FMai) is an AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Based in the Netherlands, serving EU agencies.
 
-Unlike a self-serve SaaS, FMai takes at most 10 new partnerships per year, with application-gated onboarding. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
+Unlike a self-serve SaaS, FMai has application-gated onboarding and 10 founding spots. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
 The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all 10 of Clyde's live skills are switched on there.
 
@@ -16,14 +16,14 @@ Key facts:
 - Canonical website: https://future-marketing.ai
 - Founder: Daley
 - Location: Netherlands (EU)
-- Languages: Dutch (source of truth), English, Spanish
+- Languages: Dutch (source of truth), English
 - Company type: AI marketing partnership for agencies
 - Target market: marketing agencies in NL and the EU with 5 to 20 people managing 5 to 20 client brands
-- Data: data, servers and database in the EU. The language model runs by default at Anthropic, a US company; on request we run Clyde on Mistral to keep the language model in the EU too.
+- Data: servers and database in the EU. The language model runs at Anthropic and OpenAI in the US.
 
 ## Product: Clyde, the agency's AI colleague
 
-Clyde is the AI colleague of your agency. He is named Clyde everywhere: on the website, in every screen of the dashboard, in the app on your phone and on WhatsApp.
+Clyde is the AI colleague of your agency. He is named Clyde everywhere: on the website, in every screen of the dashboard, in the web app on your home screen and on WhatsApp.
 
 The loop. Everything hangs on the goal of the client:
 - Goal: a strategy session per brand sets the goals, with a projection per channel and the pillars the brand runs on.
@@ -36,7 +36,7 @@ Control. Per task the agency chooses how independently Clyde works: observe, pro
 
 People. Team members are assigned to clients and see what is ready, what waits for approval and what went live. The agency's client gets their own dashboard where everything is complete and where they approve, their own content library to add photos and video, requests to the agency from that dashboard, and their own Clyde in the dashboard and on WhatsApp.
 
-Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday. Reports and Clyde's proposals are confirmed with one tap in WhatsApp; content is approved in the dashboard or in the app on your phone. Clyde installs on the home screen of your phone as an app, for the agency and for its client.
+Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday. Reports and Clyde's proposals are confirmed with one tap in WhatsApp; content is approved in the dashboard or in the web app. Clyde installs as a web app on the home screen of your phone, without an app store, for the agency and for its client.
 
 From post to lead. When someone comments on Instagram with the keyword you chose, Clyde sends a DM with your text; other DMs get an answer from that brand's knowledge or go to the inbox. The DM contains a tracked link, so every click counts for the right client (bots and link scanners excluded). When the form on the client's site is connected, you see how many requests came in through such a link, and per Instagram account where people drop off.
 
@@ -193,12 +193,12 @@ Credit cost: 3 credits per query.
 
 ### Clyde (Live)
 
-Clyde is the AI colleague who directs all other skills. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, in the app on your phone and on WhatsApp, with a memory per client of earlier conversations, preferences and context.
+Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, in the web app on your home screen and on WhatsApp, with a memory per client of earlier conversations, preferences and context.
 
 Capabilities:
 - Plain-language instructions
 - Orchestration of all other skills
-- In every screen of the dashboard, in the app on your phone and on WhatsApp
+- In every screen of the dashboard, in the web app on your home screen and on WhatsApp
 - Memory and context per client
 - Routines and recurring tasks
 
@@ -245,7 +245,7 @@ Two pricing models:
 - 800 credits per workspace per month (12000 plus total)
 - All 12 skills included
 - 5,997 EUR one-time onboarding
-- Dedicated Customer Success Manager
+- Direct line with Daley
 
 ### Credit packs (all tiers)
 
@@ -269,13 +269,11 @@ What runs: all 10 live skills are switched on.
 - Reporting & Analytics: a weekly report on Instagram, Shopify and SEO data, plus the SEO report on Friday.
 - Research: skincare trends and competitor analysis with sources.
 - Email Management: inbox triage with labels and draft replies.
+- Ad Manager: ads for the webshop, on its connected Meta ad account.
+- Comments and DMs: Instagram comments and DMs; a keyword starts the conversation and Clyde writes the reply in the account's voice.
 - Clyde: the AI colleague who ties the other skills together, with one memory for the whole client.
 
-Switched on, not yet in use for SkinClarity Club: Lead Qualifier (no chatbot on the site yet), ManyChat DM (no DM conversations yet), Ad Manager (Meta account connected, measured results to follow).
-
 How it works: Clyde creates and schedules from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp. Clyde takes work off the team; people stay in charge.
-
-No result figures are published for this case until they are measured.
 
 ## Memory per client
 
@@ -291,7 +289,7 @@ Leaving: after cancellation you have 30 days to take your data with you; after t
 
 ## How it Works
 
-Application-gated, no self-service signup. Max 10 partnerships per year.
+Application-gated, no self-service signup.
 
 Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. Name, email, agency and role are required; preferred tier, revenue band, number of clients, urgency and a short problem statement are optional.
 
@@ -311,13 +309,13 @@ Daley is the founder of FutureMarketingAI. Native Dutch speaker, based in the Ne
 
 ## Data and control
 
-- Data, servers and database are in the EU.
-- The language model runs by default at Anthropic, a US company. Other providers (for example for images and search) are listed in the privacy statement. On request we run Clyde on Mistral to keep the language model in the EU too.
+- Servers, database and queues are in the EU.
+- The language model runs at Anthropic and OpenAI in the US. Other providers (for example for images and search) are listed in the privacy statement. If you want the language model in the EU too, a setup with Mistral, a European language model, can be built on request.
 - Every client has its own workspace; memories about a client belong to that agency and that client.
 - Per task the agency decides how independently Clyde works; critical actions such as ad spend are always proposed first.
 - The website chatbot identifies itself as AI when asked.
 - After cancellation you have 30 days to take your data with you; after that we delete your workspaces.
-- No zero data retention agreement with Anthropic or OpenAI: by their standard API terms they do not train on API data and delete it within 30 days, longer for abuse monitoring or when the law requires it. A data processing agreement is available on request via privacy@future-marketing.ai.
+- Anthropic and OpenAI retain data on their own terms; we have no agreement under which they keep nothing. By their standard API terms they do not train on API data and delete it within 30 days, longer for abuse monitoring or when the law requires it. A data processing agreement is available on request via privacy@future-marketing.ai.
 - Per component where it runs, what the language model providers retain and how long we keep data: https://future-marketing.ai/nl/trust
 
 ## Kennisbank / Resources
@@ -356,7 +354,7 @@ Start at https://future-marketing.ai/nl/apply. Name, email, agency and role are 
 
 ## Languages
 
-Content is authored in Dutch and translated to English and Spanish. NL is the source of truth.
+Content is authored in Dutch and translated to English. NL is the source of truth.
 
 ## HowTo: Start met FutureMarketingAI
 
@@ -401,16 +399,16 @@ Q: Hoelang duurt de onboarding?
 A: De onboarding duurt 4 weken: accounts koppelen, merkstem en kennis, een strategiesessie per klant, en Clyde, de agenda en de goedkeuringen inrichten. Maand 1 is de correctielus. Per taak kies je daarna hoe zelfstandig Clyde werkt.
 
 Q: Is mijn data veilig?
-A: Je data, servers en database staan in de EU. Het taalmodel draait standaard bij Anthropic, een Amerikaans bedrijf; wil je het taalmodel ook in de EU, dan zetten we Clyde op verzoek op Mistral. Elke klant heeft een eigen werkruimte, en herinneringen over een klant horen bij dat bureau en die klant. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes.
+A: Servers en database staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Elke klant heeft een eigen werkruimte, en herinneringen over een klant horen bij dat bureau en die klant. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes.
 
 Q: Kan Clyde meerdere merken tegelijk beheren?
 A: Ja. Elke klant krijgt een eigen werkruimte met een eigen merkstem, geheugen, agenda en goedkeuringen. Binnen een klant kunnen meerdere accounts vallen, zoals bij SkinClarity Club met 3 Instagram-accounts.
 
 Q: Welke platformen ondersteunt Clyde?
-A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de app op je telefoon en op WhatsApp.
+A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de web-app op je beginscherm en op WhatsApp.
 
 Q: Hoe werkt de goedkeuringsflow?
-A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de app op je telefoon. Rapporten en voorstellen van Clyde bevestig je met één tik in WhatsApp, en daar meldt Clyde zich ook wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
+A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de web-app op je beginscherm. Rapporten en voorstellen van Clyde bevestig je met één tik in WhatsApp, en daar meldt Clyde zich ook wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
 Q: Wat is het verschil tussen Founding en Growth?
 A: Founding kost 997 EUR per maand met een levenslang vast tarief, 15 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
