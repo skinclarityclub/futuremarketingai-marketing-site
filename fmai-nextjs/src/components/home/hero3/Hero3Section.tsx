@@ -86,6 +86,10 @@ export function Hero3View({ t }: { t: HeroT }) {
           {t("proof.mobile")}
         </p>
         {' '}
+        <p className="hdemo">
+          {t("demo")}
+        </p>
+        {' '}
       </div>
       {' '}
       <div className="ctrl">
