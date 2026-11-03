@@ -33,15 +33,15 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
           {' '}
           <ul className="wc-track">
             {' '}
-            <li className="wc-it" data-f="story">
+            <li className="wc-it" data-f="feed">
               <div className="wc-media">
-                <Image src="/home/werk/luwte_posts_luwte-story-ruimte-1.webp" width={1080} height={1920} sizes="(max-width: 599px) 173px, (max-width: 860px) 173px, 216px" alt={t("werk.alt.luwte_posts_luwte-story-ruimte-1")} loading="lazy" decoding="async" />
+                <Image src="/home/werk/havermoed_posts_havermoed-drie-zakken-1.webp" width={1080} height={1350} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.havermoed_posts_havermoed-drie-zakken-1")} loading="lazy" decoding="async" />
               </div>
               {' '}
               <div className="wc-cap" data-app="">
                 <p className="wc-br">
                   <span className="wc-mk">
-                    <Image src="/home/hero3/luwte_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
+                    <Image src="/home/werk/havermoed_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
                   </span>
                   {t("werk.screens.n1")}
                 </p>
@@ -56,7 +56,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
             {' '}
             <li className="wc-it" data-f="feed">
               <div className="wc-media">
-                <Image src="/home/hero3/meerkade_posts_meerkade-li-twintig-minuten-1.webp" width={1200} height={1500} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.meerkade_posts_meerkade-li-twintig-minuten-1")} loading="lazy" decoding="async" />
+                <Image src="/home/werk/meerkade_posts_meerkade-zo-gaat-een-controle-1.webp" width={1080} height={1350} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.meerkade_posts_meerkade-zo-gaat-een-controle-1")} loading="lazy" decoding="async" />
               </div>
               {' '}
               <div className="wc-cap" data-app="">
@@ -75,15 +75,15 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
               </div>
             </li>
             {' '}
-            <li className="wc-it" data-f="story">
+            <li className="wc-it" data-f="feed">
               <div className="wc-media">
-                <Image src="/home/werk/havermoed_posts_havermoed-story-proefbundel-1.webp" width={1080} height={1920} sizes="(max-width: 599px) 173px, (max-width: 860px) 173px, 216px" alt={t("werk.alt.havermoed_posts_havermoed-story-proefbundel-1")} loading="lazy" decoding="async" />
+                <Image src="/home/werk/krijtenstaal_posts_krijtenstaal-goblet-squat-1.webp" width={1080} height={1350} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.krijtenstaal_posts_krijtenstaal-goblet-squat-1")} loading="lazy" decoding="async" />
               </div>
               {' '}
               <div className="wc-cap" data-app="">
                 <p className="wc-br">
                   <span className="wc-mk">
-                    <Image src="/home/werk/havermoed_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
+                    <Image src="/home/hero3/krijtenstaal_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
                   </span>
                   {t("werk.screens.n7")}
                 </p>
@@ -96,15 +96,15 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
               </div>
             </li>
             {' '}
-            <li className="wc-it" data-f="x">
+            <li className="wc-it" data-f="feed">
               <div className="wc-media">
-                <Image src="/home/werk/veldlijn_posts_veldlijn-x-maandag-1.webp" width={1200} height={628} sizes="(max-width: 599px) 336px, (max-width: 860px) 336px, 420px" alt={t("werk.alt.veldlijn_posts_veldlijn-x-maandag-1")} loading="lazy" decoding="async" />
+                <Image src="/home/werk/luwte_posts_luwte-eerste-keer-1.webp" width={1080} height={1350} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.luwte_posts_luwte-eerste-keer-1")} loading="lazy" decoding="async" />
               </div>
               {' '}
               <div className="wc-cap" data-app="">
                 <p className="wc-br">
                   <span className="wc-mk">
-                    <Image src="/home/werk/veldlijn_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
+                    <Image src="/home/hero3/luwte_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
                   </span>
                   {t("werk.screens.n10")}
                 </p>
@@ -117,16 +117,15 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
               </div>
             </li>
             {' '}
-            <li className="wc-it" data-f="story">
+            <li className="wc-it" data-f="feed">
               <div className="wc-media">
-                <video src="/home/hero3/h3-luwte-reel.mp4" poster="/home/hero3/h3-luwte-poster.jpg" width="1080" height="1920" controls muted playsInline preload="none" aria-label={t("werk.aria.n2")}>
-                </video>
+                <Image src="/home/werk/veldlijn_posts_veldlijn-van-0740-tot-0742-1.webp" width={1080} height={1350} sizes="(max-width: 599px) 230px, (max-width: 860px) 230px, 288px" alt={t("werk.alt.veldlijn_posts_veldlijn-van-0740-tot-0742-1")} loading="lazy" decoding="async" />
               </div>
               {' '}
               <div className="wc-cap" data-app="">
                 <p className="wc-br">
                   <span className="wc-mk">
-                    <Image src="/home/hero3/luwte_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
+                    <Image src="/home/werk/veldlijn_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
                   </span>
                   {t("werk.screens.n13")}
                 </p>
@@ -141,13 +140,14 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
             {' '}
             <li className="wc-it" data-f="story">
               <div className="wc-media">
-                <Image src="/home/hero3/krijtenstaal_posts_krijtenstaal-story-proeftraining-1.webp" width={1080} height={1920} sizes="(max-width: 599px) 173px, (max-width: 860px) 173px, 216px" alt={t("werk.alt.krijtenstaal_posts_krijtenstaal-story-proeftraining-1")} loading="lazy" decoding="async" />
+                <video src="/home/hero3/h3-luwte-reel.mp4" poster="/home/hero3/h3-luwte-poster.jpg" width="1080" height="1920" controls muted playsInline preload="none" aria-label={t("werk.aria.n2")}>
+                </video>
               </div>
               {' '}
               <div className="wc-cap" data-app="">
                 <p className="wc-br">
                   <span className="wc-mk">
-                    <Image src="/home/hero3/krijtenstaal_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
+                    <Image src="/home/hero3/luwte_mark.png" width={512} height={512} sizes="(max-width: 599px) 18px, (max-width: 860px) 18px, 18px" alt="" />
                   </span>
                   {t("werk.screens.n16")}
                 </p>
