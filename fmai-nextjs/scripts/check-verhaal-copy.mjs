@@ -79,7 +79,7 @@ for (const l of LOCALES) {
 // 2026-11-02). home.hero3: hero 3, likewise /nl only (port PR 3, 2026-11-03). home.regie and home.klant: sections
 // 4 and 5, likewise (port PR 4). home.werk and home.aanvraag: sections 5 and 6, likewise (port golf 3). The copy rules
 // above still run on these keys; only the parity check skips them.
-const NL_ONLY = [/^home\.week\./, /^home\.hero3\./, /^home\.(regie|klant)\./, /^home\.(werk|aanvraag)\./]
+const NL_ONLY = [/^home\.week\./, /^home\.hero3\./, /^home\.(regie|klant)\./, /^home\.(werk|aanvraag)\./, /^home\.(waarom|klanten)\./]
 for (const l of LOCALES.slice(1)) {
   for (const k of keysets.nl)
     if (!keysets[l].has(k) && !NL_ONLY.some((re) => re.test(k))) hits.push(`sleutel     messages/${l}.json mist ${k}`)
