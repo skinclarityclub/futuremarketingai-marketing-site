@@ -64,7 +64,6 @@ if (skills.length === 0) {
 
 const live = skills.filter((s) => s.status === 'live')
 const soon = skills.filter((s) => s.status === 'coming_soon')
-const maxPartners = constant('MAX_PARTNERS_PER_YEAR')
 const spotsTotal = constant('FOUNDING_SPOTS_TOTAL')
 
 // Founding occupancy as the files used to publish it. Dutch "5 taken" means
@@ -81,6 +80,22 @@ for (const [sample, hit] of [
 ]) {
   if (new RegExp(OCCUPANCY.source, 'i').test(sample) !== hit) {
     throw new Error(`OCCUPANCY self-check failed on "${sample}"`)
+  }
+}
+
+// One number, not two: Daley chose the founding spots only on 2026-11-03 (siteplan keuze 5A),
+// so any "N partnerships per year" claim is stale. The spots themselves are checked in 3 below.
+const YEARLY_CAP =
+  /\b\d+\s+(?:new\s+)?(?:partnerships?|partners|agencies)\s+per\s+year\b|\bper[- ]year cap\b|\bmax(?:imum)?\s+\d+\s+per\s+year\b/gi
+for (const [sample, hit] of [
+  ['Max 10 new partnerships per year', true],
+  ['10 partnerships per year cap', true],
+  ['quality over volume (max 10 per year)', true],
+  ['maximum 10 founding spots', false],
+  ['800 credits per workspace per month', false],
+]) {
+  if (new RegExp(YEARLY_CAP.source, 'i').test(sample) !== hit) {
+    throw new Error(`YEARLY_CAP self-check failed on "${sample}"`)
   }
 }
 
@@ -104,11 +119,9 @@ for (const [name, text] of Object.entries(files)) {
     for (const m of text.matchAll(re)) fail(`${name}: "${m[0]}" is a stale product claim (STALE list)`)
   }
 
-  // 1 — partnership cap. Catch any number claiming to be the yearly cap.
-  for (const m of text.matchAll(/(\d+)\s+(?:new\s+)?partnerships?\s+per\s+year/gi)) {
-    if (Number(m[1]) !== maxPartners) {
-      fail(`${name}: "${m[0]}" contradicts MAX_PARTNERS_PER_YEAR = ${maxPartners}`)
-    }
+  // 1 — no yearly cap (YEARLY_CAP above).
+  for (const m of text.matchAll(YEARLY_CAP)) {
+    fail(`${name}: "${m[0]}" is a yearly cap; the site names only the ${spotsTotal} founding spots`)
   }
 
   // 2 — skill counts, in whatever order the prose puts them.
@@ -186,5 +199,5 @@ if (failures.length > 0) {
 console.log(
   `OK: llms.txt + llms-full.txt agree with the SSoT ` +
     `(${skills.length} skills — ${live.length} live, ${soon.length} coming soon; ` +
-    `max ${maxPartners} partners/year; ${spotsTotal} founding spots).`,
+    `${spotsTotal} founding spots, no yearly cap).`,
 )

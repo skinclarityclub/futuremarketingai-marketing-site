@@ -18,6 +18,7 @@ import {
   TWITTER_URL,
 } from '@/lib/seo-config'
 import { PageShell } from '@/components/layout/PageShell'
+import { ReadInDutch } from '@/components/layout/ReadInDutch'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
@@ -115,6 +116,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             {t('hero.tagline')}
           </p>
+          {locale === 'en' && <ReadInDutch href="/about" />}
         </div>
       </section>
 

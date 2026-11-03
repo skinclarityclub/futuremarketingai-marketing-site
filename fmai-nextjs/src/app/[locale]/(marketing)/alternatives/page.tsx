@@ -25,7 +25,7 @@ export async function generateMetadata({
   return generatePageMetadata({ locale, namespace: 'alternatives', path: '/alternatives' })
 }
 
-// Checked 2026-10-25 against these pages; re-check prices here before republishing the copy.
+// Checked 2026-11-03 against these pages; re-check prices here before republishing the copy.
 const ALTERNATIVES = [
   { key: 'lindy', source: 'https://www.lindy.ai/pricing' },
   { key: 'sintra', source: 'https://sintra.ai/pricing' },

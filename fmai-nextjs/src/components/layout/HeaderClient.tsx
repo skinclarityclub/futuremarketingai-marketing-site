@@ -93,7 +93,7 @@ const FLAT_SKILLS: readonly SkillItemWithCategory[] = SKILL_CATEGORIES.flatMap((
 // terwijl "de site beschrijft het systeem niet" de hoofdklacht was. Zes items in
 // plaats van vijf is die uitleg waard. Draai dit terug als de balk te vol wordt.
 const NAV_ITEMS = [
-  { key: 'skills', kind: 'mega', href: '/#skills', matchPaths: ['/skills'] },
+  { key: 'skills', kind: 'mega', href: '/skills', matchPaths: ['/skills'] },
   { key: 'howItWorks', kind: 'link', href: '/how-it-works', matchPaths: ['/how-it-works'] },
   { key: 'memory', kind: 'link', href: '/memory', matchPaths: ['/memory'] },
   {
@@ -474,7 +474,7 @@ export function HeaderClient({ locale: _locale }: HeaderClientProps) {
                               </span>
                             </div>
                             <Link
-                              href="/#skills"
+                              href="/skills"
                               ref={(el) => {
                                 skillsItemRefs.current[FLAT_SKILLS.length] = el
                               }}

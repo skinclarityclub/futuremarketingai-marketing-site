@@ -173,9 +173,9 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     clyde: {
-      shortDescription: 'The AI colleague that orchestrates all other skills.',
+      shortDescription: 'The AI colleague who puts the other skills to work.',
       longDescription:
-        'Clyde is the AI colleague that drives all other skills. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, in the app on your phone and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
+        'Clyde is the AI colleague who puts the other skills to work. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
       features: [
         'Natural language instructions',
         'Orchestration of all other skills',

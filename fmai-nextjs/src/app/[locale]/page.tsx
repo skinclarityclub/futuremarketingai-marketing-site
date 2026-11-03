@@ -23,6 +23,7 @@ import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
 import { WeekSection } from '@/components/home/week/WeekSection'
 import { Hero3Section } from '@/components/home/hero3/Hero3Section'
+import { ReadInDutch } from '@/components/layout/ReadInDutch'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
 // (ssr: true) so SEO + crawlers see real content. The browser fetches
@@ -184,6 +185,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           videoPlay={t('hero.videoPlay')}
           showVideo={locale === 'nl'}
         />
+      )}
+      {locale === 'en' && (
+        <div className="relative px-6 pb-8">
+          <ReadInDutch href="/" />
+        </div>
       )}
 
       {/* Een week met Clyde (port PR 2, 2026-11-02): on /nl the approved week takes the campaign anchor
@@ -472,7 +478,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     {t('pillars.compliance.label')}
                   </div>
                   <h3 className="font-display text-4xl md:text-5xl font-bold text-text-primary tracking-tight my-6 leading-[1.05]">
-                    <span className="block">{t('pillars.compliance.headingLine1')}</span>
+                    <span className="block">{t('pillars.compliance.headingLine1')}</span>{' '}
                     <span className="block">{t('pillars.compliance.headingLine2')}</span>
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed max-w-md">
@@ -487,7 +493,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </Link>
                 </div>
 
-                {/* Tile B — Data in de EU (spec §3.5: taalmodel standaard Anthropic, Mistral op verzoek), single col */}
+                {/* Tile B — servers en database in de EU, taalmodel bij Anthropic en OpenAI in de VS (zoals /trust), single col */}
                 <div className="md:col-span-1 relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-6 flex flex-col justify-between min-h-[220px]">
                   <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-accent-system">
                     <ServerCog className="w-4 h-4" aria-hidden />
