@@ -557,6 +557,13 @@
 #hero:not(#_pad) .copy{position:relative;top:auto;left:auto;right:auto;margin:76px 16px 0;transform:none}
 #hero:not(#_pad) .stage{position:relative;inset:auto;flex:none;margin-top:10px;perspective-origin:50% 50%}
 }
+@media(max-width:860px){
+#hero:not(#_pad) .copy .def{animation-name:h3-rise-lcp}
+@media (scripting: enabled){
+#hero:not(._pad):not(_pad) #scene:not([style]){visibility:hidden}
+}
+}
+@keyframes h3-rise-lcp{from{opacity:.01;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(max-width:599px){
 #hero:not(#_pad) .stage{height:min(470px,118vw)}
 #hero .scene{left:50%;top:50%;bottom:auto;margin:-559px 0 0 -350px;transform-origin:350px 559px}
