@@ -23,6 +23,7 @@ import { CaseStudyCard } from '@/components/home/CaseStudyCard'
 import { ServicesBento } from '@/components/home/ServicesBento'
 import { WeekSection } from '@/components/home/week/WeekSection'
 import { Hero3Section } from '@/components/home/hero3/Hero3Section'
+import { RegieKlantSections } from '@/components/home/secties/RegieKlantSections'
 import { ReadInDutch } from '@/components/layout/ReadInDutch'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
@@ -196,6 +197,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           #een-week-met-clyde right after the hero and the kring below goes. The screens are Dutch captures,
           so /en keeps the kring until there are English ones. */}
       {locale === 'nl' && <WeekSection />}
+
+      {/* Regie and Klant (port PR 4, approved 2026-11-02): sections 4 and 5, /nl only like the week, because the
+          screens show the Dutch app. #regie and #klant are the fixed anchors (siteplan golf 1). */}
+      {locale === 'nl' && <RegieKlantSections />}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
