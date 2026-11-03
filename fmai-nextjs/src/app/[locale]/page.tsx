@@ -24,6 +24,7 @@ import { ServicesBento } from '@/components/home/ServicesBento'
 import { WeekSection } from '@/components/home/week/WeekSection'
 import { Hero3Section } from '@/components/home/hero3/Hero3Section'
 import { RegieKlantSections } from '@/components/home/secties/RegieKlantSections'
+import { WerkAanvraagSections } from '@/components/home/werk/WerkAanvraagSections'
 import { ReadInDutch } from '@/components/layout/ReadInDutch'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
@@ -202,6 +203,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           screens show the Dutch app. #regie and #klant are the fixed anchors (siteplan golf 1). */}
       {locale === 'nl' && <RegieKlantSections />}
 
+      {/* Wat Clyde maakt (#werk) and Van reactie naar aanvraag (#aanvraag), port golf 3 (approved 2026-11-03): sections
+          5 and 6, /nl only like Regie and Klant (Dutch demo posts and a Dutch app capture). On /nl they replace
+          ServicesBento, PlatformStrip (#werk carries the channel line) and the #lead steps (#aanvraag is that subject). */}
+      {locale === 'nl' && <WerkAanvraagSections />}
+
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
           Verplaatst van positie 14 naar 2: interactive engagement direct
@@ -227,11 +233,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4 — ServicesBento (12 skills incl. featured Clyde)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="500px">
         <ScrollReveal>
           <ServicesBento locale={locale} />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4b — De kring (2026-10-12, verving de strategielaag)
@@ -338,6 +346,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           klik → gekoppeld formulier → trechter op /social. Geen resultaatcijfer:
           er is nog geen lead aan een bureauklant toegeschreven.
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <StepsSection
         id="lead"
         eyebrow={t('lead.eyebrow')}
@@ -345,13 +354,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         subtitle={t('lead.subtitle')}
         steps={STEP_KEYS.slice(0, 4).map((k) => ({ t: t(`lead.steps.${k}.t`), d: t(`lead.steps.${k}.d`) }))}
       />
+      )}
 
       {/* Kanalen. Staat NA de kring, de mensen, de ingangen en de lead-sectie:
           eerst wat Clyde doet, dan waar hij het doet. Welke kanalen erin staan
           en waarom, staat in PlatformStrip.tsx. */}
+      {locale !== 'nl' && (
       <LazySection minHeight="180px">
         <PlatformStrip locale={locale} />
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 5 — MemoryUSPTeaser (4-layer geheugen, W5.7 sequential reveal)

@@ -757,6 +757,86 @@
       },
       "title": "Je klant blijft, omdat hij meekijkt."
     },
+    "werk": {
+      "alt": {
+        "havermoed_posts_havermoed-drie-zakken-1": "Instagram-carrousel van Havermoed Granola: Drie zakken. Meer niet. En dit zit erin.",
+        "krijtenstaal_posts_krijtenstaal-goblet-squat-1": "Instagram-carrousel van Krijt & Staal: De goblet squat. Eén oefening, drie stappen.",
+        "luwte_logo": "Luwte",
+        "luwte_posts_luwte-eerste-keer-1": "Instagram-carrousel van Dagspa Luwte: Je eerste keer in Luwte. Van de deur tot de thee.",
+        "meerkade_posts_meerkade-zo-gaat-een-controle-1": "Instagram-carrousel van Mondzorg Meerkade: Zo gaat een controle bij ons. Twintig minuten, stap voor stap.",
+        "veldlijn_posts_veldlijn-van-0740-tot-0742-1": "LinkedIn-document van Veldlijn: Van 07:40 tot 07:42. Twee minuten maandagochtend."
+      },
+      "aria": {
+        "n1": "Werk van vijf voorbeeldmerken",
+        "n2": "Reel van Dagspa Luwte: Vijftig minuten in Luwte",
+        "n3": "Wat Clyde maakt"
+      },
+      "blogDemo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
+      "channels": "Clyde publiceert vandaag naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube.",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
+      "list": {
+        "n1": "Strategie",
+        "n10": "Elke week een rapport per klant.",
+        "n11": "SEO en GEO",
+        "n12": "Hoe je klant gevonden wordt in Google en in AI-antwoorden.",
+        "n2": "Doelen, pijlers en een agenda per klant.",
+        "n3": "Social media",
+        "n4": "Posts, carrousels en stories, ingepland per kanaal.",
+        "n5": "Blogs",
+        "n6": "Artikelen voor de site van je klant.",
+        "n7": "Van post naar aanvraag",
+        "n8": "Een DM met een link voor wie reageert met het trefwoord.",
+        "n9": "Rapportage"
+      },
+      "screens": {
+        "n1": "Havermoed Granola",
+        "n10": "Dagspa Luwte",
+        "n11": "Instagram · Carrousel",
+        "n12": "Nog nooit in een dagspa geweest? Dan weet je niet wat je kunt verwachten, en dat maakt het spannender dan nodig. Zo gaat een eerste bezoek bij ons, van de deur tot de thee.",
+        "n13": "Veldlijn",
+        "n14": "LinkedIn · Document",
+        "n15": "Om 07:40 belt de eerste monteur zich ziek. Om 07:42 staat zijn dag verdeeld over drie collega's. Zo werkt dat, stap voor stap.",
+        "n16": "Dagspa Luwte",
+        "n17": "Instagram · Reel",
+        "n18": "Vijftig minuten in Luwte",
+        "n19": "Je eerste keer in een dagspa: wat je kunt verwachten",
+        "n2": "Instagram · Carrousel",
+        "n20": "Veel gasten vertellen ons achteraf dat ze het spannend vonden om voor het eerst te komen. Wat neem je mee, wat trek je aan, hoe lang duurt het? Hier lopen we een bezoek aan Luwte met je door, van de deur tot de thee.",
+        "n21": "Voordat je komt",
+        "n22": "Je hoeft niets mee te nemen. Je badjas ligt warm klaar, net als slippers en handdoeken. Kom tien minuten eerder, dan is er tijd voor thee en hoef je niet binnen te rennen.",
+        "n23": "Dagspa Luwte",
+        "n24": "Blog",
+        "n3": "Drie zakken, en per zak een korte lijst. Veeg door, dan zie je wat erin zit.",
+        "n4": "Mondzorg Meerkade",
+        "n5": "Instagram · Carrousel",
+        "n6": "Een controle duurt bij ons twintig minuten, en je weet vooraf precies wat er gebeurt. Hier staat het stap voor stap, zodat niets je verrast.",
+        "n7": "Krijt & Staal",
+        "n8": "Instagram · Carrousel",
+        "n9": "Eén oefening, drie stappen. De goblet squat is de eerste die we iedereen leren, omdat hij laat zien hoe je beweegt."
+      },
+      "sub": "Clyde maakt per klant posts, carrousels, stories, LinkedIn-posts, X-posts en blogs in de stijl van dat merk. Alles staat klaar voor jouw akkoord.",
+      "title": "Vijf klanten, vijf eigen stemmen."
+    },
+    "aanvraag": {
+      "alt": {
+        "g3-dm-regel-rust": "DM-automatisering van Dagspa Luwte: de regel RUST, een eigen regel op een reactie onder een post, aan. Laatste 30 dagen: trefwoord 93, DM 80."
+      },
+      "aria": {
+        "n1": "De regel RUST in DM-automatisering van Dagspa Luwte"
+      },
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
+      "screens": {
+        "n1": "93",
+        "n2": "Gebruikten je trefwoord",
+        "n3": "80",
+        "n4": "Kregen je DM met de link",
+        "n5": "22",
+        "n6": "Stuurden een aanvraag",
+        "n7": "Voorbeeldcijfers van een demo-account."
+      },
+      "sub": "Reageert iemand op Instagram met het trefwoord van je klant, dan stuurt Clyde automatisch een DM met de link. Per klant zie je hoeveel mensen het trefwoord gebruikten, de DM kregen en een aanvraag stuurden.",
+      "title": "Van reactie naar aanvraag."
+    },
     "people": {
       "eyebrow": "De mensen",
       "title": "Clyde werkt met je team. En met je klant.",
