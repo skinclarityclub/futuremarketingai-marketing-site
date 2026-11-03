@@ -44,6 +44,7 @@
         "secondary": "Zie Clyde aan het werk"
       },
       "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
       "pause": {
         "pause": "Pauzeer de animatie",
         "play": "Speel de animatie af"
