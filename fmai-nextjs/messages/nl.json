@@ -701,6 +701,62 @@
         "6": "Rapport verstuurd"
       }
     },
+    "regie": {
+      "lines": {
+        "n1": "Clyde stelt voor, jij beslist.",
+        "n2": "Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat.",
+        "n3": "Moet het echt stil, dan zet je met één knop alles voor een klant op pauze."
+      },
+      "sceneDescription": "In Voor jou staat onder Komt eraan de reel van Dagspa Luwte, die op woensdag 11 november om 19:00 live gaat. Met Pauzeer gaat hij terug naar review, en tot 18:35 kun je hem toch laten gaan. De kaart Crisispauze zet met Alles pauzeren alles voor Luwte stil.",
+      "screens": {
+        "n1": "Voor jou",
+        "n10": "Vijftig minuten in Luwte",
+        "n11": "Pauzeer",
+        "n12": "Bekijken",
+        "n13": "Gepauzeerd. De post staat weer in je review.",
+        "n14": "Met Toch laten gaan, tot wo 11 nov, 18:35, gaat hij alsnog om wo 11 nov, 19:00.",
+        "n15": "Toch laten gaan",
+        "n16": "Crisispauze",
+        "n17": "Stopt meteen alle geplande posts, de automatische DM's en de berichten van Clyde voor deze klant. Alleen de agency kan de pauze opheffen.",
+        "n18": "Alles pauzeren",
+        "n2": "Beslissen",
+        "n3": "Review",
+        "n4": "Even naar kijken",
+        "n5": "Komt eraan",
+        "n6": "Komt eraan",
+        "n7": "Goedgekeurde posts voor de komende 7 dagen, van klanten met het stopmoment aan.",
+        "n8": "Gaat wo 11 nov, 19:00 live, tenzij je hem pauzeert. Pauzeren kan zeker tot wo 11 nov, 15:00.",
+        "n9": "Dagspa Luwte"
+      },
+      "title": "Niets gaat live zonder jou."
+    },
+    "klant": {
+      "lines": {
+        "n1": "Hij ziet jouw naam, logo en kleuren.",
+        "n2": "Hij keurt zelf goed, op zijn telefoon.",
+        "n3": "Hij krijgt elke week zijn rapport."
+      },
+      "sceneDescription": "In de instellingen van Nova Digital gaat White-label aan. In het portaal van Dagspa Luwte staan daarna de naam en het logo van Nova Digital, en de knoppen krijgen de kleur van Nova Digital. Luwte keurt daar de reel zelf goed en ontvangt elke week het weekrapport.",
+      "screens": {
+        "n1": "White-label voor jullie klanten",
+        "n10": "Nova Digital",
+        "n11": "Uitloggen",
+        "n12": "Wacht op goedkeuring",
+        "n13": "Goedkeuren",
+        "n14": "Wijzigingen",
+        "n15": "Weekrapport",
+        "n16": "Ik ontvang het weekrapport",
+        "n2": "Klanten zien jullie naam, logo en kleuren in plaats van die van FutureMarketingAI.",
+        "n3": "White-label aan",
+        "n4": "Dagspa Luwte",
+        "n5": "Dashboard",
+        "n6": "Content Review",
+        "n7": "Content Review",
+        "n8": "Kalender",
+        "n9": "Rapporten"
+      },
+      "title": "Je klant blijft, omdat hij meekijkt."
+    },
     "people": {
       "eyebrow": "De mensen",
       "title": "Clyde werkt met je team. En met je klant.",
