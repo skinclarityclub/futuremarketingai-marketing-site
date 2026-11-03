@@ -1,4 +1,4 @@
-import { DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { DM_Sans, JetBrains_Mono, Playfair_Display } from 'next/font/google'
 
 // Variable (no `weight`) with the opsz axis: static DM Sans pins optical size at 14, which set the
 // homepage H1 11% wider than the approved design (measured 2026-11-02, port plan Task 1.1).
@@ -19,6 +19,17 @@ export const jetbrainsMono = JetBrains_Mono({
   // (chatbot, ChatSimulation, code blocks). Above-the-fold hero is
   // pure DM Sans. Preloading mono cost 37 KB on the critical path
   // and competed with the hero preview WebP for mobile bandwidth.
+  preload: false,
+  adjustFontFallback: true,
+})
+
+// Only the Luwte blog card in home section 5 (port golf 3): Luwte's own heading font (its kit.json), because the card
+// shows an article on the client's site, not the app. No preload: the file loads only where that card renders.
+export const playfairDisplay = Playfair_Display({
+  variable: '--font-playfair-display',
+  weight: '600',
+  subsets: ['latin'],
+  display: 'swap',
   preload: false,
   adjustFontFallback: true,
 })
