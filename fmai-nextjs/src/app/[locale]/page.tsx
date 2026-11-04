@@ -69,6 +69,8 @@ export async function generateMetadata({
 }
 
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5'] as const
+// /nl shows the golf 5 questions (#vragen), so its FAQ schema must name those, not the hidden old FAQ.
+const VRAGEN_KEYS = ['n1', 'n2', 'n3', 'n4', 'n5', 'n6', 'n7', 'n8', 'n9'] as const
 // The kring has five steps, the lead section four and the entries three; each takes the slice it needs.
 const STEP_KEYS = ['s1', 's2', 's3', 's4', 's5'] as const
 const PEOPLE_KEYS = ['i1', 'i2', 'i3', 'i4'] as const
@@ -153,10 +155,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
       <BreadcrumbJsonLd items={[{ name: 'Home', path: '/' }]} locale={locale} />
       <FaqJsonLd
-        items={FAQ_KEYS.map((key) => ({
-          question: t(`faq.items.${key}.question`),
-          answer: t(`faq.items.${key}.answer`),
-        }))}
+        items={
+          locale === 'nl'
+            ? VRAGEN_KEYS.map((key) => ({
+                question: t(`vragen.questions.${key}`),
+                answer: t(`vragen.answers.${key}`),
+              }))
+            : FAQ_KEYS.map((key) => ({
+                question: t(`faq.items.${key}.question`),
+                answer: t(`faq.items.${key}.answer`),
+              }))
+        }
         path="/"
         locale={locale}
       />
