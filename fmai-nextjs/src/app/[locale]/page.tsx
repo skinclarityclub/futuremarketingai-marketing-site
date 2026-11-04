@@ -25,6 +25,7 @@ import { WeekSection } from '@/components/home/week/WeekSection'
 import { Hero3Section } from '@/components/home/hero3/Hero3Section'
 import { RegieKlantSections } from '@/components/home/secties/RegieKlantSections'
 import { WerkAanvraagSections } from '@/components/home/werk/WerkAanvraagSections'
+import { WaaromKlantenSections } from '@/components/home/klanten/WaaromKlantenSections'
 import { ReadInDutch } from '@/components/layout/ReadInDutch'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
@@ -208,6 +209,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           ServicesBento, PlatformStrip (#werk carries the channel line) and the #lead steps (#aanvraag is that subject). */}
       {locale === 'nl' && <WerkAanvraagSections />}
 
+      {/* Waarom geen ChatGPT en een extra kracht (#waarom) and Waar Clyde al draait (#klanten), port golf 4: sections 7
+          and 8, /nl only (Dutch app screens). On /nl they replace CaseStudyCard, de mensen (#people), MemoryUSPTeaser,
+          ComparisonTable and FounderSection; /en keeps all five. */}
+      {locale === 'nl' && <WaaromKlantenSections />}
+
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
           Verplaatst van positie 14 naar 2: interactive engagement direct
@@ -224,11 +230,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 3 — CaseStudyCard (SKC proof anchor)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="380px">
         <ScrollReveal>
           <CaseStudyCard locale={locale} />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4 — ServicesBento (12 skills incl. featured Clyde)
@@ -277,6 +285,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           geheugen alleen zijn eigen klanten ziet, en aanvragen via een
           gesprek met Clyde (alleen het formulier bestaat).
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="280px">
         <section aria-labelledby="people" className="py-20 px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
@@ -314,6 +323,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4d — Drie ingangen (2026-10-12, verving "Clyde kijkt mee")
@@ -368,6 +378,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 5 — MemoryUSPTeaser (4-layer geheugen, W5.7 sequential reveal)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="400px">
         <ScrollReveal>
           <MemoryUSPTeaser
@@ -398,15 +409,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 6 — ComparisonTable (DIY / Bureau / Clyde)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="500px">
         <ScrollReveal>
           <ComparisonTable locale={locale} />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 7 — ProcessTimeline (W5.4 stagger reveal)
@@ -433,11 +447,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 8 — FounderSection (Daley intro)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="320px">
         <ScrollReveal>
           <FounderSection locale={locale} />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* Sectie 9 (TestimonialBlock) is off: its Sindy quote was written by an agent, not said by her
           (docs/plans/2026-05-26-post-nightshift-walkthrough.md:356). Back once she confirms one (Daley 2026-10-12). */}
