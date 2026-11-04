@@ -76,7 +76,7 @@
 #vragen:not(#_pad) .gv-q summary:focus-visible{outline:2px solid #5eead4;outline-offset:2px;border-radius:4px}
 #vragen:not(#_pad) .gv-q p{max-width:68ch;padding:0 0 22px;font-size:16px;line-height:1.6;color:#c4ccd8}
 #vragen:not(#_pad) .gv-kb{display:flex;flex-direction:column;gap:12px;margin:clamp(28px,4vh,40px) 0 0;padding:0;list-style:none}
-#afsluiting:not(#_pad) .ga-band{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,3.4vw,48px);align-items:center;padding:clamp(28px,4vw,56px);border-radius:20px;background:radial-gradient(60% 90% at 0% 100%,rgba(0,212,170,.07),transparent 70%),#0e121b;box-shadow:0 0 0 1px rgba(0,212,170,.22)}
+#afsluiting:not(#_pad) .ga-band{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,3.4vw,48px);align-items:center;padding:clamp(28px,4vw,56px);border-radius:20px;background:radial-gradient(60% 90% at 0 100%,rgba(0,212,170,.07),transparent 70%),#0e121b;box-shadow:0 0 0 1px rgba(0,212,170,.22)}
 #afsluiting:not(#_pad) .ga-pt{display:block;width:clamp(112px,11vw,152px);height:auto;aspect-ratio:1;border-radius:18px;object-fit:cover;object-position:50% 20%;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
 #afsluiting:not(#_pad) .ga-tx{display:flex;flex-direction:column;gap:14px}
 #afsluiting:not(#_pad) .gf5-h{max-width:20ch}
