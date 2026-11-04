@@ -983,6 +983,163 @@
       },
       "title": "Waar Clyde al draait, en wie hem bouwt."
     },
+    "start": {
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "n1": "Bekijk de vier weken in detail"
+      },
+      "note": "Tien founding-plekken in totaal.",
+      "rowLabels": {
+        "n1": "Jij levert",
+        "n10": "Jij levert",
+        "n11": "Clyde doet",
+        "n12": "Klaar",
+        "n2": "Clyde doet",
+        "n3": "Klaar",
+        "n4": "Jij levert",
+        "n5": "Clyde doet",
+        "n6": "Klaar",
+        "n7": "Jij levert",
+        "n8": "Clyde doet",
+        "n9": "Klaar"
+      },
+      "rowTexts": {
+        "n1": "Een werksessie van <b>2 uur</b> met Daley.",
+        "n10": "Kickoff met Daley. Per taak kies jij hoeveel Clyde zelf mag.",
+        "n11": "Plant en publiceert volgens de agenda.",
+        "n12": "Clyde draait, met een directe WhatsApp-lijn naar Daley. <b>2 uur per week</b>, doorlopend.",
+        "n2": "Leest per klant kleuren, lettertypen, toon en USP's, en haalt je Instagram-patronen op.",
+        "n3": "Merk-DNA per klant en een Instagram-baseline.",
+        "n4": "<b>2 uur</b>.",
+        "n5": "Maakt uit het merk-DNA vijf tot zeven contentpijlers en ontwerptemplates per merk.",
+        "n6": "Pijlers en templates per merk.",
+        "n7": "<b>4 uur</b>: je beoordeelt de eerste batch.",
+        "n8": "Past de stem aan tot hij klopt, maximaal drie rondes per merk.",
+        "n9": "De merkstem staat vast en de goedkeuring loopt."
+      },
+      "sub": "Starten met Clyde duurt vier weken en kost ongeveer tien uur van jouw tijd in de eerste maand: twee, twee en vier uur, daarna twee uur per week. Daley begeleidt elke start zelf.",
+      "title": "In vier weken live.",
+      "weekLabels": {
+        "n1": "Week 1",
+        "n2": "Week 2",
+        "n3": "Week 3",
+        "n4": "Week 4"
+      },
+      "weekTitles": {
+        "n1": "Intake en merkscan",
+        "n2": "Opzet en pijlers",
+        "n3": "Merkstem afstemmen",
+        "n4": "Kickoff en start"
+      }
+    },
+    "prijs": {
+      "cta": "Vraag een gesprek aan",
+      "definition": "Een werkruimte is één klantmerk.",
+      "enterprise": "Enterprise: een directe lijn met Daley.",
+      "fitTitles": {
+        "n1": "Voor wie dit werkt",
+        "n2": "Voor wie dit niet werkt"
+      },
+      "labels": {
+        "n1": "Founding",
+        "n2": "Per klantmerk, over €997 per maand"
+      },
+      "links": {
+        "n1": "Alle prijzen en wat erin zit"
+      },
+      "lists": {
+        "n1": "15 klantmerken inbegrepen, €299 per extra klantmerk",
+        "n10": "Je puur branding, identity of creatie doet. Clyde levert prestatiecontent, geen designwerk.",
+        "n11": "Je zoekt naar een volautomatische oplossing. Clyde leert van jou, en dat vraagt 4 weken onboarding plus blijvende input.",
+        "n12": "Je zowel meer dan 20 mensen als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen.",
+        "n2": "€0 onboarding",
+        "n3": "Een directe WhatsApp-lijn met Daley",
+        "n4": "Het tarief blijft voor altijd vast",
+        "n5": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
+        "n6": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
+        "n7": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
+        "n8": "Nederlandse en EU-first bureaus die willen weten waar hun data staat.",
+        "n9": "Je jaaromzet onder €300K zit. Het budget past niet, en we willen je groei niet in de weg staan."
+      },
+      "perBrand": {
+        "n1": "€199",
+        "n2": "bij 5 klantmerken",
+        "n3": "€100",
+        "n4": "bij 10 klantmerken",
+        "n5": "€66",
+        "n6": "bij 15 klantmerken"
+      },
+      "price": "<b>€997</b> per maand",
+      "sub": "Clyde kost €997 per maand als founding partner, met vijftien klantmerken inbegrepen en €299 per extra klantmerk. De onboarding kost €0 en het tarief blijft voor altijd vast.",
+      "table": {
+        "caption": "De latere tarieven, actief zodra de tien founding-plekken bezet zijn",
+        "cells": {
+          "n1": "2 tot 4",
+          "n2": "€499",
+          "n3": "€1.997",
+          "n4": "5 tot 14",
+          "n5": "€399",
+          "n6": "€3.997",
+          "n7": "15 of meer",
+          "n8": "€299",
+          "n9": "€5.997"
+        },
+        "head": {
+          "n1": "Na de founding-fase",
+          "n2": "Klantmerken",
+          "n3": "Per werkruimte per maand",
+          "n4": "Onboarding, eenmalig"
+        },
+        "rows": {
+          "n1": "Growth",
+          "n2": "Professional",
+          "n3": "Enterprise"
+        }
+      },
+      "title": "€997 per maand voor vijftien klantmerken."
+    },
+    "vragen": {
+      "answers": {
+        "n1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
+        "n2": "ChatGPT en Jasper zijn generieke tools: hun geheugen hoort bij een gebruiker of project, niet bij een klant van je bureau. Clyde heeft een eigen geheugen per klant dat vastzit aan de agenda, de goedkeuringen en de rapporten.",
+        "n3": "Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
+        "n4": "Ja. Je zet Clyde vanuit je browser op het beginscherm van je telefoon, zonder app store. Voor vragen heb je een directe WhatsApp-lijn met Daley.",
+        "n5": "Ja. Je team en je klant keuren in de app goed, in een portaal met de naam, het logo en de kleuren van je bureau.",
+        "n6": "Ja. Reageert iemand op Instagram met het trefwoord van je klant, dan stuurt Clyde automatisch een DM met de link. Per klant zie je hoeveel mensen het trefwoord gebruikten, de DM kregen en een aanvraag stuurden.",
+        "n7": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daarna twee uur per week.",
+        "n8": "Founding kost €997 per maand voor vijftien klantmerken, dus onder €67 per klantmerk. Daarboven betaal je €299 per extra klantmerk.",
+        "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes."
+      },
+      "links": {
+        "n1": "ChatGPT vs Jasper vs Semrush: en waar past Clyde?",
+        "n2": "Marketingbureau schalen met AI: het operating model",
+        "n3": "Geheugen en leren van een AI marketing agent"
+      },
+      "questions": {
+        "n1": "Wat is Clyde?",
+        "n2": "Waarin verschilt Clyde van ChatGPT of Jasper?",
+        "n3": "Waar staat de data van mijn klanten?",
+        "n4": "Werkt Clyde op mijn telefoon?",
+        "n5": "Kan mijn klant meekijken en zelf goedkeuren?",
+        "n6": "Kan Clyde reacties op Instagram omzetten in aanvragen?",
+        "n7": "Hoe lang duurt de start?",
+        "n8": "Wat kost Clyde per klant?",
+        "n9": "Wat als ik wil opzeggen?"
+      },
+      "sub": "De antwoorden staan hier al uitgeschreven, ook voor je ze opent.",
+      "title": "Vragen die elke eigenaar stelt."
+    },
+    "afsluiting": {
+      "alt": {
+        "portret-huidig": "Portret van Daley van Diest, oprichter van FutureMarketingAI"
+      },
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "n1": "Of doe eerst de AI-scan van je bureau"
+      },
+      "sub": "Je spreekt mij, 30 minuten. Een gesprek zegt of het past.",
+      "title": "Tien founding-plekken. Daarna sluit het."
+    },
     "people": {
       "eyebrow": "De mensen",
       "title": "Clyde werkt met je team. En met je klant.",
