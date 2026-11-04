@@ -26,6 +26,7 @@ import { Hero3Section } from '@/components/home/hero3/Hero3Section'
 import { RegieKlantSections } from '@/components/home/secties/RegieKlantSections'
 import { WerkAanvraagSections } from '@/components/home/werk/WerkAanvraagSections'
 import { WaaromKlantenSections } from '@/components/home/klanten/WaaromKlantenSections'
+import { StartPrijsVragenSecties } from '@/components/home/start/StartPrijsVragenSecties'
 import { ReadInDutch } from '@/components/layout/ReadInDutch'
 // Below-the-fold client components — split out of the main chunk so the
 // hero LCP doesn't have to wait for their JS to parse. Each still SSRs
@@ -214,11 +215,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           ComparisonTable and FounderSection; /en keeps all five. */}
       {locale === 'nl' && <WaaromKlantenSections />}
 
+      {/* Start in vier weken (#start), Prijs en voor wie (#prijs), Vragen (#vragen) and Afsluiting (#afsluiting), port golf 5:
+          sections 9 to 12, /nl only. On /nl they replace the AI-scan card, "Clyde is er waar jij bent" (#entries),
+          ProcessTimeline, PricingTeaser, the pillars, IcpSection, KennisbankTeaser, the FAQ and the final CTA; /en keeps all
+          of them. The AI scan is the secondary line of #afsluiting, installing the app is a question in #vragen. */}
+      {locale === 'nl' && <StartPrijsVragenSecties />}
+
       {/* ─────────────────────────────────────────────────────────────
           Sectie 2 — LeadMagnetCTA (AI Bureau Scan, hoog-funnel hook)
           Verplaatst van positie 14 naar 2: interactive engagement direct
           na hero. Visitor scoort zichzelf voordat-ie de rest leest.
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="280px">
         <section aria-label="AI Readiness Checklist download" className="py-12 px-6 lg:px-12">
           <div className="max-w-3xl mx-auto">
@@ -226,6 +234,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 3 — CaseStudyCard (SKC proof anchor)
@@ -338,6 +347,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           (Daley 2026-11-01), maar NIET claimen zonder lopend spoor: content
           goedkeuren via WhatsApp, aanvragen van klanten via WhatsApp.
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <StepsSection
         id="entries"
         eyebrow={t('entries.eyebrow')}
@@ -347,6 +357,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         screenshot="/screenshots/portaal-review-clyde.webp"
         caption={t('entries.caption')}
       />
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 4e — Van post naar lead (2026-10-12, spec §3.2)
@@ -425,6 +436,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 7 — ProcessTimeline (W5.4 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="400px">
         <ScrollReveal>
           <ProcessTimeline
@@ -443,6 +455,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 8 — FounderSection (Daley intro)
@@ -461,6 +474,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 11 — PricingTeaser (4 tiers, W5.8 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="420px">
         <ScrollReveal>
           <PricingTeaser
@@ -489,10 +503,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 12 — Pillars bento (3 inhoudelijke tiles, was: 6 checkmarks)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="280px">
         <section aria-labelledby="pillars" className="py-20 px-6 lg:px-12">
           <div className="max-w-5xl mx-auto">
@@ -582,22 +598,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 14 — Hybrid ICP (who is this for / not for)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="400px">
         <ScrollReveal>
           <IcpSection locale={locale} />
         </ScrollReveal>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 14b — KennisbankTeaser (cornerstone hub → /kennisbank)
           Internal links naar de 2 pillars + comparison money-page. Self-hides
           wanneer er geen cornerstone-content voor de locale is (EN/ES voorlopig).
           ──────────────────────────────────────────────────────────── */}
-      {kennisbankItems.length > 0 && (
+      {locale !== 'nl' && kennisbankItems.length > 0 && (
         <LazySection minHeight="360px">
           <ScrollReveal>
             <KennisbankTeaser
@@ -618,6 +637,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* ─────────────────────────────────────────────────────────────
           Sectie 15 — FAQ (Radix Accordion, type=single collapsible)
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="400px">
         <section aria-labelledby="faq" className="py-20 px-6 lg:px-12">
           <div className="max-w-3xl mx-auto">
@@ -639,10 +659,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </LazySection>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           Sectie 16 — Final CTA + scarcity
           ──────────────────────────────────────────────────────────── */}
+      {locale !== 'nl' && (
       <LazySection minHeight="280px">
         <section aria-labelledby="cta" className="py-20 lg:py-28 px-6 lg:px-12">
           <ScrollReveal>
@@ -677,6 +699,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </ScrollReveal>
         </section>
       </LazySection>
+      )}
 
     </PageShell>
   )
