@@ -1106,9 +1106,9 @@
       "aicollegas": {
         "name": "aicollegas.nl",
         "what": "An agency from Nijmegen that builds custom AI agents for your own processes, with an offer for marketing agencies: onboarding, content, planning and reporting.",
-        "price": "Starts with an AI Impact Session of €1,495. Then a 12-month partnership: €4,500, €8,500 or €14,000 per month.",
+        "price": "A 12-month partnership: €4,500, €8,500 or €14,000 per month. Every partnership starts with a strategy month.",
         "agencies": "They build custom per organisation. You see your agents and usage in their own hub.",
-        "data": "AI tokens run on your own keys (BYOK), without storage, according to their pricing page.",
+        "data": "Hosting for your agents is included in every package. We did not find on their page where the data is stored.",
         "pickThem": "You want custom work for your own internal processes and have budget for a year-long project.",
         "pickClyde": "You want a product that already runs marketing per client, from €997 per month."
       }
