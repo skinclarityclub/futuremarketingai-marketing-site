@@ -1,7 +1,11 @@
 # Golf 5b /pricing: plan (2026-11-06)
 
 Daley 2026-11-06: golf 10 live (#93), "Ga door" = golf 5b. Eerst dit plan, dan copy, de PR pas na zijn ja op de diff.
-Branch `feature/golf5b-pricing` in `C:/tmp/fmai-golf10`, vanaf origin/main `c38721b6`. Niets pushen vóór zijn ja.
+Branch `feature/golf5b-pricing` in `C:/tmp/fmai-golf10`, vanaf origin/main `53f422a7` (na #94). Niets pushen vóór zijn ja.
+
+> **Besluiten Daley 2026-11-06 (~02:50 lokaal, AskUserQuestion):** (1) aanpak **A**: herschrijven binnen de bestaande
+> componenten, geen nieuw prototype; (2) herijkingstermijn **elk halfjaar**, zo op /pricing; (3) de hotfix
+> "vijftien -> tien klantmerken" op de home is los gemerged als **#94** (`53f422a78`).
 
 Bronnen: `design/port/PLAN-port-golf5.md:18` (5b = /pricing rewrite + /founding-member 301 naar `/pricing#founding`),
 `design/siteplan/10-siteplan.md` r193, r614-632, r1223; `alle-paginas/rapport-alle-paginas.html.txt` r567, r1102-1104, r1158, r1173, r1217-1273;
@@ -11,7 +15,7 @@ Bronnen: `design/port/PLAN-port-golf5.md:18` (5b = /pricing rewrite + /founding-
 
 - SSR "€ 0 /mo": de server-HTML van /nl/pricing toont echte bedragen (gemeten in de build van 2026-11-06).
 - "launch", "CSM" en "SLA" staan niet meer in `pricing` of `founding-member` (golf 0).
-- Losse hotfix, eigen branch `fix/home-founding-tien` (`020f726e`): de home `#prijs`-titel, de sub en FAQ n8 zeiden "vijftien klantmerken". Het lijstje zei "10", en de FAQ-JSON-LD gaf crawlers 15. Dit staat los van 5b en kan eerder live.
+- Hotfix #94 (`53f422a78`, live): de home `#prijs`-titel, de sub en FAQ n8 zeiden "vijftien klantmerken", terwijl het lijstje "10" zei.
 
 ## Nieuwe opbouw /pricing (NL leidend, EN dezelfde opbouw)
 
@@ -50,6 +54,13 @@ Weg: "Premium partnerships", "swing-months", "Pro" naast "Professional", de em-d
 ## Regels
 
 Copy schrijf ik zelf. Geen em-dashes, nooit "AI Collega" los, titles ≤58 (audit r1173), metas ≤155. Prijzen uit `pricing-data.ts` en op de dag van de push opnieuw tegen de live site. Elke productclaim toetsen tegen fma-app origin/master. Geen DataForSEO-calls.
+
+## Voor de bouwer (opvolger)
+
+- Huidige copy van `pricing` en `founding-member` staat in `messages/{nl,en,es}.json`. Claims om tegen fma-app origin/master te toetsen voor ze meegaan: Professional "maandelijkse strategiecall" (de audit haalt hem uit de JSON-LD), Founding "Maandelijkse Founder-calls", "Voorrang in de ontwikkel-queue", "Vroege toegang", FAQ q5 "4 weken partnership-setup", q8 "export binnen 30 dagen".
+- Tests die /founding-member noemen: `tests/e2e/{conversion-polish,fase0-visual-validation,navigation,nl-content-smoke,sitewide-visual-audit}.spec.ts` en `_audit-v2-config.ts`.
+- `QuickApplyTeaser` (alleen op /founding-member) en `MAX_PARTNERS_PER_YEAR` in `pricing.cta.description`: bij weghalen van de route meenemen of verwijderen; "10 per jaar" moet weg (keuze 5).
+- Worktree heeft een ECHTE `node_modules` (robocopy), dus `next build` werkt; een junction breekt Turbopack.
 
 ## Bewijs voor de diff
 
