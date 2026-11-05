@@ -1,0 +1,352 @@
+[
+ {
+  "datum": "vr 1 januari",
+  "start": "2027-01-01",
+  "moment": "Nieuwjaarsdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 18 januari",
+  "start": "2027-01-18",
+  "moment": "Blue Monday",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "do 28 januari t/m wo 3 februari",
+  "start": "2027-01-28",
+  "moment": "Gedichtendag en Poëzieweek",
+  "soort": "Week",
+  "noot": ""
+ },
+ {
+  "datum": "zo 7 februari t/m di 9 februari",
+  "start": "2027-02-07",
+  "moment": "Carnaval",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 8 februari",
+  "start": "2027-02-08",
+  "moment": "Begin ramadan",
+  "soort": "Verwacht",
+  "noot": "verwacht, hangt af van de maan"
+ },
+ {
+  "datum": "za 13 februari t/m zo 21 februari",
+  "start": "2027-02-13",
+  "moment": "Voorjaarsvakantie regio zuid",
+  "soort": "Vakantie",
+  "noot": "adviesdata"
+ },
+ {
+  "datum": "zo 14 februari",
+  "start": "2027-02-14",
+  "moment": "Valentijnsdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 20 februari t/m zo 28 februari",
+  "start": "2027-02-20",
+  "moment": "Voorjaarsvakantie regio noord en midden",
+  "soort": "Vakantie",
+  "noot": "adviesdata"
+ },
+ {
+  "datum": "ma 1 maart",
+  "start": "2027-03-01",
+  "moment": "Nationale Complimentendag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 8 maart",
+  "start": "2027-03-08",
+  "moment": "Internationale Vrouwendag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "wo 10 maart t/m zo 21 maart",
+  "start": "2027-03-10",
+  "moment": "Boekenweek",
+  "soort": "Week",
+  "noot": ""
+ },
+ {
+  "datum": "wo 10 maart",
+  "start": "2027-03-10",
+  "moment": "Suikerfeest",
+  "soort": "Verwacht",
+  "noot": "verwacht, hangt af van de maan"
+ },
+ {
+  "datum": "vr 12 maart",
+  "start": "2027-03-12",
+  "moment": "Nationale Pannenkoekdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 15 maart t/m vr 19 maart",
+  "start": "2027-03-15",
+  "moment": "Week van het Geld",
+  "soort": "Week",
+  "noot": ""
+ },
+ {
+  "datum": "vr 26 maart",
+  "start": "2027-03-26",
+  "moment": "Goede Vrijdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 28 maart",
+  "start": "2027-03-28",
+  "moment": "Eerste Paasdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 28 maart",
+  "start": "2027-03-28",
+  "moment": "Zomertijd: de klok een uur vooruit",
+  "soort": "Klok",
+  "noot": ""
+ },
+ {
+  "datum": "ma 29 maart",
+  "start": "2027-03-29",
+  "moment": "Tweede Paasdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "do 22 april",
+  "start": "2027-04-22",
+  "moment": "Earth Day",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 24 april t/m zo 2 mei",
+  "start": "2027-04-24",
+  "moment": "Meivakantie",
+  "soort": "Vakantie",
+  "noot": "scholen kunnen tot 9 mei verlengen"
+ },
+ {
+  "datum": "di 27 april",
+  "start": "2027-04-27",
+  "moment": "Koningsdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 1 mei",
+  "start": "2027-05-01",
+  "moment": "Dag van de Arbeid",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "di 4 mei",
+  "start": "2027-05-04",
+  "moment": "Dodenherdenking",
+  "soort": "Feestdag",
+  "noot": "niet geschikt om commercieel op in te haken"
+ },
+ {
+  "datum": "wo 5 mei",
+  "start": "2027-05-05",
+  "moment": "Bevrijdingsdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "do 6 mei",
+  "start": "2027-05-06",
+  "moment": "Hemelvaartsdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 9 mei",
+  "start": "2027-05-09",
+  "moment": "Moederdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 16 mei",
+  "start": "2027-05-16",
+  "moment": "Eerste Pinksterdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 16 mei",
+  "start": "2027-05-16",
+  "moment": "Offerfeest",
+  "soort": "Verwacht",
+  "noot": "verwacht, hangt af van de maan"
+ },
+ {
+  "datum": "ma 17 mei",
+  "start": "2027-05-17",
+  "moment": "Tweede Pinksterdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 20 juni",
+  "start": "2027-06-20",
+  "moment": "Vaderdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 10 juli t/m zo 22 augustus",
+  "start": "2027-07-10",
+  "moment": "Zomervakantie regio noord",
+  "soort": "Vakantie",
+  "noot": ""
+ },
+ {
+  "datum": "za 17 juli t/m zo 29 augustus",
+  "start": "2027-07-17",
+  "moment": "Zomervakantie regio midden",
+  "soort": "Vakantie",
+  "noot": ""
+ },
+ {
+  "datum": "za 24 juli t/m zo 5 september",
+  "start": "2027-07-24",
+  "moment": "Zomervakantie regio zuid",
+  "soort": "Vakantie",
+  "noot": ""
+ },
+ {
+  "datum": "di 21 september",
+  "start": "2027-09-21",
+  "moment": "Prinsjesdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 4 oktober",
+  "start": "2027-10-04",
+  "moment": "Dierendag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "di 5 oktober",
+  "start": "2027-10-05",
+  "moment": "Dag van de Leraar",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "vr 8 oktober",
+  "start": "2027-10-08",
+  "moment": "Paarse Vrijdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 10 oktober",
+  "start": "2027-10-10",
+  "moment": "Wereld Mentale Gezondheidsdag",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 16 oktober t/m zo 24 oktober",
+  "start": "2027-10-16",
+  "moment": "Herfstvakantie regio noord en midden",
+  "soort": "Vakantie",
+  "noot": "adviesdata"
+ },
+ {
+  "datum": "za 23 oktober t/m zo 31 oktober",
+  "start": "2027-10-23",
+  "moment": "Herfstvakantie regio zuid",
+  "soort": "Vakantie",
+  "noot": "adviesdata"
+ },
+ {
+  "datum": "zo 31 oktober",
+  "start": "2027-10-31",
+  "moment": "Halloween",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 31 oktober",
+  "start": "2027-10-31",
+  "moment": "Wintertijd: de klok een uur terug",
+  "soort": "Klok",
+  "noot": ""
+ },
+ {
+  "datum": "do 11 november",
+  "start": "2027-11-11",
+  "moment": "Sint-Maarten en Singles Day",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "vr 26 november",
+  "start": "2027-11-26",
+  "moment": "Black Friday",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "ma 29 november",
+  "start": "2027-11-29",
+  "moment": "Cyber Monday",
+  "soort": "Inhaakdag",
+  "noot": ""
+ },
+ {
+  "datum": "zo 5 december",
+  "start": "2027-12-05",
+  "moment": "Pakjesavond",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 25 december",
+  "start": "2027-12-25",
+  "moment": "Eerste Kerstdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "za 25 december t/m zo 9 januari 2028",
+  "start": "2027-12-25",
+  "moment": "Kerstvakantie",
+  "soort": "Vakantie",
+  "noot": ""
+ },
+ {
+  "datum": "zo 26 december",
+  "start": "2027-12-26",
+  "moment": "Tweede Kerstdag",
+  "soort": "Feestdag",
+  "noot": ""
+ },
+ {
+  "datum": "vr 31 december",
+  "start": "2027-12-31",
+  "moment": "Oudejaarsdag",
+  "soort": "Feestdag",
+  "noot": ""
+ }
+]
