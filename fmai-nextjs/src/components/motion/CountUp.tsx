@@ -50,13 +50,39 @@ export function CountUp({
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
   const reduced = useReducedMotion()
-  const [animatedValue, setAnimatedValue] = useState(0)
-  const valueRef = useRef(0)
+  // Start at the target so the server HTML carries the real number: crawlers
+  // and AI engines without JS read "€997", not "€0" (site audit inv-03).
+  const [animatedValue, setAnimatedValue] = useState(to)
+  const valueRef = useRef(to)
   const hasAnimatedRef = useRef(false)
+  const armedRef = useRef(false)
+
+  // Count up only for numbers that are still below the fold after hydration;
+  // resetting a visible number to 0 would flash. A visible one keeps its value.
+  useEffect(() => {
+    if (reduced || !ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      hasAnimatedRef.current = true
+      return
+    }
+    armedRef.current = true
+    valueRef.current = 0
+    setAnimatedValue(0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount-only check
+  }, [])
 
   useEffect(() => {
     if (reduced) return
     if (!inView) return
+    if (!armedRef.current && !hasAnimatedRef.current) return
+    if (!armedRef.current && !smoothUpdates) {
+      // Visible at mount: no count-up, but follow later `to` changes directly.
+      valueRef.current = to
+      setAnimatedValue(to)
+      return
+    }
+    armedRef.current = false
     const useSmooth = smoothUpdates && hasAnimatedRef.current
     const from = useSmooth ? valueRef.current : 0
     const dur = useSmooth ? smoothUpdateDuration : duration
@@ -73,8 +99,7 @@ export function CountUp({
   }, [inView, to, duration, reduced, smoothUpdates, smoothUpdateDuration])
 
   // Reduced-motion renders the target value statically without entering the
-  // animate path. Pre-inView render uses 0 so the static SSR markup matches
-  // the first client paint; the in-view effect then animates from 0 → to.
+  // animate path.
   const displayValue = reduced ? to : animatedValue
   const formatted = format
     ? format(displayValue)

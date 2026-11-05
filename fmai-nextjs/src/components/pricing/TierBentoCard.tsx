@@ -134,7 +134,7 @@ export function TierBentoCard({
                     format={(n) => formatEur(Math.round(n), locale)}
                   />
                 </span>
-                <span className="text-text-muted text-sm">/mo</span>
+                <span className="text-text-muted text-sm">{t('matrix.perMonth')}</span>
               </div>
               <p className="text-xs font-medium text-[#F5A623] mt-1">{t('tiers.lifetimeBadge')}</p>
             </>
@@ -154,7 +154,7 @@ export function TierBentoCard({
                     format={(n) => formatEur(Math.round(n), locale)}
                   />
                 </span>
-                <span className="text-text-muted text-sm">/mo</span>
+                <span className="text-text-muted text-sm">{t('matrix.perMonth')}</span>
               </div>
               <p className="text-accent-system text-xs font-medium mt-1">
                 €{config.pricePerWorkspace} {t('tiers.perWorkspaceLabel')} ·{' '}
@@ -184,7 +184,7 @@ export function TierBentoCard({
                 smoothUpdateDuration={0.35}
                 format={(n) => formatEur(Math.round(n), locale)}
               />
-              <span className="text-text-muted text-[10px] font-normal"> /mo</span>
+              <span className="text-text-muted text-[10px] font-normal"> {t('matrix.perMonth')}</span>
             </p>
           </div>
           <div className="rounded-lg border border-border-primary/60 bg-white/[0.02] px-3 py-2.5">
