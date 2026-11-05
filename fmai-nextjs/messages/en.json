@@ -955,7 +955,7 @@
       "range": "{min} to {max}",
       "rangeOpen": "{min} or more",
       "recalibration": "We recalibrate the per-brand rates every six months, based on actual credit usage. Founding is not part of that: its rate stays fixed.",
-      "enterprise": "Enterprise has no caps (fair use) and a direct line with Daley."
+      "enterprise": "Enterprise has no caps (fair use)."
     },
     "tiers": {
       "growth": {

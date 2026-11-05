@@ -955,7 +955,7 @@
       "range": "{min} a {max}",
       "rangeOpen": "{min} o más",
       "recalibration": "Revisamos las tarifas por marca cada seis meses, según el consumo real de créditos. Founding queda fuera: su tarifa se mantiene fija.",
-      "enterprise": "Enterprise no tiene límites (uso razonable) e incluye una línea directa con Daley."
+      "enterprise": "Enterprise no tiene límites (uso razonable)."
     },
     "tiers": {
       "growth": {

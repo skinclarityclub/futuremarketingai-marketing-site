@@ -1653,7 +1653,7 @@
       "range": "{min} tot {max}",
       "rangeOpen": "{min} of meer",
       "recalibration": "We herijken de tarieven per klantmerk elk halfjaar, op basis van het werkelijke creditverbruik. Founding valt daarbuiten: dat tarief blijft vast.",
-      "enterprise": "Enterprise heeft geen caps (fair use) en een directe lijn met Daley."
+      "enterprise": "Enterprise heeft geen caps (fair use)."
     },
     "tiers": {
       "growth": {
