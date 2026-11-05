@@ -123,7 +123,7 @@
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
-        "description": "Chatbot op de website die bezoekers kwalificeert en warme leads via een webhook doorzet naar het CRM dat je al gebruikt."
+        "description": "Instagram-reacties en DM's met een trefwoord krijgen meteen een DM met de juiste link. Het vervolg schrijft Clyde in de merkstem."
       },
       "emailManagement": {
         "title": "Email Management",
@@ -1251,25 +1251,6 @@
           "capabilities_3": "Kennismakingsgesprek plannen"
         }
       }
-    },
-    "multi_platform": {
-      "title": "Eén collega, meerdere kanalen",
-      "subtitle": "Op je website, in Instagram-DM's en in de inbox voor ManyChat-gesprekken. Elke lead komt in dezelfde leadlijst.",
-      "brain_label": "Claude AI",
-      "platforms": {
-        "website": {
-          "name": "Website-widget",
-          "behavior": "Ingebedde chat met de kennisbank van het merk en lead-capture."
-        },
-        "instagram": {
-          "name": "Instagram-DM's",
-          "behavior": "Keyword-antwoorden met een link, en AI-concepten in de merkstem."
-        },
-        "inbox": {
-          "name": "ManyChat-inbox",
-          "behavior": "Gesprekken uit ManyChat komen in dezelfde inbox."
-        }
-      }
     }
   },
   "common": {
@@ -2032,7 +2013,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Beschrijving van de dienst",
-            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat de diensten van Clyde, de AI-collega voor bureaus, levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Social Media Manager (contentkalender, captions en publicatie op de gekoppelde kanalen), Blog Factory (SEO-artikelen van zoekwoordonderzoek tot publicatie na goedkeuring), Ad Manager (advertenties maken en klaarzetten voor Meta, met prestaties per advertentie), Lead Qualifier (website-chatbot die leads scoort en via een webhook doorstuurt), Email Management (classificatie van de Gmail- of Outlook-inbox, met conceptantwoorden), ManyChat DM (Instagram-berichten met keywordtriggers en AI-concepten), Reporting & Analytics (dashboards en rapporten per klant), SEO / GEO Analyst (audits, zoekposities en vermeldingen in AI-antwoorden), Research (markt- en concurrentieonderzoek met bronvermelding) en Clyde zelf, die deze vaardigheden aanstuurt. De Voice Agent en de Reel Builder zijn aangekondigd, maar nog niet beschikbaar en vallen pas onder de dienst zodra zij live gaan. Alle abonnementen bevatten alle vaardigheden; per klantwerkruimte kunnen vaardigheden op elk moment worden aan- of uitgezet."
+            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat de diensten van Clyde, de AI-collega voor bureaus, levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Social Media Manager (contentkalender, captions en publicatie op de gekoppelde kanalen), Blog Factory (SEO-artikelen van zoekwoordonderzoek tot publicatie na goedkeuring), Ad Manager (advertenties maken en klaarzetten voor Meta, met prestaties per advertentie), Lead Qualifier (Instagram-reacties en DM's met een trefwoord beantwoorden met een DM en een link, met leads in de leadlijst), Email Management (classificatie van de Gmail- of Outlook-inbox, met conceptantwoorden), ManyChat DM (Instagram-berichten met keywordtriggers en AI-concepten), Reporting & Analytics (dashboards en rapporten per klant), SEO / GEO Analyst (audits, zoekposities en vermeldingen in AI-antwoorden), Research (markt- en concurrentieonderzoek met bronvermelding) en Clyde zelf, die deze vaardigheden aanstuurt. De Voice Agent en de Reel Builder zijn aangekondigd, maar nog niet beschikbaar en vallen pas onder de dienst zodra zij live gaan. Alle abonnementen bevatten alle vaardigheden; per klantwerkruimte kunnen vaardigheden op elk moment worden aan- of uitgezet."
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
@@ -2364,71 +2345,71 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot die leads scoort en doorzet | Clyde",
-      "description": "Clyde kwalificeert leads met een AI-chatbot op je website: een score per lead en een webhook naar het CRM dat je al gebruikt. 2 credits per gescoorde lead."
+      "title": "Van Instagram-reactie naar lead, in de merkstem | Clyde",
+      "description": "Iemand reageert met een trefwoord en krijgt meteen een DM. Clyde schrijft het vervolg in de merkstem van je klant en jij keurt het goed."
     },
     "hero": {
       "eyebrow": "Vaardigheid 03. Lead Qualifier",
-      "title": "Clyde kwalificeert je website-leads.",
-      "subtitle": "Een insluitbare AI-chatbot op de website van elk merk. Voert het kwalificatiegesprek, scoort de lead en zet hem via een webhook door naar het CRM dat je al gebruikt.",
+      "title": "Van Instagram-reactie naar lead",
+      "subtitle": "Zet iemand een trefwoord onder een post of in een DM, dan stuurt Clyde meteen een DM met de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en jij keurt het goed.",
       "cta": "Plan een gesprek",
       "prompts": {
-        "prompt1": "Kwalificeer de leads van de afgelopen 24 uur",
-        "prompt2": "Welke leads van deze week zijn heet?",
-        "prompt3": "Geef me een sample van tien net binnengekomen chats"
+        "prompt1": "Welke DM's wachten op mijn akkoord?",
+        "prompt2": "Hoeveel leads kwamen deze week via Instagram binnen?",
+        "prompt3": "Laat de laatste tien DM-gesprekken zien"
       }
     },
     "features": {
       "title": "Wat Clyde doet",
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
-        "title": "Een chatbot per merk",
-        "body": "Stijl, persona en kennisbasis stel je per merk in."
+        "title": "Trefwoord naar DM",
+        "body": "Je legt trefwoorden vast, per post of voor alle DM's. Wie zo'n woord in een reactie of DM zet, krijgt meteen een DM met de link die erbij hoort."
       },
       "feature2": {
-        "title": "Automatische lead scoring",
-        "body": "Clyde geeft elke lead een score van 0 tot 100 op profiel, intentie en gesprekskwaliteit, met budget, tijdlijn en beslisser apart uitgelicht. Je ziet de score in het leaddashboard."
+        "title": "Het vervolg in de merkstem",
+        "body": "Stelt iemand daarna een vraag, dan schrijft Clyde het antwoord met de merkstem, producten en links van die klant. Weet hij het antwoord niet, dan draagt hij het gesprek aan jou over."
       },
       "feature3": {
-        "title": "Doorzetten via webhook",
-        "body": "Elke lead gaat via een webhook naar je CRM. Mislukte leveringen zie je terug en verstuur je opnieuw."
+        "title": "Jij houdt de regie",
+        "body": "Elk antwoord van Clyde staat eerst als concept in de inbox. Jij keurt het goed, past het aan of laat hem zelf antwoorden. Bij zijn eerste bericht zegt hij dat hij AI is."
       },
       "feature4": {
-        "title": "Gesprekken terugzien",
-        "body": "Alle gesprekken en leads per chatbot op één plek en doorzoekbaar. Zo zie je welke vragen vaak terugkomen en vul je de kennisbank aan."
+        "title": "Leads in één lijst",
+        "body": "Vult iemand via de link uit de DM een formulier in, dan staat die lead in je leadlijst, met Instagram als bron."
       }
     },
     "how": {
       "title": "Hoe het werkt",
       "step1": {
-        "title": "Kwalificatiecriteria",
-        "body": "Leg met het merk vast welke vragen Clyde moet stellen: budget, tijdlijn, probleem, beslisser."
+        "title": "Account koppelen",
+        "body": "Je koppelt het Instagram-account van je klant in de app. Clyde werkt met de merkstem, producten en links die je voor die klant hebt vastgelegd."
       },
       "step2": {
-        "title": "Widget plaatsen",
-        "body": "Eén insluit-tag op de website. Klaar. Clyde begint het gesprek."
+        "title": "Trefwoorden en links",
+        "body": "Per trefwoord kies je de DM en de link die erbij hoort, bijvoorbeeld naar een aanbod, een afspraak of een aanmeldformulier."
       },
       "step3": {
-        "title": "Leads doorzetten",
-        "body": "Elke lead krijgt een score en een label van koud tot heet. Via de webhook gaat hij naar je CRM, waar jij bepaalt wat sales oppakt."
+        "title": "Goedkeuren en opvolgen",
+        "body": "Clyde stuurt de trefwoord-DM's en zet zijn eigen antwoorden voor je klaar. Leads die via de link binnenkomen, staan in je leadlijst."
       }
     },
     "integrations": {
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "ManyChat DM: leads uit Instagram-DM's komen in dezelfde leadlijst.",
-      "integration2": "Kennisbank: persona en kennis per merk, uit je eigen site en documenten.",
-      "integration3": "Leaddashboard: alle leads met bron en score op één plek."
+      "integration1": "Kennisbank: de merkstem, producten en links per klant, waar Clyde zijn antwoorden op baseert.",
+      "integration2": "Inbox: alle DM-gesprekken en concepten per klant op één plek.",
+      "integration3": "Leadlijst: alle leads met hun bron op één plek."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
-        "title": "B2B-leadgen-sites",
-        "body": "SaaS, dienstverlenende bureaus en consultancies. De chat kwalificeert leads en filtert wat naar het sales-team gaat."
+        "title": "Merken die op Instagram verkopen",
+        "body": "Webshops, salons en coaches die posten met 'reageer met INFO'. Clyde stuurt de link en houdt het gesprek gaande in hun eigen stem."
       },
       "useCase2": {
-        "title": "E-commerce: support plus sales",
-        "body": "Productvragen afhandelen en warme kopers identificeren voor upsell-gesprekken met hoge marge."
+        "title": "Bureaus met veel klantaccounts",
+        "body": "Elke klant heeft eigen trefwoorden, links en merkstem. Jij ziet alle DM's en leads per klant terug."
       }
     },
     "allocation": {
@@ -2436,36 +2417,36 @@
       "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Klaar om leadkwalificatie aan Clyde over te dragen?",
+      "title": "Klaar om van reacties leads te maken?",
       "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
       "button": "Plan een gesprek"
     },
     "proof": {
       "title": "Live demo",
-      "subtitle": "Probeer hieronder hoe de chatbot een gesprek voert."
+      "subtitle": "Probeer hieronder hoe Clyde een gesprek voert in de stem van een merk."
     },
     "faq": {
       "title": "Veelgestelde vragen over Lead Qualifier",
       "items": {
         "q1": {
           "question": "Wat doet de Lead Qualifier-vaardigheid precies?",
-          "answer": "Clyde plaatst een AI-chatbot op je website die bezoekers begroet, kwalificerende vragen stelt en elke lead een score geeft op profiel, intentie en gesprekskwaliteit. Leads gaan via een webhook naar je CRM en staan in je leaddashboard."
+          "answer": "Clyde beantwoordt Instagram-reacties en DM's met een trefwoord meteen met een DM en de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en leads die via de link binnenkomen staan in je leadlijst."
         },
         "q2": {
-          "question": "Welke CRM's en kanalen ondersteunt Lead Qualifier?",
-          "answer": "Elke lead gaat via een webhook naar het CRM dat je al gebruikt. Mislukte leveringen zie je terug en verstuur je opnieuw. Leads uit Instagram-DM's komen in dezelfde lijst."
+          "question": "Op welke kanalen werkt Lead Qualifier?",
+          "answer": "Op Instagram: in reacties onder posts en in DM's. Elke lead komt in dezelfde leadlijst als je andere leads."
         },
         "q3": {
           "question": "Op welke tiers is Lead Qualifier beschikbaar?",
-          "answer": "Inbegrepen op elke tier, met fair-use op gespreksvolume. Een gescoorde lead kost 2 credits."
+          "answer": "Inbegrepen op elke tier, met fair-use op gespreksvolume."
         },
         "q4": {
           "question": "Hoe start Lead Qualifier?",
-          "answer": "Je legt de kwalificatievragen vast (budget, tijdlijn, behoefte, beslisser), vult de kennisbank met je site en documenten en plaatst het script. Zodra de webhook staat, gaat elke lead naar je CRM."
+          "answer": "Je koppelt het Instagram-account van je klant, legt de trefwoorden en links vast en controleert de merkstem in de kennisbank. Vanaf dan stuurt Clyde de DM's en zet hij zijn antwoorden voor je klaar."
         },
         "q5": {
-          "question": "Hoe verschilt dit van Intercom of Drift?",
-          "answer": "Intercom en Drift bieden chat met menselijke agents en losse bots. Clyde combineert het kwalificatiegesprek en de scoring in één vaardigheid, met een persona en kennisbank per merk, en zet de lead door naar je CRM."
+          "question": "Hoe verschilt dit van een vaste DM-flow?",
+          "answer": "Een vaste flow stuurt steeds dezelfde berichten. Clyde stuurt ook de trefwoord-DM, maar schrijft het vervolg zelf in de merkstem van je klant, met jouw akkoord, en draagt het gesprek aan je over als hij het antwoord niet weet."
         }
       }
     }
@@ -3969,7 +3950,7 @@
       },
       "feature3": {
         "title": "Lead capture",
-        "body": "Wie reageert, komt in je leadlijst, naast de leads uit je website-chatbot."
+        "body": "Wie reageert, komt in je leadlijst, naast je andere leads."
       },
       "feature4": {
         "title": "Elk antwoord gelogd",
@@ -4187,7 +4168,7 @@
           },
           "leadQualifier": {
             "title": "Lead Qualifier",
-            "description": "Website-chatbot met leadscoring"
+            "description": "Van Instagram-reactie naar lead"
           },
           "emailManagement": {
             "title": "Email Management",

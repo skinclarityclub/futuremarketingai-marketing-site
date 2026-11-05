@@ -100,15 +100,15 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     'lead-qualifier': {
-      shortDescription: 'Website chatbot that scores leads and sends them to your CRM via a webhook.',
+      shortDescription: 'Instagram comments and DMs with a keyword get a DM right away; the follow-up comes in the brand voice.',
       longDescription:
-        'The Lead Qualifier puts an AI chatbot on your website that qualifies visitors, gives every lead a score on profile, intent and conversation quality, and sends the lead via a webhook to the CRM you already use.',
+        "The Lead Qualifier answers Instagram comments and DMs that contain a keyword with a DM and the link that goes with it. Clyde writes the follow-up in the client's brand voice, puts it to you for approval and adds leads that come in via the link to the lead list.",
       features: [
-        'Embeddable AI chatbot for websites',
-        'Automatic lead scoring',
-        'Leads to your CRM via a webhook',
-        'Conversations and leads searchable per chatbot',
-        'Custom qualification criteria per client',
+        'Keyword to DM, per post or for all DMs',
+        "The follow-up in each client's brand voice",
+        'Drafts for approval in the inbox',
+        'Handover to you when Clyde does not know the answer',
+        'Leads from the DM link in the lead list',
       ],
     },
     'email-management': {
@@ -251,15 +251,15 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     'lead-qualifier': {
-      shortDescription: 'Chatbot web que puntúa leads y los envía a tu CRM mediante un webhook.',
+      shortDescription: 'Los comentarios y DMs de Instagram con una palabra clave reciben un DM al instante; la continuación llega en la voz de marca.',
       longDescription:
-        'El Lead Qualifier coloca un chatbot de IA en tu web que califica a los visitantes, da a cada lead una puntuación según perfil, intención y calidad de la conversación, y envía el lead mediante un webhook al CRM que ya usas.',
+        'El Lead Qualifier responde a los comentarios y DMs de Instagram con una palabra clave con un DM y el enlace correspondiente. Clyde escribe la continuación en la voz de marca del cliente, te la presenta para aprobarla y añade a la lista de leads los que llegan por el enlace.',
       features: [
-        'Chatbot de IA integrable para webs',
-        'Puntuación automática de leads',
-        'Leads a tu CRM mediante un webhook',
-        'Conversaciones y leads consultables por chatbot',
-        'Criterios de calificación personalizados por cliente',
+        'De palabra clave a DM, por post o para todos los DMs',
+        'La continuación en la voz de marca de cada cliente',
+        'Borradores para aprobar en la bandeja',
+        'Te pasa la conversación cuando Clyde no sabe la respuesta',
+        'Leads del enlace del DM en la lista de leads',
       ],
     },
     'email-management': {

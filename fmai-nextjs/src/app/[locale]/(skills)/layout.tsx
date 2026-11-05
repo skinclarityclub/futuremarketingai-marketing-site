@@ -14,7 +14,7 @@ import { routing } from '@/i18n/routing'
  * consumed by client components mounted only on skill routes.
  *
  * Skills-specific client consumers (audited 2026-04-27):
- *   - DemoPlayground / MultiPlatformShowcase / PersonaSelector / DemoContextCard
+ *   - DemoPlayground / PersonaSelector / DemoContextCard
  *     all call useTranslations('chatbots') and are mounted on
  *     /skills/lead-qualifier (and possibly future skill demos).
  *

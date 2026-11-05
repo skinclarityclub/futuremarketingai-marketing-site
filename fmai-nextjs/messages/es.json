@@ -41,7 +41,7 @@
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
-        "description": "Chatbot web que califica a los visitantes y envía los leads cálidos mediante un webhook al CRM que ya usas."
+        "description": "Los comentarios y DMs de Instagram con una palabra clave reciben al instante un DM con el enlace correcto. Clyde escribe la continuación en la voz de marca."
       },
       "emailManagement": {
         "title": "Gestión de Email",
@@ -551,25 +551,6 @@
           "capabilities_1": "Resumen de precios",
           "capabilities_2": "Destacados de casos de estudio",
           "capabilities_3": "Agendar una llamada de descubrimiento"
-        }
-      }
-    },
-    "multi_platform": {
-      "title": "Un compañero, varios canales",
-      "subtitle": "En tu web, en los DMs de Instagram y en la bandeja para conversaciones de ManyChat. Cada lead llega a la misma lista de leads.",
-      "brain_label": "Claude AI",
-      "platforms": {
-        "website": {
-          "name": "Widget web",
-          "behavior": "Chat embebido con la base de conocimiento de la marca y captura de leads."
-        },
-        "instagram": {
-          "name": "DM de Instagram",
-          "behavior": "Respuestas por palabra clave con enlace, y borradores de IA con la voz de la marca."
-        },
-        "inbox": {
-          "name": "Bandeja de ManyChat",
-          "behavior": "Las conversaciones de ManyChat llegan a la misma bandeja."
         }
       }
     }
@@ -1334,7 +1315,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Descripción del servicio",
-            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta los servicios de Clyde, el compañero de IA para agencias, con habilidades configurables. Las habilidades disponibles son: Social Media Manager (calendario de contenido, copys y publicación en los canales conectados), Blog Factory (artículos SEO desde la investigación de palabras clave hasta la publicación tras aprobación), Ad Manager (creación de anuncios y su preparación para Meta, con rendimiento por anuncio), Lead Qualifier (chatbot web que puntúa leads y los envía mediante un webhook), Email Management (clasificación de la bandeja de Gmail u Outlook, con borradores de respuesta), ManyChat DM (mensajes de Instagram con palabras clave y borradores de IA), Reporting & Analytics (paneles e informes por cliente), SEO / GEO Analyst (auditorías, posiciones de búsqueda y menciones en respuestas de IA), Research (investigación de mercado y de competencia con fuentes citadas) y el propio Clyde, que dirige estas habilidades. El Voice Agent y el Reel Builder se han anunciado, pero aún no están disponibles y solo forman parte del servicio cuando se lancen. Todas las suscripciones incluyen todas las habilidades; en cada espacio de trabajo de cliente las habilidades pueden activarse o desactivarse en cualquier momento."
+            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta los servicios de Clyde, el compañero de IA para agencias, con habilidades configurables. Las habilidades disponibles son: Social Media Manager (calendario de contenido, copys y publicación en los canales conectados), Blog Factory (artículos SEO desde la investigación de palabras clave hasta la publicación tras aprobación), Ad Manager (creación de anuncios y su preparación para Meta, con rendimiento por anuncio), Lead Qualifier (responder a comentarios y DMs de Instagram con una palabra clave con un DM y un enlace, con los leads en la lista de leads), Email Management (clasificación de la bandeja de Gmail u Outlook, con borradores de respuesta), ManyChat DM (mensajes de Instagram con palabras clave y borradores de IA), Reporting & Analytics (paneles e informes por cliente), SEO / GEO Analyst (auditorías, posiciones de búsqueda y menciones en respuestas de IA), Research (investigación de mercado y de competencia con fuentes citadas) y el propio Clyde, que dirige estas habilidades. El Voice Agent y el Reel Builder se han anunciado, pero aún no están disponibles y solo forman parte del servicio cuando se lancen. Todas las suscripciones incluyen todas las habilidades; en cada espacio de trabajo de cliente las habilidades pueden activarse o desactivarse en cualquier momento."
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
@@ -1666,71 +1647,71 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot que puntúa y envía leads | Clyde",
-      "description": "Clyde califica leads con un chatbot de IA en tu web: una puntuación por lead y un webhook al CRM que ya usas. 2 créditos por lead puntuado."
+      "title": "Del comentario en Instagram al lead, en la voz de marca | Clyde",
+      "description": "Alguien comenta con una palabra clave y recibe un DM al instante. Clyde escribe la continuación en la voz de marca de tu cliente y tú la apruebas."
     },
     "hero": {
       "eyebrow": "Habilidad 03. Lead Qualifier",
-      "title": "Clyde califica tus leads de la web.",
-      "subtitle": "Un chatbot de IA integrable en la web de cada marca. Conduce la conversación de calificación, puntúa el lead y lo envía mediante un webhook al CRM que ya usas.",
+      "title": "Del comentario en Instagram al lead",
+      "subtitle": "Cuando alguien pone una palabra clave bajo un post o en un DM, Clyde envía al instante un DM con el enlace correspondiente. Escribe la continuación en la voz de marca de tu cliente, y tú la apruebas.",
       "cta": "Agenda una llamada",
       "prompts": {
-        "prompt1": "Califica los leads de las últimas 24 horas",
-        "prompt2": "¿Qué leads de esta semana están calientes?",
-        "prompt3": "Muéstrame diez chats recién llegados"
+        "prompt1": "¿Qué DMs esperan mi aprobación?",
+        "prompt2": "¿Cuántos leads llegaron por Instagram esta semana?",
+        "prompt3": "Muéstrame las últimas diez conversaciones por DM"
       }
     },
     "features": {
       "title": "Qué hace Clyde",
       "subtitle": "Cuatro funciones esenciales de esta habilidad.",
       "feature1": {
-        "title": "Widget de chat integrable",
-        "body": "Una etiqueta de script en cada sitio de marca. Estilo, persona y base de conocimiento personalizables por marca."
+        "title": "De palabra clave a DM",
+        "body": "Defines palabras clave por post o para todos los DMs. Quien pone una en un comentario o DM recibe al instante un DM con el enlace correspondiente."
       },
       "feature2": {
-        "title": "Scoring automático de leads",
-        "body": "Clyde da a cada lead una puntuación de 0 a 100 según perfil, intención y calidad de la conversación, con presupuesto, plazos y responsable de la decisión destacados por separado. Ves la puntuación en el panel de leads."
+        "title": "La continuación en la voz de marca",
+        "body": "Si alguien hace después una pregunta, Clyde escribe la respuesta con la voz de marca, los productos y los enlaces de ese cliente. Si no sabe la respuesta, te pasa la conversación."
       },
       "feature3": {
-        "title": "Envío por webhook",
-        "body": "Cada lead llega a tu CRM mediante un webhook. Los envíos fallidos aparecen para que puedas reenviarlos."
+        "title": "Tú tienes el control",
+        "body": "Cada respuesta de Clyde queda primero como borrador en la bandeja. Tú la apruebas, la editas o dejas que responda solo. En su primer mensaje dice que es IA."
       },
       "feature4": {
-        "title": "Revisar conversaciones",
-        "body": "Todas las conversaciones y los leads por chatbot en un solo lugar y con búsqueda. Así ves qué preguntas se repiten y completas la base de conocimiento."
+        "title": "Leads en una sola lista",
+        "body": "Cuando alguien rellena un formulario con el enlace del DM, ese lead aparece en tu lista de leads con Instagram como origen."
       }
     },
     "how": {
       "title": "Cómo funciona",
       "step1": {
-        "title": "Criterios de calificación",
-        "body": "Define con la marca qué preguntas debe hacer Clyde: presupuesto, plazos, problema, decisor."
+        "title": "Conectar la cuenta",
+        "body": "Conectas la cuenta de Instagram de tu cliente en la app. Clyde trabaja con la voz de marca, los productos y los enlaces que definiste para ese cliente."
       },
       "step2": {
-        "title": "Colocar el widget",
-        "body": "Una etiqueta de integración en la web. Listo. Clyde empieza la conversación."
+        "title": "Palabras clave y enlaces",
+        "body": "Para cada palabra clave eliges el DM y el enlace correspondiente, por ejemplo a una oferta, una cita o un formulario de registro."
       },
       "step3": {
-        "title": "Enviar leads",
-        "body": "Cada lead recibe una puntuación y una etiqueta de frío a caliente. Mediante el webhook llega a tu CRM, donde decides qué recoge ventas."
+        "title": "Aprobar y dar seguimiento",
+        "body": "Clyde envía los DMs de palabra clave y te prepara sus propias respuestas. Los leads que llegan por el enlace aparecen en tu lista de leads."
       }
     },
     "integrations": {
       "title": "Trabaja con",
       "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "ManyChat DM: los leads de los DMs de Instagram llegan a la misma lista de leads.",
-      "integration2": "Base de conocimiento: persona y conocimiento por marca, a partir de tu propia web y tus documentos.",
-      "integration3": "Panel de leads: todos los leads con su fuente y puntuación en un solo lugar."
+      "integration1": "Base de conocimiento: la voz de marca, los productos y los enlaces por cliente en los que Clyde basa sus respuestas.",
+      "integration2": "Bandeja: todas las conversaciones por DM y los borradores por cliente en un solo lugar.",
+      "integration3": "Lista de leads: todos los leads con su origen en un solo lugar."
     },
     "useCases": {
       "title": "Para quién",
       "useCase1": {
-        "title": "Sitios B2B de generación de leads",
-        "body": "SaaS, agencias de servicios y consultorías. El chat califica leads y filtra lo que pasa al equipo de ventas."
+        "title": "Marcas que venden en Instagram",
+        "body": "Tiendas online, salones y coaches que publican con 'comenta INFO'. Clyde envía el enlace y mantiene la conversación en su propia voz."
       },
       "useCase2": {
-        "title": "E-commerce: soporte y ventas",
-        "body": "Atiende preguntas de producto e identifica compradores calientes para conversaciones de upsell con alto margen."
+        "title": "Agencias con muchas cuentas de clientes",
+        "body": "Cada cliente tiene sus propias palabras clave, enlaces y voz de marca. Tú ves todos los DMs y leads por cliente."
       }
     },
     "allocation": {
@@ -1738,36 +1719,36 @@
       "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
     },
     "cta": {
-      "title": "¿Listo para ceder la calificación de leads a Clyde?",
+      "title": "¿Listo para convertir comentarios en leads?",
       "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
       "button": "Agenda una llamada"
     },
     "proof": {
       "title": "Demo en vivo",
-      "subtitle": "Prueba abajo cómo conduce el chatbot una conversación."
+      "subtitle": "Prueba abajo cómo Clyde mantiene una conversación con la voz de una marca."
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Lead Qualifier",
       "items": {
         "q1": {
           "question": "¿Qué hace exactamente la habilidad Lead Qualifier?",
-          "answer": "Clyde coloca en tu web un chatbot de IA que saluda a los visitantes, hace preguntas de calificación y da a cada lead una puntuación según perfil, intención y calidad de la conversación. Los leads llegan a tu CRM mediante un webhook y aparecen en tu panel de leads."
+          "answer": "Clyde responde al instante a los comentarios y DMs de Instagram con una palabra clave, con un DM y el enlace correspondiente. Escribe la continuación en la voz de marca de tu cliente, y los leads que llegan por el enlace aparecen en tu lista de leads."
         },
         "q2": {
-          "question": "¿Qué CRMs y canales soporta Lead Qualifier?",
-          "answer": "Cada lead llega mediante un webhook al CRM que ya usas. Los envíos fallidos aparecen para que puedas reenviarlos. Colocas el widget en cualquier web con un solo snippet de script, y las conversaciones de ManyChat llegan a la misma bandeja."
+          "question": "¿En qué canales funciona Lead Qualifier?",
+          "answer": "En Instagram: en comentarios bajo los posts y en DMs. Cada lead llega a la misma lista que tus otros leads."
         },
         "q3": {
           "question": "¿En qué tiers está disponible Lead Qualifier?",
-          "answer": "Incluido en todos los tiers, con uso justo en el volumen de conversaciones. Un lead puntuado cuesta 2 créditos."
+          "answer": "Incluido en todos los niveles, con uso razonable del volumen de conversaciones."
         },
         "q4": {
           "question": "¿Cómo se pone en marcha Lead Qualifier?",
-          "answer": "Defines las preguntas de calificación (presupuesto, plazos, necesidad, responsable de la decisión), llenas la base de conocimiento con tu web y tus documentos y colocas el script. En cuanto el webhook está listo, cada lead llega a tu CRM."
+          "answer": "Conectas la cuenta de Instagram de tu cliente, defines las palabras clave y los enlaces y revisas la voz de marca en la base de conocimiento. Desde entonces Clyde envía los DMs y te prepara sus respuestas."
         },
         "q5": {
-          "question": "¿En qué se diferencia de Intercom o Drift?",
-          "answer": "Intercom y Drift ofrecen chat con agentes humanos y bots por reglas. Clyde combina la conversación de calificación y la puntuación en una sola habilidad, con una persona y una base de conocimiento por marca, y envía el lead a tu CRM."
+          "question": "¿En qué se diferencia de un flujo de DM fijo?",
+          "answer": "Un flujo fijo envía siempre los mismos mensajes. Clyde también envía el DM de palabra clave, pero escribe él mismo la continuación en la voz de marca de tu cliente, con tu aprobación, y te pasa la conversación cuando no sabe la respuesta."
         }
       }
     }
@@ -3489,7 +3470,7 @@
           },
           "leadQualifier": {
             "title": "Lead Qualifier",
-            "description": "Chatbot web con puntuación de leads"
+            "description": "Del comentario en Instagram al lead"
           },
           "emailManagement": {
             "title": "Email Management",

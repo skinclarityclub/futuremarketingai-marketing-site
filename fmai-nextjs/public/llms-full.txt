@@ -114,14 +114,14 @@ Credit cost: 5 credits per minute. Status: coming soon.
 
 ### Lead Qualifier (Live)
 
-The Lead Qualifier places an AI chatbot on your website that qualifies visitors, gives every lead a score on profile, intent and conversation quality, and sends the lead via a webhook to the CRM you already use.
+The Lead Qualifier answers Instagram comments and DMs that contain a keyword with a DM and the matching link. Clyde writes the follow-up in the client's brand voice, puts it to the agency for approval and adds leads that come in via the link to the lead list.
 
 Capabilities:
-- Embeddable AI chatbot for websites
-- Automatic lead scoring
-- Leads to your CRM via a webhook
-- Conversations and leads searchable per chatbot
-- Custom qualification criteria per client
+- Keyword to DM, per post or for all DMs
+- The follow-up in each client's brand voice
+- Drafts for approval in the inbox
+- Handover to a person when Clyde does not know the answer
+- Leads from the DM link in the lead list
 
 Credit cost: 2 credits per scored conversation.
 

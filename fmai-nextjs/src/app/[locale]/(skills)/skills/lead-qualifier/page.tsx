@@ -4,7 +4,6 @@ import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { SkillPageTemplate } from '@/components/skills/SkillPageTemplate'
 import { DemoPlayground } from '@/components/chatbot/DemoPlayground'
-import { MultiPlatformShowcase } from '@/components/chatbot/MultiPlatformShowcase'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -36,7 +35,7 @@ export default async function SkillPage({
       namespace="skills-lead-qualifier"
       slug="lead-qualifier"
       locale={locale}
-      customProof={<div className="space-y-6"><DemoPlayground /><MultiPlatformShowcase /></div>}
+      customProof={<DemoPlayground />}
     />
   )
 }

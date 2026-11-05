@@ -15,7 +15,7 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 
 **Engage and Convert**
 - Voice Agent (coming soon): AI phone calls. Not live yet.
-- Lead Qualifier (live): website chatbot that scores every lead from 0 to 100 and sends it to the agency's own CRM via a webhook.
+- Lead Qualifier (live): answers Instagram comments and DMs that contain a keyword with a DM and the matching link; Clyde writes the follow-up in the client's brand voice as a draft for approval, and leads that come in via the link land in the lead list. There is no chat widget for client websites.
 - Email Management (live): Gmail and Outlook inbox classification with categories per client, urgency, status labels and draft replies that are sent only after approval.
 - ManyChat DM (live): Instagram DMs, comments and story replies. A keyword trigger sends the fixed reply you set, with a link; for other messages Clyde writes a draft reply. Everyone who responds lands in the lead list.
 
