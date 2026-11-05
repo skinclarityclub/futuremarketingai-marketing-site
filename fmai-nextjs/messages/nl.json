@@ -4,7 +4,7 @@
     "backToTop": "Terug naar boven"
   },
   "stickyCta": {
-    "label": "Plan een gesprek",
+    "label": "Vraag een gesprek aan",
     "subLabel": "30 min met Daley",
     "dismiss": "Sluit mobiele CTA-balk",
     "srLandmark": "Snelle actie"
@@ -24,7 +24,7 @@
       "tagline": "De <accent>AI-collega</accent> van je bureau.",
       "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
       "trustAnchor": "Draait in productie bij onze eerste klant. Tien founding-plekken in totaal.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "ctaSecondary": "Leer Clyde kennen",
       "trustCluster": {
         "target": "Gebouwd voor bureaus",
@@ -40,7 +40,7 @@
         "meerkade_mark": "Mondzorg Meerkade"
       },
       "cta": {
-        "primary": "Plan een gesprek",
+        "primary": "Vraag een gesprek aan",
         "secondary": "Zie Clyde aan het werk"
       },
       "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
@@ -185,7 +185,7 @@
       "scarcityCallout": "{total} founding-plekken · Daley begeleidt elke start persoonlijk",
       "closingHeadline": "Klopt het verhaal links?",
       "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
-      "closingCta": "Plan een gesprek",
+      "closingCta": "Vraag een gesprek aan",
       "fitTitle": "Voor wie dit werkt",
       "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
@@ -261,7 +261,7 @@
           "clientHours": "2 uur per week, doorlopend"
         }
       },
-      "ctaLabel": "Plan een gesprek",
+      "ctaLabel": "Vraag een gesprek aan",
       "ctaHint": "Tien founding-plekken in totaal",
       "fullJourneyLink": "Bekijk de vier weken in detail"
     },
@@ -406,7 +406,7 @@
           "desc": "Voor grote bureaus. Geen caps op vaardigheden en een vaste contactpersoon."
         }
       },
-      "ctaLink": "Plan een gesprek"
+      "ctaLink": "Vraag een gesprek aan"
     },
     "pillars": {
       "title": "Jij houdt de controle. En je weet waar je data staat.",
@@ -447,7 +447,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Maximaal tien plekken. Daarna sluit founding.",
       "subtitle": "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past.",
-      "button": "Plan een gesprek",
+      "button": "Vraag een gesprek aan",
       "foundingLabel": "Bekijk Founding tier"
     },
     "faq": {
@@ -1300,7 +1300,7 @@
           "privacy": "Privacy",
           "terms": "Voorwaarden",
           "cookies": "Cookies",
-          "apply": "Plan een gesprek",
+          "apply": "Vraag een gesprek aan",
           "memory": "Geheugensysteem",
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
@@ -1502,7 +1502,7 @@
       "eyebrow": "Volgende stap",
       "title": "Word Founding Member",
       "description": "We zetten de eerste 10 Founding-bureaus op voor €997 per maand. Vergrendel je laagste prijs en help het product vormgeven.",
-      "demo_button": "Plan een gesprek"
+      "demo_button": "Vraag een gesprek aan"
     },
     "icp": {
       "eyebrow": "Hybride ICP",
@@ -1574,7 +1574,7 @@
     "onboardingLabel": "Eenmalige onboarding",
     "creditsLabel": "credits/mnd",
     "workspacesLabel": "werkruimtes",
-    "applyCta": "Plan een gesprek",
+    "applyCta": "Vraag een gesprek aan",
     "slider": {
       "eyebrow": "Live calculator",
       "label": "Aantal werkruimtes",
@@ -1739,8 +1739,8 @@
     "cta": {
       "eyebrow": "Klaar?",
       "title": "Klaar om de partnership te starten?",
-      "description": "Tien founding-plekken. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "primary": "Plan een gesprek"
+      "description": "Tien founding-plekken. Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "primary": "Vraag een gesprek aan"
     }
   },
   "alternatives": {
@@ -1815,7 +1815,7 @@
     "cta": {
       "title": "Past Clyde bij je bureau?",
       "body": "In een gesprek kijken we samen of Clyde past, of dat een van de tools hierboven beter bij je werk past.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "how-it-works": {
@@ -1828,7 +1828,7 @@
       "badge": "Founding open · maximaal {total} plekken",
       "title": "Hoe begint jouw partnership met Clyde?",
       "description": "Vier weken van eerste gesprek tot Clyde live draait voor je klanten. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
-      "cta": "Plan een gesprek"
+      "cta": "Vraag een gesprek aan"
     },
     "jsonLd": {
       "name": "Hoe de FutureMarketingAI-partnership start",
@@ -1901,8 +1901,8 @@
     "cta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Klaar om de partnership te starten?",
-      "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "button": "Plan een gesprek"
+      "description": "Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "button": "Vraag een gesprek aan"
     },
     "systemFlow": {
       "title": "Van merk naar gepubliceerde post",
@@ -1985,13 +1985,13 @@
       "eyebrow": "Voor partnerships",
       "title": "Wil je een gesprek?",
       "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     },
     "finalCta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct naar de aanmelding?",
       "description": "Geen vragen, maar wel klaar voor een gesprek over partnership? Sla het bericht over en ga direct naar de aanmelding.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "legal": {
@@ -2244,7 +2244,7 @@
       "eyebrow": "Vaardigheid 02. Voice Agent (binnenkort)",
       "title": "Binnenkort neemt Clyde de telefoon op.",
       "subtitle": "Waar we aan bouwen: inkomende gesprekken beantwoorden, veelgestelde vragen afhandelen, afspraken boeken en doorschakelen naar een mens wanneer het gesprek daarom vraagt. Nog niet beschikbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Bel de wachtlijst en boek afspraken voor volgende week",
         "prompt2": "Beantwoord inkomende vragen over de levertijd",
@@ -2310,8 +2310,8 @@
     },
     "cta": {
       "title": "Interesse in de Voice Agent?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "proof": {
       "title": "Probeer Clyde live",
@@ -2352,7 +2352,7 @@
       "eyebrow": "Vaardigheid 03. Lead Qualifier",
       "title": "Van Instagram-reactie naar lead",
       "subtitle": "Zet iemand een trefwoord onder een post of in een DM, dan stuurt Clyde meteen een DM met de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en jij keurt het goed.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Welke DM's wachten op mijn akkoord?",
         "prompt2": "Hoeveel leads kwamen deze week via Instagram binnen?",
@@ -2418,8 +2418,8 @@
     },
     "cta": {
       "title": "Klaar om van reacties leads te maken?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "proof": {
       "title": "Live demo",
@@ -2460,7 +2460,7 @@
       "eyebrow": "Vaardigheid 01. Social Media Manager",
       "title": "Clyde verzorgt je social media.",
       "subtitle": "Captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Per account, per merk. Eén collega voor je hele klantportfolio.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Plan de Instagram-content voor de drie SKC-accounts deze week",
         "prompt2": "Maak 5 carrouselposts over de winter-routine",
@@ -2530,8 +2530,8 @@
     },
     "cta": {
       "title": "Klaar om social media aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Social Media Manager",
@@ -2568,7 +2568,7 @@
       "eyebrow": "Vaardigheid 05. Ad Manager",
       "title": "Clyde maakt je Meta-ads en volgt ze.",
       "subtitle": "Statische ads en video-ads: copy, visuals en meerdere formaten (Feed, Stories, Reels), klaargezet voor Meta Ads Manager. Live gaat een advertentie pas na jouw akkoord. Daarna volgt Clyde elke advertentie op conversies, ROAS en ad-fatigue, in klare taal.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Maak 3 ad-varianten voor de winter-campagne",
         "prompt2": "Welke advertentie heeft de hoogste ROAS?",
@@ -2634,8 +2634,8 @@
     },
     "cta": {
       "title": "Klaar om je ads aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Ad Manager",
@@ -2672,7 +2672,7 @@
       "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
       "title": "Clyde rapporteert elke week.",
       "subtitle": "Een weekrapport per merk in je dashboard, elke vrijdag het SEO-rapport op WhatsApp, en een seintje van Clyde zodra een cijfer sterk afwijkt. Geen handmatige Notion-updates meer.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Genereer de wekelijkse performance-digest voor alle merken",
         "prompt2": "Welke metrics wijken deze week meer dan 20% af?",
@@ -2738,8 +2738,8 @@
     },
     "cta": {
       "title": "Klaar om rapportages aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Rapportage en Analytics",
@@ -2858,8 +2858,8 @@
     },
     "cta": {
       "title": "Word een van de 10",
-      "subtitle": "Maximaal {total} plekken. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
-      "button": "Plan een gesprek"
+      "subtitle": "Maximaal {total} plekken. Vraag een gesprek aan. Als het wederzijds past, reserveer ik je plek.",
+      "button": "Vraag een gesprek aan"
     },
     "eyebrows": {
       "pricing": "Prijs",
@@ -2872,7 +2872,7 @@
     },
     "quickApply": {
       "eyebrow": "Snelle start",
-      "heading": "Plan een gesprek in 1 stap",
+      "heading": "Vraag een gesprek aan in 1 stap",
       "subheading": "Vul je e-mail en bureau-naam in. We brengen je naar het volledige aanvraagformulier met je gegevens al ingevuld.",
       "emailLabel": "Werk e-mail",
       "emailPlaceholder": "jij@bureau.nl",
@@ -3013,7 +3013,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Klaar voor een collega die je klanten kent?",
       "subtitle": "Een gesprek van 30 minuten. Daarna weet je of het past bij jouw portfolio.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "roadmap": {
@@ -3046,18 +3046,18 @@
       "scarcityEyebrow": "Founding open · maximaal {total} plekken",
       "title": "Wil je als eerste meedraaien?",
       "subtitle": "Founding-leden krijgen early access op allebei zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "apply": {
     "meta": {
-      "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
+      "title": "Aanmelden. Vraag een gesprek aan bij Daley | FutureMarketingAI",
       "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Tien founding-plekken."
     },
     "hero": {
       "eyebrow": "Aanvraag",
       "counter": "Maximaal {total} Founding-plekken",
-      "title": "Plan een gesprek",
+      "title": "Vraag een gesprek aan",
       "subtitle": "Geen zelfbediening. Geen generieke aanmelding. Daley kijkt zelf naar elke aanvraag en je hoort binnen 3 werkdagen van ons. Ook als het geen match is."
     },
     "expectations": {
@@ -3331,8 +3331,8 @@
       },
       "cta": {
         "title": "Wil je dit ook voor jouw portfolio?",
-        "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
-        "button": "Plan een gesprek"
+        "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
+        "button": "Vraag een gesprek aan"
       },
       "rail": {
         "title": "De reis",
@@ -3372,7 +3372,7 @@
       "eyebrow": "Vaardigheid 04. Email Management",
       "title": "Clyde classificeert je inbox.",
       "subtitle": "Geen mailcampagnes: dit is inbox-classificatie voor Gmail en Outlook. Clyde leest inkomende mails, zet ze in de categorieën die jij kiest, geeft elke mail een urgentie en schrijft conceptantwoorden. Je begint je dag met overzicht in plaats van chaos.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Vat de belangrijkste e-mails van vandaag samen",
         "prompt2": "Label alle facturen van deze week",
@@ -3438,8 +3438,8 @@
     },
     "cta": {
       "title": "Klaar om inbox-classificatie aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Email Management",
@@ -3476,7 +3476,7 @@
       "eyebrow": "Vaardigheid 07. Research",
       "title": "Clyde doet jouw marktonderzoek.",
       "subtitle": "Trends in de niche van elk merk, concurrentie-analyse en content-ideeën, met een bronlink bij elk inzicht zodat jij het kunt nalezen. In de wekelijkse trendscan vallen bevindingen met minder dan twee bronnen af.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Onderzoek de top-5 concurrenten in de hydratatie-markt",
         "prompt2": "Wat zijn de trending topics in skincare deze maand?",
@@ -3542,8 +3542,8 @@
     },
     "cta": {
       "title": "Klaar om research aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Research",
@@ -3597,7 +3597,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Eén collega, alle vaardigheden bij elkaar",
       "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per klant, één gesprek van 30 minuten om te kijken of het past.",
-      "button": "Plan een gesprek",
+      "button": "Vraag een gesprek aan",
       "secondaryLink": "Bekijk de volledige onboardingreis"
     }
   },
@@ -3610,7 +3610,7 @@
       "eyebrow": "Vaardigheid 08. Blog Factory",
       "title": "Clyde schrijft je SEO-blogs.",
       "subtitle": "Zoekwoord-onderzoek, artikelen in de merkstem en een SEO-check, en na jouw goedkeuring gepubliceerd op de website. De lengte volgt wat er voor die zoekterm al rankt. Blog Factory is live en blijft in doorontwikkeling.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Schrijf een SEO-artikel over serum voor de gevoelige huid",
         "prompt2": "Bouw een topic cluster rond hydratatieroutines",
@@ -3676,8 +3676,8 @@
     },
     "cta": {
       "title": "Klaar om blogproductie aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Blog Factory",
@@ -3718,7 +3718,7 @@
       "eyebrow": "Vaardigheid 09. SEO / GEO Analyst",
       "title": "Clyde monitort je SEO én AI-citaties.",
       "subtitle": "Technische SEO-audits, posities bijhouden en Core Web Vitals. Plus GEO: hoe vaak wordt jouw merk geciteerd door ChatGPT, Perplexity en Google AI Overviews? De nieuwe zoeklaag draait op AI. Clyde houdt je daar zichtbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Voer een technische SEO-audit uit op de hoofddomeinen",
         "prompt2": "Track hoe vaak ons merk wordt geciteerd in ChatGPT en Perplexity",
@@ -3784,8 +3784,8 @@
     },
     "cta": {
       "title": "Klaar om SEO aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over SEO en GEO Analyst",
@@ -3826,7 +3826,7 @@
       "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
       "title": "Dit is Clyde. De AI-collega van je bureau.",
       "subtitle": "De andere vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, in de web-app op je beginscherm en op WhatsApp.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Plan deze week voor de drie SKC-accounts",
         "prompt2": "Maak een wekelijks rapport over de top presterende posts",
@@ -3892,8 +3892,8 @@
     },
     "cta": {
       "title": "Klaar om Clyde als collega in je team te zetten?",
-      "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Clyde",
@@ -3930,7 +3930,7 @@
       "eyebrow": "Vaardigheid 11. ManyChat DM",
       "title": "Clyde handelt Instagram-DM's af.",
       "subtitle": "Een keyword (\"INFO\", \"PRIJS\") in een reactie, DM of story-reactie stuurt binnen ongeveer een minuut het antwoord dat jij vastlegt, met de link erbij. Voor andere berichten schrijft Clyde een concept, en wie reageert komt in je leadlijst.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Beantwoord DM's met het keyword levertijd automatisch",
         "prompt2": "Stuur warme leads via DM door naar onze sales-pagina",
@@ -3996,8 +3996,8 @@
     },
     "cta": {
       "title": "Klaar om Instagram-DM's aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over ManyChat DM",
@@ -4034,7 +4034,7 @@
       "eyebrow": "Vaardigheid 12. Reel Builder (binnenkort)",
       "title": "Binnenkort maakt Clyde je Reels.",
       "subtitle": "Waar we aan bouwen: korte verticale video's (9:16) met AI-scripts, captions die synchroon lopen en achtergrondmuziek, voor Instagram en LinkedIn. Nog niet beschikbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Maak een 30-seconden Reel over het ochtendritueel",
         "prompt2": "Schrijf een Reel-script voor de productlancering",
@@ -4100,8 +4100,8 @@
     },
     "cta": {
       "title": "Interesse in de Reel Builder?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Reel Builder",
@@ -4131,7 +4131,7 @@
   },
   "nav": {
     "login": "Inloggen",
-    "apply": "Plan een gesprek",
+    "apply": "Vraag een gesprek aan",
     "assessment": "Doe de AI-Scan"
   },
   "header": {
@@ -4216,7 +4216,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Plan een gesprek"
+      "applySubtitle": "Vraag een gesprek aan"
     },
     "megaMenu": {
       "tagline": "10 live, 2 binnenkort",
@@ -4498,7 +4498,7 @@
         "eyebrow": "Aanvragen met deze scan",
         "title": "Aanvragen op basis van deze scan?",
         "body": "We slaan 5 vragen over en gebruiken je profiel direct.",
-        "button": "Plan een gesprek"
+        "button": "Vraag een gesprek aan"
       },
       "footerHint": "Vraag het volledige rapport aan voor je 4-week roadmap en uitleg per vaardigheid."
     },
@@ -4534,8 +4534,8 @@
     "finalCta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct praten?",
-      "description": "Niet iedereen wil eerst een scan. Sla 'm over en plan een gesprek van 30 minuten met Daley.",
-      "button": "Plan een gesprek"
+      "description": "Niet iedereen wil eerst een scan. Sla 'm over en vraag een gesprek van 30 minuten met Daley aan.",
+      "button": "Vraag een gesprek aan"
     }
   },
   "leadMagnet": {
@@ -4636,7 +4636,7 @@
       "proof": "Bewijs",
       "related": "Combineert met",
       "faq": "FAQ",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "kennisbank": "Verder lezen"
     },
     "promptHero": {

@@ -4,7 +4,7 @@
     "backToTop": "Volver arriba"
   },
   "stickyCta": {
-    "label": "Reserva una llamada",
+    "label": "Solicita una llamada",
     "subLabel": "30 min con Daley",
     "dismiss": "Cerrar barra CTA móvil",
     "srLandmark": "Acción rápida"
@@ -24,7 +24,7 @@
       "tagline": "El <accent>compañero de IA</accent> de tu agencia.",
       "subtitle": "Conoce los objetivos de cada cliente, está en cada pantalla de tu dashboard y te escribe por WhatsApp en cuanto pasa algo. Diez habilidades hoy, dos próximamente: social, blogs, anuncios, email, calificación de leads, SEO, analítica.",
       "trustAnchor": "En producción con nuestro primer cliente. Máx. {maxPartners} partners al año.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "ctaSecondary": "Conoce a Clyde",
       "trustCluster": {
         "target": "Hecho para agencias",
@@ -103,7 +103,7 @@
       "scarcityCallout": "{total} plazas founding · Máx. {maxPerYear} partners al año",
       "closingHeadline": "¿Te reconoces en la columna izquierda?",
       "closingSubtext": "En 30 minutos te digo si encajamos con tu portfolio.",
-      "closingCta": "Agenda una llamada",
+      "closingCta": "Solicita una llamada",
       "fitTitle": "Para quién funciona",
       "fit1": "Agencias de 5 a 20 personas y 5 a 20 marcas que quieren que cada miembro del equipo atienda más clientes.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
@@ -179,7 +179,7 @@
           "clientHours": "2 horas por semana, continuo"
         }
       },
-      "ctaLabel": "Agenda una llamada",
+      "ctaLabel": "Solicita una llamada",
       "ctaHint": "Slots de onboarding disponibles: 2 por mes",
       "fullJourneyLink": "Ver el recorrido completo de onboarding en 5 pasos"
     },
@@ -324,7 +324,7 @@
           "desc": "Para grandes agencias. Sin caps en las habilidades y una persona de contacto fija."
         }
       },
-      "ctaLink": "Agenda una llamada"
+      "ctaLink": "Solicita una llamada"
     },
     "pillars": {
       "title": "Tú mantienes el control. Tus datos están en la UE.",
@@ -365,7 +365,7 @@
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "Diez plazas como máximo. Después, founding se cierra.",
       "subtitle": "€997 al mes, tarifa vitalicia. Una llamada de 30 minutos nos dice si encaja.",
-      "button": "Agenda una llamada",
+      "button": "Solicita una llamada",
       "foundingLabel": "Ver tier Founding"
     },
     "faq": {
@@ -602,7 +602,7 @@
           "privacy": "Privacidad",
           "terms": "Términos",
           "cookies": "Cookies",
-          "apply": "Agenda una llamada",
+          "apply": "Solicita una llamada",
           "memory": "Sistema de memoria",
           "caseStudies": "Casos de estudio",
           "blog_factory": "Blog Factory",
@@ -804,7 +804,7 @@
       "eyebrow": "Siguiente paso",
       "title": "Sé Founding Member",
       "description": "Estamos incorporando a las primeras 10 agencias Founding por 997 EUR al mes. Fija tu precio más bajo y ayuda a dar forma al producto.",
-      "demo_button": "Agenda una llamada"
+      "demo_button": "Solicita una llamada"
     },
     "icp": {
       "eyebrow": "ICP híbrido",
@@ -876,7 +876,7 @@
     "onboardingLabel": "Onboarding único",
     "creditsLabel": "créditos/mes",
     "workspacesLabel": "espacios de trabajo",
-    "applyCta": "Agenda una llamada",
+    "applyCta": "Solicita una llamada",
     "slider": {
       "eyebrow": "Calculadora en vivo",
       "label": "Número de espacios de trabajo",
@@ -1041,8 +1041,8 @@
     "cta": {
       "eyebrow": "¿Listo?",
       "title": "¿Listo para empezar la partnership?",
-      "description": "Máx. {maxPartners} agencias al año. Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
-      "primary": "Agenda una llamada"
+      "description": "Máx. {maxPartners} agencias al año. Solicita una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
+      "primary": "Solicita una llamada"
     }
   },
   "alternatives": {
@@ -1117,7 +1117,7 @@
     "cta": {
       "title": "¿Encaja Clyde con tu agencia?",
       "body": "En una llamada vemos juntos si Clyde encaja, o si alguna de las herramientas de arriba encaja mejor con tu trabajo.",
-      "button": "Agenda una llamada"
+      "button": "Solicita una llamada"
     }
   },
   "how-it-works": {
@@ -1130,7 +1130,7 @@
       "badge": "Founding abierto · máx. {total} plazas",
       "title": "¿Cómo empieza tu partnership con Clyde?",
       "description": "Cinco pasos desde la primera conversación hasta que Clyde funciona en vivo para tus clientes. Sin self-service. Daley guía personalmente a cada cliente por el proceso.",
-      "cta": "Agenda una llamada"
+      "cta": "Solicita una llamada"
     },
     "jsonLd": {
       "name": "Cómo empieza la partnership con FutureMarketingAI",
@@ -1203,8 +1203,8 @@
     "cta": {
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Listo para empezar la partnership?",
-      "description": "Agenda una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
-      "button": "Agenda una llamada"
+      "description": "Solicita una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
+      "button": "Solicita una llamada"
     },
     "systemFlow": {
       "title": "De la marca a la publicacion",
@@ -1287,13 +1287,13 @@
       "eyebrow": "Para partnerships",
       "title": "¿Quieres una llamada?",
       "body": "¿Eres un cliente potencial? Rellena el formulario de solicitud. Daley lee cada solicitud personalmente y responde en 3 días laborables.",
-      "button": "Agenda una llamada"
+      "button": "Solicita una llamada"
     },
     "finalCta": {
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Saltar el formulario y aplicar directamente?",
       "description": "Sin preguntas, ¿pero listo para una conversación sobre partnership? Salta este formulario y ve directo a la solicitud.",
-      "button": "Agenda una llamada"
+      "button": "Solicita una llamada"
     }
   },
   "legal": {
@@ -1546,7 +1546,7 @@
       "eyebrow": "Habilidad 02. Voice Agent (próximamente)",
       "title": "Pronto Clyde contestará el teléfono.",
       "subtitle": "En lo que estamos trabajando: atender llamadas entrantes, resolver preguntas frecuentes, reservar citas y pasar la llamada a una persona cuando la conversación lo requiera. Todavía no disponible.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Llama a la lista de espera y agenda citas para la próxima semana",
         "prompt2": "Responde llamadas entrantes sobre los plazos de entrega",
@@ -1612,8 +1612,8 @@
     },
     "cta": {
       "title": "¿Te interesa el Voice Agent?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "proof": {
       "title": "Prueba Clyde en vivo",
@@ -1654,7 +1654,7 @@
       "eyebrow": "Habilidad 03. Lead Qualifier",
       "title": "Del comentario en Instagram al lead",
       "subtitle": "Cuando alguien pone una palabra clave bajo un post o en un DM, Clyde envía al instante un DM con el enlace correspondiente. Escribe la continuación en la voz de marca de tu cliente, y tú la apruebas.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "¿Qué DMs esperan mi aprobación?",
         "prompt2": "¿Cuántos leads llegaron por Instagram esta semana?",
@@ -1720,8 +1720,8 @@
     },
     "cta": {
       "title": "¿Listo para convertir comentarios en leads?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "proof": {
       "title": "Demo en vivo",
@@ -1762,7 +1762,7 @@
       "eyebrow": "Habilidad 01. Social Media Manager",
       "title": "Clyde se encarga de tus redes sociales.",
       "subtitle": "Copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Por cuenta, por marca. Un compañero para toda tu cartera de clientes.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Planifica el contenido de Instagram de las tres cuentas de SKC esta semana",
         "prompt2": "Crea 5 carruseles sobre la rutina de invierno",
@@ -1832,8 +1832,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder las redes sociales a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Social Media Manager",
@@ -1870,7 +1870,7 @@
       "eyebrow": "Habilidad 05. Ad Manager",
       "title": "Clyde crea tus anuncios de Meta y los sigue.",
       "subtitle": "Anuncios estáticos y de vídeo: copy, visuales y varios formatos (Feed, Stories, Reels), listos para Meta Ads Manager. Un anuncio solo se publica después de tu aprobación. Después Clyde sigue cada anuncio por conversiones, ROAS y fatiga publicitaria, en lenguaje claro.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Crea 3 variantes de anuncio para la campaña de invierno",
         "prompt2": "¿Qué anuncio tiene el ROAS más alto?",
@@ -1936,8 +1936,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder tus anuncios a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Ad Manager",
@@ -1974,7 +1974,7 @@
       "eyebrow": "Habilidad 06. Reporting y Analytics",
       "title": "Clyde informa cada semana.",
       "subtitle": "Un informe semanal por marca en tu panel, el informe de SEO por WhatsApp cada viernes, y un aviso de Clyde en cuanto una cifra se desvía mucho. Se acabaron las actualizaciones manuales en Notion.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Genera el resumen semanal de rendimiento para todas las marcas",
         "prompt2": "¿Qué métricas se desviaron más del 20% esta semana?",
@@ -2040,8 +2040,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder los informes a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Reporting y Analytics",
@@ -2160,8 +2160,8 @@
     },
     "cta": {
       "title": "Conviértete en uno de los 10",
-      "subtitle": "Máx. {total} plazas. Agenda una llamada. Si hay encaje mutuo, reservamos tu plaza.",
-      "button": "Agenda una llamada"
+      "subtitle": "Máx. {total} plazas. Solicita una llamada. Si hay encaje mutuo, reservamos tu plaza.",
+      "button": "Solicita una llamada"
     },
     "eyebrows": {
       "pricing": "Precio",
@@ -2174,7 +2174,7 @@
     },
     "quickApply": {
       "eyebrow": "Inicio rápido",
-      "heading": "Agenda una llamada en 1 paso",
+      "heading": "Solicita una llamada en 1 paso",
       "subheading": "Introduce tu email y el nombre de la agencia. Te llevamos al formulario completo con tus datos ya rellenados.",
       "emailLabel": "Email de trabajo",
       "emailPlaceholder": "tu@agencia.com",
@@ -2315,7 +2315,7 @@
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Listo para un compañero que conoce a tus clientes?",
       "subtitle": "Una llamada de 30 minutos. Después sabrás si encaja con tu cartera.",
-      "button": "Agenda una llamada"
+      "button": "Solicita una llamada"
     }
   },
   "roadmap": {
@@ -2348,18 +2348,18 @@
       "scarcityEyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Quieres ser el primero?",
       "subtitle": "Los founding members obtienen acceso anticipado a ambas a medida que entran en vivo, además de voz en lo que construimos a continuación.",
-      "button": "Agenda una llamada"
+      "button": "Solicita una llamada"
     }
   },
   "apply": {
     "meta": {
-      "title": "Solicitar. Agenda una llamada con Daley | FutureMarketingAI",
+      "title": "Solicita una llamada con Daley | FutureMarketingAI",
       "description": "Solicita una conversación sobre FutureMarketingAI. Alianza con Clyde para agencias de marketing. Máx. 10 agencias nuevas al año."
     },
     "hero": {
       "eyebrow": "Solicitud",
       "counter": "Máx. {total} plazas Founding",
-      "title": "Agenda una llamada",
+      "title": "Solicita una llamada",
       "subtitle": "Sin autoservicio. Sin registro genérico. Daley revisa personalmente cada solicitud y tendrás noticias nuestras en 3 días laborables. Incluso si no hay encaje."
     },
     "expectations": {
@@ -2633,8 +2633,8 @@
       },
       "cta": {
         "title": "¿Quieres esto también para tu cartera?",
-        "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja Clyde con tus marcas y clientes.",
-        "button": "Agenda una llamada"
+        "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja Clyde con tus marcas y clientes.",
+        "button": "Solicita una llamada"
       },
       "rail": {
         "title": "El recorrido",
@@ -2674,7 +2674,7 @@
       "eyebrow": "Habilidad 04. Email Management",
       "title": "Clyde clasifica tu bandeja de entrada.",
       "subtitle": "Nada de campañas de correo: esto es clasificación de la bandeja para Gmail y Outlook. Clyde lee los correos entrantes, los coloca en las categorías que eliges, da a cada correo una urgencia y redacta borradores de respuesta. Empiezas el día con una visión clara en lugar de caos.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Resume los correos más importantes de hoy",
         "prompt2": "Etiqueta todas las facturas de esta semana",
@@ -2740,8 +2740,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder la clasificación de la bandeja a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Email Management",
@@ -2778,7 +2778,7 @@
       "eyebrow": "Habilidad 07. Research",
       "title": "Clyde hace tu estudio de mercado.",
       "subtitle": "Tendencias en el nicho de cada marca, análisis de competencia e ideas de contenido, con un enlace a la fuente en cada insight para que puedas comprobarlo. En el escaneo semanal de tendencias se descartan los hallazgos con menos de dos fuentes.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Investiga los 5 principales competidores en hidratación",
         "prompt2": "¿Cuáles son los temas tendencia en skincare este mes?",
@@ -2844,8 +2844,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder la investigación a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Research",
@@ -2899,7 +2899,7 @@
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "Un compañero, todas las habilidades en un solo lugar",
       "description": "Sin herramientas sueltas, sin ticketing por habilidad. Un espacio por cliente, una llamada de 30 minutos para ver si encaja.",
-      "button": "Agenda una llamada",
+      "button": "Solicita una llamada",
       "secondaryLink": "Ver el recorrido completo de onboarding"
     }
   },
@@ -2912,7 +2912,7 @@
       "eyebrow": "Habilidad 08. Blog Factory",
       "title": "Clyde escribe tus blogs SEO.",
       "subtitle": "Investigación de palabras clave, artículos en la voz de marca y una revisión SEO, publicados en la web tras tu aprobación. La extensión se adapta a lo que ya posiciona para esa búsqueda. Blog Factory está disponible y sigue en desarrollo.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Redacta un artículo SEO sobre sérum para piel sensible",
         "prompt2": "Construye un cluster temático sobre rutinas de hidratación",
@@ -2978,8 +2978,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder la producción de blogs a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Blog Factory",
@@ -3020,7 +3020,7 @@
       "eyebrow": "Habilidad 09. SEO / GEO Analyst",
       "title": "Clyde monitoriza tu SEO y tus citaciones AI.",
       "subtitle": "Auditorías técnicas SEO, seguimiento de posiciones y Core Web Vitals. Además GEO: ¿cuántas veces cita a tu marca ChatGPT, Perplexity o los AI Overviews de Google? La nueva capa de búsqueda funciona con AI. Clyde te mantiene visible ahí.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Ejecuta una auditoría SEO técnica de los dominios principales",
         "prompt2": "Mide con qué frecuencia ChatGPT y Perplexity citan nuestra marca",
@@ -3086,8 +3086,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder el SEO a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre SEO y GEO Analyst",
@@ -3128,7 +3128,7 @@
       "eyebrow": "Habilidad 10. Clyde, el compañero de IA",
       "title": "Este es Clyde. El compañero de IA de tu agencia.",
       "subtitle": "Las demás habilidades (nueve en vivo, dos en desarrollo) son ejecutoras especializadas. Clyde es el compañero que las pone a trabajar y que te acompaña en cada pantalla de tu panel. Da órdenes en lenguaje natural; Clyde elige la habilidad correcta y te trae los resultados. Disponible en el panel, en la app de tu móvil y en WhatsApp.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Planifica esta semana para las tres cuentas de SKC",
         "prompt2": "Crea un informe semanal de las publicaciones con mejor rendimiento",
@@ -3194,8 +3194,8 @@
     },
     "cta": {
       "title": "¿Listo para sumar a Clyde a tu equipo como compañero?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja Clyde con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja Clyde con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Clyde",
@@ -3232,7 +3232,7 @@
       "eyebrow": "Habilidad 11. ManyChat DM",
       "title": "Clyde atiende los DMs de Instagram.",
       "subtitle": "Una palabra clave (\"INFO\", \"PRECIO\") en un comentario, DM o respuesta a una story envía en más o menos un minuto la respuesta que tú defines, con el enlace incluido. Para otros mensajes Clyde escribe un borrador, y quien responde entra en tu lista de leads.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Responde automáticamente DMs con la palabra tiempos de entrega",
         "prompt2": "Envía leads cálidos por DM a la página de ventas",
@@ -3298,8 +3298,8 @@
     },
     "cta": {
       "title": "¿Listo para ceder los DMs de Instagram a Clyde?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre ManyChat DM",
@@ -3336,7 +3336,7 @@
       "eyebrow": "Habilidad 12. Reel Builder (próximamente)",
       "title": "Pronto Clyde hará tus Reels.",
       "subtitle": "En lo que estamos trabajando: vídeos verticales cortos (9:16) con guiones de IA, subtítulos sincronizados y música de fondo, para Instagram y LinkedIn. Todavía no disponible.",
-      "cta": "Agenda una llamada",
+      "cta": "Solicita una llamada",
       "prompts": {
         "prompt1": "Crea un Reel de 30 segundos sobre la rutina matinal",
         "prompt2": "Escribe un guion de Reel para el lanzamiento del producto",
@@ -3402,8 +3402,8 @@
     },
     "cta": {
       "title": "¿Te interesa el Reel Builder?",
-      "subtitle": "Agenda una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Agenda una llamada"
+      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
+      "button": "Solicita una llamada"
     },
     "faq": {
       "title": "Preguntas frecuentes sobre Reel Builder",
@@ -3433,7 +3433,7 @@
   },
   "nav": {
     "login": "Iniciar sesión",
-    "apply": "Agenda una llamada",
+    "apply": "Solicita una llamada",
     "assessment": "Haz el AI-Scan"
   },
   "header": {
@@ -3518,7 +3518,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Agenda una llamada"
+      "applySubtitle": "Solicita una llamada"
     },
     "megaMenu": {
       "tagline": "10 en vivo, 2 próximamente",
@@ -3800,7 +3800,7 @@
         "eyebrow": "Aplicar con este scan",
         "title": "¿Aplicar basado en este scan?",
         "body": "Saltamos 5 preguntas y usamos tu perfil directamente.",
-        "button": "Agenda una llamada"
+        "button": "Solicita una llamada"
       },
       "footerHint": "Solicita el informe completo para tu hoja de ruta de 4 semanas y desglose por habilidad."
     },
@@ -3836,8 +3836,8 @@
     "finalCta": {
       "eyebrow": "Founding abierto · máx. {total} plazas",
       "title": "¿Prefieres saltar el scan?",
-      "description": "No todos quieren un scan primero. Sáltalo y agenda una llamada de 30 minutos con Daley.",
-      "button": "Agenda una llamada"
+      "description": "No todos quieren un scan primero. Sáltalo y solicita una llamada de 30 minutos con Daley.",
+      "button": "Solicita una llamada"
     }
   },
   "leadMagnet": {
@@ -3938,7 +3938,7 @@
       "proof": "Prueba",
       "related": "Combina con",
       "faq": "FAQ",
-      "cta": "Reserva una llamada",
+      "cta": "Solicita una llamada",
       "kennisbank": "Seguir leyendo"
     },
     "promptHero": {
