@@ -229,7 +229,7 @@
           "label": "Lock-in and data export",
           "diy": "Varies per tool",
           "bureau": "Data often stays with the agency",
-          "clyde": "Your data stays yours, 30 days to take everything with you"
+          "clyde": "Your data stays yours, export within 30 days after cancellation"
         }
       },
       "strengthLabels": {
@@ -378,7 +378,7 @@
         },
         "q2": {
           "question": "What if I want to cancel?",
-          "answer": "You're not locked in. What Clyde knows about your clients is yours. After cancellation you have 30 days to take your data with you; after that we delete your workspaces. Your data sits on servers and in a database in the EU."
+          "answer": "You're not locked in. What Clyde knows about your clients is yours. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. Your data sits on servers and in a database in the EU."
         },
         "q3": {
           "question": "Why an application? Why no self-service?",
@@ -839,7 +839,7 @@
       },
       "noLockIn": {
         "title": "No lock-in",
-        "body": "After cancellation you have 30 days to take your data with you; after that we delete it. No penalties and no exit fees."
+        "body": "After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. No penalties and no exit fees."
       }
     },
     "capacity": {
@@ -1030,11 +1030,11 @@
         },
         "q7": {
           "question": "What exactly happens when I downgrade?",
-          "answer": "Downgrading takes effect at the next billing cycle. Your clients, their memory and your settings stay in place; from then on the caps of the lower tier apply. You cannot downgrade from Founding: doing so permanently forfeits the lifetime price."
+          "answer": "Downgrading takes effect at the next billing cycle. Your clients, their brand voice, the learned rules and your settings stay in place; from then on the caps and the retention period of the lower tier apply. You cannot downgrade from Founding: doing so permanently forfeits the lifetime price."
         },
         "q8": {
           "question": "Who owns the data and can I export it?",
-          "answer": "All data, brand voice profiles, content and reports, stays yours. After cancellation you have 30 days to take your data with you; after that we delete it. No lock-in, no renegotiation, no hidden exit fees."
+          "answer": "All data, brand voice profiles, content and reports, stays yours. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. No lock-in, no renegotiation, no hidden exit fees."
         }
       }
     },
@@ -1335,7 +1335,7 @@
           },
           "termination": {
             "title": "6. Termination",
-            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, you have a 30 calendar-day export window, during which you can download all workspace data, content, reports and configurations. After the 30-day export period, all agency data, client workspace data and associated content will be permanently deleted from our systems and sub-processors. FutureMarketingAI may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
+            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, we send you an export of your data within 30 calendar days. After that, all agency data, client workspace data and associated content will be permanently deleted from our systems and sub-processors. FutureMarketingAI may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
           },
           "governing_law": {
             "title": "7. Governing law and disputes",
@@ -1373,7 +1373,7 @@
           },
           "data_retention": {
             "title": "6. Data retention",
-            "content": "Active accounts: data is retained for the duration of the service agreement, except where a shorter period is stated below.\nAfter termination: a 30-day export window is provided, after which all data is permanently deleted.\nClyde's memory and conversations: 6 months on Founding, 12 months on Growth and Professional, for as long as the account is active on Enterprise.\nChatbot conversations on client websites: anonymized after 30 days without the visitor's consent, deleted after 12 months with consent.\nInstagram messages: the text and the sender and recipient ids are erased after 90 days; only counts remain.\nCalendar data: up to 30 days after the appointment, and immediately when you disconnect the calendar.\nLeads and applications via the website: 24 months.\nInbox conversations: 24 months after the last message.\nVideo uploads that are not published: 24 hours.\nAnswers to the AI Readiness Scan: 12 months (see article 9).\nBilling records: retained in accordance with Dutch tax law (7 years).\nThe clean-up runs periodically, so data may remain for up to a month after the period has expired."
+            "content": "Active accounts: data is retained for the duration of the service agreement, except where a shorter period is stated below.\nAfter termination: within 30 days we send an export of the data, after which all data is permanently deleted.\nClyde's memory and conversations: 6 months on Founding, 12 months on Growth and Professional, for as long as the account is active on Enterprise.\nChatbot conversations on client websites: anonymized after 30 days without the visitor's consent, deleted after 12 months with consent.\nInstagram messages: the text and the sender and recipient ids are erased after 90 days; only counts remain.\nCalendar data: up to 30 days after the appointment, and immediately when you disconnect the calendar.\nLeads and applications via the website: 24 months.\nInbox conversations: 24 months after the last message.\nVideo uploads that are not published: 24 hours.\nAnswers to the AI Readiness Scan: 12 months (see article 9).\nBilling records: retained in accordance with Dutch tax law (7 years).\nThe clean-up runs periodically, so data may remain for up to a month after the period has expired."
           },
           "data_subject_rights": {
             "title": "7. Your rights",
@@ -1414,7 +1414,7 @@
         "content": "The information on this website is provided for general information purposes. Any reliance you place on this information is at your own risk."
       }
     },
-    "last_updated": "Last updated: October 25, 2026"
+    "last_updated": "Last updated: November 5, 2026"
   },
   "trust": {
     "meta": {
@@ -1496,7 +1496,7 @@
         "what": "Video uploads that are not published",
         "term": "Deleted after 24 hours."
       },
-      "exit": "If you cancel, you have 30 days to take your data with you. After that we delete it.",
+      "exit": "If you cancel, we send you an export of your data within 30 days. After that we delete your workspaces.",
       "more": "All periods, including those for Clyde's memory, Instagram messages and invoices, are in <link>article 6 of the privacy policy</link>."
     },
     "limits": {
@@ -2248,7 +2248,7 @@
       "eyebrow": "A separate memory per client",
       "title": "Separated per client",
       "body1": "Clyde works for several agencies and their clients at the same time. Each client has its own workspace with its own memory: when Clyde works for client A, he retrieves client A's memory, not client B's. That way a brand voice does not jump over to another client.",
-      "body2": "Technically, every memory about a client is tied to that agency and that client in the database, and every lookup filters on them. After cancellation you have 30 days to take your data with you; after that we delete it."
+      "body2": "Technically, every memory about a client is tied to that agency and that client in the database, and every lookup filters on them. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces."
     },
     "decay": {
       "eyebrow": "Day and night",

@@ -311,7 +311,7 @@
           "label": "Lock-in en data-export",
           "diy": "Per tool verschillend",
           "bureau": "Data vaak bij bureau",
-          "clyde": "Data blijft van jou, 30 dagen om alles mee te nemen"
+          "clyde": "Data blijft van jou, export binnen 30 dagen na opzegging"
         }
       },
       "strengthLabels": {
@@ -460,7 +460,7 @@
         },
         "q2": {
           "question": "Wat als ik wil opzeggen?",
-          "answer": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes. Je data staat op servers en in een database in de EU."
+          "answer": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Je data staat op servers en in een database in de EU."
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
@@ -1108,7 +1108,7 @@
         "n6": "Ja. Reageert iemand op Instagram met het trefwoord van je klant, dan stuurt Clyde automatisch een DM met de link. Per klant zie je hoeveel mensen het trefwoord gebruikten, de DM kregen en een aanvraag stuurden.",
         "n7": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daarna twee uur per week.",
         "n8": "Founding kost €997 per maand voor vijftien klantmerken, dus onder €67 per klantmerk. Daarboven betaal je €299 per extra klantmerk.",
-        "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes."
+        "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
       },
       "links": {
         "n1": "ChatGPT vs Jasper vs Semrush: en waar past Clyde?",
@@ -1537,7 +1537,7 @@
       },
       "noLockIn": {
         "title": "Geen lock-in",
-        "body": "Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen boetes en geen exit-fees."
+        "body": "Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Geen boetes en geen exit-fees."
       }
     },
     "capacity": {
@@ -1728,11 +1728,11 @@
         },
         "q7": {
           "question": "Wat gebeurt er precies als ik downgrade?",
-          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun geheugen en je instellingen blijven staan; vanaf dan gelden de caps van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
+          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun merkstem, de geleerde regels en je instellingen blijven staan; vanaf dan gelden de caps en de bewaartermijn van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
         },
         "q8": {
           "question": "Van wie is de data en kan ik die exporteren?",
-          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
+          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
         }
       }
     },
@@ -2033,7 +2033,7 @@
           },
           "termination": {
             "title": "6. Beëindiging",
-            "content": "Beide partijen kunnen het abonnement beëindigen met 30 dagen schriftelijke opzegtermijn. Na beëindiging heeft u een exportperiode van 30 kalenderdagen, waarin u alle workspace-gegevens, content, rapporten en configuraties kunt downloaden. Na de exportperiode van 30 dagen worden alle bureaugegevens, klantworkspace-gegevens en bijbehorende content permanent verwijderd uit onze systemen en sub-verwerkers. FutureMarketingAI kan uw account onmiddellijk beëindigen bij wezenlijke schending van deze voorwaarden, inclusief wanbetaling van meer dan 30 dagen."
+            "content": "Beide partijen kunnen het abonnement beëindigen met 30 dagen schriftelijke opzegtermijn. Na beëindiging sturen wij u binnen 30 kalenderdagen een export van uw gegevens. Daarna worden alle bureaugegevens, klantworkspace-gegevens en bijbehorende content permanent verwijderd uit onze systemen en sub-verwerkers. FutureMarketingAI kan uw account onmiddellijk beëindigen bij wezenlijke schending van deze voorwaarden, inclusief wanbetaling van meer dan 30 dagen."
           },
           "governing_law": {
             "title": "7. Toepasselijk recht en geschillen",
@@ -2071,7 +2071,7 @@
           },
           "data_retention": {
             "title": "6. Bewaartermijnen",
-            "content": "Actieve accounts: gegevens worden bewaard voor de duur van de serviceovereenkomst, behalve waar hieronder een kortere termijn staat.\nNa beëindiging: een exportperiode van 30 dagen wordt geboden, waarna alle gegevens permanent worden verwijderd.\nGeheugen en gesprekken van Clyde: bij Founding 6 maanden, bij Growth en Professional 12 maanden, bij Enterprise zolang het account actief is.\nChatbotgesprekken op websites van klanten: zonder toestemming van de bezoeker na 30 dagen geanonimiseerd, met toestemming na 12 maanden verwijderd.\nInstagram-berichten: de tekst en de id's van afzender en ontvanger worden na 90 dagen gewist; alleen tellingen blijven over.\nAgendagegevens: tot 30 dagen na de afspraak, en direct bij het ontkoppelen van de agenda.\nLeads en aanvragen via de website: 24 maanden.\nInboxgesprekken: 24 maanden na het laatste bericht.\nVideo-uploads die niet gepubliceerd worden: 24 uur.\nAntwoorden op de AI Readiness Scan: 12 maanden (zie artikel 9).\nFactuurgegevens: bewaard conform Nederlandse belastingwetgeving (7 jaar).\nDe opschoning draait periodiek, waardoor gegevens tot een maand na het verstrijken van de termijn kunnen blijven staan."
+            "content": "Actieve accounts: gegevens worden bewaard voor de duur van de serviceovereenkomst, behalve waar hieronder een kortere termijn staat.\nNa beëindiging: binnen 30 dagen sturen wij een export van de gegevens, waarna alle gegevens permanent worden verwijderd.\nGeheugen en gesprekken van Clyde: bij Founding 6 maanden, bij Growth en Professional 12 maanden, bij Enterprise zolang het account actief is.\nChatbotgesprekken op websites van klanten: zonder toestemming van de bezoeker na 30 dagen geanonimiseerd, met toestemming na 12 maanden verwijderd.\nInstagram-berichten: de tekst en de id's van afzender en ontvanger worden na 90 dagen gewist; alleen tellingen blijven over.\nAgendagegevens: tot 30 dagen na de afspraak, en direct bij het ontkoppelen van de agenda.\nLeads en aanvragen via de website: 24 maanden.\nInboxgesprekken: 24 maanden na het laatste bericht.\nVideo-uploads die niet gepubliceerd worden: 24 uur.\nAntwoorden op de AI Readiness Scan: 12 maanden (zie artikel 9).\nFactuurgegevens: bewaard conform Nederlandse belastingwetgeving (7 jaar).\nDe opschoning draait periodiek, waardoor gegevens tot een maand na het verstrijken van de termijn kunnen blijven staan."
           },
           "data_subject_rights": {
             "title": "7. Uw rechten",
@@ -2112,7 +2112,7 @@
         "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat u in deze informatie stelt is op eigen risico."
       }
     },
-    "last_updated": "Laatst bijgewerkt: 25 oktober 2026"
+    "last_updated": "Laatst bijgewerkt: 5 november 2026"
   },
   "trust": {
     "meta": {
@@ -2194,7 +2194,7 @@
         "what": "Video-uploads die niet gepubliceerd worden",
         "term": "Na 24 uur verwijderd."
       },
-      "exit": "Zeg je op, dan heb je 30 dagen om je gegevens mee te nemen. Daarna verwijderen we ze.",
+      "exit": "Zeg je op, dan sturen we je binnen 30 dagen een export van je gegevens. Daarna verwijderen we je werkruimtes.",
       "more": "Alle termijnen, ook die voor het geheugen van Clyde, Instagram-berichten en facturen, staan in <link>artikel 6 van de privacyverklaring</link>."
     },
     "limits": {
@@ -2946,7 +2946,7 @@
       "eyebrow": "Eigen geheugen per klant",
       "title": "Gescheiden per klant",
       "body1": "Clyde werkt voor meerdere bureaus en hun klanten tegelijk. Elke klant heeft een eigen werkruimte met een eigen geheugen: werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Zo springt een merkstem niet over naar een andere klant.",
-      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze."
+      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
     },
     "decay": {
       "eyebrow": "Dag en nacht",

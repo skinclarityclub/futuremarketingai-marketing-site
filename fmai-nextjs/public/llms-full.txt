@@ -285,7 +285,7 @@ Clyde keeps a memory per client, so you do not have to supply brand context with
 
 Memories are consolidated daily: overlapping memories are merged and memories that are no longer used fade and are archived. Every memory about a client belongs to that agency and that client.
 
-Leaving: after cancellation you have 30 days to take your data with you; after that we delete your workspaces.
+Leaving: after cancellation we send you an export of your data within 30 days; after that we delete your workspaces.
 
 ## How it Works
 
@@ -314,7 +314,7 @@ Daley is the founder of FutureMarketingAI. Native Dutch speaker, based in the Ne
 - Every client has its own workspace; memories about a client belong to that agency and that client.
 - Per task the agency decides how independently Clyde works; critical actions such as ad spend are always proposed first.
 - The website chatbot identifies itself as AI when asked.
-- After cancellation you have 30 days to take your data with you; after that we delete your workspaces.
+- After cancellation we send you an export of your data within 30 days; after that we delete your workspaces.
 - Anthropic and OpenAI retain data on their own terms; we have no agreement under which they keep nothing. By their standard API terms they do not train on API data and delete it within 30 days, longer for abuse monitoring or when the law requires it. A data processing agreement is available on request via privacy@future-marketing.ai.
 - Per component where it runs, what the language model providers retain and how long we keep data: https://future-marketing.ai/nl/trust
 
@@ -399,7 +399,7 @@ Q: Hoelang duurt de onboarding?
 A: De onboarding duurt 4 weken: accounts koppelen, merkstem en kennis, een strategiesessie per klant, en Clyde, de agenda en de goedkeuringen inrichten. Maand 1 is de correctielus. Per taak kies je daarna hoe zelfstandig Clyde werkt.
 
 Q: Is mijn data veilig?
-A: Servers en database staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Elke klant heeft een eigen werkruimte, en herinneringen over een klant horen bij dat bureau en die klant. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes.
+A: Servers en database staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Elke klant heeft een eigen werkruimte, en herinneringen over een klant horen bij dat bureau en die klant. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes.
 
 Q: Kan Clyde meerdere merken tegelijk beheren?
 A: Ja. Elke klant krijgt een eigen werkruimte met een eigen merkstem, geheugen, agenda en goedkeuringen. Binnen een klant kunnen meerdere accounts vallen, zoals bij SkinClarity Club met 3 Instagram-accounts.
