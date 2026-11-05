@@ -377,8 +377,8 @@
 #hero .copy{left:16px;right:16px;width:auto;top:76px;transform:none;gap:12px}
 #hero .copy .h1{font-size:30px;letter-spacing:-.03em}
 #hero .copy .def{font-size:14px;line-height:1.5}
-#hero .copy .ctas{flex-wrap:nowrap;gap:10px;margin-top:0}
-#hero .copy .btn{flex:1;height:46px;padding:0 8px}
+#hero .copy .ctas{flex-wrap:wrap;gap:8px;margin-top:0}
+#hero .copy .btn{flex:1;height:46px;padding:0 6px;font-size:14px}
 #hero .copy .pd{display:none}
 #hero .copy .pm{display:flex;font-size:12.5px;line-height:1.4;align-items:flex-start}
 #hero .copy .kicker{margin-bottom:-4px}
