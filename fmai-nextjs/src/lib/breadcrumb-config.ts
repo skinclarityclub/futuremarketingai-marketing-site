@@ -30,7 +30,6 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/how-it-works': { labelKey: 'how_it_works', parent: '/' },
   '/pricing': { labelKey: 'pricing', parent: '/' },
   '/alternatives': { labelKey: 'alternatives', parent: '/' },
-  '/founding-member': { labelKey: 'founding_member', parent: '/' },
   '/contact': { labelKey: 'contact', parent: '/' },
   '/memory': { labelKey: 'memory', parent: '/' },
   '/kennisbank': { labelKey: 'resources', parent: '/' },

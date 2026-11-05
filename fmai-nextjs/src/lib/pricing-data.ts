@@ -4,8 +4,10 @@
  * SSoT: fma-app/src/lib/skills.ts. When tier prices, workspace ranges or
  * credits-per-workspace change there, update here too.
  *
- * Two pricing models since 2026-04-28:
- * - 'fixed': single monthly price (Founding only).
+ * Two pricing models:
+ * - 'fixed': Founding. A flat monthly price that covers `includedWorkspaces`;
+ *   every workspace above that adds `pricePerExtraWorkspace`. fma-app calls this
+ *   model 'included' (#1904, 10 included since #1943); credits stay fixed.
  * - 'workspace': monthly price = pricePerWorkspace * workspaces. Credits
  *   scale with workspaces (creditsPerWorkspace * workspaces). Per-workspace
  *   tarief recalibrated every 6 months on observed credit usage.
@@ -16,6 +18,8 @@ import type { TierKey } from './skills-data'
 export interface FixedTierPricing {
   pricingModel: 'fixed'
   price: number
+  includedWorkspaces: number
+  pricePerExtraWorkspace: number
   credits: number
   onboardingFee: number
 }
@@ -36,6 +40,8 @@ export const TIER_PRICING: Record<TierKey, TierPricing> = {
   FOUNDING_MEMBER: {
     pricingModel: 'fixed',
     price: 997,
+    includedWorkspaces: 10,
+    pricePerExtraWorkspace: 299,
     credits: 8000,
     onboardingFee: 0,
   },
@@ -65,43 +71,21 @@ export const TIER_PRICING: Record<TierKey, TierPricing> = {
   },
 }
 
+/** The day the prices on /pricing were last checked against fma-app; shown on the page. */
+export const PRICING_CHECKED_ON = '2026-11-06'
+
+/** Founding config, narrowed once so callers do not repeat the model check. */
+export const FOUNDING = TIER_PRICING.FOUNDING_MEMBER as FixedTierPricing
+
 /** Monthly price in EUR for a given tier + workspace count. */
 export function priceForTier(tier: TierKey, workspaces: number): number {
   const cfg = TIER_PRICING[tier]
-  if (cfg.pricingModel === 'fixed') return cfg.price
+  if (cfg.pricingModel === 'fixed') {
+    return cfg.price + Math.max(0, workspaces - cfg.includedWorkspaces) * cfg.pricePerExtraWorkspace
+  }
   const max = cfg.maxWorkspaces === -1 ? Infinity : cfg.maxWorkspaces
   const clamped = Math.max(cfg.minWorkspaces, Math.min(max, workspaces))
   return clamped * cfg.pricePerWorkspace
-}
-
-/** Monthly credit allocation for a given tier + workspace count. */
-export function creditsForTier(tier: TierKey, workspaces: number): number {
-  const cfg = TIER_PRICING[tier]
-  if (cfg.pricingModel === 'fixed') return cfg.credits
-  const max = cfg.maxWorkspaces === -1 ? Infinity : cfg.maxWorkspaces
-  const clamped = Math.max(cfg.minWorkspaces, Math.min(max, workspaces))
-  return clamped * cfg.creditsPerWorkspace
-}
-
-/**
- * Min/max monthly price for a workspace-tier (used for /pricing card range
- * display + JSON-LD priceSpecification). Fixed-tier returns price both ways.
- * For unbounded max (Enterprise), returns null on max.
- */
-export function priceRangeForTier(tier: TierKey): { min: number; max: number | null } {
-  const cfg = TIER_PRICING[tier]
-  if (cfg.pricingModel === 'fixed') return { min: cfg.price, max: cfg.price }
-  const min = cfg.minWorkspaces * cfg.pricePerWorkspace
-  const max = cfg.maxWorkspaces === -1 ? null : cfg.maxWorkspaces * cfg.pricePerWorkspace
-  return { min, max }
-}
-
-/** Default workspace count for slider initial value (mid-range). */
-export function defaultWorkspaces(tier: TierKey): number {
-  const cfg = TIER_PRICING[tier]
-  if (cfg.pricingModel === 'fixed') return 0
-  if (cfg.maxWorkspaces === -1) return cfg.minWorkspaces
-  return Math.floor((cfg.minWorkspaces + cfg.maxWorkspaces) / 2)
 }
 
 /** Tier keys that participate in the shared workspace slider (excludes Founding). */
@@ -124,31 +108,9 @@ export function detectWorkspaceTier(workspaces: number): WorkspaceTierKey {
   return 'GROWTH'
 }
 
-/**
- * Returns whether a tier is "active" for the given workspace count — used
- * to glow / scale the matching tier card on the shared slider.
- */
-export function isTierActiveForWorkspaces(tier: WorkspaceTierKey, workspaces: number): boolean {
-  return detectWorkspaceTier(workspaces) === tier
-}
-
-/**
- * Returns whether Founding (fixed €997) is cheaper than the workspace-priced
- * tier at the current slider value. When true, the Founding tile shows a
- * "better deal for your portfolio" glow next to the slider's active tier.
- */
-export function isFoundingBetterValueAt(workspaces: number): boolean {
-  if (workspaces < 1) return true
-  const founding = TIER_PRICING.FOUNDING_MEMBER
-  if (founding.pricingModel !== 'fixed') return false
-  const tier = detectWorkspaceTier(workspaces)
-  const workspacePrice = priceForTier(tier, workspaces)
-  return workspacePrice >= founding.price
-}
-
-/** Shared-slider bounds. Lower-bound 1 (sub-Growth) for transparency about
- * what 1-workspace would cost; upper-bound 30 covers full Enterprise range
- * without pretending Enterprise has a hard cap.
+/** Shared-slider bounds. Lower-bound 1 for transparency about what one
+ * client brand costs; upper-bound 30 covers the Enterprise range without
+ * pretending Enterprise has a hard cap.
  */
 export const SHARED_SLIDER_MIN = 1
 export const SHARED_SLIDER_MAX = 30

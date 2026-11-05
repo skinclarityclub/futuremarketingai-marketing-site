@@ -145,7 +145,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/founding-member"
+                    href="/pricing#founding"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.founding_member')}

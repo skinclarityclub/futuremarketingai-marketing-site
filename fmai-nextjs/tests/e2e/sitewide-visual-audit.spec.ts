@@ -17,7 +17,6 @@ const NL_ROUTES: Route[] = [
   { path: '/nl/apply', slug: 'apply' },
   { path: '/nl/assessment', slug: 'assessment' },
   { path: '/nl/assessment/result?a=wl&st=sc&t=62&s=75&d=55&tl=70&tm=45', slug: 'assessment-result' },
-  { path: '/nl/founding-member', slug: 'founding-member' },
   { path: '/nl/case-studies/skinclarity-club', slug: 'case-study-skc' },
   { path: '/nl/skills', slug: 'skills-index' },
   { path: '/nl/skills/clyde', slug: 'skill-clyde' },

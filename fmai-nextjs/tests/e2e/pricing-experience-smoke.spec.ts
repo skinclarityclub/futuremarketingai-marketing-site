@@ -1,83 +1,56 @@
 import { test, expect } from '@playwright/test'
 
 /**
- * Fase 4 pricing SOTA smoke — confirms the WorkspaceSlider + TierBentoCard
- * refactor renders correctly on /nl/pricing:
- *   - eyebrows present on every section
- *   - shared workspace slider exists, has tier-active pill, drives price
- *   - moving the slider re-renders the active-tier pill (Growth → Pro → Ent)
+ * Golf 5b pricing smoke on /nl/pricing:
+ *   - H1 "Wat kost Clyde?" and the #founding block (target of the /founding-member 301)
+ *   - the worked example shows Founding at 5, 10 and 15 client brands
+ *   - the slider drives the Founding total (10 included, €299 per extra)
  *   - FAQ accordion still works (Fase 0 regression guard)
  */
 
 test.describe.configure({ mode: 'serial' })
 
-test('pricing page renders new SOTA layout with shared workspace slider', async ({ page }) => {
+test('pricing page renders the golf 5b layout', async ({ page }) => {
   await page.goto('/nl/pricing')
   await page.waitForLoadState('domcontentloaded')
 
-  // Hero eyebrow present
-  await expect(page.getByText('Tarieven & vaardigheden', { exact: true }).first()).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: 'Wat kost Clyde?' })).toBeVisible()
+  await expect(page.locator('section#founding')).toBeVisible()
 
-  // Tiers section eyebrow present
-  await expect(page.getByText('Tier-overzicht', { exact: true })).toBeVisible()
+  // Worked example: 15 brands = 997 + 5 x 299.
+  const example = page.getByRole('region', { name: 'Wat je per klantmerk betaalt' })
+  await expect(example.getByRole('row', { name: /15 klantmerken/ })).toContainText('€2.492')
 
-  // Eyebrow count site-wide on this page should be at least 7 (hero, tiers,
-  // slider, matrix, faq, visibility, creditPacks, skillPacks, cta — 9 total).
-  const eyebrowCount = await page.locator('.font-mono.uppercase').count()
-  expect(eyebrowCount, 'at least 7 mono-eyebrows on pricing page').toBeGreaterThanOrEqual(7)
-
-  // Shared slider input exists with min/max bounds 1..30
   const slider = page.locator('input[type="range"]').first()
-  await expect(slider).toBeVisible()
-  await expect(slider).toHaveAttribute('aria-valuemin', '1')
-  await expect(slider).toHaveAttribute('aria-valuemax', '30')
+  await expect(slider).toHaveAttribute('min', '1')
+  await expect(slider).toHaveAttribute('max', '30')
 
-  // Active tier pill on initial workspaces=5 should be Professional.
-  await expect(page.getByText('Professional', { exact: true }).first()).toBeVisible()
-
-  // FAQ accordion still works (regression guard from Fase 0).
   const faqRoot = page.locator('[data-orientation="vertical"]').first()
   await expect(faqRoot).toBeVisible({ timeout: 10_000 })
-  const dlCount = await page.locator('dl').count()
-  expect(dlCount, 'no plain dl elements remain on pricing').toBe(0)
-
-  await page.screenshot({
-    path: 'playwright-output/fase4-pricing-initial.png',
-    fullPage: false,
-  })
+  expect(await page.locator('dl').count(), 'no plain dl elements remain on pricing').toBe(0)
 })
 
-test('moving slider updates active-tier indicator across all three workspace tiers', async ({
-  page,
-}) => {
+test('slider updates the founding total and the later tier', async ({ page }) => {
   await page.goto('/nl/pricing')
   await page.waitForLoadState('domcontentloaded')
 
   const slider = page.locator('input[type="range"]').first()
   await slider.scrollIntoViewIfNeeded()
+  const total = page.locator('[aria-live="polite"]').filter({ hasText: 'Founding per maand' })
 
-  // Drive slider to Growth range (workspaces=3).
-  await slider.focus()
   await slider.fill('3')
-  await expect(slider).toHaveJSProperty('value', '3')
-  await page.waitForTimeout(200)
-  // Growth label should now appear as active-tier pill.
-  await expect(page.locator('text=Growth').first()).toBeVisible()
+  await expect(total).toContainText('€997')
+  await expect(page.getByText(/bij Growth\./)).toBeVisible()
 
-  // Drive slider to Pro range (workspaces=10).
-  await slider.fill('10')
-  await expect(slider).toHaveJSProperty('value', '10')
-  await page.waitForTimeout(200)
-  await expect(page.locator('text=Professional').first()).toBeVisible()
+  await slider.fill('15')
+  await expect(total).toContainText('€2.492', { timeout: 2_000 })
+  await expect(page.getByText(/bij Enterprise\./)).toBeVisible()
+})
 
-  // Drive slider to Enterprise range (workspaces=20).
-  await slider.fill('20')
-  await expect(slider).toHaveJSProperty('value', '20')
-  await page.waitForTimeout(200)
-  await expect(page.locator('text=Enterprise').first()).toBeVisible()
-
-  await page.screenshot({
-    path: 'playwright-output/fase4-pricing-slider-ent.png',
-    fullPage: false,
-  })
+test('/founding-member is a 301 to /pricing#founding', async ({ request }) => {
+  for (const locale of ['nl', 'en']) {
+    const res = await request.get(`/${locale}/founding-member`, { maxRedirects: 0 })
+    expect(res.status()).toBe(301)
+    expect(res.headers()['location']).toBe(`/${locale}/pricing#founding`)
+  }
 })

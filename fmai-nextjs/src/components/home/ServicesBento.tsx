@@ -147,7 +147,7 @@ export async function ServicesBento({ locale }: { locale: string }) {
               {t('hero.ctaSecondary')}
               <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>
-            <CTAButton variant="secondary" size="lg" href="/founding-member">
+            <CTAButton variant="secondary" size="lg" href="/pricing#founding">
               {t('cta.foundingLabel')}
               <ArrowRight className="ml-1 h-4 w-4" />
             </CTAButton>

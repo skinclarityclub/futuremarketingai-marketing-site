@@ -1,82 +1,91 @@
 import { JsonLd } from './JsonLd'
-import { TIER_PRICING, priceRangeForTier } from '@/lib/pricing-data'
+import { FOUNDING, TIER_PRICING, WORKSPACE_TIER_KEYS, type WorkspaceTierPricing } from '@/lib/pricing-data'
+import { ORG_ID, SITE_URL } from '@/lib/seo-config'
 
-const SELLER = { '@type': 'Organization', name: 'Future Marketing AI' } as const
+const SELLER = { '@id': ORG_ID } as const
+const TIER_NAMES = { GROWTH: 'Growth', PROFESSIONAL: 'Professional', ENTERPRISE: 'Enterprise' } as const
+
+// One text per indexable locale; nl is the default (es is no longer a locale).
+const COPY = {
+  nl: {
+    app: 'Clyde, de AI-collega voor marketingbureaus: strategie, content, goedkeuring, publicatie en rapportage per klantmerk.',
+    founding: (f: typeof FOUNDING) =>
+      `Founding partner: ${f.includedWorkspaces} klantmerken inbegrepen, €${f.pricePerExtraWorkspace} per extra klantmerk per maand, ${f.credits} credits per maand, €0 onboarding en een directe WhatsApp-lijn met Daley. Het tarief blijft vast zolang je klant blijft.`,
+    workspace: (name: string, c: WorkspaceTierPricing) =>
+      `${name}: €${c.pricePerWorkspace} per klantmerk per maand, ${
+        c.maxWorkspaces === -1 ? `vanaf ${c.minWorkspaces}` : `${c.minWorkspaces} tot ${c.maxWorkspaces}`
+      } klantmerken, ${c.creditsPerWorkspace} credits per klantmerk per maand, eenmalige onboarding €${c.onboardingFee}. Actief zodra de founding-plekken bezet zijn.`,
+  },
+  en: {
+    app: 'Clyde, the AI colleague for marketing agencies: strategy, content, approval, publishing and reporting per client brand.',
+    founding: (f: typeof FOUNDING) =>
+      `Founding partner: ${f.includedWorkspaces} client brands included, €${f.pricePerExtraWorkspace} per extra client brand per month, ${f.credits} credits per month, €0 onboarding and a direct WhatsApp line with Daley. The rate stays fixed for as long as you remain a client.`,
+    workspace: (name: string, c: WorkspaceTierPricing) =>
+      `${name}: €${c.pricePerWorkspace} per client brand per month, ${
+        c.maxWorkspaces === -1 ? `from ${c.minWorkspaces}` : `${c.minWorkspaces} to ${c.maxWorkspaces}`
+      } client brands, ${c.creditsPerWorkspace} credits per client brand per month, one-time onboarding €${c.onboardingFee}. Active once the founding spots are taken.`,
+  },
+} as const
 
 /**
- * Emit Offers per service-niveau. Workspace-priced tiers (Growth/Pro/Ent)
- * declare a PriceSpecification range (minPrice + optional maxPrice). Founding
- * stays a single-price Offer because the lifetime €997 is a fixed anchor.
+ * The prices on /pricing as the `offers` of SoftwareApplication #clyde, one source
+ * (pricing-data.ts). Workspace tiers carry their unit price per workspace, not a
+ * range of monthly totals: that read as "€998 per workspace" in the old schema.
  */
-function workspaceOffer(
-  name: string,
-  description: string,
-  tierKey: 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE',
-) {
-  const cfg = TIER_PRICING[tierKey]
-  if (cfg.pricingModel !== 'workspace') {
-    throw new Error(`workspaceOffer called with non-workspace tier ${tierKey}`)
-  }
-  const range = priceRangeForTier(tierKey)
-  return {
-    '@type': 'Offer',
-    name,
-    description,
-    priceCurrency: 'EUR',
-    // Anchor "from" price so legacy crawlers without PriceSpecification
-    // support still surface a sensible figure.
-    price: String(range.min),
-    priceSpecification: {
-      '@type': 'PriceSpecification',
-      priceCurrency: 'EUR',
-      minPrice: String(range.min),
-      ...(range.max !== null ? { maxPrice: String(range.max) } : {}),
-      unitCode: 'MON',
-      unitText: `per workspace, from ${cfg.minWorkspaces}${
-        cfg.maxWorkspaces === -1 ? '+' : ` to ${cfg.maxWorkspaces}`
-      } workspaces`,
-    },
-    seller: SELLER,
-  }
-}
-
-export function PricingJsonLd() {
-  const founding = TIER_PRICING.FOUNDING_MEMBER
+export function PricingJsonLd({ locale }: { locale: string }) {
+  const copy = locale === 'en' ? COPY.en : COPY.nl
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'FutureMarketingAI Pricing Tiers',
-    itemListElement: [
+    '@type': 'SoftwareApplication',
+    '@id': `${SITE_URL}/#clyde`,
+    name: 'Clyde',
+    description: copy.app,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: `${SITE_URL}/${locale}/pricing`,
+    inLanguage: locale,
+    provider: SELLER,
+    offers: [
       {
         '@type': 'Offer',
-        name: 'Founders Club',
-        description:
-          'Founding Member tier (10 spots, grandfathered lifetime). All 12 skills with Pro-level caps, unlimited workspaces, 8,000 credits/month, a direct WhatsApp line with Daley. No onboarding fee. Recommended for early adopters.',
-        price: String(founding.pricingModel === 'fixed' ? founding.price : 997),
+        name: 'Founding',
+        description: copy.founding(FOUNDING),
+        price: String(FOUNDING.price),
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: String(founding.pricingModel === 'fixed' ? founding.price : 997),
+          price: String(FOUNDING.price),
           priceCurrency: 'EUR',
           billingDuration: 'P1M',
+          unitText: 'per month',
         },
+        url: `${SITE_URL}/${locale}/pricing#founding`,
         seller: SELLER,
       },
-      workspaceOffer(
-        'AI Marketing Starter (Growth)',
-        `Growth tier — linear per-workspace rate (€${(TIER_PRICING.GROWTH.pricingModel === 'workspace' ? TIER_PRICING.GROWTH.pricePerWorkspace : 0)}/workspace) for portfolios of 2 to 4 brands. All 12 skills with tier caps, 800 credits per workspace per month, email + app support. One-time onboarding €${TIER_PRICING.GROWTH.onboardingFee.toLocaleString('en-US')}.`,
-        'GROWTH',
-      ),
-      workspaceOffer(
-        'AI Marketing Pro (Professional)',
-        `Professional tier — linear per-workspace rate (€${(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0)}/workspace) for portfolios of 5 to 14 brands. All 12 skills with wider caps, 800 credits per workspace per month, WhatsApp support + monthly strategy call. One-time onboarding €${TIER_PRICING.PROFESSIONAL.onboardingFee.toLocaleString('en-US')}.`,
-        'PROFESSIONAL',
-      ),
-      workspaceOffer(
-        'AI Marketing Suite (Enterprise)',
-        `Enterprise tier — linear per-workspace rate (€${(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0)}/workspace) from 15 brands upward. All 12 skills uncapped (fair use), 800 credits per workspace per month, a direct line with Daley, white-label and API access. One-time onboarding €${TIER_PRICING.ENTERPRISE.onboardingFee.toLocaleString('en-US')}.`,
-        'ENTERPRISE',
-      ),
+      ...WORKSPACE_TIER_KEYS.map((tier) => {
+        const cfg = TIER_PRICING[tier] as WorkspaceTierPricing
+        return {
+          '@type': 'Offer',
+          name: TIER_NAMES[tier],
+          description: copy.workspace(TIER_NAMES[tier], cfg),
+          price: String(cfg.pricePerWorkspace),
+          priceCurrency: 'EUR',
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: String(cfg.pricePerWorkspace),
+            priceCurrency: 'EUR',
+            billingDuration: 'P1M',
+            unitText: 'per workspace per month',
+          },
+          eligibleQuantity: {
+            '@type': 'QuantitativeValue',
+            minValue: cfg.minWorkspaces,
+            ...(cfg.maxWorkspaces === -1 ? {} : { maxValue: cfg.maxWorkspaces }),
+            unitText: 'workspace',
+          },
+          seller: SELLER,
+        }
+      }),
     ],
   }
 

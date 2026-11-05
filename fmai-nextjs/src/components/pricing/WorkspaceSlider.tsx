@@ -1,79 +1,60 @@
 'use client'
 
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import {
+  FOUNDING,
+  TIER_PRICING,
   detectWorkspaceTier,
-  isFoundingBetterValueAt,
   priceForTier,
-  creditsForTier,
   formatEur,
   SHARED_SLIDER_MIN,
   SHARED_SLIDER_MAX,
+  type WorkspaceTierPricing,
 } from '@/lib/pricing-data'
 import { CountUp } from '@/components/motion/CountUp'
-import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
 
 interface WorkspaceSliderProps {
-  workspaces: number
-  setWorkspaces: (n: number) => void
   locale: string
+  /** Server-chosen start value, so the server HTML already shows real amounts. */
+  initialWorkspaces: number
 }
 
-const TIER_LABEL_KEY: Record<
-  'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE',
-  'growth' | 'professional' | 'enterprise'
-> = {
+const TIER_LABEL_KEY = {
   GROWTH: 'growth',
   PROFESSIONAL: 'professional',
   ENTERPRISE: 'enterprise',
-}
+} as const
 
 /**
- * Shared workspace slider — the signature interactive experiment of the
- * pricing page. One slider drives all four tier cards: as the user drags,
- * the matching workspace-priced tier (Growth 2-4, Pro 5-14, Ent 15+) lights
- * up and its card scales/glows. Price + credits run via CountUp smoothUpdates
- * for fluid value transitions. When the workspace-priced total exceeds the
- * fixed Founding price (€997), a "Founding wint" pill surfaces next to the
- * active-tier indicator so the math is self-evident.
+ * The calculator on /pricing: drag to a number of client brands and see what
+ * Founding costs now, per brand, next to the tariff that applies once the
+ * founding spots are taken. Founding is the offer of today, so it is the big number.
  */
-export function WorkspaceSlider({ workspaces, setWorkspaces, locale }: WorkspaceSliderProps) {
-  const t = useTranslations('pricing')
+export function WorkspaceSlider({ locale, initialWorkspaces }: WorkspaceSliderProps) {
+  const t = useTranslations('pricing.example.slider')
   const tTiers = useTranslations('pricing.tiers')
   const sliderId = useId()
+  const [workspaces, setWorkspaces] = useState(initialWorkspaces)
 
-  const activeTier = detectWorkspaceTier(workspaces)
-  const activeTierLabel = TIER_LABEL_KEY[activeTier]
-  const clampedWorkspaces = Math.max(SHARED_SLIDER_MIN, Math.min(SHARED_SLIDER_MAX, workspaces))
-  const total = priceForTier(activeTier, clampedWorkspaces)
-  const credits = creditsForTier(activeTier, clampedWorkspaces)
-  const foundingWins = isFoundingBetterValueAt(workspaces)
+  const founding = priceForTier('FOUNDING_MEMBER', workspaces)
+  const perBrand = Math.round(founding / workspaces)
+  const laterTier = detectWorkspaceTier(workspaces)
+  const laterCfg = TIER_PRICING[laterTier] as WorkspaceTierPricing
+  const later = priceForTier(laterTier, workspaces)
+  const eur = (n: number) => formatEur(Math.round(n), locale)
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-border-primary/70 bg-gradient-to-br from-bg-surface/90 via-bg-deep to-bg-surface/60 backdrop-blur-md p-6 md:p-8">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          background:
-            'radial-gradient(ellipse at top left, rgba(0,212,170,0.10), transparent 60%), radial-gradient(ellipse at bottom right, rgba(245,166,35,0.06), transparent 55%)',
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="relative grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center">
-        {/* Slider column */}
+    <div className="rounded-2xl bg-[#0e121b] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] md:p-8">
+      <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto] md:gap-10">
         <div>
-          <EyebrowLabel className="mb-2">{t('slider.eyebrow')}</EyebrowLabel>
+          <p className="mb-2 font-mono text-[11.5px] font-medium uppercase tracking-[0.08em] text-[#5eead4]">
+            {t('eyebrow')}
+          </p>
           <label htmlFor={sliderId} className="block">
-            <span className="block text-text-secondary text-sm mb-3">
-              {t('slider.label')}:{' '}
-              <span className="font-mono text-text-primary font-semibold text-base">
-                {workspaces}
-              </span>{' '}
-              <span className="text-text-muted text-xs">
-                {t('slider.unitLabel', { count: workspaces })}
-              </span>
+            <span className="mb-3 block text-sm text-[#c4ccd8]">
+              {t('label')}:{' '}
+              <span className="font-mono text-base font-semibold text-[#f4f7fb]">{workspaces}</span>
             </span>
             <input
               id={sliderId}
@@ -82,63 +63,39 @@ export function WorkspaceSlider({ workspaces, setWorkspaces, locale }: Workspace
               max={SHARED_SLIDER_MAX}
               value={workspaces}
               onChange={(e) => setWorkspaces(Number(e.target.value))}
-              className="w-full accent-accent-system cursor-pointer h-2"
-              aria-valuemin={SHARED_SLIDER_MIN}
-              aria-valuemax={SHARED_SLIDER_MAX}
-              aria-valuenow={workspaces}
-              aria-label={t('slider.label')}
+              className="h-2 w-full cursor-pointer accent-[#2dd4bf]"
             />
           </label>
-          <div className="flex justify-between mt-2 text-[10px] uppercase tracking-wide text-text-muted font-mono">
-            <span>1</span>
-            <span>5</span>
-            <span>15</span>
-            <span>30+</span>
+          <div className="mt-2 flex justify-between font-mono text-[10px] uppercase tracking-wide text-[#8f9aae]">
+            <span>{SHARED_SLIDER_MIN}</span>
+            <span>{FOUNDING.includedWorkspaces}</span>
+            <span>20</span>
+            <span>{SHARED_SLIDER_MAX}</span>
           </div>
-
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-text-muted">{t('slider.activeTierLabel')}:</span>
-            <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-accent-system/15 text-accent-system border border-accent-system/30">
-              {tTiers(`${activeTierLabel}.name`)}
-            </span>
-            {foundingWins && (
-              <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-[#F5A623]/15 text-[#F5A623] border border-[#F5A623]/30">
-                {t('slider.foundingWinsBadge')}
-              </span>
-            )}
-          </div>
+          <p className="mt-4 text-sm leading-relaxed text-[#a3adbd]">
+            {t('later', {
+              tier: tTiers(`${TIER_LABEL_KEY[laterTier]}.name`),
+              price: eur(later),
+            })}
+            {workspaces < laterCfg.minWorkspaces &&
+              ` ${t('laterMinimum', { min: laterCfg.minWorkspaces })}`}
+          </p>
         </div>
 
-        {/* Live totals column */}
         <div
-          className="rounded-xl border border-accent-system/20 bg-bg-elevated/60 px-5 py-4 md:min-w-[230px]"
+          className="rounded-xl bg-[#0a0d14] px-5 py-4 shadow-[0_0_0_1px_rgba(0,212,170,0.28)] md:min-w-[240px]"
           aria-live="polite"
           aria-atomic="true"
         >
-          <p className="text-[10px] uppercase tracking-wider text-text-muted font-mono mb-1">
-            {t('slider.totalLabel')}
+          <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-[#8f9aae]">
+            {t('totalLabel')}
           </p>
-          <p className="font-mono text-3xl font-bold text-text-primary leading-none">
+          <p className="font-mono text-3xl font-bold leading-none text-[#f4f7fb]">
             €
-            <CountUp
-              to={total}
-              locale={locale}
-              smoothUpdates
-              smoothUpdateDuration={0.35}
-              format={(n) => formatEur(Math.round(n), locale)}
-            />
-            <span className="text-text-muted text-sm font-normal align-baseline">{t('matrix.perMonth')}</span>
+            <CountUp to={founding} locale={locale} smoothUpdates smoothUpdateDuration={0.35} format={eur} />
+            <span className="align-baseline text-sm font-normal text-[#8f9aae]"> {t('perMonth')}</span>
           </p>
-          <p className="text-xs text-text-secondary mt-2">
-            <CountUp
-              to={credits}
-              locale={locale}
-              smoothUpdates
-              smoothUpdateDuration={0.35}
-              format={(n) => formatEur(Math.round(n), locale)}
-            />{' '}
-            {t('slider.creditsSuffix')}
-          </p>
+          <p className="mt-2 text-xs text-[#c4ccd8]">{t('perBrand', { price: eur(perBrand) })}</p>
         </div>
       </div>
     </div>
