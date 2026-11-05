@@ -187,7 +187,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <CTAButton
                 href="/apply"
                 size="lg"
-                className="w-full justify-center sm:w-auto sm:self-start"
+                className="w-full justify-center px-5 text-base sm:w-auto sm:self-start sm:px-8 sm:text-lg"
                 icon={<ArrowRight className="h-4 w-4" />}
               >
                 {t('founding.cta')}
@@ -385,7 +385,12 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             </h2>
             <p className={`${BODY} max-w-[56ch] text-[17px]`}>{t('cta.description')}</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-7 gap-y-4">
-              <CTAButton href="/apply" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+              <CTAButton
+                href="/apply"
+                size="lg"
+                className="px-5 text-base sm:px-8 sm:text-lg"
+                icon={<ArrowRight className="h-4 w-4" />}
+              >
                 {t('cta.primary')}
               </CTAButton>
             </div>
