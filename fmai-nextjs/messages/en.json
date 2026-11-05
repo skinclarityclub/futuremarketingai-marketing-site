@@ -4,7 +4,7 @@
     "backToTop": "Back to top"
   },
   "stickyCta": {
-    "label": "Book a call",
+    "label": "Request a call",
     "subLabel": "30 min with Daley",
     "dismiss": "Close mobile CTA bar",
     "srLandmark": "Quick action"
@@ -24,7 +24,7 @@
       "tagline": "Your agency's <accent>AI colleague</accent>.",
       "subtitle": "Knows every client's goals, sits in every screen of your dashboard and messages you on WhatsApp the moment something comes up. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics.",
       "trustAnchor": "Running in production at our first client. Ten founding seats in total.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "ctaSecondary": "Meet Clyde",
       "trustCluster": {
         "target": "Built for agencies",
@@ -41,7 +41,7 @@
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
-        "description": "Website chatbot that qualifies visitors and sends warm leads through a webhook to the CRM you already use."
+        "description": "Instagram comments and DMs with a keyword get a DM with the right link right away. Clyde writes the follow-up in the brand voice."
       },
       "emailManagement": {
         "title": "Email Management",
@@ -103,7 +103,7 @@
       "scarcityCallout": "{total} founding seats · Daley guides every start personally",
       "closingHeadline": "Does the left side match you?",
       "closingSubtext": "Then I'll tell you in 30 minutes whether we're a fit for your portfolio.",
-      "closingCta": "Book a call",
+      "closingCta": "Request a call",
       "fitTitle": "Who this works for",
       "fit1": "Agencies with 5 to 20 people and 5 to 20 brands that want each team member to handle more clients.",
       "fit2": "Marketing operators who work data-driven and treat content as a growth engine.",
@@ -179,7 +179,7 @@
           "clientHours": "2 hours per week, ongoing"
         }
       },
-      "ctaLabel": "Book a call",
+      "ctaLabel": "Request a call",
       "ctaHint": "Ten founding seats in total",
       "fullJourneyLink": "See the four weeks in detail"
     },
@@ -229,7 +229,7 @@
           "label": "Lock-in and data export",
           "diy": "Varies per tool",
           "bureau": "Data often stays with the agency",
-          "clyde": "Your data stays yours, 30 days to take everything with you"
+          "clyde": "Your data stays yours, export within 30 days after cancellation"
         }
       },
       "strengthLabels": {
@@ -324,7 +324,7 @@
           "desc": "For large agencies. No caps on skills and a dedicated contact person."
         }
       },
-      "ctaLink": "Book a call"
+      "ctaLink": "Request a call"
     },
     "pillars": {
       "title": "You stay in control. And you know where your data is.",
@@ -365,7 +365,7 @@
       "eyebrow": "Founding open · max {total} spots",
       "title": "Ten seats at most. Then founding closes.",
       "subtitle": "€997 per month, locked for life. A 30-minute call tells us if it fits.",
-      "button": "Book a call",
+      "button": "Request a call",
       "foundingLabel": "View Founding tier"
     },
     "faq": {
@@ -378,7 +378,7 @@
         },
         "q2": {
           "question": "What if I want to cancel?",
-          "answer": "You're not locked in. What Clyde knows about your clients is yours. After cancellation you have 30 days to take your data with you; after that we delete your workspaces. Your data sits on servers and in a database in the EU."
+          "answer": "You're not locked in. What Clyde knows about your clients is yours. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. Your data sits on servers and in a database in the EU."
         },
         "q3": {
           "question": "Why an application? Why no self-service?",
@@ -553,25 +553,6 @@
           "capabilities_3": "Book a discovery call"
         }
       }
-    },
-    "multi_platform": {
-      "title": "One colleague, several channels",
-      "subtitle": "On your website, in Instagram DMs and in the inbox for ManyChat conversations. Every lead lands in the same lead list.",
-      "brain_label": "Claude AI",
-      "platforms": {
-        "website": {
-          "name": "Website widget",
-          "behavior": "Embedded chat with the brand's knowledge base and lead capture."
-        },
-        "instagram": {
-          "name": "Instagram DMs",
-          "behavior": "Keyword replies with a link, and AI drafts in the brand voice."
-        },
-        "inbox": {
-          "name": "ManyChat inbox",
-          "behavior": "ManyChat conversations land in the same inbox."
-        }
-      }
     }
   },
   "common": {
@@ -621,7 +602,7 @@
           "privacy": "Privacy",
           "terms": "Terms",
           "cookies": "Cookies",
-          "apply": "Book a call",
+          "apply": "Request a call",
           "memory": "Memory system",
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
@@ -823,7 +804,7 @@
       "eyebrow": "Next step",
       "title": "Become a Founding Member",
       "description": "We are onboarding the first 10 Founding agencies at €997 per month. Lock in your lowest price and help shape the product.",
-      "demo_button": "Book a call"
+      "demo_button": "Request a call"
     },
     "icp": {
       "eyebrow": "Hybrid ICP",
@@ -858,7 +839,7 @@
       },
       "noLockIn": {
         "title": "No lock-in",
-        "body": "After cancellation you have 30 days to take your data with you; after that we delete it. No penalties and no exit fees."
+        "body": "After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. No penalties and no exit fees."
       }
     },
     "capacity": {
@@ -895,7 +876,7 @@
     "onboardingLabel": "One-time onboarding",
     "creditsLabel": "credits/mo",
     "workspacesLabel": "workspaces",
-    "applyCta": "Book a call",
+    "applyCta": "Request a call",
     "slider": {
       "eyebrow": "Live calculator",
       "label": "Number of workspaces",
@@ -1049,19 +1030,19 @@
         },
         "q7": {
           "question": "What exactly happens when I downgrade?",
-          "answer": "Downgrading takes effect at the next billing cycle. Your clients, their memory and your settings stay in place; from then on the caps of the lower tier apply. You cannot downgrade from Founding: doing so permanently forfeits the lifetime price."
+          "answer": "Downgrading takes effect at the next billing cycle. Your clients, their brand voice, the learned rules and your settings stay in place; from then on the caps and the retention period of the lower tier apply. You cannot downgrade from Founding: doing so permanently forfeits the lifetime price."
         },
         "q8": {
           "question": "Who owns the data and can I export it?",
-          "answer": "All data, brand voice profiles, content and reports, stays yours. After cancellation you have 30 days to take your data with you; after that we delete it. No lock-in, no renegotiation, no hidden exit fees."
+          "answer": "All data, brand voice profiles, content and reports, stays yours. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces. No lock-in, no renegotiation, no hidden exit fees."
         }
       }
     },
     "cta": {
       "eyebrow": "Ready?",
       "title": "Ready to start the partnership?",
-      "description": "Ten founding seats. Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
-      "primary": "Book a call"
+      "description": "Ten founding seats. Request a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
+      "primary": "Request a call"
     }
   },
   "alternatives": {
@@ -1125,9 +1106,9 @@
       "aicollegas": {
         "name": "aicollegas.nl",
         "what": "An agency from Nijmegen that builds custom AI agents for your own processes, with an offer for marketing agencies: onboarding, content, planning and reporting.",
-        "price": "Starts with an AI Impact Session of €1,495. Then a 12-month partnership: €4,500, €8,500 or €14,000 per month.",
+        "price": "A 12-month partnership: €4,500, €8,500 or €14,000 per month. Every partnership starts with a strategy month.",
         "agencies": "They build custom per organisation. You see your agents and usage in their own hub.",
-        "data": "AI tokens run on your own keys (BYOK), without storage, according to their pricing page.",
+        "data": "Hosting for your agents is included in every package. We did not find on their page where the data is stored.",
         "pickThem": "You want custom work for your own internal processes and have budget for a year-long project.",
         "pickClyde": "You want a product that already runs marketing per client, from €997 per month."
       }
@@ -1136,7 +1117,7 @@
     "cta": {
       "title": "Is Clyde a fit for your agency?",
       "body": "In a call we look together at whether Clyde fits, or whether one of the tools above suits your work better.",
-      "button": "Book a call"
+      "button": "Request a call"
     }
   },
   "how-it-works": {
@@ -1149,7 +1130,7 @@
       "badge": "Founding open · max {total} spots",
       "title": "How does your partnership with Clyde start?",
       "description": "Four weeks from first call to Clyde running live for your clients. No self-service. Daley personally guides every client through the process.",
-      "cta": "Book a call"
+      "cta": "Request a call"
     },
     "jsonLd": {
       "name": "How the FutureMarketingAI partnership starts",
@@ -1222,8 +1203,8 @@
     "cta": {
       "eyebrow": "Founding open · max {total} spots",
       "title": "Ready to start the partnership?",
-      "description": "Book a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
-      "button": "Book a call"
+      "description": "Request a call. We will see together whether Clyde fits your portfolio and which tier makes sense.",
+      "button": "Request a call"
     },
     "systemFlow": {
       "title": "From brand to published post",
@@ -1306,13 +1287,13 @@
       "eyebrow": "For partnerships",
       "title": "Want a call?",
       "body": "Are you a potential client? Fill in the application. Daley reads every request personally and replies within 3 business days.",
-      "button": "Book a call"
+      "button": "Request a call"
     },
     "finalCta": {
       "eyebrow": "Founding open · max {total} spots",
       "title": "Skip the form and apply directly?",
       "description": "No questions, but ready for a partnership conversation? Skip this contact form and go straight to the application.",
-      "button": "Book a call"
+      "button": "Request a call"
     }
   },
   "legal": {
@@ -1334,7 +1315,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Service description",
-            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers the services of Clyde, the AI colleague for agencies, with configurable skills. Available skills are: Social Media Manager (content calendar, captions and publishing on the connected channels), Blog Factory (SEO articles from keyword research to publication after approval), Ad Manager (creating ads and queuing them for Meta, with performance per ad), Lead Qualifier (website chatbot that scores leads and forwards them via a webhook), Email Management (classification of the Gmail or Outlook inbox, with draft replies), ManyChat DM (Instagram messages with keyword triggers and AI drafts), Reporting & Analytics (dashboards and reports per client), SEO / GEO Analyst (audits, search positions and mentions in AI answers), Research (market and competitor research with source citations) and Clyde himself, who directs these skills. The Voice Agent and the Reel Builder have been announced but are not yet available, and only become part of the service once they go live. All subscriptions include all skills; skills can be switched on or off per client workspace at any time."
+            "content": "FutureMarketingAI provides an Agent as a Service (AaaS) platform that delivers the services of Clyde, the AI colleague for agencies, with configurable skills. Available skills are: Social Media Manager (content calendar, captions and publishing on the connected channels), Blog Factory (SEO articles from keyword research to publication after approval), Ad Manager (creating ads and queuing them for Meta, with performance per ad), Lead Qualifier (answering Instagram comments and DMs that contain a keyword with a DM and a link, with leads in the lead list), Email Management (classification of the Gmail or Outlook inbox, with draft replies), ManyChat DM (Instagram messages with keyword triggers and AI drafts), Reporting & Analytics (dashboards and reports per client), SEO / GEO Analyst (audits, search positions and mentions in AI answers), Research (market and competitor research with source citations) and Clyde himself, who directs these skills. The Voice Agent and the Reel Builder have been announced but are not yet available, and only become part of the service once they go live. All subscriptions include all skills; skills can be switched on or off per client workspace at any time."
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
@@ -1354,7 +1335,7 @@
           },
           "termination": {
             "title": "6. Termination",
-            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, you have a 30 calendar-day export window, during which you can download all workspace data, content, reports and configurations. After the 30-day export period, all agency data, client workspace data and associated content will be permanently deleted from our systems and sub-processors. FutureMarketingAI may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
+            "content": "Either party may terminate the subscription with 30 days written notice. Upon termination, we send you an export of your data within 30 calendar days. After that, all agency data, client workspace data and associated content will be permanently deleted from our systems and sub-processors. FutureMarketingAI may terminate your account immediately for material breach of these terms, including non-payment exceeding 30 days."
           },
           "governing_law": {
             "title": "7. Governing law and disputes",
@@ -1392,7 +1373,7 @@
           },
           "data_retention": {
             "title": "6. Data retention",
-            "content": "Active accounts: data is retained for the duration of the service agreement, except where a shorter period is stated below.\nAfter termination: a 30-day export window is provided, after which all data is permanently deleted.\nClyde's memory and conversations: 6 months on Founding, 12 months on Growth and Professional, for as long as the account is active on Enterprise.\nChatbot conversations on client websites: anonymized after 30 days without the visitor's consent, deleted after 12 months with consent.\nInstagram messages: the text and the sender and recipient ids are erased after 90 days; only counts remain.\nCalendar data: up to 30 days after the appointment, and immediately when you disconnect the calendar.\nLeads and applications via the website: 24 months.\nInbox conversations: 24 months after the last message.\nVideo uploads that are not published: 24 hours.\nAnswers to the AI Readiness Scan: 12 months (see article 9).\nBilling records: retained in accordance with Dutch tax law (7 years).\nThe clean-up runs periodically, so data may remain for up to a month after the period has expired."
+            "content": "Active accounts: data is retained for the duration of the service agreement, except where a shorter period is stated below.\nAfter termination: within 30 days we send an export of the data, after which all data is permanently deleted.\nClyde's memory and conversations: 6 months on Founding, 12 months on Growth and Professional, for as long as the account is active on Enterprise.\nChatbot conversations on client websites: anonymized after 30 days without the visitor's consent, deleted after 12 months with consent.\nInstagram messages: the text and the sender and recipient ids are erased after 90 days; only counts remain.\nCalendar data: up to 30 days after the appointment, and immediately when you disconnect the calendar.\nLeads and applications via the website: 24 months.\nInbox conversations: 24 months after the last message.\nVideo uploads that are not published: 24 hours.\nAnswers to the AI Readiness Scan: 12 months (see article 9).\nBilling records: retained in accordance with Dutch tax law (7 years).\nThe clean-up runs periodically, so data may remain for up to a month after the period has expired."
           },
           "data_subject_rights": {
             "title": "7. Your rights",
@@ -1433,7 +1414,7 @@
         "content": "The information on this website is provided for general information purposes. Any reliance you place on this information is at your own risk."
       }
     },
-    "last_updated": "Last updated: October 25, 2026"
+    "last_updated": "Last updated: November 5, 2026"
   },
   "trust": {
     "meta": {
@@ -1515,7 +1496,7 @@
         "what": "Video uploads that are not published",
         "term": "Deleted after 24 hours."
       },
-      "exit": "If you cancel, you have 30 days to take your data with you. After that we delete it.",
+      "exit": "If you cancel, we send you an export of your data within 30 days. After that we delete your workspaces.",
       "more": "All periods, including those for Clyde's memory, Instagram messages and invoices, are in <link>article 6 of the privacy policy</link>."
     },
     "limits": {
@@ -1565,7 +1546,7 @@
       "eyebrow": "Skill 02. Voice Agent (coming soon)",
       "title": "Soon Clyde picks up the phone.",
       "subtitle": "What we are building: answering inbound calls, handling frequently asked questions, booking appointments and handing off to a human when the conversation calls for it. Not available yet.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Call the waitlist and book appointments for next week",
         "prompt2": "Answer inbound questions about delivery times",
@@ -1631,8 +1612,8 @@
     },
     "cta": {
       "title": "Interested in the Voice Agent?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "proof": {
       "title": "Try Clyde live",
@@ -1666,71 +1647,71 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot that scores and passes on leads | Clyde",
-      "description": "Clyde qualifies leads with an AI chatbot on your website: a score per lead and a webhook to the CRM you already use. 2 credits per scored lead."
+      "title": "From Instagram comment to lead, in the brand voice | Clyde",
+      "description": "Someone comments with a keyword and gets a DM right away. Clyde writes the follow-up in your client's brand voice, and you approve it."
     },
     "hero": {
       "eyebrow": "Skill 03. Lead Qualifier",
-      "title": "Clyde qualifies your website leads.",
-      "subtitle": "An embeddable AI chatbot on every brand's website. It runs the qualification conversation, scores the lead and passes it on via a webhook to the CRM you already use.",
-      "cta": "Book a call",
+      "title": "From Instagram comment to lead",
+      "subtitle": "When someone puts a keyword under a post or in a DM, Clyde sends a DM right away with the link that goes with it. He writes the follow-up in your client's brand voice, and you approve it.",
+      "cta": "Request a call",
       "prompts": {
-        "prompt1": "Qualify the leads from the past 24 hours",
-        "prompt2": "Which of this week's leads are hot?",
-        "prompt3": "Show me a sample of ten freshly arrived chats"
+        "prompt1": "Which DMs are waiting for my approval?",
+        "prompt2": "How many leads came in via Instagram this week?",
+        "prompt3": "Show me the last ten DM conversations"
       }
     },
     "features": {
       "title": "What Clyde does",
       "subtitle": "Four core functions of this skill.",
       "feature1": {
-        "title": "One chatbot per brand",
-        "body": "Styling, persona and knowledge base are set per brand."
+        "title": "Keyword to DM",
+        "body": "You set keywords per post or for all DMs. Whoever puts one in a comment or DM gets a DM right away with the link that goes with it."
       },
       "feature2": {
-        "title": "Automatic lead scoring",
-        "body": "Clyde gives every lead a score from 0 to 100 on profile, intent and conversation quality, with budget, timeline and decision-maker highlighted separately. You see the score in the lead dashboard."
+        "title": "The follow-up in the brand voice",
+        "body": "If someone then asks a question, Clyde writes the answer with that client's brand voice, products and links. If he does not know the answer, he hands the conversation over to you."
       },
       "feature3": {
-        "title": "Passing on via webhook",
-        "body": "Every lead goes to your CRM via a webhook. Failed deliveries show up so you can resend them."
+        "title": "You stay in control",
+        "body": "Every answer from Clyde first sits as a draft in the inbox. You approve it, edit it or let him answer on his own. In his first message he says he is AI."
       },
       "feature4": {
-        "title": "Reviewing conversations",
-        "body": "All conversations and leads per chatbot in one place and searchable. That way you see which questions keep coming back and you add to the knowledge base."
+        "title": "Leads in one list",
+        "body": "When someone fills in a form via the link from the DM, that lead appears in your lead list with Instagram as its source."
       }
     },
     "how": {
       "title": "How it works",
       "step1": {
-        "title": "Qualification criteria",
-        "body": "Agree with the brand which questions Clyde should ask: budget, timeline, problem, decision-maker."
+        "title": "Connect the account",
+        "body": "You connect your client's Instagram account in the app. Clyde works with the brand voice, products and links you set for that client."
       },
       "step2": {
-        "title": "Deploy the widget",
-        "body": "One embed tag on the website. Done. Clyde starts the conversation."
+        "title": "Keywords and links",
+        "body": "Per keyword you choose the DM and the link that goes with it, for example to an offer, a booking or a sign-up form."
       },
       "step3": {
-        "title": "Passing on leads",
-        "body": "Every lead gets a score and a label from cold to hot. Via the webhook it goes to your CRM, where you decide what sales picks up."
+        "title": "Approve and follow up",
+        "body": "Clyde sends the keyword DMs and prepares his own answers for you. Leads that come in via the link appear in your lead list."
       }
     },
     "integrations": {
       "title": "Works together with",
       "subtitle": "Via the shared memory per client.",
-      "integration1": "ManyChat DM: leads from Instagram DMs land in the same lead list.",
-      "integration2": "Knowledge base: persona and knowledge per brand, from your own site and documents.",
-      "integration3": "Lead dashboard: all leads with source and score in one place."
+      "integration1": "Knowledge base: the brand voice, products and links per client that Clyde bases his answers on.",
+      "integration2": "Inbox: all DM conversations and drafts per client in one place.",
+      "integration3": "Lead list: all leads with their source in one place."
     },
     "useCases": {
       "title": "Who this is for",
       "useCase1": {
-        "title": "B2B lead-gen sites",
-        "body": "SaaS, service agencies and consultancies. The chat qualifies leads and filters what goes to the sales team."
+        "title": "Brands that sell on Instagram",
+        "body": "Web shops, salons and coaches who post with 'comment INFO'. Clyde sends the link and keeps the conversation going in their own voice."
       },
       "useCase2": {
-        "title": "E-commerce: support plus sales",
-        "body": "Handle product questions and identify warm buyers for high-margin upsell calls."
+        "title": "Agencies with many client accounts",
+        "body": "Every client has its own keywords, links and brand voice. You see all DMs and leads per client."
       }
     },
     "allocation": {
@@ -1738,36 +1719,36 @@
       "subtitle": "What this skill costs per action, and how much is included in each tier."
     },
     "cta": {
-      "title": "Ready to hand lead qualification over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "title": "Ready to turn comments into leads?",
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "proof": {
       "title": "Live demo",
-      "subtitle": "Try below how the chatbot runs a conversation."
+      "subtitle": "Try below how Clyde holds a conversation in a brand's voice."
     },
     "faq": {
       "title": "Frequently asked questions about Lead Qualifier",
       "items": {
         "q1": {
           "question": "What does the Lead Qualifier skill do exactly?",
-          "answer": "Clyde places an AI chatbot on your website that greets visitors, asks qualifying questions and gives every lead a score on profile, intent and conversation quality. Leads go to your CRM via a webhook and appear in your lead dashboard."
+          "answer": "Clyde answers Instagram comments and DMs that contain a keyword with a DM and the link that goes with it, right away. He writes the follow-up in your client's brand voice, and leads that come in via the link appear in your lead list."
         },
         "q2": {
-          "question": "Which CRMs and channels does Lead Qualifier support?",
-          "answer": "Every lead goes via a webhook to the CRM you already use. Failed deliveries show up so you can resend them. Leads from Instagram DMs land in the same list."
+          "question": "Which channels does Lead Qualifier work on?",
+          "answer": "On Instagram: in comments under posts and in DMs. Every lead lands in the same lead list as your other leads."
         },
         "q3": {
           "question": "On which tiers is Lead Qualifier available?",
-          "answer": "Included on every tier, with fair use on conversation volume. A scored lead costs 2 credits."
+          "answer": "Included on every tier, with fair use on conversation volume."
         },
         "q4": {
           "question": "How does Lead Qualifier get started?",
-          "answer": "You set the qualification questions (budget, timeline, need, decision-maker), fill the knowledge base with your site and documents and place the script. Once the webhook is in place, every lead goes to your CRM."
+          "answer": "You connect your client's Instagram account, set the keywords and links and check the brand voice in the knowledge base. From then on Clyde sends the DMs and prepares his answers for you."
         },
         "q5": {
-          "question": "How does this differ from Intercom or Drift?",
-          "answer": "Intercom and Drift offer chat with human agents and rule-based bots. Clyde combines the qualification conversation and the scoring in one skill, with a persona and knowledge base per brand, and passes the lead on to your CRM."
+          "question": "How does this differ from a fixed DM flow?",
+          "answer": "A fixed flow sends the same messages every time. Clyde also sends the keyword DM, but writes the follow-up himself in your client's brand voice, with your approval, and hands the conversation over to you when he does not know the answer."
         }
       }
     }
@@ -1781,7 +1762,7 @@
       "eyebrow": "Skill 01. Social Media Manager",
       "title": "Clyde runs your social media.",
       "subtitle": "Captions in the brand voice, a content calendar per account, carousels in the house style and performance per post. Per account, per brand. One colleague for your entire client portfolio.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Plan the Instagram content for the three SKC accounts this week",
         "prompt2": "Draft 5 carousel posts about the winter routine",
@@ -1851,8 +1832,8 @@
     },
     "cta": {
       "title": "Ready to hand social media over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Social Media Manager",
@@ -1889,7 +1870,7 @@
       "eyebrow": "Skill 05. Ad Manager",
       "title": "Clyde creates your Meta ads and tracks them.",
       "subtitle": "Static ads and video ads: copy, visuals and multiple formats (Feed, Stories, Reels), queued for Meta Ads Manager. An ad only goes live after your approval. After that Clyde tracks every ad on conversions, ROAS and ad fatigue, in plain language.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Create 3 ad variants for the winter campaign",
         "prompt2": "Which ad has the highest ROAS?",
@@ -1955,8 +1936,8 @@
     },
     "cta": {
       "title": "Ready to hand your ads over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Ad Manager",
@@ -1993,7 +1974,7 @@
       "eyebrow": "Skill 06. Reporting and Analytics",
       "title": "Clyde reports every week.",
       "subtitle": "A weekly report per brand in your dashboard, the SEO report on WhatsApp every Friday, and a heads-up from Clyde as soon as a figure deviates sharply. No more manual Notion updates.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Generate the weekly performance digest for every brand",
         "prompt2": "Which metrics drifted more than 20% this week?",
@@ -2059,8 +2040,8 @@
     },
     "cta": {
       "title": "Ready to hand reporting over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Reporting and Analytics",
@@ -2179,8 +2160,8 @@
     },
     "cta": {
       "title": "Become one of the 10",
-      "subtitle": "Max {total} spots. Book a call. If it is a mutual fit, we reserve your spot.",
-      "button": "Book a call"
+      "subtitle": "Max {total} spots. Request a call. If it is a mutual fit, we reserve your spot.",
+      "button": "Request a call"
     },
     "eyebrows": {
       "pricing": "Pricing",
@@ -2193,7 +2174,7 @@
     },
     "quickApply": {
       "eyebrow": "Quick start",
-      "heading": "Book a call in 1 step",
+      "heading": "Request a call in 1 step",
       "subheading": "Drop your email and agency name. We will take you to the full application with your details prefilled.",
       "emailLabel": "Work email",
       "emailPlaceholder": "you@agency.com",
@@ -2267,7 +2248,7 @@
       "eyebrow": "A separate memory per client",
       "title": "Separated per client",
       "body1": "Clyde works for several agencies and their clients at the same time. Each client has its own workspace with its own memory: when Clyde works for client A, he retrieves client A's memory, not client B's. That way a brand voice does not jump over to another client.",
-      "body2": "Technically, every memory about a client is tied to that agency and that client in the database, and every lookup filters on them. After cancellation you have 30 days to take your data with you; after that we delete it."
+      "body2": "Technically, every memory about a client is tied to that agency and that client in the database, and every lookup filters on them. After cancellation we send you an export of your data within 30 days; after that we delete your workspaces."
     },
     "decay": {
       "eyebrow": "Day and night",
@@ -2334,7 +2315,7 @@
       "eyebrow": "Founding open · max {total} spots",
       "title": "Ready for a colleague who knows your clients?",
       "subtitle": "A 30-minute call. After that you know whether it fits your portfolio.",
-      "button": "Book a call"
+      "button": "Request a call"
     }
   },
   "roadmap": {
@@ -2367,18 +2348,18 @@
       "scarcityEyebrow": "Founding open · max {total} spots",
       "title": "Want to be first in line?",
       "subtitle": "Founding members get early access to both as they go live, plus a say in what we build next.",
-      "button": "Book a call"
+      "button": "Request a call"
     }
   },
   "apply": {
     "meta": {
-      "title": "Apply. Book a call with Daley | FutureMarketingAI",
+      "title": "Apply. Request a call with Daley | FutureMarketingAI",
       "description": "Apply for a conversation about FutureMarketingAI. Partnership with Clyde for marketing agencies. Ten founding seats."
     },
     "hero": {
       "eyebrow": "Application",
       "counter": "Max {total} Founding spots",
-      "title": "Book a call",
+      "title": "Request a call",
       "subtitle": "No self-service. No generic sign-up. Daley looks at every application himself and you'll hear from us within 3 business days. Even if it isn't a match."
     },
     "expectations": {
@@ -2652,8 +2633,8 @@
       },
       "cta": {
         "title": "Want this for your portfolio too?",
-        "subtitle": "Book a call. We will discuss how Clyde fits your brands and clients.",
-        "button": "Book a call"
+        "subtitle": "Request a call. We will discuss how Clyde fits your brands and clients.",
+        "button": "Request a call"
       },
       "rail": {
         "title": "The journey",
@@ -2693,7 +2674,7 @@
       "eyebrow": "Skill 04. Email Management",
       "title": "Clyde classifies your inbox.",
       "subtitle": "Not email campaigns: this is inbox classification for Gmail and Outlook. Clyde reads incoming emails, puts them in the categories you choose, gives every email an urgency and drafts replies. You start the day with an overview instead of chaos.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Summarize today’s most important emails",
         "prompt2": "Label all of this week's invoices",
@@ -2759,8 +2740,8 @@
     },
     "cta": {
       "title": "Ready to hand inbox classification over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Email Management",
@@ -2797,7 +2778,7 @@
       "eyebrow": "Skill 07. Research",
       "title": "Clyde does your market research.",
       "subtitle": "Trends in each brand's niche, competitor analysis and content ideas, with a source link for every insight so you can check it. In the weekly trend scan, findings with fewer than two sources are dropped.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Research the top-5 competitors in the hydration market",
         "prompt2": "What are this month’s trending topics in skincare?",
@@ -2863,8 +2844,8 @@
     },
     "cta": {
       "title": "Ready to hand research over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Research",
@@ -2918,7 +2899,7 @@
       "eyebrow": "Founding open · max {total} spots",
       "title": "One colleague, all skills under one roof",
       "description": "No separate tools, no ticketing per skill. One workspace per client, one 30-minute call to see whether it fits.",
-      "button": "Book a call",
+      "button": "Request a call",
       "secondaryLink": "See the full onboarding journey"
     }
   },
@@ -2931,7 +2912,7 @@
       "eyebrow": "Skill 08. Blog Factory",
       "title": "Clyde writes your SEO blogs.",
       "subtitle": "Keyword research, articles in the brand voice and an SEO check, published on the website after your approval. The length follows what already ranks for that search term. Blog Factory is live and still under active development.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Write an SEO article on serum for sensitive skin",
         "prompt2": "Build a topic cluster around hydration routines",
@@ -2997,8 +2978,8 @@
     },
     "cta": {
       "title": "Ready to hand blog production over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Blog Factory",
@@ -3039,7 +3020,7 @@
       "eyebrow": "Skill 09. SEO / GEO Analyst",
       "title": "Clyde monitors your SEO and AI citations.",
       "subtitle": "Technical SEO audits, position tracking and Core Web Vitals. Plus GEO: how often is your brand cited by ChatGPT, Perplexity and Google AI Overviews? The new search layer runs on AI. Clyde keeps you visible there.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Run a technical SEO audit on the main domains",
         "prompt2": "Track how often our brand is cited by ChatGPT and Perplexity",
@@ -3105,8 +3086,8 @@
     },
     "cta": {
       "title": "Ready to hand SEO over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about SEO and GEO Analyst",
@@ -3147,7 +3128,7 @@
       "eyebrow": "Skill 10. Clyde, the AI colleague",
       "title": "This is Clyde. Your agency's AI colleague.",
       "subtitle": "The other skills are specialized executors. Clyde is the colleague who puts them to work and who looks along in every screen of your dashboard. Give commands in plain language; Clyde picks the right skill and brings the results back. Reachable in the dashboard, in the web app on your home screen and on WhatsApp.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Plan this week for the three SKC accounts",
         "prompt2": "Build a weekly report on the top performing posts",
@@ -3213,8 +3194,8 @@
     },
     "cta": {
       "title": "Ready to put Clyde on your team as a colleague?",
-      "subtitle": "Book a call. We will discuss how Clyde fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how Clyde fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Clyde",
@@ -3251,7 +3232,7 @@
       "eyebrow": "Skill 11. ManyChat DM",
       "title": "Clyde handles Instagram DMs.",
       "subtitle": "A keyword (\"INFO\", \"PRICE\") in a comment, DM or story reply sends the answer you set, with the link, within about a minute. For other messages Clyde writes a draft, and anyone who responds lands in your lead list.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Auto-answer DMs containing the keyword delivery time",
         "prompt2": "Forward warm DM leads to our sales page",
@@ -3271,7 +3252,7 @@
       },
       "feature3": {
         "title": "Lead capture",
-        "body": "Anyone who responds lands in your lead list, next to the leads from your website chatbot."
+        "body": "Anyone who responds lands in your lead list, next to your other leads."
       },
       "feature4": {
         "title": "Every reply logged",
@@ -3317,8 +3298,8 @@
     },
     "cta": {
       "title": "Ready to hand Instagram DMs over to Clyde?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about ManyChat DM",
@@ -3355,7 +3336,7 @@
       "eyebrow": "Skill 12. Reel Builder (coming soon)",
       "title": "Soon Clyde makes your Reels.",
       "subtitle": "What we are building: short vertical videos (9:16) with AI scripts, captions that run in sync and background music, for Instagram and LinkedIn. Not available yet.",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "prompts": {
         "prompt1": "Build a 30-second Reel about the morning ritual",
         "prompt2": "Write a Reel script for the product launch",
@@ -3421,8 +3402,8 @@
     },
     "cta": {
       "title": "Interested in the Reel Builder?",
-      "subtitle": "Book a call. We will discuss how this skill fits your brands.",
-      "button": "Book a call"
+      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
+      "button": "Request a call"
     },
     "faq": {
       "title": "Frequently asked questions about Reel Builder",
@@ -3452,7 +3433,7 @@
   },
   "nav": {
     "login": "Log in",
-    "apply": "Book a call",
+    "apply": "Request a call",
     "assessment": "Take the AI scan"
   },
   "header": {
@@ -3489,7 +3470,7 @@
           },
           "leadQualifier": {
             "title": "Lead Qualifier",
-            "description": "Website chatbot with lead scoring"
+            "description": "From Instagram comment to lead"
           },
           "emailManagement": {
             "title": "Email Management",
@@ -3537,7 +3518,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Book a call"
+      "applySubtitle": "Request a call"
     },
     "megaMenu": {
       "tagline": "10 live, 2 coming soon",
@@ -3819,7 +3800,7 @@
         "eyebrow": "Apply with this scan",
         "title": "Apply based on this scan?",
         "body": "We skip 5 questions and use your profile directly.",
-        "button": "Book a call"
+        "button": "Request a call"
       },
       "footerHint": "Request the full report for your 4-week roadmap and skill breakdown."
     },
@@ -3855,8 +3836,8 @@
     "finalCta": {
       "eyebrow": "Founding open · max {total} spots",
       "title": "Rather skip the scan?",
-      "description": "Not everyone wants a scan first. Skip it and book a 30-minute call with Daley.",
-      "button": "Book a call"
+      "description": "Not everyone wants a scan first. Skip it and request a 30-minute call with Daley.",
+      "button": "Request a call"
     }
   },
   "leadMagnet": {
@@ -3957,7 +3938,7 @@
       "proof": "Proof",
       "related": "Pairs with",
       "faq": "FAQ",
-      "cta": "Book a call",
+      "cta": "Request a call",
       "kennisbank": "Further reading"
     },
     "promptHero": {

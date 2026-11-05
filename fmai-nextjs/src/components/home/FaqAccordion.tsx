@@ -37,7 +37,12 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               />
             </Accordion.Trigger>
           </Accordion.Header>
-          <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+          {/* forceMount keeps closed answers in the server HTML: without it Radix
+              never mounts them, so crawlers saw questions only (site audit tech-01). */}
+          <Accordion.Content
+            forceMount
+            className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:hidden"
+          >
             <div className="px-6 pb-5 pt-1 text-text-secondary leading-relaxed">
               {answer}
             </div>

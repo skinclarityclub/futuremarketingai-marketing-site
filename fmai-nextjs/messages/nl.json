@@ -4,7 +4,7 @@
     "backToTop": "Terug naar boven"
   },
   "stickyCta": {
-    "label": "Plan een gesprek",
+    "label": "Vraag een gesprek aan",
     "subLabel": "30 min met Daley",
     "dismiss": "Sluit mobiele CTA-balk",
     "srLandmark": "Snelle actie"
@@ -24,7 +24,7 @@
       "tagline": "De <accent>AI-collega</accent> van je bureau.",
       "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
       "trustAnchor": "Draait in productie bij onze eerste klant. Tien founding-plekken in totaal.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "ctaSecondary": "Leer Clyde kennen",
       "trustCluster": {
         "target": "Gebouwd voor bureaus",
@@ -40,7 +40,7 @@
         "meerkade_mark": "Mondzorg Meerkade"
       },
       "cta": {
-        "primary": "Plan een gesprek",
+        "primary": "Vraag een gesprek aan",
         "secondary": "Zie Clyde aan het werk"
       },
       "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
@@ -53,7 +53,7 @@
         "desktop": "Dashboard, telefoon en WhatsApp. Niets gaat live zonder akkoord van jou en je klant.",
         "mobile": "Jij stuurt, Clyde doet het werk, je klant keurt goed."
       },
-      "sceneDescription": "In de kalender van Nova Digital staan de posts van vijf klanten voor de week van 9 november, op Instagram, LinkedIn, TikTok, Facebook en X. Mondzorg Meerkade keurt een LinkedIn-post goed op de eigen telefoon. Dagspa Luwte keurt een reel goed voor TikTok, Instagram en Facebook. Krijt & Staal keurt een Instagram-story goed. Daarna komt het weekrapport van Luwte als PDF in WhatsApp.",
+      "sceneDescription": "In de kalender van Nova Digital staan de posts van vijf klanten voor de week van 9 november, op Instagram, LinkedIn, Facebook en X. Mondzorg Meerkade keurt een LinkedIn-post goed op de eigen telefoon. Dagspa Luwte keurt een reel goed voor Instagram en Facebook. Krijt & Staal keurt een Instagram-story goed. Daarna komt het weekrapport van Luwte als PDF in WhatsApp.",
       "screens": {
         "n1": "Jij stuurt",
         "n10": "19:00",
@@ -73,7 +73,7 @@
         "n23": "LinkedIn-post goedgekeurd",
         "n24": "staat gepland voor wo 08:30",
         "n25": "Reel goedgekeurd",
-        "n26": "gepland op TikTok, Instagram en Facebook",
+        "n26": "gepland op Instagram en Facebook",
         "n27": "Story goedgekeurd",
         "n28": "Instagram, gepland voor vr 17:00",
         "n29": "Weekrapport gestuurd",
@@ -87,7 +87,7 @@
         "n36": "Wijzigen",
         "n37": "Goedgekeurd",
         "n38": "Dagspa Luwte",
-        "n39": "TikTok-video · wo 19:00",
+        "n39": "Instagram-reel · wo 19:00",
         "n4": "08:30",
         "n40": "Vijftig minuten even niets. Daarna thee.",
         "n41": "#dagspa #evenniets #rust",
@@ -123,7 +123,7 @@
       },
       "leadQualifier": {
         "title": "Lead Qualifier",
-        "description": "Chatbot op de website die bezoekers kwalificeert en warme leads via een webhook doorzet naar het CRM dat je al gebruikt."
+        "description": "Instagram-reacties en DM's met een trefwoord krijgen meteen een DM met de juiste link. Het vervolg schrijft Clyde in de merkstem."
       },
       "emailManagement": {
         "title": "Email Management",
@@ -185,7 +185,7 @@
       "scarcityCallout": "{total} founding-plekken · Daley begeleidt elke start persoonlijk",
       "closingHeadline": "Klopt het verhaal links?",
       "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
-      "closingCta": "Plan een gesprek",
+      "closingCta": "Vraag een gesprek aan",
       "fitTitle": "Voor wie dit werkt",
       "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
@@ -261,7 +261,7 @@
           "clientHours": "2 uur per week, doorlopend"
         }
       },
-      "ctaLabel": "Plan een gesprek",
+      "ctaLabel": "Vraag een gesprek aan",
       "ctaHint": "Tien founding-plekken in totaal",
       "fullJourneyLink": "Bekijk de vier weken in detail"
     },
@@ -311,7 +311,7 @@
           "label": "Lock-in en data-export",
           "diy": "Per tool verschillend",
           "bureau": "Data vaak bij bureau",
-          "clyde": "Data blijft van jou, 30 dagen om alles mee te nemen"
+          "clyde": "Data blijft van jou, export binnen 30 dagen na opzegging"
         }
       },
       "strengthLabels": {
@@ -406,7 +406,7 @@
           "desc": "Voor grote bureaus. Geen caps op vaardigheden en een vaste contactpersoon."
         }
       },
-      "ctaLink": "Plan een gesprek"
+      "ctaLink": "Vraag een gesprek aan"
     },
     "pillars": {
       "title": "Jij houdt de controle. En je weet waar je data staat.",
@@ -447,7 +447,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Maximaal tien plekken. Daarna sluit founding.",
       "subtitle": "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past.",
-      "button": "Plan een gesprek",
+      "button": "Vraag een gesprek aan",
       "foundingLabel": "Bekijk Founding tier"
     },
     "faq": {
@@ -460,7 +460,7 @@
         },
         "q2": {
           "question": "Wat als ik wil opzeggen?",
-          "answer": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes. Je data staat op servers en in een database in de EU."
+          "answer": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Je data staat op servers en in een database in de EU."
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
@@ -1108,7 +1108,7 @@
         "n6": "Ja. Reageert iemand op Instagram met het trefwoord van je klant, dan stuurt Clyde automatisch een DM met de link. Per klant zie je hoeveel mensen het trefwoord gebruikten, de DM kregen en een aanvraag stuurden.",
         "n7": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daarna twee uur per week.",
         "n8": "Founding kost €997 per maand voor vijftien klantmerken, dus onder €67 per klantmerk. Daarboven betaal je €299 per extra klantmerk.",
-        "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we je werkruimtes."
+        "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
       },
       "links": {
         "n1": "ChatGPT vs Jasper vs Semrush: en waar past Clyde?",
@@ -1251,25 +1251,6 @@
           "capabilities_3": "Kennismakingsgesprek plannen"
         }
       }
-    },
-    "multi_platform": {
-      "title": "Eén collega, meerdere kanalen",
-      "subtitle": "Op je website, in Instagram-DM's en in de inbox voor ManyChat-gesprekken. Elke lead komt in dezelfde leadlijst.",
-      "brain_label": "Claude AI",
-      "platforms": {
-        "website": {
-          "name": "Website-widget",
-          "behavior": "Ingebedde chat met de kennisbank van het merk en lead-capture."
-        },
-        "instagram": {
-          "name": "Instagram-DM's",
-          "behavior": "Keyword-antwoorden met een link, en AI-concepten in de merkstem."
-        },
-        "inbox": {
-          "name": "ManyChat-inbox",
-          "behavior": "Gesprekken uit ManyChat komen in dezelfde inbox."
-        }
-      }
     }
   },
   "common": {
@@ -1319,7 +1300,7 @@
           "privacy": "Privacy",
           "terms": "Voorwaarden",
           "cookies": "Cookies",
-          "apply": "Plan een gesprek",
+          "apply": "Vraag een gesprek aan",
           "memory": "Geheugensysteem",
           "caseStudies": "Case studies",
           "blog_factory": "Blog Factory",
@@ -1521,7 +1502,7 @@
       "eyebrow": "Volgende stap",
       "title": "Word Founding Member",
       "description": "We zetten de eerste 10 Founding-bureaus op voor €997 per maand. Vergrendel je laagste prijs en help het product vormgeven.",
-      "demo_button": "Plan een gesprek"
+      "demo_button": "Vraag een gesprek aan"
     },
     "icp": {
       "eyebrow": "Hybride ICP",
@@ -1556,7 +1537,7 @@
       },
       "noLockIn": {
         "title": "Geen lock-in",
-        "body": "Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen boetes en geen exit-fees."
+        "body": "Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Geen boetes en geen exit-fees."
       }
     },
     "capacity": {
@@ -1593,7 +1574,7 @@
     "onboardingLabel": "Eenmalige onboarding",
     "creditsLabel": "credits/mnd",
     "workspacesLabel": "werkruimtes",
-    "applyCta": "Plan een gesprek",
+    "applyCta": "Vraag een gesprek aan",
     "slider": {
       "eyebrow": "Live calculator",
       "label": "Aantal werkruimtes",
@@ -1747,19 +1728,19 @@
         },
         "q7": {
           "question": "Wat gebeurt er precies als ik downgrade?",
-          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun geheugen en je instellingen blijven staan; vanaf dan gelden de caps van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
+          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun merkstem, de geleerde regels en je instellingen blijven staan; vanaf dan gelden de caps en de bewaartermijn van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
         },
         "q8": {
           "question": "Van wie is de data en kan ik die exporteren?",
-          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
+          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
         }
       }
     },
     "cta": {
       "eyebrow": "Klaar?",
       "title": "Klaar om de partnership te starten?",
-      "description": "Tien founding-plekken. Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "primary": "Plan een gesprek"
+      "description": "Tien founding-plekken. Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "primary": "Vraag een gesprek aan"
     }
   },
   "alternatives": {
@@ -1823,9 +1804,9 @@
       "aicollegas": {
         "name": "aicollegas.nl",
         "what": "Een bureau uit Nijmegen dat AI-agents op maat bouwt voor je eigen processen, met een aanbod voor marketingbureaus: onboarding, content, planning en rapportage.",
-        "price": "Start met een AI Impact Sessie van €1.495. Daarna een partnership van 12 maanden: €4.500, €8.500 of €14.000 per maand.",
+        "price": "Een partnership van 12 maanden: €4.500, €8.500 of €14.000 per maand. Elk partnership start met een strategiemaand.",
         "agencies": "Ze bouwen per organisatie op maat. Je agents en het verbruik zie je in hun eigen hub.",
-        "data": "AI-tokens lopen via je eigen sleutels (BYOK), zonder opslag, volgens hun prijspagina.",
+        "data": "Hosting van je agents zit in elk pakket. Waar de data staat, vonden we niet op hun pagina.",
         "pickThem": "Je maatwerk wilt voor je eigen interne processen en budget hebt voor een traject van een jaar.",
         "pickClyde": "Je een product wilt dat al draait voor marketing per klant, vanaf €997 per maand."
       }
@@ -1834,7 +1815,7 @@
     "cta": {
       "title": "Past Clyde bij je bureau?",
       "body": "In een gesprek kijken we samen of Clyde past, of dat een van de tools hierboven beter bij je werk past.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "how-it-works": {
@@ -1847,7 +1828,7 @@
       "badge": "Founding open · maximaal {total} plekken",
       "title": "Hoe begint jouw partnership met Clyde?",
       "description": "Vier weken van eerste gesprek tot Clyde live draait voor je klanten. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
-      "cta": "Plan een gesprek"
+      "cta": "Vraag een gesprek aan"
     },
     "jsonLd": {
       "name": "Hoe de FutureMarketingAI-partnership start",
@@ -1920,8 +1901,8 @@
     "cta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Klaar om de partnership te starten?",
-      "description": "Plan een gesprek. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "button": "Plan een gesprek"
+      "description": "Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
+      "button": "Vraag een gesprek aan"
     },
     "systemFlow": {
       "title": "Van merk naar gepubliceerde post",
@@ -2004,13 +1985,13 @@
       "eyebrow": "Voor partnerships",
       "title": "Wil je een gesprek?",
       "body": "Ben je een potentiële klant? Vul het aanmeldformulier in. Ik lees elke aanvraag persoonlijk en antwoord binnen 3 werkdagen.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     },
     "finalCta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct naar de aanmelding?",
       "description": "Geen vragen, maar wel klaar voor een gesprek over partnership? Sla het bericht over en ga direct naar de aanmelding.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "legal": {
@@ -2032,7 +2013,7 @@
         "subsections": {
           "service_description": {
             "title": "1. Beschrijving van de dienst",
-            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat de diensten van Clyde, de AI-collega voor bureaus, levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Social Media Manager (contentkalender, captions en publicatie op de gekoppelde kanalen), Blog Factory (SEO-artikelen van zoekwoordonderzoek tot publicatie na goedkeuring), Ad Manager (advertenties maken en klaarzetten voor Meta, met prestaties per advertentie), Lead Qualifier (website-chatbot die leads scoort en via een webhook doorstuurt), Email Management (classificatie van de Gmail- of Outlook-inbox, met conceptantwoorden), ManyChat DM (Instagram-berichten met keywordtriggers en AI-concepten), Reporting & Analytics (dashboards en rapporten per klant), SEO / GEO Analyst (audits, zoekposities en vermeldingen in AI-antwoorden), Research (markt- en concurrentieonderzoek met bronvermelding) en Clyde zelf, die deze vaardigheden aanstuurt. De Voice Agent en de Reel Builder zijn aangekondigd, maar nog niet beschikbaar en vallen pas onder de dienst zodra zij live gaan. Alle abonnementen bevatten alle vaardigheden; per klantwerkruimte kunnen vaardigheden op elk moment worden aan- of uitgezet."
+            "content": "FutureMarketingAI biedt een Agent as a Service (AaaS)-platform dat de diensten van Clyde, de AI-collega voor bureaus, levert met instelbare vaardigheden. Beschikbare vaardigheden zijn: Social Media Manager (contentkalender, captions en publicatie op de gekoppelde kanalen), Blog Factory (SEO-artikelen van zoekwoordonderzoek tot publicatie na goedkeuring), Ad Manager (advertenties maken en klaarzetten voor Meta, met prestaties per advertentie), Lead Qualifier (Instagram-reacties en DM's met een trefwoord beantwoorden met een DM en een link, met leads in de leadlijst), Email Management (classificatie van de Gmail- of Outlook-inbox, met conceptantwoorden), ManyChat DM (Instagram-berichten met keywordtriggers en AI-concepten), Reporting & Analytics (dashboards en rapporten per klant), SEO / GEO Analyst (audits, zoekposities en vermeldingen in AI-antwoorden), Research (markt- en concurrentieonderzoek met bronvermelding) en Clyde zelf, die deze vaardigheden aanstuurt. De Voice Agent en de Reel Builder zijn aangekondigd, maar nog niet beschikbaar en vallen pas onder de dienst zodra zij live gaan. Alle abonnementen bevatten alle vaardigheden; per klantwerkruimte kunnen vaardigheden op elk moment worden aan- of uitgezet."
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
@@ -2052,7 +2033,7 @@
           },
           "termination": {
             "title": "6. Beëindiging",
-            "content": "Beide partijen kunnen het abonnement beëindigen met 30 dagen schriftelijke opzegtermijn. Na beëindiging heeft u een exportperiode van 30 kalenderdagen, waarin u alle workspace-gegevens, content, rapporten en configuraties kunt downloaden. Na de exportperiode van 30 dagen worden alle bureaugegevens, klantworkspace-gegevens en bijbehorende content permanent verwijderd uit onze systemen en sub-verwerkers. FutureMarketingAI kan uw account onmiddellijk beëindigen bij wezenlijke schending van deze voorwaarden, inclusief wanbetaling van meer dan 30 dagen."
+            "content": "Beide partijen kunnen het abonnement beëindigen met 30 dagen schriftelijke opzegtermijn. Na beëindiging sturen wij u binnen 30 kalenderdagen een export van uw gegevens. Daarna worden alle bureaugegevens, klantworkspace-gegevens en bijbehorende content permanent verwijderd uit onze systemen en sub-verwerkers. FutureMarketingAI kan uw account onmiddellijk beëindigen bij wezenlijke schending van deze voorwaarden, inclusief wanbetaling van meer dan 30 dagen."
           },
           "governing_law": {
             "title": "7. Toepasselijk recht en geschillen",
@@ -2090,7 +2071,7 @@
           },
           "data_retention": {
             "title": "6. Bewaartermijnen",
-            "content": "Actieve accounts: gegevens worden bewaard voor de duur van de serviceovereenkomst, behalve waar hieronder een kortere termijn staat.\nNa beëindiging: een exportperiode van 30 dagen wordt geboden, waarna alle gegevens permanent worden verwijderd.\nGeheugen en gesprekken van Clyde: bij Founding 6 maanden, bij Growth en Professional 12 maanden, bij Enterprise zolang het account actief is.\nChatbotgesprekken op websites van klanten: zonder toestemming van de bezoeker na 30 dagen geanonimiseerd, met toestemming na 12 maanden verwijderd.\nInstagram-berichten: de tekst en de id's van afzender en ontvanger worden na 90 dagen gewist; alleen tellingen blijven over.\nAgendagegevens: tot 30 dagen na de afspraak, en direct bij het ontkoppelen van de agenda.\nLeads en aanvragen via de website: 24 maanden.\nInboxgesprekken: 24 maanden na het laatste bericht.\nVideo-uploads die niet gepubliceerd worden: 24 uur.\nAntwoorden op de AI Readiness Scan: 12 maanden (zie artikel 9).\nFactuurgegevens: bewaard conform Nederlandse belastingwetgeving (7 jaar).\nDe opschoning draait periodiek, waardoor gegevens tot een maand na het verstrijken van de termijn kunnen blijven staan."
+            "content": "Actieve accounts: gegevens worden bewaard voor de duur van de serviceovereenkomst, behalve waar hieronder een kortere termijn staat.\nNa beëindiging: binnen 30 dagen sturen wij een export van de gegevens, waarna alle gegevens permanent worden verwijderd.\nGeheugen en gesprekken van Clyde: bij Founding 6 maanden, bij Growth en Professional 12 maanden, bij Enterprise zolang het account actief is.\nChatbotgesprekken op websites van klanten: zonder toestemming van de bezoeker na 30 dagen geanonimiseerd, met toestemming na 12 maanden verwijderd.\nInstagram-berichten: de tekst en de id's van afzender en ontvanger worden na 90 dagen gewist; alleen tellingen blijven over.\nAgendagegevens: tot 30 dagen na de afspraak, en direct bij het ontkoppelen van de agenda.\nLeads en aanvragen via de website: 24 maanden.\nInboxgesprekken: 24 maanden na het laatste bericht.\nVideo-uploads die niet gepubliceerd worden: 24 uur.\nAntwoorden op de AI Readiness Scan: 12 maanden (zie artikel 9).\nFactuurgegevens: bewaard conform Nederlandse belastingwetgeving (7 jaar).\nDe opschoning draait periodiek, waardoor gegevens tot een maand na het verstrijken van de termijn kunnen blijven staan."
           },
           "data_subject_rights": {
             "title": "7. Uw rechten",
@@ -2131,7 +2112,7 @@
         "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat u in deze informatie stelt is op eigen risico."
       }
     },
-    "last_updated": "Laatst bijgewerkt: 25 oktober 2026"
+    "last_updated": "Laatst bijgewerkt: 5 november 2026"
   },
   "trust": {
     "meta": {
@@ -2213,7 +2194,7 @@
         "what": "Video-uploads die niet gepubliceerd worden",
         "term": "Na 24 uur verwijderd."
       },
-      "exit": "Zeg je op, dan heb je 30 dagen om je gegevens mee te nemen. Daarna verwijderen we ze.",
+      "exit": "Zeg je op, dan sturen we je binnen 30 dagen een export van je gegevens. Daarna verwijderen we je werkruimtes.",
       "more": "Alle termijnen, ook die voor het geheugen van Clyde, Instagram-berichten en facturen, staan in <link>artikel 6 van de privacyverklaring</link>."
     },
     "limits": {
@@ -2263,7 +2244,7 @@
       "eyebrow": "Vaardigheid 02. Voice Agent (binnenkort)",
       "title": "Binnenkort neemt Clyde de telefoon op.",
       "subtitle": "Waar we aan bouwen: inkomende gesprekken beantwoorden, veelgestelde vragen afhandelen, afspraken boeken en doorschakelen naar een mens wanneer het gesprek daarom vraagt. Nog niet beschikbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Bel de wachtlijst en boek afspraken voor volgende week",
         "prompt2": "Beantwoord inkomende vragen over de levertijd",
@@ -2329,8 +2310,8 @@
     },
     "cta": {
       "title": "Interesse in de Voice Agent?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "proof": {
       "title": "Probeer Clyde live",
@@ -2364,71 +2345,71 @@
   },
   "skills-lead-qualifier": {
     "meta": {
-      "title": "Lead Qualifier. Chatbot die leads scoort en doorzet | Clyde",
-      "description": "Clyde kwalificeert leads met een AI-chatbot op je website: een score per lead en een webhook naar het CRM dat je al gebruikt. 2 credits per gescoorde lead."
+      "title": "Van Instagram-reactie naar lead, in de merkstem | Clyde",
+      "description": "Iemand reageert met een trefwoord en krijgt meteen een DM. Clyde schrijft het vervolg in de merkstem van je klant en jij keurt het goed."
     },
     "hero": {
       "eyebrow": "Vaardigheid 03. Lead Qualifier",
-      "title": "Clyde kwalificeert je website-leads.",
-      "subtitle": "Een insluitbare AI-chatbot op de website van elk merk. Voert het kwalificatiegesprek, scoort de lead en zet hem via een webhook door naar het CRM dat je al gebruikt.",
-      "cta": "Plan een gesprek",
+      "title": "Van Instagram-reactie naar lead",
+      "subtitle": "Zet iemand een trefwoord onder een post of in een DM, dan stuurt Clyde meteen een DM met de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en jij keurt het goed.",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
-        "prompt1": "Kwalificeer de leads van de afgelopen 24 uur",
-        "prompt2": "Welke leads van deze week zijn heet?",
-        "prompt3": "Geef me een sample van tien net binnengekomen chats"
+        "prompt1": "Welke DM's wachten op mijn akkoord?",
+        "prompt2": "Hoeveel leads kwamen deze week via Instagram binnen?",
+        "prompt3": "Laat de laatste tien DM-gesprekken zien"
       }
     },
     "features": {
       "title": "Wat Clyde doet",
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
-        "title": "Een chatbot per merk",
-        "body": "Stijl, persona en kennisbasis stel je per merk in."
+        "title": "Trefwoord naar DM",
+        "body": "Je legt trefwoorden vast, per post of voor alle DM's. Wie zo'n woord in een reactie of DM zet, krijgt meteen een DM met de link die erbij hoort."
       },
       "feature2": {
-        "title": "Automatische lead scoring",
-        "body": "Clyde geeft elke lead een score van 0 tot 100 op profiel, intentie en gesprekskwaliteit, met budget, tijdlijn en beslisser apart uitgelicht. Je ziet de score in het leaddashboard."
+        "title": "Het vervolg in de merkstem",
+        "body": "Stelt iemand daarna een vraag, dan schrijft Clyde het antwoord met de merkstem, producten en links van die klant. Weet hij het antwoord niet, dan draagt hij het gesprek aan jou over."
       },
       "feature3": {
-        "title": "Doorzetten via webhook",
-        "body": "Elke lead gaat via een webhook naar je CRM. Mislukte leveringen zie je terug en verstuur je opnieuw."
+        "title": "Jij houdt de regie",
+        "body": "Elk antwoord van Clyde staat eerst als concept in de inbox. Jij keurt het goed, past het aan of laat hem zelf antwoorden. Bij zijn eerste bericht zegt hij dat hij AI is."
       },
       "feature4": {
-        "title": "Gesprekken terugzien",
-        "body": "Alle gesprekken en leads per chatbot op één plek en doorzoekbaar. Zo zie je welke vragen vaak terugkomen en vul je de kennisbank aan."
+        "title": "Leads in één lijst",
+        "body": "Vult iemand via de link uit de DM een formulier in, dan staat die lead in je leadlijst, met Instagram als bron."
       }
     },
     "how": {
       "title": "Hoe het werkt",
       "step1": {
-        "title": "Kwalificatiecriteria",
-        "body": "Leg met het merk vast welke vragen Clyde moet stellen: budget, tijdlijn, probleem, beslisser."
+        "title": "Account koppelen",
+        "body": "Je koppelt het Instagram-account van je klant in de app. Clyde werkt met de merkstem, producten en links die je voor die klant hebt vastgelegd."
       },
       "step2": {
-        "title": "Widget plaatsen",
-        "body": "Eén insluit-tag op de website. Klaar. Clyde begint het gesprek."
+        "title": "Trefwoorden en links",
+        "body": "Per trefwoord kies je de DM en de link die erbij hoort, bijvoorbeeld naar een aanbod, een afspraak of een aanmeldformulier."
       },
       "step3": {
-        "title": "Leads doorzetten",
-        "body": "Elke lead krijgt een score en een label van koud tot heet. Via de webhook gaat hij naar je CRM, waar jij bepaalt wat sales oppakt."
+        "title": "Goedkeuren en opvolgen",
+        "body": "Clyde stuurt de trefwoord-DM's en zet zijn eigen antwoorden voor je klaar. Leads die via de link binnenkomen, staan in je leadlijst."
       }
     },
     "integrations": {
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "ManyChat DM: leads uit Instagram-DM's komen in dezelfde leadlijst.",
-      "integration2": "Kennisbank: persona en kennis per merk, uit je eigen site en documenten.",
-      "integration3": "Leaddashboard: alle leads met bron en score op één plek."
+      "integration1": "Kennisbank: de merkstem, producten en links per klant, waar Clyde zijn antwoorden op baseert.",
+      "integration2": "Inbox: alle DM-gesprekken en concepten per klant op één plek.",
+      "integration3": "Leadlijst: alle leads met hun bron op één plek."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
-        "title": "B2B-leadgen-sites",
-        "body": "SaaS, dienstverlenende bureaus en consultancies. De chat kwalificeert leads en filtert wat naar het sales-team gaat."
+        "title": "Merken die op Instagram verkopen",
+        "body": "Webshops, salons en coaches die posten met 'reageer met INFO'. Clyde stuurt de link en houdt het gesprek gaande in hun eigen stem."
       },
       "useCase2": {
-        "title": "E-commerce: support plus sales",
-        "body": "Productvragen afhandelen en warme kopers identificeren voor upsell-gesprekken met hoge marge."
+        "title": "Bureaus met veel klantaccounts",
+        "body": "Elke klant heeft eigen trefwoorden, links en merkstem. Jij ziet alle DM's en leads per klant terug."
       }
     },
     "allocation": {
@@ -2436,36 +2417,36 @@
       "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
     },
     "cta": {
-      "title": "Klaar om leadkwalificatie aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "title": "Klaar om van reacties leads te maken?",
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "proof": {
       "title": "Live demo",
-      "subtitle": "Probeer hieronder hoe de chatbot een gesprek voert."
+      "subtitle": "Probeer hieronder hoe Clyde een gesprek voert in de stem van een merk."
     },
     "faq": {
       "title": "Veelgestelde vragen over Lead Qualifier",
       "items": {
         "q1": {
           "question": "Wat doet de Lead Qualifier-vaardigheid precies?",
-          "answer": "Clyde plaatst een AI-chatbot op je website die bezoekers begroet, kwalificerende vragen stelt en elke lead een score geeft op profiel, intentie en gesprekskwaliteit. Leads gaan via een webhook naar je CRM en staan in je leaddashboard."
+          "answer": "Clyde beantwoordt Instagram-reacties en DM's met een trefwoord meteen met een DM en de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en leads die via de link binnenkomen staan in je leadlijst."
         },
         "q2": {
-          "question": "Welke CRM's en kanalen ondersteunt Lead Qualifier?",
-          "answer": "Elke lead gaat via een webhook naar het CRM dat je al gebruikt. Mislukte leveringen zie je terug en verstuur je opnieuw. Leads uit Instagram-DM's komen in dezelfde lijst."
+          "question": "Op welke kanalen werkt Lead Qualifier?",
+          "answer": "Op Instagram: in reacties onder posts en in DM's. Elke lead komt in dezelfde leadlijst als je andere leads."
         },
         "q3": {
           "question": "Op welke tiers is Lead Qualifier beschikbaar?",
-          "answer": "Inbegrepen op elke tier, met fair-use op gespreksvolume. Een gescoorde lead kost 2 credits."
+          "answer": "Inbegrepen op elke tier, met fair-use op gespreksvolume."
         },
         "q4": {
           "question": "Hoe start Lead Qualifier?",
-          "answer": "Je legt de kwalificatievragen vast (budget, tijdlijn, behoefte, beslisser), vult de kennisbank met je site en documenten en plaatst het script. Zodra de webhook staat, gaat elke lead naar je CRM."
+          "answer": "Je koppelt het Instagram-account van je klant, legt de trefwoorden en links vast en controleert de merkstem in de kennisbank. Vanaf dan stuurt Clyde de DM's en zet hij zijn antwoorden voor je klaar."
         },
         "q5": {
-          "question": "Hoe verschilt dit van Intercom of Drift?",
-          "answer": "Intercom en Drift bieden chat met menselijke agents en losse bots. Clyde combineert het kwalificatiegesprek en de scoring in één vaardigheid, met een persona en kennisbank per merk, en zet de lead door naar je CRM."
+          "question": "Hoe verschilt dit van een vaste DM-flow?",
+          "answer": "Een vaste flow stuurt steeds dezelfde berichten. Clyde stuurt ook de trefwoord-DM, maar schrijft het vervolg zelf in de merkstem van je klant, met jouw akkoord, en draagt het gesprek aan je over als hij het antwoord niet weet."
         }
       }
     }
@@ -2479,7 +2460,7 @@
       "eyebrow": "Vaardigheid 01. Social Media Manager",
       "title": "Clyde verzorgt je social media.",
       "subtitle": "Captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Per account, per merk. Eén collega voor je hele klantportfolio.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Plan de Instagram-content voor de drie SKC-accounts deze week",
         "prompt2": "Maak 5 carrouselposts over de winter-routine",
@@ -2549,8 +2530,8 @@
     },
     "cta": {
       "title": "Klaar om social media aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Social Media Manager",
@@ -2587,7 +2568,7 @@
       "eyebrow": "Vaardigheid 05. Ad Manager",
       "title": "Clyde maakt je Meta-ads en volgt ze.",
       "subtitle": "Statische ads en video-ads: copy, visuals en meerdere formaten (Feed, Stories, Reels), klaargezet voor Meta Ads Manager. Live gaat een advertentie pas na jouw akkoord. Daarna volgt Clyde elke advertentie op conversies, ROAS en ad-fatigue, in klare taal.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Maak 3 ad-varianten voor de winter-campagne",
         "prompt2": "Welke advertentie heeft de hoogste ROAS?",
@@ -2653,8 +2634,8 @@
     },
     "cta": {
       "title": "Klaar om je ads aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Ad Manager",
@@ -2691,7 +2672,7 @@
       "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
       "title": "Clyde rapporteert elke week.",
       "subtitle": "Een weekrapport per merk in je dashboard, elke vrijdag het SEO-rapport op WhatsApp, en een seintje van Clyde zodra een cijfer sterk afwijkt. Geen handmatige Notion-updates meer.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Genereer de wekelijkse performance-digest voor alle merken",
         "prompt2": "Welke metrics wijken deze week meer dan 20% af?",
@@ -2757,8 +2738,8 @@
     },
     "cta": {
       "title": "Klaar om rapportages aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Rapportage en Analytics",
@@ -2877,8 +2858,8 @@
     },
     "cta": {
       "title": "Word een van de 10",
-      "subtitle": "Maximaal {total} plekken. Plan een gesprek. Als het wederzijds past, reserveer ik je plek.",
-      "button": "Plan een gesprek"
+      "subtitle": "Maximaal {total} plekken. Vraag een gesprek aan. Als het wederzijds past, reserveer ik je plek.",
+      "button": "Vraag een gesprek aan"
     },
     "eyebrows": {
       "pricing": "Prijs",
@@ -2891,7 +2872,7 @@
     },
     "quickApply": {
       "eyebrow": "Snelle start",
-      "heading": "Plan een gesprek in 1 stap",
+      "heading": "Vraag een gesprek aan in 1 stap",
       "subheading": "Vul je e-mail en bureau-naam in. We brengen je naar het volledige aanvraagformulier met je gegevens al ingevuld.",
       "emailLabel": "Werk e-mail",
       "emailPlaceholder": "jij@bureau.nl",
@@ -2965,7 +2946,7 @@
       "eyebrow": "Eigen geheugen per klant",
       "title": "Gescheiden per klant",
       "body1": "Clyde werkt voor meerdere bureaus en hun klanten tegelijk. Elke klant heeft een eigen werkruimte met een eigen geheugen: werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Zo springt een merkstem niet over naar een andere klant.",
-      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging heb je 30 dagen om je gegevens mee te nemen; daarna verwijderen we ze."
+      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
     },
     "decay": {
       "eyebrow": "Dag en nacht",
@@ -3032,7 +3013,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Klaar voor een collega die je klanten kent?",
       "subtitle": "Een gesprek van 30 minuten. Daarna weet je of het past bij jouw portfolio.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "roadmap": {
@@ -3065,18 +3046,18 @@
       "scarcityEyebrow": "Founding open · maximaal {total} plekken",
       "title": "Wil je als eerste meedraaien?",
       "subtitle": "Founding-leden krijgen early access op allebei zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
-      "button": "Plan een gesprek"
+      "button": "Vraag een gesprek aan"
     }
   },
   "apply": {
     "meta": {
-      "title": "Aanmelden. Plan een gesprek met Daley | FutureMarketingAI",
+      "title": "Aanmelden. Vraag een gesprek aan bij Daley | FutureMarketingAI",
       "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Tien founding-plekken."
     },
     "hero": {
       "eyebrow": "Aanvraag",
       "counter": "Maximaal {total} Founding-plekken",
-      "title": "Plan een gesprek",
+      "title": "Vraag een gesprek aan",
       "subtitle": "Geen zelfbediening. Geen generieke aanmelding. Daley kijkt zelf naar elke aanvraag en je hoort binnen 3 werkdagen van ons. Ook als het geen match is."
     },
     "expectations": {
@@ -3350,8 +3331,8 @@
       },
       "cta": {
         "title": "Wil je dit ook voor jouw portfolio?",
-        "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
-        "button": "Plan een gesprek"
+        "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
+        "button": "Vraag een gesprek aan"
       },
       "rail": {
         "title": "De reis",
@@ -3391,7 +3372,7 @@
       "eyebrow": "Vaardigheid 04. Email Management",
       "title": "Clyde classificeert je inbox.",
       "subtitle": "Geen mailcampagnes: dit is inbox-classificatie voor Gmail en Outlook. Clyde leest inkomende mails, zet ze in de categorieën die jij kiest, geeft elke mail een urgentie en schrijft conceptantwoorden. Je begint je dag met overzicht in plaats van chaos.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Vat de belangrijkste e-mails van vandaag samen",
         "prompt2": "Label alle facturen van deze week",
@@ -3457,8 +3438,8 @@
     },
     "cta": {
       "title": "Klaar om inbox-classificatie aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Email Management",
@@ -3495,7 +3476,7 @@
       "eyebrow": "Vaardigheid 07. Research",
       "title": "Clyde doet jouw marktonderzoek.",
       "subtitle": "Trends in de niche van elk merk, concurrentie-analyse en content-ideeën, met een bronlink bij elk inzicht zodat jij het kunt nalezen. In de wekelijkse trendscan vallen bevindingen met minder dan twee bronnen af.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Onderzoek de top-5 concurrenten in de hydratatie-markt",
         "prompt2": "Wat zijn de trending topics in skincare deze maand?",
@@ -3561,8 +3542,8 @@
     },
     "cta": {
       "title": "Klaar om research aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Research",
@@ -3616,7 +3597,7 @@
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Eén collega, alle vaardigheden bij elkaar",
       "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per klant, één gesprek van 30 minuten om te kijken of het past.",
-      "button": "Plan een gesprek",
+      "button": "Vraag een gesprek aan",
       "secondaryLink": "Bekijk de volledige onboardingreis"
     }
   },
@@ -3629,7 +3610,7 @@
       "eyebrow": "Vaardigheid 08. Blog Factory",
       "title": "Clyde schrijft je SEO-blogs.",
       "subtitle": "Zoekwoord-onderzoek, artikelen in de merkstem en een SEO-check, en na jouw goedkeuring gepubliceerd op de website. De lengte volgt wat er voor die zoekterm al rankt. Blog Factory is live en blijft in doorontwikkeling.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Schrijf een SEO-artikel over serum voor de gevoelige huid",
         "prompt2": "Bouw een topic cluster rond hydratatieroutines",
@@ -3695,8 +3676,8 @@
     },
     "cta": {
       "title": "Klaar om blogproductie aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Blog Factory",
@@ -3737,7 +3718,7 @@
       "eyebrow": "Vaardigheid 09. SEO / GEO Analyst",
       "title": "Clyde monitort je SEO én AI-citaties.",
       "subtitle": "Technische SEO-audits, posities bijhouden en Core Web Vitals. Plus GEO: hoe vaak wordt jouw merk geciteerd door ChatGPT, Perplexity en Google AI Overviews? De nieuwe zoeklaag draait op AI. Clyde houdt je daar zichtbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Voer een technische SEO-audit uit op de hoofddomeinen",
         "prompt2": "Track hoe vaak ons merk wordt geciteerd in ChatGPT en Perplexity",
@@ -3803,8 +3784,8 @@
     },
     "cta": {
       "title": "Klaar om SEO aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over SEO en GEO Analyst",
@@ -3845,7 +3826,7 @@
       "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
       "title": "Dit is Clyde. De AI-collega van je bureau.",
       "subtitle": "De andere vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, in de web-app op je beginscherm en op WhatsApp.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Plan deze week voor de drie SKC-accounts",
         "prompt2": "Maak een wekelijks rapport over de top presterende posts",
@@ -3911,8 +3892,8 @@
     },
     "cta": {
       "title": "Klaar om Clyde als collega in je team te zetten?",
-      "subtitle": "Plan een gesprek. We bespreken hoe Clyde past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Clyde",
@@ -3949,7 +3930,7 @@
       "eyebrow": "Vaardigheid 11. ManyChat DM",
       "title": "Clyde handelt Instagram-DM's af.",
       "subtitle": "Een keyword (\"INFO\", \"PRIJS\") in een reactie, DM of story-reactie stuurt binnen ongeveer een minuut het antwoord dat jij vastlegt, met de link erbij. Voor andere berichten schrijft Clyde een concept, en wie reageert komt in je leadlijst.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Beantwoord DM's met het keyword levertijd automatisch",
         "prompt2": "Stuur warme leads via DM door naar onze sales-pagina",
@@ -3969,7 +3950,7 @@
       },
       "feature3": {
         "title": "Lead capture",
-        "body": "Wie reageert, komt in je leadlijst, naast de leads uit je website-chatbot."
+        "body": "Wie reageert, komt in je leadlijst, naast je andere leads."
       },
       "feature4": {
         "title": "Elk antwoord gelogd",
@@ -4015,8 +3996,8 @@
     },
     "cta": {
       "title": "Klaar om Instagram-DM's aan Clyde over te dragen?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over ManyChat DM",
@@ -4053,7 +4034,7 @@
       "eyebrow": "Vaardigheid 12. Reel Builder (binnenkort)",
       "title": "Binnenkort maakt Clyde je Reels.",
       "subtitle": "Waar we aan bouwen: korte verticale video's (9:16) met AI-scripts, captions die synchroon lopen en achtergrondmuziek, voor Instagram en LinkedIn. Nog niet beschikbaar.",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Maak een 30-seconden Reel over het ochtendritueel",
         "prompt2": "Schrijf een Reel-script voor de productlancering",
@@ -4119,8 +4100,8 @@
     },
     "cta": {
       "title": "Interesse in de Reel Builder?",
-      "subtitle": "Plan een gesprek. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Plan een gesprek"
+      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
+      "button": "Vraag een gesprek aan"
     },
     "faq": {
       "title": "Veelgestelde vragen over Reel Builder",
@@ -4150,7 +4131,7 @@
   },
   "nav": {
     "login": "Inloggen",
-    "apply": "Plan een gesprek",
+    "apply": "Vraag een gesprek aan",
     "assessment": "Doe de AI-Scan"
   },
   "header": {
@@ -4187,7 +4168,7 @@
           },
           "leadQualifier": {
             "title": "Lead Qualifier",
-            "description": "Website-chatbot met leadscoring"
+            "description": "Van Instagram-reactie naar lead"
           },
           "emailManagement": {
             "title": "Email Management",
@@ -4235,7 +4216,7 @@
     },
     "cta": {
       "applyTitle": "Apply",
-      "applySubtitle": "Plan een gesprek"
+      "applySubtitle": "Vraag een gesprek aan"
     },
     "megaMenu": {
       "tagline": "10 live, 2 binnenkort",
@@ -4517,7 +4498,7 @@
         "eyebrow": "Aanvragen met deze scan",
         "title": "Aanvragen op basis van deze scan?",
         "body": "We slaan 5 vragen over en gebruiken je profiel direct.",
-        "button": "Plan een gesprek"
+        "button": "Vraag een gesprek aan"
       },
       "footerHint": "Vraag het volledige rapport aan voor je 4-week roadmap en uitleg per vaardigheid."
     },
@@ -4553,8 +4534,8 @@
     "finalCta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Liever direct praten?",
-      "description": "Niet iedereen wil eerst een scan. Sla 'm over en plan een gesprek van 30 minuten met Daley.",
-      "button": "Plan een gesprek"
+      "description": "Niet iedereen wil eerst een scan. Sla 'm over en vraag een gesprek van 30 minuten met Daley aan.",
+      "button": "Vraag een gesprek aan"
     }
   },
   "leadMagnet": {
@@ -4655,7 +4636,7 @@
       "proof": "Bewijs",
       "related": "Combineert met",
       "faq": "FAQ",
-      "cta": "Plan een gesprek",
+      "cta": "Vraag een gesprek aan",
       "kennisbank": "Verder lezen"
     },
     "promptHero": {

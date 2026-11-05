@@ -6,7 +6,7 @@
  * to public/. Audit B-5 flagged that OrganizationJsonLd.logo + every social-share card
  * 404s because those files do not exist on disk.
  *
- * HOW: Render branded SVG to PNG via sharp. Sharp ships transitively with next 16,
+ * HOW: Render branded SVG to PNG: OG cards via Playwright Chromium (site fonts), logo via sharp,
  * so no new dependency. Reproducible, deterministic — re-runnable any time the
  * brand visual language shifts.
  *
@@ -15,6 +15,7 @@
  */
 
 import sharp from 'sharp'
+import { chromium } from 'playwright'
 import { writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
@@ -66,7 +67,19 @@ function synapseGroup(scale = 1, ox = 0, oy = 0) {
 
 // ---------- og-image.png (1200x630) ----------
 
-const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
+// One card per locale: the subhead names Clyde the way the site does (site audit
+// critic gap 1: the old card said "Jouw AI Marketing Medewerker" on every page,
+// in Dutch on /en too).
+const OG_CARDS = {
+  nl: { file: 'og-image.png', sub: 'De AI-collega van je bureau', tag: 'Voor marketingbureaus' },
+  en: { file: 'og-image-en.png', sub: "Your agency's AI colleague", tag: 'For marketing agencies' },
+  es: { file: 'og-image-es.png', sub: 'El compañero de IA de tu agencia', tag: 'Para agencias de marketing' },
+}
+
+const OG_FONTS_CSS =
+  'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@500&display=block'
+
+const ogSvg = (sub, tag) => `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -108,7 +121,7 @@ const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
         font-family="DM Sans, Inter, -apple-system, sans-serif"
         font-size="46"
         font-weight="500"
-        fill="${COLORS.textPrimary}">Jouw AI Marketing Medewerker</text>
+        fill="${COLORS.textPrimary}">${sub.replace("'", '&#39;')}</text>
 
   <!-- Bottom-right tagline -->
   <text x="1136" y="566"
@@ -116,7 +129,7 @@ const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
         font-family="DM Sans, Inter, -apple-system, sans-serif"
         font-size="26"
         font-weight="400"
-        fill="${COLORS.textSecondary}">Voor Nederlandse bureaus</text>
+        fill="${COLORS.textSecondary}">${tag}</text>
 
   <!-- Accent gradient line -->
   <rect x="0" y="628" width="1200" height="2" fill="url(#accentLine)" />
@@ -132,11 +145,32 @@ const logoSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>`
 
 async function generate() {
-  // og-image.png
-  const ogPng = await sharp(Buffer.from(ogSvg))
-    .png({ compressionLevel: 9 })
-    .toBuffer()
-  await writeFile(resolve(PUBLIC_DIR, 'og-image.png'), ogPng)
+  // og-image.png (nl) + og-image-en.png + og-image-es.png
+  // Rendered in Chromium with the site's own fonts: sharp/librsvg only sees
+  // system fonts, so DM Sans fell back to a serif/mono mix (seen 2026-11-05).
+  const browser = await chromium.launch()
+  try {
+    const page = await browser.newPage({ viewport: { width: 1200, height: 630 } })
+    for (const { file, sub, tag } of Object.values(OG_CARDS)) {
+      const svg = ogSvg(sub, tag)
+      await page.setContent(
+        `<!doctype html><html><head><link rel="stylesheet" href="${OG_FONTS_CSS}"><style>html,body{margin:0;background:${COLORS.bgDeep}}</style></head><body>${svg.slice(svg.indexOf('<svg'))}</body></html>`,
+        { waitUntil: 'networkidle' }
+      )
+      await page.evaluate(() => document.fonts.ready)
+      const loaded = await page.evaluate(
+        () => document.fonts.check('700 180px "DM Sans"') && document.fonts.check('500 32px "JetBrains Mono"')
+      )
+      if (!loaded) throw new Error(`${file}: DM Sans / JetBrains Mono did not load from Google Fonts`)
+      const shot = await page.screenshot({ clip: { x: 0, y: 0, width: 1200, height: 630 } })
+      const png = await sharp(shot).png({ compressionLevel: 9 }).toBuffer()
+      await writeFile(resolve(PUBLIC_DIR, file), png)
+      const meta = await sharp(png).metadata()
+      console.log(`${file.padEnd(17)} ${meta.width}x${meta.height}  ${(png.length / 1024).toFixed(1)} KB`)
+    }
+  } finally {
+    await browser.close()
+  }
 
   // logo.png with transparent background
   const logoPng = await sharp(Buffer.from(logoSvg))
@@ -145,11 +179,7 @@ async function generate() {
   await writeFile(resolve(PUBLIC_DIR, 'logo.png'), logoPng)
 
   // Report
-  const ogMeta = await sharp(resolve(PUBLIC_DIR, 'og-image.png')).metadata()
   const logoMeta = await sharp(resolve(PUBLIC_DIR, 'logo.png')).metadata()
-  console.log(
-    `og-image.png  ${ogMeta.width}x${ogMeta.height}  ${(ogPng.length / 1024).toFixed(1)} KB`
-  )
   console.log(
     `logo.png      ${logoMeta.width}x${logoMeta.height}  ${(logoPng.length / 1024).toFixed(1)} KB`
   )

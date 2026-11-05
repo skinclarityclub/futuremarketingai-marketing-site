@@ -127,7 +127,7 @@ export function WorkspaceSlider({ workspaces, setWorkspaces, locale }: Workspace
               smoothUpdateDuration={0.35}
               format={(n) => formatEur(Math.round(n), locale)}
             />
-            <span className="text-text-muted text-sm font-normal align-baseline">/mo</span>
+            <span className="text-text-muted text-sm font-normal align-baseline">{t('matrix.perMonth')}</span>
           </p>
           <p className="text-xs text-text-secondary mt-2">
             <CountUp

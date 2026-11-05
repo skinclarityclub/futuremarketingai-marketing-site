@@ -30,7 +30,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Ad Manager](https://future-marketing.ai/nl/skills/ad-manager): Static and video ads prepared for Meta, live only after approval, then followed per ad on conversions, ROAS and ad fatigue. Live.
 - [Reel Builder](https://future-marketing.ai/nl/skills/reel-builder): Short vertical videos with script, captions and music. Coming soon.
 - [Voice Agent](https://future-marketing.ai/nl/skills/voice-agent): AI phone calls for appointments, questions and handover to a person. Coming soon.
-- [Lead Qualifier](https://future-marketing.ai/nl/skills/lead-qualifier): Website chatbot that scores leads and sends them to your CRM via a webhook. Live.
+- [Lead Qualifier](https://future-marketing.ai/nl/skills/lead-qualifier): Instagram comments and DMs with a keyword get a DM with the matching link; Clyde writes the follow-up in the brand voice for approval, and leads from the link land in the lead list. Live.
 - [Email Management](https://future-marketing.ai/nl/skills/email-management): Gmail and Outlook inbox classification with labels and draft replies sent after approval. Live.
 - [ManyChat DM](https://future-marketing.ai/nl/skills/manychat): Instagram DMs, comments and story replies with keyword triggers, AI drafts in the brand voice and lead capture. Live.
 - [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): A weekly report per brand, a dashboard per client refreshed daily, and an alert on strong deviations. Live.

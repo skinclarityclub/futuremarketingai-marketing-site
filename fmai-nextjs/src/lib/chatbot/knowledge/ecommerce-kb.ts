@@ -98,7 +98,7 @@ The agency's client sees and reviews their own content, adds photos and videos t
 Part of the onboarding of that client: workspace, brand voice, channels and the strategy session.
 
 **After Cancellation**
-After cancelling, you have 30 days to take your data with you; after that it is deleted.`,
+After cancelling, we send you an export of your data within 30 days; after that your workspaces are deleted.`,
  keywords: [
  'client',
  'workspace',

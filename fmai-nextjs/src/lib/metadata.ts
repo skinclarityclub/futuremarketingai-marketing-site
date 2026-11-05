@@ -17,7 +17,10 @@ export const OG_LOCALE_MAP: Record<string, string> = {
   es: 'es_ES',
 }
 
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
+// One share card per locale (scripts/generate-brand-assets.mjs); nl keeps the
+// original file name because ArticleJsonLd and old shares point at it.
+const defaultOgImage = (locale: string) =>
+  `${SITE_URL}/${locale === 'en' || locale === 'es' ? `og-image-${locale}.png` : 'og-image.png'}`
 
 export async function generatePageMetadata({
   locale,
@@ -61,7 +64,7 @@ export async function generatePageMetadata({
       siteName: SITE_NAME,
       locale: ogLocale,
       type: 'website',
-      images: [{ url: ogImage ?? DEFAULT_OG_IMAGE }],
+      images: [{ url: ogImage ?? defaultOgImage(locale) }],
     },
     twitter: {
       card: 'summary_large_image',
