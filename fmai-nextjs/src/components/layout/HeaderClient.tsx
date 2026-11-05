@@ -111,10 +111,10 @@ const NAV_ITEMS = [
   {
     key: 'pricing',
     kind: 'dropdown',
-    matchPaths: ['/pricing', '/founding-member'],
+    matchPaths: ['/pricing'],
     children: [
       { key: 'pricing', href: '/pricing', icon: Tag },
-      { key: 'foundingMember', href: '/founding-member', icon: Crown, accent: true },
+      { key: 'foundingMember', href: '/pricing#founding', icon: Crown, accent: true },
     ],
   },
 ] as const

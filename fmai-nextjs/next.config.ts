@@ -207,6 +207,19 @@ const nextConfig: NextConfig = {
         destination: '/:locale/skills/ad-manager',
         statusCode: 301,
       },
+      // Golf 5b (2026-11-06): /founding-member went into /pricing as its #founding
+      // block. Same intent, a handful of impressions, and one wrong FAQ answer
+      // (siteplan keuze 8a); the 301 also catches mails that link to the old page.
+      {
+        source: '/:locale/founding-member',
+        destination: '/:locale/pricing#founding',
+        statusCode: 301,
+      },
+      {
+        source: '/founding-member',
+        destination: '/nl/pricing#founding',
+        statusCode: 301,
+      },
       // Merged into the pillar on 2026-10-01: both pages answered "ai medewerker"
       // with the same definition (keyword map, docs/audits/2026-10-01-kennisbank-inventaris.md
       // Deel F3). The article only exists in nl, so every locale and the pre-June

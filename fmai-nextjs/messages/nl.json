@@ -1344,7 +1344,6 @@
       "how_it_works": "Hoe het werkt",
       "pricing": "Prijzen",
       "alternatives": "Alternatieven",
-      "founding_member": "Founding Member",
       "contact": "Contact",
       "memory": "Geheugen",
       "apply": "Aanmelden",
@@ -1557,126 +1556,139 @@
   },
   "pricing": {
     "meta": {
-      "title": "Prijzen: Founding €997 per maand | FutureMarketingAI",
-      "description": "Founding €997 levenslang voor de eerste 10 bureaus. Daarna per werkruimte: Growth €499, Pro €399, Enterprise €299. Geen lock-in."
+      "title": "Prijzen van Clyde: €997 per maand | FutureMarketingAI",
+      "description": "Wat kost Clyde? Als founding partner €997 per maand met 10 klantmerken inbegrepen, €299 per extra en €0 onboarding. Plus de latere tarieven."
     },
     "hero": {
-      "eyebrow": "Tarieven & vaardigheden",
-      "title": "Premium partnerships. Founding €997 levenslang.",
-      "description": "Alle prijzen staan zichtbaar. Founding €997 levenslang voor de eerste 10 bureaus. Daarna een lineair tarief per werkruimte: Growth €499, Professional €399, Enterprise €299. Caps per vaardigheid eerlijk uitgelegd, geen verborgen kosten, geen \"neem contact op voor prijs\".",
-      "counter": "Maximaal {total} Founding-plekken"
+      "eyebrow": "Prijzen",
+      "title": "Wat kost Clyde?",
+      "lead": "Clyde kost €{price} per maand als founding partner, met {included} klantmerken inbegrepen en €{extra} per extra klantmerk. Dat is het aanbod van nu. Zijn de {spots} founding-plekken bezet, dan gelden de tarieven per klantmerk verderop op deze pagina.",
+      "checked": "Prijzen gecontroleerd op {date}."
     },
-    "visibility": {
-      "eyebrow": "Filosofie",
-      "title": "Waarom onze prijzen zichtbaar zijn",
-      "body": "Bij premium AI-partners zien we vaak \"neem contact op voor prijs\". Dat ondermijnt de relatie voordat die begint. Wij laten liever zien wat Clyde kost, wat je krijgt en welke caps er zijn. Zo kun je zelf inschatten of de investering past. Geen salesdans nodig."
+    "founding": {
+      "eyebrow": "Founding",
+      "title": "Het aanbod van nu: founding partner",
+      "sub": "Voor de eerste {spots} bureaus: één vast bedrag per maand, tot en met {included} klantmerken.",
+      "perMonth": "per maand",
+      "list": {
+        "n1": "{included} klantmerken inbegrepen, €{extra} per extra klantmerk",
+        "n2": "€0 onboarding: Daley begeleidt de start van vier weken zelf",
+        "n3": "{credits} credits per maand",
+        "n4": "Een directe WhatsApp-lijn met Daley",
+        "n5": "Het tarief blijft vast zolang je klant blijft"
+      },
+      "definition": "Een werkruimte is één klantmerk.",
+      "whyTitle": "Waarom maar {spots} plekken?",
+      "why": "Daley begeleidt elke start zelf, vier weken lang, en hoort zo rechtstreeks wat de eerste bureaus nodig hebben. Dat bepaalt wat er daarna gebouwd wordt. Dat werkt met {spots} bureaus, niet met honderd.",
+      "after": "Zijn de {spots} plekken bezet, dan sluit Founding, zonder heropening. Als founding partner houd je €{price} per maand zolang je klant blijft.",
+      "cta": "Vraag een gesprek aan"
     },
-    "onboardingLabel": "Eenmalige onboarding",
-    "creditsLabel": "credits/mnd",
-    "workspacesLabel": "werkruimtes",
-    "applyCta": "Vraag een gesprek aan",
-    "slider": {
-      "eyebrow": "Live calculator",
-      "label": "Aantal werkruimtes",
-      "unitLabel": "{count, plural, one {werkruimte} other {werkruimtes}}",
-      "activeTierLabel": "Beste tier",
-      "foundingWinsBadge": "Founding goedkoper",
-      "totalLabel": "Maandtotaal",
-      "creditsSuffix": "credits per maand"
+    "included": {
+      "eyebrow": "Wat erin zit",
+      "title": "Wat je krijgt, in elk pakket",
+      "sub": "Elk pakket heeft hetzelfde product en alle live vaardigheden. Alleen het aantal per maand van de zwaardere vaardigheden verschilt.",
+      "items": {
+        "n1": {
+          "title": "Voor jou",
+          "body": "Elke ochtend één overzicht van wat je aandacht nodig heeft, over al je klanten heen. De ochtendbriefing staat ook in je WhatsApp."
+        },
+        "n2": {
+          "title": "Een stopmoment",
+          "body": "Niets gaat live zonder jouw akkoord. Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat."
+        },
+        "n3": {
+          "title": "Een portaal op naam van je bureau",
+          "body": "Je klant ziet jouw naam, logo en kleuren, en keurt zelf goed op de telefoon."
+        },
+        "n4": {
+          "title": "Elke week een rapport per klant",
+          "body": "Clyde zet de week van elke klant op een rij, zoals de boekingen tegen het doel."
+        },
+        "n5": {
+          "title": "Een directe WhatsApp-lijn met Daley",
+          "body": "Vragen en hulp, zonder ticketsysteem ertussen."
+        },
+        "n6": {
+          "title": "Van strategie tot publicatie",
+          "body": "Een agenda per klant, en posts, carrousels, blogs en advertenties in de stem van die klant. Clyde publiceert naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube."
+        }
+      },
+      "soon": "Voice Agent en Reel Builder komen binnenkort, in elk pakket, met de caps uit de tabel verderop."
+    },
+    "example": {
+      "eyebrow": "Rekenvoorbeeld",
+      "title": "Wat je per klantmerk betaalt",
+      "sub": "Founding kost €{price} per maand tot en met {included} klantmerken; elk klantmerk daarboven kost €{extra}. Tot {included} klantmerken daalt je prijs per klantmerk dus met elk merk dat je toevoegt. De laatste kolom toont wat een nieuw bureau betaalt zodra de founding-plekken bezet zijn.",
+      "caption": "Maandprijs als founding partner bij 5, 10 en 15 klantmerken, naast het latere tarief",
+      "head": {
+        "n1": "Klantmerken",
+        "n2": "Founding per maand",
+        "n3": "Per klantmerk",
+        "n4": "Later tarief per maand"
+      },
+      "brands": "{count} klantmerken",
+      "later": "€{price} ({tier})",
+      "slider": {
+        "eyebrow": "Reken zelf",
+        "label": "Aantal klantmerken",
+        "totalLabel": "Founding per maand",
+        "perMonth": "per maand",
+        "perBrand": "€{price} per klantmerk",
+        "later": "Na de founding-fase: €{price} per maand bij {tier}.",
+        "laterMinimum": "Dat pakket start bij {min} klantmerken."
+      }
+    },
+    "later": {
+      "eyebrow": "Na de founding-fase",
+      "title": "De latere tarieven",
+      "sub": "Deze tarieven gelden voor nieuwe bureaus zodra de {spots} founding-plekken bezet zijn. Je betaalt per klantmerk, en hoe meer klantmerken, hoe lager het tarief.",
+      "caption": "Actief zodra de {spots} founding-plekken bezet zijn",
+      "head": {
+        "n1": "Pakket",
+        "n2": "Klantmerken",
+        "n3": "Per klantmerk per maand",
+        "n4": "Credits per klantmerk per maand",
+        "n5": "Onboarding, eenmalig"
+      },
+      "range": "{min} tot {max}",
+      "rangeOpen": "{min} of meer",
+      "recalibration": "We herijken de tarieven per klantmerk elk halfjaar, op basis van het werkelijke creditverbruik. Founding valt daarbuiten: dat tarief blijft vast.",
+      "enterprise": "Enterprise heeft geen caps (fair use) en een directe lijn met Daley."
     },
     "tiers": {
-      "eyebrow": "Tier-overzicht",
-      "title": "Schuif door je portfolio. Zie je tarief.",
-      "subtitle": "Sleep aan de regelaar voor jouw aantal werkruimtes. We matchen het juiste tier en laten je live zien wat je betaalt — Founding blijft anker op €997 levenslang.",
-      "rateDisclosure": "Tarief per werkruimte. Herijking elk halfjaar op basis van werkelijk credit-verbruik. Founding (€997 levenslang) blijft uitgezonderd.",
-      "perWorkspaceLabel": "per werkruimte",
-      "fromLabel": "vanaf",
-      "atWorkspacesLabel": "bij {count} werkruimtes",
-      "foundingDetailLink": "Lees meer over Founding",
-      "totalLabel": "Totaal voor {workspaces} werkruimtes",
-      "workspacesPickerLabel": "Aantal werkruimtes",
-      "workspaceRange": "{min}-{max} werkruimtes",
-      "creditsTileLabel": "Credits",
-      "onboardingTileLabel": "Onboarding",
-      "creditsTotalLabel": "{credits} credits per maand",
-      "lifetimeBadge": "levenslang",
       "growth": {
-        "name": "Growth",
-        "subtitle": "Voor kleine bureaus",
-        "tagline": "Lineair tarief per werkruimte. Schaalt mee met je portfolio van 2 tot 4 merken.",
-        "description": "Voor bureaus met 2 tot 4 merken in hun portfolio die Clyde als volwaardige collega willen inzetten. Alle live vaardigheden, met caps op de zwaardere.",
-        "features_0": "Lineaire prijs per werkruimte (2 tot 4 merken)",
-        "features_1": "800 credits per werkruimte (1.600 tot 3.200 totaal per maand)",
-        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
-        "features_3": "Blog Factory: 8 per maand",
-        "features_4": "Statische ads: 15 per maand. Video ads: 4 per maand",
-        "features_5": "Reel Builder: 4 per maand, zodra live",
-        "features_6": "Voice Agent: 30 minuten per maand, zodra live",
-        "features_7": "Support per e-mail"
+        "name": "Growth"
       },
       "professional": {
-        "name": "Professional",
-        "subtitle": "Voor middelgrote bureaus",
-        "tagline": "Lineair tarief vanaf 5 werkruimtes. Ruimere caps. WhatsApp-support en maandelijkse strategiecall.",
-        "description": "Voor bureaus met 5 tot 14 merken in hun portfolio die serieus op Clyde draaien. Lineair tarief, ruimere caps, een directe WhatsApp-lijn met Daley, maandelijkse strategiecall.",
-        "features_0": "Lineaire prijs per werkruimte (5 tot 14 merken)",
-        "features_1": "800 credits per werkruimte (4.000 tot 11.200 totaal per maand)",
-        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
-        "features_3": "Blog Factory: 20 per maand",
-        "features_4": "Statische ads: 50 per maand. Video ads: 20 per maand",
-        "features_5": "Reel Builder: 15 per maand, zodra live",
-        "features_6": "Voice Agent: 120 minuten per maand, zodra live",
-        "features_7": "WhatsApp-support plus maandelijkse strategiecall"
+        "name": "Professional"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "subtitle": "Voor grote bureaus",
-        "tagline": "Lineair tarief vanaf 15 werkruimtes. Geen caps (fair use). Eigen contactpersoon.",
-        "description": "Voor bureaus met 15 of meer merken die Clyde als kern-infrastructuur gebruiken. Lineair tarief vanaf 15 werkruimtes, geen caps op vaardigheden (fair use) en een directe lijn met Daley.",
-        "features_0": "Lineaire prijs per werkruimte vanaf 15 merken",
-        "features_1": "800 credits per werkruimte (vanaf 12.000 per maand)",
-        "features_2": "Alle live vaardigheden zonder caps (fair use)",
-        "features_3": "Directe lijn met Daley"
+        "name": "Enterprise"
       },
       "founding": {
-        "name": "Founding",
-        "subtitle": "10 plekken · levenslang anker",
-        "tagline": "10 plekken totaal. Ruime caps. Levenslang €997. Directe lijn met Daley.",
-        "description": "Voor de bureaus die als eerste instappen. Levenslange prijs van €997, ruimere caps dan Growth, directe WhatsApp-lijn met Daley. Maximaal {total} plekken.",
-        "features_0": "10 werkruimtes inbegrepen",
-        "features_1": "8.000 credits per maand",
-        "features_2": "Alle 10 live vaardigheden, plus de 2 die eraan komen",
-        "features_3": "Blog Factory: 12 per maand",
-        "features_4": "Statische ads: 25 per maand. Video ads: 8 per maand",
-        "features_5": "Reel Builder: 8 per maand, zodra live",
-        "features_6": "Voice Agent: 60 minuten per maand, zodra live",
-        "features_7": "ManyChat DM: 500 DM's per maand",
-        "features_8": "Directe lijn met Daley via WhatsApp",
-        "features_9": "Levenslange prijsgarantie"
+        "name": "Founding"
       }
     },
     "matrix": {
-      "eyebrow": "Vergelijken",
-      "title": "Beschikbaarheid per tier",
-      "subtitle": "Welke vaardigheid in welk tier, en met welke cap. Eerlijk, transparant, gedocumenteerd.",
+      "title": "Caps per vaardigheid",
+      "subtitle": "Hoeveel je per maand van de zwaardere vaardigheden gebruikt. De andere vaardigheden vallen onder fair use.",
       "skillHeader": "Vaardigheid",
       "fairUse": "Fair use",
       "unlimited": "Onbeperkt",
       "notAvailable": "·",
-      "addOn": "Niet inbegrepen",
-      "addOn47": "Niet inbegrepen",
-      "addOn97": "Niet inbegrepen",
-      "perMonth": "/mnd",
       "minPerMonth": "{count} min/mnd",
       "dmsPerMonth": "{count} DM's/mnd",
       "itemsPerMonth": "{count}/mnd",
-      "legend": "Cijfers zijn maandcaps per werkruimte. \"Fair use\" = onbeperkt met throttle bij extreme uitschieters. \"Niet inbegrepen\" = niet in dit tier."
+      "legend": "Aantallen per maand die in het pakket zitten. Fair use: onbeperkt, met een rem bij extreme uitschieters."
     },
-    "creditPacks": {
-      "eyebrow": "Top-ups",
-      "title": "Credit packs. Top-ups voor swing-months",
-      "description": "Niet genoeg credits in je tier voor deze maand? Top-up met een credit pack. Geen automatische upsell, geen verplichting.",
-      "items": {
+    "credits": {
+      "eyebrow": "Credits",
+      "title": "Wat is een credit?",
+      "body1": "Een credit is de rekeneenheid voor wat Clyde doet. Een post kost 2 credits, een blog 15, een statische advertentie 10, een video-advertentie 20 en een reel 25. De Voice Agent kost 5 credits per gespreksminuut.",
+      "body2": "Founding geeft je {credits} credits per maand. In de latere pakketten krijg je {creditsPerBrand} credits per klantmerk per maand. Zijn je credits op, dan doet Clyde tot de volgende maand geen acties meer die credits kosten. Er komt nooit een automatische overschrijding op je factuur.",
+      "packsTitle": "Een maand meer nodig? Koop een credit pack bij.",
+      "packCredits": "{credits} credits",
+      "packs": {
         "miniTopUp": {
           "name": "Mini Top-Up",
           "credits": "500",
@@ -1700,48 +1712,65 @@
       }
     },
     "faq": {
-      "eyebrow": "Veelgestelde vragen",
-      "title": "Veelgestelde vragen over pricing",
+      "eyebrow": "Vragen",
+      "title": "Vragen over de prijs",
       "items": {
         "q1": {
-          "question": "Waarom heb ik caps per vaardigheid in plaats van \"alles onbeperkt\"?",
-          "answer": "Voice, Video Ad en Reel Builder zijn de duurste vaardigheden in credit-verbruik (5 tot 25 credits per actie). Onbeperkt gebruik voor alle tiers zou leiden tot astronomische prijzen óf tot fair-use throttling achter de schermen. Caps houden de kosten voorspelbaar en geven elk tier een natuurlijke upgrade-trigger."
+          "question": "Wat is een werkruimte?",
+          "answer": "Een werkruimte is één klantmerk: de plek waar Clyde de merkstem, de strategie, de agenda en de rapporten van die klant bewaart. Founding heeft er {included} inbegrepen. Elke extra werkruimte kost €{extra} per maand."
         },
         "q2": {
-          "question": "Wat gebeurt er als ik over mijn credits of caps heen ga?",
-          "answer": "Zijn je credits op, dan voert Clyde geen acties meer uit die credits kosten. Je kiest dan: wachten tot de volgende maand, een credit pack bijkopen (Mini Top-Up €39 tot Max €697) of upgraden naar een hoger tier. Geen automatische overschrijding, geen verrassing op je factuur."
+          "question": "Wat is een credit?",
+          "answer": "De rekeneenheid voor wat Clyde doet. Een post kost 2 credits, een blog 15 en een video-advertentie 20. Founding geeft je {credits} credits per maand."
         },
         "q3": {
-          "question": "Kan ik tussen tiers op- of afschalen?",
-          "answer": "Opschalen kan op elk moment. Afschalen gaat in per volgende factureringsronde. Van Founding naar lager kan niet: je Founding-prijs blijft levenslang geldig zolang je actief blijft."
+          "question": "Wat gebeurt er als mijn credits op zijn?",
+          "answer": "Dan doet Clyde tot de volgende maand geen acties meer die credits kosten. Je kunt ook een credit pack bijkopen, van €39 voor 500 credits tot €697 voor 15.000. Er komt geen automatische overschrijding op je factuur."
         },
         "q4": {
-          "question": "Krijg ik alle vaardigheden of een deel?",
-          "answer": "Elk tier krijgt alle vaardigheden: vandaag 10 live, Voice Agent en Reel Builder volgen. Op de zwaardere gelden caps per tier. Founding zit met zijn caps tussen Growth en Professional, voor levenslang €997. Enterprise heeft geen caps (fair use)."
+          "question": "Is er een proefperiode?",
+          "answer": "Nee. Je begint met een gesprek van 30 minuten met Daley. Past het, dan volgen vier weken onboarding. Je zit nergens aan vast: je zegt per maand op."
         },
         "q5": {
-          "question": "Wat zit er in de onboardingvergoeding?",
-          "answer": "De eenmalige onboardingvergoeding dekt 4 weken partnership-setup door Daley: intake van de merkstem per merk, KPI-definities, vaardigheden inregelen, testruns en goedkeuringsworkflow opzetten. Het is geen technische installatievergoeding: het is een investering in een collega die echt meedraait."
+          "question": "Kan ik opzeggen of pauzeren?",
+          "answer": "Je zegt per maand op, zonder boete. Het founding-tarief geldt zolang je zonder onderbreking klant blijft. Stop of pauzeer je, dan vervalt het. Kom je later terug, dan start je op de tarieven die op dat moment gelden."
         },
         "q6": {
-          "question": "Kan ik tussentijds stoppen of pauzeren?",
-          "answer": "Elke tier heeft maandelijks opzegrecht: je beëindigt per de volgende factureringsronde, zonder boete. Pauzeren kan in overleg, met behoud van je tier-prijs. Founding-leden kunnen niet pauzeren zonder hun levenslange prijs te verliezen: dat is de aard van het Founding-contract."
+          "question": "Wat gebeurt er met mijn gegevens als ik opzeg?",
+          "answer": "Wat Clyde over jouw klanten weet, is van jou. Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
         },
         "q7": {
-          "question": "Wat gebeurt er precies als ik downgrade?",
-          "answer": "Downgraden gaat in per de volgende factureringsronde. Je klanten, hun merkstem, de geleerde regels en je instellingen blijven staan; vanaf dan gelden de caps en de bewaartermijn van het lagere tier. Van Founding naar lager kan niet: dan vervalt de levenslange prijs definitief."
+          "question": "Wat zit er in de onboarding?",
+          "answer": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daley doet de intake, Clyde leest per klant het merk en zet pijlers en templates op, en samen stemmen jullie de merkstem af tot hij klopt. Als founding partner betaal je er €0 voor. In de latere pakketten kost de onboarding eenmalig €{onboardingMin} tot €{onboardingMax}."
         },
         "q8": {
-          "question": "Van wie is de data en kan ik die exporteren?",
-          "answer": "Alle data, merkstem-profielen, content en rapporten, blijft van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes. Geen lock-in, geen heronderhandeling, geen verborgen exit-fees."
+          "question": "Wat gebeurt er als de {spots} plekken vol zijn?",
+          "answer": "Dan sluit Founding, zonder heropening. Nieuwe bureaus starten op de latere tarieven: Growth €{growth}, Professional €{professional} en Enterprise €{enterprise} per klantmerk per maand. Ben je founding partner, dan houd je €{price} voor {included} klantmerken zolang je klant blijft."
+        },
+        "q9": {
+          "question": "Kan ik doorgroeien boven de {included} klantmerken?",
+          "answer": "Ja. Elk klantmerk boven de {included} kost €{extra} per maand, en je founding-tarief blijft staan. Bij 15 klantmerken betaal je dus €{price15} per maand."
+        },
+        "q10": {
+          "question": "Waarom zijn er caps per vaardigheid?",
+          "answer": "Omdat de zware vaardigheden veel meer kosten: een reel kost 25 credits, een video-advertentie 20 en een post 2. Caps houden je maandprijs voorspelbaar, ook in een drukke maand. De caps van Founding liggen tussen Growth en Professional."
+        },
+        "q11": {
+          "question": "Wat kost een AI-agent voor een marketingbureau?",
+          "answer": "Dat hangt af van wat je koopt: een losse tool per taak, maatwerk dat je laat bouwen en zelf onderhoudt, of een AI-collega die het werk per klant doet. Clyde kost als founding partner €{price} per maand voor {included} klantmerken, dus ongeveer €{perBrand} per klantmerk, met strategie, content, goedkeuring, publicatie en rapportage in één. Op de pagina Alternatieven zetten we de opties met hun prijzen naast elkaar."
         }
       }
     },
     "cta": {
-      "eyebrow": "Klaar?",
-      "title": "Klaar om de partnership te starten?",
-      "description": "Tien founding-plekken. Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "primary": "Vraag een gesprek aan"
+      "eyebrow": "Volgende stap",
+      "title": "Past Clyde bij je bureau?",
+      "description": "Je spreekt Daley 30 minuten. Daarna weet je of het past en wat het voor jouw aantal klantmerken kost.",
+      "primary": "Vraag een gesprek aan",
+      "links": {
+        "n1": "Clyde naast de alternatieven",
+        "n2": "Waar de data van je klanten staat",
+        "n3": "Hoe de vier weken verlopen"
+      }
     }
   },
   "alternatives": {
@@ -2770,119 +2799,6 @@
     "screenshot": {
       "alt": "Weekrapport van een demoklant over 4 tot en met 10 oktober: samenvatting, contentprestaties, highlights en aanbevelingen. De cijfers zijn demodata.",
       "caption": "Het weekrapport van een demoklant, met wat Clyde aanraadt"
-    }
-  },
-  "founding-member": {
-    "meta": {
-      "title": "Founding Member: €997 levenslang | FutureMarketingAI",
-      "description": "Founding Member: €997 per maand levenslang voor de eerste 10 bureaus. 10 werkruimtes inbegrepen, daarboven €299 per extra werkruimte."
-    },
-    "hero": {
-      "badge": "Maximaal {total} Founding-plekken",
-      "title": "Word Founding partner. Eén keuze, levenslang vast.",
-      "description": "Tien plekken totaal, voor de bureaus die als eerste instappen. €997 per maand, levenslang gelockt, met 10 werkruimtes inbegrepen. De andere tiers schalen lineair per werkruimte (€499 / €399 / €299). Alle live vaardigheden, ruime caps en een directe WhatsApp-lijn met Daley.",
-      "cta": "Reserveer je plek"
-    },
-    "pricing": {
-      "heading": "De Founding-prijs",
-      "currency": "€",
-      "price": "997",
-      "period": "/mnd, levenslang",
-      "locked": "Levenslange prijsgarantie. Geen prijsverhoging, ooit.",
-      "comparison": "Growth start bij €998 per maand voor 2 werkruimtes en schaalt mee. Jij betaalt €997 voor 10 werkruimtes. Vanaf 3 merken bespaar je structureel.",
-      "includes": "10 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), 8.000 credits per maand, alle live vaardigheden met ruime caps, een directe WhatsApp-lijn met Daley en €0 onboarding."
-    },
-    "value": {
-      "heading": "Waarom de 10 Founding plekken bestaan",
-      "line1": "Founding partners zijn de bureaus waarmee ik Clyde samen vormgeef. Jullie feedback bepaalt wat ik bouw, welke vaardigheden voorrang krijgen en hoe de geheugenlaag zich ontwikkelt.",
-      "line2": "In ruil voor dat vroege vertrouwen krijg je levenslang €997 voor 10 werkruimtes. De andere tiers schalen lineair per werkruimte: bij 5 merken op Professional betaal je €1.995 per maand, bij 14 merken €5.586. De andere tarieven herijken we elk halfjaar; jij blijft op €997.",
-      "line3": "Tien plekken. Geen heropening. Vol is vol."
-    },
-    "benefits": {
-      "heading": "Wat je krijgt als Founding partner",
-      "items": {
-        "price_lock": {
-          "title": "Levenslange prijslock",
-          "description": "€997 per maand zolang je actief blijft. Geen prijsverhoging, geen inflatiecorrectie, geen gedwongen upgrade naar een hoger tier."
-        },
-        "priority": {
-          "title": "Voorrang in de ontwikkel-queue",
-          "description": "Verzoeken voor nieuwe vaardigheden van Founding partners krijgen voorrang. Je hebt een directe lijn naar de roadmap."
-        },
-        "influence": {
-          "title": "Invloed op de roadmap",
-          "description": "Maandelijkse Founder-calls om te bespreken wat er daarna komt. Geen commissie: jouw input."
-        },
-        "early_access": {
-          "title": "Vroege toegang tot nieuwe vaardigheden",
-          "description": "Nieuwe vaardigheden, zoals Reel Builder en Voice Agent, komen eerst naar Founding partners. Jij probeert ze voordat de rest toegang krijgt."
-        },
-        "community": {
-          "title": "Directe lijn met Daley",
-          "description": "Je appt me rechtstreeks op WhatsApp. Vragen, hulp en best practices, zonder ticketsysteem ertussen."
-        },
-        "onboarding": {
-          "title": "€0 onboardingvergoeding",
-          "description": "Andere tiers betalen tussen €1.997 en €5.997 voor 4 weken partnership-setup. Founding partners: €0. De enige eenmalige kosten die jij niet hebt."
-        }
-      }
-    },
-    "proof": {
-      "heading": "Onze eerste klant",
-      "body": "SkinClarity Club is onze eerste klant. Clyde maakt en plant voor 3 Instagram-accounts en wij keuren als bureau goed. Lees de case om te zien hoe dat er in de praktijk uitziet.",
-      "caseButton": "Lees SkinClarity case study"
-    },
-    "faq": {
-      "heading": "Veelgestelde vragen over Founding",
-      "items": {
-        "q1": {
-          "question": "Wat gebeurt er als de 10 plekken vol zijn?",
-          "answer": "Dan is de Founding tier gesloten. Geen heropening, geen uitzonderingen. Nieuwe bureaus starten dan op de reguliere workspace-priced tiers (Growth €499 per werkruimte, Professional €399, Enterprise €299). Jij behoudt je €997 voor 10 werkruimtes, levenslang, zolang je actief blijft."
-        },
-        "q2": {
-          "question": "Kan ik later doorschalen naar Professional of Enterprise?",
-          "answer": "Ja. Boven de 10 werkruimtes betaal je €299 per extra werkruimte, en je Founding-prijs blijft gewoon staan. Stap je over naar Professional of Enterprise, dan geldt het tarief van dat pakket en vervalt je Founding-prijs."
-        },
-        "q3": {
-          "question": "Welke caps horen bij Founding?",
-          "answer": "Je krijgt alle live vaardigheden met ruimere caps dan Growth, tegen de Founding-prijs. Concreet: blogs 12 per maand, video-ads 8 per maand, ManyChat 500 DM's per maand, en zodra ze live zijn Voice Agent 60 minuten en Reels 8 per maand. Ruimer dan Growth, minder dan Professional."
-        },
-        "q4": {
-          "question": "Wat als ik stop en later weer wil starten?",
-          "answer": "Dan verlies je je Founding-prijs. Je komt terug als reguliere klant op de dan geldende tiers. Founding geldt alleen zolang je zonder onderbreking actief blijft."
-        },
-        "q5": {
-          "question": "Waarom geen onboardingvergoeding?",
-          "answer": "Founding partners krijgen de 4-weekse onboarding-partnership gratis als dank voor het vroege vertrouwen. Een eenmalige uitzondering voor deze 10 plekken."
-        }
-      }
-    },
-    "cta": {
-      "title": "Word een van de 10",
-      "subtitle": "Maximaal {total} plekken. Vraag een gesprek aan. Als het wederzijds past, reserveer ik je plek.",
-      "button": "Vraag een gesprek aan"
-    },
-    "eyebrows": {
-      "pricing": "Prijs",
-      "value": "Waarom Founding",
-      "benefits": "Wat je krijgt",
-      "quickApply": "Snel starten",
-      "proof": "Eerste klant",
-      "faq": "Vragen",
-      "cta": "Plek reserveren"
-    },
-    "quickApply": {
-      "eyebrow": "Snelle start",
-      "heading": "Vraag een gesprek aan in 1 stap",
-      "subheading": "Vul je e-mail en bureau-naam in. We brengen je naar het volledige aanvraagformulier met je gegevens al ingevuld.",
-      "emailLabel": "Werk e-mail",
-      "emailPlaceholder": "jij@bureau.nl",
-      "agencyLabel": "Bureau-naam",
-      "agencyPlaceholder": "Bureau-naam (optioneel)",
-      "cta": "Doorgaan naar aanvraag",
-      "emailInvalid": "Vul een geldig e-mailadres in.",
-      "reassurance": "Geen account, geen creditcard. Eén gesprek bepaalt of het wederzijds past.",
-      "ariaLabel": "Snelle Founding aanvraag"
     }
   },
   "booking": {

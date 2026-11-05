@@ -6,7 +6,6 @@ import { test, expect } from '@playwright/test'
  * Confirms the dl/dt/dd → Radix Accordion swap on:
  *   - /nl/skills/clyde (SkillPageTemplate)
  *   - /nl/pricing
- *   - /nl/founding-member
  *
  * Captures screenshots + asserts accordion semantics. Throwaway spec —
  * removed after Fase 0 push if it adds noise.
@@ -15,7 +14,6 @@ import { test, expect } from '@playwright/test'
 const PAGES = [
   { path: '/nl/skills/clyde', name: 'skill-clyde-faq' },
   { path: '/nl/pricing', name: 'pricing-faq' },
-  { path: '/nl/founding-member', name: 'founding-faq' },
 ] as const
 
 test.describe.configure({ mode: 'serial' })

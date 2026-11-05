@@ -82,7 +82,6 @@ test.describe('Marketing Pages', () => {
     { path: '/en/how-it-works', name: 'How It Works' },
     { path: '/en/memory', name: 'Memory' },
     { path: '/en/apply', name: 'Apply' },
-    { path: '/en/founding-member', name: 'Founding Member' },
     { path: '/en/assessment', name: 'Assessment' },
     { path: '/en/roadmap', name: 'Roadmap' },
     { path: '/en/case-studies/skinclarity-club', name: 'Case Study SKC' },

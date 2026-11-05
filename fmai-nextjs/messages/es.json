@@ -646,7 +646,6 @@
       "how_it_works": "Cómo funciona",
       "pricing": "Precios",
       "alternatives": "Alternativas",
-      "founding_member": "Founding Member",
       "contact": "Contacto",
       "memory": "Memoria",
       "apply": "Solicitud",
@@ -859,126 +858,139 @@
   },
   "pricing": {
     "meta": {
-      "title": "Precios: Founding €997 al mes | FutureMarketingAI",
-      "description": "Founding €997 de por vida (10 plazas). Después por espacio: Growth €499, Professional €399, Enterprise €299. Sin lock-in, sin costes ocultos."
+      "title": "Precios de Clyde: €997 al mes | FutureMarketingAI",
+      "description": "¿Cuánto cuesta Clyde? Como socio fundador €997 al mes con 10 marcas cliente incluidas, €299 por marca extra y €0 de onboarding. Más las tarifas futuras."
     },
     "hero": {
-      "eyebrow": "Precios y habilidades",
-      "title": "Partnerships premium. Founding €997 de por vida.",
-      "description": "Todos los precios visibles. Founding €997 de por vida para las primeras 10 agencias. Después una tarifa lineal por espacio de trabajo: Growth €499, Professional €399, Enterprise €299. Caps por habilidad explicados con claridad, sin costes ocultos, sin \"contáctanos para precios\".",
-      "counter": "Máx. {total} plazas Founding"
+      "eyebrow": "Precios",
+      "title": "¿Cuánto cuesta Clyde?",
+      "lead": "Clyde cuesta €{price} al mes como socio fundador, con {included} marcas cliente incluidas y €{extra} por cada marca extra. Esa es la oferta de hoy. Cuando las {spots} plazas de fundador estén ocupadas, se aplican las tarifas por marca que verás más abajo.",
+      "checked": "Precios comprobados el {date}."
     },
-    "visibility": {
-      "eyebrow": "Filosofía",
-      "title": "Por qué nuestros precios son visibles",
-      "body": "Con partners AI premium vemos a menudo \"contáctanos para precios\". Eso mina la relación antes de empezar. Preferimos mostrar lo que cuesta Clyde, lo que obtienes y qué caps aplican. Así puedes juzgar tú mismo si la inversión encaja. Sin baile de ventas."
+    "founding": {
+      "eyebrow": "Founding",
+      "title": "La oferta de hoy: socio fundador",
+      "sub": "Para las primeras {spots} agencias: un importe fijo al mes, hasta {included} marcas cliente incluidas.",
+      "perMonth": "al mes",
+      "list": {
+        "n1": "{included} marcas cliente incluidas, €{extra} por cada marca extra",
+        "n2": "€0 de onboarding: Daley acompaña personalmente el arranque de cuatro semanas",
+        "n3": "{credits} créditos al mes",
+        "n4": "Una línea directa de WhatsApp con Daley",
+        "n5": "Tu tarifa se mantiene fija mientras sigas siendo cliente"
+      },
+      "definition": "Un espacio de trabajo es una marca cliente.",
+      "whyTitle": "¿Por qué solo {spots} plazas?",
+      "why": "Daley acompaña personalmente cada arranque, durante cuatro semanas, y así escucha de primera mano lo que necesitan las primeras agencias. Eso decide lo que se construye después. Funciona con {spots} agencias, no con cien.",
+      "after": "Cuando las {spots} plazas estén ocupadas, Founding se cierra y no se reabre. Como socio fundador mantienes €{price} al mes mientras sigas siendo cliente.",
+      "cta": "Solicita una llamada"
     },
-    "onboardingLabel": "Onboarding único",
-    "creditsLabel": "créditos/mes",
-    "workspacesLabel": "espacios de trabajo",
-    "applyCta": "Solicita una llamada",
-    "slider": {
-      "eyebrow": "Calculadora en vivo",
-      "label": "Número de espacios de trabajo",
-      "unitLabel": "{count, plural, one {espacio} other {espacios}}",
-      "activeTierLabel": "Mejor tier",
-      "foundingWinsBadge": "Founding más barato",
-      "totalLabel": "Total mensual",
-      "creditsSuffix": "créditos al mes"
+    "included": {
+      "eyebrow": "Qué incluye",
+      "title": "Lo que recibes, en cada plan",
+      "sub": "Cada plan tiene el mismo producto y todas las habilidades activas. Solo cambia la cantidad mensual de las habilidades más pesadas.",
+      "items": {
+        "n1": {
+          "title": "Para ti",
+          "body": "Cada mañana un resumen de lo que necesita tu atención, de todos tus clientes. El resumen de la mañana también llega a tu WhatsApp."
+        },
+        "n2": {
+          "title": "Un momento de parada",
+          "body": "Nada se publica sin tu aprobación. Después de aprobar, aún puedes pausar una publicación hasta cuatro horas antes de que salga."
+        },
+        "n3": {
+          "title": "Un portal con el nombre de tu agencia",
+          "body": "Tu cliente ve tu nombre, tu logo y tus colores, y aprueba desde su móvil."
+        },
+        "n4": {
+          "title": "Un informe semanal por cliente",
+          "body": "Clyde resume la semana de cada cliente, como las reservas frente al objetivo."
+        },
+        "n5": {
+          "title": "Una línea directa de WhatsApp con Daley",
+          "body": "Preguntas y ayuda, sin un sistema de tickets de por medio."
+        },
+        "n6": {
+          "title": "De la estrategia a la publicación",
+          "body": "Un calendario por cliente, y publicaciones, carruseles, blogs y anuncios con la voz de ese cliente. Clyde publica en Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube."
+        }
+      },
+      "soon": "Voice Agent y Reel Builder llegan pronto, en cada plan, con los límites de la tabla de más abajo."
+    },
+    "example": {
+      "eyebrow": "Ejemplo de cálculo",
+      "title": "Lo que pagas por marca cliente",
+      "sub": "Founding cuesta €{price} al mes hasta {included} marcas cliente; cada marca por encima cuesta €{extra}. Hasta {included} marcas, tu precio por marca baja con cada marca que añades. La última columna muestra lo que paga una agencia nueva cuando las plazas de fundador estén ocupadas.",
+      "caption": "Precio mensual como socio fundador con 5, 10 y 15 marcas cliente, junto a la tarifa futura",
+      "head": {
+        "n1": "Marcas cliente",
+        "n2": "Founding al mes",
+        "n3": "Por marca cliente",
+        "n4": "Tarifa futura al mes"
+      },
+      "brands": "{count} marcas cliente",
+      "later": "€{price} ({tier})",
+      "slider": {
+        "eyebrow": "Calcula tú",
+        "label": "Número de marcas cliente",
+        "totalLabel": "Founding al mes",
+        "perMonth": "al mes",
+        "perBrand": "€{price} por marca cliente",
+        "later": "Después de la fase de fundadores: €{price} al mes con {tier}.",
+        "laterMinimum": "Ese plan empieza con {min} marcas cliente."
+      }
+    },
+    "later": {
+      "eyebrow": "Después de la fase de fundadores",
+      "title": "Las tarifas futuras",
+      "sub": "Estas tarifas se aplican a agencias nuevas cuando las {spots} plazas de fundador estén ocupadas. Pagas por marca cliente, y cuantas más marcas, menor la tarifa.",
+      "caption": "Activas cuando las {spots} plazas de fundador estén ocupadas",
+      "head": {
+        "n1": "Plan",
+        "n2": "Marcas cliente",
+        "n3": "Por marca cliente al mes",
+        "n4": "Créditos por marca cliente al mes",
+        "n5": "Onboarding, pago único"
+      },
+      "range": "{min} a {max}",
+      "rangeOpen": "{min} o más",
+      "recalibration": "Revisamos las tarifas por marca cada seis meses, según el consumo real de créditos. Founding queda fuera: su tarifa se mantiene fija.",
+      "enterprise": "Enterprise no tiene límites (uso razonable) e incluye una línea directa con Daley."
     },
     "tiers": {
-      "eyebrow": "Resumen de tiers",
-      "title": "Desliza por tu portfolio. Mira tu tarifa.",
-      "subtitle": "Arrastra el control para fijar tu número de espacios. Hacemos match con el tier correcto y te mostramos en vivo cuánto pagas, con Founding anclado en 997 EUR de por vida.",
-      "rateDisclosure": "Tarifa por espacio de trabajo. Recalibrada cada 6 meses según el consumo real de créditos. Founding (€997 de por vida) queda exenta.",
-      "perWorkspaceLabel": "por espacio",
-      "fromLabel": "desde",
-      "atWorkspacesLabel": "con {count} espacios",
-      "foundingDetailLink": "Más sobre Founding",
-      "totalLabel": "Total para {workspaces} espacios",
-      "workspacesPickerLabel": "Número de espacios de trabajo",
-      "workspaceRange": "{min}-{max} espacios",
-      "creditsTileLabel": "Créditos",
-      "onboardingTileLabel": "Onboarding",
-      "creditsTotalLabel": "{credits} créditos al mes",
-      "lifetimeBadge": "de por vida",
       "growth": {
-        "name": "Growth",
-        "subtitle": "Para agencias pequeñas",
-        "tagline": "Tarifa lineal por espacio de trabajo. Escala con tu portafolio de 2 a 4 clientes.",
-        "description": "Para agencias con 2 a 4 marcas en su portafolio que quieren usar a Clyde como un compañero completo. Todas las habilidades en vivo, con caps en las más pesadas.",
-        "features_0": "Precio lineal por espacio (2 a 4 clientes)",
-        "features_1": "800 créditos por espacio (1.600 a 3.200 totales al mes)",
-        "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
-        "features_3": "Blog Factory: 8 al mes",
-        "features_4": "Anuncios estáticos: 15 al mes. Anuncios en vídeo: 4 al mes",
-        "features_5": "Reel Builder: 4 al mes, cuando esté disponible",
-        "features_6": "Voice Agent: 30 minutos al mes, cuando esté disponible",
-        "features_7": "Soporte por email"
+        "name": "Growth"
       },
       "professional": {
-        "name": "Professional",
-        "subtitle": "Para agencias medianas",
-        "tagline": "Tarifa lineal desde 5 espacios. Caps más amplios. Soporte por WhatsApp y llamada estratégica mensual.",
-        "description": "Para agencias con 5 a 14 clientes que operan en serio con Clyde. Tarifa lineal, caps más amplios, acceso directo a Daley por WhatsApp, llamada estratégica mensual.",
-        "features_0": "Precio lineal por espacio (5 a 14 clientes)",
-        "features_1": "800 créditos por espacio (4.000 a 11.200 totales al mes)",
-        "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
-        "features_3": "Blog Factory: 20 al mes",
-        "features_4": "Anuncios estáticos: 50 al mes. Anuncios en vídeo: 20 al mes",
-        "features_5": "Reel Builder: 15 al mes, cuando esté disponible",
-        "features_6": "Voice Agent: 120 minutos al mes, cuando esté disponible",
-        "features_7": "Soporte por WhatsApp y llamada estratégica mensual"
+        "name": "Professional"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "subtitle": "Para agencias grandes",
-        "tagline": "Tarifa lineal desde 15 espacios. Sin caps (uso razonable). Persona de contacto propia.",
-        "description": "Para agencias con 15 o más marcas que usan a Clyde como infraestructura core. Tarifa lineal desde 15 espacios, sin caps en habilidades (uso razonable) y un customer success manager dedicado con SLA.",
-        "features_0": "Precio lineal por espacio desde 15 clientes",
-        "features_1": "800 créditos por espacio (desde 12.000 al mes)",
-        "features_2": "Todas las habilidades en vivo sin caps (uso razonable)",
-        "features_3": "Customer Success Manager dedicado"
+        "name": "Enterprise"
       },
       "founding": {
-        "name": "Founding",
-        "subtitle": "10 plazas · ancla de por vida",
-        "tagline": "10 plazas en total. Caps amplios. 997 EUR de por vida. Línea directa con Daley.",
-        "description": "Para los clientes fundadores que se comprometen antes del lanzamiento. Precio de por vida de 997 EUR, caps más amplios que Growth, línea directa con Daley por WhatsApp. Máx. {total} plazas.",
-        "features_0": "10 espacios de trabajo incluidos",
-        "features_1": "8.000 créditos al mes",
-        "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
-        "features_3": "Blog Factory: 12 al mes",
-        "features_4": "Anuncios estáticos: 25 al mes. Anuncios en vídeo: 8 al mes",
-        "features_5": "Reel Builder: 8 al mes, cuando esté disponible",
-        "features_6": "Voice Agent: 60 minutos al mes, cuando esté disponible",
-        "features_7": "ManyChat DM: 500 DM al mes",
-        "features_8": "Línea directa con Daley por WhatsApp",
-        "features_9": "Garantía de precio de por vida"
+        "name": "Founding"
       }
     },
     "matrix": {
-      "eyebrow": "Comparar",
-      "title": "Disponibilidad por tier",
-      "subtitle": "Qué habilidad en qué tier, y con qué cap. Honesto, transparente, documentado.",
+      "title": "Límites por habilidad",
+      "subtitle": "Cuánto usas al mes de las habilidades más pesadas. Las demás habilidades entran en uso razonable.",
       "skillHeader": "Habilidad",
       "fairUse": "Uso razonable",
       "unlimited": "Ilimitado",
       "notAvailable": "·",
-      "addOn": "No incluido",
-      "addOn47": "No incluido",
-      "addOn97": "No incluido",
-      "perMonth": "/mes",
       "minPerMonth": "{count} min/mes",
       "dmsPerMonth": "{count} DMs/mes",
       "itemsPerMonth": "{count}/mes",
-      "legend": "Los números son caps mensuales por espacio de trabajo. \"Uso razonable\" = ilimitado con throttle en outliers extremos. \"No incluido\" = no está en este tier."
+      "legend": "Cantidades mensuales incluidas en el plan. Uso razonable: ilimitado, con un freno ante picos extremos."
     },
-    "creditPacks": {
-      "eyebrow": "Top-ups",
-      "title": "Credit packs. Top-ups para meses de pico",
-      "description": "¿No llegas con los créditos de tu tier este mes? Haz top-up con un credit pack. Sin upsell automático, sin obligación.",
-      "items": {
+    "credits": {
+      "eyebrow": "Créditos",
+      "title": "¿Qué es un crédito?",
+      "body1": "Un crédito es la unidad de lo que hace Clyde. Una publicación cuesta 2 créditos, un blog 15, un anuncio estático 10, un anuncio de vídeo 20 y un reel 25. El Voice Agent cuesta 5 créditos por minuto de llamada.",
+      "body2": "Founding te da {credits} créditos al mes. Los planes futuros te dan {creditsPerBrand} créditos por marca cliente al mes. Si se acaban tus créditos, Clyde no realiza más acciones que cuesten créditos hasta el mes siguiente. Nunca hay un exceso automático en tu factura.",
+      "packsTitle": "¿Necesitas más un mes? Compra un paquete de créditos.",
+      "packCredits": "{credits} créditos",
+      "packs": {
         "miniTopUp": {
           "name": "Mini Top-Up",
           "credits": "500",
@@ -1002,48 +1014,65 @@
       }
     },
     "faq": {
-      "eyebrow": "Preguntas frecuentes",
-      "title": "Preguntas frecuentes sobre precios",
+      "eyebrow": "Preguntas",
+      "title": "Preguntas sobre el precio",
       "items": {
         "q1": {
-          "question": "¿Por qué caps por habilidad en lugar de \"todo ilimitado\"?",
-          "answer": "Voice, Video Ads y Reel Builder son las habilidades más costosas en consumo de créditos (5 a 25 créditos por acción). Ilimitado en todos los tiers llevaría a precios astronómicos, o a throttling por uso razonable entre bambalinas. Los caps mantienen los costes predecibles y dan a cada tier un upgrade trigger natural."
+          "question": "¿Qué es un espacio de trabajo?",
+          "answer": "Un espacio de trabajo es una marca cliente: el lugar donde Clyde guarda la voz de marca, la estrategia, el calendario y los informes de ese cliente. Founding incluye {included}. Cada espacio extra cuesta €{extra} al mes."
         },
         "q2": {
-          "question": "¿Qué pasa si supero mis créditos o caps?",
-          "answer": "Si se te acaban los créditos, Clyde deja de ejecutar acciones que cuestan créditos. Entonces eliges: esperar al mes siguiente, comprar un credit pack (Mini Top-Up 39 EUR a Max 697 EUR) o subir a un tier superior. Sin overage automático, sin sorpresas en tu factura."
+          "question": "¿Qué es un crédito?",
+          "answer": "La unidad de lo que hace Clyde. Una publicación cuesta 2 créditos, un blog 15 y un anuncio de vídeo 20. Founding te da {credits} créditos al mes."
         },
         "q3": {
-          "question": "¿Puedo subir o bajar entre tiers?",
-          "answer": "Subir es posible en cualquier momento. Bajar se aplica en el siguiente ciclo de facturación. No puedes bajar desde Founding: tu precio Founding es válido de por vida mientras sigas activo."
+          "question": "¿Qué pasa si se acaban mis créditos?",
+          "answer": "Entonces Clyde no realiza más acciones que cuesten créditos hasta el mes siguiente. También puedes comprar un paquete de créditos, desde €39 por 500 créditos hasta €697 por 15.000. No hay exceso automático en tu factura."
         },
         "q4": {
-          "question": "¿Obtengo todas las habilidades o solo una parte?",
-          "answer": "Cada tier incluye todas las habilidades: hoy 10 en vivo, Voice Agent y Reel Builder llegarán después. En las más pesadas hay caps por tier. Los caps de Founding están entre Growth y Professional, por 997 € de por vida. Enterprise no tiene caps (uso razonable)."
+          "question": "¿Hay un periodo de prueba?",
+          "answer": "No. Empiezas con una llamada de 30 minutos con Daley. Si encaja, siguen cuatro semanas de onboarding. No quedas atado: cancelas por meses."
         },
         "q5": {
-          "question": "¿Qué incluye la tarifa de onboarding?",
-          "answer": "La tarifa única de onboarding cubre 4 semanas de partnership setup por Daley: intake de la voz de marca por marca, definiciones de KPI, configuración de habilidades, pruebas y setup del flujo de aprobación. No es una tarifa de instalación técnica: es una inversión en un compañero que de verdad forma parte del equipo."
+          "question": "¿Puedo cancelar o pausar?",
+          "answer": "Cancelas por meses, sin penalización. La tarifa de fundador se aplica mientras sigas siendo cliente sin interrupción. Si paras o pausas, se pierde. Si vuelves más tarde, empiezas con las tarifas vigentes en ese momento."
         },
         "q6": {
-          "question": "¿Puedo cancelar o pausar a mitad del contrato?",
-          "answer": "Cada tier tiene derecho de cancelación mensual: terminas en el siguiente ciclo de facturación, sin penalización. Se puede pausar de mutuo acuerdo, manteniendo tu precio de tier. Los miembros Founding no pueden pausar sin perder su precio vitalicio: esa es la naturaleza del contrato Founding."
+          "question": "¿Qué pasa con mis datos si cancelo?",
+          "answer": "Lo que Clyde sabe de tus clientes es tuyo. Como socio fundador, Clyde guarda la memoria y las conversaciones mientras dure tu suscripción. Tras la cancelación te enviamos una exportación de tus datos en un plazo de 30 días; después eliminamos tus espacios de trabajo."
         },
         "q7": {
-          "question": "¿Qué pasa exactamente cuando bajo de tier?",
-          "answer": "Bajar de tier se aplica en el siguiente ciclo de facturación. Tus clientes, su voz de marca, las reglas aprendidas y tu configuración se mantienen; desde entonces se aplican los caps y el plazo de conservación del tier inferior. No puedes bajar desde Founding: hacerlo elimina el precio vitalicio de forma definitiva."
+          "question": "¿Qué incluye el onboarding?",
+          "answer": "Cuatro semanas, y unas diez horas de tu tiempo en el primer mes. Daley hace la entrevista inicial, Clyde lee la marca de cada cliente y prepara pilares y plantillas, y juntos ajustáis la voz de marca hasta que encaja. Como socio fundador pagas €0. En los planes futuros, el onboarding es un pago único de €{onboardingMin} a €{onboardingMax}."
         },
         "q8": {
-          "question": "¿De quién son los datos y puedo exportarlos?",
-          "answer": "Todos los datos, perfiles de voz de marca, contenido e informes, son tuyos. Tras cancelar te enviamos una exportación de tus datos en un plazo de 30 días; después eliminamos tus workspaces. Sin lock-in, sin renegociación, sin tarifas de salida ocultas."
+          "question": "¿Qué pasa cuando las {spots} plazas estén llenas?",
+          "answer": "Entonces Founding se cierra y no se reabre. Las agencias nuevas empiezan con las tarifas futuras: Growth €{growth}, Professional €{professional} y Enterprise €{enterprise} por marca cliente al mes. Si eres socio fundador, mantienes €{price} por {included} marcas cliente mientras sigas siendo cliente."
+        },
+        "q9": {
+          "question": "¿Puedo crecer por encima de {included} marcas cliente?",
+          "answer": "Sí. Cada marca cliente por encima de {included} cuesta €{extra} al mes, y tu tarifa de fundador se mantiene. Con 15 marcas cliente pagas €{price15} al mes."
+        },
+        "q10": {
+          "question": "¿Por qué hay límites por habilidad?",
+          "answer": "Porque las habilidades pesadas cuestan mucho más: un reel cuesta 25 créditos, un anuncio de vídeo 20 y una publicación 2. Los límites mantienen tu precio mensual predecible, también en un mes con mucho trabajo. Los límites de Founding están entre Growth y Professional."
+        },
+        "q11": {
+          "question": "¿Cuánto cuesta un agente de IA para una agencia de marketing?",
+          "answer": "Depende de lo que compres: una herramienta suelta por tarea, un desarrollo a medida que mantienes tú, o un colega de IA que hace el trabajo por cliente. Como socio fundador, Clyde cuesta €{price} al mes por {included} marcas cliente, es decir unos €{perBrand} por marca, con estrategia, contenido, aprobación, publicación e informes en uno. En la página de Alternativas comparamos las opciones con sus precios."
         }
       }
     },
     "cta": {
-      "eyebrow": "¿Listo?",
-      "title": "¿Listo para empezar la partnership?",
-      "description": "Máx. {maxPartners} agencias al año. Solicita una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
-      "primary": "Solicita una llamada"
+      "eyebrow": "Siguiente paso",
+      "title": "¿Encaja Clyde con tu agencia?",
+      "description": "Hablas 30 minutos con Daley. Después sabes si encaja y cuánto cuesta para tu número de marcas cliente.",
+      "primary": "Solicita una llamada",
+      "links": {
+        "n1": "Clyde frente a las alternativas",
+        "n2": "Dónde están los datos de tus clientes",
+        "n3": "Cómo transcurren las cuatro semanas"
+      }
     }
   },
   "alternatives": {
@@ -2072,119 +2101,6 @@
     "screenshot": {
       "alt": "Informe semanal de un cliente de demostración del 4 al 10 de octubre: resumen, rendimiento del contenido, puntos destacados y recomendaciones. Las cifras son datos de demostración.",
       "caption": "El informe semanal de un cliente de demostración, con lo que Clyde recomienda"
-    }
-  },
-  "founding-member": {
-    "meta": {
-      "title": "Founding Member: 997 € de por vida | FutureMarketingAI",
-      "description": "Founding Member: €997 al mes de por vida, solo para las primeras 10 agencias. 10 espacios de trabajo incluidos; a partir de ahí, €299 por espacio adicional."
-    },
-    "hero": {
-      "badge": "Máx. {total} plazas Founding",
-      "title": "Conviértete en Founding partner. Una elección, fijo de por vida.",
-      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, con 10 espacios de trabajo incluidos. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Todas las habilidades en vivo, topes amplios y línea directa con Daley por WhatsApp.",
-      "cta": "Reserva tu plaza"
-    },
-    "pricing": {
-      "heading": "El precio Founding",
-      "currency": "€",
-      "price": "997",
-      "period": "/mes, de por vida",
-      "locked": "Garantía de precio de por vida. Sin subidas, nunca.",
-      "comparison": "Growth empieza en 998 € al mes para 2 espacios y escala contigo. Tú pagas 997 € por 10 espacios. A partir de 3 marcas ahorras de forma estructural.",
-      "includes": "10 espacios de trabajo incluidos (a partir de ahí, 299 € por espacio adicional), 8.000 créditos al mes, todas las habilidades en vivo con topes amplios, línea directa con Daley por WhatsApp y 0 € de onboarding."
-    },
-    "value": {
-      "heading": "Por qué existen las 10 plazas Founding",
-      "line1": "Los Founding partners son las agencias con las que damos forma a Clyde. Vuestro feedback decide qué construimos, qué habilidades tienen prioridad y cómo evoluciona la capa de memoria.",
-      "line2": "A cambio de esa confianza temprana obtienes 997 € de por vida por 10 espacios de trabajo. Los demás niveles escalan de forma lineal por espacio: con 5 marcas en Professional pagas 1.995 € al mes, con 14 marcas 5.586 €. Aunque recalibremos la tarifa el año que viene, tú te quedas en 997 €.",
-      "line3": "Diez plazas. Sin reapertura. Cuando están llenas, están llenas."
-    },
-    "benefits": {
-      "heading": "Lo que obtienes como Founding partner",
-      "items": {
-        "price_lock": {
-          "title": "Bloqueo de precio de por vida",
-          "description": "997 € al mes mientras sigas activo. Sin subidas de precio, sin corrección por inflación, sin upgrade forzado a un nivel superior."
-        },
-        "priority": {
-          "title": "Prioridad en la cola de desarrollo",
-          "description": "Las solicitudes de funcionalidad de los Founding partners van primero. Tienes una línea directa con la hoja de ruta."
-        },
-        "influence": {
-          "title": "Influencia en la hoja de ruta",
-          "description": "Llamadas mensuales con el founder para decidir qué viene después. Sin comité: tu opinión cuenta."
-        },
-        "early_access": {
-          "title": "Acceso temprano a nuevas habilidades",
-          "description": "Las nuevas habilidades, como Reel Builder y Voice Agent, llegan primero a los Founding partners. Tú las pruebas antes que nadie."
-        },
-        "community": {
-          "title": "Línea directa con Daley",
-          "description": "Me escribes directamente por WhatsApp. Preguntas, ayuda y buenas prácticas, sin sistema de tickets de por medio."
-        },
-        "onboarding": {
-          "title": "0 € de onboarding",
-          "description": "Los demás niveles pagan entre 1.997 € y 5.997 € por las 4 semanas de setup del partnership. Founding partners: 0 €. El único coste único que no tienes."
-        }
-      }
-    },
-    "proof": {
-      "heading": "Nuestro primer cliente",
-      "body": "SkinClarity Club es nuestro primer cliente. Clyde crea y programa para 3 cuentas de Instagram, nosotros aprobamos como agencia y Sindy (founder) tiene su propio dashboard. Lee el caso para ver cómo funciona en la práctica.",
-      "caseButton": "Lee el caso de SkinClarity"
-    },
-    "faq": {
-      "heading": "Preguntas frecuentes sobre Founding",
-      "items": {
-        "q1": {
-          "question": "¿Qué pasa cuando las 10 plazas están llenas?",
-          "answer": "El nivel Founding queda cerrado. Sin reapertura, sin excepciones. Las nuevas agencias empiezan en los niveles regulares facturados por espacio (Growth 499 € por espacio, Professional 399 €, Enterprise 299 €). Tú conservas tus 997 € por 10 espacios de trabajo, de por vida, mientras te mantengas activo."
-        },
-        "q2": {
-          "question": "¿Puedo escalar más adelante a Professional o Enterprise?",
-          "answer": "Sí. Bajar de Founding a Growth no es posible: tu precio Founding es exclusivo de Founding."
-        },
-        "q3": {
-          "question": "¿Qué topes incluye Founding?",
-          "answer": "Tienes todas las habilidades en vivo con topes más amplios que Growth, al precio Founding. En concreto: 12 blogs al mes, 8 anuncios de vídeo al mes, 500 DM de ManyChat al mes y, cuando estén disponibles, Voice Agent 60 minutos y 8 Reels al mes. Más que Growth, menos que Professional."
-        },
-        "q4": {
-          "question": "¿Qué pasa si me doy de baja y quiero volver más adelante?",
-          "answer": "Pierdes tu precio Founding. Vuelves como cliente regular en los niveles vigentes. Founding solo se mantiene mientras sigas activo sin interrupción."
-        },
-        "q5": {
-          "question": "¿Por qué sin fee de onboarding?",
-          "answer": "Los Founding partners reciben las 4 semanas de onboarding-partnership gratis como agradecimiento por la confianza temprana. Una excepción única para estas 10 plazas."
-        }
-      }
-    },
-    "cta": {
-      "title": "Conviértete en uno de los 10",
-      "subtitle": "Máx. {total} plazas. Solicita una llamada. Si hay encaje mutuo, reservamos tu plaza.",
-      "button": "Solicita una llamada"
-    },
-    "eyebrows": {
-      "pricing": "Precio",
-      "value": "Por qué Founding",
-      "benefits": "Lo que recibes",
-      "quickApply": "Inicio rápido",
-      "proof": "Primer cliente",
-      "faq": "Preguntas",
-      "cta": "Reserva tu plaza"
-    },
-    "quickApply": {
-      "eyebrow": "Inicio rápido",
-      "heading": "Solicita una llamada en 1 paso",
-      "subheading": "Introduce tu email y el nombre de la agencia. Te llevamos al formulario completo con tus datos ya rellenados.",
-      "emailLabel": "Email de trabajo",
-      "emailPlaceholder": "tu@agencia.com",
-      "agencyLabel": "Nombre de la agencia",
-      "agencyPlaceholder": "Nombre de la agencia (opcional)",
-      "cta": "Continuar a la solicitud",
-      "emailInvalid": "Introduce una dirección de correo electrónico válida.",
-      "reassurance": "Sin cuenta, sin tarjeta. Una llamada decide si hay encaje mutuo.",
-      "ariaLabel": "Solicitud Founding rápida"
     }
   },
   "booking": {
