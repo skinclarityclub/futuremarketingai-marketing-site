@@ -63,7 +63,8 @@ export function FloatingLocaleSwitcher() {
   }
 
   return (
-    <div ref={ref} className="fixed left-4 top-20 z-40">
+    // Bottom-left at the FAB rest height: at top-20 it sat on the breadcrumb "Home" on every page.
+    <div ref={ref} className="fab-rest fixed left-6 z-40">
       <button
         onClick={() => setOpen(!open)}
         className="w-10 h-10 flex items-center justify-center rounded-lg bg-bg-elevated/90 backdrop-blur-sm border border-border-primary hover:border-accent-system/30 transition-all shadow-lg"
@@ -79,7 +80,7 @@ export function FloatingLocaleSwitcher() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -8, scale: 0.95 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute left-0 top-full mt-2 bg-bg-elevated/98 backdrop-blur-xl border border-border-primary rounded-lg shadow-2xl py-1 min-w-[140px]"
+            className="absolute left-0 bottom-full mb-2 bg-bg-elevated/98 backdrop-blur-xl border border-border-primary rounded-lg shadow-2xl py-1 min-w-[140px]"
           >
             {routing.locales.map((loc) => (
               <button
