@@ -29,7 +29,7 @@ export const CHATBOT_TIERS = {
     pricingModel: 'fixed' as const,
     monthlyPrice: 997,
     onboardingFee: 0,
-    workspaces: -1, // not rendered; founding includes 15 workspaces, EUR 299 per extra one (app-side cap: stream P)
+    workspaces: -1, // not rendered; founding includes 10 workspaces, EUR 299 per extra one (app-side cap: stream P)
     credits: 8000,
     spotsTotal: 10,
     skillsIncluded: 12,
@@ -86,7 +86,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mnd',
       features: [
         'Alle 12 vaardigheden inbegrepen (10 live, 2 binnenkort)',
-        'Tot 15 werkruimtes',
+        '10 werkruimtes inbegrepen',
         '8.000 credits per maand',
         'Levenslang vast tarief van €997 (wordt nooit herijkt voor founding members)',
         'Directe toegang tot de founder',
@@ -133,7 +133,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mo',
       features: [
         'All 12 skills included (10 live, 2 coming soon)',
-        'Up to 15 workspaces',
+        '10 workspaces included',
         '8,000 credits per month',
         'Lifetime price lock at €997 (never raises for founding members)',
         'Direct founder access',
@@ -180,7 +180,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
       priceLabel: '€997/mes',
       features: [
         'Las 12 habilidades incluidas (10 activas, 2 próximamente)',
-        'Hasta 15 espacios de trabajo',
+        '10 espacios de trabajo incluidos',
         '8.000 créditos al mes',
         'Precio fijo de por vida de €997 (nunca sube para los miembros founding)',
         'Acceso directo al fundador',
