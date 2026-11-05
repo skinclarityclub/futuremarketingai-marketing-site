@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 15 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, lifetime rate lock, 10 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -215,7 +215,7 @@ Two pricing models:
 ### Founding Member, 997 EUR per month, lifetime rate lock
 
 - Maximum 10 founding spots
-- 15 workspaces included, 299 EUR per extra workspace
+- 10 workspaces included, 299 EUR per extra workspace
 - 8,000 credits per month
 - All 12 skills included (10 live, 2 coming soon)
 - Direct founder access plus roadmap influence
@@ -387,7 +387,7 @@ Type: FAQPage
 URL: https://future-marketing.ai
 
 Q: Wat kost FutureMarketingAI?
-A: Founding Member kost 997 EUR per maand, levenslang vast tarief, maandelijks opzegbaar, met 15 werkruimtes inbegrepen (daarboven 299 EUR per extra werkruimte) en maximaal 10 plekken. Growth kost 499 euro per werkruimte per maand (2 tot 4 merken). Professional kost 399 euro per werkruimte per maand (5 tot 14 merken). Enterprise kost 299 euro per werkruimte per maand (15 of meer merken). De tarieven per werkruimte worden halfjaarlijks herijkt op het werkelijke creditverbruik. Geen onboardingkosten voor Founding.
+A: Founding Member kost 997 EUR per maand, levenslang vast tarief, maandelijks opzegbaar, met 10 werkruimtes inbegrepen (daarboven 299 EUR per extra werkruimte) en maximaal 10 plekken. Growth kost 499 euro per werkruimte per maand (2 tot 4 merken). Professional kost 399 euro per werkruimte per maand (5 tot 14 merken). Enterprise kost 299 euro per werkruimte per maand (15 of meer merken). De tarieven per werkruimte worden halfjaarlijks herijkt op het werkelijke creditverbruik. Geen onboardingkosten voor Founding.
 
 Q: Kan ik stoppen wanneer ik wil?
 A: Ja. Alle tiers, inclusief Founding, zijn maandelijks opzegbaar. Founding is geen eenmalige betaling maar een maandelijks abonnement met een levenslang vast tarief: je betaalt altijd 997 EUR per maand, het tarief stijgt nooit.
@@ -411,7 +411,7 @@ Q: Hoe werkt de goedkeuringsflow?
 A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de web-app op je beginscherm. Rapporten en voorstellen van Clyde bevestig je met één tik in WhatsApp, en daar meldt Clyde zich ook wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
 Q: Wat is het verschil tussen Founding en Growth?
-A: Founding kost 997 EUR per maand met een levenslang vast tarief, 15 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
+A: Founding kost 997 EUR per maand met een levenslang vast tarief, 10 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
 
 Q: Kan ik FutureMarketingAI eerst uitproberen?
 A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

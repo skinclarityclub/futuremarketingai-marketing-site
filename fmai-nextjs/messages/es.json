@@ -306,7 +306,7 @@
         "founding": {
           "label": "Founding",
           "tagline": "Precio vitalicio fijo",
-          "desc": "Para las primeras 10 agencias. Todas las habilidades en vivo, 15 workspaces incluidos (a partir de ahí, €299 por workspace adicional), línea directa con Daley por WhatsApp y una tarifa mensual de €997 que nunca se recalibra."
+          "desc": "Para las primeras 10 agencias. Todas las habilidades en vivo, 10 workspaces incluidos (a partir de ahí, €299 por workspace adicional), línea directa con Daley por WhatsApp y una tarifa mensual de €997 que nunca se recalibra."
         },
         "growth": {
           "label": "Growth",
@@ -944,7 +944,7 @@
         "subtitle": "10 plazas · ancla de por vida",
         "tagline": "10 plazas en total. Caps amplios. 997 EUR de por vida. Línea directa con Daley.",
         "description": "Para los clientes fundadores que se comprometen antes del lanzamiento. Precio de por vida de 997 EUR, caps más amplios que Growth, línea directa con Daley por WhatsApp. Máx. {total} plazas.",
-        "features_0": "15 espacios de trabajo incluidos",
+        "features_0": "10 espacios de trabajo incluidos",
         "features_1": "8.000 créditos al mes",
         "features_2": "Las 10 habilidades en vivo, más las 2 que están por llegar",
         "features_3": "Blog Factory: 12 al mes",
@@ -1060,7 +1060,7 @@
       "eyebrow": "Nuestro punto de partida",
       "title": "Para qué es Clyde",
       "body": "Clyde es el colega de IA de tu agencia, hecho para agencias de 5 a 20 personas y de 5 a 20 marcas. Cada cliente tiene su propio espacio de trabajo y su propia memoria. Por cliente, Clyde hace estrategia, investigación, contenido, informes y leads, y tu cliente aprueba en su propio panel. Clyde publica en Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube. Los datos, los servidores y la base de datos están en la UE; el modelo de lenguaje funciona en EE. UU.",
-      "price": "Founding Member 997 € al mes, con 15 espacios de trabajo (10 plazas). Después 499 €, 399 € o 299 € por espacio de trabajo al mes, según el número de marcas. Empiezas con una llamada."
+      "price": "Founding Member 997 € al mes, con 10 espacios de trabajo incluidos (10 plazas). Después 499 €, 399 € o 299 € por espacio de trabajo al mes, según el número de marcas. Empiezas con una llamada."
     },
     "list": {
       "eyebrow": "Comparación",
@@ -1319,7 +1319,7 @@
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
-            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles de servicio: Founding (997 EUR al mes de por vida para un máximo de 15 espacios de trabajo, 299 EUR por cada espacio adicional por encima de esa cifra, 10 plazas) y los niveles facturados por espacio Growth (499 EUR por espacio, 2-4 marcas), Professional (399 EUR por espacio, 5-14 marcas) y Enterprise (299 EUR por espacio, a partir de 15 marcas). Todos los planes incluyen las 12 habilidades de IA, de las cuales diez están disponibles ahora (véase el artículo 1), con caps por nivel en vídeo y, cuando estén disponibles, en voz y reels. Las tarifas por espacio se recalibran cada seis meses según el uso real de créditos; los contratos existentes no se ajustan con efecto retroactivo. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
+            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles de servicio: Founding (997 EUR al mes de por vida para un máximo de 10 espacios de trabajo, 299 EUR por cada espacio adicional por encima de esa cifra, 10 plazas) y los niveles facturados por espacio Growth (499 EUR por espacio, 2-4 marcas), Professional (399 EUR por espacio, 5-14 marcas) y Enterprise (299 EUR por espacio, a partir de 15 marcas). Todos los planes incluyen las 12 habilidades de IA, de las cuales diez están disponibles ahora (véase el artículo 1), con caps por nivel en vídeo y, cuando estén disponibles, en voz y reels. Las tarifas por espacio se recalibran cada seis meses según el uso real de créditos; los contratos existentes no se ajustan con efecto retroactivo. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
           },
           "ai_output_disclaimer": {
             "title": "3. Exención de responsabilidad sobre la salida de IA",
@@ -2076,12 +2076,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 997 € de por vida | FutureMarketingAI",
-      "description": "Founding Member: €997 al mes de por vida, solo para las primeras 10 agencias. 15 espacios de trabajo incluidos; a partir de ahí, €299 por espacio adicional."
+      "description": "Founding Member: €997 al mes de por vida, solo para las primeras 10 agencias. 10 espacios de trabajo incluidos; a partir de ahí, €299 por espacio adicional."
     },
     "hero": {
       "badge": "Máx. {total} plazas Founding",
       "title": "Conviértete en Founding partner. Una elección, fijo de por vida.",
-      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, con 15 espacios de trabajo incluidos. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Todas las habilidades en vivo, topes amplios y línea directa con Daley por WhatsApp.",
+      "description": "Diez plazas en total para agencias que se comprometen desde el lanzamiento. 997 € al mes, fijo de por vida, con 10 espacios de trabajo incluidos. Los demás niveles escalan de forma lineal por espacio (€499 / €399 / €299). Todas las habilidades en vivo, topes amplios y línea directa con Daley por WhatsApp.",
       "cta": "Reserva tu plaza"
     },
     "pricing": {
@@ -2090,13 +2090,13 @@
       "price": "997",
       "period": "/mes, de por vida",
       "locked": "Garantía de precio de por vida. Sin subidas, nunca.",
-      "comparison": "Growth empieza en 998 € al mes para 2 espacios y escala contigo. Tú pagas 997 € por 15 espacios. A partir de 3 marcas ahorras de forma estructural.",
-      "includes": "15 espacios de trabajo incluidos (a partir de ahí, 299 € por espacio adicional), 8.000 créditos al mes, todas las habilidades en vivo con topes amplios, línea directa con Daley por WhatsApp y 0 € de onboarding."
+      "comparison": "Growth empieza en 998 € al mes para 2 espacios y escala contigo. Tú pagas 997 € por 10 espacios. A partir de 3 marcas ahorras de forma estructural.",
+      "includes": "10 espacios de trabajo incluidos (a partir de ahí, 299 € por espacio adicional), 8.000 créditos al mes, todas las habilidades en vivo con topes amplios, línea directa con Daley por WhatsApp y 0 € de onboarding."
     },
     "value": {
       "heading": "Por qué existen las 10 plazas Founding",
       "line1": "Los Founding partners son las agencias con las que damos forma a Clyde. Vuestro feedback decide qué construimos, qué habilidades tienen prioridad y cómo evoluciona la capa de memoria.",
-      "line2": "A cambio de esa confianza temprana obtienes 997 € de por vida por 15 espacios de trabajo. Los demás niveles escalan de forma lineal por espacio: con 5 marcas en Professional pagas 1.995 € al mes, con 14 marcas 5.586 €. Aunque recalibremos la tarifa el año que viene, tú te quedas en 997 €.",
+      "line2": "A cambio de esa confianza temprana obtienes 997 € de por vida por 10 espacios de trabajo. Los demás niveles escalan de forma lineal por espacio: con 5 marcas en Professional pagas 1.995 € al mes, con 14 marcas 5.586 €. Aunque recalibremos la tarifa el año que viene, tú te quedas en 997 €.",
       "line3": "Diez plazas. Sin reapertura. Cuando están llenas, están llenas."
     },
     "benefits": {
@@ -2138,7 +2138,7 @@
       "items": {
         "q1": {
           "question": "¿Qué pasa cuando las 10 plazas están llenas?",
-          "answer": "El nivel Founding queda cerrado. Sin reapertura, sin excepciones. Las nuevas agencias empiezan en los niveles regulares facturados por espacio (Growth 499 € por espacio, Professional 399 €, Enterprise 299 €). Tú conservas tus 997 € por 15 espacios de trabajo, de por vida, mientras te mantengas activo."
+          "answer": "El nivel Founding queda cerrado. Sin reapertura, sin excepciones. Las nuevas agencias empiezan en los niveles regulares facturados por espacio (Growth 499 € por espacio, Professional 399 €, Enterprise 299 €). Tú conservas tus 997 € por 10 espacios de trabajo, de por vida, mientras te mantengas activo."
         },
         "q2": {
           "question": "¿Puedo escalar más adelante a Professional o Enterprise?",

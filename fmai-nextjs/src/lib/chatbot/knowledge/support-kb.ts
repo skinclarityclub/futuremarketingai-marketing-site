@@ -25,7 +25,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
 All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
 
 **Founding Member. EUR 997/mo, lifetime price lock** (maximum 10 founding spots)
-- 15 workspaces included, EUR 299 per extra workspace above that
+- 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
 - Direct line to Daley on WhatsApp
@@ -80,7 +80,7 @@ Clyde does not replace people: he takes work off the team, so the same team can 
 - Growth: EUR 499 per workspace (2 to 4 brands). 3 clients = EUR 1,497/mo
 - Professional: EUR 399 per workspace (5 to 14 brands). 8 clients = EUR 3,192/mo
 - Enterprise: EUR 299 per workspace (15+ brands)
-- Founding: EUR 997/mo with 15 workspaces included, while founding spots are open
+- Founding: EUR 997/mo with 10 workspaces included, while founding spots are open
 
 **What to compare in the strategy call:**
 - The hours your team spends per client on content, inbox and reporting
@@ -153,7 +153,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 
 **Benefits:**
 - EUR 997/mo locked for life (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
-- 15 workspaces included, EUR 299 per extra workspace above that
+- 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo (the other tiers get 800 per workspace)
 - All skills, with caps between Growth and Professional
 - Direct line to Daley on WhatsApp for support and feature requests
@@ -166,7 +166,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 
 **Who Is It For?**
 Marketing agencies who want to:
-- Serve more clients per team member, with 15 workspaces included
+- Serve more clients per team member, with 10 workspaces included
 - Have direct influence on product development
 - Start early, while the price is locked for life
 

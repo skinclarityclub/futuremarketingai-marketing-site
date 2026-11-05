@@ -306,7 +306,7 @@
         "founding": {
           "label": "Founding",
           "tagline": "Locked for life",
-          "desc": "For the first 10 agencies. All live skills, 15 workspaces included (€299 per extra workspace above that), a direct WhatsApp line with Daley and a €997 monthly rate that never recalibrates."
+          "desc": "For the first 10 agencies. All live skills, 10 workspaces included (€299 per extra workspace above that), a direct WhatsApp line with Daley and a €997 monthly rate that never recalibrates."
         },
         "growth": {
           "label": "Growth",
@@ -944,7 +944,7 @@
         "subtitle": "10 seats · lifetime anchor",
         "tagline": "10 total spots. Generous caps. €997 for life. Direct line to Daley.",
         "description": "For the agencies that join first. Lifetime price of €997, higher caps than Growth, direct WhatsApp line with Daley. Max {total} spots.",
-        "features_0": "15 workspaces included",
+        "features_0": "10 workspaces included",
         "features_1": "8,000 credits per month",
         "features_2": "All 10 live skills, plus the 2 coming next",
         "features_3": "Blog Factory: 12 per month",
@@ -1060,7 +1060,7 @@
       "eyebrow": "Our starting point",
       "title": "What Clyde is for",
       "body": "Clyde is your agency's AI colleague, built for agencies with 5 to 20 people and 5 to 20 brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own dashboard. Clyde publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube. Data, servers and database are in the EU; the language model runs in the US.",
-      "price": "Founding Member €997 per month, with 15 workspaces (10 spots). After that €499, €399 or €299 per workspace per month, depending on the number of brands. You start with a call."
+      "price": "Founding Member €997 per month, with 10 workspaces included (10 spots). After that €499, €399 or €299 per workspace per month, depending on the number of brands. You start with a call."
     },
     "list": {
       "eyebrow": "Comparison",
@@ -1319,7 +1319,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo for life for up to 15 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, ten of which are available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
+            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo for life for up to 10 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, ten of which are available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
@@ -2076,12 +2076,12 @@
   "founding-member": {
     "meta": {
       "title": "Founding Member: 10 spots, €997 for life | FutureMarketingAI",
-      "description": "Founding Member: €997 per month for life, first 10 agencies only. 15 workspaces included, €299 per extra workspace above that."
+      "description": "Founding Member: €997 per month for life, first 10 agencies only. 10 workspaces included, €299 per extra workspace above that."
     },
     "hero": {
       "badge": "Max {total} Founding spots",
       "title": "Become a Founding partner. One choice, locked for life.",
-      "description": "Ten spots in total, for the agencies that join first. €997 per month, locked for life, with 15 workspaces included. The other tiers scale linearly per workspace (€499 / €399 / €299). All live skills, generous caps and a direct WhatsApp line with Daley.",
+      "description": "Ten spots in total, for the agencies that join first. €997 per month, locked for life, with 10 workspaces included. The other tiers scale linearly per workspace (€499 / €399 / €299). All live skills, generous caps and a direct WhatsApp line with Daley.",
       "cta": "Reserve your seat"
     },
     "pricing": {
@@ -2090,13 +2090,13 @@
       "price": "997",
       "period": "/mo, for life",
       "locked": "Lifetime price guarantee. No price increase, ever.",
-      "comparison": "Growth starts at €998 per month for 2 workspaces and scales with you. You pay €997 for 15 workspaces. From 3 brands onward you save consistently.",
-      "includes": "15 workspaces included (€299 per extra workspace above that), 8,000 credits per month, all live skills with generous caps, a direct WhatsApp line with Daley and €0 onboarding."
+      "comparison": "Growth starts at €998 per month for 2 workspaces and scales with you. You pay €997 for 10 workspaces. From 3 brands onward you save consistently.",
+      "includes": "10 workspaces included (€299 per extra workspace above that), 8,000 credits per month, all live skills with generous caps, a direct WhatsApp line with Daley and €0 onboarding."
     },
     "value": {
       "heading": "Why the 10 Founding spots exist",
       "line1": "Founding partners are the agencies we shape Clyde with. Your feedback determines what we build, which skills get priority and how the memory layer evolves.",
-      "line2": "In return for that early trust you get €997 for life for 15 workspaces. The other tiers scale linearly per workspace: at 5 brands on Professional you pay €1,995 per month, at 14 brands €5,586. We recalibrate the other rates every six months; you stay at €997.",
+      "line2": "In return for that early trust you get €997 for life for 10 workspaces. The other tiers scale linearly per workspace: at 5 brands on Professional you pay €1,995 per month, at 14 brands €5,586. We recalibrate the other rates every six months; you stay at €997.",
       "line3": "Ten spots. No reopening. Full is full."
     },
     "benefits": {
@@ -2138,11 +2138,11 @@
       "items": {
         "q1": {
           "question": "What happens when the 10 spots are full?",
-          "answer": "Then the Founding tier closes. No reopening, no exceptions. New agencies then start on the regular workspace-priced tiers (Growth €499 per workspace, Professional €399, Enterprise €299). You keep your €997 for 15 workspaces, for life, as long as you stay active."
+          "answer": "Then the Founding tier closes. No reopening, no exceptions. New agencies then start on the regular workspace-priced tiers (Growth €499 per workspace, Professional €399, Enterprise €299). You keep your €997 for 10 workspaces, for life, as long as you stay active."
         },
         "q2": {
           "question": "Can I upgrade later to Professional or Enterprise?",
-          "answer": "Yes. Above 15 workspaces you pay €299 per extra workspace, and your Founding price stays as it is. If you move to Professional or Enterprise, that package's rate applies and your Founding price lapses."
+          "answer": "Yes. Above 10 workspaces you pay €299 per extra workspace, and your Founding price stays as it is. If you move to Professional or Enterprise, that package's rate applies and your Founding price lapses."
         },
         "q3": {
           "question": "Which caps come with Founding?",

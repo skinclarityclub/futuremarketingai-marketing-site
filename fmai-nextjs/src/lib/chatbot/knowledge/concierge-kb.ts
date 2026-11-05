@@ -57,7 +57,7 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
 All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
 **Founding Member. EUR 997/mo, lifetime price lock**: maximum 10 founding spots. For portfolios of 3 or more brands it costs less than the workspace-priced tiers.
-- Up to 15 workspaces included, EUR 299 per extra workspace above that
+- 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
 - Lifetime price lock
