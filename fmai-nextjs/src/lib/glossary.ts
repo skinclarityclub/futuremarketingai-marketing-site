@@ -22,4 +22,7 @@ export const GLOSSARY_TERMS: GlossaryTermRef[] = [
   { id: 'ai-marketing-medewerker', category: 'ai-marketing-automation' },
   { id: 'citation-monitoring', category: 'geo' },
   { id: 'tier-caps', category: 'agency-ops' },
+  { id: 'werkruimte', category: 'agency-ops' },
+  { id: 'klantportaal', category: 'agency-ops' },
+  { id: 'merkgeheugen', category: 'ai-marketing-automation' },
 ]

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * FMai kennisbank hero-image generator (OpenAI gpt-image-1).
+ * FMai kennisbank hero-image generator (OpenAI gpt-image-2; gpt-image-1 is gone for the org).
  *
  * WHY: every cornerstone shared the generic /og-image.png — weak Article rich-result
  * + social/LLM citation signal. This generates a per-article, brand-consistent
  * abstract hero (dark #0a0d14 + teal #00d4aa / amber #f5a623), writes it to
- * public/blog/<slug>.jpg, and points the MDX `heroImage` frontmatter at it.
+ * public/kennisbank/<slug>.jpg (not public/blog: the /blog redirect eats static files, see 412be739), and points the MDX `heroImage` frontmatter at it.
  *
  * REUSE: `buildHeroPrompt({ slug, category })` is the single source of the FMai
  * visual prompt. The multi-tenant Blog Factory's FMai-tenant image node should call
@@ -25,7 +25,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const BLOG_DIR = join(ROOT, 'content', 'blog')
-const OUT_DIR = join(ROOT, 'public', 'blog')
+const OUT_DIR = join(ROOT, 'public', 'kennisbank')
 
 // ---- env: read OPENAI_API_KEY from .env.local without a dependency ----
 function loadKey() {
@@ -84,6 +84,7 @@ const MOODS = {
   'ai-marketing-medewerker': 'a foundational, defining category',
   'ai-agent-vs-ai-tool-marketing': 'a clear boundary between two natures',
   'ai-marketing-agent-geheugen-en-leren': 'layered memory and learning over time',
+  'contentkalender-maken-meerdere-klanten': 'many calendars kept in one steady rhythm',
 }
 
 const DEFAULT_SLUGS = Object.keys(MOODS)
@@ -130,13 +131,13 @@ async function generate(slug, key, { index, force, dry }) {
   const prompt = buildHeroPrompt({ slug, category, index })
   const outPath = join(OUT_DIR, slug + '.jpg')
   if (dry) { console.log(`\n[${slug}] (${category})\n${prompt}`); return { slug, skipped: 'dry' } }
-  if (existsSync(outPath) && !force) { console.log(`= skip ${slug} (exists)`); setHeroImage(slug, `/blog/${slug}.jpg`); return { slug, skipped: 'exists' } }
+  if (existsSync(outPath) && !force) { console.log(`= skip ${slug} (exists)`); setHeroImage(slug, `/kennisbank/${slug}.jpg`); return { slug, skipped: 'exists' } }
 
   const res = await fetch('https://api.openai.com/v1/images/generations', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
     body: JSON.stringify({
-      model: 'gpt-image-1',
+      model: 'gpt-image-2',
       prompt,
       n: 1,
       size: '1536x1024',
@@ -153,7 +154,7 @@ async function generate(slug, key, { index, force, dry }) {
   const b64 = json?.data?.[0]?.b64_json
   if (!b64) throw new Error(`No image data for ${slug}: ${JSON.stringify(json).slice(0, 300)}`)
   writeFileSync(outPath, Buffer.from(b64, 'base64'))
-  const wired = setHeroImage(slug, `/blog/${slug}.jpg`)
+  const wired = setHeroImage(slug, `/kennisbank/${slug}.jpg`)
   console.log(`✓ ${slug}.jpg (${(Buffer.from(b64, 'base64').length / 1024).toFixed(0)} KB)${wired ? ' + frontmatter' : ''}`)
   return { slug, ok: true }
 }

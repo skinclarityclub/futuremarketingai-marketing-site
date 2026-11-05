@@ -4661,24 +4661,37 @@
       "definition": "De AI-collega die FutureMarketingAI voor marketingbureaus bouwt. Clyde verbindt het doel van elke klant met research, agenda, content en rapporten, met een eigen geheugen per klant. Geen losse tool, maar een collega die de hele klantportfolio kent."
     },
     "citation-monitoring": {
-      "name": "Citation monitoring",
+      "name": "Citatiemonitoring",
       "definition": "Het structureel meten of, en hoe vaak, AI-engines een merk noemen of citeren in hun gegenereerde antwoorden. De GEO-tegenhanger van klassieke rank tracking."
     },
     "tier-caps": {
-      "name": "Tier caps",
+      "name": "Limieten per abonnement",
       "definition": "De grenzen per abonnementsniveau: hoeveel werkruimtes een plan omvat en hoeveel een bureau per maand van de zwaardere vaardigheden gebruikt."
+    },
+    "werkruimte": {
+      "name": "Werkruimte (klantmerk)",
+      "definition": "De plek in Clyde voor één klantmerk, met de merkstem, de doelgroep, de doelen en de goedkeuringsregels van die klant. Je betaalt per werkruimte, dus de kosten lopen mee met het aantal klanten dat je bedient."
+    },
+    "klantportaal": {
+      "name": "Klantportaal",
+      "definition": "De omgeving waar je klant inlogt om de geplande content te zien en goed of af te keuren, voordat er iets live gaat."
+    },
+    "merkgeheugen": {
+      "name": "Merkgeheugen",
+      "definition": "Wat Clyde per klant onthoudt: de merkstem, de doelgroep, eerdere keuzes en wat werkte. Daardoor bouwt elke opdracht voort op de vorige, in plaats van bij nul te beginnen."
     }
   },
   "resources": {
     "meta": {
-      "title": "Kennisbank: GEO en AI marketing voor bureaus",
-      "description": "De FutureMarketingAI kennisbank. Pillars, clusters en een woordenlijst over generative engine optimization en AI marketing automation voor bureaus."
+      "title": "Kennisbank voor marketingbureaus | FutureMarketingAI",
+      "description": "Artikelen over AI in je bureau: wat een AI-agent is, GEO, rapportage, schalen met AI en content voor meerdere klanten."
     },
     "hero": {
       "eyebrow": "Kennisbank",
-      "heading": "Alles over GEO en AI marketing voor bureaus",
-      "intro": "Diepe gidsen, vergelijkingen en definities. Gestructureerd zodat zowel jij als AI-engines de samenhang zien."
+      "heading": "Kennisbank voor eigenaren van marketingbureaus",
+      "intro": "Gidsen, vergelijkingen en definities over AI in je bureau, met bronnen erbij. Nieuw hier? Begin bij een van de twee gidsen hieronder."
     },
+    "startHere": "Begin hier",
     "pillars": {
       "geo": {
         "title": "Generative Engine Optimization",

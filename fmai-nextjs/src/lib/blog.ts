@@ -25,7 +25,10 @@ export interface BlogTocItem {
 
 export interface BlogPostMeta {
   slug: string
+  /** The H1, and the headline in Article JSON-LD. */
   title: string
+  /** The <title> tag when it should differ from the H1 (search intent vs reading flow). Falls back to `title`. */
+  seoTitle?: string
   description: string
   author: string
   publishedAt: string
@@ -93,6 +96,7 @@ function toMeta(filename: string, data: Record<string, unknown>, content: string
     readTime: typeof data.readTime === 'number' ? data.readTime : estimateReadTime(content),
   }
 
+  if (typeof data.seoTitle === 'string') meta.seoTitle = data.seoTitle
   if (typeof data.heroImage === 'string') meta.heroImage = data.heroImage
   if (Array.isArray(data.keyTakeaways)) meta.keyTakeaways = data.keyTakeaways as string[]
   if (Array.isArray(data.faqs)) meta.faqs = data.faqs as BlogFaqItem[]

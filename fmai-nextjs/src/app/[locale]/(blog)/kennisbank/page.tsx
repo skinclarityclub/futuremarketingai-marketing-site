@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
-import { getAllPosts, BLOG_CATEGORIES } from '@/lib/blog'
+import { getAllPosts, BLOG_CATEGORIES, type BlogPostMeta } from '@/lib/blog'
+import { Link } from '@/i18n/navigation'
 import { BlogPostCard } from '@/components/blog/BlogPostCard'
 import { CategoryFilter } from '@/components/blog/CategoryFilter'
 import { LeadMagnetCTA } from '@/components/conversion/LeadMagnetCTA'
@@ -26,6 +27,9 @@ import { GLOSSARY_TERMS } from '@/lib/glossary'
  */
 
 export const revalidate = 3600
+
+// The two pillars a newcomer should start with (all-pages audit 2026-11-05: GEO + AI marketing for agencies).
+const ENTRY_SLUGS = ['geo-generative-engine-optimization', 'ai-marketing-automation-voor-bureaus']
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -55,6 +59,10 @@ export default async function KennisbankPage({ params, searchParams }: Kennisban
   const gt = await getTranslations({ locale, namespace: 'glossary' })
 
   const allPosts = getAllPosts(locale)
+  // Only pillars that exist in this locale, so the EN hub shows no NL links.
+  const entryPosts = ENTRY_SLUGS.map((s) => allPosts.find((p) => p.slug === s)).filter(
+    (p): p is BlogPostMeta => p !== undefined
+  )
   const activeCategory = category ?? null
   const filteredPosts = activeCategory
     ? allPosts.filter((post) => post.category === activeCategory)
@@ -97,6 +105,20 @@ export default async function KennisbankPage({ params, searchParams }: Kennisban
             {t('hero.heading')}
           </h1>
           <p className="text-lg leading-relaxed text-text-secondary">{t('hero.intro')}</p>
+          {entryPosts.length > 0 && (
+            <nav aria-label={t('startHere')} className="flex flex-wrap items-center gap-3 pt-2 text-sm">
+              <span className="font-medium text-text-muted">{t('startHere')}:</span>
+              {entryPosts.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/kennisbank/${p.slug}`}
+                  className="rounded-xl border border-border-primary px-3 py-1.5 text-text-primary transition-colors hover:border-accent-system hover:text-accent-system"
+                >
+                  {p.title}
+                </Link>
+              ))}
+            </nav>
+          )}
         </header>
 
         <CategoryFilter
