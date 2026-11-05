@@ -66,13 +66,15 @@ export async function generateMetadata({
       : `${SITE_URL}${post.heroImage}`
     : undefined
 
+  const metaTitle = post.seoTitle ?? post.title
+
   return {
     // Keep the brand suffix only when the full title still fits <=60 chars; otherwise render the
     // (already <=60) article title alone. `absolute` bypasses any root title template so the brand
     // is never appended a second time (the kennisbank article titles are descriptive + long).
     title: {
       absolute:
-        `${post.title} | ${SITE_NAME}`.length <= 60 ? `${post.title} | ${SITE_NAME}` : post.title,
+        `${metaTitle} | ${SITE_NAME}`.length <= 60 ? `${metaTitle} | ${SITE_NAME}` : metaTitle,
     },
     description: post.description,
     // This route builds its own metadata instead of going through
@@ -85,7 +87,7 @@ export async function generateMetadata({
       languages: Object.keys(alternates).length > 1 ? alternates : undefined,
     },
     openGraph: {
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       url,
       siteName: SITE_NAME,
@@ -98,7 +100,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: metaTitle,
       description: post.description,
       ...(ogImage ? { images: [ogImage] } : {}),
     },
