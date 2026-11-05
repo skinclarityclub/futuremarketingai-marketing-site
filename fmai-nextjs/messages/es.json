@@ -3969,6 +3969,18 @@
     "tier-caps": {
       "name": "Límites de plan (tier caps)",
       "definition": "Los límites por nivel de suscripción: cuántos espacios de trabajo incluye un plan y cuánto usa una agencia al mes de las habilidades más pesadas."
+    },
+    "werkruimte": {
+      "name": "Espacio de trabajo (marca cliente)",
+      "definition": "El lugar en Clyde para una marca cliente, con su tono de marca, su público, sus objetivos y sus reglas de aprobación. Pagas por espacio de trabajo, así que el coste crece con el número de clientes."
+    },
+    "klantportaal": {
+      "name": "Portal del cliente",
+      "definition": "Donde tu cliente entra para ver el contenido planificado y aprobarlo o rechazarlo antes de que se publique."
+    },
+    "merkgeheugen": {
+      "name": "Memoria de marca",
+      "definition": "Lo que Clyde recuerda de cada cliente: el tono de marca, el público, las decisiones anteriores y lo que funcionó. Cada tarea parte de la anterior en lugar de empezar de cero."
     }
   },
   "resources": {
@@ -3981,6 +3993,7 @@
       "heading": "Todo sobre GEO y marketing con IA para agencias",
       "intro": "Guías en profundidad, comparativas y definiciones. Estructurado para que tanto tú como los motores de IA veáis cómo encaja todo."
     },
+    "startHere": "Empieza aquí",
     "pillars": {
       "geo": {
         "title": "Generative Engine Optimization",

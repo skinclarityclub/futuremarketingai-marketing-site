@@ -320,25 +320,26 @@ Daley is the founder of FutureMarketingAI. Native Dutch speaker, based in the Ne
 
 ## Kennisbank / Resources
 
-Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, agency-ops en product-Clyde cornerstones (13 Nederlandstalige artikelen, oktober 2026).
+Hub: https://future-marketing.ai/nl/kennisbank -- GEO, AI marketing automation, agency-ops en product-Clyde cornerstones (14 Nederlandstalige artikelen, november 2026).
 
 ### Pillars
 
 - https://future-marketing.ai/nl/kennisbank/geo-generative-engine-optimization -- GEO optimalisatie zorgt dat ChatGPT, Perplexity en Google AI Overviews jouw merk citeren. Wat GEO betekent, hoe het verschilt van SEO en hoe je begint.
-- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- AI marketing automation voor bureaus: wat het is, waar losse AI tools voor marketingbureaus tekortschieten en hoe je meer klanten bedient met je huidige team.
+- https://future-marketing.ai/nl/kennisbank/ai-marketing-automation-voor-bureaus -- Welke AI-tools gebruikt een marketingbureau in 2026, en voor welk klantwerk? Een tabel per taak met prijs en bron, plus waar een AI-collega als Clyde past.
 - https://future-marketing.ai/nl/kennisbank/marketingbureau-schalen-met-ai -- Een marketingbureau schaalt met AI door de lineaire relatie tussen omzet en headcount te breken. Lees welk werk AI overneemt en hoe je begint.
 - https://future-marketing.ai/nl/kennisbank/ai-marketing-medewerker -- Zoek je een AI-marketingmedewerker voor je bureau? Wat zo'n digitale collega doet, waarom wij Clyde een AI-collega noemen en hoe hij per klant werkt.
 
 ### Clusters
 
 - https://future-marketing.ai/nl/kennisbank/geo-vs-seo-waar-investeren-2026 -- GEO vs SEO in 2026: waarin ze verschillen, waar AEO tussen past, waarom GEO je SEO uitbreidt en niet vervangt, en hoe je je budget over beide verdeelt.
-- https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- AI Overviews SEO meten: wat AI-samenvattingen met je klikken doen, vermelding versus citatie, de vier kernmetrieken en een meetritme per AI-engine.
+- https://future-marketing.ai/nl/kennisbank/zichtbaarheid-meten-ai-overviews -- Wat AI Overviews zijn, hoe Google bronnen kiest en hoe je per zoekvraag meet of je klant erin staat. Met de meetmethode die Clyde per klant gebruikt.
 - https://future-marketing.ai/nl/kennisbank/geo-monitoring-tools-chatgpt-perplexity -- Welke AI zichtbaarheid tool meet of ChatGPT, Perplexity en Google AI Overviews je merk noemen? Zes tools vergeleken op wat ze zelf zeggen te meten.
 - https://future-marketing.ai/nl/kennisbank/clyde-vs-jasper-chatgpt-semrush -- ChatGPT vs Jasper: een AI-werkplek voor elk team tegenover een marketingplatform met agents. Plus Semrush, en wanneer een bureau beter kiest voor Clyde.
 - https://future-marketing.ai/nl/kennisbank/ai-efficientie-marketingbureau -- AI efficiëntie voor bureaus: selecteer het juiste werk en laat Clyde het volume dragen. Welk werk neemt AI als eerste over?
 - https://future-marketing.ai/nl/kennisbank/meetbare-ai-marketing-resultaten -- Marketing rendement meten begint bij een nulmeting. Zo maak je meetbare marketing resultaten van AI zichtbaar, met zes indicatoren en eerlijke toeschrijving.
 - https://future-marketing.ai/nl/kennisbank/ai-marketing-resultaat-in-de-praktijk -- Wat levert AI marketing in de praktijk op? Een werkend voorbeeld: hoe Clyde per merk werk levert en de operator regie houdt.
-- https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- Het verschil tussen een chatbot en een AI agent, waar een AI tool tussen past en wanneer je in marketing welke nodig hebt. Met de definities van Google en IBM.
+- https://future-marketing.ai/nl/kennisbank/ai-agent-vs-ai-tool-marketing -- Wat is een AI-agent? Een AI-agent voert zelf taken uit binnen grenzen die jij stelt. Zo verschilt hij van een chatbot en een AI-tool, met voorbeelden uit marketingbureaus.
+- https://future-marketing.ai/nl/kennisbank/contentkalender-maken-meerdere-klanten -- Zo maak je een contentkalender voor vijf tot twintig klantmerken: per klant een merkstem, een goedkeurronde en een weekritme. Met een gratis template en de inhaakkalender 2027.
 - https://future-marketing.ai/nl/kennisbank/ai-marketing-agent-geheugen-en-leren -- Heeft AI een geheugen? Niet uit zichzelf. Zo onthoudt een AI marketing agent per merk de toon, doelgroep en eerdere keuzes, en leert hij van je bijsturing.
 
 ## Apply

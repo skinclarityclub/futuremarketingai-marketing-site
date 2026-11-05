@@ -3969,6 +3969,18 @@
     "tier-caps": {
       "name": "Tier caps",
       "definition": "The limits per subscription level: how many workspaces a plan includes and how much of the heavier skills an agency uses per month."
+    },
+    "werkruimte": {
+      "name": "Workspace (client brand)",
+      "definition": "The place in Clyde for one client brand, holding that client's brand voice, audience, goals and approval rules. You pay per workspace, so the cost grows with the number of clients you serve."
+    },
+    "klantportaal": {
+      "name": "Client portal",
+      "definition": "Where your client logs in to see the planned content and approve or reject it before anything goes live."
+    },
+    "merkgeheugen": {
+      "name": "Brand memory",
+      "definition": "What Clyde remembers per client: the brand voice, the audience, earlier decisions and what worked. Each task builds on the last one instead of starting from zero."
     }
   },
   "resources": {
@@ -3981,6 +3993,7 @@
       "heading": "Everything about GEO and AI marketing for agencies",
       "intro": "Deep guides, comparisons and definitions. Structured so both you and AI engines see how it all connects."
     },
+    "startHere": "Start here",
     "pillars": {
       "geo": {
         "title": "Generative Engine Optimization",
