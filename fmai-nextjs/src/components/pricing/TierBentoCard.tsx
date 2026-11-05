@@ -141,8 +141,11 @@ export function TierBentoCard({
           ) : (
             <>
               <div className="flex items-baseline gap-2 flex-wrap">
-                <span className="text-text-muted text-[10px] uppercase tracking-wide font-mono">
-                  {t('tiers.fromLabel')}
+                <span className="basis-full text-text-muted text-[10px] uppercase tracking-wide font-mono">
+                  {/* "vanaf" only when the price shown is the tier minimum; at slider 4 Growth showed "vanaf €1.996" while its real minimum is €998 */}
+                  {clampedForTier === config.minWorkspaces
+                    ? t('tiers.fromLabel')
+                    : t('tiers.atWorkspacesLabel', { count: clampedForTier })}
                 </span>
                 <span className="font-mono text-3xl font-bold text-text-primary">
                   €

@@ -893,6 +893,7 @@
       "rateDisclosure": "Per-workspace rate. Recalibrated every 6 months based on actual credit usage. Founding (€997 for life) stays exempt.",
       "perWorkspaceLabel": "per workspace",
       "fromLabel": "from",
+      "atWorkspacesLabel": "at {count} workspaces",
       "foundingDetailLink": "Read more about Founding",
       "totalLabel": "Total for {workspaces} workspaces",
       "workspacesPickerLabel": "Number of workspaces",

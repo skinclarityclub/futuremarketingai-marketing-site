@@ -63,7 +63,9 @@ for (const file of htmlFiles) {
   const original = await readFile(file, 'utf8')
   totalBytesBefore += original.length
   try {
-    const transformed = await beasties.process(original)
+    // Beasties copies the CSS chunk's relative font path into <link rel="preload" href="../media/x.woff2">;
+    // from the page that resolves to /media/x.woff2 (404 x13 per page), so pin it to the static path.
+    const transformed = (await beasties.process(original)).replaceAll('href="../media/', 'href="/_next/static/media/')
     if (transformed && transformed !== original) {
       await writeFile(file, transformed, 'utf8')
       totalBytesAfter += transformed.length
