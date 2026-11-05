@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
-export const alt = 'Future Marketing AI: AI-Powered Marketing Automation'
+export const alt = 'FutureMarketingAI: Clyde, de AI-collega van je bureau'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -20,8 +20,10 @@ export const contentType = 'image/png'
  * The static og-image.png is brand-correct (Synapse mark, Clyde headline,
  * Dutch agency tagline) and regenerable via the brand-assets script.
  */
-export default async function Image() {
-  const png = await readFile(join(process.cwd(), 'public/og-image.png'))
+export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const file = locale === 'en' || locale === 'es' ? `og-image-${locale}.png` : 'og-image.png'
+  const png = await readFile(join(process.cwd(), 'public', file))
   return new Response(new Uint8Array(png), {
     headers: {
       'Content-Type': 'image/png',
