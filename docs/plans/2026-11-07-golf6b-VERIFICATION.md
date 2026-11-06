@@ -1,6 +1,6 @@
 # Golf 6b (/trust en /alternatives): VERIFICATION
 
-Branch `feature/golf6b-bewijs` in `C:/tmp/fmai-golf6`, port-commit `cc3af93e` op `a70878da` (de live-sectie van 6a), op origin/main `0a69898a` (#98). Niets gepusht; wacht op Daleys ja op de diff.
+Branch `feature/golf6b-bewijs` in `C:/tmp/fmai-golf6`, port-commit `cc3af93e` op `a70878da` (de live-sectie van 6a), op origin/main `0a69898a` (#98). Daley zei ja op de diff op 2026-11-07. Live als PR #99, squash-commit `3ee6b477` (zie "Task 6 en live" onderaan).
 Plan: `docs/plans/2026-11-06-golf6-bewijs-plan.md`, Fase 3. Daley koos op 2026-11-07 "Zo porten" en de regel voor de rolverdeling op /trust.
 
 ## Eerste actie: de verwerkersovereenkomst naast de rolverdeling
@@ -63,9 +63,28 @@ Gemeten op 2026-11-07 op `cc3af93e`, `next start` op poort 3071; baseline `0a698
 | Overflow, axe | `m-g6.mjs g6/port6b --base http://localhost:3071`, 1440/1280/1024/390 plus reduce, en een /en-kopie op 1280 en 390 | **0 PROBLEEM**, axe 0, js 0, tabellen scrollen in hun kader |
 | e2e | `navigation`, `nl-content-smoke`, `sitewide-visual-audit`, `conversion-polish`, chromium, `--reporter=list` | baseline 15 failed / 114 passed / 1 skipped; branch 16 / 113 / 1. Het verschil is `nl-content-smoke › legal-privacy`: "Unable to capture screenshot" onder belasting (de /en-meting liep tegelijk). Los `--repeat-each=3`: 3/3 groen op branch en baseline. De andere 15 zijn dezelfde tests. |
 
+## Task 6 en live
+
+| Stap | Uitkomst |
+|---|---|
+| Diffpagina | `A/alle-paginas/golf6b-diff/index.html`, met voor en na op 1280 en 390 px, de home-sectie Waarom en /en op 1280. Vault: `Agency/Rapporten/2026-11-07 Golf 6b diff.md`. |
+| Daleys ja | 2026-11-07, "Ja, push en merge", in één AskUserQuestion, op `cc3af93e` en `83892c9d`. |
+| Na zijn ja | `3fcd1c6d`: op /en wijst de akkoordlink op /trust naar `/#people`, want `#regie` bestaat alleen op de NL-home. Een link-anker, geen copy. tsc, eslint en `check:copy` rc 0; de build is die van de Vercel-preview. |
+| PR | #99, Vercel-preview groen op `3fcd1c6d` (de preview zit achter Vercel-beveiliging, 302, dus niet met curl te toetsen). Squash-merge `3ee6b477` op 2026-11-07 lokaal, dus de lastmod 2026-11-07 klopt met de mergedag. De productiedeploy van die commit is groen. |
+| curl prod | `/nl` en `/en` van beide routes geven 200 met de nieuwe title (47, 46, 50 en 49 tekens) en H1. In de zichtbare tekst 0 em-dashes en 0 treffers op "$49,99", "€99" (los), "2 tot 4 weken", "Artikel 50" en "AI Collega". Mistral staat er alleen in de zin "op aanvraag". De akkoordlink is `/nl#regie` op NL en `/en#people` op EN, de vergelijkingslink `/nl#waarom` en `/en#comparison-table`. Sitemap: lastmod `2026-11-07` voor alle vier de URL's. |
+| PSI | `R/tools/port/m-psi.mjs`, `/nl/<route>?cb=g6b-<route>-r<n>-<epoch>`, 3 runs, elk met een eigen cache-buster. JSON in `R/g6/psi6b/<route>/r<n>/`. Alle 12 runs gaven een resultaat. |
+
+| Route | Mobiel perf | Mobiel LCP | Desktop perf | Desktop LCP | CLS max | LCP-element |
+|---|---|---|---|---|---|---|
+| /nl/trust | 100, 96, 100 | 1,1 / 1,8 / 1,1 s | 100, 100, 100 | 0,3 s | 0,022 | mobiel `p.g6-def`, desktop `h1#tr-h1` |
+| /nl/alternatives | 100, 100, 100 | 1,1 s | 100, 100, 100 | 0,3 s | 0,022 | mobiel `p.g6-def`, desktop `h1#alt-h1` |
+
+De 96 komt uit de tweede mobiele run van /trust (LCP 1,8 s, TBT 30 ms), hetzelfde patroon als de 96 bij 6a. De andere twee runs gaven 100 op 1,1 s. Het LCP-element is in elke run tekst, dus `akkoord-luwte.webp` staat niet op het kritieke pad.
+
 ## Wat open blijft
 
 - Annex A van de VWO zegt bij OpenAI "SCC (geen DPF)"; de DPA van OpenAI zegt "SCC's of een adequaatheidsbesluit". Het interne document is niet aangepast.
 - Het delen van data op het OpenAI-account is nog steeds niet gecontroleerd (zie 6a).
 - De 15 rode e2e-tests van de baseline staan los van golf 6.
-- Lastmod staat op 2026-11-07. Merget 6b op een latere dag, dan gaat hij mee naar de mergedag.
+- Op /en opent de kennisbanklink het NL-artikel, met "(in Dutch)" erbij.
+- Op main staat deze live-sectie nog niet: hij staat op `docs/golf6b-live` en gaat mee met de volgende PR, zoals `a70878da` meeging met #99.
