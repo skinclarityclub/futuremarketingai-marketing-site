@@ -1,21 +1,68 @@
 /**
  * Apply Wizard — full E2E test suite
  *
- * Covers: critical paths (8), API edge cases (scoring), assessment handoff,
+ * Covers: critical paths (8), scoring edge cases, assessment handoff,
  * back-navigation, sessionStorage rehydrate, mobile viewport, honeypot.
+ *
+ * Never submits a real application: a valid POST to /api/apply writes a lead to
+ * the shared prod DB and mails Daley. Browser flows get a mocked /api/apply that
+ * scores with the real scoreApplication; only the honeypot and the 422 hit the
+ * route, because both return before the insert, and only on localhost.
  */
 
 import { test, expect, type Page, type BrowserContext } from '@playwright/test'
+import { scoreApplication } from '../../src/lib/apply/scoring'
+import { calHostedUrl } from '../../src/config/calConfig'
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 
 const BASE = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000'
+const isLocalBase = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/.test(BASE)
+
+type ApplyBody = Parameters<typeof scoreApplication>[0] & {
+  identity?: { name?: string; email?: string; agency?: string; role?: string }
+}
+
+// Answers like the route does after Zod (route.ts scoreApplication + calHostedUrl), and records what the wizard posted.
+async function mockApply(page: Page) {
+  const bodies: ApplyBody[] = []
+  await page.route('**/api/apply', async (route) => {
+    const body = route.request().postDataJSON() as ApplyBody
+    bodies.push(body)
+    const r = scoreApplication(body)
+    await route.fulfill({
+      json: {
+        success: true,
+        branch: r.branch,
+        score: r.total,
+        maxScore: r.max,
+        ...(r.branch === 'qualified'
+          ? { calendlyUrl: calHostedUrl({ name: body.identity?.name, email: body.identity?.email }) }
+          : {}),
+      },
+    })
+  })
+  return bodies
+}
+
+let applyBodies: ApplyBody[] = []
+test.beforeEach(async ({ page }) => {
+  applyBodies = await mockApply(page)
+})
 
 async function clearWizardState(context: BrowserContext) {
   await context.addInitScript(() => {
     sessionStorage.removeItem('fmai-apply-wizard-v1')
+  })
+}
+
+// Under `next dev` the SSR form is visible before React hydrates; typing and clicking then are lost and the wizard stays on identity.
+async function waitForHydration(page: Page) {
+  await page.waitForFunction(() => {
+    const el = document.querySelector('#apply-name')
+    return !!el && Object.keys(el).some((k) => k.startsWith('__reactFiber'))
   })
 }
 
@@ -24,6 +71,7 @@ async function fillIdentity(
   opts: { name?: string; email?: string; agency?: string; role?: string } = {},
 ) {
   const { name = 'Jan de Vries', email = 'jan@testbureau.nl', agency = 'TestBureau NL', role = 'CEO' } = opts
+  await waitForHydration(page)
   await page.fill('#apply-name', name)
   await page.fill('#apply-email', email)
   await page.fill('#apply-agency', agency)
@@ -91,150 +139,95 @@ async function waitForResult(page: Page, timeoutMs = 15_000) {
 }
 
 // ---------------------------------------------------------------------------
-// API smoke tests (direct fetch, no browser UI)
-// Run serial + chromium-only to avoid rate-limiter exhaustion from parallel workers.
+// Scoring: the pure function the route calls after Zod (route.ts). A valid
+// POST would be a real application, so these never go over HTTP.
 // ---------------------------------------------------------------------------
 
-test.describe('API scoring', () => {
-  test.describe.configure({ mode: 'serial' })
-  test.skip(({ browserName }) => browserName !== 'chromium', 'API tests run on chromium only')
-  test('ideal-fit → 15+/17 qualified', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Test User', email: 'test@bureau.nl', agency: 'Bureau X', role: 'CEO' },
-        qualification: { q1: 'growth', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
-        problem: 'x'.repeat(200),
-        locale: 'nl',
-        website: '',
-      },
+test.describe('Scoring', () => {
+  test.skip(({ browserName }) => browserName !== 'chromium', 'pure logic, chromium only')
+  test('ideal-fit → 15+/17 qualified', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'growth', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
+      problem: 'x'.repeat(200),
     })
-    expect(res.status()).toBe(200)
-    const body = await res.json()
-    expect(body.branch).toBe('qualified')
-    expect(body.score).toBeGreaterThanOrEqual(13)
-    expect(body.maxScore).toBe(17)
+    expect(r.branch).toBe('qualified')
+    expect(r.total).toBeGreaterThanOrEqual(13)
+    expect(r.max).toBe(17)
   })
 
-  test('low-fit → 1/17 review', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Low Fit', email: 'low@test.nl', agency: 'Solo', role: 'Freelancer' },
-        qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'explore' },
-        problem: '',
-        locale: 'nl',
-        website: '',
-      },
+  test('low-fit → 1/17 review', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'explore' },
+      problem: '',
     })
-    expect(res.status()).toBe(200)
-    const body = await res.json()
-    expect(body.branch).toBe('review')
-    expect(body.score).toBe(1) // only explore=1 point
+    expect(r.branch).toBe('review')
+    expect(r.total).toBe(1) // only explore=1 point
   })
 
-  test('assessment handoff scoring', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Handoff User', email: 'hoff@test.nl', agency: 'Agency', role: 'Founder' },
-        assessment: { archetype: 'data-led', stage: 'scaling', lowestCategory: 'tools', source: 'url' },
-        qualification: { q1: 'growth', q5: '30days' },
-        problem: '',
-        locale: 'nl',
-        website: '',
-      },
+  test('assessment handoff scoring', () => {
+    const r = scoreApplication({
+      assessment: { archetype: 'data-led', stage: 'scaling', lowestCategory: 'tools', source: 'url' },
+      qualification: { q1: 'growth', q5: '30days' },
+      problem: '',
     })
-    expect(res.status()).toBe(200)
-    const body = await res.json()
     // scaling(3) + growth(2) + 30days(3) = 8 → qualified
-    expect(body.branch).toBe('qualified')
-    expect(body.score).toBe(8)
-    expect(body.maxScore).toBe(12)
+    expect(r.branch).toBe('qualified')
+    expect(r.total).toBe(8)
+    expect(r.max).toBe(12)
   })
 
-  test('problem bonus: 199 chars → no bonus', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Edge', email: 'edge@test.nl', agency: 'Edge Bureau', role: 'PM' },
-        qualification: { q1: 'founding', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
-        problem: 'a'.repeat(199),
-        locale: 'nl',
-        website: '',
-      },
+  test('problem bonus: 199 chars → no bonus', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'founding', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
+      problem: 'a'.repeat(199),
     })
-    const body = await res.json()
     // founding(3)+1m_3m(3)+5_15(3)+q4=4(3)+30days(3)+NO bonus = 15
-    expect(body.score).toBe(15)
+    expect(r.total).toBe(15)
   })
 
-  test('problem bonus: 200 chars → +1 bonus', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Edge', email: 'edge2@test.nl', agency: 'Edge Bureau', role: 'PM' },
-        qualification: { q1: 'founding', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
-        problem: 'a'.repeat(200),
-        locale: 'nl',
-        website: '',
-      },
+  test('problem bonus: 200 chars → +1 bonus', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'founding', q2: '1m_3m', q3: '5_15', q4: 4, q5: '30days' },
+      problem: 'a'.repeat(200),
     })
-    const body = await res.json()
-    expect(body.score).toBe(16)
+    expect(r.total).toBe(16)
   })
 
-  test('Q4 likert 5 → 4 points', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Q4 Test', email: 'q4@test.nl', agency: 'Bureau', role: 'CEO' },
-        qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 5, q5: 'unknown' },
-        problem: '',
-        locale: 'nl',
-        website: '',
-      },
+  test('Q4 likert 5 → 4 points', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 5, q5: 'unknown' },
+      problem: '',
     })
-    const body = await res.json()
     // unsure(0)+under_300k(0)+solo(0)+likert5(4)+unknown(0) = 4
-    expect(body.score).toBe(4)
+    expect(r.total).toBe(4)
   })
 
-  test('Q4 likert 1 → 0 points', async ({ request }) => {
-    const res = await request.post(`${BASE}/api/apply`, {
-      data: {
-        identity: { name: 'Q4 Test', email: 'q41@test.nl', agency: 'Bureau', role: 'CEO' },
-        qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'unknown' },
-        problem: '',
-        locale: 'nl',
-        website: '',
-      },
+  test('Q4 likert 1 → 0 points', () => {
+    const r = scoreApplication({
+      qualification: { q1: 'unsure', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'unknown' },
+      problem: '',
     })
-    const body = await res.json()
     // all 0
-    expect(body.score).toBe(0)
+    expect(r.total).toBe(0)
   })
 
-  test('Q1 founding → 3pts vs growth → 2pts', async ({ request }) => {
-    const [foundingRes, growthRes] = await Promise.all([
-      request.post(`${BASE}/api/apply`, {
-        data: {
-          identity: { name: 'Founding Test', email: 'founding@test.nl', agency: 'Bureau FA', role: 'CEO' },
-          qualification: { q1: 'founding', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'unknown' },
-          problem: '',
-          locale: 'nl',
-          website: '',
-        },
-      }),
-      request.post(`${BASE}/api/apply`, {
-        data: {
-          identity: { name: 'Growth Test', email: 'growth@test.nl', agency: 'Bureau GA', role: 'CEO' },
-          qualification: { q1: 'growth', q2: 'under_300k', q3: 'solo', q4: 1, q5: 'unknown' },
-          problem: '',
-          locale: 'nl',
-          website: '',
-        },
-      }),
-    ])
-    const founding = await foundingRes.json()
-    const growth = await growthRes.json()
-    expect(founding.score).toBe(3)
-    expect(growth.score).toBe(2)
+  test('Q1 founding → 3pts vs growth → 2pts', () => {
+    const rest = { q2: 'under_300k', q3: 'solo', q4: 1, q5: 'unknown' } as const
+    expect(scoreApplication({ qualification: { q1: 'founding', ...rest }, problem: '' }).total).toBe(3)
+    expect(scoreApplication({ qualification: { q1: 'growth', ...rest }, problem: '' }).total).toBe(2)
   })
+})
+
+// ---------------------------------------------------------------------------
+// API guards over HTTP: the honeypot and the 422 return before the insert and
+// the mails (route.ts), so they are safe to post, but only on localhost.
+// They need `next dev` (the config's webServer): a production build runs the
+// Upstash limiter first, and without its env that answers 500.
+// ---------------------------------------------------------------------------
+
+test.describe('API guards (localhost only)', () => {
+  test.skip(({ browserName }) => browserName !== 'chromium', 'API tests run on chromium only')
+  test.skip(!isLocalBase, 'posts to /api/apply, never against a deployed site')
 
   test('honeypot → 200 but silent (no side-effects claim)', async ({ request }) => {
     const res = await request.post(`${BASE}/api/apply`, {
@@ -300,6 +293,13 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
     await waitForResult(page)
     await expect(page.getByText(/geweldig/i)).toBeVisible({ timeout: 15_000 })
 
+    // The wizard posted exactly what was filled in (the mock skips Zod, so check the mapping here)
+    expect(applyBodies).toHaveLength(1)
+    expect(applyBodies[0]).toMatchObject({
+      identity: { name: 'Jan de Vries', email: 'jan@testbureau.nl', agency: 'TestBureau NL', role: 'CEO' },
+      qualification: { q1: 'founding', q2: '1m_3m', q3: '5_15', q4: 5, q5: '30days' },
+    })
+
     // Cal.com embed container should be present (even if iframe doesn't fully load in test)
     const calendlyContainer = page.locator('cal-inline, [data-cal-namespace], iframe[src*="cal.com"]')
     const fallbackLink = page.getByRole('link', { name: /agenda|plan/i })
@@ -317,6 +317,7 @@ test.describe('Critical path: cold-start NL qualified (Branch A)', () => {
         !e.includes('vercel-scripts') &&
         !e.includes('va.vercel') &&
         !e.includes('Failed to load resource') &&
+        !e.includes('/_vercel/') &&
         !e.includes('intercom'),
     )
     expect(criticalErrors).toHaveLength(0)
@@ -377,6 +378,11 @@ test.describe('Critical path: assessment handoff via URL params', () => {
     // Should be qualified: scaling(3)+growth(2)+30days(3) = 8 >= 7
     await waitForResult(page)
     await expect(page.getByText(/geweldig/i)).toBeVisible({ timeout: 15_000 })
+    expect(applyBodies).toHaveLength(1)
+    expect(applyBodies[0]).toMatchObject({
+      assessment: { archetype: 'data-led', stage: 'scaling', lowestCategory: 'tools' },
+      qualification: { q1: 'growth', q5: '30days' },
+    })
   })
 })
 
@@ -387,6 +393,7 @@ test.describe('Critical path: back-button state preservation', () => {
     await expect(page.locator('#apply-name')).toBeVisible({ timeout: 10_000 })
 
     // Fill identity
+    await waitForHydration(page)
     await page.fill('#apply-name', 'Bewaard Naam')
     await page.fill('#apply-email', 'bewaard@bureau.nl')
     await page.fill('#apply-agency', 'Bewaard Bureau')
@@ -487,16 +494,17 @@ test.describe('Critical path: mobile 390px viewport', () => {
 })
 
 // ---------------------------------------------------------------------------
-// i18n: EN + ES locales render the wizard
+// i18n: the live locales (src/i18n/routing.ts) render the wizard
 // ---------------------------------------------------------------------------
 
 test.describe('i18n locales', () => {
-  for (const locale of ['en', 'es'] as const) {
+  for (const locale of ['nl', 'en'] as const) {
     test(`/${locale}/apply renders identity step without JS errors`, async ({ page, context }) => {
       await clearWizardState(context)
       const errors: string[] = []
       page.on('console', (msg) => {
-        if (msg.type() === 'error') errors.push(msg.text())
+        // The 404 of /_vercel/* carries its URL only in location(); the MIME refusal (filtered below) in its text
+        if (msg.type() === 'error' && !msg.location().url.includes('/_vercel/')) errors.push(msg.text())
       })
       await page.goto(`${BASE}/${locale}/apply`)
       await expect(page.locator('#apply-name')).toBeVisible({ timeout: 10_000 })
@@ -508,7 +516,9 @@ test.describe('i18n locales', () => {
           !e.includes('cal.com') &&
           !e.includes('Content Security Policy') &&
           !e.includes('vercel-scripts') &&
-          !e.includes('va.vercel'),
+          !e.includes('va.vercel') &&
+          // /_vercel/* only exists on Vercel; `next start` answers it with an HTML 404
+          !e.includes('/_vercel/'),
       )
       expect(criticalErrors).toHaveLength(0)
     })
@@ -553,6 +563,7 @@ test.describe('Form validation', () => {
     await expect(page.locator('#apply-name')).toBeVisible({ timeout: 10_000 })
 
     // Click next without filling anything
+    await waitForHydration(page)
     await page.getByRole('button', { name: /volgende/i }).click()
 
     // Should still be on identity (not proceed)
