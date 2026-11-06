@@ -1,6 +1,6 @@
 # Golf 6a (/how-it-works en /memory): VERIFICATION
 
-Branch `feature/golf6-bewijs` in `C:/tmp/fmai-golf6`, port-commit `b8a73a67` op het plan `b630bcb0`, op origin/main `bf5bdb8b` (#97). Niets gepusht.
+Branch `feature/golf6-bewijs` in `C:/tmp/fmai-golf6`, port-commit `b8a73a67` op het plan `b630bcb0`, op origin/main `bf5bdb8b` (#97). Daley zei ja op de diff op 2026-11-07. Live als PR #98, squash-commit `0a69898a` (zie "Task 6 en live" onderaan).
 Plan: `docs/plans/2026-11-06-golf6-bewijs-plan.md`, Fase 2, Task 4-5. Daley koos op 2026-11-07 "Zo porten".
 
 ## Task 4: de port
@@ -40,9 +40,25 @@ Gemeten op 2026-11-07 op commit `b8a73a67`. De runtime-checks draaiden tegen `ne
 | Visueel | prototype r5 naast de port, op 1280 en 390 (`g6/port6a/cmp/`) | Op 1280 gelijk. Erbij komen de site-header, de vaste taal- en Clyde-knop en de footer. Op 390 wikkelt de tekst iets eerder, door dezelfde 10px scrollbalk; op een telefoon is dat een overlay. |
 | e2e | `navigation`, `nl-content-smoke`, `sitewide-visual-audit`, `conversion-polish`, chromium, 130 tests | baseline `bf5bdb8b`: 17 failed, 112 passed, 1 skipped. Branch: 17 failed, 112 passed, 1 skipped. **Nieuw groen:** nl-content-smoke how-it-works en memory. **Nieuw rood in de volle run:** conversion-polish P1-E (de voortgangsbalk op /assessment) en P1-C (/newsletter/confirm). Allebei geïsoleerd 3 van 3 groen op branch én baseline (`--repeat-each=3`): flaky onder belasting, en ze raken pagina's die deze diff niet aanraakt. De overige 15 rode zijn gelijk aan de baseline. |
 
+## Task 6 en live
+
+| Stap | Uitkomst |
+|---|---|
+| Diffpagina | `A/alle-paginas/golf6a-diff/index.html`, met voor en na op 1280 en 390 px en /en op 1280. `m-pres` geeft 0 PROBLEEM. Vault: `Agency/Rapporten/2026-11-07 Golf 6a diff.md`. |
+| Daleys ja | 2026-11-07, "Ja, push en merge", in één AskUserQuestion. |
+| PR | #98, Vercel-preview groen (de preview zit achter Vercel-beveiliging, 302, dus niet met curl te toetsen). Squash-merge `0a69898a`. De productiedeploy van die commit is groen. |
+| curl prod | `/nl` en `/en` van beide routes geven 200 met de nieuwe title en H1. "7 november 2026" staat 1x op `/nl/memory` en "7 November 2026" 1x op `/en/memory`. Sitemap: lastmod `2026-11-07` voor beide routes. |
+| PSI | `R/tools/port/m-psi.mjs`, `/nl/<route>?cb=g6a-<route>-r<n>-<epoch>`, 3 runs, elk met een eigen cache-buster. JSON in `R/g6/psi6a/<route>/r<n>/`. Run 3 van how-it-works viel weg door een socketfout (`UND_ERR_SOCKET`, other side closed) en is opnieuw gedraaid met een nieuwe cache-buster. |
+
+| Route | Mobiel perf | Mobiel LCP | Desktop perf | Desktop LCP | CLS max | LCP-element |
+|---|---|---|---|---|---|---|
+| /nl/how-it-works | 96, 100, 100 | 1,8 / 1,1 / 1,1 s | 100, 100, 100 | 0,3 s | 0,019 | mobiel `p.g6-def`, desktop `h1#hiw-h1` |
+| /nl/memory | 100, 100, 100 | 1,1 s | 100, 100, 100 | 0,3 s | 0,023 | mobiel `p.g6-def`, desktop `h1#mem-h1` |
+
+De 96 komt uit de eerste mobiele run (LCP 1,8 s, TBT 30 ms). Daarna kwamen er twee keer 100 op 1,1 s. Het LCP-element is in elke run tekst, nooit het scherm, dus de twee nieuwe WebP's staan niet op het kritieke pad.
+
 ## Wat open blijft
 
-- Task 6: diffpagina `A/alle-paginas/golf6a-diff/index.html`, vault-note, Daleys ja. Daarna push, PR, merge en PSI 3x mobiel en desktop met een `?cb=` per run.
 - De 15 rode e2e-tests van de baseline staan los van golf 6 (o.a. /assessment-ankers, de privacy-assessmentsectie, de NL-smoke van home, apply en drie skills). Hier niet gerepareerd.
 - Lastmod staat op 2026-11-07. Merget 6a later, dan zet je hem in dezelfde PR op de mergedag.
 - Fase 3 (PR 6b, /trust en /alternatives): bronnen opnieuw ophalen op de dag van die PR. Daarnaast de tekst van Daleys verwerkersovereenkomst naast de rolverdeling leggen (zijn keuze van 2026-11-07).
