@@ -873,7 +873,7 @@
         "n9": "Kerngeheugen"
       },
       "sources": {
-        "n1": "Bedragen en functies van anderen zoals op hun eigen site, gecontroleerd op 4 november 2026, steeds de laagste prijs (vaak bij jaarbetaling):",
+        "n1": "Bedragen en functies van anderen zoals op hun eigen site, gecontroleerd op 7 november 2026, steeds de laagste prijs (vaak bij jaarbetaling):",
         "n2": "ChatGPT Business",
         "n3": ",",
         "n4": "projecten in ChatGPT",
@@ -881,7 +881,7 @@
         "n6": "Planable",
         "n7": ",",
         "n8": "aicollegas.nl",
-        "n9": "(op hun vergelijkingspagina staat 2 tot 4 weken)."
+        "n9": "."
       },
       "sub": "ChatGPT onthoudt wat je in een project zet, ook als je dat project met je team deelt. Maar de planning, het akkoord van je klant en de publicatie staan dan in andere tools. Clyde heeft per klant één geheugen dat vastzit aan dat werk, en je klant keurt zelf goed in een portaal met de naam van je bureau.",
       "table": {
@@ -896,11 +896,11 @@
           "n15": "Op maat",
           "n16": "Vier weken, met begeleiding",
           "n17": "Meteen, je richt alles zelf in",
-          "n18": "4 tot 12 weken na akkoord op de offerte",
+          "n18": "Binnen 4 tot 12 weken live",
           "n19": "Founding: €997 voor 10 klantmerken",
           "n2": "Per ChatGPT-project, los van je planning",
           "n20": "$20 per gebruiker (ChatGPT Business) plus $33 per werkruimte (Planable)",
-          "n21": "€1.495 voor een scan, dan een vaste prijs op offerte en €99 voor hun Hub",
+          "n21": "€1.495 voor een sessie, dan een vaste prijs op maat en een vast bedrag per maand",
           "n3": "Op maat",
           "n4": "Je team en je klant, in de app",
           "n5": "In de planningstool (verplicht vanaf Planable Pro)",
@@ -1775,77 +1775,235 @@
   },
   "alternatives": {
     "meta": {
-      "title": "Alternatieven voor Clyde vergeleken | FutureMarketingAI",
-      "description": "Lindy, Sintra, GoSocio en aicollegas.nl naast Clyde: wat ze doen, wat ze kosten en wanneer ze beter bij je bureau passen. Gecontroleerd op 3 november 2026."
+      "title": "Lindy, Sintra of Clyde? Alternatieven voor bureaus",
+      "description": "ChatGPT, Lindy, Sintra, GoSocio, Aidelly, StoryChief en Planable naast Clyde, met prijs en bron per tool en de datum van controle."
     },
     "hero": {
       "eyebrow": "Alternatieven",
-      "title": "Alternatieven voor Clyde, eerlijk vergeleken",
-      "subtitle": "Vier tools die bureaus naast ons bekijken. Per tool: wat het doet, wat het kost en wanneer het beter bij je past dan Clyde."
-    },
-    "checked": "Prijzen en functies gecontroleerd op 3 november 2026, op de eigen sites van de aanbieders.",
-    "clyde": {
-      "eyebrow": "Ons uitgangspunt",
-      "title": "Waar Clyde voor is",
-      "body": "Clyde is de AI-collega van je bureau, gebouwd voor bureaus met 5 tot 20 mensen en 5 tot 20 merken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in een eigen dashboard. Clyde publiceert naar Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Data, servers en database staan in de EU; het taalmodel draait in de VS.",
-      "price": "Founding Member €997 per maand, met 10 werkruimtes inbegrepen (10 plekken). Daarna €499, €399 of €299 per werkruimte per maand, afhankelijk van het aantal merken. Je begint met een gesprek."
-    },
-    "list": {
-      "eyebrow": "Vergelijking",
-      "title": "Vier alternatieven"
-    },
-    "labels": {
-      "what": "Wat het is",
-      "price": "Prijs",
-      "agencies": "Voor bureaus",
-      "data": "Data",
-      "pickThem": "Kies {name} als",
-      "pickClyde": "Kies Clyde als",
-      "source": "Bron:"
-    },
-    "items": {
-      "lindy": {
-        "name": "Lindy",
-        "what": "Een AI-assistent voor je hele team: inbox, vergaderingen, Slack, je CRM en meer dan 1.500 koppelingen. Acties naar buiten wachten op goedkeuring.",
-        "price": "Gratis start met $50 aan credits voor 7 dagen. Team vanaf $49,99 per maand per actieve gebruiker, met 5.000 credits per gebruiker; de credits deelt het hele team. Enterprise op maat.",
-        "agencies": "Lindy werkt in de werkruimte van je eigen team. Een werkruimte of portal per klant vonden we niet op hun site.",
-        "data": "Volgens hun site: SOC 2 Type II, AVG, HIPAA en PIPEDA.",
-        "pickThem": "Je vooral hulp zoekt voor je eigen team: inbox, agenda, vergaderingen en losse taken in veel verschillende tools.",
-        "pickClyde": "Je werk om klanten draait: per klant een strategie, content die de klant zelf goedkeurt, en een geheugen dat per klant gescheiden blijft."
-      },
-      "sintra": {
-        "name": "Sintra",
-        "what": "Twaalf AI-helpers voor ondernemers, onder andere voor social media, klantenservice en SEO, met een kennisbank over je bedrijf (Brain AI).",
-        "price": "$48,50 per maand bij maandbetaling (actieprijs, normaal $97), $15,60 per maand bij een jaar vooruit. 250 credits per maand.",
-        "agencies": "Over bureaus of werken voor meerdere klanten staat niets op hun prijs- en homepagina.",
-        "data": "Waar data staat, vonden we niet op die pagina’s.",
-        "pickThem": "Je zelfstandig bent of één merk hebt, en voor weinig geld hulp wilt bij veel soorten taken.",
-        "pickClyde": "Je meerdere klanten bedient en per klant een eigen werkruimte, geheugen en goedkeuring door de klant wilt."
-      },
-      "gosocio": {
-        "name": "GoSocio",
-        "what": "Een AI-tool voor social media: posts, beeld en video maken, inplannen en zelf publiceren op LinkedIn, Instagram, X, Facebook, TikTok en YouTube.",
-        "price": "€31, €71 of €159 per maand, jaarlijks betaald. Proefperiode van 14 dagen.",
-        "agencies": "Werkruimtes per klant en een goedkeuringswachtrij voor je team. Een portal waar je klant zelf goedkeurt, vonden we niet op hun site.",
-        "data": "Gevestigd in Oostenrijk (Graz en Wenen), hosting in de EU.",
-        "pickThem": "Je alleen social nodig hebt, nu al op zes netwerken wilt publiceren, of een klein budget hebt.",
-        "pickClyde": "Je meer wilt dan social, zoals research, rapportage, blogs en leads per klant, en je klant zelf laat goedkeuren in een eigen dashboard."
-      },
-      "aicollegas": {
-        "name": "aicollegas.nl",
-        "what": "Een bureau uit Nijmegen dat AI-agents op maat bouwt voor je eigen processen, met een aanbod voor marketingbureaus: onboarding, content, planning en rapportage.",
-        "price": "Een partnership van 12 maanden: €4.500, €8.500 of €14.000 per maand. Elk partnership start met een strategiemaand.",
-        "agencies": "Ze bouwen per organisatie op maat. Je agents en het verbruik zie je in hun eigen hub.",
-        "data": "Hosting van je agents zit in elk pakket. Waar de data staat, vonden we niet op hun pagina.",
-        "pickThem": "Je maatwerk wilt voor je eigen interne processen en budget hebt voor een traject van een jaar.",
-        "pickClyde": "Je een product wilt dat al draait voor marketing per klant, vanaf €997 per maand."
+      "title": "Lindy of Sintra als alternatief voor je bureau? Eerlijk vergeleken.",
+      "definition": "Bureaus die naar Clyde kijken, leggen ons naast ChatGPT met een planningstool, naast tools als Lindy, Sintra, GoSocio, Aidelly, StoryChief en Planable, of naast een maatwerkbouwer. Per route staat hier wat het doet, wat het kost en wanneer het beter bij je past dan Clyde.",
+      "checked": "Prijzen en functies gecontroleerd op 7 november 2026, op de eigen sites van de aanbieders, steeds de laagste prijs.",
+      "factsLabel": "Kort",
+      "facts": {
+        "routes": {
+          "label": "Routes",
+          "value": "Negen, naast elkaar"
+        },
+        "perRoute": {
+          "label": "Per route",
+          "value": "Prijs, bron en wanneer zij beter passen"
+        },
+        "sources": {
+          "label": "Bronnen",
+          "value": "De eigen sites van de aanbieders, met datum"
+        }
       }
     },
-    "correction": "Klopt er iets niet meer? Mail hello@future-marketing.ai, dan passen we het aan.",
-    "cta": {
+    "table": {
+      "title": "Alle routes naast elkaar.",
+      "sub": "Zes vragen die voor een bureau tellen. Waar een aanbieder iets niet op zijn eigen site zet, staat \"niet gevonden\".",
+      "caption": "Clyde naast de andere routes, per vraag. Scroll opzij voor alle kolommen.",
+      "cols": {
+        "route": "Route",
+        "workspace": "Werkruimte per klant",
+        "approval": "Klant keurt zelf goed",
+        "memory": "Geheugen per klant",
+        "publishes": "Publiceert zelf",
+        "data": "Data",
+        "price": "Prijs vanaf, per maand"
+      },
+      "rows": {
+        "clyde": {
+          "name": "Clyde",
+          "workspace": "Ja",
+          "approval": "Ja, in zijn eigen omgeving",
+          "memory": "Ja, vast aan agenda, akkoord en rapport",
+          "publishes": "Ja, naar zeven kanalen",
+          "data": "Database en servers in de EU, taalmodel in de VS",
+          "price": "€997 voor 10 klantmerken (founding)"
+        },
+        "diy": {
+          "name": "Zelf, met ChatGPT en Planable",
+          "workspace": "In de planningstool",
+          "approval": "In de planningstool (vanaf Planable Pro)",
+          "memory": "Per ChatGPT-project, los van je planning",
+          "publishes": "De planningstool, ChatGPT niet",
+          "data": "ChatGPT: regio kiezen komt gefaseerd. Planable: hosting in de VS",
+          "price": "$20 per gebruiker plus $33 per werkruimte, bij jaarbetaling"
+        },
+        "lindy": {
+          "name": "Lindy",
+          "workspace": "Niet gevonden",
+          "approval": "Ja, met een goedkeuringslink (social)",
+          "memory": "Per werkruimte en per gebruiker; per klant niet gevonden",
+          "publishes": "Ja, naar LinkedIn en X",
+          "data": "SOC 2 Type II, AVG, HIPAA en PIPEDA",
+          "price": "$29,99 per actieve gebruiker"
+        },
+        "sintra": {
+          "name": "Sintra",
+          "workspace": "Ja, tot 5 merkprofielen",
+          "approval": "Niet gevonden",
+          "memory": "Een Brain AI per werkruimte",
+          "publishes": "Ja, naar vijf netwerken",
+          "data": "In de VS of de EU, volgens hun verwerkersovereenkomst",
+          "price": "$15,60 bij jaarbetaling"
+        },
+        "gosocio": {
+          "name": "GoSocio",
+          "workspace": "Ja",
+          "approval": "Niet gevonden; wel een goedkeuringswachtrij voor je team",
+          "memory": "Merkdocumenten die je uploadt; geheugen per klant niet gevonden",
+          "publishes": "Ja, naar zes netwerken",
+          "data": "Hosting in de EU",
+          "price": "€31 bij jaarbetaling"
+        },
+        "aidelly": {
+          "name": "Aidelly",
+          "workspace": "Ja, onbeperkt in het Agency-pakket",
+          "approval": "Ja, met een link zonder account",
+          "memory": "Ja, een merkprofiel per werkruimte dat leert van goedkeuringen",
+          "publishes": "Ja, naar elf netwerken",
+          "data": "In de VS, geen EU-optie",
+          "price": "$29 voor 2 werkruimtes, bij jaarbetaling"
+        },
+        "storychief": {
+          "name": "StoryChief",
+          "workspace": "Ja",
+          "approval": "Ja, met reviewlinks",
+          "memory": "Ja, merkcontext per klantwerkruimte",
+          "publishes": "Ja, naar je CMS en tien sociale netwerken",
+          "data": "In de EU (Ierland en België)",
+          "price": "€49 bij jaarbetaling; voor bureaus €79 per werkruimte"
+        },
+        "planable": {
+          "name": "Planable",
+          "workspace": "Ja",
+          "approval": "Ja, vanaf Planable Pro",
+          "memory": "Merkcontext per werkruimte, tot 4.000 tekens",
+          "publishes": "Ja, naar negen platforms",
+          "data": "Hosting bij aanbieders in de VS",
+          "price": "$33 per werkruimte, bij jaarbetaling"
+        },
+        "aicollegas": {
+          "name": "aicollegas.nl (maatwerk)",
+          "workspace": "Op maat",
+          "approval": "Op maat",
+          "memory": "Op maat",
+          "publishes": "Op maat",
+          "data": "Hosting in elk pakket, data in de EU",
+          "price": "Partnership vanaf €4.500 (12 maanden), of een sessie van €1.495 en dan een vaste prijs"
+        }
+      },
+      "source": "De bron per aanbieder staat bij de tool hieronder. Klopt er iets niet meer? Mail <mail>hello@future-marketing.ai</mail>, dan passen we het aan."
+    },
+    "clyde": {
+      "title": "Waar Clyde voor is.",
+      "p1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 20 klantmerken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in zijn eigen omgeving.",
+      "p2": "Clyde kost €997 per maand als founding partner, met tien klantmerken inbegrepen en €299 per extra klantmerk. Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
+      "links": {
+        "pricing": "Bekijk de prijs",
+        "trust": "Waar de data van je klanten staat"
+      }
+    },
+    "tools": {
+      "title": "Per route: wanneer zij beter passen.",
+      "sub": "Geen tool past bij elk bureau. Per route staat hier wanneer je hen kiest, en wanneer Clyde.",
+      "labels": {
+        "what": "Wat het is",
+        "pickThis": "Kies dit als",
+        "pickThem": "Kies {name} als",
+        "pickClyde": "Kies Clyde als",
+        "source": "Bron:",
+        "sources": "Bronnen:"
+      },
+      "items": {
+        "diy": {
+          "eyebrow": "Zelf doen",
+          "name": "ChatGPT met een planningstool",
+          "what": "ChatGPT Business voor het schrijven, met projecten die je met je team deelt, en een planningstool zoals Planable waarin je klant meekijkt.",
+          "pickThem": "Je één of twee klanten hebt en alles zelf wilt inrichten.",
+          "pickClyde": "Je meerdere klanten bedient en geheugen, akkoord en publicatie per klant op één plek wilt.",
+          "source": "Bronnen: <business>ChatGPT Business</business>, <residency>opslag bij ChatGPT Business</residency>, <projects>projecten in ChatGPT</projects> en <planable>Planable</planable>"
+        },
+        "lindy": {
+          "eyebrow": "Assistent voor je team",
+          "name": "Lindy",
+          "what": "Een AI-assistent voor je hele team: inbox, vergaderingen, Slack, je CRM en meer dan 1.500 koppelingen. Acties naar buiten kunnen op je goedkeuring wachten.",
+          "pickThem": "Je vooral hulp zoekt voor je eigen team: inbox, agenda, vergaderingen en losse taken in veel verschillende tools.",
+          "pickClyde": "Je werk om klanten draait: per klant een strategie, content die de klant zelf goedkeurt, en een geheugen dat per klant gescheiden blijft."
+        },
+        "sintra": {
+          "eyebrow": "Voor ondernemers",
+          "name": "Sintra",
+          "what": "Twaalf AI-helpers voor ondernemers, onder andere voor social media, klantenservice en SEO, met een kennisbank over je bedrijf.",
+          "pickThem": "Je zelfstandig bent of één merk hebt, en voor weinig geld hulp wilt bij veel soorten taken.",
+          "pickClyde": "Je meer dan vijf klanten bedient en elke klant zijn eigen content wilt laten goedkeuren."
+        },
+        "gosocio": {
+          "eyebrow": "Social media",
+          "name": "GoSocio",
+          "what": "Een AI-tool voor social media: posts, beeld en video maken, inplannen en zelf publiceren op zes netwerken.",
+          "pickThem": "Je alleen social nodig hebt, nu al op zes netwerken wilt publiceren, of een klein budget hebt.",
+          "pickClyde": "Je meer wilt dan social, zoals research, rapportage, blogs en leads per klant, en je klant zelf laat goedkeuren in zijn eigen omgeving."
+        },
+        "aidelly": {
+          "eyebrow": "Social voor bureaus",
+          "name": "Aidelly",
+          "what": "Een AI-tool voor social-mediabureaus: maken, goedkeuren, publiceren en rapporteren per klantwerkruimte, onder je eigen merk.",
+          "pickThem": "Je bureau alleen social doet en je veel klanten voor één vast bedrag wilt bedienen.",
+          "pickClyde": "Je per klant ook strategie, blogs, rapportage en leads wilt, met de database in de EU."
+        },
+        "storychief": {
+          "eyebrow": "Content per werkruimte",
+          "name": "StoryChief",
+          "what": "Een contentplatform voor teams en bureaus: blogs en social per werkruimte, met goedkeuring door je klant via reviewlinks.",
+          "pickThem": "Je vooral blogs en content maakt en per werkruimte wilt betalen.",
+          "pickClyde": "Je per klant ook strategie, DM's, leads en rapport wilt, met Clyde die het werk maakt en voorlegt."
+        },
+        "planable": {
+          "eyebrow": "Planningstool",
+          "name": "Planable",
+          "what": "Een planningstool voor social media, waarin je klant meekijkt en goedkeurt voordat een post live gaat.",
+          "pickThem": "Je het schrijven zelf doet en alleen een plek zoekt om te plannen en je klant te laten goedkeuren.",
+          "pickClyde": "Je wilt dat het werk ook gemaakt wordt: Clyde schrijft, plant en legt voor."
+        },
+        "aicollegas": {
+          "eyebrow": "Maatwerk",
+          "name": "aicollegas.nl",
+          "what": "Een bureau uit Nijmegen dat AI-agents op maat bouwt voor je eigen processen, met een aanbod voor marketingbureaus. Een partnership loopt 12 maanden: €4.500, €8.500 of €14.000 per maand. Losse agents bouwen ze na een AI Impact Sessie van €1.495, tegen een vaste prijs op maat.",
+          "pickThem": "Je maatwerk wilt voor je eigen interne processen en budget hebt voor een traject van een jaar.",
+          "pickClyde": "Je een product wilt dat al draait voor marketing per klant, vanaf €997 per maand."
+        }
+      }
+    },
+    "faq": {
+      "title": "Vragen bij het vergelijken.",
+      "sub": "De vragen die bureaus het vaakst stellen als ze Clyde naast een andere tool leggen.",
+      "items": {
+        "chatgpt": {
+          "q": "Wat is het verschil tussen Clyde en ChatGPT voor een bureau?",
+          "a": "ChatGPT onthoudt wat je in een project zet, ook als je dat project met je team deelt. Een contentagenda, het akkoord van je klant en het publiceren staan niet in de uitleg van OpenAI; die regel je in andere tools. Clyde heeft per klant één geheugen dat vastzit aan dat werk, en je klant keurt zelf goed."
+        },
+        "lindy": {
+          "q": "Is Clyde een alternatief voor Lindy?",
+          "a": "Voor het werk voor je klanten wel, voor je eigen team niet. Lindy helpt je team met inbox, agenda en losse taken in veel tools. Clyde werkt per klant: een strategie, content die je klant zelf goedkeurt en een geheugen per klant."
+        },
+        "oneClient": {
+          "q": "Welke tool past bij een bureau met één klant?",
+          "a": "Waarschijnlijk niet Clyde. Bij ons betaal je €997 per maand voor tien klantmerken; met één klant zijn ChatGPT met een planningstool, Sintra of GoSocio goedkoper."
+        }
+      },
+      "links": {
+        "why": "Waarom Clyde en geen losse AI-tool",
+        "kennisbank": "Clyde, Jasper, ChatGPT en Semrush vergeleken"
+      }
+    },
+    "end": {
       "title": "Past Clyde bij je bureau?",
-      "body": "In een gesprek kijken we samen of Clyde past, of dat een van de tools hierboven beter bij je werk past.",
-      "button": "Vraag een gesprek aan"
+      "sub": "In een gesprek kijken we samen of Clyde past, of dat een van de routes hierboven beter bij je werk past.",
+      "cta": "Vraag een gesprek aan",
+      "link": "Hoe het geheugen per klant werkt"
     }
   },
   "how-it-works": {
@@ -2170,19 +2328,51 @@
   },
   "trust": {
     "meta": {
-      "title": "Vertrouwen: waar je data staat | FutureMarketingAI",
-      "description": "Database en servers in de EU, het taalmodel bij Anthropic en OpenAI in de VS. Wat zij bewaren, hoe lang wij bewaren en de verwerkersovereenkomst."
+      "title": "AVG en Clyde: waar de data van je klanten staat",
+      "description": "Welke subverwerkers Clyde gebruikt, waar de data van je klanten staat en wat er gebeurt als je opzegt. Zo geef je je klanten een eerlijk antwoord."
     },
-    "updated": "Bijgewerkt op 25 oktober 2026",
     "hero": {
-      "eyebrow": "Vertrouwen",
-      "title": "Waar je data staat",
-      "subtitle": "Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Hieronder staat per onderdeel waar het draait, wat de taalmodellen bewaren en hoe lang wij iets bewaren."
+      "eyebrow": "Vertrouwen en AVG",
+      "title": "Waar de data van je klanten staat",
+      "definition": "Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS. Hieronder staat per onderdeel waar het draait, wat de taalmodellen bewaren, hoe lang wij iets bewaren en wat je je klant vertelt.",
+      "updated": "Bijgewerkt op 7 november 2026",
+      "factsLabel": "Kort",
+      "facts": {
+        "hosting": {
+          "label": "Database en servers",
+          "value": "In de EU, in Frankfurt en Neurenberg"
+        },
+        "model": {
+          "label": "Taalmodel",
+          "value": "Anthropic en OpenAI, in de VS"
+        },
+        "dpa": {
+          "label": "Verwerkersovereenkomst",
+          "value": "Op aanvraag"
+        }
+      }
+    },
+    "chain": {
+      "title": "Wat je je klant vertelt.",
+      "sub": "Je klant vraagt waar zijn data staat. Het eerlijke antwoord past in drie regels, en een verwerkersovereenkomst met ons sturen we op aanvraag.",
+      "items": {
+        "client": {
+          "title": "Je klant",
+          "text": "Geeft jouw bureau zijn merk, zijn klanten en zijn content om mee te werken."
+        },
+        "agency": {
+          "title": "Jouw bureau",
+          "text": "Werkt met die gegevens in Clyde, in een eigen werkruimte per klant."
+        },
+        "fmai": {
+          "title": "FutureMarketingAI",
+          "text": "Levert Clyde en werkt met de aanbieders hieronder; de volledige lijst staat in <link>artikel 5 van de privacyverklaring</link>."
+        }
+      }
     },
     "hosting": {
-      "eyebrow": "Hosting",
-      "title": "Waar het draait",
-      "intro": "Per onderdeel: welke aanbieder het levert en waar de servers staan.",
+      "title": "Waar het draait.",
+      "sub": "Per onderdeel: welke aanbieder het levert en waar de servers staan.",
       "app": {
         "title": "App en website",
         "place": "Vercel · Frankfurt (fra1)",
@@ -2205,10 +2395,11 @@
       }
     },
     "model": {
-      "eyebrow": "Taalmodel",
-      "title": "Het taalmodel draait in de VS",
-      "intro": "Clyde schrijft vooral met Claude van Anthropic, en gebruikt modellen van OpenAI voor tekst en beeld. Beide bedrijven zijn Amerikaans en hun modellen draaien in de VS. Een taalmodel krijgt alleen de context die nodig is voor de opdracht, niet je hele werkruimte.",
-      "rows": {
+      "title": "Het taalmodel draait in de VS.",
+      "sub": "Clyde schrijft vooral met Claude van Anthropic, en gebruikt modellen van OpenAI voor tekst en beeld. Een taalmodel krijgt alleen de context die nodig is voor de opdracht, niet je hele werkruimte.",
+      "caption": "Wat Anthropic en OpenAI doen met wat Clyde ze stuurt",
+      "cols": {
+        "provider": "Aanbieder",
         "training": "Traint het op je data",
         "retention": "Bewaren",
         "contract": "Contract"
@@ -2223,15 +2414,33 @@
         "name": "OpenAI",
         "training": "Standaard niet. OpenAI traint niet op API-gegevens, tenzij een klant zich daar zelf voor aanmeldt.",
         "retention": "Tot 30 dagen, voor controle op misbruik. Langer als de wet dat eist of als het nodig is om hun diensten te beschermen.",
-        "contract": "Met OpenAI Ireland. Doorgifte naar de VS op basis van standaardcontractbepalingen (SCC's)."
+        "contract": "Met OpenAI Ireland. Doorgifte naar de VS op basis van standaardcontractbepalingen (SCC's) of een adequaatheidsbesluit van de Europese Commissie."
       },
-      "sources": "Bronnen, gelezen op 25 oktober 2026: de <terms>voorwaarden</terms> en de <retention>bewaartermijnen</retention> van Anthropic, en het <openai>gegevensbeleid van de OpenAI API</openai>.",
-      "others": "Voor research, beeld, video en voice-overs werken we met andere gespecialiseerde aanbieders. Die staan met hun doel in <link>artikel 5 van de privacyverklaring</link>."
+      "sources": "Bronnen, gelezen op 7 november 2026: de <terms>voorwaarden</terms>, de <retention>bewaartermijnen</retention> en de <adpa>verwerkersovereenkomst</adpa> van Anthropic, en het <openai>gegevensbeleid van de OpenAI API</openai> en de <odpa>verwerkersovereenkomst van OpenAI</odpa>. Voor research, beeld, video en voice-overs werken we met andere gespecialiseerde aanbieders; die staan met hun doel in <link>artikel 5 van de privacyverklaring</link>."
+    },
+    "separate": {
+      "title": "Gescheiden per klant.",
+      "p1": "Elke klant heeft een eigen werkruimte met een eigen geheugen. Werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B.",
+      "p2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop.",
+      "link": "Wat Clyde per klant onthoudt"
+    },
+    "approval": {
+      "title": "Niets gaat live zonder akkoord.",
+      "sub": "Clyde stelt voor, jij beslist. Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat.",
+      "link": "Zo houd je de regie",
+      "bar": "Clyde · Voor jou",
+      "alt": "Het scherm Voor jou in de app: twee voorstellen voor het demo-merk Dagspa Luwte, een carrousel en een blog, elk met de knoppen Goedkeuren en Leg weg.",
+      "caption": "Goedkeuren start de taak. Wegleggen stopt hem; dat zet je hier niet terug.",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app."
     },
     "retention": {
-      "eyebrow": "Bewaren",
-      "title": "Hoe lang wij bewaren",
-      "intro": "Deze termijnen ruimt een opschoontaak elke nacht automatisch op.",
+      "title": "Hoe lang wij bewaren.",
+      "sub": "Deze termijnen ruimt een opschoontaak elke nacht automatisch op. Alle termijnen, ook die voor het geheugen van Clyde, Instagram-berichten en facturen, staan in <link>artikel 6 van de privacyverklaring</link>.",
+      "caption": "Bewaartermijnen die elke nacht automatisch worden toegepast",
+      "cols": {
+        "what": "Wat",
+        "term": "Termijn"
+      },
       "chats": {
         "what": "Chatgesprekken op websites van klanten",
         "term": "Zonder toestemming van de bezoeker na 30 dagen geanonimiseerd. Met toestemming na 12 maanden verwijderd."
@@ -2247,13 +2456,11 @@
       "uploads": {
         "what": "Video-uploads die niet gepubliceerd worden",
         "term": "Na 24 uur verwijderd."
-      },
-      "exit": "Zeg je op, dan sturen we je binnen 30 dagen een export van je gegevens. Daarna verwijderen we je werkruimtes.",
-      "more": "Alle termijnen, ook die voor het geheugen van Clyde, Instagram-berichten en facturen, staan in <link>artikel 6 van de privacyverklaring</link>."
+      }
     },
     "limits": {
-      "eyebrow": "Eerlijk",
-      "title": "Wat we niet beloven",
+      "title": "Wat we niet beloven.",
+      "sub": "Drie dingen die je je klant ook eerlijk moet kunnen zeggen.",
       "zdr": {
         "title": "Anthropic en OpenAI bewaren volgens hun eigen termijnen",
         "body": "We hebben met Anthropic en OpenAI geen afspraak waardoor zij niets bewaren. Hun standaardtermijnen hierboven gelden."
@@ -2267,10 +2474,37 @@
         "body": "Vercel levert afbeeldingen en scripts via een wereldwijd netwerk, en een deel van de aanbieders voor research, beeld en video zit in de VS. Voor die doorgifte gelden de waarborgen uit artikel 8 van de privacyverklaring."
       }
     },
-    "dpa": {
-      "eyebrow": "Verwerkersovereenkomst",
-      "title": "Verwerkersovereenkomst op aanvraag",
-      "body": "Een verwerkersovereenkomst sturen we op aanvraag. Mail ons; dat kan ook met vragen over je gegevens of een verzoek als betrokkene."
+    "faq": {
+      "title": "Vragen over AVG en klantdata.",
+      "sub": "Wat je klant je vraagt, en wat je hem kunt antwoorden.",
+      "items": {
+        "allowed": {
+          "q": "Mag ik de data van mijn klanten in een AI-tool zetten?",
+          "a": "Ja, als je klant weet waar die data heen gaat en jullie dat hebben vastgelegd. Bij Clyde staat de data van je klanten in een database in de EU, en het taalmodel bij Anthropic en OpenAI krijgt alleen de context die nodig is voor de opdracht. Een verwerkersovereenkomst met ons sturen we op aanvraag."
+        },
+        "providers": {
+          "q": "Welke subverwerkers gebruikt Clyde?",
+          "a": "Voor hosting Vercel, Supabase, Hetzner en Upstash, en voor het taalmodel Anthropic en OpenAI. Voor research, beeld, video en voice-overs werken we met andere gespecialiseerde aanbieders. Die staan allemaal met hun doel in <link>artikel 5 van de privacyverklaring</link>."
+        },
+        "training": {
+          "q": "Traint het taalmodel op de data van mijn klanten?",
+          "a": "Anthropic niet: hun commerciële voorwaarden verbieden het. OpenAI standaard niet: zij trainen niet op API-gegevens, tenzij een klant zich daar zelf voor aanmeldt."
+        },
+        "cancel": {
+          "q": "Wat gebeurt er met de data als ik opzeg?",
+          "a": "Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
+        },
+        "dpa": {
+          "q": "Krijg ik een verwerkersovereenkomst?",
+          "a": "Ja, op aanvraag. Mail <mail>privacy@future-marketing.ai</mail>; dat kan ook met vragen over je gegevens of een verzoek als betrokkene."
+        }
+      }
+    },
+    "end": {
+      "title": "Liever eerst praten?",
+      "sub": "In een gesprek van 30 minuten lopen we na wat jouw klanten vragen, en of Clyde past.",
+      "cta": "Vraag een gesprek aan",
+      "link": "Mail over een verwerkersovereenkomst"
     }
   },
   "blog": {

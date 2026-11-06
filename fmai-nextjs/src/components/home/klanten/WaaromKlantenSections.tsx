@@ -307,7 +307,7 @@ export function WaaromKlantenView({ t }: { t: HomeT }) {
               {' '}
               <p className="gw-src">
                 {t("waarom.sources.n1")}{' '}
-                <a href="https://chatgpt.com/business/pricing" rel="nofollow noopener" target="_blank">
+                <a href="https://help.openai.com/en/articles/8542115-chatgpt-business-general-faq" rel="nofollow noopener" target="_blank">
                   {t("waarom.sources.n2")}
                 </a>
                 {t("waarom.sources.n3")}{' '}
@@ -319,10 +319,10 @@ export function WaaromKlantenView({ t }: { t: HomeT }) {
                   {t("waarom.sources.n6")}
                 </a>
                 {t("waarom.sources.n7")}{' '}
-                <a href="https://aicollegas.nl/transparant" rel="nofollow noopener" target="_blank">
+                <a href="https://www.aicollegas.nl/wat-we-doen/ai-agents" rel="nofollow noopener" target="_blank">
                   {t("waarom.sources.n8")}
                 </a>
-                {' '}{t("waarom.sources.n9")}
+                {t("waarom.sources.n9")}
               </p>
               {' '}
               <p className="gw-links">
