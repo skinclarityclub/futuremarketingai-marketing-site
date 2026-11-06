@@ -84,7 +84,7 @@ export const PAGE_DATES: Record<string, string> = {
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
   '/': '2026-11-06',
-  '/memory': '2026-11-05',
+  '/memory': '2026-11-07',
   '/apply': '2026-11-06',
   '/case-studies/skinclarity-club': '2026-11-05',
   '/skills/social-media': '2026-11-05',
@@ -103,7 +103,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/alternatives': '2026-11-05',
   '/about': '2026-11-06',
   '/contact': '2026-11-05',
-  '/how-it-works': '2026-11-05',
+  '/how-it-works': '2026-11-07',
   '/legal': '2026-11-05',
   '/kennisbank': '2026-06-02',
   // Dates below come from `git log -1` on each page's own source file, not
