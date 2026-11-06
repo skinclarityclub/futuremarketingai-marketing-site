@@ -38,6 +38,8 @@ const ALLOW = [
   { where: /llms-full\.txt:/, re: /\/kennisbank\// },
   // de chatbot-instructie die het woord juist verbiedt
   { where: /chatbot\//, re: /never call (him|yourself) an employee/i },
+  // de bron-URL van Sintra op /alternatives: hun pad, niet onze woorden over Clyde
+  { where: /AlternativesSections.tsx:/, re: /^'https:\/\/sintra\.ai\/ai-employees\/social-media-manager',$/ },
 ]
 
 const allowed = (where, text) => ALLOW.some((a) => a.where.test(where) && a.re.test(text))

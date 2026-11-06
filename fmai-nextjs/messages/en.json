@@ -1077,77 +1077,235 @@
   },
   "alternatives": {
     "meta": {
-      "title": "Alternatives to Clyde compared | FutureMarketingAI",
-      "description": "Lindy, Sintra, GoSocio and aicollegas.nl next to Clyde: what they do, what they cost and when they suit your agency better. Checked November 3, 2026."
+      "title": "Lindy, Sintra or Clyde? Alternatives for agencies",
+      "description": "ChatGPT, Lindy, Sintra, GoSocio, Aidelly, StoryChief and Planable next to Clyde, with price and source per tool and the date we checked."
     },
     "hero": {
       "eyebrow": "Alternatives",
-      "title": "Alternatives to Clyde, compared honestly",
-      "subtitle": "Four tools agencies look at alongside us. Per tool: what it does, what it costs and when it suits you better than Clyde."
-    },
-    "checked": "Prices and features checked on November 3, 2026, on the providers' own sites.",
-    "clyde": {
-      "eyebrow": "Our starting point",
-      "title": "What Clyde is for",
-      "body": "Clyde is your agency's AI colleague, built for agencies with 5 to 20 people and 5 to 20 brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own dashboard. Clyde publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube. Data, servers and database are in the EU; the language model runs in the US.",
-      "price": "Founding Member €997 per month, with 10 workspaces included (10 spots). After that €499, €399 or €299 per workspace per month, depending on the number of brands. You start with a call."
-    },
-    "list": {
-      "eyebrow": "Comparison",
-      "title": "Four alternatives"
-    },
-    "labels": {
-      "what": "What it is",
-      "price": "Price",
-      "agencies": "For agencies",
-      "data": "Data",
-      "pickThem": "Choose {name} if",
-      "pickClyde": "Choose Clyde if",
-      "source": "Source:"
-    },
-    "items": {
-      "lindy": {
-        "name": "Lindy",
-        "what": "An AI assistant for your whole team: inbox, meetings, Slack, your CRM and more than 1,500 integrations. Actions with outside impact wait for approval.",
-        "price": "Free start with $50 in credits for 7 days. Team from $49.99 per month per active user, with 5,000 credits per user; the whole team shares the credits. Enterprise is custom.",
-        "agencies": "Lindy works in your own team's workspace. We found no workspace or portal per client on their site.",
-        "data": "According to their site: SOC 2 Type II, GDPR, HIPAA and PIPEDA.",
-        "pickThem": "You mainly want help for your own team: inbox, calendar, meetings and one-off tasks across many tools.",
-        "pickClyde": "Your work revolves around clients: a strategy per client, content the client approves, and a memory kept separate per client."
-      },
-      "sintra": {
-        "name": "Sintra",
-        "what": "Twelve AI helpers for business owners, covering social media, customer support and SEO among others, with a knowledge base about your business (Brain AI).",
-        "price": "$48.50 per month on the monthly plan (sale price, normally $97), $15.60 per month when paying a year ahead. 250 credits per month.",
-        "agencies": "Their pricing and home pages say nothing about agencies or working for several clients.",
-        "data": "We found nothing on those pages about where data is stored.",
-        "pickThem": "You work on your own or have one brand, and want help with many kinds of tasks for little money.",
-        "pickClyde": "You serve several clients and want a workspace, a memory and client approval per client."
-      },
-      "gosocio": {
-        "name": "GoSocio",
-        "what": "An AI tool for social media: create posts, images and video, schedule them and publish directly to LinkedIn, Instagram, X, Facebook, TikTok and YouTube.",
-        "price": "€31, €71 or €159 per month, billed annually. 14-day trial.",
-        "agencies": "Workspaces per client and an approval queue for your team. We found no portal on their site where your client approves.",
-        "data": "Based in Austria (Graz and Vienna), hosting in the EU.",
-        "pickThem": "You only need social, want to publish to six networks today, or have a small budget.",
-        "pickClyde": "You want more than social, such as research, reporting, blogs and leads per client, and you let your client approve in their own dashboard."
-      },
-      "aicollegas": {
-        "name": "aicollegas.nl",
-        "what": "An agency from Nijmegen that builds custom AI agents for your own processes, with an offer for marketing agencies: onboarding, content, planning and reporting.",
-        "price": "A 12-month partnership: €4,500, €8,500 or €14,000 per month. Every partnership starts with a strategy month.",
-        "agencies": "They build custom per organisation. You see your agents and usage in their own hub.",
-        "data": "Hosting for your agents is included in every package. We did not find on their page where the data is stored.",
-        "pickThem": "You want custom work for your own internal processes and have budget for a year-long project.",
-        "pickClyde": "You want a product that already runs marketing per client, from €997 per month."
+      "title": "Lindy or Sintra as an alternative for your agency? An honest comparison.",
+      "definition": "Agencies looking at Clyde put us next to ChatGPT with a scheduling tool, next to tools like Lindy, Sintra, GoSocio, Aidelly, StoryChief and Planable, or next to a custom builder. For each route: what it does, what it costs and when it suits you better than Clyde.",
+      "checked": "Prices and features checked on 7 November 2026, on the providers' own sites, always the lowest price.",
+      "factsLabel": "At a glance",
+      "facts": {
+        "routes": {
+          "label": "Routes",
+          "value": "Nine, side by side"
+        },
+        "perRoute": {
+          "label": "Per route",
+          "value": "Price, source and when they fit better"
+        },
+        "sources": {
+          "label": "Sources",
+          "value": "The providers' own sites, with date"
+        }
       }
     },
-    "correction": "Is something no longer right? Email hello@future-marketing.ai and we will fix it.",
-    "cta": {
+    "table": {
+      "title": "All routes side by side.",
+      "sub": "Six questions that matter to an agency. Where a provider does not say something on its own site, it says \"not found\".",
+      "caption": "Clyde next to the other routes, per question. Scroll sideways for all columns.",
+      "cols": {
+        "route": "Route",
+        "workspace": "Workspace per client",
+        "approval": "Client approves",
+        "memory": "Memory per client",
+        "publishes": "Publishes itself",
+        "data": "Data",
+        "price": "Price from, per month"
+      },
+      "rows": {
+        "clyde": {
+          "name": "Clyde",
+          "workspace": "Yes",
+          "approval": "Yes, in their own environment",
+          "memory": "Yes, tied to calendar, approval and report",
+          "publishes": "Yes, to seven channels",
+          "data": "Database and servers in the EU, language model in the US",
+          "price": "€997 for 10 client brands (founding)"
+        },
+        "diy": {
+          "name": "Yourself, with ChatGPT and Planable",
+          "workspace": "In the scheduling tool",
+          "approval": "In the scheduling tool (from Planable Pro)",
+          "memory": "Per ChatGPT project, separate from your schedule",
+          "publishes": "The scheduling tool, ChatGPT does not",
+          "data": "ChatGPT: region choice rolling out. Planable: hosting in the US",
+          "price": "$20 per user plus $33 per workspace, billed yearly"
+        },
+        "lindy": {
+          "name": "Lindy",
+          "workspace": "Not found",
+          "approval": "Yes, with an approval link (social)",
+          "memory": "Per workspace and per user; per client not found",
+          "publishes": "Yes, to LinkedIn and X",
+          "data": "SOC 2 Type II, GDPR, HIPAA and PIPEDA",
+          "price": "$29.99 per active user"
+        },
+        "sintra": {
+          "name": "Sintra",
+          "workspace": "Yes, up to 5 brand profiles",
+          "approval": "Not found",
+          "memory": "One Brain AI per workspace",
+          "publishes": "Yes, to five networks",
+          "data": "In the US or the EU, per their data processing agreement",
+          "price": "$15.60 billed yearly"
+        },
+        "gosocio": {
+          "name": "GoSocio",
+          "workspace": "Yes",
+          "approval": "Not found; there is an approval queue for your team",
+          "memory": "Brand documents you upload; memory per client not found",
+          "publishes": "Yes, to six networks",
+          "data": "Hosting in the EU",
+          "price": "€31 billed yearly"
+        },
+        "aidelly": {
+          "name": "Aidelly",
+          "workspace": "Yes, unlimited in the Agency plan",
+          "approval": "Yes, through a link without an account",
+          "memory": "Yes, a brand profile per workspace that learns from approvals",
+          "publishes": "Yes, to eleven networks",
+          "data": "In the US, no EU option",
+          "price": "$29 for 2 workspaces, billed yearly"
+        },
+        "storychief": {
+          "name": "StoryChief",
+          "workspace": "Yes",
+          "approval": "Yes, with review links",
+          "memory": "Yes, brand context per client workspace",
+          "publishes": "Yes, to your CMS and ten social networks",
+          "data": "In the EU (Ireland and Belgium)",
+          "price": "€49 billed yearly; for agencies €79 per workspace"
+        },
+        "planable": {
+          "name": "Planable",
+          "workspace": "Yes",
+          "approval": "Yes, from Planable Pro",
+          "memory": "Brand context per workspace, up to 4,000 characters",
+          "publishes": "Yes, to nine platforms",
+          "data": "Hosting with providers in the US",
+          "price": "$33 per workspace, billed yearly"
+        },
+        "aicollegas": {
+          "name": "aicollegas.nl (custom)",
+          "workspace": "Custom",
+          "approval": "Custom",
+          "memory": "Custom",
+          "publishes": "Custom",
+          "data": "Hosting in every package, data in the EU",
+          "price": "Partnership from €4,500 (12 months), or a €1,495 session and then a fixed price"
+        }
+      },
+      "source": "The source per provider is listed with the tool below. Is something no longer right? Email <mail>hello@future-marketing.ai</mail> and we will fix it."
+    },
+    "clyde": {
+      "title": "What Clyde is for.",
+      "p1": "Clyde is the AI colleague for marketing agencies with 5 to 20 client brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own environment.",
+      "p2": "Clyde costs €997 per month as a founding partner, with ten client brands included and €299 per extra client brand. Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US.",
+      "links": {
+        "pricing": "See the price",
+        "trust": "Where your clients' data lives"
+      }
+    },
+    "tools": {
+      "title": "Per route: when they fit better.",
+      "sub": "No tool suits every agency. For each route: when you pick them, and when Clyde.",
+      "labels": {
+        "what": "What it is",
+        "pickThis": "Choose this if",
+        "pickThem": "Choose {name} if",
+        "pickClyde": "Choose Clyde if",
+        "source": "Source:",
+        "sources": "Sources:"
+      },
+      "items": {
+        "diy": {
+          "eyebrow": "Do it yourself",
+          "name": "ChatGPT with a scheduling tool",
+          "what": "ChatGPT Business for the writing, with projects you share with your team, and a scheduling tool like Planable where your client follows along.",
+          "pickThem": "You have one or two clients and want to set everything up yourself.",
+          "pickClyde": "You serve several clients and want memory, approval and publishing per client in one place.",
+          "source": "Sources: <business>ChatGPT Business</business>, <residency>storage in ChatGPT Business</residency>, <projects>projects in ChatGPT</projects> and <planable>Planable</planable>"
+        },
+        "lindy": {
+          "eyebrow": "Assistant for your team",
+          "name": "Lindy",
+          "what": "An AI assistant for your whole team: inbox, meetings, Slack, your CRM and more than 1,500 integrations. Actions with outside impact can wait for your approval.",
+          "pickThem": "You mainly want help for your own team: inbox, calendar, meetings and one-off tasks across many tools.",
+          "pickClyde": "Your work revolves around clients: a strategy per client, content the client approves, and a memory kept separate per client."
+        },
+        "sintra": {
+          "eyebrow": "For business owners",
+          "name": "Sintra",
+          "what": "Twelve AI helpers for business owners, covering social media, customer support and SEO among others, with a knowledge base about your business.",
+          "pickThem": "You work on your own or have one brand, and want help with many kinds of tasks for little money.",
+          "pickClyde": "You serve more than five clients and want each client to approve their own content."
+        },
+        "gosocio": {
+          "eyebrow": "Social media",
+          "name": "GoSocio",
+          "what": "An AI tool for social media: create posts, images and video, schedule them and publish directly to six networks.",
+          "pickThem": "You only need social, want to publish to six networks today, or have a small budget.",
+          "pickClyde": "You want more than social, such as research, reporting, blogs and leads per client, and you let your client approve in their own environment."
+        },
+        "aidelly": {
+          "eyebrow": "Social for agencies",
+          "name": "Aidelly",
+          "what": "An AI tool for social media agencies: create, approve, publish and report per client workspace, under your own brand.",
+          "pickThem": "Your agency only does social and you want to serve many clients for one fixed amount.",
+          "pickClyde": "You also want strategy, blogs, reporting and leads per client, with the database in the EU."
+        },
+        "storychief": {
+          "eyebrow": "Content per workspace",
+          "name": "StoryChief",
+          "what": "A content platform for teams and agencies: blogs and social per workspace, with approval by your client through review links.",
+          "pickThem": "You mainly make blogs and content and want to pay per workspace.",
+          "pickClyde": "You also want strategy, DMs, leads and a report per client, with Clyde doing the work and putting it to you."
+        },
+        "planable": {
+          "eyebrow": "Scheduling tool",
+          "name": "Planable",
+          "what": "A scheduling tool for social media where your client follows along and approves before a post goes live.",
+          "pickThem": "You do the writing yourself and only need a place to schedule and have your client approve.",
+          "pickClyde": "You want the work made as well: Clyde writes, schedules and puts it to you."
+        },
+        "aicollegas": {
+          "eyebrow": "Custom work",
+          "name": "aicollegas.nl",
+          "what": "An agency from Nijmegen that builds custom AI agents for your own processes, with an offer for marketing agencies. A partnership runs 12 months: €4,500, €8,500 or €14,000 per month. They build separate agents after an AI Impact Session of €1,495, at a fixed custom price.",
+          "pickThem": "You want custom work for your own internal processes and have budget for a year-long project.",
+          "pickClyde": "You want a product that already runs marketing per client, from €997 per month."
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions when comparing.",
+      "sub": "The questions agencies ask most when they put Clyde next to another tool.",
+      "items": {
+        "chatgpt": {
+          "q": "What is the difference between Clyde and ChatGPT for an agency?",
+          "a": "ChatGPT remembers what you put in a project, also when you share that project with your team. A content calendar, your client's approval and publishing are not in OpenAI's description; you handle those in other tools. Clyde has one memory per client tied to that work, and your client approves themselves."
+        },
+        "lindy": {
+          "q": "Is Clyde an alternative to Lindy?",
+          "a": "For the work for your clients, yes; for your own team, no. Lindy helps your team with inbox, calendar and one-off tasks across many tools. Clyde works per client: a strategy, content your client approves and a memory per client."
+        },
+        "oneClient": {
+          "q": "Which tool suits an agency with one client?",
+          "a": "Probably not Clyde. With us you pay €997 per month for ten client brands; with one client, ChatGPT with a scheduling tool, Sintra or GoSocio are cheaper."
+        }
+      },
+      "links": {
+        "why": "Why Clyde and not a separate AI tool",
+        "kennisbank": "Clyde, Jasper, ChatGPT and Semrush compared (in Dutch)"
+      }
+    },
+    "end": {
       "title": "Is Clyde a fit for your agency?",
-      "body": "In a call we look together at whether Clyde fits, or whether one of the tools above suits your work better.",
-      "button": "Request a call"
+      "sub": "In a call we look together at whether Clyde fits, or whether one of the routes above suits your work better.",
+      "cta": "Request a call",
+      "link": "How memory per client works"
     }
   },
   "how-it-works": {
@@ -1472,19 +1630,51 @@
   },
   "trust": {
     "meta": {
-      "title": "Trust: where your data lives | FutureMarketingAI",
-      "description": "Database and servers in the EU, the language model at Anthropic and OpenAI in the US. What they retain, how long we retain and the data processing agreement."
+      "title": "GDPR and Clyde: where your clients' data lives",
+      "description": "Which sub-processors Clyde uses, where your clients' data lives and what happens when you cancel. So you can give your clients an honest answer."
     },
-    "updated": "Updated October 25, 2026",
     "hero": {
-      "eyebrow": "Trust",
-      "title": "Where your data lives",
-      "subtitle": "Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US. Below, per component: where it runs, what the language models retain and how long we keep things."
+      "eyebrow": "Trust and GDPR",
+      "title": "Where your clients' data lives",
+      "definition": "Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US. Below, per component: where it runs, what the language models retain, how long we keep things and what you tell your client.",
+      "updated": "Updated on 7 November 2026",
+      "factsLabel": "At a glance",
+      "facts": {
+        "hosting": {
+          "label": "Database and servers",
+          "value": "In the EU, in Frankfurt and Nuremberg"
+        },
+        "model": {
+          "label": "Language model",
+          "value": "Anthropic and OpenAI, in the US"
+        },
+        "dpa": {
+          "label": "Data processing agreement",
+          "value": "On request"
+        }
+      }
+    },
+    "chain": {
+      "title": "What you tell your client.",
+      "sub": "Your client asks where their data lives. The honest answer fits in three lines, and we send a data processing agreement with us on request.",
+      "items": {
+        "client": {
+          "title": "Your client",
+          "text": "Gives your agency their brand, their customers and their content to work with."
+        },
+        "agency": {
+          "title": "Your agency",
+          "text": "Works with that data in Clyde, in a separate workspace per client."
+        },
+        "fmai": {
+          "title": "FutureMarketingAI",
+          "text": "Provides Clyde and works with the providers below; the full list is in <link>article 5 of the privacy policy</link>."
+        }
+      }
     },
     "hosting": {
-      "eyebrow": "Hosting",
-      "title": "Where it runs",
-      "intro": "Per component: which provider delivers it and where the servers are.",
+      "title": "Where it runs.",
+      "sub": "Per component: which provider delivers it and where the servers are.",
       "app": {
         "title": "App and website",
         "place": "Vercel · Frankfurt (fra1)",
@@ -1507,10 +1697,11 @@
       }
     },
     "model": {
-      "eyebrow": "Language model",
-      "title": "The language model runs in the US",
-      "intro": "Clyde writes mostly with Claude from Anthropic, and uses OpenAI models for text and images. Both are US companies and their models run in the US. A language model only gets the context a task needs, not your whole workspace.",
-      "rows": {
+      "title": "The language model runs in the US.",
+      "sub": "Clyde writes mostly with Claude from Anthropic, and uses OpenAI models for text and images. A language model only gets the context a task needs, not your whole workspace.",
+      "caption": "What Anthropic and OpenAI do with what Clyde sends them",
+      "cols": {
+        "provider": "Provider",
         "training": "Trains on your data",
         "retention": "Retention",
         "contract": "Contract"
@@ -1525,15 +1716,33 @@
         "name": "OpenAI",
         "training": "Not by default. OpenAI does not train on API data unless a customer opts in.",
         "retention": "Up to 30 days, for abuse monitoring. Longer if the law requires it or if needed to protect their services.",
-        "contract": "With OpenAI Ireland. Transfers to the US based on standard contractual clauses (SCCs)."
+        "contract": "With OpenAI Ireland. Transfers to the US based on standard contractual clauses (SCCs) or an adequacy decision of the European Commission."
       },
-      "sources": "Sources, read on October 25, 2026: Anthropic's <terms>terms</terms> and <retention>retention periods</retention>, and the <openai>OpenAI API data policy</openai>.",
-      "others": "For research, images, video and voice-overs we work with other specialised providers. They are listed with their purpose in <link>article 5 of the privacy policy</link>."
+      "sources": "Sources, read on 7 November 2026: Anthropic's <terms>terms</terms>, <retention>retention periods</retention> and <adpa>data processing addendum</adpa>, and the <openai>OpenAI API data policy</openai> and <odpa>OpenAI data processing addendum</odpa>. For research, images, video and voice-overs we work with other specialised providers; they are listed with their purpose in <link>article 5 of the privacy policy</link>."
+    },
+    "separate": {
+      "title": "Separate per client.",
+      "p1": "Every client has its own workspace with its own memory. When Clyde works for client A, it retrieves client A's memory, not client B's.",
+      "p2": "Technically, every memory about a client is tied to that agency and that client in the database, and every lookup filters on both.",
+      "link": "What Clyde remembers per client"
+    },
+    "approval": {
+      "title": "Nothing goes live without approval.",
+      "sub": "Clyde proposes, you decide. After you approve, you can still pause a post until four hours before it goes live.",
+      "link": "How you stay in charge",
+      "bar": "Clyde · Voor jou",
+      "alt": "The For you screen in the app, in Dutch: two proposals for the demo brand Dagspa Luwte, a carousel and a blog, each with the buttons Approve and Set aside.",
+      "caption": "Approving starts the task. Setting it aside stops it; you cannot undo that here.",
+      "demo": "Example agency and example brands from the demo environment of the app."
     },
     "retention": {
-      "eyebrow": "Retention",
-      "title": "How long we keep things",
-      "intro": "A cleanup job enforces these periods automatically every night.",
+      "title": "How long we keep things.",
+      "sub": "A cleanup job enforces these periods automatically every night. All periods, including those for Clyde's memory, Instagram messages and invoices, are in <link>article 6 of the privacy policy</link>.",
+      "caption": "Retention periods applied automatically every night",
+      "cols": {
+        "what": "What",
+        "term": "Period"
+      },
       "chats": {
         "what": "Chat conversations on clients' websites",
         "term": "Anonymised after 30 days without the visitor's consent. Deleted after 12 months with consent."
@@ -1549,13 +1758,11 @@
       "uploads": {
         "what": "Video uploads that are not published",
         "term": "Deleted after 24 hours."
-      },
-      "exit": "If you cancel, we send you an export of your data within 30 days. After that we delete your workspaces.",
-      "more": "All periods, including those for Clyde's memory, Instagram messages and invoices, are in <link>article 6 of the privacy policy</link>."
+      }
     },
     "limits": {
-      "eyebrow": "Honest",
-      "title": "What we do not promise",
+      "title": "What we do not promise.",
+      "sub": "Three things you should be able to tell your client honestly as well.",
       "zdr": {
         "title": "Anthropic and OpenAI retain data on their own terms",
         "body": "We have no agreement with Anthropic or OpenAI under which they retain nothing. Their standard periods above apply."
@@ -1569,10 +1776,37 @@
         "body": "Vercel serves images and scripts through a global network, and some of the providers for research, images and video are in the US. Those transfers are covered by the safeguards in article 8 of the privacy policy."
       }
     },
-    "dpa": {
-      "eyebrow": "Data processing agreement",
-      "title": "Data processing agreement on request",
-      "body": "We send a data processing agreement on request. Email us; you can also write with questions about your data or a data subject request."
+    "faq": {
+      "title": "Questions about GDPR and client data.",
+      "sub": "What your client asks you, and what you can answer.",
+      "items": {
+        "allowed": {
+          "q": "Can I put my clients' data into an AI tool?",
+          "a": "Yes, if your client knows where that data goes and you have put that in writing. With Clyde, your clients' data is in a database in the EU, and the language model at Anthropic and OpenAI only gets the context a task needs. We send a data processing agreement with us on request."
+        },
+        "providers": {
+          "q": "Which sub-processors does Clyde use?",
+          "a": "For hosting Vercel, Supabase, Hetzner and Upstash, and for the language model Anthropic and OpenAI. For research, images, video and voice-overs we work with other specialised providers. All of them are listed with their purpose in <link>article 5 of the privacy policy</link>."
+        },
+        "training": {
+          "q": "Does the language model train on my clients' data?",
+          "a": "Anthropic does not: their commercial terms forbid it. OpenAI does not by default: they do not train on API data unless a customer opts in."
+        },
+        "cancel": {
+          "q": "What happens to the data if I cancel?",
+          "a": "If you cancel, we send you an export of your data within 30 days. After that we delete your workspaces."
+        },
+        "dpa": {
+          "q": "Do I get a data processing agreement?",
+          "a": "Yes, on request. Email <mail>privacy@future-marketing.ai</mail>; you can also write with questions about your data or a data subject request."
+        }
+      }
+    },
+    "end": {
+      "title": "Rather talk first?",
+      "sub": "In a 30-minute call we go through what your clients ask, and whether Clyde fits.",
+      "cta": "Request a call",
+      "link": "Email about a data processing agreement"
     }
   },
   "blog": {

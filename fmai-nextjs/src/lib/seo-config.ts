@@ -100,7 +100,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/research': '2026-11-05',
   '/skills/clyde': '2026-11-05',
   '/pricing': '2026-11-06',
-  '/alternatives': '2026-11-05',
+  '/alternatives': '2026-11-07',
   '/about': '2026-11-06',
   '/contact': '2026-11-05',
   '/how-it-works': '2026-11-07',
@@ -115,5 +115,5 @@ export const PAGE_DATES: Record<string, string> = {
   '/legal/privacy': '2026-11-05',
   '/legal/terms': '2026-11-06',
   '/legal/cookies': '2026-04-27',
-  '/trust': '2026-11-05',
+  '/trust': '2026-11-07',
 }
