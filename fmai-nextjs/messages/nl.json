@@ -1850,120 +1850,144 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Hoe het werkt: in vier weken live | FutureMarketingAI",
-      "description": "Zo krijgt je bureau Clyde als AI-collega: in vier weken van gesprek tot live. Geen ontwikkelteam nodig."
-    },
-    "hero": {
-      "eyebrow": "Onboarding",
-      "badge": "Founding open · maximaal {total} plekken",
-      "title": "Hoe begint jouw partnership met Clyde?",
-      "description": "Vier weken van eerste gesprek tot Clyde live draait voor je klanten. Geen zelfbediening. Daley begeleidt elke klant persoonlijk door het traject.",
-      "cta": "Vraag een gesprek aan"
+      "title": "Implementatie in 4 weken: van intake tot live | Clyde",
+      "description": "Zo gaat Clyde in vier weken live in je bureau: intake en merkscan, pijlers per klant, de merkstem en de kickoff. Met de uren die het je kost."
     },
     "jsonLd": {
-      "name": "Hoe de FutureMarketingAI-partnership start",
-      "description": "Onboarding in 5 stappen: aanmelden plus kennismakingscall, 4 weken partnership-setup door Daley, Clyde inregelen per merk, productie starten met goedkeuring, continue verbetering."
+      "name": "Clyde in vier weken live in je bureau",
+      "description": "Implementatie in vier weken: intake en merkscan, opzet en pijlers, merkstem afstemmen, kickoff en start. Ongeveer tien uur van jouw tijd in de eerste maand, daarna twee uur per week."
     },
-    "process": {
-      "eyebrow": "5 stappen",
-      "title": "De onboardingreis",
-      "steps": {
-        "apply": {
-          "step": "Stap 1",
-          "timeStamp": "Pre-onboarding",
-          "title": "Aanmelden plus kennismakingscall",
-          "description": "Vul het aanmeldformulier in. Binnen 3 werkdagen horen we van elkaar. Vervolgens een videogesprek van 30 minuten waarin we wederzijds beoordelen of het een match is. Geen pitch, wel een eerlijke check.",
-          "deliverable1": "Aanmeldformulier",
-          "deliverable2": "3 werkdagen reactie",
-          "deliverable3": "30-min video-call"
+    "hero": {
+      "eyebrow": "Implementatie",
+      "title": "In vier weken live met Clyde",
+      "definition": "Clyde in je bureau zetten duurt vier weken en kost ongeveer tien uur van jouw tijd in de eerste maand. Daley begeleidt elke start zelf, en daarna kost Clyde je twee uur per week.",
+      "factsLabel": "Kort",
+      "facts": {
+        "duration": {
+          "label": "Duur",
+          "value": "Vier weken"
         },
-        "onboarding": {
-          "step": "Stap 2",
-          "timeStamp": "Week 1 tot 4",
-          "title": "4 weken partnership-setup met Daley",
-          "description": "Daley begeleidt het traject persoonlijk: per klant de merkstem, de doelen uit een strategiesessie, de actieve vaardigheden en wie wat goedkeurt. Je doorloopt de onboarding samen, niet alleen.",
-          "deliverable1": "Brand-scan per merk",
-          "deliverable2": "Brand-voice training",
-          "deliverable3": "Goedkeuringsworkflows",
-          "screenshotAlt": "Het onboardingscherm van Clyde: stap 1 van 11, met de merkgegevens en de standaardinstellingen voor taal en tijdzone.",
-          "screenshotCaption": "Stap 1 van 11 — elke werkruimte doorloopt dezelfde route"
+        "time": {
+          "label": "Jouw tijd",
+          "value": "Ongeveer tien uur in de eerste maand"
         },
-        "configure": {
-          "step": "Stap 3",
-          "timeStamp": "Week 1 tot 3",
-          "title": "Clyde inregelen per klant",
-          "description": "Voor elke klant een werkruimte met merkrichtlijnen, doelgroep, tone of voice, actieve vaardigheden, kanalen en goedkeuringsregels. Clyde begint zijn geheugen per klant op te bouwen.",
-          "deliverable1": "Werkruimte per klant",
-          "deliverable2": "Vaardigheden actief",
-          "deliverable3": "Kanalen gekoppeld"
+        "after": {
+          "label": "Daarna",
+          "value": "Twee uur per week"
+        }
+      }
+    },
+    "weeks": {
+      "title": "Week voor week, met de uren erbij.",
+      "sub": "Per week staat hier wat jij aanlevert, wat Clyde doet en wat er daarna klaar is. Je hebt geen ontwikkelaar nodig: Clyde is een app waarin je inlogt.",
+      "rows": {
+        "delivers": "Jij levert",
+        "clyde": "Clyde doet",
+        "done": "Klaar"
+      },
+      "items": {
+        "w1": {
+          "label": "Week 1",
+          "title": "Intake en merkscan",
+          "delivers": "Een werksessie van <b>2 uur</b> met Daley.",
+          "clyde": "Leest per klant kleuren, lettertypen, toon en USP's, en haalt je Instagram-patronen op.",
+          "done": "Merk-DNA per klant en een Instagram-baseline."
         },
-        "production": {
-          "step": "Stap 4",
-          "timeStamp": "Vanaf week 4",
-          "title": "Productie start, jij houdt de regie",
-          "description": "Clyde gaat aan het werk: social posts, blogs, e-mail, ads. Wat hij voorlegt, beoordeel je in de goedkeuringslijst; hoeveel hij zelf mag doen, kies je per taak. Week 1 veel correcties, en die neemt Clyde mee.",
-          "deliverable1": "Social posts live",
-          "deliverable2": "Goedkeurings-queue",
-          "deliverable3": "Week-1 iteraties",
-          "screenshotAlt": "De goedkeuringslijst met drie openstaande taken, elk met een toelichting en een knop Goedkeuren.",
-          "screenshotCaption": "De goedkeuringslijst: wat Clyde voorlegt, keur jij goed"
+        "w2": {
+          "label": "Week 2",
+          "title": "Opzet en pijlers",
+          "delivers": "<b>2 uur</b>.",
+          "clyde": "Maakt uit het merk-DNA vijf tot zeven contentpijlers en ontwerptemplates per merk.",
+          "done": "Pijlers en templates per merk."
         },
-        "improvement": {
-          "step": "Stap 5",
-          "timeStamp": "Doorlopend",
-          "title": "Continu verbeteren plus wekelijkse rapportages",
-          "description": "Clyde onthoudt je correcties, en de weekrapporten laten per klant zien wat werkt. De wekelijkse digest houdt je op de hoogte.",
-          "deliverable1": "Wekelijkse digest",
-          "deliverable2": "Correcties in het geheugen",
-          "deliverable3": "Prestatie-feedback",
-          "screenshotAlt": "Het doelenscherm van Clyde met meerstaps trajecten die hij zelf bijhoudt.",
-          "screenshotCaption": "Doelen die Clyde bewaakt, niet jij"
+        "w3": {
+          "label": "Week 3",
+          "title": "Merkstem afstemmen",
+          "delivers": "<b>4 uur</b>: je beoordeelt de eerste batch.",
+          "clyde": "Past de stem aan tot hij klopt, maximaal drie rondes per merk.",
+          "done": "De merkstem staat vast en de goedkeuring loopt."
+        },
+        "w4": {
+          "label": "Week 4",
+          "title": "Kickoff en start",
+          "delivers": "Kickoff met Daley. Per taak kies jij hoeveel Clyde zelf mag.",
+          "clyde": "Plant en publiceert volgens de agenda.",
+          "done": "Clyde draait, met een directe WhatsApp-lijn naar Daley."
         }
       },
-      "loop_eyebrow": "De ritmische cyclus",
-      "loop_title": "Continu verbeteren",
-      "loop_description": "Geheugen, prestatiedata en jouw correcties voeden de volgende ronde. Zo werkt Clyde per klant steeds meer zoals jij het wilt.",
-      "loop_stage1": "Productie",
-      "loop_stage2": "Goedkeuring",
-      "loop_stage3": "Geheugen",
-      "loop_stage4": "Verbetering"
+      "sumFirst": "Samen ongeveer <b>tien uur</b> in de eerste maand.",
+      "sumAfter": "Daarna <b>2 uur per week</b>, doorlopend."
     },
-    "cta": {
-      "eyebrow": "Founding open · maximaal {total} plekken",
-      "title": "Klaar om de partnership te starten?",
-      "description": "Vraag een gesprek aan. We kijken samen of Clyde past bij jouw portfolio en welk tier logisch is.",
-      "button": "Vraag een gesprek aan"
-    },
-    "systemFlow": {
-      "title": "Van merk naar gepubliceerde post",
-      "subtitle": "Zes stappen, en op één ervan sta jij. Waar het geheugen zit en waar de mens beslist, in één beeld.",
-      "steps": {
-        "brand": {
-          "title": "De klant",
-          "body": "Eén werkruimte per klant, met een eigen geheugen."
+    "supply": {
+      "title": "Wat je per klant aanlevert.",
+      "sub": "Vier dingen per klantmerk. De rest leest Clyde zelf van de site en de kanalen van je klant.",
+      "items": {
+        "site": {
+          "title": "De website van je klant",
+          "text": "Daaruit haalt Clyde in week 1 de kleuren, lettertypen, toon en USP's."
         },
-        "scan": {
-          "title": "Brand-scan",
-          "body": "Clyde leest de site en legt kleur, toon, aanbod en doelgroep vast."
+        "channels": {
+          "title": "De kanalen",
+          "text": "Je koppelt ze per klant in Klantinstellingen, met een inlog bij het platform zelf."
         },
-        "clyde": {
-          "title": "Clyde met geheugen",
-          "body": "Onthoudt per klant wat er is afgesproken en wat er eerder werkte."
+        "strategy": {
+          "title": "Een strategiesessie",
+          "text": "De doelen en de doelgroep van je klant. Daar toetst Clyde zijn voorstellen aan."
         },
-        "skills": {
-          "title": "Vaardigheden",
-          "body": "Tien live vaardigheden pakken het werk op: social, blogs, e-mail, ads."
-        },
-        "approval": {
-          "title": "Jouw regels",
-          "body": "Jij bepaalt per taak wat Clyde eerst voorlegt en wat hij zelf mag doen en melden."
-        },
-        "publish": {
-          "title": "Publicatie",
-          "body": "Naar het kanaal, op het geplande moment, met de meting eraan vast."
+        "approver": {
+          "title": "Wie goedkeurt",
+          "text": "Jij, je team of je klant. Per taak kies jij wat Clyde eerst voorlegt."
         }
-      },
-      "feedback": "Wat je goedkeurt of afwijst gaat terug het geheugen in — daar begint de verbetercyclus hieronder."
+      }
+    },
+    "agenda": {
+      "title": "Uit de pijlers volgt de agenda.",
+      "sub": "Per klant komen de pijlers terug als vensters in een agenda die ruim een jaar vooruit kijkt. Daaruit plant Clyde vanaf week 4 de posts.",
+      "bar": "Strategie · Dagspa Luwte · Agenda",
+      "alt": "De agenda van het demo-merk Dagspa Luwte: zes vensters op een tijdlijn van november tot januari, elk met een pijler zoals Behandelingen uitgelegd, Gasten aan het woord of Rust en ritueel.",
+      "caption": "6 vensters. Gedekt tot en met januari 2028, zover deze tijdlijn kijkt.",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app."
+    },
+    "after": {
+      "title": "Na week vier: een gewone week.",
+      "sub": "Clyde stelt voor, jij beslist. Wat hij voorlegt keur je goed in de app, en je klant kijkt mee in zijn eigen omgeving. Hoe zo'n week loopt, zie je dag voor dag op de homepage.",
+      "links": {
+        "week": "Bekijk een week met Clyde",
+        "client": "Zo kijkt je klant mee",
+        "memory": "Wat Clyde per klant onthoudt"
+      }
+    },
+    "faq": {
+      "title": "Vragen over de start.",
+      "sub": "Wat bureaus vragen voordat ze beginnen.",
+      "items": {
+        "live": {
+          "q": "Hoe lang duurt het voordat Clyde live is?",
+          "a": "Vier weken. In week 4 is de kickoff, en vanaf dan plant en publiceert Clyde volgens de agenda."
+        },
+        "time": {
+          "q": "Hoeveel tijd kost het mijn team?",
+          "a": "Ongeveer tien uur in de eerste maand: twee uur in week 1, twee in week 2, vier in week 3 en de kickoff in week 4. Daarna twee uur per week."
+        },
+        "it": {
+          "q": "Heb ik een ontwikkelaar of IT nodig?",
+          "a": "Nee. Clyde is een app waarin je inlogt, en de kanalen van je klanten koppel je met een inlog bij het platform zelf."
+        },
+        "guide": {
+          "q": "Wie begeleidt de start?",
+          "a": "Daley begeleidt elke start zelf. Daarna heb je een directe WhatsApp-lijn met hem."
+        },
+        "cost": {
+          "q": "Wat kost de start?",
+          "a": "De onboarding kost niets. Je betaalt het maandtarief: €997 per maand als founding partner, met tien klantmerken inbegrepen. Alles over de prijs staat op <link>de prijspagina</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Begin met een gesprek.",
+      "sub": "Een gesprek van 30 minuten zegt of Clyde past bij je klanten. Tien founding-plekken in totaal.",
+      "cta": "Vraag een gesprek aan",
+      "link": "Bekijk de prijs"
     }
   },
   "contact": {
@@ -2813,124 +2837,153 @@
   },
   "memory": {
     "meta": {
-      "title": "Geheugen: Clyde onthoudt elke klant | FutureMarketingAI",
-      "description": "Clyde onthoudt per klant de merkstem, de doelgroep, de doelen en wat er is afgesproken. Elke klant een eigen geheugen, elke nacht bijgewerkt."
+      "title": "AI met geheugen per klant: zo onthoudt Clyde je merken",
+      "description": "Clyde legt per klant de merkstem, de doelgroep en wat werkte vast, en schrijft daarmee verder. Zo klinkt elk klantmerk als zichzelf."
     },
     "hero": {
       "eyebrow": "Geheugen per klant",
-      "headlineMain": "Clyde onthoudt je klanten.",
-      "headlineAccent": "Elke klant apart.",
-      "subtitle": "Dit is het verschil tussen een generieke AI-prompt en een collega: geheugen. Clyde onthoudt per klant de merkstem, de doelgroep, de doelen en wat jullie hebben afgesproken. Je correcties neemt hij mee."
-    },
-    "layers": {
-      "eyebrow": "Architectuur",
-      "title": "Zo onthoudt Clyde",
-      "subtitle": "Als Clyde antwoordt, put hij uit vier bronnen die samenwerken. Jij hoeft er niets van te weten: het werkt gewoon.",
-      "scrollLabel": "Scroll door de vier bronnen",
-      "promptLabel": "Vraag aan Clyde",
-      "clydeLabel": "Clyde antwoordt",
-      "activeLabel": "Actief",
-      "hot": {
-        "name": "Het gesprek",
-        "window": "Nu",
-        "description": "Het lopende gesprek en het scherm waar je op staat. Op de pagina van een klant weet Clyde over welke klant je het hebt.",
-        "prompt": "Welke posts heb ik vandaag goedgekeurd voor merk Skin?",
-        "clydeAnswer": "Drie posts: ochtendpost over de cleanser-routine, middagpost met UGC-review, einde-dag carrousel over de ingrediënten. De carrousel staat ingepland voor 19:00."
-      },
-      "warm": {
-        "name": "Herinneringen",
-        "window": "Uit gesprekken en feedback",
-        "description": "Wat jullie afspreken en wat je corrigeert, legt Clyde vast als herinnering. Wat belangrijk is weegt zwaarder, wat oud en onbelangrijk wordt zakt weg.",
-        "prompt": "Wat wilde de klant anders aan de carrousels?",
-        "clydeAnswer": "Minder tekst per slide, en eindigen met een vraag in plaats van een link. Dat gaf ze twee weken geleden mee bij het afkeuren; sindsdien pas ik het toe."
-      },
-      "cold": {
-        "name": "Strategie en research",
-        "window": "Per klant",
-        "description": "De doelen uit de strategiesessie, de pijlers en het onderzoek naar markt, concurrenten en doelgroep. Daar toetst Clyde zijn voorstellen aan.",
-        "prompt": "Past een post over zonnebrand in de planning?",
-        "clydeAnswer": "Ja, onder de pijler huidkennis. Het doel dit kwartaal is bereik bij nieuwe volgers, dus ik maak er een carrousel van die mensen willen delen."
-      },
-      "context": {
-        "name": "Wie het merk ís",
-        "window": "Altijd paraat",
-        "description": "De kern die altijd meegaat: het klantprofiel, de merkstem, de doelgroep en wat wel en niet mag. Clyde houdt die bij: je correcties gaan erin, en elke nacht werkt hij de samenvatting bij.",
-        "prompt": "Schrijf een caption voor de nieuwe nachtcrème.",
-        "clydeAnswer": "Toon: warm, direct, geen jij-met-hoofdletter. Doelgroep: vrouwen 28-44 die rituelen waarderen. Geen claims, wel resultaten in concrete weken. Caption opent met de avondroutine, sluit met een vraag in plaats van een CTA."
-      }
-    },
-    "isolation": {
-      "eyebrow": "Eigen geheugen per klant",
-      "title": "Gescheiden per klant",
-      "body1": "Clyde werkt voor meerdere bureaus en hun klanten tegelijk. Elke klant heeft een eigen werkruimte met een eigen geheugen: werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Zo springt een merkstem niet over naar een andere klant.",
-      "body2": "Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
-    },
-    "decay": {
-      "eyebrow": "Dag en nacht",
-      "title": "Elke dag scherper, nooit verstopt",
-      "decayTitle": "Wat onbelangrijk wordt, vervaagt",
-      "decayBody": "Niet alles uit het verleden blijft even relevant. Oude details verliezen langzaam gewicht, zodat Clyde niet verstopt raakt onder data van een half jaar geleden. Belangrijke patronen blijven, ruis zakt weg. Net als bij mensen.",
-      "dreamTitle": "Elke nacht consolideert Clyde",
-      "dreamBody": "'s Nachts doet Clyde wat wij in onze slaap doen: hij legt verbanden, abstraheert patronen en schrijft belangrijke inzichten weg naar zijn vaste kennis. Jij wordt wakker met een collega die slimmer is dan gisteren."
-    },
-    "progress": {
-      "eyebrow": "Tijdcurve",
-      "title": "De eerste maand en daarna",
-      "subtitle": "Het verschil tussen een generieke AI en een collega die je klanten kent, groeit met elke correctie.",
-      "week1Label": "Maand 1: Clyde leert je klanten kennen",
-      "week1Body": "\"Schrijf een caption voor merk X.\" Clyde volgt de merkrichtlijnen, maar nog niet met perfecte nuance. Veel feedback-rondes. Jij bent nog veel bezig met corrigeren en bijslijpen.",
-      "week12Label": "Daarna: minder bijsturen",
-      "week12Body": "Clyde kent de hebbelijkheden van klant X: welke woorden wel en niet, hoe een post opent, wat jullie hebben afgesproken. Je stuurt minder bij. Hoeveel hij zelf mag doen, blijf jij per taak bepalen."
-    },
-    "contrast": {
-      "eyebrow": "Vergelijking",
-      "title": "Waarom generieke AI hier vastloopt",
-      "chatgpt": {
-        "name": "Chat-AI (generiek)",
-        "body": "Geheugen per gebruiker of project, niet per merk. Merkstem, doelgroep en context houd je zelf bij en lever je per project aan. Bij 20 merken zijn dat 20 losse projecten."
-      },
-      "jasper": {
-        "name": "Copy-tools",
-        "body": "Templates en beperkt geheugen. Kent \"jouw merkstem\" maar niet \"jouw hele portfolio van 20 merken\". Schaalt niet mee met de scope van een bureau."
-      },
-      "clyde": {
-        "name": "Clyde",
-        "body": "Een eigen geheugen per klant, gescheiden van de andere klanten en elke nacht bijgewerkt. Gebouwd voor bureaus met 5 tot 20 merken."
-      }
-    },
-    "comparison": {
-      "eyebrow": "Geheugen in actie",
-      "title": "Drie gesprekken, één merk, één week.",
-      "intro": "Hetzelfde gesprek met een AI zonder geheugen en met Clyde. Een voorbeeld, met een verzonnen merk.",
-      "diyLabel": "Andere AI",
-      "diyNote": "vergeet alles na sessie-eind",
-      "clydeLabel": "Clyde",
-      "clydeNote": "onthoudt context en bouwt voort",
-      "userLabel": "Jij",
-      "replayLabel": "Speel opnieuw",
-      "turns": [
-        {
-          "user": "Schrijf een caption voor de nieuwe nachtcrème van Skin.",
-          "diy": "Wat is de toon van het merk? Heb je een doelgroep, USP's en richtlijnen?",
-          "clyde": "Caption gereed. Opent met de avondroutine, sluit met een vraag in plaats van een CTA. Toon klopt met merkstem v3, lengte op 187 tekens."
+      "title": "Elke klant een eigen merkstem en geheugen.",
+      "definition": "Clyde onthoudt per klant de merkstem, de doelgroep, de doelen en wat jullie hebben afgesproken, en schrijft daarmee verder. Het geheugen van de ene klant staat los van dat van de andere.",
+      "factsLabel": "Kort",
+      "facts": {
+        "perClient": {
+          "label": "Per klant",
+          "value": "Vijf vaste blokken plus de herinneringen"
         },
-        {
-          "user": "Maak er twee varianten van.",
-          "diy": "Twee varianten waarvan? Wil je dat ik opnieuw begin met de merkrichtlijnen?",
-          "clyde": "Variant A: persoonlijker, eerste persoon enkelvoud. Variant B: hardere belofte op slaap-resultaat. Beide passen binnen de no-claims-richtlijn die we vorige maand vastlegden."
+        "updated": {
+          "label": "Bijgewerkt",
+          "value": "Elke nacht"
         },
-        {
-          "user": "Welke werkte vorige maand het best in deze categorie?",
-          "diy": "Ik heb geen toegang tot historische data over jouw account.",
-          "clyde": "De variant met de avondroutine en een vraag om te bewaren werd in oktober het vaakst bewaard. Variant A zit het dichtst bij die toon, ik zou daarmee starten."
+        "kept": {
+          "label": "Bewaard",
+          "value": "Zolang je abonnement loopt, als founding partner"
         }
-      ]
+      }
     },
-    "cta": {
-      "eyebrow": "Founding open · maximaal {total} plekken",
+    "screen": {
+      "title": "Zo ziet het geheugen van één klant eruit.",
+      "sub": "Per klant vijf vaste blokken die altijd meegaan, plus de herinneringen die Clyde onderweg vastlegt. Elk blok kun je zelf bewerken.",
+      "bar": "Clyde · Dagspa Luwte · Geheugen",
+      "alt": "Het geheugen van het demo-merk Dagspa Luwte in de app: het kerngeheugen met de blokken Klantprofiel, Merkidentiteit, Strategie, Werkwijze en Samenvatting, elk met een knop Bewerk, en daaronder de herinneringen.",
+      "caption": "Dagspa Luwte · 1 herinnering · kerngeheugen 5 van 5 · laatst geleerd 2 weken geleden",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app."
+    },
+    "sources": {
+      "title": "Vier bronnen, per klant.",
+      "sub": "Als Clyde iets voor een klant schrijft, put hij uit vier bronnen. Het kerngeheugen en de strategie zie en bewerk je zelf in de app.",
+      "items": {
+        "brand": {
+          "title": "Wie het merk is",
+          "text": "Het klantprofiel, de merkstem, de doelgroep en wat wel en niet mag. Dit gaat altijd mee, en je correcties gaan erin."
+        },
+        "strategy": {
+          "title": "Strategie en research",
+          "text": "De doelen uit de strategiesessie, de pijlers en het onderzoek naar markt, concurrenten en doelgroep. Daar toetst Clyde zijn voorstellen aan."
+        },
+        "memories": {
+          "title": "Herinneringen",
+          "text": "Wat jullie afspreken en wat je corrigeert, legt Clyde vast. Wat belangrijk is weegt zwaarder; oude, onbelangrijke details wegen minder."
+        },
+        "conversation": {
+          "title": "Het gesprek",
+          "text": "Het lopende gesprek en het scherm waar je op staat. Op de pagina van een klant weet Clyde over welke klant je het hebt."
+        }
+      }
+    },
+    "voice": {
+      "title": "Tone of voice per klant vastleggen.",
+      "sub": "De merkstem staat per klant in het kerngeheugen: hoe de klant klinkt, welke woorden passen en welke nooit. Zo klinkt elk klantmerk als zichzelf, ook als je tien klanten tegelijk bedient.",
+      "label": "Merkidentiteit · Dagspa Luwte",
+      "quote": "Rustig, warm en eerlijk. Schrijf zoals je tegen een vaste gast praat en spreek de lezer aan met \"je\". Vertel concreet wat er tijdens een behandeling gebeurt. Nodig uit, dring nooit aan. Geen beloftes over huid of resultaat, geen korting, geen haast-taal zoals \"OP=OP\" of \"nu of nooit\", en geen vakjargon zonder uitleg.",
+      "caption": "Letterlijk uit het kerngeheugen hierboven.",
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app."
+    },
+    "separate": {
+      "title": "Gescheiden per klant, elke nacht bijgewerkt.",
+      "sub": "Zo springt een merkstem niet over naar een andere klant, en raakt Clyde niet verstopt onder oude details.",
+      "cards": {
+        "separate": {
+          "eyebrow": "Gescheiden",
+          "title": "Elke klant een eigen geheugen",
+          "text": "Elke klant heeft een eigen werkruimte met een eigen geheugen. Werkt Clyde voor klant A, dan haalt hij het geheugen van klant A op, niet dat van klant B. Technisch hangt elke herinnering over een klant aan dat bureau en die klant in de database, en elke opvraging filtert daarop."
+        },
+        "nightly": {
+          "eyebrow": "Elke nacht",
+          "title": "De samenvatting per klant bijgewerkt",
+          "text": "Elke nacht werkt Clyde per klant de samenvatting bij; oude, onbelangrijke details wegen daarna minder. Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt."
+        }
+      },
+      "link": "Waar de data van je klanten staat"
+    },
+    "chatgpt": {
+      "title": "Het verschil met ChatGPT-projecten.",
+      "sub": "ChatGPT onthoudt wat je in een project zet, ook als je dat project met je team deelt. Clyde heeft per klant één geheugen dat vastzit aan de agenda, het akkoord en het rapport van die klant, en je klant kijkt mee in zijn eigen omgeving.",
+      "cards": {
+        "chatgpt": {
+          "eyebrow": "ChatGPT-projecten",
+          "title": "Geheugen per project",
+          "text": "Merkstem en context zet je zelf in elk project. Een contentagenda, het akkoord van je klant en het publiceren staan niet in de uitleg van OpenAI; die regel je in andere tools."
+        },
+        "clyde": {
+          "eyebrow": "Clyde",
+          "title": "Geheugen per klant",
+          "text": "Vast aan de agenda, het akkoord en het rapport van die klant. Je klant keurt zelf goed en kijkt mee."
+        }
+      },
+      "source": "Bron: <link>projecten in ChatGPT</link>, gecontroleerd op 7 november 2026",
+      "links": {
+        "routes": "Clyde naast de andere routes",
+        "alternatives": "Alle alternatieven naast elkaar"
+      }
+    },
+    "month": {
+      "title": "De eerste maand en daarna.",
+      "sub": "Het verschil tussen een generieke AI en een collega die je klanten kent, groeit met elke correctie.",
+      "cards": {
+        "first": {
+          "eyebrow": "Maand 1",
+          "title": "Clyde leert je klanten kennen",
+          "text": "Clyde volgt de merkrichtlijnen, maar nog niet met de nuance die je wilt. Je corrigeert veel, en die correcties neemt hij mee."
+        },
+        "after": {
+          "eyebrow": "Daarna",
+          "title": "Minder bijsturen",
+          "text": "Clyde kent de hebbelijkheden van een klant: welke woorden wel en niet, hoe een post opent, wat jullie hebben afgesproken. Hoeveel hij zelf mag doen, bepaal jij per taak."
+        }
+      }
+    },
+    "faq": {
+      "title": "Vragen over het geheugen.",
+      "sub": "Wat bureaus willen weten voordat ze hun klanten aan Clyde geven.",
+      "items": {
+        "leak": {
+          "q": "Lekt de merkstem van de ene klant naar de andere?",
+          "a": "Nee. Elke klant heeft een eigen geheugen, en elke opvraging filtert op het bureau en de klant. Werkt Clyde voor klant A, dan haalt hij het geheugen van klant B niet op."
+        },
+        "what": {
+          "q": "Wat onthoudt Clyde precies?",
+          "a": "Per klant het klantprofiel, de merkidentiteit, de strategie, de werkwijze en een samenvatting. Daarbij komen de herinneringen uit jullie gesprekken en correcties."
+        },
+        "howLong": {
+          "q": "Hoe lang duurt het voordat Clyde een klant kent?",
+          "a": "De basis staat na de merkscan in week 1. In week 3 stemmen jullie de merkstem af, maximaal drie rondes per merk. De nuance komt in de eerste maand, met je correcties."
+        },
+        "kept": {
+          "q": "Hoe lang bewaart Clyde het geheugen?",
+          "a": "Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
+        },
+        "where": {
+          "q": "Waar staat het geheugen?",
+          "a": "In een database bij Supabase in Frankfurt. Het taalmodel draait bij Anthropic en OpenAI in de VS en krijgt alleen de context die nodig is voor de opdracht. Alles over waar je data staat, lees je op <link>de pagina over vertrouwen</link>."
+        }
+      },
+      "link": "Meer over geheugen en leren"
+    },
+    "end": {
       "title": "Klaar voor een collega die je klanten kent?",
-      "subtitle": "Een gesprek van 30 minuten. Daarna weet je of het past bij jouw portfolio.",
-      "button": "Vraag een gesprek aan"
+      "sub": "Een gesprek van 30 minuten. Daarna weet je of Clyde past bij je klanten.",
+      "cta": "Vraag een gesprek aan",
+      "link": "Zo verloopt de start"
     }
   },
   "roadmap": {

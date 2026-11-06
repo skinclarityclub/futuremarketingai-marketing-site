@@ -16,11 +16,11 @@ const pages = [
   // innerText extraction collapses the inline-block words without whitespace.
   { path: '/nl', name: 'home', expected: ['Clyde', 'langetermijngeheugen'] },
   { path: '/nl/about', name: 'about', expected: ['Over FutureMarketingAI', 'Mijn missie'] },
-  { path: '/nl/how-it-works', name: 'how-it-works', expected: ['Hoe begint jouw partnership', 'Aanmelden'] },
+  { path: '/nl/how-it-works', name: 'how-it-works', expected: ['In vier weken live met Clyde', 'Wat je per klant aanlevert'] },
   { path: '/nl/pricing', name: 'pricing', expected: ['Wat kost Clyde?', 'Founding'] },
   { path: '/nl/apply', name: 'apply', expected: ['Plan een gesprek', 'Vertel ons'] },
   { path: '/nl/contact', name: 'contact', expected: ['Algemene vragen', 'Stuur ons'] },
-  { path: '/nl/memory', name: 'memory', expected: ['Clyde onthoudt', 'per merk'] },
+  { path: '/nl/memory', name: 'memory', expected: ['Elke klant een eigen merkstem en geheugen', 'Vier bronnen, per klant'] },
   { path: '/nl/case-studies/skinclarity-club', name: 'case-study-skc', expected: ['Eén collega', 'SkinClarity'] },
   { path: '/nl/skills/clyde', name: 'skill-clyde', expected: ['AI-collega', 'orkestreert'] },
   { path: '/nl/skills/social-media', name: 'skill-social', expected: ['verzorgt je social media', 'merkstem'] },

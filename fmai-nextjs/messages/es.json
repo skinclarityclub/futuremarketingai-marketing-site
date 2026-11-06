@@ -1152,120 +1152,144 @@
   },
   "how-it-works": {
     "meta": {
-      "title": "Cómo funciona: onboarding en 5 pasos | FutureMarketingAI",
-      "description": "Así recibe tu agencia a Clyde como compañero de IA: 5 pasos de la conversación al lanzamiento. Semanas, no meses. Sin equipo de ingeniería."
-    },
-    "hero": {
-      "eyebrow": "Onboarding",
-      "badge": "Founding abierto · máx. {total} plazas",
-      "title": "¿Cómo empieza tu partnership con Clyde?",
-      "description": "Cinco pasos desde la primera conversación hasta que Clyde funciona en vivo para tus clientes. Sin self-service. Daley guía personalmente a cada cliente por el proceso.",
-      "cta": "Solicita una llamada"
+      "title": "Implementation in 4 weeks: from intake to live | Clyde",
+      "description": "How Clyde goes live in your agency in four weeks: intake and brand scan, pillars per client, the brand voice and the kickoff. With the hours it takes you."
     },
     "jsonLd": {
-      "name": "Cómo empieza la partnership con FutureMarketingAI",
-      "description": "Onboarding en 5 pasos: solicitud y discovery call, 4 semanas de partnership setup con Daley, configurar a Clyde por marca, arrancar producción con aprobación, mejora continua."
+      "name": "Clyde live in your agency in four weeks",
+      "description": "Implementation in four weeks: intake and brand scan, setup and pillars, tuning the brand voice, kickoff and start. About ten hours of your time in the first month, then two hours a week."
     },
-    "process": {
-      "eyebrow": "5 pasos",
-      "title": "El recorrido de onboarding",
-      "steps": {
-        "apply": {
-          "step": "Paso 1",
-          "timeStamp": "Pre-onboarding",
-          "title": "Solicitud y discovery call",
-          "description": "Rellena el formulario de solicitud. En un plazo de 3 días laborables nos escuchamos. Después, una videollamada de 30 minutos en la que revisamos mutuamente si es un encaje. Sin pitch, un check honesto.",
-          "deliverable1": "Formulario de solicitud",
-          "deliverable2": "Respuesta en 3 días",
-          "deliverable3": "Videollamada de 30 min"
+    "hero": {
+      "eyebrow": "Implementation",
+      "title": "Live with Clyde in four weeks",
+      "definition": "Setting up Clyde in your agency takes four weeks and about ten hours of your time in the first month. Daley guides every start himself, and after that Clyde takes two hours of your week.",
+      "factsLabel": "At a glance",
+      "facts": {
+        "duration": {
+          "label": "Duration",
+          "value": "Four weeks"
         },
-        "onboarding": {
-          "step": "Paso 2",
-          "timeStamp": "Semana 1 a 4",
-          "title": "4 semanas de partnership setup con Daley",
-          "description": "Daley guía el proceso personalmente: por cliente, la voz de marca, los objetivos de una sesión de estrategia, las habilidades activas y quién aprueba qué. Hacéis el onboarding juntos, no por tu cuenta.",
-          "deliverable1": "Brand scan por marca",
-          "deliverable2": "Entrenamiento de voz",
-          "deliverable3": "Flujos de aprobación",
-          "screenshotAlt": "Pantalla de incorporacion de Clyde: paso 1 de 11, con los datos de marca y los ajustes de idioma y zona horaria.",
-          "screenshotCaption": "Paso 1 de 11 — cada espacio sigue la misma ruta"
+        "time": {
+          "label": "Your time",
+          "value": "About ten hours in the first month"
         },
-        "configure": {
-          "step": "Paso 3",
-          "timeStamp": "Semana 4",
-          "title": "Configurar a Clyde por cliente",
-          "description": "Por cada cliente, un espacio de trabajo con directrices de marca, audiencia, tono de voz, habilidades activas, canales y reglas de aprobación. Clyde empieza a construir su memoria por cliente.",
-          "deliverable1": "Espacio por cliente",
-          "deliverable2": "Habilidades activas",
-          "deliverable3": "Canales conectados"
+        "after": {
+          "label": "After that",
+          "value": "Two hours a week"
+        }
+      }
+    },
+    "weeks": {
+      "title": "Week by week, with the hours.",
+      "sub": "For each week: what you provide, what Clyde does and what is ready afterwards. You don't need a developer: Clyde is an app you log in to.",
+      "rows": {
+        "delivers": "You provide",
+        "clyde": "Clyde does",
+        "done": "Ready"
+      },
+      "items": {
+        "w1": {
+          "label": "Week 1",
+          "title": "Intake and brand scan",
+          "delivers": "A working session of <b>2 hours</b> with Daley.",
+          "clyde": "Reads each client's colours, fonts, tone and USPs, and pulls in your Instagram patterns.",
+          "done": "Brand DNA per client and an Instagram baseline."
         },
-        "production": {
-          "step": "Paso 4",
-          "timeStamp": "Desde semana 5",
-          "title": "Arranca la producción, tú mantienes el control",
-          "description": "Clyde se pone a trabajar: posts sociales, blogs, email, anuncios. Lo que propone lo revisas en la cola de aprobación; cuánto puede hacer por su cuenta lo eliges por tarea. La semana 1 trae muchas correcciones, y Clyde las incorpora.",
-          "deliverable1": "Posts sociales en vivo",
-          "deliverable2": "Cola de aprobación",
-          "deliverable3": "Iteraciones semana 1",
-          "screenshotAlt": "La lista de aprobaciones con tres tareas abiertas, cada una con contexto y un boton Aprobar.",
-          "screenshotCaption": "La cola de aprobación: lo que Clyde propone, lo apruebas tú"
+        "w2": {
+          "label": "Week 2",
+          "title": "Setup and pillars",
+          "delivers": "<b>2 hours</b>.",
+          "clyde": "Turns the brand DNA into five to seven content pillars and design templates per brand.",
+          "done": "Pillars and templates per brand."
         },
-        "improvement": {
-          "step": "Paso 5",
-          "timeStamp": "Continuo",
-          "title": "Mejora continua y reportes semanales",
-          "description": "Clyde recuerda tus correcciones, y los informes semanales muestran por cliente qué funciona. El resumen semanal te mantiene al día.",
-          "deliverable1": "Resumen semanal",
-          "deliverable2": "Correcciones en la memoria",
-          "deliverable3": "Feedback de rendimiento",
-          "screenshotAlt": "Pantalla de objetivos de Clyde con trayectos de varios pasos que el mismo vigila.",
-          "screenshotCaption": "Objetivos que vigila Clyde, no tu"
+        "w3": {
+          "label": "Week 3",
+          "title": "Tuning the brand voice",
+          "delivers": "<b>4 hours</b>: you review the first batch.",
+          "clyde": "Adjusts the voice until it fits, up to three rounds per brand.",
+          "done": "The brand voice is set and approvals are running."
+        },
+        "w4": {
+          "label": "Week 4",
+          "title": "Kickoff and start",
+          "delivers": "Kickoff with Daley. Per task you choose how much Clyde may do on his own.",
+          "clyde": "Plans and publishes according to the calendar.",
+          "done": "Clyde is running, with a direct WhatsApp line to Daley."
         }
       },
-      "loop_eyebrow": "El ciclo rítmico",
-      "loop_title": "Mejora continua",
-      "loop_description": "La memoria, los datos de rendimiento y tus correcciones alimentan la siguiente ronda. Así Clyde trabaja cada vez más como tú quieres, por cliente.",
-      "loop_stage1": "Producción",
-      "loop_stage2": "Aprobación",
-      "loop_stage3": "Memoria",
-      "loop_stage4": "Mejora"
+      "sumFirst": "About <b>ten hours</b> in total in the first month.",
+      "sumAfter": "After that <b>2 hours a week</b>, ongoing."
     },
-    "cta": {
-      "eyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "¿Listo para empezar la partnership?",
-      "description": "Solicita una llamada. Veremos juntos si Clyde encaja con tu portfolio y qué tier tiene sentido.",
-      "button": "Solicita una llamada"
-    },
-    "systemFlow": {
-      "title": "De la marca a la publicacion",
-      "subtitle": "Seis pasos, y en uno de ellos estas tu. Donde vive la memoria y donde decide la persona, en una sola imagen.",
-      "steps": {
-        "brand": {
-          "title": "El cliente",
-          "body": "Un espacio por cliente, con memoria propia."
+    "supply": {
+      "title": "What you provide per client.",
+      "sub": "Four things per client brand. Clyde reads the rest himself from your client's site and channels.",
+      "items": {
+        "site": {
+          "title": "Your client's website",
+          "text": "From it, Clyde takes the colours, fonts, tone and USPs in week 1."
         },
-        "scan": {
-          "title": "Escaneo de marca",
-          "body": "Clyde lee el sitio y registra color, tono, oferta y audiencia."
+        "channels": {
+          "title": "The channels",
+          "text": "You connect them per client in Client settings, by logging in on the platform itself."
         },
-        "clyde": {
-          "title": "Clyde con memoria",
-          "body": "Recuerda por cliente lo acordado y lo que funcionó antes."
+        "strategy": {
+          "title": "A strategy session",
+          "text": "Your client's goals and audience. Clyde tests his proposals against them."
         },
-        "skills": {
-          "title": "Habilidades",
-          "body": "Diez habilidades activas asumen el trabajo: social, blogs, correo, anuncios."
-        },
-        "approval": {
-          "title": "Tus reglas",
-          "body": "Por tarea decides qué te propone Clyde primero y qué puede hacer e informar por su cuenta."
-        },
-        "publish": {
-          "title": "Publicacion",
-          "body": "Al canal, en el momento previsto, con la medicion incluida."
+        "approver": {
+          "title": "Who approves",
+          "text": "You, your team or your client. Per task you choose what Clyde puts forward for approval."
         }
-      },
-      "feedback": "Lo que apruebas o rechazas vuelve a la memoria: ahi empieza el ciclo de mejora de abajo."
+      }
+    },
+    "agenda": {
+      "title": "The calendar follows from the pillars.",
+      "sub": "For each client, the pillars return as windows in a calendar that looks more than a year ahead. From it, Clyde plans the posts from week 4 onwards.",
+      "bar": "Strategie · Dagspa Luwte · Agenda",
+      "alt": "The calendar of the demo brand Dagspa Luwte: six windows on a timeline from November to January, each with a pillar such as treatments explained, guests in their own words, or rest and ritual.",
+      "caption": "6 windows. Covered up to and including January 2028, as far as this timeline looks.",
+      "demo": "Example agency and example brands from the demo environment of the app."
+    },
+    "after": {
+      "title": "After week four: an ordinary week.",
+      "sub": "Clyde proposes, you decide. You approve what he puts forward in the app, and your client follows along in their own environment. How such a week runs, day by day, is on the homepage.",
+      "links": {
+        "week": "See a week with Clyde",
+        "client": "How your client follows along",
+        "memory": "What Clyde remembers per client"
+      }
+    },
+    "faq": {
+      "title": "Questions about the start.",
+      "sub": "What agencies ask before they begin.",
+      "items": {
+        "live": {
+          "q": "How long until Clyde is live?",
+          "a": "Four weeks. The kickoff is in week 4, and from then on Clyde plans and publishes according to the calendar."
+        },
+        "time": {
+          "q": "How much time does it take my team?",
+          "a": "About ten hours in the first month: two hours in week 1, two in week 2, four in week 3 and the kickoff in week 4. After that, two hours a week."
+        },
+        "it": {
+          "q": "Do I need a developer or IT?",
+          "a": "No. Clyde is an app you log in to, and you connect your clients' channels by logging in on the platform itself."
+        },
+        "guide": {
+          "q": "Who guides the start?",
+          "a": "Daley guides every start himself. After that you have a direct WhatsApp line to him."
+        },
+        "cost": {
+          "q": "What does the start cost?",
+          "a": "Onboarding costs nothing. You pay the monthly rate: €997 a month as a founding partner, with ten client brands included. Everything about the price is on <link>the pricing page</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Start with a conversation.",
+      "sub": "A 30-minute conversation tells you whether Clyde fits your clients. Ten founding spots in total.",
+      "cta": "Request a call",
+      "link": "See the price"
     }
   },
   "contact": {
@@ -2115,124 +2139,153 @@
   },
   "memory": {
     "meta": {
-      "title": "Memoria: Clyde recuerda a cada cliente | FutureMarketingAI",
-      "description": "Por cliente, Clyde recuerda la voz de marca, el público, los objetivos y lo acordado. Cada cliente con su propia memoria, actualizada cada noche."
+      "title": "AI memory per client: how Clyde remembers your brands",
+      "description": "Per client, Clyde records the brand voice, the audience and what worked, and keeps writing with it. So every client brand sounds like itself."
     },
     "hero": {
-      "eyebrow": "Memoria por cliente",
-      "headlineMain": "Clyde recuerda a tus clientes.",
-      "headlineAccent": "Cada cliente por separado.",
-      "subtitle": "Esta es la diferencia entre un prompt de IA genérico y un compañero: la memoria. Por cliente, Clyde recuerda la voz de marca, el público, los objetivos y lo que habéis acordado. Tiene en cuenta tus correcciones."
-    },
-    "layers": {
-      "eyebrow": "Arquitectura",
-      "title": "Así recuerda Clyde",
-      "subtitle": "Cuando Clyde responde, recurre a cuatro fuentes que trabajan juntas. Tú no tienes que saber nada de esto: simplemente funciona.",
-      "scrollLabel": "Recorre las cuatro fuentes",
-      "promptLabel": "Le preguntas a Clyde",
-      "clydeLabel": "Clyde responde",
-      "activeLabel": "Activo",
-      "hot": {
-        "name": "La conversación",
-        "window": "Ahora",
-        "description": "La conversación en curso y la pantalla en la que estás. En la página de un cliente, Clyde sabe de qué cliente hablas.",
-        "prompt": "¿Qué posts aprobé hoy para la marca Skin?",
-        "clydeAnswer": "Tres posts: post de la mañana sobre la rutina de limpieza, post del mediodía con una reseña UGC, carrusel de fin del día sobre los ingredientes. El carrusel está programado para las 19:00."
-      },
-      "warm": {
-        "name": "Recuerdos",
-        "window": "De conversaciones y feedback",
-        "description": "Lo que acordáis y lo que corriges, Clyde lo guarda como recuerdo. Lo importante pesa más; lo que se vuelve viejo y poco importante se va desvaneciendo.",
-        "prompt": "¿Qué quería cambiar el cliente en los carruseles?",
-        "clydeAnswer": "Menos texto por slide, y terminar con una pregunta en lugar de un enlace. Lo pidió hace dos semanas al rechazar un borrador; desde entonces lo aplico."
-      },
-      "cold": {
-        "name": "Estrategia e investigación",
-        "window": "Por cliente",
-        "description": "Los objetivos de la sesión de estrategia, los pilares y la investigación de mercado, competidores y público. Con eso Clyde contrasta sus propuestas.",
-        "prompt": "¿Encaja un post sobre protector solar en la planificación?",
-        "clydeAnswer": "Sí, dentro del pilar de conocimiento de la piel. El objetivo de este trimestre es llegar a nuevos seguidores, así que lo convertiré en un carrusel que la gente quiera compartir."
-      },
-      "context": {
-        "name": "Quién es la marca",
-        "window": "Siempre a mano",
-        "description": "El núcleo que siempre va con Clyde: el perfil del cliente, la voz de marca, el público y lo que sí y no se permite. Clyde lo mantiene al día: tus correcciones entran ahí, y cada noche actualiza el resumen.",
-        "prompt": "Escribe un copy para la nueva crema de noche.",
-        "clydeAnswer": "Tono: cálido, directo, sin Tú con mayúscula. Audiencia: mujeres 28-44 que valoran los rituales. Sin claims, los resultados se expresan en semanas concretas. El copy abre con la rutina nocturna y cierra con una pregunta en vez de una CTA."
-      }
-    },
-    "isolation": {
-      "eyebrow": "Memoria propia por cliente",
-      "title": "Separado por cliente",
-      "body1": "Clyde trabaja a la vez para varias agencias y sus clientes. Cada cliente tiene su propio espacio de trabajo con su propia memoria: cuando Clyde trabaja para el cliente A, recupera la memoria del cliente A, no la del cliente B. Así una voz de marca no salta a otro cliente.",
-      "body2": "A nivel técnico, cada recuerdo sobre un cliente está vinculado en la base de datos a esa agencia y a ese cliente, y cada consulta filtra por ellos. Tras cancelar te enviamos una exportación de tus datos en un plazo de 30 días; después eliminamos tus workspaces."
-    },
-    "decay": {
-      "eyebrow": "Día y noche",
-      "title": "Cada día más afinado, nunca atascado",
-      "decayTitle": "Lo que pierde importancia, se difumina",
-      "decayBody": "No todo lo que pasó mantiene la misma relevancia. Los detalles antiguos van perdiendo peso para que Clyde no se atasque bajo datos de hace medio año. Los patrones importantes permanecen, el ruido se desvanece. Igual que en las personas.",
-      "dreamTitle": "Cada noche Clyde consolida",
-      "dreamBody": "Por la noche Clyde hace lo que nosotros hacemos al dormir: conecta ideas, abstrae patrones y guarda los aprendizajes importantes en su conocimiento estable. Te despiertas con un compañero más listo que ayer."
-    },
-    "progress": {
-      "eyebrow": "Curva de tiempo",
-      "title": "El primer mes y después",
-      "subtitle": "La diferencia entre una IA genérica y un compañero que conoce a tus clientes crece con cada corrección.",
-      "week1Label": "Mes 1: Clyde conoce a tus clientes",
-      "week1Body": "\"Escribe un copy para la marca X.\" Clyde sigue las directrices de marca, pero aún sin la sutileza perfecta. Muchas rondas de feedback. Todavía dedicas bastante tiempo a corregir y pulir.",
-      "week12Label": "Después: menos correcciones",
-      "week12Body": "Clyde conoce las manías del cliente X: qué palabras sí y cuáles no, cómo empieza un post, lo que habéis acordado. Corriges menos. Cuánto puede hacer por su cuenta lo sigues decidiendo tú, tarea por tarea."
-    },
-    "contrast": {
-      "eyebrow": "Comparativa",
-      "title": "Por qué la AI genérica se atasca aquí",
-      "chatgpt": {
-        "name": "Chat AI genérica",
-        "body": "Sin memoria por marca. Cada sesión empieza en blanco. Tienes que aportar la voz de marca, la audiencia y el contexto en cada prompt. No funciona si gestionas 20 marcas."
-      },
-      "jasper": {
-        "name": "Herramientas de copy",
-        "body": "Plantillas y memoria limitada. Conoce \"tu voz de marca\" pero no \"tu cartera completa de 20 marcas\". No escala con el alcance de una agencia."
-      },
-      "clyde": {
-        "name": "Clyde",
-        "body": "Una memoria propia por cliente, separada de los demás clientes y actualizada cada noche. Construida para agencias con entre 5 y 20 marcas."
-      }
-    },
-    "comparison": {
-      "eyebrow": "La memoria en acción",
-      "title": "Tres conversaciones, una marca, una semana.",
-      "intro": "La misma conversación con una IA sin memoria y con Clyde. Un ejemplo, con una marca inventada.",
-      "diyLabel": "Otra AI",
-      "diyNote": "olvida todo al cerrar la sesión",
-      "clydeLabel": "Clyde",
-      "clydeNote": "recuerda el contexto y construye sobre él",
-      "userLabel": "Tú",
-      "replayLabel": "Reproducir de nuevo",
-      "turns": [
-        {
-          "user": "Escribe un copy para la nueva crema de noche de Skin.",
-          "diy": "¿Cuál es el tono de la marca? ¿Tienes una audiencia, USPs y directrices?",
-          "clyde": "Copy listo. Abre con la rutina nocturna, cierra con una pregunta en vez de una CTA. Tono alineado con la voz de marca v3, longitud de 187 caracteres."
+      "eyebrow": "Memory per client",
+      "title": "Every client gets its own brand voice and memory.",
+      "definition": "Per client, Clyde remembers the brand voice, the audience, the goals and what you agreed, and keeps writing with it. One client's memory is kept apart from another's.",
+      "factsLabel": "At a glance",
+      "facts": {
+        "perClient": {
+          "label": "Per client",
+          "value": "Five fixed blocks plus the memories"
         },
-        {
-          "user": "Haz dos variantes.",
-          "diy": "¿Dos variantes de qué? ¿Quieres que empiece de cero con las directrices de marca?",
-          "clyde": "Variante A: más personal, en primera persona del singular. Variante B: promesa más firme sobre el resultado de sueño. Las dos respetan la regla sin claims que fijamos el mes pasado."
+        "updated": {
+          "label": "Updated",
+          "value": "Every night"
         },
-        {
-          "user": "¿Cuál funcionó mejor el mes pasado en esta categoría?",
-          "diy": "No tengo acceso a los datos históricos de tu cuenta.",
-          "clyde": "La variante con la rutina nocturna y una pregunta para que la guarden fue la más guardada en octubre. La variante A es la más cercana a ese tono, yo empezaría por ahí."
+        "kept": {
+          "label": "Kept",
+          "value": "As long as your subscription runs, as a founding partner"
         }
-      ]
+      }
     },
-    "cta": {
-      "eyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "¿Listo para un compañero que conoce a tus clientes?",
-      "subtitle": "Una llamada de 30 minutos. Después sabrás si encaja con tu cartera.",
-      "button": "Solicita una llamada"
+    "screen": {
+      "title": "This is what one client's memory looks like.",
+      "sub": "Per client, five fixed blocks that always come along, plus the memories Clyde records along the way. You can edit every block yourself.",
+      "bar": "Clyde · Dagspa Luwte · Geheugen",
+      "alt": "The memory of the demo brand Dagspa Luwte in the app: the core memory with the blocks client profile, brand identity, strategy, way of working and summary, each with an edit button, and the memories below.",
+      "caption": "Dagspa Luwte · 1 memory · core memory 5 of 5 · last learned 2 weeks ago",
+      "demo": "Example agency and example brands from the demo environment of the app."
+    },
+    "sources": {
+      "title": "Four sources, per client.",
+      "sub": "When Clyde writes something for a client, he draws on four sources. You see and edit the core memory and the strategy yourself in the app.",
+      "items": {
+        "brand": {
+          "title": "Who the brand is",
+          "text": "The client profile, the brand voice, the audience and what is and isn't allowed. This always comes along, and your corrections go into it."
+        },
+        "strategy": {
+          "title": "Strategy and research",
+          "text": "The goals from the strategy session, the pillars and the research into market, competitors and audience. Clyde tests his proposals against them."
+        },
+        "memories": {
+          "title": "Memories",
+          "text": "Clyde records what you agree and what you correct. What matters weighs more; old, unimportant details weigh less."
+        },
+        "conversation": {
+          "title": "The conversation",
+          "text": "The ongoing conversation and the screen you are on. On a client's page, Clyde knows which client you mean."
+        }
+      }
+    },
+    "voice": {
+      "title": "Setting the tone of voice per client.",
+      "sub": "The brand voice sits per client in the core memory: how the client sounds, which words fit and which never do. So every client brand sounds like itself, even when you serve ten clients at once.",
+      "label": "Brand identity · Dagspa Luwte",
+      "quote": "Calm, warm and honest. Write the way you talk to a regular guest and address the reader informally. Say concretely what happens during a treatment. Invite, never push. No promises about skin or results, no discounts, no urgency language such as \"while stocks last\" or \"now or never\", and no jargon without explanation.",
+      "caption": "Translated from the core memory above, which is in Dutch.",
+      "demo": "Example agency and example brands from the demo environment of the app."
+    },
+    "separate": {
+      "title": "Separate per client, updated every night.",
+      "sub": "So a brand voice does not carry over to another client, and Clyde does not get buried under old details.",
+      "cards": {
+        "separate": {
+          "eyebrow": "Separate",
+          "title": "Every client has its own memory",
+          "text": "Each client has its own workspace with its own memory. When Clyde works for client A, he retrieves client A's memory, not client B's. Technically, every memory about a client is tied to that agency and that client in the database, and every retrieval filters on them."
+        },
+        "nightly": {
+          "eyebrow": "Every night",
+          "title": "The summary per client updated",
+          "text": "Every night, Clyde updates the summary for each client; old, unimportant details weigh less after that. As a founding partner, Clyde keeps the memory and the conversations for as long as your subscription runs."
+        }
+      },
+      "link": "Where your clients' data is stored"
+    },
+    "chatgpt": {
+      "title": "The difference with ChatGPT projects.",
+      "sub": "ChatGPT remembers what you put in a project, also when you share that project with your team. Clyde has one memory per client, tied to that client's calendar, approvals and report, and your client follows along in their own environment.",
+      "cards": {
+        "chatgpt": {
+          "eyebrow": "ChatGPT projects",
+          "title": "Memory per project",
+          "text": "You set the brand voice and context yourself in every project. A content calendar, your client's approval and publishing are not in OpenAI's description; you handle those in other tools."
+        },
+        "clyde": {
+          "eyebrow": "Clyde",
+          "title": "Memory per client",
+          "text": "Tied to that client's calendar, approvals and report. Your client approves and follows along themselves."
+        }
+      },
+      "source": "Source: <link>Projects in ChatGPT</link>, checked on 7 November 2026",
+      "links": {
+        "routes": "Clyde next to the other routes",
+        "alternatives": "All alternatives side by side"
+      }
+    },
+    "month": {
+      "title": "The first month and after.",
+      "sub": "The difference between a generic AI and a colleague who knows your clients grows with every correction.",
+      "cards": {
+        "first": {
+          "eyebrow": "Month 1",
+          "title": "Clyde gets to know your clients",
+          "text": "Clyde follows the brand guidelines, but not yet with the nuance you want. You correct a lot, and he takes those corrections on board."
+        },
+        "after": {
+          "eyebrow": "After that",
+          "title": "Less steering",
+          "text": "Clyde knows a client's habits: which words to use and avoid, how a post opens, what you agreed. How much he may do on his own, you decide per task."
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions about memory.",
+      "sub": "What agencies want to know before they hand their clients to Clyde.",
+      "items": {
+        "leak": {
+          "q": "Does one client's brand voice leak into another's?",
+          "a": "No. Each client has its own memory, and every retrieval filters on the agency and the client. When Clyde works for client A, he does not retrieve client B's memory."
+        },
+        "what": {
+          "q": "What exactly does Clyde remember?",
+          "a": "Per client: the client profile, the brand identity, the strategy, the way of working and a summary. On top of that come the memories from your conversations and corrections."
+        },
+        "howLong": {
+          "q": "How long until Clyde knows a client?",
+          "a": "The basis is in place after the brand scan in week 1. In week 3 you tune the brand voice together, up to three rounds per brand. The nuance comes in the first month, with your corrections."
+        },
+        "kept": {
+          "q": "How long does Clyde keep the memory?",
+          "a": "As a founding partner, Clyde keeps the memory and the conversations for as long as your subscription runs. After you cancel, we send you an export of your data within 30 days; after that we delete your workspaces."
+        },
+        "where": {
+          "q": "Where is the memory stored?",
+          "a": "In a database at Supabase in Frankfurt. The language model runs at Anthropic and OpenAI in the US and only receives the context the task needs. Everything about where your data is stored is on <link>the trust page</link>."
+        }
+      },
+      "link": "More on memory and learning (in Dutch)"
+    },
+    "end": {
+      "title": "Ready for a colleague who knows your clients?",
+      "sub": "A 30-minute conversation. After it, you know whether Clyde fits your clients.",
+      "cta": "Request a call",
+      "link": "How the start works"
     }
   },
   "roadmap": {
