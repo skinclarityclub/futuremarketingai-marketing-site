@@ -42,6 +42,8 @@ const mail = (c: ReactNode) => <a href={`mailto:${PRIVACY_EMAIL}`}>{c}</a>
 export async function TrustSections({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'trust' })
   const subProcessors = (c: ReactNode) => privacyLink('privacy-sub_processors', c)
+  // #regie only exists on the Dutch home; the English home shows the same idea under #people
+  const approvalAnchor = locale === 'nl' ? '/#regie' : '/#people'
 
   return (
     <div className="g6" id="g6-trust">
@@ -186,7 +188,7 @@ export async function TrustSections({ locale }: { locale: string }) {
               </h2>
               <p className="g6-p">{t('approval.sub')}</p>
               <div className="g6-links">
-                <Link className="g6-lk" href="/#regie" prefetch={false}>
+                <Link className="g6-lk" href={approvalAnchor} prefetch={false}>
                   {t('approval.link')} <Arrow />
                 </Link>
               </div>
