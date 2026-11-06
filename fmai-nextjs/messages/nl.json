@@ -376,7 +376,7 @@
     },
     "pricingTeaser": {
       "eyebrow": "Prijzen",
-      "title": "Founding-tarief levenslang gelockt. Daarna per werkruimte.",
+      "title": "Founding-tarief vast zolang je klant blijft. Daarna per werkruimte.",
       "subtitle": "Iedereen die nu instapt wordt founding partner: €997 per maand, met een tarief dat nooit wordt herijkt. De andere tiers herijken we elk halfjaar, founding blijft €997. Hieronder de tiers die actief worden zodra de tien founding-plekken bezet zijn.",
       "perWorkspace": "per werkruimte",
       "perMonth": "per maand",
@@ -387,7 +387,7 @@
       "tiers": {
         "founding": {
           "label": "Founding",
-          "tagline": "Levenslang vast",
+          "tagline": "Vast zolang je klant blijft",
           "desc": "Voor de eerste 10 bureaus. Alle live vaardigheden, 10 werkruimtes inbegrepen (daarboven €299 per extra werkruimte), een directe WhatsApp-lijn met Daley en een maandtarief van €997 dat nooit wordt herijkt."
         },
         "growth": {
@@ -403,7 +403,7 @@
         "enterprise": {
           "label": "Enterprise",
           "tagline": "15+ merken",
-          "desc": "Voor grote bureaus. Geen caps op vaardigheden en een vaste contactpersoon."
+          "desc": "Voor grote bureaus. Geen caps op vaardigheden (fair use)."
         }
       },
       "ctaLink": "Vraag een gesprek aan"
@@ -446,7 +446,7 @@
     "cta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
       "title": "Maximaal tien plekken. Daarna sluit founding.",
-      "subtitle": "€997 per maand, levenslang vast tarief. Een gesprek van 30 minuten zegt of het past.",
+      "subtitle": "€997 per maand, vast zolang je klant blijft. Een gesprek van 30 minuten zegt of het past.",
       "button": "Vraag een gesprek aan",
       "foundingLabel": "Bekijk Founding tier"
     },
@@ -1035,7 +1035,7 @@
     "prijs": {
       "cta": "Vraag een gesprek aan",
       "definition": "Een werkruimte is één klantmerk.",
-      "enterprise": "Enterprise: een directe lijn met Daley.",
+      "enterprise": "Enterprise heeft geen caps (fair use).",
       "fitTitles": {
         "n1": "Voor wie dit werkt",
         "n2": "Voor wie dit niet werkt"
@@ -1054,7 +1054,7 @@
         "n12": "Je zowel meer dan 20 mensen als een eigen AI- of tech-team hebt. Wij versnellen bureaus die dat niet zelf bouwen.",
         "n2": "€0 onboarding",
         "n3": "Een directe WhatsApp-lijn met Daley",
-        "n4": "Het tarief blijft voor altijd vast",
+        "n4": "Het tarief blijft vast zolang je klant blijft",
         "n5": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
         "n6": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
         "n7": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
@@ -1070,7 +1070,7 @@
         "n6": "bij 10 klantmerken"
       },
       "price": "<b>€997</b> per maand",
-      "sub": "Clyde kost €997 per maand als founding partner, met tien klantmerken inbegrepen en €299 per extra klantmerk. De onboarding kost €0 en het tarief blijft voor altijd vast.",
+      "sub": "Clyde kost €997 per maand als founding partner, met tien klantmerken inbegrepen en €299 per extra klantmerk. De onboarding kost €0 en het tarief blijft vast zolang je klant blijft.",
       "table": {
         "caption": "De latere tarieven, actief zodra de tien founding-plekken bezet zijn",
         "cells": {
@@ -1087,7 +1087,7 @@
         "head": {
           "n1": "Na de founding-fase",
           "n2": "Klantmerken",
-          "n3": "Per werkruimte per maand",
+          "n3": "Per klantmerk per maand",
           "n4": "Onboarding, eenmalig"
         },
         "rows": {
@@ -1543,7 +1543,7 @@
       "eyebrow": "Capaciteit",
       "title": "Capaciteit en transparantie",
       "body": "Tien founding-plekken. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik begeleid elk nieuw bureau persoonlijk door 4 weken setup, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever {maxPartners} bureaus waar Clyde echt meerwaarde levert, dan 200 waar ik niet genoeg aandacht aan kan geven. De wachtlijst schaalt mee met de vraag. Zit ik vol, dan plan ik een gesprek voor het volgende cohort."
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {total} bureaus waar Clyde echt meerwaarde levert dan 200 waar ik niet genoeg aandacht aan kan geven. Zijn de {total} plekken bezet, dan sluit Founding, zonder heropening. Nieuwe bureaus betalen daarna per klantmerk."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -2047,7 +2047,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd levenslang voor maximaal 10 werkruimtes, daarboven EUR 299 per extra werkruimte, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, waarvan er nu tien beschikbaar zijn (zie artikel 1), met caps per niveau op video en, zodra die beschikbaar zijn, op voice en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd, vast zolang het abonnement doorloopt, voor maximaal 10 werkruimtes, daarboven EUR 299 per extra werkruimte, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, waarvan er nu tien beschikbaar zijn (zie artikel 1), met caps per niveau op video en, zodra die beschikbaar zijn, op voice en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -2142,7 +2142,7 @@
         "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat u in deze informatie stelt is op eigen risico."
       }
     },
-    "last_updated": "Laatst bijgewerkt: 5 november 2026"
+    "last_updated": "Laatst bijgewerkt: 6 november 2026"
   },
   "trust": {
     "meta": {
@@ -3025,10 +3025,10 @@
       },
       "tierLabel": "Welk service-niveau past het best?",
       "tierOptions": {
-        "founding": "Founding (€997/mnd levenslang): 10 plekken, voorrang nu open",
-        "growth": "Growth (€499 per werkruimte): 2 tot 4 merken",
-        "professional": "Professional (€399 per werkruimte): 5 tot 14 merken",
-        "enterprise": "Enterprise (€299 per werkruimte): 15 of meer merken",
+        "founding": "Founding (€997 per maand, vast zolang je klant blijft): 10 plekken",
+        "growth": "Growth (€499 per klantmerk): 2 tot 4 klantmerken",
+        "professional": "Professional (€399 per klantmerk): 5 tot 14 klantmerken",
+        "enterprise": "Enterprise (€299 per klantmerk): 15 of meer klantmerken",
         "unsure": "Weet het nog niet zeker"
       },
       "workspacesLabel": "Hoeveel werkruimtes verwacht je nodig te hebben?",
@@ -4145,7 +4145,7 @@
         "subtitle": "Alle abonnementen en tiers"
       },
       "foundingMember": {
-        "subtitle": "Levenslang vast tarief"
+        "subtitle": "Vast tarief zolang je klant blijft"
       },
       "spots": "max. {total} plekken"
     }

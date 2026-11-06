@@ -26,10 +26,7 @@ import { SectionShell } from '@/components/sections/SectionShell'
 import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
 import { ScrollReveal } from '@/components/motion/ScrollReveal'
 import { MissionTimeline, type TimelineMilestone } from '@/components/about/MissionTimeline'
-import {
-  FOUNDING_SPOTS_TOTAL,
-  MAX_PARTNERS_PER_YEAR,
-} from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 const PORTRAIT_SRC = '/images/daley-portrait.webp'
 const HAS_PORTRAIT = existsSync(
@@ -308,13 +305,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="space-y-6">
             <GlassCard className="text-left">
               <p className="text-text-secondary leading-relaxed mb-4">
-                {t('capacity.body', {
-                  total: FOUNDING_SPOTS_TOTAL,
-                  maxPartners: MAX_PARTNERS_PER_YEAR,
-                })}
+                {t('capacity.body', { total: FOUNDING_SPOTS_TOTAL })}
               </p>
               <p className="text-text-secondary leading-relaxed">
-                {t('capacity.reasoning', { maxPartners: MAX_PARTNERS_PER_YEAR })}
+                {t('capacity.reasoning', { total: FOUNDING_SPOTS_TOTAL })}
               </p>
             </GlassCard>
           </div>

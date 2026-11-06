@@ -3,10 +3,7 @@ import { Check, X, ArrowRight } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { CTAButton } from '@/components/ui/CTAButton'
-import {
-  FOUNDING_SPOTS_TOTAL,
-  MAX_PARTNERS_PER_YEAR,
-} from '@/lib/constants'
+import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 
 const FIT_KEYS = ['fit1', 'fit2', 'fit3', 'fit4'] as const
 const NOT_FIT_KEYS = ['notFit1', 'notFit2', 'notFit3', 'notFit4'] as const
@@ -69,10 +66,7 @@ export async function IcpSection({ locale }: { locale: string }) {
         {/* Closing block — scarcity callout + stronger CTA */}
         <div className="mt-12 rounded-2xl border border-accent-human/30 bg-gradient-to-br from-accent-human/[0.05] via-transparent to-transparent p-6 md:p-8 lg:p-10 text-center">
           <p className="text-xs font-mono uppercase tracking-[0.14em] text-accent-human mb-4">
-            {t('scarcityCallout', {
-              total: FOUNDING_SPOTS_TOTAL,
-              maxPerYear: MAX_PARTNERS_PER_YEAR,
-            })}
+            {t('scarcityCallout', { total: FOUNDING_SPOTS_TOTAL })}
           </p>
           <h3 className="font-display text-2xl md:text-3xl font-semibold text-text-primary mb-2">
             {t('closingHeadline')}

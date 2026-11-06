@@ -82,9 +82,10 @@ export const FALLBACK_PAGE_DATE = '2026-03-18'
 export const PAGE_DATES: Record<string, string> = {
   // 2026-11-05 site-audit P0 PR: every path below changed its HTML that day (CTA label,
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
-  '/': '2026-11-05',
+  // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
+  '/': '2026-11-06',
   '/memory': '2026-11-05',
-  '/apply': '2026-11-05',
+  '/apply': '2026-11-06',
   '/case-studies/skinclarity-club': '2026-11-05',
   '/skills/social-media': '2026-11-05',
   '/skills/blog-factory': '2026-11-05',
@@ -100,7 +101,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/clyde': '2026-11-05',
   '/pricing': '2026-11-06',
   '/alternatives': '2026-11-05',
-  '/about': '2026-11-05',
+  '/about': '2026-11-06',
   '/contact': '2026-11-05',
   '/how-it-works': '2026-11-05',
   '/legal': '2026-11-05',
@@ -112,7 +113,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/roadmap': '2026-11-05',
   // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
   '/legal/privacy': '2026-11-05',
-  '/legal/terms': '2026-11-05',
+  '/legal/terms': '2026-11-06',
   '/legal/cookies': '2026-04-27',
   '/trust': '2026-11-05',
 }

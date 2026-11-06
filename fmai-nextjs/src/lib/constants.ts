@@ -7,7 +7,6 @@
  */
 
 export const FOUNDING_SPOTS_TOTAL = 10
-export const MAX_PARTNERS_PER_YEAR = 10
 
 // ISO 8601 date string.
 //
