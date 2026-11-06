@@ -56,30 +56,30 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
 
 All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
-**Founding Member. EUR 997/mo, lifetime price lock**: maximum 10 founding spots. For portfolios of 3 or more brands it costs less than the workspace-priced tiers.
+**Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client**: maximum 10 founding spots. For portfolios of 3 or more brands it costs less than the workspace-priced tiers.
 - 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
-- Lifetime price lock
+- Rate stays fixed for as long as the agency remains a client
 - Direct line to Daley on WhatsApp
 - No onboarding fee
 
 **Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands**. Linear pricing: EUR 998 to EUR 1,996 per month total.
 - 800 credits per workspace (1,600 to 3,200 total per month)
 - All 12 skills with Growth-tier caps
-- Email support
+- Direct WhatsApp line with Daley
 - EUR 1,997 onboarding fee
 
 **Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands**. Linear pricing: EUR 1,995 to EUR 5,586 per month total.
 - 800 credits per workspace (4,000 to 11,200 total per month)
 - All skills with wider caps
-- WhatsApp support plus a monthly strategy call
+- Direct WhatsApp line with Daley
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands**. Linear pricing: from EUR 4,485 per month upward.
 - 800 credits per workspace (12,000+ total per month)
 - All live skills without caps (fair use)
-- Direct line with Daley
+- Direct WhatsApp line with Daley
 - EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**

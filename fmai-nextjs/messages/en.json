@@ -294,7 +294,7 @@
     },
     "pricingTeaser": {
       "eyebrow": "Pricing",
-      "title": "Founding rate locked for life. Per-workspace after that.",
+      "title": "Founding rate fixed while you remain a client. Per-workspace after that.",
       "subtitle": "Everyone joining today becomes a founding partner: €997 per month, with a rate that never recalibrates. The other tiers recalibrate every six months, founding stays €997. Below: the tiers that activate once all ten founding seats are taken.",
       "perWorkspace": "per workspace",
       "perMonth": "per month",
@@ -305,7 +305,7 @@
       "tiers": {
         "founding": {
           "label": "Founding",
-          "tagline": "Locked for life",
+          "tagline": "Fixed while you remain a client",
           "desc": "For the first 10 agencies. All live skills, 10 workspaces included (€299 per extra workspace above that), a direct WhatsApp line with Daley and a €997 monthly rate that never recalibrates."
         },
         "growth": {
@@ -321,7 +321,7 @@
         "enterprise": {
           "label": "Enterprise",
           "tagline": "15+ brands",
-          "desc": "For large agencies. No caps on skills and a dedicated contact person."
+          "desc": "For large agencies. No caps on skills (fair use)."
         }
       },
       "ctaLink": "Request a call"
@@ -364,7 +364,7 @@
     "cta": {
       "eyebrow": "Founding open · max {total} spots",
       "title": "Ten seats at most. Then founding closes.",
-      "subtitle": "€997 per month, locked for life. A 30-minute call tells us if it fits.",
+      "subtitle": "€997 per month, fixed for as long as you remain a client. A 30-minute call tells us if it fits.",
       "button": "Request a call",
       "foundingLabel": "View Founding tier"
     },
@@ -845,7 +845,7 @@
       "eyebrow": "Capacity",
       "title": "Capacity and transparency",
       "body": "Ten founding seats. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally guides every new client through 4 weeks of setup, and there is an upper bound to how many agencies we can welcome at the same time.",
-      "reasoning": "We choose quality over volume. Better {maxPartners} agencies where Clyde truly adds value than 200 where we cannot give enough attention. The waitlist scales with demand. If we are full, we schedule a call for the next cohort."
+      "reasoning": "We choose quality over volume. Better {total} agencies where Clyde truly adds value than 200 where we cannot give enough attention. Once the {total} spots are taken, Founding closes and does not reopen. New agencies then pay per client brand."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -1349,7 +1349,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo for life for up to 10 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, ten of which are available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
+            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo, fixed for as long as the subscription runs, for up to 10 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, ten of which are available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
@@ -1444,7 +1444,7 @@
         "content": "The information on this website is provided for general information purposes. Any reliance you place on this information is at your own risk."
       }
     },
-    "last_updated": "Last updated: November 5, 2026"
+    "last_updated": "Last updated: November 6, 2026"
   },
   "trust": {
     "meta": {
@@ -2327,10 +2327,10 @@
       },
       "tierLabel": "Which service level fits best?",
       "tierOptions": {
-        "founding": "Founding (€997/mo lifetime): 10 spots, priority while open",
-        "growth": "Growth (€499 per workspace): 2 to 4 clients",
-        "professional": "Professional (€399 per workspace): 5 to 14 clients",
-        "enterprise": "Enterprise (€299 per workspace): 15 or more clients",
+        "founding": "Founding (€997 per month, fixed while you remain a client): 10 spots",
+        "growth": "Growth (€499 per client brand): 2 to 4 client brands",
+        "professional": "Professional (€399 per client brand): 5 to 14 client brands",
+        "enterprise": "Enterprise (€299 per client brand): 15 or more client brands",
         "unsure": "Not sure yet"
       },
       "workspacesLabel": "How many workspaces do you expect to need?",
@@ -3447,7 +3447,7 @@
         "subtitle": "All plans and tiers"
       },
       "foundingMember": {
-        "subtitle": "Rate locked for life"
+        "subtitle": "Fixed rate while you remain a client"
       },
       "spots": "max {total} spots"
     }

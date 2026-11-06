@@ -22,9 +22,9 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays a fixed lifetime anchor.
+All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays fixed for as long as the agency remains a client.
 
-**Founding Member. EUR 997/mo, lifetime price lock** (maximum 10 founding spots)
+**Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client** (maximum 10 founding spots)
 - 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo
 - All skills, with caps between Growth and Professional
@@ -34,19 +34,19 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 **Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands** (EUR 998 to EUR 1,996 / mo total)
 - 800 credits per workspace (1,600 to 3,200 total / mo)
 - All skills with Growth-tier caps
-- Email support
+- Direct WhatsApp line with Daley
 - EUR 1,997 onboarding fee
 
 **Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands** (EUR 1,995 to EUR 5,586 / mo total)
 - 800 credits per workspace (4,000 to 11,200 total / mo)
 - All skills with wider caps
-- WhatsApp support plus a monthly strategy call
+- Direct WhatsApp line with Daley
 - EUR 3,997 onboarding fee
 
 **Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands** (from EUR 4,485 / mo upward)
 - 800 credits per workspace (12,000+ total / mo)
 - All live skills without caps (fair use)
-- Direct line with Daley
+- Direct WhatsApp line with Daley
 - EUR 5,997 onboarding fee
 
 **Credit Packs (top up anytime):**
@@ -149,10 +149,10 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  content: `## Founding Member Program
 
 **What Is It?**
-The Founding Member program offers the first 10 agencies access at EUR 997/mo with a lifetime price lock. Once all 10 spots are filled, new agencies start on the regular workspace-priced tiers (Growth EUR 499 per workspace, Professional EUR 399, Enterprise EUR 299).
+The Founding Member program offers the first 10 agencies access at EUR 997/mo, a rate that stays fixed for as long as the agency remains a client. Once all 10 spots are filled, new agencies start on the regular workspace-priced tiers (Growth EUR 499 per workspace, Professional EUR 399, Enterprise EUR 299).
 
 **Benefits:**
-- EUR 997/mo locked for life (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
+- EUR 997/mo, fixed for as long as the agency remains a client (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
 - 10 workspaces included, EUR 299 per extra workspace above that
 - 8,000 credits/mo (the other tiers get 800 per workspace)
 - All skills, with caps between Growth and Professional
@@ -168,7 +168,7 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo wi
 Marketing agencies who want to:
 - Serve more clients per team member, with 10 workspaces included
 - Have direct influence on product development
-- Start early, while the price is locked for life
+- Start early: Founding closes for good once the 10 spots are taken
 
 **Spots:** maximum 10 founding spots in total. Do not state how many are taken.`,
  },
