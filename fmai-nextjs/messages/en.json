@@ -674,7 +674,7 @@
       "legal_terms": "Terms",
       "legal_cookies": "Cookies",
       "trust": "Trust",
-      "client_portal": "Your client looks along"
+      "client_portal": "Your client follows along"
     },
     "cookie_consent": {
       "title": "We use cookies",
@@ -3107,7 +3107,7 @@
     },
     "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Your client looks along",
+      "eyebrow": "Your client follows along",
       "title": "A portal in your agency's name, where your client approves.",
       "definition": "Your client gets their own portal with your name, logo and colours. There they approve content or ask for a change, see their calendar and reports, and send requests through a fixed form.",
       "factsLabel": "In short",
@@ -3187,7 +3187,7 @@
     "approve": {
       "title": "Approving, on their phone too.",
       "p1": "Your client opens a post, reads the caption and chooses: approve, reject or ask for a change. On their phone, Content and Calendar sit in the fixed bar at the bottom.",
-      "p2": "Only a manager on their team can approve. The others look along, but approve nothing.",
+      "p2": "Only a manager on their team can approve. The others follow along, but approve nothing.",
       "scene": {
         "label": "Rebuilt approval window: the carousel Welke behandeling past bij jou? with the buttons Approve, Changes and Reject. Changes is selected, with the field Requested changes and the button Request changes.",
         "bar": "Content · Welke behandeling past bij jou?",
@@ -3230,7 +3230,7 @@
     },
     "who": {
       "title": "Who does what.",
-      "sub": "Clyde does the work, you decide, and your client looks along and approves.",
+      "sub": "Clyde does the work, you decide, and your client follows along and approves.",
       "tableLabel": "Who does what",
       "cols": {
         "clyde": "Clyde",
@@ -3276,7 +3276,7 @@
     },
     "faq": {
       "title": "Questions about the client portal.",
-      "sub": "What agencies want to know before their client looks along.",
+      "sub": "What agencies want to know before their client follows along.",
       "items": {
         "brand": {
           "q": "Does my client see FutureMarketingAI or my agency?",
@@ -3284,7 +3284,7 @@
         },
         "approver": {
           "q": "Who at my client can approve?",
-          "a": "Only a manager on their team. The others look along and approve nothing."
+          "a": "Only a manager on their team. The others follow along and approve nothing."
         },
         "whatsapp": {
           "q": "Can my client approve or request something through WhatsApp?",
@@ -3297,7 +3297,7 @@
       }
     },
     "end": {
-      "title": "Let your client look along.",
+      "title": "Let your client follow along.",
       "sub": "A 30-minute call. After it you know whether the portal fits your clients.",
       "cta": "Request a call",
       "links": {
@@ -3959,7 +3959,7 @@
       "sub": "A 30-minute call. After it you know how Clyde puts things to you and how you decide.",
       "cta": "Request a call",
       "links": {
-        "portal": "Your client looks along",
+        "portal": "Your client follows along",
         "pricing": "Pricing"
       }
     }
