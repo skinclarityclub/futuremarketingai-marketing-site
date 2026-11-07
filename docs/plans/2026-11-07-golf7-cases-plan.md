@@ -25,7 +25,7 @@ Daarbij: `A` = `C:/Users/daley/Desktop/80-Archief/fma-app-audits/2026-11-02-webs
 ## Mijn keuzes (te toetsen in het prototype)
 
 - **Twee PR's.** 7a = de hub plus de SKC-case plus het menu en de footer naar de hub. 7b = de SalesLobe-case, pas live na Pauls akkoord op tekst en beeld. In 7a staat de SalesLobe-kaart op de hub zonder link naar een casepagina. Op de home staat diezelfde kaart al met logo, Paul en "23 posts online" (Daleys ja van 2026-11-04, golf 4), dus de kaart zelf vraagt geen nieuw akkoord.
-- **SKC in de verleden tijd.** De week op de pagina is 19 tot en met 25 oktober 2026, de laatste volle week. Geen "elke week" en geen "nu draait".
+- **SKC in de verleden tijd.** De week op de pagina is 12 tot en met 18 oktober 2026 (de opname van 11-07; de plantekst noemde eerst 19-25 oktober). Geen "elke week" en geen "nu draait".
 - **Geen vaardighedenlijst op de SKC-case.** Alleen wat aantoonbaar voor SKC draait: drie Instagram-accounts met elk een eigen stem, één geheugen, en een post gaat pas live na goedkeuring in de app. Lead Qualifier, ManyChat, Ad Manager, e-mail en de "nog geen"- en "volgt"-regels gaan eruit.
 - **Geen aandelen** (38,6% / 33,5% / 27,8%) en geen volumecijfer als kop. Een aantal mag in de lopende tekst als het een structuurfeit is.
 - **Geen weekrapportscherm.** Er bestaat voor SKC en SalesLobe geen rapport-editie (SELECT 2026-11-07).
@@ -35,7 +35,7 @@ Daarbij: `A` = `C:/Users/daley/Desktop/80-Archief/fma-app-audits/2026-11-02-webs
 ## Afhankelijkheden, gemeten op 2026-11-07 (prod, alleen SELECT)
 
 - **SKC:** 176 posts geplaatst, van 2026-05-22 tot 2026-10-27; daarvan 175 met `review_status='approved'` en één shop-rij met `pending_review`. Sinds 2026-10-27 is er niets geplaatst; 28 concepten van 28 oktober tot 12 november wachten op review. `active_skills`: socialMedia, reporting, intelligence, blogFactory, emailManagement, leadQualifier, adCreator, seoAnalyst, clyde, socialCommandCenter (geen manychatDm).
-- **De week van 19 oktober:** skinclarity_club 4, skinclarity_shop 4, sindy_huidtherapeut 5, alle carrousels.
+- **De week van 19 oktober:** skinclarity_club 4, skinclarity_shop 4, sindy_huidtherapeut 5, alle carrousels. De opname op de pagina is de week van 12 oktober: donderdag, vrijdag en zondag elk drie geplaatste posts (10:00, 12:30, 18:00).
 - **Klantlogin SKC:** één `fma_client_members`-rij met de rol `manager`, een skinclarityclub.com-adres, geen lid van de bureau-organisatie, laatst ingelogd 2026-11-03. Wie dat is en wat die persoon ziet, is ONBEKEND. "Clyde op WhatsApp" is niet gemeten. Beide gaan dus niet op de pagina.
 - **Wie goedkeurde:** `fma_content_approval_history` en `fma_content_approvals` hebben 0 goedkeuringen met een gebruiker op alle geplaatste rijen van SKC en SalesLobe. De pagina noemt dus geen persoon bij het goedkeuren, alleen het mechanisme.
 - **SalesLobe:** 24 posts geplaatst (Instagram 9, laatste 2026-10-29; LinkedIn van Paul 15, laatste 2026-11-06), alle met `approved`. 9 Instagram-concepten tot 16 november wachten op review. `active_skills`: socialMedia, reporting, intelligence, blogFactory, seoAnalyst, clyde, socialCommandCenter.
@@ -56,7 +56,7 @@ Dezelfde als golf 6, plus:
 - [ ] Een lijst "Weg" per pagina en "Open vragen voor Daley", gebundeld, plus het bericht aan Paul.
 
 ### Task 2: schermen
-- [ ] Echte schermen uit de SKC-werkruimte op prod, alleen lezen, via Claude in Chrome op Max: de agenda per account in de week van 19 oktober, en een geplaatste post in het akkoordscherm. Nooit op goedkeuren, pauzeren of publiceren klikken. Geen gezichten in beeld.
+- [ ] Echte schermen uit de SKC-werkruimte op prod, alleen lezen, via Claude in Chrome op Max: de agenda per account in de week van 12 oktober (gedaan 11-07: `real/g7/skc-agenda-12okt.png`), en een geplaatste post in het akkoordscherm. Nooit op goedkeuren, pauzeren of publiceren klikken. Geen gezichten in beeld.
 - [ ] De SKC-posts van de home (`R/real/g4/skc-*.webp`) en drie SalesLobe-posts van de home blijven bruikbaar.
 
 ### Task 3: prototype bouwen en meten
