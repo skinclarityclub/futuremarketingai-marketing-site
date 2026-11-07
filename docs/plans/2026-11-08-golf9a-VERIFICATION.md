@@ -54,4 +54,4 @@ Geen regressie gevonden: elke rode test is ook rood op prod of wordt groen met m
 
 ## Akkoord op de diff
 
-Diffpagina `A/alle-paginas/golf9a-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-08 Golf 9a diff`. Daleys antwoord: open.
+Diffpagina `A/alle-paginas/golf9a-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-08 Golf 9a diff`. Daley, één AskUserQuestion op 2026-11-08, met de negen punten erin (pricing en de DM-limieten bij Lead Qualifier, voorwaarden artikel 2 en de datum, voorwaarden artikel 1, /en home, de brede strategietegel, 308 in plaats van 301, microfoon uit, de sitemapdatums, Engelse tekst in es): **"Ja, push en merge"**.
