@@ -31,7 +31,7 @@ export const SKILLS = {
     {
       name: 'Voice Agent',
       description: 'Telefoon aannemen namens het bureau.',
-      url: '/nl/skills/voice-agent',
+      url: '/nl/skills#binnenkort',
       status: 'coming_soon',
     },
   ],

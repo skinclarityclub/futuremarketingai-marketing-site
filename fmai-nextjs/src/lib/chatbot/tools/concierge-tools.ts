@@ -63,14 +63,12 @@ const PAGE_LABELS: Record<string, string> = {
   '/skills/social-media': 'Social Media Manager',
   '/skills/blog-factory': 'Blog Factory',
   '/skills/ad-manager': 'Ad Manager',
-  '/skills/reel-builder': 'Reel Builder',
-  '/skills/voice-agent': 'Voice Agent',
-  '/skills/lead-qualifier': 'Lead Qualifier',
+  '/skills/lead-qualifier': 'From post to lead',
   '/skills/email-management': 'Email Management',
-  '/skills/manychat': 'ManyChat DM',
   '/skills/reporting': 'Reporting & Analytics',
   '/skills/seo-geo': 'SEO / GEO Analyst',
-  '/skills/research': 'Research',
+  '/skills/strategy': 'Strategy and research',
+  '/skills': 'What Clyde makes',
   '/skills/clyde': 'Clyde, AI colleague',
   '/memory': 'Memory System',
   '/case-studies/skinclarity-club': 'SkinClarity Club Case Study',
@@ -85,7 +83,7 @@ export function buildConciergeTools(locale: ChatbotLocale) {
   return {
     get_skills: tool({
       description:
-        'Get information about FutureMarketingAI skills. Use "all" for an overview of all 12 skills (10 live and 2 coming_soon), or pick a specific skill id. Skills are the core product: Clyde puts these skills to work per client brand.',
+        'Get information about FutureMarketingAI skills. Use "all" for an overview of every skill (live ones and coming_soon ones), or pick a specific skill id. Never state how many skills there are. Skills are the core product: Clyde puts these skills to work per client brand.',
       inputSchema: z.object({
         skillId: z
           .enum([
@@ -97,10 +95,9 @@ export function buildConciergeTools(locale: ChatbotLocale) {
             'voice-agent',
             'lead-qualifier',
             'email-management',
-            'manychat',
             'reporting',
             'seo-geo',
-            'research',
+            'strategy',
             'clyde',
           ])
           .describe('Which skill to get details about'),
@@ -108,12 +105,10 @@ export function buildConciergeTools(locale: ChatbotLocale) {
       execute: async ({ skillId }) => {
         const skills = getChatbotSkills(locale)
         if (skillId === 'all') {
-          const liveCount = skills.filter((s) => s.status === 'live').length
-          const comingSoonCount = skills.filter((s) => s.status === 'coming_soon').length
           const overview = getSkillsOverviewCopy(locale)
           return {
             name: overview.name,
-            description: overview.summary(liveCount, comingSoonCount),
+            description: overview.summary,
             services: skills.map((s) => ({
               name: s.name,
               description: s.shortDescription,
@@ -160,15 +155,13 @@ export function buildConciergeTools(locale: ChatbotLocale) {
             '/skills/social-media',
             '/skills/blog-factory',
             '/skills/ad-manager',
-            '/skills/reel-builder',
-            '/skills/voice-agent',
             '/skills/lead-qualifier',
             '/skills/email-management',
-            '/skills/manychat',
             '/skills/reporting',
             '/skills/seo-geo',
-            '/skills/research',
+            '/skills/strategy',
             '/skills/clyde',
+            '/skills',
             '/about',
             '/contact',
             '/how-it-works',

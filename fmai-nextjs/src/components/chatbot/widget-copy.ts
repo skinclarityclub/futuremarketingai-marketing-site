@@ -2,7 +2,7 @@ import type { ChatLocale } from './useChatChrome'
 
 /**
  * Page-aware welcome messages, keyed by locale then path. The pathname returned
- * by next-intl's usePathname is the locale-stripped path (e.g. "/skills/voice-agent"
+ * by next-intl's usePathname is the locale-stripped path (e.g. "/skills/social-media"
  * on both /nl/... and /en/...), so the same path keys cover all locales. NL is the
  * source of truth for tone; en/es follow it so /en and /es visitors are greeted in
  * their own language. "AI colleague" / "compañero de IA" match the
@@ -14,10 +14,8 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/': 'Hoi, ik ben Clyde, een AI-collega. Vertel waar ik aan kan werken.',
     '/skills/social-media':
       'Hoi, ik ben Clyde, een AI-collega. Wil je dat ik een content-kalender opzet voor een van je merken?',
-    '/skills/voice-agent':
-      'Hoi, ik ben Clyde, een AI-collega. Ik kan laten zien hoe ik telefoons opneem of een vraag beantwoorden.',
     '/skills/lead-qualifier':
-      'Hoi, ik ben Clyde, een AI-collega. Dit is precies wat je klanten op hun site zouden krijgen.',
+      'Hoi, ik ben Clyde, een AI-collega. Vraag me wat er gebeurt als iemand een trefwoord onder een post van je klant zet.',
     '/skills/ad-manager':
       'Hoi, ik ben Clyde, een AI-collega. Geef me een briefing en ik draai er varianten uit.',
     '/skills/email-management':
@@ -33,10 +31,8 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/': "Hi, I'm Clyde, an AI colleague. Tell me what I can work on.",
     '/skills/social-media':
       "Hi, I'm Clyde, an AI colleague. Want me to set up a content calendar for one of your brands?",
-    '/skills/voice-agent':
-      "Hi, I'm Clyde, an AI colleague. I can show you how I answer calls, or just answer a question.",
     '/skills/lead-qualifier':
-      "Hi, I'm Clyde, an AI colleague. This is exactly what your clients would get on their site.",
+      "Hi, I'm Clyde, an AI colleague. Ask me what happens when someone leaves a keyword under your client's post.",
     '/skills/ad-manager':
       "Hi, I'm Clyde, an AI colleague. Give me a brief and I'll spin up variants.",
     '/skills/email-management':
@@ -53,10 +49,8 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/': 'Hola, soy Clyde, un compañero de IA. Dime en qué puedo ponerme a trabajar.',
     '/skills/social-media':
       'Hola, soy Clyde, un compañero de IA. ¿Quieres que prepare un calendario de contenido para una de tus marcas?',
-    '/skills/voice-agent':
-      'Hola, soy Clyde, un compañero de IA. Puedo mostrarte cómo atiendo llamadas, o responder una pregunta.',
     '/skills/lead-qualifier':
-      'Hola, soy Clyde, un compañero de IA. Esto es exactamente lo que recibirían tus clientes en su web.',
+      'Hola, soy Clyde, un compañero de IA. Pregúntame qué pasa cuando alguien deja una palabra clave bajo un post de tu cliente.',
     '/skills/ad-manager':
       'Hola, soy Clyde, un compañero de IA. Dame un briefing y te saco variantes.',
     '/skills/email-management':
@@ -85,15 +79,10 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       'Maak posts voor een skincare-merk',
       'Welke platforms dek je?',
     ],
-    '/skills/voice-agent': [
-      'Hoe neem je telefoons op?',
-      'Laat een gespreksflow zien',
-      'Welke talen ondersteun je?',
-    ],
     '/skills/lead-qualifier': [
-      'Score een voorbeeld-lead',
-      'Hoe werkt kwalificatie?',
-      'Toon scoring-criteria',
+      'Wat gebeurt er na een trefwoord?',
+      'Wie keurt het vervolg goed?',
+      'Waar komen de aanvragen terecht?',
     ],
     '/pricing': ['Bereken ROI voor mijn bureau', 'Vergelijk de tiers', 'Wat zit er in Growth?'],
     default: ['Wat kun je voor mijn bureau doen?', 'Wat kost het?', 'Laat een echte klant zien'],
@@ -105,15 +94,10 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       'Create posts for a skincare brand',
       'Which platforms do you cover?',
     ],
-    '/skills/voice-agent': [
-      'How do you answer calls?',
-      'Show a call flow',
-      'Which languages do you support?',
-    ],
     '/skills/lead-qualifier': [
-      'Score a sample lead',
-      'How does qualification work?',
-      'Show the scoring criteria',
+      'What happens after a keyword?',
+      'Who approves the follow-up?',
+      'Where do the leads end up?',
     ],
     '/pricing': ['Calculate ROI for my agency', 'Compare the tiers', "What's in Growth?"],
     default: ['What can you do for my agency?', 'What does it cost?', 'Show me a real client'],
@@ -125,15 +109,10 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       'Crea publicaciones para una marca de skincare',
       '¿Qué plataformas cubres?',
     ],
-    '/skills/voice-agent': [
-      '¿Cómo atiendes las llamadas?',
-      'Muestra un flujo de llamada',
-      '¿Qué idiomas admites?',
-    ],
     '/skills/lead-qualifier': [
-      'Puntúa un lead de ejemplo',
-      '¿Cómo funciona la cualificación?',
-      'Muestra los criterios de puntuación',
+      '¿Qué pasa después de una palabra clave?',
+      '¿Quién aprueba el seguimiento?',
+      '¿Dónde acaban los leads?',
     ],
     '/pricing': ['Calcula el ROI para mi agencia', 'Compara los planes', '¿Qué incluye Growth?'],
     default: ['¿Qué puedes hacer por mi agencia?', '¿Cuánto cuesta?', 'Muéstrame un cliente real'],
@@ -154,43 +133,40 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
  */
 export const PROACTIVE_PROMPTS: Record<ChatLocale, Partial<Record<string, string>>> = {
   nl: {
-    '/skills/voice-agent': 'Hoe neem je precies een telefoon op?',
     '/skills/social-media': 'Maak een content-plan voor mijn merk',
-    '/skills/lead-qualifier': 'Score een voorbeeld-lead voor mij',
+    '/skills/lead-qualifier': 'Hoe werkt een trefwoord onder een post?',
     '/skills/ad-manager': 'Genereer 3 ad-varianten voor mij',
     '/skills/email-management': 'Hoe filter je mijn inbox?',
     '/skills/reporting': 'Laat een weekrapport zien',
     '/skills/blog-factory': 'Plan een SEO-artikel voor mij',
     '/skills/clyde': 'Wat legt Clyde mij voor en wat doet hij zelf?',
-    '/skills/research': 'Doe een marktonderzoek voor mij',
+    '/skills/strategy': 'Wat staat er op de strategiepagina van een klant?',
     '/skills/seo-geo': 'Hoe monitor je AI-citaties?',
     '/pricing': 'Bereken mijn ROI',
     '/about': 'Hoe werkt het platform precies?',
   },
   en: {
-    '/skills/voice-agent': 'How exactly do you answer a call?',
     '/skills/social-media': 'Make a content plan for my brand',
-    '/skills/lead-qualifier': 'Score a sample lead for me',
+    '/skills/lead-qualifier': 'How does a keyword under a post work?',
     '/skills/ad-manager': 'Generate 3 ad variants for me',
     '/skills/email-management': 'How do you filter my inbox?',
     '/skills/reporting': 'Show me a weekly report',
     '/skills/blog-factory': 'Plan an SEO article for me',
     '/skills/clyde': 'What does Clyde put to me and what does he do himself?',
-    '/skills/research': 'Run market research for me',
+    '/skills/strategy': "What is on a client's strategy page?",
     '/skills/seo-geo': 'How do you monitor AI citations?',
     '/pricing': 'Calculate my ROI',
     '/about': 'How exactly does the platform work?',
   },
   es: {
-    '/skills/voice-agent': '¿Cómo atiendes exactamente una llamada?',
     '/skills/social-media': 'Crea un plan de contenido para mi marca',
-    '/skills/lead-qualifier': 'Puntúa un lead de ejemplo para mí',
+    '/skills/lead-qualifier': '¿Cómo funciona una palabra clave bajo un post?',
     '/skills/ad-manager': 'Genera 3 variantes de anuncio para mí',
     '/skills/email-management': '¿Cómo filtras mi bandeja de entrada?',
     '/skills/reporting': 'Muéstrame un informe semanal',
     '/skills/blog-factory': 'Planifica un artículo SEO para mí',
     '/skills/clyde': '¿Qué me propone Clyde y qué hace él solo?',
-    '/skills/research': 'Haz un estudio de mercado para mí',
+    '/skills/strategy': '¿Qué hay en la página de estrategia de un cliente?',
     '/skills/seo-geo': '¿Cómo monitorizas las citas de IA?',
     '/pricing': 'Calcula mi ROI',
     '/about': '¿Cómo funciona exactamente la plataforma?',
@@ -206,14 +182,13 @@ export const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
   nl: {
     '/': 'Wil je dat ik een korte rondleiding geef door mijn vaardigheden?',
     '/skills/social-media': 'Zal ik een content-kalender voor een testmerk opzetten?',
-    '/skills/voice-agent': 'Zal ik laten zien hoe ik een inkomend gesprek afhandel?',
-    '/skills/lead-qualifier': 'Wil je dat ik een echte lead voor je kwalificeer?',
+    '/skills/lead-qualifier': 'Zal ik laten zien wat er gebeurt als iemand een trefwoord stuurt?',
     '/skills/ad-manager': 'Zal ik 3 ad-varianten genereren voor een testproduct?',
     '/skills/email-management': 'Wil je zien hoe ik jouw inbox zou indelen?',
     '/skills/reporting': 'Zal ik een voorbeeld weekrapport genereren?',
     '/skills/blog-factory': 'Wil je dat ik een SEO-artikel plan voor een testmerk?',
     '/skills/clyde': 'Zal ik laten zien wat ik zelf doe en wat ik aan jou voorleg?',
-    '/skills/research': 'Wil je dat ik een marktonderzoek doe voor jouw niche?',
+    '/skills/strategy': 'Zal ik uitleggen hoe Clyde een signaal uit onderzoek aan je voorlegt?',
     '/skills/seo-geo': 'Zal ik AI-citaties voor jouw domein checken?',
     '/pricing': 'Wil je dat ik een ROI-berekening maak voor jouw bureaugrootte?',
     '/about': 'Kan ik laten zien hoe ik in de praktijk werk?',
@@ -222,14 +197,13 @@ export const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
   en: {
     '/': 'Want me to give you a quick tour of my skills?',
     '/skills/social-media': 'Shall I set up a content calendar for a test brand?',
-    '/skills/voice-agent': 'Shall I show you how I handle an incoming call?',
-    '/skills/lead-qualifier': 'Want me to qualify a real lead for you?',
+    '/skills/lead-qualifier': 'Shall I show you what happens when someone sends a keyword?',
     '/skills/ad-manager': 'Shall I generate 3 ad variants for a test product?',
     '/skills/email-management': 'Want to see how I would organize your inbox?',
     '/skills/reporting': 'Shall I generate a sample weekly report?',
     '/skills/blog-factory': 'Want me to plan an SEO article for a test brand?',
     '/skills/clyde': 'Shall I show you what I do myself and what I put to you?',
-    '/skills/research': 'Want me to run market research for your niche?',
+    '/skills/strategy': 'Shall I explain how Clyde puts a research signal to you?',
     '/skills/seo-geo': 'Shall I check AI citations for your domain?',
     '/pricing': 'Want me to calculate ROI for your agency size?',
     '/about': 'Can I show you how I work in practice?',
@@ -238,14 +212,13 @@ export const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
   es: {
     '/': '¿Quieres que te dé un recorrido rápido por mis habilidades?',
     '/skills/social-media': '¿Preparo un calendario de contenido para una marca de prueba?',
-    '/skills/voice-agent': '¿Te muestro cómo gestiono una llamada entrante?',
-    '/skills/lead-qualifier': '¿Quieres que cualifique un lead real para ti?',
+    '/skills/lead-qualifier': '¿Te muestro qué pasa cuando alguien envía una palabra clave?',
     '/skills/ad-manager': '¿Genero 3 variantes de anuncio para un producto de prueba?',
     '/skills/email-management': '¿Quieres ver cómo organizaría tu bandeja de entrada?',
     '/skills/reporting': '¿Genero un informe semanal de ejemplo?',
     '/skills/blog-factory': '¿Quieres que planifique un artículo SEO para una marca de prueba?',
     '/skills/clyde': '¿Te muestro lo que hago solo y lo que te propongo?',
-    '/skills/research': '¿Quieres que haga un estudio de mercado para tu nicho?',
+    '/skills/strategy': '¿Te explico cómo Clyde te propone una señal de investigación?',
     '/skills/seo-geo': '¿Reviso las citas de IA para tu dominio?',
     '/pricing': '¿Quieres que calcule el ROI para el tamaño de tu agencia?',
     '/about': '¿Te muestro cómo trabajo en la práctica?',
@@ -262,9 +235,8 @@ export const PROACTIVE_FOLLOWUPS: Record<ChatLocale, Record<string, string>> = {
 export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
   nl: {
     '/': 'Vraag me wat.',
-    '/skills/voice-agent': 'Telefoon? Ik laat het zien.',
     '/skills/social-media': 'Content-kalender nodig?',
-    '/skills/lead-qualifier': 'Dit is wat je klanten krijgen.',
+    '/skills/lead-qualifier': 'Trefwoord, DM, link.',
     '/skills/ad-manager': 'Brief? Ik maak varianten.',
     '/skills/email-management': 'Inbox-classificatie tonen?',
     '/skills/reporting': 'Een weekrapport laten zien?',
@@ -274,9 +246,8 @@ export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
   },
   en: {
     '/': 'Ask me something.',
-    '/skills/voice-agent': "Phone? I'll show you.",
     '/skills/social-media': 'Need a content calendar?',
-    '/skills/lead-qualifier': 'This is what your clients get.',
+    '/skills/lead-qualifier': 'Keyword, DM, link.',
     '/skills/ad-manager': 'Brief? I make variants.',
     '/skills/email-management': 'Show the inbox classification?',
     '/skills/reporting': 'Show a weekly report?',
@@ -286,9 +257,8 @@ export const WHISPERS: Record<ChatLocale, Record<string, string>> = {
   },
   es: {
     '/': 'Pregúntame algo.',
-    '/skills/voice-agent': '¿Teléfono? Te lo muestro.',
     '/skills/social-media': '¿Necesitas un calendario de contenido?',
-    '/skills/lead-qualifier': 'Esto es lo que reciben tus clientes.',
+    '/skills/lead-qualifier': 'Palabra clave, DM, enlace.',
     '/skills/ad-manager': '¿Briefing? Hago variantes.',
     '/skills/email-management': '¿Te muestro la clasificación del correo?',
     '/skills/reporting': '¿Te muestro un informe semanal?',

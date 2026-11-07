@@ -35,7 +35,6 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/kennisbank': { labelKey: 'resources', parent: '/' },
   '/apply': { labelKey: 'apply', parent: '/' },
   '/assessment': { labelKey: 'assessment', parent: '/' },
-  '/roadmap': { labelKey: 'roadmap', parent: '/' },
   '/trust': { labelKey: 'trust', parent: '/' },
 
   // Golf 8a: the client portal, a top-level page
@@ -52,19 +51,16 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
     parent: '/case-studies',
   },
 
-  // Skills index + 12 skills
+  // Skills index + the skill pages
   '/skills': { labelKey: 'skills_index', parent: '/' },
   '/skills/social-media': { labelKey: 'skill_social_media', parent: '/skills' },
   '/skills/blog-factory': { labelKey: 'skill_blog_factory', parent: '/skills' },
-  '/skills/voice-agent': { labelKey: 'skill_voice_agent', parent: '/skills' },
   '/skills/lead-qualifier': { labelKey: 'skill_lead_qualifier', parent: '/skills' },
   '/skills/ad-manager': { labelKey: 'skill_ad_manager', parent: '/skills' },
-  '/skills/reel-builder': { labelKey: 'skill_reel_builder', parent: '/skills' },
   '/skills/email-management': { labelKey: 'skill_email_management', parent: '/skills' },
-  '/skills/manychat': { labelKey: 'skill_manychat', parent: '/skills' },
   '/skills/reporting': { labelKey: 'skill_reporting', parent: '/skills' },
   '/skills/seo-geo': { labelKey: 'skill_seo_geo', parent: '/skills' },
-  '/skills/research': { labelKey: 'skill_research', parent: '/skills' },
+  '/skills/strategy': { labelKey: 'skill_strategy', parent: '/skills' },
   '/skills/clyde': { labelKey: 'skill_clyde', parent: '/skills' },
 
   // Blog

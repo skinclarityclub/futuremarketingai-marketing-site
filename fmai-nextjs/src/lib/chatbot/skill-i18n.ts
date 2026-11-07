@@ -123,18 +123,6 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Draft replies, sent after approval',
       ],
     },
-    manychat: {
-      shortDescription: 'Instagram DMs with keyword triggers, AI drafts and lead capture.',
-      longDescription:
-        'ManyChat DM answers Instagram DMs, comments and story replies with keyword triggers: whoever sends the keyword gets the reply you set, with a link. For other messages Clyde writes a draft in the brand voice, and everyone who responds lands in your lead list.',
-      features: [
-        'Keyword-based DM triggers',
-        'AI drafts in the brand voice',
-        'Lead capture in your lead list',
-        'Replies to comments, DMs and story replies',
-        'Every reply logged',
-      ],
-    },
     reporting: {
       shortDescription: 'Weekly report per brand, dashboard per client and alerts on deviations.',
       longDescription:
@@ -160,16 +148,17 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Prioritised fix recommendations',
       ],
     },
-    research: {
-      shortDescription: 'Market research + trend monitoring + competitor analysis with citations.',
+    strategy: {
+      shortDescription:
+        'Goals, audience, platforms and a calendar for the year per client, with signals from research alongside.',
       longDescription:
-        'The Research skill runs scheduled research per client into market trends, competitors and news, and answers targeted questions. Every insight comes with its source and link.',
+        'Every client gets a strategy page: what you are going for, for whom, on which platforms and with which goals. The calendar for the year follows from it. Clyde places signals from research next to it, with the source, and proposes what to do with them. You decide.',
       features: [
-        'Scheduled research runs per client',
-        'Trend monitoring in your niche',
-        'Competitor analysis',
-        'Actionable insights and recommendations',
-        'A citation for every insight',
+        'Goal, audience and customer profile per client',
+        'A calendar with windows for the whole year',
+        'Trends and competitors per client',
+        'Signals from research with source and date',
+        'Clyde proposes, you decide',
       ],
     },
     clyde: {
@@ -274,18 +263,6 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Borradores de respuesta, enviados tras aprobación',
       ],
     },
-    manychat: {
-      shortDescription: 'DMs de Instagram con triggers por palabra clave, borradores de IA y captura de leads.',
-      longDescription:
-        'ManyChat DM responde a DMs, comentarios y respuestas a historias de Instagram con triggers por palabra clave: quien envía la palabra clave recibe la respuesta que tú fijas, con un enlace. Para otros mensajes Clyde escribe un borrador con la voz de marca, y quien responde entra en tu lista de leads.',
-      features: [
-        'Triggers de DM por palabra clave',
-        'Borradores de IA con la voz de marca',
-        'Captura de leads en tu lista de leads',
-        'Respuestas a comentarios, DMs y respuestas a historias',
-        'Cada respuesta registrada',
-      ],
-    },
     reporting: {
       shortDescription: 'Informe semanal por marca, panel por cliente y avisos cuando algo se desvía.',
       longDescription:
@@ -312,16 +289,17 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Recomendaciones de correcciones priorizadas',
       ],
     },
-    research: {
-      shortDescription: 'Investigación de mercado + monitorización de tendencias + análisis de competencia con fuentes.',
+    strategy: {
+      shortDescription:
+        'Goals, audience, platforms and a calendar for the year per client, with signals from research alongside.',
       longDescription:
-        'La habilidad Research ejecuta investigaciones programadas por cliente sobre tendencias de mercado, competidores y noticias, y responde preguntas concretas. Cada insight incluye su fuente con enlace.',
+        'Every client gets a strategy page: what you are going for, for whom, on which platforms and with which goals. The calendar for the year follows from it. Clyde places signals from research next to it, with the source, and proposes what to do with them. You decide.',
       features: [
-        'Investigaciones programadas por cliente',
-        'Monitorización de tendencias en tu nicho',
-        'Análisis de competencia',
-        'Insights y recomendaciones accionables',
-        'Una fuente en cada insight',
+        'Goal, audience and customer profile per client',
+        'A calendar with windows for the whole year',
+        'Trends and competitors per client',
+        'Signals from research with source and date',
+        'Clyde proposes, you decide',
       ],
     },
     clyde: {
@@ -339,11 +317,11 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
   },
 }
 
-/** Overview-card chrome: title + "N live · M coming soon" subtitle. */
-const OVERVIEW_COPY: Record<ChatbotLocale, { name: string; summary: (live: number, soon: number) => string }> = {
-  nl: { name: 'Alle vaardigheden', summary: (l, s) => `${l} live · ${s} binnenkort beschikbaar` },
-  en: { name: 'All skills', summary: (l, s) => `${l} live · ${s} coming soon` },
-  es: { name: 'Todas las habilidades', summary: (l, s) => `${l} activas · ${s} próximamente` },
+/** Overview-card chrome. No count: the site names no number of skills (siteplan decision 18, golf 9a). */
+const OVERVIEW_COPY: Record<ChatbotLocale, { name: string; summary: string }> = {
+  nl: { name: 'Wat Clyde maakt', summary: 'Per klant, in één werkruimte. Wat nog niet werkt, staat onder Binnenkort.' },
+  en: { name: 'What Clyde makes', summary: 'Per client, in one workspace. What does not work yet is listed under Coming soon.' },
+  es: { name: 'What Clyde makes', summary: 'Per client, in one workspace. What does not work yet is listed under Coming soon.' },
 }
 
 /**

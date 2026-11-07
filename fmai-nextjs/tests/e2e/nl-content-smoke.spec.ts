@@ -27,9 +27,10 @@ const pages = [
   { path: '/nl/skills/clyde', name: 'skill-clyde', expected: ['Clyde bereidt het werk voor', 'Het stopmoment'] },
   { path: '/nl/client-portal', name: 'client-portal', expected: ['waar je klant zelf goedkeurt', 'Wie doet wat'] },
   { path: '/nl/skills/social-media', name: 'skill-social', expected: ['verzorgt je social media', 'merkstem'] },
-  { path: '/nl/skills/voice-agent', name: 'skill-voice', expected: ['Clyde neemt de telefoon op', 'escalatie'] },
+  { path: '/nl/skills', name: 'skills-hub', expected: ['per klant in één werkruimte', 'Binnenkort'] },
+  { path: '/nl/skills/strategy', name: 'skill-strategy', expected: ['Contentstrategie per klant', 'De agenda die eruit volgt'] },
   { path: '/nl/skills/reporting', name: 'skill-reporting', expected: ['rapporteert elke week', 'anomalie'] },
-  { path: '/nl/skills/lead-qualifier', name: 'skill-lead', expected: ['kwalificeert', 'leadscore'] },
+  { path: '/nl/skills/lead-qualifier', name: 'skill-lead', expected: ['Van Instagram-reactie naar lead', 'De regel achter een trefwoord'] },
   { path: '/nl/legal/privacy', name: 'legal-privacy', expected: ['Privacybeleid', 'AVG'] },
   { path: '/nl/legal/terms', name: 'legal-terms', expected: ['Servicevoorwaarden', 'beëindigen'] },
 ]

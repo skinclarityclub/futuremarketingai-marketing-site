@@ -32,22 +32,18 @@ const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/skills/blog-factory':
     'User is on the Blog Factory skill page. Offer to plan an SEO blog article.',
   '/skills/ad-manager': 'User is on the Ad Manager skill page. Offer to generate ad variants or explain how ads are prepared for approval in Meta and followed per ad on conversions, ROAS and ad fatigue.',
-  '/skills/reel-builder':
-    'User is on the Reel Builder skill page (coming soon). Explain the roadmap.',
-  '/skills/voice-agent':
-    'User is on the Voice Agent skill page (coming soon, not live yet). Explain what it is planned to do; do not claim you handle calls today.',
   '/skills/lead-qualifier':
-    'User is on the Lead Qualifier skill page. You ARE the demo — point out they are chatting with you right now.',
+    'User is on the From post to lead page. Explain the Instagram flow: a keyword under a post or in a DM gets an instant DM with the matching link, Clyde writes the follow-up in the brand voice and the agency approves it. No scores and no "warm leads".',
+  '/skills/strategy':
+    'User is on the Strategy and research page. Explain the strategy page per client (goal, audience, platforms, goals and a calendar for the year) and the research signals with source and date. Clyde proposes, the agency decides. Never say the strategy or the calendar adjusts itself.',
+  '/skills':
+    'User is on the What Clyde makes page. Walk them through planning, making, approving, from post to lead and measuring, per client in one workspace. Never give a number of skills. Voice Agent and Reel Builder are coming soon, not live.',
   '/skills/email-management':
     'User is on the Email Management skill page. Explain Gmail and Outlook inbox classification with labels and draft replies sent after approval, not campaigns.',
-  '/skills/manychat':
-    'User is on the ManyChat DM skill page. Explain Instagram DM keyword triggers, draft replies in the brand voice and lead capture.',
   '/skills/reporting':
     'User is on the Reporting skill page. Offer to show a weekly performance report.',
   '/skills/seo-geo':
     'User is on the SEO/GEO skill page. Emphasize AI citation monitoring as a USP.',
-  '/skills/research':
-    'User is on the Research skill page. Offer to run a market research query.',
   '/skills/clyde':
     'User is on the Working with Clyde page. Explain what Clyde does himself, what he puts to the agency (under For you or on WhatsApp, with Run and Cancel) and what only the agency does: approving and pausing. No post goes live without approval.',
   '/client-portal':

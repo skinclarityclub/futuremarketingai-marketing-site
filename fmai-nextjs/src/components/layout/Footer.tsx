@@ -9,8 +9,7 @@ interface FooterProps {
 }
 
 // Golf 8b (2026-11-07, prototype R/golf8-nav.tpl.html): six columns that link only to pages that exist.
-// Research, ManyChat, Voice Agent and Reel Builder stay off until golf 9 adds Strategie and Binnenkort;
-// the /skills hub still links them. Labels live in common.landing.footer.{sections,nav}.
+// Golf 9a (2026-11-08) added Strategie and Binnenkort to the makes column. Labels live in common.landing.footer.{sections,nav}.
 const COLUMNS = [
   {
     key: 'clyde',
@@ -25,6 +24,7 @@ const COLUMNS = [
   {
     key: 'makes',
     links: [
+      { key: 'strategy', href: '/skills/strategy' },
       { key: 'social_media', href: '/skills/social-media' },
       { key: 'blog_factory', href: '/skills/blog-factory' },
       { key: 'lead_qualifier', href: '/skills/lead-qualifier' },
@@ -33,6 +33,7 @@ const COLUMNS = [
       { key: 'ad_creator', href: '/skills/ad-manager' },
       { key: 'email_management', href: '/skills/email-management' },
       { key: 'all_skills', href: '/skills' },
+      { key: 'soon', href: '/skills#binnenkort' },
     ],
   },
   {

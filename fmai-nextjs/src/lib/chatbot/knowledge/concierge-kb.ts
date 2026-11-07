@@ -5,7 +5,7 @@ export const CONCIERGE_TOPICS: TopicDefinition[] = [
  key: 'services',
  content: `## FutureMarketingAI Skills Overview
 
-FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-collega; never call him an employee). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills: 10 are live today, 2 are coming soon.
+FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-collega; never call him an employee). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Never give a number of skills: what is live is listed below, and Voice Agent and Reel Builder are coming soon.
 
 **Create and Publish**
 - Social Media Manager (live): captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.
@@ -15,14 +15,13 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 
 **Engage and Convert**
 - Voice Agent (coming soon): AI phone calls. Not live yet.
-- Lead Qualifier (live): answers Instagram comments and DMs that contain a keyword with a DM and the matching link; Clyde writes the follow-up in the client's brand voice as a draft for approval, and leads that come in via the link land in the lead list. There is no chat widget for client websites.
 - Email Management (live): Gmail and Outlook inbox classification with categories per client, urgency, status labels and draft replies that are sent only after approval.
-- ManyChat DM (live): Instagram DMs, comments and story replies. A keyword trigger sends the fixed reply you set, with a link; for other messages Clyde writes a draft reply. Everyone who responds lands in the lead list.
+- From post to lead (live, page /skills/lead-qualifier): answers Instagram comments and DMs that contain a keyword with a DM and the matching link; Clyde writes the follow-up in the client's brand voice as a draft for approval, and leads that come in via the link land in the lead list. There is no chat widget for client websites, and there is no separate ManyChat skill.
 
 **Grow and Optimize**
 - Reporting and Analytics (live): a weekly report per brand and a dashboard per client from Instagram, GA4, Search Console, Shopify and Meta Ads, refreshed daily, with an alert on strong deviations.
-- SEO / GEO Analyst (live): weekly crawl, daily positions from Search Console, Core Web Vitals, and AI citation monitoring in ChatGPT, Perplexity, Gemini and Google AI Overviews. The SEO report arrives on WhatsApp every Friday.
-- Research (live): market research, trends and competitors with a source link per insight (Perplexity, Firecrawl, PubMed, Meta Ad Library).
+- SEO / GEO Analyst (live): weekly crawl, daily positions from Search Console, Core Web Vitals, and AI citation monitoring in ChatGPT, Perplexity and Google AI Overviews. The SEO report arrives on WhatsApp every Friday.
+- Strategy and research (live, page /skills/strategy): a strategy page per client with the goal, the audience, the platforms, the goals and a calendar for the year, plus research signals on trends and competitors with the source and the date (among others via Perplexity). Clyde proposes, the agency decides; the strategy and the calendar do not adjust themselves.
 - Clyde (live): the AI colleague in every screen of the dashboard, in the web app on your home screen and on WhatsApp, who picks the right skill for a request in plain language.
 
 Memory: Clyde keeps a memory per client (conversations, feedback, strategy and research), consolidated every night. Memories about a client belong to that agency and that client.
@@ -47,6 +46,8 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
  'seo',
  'geo',
  'research',
+ 'strategy',
+ 'strategie',
  ],
  priority: 10,
  },
@@ -54,7 +55,7 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
  key: 'pricing',
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
+All plans include Clyde, the AI colleague, and every skill. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
 
 **Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client**: maximum 10 founding spots. For portfolios of 3 or more brands it costs less than the workspace-priced tiers.
 - 10 workspaces included, EUR 299 per extra workspace above that
@@ -66,7 +67,7 @@ All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming 
 
 **Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands**. Linear pricing: EUR 998 to EUR 1,996 per month total.
 - 800 credits per workspace (1,600 to 3,200 total per month)
-- All 12 skills with Growth-tier caps
+- All skills with Growth-tier caps
 - Direct WhatsApp line with Daley
 - EUR 1,997 onboarding fee
 

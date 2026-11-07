@@ -15,7 +15,6 @@ import {
   Link as LinkIcon,
   Mail,
   Megaphone,
-  MessageCircle,
   MessageSquare,
   Phone,
   Search,
@@ -48,10 +47,9 @@ const SKILL_ICONS: Record<string, LucideIcon> = {
   'voice-agent': Phone,
   'lead-qualifier': MessageSquare,
   'email-management': Mail,
-  manychat: MessageCircle,
   reporting: BarChart3,
   'seo-geo': Globe,
-  research: Search,
+  strategy: Search,
   clyde: Bot,
 }
 

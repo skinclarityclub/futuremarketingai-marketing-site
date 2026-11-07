@@ -1,7 +1,7 @@
 /**
  * Service JSON-LD emitter (rewritten Phase 14-02).
  *
- * Wired by SkillPageTemplate.tsx for all 12 skill pages. The @id pattern
+ * Wired by SkillPageTemplate.tsx and the proof pages for every skill page. The @id pattern
  * cross-references the Organization's hasOfferCatalog (built in 14-01),
  * keeping the entity graph coherent: Org -> hasOfferCatalog -> Service @id
  * matches the Service @id rendered here.

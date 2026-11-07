@@ -6,7 +6,7 @@ interface PageShellProps {
   /**
    * When true, render <StickyMobileCTA /> as a sibling to <main>.
    * Off by default — pages opt in (home, memory, pricing, founding-member,
-   * SKC case study, all 12 skill pages via SkillPageTemplate).
+   * SKC case study, the skill pages via SkillPageTemplate).
    * Excluded: /apply, /contact, /blog/[slug], legal pages, /newsletter/confirm.
    */
   showStickyCta?: boolean

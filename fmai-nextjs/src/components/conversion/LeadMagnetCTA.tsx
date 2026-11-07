@@ -28,7 +28,7 @@ const PREVIEW_BARS = [
 const PREVIEW_SKILLS = [
   { name: 'Blog Factory', descKey: 'blogFactory' },
   { name: 'Reporting', descKey: 'reporting' },
-  { name: 'Research', descKey: 'research' },
+  { name: 'Strategy', descKey: 'research' },
 ] as const
 
 // Score ring geometry

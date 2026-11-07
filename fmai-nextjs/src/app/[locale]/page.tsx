@@ -257,7 +257,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       )}
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 4 — ServicesBento (12 skills incl. featured Clyde)
+          Sectie 4 — ServicesBento (the skills incl. featured Clyde)
           ──────────────────────────────────────────────────────────── */}
       {locale !== 'nl' && (
       <LazySection minHeight="500px">

@@ -22,8 +22,7 @@ interface ClydePresenceProps {
  * Horizontal name-pill: small sparkle mark + "Clyde" wordmark. Reads as
  * a colleague's name tag, not a generic chat bubble. The pill expands
  * to reveal a whisper:
- *   - On 20s scroll-idle: page-aware whisper (e.g. "Telefoon? Ik laat
- *     het zien." on /skills/voice-agent)
+ *   - On 20s scroll-idle: page-aware whisper (see widget-copy.ts)
  *
  * Mobile: lifts above the cookie banner while no consent is stored,
  * hides while the on-screen keyboard is open.

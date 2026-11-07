@@ -22,7 +22,7 @@
       "videoPause": "Pausar la animación",
       "videoPlay": "Reproducir la animación",
       "tagline": "El <accent>compañero de IA</accent> de tu agencia.",
-      "subtitle": "Conoce los objetivos de cada cliente, está en cada pantalla de tu dashboard y te escribe por WhatsApp en cuanto pasa algo. Diez habilidades hoy, dos próximamente: social, blogs, anuncios, email, calificación de leads, SEO, analítica.",
+      "subtitle": "Conoce los objetivos de cada cliente, está en cada pantalla de tu dashboard y te escribe por WhatsApp en cuanto pasa algo. Para redes sociales, blogs, anuncios, email, DMs de Instagram, SEO e informes.",
       "trustAnchor": "En producción con nuestro primer cliente. Máx. {maxPartners} partners al año.",
       "cta": "Solicita una llamada",
       "ctaSecondary": "Conoce a Clyde",
@@ -34,7 +34,7 @@
     },
     "services": {
       "title": "Lo que Clyde hace por tu agencia",
-      "subtitle": "Doce habilidades, diez listas para desplegar hoy.",
+      "subtitle": "Lo que Clyde hace por cliente, en un solo espacio de trabajo.",
       "socialMedia": {
         "title": "Social Media Manager",
         "description": "Captions, planificación y carruseles por marca. Listos antes de que empieces el lunes."
@@ -71,8 +71,8 @@
         "clydeLabel": "Clyde"
       },
       "research": {
-        "title": "Research",
-        "description": "Investigación de mercado, análisis de competencia y tendencias por cliente, como base de la estrategia."
+        "title": "Estrategia e investigación",
+        "description": "Objetivos, público y un calendario para el año por cliente, con señales de investigación al lado."
       },
       "blogFactory": {
         "title": "Blog Factory",
@@ -81,10 +81,6 @@
       "adCreator": {
         "title": "Ad Manager",
         "description": "Anuncios para Meta: copy y visuales por marca, listos para aprobar. Después, conversiones, ROAS y fatiga publicitaria por anuncio."
-      },
-      "manychat": {
-        "title": "ManyChat DM",
-        "description": "Conversaciones en DMs de Instagram, conectadas a tus embudos."
       },
       "voiceAgent": {
         "title": "Voice Agent",
@@ -374,7 +370,7 @@
       "items": {
         "q1": {
           "question": "¿En qué se diferencia Clyde de ChatGPT o Jasper?",
-          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar el contexto en cada prompt. Clyde tiene una memoria propia para cada cliente: voz de marca, audiencia, objetivos y acuerdos de trabajo se conservan. Además, Clyde orquesta diez habilidades en vivo más dos próximamente (social, blogs, anuncios, email, calificación de leads, SEO, analítica y más), no solo texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
+          "answer": "ChatGPT y Jasper son herramientas genéricas sin memoria. Tienes que aportar el contexto en cada prompt. Clyde tiene una memoria propia para cada cliente: voz de marca, audiencia, objetivos y acuerdos de trabajo se conservan. Además, Clyde trabaja en social, blogs, anuncios, email, DMs de Instagram, SEO e informes, no solo en texto. Un único cerebro con memoria compartida, no una herramienta suelta por tarea."
         },
         "q2": {
           "question": "¿Y si quiero cancelar?",
@@ -385,8 +381,8 @@
           "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Aceptamos un máximo de {maxPartners} nuevas agencias al año. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
         },
         "q4": {
-          "question": "¿Exactamente cuántas habilidades obtengo?",
-          "answer": "Doce en total: 10 en vivo (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orquestador) y 2 próximamente (Voice Agent, Reel Builder). Todos los planes usan todas las habilidades en vivo; en las más pesadas hay caps, salvo en Enterprise."
+          "question": "¿Qué habilidades obtengo?",
+          "answer": "Todo lo que está en vivo: redes sociales, blogs, anuncios, del post al lead, email, informes, SEO y GEO, estrategia e investigación, y el propio Clyde. Voice Agent y Reel Builder llegan pronto. Todos los planes usan todas las habilidades en vivo; en las más pesadas hay caps, salvo en Enterprise."
         },
         "q5": {
           "question": "¿Por qué funciona mejor para agencias que herramientas separadas?",
@@ -610,7 +606,9 @@
           "privacy": "Privacidad",
           "terms": "Términos",
           "cookies": "Cookies",
-          "dpa": "Acuerdo de encargo del tratamiento a petición"
+          "dpa": "Acuerdo de encargo del tratamiento a petición",
+          "strategy": "Strategy",
+          "soon": "Coming soon"
         },
         "social_aria": {
           "linkedin": "Síguenos en LinkedIn"
@@ -641,22 +639,17 @@
       "memory": "Memoria",
       "apply": "Solicitud",
       "assessment": "Assessment",
-      "roadmap": "Roadmap",
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
       "skills_index": "Lo que Clyde crea",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
-      "skill_voice_agent": "Voice Agent",
-      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_lead_qualifier": "Del post al lead",
       "skill_ad_manager": "Ad Manager",
-      "skill_reel_builder": "Reel Builder",
       "skill_email_management": "Email Management",
-      "skill_manychat": "ManyChat DM",
       "skill_reporting": "Reporting",
       "skill_seo_geo": "SEO / GEO",
-      "skill_research": "Research",
       "skill_clyde": "Trabajar con Clyde",
       "blog": "Blog",
       "resources": "Recursos",
@@ -665,7 +658,8 @@
       "legal_terms": "Términos",
       "legal_cookies": "Cookies",
       "trust": "Confianza",
-      "client_portal": "Tu cliente lo sigue de cerca"
+      "client_portal": "Tu cliente lo sigue de cerca",
+      "skill_strategy": "Strategy"
     },
     "cookie_consent": {
       "title": "Usamos cookies",
@@ -1521,11 +1515,11 @@
         "subsections": {
           "service_description": {
             "title": "1. Descripción del servicio",
-            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta los servicios de Clyde, el compañero de IA para agencias, con habilidades configurables. Las habilidades disponibles son: Social Media Manager (calendario de contenido, copys y publicación en los canales conectados), Blog Factory (artículos SEO desde la investigación de palabras clave hasta la publicación tras aprobación), Ad Manager (creación de anuncios y su preparación para Meta, con rendimiento por anuncio), Lead Qualifier (responder a comentarios y DMs de Instagram con una palabra clave con un DM y un enlace, con los leads en la lista de leads), Email Management (clasificación de la bandeja de Gmail u Outlook, con borradores de respuesta), ManyChat DM (mensajes de Instagram con palabras clave y borradores de IA), Reporting & Analytics (paneles e informes por cliente), SEO / GEO Analyst (auditorías, posiciones de búsqueda y menciones en respuestas de IA), Research (investigación de mercado y de competencia con fuentes citadas) y el propio Clyde, que dirige estas habilidades. El Voice Agent y el Reel Builder se han anunciado, pero aún no están disponibles y solo forman parte del servicio cuando se lancen. Todas las suscripciones incluyen todas las habilidades; en cada espacio de trabajo de cliente las habilidades pueden activarse o desactivarse en cualquier momento."
+            "content": "FutureMarketingAI proporciona una plataforma Agent as a Service (AaaS) que presta los servicios de Clyde, el compañero de IA para agencias, con habilidades configurables. Las habilidades disponibles son: Social Media Manager (calendario de contenido, copys y publicación en los canales conectados), Blog Factory (artículos SEO desde la investigación de palabras clave hasta la publicación tras aprobación), Ad Manager (creación de anuncios y su preparación para Meta, con rendimiento por anuncio), Lead Qualifier (responder a comentarios y DMs de Instagram con una palabra clave con un DM y un enlace, con los leads en la lista de leads), Email Management (clasificación de la bandeja de Gmail u Outlook, con borradores de respuesta), Reporting & Analytics (paneles e informes por cliente), SEO / GEO Analyst (auditorías, posiciones de búsqueda y menciones en respuestas de IA), Estrategia e investigación (una estrategia por cliente, con investigación de mercado y de competencia con fuentes citadas) y el propio Clyde, que dirige estas habilidades. El Voice Agent y el Reel Builder se han anunciado, pero aún no están disponibles y solo forman parte del servicio cuando se lancen. Todas las suscripciones incluyen todas las habilidades; en cada espacio de trabajo de cliente las habilidades pueden activarse o desactivarse en cualquier momento."
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
-            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles de servicio: Founding (997 EUR al mes de por vida para un máximo de 10 espacios de trabajo, 299 EUR por cada espacio adicional por encima de esa cifra, 10 plazas) y los niveles facturados por espacio Growth (499 EUR por espacio, 2-4 marcas), Professional (399 EUR por espacio, 5-14 marcas) y Enterprise (299 EUR por espacio, a partir de 15 marcas). Todos los planes incluyen las 12 habilidades de IA, de las cuales diez están disponibles ahora (véase el artículo 1), con caps por nivel en vídeo y, cuando estén disponibles, en voz y reels. Las tarifas por espacio se recalibran cada seis meses según el uso real de créditos; los contratos existentes no se ajustan con efecto retroactivo. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
+            "content": "Los servicios se ofrecen en régimen de suscripción mensual en cuatro niveles de servicio: Founding (997 EUR al mes de por vida para un máximo de 10 espacios de trabajo, 299 EUR por cada espacio adicional por encima de esa cifra, 10 plazas) y los niveles facturados por espacio Growth (499 EUR por espacio, 2-4 marcas), Professional (399 EUR por espacio, 5-14 marcas) y Enterprise (299 EUR por espacio, a partir de 15 marcas). Todos los planes incluyen todas las habilidades de IA disponibles ahora (véase el artículo 1), con caps por nivel en vídeo y, cuando estén disponibles, en voz y reels. Las tarifas por espacio se recalibran cada seis meses según el uso real de créditos; los contratos existentes no se ajustan con efecto retroactivo. El uso se mide en créditos; cada plan incluye una asignación mensual de créditos. Pueden adquirirse créditos adicionales mediante packs. La facturación se realiza mensualmente por adelantado. Usted puede cancelar su suscripción con un preaviso por escrito de 30 días, con efecto al final del ciclo de facturación en curso."
           },
           "ai_output_disclaimer": {
             "title": "3. Exención de responsabilidad sobre la salida de IA",
@@ -1620,7 +1614,7 @@
         "content": "La información contenida en este sitio web se facilita con fines de información general. Cualquier confianza que usted deposite en dicha información es bajo su propio riesgo."
       }
     },
-    "last_updated": "Última actualización: 5 de noviembre de 2026"
+    "last_updated": "Última actualización: 8 de noviembre de 2026"
   },
   "trust": {
     "meta": {
@@ -1819,121 +1813,13 @@
       "related": "Artículos relacionados"
     }
   },
-  "skills-voice-agent": {
-    "meta": {
-      "title": "Voice Agent (próximamente). Llamadas telefónicas con IA | Clyde",
-      "description": "Próximamente: Clyde atiende llamadas, reserva citas y pasa la llamada a una persona cuando hace falta. Todavía no disponible."
-    },
-    "hero": {
-      "eyebrow": "Habilidad 02. Voice Agent (próximamente)",
-      "title": "Pronto Clyde contestará el teléfono.",
-      "subtitle": "En lo que estamos trabajando: atender llamadas entrantes, resolver preguntas frecuentes, reservar citas y pasar la llamada a una persona cuando la conversación lo requiera. Todavía no disponible.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Llama a la lista de espera y agenda citas para la próxima semana",
-        "prompt2": "Responde llamadas entrantes sobre los plazos de entrega",
-        "prompt3": "Haz seguimiento a clientes que faltaron a su cita"
-      }
-    },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Llamadas entrantes y FAQ",
-        "body": "Clyde responderá preguntas frecuentes en lenguaje natural, reservará citas en la agenda y solo escalará cuando sea necesario."
-      },
-      "feature2": {
-        "title": "Campañas salientes",
-        "body": "Recorrer listas, llamadas de intake, seguimientos. Clyde llamará a la lista de contactos y registrará el resultado de cada conversación."
-      },
-      "feature3": {
-        "title": "Transcripciones",
-        "body": "Cada llamada tendrá su transcripción, que se podrá buscar en la memoria del cliente."
-      },
-      "feature4": {
-        "title": "Escalado humano",
-        "body": "Clyde tendrá reglas claras sobre cuándo pasar la llamada a una persona."
-      }
-    },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Configurar voz y persona",
-        "body": "Elegirás voz, personalidad y base de conocimiento por marca, junto con las preguntas frecuentes y la disponibilidad de la agenda."
-      },
-      "step2": {
-        "title": "Conectar un número",
-        "body": "Conectas un número de teléfono. Las llamadas entrantes van a Clyde; las llamadas de seguimiento las programas tú."
-      },
-      "step3": {
-        "title": "Clyde trabajará, tú monitorizas",
-        "body": "Las llamadas, los traspasos y los resultados aparecen en el panel."
-      }
-    },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "Lead Qualifier: los leads de las llamadas llegan a la misma lista de leads.",
-      "integration2": "Reporting: número de llamadas, duración y traspasos en el informe semanal.",
-      "integration3": "Orquestador Clyde: el contexto de la conversación viaja junto a otras habilidades."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "Consultas con presión en recepción",
-        "body": "Clínicas, dentistas y terapeutas con un gran volumen de llamadas. Clyde se encargará del intake y las citas."
-      },
-      "useCase2": {
-        "title": "Equipos de ventas salientes",
-        "body": "Quita a tus SDR las llamadas de primer contacto: Clyde calificará, agendará y pasará la llamada cuando haga falta."
-      }
-    },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "cta": {
-      "title": "¿Te interesa el Voice Agent?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
-    },
-    "proof": {
-      "title": "Prueba Clyde en vivo",
-      "subtitle": "Demo interactiva. Mantén tú mismo una breve conversación con Clyde para experimentarlo."
-    },
-    "faq": {
-      "title": "Preguntas frecuentes sobre Voice Agent",
-      "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad Voice Agent?",
-          "answer": "El Voice Agent está en desarrollo. El plan: Clyde atiende llamadas con una voz de IA, reserva citas, responde preguntas desde la base de conocimiento, convierte cada llamada en una transcripción y pasa la llamada a una persona cuando la conversación se complica o quien llama lo pide."
-        },
-        "q2": {
-          "question": "¿Qué tecnología usa el Voice Agent?",
-          "answer": "La voz es de ElevenLabs. Cómo se conectan los números de teléfono lo decidiremos antes de que el Voice Agent esté disponible."
-        },
-        "q3": {
-          "question": "¿En qué tiers está disponible Voice Agent?",
-          "answer": "Cuando el Voice Agent esté disponible: Growth 30 minutos de llamada al mes, Professional 120, Enterprise sin límite, Founding 60. Un minuto cuesta 5 créditos."
-        },
-        "q4": {
-          "question": "¿Cuándo estará disponible el Voice Agent?",
-          "answer": "Todavía no hay fecha. Los miembros Founding tendrán acceso primero; si quieres usarlo, dilo en la llamada."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de Vapi o Bland?",
-          "answer": "Vapi y Bland son plataformas API para desarrolladores. El Voice Agent será una habilidad de Clyde, con la base de conocimiento y la memoria de tu cliente, sin necesidad de un ingeniero de voz propio."
-        }
-      }
-    }
-  },
   "skills-lead-qualifier": {
     "meta": {
       "title": "Del comentario en Instagram al lead, en la voz de marca | Clyde",
       "description": "Alguien comenta con una palabra clave y recibe un DM al instante. Clyde escribe la continuación en la voz de marca de tu cliente y tú la apruebas."
     },
     "hero": {
-      "eyebrow": "Habilidad 03. Lead Qualifier",
+      "eyebrow": "From post to lead",
       "title": "Del comentario en Instagram al lead",
       "subtitle": "Cuando alguien pone una palabra clave bajo un post o en un DM, Clyde envía al instante un DM con el enlace correspondiente. Escribe la continuación en la voz de marca de tu cliente, y tú la apruebas.",
       "cta": "Solicita una llamada",
@@ -2006,26 +1892,33 @@
       "button": "Solicita una llamada"
     },
     "proof": {
-      "title": "Demo en vivo",
-      "subtitle": "Prueba abajo cómo Clyde mantiene una conversación con la voz de una marca."
+      "title": "The rule behind a keyword",
+      "subtitle": "This is how a rule of its own on a comment under a post looks in the app, with what it did over the last 30 days.",
+      "shot": {
+        "bar": "DM automation",
+        "scrollLabel": "The RUST rule, scrollable",
+        "alt": "DM automation for Dagspa Luwte, in Dutch: the rule RUST, a rule of its own on a comment under a post, switched on. Last 30 days: keyword 93, DM 80.",
+        "caption": "The RUST rule under a post from Dagspa Luwte."
+      },
+      "demo": "Example agency and example brands from the demo environment of the app."
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Lead Qualifier",
+      "title": "Questions about from post to lead",
       "items": {
         "q1": {
-          "question": "¿Qué hace exactamente la habilidad Lead Qualifier?",
+          "question": "What exactly does this do?",
           "answer": "Clyde responde al instante a los comentarios y DMs de Instagram con una palabra clave, con un DM y el enlace correspondiente. Escribe la continuación en la voz de marca de tu cliente, y los leads que llegan por el enlace aparecen en tu lista de leads."
         },
         "q2": {
-          "question": "¿En qué canales funciona Lead Qualifier?",
+          "question": "Which channels does this work on?",
           "answer": "En Instagram: en comentarios bajo los posts y en DMs. Cada lead llega a la misma lista que tus otros leads."
         },
         "q3": {
-          "question": "¿En qué tiers está disponible Lead Qualifier?",
-          "answer": "Incluido en todos los niveles, con uso razonable del volumen de conversaciones."
+          "question": "Which tiers include this?",
+          "answer": "On every tier, with a monthly limit on the number of DMs. The limit per tier is in the table on the pricing page."
         },
         "q4": {
-          "question": "¿Cómo se pone en marcha Lead Qualifier?",
+          "question": "How does this start?",
           "answer": "Conectas la cuenta de Instagram de tu cliente, defines las palabras clave y los enlaces y revisas la voz de marca en la base de conocimiento. Desde entonces Clyde envía los DMs y te prepara sus respuestas."
         },
         "q5": {
@@ -2514,39 +2407,6 @@
       "sub": "A 30-minute conversation. After it, you know whether Clyde fits your clients.",
       "cta": "Request a call",
       "link": "How the start works"
-    }
-  },
-  "roadmap": {
-    "meta": {
-      "title": "Roadmap. Lo próximo que hará Clyde | FutureMarketingAI",
-      "description": "Las dos habilidades actualmente en desarrollo y testing: Voice Agent y Reel Builder. Los founding members obtienen acceso primero."
-    },
-    "hero": {
-      "eyebrow": "Roadmap",
-      "title": "Lo próximo que hará Clyde.",
-      "subtitle": "Diez habilidades funcionan en vivo en producción. Dos están en la roadmap, en desarrollo y testing activos. Los founding members obtienen acceso primero a medida que entran en vivo."
-    },
-    "skills": {
-      "eyebrow": "En la pipeline",
-      "title": "En desarrollo",
-      "subtitle": "Dos habilidades que estamos construyendo. Sin fechas duras de lanzamiento, pero con un orden claro de valor."
-    },
-    "voiceAgent": {
-      "name": "Voice Agent",
-      "phase": "En testing",
-      "description": "Llamadas de IA entrantes y salientes: reservar citas, atender preguntas, transferir a una persona. La estamos construyendo; todavía no la usa ningún cliente."
-    },
-    "reelBuilder": {
-      "name": "Reel Builder",
-      "phase": "En desarrollo",
-      "description": "Vídeos verticales cortos (9:16) con guion, subtítulos y música, para Instagram Reels, TikTok y YouTube Shorts. Lo estamos construyendo."
-    },
-    "cta": {
-      "eyebrow": "Acceso anticipado",
-      "scarcityEyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "¿Quieres ser el primero?",
-      "subtitle": "Los founding members obtienen acceso anticipado a ambas a medida que entran en vivo, además de voz en lo que construimos a continuación.",
-      "button": "Solicita una llamada"
     }
   },
   "apply": {
@@ -3401,138 +3261,316 @@
       }
     }
   },
-  "skills-research": {
+  "skills-index": {
     "meta": {
-      "title": "Research. Estudio de mercado y competencia | Clyde",
-      "description": "Clyde investiga el mercado, sigue tendencias y analiza a la competencia, con un enlace a la fuente en cada insight. 3 créditos por consulta."
+      "title": "AI tools for marketing agencies: Clyde's skills",
+      "description": "What Clyde does for your agency, per client: strategy, social media, blogs, DMs, reporting, and SEO and GEO. One memory per client, and you approve."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Habilidad 07. Research",
-      "title": "Clyde hace tu estudio de mercado.",
-      "subtitle": "Tendencias en el nicho de cada marca, análisis de competencia e ideas de contenido, con un enlace a la fuente en cada insight para que puedas comprobarlo. En el escaneo semanal de tendencias se descartan los hallazgos con menos de dos fuentes.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Investiga los 5 principales competidores en hidratación",
-        "prompt2": "¿Cuáles son los temas tendencia en skincare este mes?",
-        "prompt3": "Resume los últimos informes del sector cosmético europeo"
+      "eyebrow": "What Clyde makes",
+      "title": "AI tools for your agency, per client in one workspace.",
+      "definition": "Clyde plans, makes, puts work to you and measures, for each client separately and from one memory per client. Below is what he does, in the order of a working week. No post goes live without your approval.",
+      "factsLabel": "In short",
+      "facts": {
+        "workspace": {
+          "label": "Workspace",
+          "value": "One per client, with its own memory"
+        },
+        "approval": {
+          "label": "Approval",
+          "value": "Nothing live without you"
+        },
+        "client": {
+          "label": "Your client",
+          "value": "Follows along in their portal"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Overview",
+        "alt": "Clyde's overview in the app, in Dutch: what is waiting for you at four clients, in the demo environment.",
+        "caption": "What is waiting for you at four clients."
       }
     },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Seguimiento de tendencias por nicho",
-        "body": "Investigaciones programadas por cliente sobre tendencias de mercado, competidores y noticias del nicho de la marca."
-      },
-      "feature2": {
-        "title": "Análisis de competencia",
-        "body": "Quiénes son los grandes actores, qué hacen y qué dice su estrategia de contenido sobre su posicionamiento. Con análisis de brechas para tu marca."
-      },
-      "feature3": {
-        "title": "Ideas de contenido con citas",
-        "body": "Propuestas de contenido aplicables con sus fuentes. Nada de \"la IA se lo inventó\": ves en qué se basa cada propuesta."
-      },
-      "feature4": {
-        "title": "Insights aplicables",
-        "body": "No \"la tendencia es X\" sino \"dada la tendencia X, tu marca Y puede ejecutar la acción Z\". Recomendaciones con contexto."
+    "clyde": {
+      "title": "One colleague instead of separate tools.",
+      "sub": "You work with Clyde: in your dashboard, in the web app on your phone and on WhatsApp. What follows, he does per client, with that client's brand voice, goals and memory.",
+      "links": {
+        "clyde": "Working with Clyde",
+        "memory": "Memory per client"
       }
     },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Definir nicho y competidores",
-        "body": "Por marca: qué nicho, cuáles son los 3 a 5 competidores principales y qué palabras clave y temas seguimos."
+    "plan": {
+      "title": "Plan: strategy and research.",
+      "sub": "Per client the goals, the audience and a calendar for the year. Clyde places signals from research next to that strategy, with the source, and proposes what to do with them. You decide.",
+      "shot": {
+        "bar": "Research · What needs attention now",
+        "scrollLabel": "Two signals, scrollable",
+        "alt": "What needs attention now for Dagspa Luwte, in Dutch: two open signals with urgency 68 and 53, each with a source, a date and buttons to discuss it with Clyde, open the research, mark it as seen or as not relevant.",
+        "caption": "Two open signals for Dagspa Luwte, with source and date."
       },
-      "step2": {
-        "title": "Investigación en segundo plano",
-        "body": "Clyde ejecuta investigaciones programadas por cliente: tendencias, competidores y noticias."
+      "link": "Strategy and research"
+    },
+    "make": {
+      "title": "Make: posts, carousels and blogs.",
+      "sub": "Clyde writes posts, carousels and blogs per client, in that client's brand voice. Everything reaches you as a draft, with the checks included: caption, platform and language.",
+      "shot": {
+        "bar": "Review · Carousel",
+        "scrollLabel": "The review of a carousel, scrollable",
+        "alt": "The review of a carousel in the app, in Dutch: Which treatment suits you?, with caption, platform check and language check, in the demo environment.",
+        "caption": "The review of a carousel for Dagspa Luwte."
       },
-      "step3": {
-        "title": "Pregunta lo que quieras saber",
-        "body": "Pide en lenguaje natural: \"¿Qué hacen los competidores sobre el tema X?\". Clyde entrega una respuesta estructurada con fuentes."
+      "links": {
+        "social": "Social media",
+        "blog": "Blogs",
+        "ads": "Ads"
       }
     },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "Blog Factory: los datos de investigación alimentan la elección de temas de blog.",
-      "integration2": "Social Media: los insights de tendencias se convierten en propuestas de contenido.",
-      "integration3": "Estrategia: la investigación respalda los objetivos y planes por cliente."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "Estrategas de contenido sin tiempo para investigar a fondo",
-        "body": "Se acabaron las 3 horas buscando en Google por calendario. Clyde entrega el contexto; tú tomas las decisiones estratégicas."
+    "approve": {
+      "title": "Approve and publish.",
+      "sub": "Every day Clyde puts the posts that are ready to you. You approve, edit or reject, and your client approves along in their own portal. Only then does Clyde schedule them, on that client's channels.",
+      "shot": {
+        "bar": "Calendar",
+        "alt": "The calendar in the app, in Dutch: Wednesday 11 to Friday 13 November, with posts for five clients.",
+        "caption": "Three days in the calendar, with posts for five clients."
       },
-      "useCase2": {
-        "title": "Ponerse al día rápido en un nicho nuevo",
-        "body": "¿Cliente nuevo en un sector que no conoces? Clyde prepara un primer briefing del nicho con fuentes."
+      "links": {
+        "portal": "Your client follows along",
+        "regie": "Nothing goes live without you"
       }
     },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
+    "leads": {
+      "title": "From post to lead.",
+      "sub": "When someone replies with a keyword under a post or in a DM, Clyde sends a DM right away with the link that goes with it. He writes the follow-up in your client's brand voice, and you approve it.",
+      "shot": {
+        "bar": "DM automation",
+        "scrollLabel": "The RUST rule, scrollable",
+        "alt": "DM automation for Dagspa Luwte, in Dutch: the rule RUST, a rule of its own on a comment under a post, switched on. Last 30 days: keyword 93, DM 80.",
+        "caption": "The RUST rule under a post from Dagspa Luwte."
+      },
+      "link": "From post to lead"
     },
-    "cta": {
-      "title": "¿Listo para ceder la investigación a Clyde?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
+    "measure": {
+      "title": "Measure: reporting, SEO and GEO.",
+      "sub": "Per client a weekly and a monthly report from the real figures, which your client reads in their portal. Clyde also follows the positions in Google and how often ChatGPT, Perplexity and Google AI Overviews mention your client.",
+      "shot": {
+        "bar": "Goals · Bookings",
+        "scrollLabel": "Bookings per week, scrollable",
+        "alt": "Dagspa Luwte's bookings per week against the goal of 80 per four weeks, in Dutch, in the demo environment.",
+        "caption": "Dagspa Luwte's bookings per week, against the goal."
+      },
+      "links": {
+        "reporting": "Reporting",
+        "seo": "SEO and GEO"
+      }
+    },
+    "mail": {
+      "title": "Also: the mailbox.",
+      "sub": "Clyde reads incoming mail in Gmail or Outlook, puts every email in a category you choose and writes draft replies per brand.",
+      "link": "Email"
+    },
+    "tools": {
+      "title": "Separate AI tools or one AI colleague.",
+      "sub": "What changes when you work for several clients.",
+      "tableLabel": "Separate AI tools next to Clyde",
+      "cols": {
+        "what": "What",
+        "tools": "Separate AI tools",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "memory": {
+          "what": "Memory per client",
+          "tools": "Per tool and per conversation; you supply the brand voice again every time",
+          "clyde": "One memory per client, which Clyde keeps up to date"
+        },
+        "approval": {
+          "what": "Approval",
+          "tools": "Outside the tool, in email or chat",
+          "clyde": "In the app, per post; nothing live without you"
+        },
+        "client": {
+          "what": "Your client",
+          "tools": "Gets files or screenshots",
+          "clyde": "Follows along and approves in their own portal"
+        },
+        "reporting": {
+          "what": "Reporting",
+          "tools": "A separate overview per tool",
+          "clyde": "Weekly and monthly report per client"
+        },
+        "count": {
+          "what": "Number of tools",
+          "tools": "One for text, one for planning, one for figures",
+          "clyde": "One workspace"
+        },
+        "price": {
+          "what": "Pricing",
+          "tools": "A subscription per tool",
+          "clyde": "One subscription for your agency, per client brand"
+        }
+      },
+      "links": {
+        "alternatives": "Clyde next to the alternatives",
+        "pricing": "Pricing"
+      }
+    },
+    "soon": {
+      "title": "Coming soon.",
+      "sub": "This is what we are building now. It does not work yet, and it moves up this page once it does.",
+      "label": "Coming soon",
+      "items": {
+        "voice": {
+          "name": "Voice Agent",
+          "text": "Answering phone calls for your client: answering questions, booking appointments and transferring to a person when the conversation calls for it."
+        },
+        "reel": {
+          "name": "Reel Builder",
+          "text": "Short vertical videos per client, from script to footage and music, in the brand's house style."
+        }
+      }
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Research",
+      "title": "Questions about what Clyde makes.",
+      "sub": "What agencies ask before they choose between separate tools and Clyde.",
       "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad Research?",
-          "answer": "Clyde investiga el mercado, sigue las tendencias de tu nicho, analiza competidores y entrega insights con sus fuentes. Responde preguntas concretas (por ejemplo, 'qué lanzó el competidor X en los últimos 30 días') y ejecuta investigaciones programadas en segundo plano."
+        "need": {
+          "q": "Which AI tools does a marketing agency need?",
+          "a": "For the work per client, something that plans, writes, gets approval, publishes and measures. With separate tools you supply each client's brand voice and figures again and again. Clyde does those steps in one workspace, with one memory per client."
         },
-        "q2": {
-          "question": "¿Qué fuentes utiliza Research?",
-          "answer": "Investigación web con Perplexity, con los enlaces a las fuentes, complementada con Firecrawl para leer webs, PubMed para fuentes científicas y la Meta Ad Library para los anuncios de la competencia. Cada insight muestra la fuente con enlace y título."
+        "colleague": {
+          "q": "What is the difference between separate AI tools and an AI colleague?",
+          "a": "A separate tool does one task and starts every conversation from scratch. Clyde works per client from one memory, puts his work to you and lets your client follow along in their portal."
         },
-        "q3": {
-          "question": "¿En qué tiers está disponible Research?",
-          "answer": "Incluido en todos los tiers, con uso justo en el número de consultas. Una consulta cuesta 3 créditos."
-        },
-        "q4": {
-          "question": "¿Cómo se pone en marcha Research?",
-          "answer": "En el onboarding indicas el nicho, el público y los competidores. Clyde hace entonces las primeras investigaciones sobre público, perfil de cliente y competidores; después las investigaciones programadas funcionan solas."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de Perplexity Pro o Brandwatch?",
-          "answer": "Perplexity Pro responde preguntas aisladas. Brandwatch es social listening empresarial. Clyde vincula la investigación al cliente: los hallazgos se suman al conocimiento de esa marca, y no vuelve a buscar una y otra vez la misma pregunta."
+        "team": {
+          "q": "What does Clyde do himself and what does my team decide?",
+          "a": "Clyde makes drafts, makes proposals and runs fixed tasks the way you set them up. Approving, rejecting and pausing is up to your team. How that works per task is on <link>Working with Clyde</link>."
         }
+      }
+    },
+    "end": {
+      "title": "See what Clyde makes for your clients.",
+      "sub": "A 30-minute call. Afterwards you know which steps Clyde can take for your agency.",
+      "cta": "Request a call",
+      "links": {
+        "how": "How it works",
+        "pricing": "Pricing"
       }
     }
   },
-  "skills-index": {
+  "skills-strategy": {
     "meta": {
-      "title": "Habilidades: las 12 capacidades de Clyde | FutureMarketingAI",
-      "description": "Las 12 habilidades de Clyde: social, blogs, anuncios, voz, leads, email, SEO/GEO y más. 10 en producción, 2 próximamente."
+      "title": "Content strategy per client with AI | Clyde",
+      "description": "Per client the goals, the audience, the platforms and a calendar for the year, with signals from research alongside. Clyde proposes, you decide."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "12 habilidades, una sola mente",
-      "badge": "Founding abierto · máx. {total} plazas",
-      "title": "Las 12 habilidades de Clyde",
-      "subtitle": "Un compañero de IA, doce habilidades, una memoria compartida por cliente. Diez en producción, dos próximamente."
+      "eyebrow": "Strategy and research",
+      "title": "Content strategy per client, with the research alongside.",
+      "definition": "Every client gets a strategy page: what you are going for, for whom, on which platforms and with which goals. The calendar for the year follows from it. Clyde places signals from research next to it, with the source, and proposes what to do with them. You decide.",
+      "factsLabel": "In short",
+      "facts": {
+        "client": {
+          "label": "Per client",
+          "value": "Goals, audience and platforms"
+        },
+        "agenda": {
+          "label": "Calendar",
+          "value": "Windows for the whole year"
+        },
+        "decide": {
+          "label": "Deciding",
+          "value": "Always you"
+        }
+      },
+      "shot": {
+        "bar": "Strategy · Dagspa Luwte",
+        "scrollLabel": "The strategy page, scrollable",
+        "alt": "Dagspa Luwte's strategy page in the app, in Dutch, with tabs for the overview, the strategy, goals, platforms, calendar and decisions. What we are going for: people who book a treatment for the first time.",
+        "caption": "What Dagspa Luwte is going for, at the top of the strategy page."
+      }
     },
-    "status": {
-      "live": "Live"
+    "who": {
+      "title": "What you are going for, and for whom.",
+      "sub": "The strategy page holds, per client, the goal in one sentence, the audience and the customer profile: what those people run into and what the brand promises them. The tabs next to it hold the goals, the platforms, the calendar and the decisions.",
+      "shot": {
+        "bar": "Strategy · For whom",
+        "scrollLabel": "Audience and customer profile, scrollable",
+        "alt": "For whom, in Dutch: a busy woman aged 30 to 55 who wants an hour in which nobody asks anything of her. The customer profile: what they run into and what we promise them.",
+        "caption": "Dagspa Luwte's audience and customer profile."
+      }
     },
-    "clyde": {
-      "title": "Clyde, tu compañero de IA",
-      "description": "Un único punto de contacto para todo el portafolio. Pídelo en lenguaje natural y Clyde elige la habilidad adecuada.",
-      "statusLabel": "Activo",
-      "promptIntro": "Pídele, por ejemplo:",
-      "openLink": "Abre la habilidad Clyde"
+    "agenda": {
+      "title": "The calendar that follows from it.",
+      "sub": "The calendar divides the year into windows, each with a theme of its own. That way you see per month what that client's content is about, and what comes back every year.",
+      "shot": {
+        "bar": "Strategy · Calendar",
+        "scrollLabel": "The calendar, scrollable",
+        "alt": "Dagspa Luwte's calendar, in Dutch: six windows on a timeline from November to January, such as What really happens, In their own words and Warm through the winter.",
+        "caption": "Six windows for Dagspa Luwte on the timeline."
+      },
+      "link": "A week with Clyde"
     },
-    "grid_aria_label": "Lista de habilidades",
-    "cta": {
-      "eyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "Un compañero, todas las habilidades en un solo lugar",
-      "description": "Sin herramientas sueltas, sin ticketing por habilidad. Un espacio por cliente, una llamada de 30 minutos para ver si encaja.",
-      "button": "Solicita una llamada",
-      "secondaryLink": "Ver el recorrido completo de onboarding"
+    "research": {
+      "title": "What Clyde bases his proposal on.",
+      "sub": "Clyde follows trends and competitors in the market per client. What needs attention, he places as a signal in that client's research, with the source, the date and how urgent it is. Open the research to read what lies behind it.",
+      "shot": {
+        "bar": "Research · What needs attention now",
+        "scrollLabel": "Two signals, scrollable",
+        "alt": "What needs attention now for Dagspa Luwte, in Dutch: two open signals with urgency 68 and 53, each with a source, a date and buttons to discuss it with Clyde, open the research, mark it as seen or as not relevant.",
+        "caption": "Two open signals for Dagspa Luwte, with urgency, source and date."
+      }
+    },
+    "decide": {
+      "title": "Clyde proposes, you decide.",
+      "sub": "For every signal you choose what happens with it. Clyde puts a different course to you first, and what has been decided per client is under Decisions on the strategy page.",
+      "cards": {
+        "discuss": {
+          "label": "Discuss with Clyde",
+          "text": "You ask what the signal means for this client, and what he would propose."
+        },
+        "seen": {
+          "label": "Seen",
+          "text": "You have read it. It moves to Handled, with the date added."
+        },
+        "irrelevant": {
+          "label": "Not relevant",
+          "text": "It does not fit this client. That also goes under Handled, and you move it back if you change your mind."
+        }
+      },
+      "link": "Working with Clyde"
+    },
+    "faq": {
+      "title": "Questions about strategy per client.",
+      "sub": "What agencies want to know before Clyde thinks along about a client's course.",
+      "items": {
+        "what": {
+          "q": "What is a content strategy per client?",
+          "a": "A recorded plan per client brand: the goal, the audience, the platforms and the topics, spread over the year. Clyde works from that plan, together with that client's brand voice and memory."
+        },
+        "source": {
+          "q": "Where does Clyde get his research from?",
+          "a": "From sources on the web, among others via Perplexity. Every signal shows the source and the date, so you can check it yourself."
+        },
+        "adjust": {
+          "q": "Does Clyde change the strategy himself?",
+          "a": "No. Clyde proposes what could change and why. You decide, and he always puts a different course to you first."
+        },
+        "client": {
+          "q": "Does my client see the strategy?",
+          "a": "If you switch it on for them, your client has a strategy page in their portal, with the Ask Clyde card. What else they see is on <link>the client portal page</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Start the week with a plan.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "social": "Social media",
+        "seo": "SEO and GEO"
+      }
     }
   },
   "skills-blog-factory": {
@@ -3955,214 +3993,6 @@
       }
     }
   },
-  "skills-manychat": {
-    "meta": {
-      "title": "ManyChat DM. DMs de Instagram con palabras clave | Clyde",
-      "description": "Clyde responde DMs y comentarios de Instagram con palabras clave, añade los leads a tu lista de leads y escribe las respuestas de IA como borradores. 2 créditos por cada 10 DMs."
-    },
-    "hero": {
-      "eyebrow": "Habilidad 11. ManyChat DM",
-      "title": "Clyde atiende los DMs de Instagram.",
-      "subtitle": "Una palabra clave (\"INFO\", \"PRECIO\") en un comentario, DM o respuesta a una story envía en más o menos un minuto la respuesta que tú defines, con el enlace incluido. Para otros mensajes Clyde escribe un borrador, y quien responde entra en tu lista de leads.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Responde automáticamente DMs con la palabra tiempos de entrega",
-        "prompt2": "Envía leads cálidos por DM a la página de ventas",
-        "prompt3": "Configura un trigger de Story para el nuevo lanzamiento"
-      }
-    },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Triggers por palabra clave",
-        "body": "Configura una palabra clave para comentarios, DMs, respuestas a stories o menciones. Quien envía la palabra clave recibe la respuesta que tú defines."
-      },
-      "feature2": {
-        "title": "Borradores en la voz de marca",
-        "body": "Para los mensajes sin palabra clave, Clyde escribe un borrador en la voz de marca. Tú lo lees y lo envías."
-      },
-      "feature3": {
-        "title": "Captura de leads",
-        "body": "Quien responde entra en tu lista de leads, junto a los leads del chatbot de tu web."
-      },
-      "feature4": {
-        "title": "Cada respuesta registrada",
-        "body": "Cada respuesta queda registrada, para que veas qué palabra clave funciona y qué ajustar."
-      }
-    },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Conectar Instagram",
-        "body": "Conectamos la cuenta de Instagram de la marca mediante Instagram Login. ¿Ya trabajas con ManyChat? Entonces esas conversaciones llegan a la misma bandeja."
-      },
-      "step2": {
-        "title": "Palabras clave y respuestas",
-        "body": "Por post o campaña: la palabra clave y la respuesta, con el enlace al que quieres llevar al seguidor."
-      },
-      "step3": {
-        "title": "En vivo y monitorización",
-        "body": "Una respuesta por palabra clave sale en más o menos un minuto. En el panel ves las conversaciones y los borradores que te esperan."
-      }
-    },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "Social Media: los posts disparan DMs a través de call-to-DM.",
-      "integration2": "Lead Qualifier: los leads de los DMs llegan a la misma lista que los leads de tu web.",
-      "integration3": "Orquestador Clyde: el contexto del DM se puede compartir con otras habilidades."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "E-commerce con Instagram como canal",
-        "body": "Reel con \"DM PRECIO para recibir la lista de precios\". Quien envía PRECIO recibe el enlace a la tienda y entra en tu lista de leads."
-      },
-      "useCase2": {
-        "title": "Agencias de servicios con captación en Instagram",
-        "body": "Los posts de LinkedIn llevan a la web y los de Instagram al DM. Clyde escala ambos."
-      }
-    },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "cta": {
-      "title": "¿Listo para ceder los DMs de Instagram a Clyde?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
-    },
-    "faq": {
-      "title": "Preguntas frecuentes sobre ManyChat DM",
-      "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad ManyChat DM?",
-          "answer": "Clyde responde DMs, comentarios y respuestas a stories de Instagram con palabras clave: quien envía, por ejemplo, 'precio' o 'info' recibe en más o menos un minuto la respuesta que definiste, con el enlace incluido. Para otros mensajes Clyde escribe un borrador en la voz de marca que envías tú. Quien responde entra en tu lista de leads."
-        },
-        "q2": {
-          "question": "¿Qué plataformas soporta ManyChat DM?",
-          "answer": "Por ahora Instagram: DMs, comentarios y respuestas a stories, a través de la API oficial de Instagram. Las conversaciones de ManyChat llegan a la misma bandeja. Facebook Messenger y WhatsApp Business como canal de DM para los seguidores de tus clientes aún no están conectados. Clyde ya está en WhatsApp: para ti como agencia y para tu cliente, cada uno con su propia conexión."
-        },
-        "q3": {
-          "question": "¿En qué tiers está disponible ManyChat DM?",
-          "answer": "Growth 200 DMs al mes, Professional 1.000, Enterprise sin límite, Founding 500. Diez DMs cuestan 2 créditos."
-        },
-        "q4": {
-          "question": "¿Cómo se pone en marcha ManyChat DM?",
-          "answer": "Conectamos la cuenta de Instagram de la marca y tú defines las palabras clave y las respuestas. Las respuestas por palabra clave salen directamente; las respuestas de IA siguen siendo borradores que envías tú."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de ManyChat estándar?",
-          "answer": "ManyChat estándar funciona con flow builders en los que tú escribes cada variante. Clyde vincula las respuestas por palabra clave a tu lista de leads y escribe un borrador en la voz de marca para el resto de mensajes. ¿Ya trabajas con ManyChat? Sigue funcionando, y esas conversaciones llegan a la misma bandeja."
-        }
-      }
-    }
-  },
-  "skills-reel-builder": {
-    "meta": {
-      "title": "Reel Builder (próximamente). Vídeos verticales con IA | Clyde",
-      "description": "Próximamente: vídeos verticales cortos (9:16) con guiones de IA, subtítulos y música, con el estilo de la marca. Todavía no disponible."
-    },
-    "hero": {
-      "eyebrow": "Habilidad 12. Reel Builder (próximamente)",
-      "title": "Pronto Clyde hará tus Reels.",
-      "subtitle": "En lo que estamos trabajando: vídeos verticales cortos (9:16) con guiones de IA, subtítulos sincronizados y música de fondo, para Instagram y LinkedIn. Todavía no disponible.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Crea un Reel de 30 segundos sobre la rutina matinal",
-        "prompt2": "Escribe un guion de Reel para el lanzamiento del producto",
-        "prompt3": "Diseña 5 variantes de hook para nuestro Reel destacado"
-      }
-    },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Guiones generados por AI",
-        "body": "Clyde escribirá guiones cortos (de 15 a 60 segundos) a partir del tema, el estilo del gancho y la voz de marca."
-      },
-      "feature2": {
-        "title": "Subtítulos automáticos sincronizados",
-        "body": "Los subtítulos irán sincronizados con el audio, con el estilo de la plataforma."
-      },
-      "feature3": {
-        "title": "Música y timing",
-        "body": "Música de fondo adecuada que cae en el ritmo."
-      },
-      "feature4": {
-        "title": "Biblioteca de plantillas",
-        "body": "Empezarás desde plantillas de talking head, montaje de B-roll y texto en pantalla."
-      }
-    },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Tema y formato",
-        "body": "Indica el tema y elige un formato (educativo, demo de producto, talking head). Clyde escribirá el guion."
-      },
-      "step2": {
-        "title": "Revisar y ajustar",
-        "body": "Edita el guion, elige el estilo de subtítulos y selecciona la música. Todo con vista previa."
-      },
-      "step3": {
-        "title": "Exportar y publicar",
-        "body": "Un MP4 listo para publicar (9:16), para programar desde la habilidad de Social Media."
-      }
-    },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "Social Media: los Reels se publicarán desde la programación.",
-      "integration2": "Ad Manager: los anuncios de video pueden seguir el formato Reel.",
-      "integration3": "Blog Factory: un artículo como base para un Reel."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "Creadores que necesitan Reels con regularidad",
-        "body": "Entre 3 y 5 Reels a la semana, sin videógrafo propio. Producción basada en plantillas."
-      },
-      "useCase2": {
-        "title": "E-commerce con videos de producto",
-        "body": "Un Reel corto por producto para alcance orgánico y anuncios. Clyde escala la producción."
-      }
-    },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "cta": {
-      "title": "¿Te interesa el Reel Builder?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
-    },
-    "faq": {
-      "title": "Preguntas frecuentes sobre Reel Builder",
-      "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad Reel Builder?",
-          "answer": "El Reel Builder está en desarrollo. El plan: Clyde hace vídeos verticales cortos (9:16) con un guion en la voz de marca, subtítulos, música adecuada y la tipografía de la marca."
-        },
-        "q2": {
-          "question": "¿En qué plataformas se publicarán los Reels?",
-          "answer": "Clyde publica hoy en Instagram, TikTok y YouTube, entre otros, y ahí irán también los Reels. La tecnología la decidiremos antes de que el Reel Builder esté disponible. Los vídeos salen en 9:16 (1080x1920), con espacio para los subtítulos."
-        },
-        "q3": {
-          "question": "¿En qué tiers está disponible Reel Builder?",
-          "answer": "Cuando el Reel Builder esté disponible: Growth 4 Reels al mes, Professional 15, Enterprise sin límite, Founding 8. Un Reel cuesta 25 créditos. Los miembros Founding tendrán acceso primero."
-        },
-        "q4": {
-          "question": "¿Cuándo estará disponible el Reel Builder?",
-          "answer": "Todavía no hay fecha. Los miembros Founding tendrán acceso primero; si quieres usarlo, dilo en la llamada."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de CapCut o Opus Clip?",
-          "answer": "CapCut es un editor manual. Opus Clip recorta vídeos largos en Shorts. El Reel Builder hará el Reel desde cero: guion, subtítulos y música, en la voz de marca y con el estilo de la marca."
-        }
-      }
-    }
-  },
   "nav": {
     "login": "Iniciar sesión",
     "apply": "Solicita una llamada"
@@ -4543,7 +4373,7 @@
       "skills": {
         "blogFactory": "Más contenido, mismo equipo",
         "reporting": "Reportes automáticos",
-        "research": "Insights de mercado bajo demanda"
+        "research": "Estrategia e investigación por cliente"
       }
     }
   },

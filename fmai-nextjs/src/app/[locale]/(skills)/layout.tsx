@@ -16,9 +16,9 @@ import { routing } from '@/i18n/routing'
  * Skills-specific client consumers (audited 2026-04-27):
  *   - DemoPlayground / PersonaSelector / DemoContextCard
  *     all call useTranslations('chatbots') and are mounted on
- *     /skills/lead-qualifier (and possibly future skill demos).
+ *     /skills/lead-qualifier until golf 9a took the demo off (2026-11-08).
  *
- * The 12 skills-* namespaces themselves are server-only today (consumed by
+ * The skills-* namespaces themselves are server-only today (consumed by
  * SkillPageTemplate via getTranslations()) but are included here as cheap
  * insurance — adding them to the dynamic skills set costs nothing on
  * non-skill routes (this layout never executes for them) and removes a
@@ -47,7 +47,7 @@ export default async function SkillsLayout({
 }) {
   const { locale } = await params
   // Required for static generation -- without this, getMessages() below
-  // opts the entire (skills) subtree out of SSG and the 12 skill routes
+  // opts the entire (skills) subtree out of SSG and the skill routes
   // become server-rendered on demand. See 13-01-PLAN.md Task 9 deviation
   // (Rule 3 cross-plan fix for 13-02 regression).
   setRequestLocale(locale)

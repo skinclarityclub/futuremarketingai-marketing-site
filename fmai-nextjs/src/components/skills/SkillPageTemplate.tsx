@@ -65,15 +65,11 @@ const SKILL_ARTICLES: Record<string, string[]> = {
   clyde: ['ai-marketing-medewerker', 'ai-agent-vs-ai-tool-marketing', 'ai-marketing-agent-geheugen-en-leren'],
   'seo-geo': ['geo-generative-engine-optimization', 'zichtbaarheid-meten-ai-overviews', 'geo-monitoring-tools-chatgpt-perplexity'],
   'blog-factory': ['geo-generative-engine-optimization', 'geo-vs-seo-waar-investeren-2026', 'ai-marketing-automation-voor-bureaus'],
-  research: ['geo-monitoring-tools-chatgpt-perplexity', 'clyde-vs-jasper-chatgpt-semrush', 'ai-marketing-agent-geheugen-en-leren'],
   reporting: ['meetbare-ai-marketing-resultaten', 'ai-marketing-resultaat-in-de-praktijk', 'ai-efficientie-marketingbureau'],
   'ad-manager': ['meetbare-ai-marketing-resultaten', 'ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush'],
   'social-media': ['ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush', 'ai-marketing-resultaat-in-de-praktijk'],
-  'reel-builder': ['ai-marketing-automation-voor-bureaus', 'ai-efficientie-marketingbureau', 'marketingbureau-schalen-met-ai'],
-  'voice-agent': ['ai-agent-vs-ai-tool-marketing', 'ai-efficientie-marketingbureau', 'marketingbureau-schalen-met-ai'],
   'lead-qualifier': ['ai-agent-vs-ai-tool-marketing', 'meetbare-ai-marketing-resultaten', 'marketingbureau-schalen-met-ai'],
   'email-management': ['ai-efficientie-marketingbureau', 'ai-marketing-automation-voor-bureaus', 'marketingbureau-schalen-met-ai'],
-  manychat: ['ai-agent-vs-ai-tool-marketing', 'ai-marketing-automation-voor-bureaus', 'ai-efficientie-marketingbureau'],
 }
 const FALLBACK_ARTICLE = 'ai-marketing-automation-guide'
 
@@ -87,6 +83,8 @@ interface SkillPageTemplateProps {
   customHero?: ReactNode
   /** Optional proof/demo content injected into the proof section */
   customProof?: ReactNode
+  /** Extra id on the features block, for a 301 that lands on it (golf 9a: manychat to #instagram-dm) */
+  featuresAnchor?: string
   /** Numbers in the right order of how many feature/step keys exist */
   featureCount?: number
   stepCount?: number
@@ -134,6 +132,7 @@ export async function SkillPageTemplate({
   locale,
   customHero,
   customProof,
+  featuresAnchor,
   featureCount = 4,
   stepCount = 3,
   useCaseCount = 2,
@@ -277,7 +276,7 @@ export async function SkillPageTemplate({
 
             <div className="mt-8">
               {isComingSoon ? (
-                <CTAButton href="/roadmap" size="lg">
+                <CTAButton href="/skills#binnenkort" size="lg">
                   {tCommon('viewRoadmap')}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </CTAButton>
@@ -300,7 +299,7 @@ export async function SkillPageTemplate({
           <div className="flex-1 min-w-0">
             {/* Features — 4 cards */}
             <section id="features" className="py-16" aria-labelledby="features-heading">
-              <div className="max-w-6xl mx-auto">
+              <div id={featuresAnchor} className="max-w-6xl mx-auto">
                 <div className="text-center mb-10 space-y-3">
                   <EyebrowLabel>{tTemplate('eyebrows.features')}</EyebrowLabel>
                   <SectionHeading id="features-heading">{t('features.title')}</SectionHeading>

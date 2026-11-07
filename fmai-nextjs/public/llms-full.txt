@@ -1,6 +1,6 @@
 # FutureMarketingAI (FMai)
 
-> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. 12 skills (10 live, 2 coming soon) and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, rate fixed while you remain a client, 10 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Skills for strategy, social media, blogs, ads, Instagram DMs, email, reporting and SEO/GEO, and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, rate fixed while you remain a client, 10 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
 
 ## Company
 
@@ -8,7 +8,7 @@ FutureMarketingAI (FMai) is an AI marketing partnership founded by Daley. The pr
 
 Unlike a self-serve SaaS, FMai has application-gated onboarding and 10 founding spots. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
-The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all 10 of Clyde's live skills are switched on there.
+The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all of Clyde's live skills are switched on there.
 
 Key facts:
 
@@ -42,7 +42,9 @@ From post to lead. When someone comments on Instagram with the keyword you chose
 
 Memory per client. Clyde remembers the conversation, memories from conversations and feedback, and the strategy and research per client. Memories are consolidated daily. Memories about a client belong to that agency and that client.
 
-## The 12 Skills
+## The skills
+
+The hub is https://future-marketing.ai/nl/skills (What Clyde makes). There is no fixed number of skills; what does not work yet is listed there under Coming soon.
 
 ### Social Media Manager (Live)
 
@@ -112,9 +114,9 @@ Planned capabilities:
 
 Credit cost: 5 credits per minute. Status: coming soon.
 
-### Lead Qualifier (Live)
+### From post to lead (Live)
 
-The Lead Qualifier answers Instagram comments and DMs that contain a keyword with a DM and the matching link. Clyde writes the follow-up in the client's brand voice, puts it to the agency for approval and adds leads that come in via the link to the lead list.
+Page: https://future-marketing.ai/nl/skills/lead-qualifier. Clyde answers Instagram comments and DMs that contain a keyword with a DM and the matching link. Clyde writes the follow-up in the client's brand voice, puts it to the agency for approval and adds leads that come in via the link to the lead list.
 
 Capabilities:
 - Keyword to DM, per post or for all DMs
@@ -123,7 +125,7 @@ Capabilities:
 - Handover to a person when Clyde does not know the answer
 - Leads from the DM link in the lead list
 
-Credit cost: 2 credits per scored conversation.
+Credit cost: 2 credits per 10 DMs. Monthly DM limits per tier are in the table on the pricing page.
 
 ### Email Management (Live)
 
@@ -137,19 +139,6 @@ Capabilities:
 - Draft replies, sent after approval
 
 Credit cost: 5 credits per action.
-
-### ManyChat DM (Live)
-
-ManyChat DM answers Instagram DMs, comments and story replies with keyword triggers: whoever sends the keyword gets the reply you set, with a link. For other messages Clyde writes a draft in the brand voice, and everyone who responds lands in your lead list.
-
-Capabilities:
-- Keyword-based DM triggers
-- AI drafts in brand voice
-- Lead capture in your lead list
-- Replies to comments, DMs and story replies
-- Every reply logged
-
-Credit cost: 2 credits per 10 DMs.
 
 ### Reporting & Analytics (Live)
 
@@ -178,16 +167,16 @@ Capabilities:
 
 Credit cost: 5 credits per audit, 3 credits per report.
 
-### Research (Live)
+### Strategy and research (Live)
 
-The Research skill runs scheduled research per client on market trends, competitors and news, and answers targeted questions. Every insight carries its source with a link.
+Page: https://future-marketing.ai/nl/skills/strategy. Every client gets a strategy page: the goal in one sentence, the audience and the customer profile, the platforms, the goals and a calendar that divides the year into windows with a theme of their own. Clyde follows trends and competitors per client and places what needs attention as a signal in that client's research, with the source, the date and how urgent it is (research runs among others via Perplexity). Per signal the agency chooses: discuss it with Clyde, mark it as seen, or mark it as not relevant; both of the latter go under Handled and can be moved back. Clyde proposes a different course first and never changes the strategy himself; decisions per client are kept under Decisions on the strategy page.
 
 Capabilities:
-- Scheduled research runs per client
-- Trend monitoring in your niche
-- Competitor analysis
-- Actionable insights and recommendations
-- Source citations on every insight
+- Goal, audience and customer profile per client
+- A calendar with windows for the whole year
+- Trends and competitors per client
+- Signals from research with source and date
+- Clyde proposes, the agency decides
 
 Credit cost: 3 credits per query.
 
@@ -219,7 +208,7 @@ Two pricing models:
 - Maximum 10 founding spots
 - 10 workspaces included, 299 EUR per extra workspace
 - 8,000 credits per month
-- All 12 skills included (10 live, 2 coming soon)
+- All skills included
 - Direct WhatsApp line with Daley, plus roadmap influence
 - No onboarding fee
 - Monthly cancellable; the rate stays fixed for as long as you remain a client (it never rises)
@@ -229,7 +218,7 @@ Two pricing models:
 
 - 2 to 4 brand workspaces
 - 800 credits per workspace per month (1600 to 3200 total)
-- All 12 skills included
+- All skills included
 - 1,997 EUR one-time onboarding
 - Direct WhatsApp line with Daley
 
@@ -237,7 +226,7 @@ Two pricing models:
 
 - 5 to 14 brand workspaces
 - 800 credits per workspace per month (4000 to 11200 total)
-- All 12 skills included
+- All skills included
 - 3,997 EUR one-time onboarding
 - Direct WhatsApp line with Daley
 
@@ -245,7 +234,7 @@ Two pricing models:
 
 - 15 plus brand workspaces (no upper cap)
 - 800 credits per workspace per month (12000 plus total)
-- All 12 skills included
+- All skills included
 - 5,997 EUR one-time onboarding
 - Direct WhatsApp line with Daley
 
