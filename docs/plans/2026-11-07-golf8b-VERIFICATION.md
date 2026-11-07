@@ -46,10 +46,32 @@ Na e2e: de tijdelijke Playwright-config verwijderd, `git status` schoon op de co
 
 ## Akkoord op de diff
 
-Diffpagina `A/alle-paginas/golf8b-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-07 Golf 8b diff`. Wacht op Daleys ja.
+Diffpagina `A/alle-paginas/golf8b-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-07 Golf 8b diff`. Daley, één AskUserQuestion op 2026-11-07 ~23:45 lokaal, met de vijf punten erin (balk vanaf 1280, Engelse week naar how-it-works, kruimel in de JSON-LD, twee tests, Clyde als knop): **"Ja, push en merge"**.
 
 ## Gezien, niet in 8b
 
 - `/skills` heet nog "Vaardigheden: 12 vaardigheden van Clyde" (title en H1) terwijl menu en kruimel "Wat Clyde maakt" zeggen: golf 9 (de hub).
 - De vaste knop onderaan op de telefoon ("Vraag een gesprek aan · 30 min met Daley") breekt op 390 over twee regels; pagina-element, niet de header.
 - `PAGE_DATES` en de sitemap niet bijgewerkt: alleen de navigatie verandert, niet de hoofdinhoud van een pagina.
+
+## Live
+
+| Stap | Bewijs | Uitkomst |
+|---|---|---|
+| PR | `gh pr create`, #104 | Vercel-preview `dpl_9dmoUZW3QseBCScRopPnS1YM3LVA` Ready, checks groen |
+| Preview | `MSYS_NO_PATHCONV=1 vercel curl <pad> --deployment https://futuremarketingai-1a05e6ihu-future-marketing-ai.vercel.app` | `/nl`, `/en`, `/nl/skills/social-media`: `clyde-menu` in de HTML, nieuwe tagline, "Wat Clyde maakt"/"What Clyde makes", geen "Doe de AI-Scan" of "Clyde Orchestrator" |
+| Merge | `gh pr merge 104 --squash` | squash `1b02db38`, 2026-11-07 16:59:46Z (23:59 lokaal) |
+| Prod-deploy | `vercel inspect future-marketing.ai` | `dpl_2MmxFzUgy6o6BMh8SCpMscs9HcPg`, production, Ready (aangemaakt 3 s na de merge) |
+| curl prod | `words.py` op tien pagina's | 10x 200, header en footer 0 treffers op de verboden woorden; `/nl` heeft `id="clyde-menu"`, de nieuwe tagline en het vinkje zonder `checked` |
+| Kruimel prod | `crumbs.py`, 12 vaardigheden in nl en en | 24x 200, 0 afwijkingen tussen zichtbare kruimel en BreadcrumbList |
+| Sitemap prod | `/sitemap.xml` | 81 URL's, ongewijzigd |
+| PSI `/nl/client-portal` | `m-psi.mjs <url> 3`, 6 verschillende `fetchTime`'s | mobiel 100, 95, 100 (LCP 1,1 / 2,1 / 1,1 s, de H1); desktop 3x 100 (LCP 0,3 tot 0,4 s). JSON `ronde1b/g8/psi8b/nl_client-portal/` |
+| PSI `/nl`, ronde 1 | idem, direct na de deploy | mobiel 91, 99, 92 (LCP = FCP 2,3 / 1,4 / 2,2 s, `p.def`); desktop 90, 100, 99. In run 0 (mobiel en desktop) wachtte de pagina op drie CSS-bestanden van de verse deploy (167 tot 545 ms per stuk, koude edge); mobiel 2 had snelle CSS en toch FCP 2,2 s (spreiding van de gesimuleerde meting). JSON `ronde1b/g8/psi8b/nl/` |
+| PSI `/nl`, ronde 2 | `m-psi.mjs "https://future-marketing.ai/nl?r=2" 3`, ~20 min na de deploy | mobiel 98, 100, 100 (LCP 1,4 s); desktop 96, 99, 95 (TBT 30 tot 170 ms). JSON `ronde1b/g8/psi8b/nl-r2/` |
+
+Geen nulmeting van `/nl` van vóór 8b in deze sessie (de eerdere PSI-mappen g6 tot g8a meten andere pagina's), dus de desktop-TBT op de home (30 tot 230 ms over zes runs) is niet tegen een oude waarde te leggen. 8b haalt code weg uit de header (megamenu, prijsmenu, twaalf iconen), geen nieuwe scripts.
+
+## Nog open
+
+- Golf 9 (plan): Strategie en Binnenkort in de footer en op de hub, de rest van "orchestrator" (home-FAQ q4, integraties, assessment q9, about infra), en de hub `/skills` die nog "Vaardigheden" heet.
+- Deze live-sectie staat op branch `docs/golf8b-live` (vanaf `1b02db38`, niet gepusht) en gaat mee met de volgende website-PR.
