@@ -973,7 +973,7 @@
         "n5": "Carrousel",
         "n6": "Carrousel"
       },
-      "sub": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij allebei maakt Clyde de posts in de stem van het merk, en worden ze in de app goedgekeurd.",
+      "sub": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakte Clyde van mei tot oktober 2026 de posts, bij SalesLobe maakt hij ze nu, telkens in de stem van het merk en goedgekeurd in de app.",
       "text": {
         "n1": "Huidverzorging. Drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem.",
         "n2": "SkinClarity Club is het merk van Sindy, de vriendin van Daley. Daar ontstonden de eerste vaardigheden van Clyde.",
@@ -1349,6 +1349,7 @@
       "apply": "Aanmelden",
       "assessment": "Assessment",
       "roadmap": "Roadmap",
+      "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "skills_index": "Vaardigheden",
       "skill_social_media": "Social Media",
@@ -3452,118 +3453,203 @@
     }
   },
   "case_studies": {
-    "skc": {
+    "posts": {
+      "skc-club-boodschappen": "Carrousel van SkinClarity Club, de club: Een acne-bewuste boodschappenlijst: waar begin je?",
+      "skc-shop-enzympeeling": "Carrousel van SkinClarity Club, de webshop: Enzympeeling of zuur: wanneer kies je wat?",
+      "skc-huid-conservering": "Carrousel van SkinClarity Club, de huidtherapeut: Conserveringsmiddelen zijn niet de vijand in je kastje",
+      "sl-same-leads": "Instagram-carrousel van SalesLobe: Same leads. More revenue.",
+      "sl-three-kinds": "Instagram-carrousel van SalesLobe: Slow replies leak. Wrong ones burn the lead.",
+      "sl-not-right-now": "Instagram-carrousel van SalesLobe: Not right now is not not interested."
+    },
+    "hub": {
       "meta": {
-        "title": "SkinClarity Club: 3 Instagram-accounts, één Clyde | FutureMarketingAI",
-        "description": "Hoe Clyde de socials van SkinClarity Club draait: 3 Instagram-accounts, elk met eigen toon en agenda. Niets gaat live zonder akkoord van het bureau."
+        "title": "Cases: Clyde bij SkinClarity Club en SalesLobe",
+        "description": "Clyde bij twee echte klanten: de drie Instagram-accounts van SkinClarity Club, van mei tot oktober 2026, en SalesLobe op Instagram en LinkedIn."
       },
       "hero": {
-        "eyebrow": "Case study, eerste klant",
-        "title": "3 accounts. Eén klant. Eén collega: Clyde.",
-        "chip1": "3 accounts onboarded",
-        "chip2": "Elk account een eigen toon",
-        "chip3": "10 vaardigheden actief",
-        "subtitle": "SkinClarity Club is onze eerste klant, en wij zijn het bureau. Clyde maakt en plant de content voor 3 Instagram-accounts volgens de agenda, wij keuren goed, en Sindy heeft een eigen dashboard en Clyde op WhatsApp."
-      },
-      "setup": {
-        "title": "De opzet",
-        "subtitle": "SkinClarity Club bestaat uit een club, een webshop en het persoonlijke account van founder Sindy. Drie Instagram-accounts, elk met een eigen doelgroep en huisstijl.",
-        "account1Label": "@SkinClarityClub",
-        "account1Share": "Ongeveer 40% van wat er live ging",
-        "account1Body": "Hoofdaccount. Behandelingen, tips en huidkennis voor consumenten.",
-        "account2Label": "@Sindy_Huidtherapeut",
-        "account2Share": "Ongeveer een derde van wat er live ging",
-        "account2Body": "Het persoonlijke autoriteits-account van founder Sindy. Vertrouwen, expertise, persoonlijke branding.",
-        "account3Label": "@skinclarityshop",
-        "account3Share": "Ongeveer een kwart van wat er live ging",
-        "account3Body": "Product-account voor de webshop. Lanceringen, bundels en productcontent."
-      },
-      "skills": {
-        "title": "Welke vaardigheden actief zijn",
-        "subtitle": "Deze vaardigheden zet Clyde voor SKC in. Voice Agent en Reel Builder komen er binnenkort bij.",
-        "skill1Name": "Social Media Manager",
-        "skill1Body": "Carrousels, posts en stories voor 3 Instagram-accounts, in de toon van elk account.",
-        "skill2Name": "Blog Factory",
-        "skill2Body": "SEO-blogs voor skinclarityclub.nl. Huidthema's, behandelingen en product-deep-dives.",
-        "skill3Name": "SEO / GEO Analyst",
-        "skill3Body": "Technische SEO-audits, posities bijhouden en meten of AI-zoekmachines SKC noemen.",
-        "skill4Name": "Rapportage en Analytics",
-        "skill4Body": "Weekrapport over Instagram, Shopify en SEO-data.",
-        "skill5Name": "Research",
-        "skill5Body": "Trendmonitoring in huidverzorging, concurrentie-analyse en content-ideeën met bronvermelding.",
-        "skill6Name": "Clyde (orchestrator)",
-        "skill6Body": "Clyde, de AI-collega die de andere vaardigheden aan elkaar knoopt, met één geheugen voor de hele klant.",
-        "skill7Name": "Ad Manager",
-        "skill7Body": "Het Meta-advertentieaccount van de webshop is gekoppeld. Clyde maakt de advertenties.",
-        "skill8Name": "Lead Qualifier",
-        "skill8Body": "Staat aan. Er draait voor SKC nog geen chatbot op de site.",
-        "skill9Name": "Email Management",
-        "skill9Body": "Gmail-triage met labels en conceptantwoorden: alleen wat aandacht nodig heeft komt bovendrijven.",
-        "skill10Name": "Reacties en DM's",
-        "skill10Body": "Reacties en DM's op Instagram: een trefwoord start het gesprek, Clyde schrijft het antwoord in de stem van het account."
-      },
-      "architecture": {
-        "title": "Hoe het werkt",
-        "subtitle": "Eén Clyde, één werkruimte voor SKC met drie Instagram-accounts, en één geheugen. Het bureau keurt de content goed voordat hij live gaat.",
-        "body1": "Elk account heeft een eigen toon en een eigen agenda. Wat werkt op @skinclarityclub (educatief, tips) is anders dan op @sindy_huidtherapeut (persoonlijk, autoriteit).",
-        "body2": "Het geheugen zit op het niveau van de klant. Wat Clyde over SkinClarity Club leert, gebruikt hij voor alle drie de accounts."
-      },
-      "timeline": {
-        "title": "Tijdlijn",
-        "week1Label": "Week 1",
-        "week1Body": "Onboarding: toon per account, goedkeuringsflow en doelen.",
-        "month1Label": "Maand 1",
-        "month1Body": "De eerste contentweken, met veel feedback.",
-        "nowLabel": "Nu",
-        "nowBody": "Clyde maakt en plant voor 3 accounts volgens de agenda. Het bureau keurt goed voordat er iets live gaat; Sindy heeft haar eigen dashboard en Clyde op WhatsApp."
-      },
-      "testimonial": {
-        "authorName": "Sindy",
-        "authorRole": "Founder, SkinClarity Club",
-        "photoSrc": "/case-studies/skc/sindy-headshot.jpg",
-        "photoAlt": "Portret van Sindy, founder van SkinClarity Club",
-        "linkedinUrl": "https://www.linkedin.com/in/sindy-kienstra-875522124/",
-        "linkedinLabel": "Bekijk Sindy op LinkedIn",
-        "author": {
-          "name": "Sindy",
-          "role": "Founder en operator, SkinClarity Club",
-          "bio": "Sindy is founder van SkinClarity Club. Clyde maakt en plant voor haar drie Instagram-accounts. Onze eerste klant."
+        "eyebrow": "Cases",
+        "title": "Clyde bij twee echte klanten.",
+        "definition": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakte Clyde van mei tot oktober 2026 de posts voor drie Instagram-accounts; bij SalesLobe maakt hij de Instagram en de LinkedIn van de oprichter. Een post gaat pas live als hij in de app is goedgekeurd.",
+        "factsLabel": "Kort",
+        "facts": {
+          "clients": {
+            "label": "Klanten",
+            "value": "Twee: huidverzorging en B2B"
+          },
+          "channels": {
+            "label": "Kanalen",
+            "value": "Instagram en LinkedIn"
+          },
+          "approval": {
+            "label": "Goedkeuring",
+            "value": "In de app, voordat een post live gaat"
+          }
         }
       },
+      "clients": {
+        "title": "Twee klanten, twee soorten merk.",
+        "sub": "Een huidverzorgingsmerk voor consumenten en een B2B-merk. Een andere doelgroep en een andere toon, met hetzelfde werk eronder: plannen, maken, goedkeuren en live zetten.",
+        "skc": {
+          "postsLabel": "Drie echte posts van SkinClarity Club",
+          "labels": {
+            "club": "De club",
+            "shop": "De webshop",
+            "huid": "De huidtherapeut"
+          },
+          "caption": "Echte posts van SkinClarity Club op Instagram, geplaatst in oktober 2026.",
+          "eyebrow": "Huidverzorging · mei tot oktober 2026",
+          "title": "SkinClarity Club",
+          "text": "Clyde maakte de posts voor drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem.",
+          "link": "Lees de case"
+        },
+        "sl": {
+          "postsLabel": "Drie echte posts van SalesLobe",
+          "label": "Instagram",
+          "caption": "Echte posts van SalesLobe op Instagram, geplaatst in oktober 2026.",
+          "eyebrow": "B2B · sinds oktober 2026",
+          "title": "SalesLobe",
+          "text": "Clyde draait de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. B2B, dus met een andere toon dan huidverzorging."
+        }
+      },
+      "faq": {
+        "title": "Vragen over de cases.",
+        "sub": "Wat bureaus willen weten over deze twee klanten.",
+        "items": {
+          "real": {
+            "q": "Zijn dit echte klanten?",
+            "a": "Ja. SkinClarity Club is het merk van Sindy, de vriendin van Daley; daar ontstonden de eerste vaardigheden van Clyde. Voor SalesLobe gaan sinds 5 oktober 2026 posts live, op de Instagram van het merk en de LinkedIn van de oprichter."
+          },
+          "agency": {
+            "q": "Wie is het bureau bij deze klanten?",
+            "a": "Wij. FutureMarketingAI bouwt Clyde en zet hem zelf in voor deze twee klanten. Zo zie je hoe het werk loopt voordat je het met je eigen klanten doet."
+          },
+          "live": {
+            "q": "Hoe gaat een post live?",
+            "a": "Clyde maakt een concept in de stem van het account. Dat staat in de app tot het is goedgekeurd; aanpassen of overslaan kan ook. Daarna gaat de post op het geplande moment live."
+          },
+          "results": {
+            "q": "Staan er resultaten in de cases?",
+            "a": "Nee. De cases laten zien hoe het werk loopt en wat er live ging, niet wat het opleverde. Cijfers over omzet of leads zijn van de klant."
+          }
+        },
+        "links": {
+          "memory": "Eén geheugen per klant",
+          "start": "Zo verloopt de start"
+        }
+      },
+      "end": {
+        "title": "Wil je dit voor je eigen klanten?",
+        "sub": "Een gesprek van 30 minuten. Daarna weet je of Clyde past bij je bureau.",
+        "cta": "Vraag een gesprek aan",
+        "link": "Waar de data van je klanten staat"
+      }
+    },
+    "skc": {
+      "meta": {
+        "title": "Case SkinClarity Club: 3 Instagram-accounts met Clyde",
+        "description": "Hoe Clyde van mei tot oktober 2026 de Instagram van SkinClarity Club maakte: drie accounts, elk met een eigen stem, en goedkeuren in de app."
+      },
+      "hero": {
+        "eyebrow": "Case · onze eerste klant",
+        "title": "Drie Instagram-accounts, één klant, één Clyde.",
+        "definition": "SkinClarity Club heeft drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem. Van mei tot eind oktober 2026 maakte Clyde de posts voor alle drie, vanuit één geheugen. Een post ging pas live als hij in de app was goedgekeurd.",
+        "factsLabel": "Kort",
+        "facts": {
+          "accounts": {
+            "label": "Accounts",
+            "value": "Drie, op Instagram"
+          },
+          "period": {
+            "label": "Periode",
+            "value": "Mei tot oktober 2026"
+          },
+          "memory": {
+            "label": "Geheugen",
+            "value": "Eén, voor alle drie de accounts"
+          }
+        }
+      },
+      "voices": {
+        "title": "Drie accounts, drie stemmen.",
+        "sub": "De club deelt huidkennis met consumenten. De webshop gaat over producten en wanneer je wat kiest. De huidtherapeut is het persoonlijke account van Sindy, met haar vakkennis. Wat op het ene account werkt, klinkt op het andere niet.",
+        "postsLabel": "Drie echte posts van SkinClarity Club",
+        "labels": {
+          "club": "De club · 27 oktober",
+          "shop": "De webshop · 25 oktober",
+          "huid": "De huidtherapeut · 22 oktober"
+        },
+        "caption": "Echte posts van SkinClarity Club op Instagram, geplaatst in oktober 2026."
+      },
+      "week": {
+        "title": "Een week bij SkinClarity Club.",
+        "sub": "Zo stond de week van 12 oktober in de agenda van de app. Elk account had een vaste tijd: de club om 10:00, de huidtherapeut om 12:30 en de webshop om 18:00. Een vinkje betekent dat de post geplaatst is.",
+        "bar": "Clyde · SkinClarity Club · Kalender",
+        "scrollLabel": "Weekagenda van SkinClarity Club, scrolt zijwaarts",
+        "alt": "De kalender van SkinClarity Club in de app, week van 12 oktober 2026, met de accounts SkinClarity Club, Sindy en SkinClarity Shop. Op donderdag, vrijdag en zondag staan drie geplaatste posts per dag, om 10:00, 12:30 en 18:00, elk met een vinkje.",
+        "caption": "Oktober 2026 · SkinClarity Club om 10:00 · Sindy om 12:30 · SkinClarity Shop om 18:00",
+        "real": "Echt scherm uit de werkruimte van SkinClarity Club, opgenomen op 7 november 2026."
+      },
+      "live": {
+        "title": "Hoe een post live ging.",
+        "sub": "Voor elk van de drie accounts hetzelfde werk, met één geheugen eronder. Niets ging live dat niet eerst in de app stond.",
+        "steps": {
+          "concept": {
+            "title": "Clyde maakte het concept",
+            "text": "In de stem van het account, vanuit wat Clyde over SkinClarity Club had onthouden: de producten, de huidthema's en wat het merk wel en niet zegt."
+          },
+          "approve": {
+            "title": "Goedkeuren in de app",
+            "text": "Elk concept stond in de app tot het was goedgekeurd. Aanpassen of overslaan kon ook."
+          },
+          "live": {
+            "title": "Live op het geplande moment",
+            "text": "Daarna ging de post live op de tijd uit de agenda, en kreeg hij in de kalender een vinkje."
+          },
+          "memory": {
+            "title": "Eén geheugen voor alle drie",
+            "text": "Wat Clyde over SkinClarity Club leerde, gebruikte hij voor alle drie de accounts. De stem verschilde per account, de kennis over het merk niet."
+          }
+        },
+        "links": {
+          "memory": "Hoe het geheugen per klant werkt",
+          "social": "De vaardigheid Social media",
+          "start": "Zo verloopt de start"
+        }
+      },
+      "faq": {
+        "title": "Vragen over deze case.",
+        "sub": "Wat bureaus willen weten over het werk voor SkinClarity Club.",
+        "items": {
+          "who": {
+            "q": "Wie is SkinClarity Club?",
+            "a": "Een Nederlands huidverzorgingsmerk met een club, een webshop en een huidtherapeut. Het is het merk van Sindy, de vriendin van Daley. Daar ontstonden de eerste vaardigheden van Clyde."
+          },
+          "three": {
+            "q": "Waarom drie accounts en niet één?",
+            "a": "Elk account heeft een eigen doelgroep. Op de club lees je huidkennis, bij de webshop producten, en bij de huidtherapeut Sindy zelf. In één account zouden die drie door elkaar lopen."
+          },
+          "notApproved": {
+            "q": "Wat gebeurt er met een concept dat niet is goedgekeurd?",
+            "a": "Dat blijft als concept in de app staan en gaat niet live. Je kunt het aanpassen, overslaan of later goedkeuren."
+          },
+          "numbers": {
+            "q": "Staan er omzet- of bereikcijfers in deze case?",
+            "a": "Nee. Deze case laat zien hoe het werk loopt en wat er live ging, niet wat het opleverde."
+          }
+        },
+        "links": {
+          "all": "Alle cases",
+          "trust": "Waar de data van je klanten staat"
+        }
+      },
+      "end": {
+        "title": "Klaar om dit voor je eigen klanten te doen?",
+        "sub": "Een gesprek van 30 minuten. Daarna weet je of Clyde past bij je klanten.",
+        "cta": "Vraag een gesprek aan",
+        "link": "Alle cases"
+      },
       "client": {
-        "description": "Nederlandse huidverzorging: club, webshop en huidtherapeut, 3 Instagram-accounts."
-      },
-      "cta": {
-        "title": "Wil je dit ook voor jouw portfolio?",
-        "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw bureau en merkenportfolio.",
-        "button": "Vraag een gesprek aan"
-      },
-      "rail": {
-        "title": "De reis",
-        "chapter1": "Uitdaging",
-        "chapter2": "Aanpak",
-        "chapter3": "Nu",
-        "chapter5": "Vervolg"
-      },
-      "chapter1": {
-        "eyebrow": "Hoofdstuk 01, Uitdaging",
-        "title": "Drie accounts, elk met een eigen doelgroep",
-        "intro": "SkinClarity Club heeft drie Instagram-accounts: de club, de webshop en het persoonlijke account van founder Sindy. Elk met een eigen doelgroep, huisstijl en stem, en dus drie keer zoveel denkwerk als één account."
-      },
-      "chapter2": {
-        "eyebrow": "Hoofdstuk 02, Aanpak",
-        "title": "Eén Clyde, één werkruimte, drie accounts",
-        "intro": "Tien vaardigheden van Clyde staan aan voor SkinClarity Club. Eén geheugen voor de hele klant, een eigen toon en agenda per account. Clyde maakt, het bureau keurt goed."
-      },
-      "chapter3": {
-        "eyebrow": "Hoofdstuk 03, Nu",
-        "title": "Wat er nu elke week draait",
-        "intro": "Hoe het werk voor SKC nu loopt."
-      },
-      "chapter5": {
-        "eyebrow": "Hoofdstuk 04, Vervolg",
-        "title": "Wil je dit ook voor jouw portfolio?",
-        "intro": "We bespreken in een eerste gesprek hoe Clyde past bij jouw bureau, welke vaardigheden meteen aanstaan en hoe het Founding traject verloopt."
+        "description": "Nederlands huidverzorgingsmerk met een club, een webshop en een huidtherapeut."
       }
     }
   },

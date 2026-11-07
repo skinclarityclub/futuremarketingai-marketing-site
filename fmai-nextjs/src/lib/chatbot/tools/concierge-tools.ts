@@ -20,11 +20,11 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'SkinClarity Club is onze eerste klant, en FutureMarketingAI is het bureau. Drie Instagram-accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), elk met een eigen publiek, toon en agenda, plus een blog en een webshop.',
     solution:
-      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Alle 10 live vaardigheden staan aan. Clyde maakt en plant de content volgens de agenda, het bureau keurt goed voordat er iets live gaat, en Sindy heeft een eigen dashboard en Clyde op WhatsApp.',
+      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Van mei tot oktober 2026 maakte Clyde de posts in de stem van elk account; een post ging pas live als hij in de app was goedgekeurd, op de tijd uit de agenda.',
     results: [
-      'Posts en carrousels voor 3 accounts, elk in een eigen toon',
-      'SEO-blogs voor skinclarityclub.nl',
-      'Elke week een rapport in het dashboard, elke vrijdag het SEO-rapport op WhatsApp',
+      'Posts voor 3 Instagram-accounts, elk in een eigen stem',
+      'Van mei tot oktober 2026, vanuit één geheugen',
+      'Live pas na goedkeuring in de app',
     ],
     url: 'https://future-marketing.ai/nl/case-studies/skinclarity-club',
   },
@@ -34,11 +34,11 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'SkinClarity Club is our first client, and FutureMarketingAI is the agency. Three Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience, tone and agenda, plus a blog and a webshop.',
     solution:
-      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. All 10 live skills are switched on. Clyde creates and schedules the content from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp.',
+      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. From May to October 2026 Clyde made the posts in the voice of each account; a post went live only after approval in the app, at the time from the calendar.',
     results: [
-      'Posts and carousels for 3 accounts, each in its own tone',
-      'SEO blogs for skinclarityclub.nl',
-      'A weekly report in the dashboard, and the SEO report on WhatsApp every Friday',
+      'Posts for 3 Instagram accounts, each in its own voice',
+      'May to October 2026, from one memory',
+      'Live only after approval in the app',
     ],
     url: 'https://future-marketing.ai/en/case-studies/skinclarity-club',
   },
@@ -48,11 +48,11 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'SkinClarity Club es nuestro primer cliente, y FutureMarketingAI es la agencia. Tres cuentas de Instagram (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), cada una con su propio público, tono y agenda, además de un blog y una tienda online.',
     solution:
-      'Un espacio de trabajo para SkinClarity Club con 3 cuentas de Instagram y una memoria para todo el cliente. Las 10 habilidades activas están encendidas. Clyde crea y programa el contenido según la agenda, la agencia aprueba antes de que algo se publique, y Sindy tiene su propio panel y Clyde en WhatsApp.',
+      'Un espacio de trabajo para SkinClarity Club con 3 cuentas de Instagram y una memoria para todo el cliente. De mayo a octubre de 2026 Clyde hizo los posts con la voz de cada cuenta; un post solo se publicaba tras aprobarse en la app, a la hora de la agenda.',
     results: [
-      'Posts y carruseles para 3 cuentas, cada una con su propio tono',
-      'Blogs SEO para skinclarityclub.nl',
-      'Un informe semanal en el panel, y el informe SEO por WhatsApp cada viernes',
+      'Posts para 3 cuentas de Instagram, cada una con su propia voz',
+      'De mayo a octubre de 2026, desde una sola memoria',
+      'Publicado solo tras la aprobación en la app',
     ],
     url: 'https://future-marketing.ai/es/case-studies/skinclarity-club',
   },

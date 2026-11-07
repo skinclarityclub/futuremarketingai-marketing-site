@@ -153,7 +153,7 @@ export async function Footer({ locale }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/case-studies/skinclarity-club"
+                    href="/case-studies"
                     className="text-sm text-text-muted hover:text-text-primary transition-colors"
                   >
                     {t('landing.footer.nav.caseStudies')}

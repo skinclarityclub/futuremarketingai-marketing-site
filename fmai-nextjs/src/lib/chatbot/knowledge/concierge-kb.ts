@@ -146,23 +146,15 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
  key: 'case_studies',
  content: `## Case Study: SkinClarity Club
 
-**Client:** SkinClarity Club, our first client, and FutureMarketingAI is the agency. Skincare: a club, a webshop and the personal account of founder Sindy, so 3 Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience, tone and agenda.
+**Client:** SkinClarity Club, our first client, and FutureMarketingAI is the agency. A Dutch skincare brand: a club, a webshop and the personal account of skin therapist Sindy, so 3 Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience and voice.
 
-**Setup:** one workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. All 10 live skills are switched on.
+**Period:** from May to October 2026 Clyde made the posts for the three accounts. Speak about this case in the past tense; do not say it runs every week.
 
-**What runs:**
-- Social Media Manager: posts and carousels for the 3 accounts, each in its own tone, created and scheduled from the agenda
-- Blog Factory: SEO blogs for skinclarityclub.nl
-- SEO / GEO Analyst: technical SEO, positions and AI citations
-- Reporting and Analytics: a weekly report on Instagram, Shopify and SEO data, plus the SEO report on Friday
-- Research: skincare trends and competitor analysis
-- Email Management: inbox triage with labels and draft replies
-- Ad Manager: ads for the webshop, on its connected Meta ad account
-- Comments and DMs: Instagram comments and DMs; a keyword starts the conversation and Clyde writes the reply in the account's voice
+**How it went:** one workspace with one memory for the whole client. Clyde made each draft in the voice of the account; the draft stayed in the app until it was approved, and then went live at the time from the calendar (the club at 10:00, Sindy at 12:30, the webshop at 18:00). Do not name who approved.
 
-**How it works:** the agency approves the content before it goes live. Sindy has her own dashboard and Clyde on WhatsApp. Clyde takes work off the team; people stay in charge.
+**Second client:** SalesLobe (B2B): Clyde makes the brand's Instagram and the LinkedIn of the founder. Both are on https://future-marketing.ai/nl/case-studies.
 
-No measured result figures are published for this case yet; do not quote numbers.`,
+No result figures are published for these cases; do not quote numbers, revenue or reach.`,
  keywords: [
  'case study',
  'example',

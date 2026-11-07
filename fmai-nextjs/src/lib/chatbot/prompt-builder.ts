@@ -24,7 +24,7 @@ const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/pricing': 'User is on the Pricing page. Walk through the tiers and help pick one by the number of client brands.',
   '/apply': 'User is on the Apply page. Answer questions about the partnership process.',
   '/case-studies/skinclarity-club':
-    'User is on the SkinClarity Club case study, our first client. Explain how Clyde creates and schedules for 3 Instagram accounts and the agency approves before anything goes live. No result figures.',
+    'User is on the SkinClarity Club case study, our first client. Explain, in the past tense, how Clyde made the posts for 3 Instagram accounts from May to October 2026 and a post went live only after approval in the app. No result figures.',
   '/skills/social-media':
     'User is on the Social Media skill page. Offer to create a content calendar.',
   '/skills/blog-factory':

@@ -7,7 +7,7 @@
  * - Future blog post authors (each gets their own Person @id)
  *
  * Design:
- * - Stable @id parameter required — caller passes DALEY_PERSON_ID, SINDY_PERSON_ID,
+ * - Stable @id parameter required — caller passes DALEY_PERSON_ID
  *   or a custom URL fragment so the Person becomes a graph-linkable entity that
  *   Article/Organization schemas can reference via {@id}.
  * - sameAs array filters null/undefined entries — same null-default pattern as

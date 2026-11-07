@@ -19,7 +19,6 @@ export const ENTITY_DESCRIPTION =
 export const ORG_ID = `${SITE_URL}/#org`
 export const WEBSITE_ID = `${SITE_URL}/#website`
 export const DALEY_PERSON_ID = `${SITE_URL}/about/#daley`
-export const SINDY_PERSON_ID = `${SITE_URL}/case-studies/skinclarity-club/#sindy`
 
 export const pageWebPageId = (locale: string, path: string) =>
   `${SITE_URL}/${locale}${path === '/' ? '' : path}#webpage`
@@ -40,7 +39,6 @@ export const TWITTER_URL: string | null = null
 
 // Personal profiles — confirm slugs in DECISIONS doc before commit.
 export const LINKEDIN_DALEY_URL = 'https://www.linkedin.com/in/daley-van-diest' // confirmed 2026-06-16
-export const LINKEDIN_SINDY_URL = 'https://www.linkedin.com/in/sindy-kienstra-875522124/'
 
 // Per DECISIONS Q2: KvK = added once Daley confirms registration via kvk.nl/zoeken. null until then.
 export const KVK_URL: string | null = null
@@ -86,7 +84,9 @@ export const PAGE_DATES: Record<string, string> = {
   '/': '2026-11-06',
   '/memory': '2026-11-07',
   '/apply': '2026-11-06',
-  '/case-studies/skinclarity-club': '2026-11-05',
+  // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
+  '/case-studies': '2026-11-07',
+  '/case-studies/skinclarity-club': '2026-11-07',
   '/skills/social-media': '2026-11-05',
   '/skills/blog-factory': '2026-11-05',
   '/skills/ad-manager': '2026-11-05',
