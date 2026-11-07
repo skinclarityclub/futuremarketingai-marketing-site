@@ -39,9 +39,10 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/trust': { labelKey: 'trust', parent: '/' },
 
   // Case studies
+  '/case-studies': { labelKey: 'case_studies', parent: '/' },
   '/case-studies/skinclarity-club': {
     labelKey: 'case_studies_skc',
-    parent: '/',
+    parent: '/case-studies',
   },
 
   // Skills index + 12 skills

@@ -99,7 +99,7 @@ const NAV_ITEMS = [
   {
     key: 'caseStudies',
     kind: 'link',
-    href: '/case-studies/skinclarity-club',
+    href: '/case-studies',
     matchPaths: ['/case-studies'],
   },
   {

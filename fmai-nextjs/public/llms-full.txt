@@ -255,25 +255,18 @@ Two pricing models:
 
 ## Case Study: SkinClarity Club
 
-Client: SkinClarity Club, our first client, and FutureMarketingAI is the agency. Skincare: a club, a webshop and the personal account of founder Sindy.
+Client: SkinClarity Club, our first client, and FutureMarketingAI is the agency. A Dutch skincare brand with a club, a webshop and the personal account of skin therapist Sindy.
 
-Setup: one workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. Each account has its own audience, tone and agenda.
-- @skinclarityclub: main account, treatments, tips and skin knowledge for consumers.
-- @sindy_huidtherapeut: the personal authority account of founder Sindy: trust, expertise, personal branding.
-- @skinclarityshop: product account for the webshop: launches, bundles and product content.
+Period: from May to October 2026 Clyde made the posts for the three Instagram accounts. The case is written in the past tense until SkinClarity Club posts go live again.
 
-What runs: all 10 live skills are switched on.
-- Social Media Manager: posts and carousels for the 3 accounts, each in its own tone, created and scheduled from the agenda.
-- Blog Factory: SEO blogs for skinclarityclub.nl.
-- SEO / GEO Analyst: technical SEO, positions and AI citations.
-- Reporting & Analytics: a weekly report on Instagram, Shopify and SEO data, plus the SEO report on Friday.
-- Research: skincare trends and competitor analysis with sources.
-- Email Management: inbox triage with labels and draft replies.
-- Ad Manager: ads for the webshop, on its connected Meta ad account.
-- Comments and DMs: Instagram comments and DMs; a keyword starts the conversation and Clyde writes the reply in the account's voice.
-- Clyde: the AI colleague who ties the other skills together, with one memory for the whole client.
+Setup: one workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. Each account had its own audience, voice and fixed time in the calendar.
+- @skinclarityclub: skin knowledge for consumers, at 10:00.
+- @sindy_huidtherapeut: the personal account of skin therapist Sindy, with her professional knowledge, at 12:30.
+- @skinclarityshop: the webshop, about products and when to choose what, at 18:00.
 
-How it works: Clyde creates and schedules from the agenda, the agency approves before anything goes live, and Sindy has her own dashboard and Clyde on WhatsApp. Clyde takes work off the team; people stay in charge.
+How a post went live: Clyde made the draft in the voice of the account, from what it had learned about the brand. The draft stayed in the app until it was approved; editing or skipping it was possible too. Then the post went live at the time from the calendar. What Clyde learned about SkinClarity Club, it used for all three accounts.
+
+Not in this case: revenue, reach or lead figures, and quotes. The second client, SalesLobe (B2B, Instagram and the founder's LinkedIn), is on the cases page at https://future-marketing.ai/nl/case-studies.
 
 ## Memory per client
 

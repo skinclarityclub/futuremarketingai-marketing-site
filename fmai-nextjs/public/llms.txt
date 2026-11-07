@@ -19,7 +19,8 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Apply](https://future-marketing.ai/nl/apply): Application form for partnership. Name, email, agency and role are required; the rest is optional. Response within 48 hours.
 - [How it works](https://future-marketing.ai/nl/how-it-works): 4-week onboarding, a workspace per client, approvals and control per task, a correction loop in the first month.
 - [About](https://future-marketing.ai/nl/about): Founder Daley. Why partnership over SaaS.
-- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Our first client, with FutureMarketingAI as the agency. 3 Instagram accounts, each in its own tone, all 10 live skills switched on, the agency approves.
+- [Cases](https://future-marketing.ai/nl/case-studies): Two real clients with FutureMarketingAI as the agency: SkinClarity Club (skincare, 3 Instagram accounts, May to October 2026) and SalesLobe (B2B, the brand's Instagram and the founder's LinkedIn, since October 2026). No revenue, reach or lead figures.
+- [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Our first client, with FutureMarketingAI as the agency. From May to October 2026 Clyde made the posts for 3 Instagram accounts (the club, the webshop and the skin therapist), each in its own voice, from one memory; a post went live only after approval in the app. Shows the real calendar of the week of 12 October 2026.
 - [Contact](https://future-marketing.ai/nl/contact): Simple form. For partnership inquiries use Apply instead.
 
 ## 12 Skills
