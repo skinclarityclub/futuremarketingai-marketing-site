@@ -36,7 +36,7 @@ Control. Per task the agency chooses how independently Clyde works: observe, pro
 
 People. Team members are assigned to clients and see what is ready, what waits for approval and what went live. The agency's client gets their own dashboard where everything is complete and where they approve, their own content library to add photos and video, requests to the agency from that dashboard, and their own Clyde in the dashboard and on WhatsApp.
 
-Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday. Reports and Clyde's proposals are confirmed with one tap in WhatsApp; content is approved in the dashboard or in the web app. Clyde installs as a web app on the home screen of your phone, without an app store, for the agency and for its client.
+Entrances. The dashboard for the complete picture. WhatsApp on the go: ask Clyde how things stand, he reports himself when something deviates or waits for you, and the SEO report arrives every Friday. Content is approved in the dashboard or in the web app. Clyde installs as a web app on the home screen of your phone, without an app store, for the agency and for its client.
 
 From post to lead. When someone comments on Instagram with the keyword you chose, Clyde sends a DM with your text; other DMs get an answer from that brand's knowledge or go to the inbox. The DM contains a tracked link, so every click counts for the right client (bots and link scanners excluded). When the form on the client's site is connected, you see how many requests came in through such a link, and per Instagram account where people drop off.
 
@@ -155,7 +155,7 @@ Credit cost: 5 credits per report.
 
 ### SEO / GEO Analyst (Live)
 
-The SEO/GEO Analyst runs automatic SEO audits, follows your positions via Search Console, monitors Core Web Vitals and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity, Gemini and Google AI Overviews). Fixes in order of priority. The SEO report arrives on WhatsApp every Friday.
+The SEO/GEO Analyst runs automatic SEO audits, follows your positions via Search Console, monitors Core Web Vitals and tracks how often your brand is cited by AI search engines (ChatGPT, Perplexity and Google AI Overviews). Fixes in order of priority. The SEO report arrives on WhatsApp every Friday.
 
 Capabilities:
 - Automatic technical SEO audits
@@ -182,7 +182,7 @@ Credit cost: 3 credits per query.
 
 ### Clyde (Live)
 
-Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language and Clyde routes them to the right skill. Works in the dashboard, in the web app on your home screen and on WhatsApp, with a memory per client of earlier conversations, preferences and context.
+Clyde is your agency's AI colleague. Give instructions in plain language. Works in the dashboard, in the web app on your home screen and on WhatsApp, with a memory per client of earlier conversations, preferences and context.
 
 Capabilities:
 - Plain-language instructions
@@ -411,7 +411,7 @@ Q: Welke platformen ondersteunt Clyde?
 A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de web-app op je beginscherm en op WhatsApp.
 
 Q: Hoe werkt de goedkeuringsflow?
-A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de web-app op je beginscherm. Rapporten en voorstellen van Clyde bevestig je met één tik in WhatsApp, en daar meldt Clyde zich ook wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
+A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de web-app op je beginscherm. In WhatsApp meldt Clyde zich wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
 Q: Wat is het verschil tussen Founding en Growth?
 A: Founding kost 997 EUR per maand, vast zolang je klant blijft, 10 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.

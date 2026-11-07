@@ -22,13 +22,13 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 - Reporting and Analytics (live): a weekly report per brand and a dashboard per client from Instagram, GA4, Search Console, Shopify and Meta Ads, refreshed daily, with an alert on strong deviations.
 - SEO / GEO Analyst (live): weekly crawl, daily positions from Search Console, Core Web Vitals, and AI citation monitoring in ChatGPT, Perplexity and Google AI Overviews. The SEO report arrives on WhatsApp every Friday.
 - Strategy and research (live, page /skills/strategy): a strategy page per client with the goal, the audience, the platforms, the goals and a calendar for the year, plus research signals on trends and competitors with the source and the date (among others via Perplexity). Clyde proposes, the agency decides; the strategy and the calendar do not adjust themselves.
-- Clyde (live): the AI colleague in every screen of the dashboard, in the web app on your home screen and on WhatsApp, who picks the right skill for a request in plain language.
+- Clyde (live): the AI colleague in every screen of the dashboard, in the web app on your home screen and on WhatsApp. You ask in plain language.
 
 Memory: Clyde keeps a memory per client (conversations, feedback, strategy and research), consolidated every night. Memories about a client belong to that agency and that client.
 
 Control: per task the agency chooses what Clyde proposes first and what he may do himself and report. Critical actions such as ad spend are always proposed first.
 
-Entrances: the dashboard, WhatsApp and the web app on your home screen (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard. In that client portal only a manager on the client's team approves; the client's Clyde only reads. Page: https://future-marketing.ai/nl/client-portal.`,
+Entrances: the dashboard, WhatsApp and the web app on your home screen (no App Store app, no push). Content is approved in the dashboard or the app. On WhatsApp Clyde answers questions, reports what deviates and sends the reports. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard. In that client portal only a manager on the client's team approves; the client's Clyde only reads. Page: https://future-marketing.ai/nl/client-portal.`,
  keywords: [
  'services',
  'skills',

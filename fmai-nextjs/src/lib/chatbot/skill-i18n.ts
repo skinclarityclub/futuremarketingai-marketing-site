@@ -138,7 +138,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     'seo-geo': {
       shortDescription: 'SEO audits + keyword tracking + Core Web Vitals + AI citation monitoring.',
       longDescription:
-        'The SEO/GEO Analyst runs automatic SEO audits, follows your positions via Search Console, monitors Core Web Vitals and keeps track of how often your brand is mentioned by AI search engines (ChatGPT, Perplexity, Gemini and Google AI Overviews). Fixes in order of priority.',
+        'The SEO/GEO Analyst runs automatic SEO audits, follows your positions via Search Console, monitors Core Web Vitals and keeps track of how often your brand is mentioned by AI search engines (ChatGPT, Perplexity and Google AI Overviews). Fixes in order of priority.',
       features: [
         'Automatic technical SEO audits',
         'Positions from Search Console',
@@ -164,7 +164,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'The AI colleague who puts the other skills to work.',
       longDescription:
-        'Clyde is the AI colleague who puts the other skills to work. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
+        'Clyde is your agency's AI colleague. Give instructions in natural language. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
       features: [
         'Natural language instructions',
         'Drafts, proposals and fixed tasks per client',
@@ -279,7 +279,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       shortDescription:
         'Auditorías SEO + seguimiento de keywords + Core Web Vitals + monitorización de citas de IA.',
       longDescription:
-        'El SEO/GEO Analyst realiza auditorías SEO automáticas, sigue tus posiciones a través de Search Console, monitoriza los Core Web Vitals y registra con qué frecuencia mencionan tu marca los buscadores de IA (ChatGPT, Perplexity, Gemini y Google AI Overviews). Correcciones por orden de prioridad.',
+        'El SEO/GEO Analyst realiza auditorías SEO automáticas, sigue tus posiciones a través de Search Console, monitoriza los Core Web Vitals y registra con qué frecuencia mencionan tu marca los buscadores de IA (ChatGPT, Perplexity y Google AI Overviews). Correcciones por orden de prioridad.',
       features: [
         'Auditorías SEO técnicas automáticas',
         'Posiciones desde Search Console',
@@ -305,7 +305,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'El compañero de IA que pone a trabajar las demás habilidades.',
       longDescription:
-        'Clyde es el compañero de IA que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona en el dashboard, en la app de tu móvil y en WhatsApp. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
+        'Clyde es el compañero de IA de tu agencia. Da instrucciones en lenguaje natural. Funciona en el dashboard, en la app de tu móvil y en WhatsApp. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
       features: [
         'Instrucciones en lenguaje natural',
         'Borradores, propuestas y tareas fijas por cliente',

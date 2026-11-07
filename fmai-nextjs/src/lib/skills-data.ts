@@ -268,7 +268,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/seo-geo',
     shortDescription: 'SEO audits + keyword tracking + Core Web Vitals + AI citation monitoring.',
     longDescription:
-      'De SEO/GEO Analyst voert automatische SEO-audits uit, volgt je posities via Search Console, monitort Core Web Vitals en houdt bij hoe vaak je merk genoemd wordt door AI-zoekmachines (ChatGPT, Perplexity, Gemini en Google AI Overviews). Fixes op volgorde van prioriteit.',
+      'De SEO/GEO Analyst voert automatische SEO-audits uit, volgt je posities via Search Console, monitort Core Web Vitals en houdt bij hoe vaak je merk genoemd wordt door AI-zoekmachines (ChatGPT, Perplexity en Google AI Overviews). Fixes op volgorde van prioriteit.',
     features: [
       'Automatische technische SEO audits',
       'Posities uit Search Console',
@@ -310,7 +310,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     route: '/skills/clyde',
     shortDescription: 'De AI-collega die de andere vaardigheden inzet.',
     longDescription:
-      'Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal en Clyde kiest de juiste vaardigheid. Werkt in het dashboard, in de web-app op je beginscherm en op WhatsApp. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
+      'Clyde is de AI-collega van je bureau. Geef opdrachten in gewone taal. Werkt in het dashboard, in de web-app op je beginscherm en op WhatsApp. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
     features: [
       'Natural language opdrachten',
       'Concepten, voorstellen en vaste taken per klant',

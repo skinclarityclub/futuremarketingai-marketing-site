@@ -132,7 +132,7 @@
       },
       "clyde": {
         "title": "Clyde, je AI-collega",
-        "description": "Eén aanspreekpunt voor je hele portfolio, in elk scherm van je dashboard en op WhatsApp. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
+        "description": "Eén aanspreekpunt voor je hele portfolio, in elk scherm van je dashboard en op WhatsApp. Je vraagt het in gewone taal.",
         "statusLabel": "Actief",
         "promptIntro": "Vraag bijvoorbeeld:",
         "prompt1": "Plan Instagram-content voor alle SKC-accounts deze week",
@@ -1164,7 +1164,7 @@
         },
         "s2": {
           "t": "WhatsApp",
-          "d": "Vraag Clyde onderweg hoe het ervoor staat. Hij meldt zich zelf als er iets afwijkt of op je wacht, en elke vrijdag komt het SEO-rapport binnen. Rapporten en voorstellen van Clyde bevestig je met één tik; content keur je goed in de app."
+          "d": "Vraag Clyde onderweg hoe het ervoor staat. Hij meldt zich zelf als er iets afwijkt of op je wacht, en elke vrijdag komt het SEO-rapport binnen. Content keur je goed in de app of het dashboard."
         },
         "s3": {
           "t": "Op je telefoon",
@@ -1340,7 +1340,7 @@
       "skill_ad_manager": "Ad Manager",
       "skill_email_management": "Email Management",
       "skill_reporting": "Rapportage",
-      "skill_seo_geo": "SEO / GEO",
+      "skill_seo_geo": "SEO en GEO",
       "skill_clyde": "Werken met Clyde",
       "blog": "Blog",
       "resources": "Kennisbank",
@@ -2132,7 +2132,7 @@
   "contact": {
     "meta": {
       "title": "Contact | FutureMarketingAI",
-      "description": "Neem contact op met Future Marketing AI over Clyde, de AI-collega van je bureau. Vragen over partnerships of de skills? We reageren binnen 1 tot 2 werkdagen."
+      "description": "Neem contact op over Clyde, de AI-collega van je bureau. Een vraag over een partnership of een vaardigheid? We reageren binnen 1 tot 2 werkdagen."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -2735,7 +2735,7 @@
       "description": "Statische en video-ads voor Meta maken, klaarzetten ter goedkeuring en per ad volgen op conversies, ROAS en ad-fatigue. 10 credits statisch, 20 video."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 05. Ad Manager",
+      "eyebrow": "Ad Manager",
       "title": "Clyde maakt je Meta-ads en volgt ze.",
       "subtitle": "Statische ads en video-ads: copy, visuals en meerdere formaten (Feed, Stories, Reels), klaargezet voor Meta Ads Manager. Live gaat een advertentie pas na jouw akkoord. Daarna volgt Clyde elke advertentie op conversies, ROAS en ad-fatigue, in klare taal.",
       "cta": "Vraag een gesprek aan",
@@ -2816,7 +2816,7 @@
         },
         "q2": {
           "question": "Welke platforms ondersteunt Ad Manager?",
-          "answer": "Meta Ads (Instagram en Facebook): Feed, Stories en Reels, plus per-advertentie prestaties via de Meta-Marketing-API. TikTok-, LinkedIn- en Google-Ads staan op de productroadmap. Klanten met budget op die kanalen kunnen voor nu handmatig exporteren via PNG en MP4."
+          "answer": "Meta Ads (Instagram en Facebook): Feed, Stories en Reels, plus per-advertentie prestaties via de Meta-Marketing-API. TikTok-, LinkedIn- en Google-Ads doet Clyde niet. Heeft een klant budget op die kanalen, dan exporteer je de advertenties als PNG of MP4 en zet je ze daar zelf neer."
         },
         "q3": {
           "question": "Op welke tiers is Ad Manager beschikbaar?",
@@ -2835,110 +2835,106 @@
   },
   "skills-reporting": {
     "meta": {
-      "title": "Rapportage. Dashboards, digests en anomalie-detectie | Clyde",
-      "description": "Clyde schrijft elke week een rapport per merk, houdt een dashboard per klant bij en meldt het je als een cijfer sterk afwijkt. 5 credits per rapport."
+      "title": "Automatische marketingrapportage voor bureaus | Clyde",
+      "description": "Clyde maakt per klant een weekrapport en een maandrapport uit de echte cijfers, met uitleg in gewone taal. Je klant leest het in zijn portaal."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 06. Rapportage en Analytics",
-      "title": "Clyde rapporteert elke week.",
-      "subtitle": "Een weekrapport per merk in je dashboard, elke vrijdag het SEO-rapport op WhatsApp, en een seintje van Clyde zodra een cijfer sterk afwijkt. Geen handmatige Notion-updates meer.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Genereer de wekelijkse performance-digest voor alle merken",
-        "prompt2": "Welke metrics wijken deze week meer dan 20% af?",
-        "prompt3": "Vergelijk de Q4-cijfers van SkinClarity met Q3"
+      "eyebrow": "Rapportage",
+      "title": "Automatische marketingrapportage per klant.",
+      "definition": "Per klant zet Clyde de cijfers die ertoe doen op één plek: het doel van het merk, wat de posts deden en waar bezoekers vandaan kwamen. Elke week een weekrapport en elke maand een evaluatie, met uitleg in gewone taal. Je klant leest hetzelfde in zijn portaal.",
+      "factsLabel": "Kort",
+      "facts": {
+        "client": {
+          "label": "Per klant",
+          "value": "Het doel voorop"
+        },
+        "source": {
+          "label": "Bron",
+          "value": "Bij elk getal"
+        },
+        "portal": {
+          "label": "Portaal",
+          "value": "Je klant leest mee"
+        }
+      },
+      "shot": {
+        "bar": "Resultaten · Dagspa Luwte",
+        "scrollLabel": "De resultaten van een klant, scrollbaar",
+        "alt": "De resultaten van Dagspa Luwte over week 41 tot en met 44: 86 boekingen tegen een doel van 80 per vier weken, per week in een staafdiagram, met als bron handmatig ingevoerd. Rechts Clyde met vragen als Welke post deed het het best?",
+        "caption": "Het doel van Dagspa Luwte voorop, met de bron en de datum erbij."
       }
     },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Wekelijkse prestatie-digest",
-        "body": "Elke week per merk in je dashboard: top-KPI's, trends, anomalieën en aanbevolen acties. Clyde schrijft de verhaallijn. Het SEO-rapport komt elke vrijdag ook op WhatsApp."
-      },
-      "feature2": {
-        "title": "Dashboard per klant",
-        "body": "Over de gekoppelde kanalen: Instagram, websiteverkeer uit GA4 en Search Console, verkoop uit Shopify en advertenties uit Meta. Dagelijks ververst, te filteren per merk en periode."
-      },
-      "feature3": {
-        "title": "Anomalie-detectie",
-        "body": "Clyde kijkt elke dag naar bereik, betrokkenheid, saves en omzet. Wijkt een cijfer sterk af, dan meldt hij het je, ook op WhatsApp als je dat gekoppeld hebt. Geen verrassingen in de maandrapportage."
-      },
-      "feature4": {
-        "title": "Rapportages op maat",
-        "body": "Vraag in gewone taal: \"Rapport voor merk X over Q3 met focus op Instagram versus LinkedIn.\" Clyde bouwt het."
+    "figures": {
+      "title": "Uit de echte cijfers, met de bron erbij.",
+      "sub": "Clyde leest de cijfers uit wat je per klant koppelt: Google Analytics voor de website, de social accounts, en wat je zelf invoert, zoals boekingen. Bij elk getal staat waar het vandaan komt en wanneer het gelezen is. Posts vergelijkt hij op hun zevende dag, zodat een post van gisteren niet achterloopt op een van vorige week.",
+      "shot": {
+        "bar": "Resultaten · Kanalen",
+        "scrollLabel": "Het kanaal Instagram, scrollbaar",
+        "alt": "Het kanaal Instagram van Dagspa Luwte over week 41 tot en met 44: gemiddeld 772 bereik per dag, 185 volgers erbij, 24 posts, 1,1 procent interacties per bereik en 803 kliks op de links, elk met de bron en de datum.",
+        "caption": "Instagram van Dagspa Luwte, vergeleken op bereik en niet op volgers."
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Databronnen koppelen",
-        "body": "Instagram, Google Analytics, Search Console, Shopify en Meta Ads, per merk gekoppeld."
-      },
-      "step2": {
-        "title": "Doelen vastleggen",
-        "body": "Wat is succes voor deze klant? Leg de doelen vast en kies waar het resultaat vandaan komt: Shopify, een GA4-conversie, een eigen koppeling of handmatig."
-      },
-      "step3": {
-        "title": "Vast ritme",
-        "body": "Het weekrapport staat elke zondag klaar, het SEO-rapport komt op vrijdag. Sterke afwijkingen meldt Clyde dezelfde dag."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Alle vaardigheden: social, blog, ads en e-mail voeden de rapportage.",
-      "integration2": "Research: trenddata verrijkt de context in digests.",
-      "integration3": "Clyde: vraag hem wat een cijfer betekent en wat je nu het beste kunt doen."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Bureaus met maandelijkse klant-reviews",
-        "body": "In plaats van een Notion-marathon vlak vóór de klantmeeting: je bent elke week al bij."
-      },
-      "useCase2": {
-        "title": "Operators die datagedreven willen werken",
-        "body": "Welke content werkt, welke campagnes hebben ROI, waar zit de portfoliogroei. Transparant en controleerbaar."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Klaar om rapportages aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
-    },
-    "faq": {
-      "title": "Veelgestelde vragen over Rapportage en Analytics",
-      "items": {
-        "q1": {
-          "question": "Wat doet de Rapportage-vaardigheid precies?",
-          "answer": "Clyde schrijft elke week een rapport per merk met de cijfers en zijn duiding, houdt een dashboard per klant bij over social, web, verkoop en advertenties, en kijkt elke dag naar afwijkingen in bereik, betrokkenheid, saves en omzet. Een sterke afwijking meldt hij je, ook op WhatsApp. Een rapport op maat vraag je in gewone taal."
+    "explain": {
+      "title": "Met uitleg in gewone taal.",
+      "sub": "Bij de cijfers schrijft Clyde wat er gebeurde en wat hij als volgende stap zou zetten. Wil je meer weten, dan vraag je het hem naast de cijfers.",
+      "cards": {
+        "week": {
+          "label": "Weekrapport",
+          "text": "Een terugblik op de week en een vooruitblik op de volgende, per klant."
         },
-        "q2": {
-          "question": "Welke databronnen ondersteunt Rapportage?",
-          "answer": "Instagram, Google Analytics 4, Search Console, Shopify en Meta Ads. De bronnen worden dagelijks ververst en staan in onze database in de EU. Het resultaat per klant komt uit Shopify, een GA4-conversie, een eigen koppeling of handmatige invoer."
+        "month": {
+          "label": "Maandevaluatie",
+          "text": "Eens per maand: wat werkte, wat niet, en de les die je meeneemt naar de volgende maand."
         },
-        "q3": {
-          "question": "Op welke tiers is Rapportage beschikbaar?",
-          "answer": "Inbegrepen op elke tier. Een rapport kost 5 credits. Wat elke tier kost, staat op de prijspagina."
-        },
-        "q4": {
-          "question": "Hoe snel krijg ik het eerste rapport?",
-          "answer": "Zodra een bron gekoppeld is, komt de data dagelijks binnen en staat het weekrapport elke zondag klaar. Het SEO-rapport volgt elke vrijdag zodra Search Console gekoppeld is."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Looker Studio of Whatagraph?",
-          "answer": "Looker Studio bouwt dashboards die jij elke week zelf interpreteert. Whatagraph bundelt de cijfers in een rapport. Clyde schrijft de duiding erbij: wat er veranderde en wat hij voorstelt. En je kunt hem erover doorvragen, in het dashboard of op WhatsApp."
+        "ask": {
+          "label": "Vraag Clyde",
+          "text": "Welke post deed het het best? Welk kanaal groeit? Je stelt de vraag naast de cijfers van die klant."
         }
       }
     },
-    "screenshot": {
-      "alt": "Weekrapport van een demoklant over 4 tot en met 10 oktober: samenvatting, contentprestaties, highlights en aanbevelingen. De cijfers zijn demodata.",
-      "caption": "Het weekrapport van een demoklant, met wat Clyde aanraadt"
+    "portal": {
+      "title": "Je klant leest het in zijn portaal.",
+      "sub": "Onder Rapporten ziet je klant dezelfde cijfers, in zijn eigen woorden: een getal dat jij invoert, heet daar ingevoerd door je bureau. De weekrapporten en de maandevaluaties staan er ook, om terug te lezen.",
+      "shot": {
+        "bar": "Klantportaal · Rapporten",
+        "scrollLabel": "De rapportage in het klantportaal, scrollbaar",
+        "alt": "Rapportage in het klantportaal van Dagspa Luwte: dezelfde 86 boekingen tegen een doel van 80 per vier weken, met als bron ingevoerd door je bureau, en de keuze tussen week, vier weken en dertien weken.",
+        "caption": "Wat Dagspa Luwte zelf ziet onder Rapporten."
+      },
+      "link": "Het klantportaal"
+    },
+    "faq": {
+      "title": "Vragen over rapportage.",
+      "sub": "Wat bureaus willen weten voordat Clyde de rapporten van hun klanten maakt.",
+      "items": {
+        "client": {
+          "q": "Kan mijn klant het rapport zelf lezen?",
+          "a": "Ja. In zijn portaal staat onder Rapporten het overzicht met zijn doel, plus de weekrapporten en de maandevaluaties. Hij leest mee; aanpassen doe jij. Wat hij verder ziet, staat op <link>de pagina over het klantportaal</link>."
+        },
+        "sources": {
+          "q": "Welke bronnen gebruikt Clyde?",
+          "a": "Google Analytics 4 voor de website, de social accounts die je per klant koppelt, zoals Instagram en LinkedIn, en cijfers die je zelf invoert, zoals boekingen of aanvragen. Bij elk getal staat de bron en het moment waarop Clyde het las."
+        },
+        "missing": {
+          "q": "Wat als er een bron ontbreekt?",
+          "a": "Dan staat dat erbij. Een blok zonder koppeling heet niet gekoppeld, en een week die nog loopt, is gemarkeerd als lopend. Clyde vult geen getal in dat hij niet heeft gemeten."
+        },
+        "often": {
+          "q": "Hoe vaak komt er een rapport?",
+          "a": "Elke week een weekrapport en elke maand een maandevaluatie, per klant. De cijfers zelf bekijk je wanneer je wilt, per week, per vier weken of per dertien weken. Het SEO-rapport per klantsite staat op <link>de pagina over SEO en GEO</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Cijfers die je klant zelf kan lezen.",
+      "sub": "Een gesprek van 30 minuten over de klanten die je nu hebt.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "hub": "Wat Clyde maakt",
+        "seo": "SEO en GEO",
+        "social": "Social media"
+      }
     }
   },
   "booking": {
@@ -3104,7 +3100,7 @@
   },
   "apply": {
     "meta": {
-      "title": "Aanmelden. Vraag een gesprek aan bij Daley | FutureMarketingAI",
+      "title": "Vraag een gesprek aan bij Daley | FutureMarketingAI",
       "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Tien founding-plekken."
     },
     "hero": {
@@ -3856,7 +3852,7 @@
       "description": "Clyde classificeert je Gmail- of Outlook-inbox, zet labels, meldt elke ochtend wat binnenkwam en schrijft conceptantwoorden per merk. 5 credits per actie."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 04. Email Management",
+      "eyebrow": "Email Management",
       "title": "Clyde classificeert je inbox.",
       "subtitle": "Clyde ordent je inbox in Gmail of Outlook. Hij leest inkomende mails, zet ze in de categorieën die jij kiest, geeft elke mail een urgentie en schrijft conceptantwoorden. Je begint je dag met overzicht in plaats van chaos.",
       "cta": "Vraag een gesprek aan",
@@ -4373,110 +4369,134 @@
   },
   "skills-seo-geo": {
     "meta": {
-      "title": "SEO / GEO. SEO-audits en monitoring van AI-citaties | Clyde",
-      "description": "Technische SEO-audits, posities bijhouden, Core Web Vitals en monitoring van AI-citaties in ChatGPT en Perplexity. 5 credits audit, 3 credits rapport."
+      "title": "AI-citaties monitoren voor je klanten: SEO en GEO | Clyde",
+      "description": "Per klantsite zie je hoe vaak ChatGPT, Perplexity en Google AI Overviews je klant noemen en welke zoekwoorden klimmen of zakken. Elke vrijdag een rapport."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 09. SEO / GEO Analyst",
-      "title": "Clyde monitort je SEO én AI-citaties.",
-      "subtitle": "Technische SEO-audits, posities bijhouden en Core Web Vitals. Plus GEO: hoe vaak wordt jouw merk geciteerd door ChatGPT, Perplexity en Google AI Overviews? De nieuwe zoeklaag draait op AI. Clyde houdt je daar zichtbaar.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Voer een technische SEO-audit uit op de hoofddomeinen",
-        "prompt2": "Track hoe vaak ons merk wordt geciteerd in ChatGPT en Perplexity",
-        "prompt3": "Welke keywords zijn deze week gezakt in ranking?"
+      "eyebrow": "SEO en GEO",
+      "title": "SEO en GEO voor al je klanten.",
+      "definition": "Per klantsite meet Clyde twee dingen naast elkaar: hoe de site het doet in Google, en of AI-assistenten als ChatGPT, Perplexity en Google AI Overviews je klant noemen als ze een vraag beantwoorden. Wat aandacht vraagt, zet hij bovenaan, met een voorstel. Elke vrijdag ligt er een rapport per site.",
+      "factsLabel": "Kort",
+      "facts": {
+        "site": {
+          "label": "Per site",
+          "value": "Google en AI naast elkaar"
+        },
+        "proposal": {
+          "label": "Voorstel",
+          "value": "Bij elk signaal"
+        },
+        "report": {
+          "label": "Rapport",
+          "value": "Elke vrijdag"
+        }
+      },
+      "shot": {
+        "bar": "SEO / GEO · Dagspa Luwte",
+        "scrollLabel": "Het SEO-dashboard van een klant, scrollbaar",
+        "alt": "Het SEO-dashboard van Dagspa Luwte voor luwte.demo, gezondheid 81 na de laatste crawl. Bovenaan de prioriteiten: paginatitel ontbreekt, geen hoofdkop op de pagina over ons, AI-zoekmachines noemen een concurrent vaker, metabeschrijving ontbreekt. Rechts Vraag Clyde.",
+        "caption": "Wat aandacht vraagt op de site van Dagspa Luwte, bovenaan het dashboard."
       }
     },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Technische SEO-audits",
-        "body": "Wekelijkse crawl: kapotte links, ontbrekende meta-tags, trage pagina's, mobielvriendelijkheid en structured data. Met geprioriteerde fixlijst."
+    "geo": {
+      "title": "Wat is GEO?",
+      "sub": "GEO staat voor generative engine optimization: zorgen dat AI-assistenten je klant noemen en als bron citeren. Clyde stelt elke week per klant dezelfde vragen aan ChatGPT, Perplexity en Google AI Overviews, en houdt bij of het merk in het antwoord staat, en op welke plek als bron.",
+      "shot": {
+        "bar": "SEO / GEO · AI-zichtbaarheid",
+        "scrollLabel": "Waar een klant geciteerd wordt, scrollbaar",
+        "alt": "Waar Dagspa Luwte geciteerd wordt: op plek 3 bij Perplexity voor rugmassage Amsterdam en op plek 4 bij Google AI-overzichten voor dagspa Amsterdam. Daaronder de AI share-of-voice: Dagspa Luwte 2, stadsbad-oost.demo 15 en warmwater-spa.demo 3.",
+        "caption": "Waar AI-assistenten Dagspa Luwte als bron noemen, en hoe vaak een concurrent."
       },
-      "feature2": {
-        "title": "Posities bijhouden",
-        "body": "Dagelijks je Google-posities uit Search Console, met een melding als een zoekwoord zakt. Concurrenten volg je op Core Web Vitals en nieuwe pagina's in hun sitemap."
-      },
-      "feature3": {
-        "title": "Core Web Vitals",
-        "body": "LCP, INP en CLS per pagina. Trend over tijd. Alert bij achteruitgang. Een van de belangrijkste Google-rankingfactoren."
-      },
-      "feature4": {
-        "title": "Monitoring van AI-citaties (GEO)",
-        "body": "Clyde stelt ChatGPT, Perplexity, Gemini en Google AI Overviews elke week vragen uit jouw niche. Wordt je merk genoemd? Hoe vaak? In welke context? Een nieuw soort zichtbaarheid."
+      "link": "Meer over GEO"
+    },
+    "proposal": {
+      "title": "Bij elk signaal een voorstel.",
+      "sub": "Ziet Clyde dat een concurrent vaker genoemd wordt, of dat een zoekwoord net buiten de top 3 blijft, dan zet hij dat als signaal in het dashboard, met wat hij zou doen. Jij markeert het als afgehandeld, wijst het af of maakt er een taak van.",
+      "shot": {
+        "bar": "SEO / GEO · Signalen",
+        "scrollLabel": "Twee signalen met een voorstel, scrollbaar",
+        "alt": "Twee signalen voor Dagspa Luwte. AI-zoekmachines noemen stadsbad-oost.demo vaker, met het voorstel een korte, feitelijke alinea op de hoofdpagina te zetten. Rugmassage Amsterdam staat net buiten de top 3, met het voorstel het zoekwoord in de paginatitel te noemen. Elk met de knoppen Markeer als afgehandeld, Afwijzen en Maak taak.",
+        "caption": "Twee signalen met een voorstel, voor Dagspa Luwte."
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Site en zoekwoorden koppelen",
-        "body": "Clyde crawlt de site en herkent structuur en belangrijke pagina's. Upload een zoekwoordenlijst of laat Clyde er een samenstellen."
-      },
-      "step2": {
-        "title": "GEO-vragen opzetten",
-        "body": "Welke vragen zou een klant uit jouw niche aan ChatGPT stellen? Clyde stelt ze elke week en logt de antwoorden."
-      },
-      "step3": {
-        "title": "Wekelijks overzicht",
-        "body": "Posities, audit-issues, AI-citaties en Core Web Vitals. Alles in één dashboard plus een wekelijkse digest."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Blog Factory: blogartikelen worden bijgehouden op posities.",
-      "integration2": "Research: zoekwoord-data van concurrenten verrijkt de strategie.",
-      "integration3": "Rapportage: SEO- en GEO-KPI's in de wekelijkse digest."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "E-commerce met organisch verkeer als groeimotor",
-        "body": "Technische audits en posities bijhouden zorgen dat blog- en productpagina's blijven presteren."
-      },
-      "useCase2": {
-        "title": "Bureaus die AI-zoeken serieus nemen",
-        "body": "GEO is de nieuwe SEO. Wie nu al zichtbaarheid opbouwt in AI-antwoorden, heeft straks een voorsprong."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Klaar om SEO aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
-    },
-    "faq": {
-      "title": "Veelgestelde vragen over SEO en GEO Analyst",
-      "items": {
-        "q1": {
-          "question": "Wat doet de SEO/GEO-vaardigheid precies?",
-          "answer": "Clyde voert technische SEO-audits uit, volgt je posities in Google via Search Console, monitort Core Web Vitals en houdt bij hoe vaak jouw merk genoemd wordt door AI-zoekmachines (ChatGPT, Perplexity, Gemini en Google AI Overviews). Levert geprioriteerde fix-aanbevelingen per niveau van impact en moeite."
-        },
-        "q2": {
-          "question": "Welke tools en API's worden gebruikt?",
-          "answer": "PageSpeed Insights en Chrome-gebruikersdata (CrUX) voor Core Web Vitals, Google Search Console voor je posities, een eigen crawler die onder meer controleert of structured data aanwezig is, en vragen aan ChatGPT, Perplexity, Gemini en Google AI Overviews voor AI-citaties. Alles komt samen in het wekelijkse rapport."
-        },
-        "q3": {
-          "question": "Op welke tiers is SEO/GEO beschikbaar?",
-          "answer": "Inbegrepen op elke tier. Een audit kost 5 credits, een kort rapport 3. De wekelijkse crawl en het maandrapport draaien voor iedereen."
-        },
-        "q4": {
-          "question": "Hoe start SEO/GEO?",
-          "answer": "Je koppelt Search Console en Google Analytics; Clyde crawlt de site en stelt de eerste AI-vragen. Daarna komen posities dagelijks en AI-citaties wekelijks binnen, met elke vrijdag het SEO-rapport."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Ahrefs of Semrush?",
-          "answer": "Ahrefs en Semrush zijn datatools, jij interpreteert. Clyde combineert SEO én GEO (AI-citaties), interpreteert de data en doet aanbevelingen op urgentie. Voorbeeld: 'je productpagina zakte deze week vier posities en laadt traag op mobiel; begin daar.'"
+    "measure": {
+      "title": "Wat Clyde per klantsite bijhoudt.",
+      "sub": "Alles staat per klant op één dashboard, in tabbladen. Je ziet alleen de sites van die klant.",
+      "table": {
+        "caption": "Per klantsite",
+        "colMeasure": "Meting",
+        "colWhat": "Wat je ziet",
+        "rows": {
+          "health": {
+            "k": "Gezondheid",
+            "v": "Een score van 0 tot 100 na elke crawl, met de open issues per pagina"
+          },
+          "positions": {
+            "k": "Posities in Google",
+            "v": "Per zoekwoord de gemiddelde positie, de klikratio en de trend van zeven dagen"
+          },
+          "visits": {
+            "k": "Bezoek",
+            "v": "Sessies en paginaweergaven uit Google Analytics 4"
+          },
+          "citations": {
+            "k": "AI-citaties",
+            "v": "Per AI-assistent hoe vaak het merk als bron geciteerd en hoe vaak het genoemd wordt"
+          },
+          "quality": {
+            "k": "Websitekwaliteit",
+            "v": "Snelheid en Core Web Vitals, plus de technische punten"
+          },
+          "reports": {
+            "k": "Rapporten",
+            "v": "Elke vrijdag een weekrapport, en aan het begin van de maand een maandrapport"
+          }
         }
       }
     },
-    "screenshot": {
-      "alt": "Het SEO/GEO Command Center met bezoekers, rankings, AI-citaties en Core Web Vitals naast elkaar.",
-      "caption": "Rankings en AI-citaties in één overzicht"
+    "report": {
+      "title": "Elke vrijdag een rapport per site.",
+      "sub": "Elke vrijdag maakt Clyde per klantsite een weekrapport, en aan het begin van de maand een maandrapport. Onder Rapporten zie je welke er klaar zijn en of ze afgeleverd zijn. Met Genereer rapport nu maak je er tussendoor een.",
+      "shot": {
+        "bar": "SEO / GEO · Rapporten",
+        "scrollLabel": "De rapporten van een klantsite, scrollbaar",
+        "alt": "De rapporten van luwte.demo: twee weekrapporten en een maandrapport over oktober, in het Nederlands en afgeleverd, met de knop Genereer rapport nu.",
+        "caption": "De rapporten van Dagspa Luwte."
+      },
+      "link": "Rapportage per klant"
+    },
+    "faq": {
+      "title": "Vragen over SEO en GEO.",
+      "sub": "Wat bureaus willen weten voordat Clyde de sites van hun klanten volgt.",
+      "items": {
+        "engines": {
+          "q": "Welke AI-assistenten meet Clyde?",
+          "a": "ChatGPT, Perplexity en Google AI Overviews. Elke week stelt hij per klant dezelfde vragen, zodat je ziet of het merk vaker of minder vaak genoemd wordt."
+        },
+        "citation": {
+          "q": "Wat is het verschil tussen een citatie en een vermelding?",
+          "a": "Bij een citatie noemt de AI-assistent de site van je klant als bron. Bij een vermelding staat het merk in het antwoord, met of zonder link. Een citatie is het sterkere signaal."
+        },
+        "often": {
+          "q": "Hoe vaak komt het rapport?",
+          "a": "Elke vrijdag een weekrapport per klantsite, en aan het begin van de maand een maandrapport. Tussendoor maak je er een met Genereer rapport nu."
+        },
+        "blogs": {
+          "q": "Werkt dit samen met de blogs?",
+          "a": "Ja. Zoekwoorden waar de site net buiten de eerste pagina van Google staat, zijn het startpunt voor <link>de Blog Factory</link>: daar schrijft Clyde een artikel over, in de merkstem van de klant."
+        }
+      }
+    },
+    "end": {
+      "title": "Weet waar AI je klanten noemt.",
+      "sub": "Een gesprek van 30 minuten over de klanten die je nu hebt.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "hub": "Wat Clyde maakt",
+        "blog": "Blogs",
+        "reporting": "Rapportage"
+      }
     }
   },
   "skills-clyde": {
@@ -4533,7 +4553,7 @@
     "whatsapp": {
       "title": "Op WhatsApp: een voorstel, jij tikt.",
       "sub": "Vraag het Clyde op WhatsApp. Hij antwoordt, of doet een voorstel met de knoppen Uitvoeren en Annuleren. Een getypt \"ja\" voert niets uit: alleen de knop.",
-      "body": "Elke ochtend staat de briefing in je WhatsApp. Rapporten en voorstellen bevestig je daar met één tik; content keur je goed in de app.",
+      "body": "Elke ochtend staat de briefing in je WhatsApp. Content keur je goed in de app of het dashboard.",
       "scene": {
         "label": "Nagebouwd WhatsApp-gesprek met Clyde. Je vraagt hoe Luwte ervoor staat. Clyde: drie posts staan ingepland, twee wachten op je review in de app. Je vraagt de post van donderdag naar vrijdag te zetten. Clyde stelt voor de carrousel van donderdag 12 november naar vrijdag 13 november te verzetten, met de knoppen Uitvoeren en Annuleren.",
         "org": "Nova Digital",
