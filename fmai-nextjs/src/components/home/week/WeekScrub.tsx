@@ -92,9 +92,9 @@ export function WeekScrub({ labels }: { labels: string[] }) {
       const w = scene!.clientWidth
       const h = scene!.clientHeight
       if (isFlat()) {
-        const sc = Math.min(1, (w - 8) / 430)
+        // stacked days: scene and world are display:contents, so each 430px station scales to the stage's content box
+        const sc = Math.min(1, (stage!.clientWidth - 32) / 430)
         world!.style.setProperty('--sc', sc.toFixed(3))
-        scene!.style.height = `${Math.ceil(world!.offsetHeight * sc + 28)}px`
       } else {
         const sc = Math.min(1.3, w / 1000, h / 700)
         world!.style.setProperty('--sc', sc.toFixed(3))

@@ -170,31 +170,31 @@ export function WeekView({ t }: { t: WeekT }) {
           {' '}
           <div className="wk-desc" id="desc" aria-live="polite">
             {' '}
-            <p className="on">
+            <p className="on" data-day={`${t("rail.0.day")} · ${t("rail.0.name")}`}>
               {t("desc.0")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.1.day")} · ${t("rail.1.name")}`}>
               {t("desc.1")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.2.day")} · ${t("rail.2.name")}`}>
               {t("desc.2")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.3.day")} · ${t("rail.3.name")}`}>
               {t("desc.3")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.4.day")} · ${t("rail.4.name")}`}>
               {t("desc.4")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.5.day")} · ${t("rail.5.name")}`}>
               {t("desc.5")}
             </p>
             {' '}
-            <p>
+            <p data-day={`${t("rail.6.day")} · ${t("rail.6.name")}`}>
               {t("desc.6")}
             </p>
             {' '}
