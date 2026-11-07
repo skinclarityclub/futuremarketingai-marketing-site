@@ -48,7 +48,8 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
   { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox,           status: 'live'         },
   { key: 'reporting',       href: '/skills/reporting',        Icon: BarChart3,       status: 'live'         },
   { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search,          status: 'live'         },
-  { key: 'research',        href: '/skills/strategy',         Icon: Target,          status: 'live'         },
+  // featured (two columns wide) closes the last grid row now that the ManyChat tile is gone
+  { key: 'research',        href: '/skills/strategy',         Icon: Target,          status: 'live',         featured: true },
   { key: 'voiceAgent',      href: '/skills#binnenkort',       Icon: Mic,             status: 'coming_soon'  },
   { key: 'reelBuilder',     href: '/skills#binnenkort',       Icon: Video,           status: 'coming_soon'  },
 ] as const
