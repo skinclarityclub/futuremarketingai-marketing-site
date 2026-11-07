@@ -384,7 +384,7 @@
 #hero .copy .kicker{margin-bottom:-4px}
 #hero .fl,#hero .cap{display:none}
 #hero .hnav .mm{display:inline-flex;position:absolute;right:12px;top:8px}
-#hero .ctrl{left:auto;right:16px;bottom:auto;top:14px}
+#hero .ctrl{left:16px;right:auto;bottom:16px;top:auto}
 #hero .scene{left:50%;margin-left:-372px;top:auto;bottom:-80px;margin-top:0}
 }
 @media(prefers-reduced-motion:reduce){
@@ -553,7 +553,9 @@
 }
 @media(max-width:860px){
 #hero:not(#_pad){height:auto;min-height:calc(100svh - 4rem);display:flex;flex-direction:column}
-#hero:not(#_pad) .copy{position:relative;top:auto;left:auto;right:auto;margin:76px 16px 0;transform:none}
+/* Daley 2026-11-08: the pause button sits bottom-left in the scene on phones and tablets (as on desktop), so the copy
+   starts right under the header and more of the animation is in view */
+#hero:not(#_pad) .copy{position:relative;top:auto;left:auto;right:auto;margin:28px 16px 0;transform:none}
 #hero:not(#_pad) .stage{position:relative;inset:auto;flex:none;margin-top:10px;perspective-origin:50% 50%}
 }
 @media(max-width:860px){
@@ -574,7 +576,7 @@
 #hero .L-wa{left:196px;top:620px}
 }
 @media(min-width:600px) and (max-width:860px){
-#hero:not(#_pad) .copy{margin:84px 32px 0}
+#hero:not(#_pad) .copy{margin:36px 32px 0}
 #hero:not(#_pad) .copy .h1{font-size:44px}
 #hero:not(#_pad) .copy .def{font-size:16px;max-width:620px}
 #hero:not(#_pad) .stage{height:clamp(540px,calc(100svh - 4rem - 440px),780px)}

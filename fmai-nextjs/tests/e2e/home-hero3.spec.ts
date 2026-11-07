@@ -39,6 +39,23 @@ test.describe('Home hero 3 (/nl)', () => {
     await expect(pause).toHaveAttribute('aria-label', 'Pauzeer de animatie')
   })
 
+  // Daley 2026-11-08: "de pauze knop voor de animatie linksonder ... dan kan het geheel meer omhoog". Red before: the
+  // button sat top-right above the h1 (y 78-122 on 390x844) and the h1 started at y 140.
+  test('on a phone the pause button sits bottom-left in the scene and the copy starts under the header', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/nl')
+    const hero = (await page.locator('#hero').boundingBox())!
+    const stage = (await page.locator('#hero .stage').boundingBox())!
+    const pause = (await page.locator('#hero #pause').boundingBox())!
+    const h1 = (await page.locator('#hero h1').boundingBox())!
+    expect(pause.x).toBeLessThanOrEqual(24)
+    expect(pause.y).toBeGreaterThanOrEqual(stage.y)
+    expect(pause.y + pause.height).toBeLessThanOrEqual(hero.y + hero.height)
+    expect(pause.y + pause.height).toBeGreaterThan(hero.y + hero.height - 80)
+    expect(h1.y).toBeLessThan(hero.y + 60)
+  })
+
   test('the Clyde button is its round mark over the hero and further down (Daley 2026-11-08)', async ({ page }) => {
     await page.goto('/nl')
     const fab = page.locator('[data-clyde-launcher]')
