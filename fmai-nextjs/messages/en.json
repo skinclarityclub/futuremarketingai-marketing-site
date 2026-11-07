@@ -666,14 +666,15 @@
       "skill_reporting": "Reporting",
       "skill_seo_geo": "SEO / GEO",
       "skill_research": "Research",
-      "skill_clyde": "Clyde",
+      "skill_clyde": "Working with Clyde",
       "blog": "Blog",
       "resources": "Resources",
       "legal": "Legal",
       "legal_privacy": "Privacy",
       "legal_terms": "Terms",
       "legal_cookies": "Cookies",
-      "trust": "Trust"
+      "trust": "Trust",
+      "client_portal": "Your client looks along"
     },
     "cookie_consent": {
       "title": "We use cookies",
@@ -898,7 +899,7 @@
         },
         "n2": {
           "title": "A stop moment",
-          "body": "Nothing goes live without your approval. After you approve, you can still pause a post until four hours before it goes live."
+          "body": "Nothing goes live without your approval. With the stop moment on, you can still pause a post after you approve it, until four hours before it goes live."
         },
         "n3": {
           "title": "A portal in your agency's name",
@@ -1730,7 +1731,7 @@
     },
     "approval": {
       "title": "Nothing goes live without approval.",
-      "sub": "Clyde proposes, you decide. After you approve, you can still pause a post until four hours before it goes live.",
+      "sub": "Clyde proposes, you decide. With the stop moment on, you can still pause a post after you approve it, until four hours before it goes live.",
       "link": "How you stay in charge",
       "bar": "Clyde · Voor jou",
       "alt": "The For you screen in the app, in Dutch: two proposals for the demo brand Dagspa Luwte, a carousel and a blog, each with the buttons Approve and Set aside.",
@@ -3099,6 +3100,212 @@
       }
     }
   },
+  "client_portal": {
+    "meta": {
+      "title": "Client portal in your agency's name: your client approves",
+      "description": "Your client gets their own portal in your agency's name. They approve content, see their calendar and reports, add images and send requests."
+    },
+    "demo": "Example agency and example brands from the demo environment of the app.",
+    "hero": {
+      "eyebrow": "Your client looks along",
+      "title": "A portal in your agency's name, where your client approves.",
+      "definition": "Your client gets their own portal with your name, logo and colours. There they approve content or ask for a change, see their calendar and reports, and send requests through a fixed form.",
+      "factsLabel": "In short",
+      "facts": {
+        "portal": {
+          "label": "Portal",
+          "value": "In your agency's name"
+        },
+        "approve": {
+          "label": "Approving",
+          "value": "Approve, reject or ask for a change"
+        },
+        "phone": {
+          "label": "Phone",
+          "value": "Fixed bar at the bottom"
+        }
+      },
+      "scene": {
+        "label": "Rebuilt portal of Dagspa Luwte with the name, logo and colour of the agency Nova Digital. The carousel Welke behandeling past bij jou? waits for approval, with the buttons Approve and Changes.",
+        "bar": "Portal of Dagspa Luwte",
+        "nav": {
+          "dashboard": "Dashboard",
+          "content": "Content Review",
+          "inbox": "Social Inbox",
+          "requests": "Requests",
+          "calendar": "Calendar",
+          "reports": "Reports"
+        },
+        "head": "Content",
+        "when": "Instagram · Carousel · Sat 14 Nov, 10:00",
+        "status": "Waiting for approval",
+        "approve": "Approve",
+        "changes": "Changes"
+      },
+      "caption": "This is how your client sees the portal with white-label on. Rebuilt from the portal in the demo environment."
+    },
+    "sees": {
+      "title": "What your client sees.",
+      "sub": "Their portal holds everything that is ready for their brand, and nothing of your other clients.",
+      "tableCaption": "Your client's portal",
+      "colIn": "In the portal",
+      "colDo": "What they do there",
+      "rows": {
+        "content": {
+          "label": "Content",
+          "text": "Approve, reject or ask for a change"
+        },
+        "calendar": {
+          "label": "Calendar",
+          "text": "See what goes live when, per channel"
+        },
+        "reports": {
+          "label": "Reports",
+          "text": "Read back the reports delivered to them"
+        },
+        "strategy": {
+          "label": "Strategy",
+          "text": "Read their course, goals and pillars, when that page is on for them"
+        },
+        "media": {
+          "label": "Media",
+          "text": "Add their own images for their posts"
+        },
+        "requests": {
+          "label": "Requests",
+          "text": "Send a request through a form"
+        }
+      },
+      "shot": {
+        "bar": "Portal · Calendar",
+        "scrollLabel": "The calendar in the portal, scrollable",
+        "alt": "The calendar in the portal of Dagspa Luwte, as someone on the client's team sees it, in Dutch. At the top the bar Vraag Clyde of ga naar, below it the notice that two posts wait for approval and that a manager on the team reviews them. Below that the posts of today and this week, marked posted, to review and scheduled.",
+        "caption": "2 posts wait for approval. A manager on your team reviews them"
+      },
+      "link": "A content calendar for several clients"
+    },
+    "approve": {
+      "title": "Approving, on their phone too.",
+      "p1": "Your client opens a post, reads the caption and chooses: approve, reject or ask for a change. On their phone, Content and Calendar sit in the fixed bar at the bottom.",
+      "p2": "Only a manager on their team can approve. The others look along, but approve nothing.",
+      "scene": {
+        "label": "Rebuilt approval window: the carousel Welke behandeling past bij jou? with the buttons Approve, Changes and Reject. Changes is selected, with the field Requested changes and the button Request changes.",
+        "bar": "Content · Welke behandeling past bij jou?",
+        "when": "Instagram · Carousel · Sat 14 Nov, 10:00",
+        "approve": "Approve",
+        "changes": "Changes",
+        "reject": "Reject",
+        "field": "Requested changes *",
+        "placeholder": "Describe the changes you want...",
+        "submit": "Request changes"
+      },
+      "phoneAlt": "The calendar in the portal on a phone, in Dutch: the notice that two posts wait for approval and that a manager on the team reviews them, the posts of today and this week, and at the bottom the fixed bar with Dashboard, Content, Clyde, Kalender and Meer.",
+      "captionBuilt": "The approval window is rebuilt from the portal.",
+      "captionReal": "The phone shows the real calendar: Dashboard · Content · Clyde · Calendar · More"
+    },
+    "requests": {
+      "title": "Requests go through one form.",
+      "sub": "If your client wants something extra, like a post about a new product, a campaign or input for their strategy, they fill in the request form in their portal. Every request becomes a ticket, with their message and the date they want.",
+      "shot": {
+        "bar": "Portal · Requests",
+        "scrollLabel": "The request form in the portal, scrollable",
+        "alt": "The request form in the portal of Dagspa Luwte, in Dutch. Under Wat wil je aanvragen? the choices Extra post, Reel/video, Campagne and Strategie-input, with Extra post selected. A text field with the example text Een post over de cadeaubon voor de feestdagen, the field Gewenste datum (optioneel) and the button Verstuur aanvraag. Below that Eerdere aanvragen, with one request In behandeling.",
+        "caption": "New request · Send request. The text in the field is an example and was not sent."
+      }
+    },
+    "clyde": {
+      "title": "Their own Clyde, who only reads.",
+      "sub": "Your client gets Clyde too, in their portal and on WhatsApp, for questions about their own marketing. That Clyde reads and explains, but plans, changes and publishes nothing.",
+      "note": "This card sits on your client's strategy page, when that page is on for them. Otherwise they ask Clyde through the bar at the top of their portal, or on their phone through Clyde in the bar at the bottom. What you do with Clyde, and what he puts to you, is on the page about working with Clyde.",
+      "scene": {
+        "label": "Rebuilt card Ask Clyde in the portal, with three questions: Where are we with the goals? What are you doing this month? What do I still need to approve?",
+        "bar": "Strategy",
+        "head": "Ask Clyde",
+        "q1": "Where are we with the goals?",
+        "q2": "What are you doing this month?",
+        "q3": "What do I still need to approve?"
+      },
+      "caption": "Rebuilt from the card Ask Clyde on the strategy page of the portal.",
+      "link": "How Clyde works for you"
+    },
+    "who": {
+      "title": "Who does what.",
+      "sub": "Clyde does the work, you decide, and your client looks along and approves.",
+      "tableLabel": "Who does what",
+      "cols": {
+        "clyde": "Clyde",
+        "you": "You",
+        "client": "Your client"
+      },
+      "rows": {
+        "r1": {
+          "clyde": "Makes drafts for posts, carousels and blogs",
+          "you": "Approves before anything goes live",
+          "client": "Approves, rejects or asks for a change"
+        },
+        "r2": {
+          "clyde": "Schedules them per channel",
+          "you": "Chooses how independently Clyde runs fixed tasks",
+          "client": "Sees their calendar and reports"
+        },
+        "r3": {
+          "clyde": "Prepares the reports",
+          "you": "Pauses a post or a whole client",
+          "client": "Adds their own images"
+        },
+        "r4": {
+          "clyde": "Answers your client's questions, read only",
+          "you": "Decides what happens with a request",
+          "client": "Sends requests through the form"
+        }
+      }
+    },
+    "tell": {
+      "title": "How to tell your client you work with Clyde.",
+      "sub": "You do not have to hide it. Clients mostly want to know who checks the work. Three sentences you can use:",
+      "label": "Three sentences for your client",
+      "lines": {
+        "l1": "\"We work with Clyde, an AI colleague who prepares and schedules your content.\"",
+        "l2": "\"Nothing goes live before we have checked it and you have approved it in your portal.\"",
+        "l3": "\"Clyde remembers your brand voice and your feedback, separate from our other clients.\""
+      },
+      "links": {
+        "trust": "Where your client's data is kept",
+        "memory": "How memory per client works"
+      }
+    },
+    "faq": {
+      "title": "Questions about the client portal.",
+      "sub": "What agencies want to know before their client looks along.",
+      "items": {
+        "brand": {
+          "q": "Does my client see FutureMarketingAI or my agency?",
+          "a": "Your agency. With white-label on they see your name, logo and colours, on their phone too."
+        },
+        "approver": {
+          "q": "Who at my client can approve?",
+          "a": "Only a manager on their team. The others look along and approve nothing."
+        },
+        "whatsapp": {
+          "q": "Can my client approve or request something through WhatsApp?",
+          "a": "No. They approve in their portal, on their phone too, and requests go through the form. On WhatsApp they can ask Clyde questions about their own marketing."
+        },
+        "price": {
+          "q": "What does a portal per client cost?",
+          "a": "Nothing extra. The portal comes with every client brand: as a founding partner you pay €997 per month with ten client brands included. See <link>the pricing</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Let your client look along.",
+      "sub": "A 30-minute call. After it you know whether the portal fits your clients.",
+      "cta": "Request a call",
+      "links": {
+        "clyde": "Working with Clyde",
+        "trust": "Trust"
+      }
+    }
+  },
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Inbox classification | Clyde",
@@ -3555,105 +3762,205 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde: your agency's AI colleague | Clyde",
-      "description": "Clyde, your agency's AI colleague, in your dashboard and on WhatsApp. Commands in plain language, memory per client. 1 to 5 credits per conversation."
+      "title": "Working with Clyde: in your dashboard and on WhatsApp",
+      "description": "Clyde works in every screen of your dashboard and on WhatsApp. What he does himself, what he proposes and what only you do, with a stop button per client."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Skill 10. Clyde, the AI colleague",
-      "title": "This is Clyde. Your agency's AI colleague.",
-      "subtitle": "The other skills are specialized executors. Clyde is the colleague who puts them to work and who looks along in every screen of your dashboard. Give commands in plain language; Clyde picks the right skill and brings the results back. Reachable in the dashboard, in the web app on your home screen and on WhatsApp.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Plan this week for the three SKC accounts",
-        "prompt2": "Build a weekly report on the top performing posts",
-        "prompt3": "Which skill is running which campaign this sprint?"
+      "eyebrow": "Working with Clyde",
+      "title": "Clyde prepares the work. You decide.",
+      "definition": "Clyde sits in every screen of your dashboard and on WhatsApp, and works per client from one memory. He makes drafts, makes proposals and runs fixed tasks, but no post goes live without your approval.",
+      "factsLabel": "In short",
+      "facts": {
+        "where": {
+          "label": "Where",
+          "value": "Dashboard, web app and WhatsApp"
+        },
+        "memory": {
+          "label": "Memory",
+          "value": "One per client"
+        },
+        "stop": {
+          "label": "Stopping",
+          "value": "One button per client"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Overview",
+        "alt": "Clyde's overview for Dagspa Luwte, in Dutch: under Voor jou six things waiting for you, with the buttons Bekijk en beslis and Bekijk, below it Clyde's day with four routines, and on the right the panel to ask Clyde something.",
+        "caption": "Working for Dagspa Luwte · 6 things wait for you"
       }
     },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Commands in natural language",
-        "body": "\"Write 3 Instagram posts for brand X about topic Y.\" Clyde understands the context and executes."
-      },
-      "feature2": {
-        "title": "One point of contact for every skill",
-        "body": "You do not need to know which skill does what. Ask Clyde for a blog, a post or a report and he puts the right one to work."
-      },
-      "feature3": {
-        "title": "In every screen and on WhatsApp",
-        "body": "Clyde sits in every screen of the dashboard. Outside it you reach him on WhatsApp, and he messages you himself when something deviates or waits for your approval."
-      },
-      "feature4": {
-        "title": "Memory per client",
-        "body": "Remembers past conversations, preferences and corrections, separately per client. He takes your corrections into the next request."
+    "screen": {
+      "title": "In every screen of your dashboard.",
+      "sub": "Clyde sits next to every screen. He knows which client you have open and answers from that client's memory. On your phone you put the web app on your home screen.",
+      "note": "You type in plain language, in Dutch or English. Under the question bar you choose the client it is about.",
+      "shot": {
+        "bar": "New conversation",
+        "alt": "Clyde's panel next to the screen, in Dutch: the notice that Clyde is AI and can make mistakes, three example questions and the question bar Vraag Clyde iets, with Dagspa Luwte as the client.",
+        "caption": "Clyde is AI and can make mistakes. Check important decisions."
       }
     },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Choose your channel",
-        "body": "The panel in your dashboard, the web app on your home screen or WhatsApp. On every channel Clyde works from the same memory."
-      },
-      "step2": {
-        "title": "Give a command",
-        "body": "In natural language: \"Report for brand X\" or \"Plan 5 social posts on topic Y.\" Clyde does the rest."
-      },
-      "step3": {
-        "title": "Review and adjust",
-        "body": "Clyde delivers the output. You review. Corrections land in memory, so the next request is sharper."
+    "forYou": {
+      "title": "For you: what Clyde puts to you.",
+      "sub": "Under For you is what Clyde needs from you: posts waiting for review, a blog topic, a signal. Approving starts the task, setting it aside stops it. Under Delivered you read what he already did.",
+      "shot": {
+        "bar": "Clyde · For you",
+        "scrollLabel": "The For you screen, scrollable",
+        "alt": "The For you screen in the app, in Dutch: two proposals for the demo brand Dagspa Luwte, a carousel and a blog, each with the buttons Goedkeuren and Leg weg.",
+        "caption": "Two proposals for Dagspa Luwte, each with Approve and Set aside."
       }
     },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "The other skills: Clyde puts them to work.",
-      "integration2": "Memory: per client, from conversations, feedback and the strategy.",
-      "integration3": "Routines: recurring tasks such as a channel report, an SEO plan and an SEO report. Per task you choose whether Clyde asks first, runs and reports, or runs silently."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "One interface for your entire portfolio",
-        "body": "Instead of opening screen after screen: ask Clyde in the chat. He knows which client has which brand and which skill to put to work."
+    "whatsapp": {
+      "title": "On WhatsApp: a proposal, you tap.",
+      "sub": "Ask Clyde on WhatsApp. He answers, or makes a proposal with the buttons Run and Cancel. A typed \"yes\" runs nothing: only the button does.",
+      "body": "Every morning the briefing is in your WhatsApp. You confirm reports and proposals there with one tap; content you approve in the app.",
+      "scene": {
+        "label": "Rebuilt WhatsApp conversation with Clyde. You ask how Luwte is doing. Clyde: three posts are scheduled, two wait for your review in the app. You ask to move the Thursday post to Friday. Clyde proposes to move the carousel from Thursday 12 November to Friday 13 November, with the buttons Run and Cancel.",
+        "org": "Nova Digital",
+        "m1": "How is Luwte doing this week?",
+        "m2": "Three posts are scheduled. Two still wait for your review in the app.",
+        "m3": "Move the Thursday one to Friday.",
+        "m4": "Proposal: the carousel from Thursday 12 November to Friday 13 November, same time.",
+        "run": "Run",
+        "cancel": "Cancel"
       },
-      "useCase2": {
-        "title": "Delegate instead of execute",
-        "body": "Stop writing posts and making reports yourself. Give commands. Clyde executes, you make the decisions."
+      "caption": "Rebuilt from a conversation with Clyde on WhatsApp."
+    },
+    "memory": {
+      "title": "Memory per client.",
+      "sub": "What Clyde knows about a client is in his memory: profile, brand voice, strategy, way of working. He takes your corrections along, and every night he sorts what he learned that day.",
+      "shot": {
+        "bar": "Clyde · Memory",
+        "scrollLabel": "The core memory, scrollable",
+        "alt": "Clyde's core memory about Dagspa Luwte, in Dutch: client profile, brand identity, strategy, way of working and summary.",
+        "caption": "Clyde's core memory about Dagspa Luwte."
+      },
+      "link": "How memory works"
+    },
+    "client": {
+      "title": "Your client's Clyde.",
+      "sub": "Your client gets their own Clyde, in their portal and on WhatsApp. That Clyde answers questions about their own marketing and only reads: he plans, changes and publishes nothing.",
+      "note": "Your client asks Clyde through the bar at the top of their portal, or on their phone through Clyde in the bar at the bottom. The card Ask Clyde sits on their strategy page, when that page is on for them. What else they see and approve is on the page about the client portal.",
+      "scene": {
+        "label": "Rebuilt card Ask Clyde in the client's portal, with three questions: Where are we with the goals? What are you doing this month? What do I still need to approve?",
+        "bar": "Portal · Strategy",
+        "head": "Ask Clyde",
+        "q1": "Where are we with the goals?",
+        "q2": "What are you doing this month?",
+        "q3": "What do I still need to approve?"
+      },
+      "caption": "Rebuilt from the card Ask Clyde on the strategy page of the portal.",
+      "link": "What your client sees"
+    },
+    "roles": {
+      "title": "What Clyde does himself, what he puts to you, what only you do.",
+      "sub": "Per fixed task you choose how independent Clyde is. The rest is fixed.",
+      "tableLabel": "What Clyde does himself, what he puts to you and what only you do",
+      "cols": {
+        "self": "Clyde does himself",
+        "proposes": "Clyde puts to you",
+        "you": "Only you"
+      },
+      "rows": {
+        "r1": {
+          "self": "Making drafts for posts, carousels and blogs",
+          "proposes": "Posts and carousels for review",
+          "you": "Approving, rejecting or setting aside"
+        },
+        "r2": {
+          "self": "Fixed tasks on time, when you set that task to run",
+          "proposes": "Blog topics and signals",
+          "you": "Choosing how independently a fixed task runs"
+        },
+        "r3": {
+          "self": "Updating the memory per client",
+          "proposes": "Proposals on WhatsApp, with Run and Cancel",
+          "you": "Pausing a post or a whole client"
+        }
+      },
+      "modes": {
+        "concept": {
+          "label": "Draft",
+          "text": "Clyde makes it and puts it to you."
+        },
+        "report": {
+          "label": "Run and report",
+          "text": "He runs it and lets you know."
+        },
+        "silent": {
+          "label": "Run silently",
+          "text": "He runs it without a message."
+        }
+      },
+      "modesNote": "Every fixed task has a cost ceiling and a stop button.",
+      "day": {
+        "bar": "Clyde · Clyde's day",
+        "scrollLabel": "Clyde's day, scrollable",
+        "alt": "Clyde's day on a timeline from 06:00 to 22:00, in Dutch: at 09:00 the morning briefing, Reacties Luwte and Weekrapport Luwte, at 14:00 the afternoon content review.",
+        "caption": "Next: afternoon content review at 14:00 · 4 routines"
       }
     },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Ready to put Clyde on your team as a colleague?",
-      "subtitle": "Request a call. We will discuss how Clyde fits your brands.",
-      "button": "Request a call"
+    "stop": {
+      "title": "The stop moment.",
+      "sub": "Turn on the stop moment for a client, and you can still pause a post after you approve it, until four hours before it goes live. If it really has to go quiet, one button pauses everything for a client.",
+      "listTitle": "What Clyde does not do without you.",
+      "items": {
+        "publish": {
+          "title": "Put a post live that nobody approved",
+          "text": "Every post waits in the app for an approval."
+        },
+        "whatsapp": {
+          "title": "Run a proposal on WhatsApp before you tap",
+          "text": "A typed \"yes\" does not count. Only the Run button."
+        },
+        "task": {
+          "title": "Start a task from For you without your approval",
+          "text": "Approving starts the task, setting it aside stops it."
+        },
+        "client": {
+          "title": "Change something at your client's request",
+          "text": "Your client's Clyde only reads."
+        }
+      },
+      "links": {
+        "regie": "Nothing goes live without you",
+        "trust": "Trust"
+      }
     },
     "faq": {
-      "title": "Frequently asked questions about Clyde",
+      "title": "Questions about working with Clyde.",
+      "sub": "What agencies want to know before they give Clyde work.",
       "items": {
-        "q1": {
-          "question": "What is Clyde exactly?",
-          "answer": "Clyde is the AI colleague who puts the other skills to work. Give instructions in plain language (Dutch or English) and Clyde picks the right skill: write a blog, plan social posts, run an SEO audit. Works in the dashboard, in the web app on your home screen and on WhatsApp."
+        "assistant": {
+          "q": "Is Clyde an AI marketing assistant or a chatbot?",
+          "a": "You talk to him like a chatbot, but he works inside your clients. Per client he knows the brand voice and the memory, makes drafts and runs fixed tasks. What goes live, you approve."
         },
-        "q2": {
-          "question": "Which channels does Clyde support?",
-          "answer": "In every screen of your dashboard, in the web app on your home screen, and on WhatsApp via a connected number. On WhatsApp you ask Clyde how your content and numbers are doing, you get the weekly SEO report every Friday, and he messages you himself when a number deviates or something waits for your approval. Reports and Clyde's proposals you confirm there with one tap; content you approve in the app. On every channel Clyde works from the same memory per client."
+        "whatsapp": {
+          "q": "How do I give Clyde a task on WhatsApp?",
+          "a": "Through a linked number you send him a message in plain language. He answers, or makes a proposal with Run and Cancel; only when you tap does it happen. Content you approve in the app."
         },
-        "q3": {
-          "question": "On which tiers is Clyde available?",
-          "answer": "Clyde is included on every tier; he is not a separate skill but the base layer. A conversation costs 1 to 5 credits, depending on the language model."
+        "split": {
+          "q": "What does Clyde do himself and what does he put to me?",
+          "a": "He makes drafts and runs fixed tasks the way you set them. Posts, blog topics, signals and proposals he puts to you under For you or on WhatsApp. Approving and pausing only you do."
         },
-        "q4": {
-          "question": "How long does Clyde onboarding take?",
-          "answer": "The whole platform is set up in four weeks: connecting and gathering knowledge, setting up brand voice and approvals, first assignments and adjusting. After that Clyde keeps learning: every night he organizes what he learned about your clients that day."
+        "client": {
+          "q": "Can my client use Clyde too?",
+          "a": "Yes, in their portal and on WhatsApp, for questions about their own marketing. That Clyde only reads. What else your client sees is on <link>the page about the client portal</link>."
         },
-        "q5": {
-          "question": "How does Clyde differ from ChatGPT or Claude?",
-          "answer": "ChatGPT and Claude are general assistants: they do not know your clients and are not in your channels. Clyde is an AI colleague with his own memory per client, connections to your channels and data, and each client's brand voice as fixed context. No need to re-explain context every session."
+        "app": {
+          "q": "Does Clyde work as a mobile web app?",
+          "a": "Yes. You put the web app on your phone's home screen and work from the same memory per client."
         }
+      }
+    },
+    "end": {
+      "title": "See Clyde at work.",
+      "sub": "A 30-minute call. After it you know how Clyde puts things to you and how you decide.",
+      "cta": "Request a call",
+      "links": {
+        "portal": "Your client looks along",
+        "pricing": "Pricing"
       }
     }
   },
@@ -3918,7 +4225,7 @@
       },
       "grow": {
         "label": "Grow and Optimize",
-        "description": "Analytics, research and orchestration",
+        "description": "Analytics, research and working with Clyde",
         "items": {
           "reporting": {
             "title": "Reporting",
@@ -3934,7 +4241,7 @@
           },
           "clyde": {
             "title": "Clyde, AI colleague",
-            "description": "The central orchestrator of all skills"
+            "description": "Prepares the work, you decide"
           }
         }
       },

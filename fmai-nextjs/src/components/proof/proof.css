@@ -184,3 +184,90 @@
    LinkedIn text card does not end in an empty block; and the note above the three tones gets room before the cards. */
 .g6 .g6-two > .g6-quote{align-self:start}
 .g6 .g6-vs{margin-top:14px}
+
+/* golf 8a (/client-portal and /skills/clyde, prototype r4, Daley's yes 2026-11-07): rebuilt app scenes (portal with
+   white-label, approval window, Ask Clyde card, WhatsApp) plus the real screens at true size. From golf6.css, blocks
+   "golf 8" and "golf 8, na het kijken", without the rules only the rebuilt calendar, request form and phone bar used:
+   those are real screens now. Teal is the app; violet is Nova Digital with white-label on. Static, no motion. */
+.g6{--g6-acc:#00d4aa;--g6-acc-bg:rgba(0,212,170,.12);--g6-acc-ink:#06211b}
+.g6 .g6-app{display:grid;grid-template-columns:188px minmax(0,1fr);font-size:13.5px;line-height:1.45;color:#dfe5ee}
+.g6 .g6-app.g6-solo{grid-template-columns:minmax(0,1fr)}
+.g6 .g6-app.g6-wl{--g6-acc:#9a8cff;--g6-acc-bg:rgba(154,140,255,.13);--g6-acc-ink:#15102e}
+.g6 .g6-app-side{display:flex;flex-direction:column;gap:18px;padding:18px 12px;background:#0b0f17;border-right:1px solid rgba(255,255,255,.06)}
+.g6 .g6-app-brand{display:flex;align-items:center;gap:10px;padding:0 6px;font-size:14px;font-weight:600;color:#f4f7fb}
+.g6 .g6-app-brand img{flex:none;width:26px;height:26px;border-radius:7px}
+.g6 .g6-app-nav{display:flex;flex-direction:column;gap:2px}
+.g6 .g6-app-nav span{display:block;padding:7px 10px;border-radius:8px;color:#a3adbd;white-space:nowrap}
+.g6 .g6-app-nav .g6-on{background:var(--g6-acc-bg);color:var(--g6-acc);font-weight:600}
+.g6 .g6-app-foot{display:flex;align-items:center;gap:8px;margin-top:auto;padding:12px 6px 0;border-top:1px solid rgba(255,255,255,.06);font-size:12.5px;color:#c4ccd8}
+.g6 .g6-nd{flex:none;display:inline-flex;width:18px;height:18px;padding:2px;border-radius:5px;background:linear-gradient(135deg,#9a8cff,#5b4bd6);color:#fff}
+.g6 .g6-nd svg{width:100%;height:100%}
+.g6 .g6-app-main{display:flex;flex-direction:column;gap:14px;min-width:0;padding:20px clamp(14px,2vw,24px) 22px}
+.g6 .g6-app-h{font-size:18px;font-weight:700;letter-spacing:-.01em;color:#f4f7fb}
+.g6 .g6-app-when{font-family:var(--font-jetbrains-mono),ui-monospace,monospace;font-size:12px;color:#a3adbd}
+.g6 .g6-app-t{min-width:0;font-weight:600;color:#f4f7fb}
+.g6 .g6-app-t small{display:block;margin-top:2px;font-size:12px;font-weight:400;color:#a3adbd}
+.g6 .g6-chip{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:99px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:11.5px;font-weight:500;color:#dfe5ee;white-space:nowrap}
+.g6 .g6-b{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:0 13px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);font-size:13px;font-weight:600;color:#dfe5ee;white-space:nowrap}
+.g6 .g6-b.g6-fill{background:var(--g6-acc);box-shadow:none;color:var(--g6-acc-ink)}
+/* the approval window: the post on the left, the choice on the right */
+.g6 .g6-sheet{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px;align-items:start}
+.g6 .g6-sheet img{display:block;width:100%;height:auto;border-radius:10px}
+.g6 .g6-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.g6 .g6-acts{display:flex;flex-wrap:wrap;gap:8px}
+.g6 .g6-fld{display:flex;flex-direction:column;gap:6px}
+.g6 .g6-fld > span{font-size:12.5px;font-weight:600;color:#c4ccd8}
+.g6 .g6-box{min-height:40px;padding:9px 11px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);background:rgba(255,255,255,.02);color:#8a94a6}
+.g6 .g6-box.g6-tall{min-height:84px}
+.g6 .g6-opts{display:flex;flex-wrap:wrap;gap:8px}
+.g6 .g6-opts .g6-on{background:var(--g6-acc-bg);box-shadow:inset 0 0 0 1px var(--g6-acc);color:var(--g6-acc)}
+/* the phone with the real portal screen, next to the approval window */
+.g6 .g6-pair{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,.8fr);gap:clamp(18px,3vw,40px);align-items:center}
+.g6 .g6-phone{width:min(100%,300px);margin:0 auto;padding:9px;border-radius:34px;background:#05070b;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 80px -40px rgba(0,0,0,.8)}
+.g6 .g6-phone-s{display:flex;flex-direction:column;overflow:hidden;min-height:470px;border-radius:26px;background:#0e121b}
+.g6 .g6-phone-s > img{display:block;width:100%;height:auto}
+/* WhatsApp, rebuilt, with the buttons under a proposal */
+.g6 .g6-wa{width:min(100%,430px);overflow:hidden;border-radius:18px;background:#0b141a;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 30px 80px -40px rgba(0,0,0,.8)}
+.g6 .g6-wa-top{display:flex;align-items:center;gap:10px;padding:11px 14px;background:#1f2c34;font-size:15px;font-weight:600;color:#e9edef}
+.g6 .g6-wa-top svg{flex:none;width:30px;height:30px;padding:5px;border-radius:50%;background:#0e121b}
+.g6 .g6-wa-top small{display:block;font-size:12px;font-weight:400;color:#8696a0}
+.g6 .g6-wa-b{display:flex;flex-direction:column;gap:7px;padding:16px 12px 18px}
+.g6 .g6-wa-m{align-self:flex-start;max-width:86%;padding:8px 10px 6px;border-radius:10px;background:#202c33;font-size:14px;line-height:1.45;color:#e9edef}
+.g6 .g6-wa-m.g6-me{align-self:flex-end;background:#005c4b}
+.g6 .g6-wa-m small{display:block;margin-top:3px;text-align:right;font-size:11px;color:rgba(233,237,239,.8)}
+.g6 .g6-wa-k{display:grid;grid-template-columns:1fr 1fr;gap:4px;width:86%}
+.g6 .g6-wa-k span{padding:9px 0;border-radius:8px;background:#202c33;text-align:center;font-size:14px;font-weight:600;color:#53bdeb}
+/* the Ask Clyde card in the client's portal */
+.g6 .g6-ask{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.g6 .g6-ask .g6-chip{height:auto;padding:8px 12px;border-radius:12px;font-size:13px;white-space:normal}
+/* a crop of a real screen next to the text: never wider than it is */
+.g6 .g6-win.g6-narrow{width:min(100%,400px)}
+.g6 .g6-scene{display:flex;justify-content:center}
+/* a real screen (2x capture) at true size: --w is half the pixel width, so it is never upscaled; on a phone it scrolls */
+.g6 .g6-win.g6-fit{max-width:min(100%,var(--w))}
+@media (min-width:861px){
+  /* text left, narrow scene right, on the same columns as the heading above */
+  .g6 .g6-split.g6-even{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,96px)}
+  .g6 .g6-even .g6-scene{justify-content:flex-start}
+  .g6 .g6-hero .g6-sheet{grid-template-columns:minmax(0,240px) minmax(0,1fr)}
+}
+@media (max-width:860px){
+  .g6 .g6-app{grid-template-columns:minmax(0,1fr)}
+  .g6 .g6-app-side{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 14px;border-right:0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .g6 .g6-app-nav{flex-direction:row;flex-wrap:wrap}
+  .g6 .g6-app-foot{margin:0 0 0 auto;padding:0;border-top:0}
+  .g6 .g6-sheet,.g6 .g6-pair{grid-template-columns:minmax(0,1fr)}
+  .g6 .g6-fit .g6-scroll img{width:var(--w);max-width:none}
+}
+@media (max-width:520px){
+  .g6 .g6-app-foot{margin-left:0}
+}
+/* a table with three roles becomes one card per row on a phone, with the role above each cell (role= keeps the table for screen readers) */
+@media (max-width:640px){
+  .g6 .g6-stack thead{display:none}
+  .g6 .g6-stack tr,.g6 .g6-stack td{display:block}
+  .g6 .g6-stack tbody tr{padding:8px 0}
+  .g6 .g6-stack tbody tr + tr{border-top:1px solid var(--g6-line)}
+  .g6 .g6-stack td{padding:6px 18px;border-top:0}
+  .g6 .g6-stack td::before{content:attr(data-l);display:block;margin-bottom:2px;font-size:12px;font-weight:600;color:var(--g6-muted)}
+}

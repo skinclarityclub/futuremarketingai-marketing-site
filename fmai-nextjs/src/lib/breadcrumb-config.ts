@@ -38,6 +38,9 @@ export const BREADCRUMB_ROUTES: Record<string, RouteCrumb> = {
   '/roadmap': { labelKey: 'roadmap', parent: '/' },
   '/trust': { labelKey: 'trust', parent: '/' },
 
+  // Golf 8a: the client portal, a top-level page
+  '/client-portal': { labelKey: 'client_portal', parent: '/' },
+
   // Case studies
   '/case-studies': { labelKey: 'case_studies', parent: '/' },
   '/case-studies/skinclarity-club': {

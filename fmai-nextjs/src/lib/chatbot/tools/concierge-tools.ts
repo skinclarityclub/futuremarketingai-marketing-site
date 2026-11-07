@@ -85,7 +85,7 @@ export function buildConciergeTools(locale: ChatbotLocale) {
   return {
     get_skills: tool({
       description:
-        'Get information about FutureMarketingAI skills. Use "all" for an overview of all 12 skills (10 live and 2 coming_soon), or pick a specific skill id. Skills are the core product: Clyde orchestrates these 12 skills across client brands.',
+        'Get information about FutureMarketingAI skills. Use "all" for an overview of all 12 skills (10 live and 2 coming_soon), or pick a specific skill id. Skills are the core product: Clyde puts these skills to work per client brand.',
       inputSchema: z.object({
         skillId: z
           .enum([

@@ -197,12 +197,14 @@ Clyde is the AI colleague who puts the other skills to work. Give instructions i
 
 Capabilities:
 - Plain-language instructions
-- Orchestration of all other skills
+- Drafts, proposals and fixed tasks per client
 - In every screen of the dashboard, in the web app on your home screen and on WhatsApp
 - Memory and context per client
 - Routines and recurring tasks
 
 Credit cost: 1 to 5 credits per chat.
+
+Page: https://future-marketing.ai/nl/skills/clyde (Working with Clyde). What Clyde does himself: drafts for posts, carousels and blogs, fixed tasks on their time when the agency sets that task to run, and updating the memory per client. What he puts to the agency: posts and carousels for review, blog topics and signals under For you, and proposals on WhatsApp with the buttons Run and Cancel (a typed "yes" runs nothing). What only the agency does: approving, rejecting or setting aside, choosing how independently a fixed task runs, and pausing a post or a whole client. With the stop moment on for a client, a post can still be paused after approval until four hours before it goes live.
 
 ## Tiers and Pricing
 
@@ -281,6 +283,10 @@ Two voices, one topic: on 23 October 2026 Paul explained on LinkedIn why "not ri
 How a post goes live: Clyde makes the draft in the voice and house style of SalesLobe, the draft stays in the app until it is approved (editing or skipping it is possible too), and then the app publishes it on Instagram or LinkedIn at the time from the calendar.
 
 Not in this case: revenue, reach or lead figures.
+
+## Client portal
+
+Page: https://future-marketing.ai/nl/client-portal. The agency's client gets their own portal, in the agency's name with white-label on. There they approve, reject or ask for a change, see what goes live when per channel, read back the reports delivered to them, add their own images and send requests through one form (an extra post, a campaign or input for their strategy); every request becomes a ticket. Only a manager on the client's team approves; the others look along. On a phone the portal has a fixed bar at the bottom. The client's own Clyde, in the portal and on WhatsApp, answers questions about their own marketing and only reads: he plans, changes and publishes nothing. The client cannot approve or request anything through WhatsApp. The page shows real screens of the demo client Dagspa Luwte (the calendar, the calendar on a phone and the request form); the portal with white-label, the approval window and the Ask Clyde card are rebuilt scenes.
 
 ## Memory per client
 

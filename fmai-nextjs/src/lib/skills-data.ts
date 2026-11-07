@@ -329,7 +329,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
       'Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal en Clyde kiest de juiste vaardigheid. Werkt in het dashboard, in de web-app op je beginscherm en op WhatsApp. Heeft geheugen per klant en onthoudt eerdere gesprekken, voorkeuren en context.',
     features: [
       'Natural language opdrachten',
-      'Orkestratie van alle andere skills',
+      'Concepten, voorstellen en vaste taken per klant',
       'In elk scherm van het dashboard en op WhatsApp',
       'Geheugen en context per klant',
       'Routines en terugkerende taken',
@@ -337,7 +337,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     category: 'grow',
     status: 'live',
     creditCostLabel: '1-5 cr / chat',
-    serviceType: 'AI Marketing Orchestration Service',
+    serviceType: 'AI Marketing Assistant Service',
   },
 ] as const
 
