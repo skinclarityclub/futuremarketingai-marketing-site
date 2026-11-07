@@ -25,6 +25,8 @@ const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/apply': 'User is on the Apply page. Answer questions about the partnership process.',
   '/case-studies/skinclarity-club':
     'User is on the SkinClarity Club case study, our first client. Explain, in the past tense, how Clyde made the posts for 3 Instagram accounts from May to October 2026 and a post went live only after approval in the app. No result figures.',
+  '/case-studies/saleslobe':
+    "User is on the SalesLobe case study (B2B). Explain how Clyde makes the brand's Instagram and the LinkedIn of founder Paul den Hartogh since 5 October 2026: first the voice round, then every post approved in the app before it goes live. No result figures, and do not name who approves.",
   '/skills/social-media':
     'User is on the Social Media skill page. Offer to create a content calendar.',
   '/skills/blog-factory':

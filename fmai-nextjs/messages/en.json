@@ -653,6 +653,7 @@
       "roadmap": "Roadmap",
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
+      "case_studies_sl": "SalesLobe",
       "skills_index": "Skills",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
@@ -2758,10 +2759,7 @@
     "posts": {
       "skc-club-boodschappen": "Carousel by SkinClarity Club, the club: Een acne-bewuste boodschappenlijst: waar begin je? (an acne-aware shopping list: where do you start?)",
       "skc-shop-enzympeeling": "Carousel by SkinClarity Club, the webshop: Enzympeeling of zuur: wanneer kies je wat? (enzyme peel or acid: when do you choose which?)",
-      "skc-huid-conservering": "Carousel by SkinClarity Club, the skin therapist: Conserveringsmiddelen zijn niet de vijand in je kastje (preservatives are not the enemy in your cabinet)",
-      "sl-same-leads": "Instagram carousel by SalesLobe: Same leads. More revenue.",
-      "sl-three-kinds": "Instagram carousel by SalesLobe: Slow replies leak. Wrong ones burn the lead.",
-      "sl-not-right-now": "Instagram carousel by SalesLobe: Not right now is not not interested."
+      "skc-huid-conservering": "Carousel by SkinClarity Club, the skin therapist: Conserveringsmiddelen zijn niet de vijand in je kastje (preservatives are not the enemy in your cabinet)"
     },
     "hub": {
       "meta": {
@@ -2805,12 +2803,12 @@
           "link": "Read the case"
         },
         "sl": {
-          "postsLabel": "Three real posts by SalesLobe",
-          "label": "Instagram",
-          "caption": "Real posts by SalesLobe on Instagram, published in October 2026.",
+          "postsLabel": "Three slides from the carousel of 27 October",
+          "caption": "Real carousel by SalesLobe on Instagram, published on 27 October 2026.",
           "eyebrow": "B2B · since October 2026",
           "title": "SalesLobe",
-          "text": "Clyde runs the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. B2B, so with a different tone than skincare."
+          "text": "Clyde runs the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. B2B, so with a different tone than skincare.",
+          "link": "Read the case"
         }
       },
       "faq": {
@@ -2952,6 +2950,152 @@
       },
       "client": {
         "description": "Dutch skincare brand with a club, a webshop and a skin therapist."
+      }
+    },
+    "sl": {
+      "meta": {
+        "title": "SalesLobe case: B2B content on Instagram and LinkedIn",
+        "description": "How Clyde makes the Instagram of SalesLobe and the LinkedIn of its founder Paul den Hartogh: first capture the voice, then the content."
+      },
+      "hero": {
+        "eyebrow": "Case · B2B",
+        "title": "SalesLobe: B2B content with Clyde, voice first.",
+        "definition": "Clyde makes the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. Every post in SalesLobe's own voice and house style, approved in the app and then published at the scheduled time.",
+        "factsLabel": "In short",
+        "facts": {
+          "channels": {
+            "label": "Channels",
+            "value": "Instagram and LinkedIn"
+          },
+          "since": {
+            "label": "Since",
+            "value": "5 October 2026"
+          },
+          "october": {
+            "label": "Online in October",
+            "value": "23 posts: 9 on Instagram, 14 on LinkedIn"
+          }
+        }
+      },
+      "two": {
+        "title": "One topic, two voices.",
+        "sub": "On 23 October Paul explained on LinkedIn why \"not right now\" is not a no. Four days later the same idea went out as a carousel on the Instagram of SalesLobe. On LinkedIn Paul speaks himself, in the first person and with a story from his own work. On Instagram the brand speaks: shorter, on slides and with hashtags.",
+        "liLabel": "LinkedIn · Paul den Hartogh · 23 October",
+        "liNote": "The post is shortened here.",
+        "igLabel": "Instagram · SalesLobe · 27 October",
+        "igAlt": "First slide of SalesLobe's Instagram carousel: Not right now is not not interested.",
+        "caption": "Real posts by SalesLobe, published on 23 and 27 October 2026."
+      },
+      "slides": {
+        "title": "The carousel, slide by slide.",
+        "sub": "One thought per slide, from the difference between \"later\" and \"no\" to what it costs when you mix them up. The last slide says what SalesLobe does.",
+        "stripLabel": "Six slides of the carousel of 27 October, scrollable",
+        "of": "{n} of 6",
+        "alts": {
+          "s01": "Slide 1: Not right now is not not interested. In a busy inbox they look the same.",
+          "s02": "Slide 2: One means: ask me later. The other means: stop.",
+          "s03": "Slide 3: Mix them up and it costs you.",
+          "s04": "Slide 4: So give later a real date.",
+          "s05": "Slide 5: Now do that across every client inbox.",
+          "s06": "Slide 6: SalesLobe sorts every reply and drafts the answer."
+        },
+        "caption": "Real carousel by SalesLobe on Instagram, published on 27 October 2026."
+      },
+      "voice": {
+        "title": "Voice first, then content.",
+        "sub": "Before the first content month we captured the voice of SalesLobe. Paul got three real posts from his first week, each in two or three versions that differ on one point, and six choices that come back in every post. Only then did the content month start.",
+        "note": "The opening of the same LinkedIn post in three tones. The message is the same, only the tone differs.",
+        "versions": {
+          "a": "Version A · tight and businesslike",
+          "b": "Version B · tight but personal · chosen",
+          "c": "Version C · loose and short"
+        },
+        "caption": "Real voice round for SalesLobe, September 2026. For all three posts Paul chose version B.",
+        "choicesTitle": "Six choices by Paul.",
+        "choicesSub": "They apply to every post written since, on both channels.",
+        "choicesLabel": "Six choices by Paul",
+        "choices": {
+          "who": {
+            "label": "Who speaks on LinkedIn",
+            "value": "Paul himself, in the first person"
+          },
+          "spelling": {
+            "label": "Spelling",
+            "value": "American"
+          },
+          "emoji": {
+            "label": "Emoji and hashtags",
+            "value": "Only on Instagram"
+          },
+          "cta": {
+            "label": "A call to action on LinkedIn",
+            "value": "About one in three posts"
+          },
+          "numbers": {
+            "label": "Numbers",
+            "value": "A calculation, with the assumptions stated"
+          },
+          "autopilot": {
+            "label": "The word autopilot",
+            "value": "Only as a contrast"
+          }
+        }
+      },
+      "live": {
+        "title": "How a post goes live.",
+        "sub": "The same work as for skincare, with a different voice: in English, for businesses, and on LinkedIn with the founder as the sender.",
+        "steps": {
+          "concept": {
+            "title": "Clyde makes the draft",
+            "text": "In the voice and house style of SalesLobe, from what Clyde remembers about the brand."
+          },
+          "approve": {
+            "title": "Approval in the app",
+            "text": "Every draft stays in the app until it is approved. Editing or skipping it is possible too."
+          },
+          "live": {
+            "title": "Published at the scheduled time",
+            "text": "Then the app publishes the post on Instagram or LinkedIn, at the time from the calendar."
+          }
+        },
+        "links": {
+          "memory": "How the memory per client works",
+          "skc": "The SkinClarity Club case"
+        }
+      },
+      "faq": {
+        "title": "Questions about this case.",
+        "sub": "What agencies want to know about B2B content with Clyde.",
+        "items": {
+          "channels": {
+            "q": "Which channels does Clyde make for SalesLobe?",
+            "a": "The brand's Instagram and the LinkedIn of the founder, Paul den Hartogh."
+          },
+          "language": {
+            "q": "In which language does Clyde write for SalesLobe?",
+            "a": "In English, with American spelling. Paul chose that in the voice round."
+          },
+          "voice": {
+            "q": "How was the voice of SalesLobe captured?",
+            "a": "Before the first content month, with three real posts in versions and six choices by Paul."
+          },
+          "results": {
+            "q": "Are there results in this case?",
+            "a": "No. This case shows how the work runs and what went live, not what it delivered. Figures on revenue or leads belong to SalesLobe."
+          }
+        },
+        "links": {
+          "all": "All cases"
+        }
+      },
+      "end": {
+        "title": "B2B clients in your portfolio too?",
+        "sub": "A 30-minute call. Afterwards you know whether Clyde fits your clients.",
+        "cta": "Request a call",
+        "link": "All cases"
+      },
+      "client": {
+        "description": "B2B brand of founder Paul den Hartogh."
       }
     }
   },

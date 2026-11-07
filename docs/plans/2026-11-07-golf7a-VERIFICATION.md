@@ -37,8 +37,20 @@ Na de merge: dit beeld op de preview of prod bekijken op 1280 px (open punt voor
 - Weg (0 treffers buiten de oude pagina): `ChapterSection`, `ScrollProgressRail`, `BeforeAfterTimeline`, `CaseStudyJsonLd`, `SINDY_PERSON_ID`, `LINKEDIN_SINDY_URL`. `SkcTestimonialBlock` blijft: `scripts/validate/phase-15-playwright.mjs` noemt hem nog.
 - `es.json` spiegelt `en.json` (zoals 6a en 6b).
 
+## Live (2026-11-07)
+
+Daley zei "Ja, push en merge" op de diffpagina (`A/alle-paginas/golf7a-diff/index.html`, één AskUserQuestion). PR #100, squash-merge `ff8fa6d1` op 2026-11-07 ~10:30Z, dus lastmod 2026-11-07 is de merge-dag.
+
+| Poort | Commando | Uitkomst |
+|---|---|---|
+| Preview | `gh pr checks 100 --watch` | Vercel pass |
+| Derde SKC-post op de preview | `vercel curl` op `/_next/image?url=%2Fhome%2Fklanten%2Fskc-huid-conservering.webp&w={256,375,384,750}`, `Accept: image/avif`; plus Claude in Chrome op de pagina | 4x 200 `image/avif` (w=375 in 0,88 s); in Chrome 4/4 beelden geladen, 0 overflow. Chrome bleef gemaximaliseerd op 1707 px, dus 1280 is op prod gemeten (volgende rij) |
+| Derde SKC-post op prod, 1280 | Playwright 1280x900 op `/nl/case-studies/skinclarity-club` | w=375 en w=256 200 `image/avif`, 4/4 beelden geladen; de lokale AVIF-hang is dus alleen lokaal |
+| Productiedeploy | `vercel ls futuremarketingai --prod` | `dpl_5U5wDWSsMfh9xqU6xHA5vdwzR3qA` Ready |
+| curl prod | 4 URL's plus saleslobe | 4x 200 met de nieuwe title en H1 (nl en en); `/nl/case-studies/saleslobe` 404 (7b); /nl 2x `href="/nl/case-studies"` (menu en footer) |
+| Sitemap prod | `/sitemap.xml` | 4 URL's lastmod 2026-11-07 |
+| PSI, 3 runs | `ronde1b/tools/port/m-psi.mjs`, JSON in `ronde1b/g7/psi7a/` | /nl/case-studies: mobiel 100x3 (LCP 1,1 s, CLS 0,019), desktop 100x3 (LCP 0,3-0,6 s, CLS 0,002). SKC-case: mobiel 100x3 (LCP 1,1 s, CLS 0,022), desktop 100x3 (LCP 0,3 s, CLS 0,002). LCP is altijd tekst (`p.g6-def` of `h1#skc-h1`) |
+
 ## Open
 
-- Daleys ja op de diff (`A/alle-paginas/golf7a-diff/index.html`), dan push, PR, merge na een groene preview, PSI 3x mobiel en desktop.
-- lastmod staat op 2026-11-07; valt de merge op een latere dag, dan gaat hij naar de merge-dag (zoals bij 6b).
-- 7b (SalesLobe) wacht op Pauls antwoord op het bericht van Daley.
+- 7b (SalesLobe) wacht op Pauls antwoord. Daley vroeg op 2026-11-07 een mockup om aan Paul te laten zien: Artifact https://claude.ai/artifact/KhwYExv5yuPpvDfBtucFd2 (privé, Daley deelt hem), kopie in `A/alle-paginas/golf7b-mockup/`. Daley stuurt het bericht aan Paul zelf.

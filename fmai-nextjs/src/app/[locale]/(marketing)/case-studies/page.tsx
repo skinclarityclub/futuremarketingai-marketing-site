@@ -29,7 +29,7 @@ export default async function CasesHubPage({ params }: { params: Promise<{ local
 
   return (
     <PageShell showStickyCta>
-      {/* CollectionPage with an ItemList of the case pages; SalesLobe joins the list in PR 7b, after Paul's yes */}
+      {/* CollectionPage with an ItemList of the case pages */}
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -50,6 +50,12 @@ export default async function CasesHubPage({ params }: { params: Promise<{ local
                 position: 1,
                 name: t('skc.meta.title'),
                 url: `${SITE_URL}/${locale}/case-studies/skinclarity-club`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: t('sl.meta.title'),
+                url: `${SITE_URL}/${locale}/case-studies/saleslobe`,
               },
             ],
           },

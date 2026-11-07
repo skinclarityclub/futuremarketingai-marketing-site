@@ -87,6 +87,8 @@ export const PAGE_DATES: Record<string, string> = {
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
   '/case-studies': '2026-11-07',
   '/case-studies/skinclarity-club': '2026-11-07',
+  // 2026-11-07 golf 7b: the SalesLobe case, after Paul's yes on the mockup.
+  '/case-studies/saleslobe': '2026-11-07',
   '/skills/social-media': '2026-11-05',
   '/skills/blog-factory': '2026-11-05',
   '/skills/ad-manager': '2026-11-05',
