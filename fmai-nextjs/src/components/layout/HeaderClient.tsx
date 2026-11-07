@@ -43,6 +43,8 @@ const HOVER_CLOSE_DELAY_MS = 180
 
 export function HeaderClient({ locale }: HeaderClientProps) {
   const pathname = usePathname()
+  // two locales since 2026-10-02 (routing.ts), so the switch is one link to the other one
+  const otherLocale = locale === 'nl' ? 'en' : 'nl'
   const t = useTranslations('nav')
   const tHeader = useTranslations('header')
 
@@ -280,6 +282,21 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         </div>
 
         <div className="ml-auto flex items-center gap-4 2xl:gap-5">
+          {/* Daley 2026-11-08: the language switch lives in the bar; as a floating button it covered page content.
+              The accessible name keeps the visible code in it (label in name). */}
+          <Link
+            href={pathname}
+            locale={otherLocale}
+            hrefLang={otherLocale}
+            lang={otherLocale}
+            aria-label={otherLocale === 'en' ? 'English (EN)' : 'Nederlands (NL)'}
+            onClick={() =>
+              window.gtag?.('event', 'language_switch', { from_language: locale, to_language: otherLocale })
+            }
+            className="inline-flex h-11 items-center px-1 text-[14px] font-semibold tracking-[0.06em] text-[#c4ccd8] hover:text-[#f4f7fb] transition-colors"
+          >
+            {otherLocale.toUpperCase()}
+          </Link>
           <a
             href={LOGIN_HREF}
             className="hidden xl:inline text-[15px] whitespace-nowrap text-[#c4ccd8] hover:text-[#f4f7fb] transition-colors"
