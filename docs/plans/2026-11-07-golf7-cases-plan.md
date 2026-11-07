@@ -21,6 +21,10 @@ Daarbij: `A` = `C:/Users/daley/Desktop/80-Archief/fma-app-audits/2026-11-02-webs
 |---|---|
 | Volgende golf | **Golf 7: Cases** (AskUserQuestion, na de merge van #99) |
 | Vragen vooraf | "go": geen vragen vooraf; ik volg het siteplan, splits in 7a en 7b en schrijf SKC in de verleden tijd tot er weer posts live gaan |
+| Prototype r3 (AskUserQuestion, 2026-11-07) | **Ja, zo porten**, zonder de aandelen per account |
+| De homezin "Bij allebei maakt Clyde de posts" | **Mee in 7a**: SKC ook op de home in de verleden tijd (alleen NL; de Engelse home heeft die sectie niet) |
+| Wie keurde bij SKC goed | **Alleen het mechanisme**, geen persoon |
+| Het bericht aan Paul (`R/golf7-ONTWERP.md`) | **Zo goed**; Daley stuurt het zelf. 7b wacht op Pauls antwoord |
 
 ## Mijn keuzes (te toetsen in het prototype)
 
