@@ -22,7 +22,10 @@ async function sitemapPaths(page: Page): Promise<string[]> {
 }
 
 // The noise below is not the page's: third-party scripts that are absent locally, and the dev-only Redis warning.
-const IGNORED = [/Upstash/i, /googletagmanager|gtag/i, /vercel\/(insights|speed-insights)/i, /Failed to load resource.*(favicon|_vercel)/i]
+const IGNORED = [/Upstash/i, /googletagmanager|gtag/i, /vercel\/(insights|speed-insights)/i]
+// Vercel serves these on its own domains only; a local `next start` answers 404, so the URL is checked, not the console text
+// (Chromium's "Failed to load resource" line carries no URL).
+const IGNORED_URLS = [/\/_vercel\/(insights|speed-insights)\//, /googletagmanager\.com|google-analytics\.com/]
 
 async function scrollThrough(page: Page) {
   await page.evaluate(async () => {
@@ -30,6 +33,18 @@ async function scrollThrough(page: Page) {
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
       window.scrollTo(0, y)
       await new Promise((r) => setTimeout(r, 120))
+    }
+    // strips that scroll sideways (cases, the werk band) hold lazy images a visitor reaches by swiping: swipe them too
+    const strips = Array.from(document.querySelectorAll<HTMLElement>('body *')).filter(
+      (e) => e.scrollWidth > e.clientWidth + 1 && /(auto|scroll)/.test(getComputedStyle(e).overflowX),
+    )
+    for (const s of strips) {
+      s.scrollIntoView({ block: 'center' })
+      for (let x = 0; x < s.scrollWidth; x += Math.max(100, Math.round(s.clientWidth * 0.8))) {
+        s.scrollLeft = x
+        await new Promise((r) => setTimeout(r, 120))
+      }
+      s.scrollLeft = 0
     }
     window.scrollTo(0, 0)
   })
@@ -45,11 +60,18 @@ test('every sitemap page works on a phone', async ({ page }) => {
   for (const path of paths) {
     const errors: string[] = []
     const onConsole = (m: { type(): string; text(): string }) => {
-      if (m.type() === 'error' && !IGNORED.some((re) => re.test(m.text()))) errors.push(m.text().slice(0, 160))
+      const text = m.text()
+      if (m.type() !== 'error' || IGNORED.some((re) => re.test(text))) return
+      // a failed load is reported by onResponse below, with its URL
+      if (!text.startsWith('Failed to load resource')) errors.push(text.slice(0, 160))
     }
     const onPageError = (e: Error) => errors.push(`pageerror: ${e.message.slice(0, 160)}`)
+    const onResponse = (r: { status(): number; url(): string }) => {
+      if (r.status() >= 400 && !IGNORED_URLS.some((re) => re.test(r.url()))) errors.push(`HTTP ${r.status()} ${r.url().slice(0, 140)}`)
+    }
     page.on('console', onConsole)
     page.on('pageerror', onPageError)
+    page.on('response', onResponse)
 
     const res = await page.goto(path, { waitUntil: 'load' })
     const status = res?.status() ?? 0
@@ -57,6 +79,7 @@ test('every sitemap page works on a phone', async ({ page }) => {
       problems.push(`${path}: status ${status}`)
       page.off('console', onConsole)
       page.off('pageerror', onPageError)
+      page.off('response', onResponse)
       continue
     }
     await scrollThrough(page)
@@ -86,6 +109,7 @@ test('every sitemap page works on a phone', async ({ page }) => {
 
     page.off('console', onConsole)
     page.off('pageerror', onPageError)
+    page.off('response', onResponse)
   }
   expect(problems, problems.join('\n')).toEqual([])
 })
