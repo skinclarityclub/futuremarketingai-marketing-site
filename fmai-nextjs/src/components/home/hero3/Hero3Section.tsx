@@ -158,7 +158,7 @@ export function Hero3View({ t }: { t: HeroT }) {
                 {' '}
                 <span className="h3ring" data-r="1" style={{ left: "0.26%", top: "16.28%", width: "32.71%", height: "16.15%" } as CSSProperties}>
                 </span>
-                <span className="h3ring" data-r="2" style={{ left: "0.26%", top: "30.97%", width: "32.71%", height: "45.75%" } as CSSProperties}>
+                <span className="h3ring" data-r="2" style={{ left: "0.26%", top: "30.97%", width: "32.71%", height: "16.15%" } as CSSProperties}>
                 </span>
                 <span className="h3ring" data-r="3" style={{ left: "67.03%", top: "82.95%", width: "32.71%", height: "16.15%" } as CSSProperties}>
                 </span>
@@ -205,36 +205,6 @@ export function Hero3View({ t }: { t: HeroT }) {
                       {t("screens.n11")}{' '}
                     </span>
                     {t("screens.n12")}
-                  </p>
-                </div>
-                {' '}
-                <div className="kc kp" data-at="2" style={{ left: ".96%", top: "47.09%" } as CSSProperties}>
-                  <span className="kt">
-                    <svg>
-                      <use href="#h3-i-due" />
-                    </svg>
-                    {t("screens.n13")}
-                  </span>
-                  <p>
-                    <span>
-                      {t("screens.n14")}{' '}
-                    </span>
-                    {t("screens.n15")}
-                  </p>
-                </div>
-                {' '}
-                <div className="kc kp" data-at="2" style={{ left: ".96%", top: "61.77%" } as CSSProperties}>
-                  <span className="kt">
-                    <svg>
-                      <use href="#h3-i-due" />
-                    </svg>
-                    {t("screens.n16")}
-                  </span>
-                  <p>
-                    <span>
-                      {t("screens.n17")}{' '}
-                    </span>
-                    {t("screens.n18")}
                   </p>
                 </div>
                 {' '}
