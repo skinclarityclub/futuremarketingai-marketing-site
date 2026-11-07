@@ -3859,7 +3859,7 @@
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Inbox classificeren | Clyde",
-      "description": "Clyde classificeert je Gmail- of Outlook-inbox, zet labels, meldt elke ochtend wat er binnenkwam en schrijft conceptantwoorden per merk. 5 credits per actie."
+      "description": "Clyde classificeert je Gmail- of Outlook-inbox, zet labels, meldt elke ochtend wat binnenkwam en schrijft conceptantwoorden per merk. 5 credits per actie."
     },
     "hero": {
       "eyebrow": "Vaardigheid 04. Email Management",
