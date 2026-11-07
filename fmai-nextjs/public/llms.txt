@@ -22,6 +22,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Cases](https://future-marketing.ai/nl/case-studies): Two real clients with FutureMarketingAI as the agency: SkinClarity Club (skincare, 3 Instagram accounts, May to October 2026) and SalesLobe (B2B, the brand's Instagram and the founder's LinkedIn, since October 2026). No revenue, reach or lead figures.
 - [Case: SkinClarity Club](https://future-marketing.ai/nl/case-studies/skinclarity-club): Our first client, with FutureMarketingAI as the agency. From May to October 2026 Clyde made the posts for 3 Instagram accounts (the club, the webshop and the skin therapist), each in its own voice, from one memory; a post went live only after approval in the app. Shows the real calendar of the week of 12 October 2026.
 - [Case: SalesLobe](https://future-marketing.ai/nl/case-studies/saleslobe): B2B client, with FutureMarketingAI as the agency. Since 5 October 2026 Clyde makes the brand's Instagram and the LinkedIn of founder Paul den Hartogh, in English, each post approved in the app before it goes live. Shows one topic in both voices (a LinkedIn post of 23 October and an Instagram carousel of 27 October 2026) and the voice round that came first. No revenue, reach or lead figures.
+- [Client portal](https://future-marketing.ai/nl/client-portal): What the agency's client sees and does in their own portal, in the agency's name with white-label on: approve, reject or ask for a change (only a manager on the client's team approves), the calendar and reports, their own images and requests through one form. The client's own Clyde only reads. Real screens of the demo client Dagspa Luwte.
 - [Contact](https://future-marketing.ai/nl/contact): Simple form. For partnership inquiries use Apply instead.
 
 ## 12 Skills
@@ -37,7 +38,7 @@ Contact: hello@future-marketing.ai. Canonical domain: https://future-marketing.a
 - [Reporting and Analytics](https://future-marketing.ai/nl/skills/reporting): A weekly report per brand, a dashboard per client refreshed daily, and an alert on strong deviations. Live.
 - [SEO / GEO Analyst](https://future-marketing.ai/nl/skills/seo-geo): Technical SEO, positions from Search Console, Core Web Vitals and AI citation monitoring. Live.
 - [Research](https://future-marketing.ai/nl/skills/research): Scheduled research per client on market, trends and competitors, with a source link per insight. Live.
-- [Clyde](https://future-marketing.ai/nl/skills/clyde): The AI colleague who routes plain-language requests to the right skill, in the dashboard, in the web app on your home screen and on WhatsApp. Live.
+- [Working with Clyde](https://future-marketing.ai/nl/skills/clyde): How an agency works with Clyde in the dashboard, in the web app on your home screen and on WhatsApp: what Clyde does himself (drafts, fixed tasks, memory per client), what he puts to you (under For you, or on WhatsApp with Run and Cancel) and what only you do (approve, pause). Live.
 
 ## English
 

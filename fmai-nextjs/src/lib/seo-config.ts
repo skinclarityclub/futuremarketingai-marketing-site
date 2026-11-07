@@ -81,7 +81,7 @@ export const PAGE_DATES: Record<string, string> = {
   // 2026-11-05 site-audit P0 PR: every path below changed its HTML that day (CTA label,
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
-  '/': '2026-11-06',
+  '/': '2026-11-07',
   '/memory': '2026-11-07',
   '/apply': '2026-11-06',
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
@@ -89,6 +89,9 @@ export const PAGE_DATES: Record<string, string> = {
   '/case-studies/skinclarity-club': '2026-11-07',
   // 2026-11-07 golf 7b: the SalesLobe case, after Paul's yes on the mockup.
   '/case-studies/saleslobe': '2026-11-07',
+  // 2026-11-07 golf 8a: /client-portal is new, /skills/clyde became a proof page, and the stop-moment sentence on /,
+  // /pricing and /trust now says the pause only holds with the stop moment on (Daley's choice 2).
+  '/client-portal': '2026-11-07',
   '/skills/social-media': '2026-11-05',
   '/skills/blog-factory': '2026-11-05',
   '/skills/ad-manager': '2026-11-05',
@@ -100,8 +103,8 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/reporting': '2026-11-05',
   '/skills/seo-geo': '2026-11-05',
   '/skills/research': '2026-11-05',
-  '/skills/clyde': '2026-11-05',
-  '/pricing': '2026-11-06',
+  '/skills/clyde': '2026-11-07',
+  '/pricing': '2026-11-07',
   '/alternatives': '2026-11-07',
   '/about': '2026-11-06',
   '/contact': '2026-11-05',

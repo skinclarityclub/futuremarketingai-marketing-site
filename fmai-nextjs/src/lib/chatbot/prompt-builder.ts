@@ -48,7 +48,10 @@ const PAGE_CONTEXT_HINTS: Record<string, string> = {
     'User is on the SEO/GEO skill page. Emphasize AI citation monitoring as a USP.',
   '/skills/research':
     'User is on the Research skill page. Offer to run a market research query.',
-  '/skills/clyde': 'User is on the Clyde skill page. You are the orchestrator — demonstrate it.',
+  '/skills/clyde':
+    'User is on the Working with Clyde page. Explain what Clyde does himself, what he puts to the agency (under For you or on WhatsApp, with Run and Cancel) and what only the agency does: approving and pausing. No post goes live without approval.',
+  '/client-portal':
+    "User is on the client portal page. Explain what the agency's client does in their portal: approve, reject or ask for a change (only a manager on their team approves), see the calendar and reports, add images and send requests through the form. The client's own Clyde only reads. Never say the client approves or requests through WhatsApp.",
   '/about': 'User is on the About page. Share how you work.',
 }
 

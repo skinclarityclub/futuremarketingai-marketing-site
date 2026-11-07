@@ -666,14 +666,15 @@
       "skill_reporting": "Reporting",
       "skill_seo_geo": "SEO / GEO",
       "skill_research": "Research",
-      "skill_clyde": "Clyde",
+      "skill_clyde": "Trabajar con Clyde",
       "blog": "Blog",
       "resources": "Recursos",
       "legal": "Aviso legal",
       "legal_privacy": "Privacidad",
       "legal_terms": "Términos",
       "legal_cookies": "Cookies",
-      "trust": "Confianza"
+      "trust": "Confianza",
+      "client_portal": "Tu cliente lo sigue de cerca"
     },
     "cookie_consent": {
       "title": "Usamos cookies",
@@ -898,7 +899,7 @@
         },
         "n2": {
           "title": "Un momento de parada",
-          "body": "Nada se publica sin tu aprobación. Después de aprobar, aún puedes pausar una publicación hasta cuatro horas antes de que salga."
+          "body": "Nada se publica sin tu aprobación. Con el momento de parada activado, aún puedes pausar una publicación después de aprobarla, hasta cuatro horas antes de que salga."
         },
         "n3": {
           "title": "Un portal con el nombre de tu agencia",
@@ -1730,7 +1731,7 @@
     },
     "approval": {
       "title": "Nothing goes live without approval.",
-      "sub": "Clyde proposes, you decide. After you approve, you can still pause a post until four hours before it goes live.",
+      "sub": "Clyde propone, tú decides. Con el momento de parada activado, aún puedes pausar una publicación después de aprobarla, hasta cuatro horas antes de que salga.",
       "link": "How you stay in charge",
       "bar": "Clyde · Voor jou",
       "alt": "The For you screen in the app, in Dutch: two proposals for the demo brand Dagspa Luwte, a carousel and a blog, each with the buttons Approve and Set aside.",
@@ -3099,6 +3100,212 @@
       }
     }
   },
+  "client_portal": {
+    "meta": {
+      "title": "Portal de cliente con el nombre de tu agencia",
+      "description": "Tu cliente recibe su propio portal con el nombre de tu agencia. Aprueba contenido, ve su calendario e informes, añade imágenes y envía solicitudes."
+    },
+    "demo": "Agencia y marcas de ejemplo del entorno de demostración de la app.",
+    "hero": {
+      "eyebrow": "Tu cliente lo sigue de cerca",
+      "title": "Un portal con el nombre de tu agencia, donde tu cliente aprueba.",
+      "definition": "Tu cliente recibe su propio portal con tu nombre, tu logo y tus colores. Allí aprueba contenido o pide un cambio, ve su calendario y sus informes, y envía solicitudes con un formulario fijo.",
+      "factsLabel": "En breve",
+      "facts": {
+        "portal": {
+          "label": "Portal",
+          "value": "Con el nombre de tu agencia"
+        },
+        "approve": {
+          "label": "Aprobar",
+          "value": "Aprobar, rechazar o pedir un cambio"
+        },
+        "phone": {
+          "label": "Móvil",
+          "value": "Barra fija abajo"
+        }
+      },
+      "scene": {
+        "label": "Portal recreado de Dagspa Luwte con el nombre, el logo y el color de la agencia Nova Digital. El carrusel Welke behandeling past bij jou? espera aprobación, con los botones Aprobar y Cambios.",
+        "bar": "Portal de Dagspa Luwte",
+        "nav": {
+          "dashboard": "Panel",
+          "content": "Content Review",
+          "inbox": "Social Inbox",
+          "requests": "Solicitudes",
+          "calendar": "Calendario",
+          "reports": "Informes"
+        },
+        "head": "Contenido",
+        "when": "Instagram · Carrusel · sáb 14 nov, 10:00",
+        "status": "Espera aprobación",
+        "approve": "Aprobar",
+        "changes": "Cambios"
+      },
+      "caption": "Así ve tu cliente el portal con la marca blanca activada. Recreado a partir del portal del entorno de demostración."
+    },
+    "sees": {
+      "title": "Lo que ve tu cliente.",
+      "sub": "En su portal está todo lo que hay listo para su marca, y nada de tus otros clientes.",
+      "tableCaption": "El portal de tu cliente",
+      "colIn": "En el portal",
+      "colDo": "Lo que hace allí",
+      "rows": {
+        "content": {
+          "label": "Contenido",
+          "text": "Aprobar, rechazar o pedir un cambio"
+        },
+        "calendar": {
+          "label": "Calendario",
+          "text": "Ver qué se publica y cuándo, por canal"
+        },
+        "reports": {
+          "label": "Informes",
+          "text": "Releer los informes que se le han entregado"
+        },
+        "strategy": {
+          "label": "Estrategia",
+          "text": "Leer su rumbo, sus objetivos y sus pilares, si esa página está activada para él"
+        },
+        "media": {
+          "label": "Medios",
+          "text": "Añadir sus propias imágenes para sus publicaciones"
+        },
+        "requests": {
+          "label": "Solicitudes",
+          "text": "Enviar una petición con un formulario"
+        }
+      },
+      "shot": {
+        "bar": "Portal · Calendario",
+        "scrollLabel": "El calendario del portal, desplazable",
+        "alt": "El calendario del portal de Dagspa Luwte, tal como lo ve alguien del equipo del cliente, en neerlandés. Arriba la barra Vraag Clyde of ga naar, debajo el aviso de que dos publicaciones esperan aprobación y de que un responsable del equipo las revisa. Debajo, las publicaciones de hoy y de esta semana, marcadas como publicada, por revisar y programada.",
+        "caption": "2 publicaciones esperan aprobación. Un responsable de tu equipo las revisa"
+      },
+      "link": "Un calendario de contenido para varios clientes"
+    },
+    "approve": {
+      "title": "Aprobar, también desde el móvil.",
+      "p1": "Tu cliente abre una publicación, lee el texto y elige: aprobar, rechazar o pedir un cambio. En su móvil, Contenido y Calendario están en la barra fija de abajo.",
+      "p2": "Solo un responsable de su equipo puede aprobar. Los demás lo siguen, pero no aprueban nada.",
+      "scene": {
+        "label": "Ventana de aprobación recreada: el carrusel Welke behandeling past bij jou? con los botones Aprobar, Cambios y Rechazar. Cambios está elegido, con el campo Cambios deseados y el botón Pedir cambios.",
+        "bar": "Contenido · Welke behandeling past bij jou?",
+        "when": "Instagram · Carrusel · sáb 14 nov, 10:00",
+        "approve": "Aprobar",
+        "changes": "Cambios",
+        "reject": "Rechazar",
+        "field": "Cambios deseados *",
+        "placeholder": "Describe los cambios que quieres...",
+        "submit": "Pedir cambios"
+      },
+      "phoneAlt": "El calendario del portal en un móvil, en neerlandés: el aviso de que dos publicaciones esperan aprobación y de que un responsable del equipo las revisa, las publicaciones de hoy y de esta semana, y abajo la barra fija con Dashboard, Content, Clyde, Kalender y Meer.",
+      "captionBuilt": "La ventana de aprobación está recreada a partir del portal.",
+      "captionReal": "El móvil muestra el calendario real: Panel · Contenido · Clyde · Calendario · Más"
+    },
+    "requests": {
+      "title": "Las solicitudes van por un solo formulario.",
+      "sub": "Si tu cliente quiere algo extra, como una publicación sobre un producto nuevo, una campaña o ideas para su estrategia, rellena el formulario de solicitud en su portal. Cada solicitud se convierte en un ticket, con su mensaje y la fecha que quiere.",
+      "shot": {
+        "bar": "Portal · Solicitudes",
+        "scrollLabel": "El formulario de solicitud del portal, desplazable",
+        "alt": "El formulario de solicitud del portal de Dagspa Luwte, en neerlandés. Bajo Wat wil je aanvragen? las opciones Extra post, Reel/video, Campagne y Strategie-input, con Extra post elegida. Un campo de texto con el ejemplo Een post over de cadeaubon voor de feestdagen, el campo Gewenste datum (optioneel) y el botón Verstuur aanvraag. Debajo, Eerdere aanvragen, con una solicitud In behandeling.",
+        "caption": "Nueva solicitud · Enviar solicitud. El texto del campo es un ejemplo y no se envió."
+      }
+    },
+    "clyde": {
+      "title": "Su propio Clyde, que solo lee.",
+      "sub": "Tu cliente también recibe a Clyde, en su portal y en WhatsApp, para preguntas sobre su propio marketing. Ese Clyde lee y explica, pero no programa, no cambia y no publica nada.",
+      "note": "Esta tarjeta está en la página de estrategia de tu cliente, si esa página está activada para él. Además, le pregunta a Clyde desde la barra superior de su portal, o en el móvil desde Clyde en la barra de abajo. Lo que tú haces con Clyde, y lo que él te propone, lo lees en la página sobre trabajar con Clyde.",
+      "scene": {
+        "label": "Tarjeta recreada Pregunta a Clyde en el portal, con tres preguntas: ¿Cómo vamos con los objetivos? ¿Qué hacéis este mes? ¿Qué me queda por aprobar?",
+        "bar": "Estrategia",
+        "head": "Pregunta a Clyde",
+        "q1": "¿Cómo vamos con los objetivos?",
+        "q2": "¿Qué hacéis este mes?",
+        "q3": "¿Qué me queda por aprobar?"
+      },
+      "caption": "Recreada a partir de la tarjeta Pregunta a Clyde de la página de estrategia del portal.",
+      "link": "Cómo trabaja Clyde para ti"
+    },
+    "who": {
+      "title": "Quién hace qué.",
+      "sub": "Clyde hace el trabajo, tú decides, y tu cliente lo sigue y aprueba.",
+      "tableLabel": "Quién hace qué",
+      "cols": {
+        "clyde": "Clyde",
+        "you": "Tú",
+        "client": "Tu cliente"
+      },
+      "rows": {
+        "r1": {
+          "clyde": "Prepara borradores de publicaciones, carruseles y blogs",
+          "you": "Aprueba antes de que algo se publique",
+          "client": "Aprueba, rechaza o pide un cambio"
+        },
+        "r2": {
+          "clyde": "Los programa por canal",
+          "you": "Elige con cuánta autonomía Clyde hace las tareas fijas",
+          "client": "Ve su calendario y sus informes"
+        },
+        "r3": {
+          "clyde": "Prepara los informes",
+          "you": "Pausa una publicación o un cliente entero",
+          "client": "Añade sus propias imágenes"
+        },
+        "r4": {
+          "clyde": "Responde a las preguntas de tu cliente, solo lectura",
+          "you": "Decide qué pasa con una solicitud",
+          "client": "Envía solicitudes con el formulario"
+        }
+      }
+    },
+    "tell": {
+      "title": "Cómo contarle a tu cliente que trabajas con Clyde.",
+      "sub": "No hace falta esconderlo. Los clientes quieren saber sobre todo quién revisa. Tres frases que puedes usar:",
+      "label": "Tres frases para tu cliente",
+      "lines": {
+        "l1": "\"Trabajamos con Clyde, un compañero de IA que prepara y programa tu contenido.\"",
+        "l2": "\"Nada se publica antes de que nosotros lo revisemos y tú lo apruebes en tu portal.\"",
+        "l3": "\"Clyde recuerda la voz de tu marca y tus comentarios, separados de nuestros otros clientes.\""
+      },
+      "links": {
+        "trust": "Dónde están los datos de tu cliente",
+        "memory": "Cómo funciona la memoria por cliente"
+      }
+    },
+    "faq": {
+      "title": "Preguntas sobre el portal de cliente.",
+      "sub": "Lo que las agencias quieren saber antes de que su cliente lo siga de cerca.",
+      "items": {
+        "brand": {
+          "q": "¿Mi cliente ve FutureMarketingAI o mi agencia?",
+          "a": "Tu agencia. Con la marca blanca activada ve tu nombre, tu logo y tus colores, también en su móvil."
+        },
+        "approver": {
+          "q": "¿Quién puede aprobar en el lado de mi cliente?",
+          "a": "Solo un responsable de su equipo. Los demás lo siguen y no aprueban nada."
+        },
+        "whatsapp": {
+          "q": "¿Puede mi cliente aprobar o pedir algo por WhatsApp?",
+          "a": "No. Aprueba en su portal, también desde el móvil, y las solicitudes van por el formulario. En WhatsApp puede hacerle preguntas a Clyde sobre su propio marketing."
+        },
+        "price": {
+          "q": "¿Cuánto cuesta un portal por cliente?",
+          "a": "Nada extra. El portal va incluido con cada marca cliente: como socio founding pagas €997 al mes con diez marcas cliente incluidas. Mira <link>los precios</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Deja que tu cliente lo siga de cerca.",
+      "sub": "Una llamada de 30 minutos. Después sabrás si el portal encaja con tus clientes.",
+      "cta": "Solicita una llamada",
+      "links": {
+        "clyde": "Trabajar con Clyde",
+        "trust": "Confianza"
+      }
+    }
+  },
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Clasificar la bandeja de entrada | Clyde",
@@ -3555,105 +3762,205 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde: el compañero de IA de tu agencia | Clyde",
-      "description": "Clyde, el compañero de IA de tu agencia, en cada pantalla de tu panel y en WhatsApp. Órdenes en lenguaje natural, todas las habilidades a través de un solo interlocutor, memoria por cliente. De 1 a 5 créditos por conversación."
+      "title": "Trabajar con Clyde: en tu panel y en WhatsApp",
+      "description": "Clyde trabaja en cada pantalla de tu panel y en WhatsApp. Lo que hace solo, lo que te propone y lo que solo haces tú, con un botón de parada por cliente."
     },
+    "demo": "Agencia y marcas de ejemplo del entorno de demostración de la app.",
     "hero": {
-      "eyebrow": "Habilidad 10. Clyde, el compañero de IA",
-      "title": "Este es Clyde. El compañero de IA de tu agencia.",
-      "subtitle": "Las demás habilidades (nueve en vivo, dos en desarrollo) son ejecutoras especializadas. Clyde es el compañero que las pone a trabajar y que te acompaña en cada pantalla de tu panel. Da órdenes en lenguaje natural; Clyde elige la habilidad correcta y te trae los resultados. Disponible en el panel, en la app de tu móvil y en WhatsApp.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Planifica esta semana para las tres cuentas de SKC",
-        "prompt2": "Crea un informe semanal de las publicaciones con mejor rendimiento",
-        "prompt3": "¿Qué habilidad gestiona cada campaña en este sprint?"
+      "eyebrow": "Trabajar con Clyde",
+      "title": "Clyde prepara el trabajo. Tú decides.",
+      "definition": "Clyde está en cada pantalla de tu panel y en WhatsApp, y trabaja por cliente desde una sola memoria. Prepara borradores, hace propuestas y ejecuta tareas fijas, pero ninguna publicación sale sin tu aprobación.",
+      "factsLabel": "En breve",
+      "facts": {
+        "where": {
+          "label": "Dónde",
+          "value": "Panel, web app y WhatsApp"
+        },
+        "memory": {
+          "label": "Memoria",
+          "value": "Una por cliente"
+        },
+        "stop": {
+          "label": "Parar",
+          "value": "Un botón por cliente"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Resumen",
+        "alt": "El resumen de Clyde para Dagspa Luwte, en neerlandés: bajo Voor jou seis cosas que te esperan, con los botones Bekijk en beslis y Bekijk, debajo el día de Clyde con cuatro rutinas, y a la derecha el panel para preguntarle algo a Clyde.",
+        "caption": "Trabaja para Dagspa Luwte · 6 cosas te esperan"
       }
     },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Órdenes en lenguaje natural",
-        "body": "\"Escribe 3 posts de Instagram para la marca X sobre el tema Y.\" Clyde entiende el contexto y ejecuta."
-      },
-      "feature2": {
-        "title": "Un solo interlocutor para todas las habilidades",
-        "body": "No necesitas saber qué habilidad hace qué. Pide a Clyde un blog, un post o un informe y él pone a trabajar la adecuada."
-      },
-      "feature3": {
-        "title": "Multicanal",
-        "body": "Clyde está en cada pantalla del panel. Fuera de él lo encuentras en WhatsApp, y él mismo te escribe cuando algo se desvía o espera tu aprobación."
-      },
-      "feature4": {
-        "title": "Memoria por cliente",
-        "body": "Recuerda conversaciones anteriores, preferencias y correcciones, por separado para cada cliente. Tus correcciones las aplica en la siguiente petición."
+    "screen": {
+      "title": "En cada pantalla de tu panel.",
+      "sub": "Clyde está al lado de cada pantalla. Sabe qué cliente tienes abierto y responde desde la memoria de ese cliente. En el móvil pones la web app en tu pantalla de inicio.",
+      "note": "Escribes con palabras normales, en neerlandés o en inglés. Bajo la barra de preguntas eliges el cliente del que se trata.",
+      "shot": {
+        "bar": "Nueva conversación",
+        "alt": "El panel de Clyde junto a la pantalla, en neerlandés: el aviso de que Clyde es IA y puede equivocarse, tres preguntas de ejemplo y la barra Vraag Clyde iets, con Dagspa Luwte como cliente.",
+        "caption": "Clyde es IA y puede equivocarse. Revisa las decisiones importantes."
       }
     },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Elige tu canal",
-        "body": "El panel de tu dashboard, la app de tu móvil o WhatsApp. En cada canal Clyde trabaja con la misma memoria."
-      },
-      "step2": {
-        "title": "Da una orden",
-        "body": "En lenguaje natural: \"Informe para la marca X\" o \"Planifica 5 posts sociales sobre el tema Y.\" Clyde se encarga del resto."
-      },
-      "step3": {
-        "title": "Revisa y ajusta",
-        "body": "Clyde entrega el resultado. Tú revisas. Las correcciones quedan en la memoria, para que la siguiente petición sea más afinada."
+    "forYou": {
+      "title": "Para ti: lo que Clyde te propone.",
+      "sub": "En Para ti está lo que Clyde necesita de ti: publicaciones que esperan revisión, un tema de blog, una señal. Aprobar inicia la tarea, apartarla la detiene. En Entregado lees lo que ya hizo.",
+      "shot": {
+        "bar": "Clyde · Para ti",
+        "scrollLabel": "La pantalla Para ti, desplazable",
+        "alt": "La pantalla Para ti de la app, en neerlandés: dos propuestas para la marca de demostración Dagspa Luwte, un carrusel y un blog, cada una con los botones Goedkeuren y Leg weg.",
+        "caption": "Dos propuestas para Dagspa Luwte, cada una con Aprobar y Apartar."
       }
     },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "Las demás habilidades (nueve en vivo, dos en desarrollo): Clyde las pone a trabajar.",
-      "integration2": "Memoria: por cliente, a partir de conversaciones, feedback y la estrategia.",
-      "integration3": "Rutinas: tareas recurrentes (informe semanal, revisión mensual) en automático."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "Una interfaz para toda tu cartera",
-        "body": "En lugar de abrir pantalla tras pantalla: pregunta a Clyde en el chat. Sabe qué cliente tiene qué marca y qué habilidad debe poner a trabajar."
+    "whatsapp": {
+      "title": "En WhatsApp: una propuesta, tú tocas.",
+      "sub": "Pregúntale a Clyde por WhatsApp. Responde, o hace una propuesta con los botones Ejecutar y Cancelar. Un \"sí\" escrito no ejecuta nada: solo el botón.",
+      "body": "Cada mañana el resumen del día está en tu WhatsApp. Allí confirmas informes y propuestas con un toque; el contenido lo apruebas en la app.",
+      "scene": {
+        "label": "Conversación de WhatsApp recreada con Clyde. Preguntas cómo va Luwte. Clyde: hay tres publicaciones programadas y dos esperan tu revisión en la app. Pides pasar la publicación del jueves al viernes. Clyde propone mover el carrusel del jueves 12 de noviembre al viernes 13 de noviembre, con los botones Ejecutar y Cancelar.",
+        "org": "Nova Digital",
+        "m1": "¿Cómo va Luwte esta semana?",
+        "m2": "Hay tres publicaciones programadas. Dos aún esperan tu revisión en la app.",
+        "m3": "Pasa la del jueves al viernes.",
+        "m4": "Propuesta: el carrusel del jueves 12 de noviembre al viernes 13 de noviembre, a la misma hora.",
+        "run": "Ejecutar",
+        "cancel": "Cancelar"
       },
-      "useCase2": {
-        "title": "Delegar en lugar de ejecutar",
-        "body": "Deja de escribir posts y hacer informes tú mismo. Da las órdenes. Clyde ejecuta, tú decides."
+      "caption": "Recreada a partir de una conversación con Clyde en WhatsApp."
+    },
+    "memory": {
+      "title": "Memoria por cliente.",
+      "sub": "Lo que Clyde sabe de un cliente está en su memoria: perfil, voz de marca, estrategia, forma de trabajar. Tiene en cuenta tus correcciones, y cada noche ordena lo que aprendió ese día.",
+      "shot": {
+        "bar": "Clyde · Memoria",
+        "scrollLabel": "La memoria principal, desplazable",
+        "alt": "La memoria principal de Clyde sobre Dagspa Luwte, en neerlandés: perfil del cliente, identidad de marca, estrategia, forma de trabajar y resumen.",
+        "caption": "La memoria principal de Clyde sobre Dagspa Luwte."
+      },
+      "link": "Cómo funciona la memoria"
+    },
+    "client": {
+      "title": "El Clyde de tu cliente.",
+      "sub": "Tu cliente recibe su propio Clyde, en su portal y en WhatsApp. Ese Clyde responde preguntas sobre su propio marketing y solo lee: no programa, no cambia y no publica nada.",
+      "note": "Tu cliente le pregunta a Clyde desde la barra superior de su portal, o en el móvil desde Clyde en la barra de abajo. La tarjeta Pregunta a Clyde está en su página de estrategia, si esa página está activada para él. Lo demás que ve y aprueba está en la página sobre el portal de cliente.",
+      "scene": {
+        "label": "Tarjeta recreada Pregunta a Clyde en el portal del cliente, con tres preguntas: ¿Cómo vamos con los objetivos? ¿Qué hacéis este mes? ¿Qué me queda por aprobar?",
+        "bar": "Portal · Estrategia",
+        "head": "Pregunta a Clyde",
+        "q1": "¿Cómo vamos con los objetivos?",
+        "q2": "¿Qué hacéis este mes?",
+        "q3": "¿Qué me queda por aprobar?"
+      },
+      "caption": "Recreada a partir de la tarjeta Pregunta a Clyde de la página de estrategia del portal.",
+      "link": "Lo que ve tu cliente"
+    },
+    "roles": {
+      "title": "Lo que Clyde hace solo, lo que te propone, lo que solo haces tú.",
+      "sub": "Por cada tarea fija eliges cuánta autonomía tiene Clyde. Lo demás está fijado.",
+      "tableLabel": "Lo que Clyde hace solo, lo que te propone y lo que solo haces tú",
+      "cols": {
+        "self": "Clyde hace solo",
+        "proposes": "Clyde te propone",
+        "you": "Solo tú"
+      },
+      "rows": {
+        "r1": {
+          "self": "Preparar borradores de publicaciones, carruseles y blogs",
+          "proposes": "Publicaciones y carruseles para revisar",
+          "you": "Aprobar, rechazar o apartar"
+        },
+        "r2": {
+          "self": "Tareas fijas a su hora, si pones esa tarea en ejecutar",
+          "proposes": "Temas de blog y señales",
+          "you": "Elegir con cuánta autonomía funciona una tarea fija"
+        },
+        "r3": {
+          "self": "Actualizar la memoria por cliente",
+          "proposes": "Propuestas en WhatsApp, con Ejecutar y Cancelar",
+          "you": "Pausar una publicación o un cliente entero"
+        }
+      },
+      "modes": {
+        "concept": {
+          "label": "Borrador",
+          "text": "Clyde lo prepara y te lo propone."
+        },
+        "report": {
+          "label": "Ejecutar y avisar",
+          "text": "Lo ejecuta y te avisa."
+        },
+        "silent": {
+          "label": "Ejecutar sin aviso",
+          "text": "Lo ejecuta sin mensaje."
+        }
+      },
+      "modesNote": "Cada tarea fija tiene un techo de coste y un botón de parada.",
+      "day": {
+        "bar": "Clyde · El día de Clyde",
+        "scrollLabel": "El día de Clyde, desplazable",
+        "alt": "El día de Clyde en una línea de tiempo de 06:00 a 22:00, en neerlandés: a las 09:00 el resumen de la mañana, Reacties Luwte y Weekrapport Luwte, a las 14:00 la revisión de contenido de la tarde.",
+        "caption": "Siguiente: revisión de contenido de la tarde a las 14:00 · 4 rutinas"
       }
     },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "cta": {
-      "title": "¿Listo para sumar a Clyde a tu equipo como compañero?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja Clyde con tus marcas.",
-      "button": "Solicita una llamada"
+    "stop": {
+      "title": "El momento de parada.",
+      "sub": "Si activas el momento de parada para un cliente, aún puedes pausar una publicación después de aprobarla, hasta cuatro horas antes de que salga. Si de verdad tiene que parar todo, un botón pausa todo para un cliente.",
+      "listTitle": "Lo que Clyde no hace sin ti.",
+      "items": {
+        "publish": {
+          "title": "Publicar algo que nadie ha aprobado",
+          "text": "Cada publicación espera en la app una aprobación."
+        },
+        "whatsapp": {
+          "title": "Ejecutar una propuesta en WhatsApp antes de que toques",
+          "text": "Un \"sí\" escrito no cuenta. Solo el botón Ejecutar."
+        },
+        "task": {
+          "title": "Iniciar una tarea de Para ti sin tu aprobación",
+          "text": "Aprobar inicia la tarea, apartarla la detiene."
+        },
+        "client": {
+          "title": "Cambiar algo a petición de tu cliente",
+          "text": "El Clyde de tu cliente solo lee."
+        }
+      },
+      "links": {
+        "regie": "Nada se publica sin ti",
+        "trust": "Confianza"
+      }
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Clyde",
+      "title": "Preguntas sobre trabajar con Clyde.",
+      "sub": "Lo que las agencias quieren saber antes de darle trabajo a Clyde.",
       "items": {
-        "q1": {
-          "question": "¿Qué es Clyde exactamente?",
-          "answer": "Clyde es el compañero de IA que pone a trabajar las demás habilidades. Da instrucciones en lenguaje natural (neerlandés o inglés) y Clyde elige la habilidad correcta: escribir un blog, planificar posts, hacer una auditoría SEO. Funciona en el panel, en la app de tu móvil y en WhatsApp."
+        "assistant": {
+          "q": "¿Clyde es un asistente de marketing con IA o un chatbot?",
+          "a": "Hablas con él como con un chatbot, pero trabaja dentro de tus clientes. Por cliente conoce la voz de marca y la memoria, prepara borradores y ejecuta tareas fijas. Lo que se publica lo apruebas tú."
         },
-        "q2": {
-          "question": "¿Qué canales soporta Clyde?",
-          "answer": "En cada pantalla de tu panel, en la app de tu móvil y en WhatsApp mediante un número conectado. En WhatsApp preguntas a Clyde cómo van tu contenido y tus cifras, recibes cada viernes el informe semanal de SEO, y él mismo te escribe cuando una cifra se desvía o algo espera tu aprobación. Los informes y las propuestas de Clyde los confirmas allí con un toque; el contenido lo apruebas en la app. En cada canal Clyde trabaja con la misma memoria por cliente."
+        "whatsapp": {
+          "q": "¿Cómo le doy una tarea a Clyde por WhatsApp?",
+          "a": "Desde un número vinculado le mandas un mensaje con palabras normales. Responde, o hace una propuesta con Ejecutar y Cancelar; solo cuando tocas, ocurre. El contenido lo apruebas en la app."
         },
-        "q3": {
-          "question": "¿En qué tiers está disponible Clyde?",
-          "answer": "Clyde está incluido en todos los tiers; no es una habilidad aparte sino la capa base. Una conversación cuesta de 1 a 5 créditos, según el modelo de lenguaje."
+        "split": {
+          "q": "¿Qué hace Clyde solo y qué me propone?",
+          "a": "Prepara borradores y ejecuta tareas fijas como tú las configuras. Publicaciones, temas de blog, señales y propuestas te los presenta en Para ti o en WhatsApp. Aprobar y pausar solo lo haces tú."
         },
-        "q4": {
-          "question": "¿Cuánto dura el onboarding de Clyde?",
-          "answer": "Toda la plataforma está lista en cuatro semanas: conectar y reunir conocimiento, configurar la voz de marca y las aprobaciones, primeros encargos y ajustes. Después Clyde sigue aprendiendo: cada noche ordena lo que aprendió ese día sobre tus clientes."
+        "client": {
+          "q": "¿Mi cliente también puede usar a Clyde?",
+          "a": "Sí, en su portal y en WhatsApp, para preguntas sobre su propio marketing. Ese Clyde solo lee. Lo demás que ve tu cliente está en <link>la página sobre el portal de cliente</link>."
         },
-        "q5": {
-          "question": "¿En qué se diferencia Clyde de ChatGPT o Claude?",
-          "answer": "ChatGPT y Claude son asistentes generales: no conocen a tus clientes y no están en tus canales. Clyde es un compañero de IA con su propia memoria por cliente, conexiones con tus canales y datos, y la voz de marca de cada cliente como contexto fijo. Sin necesidad de volver a explicar el contexto en cada sesión."
+        "app": {
+          "q": "¿Clyde funciona también como web app en el móvil?",
+          "a": "Sí. Pones la web app en la pantalla de inicio de tu móvil y trabajas desde la misma memoria por cliente."
         }
+      }
+    },
+    "end": {
+      "title": "Mira a Clyde trabajando.",
+      "sub": "Una llamada de 30 minutos. Después sabrás cómo te propone Clyde y cómo decides tú.",
+      "cta": "Solicita una llamada",
+      "links": {
+        "portal": "Tu cliente lo sigue de cerca",
+        "pricing": "Precios"
       }
     }
   },
@@ -3918,7 +4225,7 @@
       },
       "grow": {
         "label": "Crece y Optimiza",
-        "description": "Análisis, investigación y orquestación",
+        "description": "Análisis, investigación y trabajar con Clyde",
         "items": {
           "reporting": {
             "title": "Reporting",
@@ -3934,7 +4241,7 @@
           },
           "clyde": {
             "title": "Clyde, compañero de IA",
-            "description": "El orquestador central de todas las habilidades"
+            "description": "Prepara el trabajo, tú decides"
           }
         }
       },

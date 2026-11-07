@@ -178,7 +178,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
         'Clyde is the AI colleague who puts the other skills to work. Give instructions in natural language and Clyde routes them to the right skill. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
       features: [
         'Natural language instructions',
-        'Orchestration of all other skills',
+        'Drafts, proposals and fixed tasks per client',
         'In every screen of the dashboard and on WhatsApp',
         'Memory and context per client',
         'Routines and recurring tasks',
@@ -325,12 +325,12 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
       ],
     },
     clyde: {
-      shortDescription: 'El compañero de IA que orquesta todas las demás habilidades.',
+      shortDescription: 'El compañero de IA que pone a trabajar las demás habilidades.',
       longDescription:
         'Clyde es el compañero de IA que dirige todas las demás habilidades. Da instrucciones en lenguaje natural y Clyde las enruta a la habilidad adecuada. Funciona en el dashboard, en la app de tu móvil y en WhatsApp. Tiene memoria por cliente y recuerda conversaciones, preferencias y contexto previos.',
       features: [
         'Instrucciones en lenguaje natural',
-        'Orquestación de todas las demás habilidades',
+        'Borradores, propuestas y tareas fijas por cliente',
         'En cada pantalla del dashboard y en WhatsApp',
         'Memoria y contexto por cliente',
         'Rutinas y tareas recurrentes',

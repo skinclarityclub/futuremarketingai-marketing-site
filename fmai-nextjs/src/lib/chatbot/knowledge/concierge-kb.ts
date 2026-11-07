@@ -29,7 +29,7 @@ Memory: Clyde keeps a memory per client (conversations, feedback, strategy and r
 
 Control: per task the agency chooses what Clyde proposes first and what he may do himself and report. Critical actions such as ad spend are always proposed first.
 
-Entrances: the dashboard, WhatsApp and the web app on your home screen (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard.`,
+Entrances: the dashboard, WhatsApp and the web app on your home screen (no App Store app, no push). Content is approved in the dashboard or the app; reports and Clyde's proposals are confirmed with one tap in WhatsApp. The agency's client gets their own dashboard, a content library and Clyde on WhatsApp, and sends requests to the agency through a form in that dashboard. In that client portal only a manager on the client's team approves; the client's Clyde only reads. Page: https://future-marketing.ai/nl/client-portal.`,
  keywords: [
  'services',
  'skills',

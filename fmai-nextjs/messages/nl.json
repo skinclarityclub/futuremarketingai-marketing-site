@@ -704,7 +704,7 @@
     "regie": {
       "lines": {
         "n1": "Clyde stelt voor, jij beslist.",
-        "n2": "Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat.",
+        "n2": "Met het stopmoment aan pauzeer je een post na je akkoord nog tot vier uur voor hij live gaat.",
         "n3": "Moet het echt stil, dan zet je met één knop alles voor een klant op pauze."
       },
       "sceneDescription": "In Voor jou staat onder Komt eraan de reel van Dagspa Luwte, die op woensdag 11 november om 19:00 live gaat. Met Pauzeer gaat hij terug naar review, en tot 18:35 kun je hem toch laten gaan. De kaart Crisispauze zet met Alles pauzeren alles voor Luwte stil.",
@@ -1364,14 +1364,15 @@
       "skill_reporting": "Rapportage",
       "skill_seo_geo": "SEO / GEO",
       "skill_research": "Research",
-      "skill_clyde": "Clyde",
+      "skill_clyde": "Werken met Clyde",
       "blog": "Blog",
       "resources": "Kennisbank",
       "legal": "Juridisch",
       "legal_privacy": "Privacy",
       "legal_terms": "Voorwaarden",
       "legal_cookies": "Cookies",
-      "trust": "Vertrouwen"
+      "trust": "Vertrouwen",
+      "client_portal": "Je klant kijkt mee"
     },
     "cookie_consent": {
       "title": "We gebruiken cookies",
@@ -1596,7 +1597,7 @@
         },
         "n2": {
           "title": "Een stopmoment",
-          "body": "Niets gaat live zonder jouw akkoord. Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat."
+          "body": "Niets gaat live zonder jouw akkoord. Met het stopmoment aan pauzeer je een post na je akkoord nog tot vier uur voor hij live gaat."
         },
         "n3": {
           "title": "Een portaal op naam van je bureau",
@@ -2428,7 +2429,7 @@
     },
     "approval": {
       "title": "Niets gaat live zonder akkoord.",
-      "sub": "Clyde stelt voor, jij beslist. Na je akkoord pauzeer je een post nog tot vier uur voor hij live gaat.",
+      "sub": "Clyde stelt voor, jij beslist. Met het stopmoment aan pauzeer je een post na je akkoord nog tot vier uur voor hij live gaat.",
       "link": "Zo houd je de regie",
       "bar": "Clyde · Voor jou",
       "alt": "Het scherm Voor jou in de app: twee voorstellen voor het demo-merk Dagspa Luwte, een carrousel en een blog, elk met de knoppen Goedkeuren en Leg weg.",
@@ -3797,6 +3798,212 @@
       }
     }
   },
+  "client_portal": {
+    "meta": {
+      "title": "Klantportaal op naam van je bureau: je klant keurt goed",
+      "description": "Je klant krijgt een eigen portaal op naam van je bureau. Hij keurt content goed, ziet zijn kalender en rapporten, voegt beeld toe en stuurt aanvragen."
+    },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
+    "hero": {
+      "eyebrow": "Je klant kijkt mee",
+      "title": "Een portaal op naam van je bureau, waar je klant zelf goedkeurt.",
+      "definition": "Je klant krijgt een eigen portaal met jouw naam, logo en kleuren. Daar keurt hij content goed of vraagt hij een wijziging, ziet hij zijn kalender en rapporten, en stuurt hij aanvragen via een vast formulier.",
+      "factsLabel": "Kort",
+      "facts": {
+        "portal": {
+          "label": "Portaal",
+          "value": "Op naam van je bureau"
+        },
+        "approve": {
+          "label": "Goedkeuren",
+          "value": "Goedkeuren, afwijzen of een wijziging vragen"
+        },
+        "phone": {
+          "label": "Telefoon",
+          "value": "Vaste balk onderin"
+        }
+      },
+      "scene": {
+        "label": "Nagebouwd portaal van Dagspa Luwte met de naam, het logo en de kleur van het bureau Nova Digital. De carrousel Welke behandeling past bij jou? wacht op goedkeuring, met de knoppen Goedkeuren en Wijzigingen.",
+        "bar": "Portaal van Dagspa Luwte",
+        "nav": {
+          "dashboard": "Dashboard",
+          "content": "Content Review",
+          "inbox": "Social Inbox",
+          "requests": "Aanvragen",
+          "calendar": "Kalender",
+          "reports": "Rapporten"
+        },
+        "head": "Content",
+        "when": "Instagram · Carrousel · za 14 nov, 10:00",
+        "status": "Wacht op goedkeuring",
+        "approve": "Goedkeuren",
+        "changes": "Wijzigingen"
+      },
+      "caption": "Zo ziet je klant het portaal met white-label aan. Nagebouwd naar het portaal in de demo-omgeving."
+    },
+    "sees": {
+      "title": "Wat je klant ziet.",
+      "sub": "In zijn portaal staat alles wat voor zijn merk klaarstaat, en niets van je andere klanten.",
+      "tableCaption": "Het portaal van je klant",
+      "colIn": "In het portaal",
+      "colDo": "Wat hij daar doet",
+      "rows": {
+        "content": {
+          "label": "Content",
+          "text": "Goedkeuren, afwijzen of een wijziging vragen"
+        },
+        "calendar": {
+          "label": "Kalender",
+          "text": "Zien wat er wanneer live gaat, per kanaal"
+        },
+        "reports": {
+          "label": "Rapporten",
+          "text": "De rapporten teruglezen die bij hem zijn afgeleverd"
+        },
+        "strategy": {
+          "label": "Strategie",
+          "text": "Zijn koers, doelen en pijlers lezen, als die pagina voor hem aanstaat"
+        },
+        "media": {
+          "label": "Media",
+          "text": "Zelf beeld toevoegen voor zijn posts"
+        },
+        "requests": {
+          "label": "Aanvragen",
+          "text": "Een verzoek sturen via een formulier"
+        }
+      },
+      "shot": {
+        "bar": "Portaal · Kalender",
+        "scrollLabel": "De kalender in het portaal, scrollbaar",
+        "alt": "De kalender in het portaal van Dagspa Luwte, zoals iemand van het team van de klant hem ziet. Bovenaan de vraagbalk Vraag Clyde of ga naar, daaronder de melding dat twee posts op goedkeuring wachten en dat een beheerder van het team ze beoordeelt. Daaronder de posts van vandaag en deze week, met Gepost, Te beoordelen en Gepland.",
+        "caption": "2 posts wachten op goedkeuring. Een beheerder van je team beoordeelt ze"
+      },
+      "link": "Een contentkalender voor meerdere klanten"
+    },
+    "approve": {
+      "title": "Goedkeuren, ook op zijn telefoon.",
+      "p1": "Je klant opent een post, leest het bijschrift en kiest: goedkeuren, afwijzen of een wijziging vragen. Op zijn telefoon staan Content en Kalender in de vaste balk onderin.",
+      "p2": "Goedkeuren kan alleen een beheerder van zijn team. De anderen kijken mee, maar keuren niets.",
+      "scene": {
+        "label": "Nagebouwd goedkeurvenster: de carrousel Welke behandeling past bij jou? met de knoppen Goedkeuren, Wijzigingen en Afwijzen. Wijzigingen is gekozen, met het veld Gewenste wijzigingen en de knop Wijzigingen aanvragen.",
+        "bar": "Content · Welke behandeling past bij jou?",
+        "when": "Instagram · Carrousel · za 14 nov, 10:00",
+        "approve": "Goedkeuren",
+        "changes": "Wijzigingen",
+        "reject": "Afwijzen",
+        "field": "Gewenste wijzigingen *",
+        "placeholder": "Beschrijf de gewenste wijzigingen...",
+        "submit": "Wijzigingen aanvragen"
+      },
+      "phoneAlt": "De kalender in het portaal op een telefoon: de melding dat twee posts op goedkeuring wachten en dat een beheerder van het team ze beoordeelt, de posts van vandaag en deze week, en onderin de vaste balk met Dashboard, Content, Clyde, Kalender en Meer.",
+      "captionBuilt": "Het goedkeurvenster is nagebouwd naar het portaal.",
+      "captionReal": "De telefoon toont de echte kalender: Dashboard · Content · Clyde · Kalender · Meer"
+    },
+    "requests": {
+      "title": "Aanvragen gaan via één formulier.",
+      "sub": "Wil je klant iets extra's, zoals een post over een nieuw product, een campagne of input voor zijn strategie, dan vult hij het aanvraagformulier in zijn portaal in. Elke aanvraag wordt een ticket, met zijn bericht en de datum die hij wil.",
+      "shot": {
+        "bar": "Portaal · Aanvragen",
+        "scrollLabel": "Het aanvraagformulier in het portaal, scrollbaar",
+        "alt": "Het aanvraagformulier in het portaal van Dagspa Luwte. Onder Wat wil je aanvragen? de keuzes Extra post, Reel/video, Campagne en Strategie-input, met Extra post gekozen. Een tekstveld met de voorbeeldtekst Een post over de cadeaubon voor de feestdagen, het veld Gewenste datum (optioneel) en de knop Verstuur aanvraag. Daaronder Eerdere aanvragen, met één aanvraag In behandeling.",
+        "caption": "Nieuw aanvragen · Verstuur aanvraag. De tekst in het veld is een voorbeeld en is niet verstuurd."
+      }
+    },
+    "clyde": {
+      "title": "Zijn eigen Clyde, die alleen leest.",
+      "sub": "Ook je klant krijgt Clyde, in zijn portaal en op WhatsApp, voor vragen over zijn eigen marketing. Die Clyde leest en legt uit, maar plant, verandert en publiceert niets.",
+      "note": "Deze kaart staat op de strategiepagina van je klant, als die pagina voor hem aanstaat. Verder vraagt hij Clyde iets via de balk bovenin zijn portaal, of op zijn telefoon via Clyde in de balk onderin. Wat jij met Clyde doet, en wat hij jou voorlegt, lees je op de pagina over werken met Clyde.",
+      "scene": {
+        "label": "Nagebouwde kaart Vraag Clyde in het portaal, met drie vragen: Waar staan we met de doelen? Wat doen jullie deze maand? Wat moet ik nog goedkeuren?",
+        "bar": "Strategie",
+        "head": "Vraag Clyde",
+        "q1": "Waar staan we met de doelen?",
+        "q2": "Wat doen jullie deze maand?",
+        "q3": "Wat moet ik nog goedkeuren?"
+      },
+      "caption": "Nagebouwd naar de kaart Vraag Clyde op de strategiepagina van het portaal.",
+      "link": "Hoe Clyde voor jou werkt"
+    },
+    "who": {
+      "title": "Wie doet wat.",
+      "sub": "Clyde maakt het werk, jij beslist, en je klant kijkt mee en keurt goed.",
+      "tableLabel": "Wie doet wat",
+      "cols": {
+        "clyde": "Clyde",
+        "you": "Jij",
+        "client": "Je klant"
+      },
+      "rows": {
+        "r1": {
+          "clyde": "Maakt concepten voor posts, carrousels en blogs",
+          "you": "Keurt goed voordat iets live gaat",
+          "client": "Keurt goed, wijst af of vraagt een wijziging"
+        },
+        "r2": {
+          "clyde": "Plant ze in per kanaal",
+          "you": "Kiest hoe zelfstandig Clyde vaste taken draait",
+          "client": "Ziet zijn kalender en rapporten"
+        },
+        "r3": {
+          "clyde": "Zet de rapporten klaar",
+          "you": "Zet een post of een hele klant op pauze",
+          "client": "Voegt zelf beeld toe"
+        },
+        "r4": {
+          "clyde": "Beantwoordt vragen van je klant, alleen lezend",
+          "you": "Beslist wat er met een aanvraag gebeurt",
+          "client": "Stuurt aanvragen via het formulier"
+        }
+      }
+    },
+    "tell": {
+      "title": "Zo vertel je je klant dat je met Clyde werkt.",
+      "sub": "Je hoeft het niet te verstoppen. Klanten willen vooral weten wie er controleert. Drie zinnen die je kunt gebruiken:",
+      "label": "Drie zinnen voor je klant",
+      "lines": {
+        "l1": "\"Wij werken met Clyde, een AI-collega die je content voorbereidt en inplant.\"",
+        "l2": "\"Niets gaat live voordat wij het hebben gecontroleerd en jij het in je portaal hebt goedgekeurd.\"",
+        "l3": "\"Clyde onthoudt je merkstem en je feedback, apart van onze andere klanten.\""
+      },
+      "links": {
+        "trust": "Waar de data van je klant staat",
+        "memory": "Hoe het geheugen per klant werkt"
+      }
+    },
+    "faq": {
+      "title": "Vragen over het klantportaal.",
+      "sub": "Wat bureaus willen weten voordat hun klant meekijkt.",
+      "items": {
+        "brand": {
+          "q": "Ziet mijn klant FutureMarketingAI of mijn bureau?",
+          "a": "Je bureau. Met white-label aan ziet hij jouw naam, logo en kleuren, ook op zijn telefoon."
+        },
+        "approver": {
+          "q": "Wie bij mijn klant kan goedkeuren?",
+          "a": "Alleen een beheerder van zijn team. De anderen kijken mee en keuren niets."
+        },
+        "whatsapp": {
+          "q": "Kan mijn klant via WhatsApp goedkeuren of iets aanvragen?",
+          "a": "Nee. Goedkeuren doet hij in zijn portaal, ook op zijn telefoon, en aanvragen gaan via het formulier. Op WhatsApp kan hij Clyde vragen stellen over zijn eigen marketing."
+        },
+        "price": {
+          "q": "Wat kost een portaal per klant?",
+          "a": "Niets extra. Het portaal hoort bij elk klantmerk: als founding partner betaal je €997 per maand met tien klantmerken inbegrepen. Zie <link>de prijzen</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Laat je klant meekijken.",
+      "sub": "Een gesprek van 30 minuten. Daarna weet je of het portaal past bij jouw klanten.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "clyde": "Werken met Clyde",
+        "trust": "Vertrouwen"
+      }
+    }
+  },
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Inbox classificeren | Clyde",
@@ -4253,105 +4460,205 @@
   },
   "skills-clyde": {
     "meta": {
-      "title": "Clyde: de AI-collega van je bureau | Clyde",
-      "description": "Clyde, de AI-collega van je bureau, in je dashboard en op WhatsApp. Opdrachten in gewone taal, geheugen per klant. 1 tot 5 credits per gesprek."
+      "title": "Werken met Clyde: in je dashboard en op WhatsApp",
+      "description": "Clyde werkt in elk scherm van je dashboard en op WhatsApp. Wat hij zelf doet, wat hij voorlegt en wat alleen jij doet, met een stopknop per klant."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 10. Clyde, de AI-collega",
-      "title": "Dit is Clyde. De AI-collega van je bureau.",
-      "subtitle": "De andere vaardigheden zijn gespecialiseerde uitvoerders. Clyde is de collega die ze inzet en die meekijkt in elk scherm van je dashboard. Geef opdrachten in gewone taal; Clyde kiest de juiste vaardigheid en brengt resultaten terug. Bereikbaar in het dashboard, in de web-app op je beginscherm en op WhatsApp.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Plan deze week voor de drie SKC-accounts",
-        "prompt2": "Maak een wekelijks rapport over de top presterende posts",
-        "prompt3": "Welke vaardigheid werkt aan welke campagne deze sprint?"
+      "eyebrow": "Werken met Clyde",
+      "title": "Clyde bereidt het werk voor. Jij beslist.",
+      "definition": "Clyde zit in elk scherm van je dashboard en op WhatsApp, en werkt per klant vanuit één geheugen. Hij maakt concepten, doet voorstellen en draait vaste taken, maar geen post gaat live zonder jouw akkoord.",
+      "factsLabel": "Kort",
+      "facts": {
+        "where": {
+          "label": "Waar",
+          "value": "Dashboard, web-app en WhatsApp"
+        },
+        "memory": {
+          "label": "Geheugen",
+          "value": "Eén per klant"
+        },
+        "stop": {
+          "label": "Stoppen",
+          "value": "Eén knop per klant"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Overzicht",
+        "alt": "Het overzicht van Clyde voor Dagspa Luwte: onder Voor jou zes dingen die op je wachten, met de knoppen Bekijk en beslis en Bekijk, daaronder Clyde's dag met vier routines, en rechts het paneel om Clyde iets te vragen.",
+        "caption": "Werkt voor Dagspa Luwte · 6 dingen wachten op jou"
       }
     },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Opdrachten in gewone taal",
-        "body": "\"Schrijf 3 Instagram-posts voor merk X over onderwerp Y.\" Clyde begrijpt de context en voert uit."
-      },
-      "feature2": {
-        "title": "Eén aanspreekpunt voor alle vaardigheden",
-        "body": "Je hoeft niet te weten welke vaardigheid wat doet. Vraag Clyde om een blog, een post of een rapport en hij zet de juiste in."
-      },
-      "feature3": {
-        "title": "In elk scherm en op WhatsApp",
-        "body": "Clyde zit in elk scherm van het dashboard. Daarbuiten bereik je hem op WhatsApp, en hij meldt zich zelf als er iets afwijkt of op je goedkeuring wacht."
-      },
-      "feature4": {
-        "title": "Geheugen per klant",
-        "body": "Onthoudt eerdere gesprekken, voorkeuren en correcties, per klant apart. Je correcties neemt hij mee in het volgende verzoek."
+    "screen": {
+      "title": "In elk scherm van je dashboard.",
+      "sub": "Clyde staat naast elk scherm. Hij weet welke klant je open hebt en antwoordt vanuit diens geheugen. Op je telefoon zet je de web-app op je beginscherm.",
+      "note": "Je typt in gewone taal, in het Nederlands of het Engels. Onder de vraagbalk kies je de klant waar het over gaat.",
+      "shot": {
+        "bar": "Nieuw gesprek",
+        "alt": "Het paneel van Clyde naast het scherm: de melding dat Clyde AI is en fouten kan maken, drie voorbeeldvragen en de vraagbalk Vraag Clyde iets, met Dagspa Luwte als klant.",
+        "caption": "Clyde is AI en kan fouten maken. Controleer belangrijke beslissingen."
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Kies je kanaal",
-        "body": "Het paneel in je dashboard, de web-app op je beginscherm of WhatsApp. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen."
-      },
-      "step2": {
-        "title": "Geef een opdracht",
-        "body": "In gewone taal: \"Rapport voor merk X\" of \"Plan 5 social posts over onderwerp Y.\" Clyde doet de rest."
-      },
-      "step3": {
-        "title": "Beoordeel en stuur bij",
-        "body": "Clyde levert de output. Jij beoordeelt. Correcties belanden in het geheugen, zodat het volgende verzoek scherper is."
+    "forYou": {
+      "title": "Voor jou: wat Clyde voorlegt.",
+      "sub": "Onder Voor jou staat wat Clyde van je nodig heeft: posts die op review wachten, een blogonderwerp, een signaal. Goedkeuren start de taak, wegleggen stopt hem. Onder Opgeleverd lees je wat hij al deed.",
+      "shot": {
+        "bar": "Clyde · Voor jou",
+        "scrollLabel": "Het scherm Voor jou, scrollbaar",
+        "alt": "Het scherm Voor jou in de app: twee voorstellen voor het demo-merk Dagspa Luwte, een carrousel en een blog, elk met de knoppen Goedkeuren en Leg weg.",
+        "caption": "Twee voorstellen voor Dagspa Luwte, elk met Goedkeuren en Leg weg."
       }
     },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "De andere vaardigheden: Clyde zet ze in.",
-      "integration2": "Geheugen: per klant, uit gesprekken, feedback en de strategie.",
-      "integration3": "Routines: terugkerende taken zoals een kanaalrapport, een SEO-plan en een SEO-rapport. Per taak kies je of Clyde eerst vraagt, uitvoert en meldt, of stil uitvoert."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Eén interface voor je hele portfolio",
-        "body": "In plaats van scherm na scherm te openen: vraag Clyde in de chat. Hij weet welke klant welk merk heeft en welke vaardigheid hij moet inzetten."
+    "whatsapp": {
+      "title": "Op WhatsApp: een voorstel, jij tikt.",
+      "sub": "Vraag het Clyde op WhatsApp. Hij antwoordt, of doet een voorstel met de knoppen Uitvoeren en Annuleren. Een getypt \"ja\" voert niets uit: alleen de knop.",
+      "body": "Elke ochtend staat de briefing in je WhatsApp. Rapporten en voorstellen bevestig je daar met één tik; content keur je goed in de app.",
+      "scene": {
+        "label": "Nagebouwd WhatsApp-gesprek met Clyde. Je vraagt hoe Luwte ervoor staat. Clyde: drie posts staan ingepland, twee wachten op je review in de app. Je vraagt de post van donderdag naar vrijdag te zetten. Clyde stelt voor de carrousel van donderdag 12 november naar vrijdag 13 november te verzetten, met de knoppen Uitvoeren en Annuleren.",
+        "org": "Nova Digital",
+        "m1": "Hoe staat Luwte ervoor deze week?",
+        "m2": "Drie posts staan ingepland. Twee wachten nog op je review in de app.",
+        "m3": "Zet die van donderdag maar naar vrijdag.",
+        "m4": "Voorstel: de carrousel van donderdag 12 november naar vrijdag 13 november, zelfde tijd.",
+        "run": "Uitvoeren",
+        "cancel": "Annuleren"
       },
-      "useCase2": {
-        "title": "Delegeren in plaats van uitvoeren",
-        "body": "Stop met zelf posts schrijven en rapporten maken. Geef opdrachten. Clyde voert uit, jij neemt beslissingen."
+      "caption": "Nagebouwd naar een gesprek met Clyde op WhatsApp."
+    },
+    "memory": {
+      "title": "Geheugen per klant.",
+      "sub": "Wat Clyde over een klant weet, staat in zijn geheugen: profiel, merkstem, strategie, werkwijze. Je correcties neemt hij mee, en elke nacht ordent hij wat hij die dag leerde.",
+      "shot": {
+        "bar": "Clyde · Geheugen",
+        "scrollLabel": "Het kerngeheugen, scrollbaar",
+        "alt": "Het kerngeheugen van Clyde over Dagspa Luwte: klantprofiel, merkidentiteit, strategie, werkwijze en samenvatting.",
+        "caption": "Het kerngeheugen van Clyde over Dagspa Luwte."
+      },
+      "link": "Hoe het geheugen werkt"
+    },
+    "client": {
+      "title": "De Clyde van je klant.",
+      "sub": "Je klant krijgt zijn eigen Clyde, in zijn portaal en op WhatsApp. Die beantwoordt vragen over zijn eigen marketing en leest alleen: hij plant, verandert en publiceert niets.",
+      "note": "Je klant vraagt Clyde iets via de balk bovenin zijn portaal, of op zijn telefoon via Clyde in de balk onderin. De kaart Vraag Clyde staat op zijn strategiepagina, als die voor hem aanstaat. Wat hij verder ziet en goedkeurt, staat op de pagina over het klantportaal.",
+      "scene": {
+        "label": "Nagebouwde kaart Vraag Clyde in het portaal van de klant, met drie vragen: Waar staan we met de doelen? Wat doen jullie deze maand? Wat moet ik nog goedkeuren?",
+        "bar": "Portaal · Strategie",
+        "head": "Vraag Clyde",
+        "q1": "Waar staan we met de doelen?",
+        "q2": "Wat doen jullie deze maand?",
+        "q3": "Wat moet ik nog goedkeuren?"
+      },
+      "caption": "Nagebouwd naar de kaart Vraag Clyde op de strategiepagina van het portaal.",
+      "link": "Wat je klant ziet"
+    },
+    "roles": {
+      "title": "Wat Clyde zelf doet, wat hij voorlegt, wat alleen jij doet.",
+      "sub": "Per vaste taak kies je hoe zelfstandig Clyde is. De rest ligt vast.",
+      "tableLabel": "Wat Clyde zelf doet, wat hij voorlegt en wat alleen jij doet",
+      "cols": {
+        "self": "Clyde doet zelf",
+        "proposes": "Clyde legt voor",
+        "you": "Alleen jij"
+      },
+      "rows": {
+        "r1": {
+          "self": "Concepten maken voor posts, carrousels en blogs",
+          "proposes": "Posts en carrousels ter review",
+          "you": "Goedkeuren, afwijzen of wegleggen"
+        },
+        "r2": {
+          "self": "Vaste taken op hun tijd, als jij die taak op uitvoeren zet",
+          "proposes": "Blogonderwerpen en signalen",
+          "you": "Kiezen hoe zelfstandig een vaste taak draait"
+        },
+        "r3": {
+          "self": "Het geheugen per klant bijwerken",
+          "proposes": "Voorstellen op WhatsApp, met Uitvoeren en Annuleren",
+          "you": "Een post of een hele klant op pauze zetten"
+        }
+      },
+      "modes": {
+        "concept": {
+          "label": "Concept",
+          "text": "Clyde maakt het en legt het voor."
+        },
+        "report": {
+          "label": "Uitvoeren en melden",
+          "text": "Hij voert uit en laat het je weten."
+        },
+        "silent": {
+          "label": "Stil uitvoeren",
+          "text": "Hij voert uit zonder bericht."
+        }
+      },
+      "modesNote": "Elke vaste taak heeft een kostenplafond en een stopknop.",
+      "day": {
+        "bar": "Clyde · Clyde's dag",
+        "scrollLabel": "Clyde's dag, scrollbaar",
+        "alt": "Clyde's dag op een tijdlijn van 06:00 tot 22:00: om 09:00 de Ochtendbriefing, Reacties Luwte en Weekrapport Luwte, om 14:00 Content review middag.",
+        "caption": "Volgende: Content review middag om 14:00 · 4 routines"
       }
     },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Klaar om Clyde als collega in je team te zetten?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe Clyde past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
+    "stop": {
+      "title": "Het stopmoment.",
+      "sub": "Zet je voor een klant het stopmoment aan, dan pauzeer je een post na je akkoord nog tot vier uur voor hij live gaat. Moet het echt stil, dan zet je met één knop alles voor een klant op pauze.",
+      "listTitle": "Wat Clyde niet doet zonder jou.",
+      "items": {
+        "publish": {
+          "title": "Een post live zetten die niemand heeft goedgekeurd",
+          "text": "Elke post wacht in de app op een akkoord."
+        },
+        "whatsapp": {
+          "title": "Een voorstel op WhatsApp uitvoeren voordat jij tikt",
+          "text": "Een getypt \"ja\" telt niet. Alleen de knop Uitvoeren."
+        },
+        "task": {
+          "title": "Een taak uit Voor jou starten zonder jouw akkoord",
+          "text": "Goedkeuren start de taak, wegleggen stopt hem."
+        },
+        "client": {
+          "title": "Iets veranderen op verzoek van je klant",
+          "text": "De Clyde van je klant leest alleen."
+        }
+      },
+      "links": {
+        "regie": "Niets gaat live zonder jou",
+        "trust": "Vertrouwen"
+      }
     },
     "faq": {
-      "title": "Veelgestelde vragen over Clyde",
+      "title": "Vragen over werken met Clyde.",
+      "sub": "Wat bureaus willen weten voordat ze Clyde werk geven.",
       "items": {
-        "q1": {
-          "question": "Wat is Clyde precies?",
-          "answer": "Clyde is de AI-collega die de andere vaardigheden inzet. Geef opdrachten in gewone taal (Nederlands of Engels) en Clyde kiest de juiste vaardigheid: schrijf een blog, plan social posts, draai een SEO-audit. Werkt in het dashboard, in de web-app op je beginscherm en op WhatsApp."
+        "assistant": {
+          "q": "Is Clyde een AI-marketingassistent of een chatbot?",
+          "a": "Je praat met hem zoals met een chatbot, maar hij werkt binnen je klanten. Hij kent per klant de merkstem en het geheugen, maakt concepten en draait vaste taken. Wat live gaat, keur jij goed."
         },
-        "q2": {
-          "question": "Welke kanalen ondersteunt Clyde?",
-          "answer": "In elk scherm van je dashboard, in de web-app op je beginscherm, en op WhatsApp via een gekoppeld nummer. Op WhatsApp vraag je Clyde hoe je content en cijfers ervoor staan, krijg je elke vrijdag het SEO-weekrapport, en meldt hij zich zelf als een cijfer afwijkt of iets op je goedkeuring wacht. Rapporten en voorstellen van Clyde bevestig je daar met één tik; content keur je goed in de app. Op elk kanaal werkt Clyde vanuit hetzelfde geheugen per klant."
+        "whatsapp": {
+          "q": "Hoe geef ik Clyde een opdracht via WhatsApp?",
+          "a": "Via een gekoppeld nummer stuur je hem een bericht in gewone taal. Hij antwoordt, of doet een voorstel met Uitvoeren en Annuleren; pas als je tikt, gebeurt het. Content keur je goed in de app."
         },
-        "q3": {
-          "question": "Op welke tiers is Clyde beschikbaar?",
-          "answer": "Clyde is op elke tier inbegrepen, het is geen losse vaardigheid maar de basislaag. Een gesprek kost 1 tot 5 credits, afhankelijk van het taalmodel."
+        "split": {
+          "q": "Wat doet Clyde zelf en wat legt hij voor?",
+          "a": "Hij maakt concepten en draait vaste taken zoals jij ze instelt. Posts, blogonderwerpen, signalen en voorstellen legt hij aan je voor onder Voor jou of op WhatsApp. Goedkeuren en pauzeren doe alleen jij."
         },
-        "q4": {
-          "question": "Hoelang duurt de onboarding van Clyde?",
-          "answer": "Het hele platform staat in vier weken: koppelen en kennis verzamelen, merkstem en goedkeuringen inrichten, eerste opdrachten en bijsturen. Daarna leert Clyde door: elke nacht ordent hij wat hij die dag over je klanten leerde."
+        "client": {
+          "q": "Kan mijn klant Clyde ook gebruiken?",
+          "a": "Ja, in zijn portaal en op WhatsApp, voor vragen over zijn eigen marketing. Die Clyde leest alleen. Wat je klant verder ziet, staat op <link>de pagina over het klantportaal</link>."
         },
-        "q5": {
-          "question": "Hoe verschilt Clyde van ChatGPT of Claude?",
-          "answer": "ChatGPT en Claude zijn algemene assistenten: ze kennen je klanten niet en zitten niet in je kanalen. Clyde is een AI-collega met een eigen geheugen per klant, koppelingen met je kanalen en data, en de merkstem van elke klant als vaste context. Geen herhaal-uitleg per sessie nodig."
+        "app": {
+          "q": "Werkt Clyde ook als mobiele web-app?",
+          "a": "Ja. Je zet de web-app op het beginscherm van je telefoon en werkt vanuit hetzelfde geheugen per klant."
         }
+      }
+    },
+    "end": {
+      "title": "Zie Clyde aan het werk.",
+      "sub": "Een gesprek van 30 minuten. Daarna weet je hoe Clyde voorlegt en hoe jij beslist.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "portal": "Je klant kijkt mee",
+        "pricing": "Prijzen"
       }
     }
   },
@@ -4616,7 +4923,7 @@
       },
       "grow": {
         "label": "Groei en Optimaliseer",
-        "description": "Analyse, onderzoek en orkestratie",
+        "description": "Analyse, onderzoek en werken met Clyde",
         "items": {
           "reporting": {
             "title": "Reporting",
@@ -4632,7 +4939,7 @@
           },
           "clyde": {
             "title": "Clyde, AI-collega",
-            "description": "De centrale orkestrator van alle vaardigheden"
+            "description": "Bereidt het werk voor, jij beslist"
           }
         }
       },
