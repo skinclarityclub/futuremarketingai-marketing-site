@@ -133,7 +133,8 @@ test.describe('ChatWidget persistence across navigation', () => {
     await page.goto('/en')
     await waitForChatButton(page)
 
-    await page.click('a[href*="/pricing"]')
+    // :visible, because on a phone the header link sits in the closed menu; the footer link is the visible one there
+    await page.locator('a[href*="/pricing"]:visible').first().click()
     await expect(page).toHaveURL(/\/en\/pricing/)
 
     await waitForChatButton(page)
