@@ -144,10 +144,10 @@ export function StickyMobileCTA({ href = '/apply' }: { href?: string }) {
         <Link
           href={href}
           onClick={handleClick}
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-accent-system px-4 py-2.5 text-sm font-semibold text-bg-deep hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-[filter]"
+          // amber like the header button and .g6-btn (Daley 2026-11-08); one line, the 30 minutes stand in every page end
+          className="flex-1 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-[#f5a623] px-4 text-[15px] font-semibold text-[#1b1305] shadow-[0_8px_28px_-10px_rgba(245,166,35,0.55)] hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system transition-[filter]"
         >
           <span>{t('label')}</span>
-          <span className="text-xs opacity-80">· {t('subLabel')}</span>
           <ArrowRight className="h-4 w-4" />
         </Link>
         <button

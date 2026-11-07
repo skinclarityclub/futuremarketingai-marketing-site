@@ -5,7 +5,6 @@
   },
   "stickyCta": {
     "label": "Request a call",
-    "subLabel": "30 min with Daley",
     "dismiss": "Close mobile CTA bar",
     "srLandmark": "Quick action"
   },
