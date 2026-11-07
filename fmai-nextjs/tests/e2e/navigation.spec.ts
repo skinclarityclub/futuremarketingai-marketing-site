@@ -1,4 +1,11 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
+
+// Golf 8b: below 1280px the header links sit behind the menu button, so open it when it shows.
+async function clickHeaderLink(page: Page, part: string) {
+  const menuButton = page.locator('button[aria-controls="mobile-menu"]')
+  if (await menuButton.isVisible()) await menuButton.click()
+  await page.locator(`header a[href*="${part}"]:visible`).first().click()
+}
 
 /**
  * E2E Tests: Navigation & Routing
@@ -25,15 +32,16 @@ test.describe('Navigation', () => {
   test('should navigate between main pages via header', async ({ page }) => {
     await page.goto('/en')
 
-    await page.locator('a[href*="/pricing"]').first().click()
+    await clickHeaderLink(page, '/pricing')
     await expect(page).toHaveURL(/\/en\/pricing/)
     await expect(page.locator('h1').first()).toBeVisible()
 
-    await page.locator('a[href*="/about"]').first().click()
+    await clickHeaderLink(page, '/about')
     await expect(page).toHaveURL(/\/en\/about/)
     await expect(page.locator('h1').first()).toBeVisible()
 
-    await page.locator('a[href*="/contact"]').first().click()
+    // Contact is not in the header (footer, Company): any visible link to it
+    await page.locator('a[href*="/contact"]:visible').first().click()
     await expect(page).toHaveURL(/\/en\/contact/)
     await expect(page.locator('h1').first()).toBeVisible()
   })
@@ -59,7 +67,7 @@ test.describe('Navigation', () => {
   test('should maintain scroll position (reset on navigate)', async ({ page }) => {
     await page.goto('/en')
     await page.evaluate(() => window.scrollTo(0, 500))
-    await page.locator('a[href*="/pricing"]').first().click()
+    await clickHeaderLink(page, '/pricing')
     await expect(page).toHaveURL(/\/en\/pricing/)
     const scrollY = await page.evaluate(() => window.scrollY)
     expect(scrollY).toBeLessThan(100)

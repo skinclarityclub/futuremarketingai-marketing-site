@@ -572,53 +572,48 @@
     },
     "landing": {
       "footer": {
-        "brand_name": "Future Marketing AI",
-        "tagline": "Clyde, el compañero de IA de tu agencia. Diez habilidades en producción, dos próximamente, un sistema que lo conecta todo.",
-        "copyright": "© {year} Future Marketing AI. Todos los derechos reservados.",
+        "brand_name": "FutureMarketingAI",
+        "tagline": "Clyde, el compañero de IA de tu agencia. Una memoria por cliente, y nada se publica sin ti.",
+        "copyright": "© {year} FutureMarketingAI. Todos los derechos reservados.",
         "sections": {
-          "skills": "Habilidades",
+          "clyde": "Clyde",
+          "makes": "Lo que Clyde crea",
+          "cases": "Casos",
           "company": "Empresa",
-          "resources": "Recursos"
+          "learn": "Aprender",
+          "legal": "Legal"
         },
         "nav": {
-          "content_creator": "Content Creator",
-          "voice_agent": "Voice Agent",
-          "lead_qualifier": "Lead Qualifier",
-          "social_media": "Social Media",
-          "ad_creator": "Ad Manager",
-          "reel_builder": "Reel Builder",
-          "reporting": "Reporting",
-          "email_management": "Email Management",
-          "manychat": "ManyChat DM",
-          "research": "Research",
-          "pricing": "Precios",
+          "clyde": "Trabajar con Clyde",
+          "client_portal": "Tu cliente lo sigue de cerca",
+          "memory": "Memoria por cliente",
+          "trust": "Confianza",
           "alternatives": "Alternativas",
+          "social_media": "Redes sociales",
+          "blog_factory": "Blogs",
+          "lead_qualifier": "Del post al lead",
+          "reporting": "Informes",
+          "seo_geo": "SEO y GEO",
+          "ad_creator": "Anuncios",
+          "email_management": "Email",
+          "all_skills": "Todas las habilidades",
+          "skc": "SkinClarity Club",
+          "saleslobe": "SalesLobe",
+          "caseStudies": "Todos los casos",
           "about": "Sobre nosotros",
           "how_it_works": "Cómo funciona",
-          "founding_member": "Founding Member",
-          "blog": "Blog",
-          "kennisbank": "Recursos",
+          "pricing": "Precios",
           "contact": "Contacto",
+          "apply": "Solicita una llamada",
+          "kennisbank": "Recursos",
+          "assessment": "AI-Scan para agencias",
           "privacy": "Privacidad",
           "terms": "Términos",
           "cookies": "Cookies",
-          "apply": "Solicita una llamada",
-          "memory": "Sistema de memoria",
-          "caseStudies": "Casos de estudio",
-          "blog_factory": "Blog Factory",
-          "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Orchestrator",
-          "trust": "Confianza"
+          "dpa": "Acuerdo de encargo del tratamiento a petición"
         },
         "social_aria": {
-          "linkedin": "Síguenos en LinkedIn",
-          "twitter": "Síguenos en X"
-        },
-        "eyebrow": {
-          "brand": "Boletín",
-          "skills": "Habilidades",
-          "company": "Empresa",
-          "resources": "Recursos"
+          "linkedin": "Síguenos en LinkedIn"
         },
         "newsletter": {
           "label": "Correo electrónico",
@@ -627,10 +622,6 @@
           "consent": "Quiero recibir novedades sobre Clyde por email y puedo darme de baja cuando quiera.",
           "success": "Revisa tu bandeja para el correo de confirmación.",
           "error": "La suscripción falló. Inténtalo de nuevo más tarde."
-        },
-        "labels": {
-          "live": "Live",
-          "comingSoon": "Próximamente"
         }
       }
     },
@@ -654,7 +645,7 @@
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
-      "skills_index": "Habilidades",
+      "skills_index": "Lo que Clyde crea",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
       "skill_voice_agent": "Voice Agent",
@@ -4174,106 +4165,45 @@
   },
   "nav": {
     "login": "Iniciar sesión",
-    "apply": "Solicita una llamada",
-    "assessment": "Haz el AI-Scan"
+    "apply": "Solicita una llamada"
   },
   "header": {
-    "skills": {
-      "create": {
-        "label": "Crea y Publica",
-        "description": "Producción de contenido a escala",
-        "items": {
-          "socialMedia": {
-            "title": "Social Media",
-            "description": "Subtítulos, programación, carruseles y stories"
-          },
-          "blogFactory": {
-            "title": "Blog Factory",
-            "description": "Artículos SEO y GEO por cliente, del tema a la publicación"
-          },
-          "adCreator": {
-            "title": "Ad Manager",
-            "description": "Crear anuncios de Meta y seguirlos por leads y CPL"
-          },
-          "reelBuilder": {
-            "title": "Reel Builder",
-            "description": "Vídeos verticales con subtítulos y música"
-          }
-        }
-      },
-      "engage": {
-        "label": "Capta y Convierte",
-        "description": "Captura de leads e interacción con clientes",
-        "items": {
-          "voiceAgent": {
-            "title": "Voice Agent",
-            "description": "Llamadas AI entrantes y salientes"
-          },
-          "leadQualifier": {
-            "title": "Lead Qualifier",
-            "description": "Del comentario en Instagram al lead"
-          },
-          "emailManagement": {
-            "title": "Email Management",
-            "description": "Triaje de bandeja para Gmail y Outlook, con borradores de respuesta"
-          },
-          "manychat": {
-            "title": "ManyChat DM",
-            "description": "Triggers Instagram DM con respuestas AI"
-          }
-        }
-      },
-      "grow": {
-        "label": "Crece y Optimiza",
-        "description": "Análisis, investigación y trabajar con Clyde",
-        "items": {
-          "reporting": {
-            "title": "Reporting",
-            "description": "Paneles, resúmenes y alertas de anomalías"
-          },
-          "seoGeo": {
-            "title": "SEO / GEO Analyst",
-            "description": "Auditorías SEO y monitoreo de citas AI"
-          },
-          "research": {
-            "title": "Research",
-            "description": "Investigación de mercado y monitoreo de tendencias"
-          },
-          "clyde": {
-            "title": "Clyde, compañero de IA",
-            "description": "Prepara el trabajo, tú decides"
-          }
-        }
-      },
-      "comingSoon": "Próximamente"
-    },
     "nav": {
-      "skills": "Habilidades",
-      "memory": "Memoria",
-      "caseStudies": "Casos",
-      "kennisbank": "Recursos",
-      "pricing": "Precios",
+      "clyde": "Clyde",
       "howItWorks": "Cómo funciona",
-      "foundingMember": "Founding",
+      "caseStudies": "Casos",
+      "pricing": "Precios",
+      "kennisbank": "Recursos",
       "about": "Sobre nosotros"
     },
-    "cta": {
-      "applyTitle": "Apply",
-      "applySubtitle": "Solicita una llamada"
-    },
-    "megaMenu": {
-      "tagline": "10 en vivo, 2 próximamente",
-      "previewCta": "Ver habilidad",
-      "viewAll": "Todas las habilidades"
-    },
-    "priceMenu": {
-      "pricing": {
-        "subtitle": "Todos los planes y niveles"
-      },
-      "foundingMember": {
-        "subtitle": "Tarifa fija de por vida"
-      },
-      "spots": "máx. {total} plazas"
+    "clydeMenu": {
+      "intro": "El compañero de IA de tu agencia. Cómo trabajas con él, qué crea y qué ve tu cliente.",
+      "items": {
+        "week": {
+          "title": "Una semana con Clyde",
+          "description": "Cómo es una semana normal después del arranque"
+        },
+        "working": {
+          "title": "Trabajar con Clyde",
+          "description": "Lo que hace solo, lo que te propone, lo que solo haces tú"
+        },
+        "makes": {
+          "title": "Lo que Clyde crea",
+          "description": "Estrategia, redes sociales, blogs, informes y más"
+        },
+        "clientPortal": {
+          "title": "Tu cliente lo sigue de cerca",
+          "description": "Un portal con el nombre de tu agencia"
+        },
+        "memory": {
+          "title": "Memoria por cliente",
+          "description": "Voz de marca y feedback, separados por cliente"
+        },
+        "trust": {
+          "title": "Confianza",
+          "description": "Dónde están los datos de tus clientes"
+        }
+      }
     }
   },
   "chat": {

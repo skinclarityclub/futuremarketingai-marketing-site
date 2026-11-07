@@ -203,11 +203,13 @@ test.describe('Conversion polish — P2-B share-card + result page', () => {
       { waitUntil: 'domcontentloaded' },
     )
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Workflow-bureau')
-    await expect(page.getByText('62', { exact: false })).toBeVisible()
-    await expect(page.getByText('Strategie', { exact: false })).toBeVisible()
-    await expect(page.getByText('Team', { exact: false })).toBeVisible()
+    // Scoped to #main: the header's Clyde menu also says "Strategie, social media, ..." (golf 8b)
+    const main = page.locator('#main')
+    await expect(main.getByText('62', { exact: false })).toBeVisible()
+    await expect(main.getByText('Strategie', { exact: false })).toBeVisible()
+    await expect(main.getByText('Team', { exact: false })).toBeVisible()
     // Lowest category (team = 45) gets the focus pill (NL: focusLabel = 'Groeikans')
-    await expect(page.getByText('Groeikans', { exact: true })).toBeVisible()
+    await expect(main.getByText('Groeikans', { exact: true })).toBeVisible()
     await expect(page.getByRole('link', { name: /Start de scan/ })).toBeVisible()
   })
 

@@ -49,7 +49,25 @@ De Engelse tekst zei acht keer "your client looks along", een letterlijke vertal
 - **App, voor Daley**: het Clyde-paneel van de klant stelt "Verplaats een bericht naar een andere dag" voor (`clyde.ts:1369`, `welcome-messages.ts:96`), terwijl de Clyde van de klant alleen leest. En een kijker ziet "Start review (2)" en "2 wachten op jou" op `/client/content`.
 - **Service-schema**: `ServiceJsonLd` krijgt `name` uit `skills-data.ts` ("Clyde, AI-collega"), ook op `/en`. Dat geldt voor elke vaardigheidspagina en stond er al.
 
+## Akkoord op de diff
+
+Diffpagina `A/alle-paginas/golf8a-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-07 Golf 8a diff`. Daley, één AskUserQuestion op 2026-11-07 ~22:40 lokaal, met de stopmomentzin op /pricing en /trust, de Engelse taalfix en de twee app-bevindingen erin: **"Ja, push en merge"**.
+
+## Live
+
+| Stap | Bewijs | Uitkomst |
+|---|---|---|
+| PR | `gh pr create`, #103 | Vercel-preview `dpl_5RhS4McAjKeGj5hyNvBBJGP23DaB` Ready, checks groen |
+| Preview | `MSYS_NO_PATHCONV=1 vercel curl <pad> --deployment https://futuremarketingai-1jgfpof6h-future-marketing-ai.vercel.app` | 5x 200 met de nieuwe title (client-portal en skills/clyde nl en en, pricing nl met de nieuwe stopmomentzin); `/_next/image` van `portaal-kalender.webp` 200 `image/avif` |
+| Merge | `gh pr merge 103 --squash` | squash `4581dbcb`, 2026-11-07 15:46:41Z (22:46 lokaal), dus `PAGE_DATES` 2026-11-07 = mergedag, geen bump |
+| Prod-deploy | `vercel inspect future-marketing.ai` | `dpl_8BWWZAU5Fr875AiD2B1KyKzqXmB6`, production, Ready |
+| curl prod | 7 URL's | 7x 200: client-portal en skills/clyde (nl, en) met de nieuwe title en H1; `/nl/pricing`, `/en/trust` en `/nl` met de nieuwe stopmomentzin |
+| Sitemap prod | `/sitemap.xml` | 81 URL's; client-portal, skills/clyde, pricing en trust (nl, en) lastmod 2026-11-07 |
+| PSI ronde 1 | `m-psi.mjs <url> 3`, direct na de deploy | mobiel 95 (LCP = FCP 2,0 s), desktop 100, op beide pagina's. Niet bruikbaar: de drie runs per strategie hebben dezelfde `fetchTime`, dus PSI gaf zijn cache terug (één meting), en die ene meting wachtte ruim 1 s op een render-blokkerende CSS-file van de verse deploy (koude edge bij PSI; document 87 ms). JSON `ronde1b/g8/psi8a/` |
+| PSI ronde 2 | `m-psi.mjs "<url>?r=1..3" 1`, drie aparte runs (12 verschillende `fetchTime`'s) | `/nl/client-portal`: mobiel 3x 100 (LCP 1,1 s, CLS 0,019 tot 0,023), desktop 3x 100 (LCP 0,3 s); LCP = de H1. `/nl/skills/clyde`: mobiel 3x 100 (LCP 1,2 s, CLS 0,019 tot 0,022; LCP = `p.g6-def`), desktop 3x 100 (LCP 0,5 tot 0,6 s; LCP = het overzichtsscherm). JSON `ronde1b/g8/psi8a-r2/` |
+
+Les voor de volgende golf: `m-psi.mjs` met `n` = 3 draaide de runs direct na elkaar op dezelfde URL, en PSI gaf dan drie keer dezelfde gecachete meting. Het script zet nu per run een eigen query (`?psi=m0`, `m1`, ...; backup `m-psi.mjs.bak-2026-11-07-g8a`). Controleer bij twijfel of de `fetchTime`'s verschillen.
+
 ## Nog open
 
-- Diffpagina `A/alle-paginas/golf8a-diff/index.html` en de vault-note, dan Daleys ja.
-- Na zijn ja: push, PR, merge, `PAGE_DATES` op de mergedag als die na 2026-11-07 ligt, preview en prod met `vercel curl`, PSI 3x, live-sectie hier.
+- Golf 8b (header en footer), plan Fase 3: nieuwe branch vanaf main `4581dbcb`. Deze live-sectie gaat mee met die PR.

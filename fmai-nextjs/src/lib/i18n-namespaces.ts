@@ -17,7 +17,7 @@ export const GLOBAL_CLIENT_NAMESPACES = [
   'a11y', // BackToTop (back-to-top FAB in ClientIslands) -- tiny payload
   'common', // CookieConsentBanner
   'nav', // HeaderClient mega-menu top nav
-  'header', // HeaderClient mega-menu skill labels
+  'header', // HeaderClient labels and the Clyde menu
   // Lazy client islands rendered in root layout via ClientIslands
   'chat', // ChatWidget (chat.widget subkey)
   'booking', // BookingModal
