@@ -643,8 +643,8 @@
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
       "skills_index": "Lo que Clyde crea",
-      "skill_social_media": "Social Media",
-      "skill_blog_factory": "Blog Factory",
+      "skill_social_media": "Social media",
+      "skill_blog_factory": "Blogs",
       "skill_lead_qualifier": "Del post al lead",
       "skill_ad_manager": "Ad Manager",
       "skill_email_management": "Email Management",
@@ -1930,109 +1930,111 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager: copys y carruseles por marca | Clyde",
-      "description": "Clyde gestiona redes sociales por marca: copys AI en la voz de marca, programación multiplataforma, carruseles. 1 o 2 créditos por post."
+      "title": "Social media planning tool for agencies | Clyde",
+      "description": "Clyde writes posts, captions and carousels per client in the brand voice and lays them out for you per day. Once approved, he schedules them."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Habilidad 01. Social Media Manager",
-      "title": "Clyde se encarga de tus redes sociales.",
-      "subtitle": "Copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Por cuenta, por marca. Un compañero para toda tu cartera de clientes.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Planifica el contenido de Instagram de las tres cuentas de SKC esta semana",
-        "prompt2": "Crea 5 carruseles sobre la rutina de invierno",
-        "prompt3": "¿Qué pies de foto rinden mejor en LinkedIn para B2B?"
+      "eyebrow": "Social media",
+      "title": "Social media for agencies: Clyde plans, writes and waits for your approval.",
+      "definition": "Nothing goes live without your approval, and your client can approve too, in their own portal. Clyde makes the posts, captions and carousels per client, in that brand's voice and visual identity, and lays them out for you per day. What you approve, he schedules at the moment set in the calendar.",
+      "factsLabel": "In short",
+      "facts": {
+        "client": {
+          "label": "Per client",
+          "value": "In its own brand voice"
+        },
+        "day": {
+          "label": "Per day",
+          "value": "Review in one row"
+        },
+        "approve": {
+          "label": "Approval",
+          "value": "Always you first"
+        }
+      },
+      "shot": {
+        "bar": "Content · Dagspa Luwte",
+        "scrollLabel": "The review screen per day, scrollable",
+        "alt": "Dagspa Luwte's review screen per day, in the app, in Dutch. On Sunday 8 November the post Na afloop blijf je zitten waits for approval, on Thursday 12 November the carousel Welke behandeling past bij jou?, and every day has a button that approves the whole day. The days in between are marked as all decided.",
+        "caption": "A row per day: what is waiting for you, and which days are already decided."
       }
     },
-    "features": {
-      "title": "Qué hace Clyde en redes sociales",
-      "subtitle": "Cuatro funciones esenciales, integradas sin fisuras. Cada salida encaja en la voz de marca.",
-      "feature1": {
-        "title": "Copys AI en la voz de marca",
-        "body": "Clyde escribe posts y copys que suenan a la marca, a partir del contenido aprobado antes, las directrices de marca y tus correcciones."
-      },
-      "feature2": {
-        "title": "Programación multiplataforma",
-        "body": "Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube. Un calendario de contenido, arrastrar y soltar, previsualización en todos los canales."
-      },
-      "feature3": {
-        "title": "Carruseles con el estilo de la marca",
-        "body": "Carruseles educativos, normalmente de 5 a 7 diapositivas, con plantillas en el estilo de la marca. De la idea a la pieza lista para publicar en un solo flujo."
-      },
-      "feature4": {
-        "title": "Rendimiento por post",
-        "body": "Alcance, comentarios, guardados e interacción por post. Lo que funciona influye en qué pilares de contenido programa Clyde con más frecuencia."
+    "review": {
+      "title": "You review per day, not post by post.",
+      "sub": "Clyde lists a client's posts per day. A day with work says how much is waiting for you; a day without work is marked as all decided. You approve a post, edit it or skip it, and one button approves a whole day at once.",
+      "cards": {
+        "posts": {
+          "label": "Posts",
+          "text": "An image with a caption in the client's brand voice, and the hashtags that suit that brand."
+        },
+        "carousels": {
+          "label": "Carousels",
+          "text": "Slides in the brand's visual identity that explain a topic step by step."
+        },
+        "channels": {
+          "label": "Channels",
+          "text": "For example Instagram, Facebook and LinkedIn. Which channels take part depends on the accounts you connect per client."
+        }
       }
     },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Entrevista de voz de marca",
-        "body": "Durante el onboarding Clyde lee contenido anterior, directrices de marca y datos de audiencia. Construye un perfil de marca por cada marca."
+    "calendar": {
+      "title": "Every client's month on one calendar.",
+      "sub": "What you approve, Clyde schedules on the day and hour from the calendar. In the month view you see per client what is scheduled and what still waits for you, and the calendar tells you when a weekday without content is coming up.",
+      "shot": {
+        "bar": "Calendar · Dagspa Luwte",
+        "scrollLabel": "Two weeks from the month calendar, scrollable",
+        "alt": "Two weeks from Dagspa Luwte's month calendar, in the app, in Dutch, 16 to 29 November, with the scheduled posts and their times per day, such as Thee tussendoor at 13:15 and Na afloop blijf je zitten at 18:30.",
+        "caption": "The second half of November for Dagspa Luwte, in the month view."
       },
-      "step2": {
-        "title": "Planificar el calendario de contenido",
-        "body": "Tú indicas tema y frecuencia; Clyde compone el calendario semanal con propuestas de posts, copys y hashtags."
+      "link": "A content calendar for several clients (in Dutch)"
+    },
+    "client": {
+      "title": "Your client approves too, in their own portal.",
+      "sub": "In their portal your client sees their calendar and the posts waiting for approval. An admin on their team approves them; anyone who only views sees what is coming.",
+      "shot": {
+        "bar": "Client portal · Calendar",
+        "scrollLabel": "The calendar in the client portal, scrollable",
+        "alt": "Dagspa Luwte's client portal, in Dutch: the calendar with the notice that 2 posts are waiting for approval and that an admin on your team reviews them, with what is scheduled today and this week below.",
+        "caption": "The calendar in Dagspa Luwte's portal, as the client sees it."
       },
-      "step3": {
-        "title": "Aprobar y publicar",
-        "body": "Tú revisas el calendario (arrastrar y soltar). Tras la aprobación, Clyde publica en los horarios programados y mide el rendimiento."
-      }
+      "link": "The client portal"
     },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "La habilidad de Social Media comparte contexto con otras habilidades a través de la memoria compartida por cliente.",
-      "integration1": "Blog Factory: posts sociales derivados del contenido del blog.",
-      "integration2": "Ad Manager: el contenido orgánico con mejor rendimiento se convierte en material de test publicitario.",
-      "integration3": "Reporting: KPIs sociales en el informe semanal de rendimiento."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "Agencias con 5 a 20 marcas",
-        "body": "Un Clyde junto a tu equipo, con una voz de marca propia por cliente. Cómo trabajáis como agencia, lo recuerda para todos los clientes."
-      },
-      "useCase2": {
-        "title": "Operadores multimarca",
-        "body": "SkinClarity Club, nuestro primer cliente, gestiona 3 cuentas de Instagram con una sola configuración de Clyde, cada una con su propia voz. Consulta el caso de estudio para ver resultados concretos."
-      }
-    },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "proof": {
-      "title": "SkinClarity Club en acción",
-      "subtitle": "Tres cuentas de Instagram, cada una con su propia voz. Consulta el caso de estudio para ver capturas y ejemplos."
-    },
-    "cta": {
-      "title": "¿Listo para ceder las redes sociales a Clyde?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
+    "saleslobe": {
+      "title": "How it works at SalesLobe.",
+      "sub": "Clyde makes SalesLobe's Instagram and its founder's LinkedIn. Every post is approved in the app and then published at the scheduled moment.",
+      "link": "The SalesLobe case"
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Social Media Manager",
+      "title": "Questions about social media with Clyde.",
+      "sub": "What agencies want to know before Clyde makes a client's posts.",
       "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad Social Media Manager?",
-          "answer": "Clyde gestiona el proceso social completo para Instagram, Facebook, LinkedIn, X, Threads, TikTok y YouTube: copys en la voz de marca, un calendario de contenido por cuenta, carruseles con el estilo de la marca y rendimiento por post. Un solo compañero gestiona varias marcas a la vez sin que se mezclen los tonos."
+        "multi": {
+          "q": "How do I automate social media for several clients?",
+          "a": "You set up the brand voice, the visual identity and the accounts per client. Then Clyde writes the posts per client and lays them out for you per day. You approve, Clyde schedules. How to set up such a calendar is in <link>the article about a content calendar for several clients</link> (in Dutch)."
         },
-        "q2": {
-          "question": "¿Qué plataformas y herramientas soporta Social Media Manager?",
-          "answer": "Publicación en Instagram vía la API de Meta, y en Facebook, LinkedIn, X, Threads, TikTok y YouTube vía Postiz. Los datos entrantes se enriquecen con insights de Reporting y Research. Los carruseles se maquetan con plantillas en el estilo de tu marca. Los posts programados pueden pasar por un flujo de aprobación antes de publicarse."
+        "approval": {
+          "q": "Does Clyde publish without approval?",
+          "a": "No. A post only goes live once you have approved it. Until then it waits for you."
         },
-        "q3": {
-          "question": "¿En qué tiers está disponible Social Media Manager?",
-          "answer": "Incluido en todos los tiers. Un post o carrusel cuesta de 1 a 2 créditos. Cuántos créditos y espacios de trabajo tiene cada tier está en la página de precios."
+        "channels": {
+          "q": "Which channels does Clyde support?",
+          "a": "Clyde plans for the social accounts you connect per client, such as Instagram, Facebook and LinkedIn. Which channels take part for a client is shown at the top of their calendar."
         },
-        "q4": {
-          "question": "¿Cómo se pone en marcha Social Media Manager?",
-          "answer": "Clyde lee el contenido anterior, las directrices de marca y los datos de audiencia, y el primer calendario lo apruebas post a post. Cuánto puede hacer Clyde por su cuenta después lo decides tú, tarea por tarea."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de Buffer o Later?",
-          "answer": "Buffer y Later son programadores, no creadores de contenido. Tú o un copywriter seguís escribiendo cada copy y cada visual. Clyde combina creación, programación y publicación en un solo flujo, con la voz de marca de cada cliente como contexto fijo y tus correcciones encima. Se acabaron las herramientas separadas para copy, visuales y programación."
+        "client": {
+          "q": "Can my client approve posts themselves?",
+          "a": "Yes, if they are an admin in their portal. Then they approve the posts in their own calendar. Anyone who only views sees the posts but does not approve them. What else your client sees is on <link>the client portal page</link>."
         }
+      }
+    },
+    "end": {
+      "title": "One calendar for all your clients.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "blog": "Blogs",
+        "reporting": "Reporting"
       }
     }
   },
@@ -3575,110 +3577,107 @@
   },
   "skills-blog-factory": {
     "meta": {
-      "title": "Blog Factory: artículos SEO de keyword a publicar | Clyde",
-      "description": "Investigación de palabras clave, artículos en la voz de marca, una revisión SEO y publicación tras tu aprobación. 15 créditos por artículo."
+      "title": "Blog Factory: SEO blogs in each client's voice | Clyde",
+      "description": "Per client, Clyde picks keywords the site almost ranks for, writes the article in the brand voice and queues it for your approval."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Habilidad 08. Blog Factory",
-      "title": "Clyde escribe tus blogs SEO.",
-      "subtitle": "Investigación de palabras clave, artículos en la voz de marca y una revisión SEO, publicados en la web tras tu aprobación. La extensión se adapta a lo que ya posiciona para esa búsqueda. Blog Factory está disponible y sigue en desarrollo.",
-      "cta": "Solicita una llamada",
-      "prompts": {
-        "prompt1": "Redacta un artículo SEO sobre sérum para piel sensible",
-        "prompt2": "Construye un cluster temático sobre rutinas de hidratación",
-        "prompt3": "Actualiza las metadescripciones de los diez blogs más leídos"
+      "eyebrow": "Blog Factory",
+      "title": "Clyde writes SEO blogs for your clients.",
+      "definition": "For each client, Clyde picks a topic from the keywords the site almost ranks for, and writes an article about it in that brand's voice, with the sources included. Every article gets a quality check and then waits for you. Only when you approve it is it published.",
+      "factsLabel": "In short",
+      "facts": {
+        "client": {
+          "label": "Per client",
+          "value": "In its own brand voice"
+        },
+        "topic": {
+          "label": "Topic",
+          "value": "Where the site almost ranks"
+        },
+        "publish": {
+          "label": "Publishing",
+          "value": "After your approval"
+        }
+      },
+      "shot": {
+        "bar": "Blog Factory · Dagspa Luwte",
+        "scrollLabel": "Articles waiting for review, scrollable",
+        "alt": "Dagspa Luwte's Blog Factory in the app, in Dutch, with articles waiting for review: Welke olie we gebruiken, en waarom jij kiest, Waarom we beginnen met thee, and De rustruimte: waarom je niet meteen weg hoeft. Each with a quality score, the scores for SEO, GEO and E-E-A-T, the keyword, the word count and an approve button.",
+        "caption": "Articles for Dagspa Luwte waiting for review."
       }
     },
-    "features": {
-      "title": "Qué hace Clyde",
-      "subtitle": "Cuatro funciones esenciales de esta habilidad.",
-      "feature1": {
-        "title": "Investigación de palabras clave y clustering",
-        "body": "Palabras clave de alto volumen y baja competencia en el nicho. Agrupadas en páginas pilar y contenido de apoyo."
+    "keywords": {
+      "title": "The topic comes from the keywords.",
+      "sub": "For each client, Clyde looks at the keywords where the site is on Google's second page, just outside the top 10. That is where the gap to the first page is smallest. The keyword with the most impressions that nothing has been written about yet comes first.",
+      "shot": {
+        "bar": "SEO / GEO · Keyword positions",
+        "scrollLabel": "Keyword positions in Google, scrollable",
+        "alt": "Dagspa Luwte's keyword positions in Google, in the app: dagspa Amsterdam at 4.6, rugmassage Amsterdam at 6.9, gezichtsbehandeling Amsterdam at 11.1, cadeaubon spa Amsterdam at 16.3 and spa voor één persoon at 19.6, each with the click-through rate and the trend.",
+        "caption": "Dagspa Luwte's positions in Google, with three keywords just outside the first page."
       },
-      "feature2": {
-        "title": "Una extensión que encaja con la búsqueda",
-        "body": "Clyde mira la extensión de las páginas que ya posicionan y escribe en consecuencia. En la voz de marca, respaldado con fuentes y con una estructura fácil de escanear."
-      },
-      "feature3": {
-        "title": "Optimización SEO",
-        "body": "La meta descripción, la estructura de encabezados, los enlaces internos y las fuentes se revisan en cada artículo. La habilidad de SEO/GEO mide los Core Web Vitals aparte, por página."
-      },
-      "feature4": {
-        "title": "Publicación tras aprobación",
-        "body": "A un sitio MDX, a un blog de Shopify o, con una conexión a medida, a tu propia web. Borrador, revisión, publicación."
+      "link": "SEO and GEO"
+    },
+    "review": {
+      "title": "Approve or reject, with everything alongside.",
+      "sub": "Open an article and you see the text, the report from the check and how it will appear in Google: the title, the description and the keyword. If it is right, you approve it. If it is not, you reject it with a reason, and Clyde makes a new version.",
+      "shot": {
+        "bar": "Blog Factory · Review",
+        "scrollLabel": "The review window of an article, scrollable",
+        "alt": "The review window of the article Wat er gebeurt tijdens een gezichtsbehandeling, in Dutch, waiting for review, with an overall score of 84. The SEO tab shows the Google preview, the length of the title and description, the target keyword and the secondary keywords. At the bottom, the buttons to reject and approve.",
+        "caption": "The SEO tab of an article for Dagspa Luwte."
       }
     },
-    "how": {
-      "title": "Cómo funciona",
-      "step1": {
-        "title": "Estrategia de palabras clave por marca",
-        "body": "Cada día Clyde busca palabras clave que encajan con la marca y las agrupa por temas de contenido."
+    "client": {
+      "title": "What your client sees.",
+      "sub": "Approved and published articles appear in your client's portal, under Blogs. They read them there; you do the editing.",
+      "cards": {
+        "check": {
+          "label": "The check",
+          "text": "Every article gets scores for SEO, GEO, E-E-A-T and readability before it reaches you."
+        },
+        "approval": {
+          "label": "Your approval",
+          "text": "Nothing is published without your approval. Even after that, the check holds an article back if a source or a quality point is wrong."
+        },
+        "expert": {
+          "label": "An expert at the client",
+          "text": "If a subject expert at your client has to read an article first, they approve it in the portal or send it back with a comment."
+        }
       },
-      "step2": {
-        "title": "Planificar los artículos",
-        "body": "Elige qué palabras clave quieres trabajar. Clyde hace el esquema y escribe. Tú revisas en la pantalla de revisión: apruebas o lo devuelves con comentarios."
-      },
-      "step3": {
-        "title": "Publicar y monitorizar",
-        "body": "Tras la aprobación, Clyde publica. La habilidad de SEO/GEO hace el seguimiento de las posiciones en paralelo."
-      }
-    },
-    "integrations": {
-      "title": "Trabaja con",
-      "subtitle": "A través de la memoria compartida por cliente.",
-      "integration1": "SEO/GEO Analyst: se hace seguimiento de las posiciones del blog y se monitorizan los Core Web Vitals.",
-      "integration2": "Social Media: un artículo puede ser la base de posts para redes sociales.",
-      "integration3": "Research: los datos de tendencias alimentan la elección de temas."
-    },
-    "useCases": {
-      "title": "Para quién",
-      "useCase1": {
-        "title": "E-commerce con foco SEO",
-        "body": "Artículos sobre tus productos que generan tráfico orgánico, con la voz de la marca."
-      },
-      "useCase2": {
-        "title": "Content marketing B2B",
-        "body": "Blogs de thought leadership en el nicho. Clyde convierte tu expertise en artículos completos."
-      }
-    },
-    "allocation": {
-      "title": "Coste en créditos y disponibilidad por nivel",
-      "subtitle": "Lo que cuesta esta habilidad por acción y cuánto se incluye en cada nivel."
-    },
-    "cta": {
-      "title": "¿Listo para ceder la producción de blogs a Clyde?",
-      "subtitle": "Solicita una llamada. Hablamos sobre cómo encaja esta habilidad con tus marcas.",
-      "button": "Solicita una llamada"
+      "link": "The client portal"
     },
     "faq": {
-      "title": "Preguntas frecuentes sobre Blog Factory",
+      "title": "Questions about the Blog Factory.",
+      "sub": "What agencies want to know before Clyde writes a client's blogs.",
       "items": {
-        "q1": {
-          "question": "¿Qué hace exactamente la habilidad Blog Factory?",
-          "answer": "Clyde escribe artículos SEO, desde la investigación de palabras clave hasta la publicación. La extensión se adapta a la intención de búsqueda y a las páginas que ya posicionan. Cada artículo recibe una meta descripción, una estructura de encabezados y enlaces internos, y se publica en la web tras tu aprobación. Clyde escribe en la voz de marca, a partir del contenido aprobado antes y de tus correcciones."
+        "topics": {
+          "q": "How does Clyde choose the topics?",
+          "a": "From the keywords where your client's site is just outside Google's first page. Want a topic of your own? Add it as a new blog."
         },
-        "q2": {
-          "question": "¿Dónde publica Blog Factory?",
-          "answer": "A un sitio MDX, a un blog de Shopify o, con una conexión a medida, a tu propia web. ¿Tu agencia trabaja con otro CMS? Coméntalo en la primera llamada. La imagen principal de cada artículo la aportas tú."
+        "voice": {
+          "q": "Does Clyde write in my client's voice?",
+          "a": "Yes. Per client you set the voice: the tone, the audience, the words that do and do not fit, and examples of existing texts. Clyde writes from those settings."
         },
-        "q3": {
-          "question": "¿En qué tiers está disponible Blog Factory?",
-          "answer": "Growth 8 artículos al mes, Professional 20, Enterprise sin límite, Founding 12. Un artículo cuesta 15 créditos. Artículos extra disponibles con packs de créditos."
+        "approval": {
+          "q": "Does anything go live without my approval?",
+          "a": "No. An article is only published once it is approved. While it waits for you, it is marked as to be reviewed."
         },
-        "q4": {
-          "question": "¿Cómo se pone en marcha Blog Factory para una marca nueva?",
-          "answer": "Al empezar, Clyde lee artículos anteriores de la marca como ejemplo de su voz. Después apruebas cada artículo antes de que se publique, y tu feedback lo aplica en el siguiente."
-        },
-        "q5": {
-          "question": "¿En qué se diferencia de Jasper o SurferSEO?",
-          "answer": "Jasper es una herramienta de prompts, tú construyes la estructura cada vez. SurferSEO comprueba la calidad SEO. Clyde entrega el artículo completo: clustering de keywords, escritura, optimización, publicación, con memoria de tu estilo y temas previos. Sin copia-pegado manual entre 3 herramientas."
+        "seo": {
+          "q": "How does this connect to SEO and GEO?",
+          "a": "The Blog Factory takes its topics from the positions Clyde tracks per client site. How the site climbs after that, and whether AI assistants cite the article as a source, is on <link>the SEO and GEO page</link>."
         }
       }
     },
-    "screenshot": {
-      "alt": "La pantalla de Blog Factory con cuatro borradores listos para revision, por marca.",
-      "caption": "Generacion, revision y publicacion desde una pantalla"
+    "end": {
+      "title": "A blog per client, in their own voice.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "seo": "SEO and GEO",
+        "social": "Social media"
+      }
     }
   },
   "skills-seo-geo": {

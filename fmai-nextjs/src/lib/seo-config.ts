@@ -92,14 +92,17 @@ export const PAGE_DATES: Record<string, string> = {
   // 2026-11-07 golf 8a: /client-portal is new, /skills/clyde became a proof page, and the stop-moment sentence on /,
   // /pricing and /trust now says the pause only holds with the stop moment on (Daley's choice 2).
   '/client-portal': '2026-11-07',
-  '/skills/social-media': '2026-11-05',
-  '/skills/blog-factory': '2026-11-05',
-  '/skills/ad-manager': '2026-11-05',
+  // 2026-11-08 golf 9b: social-media and blog-factory became proof pages from the prototype; ad-manager and
+  // email-management lost the invented numbers and the credits in a heading; the assessment lost 'orchestrator'.
+  // Move these to the merge day if it slips.
+  '/skills/social-media': '2026-11-08',
+  '/skills/blog-factory': '2026-11-08',
+  '/skills/ad-manager': '2026-11-08',
   // 2026-11-08 golf 9a: the hub became Wat Clyde maakt, /skills/strategy is new, lead-qualifier lost its chat demo,
   // and the skill count left /, /pricing (matrix rows) and the terms. Move these to the merge day if it slips.
   '/skills/strategy': '2026-11-08',
   '/skills/lead-qualifier': '2026-11-08',
-  '/skills/email-management': '2026-11-05',
+  '/skills/email-management': '2026-11-08',
   '/skills/reporting': '2026-11-05',
   '/skills/seo-geo': '2026-11-05',
   '/skills/clyde': '2026-11-07',
@@ -113,7 +116,7 @@ export const PAGE_DATES: Record<string, string> = {
   // Dates below come from `git log -1` on each page's own source file, not
   // from a guess — these six were missing and hit the old `new Date()` path.
   '/skills': '2026-11-08',
-  '/assessment': '2026-11-05',
+  '/assessment': '2026-11-08',
   // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
   '/legal/privacy': '2026-11-05',
   '/legal/terms': '2026-11-08',

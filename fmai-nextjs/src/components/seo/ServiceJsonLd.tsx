@@ -64,7 +64,8 @@ export function ServiceJsonLd({
     url,
     provider: { '@id': ORG_ID },
     areaServed: ['NL', 'EU', 'Worldwide'],
-    availableLanguage: ['en', 'nl', 'es'],
+    // es left as a locale on 2026-10-02 (routing.ts); nl first, it is the source of truth
+    availableLanguage: ['nl', 'en'],
     dateModified,
     ...(offers && offers.length > 0
       ? {
