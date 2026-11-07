@@ -38,7 +38,21 @@ Na build en e2e: `git status` schoon; `test-results/.last-run.json` teruggezet; 
 - Pauls eigen tekst (LinkedIn-post, bijschrift, hashtags, drie openingen) staat als Engelse constanten in `SlCaseSections.tsx` met `lang="en"`, in elke taal gelijk. `es.json` spiegelt `en.json`.
 - Het r4-CSS-blok (`golf6.css` regels 163-170) staat ongewijzigd achteraan `src/components/proof/proof.css`.
 
+## Live (2026-11-07)
+
+Daley zei "Ja, push en merge" op de diffpagina (`A/alle-paginas/golf7b-diff/index.html`, één AskUserQuestion). PR #101, squash-merge `2d6d7a76` op 2026-11-07 12:01Z, dus lastmod 2026-11-07 is de mergedag.
+
+| Poort | Commando | Uitkomst |
+|---|---|---|
+| Preview | `gh pr checks 101 --watch` | Vercel pass |
+| Preview, pagina's en beeld | `MSYS_NO_PATHCONV=1 vercel curl <pad> --deployment <preview>` (zonder die variabele maakt Git Bash van `/nl/...` een Windows-pad en geeft curl 000) | 3x 200 met de nieuwe title (saleslobe nl en en, hub nl); `/_next/image` van `sl-notnow-s01.webp` w=384 `image/avif` 200 |
+| Productiedeploy | `vercel inspect https://future-marketing.ai` | `dpl_4vUJE18mdzVvw6JxUA8PMK1xV2ff` Ready; 200 op prod na ~100 s |
+| curl prod | 4 URL's | 4x 200 met de nieuwe title en H1 (saleslobe en hub, nl en en); de hub linkt naar de case |
+| Sitemap prod | `/sitemap.xml` | `/nl` en `/en/case-studies/saleslobe` lastmod 2026-11-07 |
+| PSI, ronde 1 | `ronde1b/tools/port/m-psi.mjs`, 3 runs, JSON in `ronde1b/g7/psi7b/` | SalesLobe mobiel 95x3 (FCP = LCP 2,0 s, CLS 0,019), desktop 100x3 (LCP 0,3 s, CLS 0,002). Hub mobiel 100x3 (LCP 1,1 s, CLS <=0,023), desktop 100x3 (LCP 0,3 s) |
+| Oorzaak van de 95 | netwerkverzoeken uit de PSI-JSON vergeleken | dezelfde bestanden als de hub; alleen het document duurde 305 ms tegen 88 ms en de hele tijdlijn schoof mee: een koude edge op een URL die net bestond. Daarna `X-Vercel-Cache: HIT` |
+| PSI, ronde 2 | idem, `g7/psi7b/saleslobe-r2/` | SalesLobe mobiel 100x3 (LCP 1,1 s, CLS 0,019, document 65-74 ms), desktop 100x3 (LCP 0,3 s, CLS <=0,003). LCP is altijd tekst (`p.g6-def` of `h1#sl-h1`) |
+
 ## Open
 
-- Daleys ja op de diffpagina (`A/alle-paginas/golf7b-diff/index.html`), dan push, PR, merge na een groene preview, PSI 3x mobiel en desktop op `/nl/case-studies/saleslobe` en `/nl/case-studies`.
-- Merge na 2026-11-07: `PAGE_DATES['/case-studies/saleslobe']` en `'/case-studies'` naar de mergedag.
+- Niets voor 7b. Golf 7 (cases) is klaar.
